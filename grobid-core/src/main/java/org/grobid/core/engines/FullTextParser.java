@@ -318,6 +318,48 @@ public class FullTextParser extends AbstractParser {
         return Pair.of(res, layoutTokenization);
     }
 
+    private SortedSet<DocumentPiece> collectPiecesFromLayoutTokens(Document doc, List<LayoutToken> tokensList) {
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
+        // identify continuous sequence of layout tokens in the token list
+        int positionStartPiece = -1;
+        int currentOffset = -1;
+        int startBlockPtr = -1;
+        LayoutToken previousAbstractToken = null;
+        for (LayoutToken currentToken : tokensList) {
+            if (currentOffset == -1) {
+                positionStartPiece = getDocIndexToken(doc, currentToken);
+                startBlockPtr = currentToken.getBlockPtr();
+            } else {
+                if (currentToken.getOffset() != currentOffset + previousAbstractToken.getText().length()) {
+                    // new DocumentPiece to be added
+                    DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+                    DocumentPointer dp2 = new DocumentPointer(doc,
+                        previousAbstractToken.getBlockPtr(),
+                        getDocIndexToken(doc, previousAbstractToken));
+                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                    documentParts.add(piece);
+
+                    // set index for the next DocumentPiece
+                    positionStartPiece = getDocIndexToken(doc, currentToken);
+                    startBlockPtr = currentToken.getBlockPtr();
+                }
+            }
+            currentOffset = currentToken.getOffset();
+            previousAbstractToken = currentToken;
+        }
+        // we still need to add the last document piece
+        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming
+        if (positionStartPiece != -1) {
+            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, positionStartPiece);
+            DocumentPointer dp2 = new DocumentPointer(doc,
+                previousAbstractToken.getBlockPtr(),
+                getDocIndexToken(doc, previousAbstractToken));
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
+        return documentParts;
+    }
+
     /**
      * Process a simple segment of layout tokens with the full text model
      */
