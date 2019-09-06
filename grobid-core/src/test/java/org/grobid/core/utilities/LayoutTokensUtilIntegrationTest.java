@@ -18,6 +18,7 @@ public class LayoutTokensUtilIntegrationTest {
     @BeforeClass
     public static void setUp() throws Exception {
         LibraryLoader.load();
+        GrobidProperties.getInstance();
     }
 
     @Test
