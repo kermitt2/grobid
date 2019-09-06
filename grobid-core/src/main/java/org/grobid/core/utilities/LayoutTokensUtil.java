@@ -68,7 +68,7 @@ public class LayoutTokensUtil {
         return t.getPage() == -1 || t.getWidth() <= 0;
     }
 
-    
+
     public static boolean spaceyToken(String tok) {
         /*return (tok.equals(" ")
                 || tok.equals("\u00A0")
@@ -253,18 +253,29 @@ public class LayoutTokensUtil {
 
         int j = i + 1;
         int breakLine = 0;
-        while (j < tokens.size() && (tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n"))) {
-            String tokenString = tokens.get(j).getText();
+        int spacesAfter = 0;
 
-            if (tokenString.equals("\n")) {
+        double coordinateY = tokens.get(i).getY();
+
+        while (j < tokens.size() && (tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n"))) {
+            if (tokens.get(j).getText().equals("\n")) {
+                breakLine++;
+            } else if (tokens.get(j).getText().equals(" ")) {
+                spacesAfter++;
+            } else if (tokens.get(j).getY() > coordinateY) {
                 breakLine++;
             }
             j++;
         }
 
         if (breakLine == 0) {
-            return false;
+            // check if there is a break-line using coordinates, if not, no dehypenisation
+            if (tokens.get(j).getY() == coordinateY) {
+                return false;
+            }
         }
+
+        //tokens.stream().collect(groupingBy(LayoutToken::getY)).keySet()
 
         if (j < tokens.size()) {
             Matcher matcher = LOWERCASE_LETTERS.matcher(tokens.get(j).getText());
@@ -273,19 +284,29 @@ public class LayoutTokensUtil {
             }
 
             if (forward) {
-                if(i < 1) {
-                    //If nothing before the hypen, but it looks like a forward hypenisation, let's trust it
+                //If nothing before the hypen, but it looks like a forward hypenisation, let's trust it
+                if (i < 1) {
                     return forward;
                 }
 
+                //I check if the coordinates have changed, this means there is a newline
+                if (tokens.get(j).getY() > coordinateY) {
+                    return forward;
+                }
+
+                // Check backward
                 int z = i - 1;
-                while (z > 0 && tokens.get(z).getText().equals(" ")) {
+                while (z > 0 && (tokens.get(z).getText().equals(" ") || tokens.get(z).getText().equals("\n"))) {
                     z--;
                 }
 
                 Matcher backwardMatcher = UPPER_AND_LOWERCASE_LETTERS.matcher(tokens.get(z).getText());
                 if (backwardMatcher.find()) {
-                    backward = true;
+                    if (tokens.get(z).getY() < coordinateY) {
+                        backward = true;
+                    } else if(coordinateY == -1 && breakLine > 0) {
+                        backward = true;
+                    }
                 }
             }
         }
