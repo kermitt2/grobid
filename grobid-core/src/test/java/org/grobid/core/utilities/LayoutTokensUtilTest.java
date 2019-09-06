@@ -92,4 +92,14 @@ public class LayoutTokensUtilTest {
 //        assertThat(LayoutTokensUtil.doesRequireDehypenisation(layoutTokens, 12), is(true));
 //    }
 
+
+    @Test
+    public void testDoesRequireDehyphenization_hypenAtEndOfString_shouldReturnFalse() throws Exception {
+        String input = "The study of iron-based supercondu-";
+
+        List<LayoutToken> layoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        assertThat(LayoutTokensUtil.doesRequireDehypenisation(layoutTokens, 11), is(false));
+    }
+
 }

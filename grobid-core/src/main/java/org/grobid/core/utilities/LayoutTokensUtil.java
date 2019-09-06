@@ -270,7 +270,7 @@ public class LayoutTokensUtil {
 
         if (breakLine == 0) {
             // check if there is a break-line using coordinates, if not, no dehypenisation
-            if (tokens.get(j).getY() == coordinateY) {
+            if (j < tokens.size() && tokens.get(j).getY() == coordinateY) {
                 return false;
             }
         }
