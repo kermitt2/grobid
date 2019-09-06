@@ -162,7 +162,7 @@ public class TextUtilities {
      * @return Returns the dehyphenized string.
      * <p>
      * Deprecated method, not needed anymore since the @newline are preserved thanks to the LayoutTokens
-     * @Use LayoutToken.dehypenize()
+     * @Use LayoutTokensUtil.dehypenize()
      */
     @Deprecated
     public static String dehyphenizeHard(String text) {

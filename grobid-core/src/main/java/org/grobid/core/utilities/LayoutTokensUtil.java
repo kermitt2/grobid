@@ -244,7 +244,6 @@ public class LayoutTokensUtil {
      * It will check the tokens before and after. It will get to the next "non space" tokens and verify
      * that it's a plain word. If it's not it's keeping the hypen.
      * <p>
-     * TODO: add the check on the bounding box of the next token to see whether there is really a break line.
      * TODO: What to do in case of a punctuation is found?
      */
     protected static boolean doesRequireDehypenisation(List<LayoutToken> tokens, int i) {
