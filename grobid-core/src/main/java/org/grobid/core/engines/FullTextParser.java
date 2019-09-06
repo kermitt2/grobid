@@ -310,21 +310,21 @@ public class FullTextParser extends AbstractParser {
         documentParts.addAll(collectPiecesFromLayoutTokens(tokens, doc));
 
         Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
-        String res = null;
-        List<LayoutToken> layoutTokenization = null;
+        String res = "";
+        List<LayoutToken> layoutTokenization = new ArrayList<>();
         if (featSeg != null) {
             String featuredText = featSeg.getLeft();
             LayoutTokenization layouts = featSeg.getRight();
             if (layouts != null)
                 layoutTokenization = layouts.getTokenization();
-            if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
+            if (isNotBlank(featuredText)) {
                 res = label(featuredText);
             }
         }
         return Pair.of(res, layoutTokenization);
     }
 
-    private SortedSet<DocumentPiece> collectPiecesFromLayoutTokens(List<LayoutToken> tokensList, Document doc) {
+    protected SortedSet<DocumentPiece> collectPiecesFromLayoutTokens(List<LayoutToken> tokensList, Document doc) {
         SortedSet<DocumentPiece> documentParts = new TreeSet<>();
         // identify continuous sequence of layout tokens in the token list
         int positionStartPiece = -1;
@@ -382,7 +382,7 @@ public class FullTextParser extends AbstractParser {
                 currentPos = token.getOffset() + token.getText().length();
             } else {
                 int tokenPos = token.getOffset();
-                if (currentPos+1 == tokenPos) {
+                if (currentPos == tokenPos) {
                     // continous
                     currentChunk.add(token);
                     currentPos = token.getOffset() + token.getText().length();
