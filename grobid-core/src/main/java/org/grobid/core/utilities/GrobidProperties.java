@@ -387,6 +387,8 @@ public class GrobidProperties {
         Enumeration<?> properties = getProps().propertyNames();
         for (String propKey; properties.hasMoreElements(); ) {
             propKey = (String) properties.nextElement();
+            if (propKey.equals("grobid.delft.python.virtualEnv"))
+                continue;
             String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
             if (StringUtils.isBlank(propVal)) {
                 throw new GrobidPropertyException("The property '" + propKey + "' is null or empty. Please set this value.");
