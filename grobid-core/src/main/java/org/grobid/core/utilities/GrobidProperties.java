@@ -583,6 +583,12 @@ public class GrobidProperties {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC, "60"), 10) * 1000;
     }
 
+    public static boolean isPdfToXMLValidationEnabled() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_VALIDATION_ENABLED
+        ));
+    }
+
     /**
      * Returns the number of threads, given in the grobid-property file.
      *

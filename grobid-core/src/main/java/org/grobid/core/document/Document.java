@@ -35,6 +35,7 @@ import org.grobid.core.sax.*;
 
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
@@ -43,13 +44,22 @@ import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CodingErrorAction;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -340,6 +350,26 @@ public class Document implements Serializable {
         return tokenizations;
     }
 
+    protected static void parseInputStream(
+        InputStream in, SAXParser saxParser, DefaultHandler handler
+    ) throws SAXException, IOException {
+        if (GrobidProperties.isPdfToXMLValidationEnabled()) {
+            saxParser.parse(in, handler);
+        } else {
+            CharsetDecoder utf8Decoder = Charset.forName("UTF-8").newDecoder();
+            utf8Decoder.onMalformedInput(CodingErrorAction.REPLACE);
+            utf8Decoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
+            utf8Decoder.replaceWith("?");
+            saxParser.parse(new InputSource(new InputStreamReader(in, utf8Decoder)), handler);
+        }
+    }
+
+    protected static void parseInputStream(
+        InputStream in, SAXParserFactory saxParserFactory, DefaultHandler handler
+    ) throws SAXException, IOException, ParserConfigurationException {
+        parseInputStream(in, saxParserFactory.newSAXParser(), handler);
+    }
+
     /**
      * Parser PDFALTO output representation and get the tokenized form of the document.
      *
@@ -376,9 +406,7 @@ public class Document implements Serializable {
             in = new FileInputStream(file);
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
 
-            // get a new instance of parser
-            SAXParser p = spf.newSAXParser();
-            p.parse(in, parser);
+            parseInputStream(in, spf, parser);
             tokenizations = parser.getTokenization();
             if (in != null) {
                 try {
