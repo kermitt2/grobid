@@ -25,6 +25,7 @@ public interface GrobidPropertyKeys {
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";
 
     String PROP_HEADER_USE_HEURISTICS = "grobid.header.use_heuristics";
+    String PROP_HEADER_USE_LABELED_ABSTRACT = "grobid.header.use_labeled_abstract";
 
     String PROP_CROSSREF_ID = "grobid.crossref_id";
     String PROP_CROSSREF_PW = "grobid.crossref_pw";

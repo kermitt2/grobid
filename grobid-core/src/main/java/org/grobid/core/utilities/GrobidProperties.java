@@ -425,6 +425,12 @@ public class GrobidProperties {
         );
     }
 
+    public static boolean isHeaderUseLabeledAbstract() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_LABELED_ABSTRACT, "true")
+        );
+    }
+
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using
      * a Deep Learning sequence labelling engine.

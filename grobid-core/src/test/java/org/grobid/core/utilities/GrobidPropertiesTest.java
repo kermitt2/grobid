@@ -156,6 +156,18 @@ public class GrobidPropertiesTest {
     }
 
     @Test
+    public void testShouldUseHeaderLabeledAbstractByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_LABELED_ABSTRACT);
+        assertTrue("header use labeled abstract", GrobidProperties.isHeaderUseLabeledAbstract());
+    }
+
+    @Test
+    public void testShouldNotUseHeaderLabeledAbstractIfDisabled() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_LABELED_ABSTRACT, "false");
+        assertFalse("header use labeled abstract", GrobidProperties.isHeaderUseLabeledAbstract());
+    }
+
+    @Test
     public void testsetisResourcesInHome() {
         String value = "true";
         GrobidProperties.setResourcesInHome(value);

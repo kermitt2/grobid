@@ -163,7 +163,7 @@ public class FullTextParser extends AbstractParser {
                 }
             }
             // structure the abstract using the fulltext model
-            if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+            if (GrobidProperties.isHeaderUseLabeledAbstract() && isNotBlank(resHeader.getAbstract())) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
                     SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
