@@ -399,6 +399,8 @@ public class GrobidProperties {
         Enumeration<?> properties = getProps().propertyNames();
         for (String propKey; properties.hasMoreElements(); ) {
             propKey = (String) properties.nextElement();
+            if (propKey.equals("grobid.delft.python.virtualEnv"))
+                continue;
             String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
             if (StringUtils.isBlank(propVal)) {
                 throw new GrobidPropertyException("The property '" + propKey + "' is null or empty. Please set this value.");
@@ -610,6 +612,12 @@ public class GrobidProperties {
 
     public static Integer getPdfToXMLTimeoutMs() {
         return Integer.parseInt(getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC, "60"), 10) * 1000;
+    }
+
+    public static boolean isPdfToXMLValidationEnabled() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML_VALIDATION_ENABLED
+        ));
     }
 
     /**
