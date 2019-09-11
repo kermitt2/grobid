@@ -170,7 +170,7 @@ public class NameCitationTrainer extends AbstractTrainer {
     	GrobidProperties.getInstance();
         Trainer trainer = new NameCitationTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 }

@@ -431,7 +431,7 @@ public class ChemicalEntityTrainer extends AbstractTrainer {
     public static void main(String[] args) {
         Trainer trainer = new ChemicalEntityTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 }
