@@ -229,7 +229,7 @@ public class NameHeaderTrainer extends AbstractTrainer {
     	GrobidProperties.getInstance();
         Trainer trainer = new NameHeaderTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 }
