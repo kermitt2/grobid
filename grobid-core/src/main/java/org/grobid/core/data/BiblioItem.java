@@ -1558,7 +1558,7 @@ public class BiblioItem {
      * 
      * To be done: use a short text model to structure abstract
      */
-    final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
+    public static final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -1594,6 +1594,36 @@ public class BiblioItem {
         res = res.replace("  ", " ");
 
         return res;
+    }
+
+    public static List<LayoutToken> cleanAbstractLayoutTokens(List<LayoutToken> tokens) {
+        if (tokens == null)
+            return null;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int n = 0;
+        while(n < tokens.size()) {
+            String tokenString = StringUtils.normalizeSpace(tokens.get(n).getText().toLowerCase());
+            if (tokenString.length() == 0 || TextUtilities.delimiters.contains(tokenString)) {
+                n++;
+                continue;
+            }
+            boolean matchPrefix = false;
+            for (String abstractPrefix : ABSTRACT_PREFIXES) {
+                if (tokenString.equals(abstractPrefix)) {
+                    matchPrefix = true;
+                    break;
+                }
+            }
+            if (matchPrefix) {
+                n++;
+                continue;
+            }
+            break;
+        }
+
+        return tokens.subList(n, tokens.size());
     }
 
     public static void cleanTitles(BiblioItem bibl) {
@@ -4265,6 +4295,9 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+                break;
+            }
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
