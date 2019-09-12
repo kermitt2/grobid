@@ -63,7 +63,7 @@ public class FullTextParserTest {
 //
 //    }
 
-    @Test
+    /*@Test
     public void testGetDocumentPieces1() throws Exception {
         Document documentMock = createMock(Document.class);
 
@@ -129,6 +129,6 @@ public class FullTextParserTest {
         assertThat(documentPieces1.get(1).getLeft().getTokenDocPos(), is(25000));
         assertThat(documentPieces1.get(1).getRight().getBlockPtr(), is(3));
         assertThat(documentPieces1.get(1).getRight().getTokenDocPos(), is(25088));
-    }
+    }*/
 
 }
