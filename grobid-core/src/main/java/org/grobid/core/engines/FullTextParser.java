@@ -171,7 +171,11 @@ public class FullTextParser extends AbstractParser {
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
                     Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
                     if (abstractProcessed != null) {
-                        resHeader.setLabeledAbstract(abstractProcessed.getLeft());
+                        // neutralize figure and table annotations (will be considered as paragraphs)
+                        String labeledAbstract = abstractProcessed.getLeft();
+                        labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
+//System.out.println(labeledAbstract);
+                        resHeader.setLabeledAbstract(labeledAbstract);
                         resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
@@ -361,7 +365,7 @@ public class FullTextParser extends AbstractParser {
         for(LayoutToken token : tokens) {
             if (currentChunk.size() != 0) {
                 int tokenPos = token.getOffset();
-                if (currentPos+1 != tokenPos) {
+                if (currentPos != tokenPos) {
                     // new chunk
                     tokenChunks.add(currentChunk);
                     currentChunk = new ArrayList<LayoutToken>();
@@ -399,6 +403,40 @@ public class FullTextParser extends AbstractParser {
 //System.out.println(layoutTokenization.size());       
         return Pair.of(res, layoutTokenization);
     }
+
+    static protected String postProcessLabeledAbstract(String labeledAbstract) {
+        if (labeledAbstract == null) 
+            return null;     
+        StringBuilder result = new StringBuilder();
+
+        String[] lines = labeledAbstract.split("\n");
+        String previousLabel = null;
+        for(int i=0; i<lines.length; i++) {
+            String line = lines[i];
+            if (line == null || line.trim().length() == 0)
+                continue;
+            String[] pieces = line.split("\t");
+            String label = pieces[pieces.length-1];
+            if (label.equals("I-"+TaggingLabels.FIGURE.getLabel()) || label.equals("I-"+TaggingLabels.TABLE.getLabel())) {
+                if (previousLabel == null || !previousLabel.endsWith(TaggingLabels.PARAGRAPH.getLabel())) {
+                    pieces[pieces.length-1] = "I-"+TaggingLabels.PARAGRAPH.getLabel();
+                } else {
+                    pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
+                } 
+            } else if (label.equals(TaggingLabels.FIGURE.getLabel()) || label.equals(TaggingLabels.TABLE.getLabel())) {
+                pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
+            }
+            for(int j=0; j<pieces.length; j++) {
+                if (j != 0)
+                    result.append("\t");
+                result.append(pieces[j]);
+            }
+            previousLabel = label;
+            result.append("\n");
+        }
+
+        return result.toString();
+    } 
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {

@@ -1558,7 +1558,7 @@ public class BiblioItem {
      * 
      * To be done: use a short text model to structure abstract
      */
-    final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
+    public static final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -4242,6 +4242,9 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+                break;
+            }
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
