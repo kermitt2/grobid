@@ -45,7 +45,7 @@ public class TestFullTextParser extends EngineTest {
     @Test
     public void testFullTextParser_1() throws Exception {
         File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");
-        
+
         Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
