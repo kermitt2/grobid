@@ -1269,8 +1269,6 @@ public class TEIFormatter {
                 curDiv.appendChild(note);
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
-//if (biblio != null)
-//    clusterContent = biblio.cleanAbstract(clusterContent);
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
                     curParagraph = teiElement("p");
                     if (config.isGenerateTeiIds()) {

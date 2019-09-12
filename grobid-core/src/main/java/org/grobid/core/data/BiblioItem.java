@@ -1596,6 +1596,36 @@ public class BiblioItem {
         return res;
     }
 
+    public static List<LayoutToken> cleanAbstractLayoutTokens(List<LayoutToken> tokens) {
+        if (tokens == null)
+            return null;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int n = 0;
+        while(n < tokens.size()) {
+            String tokenString = StringUtils.normalizeSpace(tokens.get(n).getText().toLowerCase());
+            if (tokenString.length() == 0 || TextUtilities.delimiters.contains(tokenString)) {
+                n++;
+                continue;
+            }
+            boolean matchPrefix = false;
+            for (String abstractPrefix : ABSTRACT_PREFIXES) {
+                if (tokenString.equals(abstractPrefix)) {
+                    matchPrefix = true;
+                    break;
+                }
+            }
+            if (matchPrefix) {
+                n++;
+                continue;
+            }
+            break;
+        }
+
+        return tokens.subList(n, tokens.size());
+    }
+
     public static void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
             String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);

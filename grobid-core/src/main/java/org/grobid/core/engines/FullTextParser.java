@@ -169,12 +169,12 @@ public class FullTextParser extends AbstractParser {
             if (isNotBlank(resHeader.getAbstract())) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
+                    abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
                     Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
                     if (abstractProcessed != null) {
                         // neutralize figure and table annotations (will be considered as paragraphs)
                         String labeledAbstract = abstractProcessed.getLeft();
                         labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
-//System.out.println(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
                         resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
@@ -376,7 +376,6 @@ public class FullTextParser extends AbstractParser {
         }
         // add last chunk
         tokenChunks.add(currentChunk);
-//System.out.println(tokenChunks.size() + " / " + tokens.size());
         for(List<LayoutToken> chunk : tokenChunks) {
             int endInd = chunk.size()-1;
             int posStartAbstract = getDocIndexToken(doc, chunk.get(0));
@@ -391,7 +390,6 @@ public class FullTextParser extends AbstractParser {
         List<LayoutToken> layoutTokenization = null;
         if (featSeg != null) {
             String featuredText = featSeg.getLeft();
-//System.out.println(featuredText);
             LayoutTokenization layouts = featSeg.getRight();
             if (layouts != null)
                 layoutTokenization = layouts.getTokenization();
@@ -399,8 +397,7 @@ public class FullTextParser extends AbstractParser {
                 res = label(featuredText);
             }
         }
-//System.out.println(res);
-//System.out.println(layoutTokenization.size());       
+  
         return Pair.of(res, layoutTokenization);
     }
 
