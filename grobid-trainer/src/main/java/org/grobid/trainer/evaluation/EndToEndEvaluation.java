@@ -1,17 +1,11 @@
 package org.grobid.trainer.evaluation;
 
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.tagging.GenericTagger;
 import org.grobid.core.exceptions.*;
 import org.grobid.core.engines.Engine;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BibDataSet;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.trainer.Stats;
-import org.grobid.trainer.sax.NLMHeaderSaxHandler;
-import org.grobid.trainer.sax.FieldExtractSaxHandler;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
@@ -26,7 +20,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
-import org.xml.sax.helpers.*;
+
 import javax.xml.xpath.XPathConstants;
 
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;

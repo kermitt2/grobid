@@ -1,3 +1,4 @@
+.java-version
 target
 bin
 grobid-home/tmp
@@ -49,6 +50,7 @@ grobid-smecta
 grobid-example
 grobid-software
 software-mentions
+grobid-keyterm
 dataseer-ml
 grobid-test-ant
 grobid-home/models/quantities
