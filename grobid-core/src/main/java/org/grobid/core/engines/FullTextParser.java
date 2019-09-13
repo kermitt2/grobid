@@ -6,6 +6,8 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
+import java.nio.charset.StandardCharsets;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -136,22 +138,46 @@ public class FullTextParser extends AbstractParser {
             BiblioItem resHeader = new BiblioItem();
             Pair<String, LayoutTokenization> featSeg = null;
             if (GrobidProperties.isHeaderUseHeuristics()) {
+                // heuristics for identifying the header zone, this is the old version of the header block identification, 
+                // still used because more robust than the pure machine learning approach (lack of training data)
                 parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
             }
-            // above the old version of the header block identification, because more robust
-            if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
-                 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
-                 (resHeader.getFullAuthors().size() == 0) ) {
+            
+            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 resHeader = new BiblioItem();
+                // using the segmentation model to identify the header zones
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
-                // above, use the segmentation model result
-                if (doc.getMetadata() != null) {
-                    Metadata metadata = doc.getMetadata();
-                    if (metadata.getTitle() != null)
-                        resHeader.setTitle(metadata.getTitle());
-                    if (metadata.getAuthor() != null) {
+            } else {
+                // if the heuristics method was initially used, we anyway take the abstract derived from the segementation 
+                // model, because this structure is significantly more reliable with this approach
+                BiblioItem resHeader2 = new BiblioItem();
+                parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader2);
+                if (isNotBlank(resHeader2.getAbstract())) {
+                    resHeader.setAbstract(resHeader2.getAbstract());
+                    resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
+                }
+            }
+
+            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
+                // try to exploit PDF embedded metadata (the so-called XMP) if we are still without title/authors
+                // this is risky as those metadata are highly unreliable, but as last chance, why not :)
+                Metadata metadata = doc.getMetadata();
+                if (metadata != null) { 
+                    boolean titleUpdated = false;
+                    boolean authorsUpdated = false;
+
+                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle())) {
+                        if (!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".dvi", ".docx", ".odf", ".odt", ".txt")) {
+                            resHeader.setTitle(metadata.getTitle());
+                            titleUpdated = true;
+                        }
+                    }
+
+                    if (isNotBlank(metadata.getAuthor())
+                        && (isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors()))) {
                         resHeader.setAuthors(metadata.getAuthor());
                         resHeader.setOriginalAuthors(metadata.getAuthor());
+                        authorsUpdated = true;
                         List<Person> localAuthors = parsers.getAuthorParser().processingHeader(metadata.getAuthor());
                         if (localAuthors != null) {
                             for (Person pers : localAuthors) {
@@ -159,7 +185,10 @@ public class FullTextParser extends AbstractParser {
                             }
                         }
                     }
-                    if ( (metadata.getTitle() != null) && (metadata.getAuthor() != null) ) {
+
+                    // if title and author have been updated with embedded PDF metadata, we try to consolidate 
+                    // again as required 
+                    if ( titleUpdated || authorsUpdated ) {
                         parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
                     }
                 }
@@ -183,7 +212,7 @@ public class FullTextParser extends AbstractParser {
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
-            // in a second stage for all citations
+            // in a second stage for all citations which is much faster
             List<BibDataSet> resCitations = parsers.getCitationParser().
                 processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), 0);
 
@@ -209,8 +238,6 @@ public class FullTextParser extends AbstractParser {
                     "An exception occured while running consolidation on bibliographical references.", e);
                 } 
             }
-            //if (resCitations.size() == 0)
-            //    System.out.println("!!!!!! article without citations !!!!");
             doc.setBibDataSets(resCitations);
 
 			// full text processing
@@ -991,7 +1018,7 @@ public class FullTextParser extends AbstractParser {
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + 
                 pdfFileName.replace(".pdf", ".training.segmentation");
-            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
             writer.write(fulltext + "\n");
             writer.close();
 
@@ -1002,7 +1029,7 @@ public class FullTextParser extends AbstractParser {
             }
             String outPathRawtext = pathFullText + File.separator +
                 pdfFileName.replace(".pdf", ".training.segmentation.rawtxt");
-            FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
+            FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), StandardCharsets.UTF_8);
 
             if (isNotBlank(fulltext)) {
                 String rese = parsers.getSegmentationParser().label(fulltext);
@@ -1011,7 +1038,7 @@ public class FullTextParser extends AbstractParser {
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
-                        pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                        pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), StandardCharsets.UTF_8);
                 writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
@@ -1034,13 +1061,13 @@ public class FullTextParser extends AbstractParser {
                 if (tei != null) {
                     String outPath = pathTEI + "/" +
                         pdfFileName.replace(".pdf", ".training.references.referenceSegmenter.tei.xml");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
                     writer.write(tei + "\n");
                     writer.close();
 
                     // generate also the raw vector file with the features
                     outPath = pathTEI + "/" + pdfFileName.replace(".pdf", ".training.references.referenceSegmenter");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
                     writer.write(raw + "\n");
                     writer.close();
 
@@ -1048,7 +1075,7 @@ public class FullTextParser extends AbstractParser {
                     outPathRawtext = pathTEI + "/" + pdfFileName
                         .replace(".pdf", ".training.references.referenceSegmenter.rawtxt");
                     Writer strWriter = new OutputStreamWriter(
-                        new FileOutputStream(new File(outPathRawtext), false), "UTF-8");
+                        new FileOutputStream(new File(outPathRawtext), false), StandardCharsets.UTF_8);
                     strWriter.write(referencesStr + "\n");
                     strWriter.close();
                 }
@@ -1080,7 +1107,7 @@ public class FullTextParser extends AbstractParser {
 
                     Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                             File.separator +
-                            pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
+                            pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), StandardCharsets.UTF_8);
 
                     writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -1102,7 +1129,7 @@ public class FullTextParser extends AbstractParser {
                     // BIBLIO REFERENCE AUTHOR NAMES
                     Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                             File.separator +
-                            pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), "UTF-8");
+                            pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), StandardCharsets.UTF_8);
 
                     writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -1148,7 +1175,7 @@ public class FullTextParser extends AbstractParser {
     	            // we write the full text untagged
     	            outPathFulltext = pathFullText + File.separator
     					+ pdfFileName.replace(".pdf", ".training.fulltext");
-    	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+    	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
     	            writer.write(bodytext + "\n");
     	            writer.close();
 
@@ -1160,7 +1187,7 @@ public class FullTextParser extends AbstractParser {
     	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
     	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
     	                    File.separator +
-    						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
+    						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), StandardCharsets.UTF_8);
     				if (id == -1) {
     					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
     				}
@@ -1177,13 +1204,13 @@ public class FullTextParser extends AbstractParser {
     	            if (trainingFigure.getLeft().trim().length() > 0) {
     		            String outPathFigures = pathFullText + File.separator
     						+ pdfFileName.replace(".pdf", ".training.figure");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), StandardCharsets.UTF_8);
     		            writer.write(trainingFigure.getRight() + "\n\n");
     		            writer.close();
 
     					String outPathFiguresTEI = pathTEI + File.separator
     						+ pdfFileName.replace(".pdf", ".training.figure.tei.xml");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), StandardCharsets.UTF_8);
     		            writer.write(trainingFigure.getLeft() + "\n");
     		            writer.close();
     		        }
@@ -1193,13 +1220,13 @@ public class FullTextParser extends AbstractParser {
     	            if (trainingTable.getLeft().trim().length() > 0) {
     		            String outPathTables = pathFullText + File.separator
     						+ pdfFileName.replace(".pdf", ".training.table");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), StandardCharsets.UTF_8);
     		            writer.write(trainingTable.getRight() + "\n\n");
     		            writer.close();
 
     					String outPathTablesTEI = pathTEI + File.separator
     						+ pdfFileName.replace(".pdf", ".training.table.tei.xml");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), StandardCharsets.UTF_8);
     		            writer.write(trainingTable.getLeft() + "\n");
     		            writer.close();
     		        }
@@ -1335,7 +1362,7 @@ public class FullTextParser extends AbstractParser {
                     // write the training TEI file for header which reflects the extract layout of the text as
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
-                            + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), "UTF-8");
+                            + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), StandardCharsets.UTF_8);
                     writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
                             + pdfFileName.replace(".pdf", "")
                             + "\"/>\n\t</teiHeader>\n\t<text");
@@ -1354,7 +1381,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferAffiliation.length() > 0) {
                             Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), StandardCharsets.UTF_8);
                             writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
                                     + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
@@ -1375,7 +1402,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferDate.length() > 0) {
                             Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.date.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.date.xml")), false), StandardCharsets.UTF_8);
                             writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerDate.write("<dates>\n");
 
@@ -1391,7 +1418,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferName.length() > 0) {
                             Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), StandardCharsets.UTF_8);
                             writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
                                     + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
@@ -1414,7 +1441,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferReference.length() > 0) {
                             Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.reference.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.reference.xml")), false), StandardCharsets.UTF_8);
                             writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerReference.write("<citations>\n");
 
