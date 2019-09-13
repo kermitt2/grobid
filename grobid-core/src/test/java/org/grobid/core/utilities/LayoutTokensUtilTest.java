@@ -1,23 +1,17 @@
 package org.grobid.core.utilities;
 
-<<<<<<< HEAD
-=======
 import com.google.common.collect.Iterables;
->>>>>>> master
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.layout.LayoutToken;
 import org.junit.Test;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.stream.IntStream;
 
 import static org.hamcrest.Matchers.is;
-=======
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
->>>>>>> master
 import static org.junit.Assert.assertThat;
 
 public class LayoutTokensUtilTest {
