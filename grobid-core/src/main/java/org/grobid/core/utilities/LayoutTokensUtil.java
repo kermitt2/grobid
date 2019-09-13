@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Created by zholudev on 18/12/15.
@@ -311,6 +312,17 @@ public class LayoutTokensUtil {
         }
 
         return backward;
+    }
+
+    public static List<LayoutToken> subListByOffset(List<LayoutToken> token, int startIncluded) {
+        return subListByOffset(token, startIncluded, Integer.MAX_VALUE);
+    }
+
+    public static List<LayoutToken> subListByOffset(List<LayoutToken> token, int startIncluded, int endExcluded) {
+        return token
+            .stream()
+            .filter(t -> t.getOffset() >= startIncluded && t.getOffset() < endExcluded)
+            .collect(Collectors.toList());
     }
 
 }
