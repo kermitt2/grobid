@@ -158,7 +158,12 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
-            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
+            // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
+            // as fall back to set author and title if they have not been found. 
+            // However tests on PMC set 1942 did not improve recognition. This will have to be re-evaluated with
+            // another, more diverse, testing set and further update of the header model. 
+
+            /*if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 // try to exploit PDF embedded metadata (the so-called XMP) if we are still without title/authors
                 // this is risky as those metadata are highly unreliable, but as last chance, why not :)
                 Metadata metadata = doc.getMetadata();
@@ -192,7 +197,7 @@ public class FullTextParser extends AbstractParser {
                         parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
                     }
                 }
-            }
+            }*/
 
             // structure the abstract using the fulltext model
             if (isNotBlank(resHeader.getAbstract())) {
@@ -614,7 +619,7 @@ public class FullTextParser extends AbstractParser {
 	            if (tokens == null) {
 	                continue;
 	            }
-//System.out.println("we have " + tokens.size() + " tokens in the block " + blockIndex);
+
 				int n = 0;// token position in current block
 				if (blockIndex == dp1.getBlockPtr()) {
 //					n = dp1.getTokenDocPos() - block.getStartToken();
@@ -624,7 +629,6 @@ public class FullTextParser extends AbstractParser {
 				// if it's a last block from a document piece, it may end earlier
 				if (blockIndex == dp2.getBlockPtr()) {
 					lastPos = dp2.getTokenBlockPos()+1;
-//System.out.println("lastPos: " + lastPos +  " / " + tokens.size());
 					if (lastPos > tokens.size()) {
 						LOGGER.error("DocumentPointer for block " + blockIndex + " points to " +
 							dp2.getTokenBlockPos() + " token, but block token size is " +
@@ -632,11 +636,10 @@ public class FullTextParser extends AbstractParser {
 						lastPos = tokens.size();
 					}
 				}
-//System.out.println("n/lastPos: " + n + " / " + lastPos);
+
 	            while (n < lastPos) {
 					if (blockIndex == dp2.getBlockPtr()) {
 						//if (n > block.getEndToken()) {
-//System.out.println("n: " + n + " / dp2.getTokenDocPos() - block.getStartToken() " + (dp2.getTokenDocPos() - block.getStartToken())); 
 						if (n > dp2.getTokenDocPos() - block.getStartToken()) {
 							break;
 						}
@@ -666,7 +669,6 @@ public class FullTextParser extends AbstractParser {
 	                    continue;
 	                }
 
-	                //if (text.equals("\n") || text.equals("\r") ) {
 	                if (text.equals("\n")) {
 	                    newline = true;
 	                    previousNewline = true;
@@ -702,7 +704,7 @@ public class FullTextParser extends AbstractParser {
 							}
 						}
 	                }
-//System.out.println(text + "\t" + token.getX() + "\t" + lineStartX + "\t" + indented);
+
 	                features.string = text;
 
 	                if (graphicBitmap) {
