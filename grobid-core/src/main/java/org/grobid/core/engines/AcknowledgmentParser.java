@@ -1,5 +1,9 @@
 package org.grobid.core.engines;
 
+/**
+ * @created by Tanti
+ */
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Acknowledgment;
 import org.grobid.core.exceptions.GrobidException;
@@ -33,7 +37,6 @@ public class AcknowledgmentParser extends AbstractParser {
                 return null;
             for(String tok : tokenizations) {
                 if (!tok.equals(" ") && !tok.equals("\n")) {
-                    // parano final sanitisation
                     tok = tok.replaceAll("[ \n]", "");
                     acknowledgmentBlocks.add(tok + " <acknowledgment>");
                 }
@@ -41,7 +44,6 @@ public class AcknowledgmentParser extends AbstractParser {
 
             String headerAcknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(acknowledgmentBlocks);
             String res = label(headerAcknowledgment);
-            // extract results from the processed file
 
             //System.out.print(res.toString());
             StringTokenizer st2 = new StringTokenizer(res, "\n");
