@@ -1,6 +1,29 @@
 package org.grobid.core.data;
 
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
+
+import java.util.List;
+
+import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
+import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
 /**
  * Class for representing and exchanging acknowledgment information.
@@ -18,6 +41,33 @@ public class Acknowledgment {
     private String otherInstitution = null;
     private String projectName = null;
     private String researchInstitution = null;
+
+    // coordinates
+    private int page = -1;
+    private double y = 0.0;
+    private double x = 0.0;
+    private double width = 0.0;
+    private double height = 0.0;
+
+    private List<BoundingBox> textArea;
+    private List<LayoutToken> layoutTokens;
+
+    public List<BoundingBox> getTextArea() {
+        return textArea;
+    }
+
+    public void setTextArea(List<BoundingBox> textArea) {
+        this.textArea = textArea;
+    }
+
+    public List<LayoutToken> getLayoutTokens() {
+        return layoutTokens;
+    }
+
+    public void setLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.layoutTokens = layoutTokens;
+    }
+
 
     public String getAffiliation() {
         return affiliation;
@@ -92,14 +142,14 @@ public class Acknowledgment {
     }
 
     public boolean isNotNull() {
-        if ((affiliation == null) &
-            (educationalInstitution == null) &
-            (fundingAgency == null) &
-            (grantName == null) &
-            (grantNumber == null) &
-            (individual == null) &
-            (otherInstitution == null) &
-            (projectName == null) &
+        if ((affiliation == null) &&
+            (educationalInstitution == null) &&
+            (fundingAgency == null) &&
+            (grantName == null) &&
+            (grantNumber == null) &&
+            (individual == null) &&
+            (otherInstitution == null) &&
+            (projectName == null) &&
             (researchInstitution == null))
             return false;
         else
@@ -162,7 +212,7 @@ public class Acknowledgment {
         }
     }
 
-    public String toTEI(){
+    /*public String toTEI(){
         StringBuilder tei = new StringBuilder();
         if (!isNotNull()) {
             return null;
@@ -207,6 +257,56 @@ public class Acknowledgment {
             tei.append("</acknowledgment>");
         }
         return tei.toString();
+    }*/
+
+    public String toTEI() {
+        if (!isNotNull()) {
+            return null;
+        }
+
+        Element acknowledgmentElement = XmlBuilderUtils.teiElement("acknowledgment");
+
+        if (!getLayoutTokens().isEmpty()) {
+            XmlBuilderUtils.addCoords(acknowledgmentElement, LayoutTokensUtil.getCoordsString(getLayoutTokens()));
+        }
+
+        if (affiliation != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("affiliation", TextUtilities.HTMLEncode(affiliation)));
+        }
+
+        if (educationalInstitution != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("educationalInstitution", TextUtilities.HTMLEncode(educationalInstitution)));
+        }
+
+        if (fundingAgency != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("fundingAgency", TextUtilities.HTMLEncode(fundingAgency)));
+        }
+
+        if (grantName != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("grantName", TextUtilities.HTMLEncode(grantName)));
+        }
+
+        if (grantNumber != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("grantNumber", TextUtilities.HTMLEncode(grantNumber)));
+        }
+
+        if (individual != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("individual", TextUtilities.HTMLEncode(individual)));
+        }
+
+        if (otherInstitution != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("otherInstitution", TextUtilities.HTMLEncode(otherInstitution)));
+        }
+
+        if (projectName != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("projectName", TextUtilities.HTMLEncode(projectName)));
+        }
+
+        if (researchInstitution != null) {
+            acknowledgmentElement.appendChild(XmlBuilderUtils.teiElement("researchInstitution", TextUtilities.HTMLEncode(researchInstitution)));
+        }
+
+        return XmlBuilderUtils.toXml(acknowledgmentElement);
     }
 }
 

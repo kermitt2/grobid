@@ -14,6 +14,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.AcknowledgmentParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.engines.label.SegmentationLabels;
@@ -988,7 +989,7 @@ public class TEIFormatter {
                                     StringBuilder tei,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
-        List<String> allNotes = new ArrayList<String>();
+        List<String> allNotes = new ArrayList<>();
         for (DocumentPiece docPiece : documentNoteParts) {
             
             List<LayoutToken> noteTokens = doc.getDocumentPieceTokenization(docPiece);
@@ -1103,16 +1104,23 @@ public class TEIFormatter {
         return tei;
     }
 
+    // for ACKNOWLEDGMENT parser
     public StringBuilder toTEIAcknowledgement(StringBuilder buffer,
                                               String reseAcknowledgement,
                                               List<LayoutToken> tokenizationsAcknowledgement,
                                               List<BibDataSet> bds,
                                               GrobidAnalysisConfig config) throws Exception {
+        AcknowledgmentParser acknowledgmentParser = new AcknowledgmentParser();
+        //List<Acknowledgment> resultAcknoledgment = new Acknowledgment();
+
         if ((reseAcknowledgement == null) || (tokenizationsAcknowledgement == null)) {
             return buffer;
         }
 
+        List<Acknowledgment> resultAcknoledgment = new ArrayList<>();
+
         buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
+
         StringBuilder buffer2 = new StringBuilder();
 
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
@@ -1121,17 +1129,84 @@ public class TEIFormatter {
         String[] acknowResultLines = acknowResult.split("\n");
         boolean extraDiv = false;
         if (acknowResultLines.length != 0) {
+            StringBuilder result = new StringBuilder();
             for (int i = 0; i < acknowResultLines.length; i++) {
                 if (acknowResultLines[i].trim().length() == 0)
                     continue;
-                buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
+                //buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
+                //buffer.append(result + "\n");
+
+                //take the text and process the text to get the acknoledgment parts (individual, fundingAgency, etc.)
+                resultAcknoledgment = acknowledgmentParser.processing(acknowResultLines[i]);
+                //buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
+                buffer.append(markReferencesTEIAcknowledgment(resultAcknoledgment));
+                buffer.append(result + "\n");
             }
         }
+
         buffer.append("\t\t\t</div>\n\n");
 
         return buffer;
     }
 
+    public StringBuilder markReferencesTEIAcknowledgment(List<Acknowledgment> resultAcknowledgment) {
+        StringBuilder stringBuilder = null;
+        List<Element> divResults = new ArrayList<>();
+        for (int i=0;i<resultAcknowledgment.size();i++) {
+            stringBuilder = new StringBuilder();
+            Element ref = teiElement("ref");
+            if (resultAcknowledgment.get(i).getAffiliation() != null) {
+                ref.addAttribute(new Attribute("type", "affiliation"));
+                ref.appendChild(resultAcknowledgment.get(i).getAffiliation());
+            }
+
+            else if (resultAcknowledgment.get(i).getEducationalInstitution() != null) {
+                ref.addAttribute(new Attribute("type", "educationalInstitution"));
+                ref.appendChild(resultAcknowledgment.get(i).getEducationalInstitution());
+            }
+
+            else if (resultAcknowledgment.get(i).getFundingAgency() != null) {
+                ref.addAttribute(new Attribute("type", "fundingAgency"));
+                ref.appendChild(resultAcknowledgment.get(i).getFundingAgency());
+            }
+
+            else if (resultAcknowledgment.get(i).getGrantName() != null) {
+                ref.addAttribute(new Attribute("type", "grantName"));
+                ref.appendChild(resultAcknowledgment.get(i).getGrantName());
+            }
+
+            else if (resultAcknowledgment.get(i).getGrantNumber() != null) {
+                ref.addAttribute(new Attribute("type", "grantNumber"));
+                ref.appendChild(resultAcknowledgment.get(i).getGrantNumber());
+            }
+
+            else if (resultAcknowledgment.get(i).getIndividual() != null) {
+                ref.addAttribute(new Attribute("type", "individual"));
+                ref.appendChild(resultAcknowledgment.get(i).getIndividual());
+            }
+
+            else if (resultAcknowledgment.get(i).getOtherInstitution() != null) {
+                ref.addAttribute(new Attribute("type", "otherInstitution"));
+                ref.appendChild(resultAcknowledgment.get(i).getOtherInstitution());
+            }
+
+            else if (resultAcknowledgment.get(i).getProjectName() != null) {
+                ref.addAttribute(new Attribute("type", "projectName"));
+                ref.appendChild(resultAcknowledgment.get(i).getProjectName());
+            }
+
+            else if (resultAcknowledgment.get(i).getResearchInstitution() != null) {
+                ref.addAttribute(new Attribute("type", "researchInstitution"));
+                ref.appendChild(resultAcknowledgment.get(i).getResearchInstitution());
+            }
+            divResults.add(ref);
+            if (divResults.size() != 0)
+                stringBuilder.append(XmlBuilderUtils.toXml(divResults));
+            else
+                stringBuilder.append(XmlBuilderUtils.toXml(ref));
+        }
+        return stringBuilder;
+    }
 
     public StringBuilder toTEIAnnex(StringBuilder buffer,
                                     String result,
@@ -1292,7 +1367,6 @@ public class TEIFormatter {
                             doc.getReferenceMarkerMatcher(),
                             config.isGenerateTeiCoordinates("ref"), 
                             keepUnsolvedCallout);
-
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
                             config.isGenerateTeiCoordinates("ref"));
@@ -1518,7 +1592,6 @@ public class TEIFormatter {
             nodes.add(new Text(" "));
         return nodes;
     }
-
 
     public List<Node> markReferencesFigureTEI(String text, 
                                             List<LayoutToken> refTokens,
