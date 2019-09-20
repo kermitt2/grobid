@@ -20,7 +20,6 @@ import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.exceptions.GrobidServiceException;
 import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
-//import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -140,6 +139,7 @@ public class GrobidRestProcessFiles {
     public Response processFulltextDocument(final InputStream inputStream,
                                           final int consolidateHeader,
                                           final int consolidateCitations,
+                                          final boolean includeRawCitations,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
@@ -170,6 +170,7 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .includeRawCitations(includeRawCitations)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -228,6 +229,7 @@ public class GrobidRestProcessFiles {
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
                                                           final int consolidateHeader,
                                                           final int consolidateCitations,
+                                                          final boolean includeRawCitations,
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs) throws Exception {
@@ -260,6 +262,7 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .includeRawCitations(includeRawCitations)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -346,7 +349,8 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentPDF(final InputStream inputStream,
-                                             final int consolidate) throws Exception {
+                                             final int consolidate,
+                                             final boolean includeRawCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -371,7 +375,7 @@ public class GrobidRestProcessFiles {
             List<PatentItem> patents = new ArrayList<>();
             List<BibDataSet> articles = new ArrayList<>();
             retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                                                           articles, patents, consolidate);
+                                                           articles, patents, consolidate, includeRawCitations);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -409,7 +413,8 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response processCitationPatentST36(final InputStream inputStream,
-                                              final int consolidate) throws Exception {
+                                              final int consolidate,
+                                              final boolean includeRawCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -434,7 +439,7 @@ public class GrobidRestProcessFiles {
             List<PatentItem> patents = new ArrayList<>();
             List<BibDataSet> articles = new ArrayList<>();
             retVal = engine.processAllCitationsInXMLPatent(originFile.getAbsolutePath(),
-                    articles, patents, consolidate);
+                    articles, patents, consolidate, includeRawCitations);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -475,7 +480,8 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessReferencesDocument(final InputStream inputStream,
-                                                       final int consolidate) {
+                                                       final int consolidate,
+                                                       final boolean includeRawCitations) {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -508,7 +514,7 @@ public class GrobidRestProcessFiles {
                 "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
             int p = 0;
             for (BibDataSet res : results) {
-                result.append(res.toTEI(p));
+                result.append(res.toTEI(p, includeRawCitations));
                 result.append("\n");
                 p++;
             }
@@ -557,6 +563,7 @@ public class GrobidRestProcessFiles {
                                          final String fileName,
                                          final int consolidateHeader,
                                          final int consolidateCitations,
+                                         final boolean includeRawCitations,
                                          final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
@@ -578,7 +585,7 @@ public class GrobidRestProcessFiles {
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
-            out = annotate(originFile, type, engine, consolidateHeader, consolidateCitations);
+            out = annotate(originFile, type, engine, consolidateHeader, consolidateCitations, includeRawCitations);
             if (out != null) {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 out.save(outputStream);
@@ -628,7 +635,8 @@ public class GrobidRestProcessFiles {
      */
     public Response processPDFReferenceAnnotation(final InputStream inputStream,
                                                   final int consolidateHeader,
-                                                  final int consolidateCitations) throws Exception {
+                                                  final int consolidateCitations,
+                                                  final boolean includeRawCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         File originFile = null;
@@ -655,6 +663,7 @@ public class GrobidRestProcessFiles {
                 .GrobidAnalysisConfigBuilder()
                 .generateTeiCoordinates(elementWithCoords)
                 .consolidateCitations(consolidateCitations)
+                .includeRawCitations(includeRawCitations)
                 .generateTeiCoordinates(elementWithCoords)
                 .build();
 
@@ -700,7 +709,8 @@ public class GrobidRestProcessFiles {
      * citation
      */
     public Response annotateCitationPatentPDF(final InputStream inputStream,
-                                              final int consolidate) throws Exception {
+                                              final int consolidate,
+                                              final boolean includeRawCitations) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -722,7 +732,7 @@ public class GrobidRestProcessFiles {
             } 
 
             // starts conversion process
-            retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(), consolidate);
+            retVal = engine.annotateAllCitationsInPDFPatent(originFile.getAbsolutePath(), consolidate, includeRawCitations);
                     
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -762,7 +772,8 @@ public class GrobidRestProcessFiles {
     protected PDDocument annotate(File originFile, 
                                   final GrobidRestUtils.Annotation type, Engine engine,
                                   final int consolidateHeader,
-                                  final int consolidateCitations) throws Exception {
+                                  final int consolidateCitations,
+                                  final boolean includeRawCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
         // list of TEI elements that should come with coordinates
@@ -778,6 +789,7 @@ public class GrobidRestProcessFiles {
             .GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateCitations(consolidateCitations)
+            .includeRawCitations(includeRawCitations)
             .generateTeiCoordinates(elementWithCoords)
             .build();
 

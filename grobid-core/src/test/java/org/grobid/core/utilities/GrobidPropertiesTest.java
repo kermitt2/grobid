@@ -12,8 +12,10 @@ import java.io.File;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class GrobidPropertiesTest {
@@ -61,12 +63,25 @@ public class GrobidPropertiesTest {
                 .getNativeLibraryPath().getCanonicalFile());
     }
 
-    @Test(expected = GrobidPropertyException.class)
+    @Test
+    public void testIsDeLFTRedirectOutputFalseByDefault() throws IOException {
+        assertFalse(GrobidProperties.isDeLFTRedirectOutput());
+    }
+
+    @Test
+    public void testIsDeLFTRedirectOutputTrueIfSet() throws IOException {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT, "true"
+        );
+        assertTrue(GrobidProperties.isDeLFTRedirectOutput());
+    }
+
+    /*@Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(
                 GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "");
         GrobidProperties.checkProperties();
-    }
+    }*/
 
     @Test
     public void testGetTempPath() {
@@ -125,6 +140,18 @@ public class GrobidPropertiesTest {
         GrobidProperties.setUseLanguageId(value);
         assertTrue("The property has not the value expected",
                 GrobidProperties.isUseLanguageId());
+    }
+
+    @Test
+    public void testShouldUseHeaderHeuristicsByDefault() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS);
+        assertTrue("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
+    }
+
+    @Test
+    public void testShouldNotUseHeaderHeuristicsIfDisabled() {
+        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false");
+        assertFalse("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
     }
 
     @Test

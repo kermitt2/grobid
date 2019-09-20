@@ -24,3 +24,4 @@ public class TestEbookParser extends EngineTest {
 		engine.createTrainingFullTextEbook(pdfPath, newTrainingPath, newTrainingPath, 0);*/
 	}
 }
+

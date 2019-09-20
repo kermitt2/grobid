@@ -124,10 +124,22 @@ public class LayoutToken implements Comparable<LayoutToken>, Serializable {
         italic = i;
     }
 
+    public boolean isBold() {
+        return bold;
+    }
+
+    /** @use isBold() **/
+    @Deprecated
     public boolean getBold() {
         return bold;
     }
 
+    public boolean isItalic() {
+        return italic;
+    }
+
+    /** @use isItalic() **/
+    @Deprecated
     public boolean getItalic() {
         return italic;
     }

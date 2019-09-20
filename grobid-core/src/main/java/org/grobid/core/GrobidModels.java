@@ -44,7 +44,12 @@ public enum GrobidModels implements GrobidModel {
     //	ENTITIES_BIOTECH("entities/biotech"),
     ENTITIES_BIOTECH("bio"),
     ASTRO("astro"),
-    SOFTWARE("software");
+    SOFTWARE("software"),
+    DATASEER("dataseer"),
+    DUMMY("none");
+
+    //I cannot declare it before
+    public static final String DUMMY_FOLDER_LABEL = "none";
 
     /**
      * Absolute path to the model.
@@ -56,6 +61,12 @@ public enum GrobidModels implements GrobidModel {
     private static final ConcurrentMap<String, GrobidModel> models = new ConcurrentHashMap<>();
 
     GrobidModels(String folderName) {
+        if(StringUtils.equals(DUMMY_FOLDER_LABEL, folderName)) {
+            modelPath = DUMMY_FOLDER_LABEL;
+            this.folderName = DUMMY_FOLDER_LABEL;
+            return;
+        }
+
         this.folderName = folderName;
         File path = GrobidProperties.getModelPath(this);
         if (!path.exists()) {

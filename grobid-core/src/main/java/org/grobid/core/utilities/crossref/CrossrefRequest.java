@@ -1,15 +1,8 @@
 package org.grobid.core.utilities.crossref;
 
-import org.grobid.core.utilities.GrobidProperties;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Observable;
-
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -17,15 +10,15 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.HttpHost;
-import org.apache.http.conn.params.*;
-import org.apache.http.impl.conn.*;
-import org.apache.http.params.HttpProtocolParams;
+import org.grobid.core.utilities.GrobidProperties;
 
-import org.apache.commons.io.IOUtils;
-import java.net.URL;
-import java.io.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Observable;
 
 /**
  * GET crossref request

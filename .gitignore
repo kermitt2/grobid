@@ -1,4 +1,6 @@
+.java-version
 target
+bin
 grobid-home/tmp
 .DS_Store
 Thumbs.db
@@ -48,6 +50,7 @@ grobid-smecta
 grobid-example
 grobid-software
 software-mentions
+grobid-keyterm
 dataseer-ml
 grobid-test-ant
 grobid-home/models/quantities

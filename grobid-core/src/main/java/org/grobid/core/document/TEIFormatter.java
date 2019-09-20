@@ -1513,6 +1513,7 @@ public class TEIFormatter {
             if (bds.size() > 0) {
                 for (BibDataSet bib : bds) {
                     BiblioItem bit = bib.getResBib();
+                    bit.setReference(bib.getRawBib());
                     if (bit != null) {
                         tei.append("\n" + bit.toTEI(p, 0, config));
                     } else {

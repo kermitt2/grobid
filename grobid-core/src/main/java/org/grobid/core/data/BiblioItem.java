@@ -1558,7 +1558,7 @@ public class BiblioItem {
      * 
      * To be done: use a short text model to structure abstract
      */
-    final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
+    public static final String[] ABSTRACT_PREFIXES = {"abstract", "summary", "résumé", "abrégé", "a b s t r a c t"};
 
     public String cleanAbstract(String string) {
 
@@ -1594,6 +1594,36 @@ public class BiblioItem {
         res = res.replace("  ", " ");
 
         return res;
+    }
+
+    public static List<LayoutToken> cleanAbstractLayoutTokens(List<LayoutToken> tokens) {
+        if (tokens == null)
+            return null;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int n = 0;
+        while(n < tokens.size()) {
+            String tokenString = StringUtils.normalizeSpace(tokens.get(n).getText().toLowerCase());
+            if (tokenString.length() == 0 || TextUtilities.delimiters.contains(tokenString)) {
+                n++;
+                continue;
+            }
+            boolean matchPrefix = false;
+            for (String abstractPrefix : ABSTRACT_PREFIXES) {
+                if (tokenString.equals(abstractPrefix)) {
+                    matchPrefix = true;
+                    break;
+                }
+            }
+            if (matchPrefix) {
+                n++;
+                continue;
+            }
+            break;
+        }
+
+        return tokens.subList(n, tokens.size());
     }
 
     public static void cleanTitles(BiblioItem bibl) {
@@ -1885,6 +1915,7 @@ public class BiblioItem {
      * the corresponding field and reset the generic pubnum field.
      */
     public void checkIdentifier() {
+        // DOI
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(doi)) {
             Matcher doiMatcher = TextUtilities.DOIPattern.matcher(pubnum);
             if (doiMatcher.find()) { 
@@ -1892,6 +1923,7 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // arXiv id (this covers old and new versions)
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(arXivId)) {
             Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(pubnum);
             if (arxivMatcher.find()) { 
@@ -1899,7 +1931,28 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
-        // TO: PMID, PMCID, PII
+        // PMID 
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(PMID)) {
+            Matcher pmidMatcher = TextUtilities.pmidPattern.matcher(pubnum);
+            if (pmidMatcher.find()) { 
+                // last group gives the PMID digits
+                String digits = pmidMatcher.group(pmidMatcher.groupCount());
+                setPMID(digits);
+                setPubnum(null);
+            }
+        } 
+        // PMC ID
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(PMCID)) {
+            Matcher pmcidMatcher = TextUtilities.pmcidPattern.matcher(pubnum);
+            if (pmcidMatcher.find()) { 
+                // last group gives the PMC ID digits, but the prefix PMC must be added to follow the NIH guidelines
+                String digits = pmcidMatcher.group(pmcidMatcher.groupCount());
+                setPMCID("PMC"+digits);
+                setPubnum(null);
+            }
+        } 
+
+        // TODO: PII
     }
 
     /**
@@ -2699,10 +2752,16 @@ public class BiblioItem {
             }
 
             if (dedication != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<note type=\"dedication\">" + TextUtilities.HTMLEncode(dedication) + "</note>\n");
             }
 
             if (book_type != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<note type=\"report_type\">" + TextUtilities.HTMLEncode(book_type) + "</note>\n");
             }
 
@@ -2793,9 +2852,20 @@ public class BiblioItem {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<div type=\"abstract\">" + abstract_ + "</div>\n");
+                    tei.append("<div type=\"abstract\">" + TextUtilities.HTMLEncode(abstract_) + "</div>\n");
                 }
             }
+
+            if (config.getIncludeRawCitations() && !StringUtils.isEmpty(reference) ) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                String localReference = TextUtilities.HTMLEncode(reference);
+                localReference = localReference.replace("\n", " ");
+                localReference = localReference.replaceAll("( )+", " ");
+                tei.append("<note type=\"raw_reference\">" + localReference + "</note>\n");
+            }
+
             for (int i = 0; i < indent; i++) {
                 tei.append("\t");
             }
@@ -3910,7 +3980,7 @@ public class BiblioItem {
     private static volatile Pattern page = Pattern.compile("(\\d+)");
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string.
+     * Correct fields of the first biblio item based on the second one and the reference string.
      */
     public void postProcessPages() {
         if (pageRange != null) {
@@ -3971,7 +4041,7 @@ public class BiblioItem {
     }
 
     /**
-     * Correct fields of the first biblio item based on the second one and he reference string
+     * Correct fields of the first biblio item based on the second one and the reference string
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         //System.out.println("correct: \n" + bib.toTEI(0));
@@ -4209,13 +4279,13 @@ public class BiblioItem {
 
     public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel headerLabel) {
         if (labeledTokens == null)
-            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+            labeledTokens = new TreeMap<>();
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
     public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
-            labeledTokens = new TreeMap<String, List<LayoutToken>>();
+            labeledTokens = new TreeMap<>();
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, labeledResult, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
@@ -4225,11 +4295,14 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+                break;
+            }
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
             if (theList == null)
-                theList = new ArrayList<LayoutToken>();
+                theList = new ArrayList<>();
             for (LayoutToken token : clusterTokens)
                 theList.add(token);
             labeledTokens.put(clusterLabel.getLabel(), theList);

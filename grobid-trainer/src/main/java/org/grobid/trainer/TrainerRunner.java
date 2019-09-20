@@ -1,116 +1,131 @@
 package org.grobid.trainer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Training application for training a target model.
- * 
+ *
  * @author Patrice Lopez
  */
 public class TrainerRunner {
 
-	private enum RunType {
-		TRAIN, EVAL, SPLIT;
+    private static final List<String> models = Arrays.asList("affiliation", "chemical", "date", "citation", "ebook", "fulltext", "header", "name-citation", "name-header", "patent");
+    private static final List<String> options = Arrays.asList("0 - train", "1 - evaluate", "2 - split, train and evaluate", "3 - n-fold evaluation");
 
-		public static RunType getRunType(int i) {
-			for (RunType t : values()) {
-				if (t.ordinal() == i) {
-					return t;
-				}
-			}
+    private enum RunType {
+        TRAIN, EVAL, SPLIT, EVAL_N_FOLD;
 
-			throw new IllegalStateException("Unsupported RunType with ordinal " + i);
-		}
-	}
+        public static RunType getRunType(int i) {
+            for (RunType t : values()) {
+                if (t.ordinal() == i) {
+                    return t;
+                }
+            }
 
-	/**
-	 * Initialize the batch.
-	 */
-	protected static void initProcess(final String path2GbdHome, final String path2GbdProperties) {
-		GrobidProperties.getInstance();
-	}
+            throw new IllegalStateException("Unsupported RunType with ordinal " + i);
+        }
+    }
 
-	/**
-	 * Command line execution.
-	 * 
-	 * @param args
-	 *            Command line arguments.
-	 */
-	public static void main(String[] args) {
-		if (args.length < 4) {
-			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
-		}
+    protected static void initProcess(final String path2GbdHome, final String path2GbdProperties) {
+        GrobidProperties.getInstance();
+    }
 
-		RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
-		if ( (mode == RunType.SPLIT) && (args.length < 6) ) {
-			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
-		}
+    public static void main(String[] args) {
+        if (args.length < 4) {
+            throw new IllegalStateException(
+                "Usage: {" + String.join(", ", options) + "} {" + String.join(", ", models) + "} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional} -n {[int, num folds for n-fold evaluation, optional]}");
+        }
 
-		String path2GbdHome = null;
-		Double split = 0.0;
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].equals("-gH")) {
-				if (i+1 == args.length) {
-					throw new IllegalStateException("Missing path to Grobid home. ");
-				}
-				path2GbdHome = args[i + 1];
-			}
-			else if (args[i].equals("-s")) {
-				if (i+1 == args.length) {
-					throw new IllegalStateException("Missing split ratio value. ");
-				}
-				String splitRatio = args[i + 1];
-				try {					
-					split = Double.parseDouble(args[i + 1]);
-				}
-				catch(Exception e) {
-					throw new IllegalStateException("Invalid split value: " + args[i + 1]);
-				}
-				
-			}
-		}
+        RunType mode = RunType.getRunType(Integer.parseInt(args[0]));
+        if ((mode == RunType.SPLIT || mode == RunType.EVAL_N_FOLD) && (args.length < 6)) {
+            throw new IllegalStateException(
+                "Usage: {" + String.join(", ", options) + "} {" + String.join(", ", models) + "} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional} -n {[int, num folds for n-fold evaluation, optional]}");
+        }
 
-		if (path2GbdHome == null) {
-			throw new IllegalStateException(
-					"Usage: {0 - train, 1 - evaluate, 2 - split, train and evaluate} {affiliation,chemical,date,citation,ebook,fulltext,header,name-citation,name-header,patent} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional}");
-		}
+        String path2GbdHome = null;
+        double split = 0.0;
+        int numFolds = 0;
+        String outputFilePath = null;
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-gH")) {
+                if (i + 1 == args.length) {
+                    throw new IllegalStateException("Missing path to Grobid home. ");
+                }
+                path2GbdHome = args[i + 1];
+            } else if (args[i].equals("-s")) {
+                if (i + 1 == args.length) {
+                    throw new IllegalStateException("Missing split ratio value. ");
+                }
+                try {
+                    split = Double.parseDouble(args[i + 1]);
+                } catch (Exception e) {
+                    throw new IllegalStateException("Invalid split value: " + args[i + 1]);
+                }
 
-		final String path2GbdProperties = path2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
+            } else if (args[i].equals("-n")) {
+                if (i + 1 == args.length) {
+                    throw new IllegalStateException("Missing number of folds value. ");
+                }
+                try {
+                    numFolds = Integer.parseInt(args[i + 1]);
+                } catch (Exception e) {
+                    throw new IllegalStateException("Invalid number of folds value: " + args[i + 1]);
+                }
 
-		System.out.println("path2GbdHome=" + path2GbdHome + "   path2GbdProperties=" + path2GbdProperties);
-		initProcess(path2GbdHome, path2GbdProperties);
+            } else if (args[i].equals("-o")) {
+                if (i + 1 == args.length) {
+                    throw new IllegalStateException("Missing output file. ");
+                }
+                outputFilePath = args[i + 1];
 
-		String model = args[1];
+            }
+        }
 
-		AbstractTrainer trainer;
+        if (path2GbdHome == null) {
+            throw new IllegalStateException(
+                "Grobid-home path not found.\n Usage: {" + String.join(", ", options) + "} {" + String.join(", ", models) + "} -gH /path/to/Grobid/home -s { [0.0 - 1.0] - split ratio, optional} -n {[int, num folds for n-fold evaluation, optional]}");
+        }
 
-		if (model.equals("affiliation") || model.equals("affiliation-address")) {
-			trainer = new AffiliationAddressTrainer();
-		} else if (model.equals("chemical")) {
-			trainer = new ChemicalEntityTrainer();
-		} else if (model.equals("date")) {
-			trainer = new DateTrainer();
-		} else if (model.equals("citation")) {
-			trainer = new CitationTrainer();
-		} else if (model.equals("monograph")) {
-			trainer = new MonographTrainer();
-		} else if (model.equals("fulltext")) {
-			trainer = new FulltextTrainer();
-		} else if (model.equals("header")) {
-			trainer = new HeaderTrainer();
-		} else if (model.equals("name-citation")) {
-			trainer = new NameCitationTrainer();
-		} else if (model.equals("name-header")) {
-			trainer = new NameHeaderTrainer();
-		} else if (model.equals("patent")) {
-			trainer = new PatentParserTrainer();
-		} else if (model.equals("segmentation")) {
-			trainer = new SegmentationTrainer();
-		} else if (model.equals("reference-segmenter")) {
+        final String path2GbdProperties = path2GbdHome + File.separator + "config" + File.separator + "grobid.properties";
+
+        System.out.println("path2GbdHome=" + path2GbdHome + "   path2GbdProperties=" + path2GbdProperties);
+        initProcess(path2GbdHome, path2GbdProperties);
+
+        String model = args[1];
+
+        AbstractTrainer trainer;
+
+        if (model.equals("affiliation") || model.equals("affiliation-address")) {
+            trainer = new AffiliationAddressTrainer();
+        } else if (model.equals("chemical")) {
+            trainer = new ChemicalEntityTrainer();
+        } else if (model.equals("date")) {
+            trainer = new DateTrainer();
+        } else if (model.equals("citation")) {
+            trainer = new CitationTrainer();
+        } else if (model.equals("monograph")) {
+            trainer = new MonographTrainer();
+        } else if (model.equals("fulltext")) {
+            trainer = new FulltextTrainer();
+        } else if (model.equals("header")) {
+            trainer = new HeaderTrainer();
+        } else if (model.equals("name-citation")) {
+            trainer = new NameCitationTrainer();
+        } else if (model.equals("name-header")) {
+            trainer = new NameHeaderTrainer();
+        } else if (model.equals("patent")) {
+            trainer = new PatentParserTrainer();
+        } else if (model.equals("segmentation")) {
+            trainer = new SegmentationTrainer();
+        } else if (model.equals("reference-segmenter")) {
             trainer = new ReferenceSegmenterTrainer();
         } else if (model.equals("figure")) {
 		    trainer = new FigureTrainer();
@@ -122,20 +137,34 @@ public class TrainerRunner {
 			throw new IllegalStateException("The model " + model + " is unknown.");
 		}
 
-		switch (mode) {
-		case TRAIN:
-			AbstractTrainer.runTraining(trainer);
-			break;
-		case EVAL:
-			AbstractTrainer.runEvaluation(trainer);
-			break;
-		case SPLIT:
-			AbstractTrainer.runSplitTrainingEvaluation(trainer, split);
-			break;
-		default:
-			throw new IllegalStateException("Invalid RunType: " + mode.name());
-		}
-		System.exit(0);
-	}
+        switch (mode) {
+            case TRAIN:
+                AbstractTrainer.runTraining(trainer);
+                break;
+            case EVAL:
+                System.out.println(AbstractTrainer.runEvaluation(trainer));
+                break;
+            case SPLIT:
+                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
+                break;
+            case EVAL_N_FOLD:
+                if(numFolds == 0) {
+                    throw new IllegalArgumentException("N should be > 0");
+                }
+                if (StringUtils.isNotEmpty(outputFilePath)) {
+                    Path outputPath = Paths.get(outputFilePath);
+                    if (Files.exists(outputPath)) {
+                        System.err.println("Output file exists. ");
+                    }
+                } else {
+                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
+                    System.out.println(results);
+                }
+                break;
+            default:
+                throw new IllegalStateException("Invalid RunType: " + mode.name());
+        }
+        System.exit(0);
+    }
 
 }

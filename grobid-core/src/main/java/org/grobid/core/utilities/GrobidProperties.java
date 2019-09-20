@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -22,7 +24,6 @@ import java.util.Properties;
  * to a system property having the same name.
  *
  * @author Florian Zipser, Patrice
- *
  */
 public class GrobidProperties {
     public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
@@ -75,6 +76,7 @@ public class GrobidProperties {
      * Internal property object, where all properties are defined.
      */
     private static Properties props = null;
+    private static String pythonVirtualEnv = "";
 
     /**
      * Resets this class and all its static fields. For instance sets the
@@ -187,7 +189,7 @@ public class GrobidProperties {
             GROBID_HOME_PATH = grobidHome.getCanonicalFile();
         } catch (IOException e) {
             throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + pGROBID_HOME_PATH
-                    + "', because it does not exist.");
+                + "', because it does not exist.");
         }
     }
 
@@ -232,7 +234,7 @@ public class GrobidProperties {
             GROBID_PROPERTY_PATH = grobidPropPath.getCanonicalFile();
         } catch (IOException e) {
             throw new GrobidPropertyException("Cannot set grobid home path to the given one '" + pGrobidPropertiesPath
-                    + "', because it does not exist.");
+                + "', because it does not exist.");
         }
     }
 
@@ -296,7 +298,7 @@ public class GrobidProperties {
             getProps().load(new FileInputStream(getGrobidPropertiesPath()));
         } catch (IOException exp) {
             throw new GrobidPropertyException("Cannot open file of grobid.properties at location'" + GROBID_PROPERTY_PATH.getAbsolutePath()
-                    + "'", exp);
+                + "'", exp);
         } catch (Exception exp) {
             throw new GrobidPropertyException("Cannot open file of grobid properties" + getGrobidPropertiesPath().getAbsolutePath(), exp);
         }
@@ -308,8 +310,8 @@ public class GrobidProperties {
     }
 
     private static void loadCrfEngine() {
-        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE, 
-                                                               GrobidCRFEngine.WAPITI.name()));
+        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
+            GrobidCRFEngine.WAPITI.name()));
     }
 
     /**
@@ -353,7 +355,7 @@ public class GrobidProperties {
                 if (!path.isAbsolute()) {
                     try {
                         getProps().put(propKey,
-                                new File(get_GROBID_HOME_PATH().getAbsoluteFile(), path.getPath()).getCanonicalFile().toString());
+                            new File(get_GROBID_HOME_PATH().getAbsoluteFile(), path.getPath()).getCanonicalFile().toString());
                     } catch (IOException e) {
                         throw new GrobidResourceException("Cannot read the path of '" + propKey + "'.");
                     }
@@ -385,6 +387,8 @@ public class GrobidProperties {
         Enumeration<?> properties = getProps().propertyNames();
         for (String propKey; properties.hasMoreElements(); ) {
             propKey = (String) properties.nextElement();
+            if (propKey.equals("grobid.delft.python.virtualEnv"))
+                continue;
             String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
             if (StringUtils.isBlank(propVal)) {
                 throw new GrobidPropertyException("The property '" + propKey + "' is null or empty. Please set this value.");
@@ -415,9 +419,15 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
+    public static boolean isHeaderUseHeuristics() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
+        );
+    }
+
     /**
-     * Returns the installation path of DeLFT if set, null otherwise. It is required for using 
-     * a Deep Learning sequence labelling engine. 
+     * Returns the installation path of DeLFT if set, null otherwise. It is required for using
+     * a Deep Learning sequence labelling engine.
      *
      * @return folder that contains the local install of DeLFT
      */
@@ -428,11 +438,17 @@ public class GrobidProperties {
     public static String getDeLFTFilePath() {
         String rawPath = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_PATH);
         File pathFile = new File(rawPath);
-        if (!pathFile.exists()) {
+        if (!Files.exists(Paths.get(rawPath).toAbsolutePath())) {
             rawPath = "../" + rawPath;
             pathFile = new File(rawPath);
         }
         return pathFile.getAbsolutePath();
+    }
+
+    public static boolean isDeLFTRedirectOutput() {
+        return Utilities.stringToBoolean(
+            getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT)
+        );
     }
 
     public static String getGluttonHost() {
@@ -445,7 +461,7 @@ public class GrobidProperties {
             val = null;
         if (val == null)
             return null;
-        else 
+        else
             return Integer.valueOf(val);
     }
 
@@ -453,7 +469,7 @@ public class GrobidProperties {
         String rawValue = getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_ELMO);
         if (rawValue.equals("true"))
             return true;
-        else if (rawValue.equals("false")) 
+        else if (rawValue.equals("false"))
             return false;
         return false;
     }
@@ -494,12 +510,12 @@ public class GrobidProperties {
             val = null;
         if (val == null)
             return null;
-        else 
+        else
             return Integer.valueOf(val);
     }
 
     /**
-     * Set the "mailto" parameter to be used in the crossref query and in User-Agent 
+     * Set the "mailto" parameter to be used in the crossref query and in User-Agent
      * header, as recommended by CrossRef REST API documentation.
      *
      * @param mailto email parameter to be used for requesting crossref
@@ -509,7 +525,7 @@ public class GrobidProperties {
     }
 
     /**
-     * Get the "mailto" parameter to be used in the crossref query and in User-Agent 
+     * Get the "mailto" parameter to be used in the crossref query and in User-Agent
      * header, as recommended by CrossRef REST API documentation.
      *
      * @return string of the email parameter to be used for requesting crossref
@@ -525,7 +541,7 @@ public class GrobidProperties {
 
     /**
      * Set the Crossref Metadata Plus authorization token to be used for Crossref
-     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests for the subscribers of this service.  This token will ensure that said
      * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
      *
      * @param token authorization token to be used for requesting crossref
@@ -534,9 +550,9 @@ public class GrobidProperties {
         setPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_TOKEN, token);
     }
 
-     /**
+    /**
      * Get the Crossref Metadata Plus authorization token to be used for Crossref
-     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests for the subscribers of this service.  This token will ensure that said
      * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
      *
      * @return authorization token to be used for requesting crossref
@@ -584,6 +600,7 @@ public class GrobidProperties {
 
 
     // PDFs with more blocks will be skipped
+
     public static Integer getPdfBlocksMax() {
         return Integer.valueOf(getPropertyValue(GrobidPropertyKeys.PROP_PDF_BLOCKS_MAX, "100000"));
     }
@@ -659,7 +676,7 @@ public class GrobidProperties {
         pathToPdfToXml = new File(pathName);
         if (!pathToPdfToXml.exists()) {
             throw new GrobidPropertyException(
-                    "Path to 3rd party program (pdf to xml) doesn't exists. Please set the path to the pdf to xml program in the file grobid.properties with the property grobid.3rdparty.pdf2xml");
+                "Path to 3rd party program (pdf to xml) doesn't exists. Please set the path to the pdf to xml program in the file grobid.properties with the property grobid.3rdparty.pdf2xml");
         }
 
         pathToPdfToXml = new File(pathToPdfToXml, Utilities.getOsNameAndArch());
@@ -682,12 +699,12 @@ public class GrobidProperties {
 
     public static File getModelPath(final GrobidModel model) {
         String extension = grobidCRFEngine.getExt();
-        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT && 
+        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT &&
             (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
-            extension = "wapiti"; 
+            extension = "wapiti";
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
-                + model.getFolderName() + File.separator
-                + FILE_NAME_MODEL + "." + extension);
+            + model.getFolderName() + File.separator
+            + FILE_NAME_MODEL + "." + extension);
     }
 
     public static File getModelPath() {
@@ -696,10 +713,10 @@ public class GrobidProperties {
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModel model) {
         File theFile = new File(resourcesDir, "dataset/" + model.getFolderName()
-                + "/crfpp-templates/" + model.getTemplateName());
+            + "/crfpp-templates/" + model.getTemplateName());
         if (!theFile.exists()) {
             theFile = new File("resources/dataset/" + model.getFolderName()
-                    + "/crfpp-templates/" + model.getTemplateName());
+                + "/crfpp-templates/" + model.getTemplateName());
         }
         return theFile;
     }
@@ -757,7 +774,6 @@ public class GrobidProperties {
 
     /**
      * Set which consolidation service to use
-     *
      */
     public static void setConsolidationService(String service) {
         setPropertyValue(GrobidPropertyKeys.PROP_CONSOLIDATION_SERVICE, service);
@@ -789,4 +805,12 @@ public class GrobidProperties {
         setPropertyValue(GrobidPropertyKeys.PROP_GROBID_VERSION, version);
     }
 
+
+    public static String getPythonVirtualEnv() {
+        return getPropertyValue(GrobidPropertyKeys.PYTHON_VIRTUALENV_DIRECTORY);
+    }
+
+    public static void setPythonVirtualEnv(String pythonVirtualEnv) {
+        setPropertyValue(GrobidPropertyKeys.PYTHON_VIRTUALENV_DIRECTORY, pythonVirtualEnv);
+    }
 }
