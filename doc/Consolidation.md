@@ -4,7 +4,7 @@ In GROBID, we call __consolidation__ the usage of an external bibliographical se
 
 Consolidation has two main interests:
 
-* The consolidation service improves very significantly the retrieval of header information (+.12 to .13 in f-score, e.g. from 74.59 f-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 86.62 f-score, using biblio-glutton and GROBID version 0.5.5 for the PMC 1942 dataset, see the [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)). 
+* The consolidation service improves very significantly the retrieval of header information (+.12 to .13 in f-score, e.g. from 74.59 f-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 88.89 f-score, using biblio-glutton and GROBID version 0.5.6-SNAPSHOT for the PMC 1942 dataset, see the [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)). 
 
 * The consolidation service matches the extracted bibliographical references with known publications, and complement the parsed bibliographical references with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
 
