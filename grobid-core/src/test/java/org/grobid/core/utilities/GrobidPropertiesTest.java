@@ -76,12 +76,12 @@ public class GrobidPropertiesTest {
         assertTrue(GrobidProperties.isDeLFTRedirectOutput());
     }
 
-    @Test(expected = GrobidPropertyException.class)
+    /*@Test(expected = GrobidPropertyException.class)
     public void testCheckPropertiesException_shouldThrowException() {
         GrobidProperties.getProps().put(
                 GrobidPropertyKeys.PROP_3RD_PARTY_PDFTOXML, "");
         GrobidProperties.checkProperties();
-    }
+    }*/
 
     @Test
     public void testGetTempPath() {

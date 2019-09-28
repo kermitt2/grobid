@@ -175,7 +175,7 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
     	GrobidProperties.getInstance();
         Trainer trainer = new AffiliationAddressTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 

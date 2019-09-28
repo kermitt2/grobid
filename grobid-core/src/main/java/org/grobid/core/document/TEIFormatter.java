@@ -988,7 +988,7 @@ public class TEIFormatter {
                                     StringBuilder tei,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
-        List<String> allNotes = new ArrayList<String>();
+        List<String> allNotes = new ArrayList<>();
         for (DocumentPiece docPiece : documentNoteParts) {
             
             List<LayoutToken> noteTokens = doc.getDocumentPieceTokenization(docPiece);
@@ -1280,7 +1280,7 @@ public class TEIFormatter {
                 curParagraph.appendChild(clusterContent);
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
-                refTokens = TextUtilities.dehyphenize(refTokens);
+                refTokens = LayoutTokensUtil.dehyphenize(refTokens);
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
 
                 Element parent = curParagraph != null ? curParagraph : curDiv;

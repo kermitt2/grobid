@@ -2,8 +2,11 @@ package org.grobid.core.engines;
 
 import com.google.common.collect.Iterables;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
+
+import java.nio.charset.StandardCharsets;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
@@ -52,6 +55,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -134,22 +138,51 @@ public class FullTextParser extends AbstractParser {
             BiblioItem resHeader = new BiblioItem();
             Pair<String, LayoutTokenization> featSeg = null;
             if (GrobidProperties.isHeaderUseHeuristics()) {
+                // heuristics for identifying the header zone, this is the old version of the header block identification, 
+                // still used because more robust than the pure machine learning approach (lack of training data)
                 parsers.getHeaderParser().processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
             }
-            // above the old version of the header block identification, because more robust
-            if ((resHeader.getTitle() == null) || (resHeader.getTitle().trim().length() == 0) ||
-                 (resHeader.getAuthors() == null) || (resHeader.getFullAuthors() == null) ||
-                 (resHeader.getFullAuthors().size() == 0) ) {
+            
+            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 resHeader = new BiblioItem();
+                // using the segmentation model to identify the header zones
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
-                // above, use the segmentation model result
-                if (doc.getMetadata() != null) {
-                    Metadata metadata = doc.getMetadata();
-                    if (metadata.getTitle() != null)
-                        resHeader.setTitle(metadata.getTitle());
-                    if (metadata.getAuthor() != null) {
+            } else {
+                // if the heuristics method was initially used, we anyway take the abstract derived from the segementation 
+                // model, because this structure is significantly more reliable with this approach
+                BiblioItem resHeader2 = new BiblioItem();
+                parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader2);
+                if (isNotBlank(resHeader2.getAbstract())) {
+                    resHeader.setAbstract(resHeader2.getAbstract());
+                    resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
+                }
+            }
+
+            // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
+            // as fall back to set author and title if they have not been found. 
+            // However tests on PMC set 1942 did not improve recognition. This will have to be re-evaluated with
+            // another, more diverse, testing set and with further updates of the header model. 
+            // DO NOT DELETE !
+            /*if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
+                // try to exploit PDF embedded metadata (the so-called XMP) if we are still without title/authors
+                // this is risky as those metadata are highly unreliable, but as last chance, why not :)
+                Metadata metadata = doc.getMetadata();
+                if (metadata != null) { 
+                    boolean titleUpdated = false;
+                    boolean authorsUpdated = false;
+
+                    if (isNotBlank(metadata.getTitle()) && isBlank(resHeader.getTitle())) {
+                        if (!endsWithAny(lowerCase(metadata.getTitle()), ".doc", ".pdf", ".tex", ".dvi", ".docx", ".odf", ".odt", ".txt")) {
+                            resHeader.setTitle(metadata.getTitle());
+                            titleUpdated = true;
+                        }
+                    }
+
+                    if (isNotBlank(metadata.getAuthor())
+                        && (isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors()))) {
                         resHeader.setAuthors(metadata.getAuthor());
                         resHeader.setOriginalAuthors(metadata.getAuthor());
+                        authorsUpdated = true;
                         List<Person> localAuthors = parsers.getAuthorParser().processingHeader(metadata.getAuthor());
                         if (localAuthors != null) {
                             for (Person pers : localAuthors) {
@@ -157,42 +190,34 @@ public class FullTextParser extends AbstractParser {
                             }
                         }
                     }
-                    if ( (metadata.getTitle() != null) && (metadata.getAuthor() != null) ) {
+
+                    // if title and author have been updated with embedded PDF metadata, we try to consolidate 
+                    // again as required 
+                    if ( titleUpdated || authorsUpdated ) {
                         parsers.getHeaderParser().consolidateHeader(resHeader, config.getConsolidateHeader());
                     }
                 }
-            }
+            }*/
+
             // structure the abstract using the fulltext model
-            if ( (resHeader.getAbstract() != null) && (resHeader.getAbstract().length() > 0) ) {
+            if (isNotBlank(resHeader.getAbstract())) {
                 List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                if ( (abstractTokens != null) && (abstractTokens.size()>0) ) {
-                    SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
-                    int endInd = abstractTokens.size()-1;
-                    int posStartAbstract = getDocIndexToken(doc, abstractTokens.get(0));
-                    int posEndAbstract = getDocIndexToken(doc, abstractTokens.get(endInd));
-                    DocumentPointer dp1 = new DocumentPointer(doc, abstractTokens.get(0).getBlockPtr(), posStartAbstract);
-                    DocumentPointer dp2 = new DocumentPointer(doc, abstractTokens.get(endInd).getBlockPtr(), posEndAbstract);
-                    DocumentPiece piece = new DocumentPiece(dp1, dp2);
-                    documentParts.add(piece);
-                    featSeg = getBodyTextFeatured(doc, documentParts);
-                    String rese2 = null;
-                    List<LayoutToken> tokenizationsAbstract = null;
-                    if (featSeg != null) {
-                        // if featSeg is null, it usually means that no body segment is found in the
-                        // document segmentation
-                        String abstractText = featSeg.getLeft();
-                        tokenizationsAbstract = featSeg.getRight().getTokenization();
-                        if (isNotEmpty(trim(abstractText))) 
-                            rese2 = label(abstractText);
-                        resHeader.setLabeledAbstract(rese2);
-                        resHeader.setLayoutTokensForLabel(tokenizationsAbstract, TaggingLabels.HEADER_ABSTRACT);
+                if (CollectionUtils.isNotEmpty(abstractTokens)) {
+                    abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
+                    Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
+                    if (abstractProcessed != null) {
+                        // neutralize figure and table annotations (will be considered as paragraphs)
+                        String labeledAbstract = abstractProcessed.getLeft();
+                        labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
+                        resHeader.setLabeledAbstract(labeledAbstract);
+                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
             }
 
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
-            // in a second stage for all citations
+            // in a second stage for all citations which is much faster
             List<BibDataSet> resCitations = parsers.getCitationParser().
                 processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), 0);
 
@@ -218,8 +243,6 @@ public class FullTextParser extends AbstractParser {
                     "An exception occured while running consolidation on bibliographical references.", e);
                 } 
             }
-            //if (resCitations.size() == 0)
-            //    System.out.println("!!!!!! article without citations !!!!");
             doc.setBibDataSets(resCitations);
 
 			// full text processing
@@ -268,7 +291,7 @@ public class FullTextParser extends AbstractParser {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
-            
+
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
@@ -300,37 +323,91 @@ public class FullTextParser extends AbstractParser {
     }
 
     /**
-     * Process a simple segment of layout tokens with the full text model
+     * Process a simple segment of layout tokens with the full text model.
+     * Return null if provided Layout Tokens is empty or if structuring failed. 
      */
-    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
+    public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
+        if (CollectionUtils.isEmpty(tokens))
+            return null;
+
         SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
+        // identify continuous sequence of layout tokens in the abstract
+        int posStartPiece = -1;
+        int currentOffset = -1;
+        int startBlockPtr = -1;
+        LayoutToken previousToken = null;
+        for(LayoutToken token : tokens) {
+            if (currentOffset == -1) {
+                posStartPiece = getDocIndexToken(doc, token);
+                startBlockPtr = token.getBlockPtr();
+            } else if (token.getOffset() != currentOffset + previousToken.getText().length()) {
+                // new DocumentPiece to be added 
+                DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartPiece);
+                DocumentPointer dp2 = new DocumentPointer(doc, 
+                    previousToken.getBlockPtr(), 
+                    getDocIndexToken(doc, previousToken));
+                DocumentPiece piece = new DocumentPiece(dp1, dp2);
+                documentParts.add(piece);
+
+                // set index for the next DocumentPiece
+                posStartPiece = getDocIndexToken(doc, token);
+                startBlockPtr = token.getBlockPtr();
+            }
+            currentOffset = token.getOffset();
+            previousToken = token;
+        }
+        // we still need to add the last document piece
+        // conditional below should always be true because abstract is not null if we reach this part, but paranoia is good when programming 
+        if (posStartPiece != -1) {
+            DocumentPointer dp1 = new DocumentPointer(doc, startBlockPtr, posStartPiece);
+            DocumentPointer dp2 = new DocumentPointer(doc, 
+                previousToken.getBlockPtr(), 
+                getDocIndexToken(doc, previousToken));
+            DocumentPiece piece = new DocumentPiece(dp1, dp2);
+            documentParts.add(piece);
+        }
+
+        Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
+        String res = "";
+        List<LayoutToken> layoutTokenization = new ArrayList<>();
+        if (featSeg != null) {
+            String featuredText = featSeg.getLeft();
+            LayoutTokenization layouts = featSeg.getRight();
+            if (layouts != null)
+                layoutTokenization = layouts.getTokenization();
+            if (isNotBlank(featuredText)) {
+                res = label(featuredText);
+            }
+        }  else
+            return null;
+
+        return Pair.of(res, layoutTokenization);
+    }
+
+    public Pair<String, List<LayoutToken>> processShort(List<LayoutToken> tokens, Document doc) {
+        if (CollectionUtils.isEmpty(tokens))
+            return null;
+
+        SortedSet<DocumentPiece> documentParts = new TreeSet<>();
 
         // we need to identify all the continuous chunks of tokens, and ignore the others
-        List<List<LayoutToken>> tokenChunks = new ArrayList<List<LayoutToken>>();
-        List<LayoutToken> currentChunk = new ArrayList<LayoutToken>();
+        List<List<LayoutToken>> tokenChunks = new ArrayList<>();
+        List<LayoutToken> currentChunk = new ArrayList<>();
         int currentPos = 0;
         for(LayoutToken token : tokens) {
-            if (currentChunk.size() == 0) {
-                currentChunk.add(token);
-                currentPos = token.getOffset() + token.getText().length();
-            } else {
+            if (currentChunk.size() != 0) {
                 int tokenPos = token.getOffset();
-                if (currentPos+1 == tokenPos) {
-                    // continous
-                    currentChunk.add(token);
-                    currentPos = token.getOffset() + token.getText().length();
-                } else {
+                if (currentPos != tokenPos) {
                     // new chunk
                     tokenChunks.add(currentChunk);
                     currentChunk = new ArrayList<LayoutToken>();
-                    currentChunk.add(token);
-                    currentPos = token.getOffset() + token.getText().length();
                 }
             }
+            currentChunk.add(token);
+            currentPos = token.getOffset() + token.getText().length();
         }
         // add last chunk
         tokenChunks.add(currentChunk);
-
         for(List<LayoutToken> chunk : tokenChunks) {
             int endInd = chunk.size()-1;
             int posStartAbstract = getDocIndexToken(doc, chunk.get(0));
@@ -345,15 +422,50 @@ public class FullTextParser extends AbstractParser {
         List<LayoutToken> layoutTokenization = null;
         if (featSeg != null) {
             String featuredText = featSeg.getLeft();
-            LayoutTokenization layouts = featSeg.getRight();    
+            LayoutTokenization layouts = featSeg.getRight();
             if (layouts != null)
                 layoutTokenization = layouts.getTokenization();
             if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {               
                 res = label(featuredText);
             }
         }
+  
         return Pair.of(res, layoutTokenization);
     }
+
+    static protected String postProcessLabeledAbstract(String labeledAbstract) {
+        if (labeledAbstract == null) 
+            return null;     
+        StringBuilder result = new StringBuilder();
+
+        String[] lines = labeledAbstract.split("\n");
+        String previousLabel = null;
+        for(int i=0; i<lines.length; i++) {
+            String line = lines[i];
+            if (line == null || line.trim().length() == 0)
+                continue;
+            String[] pieces = line.split("\t");
+            String label = pieces[pieces.length-1];
+            if (label.equals("I-"+TaggingLabels.FIGURE.getLabel()) || label.equals("I-"+TaggingLabels.TABLE.getLabel())) {
+                if (previousLabel == null || !previousLabel.endsWith(TaggingLabels.PARAGRAPH.getLabel())) {
+                    pieces[pieces.length-1] = "I-"+TaggingLabels.PARAGRAPH.getLabel();
+                } else {
+                    pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
+                } 
+            } else if (label.equals(TaggingLabels.FIGURE.getLabel()) || label.equals(TaggingLabels.TABLE.getLabel())) {
+                pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
+            }
+            for(int j=0; j<pieces.length; j++) {
+                if (j != 0)
+                    result.append("\t");
+                result.append(pieces[j]);
+            }
+            previousLabel = label;
+            result.append("\n");
+        }
+
+        return result.toString();
+    } 
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
                                                                        SortedSet<DocumentPiece> documentBodyParts) {
@@ -425,7 +537,7 @@ public class FullTextParser extends AbstractParser {
 		List<LayoutToken> layoutTokens = new ArrayList<LayoutToken>();
 		fulltextLength = getFulltextLength(doc, documentBodyParts, fulltextLength);
 
-		// System.out.println("fulltextLength: " + fulltextLength);
+//System.out.println("fulltextLength: " + fulltextLength);
 
 		for(DocumentPiece docPiece : documentBodyParts) {
 			DocumentPointer dp1 = docPiece.getLeft();
@@ -433,7 +545,8 @@ public class FullTextParser extends AbstractParser {
 
 			//int blockPos = dp1.getBlockPtr();
 			for(int blockIndex = dp1.getBlockPtr(); blockIndex <= dp2.getBlockPtr(); blockIndex++) {
-				boolean graphicVector = false;
+//System.out.println("blockIndex: " + blockIndex);			
+                boolean graphicVector = false;
 	    		boolean graphicBitmap = false;
             	Block block = blocks.get(blockIndex);
             	// length of the page where the current block is
@@ -515,8 +628,8 @@ public class FullTextParser extends AbstractParser {
 				int lastPos = tokens.size();
 				// if it's a last block from a document piece, it may end earlier
 				if (blockIndex == dp2.getBlockPtr()) {
-					lastPos = dp2.getTokenBlockPos();
-					if (lastPos >= tokens.size()) {
+					lastPos = dp2.getTokenBlockPos()+1;
+					if (lastPos > tokens.size()) {
 						LOGGER.error("DocumentPointer for block " + blockIndex + " points to " +
 							dp2.getTokenBlockPos() + " token, but block token size is " +
 							tokens.size());
@@ -556,7 +669,6 @@ public class FullTextParser extends AbstractParser {
 	                    continue;
 	                }
 
-	                //if (text.equals("\n") || text.equals("\r") ) {
 	                if (text.equals("\n")) {
 	                    newline = true;
 	                    previousNewline = true;
@@ -592,7 +704,7 @@ public class FullTextParser extends AbstractParser {
 							}
 						}
 	                }
-//System.out.println(text + "\t" + token.getX() + "\t" + lineStartX + "\t" + indented);
+
 	                features.string = text;
 
 	                if (graphicBitmap) {
@@ -908,7 +1020,7 @@ public class FullTextParser extends AbstractParser {
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + 
                 pdfFileName.replace(".pdf", ".training.segmentation");
-            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+            Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
             writer.write(fulltext + "\n");
             writer.close();
 
@@ -919,7 +1031,7 @@ public class FullTextParser extends AbstractParser {
             }
             String outPathRawtext = pathFullText + File.separator +
                 pdfFileName.replace(".pdf", ".training.segmentation.rawtxt");
-            FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), "UTF-8");
+            FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), StandardCharsets.UTF_8);
 
             if (isNotBlank(fulltext)) {
                 String rese = parsers.getSegmentationParser().label(fulltext);
@@ -928,7 +1040,7 @@ public class FullTextParser extends AbstractParser {
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
-                        pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
+                        pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), StandardCharsets.UTF_8);
                 writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
@@ -951,13 +1063,13 @@ public class FullTextParser extends AbstractParser {
                 if (tei != null) {
                     String outPath = pathTEI + "/" +
                         pdfFileName.replace(".pdf", ".training.references.referenceSegmenter.tei.xml");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
                     writer.write(tei + "\n");
                     writer.close();
 
                     // generate also the raw vector file with the features
                     outPath = pathTEI + "/" + pdfFileName.replace(".pdf", ".training.references.referenceSegmenter");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
                     writer.write(raw + "\n");
                     writer.close();
 
@@ -965,7 +1077,7 @@ public class FullTextParser extends AbstractParser {
                     outPathRawtext = pathTEI + "/" + pdfFileName
                         .replace(".pdf", ".training.references.referenceSegmenter.rawtxt");
                     Writer strWriter = new OutputStreamWriter(
-                        new FileOutputStream(new File(outPathRawtext), false), "UTF-8");
+                        new FileOutputStream(new File(outPathRawtext), false), StandardCharsets.UTF_8);
                     strWriter.write(referencesStr + "\n");
                     strWriter.close();
                 }
@@ -997,7 +1109,7 @@ public class FullTextParser extends AbstractParser {
 
                     Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                             File.separator +
-                            pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), "UTF-8");
+                            pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), StandardCharsets.UTF_8);
 
                     writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -1019,7 +1131,7 @@ public class FullTextParser extends AbstractParser {
                     // BIBLIO REFERENCE AUTHOR NAMES
                     Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                             File.separator +
-                            pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), "UTF-8");
+                            pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), StandardCharsets.UTF_8);
 
                     writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
@@ -1065,7 +1177,7 @@ public class FullTextParser extends AbstractParser {
     	            // we write the full text untagged
     	            outPathFulltext = pathFullText + File.separator
     					+ pdfFileName.replace(".pdf", ".training.fulltext");
-    	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
+    	            writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), StandardCharsets.UTF_8);
     	            writer.write(bodytext + "\n");
     	            writer.close();
 
@@ -1077,7 +1189,7 @@ public class FullTextParser extends AbstractParser {
     	            // write the TEI file to reflect the extract layout of the text as extracted from the pdf
     	            writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
     	                    File.separator +
-    						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), "UTF-8");
+    						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), StandardCharsets.UTF_8);
     				if (id == -1) {
     					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
     				}
@@ -1094,13 +1206,13 @@ public class FullTextParser extends AbstractParser {
     	            if (trainingFigure.getLeft().trim().length() > 0) {
     		            String outPathFigures = pathFullText + File.separator
     						+ pdfFileName.replace(".pdf", ".training.figure");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFigures), false), StandardCharsets.UTF_8);
     		            writer.write(trainingFigure.getRight() + "\n\n");
     		            writer.close();
 
     					String outPathFiguresTEI = pathTEI + File.separator
     						+ pdfFileName.replace(".pdf", ".training.figure.tei.xml");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFiguresTEI), false), StandardCharsets.UTF_8);
     		            writer.write(trainingFigure.getLeft() + "\n");
     		            writer.close();
     		        }
@@ -1110,13 +1222,13 @@ public class FullTextParser extends AbstractParser {
     	            if (trainingTable.getLeft().trim().length() > 0) {
     		            String outPathTables = pathFullText + File.separator
     						+ pdfFileName.replace(".pdf", ".training.table");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTables), false), StandardCharsets.UTF_8);
     		            writer.write(trainingTable.getRight() + "\n\n");
     		            writer.close();
 
     					String outPathTablesTEI = pathTEI + File.separator
     						+ pdfFileName.replace(".pdf", ".training.table.tei.xml");
-    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), "UTF-8");
+    					writer = new OutputStreamWriter(new FileOutputStream(new File(outPathTablesTEI), false), StandardCharsets.UTF_8);
     		            writer.write(trainingTable.getLeft() + "\n");
     		            writer.close();
     		        }
@@ -1150,7 +1262,7 @@ public class FullTextParser extends AbstractParser {
 
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
-                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), "UTF-8");
+                    writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
 
@@ -1252,7 +1364,7 @@ public class FullTextParser extends AbstractParser {
                     // write the training TEI file for header which reflects the extract layout of the text as
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
-                            + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), "UTF-8");
+                            + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), StandardCharsets.UTF_8);
                     writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
                             + pdfFileName.replace(".pdf", "")
                             + "\"/>\n\t</teiHeader>\n\t<text");
@@ -1271,7 +1383,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferAffiliation.length() > 0) {
                             Writer writerAffiliation = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), StandardCharsets.UTF_8);
                             writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
                                     + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
@@ -1292,7 +1404,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferDate.length() > 0) {
                             Writer writerDate = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.date.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.date.xml")), false), StandardCharsets.UTF_8);
                             writerDate.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerDate.write("<dates>\n");
 
@@ -1308,7 +1420,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferName.length() > 0) {
                             Writer writerName = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), StandardCharsets.UTF_8);
                             writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                             writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
                                     + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
@@ -1331,7 +1443,7 @@ public class FullTextParser extends AbstractParser {
                         if (bufferReference.length() > 0) {
                             Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                                     File.separator
-                                    + pdfFileName.replace(".pdf", ".training.header.reference.xml")), false), "UTF-8");
+                                    + pdfFileName.replace(".pdf", ".training.header.reference.xml")), false), StandardCharsets.UTF_8);
                             writerReference.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                             writerReference.write("<citations>\n");
 
