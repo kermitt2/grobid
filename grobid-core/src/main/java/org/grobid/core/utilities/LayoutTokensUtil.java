@@ -23,9 +23,6 @@ import java.util.stream.Collectors;
  */
 public class LayoutTokensUtil {
 
-    private final static Pattern LOWERCASE_LETTERS = Pattern.compile("[a-z]+");
-    private final static Pattern UPPER_AND_LOWERCASE_LETTERS = Pattern.compile("^[A-Za-z]+$");
-
     public static final Function<LayoutToken, String> TO_TEXT_FUNCTION = new Function<LayoutToken, String>() {
         @Override
         public String apply(LayoutToken layoutToken) {
@@ -278,11 +275,7 @@ public class LayoutTokensUtil {
         //tokens.stream().collect(groupingBy(LayoutToken::getY)).keySet()
 
         if (j < tokens.size()) {
-            Matcher matcher = LOWERCASE_LETTERS.matcher(tokens.get(j).getText());
-            if (matcher.find()) {
-                forward = true;
-            }
-
+            forward = StringUtils.isAllLowerCase(tokens.get(j).getText());
             if (forward) {
                 //If nothing before the hypen, but it looks like a forward hypenisation, let's trust it
                 if (i < 1) {
@@ -300,8 +293,7 @@ public class LayoutTokensUtil {
                     z--;
                 }
 
-                Matcher backwardMatcher = UPPER_AND_LOWERCASE_LETTERS.matcher(tokens.get(z).getText());
-                if (backwardMatcher.find()) {
+                if (StringUtils.isAlpha(tokens.get(z).getText())) {
                     if (tokens.get(z).getY() < coordinateY) {
                         backward = true;
                     } else if(coordinateY == -1 && breakLine > 0) {
