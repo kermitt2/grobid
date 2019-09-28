@@ -1280,7 +1280,7 @@ public class TEIFormatter {
                 curParagraph.appendChild(clusterContent);
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
-                refTokens = TextUtilities.dehyphenize(refTokens);
+                refTokens = LayoutTokensUtil.dehyphenize(refTokens);
                 String chunkRefString = LayoutTokensUtil.toText(refTokens);
 
                 Element parent = curParagraph != null ? curParagraph : curDiv;

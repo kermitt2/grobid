@@ -58,7 +58,7 @@ public class LayoutTokensUtil {
     }
 
     public static String normalizeDehyphenizeText(List<LayoutToken> tokens) {
-        return StringUtils.normalizeSpace(LayoutTokensUtil.toText(TextUtilities.dehyphenize(tokens)).replace("\n", " "));
+        return StringUtils.normalizeSpace(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(tokens)).replace("\n", " "));
     }
 
     public static String toText(List<LayoutToken> tokens) {

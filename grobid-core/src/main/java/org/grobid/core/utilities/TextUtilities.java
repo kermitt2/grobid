@@ -118,7 +118,7 @@ public class TextUtilities {
 
         final List<LayoutToken> layoutTokens = analyser.tokenizeWithLayoutToken(text);
 
-        return LayoutTokensUtil.toText(dehyphenize(layoutTokens));
+        return LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(layoutTokens));
     }
 
     public static String getLastToken(String section) {
