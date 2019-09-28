@@ -24,8 +24,8 @@ public class DateTrainer extends AbstractTrainer {
 	}
 
 	/**
-	 * Add the selected features to a date example set 
-	 * 
+	 * Add the selected features to a date example set
+	 *
 	 * @param corpusDir
 	 *            a path where corpus files are located
 	 * @param trainingOutputPath
@@ -38,8 +38,8 @@ public class DateTrainer extends AbstractTrainer {
 	}
 
 	/**
-	 * Add the selected features to a date example set 
-	 * 
+	 * Add the selected features to a date example set
+	 *
 	 * @param corpusDir
 	 *            a path where corpus files are located
 	 * @param trainingOutputPath
@@ -47,13 +47,13 @@ public class DateTrainer extends AbstractTrainer {
 	 * @param evalOutputPath
 	 *            path where to store the temporary evaluation data
 	 * @param splitRatio
-	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
-	 * @return the total number of used corpus items 
+	 *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80%
+	 * @return the total number of used corpus items
 	 */
 	@Override
-	public int createCRFPPData(final File corpusDir, 
-							final File trainingOutputPath, 
-							final File evalOutputPath, 
+	public int createCRFPPData(final File corpusDir,
+							final File trainingOutputPath,
+							final File evalOutputPath,
 							double splitRatio) {
 		int totalExamples = 0;
 		try {
@@ -69,7 +69,7 @@ public class DateTrainer extends AbstractTrainer {
 				public boolean accept(File dir, String name) {
 					return name.endsWith(".xml");
 				}
-			}); 
+			});
 
 			if (refFiles == null) {
 				throw new IllegalStateException("Folder " + corpusDir.getAbsolutePath()
@@ -85,7 +85,7 @@ public class DateTrainer extends AbstractTrainer {
 				os2 = new FileOutputStream(trainingOutputPath);
 				writer2 = new OutputStreamWriter(os2, "UTF8");
 			}
-		
+
 			// the file for writing the evaluation data
 			OutputStream os3 = null;
 			Writer writer3 = null;
@@ -93,7 +93,7 @@ public class DateTrainer extends AbstractTrainer {
 				os3 = new FileOutputStream(evalOutputPath);
 				writer3 = new OutputStreamWriter(os3, "UTF8");
 			}
-			
+
 			// get a factory for SAX parser
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 
@@ -114,22 +114,22 @@ public class DateTrainer extends AbstractTrainer {
 
 				// we can now add the features
 				String headerDates = FeaturesVectorDate.addFeaturesDate(labeled);
-				
+
 				// format with features for sequence tagging...
 				// given the split ratio we write either in the training file or the evaluation file
 				String[] chunks = headerDates.split("\n \n");
-				
+
 				for(int i=0; i<chunks.length; i++) {
 					String chunk = chunks[i];
-										
+
 					if ( (writer2 == null) && (writer3 != null) )
 						writer3.write(chunk + "\n \n");
 					else if ( (writer2 != null) && (writer3 == null) )
 						writer2.write(chunk + "\n \n");
-					else {		
+					else {
 						if (Math.random() <= splitRatio)
 							writer2.write(chunk + "\n \n");
-						else 
+						else
 							writer3.write(chunk + "\n \n");
 					}
 				}
@@ -139,12 +139,12 @@ public class DateTrainer extends AbstractTrainer {
 				writer2.close();
 				os2.close();
 			}
-			
+
 			if (writer3 != null) {
 				writer3.close();
 				os3.close();
 			}
-			
+
 		} catch (Exception e) {
 			throw new GrobidException("An exception occurred while running Grobid.", e);
 		}
@@ -153,7 +153,7 @@ public class DateTrainer extends AbstractTrainer {
 
 	/**
 	 * Command line execution.
-	 * 
+	 *
 	 * @param args
 	 *            Command line arguments.
 	 * @throws Exception
@@ -161,9 +161,11 @@ public class DateTrainer extends AbstractTrainer {
 	public static void main(String[] args) throws Exception {
 		GrobidProperties.getInstance();
 		DateTrainer trainer = new DateTrainer();
-		AbstractTrainer.runTraining(trainer);
-		AbstractTrainer.runEvaluation(trainer);
-		System.exit(0);
+
+        AbstractTrainer.runTraining(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
+
+        System.exit(0);
 	}
 
 }

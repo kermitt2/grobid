@@ -333,8 +333,8 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processCitationPatentTXT_post(@FormParam(INPUT) String text,
-                                                  @FormParam("consolidateCitations") String consolidate,
-                                                  @FormDataParam("includeRawCitations") String includeRawCitations) {
+                                                  @DefaultValue("0") @FormParam("consolidateCitations") String consolidate,
+                                                  @DefaultValue("0") @FormParam("includeRawCitations") String includeRawCitations) {
         int consol = validateConsolidationParam(consolidate);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         return restProcessString.processCitationPatentTXT(text, consol, includeRaw);
