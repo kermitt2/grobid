@@ -620,13 +620,13 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         fontId = value;
                         blabla.append(" ");
                     } else if (name.equals("FONTFAMILY")) {
-                        if (StringUtils.containsIgnoreCase(value, "bold") || StringUtils.endsWithIgnoreCase(value, "_bd")) {
+                        /*if (StringUtils.containsIgnoreCase(value, "bold") || StringUtils.endsWithIgnoreCase(value, "_bd")) {
                             textStyle.setBold(true);
                         }
 
                         if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.endsWithIgnoreCase(value, "_it")) {
                             textStyle.setItalic(true);
-                        }
+                        }*/
 
                         textStyle.setFontName(value);
                         blabla.append(" ");
