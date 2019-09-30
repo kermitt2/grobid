@@ -35,7 +35,7 @@ public class AcknowledgmentParser extends AbstractParser {
             List<String> tokenizations = analyzer.tokenize(input, new Language("en", 1.0));
             if (tokenizations.size() == 0)
                 return null;
-            for(String tok : tokenizations) {
+            for (String tok : tokenizations) {
                 if (!tok.equals(" ") && !tok.equals("\n")) {
                     tok = tok.replaceAll("[ \n]", "");
                     acknowledgmentBlocks.add(tok + " <acknowledgment>");
@@ -145,7 +145,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     } else {
                         acknowledgment.setFundingAgency(s2);
                     }
-                }else if (s1.equals("<grantName>") || s1.equals("I-<grantName>")) {
+                } else if (s1.equals("<grantName>") || s1.equals("I-<grantName>")) {
                     if (acknowledgment.getGrantName() != null) {
                         if ((s1.equals("I-<grantName>")) ||
                             (!s1.equals(lastTag) && !lastTag.equals("I-<grantName>"))
@@ -324,7 +324,7 @@ public class AcknowledgmentParser extends AbstractParser {
                 if (tokenizations.size() == 0)
                     return null;
 
-                for(String tok : tokenizations) {
+                for (String tok : tokenizations) {
                     if (tok.equals("\n")) {
                         acknowledgmentBlocks.add("@newline");
                     } else if (!tok.equals(" ")) {
@@ -396,8 +396,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     String s = st3.nextToken().trim();
                     if (i == 0) {
                         s2 = TextUtilities.HTMLEncode(s); // string
-                    }
-                    else if (i == ll - 1) {
+                    } else if (i == ll - 1) {
                         s1 = s; // label
                     }
                     i++;
@@ -447,11 +446,11 @@ public class AcknowledgmentParser extends AbstractParser {
                     buffer.append(output);
                     lastTag = s1;
                     continue;
-                }else {
+                } else {
                     output = writeField(s1, lastTag0, s2, "<other>", "<other>", addSpace, 0);
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<educationalInstitution>", "<educationalInstitution>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -466,7 +465,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<fundingAgency>", "<fundingAgency>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -481,7 +480,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<grantName>", "<grantName>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -496,7 +495,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<grantNumber>", "<grantNumber>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -511,7 +510,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<individual>", "<individual>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -526,7 +525,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<otherInstitution>", "<otherInstitution>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -541,7 +540,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<projectName>", "<projectName>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -556,7 +555,7 @@ public class AcknowledgmentParser extends AbstractParser {
                     continue;
                 }
 
-                if(output == null){
+                if (output == null) {
                     output = writeField(s1, lastTag0, s2, "<researchInstitution>", "<researchInstitution>", addSpace, 0);
                 } else {
                     if (lastTag0 != null) {
@@ -640,17 +639,17 @@ public class AcknowledgmentParser extends AbstractParser {
                 buffer.append("</fundingAgency>");
             } else if (lastTag0.equals("<grantName>")) {
                 buffer.append("</grantName>");
-            }else if (lastTag0.equals("<grantNumber>")) {
+            } else if (lastTag0.equals("<grantNumber>")) {
                 buffer.append("</grantNumber>");
-            }else if (lastTag0.equals("<individual>")) {
+            } else if (lastTag0.equals("<individual>")) {
                 buffer.append("</individual>");
-            }else if (lastTag0.equals("<otherInstitution>")) {
+            } else if (lastTag0.equals("<otherInstitution>")) {
                 buffer.append("</otherInstitution>");
-            }else if (lastTag0.equals("<projectName>")) {
+            } else if (lastTag0.equals("<projectName>")) {
                 buffer.append("</projectName>");
-            }else if (lastTag0.equals("<researchInstitution>")) {
+            } else if (lastTag0.equals("<researchInstitution>")) {
                 buffer.append("</researchInstitution>");
-            }else {
+            } else {
                 res = false;
             }
 

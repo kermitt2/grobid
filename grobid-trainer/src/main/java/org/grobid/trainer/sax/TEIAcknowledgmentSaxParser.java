@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
+ * created by Tanti, 2019
  * SAX parser for the TEI format for the training data for the acknowledgment model.
  *
  * TEI -> label mapping (9 labels for this model)

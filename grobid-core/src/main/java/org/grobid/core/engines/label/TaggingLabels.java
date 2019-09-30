@@ -91,6 +91,7 @@ public class TaggingLabels {
     public final static String BACK_LABEL = "<back>";
 
     // acknowledgment
+    public final static String ACKNOWLEDGMENT_LABEL = "<acknowledgment>";
     public final static String AFFILIATION = "<affiliation>";
     public final static String EDUCATIONAL_INSTITUTION = "<educationalInstitution>";
     public final static String FUNDING_AGENCY = "<fundingAgency>";
@@ -228,6 +229,7 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
 
     // tagging label for acknowledgment
+    public static final TaggingLabel ACKNOWLEDGMENT = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, ACKNOWLEDGMENT_LABEL);
     public static final TaggingLabel AKNOWLEDGMENT_AFFILIATION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, AFFILIATION);
     public static final TaggingLabel AKNOWLEDGMENT_EDUCATIONAL_INSTITUTION = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, EDUCATIONAL_INSTITUTION);
     public static final TaggingLabel AKNOWLEDGMENT_FUNDING_AGENCY = new TaggingLabelImpl(GrobidModels.ACKNOWLEDGMENT, FUNDING_AGENCY);

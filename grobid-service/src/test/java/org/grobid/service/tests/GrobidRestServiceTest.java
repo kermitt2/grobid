@@ -140,7 +140,7 @@ public class GrobidRestServiceTest {
     }
 
     /**
-     * Test the synchronous state less rest call for dates
+     * Test the synchronous state less rest call for acknowledgment
      */
     @Test
     public void testRestAcknowledgment() throws Exception {

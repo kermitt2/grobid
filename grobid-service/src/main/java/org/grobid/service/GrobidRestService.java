@@ -419,7 +419,7 @@ public class GrobidRestService implements GrobidPaths {
     }
 
     /**
-     * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
+     * @see org.grobid.service.process.GrobidRestProcessString#processAcknowledgments(String)
      */
     @Path(PATH_ACKNOWLEDGMENT)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)

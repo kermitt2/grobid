@@ -148,7 +148,6 @@ public class FeaturesVectorAcknowledgment {
      * Add feature for acknowledgment parsing.
      */
     static public String addFeaturesAcknowledgment(List<String> lines) throws Exception {
-        FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         StringBuffer result = new StringBuffer();
         List<String> block = null;

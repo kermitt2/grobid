@@ -42,31 +42,6 @@ public class Acknowledgment {
     private String projectName = null;
     private String researchInstitution = null;
 
-    // coordinates
-    private int page = -1;
-    private double y = 0.0;
-    private double x = 0.0;
-    private double width = 0.0;
-    private double height = 0.0;
-
-    private List<BoundingBox> textArea;
-    private List<LayoutToken> layoutTokens;
-
-    public List<BoundingBox> getTextArea() {
-        return textArea;
-    }
-
-    public void setTextArea(List<BoundingBox> textArea) {
-        this.textArea = textArea;
-    }
-
-    public List<LayoutToken> getLayoutTokens() {
-        return layoutTokens;
-    }
-
-    public void setLayoutTokens(List<LayoutToken> layoutTokens) {
-        this.layoutTokens = layoutTokens;
-    }
 
 
     public String getAffiliation() {
@@ -212,7 +187,8 @@ public class Acknowledgment {
         }
     }
 
-    /*public String toTEI(){
+    // result of acknowledgment string processing
+    public String toTEI(){
         StringBuilder tei = new StringBuilder();
         if (!isNotNull()) {
             return null;
@@ -257,9 +233,9 @@ public class Acknowledgment {
             tei.append("</acknowledgment>");
         }
         return tei.toString();
-    }*/
+    }
 
-    public String toTEI() {
+    /*public String toTEI() {
         if (!isNotNull()) {
             return null;
         }
@@ -307,6 +283,6 @@ public class Acknowledgment {
         }
 
         return XmlBuilderUtils.toXml(acknowledgmentElement);
-    }
+    }*/
 }
 
