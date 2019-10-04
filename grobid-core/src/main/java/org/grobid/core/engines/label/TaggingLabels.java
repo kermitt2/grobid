@@ -132,6 +132,7 @@ public class TaggingLabels {
     public static final TaggingLabel TABLE = new TaggingLabelImpl(GrobidModels.FULLTEXT, TABLE_LABEL);
     public static final TaggingLabel EQUATION = new TaggingLabelImpl(GrobidModels.FULLTEXT, EQUATION_LAB);
     public static final TaggingLabel EQUATION_LABEL = new TaggingLabelImpl(GrobidModels.FULLTEXT, EQUATION_ID_LABEL);
+    public static final TaggingLabel ACKNOWLEDGMENT_MARKER = new TaggingLabelImpl(GrobidModels.FULLTEXT, ACKNOWLEDGMENT_LABEL);
 
     public static final TaggingLabel HEADER_DATE = new TaggingLabelImpl(GrobidModels.HEADER, DATE_LABEL);
     public static final TaggingLabel HEADER_TITLE = new TaggingLabelImpl(GrobidModels.HEADER, TITLE_LABEL);
