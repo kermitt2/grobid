@@ -50,7 +50,6 @@ public class Consolidation {
     private static volatile Consolidation instance;
 
     private CrossrefClient client = null;
-    // XXX: rename just "deserializer"
     private CrossrefDeserializer workDeserializer = null;
     private CntManager cntManager = null;
 
