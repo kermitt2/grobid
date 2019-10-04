@@ -1309,7 +1309,7 @@ public class TEIFormatter {
                 // information to be put
                 textBefore = acknowWholeText.substring(0, startOffset);
                 textAfter = acknowWholeText.substring(endOffset, lengthTextAckWhole);
-                concatText = textBefore + "<ref type = \"" + label + "\">" + text + "</ref>" + textAfter;
+                concatText = textBefore + "<rs type=\"" + label + "\">" + text + "</rs>" + textAfter;
 
                 // a new whole text
                 acknowWholeText = concatText;
