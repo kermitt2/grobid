@@ -2,24 +2,21 @@ package org.grobid.core.document;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
-import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.lang3.StringUtils;
-
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
-
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.*;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.AcknowledgmentParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
-import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
@@ -31,10 +28,8 @@ import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
-import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,9 +39,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
-import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+import static org.grobid.core.document.xml.XmlBuilderUtils.*;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -1129,8 +1122,6 @@ public class TEIFormatter {
             return buffer;
         }
 
-        List<Acknowledgment> resultAcknowledgment = new ArrayList<>();
-
         buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
 
         StringBuilder buffer2 = new StringBuilder();
@@ -1140,13 +1131,17 @@ public class TEIFormatter {
         String acknowResult = buffer2.toString();
 
         // call the acknowledgment parser
-        resultAcknowledgment = acknowledgmentParser.processing(acknowResult);
+        List<Acknowledgment> resultAcknowledgment = acknowledgmentParser.processing(acknowResult);
+
+        // get the coordinates for acknowledgment results
+        List<String> listAcknowledgmentString = listAcknowledgmentResult(resultAcknowledgment);
+        Map<String, String> coordinates = getCoordAcknowledgment(listAcknowledgmentString, tokenizationsAcknowledgement);
 
         // grouping the result in a map based on the label
         Map<String, List<String>> ackInMap = mapAcknowledgmentResult(resultAcknowledgment);
 
         // put the results together with the raw text
-        StringBuilder resultAcknow = markReferencesTEIAcknowledgment(ackInMap, acknowResult);
+        StringBuilder resultAcknow = markReferencesTEIAcknowledgment(ackInMap, acknowResult, coordinates);
 
         String resultAcknowInString = resultAcknow.toString();
 
@@ -1289,17 +1284,73 @@ public class TEIFormatter {
         return result;
     }
 
-    public StringBuilder markReferencesTEIAcknowledgment(Map<String, List<String>> ackInMap, String acknowText) {
+    public List<String> listAcknowledgmentResult(List<Acknowledgment> listAck) {
+        List<String> acklist = new ArrayList<>();
+        String affiliation = null, educationalInstitution = null, fundingAgency = null, grantName = null, grantNumber = null,
+            individual = null, otherInstitution = null, projectName = null, researchInstitution = null;
+
+        for (Acknowledgment ack : listAck) {
+            if (ack != null) {
+                affiliation = ack.getAffiliation();
+                educationalInstitution = ack.getEducationalInstitution();
+                fundingAgency = ack.getFundingAgency();
+                grantName = ack.getGrantName();
+                grantNumber = ack.getGrantNumber();
+                individual = ack.getIndividual();
+                otherInstitution = ack.getOtherInstitution();
+                projectName = ack.getProjectName();
+                researchInstitution = ack.getResearchInstitution();
+
+                if (affiliation != null) {
+                    acklist.add(affiliation);
+                }
+                if (educationalInstitution != null) {
+                    acklist.add(educationalInstitution);
+                }
+                if (fundingAgency != null) {
+                    acklist.add(fundingAgency);
+                }
+                if (grantName != null) {
+                    acklist.add(grantName);
+                }
+                if (grantNumber != null) {
+                    acklist.add(grantNumber);
+                }
+                if (individual != null) {
+                    acklist.add(individual);
+                }
+                if (otherInstitution != null) {
+                    acklist.add(otherInstitution);
+                }
+                if (projectName != null) {
+                    acklist.add(projectName);
+                }
+                if (researchInstitution != null) {
+                    acklist.add(researchInstitution);
+                }
+
+            }
+        }
+        return acklist;
+    }
+
+    public StringBuilder markReferencesTEIAcknowledgment(Map<String, List<String>> ackInMap, String acknowText,
+                                                         Map<String, String> coordsAcknowledgement) {
         String acknowWholeText = acknowText;
         StringBuilder result = new StringBuilder();
         String textBefore = null, textAfter = null, concatText = null;
-        for (Map.Entry<String, List<String>> entry : ackInMap.entrySet()){
+
+
+        for (Map.Entry<String, List<String>> entry : ackInMap.entrySet()) {
             int lengthTextAckPart = 0, lengthTextAckWhole = 0, startOffset = 0, endOffset = 0;
 
             String label = entry.getKey();
-            List<String> texts =entry.getValue();
+            List<String> texts = entry.getValue();
+            String coord = null;
+            for (String text : texts) {
+                //get coordinates
+                coord = coordsAcknowledgement.get(text);
 
-            for (String text : texts){
                 // offsets of the text
                 lengthTextAckPart = text.length();
                 lengthTextAckWhole = acknowWholeText.length();
@@ -1309,7 +1360,7 @@ public class TEIFormatter {
                 // information to be put
                 textBefore = acknowWholeText.substring(0, startOffset);
                 textAfter = acknowWholeText.substring(endOffset, lengthTextAckWhole);
-                concatText = textBefore + "<rs type=\"" + label + "\">" + text + "</rs>" + textAfter;
+                concatText = textBefore + "<rs type=\"" + label + "\" " + coord + ">" + text + "</rs>" + textAfter;
 
                 // a new whole text
                 acknowWholeText = concatText;
@@ -1317,6 +1368,53 @@ public class TEIFormatter {
         }
         result.append(concatText);
         return result;
+    }
+
+    public Map<String, String> getCoordAcknowledgment(List<String> listAcknow, List<LayoutToken> tokenizationsAcknowledgement) {
+        Map<String, String> coords = new HashMap<>();
+
+        for (String ack : listAcknow) { // iterate through all acknowledgment text as results of acknowledgment parser
+            List<LayoutToken> layaoutTokenRelevant = new ArrayList<>();
+            List<LayoutToken> tokenListToBeFound = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(ack);
+            int lastIdx = 0;
+            List<Integer> listIdxFound = new ArrayList<>();
+            int sizeTokenToBeFound = tokenListToBeFound.size();
+
+            String currentTokenToBeFound = null;
+            if (tokenListToBeFound != null) {
+
+                for (int i = 0; i < sizeTokenToBeFound; i++) { // iterate for every token need to be found
+                    currentTokenToBeFound = tokenListToBeFound.get(i).getText();
+                    if ((currentTokenToBeFound.equals("\n")) ||
+                        (currentTokenToBeFound.equals("\r")) ||
+                        (currentTokenToBeFound.equals("\t")) ||
+                        (currentTokenToBeFound.equals(" ")) ||
+                        (currentTokenToBeFound.equals("the")) ){ // ignore for processing these tokens
+                        continue;
+                    } else {
+                        String currentReferenceTokenWithLayout = null;
+                        LayoutToken currentLayoutToken = new LayoutToken();
+
+                        for (int j = lastIdx; j < tokenizationsAcknowledgement.size(); j++) { // iterate for every token as a reference
+                            currentReferenceTokenWithLayout = tokenizationsAcknowledgement.get(j).getText(); // the token as a reference
+                            if ((currentReferenceTokenWithLayout.equals(currentTokenToBeFound) && !(listIdxFound.contains(j)))) {
+                                lastIdx = j + 1;
+                                listIdxFound.add(j);
+                                currentLayoutToken = tokenizationsAcknowledgement.get(j);
+                                layaoutTokenRelevant.add(currentLayoutToken);
+                            }
+                        }
+                    }
+                }
+            }
+            // calculate the coordinates
+            if ((layaoutTokenRelevant != null) && (layaoutTokenRelevant.size() > 0)) {
+                // it should be like this -> "coords="coord1;coord2;coord3"
+                String coord = getCoordsAttribute(BoundingBoxCalculator.calculate(layaoutTokenRelevant), true);
+                coords.put(ack, coord);
+            }
+        }
+        return coords;
     }
 
     public StringBuilder toTEIAnnex(StringBuilder buffer,

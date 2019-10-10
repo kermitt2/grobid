@@ -93,6 +93,38 @@ public class TaggingTokenClusterorTest {
         assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(8).concatTokens())), is("12 August"));
     }
 
+    @Test
+    public void testCluster_mixedBeginningLabelsAcknow_shouldWork() throws Exception {
+        final InputStream is = this.getClass().getResourceAsStream("example.wapiti.output.2.txt");
+        List<LayoutToken> tokenisation = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken("Austria invaded and fought the Serbian army at the Battle of Cer and Battle of Kolubara beginning on 12 August.",
+            new Language(Language.EN));
+        System.out.println(tokenisation);
+        final String s = IOUtils.toString(is, UTF_8);
+
+        TaggingTokenClusteror target = new TaggingTokenClusteror(GrobidModels.ENTITIES_NER, s, tokenisation);
+
+        List<TaggingTokenCluster> clusters = target.cluster();
+
+        System.out.println(clusters);
+
+        assertThat(clusters, hasSize(10));
+
+        assertThat(clusters.get(0).getTaggingLabel().getLabel(), is("LOCATION"));
+        assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(0).concatTokens())), is("Austria"));
+
+        assertThat(clusters.get(2).getTaggingLabel().getLabel(), is("ORGANISATION"));
+        assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(2).concatTokens())), is("Serbian army"));
+
+        assertThat(clusters.get(4).getTaggingLabel().getLabel(), is("EVENT"));
+        assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(4).concatTokens())), is("Battle of Cer"));
+
+        assertThat(clusters.get(6).getTaggingLabel().getLabel(), is("EVENT"));
+        assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(6).concatTokens())), is("Battle of Kolubara"));
+
+        assertThat(clusters.get(8).getTaggingLabel().getLabel(), is("PERIOD"));
+        assertThat(LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(clusters.get(8).concatTokens())), is("12 August"));
+    }
+
 
     @Test
     public void testCluster_longFile() throws Exception {
