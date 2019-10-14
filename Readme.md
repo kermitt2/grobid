@@ -19,20 +19,22 @@ GROBID is a machine learning library for extracting, parsing and re-structuring 
 
 The following functionalities are available:
 
-+ Header extraction and parsing from article in PDF format. The extraction here covers the usual bibliographical information (e.g. title, abstract, authors, affiliations, keywords, etc.).
-+ References extraction and parsing from articles in PDF format. All the usual publication metadata are covered. The different citation contexts in an article are recognized and linked to the full bibliographical references. 
-+ Parsing of references in isolation.
-+ Extraction of patent and non-patent references in patent publications.
-+ Parsing of names (e.g. person title, fornames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
-+ Parsing of affiliation and address blocks. 
-+ Parsing of dates (ISO normalized day, month, year).
-+ Full text extraction from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body (paragraph, section titles, reference callout, figure, table, etc.). 
-+ In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure headers, etc.). 
-+ Consolidation/resolution of the extracted bibliographical references using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). 
++ __Header extraction and parsing__ from article in PDF format. The extraction here covers the usual bibliographical information (e.g. title, abstract, authors, affiliations, keywords, etc.).
++ __References extraction and parsing__ from articles in PDF format, around .85 f-score against a PubMed Central evaluation set. All the usual publication metadata are covered. 
+* __Citation contexts recognition and linking__ to the full bibliographical references of the article. The accuracy of citation contexts resolution is around 0.75 f-score (which corresponds to both the correct identification of the citation callout and its correct association with a full bibliographical reference).
++ Parsing of __references in isolation__ (with around 0.89 f-score).
++ __Parsing of names__ (e.g. person title, fornames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
++ __Parsing of affiliation and address__ blocks. 
++ __Parsing of dates__, ISO normalized day, month, year.
++ __Full text extraction and structuring__ from PDF articles, including a model for the the overall document segmentation and a model for the structuring of the text body (paragraph, section titles, reference callout, figure, table, etc.). 
++ __Consolidation/resolution of the extracted bibliographical references__ using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). In both cases, DOI resolution performance is higher than 0.95 f-score from PDF extraction. 
++ __Extraction and parsing of patent and non-patent references in patent__ publications.
 
-GROBID includes a comprehensive web service API, batch processing, a JAVA API, a Docker image, a relatively generic evaluation framework (precision, recall, etc.) and the semi-automatic generation of training data. 
+In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure headers, etc.). 
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), and many more. 
+GROBID includes a comprehensive web service API, batch processing, a JAVA API, a Docker image, a generic evaluation framework (precision, recall, etc., n-fold cross-evaluation) and the semi-automatic generation of training data. 
+
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), and many more. The tool is designed for high scalability in order to address the full scientific literature corpus.
 
 GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits). 
 
@@ -58,7 +60,7 @@ For helping to exploit GROBID service at scale, we provide clients written in Py
 
 All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be prefered. 
 
-We have been able recently to run the complete fulltext processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on a 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132).
+We have been able recently to run the complete fulltext processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on a 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without crash).
 
 In addition, a Java example project is available to illustrate how to use GROBID as a Java library: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTeX format.  
 
@@ -68,11 +70,11 @@ A series of additional modules have been developed for performing __structure aw
 
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 
-- [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
-
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 
 - [software-mention](https://github.com/Impactstory/software-mentions): recognition of software mentions and attributes in scientific literature
+
+- [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
 
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a bio-entity tagger using BioNLP/NLPBA 2004 dataset 
 
@@ -83,16 +85,30 @@ A series of additional modules have been developed for performing __structure aw
 
 ## Latest version
 
-The latest stable release of GROBID is version ```0.5.5```. This version brings:
+The latest stable release of GROBID is version ```0.5.6```. This version brings:
 
-+ Using [pdfalto](https://github.com/kermitt2/pdfalto) instead of pdf2xml for the first PDF parsing stage, with many improvements in robustness, ICU support, unknown glyph/font normalization 
++ Better abstract structuring (with citation contexts)
++ n-fold cross evaluation and better evaluation report (thanks to @lfoppiano)
++ Improved PMC ID and PMID recognition
++ Improved subscript/superscript and font style recognition (via [pdfalto](https://github.com/kermitt2/pdfalto))
++ Improved JEP integration (support of python virtual environment for using DeLFT Deep Learning library, thanks @de-code and @lfoppiano)
++ Several bug fixes (thanks @de-code, @bnewbold, @Vitaliy-1 and @lfoppiano)
++ Improved dehyphenization (thanks to @lfoppiano)
+
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.6) page)
+
+New in previous release ```0.5.5```: 
+
++ Using [pdfalto](https://github.com/kermitt2/pdfalto) instead of pdf2xml for the first PDF parsing stage, with many improvements in robustness, ICU support, unknown glyph/font normalization (thanks in particular to @aazhar)
 + Improvement and full review of the integration of consolidation services, supporting [biblio-glutton](https://github.com/kermitt2/biblio-glutton) (additional identifiers and Open Access links) and [Crossref REST API](https://github.com/CrossRef/rest-api-doc) (add specific user agent, email and token for Crossref Metadata Plus)
 + Fix bounding box issues for some PDF #330
 + Updated lexicon #396
 
+(more information in the [release](https://github.com/kermitt2/grobid/releases/tag/0.5.5) page)
+
 New in previous release ```0.5.4```: 
 
-+ Transparent usage of [DeLFT](https://github.com/kermitt2/delft) deep learning models (BidLSTM-CRF) instead of Wapiti CRF models, native integration via [JEP](https://github.com/ninia/jep)
++ Transparent usage of [DeLFT](https://github.com/kermitt2/delft) deep learning models (BidLSTM-CRF/ELMo) instead of Wapiti CRF models, native integration via [JEP](https://github.com/ninia/jep)
 + Support of [biblio-glutton](https://github.com/kermitt2/biblio-glutton) as DOI/metadata matching service, alternative to crossref REST API 
 + Improvement of citation context identification and matching (+9% recall with similar precision, for PMC sample 1943 articles, from 43.35 correct citation contexts per article to 49.98 correct citation contexts per article)
 + Citation callout now in abstract, figure and table captions
