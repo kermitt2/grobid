@@ -1041,7 +1041,7 @@ public class FullTextParser extends AbstractParser {
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
                         pdfFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), StandardCharsets.UTF_8);
-                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(bufferFulltext.toString());
@@ -1111,7 +1111,7 @@ public class FullTextParser extends AbstractParser {
                             File.separator +
                             pdfFileName.replace(".pdf", ".training.references.tei.xml")), false), StandardCharsets.UTF_8);
 
-                    writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                    writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                                             "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
                     if (id == -1) {
@@ -1133,7 +1133,7 @@ public class FullTextParser extends AbstractParser {
                             File.separator +
                             pdfFileName.replace(".pdf", ".training.references.authors.tei.xml")), false), StandardCharsets.UTF_8);
 
-                    writerName.write("<?xml version=\"1.0\" ?>\n<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                    writerName.write("<?xml version=\"1.0\" ?>\n<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
                                             "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
                                             "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
                     writerName.write("\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>\n" +
@@ -1191,10 +1191,10 @@ public class FullTextParser extends AbstractParser {
     	                    File.separator +
     						pdfFileName.replace(".pdf", ".training.fulltext.tei.xml")), false), StandardCharsets.UTF_8);
     				if (id == -1) {
-    					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
+    					writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader/>\n\t<text xml:lang=\"en\">\n");
     				}
     				else {
-    					writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+    					writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
     	                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
     				}
     	            writer.write(bufferFulltext.toString());
@@ -1365,7 +1365,7 @@ public class FullTextParser extends AbstractParser {
                     // extracted from the pdf
                     writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI + File.separator
                             + pdfFileName.replace(".pdf", ".training.header.tei.xml")), false), StandardCharsets.UTF_8);
-                    writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
+                    writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\""
                             + pdfFileName.replace(".pdf", "")
                             + "\"/>\n\t</teiHeader>\n\t<text");
 
@@ -1385,7 +1385,7 @@ public class FullTextParser extends AbstractParser {
                                     File.separator
                                     + pdfFileName.replace(".pdf", ".training.header.affiliation.tei.xml")), false), StandardCharsets.UTF_8);
                             writerAffiliation.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-                            writerAffiliation.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\""
+                            writerAffiliation.write("\n<tei xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\""
                                     + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" " + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerAffiliation.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerAffiliation.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\t\t\t\t\t\t<author>\n\n");
@@ -1422,7 +1422,7 @@ public class FullTextParser extends AbstractParser {
                                     File.separator
                                     + pdfFileName.replace(".pdf", ".training.header.authors.tei.xml")), false), StandardCharsets.UTF_8);
                             writerName.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-                            writerName.write("\n<tei xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
+                            writerName.write("\n<tei xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\"" + " xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
                                     + "xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">");
                             writerName.write("\n\t<teiHeader>\n\t\t<fileDesc>\n\t\t\t<sourceDesc>");
                             writerName.write("\n\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n\t\t\t\t\t\t<author>");

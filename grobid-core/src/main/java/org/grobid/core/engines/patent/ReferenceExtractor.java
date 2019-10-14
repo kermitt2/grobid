@@ -748,7 +748,7 @@ public class ReferenceExtractor implements Closeable {
             nbs += articles.size();
 
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+						   "<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 
 		String divID = KeyGen.getKey().substring(0,7);

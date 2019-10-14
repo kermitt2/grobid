@@ -112,7 +112,7 @@ public class TEIFormatter {
                     + "/schemas/dtd/Grobid.dtd" + "\">\n");
         } else if (schemaDeclaration == SchemaDeclaration.XSD) {
             // XML schema
-            tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" \n" +
+            tei.append("<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" \n" +
                     "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n" +
                     //"\n xsi:noNamespaceSchemaLocation=\"" +
                     //GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
@@ -134,7 +134,7 @@ public class TEIFormatter {
         // by default there is no schema association
 
         if (schemaDeclaration != SchemaDeclaration.XSD) {
-            tei.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
+            tei.append("<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
         }
 
         if (doc.getLanguage() != null) {
@@ -142,22 +142,6 @@ public class TEIFormatter {
         } else {
             tei.append("\t<teiHeader>");
         }
-
-        // encodingDesc gives info about the producer of the file
-        tei.append("\n\t\t<encodingDesc>\n");
-        tei.append("\t\t\t<appInfo>\n");
-
-        TimeZone tz = TimeZone.getTimeZone("UTC");
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
-        df.setTimeZone(tz);
-        String dateISOString = df.format(new java.util.Date());
-
-        tei.append("\t\t\t\t<application version=\"" + GrobidProperties.getVersion() +
-                "\" ident=\"GROBID\" when=\"" + dateISOString + "\">\n");
-        tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid\">GROBID - A machine learning software for extracting information from scholarly documents</ref>\n");
-        tei.append("\t\t\t\t</application>\n");
-        tei.append("\t\t\t</appInfo>\n");
-        tei.append("\t\t</encodingDesc>");
 
         tei.append("\n\t\t<fileDesc>\n\t\t\t<titleStmt>\n\t\t\t\t<title level=\"a\" type=\"main\"");
         if (config.isGenerateTeiIds()) {
@@ -725,6 +709,22 @@ public class TEIFormatter {
 
         tei.append("\t\t\t</sourceDesc>\n");
         tei.append("\t\t</fileDesc>\n");
+
+        // encodingDesc gives info about the producer of the file
+        tei.append("\n\t\t<encodingDesc>\n");
+        tei.append("\t\t\t<appInfo>\n");
+
+        TimeZone tz = TimeZone.getTimeZone("UTC");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
+        df.setTimeZone(tz);
+        String dateISOString = df.format(new java.util.Date());
+
+        tei.append("\t\t\t\t<application version=\"" + GrobidProperties.getVersion() +
+                "\" ident=\"GROBID\" when=\"" + dateISOString + "\">\n");
+        tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid\">GROBID - A machine learning software for extracting information from scholarly documents</ref>\n");
+        tei.append("\t\t\t\t</application>\n");
+        tei.append("\t\t\t</appInfo>\n");
+        tei.append("\t\t</encodingDesc>");
 
         boolean textClassWritten = false;
 
