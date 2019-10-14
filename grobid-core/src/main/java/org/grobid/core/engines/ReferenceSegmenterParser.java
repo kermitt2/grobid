@@ -196,7 +196,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
         StringBuilder sb = new StringBuilder();
 
 		//noinspection StringConcatenationInsideStringBufferAppend
-		sb.append("<tei>\n" +
+		sb.append("<tei xml:space=\"preserve\">\n" +
 				"    <teiHeader>\n" +
 				"        <fileDesc xml:id=\"_" + id + "\"/>\n" +
 				"    </teiHeader>\n" +
