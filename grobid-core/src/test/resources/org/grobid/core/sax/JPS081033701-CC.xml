@@ -21,7 +21,7 @@
     </Description>
     <Styles>
         <TextStyle ID="font0" FONTFAMILY="kmhhoc+advtimes_bd" FONTSIZE="11.955" FONTTYPE="serif"
-                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE=""/>
+                   FONTWIDTH="proportional" FONTCOLOR="#000000" FONTSTYLE="bold"/>
         <TextStyle ID="font1" FONTFAMILY="kmhhod+advmtmrb" FONTSIZE="8.368" FONTTYPE="sans-serif" FONTWIDTH="fixed"
                    FONTCOLOR="#000000" FONTSTYLE="subscript"/>
         <TextStyle ID="font2" FONTFAMILY="kmhhof+advmtmib" FONTSIZE="8.368" FONTTYPE="sans-serif" FONTWIDTH="fixed"

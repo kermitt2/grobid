@@ -1,5 +1,6 @@
 package org.grobid.core.sax;
 
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.analyzers.Analyzer;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.Document;
@@ -15,6 +16,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static shadedwipo.org.apache.commons.lang3.StringUtils.isNotBlank;
 
 
 /**
@@ -612,11 +615,19 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 String name = atts.getQName(i);
                 String value = atts.getValue(i);
 
-                if ((name != null) && (value != null)) {
+                if (isNotBlank(name)&& isNotBlank(value)) {
                     if (name.equals("ID")) {
                         fontId = value;
                         blabla.append(" ");
                     } else if (name.equals("FONTFAMILY")) {
+                        /*if (StringUtils.containsIgnoreCase(value, "bold") || StringUtils.endsWithIgnoreCase(value, "_bd")) {
+                            textStyle.setBold(true);
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.endsWithIgnoreCase(value, "_it")) {
+                            textStyle.setItalic(true);
+                        }*/
+
                         textStyle.setFontName(value);
                         blabla.append(" ");
                     } else if (name.equals("FONTSIZE")) {
@@ -624,27 +635,29 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         textStyle.setFontSize(fontSize);
                         blabla.append(" ");
                     } else if (name.equals("FONTSTYLE")) {
-                        if (value.contains("bold")) {
-                            textStyle.setBold(true);
-                        } else if (value.contains("italics")){
-                            textStyle.setItalic(true);
-                        } else {
-                            textStyle.setBold(false);
-                            textStyle.setItalic(false);
+                        // font properties, we are interested by subscript or superscript
+                        if (StringUtils.containsIgnoreCase(value, "subscript")) {
+                            textStyle.setSubscript(true);
                         }
+
+                        if (StringUtils.containsIgnoreCase(value, "superscript")) {
+                            textStyle.setSuperscript(true);
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "bold")) {
+                            textStyle.setBold(true);
+                        }
+
+                        if (StringUtils.containsIgnoreCase(value, "italic") || StringUtils.containsIgnoreCase(value, "italics")) {
+                            textStyle.setItalic(true);
+                        }
+
                         blabla.append(" ");
                     } else if (name.equals("FONTCOLOR")) {
                         textStyle.setFontColor(value);
                     }
                     else if (name.equals("FONTTYPE")) {
-                    	// value can be empty or a sequency of font properties separated by space, out of these 
-                    	// font properties, we are interested by subscript or superscript
-                    	if ( (value != null) && (value.length() > 0) ) {
-                    		if ( (value.indexOf("subscript") != -1) || (value.indexOf("SUBSCRIPT") != -1) ) 
-                    			textStyle.setSubscript(true);
-                    		else if ( (value.indexOf("supercript") != -1) || (value.indexOf("SUPERSCRIPT") != -1) ) 
-                    			textStyle.setSuperscript(true);
-                    	}
+                    	// value can be empty or a sequence of font properties separated by space, out of these
                         /*if (value.equals("serif")) {
                             textStyle.setSerif(true);
                         } else {
