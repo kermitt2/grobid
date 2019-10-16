@@ -10,7 +10,8 @@ As of April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtai
 * ```figure``` for figure AND table,
 * ```ref``` for bibliographical, figure, table and formula reference markers - for example (_Toto and al. 1999_), see _Fig. 1_, as shown by _formula (245)_, etc.,
 * ```biblStruct``` for a bibliographical reference,
-* ```formula``` for mathematical equations.
+* ```formula``` for mathematical equations,
+* ```acknowledgment``` for acknowledgment section.
 
 However, there is normally no particular limitation to the type of structures which can have their coordinates in the results, the implementation is on-going, see [issue #69](https://github.com/kermitt2/grobid/issues/69), and it is expected that more or less any structures could be associated with their coordinates in the orginal PDF. 
 
@@ -31,7 +32,7 @@ Example with cURL:
 * add coordinates for all the supported elements (sorry for the ugly cURL syntax on this):
 
 ```bash
-> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
+> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula --form teiCoordinates=acknowledgments localhost:8070/api/processFulltextDocument
 ```
 
 ### Batch processing

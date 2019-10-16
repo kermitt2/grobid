@@ -210,6 +210,33 @@ It is possible to include the original raw reference string in the parsed result
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processReferences
 ```
 
+#### /api/processAcknowledgments
+
+Extract and convert acknowledgment section in the input document into TEI XML format. 
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| multipart/form-data |   	application/xml  |   input		|   required	| PDF file to be processed 	|
+|   		| 					  |						 |teiCoordinates| optional | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 3-6 seconds for the `processFulltextDocument` service. 
+
+To include the coordinates in the parsed result : 
+
+```bash
+curl -v --form input=@./thefile.pdf --form teiCoordinates=acknowledgments localhost:8070/api/processFulltextDocument
+```
+
 ### Raw text to TEI conversion services
 
 #### /api/processDate
@@ -410,6 +437,39 @@ which will return:
 
 ```
 
+#### /api/processAcknowledgments
+
+Parse a raw acknowledgment string and return the corresponding results in a TEI fragment.
+
+|   method	|  request type 	  | response type 		 |  parameters 	| requirement  	|   description				|
+|---		|---				  |---					 |---			|---			|--- 						|
+| POST, PUT	| application/x-www-form-urlencoded | application/xml  	| acknowledgment | required	| acknowledgment to be parsed as a raw string|
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 second for the `processAcknowledgments` service. 
+
+You can test this service with the **cURL** command lines, for instance parsing of a raw acknowledgment string:
+```bash
+curl -X POST -d "acknowledgments=Acknowledgements. We thank E. Brockmann and two anonymous reviewers for their helpful reviews. This work was supported by the Centre National de la Recherche Scientifique (CNRS-INSU)" localhost:8070/api/processAcknowledgments
+```
+which will return:
+```xml
+<acknowledgment>
+	<fundingAgency>the Centre National de la Recherche Scientifique</fundingAgency>
+	<grantNumber>CNRS - INSU</grantNumber>
+	<individual>E . Brockmann</individual>
+</acknowledgment>
+```
 
 ### PDF annotation services
 
