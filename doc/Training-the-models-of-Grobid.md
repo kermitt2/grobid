@@ -6,6 +6,8 @@ Grobid uses different CRF models depending on the labeling task to be realized. 
 
 * affiliation-address
 
+* acknowledgment
+
 * date
 
 * citation
@@ -48,7 +50,7 @@ Under the main project directory `grobid/`, run the following command to execute
 ```bash
 > ./gradlew <training goal. I.E: train_name-header>
 ```
-Example of goal names: `train_header`, `train_date`, `train_name_header`, `train_name_citation`, `train_citation`, `train_affiliation_address`, `train_fulltext`, `train_patent_citation`, ...
+Example of goal names: `train_header`, `train_date`, `train_name_header`, `train_name_citation`, `train_citation`, `train_affiliation_address`, `train_fulltext`, `train_patent_citation`, `train_acknowledgment`, ...
 
 The files used for the training are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus`, and the evaluation files under `grobid/grobid-trainer/resources/dataset/*MODEL*/evaluation`. 
 
