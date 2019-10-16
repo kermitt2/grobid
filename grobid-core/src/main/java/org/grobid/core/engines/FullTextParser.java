@@ -151,7 +151,7 @@ public class FullTextParser extends AbstractParser {
                 // if the heuristics method was initially used, we anyway take the abstract derived from the segementation 
                 // model, because this structure is significantly more reliable with this approach
                 BiblioItem resHeader2 = new BiblioItem();
-                parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader2);
+                parsers.getHeaderParser().processingHeaderSection(0, doc, resHeader2);
                 if (isNotBlank(resHeader2.getAbstract())) {
                     resHeader.setAbstract(resHeader2.getAbstract());
                     resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
