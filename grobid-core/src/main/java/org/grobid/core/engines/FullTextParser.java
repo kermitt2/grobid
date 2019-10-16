@@ -1582,7 +1582,7 @@ public class FullTextParser extends AbstractParser {
                         output = writeFieldBeginEnd(buffer, s1, "", s2, "<paragraph>",
 							"<p>", addSpace, 3, false);
                     } else {
-                        output = writeFieldBeginEnd(buffer, s1, lastTag, s2, "<paragraph>",
+                        output = writeFieldBeginEnd(buffer, s1, lastTag0, s2, "<paragraph>",
 							"<p>", addSpace, 3, false);
                     }
                 }
@@ -1871,7 +1871,7 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<equation_label>")) {
                 buffer.append("</label>\n\n");
             } else if (lastTag0.equals("<table>")) {
-                buffer.append("</table>\n\n");
+                buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<figure>")) {
                 buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<item>")) {
@@ -1893,8 +1893,14 @@ public class FullTextParser extends AbstractParser {
                 buffer.append("</ref>");
             } else {
                 res = false;
-
             }
+
+			// Make sure that paragraph is closed when markers are at the end of it
+	        if (lastTag0.equals("<citation_marker>") || lastTag0.equals("<figure_marker>") || lastTag0.equals("<table_marker>") || lastTag0.equals("<equation_marker>")) {
+		        if (!currentTag0.equals("<paragraph>") && (!currentTag0.equals("<citation_marker>") || (!currentTag0.equals("<figure_marker>") || !currentTag0.equals("<table_marker>") || !currentTag0.equals("<equation_marker>")))) {
+			        buffer.append("</p>\n\n");
+		        }
+	        }
 
         }
         return res;
