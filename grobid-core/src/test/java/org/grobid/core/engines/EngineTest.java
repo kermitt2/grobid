@@ -47,10 +47,9 @@ public class EngineTest {
         LibraryLoader.load();
     }
 
-    @Test
+    @Ignore("no needed")
     public void testGetNewModel() {
-        //assertEquals("Wrong value of getModel", "-m "+ GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
-        //assertEquals("Wrong value of getModel", GrobidModels.ACKNOWLEDGMENT.getModelPath()+" ", GrobidModels.ACKNOWLEDGMENT.getModelPath());
+        // assertEquals("Wrong value of getModel", "-m "+GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
     }
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -692,7 +691,6 @@ public class EngineTest {
         assertThat(processedDates.get(0).getMonthString(), is("August"));
         assertThat(processedDates.get(0).getYearString(), is("1985"));
     }
-
 
     @Test
     public void testPDF() throws Exception {

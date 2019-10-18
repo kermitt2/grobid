@@ -48,8 +48,6 @@ public class DateParserTest {
         assertThat(date.getDayString(), is("19"));
         assertThat(date.getMonthString(), is("January"));
         assertThat(date.getYearString(), is("1983"));
-
-        System.out.println(output.get(0));
     }
 
     @Test
@@ -238,7 +236,7 @@ public class DateParserTest {
 
         StringBuilder sb = target.trainingExtraction(input);
         String output = sb.toString();
-        System.out.println(sb);
+
         assertThat(output, is("\t<date><month>December</month> <year>1943</year></date>\n"));
 
     }
@@ -273,7 +271,6 @@ public class DateParserTest {
         DateParser dateParser = new DateParser();
         {
             List<Date> dates = dateParser.processing("May 2003");
-            System.out.println(dates);
             assertEquals(1, dates.size());
             Date date = dates.get(0);
             assertEquals(2003, date.getYear());

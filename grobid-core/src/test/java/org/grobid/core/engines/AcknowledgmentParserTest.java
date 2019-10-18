@@ -51,7 +51,7 @@ public class AcknowledgmentParserTest {
             "Joris Snellenburg is thanked for constructive comments on the text. Uwe Ligges and Martin Mächler collaborated " +
             "in the implementation of the nls options described in Section B. Achim Zeileis contributed helpful suggestions regarding the figures.");
 
-        for (Acknowledgment acknowledgment : output) {
+        /*for (Acknowledgment acknowledgment : output) {
             if (acknowledgment.getAffiliation() != null){
                 System.out.println(acknowledgment.getAffiliation());
             }
@@ -79,6 +79,6 @@ public class AcknowledgmentParserTest {
             if (acknowledgment.getIndividual() != null){
                 System.out.println(acknowledgment.getIndividual());
             }
-        }
+        }*/
     }
 }
