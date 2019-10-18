@@ -301,10 +301,6 @@ public class FullTextParser extends AbstractParser {
 				//System.out.println(rese);
 			}
 
-			// TODO : acknowledgment like annexes
-            //documentBodyParts = doc.getDocumentPart(SegmentationLabels.ACKNOWLEDGEMENT);
-
-
             // final combination
             toTEI(doc, // document
 				rese, rese2, // labeled data for body and annex
