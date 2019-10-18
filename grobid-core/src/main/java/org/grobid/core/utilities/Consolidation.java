@@ -11,6 +11,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.sax.CrossrefUnixrefSaxParser;
 import org.grobid.core.utilities.crossref.*;
 import org.grobid.core.utilities.glutton.*;
+import org.grobid.core.utilities.fatcat.*;
 import org.grobid.core.utilities.counters.CntManager;
 
 import org.slf4j.Logger;
@@ -49,12 +50,13 @@ public class Consolidation {
     private static volatile Consolidation instance;
 
     private CrossrefClient client = null;
-    private WorkDeserializer workDeserializer = null;
+    private CrossrefDeserializer workDeserializer = null;
     private CntManager cntManager = null;
 
     public enum GrobidConsolidationService {
         CROSSREF("crossref"),
-        GLUTTON("glutton");
+        GLUTTON("glutton"),
+        GLUTTON_FATCAT("glutton_fatcat");
 
         private final String ext;
 
@@ -101,11 +103,15 @@ public class Consolidation {
      * Hidden constructor
      */
     private Consolidation() {
-        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
-            client = GluttonClient.getInstance();
-        else 
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
             client = CrossrefClient.getInstance();
-        workDeserializer = new WorkDeserializer();   
+        else 
+            client = GluttonClient.getInstance();
+
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON_FATCAT)
+            workDeserializer = new FatcatReleaseDeserializer();   
+        else 
+            workDeserializer = new WorkDeserializer();   
     }
 
     public void setCntManager(CntManager cntManager) {
@@ -241,7 +247,8 @@ public class Consolidation {
 
         if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
             arguments.put("rows", "1"); // we just request the top-one result
-        } else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+        } else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON
+                   || GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON_FATCAT) {
             if (StringUtils.isNotBlank(doi))
                 arguments.put("postValidate", "false");
             // GROBID has already parsed the reference, so no need to redo this in glutton
@@ -289,6 +296,8 @@ public class Consolidation {
                                     StringUtils.isNotBlank(oneRes.getDOI()) &&
                                     doi.equals(oneRes.getDOI())
                                 )
+                                ||
+                                (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON_FATCAT)
                                 ||
                                 ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) && 
                                   (doiQuery) ) 
@@ -454,7 +463,8 @@ public class Consolidation {
 
             if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF)
                 arguments.put("rows", "1"); // we just request the top-one result
-            else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) {
+            else if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON
+                     || GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON_FATCAT) {
                 // grobid is doing its own post-validation right now
                 //arguments.put("postValidate", "false");
                 // GROBID has already parsed the reference, so no need to redo this in glutton
@@ -483,7 +493,8 @@ public class Consolidation {
                             // we need here to post-check that the found item corresponds
                             // correctly to the one requested in order to avoid false positive
                             for(BiblioItem oneRes : res) {
-                                if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
+                                if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON
+                                     || GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON_FATCAT) ||
                                     postValidation(theBiblio, oneRes)) {
                                     results.put(Integer.valueOf(getRank()), oneRes);
                                     if (cntManager != null) {
