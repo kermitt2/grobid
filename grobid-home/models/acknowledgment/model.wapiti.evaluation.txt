@@ -1,0 +1,368 @@
+Recap results for each fold:
+
+
+====================== Fold 0 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_0.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment8860774342984624590.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment4819500969241712377.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.49        73.33        57.89        64.71        19     
+<fundingAgency>      82.25        37.5         20           26.09        75     
+<grantNumber>        97.08        50           57.14        53.33        14     
+<individual>         98.96        93.44        98.28        95.8         58     
+<otherInstitution>   98.75        0            0            0            5      
+<projectName>        98.12        0            0            0            6      
+<researchInstitution> 98.75        100          14.29        25           7      
+
+all (micro avg.)     95.91        67.15        50           57.32        184    
+all (macro avg.)     95.91        50.61        35.37        37.85        184    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          5
+Instance-level recall:      23.81
+
+
+
+====================== Fold 1 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_1.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment717472843744876289.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment2964540760034427112.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        96.62        20           100          33.33        2      
+<educationalInstitution> 98.73        0            0            0            2      
+<fundingAgency>      89.45        42.86        40.91        41.86        22     
+<grantNumber>        98.73        62.5         100          76.92        5      
+<individual>         97.47        86.84        97.06        91.67        34     
+<otherInstitution>   97.89        33.33        25           28.57        4      
+<projectName>        98.31        0            0            0            3      
+<researchInstitution> 97.47        0            0            0            5      
+
+all (micro avg.)     96.84        60.24        64.94        62.5         77     
+all (macro avg.)     96.84        30.69        45.37        34.04        77     
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          5
+Instance-level recall:      23.81
+
+
+
+====================== Fold 2 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_2.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment4868861148709957825.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment6639905392950154568.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        98.41        50           50           50           6      
+<educationalInstitution> 99.47        0            0            0            2      
+<fundingAgency>      93.37        71.88        58.97        64.79        39     
+<grantName>          99.2         0            0            0            3      
+<grantNumber>        95.49        83.33        60.61        70.18        33     
+<individual>         97.08        95.74        83.33        89.11        54     
+<otherInstitution>   97.08        25           11.11        15.38        9      
+<projectName>        99.47        0            0            0            1      
+<researchInstitution> 98.94        33.33        33.33        33.33        3      
+
+all (micro avg.)     97.61        79.49        62           69.66        150    
+all (macro avg.)     97.61        39.92        33.04        35.87        150    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          6
+Instance-level recall:      28.57
+
+
+
+====================== Fold 3 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_3.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment5858785970787010244.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment8136687774693158257.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.9         57.14        57.14        57.14        7      
+<fundingAgency>      90.56        61.11        62.86        61.97        35     
+<grantNumber>        97.55        80           61.54        69.57        13     
+<individual>         94.41        78.85        89.13        83.67        46     
+<otherInstitution>   98.95        50           33.33        40           3      
+<researchInstitution> 99.65        0            0            0            1      
+
+all (micro avg.)     96.5         71.03        72.38        71.7         105    
+all (macro avg.)     96.5         54.52        50.67        52.06        105    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          6
+Instance-level recall:      28.57
+
+
+
+====================== Fold 4 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_4.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment6153151590215105992.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment7836100829873817641.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.9         50           28.57        36.36        7      
+<educationalInstitution> 99.1         50           33.33        40           3      
+<fundingAgency>      93.41        59.26        59.26        59.26        27     
+<grantNumber>        92.51        55.17        57.14        56.14        28     
+<individual>         96.71        93.33        84           88.42        50     
+<otherInstitution>   97.31        0            0            0            7      
+<projectName>        99.4         0            0            0            2      
+<researchInstitution> 99.4         100          33.33        50           3      
+
+all (micro avg.)     96.97        70.91        61.42        65.82        127    
+all (macro avg.)     96.97        50.97        36.96        41.27        127    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          6
+Instance-level recall:      28.57
+
+
+
+====================== Fold 5 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_5.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment3671488262237719540.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment4582724578005224683.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.42        37.5         37.5         37.5         8      
+<educationalInstitution> 99.23        0            0            0            2      
+<fundingAgency>      88.66        59.57        52.83        56           53     
+<grantName>          99.74        0            0            0            1      
+<grantNumber>        94.07        56.67        62.96        59.65        27     
+<individual>         97.16        87.18        85           86.08        40     
+<otherInstitution>   98.45        40           40           40           5      
+<projectName>        99.23        0            0            0            3      
+<researchInstitution> 99.74        0            0            0            0      
+
+all (micro avg.)     96.75        64.62        60.43        62.45        139    
+all (macro avg.)     96.75        35.12        34.79        34.9         139    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          4
+Instance-level recall:      19.05
+
+
+
+====================== Fold 6 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_6.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment6853162797455780197.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment345142530733590899.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        95.94        60           46.15        52.17        13     
+<educationalInstitution> 99.63        0            0            0            0      
+<fundingAgency>      94.1         54.55        66.67        60           18     
+<grantNumber>        97.42        57.14        50           53.33        8      
+<individual>         96.31        93.75        86.54        90           52     
+<otherInstitution>   98.15        0            0            0            3      
+<projectName>        98.89        0            0            0            3      
+<researchInstitution> 99.26        50           50           50           2      
+
+all (micro avg.)     97.15        74.73        68.69        71.58        99     
+all (macro avg.)     97.15        45.06        42.77        43.64        99     
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          7
+Instance-level recall:      33.33
+
+
+
+====================== Fold 7 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_7.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment7867130707192458764.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment3432741720658720868.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        95.68        40           40           40           10     
+<educationalInstitution> 99.64        0            0            0            1      
+<fundingAgency>      88.85        60           48.65        53.73        37     
+<grantName>          99.64        0            0            0            1      
+<grantNumber>        98.2         87.5         63.64        73.68        11     
+<individual>         95.32        77.42        80           78.69        30     
+<otherInstitution>   97.12        0            0            0            4      
+<projectName>        99.28        0            0            0            2      
+<researchInstitution> 98.56        0            0            0            4      
+
+all (micro avg.)     96.92        63.86        53           57.92        100    
+all (macro avg.)     96.92        29.44        25.81        27.34        100    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          5
+Instance-level recall:      23.81
+
+
+
+====================== Fold 8 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_8.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment206229541307873214.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment2415789326974765696.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.64        56.25        75           64.29        12     
+<educationalInstitution> 98.82        0            0            0            3      
+<fundingAgency>      92.43        60.53        57.5         58.97        40     
+<grantName>          99.76        0            0            0            1      
+<grantNumber>        96.22        50           43.75        46.67        16     
+<individual>         96.22        89.19        89.19        89.19        74     
+<otherInstitution>   97.4         0            0            0            9      
+<projectName>        99.29        0            0            0            3      
+<researchInstitution> 99.29        0            0            0            1      
+
+all (micro avg.)     97.45        70.95        66.04        68.4         159    
+all (macro avg.)     97.45        28.44        29.49        28.79        159    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          1
+Instance-level recall:      4.76
+
+
+
+====================== Fold 9 ====================== 
+Saving model in /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment_nfold_9.wapiti
+Training input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment4187619904250891094.train
+Evaluation input data: /Users/tkristan/Desktop/Tanti/grobid/grobid-home/tmp/acknowledgment4369479857572886207.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        96.89        66.67        30.77        42.11        13     
+<educationalInstitution> 99.15        0            0            0            3      
+<fundingAgency>      90.11        28.12        42.86        33.96        21     
+<grantName>          99.72        0            0            0            1      
+<grantNumber>        98.31        66.67        50           57.14        8      
+<individual>         94.92        80.56        93.55        86.57        62     
+<otherInstitution>   97.74        0            0            0            6      
+<projectName>        99.15        0            0            0            2      
+<researchInstitution> 99.44        50           50           50           2      
+
+all (micro avg.)     97.27        62.81        64.41        63.6         118    
+all (macro avg.)     97.27        32.45        29.69        29.98        118    
+
+===== Instance-level results =====
+
+Total expected instances:   28
+Correct instances:          6
+Instance-level recall:      21.43
+
+
+
+Summary results: 
+Worst fold
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        95.68        40           40           40           10     
+<educationalInstitution> 99.64        0            0            0            1      
+<fundingAgency>      88.85        60           48.65        53.73        37     
+<grantName>          99.64        0            0            0            1      
+<grantNumber>        98.2         87.5         63.64        73.68        11     
+<individual>         95.32        77.42        80           78.69        30     
+<otherInstitution>   97.12        0            0            0            4      
+<projectName>        99.28        0            0            0            2      
+<researchInstitution> 98.56        0            0            0            4      
+
+all (micro avg.)     96.92        63.86        53           57.92        100    
+all (macro avg.)     96.92        29.44        25.81        27.34        100    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          5
+Instance-level recall:      23.81
+
+Best fold:
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.9         57.14        57.14        57.14        7      
+<fundingAgency>      90.56        61.11        62.86        61.97        35     
+<grantNumber>        97.55        80           61.54        69.57        13     
+<individual>         94.41        78.85        89.13        83.67        46     
+<otherInstitution>   98.95        50           33.33        40           3      
+<researchInstitution> 99.65        0            0            0            1      
+
+all (micro avg.)     96.5         71.03        72.38        71.7         105    
+all (macro avg.)     96.5         54.52        50.67        52.06        105    
+
+===== Instance-level results =====
+
+Total expected instances:   21
+Correct instances:          6
+Instance-level recall:      28.57
+
+
+Average over 10 folds: 
+
+label                accuracy     precision    recall       f1           support
+
+<affiliation>        97.19        51.09        52.3         47.76        97     
+<educationalInstitution> 79.38        5            3.33         4            16     
+<fundingAgency>      90.32        53.54        51.05        51.66        367    
+<grantName>          49.81        0            0            0            7      
+<grantNumber>        96.56        64.9         60.68        61.66        163    
+<individual>         96.46        87.63        88.61        87.92        500    
+<otherInstitution>   97.88        14.83        10.94        12.4         55     
+<projectName>        89.11        0            0            0            25     
+<researchInstitution> 99.05        33.33        18.1         20.83        28     
+
+all (macro avg.)     96.94        39.72        36.39        36.57  
+
+===== Instance-level results =====
+
+Total expected instances:   21.7
+Correct instances:          5.1
+Instance-level recall:      23.5
+
+
+N-Fold evaluation for acknowledgment model is realized in 2808538 ms
