@@ -86,10 +86,8 @@ public class GrobidRestProcessFiles {
                 String fileNameLow = fileName.toLowerCase();
                 if (fileNameLow.endsWith("docx"))
                     extension = "docx";
-                else if (fileNameLow.endsWith("doc"))
-                    extension = "doc";
             }
-            
+
             // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
             originFile = IOUtilities.writeInputFile(inputStream, extension);
             if (originFile == null) {
@@ -179,8 +177,6 @@ public class GrobidRestProcessFiles {
                 String fileNameLow = fileName.toLowerCase();
                 if (fileNameLow.endsWith("docx"))
                     extension = "docx";
-                else if (fileNameLow.endsWith("doc"))
-                    extension = "doc";
             }
 
             // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
@@ -280,8 +276,6 @@ public class GrobidRestProcessFiles {
                 String fileNameLow = fileName.toLowerCase();
                 if (fileNameLow.endsWith("docx"))
                     extension = "docx";
-                else if (fileNameLow.endsWith("doc"))
-                    extension = "doc";
             }
 
             // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
@@ -540,8 +534,6 @@ public class GrobidRestProcessFiles {
                 String fileNameLow = fileName.toLowerCase();
                 if (fileNameLow.endsWith("docx"))
                     extension = "docx";
-                else if (fileNameLow.endsWith("doc"))
-                    extension = "doc";
             }
 
             originFile = IOUtilities.writeInputFile(inputStream, extension);

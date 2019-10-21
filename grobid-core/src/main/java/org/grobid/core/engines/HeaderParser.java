@@ -79,7 +79,7 @@ public class HeaderParser extends AbstractParser {
         DocumentSource documentSource = null;
         try {
             String extension = FilenameUtils.getExtension(input.getName());
-            if ( extension != null && (extension.toLowerCase().equals("docx") || extension.toLowerCase().equals("doc")) ) {
+            if ( extension != null && (extension.toLowerCase().equals("docx")) ) {
                 documentSource = DocumentSource.fromDocx(input, config.getStartPage(), config.getEndPage());
             } else {
                 documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
@@ -104,7 +104,7 @@ public class HeaderParser extends AbstractParser {
         DocumentSource documentSource = null;
         try {
             String extension = FilenameUtils.getExtension(input);
-            if ( extension != null && (extension.toLowerCase().equals("docx") || extension.toLowerCase().equals("doc")) ) {
+            if ( extension != null && (extension.toLowerCase().equals("docx")) ) {
                 documentSource = DocumentSource.fromDocx(new File(input), config.getStartPage(), config.getEndPage());
             }
             else {

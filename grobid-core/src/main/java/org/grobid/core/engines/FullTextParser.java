@@ -110,7 +110,7 @@ public class FullTextParser extends AbstractParser {
 							   GrobidAnalysisConfig config) throws Exception {
         DocumentSource documentSource = null;
         String extension = FilenameUtils.getExtension(input.getName());
-        if ( extension != null && (extension.toLowerCase().equals("docx") || extension.toLowerCase().equals("doc")) ) {
+        if ( extension != null && (extension.toLowerCase().equals("docx")) ) {
             documentSource = DocumentSource.fromDocx(input, config.getStartPage(), config.getEndPage(),
                 config.getPdfAssetPath() != null, true, false);
         } else {
