@@ -12,14 +12,19 @@ import org.grobid.core.utilities.Utilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.poi.xwpf.converter.pdf.PdfConverter;
+import org.apache.poi.xwpf.converter.pdf.PdfOptions;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
 /**
- * Input document to be processed, which could come from a PDF or directly be an XML file. 
- * If from a PDF document, this is the place where pdftoxml is called.
+ * Input document to be processed, which could come from a PDF, a doc/docx or directly be an XML file. 
+ * If from a PDF document, this is the place where pdfalto is called.
+ * If from a doc/docx document, this is the place where a conversion with Apache POI is realized. 
  */
 public class DocumentSource {
     private static final Logger LOGGER = LoggerFactory.getLogger(DocumentSource.class);
@@ -30,9 +35,10 @@ public class DocumentSource {
     public static final int PDFTOXML_FILES_AMOUNT_LIMIT = 5000;
 
     private File pdfFile;
+    private File docxFile;
     private File xmlFile;
     boolean cleanupXml = false;
-
+    boolean cleanupPdf = false;
 
     private DocumentSource() {
     }
@@ -41,12 +47,20 @@ public class DocumentSource {
         return fromPdf(pdfFile, -1, -1);
     }
 
+    public static DocumentSource fromDocx(File docxFile) {
+        return fromDocx(docxFile, -1, -1);
+    }
+
     /**
      * By default the XML extracted from the PDF is without images, to avoid flooding the grobid-home/tmp directory,
 	 * but with the extra annotation file and with outline	
      */
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage) {
         return fromPdf(pdfFile, startPage, endPage, false, true, false);
+    }
+
+    public static DocumentSource fromDocx(File docxFile, int startPage, int endPage) {
+        return fromDocx(docxFile, startPage, endPage, false, true, false);
     }
 
     public static DocumentSource fromPdf(File pdfFile, int startPage, int endPage, 
@@ -68,6 +82,35 @@ public class DocumentSource {
         } finally {
         }
         source.pdfFile = pdfFile;
+        return source;
+    }
+
+    public static DocumentSource fromDocx(File docxFile, int startPage, int endPage, 
+                                         boolean withImages, boolean withAnnotations, boolean withOutline) {
+        if (!docxFile.exists() || docxFile.isDirectory()) {
+            throw new GrobidException("Input doc/docx file " + docxFile + " does not exist or a directory", 
+                GrobidExceptionStatus.BAD_INPUT_DATA);
+        }
+
+        DocumentSource source = new DocumentSource();
+        source.cleanupXml = true;
+        source.cleanupPdf = true;
+
+        // preliminary convert doc/docx file into PDF
+        File pdfFile = source.docxToPdf(docxFile, GrobidProperties.getTempPath());
+        // create an ALTO representation
+        if (pdfFile != null) {
+            try {
+                source.xmlFile = source.pdf2xml(null, false, startPage, endPage, pdfFile, 
+                    GrobidProperties.getTempPath(), withImages, withAnnotations, withOutline);
+            } catch (Exception e) {
+                source.close(withImages, withAnnotations, withOutline);
+                throw e;
+            } finally {
+                source.cleanPdfFile(pdfFile);
+            }
+        }
+        source.docxFile = docxFile;
         return source;
     }
 
@@ -351,11 +394,85 @@ public class DocumentSource {
         return success;
     }
 
+    private boolean cleanPdfFile(File pathToPdf) {
+        boolean success = false;
+        try {
+            if (pathToPdf != null) {
+                if (pathToPdf.exists()) {
+                    success = pathToPdf.delete();
+                    if (!success) {
+                        throw new GrobidResourceException("Deletion of a temporary PDF file failed for file '" + pathToPdf.getAbsolutePath() + "'");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            if (e instanceof GrobidResourceException) {
+                throw (GrobidResourceException) e;
+            } else {
+                throw new GrobidResourceException("An exception occurred while deleting an PDF file '" + pathToPdf + "'.", e);
+            }
+        }
+
+        return success;
+    }
+
+    /**
+     * Convert doc/docx file to pdf format using Apache POI (via opensagres converter). 
+     * The current thread is used for the execution.
+     *
+     * @param docxPath  docx/doc file
+     * @param tmpPath   temp path to save the converted file
+     * @return the converted file or null if conversion was impossible/failed
+     */
+    private File docxToPdf(File docxFile, File tmpPath) {
+        // target PDF file 
+        if (docxFile == null || !docxFile.exists()) {
+            LOGGER.error("Invalid doc/docx file for PDF conversion");
+            return null;
+        }
+
+        File pdfFile = new File(tmpPath, KeyGen.getKey() + ".pdf");
+        try (
+            InputStream is = new FileInputStream(docxFile);
+            OutputStream out = new FileOutputStream(pdfFile);
+        ) {
+            long start = System.currentTimeMillis();
+            // load the docx file into XWPFDocument
+            XWPFDocument document = new XWPFDocument(is);
+            // PDF options
+            PdfOptions options = PdfOptions.create();
+            
+            // note: the default font encoding will be unicode, but it does not always work given the docx fonts,
+            // it is possible to set explicitely a font encoding like this:
+            // options = PdfOptions.create().fontEncoding("windows-1250");
+
+            // ensure PDF/A conformance level, for safer PDF processing by pdfalto 
+            /*options.setConfiguration( new IPdfWriterConfiguration() {
+                public void configure( PdfWriter writer ) {
+                    writer.setPDFXConformance( PdfWriter.PDFA1A );
+                }
+            });*/
+
+            // converting XWPFDocument to PDF
+            PdfConverter.getInstance().convert(document, out, options);
+            LOGGER.info("docx file converted to PDF in : " + (System.currentTimeMillis() - start) + " milli seconds");
+
+            // TBD: for using the more recent version 2.0.2 of fr.opensagres.poi.xwpf.converter.core, see
+            // https://stackoverflow.com/questions/51330192/trying-to-make-simple-pdf-document-with-apache-poi
+        } catch (Throwable e) {
+            LOGGER.error("converting doc/docx into PDF failed", e);
+            pdfFile = null;
+        }
+        return pdfFile;
+    }
 
     public void close(boolean cleanImages, boolean cleanAnnotations, boolean cleanOutline) {
         try {
             if (cleanupXml) {
                 cleanXmlFile(xmlFile, cleanImages, cleanAnnotations, cleanOutline);
+            } 
+            if (cleanupPdf) {
+                cleanPdfFile(pdfFile);
             }
         } catch (Exception e) {
             LOGGER.error("Cannot cleanup resources (just printing exception):", e);
@@ -369,7 +486,7 @@ public class DocumentSource {
     }
 
     public File getPdfFile() {
-        return pdfFile;
+        return this.pdfFile;
     }
 
     public void setPdfFile(File pdfFile) {
@@ -377,11 +494,19 @@ public class DocumentSource {
     }
 
     public File getXmlFile() {
-        return xmlFile;
+        return this.xmlFile;
     }
 
-    public void setXmlFile(File xmlFile) {
+    public void setXmlFile(File docxFile) {
         this.xmlFile = xmlFile;
+    }
+
+    public File getDocxFile() {
+        return this.xmlFile;
+    }
+
+    public void setDocxFile(File docxFile) {
+        this.docxFile = docxFile;
     }
 
 }

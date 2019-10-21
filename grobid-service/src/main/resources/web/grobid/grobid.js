@@ -20,7 +20,7 @@ var grobid = (function($) {
         } else {
 			baseUrl = $(location).attr('href') + "api/" + ext;
 		}
-		console.log("BaseURL: " + baseUrl);
+		//console.log("BaseURL: " + baseUrl);
 		return baseUrl;
 	}
 
@@ -74,13 +74,14 @@ var grobid = (function($) {
 			return true;
 		});
 
-		$('#gbdForm').ajaxForm({
+		/*$('#gbdForm').ajaxForm({
             beforeSubmit: ShowRequest1,
             success: SubmitSuccesful,
             error: AjaxError1,
             dataType: "text"
-        });
+        });*/
 
+        $('#submitRequest1').bind('click', submitQuery1);
 		$('#submitRequest2').bind('click', submitQuery2);
 		$('#submitRequest3').bind('click', submitQuery3);
 
@@ -281,6 +282,56 @@ var grobid = (function($) {
 		$('#requestResult').show();
         $("#btn_download").show();
 	}
+
+    function submitQuery1() {
+        var selected = $('#selectedService option:selected').attr('value');
+        var url = $('#gbdForm').attr('action');
+        var form = document.getElementById('gbdForm');
+        var formData = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'text';
+        var payload = null;
+        if (selected === 'processHeaderDocument' || selected === 'processFulltextDocument' || selected === 'processReferences') {
+
+            // use file input in the form data
+            //var form = document.getElementById('gbdForm');
+            formData.delete('inputText');
+            xhr.open('POST', url, true);
+            payload = formData; // multipart/form-data
+        } else {
+            // use text input in the form data
+            formData.delete('input');
+
+            var urlEncodedData = "";
+            var urlEncodedDataPairs = [];
+            var name;
+
+            for (var pair of formData.entries()) {
+                urlEncodedDataPairs.push(encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]));
+            }
+            var value = formData.get('inputText');
+            //var value = $('#textInputArea').val()
+            if (value)
+                urlEncodedDataPairs.push(encodeURIComponent('input') + '=' + encodeURIComponent(value));
+            urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            payload = urlEncodedData; // application/x-www-form-urlencoded
+        }
+        
+        ShowRequest1();
+        xhr.onreadystatechange = function (e) {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var response = e.target.response;
+                    SubmitSuccesful(xhr.responseText, xhr.status, xhr);
+                } else {
+                    AjaxError1("Response " + xhr.status + ": " );
+                }
+            }
+        }
+        xhr.send(payload);  
+    }
 
     function submitQuery2() {
         var selected = $('#selectedService2 option:selected').attr('value');

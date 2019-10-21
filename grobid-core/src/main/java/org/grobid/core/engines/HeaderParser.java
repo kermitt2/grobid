@@ -1,8 +1,11 @@
 package org.grobid.core.engines;
 
 import com.google.common.base.Splitter;
+
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.io.FilenameUtils;
+
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -75,7 +78,13 @@ public class HeaderParser extends AbstractParser {
     public Pair<String, Document> processing(File input, BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
-            documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
+            String extension = FilenameUtils.getExtension(input.getName());
+            if ( extension != null && (extension.toLowerCase().equals("docx") || extension.toLowerCase().equals("doc")) ) {
+                documentSource = DocumentSource.fromDocx(input, config.getStartPage(), config.getEndPage());
+            } else {
+                documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
+            }
+
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
             String tei = processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
@@ -91,10 +100,17 @@ public class HeaderParser extends AbstractParser {
      * Processing without application of the segmentation model, regex are used to identify the header
      * zone.
      */
-    public Pair<String, Document> processing2(String pdfInput, BiblioItem resHeader, GrobidAnalysisConfig config) {
+    public Pair<String, Document> processing2(String input, BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
+            String extension = FilenameUtils.getExtension(input);
+            if ( extension != null && (extension.toLowerCase().equals("docx") || extension.toLowerCase().equals("doc")) ) {
+                documentSource = DocumentSource.fromDocx(new File(input), config.getStartPage(), config.getEndPage());
+            }
+            else {
+                documentSource = DocumentSource.fromPdf(new File(input), config.getStartPage(), config.getEndPage());
+            }
+
             Document doc = new Document(documentSource);
             doc.addTokenizedDocument(config);
 
