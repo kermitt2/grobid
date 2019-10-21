@@ -106,14 +106,14 @@ For performing a N fold evaluation:
 
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 4 <name of the model> -gH grobid-home -n FOLD-NUMBER
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 <name of the model> -gH grobid-home -n FOLD-NUMBER
 ```
 
 `FOLD_NUMBER` must be > 1. 
 
 For instance for a 10-fold evaluation of the date model:
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 4 date -gH grobid-home -n 10
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 date -gH grobid-home -n 10
 ```
 
 
