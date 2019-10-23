@@ -30,6 +30,7 @@ import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,19 +60,6 @@ public class TEIFormatter {
         TaggingLabels.FIGURE_MARKER,
         TaggingLabels.TABLE_MARKER,
         TaggingLabels.EQUATION_MARKER);
-
-    // for acknowledgment parser
-    public static final Set<TaggingLabel> ACKNOWLEDGMENT_LABELS = Sets.newHashSet(
-        TaggingLabels.ACKNOWLEDGMENT,
-        TaggingLabels.AKNOWLEDGMENT_AFFILIATION,
-        TaggingLabels.AKNOWLEDGMENT_EDUCATIONAL_INSTITUTION,
-        TaggingLabels.AKNOWLEDGMENT_FUNDING_AGENCY,
-        TaggingLabels.AKNOWLEDGMENT_GRANT_NAME,
-        TaggingLabels.AKNOWLEDGMENT_GRANT_NUMBER,
-        TaggingLabels.AKNOWLEDGMENT_INDIVIDUAL,
-        TaggingLabels.AKNOWLEDGMENT_OTHER_INSTITUTION,
-        TaggingLabels.AKNOWLEDGMENT_PROJECT_NAME,
-        TaggingLabels.AKNOWLEDGMENT_RESEARCH_INSTITUTION);
 
     // possible association to Grobid customised TEI schemas: DTD, XML schema, RelaxNG or compact RelaxNG
     // DEFAULT means no schema association in the generated XML documents
@@ -1119,8 +1107,6 @@ public class TEIFormatter {
                                               List<BibDataSet> bds,
                                               GrobidAnalysisConfig config) throws Exception {
         AcknowledgmentParser acknowledgmentParser = new AcknowledgmentParser();
-        Map<String, List<String>> ackInMap = new HashMap<>();
-        List<Acknowledgment> resultAcknowledgment = new ArrayList<>();
 
         if ((reseAcknowledgement == null) || (tokenizationsAcknowledgement == null)) {
             return buffer;
@@ -1128,22 +1114,27 @@ public class TEIFormatter {
 
         buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
 
-        StringBuilder buffer2 = new StringBuilder();
+        StringBuilder buffer2 = new StringBuilder(), buffer3 = new StringBuilder();
         StringBuilder resultAcknow = new StringBuilder();
 
+        // get the acknowledgment sections together with other results in a whole document
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
             new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, doc, config);
-        String acknowResult = buffer2.toString();
+        String acknowWholeText = buffer2.toString();
+
+        // take only acknowledgment section content
+        buffer3 = takeOnlyAcknowledgmentText(buffer3, reseAcknowledgement,
+            new LayoutTokenization(tokenizationsAcknowledgement));
+        String acknowOnlyText = buffer3.toString();
 
         // call the acknowledgment parser
-        resultAcknowledgment = acknowledgmentParser.processing(acknowResult);
+        List<AcknowledgmentItem> resultAcknowledgment = acknowledgmentParser.processing(acknowOnlyText);
 
         // get the coordinates for acknowledgment results
-        List<Acknow> listAcknow = listAcknowledgmentResult(resultAcknowledgment);
-        getCoordAcknowledgment(listAcknow, tokenizationsAcknowledgement);
+        getCoordAcknowledgment(resultAcknowledgment, tokenizationsAcknowledgement);
 
         // put the results together with the raw text
-        resultAcknow = markReferencesTEIAcknowledgment(acknowResult, listAcknow);
+        resultAcknow = markReferencesTEIAcknowledgment(acknowWholeText, resultAcknowledgment);
         if (resultAcknow != null) {
             String resultAcknowInString = resultAcknow.toString();
 
@@ -1161,78 +1152,44 @@ public class TEIFormatter {
         return buffer;
     }
 
-    public List<Acknow> listAcknowledgmentResult(List<Acknowledgment> listAck) {
-        List<Acknow> acklist = new ArrayList<>();
+    public StringBuilder takeOnlyAcknowledgmentText(StringBuilder buffer,
+                                                    String reseAcknowledgement,
+                                                    LayoutTokenization layoutTokenization) {
+        List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
 
-        for (Acknowledgment acknowledgment : listAck) {
-            Acknow acknow = null;
-            if (acknowledgment.getAffiliation() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getAffiliation());
-                acknow.setLabel("affiliation");
-                acklist.add(acknow);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, reseAcknowledgement, tokenizations);
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
             }
-            if (acknowledgment.getEducationalInstitution() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getEducationalInstitution());
-                acknow.setLabel("educationalInstitution");
-                acklist.add(acknow);
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+
+            Engine.getCntManager().i(clusterLabel);
+            if (clusterLabel.equals(TaggingLabels.SECTION)) {
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                buffer.append(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                buffer.append(clusterContent);
             }
-            if (acknowledgment.getFundingAgency() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getFundingAgency());
-                acknow.setLabel("fundingAgency");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getGrantName() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getGrantName());
-                acknow.setLabel("grantName");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getGrantNumber() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getGrantNumber());
-                acknow.setLabel("grantNumber");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getOtherInstitution() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getOtherInstitution());
-                acknow.setLabel("otherInstitution");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getProjectName() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getProjectName());
-                acknow.setLabel("projectName");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getResearchInstitution() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getResearchInstitution());
-                acknow.setLabel("researchInstitution");
-                acklist.add(acknow);
-            }
-            if (acknowledgment.getIndividual() != null) {
-                acknow = new Acknow();
-                acknow.setText(acknowledgment.getIndividual());
-                acknow.setLabel("individual");
-                acklist.add(acknow);
-            }
+            buffer.append("\n");
         }
-        return acklist;
+        return buffer;
     }
 
-    public StringBuilder markReferencesTEIAcknowledgment(String acknowText, List<Acknow> acknowList) {
+    public StringBuilder markReferencesTEIAcknowledgment(String acknowText, List<AcknowledgmentItem> acknowledgmentItemList) {
         String acknowWholeText = acknowText;
         StringBuilder result = new StringBuilder();
 
-        for (Acknow acknow : acknowList) {
+        for (AcknowledgmentItem acknowledgmentItem : acknowledgmentItemList) {
             // text information
-            String text = acknow.getText();
-            String label = acknow.getLabel();
-            String coords = acknow.getCoords();
+            String text = acknowledgmentItem.getText();
+            String label = acknowledgmentItem.getLabel();
+            String coords = acknowledgmentItem.getCoords();
 
             int lengTextAckPart = text.length();
             int lengTextWhole = acknowWholeText.length();
@@ -1257,8 +1214,8 @@ public class TEIFormatter {
         return result;
     }
 
-    public void getCoordAcknowledgment(List<Acknow> listAcknow, List<LayoutToken> tokenizationsAcknowledgement) {
-        for (Acknow ack : listAcknow) { // iterate through all acknowledgment text as results of acknowledgment parser
+    public void getCoordAcknowledgment(List<AcknowledgmentItem> listAcknowledgmentItem, List<LayoutToken> tokenizationsAcknowledgement) {
+        for (AcknowledgmentItem ack : listAcknowledgmentItem) { // iterate through all acknowledgment text as results of acknowledgment parser
             List<LayoutToken> layaoutTokenRelevant = new ArrayList<>();
             List<LayoutToken> tokenListToBeFound = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(ack.getText());
             int lastIdx = 0;

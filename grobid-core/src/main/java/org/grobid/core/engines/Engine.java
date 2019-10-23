@@ -15,8 +15,6 @@
 
 package org.grobid.core.engines;
 
-import com.google.common.io.Files;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 //import org.grobid.core.annotations.TeiStAXParser;
@@ -24,10 +22,7 @@ import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.Consolidation;
@@ -105,8 +100,8 @@ public class Engine implements Closeable {
      * @return the list of all structured date objects recognized in the string.
      * @throws IOException
      */
-    public List<Acknowledgment> processAcknowledgment(String acknowledgmentBlock) throws IOException {
-        List<Acknowledgment> result = parsers.getAcknowledgmentParser().processing(acknowledgmentBlock);
+    public List<AcknowledgmentItem> processAcknowledgment(String acknowledgmentBlock) throws IOException {
+        List<AcknowledgmentItem> result = parsers.getAcknowledgmentParser().processing(acknowledgmentBlock);
         return result;
     }
 

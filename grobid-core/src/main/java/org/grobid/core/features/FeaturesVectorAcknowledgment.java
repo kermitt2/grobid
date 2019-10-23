@@ -1,7 +1,11 @@
 package org.grobid.core.features;
 
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 
 import java.util.List;
 import java.util.StringTokenizer;
@@ -147,7 +151,7 @@ public class FeaturesVectorAcknowledgment {
     /**
      * Add feature for acknowledgment parsing.
      */
-    static public String addFeaturesAcknowledgment(List<String> lines) throws Exception {
+    static public String addFeaturesAcknowledgmentString(List<String> lines) throws Exception {
 
         StringBuffer result = new StringBuffer();
         List<String> block = null;
@@ -194,19 +198,12 @@ public class FeaturesVectorAcknowledgment {
 
     }
 
+
     static private FeaturesVectorAcknowledgment addFeaturesAcknowledgment(String line, String lineStatus) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         FeaturesVectorAcknowledgment featuresVectorAcknowledgment = new FeaturesVectorAcknowledgment();
 
-        //List<String> tokens = GrobidAnalyzer.getInstance().tokenize(line);
         StringTokenizer st = new StringTokenizer(line.trim(), "\t ");
-        /*for (String tok : tokens) {
-            String word = tok;
-
-            String label = null;
-            if (tok != null) {
-                label = tok;
-            }*/
 
         if (st.hasMoreTokens()) {
             String word = st.nextToken();
@@ -230,7 +227,7 @@ public class FeaturesVectorAcknowledgment {
             } else if (featureFactory.test_first_capital(word)) {
                 featuresVectorAcknowledgment.capitalisation = "INITCAP";
             } else
-                featuresVectorAcknowledgment.capitalisation = "NOCAP";
+                featuresVectorAcknowledgment.capitalisation = "NOCAPS";
 
             // digit
             if (featureFactory.test_number(word)) {
@@ -284,5 +281,142 @@ public class FeaturesVectorAcknowledgment {
             featuresVectorAcknowledgment.wordShape = TextUtilities.wordShape(word);
         }
         return featuresVectorAcknowledgment;
+    }
+
+    /**
+     * Add feature for acknowledgment parsing with tokens as input.
+     */
+    static public String addFeaturesAcknowledgment(List<LayoutToken> tokens) throws Exception {
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
+
+        StringBuilder acknowledgment = new StringBuilder();
+
+        String previousTag = null;
+        String previousText = null;
+        FeaturesVectorAcknowledgment featuresVectorAcknowledgment = null;
+        int sentenceLenth = tokens.size(); // length of the current sentence
+        for (int n=0; n < tokens.size(); n++) {
+            LayoutToken token = tokens.get(n);
+            String tag = null;
+
+            boolean outputLineStatus = false;
+
+            String text = token.getText();
+            if (text.equals(" ")) {
+                continue;
+            }
+
+            if (text.equals("\n")) {
+                continue;
+            }
+
+            // parano normalisation
+            text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
+            if (text.trim().length() == 0 ) {
+                continue;
+            }
+
+            if (TextUtilities.filterLine(text)) {
+                continue;
+            }
+
+            featuresVectorAcknowledgment = new FeaturesVectorAcknowledgment();
+
+            featuresVectorAcknowledgment.string = text;
+            featuresVectorAcknowledgment.label = tag;
+
+            // line status
+            if (n == 0) {
+                featuresVectorAcknowledgment.lineStatus = "LINESTART";
+                outputLineStatus = true;
+            }
+            if (n == 0) {
+                if (!outputLineStatus) {
+                    featuresVectorAcknowledgment.lineStatus = "LINESTART";
+                    outputLineStatus = true;
+                }
+            } else if (tokens.size() == n+1) {
+                if (!outputLineStatus) {
+                    featuresVectorAcknowledgment.lineStatus = "LINEEND";
+                    outputLineStatus = true;
+                }
+            }
+            if (!outputLineStatus) {
+                featuresVectorAcknowledgment.lineStatus = "LINEIN";
+                outputLineStatus = true;
+            }
+
+            // single character
+            if (text.length() == 1) {
+                featuresVectorAcknowledgment.singleChar = true;
+            }
+
+            // capital
+            if (featureFactory.test_all_capital(text)) {
+                featuresVectorAcknowledgment.capitalisation = "ALLCAPS";
+            }
+
+            if (Character.isUpperCase(text.charAt(0))) {
+                featuresVectorAcknowledgment.capitalisation = "INITCAP";
+            }
+
+            if (featuresVectorAcknowledgment.capitalisation == null) {
+                featuresVectorAcknowledgment.capitalisation = "NOCAPS";
+            }
+
+            // digit
+            Matcher m = featureFactory.isDigit.matcher(text);
+            if (m.find()) {
+                featuresVectorAcknowledgment.digit = "ALLDIGIT";
+            }
+
+            if (featureFactory.test_digit(text)) {
+                featuresVectorAcknowledgment.digit = "CONTAINSDIGITS";
+            }
+
+            if (featuresVectorAcknowledgment.digit == null)
+                featuresVectorAcknowledgment.digit = "NODIGIT";
+
+            // common name
+            if (featureFactory.test_common(text)) {
+                featuresVectorAcknowledgment.commonName = true;
+            }
+
+            // proper name
+            if (featureFactory.test_names(text)) {
+                featuresVectorAcknowledgment.properName = true;
+            }
+
+            // find the punctuations
+            Matcher m0 = featureFactory.isPunct.matcher(text);
+            if (m0.find()) {
+                featuresVectorAcknowledgment.punctType = "PUNCT";
+            }
+
+            if (featuresVectorAcknowledgment.punctType == null)
+                featuresVectorAcknowledgment.punctType = "NOPUNCT";
+
+            // token containing special character
+            if ((text.equals("(")) | (text.equals("["))) {
+                featuresVectorAcknowledgment.punctType = "OPENBRACKET";
+            } else if ((text.equals(")")) | (text.equals("]"))) {
+                featuresVectorAcknowledgment.punctType = "ENDBRACKET";
+            } else if (text.equals(".")) {
+                featuresVectorAcknowledgment.punctType = "DOT";
+            } else if (text.equals(",")) {
+                featuresVectorAcknowledgment.punctType = "COMMA";
+            } else if (text.equals("-")) {
+                featuresVectorAcknowledgment.punctType = "HYPHEN";
+            } else if (text.equals("\"") | text.equals("\'") | text.equals("`")) {
+                featuresVectorAcknowledgment.punctType = "QUOTE";
+            }
+
+            acknowledgment.append(featuresVectorAcknowledgment.printVector());
+
+            previousTag = tag;
+            previousText = text;
+        }
+
+        return acknowledgment.toString();
     }
 }

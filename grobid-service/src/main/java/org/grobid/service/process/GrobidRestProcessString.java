@@ -210,15 +210,18 @@ public class GrobidRestProcessString {
 
             engine = Engine.getEngine(true);
             acknowledgment = acknowledgment.replaceAll("\\t", " ");
-            List<Acknowledgment> acknowledgmentList = engine.processAcknowledgment(acknowledgment);
+            List<AcknowledgmentItem> acknowledgmentList = engine.processAcknowledgment(acknowledgment);
 
             if (acknowledgmentList != null) {
-                for(Acknowledgment ack : acknowledgmentList) {
+                retVal = "<aknowledgment>";
+                for(AcknowledgmentItem ack : acknowledgmentList) {
                     if (retVal == null) {
                         retVal = "";
+                    }else {
+                        retVal += ack.toTEI();
                     }
-                    retVal += ack.toTEI();
                 }
+                retVal += "</aknowledgment>";
             }
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();

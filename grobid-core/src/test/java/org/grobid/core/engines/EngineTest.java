@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Acknowledgment;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -674,7 +673,7 @@ public class EngineTest {
     public void testAcknowledgmentParser() throws Exception {
         String acknowledgmentText = "Acknowledgements. We thank E. Brockmann and two anonymous reviewers " +
             "for their helpful reviews. This work was supported by the Centre National de la Recherche Scientifique (CNRS-INSU)";
-        List<Acknowledgment> acknowledgmentList = new AcknowledgmentParser().processing(acknowledgmentText);
+        List<Acknowledgment> acknowledgmentList = new AcknowledgmentParserOld().processing(acknowledgmentText);
 
         assertThat(acknowledgmentList.size(), is(1));
         assertThat(acknowledgmentList.get(0).getIndividual(), is("E . Brockmann"));
