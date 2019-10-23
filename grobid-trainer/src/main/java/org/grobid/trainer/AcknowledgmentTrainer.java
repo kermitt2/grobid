@@ -3,6 +3,8 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAcknowledgment;
+import org.grobid.core.features.FeaturesVectorCitation;
+import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.sax.TEIAcknowledgmentSaxParser;
 
@@ -100,28 +102,30 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
                 final SAXParser p = spf.newSAXParser();
                 p.parse(teifile, parser2);
 
-                final List<String> labeled = parser2.getLabeledResult();
-                totalExamples += parser2.n;
+                final List<List<String>> labeled = parser2.getLabeledResults();
+                final List<List<LayoutToken>> allTokens = parser2.getTokenResults();
+                totalExamples += parser2.nbAcknowledgments;
 
                 // add the features
-                String headerAcknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(labeled);
+                for(int i=0; i<allTokens.size(); i++) {
+                    // fix the offsets
+                    int pos = 0;
+                    for(LayoutToken token : allTokens.get(i)) {
+                        token.setOffset(pos);
+                        pos += token.getText().length();
+                    }
 
-                // format with features for sequence tagging
-                // given the split ratio we write either in the training file or the evaluation file
-                String[] chunks = headerAcknowledgment.split("\n \n");
+                    String citation = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(allTokens.get(i));
 
-                for (int i = 0; i < chunks.length; i++) {
-                    String chunk = chunks[i];
-
-                    if ((writer2 == null) && (writer3 != null))
-                        writer3.write(chunk + "\n \n");
-                    else if ((writer2 != null) && (writer3 == null))
-                        writer2.write(chunk + "\n \n");
+                    if ( (writer2 == null) && (writer3 != null) )
+                        writer3.write(citation + "\n \n");
+                    if ( (writer2 != null) && (writer3 == null) )
+                        writer2.write(citation + "\n \n");
                     else {
                         if (Math.random() <= splitRatio)
-                            writer2.write(chunk + "\n \n");
+                            writer2.write(citation + "\n \n");
                         else
-                            writer3.write(chunk + "\n \n");
+                            writer3.write(citation + "\n \n");
                     }
                 }
             }

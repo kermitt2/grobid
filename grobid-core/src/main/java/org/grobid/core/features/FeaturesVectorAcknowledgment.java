@@ -198,7 +198,6 @@ public class FeaturesVectorAcknowledgment {
 
     }
 
-
     static private FeaturesVectorAcknowledgment addFeaturesAcknowledgment(String line, String lineStatus) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         FeaturesVectorAcknowledgment featuresVectorAcknowledgment = new FeaturesVectorAcknowledgment();
