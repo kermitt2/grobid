@@ -5,6 +5,7 @@ import org.grobid.core.data.Acknowledgment;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class AcknowledgmentParserTest {
         targetNew = new AcknowledgmentParser();
     }
 
+    @Ignore ("old method")
     @Test
     public void processing_akwnowledgmentOld_shouldWork() throws Exception {
         List<Acknowledgment> output = targetOld.processing("This research was supported by the Deutsche Forschungsgemeinschaft through the SFB 649 \"Economic Risk\". http://sfb649.wiwi.hu-berlin.de ISSN 1860-5664");
