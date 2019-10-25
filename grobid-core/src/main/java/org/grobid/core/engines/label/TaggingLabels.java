@@ -90,7 +90,7 @@ public class TaggingLabels {
     public final static String GLOSSARY_LABEL = "<glossary>";
     public final static String BACK_LABEL = "<back>";
 
-    // acknowledgment
+    // for acknowledgment model
     public final static String AFFILIATION = "<affiliation>";
     public final static String EDUCATIONAL_INSTITUTION = "<educationalInstitution>";
     public final static String FUNDING_AGENCY = "<fundingAgency>";
@@ -356,7 +356,7 @@ public class TaggingLabels {
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
 
-        // acknowledgment
+        // for acknowledgment model
         register(ACKNOWLEDGMENT_AFFILIATION);
         register(ACKNOWLEDGMENT_EDUCATIONAL_INSTITUTION);
         register(ACKNOWLEDGMENT_FUNDING_AGENCY);

@@ -1,15 +1,17 @@
 package org.grobid.trainer.sax;
 
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
+
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
 /**
  * created by Tanti, 2019
@@ -32,25 +34,27 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private StringBuffer allContent = new StringBuffer();
 
-    private String output = null;
     private String currentTag = null;
 
-    private List<String> labeled = null; // store line by line the labeled data
-    private List<List<String>> allLabeled = null;
+    private List<String> labeled = null; // store token by token the labels
+    private List<List<String>> allLabeled = null; // list of labels
     private List<LayoutToken> tokens = null;
-    private List<List<LayoutToken>> allTokens = null;
+    private List<List<LayoutToken>> allTokens = null; // list of layoutToken
 
     public int nbAcknowledgments = 0;
 
     public TEIAcknowledgmentSaxParser() {
+        labeled = new ArrayList<>();
+        tokens = new ArrayList<>();
         allTokens = new ArrayList<>();
         allLabeled = new ArrayList<>();
-        tokens = new ArrayList<>();
-        labeled = new ArrayList<String>();
     }
 
     public void characters(char[] buffer, int start, int length) {
         accumulator.append(buffer, start, length);
+        if (allContent != null) {
+            allContent.append(buffer, start, length);
+        }
     }
 
     public String getText() {
@@ -62,6 +66,7 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     }
 
     public List<List<String>> getLabeledResults() {
+
         return allLabeled;
     }
 
@@ -76,19 +81,13 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if (((qName.equals("affiliation")) | (qName.equals("educationalInstitution")) | (qName.equals("fundingAgency"))
-            | (qName.equals("grantName")) | (qName.equals("grantNumber")) | (qName.equals("individual"))
-            | (qName.equals("otherInstitution")) | (qName.equals("projectName")) | (qName.equals("researchInstitution"))
-        )) {
+
+        if (((qName.equals("affiliation")) || (qName.equals("educationalInstitution")) || (qName.equals("fundingAgency"))
+            || (qName.equals("grantName")) || (qName.equals("grantNumber")) || (qName.equals("individual"))
+            || (qName.equals("otherInstitution")) || (qName.equals("projectName")) || (qName.equals("researchInstitution") && (currentTag != null))))
+        {
             String text = getText();
             writeField(text);
-            if (allContent != null) {
-                if (allContent.length() != 0) {
-                    allContent.append(" ");
-                }
-                allContent.append(text);
-            }
-            accumulator.setLength(0);
         } else if (qName.equals("lb")) {
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
@@ -98,24 +97,13 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
             if (text.length() > 0) {
                 currentTag = "<other>";
                 writeField(text);
-                if (allContent != null) {
-                    allContent.append(" ");
-                }
-                allContent.append(text);
             }
-            labeled.add("\n \n");
-
-            String allString = allContent.toString().trim();
-            allString = allString.replace("@newline", "\n");
-            List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(allString);
-            allString = null;
 
             nbAcknowledgments++;
-
+            labeled.add("\n \n");
             allLabeled.add(labeled);
             allTokens.add(tokens);
             allContent = null;
-
         }
         accumulator.setLength(0);
     }
@@ -130,15 +118,8 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
         if (text.length() > 0) {
             currentTag = "<other>";
             writeField(text);
-            if (allContent != null) {
-                if (allContent.length() != 0) {
-                    allContent.append(" ");
-                }
-                allContent.append(text);
-            }
         }
         accumulator.setLength(0);
-        qName = qName.toLowerCase();
 
         if (qName.equals("affiliation")) {
             currentTag = "<affiliation>";
@@ -164,48 +145,51 @@ public class TEIAcknowledgmentSaxParser extends DefaultHandler {
             labeled = new ArrayList<>();
             tokens = new ArrayList<>();
         }
-        currentTag = null;
         accumulator.setLength(0);
     }
 
     private void writeField(String text) {
-        // we segment the text
-        //List<String> tokens = TextUtilities.segment(text, TextUtilities.punctuations);
-        //StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
-        List<String> tokens = GrobidAnalyzer.getInstance().tokenize(text); // utilize Grobid analyzer for segmenting the text
+        if (tokens == null){
+            return;
+        }
+
+        // segment the text into tokens
+        List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        // if the tokens are empty
+        if (isEmpty(localTokens)){
+            localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text, new Language("en", 1.0)); // force to tokenize with English tokenizer
+        }
+
+        // if the tokens are still empty, then ignore the process
+        if (isEmpty(localTokens)){
+            return;
+        }
+
         boolean begin = true;
 
-       /* while (st.hasMoreTokens()) {
-            String tok = st.nextToken().trim();*/
-
-        for (String tok : tokens) {
-            tok = tok.trim();
-
-            // if the token is empty just continue
-            if (tok.length() == 0) {
+        for (LayoutToken token : localTokens) {
+            tokens.add(token);
+            String content = token.getText();
+            if (content.equals(" ") || content.equals("\n")) {
+                labeled.add(null);
                 continue;
             }
 
-            // if the token is the newline break
-            if (tok.equals("+L+") || tok.equals("@newline")) {
-                labeled.add("@newline");
-            } else if (tok.equals("+PAGE+")) {
-                // page break not relevant for authors
-                labeled.add("@newline");
-            } else {
-                String content = tok;
-                int i = 0;
-                if (content.length() > 0) {
-                    if (begin) {
-                        labeled.add(content + " I-" + currentTag);
-                        begin = false;
-                    } else {
-                        labeled.add(content + " " + currentTag);
-                    }
-                }
+            content = UnicodeUtil.normaliseTextAndRemoveSpaces(content);
+            if (content.trim().length() == 0) {
+                labeled.add(null);
+                continue;
             }
 
-            begin = false;
+            if (content.length() > 0) {
+                if (begin) {
+                    labeled.add("I-" + currentTag);
+                    begin = false;
+                } else {
+                    labeled.add(currentTag);
+                }
+            }
         }
     }
 }

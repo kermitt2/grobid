@@ -1,7 +1,7 @@
 package org.grobid.core.engines;
 
 /**
- * @created by Tanti
+ * @created by Tanti, 2019
  */
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -55,12 +55,12 @@ public class AcknowledgmentParser extends AbstractParser {
     }
 
     public List<AcknowledgmentItem> processing(List<LayoutToken> tokens) {
-        List<AcknowledgmentItem> acknowledgments = null;
+        List<AcknowledgmentItem> acknowledgments = new ArrayList<>();
         if (CollectionUtils.isEmpty(tokens)) {
             return null;
         }
         try {
-            String headerAcknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(tokens);
+            String headerAcknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(tokens, null);
             String resAcknowledgment = label(headerAcknowledgment);
             acknowledgments = resultExtractionLayoutTokens(resAcknowledgment, tokens);
             return acknowledgments;

@@ -3,7 +3,6 @@ package org.grobid.trainer;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAcknowledgment;
-import org.grobid.core.features.FeaturesVectorCitation;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.trainer.sax.TEIAcknowledgmentSaxParser;
@@ -14,7 +13,9 @@ import java.io.*;
 import java.util.List;
 
 /**
- * Created by Tanti, 2019
+ * A class for building an acknowledgment model
+ *
+ * @Created by Tanti, 2019
  */
 
 
@@ -102,30 +103,30 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
                 final SAXParser p = spf.newSAXParser();
                 p.parse(teifile, parser2);
 
-                final List<List<String>> labeled = parser2.getLabeledResults();
+                final List<List<String>> allLabeled = parser2.getLabeledResults();
                 final List<List<LayoutToken>> allTokens = parser2.getTokenResults();
                 totalExamples += parser2.nbAcknowledgments;
 
                 // add the features
-                for(int i=0; i<allTokens.size(); i++) {
+                for (int i = 0; i < allTokens.size(); i++) {
                     // fix the offsets
                     int pos = 0;
-                    for(LayoutToken token : allTokens.get(i)) {
+                    for (LayoutToken token : allTokens.get(i)) {
                         token.setOffset(pos);
                         pos += token.getText().length();
                     }
 
-                    String citation = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(allTokens.get(i));
+                    String acknowledgment = FeaturesVectorAcknowledgment.addFeaturesAcknowledgment(allTokens.get(i), allLabeled.get(i));
 
-                    if ( (writer2 == null) && (writer3 != null) )
-                        writer3.write(citation + "\n \n");
-                    if ( (writer2 != null) && (writer3 == null) )
-                        writer2.write(citation + "\n \n");
+                    if ((writer2 == null) && (writer3 != null))
+                        writer3.write(acknowledgment + "\n \n");
+                    if ((writer2 != null) && (writer3 == null))
+                        writer2.write(acknowledgment + "\n \n");
                     else {
                         if (Math.random() <= splitRatio)
-                            writer2.write(citation + "\n \n");
+                            writer2.write(acknowledgment + "\n \n");
                         else
-                            writer3.write(citation + "\n \n");
+                            writer3.write(acknowledgment + "\n \n");
                     }
                 }
             }
@@ -156,7 +157,7 @@ public class AcknowledgmentTrainer extends AbstractTrainer {
         GrobidProperties.getInstance();
         AcknowledgmentTrainer trainer = new AcknowledgmentTrainer();
         AbstractTrainer.runTraining(trainer);
-        AbstractTrainer.runEvaluation(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 }

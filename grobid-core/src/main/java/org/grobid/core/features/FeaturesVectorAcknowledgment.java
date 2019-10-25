@@ -1,9 +1,6 @@
 package org.grobid.core.features;
 
-import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
 
@@ -12,8 +9,9 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
 /**
- * Class for features used for parsing acknowledgment chunk.
- * Created by Tanti, 2019
+ * Class contains feature vectors for acknowledgment parser model.
+ *
+ * @Created by Tanti, 2019
  */
 
 public class FeaturesVectorAcknowledgment {
@@ -25,6 +23,8 @@ public class FeaturesVectorAcknowledgment {
     public boolean singleChar = false;
     public boolean properName = false;
     public boolean commonName = false;
+    public boolean locationName = false;
+    public boolean countryName = false;
     public boolean affiliation = false;
     public boolean educationalInsitution = false;
     public boolean fundingAgency = false;
@@ -90,6 +90,18 @@ public class FeaturesVectorAcknowledgment {
         else
             res.append(" 0");
 
+        // location name
+        if (locationName)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
+        // country name
+        if (countryName)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
         // lexical information (9)
         if (affiliation)
             res.append(" 1");
@@ -139,6 +151,8 @@ public class FeaturesVectorAcknowledgment {
         // punctuation information (1)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
+        res.append(" ").append(wordShape);
+
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
@@ -149,7 +163,7 @@ public class FeaturesVectorAcknowledgment {
     }
 
     /**
-     * Add feature for acknowledgment parsing.
+     * Add feature for acknowledgment parsing with string as input.
      */
     static public String addFeaturesAcknowledgmentString(List<String> lines) throws Exception {
 
@@ -285,7 +299,7 @@ public class FeaturesVectorAcknowledgment {
     /**
      * Add feature for acknowledgment parsing with tokens as input.
      */
-    static public String addFeaturesAcknowledgment(List<LayoutToken> tokens) throws Exception {
+    static public String addFeaturesAcknowledgment(List<LayoutToken> tokens, List<String> labels) throws Exception {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         StringBuilder acknowledgment = new StringBuilder();
@@ -293,10 +307,12 @@ public class FeaturesVectorAcknowledgment {
         String previousTag = null;
         String previousText = null;
         FeaturesVectorAcknowledgment featuresVectorAcknowledgment = null;
-        int sentenceLenth = tokens.size(); // length of the current sentence
-        for (int n=0; n < tokens.size(); n++) {
+        for (int n = 0; n < tokens.size(); n++) {
             LayoutToken token = tokens.get(n);
             String tag = null;
+
+            if ((labels != null) && (labels.size() > 0) && (n < labels.size()))
+                tag = labels.get(n);
 
             boolean outputLineStatus = false;
 
@@ -311,7 +327,7 @@ public class FeaturesVectorAcknowledgment {
 
             // parano normalisation
             text = UnicodeUtil.normaliseTextAndRemoveSpaces(text);
-            if (text.trim().length() == 0 ) {
+            if (text.trim().length() == 0) {
                 continue;
             }
 
@@ -334,7 +350,7 @@ public class FeaturesVectorAcknowledgment {
                     featuresVectorAcknowledgment.lineStatus = "LINESTART";
                     outputLineStatus = true;
                 }
-            } else if (tokens.size() == n+1) {
+            } else if (tokens.size() == n + 1) {
                 if (!outputLineStatus) {
                     featuresVectorAcknowledgment.lineStatus = "LINEEND";
                     outputLineStatus = true;
@@ -345,18 +361,13 @@ public class FeaturesVectorAcknowledgment {
                 outputLineStatus = true;
             }
 
-            // single character
-            if (text.length() == 1) {
-                featuresVectorAcknowledgment.singleChar = true;
-            }
-
-            // capital
-            if (featureFactory.test_all_capital(text)) {
-                featuresVectorAcknowledgment.capitalisation = "ALLCAPS";
-            }
-
+            // capitalisation
             if (Character.isUpperCase(text.charAt(0))) {
                 featuresVectorAcknowledgment.capitalisation = "INITCAP";
+            }
+
+            if (featureFactory.test_all_capital(text)) {
+                featuresVectorAcknowledgment.capitalisation = "ALLCAP";
             }
 
             if (featuresVectorAcknowledgment.capitalisation == null) {
@@ -376,9 +387,9 @@ public class FeaturesVectorAcknowledgment {
             if (featuresVectorAcknowledgment.digit == null)
                 featuresVectorAcknowledgment.digit = "NODIGIT";
 
-            // common name
-            if (featureFactory.test_common(text)) {
-                featuresVectorAcknowledgment.commonName = true;
+            // single character
+            if (text.length() == 1) {
+                featuresVectorAcknowledgment.singleChar = true;
             }
 
             // proper name
@@ -386,7 +397,22 @@ public class FeaturesVectorAcknowledgment {
                 featuresVectorAcknowledgment.properName = true;
             }
 
-            // find the punctuations
+            // common name
+            if (featureFactory.test_common(text)) {
+                featuresVectorAcknowledgment.commonName = true;
+            }
+
+            // location name
+            if (featureFactory.test_city(text)) {
+                featuresVectorAcknowledgment.locationName = true;
+            }
+
+            // country name
+            if (featureFactory.test_country(text)) {
+                featuresVectorAcknowledgment.countryName = true;
+            }
+
+            // punctuations
             Matcher m0 = featureFactory.isPunct.matcher(text);
             if (m0.find()) {
                 featuresVectorAcknowledgment.punctType = "PUNCT";
@@ -395,7 +421,6 @@ public class FeaturesVectorAcknowledgment {
             if (featuresVectorAcknowledgment.punctType == null)
                 featuresVectorAcknowledgment.punctType = "NOPUNCT";
 
-            // token containing special character
             if ((text.equals("(")) | (text.equals("["))) {
                 featuresVectorAcknowledgment.punctType = "OPENBRACKET";
             } else if ((text.equals(")")) | (text.equals("]"))) {
@@ -414,6 +439,7 @@ public class FeaturesVectorAcknowledgment {
 
             previousTag = tag;
             previousText = text;
+
         }
 
         return acknowledgment.toString();
