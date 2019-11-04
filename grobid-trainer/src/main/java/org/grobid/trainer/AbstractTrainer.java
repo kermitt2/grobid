@@ -252,9 +252,9 @@ public abstract class AbstractTrainer implements Trainer {
             Stats fieldStatsO1 = o1.getFieldStats();
             Stats fieldStatsO2 = o2.getFieldStats();
 
-            if (fieldStatsO1.getMacroAverageF1() > fieldStatsO2.getMacroAverageF1()) {
+            if (fieldStatsO1.getMicroAverageF1() > fieldStatsO2.getMicroAverageF1()) {
                 return 1;
-            } else if (fieldStatsO1.getMacroAverageF1() < fieldStatsO2.getMacroAverageF1()) {
+            } else if (fieldStatsO1.getMicroAverageF1() < fieldStatsO2.getMicroAverageF1()) {
                 return -1;
             } else {
                 return 0;
