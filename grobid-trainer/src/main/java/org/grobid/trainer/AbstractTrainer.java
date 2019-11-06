@@ -331,10 +331,10 @@ public abstract class AbstractTrainer implements Trainer {
             sb.append(labelResult.toString());
         }
 
-        OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageF1()).average();
-        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAveragePrecision()).average();
-        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageRecall()).average();
-        OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMacroAverageAccuracy()).average();
+        OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
+        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
+        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
+        OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
 
         double avgAccuracy = averageAccuracy.orElseGet(() -> {
             throw new GrobidException("Missing average accuracy. Something went wrong. Please check. ");
@@ -355,7 +355,7 @@ public abstract class AbstractTrainer implements Trainer {
         sb.append("\n");
 
         sb.append(String.format("%-20s %-12s %-12s %-12s %-7s\n",
-            "all (macro avg.)",
+            "all ",
             TextUtilities.formatTwoDecimals(avgAccuracy * 100),
             TextUtilities.formatTwoDecimals(avgPrecision * 100),
             TextUtilities.formatTwoDecimals(avgRecall * 100),
