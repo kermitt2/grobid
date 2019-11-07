@@ -55,7 +55,7 @@ Isaac G. Councill, C. Lee Giles, Min-Yen Kan. (2008) ParsCit: An open-source CRF
 
 ## Other similar Open Source tools
 
-[parsCit](http://wing.comp.nus.edu.sg/parsCit)
+[parsCit](https://github.com/knmnyn/ParsCit)
 
 [CERMINE](https://github.com/CeON/CERMINE)
 
