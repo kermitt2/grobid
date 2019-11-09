@@ -332,9 +332,9 @@ public abstract class AbstractTrainer implements Trainer {
         }
 
         OptionalDouble averageF1 = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
-        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
-        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
-        OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageF1()).average();
+        OptionalDouble averagePrecision = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAveragePrecision()).average();
+        OptionalDouble averageRecall = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageRecall()).average();
+        OptionalDouble averageAccuracy = evaluationResults.stream().mapToDouble(e -> e.getFieldStats().getMicroAverageAccuracy()).average();
 
         double avgAccuracy = averageAccuracy.orElseGet(() -> {
             throw new GrobidException("Missing average accuracy. Something went wrong. Please check. ");
