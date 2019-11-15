@@ -1,4 +1,6 @@
+.java-version
 target
+bin
 grobid-home/tmp
 .DS_Store
 Thumbs.db
@@ -7,10 +9,8 @@ Thumbs.db
 .classpath
 .idea
 .gradle
-gradle
 **/build
 */out/
-*/bin/
 *.iml
 *.log
 *.log.*
@@ -38,6 +38,7 @@ maven-build.xml
 release.properties
 
 grobid-quantities
+grobid-superconductors
 grobid-dictionaries
 grobid-ner
 grobid-bio
@@ -49,6 +50,8 @@ grobid-smecta
 grobid-example
 grobid-software
 software-mentions
+grobid-keyterm
+dataseer-ml
 grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
@@ -64,7 +67,6 @@ grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
 grobid-home/models/software*
-grobid-trainer/resources/dataset/monograph/corpus/tei/*.xml
-grobid-trainer/resources/dataset/monograph/corpus/raw/*.monograph
-grobid-trainer/resources/dataset/monograph/evaluation/tei/*.xml
-grobid-trainer/resources/dataset/monograph/evaluation/raw/*.monograph
+grobid-home/models/superconductors*
+grobid-home/models/values
+grobid-home/models/dataseer

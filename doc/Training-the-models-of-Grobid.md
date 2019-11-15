@@ -94,6 +94,27 @@ A ratio of 1.0 means that all the data available under `grobid/grobid-trainer/re
 Several runs with different files to evaluate can be made to have a more reliable evaluation (e.g. 10 fold cross-validation). For the time being, such segmentation and iterative evaluation is not yet implemented. 
 
 
+### N-folds cross-evaluation
+
+For robust evaluation and reporting, n-fold cross-evaluation is commonly used, see the [Wikipedia article](https://en.wikipedia.org/wiki/Cross-validation_(statistics)). 
+
+GROBID implementation follows the standard approach, shuffling and dividing the annotated corpus in N equals folds, and performing N training and evaluations, where N-1 folds are used for training and the last one for evaluation. Folds are rotating for each training/evaluation, and thus each fold will be used for evaluation successively at least one time. Finally the evaluation scores for the N folds are averaged, the worst and best training/evaluations being indicated as information.
+
+For performing a N fold evaluation:
+
+
+```bash
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 <name of the model> -gH grobid-home -n FOLD-NUMBER
+```
+
+`FOLD_NUMBER` must be > 1. 
+
+For instance for a 10-fold evaluation of the date model:
+```bash
+> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 date -gH grobid-home -n 10
+```
+
+
 ## Generation of training data
 	
 To generate some training datas from some input pdf, the batch grobid-core-`<current version>`.onejar.jar can be used: [Grobid batch](Grobid-batch.md) (`createTraining`).

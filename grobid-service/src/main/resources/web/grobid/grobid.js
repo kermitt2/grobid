@@ -628,7 +628,7 @@ var grobid = (function($) {
 
 				xhr.send(formData);
 			} else if ($('#textInputDiv3').is(":visible")) {
-				var params = 'text='+encodeURIComponent($("#textInputArea3").val());
+				var params = 'input='+encodeURIComponent($("#textInputArea3").val());
 				if ($("#consolidate3").is(":checked"))	
 					params += '&consolidateCitations=1';
 				else 
@@ -716,62 +716,6 @@ var grobid = (function($) {
 			});
 		}
 	}
-
-	/*function setupAnnotations(response, nbPages) {
-		for(var pageNumber in response.pages) {
-			setupPageAnnotations(response.pages[pageNumber], pageNumber);
-		}
-	}
-
-	function setupPageAnnotations(json, pageNumber) {
-
-		// we must check/wait that the corresponding PDF page is rendered ar this point
-		var page_height = json.page_height;
-		var page_width = json.page_width;
-
-		var refBibs = json.refBibs;
-		var mapRefBibs = {};
-		if (refBibs) {
-			for(var n in refBibs) {
-				var annotation = refBibs[n];
-				var theId = annotation.id;
-				var pos = annotation.pos;
-				if (pos)
-					mapRefBibs[theId] = annotation;
-				for (var m in pos) {
-					var thePos = pos[m];
-					annotateBib(true, theId, thePos, null, page_height, page_width, null);
-				}
-			}
-		}
-
-		var refMarkers = json.refMarkers;
-		if (refMarkers) {
-			for(var n in refMarkers) {
-				var annotation = refMarkers[n];
-				var theId = annotation.id;
-
-				// we take the first and last positions
-				var targetBib = mapRefBibs[theId];
-				if (targetBib) {
-					var theBibPos = {};
-					var pos = targetBib.pos;
-					//if (pos && (pos.length > 0))
-					{
-						var theFirstPos = pos[0];
-						var theLastPos = pos[pos.length-1];
-						theBibPos.p = theFirstPos.p;
-						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
-						theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
-						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
-						annotateBib(false, theId, annotation, null, page_height, page_width, theBibPos);
-					}
-				} else
-					annotateBib(false, theId, annotation, null, page_height, page_width, null);
-			}
-		}
-	}*/
 
 	function annotateBib(bib, theId, thePos, url, page_height, page_width, theBibPos) {
 		var page = thePos.p;
@@ -939,8 +883,8 @@ var grobid = (function($) {
 
 		var canvasHeight = canvas.height();
 		var canvasWidth = canvas.width();
-		var scale_x = canvasHeight / page_height;
-		var scale_y = canvasWidth / page_width;
+		var scale_y = canvasHeight / page_height;
+		var scale_x = canvasWidth / page_width;
 
 		var x = thePos.x * scale_x;
 		var y = thePos.y * scale_y;
@@ -1066,7 +1010,7 @@ var grobid = (function($) {
 			setBaseUrl('processCitationPatentPDF');
 		}
 		else if (selected == 'processCitationPatentTXT') {
-			createInputTextArea3('text');
+			createInputTextArea3('input');
 			$('#consolidateBlock3').show();
 			setBaseUrl('processCitationPatentTXT');
 		}
@@ -1139,91 +1083,6 @@ var grobid = (function($) {
 		$('#gbdForm3').attr('method', 'post');
 	}
 
-	/** admin functions */
-
-	/*var selectedAdmKey="", selectedAdmValue, selectedAdmType;
-
-	function adminShowRequest(formData, jqForm, options) {
-		$('#TabAdminProps').show();
-		$('#admMessage').html('<font color="grey">Requesting server...</font>');
-	    return true;
-	}
-
-	function adminAjaxError() {
-		$('#admMessage').html("<font color='red'>Autentication error.</font>");
-	}
-
-	function adminSubmitSuccesful(responseText, statusText) {
-		$('#admMessage').html("<font color='green'>Welcome to the admin console.</font>");
-		parseXml(responseText);
-		rowEvent();
-	}
-
-	function parseXml(xml){
-		var out="<pre><table class='table-striped table-hover'><thead><tr align='left'><th>Property</th><th align='left'>value</th></tr></thead>";
-		$(xml).find("property").each(function(){
-			var dsipKey = $(this).find("key").text();
-			var key = dsipKey.split('.').join('-');
-			var value = $(this).find("value").text();
-			var type = $(this).find("type").text();
-			out+="<tr class='admRow' id='"+key+"'><td><input type='hidden' value='"+type+"'/>"+dsipKey+"</td><td><div>"+value+"</div></td></tr>";
-		});
-		out+="</table></pre>";
-		$('#TabAdminProps').html(out);
-	}
-
-	function rowEvent(){
-		$('.admRow').click(function() {
-			$("#"+selectedAdmKey).find("div").html($("#val"+selectedAdmKey).attr("value"));
-			selectedAdmKey=$(this).attr("id");
-			selectedAdmValue=$(this).find("div").text();
-			selectedAdmType=$(this).find("input").attr("value");
-			$(this).find("div").html("<input type='text' id='val"+selectedAdmKey+"' size='80' value='"+selectedAdmValue+"' class='input-xxlarge'/>");
-			$("#val"+selectedAdmKey).focus();
-		});
-
-		$('.admRow').keypress(function(event) {
-			var keycode = (event.keyCode ? event.keyCode : event.which);
-			selectedAdmKey=$(this).attr("id");
-			// Enter key
-			if(keycode == '13') {
-				var newVal = $("#val"+selectedAdmKey).val();
-				$("#"+selectedAdmKey).find("div").html(newVal);
-				selectedAdmValue=newVal;
-				selectedAdmType=$(this).find("input").attr("value");
-				generateXmlRequest();
-			}
-			// Escape key
-			if(keycode == '27') {
-				$("#"+selectedAdmKey).find("div").html(selectedAdmValue);
-			}
-		});
-	}
-
-	function generateXmlRequest(){
-		var xmlReq= "<changeProperty><password>"+$('#admPwd').val()+"</password>";
-		xmlReq+="<property><key>"+selectedAdmKey.split('-').join('.')+"</key><value>"+selectedAdmValue+"</value><type>"+selectedAdmType+"</type></property></changeProperty>";
-		if("org.grobid.service.admin.pw"==selectedAdmKey.split('-').join('.')){
-			$('#admPwd').attr('value', selectedAdmValue);
-		}
-		$.ajax({
-			  type: 'POST',
-			  url: defineBaseURL("changePropertyValue"),
-			  data: {xml: xmlReq},
-			  success: changePropertySuccesful,
-			  error: changePropertyError
-			});
-	}
-
-	function changePropertySuccesful(responseText, statusText) {
-		$("#"+selectedAdmKey).find("div").html(responseText);
-		$('#admMessage').html("<font color='green'>Property "+selectedAdmKey.split('-').join('.')+" updated with success</font>");
-	}
-
-	function changePropertyError() {
-		$('#admMessage').html("<font color='red'>An error occured while updating property"+selectedAdmKey.split('-').join('.')+"</font>");
-	}*/
-
 	function download(){
         var name ="export";
 		if ((document.getElementById("input").files[0].type == 'application/pdf') ||
@@ -1248,7 +1107,7 @@ var grobid = (function($) {
 		});
 
 
-// old method to download but with well formed xm but not beautified
+		// old method to download but with well formed xm but not beautified
 	    /*var a = document.body.appendChild(
 	        document.createElement("a")
 	    );

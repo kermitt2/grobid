@@ -162,7 +162,7 @@ public class ShorttextTrainer extends AbstractTrainer{
     public static void main(String[] args) throws Exception {
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new ShorttextTrainer());
-        AbstractTrainer.runEvaluation(new ShorttextTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new ShorttextTrainer()));
         System.exit(0);
     }
 }	

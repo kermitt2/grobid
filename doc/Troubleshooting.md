@@ -20,7 +20,7 @@ See [here](https://github.com/kermitt2/grobid/issues/142#issuecomment-253497513)
 
 **libxml2**: GROBID is currenly shipped with all the needed libraries (Mac and Linux 32/64 bit).
 
-libxml2 is required by pdf2xml, and is normally shipped by default on all standard installation (Ubuntu, Mac OSX, etc).
+libxml2 is required by pdfalto, and is normally shipped by default on all standard installation (Ubuntu, Mac OSX, etc).
 
 For minimal or cloud based / container system like Linode, AWS, Docker, etc. _libxml2_ might not be installed by default and should thus be installed as prerequisite.
 

@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class TextUtilities {
 
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String fullPunctuations = "([ •*,:;?.!/)-−–‐\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
     public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
     public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
 
@@ -56,8 +56,16 @@ public class TextUtilities {
     static public final Pattern arXivPattern = Pattern
         .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
 
+    // regular expression for PubMed identifiers, last group gives the PMID digits
+    static public final Pattern pmidPattern = Pattern.compile("((PMID)|(Pub(\\s)?Med(\\s)?(ID)?))(\\s)?(\\:)?(\\s)*(\\d{1,8})");
+
+    // regular expression for PubMed Central identifiers (note: contrary to PMID, we include the prefix PMC here, see 
+    // https://www.ncbi.nlm.nih.gov/pmc/pmctopmid/ for instance), last group gives the PMC ID digits   
+    static public final Pattern pmcidPattern = Pattern
+        .compile("((PMC\\s?(ID)?)|(Pub(\\s)?Med(\\s)?(Central)?(\\s)?(ID)?))(\\s)?(\\:)?(\\s)*(\\d{1,9})");
+
     // a regular expression for identifying url pattern in text
-    // TODO: maybe find a better regex 
+    // TODO: maybe find a better regex (better == more robust, not more "standard")
     static public final Pattern urlPattern = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
 
@@ -93,122 +101,16 @@ public class TextUtilities {
         return res;
     }
 
+    /** @use LayoutTokensUtil.dehyphenize(List<LayoutToken> tokens) **/
+    @Deprecated
     public static List<LayoutToken> dehyphenize(List<LayoutToken> tokens) {
-        List<LayoutToken> output = new ArrayList<>();
-
-        for (int i = 0; i < tokens.size(); i++) {
-            LayoutToken currentToken = tokens.get(i);
-            //the current token is dash checking what's around
-            if (currentToken.getText().equals("-")) {
-                if (doesRequireDehypenisation(tokens, i)) {
-                    //Cleanup eventual additional spaces before the hypen that have been already written to the output
-                    int z = output.size() - 1;
-                    while (z >= 0 && output.get(z).getText().equals(" ")) {
-                        String tokenString = output.get(z).getText();
-
-                        if (tokenString.equals(" ")) {
-                            output.remove(z);
-                        }
-                        z--;
-                    }
-
-
-                    List<Integer> breakLines = new ArrayList<>();
-                    List<Integer> spaces = new ArrayList<>();
-
-                    int j = i + 1;
-                    while (j < tokens.size() && tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n")) {
-                        String tokenString = tokens.get(j).getText();
-
-                        if (tokenString.equals("\n")) {
-                            breakLines.add(j);
-                        }
-                        if (tokenString.equals(" ")) {
-                            spaces.add(j);
-                        }
-                        j++;
-                    }
-                    i += breakLines.size() + spaces.size();
-                } else {
-                    output.add(currentToken);
-
-                    List<Integer> breakLines = new ArrayList<>();
-                    List<Integer> spaces = new ArrayList<>();
-
-                    int j = i + 1;
-                    while (j < tokens.size() && tokens.get(j).getText().equals("\n")) {
-                        String tokenString = tokens.get(j).getText();
-
-                        if (tokenString.equals("\n")) {
-                            breakLines.add(j);
-                        }
-                        j++;
-                    }
-                    i += breakLines.size() + spaces.size();
-
-                }
-            } else {
-                output.add(currentToken);
-            }
-        }
-        return output;
+        return LayoutTokensUtil.dehyphenize(tokens);
     }
 
-    /**
-     * Check if the current token (place i), or the hypen, needs to be removed or not.
-     * <p>
-     * It will check the tokens before and after. It will get to the next "non space" tokens and verify
-     * that it's a plain word. If it's not it's keeping the hypen.
-     * <p>
-     * TODO: add the check on the bounding box of the next token to see whether there is really a break line.
-     * TODO: What to do in case of a punctuation is found?
-     */
+    /** @use LayoutTokenUtils.doesRequireDehypenisation(List<LayoutToken> tokens, int i)**/
+    @Deprecated
     protected static boolean doesRequireDehypenisation(List<LayoutToken> tokens, int i) {
-        boolean forward = false;
-        boolean backward = false;
-
-        int j = i + 1;
-        int breakLine = 0;
-        while (j < tokens.size() && (tokens.get(j).getText().equals(" ") || tokens.get(j).getText().equals("\n"))) {
-            String tokenString = tokens.get(j).getText();
-
-            if (tokenString.equals("\n")) {
-                breakLine++;
-            }
-            j++;
-        }
-
-        if (breakLine == 0) {
-            return false;
-        }
-
-        Pattern onlyLowercaseLetters = Pattern.compile("[a-z]+");
-
-        if (j < tokens.size()) {
-            Matcher matcher = onlyLowercaseLetters.matcher(tokens.get(j).getText());
-            if (matcher.find()) {
-                forward = true;
-            }
-
-            if (forward) {
-                if(i < 1) {
-                    //If nothing before the hypen, but it looks like a forward hypenisation, let's trust it 
-                    return forward;
-                }
-                
-                int z = i - 1;
-                while (z > 0 && tokens.get(z).getText().equals(" ")) {
-                    z--;
-                }
-
-                Matcher backwardMatcher = Pattern.compile("^[A-Za-z]+$").matcher(tokens.get(z).getText());
-                if (backwardMatcher.find()) {
-                    backward = true;
-                }
-            }
-        }
-
-        return backward;
+        return LayoutTokensUtil.doesRequireDehypenisation(tokens, i);
     }
 
     public static String dehyphenize(String text) {
@@ -216,7 +118,7 @@ public class TextUtilities {
 
         final List<LayoutToken> layoutTokens = analyser.tokenizeWithLayoutToken(text);
 
-        return LayoutTokensUtil.toText(dehyphenize(layoutTokens));
+        return LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(layoutTokens));
     }
 
     public static String getLastToken(String section) {
@@ -260,7 +162,7 @@ public class TextUtilities {
      * @return Returns the dehyphenized string.
      * <p>
      * Deprecated method, not needed anymore since the @newline are preserved thanks to the LayoutTokens
-     * Use dehypenize
+     * @Use LayoutTokensUtil.dehypenize()
      */
     @Deprecated
     public static String dehyphenizeHard(String text) {
@@ -1299,7 +1201,7 @@ public class TextUtilities {
         else if (line.contains("@IMAGE") || line.contains("@PAGE")) {
             filter = true;
         } else if (line.contains(".pbm") || line.contains(".ppm") ||
-            line.contains(".vec") || line.contains(".jpg") ||
+            line.contains(".svg") || line.contains(".jpg") ||
             line.contains(".png")) {
             filter = true;
         }

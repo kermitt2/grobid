@@ -11,7 +11,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM openjdk:8-jdk as builder
+FROM openjdk:8u212-jdk as builder
 
 USER root
 
@@ -36,16 +36,16 @@ COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
-RUN ./gradlew clean assemble --no-daemon
+RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
 
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:8-jre-slim
+FROM openjdk:8u212-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2
+    apt-get -y --no-install-recommends install libxml2 unzip
 
 WORKDIR /opt
 
@@ -71,7 +71,7 @@ ENV JAVA_OPTS=-Xmx4g
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
-ENTRYPOINT ["/tini", "--"]
+ENTRYPOINT ["/tini", "-s", "--"]
 
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 

@@ -114,6 +114,7 @@ public class ReferenceExtractor implements Closeable {
      */
     public String extractAllReferencesOPS(boolean filterDuplicate,
                                        int consolidate,
+                                       boolean includeRawCitations,
                                        List<PatentItem> patents,
                                        List<BibDataSet> articles) {
         try {
@@ -121,6 +122,7 @@ public class ReferenceExtractor implements Closeable {
                 return extractAllReferencesString(description,
                         filterDuplicate,
                         consolidate,
+                        includeRawCitations,
                         patents,
                         articles);
             }
@@ -136,10 +138,12 @@ public class ReferenceExtractor implements Closeable {
     public String extractPatentReferencesXMLFile(String pathXML,
                                               boolean filterDuplicate,
                                               int consolidate,
+                                              boolean includeRawCitations,
                                               List<PatentItem> patents) {
         return extractAllReferencesXMLFile(pathXML,
                 filterDuplicate,
                 consolidate,
+                includeRawCitations,
                 patents,
                 null);
     }
@@ -150,6 +154,7 @@ public class ReferenceExtractor implements Closeable {
     public String extractAllReferencesXMLFile(String pathXML,
                                            boolean filterDuplicate,
                                            int consolidate,
+                                           boolean includeRawCitations,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         try {
@@ -199,6 +204,7 @@ public class ReferenceExtractor implements Closeable {
                 return extractAllReferencesString(description,
                         filterDuplicate,
                         consolidate,
+                        includeRawCitations,
                         patents,
                         articles);
             } else
@@ -216,6 +222,7 @@ public class ReferenceExtractor implements Closeable {
     public String extractAllReferencesPDFFile(String inputFile,
                                            boolean filterDuplicate,
                                            int consolidate,
+                                           boolean includeRawCitations,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         DocumentSource documentSource = null;
@@ -233,6 +240,7 @@ public class ReferenceExtractor implements Closeable {
                 result = extractAllReferencesString(description,
                         filterDuplicate,
                         consolidate,
+                        includeRawCitations,
                         patents,
                         articles);
             }
@@ -250,6 +258,7 @@ public class ReferenceExtractor implements Closeable {
     public String annotateAllReferencesPDFFile(String inputFile,
                                            boolean filterDuplicate,
                                            int consolidate,
+                                           boolean includeRawCitations,
                                            List<PatentItem> patents,
                                            List<BibDataSet> articles) {
         DocumentSource documentSource = null;
@@ -267,6 +276,7 @@ public class ReferenceExtractor implements Closeable {
                 return annotateAllReferences(doc, tokenizations,
                         filterDuplicate,
                         consolidate,
+                        includeRawCitations,
                         patents,
                         articles);
             } else {
@@ -286,6 +296,7 @@ public class ReferenceExtractor implements Closeable {
     public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
                                           int consolidate,
+                                          boolean includeRawCitations,
                                           List<PatentItem> patents,
                                           List<BibDataSet> articles) {
         try {
@@ -717,6 +728,7 @@ public class ReferenceExtractor implements Closeable {
                 for (String ref : referencesNPL) {
                     BiblioItem result = parsers.getCitationParser().processing(ref, consolidate);
                     BibDataSet bds = new BibDataSet();
+                    result.setReference(ref);
                     bds.setResBib(result);
                     bds.setRawBib(ref);
                     bds.addOffset(offsets_NPL.get(k).intValue());
@@ -736,7 +748,7 @@ public class ReferenceExtractor implements Closeable {
             nbs += articles.size();
 
 		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-						   "<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+						   "<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
 						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
 
 		String divID = KeyGen.getKey().substring(0,7);
@@ -758,7 +770,7 @@ public class ReferenceExtractor implements Closeable {
 
 		if (articles != null) {
 			for(BibDataSet articleCitation : articles) {
-				resultTEI += articleCitation.toTEI() + "\n";
+				resultTEI += articleCitation.toTEI(includeRawCitations) + "\n";
 			}
 		}
 		if ( (patents != null) || (articles != null) ) {
@@ -778,6 +790,7 @@ public class ReferenceExtractor implements Closeable {
 										List<LayoutToken> tokenizations,
                                         boolean filterDuplicate,
                                         int consolidate,
+                                        boolean includeRawCitations,
                                         List<PatentItem> patents,
                                         List<BibDataSet> articles) {
         try {
@@ -1233,6 +1246,7 @@ public class ReferenceExtractor implements Closeable {
                 for (String ref : referencesNPL) {
                     BiblioItem result = parsers.getCitationParser().processing(ref, consolidate);
                     BibDataSet bds = new BibDataSet();
+                    result.setReference(ref);
                     bds.setResBib(result);
                     bds.setRawBib(ref);
                     bds.addOffset(offsets_NPL.get(k).intValue());
@@ -1568,7 +1582,7 @@ public class ReferenceExtractor implements Closeable {
 
             // we process the patent description
             if (description != null) {
-                extractAllReferencesString(description, false, 0, patents, articles);
+                extractAllReferencesString(description, false, 0, false, patents, articles);
                 // second pass: we add annotations corresponding to identified citation chunks based on
                 // stored offsets
                 Writer writer = new OutputStreamWriter(

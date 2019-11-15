@@ -13,6 +13,7 @@ import org.grobid.core.analyzers.Analyzer;
  *                             web services for improving header information
  * consolidateCitations - the consolidation option allows GROBID to exploit Crossref
  *                             web services for improving citations information
+ * includeRawCitations - the raw bibliographical string is added to parsed results
  * assetPath if not null, the PDF assets (embedded images) will be extracted and
  * saved under the indicated repository path
  * startPage give the starting page to consider in case of segmentation of the
@@ -45,6 +46,8 @@ public class GrobidAnalysisConfig {
     // if consolidate header
     private int consolidateHeader = 0;
 
+    // if the raw bibliographical string should be included in the parsed results
+    private boolean includeRawCitations = false;
 
     /// === TEI-specific settings ==
 
@@ -86,6 +89,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder includeRawCitations(boolean rawCitations) {
+            config.includeRawCitations = rawCitations;
             return this;
         }
 
@@ -173,6 +181,10 @@ public class GrobidAnalysisConfig {
 
     public int getConsolidateHeader() {
         return consolidateHeader;
+    }
+
+    public boolean getIncludeRawCitations() {
+        return includeRawCitations;
     }
 
     public boolean isGenerateTeiIds() {

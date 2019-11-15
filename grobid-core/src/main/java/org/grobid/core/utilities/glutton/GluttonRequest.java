@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Observable;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -28,6 +29,7 @@ import org.grobid.core.utilities.crossref.CrossrefRequestListener;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
 import org.grobid.core.utilities.crossref.CrossrefDeserializer;
 import org.grobid.core.utilities.crossref.CrossrefRequest;
+import org.grobid.core.exceptions.GrobidResourceException;
 
 import org.apache.commons.io.IOUtils;
 import java.net.URL;
@@ -101,10 +103,21 @@ public class GluttonRequest<T extends Object> extends Observable {
         }
 
         try {
-            URIBuilder uriBuilder = new URIBuilder("http://localhost:8080");
+            String url = GrobidProperties.getInstance().getGluttonHost();
+            if (url == null) {
+                throw new Exception("Invalid url for glutton service");
+            }
+            Integer port = GrobidProperties.getInstance().getGluttonPort();
+            if (port != null) {
+                int portInt = port.intValue();
+                if (portInt != 0) {
+                    url += ":" + portInt;
+                }
+            }
+            URIBuilder uriBuilder = new URIBuilder("http://" + url + BASE_PATH);
             
-            String path = BASE_PATH;
-            uriBuilder.setPath(path);
+            //String path = BASE_PATH;
+            //uriBuilder.setPath(path);
 
             // check if we have a strong identifier directly supported by Glutton: DOI, PMID, PMCID
             // more probably in the future
@@ -113,12 +126,14 @@ public class GluttonRequest<T extends Object> extends Observable {
                 if (doi == null)
                     doi = params.get("doi");
                 uriBuilder.setParameter("doi", doi);
-            } else if (params.get("PMID") != null || params.get("pmid") != null) {
+            } 
+            if (params.get("PMID") != null || params.get("pmid") != null) {
                 String pmid = params.get("PMID");
                 if (pmid == null)
                     pmid = params.get("pmid");
                 uriBuilder.setParameter("pmid", pmid);
-            } else if (params.get("PMCID") != null || params.get("pmcid") != null || params.get("pmc") != null || params.get("PMC") != null) {
+            } 
+            if (params.get("PMCID") != null || params.get("pmcid") != null || params.get("pmc") != null || params.get("PMC") != null) {
                 String pmcid = params.get("PMCID");
                 if (pmcid == null)
                     pmcid = params.get("pmcid");
@@ -127,7 +142,8 @@ public class GluttonRequest<T extends Object> extends Observable {
                 if (pmcid == null)
                     pmcid = params.get("pmc");
                 uriBuilder.setParameter("pmc", pmcid);
-            } else {
+            } 
+            {
                 for (Entry<String, String> cursor : params.entrySet()) {
                     if (!identifiers.contains(cursor.getKey())) 
                         uriBuilder.setParameter(mapFromCrossref(cursor.getKey()), cursor.getValue());
@@ -149,7 +165,9 @@ public class GluttonRequest<T extends Object> extends Observable {
                 if (limitIntervalHeader != null && limitLimitHeader != null)
                     message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
                 */
-                if (message.status < 200 || message.status >= 300) {
+                if (message.status == 503) {
+                    throw new GrobidResourceException();
+                } else if (message.status < 200 || message.status >= 300) {
                     message.errorMessage = response.getStatusLine().getReasonPhrase();
                 } else {
 
@@ -168,6 +186,18 @@ public class GluttonRequest<T extends Object> extends Observable {
             
             httpclient.execute(httpget, responseHandler);
             
+        } catch (GrobidResourceException gre) {
+            try {
+                httpclient.close();
+            } catch (IOException e) { 
+                // to log
+            }
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException ie) {
+                // to log
+            }
+            execute();
         } catch (Exception e) {
             CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
             message.setException(e, this.toString());
@@ -196,6 +226,10 @@ public class GluttonRequest<T extends Object> extends Observable {
 
         if (field.equals("query.author")) {
             return "firstAuthor";
+        }
+
+        if (field.equals("query.container-title")) {
+            return "jtitle";
         }
         
         return field;

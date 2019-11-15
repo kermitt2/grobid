@@ -12,20 +12,36 @@ public interface GrobidPropertyKeys {
     String PROP_TMP_PATH = "grobid.temp.path";
     //    public static final String PROP_BIN_PATH = "grobid.bin.path";
     String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
-    String PROP_3RD_PARTY_PDF2XML = "grobid.3rdparty.pdf2xml.path";
-    String PROP_3RD_PARTY_PDF2XML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
-    String PROP_3RD_PARTY_PDF2XML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.memory.timeout.sec";
+    String PROP_3RD_PARTY_PDFTOXML = "grobid.3rdparty.pdf2xml.path";
+    String PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
+    String PROP_3RD_PARTY_PDFTOXML_TIMEOUT_SEC = "grobid.3rdparty.pdf2xml.memory.timeout.sec";
 
     String PROP_GROBID_CRF_ENGINE = "grobid.crf.engine";
     String PROP_GROBID_DELFT_PATH = "grobid.delft.install";
+    String PROP_GROBID_DELFT_REDIRECT_OUTPUT = "grobid.delft.redirect_output";
     String PROP_GROBID_DELFT_ELMO = "grobid.delft.useELMo";
     String PROP_USE_LANG_ID = "grobid.use_language_id";
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";
+
+    String PROP_HEADER_USE_HEURISTICS = "grobid.header.use_heuristics";
 
     String PROP_CROSSREF_ID = "grobid.crossref_id";
     String PROP_CROSSREF_PW = "grobid.crossref_pw";
     String PROP_CROSSREF_HOST = "grobid.crossref_host";
     String PROP_CROSSREF_PORT = "grobid.crossref_port";
+
+    /** 
+     * If indicated, include a "mailto" parameter in the crossref query and User-Agent 
+     * header, as recommended by CrossRef REST API documentation. 
+     */
+    String PROP_CROSSREF_MAILTO = "org.grobid.crossref.mailto";
+
+    /** 
+     * For indicating a Crossref Metadata Plus authorization token to be used for Crossref
+     * requests for the subscribers of this service.  This token will ensure that said 
+     * requests get directed to a pool of machines that are reserved for "Plus" SLA users.
+     */
+    String PROP_CROSSREF_TOKEN = "org.grobid.crossref.token";
 
     /*String PROP_MYSQL_HOST = "grobid.mysql_host";
     String PROP_MYSQL_PORT = "grobid.mysql_port";
@@ -43,6 +59,9 @@ public interface GrobidPropertyKeys {
 
     String PROP_GROBID_MAX_CONNECTIONS = "org.grobid.max.connections";
     String PROP_GROBID_POOL_MAX_WAIT = "org.grobid.pool.max.wait";
+
+    String PROP_GLUTTON_HOST = "org.grobid.glutton.host";
+    String PROP_GLUTTON_PORT = "org.grobid.glutton.port";
 
     /**
      * Determines if properties like the firstnames, lastnames country codes and
@@ -90,4 +109,7 @@ public interface GrobidPropertyKeys {
      * The defined paths to create.
      */
     String[] PATHES_TO_CREATE = {PROP_TMP_PATH};
+
+
+    String PYTHON_VIRTUALENV_DIRECTORY = "grobid.delft.python.virtualEnv";
 }

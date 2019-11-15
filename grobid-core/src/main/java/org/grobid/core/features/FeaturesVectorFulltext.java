@@ -42,6 +42,10 @@ public class FeaturesVectorFulltext {
     public int spacingWithPreviousBlock = 0; // discretized 
     public int characterDensity = 0; // discretized
 
+    // how the reference callouts are expressed, if known
+    public String calloutType = null; // one of UNKNOWN, NUMBER, AUTHOR
+    public boolean calloutKnown = false; // true if the token match a known reference label
+
     public String printVector() {
         if (string == null) return null;
         if (string.length() == 0) return null;
@@ -144,6 +148,16 @@ public class FeaturesVectorFulltext {
           else
               res.append(" 0\n");
           */
+
+        if (calloutType != null) 
+            res.append(" " + calloutType);
+        else 
+            res.append(" UNKNOWN");
+ 
+        if (calloutKnown)
+            res.append(" 1");
+        else
+            res.append(" 0");
 
         res.append("\n");
 

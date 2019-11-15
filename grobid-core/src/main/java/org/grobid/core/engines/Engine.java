@@ -19,7 +19,6 @@ import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-//import org.grobid.core.annotations.TeiStAXParser;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -372,8 +371,12 @@ public class Engine implements Closeable {
             result = new BiblioItem();
         }
 
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
-		//Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result, config);
+        Pair<String, Document> resultTEI;
+        if (GrobidProperties.isHeaderUseHeuristics()) {
+            resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
+        } else {
+            resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
+        }
         Document doc = resultTEI.getRight();
         return resultTEI.getLeft();
     }
@@ -529,7 +532,7 @@ public class Engine implements Closeable {
                     createTraining(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-						+ pdfFile.getPath() + ": " + exp);
+						+ pdfFile.getPath(), exp);
                 }
 				if (ind != -1)
 					n++;
@@ -581,7 +584,7 @@ public class Engine implements Closeable {
                     createTrainingMonograph(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;
@@ -632,7 +635,7 @@ public class Engine implements Closeable {
                     createTrainingBlank(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-                        + pdfFile.getPath() + ": " + exp);
+                        + pdfFile.getPath(), exp);
                 }
                 if (ind != -1)
                     n++;
@@ -777,15 +780,18 @@ public class Engine implements Closeable {
      * @return the list of extracted and parserd patent and non-patent references
      *         encoded in TEI.
      */
-    public String processAllCitationsInPatent(String text, List<BibDataSet> nplResults, List<PatentItem> patentResults,
-                                              int consolidateCitations) throws Exception {
+    public String processAllCitationsInPatent(String text, 
+                                            List<BibDataSet> nplResults, 
+                                            List<PatentItem> patentResults,
+                                            int consolidateCitations, 
+                                            boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
-			consolidateCitations, patentResults, nplResults);
+			consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /**
@@ -811,15 +817,16 @@ public class Engine implements Closeable {
      * @throws Exception if sth. went wrong
      */
     public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults,
-			List<PatentItem> patentResults,
-            int consolidateCitations) throws Exception {
+			                                     List<PatentItem> patentResults,
+                                                 int consolidateCitations, 
+                                                 boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesXMLFile(xmlPath, filterDuplicate,
-			consolidateCitations, patentResults, nplResults);
+			consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /**
@@ -846,14 +853,15 @@ public class Engine implements Closeable {
      */
     public String processAllCitationsInPDFPatent(String pdfPath, List<BibDataSet> nplResults,
                                                  List<PatentItem> patentResults,
-                                                 int consolidateCitations) throws Exception {
+                                                 int consolidateCitations, 
+                                                 boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesPDFFile(pdfPath, filterDuplicate,
-                consolidateCitations, patentResults, nplResults);
+                consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 	
     /**
@@ -870,13 +878,14 @@ public class Engine implements Closeable {
      * @throws Exception if sth. went wrong
      */
     public String annotateAllCitationsInPDFPatent(String pdfPath, 
-                                                  int consolidateCitations) throws Exception {
+                                                  int consolidateCitations, 
+                                                  boolean includeRawCitations) throws Exception {
 		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
 		List<PatentItem> patentResults = new ArrayList<PatentItem>();
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().annotateAllReferencesPDFFile(pdfPath, filterDuplicate,
-                consolidateCitations, patentResults, nplResults);
+                consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /*public void processCitationPatentTEI(String teiPath, String outTeiPath,

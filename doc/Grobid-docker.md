@@ -11,18 +11,18 @@ The process for fetching and running the image is (assuming docker is installed 
 
 - Pull the image from docker HUB
 ```bash
-> docker pull lfoppiano/grobid:0.5.3
+> docker pull lfoppiano/grobid:${latest_grobid_version}
 ```
  
 - Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.3
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:${latest_grobid_version}
 ```
 
 (alternatively you can also get the image ID)  
 ```bash
-> docker images | grep lfoppiano/grobid | grep 0.5.3
+> docker images | grep lfoppiano/grobid | grep ${latest_grobid_version}
 > docker run -t --rm --init -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
 ```
 
@@ -33,9 +33,12 @@ The process for fetching and running the image is (assuming docker is installed 
 
 <h4>Troubleshooting</h4>
 
-<h5>Out of memory while processing</h5>
+<h5>Out of memory or container being killed while processing</h5>
 
-This might be due to insufficient memory on the docker machine. Make sure your machine has enough: 
+This might be due to insufficient memory on the docker machine. 
+Depending on the intended usage, we recommend to allocate 4Gb extract all the PDF structures. Else 2Gb are sufficient to extract only header information, and 3Gb for citations.    
+
+The memory can be verified directly using the docker desktop application or via CLI:  
 
 ```
 > docker-machine inspect
@@ -89,8 +92,8 @@ You should see something like:
 
 For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
 
-<h5>pdf2xml zombie processes</h5>
-~~When running docker without an init process, the pdf2xml processes will be hang as zombie eventually filling 
+<h5>pdfalto zombie processes</h5>
+~~When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling 
 up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing 
 some more long-term solution compatible with Kubernetes for example.~~
 The solution shipped with the current Dockerfile, using tini (https://github.com/krallin/tini) should provide the correct init process to cleanup 
@@ -101,16 +104,16 @@ killed processes.
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
 docker images from the docker HUB.
 
-The docker build from 0.5.3 will clone the repository using git, so no need to custom builds. 
+The docker build from 0.5.4 will clone the repository using git, so no need to custom builds. 
 Only important information is the version which will be checked out from the tags.
  
 ```bash
-> docker build -t lfoppiano/grobid:0.5.3 --build-arg GROBID_VERSION=0.5.3 .
+> docker build -t lfoppiano/grobid:0.5.4 --build-arg GROBID_VERSION=0.5.4 .
 ```
 
 In order to run the container of the newly created image: 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.3
+> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.4
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:

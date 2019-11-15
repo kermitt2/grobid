@@ -21,6 +21,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
 
+import nu.xom.Element;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -43,7 +45,7 @@ public class TestFullTextParser extends EngineTest {
     @Test
     public void testFullTextParser_1() throws Exception {
         File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");
-        
+
         Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }

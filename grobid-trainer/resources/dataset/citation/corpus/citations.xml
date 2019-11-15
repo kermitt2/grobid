@@ -3505,5 +3505,9 @@
 		<bibl><author>A. Oliva, A. Torralba</author>, "<title level="a">Modeling the shape of the scene: A holistic representation of the spatial envelope</title>", <title level="j">International journal of computer vision</title>, <date>2001</date>.</bibl>
 		<bibl><author>Boubakri, Narjess, Ghoul, Sadok El, and Saffar, Walid</author>, <date>2012</date>, <title level="a">Cash Holdings of Politically Connected Firms</title>, <note type="report">Working Paper</note>, <orgName>Hong Kong Polytechnic University</orgName>.</bibl>
 		<bibl><author>Jensen, M.C., Meckling, W.H.</author>, <date>1978</date>. <title level="a">Can the corporation survive?</title> <title level="j">Financial Analysts Journal</title>, <biblScope type="vol">34</biblScope>: <biblScope type="pp">31-37</biblScope>.</bibl>
+		<bibl><title level="m">Pdflib tet</title>. <ptr type="web">http://www.pdflib.com/products/tet/</ptr>. Accessed: <date>2015-05-12</date>.</bibl>
+		<bibl><title level="m">Poppler</title>. <ptr type="web">http://poppler.freedesktop.org</ptr>. Accessed: <date>2015-05-12</date>.</bibl>
+		<bibl><title level="m">Tabula</title>. <ptr type="web">http://tabula.technology</ptr>. Accessed: <date>2015-05-13</date>.</bibl>
+
 </listBibl>
 </tei>

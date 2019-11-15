@@ -104,10 +104,10 @@ public class Segmentation extends AbstractParser {
             return doc;
         } finally {
             // keep it clean when leaving...
-            if (config.getPdfAssetPath() == null) {
+            /*if (config.getPdfAssetPath() == null) {
                 // remove the pdf2xml tmp file
                 DocumentSource.close(documentSource, false, true, true);
-            } else {
+            } else*/ {
                 // remove the pdf2xml tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true, true, true);
             }
@@ -158,13 +158,13 @@ public class Segmentation extends AbstractParser {
                 if (files != null) {
                     int nbFiles = 0;
                     for (final File currFile : files) {
-                        if (nbFiles > DocumentSource.PDF2XML_FILES_AMOUNT_LIMIT)
+                        if (nbFiles > DocumentSource.PDFTOXML_FILES_AMOUNT_LIMIT)
                             break;
 
                         String toLowerCaseName = currFile.getName().toLowerCase();
                         if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
                             try {
-                                if (toLowerCaseName.endsWith(".vec")) {
+                                if (toLowerCaseName.endsWith(".svg")) {
                                     continue;
                                 }
                                 FileUtils.copyFileToDirectory(currFile, assetFile);
@@ -699,7 +699,7 @@ public class Segmentation extends AbstractParser {
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
 						PDFFileName.replace(".pdf", ".training.segmentation.tei.xml")), false), "UTF-8");
-                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(bufferFulltext.toString());
@@ -768,7 +768,7 @@ public class Segmentation extends AbstractParser {
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
                         PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
-                writer.write("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(fulltext);

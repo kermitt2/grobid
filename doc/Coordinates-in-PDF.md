@@ -4,7 +4,7 @@
 
 ### Limitations
 
-As of April 2017, GROBID version 0.4.2, coordinate areas can be obtained for the following document substructures: 
+As of April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtained for the following document substructures: 
 
 * ```persName``` for a complete author name,
 * ```figure``` for figure AND table,
@@ -128,7 +128,7 @@ Example 1:
 </author>
 ```
 
-"1,53.80,194.57,58.71,9.29" indicates one bounding box with attributes page=1, x=53.80, y=194.57, h=58.71, w=9.29.
+"1,53.80,194.57,58.71,9.29" indicates one bounding box with attributes page=1, x=53.80, y=194.57, w=58.71, h=9.29.
 
 Example 2:
 ```xml

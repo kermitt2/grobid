@@ -41,6 +41,7 @@ public class TableParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
         }
+
         if (res == null) {
             return null;
         }
@@ -85,7 +86,8 @@ public class TableParser extends AbstractParser {
                 LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
             }
 
-        }
+        }     
+
         return table;
     }
 

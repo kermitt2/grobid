@@ -1,48 +1,38 @@
 package org.grobid.trainer.evaluation;
 
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.tagging.GenericTagger;
-import org.grobid.core.exceptions.*;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.data.BiblioItem;
+import com.fasterxml.jackson.core.io.JsonStringEncoder;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FileUtils;
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.engines.Engine;
+import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.trainer.Stats;
-import org.grobid.trainer.sax.NLMHeaderSaxHandler;
-import org.grobid.trainer.sax.FieldExtractSaxHandler;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
-import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-    
-import java.io.*;
-import java.util.*;
-import java.text.Normalizer;
-import java.util.regex.Pattern;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
 
-import org.apache.commons.io.FileUtils;
-
-import org.w3c.dom.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.SAXParserFactory;
 import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathFactory;
-import javax.xml.parsers.*;
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
 import javax.xml.xpath.XPathConstants;
-
-import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
-import scala.Option;
-
-import com.fasterxml.jackson.core.io.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.node.*;
-import com.fasterxml.jackson.annotation.*;
+import javax.xml.xpath.XPathFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FilenameFilter;
+import java.text.Normalizer;
+import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * Evaluation of the DOI matching for the extracted bibliographical references,
@@ -257,7 +247,12 @@ public class EvaluationDOIMatching {
         // evaluation of the run
         start = System.currentTimeMillis();
 
-        report.append("\n======= CROSSREF API ======= \n");
+        report.append("\n======= "); 
+        if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
+            report.append("GLUTTON");
+        else
+            report.append("CROSSREF");
+        report.append(" API ======= \n");
         double precision = ((double)nbDOICorrect / nbDOIFound);
         report.append("\nprecision:\t" + precision);
         double recall = ((double)nbDOICorrect / nbRef);

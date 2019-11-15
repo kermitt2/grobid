@@ -1,15 +1,8 @@
 package org.grobid.core.utilities.crossref;
 
-import org.grobid.core.utilities.GrobidProperties;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Observable;
-
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -17,14 +10,15 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.HttpHost;
-import org.apache.http.conn.params.*;
-import org.apache.http.impl.conn.*;
+import org.grobid.core.utilities.GrobidProperties;
 
-import org.apache.commons.io.IOUtils;
-import java.net.URL;
-import java.io.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Observable;
 
 /**
  * GET crossref request
@@ -126,14 +120,35 @@ public class CrossrefRequest<T extends Object> extends Observable {
             } else {
             	uriBuilder.setPath(path);
 				for (Entry<String, String> cursor : params.entrySet()) 
-					if (!cursor.getKey().equals("doi") && !cursor.getKey().equals("DOI"))
+					if (!cursor.getKey().equals("doi") && !cursor.getKey().equals("DOI") && 
+						!cursor.getKey().equals("firstPage") && !cursor.getKey().equals("volume"))
 						uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
             }
 			
+			// "mailto" parameter to be used in the crossref query and in User-Agent 
+     		//  header, as recommended by CrossRef REST API documentation, e.g. &mailto=GroovyBib@example.org
+            if (GrobidProperties.getCrossrefMailto() != null) {
+	            uriBuilder.setParameter("mailto", GrobidProperties.getCrossrefMailto());
+	        }
+
             //System.out.println(uriBuilder.toString());
 
+            // set recommended User-Agent header
             HttpGet httpget = new HttpGet(uriBuilder.build());
+            if (GrobidProperties.getCrossrefMailto() != null) {
+            	httpget.setHeader("User-Agent", 
+            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
+			} else {
+				httpget.setHeader("User-Agent", 
+            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid)");
+			}
             
+			// set the authorization token for the Metadata Plus service if available
+			if (GrobidProperties.getCrossrefToken() != null) {
+            	httpget.setHeader("Authorization", 
+            		"Bearer " + GrobidProperties.getCrossrefToken());
+			}
+
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {
 
 				@Override

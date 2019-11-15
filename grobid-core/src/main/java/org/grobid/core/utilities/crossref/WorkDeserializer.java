@@ -11,7 +11,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 
 /**
- * Convert a JSON Work model (from a crossref response) to a BiblioItem (understandable by Grobid)
+ * Convert a JSON Work model - from a glutton or crossref response - to a BiblioItem 
+ * (understandable by this stupid GROBID
  *
  * @author Vincent Kaestle, Patrice
  */
@@ -28,13 +29,15 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 			
 			biblio.setDOI(item.get("DOI").asText());
 
+			// the following are usually provided by biblio-glutton which index augmented/aggregated 
+			// metadata 
 			JsonNode pmidNode = item.get("pmid");
             if (pmidNode != null && (!pmidNode.isMissingNode()) ) {
                 String pmid = pmidNode.asText();
                 biblio.setPMID(pmid);
             }
 
-            JsonNode pmcidNode = item.get("pmc");
+            JsonNode pmcidNode = item.get("pmcid");
             if (pmcidNode != null && (!pmcidNode.isMissingNode()) ) {
                 String pmcid = pmcidNode.asText();
                 biblio.setPMCID(pmcid);
@@ -46,6 +49,27 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
                 biblio.setPII(pii);
             }
 
+            JsonNode arkNode = item.get("ark");
+            if (arkNode != null && (!arkNode.isMissingNode()) ) {
+                String ark = arkNode.asText();
+                biblio.setArk(ark);
+            }
+
+            JsonNode istexNode = item.get("istexId");
+            if (istexNode != null && (!istexNode.isMissingNode()) ) {
+                String istexId = istexNode.asText();
+                biblio.setIstexId(istexId);
+            }
+
+            // the open access url - if available, from the glorious UnpayWall dataset provided
+            // by biblio-glutton
+            JsonNode oaLinkNode = item.get("oaLink");
+            if (oaLinkNode != null && (!oaLinkNode.isMissingNode()) ) {
+                String oaLink = oaLinkNode.asText();
+                biblio.setOAURL(oaLink);
+            }
+
+            // all the following is now pure crossref metadata
 			JsonNode typeNode = item.get("type");
 			if (typeNode != null && (!typeNode.isMissingNode()) ) {
 				type = typeNode.asText();
@@ -137,7 +161,13 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 				}
 			}
 
-			JsonNode publishPrintNode = item.get("published-print");
+			JsonNode publishPrintNode = item.get("issued");
+			if (publishPrintNode == null || publishPrintNode.isMissingNode()) {
+				publishPrintNode = item.get("published-online");
+			}
+			if (publishPrintNode == null || publishPrintNode.isMissingNode()) {
+				publishPrintNode = item.get("published-print");
+			}
 			if (publishPrintNode != null && (!publishPrintNode.isMissingNode())) {
 				JsonNode datePartNode = publishPrintNode.get("date-parts");
 				if (datePartNode != null && (!datePartNode.isMissingNode()) &&
