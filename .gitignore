@@ -70,3 +70,12 @@ grobid-home/models/software*
 grobid-home/models/superconductors*
 grobid-home/models/values
 grobid-home/models/dataseer
+grobid-trainer/resources/dataset/monograph/corpus/*.xml
+grobid-trainer/resources/dataset/monograph/corpus/tei/*.xml
+grobid-trainer/resources/dataset/monograph/corpus/raw/*.monograph
+grobid-trainer/resources/dataset/monograph/evaluation/*.xml
+grobid-trainer/resources/dataset/monograph/evaluation/tei/*.xml
+grobid-trainer/resources/dataset/monograph/evaluation/raw/*.monograph
+grobid-trainer/resources/dataset/monograph/shortVersion/*.xml
+grobid-trainer/resources/dataset/monograph/shortVersion/raw/*.monograph
+grobid-trainer/resources/dataset/monograph/shortVersion/tei/*.xml

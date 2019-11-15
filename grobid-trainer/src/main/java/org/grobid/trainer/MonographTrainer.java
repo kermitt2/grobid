@@ -5,20 +5,19 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEIMonographSaxParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-
-import org.apache.commons.io.FileUtils;
 
 /**
  * @author Patrice Lopez
  */
 public class MonographTrainer extends AbstractTrainer {
+    public static final Logger LOGGER = LoggerFactory.getLogger(MonographTrainer.class);
 
     public MonographTrainer() {
         super(GrobidModels.MONOGRAPH);
@@ -29,13 +28,13 @@ public class MonographTrainer extends AbstractTrainer {
     }
 
     @Override
-    public int createCRFPPData(File corpusPath, File outputFile) {
+    public int createCRFPPData(final File corpusPath, final File outputFile) {
         return addFeaturesMonograph(corpusPath.getAbsolutePath() + "/tei",
-                corpusPath.getAbsolutePath() + "/raw",
-                outputFile, null, 1.0);
+            corpusPath.getAbsolutePath() + "/raw",
+            outputFile, null, 1.0);
     }
 
-       /**
+    /**
      * Add the selected features for the monograph model
      *
      * @param corpusDir          path where corpus files are located
@@ -50,10 +49,10 @@ public class MonographTrainer extends AbstractTrainer {
                                final File evalOutputPath,
                                double splitRatio) {
         return addFeaturesMonograph(corpusDir.getAbsolutePath() + "/tei",
-                corpusDir.getAbsolutePath() + "/raw",
-                trainingOutputPath,
-                evalOutputPath,
-                splitRatio);
+            corpusDir.getAbsolutePath() + "/raw",
+            trainingOutputPath,
+            evalOutputPath,
+            splitRatio);
     }
 
     /**
@@ -67,16 +66,14 @@ public class MonographTrainer extends AbstractTrainer {
      * @return number of examples
      */
     public int addFeaturesMonograph(String sourceTEIPathLabel,
-                                       String sourceRawPathLabel,
-                                       final File trainingOutputPath,
-                                       final File evalOutputPath,
-                                       double splitRatio) {
+                                    String sourceRawPathLabel,
+                                    final File trainingOutputPath,
+                                    final File evalOutputPath,
+                                    double splitRatio) {
         int totalExamples = 0;
         try {
             System.out.println("sourceTEIPathLabel: " + sourceTEIPathLabel);
             System.out.println("sourceRawPathLabel: " + sourceRawPathLabel);
-            System.out.println("trainingOutputPath: " + trainingOutputPath);
-            System.out.println("evalOutputPath: " + evalOutputPath);
 
             // we need first to generate the labeled files from the TEI annotated files
             File input = new File(sourceTEIPathLabel);
@@ -88,10 +85,11 @@ public class MonographTrainer extends AbstractTrainer {
             });
 
             if (refFiles == null) {
-                return 0;
+                throw new IllegalStateException("Folder " + sourceTEIPathLabel +
+                    " does not seem to contain training data. Please check");
             }
 
-            System.out.println(refFiles.length + " tei files");
+            LOGGER.info("Processing " + refFiles.length + " tei files");
 
             // the file for writing the training data
             OutputStream os2 = null;
@@ -109,33 +107,119 @@ public class MonographTrainer extends AbstractTrainer {
                 writer3 = new OutputStreamWriter(os3, "UTF8");
             }
 
+            System.out.println("Training data under: " + trainingOutputPath);
+            System.out.println("Evaluation data under: " + evalOutputPath);
+
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
 
-            for (File tf : refFiles) {
-                String name = tf.getName();
-                LOGGER.info("Processing: " + name);
-
+            int n = 0;
+            for (; n < refFiles.length; n++) { // read the labeled files from the TEI annotated files
+                final File teifile = refFiles[n];
                 TEIMonographSaxParser parser2 = new TEIMonographSaxParser();
+
+                String name = teifile.getName();
+                LOGGER.info("Processing: " + name);
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
+                p.parse(teifile, parser2);
 
-                List<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser2.getLabeledResult(); // get the labeled tokens extracted from the TEI annotated files
+                totalExamples += parser2.getTotalReferences();
 
                 // we can now add the features
-                // we open the featured file
-                try {
-                    File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
-                    if (!theRawFile.exists()) {
-                        LOGGER.error("The raw file does not exist: " + theRawFile.getPath());
-                        continue;
-                    }
-
-                } catch (Exception e) {
-                   LOGGER.error("Fail to open or process raw file", e);
+                // we open the featured file (raw CRF files without the label)
+                File rawCorpusDir = new File(new File(sourceRawPathLabel).getAbsolutePath());
+                if (!rawCorpusDir.exists()) {
+                    throw new IllegalStateException("Folder " + rawCorpusDir.getAbsolutePath() +
+                        " does not exist. Please have a look!");
                 }
+
+                File theRawFile = new File(new File(sourceRawPathLabel).getAbsolutePath() + File.separator +
+                    name.replace(".tei.xml", ""));
+                if (!theRawFile.exists()) {
+                    System.out.println("Raw file " + theRawFile +
+                        " does not exist. Please have a look!");
+                    continue;
+                }
+
+
+                // read the raw CRF file
+                BufferedReader bis = new BufferedReader(
+                    new InputStreamReader(new FileInputStream(
+                        rawCorpusDir.getAbsolutePath() + File.separator +
+                            name.replace(".tei.xml", "")), "UTF8"));
+
+                StringBuilder referenceText = new StringBuilder();
+
+                // read by lines and add the features
+                String line = bis.readLine();
+                String token1 = null, token2 = null, token = null;
+                int lastPositionFound = 0, lastPosition = 0;
+                while (line != null) {
+                    if (!line.contains("BLOCKIN")) {
+                        // get tokens in raw CRF file
+                        String lines[] = line.split("((?<=-)|(?=-))|(\\s+)|[\\.,]");
+                        token1 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[0]);
+                        token2 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[1]);
+                        token = token1 + " " + token2;
+                        // we get the label in the labelled data file for the same token
+                        boolean found = false;
+                        String beforeLocalToken = null, beforeTag = null, currentLocalToken = null, currentTag = null, concatLocalToken = null;
+                        if(lastPosition==labeled.size()-1) {
+                            lastPosition = lastPositionFound;
+                        }
+                        for (int i = lastPosition; i < labeled.size(); i++) {
+                            // get tokens in labelled TEI data
+                            String localLine = labeled.get(i);
+                            String[] localLines = localLine.split(" ");
+                            currentLocalToken = localLines[0];
+                            currentTag = localLines[1];
+
+                            if (token1.equals(token2)) { // only the same token found in the line
+                                if (currentLocalToken.equals(token1)) {
+                                    referenceText.append(line).append(" ").append(currentTag).append("\n");
+                                    lastPositionFound = i;
+                                    found = true;
+                                }
+                            } else { // there are two tokens different
+                                concatLocalToken = beforeLocalToken + " " + currentLocalToken;
+                                if (concatLocalToken.equals(token)) {
+                                    referenceText.append(line).append(" ").append(beforeTag).append("\n");
+                                    lastPositionFound = i + 1;
+                                    found = true;
+                                }
+                            }
+
+                            beforeLocalToken = currentLocalToken;
+                            beforeTag = currentTag;
+
+                            if (found || lastPosition==labeled.size()-1) {
+                                break;
+                            } else{
+                                lastPosition++;
+                            }
+                        }
+                    }
+                    line = bis.readLine();
+                }
+                bis.close();
+
+                if ((writer2 == null) && (writer3 != null))
+                    writer3.write(referenceText.toString() + "\n \n");
+                if ((writer2 != null) && (writer3 == null))
+                    writer2.write(referenceText.toString() + "\n \n");
+                else {
+                    if (Math.random() <= splitRatio && writer2 != null) {
+                        writer2.write(referenceText.toString() + "\n \n");
+                    } else if (writer3 != null) {
+                        writer3.write(referenceText.toString() + "\n \n");
+                    }
+                }
+
+                if ((writer2 == null) && (writer3 != null))
+                    writer3.write(referenceText.toString() + "\n \n");
             }
 
             if (writer2 != null) {
@@ -148,7 +232,7 @@ public class MonographTrainer extends AbstractTrainer {
                 os3.close();
             }
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occured while training/evaluation monograph model.", e);
         }
         return totalExamples;
     }
@@ -162,7 +246,7 @@ public class MonographTrainer extends AbstractTrainer {
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new MonographTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new MonographTrainer()));
+        AbstractTrainer.runEvaluation(new MonographTrainer());
         System.exit(0);
     }
 

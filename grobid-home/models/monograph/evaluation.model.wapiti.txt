@@ -1,0 +1,54 @@
+===== Token-level results =====
+
+
+label                accuracy     precision    recall       f1     
+
+<advertisement>      92.62        0            0            0      
+<back>               98.31        0            0            0      
+<biography>          98.38        0            0            0      
+<cover>              99.53        0            0            0      
+<glossary>           93.3         0            0            0      
+<index>              99.66        0            0            0      
+<preface>            98.31        42.86        12.5         19.35  
+<publisher>          97.22        11.11        15           12.77  
+<reference>          99.66        0            0            0      
+<summary>            96.82        3.85         4.35         4.08   
+<title>              96.07        62.5         23.44        34.09  
+<toc>                96.07        33.33        13.73        19.44  
+<unit>               81.92        74.36        94.59        83.26  
+
+all fields           95.99        64.53        64.05        64.29   (micro average)
+                     95.68        19           13.63        14.42   (macro average)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1     
+
+<advertisement>      91.41        0            0            0      
+<back>               99.22        0            0            0      
+<biography>          99.22        0            0            0      
+<cover>              98.83        0            0            0      
+<glossary>           95.7         0            0            0      
+<index>              98.83        0            0            0      
+<preface>            96.88        0            0            0      
+<publisher>          89.84        0            0            0      
+<reference>          98.05        0            0            0      
+<summary>            90.62        0            0            0      
+<title>              90.23        0            0            0      
+<toc>                92.97        0            0            0      
+<unit>               61.72        0            0            0      
+
+all fields           92.58        0            0            0       (micro average)
+                     92.06        0            0            0       (macro average)
+
+===== Instance-level results =====
+
+Total expected instances:   1085
+Correct instances:          693
+Instance-level recall:      63.87
+
+Evaluation for monograph model is realized in 21264 ms
+
+
+BUILD SUCCESSFUL in 8h 59m 11s
+10 actionable tasks: 5 executed, 5 up-to-date
