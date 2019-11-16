@@ -43,7 +43,7 @@ M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, [Evaluation of Header 
 
 Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/), 2015
 
-Kyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney and Dan S. Weld, [GORC: A large contextual citation graph of academic papers](https://arxiv.org/pdf/1911.02782.pdf), [arXiv:1911.02782](https://arxiv.org/abs/1911.02782), https://github.com/allenai/s2-gorc, 2019
+Kyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney and Dan S. Weld, [GORC: A large contextual citation graph of academic papers](https://arxiv.org/pdf/1911.02782.pdf), [arXiv:1911.02782](https://arxiv.org/abs/1911.02782), [github](https://github.com/allenai/s2-gorc), 2019
 
 [Meta-eval](https://github.com/allenai/meta-eval), 2015
 
