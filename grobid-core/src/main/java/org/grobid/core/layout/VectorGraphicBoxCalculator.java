@@ -34,70 +34,70 @@ public class VectorGraphicBoxCalculator {
 
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
 
-        for (Block b : document.getBlocks()) {
+        //for (Block b : document.getBlocks()) {
 //            if (visualizeBlocks) {
 //                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
 //                        "," + b.getWidth() + "," + b.getHeight(), 0);
 //                blockMultimap.put(b.getPageNumber(), b);
 //            }
-        }
+        //}
 
         for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
             BoundingBox mainPageArea = document.getPage(pageNum).getMainArea();
 
             String q = XQueryProcessor.getQueryFromResources("vector-coords.xq");
-            File vecFile = new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".vec");
-
-            if (vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
-                throw new GrobidException("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
-            }
-            XQueryProcessor pr = new XQueryProcessor(vecFile);
-
-            SequenceIterator it = pr.getSequenceIterator(q);
-            Item item;
-            List<BoundingBox> boxes = new ArrayList<>();
-
-            while ((item = it.next()) != null) {
-                String c = item.getStringValue();
-                // TODO: figure out why such string are returned at all (AS:602281691082754@1520606553791)
-                if (c.equals(",,,")) {
-                    continue;
+            File vecFile = new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".svg");
+            if (vecFile.exists()) {
+                if (vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
+                    throw new GrobidException("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
                 }
-                String coords = pageNum + "," + c;
-                BoundingBox e = BoundingBox.fromString(coords);
-                if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
-                    continue;
+                XQueryProcessor pr = new XQueryProcessor(vecFile);
+
+                SequenceIterator it = pr.getSequenceIterator(q);
+                Item item;
+                List<BoundingBox> boxes = new ArrayList<>();
+
+                while ((item = it.next()) != null) {
+                    String c = item.getStringValue();
+                    // TODO: figure out why such string are returned at all (AS:602281691082754@1520606553791)
+                    if (c.equals(",,,")) {
+                        continue;
+                    }
+                    String coords = pageNum + "," + c;
+                    BoundingBox e = BoundingBox.fromString(coords);
+                    if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
+                        continue;
+                    }
+                    boxes.add(e);
                 }
-                boxes.add(e);
-            }
 
 
-            List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
+                List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 
-            for (int i = 0; i < remainingBoxes.size(); i++) {
-                Collection<Block> col = blockMultimap.get(pageNum);
-                for (Block bl : col) {
+                for (int i = 0; i < remainingBoxes.size(); i++) {
+                    Collection<Block> col = blockMultimap.get(pageNum);
+                    for (Block bl : col) {
 //                    if (!bl.getPage().getMainArea().contains(b)) {
 //                        continue;
 //                    }
 
-                    BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
-                    if (remainingBoxes.get(i).intersect(b)) {
-                        remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                        BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
+                        if (remainingBoxes.get(i).intersect(b)) {
+                            remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                        }
                     }
                 }
-            }
 
-            remainingBoxes = mergeBoxes(remainingBoxes);
+                remainingBoxes = mergeBoxes(remainingBoxes);
 
-            for (BoundingBox b : remainingBoxes) {
-                if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
-                    result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+                for (BoundingBox b : remainingBoxes) {
+                    if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
+                        result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+                    }
                 }
+
             }
-
         }
-
         return result;
     }
 

@@ -13,6 +13,8 @@ import java.io.File;
  * 
  * User: zholudev
  * Date: 3/20/14
+ *
+ * @deprecated use WapitiTrainer or DelftTrainer (requires http://github.com/kermitt2/delft)
  */
 @Deprecated
 public class CRFPPGenericTrainer implements GenericTrainer {

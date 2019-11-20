@@ -300,7 +300,7 @@ public class HeaderTrainer extends AbstractTrainer{
     public static void main(String[] args) throws Exception {
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new HeaderTrainer());
-        AbstractTrainer.runEvaluation(new HeaderTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer()));
         System.exit(0);
     }
 }

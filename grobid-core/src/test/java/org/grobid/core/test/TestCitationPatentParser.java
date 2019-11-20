@@ -102,7 +102,8 @@ public class TestCitationPatentParser extends EngineTest {
 		List<BibDataSet> articles = new ArrayList<BibDataSet>();
 		List<PatentItem> patents = new ArrayList<PatentItem>();
 		int consolidateCitations = 0;
-		engine.processAllCitationsInPatent(text, articles, patents, consolidateCitations);
+		boolean includeRawCitations = false;
+		engine.processAllCitationsInPatent(text, articles, patents, consolidateCitations, includeRawCitations);
 		
 		assertEquals(4, patents.size());
 		assertEquals(0, articles.size());

@@ -2,11 +2,12 @@ language: java
 sudo: true
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 env:
   global:
     - GRADLE_OPTS="-Xmx512m"
+
 
 #after_success:
 #- ./gradlew codeCoverageReport --debug --info --stacktrace
@@ -15,7 +16,7 @@ env:
 #- ./gradlew clean check --debug --info --stacktrace
 
 script:
-  - ./gradlew build --no-daemon
+  - ./gradlew build --stacktrace --info --no-daemon
 
 after_success:
 - ./gradlew jacocoRootReport coveralls --no-daemon

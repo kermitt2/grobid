@@ -1,0 +1,19 @@
+{
+    "case_vocab_size": 8,
+    "word_embedding_size": 300,
+    "fold_number": 1,
+    "embeddings_name": "glove-840B",
+    "num_char_lstm_units": 25,
+    "max_char_length": 30,
+    "recurrent_dropout": 0.25,
+    "model_name": "monograph",
+    "num_word_lstm_units": 100,
+    "char_embedding_size": 25,
+    "char_vocab_size": 149,
+    "batch_size": 20,
+    "use_char_feature": true,
+    "model_type": "BidLSTM_CRF",
+    "case_embedding_size": 5,
+    "dropout": 0.5,
+    "use_crf": true
+}

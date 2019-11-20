@@ -31,6 +31,8 @@ public class LayoutToken implements Comparable<LayoutToken>, Serializable {
     private boolean newLineAfter;
     private int blockPtr;
 	private int offset = 0;
+    private boolean subscript = false;
+    private boolean superscript = false;
 	
 	/**
 	 * All TaggingLabel accumulated for this token
@@ -60,6 +62,8 @@ public class LayoutToken implements Comparable<LayoutToken>, Serializable {
         this.newLineAfter = token.newLineAfter;
         this.blockPtr = token.blockPtr;
         this.offset = token.offset;
+        this.subscript = token.subscript;
+        this.superscript = token.superscript;
 
         // deep copy of the TaggingLabel list
         if (token.labels != null) {
@@ -120,12 +124,40 @@ public class LayoutToken implements Comparable<LayoutToken>, Serializable {
         italic = i;
     }
 
+    public boolean isBold() {
+        return bold;
+    }
+
+    /** @use isBold() **/
+    @Deprecated
     public boolean getBold() {
         return bold;
     }
 
+    public boolean isItalic() {
+        return italic;
+    }
+
+    /** @use isItalic() **/
+    @Deprecated
     public boolean getItalic() {
         return italic;
+    }
+
+    public boolean isSubscript() {
+        return subscript;
+    }
+
+    public void setSubscript(boolean script) {
+        this.subscript = script;
+    }
+
+    public boolean isSuperscript() {
+        return superscript;
+    }
+
+    public void setSuperscript(boolean script) {
+        this.superscript = script;
     }
 
     public void setFontSize(double d) {

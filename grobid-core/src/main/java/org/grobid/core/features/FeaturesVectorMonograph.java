@@ -12,7 +12,7 @@ public class FeaturesVectorMonograph {
     public LayoutToken token = null; // not a feature, reference value
 	public String line = null; // not a feature, the complete processed line
     public String block = null; // not a feature, the complete processed block
-	
+
     public String string = null; // first lexical feature
 	public String secondString = null; // second lexical feature
     public String label = null; // label if known
@@ -41,7 +41,7 @@ public class FeaturesVectorMonograph {
     public int relativePagePosition = -1;
 	public int relativePagePositionChar = -1; // not used
 	public String punctuationProfile = null; // the punctuations of the current line of the token
-	public boolean firstPageBlock = false; 
+	public boolean firstPageBlock = false;
 	public boolean lastPageBlock = false;
 	public int lineLength = 0;
     public boolean bitmapAround = false;
@@ -50,7 +50,7 @@ public class FeaturesVectorMonograph {
 
     public boolean repetitivePattern = false; // if true, the textual pattern is repeated at the same position on other pages
     public boolean firstRepetitivePattern = false; // if true, this is a repetitive textual pattern and this is its first occurrence in the doc
-    
+
     public int spacingWithPreviousBlock = 0; // discretized 
     public int characterDensity = 0; // discretized 
 
@@ -61,13 +61,13 @@ public class FeaturesVectorMonograph {
 
         // token string (1)
         res.append(string);
-		
+
 		// second token string
 		if (secondString != null)
 			res.append(" " + secondString);
 		else
 			res.append(" " + string);
-		
+
         // lowercase string
         res.append(" " + string.toLowerCase());
 
@@ -85,7 +85,7 @@ public class FeaturesVectorMonograph {
         // line information (1)
 		if (lineStatus != null)
 			res.append(" " + lineStatus);
-		
+
         // line alignment/identation information (1)
         //res.append(" " + alignmentStatus);
 
@@ -169,10 +169,10 @@ public class FeaturesVectorMonograph {
 
         // relative page position coordinate (1)
         //res.append(" " + relativePagePosition);
-		
+
         // relative page position characters (1)
         res.append(" " + relativePagePositionChar);
-		
+
 		// punctuation profile
 		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) ) {
 			// string profile

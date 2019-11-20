@@ -22,6 +22,11 @@ public class FulltextTrainer extends AbstractTrainer{
 
     public FulltextTrainer() {
         super(GrobidModels.FULLTEXT);
+
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.0001;
+        window = 20;
+        nbMaxIterations = 1500;
     }
 
     @Override
@@ -215,8 +220,9 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                             else
                                 writer3.write(fulltext.toString() + "\n");
                         }
+                        totalExamples++;
                     } else {
-                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                        LOGGER.error(name + " / too many synchronization issues, file not used in training data and to be fixed!");
                     }
                 } catch (Exception e) {
                     LOGGER.error("Fail to open or process raw file", e);
@@ -247,7 +253,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
     public static void main(String[] args) throws Exception {
     	GrobidProperties.getInstance();
         AbstractTrainer.runTraining(new FulltextTrainer());
-        AbstractTrainer.runEvaluation(new FulltextTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new FulltextTrainer()));
         System.exit(0);
     }
 }	

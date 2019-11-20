@@ -1,10 +1,6 @@
 package org.grobid.core.engines;
 
-import eugfc.imageio.plugins.PNMRegistry;
-import javafx.geometry.BoundingBox;
-
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.BasicStructureBuilder;
@@ -15,26 +11,23 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorMonograph;
 import org.grobid.core.layout.*;
 import org.grobid.core.lexicon.FastMatcher;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.*;
 import java.util.regex.Matcher;
 
-import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+import static org.apache.commons.lang3.StringUtils.trim;
 
 /**
  * Realise a high level segmentation of a monograph. Monograph is to be understood here in the context library cataloging,
@@ -47,7 +40,7 @@ import static org.apache.commons.lang3.StringUtils.*;
  */
 public class MonographParser extends AbstractParser {
 	/**
-     *   16 labels for this model:
+     *   17 labels for this model:
      *       cover page (front of the book)
      *       title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info)
@@ -633,7 +626,7 @@ public class MonographParser extends AbstractParser {
      * Process the specified pdf and format the result as training data for the monograph model.
      *
      * @param inputFile input PDF file
-     * @param pathFullText path to raw monograph featured sequence
+     //* @param pathFullText path to raw monograph featured sequence
      * @param pathTEI path to TEI
      * @param id id
      */
@@ -681,7 +674,7 @@ public class MonographParser extends AbstractParser {
 
             doc.produceStatistics();
             StringBuilder builder = new StringBuilder();
-            builder.append("<?xml version=\"1.0\" ?>\n<tei>\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+            builder.append("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
                 "\"/>\n\t</teiHeader>\n\t<text xml:lang=\""+ lang + "\">\n");
 
             // get the document outline

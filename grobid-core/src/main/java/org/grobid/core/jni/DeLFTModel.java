@@ -4,6 +4,7 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.IOUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,6 @@ public class DeLFTModel {
 
     public DeLFTModel(GrobidModel model) {
         this.modelName = model.getModelName().replace("-", "_");
-        System.out.println(this.modelName);
         try {
             LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath()));
@@ -53,11 +53,11 @@ public class DeLFTModel {
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             try { 
-                jep.eval(this.modelName+" = sequenceLabelling.Sequence('" + this.modelName.replace("_", "-") + "')");
+                jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
-                LOGGER.error("DeLFT model initialization failed", e);
-            } 
+                throw new GrobidException("DeLFT model initialization failed. ", e);
+            }
         } 
     } 
 
@@ -69,8 +69,29 @@ public class DeLFTModel {
             //System.out.println("label thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.data = data;
-        } 
-          
+        }
+
+        private void setJepStringValueWithFileFallback(
+            Jep jep, String name, String value
+        ) throws JepException, IOException {
+            try {
+                jep.set(name, value);
+            } catch(JepException e) {
+                File tempFile = IOUtilities.newTempFile(name, ".data");
+                LOGGER.debug(
+                    "Falling back to file {} due to exception: {}",
+                    tempFile, e.toString()
+                );
+                IOUtilities.writeInFile(tempFile.getAbsolutePath(), value);
+                jep.eval("from pathlib import Path");
+                jep.eval(
+                    name + " = Path('" + tempFile.getAbsolutePath() +
+                    "').read_text(encoding='utf-8')"
+                );
+                tempFile.delete();
+            }
+        }
+
         @Override
         public String call() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
@@ -79,18 +100,18 @@ public class DeLFTModel {
                 //System.out.println(this.data);
 
                 // load and tag
-                jep.set("input", this.data);
+                this.setJepStringValueWithFileFallback(jep, "input", this.data);
                 jep.eval("x_all, f_all = load_data_crf_string(input)");
                 Object objectResults = jep.getValue(this.modelName+".tag(x_all, None)");
                 
                 // inject back the labels
-                ArrayList<ArrayList<List<String>>> results = (ArrayList<ArrayList<List<String>>>)objectResults;
+                List<List<List<String>>> results = (List<List<List<String>>>) objectResults;
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
                 String line;
                 int i = 0; // sentence index
                 int j = 0; // word index in the sentence
-                ArrayList<List<String>> result = results.get(0);
-                while( (line=bufReader.readLine()) != null ) {
+                List<List<String>> result = results.get(0);
+                while ((line = bufReader.readLine()) != null) {
                     line = line.trim();
                     if ((line.length() == 0) && (j != 0)) {
                         j = 0;
@@ -182,7 +203,7 @@ public class DeLFTModel {
                 }
 
                 // init model to be trained
-                jep.eval("model = sequenceLabelling.Sequence('"+this.modelName+
+                jep.eval("model = Sequence('"+this.modelName+
                     "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
 
                 // actual training

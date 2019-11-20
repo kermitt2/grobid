@@ -207,7 +207,7 @@ public class TextUtilitiesTest extends EngineTest {
 
     @Test
     public void testWordShape() {
-        testWordShape("This", "Xxxx", "Xx");
+       testWordShape("This", "Xxxx", "Xx");
         testWordShape("Equals", "Xxxx", "Xx");
         testWordShape("O'Conor", "X'Xxxx", "X'Xx");
         testWordShape("McDonalds", "XxXxxx", "XxXx");
@@ -223,7 +223,9 @@ public class TextUtilitiesTest extends EngineTest {
         testWordShape("uü", "xx", "x");
         testWordShape("Üwe", "Xxx", "Xx");
 
-        testWordShape(" ", " ", "");
+        testWordShape(" ", " ", " ");
+        testWordShape("Tes9t99", "Xxdxdd", "Xxdxd");
+        testWordShape("T", "X", "X");
     }
 
     private void testWordShape(String orig, String expected, String expectedTrimmed) {
@@ -280,6 +282,18 @@ public class TextUtilitiesTest extends EngineTest {
     @Test
     public void testDoesRequireDehypenisation_usualWord_shouldReturnFalse() {
         List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample open-source text");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
+    }
+
+    @Test
+    public void testDoesRequireDehypenisation_usualWordWithSpace_shouldReturnFalse() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample open- source text");
+        assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
+    }
+
+    @Test
+    public void testDoesRequireDehypenisation_usualWordWith2Space_shouldReturnFalse() {
+        List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sample open - source text");
         assertThat(TextUtilities.doesRequireDehypenisation(tokens, 9), is(false));
     }
 
@@ -366,8 +380,6 @@ public class TextUtilitiesTest extends EngineTest {
         List<LayoutToken> tokens = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken("which was mediated through the inhibition of expression of α 2  - \n  integrin (1,2). ");
         assertThat(TextUtilities.doesRequireDehypenisation(tokens, 19), is(false));
     }
-
-
 
     @Test
     public void testIsAllUpperCaseOrDigitOrDot() throws Exception {

@@ -3,7 +3,7 @@
 To cite this work, you can simply refer to the github project:
 
 ```
-GROBID (2008-2018) <https://github.com/kermitt2/grobid>
+GROBID (2008-2019) <https://github.com/kermitt2/grobid>
 ```
 
 (please do not include a particular person name to emphasize the project and tool!)
@@ -15,9 +15,9 @@ Here's a BibTeX entry:
     title = {GROBID}, 
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
-    year = {2008 --- 2018},
-    note = {[Online; accessed 16-August-2018]},
-    commit = {81a71ef64d8074ad6ebc3fde9c533c5c483c4348}
+    year = {2008 --- 2019},
+    archivePrefix = {swh},
+    eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }
 ```
 
@@ -27,7 +27,9 @@ Here's a BibTeX entry:
 
 [GROBID in 20 slides](GROBID.pdf) (2012).
 
-## Papers on Grobid
+## Papers around Grobid
+
+Note: if you want to cite this work, please cite the software project as mentioned above and not a particular paper. 
 
 P. Lopez. [GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
 
@@ -35,7 +37,7 @@ P. Lopez. Automatic Extraction and Resolution of Bibliographical References in P
 
 Joseph Boyd. [Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Master Thesis, EPFL, Switzerland, 2015. 
 
-## Evalution
+## Evaluation
 
 M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp, [Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents](http://docear.org/papers/Evaluation_of_Header_Metadata_Extraction_Approaches_and_Tools_for_Scientific_PDF_Documents.pdf), in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
 
@@ -53,12 +55,16 @@ Isaac G. Councill, C. Lee Giles, Min-Yen Kan. (2008) ParsCit: An open-source CRF
 
 ## Other similar Open Source tools
 
-CiteSeerX page on [Scholarly Information Extraction](http://csxstatic.ist.psu.edu/about/scholarly-information-extraction) which list many tools and related information. 
-
-[parsCit](http://wing.comp.nus.edu.sg/parsCit)
+[parsCit](https://github.com/knmnyn/ParsCit)
 
 [CERMINE](https://github.com/CeON/CERMINE)
+
+[Science Parse](https://github.com/allenai/science-parse) 
+
+[science Parse v2](https://github.com/allenai/spv2) 
 
 [Metatagger](https://github.com/iesl/rexa1-metatagger)
 
 [BILBO](https://github.com/OpenEdition/bilbo)
+
+CiteSeerX page on [Scholarly Information Extraction](http://csxstatic.ist.psu.edu/downloads/software#Services) which lists tools and related information (now a bit outdated). 

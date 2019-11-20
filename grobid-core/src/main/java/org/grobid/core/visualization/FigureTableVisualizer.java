@@ -276,7 +276,7 @@ public class FigureTableVisualizer {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
         if (singleFile) {
-            System.out.println(tei);
+            //System.out.println(tei);
         }
         XQueryProcessor pr = new XQueryProcessor(tei);
         SequenceIterator it = pr.getSequenceIterator(q);
@@ -296,7 +296,7 @@ public class FigureTableVisualizer {
 
         //VISUALIZING "IMAGE" elements from pdf2xml
         if (visualizePdf2xmlImages) {
-            q = XQueryProcessor.getQueryFromResources("figure-coords-pdf2xml.xq");
+            q = XQueryProcessor.getQueryFromResources("figure-coords-pdfalto.xq");
 
             pr = new XQueryProcessor(xmlFile);
             it = pr.getSequenceIterator(q);

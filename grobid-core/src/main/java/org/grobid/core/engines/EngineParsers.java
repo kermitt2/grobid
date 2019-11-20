@@ -189,7 +189,7 @@ public class EngineParsers implements Closeable {
         referenceSegmenterParser = getReferenceSegmenterParser();
         figureParser = getFigureParser();
         tableParser = getTableParser();
-        //MonographParser monographParser = getMonographParser();
+        monographParser = getMonographParser();
     }
 
     @Override
