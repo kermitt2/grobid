@@ -64,7 +64,8 @@ public class Table extends Figure {
 			XmlBuilderUtils.addXmlId(tableElement, "tab_" + id);
 		}
 
-		tableElement.addAttribute(new Attribute("validated", String.valueOf(isGoodTable())));
+        // this is non TEI, to be reviewed
+		//tableElement.addAttribute(new Attribute("validated", String.valueOf(isGoodTable())));
 
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(tableElement, LayoutTokensUtil.getCoordsStringForOneBox(getLayoutTokens()));
