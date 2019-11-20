@@ -27,6 +27,10 @@ public class TEIMonographSaxParser extends DefaultHandler {
     //private String fileName = null;
     //private String pdfName = null;
 
+    private int totalReferences = 0;
+
+    private ArrayList<TEIMonographItem> monographItems = null;
+
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
     public TEIMonographSaxParser() {
@@ -34,6 +38,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
         currentTags = new Stack<String>();
         //accumulators = new Stack<StringBuffer>();
         accumulator = new StringBuffer();
+        monographItems = new ArrayList<>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -54,6 +59,10 @@ public class TEIMonographSaxParser extends DefaultHandler {
         return labeled;
     }
 
+    public ArrayList<TEIMonographItem> getMonographItems(){
+        return monographItems;
+    }
+
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
@@ -71,7 +80,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
             accumulator.append(" +PAGE+ ");
-        } else if (qName.equals("div")) {
+        } else if (qName.equals("div")) { // if the informations are attached as attributes of div parts
             int length = atts.getLength();
 
             // Process each attribute
@@ -112,32 +121,54 @@ public class TEIMonographSaxParser extends DefaultHandler {
                     writeData(qName, false);
                 }
             }
+            // the tags based on the tags defined in the TaggingLabels class for monograph model (17 labels)
             accumulator.setLength(0);
-
-            if (qName.equals("header")) {
-                currentTags.push("<header>");
-            } else if (qName.equals("other")) {
-                currentTags.push("<other>");
-            } else if (qName.equals("page_header")) {
-                currentTags.push("<page_header>");
-            } else if (qName.equals("page_footnote")) {
-                currentTags.push("<page_footnote>");
-            } else if (qName.equals("page") | qName.equals("pages")) {
-                currentTags.push("<page>");
-            } else if (qName.equals("reference")) {
-                currentTags.push("<reference>");
+            totalReferences++;
+            if (qName.equals("cover")) {
+                currentTags.push("<cover>");
+            } else if (qName.equals("title")) {
+                currentTags.push("<title>");
+            } else if (qName.equals("publisher")) {
+                currentTags.push("<publisher>");
+            } else if (qName.equals("summary")) {
+                currentTags.push("<summary>");
+            } else if (qName.equals("biography")) {
+                currentTags.push("<biography>");
+            } else if (qName.equals("advertisement")) {
+                currentTags.push("<advertisement>");
             } else if (qName.equals("toc")) {
                 currentTags.push("<toc>");
-            } else if (qName.equals("index")) {
+            } else if (qName.equals("tof")) {
+                currentTags.push("<tof>");
+            } else if (qName.equals("preface")) {
+                currentTags.push("<preface>");
+            } else if (qName.equals("dedication")) {
+                currentTags.push("<dedication>");
+            }else if (qName.equals("unit")) {
+                currentTags.push("<unit>");
+            }else if (qName.equals("reference")) {
+                currentTags.push("<reference>");
+            }else if (qName.equals("annex")) {
+                currentTags.push("<annex>");
+            }else if (qName.equals("index")) {
                 currentTags.push("<index>");
-            } else if (qName.equals("section")) {
-                currentTags.push("<section>");
+            }else if (qName.equals("glossary")) {
+                currentTags.push("<glossary>");
+            }else if (qName.equals("back")) {
+                currentTags.push("<back>");
+            }else if (qName.equals("other")) {
+                currentTags.push("<other>");
             }
         }
     }
 
     private void writeData(String qName, boolean pop) {
-        if (qName.equals("div")) {
+        if (qName.equals("div") || (qName.equals("cover")) || (qName.equals("title"))
+            || (qName.equals("publisher")) || (qName.equals("summary")) || (qName.equals("biography"))
+            || (qName.equals("advertisement")) || (qName.equals("toc")) || (qName.equals("tof"))
+            || (qName.equals("preface")) || (qName.equals("dedication")) || (qName.equals("unit"))
+            || (qName.equals("reference")) || (qName.equals("annex")) || (qName.equals("index"))
+            || (qName.equals("glossary")) || (qName.equals("back")) || (qName.equals("other"))) {
             String currentTag = null;
             if (pop) {
                 currentTag = currentTags.pop();
@@ -145,10 +176,12 @@ public class TEIMonographSaxParser extends DefaultHandler {
                 currentTag = currentTags.peek();
             }
             String text = getText();
-            // we segment the text
-            StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
+            // we segment the text by their tokens (but it's too much for monograph model, segment per line
+            StringTokenizer st = new StringTokenizer(text, "\n", true);
+
             boolean begin = true;
             while (st.hasMoreTokens()) {
+                TEIMonographItem teiMonographItem = new TEIMonographItem();
                 String tok = st.nextToken().trim();
                 if (tok.length() == 0) continue;
 
@@ -160,18 +193,25 @@ public class TEIMonographSaxParser extends DefaultHandler {
                 } else {
                     String content = tok;
                     if (content.length() > 0) {
+                        teiMonographItem.setText(content);
                         if (begin) {
                             labeled.add(content + " I-" + currentTag + "\n");
+                            teiMonographItem.setLabel(" I-" + currentTag);
                             begin = false;
                         } else {
                             labeled.add(content + " " + currentTag + "\n");
+                            teiMonographItem.setLabel(currentTag);
                         }
                     }
                 }
                 begin = false;
+                monographItems.add(teiMonographItem);
             }
+
             accumulator.setLength(0);
         }
     }
-
+    public int getTotalReferences() {
+        return totalReferences;
+    }
 }
