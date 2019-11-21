@@ -240,8 +240,8 @@ public class MonographTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new MonographTrainer());
-        AbstractTrainer.runEvaluation(new MonographTrainer());
+        //AbstractTrainer.runTraining(new MonographTrainer());
+        System.out.println(AbstractTrainer.runNFoldEvaluation(new MonographTrainer(), 2));
         System.exit(0);
     }
 
