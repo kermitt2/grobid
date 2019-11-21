@@ -925,7 +925,19 @@ public class BiblioItem {
     public void setDOI(String id) {
         if (id == null)
             return;
-        doi = StringUtils.normalizeSpace(id);
+        this.doi = cleanDOI(id);
+    } 
+
+    public void setInDOI(String id) {
+        if (id != null) {
+            inDOI = StringUtils.normalizeSpace(id);
+            inDOI = inDOI.replace(" ", "");
+            inDOI = cleanDOI(inDOI);
+        }
+    }
+
+    public String cleanDOI(String doi) {
+        doi = StringUtils.normalizeSpace(doi);
         doi = doi.replace(" ", "");
         if (doi.startsWith("http://dx.doi.org/") || 
             doi.startsWith("https://dx.doi.org/") || 
@@ -934,7 +946,7 @@ public class BiblioItem {
             doi = doi.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
         }
         doi = doi.replace("//", "/");
-        if (doi.startsWith("doi:") || doi.startsWith("DOI:") || doi.startsWith("DOI/") || doi.startsWith("doi/")) {
+        if (doi.toLowerCase().startsWith("doi:") || doi.toLowerCase().startsWith("doi/")) {
             doi = doi.substring(4);
         }
         
@@ -942,19 +954,11 @@ public class BiblioItem {
         // 43-61.DOI:10.1093/jpepsy/14.1.436/7
         // 367-74.DOI:10.1080/14034940210165064
         // (pages concatenated to the DOI) - easy/safe to fix
-        if ( (doi.indexOf("DOI:10.") != -1) || (doi.indexOf("doi:10.") != -1) ) {
-            int ind = doi.indexOf("DOI:10.");
-            if (ind == -1) 
-                ind = doi.indexOf("doi:10.");
+        int ind = doi.toLowerCase().indexOf("doi:10.");
+        if (ind != -1)
             doi = doi.substring(ind+4);
-        }
-    } //{ doi = cleanDOI(id); } 
 
-    public void setInDOI(String id) {
-        if (id != null) {
-            inDOI = StringUtils.normalizeSpace(id);
-            inDOI = inDOI.replace(" ", "");
-        }
+        return doi;
     }
 
     public void setArXivId(String id) {
@@ -1639,30 +1643,6 @@ public class BiblioItem {
         if (bibl.getBookTitle() != null) {
             bibl.setBookTitle(TextUtilities.cleanField(bibl.getBookTitle(), false));
         }
-    }
-
-    private static String cleanDOI(String bibl) {
-        if (bibl != null) {
-            bibl = StringUtils.normalizeSpace(bibl);
-            bibl = bibl.replace(" ", "");
-            if (bibl.startsWith("DOI:") || bibl.startsWith("DOI/") || bibl.startsWith("doi:") || bibl.startsWith("doi/")) {
-                bibl = bibl.substring(0, 4);
-            } 
-            if (bibl.startsWith("DOI") || bibl.startsWith("doi")) {
-                bibl = bibl.substring(0, 3);
-            }
-            // pretty common wrong extraction pattern: 
-            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
-            // 367-74.DOI:10.1080/14034940210165064
-            // (pages concatenated to the DOI) - easy/safe to fix
-            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
-                int ind = bibl.indexOf("DOI:10.");
-                if (ind == -1) 
-                    ind = bibl.indexOf("doi:10.");
-                bibl = bibl.substring(ind+4);
-            }
-        }
-        return bibl;
     }
 
     /**

@@ -313,13 +313,22 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 				// Get names and values for each attribute
 				String name = atts.getQName(i);
 				String value = atts.getValue(i);
-
 				if ((name != null) && (value != null)) {
 					if (name.equals("WIDTH")) {
-						double width = Double.parseDouble(value);
+						double width = 0.0;
+						try {
+							width = Double.parseDouble(value);
+						} catch(NumberFormatException e) {
+	                        LOGGER.warn("Invalid WIDTH value: " + value);
+	                    }
 						page.setWidth(width);
 					} else if (name.equals("HEIGHT")) {
-						double height = Double.parseDouble(value);
+						double height = 0.0;
+						try {
+                            height = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid HEIGHT value: " + value);
+                        }
 						page.setHeight(height);
 					}
 				}
@@ -335,26 +344,46 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 if ((name != null) && (value != null)) {
                     switch (name) {
                         case "HPOS":
-                            double x = Double.parseDouble(value);
-                            if (x != currentX) {
+                        	double x = 0.0;
+                        	try {
+	                            x = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid HPOS value: " + value);
+	                        }
+                            if (x != currentX && x != 0.0) {
                                 currentX = Math.abs(x);
                             }
                             break;
                         case "VPOS":
-                            double y = Double.parseDouble(value);
-                            if (y != currentY) {
+                            double y = 0.0;
+                            try {
+	                            y = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid VPOS value: " + value);
+	                        }
+                            if (y != currentY && y != 0.0) {
                                 currentY = Math.abs(y);
                             }
                             break;
                         case "WIDTH":
-                            double width = Double.parseDouble(value);
-                            if (width != currentWidth) {
+                            double width = 0.0;
+                            try {
+	                            width = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid WIDTH value: " + value);
+	                        }
+                            if (width != currentWidth && width != 0.0) {
                                 currentWidth = Math.abs(width);
                             }
                             break;
                         case "HEIGHT":
-                            double height = Double.parseDouble(value);
-                            if (height != currentHeight) {
+                            double height = 0.0;
+                            try {
+	                            height = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid HEIGHT value: " + value);
+	                        }
+                            if (height != currentHeight && height != 0.0) {
                                 currentHeight = Math.abs(height);
                             }
                             break;
@@ -389,16 +418,32 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 							}
 							break;
 						case "HPOS":
-                            x = Double.parseDouble(value);
+							try {
+	                            x = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid HPOS value: " + value);
+	                        }
 							break;
                         case "VPOS":
-                            y = Double.parseDouble(value);
+                        	try {
+	                            y = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid VPOS value: " + value);
+	                        }
                             break;
                         case "WIDTH":
-                            width = Double.parseDouble(value);
+                        	try {
+	                            width = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid WIDTH value: " + value);
+	                        }
                             break;
                         case "HEIGHT":
-                            height = Double.parseDouble(value);
+                        	try {
+	                            height = Double.parseDouble(value);
+	                        } catch(NumberFormatException e) {
+	                        	LOGGER.warn("Invalid HEIGHT value: " + value);
+	                        }
                             break;
 					}
 				}
@@ -448,26 +493,50 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 						else
 							currentRotation = true;
 					} else if (name.equals("HPOS")) {
-						double x = Double.parseDouble(value);
-						if (x != currentX) {
+						double x = 0.0;
+						try {
+                            x = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid HPOS value: " + value);
+                        }
+						if (x != currentX && x != 0.0) {
 							currentX = Math.abs(x);
 						}
 					} else if (name.equals("VPOS")) {
-						double y = Double.parseDouble(value);
-						if (y != currentY) {
+						double y = 0.0;
+						try {
+                            y = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid VPOS value: " + value);
+                        }
+						if (y != currentY && y != 0.0) {
 							currentY = Math.abs(y);
 						}
 					} else if (name.equals("base")) {
-						double base = Double.parseDouble(value);
-
+						double base = 0.0;
+						try {
+							base = Double.parseDouble(value);
+						} catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid base value: " + value);
+                        }
 					} else if (name.equals("WIDTH")) {
-						double width = Double.parseDouble(value);
-						if (width != currentWidth) {
+						double width = 0.0;
+						try {
+                            width = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid WIDTH value: " + value);
+                        }
+						if (width != currentWidth && width != 0.0) {
 							currentWidth = Math.abs(width);
 						}
 					} else if (name.equals("HEIGHT")) {
-						double height = Double.parseDouble(value);
-						if (height != currentHeight) {
+						double height = 0.0;
+						try {
+                            height = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid HEIGHT value: " + value);
+                        }
+						if (height != currentHeight && height != 0.0) {
 							currentHeight = Math.abs(height);
 						}
 					}
@@ -631,7 +700,12 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         textStyle.setFontName(value);
                         blabla.append(" ");
                     } else if (name.equals("FONTSIZE")) {
-                        double fontSize = Double.parseDouble(value);
+                        double fontSize = 0.0;
+                    	try {
+                            fontSize = Double.parseDouble(value);
+                        } catch(NumberFormatException e) {
+                        	LOGGER.warn("Invalid FONTSIZE value: " + value);
+                        }
                         textStyle.setFontSize(fontSize);
                         blabla.append(" ");
                     } else if (name.equals("FONTSTYLE")) {
