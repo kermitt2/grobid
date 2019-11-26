@@ -119,7 +119,7 @@ Similarly, if you want to create a docker image from the current master, develop
 
 In order to run the container of the newly created image for version `0.5.6`: 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.5.6
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.5.6
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:
