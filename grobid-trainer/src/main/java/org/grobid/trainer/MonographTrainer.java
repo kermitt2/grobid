@@ -155,11 +155,11 @@ public class MonographTrainer extends AbstractTrainer {
 
                 // read by lines and add the features
                 String line = bis.readLine();
-                String token1 = null, token2 = null, text = null, beforeLine = null, beforeTag = null;
-                int totFound = 0, lastPositionFound = 0, lastPosition = 0, totData = 0;
+                String token1 = null, token2 = null, text = null;
+                int totFound = 0, lastPositionFound = 0, lastPosition = 0, totData = 0; boolean found = false;
                 while (line != null) {
-                    if (!line.contains("BLOCKIN")) {
                         String lines[] = line.split(" ");
+                        // every line of a raw file contains at least 1 to 2 tokens
                         token1 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[0]);
                         token2 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[1]);
                         if (token1.equals(token2)) {
@@ -167,11 +167,8 @@ public class MonographTrainer extends AbstractTrainer {
                         } else {
                             text = token1 + " " + token2;
                         }
-
-                        boolean found = false;
                         String currentLocalText = null, currentTag = null;
-
-                        if (lastPosition == labeled.size() - 1) {
+                        if (lastPosition >= labeled.size() - 1) {
                             lastPosition = lastPositionFound;
                         }
 
@@ -179,21 +176,23 @@ public class MonographTrainer extends AbstractTrainer {
                             // get the text and the label from TEI data
                             currentLocalText = labeled.get(i).getText();
                             currentTag = labeled.get(i).getLabel();
-                            if (currentLocalText.equals(text) || currentLocalText.contains(token1) || currentLocalText.contains(token2)) { // if they are really found
+
+                            if (currentLocalText.contains(text)) { // if they are found
                                 found = true;
                                 totFound++;
-                                lastPositionFound = i + 1;
+                                lastPositionFound = i;
                                 referenceText.append(line).append(" ").append(currentTag).append("\n");
                             }
 
-                            if (found || lastPosition == labeled.size() - 1) {
+                            if (found || lastPosition >= labeled.size() - 1) {
+                                found = false;
                                 break;
                             } else {
                                 lastPosition++;
                             }
 
                         }
-                    }
+
                     totData++;
                     line = bis.readLine();
                 }
@@ -240,8 +239,8 @@ public class MonographTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        //AbstractTrainer.runTraining(new MonographTrainer());
-        System.out.println(AbstractTrainer.runNFoldEvaluation(new MonographTrainer(), 2));
+        AbstractTrainer.runTraining(new MonographTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new MonographTrainer()));
         System.exit(0);
     }
 

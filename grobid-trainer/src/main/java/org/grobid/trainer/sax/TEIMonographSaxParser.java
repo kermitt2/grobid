@@ -17,26 +17,13 @@ import java.util.StringTokenizer;
  * @author Patrice Lopez
  */
 public class TEIMonographSaxParser extends DefaultHandler {
-
-    //private Stack<StringBuffer> accumulators = null; // accumulated parsed piece of texts
     private StringBuffer accumulator = null; // current accumulated text
-
-    private String output = null;
     private Stack<String> currentTags = null;
-
-    //private String fileName = null;
-    //private String pdfName = null;
-
     private int totalReferences = 0;
-
     private ArrayList<TEIMonographItem> monographItems = null;
 
-    private ArrayList<String> labeled = null; // store line by line the labeled data
-
     public TEIMonographSaxParser() {
-        labeled = new ArrayList<String>();
         currentTags = new Stack<String>();
-        //accumulators = new Stack<StringBuffer>();
         accumulator = new StringBuffer();
         monographItems = new ArrayList<>();
     }
@@ -55,11 +42,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
         }
     }
 
-    public ArrayList<String> getLabeledResult() {
-        return labeled;
-    }
-
-    public ArrayList<TEIMonographItem> getMonographItems(){
+    public ArrayList<TEIMonographItem> getMonographItems() {
         return monographItems;
     }
 
@@ -75,7 +58,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
                              String localName,
                              String qName,
                              Attributes atts)
-            throws SAXException {
+        throws SAXException {
         if (qName.equals("lb")) {
             accumulator.append(" +L+ ");
         } else if (qName.equals("pb")) {
@@ -93,21 +76,21 @@ public class TEIMonographSaxParser extends DefaultHandler {
                     if (name.equals("type")) {
                         if (value.equals("preface")) {
                             currentTags.push("<preface>");
-                        } else if (value.equals("bibliogr")){
+                        } else if (value.equals("bibliogr")) {
                             currentTags.push("<reference>");
-                        } else if (value.equals("ack")){
+                        } else if (value.equals("ack")) {
                             currentTags.push("<dedication>");
-                        } else if (value.equals("contents")){
+                        } else if (value.equals("contents")) {
                             currentTags.push("<toc>");
-                        } else if (value.equals("appendix")){
+                        } else if (value.equals("appendix")) {
                             currentTags.push("<annex>");
-                        } else if (value.equals("index")){
+                        } else if (value.equals("index")) {
                             currentTags.push("<index>");
-                        } else if (value.equals("glossary")){
+                        } else if (value.equals("glossary")) {
                             currentTags.push("<glossary>");
-                        } else if (value.equals("part")){
+                        } else if (value.equals("part")) {
                             currentTags.push("<unit>");
-                        } else if (value.equals("chapter")){
+                        } else if (value.equals("chapter")) {
                             currentTags.push("<unit>");
                         }
                     }
@@ -144,19 +127,19 @@ public class TEIMonographSaxParser extends DefaultHandler {
                 currentTags.push("<preface>");
             } else if (qName.equals("dedication")) {
                 currentTags.push("<dedication>");
-            }else if (qName.equals("unit")) {
+            } else if (qName.equals("unit")) {
                 currentTags.push("<unit>");
-            }else if (qName.equals("reference")) {
+            } else if (qName.equals("reference")) {
                 currentTags.push("<reference>");
-            }else if (qName.equals("annex")) {
+            } else if (qName.equals("annex")) {
                 currentTags.push("<annex>");
-            }else if (qName.equals("index")) {
+            } else if (qName.equals("index")) {
                 currentTags.push("<index>");
-            }else if (qName.equals("glossary")) {
+            } else if (qName.equals("glossary")) {
                 currentTags.push("<glossary>");
-            }else if (qName.equals("back")) {
+            } else if (qName.equals("back")) {
                 currentTags.push("<back>");
-            }else if (qName.equals("other")) {
+            } else if (qName.equals("other")) {
                 currentTags.push("<other>");
             }
         }
@@ -169,48 +152,41 @@ public class TEIMonographSaxParser extends DefaultHandler {
             || (qName.equals("preface")) || (qName.equals("dedication")) || (qName.equals("unit"))
             || (qName.equals("reference")) || (qName.equals("annex")) || (qName.equals("index"))
             || (qName.equals("glossary")) || (qName.equals("back")) || (qName.equals("other"))) {
-            String currentTag = null;
+
+            String currentTag = null, label = null;
+            TEIMonographItem teiMonographItem = null;
+
             if (pop) {
                 currentTag = currentTags.pop();
             } else {
                 currentTag = currentTags.peek();
             }
+            //for monograph model, segment per blocks
             String text = getText();
-            // we segment the text by their tokens (but it's too much for monograph model, segment per line
-            StringTokenizer st = new StringTokenizer(text, "\n", true);
+            //int idx = text.indexOf("\n");
 
-            boolean begin = true;
-            while (st.hasMoreTokens()) {
-                TEIMonographItem teiMonographItem = new TEIMonographItem();
-                String tok = st.nextToken().trim();
-                if (tok.length() == 0) continue;
-
-                if (tok.equals("+L+")) {
-                    labeled.add("@newline\n");
-                } else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add("@newpage\n");
-                } else {
-                    String content = tok;
-                    if (content.length() > 0) {
-                        teiMonographItem.setText(content);
-                        if (begin) {
-                            labeled.add(content + " I-" + currentTag + "\n");
-                            teiMonographItem.setLabel(" I-" + currentTag);
-                            begin = false;
-                        } else {
-                            labeled.add(content + " " + currentTag + "\n");
-                            teiMonographItem.setLabel(currentTag);
-                        }
-                    }
-                }
-                begin = false;
+            // mark the first line only
+            /*if(text.substring(0, idx+1) != null){
+                teiMonographItem = new TEIMonographItem();
+                teiMonographItem.setText(text.substring(0, idx+1));
+                teiMonographItem.setLabel( " I-" + currentTag);
                 monographItems.add(teiMonographItem);
             }
 
+            if (text.substring(idx+1) != null){
+                teiMonographItem = new TEIMonographItem();
+                //teiMonographItem.setText(text.substring(idx+1));
+                teiMonographItem.setLabel(currentTag);
+                monographItems.add(teiMonographItem);
+            }*/
+            teiMonographItem = new TEIMonographItem();
+            teiMonographItem.setText(text);
+            teiMonographItem.setLabel(currentTag);
+            monographItems.add(teiMonographItem);
             accumulator.setLength(0);
         }
     }
+
     public int getTotalReferences() {
         return totalReferences;
     }

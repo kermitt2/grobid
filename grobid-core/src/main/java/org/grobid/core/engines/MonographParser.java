@@ -595,7 +595,7 @@ public class MonographParser extends AbstractParser {
 //System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
                     }
 
-                    if (previousFeatures != null) {
+                    if (previousFeatures != null && !previousFeatures.blockStatus.equals("BLOCKIN")) {
                         String vector = previousFeatures.printVector();
                         fulltext.append(vector);
                     }
@@ -615,7 +615,7 @@ public class MonographParser extends AbstractParser {
                 }
             }
         }
-        if (previousFeatures != null)
+        if (previousFeatures != null && !previousFeatures.blockStatus.equals("BLOCKIN"))
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
