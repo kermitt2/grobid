@@ -70,5 +70,6 @@ grobid-home/models/software*
 grobid-home/models/superconductors*
 grobid-home/models/values
 grobid-home/models/dataseer
-grobid-trainer/resources/dataset/acknowledgment/annotated/*
-grobid-trainer/resources/dataset/acknowledgment/raw/*
+grobid-trainer/resources/dataset/acknowledgment/corpus/annotated/*.xml
+grobid-trainer/resources/dataset/acknowledgment/corpus/raw/*.json
+
