@@ -106,7 +106,7 @@ docker images from the docker HUB.
 
 The docker build from a particular version (here for example the latest stable version `0.5.6`) will clone the repository using git, so no need to custom builds. 
 Only important information is the version which will be checked out from the tags.
- 
+
 ```bash
 > docker build -t grobid/grobid:0.5.6 --build-arg GROBID_VERSION=0.5.6 .
 ```

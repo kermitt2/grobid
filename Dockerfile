@@ -97,3 +97,6 @@ LABEL \
 
 # - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
 # > docker-machine restart
+
+RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
+RUN chmod 777 /opt/grobid/grobid-home/tmp
