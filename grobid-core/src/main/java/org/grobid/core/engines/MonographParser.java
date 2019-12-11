@@ -13,6 +13,7 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorMonograph;
+import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.lexicon.FastMatcher;
 import org.grobid.core.utilities.*;
@@ -39,26 +40,26 @@ import static org.apache.commons.lang3.StringUtils.trim;
  * @author Patrice Lopez
  */
 public class MonographParser extends AbstractParser {
-	/**
-     *   17 labels for this model:
-     *       cover page (front of the book)
-     *       title page (secondary title page)
-     *       publisher page (publication information, including usually the copyrights info)
-     *       summary (include executive summary)
-     *       biography
-     *       advertising (other works by the author/publisher)
-     *       table of content
-     *       table/list of figures
-     *       preface (foreword)
-     *       dedication (I dedicate this label to my family and my thesis director ;)
-     *       unit (chapter or standalone article)
-     *       reference (a full chapter of references, not to be confused with references attached to an article)
-     *       annex
-     *       index
-     *       glossary (also abbreviations and acronyms)
-     *       back cover page
-     *       other
-	 */
+    /**
+     * 17 labels for this model:
+     * cover page (front of the book)
+     * title page (secondary title page)
+     * publisher page (publication information, including usually the copyrights info)
+     * summary (include executive summary)
+     * biography
+     * advertising (other works by the author/publisher)
+     * table of content
+     * table/list of figures
+     * preface (foreword)
+     * dedication (I dedicate this label to my family and my thesis director ;)
+     * unit (chapter or standalone article)
+     * reference (a full chapter of references, not to be confused with references attached to an article)
+     * annex
+     * index
+     * glossary (also abbreviations and acronyms)
+     * back cover page
+     * other
+     */
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MonographParser.class);
 
@@ -93,7 +94,7 @@ public class MonographParser extends AbstractParser {
     /**
      * Segment a PDF document into high level subdocuments.
      *
-     * @param documentSource     document source
+     * @param documentSource document source
      * @return Document object with segmentation information
      */
     public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
@@ -111,7 +112,6 @@ public class MonographParser extends AbstractParser {
             if (assetFile != null) {
                 dealWithImages(documentSource, doc, assetFile, config);
             }*/
-
             return doc;
         } finally {
             // keep it clean when leaving...
@@ -130,7 +130,7 @@ public class MonographParser extends AbstractParser {
         List<LayoutToken> tokenizations = doc.getTokenizations();
         if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
             throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
-                    GrobidExceptionStatus.TOO_MANY_TOKENS);
+                GrobidExceptionStatus.TOO_MANY_TOKENS);
         }
 
         doc.produceStatistics();
@@ -167,9 +167,6 @@ public class MonographParser extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
-        //boolean graphicVector = false;
-        //boolean graphicBitmap = false;
-
         // list of textual patterns at the head and foot of pages which can be re-occur on several pages
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
@@ -178,8 +175,8 @@ public class MonographParser extends AbstractParser {
         for (Page page : doc.getPages()) {
             // we just look at the two first and last blocks of the page
             if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
-                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
-                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
+                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
                         Block block = page.getBlocks().get(blockIndex);
                         String localText = block.getText();
                         if ((localText != null) && (localText.length() > 0)) {
@@ -192,9 +189,8 @@ public class MonographParser extends AbstractParser {
                                     if (nb == null) {
                                         patterns.put(pattern, Integer.valueOf("1"));
                                         firstTimePattern.put(pattern, false);
-                                    }
-                                    else
-                                        patterns.put(pattern, Integer.valueOf(nb+1));
+                                    } else
+                                        patterns.put(pattern, Integer.valueOf(nb + 1));
                                 }
                             }
                         }
@@ -204,7 +200,7 @@ public class MonographParser extends AbstractParser {
         }
 
         String featuresAsString = getFeatureVectorsAsString(doc,
-                patterns, firstTimePattern);
+            patterns, firstTimePattern);
 
         return featuresAsString;
     }
@@ -231,9 +227,6 @@ public class MonographParser extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
-        //boolean graphicVector = false;
-        //boolean graphicBitmap = false;
-
         // list of textual patterns at the head and foot of pages which can be re-occur on several pages
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
@@ -242,8 +235,8 @@ public class MonographParser extends AbstractParser {
         for (Page page : doc.getPages()) {
             // we just look at the two first and last blocks of the page
             if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
-                for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
-                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
+                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
                         Block block = page.getBlocks().get(blockIndex);
                         String localText = block.getText();
                         if ((localText != null) && (localText.length() > 0)) {
@@ -253,23 +246,23 @@ public class MonographParser extends AbstractParser {
                                 if (nb == null) {
                                     patterns.put(pattern, Integer.valueOf("1"));
                                     firstTimePattern.put(pattern, false);
-                                }
-                                else
-                                    patterns.put(pattern, Integer.valueOf(nb+1));
+                                } else
+                                    patterns.put(pattern, Integer.valueOf(nb + 1));
                             }
                         }
                     }
                 }
             }
         }
+
         String featuresAsString = getFeatureVectorsAsString(doc,
-                patterns, firstTimePattern);
+            patterns, firstTimePattern);
 
         return featuresAsString;
     }
 
     private String getFeatureVectorsAsString(Document doc, Map<String, Integer> patterns,
-                                     Map<String, Boolean> firstTimePattern) {
+                                             Map<String, Boolean> firstTimePattern) {
         StringBuilder fulltext = new StringBuilder();
         int documentLength = doc.getDocumentLenghtChar();
 
@@ -277,41 +270,46 @@ public class MonographParser extends AbstractParser {
         int currentFontSize = -1;
 
         boolean newPage;
-        boolean start = true;
         int mm = 0; // page position
         int nn = 0; // document position
         int pageLength = 0; // length of the current page
         double pageHeight = 0.0;
+        int pageNum = 0;
 
         // vector for features
         FeaturesVectorMonograph features;
         FeaturesVectorMonograph previousFeatures = null;
 
+        // take only 20% of the first pages and 10% of the last pages (70% pages are considered always as chapter or unit)
+        int pageSizeTotal = doc.getPages().size();
+        int firstPageSize = pageSizeTotal * 20 / 100;
+        int lastPageSize = pageSizeTotal - (pageSizeTotal * 10 / 100);
         for (Page page : doc.getPages()) {
             pageHeight = page.getHeight();
             newPage = true;
             double spacingPreviousBlock = 0.0; // discretized
             double lowestPos = 0.0;
             pageLength = page.getPageLengthChar();
-            org.grobid.core.layout.BoundingBox pageBoundingBox = page.getMainArea();
+            BoundingBox pageBoundingBox = page.getMainArea();
             mm = 0;
-            //endPage = true;
 
             if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
                 continue;
 
-            for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
+            if (pageNum > firstPageSize && pageNum < lastPageSize)
+                continue;
+
+            for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                String str = null;
                 Block block = page.getBlocks().get(blockIndex);
-                /*if (start) {
-                    newPage = true;
-                    start = false;
-                }*/
+
                 boolean graphicVector = false;
                 boolean graphicBitmap = false;
 
                 boolean lastPageBlock = false;
                 boolean firstPageBlock = false;
-                if (blockIndex == page.getBlocks().size()-1) {
+
+                if (blockIndex == page.getBlocks().size() - 1) {
                     lastPageBlock = true;
                 }
 
@@ -319,17 +317,10 @@ public class MonographParser extends AbstractParser {
                     firstPageBlock = true;
                 }
 
-                //endblock = false;
-
-                /*if (endPage) {
-                    newPage = true;
-                    mm = 0;
-                }*/
-
                 // check if we have a graphical object connected to the current block
                 List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
                 if (localImages != null) {
-                    for(GraphicObject localImage : localImages) {
+                    for (GraphicObject localImage : localImages) {
                         if (localImage.getType() == GraphicObjectType.BITMAP)
                             graphicBitmap = true;
                         if (localImage.getType() == GraphicObjectType.VECTOR)
@@ -337,273 +328,290 @@ public class MonographParser extends AbstractParser {
                     }
                 }
 
-                if (lowestPos >  block.getY()) {
+                if (lowestPos > block.getY()) {
                     // we have a vertical shift, which can be due to a change of column or other particular layout formatting
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
                 } else
                     spacingPreviousBlock = block.getY() - lowestPos;
 
                 String localText = block.getText();
-                if (localText == null)
+                if (localText.length() == 0 || localText == null) {
                     continue;
+                }
 
                 // character density of the block
                 double density = 0.0;
-                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
-                     (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
-                     (!block.getText().contains("@IMAGE")) )
-                    density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
+                if ((block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
+                    (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
+                    (!block.getText().contains("@IMAGE")))
+                    density = (double) block.getText().length() / (block.getHeight() * block.getWidth());
 
                 // is the current block in the main area of the page or not?
                 boolean inPageMainArea = true;
-                org.grobid.core.layout.BoundingBox blockBoundingBox = org.grobid.core.layout.BoundingBox.fromPointAndDimensions(page.getNumber(),
+                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(),
                     block.getX(), block.getY(), block.getWidth(), block.getHeight());
                 if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
                     inPageMainArea = false;
 
                 String[] lines = localText.split("[\\n\\r]");
-    			// set the max length of the lines in the block, in number of characters
-    			int maxLineLength = 0;
-    			for(int p=0; p<lines.length; p++) {
-    				if (lines[p].length() > maxLineLength)
-    					maxLineLength = lines[p].length();
-    			}
+                int linesSize = lines.length;
+                // set the max length of the lines in the block, in number of characters
+                int maxLineLength = 0, idxMaxLength = 0;
+                for (int p = 0; p < linesSize; p++) {
+                    if (lines[p].length() > maxLineLength) {
+                        maxLineLength = lines[p].length();
+                        idxMaxLength = p;
+                    }
+                }
                 List<LayoutToken> tokens = block.getTokens();
                 if ((tokens == null) || (tokens.size() == 0)) {
                     continue;
                 }
-                for (int li = 0; li < lines.length; li++) {
-                    String line = lines[li];
-                    /*boolean firstPageBlock = false;
-                    boolean lastPageBlock = false;
 
-                    if (newPage)
-                        firstPageBlock = true;
-                    if (endPage)
-                        lastPageBlock = true;
-                    */
+                // for the monograph model, we treat the information by blocks rather than by lines
+                //for (int li = 0; li < lines.length; li++) {
+                //String line = lines[li];
 
-                    // for the layout information of the block, we take simply the first layout token
-    				LayoutToken token = null;
-    				if (tokens.size() > 0)
-    					token = tokens.get(0);
+                // for the layout information of the block, we take simply the first layout token
+                LayoutToken token = null;
+                if (tokens.size() > 0)
+                    token = tokens.get(0);
 
-    				double coordinateLineY = token.getY();
+                double coordinateLineY = token.getY();
 
-                    features = new FeaturesVectorMonograph();
-                    features.token = token;
-                    features.line = line;
+                features = new FeaturesVectorMonograph();
+                //features.token = token;
+                //features.line = line;
 
-                    if ( (blockIndex < 2) || (blockIndex > page.getBlocks().size()-2)) {
-                        String pattern = featureFactory.getPattern(line);
-                        Integer nb = patterns.get(pattern);
-                        if ((nb != null) && (nb > 1)) {
-                            features.repetitivePattern = true;
+                // not a feature, the complete processed block
+                features.block = localText;
 
-                            Boolean firstTimeDone = firstTimePattern.get(pattern);
-                            if ((firstTimeDone != null) && !firstTimeDone) {
-                                features.firstRepetitivePattern = true;
-                                firstTimePattern.put(pattern, true);
-                            }
+                // pattern repeated on several pages
+                if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
+                    String pattern = featureFactory.getPattern(localText);
+                    Integer nb = patterns.get(pattern);
+                    if ((nb != null) && (nb > 1)) {
+                        features.repetitivePattern = true;
+
+                        Boolean firstTimeDone = firstTimePattern.get(pattern);
+                        if ((firstTimeDone != null) && !firstTimeDone) {
+                            features.firstRepetitivePattern = true;
+                            firstTimePattern.put(pattern, true);
                         }
                     }
-
-                    // we consider the first token of the line as usual lexical CRF token
-                    // and the second token of the line as feature
-                    StringTokenizer st2 = new StringTokenizer(line, " \t");
-                    // alternatively, use a grobid analyser
-                    String text = null;
-                    String text2 = null;
-                    if (st2.hasMoreTokens())
-                        text = st2.nextToken();
-                    if (st2.hasMoreTokens())
-                        text2 = st2.nextToken();
-
-                    if (text == null)
-                        continue;
-
-                    // final sanitisation and filtering
-                    text = text.replaceAll("[ \n]", "");
-                    text = text.trim();
-
-                    if ( (text.length() == 0) ||
-//                            (text.equals("\n")) ||
-//                            (text.equals("\r")) ||
-//                            (text.equals("\n\r")) ||
-                            (TextUtilities.filterLine(line))) {
-                        continue;
-                    }
-
-                    features.string = text;
-                    features.secondString = text2;
-
-                    features.firstPageBlock = firstPageBlock;
-                    features.lastPageBlock = lastPageBlock;
-                    //features.lineLength = line.length() / LINESCALE;
-                    features.lineLength = featureFactory
-                            .linearScaling(line.length(), maxLineLength, LINESCALE);
-
-                    features.punctuationProfile = TextUtilities.punctuationProfile(line);
-
-                    if (graphicBitmap) {
-                    	features.bitmapAround = true;
-                    }
-                    if (graphicVector) {
-                    	features.vectorAround = true;
-                    }
-
-                    features.lineStatus = null;
-                    features.punctType = null;
-
-                    if ((li == 0) ||
-                            ((previousFeatures != null) && previousFeatures.blockStatus.equals("BLOCKEND"))) {
-                        features.blockStatus = "BLOCKSTART";
-                    } else if (li == lines.length - 1) {
-                        features.blockStatus = "BLOCKEND";
-                        //endblock = true;
-                    } else if (features.blockStatus == null) {
-                        features.blockStatus = "BLOCKIN";
-                    }
-
-                    if (newPage) {
-                        features.pageStatus = "PAGESTART";
-                        newPage = false;
-                        //endPage = false;
-                        if (previousFeatures != null)
-                            previousFeatures.pageStatus = "PAGEEND";
-                    } else {
-                        features.pageStatus = "PAGEIN";
-                        newPage = false;
-                        //endPage = false;
-                    }
-
-                    if (text.length() == 1) {
-                        features.singleChar = true;
-                    }
-
-                    if (Character.isUpperCase(text.charAt(0))) {
-                        features.capitalisation = "INITCAP";
-                    }
-
-                    if (featureFactory.test_all_capital(text)) {
-                        features.capitalisation = "ALLCAP";
-                    }
-
-                    if (featureFactory.test_digit(text)) {
-                        features.digit = "CONTAINSDIGITS";
-                    }
-
-                    if (featureFactory.test_common(text)) {
-                        features.commonName = true;
-                    }
-
-                    if (featureFactory.test_names(text)) {
-                        features.properName = true;
-                    }
-
-                    if (featureFactory.test_month(text)) {
-                        features.month = true;
-                    }
-
-                    Matcher m = featureFactory.isDigit.matcher(text);
-                    if (m.find()) {
-                        features.digit = "ALLDIGIT";
-                    }
-
-                    Matcher m2 = featureFactory.year.matcher(text);
-                    if (m2.find()) {
-                        features.year = true;
-                    }
-
-                    Matcher m3 = featureFactory.email.matcher(text);
-                    if (m3.find()) {
-                        features.email = true;
-                    }
-
-                    Matcher m4 = featureFactory.http.matcher(text);
-                    if (m4.find()) {
-                        features.http = true;
-                    }
-
-                    if (currentFont == null) {
-                        currentFont = token.getFont();
-                        features.fontStatus = "NEWFONT";
-                    } else if (!currentFont.equals(token.getFont())) {
-                        currentFont = token.getFont();
-                        features.fontStatus = "NEWFONT";
-                    } else
-                        features.fontStatus = "SAMEFONT";
-
-                    int newFontSize = (int) token.getFontSize();
-                    if (currentFontSize == -1) {
-                        currentFontSize = newFontSize;
-                        features.fontSize = "HIGHERFONT";
-                    } else if (currentFontSize == newFontSize) {
-                        features.fontSize = "SAMEFONTSIZE";
-                    } else if (currentFontSize < newFontSize) {
-                        features.fontSize = "HIGHERFONT";
-                        currentFontSize = newFontSize;
-                    } else if (currentFontSize > newFontSize) {
-                        features.fontSize = "LOWERFONT";
-                        currentFontSize = newFontSize;
-                    }
-
-                    if (token.getBold())
-                        features.bold = true;
-
-                    if (token.getItalic())
-                        features.italic = true;
-
-                    // HERE horizontal information
-                    // CENTERED
-                    // LEFTAJUSTED
-                    // CENTERED
-
-                    if (features.capitalisation == null)
-                        features.capitalisation = "NOCAPS";
-
-                    if (features.digit == null)
-                        features.digit = "NODIGIT";
-
-                    //if (features.punctType == null)
-                    //    features.punctType = "NOPUNCT";
-
-                    features.relativeDocumentPosition = featureFactory
-                            .linearScaling(nn, documentLength, NBBINS_POSITION);
-//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition);
-                    features.relativePagePositionChar = featureFactory
-                            .linearScaling(mm, pageLength, NBBINS_POSITION);
-//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);
-    				int pagePos = featureFactory
-                            .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
-//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);
-    				if (pagePos > NBBINS_POSITION)
-    					pagePos = NBBINS_POSITION;
-                    features.relativePagePosition = pagePos;
-//System.out.println(coordinateLineY + "\t" + pageHeight);
-
-                    if (spacingPreviousBlock != 0.0) {
-                        features.spacingWithPreviousBlock = featureFactory
-                            .linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE);
-                    }
-
-                    features.inMainArea = inPageMainArea;
-
-                    if (density != -1.0) {
-                        features.characterDensity = featureFactory
-                            .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
-//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
-                    }
-
-                    if (previousFeatures != null && !previousFeatures.blockStatus.equals("BLOCKIN")) {
-                        String vector = previousFeatures.printVector();
-                        fulltext.append(vector);
-                    }
-                    previousFeatures = features;
                 }
 
-//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " "
-//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));
+                // the first string is the first token of the first line of the block
+                str = lines[0];
+                if (str.length() > 0 || str != null) {
+                    String[] splitStr = StringUtils.split(str);
+                    features.string = splitStr[0];
+                } else {
+                    features.string = null;
+                }
+
+                // the second string is the first token of the longest line of the block
+                str = lines[idxMaxLength];
+                if (str.length() > 0) {
+                    String[] splitStr = StringUtils.split(str);
+                    features.secondString = splitStr[0];
+                } else {
+                    features.secondString = null;
+                }
+
+                // the third string is the first token of the last line of the block
+                str = lines[linesSize - 1];
+                if (str.length() > 0) {
+                    String[] splitStr = StringUtils.split(str);
+                    features.thirdString = splitStr[0];
+                } else {
+                    features.thirdString = null;
+                }
+
+                features.firstPageBlock = firstPageBlock;
+                features.lastPageBlock = lastPageBlock;
+
+                // block information: since the data processed by blocks, not by lines, the blockStatus will always be BLOCKSTART
+                //features.blockStatus = null;
+
+                // HERE horizontal information
+                // CENTERED
+                // LEFTAJUSTED
+                // CENTERED
+
+                // page information
+                if (newPage) {
+                    features.pageStatus = "PAGESTART";
+                    newPage = false;
+                    if (previousFeatures != null)
+                        previousFeatures.pageStatus = "PAGEEND";
+                } else {
+                    features.pageStatus = "PAGEIN";
+                    newPage = false;
+                }
+
+                // font information
+                if (currentFont == null) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else if (!currentFont.equals(token.getFont())) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else
+                    features.fontStatus = "SAMEFONT";
+
+                // font size information
+                int newFontSize = (int) token.getFontSize();
+                if (currentFontSize == -1) {
+                    currentFontSize = newFontSize;
+                    features.fontSize = "HIGHERFONT";
+                } else if (currentFontSize == newFontSize) {
+                    features.fontSize = "SAMEFONTSIZE";
+                } else if (currentFontSize < newFontSize) {
+                    features.fontSize = "HIGHERFONT";
+                    currentFontSize = newFontSize;
+                } else if (currentFontSize > newFontSize) {
+                    features.fontSize = "LOWERFONT";
+                    currentFontSize = newFontSize;
+                }
+
+                // string type information
+                /*if (token.getBold())
+                    features.bold = true;
+
+                if (token.getItalic())
+                    features.italic = true;*/
+
+                // remove the break line or tab, only test the text
+                localText = localText.replaceAll("[\n\t]", "");
+
+                // capitalisation
+                if (Character.isUpperCase(localText.charAt(0))) {
+                    features.capitalisation = "INITCAP";
+                }
+
+                if (featureFactory.test_all_capital(localText)) {
+                    features.capitalisation = "ALLCAP";
+                }
+
+                if (features.capitalisation == null)
+                    features.capitalisation = "NOCAPS";
+
+                // digit information
+                if (featureFactory.test_digit(localText)) {
+                    features.digit = "CONTAINSDIGITS";
+                }
+
+                Matcher m = featureFactory.isDigit.matcher(localText);
+                if (m.find()) {
+                    features.digit = "ALLDIGIT";
+                }
+
+                if (features.digit == null)
+                    features.digit = "NODIGIT";
+
+                // character information
+                if (localText.length() == 1) {
+                    features.singleChar = true;
+                }
+
+                // lexical information
+                if (featureFactory.test_names(localText)) {
+                    features.properName = true;
+                }
+
+                if (featureFactory.test_common(localText)) {
+                    features.commonName = true;
+                }
+
+                if (featureFactory.test_first_names(localText)) {
+                    features.firstName = true;
+                }
+
+                Matcher m2 = featureFactory.year.matcher(localText);
+                if (m2.find()) {
+                    features.year = true;
+                }
+
+                if (featureFactory.test_month(localText)) {
+                    features.month = true;
+                }
+
+                Matcher m3 = featureFactory.email.matcher(localText);
+                if (m3.find()) {
+                    features.email = true;
+                }
+
+                Matcher m4 = featureFactory.http.matcher(localText);
+                if (m4.find()) {
+                    features.http = true;
+                }
+
+                /*if (features.punctType == null)
+                    features.punctType = "NOPUNCT";*/
+
+                // relative document position
+                features.relativeDocumentPosition = featureFactory
+                    .linearScaling(nn, documentLength, NBBINS_POSITION);
+                //System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition);
+
+                // relative page position coordinate
+                int pagePos = featureFactory
+                    .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
+                //System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);
+                if (pagePos > NBBINS_POSITION)
+                    pagePos = NBBINS_POSITION;
+                features.relativePagePosition = pagePos;
+                //System.out.println(coordinateLineY + "\t" + pageHeight);
+
+                // relative page position characters
+                features.relativePagePositionChar = featureFactory
+                    .linearScaling(mm, pageLength, NBBINS_POSITION);
+                //System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);
+
+                // punctuation profile and number of punctuation characters in the line
+                features.punctuationProfile = TextUtilities.punctuationProfile(localText);
+
+                // change the linelength as the block size
+                features.blockLength = localText.length() / BLOCKSCALE;
+                //features.lineLength = line.length() / LINESCALE;
+                    /*features.lineLength = featureFactory
+                            .linearScaling(line.length(), maxLineLength, LINESCALE);*/
+
+                // bitmap
+                if (graphicBitmap) {
+                    features.bitmapAround = true;
+                }
+
+                // vector
+                if (graphicVector) {
+                    features.vectorAround = true;
+                }
+
+                // if the block is in the page main area
+                features.inMainArea = inPageMainArea;
+
+                // space with previous block
+                if (spacingPreviousBlock != 0.0) {
+                    features.spacingWithPreviousBlock = featureFactory
+                        .linearScaling(spacingPreviousBlock - doc.getMinBlockSpacing(), doc.getMaxBlockSpacing() - doc.getMinBlockSpacing(), NBBINS_SPACE);
+                }
+
+                // character density of the previous block
+                /*if (density != -1.0) {
+                    features.characterDensity = featureFactory
+                        .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
+                    //System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
+                }*/
+
+                if (previousFeatures != null) {
+                    String vector = previousFeatures.printVector();
+                    fulltext.append(vector);
+                }
+                previousFeatures = features;
+
+                //System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " "
+                //    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));
 
                 // lowest position of the block
                 lowestPos = block.getY() + block.getHeight();
@@ -614,52 +622,43 @@ public class MonographParser extends AbstractParser {
                     nn += tokens.size();
                 }
             }
+            pageNum++;
         }
-        if (previousFeatures != null && !previousFeatures.blockStatus.equals("BLOCKIN"))
+        if (previousFeatures != null)
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
     }
 
-
     /**
      * Process the specified pdf and format the result as training data for the monograph model.
      *
      * @param inputFile input PDF file
-     //* @param pathFullText path to raw monograph featured sequence
-     * @param pathTEI path to TEI
-     * @param id id
+     *                  /* @param pathFullText path to raw monograph featured sequence
+     * @param pathTEI   path to TEI
+     * @param id        id
      */
     public Document createTrainingFromPDF(File inputFile,
-                                   String pathRaw,
-                                   String pathTEI,
-                                   int id) {
+                                          String pathRaw,
+                                          String pathTEI,
+                                          int id) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
-                    tmpPath.getAbsolutePath() + "' does not exists.");
+                tmpPath.getAbsolutePath() + "' does not exists.");
         }
         DocumentSource documentSource = null;
         Document doc = null;
         try {
             if (!inputFile.exists()) {
                 throw new GrobidResourceException("Cannot train for monograph, because file '" +
-                       inputFile.getAbsolutePath() + "' does not exists.");
+                    inputFile.getAbsolutePath() + "' does not exists.");
             }
             String pdfFileName = inputFile.getName();
 
-            File outputTEIFile = new File(pathTEI+"/"+pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
-            /* // commented out because it was making a test of the existence of a file before it was even created
-               if (!outputTEIFile.exists()) {
-                throw new GrobidResourceException("Cannot train for monograph, because directory '" +
-                       pathTEI + "' is not valid.");
-            }*/
-            File outputRawFile = new File(pathRaw+"/"+pdfFileName.replace(".pdf", "training.monograph"));
-            /*if (!outputRawFile.exists()) {
-                throw new GrobidResourceException("Cannot train for monograph, because directory '" +
-                       pathRaw + "' is not valid.");
-            }*/
+            File outputTEIFile = new File(pathTEI + "/" + pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
+            File outputRawFile = new File(pathRaw + "/" + pdfFileName.replace(".pdf", "training.monograph"));
 
             documentSource = DocumentSource.fromPdf(inputFile, -1, -1, true, true, true);
             doc = new Document(documentSource);
@@ -670,12 +669,19 @@ public class MonographParser extends AbstractParser {
             }
 
             // TODO language identifier here on content text sample
-            String lang = "fr";
+            String lang = null;
+            String text = doc.getBlocks().get(0).getText(); // get only the text from the first block as example to recognize the language
+            Language langID = LanguageUtilities.getInstance().runLanguageId(text);
+            if (langID != null) {
+                lang = langID.getLang();
+            } else {
+                lang = "fr"; // by default, id = english
+            }
 
             doc.produceStatistics();
             StringBuilder builder = new StringBuilder();
             builder.append("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
-                "\"/>\n\t</teiHeader>\n\t<text xml:lang=\""+ lang + "\">\n");
+                "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"" + lang + "\">\n");
 
             // get the document outline
             DocumentNode outlineRoot = doc.getOutlineRoot();
@@ -689,63 +695,62 @@ public class MonographParser extends AbstractParser {
             String gornString = ""; //will keep (the prefix for) a Gorn adress
             int oldDepth = 0; //numbers that will indicate
             int currentDepth = 0; // the current depth in the table of contents
-            boolean tocExists = ( currentNode != null );
-            if ( tocExists ) {
+            boolean tocExists = (currentNode != null);
+            if (tocExists) {
                 builder.append("<div type=\"contents\">\n");
                 currentNode.setAddress("*");
                 stackTOC.push(currentNode);
                 oldDepth = 0;
             }
-            while ( stackTOC.size() > 0) {
+            while (stackTOC.size() > 0) {
                 currentNode = stackTOC.pop();
                 // at this point, the page at which the chapter/section,
                 // referenced by current node, starts
                 // is given by currentNode.getBoundingBox().getPage()
                 gornString = currentNode.getAddress();
-                if ( gornString != "*"){
+                if (gornString != "*") {
                     currentDepth = (gornString.split("[.]")).length;
-                    if ( currentDepth > oldDepth ) {
-                        for ( int i=0; i < currentDepth ; i++ ) {
+                    if (currentDepth > oldDepth) {
+                        for (int i = 0; i < currentDepth; i++) {
                             builder.append("\t");
                         }
                         builder.append("<list>\n");
                     }
-                    while ( currentDepth < oldDepth ) {
-                        for ( int i=0; i < oldDepth ; i++ ) {
+                    while (currentDepth < oldDepth) {
+                        for (int i = 0; i < oldDepth; i++) {
                             builder.append("\t");
                         }
                         builder.append("</list>\n");
                         oldDepth--;
                     }
-                    for ( int i=0; i < currentDepth; i++ ) {
+                    for (int i = 0; i < currentDepth; i++) {
                         builder.append("\t");
                     }
                     oldDepth = currentDepth;
                     builder.append("<item n=\""
-                     + gornString + "\"> "
-                     + currentNode.getLabel()
-                     + " </item>\n");
+                        + gornString + "\"> "
+                        + currentNode.getLabel()
+                        + " </item>\n");
                 }
                 if (gornString == "*") {
                     gornString = "";
-                }
-                else {
+                } else {
                     gornString += ".";
                 }
                 List<DocumentNode> children = currentNode.getChildren();
-                if ( children != null ) {
+                if (children != null) {
                     int s = children.size();
-                    while ( s > 0 ){
+                    while (s > 0) {
                         s = s - 1;
                         currentNode = children.get(s);
-                        currentNode.setAddress(gornString+String.valueOf(s));
+                        currentNode.setAddress(gornString + String.valueOf(s));
                         stackTOC.push(currentNode);
                     }
                 }
             }
-            if ( tocExists ) {
-                while ( 0 < currentDepth ) {
-                    for ( int i=0; i < currentDepth ; i++ ) {
+            if (tocExists) {
+                while (0 < currentDepth) {
+                    for (int i = 0; i < currentDepth; i++) {
                         builder.append("\t");
                     }
                     builder.append("</list>\n");
@@ -756,7 +761,7 @@ public class MonographParser extends AbstractParser {
 
             // So far we transcribed the table of contexts in the beginning of the text
             // Now we will tag it inside the text.
-            if ( tocExists ) {
+            if (tocExists) {
                 outlineRoot = doc.getOutlineRoot();
                 //recall that stackTOC is an empty stack at this point, it arrived empty from the previous usage
                 stackTOC.push(outlineRoot);
@@ -777,18 +782,18 @@ public class MonographParser extends AbstractParser {
                 //builder.append("DEBUGGING: The total number of tokens is "
                 //                        + numberOfTokens
                 //                        + "\n");
-                while (stackTOC.size()>0 && tokenCtr < numberOfTokens) {
+                while (stackTOC.size() > 0 && tokenCtr < numberOfTokens) {
                     currentNode = stackTOC.pop();
                     // In order to avoid writing the "null" label from the
                     // outlineRoot into the TEI and also
                     // just in case the outline was ill-formed we search
                     // the first node (first wrt preorder traversal)
                     // such that the title kept in the node is non trivial
-                    while ( currentNode.getLabel() == null ){
+                    while (currentNode.getLabel() == null) {
                         children = currentNode.getChildren();
-                        if ( children != null ) {
+                        if (children != null) {
                             int s = children.size();
-                            while ( s > 0 ){
+                            while (s > 0) {
                                 s = s - 1;
                                 currentNode = children.get(s);
                                 stackTOC.push(currentNode);
@@ -815,32 +820,32 @@ public class MonographParser extends AbstractParser {
                     FastMatcher matcher = new FastMatcher(); //at this stage, the terms attribute of matcher is an empty dictionary
                     //int nbTermsInTitle =
                     matcher.loadTerm(currentNode.getLabel(),
-                                     GrobidAnalyzer.getInstance(),
-                                     ignoreDelimiters, // true
-                                     caseSensitive ); // false
+                        GrobidAnalyzer.getInstance(),
+                        ignoreDelimiters, // true
+                        caseSensitive); // false
                     // builder.append("DEBUGGING: Loaded  " + nbTermsInTitle + " terms from the title " + currentNode.getLabel() + "\n"); //it should always be 1
                     results = matcher.matchLayoutToken(tokens,
-                                     ignoreDelimiters, // true
-                                     caseSensitive); // false
-                    if (results.size()>0){//if some instance of the title is found
+                        ignoreDelimiters, // true
+                        caseSensitive); // false
+                    if (results.size() > 0) {//if some instance of the title is found
                         // The list results may contain more than one instance of the title we are looking for.
                         // We want the position of the last instance that is on the same page that the outline is pointing to.
                         // We search for the last one because the table of contents is usually before the contents.
                         int currentNodesPage = currentNode.getBoundingBox().getPage();
                         int index = results.size() - 1;
-                        while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() > currentNodesPage){
+                        while (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() > currentNodesPage) {
                             index--;
                         }
-                        if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage ){
-                                                    // We proceed to update the starting and ending positions
-                                                    // of the title only if the title have actually been found
-                                                    // at the right page, and later than the previous chapter
-                                //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentTitle + "\n");
-                                //builder.append("DEBUGGING: " + currentTitle + " is at page " + currentNodesPage + "\n");
-                                startTokenOffset = results.get(index).start;
-                                //builder.append("DEBUGGING: " + currentTitle + " starts at token " + startTokenOffset + "\n");
-                                endTokenOffset = results.get(index).end;
-                                //builder.append("DEBUGGING: " + currentTitle + " ends at token " + endTokenOffset + "\n");
+                        if (index >= 0 && results.get(index).start >= tokenCtr && tokens.get(results.get(index).start).getPage() == currentNodesPage) {
+                            // We proceed to update the starting and ending positions
+                            // of the title only if the title have actually been found
+                            // at the right page, and later than the previous chapter
+                            //builder.append("DEBUGGING: Found " + results.size() + " instances of " + currentTitle + "\n");
+                            //builder.append("DEBUGGING: " + currentTitle + " is at page " + currentNodesPage + "\n");
+                            startTokenOffset = results.get(index).start;
+                            //builder.append("DEBUGGING: " + currentTitle + " starts at token " + startTokenOffset + "\n");
+                            endTokenOffset = results.get(index).end;
+                            //builder.append("DEBUGGING: " + currentTitle + " ends at token " + endTokenOffset + "\n");
                         }
                         // else {
                         //     builder.append("DEBUGGING : the title " + currentTitle + " was found at page(s): " );
@@ -848,77 +853,85 @@ public class MonographParser extends AbstractParser {
                         //     builder.append( "\nDEBUGGING : it should have been in page " + currentNodesPage + "\n" );
                         // }
                     }
-                    while ( tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
-                        if ( tokenCtr == startTokenOffset) { //if we are about to write the starting token of a title of a chapter/section
-                            while ( nbOpenDivs >= depth ) { //if the new chapter is at a lower or equal level
+                    while (tokenCtr <= endTokenOffset && tokenCtr < numberOfTokens) {
+                        if (tokenCtr == startTokenOffset) { //if we are about to write the starting token of a title of a chapter/section
+                            while (nbOpenDivs >= depth) { //if the new chapter is at a lower or equal level
                                 // compared to the previously written chapter title
                                 // then we need to close the previous chapters before writing the current one.
-                                builder.append ( "</div>\n" );
+                                builder.append("</div>\n");
                                 nbOpenDivs--;
                             }
                             //then we write the section title opening tag
                             String currentTitleNormalized = StringUtils.normalizeSpace(UnicodeUtil.normaliseText(currentNode.getLabel())).toLowerCase();
-                            String[] currentTitleSplit = currentTitleNormalized.split ( "[" + TextUtilities.SPACE + "]" );
-                            String firstInTitle = currentTitleSplit [0];
-                            String lastInTitle = currentTitleSplit [ currentTitleSplit.length - 1 ];
-                            builder.append ( "<div n=\"" + currentNode.getAddress() + "\" type=\"");
-                            if (firstInTitle == "partie" || lastInTitle == "partie" ) {
-                                builder.append ( "part" );
-                            }
-                            else if (firstInTitle == "chapitre") {
-                                builder.append ( "chapter" );
-                            }
-                            else if (firstInTitle == "bibliographie" || lastInTitle == "bibliographiques") {
-                                builder.append ( "bibliogr" );
-                            }
-                            else
-                            {    switch ( currentTitleNormalized ) {
-                                    case "remerciements": builder.append ( "ack" );
-                                    break;
-                                    case "sommaire": builder.append ( "contents" );
-                                    break;
-                                    case "introduction": builder.append ( "preface" );
-                                    break;
-                                    case "prologue": builder.append ( "preface" );
-                                    break;
-                                    case "annexe": builder.append ( "appendix" );
-                                    break;
-                                    case "épilogue": builder.append ( "appendix" );
-                                    break;
-                                    case "appendices": builder.append ( "appendix" );
-                                    break;
-                                    case "index": builder.append ( "index" );
-                                    break;
-                                    case "abréviations": builder.append ( "glossary" );
-                                    break;
-                                    case "glossaire": builder.append ( "glossary" );
-                                    break;
+                            String[] currentTitleSplit = currentTitleNormalized.split("[" + TextUtilities.SPACE + "]");
+                            String firstInTitle = currentTitleSplit[0];
+                            String lastInTitle = currentTitleSplit[currentTitleSplit.length - 1];
+                            builder.append("<div n=\"" + currentNode.getAddress() + "\" type=\"");
+                            if (firstInTitle == "partie" || lastInTitle == "partie") {
+                                builder.append("part");
+                            } else if (firstInTitle == "chapitre") {
+                                builder.append("chapter");
+                            } else if (firstInTitle == "bibliographie" || lastInTitle == "bibliographiques") {
+                                builder.append("bibliogr");
+                            } else {
+                                switch (currentTitleNormalized) {
+                                    case "remerciements":
+                                        builder.append("ack");
+                                        break;
+                                    case "sommaire":
+                                        builder.append("contents");
+                                        break;
+                                    case "introduction":
+                                        builder.append("preface");
+                                        break;
+                                    case "prologue":
+                                        builder.append("preface");
+                                        break;
+                                    case "annexe":
+                                        builder.append("appendix");
+                                        break;
+                                    case "épilogue":
+                                        builder.append("appendix");
+                                        break;
+                                    case "appendices":
+                                        builder.append("appendix");
+                                        break;
+                                    case "index":
+                                        builder.append("index");
+                                        break;
+                                    case "abréviations":
+                                        builder.append("glossary");
+                                        break;
+                                    case "glossaire":
+                                        builder.append("glossary");
+                                        break;
                                     //TODO add other cases as the data increase
-                                    default: builder.append ( "chapter" );
+                                    default:
+                                        builder.append("chapter");
                                 }
                             }
-                            builder.append ( "\">\n<head> " );
+                            builder.append("\">\n<head> ");
                             nbOpenDivs++;
                         }
-                        builder.append ( TextUtilities.HTMLEncode ( tokens.get(tokenCtr).getText() ) );
-                        if ( tokenCtr == endTokenOffset ) {
+                        builder.append(TextUtilities.HTMLEncode(tokens.get(tokenCtr).getText()));
+                        if (tokenCtr == endTokenOffset) {
                             // We add the closing delimiters from the title, if needed
                             // At first, we skip by the first delimiter, if there is any
                             // (in French question mark should always preceded by a space, that's why for the first step we include space)
-                            if ( TextUtilities.delimiters.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
-                                builder.append( tokens.get(tokenCtr+1).getText());
+                            if (TextUtilities.delimiters.indexOf(tokens.get(tokenCtr + 1).getText()) != -1) {
+                                builder.append(tokens.get(tokenCtr + 1).getText());
                                 tokenCtr++;
                             }
-                            while ( TextUtilities.fullPunctuations.indexOf(tokens.get(tokenCtr+1).getText()) != -1 ) {
-                                builder.append(tokens.get(tokenCtr+1).getText());
+                            while (TextUtilities.fullPunctuations.indexOf(tokens.get(tokenCtr + 1).getText()) != -1) {
+                                builder.append(tokens.get(tokenCtr + 1).getText());
                                 tokenCtr++;
                             }
-                            builder.append(" </head>\n"); // we close the chapter title
+                            //builder.append(" </head>\n"); // we close the chapter title
                             // we add all the sections of the chapter to our stack
                             children = currentNode.getChildren();
-                            if ( children != null ) {
+                            if (children != null) {
                                 int s = children.size();
-                                while ( s > 0 ){
+                                while (s > 0) {
                                     s = s - 1;
                                     currentNode = children.get(s);
                                     stackTOC.push(currentNode);
@@ -932,19 +945,18 @@ public class MonographParser extends AbstractParser {
                 }
                 // Once all the chapters/sections have been opened,
                 // transcribe the rest of the text
-                while ( tokenCtr < numberOfTokens ) {
-                    builder.append ( TextUtilities.HTMLEncode ( tokens.get ( tokenCtr ) .getText() ) );
+                while (tokenCtr < numberOfTokens) {
+                    builder.append(TextUtilities.HTMLEncode(tokens.get(tokenCtr).getText()));
                     tokenCtr++;
                 }
                 //then close the chapters that are still open
-                while ( nbOpenDivs > 0 ){
-                    builder.append ( "</div>\n" );
+                while (nbOpenDivs > 0) {
+                    builder.append("</div>\n");
                     nbOpenDivs--;
                 }
-            } else
-            {
-                for(LayoutToken token : tokens ) {
-                    builder.append ( TextUtilities.HTMLEncode ( token.getText ( ) ) );
+            } else {
+                for (LayoutToken token : tokens) {
+                    builder.append(TextUtilities.HTMLEncode(token.getText()));
                 }
             }
 
@@ -964,7 +976,7 @@ public class MonographParser extends AbstractParser {
         } catch (Exception e) {
             e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid training" +
-                    " data generation for monograph.", e);
+                " data generation for monograph.", e);
         } finally {
             DocumentSource.close(documentSource, true, true, true);
         }

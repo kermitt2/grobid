@@ -1,6 +1,5 @@
 package org.grobid.core.features;
 
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
 /**
@@ -9,12 +8,13 @@ import org.grobid.core.utilities.TextUtilities;
  * @author Patrice Lopez
  */
 public class FeaturesVectorMonograph {
-    public LayoutToken token = null; // not a feature, reference value
-	public String line = null; // not a feature, the complete processed line
+    //public LayoutToken token = null; // not a feature, reference value
+    //public String line = null; // not a feature, the complete processed line
     public String block = null; // not a feature, the complete processed block
 
     public String string = null; // first lexical feature
-	public String secondString = null; // second lexical feature
+    public String secondString = null; // second lexical feature
+    public String thirdString = null; // third lexical feature
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
@@ -39,11 +39,11 @@ public class FeaturesVectorMonograph {
     public String punctType = null; // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public int relativeDocumentPosition = -1;
     public int relativePagePosition = -1;
-	public int relativePagePositionChar = -1; // not used
-	public String punctuationProfile = null; // the punctuations of the current line of the token
-	public boolean firstPageBlock = false;
-	public boolean lastPageBlock = false;
-	public int lineLength = 0;
+    public int relativePagePositionChar = -1; // not used
+    public String punctuationProfile = null; // the punctuations of the current block
+    public boolean firstPageBlock = false;
+    public boolean lastPageBlock = false;
+    public int blockLength = 0;
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
     public boolean inMainArea = true;
@@ -62,11 +62,17 @@ public class FeaturesVectorMonograph {
         // token string (1)
         res.append(string);
 
-		// second token string
-		if (secondString != null)
-			res.append(" " + secondString);
-		else
-			res.append(" " + string);
+        // second token string (2)
+        if (secondString != null)
+            res.append(" " + secondString);
+        else
+            res.append(" " + string);
+
+        // third token string (3)
+        if (thirdString != null)
+            res.append(" " + thirdString);
+        else
+            res.append(" " + string);
 
         // lowercase string
         res.append(" " + string.toLowerCase());
@@ -77,20 +83,27 @@ public class FeaturesVectorMonograph {
         res.append(" " + TextUtilities.prefix(string, 3));
         res.append(" " + TextUtilities.prefix(string, 4));
 
+        // suffix (4)
+        res.append(" " + TextUtilities.suffix(string, 1));
+        res.append(" " + TextUtilities.suffix(string, 2));
+        res.append(" " + TextUtilities.suffix(string, 3));
+        res.append(" " + TextUtilities.suffix(string, 4));
+
         // block information (1)
-		if (blockStatus != null)
-			res.append(" " + blockStatus);
+        /*if (blockStatus != null)
+            res.append(" " + blockStatus);*/
         //res.append(" 0");
 
         // line information (1)
-		if (lineStatus != null)
-			res.append(" " + lineStatus);
+        /*if (lineStatus != null)
+            res.append(" " + lineStatus);*/
 
         // line alignment/identation information (1)
         //res.append(" " + alignmentStatus);
 
         // page information (1)
-        res.append(" " + pageStatus);
+        if (pageStatus != null)
+            res.append(" " + pageStatus);
 
         // font information (1)
         res.append(" " + fontStatus);
@@ -99,7 +112,7 @@ public class FeaturesVectorMonograph {
         res.append(" " + fontSize);
 
         // string type information (3)
-        if (bold)
+        /*if (bold)
             res.append(" 1");
         else
             res.append(" 0");
@@ -107,7 +120,7 @@ public class FeaturesVectorMonograph {
         if (italic)
             res.append(" 1");
         else
-            res.append(" 0");
+            res.append(" 0");*/
 
         // capitalisation (1)
         if (digit.equals("ALLDIGIT"))
@@ -161,68 +174,70 @@ public class FeaturesVectorMonograph {
             res.append(" 0");
 
         // punctuation information (1)
-		if (punctType != null)
-			res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
+		/*if (punctType != null)
+			res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)*/
 
         // relative document position (1)
         res.append(" " + relativeDocumentPosition);
 
         // relative page position coordinate (1)
-        //res.append(" " + relativePagePosition);
+        res.append(" " + relativePagePosition);
 
         // relative page position characters (1)
         res.append(" " + relativePagePositionChar);
 
-		// punctuation profile
-		if ( (punctuationProfile == null) || (punctuationProfile.length() == 0) ) {
-			// string profile
-			res.append(" no");
-			// number of punctuation symbols in the line
-			res.append(" 0");
-		}
-		else {
-			// string profile
-			res.append(" " + punctuationProfile);
-			// number of punctuation symbols in the line
-			res.append(" "+punctuationProfile.length());
-		}
+        // punctuation profile
+        if ((punctuationProfile == null) || (punctuationProfile.length() == 0)) {
+            // string profile
+            res.append(" no");
+            // number of punctuation symbols in the line
+            res.append(" 0");
+        } else {
+            // string profile
+            res.append(" " + punctuationProfile);
+            // number of punctuation symbols in the line
+            res.append(" " + punctuationProfile.length());
+        }
 
-		// current line length on a predefined scale and relative to the longest line of the current block
-		res.append(" " + lineLength);
+        // current block length on a predefined scale
+        res.append(" " + blockLength);
 
+        // bitmap
         if (bitmapAround) {
             res.append(" 1");
         } else {
             res.append(" 0");
         }
 
+        // vector
         if (vectorAround) {
             res.append(" 1");
         } else {
             res.append(" 0");
         }
 
+        // pattern repeated on several pages
         if (repetitivePattern) {
             res.append(" 1");
         } else {
             res.append(" 0");
         }
 
-        if (firstRepetitivePattern) {
+        /*if (firstRepetitivePattern) {
             res.append(" 1");
         } else {
             res.append(" 0");
-        }
+        }*/
 
         // if the block is in the page main area (1)
-        if (inMainArea) {
+        /*if (inMainArea) {
             res.append(" 1");
         } else {
             res.append(" 0");
-        }
+        }*/
 
         // space with previous block, discretised (1)
-        //res.append(" " + spacingWithPreviousBlock);
+        ///res.append(" " + spacingWithPreviousBlock);
         //res.append(" " + 0);
 
         // character density of the previous block, discretised (1)

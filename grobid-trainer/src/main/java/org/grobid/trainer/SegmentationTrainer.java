@@ -139,7 +139,7 @@ public class SegmentationTrainer extends AbstractTrainer {
                     for(String label : labeled) {
                         if (!label.startsWith("@newline"))
                             newLabeled.add(label);
-                    } 
+                    }
                     labeled = newLabeled;*/
 
 /*StringBuilder temp = new StringBuilder();
@@ -147,7 +147,7 @@ for(String label : labeled) {
     temp.append(label);
 }
 FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toString());*/
-                
+
                     int q = 0;
                     BufferedReader bis = new BufferedReader(
                             new InputStreamReader(new FileInputStream(theRawFile), "UTF8"));

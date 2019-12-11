@@ -24,8 +24,11 @@ public class MonographTrainer extends AbstractTrainer {
         super(GrobidModels.MONOGRAPH);
 
         // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.0001;
-        window = 20;
+        epsilon = 0.0000001;
+        window = 50;
+        nbMaxIterations = 1000;
+        /*epsilon = 0.0001;
+        window = 20;*/
     }
 
     @Override
@@ -153,45 +156,48 @@ public class MonographTrainer extends AbstractTrainer {
 
                 StringBuilder referenceText = new StringBuilder();
 
-                // read by lines and add the features
+                // read by lines the raw CRF file and add the tags
                 String line = bis.readLine();
-                String token1 = null, token2 = null, text = null;
-                int totFound = 0, lastPositionFound = 0, lastPosition = 0, totData = 0; boolean found = false;
+                String token1 = null, token2 = null, token3 = null, text = null;
+                int totFound = 0, lastPositionFound = 0, lastPosition = 0, totData = 0;
+                boolean found = false;
                 while (line != null) {
-                        String lines[] = line.split(" ");
-                        // every line of a raw file contains at least 1 to 2 tokens
-                        token1 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[0]);
-                        token2 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[1]);
-                        if (token1.equals(token2)) {
-                            text = token1;
+                    String lines[] = line.split(" ");
+                    /* every line of a raw file contains 3 tokens:
+                        1 - the first token of the first line of every block
+                        2 - the first token of the longest line of every block
+                        3 - the last token of the last line of every block
+                     */
+                    token1 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[0]);
+                    token2 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[1]);
+                    token3 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[2]);
+
+                    String currentLocalText = null, currentTag = null;
+                    if (lastPosition >= labeled.size() - 1) {
+                        lastPosition = lastPositionFound;
+                    }
+
+                    for (int i = lastPosition; i < labeled.size(); i++) {
+                        // get the text and the label from TEI data
+                        currentLocalText = labeled.get(i).getText();
+                        currentTag = labeled.get(i).getLabel();
+
+                        if (currentLocalText.contains(token1) || currentLocalText.contains(token2) ||
+                            currentLocalText.contains(token3)) { // if they are found
+                            found = true;
+                            totFound++;
+                            lastPositionFound = i;
+                            referenceText.append(line).append(" ").append(currentTag).append("\n");
+                        }
+
+                        if (found || lastPosition >= labeled.size() - 1) {
+                            found = false;
+                            break;
                         } else {
-                            text = token1 + " " + token2;
-                        }
-                        String currentLocalText = null, currentTag = null;
-                        if (lastPosition >= labeled.size() - 1) {
-                            lastPosition = lastPositionFound;
+                            lastPosition++;
                         }
 
-                        for (int i = lastPosition; i < labeled.size(); i++) {
-                            // get the text and the label from TEI data
-                            currentLocalText = labeled.get(i).getText();
-                            currentTag = labeled.get(i).getLabel();
-
-                            if (currentLocalText.contains(text)) { // if they are found
-                                found = true;
-                                totFound++;
-                                lastPositionFound = i;
-                                referenceText.append(line).append(" ").append(currentTag).append("\n");
-                            }
-
-                            if (found || lastPosition >= labeled.size() - 1) {
-                                found = false;
-                                break;
-                            } else {
-                                lastPosition++;
-                            }
-
-                        }
+                    }
 
                     totData++;
                     line = bis.readLine();

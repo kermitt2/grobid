@@ -29,9 +29,8 @@ public class TEIMonographSaxParser extends DefaultHandler {
     }
 
     public void characters(char[] buffer, int start, int length) {
-        //if (accumulator != null)
         accumulator.append(buffer, start, length);
-        System.out.println(accumulator.toString());
+        //System.out.println(accumulator.toString());
     }
 
     public String getText() {
@@ -153,7 +152,7 @@ public class TEIMonographSaxParser extends DefaultHandler {
             || (qName.equals("reference")) || (qName.equals("annex")) || (qName.equals("index"))
             || (qName.equals("glossary")) || (qName.equals("back")) || (qName.equals("other"))) {
 
-            String currentTag = null, label = null;
+            String currentTag = null;
             TEIMonographItem teiMonographItem = null;
 
             if (pop) {
@@ -161,24 +160,8 @@ public class TEIMonographSaxParser extends DefaultHandler {
             } else {
                 currentTag = currentTags.peek();
             }
-            //for monograph model, segment per blocks
+            //for monograph model, segment per labels
             String text = getText();
-            //int idx = text.indexOf("\n");
-
-            // mark the first line only
-            /*if(text.substring(0, idx+1) != null){
-                teiMonographItem = new TEIMonographItem();
-                teiMonographItem.setText(text.substring(0, idx+1));
-                teiMonographItem.setLabel( " I-" + currentTag);
-                monographItems.add(teiMonographItem);
-            }
-
-            if (text.substring(idx+1) != null){
-                teiMonographItem = new TEIMonographItem();
-                //teiMonographItem.setText(text.substring(idx+1));
-                teiMonographItem.setLabel(currentTag);
-                monographItems.add(teiMonographItem);
-            }*/
             teiMonographItem = new TEIMonographItem();
             teiMonographItem.setText(text);
             teiMonographItem.setLabel(currentTag);
