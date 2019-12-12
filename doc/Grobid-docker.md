@@ -104,16 +104,22 @@ killed processes.
 **NOTE**: The following part is only for development purposes. We recommend you to use the official 
 docker images from the docker HUB.
 
-The docker build from 0.5.4 will clone the repository using git, so no need to custom builds. 
+The docker build from a particular version (here for example the latest stable version `0.5.6`) will clone the repository using git, so no need to custom builds. 
 Only important information is the version which will be checked out from the tags.
- 
+
 ```bash
-> docker build -t lfoppiano/grobid:0.5.4 --build-arg GROBID_VERSION=0.5.4 .
+> docker build -t grobid/grobid:0.5.6 --build-arg GROBID_VERSION=0.5.6 .
 ```
 
-In order to run the container of the newly created image: 
+Similarly, if you want to create a docker image from the current master, development version:
+
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:0.5.4
+> docker build -t grobid/grobid:0.6.0-SNAPSHOT --build-arg GROBID_VERSION=0.6.0-SNAPSHOT .
+```
+
+In order to run the container of the newly created image for version `0.5.6`: 
+```bash
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.5.6
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell:

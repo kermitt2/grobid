@@ -204,7 +204,7 @@ public class AffiliationAddressParser extends AbstractParser {
         if (result == null) {
             return fullAffiliations;
         }
-
+        result = result.replace("\n\n", "\n \n"); // force empty line between affiliation blocks
         try {
             //System.out.println(tokenizations.toString());
             // extract results from the processed file

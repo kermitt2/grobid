@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<orgName type="institution">Ericsson</orgName>
+							<address>
+								<addrLine>Hirsalantie 11</addrLine>
+								<postCode>FI-02420</postCode>
+								<settlement>Jorvas</settlement>
+								<country>Finland</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="institution">Cisco</orgName>
+							<address>
+								<addrLine>Philip Pedersens vei 1</addrLine>
+								<postCode>NO-1366</postCode>
+								<settlement>Lysaker</settlement>
+								<country>Norway</country>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="institution">Ericsson</orgName>
+							<address>
+								<addrLine>Hirsalantie 11</addrLine>
+								<settlement>Jorvas</settlement>
+								<postCode>02420</postCode>
+								<country>Finland</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>
