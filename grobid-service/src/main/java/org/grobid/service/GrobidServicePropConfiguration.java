@@ -18,6 +18,11 @@ public class GrobidServicePropConfiguration {
     @JsonProperty
     private boolean modelPreload = false;
 
+    @JsonProperty
+    private String corsAllowedOrigins = "*";
+    private String corsAllowedMethods = "OPTIONS,GET,PUT,POST,DELETE,HEAD";
+    private String corsAllowedHeaders = "X-Requested-With,Content-Type,Accept,Origin";
+
     public String getGrobidHome() {
         return grobidHome;
     }
@@ -48,5 +53,29 @@ public class GrobidServicePropConfiguration {
 
     public void setModelPreload(boolean modelPreload) {
         this.modelPreload = modelPreload;
+    }
+
+    public String getCorsAllowedOrigins() {
+        return corsAllowedOrigins;
+    }
+
+    public void setCorsAllowedOrigins(String corsAllowedOrigins) {
+        this.corsAllowedOrigins = corsAllowedOrigins;
+    }
+
+    public String getCorsAllowedMethods() {
+        return corsAllowedMethods;
+    }
+
+    public void setCorsAllowedMethods(String corsAllowedMethods) {
+        this.corsAllowedMethods = corsAllowedMethods;
+    }
+
+    public String getCorsAllowedHeaders() {
+        return corsAllowedHeaders;
+    }
+
+    public void setCorsAllowedHeaders(String corsAllowedHeaders) {
+        this.corsAllowedHeaders = corsAllowedHeaders;
     }
 }

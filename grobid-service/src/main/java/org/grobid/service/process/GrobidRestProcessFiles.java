@@ -1,6 +1,7 @@
 package org.grobid.service.process;
 
-import org.apache.commons.io.IOUtils;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.PatentItem;
@@ -8,8 +9,6 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.IOUtilities;
@@ -18,32 +17,21 @@ import org.grobid.core.visualization.BlockVisualizer;
 import org.grobid.core.visualization.CitationsVisualizer;
 import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.exceptions.GrobidServiceException;
-import org.grobid.service.parser.Xml2HtmlParser;
 import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
-
-import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.StreamingOutput;
-import javax.xml.stream.XMLStreamException;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
-import java.util.NoSuchElementException;
 
 /**
  * Web services consuming a file
@@ -96,8 +84,6 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Response.Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                     .build();
             }
         } catch (NoSuchElementException nseExp) {
@@ -185,8 +171,6 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Response.Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                     .build();
             }
         } catch (NoSuchElementException nseExp) {
@@ -383,8 +367,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                    .build();
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -448,8 +431,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                    .build();
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -529,8 +511,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                    .build();
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -594,8 +575,6 @@ public class GrobidRestProcessFiles {
                     .type("application/pdf")
                     .entity(outputStream.toByteArray())
                     .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
                     .build();
             } else {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -676,8 +655,7 @@ public class GrobidRestProcessFiles {
                     .ok()
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                     .entity(json)
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+
                     .build();
             } else {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -740,8 +718,7 @@ public class GrobidRestProcessFiles {
                 response = Response.status(Status.OK)
                     .entity(retVal)
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
-                    .header("Access-Control-Allow-Origin", "*")
-                    .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                   .build();
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
