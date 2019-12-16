@@ -76,6 +76,4 @@ grobid-trainer/resources/dataset/monograph/corpus/raw/*.monograph
 grobid-trainer/resources/dataset/monograph/evaluation/*.xml
 grobid-trainer/resources/dataset/monograph/evaluation/tei/*.xml
 grobid-trainer/resources/dataset/monograph/evaluation/raw/*.monograph
-grobid-trainer/resources/dataset/monograph/shortVersion/*.xml
-grobid-trainer/resources/dataset/monograph/shortVersion/raw/*.monograph
-grobid-trainer/resources/dataset/monograph/shortVersion/tei/*.xml
+grobid-trainer/resources/dataset/monograph/pdf/*.pdf

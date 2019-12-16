@@ -420,7 +420,7 @@ public class Engine implements Closeable {
      *                     file, -1 if not used
      */
     public void createTrainingMonograph(File inputFile, String pathRaw, String pathTEI, int id) {
-        Document doc = parsers.getMonographParser().createTrainingFromPDF(inputFile, pathRaw, pathTEI, id);
+        Document doc = parsers.getMonographParser().createBlankTrainingFromPDF(inputFile, pathRaw, pathTEI, id);
     }
 
     /**

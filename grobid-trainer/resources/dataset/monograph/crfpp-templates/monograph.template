@@ -61,144 +61,146 @@ U33:%x[0,11]
 #U51:%x[0,12]
 #U52:%x[1,12]
 
-# page info (13)
-U60:%x[-1,13]
-U61:%x[0,13]
-U62:%x[1,13]
+# page info (12)
+U60:%x[-1,12]
+U61:%x[0,12]
+U62:%x[1,12]
 
-# Font info (14-15)
-U70:%x[-1,14]
-U71:%x[0,14]
-U72:%x[1,14]
+# Font info (13-14)
+U70:%x[-1,13]
+U71:%x[0,13]
+U72:%x[1,13]
 
-U80:%x[-1,15]
-U81:%x[0,15]
-U82:%x[1,15]
+U80:%x[-1,14]
+U81:%x[0,14]
+U82:%x[1,14]
 
-# Bold info (16)
-#U90:%x[-1,16]
-#U91:%x[0,16]
-#U92:%x[1,16]
+# Bold info (15)
+#U90:%x[-1,15]
+#U91:%x[0,15]
+#U92:%x[1,15]
 
-# Italic info (17)
-#UA0:%x[-1,17]
-#UA1:%x[0,17]
-#UA2:%x[1,17]
+# Italic info (15)
+#UA0:%x[-1,15]
+#UA1:%x[0,15]
+#UA2:%x[1,15]
 
-# Capitalization (18)
-UB0:%x[0,18]
-UB1:%x[1,18]
-UB2:%x[-1,18]
+# Capitalization (15)
+UB0:%x[0,15]
+UB1:%x[1,15]
+UB2:%x[-1,15]
 
-# Digits (19)
-UC0:%x[0,19]
-UC1:%x[-1,19]
-UC2:%x[1,19]
+# Digits (16)
+UC0:%x[0,16]
+UC1:%x[-1,16]
+UC2:%x[1,16]
 
-# Char (20)
-UD0:%x[0,20]
-UD1:%x[-1,20]
-UD2:%x[1,20]
+# Char (17)
+UD0:%x[0,17]
+UD1:%x[-1,17]
+UD2:%x[1,17]
 
-# Dict info (21-27)
-UE0:%x[0,21]
-UE1:%x[0,22]
-UE2:%x[0,23]
-UE3:%x[0,24]
-UE4:%x[0,25]
-UE5:%x[0,26]
-UE6:%x[0,27]
+# Dict info (18-25)
+UE0:%x[0,18]
+UE1:%x[0,19]
+UE2:%x[0,20]
+UE3:%x[0,21]
+UE4:%x[0,22]
+UE5:%x[0,23]
+UE6:%x[0,24]
+UE7:%x[0,25]
 
-UEI:%x[1,21]
-UEJ:%x[1,22]
-UEK:%x[1,23]
-UEL:%x[1,24]
-UEM:%x[1,25]
-UEN:%x[1,26]
-UEO:%x[1,27]
+UEI:%x[1,18]
+UEJ:%x[1,19]
+UEK:%x[1,20]
+UEL:%x[1,21]
+UEM:%x[1,22]
+UEN:%x[1,23]
+UEO:%x[1,24]
+UEP:%x[1,25]
 
-# Punctuation (28)
-#UF0:%x[0,28]
-#UF1:%x[-1,28]
-#UF2:%x[-2,28]
-#UF3:%x[1,28]
-#UF4:%x[2,28]
+# Punctuation (26)
+#UF0:%x[0,26]
+#UF1:%x[-1,26]
+#UF2:%x[-2,26]
+#UF3:%x[1,26]
+#UF4:%x[2,26]
 
-# relative document position (28)
-UG0:%x[-1,28]
-UG1:%x[0,28]
-UG2:%x[1,28]
+# relative document position (26)
+UG0:%x[-1,26]
+UG1:%x[0,26]
+UG2:%x[1,26]
 
-# relative page position coordinate (29)
-UH0:%x[-1,29]
-UH1:%x[0,29]
-UH2:%x[1,29]
+# relative page position coordinate (27)
+UH0:%x[-1,27]
+UH1:%x[0,27]
+UH2:%x[1,27]
 
-# relative page position characters (30)
-UI0:%x[-1,30]
-UI1:%x[0,30]
-UI2:%x[1,30]
+# relative page position characters (28)
+UI0:%x[-1,28]
+UI1:%x[0,28]
+UI2:%x[1,28]
 
-# punctuation profile (31)
-UJ0:%x[-1,31]
-UJ1:%x[0,31]
-UJ2:%x[1,31]
+# punctuation profile (29)
+UJ0:%x[-1,29]
+UJ1:%x[0,29]
+UJ2:%x[1,29]
 
-# number of punctuation characters in the line (32)
-UJ0:%x[-1,32]
-UJ1:%x[0,32]
-UJ2:%x[1,32]
+# number of punctuation characters in the line (30)
+UJ0:%x[-1,30]
+UJ1:%x[0,30]
+UJ2:%x[1,30]
 
-# (scaled) block length (33)
-UK0:%x[-1,33]
-UK1:%x[0,33]
-UK2:%x[1,33]
+# (scaled) block length (31)
+UK0:%x[-1,31]
+UK1:%x[0,31]
+UK2:%x[1,31]
 
-# bitmap connected to the current block (34)
-UL0:%x[-2,34]
-UL1:%x[-1,34]
-UL2:%x[0,34]
-UL3:%x[1,34]
-UL4:%x[2,34]
-UL5:%x[3,34]
+# bitmap connected to the current block (32)
+UL0:%x[-2,32]
+UL1:%x[-1,32]
+UL2:%x[0,32]
+UL3:%x[1,32]
+UL4:%x[2,32]
+UL5:%x[3,32]
 
-# vector graphic connected to the current block (35)
-UM0:%x[-2,35]
-UM1:%x[-1,35]
-UM2:%x[0,35]
-UM3:%x[1,35]
-UM4:%x[2,35]
-UM5:%x[3,35]
+# vector graphic connected to the current block (33)
+UM0:%x[-2,33]
+UM1:%x[-1,33]
+UM2:%x[0,33]
+UM3:%x[1,33]
+UM4:%x[2,33]
+UM5:%x[3,33]
 
-# pattern repeated on several pages (36)
-UN0:%x[-2,36]
-UN1:%x[-1,36]
-UN2:%x[0,36]
-UN3:%x[1,36]
-UN4:%x[2,36]
-UN5:%x[3,36]
+# pattern repeated on several pages (34)
+UN0:%x[-2,34]
+UN1:%x[-1,34]
+UN2:%x[0,34]
+UN3:%x[1,34]
+UN4:%x[2,34]
+UN5:%x[3,34]
 
-# if we have a repeated pattern, indicate the first (37)
-#UO1:%x[-1,37]
-#UO2:%x[0,37]
-#UO3:%x[1,37]
+# if we have a repeated pattern, indicate the first (35)
+UO1:%x[-1,35]
+UO2:%x[0,35]
+UO3:%x[1,35]
 
-# if the block is in the page main area (38)
-#UP1:%x[-2,38]
-#UP1:%x[-1,38]
-#UP2:%x[0,38]
-#UP3:%x[1,38]
-#UP3:%x[1,38]
+# if the block is in the page main area (36)
+UP1:%x[-2,36]
+UP1:%x[-1,36]
+UP2:%x[0,36]
+UP3:%x[1,36]
+UP3:%x[1,36]
 
-# discretize space with previous block (39)
-#UQ1:%x[-1,39]
-#UQ2:%x[0,39]
-#UQ3:%x[1,39]
+# discretize space with previous block (37)
+#UQ1:%x[-1,37]
+#UQ2:%x[0,37]
+#UQ3:%x[1,37]
 
-# character density of the previous block, discretised (1)
-#UL1:%x[-1,34]
-#UL2:%x[0,34]
-#UL3:%x[1,34]
+# character density of the previous block, discretised (38)
+#UL1:%x[-1,38]
+#UL2:%x[0,38]
+#UL3:%x[1,38]
 
 # Output
 B

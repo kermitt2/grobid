@@ -104,24 +104,10 @@ public class MonographParser extends AbstractParser {
                 doc.setAnalyzer(config.getAnalyzer());
             doc.addTokenizedDocument(config);
             doc = prepareDocument(doc);
-
-            // if assets is true, the images are still there under directory pathXML+"_data"
-            // we copy them to the assetPath directory
-
-            /*ile assetFile = config.getPdfAssetPath();
-            if (assetFile != null) {
-                dealWithImages(documentSource, doc, assetFile, config);
-            }*/
             return doc;
         } finally {
             // keep it clean when leaving...
-            if (config.getPdfAssetPath() == null) {
-                // remove the pdf2xml tmp file
-                DocumentSource.close(documentSource, false, true, true);
-            } else {
-                // remove the pdf2xml tmp files, including the sub-directories
-                DocumentSource.close(documentSource, true, true, true);
-            }
+            DocumentSource.close(documentSource, true, true, true);
         }
     }
 
@@ -134,7 +120,6 @@ public class MonographParser extends AbstractParser {
         }
 
         doc.produceStatistics();
-        //String content = getAllLinesFeatured(doc);
         String content = getAllBlocksFeatured(doc);
         if (isNotEmpty(trim(content))) {
             String labelledResult = label(content);
@@ -143,7 +128,6 @@ public class MonographParser extends AbstractParser {
         }
         return doc;
     }
-
 
     /**
      * Addition of the features at line level for the complete document.
@@ -547,6 +531,10 @@ public class MonographParser extends AbstractParser {
                     features.http = true;
                 }
 
+                if (featureFactory.test_city(localText)) {
+                    features.locationName = true;
+                }
+
                 /*if (features.punctType == null)
                     features.punctType = "NOPUNCT";*/
 
@@ -598,11 +586,11 @@ public class MonographParser extends AbstractParser {
                 }
 
                 // character density of the previous block
-                /*if (density != -1.0) {
+                if (density != -1.0) {
                     features.characterDensity = featureFactory
                         .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
                     //System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
-                }*/
+                }
 
                 if (previousFeatures != null) {
                     String vector = previousFeatures.printVector();
@@ -628,6 +616,96 @@ public class MonographParser extends AbstractParser {
             fulltext.append(previousFeatures.printVector());
 
         return fulltext.toString();
+    }
+
+    /**
+     * Process the specified pdf and format the result as training data for the monograph model.
+     *
+     * @param inputFile input PDF file
+     /* @param pathFullText path to raw monograph featured sequence
+     * @param pathTEI   path to TEI, the file is not labeled yet
+     * @param id        id
+     */
+    public Document createBlankTrainingFromPDF(File inputFile,
+                                               String pathRaw,
+                                               String pathTEI,
+                                               int id) {
+        if (tmpPath == null)
+            throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
+        if (!tmpPath.exists()) {
+            throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
+                tmpPath.getAbsolutePath() + "' does not exists.");
+        }
+        DocumentSource documentSource = null;
+        Document doc = null;
+        List<Block> blocks = null;
+        Writer writer = null;
+        StringBuilder builder = null;
+        try {
+            builder = new StringBuilder();
+            if (!inputFile.exists()) {
+                throw new GrobidResourceException("Cannot train for monograph, because file '" +
+                    inputFile.getAbsolutePath() + "' does not exists.");
+            }
+            String pdfFileName = inputFile.getName();
+
+            File outputTEIFile = new File(pathTEI + "/" + pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
+            File outputRawFile = new File(pathRaw + "/" + pdfFileName.replace(".pdf", "training.monograph"));
+
+            // SEGMENTATION MODEL
+            documentSource = DocumentSource.fromPdf(inputFile, -1, -1, false, true, true);
+            doc = new Document(documentSource);
+            doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
+            blocks = doc.getBlocks();
+
+            if (blocks == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            } else {
+                String lang = null;
+                String text = doc.getBlocks().get(0).getText(); // get only the text from the first block as example to recognize the language
+                Language langID = languageUtilities.getInstance().runLanguageId(text);
+                if (langID != null) {
+                    lang = langID.getLang();
+                } else {
+                    lang = "en"; // by default, id = english
+                }
+
+                builder.append("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                    "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"" + lang + "\">\n");
+
+                // output an XML document based on the provided outline and the tokenization
+                List<LayoutToken> tokens = doc.getTokenizations();
+                // create blank training data
+                if (tokens != null) {
+                    for (LayoutToken token : tokens) {
+                        if (token.getText() != null) {
+                            builder.append(TextUtilities.HTMLEncode(token.getText()));
+                        }
+                    }
+                }
+
+                builder.append("</text>\n</tei>");
+                // write the TEI file
+                writer = new OutputStreamWriter(new FileOutputStream(outputTEIFile, false), "UTF-8");
+                writer.write(builder.toString());
+                writer.close();
+
+                // besides the tagged TEI file, we also need the raw file with some key layout featuresAsString
+                String rawText = getAllBlocksFeatured(doc);
+                // Let us now take care of the raw file
+                writer = new OutputStreamWriter(new FileOutputStream(outputRawFile, false), "UTF-8");
+                writer.write(rawText);
+                writer.close();
+            }
+
+            return doc;
+
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid training" +
+                " data generation for monograph.", e);
+        } finally {
+            DocumentSource.close(documentSource, true, true, true);
+        }
     }
 
     /**
@@ -671,11 +749,11 @@ public class MonographParser extends AbstractParser {
             // TODO language identifier here on content text sample
             String lang = null;
             String text = doc.getBlocks().get(0).getText(); // get only the text from the first block as example to recognize the language
-            Language langID = LanguageUtilities.getInstance().runLanguageId(text);
+            Language langID = languageUtilities.getInstance().runLanguageId(text);
             if (langID != null) {
                 lang = langID.getLang();
             } else {
-                lang = "fr"; // by default, id = english
+                lang = "en"; // by default, id = english
             }
 
             doc.produceStatistics();
@@ -779,9 +857,9 @@ public class MonographParser extends AbstractParser {
                 int depth = 0; // depth of the chapter title in the TOC tree
                 int nbOpenDivs = 0; // counts the opened div tags for the chapters, sections etc.
                 //String currentTitle = "" ;
-                //builder.append("DEBUGGING: The total number of tokens is "
-                //                        + numberOfTokens
-                //                        + "\n");
+                builder.append("DEBUGGING: The total number of tokens is "
+                    + numberOfTokens
+                    + "\n");
                 while (stackTOC.size() > 0 && tokenCtr < numberOfTokens) {
                     currentNode = stackTOC.pop();
                     // In order to avoid writing the "null" label from the
