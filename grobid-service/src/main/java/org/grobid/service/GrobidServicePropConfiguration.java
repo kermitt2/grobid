@@ -20,7 +20,9 @@ public class GrobidServicePropConfiguration {
 
     @JsonProperty
     private String corsAllowedOrigins = "*";
+    @JsonProperty
     private String corsAllowedMethods = "OPTIONS,GET,PUT,POST,DELETE,HEAD";
+    @JsonProperty
     private String corsAllowedHeaders = "X-Requested-With,Content-Type,Accept,Origin";
 
     public String getGrobidHome() {
