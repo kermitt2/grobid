@@ -3,7 +3,7 @@
 To cite this work, you can simply refer to the github project:
 
 ```
-GROBID (2008-2019) <https://github.com/kermitt2/grobid>
+GROBID (2008-2020) <https://github.com/kermitt2/grobid>
 ```
 
 (please do not include a particular person name to emphasize the project and tool!)
@@ -15,7 +15,7 @@ Here's a BibTeX entry:
     title = {GROBID}, 
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
-    year = {2008 --- 2019},
+    year = {2008 --- 2020},
     archivePrefix = {swh},
     eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }
@@ -26,6 +26,8 @@ Here's a BibTeX entry:
 [GROBID in 30 slides](grobid-04-2015.pdf) (2015).
 
 [GROBID in 20 slides](GROBID.pdf) (2012).
+
+P. Lopez. Automatic Extraction and Resolution of Bibliographical References in Patent Documents. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg, 2010.
 
 ## Evaluation and usages
 
