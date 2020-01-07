@@ -41,8 +41,8 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     @Override
     public void initialize(Bootstrap<GrobidServiceConfiguration> bootstrap) {
         GuiceBundle<GrobidServiceConfiguration> guiceBundle = GuiceBundle.defaultBuilder(GrobidServiceConfiguration.class)
-                .modules(getGuiceModules())
-                .build();
+            .modules(getGuiceModules())
+            .build();
         bootstrap.addBundle(guiceBundle);
         bootstrap.addBundle(new MultiPartBundle());
         bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
@@ -66,9 +66,9 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
             environment.servlets().addFilter("CORS", CrossOriginFilter.class);
 
         // Configure CORS parameters
-        cors.setInitParameter("allowedOrigins", allowedOrigins);
-        cors.setInitParameter("allowedHeaders", allowedMethods);
-        cors.setInitParameter("allowedMethods", allowedHeaders);
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_ORIGINS_PARAM, allowedOrigins);
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_METHODS_PARAM, allowedMethods);
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_HEADERS_PARAM, allowedHeaders);
 
         // Add URL mapping
         cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, RESOURCES + "/*");
@@ -99,7 +99,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 args = new String[]{"server", foundConf};
             } else {
                 throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "
-                        + Arrays.toString(DEFAULT_CONF_LOCATIONS));
+                    + Arrays.toString(DEFAULT_CONF_LOCATIONS));
             }
         }
 
