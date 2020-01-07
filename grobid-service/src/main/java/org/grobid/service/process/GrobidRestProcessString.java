@@ -72,8 +72,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -126,8 +125,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -179,8 +177,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -232,8 +229,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -276,8 +272,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(biblioItem.toTEI(-1))
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -324,8 +319,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(result)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
