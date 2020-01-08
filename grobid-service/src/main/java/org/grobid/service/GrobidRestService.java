@@ -13,6 +13,8 @@ import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
+import org.grobid.service.util.BibTexMediaType;
+import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
 import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
@@ -432,20 +434,40 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processCitation_post(@FormParam(CITATION) String citation,
+    public Response processCitationReturnXml_post(@FormParam(CITATION) String citation,
                                          @FormParam("consolidateCitations") String consolidate) {
         int consol = validateConsolidationParam(consolidate);
-        return restProcessString.processCitation(citation, consol);
+        return restProcessString.processCitation(citation, consol, ExpectedResponseType.XML);
+    }
+
+    @Path(PATH_CITATION)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @POST
+    public Response processCitationReturnBibTeX_post(@FormParam(CITATION) String citation,
+                                    @FormParam("consolidateCitations") String consolidate) {
+        int consol = validateConsolidationParam(consolidate);
+        return restProcessString.processCitation(citation, consol, ExpectedResponseType.BIBTEX);
     }
 
     @Path(PATH_CITATION)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_XML)
     @PUT
-    public Response processCitation(@FormParam(CITATION) String citation,
+    public Response processCitationReturnXml(@FormParam(CITATION) String citation,
+                                         @FormParam("consolidateCitations") String consolidate) {
+        int consol = validateConsolidationParam(consolidate);
+        return restProcessString.processCitation(citation, consol, ExpectedResponseType.XML);
+    }
+
+    @Path(PATH_CITATION)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @PUT
+    public Response processCitationReturnBibTeX(@FormParam(CITATION) String citation,
                                     @FormParam("consolidateCitations") String consolidate) {
         int consol = validateConsolidationParam(consolidate);
-        return restProcessString.processCitation(citation, consol);
+        return restProcessString.processCitation(citation, consol, ExpectedResponseType.BIBTEX);
     }
 
     /**

@@ -19,6 +19,8 @@ import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.service.util.BibTexMediaType;
+import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
 //import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
@@ -254,10 +256,12 @@ public class GrobidRestProcessString {
 	 *			string of the raw sequence of affiliation+address
 	 * @param consolidate
 	 *            consolidation parameter for the parsed citation
+	 * @param expectedResponseType
+	 *            states which media type the caller expected
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitation(String citation, int consolidate) {
+	public Response processCitation(String citation, int consolidate, ExpectedResponseType expectedResponseType) {
 		LOGGER.debug(methodLogIn());
 		Response response = null;
 		Engine engine = null;
@@ -268,6 +272,11 @@ public class GrobidRestProcessString {
 			
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
+			} else if (expectedResponseType.equals(ExpectedResponseType.BIBTEX)) {
+				response = Response.status(Status.OK)
+							.entity(biblioItem.toBibTeX("-1"))
+							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+							.build();
 			} else {
 				response = Response.status(Status.OK)
                             .entity(biblioItem.toTEI(-1))
