@@ -1,15 +1,20 @@
 package org.grobid.core.engines.tagging;
 
+import com.google.common.base.Joiner;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This tagger just return one label <dummy>
  */
 public class DummyTagger implements GenericTagger {
+
+    public static final String DUMMY_LABEL = "<dummy>";
 
     public DummyTagger(GrobidModel model) {
         if(!model.equals(GrobidModels.DUMMY)) {
@@ -19,7 +24,9 @@ public class DummyTagger implements GenericTagger {
 
     @Override
     public String label(Iterable<String> data) {
-        return "<dummy>";
+        final List<String> output = new ArrayList<>();
+        data.forEach(d -> output.add(d + "\t" + DUMMY_LABEL));
+        return Joiner.on('\n').join(output);
     }
 
     @Override

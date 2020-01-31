@@ -22,6 +22,8 @@ public class TaggerFactory {
 
     private static Map<GrobidModel, GenericTagger> cache = new HashMap<>();
 
+    private TaggerFactory() {}
+
     public static synchronized GenericTagger getTagger(GrobidModel model) {
         return getTagger(model, GrobidProperties.getGrobidCRFEngine());
     }
