@@ -2,6 +2,7 @@ package org.grobid.core.engines.tagging;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.main.LibraryLoader;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.powermock.reflect.Whitebox;
@@ -17,6 +18,11 @@ public class TaggerFactoryTest {
     public void setUp() throws Exception {
         LibraryLoader.load();
 
+        Whitebox.setInternalState(TaggerFactory.class, "cache", new HashMap<>());
+    }
+
+    @After
+    public void tearDown() throws Exception {
         Whitebox.setInternalState(TaggerFactory.class, "cache", new HashMap<>());
     }
 
