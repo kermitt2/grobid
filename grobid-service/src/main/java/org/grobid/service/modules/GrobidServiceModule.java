@@ -5,12 +5,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Binder;
 import com.google.inject.Provides;
 import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
+
+import org.grobid.service.AltoRestService;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
 import org.grobid.service.exceptions.mapper.GrobidExceptionsTranslationUtility;
 import org.grobid.service.exceptions.mapper.GrobidServiceExceptionMapper;
 import org.grobid.service.exceptions.mapper.WebApplicationExceptionMapper;
+import org.grobid.service.process.AltoRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
@@ -38,6 +41,9 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
         binder.bind(GrobidExceptionsTranslationUtility.class);
         binder.bind(GrobidExceptionMapper.class);
         binder.bind(WebApplicationExceptionMapper.class);
+        binder.bind(AltoRestService.class);
+        binder.bind(AltoRestProcessFiles.class);
+        
     }
 
     @Provides

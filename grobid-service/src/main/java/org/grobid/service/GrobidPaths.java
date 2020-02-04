@@ -121,6 +121,10 @@ public interface GrobidPaths {
 	String PATH_CITATIONS_PATENT_PDF_ANNOTATION = "citationPatentAnnotations";
 
 	/**
+	 * path extension for getting version
+	 */
+	String PATH_PDF_ALTO = "alto";
+	/**
 	 * path extension for processing sha1.
 	 */
 	String PATH_SHA1 = "sha1";

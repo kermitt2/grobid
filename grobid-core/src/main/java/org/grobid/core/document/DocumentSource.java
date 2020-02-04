@@ -383,7 +383,9 @@ public class DocumentSource {
     public void setXmlFile(File xmlFile) {
         this.xmlFile = xmlFile;
     }
-
+    public void setCleanupXml( boolean cleanupXml ){
+        this.cleanupXml=cleanupXml;
+    }
 }
 
 
