@@ -6,10 +6,10 @@ server:
     type: custom
     applicationConnectors:
     - type: http
-      port: 8075
+      port: 5075
     adminConnectors:
     - type: http
-      port: 8076
+      port: 5076
     registerDefaultExceptionMappers: false
 
 logging:

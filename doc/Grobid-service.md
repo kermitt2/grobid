@@ -59,6 +59,16 @@ grobid:
   modelPreload: false    
 ```
 
+## CORS (Cross-Origin Resource Share)
+
+By default, Grobid allows API access from any origin. 
+The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `config/config.yml`:
+
+```yaml
+corsAllowedOrigins: "grobid.com"
+corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
+corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
+```
 
 ## Clients for GROBID Web Services
 

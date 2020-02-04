@@ -3,7 +3,7 @@
 To cite this work, you can simply refer to the github project:
 
 ```
-GROBID (2008-2019) <https://github.com/kermitt2/grobid>
+GROBID (2008-2020) <https://github.com/kermitt2/grobid>
 ```
 
 (please do not include a particular person name to emphasize the project and tool!)
@@ -15,7 +15,7 @@ Here's a BibTeX entry:
     title = {GROBID}, 
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
-    year = {2008 --- 2019},
+    year = {2008 --- 2020},
     archivePrefix = {swh},
     eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }
@@ -27,17 +27,11 @@ Here's a BibTeX entry:
 
 [GROBID in 20 slides](GROBID.pdf) (2012).
 
-## Papers around Grobid
-
-Note: if you want to cite this work, please cite the software project as mentioned above and not a particular paper. 
-
-P. Lopez. [GROBID: Combining Automatic Bibliographic Data Recognition and Term Extraction for Scholarship Publications](https://lekythos.library.ucy.ac.cy/bitstream/handle/10797/14013/ECDL069.pdf?sequence=1). Proceedings of the 13th European Conference on Digital Library (ECDL), Corfu, Greece, 2009.
-
 P. Lopez. Automatic Extraction and Resolution of Bibliographical References in Patent Documents. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg, 2010.
 
-Joseph Boyd. [Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Master Thesis, EPFL, Switzerland, 2015. 
-
 ## Evaluation and usages
+
+Joseph Boyd. [Automatic Metadata Extraction The High Energy Physics Use Case](https://preprints.cern.ch/record/2039361/files/CERN-THESIS-2015-105.pdf). Master Thesis, EPFL, Switzerland, 2015. 
 
 Phil Gooch and Kris Jack, [How well does Mendeley’s Metadata Extraction Work?](https://krisjack.wordpress.com/2015/03/12/how-well-does-mendeleys-metadata-extraction-work/), 2015
 
