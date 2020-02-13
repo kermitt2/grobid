@@ -1,3 +1,5 @@
+#take only 20% of the first pages and 10% of the last pages (70% pages are considered always as chapter or unit)
+
 Recap results for each fold:
 
 
