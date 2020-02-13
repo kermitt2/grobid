@@ -1,13 +1,14 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.document.BasicStructureBuilder;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentNode;
-import org.grobid.core.document.DocumentSource;
+import org.grobid.core.data.MonographItem;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -16,19 +17,22 @@ import org.grobid.core.features.FeaturesVectorMonograph;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.lexicon.FastMatcher;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.*;
+import java.io.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.trim;
+import static org.grobid.core.engines.label.TaggingLabels.*;
 
 /**
  * Realise a high level segmentation of a monograph. Monograph is to be understood here in the context library cataloging,
@@ -63,6 +67,10 @@ public class MonographParser extends AbstractParser {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MonographParser.class);
 
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+
+    private EngineParsers parsers;
+
     // default bins for relative position
     private static final int NBBINS_POSITION = 12;
 
@@ -78,69 +86,52 @@ public class MonographParser extends AbstractParser {
     // projection scale for block length
     private static final int BLOCKSCALE = 10;
 
-    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private FeatureFactory featureFactory = FeatureFactory.getInstance();
 
     private File tmpPath = null;
 
-    /**
-     * TODO some documentation...
-     */
-    public MonographParser() {
+    public MonographParser(EngineParsers parsers) {
         super(GrobidModels.MONOGRAPH);
-        tmpPath = GrobidProperties.getTempPath();
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
     }
 
     /**
-     * Segment a PDF document into high level subdocuments.
-     *
-     * @param documentSource document source
-     * @return Document object with segmentation information
+     * Processing with application of the monograph model
      */
-    public Document processing(DocumentSource documentSource, GrobidAnalysisConfig config) {
+    //public Pair<String, Document> processing(File input) throws Exception{
+    public String processing(File input) throws Exception{
+        DocumentSource documentSource = null;
         try {
+            if (!input.exists()) {
+                throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
+                    input.getAbsolutePath() + "' does not exists.");
+            }
+
+            documentSource = DocumentSource.fromPdf(input, -1, -1, false, true, true);
             Document doc = new Document(documentSource);
-            if (config.getAnalyzer() != null)
-                doc.setAnalyzer(config.getAnalyzer());
+            GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance(); // or "GrobidAnalysisConfig.builder().build()"
             doc.addTokenizedDocument(config);
-            doc = prepareDocument(doc);
-            return doc;
+
+            if (doc.getBlocks() == null) {
+                throw new Exception("PDF parsing resulted in empty content");
+            }
+            doc.produceStatistics();
+
+            String tei = processingMonographBlock(doc, config);
+            //return new ImmutablePair<String, Document>(tei, doc);
+            return tei;
         } finally {
-            // keep it clean when leaving...
-            DocumentSource.close(documentSource, true, true, true);
+            if (documentSource != null) {
+                documentSource.close(true, true, true);
+            }
         }
-    }
-
-    public Document prepareDocument(Document doc) {
-
-        List<LayoutToken> tokenizations = doc.getTokenizations();
-        if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
-            throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
-                GrobidExceptionStatus.TOO_MANY_TOKENS);
-        }
-
-        doc.produceStatistics();
-        String content = getAllBlocksFeatured(doc);
-        if (isNotEmpty(trim(content))) {
-            String labelledResult = label(content);
-            // set the different sections of the Document object
-            doc = BasicStructureBuilder.generalResultSegmentation(doc, labelledResult, tokenizations);
-        }
-        return doc;
     }
 
     /**
-     * Addition of the features at line level for the complete document.
-     * <p/>
-     * This is an alternative to the token level, where the unit for labeling is the line - so allowing faster
-     * processing and involving less features.
-     * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the
-     * line without space.
-     * The dictionary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
-     * Regarding layout features: font, size and style are the one associated to the first token of the line.
+     * Document processing after application of the monograph model
      */
-    public String getAllLinesFeatured(Document doc) {
-
+    public String processingMonographBlock(Document doc, GrobidAnalysisConfig config) {
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
@@ -151,42 +142,501 @@ public class MonographParser extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
+        MonographItem resultMonograph = null;
+        TEIMonographFormatter teiFormatter = null;
+        StringBuilder result = new StringBuilder();
+
+        try {
+            // list of textual patterns at the head and foot of pages which can be re-occur on several pages
+            // (typically indicating a publisher foot or head notes)
+            Map<String, Integer> patterns = new TreeMap<String, Integer>();
+            Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
+
+            boolean newPage;
+            String currentFont = null, currentFontString = null, currentFontSizeString = null;
+            int currentFontSize = -1;
+            int documentLength = doc.getDocumentLenghtChar();
+
+            int mm = 0; // page position
+            int nn = 0; // document position
+            int pageLength = 0; // length of the current page
+            double pageHeight = 0.0;
+            int relativePagePositionChar = 0;
+
+            teiFormatter = new TEIMonographFormatter();
+
+            // add header information (not much information here)
+            result.append(teiFormatter.toTEIHeaderMonograph(doc, config));
+            /*for (Page page : doc.getPages()) {
+                pageHeight = page.getHeight();
+                newPage = true;
+                double spacingPreviousBlock = 0.0; // discretized
+                int spacingWithPreviousBlock = 0;
+                double lowestPos = 0.0;
+                pageLength = page.getPageLengthChar();
+                BoundingBox pageBoundingBox = page.getMainArea();
+                mm = 0;
+
+                if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
+                    continue;
+
+                boolean lastPageBlock = false;
+                boolean firstPageBlock = false;
+                String resultLabel = null;
+                int relativeDocumentPosition;
+                int characterDensity = 0;
+
+                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    Block block = page.getBlocks().get(blockIndex);
+                    List<LayoutToken> tokenization = blocks.get(blockIndex).getTokens();
+
+
+                    resultMonograph = new MonographItem();
+
+                    String localText = block.getText();
+                    if (localText.length() == 0 || localText == null) {
+                        continue;
+                    }
+
+                    if ((localText != null) && (localText.length() > 0)) {
+                        String[] lines = localText.split("[\\n\\r]");
+                        if (lines.length > 0) {
+                            String line = lines[0];
+                            String pattern = featureFactory.getPattern(line);
+                            if (pattern.length() > 8) {
+                                Integer nb = patterns.get(pattern);
+                                if (nb == null) {
+                                    patterns.put(pattern, Integer.valueOf("1"));
+                                    firstTimePattern.put(pattern, false);
+                                } else
+                                    patterns.put(pattern, Integer.valueOf(nb + 1));
+                            }
+                        }
+                    }
+
+                    if (lowestPos > block.getY()) {
+                        // we have a vertical shift, which can be due to a change of column or other particular layout formatting
+                        spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
+                    } else
+                        spacingPreviousBlock = block.getY() - lowestPos;
+
+                    // space with previous block
+                    if (spacingPreviousBlock != 0.0) {
+                        spacingWithPreviousBlock = featureFactory
+                            .linearScaling(spacingPreviousBlock - doc.getMinBlockSpacing(), doc.getMaxBlockSpacing() - doc.getMinBlockSpacing(), NBBINS_SPACE);
+                    }
+
+                    // check whether the first or last block of each page
+                    if (blockIndex == blocks.size() - 1) {
+                        lastPageBlock = true;
+                    }
+
+                    if (blockIndex == 0) {
+                        firstPageBlock = true;
+                    }
+
+                    // character density of the block
+                    double density = 0.0;
+                    if ((block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
+                        (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
+                        (!block.getText().contains("@IMAGE")))
+                        density = (double) block.getText().length() / (block.getHeight() * block.getWidth());
+
+                    // character density of the previous block
+                    if (density != -1.0) {
+                        characterDensity = featureFactory
+                            .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
+                    }
+
+                    // is the current block in the main area of the page or not?
+                    boolean inPageMainArea = true;
+                    BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(),
+                        block.getX(), block.getY(), block.getWidth(), block.getHeight());
+                    if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
+                        inPageMainArea = false;
+
+                    List<LayoutToken> tokens = block.getTokens();
+                    if ((tokens == null) || (tokens.size() == 0)) {
+                        continue;
+                    }
+
+                    // for the layout information of the block, we take simply the first layout token
+                    LayoutToken token = null;
+                    if (tokens.size() > 0)
+                        token = tokens.get(0);
+
+                    double coordinateLineY = token.getY();
+
+                    // font information
+                    if (currentFont == null) {
+                        currentFont = token.getFont();
+                        currentFontString = "NEWFONT";
+                    } else if (!currentFont.equals(token.getFont())) {
+                        currentFont = token.getFont();
+                        currentFontString = "NEWFONT";
+                    } else
+                        currentFontString = "SAMEFONT";
+
+                    // font size information
+                    int newFontSize = (int) token.getFontSize();
+                    if (currentFontSize == -1) {
+                        currentFontSize = newFontSize;
+                        currentFontSizeString = "HIGHERFONT";
+                    } else if (currentFontSize == newFontSize) {
+                        currentFontSizeString = "SAMEFONTSIZE";
+                    } else if (currentFontSize < newFontSize) {
+                        currentFontSizeString = "HIGHERFONT";
+                        currentFontSize = newFontSize;
+                    } else if (currentFontSize > newFontSize) {
+                        currentFontSizeString = "LOWERFONT";
+                        currentFontSize = newFontSize;
+                    }
+
+                    // relative document position
+                    relativeDocumentPosition = featureFactory.linearScaling(nn, documentLength, NBBINS_POSITION);
+
+                    int pagePos = featureFactory.linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
+                    if (pagePos > NBBINS_POSITION)
+                        pagePos = NBBINS_POSITION;
+
+                    // relative page position characters
+                    relativePagePositionChar = featureFactory.linearScaling(mm, pageLength, NBBINS_POSITION);
+
+                    // add features
+                    Pair<String, List<LayoutToken>> featuredBlockMonograph = getBlockMonographFeatured(doc, blocks.get(blockIndex), tokenization,
+                        firstPageBlock, lastPageBlock, newPage, currentFontString, currentFontSizeString, relativeDocumentPosition,
+                        pagePos, relativePagePositionChar, inPageMainArea, spacingWithPreviousBlock, characterDensity);
+
+                    String blockMonographFeatured = featuredBlockMonograph.getLeft();
+                    List<LayoutToken> monographTokenization = featuredBlockMonograph.getRight();
+
+                    // lowest position of the block
+                    lowestPos = block.getY() + block.getHeight();
+
+                    // update page-level and document-level positions
+                    if (tokens != null) {
+                        mm += tokens.size();
+                        nn += tokens.size();
+                    }
+
+                    // labeling the featured monograph blocks
+                    if ((blockMonographFeatured != null) && (blockMonographFeatured.trim().length() > 0)) {
+                        resultLabel = label(blockMonographFeatured);
+                        resultExtraction(resultLabel, monographTokenization); // resultMonograph.setLabel
+                        resultMonograph.setBlock(blocks.get(blockIndex));
+                    }
+                }
+                newPage = false;
+            }*/
+            result.append("</TEI>");
+
+            return result.toString();
+
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+    }
+
+    /**
+     * Return the monograph block with features to be processed by the CRF model
+     */
+    public Pair<String, List<LayoutToken>> getBlockMonographFeatured(Document doc, Block block, List<LayoutToken> tokens, boolean firstBlock,
+                                                                     boolean lastBlock, boolean newPage, String currentFontString, String currentFontSizeString,
+                                                                     int relativeDocumentPosition, int pagePos, int relativePagePositionChar, boolean inPageMainArea,
+                                                                     int spacingWithPreviousBlock, int characterDensity) {
+        StringBuilder monographFeatured = new StringBuilder();
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
+        String str = null;
+        boolean graphicVector = false;
+        boolean graphicBitmap = false;
+
+        // vector for features
+        FeaturesVectorMonograph features = new FeaturesVectorMonograph();
+        FeaturesVectorMonograph previousFeatures = new FeaturesVectorMonograph();
+
         // list of textual patterns at the head and foot of pages which can be re-occur on several pages
         // (typically indicating a publisher foot or head notes)
         Map<String, Integer> patterns = new TreeMap<String, Integer>();
         Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
 
-        for (Page page : doc.getPages()) {
-            // we just look at the two first and last blocks of the page
-            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
-                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
-                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
-                        Block block = page.getBlocks().get(blockIndex);
-                        String localText = block.getText();
-                        if ((localText != null) && (localText.length() > 0)) {
-                            String[] lines = localText.split("[\\n\\r]");
-                            if (lines.length > 0) {
-                                String line = lines[0];
-                                String pattern = featureFactory.getPattern(line);
-                                if (pattern.length() > 8) {
-                                    Integer nb = patterns.get(pattern);
-                                    if (nb == null) {
-                                        patterns.put(pattern, Integer.valueOf("1"));
-                                        firstTimePattern.put(pattern, false);
-                                    } else
-                                        patterns.put(pattern, Integer.valueOf(nb + 1));
-                                }
-                            }
-                        }
-                    }
-                }
+        String localText = block.getText();
+        if ((localText != null) && (localText.length() > 0)) {
+            String pattern = featureFactory.getPattern(localText);
+            if (pattern.length() > 8) {
+                Integer nb = patterns.get(pattern);
+                if (nb == null) {
+                    patterns.put(pattern, Integer.valueOf("1"));
+                    firstTimePattern.put(pattern, false);
+                } else
+                    patterns.put(pattern, Integer.valueOf(nb + 1));
+            }
+        }
+        // add features
+
+        // check if we have a graphical object connected to the current block
+        List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+        if (localImages != null) {
+            for (GraphicObject localImage : localImages) {
+                if (localImage.getType() == GraphicObjectType.BITMAP)
+                    graphicBitmap = true;
+                if (localImage.getType() == GraphicObjectType.VECTOR)
+                    graphicVector = true;
             }
         }
 
-        String featuresAsString = getFeatureVectorsAsString(doc,
-            patterns, firstTimePattern);
+        String[] lines = localText.split("[\\n\\r]");
+        int linesSize = lines.length;
+        // set the max length of the lines in the block, in number of characters
+        int maxLineLength = 0, idxMaxLength = 0;
+        for (int p = 0; p < linesSize; p++) {
+            if (lines[p].length() > maxLineLength) {
+                maxLineLength = lines[p].length();
+                idxMaxLength = p;
+            }
+        }
 
-        return featuresAsString;
+        // for the layout information of the block, we take simply the first layout token
+        LayoutToken token = null;
+        if (tokens.size() > 0)
+            token = tokens.get(0);
+
+        double coordinateLineY = token.getY();
+
+        // not a feature, the complete processed block
+        features.block = localText;
+
+        // pattern repeated on several pages
+        String pattern = featureFactory.getPattern(localText);
+        Integer nb = patterns.get(pattern);
+        if ((nb != null) && (nb > 1)) {
+            features.repetitivePattern = true;
+
+            Boolean firstTimeDone = firstTimePattern.get(pattern);
+            if ((firstTimeDone != null) && !firstTimeDone) {
+                features.firstRepetitivePattern = true;
+                firstTimePattern.put(pattern, true);
+            }
+        }
+
+        // the first string is the first token of the first line of the block
+        str = lines[0];
+        if (str.length() > 0 || str != null) {
+            String[] splitStr = StringUtils.split(str);
+            features.string = splitStr[0];
+        } else {
+            features.string = null;
+        }
+
+        // the second string is the first token of the longest line of the block
+        str = lines[idxMaxLength];
+        if (str.length() > 0) {
+            String[] splitStr = StringUtils.split(str);
+            features.secondString = splitStr[0];
+        } else {
+            features.secondString = null;
+        }
+
+        // the third string is the first token of the last line of the block
+        str = lines[linesSize - 1];
+        if (str.length() > 0) {
+            String[] splitStr = StringUtils.split(str);
+            features.thirdString = splitStr[0];
+        } else {
+            features.thirdString = null;
+        }
+
+        features.firstPageBlock = firstBlock;
+        features.lastPageBlock = lastBlock;
+
+        // HERE horizontal information
+        // CENTERED
+        // LEFTAJUSTED
+        // CENTERED
+
+        // page information
+        if (newPage) {
+            features.pageStatus = "PAGESTART";
+            newPage = false;
+            if (previousFeatures != null)
+                previousFeatures.pageStatus = "PAGEEND";
+        } else {
+            features.pageStatus = "PAGEIN";
+            newPage = false;
+        }
+
+        // font information
+        features.fontStatus = currentFontString;
+
+        // font size information
+        features.fontSize = currentFontSizeString;
+
+        // remove the break line or tab, only test the text
+        localText = localText.replaceAll("[\n\t]", "");
+
+        // capitalisation
+        if (Character.isUpperCase(localText.charAt(0))) {
+            features.capitalisation = "INITCAP";
+        }
+
+        if (featureFactory.test_all_capital(localText)) {
+            features.capitalisation = "ALLCAP";
+        }
+
+        if (features.capitalisation == null)
+            features.capitalisation = "NOCAPS";
+
+        // digit information
+        if (featureFactory.test_digit(localText)) {
+            features.digit = "CONTAINSDIGITS";
+        }
+
+        Matcher m = featureFactory.isDigit.matcher(localText);
+        if (m.find()) {
+            features.digit = "ALLDIGIT";
+        }
+
+        if (features.digit == null)
+            features.digit = "NODIGIT";
+
+        // character information
+        if (localText.length() == 1) {
+            features.singleChar = true;
+        }
+
+        // lexical information
+        if (featureFactory.test_names(localText)) {
+            features.properName = true;
+        }
+
+        if (featureFactory.test_common(localText)) {
+            features.commonName = true;
+        }
+
+        if (featureFactory.test_first_names(localText)) {
+            features.firstName = true;
+        }
+
+        Matcher m2 = featureFactory.year.matcher(localText);
+        if (m2.find()) {
+            features.year = true;
+        }
+
+        if (featureFactory.test_month(localText)) {
+            features.month = true;
+        }
+
+        Matcher m3 = featureFactory.email.matcher(localText);
+        if (m3.find()) {
+            features.email = true;
+        }
+
+        Matcher m4 = featureFactory.http.matcher(localText);
+        if (m4.find()) {
+            features.http = true;
+        }
+
+        if (featureFactory.test_city(localText)) {
+            features.locationName = true;
+        }
+
+        // relative document position
+        features.relativeDocumentPosition = relativeDocumentPosition;
+
+        // relative page position coordinate
+        features.relativePagePosition = pagePos;
+
+        // relative page position characters
+        features.relativePagePositionChar = relativePagePositionChar;
+
+        // punctuation profile and number of punctuation characters in the line
+        features.punctuationProfile = TextUtilities.punctuationProfile(localText);
+
+        // change the linelength as the block size
+        features.blockLength = localText.length() / BLOCKSCALE;
+
+        // bitmap
+        if (graphicBitmap) {
+            features.bitmapAround = true;
+        }
+
+        // vector
+        if (graphicVector) {
+            features.vectorAround = true;
+        }
+
+        // if the block is in the page main area
+        features.inMainArea = inPageMainArea;
+
+        // space with previous block
+       features.spacingWithPreviousBlock = spacingWithPreviousBlock;
+
+        // character density of the previous block
+        features.characterDensity = characterDensity;
+
+        // return the result of pair of (featured of blocks extracted from Pdf document) + (the token information)
+        return Pair.of(monographFeatured.toString(), tokens);
+    }
+
+    /**
+     * Extract results from a labelled block of monograph.
+     *
+     * @param result        result
+     * @param tokenizations list of tokens
+     * @return a monograph item
+     */
+    private MonographItem resultExtraction(String result, List<LayoutToken> tokenizations) {
+        MonographItem monographItem = new MonographItem();
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.MONOGRAPH, result, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            if (clusterLabel.equals(MONOGRAPH_COVER)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_TITLE)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_PUBLISHER)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_SUMMARY)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_BIOGRAPHY)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_ADVERTISEMENT)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_TOC)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_TOF)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_PREFACE)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_DEDICATION)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_UNIT)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_REFERENCE)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_ANNEX)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_INDEX)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_GLOSSARY)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_BACK)) {
+                monographItem.setLabel(clusterContent);
+            } else if (clusterLabel.equals(MONOGRAPH_OTHER)) {
+                monographItem.setLabel(clusterContent);
+            } else {
+                LOGGER.error("Warning: unexpected monograph model label - " + clusterLabel + " for " + clusterContent);
+            }
+        }
+        return monographItem;
     }
 
     /**
@@ -239,15 +689,14 @@ public class MonographParser extends AbstractParser {
             }
         }
 
-        String featuresAsString = getFeatureVectorsAsString(doc,
-            patterns, firstTimePattern);
+        String featuresAsString = getFeatureVectorsAsString(doc, patterns, firstTimePattern);
 
         return featuresAsString;
     }
 
     private String getFeatureVectorsAsString(Document doc, Map<String, Integer> patterns,
                                              Map<String, Boolean> firstTimePattern) {
-        StringBuilder fulltext = new StringBuilder();
+        StringBuilder featureMonographBlock = new StringBuilder();
         int documentLength = doc.getDocumentLenghtChar();
 
         String currentFont = null;
@@ -258,16 +707,16 @@ public class MonographParser extends AbstractParser {
         int nn = 0; // document position
         int pageLength = 0; // length of the current page
         double pageHeight = 0.0;
-        int pageNum = 0;
+        //int pageNum = 0;
 
         // vector for features
         FeaturesVectorMonograph features;
         FeaturesVectorMonograph previousFeatures = null;
 
         // take only 20% of the first pages and 10% of the last pages (70% pages are considered always as chapter or unit)
-        int pageSizeTotal = doc.getPages().size();
+        /*int pageSizeTotal = doc.getPages().size();
         int firstPageSize = pageSizeTotal * 20 / 100;
-        int lastPageSize = pageSizeTotal - (pageSizeTotal * 10 / 100);
+        int lastPageSize = pageSizeTotal - (pageSizeTotal * 10 / 100);*/
         for (Page page : doc.getPages()) {
             pageHeight = page.getHeight();
             newPage = true;
@@ -280,8 +729,8 @@ public class MonographParser extends AbstractParser {
             if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
                 continue;
 
-            if (pageNum > firstPageSize && pageNum < lastPageSize)
-                continue;
+            /*if (pageNum > firstPageSize && pageNum < lastPageSize)
+                continue;*/
 
             for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 String str = null;
@@ -594,7 +1043,7 @@ public class MonographParser extends AbstractParser {
 
                 if (previousFeatures != null) {
                     String vector = previousFeatures.printVector();
-                    fulltext.append(vector);
+                    featureMonographBlock.append(vector);
                 }
                 previousFeatures = features;
 
@@ -610,19 +1059,19 @@ public class MonographParser extends AbstractParser {
                     nn += tokens.size();
                 }
             }
-            pageNum++;
+            //pageNum++;
         }
         if (previousFeatures != null)
-            fulltext.append(previousFeatures.printVector());
+            featureMonographBlock.append(previousFeatures.printVector());
 
-        return fulltext.toString();
+        return featureMonographBlock.toString();
     }
 
     /**
      * Process the specified pdf and format the result as training data for the monograph model.
      *
      * @param inputFile input PDF file
-     /* @param pathFullText path to raw monograph featured sequence
+     * @param pathRaw   path to raw monograph featured sequence
      * @param pathTEI   path to TEI, the file is not labeled yet
      * @param id        id
      */
@@ -652,7 +1101,6 @@ public class MonographParser extends AbstractParser {
             File outputTEIFile = new File(pathTEI + "/" + pdfFileName.replace(".pdf", "training.monograph.tei.xml"));
             File outputRawFile = new File(pathRaw + "/" + pdfFileName.replace(".pdf", "training.monograph"));
 
-            // SEGMENTATION MODEL
             documentSource = DocumentSource.fromPdf(inputFile, -1, -1, false, true, true);
             doc = new Document(documentSource);
             doc.addTokenizedDocument(GrobidAnalysisConfig.defaultInstance());
@@ -1060,5 +1508,11 @@ public class MonographParser extends AbstractParser {
         }
 
         return doc;
+    }
+
+
+    @Override
+    public void close() throws IOException {
+        super.close();
     }
 }

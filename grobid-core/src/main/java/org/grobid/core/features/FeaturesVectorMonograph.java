@@ -1,6 +1,18 @@
 package org.grobid.core.features;
 
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.data.MonographItem;
+import org.grobid.core.document.Document;
+import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidExceptionStatus;
+import org.grobid.core.layout.*;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+
+import java.util.*;
+import java.util.regex.Matcher;
 
 /**
  * Class for features used for high level segmentation of a monograph.
@@ -8,6 +20,20 @@ import org.grobid.core.utilities.TextUtilities;
  * @author Patrice Lopez
  */
 public class FeaturesVectorMonograph {
+    private FeatureFactory featureFactory = FeatureFactory.getInstance();
+
+    // default bins for relative position
+    private static final int NBBINS_POSITION = 12;
+
+    // projection scale for block length
+    private static final int BLOCKSCALE = 10;
+
+    // default bins for block character density
+    private static final int NBBINS_DENSITY = 5;
+
+    // default bins for inter-block spacing
+    private static final int NBBINS_SPACE = 5;
+
     //public LayoutToken token = null; // not a feature, reference value
     //public String line = null; // not a feature, the complete processed line
     public String block = null; // not a feature, the complete processed block
@@ -260,5 +286,7 @@ public class FeaturesVectorMonograph {
 
         return res.toString();
     }
+
+
 
 }

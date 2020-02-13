@@ -193,6 +193,63 @@ public class GrobidRestProcessFiles {
     }
 
     /**
+     * Uploads the origin document which shall be extracted into TEI
+     *
+     * @param inputStream the data of origin document
+     * @return a response object which contains a TEI representation of the monograph parts
+     */
+    public Response processMonograph(final InputStream inputStream) {
+        LOGGER.debug(methodLogIn());
+        String retVal = null;
+        Response response = null;
+        File originFile = null;
+        Engine engine = null;
+        try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
+            originFile = IOUtilities.writeInputFile(inputStream);
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
+            }
+
+            // starts conversion process
+            retVal = engine.monographToTEI(originFile);
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+    /**
      * Uploads the origin document which shall be extracted into TEI + assets in a ZIP
      * archive.
      *
@@ -807,5 +864,4 @@ public class GrobidRestProcessFiles {
         }
         return out;
     }
-
 }

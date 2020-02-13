@@ -247,6 +247,23 @@ public class GrobidRestService implements GrobidPaths {
         return consol;
     }
 
+    // for the monograph model
+    @Path(PATH_MONOGRAPH)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processMonographDocument_post(@FormDataParam(INPUT) InputStream inputStream) {
+        return restProcessFiles.processMonograph(inputStream);
+    }
+
+    @Path(PATH_MONOGRAPH)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @PUT
+    public Response processStatelessMonographDocument(@FormDataParam(INPUT) InputStream inputStream) {
+        return processMonographDocument_post(inputStream);
+    }
+
     @Path(PATH_FULL_TEXT_ASSET)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("application/zip")

@@ -19,13 +19,7 @@ import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BiblioSet;
-import org.grobid.core.data.ChemicalEntity;
-import org.grobid.core.data.PatentItem;
-import org.grobid.core.data.Person;
+import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -356,7 +350,7 @@ public class Engine implements Closeable {
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
+     * //@param consolidate - the consolidation option allows GROBID to exploit Crossref
      *                    web services for improving header information
      * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
@@ -406,6 +400,29 @@ public class Engine implements Closeable {
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();
+    }
+
+    /**
+     *
+     * Parse and convert the current article into TEI, this method performs the
+     * whole parsing and conversion process.
+     *
+     * @param inputFile            - absolute path to the pdf to be processed
+     * @return the resulting structured document as a TEI string.
+     */
+    public String monographToTEI(File inputFile) throws Exception {
+        return monographToTEIDoc(inputFile);
+    }
+
+    public String monographToTEIDoc(File inputFile) throws Exception {
+        MonographParser monographParser = parsers.getMonographParser();
+        String result;
+        LOGGER.debug("Starting processing monograph on " + inputFile);
+        long time = System.currentTimeMillis();
+        result = monographParser.processing(inputFile);
+        LOGGER.debug("Ending processing monogrpah on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return result;
     }
 
     /**

@@ -167,7 +167,7 @@ public class EngineParsers implements Closeable {
         if (monographParser == null) {
             synchronized (this) {
                 if (monographParser == null) {
-                    monographParser = new MonographParser();
+                    monographParser = new MonographParser(this);
                 }
             }
         }

@@ -50,6 +50,11 @@ public interface GrobidPaths {
 	 */
 	String PATH_FULL_TEXT_HTML = "processFulltextDocumentHTML";
 
+    /**
+     * path extension for processing monograph in a PDF file.
+     */
+    String PATH_MONOGRAPH = "processMonograph";
+
 	/**
 	 * path extension for processing dates.
 	 */

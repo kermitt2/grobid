@@ -245,6 +245,11 @@ var grobid = (function($) {
 	    return true;
 	}
 
+	function ShowRequest4(formData, jqForm, options) {
+    	    $('#requestResult4').html('<font color="grey">Requesting server...</font>');
+    	    return true;
+    }
+
 	function AjaxError1(jqXHR, textStatus, errorThrown) {
 		$('#requestResult').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
@@ -263,6 +268,11 @@ var grobid = (function($) {
 		$('#requestResult3').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
 	}
+
+	function AjaxError4(jqXHR, textStatus, errorThrown) {
+    		$('#requestResult4').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
+    		responseJson = null;
+    }
 
 	function htmll(s) {
     	return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -958,6 +968,12 @@ var grobid = (function($) {
 			$('#consolidateBlock2').show();
 			setBaseUrl('processFulltextDocument');
 		}
+		else if (selected == 'processMonograph') {
+            createInputFile(selected);
+            $('#consolidateBlock1').hide();
+            $('#consolidateBlock2').hide();
+            setBaseUrl('processMonograph');
+        }
 		else if (selected == 'processDate') {
 			createInputTextArea('date');
 			$('#consolidateBlock1').hide();
