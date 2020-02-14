@@ -100,11 +100,12 @@ public class MonographParser extends AbstractParser {
      * Processing with application of the monograph model
      */
     //public Pair<String, Document> processing(File input) throws Exception{
-    public String processing(File input) throws Exception{
+    public String processing(File input) throws Exception {
         DocumentSource documentSource = null;
+        String lang = null;
         try {
             if (!input.exists()) {
-                throw new GrobidResourceException("Cannot train for fulltext, becuase file '" +
+                throw new GrobidResourceException("Cannot process the monograph model, because the file '" +
                     input.getAbsolutePath() + "' does not exists.");
             }
 
@@ -112,10 +113,30 @@ public class MonographParser extends AbstractParser {
             Document doc = new Document(documentSource);
             GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance(); // or "GrobidAnalysisConfig.builder().build()"
             doc.addTokenizedDocument(config);
+            List<Block> blocks = doc.getBlocks();
+            Language langID = new Language();
 
-            if (doc.getBlocks() == null) {
+            if (blocks == null) {
                 throw new Exception("PDF parsing resulted in empty content");
+            } else {
+                // detect the language
+                String contentSample = "";
+                int sampleLength = 0;
+                for (int i = 0; i < blocks.size(); i++) {
+                    contentSample += doc.getBlocks().get(i).getText();
+                    if (sampleLength > 500) // it's assumed we need 500 characters of sample content for detecting the language
+                        break;
+                }
+
+                langID = languageUtilities.getInstance().runLanguageId(contentSample);
+                if (langID != null) {
+                    lang = langID.getLang();
+                } else {
+                    lang = "en"; // by default, id = english
+                }
             }
+
+            doc.setLanguage(lang);
             doc.produceStatistics();
 
             String tei = processingMonographBlock(doc, config);
@@ -165,8 +186,9 @@ public class MonographParser extends AbstractParser {
 
             teiFormatter = new TEIMonographFormatter();
 
-            // add header information (not much information here)
+            // add TEI header information (not much information here)
             result.append(teiFormatter.toTEIHeaderMonograph(doc, config));
+
             /*for (Page page : doc.getPages()) {
                 pageHeight = page.getHeight();
                 newPage = true;
@@ -568,7 +590,7 @@ public class MonographParser extends AbstractParser {
         features.inMainArea = inPageMainArea;
 
         // space with previous block
-       features.spacingWithPreviousBlock = spacingWithPreviousBlock;
+        features.spacingWithPreviousBlock = spacingWithPreviousBlock;
 
         // character density of the previous block
         features.characterDensity = characterDensity;
@@ -1068,7 +1090,7 @@ public class MonographParser extends AbstractParser {
     }
 
     /**
-     * Process the specified pdf and format the result as training data for the monograph model.
+     * Create a blank training data for new monograph model
      *
      * @param inputFile input PDF file
      * @param pathRaw   path to raw monograph featured sequence
