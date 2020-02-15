@@ -1,6 +1,7 @@
 package org.grobid.core.document;
 
 import org.grobid.core.data.Monograph;
+import org.grobid.core.data.MonographItem;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.TimeZone;
 
 /**
@@ -92,19 +94,34 @@ public class TEIMonographFormatter {
     /**
      * TEI formatting of the monograph model
      */
-    public StringBuilder toTEIMonograph(Document doc, GrobidAnalysisConfig config) throws Exception {
-        Monograph monograph = new Monograph();
+    public StringBuilder toTEIMonograph(Document doc, List<MonographItem> monographResults) throws Exception {
         StringBuilder tei = new StringBuilder();
 
-        if (doc.getLanguage() != null) {
-            tei.append("\t<text xml:lang=\"").append(doc.getLanguage()).append("\">\n");
-        } else {
-            tei.append("\t<text>\n");
+        // the results are here
+        for (MonographItem monographItem : monographResults) {
+            String text = monographItem.getText();
+            text.replace("\n", "");
+            tei.append("<").append(monographItem.getLabel()).append(">").
+                append(text).
+                append("</").append(monographItem.getLabel()).append(">\n\n");
         }
 
+        return tei;
+    }
+
+    /**
+     * TEI formatting of the monograph model
+     */
+    public StringBuilder toTEIMonographPerItem(Document doc, MonographItem monographItem) throws Exception {
+        StringBuilder tei = new StringBuilder();
+
         // the results are here
-        tei.append("\t</text>\n");
-        tei.append("</TEI>\n");
+        String text = monographItem.getText();
+        text.replace("\n", "");
+        tei.append("<").append(monographItem.getLabel()).append(">").
+            append(text).
+            append("</").append(monographItem.getLabel()).append(">\n\n");
+
         return tei;
     }
 

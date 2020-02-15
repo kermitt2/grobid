@@ -1,16 +1,38 @@
 package org.grobid.core.data;
 
-import org.grobid.core.layout.Block;
+import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.LayoutToken;
+
+import java.util.List;
 
 public class MonographItem {
-    private Block block;
+    private String text;
     private String label;
-    public Block getBlock() {
-        return block;
+    private List<LayoutToken> tokens;
+    BoundingBox boundingBox;
+
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
     }
 
-    public void setBlock(Block block) {
-        this.block = block;
+    public void setBoundingBox(BoundingBox boundingBox) {
+        this.boundingBox = boundingBox;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public List<LayoutToken> getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(List<LayoutToken> tokens) {
+        this.tokens = tokens;
     }
 
     public String getLabel() {

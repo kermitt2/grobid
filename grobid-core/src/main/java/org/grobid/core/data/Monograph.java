@@ -1,20 +1,6 @@
 package org.grobid.core.data;
 
-import org.grobid.core.document.BasicStructureBuilder;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidExceptionStatus;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
-
-import java.io.File;
-import java.util.List;
-
-import static org.apache.commons.lang3.StringUtils.isNotEmpty;
-import static org.apache.commons.lang3.StringUtils.trim;
 
 /**
  * Class for representing the monograph information
@@ -218,9 +204,67 @@ public class Monograph {
         else
             return true;
     }
+    // result of monograph string processing
+    public String getLabel(String resultWithLabel) {
+        String result = null;
+        if (resultWithLabel.contains("<cover>")){
+            result = "cover";
+        }
+        else if (resultWithLabel.contains("<title>")){
+            result = "title";
+        }
+        else if (resultWithLabel.contains("<publisher>")){
+            result = "publisher";
+        }
+        else if (resultWithLabel.contains("<summary>")){
+            result = "summary";
+        }
+        else if (resultWithLabel.contains("<biography>")){
+            result = "biography";
+        }
+        else if (resultWithLabel.contains("<advertising>")){
+            result = "advertising";
+        }
+        else if (resultWithLabel.contains("<toc>")){
+            result = "toc";
+        }
+        else if (resultWithLabel.contains("<tof>")){
+            result = "tof";
+        }
+        else if (resultWithLabel.contains("<preface>")){
+            result = "preface";
+        }
+        else if (resultWithLabel.contains("<dedication>")){
+            result = "dedication";
+        }
+        else if (resultWithLabel.contains("<unit>")){
+            result = "unit";
+        }
+        else if (resultWithLabel.contains("<reference>")){
+            result = "reference";
+        }
+        else if (resultWithLabel.contains("<annex>")){
+            result = "annex";
+        }
+        else if (resultWithLabel.contains("<index>")){
+            result = "index";
+        }
+        else if (resultWithLabel.contains("<glossary>")){
+            result = "glossary";
+        }
+        else if (resultWithLabel.contains("<back>")){
+            result = "back";
+        }
+        else if (resultWithLabel.contains("other")){
+            result = "other";
+        } else {
+            result = "undefined";
+        }
+        return result;
+    }
 
     // result of monograph string processing
-    public StringBuilder toTEI() {
+    public String toTEI(String getLabel) {
         StringBuilder tei = new StringBuilder();
         if (!isNotNull()) {
             return null;
@@ -278,6 +322,6 @@ public class Monograph {
                 tei.append("<other>").append(TextUtilities.HTMLEncode(other)).append("</other>");
             }
         }
-        return tei;
+        return tei.toString();
     }
 }

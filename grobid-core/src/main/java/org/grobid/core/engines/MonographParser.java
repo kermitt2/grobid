@@ -1,14 +1,18 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.Monograph;
 import org.grobid.core.data.MonographItem;
-import org.grobid.core.document.*;
+import org.grobid.core.document.Document;
+import org.grobid.core.document.DocumentNode;
+import org.grobid.core.document.DocumentSource;
+import org.grobid.core.document.TEIMonographFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.tagging.GenericTagger;
+import org.grobid.core.engines.tagging.TaggerFactory;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -24,14 +28,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.regex.Matcher;
 
-import static org.apache.commons.lang3.StringUtils.isNotEmpty;
-import static org.apache.commons.lang3.StringUtils.trim;
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
 /**
@@ -43,7 +42,7 @@ import static org.grobid.core.engines.label.TaggingLabels.*;
  *
  * @author Patrice Lopez
  */
-public class MonographParser extends AbstractParser {
+public class MonographParser {
     /**
      * 17 labels for this model:
      * cover page (front of the book)
@@ -64,6 +63,7 @@ public class MonographParser extends AbstractParser {
      * back cover page
      * other
      */
+    private final GenericTagger monographParser;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MonographParser.class);
 
@@ -90,10 +90,8 @@ public class MonographParser extends AbstractParser {
 
     private File tmpPath = null;
 
-    public MonographParser(EngineParsers parsers) {
-        super(GrobidModels.MONOGRAPH);
-        this.parsers = parsers;
-        GrobidProperties.getInstance();
+    public MonographParser() {
+        monographParser = TaggerFactory.getTagger(GrobidModels.MONOGRAPH);
     }
 
     /**
@@ -163,17 +161,19 @@ public class MonographParser extends AbstractParser {
             throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
         }
 
-        MonographItem resultMonograph = null;
         TEIMonographFormatter teiFormatter = null;
+        ArrayList<MonographItem> monographItems = null;
+        MonographItem resultMonograph = null;
         StringBuilder result = new StringBuilder();
 
         try {
+            GenericTagger tagger = monographParser;
             // list of textual patterns at the head and foot of pages which can be re-occur on several pages
             // (typically indicating a publisher foot or head notes)
             Map<String, Integer> patterns = new TreeMap<String, Integer>();
             Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
 
-            boolean newPage;
+            boolean newPage = false;
             String currentFont = null, currentFontString = null, currentFontSizeString = null;
             int currentFontSize = -1;
             int documentLength = doc.getDocumentLenghtChar();
@@ -189,7 +189,14 @@ public class MonographParser extends AbstractParser {
             // add TEI header information (not much information here)
             result.append(teiFormatter.toTEIHeaderMonograph(doc, config));
 
-            /*for (Page page : doc.getPages()) {
+            // add TEI body with the extraction result from the monograph model
+            if (doc.getLanguage() != null) {
+                result.append("\t<text xml:lang=\"").append(doc.getLanguage()).append("\">\n");
+            } else {
+                result.append("\t<text>\n");
+            }
+
+            for (Page page : doc.getPages()) {
                 pageHeight = page.getHeight();
                 newPage = true;
                 double spacingPreviousBlock = 0.0; // discretized
@@ -204,16 +211,19 @@ public class MonographParser extends AbstractParser {
 
                 boolean lastPageBlock = false;
                 boolean firstPageBlock = false;
-                String resultLabel = null;
                 int relativeDocumentPosition;
                 int characterDensity = 0;
 
+                // put the result in monograph item as list
+                monographItems = new ArrayList<>();
+                String resultWithLabel = null;
+
                 for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    Monograph monograph = new Monograph();
+                    String label = null;
+                    resultMonograph = new MonographItem();
                     Block block = page.getBlocks().get(blockIndex);
                     List<LayoutToken> tokenization = blocks.get(blockIndex).getTokens();
-
-
-                    resultMonograph = new MonographItem();
 
                     String localText = block.getText();
                     if (localText.length() == 0 || localText == null) {
@@ -325,12 +335,9 @@ public class MonographParser extends AbstractParser {
                     relativePagePositionChar = featureFactory.linearScaling(mm, pageLength, NBBINS_POSITION);
 
                     // add features
-                    Pair<String, List<LayoutToken>> featuredBlockMonograph = getBlockMonographFeatured(doc, blocks.get(blockIndex), tokenization,
+                    String featuredBlockMonograph = getBlockMonographFeatured(doc, blocks.get(blockIndex), tokenization,
                         firstPageBlock, lastPageBlock, newPage, currentFontString, currentFontSizeString, relativeDocumentPosition,
                         pagePos, relativePagePositionChar, inPageMainArea, spacingWithPreviousBlock, characterDensity);
-
-                    String blockMonographFeatured = featuredBlockMonograph.getLeft();
-                    List<LayoutToken> monographTokenization = featuredBlockMonograph.getRight();
 
                     // lowest position of the block
                     lowestPos = block.getY() + block.getHeight();
@@ -341,16 +348,29 @@ public class MonographParser extends AbstractParser {
                         nn += tokens.size();
                     }
 
-                    // labeling the featured monograph blocks
-                    if ((blockMonographFeatured != null) && (blockMonographFeatured.trim().length() > 0)) {
-                        resultLabel = label(blockMonographFeatured);
-                        resultExtraction(resultLabel, monographTokenization); // resultMonograph.setLabel
-                        resultMonograph.setBlock(blocks.get(blockIndex));
+                    // labeling the featured monograph by blocks
+                    if ((featuredBlockMonograph != null) && (featuredBlockMonograph.trim().length() > 0)) {
+                        resultWithLabel = tagger.label(featuredBlockMonograph);
+                        // TaggingTokenClusteror gives error if there is no label found, it should be one of labels defined
+                        //label = resultExtraction(resultWithLabel, tokens);
+                        label = monograph.getLabel(resultWithLabel);
                     }
+                    // blocks are separated by two carriage returns, they are from the text for the better view in TEI
+                    localText = localText.replaceAll("\n", "");
+                    resultMonograph.setText(localText);
+                    resultMonograph.setTokens(tokens);
+                    resultMonograph.setBoundingBox(blockBoundingBox);
+                    //label.replaceAll("<", "").replaceAll(">", "");
+                    resultMonograph.setLabel(label);
+                    monographItems.add(resultMonograph);
+
+                    result.append(teiFormatter.toTEIMonographPerItem(doc, resultMonograph));
                 }
                 newPage = false;
-            }*/
-            result.append("</TEI>");
+            }
+
+            result.append("\t</text>\n");
+            result.append("</TEI>\n");
 
             return result.toString();
 
@@ -362,10 +382,10 @@ public class MonographParser extends AbstractParser {
     /**
      * Return the monograph block with features to be processed by the CRF model
      */
-    public Pair<String, List<LayoutToken>> getBlockMonographFeatured(Document doc, Block block, List<LayoutToken> tokens, boolean firstBlock,
-                                                                     boolean lastBlock, boolean newPage, String currentFontString, String currentFontSizeString,
-                                                                     int relativeDocumentPosition, int pagePos, int relativePagePositionChar, boolean inPageMainArea,
-                                                                     int spacingWithPreviousBlock, int characterDensity) {
+    public String getBlockMonographFeatured(Document doc, Block block, List<LayoutToken> tokens, boolean firstBlock,
+                                            boolean lastBlock, boolean newPage, String currentFontString, String currentFontSizeString,
+                                            int relativeDocumentPosition, int pagePos, int relativePagePositionChar, boolean inPageMainArea,
+                                            int spacingWithPreviousBlock, int characterDensity) {
         StringBuilder monographFeatured = new StringBuilder();
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         String str = null;
@@ -393,7 +413,8 @@ public class MonographParser extends AbstractParser {
                     patterns.put(pattern, Integer.valueOf(nb + 1));
             }
         }
-        // add features
+
+        /*********add features*********/
 
         // check if we have a graphical object connected to the current block
         List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
@@ -596,69 +617,87 @@ public class MonographParser extends AbstractParser {
         features.characterDensity = characterDensity;
 
         // return the result of pair of (featured of blocks extracted from Pdf document) + (the token information)
-        return Pair.of(monographFeatured.toString(), tokens);
+        return features.printVector();
     }
 
     /**
      * Extract results from a labelled block of monograph.
      *
-     * @param result        result
-     * @param tokenizations list of tokens
+     * @param resultWithLabel :   featured block of monograph with the label
+     * @param tokenizations   :   list of tokens
      * @return a monograph item
      */
-    private MonographItem resultExtraction(String result, List<LayoutToken> tokenizations) {
-        MonographItem monographItem = new MonographItem();
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.MONOGRAPH, result, tokenizations);
-        List<TaggingTokenCluster> clusters = clusteror.cluster();
+    private String resultExtraction(String resultWithLabel, List<LayoutToken> tokenizations) {
+        String label = null;
+        TaggingTokenClusteror clusteror = null;
 
-        for (TaggingTokenCluster cluster : clusters) {
-            if (cluster == null) {
-                continue;
-            }
+        try {
+            if (resultWithLabel.contains(COVER_LABEL) || resultWithLabel.contains(TITLE_LABEL) || resultWithLabel.contains(PUBLISHER_LABEL)
+                || resultWithLabel.contains(SUMMARY_LABEL) || resultWithLabel.contains(BIOGRAPHY_LABEL) || resultWithLabel.contains(ADVERTISEMENT_LABEL)
+                || resultWithLabel.contains(TOC_LABEL) || resultWithLabel.contains(TOF_LABEL) || resultWithLabel.contains(PREFACE_LABEL)
+                || resultWithLabel.contains(DEDICATION_LABEL) || resultWithLabel.contains(UNIT_LABEL) || resultWithLabel.contains(REFERENCE_LABEL)
+                || resultWithLabel.contains(ANNEX_LABEL) || resultWithLabel.contains(INDEX_LABEL) || resultWithLabel.contains(GLOSSARY_LABEL)
+                || resultWithLabel.contains(BACK_LABEL) || resultWithLabel.contains(OTHER_LABEL)) {
+                clusteror = new TaggingTokenClusteror(GrobidModels.MONOGRAPH, resultWithLabel, tokenizations);
 
-            TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            Engine.getCntManager().i(clusterLabel);
+                if (clusteror != null) {
+                    List<TaggingTokenCluster> clusters = clusteror.cluster();
 
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            if (clusterLabel.equals(MONOGRAPH_COVER)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_TITLE)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_PUBLISHER)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_SUMMARY)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_BIOGRAPHY)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_ADVERTISEMENT)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_TOC)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_TOF)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_PREFACE)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_DEDICATION)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_UNIT)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_REFERENCE)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_ANNEX)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_INDEX)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_GLOSSARY)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_BACK)) {
-                monographItem.setLabel(clusterContent);
-            } else if (clusterLabel.equals(MONOGRAPH_OTHER)) {
-                monographItem.setLabel(clusterContent);
+                    for (TaggingTokenCluster cluster : clusters) {
+                        if (cluster == null) {
+                            continue;
+                        }
+
+                        TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                        Engine.getCntManager().i(clusterLabel);
+                        List<LayoutToken> tokens = cluster.concatTokens();
+                        //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+                        String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
+
+                        if (clusterLabel.equals(MONOGRAPH_COVER)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_TITLE)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_PUBLISHER)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_SUMMARY)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_BIOGRAPHY)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_ADVERTISEMENT)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_TOC)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_TOF)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_PREFACE)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_DEDICATION)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_UNIT)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_REFERENCE)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_ANNEX)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_INDEX)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_GLOSSARY)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_BACK)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        } else if (clusterLabel.equals(MONOGRAPH_OTHER)) {
+                            label = cluster.getTaggingLabel().getLabel();
+                        }
+                    }
+                }
             } else {
-                LOGGER.error("Warning: unexpected monograph model label - " + clusterLabel + " for " + clusterContent);
+                label = "<undefined>";
             }
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
-        return monographItem;
+        return label;
     }
 
     /**
@@ -1533,8 +1572,11 @@ public class MonographParser extends AbstractParser {
     }
 
 
-    @Override
     public void close() throws IOException {
-        super.close();
+        try {
+            monographParser.close();
+        } catch (Exception e) {
+            LOGGER.warn("Cannot close the parser: " + e.getMessage());
+        }
     }
 }
