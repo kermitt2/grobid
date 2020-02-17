@@ -34,6 +34,7 @@ pages:
     - 'Bibliographical references': 'training/Bibliographical-references.md'
     - 'Affiliation-address model': 'training/affiliation-address.md'
     - 'Date model': 'training/date.md'
+    - 'Monograph model': 'training/monograph.md'
   - Developer notes:
     - 'Developer Guide': 'Developer-guide.md'
     - 'Deep Learning models': 'Deep-Learning-models.md'
