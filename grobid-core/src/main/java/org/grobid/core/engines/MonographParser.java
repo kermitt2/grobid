@@ -102,6 +102,7 @@ public class MonographParser {
         DocumentSource documentSource = null;
         String lang = null;
         try {
+            Language langID = new Language();
             if (!input.exists()) {
                 throw new GrobidResourceException("Cannot process the monograph model, because the file '" +
                     input.getAbsolutePath() + "' does not exists.");
@@ -112,7 +113,6 @@ public class MonographParser {
             GrobidAnalysisConfig config = GrobidAnalysisConfig.defaultInstance(); // or "GrobidAnalysisConfig.builder().build()"
             doc.addTokenizedDocument(config);
             List<Block> blocks = doc.getBlocks();
-            Language langID = new Language();
 
             if (blocks == null) {
                 throw new Exception("PDF parsing resulted in empty content");
@@ -1151,6 +1151,8 @@ public class MonographParser {
         List<Block> blocks = null;
         Writer writer = null;
         StringBuilder builder = null;
+        String lang = null;
+        Language langID = null;
         try {
             builder = new StringBuilder();
             if (!inputFile.exists()) {
@@ -1170,9 +1172,16 @@ public class MonographParser {
             if (blocks == null) {
                 throw new Exception("PDF parsing resulted in empty content");
             } else {
-                String lang = null;
-                String text = doc.getBlocks().get(0).getText(); // get only the text from the first block as example to recognize the language
-                Language langID = languageUtilities.getInstance().runLanguageId(text);
+                // detect the language
+                String contentSample = "";
+                int sampleLength = 0;
+                for (int i = 0; i < blocks.size(); i++) {
+                    contentSample += doc.getBlocks().get(i).getText();
+                    if (sampleLength > 500) // it's assumed we need 500 characters of sample content for detecting the language
+                        break;
+                }
+
+                langID = languageUtilities.getInstance().runLanguageId(contentSample);
                 if (langID != null) {
                     lang = langID.getLang();
                 } else {
