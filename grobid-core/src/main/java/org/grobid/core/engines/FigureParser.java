@@ -79,7 +79,7 @@ class FigureParser extends AbstractParser {
             } else if (clusterLabel.equals(FIG_CONTENT)) {
                 figure.appendContent(clusterContent);
             } else {
-                LOGGER.error("Warning: unexpected figure model label - " + clusterLabel + " for " + clusterContent);
+                LOGGER.warn("Unexpected figure model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
         }
         return figure;
