@@ -33,7 +33,7 @@ public class DeLFTModel {
     public DeLFTModel(GrobidModel model) {
         this.modelName = model.getModelName().replace("-", "_");
         try {
-            LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
+            LOGGER.info("Loading DeLFT model for " + model.getModelName() + ".");
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath()));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
@@ -52,9 +52,14 @@ public class DeLFTModel {
         @Override
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
-            try { 
-                jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
-                jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
+            try {
+                String initSequence = this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')";
+                LOGGER.info(initSequence);
+                jep.eval(initSequence);
+
+                String loadModel = this.modelName + ".load(dir_path='" + modelPath.getAbsolutePath() + "')";
+                LOGGER.info(loadModel);
+                jep.eval(loadModel);
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);
             }
