@@ -46,6 +46,9 @@ public class GrobidAnalysisConfig {
     // if consolidate header
     private int consolidateHeader = 0;
 
+    // if the raw affiliation string should be included in the parsed results
+    private boolean includeRawAffiliations = false;
+
     // if the raw bibliographical string should be included in the parsed results
     private boolean includeRawCitations = false;
 
@@ -82,6 +85,15 @@ public class GrobidAnalysisConfig {
     public static class GrobidAnalysisConfigBuilder {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig();
 
+        public GrobidAnalysisConfigBuilder() {
+        }
+
+        public GrobidAnalysisConfigBuilder(GrobidAnalysisConfig config) {
+            // TODO add more properties
+            this.config.includeRawAffiliations = config.getIncludeRawAffiliations();
+            this.config.includeRawCitations = config.getIncludeRawCitations();
+        }
+
         public GrobidAnalysisConfigBuilder consolidateHeader(int consolidate) {
             config.consolidateHeader = consolidate;
             return this;
@@ -89,6 +101,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder includeRawAffiliations(boolean rawAffiliations) {
+            config.includeRawAffiliations = rawAffiliations;
             return this;
         }
 
@@ -163,6 +180,10 @@ public class GrobidAnalysisConfig {
         return new GrobidAnalysisConfigBuilder();
     }
 
+    public static GrobidAnalysisConfigBuilder builder(GrobidAnalysisConfig config) {
+        return new GrobidAnalysisConfigBuilder(config);
+    }
+
     public static GrobidAnalysisConfig defaultInstance() {
         return new GrobidAnalysisConfig();
     }
@@ -181,6 +202,10 @@ public class GrobidAnalysisConfig {
 
     public int getConsolidateHeader() {
         return consolidateHeader;
+    }
+
+    public boolean getIncludeRawAffiliations() {
+        return includeRawAffiliations;
     }
 
     public boolean getIncludeRawCitations() {

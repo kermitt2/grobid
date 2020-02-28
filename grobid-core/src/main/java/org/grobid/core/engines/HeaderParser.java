@@ -78,7 +78,7 @@ public class HeaderParser extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
-            String tei = processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
+            String tei = processingHeaderSection(config, doc, resHeader);
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
@@ -102,7 +102,7 @@ public class HeaderParser extends AbstractParser {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
 
-            String tei = processingHeaderBlock(config.getConsolidateHeader(), doc, resHeader);
+            String tei = processingHeaderBlock(config, doc, resHeader);
             return Pair.of(tei, doc);
         } catch (Exception e) {
             throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
@@ -116,7 +116,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after identification of the header blocks with heuristics (old approach)
      */
-    public String processingHeaderBlock(int consolidate, Document doc, BiblioItem resHeader) throws Exception {
+    public String processingHeaderBlock(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader) throws Exception {
         String header;
         //if (doc.getBlockDocumentHeaders() == null) {
         header = doc.getHeaderFeatured(true, true);
@@ -264,7 +264,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                resHeader = consolidateHeader(resHeader, consolidate);
+                resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -296,7 +296,7 @@ public class HeaderParser extends AbstractParser {
         doc.setResHeader(resHeader);
 
         TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
+        StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
         tei.append("\t</text>\n");
         tei.append("</TEI>\n");
         //LOGGER.debug(tei.toString());
@@ -306,7 +306,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model (new approach)
      */
-    public String processingHeaderSection(int consolidate, Document doc, BiblioItem resHeader) {
+    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -478,7 +478,7 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                resHeader = consolidateHeader(resHeader, consolidate);
+                resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
 
                 // normalization of dates
                 if (resHeader != null) {
@@ -504,7 +504,7 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, GrobidAnalysisConfig.defaultInstance());
+                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
                 tei.append("\t</text>\n");
                 tei.append("</TEI>\n");
                 return tei.toString();

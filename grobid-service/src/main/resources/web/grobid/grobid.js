@@ -950,48 +950,64 @@ var grobid = (function($) {
 			createInputFile(selected);
 			$('#consolidateBlock1').show();
 			$('#consolidateBlock2').hide();
+			$('#includeRawAffiliationsBlock').show();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processHeaderDocument');
 		}
 		else if (selected == 'processFulltextDocument') {
 			createInputFile(selected);
 			$('#consolidateBlock1').show();
 			$('#consolidateBlock2').show();
+			$('#includeRawAffiliationsBlock').show();
+			$('#includeRawCitationsBlock').show();
 			setBaseUrl('processFulltextDocument');
 		}
 		else if (selected == 'processDate') {
 			createInputTextArea('date');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processDate');
 		}
 		else if (selected == 'processHeaderNames') {
 			createInputTextArea('names');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processHeaderNames');
 		}
 		else if (selected == 'processCitationNames') {
 			createInputTextArea('names');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processCitationNames');
 		}
 		else if (selected == 'processReferences') {
 			createInputFile(selected);
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').show();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processReferences');
 		}
 		else if (selected == 'processAffiliations') {
 			createInputTextArea('affiliations');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processAffiliations');
 		}
 		else if (selected == 'processCitation') {
 			createInputTextArea('citations');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').show();
+			$('#includeRawAffiliationsBlock').hide();
+			$('#includeRawCitationsBlock').hide();
 			setBaseUrl('processCitation');
 		}
 		/*else if (selected == 'processCitationPatentTEI') {

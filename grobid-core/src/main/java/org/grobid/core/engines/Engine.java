@@ -342,11 +342,17 @@ public class Engine implements Closeable {
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, int consolidate, BiblioItem result) {
+    public String processHeader(
+        String inputFile,
+        int consolidate,
+        boolean includeRawAffiliations,
+        BiblioItem result
+    ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .startPage(0)
             .endPage(2)
             .consolidateHeader(consolidate)
+            .includeRawAffiliations(includeRawAffiliations)
             .build();
         return processHeader(inputFile, config, result);
     }
@@ -362,6 +368,10 @@ public class Engine implements Closeable {
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
+    public String processHeader(String inputFile, int consolidate, BiblioItem result) {
+        return processHeader(inputFile, GrobidAnalysisConfig.defaultInstance(), result);
+    }
+
     public String processHeader(String inputFile, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
