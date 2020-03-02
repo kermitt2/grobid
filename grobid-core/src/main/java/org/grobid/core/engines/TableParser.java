@@ -83,7 +83,7 @@ public class TableParser extends AbstractParser {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
             } else {
-                LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
+                LOGGER.warn("Unexpected table model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
         }     
