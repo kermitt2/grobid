@@ -1,0 +1,415 @@
+
+
+====================== Fold 0 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_0.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph8895307053842863210.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph4031007612195039890.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      98           0            0            0            1      
+<biography>          99           0            0            0            1      
+<cover>              90           37.5         37.5         37.5         8      
+<dedication>         93           0            0            0            7      
+<glossary>           96           0            0            0            2      
+<preface>            89           0            0            0            9      
+<publisher>          94           50           50           50           6      
+<summary>            99           0            0            0            1      
+<title>              83           0            0            0            10     
+<toc>                90           0            0            0            6      
+<tof>                98           0            0            0            1      
+<unit>               83           10           11.11        10.53        9      
+
+all (micro avg.)     92.67        17.07        11.48        13.73        61     
+all (macro avg.)     92.67        8.12         8.22         8.17         61     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 1 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_1.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph513708501274324727.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph6042064410733205735.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      98.8         0            0            0            1      
+<biography>          98.8         0            0            0            1      
+<cover>              97.59        87.5         87.5         87.5         8      
+<dedication>         93.98        66.67        33.33        44.44        6      
+<glossary>           98.8         0            0            0            1      
+<preface>            91.57        0            0            0            5      
+<publisher>          89.16        20           16.67        18.18        6      
+<summary>            97.59        0            0            0            2      
+<title>              84.34        28.57        20           23.53        10     
+<toc>                90.36        0            0            0            5      
+<tof>                97.59        0            0            0            1      
+<unit>               81.93        0            0            0            7      
+
+all (micro avg.)     93.37        32.43        22.64        26.67        53     
+all (macro avg.)     93.37        16.89        13.12        14.47        53     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 2 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_2.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph2764498487919787991.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph8829541565096300546.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      97.62        100          33.33        50           3      
+<cover>              94.05        62.5         71.43        66.67        7      
+<dedication>         94.05        50           40           44.44        5      
+<glossary>           96.43        100          25           40           4      
+<preface>            85.71        0            0            0            7      
+<publisher>          92.86        0            0            0            3      
+<summary>            95.24        0            0            0            2      
+<title>              90.48        50           50           50           8      
+<toc>                90.48        0            0            0            5      
+<tof>                97.62        0            0            0            2      
+<unit>               84.52        14.29        12.5         13.33        8      
+
+all (micro avg.)     92.64        33.33        25.93        29.17        54     
+all (macro avg.)     92.64        34.25        21.11        24.04        54     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 3 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_3.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph6336967582170029541.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph1907992477098809594.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      100          100          100          100          1      
+<back>               98.59        0            0            0            1      
+<cover>              90.14        50           42.86        46.15        7      
+<dedication>         95.77        0            0            0            3      
+<glossary>           98.59        0            0            0            1      
+<preface>            84.51        0            0            0            9      
+<publisher>          84.51        0            0            0            6      
+<summary>            98.59        0            0            0            0      
+<title>              90.14        40           33.33        36.36        6      
+<toc>                91.55        0            0            0            4      
+<tof>                98.59        0            0            0            1      
+<unit>               80.28        0            0            0            6      
+
+all (micro avg.)     92.06        20.69        13.33        16.22        45     
+all (macro avg.)     92.06        17.27        16.02        16.59        45     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 4 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_4.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph6605682791406543933.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph2634819476569639632.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      91.86        0            0            0            4      
+<back>               98.84        0            0            0            1      
+<biography>          97.67        0            0            0            2      
+<cover>              84.88        14.29        12.5         13.33        8      
+<dedication>         95.35        50           25           33.33        4      
+<glossary>           95.35        0            0            0            2      
+<preface>            87.21        20           12.5         15.38        8      
+<publisher>          90.7         0            0            0            5      
+<summary>            97.67        0            0            0            1      
+<title>              90.7         0            0            0            5      
+<toc>                93.02        0            0            0            3      
+<unit>               83.72        0            0            0            7      
+
+all (micro avg.)     92.25        8.33         6            6.98         50     
+all (macro avg.)     92.25        7.02         4.17         5.17         50     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 5 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_5.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph8870560212566424922.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph3300446042467645398.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      95.29        0            0            0            3      
+<cover>              100          100          100          100          7      
+<dedication>         95.29        0            0            0            2      
+<glossary>           96.47        0            0            0            2      
+<preface>            84.71        25           9.09         13.33        11     
+<publisher>          89.41        40           25           30.77        8      
+<summary>            96.47        0            0            0            2      
+<title>              88.24        25           12.5         16.67        8      
+<toc>                92.94        25           25           25           4      
+<tof>                97.65        0            0            0            1      
+<unit>               83.53        12.5         12.5         12.5         8      
+
+all (micro avg.)     92.73        34.21        23.21        27.66        56     
+all (macro avg.)     92.73        20.68        16.74        18.02        56     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 6 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_6.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph3490720928912302694.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph1708096569243090854.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      95.74        0            0            0            2      
+<cover>              95.74        75           75           75           8      
+<dedication>         91.49        0            0            0            4      
+<glossary>           97.87        0            0            0            1      
+<preface>            81.91        0            0            0            10     
+<publisher>          88.3         16.67        14.29        15.38        7      
+<summary>            98.94        0            0            0            1      
+<title>              89.36        20           14.29        16.67        7      
+<toc>                87.23        0            0            0            6      
+<tof>                98.94        0            0            0            1      
+<unit>               82.98        0            0            0            7      
+
+all (micro avg.)     91.68        16.67        14.81        15.69        54     
+all (macro avg.)     91.68        10.15        9.42         9.73         54     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 7 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_7.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph829598952882192428.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph2846562713524298055.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      97.12        0            0            0            2      
+<biography>          98.08        0            0            0            1      
+<cover>              91.35        42.86        37.5         40           8      
+<dedication>         92.31        0            0            0            5      
+<glossary>           96.15        0            0            0            2      
+<preface>            86.54        0            0            0            9      
+<publisher>          90.38        16.67        16.67        16.67        6      
+<reference>          99.04        0            0            0            1      
+<summary>            97.12        0            0            0            3      
+<title>              89.42        16.67        14.29        15.38        7      
+<toc>                90.38        16.67        16.67        16.67        6      
+<tof>                97.12        0            0            0            3      
+<unit>               82.69        0            0            0            9      
+
+all (micro avg.)     92.9         13.04        9.68         11.11        62     
+all (macro avg.)     92.9         7.14         6.55         6.82         62     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 8 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_8.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph6147609881310292055.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph3444919573766234143.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      98.13        50           50           50           2      
+<biography>          99.07        0            0            0            1      
+<cover>              88.79        25           25           25           8      
+<dedication>         95.33        0            0            0            4      
+<glossary>           99.07        0            0            0            1      
+<preface>            90.65        0            0            0            6      
+<publisher>          95.33        60           50           54.55        6      
+<summary>            92.52        0            0            0            4      
+<title>              85.98        11.11        12.5         11.76        8      
+<toc>                87.85        0            0            0            6      
+<tof>                99.07        0            0            0            1      
+<unit>               82.24        8.33         11.11        9.52         9      
+
+all (micro avg.)     92.83        15.38        14.29        14.81        56     
+all (macro avg.)     92.83        12.87        12.38        12.57        56     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+
+====================== Fold 9 ====================== 
+Saving model in /data/workspace/tkristan/grobid/grobid-home/tmp/monograph_nfold_9.wapiti
+Training input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph4680665962577317263.train
+Evaluation input data: /data/workspace/tkristan/grobid/grobid-home/tmp/monograph1446230644916006615.test
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      97.7         100          28.57        44.44        7      
+<cover>              92.63        44.44        57.14        50           14     
+<dedication>         89.4         0            0            0            8      
+<glossary>           96.77        0            0            0            2      
+<preface>            88.94        6.67         9.09         7.69         11     
+<publisher>          92.17        33.33        30.77        32           13     
+<summary>            99.08        0            0            0            1      
+<title>              87.1         14.29        11.11        12.5         18     
+<toc>                90.78        0            0            0            9      
+<tof>                99.54        0            0            0            0      
+<unit>               79.26        9.38         15.79        11.76        19     
+
+all (micro avg.)     91.38        16           19.61        17.62        102    
+all (macro avg.)     91.38        20.81        15.25        15.84        102    
+
+===== Instance-level results =====
+
+Total expected instances:   15
+Correct instances:          1
+Instance-level recall:      6.67
+
+
+
+Summary results: 
+Worst fold
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      91.86        0            0            0            4      
+<back>               98.84        0            0            0            1      
+<biography>          97.67        0            0            0            2      
+<cover>              84.88        14.29        12.5         13.33        8      
+<dedication>         95.35        50           25           33.33        4      
+<glossary>           95.35        0            0            0            2      
+<preface>            87.21        20           12.5         15.38        8      
+<publisher>          90.7         0            0            0            5      
+<summary>            97.67        0            0            0            1      
+<title>              90.7         0            0            0            5      
+<toc>                93.02        0            0            0            3      
+<unit>               83.72        0            0            0            7      
+
+all (micro avg.)     92.25        8.33         6            6.98         50     
+all (macro avg.)     92.25        7.02         4.17         5.17         50     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+Best fold:
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      97.62        100          33.33        50           3      
+<cover>              94.05        62.5         71.43        66.67        7      
+<dedication>         94.05        50           40           44.44        5      
+<glossary>           96.43        100          25           40           4      
+<preface>            85.71        0            0            0            7      
+<publisher>          92.86        0            0            0            3      
+<summary>            95.24        0            0            0            2      
+<title>              90.48        50           50           50           8      
+<toc>                90.48        0            0            0            5      
+<tof>                97.62        0            0            0            2      
+<unit>               84.52        14.29        12.5         13.33        8      
+
+all (micro avg.)     92.64        33.33        25.93        29.17        54     
+all (macro avg.)     92.64        34.25        21.11        24.04        54     
+
+===== Instance-level results =====
+
+Total expected instances:   8
+Correct instances:          0
+Instance-level recall:      0
+
+
+Average over 10 folds: 
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      97.03        35           21.19        24.44        26     
+<back>               19.74        0            0            0            2      
+<biography>          49.26        0            0            0            6      
+<cover>              92.52        53.91        54.64        54.12        83     
+<dedication>         93.6         16.67        9.83         12.22        48     
+<glossary>           97.15        10           2.5          4            18     
+<preface>            87.08        5.17         3.07         3.64         85     
+<publisher>          90.68        23.67        20.34        21.75        66     
+<reference>          9.9          0            0            0            1      
+<summary>            97.22        0            0            0            17     
+<title>              87.88        20.56        16.8         18.29        87     
+<toc>                90.46        4.17         4.17         4.17         54     
+<tof>                88.41        0            0            0            11     
+<unit>               82.42        5.45         6.3          5.76         89     
+
+all                  92.45        20.72        16.1         17.96  
+
+===== Instance-level results =====
+
+Total expected instances:   8.7
+Correct instances:          0.1
+Instance-level recall:      1.15
+
+
+N-Fold evaluation for monograph model is realized in 23091173 ms
