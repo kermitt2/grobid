@@ -410,7 +410,7 @@ public class Engine implements Closeable {
      * @param inputFile            - absolute path to the pdf to be processed
      * @return the resulting structured document as a TEI string.
      */
-    public String monographToTEI(File inputFile) throws Exception {
+   /* public String monographToTEI(File inputFile) throws Exception {
         return monographToTEIDoc(inputFile);
     }
 
@@ -423,7 +423,7 @@ public class Engine implements Closeable {
         LOGGER.debug("Ending processing monogrpah on " + inputFile + ". Time to process: "
             + (System.currentTimeMillis() - time) + "ms");
         return result;
-    }
+    }*/
 
     /**
      * Create training data for the monograph model based on the application of

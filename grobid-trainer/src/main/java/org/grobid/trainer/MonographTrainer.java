@@ -15,7 +15,8 @@ import java.io.*;
 import java.util.List;
 
 /**
- * @author Patrice Lopez
+ * A class for training a monograph model based on the CRF files containing features
+ * and annotated TEI/XML files containing annotated data
  */
 public class MonographTrainer extends AbstractTrainer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MonographTrainer.class);
@@ -78,6 +79,8 @@ public class MonographTrainer extends AbstractTrainer {
         try {
             System.out.println("sourceTEIPathLabel: " + sourceTEIPathLabel);
             System.out.println("sourceRawPathLabel: " + sourceRawPathLabel);
+            System.out.println("Training data under: " + trainingOutputPath);
+            System.out.println("Evaluation data under: " + evalOutputPath);
 
             // we need first to generate the labeled files from the TEI annotated files
             File input = new File(sourceTEIPathLabel);
@@ -111,29 +114,27 @@ public class MonographTrainer extends AbstractTrainer {
                 writer3 = new OutputStreamWriter(os3, "UTF8");
             }
 
-            System.out.println("Training data under: " + trainingOutputPath);
-            System.out.println("Evaluation data under: " + evalOutputPath);
-
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
 
             int n = 0;
-            for (; n < refFiles.length; n++) { // read the labeled files from the TEI annotated files
+            for (; n < refFiles.length; n++) { // read the labeled TEI annotated files
                 final File teifile = refFiles[n];
-                TEIMonographSaxParser parser2 = new TEIMonographSaxParser();
 
                 String name = teifile.getName();
                 LOGGER.info("Processing: " + name);
+
+                TEIMonographSaxParser parser2 = new TEIMonographSaxParser();
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
                 p.parse(teifile, parser2);
 
-                List<TEIMonographItem> labeled = parser2.getMonographItems(); // get the labeled tokens extracted from the TEI annotated files
-                totalExamples += parser2.getTotalReferences();
+                // read the labeled data based on their granularity (by pages/blocks/lines/tokens)
+                List<TEIMonographItem> labeled = parser2.getMonographItems();
 
                 // we can now add the features
-                // we open the featured file (raw CRF files without the label)
+                // we open the featured file (raw CRF files without any labels)
                 File rawCorpusDir = new File(new File(sourceRawPathLabel).getAbsolutePath());
                 if (!rawCorpusDir.exists()) {
                     throw new IllegalStateException("Folder " + rawCorpusDir.getAbsolutePath() +
@@ -158,19 +159,14 @@ public class MonographTrainer extends AbstractTrainer {
 
                 // read by lines the raw CRF file and add the tags
                 String line = bis.readLine();
-                String token1 = null, token2 = null, token3 = null, text = null;
+                String token1 = null, token2 = null;
                 int totFound = 0, lastPositionFound = 0, lastPosition = 0, totData = 0;
                 boolean found = false;
                 while (line != null) {
                     String lines[] = line.split(" ");
-                    /* every line of a raw file contains 3 tokens:
-                        1 - the first token of the first line of every block
-                        2 - the first token of the longest line of every block
-                        3 - the last token of the last line of every block
-                     */
+                    // every line of a CRF raw file contains 2 first tokens of each line of Pdf files
                     token1 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[0]);
                     token2 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[1]);
-                    token3 = UnicodeUtil.normaliseTextAndRemoveSpaces(lines[2]);
 
                     String currentLocalText = null, currentTag = null;
                     if (lastPosition >= labeled.size() - 1) {
@@ -182,12 +178,15 @@ public class MonographTrainer extends AbstractTrainer {
                         currentLocalText = labeled.get(i).getText();
                         currentTag = labeled.get(i).getLabel();
 
-                        if (currentLocalText.contains(token1) || currentLocalText.contains(token2) ||
-                            currentLocalText.contains(token3)) { // if they are found
+                        if (currentLocalText.contains(token1) || currentLocalText.contains(token2)) { // if they are found
                             found = true;
                             totFound++;
                             lastPositionFound = i;
-                            referenceText.append(line).append(" ").append(currentTag).append("\n");
+                            if (line.contains("BLOCKSTART") && line.contains("PAGESTART")){
+                                referenceText.append(line).append(" I-").append(currentTag).append("\n");
+                            } else {
+                                referenceText.append(line).append(" ").append(currentTag).append("\n");
+                            }
                         }
 
                         if (found || lastPosition >= labeled.size() - 1) {
@@ -232,7 +231,7 @@ public class MonographTrainer extends AbstractTrainer {
                 os3.close();
             }
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while training/evaluation monograph model.", e);
+            throw new GrobidException("An exception occured while the training/evaluation process of monograph model.", e);
         }
         return totalExamples;
     }

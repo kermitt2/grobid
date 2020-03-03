@@ -1,6 +1,5 @@
 package org.grobid.core.document;
 
-import org.grobid.core.data.Monograph;
 import org.grobid.core.data.MonographItem;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.utilities.GrobidProperties;

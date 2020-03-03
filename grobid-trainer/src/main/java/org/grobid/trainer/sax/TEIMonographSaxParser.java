@@ -19,7 +19,6 @@ import java.util.StringTokenizer;
 public class TEIMonographSaxParser extends DefaultHandler {
     private StringBuffer accumulator = null; // current accumulated text
     private Stack<String> currentTags = null;
-    private int totalReferences = 0;
     private ArrayList<TEIMonographItem> monographItems = null;
 
     public TEIMonographSaxParser() {
@@ -30,7 +29,6 @@ public class TEIMonographSaxParser extends DefaultHandler {
 
     public void characters(char[] buffer, int start, int length) {
         accumulator.append(buffer, start, length);
-        //System.out.println(accumulator.toString());
     }
 
     public String getText() {
@@ -105,7 +103,6 @@ public class TEIMonographSaxParser extends DefaultHandler {
             }
             // the tags based on the tags defined in the TaggingLabels class for monograph model (17 labels)
             accumulator.setLength(0);
-            totalReferences++;
             if (qName.equals("cover")) {
                 currentTags.push("<cover>");
             } else if (qName.equals("title")) {
@@ -168,9 +165,5 @@ public class TEIMonographSaxParser extends DefaultHandler {
             monographItems.add(teiMonographItem);
             accumulator.setLength(0);
         }
-    }
-
-    public int getTotalReferences() {
-        return totalReferences;
     }
 }

@@ -220,7 +220,7 @@ public class GrobidRestProcessFiles {
             }
 
             // starts conversion process
-            retVal = engine.monographToTEI(originFile);
+            //retVal = engine.monographToTEI(originFile);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
