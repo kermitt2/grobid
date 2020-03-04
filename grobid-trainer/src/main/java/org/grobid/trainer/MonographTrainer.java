@@ -144,8 +144,7 @@ public class MonographTrainer extends AbstractTrainer {
                 File theRawFile = new File(new File(sourceRawPathLabel).getAbsolutePath() + File.separator +
                     name.replace(".tei.xml", ""));
                 if (!theRawFile.exists()) {
-                    System.out.println("Raw file " + theRawFile +
-                        " does not exist. Please have a look!");
+                    System.out.println("The raw file " + theRawFile + " does not exist. Please have a look!");
                     continue;
                 }
 
@@ -206,19 +205,16 @@ public class MonographTrainer extends AbstractTrainer {
                 bis.close();
 
                 if ((writer2 == null) && (writer3 != null))
-                    writer3.write(referenceText.toString() + "\n \n");
+                    writer3.write(referenceText.toString() + "\n\n");
                 if ((writer2 != null) && (writer3 == null))
-                    writer2.write(referenceText.toString() + "\n \n");
+                    writer2.write(referenceText.toString() + "\n\n");
                 else {
                     if (Math.random() <= splitRatio && writer2 != null) {
-                        writer2.write(referenceText.toString() + "\n \n");
+                        writer2.write(referenceText.toString() + "\n\n");
                     } else if (writer3 != null) {
-                        writer3.write(referenceText.toString() + "\n \n");
+                        writer3.write(referenceText.toString() + "\n\n");
                     }
                 }
-
-                if ((writer2 == null) && (writer3 != null))
-                    writer3.write(referenceText.toString() + "\n \n");
             }
 
             if (writer2 != null) {
