@@ -51,10 +51,11 @@ public class GrobidRestProcessFiles {
      * extracts only the header data.
      *
      * @param inputStream the data of origin document
+     * @param fileName filename of the origin document
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
-    public Response processStatelessHeaderDocument(final InputStream inputStream, final int consolidate) {
+    public Response processStatelessHeaderDocument(final InputStream inputStream, final String fileName, final int consolidate) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         Response response = null;
@@ -68,12 +69,20 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            String extension = "pdf";
+            if (fileName != null) {
+                String fileNameLow = fileName.toLowerCase();
+                if (fileNameLow.endsWith("docx"))
+                    extension = "docx";
+            }
+
+            // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
+            originFile = IOUtilities.writeInputFile(inputStream, extension);
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
-            } 
+            }
 
             // starts conversion process
             retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
@@ -109,20 +118,25 @@ public class GrobidRestProcessFiles {
      * Uploads the origin document which shall be extracted into TEI.
      *
      * @param inputStream          the data of origin document
+     * @param fileName             filename of the origin document
      * @param consolidateHeader    the consolidation option allows GROBID to exploit Crossref
      *                             for improving header information
      * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref
      *                             for improving citations information
+     * @param includeRawCitations  if true, add the orginal full raw citation to every bibliographical
+     *                             reference structures
      * @param startPage            give the starting page to consider in case of segmentation of the
      *                             PDF, -1 for the first page (default)
      * @param endPage              give the end page to consider in case of segmentation of the
      *                             PDF, -1 for the last page (default)
      * @param generateIDs          if true, generate random attribute id on the textual elements of
      *                             the resulting TEI
+     * @param teiCoordinates       list of TEI XML elements to be enriched with the original PDF coordinates 
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
+                                          final String fileName, 
                                           final int consolidateHeader,
                                           final int consolidateCitations,
                                           final boolean includeRawCitations,
@@ -144,7 +158,15 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            String extension = "pdf";
+            if (fileName != null) {
+                String fileNameLow = fileName.toLowerCase();
+                if (fileNameLow.endsWith("docx"))
+                    extension = "docx";
+            }
+
+            // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
+            originFile = IOUtilities.writeInputFile(inputStream, extension);
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
@@ -211,12 +233,14 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
+                                                          final String fileName, 
                                                           final int consolidateHeader,
                                                           final int consolidateCitations,
                                                           final boolean includeRawCitations,
                                                           final int startPage,
                                                           final int endPage,
-                                                          final boolean generateIDs) throws Exception {
+                                                          final boolean generateIDs,
+                                                          final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -231,7 +255,15 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            String extension = "pdf";
+            if (fileName != null) {
+                String fileNameLow = fileName.toLowerCase();
+                if (fileNameLow.endsWith("docx"))
+                    extension = "docx";
+            }
+
+            // the tmp file will have an unambiguous file extension (e.g. .pdf. .docx, .doc, ...)
+            originFile = IOUtilities.writeInputFile(inputStream, extension);
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
@@ -251,6 +283,7 @@ public class GrobidRestProcessFiles {
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .pdfAssetPath(new File(assetPath))
+                    .generateTeiCoordinates(teiCoordinates)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);
@@ -462,6 +495,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessReferencesDocument(final InputStream inputStream,
+                                                       final String fileName,
                                                        final int consolidate,
                                                        final boolean includeRawCitations) {
         LOGGER.debug(methodLogIn());
@@ -477,7 +511,14 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            String extension = "pdf";
+            if (fileName != null) {
+                String fileNameLow = fileName.toLowerCase();
+                if (fileNameLow.endsWith("docx"))
+                    extension = "docx";
+            }
+
+            originFile = IOUtilities.writeInputFile(inputStream, extension);
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(

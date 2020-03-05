@@ -5,6 +5,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.engines.Engine;
@@ -144,19 +145,41 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processHeaderDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+                                               @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                @FormDataParam("consolidateHeader") String consolidate) {
         int consol = validateConsolidationParam(consolidate);
 
-        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
+        String fileName = fileDetail.getFileName();
+
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, fileName, consol);
     }
+
+    /*@Path(PATH_HEADER)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processHeaderDocument_post(@FormDataParam(INPUT) FormDataBodyPart body,
+                                               @FormDataParam("consolidateHeader") String consolidate) {
+        System.out.println(body.getMediaType());
+        int consol = validateConsolidationParam(consolidate);
+
+        InputStream inputStream = body.getEntityAs(InputStream.class);
+
+        FormDataContentDisposition fileDetail = body.getFormDataContentDisposition();
+        System.out.println(fileDetail.toString());
+        System.out.println(fileDetail.getFileName());
+
+        return restProcessFiles.processStatelessHeaderDocument(inputStream, consol);
+    }*/
 
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessHeaderDocument(@FormDataParam(INPUT) InputStream inputStream,
+                                                   @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                    @FormDataParam("consolidateHeader") String consolidate) {
-        return processHeaderDocument_post(inputStream, consolidate);
+        return processHeaderDocument_post(inputStream, fileDetail, consolidate);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -164,6 +187,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processFulltextDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+                                                 @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                  @FormDataParam("consolidateHeader") String consolidateHeader,
                                                  @FormDataParam("consolidateCitations") String consolidateCitations,
                                                  @FormDataParam("includeRawCitations") String includeRawCitations,
@@ -171,7 +195,8 @@ public class GrobidRestService implements GrobidPaths {
                                                  @DefaultValue("-1") @FormDataParam("end") int endPage,
                                                  @FormDataParam("generateIDs") String generateIDs,
                                                  @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
-        return processFulltext(inputStream, consolidateHeader, consolidateCitations, includeRawCitations, startPage, endPage, generateIDs, coordinates);
+        return processFulltext(inputStream, fileDetail, consolidateHeader, consolidateCitations, includeRawCitations, 
+            startPage, endPage, generateIDs, coordinates);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -179,6 +204,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processFulltextDocument(@FormDataParam(INPUT) InputStream inputStream,
+                                            @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                             @FormDataParam("consolidateHeader") String consolidateHeader,
                                             @FormDataParam("consolidateCitations") String consolidateCitations,
                                             @FormDataParam("includeRawCitations") String includeRawCitations,
@@ -186,13 +212,15 @@ public class GrobidRestService implements GrobidPaths {
                                             @DefaultValue("-1") @FormDataParam("end") int endPage,
                                             @FormDataParam("generateIDs") String generateIDs,
                                             @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
-        return processFulltext(inputStream, consolidateHeader, consolidateCitations, includeRawCitations, startPage, endPage, generateIDs, coordinates);
+        return processFulltext(inputStream, fileDetail, consolidateHeader, consolidateCitations, includeRawCitations, 
+            startPage, endPage, generateIDs, coordinates);
     }
 
     private Response processFulltext(InputStream inputStream,
-                                     @FormDataParam("consolidateHeader") String consolidateHeader,
-                                     @FormDataParam("consolidateCitations") String consolidateCitations,
-                                     @FormDataParam("includeRawCitations") String includeRawCitations,
+                                     FormDataContentDisposition fileDetail,
+                                     String consolidateHeader,
+                                     String consolidateCitations,
+                                     String includeRawCitations,
                                      int startPage,
                                      int endPage,
                                      String generateIDs,
@@ -203,9 +231,12 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
         
+        String fileName = fileDetail.getFileName();
+
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
-        return restProcessFiles.processFulltextDocument(inputStream, consolHeader, consolCitations, includeRaw, startPage, endPage, generate, teiCoordinates);
+        return restProcessFiles.processFulltextDocument(inputStream, fileName, consolHeader, consolCitations, includeRaw, 
+            startPage, endPage, generate, teiCoordinates);
     }
 
     private List<String> collectCoordinates(List<FormDataBodyPart> coordinates) {
@@ -252,13 +283,16 @@ public class GrobidRestService implements GrobidPaths {
     @Produces("application/zip")
     @POST
     public Response processFulltextAssetDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+                                                      @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                       @FormDataParam("consolidateHeader") String consolidateHeader,
                                                       @FormDataParam("consolidateCitations") String consolidateCitations,
                                                       @FormDataParam("includeRawCitations") String includeRawCitations,
                                                       @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                       @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                      @FormDataParam("generateIDs") String generateIDs) throws Exception {
-        return processStatelessFulltextAssetHelper(inputStream, consolidateHeader, consolidateCitations, includeRawCitations, startPage, endPage, generateIDs);
+                                                      @FormDataParam("generateIDs") String generateIDs,
+                                                      @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        return processStatelessFulltextAssetHelper(inputStream, fileDetail, consolidateHeader, consolidateCitations, includeRawCitations, 
+            startPage, endPage, generateIDs, coordinates);
     }
 
     @Path(PATH_FULL_TEXT_ASSET)
@@ -266,29 +300,39 @@ public class GrobidRestService implements GrobidPaths {
     @Produces("application/zip")
     @PUT
     public Response processStatelessFulltextAssetDocument(@FormDataParam(INPUT) InputStream inputStream,
+                                                          @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                           @FormDataParam("consolidateHeader") String consolidateHeader,
                                                           @FormDataParam("consolidateCitations") String consolidateCitations,
                                                           @FormDataParam("includeRawCitations") String includeRawCitations,
                                                           @DefaultValue("-1") @FormDataParam("start") int startPage,
                                                           @DefaultValue("-1") @FormDataParam("end") int endPage,
-                                                          @FormDataParam("generateIDs") String generateIDs) throws Exception {
-        return processStatelessFulltextAssetHelper(inputStream, consolidateHeader, consolidateCitations, includeRawCitations, startPage, endPage, generateIDs);
+                                                          @FormDataParam("generateIDs") String generateIDs,
+                                                          @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        return processStatelessFulltextAssetHelper(inputStream, fileDetail, consolidateHeader, consolidateCitations, includeRawCitations, 
+            startPage, endPage, generateIDs, coordinates);
     }
 
     private Response processStatelessFulltextAssetHelper(InputStream inputStream,
-                                                         String consolidateHeader,
-                                                         String consolidateCitations,
-                                                         String includeRawCitations,
-                                                         int startPage,
-                                                         int endPage,
-                                                         String generateIDs) throws Exception {
+                                                        FormDataContentDisposition fileDetail,
+                                                        String consolidateHeader,
+                                                        String consolidateCitations,
+                                                        String includeRawCitations,
+                                                        int startPage,
+                                                        int endPage,
+                                                        String generateIDs,
+                                                        List<FormDataBodyPart> coordinates) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
 
         boolean generate = validateGenerateIdParam(generateIDs);
 
-        return restProcessFiles.processStatelessFulltextAssetDocument(inputStream, consolHeader, consolCitations, includeRaw, startPage, endPage, generate);
+        String fileName = fileDetail.getFileName();
+
+        List<String> teiCoordinates = collectCoordinates(coordinates);
+
+        return restProcessFiles.processStatelessFulltextAssetDocument(inputStream, fileName, consolHeader, consolCitations, includeRaw, 
+            startPage, endPage, generate, teiCoordinates);
     }
 
     /*@Path(PATH_CITATION_PATENT_TEI)
@@ -519,11 +563,13 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processReferencesDocument_post(@FormDataParam(INPUT) InputStream inputStream,
+                                                   @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                    @FormDataParam("consolidateCitations") String consolidate,
                                                    @FormDataParam("includeRawCitations") String includeRawCitations) {
         int consol = validateConsolidationParam(consolidate);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-        return restProcessFiles.processStatelessReferencesDocument(inputStream, consol, includeRaw);
+        String fileName = fileDetail.getFileName();
+        return restProcessFiles.processStatelessReferencesDocument(inputStream, fileName, consol, includeRaw);
     }
 
     @Path(PATH_REFERENCES)
@@ -531,11 +577,13 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @PUT
     public Response processStatelessReferencesDocument(@FormDataParam(INPUT) InputStream inputStream,
+                                                       @FormDataParam(INPUT) FormDataContentDisposition fileDetail,
                                                        @FormDataParam("consolidateCitations") String consolidate,
                                                        @FormDataParam("includeRawCitations") String includeRawCitations) {
         int consol = validateConsolidationParam(consolidate);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-        return restProcessFiles.processStatelessReferencesDocument(inputStream, consol, includeRaw);
+        String fileName = fileDetail.getFileName();
+        return restProcessFiles.processStatelessReferencesDocument(inputStream, fileName, consol, includeRaw);
     }
 
     @Path(PATH_PDF_ANNOTATION)

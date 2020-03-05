@@ -226,6 +226,8 @@ project("grobid-core") {
         compile 'javax.xml.bind:jaxb-api:2.3.0'
         compile 'black.ninia:jep:3.8.2'
         compile 'org.slf4j:slf4j-log4j12:1.7.25'
+        compile "fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.6"
+        //compile group: 'org.apache.tika', name: 'tika-core', version: '1.22'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 

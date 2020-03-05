@@ -5,6 +5,7 @@ import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
 import java.nio.charset.StandardCharsets;
 
@@ -105,11 +106,18 @@ public class FullTextParser extends AbstractParser {
         tmpPath = GrobidProperties.getTempPath();
     }
 
-	public Document processing(File inputPdf,
+	public Document processing(File input,
 							   GrobidAnalysisConfig config) throws Exception {
-		DocumentSource documentSource = 
-			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(), 
-				config.getPdfAssetPath() != null, true, false);
+        DocumentSource documentSource = null;
+        String extension = FilenameUtils.getExtension(input.getName());
+        if ( extension != null && (extension.toLowerCase().equals("docx")) ) {
+            documentSource = DocumentSource.fromDocx(input, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        } else {
+            documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        }
+
 		return processing(documentSource, config);
 	}
 

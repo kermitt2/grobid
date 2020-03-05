@@ -57,15 +57,19 @@ public class IOUtilities {
     }
 
     /**
-     * Write an input stream in temp directory.
+     * Write an input stream in temp directory, default is PDF file
      */
     public static File writeInputFile(InputStream inputStream) {
+        return writeInputFile(inputStream, "pdf");
+    }
+
+    public static File writeInputFile(InputStream inputStream, String extension) {
         LOGGER.debug(">> set origin document for stateless service'...");
 
         File originFile = null;
         OutputStream out = null;
         try {
-            originFile = newTempFile("origin", ".pdf");
+            originFile = newTempFile("origin", extension);
 
             out = new FileOutputStream(originFile);
 
@@ -99,6 +103,8 @@ public class IOUtilities {
      */
     public static File newTempFile(String fileName, String extension) {
         try {
+            if (!extension.startsWith("."))
+                extension = "." + extension;
             return File.createTempFile(fileName, extension, GrobidProperties.getTempPath());
         } catch (IOException e) {
             throw new GrobidResourceException(
