@@ -88,6 +88,34 @@ public class BiblioItemTest {
     }
 
     @Test
+    public void shouldIncludeMarkerInRawAffiliationText() throws Exception {
+        GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
+        Affiliation aff = new Affiliation();
+        aff.setMarker("A");
+        aff.setRawAffiliationString("raw affiliation 1");
+        aff.setFailAffiliation(false);
+        Person author = new Person();
+        author.setLastName("Smith");
+        author.setAffiliations(Arrays.asList(aff));
+        BiblioItem biblioItem = new BiblioItem();
+        biblioItem.setFullAuthors(Arrays.asList(author));
+        biblioItem.setFullAffiliations(Arrays.asList(aff));
+        String tei = biblioItem.toTEI(0, 2, config);
+        LOGGER.debug("tei: {}", tei);
+        Document doc = parseXml(tei);
+        assertThat(
+            "raw_affiliation label",
+            getXpathStrings(doc, "//note[@type=\"raw_affiliation\"]/label/text()"),
+            is(Arrays.asList("A"))
+        );
+        assertThat(
+            "raw_affiliation",
+            getXpathStrings(doc, "//note[@type=\"raw_affiliation\"]/text()"),
+            is(Arrays.asList(" raw affiliation 1"))
+        );
+    }
+
+    @Test
     public void shouldGnerateRawAffiliationTextForFailAffiliationsIfEnabled() throws Exception {
         GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
         Affiliation aff = new Affiliation();

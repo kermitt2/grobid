@@ -3766,11 +3766,15 @@ public class BiblioItem {
             String encodedRawAffiliationString = TextUtilities.HTMLEncode(
                 aff.getRawAffiliationString()
             );
-            tei.append(
-                "<note type=\"raw_affiliation\">" +
-                encodedRawAffiliationString +
-                "</note>\n"
-            );
+            tei.append("<note type=\"raw_affiliation\">");
+            LOGGER.info("marker: {}", aff.getMarker());
+            if (StringUtils.isNotEmpty(aff.getMarker())) {
+                tei.append("<label>");
+                tei.append(aff.getMarker());
+                tei.append("</label> ");
+            }
+            tei.append(encodedRawAffiliationString);
+            tei.append("</note>\n");
         }
 
         if (aff.getDepartments() != null) {
