@@ -272,7 +272,7 @@ public class GrobidRestProcessString {
 			
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
-			} else if (expectedResponseType.equals(ExpectedResponseType.BIBTEX)) {
+			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
 				response = Response.status(Status.OK)
 							.entity(biblioItem.toBibTeX("-1"))
 							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")

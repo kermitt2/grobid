@@ -30,6 +30,8 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +47,8 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractParser.class);
+
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
 
@@ -146,6 +150,7 @@ public class CitationParser extends AbstractParser {
 
             return resCitation;
         } catch (Exception e) {
+            LOGGER.error("An exception occured while running Grobid.", e);
             throw new GrobidException(
                     "An exception occured while running Grobid.", e);
         }
@@ -171,7 +176,7 @@ public class CitationParser extends AbstractParser {
     }
 
     public List<BibDataSet> processingReferenceSection(Document doc, ReferenceSegmenter referenceSegmenter, int consolidate) {
-        List<BibDataSet> results = new ArrayList<BibDataSet>();
+        List<BibDataSet> results = new ArrayList<>();
 
         String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
 
@@ -292,8 +297,10 @@ public class CitationParser extends AbstractParser {
                     GrobidAnalysisConfig.builder().consolidateCitations(consolidate).build());
             results = processingReferenceSection(doc, referenceSegmenter, consolidate);
         } catch (GrobidException e) {
+            LOGGER.error("An exception occured while running Grobid.", e);
             throw e;
         } catch (Exception e) {
+            LOGGER.error("An exception occured while running Grobid.", e);
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
 
@@ -448,9 +455,9 @@ public class CitationParser extends AbstractParser {
                     BiblioItem.injectDOI(resCitation, bibo);
             }
         } catch (Exception e) {
-            // e.printStackTrace();
+            LOGGER.error("An exception occurred while running bibliographical data consolidation.", e);
             throw new GrobidException(
-                    "An exception occured while running bibliographical data consolidation.", e);
+                    "An exception occurred while running bibliographical data consolidation.", e);
         } 
         return resCitation;
     }
