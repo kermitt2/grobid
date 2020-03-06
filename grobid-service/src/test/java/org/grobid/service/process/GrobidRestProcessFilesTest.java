@@ -1,5 +1,6 @@
 package org.grobid.service.process;
 
+import com.squarespace.jersey2.guice.JerseyGuiceUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.easymock.EasyMock;
 import org.grobid.core.document.Document;
@@ -12,17 +13,26 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
+import org.powermock.core.classloader.ClassloaderWrapper;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 import static org.easymock.EasyMock.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({CitationsVisualizer.class, BlockVisualizer.class, FigureTableVisualizer.class})
 public class GrobidRestProcessFilesTest {
+
+    static {
+        JerseyGuiceUtils.install((s, serviceLocator) -> null);
+    }
 
     DocumentSource documentSourceMock;
     GrobidRestProcessFiles target;
@@ -88,5 +98,4 @@ public class GrobidRestProcessFilesTest {
         PowerMock.verify(FigureTableVisualizer.class);
         verify(documentSourceMock);
     }
-
 }

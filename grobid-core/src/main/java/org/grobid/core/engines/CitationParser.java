@@ -74,7 +74,10 @@ public class CitationParser extends AbstractParser {
         //input = input.replaceAll("\\p{Cntrl}", " ").trim();
 
         List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
-        return processing(tokens, consolidate);
+        BiblioItem biblioItem = processing(tokens, consolidate);
+        // store original references to enable raw output
+        biblioItem.setReference(input);
+        return biblioItem;
     }
 
     public BiblioItem processing(List<LayoutToken> tokens, int consolidate) {

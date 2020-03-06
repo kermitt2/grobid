@@ -1727,7 +1727,7 @@ public class BiblioItem {
 	}	
 
     /**
-     * Export to BibTeX format
+     * Export to BibTeX format. Use "id" as BibTeX key.
      */
     public String toBibTeX() {
 		return toBibTeX("id");
@@ -1735,8 +1735,19 @@ public class BiblioItem {
 
     /**
      * Export to BibTeX format
+     *
+     * @param id the BibTeX ke to use.
      */
     public String toBibTeX(String id) {
+        return toBibTeX(id, new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(false).build());
+    }
+
+    /**
+     * Export to BibTeX format
+     *
+     * @param id                  the BibTeX ke to use
+     */
+    public String toBibTeX(String id, GrobidAnalysisConfig config) {
         String bibtex = "";
         try {
 
@@ -1883,8 +1894,17 @@ public class BiblioItem {
                 bibtex += "\"";
             }
 
+            if (config.getIncludeRawCitations() && !StringUtils.isEmpty(reference) ) {
+                // escape all " signs
+                String localReference = reference
+                    .replace("\"", "\\\"")
+                    .replace("\n", " ");
+                bibtex += ",\nraw\t=\t\"" + localReference + "\"";
+            }
+
             bibtex += "\n}\n";
         } catch (Exception e) {
+            LOGGER.error("Cannot export BibTex format, because of nested exception.", e);
             throw new GrobidException("Cannot export BibTex format, because of nested exception.", e);
         }
         return bibtex;
@@ -1940,15 +1960,28 @@ public class BiblioItem {
      *
      * @param n - the index of the bibliographical record, the corresponding id will be b+n
      */
-
     public String toTEI(int n) {
         return toTEI(n, 0, GrobidAnalysisConfig.defaultInstance());
     }
 
+    /**
+     * Export the bibliographical item into a TEI BiblStruct string
+     *
+     * @param n - the index of the bibliographical record, the corresponding id will be b+n
+     */
+    public String toTEI(int n, GrobidAnalysisConfig config) {
+        return toTEI(n, 0, config);
+    }
+
+    /**
+     * Export the bibliographical item into a TEI BiblStruct string
+     *
+     * @param n - the index of the bibliographical record, the corresponding id will be b+n
+     * @param indent - the tabulation indentation for the output of the xml elements
+     */
     public String toTEI(int n, int indent) {
         return toTEI(n, indent, GrobidAnalysisConfig.defaultInstance());
     }
-
 
     /**
      * Export the bibliographical item into a TEI BiblStruct string

@@ -18,6 +18,7 @@ import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.BibTexMediaType;
 import org.grobid.service.util.ExpectedResponseType;
@@ -254,32 +255,30 @@ public class GrobidRestProcessString {
 	 * 
 	 * @param citation
 	 *			string of the raw sequence of affiliation+address
-	 * @param consolidate
-	 *            consolidation parameter for the parsed citation
 	 * @param expectedResponseType
 	 *            states which media type the caller expected
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitation(String citation, int consolidate, ExpectedResponseType expectedResponseType) {
+	public Response processCitation(String citation, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
 		LOGGER.debug(methodLogIn());
-		Response response = null;
+		Response response;
 		Engine engine = null;
 		try {
 			engine = Engine.getEngine(true);
 			//citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			BiblioItem biblioItem = engine.processRawReference(citation, consolidate);
+			BiblioItem biblioItem = engine.processRawReference(citation, config.getConsolidateCitations());
 			
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
 			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
 				response = Response.status(Status.OK)
-							.entity(biblioItem.toBibTeX("-1"))
+							.entity(biblioItem.toBibTeX("-1", config))
 							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
 							.build();
 			} else {
 				response = Response.status(Status.OK)
-                            .entity(biblioItem.toTEI(-1))
+                            .entity(biblioItem.toTEI(-1, config))
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
                             .build();
 			}
