@@ -1,14 +1,16 @@
-## Running service 
+# Grobid Service
+
+## Running service
 
 * From IntelliJ IDEA:
-	* Just run the `main()` in `org.grobid.service.main.GrobidServiceApplication`
+  * Just run the `main()` in `org.grobid.service.main.GrobidServiceApplication`
 * Via Gradle, under the project main repository `grobid/`:
-	* `./gradlew grobid-service:run`
+  * `./gradlew grobid-service:run`
 	
 ## Building a distribution
 
-* under the project main repository `grobid/`: 
-	* `./gradlew grobid-service:assemble`
+* Under the project main repository `grobid/`:
+  * `./gradlew grobid-service:assemble`
 * The distribution can be found in `grobid/grobid-service/build/distributions/`. An archive contains
   * All runtime dependencies
   * A bash script to start a server (`bin/grobid-service service "$path-to-yaml-config"`)
@@ -23,6 +25,3 @@ Things to change:
 * Make sure to provide a path to a valid a grobid-home
 * Ports might be adapted in `server.applicationConnectors.port` (default is `:8070`)
 * Adapt the logging folders as needed, or remove file appender if you don't need file logging.
-
-
-
