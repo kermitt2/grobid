@@ -21,14 +21,13 @@ import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.GrobidPaths;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
-import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.util.BibTexMediaType;
-import org.grobid.service.util.ExpectedResponseType;
 import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +41,6 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -209,16 +207,22 @@ public class GrobidRestServiceTest {
     }
 
     @Test
-    @Ignore
-    //TODO: fix returning a correct version
     public void testGetVersion_shouldReturnCurrentGrobidVersion() throws Exception {
-        String expectedVersion = "0.4.5-dummy";
         Response resp = getClient().target(baseUrl() + GrobidPaths.PATH_GET_VERSION)
                 .request()
                 .get();
 
         assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
-        assertEquals("Grobid version mismatch: ", expectedVersion, resp.readEntity(String.class));
+        assertEquals(GrobidProperties.getVersion(), resp.readEntity(String.class));
+    }
+
+    @Test
+    public void isAliveReturnsTrue() throws Exception {
+        Response resp = getClient().target(baseUrl() + GrobidPaths.PATH_IS_ALIVE)
+                .request()
+                .get();
+        assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
+        assertEquals("true", resp.readEntity(String.class));
     }
 
     @Test
