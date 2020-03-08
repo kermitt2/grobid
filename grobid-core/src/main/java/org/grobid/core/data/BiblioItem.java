@@ -1775,9 +1775,9 @@ public class BiblioItem {
             // author 
             // fullAuthors has to be used instead
             if (collaboration != null) {
-                bibtex.add("author\t=\t\"" + collaboration + "\"");
+                bibtex.add("  author = {" + collaboration + "}");
             } else {
-                StringJoiner authors = new StringJoiner(" and ", "author\t=\t\"", "\"");
+                StringJoiner authors = new StringJoiner(" and ", "author = {", "}");
                 if (fullAuthors != null) {
                     for (Person person : fullAuthors) {
                         authors.add(person.getLastName() + ", " + person.getFirstName());
@@ -1796,64 +1796,64 @@ public class BiblioItem {
 
             // title
             if (title != null) {
-                bibtex.add("title\t=\t\"" + title + "\"");
+                bibtex.add("  title = {" + title + "}");
             }
 
             // journal
             if (journal != null) {
-                bibtex.add("journal\t=\t\"" + journal + "\"");
+                bibtex.add("  journal = {" + journal + "}");
             }
 
             // booktitle
             if ((journal == null) && (book_type == null) && (bookTitle != null)) {
-                bibtex.add("booktitle\t=\t\"" + bookTitle + "\"");
+                bibtex.add("  booktitle = {" + bookTitle + "}");
             }
 
             // publisher
             if (publisher != null) {
-                bibtex.add("publisher\t=\t\"" + publisher + "\"");
+                bibtex.add("  publisher = {" + publisher + "}");
             }
 
             // editors
             if (editors != null) {
                 String locEditors = editors.replace(" ; ", " and ");
-                bibtex.add("editor\t=\t\"" + locEditors + "\"");
+                bibtex.add("  editor = {" + locEditors + "}");
             }
             // fullEditors has to be used instead
 
             // year
             if (publication_date != null) {
-                bibtex.add("year\t=\t\"" + publication_date + "\"");
+                bibtex.add("  year = {" + publication_date + "}");
             }
 
             // address
             if (location != null) {
-                bibtex.add("address\t=\t\"" + location + "\"");
+                bibtex.add("  address = {" + location + "}");
             }
 
             // pages
             if (pageRange != null) {
-                bibtex.add("pages\t=\t\"" + pageRange + "\"");
+                bibtex.add("  pages = {" + pageRange + "}");
             }
 
 			// volume
 			if (volumeBlock != null) {
-                bibtex.add("volume\t=\t\"" + volumeBlock + "\"");
+                bibtex.add("  volume = {" + volumeBlock + "}");
 			}
 
 			// issue (named number in BibTeX)
 			if (issue != null) {
-                bibtex.add("number\t=\t\"" + issue + "\"");
+                bibtex.add("  number = {" + issue + "}");
 			}
 
             // DOI
             if (!StringUtils.isEmpty(doi)) {
-                bibtex.add("doi\t=\t\"" + doi + "\"");
+                bibtex.add("  doi = {" + doi + "}");
             }
 
             // arXiv identifier
             if (!StringUtils.isEmpty(arXivId)) {
-                bibtex.add("eprint\t=\t\"" + arXivId + "\"");
+                bibtex.add("  eprint = {" + arXivId + "}");
             }
             /* note that the following is now recommended for arXiv citations: 
                     archivePrefix = "arXiv",
@@ -1865,7 +1865,7 @@ public class BiblioItem {
 
             // abstract
             if (!StringUtils.isEmpty(abstract_)) {
-                bibtex.add("abstract\t=\t\"" + abstract_ + "\"");
+                bibtex.add("  abstract = {" + abstract_ + "}");
             }
 
             // keywords
@@ -1873,16 +1873,13 @@ public class BiblioItem {
                 String value = keywords.stream()
                         .map(keyword -> keyword.getKeyword())
                         .filter(keyword -> !StringUtils.isBlank(keyword))
-                        .collect(Collectors.joining(", ", "keywords\t=\t\"", "\""));
-                bibtex.add("keyword\t=\t\"" + value + "\"");
+                        .collect(Collectors.joining(", ", "keywords = {", "}"));
+                bibtex.add(value);
             }
 
             if (config.getIncludeRawCitations() && !StringUtils.isEmpty(reference) ) {
                 // escape all " signs
-                String localReference = reference
-                    .replace("\"", "\\\"")
-                    .replace("\n", " ");
-                bibtex.add("raw\t=\t\"" + localReference + "\"");
+                bibtex.add("  raw = {" + reference + "}");
             }
         } catch (Exception e) {
             LOGGER.error("Cannot export BibTex format, because of nested exception.", e);

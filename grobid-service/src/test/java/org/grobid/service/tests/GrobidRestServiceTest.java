@@ -232,10 +232,10 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@inproceedings{-1,\n" +
-                "author\t=\t\"Kolb, S and Wirtz, G\",\n" +
-                "booktitle\t=\t\"Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)\",\n" +
-                "year\t=\t\"April 7 - 10, 2014\",\n" +
-                "address\t=\t\"Oxford, United Kingdom\"\n" +
+                "author = {Kolb, S and Wirtz, G},\n" +
+                "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
+                "  year = {April 7 - 10, 2014},\n" +
+                "  address = {Oxford, United Kingdom}\n" +
                 "}\n",
             response.readEntity(String.class));
     }
@@ -252,11 +252,12 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@inproceedings{-1,\n" +
-                "author\t=\t\"Kolb, S and Wirtz, G\",\n" +
-                "booktitle\t=\t\"Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)\",\n" +
-                "year\t=\t\"April 7 - 10, 2014\",\n" +
-                "address\t=\t\"Oxford, United Kingdom\",\n" +
-                "raw\t=\t\"Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.\"\n" +
+                "author = {Kolb, S and Wirtz, G},\n" +
+                "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
+                "  year = {April 7 - 10, 2014},\n" +
+                "  address = {Oxford, United Kingdom},\n" +
+                "  raw = {Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
+                "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.}\n" +
                 "}\n",
             response.readEntity(String.class));
     }
@@ -272,51 +273,51 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(multipart, multipart.getMediaType()));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@techreport{0,\n" +
-            "author\t=\t\"Büchler, A\",\n" +
-            "year\t=\t\"2017\"\n" +
+            "author = {Büchler, A},\n" +
+            "  year = {2017}\n" +
             "}\n" +
             "\n" +
             "@article{1,\n" +
-            "author\t=\t\"Kopp, O and Armbruster, A and Zimmermann, O\",\n" +
-            "title\t=\t\"Markdown Architectural Decision Records: Format and Tool Support\",\n" +
-            "journal\t=\t\"CEUR-WS.org\",\n" +
-            "year\t=\t\"2018\",\n" +
-            "volume\t=\t\"2072\"\n" +
+            "author = {Kopp, O and Armbruster, A and Zimmermann, O},\n" +
+            "  title = {Markdown Architectural Decision Records: Format and Tool Support},\n" +
+            "  journal = {CEUR-WS.org},\n" +
+            "  year = {2018},\n" +
+            "  volume = {2072}\n" +
             "}\n" +
             "\n" +
             "@article{2,\n" +
-            "author\t=\t\"Thurimella, A and Schubanz, M and Pleuss, A and Botterweck, G\",\n" +
-            "title\t=\t\"Guidelines for Managing Requirements Rationales\",\n" +
-            "journal\t=\t\"IEEE Software\",\n" +
-            "year\t=\t\"Jan 2017\",\n" +
-            "pages\t=\t\"82--90\",\n" +
-            "volume\t=\t\"34\",\n" +
-            "number\t=\t\"1\"\n" +
+            "author = {Thurimella, A and Schubanz, M and Pleuss, A and Botterweck, G},\n" +
+            "  title = {Guidelines for Managing Requirements Rationales},\n" +
+            "  journal = {IEEE Software},\n" +
+            "  year = {Jan 2017},\n" +
+            "  pages = {82--90},\n" +
+            "  volume = {34},\n" +
+            "  number = {1}\n" +
             "}\n" +
             "\n" +
             "@article{3,\n" +
-            "author\t=\t\"Zdun, U and Capilla, R and Tran, H and Zimmermann, O\",\n" +
-            "title\t=\t\"Sustainable Architectural Design Decisions\",\n" +
-            "journal\t=\t\"IEEE Software\",\n" +
-            "year\t=\t\"Nov 2013\",\n" +
-            "pages\t=\t\"46--53\",\n" +
-            "volume\t=\t\"30\",\n" +
-            "number\t=\t\"6\"\n" +
+            "author = {Zdun, U and Capilla, R and Tran, H and Zimmermann, O},\n" +
+            "  title = {Sustainable Architectural Design Decisions},\n" +
+            "  journal = {IEEE Software},\n" +
+            "  year = {Nov 2013},\n" +
+            "  pages = {46--53},\n" +
+            "  volume = {30},\n" +
+            "  number = {6}\n" +
             "}\n" +
             "\n" +
             "@inbook{4,\n" +
-            "author\t=\t\"Zimmermann, O and Wegmann, L and Koziolek, H and Goldschmidt, T\",\n" +
-            "title\t=\t\"Architectural Decision Guidance Across Projects -Problem Space Modeling, Decision Backlog Management and Cloud Computing Knowledge\",\n" +
-            "booktitle\t=\t\"Working IEEE/IFIP Conference on Software Architecture\",\n" +
-            "year\t=\t\"2015\"\n" +
+            "author = {Zimmermann, O and Wegmann, L and Koziolek, H and Goldschmidt, T},\n" +
+            "  title = {Architectural Decision Guidance Across Projects -Problem Space Modeling, Decision Backlog Management and Cloud Computing Knowledge},\n" +
+            "  booktitle = {Working IEEE/IFIP Conference on Software Architecture},\n" +
+            "  year = {2015}\n" +
             "}\n" +
             "\n" +
             "@inbook{5,\n" +
-            "author\t=\t\"Zimmermann, O and Miksovic, C\",\n" +
-            "title\t=\t\"Decisions required vs. decisions made\",\n" +
-            "booktitle\t=\t\"Aligning Enterprise, System, and Software Architectures\",\n" +
-            "publisher\t=\t\"IGI Global\",\n" +
-            "year\t=\t\"2013\"\n" +
+            "author = {Zimmermann, O and Miksovic, C},\n" +
+            "  title = {Decisions required vs. decisions made},\n" +
+            "  booktitle = {Aligning Enterprise, System, and Software Architectures},\n" +
+            "  publisher = {IGI Global},\n" +
+            "  year = {2013}\n" +
             "}\n" +
             "\n", response.readEntity(String.class));
     }
