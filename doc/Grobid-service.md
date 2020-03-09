@@ -8,8 +8,8 @@ Go under the `grobid/` main directory. Be sure that the GROBID project is built,
 
 The following command will start the server on the default port __8070__:
 
-```bash
-> ./gradlew run
+```console
+./gradlew run
 ```
 
 (the Gradle process will hang at 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
@@ -18,15 +18,15 @@ The following command will start the server on the default port __8070__:
 
 You could also build and install the service as a standalone service (let's supposed the destination directory is grobid-installation) 
 
-```bash
-> ./gradlew clean assemble
-> cd ..
-> mkdir grobid-installation
-> cd grobid-installation
-> unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.6.zip
+```console
+./gradlew clean assemble
+cd ..
+mkdir grobid-installation
+cd grobid-installation
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.6.zip
 mv grobid-service-0.5.6 grobid-service
-> unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.6.zip
-> ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.6.zip
+./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
 ```
 
 The directory `grobid-installation` should have the following structure:
@@ -136,7 +136,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 
-```bash
+```console
 curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
@@ -166,25 +166,25 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
-```bash
+```console
 curl -v --form input=@./thefile.pdf localhost:8070/api/processFulltextDocument
 ```
 
 fulltext extraction and add coordinates to the figures (and tables) only:
 
-```bash
-> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8070/api/processFulltextDocument
+```console
+curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=figure --form teiCoordinates=biblStruct localhost:8070/api/processFulltextDocument
 ```
 
 fulltext extraction and add coordinates for all the supported coordinate elements (sorry for the ugly cURL syntax on this, but that's how cURL is working!):
 
-```bash
-> curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
+```console
+curl -v --form input=@./12248_2011_Article_9260.pdf --form teiCoordinates=persName --form teiCoordinates=figure --form teiCoordinates=ref --form teiCoordinates=biblStruct --form teiCoordinates=formula localhost:8070/api/processFulltextDocument
 ```
 
 Regarding the bibliographical references, it is possible to include the original raw reference string in the parsed bibliographical result with the parameter `includeRawCitations` set to `1`:
 
-```bash
+```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
 ```
 
@@ -214,13 +214,13 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance extraction and parsing of all references from a PDF in the current directory without consolidation (default value):
 
-```bash
+```console
 curl -v --form input=@./thefile.pdf localhost:8070/api/processReferences
 ```
 
 It is possible to include the original raw reference string in the parsed result with the parameter `includeRawCitations` set to `1`:
 
-```bash
+```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processReferences
 ```
 
@@ -248,7 +248,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw date string:
 
-```bash
+```console
 curl -X POST -d "date=September 16th, 2001" localhost:8070/api/processDate
 ```
 
@@ -280,7 +280,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of header names string:
 
-```bash
+```console
 curl -X POST -d "names=John Doe and Jane Smith" localhost:8070/api/processHeaderNames
 ```
 
@@ -319,7 +319,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw sequence of citation names string:
 
-```bash
+```console
 curl -X POST -d "names=J. Doe, J. Smith and B. M. Jackson" localhost:8070/api/processCitationNames
 ```
 
@@ -363,7 +363,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw affiliation string:
 
-```bash
+```console
 curl -X POST -d "affiliations=Stanford University, California, USA" localhost:8070/api/processAffiliations
 ```
 
@@ -405,7 +405,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 
-```bash
+```console
 curl -X POST -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
 ```
 
@@ -526,7 +526,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 You can test this service with the **cURL** command lines, for instance parsing of a raw bibliographical reference string in isolation without consolidation (default value):
 
-```bash
+```console
 curl -X POST -d "input=In EP0123456B1 nothing interesting." localhost:8070/api/processCitationPatentTXT
 ```
 
@@ -585,7 +585,7 @@ A `503` error with the default parallel mode normally means that all the threads
 
 For non patent citations, it is possible to include the original raw reference string in the parsed result with the parameter `includeRawCitations` set to `1`, for instance:
 
-```bash
+```console
 curl --form input=@/home/lopez/grobid/grobid-core/src/test/resources/s/006271747.xml --form includeRawCitations=1 localhost:8070/api/processCitationPatentST36
 ```
 
