@@ -165,6 +165,7 @@ public class TaggingLabels {
     public static final TaggingLabel TBL_CONTENT = new TaggingLabelImpl(GrobidModels.TABLE, CONTENT_LABEL);
     public static final TaggingLabel TBL_LABEL = new TaggingLabelImpl(GrobidModels.TABLE, LABEL_LABEL);
     public static final TaggingLabel TBL_OTHER = new TaggingLabelImpl(GrobidModels.TABLE, OTHER_LABEL);
+    public static final TaggingLabel TBL_NOTE = new TaggingLabelImpl(GrobidModels.TABLE, NOTE_LABEL);
 
     public static final TaggingLabel CITATION_TITLE = new TaggingLabelImpl(GrobidModels.CITATION, TITLE_LABEL);
     public static final TaggingLabel CITATION_JOURNAL = new TaggingLabelImpl(GrobidModels.CITATION, JOURNAL_LABEL);

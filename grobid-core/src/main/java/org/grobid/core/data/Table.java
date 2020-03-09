@@ -45,6 +45,8 @@ public class Table extends Figure {
 	private List<LayoutToken> fullDescriptionTokens = new ArrayList<>();
 	private boolean goodTable = true;
 
+    protected StringBuilder note = null;
+
 	public void setGoodTable(boolean goodTable) {
 		this.goodTable = goodTable;
 	}
@@ -54,6 +56,7 @@ public class Table extends Figure {
     	header = new StringBuilder();
     	content = new StringBuilder();
     	label = new StringBuilder();
+        note = new StringBuilder();
     }
 
 	@Override
@@ -140,11 +143,19 @@ public class Table extends Figure {
 			XmlBuilderUtils.addCoords(contentEl, LayoutTokensUtil.getCoordsStringForOneBox(getContentTokens()));
 		}
 
+        Element noteNode = null;
+        if (note != null) {
+            noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()));
+        }
+
 		tableElement.appendChild(headEl);
 		tableElement.appendChild(labelEl);
         if (desc != null)
     		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
+
+        if (noteNode != null)
+            tableElement.appendChild(noteNode);
 
 		return tableElement.toXML();
 
@@ -224,9 +235,19 @@ public class Table extends Figure {
     	return input.replace("\n", " ").replace("  ", " ").trim();
     }
 
+    public String getNote() {
+        return note.toString();
+    }
+
+    public void setNote(StringBuilder note) {
+        this.note = note;
+    }
+
+    public void appendNote(String noteChunk) {
+        note.append(noteChunk);
+    }
 
 	// if an extracted table passes some validations rules
-
 	public boolean firstCheck() {
 		goodTable = goodTable && validateTable();
 		return goodTable;

@@ -194,12 +194,12 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 For citing this work, you can refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
 
-```
+```bibtex
 @misc{GROBID, 
     title = {GROBID}, 
     howpublished = {\url{https://github.com/kermitt2/grobid}}, 
     publisher = {GitHub},
-    year = {2008 --- 2020},
+    year = {2008--2020},
     archivePrefix = {swh},
     eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }
