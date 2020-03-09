@@ -91,11 +91,11 @@ On the console, the RESTful API can be tested under the `TEI` tab for service re
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
-The services returning JSON results for dynamic PDF annotation purposes can be tested under the `PDF` tab. The PDF is rendered with PDF.js and the console javascript offers a reference implementation on how to use the returned annotations with coordinates for web application,
+The services returning JSON results for dynamic PDF annotation purposes can be tested under the `PDF` tab. The PDF is rendered with [PDF.js] and the console javascript offers a reference implementation on how to use the returned annotations with coordinates for web application,
 
 ![Example of GROBID PDF.js annotation](img/popup.png)
 
-Still to demostrate PDF.js annotation possibilities, by default bibliographical reference for which a DOI (or arXiv ID) is extracted or found by consolidation are made clickable on the original rendered PDF:
+Still to demostrate [PDF.js] annotation possibilities, by default bibliographical reference for which a DOI (or arXiv ID) is extracted or found by consolidation are made clickable on the original rendered PDF:
 
 ![Example of GROBID PDF.js clickable annotation based on extraction results](img/doi-link.png)
 
@@ -696,5 +696,6 @@ org.grobid.pool.max.wait=1
 When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server.
 
 [BibTeX]: https://en.wikipedia.org/wiki/BibTeX
+[PDF.js]: https://mozilla.github.io/pdf.js/
 
 <!-- markdownlint-disable-file MD033 -->
