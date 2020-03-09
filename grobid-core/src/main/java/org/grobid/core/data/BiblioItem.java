@@ -1777,12 +1777,19 @@ public class BiblioItem {
             if (collaboration != null) {
                 bibtex.add("  author = {" + collaboration + "}");
             } else {
-                StringJoiner authors = new StringJoiner(" and ", "author = {", "}");
+                StringJoiner authors = new StringJoiner(" and ", "  author = {", "}");
                 if (fullAuthors != null) {
-                    for (Person person : fullAuthors) {
-                        authors.add(person.getLastName() + ", " + person.getFirstName());
-                    }
-                } else {
+                    fullAuthors.stream()
+                               .filter(person -> person != null)
+                               .forEachOrdered(person -> {
+                                   String author = person.getLastName();
+                                   if (person.getFirstName() != null) {
+                                       author += ", ";
+                                       author += person.getFirstName();
+                                   }
+                                   authors.add(author);
+                               });
+                } else if (this.authors != null) {
                     StringTokenizer st = new StringTokenizer(this.authors, ";");
                     while (st.hasMoreTokens()) {
                         String author = st.nextToken();

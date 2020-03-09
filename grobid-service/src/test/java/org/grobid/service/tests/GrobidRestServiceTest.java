@@ -226,6 +226,26 @@ public class GrobidRestServiceTest {
     }
 
     @Test
+    public void processCitationReturnsCorrectBibTeXForMissingFirstName() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .accept(BibTexMediaType.MEDIA_TYPE)
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("@article{-1,\n" +
+                "  author = {Graff},\n" +
+                "  journal = {Expert. Opin. Ther. Targets},\n" +
+                "  year = {2002},\n" +
+                "  pages = {103--113},\n" +
+                "  volume = {6},\n" +
+                "  number = {1}\n" +
+                "}\n",
+            response.readEntity(String.class));
+    }
+
+    @Test
     public void processCitationReturnsBibTeX() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
@@ -236,7 +256,7 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@inproceedings{-1,\n" +
-                "author = {Kolb, S and Wirtz, G},\n" +
+                "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
                 "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom}\n" +
@@ -256,7 +276,7 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@inproceedings{-1,\n" +
-                "author = {Kolb, S and Wirtz, G},\n" +
+                "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
                 "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom},\n" +
@@ -277,12 +297,12 @@ public class GrobidRestServiceTest {
                                        .post(Entity.entity(multipart, multipart.getMediaType()));
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("@techreport{0,\n" +
-            "author = {Büchler, A},\n" +
+            "  author = {Büchler, A},\n" +
             "  year = {2017}\n" +
             "}\n" +
             "\n" +
             "@article{1,\n" +
-            "author = {Kopp, O and Armbruster, A and Zimmermann, O},\n" +
+            "  author = {Kopp, O and Armbruster, A and Zimmermann, O},\n" +
             "  title = {Markdown Architectural Decision Records: Format and Tool Support},\n" +
             "  journal = {CEUR-WS.org},\n" +
             "  year = {2018},\n" +
@@ -290,7 +310,7 @@ public class GrobidRestServiceTest {
             "}\n" +
             "\n" +
             "@article{2,\n" +
-            "author = {Thurimella, A and Schubanz, M and Pleuss, A and Botterweck, G},\n" +
+            "  author = {Thurimella, A and Schubanz, M and Pleuss, A and Botterweck, G},\n" +
             "  title = {Guidelines for Managing Requirements Rationales},\n" +
             "  journal = {IEEE Software},\n" +
             "  year = {Jan 2017},\n" +
@@ -300,7 +320,7 @@ public class GrobidRestServiceTest {
             "}\n" +
             "\n" +
             "@article{3,\n" +
-            "author = {Zdun, U and Capilla, R and Tran, H and Zimmermann, O},\n" +
+            "  author = {Zdun, U and Capilla, R and Tran, H and Zimmermann, O},\n" +
             "  title = {Sustainable Architectural Design Decisions},\n" +
             "  journal = {IEEE Software},\n" +
             "  year = {Nov 2013},\n" +
@@ -310,14 +330,14 @@ public class GrobidRestServiceTest {
             "}\n" +
             "\n" +
             "@inbook{4,\n" +
-            "author = {Zimmermann, O and Wegmann, L and Koziolek, H and Goldschmidt, T},\n" +
+            "  author = {Zimmermann, O and Wegmann, L and Koziolek, H and Goldschmidt, T},\n" +
             "  title = {Architectural Decision Guidance Across Projects -Problem Space Modeling, Decision Backlog Management and Cloud Computing Knowledge},\n" +
             "  booktitle = {Working IEEE/IFIP Conference on Software Architecture},\n" +
             "  year = {2015}\n" +
             "}\n" +
             "\n" +
             "@inbook{5,\n" +
-            "author = {Zimmermann, O and Miksovic, C},\n" +
+            "  author = {Zimmermann, O and Miksovic, C},\n" +
             "  title = {Decisions required vs. decisions made},\n" +
             "  booktitle = {Aligning Enterprise, System, and Software Architectures},\n" +
             "  publisher = {IGI Global},\n" +

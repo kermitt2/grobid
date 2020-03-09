@@ -431,6 +431,25 @@ which will return:
 </biblStruct>
 ```
 
+Example for BibTeX:
+
+```console
+curl -X POST -H "Accept: application/x-bibtex" -d "citations=Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113" localhost:8070/api/processCitation
+```
+
+Results in
+
+```bibtex
+@article{-1,
+  author = {Graff},
+  journal = {Expert. Opin. Ther. Targets},
+  year = {2002},
+  pages = {103--113},
+  volume = {6},
+  number = {1}
+}
+```
+
 ### PDF annotation services
 
 #### /api/referenceAnnotations
