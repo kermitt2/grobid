@@ -324,15 +324,10 @@ public class GrobidProperties {
             synchronized (GrobidProperties.class) {
                 if (GROBID_VERSION == null) {
                     String grobidVersion = UNKNOWN_VERSION_STR;
-                    InputStream is = GrobidProperties.class.getResourceAsStream(GROBID_VERSION_FILE);
-                    if (is != null) {
-                        try {
-                            grobidVersion = IOUtils.toString(is, "UTF-8");
-                        } catch (IOException e) {
-                            LOGGER.error("Cannot read Grobid version from resources", e);
-                        }
-                    } else {
-                        LOGGER.warn("No grobid version info available in resources");
+                    try (InputStream is = GrobidProperties.class.getResourceAsStream(GROBID_VERSION_FILE)) {
+                        grobidVersion = IOUtils.toString(is, "UTF-8");
+                    } catch (IOException e) {
+                        LOGGER.error("Cannot read Grobid version from resources", e);
                     }
                     GROBID_VERSION = grobidVersion;
                 }
