@@ -14,7 +14,7 @@ public class MonographParserTest {
 
     @Before
     public void setUp() throws Exception {
-        target = new MonographParser(new EngineParsers());
+        target = new MonographParser();
     }
 
     @BeforeClass

@@ -90,38 +90,9 @@ public class TEIMonographFormatter {
         return tei;
     }
 
-    /**
-     * TEI formatting of the monograph model
-     */
-    public StringBuilder toTEIMonograph(Document doc, List<MonographItem> monographResults) throws Exception {
+    public StringBuilder toTEIBodyMonograph(Document doc) {
         StringBuilder tei = new StringBuilder();
-
-        // the results are here
-        for (MonographItem monographItem : monographResults) {
-            String text = monographItem.getText();
-            text.replace("\n", "");
-            tei.append("<").append(monographItem.getLabel()).append(">").
-                append(text).
-                append("</").append(monographItem.getLabel()).append(">\n\n");
-        }
-
+        tei.append("\t<text xml:lang=\"" + doc.getLanguage() + "\">");
         return tei;
     }
-
-    /**
-     * TEI formatting of the monograph model
-     */
-    public StringBuilder toTEIMonographPerItem(Document doc, MonographItem monographItem) throws Exception {
-        StringBuilder tei = new StringBuilder();
-
-        // the results are here
-        String text = monographItem.getText();
-        text.replace("\n", "");
-        tei.append("<").append(monographItem.getLabel()).append(">").
-            append(text).
-            append("</").append(monographItem.getLabel()).append(">\n\n");
-
-        return tei;
-    }
-
 }

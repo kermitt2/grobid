@@ -1,13 +1,13 @@
 package org.grobid.trainer.sax;
 
-import org.grobid.core.utilities.TextUtilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.StringTokenizer;
 
 /**
  * SAX parser for the TEI format for monograph data. Normally all training data should be in this unique format.
@@ -15,8 +15,29 @@ import java.util.StringTokenizer;
  * training and online input tokens are aligned.
  *
  * @author Patrice Lopez
+ *
+ * 17 labels for this model:
+ * cover page (front of the book)
+ * title page (secondary title page)
+ * publisher page (publication information, including usually the copyrights info)
+ * summary (include executive summary)
+ * biography
+ * advertising (other works by the author/publisher)
+ * table of content
+ * table/list of figures
+ * preface (foreword)
+ * dedication (I dedicate this label to my family and my thesis director ;)
+ * unit (chapter or standalone article)
+ * reference (a full chapter of references, not to be confused with references attached to an article)
+ * annex
+ * index
+ * glossary (also abbreviations and acronyms)
+ * back cover page
+ * other
  */
 public class TEIMonographSaxParser extends DefaultHandler {
+    private static final Logger logger = LoggerFactory.getLogger(TEISegmentationSaxParser.class);
+
     private StringBuffer accumulator = null; // current accumulated text
     private Stack<String> currentTags = null;
     private ArrayList<TEIMonographItem> monographItems = null;
