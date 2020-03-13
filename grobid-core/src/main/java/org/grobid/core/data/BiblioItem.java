@@ -29,6 +29,7 @@ import java.net.URLEncoder;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -1727,7 +1728,7 @@ public class BiblioItem {
 	}	
 
     /**
-     * Export to BibTeX format
+     * Export to BibTeX format. Use "id" as BibTeX key.
      */
     public String toBibTeX() {
 		return toBibTeX("id");
@@ -1735,124 +1736,131 @@ public class BiblioItem {
 
     /**
      * Export to BibTeX format
+     *
+     * @param id the BibTeX ke to use.
      */
     public String toBibTeX(String id) {
-        String bibtex = "";
-        try {
+        return toBibTeX(id, new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(false).build());
+    }
 
-            if (journal != null) {
-                bibtex += "@article{" + id + ",\n";
-            } else if (book_type != null) {
-                bibtex += "@techreport{" + id + ",\n";
-            } else if (bookTitle != null) {
-                if ((bookTitle.startsWith("proc")) || (bookTitle.startsWith("Proc")) ||
-                        (bookTitle.startsWith("In Proc")) || (bookTitle.startsWith("In proc"))) {
-                    bibtex += "@inproceedings{" + id + ",\n";
-                } else {
-                    bibtex += "@article{" + id + ",\n"; // ???
-                }
+    /**
+     * Export to BibTeX format
+     *
+     * @param id                  the BibTeX ke to use
+     */
+    public String toBibTeX(String id, GrobidAnalysisConfig config) {
+        String type;
+        if (journal != null) {
+            type = "article";
+        } else if (book_type != null) {
+            type = "techreport";
+        } else if (bookTitle != null) {
+            if (StringUtils.containsIgnoreCase(bookTitle, "proceedings") ||
+                (bookTitle.startsWith("proc")) || (bookTitle.startsWith("Proc")) ||
+                (bookTitle.startsWith("In Proc")) || (bookTitle.startsWith("In proc"))) {
+                type = "inproceedings";
             } else {
-                bibtex += "@misc{" + id + ",\n"; // ???
+                LOGGER.debug("No journal given, but a booktitle. However, the booktitle does not start with \"proc\" or similar strings. Returning inbook");
+                type = "inbook";
             }
+        } else {
+            // using "misc" as fallback type
+            type = "misc";
+        }
+
+        StringJoiner bibtex = new StringJoiner(",\n", "@" + type + "{" + id + ",\n", "\n}\n");
+
+        try {
 
             // author 
             // fullAuthors has to be used instead
             if (collaboration != null) {
-                bibtex += "author\t=\t\"" + collaboration;
-            } else if (fullAuthors != null) {
-                if (fullAuthors.size() > 0) {
-                    boolean begin = true;
-                    for (Person person : fullAuthors) {
-                        if (begin) {
-                            bibtex += "author\t=\t\"" + person.getFirstName() + " " + person.getLastName();
-                            begin = false;
-                        } else
-                            bibtex += " and " + person.getFirstName() + " " + person.getLastName();
-                    }
-                    bibtex += "\"";
-                }
-            } else if (authors != null) {
-                StringTokenizer st = new StringTokenizer(authors, ";");
-                if (st.countTokens() > 1) {
-                    boolean begin = true;
+                bibtex.add("  author = {" + collaboration + "}");
+            } else {
+                StringJoiner authors = new StringJoiner(" and ", "  author = {", "}");
+                if (fullAuthors != null) {
+                    fullAuthors.stream()
+                               .filter(person -> person != null)
+                               .forEachOrdered(person -> {
+                                   String author = person.getLastName();
+                                   if (person.getFirstName() != null) {
+                                       author += ", ";
+                                       author += person.getFirstName();
+                                   }
+                                   authors.add(author);
+                               });
+                } else if (this.authors != null) {
+                    StringTokenizer st = new StringTokenizer(this.authors, ";");
                     while (st.hasMoreTokens()) {
                         String author = st.nextToken();
-                        if (author != null)
-                            author = author.trim();
-                        if (begin) {
-                            bibtex += "author\t=\t\"" + author;
-                            begin = false;
-                        } else
-                            bibtex += " and " + author;
-
+                        if (author != null) {
+                            authors.add(author.trim());
+                        }
                     }
-                    bibtex += "\"";
-                } else {
-                    if (authors != null)
-                        bibtex += "author\t=\t\"" + authors + "\"";
                 }
+                bibtex.add(authors.toString());
             }
 
             // title
             if (title != null) {
-                bibtex += ",\ntitle\t=\t\"" + title + "\"";
+                bibtex.add("  title = {" + title + "}");
             }
 
             // journal
             if (journal != null) {
-                bibtex += ",\njournal\t=\t\"" + journal + "\"";
+                bibtex.add("  journal = {" + journal + "}");
             }
 
             // booktitle
             if ((journal == null) && (book_type == null) && (bookTitle != null)) {
-                bibtex += ",\nbooktitle\t=\t\"" + bookTitle + "\"";
+                bibtex.add("  booktitle = {" + bookTitle + "}");
             }
 
             // publisher
             if (publisher != null) {
-                bibtex += ",\npublisher\t=\t\"" + publisher + "\"";
+                bibtex.add("  publisher = {" + publisher + "}");
             }
 
             // editors
             if (editors != null) {
                 String locEditors = editors.replace(" ; ", " and ");
-                bibtex += ",\neditor\t=\t\"" + locEditors + "\"";
+                bibtex.add("  editor = {" + locEditors + "}");
             }
             // fullEditors has to be used instead
 
             // year
             if (publication_date != null) {
-                bibtex += ",\nyear\t=\t\"" + publication_date + "\"";
+                bibtex.add("  year = {" + publication_date + "}");
             }
 
-            // location
+            // address
             if (location != null) {
-                bibtex += ",\naddress\t=\t\"" + location + "\"";
+                bibtex.add("  address = {" + location + "}");
             }
 
             // pages
             if (pageRange != null) {
-                bibtex += ",\npages\t=\t\"" + pageRange + "\"";
+                bibtex.add("  pages = {" + pageRange + "}");
             }
 
 			// volume
 			if (volumeBlock != null) {
-				bibtex += ",\nvolume\t=\t\"" + volumeBlock + "\"";
+                bibtex.add("  volume = {" + volumeBlock + "}");
 			}
 
 			// issue (named number in BibTeX)
 			if (issue != null) {
-				bibtex += ",\nnumber\t=\t\"" + issue + "\"";
+                bibtex.add("  number = {" + issue + "}");
 			}
 
             // DOI
             if (!StringUtils.isEmpty(doi)) {
-                bibtex += ",\ndoi\t=\t\"" + doi + "\"";
+                bibtex.add("  doi = {" + doi + "}");
             }
 
             // arXiv identifier
             if (!StringUtils.isEmpty(arXivId)) {
-                bibtex += ",\neprint\t=\t\"" + arXivId + "\"";
+                bibtex.add("  eprint = {" + arXivId + "}");
             }
             /* note that the following is now recommended for arXiv citations: 
                     archivePrefix = "arXiv",
@@ -1864,30 +1872,27 @@ public class BiblioItem {
 
             // abstract
             if (!StringUtils.isEmpty(abstract_)) {
-                bibtex += ",\nabstract\t=\t\"" + abstract_ + "\"";
+                bibtex.add("  abstract = {" + abstract_ + "}");
             }
 
             // keywords
             if (keywords != null) {
-                bibtex += ",\nkeywords\t=\t\"";
-                boolean begin = true;
-                for (Keyword keyw : keywords) {
-					if ( (keyw.getKeyword() == null) || (keyw.getKeyword().length() == 0) )
-						continue;
-                    if (begin) {
-                        begin = false;
-                        bibtex += keyw.getKeyword();
-                    } else
-                        bibtex += ", " + keyw.getKeyword();
-                }
-                bibtex += "\"";
+                String value = keywords.stream()
+                        .map(keyword -> keyword.getKeyword())
+                        .filter(keyword -> !StringUtils.isBlank(keyword))
+                        .collect(Collectors.joining(", ", "keywords = {", "}"));
+                bibtex.add(value);
             }
 
-            bibtex += "\n}\n";
+            if (config.getIncludeRawCitations() && !StringUtils.isEmpty(reference) ) {
+                // escape all " signs
+                bibtex.add("  raw = {" + reference + "}");
+            }
         } catch (Exception e) {
+            LOGGER.error("Cannot export BibTex format, because of nested exception.", e);
             throw new GrobidException("Cannot export BibTex format, because of nested exception.", e);
         }
-        return bibtex;
+        return bibtex.toString();
     }
 
     /** 
@@ -1940,15 +1945,28 @@ public class BiblioItem {
      *
      * @param n - the index of the bibliographical record, the corresponding id will be b+n
      */
-
     public String toTEI(int n) {
         return toTEI(n, 0, GrobidAnalysisConfig.defaultInstance());
     }
 
+    /**
+     * Export the bibliographical item into a TEI BiblStruct string
+     *
+     * @param n - the index of the bibliographical record, the corresponding id will be b+n
+     */
+    public String toTEI(int n, GrobidAnalysisConfig config) {
+        return toTEI(n, 0, config);
+    }
+
+    /**
+     * Export the bibliographical item into a TEI BiblStruct string
+     *
+     * @param n - the index of the bibliographical record, the corresponding id will be b+n
+     * @param indent - the tabulation indentation for the output of the xml elements
+     */
     public String toTEI(int n, int indent) {
         return toTEI(n, indent, GrobidAnalysisConfig.defaultInstance());
     }
-
 
     /**
      * Export the bibliographical item into a TEI BiblStruct string

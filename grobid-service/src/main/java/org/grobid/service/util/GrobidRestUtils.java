@@ -21,7 +21,7 @@ public class GrobidRestUtils {
      * Check whether the result is null or empty.
      */
     public static boolean isResultNullOrEmpty(String result) {
-        return StringUtils.isBlank(result) ? true : false;
+        return StringUtils.isBlank(result);
     }
 
     public static Annotation getAnnotationFor(int type) {

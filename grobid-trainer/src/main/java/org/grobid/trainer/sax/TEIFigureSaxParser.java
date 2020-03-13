@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -27,6 +28,8 @@ public class TEIFigureSaxParser extends DefaultHandler {
 	private boolean tableBlock = false;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
+
+    private List<String> allTags = Arrays.asList("<figure_head>", "<figDesc>", "<content>", "<label>", "<note>", "<other>");;
 
     public TEIFigureSaxParser() {
         labeled = new ArrayList<String>();
@@ -55,10 +58,10 @@ public class TEIFigureSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
 		if ( (!qName.equals("lb")) && (!qName.equals("pb")) ) {
-            writeData(qName, true);
 			if (!currentTags.empty()) {
 				currentTag = currentTags.peek();
 			}
+            writeData(currentTag, true);
         }
 
         if (qName.equals("figure")) {
@@ -87,54 +90,16 @@ public class TEIFigureSaxParser extends DefaultHandler {
             String text = getText();
             if (text != null) {
                 if (text.length() > 0) {
-                    writeData(qName, false);
+                    writeData(currentTag, false);
                 }
             }
             accumulator.setLength(0);
 
-			if (qName.equals("other")) {
-                currentTags.push("<other>");
-				currentTag = "<other>";
-            } 
-			else if (qName.equals("ref")) {
-                int length = atts.getLength();
-
-                // Process each attribute
-                for (int i = 0; i < length; i++) {
-                    // Get names and values for each attribute
-                    String name = atts.getQName(i);
-                    String value = atts.getValue(i);
-
-                    if (name != null) {
-                        if (name.equals("type")) {
-                            if (value.equals("biblio")) {
-                                currentTags.push("<citation_marker>");
-								currentTag = "<citation_marker>";
-                            } else if (value.equals("figure")) {
-                                currentTags.push("<figure_marker>");
-								currentTag = "<figure_marker>";
-                            }
-							else if (value.equals("table")) {
-								currentTags.push("<table_marker>");
-								currentTag = "<table_marker>";
-							}
-                        }
-                    }
-                }
-            } 
-			else if (qName.equals("formula")) {
-                currentTags.push("<equation>");
-				currentTag = "<equation>";
-            } 
-			else if (qName.equals("head")) {
+            if (qName.equals("head")) {
                 if (figureBlock || tableBlock) {
                     currentTags.push("<figure_head>");
 					currentTag = "<figure_head>";
                 }
-				/*else {
-                    currentTags.push("<section>");
-					currentTag = "<section>";
-                }*/
             } 
 			else if (qName.equals("figDesc")) {
                 currentTags.push("<figDesc>");
@@ -144,14 +109,6 @@ public class TEIFigureSaxParser extends DefaultHandler {
                 currentTags.push("<content>");
 				currentTag = "<content>";
             } 
-			/*else if (qName.equals("item")) {
-                currentTags.push("<item>");
-				currentTag = "<item>";
-            } */
-			/*else if (qName.equals("label")) {
-                currentTags.push("<label>");
-				currentTag = "<label>";
-            } */
 			else if (qName.equals("trash") || qName.equals("content")) {
                 currentTags.push("<content>");
 				currentTag = "<content>";
@@ -159,6 +116,10 @@ public class TEIFigureSaxParser extends DefaultHandler {
             else if (qName.equals("label")) {
                 currentTags.push("<label>");
                 currentTag = "<label>";
+            }
+            else if (qName.equals("note")) {
+                currentTags.push("<note>");
+                currentTag = "<note>";
             }
 			else if (qName.equals("figure")) {
 	            figureBlock = true;
@@ -180,38 +141,26 @@ public class TEIFigureSaxParser extends DefaultHandler {
 	            }
 				if (tableBlock) {
 					figureBlock = false;
-	                //currentTags.push("<table>");
-					//currentTag = "<table>";
 				}
-				/*else {
-	                currentTags.push("<figure>");
-					currentTag = "<figure>";
-				}*/
+				
+                currentTags.push("<other>");
+                currentTag = "<other>";
 	        } 
 			else {
-                currentTags.push("<other>");
-				currentTag = "<other>";
+                qName = qName.toLowerCase();
+                if (!qName.equals("tei") && !qName.equals("teiheader") && !qName.equals("text") && !qName.equals("filedesc"))
+                    System.out.println("Warning, unknown xml tag in training file: " + qName);
 			}
         }
 		
     }
 
-    private void writeData(String qName, boolean pop) {
-        if ((qName.equals("other")) || 
-                (qName.equals("ref")) || //(qName.equals("head")) || //(qName.equals("figure")) || 
-                (qName.equals("figure_head")) ||
-				(qName.equals("figDesc")) ||
-                (qName.equals("table")) || 
-				(qName.equals("trash")) ||
-                (qName.equals("content")) ||
-                (qName.equals("label")) ||
-                (qName.equals("other")) 
-                // || (qName.equals("formula")) //|| (qName.equals("item")) //|| (qName.equals("label"))
-                ) {
-			if (currentTag == null) {
-				return;
-			}
-	
+    private void writeData(String currentTag, boolean pop) {
+        if (currentTag == null) {
+            return;
+        }
+        if (allTags.contains(currentTag)) {
+
             if (pop) {
 				if (!currentTags.empty()) {
 					currentTags.pop();
@@ -249,6 +198,8 @@ public class TEIFigureSaxParser extends DefaultHandler {
                 begin = false;
             }
             accumulator.setLength(0);
+        } else {
+            System.out.println("Warning, unknown tag in training file: " + currentTag);
         }
     }
 
