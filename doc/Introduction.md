@@ -53,8 +53,8 @@ The main author is Patrice Lopez (patrice.lopez@science-miner.com).
 
 Many thanks to:
 
-* Vyacheslav Zholudev (ResearchGate)
 * Luca Foppiano (NIMS) 
+* Vyacheslav Zholudev (ResearchGate)
 * Achraf Azhar (Inria)
 * Christopher Boumenot (Microsoft) in particular for the Windows support
 * Laurent Romary (Inria)
@@ -64,9 +64,10 @@ Many thanks to:
 * Damien Ridereau (Infotel)
 * Daniel Ecer (eLife)
 * Vitalii Bezsheiko (PKP)
+* Oliver Kopp
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
+* and the other contributors: Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
 

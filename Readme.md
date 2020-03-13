@@ -27,7 +27,7 @@ The following functionalities are available:
 - __Parsing of names__ (e.g. person title, forenames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
 - __Parsing of affiliation and address__ blocks.
 - __Parsing of dates__, ISO normalized day, month, year.
-- __Full text extraction and structuring__ from PDF articles, including a model for the overall document segmentation and a model for the structuring of the text body (paragraph, section titles, reference callout, figure, table, etc.).
+- __Full text extraction and structuring__ from PDF articles, including a model for the overall document segmentation and models for the structuring of the text body (paragraph, section titles, reference callout, figure, table, etc.).
 - __Consolidation/resolution of the extracted bibliographical references__ using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). In both cases, DOI resolution performance is higher than 0.95 f-score from PDF extraction.
 - __Extraction and parsing of patent and non-patent references in patent__ publications.
 
@@ -74,6 +74,10 @@ A series of additional modules have been developed for performing __structure aw
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a bio-entity tagger using BioNLP/NLPBA 2004 dataset
 - [grobid-dictionaries](https://github.com/MedKhem/grobid-dictionaries): structuring dictionaries in raw PDF format
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
+
+## Release and changes
+
+See the [Changelog](CHANGELOG.md).
 
 ## License
 
