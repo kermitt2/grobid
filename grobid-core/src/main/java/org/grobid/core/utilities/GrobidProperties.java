@@ -4,7 +4,6 @@ import com.google.common.annotations.VisibleForTesting;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
-import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
@@ -691,11 +690,12 @@ public class GrobidProperties {
 
     private static String getGrobidCRFEngineName(final String modelName) {
         String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
+        // Note: don't use GrobidModels here due to the circular reference
         if (
             GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT
             && (
-                modelName.equals(GrobidModels.FULLTEXT.getModelName())
-                || modelName.equals(GrobidModels.SEGMENTATION.getModelName())
+                modelName.equals("fulltext")
+                || modelName.equals("segmentation")
             )
         ) {
             // if model is fulltext or segmentation we use currently WAPITI as fallback because they
