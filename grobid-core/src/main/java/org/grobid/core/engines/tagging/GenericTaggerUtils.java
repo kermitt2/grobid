@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.utilities.Triple;
 import org.wipo.analyzers.wipokr.utils.StringUtil;
 
@@ -12,15 +13,22 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
+import static org.grobid.core.engines.label.TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING;
+
 /**
  * User: zholudev
  * Date: 4/2/14
  */
 public class GenericTaggerUtils {
 
+    // Deprecated, please use the constants from TaggingLabels
+    @Deprecated
     public static final String START_ENTITY_LABEL_PREFIX = "I-";
+    @Deprecated
     public static final String START_ENTITY_LABEL_PREFIX_ALTERNATIVE = "B-";
+    @Deprecated
     public static final String START_ENTITY_LABEL_PREFIX_ALTERNATIVE_2 = "E-";
+
     public static final Pattern SEPARATOR_PATTERN = Pattern.compile("[\t ]");
 
     /**
@@ -73,8 +81,8 @@ public class GenericTaggerUtils {
     }
 
     public static boolean isBeginningOfEntity(String label) {
-        return StringUtils.startsWith(label, START_ENTITY_LABEL_PREFIX)
-            || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE)
-            || StringUtil.startsWith(label, START_ENTITY_LABEL_PREFIX_ALTERNATIVE_2);
+        return StringUtils.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_GROBID_BEGINNING)
+            || StringUtil.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING)
+            || StringUtil.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_ENAMEX_BEGINNING);
     }
 }

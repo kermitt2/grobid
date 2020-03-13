@@ -131,7 +131,7 @@ public class DeLFTModel {
                     labelledData.append(" ");
 
                     if (j >= result.size()) {
-                        labelledData.append(TaggingLabels.OTHER_LABEL);
+                        labelledData.append(TaggingLabels.OTHER_LABEL_GROBID);
                     } else {
                         List<String> pair = result.get(j);
                         // first is the token, second is the label (DeLFT format)
@@ -305,11 +305,11 @@ public class DeLFTModel {
 
     private static String delft2grobidLabel(String label) {
         if (label.equals("O")) {
-            label = TaggingLabels.OTHER_LABEL;
-        } else if (label.startsWith(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX_ALTERNATIVE)) {
-            label = label.replace(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX_ALTERNATIVE, GenericTaggerUtils.START_ENTITY_LABEL_PREFIX);
-        } else if (label.startsWith(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX)) {
-            label = label.replace(GenericTaggerUtils.START_ENTITY_LABEL_PREFIX, "");
+            label = TaggingLabels.OTHER_LABEL_GROBID;
+        } else if (label.startsWith(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING)) {
+            label = label.replace(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING, TaggingLabels.START_ENTITY_LABEL_PREFIX_GROBID_BEGINNING);
+        } else if (label.startsWith(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_INSIDE)) {
+            label = label.replace(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_INSIDE, "");
         } 
         return label;
     }
