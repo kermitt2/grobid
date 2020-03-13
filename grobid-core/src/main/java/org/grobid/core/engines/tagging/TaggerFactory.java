@@ -25,7 +25,7 @@ public class TaggerFactory {
     public static synchronized GenericTagger getTagger(GrobidModel model) {
         GenericTagger t = cache.get(model);
         if (t == null) {
-            switch (GrobidProperties.getGrobidCRFEngine()) {
+            switch (GrobidProperties.getGrobidCRFEngine(model)) {
                 case CRFPP:
                     t = new CRFPPTagger(model);
                     break;
@@ -33,12 +33,7 @@ public class TaggerFactory {
                     t = new WapitiTagger(model);
                     break;
                 case DELFT:
-                    // if model is fulltext or segmentation we use currently WAPITI as fallback because they
-                    // are not covered by DeLFT for the moment
-                    if (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation"))
-                        t = new WapitiTagger(model);
-                    else    
-                        t = new DeLFTTagger(model);
+                    t = new DeLFTTagger(model);
                     break;
                 default:
                     throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
