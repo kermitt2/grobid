@@ -15,6 +15,8 @@ public class FeaturesVectorMonograph {
 
     public String string = null; // first lexical feature
 	public String secondString = null; // second lexical feature
+    //public String thirdString = null; // third lexical feature
+    //public String fourthString = null; // fourth lexical feature
     public String label = null; // label if known
     public String blockStatus = null; // one of BLOCKSTART, BLOCKIN, BLOCKEND
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
@@ -43,6 +45,7 @@ public class FeaturesVectorMonograph {
 	public boolean firstPageBlock = false;
 	public boolean lastPageBlock = false;
 	public int lineLength = 0;
+    //public int blockLength = 0;
     public boolean bitmapAround = false;
     public boolean vectorAround = false;
     public boolean inMainArea = true;
@@ -66,6 +69,18 @@ public class FeaturesVectorMonograph {
 			res.append(" " + secondString);
 		else
 			res.append(" " + string);
+/*
+        // third token string
+        if (thirdString != null)
+            res.append(" " + thirdString);
+        else
+            res.append(" " + string);
+
+        // fourth token string
+        if (fourthString != null)
+            res.append(" " + fourthString);
+        else
+            res.append(" " + string);*/
 
         // lowercase string
         res.append(" " + string.toLowerCase());
@@ -185,6 +200,9 @@ public class FeaturesVectorMonograph {
 
 		// current line length on a predefined scale and relative to the longest line of the current block
 		res.append(" " + lineLength);
+
+        // current block length on a predefined scale and relative to the longest block of the current page
+        //res.append(" " + blockLength);
 
         if (bitmapAround) {
             res.append(" 1");

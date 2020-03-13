@@ -10,12 +10,12 @@ GROBID (2008-2020) <https://github.com/kermitt2/grobid>
 
 Here's a BibTeX entry:
 
-```
-@misc{GROBID, 
-    title = {GROBID}, 
-    howpublished = {\url{https://github.com/kermitt2/grobid}}, 
+```bibtex
+@misc{GROBID,
+    title = {GROBID},
+    howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
-    year = {2008 --- 2020},
+    year = {2008--2020},
     archivePrefix = {swh},
     eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
 }

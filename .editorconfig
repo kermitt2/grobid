@@ -17,6 +17,12 @@ indent_size=2
 indent_style=space
 indent_size=2
 
+[*.md]
+insert_final_newline=true
+
 [{*.yml,*.yaml}]
 indent_style=space
 indent_size=2
+
+[GrobidRestProcessString.java]
+indent_style=tab

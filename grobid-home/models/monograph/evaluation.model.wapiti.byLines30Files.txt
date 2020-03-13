@@ -1,0 +1,44 @@
+Monograph model trained by 30 files (24-train, 6-evaluation) of BrailleNET, TEL and Hirmeos-Oapen:
+	epsilon: 1.0E-7
+	window: 50
+	nb max iterations: 1000
+	nb threads: 16
+* Load patterns
+* Load training data
+* Initialize the model
+* Summary
+    nb train:    24
+    nb labels:   34
+    nb blocks:   2220184
+    nb features: 75487378
+* Train the model with l-bfgs
+  [   1] obj=887360.47  act=5371140  err=21.61%/100.00% time=176.21s/176.21s
+  [   2] obj=675991.46  act=4627166  err=21.61%/100.00% time=100.94s/277.15s
+  ...
+
+  [ 467] obj=951.75     act=8832     err= 0.00%/ 8.33% time=137.44s/69107.84s
+* Save the model
+* Done
+Model for monograph created in 69177950 ms
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      99.68        0            0            0            5
+<annex>              96           23.73        45.16        31.11        31
+<back>               99.74        0            0            0            3
+<biography>          98.97        0            0            0            16
+<cover>              99.23        42.86        27.27        33.33        11
+<dedication>         99.74        0            0            0            4
+<preface>            98.97        44.44        26.67        33.33        15
+<publisher>          99.48        0            0            0            7
+<reference>          96.65        40.24        91.67        55.93        36
+<summary>            99.03        0            0            0            15
+<title>              99.48        20           20           20           5
+<toc>                98.65        71.43        37.04        48.78        27
+<tof>                99.42        0            0            0            9
+<unit>               87.81        92.3         91.26        91.78        1156
+
+all (micro avg.)     98.06        84.78        83.58        84.18        1340
+all (macro avg.)     98.06        23.93        24.22        22.45        1340

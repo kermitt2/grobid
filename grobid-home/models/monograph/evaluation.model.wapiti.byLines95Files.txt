@@ -1,0 +1,59 @@
+Monograph model trained by 30 files (24-train, 6-evaluation) of BrailleNET, TEL and Hirmeos-Oapen:
+	epsilon: 1.0E-7
+	window: 50
+	nb max iterations: 1000
+	nb threads: 16
+* Load patterns
+* Load training data
+* Initialize the model
+* Summary
+    nb train:    79
+    nb labels:   34
+    nb blocks:   3936701
+    nb features: 133848956
+* Train the model with l-bfgs
+  [ 245] obj=2072.01    act=32499    err= 0.00%/ 3.80% time=298.06s/80675.32s
+  [ 246] obj=2069.80    act=32342    err= 0.00%/ 3.80% time=298.12s/80973.45s
+  [ 247] obj=2068.94    act=32195    err= 0.00%/ 3.80% time=299.25s/81272.69s
+  [ 248] obj=2066.99    act=31992    err= 0.00%/ 3.80% time=294.45s/81567.15s
+  [ 249] obj=2066.44    act=32031    err= 0.00%/ 3.80% time=296.28s/81863.42s
+  [ 250] obj=2064.02    act=31814    err= 0.00%/ 3.80% time=296.31s/82159.73s
+  [ 251] obj=2063.35    act=31654    err= 0.00%/ 3.80% time=297.00s/82456.73s
+* Save the model
+* Done
+Model for monograph created in 82590488 ms
+
+INFO: Loading model: /data/workspace/tkristan/grobid/grobid-home/models/monograph/model.wapiti (size: 71707318)
+[Wapiti] Loading model: "/data/workspace/tkristan/grobid/grobid-home/models/monograph/model.wapiti"
+Model path: /data/workspace/tkristan/grobid/grobid-home/models/monograph/model.wapiti
+Labeling took: 20111 ms
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      99.77        0            0            0            12
+<annex>              95.19        25.49        18.14        21.2         215
+<back>               99.88        33.33        16.67        22.22        6
+<biography>          99.87        0            0            0            8
+<cover>              99.78        72.22        61.9         66.67        21
+<dedication>         99.62        68.75        37.93        48.89        29
+<glossary>           99.35        42.11        22.22        29.09        36
+<index>              99.73        92.65        85.14        88.73        74
+<preface>            97.2         28.29        41.75        33.73        103
+<publisher>          99.82        33.33        22.22        26.67        9
+<reference>          95.97        49.57        72.08        58.74        240
+<summary>            99.69        64           61.54        62.75        26
+<title>              98.79        25           9.84         14.12        61
+<toc>                98.57        70.9         66.9         68.84        142
+<tof>                99.37        56.25        22.5         32.14        40
+<unit>               88.88        92.09        91.76        91.92        4161
+
+all (micro avg.)     98.22        83.75        82.91        83.32        5183
+all (macro avg.)     98.22        47.12        39.41        41.61        5183
+
+===== Instance-level results =====
+
+Total expected instances:   16
+Correct instances:          0
+Instance-level recall:      0

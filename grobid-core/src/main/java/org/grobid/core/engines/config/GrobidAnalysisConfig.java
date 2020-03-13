@@ -87,6 +87,11 @@ public class GrobidAnalysisConfig {
             return this;
         }
 
+        /**
+         * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+         *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+         *                    metadata) or 2 (consolidate the citation and inject DOI only)
+         */
         public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
             return this;
