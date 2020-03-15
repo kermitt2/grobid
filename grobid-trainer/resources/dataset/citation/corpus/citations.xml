@@ -3508,6 +3508,6 @@
 		<bibl><title level="m">Pdflib tet</title>. <ptr type="web">http://www.pdflib.com/products/tet/</ptr>. Accessed: <date>2015-05-12</date>.</bibl>
 		<bibl><title level="m">Poppler</title>. <ptr type="web">http://poppler.freedesktop.org</ptr>. Accessed: <date>2015-05-12</date>.</bibl>
 		<bibl><title level="m">Tabula</title>. <ptr type="web">http://tabula.technology</ptr>. Accessed: <date>2015-05-13</date>.</bibl>
-
+		<bibl><author>Kopp, O., Armbruster, A., Zimmermann, O.</author>: <title level="a">Markdown Architectural Decision Records: Format and Tool Support</title>. In: <title level="s">ZEUS. CEUR Workshop Proceedings</title>, vol. <biblScope type="vol">2072</biblScope>. <ptr type="web">CEUR-WS.org</ptr> (<date>2018</date>)</bibl>
 </listBibl>
 </tei>
