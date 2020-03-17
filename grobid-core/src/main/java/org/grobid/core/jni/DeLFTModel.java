@@ -1,10 +1,7 @@
 package org.grobid.core.jni;
 
 import org.grobid.core.GrobidModel;
-import org.grobid.core.GrobidModels;
-import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.IOUtilities;
@@ -18,7 +15,6 @@ import java.util.*;
 import java.util.regex.*;
 
 import jep.Jep;
-import jep.JepConfig;
 import jep.JepException;
 
 import java.util.function.Consumer;
@@ -131,7 +127,7 @@ public class DeLFTModel {
                     labelledData.append(" ");
 
                     if (j >= result.size()) {
-                        labelledData.append(TaggingLabels.OTHER_LABEL_GROBID);
+                        labelledData.append(TaggingLabels.GROBID_OTHER_LABEL);
                     } else {
                         List<String> pair = result.get(j);
                         // first is the token, second is the label (DeLFT format)
@@ -305,11 +301,11 @@ public class DeLFTModel {
 
     private static String delft2grobidLabel(String label) {
         if (label.equals("O")) {
-            label = TaggingLabels.OTHER_LABEL_GROBID;
-        } else if (label.startsWith(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING)) {
-            label = label.replace(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING, TaggingLabels.START_ENTITY_LABEL_PREFIX_GROBID_BEGINNING);
-        } else if (label.startsWith(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_INSIDE)) {
-            label = label.replace(TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_INSIDE, "");
+            label = TaggingLabels.GROBID_OTHER_LABEL;
+        } else if (label.startsWith(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)) {
+            label = label.replace(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX, TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX);
+        } else if (label.startsWith(TaggingLabels.IOB_INSIDE_LABEL_PREFIX)) {
+            label = label.replace(TaggingLabels.IOB_INSIDE_LABEL_PREFIX, TaggingLabels.GROBID_INSIDE_ENTITY_LABEL_PREFIX);
         } 
         return label;
     }

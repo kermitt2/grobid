@@ -13,8 +13,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
-import static org.grobid.core.engines.label.TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING;
-
 /**
  * User: zholudev
  * Date: 4/2/14
@@ -81,8 +79,8 @@ public class GenericTaggerUtils {
     }
 
     public static boolean isBeginningOfEntity(String label) {
-        return StringUtils.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_GROBID_BEGINNING)
-            || StringUtil.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_IOB_BEGINNING)
-            || StringUtil.startsWith(label, TaggingLabels.START_ENTITY_LABEL_PREFIX_ENAMEX_BEGINNING);
+        return StringUtils.startsWith(label, TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX)
+            || StringUtil.startsWith(label, TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)
+            || StringUtil.startsWith(label, TaggingLabels.ENAMEX_START_ENTITY_LABEL_PREFIX);
     }
 }
