@@ -64,7 +64,7 @@ Many thanks to:
 * Damien Ridereau (Infotel)
 * Daniel Ecer (eLife)
 * Vitalii Bezsheiko (PKP)
-* Oliver Kopp
+* Oliver Kopp (JabRef research)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
