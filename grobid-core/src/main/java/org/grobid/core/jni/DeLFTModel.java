@@ -300,7 +300,7 @@ public class DeLFTModel {
     }
 
     private static String delft2grobidLabel(String label) {
-        if (label.equals("O")) {
+        if (label.equals(TaggingLabels.IOB_OTHER_LABEL)) {
             label = TaggingLabels.GROBID_OTHER_LABEL;
         } else if (label.startsWith(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)) {
             label = label.replace(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX, TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX);
