@@ -72,6 +72,15 @@ public class GenericTaggerUtils {
         return res;
     }
 
+    public static String getPlainIOBLabel(String label) {
+        return isBeginningOfIOBEntity(label) ? StringUtil.substring(label, 2) : label;
+    }
+
+    public static boolean isBeginningOfIOBEntity(String label) {
+        return StringUtil.startsWith(label, TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)
+            || StringUtil.startsWith(label, TaggingLabels.ENAMEX_START_ENTITY_LABEL_PREFIX);
+    }
+
     // I-<citation> --> <citation>
     // <citation> --> <citation>
     public static String getPlainLabel(String label) {
@@ -80,7 +89,6 @@ public class GenericTaggerUtils {
 
     public static boolean isBeginningOfEntity(String label) {
         return StringUtils.startsWith(label, TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX)
-            || StringUtil.startsWith(label, TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)
             || StringUtil.startsWith(label, TaggingLabels.ENAMEX_START_ENTITY_LABEL_PREFIX);
     }
 }
