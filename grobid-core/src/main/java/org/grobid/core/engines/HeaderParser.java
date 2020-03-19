@@ -23,7 +23,9 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
@@ -180,6 +182,7 @@ public class HeaderParser extends AbstractParser {
                     ArrayList<String> auts;
                     authorSegments = resHeader.getAuthors().split("\n");
                     List<List<LayoutToken>> tokenAuthorSegments = LayoutTokensUtil.split(resHeader.getAuthorsTokens(), Pattern.compile("\n"), false);
+
                     if (authorSegments.length > 1) {
                         fragmentedAuthors = true;
                     }
@@ -187,7 +190,7 @@ public class HeaderParser extends AbstractParser {
                         auts = new ArrayList<String>();
                         auts.add(authorSegments[k]);
 //                        List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
-                        List<Person> localAuthors = parsers.getAuthorParser().processingHeaderWithLayoutTokens(tokenAuthorSegments.get(k));
+                        List<Person> localAuthors = parsers.getAuthorParser().processingHeaderWithLayoutTokens(tokenAuthorSegments.get(k), doc.getPDFAnnotations());
                         if (localAuthors != null) {
                             for (Person pers : localAuthors) {
                                 resHeader.addFullAuthor(pers);

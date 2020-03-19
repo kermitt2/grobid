@@ -47,6 +47,11 @@ public class TextUtilities {
     public static final String ESC_AND = "&amp;";
     public static final String SLASH = "/";
 
+    private static final String ORCIDRegex =
+        "^\\s*(?:(?:https?://)?orcid.org/)?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{3}[\\dX])\\s*$";
+
+    static public final Pattern ORCIDPattern = Pattern.compile(ORCIDRegex);
+
     // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
         .compile("(10\\.\\d{4,5}\\/[\\S]+[^;,.\\s])");

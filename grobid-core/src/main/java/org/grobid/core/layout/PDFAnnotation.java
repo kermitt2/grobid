@@ -120,7 +120,7 @@ public class PDFAnnotation {
 				if (box.intersect(tokenBox)) {
 					// bounding boxes are at least touching, but we need to further check if we 
 					// have also a significant surface covered 
-					if (box.contains(tokenBox)) {
+					if (box.contains(tokenBox)) {http://orcid.org/0000-0002-0584-120X
 						res = true;
 						break;
 					}
@@ -139,4 +139,27 @@ public class PDFAnnotation {
 		}
 		return res;
 	}
+
+    /**
+     * Return the intersection box between token and annotation
+     */
+    public BoundingBox getIntersectionBox(LayoutToken token) {
+        if (token == null)
+            return null;
+        BoundingBox intersectBox = null;
+        int pageToken = token.getPage();
+        if (pageToken == pageNumber) {
+            BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
+            for(BoundingBox box : boundingBoxes) {
+                if (box.intersect(tokenBox)) {
+                    if (box.contains(tokenBox)) {
+                        intersectBox = tokenBox;
+                        break;
+                    }
+                    intersectBox = box.boundingBoxIntersection(tokenBox);
+                }
+            }
+        }
+        return intersectBox;
+    }
 }
