@@ -120,7 +120,7 @@ public class PDFAnnotation {
 				if (box.intersect(tokenBox)) {
 					// bounding boxes are at least touching, but we need to further check if we 
 					// have also a significant surface covered 
-					if (box.contains(tokenBox)) {http://orcid.org/0000-0002-0584-120X
+					if (box.contains(tokenBox)) {
 						res = true;
 						break;
 					}
