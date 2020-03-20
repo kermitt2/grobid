@@ -690,18 +690,6 @@ public class GrobidProperties {
 
     private static String getGrobidCRFEngineName(final String modelName) {
         String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
-        // Note: don't use GrobidModels here due to the circular reference
-        if (
-            GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT
-            && (
-                modelName.equals("fulltext")
-                || modelName.equals("segmentation")
-            )
-        ) {
-            // if model is fulltext or segmentation we use currently WAPITI as fallback because they
-            // are not covered by DeLFT for the moment
-            defaultEngineName = GrobidCRFEngine.WAPITI.name();
-        }
         return getPropertyValue(
             GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + modelName,
             defaultEngineName

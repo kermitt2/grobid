@@ -189,33 +189,6 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testShouldReturnWapitiModelForSegmentationAndFulltextIfDelftWasConfigured() {
-        GrobidProperties.getProps().put(
-            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
-            GrobidCRFEngine.DELFT.name()
-        );
-        GrobidProperties.getProps().remove(
-            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
-            + GrobidModels.SEGMENTATION.getModelName()
-        );
-        GrobidProperties.getProps().remove(
-            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
-            + GrobidModels.FULLTEXT.getModelName()
-        );
-        GrobidProperties.loadCrfEngine();
-        assertEquals(
-            "segmentation engine",
-            GrobidCRFEngine.WAPITI,
-            GrobidProperties.getGrobidCRFEngine(GrobidModels.SEGMENTATION)
-        );
-        assertEquals(
-            "fulltext engine",
-            GrobidCRFEngine.WAPITI,
-            GrobidProperties.getGrobidCRFEngine(GrobidModels.FULLTEXT)
-        );
-    }
-
-    @Test
     public void testShouldAllowModelSpecificEngineConfiguration() {
         GrobidProperties.getProps().put(
             GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
