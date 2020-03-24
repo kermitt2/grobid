@@ -1,4 +1,4 @@
-Monograph model trained by 30 files (24-train, 6-evaluation) of BrailleNET, TEL and Hirmeos-Oapen:
+Monograph model trained by 95 files of BrailleNET, TEL and Hirmeos-Oapen:
 	epsilon: 1.0E-7
 	window: 50
 	nb max iterations: 1000

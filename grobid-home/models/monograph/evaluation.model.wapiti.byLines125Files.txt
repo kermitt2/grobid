@@ -1,0 +1,15 @@
+Monograph model trained by 125 files of BrailleNET, TEL and Hirmeos-Oapen corpus:
+	epsilon: 1.0E-7
+	window: 50
+	nb max iterations: 1000
+	nb threads: 16
+* Load patterns
+* Load training data
+* Initialize the model
+* Summary
+    nb train:    103
+    nb labels:   34
+    nb blocks:   4961672
+    nb features: 168697970
+* Train the model with l-bfgs
+

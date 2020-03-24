@@ -177,7 +177,11 @@ public class MonographParser extends AbstractParser {
         }
 
         doc.produceStatistics();
+        // get feature data by lines
         String content = getAllLinesFeatured(doc);
+
+        // get feature data by blocks
+        //String content = getAllBlocksFeatured(doc);
         if (isNotEmpty(trim(content))) {
             // if the feature data are not empty, give them the labels
             if (isNotBlank(content)) {
@@ -317,7 +321,8 @@ public class MonographParser extends AbstractParser {
                 if (lastTag == null) { // only for the first line
                     firstLine = line;
                 } else { // the rest of the lines
-                    if (!label.equals(lastTag) && (firstLine == null)) {
+                    // process every block
+                    /*if (!label.equals(lastTag) && (firstLine == null)) {
                         addTagClose(buffer, lastTag0); // close the previous tag
                         buffer.append(currentTag0);
                     }
@@ -329,6 +334,22 @@ public class MonographParser extends AbstractParser {
                         buffer.append(line);
                     }
 
+                    if (!resultByLines.hasMoreTokens()) {
+                        addTagClose(buffer, lastTag0);
+                    }*/
+
+                    // process every different tag
+                    if (firstLine != null) {
+                        buffer.append(currentTag0);
+                        buffer.append(firstLine).append(line);
+                        firstLine = null;
+                    } else {
+                        if (!currentTag0.equals(lastTag0) && (firstLine == null)) {
+                            addTagClose(buffer, lastTag0);
+                            buffer.append(currentTag0);
+                        }
+                        buffer.append(line);
+                    }
                     if (!resultByLines.hasMoreTokens()) {
                         addTagClose(buffer, lastTag0);
                     }
@@ -390,6 +411,407 @@ public class MonographParser extends AbstractParser {
 
     /**
      * Addition of the features at block level for the complete document.
+     * <p/>
+     * This is an alternative to the token and line level, where the unit for labeling is the block - so allowing even
+     * faster processing and involving less features.
+     * Lexical features becomes block prefix and suffix, the feature text unit is the first 10 characters of the
+     * block without space.
+     * The dictionary flags are at block level (i.e. the block contains a name mention, a place mention, a year, etc.)
+     * Regarding layout features: font, size and style are the one associated to the first token of the block.
+     */
+    public String getAllBlocksFeatured(Document doc) {
+
+        List<Block> blocks = doc.getBlocks();
+        if ((blocks == null) || blocks.size() == 0) {
+            return null;
+        }
+
+        //guaranteeing quality of service. Otherwise, there are some PDF that may contain 300k blocks and thousands of extracted "images" that ruins the performance
+        if (blocks.size() > GrobidProperties.getPdfBlocksMax()) {
+            throw new GrobidException("Postprocessed document is too big, contains: " + blocks.size(), GrobidExceptionStatus.TOO_MANY_BLOCKS);
+        }
+
+        /* list of textual patterns at the head and foot of pages which can be re-occur on several pages
+         (typically indicating a publisher foot or head notes)*/
+        Map<String, Integer> patterns = new TreeMap<String, Integer>();
+        Map<String, Boolean> firstTimePattern = new TreeMap<String, Boolean>();
+
+        for (Page page : doc.getPages()) {
+            // we just look at the two first and last blocks of the page
+            if ((page.getBlocks() != null) && (page.getBlocks().size() > 0)) {
+                for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                    if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
+                        Block block = page.getBlocks().get(blockIndex);
+                        String localText = block.getText();
+                        if ((localText != null) && (localText.length() > 0)) {
+                            String pattern = featureFactory.getPattern(localText);
+                            if (pattern.length() > 8) {
+                                Integer nb = patterns.get(pattern);
+                                if (nb == null) {
+                                    patterns.put(pattern, Integer.valueOf(1));
+                                    firstTimePattern.put(pattern, false);
+                                } else
+                                    patterns.put(pattern, Integer.valueOf(nb + 1));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        String featuresAsString = getFeatureVectorBlocksAsString(doc, patterns, firstTimePattern);
+
+        return featuresAsString;
+    }
+
+    private String getFeatureVectorBlocksAsString(Document doc, Map<String, Integer> patterns,
+                                                  Map<String, Boolean> firstTimePattern) {
+        StringBuilder featureMonograph = new StringBuilder();
+        int documentLength = doc.getDocumentLenghtChar();
+
+        String currentFont = null;
+        int currentFontSize = -1;
+
+        boolean newPage;
+        int mm = 0; // page position
+        int nn = 0; // document position
+        int pageLength = 0; // length of the current page
+        double pageHeight = 0.0;
+
+        // vector for features
+        FeaturesVectorMonograph features = null;
+        FeaturesVectorMonograph previousFeatures = null;
+
+        for (Page page : doc.getPages()) {
+            pageHeight = page.getHeight();
+            newPage = true;
+            double spacingPreviousBlock = 0.0; // discretized
+            double lowestPos = 0.0;
+            pageLength = page.getPageLengthChar();
+            BoundingBox pageBoundingBox = page.getMainArea();
+            mm = 0;
+
+            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
+                continue;
+
+            int maxBlockLength = 0;
+            for (int blockIndex = 0; blockIndex < page.getBlocks().size(); blockIndex++) {
+                Block block = page.getBlocks().get(blockIndex);
+
+                boolean graphicVector = false;
+                boolean graphicBitmap = false;
+
+                boolean lastPageBlock = false;
+                boolean firstPageBlock = false;
+
+                if (blockIndex == 0) {
+                    firstPageBlock = true;
+                }
+
+                if (blockIndex == page.getBlocks().size() - 1) {
+                    lastPageBlock = true;
+                }
+
+                // check if we have a graphical object connected to the current block
+                List<GraphicObject> localImages = Document.getConnectedGraphics(block, doc);
+                if (localImages != null) {
+                    for (GraphicObject localImage : localImages) {
+                        if (localImage.getType() == GraphicObjectType.BITMAP)
+                            graphicBitmap = true;
+                        if (localImage.getType() == GraphicObjectType.VECTOR)
+                            graphicVector = true;
+                    }
+                }
+
+                if (lowestPos > block.getY()) {
+                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting
+                    spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
+                } else
+                    spacingPreviousBlock = block.getY() - lowestPos;
+
+                String localText = block.getText();
+                if (localText == null)
+                    continue;
+
+                if (localText.length() > maxBlockLength)
+                    maxBlockLength = localText.length();
+
+                // character density of the block
+                double density = 0.0;
+                if ((block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
+                    (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
+                    (!block.getText().contains("@IMAGE")))
+                    density = (double) block.getText().length() / (block.getHeight() * block.getWidth());
+
+                // is the current block in the main area of the page or not?
+                boolean inPageMainArea = true;
+                BoundingBox blockBoundingBox = BoundingBox.fromPointAndDimensions(page.getNumber(),
+                    block.getX(), block.getY(), block.getWidth(), block.getHeight());
+                if (pageBoundingBox == null || (!pageBoundingBox.contains(blockBoundingBox) && !pageBoundingBox.intersect(blockBoundingBox)))
+                    inPageMainArea = false;
+
+                String[] lines = localText.split("[\\n\\r]");
+                // set the max length of the lines in the block, in number of characters
+                int maxLineLength = 0;
+                for (int p = 0; p < lines.length; p++) {
+                    if (lines[p].length() > maxLineLength)
+                        maxLineLength = lines[p].length();
+                }
+                List<LayoutToken> tokens = block.getTokens();
+                if ((tokens == null) || (tokens.size() == 0)) {
+                    continue;
+                }
+
+                // treat the information by blocks
+
+                // for the layout information of the block, we take simply the first layout token
+                LayoutToken token = null;
+                if (tokens.size() > 0)
+                    token = tokens.get(0);
+
+                double coordinateLineY = token.getY();
+
+                features = new FeaturesVectorMonograph();
+
+                features.block = localText;
+
+                if ((blockIndex < 2) || (blockIndex > page.getBlocks().size() - 2)) {
+                    String pattern = featureFactory.getPattern(localText);
+                    Integer nb = patterns.get(pattern);
+                    if ((nb != null) && (nb > 1)) {
+                        features.repetitivePattern = true;
+
+                        Boolean firstTimeDone = firstTimePattern.get(pattern);
+                        if ((firstTimeDone != null) && !firstTimeDone) {
+                            features.firstRepetitivePattern = true;
+                            firstTimePattern.put(pattern, true);
+                        }
+                    }
+                }
+
+                /* we take tokens from the first two lines of each block
+                then we consider the first token of the line as usual lexical CRF token
+                and the second token of the line as feature */
+                String line0 = lines[0], line1 = null;
+                if (lines.length >= 2) {
+                    line1 = lines[1];
+                } else {
+                    line1 = lines[0];
+                }
+
+                StringTokenizer tokens0 = new StringTokenizer(line0, " \t");
+                StringTokenizer tokens1 = new StringTokenizer(line1, " \t");
+                String text00 = null, text01 = null, text10 = null, text11 = null;
+
+                if (tokens0.hasMoreTokens())
+                    text00 = tokens0.nextToken();
+
+                if (tokens0.hasMoreTokens())
+                    text01 = tokens0.nextToken();
+
+                if (tokens1.hasMoreTokens())
+                    text10 = tokens1.nextToken();
+
+                if (tokens1.hasMoreTokens())
+                    text11 = tokens1.nextToken();
+
+                if (text00 == null)
+                    continue;
+
+                if (text01 == null)
+                    continue;
+
+                if (text10 == null)
+                    continue;
+
+                if (text11 == null)
+                    continue;
+
+                // final sanitisation and filtering
+                text00 = text00.replaceAll("[ \n]", "").trim();
+                text01 = text01.replaceAll("[ \n]", "").trim();
+                text10 = text10.replaceAll("[ \n]", "").trim();
+                text11 = text11.replaceAll("[ \n]", "").trim();
+
+                if ((text00.length() == 0) || (text01.length() == 0) ||
+                    (text10.length() == 0) || (text11.length() == 0) ||
+                    (TextUtilities.filterLine(localText))) {
+                    continue;
+                }
+
+                features.string = text00;
+                features.secondString = text01;
+                //features.thirdString = text10;
+                //features.fourthString = text11;
+
+                features.firstPageBlock = firstPageBlock;
+                features.lastPageBlock = lastPageBlock;
+
+                //features.blockLength = featureFactory.linearScaling(localText.length(), maxBlockLength, BLOCKSCALE);
+                features.punctuationProfile = TextUtilities.punctuationProfile(localText);
+
+                if (graphicBitmap) {
+                    features.bitmapAround = true;
+                }
+                if (graphicVector) {
+                    features.vectorAround = true;
+                }
+
+                features.punctType = null;
+
+                if (firstPageBlock) {
+                    features.blockStatus = "BLOCKSTART"; // the first block of each page
+                } else if (lastPageBlock) {
+                    features.blockStatus = "BLOCKEND"; // the last block of each page
+                } else {
+                    features.blockStatus = "BLOCKIN"; // the rest of the blocks in page
+                }
+
+                if (newPage) {
+                    features.pageStatus = "PAGESTART";
+                    newPage = false;
+                    if (previousFeatures != null)
+                        previousFeatures.pageStatus = "PAGEEND";
+                } else {
+                    features.pageStatus = "PAGEIN";
+                    newPage = false;
+                }
+
+                if (localText.length() == 1) {
+                    features.singleChar = true;
+                }
+
+                if (Character.isUpperCase(localText.charAt(0))) {
+                    features.capitalisation = "INITCAP";
+                }
+
+                if (featureFactory.test_all_capital(localText)) {
+                    features.capitalisation = "ALLCAP";
+                }
+
+                if (featureFactory.test_digit(localText)) {
+                    features.digit = "CONTAINSDIGITS";
+                }
+
+                if (featureFactory.test_common(localText)) {
+                    features.commonName = true;
+                }
+
+                if (featureFactory.test_names(localText)) {
+                    features.properName = true;
+                }
+
+                if (featureFactory.test_month(localText)) {
+                    features.month = true;
+                }
+
+                Matcher m = featureFactory.isDigit.matcher(localText);
+                if (m.find()) {
+                    features.digit = "ALLDIGIT";
+                }
+
+                Matcher m2 = featureFactory.year.matcher(localText);
+                if (m2.find()) {
+                    features.year = true;
+                }
+
+                Matcher m3 = featureFactory.email.matcher(localText);
+                if (m3.find()) {
+                    features.email = true;
+                }
+
+                Matcher m4 = featureFactory.http.matcher(localText);
+                if (m4.find()) {
+                    features.http = true;
+                }
+
+                // font information
+                if (currentFont == null) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else if (!currentFont.equals(token.getFont())) {
+                    currentFont = token.getFont();
+                    features.fontStatus = "NEWFONT";
+                } else
+                    features.fontStatus = "SAMEFONT";
+
+                // font size information
+                int newFontSize = (int) token.getFontSize();
+                if (currentFontSize == -1) {
+                    currentFontSize = newFontSize;
+                    features.fontSize = "HIGHERFONT";
+                } else if (currentFontSize == newFontSize) {
+                    features.fontSize = "SAMEFONTSIZE";
+                } else if (currentFontSize < newFontSize) {
+                    features.fontSize = "HIGHERFONT";
+                    currentFontSize = newFontSize;
+                } else if (currentFontSize > newFontSize) {
+                    features.fontSize = "LOWERFONT";
+                    currentFontSize = newFontSize;
+                }
+
+                if (token.isBold())
+                    features.bold = true;
+
+                if (token.isItalic())
+                    features.italic = true;
+
+                if (features.capitalisation == null)
+                    features.capitalisation = "NOCAPS";
+
+                if (features.digit == null)
+                    features.digit = "NODIGIT";
+
+                features.relativeDocumentPosition = featureFactory
+                    .linearScaling(nn, documentLength, NBBINS_POSITION);
+
+                features.relativePagePositionChar = featureFactory
+                    .linearScaling(mm, pageLength, NBBINS_POSITION);
+
+                int pagePos = featureFactory
+                    .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
+
+                if (pagePos > NBBINS_POSITION)
+                    pagePos = NBBINS_POSITION;
+
+                features.relativePagePosition = pagePos;
+
+                if (spacingPreviousBlock != 0.0) {
+                    features.spacingWithPreviousBlock = featureFactory
+                        .linearScaling(spacingPreviousBlock - doc.getMinBlockSpacing(), doc.getMaxBlockSpacing() - doc.getMinBlockSpacing(), NBBINS_SPACE);
+                }
+
+                features.inMainArea = inPageMainArea;
+
+                if (density != -1.0) {
+                    features.characterDensity = featureFactory
+                        .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
+                }
+
+                // lowest position of the block
+                lowestPos = block.getY() + block.getHeight();
+
+                // update page-level and document-level positions
+                if (tokens != null) {
+                    mm += tokens.size();
+                    nn += tokens.size();
+                }
+
+                if (previousFeatures != null) {
+                    String vector = previousFeatures.printVector();
+                    featureMonograph.append(vector);
+                }
+                previousFeatures = features;
+            }
+        }
+
+        if (previousFeatures != null)
+            featureMonograph.append(previousFeatures.printVector());
+        return featureMonograph.toString();
+    }
+
+    /**
+     * Addition of the features at line level for the complete document.
      * <p/>
      * This is an alternative to the token level, where the unit for labeling is the line - so allowing even
      * faster processing and involving less features.
@@ -456,7 +878,6 @@ public class MonographParser extends AbstractParser {
         int currentFontSize = -1;
 
         boolean newPage;
-        boolean start = true;
         int mm = 0; // page position
         int nn = 0; // document position
         int pageLength = 0; // length of the current page
