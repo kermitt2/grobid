@@ -12,4 +12,46 @@ Monograph model trained by 125 files of BrailleNET, TEL and Hirmeos-Oapen corpus
     nb blocks:   4961672
     nb features: 168697970
 * Train the model with l-bfgs
+  [ 802] obj=2311.34    act=16294    err= 0.00%/ 3.88% time=326.60s/319477.29s
+  [ 803] obj=2310.94    act=16258    err= 0.00%/ 3.88% time=321.12s/319798.41s
+  [ 804] obj=2310.85    act=16227    err= 0.00%/ 3.88% time=325.25s/320123.66s
+  [ 805] obj=2310.50    act=16249    err= 0.00%/ 3.88% time=330.46s/320454.12s
+  [ 806] obj=2310.33    act=16240    err= 0.00%/ 3.88% time=319.49s/320773.61s
+  [ 807] obj=2310.01    act=16305    err= 0.00%/ 3.88% time=322.12s/321095.74s
+  [ 808] obj=2309.91    act=16254    err= 0.00%/ 3.88% time=324.19s/321419.93s
+* Save the model
+* Done
+Model for monograph created in 321592299 ms
+
+Labeling took: 27140 ms
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+<advertisement>      99.81        0            0            0            15
+<annex>              96.91        34.25        11.47        17.18        218
+<back>               99.94        100          16.67        28.57        6
+<biography>          99.64        47.37        33.33        39.13        27
+<cover>              99.7         62.07        60           61.02        30
+<dedication>         99.59        66.67        22.22        33.33        36
+<glossary>           99.41        35.71        26.32        30.3         38
+<index>              99.44        93.42        64.55        76.34        110
+<preface>            98.7         71.72        49.31        58.44        144
+<publisher>          99.65        50           29.63        37.21        27
+<reference>          95.16        61.88        68.3         64.93        511
+<summary>            99.74        83.33        35.71        50           28
+<title>              98.74        20           7.5          10.91        80
+<toc>                99           73.78        77.56        75.62        156
+<tof>                99.47        72           34.62        46.75        52
+<unit>               90.76        91.56        95.44        93.46        5389
+
+all (micro avg.)     98.48        86.74        85.45        86.09        6867
+all (macro avg.)     98.48        60.23        39.54        45.2         6867
+
+===== Instance-level results =====
+
+Total expected instances:   22
+Correct instances:          0
+Instance-level recall:      0
 
