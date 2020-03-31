@@ -217,6 +217,26 @@ public class GrobidPropertiesTest {
         );
     }
 
+
+    @Test
+    public void testShouldReplaceHyphenWithUnderscoreForModelSpecificEngineConfiguration() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
+            GrobidCRFEngine.WAPITI.name()
+        );
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
+            + "model_name1",
+            GrobidCRFEngine.DELFT.name()
+        );
+        GrobidProperties.loadCrfEngine();
+        assertEquals(
+            "segmentation engine",
+            GrobidCRFEngine.DELFT,
+            GrobidProperties.getGrobidCRFEngine("model-name1")
+        );
+    }
+
     @Test
     public void testShouldReturnModelPathWithExtension() {
         GrobidModels model = GrobidModels.DATE;

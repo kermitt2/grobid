@@ -688,10 +688,14 @@ public class GrobidProperties {
         return pathToPdfToXml;
     }
 
+    private static String getModelPropertySuffix(final String modelName) {
+        return modelName.replaceAll("-", "_");
+    }
+
     private static String getGrobidCRFEngineName(final String modelName) {
         String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
         return getPropertyValue(
-            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + modelName,
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + getModelPropertySuffix(modelName),
             defaultEngineName
         );
     }
