@@ -1,4 +1,4 @@
-<h1>GROBID and containers (Docker)</h1>
+#GROBID and containers (Docker)
 
 Docker is an open-source project that automates the deployment of applications inside software containers. 
 The documentation on how to install it and start using it can be found [here](https://docs.docker.com/engine/understanding-docker/). 
@@ -32,11 +32,11 @@ The process for fetching and running the image is as follow:
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-<h2>Troubleshooting</h2>
+##Troubleshooting
 
-<h4>Out of memory or container being killed while processing</h4>
+###Out of memory or container being killed while processing
 
-This is usually be due to insufficient memory allocated to the docker machine. Depending on the intended usage, we recommend to allocate 4GB of RAM to structure entirely all the PDF content (`processDocumentFulltext`), otherwise 2GB are sufficient to extract only header information, and 3GB for citations. In case of more intensice usage and batch parallel processing, allocating 6 or 8GB is recommended. 
+This is usually be due to insufficient memory allocated to the docker machine. Depending on the intended usage, we recommend to allocate 4GB of RAM to structure entirely all the PDF content (`/api/processFulltextDocument`), otherwise 2GB are sufficient to extract only header information, and 3GB for citations. In case of more intensice usage and batch parallel processing, allocating 6 or 8GB is recommended. 
 
 
 On `macos`, see for instance [here](https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac/39720010#39720010) on how to increase the RAM from the Docker UI.
@@ -98,7 +98,7 @@ See for instance [here](https://stackoverflow.com/a/36982696) for allocating to 
 
 For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
 
-<h4>pdfalto zombie processes</h4>
+###pdfalto zombie processes
 
 When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling 
 up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing 
@@ -108,7 +108,7 @@ The solution shipped with the current Dockerfile, using tini (https://github.com
 killed processes. 
  
 
-<h2>Building an image</h2>
+##Building an image
 
 The following part is normally only for development purposes. You can use the official stable docker images from the docker HUB as described above.
 However if you are interested in using the master version of Grobid in container, building a new image is the way to go. 
