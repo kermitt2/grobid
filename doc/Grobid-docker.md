@@ -10,10 +10,17 @@ We assume in the following that docker is installed and working on your system. 
 The process for fetching and running the image is as follow: 
 
 - Pull the image from docker HUB
+
 ```bash
 > docker pull lfoppiano/grobid:${latest_grobid_version}
 ```
- 
+
+For instance, latest stable version:
+
+```bash
+> docker pull lfoppiano/grobid:0.5.6
+```
+
 - Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
 
 ```bash
@@ -100,13 +107,10 @@ For more information see the [GROBID main page](https://github.com/kermitt2/grob
 
 ###pdfalto zombie processes
 
-When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling 
-up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing 
-some more long-term solution compatible with Kubernetes for example.
+When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling up the machine. The docker solution is to use `--init` as parameter when running the image, however we are discussing some more long-term solution compatible with Kubernetes for example.
 
 The solution shipped with the current Dockerfile, using tini (https://github.com/krallin/tini) should provide the correct init process to cleanup 
 killed processes. 
- 
 
 ##Building an image
 
@@ -130,7 +134,13 @@ In order to run the container of the newly created image for version `0.5.6`:
 > docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.5.6
 ```
 
-For testing or debugging purposes, you can connect to the container with a bash shell:
+For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
 ```bash
 > docker exec -i -t {container_name} /bin/bash
+```
+
+The container name is given by the command:
+
+```bash
+> docker container ls
 ```
