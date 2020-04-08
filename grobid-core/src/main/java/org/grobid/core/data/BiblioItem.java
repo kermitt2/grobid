@@ -4153,7 +4153,7 @@ public class BiblioItem {
         // authors present in fullAuthors list should be in the existing resources 
         // at least the corresponding author
         if (bibo.getFullAuthors() != null) {
-            if ( (bib.getFullAuthors() == null) || (bib.getFullAuthors().size() == 0) )
+            if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
             else if (bibo.getFullAuthors().size() == 1) {
                 // we have the corresponding author	
@@ -4167,6 +4167,9 @@ public class BiblioItem {
                                 aut.setCorresp(true);
                                 if (StringUtils.isNotBlank(auto.getEmail())) 
                                     aut.setEmail(auto.getEmail());
+
+                                if (StringUtils.isNotBlank(auto.getFirstName()))
+                                    aut.setFirstName(auto.getFirstName());
                                 // should we also check the country ? affiliation?
                             }
                         }
@@ -4194,7 +4197,7 @@ public class BiblioItem {
                                         aut.setTitle(aut2.getTitle());
                                     if (StringUtils.isBlank(aut.getSuffix()))
                                         aut.setSuffix(aut2.getSuffix());
-                                    if(aut.getAffiliations().isEmpty())
+                                    if(CollectionUtils.isEmpty(aut.getAffiliations()))
                                         aut.setAffiliations(aut2.getAffiliations());
                                     break;
                                 }
