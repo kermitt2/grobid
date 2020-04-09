@@ -1,8 +1,10 @@
 package org.grobid.trainer;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.text.RandomStringGenerator;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GenericTagger;
@@ -51,6 +53,7 @@ public abstract class AbstractTrainer implements Trainer {
     private File trainDataPath;
     private File evalDataPath;
     private GenericTagger tagger;
+    private RandomStringGenerator randomStringGenerator;
 
     public AbstractTrainer(final GrobidModel model) {
         GrobidFactory.getInstance().createEngine();
@@ -61,6 +64,9 @@ public abstract class AbstractTrainer implements Trainer {
         }
         this.trainDataPath = getTempTrainingDataPath();
         this.evalDataPath = getTempEvaluationDataPath();
+        this.randomStringGenerator = new RandomStringGenerator.Builder()
+            .withinRange('a', 'z')
+            .build();
     }
 
     public void setParams(double epsilon, int window, int nbMaxIterations) {
@@ -174,6 +180,8 @@ public abstract class AbstractTrainer implements Trainer {
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
 
+        String randomString = randomStringGenerator.generate(10);
+
         // Load in memory and Shuffle
         Path dataPath2 = Paths.get(dataPath.getAbsolutePath());
         List<String> trainingData = loadAndShuffle(dataPath2);
@@ -206,7 +214,7 @@ public abstract class AbstractTrainer implements Trainer {
             System.out.println("====================== Fold " + counter.get() + " ====================== ");
 
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
-                + "_nfold_" + counter.getAndIncrement() + ".wapiti");
+                + "_nfold_" + counter.getAndIncrement() + "_" + randomString + ".wapiti");
             sb.append("Saving model in " + tempModelPath).append("\n");
 
             sb.append("Training input data: " + fold.getLeft()).append("\n");
