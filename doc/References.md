@@ -43,7 +43,7 @@ D. Tkaczyk, A. Collins, P. Sheridan, & J. Beel. Evaluation and Comparison of Ope
 
 Kyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney and Dan S. Weld. [GORC: A large contextual citation graph of academic papers](https://arxiv.org/pdf/1911.02782.pdf), [arXiv:1911.02782](https://arxiv.org/abs/1911.02782), [github](https://github.com/allenai/s2-gorc), 2019
 
-COVID-19 Open Research Dataset (CORD-19). 2020. https://pages.semanticscholar.org/coronavirus-research. doi:10.5281/zenodo.3715505
+COVID-19 Open Research Dataset (CORD-19). 2020. [https://pages.semanticscholar.org/coronavirus-research](https://pages.semanticscholar.org/coronavirus-research. doi:10.5281/zenodo.3715505)
 (See [here](https://discourse.cord-19.semanticscholar.org/t/faqs-about-cord-19-dataset/94))
 
 ## Articles on CRF for bibliographical extraction
