@@ -63,6 +63,8 @@ We have been able recently to run the complete fulltext processing at around 10.
 
 In addition, a Java example project is available to illustrate how to use GROBID as a Java library: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTeX format.  
 
+Finally, the following python utilities can be used to create structured full text corpora of scientific articles simply by indicating a list of strong identifiers like DOI or PMID, performing the identification of online Open Access PDF, the harvesting, the metadata agreegation and the Grobid processing in one step at scale: [article-dataset-builder](https://github.com/kermitt2/article-dataset-builder)
+
 ## GROBID Modules
 
 A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponery:
@@ -74,6 +76,8 @@ A series of additional modules have been developed for performing __structure aw
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a bio-entity tagger using BioNLP/NLPBA 2004 dataset
 - [grobid-dictionaries](https://github.com/MedKhem/grobid-dictionaries): structuring dictionaries in raw PDF format
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
+
+GROBID uses optionnally Deep Learning models relying on the following library: [DeLFT](https://github.com/kermitt2/delft)
 
 ## Release and changes
 
