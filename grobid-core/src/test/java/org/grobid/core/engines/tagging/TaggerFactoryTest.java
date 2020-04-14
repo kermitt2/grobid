@@ -42,10 +42,18 @@ public class TaggerFactoryTest {
     }
 
     @Test
+    public void testGetDelftTagger_existingMonographModel_shouldReturn() {
+        GenericTagger tagger = TaggerFactory.getTagger(GrobidModels.MONOGRAPH, GrobidCRFEngine.DELFT);
+
+        assertThat(tagger instanceof DeLFTTagger, is(true));
+    }
+
+    @Test
     public void testGetWapitiTagger_existingModel_shouldReturn() {
         GenericTagger tagger = TaggerFactory.getTagger(GrobidModels.DATE, GrobidCRFEngine.WAPITI);
 
         assertThat(tagger instanceof WapitiTagger, is(true));
     }
+
 
 }

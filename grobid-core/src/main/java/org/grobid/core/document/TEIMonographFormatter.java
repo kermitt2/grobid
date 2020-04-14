@@ -92,7 +92,7 @@ public class TEIMonographFormatter {
 
     public StringBuilder toTEIBodyMonograph(Document doc) {
         StringBuilder tei = new StringBuilder();
-        tei.append("\t<text xml:lang=\"" + doc.getLanguage() + "\">");
+        tei.append("\t<text xml:lang=\"" + doc.getLanguage() + "\">\n");
         return tei;
     }
 }

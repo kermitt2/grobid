@@ -744,7 +744,7 @@ public class EngineTest {
         Engine engine = GrobidFactory.getInstance().getEngine();
         //Document result = engine.getParsers().getSegmentationParser().processing(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"),
         //        GrobidAnalysisConfig.defaultInstance());
-        DocumentSource documentSource = DocumentSource.fromPdf(new File("/Work/workspace/data/pdf2xmlreflow/1.pdf"));
+        DocumentSource documentSource = DocumentSource.fromPdf(new File("test/MullenJSSv18i03.pdf"));
         Document result = engine.getParsers().getSegmentationParser().processing(documentSource, GrobidAnalysisConfig.defaultInstance());
         System.out.println(result);
 
