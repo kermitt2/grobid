@@ -12,7 +12,7 @@
 
 GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue until at least 2020 :)
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue as such. 
 
 The following functionalities are available:
 
@@ -53,8 +53,8 @@ The main author is Patrice Lopez (patrice.lopez@science-miner.com).
 
 Many thanks to:
 
-* Vyacheslav Zholudev (ResearchGate)
 * Luca Foppiano (NIMS) 
+* Vyacheslav Zholudev (ResearchGate)
 * Achraf Azhar (Inria)
 * Christopher Boumenot (Microsoft) in particular for the Windows support
 * Laurent Romary (Inria)
@@ -64,9 +64,10 @@ Many thanks to:
 * Damien Ridereau (Infotel)
 * Daniel Ecer (eLife)
 * Vitalii Bezsheiko (PKP)
+* Oliver Kopp (JabRef research)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors: Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
+* and the other contributors: Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
 

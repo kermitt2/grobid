@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+			<listBibl>
+
+	<bibl><idno>3GPP TR 21.905</idno>: &quot;<title level="m">Vocabulary for 3GPP Specifications</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.501</idno>: &quot;<title level="m">Technical Specification Group Services and System Aspects; System Architecturefor the 5G System</title> &quot;.</bibl>
+	<bibl><idno>3GPP TS 23.502</idno>: &quot;<title level="m">Procedures for the 5G System; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.203</idno>: &quot;<title level="m">Policies and Charging control architecture; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.228</idno>: &quot;<title level="m">IP Multimedia Subsystem (IMS); Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.179</idno>: &quot;<title level="m">Functional architecture and information flows to support mission-critical communication service; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.335</idno>: &quot;<title level="m">User Data Convergence (UDC); Technical realization and information flows; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 32.240</idno>: &quot;<title level="m">Charging management; Charging architecture and principles</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.402</idno>: &quot;<title level="m">Architecture enhancements for non-3GPP accesses</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.161</idno>: &quot;<title level="m">Network-Based IP Flow Mobility (NBIFOM); Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.261</idno>: &quot;<title level="m">IP flow mobility and seamless Wireless Local Area Network (WLAN) offload; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.167</idno>: &quot;<title level="m">3rd Generation Partnership Project; Technical Specification Group Services andSystems Aspects ;IP Multimedia Subsystem (IMS) emergency sessions</title> &quot;.</bibl>
+	<bibl><idno>3GPP TS 29.507</idno>: &quot;<title level="m">Access and Mobility Policy Control Service; Stage 3</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 22.011</idno>: &quot;<title level="m">Service Accessibility</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.221</idno>: &quot;<title level="m">Architectural requirements</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 29.551</idno>: &quot;<title level="m">5G System; Packet Flow Description Management Service; Stage 3</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 32.421</idno>: &quot;<title level="m">Telecommunication management; Subscriber and equipment trace; Trace conceptsand requirements</title> &quot;.</bibl>
+	<bibl><idno>3GPP TS 24.526</idno>: &quot;<title level="m">UE Equipment (UE) policies for 5G System (5GS); Stage 3</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 32.291</idno>: &quot;<title level="m">Charging management; 5G system, Charging service; stage 3</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 32.255</idno>: &quot;<title level="m">Telecommunication management; Charging management; 5G Data connectivitydomain charging ;Stage 2</title> &quot;.</bibl>
+	<bibl><idno>3GPP TS 24.501</idno>: &quot;<title level="m">Non-Access-Stratum (NAS) protocol for 5G System (5GS); Stage 3</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.280</idno>: &quot;<title level="m">Common functional architecture to support mission critical services; Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.288</idno>: &quot;<title level="m">Architecture enhancements for 5G System (5GS) to support network data analytics services</title> &quot;.</bibl>
+	<bibl><idno>3GPP TS 23.216</idno>: &quot;<title level="m">Single Radio Voice Call Continuity (SRVCC); Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.272</idno>: &quot;<title level="m">Circuit Switched (CS) fallback in Evolved Packet System (EPS); Stage 2</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.316</idno>: &quot;<title level="m">Wireless and wireline convergence access support for the 5G System (5GS)</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 23.287</idno>: &quot;<title level="m">Architecture enhancements for 5G System (5GS) to support Vehicle-to-Everything (V2X) services</title> &quot;.</bibl>
+	<bibl><idno>IEEE P802.1Q</idno>: &quot;<title level="m">Standard for Local and metropolitan area networks--Bridges and Bridged</title></bibl>
+
+	<bibl><title level="m">Meeting #126</title>, <date>August 18-23, 2019</date>, <pubplace>Bruges, Beligium</pubplace></bibl>
+	<bibl><title level="m">Meeting #92</title>, <pubplace>Ljubljana, SI</pubplace>, <date>26th-30th Aug, 2019</date></bibl>
+	<bibl><title level="m">Meeting #33</title><lb/> <pubplace>Sophia Antipolis, France</pubplace>, <date>2 nd -6 th September 2019</date><lb/></bibl>
+	<bibl><title level="m">Meeting #126</title><lb/> <pubplace>Bruges, Belgium</pubplace> <date>19-23 August 2019</date><lb/></bibl>
+	<bibl><title level="m">Meeting #33</title> <pubplace>Sophia Antipolis, France</pubplace> <date>2 nd -6 th September 2019</date><lb/></bibl>
+	<bibl><title level="m">Meeting #33</title>. <pubplace>Sophia Antipolis, France</pubplace> <date>2 nd -9 th September 2019</date><lb/></bibl>
+	<bibl><title level="m">Meeting #33</title> <pubplace>Sophia Antipolis, France</pubplace> <date>2 nd -9 th September 2019</date><lb/></bibl>
+	<bibl><title level="m">Meeting #107</title>, <pubplace>Prague, Czech Republic</pubplace>, <date>26th -30th August 2019</date></bibl>
+	<bibl><title level="m">Meeting #106</title> <pubplace>Prague, Czech Republic</pubplace>, <date>Aug. 26-30 th , 2019</date></bibl>
+	<bibl><title level="m">Meeting #105</title>, <pubplace>Wroclaw, Polland</pubplace>, <date>26 -30 August 2019</date></bibl>
+	<bibl><title level="m">Meeting #119</title>, <pubplace>Wroclaw (Poland)</pubplace>, <date>26-30 August 2019</date></bibl>
+
+	<bibl><title level="m">Meeting #84</title>, <pubplace>Ljubljana, Slovenia</pubplace>, <date>26 -30 Aug 2019</date></bibl>
+	<bibl><title level="m">Meeting #92</title>, <pubplace>Ljubljana, Slovenia</pubplace>, <date>August 26 th -30 th 2019</date></bibl>
+	<bibl><title level="m">Meeting #105</title>, <pubplace>Ljubljana, Slovenia</pubplace>, <date>12-16 August 2019</date></bibl>
+	<bibl><title level="m">Meeting #93</title>, <pubplace>Wroclaw, Poland</pubplace>; <date>26 th -30 th August 2019</date></bibl>
+	<bibl><title level="m">Meeting #87</title>, <pubplace>Sophia Antipolis, France</pubplace>, <date>19-23 August 2019</date></bibl>
+	<bibl><title level="m">Meeting #32</title>, <pubplace>Roma, Italy</pubplace> <date>8 th -12 th July 2019</date></bibl>
+	<bibl><title level="m">Meeting #107</title>, <pubplace>Prague, Czech Republic</pubplace>, <date>26 -30 August 2019</date></bibl>
+	<bibl><title level="m">Meeting #98</title>, <pubplace>Prague, CZ</pubplace>, <date>August 26 th -30 th , 2019</date></bibl>
+	<bibl><title level="m">Meeting #85</title>, <pubplace>Newport Beach California, UNITED STATES</pubplace>, <date>16th Sep 2019 -17th Sep 2019</date></bibl>
+	<bibl><title level="m">Meeting #134</title>, <date>June 24-28 th , 2019</date> ; <pubplace>Sapporro, Japan</pubplace></bibl>
+	<bibl><title level="m">Meeting #84</title>, <pubplace>Ljubljana, SL</pubplace>, <date>26 August 2019 -30 August 2019</date></bibl>
+	<bibl><title level="m">Meeting #74-bis</title>, <pubplace>Basking Ridge</pubplace>, <date>4-6 September 2019</date></bibl>
+	<bibl><title level="m">Meeting #125 Ad-hoc</title>, <date>June 25-28, 2019</date>, <pubplace>Sapporo, Japan</pubplace></bibl>
+	<bibl><title level="m">Meeting #105</title>, <pubplace>Reno, Nevada, US</pubplace>, <date>13 -17 May 2019</date></bibl>
+	<bibl><title level="m">Meeting #104 meeting</title>, <date>1-5 July 2019</date>, <pubplace>Cork, Ireland</pubplace></bibl>
+	<bibl><title level="m">Meeting #74-BIS LI</title>, <pubplace>Basking Ridge (NJ), United States</pubplace>, <date>4th Sep 2019 -6th Sep 2019</date></bibl>
+	<bibl><title level="m">Meeting #84</title>, <pubplace>Ljubljana, Slovenia</pubplace>, <date>26 th Aug 2019 -30 th Aug 2019</date></bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import fr.limsi.wapiti.SWIGTYPE_p_mdl_t;
 import fr.limsi.wapiti.Wapiti;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.grobid.core.data.Acknowledgment;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
@@ -34,8 +33,6 @@ import java.util.StringTokenizer;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import static org.junit.Assert.assertEquals;
-
 @Ignore
 public class EngineTest {
 
@@ -46,7 +43,7 @@ public class EngineTest {
         LibraryLoader.load();
     }
 
-    @Ignore("no needed")
+    @Test
     public void testGetNewModel() {
         // assertEquals("Wrong value of getModel", "-m "+GrobidModels.CITATION.getModelPath()+" ", GrobidModels.CITATION.getModelPath());
     }
@@ -667,17 +664,6 @@ public class EngineTest {
 
 
         wm.close();
-    }
-
-    @Test
-    public void testAcknowledgmentParser() throws Exception {
-        String acknowledgmentText = "Acknowledgements. We thank E. Brockmann and two anonymous reviewers " +
-            "for their helpful reviews. This work was supported by the Centre National de la Recherche Scientifique (CNRS-INSU)";
-        List<Acknowledgment> acknowledgmentList = new AcknowledgmentParserOld().processing(acknowledgmentText);
-
-        assertThat(acknowledgmentList.size(), is(1));
-        assertThat(acknowledgmentList.get(0).getIndividual(), is("E . Brockmann"));
-        assertThat(acknowledgmentList.get(0).getFundingAgency(), is("the Centre National de la Recherche Scientifique"));
     }
 
     @Test

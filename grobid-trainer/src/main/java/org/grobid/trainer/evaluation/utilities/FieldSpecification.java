@@ -89,7 +89,7 @@ public class FieldSpecification {
 		affiliationField.isTextual = true;
 		//affiliationField.hasMultipleValue = true;
 		affiliationField.grobidPath.
-			add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()"); // for evaluation
+			add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()");
 		affiliationField.nlmPath.
 			add("/article/front/article-meta/contrib-group/aff/text()");
 		affiliationField.pdfxPath.add("/pdfx/article/front/contrib-group");

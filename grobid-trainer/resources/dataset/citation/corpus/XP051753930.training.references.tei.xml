@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><idno>3GPP TR 21.905</idno>: &quot;<title level="m">Vocabulary for 3GPP Specifications</title>&quot;.</bibl>
+	<bibl><idno>3GPP TR 26.918</idno>: &quot;<title level="m">Virtual Reality (VR) media services over 3GPP</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 26.247</idno>: &quot;<title level="m">Transparent end-to-end Packet-switched Streaming Service (PSS); Progressive Downloadand Dynamic Adaptive Streaming over HTTP ( 3GP-DASH)</title>&quot;.</bibl>
+	<bibl><idno>ISO/IEC 23009-1: 2014/Amd. 1:2015/Cor.1:2015:</idno> &quot;<title level="m">Information technology --Dynamic adaptive streamingover HTTP ( DASH)- -Part1 :Media presentation description and segment formats</title> &quot;.</bibl>
+	<bibl><note>Recommendation</note> <idno>ITU-T P.1203</idno> (<date>10/2017</date>): &quot;<title level="m">Parametric bitstream-based quality assessment of progressivedownload and adaptive audiovisual streaming services over reliable transport</title> &quot;.</bibl>
+	<bibl><author>A. Singla, S. Fremerey, W. Robitza, A. Raake</author>, &quot;<title level="a">Measuring and comparing QoE and simulator sicknessof omnidirectional videos in different head mounted displays</title> &quot;,in <title level="m">9th International Conference onQuality of Multimedia Experience ( QoMEX )</title>,<date>May2017</date> .</bibl>
+	<bibl><author>A. Singla, A. Raake, W. Robitza, P. List, B. Feiten</author>, &quot;<title level="a">AhG8: Subjective Quality Evaluation for Omnidirectional( 360°)Videos</title> &quot;,<title level="m">Joint Video Exploration Team of ITU -TSG16 WP3 and ISO /IECJTC1 /SC29/WG11,JVET- G0152,7th Meeting</title> , <date>July2017</date> .</bibl>
+	<bibl><note>Recommendation</note> <idno>ITU-T P.910</idno> : &quot;<title level="m">Subjective video quality assessment methods for multimedia applications</title>&quot;,<publisher>International Telecommunication Union</publisher> ,<date>April 2008</date> .</bibl>
+	<bibl><note>Recommendation</note> <idno>ITU-R BT.500-13</idno>: &quot;<title level="m">Methodology for the subjective assessment of the quality of televisionpictures</title> &quot;,<publisher>International Telecommunication Union</publisher> ,<date>Jan .2012</date> .</bibl>
+	<bibl><author>R. S. Kennedy, N. E. Lane, K. S. Berbaum, and M. G. Lilienthal</author>, &quot;<title level="a">Simulator sickness questionnaire:An enhanced method for quantifying simulator sickness</title> ,&quot;<title level="j">The International Journal of Aviation Psychology</title> , <date>1993</date>.</bibl>
+
+	<bibl><author>E. Asbun, Y. He, Y. He</author>, &quot;<title level="a">AHG8: InterDigital Test Sequences for Virtual Reality Video Coding</title>&quot;, <title level="m">Joint Video Exploration Team of ITU -TSG16 WP3 and ISO /IECJTC1 /SC29/WG11, JVET -D0039, 4th Meeting</title> , <date>Oct. 2016</date>.</bibl>
+
+	<bibl><author>S. Schwarz et. al.</author>, &quot;<title level="a">Tampere pole vaulting sequence for virtual reality video coding</title>&quot;, <title level="m">Joint Video ExplorationTeam of ITU -TSG16 WP3 and ISO /IECJTC1 /SC29/WG11,JVET -D0143, 4th Meeting</title> ,<date>Oct. 2016</date>.</bibl>
+
+	<bibl><author>W. Sun, R. Guo</author>: &quot;<title level="a">Test Sequences for Virtual Reality Video Coding from LetinVR</title>&quot;, <title level="m">Joint Video ExplorationTeam of ITU -TSG16 WP3 and ISO /IECJTC1 /SC29/WG11,JVET -D0179, 4th Meeting</title> ,<date>Oct. 2016</date>.</bibl>
+
+	<bibl><idno>3GPP TS 26.118</idno>: &quot;<title level="m">3GPP Virtual reality profiles for streaming applications</title>&quot;.</bibl>
+	<bibl><idno>ISO/IEC 23090-6</idno>: &quot;<title level="m">Immersive media metrics</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 26.114</idno>: &quot; <title level="m">IP Multimedia Subsystem (IMS); Multimedia telephony; Media handling and interaction</title>&quot;.</bibl>
+	<bibl><idno>3GPP TR 26.909</idno>: &quot;<title level="m">Study on improved streaming Quality of Experience (QoE) reporting in 3GPP services and networks</title> &quot;.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

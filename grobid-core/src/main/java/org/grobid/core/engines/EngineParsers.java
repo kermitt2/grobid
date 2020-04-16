@@ -220,7 +220,6 @@ public class EngineParsers implements Closeable {
             authorParser = null;
             LOGGER.debug("CLOSING authorParser");
         }
-
         if (affiliationAddressParser != null) {
             affiliationAddressParser.close();
             affiliationAddressParser = null;

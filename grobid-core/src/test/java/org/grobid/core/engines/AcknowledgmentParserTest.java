@@ -34,10 +34,10 @@ public class AcknowledgmentParserTest {
         List<AcknowledgmentItem> output = target.processing("This research was supported by the Deutsche Forschungsgemeinschaft through the SFB 649 \"Economic Risk\". http://sfb649.wiwi.hu-berlin.de ISSN 1860-5664");
 
 
-        assertThat(output.get(0).getText(), is("the Deutsche Forschungsgemeinschaft"));
+        assertThat(output.get(0).getText(), is("Deutsche Forschungsgemeinschaft"));
         assertThat(output.get(0).getLabel(), is("fundingAgency"));
 
-        assertThat(output.get(1).getText(), is("the SFB 649 \"Economic Risk\""));
+        assertThat(output.get(1).getText(), is("SFB 649 \"Economic Risk\""));
         assertThat(output.get(1).getLabel(), is("projectName"));
     }
 
@@ -50,10 +50,10 @@ public class AcknowledgmentParserTest {
             "Joris Snellenburg is thanked for constructive comments on the text. Uwe Ligges and Martin Mächler collaborated " +
             "in the implementation of the nls options described in Section B. Achim Zeileis contributed helpful suggestions regarding the figures.");
 
-        assertThat(output.get(1).getText(), is("#635.000"));
+        assertThat(output.get(1).getText(), is("#635.000.014"));
         assertThat(output.get(1).getLabel(), is("grantNumber"));
 
-        assertThat(output.get(2).getText(), is("the Netherlands Organization for Scientific Research (NWO)"));
+        assertThat(output.get(2).getText(), is("Netherlands Organization for Scientific Research (NWO)"));
         assertThat(output.get(2).getLabel(), is("fundingAgency"));
 
         assertThat(output.get(3).getText(), is("Mikas Vengris"));

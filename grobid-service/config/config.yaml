@@ -3,10 +3,15 @@ grobid:
   grobidHome: "grobid-home"
   
   # how to load the models, 
-  # false -> models are loaded when needed (default), avoiding puting in memory useless models
-  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
+  # false -> models are loaded when needed (default), avoiding putting in memory useless models
+  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
   # used will take some memory
   modelPreload: false
+
+  # CORS configuration
+  corsAllowedOrigins: "*"
+  corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
+  corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"
 
 server:
     type: custom

@@ -61,6 +61,9 @@ RUN unzip ./grobid-home.zip -d ./grobid && \
 
 RUN rm *.zip
 
+# below to allow logs to be written in the container
+# RUN mkdir -p logs
+
 VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 WORKDIR /opt/grobid
@@ -97,3 +100,6 @@ LABEL \
 
 # - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
 # > docker-machine restart
+
+RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
+RUN chmod 777 /opt/grobid/grobid-home/tmp

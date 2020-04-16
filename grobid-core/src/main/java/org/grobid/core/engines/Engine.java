@@ -15,14 +15,25 @@
 
 package org.grobid.core.engines;
 
+import com.google.common.io.Files;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-//import org.grobid.core.annotations.TeiStAXParser;
-import org.grobid.core.data.*;
+import org.grobid.core.data.AcknowledgmentItem;
+import org.grobid.core.data.Affiliation;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.BiblioSet;
+import org.grobid.core.data.ChemicalEntity;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.exceptions.GrobidResourceException;
+import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.Consolidation;
@@ -160,12 +171,12 @@ public class Engine implements Closeable {
     }*/
 
     /**
-     * Apply a parsing model for a given single raw reference string based on
-     * CRF
+     * Apply a parsing model for a given single raw reference string based on CRF
      *
-     * @param reference   : the reference string to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param reference   the reference string to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @return the recognized bibliographical object
      */
     public BiblioItem processRawReference(String reference, int consolidate) {
@@ -178,9 +189,10 @@ public class Engine implements Closeable {
     /**
      * Apply a parsing model for a set of raw reference text based on CRF
      *
-     * @param references  : the list of raw reference string to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param references  the list of raw reference strings to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @return the list of recognized bibliographical objects
      */
     public List<BiblioItem> processRawReferences(List<String> references, int consolidate) throws Exception {
@@ -248,9 +260,10 @@ public class Engine implements Closeable {
     /**
      * Apply a parsing model to the reference block of a PDF file based on CRF
      *
-     * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param inputFile   the path of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @return the list of parsed references as bibliographical objects enriched
      *         with citation contexts
      */
@@ -337,9 +350,10 @@ public class Engine implements Closeable {
      * Apply a parsing model for the header of a PDF file based on CRF, using
      * first three pages of the PDF
      *
-     * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param inputFile   the path of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
@@ -358,9 +372,8 @@ public class Engine implements Closeable {
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
      * @param result      bib result
+     *
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -387,12 +400,12 @@ public class Engine implements Closeable {
      * Use the segmentation model to identify the header section of a PDF file, then apply a parsing model for the
      * header based on CRF
      *
-     * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate - the consolidation option allows GROBID to exploit Crossref
-     *                    web services for improving header information
+     * @param inputFile   the path of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @param result      bib result
-     * @return the TEI representation of the extracted bibliographical
-     *         information
+     * @return the TEI representation of the extracted bibliographical information
      */
     public String segmentAndProcessHeader(File inputFile, int consolidate, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
@@ -762,30 +775,25 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Extract and parse both patent and non patent references within a patent
-     * text. Result are provided as a BibDataSet with offset position
-     * instanciated relative to input text and as PatentItem containing both
-     * "WISIWIG" results (the patent reference attributes as they appear in the
-     * text) and the attributes in DOCDB format (format according to WIPO and
-     * ISO standards). Patent references' offset positions are also given in the
-     * PatentItem object.
+     * Extract and parse both patent and non patent references within a patent text. Result are provided as a BibDataSet
+     * with offset position instanciated relative to input text and as PatentItem containing both "WISIWIG" results (the
+     * patent reference attributes as they appear in the text) and the attributes in DOCDB format (format according to
+     * WIPO and ISO standards). Patent references' offset positions are also given in the PatentItem object.
      *
-     * @param text                 - the string corresponding to the text body of the patent.
-     * @param nplResults           - the list of extracted and parsed non patent references as
-     *                             BiblioItem object. This list must be instanciated before
-     *                             calling the method for receiving the results.
-     * @param patentResults        - the list of extracted and parsed patent references as
-     *                             PatentItem object. This list must be instanciated before
-     *                             calling the method for receiving the results.
-     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving citations information
-     * @return the list of extracted and parserd patent and non-patent references
-     *         encoded in TEI.
+     * @param text                 the string corresponding to the text body of the patent.
+     * @param nplResults           the list of extracted and parsed non patent references as BiblioItem object. This
+     *                             list must be instantiated before calling the method for receiving the results.
+     * @param patentResults        the list of extracted and parsed patent references as PatentItem object. This list
+     *                             must be instantiated before calling the method for receiving the results.
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref web services for improving
+     *                             header information. 0 (no consolidation, default value), 1 (consolidate the citation
+     *                             and inject extra metadata) or 2 (consolidate the citation and inject DOI only)
+     * @return the list of extracted and parserd patent and non-patent references encoded in TEI.
      */
-    public String processAllCitationsInPatent(String text,
-                                            List<BibDataSet> nplResults,
+    public String processAllCitationsInPatent(String text, 
+                                            List<BibDataSet> nplResults, 
                                             List<PatentItem> patentResults,
-                                            int consolidateCitations,
+                                            int consolidateCitations, 
                                             boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
@@ -797,30 +805,25 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Extract and parse both patent and non patent references within a patent
-     * in ST.36 format. Result are provided as a BibDataSet with offset position
-     * instanciated relative to input text and as PatentItem containing both
-     * "WISIWIG" results (the patent reference attributes as they appear in the
-     * text) and the attributes in DOCDB format (format according to WIPO and
-     * ISO standards). Patent references' offset positions are also given in the
-     * PatentItem object.
+     * Extract and parse both patent and non patent references within a patent in ST.36 format. Result are provided as a
+     * BibDataSet with offset position instantiated relative to input text and as PatentItem containing both "WISIWIG"
+     * results (the patent reference attributes as they appear in the text) and the attributes in DOCDB format (format
+     * according to WIPO and ISO standards). Patent references' offset positions are also given in the PatentItem
+     * object.
      *
-     * @param xmlPath              xml path
-     * @param nplResults           - the list of extracted and parsed non patent references as
-     *                             BiblioItem object. This list must be instanciated before
-     *                             calling the method for receiving the results.
-     * @param patentResults        - the list of extracted and parsed patent references as
-     *                             PatentItem object. This list must be instanciated before
-     *                             calling the method for receiving the results.
-     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving citations information
-     * @return the list of extracted and parserd patent and non-patent references
-     *         encoded in TEI.
+     * @param nplResults           the list of extracted and parsed non patent references as BiblioItem object. This
+     *                             list must be instanciated before calling the method for receiving the results.
+     * @param patentResults        the list of extracted and parsed patent references as PatentItem object. This list
+     *                             must be instanciated before calling the method for receiving the results.
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref web services for improving
+     *                             header information. 0 (no consolidation, default value), 1 (consolidate the citation
+     *                             and inject extra metadata) or 2 (consolidate the citation and inject DOI only)
+     * @return the list of extracted and parserd patent and non-patent references encoded in TEI.
      * @throws Exception if sth. went wrong
      */
     public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults,
-			                                     List<PatentItem> patentResults,
-                                                 int consolidateCitations,
+                                                 List<PatentItem> patentResults,
+                                                 int consolidateCitations, 
                                                  boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
@@ -841,21 +844,22 @@ public class Engine implements Closeable {
      * PatentItem object.
      *
      * @param pdfPath              pdf path
-     * @param nplResults           - the list of extracted and parsed non patent references as
+     * @param nplResults           the list of extracted and parsed non patent references as
      *                             BiblioItem object. This list must be instanciated before
      *                             calling the method for receiving the results.
-     * @param patentResults        - the list of extracted and parsed patent references as
+     * @param patentResults        the list of extracted and parsed patent references as
      *                             PatentItem object. This list must be instanciated before
      *                             calling the method for receiving the results.
-     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving citations information
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref web services for improving
+     *                             header information. 0 (no consolidation, default value), 1 (consolidate the citation
+     *                             and inject extra metadata) or 2 (consolidate the citation and inject DOI only)
      * @return the list of extracted and parserd patent and non-patent references
      *         encoded in TEI.
      * @throws Exception if sth. went wrong
      */
     public String processAllCitationsInPDFPatent(String pdfPath, List<BibDataSet> nplResults,
                                                  List<PatentItem> patentResults,
-                                                 int consolidateCitations,
+                                                 int consolidateCitations, 
                                                  boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
@@ -873,14 +877,15 @@ public class Engine implements Closeable {
 	 * format (format according to WIPO and ISO standards).
      *
      * @param pdfPath              pdf path
-     * @param consolidateCitations - the consolidation option allows GROBID to exploit Crossref
-     *                             web services for improving citations information
+     * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref web services for improving
+     *                             header information. 0 (no consolidation, default value), 1 (consolidate the citation
+     *                             and inject extra metadata) or 2 (consolidate the citation and inject DOI only)
+     *
      * @return JSON annotations with extracted and parsed patent and non-patent references
      *         together with coordinates in the original PDF.
-     * @throws Exception if sth. went wrong
      */
     public String annotateAllCitationsInPDFPatent(String pdfPath, 
-                                                  int consolidateCitations,
+                                                  int consolidateCitations, 
                                                   boolean includeRawCitations) throws Exception {
 		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
 		List<PatentItem> patentResults = new ArrayList<PatentItem>();

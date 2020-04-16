@@ -11,9 +11,18 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.google.inject.Singleton;
-import org.grobid.core.data.*;
+import org.grobid.core.data.AcknowledgmentItem;
+import org.grobid.core.data.Affiliation;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.PatentItem;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.Date;
+import org.grobid.core.data.Person;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
+import org.grobid.service.util.BibTexMediaType;
+import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
 //import org.grobid.service.util.GrobidServiceProperties;
 import org.slf4j.Logger;
@@ -67,8 +76,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -121,8 +129,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -174,8 +181,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -283,8 +289,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -307,28 +312,32 @@ public class GrobidRestProcessString {
 	 * 
 	 * @param citation
 	 *			string of the raw sequence of affiliation+address
-	 * @param consolidate
-	 *            consolidation parameter for the parsed citation
+	 * @param expectedResponseType
+	 *            states which media type the caller expected
 	 * @return a response object containing the structured xml representation of
 	 *         the affiliation
 	 */
-	public Response processCitation(String citation, int consolidate) {
+	public Response processCitation(String citation, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
 		LOGGER.debug(methodLogIn());
-		Response response = null;
+		Response response;
 		Engine engine = null;
 		try {
 			engine = Engine.getEngine(true);
 			//citation = citation.replaceAll("\\n", " ").replaceAll("\\t", " ");
-			BiblioItem biblioItem = engine.processRawReference(citation, consolidate);
+			BiblioItem biblioItem = engine.processRawReference(citation, config.getConsolidateCitations());
 			
 			if (biblioItem == null) {
 				response = Response.status(Status.NO_CONTENT).build();
+			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+				response = Response.status(Status.OK)
+							.entity(biblioItem.toBibTeX("-1", config))
+							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+							.build();
 			} else {
 				response = Response.status(Status.OK)
-                            .entity(biblioItem.toTEI(-1))
+                            .entity(biblioItem.toTEI(-1, config))
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
@@ -375,8 +384,7 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(result)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                            .header("Access-Control-Allow-Origin", "*")
-                            .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT").build();
+                            .build();
 			}
 		} catch (NoSuchElementException nseExp) {
 			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");

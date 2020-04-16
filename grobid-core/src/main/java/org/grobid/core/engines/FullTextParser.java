@@ -9,7 +9,13 @@ import org.apache.commons.io.FileUtils;
 import java.nio.charset.StandardCharsets;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.*;
+import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.Figure;
+import org.grobid.core.data.Table;
+import org.grobid.core.data.Equation;
+import org.grobid.core.data.Metadata;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -1804,8 +1810,8 @@ public class FullTextParser extends AbstractParser {
                     buffer.append(" ").append(s2);
                 else
                     buffer.append(s2);
-            } else if (!lastTag0.equals("<citation_marker>") && !lastTag0.equals("<figure_marker>")
-                    && !lastTag0.equals("<table_marker>") && !lastTag0.equals("<equation_marker>")) {
+            } else if (!lastTag0.endsWith("<citation_marker>") && !lastTag0.endsWith("<figure_marker>")
+                    && !lastTag0.endsWith("<table_marker>") && !lastTag0.endsWith("<equation_marker>")) {
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
@@ -2279,8 +2285,6 @@ public class FullTextParser extends AbstractParser {
 
 		return results;
 	}
-
-
 
     /**
      * Create the TEI representation for a document based on the parsed header, references

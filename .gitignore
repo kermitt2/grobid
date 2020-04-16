@@ -17,6 +17,8 @@ Thumbs.db
 *.old
 tei-alt
 raw-alt
+tei-new
+raw-new
 /log
 /logs
 
@@ -72,4 +74,9 @@ grobid-home/models/values
 grobid-home/models/dataseer
 grobid-trainer/resources/dataset/acknowledgment/corpus/annotated/*.xml
 grobid-trainer/resources/dataset/acknowledgment/corpus/raw/*.json
+grobid-trainer/resources/dataset/monograph/*
+grobid-trainer/resources/dataset/monograph/corpus/raw/*.*
+grobid-trainer/resources/dataset/monograph/corpus/tei/*.*
+grobid-trainer/resources/dataset/monograph/evaluation/raw/*.*
+grobid-trainer/resources/dataset/monograph/evaluation/tei/*.*
 

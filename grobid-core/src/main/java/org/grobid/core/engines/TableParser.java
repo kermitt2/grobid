@@ -78,12 +78,15 @@ public class TableParser extends AbstractParser {
                 table.appendHeader(" " + clusterContent + " ");
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
+            } else if (clusterLabel.equals(TBL_NOTE)) {
+                table.appendNote(clusterContent);
+                table.getFullDescriptionTokens().addAll(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
             } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
             } else {
-                LOGGER.error("Warning: unexpected table model label - " + clusterLabel + " for " + clusterContent);
+                LOGGER.warn("Unexpected table model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
         }     
@@ -211,6 +214,14 @@ public class TableParser extends AbstractParser {
                 sb.append(output);
                 //continue;
             }
+            output = writeField(label, lastTag, tok, "<note>", "<note>", addSpace, addEOL, 3);
+            if (output != null) {
+                if (!figOpen) {
+                    sb.append(tableOpening);
+                    figOpen = true;
+                }
+                sb.append(output);
+            }
             output = writeField(label, lastTag, tok, "<other>", "<other>", addSpace, addEOL, 2);
             if (output != null) {
                 sb.append(output);
@@ -279,7 +290,13 @@ public class TableParser extends AbstractParser {
                 if (addSpace)
                     buffer.append(" ");
                 buffer.append("</label>\n");
-            } else {
+            } else if (lastTag.equals("<note>")) {
+                if (addEOL)
+                    buffer.append("<lb/>");
+                if (addSpace)
+                    buffer.append(" ");
+                buffer.append("</note>\n");
+            }else {
                 res = false;
             }
         }

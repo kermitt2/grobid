@@ -5,12 +5,16 @@ buildscript {
         mavenLocal()
         mavenCentral()
         jcenter()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.jengelman.gradle.plugins:shadow:5.0.0'
+        classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
 }
 
@@ -25,6 +29,7 @@ allprojects {
     apply plugin: 'jacoco'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
+    apply plugin: 'com.adarshr.test-logger'
 
     group = "org.grobid"
 

@@ -20,6 +20,7 @@ public interface GrobidPaths {
 	 * path extension for is alive request.
 	 */
 	String PATH_IS_ALIVE = "isalive";
+
 	/**
 	 * path extension for grobid admin pages.
 	 */

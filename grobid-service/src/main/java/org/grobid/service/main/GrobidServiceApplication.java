@@ -10,16 +10,17 @@ import io.dropwizard.forms.MultiPartBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.apache.commons.lang3.ArrayUtils;
+import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.grobid.service.GrobidServiceConfiguration;
-import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
-import org.grobid.service.exceptions.mapper.GrobidServiceExceptionMapper;
-import org.grobid.service.exceptions.mapper.WebApplicationExceptionMapper;
 import org.grobid.service.modules.GrobidServiceModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
 import java.io.File;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 
 
@@ -40,8 +41,8 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     @Override
     public void initialize(Bootstrap<GrobidServiceConfiguration> bootstrap) {
         GuiceBundle<GrobidServiceConfiguration> guiceBundle = GuiceBundle.defaultBuilder(GrobidServiceConfiguration.class)
-                .modules(getGuiceModules())
-                .build();
+            .modules(getGuiceModules())
+            .build();
         bootstrap.addBundle(guiceBundle);
         bootstrap.addBundle(new MultiPartBundle());
         bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
@@ -55,6 +56,22 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
         LOGGER.info("Service config={}", configuration);
         environment.jersey().setUrlPattern(RESOURCES + "/*");
+
+        String allowedOrigins = configuration.getGrobid().getCorsAllowedOrigins();
+        String allowedMethods = configuration.getGrobid().getCorsAllowedMethods();
+        String allowedHeaders = configuration.getGrobid().getCorsAllowedHeaders();
+
+        // Enable CORS headers
+        final FilterRegistration.Dynamic cors =
+            environment.servlets().addFilter("CORS", CrossOriginFilter.class);
+
+        // Configure CORS parameters
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_ORIGINS_PARAM, allowedOrigins);
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_METHODS_PARAM, allowedMethods);
+        cors.setInitParameter(CrossOriginFilter.ALLOWED_HEADERS_PARAM, allowedHeaders);
+
+        // Add URL mapping
+        cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, RESOURCES + "/*");
 
         //Error handling
 //        environment.jersey().register(new GrobidExceptionMapper());
@@ -72,17 +89,17 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 File confLocation = new File(p).getAbsoluteFile();
                 if (confLocation.exists()) {
                     foundConf = confLocation.getAbsolutePath();
-                    LOGGER.info("Found conf path: " + foundConf);
+                    LOGGER.info("Found conf path: {}", foundConf);
                     break;
                 }
             }
 
             if (foundConf != null) {
-                LOGGER.warn("Running with default arguments: \"server\" \"" + foundConf + "\"");
+                LOGGER.warn("Running with default arguments: \"server\" \"{}\"", foundConf);
                 args = new String[]{"server", foundConf};
             } else {
                 throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "
-                        + Arrays.toString(DEFAULT_CONF_LOCATIONS));
+                    + Arrays.toString(DEFAULT_CONF_LOCATIONS));
             }
         }
 
