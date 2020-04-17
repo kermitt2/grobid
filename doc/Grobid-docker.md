@@ -40,6 +40,19 @@ For instance, latest stable version:
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
+## Configuration using Environment Variables
+
+Properties from the `grobid-home/config/grobid.properties` can be overridden using environment variables.
+Given a property key, the corresponding environment variable is the property key converted to upper case and the dot (`.`) replaced by two underscores `__`. (Property keys must be all lower case)
+
+e.g. to configure `grobid.nb_threads` use `GROBID__NB_THREADS`.
+
+```bash
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 \
+    --env GROBID__NB_THREADS=10 \
+    lfoppiano/grobid:${latest_grobid_version}
+```
+
 ## Troubleshooting
 
 ### Out of memory or container being killed while processing
