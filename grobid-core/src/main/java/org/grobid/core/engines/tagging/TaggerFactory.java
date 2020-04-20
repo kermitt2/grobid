@@ -37,7 +37,7 @@ public class TaggerFactory {
                     // are not covered by DeLFT for the moment
                     if (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation"))
                         t = new WapitiTagger(model);
-                    else    
+                    else
                         t = new DeLFTTagger(model);
                     break;
                 default:
@@ -60,7 +60,7 @@ public class TaggerFactory {
                     case WAPITI:
                         t = new WapitiTagger(model);
                         break;
-                    case DELFT:                        
+                    case DELFT:
                         // be sure the native JEP lib can be loaded
                         try {
                             String libraryFolder = LibraryLoader.getLibraryFolder();
@@ -74,7 +74,7 @@ public class TaggerFactory {
                         // are not covered by DeLFT for the moment
                         if (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation"))
                             t = new WapitiTagger(model);
-                        else    
+                        else
                             t = new DeLFTTagger(model);
                         break;
                     default:

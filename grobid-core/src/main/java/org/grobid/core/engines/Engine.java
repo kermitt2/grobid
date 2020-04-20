@@ -191,21 +191,21 @@ public class Engine implements Closeable {
                 results.add(bds);
             }
         }
-        
+
         if (results.size() == 0)
             return finalResults;
         // consolidation in a second stage to take advantage of parallel calls
         if (consolidate != 0) {
             Consolidation consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
-                consolidator.setCntManager(cntManager); 
+                consolidator.setCntManager(cntManager);
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
                 resConsolidation = consolidator.consolidate(results);
             } catch(Exception e) {
                 throw new GrobidException(
-                "An exception occured while running consolidation on bibliographical references.", e);
-            } 
+                    "An exception occured while running consolidation on bibliographical references.", e);
+            }
             if (resConsolidation != null) {
                 for(int i=0; i<results.size(); i++) {
                     BiblioItem resCitation = results.get(i).getResBib();
@@ -230,10 +230,10 @@ public class Engine implements Closeable {
     public Engine(boolean loadModels) {
         /*
          * Runtime.getRuntime().addShutdownHook(new Thread() {
-		 *
-		 * @Override public void run() { try { close(); } catch (IOException e)
-		 * { LOGGER.error("Failed to close all resources: " + e); } } });
-		 */
+         *
+         * @Override public void run() { try { close(); } catch (IOException e)
+         * { LOGGER.error("Failed to close all resources: " + e); } } });
+         */
         if (loadModels)
             parsers.initAll();
     }
@@ -250,7 +250,7 @@ public class Engine implements Closeable {
      */
     public List<BibDataSet> processReferences(File inputFile, int consolidate) {
         return parsers.getCitationParser()
-			.processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
+            .processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
     }
 
     /**
@@ -353,11 +353,11 @@ public class Engine implements Closeable {
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
-<<<<<<< HEAD
+    <<<<<<< HEAD
      * //@param consolidate - the consolidation option allows GROBID to exploit Crossref
      *                    web services for improving header information
-=======
->>>>>>> master
+    =======
+    >>>>>>> master
      * @param result      bib result
      *
      * @return the TEI representation of the extracted bibliographical
@@ -403,7 +403,7 @@ public class Engine implements Closeable {
         }
 
         Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result,
-                GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
+            GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
         Document doc = resultTEI.getRight();
         //close();
         return resultTEI.getLeft();
@@ -442,7 +442,8 @@ public class Engine implements Closeable {
      *                     file, -1 if not used
      */
     public void createTrainingMonograph(File inputFile, String pathRaw, String pathTEI, int id) {
-        Document doc = parsers.getMonographParser().createBlankTrainingFromPDF(inputFile, pathRaw, pathTEI, id);
+        //Document doc = parsers.getMonographParser().createBlankTrainingFromPDF(inputFile, pathRaw, pathTEI, id);
+        Document doc = parsers.getMonographParser().createTrainingFromPDFWithTEILabel(inputFile, pathRaw, pathTEI, id);
     }
 
     /**
@@ -483,7 +484,7 @@ public class Engine implements Closeable {
      *
      * @param inputFile            - absolute path to the pdf to be processed
      * @param config               - Grobid config
-	 * @return the resulting structured document as a TEI string.
+     * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
@@ -498,7 +499,7 @@ public class Engine implements Closeable {
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(inputFile, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
-			+ (System.currentTimeMillis() - time) + "ms");
+            + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
     }
 
@@ -510,7 +511,7 @@ public class Engine implements Closeable {
         long time = System.currentTimeMillis();
         resultDoc = fullTextParser.processing(documentSource, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
-                + (System.currentTimeMillis() - time) + "ms");
+            + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
     }
 
@@ -545,19 +546,19 @@ public class Engine implements Closeable {
             System.out.println(refFiles.length + " files to be processed.");
 
             int n = 0;
-			if (ind == -1) {
-				// for undefined identifier (value at -1), we initialize it to 0
-				n = 1;
-			}
+            if (ind == -1) {
+                // for undefined identifier (value at -1), we initialize it to 0
+                n = 1;
+            }
             for (final File pdfFile : refFiles) {
                 try {
                     createTraining(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
-						+ pdfFile.getPath(), exp);
+                        + pdfFile.getPath(), exp);
                 }
-				if (ind != -1)
-					n++;
+                if (ind != -1)
+                    n++;
             }
 
             return refFiles.length;
@@ -797,18 +798,18 @@ public class Engine implements Closeable {
      *                             and inject extra metadata) or 2 (consolidate the citation and inject DOI only)
      * @return the list of extracted and parserd patent and non-patent references encoded in TEI.
      */
-    public String processAllCitationsInPatent(String text, 
-                                            List<BibDataSet> nplResults, 
-                                            List<PatentItem> patentResults,
-                                            int consolidateCitations, 
-                                            boolean includeRawCitations) throws Exception {
+    public String processAllCitationsInPatent(String text,
+                                              List<BibDataSet> nplResults,
+                                              List<PatentItem> patentResults,
+                                              int consolidateCitations,
+                                              boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
-			consolidateCitations, includeRawCitations, patentResults, nplResults);
+            consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /**
@@ -830,7 +831,7 @@ public class Engine implements Closeable {
      */
     public String processAllCitationsInXMLPatent(String xmlPath, List<BibDataSet> nplResults,
                                                  List<PatentItem> patentResults,
-                                                 int consolidateCitations, 
+                                                 int consolidateCitations,
                                                  boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
@@ -838,7 +839,7 @@ public class Engine implements Closeable {
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesXMLFile(xmlPath, filterDuplicate,
-			consolidateCitations, includeRawCitations, patentResults, nplResults);
+            consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /**
@@ -866,7 +867,7 @@ public class Engine implements Closeable {
      */
     public String processAllCitationsInPDFPatent(String pdfPath, List<BibDataSet> nplResults,
                                                  List<PatentItem> patentResults,
-                                                 int consolidateCitations, 
+                                                 int consolidateCitations,
                                                  boolean includeRawCitations) throws Exception {
         if ((nplResults == null) && (patentResults == null)) {
             return null;
@@ -874,14 +875,14 @@ public class Engine implements Closeable {
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().extractAllReferencesPDFFile(pdfPath, filterDuplicate,
-                consolidateCitations, includeRawCitations, patentResults, nplResults);
+            consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
-	
+
     /**
      * Extract and parse both patent and non patent references within a patent
      * in PDF format. Results are provided as JSON annotations with coordinates
-	 * of the annotations in the orignal PDF and reference informations in DOCDB 
-	 * format (format according to WIPO and ISO standards).
+     * of the annotations in the orignal PDF and reference informations in DOCDB
+     * format (format according to WIPO and ISO standards).
      *
      * @param pdfPath              pdf path
      * @param consolidateCitations the consolidation option allows GROBID to exploit Crossref web services for improving
@@ -891,15 +892,15 @@ public class Engine implements Closeable {
      * @return JSON annotations with extracted and parsed patent and non-patent references
      *         together with coordinates in the original PDF.
      */
-    public String annotateAllCitationsInPDFPatent(String pdfPath, 
-                                                  int consolidateCitations, 
+    public String annotateAllCitationsInPDFPatent(String pdfPath,
+                                                  int consolidateCitations,
                                                   boolean includeRawCitations) throws Exception {
-		List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
-		List<PatentItem> patentResults = new ArrayList<PatentItem>();
+        List<BibDataSet> nplResults = new ArrayList<BibDataSet>();
+        List<PatentItem> patentResults = new ArrayList<PatentItem>();
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
         return parsers.getReferenceExtractor().annotateAllReferencesPDFFile(pdfPath, filterDuplicate,
-                consolidateCitations, includeRawCitations, patentResults, nplResults);
+            consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 
     /*public void processCitationPatentTEI(String teiPath, String outTeiPath,
@@ -928,7 +929,7 @@ public class Engine implements Closeable {
      *                   shall be written.
      */
     public void createTrainingPatentCitations(String pathXML, String resultPath)
-		throws Exception {
+        throws Exception {
         parsers.getReferenceExtractor().generateTrainingData(pathXML, resultPath);
     }
 
@@ -946,14 +947,14 @@ public class Engine implements Closeable {
      * @return the number of processed files.
      */
     public int batchCreateTrainingPatentcitations(String directoryPath, String resultPath)
-		throws Exception {
+        throws Exception {
         try {
             File path = new File(directoryPath);
             // we process all xml files in the directory
             File[] refFiles = path.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return name.endsWith(".xml") || name.endsWith(".XML") ||
-                            name.endsWith(".xml.gz") || name.endsWith(".XML.gz");
+                        name.endsWith(".xml.gz") || name.endsWith(".XML.gz");
                 }
             });
 
