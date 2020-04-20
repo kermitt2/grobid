@@ -1,7 +1,7 @@
 package org.grobid.core.jni;
 
 import org.grobid.core.GrobidModel;
-import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.IOUtilities;
@@ -15,7 +15,6 @@ import java.util.*;
 import java.util.regex.*;
 
 import jep.Jep;
-import jep.JepConfig;
 import jep.JepException;
 
 import java.util.function.Consumer;
@@ -107,13 +106,13 @@ public class DeLFTModel {
                 // inject back the labels
                 List<List<List<String>>> results = (List<List<List<String>>>) objectResults;
                 BufferedReader bufReader = new BufferedReader(new StringReader(data));
-                String line;
+                String inputLine;
                 int i = 0; // sentence index
                 int j = 0; // word index in the sentence
                 List<List<String>> result = results.get(0);
-                while ((line = bufReader.readLine()) != null) {
-                    line = line.trim();
-                    if ((line.length() == 0) && (j != 0)) {
+                while ((inputLine = bufReader.readLine()) != null) {
+                    inputLine = inputLine.trim();
+                    if ((inputLine.length() == 0) && (j != 0)) {
                         j = 0;
                         i++;
                         if (i == results.size())
@@ -121,15 +120,21 @@ public class DeLFTModel {
                         result = results.get(i);
                         continue;
                     }
-                    if (line.length() == 0)
+
+                    if (inputLine.length() == 0)
                         continue;
-                    labelledData.append(line);
+                    labelledData.append(inputLine);
                     labelledData.append(" ");
-                    List<String> pair = result.get(j);
-                    // first is the token, second is the label (DeLFT format)
-                    String token = pair.get(0);
-                    String label = pair.get(1);
-                    labelledData.append(DeLFTModel.delft2grobidLabel(label));
+
+                    if (j >= result.size()) {
+                        labelledData.append(TaggingLabels.OTHER_LABEL);
+                    } else {
+                        List<String> pair = result.get(j);
+                        // first is the token, second is the label (DeLFT format)
+                        String token = pair.get(0);
+                        String label = pair.get(1);
+                        labelledData.append(DeLFTModel.delft2grobidLabel(label));
+                    }
                     labelledData.append("\n");
                     j++;
                 }
@@ -295,12 +300,12 @@ public class DeLFTModel {
     }
 
     private static String delft2grobidLabel(String label) {
-        if (label.equals("O")) {
-            label = "<other>";
-        } else if (label.startsWith("B-")) {
-            label = label.replace("B-", "I-");
-        } else if (label.startsWith("I-")) {
-            label = label.replace("I-", "");
+        if (label.equals(TaggingLabels.IOB_OTHER_LABEL)) {
+            label = TaggingLabels.OTHER_LABEL;
+        } else if (label.startsWith(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX)) {
+            label = label.replace(TaggingLabels.IOB_START_ENTITY_LABEL_PREFIX, TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX);
+        } else if (label.startsWith(TaggingLabels.IOB_INSIDE_LABEL_PREFIX)) {
+            label = label.replace(TaggingLabels.IOB_INSIDE_LABEL_PREFIX, TaggingLabels.GROBID_INSIDE_ENTITY_LABEL_PREFIX);
         } 
         return label;
     }
