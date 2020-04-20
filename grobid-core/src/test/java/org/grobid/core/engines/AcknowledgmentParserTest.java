@@ -17,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 
 public class AcknowledgmentParserTest {
-       AcknowledgmentParser target;
+    AcknowledgmentParser target;
 
     @BeforeClass
     public static void setInitialContext() throws Exception {
@@ -50,6 +50,9 @@ public class AcknowledgmentParserTest {
             "Joris Snellenburg is thanked for constructive comments on the text. Uwe Ligges and Martin Mächler collaborated " +
             "in the implementation of the nls options described in Section B. Achim Zeileis contributed helpful suggestions regarding the figures.");
 
+        assertThat(output.get(0).getText(), is("Computational Science"));
+        assertThat(output.get(0).getLabel(), is("fundingAgency"));
+
         assertThat(output.get(1).getText(), is("#635.000.014"));
         assertThat(output.get(1).getLabel(), is("grantNumber"));
 
@@ -61,5 +64,24 @@ public class AcknowledgmentParserTest {
 
         assertThat(output.get(4).getText(), is("Denitsa Grancharova"));
         assertThat(output.get(4).getLabel(), is("individual"));
+
+        assertThat(output.get(5).getText(), is("Rob Koehorst"));
+        assertThat(output.get(5).getLabel(), is("individual"));
+
+        assertThat(output.get(6).getText(), is("Bart van Oort"));
+        assertThat(output.get(6).getLabel(), is("individual"));
+
+        assertThat(output.get(7).getText(), is("Sergey Laptenok"));
+        assertThat(output.get(7).getLabel(), is("individual"));
+
+        assertThat(output.get(8).getText(), is("Ton Visser"));
+        assertThat(output.get(8).getLabel(), is("individual"));
+
+        assertThat(output.get(9).getText(), is("Herbert van Amerongen"));
+        assertThat(output.get(9).getLabel(), is("individual"));
+
+        assertThat(output.get(10).getText(), is("Martin Mächler"));
+        assertThat(output.get(10).getLabel(), is("individual"));
+
     }
 }

@@ -350,7 +350,7 @@ public class TEIFormatter {
                     tei.append("\t\t\t\t\t\t<title");
                     //if ( (bookTitle == null) & (journal == null) )
                     //	tei.append(" level=\"m\"");
-                    //else 
+                    //else
                     tei.append(" level=\"a\"");
                     if (generateIDs) {
                         String divID = KeyGen.getKey().substring(0, 7);
@@ -1058,7 +1058,7 @@ public class TEIFormatter {
                 addXmlId(desc, "_" + divID);
             }
 
-            // for labelling bibligraphical references in footnotes 
+            // for labelling bibligraphical references in footnotes
             org.apache.commons.lang3.tuple.Pair<String, List<LayoutToken>> noteProcess =
                 fullTextParser.processShort(noteTokens, doc);
             String labeledNote = noteProcess.getLeft();
@@ -1208,7 +1208,7 @@ public class TEIFormatter {
                 String textBefore = acknowWholeText.substring(0, indexFound);
                 String textAfter = acknowWholeText.substring(endPositionTextFound, lengTextWhole);
 
-                String concatText = textBefore + "<rs type=\"" + label + "\" " + coords + ">" + text + "</rs>" + textAfter;
+                String concatText = textBefore + "<rs type=\"" + label + "\" coords=\"" + coords + "\">" + text + "</rs>" + textAfter;
 
                 acknowWholeText = concatText;
             } else {
@@ -1317,7 +1317,7 @@ public class TEIFormatter {
         divResults.add(curDiv);
         Element curParagraph = null;
         Element curList = null;
-        int equationIndex = 0; // current equation index position 
+        int equationIndex = 0; // current equation index position
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -1468,7 +1468,7 @@ public class TEIFormatter {
 
         // we apply some overall cleaning and simplification
         buffer = TextUtilities.replaceAll(buffer, "</head><head",
-                "</head>\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<head");
+            "</head>\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<head");
         buffer = TextUtilities.replaceAll(buffer, "</p>\t\t\t\t<p>", " ");
 
         //TODO: work on reconnection
@@ -1478,7 +1478,7 @@ public class TEIFormatter {
             int indP2 = buffer.indexOf("<p>", indP1 + 1);
             if ((indP2 != 1) && (buffer.length() > indP2 + 5)) {
                 if (Character.isUpperCase(buffer.charAt(indP2 + 4)) &&
-                        Character.isLowerCase(buffer.charAt(indP2 + 5))) {
+                    Character.isLowerCase(buffer.charAt(indP2 + 5))) {
                     // a marker for reconnecting the two paragraphs
                     buffer.setCharAt(indP2 + 1, 'q');
                 }
@@ -1511,7 +1511,7 @@ public class TEIFormatter {
 
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
         return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
-                && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
+            && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
 
@@ -1670,7 +1670,7 @@ public class TEIFormatter {
                 if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(figure.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                        (textLow.contains(label.toLowerCase()))) {
                         bestFigure = figure.getId();
                         break;
                     }
@@ -1728,7 +1728,7 @@ public class TEIFormatter {
                 if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(table.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                        (textLow.contains(label.toLowerCase()))) {
                         bestTable = table.getId();
                         break;
                     }

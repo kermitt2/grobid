@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
 
 public class FeaturesVectorAcknowledgment {
     public String string = null; // lexical feature
-    public String label = null; // label if known
+    public String label = null; // for the labe,l if it's  known
     public String lineStatus = null; // one of LINESTART, LINEIN, LINEEND
     public String capitalisation = null; // one of INITCAP, ALLCAPS, NOCAPS
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
@@ -25,15 +25,6 @@ public class FeaturesVectorAcknowledgment {
     public boolean commonName = false;
     public boolean locationName = false;
     public boolean countryName = false;
-    public boolean affiliation = false;
-    public boolean educationalInsitution = false;
-    public boolean fundingAgency = false;
-    public boolean grantName = false;
-    public boolean grantNumber = false;
-    public boolean individual = false;
-    public boolean otherInsitution = false;
-    public boolean projectName = false;
-    public boolean researchInstitution = false;
     public String punctType = null;
     public String wordShape = null;
 
@@ -45,7 +36,7 @@ public class FeaturesVectorAcknowledgment {
         // token string (1)
         res.append(string);
 
-        // lowercase string
+        // lowercase string (1)
         res.append(" " + string.toLowerCase());
 
         // prefix (4)
@@ -78,7 +69,8 @@ public class FeaturesVectorAcknowledgment {
         else
             res.append(" 0");
 
-        // proper name
+        // lexical information (4)
+        // proper name (1)
         if (properName)
             res.append(" 1");
         else
@@ -102,55 +94,10 @@ public class FeaturesVectorAcknowledgment {
         else
             res.append(" 0");
 
-        // lexical information (9)
-        if (affiliation)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (educationalInsitution)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (fundingAgency)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (grantName)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (grantNumber)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (individual)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (otherInsitution)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (projectName)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
-        if (researchInstitution)
-            res.append(" 1");
-        else
-            res.append(" 0");
-
         // punctuation information (1)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
+        // word shape (1)
         res.append(" ").append(wordShape);
 
         // label - for training data (1)
@@ -258,7 +205,7 @@ public class FeaturesVectorAcknowledgment {
 
             // proper name
             if (featureFactory.test_names(word)) {
-                featuresVectorAcknowledgment.projectName = true;
+                featuresVectorAcknowledgment.properName = true;
             }
 
             // find the punctuations
@@ -392,6 +339,7 @@ public class FeaturesVectorAcknowledgment {
                 featuresVectorAcknowledgment.singleChar = true;
             }
 
+            // lexical information (4)
             // proper name
             if (featureFactory.test_names(text)) {
                 featuresVectorAcknowledgment.properName = true;
@@ -434,6 +382,8 @@ public class FeaturesVectorAcknowledgment {
             } else if (text.equals("\"") | text.equals("\'") | text.equals("`")) {
                 featuresVectorAcknowledgment.punctType = "QUOTE";
             }
+
+            featuresVectorAcknowledgment.wordShape = TextUtilities.wordShape(text);
 
             acknowledgment.append(featuresVectorAcknowledgment.printVector());
 

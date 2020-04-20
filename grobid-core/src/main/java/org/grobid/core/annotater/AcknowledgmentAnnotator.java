@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.grobid.core.data.AcknowledgmentItem;
 import org.grobid.core.engines.Engine;
+import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -25,6 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AcknowledgmentAnnotator {
+
     // read json file
     public List<AcknowledgmentAnnotated> annotate(String fileInput) throws IOException {
         List<AcknowledgmentAnnotated> acknowledgmentAnnotateds = new ArrayList<>();
@@ -41,7 +43,6 @@ public class AcknowledgmentAnnotator {
             AcknowledgmentAnnotated acknowledgmentAnnotated = new AcknowledgmentAnnotated();
             List<String> text = elements.next().findValuesAsText("text");
             for (String txt : text) {
-                //System.out.println("Text: " + txt);
                 List<AcknowledgmentItem> annotations = engine.processAcknowledgment(txt);
                 acknowledgmentAnnotated.setText(txt);
                 acknowledgmentAnnotated.setAnnotations(annotations);
@@ -49,7 +50,6 @@ public class AcknowledgmentAnnotator {
             }
             i++;
         }
-        System.out.println("Total extracted : " + i);
         return acknowledgmentAnnotateds;
     }
 
@@ -69,7 +69,9 @@ public class AcknowledgmentAnnotator {
             for (AcknowledgmentAnnotated acknowledgment : acknowledgments) {
                 String text = StringEscapeUtils.escapeXml(acknowledgment.getText());
                 annotations = acknowledgment.getAnnotations();
+                //sb.append("<p type=\"acknowledgment\">");
                 sb.append("<acknowledgment>");
+
                 if (annotations != null && annotations.size() > 0) {
                     // acknowledgment element
                     String combinedText = null;
@@ -89,6 +91,7 @@ public class AcknowledgmentAnnotator {
                             String beginText = text.substring(0, start_offset);
                             String afterText = text.substring(end_offset);
 
+                            //combinedText = beginText + "<rs type=\"" + label + "\">" + subText + "</rs>" + afterText;
                             combinedText = beginText + "<" + label + ">" + subText + "</" + label + ">" + afterText;
 
                             text = combinedText;
@@ -101,6 +104,7 @@ public class AcknowledgmentAnnotator {
                 } else {
                     sb.append(StringEscapeUtils.escapeXml(acknowledgment.getText()));
                 }
+                //sb.append("</rs>");
                 sb.append("</acknowledgment>");
                 sb.append("\n");
             }
@@ -127,14 +131,21 @@ public class AcknowledgmentAnnotator {
 
     public static void main(String[] args) throws IOException {
         AbstractEngineFactory.init();
-        String inputFile = "grobid-trainer/resources/dataset/acknowledgment/corpus/raw/acknowledgements.json";
-        String outputFile = "grobid-trainer/resources/dataset/acknowledgment/corpus/annotated/acknowledgementsAnnotatedAutomaticallyByGrobid.xml";
+        AcknowledgmentAnnotator acknowledgmentAnnotator = null;
+        String path2InputFile = "grobid-trainer/resources/dataset/acknowledgment/corpus/raw/acknowledgements.json";
+        String path2OutputFile = null;
+        try {
 
-        AcknowledgmentAnnotator acknowledgmentAnnotator = new AcknowledgmentAnnotator();
-        List<AcknowledgmentAnnotated> results = acknowledgmentAnnotator.annotate(inputFile);
-        System.out.println("Total annotated = " + results.size());
-        acknowledgmentAnnotator.writeToXML(results, outputFile);
+            if (Files.exists(Paths.get(path2InputFile)) && path2InputFile.endsWith(".json")) {
+                path2OutputFile = path2InputFile.replace(".json", "Annotated.xml");
+                acknowledgmentAnnotator = new AcknowledgmentAnnotator();
+                List<AcknowledgmentAnnotated> results = acknowledgmentAnnotator.annotate(path2InputFile);
+                System.out.println("Total annotated = " + results.size());
+                acknowledgmentAnnotator.writeToXML(results, path2OutputFile);
+            }
+
+        } catch (Exception e) {
+            throw new GrobidException("Missing path of the input json file.", e);
+        }
     }
 }
-
-
