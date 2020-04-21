@@ -991,7 +991,7 @@ var grobid = (function($) {
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').show();
 			$('#includeRawAffiliationsBlock').hide();
-			$('#includeRawCitationsBlock').hide();
+			$('#includeRawCitationsBlock').show();
 			setBaseUrl('processReferences');
 		}
 		else if (selected == 'processAffiliations') {

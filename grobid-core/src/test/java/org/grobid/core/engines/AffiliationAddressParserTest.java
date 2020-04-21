@@ -27,7 +27,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
-
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 public class AffiliationAddressParserTest {
 
@@ -102,7 +102,7 @@ public class AffiliationAddressParserTest {
         List<String> tokens,
         List<String> labels
     ) throws Exception {
-        List<LayoutToken> tokenizations = this.analyzer.getLayoutTokensForTokenizedText(tokens);
+        List<LayoutToken> tokenizations = LayoutTokensUtil.getLayoutTokensForTokenizedText(tokens);
         LOGGER.debug("tokenizations: {}", tokenizations);
         List<String> affiliationBlocks = getAffiliationBlocksWithLineFeed(tokenizations);
         String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(

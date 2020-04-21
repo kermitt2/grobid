@@ -17,6 +17,8 @@ Thumbs.db
 *.old
 tei-alt
 raw-alt
+tei-new
+raw-new
 /log
 /logs
 

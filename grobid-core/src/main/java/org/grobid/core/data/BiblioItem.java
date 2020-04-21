@@ -3785,7 +3785,7 @@ public class BiblioItem {
                 aff.getRawAffiliationString()
             );
             tei.append("<note type=\"raw_affiliation\">");
-            LOGGER.info("marker: {}", aff.getMarker());
+            LOGGER.debug("marker: {}", aff.getMarker());
             if (StringUtils.isNotEmpty(aff.getMarker())) {
                 tei.append("<label>");
                 tei.append(aff.getMarker());
