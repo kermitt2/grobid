@@ -57,7 +57,7 @@ e.g. to configure `grobid.nb_threads` use `GROBID__NB_THREADS`.
 
 ### Out of memory or container being killed while processing
 
-This is usually be due to insufficient memory allocated to the docker machine. Depending on the intended usage, we recommend to allocate 4GB of RAM to structure entirely all the PDF content (`/api/processFulltextDocument`), otherwise 2GB are sufficient to extract only header information, and 3GB for citations. In case of more intensice usage and batch parallel processing, allocating 6 or 8GB is recommended.
+This is usually be due to insufficient memory allocated to the docker machine. Depending on the intended usage, we recommend to allocate 4GB of RAM to structure entirely all the PDF content (`/api/processFulltextDocument`), otherwise 2GB are sufficient to extract only header information, and 3GB for citations. In case of more intensive usage and batch parallel processing, allocating 6 or 8GB is recommended.
 
 On `macos`, see for instance [here](https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac/39720010#39720010) on how to increase the RAM from the Docker UI.
 
@@ -85,7 +85,7 @@ You should see something like:
         "VBoxManager": {},
         "HostInterfaces": {},
         "CPU": 1,
-        "Memory": 2048,     #<---- Memory: 2Gb
+        "Memory": 2048,     #<---- Memory: 2GB
         "DiskSize": 204800,
         "NatNicType": "82540EM",
         "Boot2DockerURL": "",
@@ -113,9 +113,7 @@ You should see something like:
 }
 ```
 
-See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos`.
-
-For more information see the [GROBID main page](https://github.com/kermitt2/grobid/blob/master/Readme.md).
+See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos` with command lines.
 
 ### pdfalto zombie processes
 
