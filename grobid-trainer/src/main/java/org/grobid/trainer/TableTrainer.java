@@ -220,8 +220,8 @@ public class TableTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new TableTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new TableTrainer()));
+        System.out.println(AbstractTrainer.runNFoldEvaluation(new TableTrainer(), 2));
+//        System.out.println(AbstractTrainer.runEvaluation(new TableTrainer()));
         System.exit(0);
     }
 }
