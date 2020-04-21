@@ -15,6 +15,21 @@ public class TaggingLabels {
 
     protected static final ConcurrentMap<Pair<GrobidModel, String>, TaggingLabel> cache = new ConcurrentHashMap<>();
 
+    //IOB labels and prefixes
+    public static final String IOB_START_ENTITY_LABEL_PREFIX = "B-";
+    public static final String IOB_INSIDE_LABEL_PREFIX = "I-";
+    public static final String IOB_OTHER_LABEL = "O";
+
+    //ENAMEX NER label and prefixes
+    public static final String ENAMEX_START_ENTITY_LABEL_PREFIX = "E-";
+
+    //Grobid generic labels
+    public static final String GROBID_START_ENTITY_LABEL_PREFIX = "I-";
+    public static final String GROBID_INSIDE_ENTITY_LABEL_PREFIX = "";
+    public final static String OTHER_LABEL = "<other>";
+
+    //Grobid specific labels
+
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";
     public static final String FIGURE_MARKER_LABEL = "<figure_marker>";
@@ -22,7 +37,6 @@ public class TaggingLabels {
 
     public final static String PARAGRAPH_LABEL = "<paragraph>";
     public final static String ITEM_LABEL = "<item>";
-    public final static String OTHER_LABEL = "<other>";
     public final static String SECTION_LABEL = "<section>";
     public final static String FIGURE_LABEL = "<figure>";
     public final static String TABLE_LABEL = "<table>";
@@ -165,6 +179,7 @@ public class TaggingLabels {
     public static final TaggingLabel TBL_CONTENT = new TaggingLabelImpl(GrobidModels.TABLE, CONTENT_LABEL);
     public static final TaggingLabel TBL_LABEL = new TaggingLabelImpl(GrobidModels.TABLE, LABEL_LABEL);
     public static final TaggingLabel TBL_OTHER = new TaggingLabelImpl(GrobidModels.TABLE, OTHER_LABEL);
+    public static final TaggingLabel TBL_NOTE = new TaggingLabelImpl(GrobidModels.TABLE, NOTE_LABEL);
 
     public static final TaggingLabel CITATION_TITLE = new TaggingLabelImpl(GrobidModels.CITATION, TITLE_LABEL);
     public static final TaggingLabel CITATION_JOURNAL = new TaggingLabelImpl(GrobidModels.CITATION, JOURNAL_LABEL);

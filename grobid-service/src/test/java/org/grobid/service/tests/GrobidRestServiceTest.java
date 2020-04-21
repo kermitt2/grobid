@@ -20,16 +20,21 @@ import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.service.GrobidPaths;
+import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
+import org.grobid.service.util.BibTexMediaType;
 import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.Form;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
@@ -158,7 +163,8 @@ public class GrobidRestServiceTest {
      * Send all xml and xml.gz ST36 files found in a given folder test/resources/patent
      * to the web service and write back the results in the test/sample
      */
-    //@Test
+    @Test
+    @Ignore
     public void testRestPatentCitation() throws Exception {
         Client client = getClient();
         
@@ -201,20 +207,146 @@ public class GrobidRestServiceTest {
     }
 
     @Test
-    @Ignore
-    //TODO: fix returning a correct version
     public void testGetVersion_shouldReturnCurrentGrobidVersion() throws Exception {
-        String expectedVersion = "0.4.5-dummy";
         Response resp = getClient().target(baseUrl() + GrobidPaths.PATH_GET_VERSION)
                 .request()
                 .get();
 
         assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
-        assertEquals("Grobid version mismatch: ", expectedVersion, resp.readEntity(String.class));
+        assertEquals(GrobidProperties.getVersion(), resp.readEntity(String.class));
+    }
+
+    @Test
+    public void isAliveReturnsTrue() throws Exception {
+        Response resp = getClient().target(baseUrl() + GrobidPaths.PATH_IS_ALIVE)
+                .request()
+                .get();
+        assertEquals(Response.Status.OK.getStatusCode(), resp.getStatus());
+        assertEquals("true", resp.readEntity(String.class));
+    }
+
+    @Test
+    public void processCitationReturnsCorrectBibTeXForMissingFirstName() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .accept(BibTexMediaType.MEDIA_TYPE)
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("@article{-1,\n" +
+                "  author = {Graff},\n" +
+                "  journal = {Expert. Opin. Ther. Targets},\n" +
+                "  year = {2002},\n" +
+                "  pages = {103--113},\n" +
+                "  volume = {6},\n" +
+                "  number = {1}\n" +
+                "}\n",
+            response.readEntity(String.class));
+    }
+
+    @Test
+    public void processCitationReturnsBibTeX() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
+            "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .accept(BibTexMediaType.MEDIA_TYPE)
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("@inproceedings{-1,\n" +
+                "  author = {Kolb, S and Wirtz, G},\n" +
+                "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
+                "  year = {April 7 - 10, 2014},\n" +
+                "  address = {Oxford, United Kingdom}\n" +
+                "}\n",
+            response.readEntity(String.class));
+    }
+
+    @Test
+    public void processCitationReturnsBibTeXAndCanInludeRaw() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
+            "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.");
+        form.param(GrobidRestService.INCLUDE_RAW_CITATIONS, "1");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .accept(BibTexMediaType.MEDIA_TYPE)
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("@inproceedings{-1,\n" +
+                "  author = {Kolb, S and Wirtz, G},\n" +
+                "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
+                "  year = {April 7 - 10, 2014},\n" +
+                "  address = {Oxford, United Kingdom},\n" +
+                "  raw = {Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
+                "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.}\n" +
+                "}\n",
+            response.readEntity(String.class));
+    }
+
+    @Ignore
+    public void processStatelessReferencesDocumentReturnsValidBibTeXForKolbAndKopp() throws Exception {
+        final FileDataBodyPart filePart = new FileDataBodyPart(GrobidRestService.INPUT, new File(this.getClass().getResource("/sample5/gadr.pdf").toURI()));
+        FormDataMultiPart formDataMultiPart = new FormDataMultiPart();
+        //final FormDataMultiPart multipart = (FormDataMultiPart) formDataMultiPart.field("foo", "bar").bodyPart(filePart);
+        final FormDataMultiPart multipart = (FormDataMultiPart) formDataMultiPart.bodyPart(filePart);
+        Response response = getClient().target(baseUrl() + GrobidPaths.PATH_REFERENCES)
+                                       .request(BibTexMediaType.MEDIA_TYPE)
+                                       .post(Entity.entity(multipart, multipart.getMediaType()));
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertEquals("@techreport{0,\n" +
+            "  author = {Büchler, A},\n" +
+            "  year = {2017}\n" +
+            "}\n" +
+            "\n" +
+            "@article{1,\n" +
+            "  author = {Kopp, O and Armbruster, A and Zimmermann, O},\n" +
+            "  title = {Markdown Architectural Decision Records: Format and Tool Support},\n" +
+            "  booktitle = {ZEUS. CEUR Workshop Proceedings},\n" + 
+            "  year = {2018},\n" +
+            "  volume = {2072}\n" +
+            "}\n" +
+            "\n" +
+            "@article{2,\n" +
+            "  author = {Thurimella, A and Schubanz, M and Pleuss, A and Botterweck, G},\n" +
+            "  title = {Guidelines for Managing Requirements Rationales},\n" +
+            "  journal = {IEEE Software},\n" +
+            "  year = {Jan 2017},\n" +
+            "  pages = {82--90},\n" +
+            "  volume = {34},\n" +
+            "  number = {1}\n" +
+            "}\n" +
+            "\n" +
+            "@article{3,\n" +
+            "  author = {Zdun, U and Capilla, R and Tran, H and Zimmermann, O},\n" +
+            "  title = {Sustainable Architectural Design Decisions},\n" +
+            "  journal = {IEEE Software},\n" +
+            "  year = {Nov 2013},\n" +
+            "  pages = {46--53},\n" +
+            "  volume = {30},\n" +
+            "  number = {6}\n" +
+            "}\n" +
+            "\n" +
+            "@inbook{4,\n" +
+            "  author = {Zimmermann, O and Wegmann, L and Koziolek, H and Goldschmidt, T},\n" +
+            "  title = {Architectural Decision Guidance Across Projects -Problem Space Modeling, Decision Backlog Management and Cloud Computing Knowledge},\n" +
+            "  booktitle = {Working IEEE/IFIP Conference on Software Architecture},\n" +
+            "  year = {2015}\n" +
+            "}\n" +
+            "\n" +
+            "@inbook{5,\n" +
+            "  author = {Zimmermann, O and Miksovic, C},\n" +
+            "  title = {Decisions required vs. decisions made},\n" +
+            "  booktitle = {Aligning Enterprise, System, and Software Architectures},\n" +
+            "  publisher = {IGI Global},\n" +
+            "  year = {2013}\n" +
+            "}\n" +
+            "\n", response.readEntity(String.class));
     }
 
     private String getStrResponse(File pdf, String method) {
-
         assertTrue("Cannot run the test, because the sample file '" + pdf + "' does not exists.", pdf.exists());
 
         FormDataMultiPart form = new FormDataMultiPart();

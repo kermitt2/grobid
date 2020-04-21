@@ -1,4 +1,4 @@
-Austria	austria	A	Au	Aus	Aust	Austr	a	ia	ria	tria	stria	INITCAP	NODIGIT	0	0	0	0	1	0	0	1	1	1	1	Xxxx	Xx	0	B-LOCATION
+Austria	austria	A	Au	Aus	Aust	Austr	a	ia	ria	tria	stria	INITCAP	NODIGIT	0	0	0	0	1	0	0	1	1	1	1	Xxxx	Xx	0	I-LOCATION
 invaded	invaded	i	in	inv	inva	invad	d	ed	ded	aded	vaded	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xxxx	x	0	O
 and	and	a	an	and	and	and	d	nd	and	and	and	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xxx	x	0	O
 fought	fought	f	fo	fou	foug	fough	t	ht	ght	ught	ought	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xxxx	x	0	O
@@ -11,7 +11,7 @@ Battle	battle	B	Ba	Bat	Batt	Battl	e	le	tle	ttle	attle	INITCAP	NODIGIT	1	1	0	0	0	
 of	of	o	of	of	of	of	f	of	of	of	of	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xx	x	0	EVENT
 Cer	cer	C	Ce	Cer	Cer	Cer	r	er	Cer	Cer	Cer	INITCAP	NODIGIT	0	0	0	0	0	0	0	0	0	0	0	Xxx	Xx	0	EVENT
 and	and	a	an	and	and	and	d	nd	and	and	and	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xxx	x	0	O
-Battle	battle	B	Ba	Bat	Batt	Battl	e	le	tle	ttle	attle	INITCAP	NODIGIT	1	1	0	0	0	0	0	0	0	0	0	Xxxx	Xx	0	B-EVENT
+Battle	battle	B	Ba	Bat	Batt	Battl	e	le	tle	ttle	attle	INITCAP	NODIGIT	1	1	0	0	0	0	0	0	0	0	0	Xxxx	Xx	0	I-EVENT
 of	of	o	of	of	of	of	f	of	of	of	of	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xx	x	0	EVENT
 Kolubara	kolubara	K	Ko	Kol	Kolu	Kolub	a	ra	ara	bara	ubara	INITCAP	NODIGIT	0	0	0	0	0	0	0	0	0	0	0	Xxxx	Xx	0	EVENT
 beginning	beginning	b	be	beg	begi	begin	g	ng	ing	ning	nning	NOCAPS	NODIGIT	0	1	0	0	0	0	0	0	0	0	0	xxxx	x	0	O

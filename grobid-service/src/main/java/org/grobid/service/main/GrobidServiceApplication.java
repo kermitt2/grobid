@@ -89,13 +89,13 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 File confLocation = new File(p).getAbsoluteFile();
                 if (confLocation.exists()) {
                     foundConf = confLocation.getAbsolutePath();
-                    LOGGER.info("Found conf path: " + foundConf);
+                    LOGGER.info("Found conf path: {}", foundConf);
                     break;
                 }
             }
 
             if (foundConf != null) {
-                LOGGER.warn("Running with default arguments: \"server\" \"" + foundConf + "\"");
+                LOGGER.warn("Running with default arguments: \"server\" \"{}\"", foundConf);
                 args = new String[]{"server", foundConf};
             } else {
                 throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "

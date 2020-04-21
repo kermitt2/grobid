@@ -1,8 +1,10 @@
 package org.grobid.trainer;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.text.RandomStringGenerator;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GenericTagger;
@@ -12,6 +14,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.Utilities;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 import org.grobid.trainer.evaluation.LabelResult;
 import org.grobid.trainer.evaluation.ModelStats;
@@ -51,6 +54,7 @@ public abstract class AbstractTrainer implements Trainer {
     private File trainDataPath;
     private File evalDataPath;
     private GenericTagger tagger;
+    private RandomStringGenerator randomStringGenerator;
 
     public AbstractTrainer(final GrobidModel model) {
         GrobidFactory.getInstance().createEngine();
@@ -61,6 +65,9 @@ public abstract class AbstractTrainer implements Trainer {
         }
         this.trainDataPath = getTempTrainingDataPath();
         this.evalDataPath = getTempEvaluationDataPath();
+        this.randomStringGenerator = new RandomStringGenerator.Builder()
+            .withinRange('a', 'z')
+            .build();
     }
 
     public void setParams(double epsilon, int window, int nbMaxIterations) {
@@ -174,6 +181,8 @@ public abstract class AbstractTrainer implements Trainer {
         createCRFPPData(getCorpusPath(), dataPath);
         GenericTrainer trainer = TrainerFactory.getTrainer();
 
+        String randomString = randomStringGenerator.generate(10);
+
         // Load in memory and Shuffle
         Path dataPath2 = Paths.get(dataPath.getAbsolutePath());
         List<String> trainingData = loadAndShuffle(dataPath2);
@@ -195,6 +204,8 @@ public abstract class AbstractTrainer implements Trainer {
             LOGGER.warn("Cannot find the destination directory " + tmpDirectory);
         }
 
+        List<String> tempFilePaths = new ArrayList<>();
+
         // Output
         StringBuilder sb = new StringBuilder();
         sb.append("Recap results for each fold:").append("\n\n");
@@ -206,8 +217,13 @@ public abstract class AbstractTrainer implements Trainer {
             System.out.println("====================== Fold " + counter.get() + " ====================== ");
 
             final File tempModelPath = new File(tmpDirectory + File.separator + getModel().getModelName()
-                + "_nfold_" + counter.getAndIncrement() + ".wapiti");
+                + "_nfold_" + counter.getAndIncrement() + "_" + randomString + ".wapiti");
             sb.append("Saving model in " + tempModelPath).append("\n");
+
+            // Collecting generated paths to be deleted at the end of the process
+            tempFilePaths.add(tempModelPath.getAbsolutePath());
+            tempFilePaths.add(fold.getLeft());
+            tempFilePaths.add(fold.getRight());
 
             sb.append("Training input data: " + fold.getLeft()).append("\n");
             trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
@@ -373,6 +389,14 @@ public abstract class AbstractTrainer implements Trainer {
             "Instance-level recall:",
             TextUtilities.formatTwoDecimals(averageCorrectInstances / averageTotalInstances * 100)));
 
+        // Cleanup
+        tempFilePaths.stream().forEach(f -> {
+            try {
+                Files.delete(Paths.get(f));
+            } catch (IOException e) {
+                LOGGER.warn("Error while performing the cleanup after n-fold cross-validation. Cannot delete the file: " + f, e);
+            }
+        });
 
         return sb.toString();
     }
@@ -411,7 +435,7 @@ public abstract class AbstractTrainer implements Trainer {
                 throw new GrobidException("Error when dumping n-fold evaluation data into files. ", e);
             }
 
-            //Dump Training
+            //Remove temporary Training and models files (note: the original data files (.train and .eval) are not deleted)
             String tempTrainingDataPath = getTempTrainingDataPath().getAbsolutePath();
             try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(tempTrainingDataPath))) {
                 writer.write(String.join("\n\n", foldTraining));

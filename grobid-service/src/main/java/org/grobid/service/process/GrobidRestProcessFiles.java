@@ -17,6 +17,8 @@ import org.grobid.core.visualization.BlockVisualizer;
 import org.grobid.core.visualization.CitationsVisualizer;
 import org.grobid.core.visualization.FigureTableVisualizer;
 import org.grobid.service.exceptions.GrobidServiceException;
+import org.grobid.service.util.BibTexMediaType;
+import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -452,21 +454,22 @@ public class GrobidRestProcessFiles {
         return response;
     }
 
-
     /**
      * Uploads the origin document, extract and parser all its references.
      *
-     * @param inputStream the data of origin document
-     * @param consolidate if the result has to be consolidated with CrossRef access.
-     * @return a response object mainly contain the TEI representation of the
-     * full text
+     * @param inputStream          the data of origin document
+     * @param consolidate          if the result has to be consolidated with CrossRef access.
+     * @param includeRawCitations  determines whether the original citation (called "raw") should be included in the
+     *                             output
+     * @param expectedResponseType determines whether XML or BibTeX should be returned
+     * @return a response object mainly contain the TEI representation of the full text
      */
     public Response processStatelessReferencesDocument(final InputStream inputStream,
                                                        final int consolidate,
-                                                       final boolean includeRawCitations) {
+                                                       final boolean includeRawCitations,
+                                                       ExpectedResponseType expectedResponseType) {
         LOGGER.debug(methodLogIn());
-        Response response = null;
-        String retVal = null;
+        Response response;
         File originFile = null;
         Engine engine = null;
         try {
@@ -485,33 +488,42 @@ public class GrobidRestProcessFiles {
             } 
 
             // starts conversion process
-            List<BibDataSet> results = engine.processReferences(originFile, consolidate);
+            List<BibDataSet> bibDataSetList = engine.processReferences(originFile, consolidate);
 
-            StringBuilder result = new StringBuilder();
-            // dummy header
-            result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
-                "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
-                "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
-            result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
-                "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
-            int p = 0;
-            for (BibDataSet res : results) {
-                result.append(res.toTEI(p, includeRawCitations));
-                result.append("\n");
-                p++;
-            }
-            result.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
-
-            retVal = result.toString();
-
-            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+            if (bibDataSetList.isEmpty()) {
                 response = Response.status(Status.NO_CONTENT).build();
-            } else {
-                //response = Response.status(Status.OK).entity(retVal).type(MediaType.APPLICATION_XML).build();
+            } else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+                StringBuilder result = new StringBuilder();
+                GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(includeRawCitations).build();
+                int p = 0;
+                for (BibDataSet res : bibDataSetList) {
+                    result.append(res.getResBib().toBibTeX(Integer.toString(p), config));
+                    result.append("\n");
+                    p++;
+                }
                 response = Response.status(Status.OK)
-                    .entity(retVal)
-                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
-                    .build();
+                                   .entity(result.toString())
+                                   .header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+                                   .build();
+            } else {
+                StringBuilder result = new StringBuilder();
+                // dummy header
+                result.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                    "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                    "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+                result.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
+                    "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
+                int p = 0;
+                for (BibDataSet bibDataSet : bibDataSetList) {
+                    result.append(bibDataSet.toTEI(p, includeRawCitations));
+                    result.append("\n");
+                    p++;
+                }
+                result.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
+                response = Response.status(Status.OK)
+                                   .entity(result.toString())
+                                   .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                                   .build();
             }
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");

@@ -2,6 +2,10 @@ package org.grobid.core.data;
 
 import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.data.table.Cell;
+import org.grobid.core.data.table.Line;
+import org.grobid.core.data.table.LinePart;
+import org.grobid.core.data.table.Row;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.TEIFormatter;
@@ -41,6 +45,8 @@ public class Table extends Figure {
 	private List<LayoutToken> fullDescriptionTokens = new ArrayList<>();
 	private boolean goodTable = true;
 
+    protected StringBuilder note = null;
+
 	public void setGoodTable(boolean goodTable) {
 		this.goodTable = goodTable;
 	}
@@ -50,6 +56,7 @@ public class Table extends Figure {
     	header = new StringBuilder();
     	content = new StringBuilder();
     	label = new StringBuilder();
+        note = new StringBuilder();
     }
 
 	@Override
@@ -131,16 +138,24 @@ public class Table extends Figure {
 
 
 		Element contentEl = XmlBuilderUtils.teiElement("table");
-		contentEl.appendChild(LayoutTokensUtil.toText(getContentTokens()));
+		processTableContent(contentEl, this.getContentTokens());
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("figure"))) {
 			XmlBuilderUtils.addCoords(contentEl, LayoutTokensUtil.getCoordsStringForOneBox(getContentTokens()));
 		}
+
+        Element noteNode = null;
+        if (note != null) {
+            noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()));
+        }
 
 		tableElement.appendChild(headEl);
 		tableElement.appendChild(labelEl);
         if (desc != null)
     		tableElement.appendChild(desc);
 		tableElement.appendChild(contentEl);
+
+        if (noteNode != null)
+            tableElement.appendChild(noteNode);
 
 		return tableElement.toXML();
 
@@ -179,13 +194,60 @@ public class Table extends Figure {
 //        return theTable.toString();
     }
 
+	/**
+	 *
+	 * @param contentEl table element to append parsed rows and cells.
+	 * @param contentTokens tokens that are used to build cells
+	 * Line-based algorithm for parsing tables, uses tokens' coordinates to identify lines
+	 */
+	void processTableContent(Element contentEl, List<LayoutToken> contentTokens) {
+		// Join Layout Tokens into cell lines originally created by PDFAlto
+		List<LinePart> lineParts = Line.extractLineParts(contentTokens);
+
+		// Build lines by comparing borders
+		List<Line> lines = Line.extractLines(lineParts);
+
+		// Build rows and cells
+		List<Row> rows = Row.extractRows(lines);
+
+		int columnCount = Row.columnCount(rows);
+
+		Row.insertEmptyCells(rows, columnCount);
+
+		Row.mergeMulticolumnCells(rows);
+
+		for (Row row: rows) {
+			Element tr = XmlBuilderUtils.teiElement("row");
+			contentEl.appendChild(tr);
+			List<Cell> cells = row.getContent();
+			for (Cell cell: cells) {
+				Element td = XmlBuilderUtils.teiElement("cell");
+				tr.appendChild(td);
+				if (cell.getColspan() > 1) {
+					td.addAttribute(new Attribute("cols", Integer.toString(cell.getColspan())));
+				}
+				td.appendChild(cell.getText().trim());
+			}
+		}
+	}
+
     private String cleanString(String input) {
     	return input.replace("\n", " ").replace("  ", " ").trim();
     }
 
+    public String getNote() {
+        return note.toString();
+    }
+
+    public void setNote(StringBuilder note) {
+        this.note = note;
+    }
+
+    public void appendNote(String noteChunk) {
+        note.append(noteChunk);
+    }
 
 	// if an extracted table passes some validations rules
-
 	public boolean firstCheck() {
 		goodTable = goodTable && validateTable();
 		return goodTable;
