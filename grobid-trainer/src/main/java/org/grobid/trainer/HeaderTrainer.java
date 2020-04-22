@@ -135,13 +135,12 @@ public class HeaderTrainer extends AbstractTrainer{
                 File[] refFiles2 = refDir2.listFiles();
                 for (File aRefFiles2 : refFiles2) {
                     String localFileName = aRefFiles2.getName();
-                    if (localFileName.equals(parser2.getPDFName() + ".header")) {
+                    if (localFileName.equals(parser2.getPDFName() + ".header") || localFileName.equals(parser2.getPDFName() + ".training.header")) {
                         headerFile = localFileName;
                         break;
                     }
-
-                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &
-                            (localFileName.endsWith(".header"))) {
+                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &&
+                            (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
                         headerFile = localFileName;
                         break;
                     }

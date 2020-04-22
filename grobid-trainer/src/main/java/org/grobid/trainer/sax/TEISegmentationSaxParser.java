@@ -132,7 +132,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
             } else if (qName.equals("other") || qName.equals("toc")) {
-                // for the moment the table of content mark-up is ignored
+                // valid table of content mark-up should be <div type="toc>", tag <toc> is ignored
                 //currentTags.push("<other>");
 				currentTag = "<other>";
             } else if (qName.equals("note")) {
@@ -153,10 +153,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                             } else if (value.equals("margin")) {
                                 currentTag = "<marginnote>";
                             } else {
-                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
+                                logger.error("Invalid attribute value for element note: " + name + "=" + value);
                             }
                         } else {
-                            logger.error("Invalid attribute name for element div: " + name);
+                            logger.error("Invalid attribute name for element note: " + name);
                         }
                     }
                 }
@@ -181,6 +181,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
+                            } else if (value.equals("toc")) {
+                                currentTag = "<toc>";
+                                upperTag = currentTag;
+                                upperQname = "div";
                             } else {
                                 logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
