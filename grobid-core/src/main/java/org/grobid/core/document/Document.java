@@ -162,9 +162,12 @@ public class Document implements Serializable {
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
+    protected double byteSize = 0; 
+
     public Document(DocumentSource documentSource) {
         this.documentSource = documentSource;
         setPathXML(documentSource.getXmlFile());
+        this.byteSize = documentSource.getByteSize();
     }
 
     protected Document() {
@@ -174,6 +177,14 @@ public class Document implements Serializable {
     public static Document createFromText(String text) {
         Document doc = new Document();
         doc.fromText(text);
+        if (text != null) {
+            try {
+                final byte[] utf8Bytes = text.getBytes("UTF-8");
+                doc.byteSize = utf8Bytes.length;
+            } catch(Exception e) {
+                LOGGER.warn("Could not set the original text document size in bytes for UTF-8 encoding");
+            }
+        }
         return doc;
     }
 
@@ -2194,4 +2205,11 @@ public class Document implements Serializable {
         }
     }*/
 
+    public double getByteSize() {
+        return byteSize;
+    }
+
+    public void setByteSize(double size) {
+        byteSize = size;
+    }
 }

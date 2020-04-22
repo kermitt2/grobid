@@ -72,6 +72,16 @@ public class Person {
     }
 
     public void setTitle(String f) {
+        if (f != null) {
+            while (f.startsWith("(")) {
+                f = f.substring(1,f.length());
+            }
+
+            while (f.endsWith(")")) {
+                f = f.substring(0,f.length()-1);
+            }
+        }
+
         title = f;
     }
 
@@ -182,6 +192,9 @@ public class Person {
         return layoutTokens;
     }
 
+    /**
+     * TEI serialization via xom. 
+     */
     public String toTEI(boolean withCoordinates) {
         if ( (firstName == null) && (middleName == null) &&
                 (lastName == null) ) {
@@ -213,24 +226,71 @@ public class Person {
             persElement.appendChild(XmlBuilderUtils.teiElement("genName", TextUtilities.HTMLEncode(suffix)));
         }
 
-
-
-        //        res += "</persName>";
-
-//        String res = "<persName>";
-//        if (title != null)
-//            res += "<roleName>" + title + "</roleName>";
-//        if (firstName != null)
-//            res += "<forename type=\"first\">" + firstName + "</forename>";
-//        if (middleName != null)
-//            res += "<forename type=\"middle\">" + middleName + "</forename>";
-//        if (lastName != null)
-//            res += "<surname>" + lastName + "</surname>";
-//        if (suffix != null)
-//            res += "<genName>" + suffix + "</genName>";
-//        res += "</persName>";
-
         return XmlBuilderUtils.toXml(persElement);
+    }
+
+    /**
+     * TEI serialization based on string builder, it allows to avoid namespaces and to better control
+     * the formatting.
+     */
+    public String toTEI(boolean withCoordinates, int indent) {
+        if ( (firstName == null) && (middleName == null) && (lastName == null) ) {
+            return null;
+        }
+
+        StringBuilder tei = new StringBuilder();
+
+        for (int i = 0; i < indent; i++) {
+            tei.append("\t");
+        }
+        tei.append("<persName");
+        if (withCoordinates && (getLayoutTokens() != null) && (!getLayoutTokens().isEmpty())) {
+            tei.append(" ");
+            tei.append(LayoutTokensUtil.getCoordsString(getLayoutTokens()));
+        }
+        tei.append(">\n");
+
+        if (!StringUtils.isEmpty(title)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<roleName>"+TextUtilities.HTMLEncode(title)+"</roleName>\n");
+        }
+
+        if (!StringUtils.isEmpty(firstName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<forename type=\"first\">"+TextUtilities.HTMLEncode(firstName)+"</forename>\n");
+        }
+
+        if (!StringUtils.isEmpty(middleName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<forename type=\"middle\">"+TextUtilities.HTMLEncode(middleName)+"</forename>\n");
+        }
+
+        if (!StringUtils.isEmpty(lastName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<surname>"+TextUtilities.HTMLEncode(lastName)+"</surname>\n");
+        }
+
+        if (!StringUtils.isEmpty(suffix)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<genName>"+TextUtilities.HTMLEncode(suffix)+"</genName>\n");
+        }
+
+        for (int i = 0; i < indent; i++) {
+            tei.append("\t");
+        }
+        tei.append("</persName>");
+
+        return tei.toString();
     }
 
     // list of character delimiters for capitalising names

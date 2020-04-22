@@ -940,6 +940,9 @@ public class Segmentation extends AbstractParser {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<cover>", "<titlePage>", addSpace, 3);
                 }
                 if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<toc>", "<div type=\"toc\">", addSpace, 3);
+                }
+                if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<annex>", "<div type=\"annex\">", addSpace, 3);
                 }
                 if (!output) {
@@ -1147,6 +1150,8 @@ public class Segmentation extends AbstractParser {
                 buffer.append("</page>\n\n");
             } else if (lastTag0.equals("<cover>")) {
                 buffer.append("</titlePage>\n\n");
+            } else if (lastTag0.equals("<toc>")) {
+                buffer.append("</div>\n\n");
             } else if (lastTag0.equals("<annex>")) {
                 buffer.append("</div>\n\n");
             } else if (lastTag0.equals("<acknowledgement>")) {

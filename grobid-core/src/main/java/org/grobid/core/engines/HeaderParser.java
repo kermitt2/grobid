@@ -16,6 +16,7 @@ import org.grobid.core.document.DocumentSource;
 import org.grobid.core.document.TEIFormatter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
+import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
@@ -24,12 +25,16 @@ import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.LabeledTokensContainer;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.counters.CntManager;
+import org.grobid.core.GrobidModels.Collection;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -287,6 +292,24 @@ public class HeaderParser extends AbstractParser {
                             }
                         }
                     }
+
+                    if (resHeader.getDownloadDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resHeader.getDownloadDate());
+                        if (dates != null) {
+                            if (dates.size() > 0) {
+                                resHeader.setNormalizedDownloadDate(dates.get(0));
+                            }
+                        }
+                    }
+
+                    if (resHeader.getServerDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resHeader.getServerDate());
+                        if (dates != null) {
+                            if (dates.size() > 0) {
+                                resHeader.setNormalizedServerDate(dates.get(0));
+                            }
+                        }
+                    }
                 }
             }
         } else {
@@ -498,6 +521,24 @@ public class HeaderParser extends AbstractParser {
                         if (dates != null) {
                             if (dates.size() > 0) {
                                 resHeader.setNormalizedSubmissionDate(dates.get(0));
+                            }
+                        }
+                    }
+
+                    if (resHeader.getDownloadDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resHeader.getDownloadDate());
+                        if (dates != null) {
+                            if (dates.size() > 0) {
+                                resHeader.setNormalizedDownloadDate(dates.get(0));
+                            }
+                        }
+                    }
+
+                    if (resHeader.getServerDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resHeader.getServerDate());
+                        if (dates != null) {
+                            if (dates.size() > 0) {
+                                resHeader.setNormalizedServerDate(dates.get(0));
                             }
                         }
                     }
@@ -1061,7 +1102,7 @@ public class HeaderParser extends AbstractParser {
      * @param biblio        biblio item
      * @return a biblio item
      */
-    public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
+    public BiblioItem resultExtractionOld(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
 //        StringTokenizer st = new StringTokenizer(result, "\n");
         biblio.generalResultMapping(doc, result, tokenizations);
         List<String> lines = Splitter.on("\n").splitToList(result);
@@ -1378,6 +1419,298 @@ public class HeaderParser extends AbstractParser {
         return biblio;
     }
 
+        /**
+     * Extract results from a labelled header. If boolean intro is true, the
+     * extraction is stopped at the first "intro" tag identified (this tag marks
+     * the begining of the description).
+     *
+     * @param result        result
+     * @param intro         if intro
+     * @param tokenizations list of tokens
+     * @param biblio        biblio item
+     * @return a biblio item
+     */
+    public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
+
+        TaggingLabel lastClusterLabel = null;
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, result, tokenizations);
+
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+
+            String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+            //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
+                if (biblio.getTitle() != null)
+                    biblio.setTitle(biblio.getTitle() + clusterContent);
+                else
+                    biblio.setTitle(clusterContent);
+                //List<LayoutToken> tokens = getLayoutTokens(cluster);
+                //biblio.addTitleTokens(tokens);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
+                if (biblio.getAuthors() != null) {
+                    biblio.setAuthors(biblio.getAuthors() + "\n" + clusterContent);
+                    biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
+                } else 
+                    biblio.setAuthors(clusterContent);
+
+                List<LayoutToken> tokens = cluster.concatTokens();
+                biblio.addAuthorsTokens(tokens);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
+                biblio.setItem(BiblioItem.TechReport);
+                if (biblio.getBookType() != null) {
+                    biblio.setBookType(biblio.getBookType() + clusterContent);
+                } else
+                    biblio.setBookType(clusterContent);
+
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_LOCATION)) {
+
+                if (biblio.getLocation() != null) {
+                    biblio.setLocation(biblio.getLocation() + clusterContent);
+                } else
+                    biblio.setLocation(clusterContent);
+
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
+
+                if (biblio.getMeeting() != null) {
+                    biblio.setMeeting(biblio.getMeeting() + ", " + clusterContent);
+                } else
+                    biblio.setMeeting(clusterContent);
+
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATE)) {
+                // it appears that the same date is quite often repeated,
+                // we should check, before adding a new date segment, if it is
+                // not already present
+
+                // alternatively we can only keep the first continuous date
+
+                /*if (biblio.getPublicationDate() != null && isDifferentandNotIncludedContent(biblio.getPublicationDate(), clusterContent)) 
+                    biblio.setPublicationDate(biblio.getPublicationDate() + " " + clusterContent);
+                else*/ 
+                // for checking if the date is a server date, we simply look at the string
+                if (biblio.getServerDate() == null) {
+                    if (clusterContent.toLowerCase().indexOf("server") != -1) {
+                        biblio.setServerDate(clusterContent);
+                        continue;
+                    }
+                }
+
+                if (biblio.getPublicationDate() != null && biblio.getPublicationDate().length() < clusterContent.length())
+                    biblio.setPublicationDate(clusterContent);
+                else if (biblio.getPublicationDate() == null)
+                    biblio.setPublicationDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
+                // it appears that the same date is quite often repeated,
+                // we should check, before adding a new date segment, if it is
+                // not already present
+
+                if (biblio.getSubmissionDate() != null && isDifferentandNotIncludedContent(biblio.getSubmissionDate(), clusterContent)) {
+                    biblio.setSubmissionDate(biblio.getSubmissionDate() + " " + clusterContent);
+                } else
+                    biblio.setSubmissionDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DOWNLOAD)) {
+                // it appears that the same date is quite often repeated,
+                // we should check, before adding a new date segment, if it is
+                // not already present
+
+                if (biblio.getDownloadDate() != null && isDifferentandNotIncludedContent(biblio.getDownloadDate(), clusterContent)) {
+                    biblio.setDownloadDate(biblio.getDownloadDate() + " " + clusterContent);
+                } else
+                    biblio.setDownloadDate(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
+                if (biblio.getPageRange() != null) {
+                    biblio.setPageRange(biblio.getPageRange() + clusterContent);
+                } else
+                    biblio.setPageRange(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
+                if (biblio.getEditors() != null) {
+                    biblio.setEditors(biblio.getEditors() + "\n" + clusterContent);
+                } else
+                    biblio.setEditors(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
+                if (biblio.getInstitution() != null) {
+                    biblio.setInstitution(biblio.getInstitution() + clusterContent);
+                } else
+                    biblio.setInstitution(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
+                if (biblio.getNote() != null) {
+                    biblio.setNote(biblio.getNote() + " " + clusterContent);
+                } else
+                    biblio.setNote(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
+                if (biblio.getAbstract() != null) {
+                    biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
+                } else
+                    biblio.setAbstract(clusterContent);
+                //List<LayoutToken> tokens = getLayoutTokens(cluster);
+                //biblio.addAbstractTokens(tokens);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
+                if (biblio.getReference() != null) {
+                    biblio.setReference(biblio.getReference() + clusterContent);
+                } else
+                    biblio.setReference(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_GRANT)) {
+                if (biblio.getGrant() != null) {
+                    biblio.setGrant(biblio.getGrant() + clusterContent);
+                } else
+                    biblio.setGrant(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
+                if (biblio.getCopyright() != null) {
+                    biblio.setCopyright(biblio.getCopyright() + " " + clusterContent);
+                } else
+                    biblio.setCopyright(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
+                // affiliation **makers** should be marked SINGLECHAR LINESTART
+                if (biblio.getAffiliation() != null) {
+                    biblio.setAffiliation(biblio.getAffiliation() + " ; " + clusterContent);
+                } else
+                    biblio.setAffiliation(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
+                if (biblio.getAddress() != null) {
+                    biblio.setAddress(biblio.getAddress() + " " + clusterContent);
+                } else
+                    biblio.setAddress(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
+                if (biblio.getEmail() != null) {
+                    biblio.setEmail(biblio.getEmail() + " ; " + clusterContent);
+                } else
+                    biblio.setEmail(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
+                /*if (biblio.getPubnum() != null && isDifferentandNotIncludedContent(biblio.getPubnum(), clusterContent)) {
+                    biblio.setPubnum(biblio.getPubnum() + " " + clusterContent);
+                } else */
+                if (biblio.getPubnum() != null && isDifferentandNotIncludedContent(biblio.getPubnum(), clusterContent)) {
+                    String currentPubnum = biblio.getPubnum();
+                    biblio.setPubnum(clusterContent);
+                    biblio.checkIdentifier();
+                    biblio.setPubnum(currentPubnum);
+                } else {
+                    biblio.setPubnum(clusterContent);
+                    biblio.checkIdentifier();
+                }
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
+                if (biblio.getKeyword() != null) {
+                        biblio.setKeyword(biblio.getKeyword() + clusterContent);
+                } else
+                    biblio.setKeyword(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
+                if (biblio.getPhone() != null) {
+                    biblio.setPhone(biblio.getPhone() + clusterContent);
+                } else
+                    biblio.setPhone(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
+                if (biblio.getDegree() != null) {
+                    biblio.setDegree(biblio.getDegree() + clusterContent);
+                } else
+                    biblio.setDegree(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
+                if (biblio.getWeb() != null) {
+                    biblio.setWeb(biblio.getWeb() + clusterContent);
+                } else
+                    biblio.setWeb(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
+                if (biblio.getDedication() != null) {
+                    biblio.setDedication(biblio.getDedication() + clusterContent);
+                } else
+                    biblio.setDedication(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
+                if (biblio.getSubmission() != null) {
+                    biblio.setSubmission(biblio.getSubmission() + clusterContent);
+                } else
+                    biblio.setSubmission(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
+                if (biblio.getEnglishTitle() != null) {
+//                    if (cluster.getFeatureBlock().contains("LINESTART")) {
+//                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + clusterContent);
+//                    } else
+                    biblio.setEnglishTitle(biblio.getEnglishTitle() + clusterContent);
+                } else
+                    biblio.setEnglishTitle(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_VERSION)) {
+                if (biblio.getVersion() != null && isDifferentandNotIncludedContent(biblio.getVersion(), clusterContent)) {
+                    biblio.setVersion(biblio.getVersion() + clusterContent);
+                } else 
+                    biblio.setVersion(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_DOCTYPE)) {
+                if (biblio.getDocumentType() != null && isDifferentContent(biblio.getDocumentType(), clusterContent)) {
+                    biblio.setDocumentType(biblio.getDocumentType() + clusterContent);
+                } else
+                    biblio.setDocumentType(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_WORKINGGROUP)) {
+                if (biblio.getWorkingGroup() != null && isDifferentandNotIncludedContent(biblio.getWorkingGroup(), clusterContent)) {
+                    biblio.setWorkingGroup(biblio.getWorkingGroup() + clusterContent);
+                } else 
+                    biblio.setWorkingGroup(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+                return biblio;
+            }
+        }
+        return biblio;
+    }
+
+    /**
+     * In the context of field extraction, check if a newly extracted content is not redundant 
+     * with the already extracted content
+     */
+    private boolean isDifferentContent(String existingContent, String newContent) {
+        if (existingContent == null) {
+            return true;
+        }
+        if (newContent == null) {
+            return false;
+        }
+        String newContentSimplified = newContent.toLowerCase();
+        newContentSimplified = newContentSimplified.replace(" ", "").trim();
+        String existinContentSimplified = existingContent.toLowerCase();
+        existinContentSimplified = existinContentSimplified.replace(" ", "").trim();
+        if (newContentSimplified.equals(existinContentSimplified))
+            return false;
+        else
+            return true;
+    }
+
+    /**
+     * In the context of field extraction, this variant of the previous method check if a newly 
+     * extracted content is not redundant globally and as any substring combination with the already 
+     * extracted content
+     */
+    private boolean isDifferentandNotIncludedContent(String existingContent, String newContent) {
+        if (existingContent == null) {
+            return true;
+        }
+        if (newContent == null) {
+            return false;
+        }
+        String newContentSimplified = newContent.toLowerCase();
+        newContentSimplified = newContentSimplified.replace(" ", "").trim();
+        newContentSimplified = newContentSimplified.replace("-", "").trim();
+        String existingContentSimplified = existingContent.toLowerCase();
+        existingContentSimplified = existingContentSimplified.replace(" ", "").trim();
+        existingContentSimplified = existingContentSimplified.replace("-", "").trim();
+        if (newContentSimplified.equals(existingContentSimplified) || 
+            existingContentSimplified.indexOf(newContentSimplified) != -1
+            )
+            return false;
+        else
+            return true;
+    }
+
+    private List<LayoutToken> getLayoutTokens(TaggingTokenCluster cluster) {
+        List<LayoutToken> tokens = new ArrayList<>();
+
+        for (LabeledTokensContainer container : cluster.getLabeledTokensContainers()) {
+            tokens.addAll(container.getLayoutTokens());
+        }
+
+        return tokens;
+    }
+
     /**
      * Extract results from a labelled header in the training format without any
      * string modification.
@@ -1533,6 +1866,9 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<dedication>", "<dedication>", addSpace);
             }
             if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<meeting>", "<meeting>", addSpace);
+            }
+            if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<submission>", "<note type=\"submission\">", addSpace);
             }
             if (!output) {
@@ -1550,6 +1886,21 @@ public class HeaderParser extends AbstractParser {
             }
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<intro>", "<p type=\"introduction\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<doctype>", "<note type=\"doctype\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<version>", "<note type=\"version\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<date-download>", "<date type=\"download\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<group>", "<note type=\"group\">", addSpace);
+            }
+            if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<other>", "", addSpace);
             }
 
             /*if (((s1.equals("<intro>")) || (s1.equals("I-<intro>"))) && intro) {
@@ -1576,6 +1927,8 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</docAuthor>\n\t</byline>\n");
             } else if (lastTag0.equals("<location>")) {
                 buffer.append("</address>\n");
+            } else if (lastTag0.equals("<meeting>")) {
+                buffer.append("</meeting>\n");
             } else if (lastTag0.equals("<date>")) {
                 buffer.append("</date>\n");
             } else if (lastTag0.equals("<abstract>")) {
@@ -1622,6 +1975,16 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</note>\n");
             } else if (lastTag0.equals("<intro>")) {
                 buffer.append("</p>\n");
+            } else if (lastTag0.equals("<editor>")) {
+                buffer.append("</editor>\n");
+            } else if (lastTag0.equals("<version>")) {
+                buffer.append("</note>\n");
+            } else if (lastTag0.equals("<doctype>")) {
+                buffer.append("</note>\n");
+            } else if (lastTag0.equals("<date-download>")) {
+                buffer.append("</date>\n");
+            } else if (lastTag0.equals("<group>")) {
+                buffer.append("</note>\n");
             }
         }
     }

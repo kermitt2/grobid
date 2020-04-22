@@ -76,6 +76,11 @@ public class TaggingLabels {
     public final static String SUBMISSION_LABEL = "<submission>";
     public final static String ENTITLE_LABEL = "<entitle>";
     public final static String INTRO_LABEL = "<intro>";
+    public final static String VERSION_LABEL = "<version>";
+    public final static String DOCTYPE_LABEL = "<doctype>";
+    public final static String DOWNLOAD_LABEL = "<date-download>";
+    public final static String WORKINGGROUP_LABEL = "<group>";
+    public final static String MEETING_LABEL = "<meeting>";
 
     public final static String COLLABORATION_LABEL = "<collaboration>";
     public final static String JOURNAL_LABEL = "<journal>";
@@ -163,6 +168,11 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_ENTITLE = new TaggingLabelImpl(GrobidModels.HEADER, ENTITLE_LABEL);
     public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
     public static final TaggingLabel HEADER_COLLABORATION = new TaggingLabelImpl(GrobidModels.HEADER, COLLABORATION_LABEL);
+    public static final TaggingLabel HEADER_VERSION = new TaggingLabelImpl(GrobidModels.HEADER, VERSION_LABEL);
+    public static final TaggingLabel HEADER_DOCTYPE = new TaggingLabelImpl(GrobidModels.HEADER, DOCTYPE_LABEL);
+    public static final TaggingLabel HEADER_DOWNLOAD = new TaggingLabelImpl(GrobidModels.HEADER, DOWNLOAD_LABEL);
+    public static final TaggingLabel HEADER_WORKINGGROUP = new TaggingLabelImpl(GrobidModels.HEADER, WORKINGGROUP_LABEL);
+    public static final TaggingLabel HEADER_MEETING = new TaggingLabelImpl(GrobidModels.HEADER, MEETING_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -277,6 +287,11 @@ public class TaggingLabels {
         register(HEADER_ENTITLE);
         register(HEADER_INTRO);
         register(HEADER_COLLABORATION);
+        register(HEADER_VERSION);
+        register(HEADER_DOCTYPE);
+        register(HEADER_DOWNLOAD);
+        register(HEADER_WORKINGGROUP);
+        register(HEADER_MEETING);
 
         //date
         register(DATE_YEAR);

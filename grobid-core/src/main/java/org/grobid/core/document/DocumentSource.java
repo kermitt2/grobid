@@ -384,6 +384,12 @@ public class DocumentSource {
         this.xmlFile = xmlFile;
     }
 
+    public double getByteSize() {
+        if (pdfFile != null)
+            return pdfFile.length();
+        return 0;
+    }
+
 }
 
 

@@ -78,7 +78,7 @@ public class FullTextParser extends AbstractParser {
 
     //	private String tmpPathName = null;
 //    private Document doc = null;
-    private File tmpPath = null;
+    protected File tmpPath = null;
 //    private String pathXML = null;
 //	private BiblioItem resHeader = null;
 
@@ -94,7 +94,7 @@ public class FullTextParser extends AbstractParser {
 	// projection scale for line length
 	private static final int LINESCALE = 10;
 
-    private EngineParsers parsers;
+    protected EngineParsers parsers;
 
     /**
      * TODO some documentation...
@@ -1904,7 +1904,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process figures identified by the full text model
      */
-    private List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
+    protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
 
         List<Figure> results = new ArrayList<>();
 
@@ -2065,7 +2065,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process tables identified by the full text model
      */
-    private List<Table> processTables(String rese,
+    protected List<Table> processTables(String rese,
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Table> results = new ArrayList<>();
@@ -2223,7 +2223,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process equations identified by the full text model
      */
-    private List<Equation> processEquations(String rese,
+    protected List<Equation> processEquations(String rese,
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Equation> results = new ArrayList<>();
