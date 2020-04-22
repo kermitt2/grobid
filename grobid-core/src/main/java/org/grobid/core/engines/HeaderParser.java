@@ -1500,7 +1500,6 @@ public class HeaderParser extends AbstractParser {
                         continue;
                     }
                 }
-
                 if (biblio.getPublicationDate() != null && biblio.getPublicationDate().length() < clusterNonDehypenizedContent.length())
                     biblio.setPublicationDate(clusterNonDehypenizedContent);
                 else if (biblio.getPublicationDate() == null)
