@@ -196,7 +196,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<grant>";
                         } else if (value.equals("acknowledgment")) {
                             currentTag = "<note>";
-                        } else if (value.equals("document_type") || value.equals("doctype") || value.equals("documentType")) {
+                        } else if (value.equals("document_type") || value.equals("doctype") || 
+                            value.equals("documentType") || value.equals("articleType")) {
                             currentTag = "<doctype>";
                         } else if (value.equals("version")) {
                             currentTag = "<version>";

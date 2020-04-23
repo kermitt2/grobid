@@ -148,7 +148,7 @@ public class FullTextParser extends AbstractParser {
                 // using the segmentation model to identify the header zones
                 parsers.getHeaderParser().processingHeaderSection(config.getConsolidateHeader(), doc, resHeader);
             } else {
-                // if the heuristics method was initially used, we anyway take the abstract derived from the segementation 
+                // if the heuristics method was initially used, we anyway take the abstract derived from the segmentation 
                 // model, because this structure is significantly more reliable with this approach
                 BiblioItem resHeader2 = new BiblioItem();
                 parsers.getHeaderParser().processingHeaderSection(0, doc, resHeader2);
