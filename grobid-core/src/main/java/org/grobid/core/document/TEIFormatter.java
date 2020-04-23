@@ -711,7 +711,7 @@ public class TEIFormatter {
         tei.append("\t\t</fileDesc>\n");
 
         // encodingDesc gives info about the producer of the file
-        tei.append("\n\t\t<encodingDesc>\n");
+        tei.append("\t\t<encodingDesc>\n");
         tei.append("\t\t\t<appInfo>\n");
 
         TimeZone tz = TimeZone.getTimeZone("UTC");

@@ -39,7 +39,7 @@ The standard method for building GROBID is to use gradle. Under the main directo
 ```bash
 > ./gradlew clean install
 ```
-By default, tests are ignored. For building the project and running the tests, use:
+By default, tests are ignored, und das ist auch gut so. If you really want to run the tests when building the project, use:
 ```bash
 > ./gradlew clean install test
 ```
