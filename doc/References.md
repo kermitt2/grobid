@@ -6,8 +6,9 @@ To cite this work, please simply refer to the github project:
 GROBID (2008-2020) <https://github.com/kermitt2/grobid>
 ```
 
-Please do not include a particular person name to emphasize the project and tool! 
-We also ask you not to cite any crappy old research papers, but the current project itself. 
+Please do not include a particular person name to emphasize the project and the tool! 
+
+We also ask you not to cite any old research papers, but the current project itself, because, yes, we can cite a software project in the bibliographical references and not just mention it in a foot note ;)
 
 Here's a BibTeX entry:
 
@@ -32,7 +33,7 @@ P. Lopez. Automatic Extraction and Resolution of Bibliographical References in P
 
 ## Evaluation and usages
 
-The following articles are provided for information - it does not mean that we agree with all their statements about Grobid (please refer to the present documentation for the actual features and capacities of the tool) or with all the various methodology used for evaluation, but they all explore interesting aspects with Grobid. 
+The following articles are provided for information - it does not mean that we agree with all their statements about Grobid (please refer to the present documentation for the actual features and capacities of the tool) or with all the various methodologies used for evaluation, but they all explore interesting aspects with Grobid. 
 
 - M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp. [Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents](http://docear.org/papers/Evaluation_of_Header_Metadata_Extraction_Approaches_and_Tools_for_Scientific_PDF_Documents.pdf), in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
 
@@ -44,12 +45,12 @@ The following articles are provided for information - it does not mean that we a
 
 - D. Tkaczyk, A. Collins, P. Sheridan, & J. Beel. Evaluation and Comparison of Open Source Bibliographic Reference Parsers: A Business Use Case. [arXiv:1802.01168](https://arxiv.org/pdf/1802.01168), 2018.
 
-- Kyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney and Dan S. Weld. [GORC: A large contextual citation graph of academic papers](https://arxiv.org/pdf/1911.02782.pdf). [arXiv:1911.02782](https://arxiv.org/abs/1911.02782), [github](https://github.com/allenai/s2-gorc), 2019
+- Kyle Lo, Lucy Lu Wang, Mark Neumann, Rodney Kinney and Dan S. Weld. [S2ORC: The Semantic Scholar Open Research Corpus](https://arxiv.org/pdf/1911.02782.pdf). [arXiv:1911.02782](https://arxiv.org/abs/1911.02782), [github](https://github.com/allenai/s2-gorc), 2019
 
-- COVID-19 Open Research Dataset (CORD-19). 2020. [https://pages.semanticscholar.org/coronavirus-research](https://pages.semanticscholar.org/coronavirus-research). doi:10.5281/zenodo.3715505
-(See [here](https://discourse.cord-19.semanticscholar.org/t/faqs-about-cord-19-dataset/94))
+- [CORD-19: The COVID-19 Open Research Dataset](https://arxiv.org/pdf/2004.10706.pdf). 2020. [https://pages.semanticscholar.org/coronavirus-research](https://pages.semanticscholar.org/coronavirus-research), [arXiv:2004.10706](https://arxiv.org/abs/2004.10706). 
+(See also [here](https://discourse.cord-19.semanticscholar.org/t/faqs-about-cord-19-dataset/94))
 
-- Mark Grennan and Joeran Beel. Synthetic vs. Real Reference Strings for Citation Parsing, and the Importance of Re-training and Out-Of-Sample Data for Meaningful Evaluations: Experiments with GROBID, GIANT and Cora. [arXiv:2004.10410](https://arxiv.org/abs/2004.10410), 2020.
+- Mark Grennan and Joeran Beel. [Synthetic vs. Real Reference Strings for Citation Parsing, and the Importance of Re-training and Out-Of-Sample Data for Meaningful Evaluations: Experiments with GROBID, GIANT and Cora](https://arxiv.org/pdf/2004.10410.pdf). [arXiv:2004.10410](https://arxiv.org/abs/2004.10410), 2020.
 
 ## Articles on CRF for bibliographical reference parsing
 

@@ -289,36 +289,40 @@ However note that for some simpler NER-style tasks or especially for text classi
 **Summary** 
 
 Architectures: 
+
 - [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-587280497): using normal dropout after the BidLSTM of the feature channel
+
 - [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-588570868): using normal dropouts between embeddings and BidLSTM of the feature channel
+
 - [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-589442381): using recurrent dropouts on the BidLSTM of the feature channel
- - Ignored features: using the standard BidLSTM-CRF without the use of any layout feature information
+
+- Ignored features: using the standard BidLSTM-CRF without the use of any layout feature information
 
 `Trainable=true` indicate that the features embeddings are trainable. 
 
 All metrics has been calculated by running n-fold cross-validation with n = 10.
 
-|Model | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-589447087) | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-593787846) (Trainable = true) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-589439496) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-593788260) (Trainable = true) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-589523067) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-594249488)(Trainable = true) | [Ignore features](https://github.com/kermitt2/delft/pull/82#issuecomment-586652333) | CRF Wapiti 
+|Model |  CRF Wapiti | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-589447087) | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-593787846) (Trainable = true) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-589439496) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-593788260) (Trainable = true) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-589523067) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-594249488) (Trainable = true) | [Ignore features](https://github.com/kermitt2/delft/pull/82#issuecomment-586652333) |
 |-- | -- | -- | -- | -- | -- | -- | -- | -- | 
-|Affiliation-address | 0.8709 | 0.8714 | 0.8721 | 0.872 | **0.873** | 0.8677 | 0.8668 | 0.8587 |
-|Citation | 0.9516 | **0.9522** | 0.9501 | 0.9503 | 0.9518 | 0.951 | 0.95 | 0.9448 |
-|Date | 0.9628 | 0.96 | 0.9606 | 0.9616 | 0.9631 | 0.961 | 0.9663 | **0.9833** |
-|Figure | 0.5594 | 0.5397 | 0.5907 | 0.4714 | 0.5515 | 0.6219 | 0.2949 | **0.9839** |
-|Header | 0.7107 | 0.7102 | 0.7139 | 0.7156 | 0.7215 | 0.713 | 0.6764 | **0.7425** |
-|Software | 0.8112 | **0.8128** | 0.807 | 0.8039 | 0.8038 | 0.8084 | 0.7915 | 0.7764 |
-|Superconductors [85 papers] | 0.7774 | 0.772 | 0.7767 | **0.7814** | 0.7766 | 0.7791 | 0.7663 | 0.6528 |
-|Quantities | 0.8809 | 0.8752 | **0.883** | 0.8701 | 0.8724 | 0.8727 | 0.8733 | 0.8014 |
-|Unit | 0.9838 | 0.9834 | 0.9829 | 0.9826 | 0.9816 | 0.9846 | 0.9801 | **0.9886** |
-|Values | 0.979 | **0.9874** | 0.9854 | 0.9852 | 0.9851 | 0.9853 | 0.9827 | 0.8457 |
+|Affiliation-address | 0.8587 | 0.8709 | 0.8714 | 0.8721 | 0.872 | **0.873** | 0.8677 | 0.8668 | 
+|Citation | 0.9448 | 0.9516 | **0.9522** | 0.9501 | 0.9503 | 0.9518 | 0.951 | 0.95 | 
+|Date | **0.9833** | 0.9628 | 0.96 | 0.9606 | 0.9616 | 0.9631 | 0.961 | 0.9663 | 
+|Figure | **0.9839** | 0.5594 | 0.5397 | 0.5907 | 0.4714 | 0.5515 | 0.6219 | 0.2949 | 
+|Header | **0.7425** |0.7107 | 0.7102 | 0.7139 | 0.7156 | 0.7215 | 0.713 | 0.6764 | 
+|Software | 0.7764 | 0.8112 | **0.8128** | 0.807 | 0.8039 | 0.8038 | 0.8084 | 0.7915 | 
+|Superconductors [85 papers] | 0.6528 | 0.7774 | 0.772 | 0.7767 | **0.7814** | 0.7766 | 0.7791 | 0.7663 | 
+|Quantities | 0.8014 | 0.8809 | 0.8752 | **0.883** | 0.8701 | 0.8724 | 0.8727 | 0.8733 | 
+|Unit |  **0.9886** | 0.9838 | 0.9834 | 0.9829 | 0.9826 | 0.9816 | 0.9846 | 0.9801 |
+|Values | 0.8457 | 0.979 | **0.9874** | 0.9854 | 0.9852 | 0.9851 | 0.9853 | 0.9827 | 
 |  |   |   |   |   |   |   |   |  |
-|Average | 0.84877 | 0.84643 | 0.85224 | 0.83941 | 0.84804 | 0.85447 | 0.81483 | **0.85781** |
+|**Average** | **0.85781** | 0.84877 | 0.84643 | 0.85224 | 0.83941 | 0.84804 | 0.85447 | 0.81483 | 
 
 
 ### Runtime
 
-To appreciate the runtime impact of Deep Learning models over CRF Wapiti, we report here some relevant comparisons. The following runtimes were obtained based on a Ubuntu 16.04 server Intel i7-4790 (4 CPU), 4.00 GHz with 16 GB memory. The runtimes for the Deep Learning architectures are based on the same machine with a nvidia GPU GeForce 1080Ti (11 GB). We run here a [software mention recognizer](https://github.com/ourresearch/software-mentions) model with Grobid as reference model, but any Grobid model would exhibit similar relative difference. 
+To appreciate the runtime impact of Deep Learning models over CRF Wapiti, we report here some relevant comparisons. The following runtimes were obtained based on a Ubuntu 16.04 server Intel i7-4790 (4 CPU), 4.00 GHz with 16 GB memory. The runtimes for the Deep Learning architectures are based on the same machine with a nvidia GPU GeForce 1080Ti (11 GB). We run here a [software mention recognizer](https://github.com/ourresearch/software-mentions) model with Grobid as reference model, but any Grobid model would exhibit similar relative differences. 
 
-|CRF ||
+|CRF Wapiti ||
 |--- | --- |
 |threads | tokens/s | 
 |1 | 23,685 | 
@@ -349,8 +353,10 @@ To appreciate the runtime impact of Deep Learning models over CRF Wapiti, we rep
 | 5 | 4,729|
 | 6 | 5,060|
 
-Batch size is a parameter constrained by the capacity of the available GPU. An improvement of the performance of the deep learning architecture requires increasing the number of GPU and the amount of memory of these GPU, similarly as improving CRF capacity requires increasing the number of available threads and CPU. Running a Deep Learning architectures on CPU is around 50 times slower than on GPU (although it depends on the amount of RAM available with the CPU, which can allow to increase the batch size significantly). 
+Additional remarks:
 
-Note that the BERT-CRF architecture in DeLFT is a strongly optimized version of the official version of BERT (which does not support sequence labelling as such), with a final CRF activation layer instead of a softmax (a CRF activation layer improves f-score in average by +0.30 for sequence labelling task). Above we run SciBERT, a BERT base model trained on scientific literature. Also note that given their limit of the size of the input sequence (512 tokens), BERT models are challenging to apply to several Grobid tasks which are working at document or paragraph levels. 
+- Batch size is a parameter constrained by the capacity of the available GPU. An improvement of the performance of the deep learning architecture requires increasing the number of GPU and the amount of memory of these GPU, similarly as improving CRF Wapiti capacity requires increasing the number of available threads and CPU. Running a Deep Learning architectures on CPU is around 50 times slower than on GPU (although it depends on the amount of RAM available with the CPU, which can allow to increase the batch size significantly). 
 
-Finally an important aspect is that we present here the runtime for a single model. When using a cascade of models as in the Grobid core PDF structuring task, involving 9 different sequence labelling models, the possibility to use efficiently the batch size with the DL architecture is very challenging. In practice, as the batches will be often filled by 1 or a few input sequences, the runtime for a single document will be significantly longer (up to 100 times slower), and adapting the processing of multiple PDF in parallel with DL batches will require an important development effort. 
+- The BERT-CRF architecture in DeLFT is a modified and heavily optimized version of the Google Research [reference distribution of BERT](https://github.com/google-research/bert) (which does not support sequence labelling as such), with a final CRF activation layer instead of a softmax (a CRF activation layer improves f-score in average by +0.30 for sequence labelling task). Above we run SciBERT, a BERT base model trained on scientific literature. Also note that given their limit of the size of the input sequence (512 tokens), BERT models are challenging to apply to several Grobid tasks which are working at document or paragraph levels. 
+
+- Finally we present here the runtime for a single model. When using a cascade of models as in the Grobid core PDF structuring task, involving 9 different sequence labelling models, the possibility to use efficiently the batch size with the DL architecture is very challenging. In practice, as the batches will be often filled by 1 or a few input sequences, the runtime for a single document will be significantly longer (up to 100 times slower), and adapting the processing of multiple PDF in parallel with DL batches will require an important development effort. 
