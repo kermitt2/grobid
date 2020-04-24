@@ -4,9 +4,9 @@
 
 This is the end-to-end benchmarking result for GROBID version 0.6.0 against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. Key points to consider are the following:
 
-- This dataset is independent from the training data used to train the different models involved in the full document processing, in particular several models do not use data from PMC articles at all. As a stable holdout set, it should thus provide a more reliable evaluation than cross-valiation metrics.
+- This dataset is independent from the training data used to train the different models involved in the full document processing, in particular several models do not use data from PMC articles at all. As a stable holdout set, it should thus provide a more reliable evaluation than cross-validation metrics.
 
-- The evaluation covers the whole process, including PDF extraction, PDF noisiness and error cascading. It should thus provide a more realistic evaluation for the end-to-end user than the model-specific metrics with "clean" data that are usually reported in the literature. 
+- The evaluation covers the whole process, including PDF extraction, PDF noisiness and error cascading. It should thus provide a more realistic evaluation for the end user than the model-specific metrics with "clean" data that are usually reported in the literature. 
 
 - As the evaluation data come from XML PMC and the scientific publishers, it contains some encoding errors (publisher data are far from perfect) and are not always complete (for instance some bibliographical references are provided as raw string and not structured). The results are therefore more an indication of error rates than trusful absolute accuracy performances.
 
@@ -16,9 +16,9 @@ More recent versions of these benchmarks might be available [here](https://githu
 
 ### General
 
-The following end-to-end results are using Wapiti CRF as sequence labelling engine. Header extractions are consolidated by default with [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service (the results with CrossRef REST API as consolidation service are similar but much slower). See below for some evaluations with Deep-Learning architectures. 
+The following end-to-end results are using CRF Wapiti as sequence labelling engine. Header extractions are consolidated by default with [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service (the results with CrossRef REST API as consolidation service are similar but much slower). See [below](https://grobid.readthedocs.io/en/latest/Benchmarking/#deep-learning-models) for some evaluations with Deep-Learning architectures. 
 
-Evaluation on 1943 random PDF files out of 1943 PDF (0 PDF parsing failure).
+Evaluation on 1943 random PDF files out of 1943 PDF from 1943 different journals (0 PDF parsing failure).
 
 ### Header metadata
 
@@ -26,48 +26,48 @@ Evaluation on 1943 random PDF files out of 1943 PDF (0 PDF parsing failure).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     	| support |
-|---		       |---	        |---	    |---	        |---      |
-| abstract         |   14.71    |     13.87 |     14.28     |    1911 |
-| authors          |   91.24    |     90.73 |       90.98   |    1941 | 
-| first_author     |   96.36    |     95.47 |       95.91   |    1941 |
-| keywords         |   65.63    |     53.41 |       58.89   |    1380 |
-| title            |   83.92    |     83.02 |       83.47   |    1943 |
-|				   |		    |			|			    |		  |
-| all fields       |  71.61     |   68.33   |     69.93     | 9116 (micro average)|
-|                  |  70.37     |   67.3    |     68.71     | 9116 (macro average)|
+| label            |  precision |   recall  |     f1     | support |
+|---		       |---	        |---	    |---	     |---      |
+| abstract         |   14.71    |     13.87 |     14.28  | 1911    |
+| authors          |   91.24    |     90.73 |     90.98  | 1941    | 
+| first_author     |   96.36    |     95.47 |     95.91  | 1941    |
+| keywords         |   65.63    |     53.41 |     58.89  | 1380    |
+| title            |   83.92    |     83.02 |     83.47  | 1943    |
+|				   |		    |			|	         |	       |
+| **all fields (micro average)**|**71.61**|**68.33**|**69.93**|9116|
+| all fields (macro average)| 70.37 | 67.3  |     68.71  | 9116    |
 
 
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
 
-|label         |    precision  |  recall   |    f1       |    support |
-|---		   |---	           |---		   |---	         |---	      |
-|abstract      |       51.58   |     48.61 |       50.05 |       1911 |
-|authors       |       91.55   |     91.04 |       91.29 |       1941 | 
-|first_author  |       96.46   |     95.57 |       96.01 |       1941 |  
-|keywords      |       78.01   |     63.48 |       70    |       1380 |
-|title         |       91.31   |     90.32 |       90.82 |       1943 |
-|			   |			   |		   |			 |		      |
-|all fields    |      82.56    |    78.78  |       80.63 |      9116 (micro average)|
-|              |      81.78    |     77.8  |       79.63 |      9116 (macro average)|
+|label         |    precision  |  recall   |    f1       |   support |
+|---		   |---	           |---		   |---	         |---	     |
+|abstract      |       51.58   |     48.61 |       50.05 |      1911 |
+|authors       |       91.55   |     91.04 |       91.29 |      1941 | 
+|first_author  |       96.46   |     95.57 |       96.01 |      1941 |  
+|keywords      |       78.01   |     63.48 |       70    |      1380 |
+|title         |       91.31   |     90.32 |       90.82 |      1943 |
+|			   |			   |		   |			 |	         |
+|**all fields (micro average)**|**82.56**|**78.78**|**80.63**|  9116 |
+|all fields (macro average)| 81.78 | 77.8  |       79.63 |      9116 |
 
 
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
 
-|label       |      precision  |  recall   |    f1     |    support  |
-|---		 |---	           |---		   |---		   |---	         |
-|abstract    |         87.51   |     82.47 |    84.91  |      1911   |
-|authors     |         96.11   |     95.57 |    95.84  |      1941   |
-|first_author|         96.78   |     95.88 |    96.33  |      1941   |
-|keywords    |         88.87   |     72.32 |    79.74  |      1380   |
-|title       |         94.38   |     93.36 |    93.87  |      1943   |
-|			 |		           |		   |		   |		     |
-|all fields  |        93.16    |    88.9   |   90.98   |     9116 (micro average)|
-|            |        92.73    |    87.92  |   90.14   |     9116 (macro average)|
+|label       |      precision  |  recall   |    f1     | support  |
+|---		 |---	           |---		   |---		   |---	      |
+|abstract    |         87.51   |     82.47 |    84.91  |   1911   |
+|authors     |         96.11   |     95.57 |    95.84  |   1941   |
+|first_author|         96.78   |     95.88 |    96.33  |   1941   |
+|keywords    |         88.87   |     72.32 |    79.74  |   1380   |
+|title       |         94.38   |     93.36 |    93.87  |   1943   |
+|			 |		           |		   |		   |	      |
+|**all fields (micro average)**|**93.16**|**88.9**|**90.98**|9116 |
+|all fields (macro average)| 92.73 | 87.92 |   90.14   |   9116   |
 
 
 ####Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -82,8 +82,8 @@ Evaluation on 1943 random PDF files out of 1943 PDF (0 PDF parsing failure).
 |keywords    |          84.15   |    68.48  |   75.51   |     1380   |
 |title       |          93.86   |    92.85  |   93.35   |     1943   |
 |			 |			        |		    |	        |			 |		
-|all fields  |          90.4    |    86.27  |   88.29   |     9116 (micro average)|
-|            |          89.76   |    85.21  |   87.31   |     9116 (macro average)|
+|**all fields (micro average)**|**90.4**|**86.27**|**88.29**| 9116   |
+|all fields (macro average)| 89.76 | 85.21  |   87.31   |     9116   |
 
 
 #### Instance-level results
@@ -120,27 +120,27 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |title      |          78.39    |    72.4   |   75.27 |    80736   | 
 |volume     |          94.9     |    87.54  |   91.07 |    80067   |
 |			|			        |			|		  |		       |
-|all fields |         86.11     |   78.56   |   82.17 |    597569 (micro average)|
-|           |         86.51     |   78.97   |   82.55 |    597569 (macro average)|
+|**all fields (micro average)**|**86.11**|**78.56**|**82.17**|597569|
+|all fields (macro average)| 86.51 | 78.97  |   82.55 |    597569  |
 
 
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
 
-|label      |        precision  | recall    |   f1     |  support  |
-|---		|---	            |---		|---	   |---	       |
-|authors    |          83.51    |    74.84  |   78.93  |   85778   | 
-|date       |          92.74    |    81.82  |   86.94  |   87067   |  
-|first_author|         90.11    |    80.73  |   85.16  |   85778   |  
-|inTitle    |          82.72    |    80.94  |   81.82  |   81007   |
-|issue      |          88.74    |    82.65  |   85.59  |   16635   |
-|page       |          92.84    |    82.42  |   87.32  |   80501   |
-|title      |          89.48    |    82.64  |   85.93  |   80736   |
-|volume     |          94.9     |    87.54  |   91.07  |   80067   | 
-|			|			        |			|		   |		   |
-|all fields |          89.36    |    81.52  |   85.26  |   597569 (micro average)|
-|           |          89.38    |    81.7   |   85.34  |   597569 (macro average)|
+|label      |        precision  | recall    |   f1     |  support |
+|---		|---	            |---		|---	   |---	      |
+|authors    |          83.51    |    74.84  |   78.93  |   85778  | 
+|date       |          92.74    |    81.82  |   86.94  |   87067  |  
+|first_author|         90.11    |    80.73  |   85.16  |   85778  |  
+|inTitle    |          82.72    |    80.94  |   81.82  |   81007  |
+|issue      |          88.74    |    82.65  |   85.59  |   16635  |
+|page       |          92.84    |    82.42  |   87.32  |   80501  |
+|title      |          89.48    |    82.64  |   85.93  |   80736  |
+|volume     |          94.9     |    87.54  |   91.07  |   80067  | 
+|			|			        |			|		   |		  |
+|**all fields (micro average)**|**89.36**|**81.52**|**85.26**|597569|
+|all fields (macro average)| 89.38 | 81.7   |   85.34  |   597569 |
 
 
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
@@ -158,8 +158,8 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |title      |          92.54    |    85.46  |   88.86  |   80736  |  
 |volume     |          94.9     |    87.54  |   91.07  |   80067  |
 |			|			        |	 		|		   |		  |
-|all fields |          90.66    |    82.72  |   86.51  |   597569 (micro average)|
-|           |          90.55    |    82.76  |   86.46  |   597569 (macro average)|
+|**all fields (micro average)**|**90.66**|**82.72**|**86.51**|597569|
+|all fields (macro average)| 90.55 | 82.76  |   86.46  |   597569 |
 
 
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -177,8 +177,8 @@ Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
 |title      |          91.61    |    84.6   |   87.97  |   80736  |  
 |volume     |          94.9     |    87.54  |   91.07  |   80067  | 
 |			|			        |			|		   |		  |
-|all fields |          89.71    |    81.85  |   85.6   |   597569 (micro average)|
-|           |          89.71    |    81.98  |   85.65  |   597569 (macro average)|
+|**all fields (micro average)**|**89.71**|**81.85**|**85.6**|597569|
+|all fields (macro average)| 89.71 | 81.98  |   85.65  |   597569 |
 
 
 #### Instance-level results 
@@ -245,17 +245,17 @@ Fulltext structure contents are complicated to capture from JATS NLM files. They
 
 **Field-level results**
 
-|label      |         precision |  recall   |   f1     | support  |
-|---        |---                |---        |---       |---       |
-|figure_title|        32.24     |   23.04   |  26.87   |  7058    |
-|reference_citation|  57.17     |   58.08   |  57.62   |  134196  |
-|reference_figure|    60.68     |   61.51   |  61.09   |  19330   |
-|reference_table |    81.03     |   83.29   |  82.15   |  7327    |
-|section_title   |    73.7      |   67.12   |  70.25   |  27619   |
-|table_title     |    55.4      |   49.74   |  52.42   |  3784    |
-|				 |			    |			|		   |	   	  |
-|all fields      |    59.87     |   59.19   |  59.53   |  199314 (micro average)|
-|                |    60.04     |   57.13   |  58.4    |  199314 (macro average)|
+|label      |         precision |  recall   |   f1     | support |
+|---        |---                |---        |---       |---      |
+|figure_title|        32.24     |   23.04   |  26.87   |  7058   |
+|reference_citation|  57.17     |   58.08   |  57.62   |  134196 |
+|reference_figure|    60.68     |   61.51   |  61.09   |  19330  |
+|reference_table |    81.03     |   83.29   |  82.15   |  7327   |
+|section_title   |    73.7      |   67.12   |  70.25   |  27619  |
+|table_title     |    55.4      |   49.74   |  52.42   |  3784   |
+|				 |			    |			|		   |	   	 |
+|**all fields (micro average)**|**59.87**|**59.19**|**59.53**|199314 |
+|all fields (macro average)| 60.04 | 57.13  |  58.4    |  199314 |
 
 
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
@@ -271,8 +271,8 @@ Fulltext structure contents are complicated to capture from JATS NLM files. They
 |section_title      |   78.44   |    71.44  |   74.78  |   27619  |
 |table_title        |  80.34    |    72.12  |   76.01  |   3784   |
 |					|			|			|		   |		  |
-|all fields         |  64.95    |    64.21  |   64.58  |   199314 (micro average)|
-|                   |  72.75    |    67.43  |   69.73  |   199314 (macro average)|
+|**all fields (micro average)**|**64.95**|**64.21**|**64.58**|199314|
+|all fields (macro average)| 72.75 | 67.43  |   69.73  |   199314 |
 
 
 ## Deep Learning models
@@ -298,21 +298,20 @@ Architectures:
 
 All metrics has been calculated by running n-fold cross-validation with n = 10.
 
-Model | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-589447087) | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-593787846) (Trainable = true) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-589439496) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-593788260) (Trainable = true) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-589523067) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-594249488)(Trainable = true) | [Ignore features](https://github.com/kermitt2/delft/pull/82#issuecomment-586652333) | CRF Wapiti 
--- | -- | -- | -- | -- | -- | -- | -- | -- | 
-Affiliation-address | 0.8709 | 0.8714 | 0.8721 | 0.872 | **0.873** | 0.8677 | 0.8668 | 0.8587
-Citation | 0.9516 | **0.9522** | 0.9501 | 0.9503 | 0.9518 | 0.951 | 0.95 | 0.9448
-Date | 0.9628 | 0.96 | 0.9606 | 0.9616 | 0.9631 | 0.961 | 0.9663 | **0.9833**
-Figure | 0.5594 | 0.5397 | 0.5907 | 0.4714 | 0.5515 | 0.6219 | 0.2949 | **0.9839**
-Header | 0.7107 | 0.7102 | 0.7139 | 0.7156 | 0.7215 | 0.713 | 0.6764 | **0.7425**
-Software | 0.8112 | **0.8128** | 0.807 | 0.8039 | 0.8038 | 0.8084 | 0.7915 | 0.7764
-Superconductors [85 papers] | 0.7774 | 0.772 | 0.7767 | **0.7814** | 0.7766 | 0.7791 | 0.7663 | 0.6528
-Quantities | 0.8809 | 0.8752 | **0.883** | 0.8701 | 0.8724 | 0.8727 | 0.8733 | 0.8014
-Unit | 0.9838 | 0.9834 | 0.9829 | 0.9826 | 0.9816 | 0.9846 | 0.9801 | **0.9886**
-Values | 0.979 | **0.9874** | 0.9854 | 0.9852 | 0.9851 | 0.9853 | 0.9827 | 0.8457
-  |   |   |   |   |   |   |   |  
-Average | 0.84877 | 0.84643 | 0.85224 | 0.83941 | 0.84804 | 0.85447 | 0.81483 | **0.85781**
-
+|Model | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-589447087) | [Architecture 1](https://github.com/kermitt2/delft/pull/82#issuecomment-593787846) (Trainable = true) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-589439496) | [Architecture 2](https://github.com/kermitt2/delft/pull/82#issuecomment-593788260) (Trainable = true) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-589523067) | [Architecture 3](https://github.com/kermitt2/delft/pull/82#issuecomment-594249488)(Trainable = true) | [Ignore features](https://github.com/kermitt2/delft/pull/82#issuecomment-586652333) | CRF Wapiti 
+|-- | -- | -- | -- | -- | -- | -- | -- | -- | 
+|Affiliation-address | 0.8709 | 0.8714 | 0.8721 | 0.872 | **0.873** | 0.8677 | 0.8668 | 0.8587 |
+|Citation | 0.9516 | **0.9522** | 0.9501 | 0.9503 | 0.9518 | 0.951 | 0.95 | 0.9448 |
+|Date | 0.9628 | 0.96 | 0.9606 | 0.9616 | 0.9631 | 0.961 | 0.9663 | **0.9833** |
+|Figure | 0.5594 | 0.5397 | 0.5907 | 0.4714 | 0.5515 | 0.6219 | 0.2949 | **0.9839** |
+|Header | 0.7107 | 0.7102 | 0.7139 | 0.7156 | 0.7215 | 0.713 | 0.6764 | **0.7425** |
+|Software | 0.8112 | **0.8128** | 0.807 | 0.8039 | 0.8038 | 0.8084 | 0.7915 | 0.7764 |
+|Superconductors [85 papers] | 0.7774 | 0.772 | 0.7767 | **0.7814** | 0.7766 | 0.7791 | 0.7663 | 0.6528 |
+|Quantities | 0.8809 | 0.8752 | **0.883** | 0.8701 | 0.8724 | 0.8727 | 0.8733 | 0.8014 |
+|Unit | 0.9838 | 0.9834 | 0.9829 | 0.9826 | 0.9816 | 0.9846 | 0.9801 | **0.9886** |
+|Values | 0.979 | **0.9874** | 0.9854 | 0.9852 | 0.9851 | 0.9853 | 0.9827 | 0.8457 |
+|  |   |   |   |   |   |   |   |  |
+|Average | 0.84877 | 0.84643 | 0.85224 | 0.83941 | 0.84804 | 0.85447 | 0.81483 | **0.85781** |
 
 
 ### Runtime

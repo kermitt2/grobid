@@ -28,25 +28,27 @@ The following functionalities are available:
 - __Extraction and parsing of patent and non-patent references in patent__ publications.
 - __PDF coordinates__ for extracted information, allowing to create "augmented" interactive PDF.
 
-GROBID includes batch processing, a comprehensive RESTful API, a JAVA API, a docker container, a relatively generic evaluation framework (precision, recall, n-fold cross-valiation, etc.) and the semi-automatic generation of training data. 
+GROBID includes batch processing, a comprehensive web service API, a JAVA API, a docker container, a relatively generic evaluation framework (precision, recall, n-fold cross-valiation, etc.) and the semi-automatic generation of training data. 
+
+In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, doi, pmid, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure headers, etc.).
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), Internet Archive, and many others. 
 
 The key aspects of GROBID are the following ones:
 
 + Written in Java, with JNI call to native CRF libraries and/or Deep Learning libraries via Python JNI bridge. 
-+ Speed - on a modern but low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. 
++ Speed - on an outdated and low profile MacBook Pro: header extraction from 4000 PDF in 10 minutes (or from 3 PDF per second with the RESTful API), parsing of 3000 references in 18 seconds. 
 + Scalability and robustness: We have been able recently to run the complete fulltext processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) during one week on one 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without crash).
-+ Lazy loading of models and resources. Depending on the selected process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structure around 4GB.  
++ Lazy loading of models and resources. Depending on the selected process, only the required data are loaded in memory. For instance, extracting only metadata header from a PDF requires less than 2 GB memory in a multithreading usage, extracting citations uses around 3GB and extracting all the PDF structures around 4GB.  
 + Robust and fast PDF processing with [pdfalto](https://github.com/kermitt2/pdfalto), based on xpdf, and dedicated post-processing.
 + Modular and reusable machine learning models for sequence labelling. The default extractions are based on Linear Chain Conditional Random Fields, with the possibility to use various Deep Learning architectures for sequence labelling (including ELMo and BERT-CRF). The specialized sequence labelling models are cascaded to build a complete (hierarchical) document structure.  
 + Full encoding in [__TEI__](http://www.tei-c.org/Guidelines/P5/index.xml), both for the training corpus and the parsed results.
-+ Optional consolidation of extracted bibliographical data via online call to biblio-glutton or CrossRef Web API, export in OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
++ Optional consolidation of extracted bibliographical data via online call to [biblio-glutton](https://github.com/kermitt2/biblio-glutton) or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc), export to OpenURL, BibTeX, etc. for easier integration into Digital Library environments. 
 + Rich bibliographical processing: fine grained parsing of author names, dates, affiliations, addresses, etc. but also for instance quite reliable automatic attachment of affiliations and emails to authors. 
-+ "Automatic Generation" of pre-formatted training data based on new PDF documents, for supporting semi-automatic training data generation. 
++ "Automatic Generation" of pre-formatted training data from new PDF documents based on current models, for supporting semi-automatic training data generation. 
 + Support for CJK and Arabic languages based on customized Lucene analyzers provided by WIPO.
 
-The GROBID extraction and parsing algorithms use by default the [Wapiti CRF library](http://wapiti.limsi.fr). On Linux (64 bits) and MacOS, as alternative, it is possible to perform the sequence labelling with [DeLFT](https://github.com/kermitt2/delft) deep learning models (typically BidLSTM-CRF with or without ELMo, or BERT-CRF, with additional feature channels) instead of Wapiti CRF models, using a native integration via [JEP](https://github.com/ninia/jep). The native libraries, in particular TensorFlow, are transparently integrated as JNI with dynamic call based on the current OS. However, the best Deep Learning algorithms for sequence labelling provide so far only very limited improvements for just a couple models as compared to CRF, while considerably slower (10 to 10,000 times slower with GPU) and memory-intensive, so they should be considered as experimental at this stage.
+The GROBID extraction and parsing algorithms use by default a [fork](https://github.com/kermitt2/wapiti) of [Wapiti CRF library](http://wapiti.limsi.fr). On Linux (64 bits) and MacOS, as alternative, it is possible to perform the sequence labelling with [DeLFT](https://github.com/kermitt2/delft) deep learning models (typically BidLSTM-CRF with or without ELMo, or BERT-CRF, with additional feature channels) instead of Wapiti CRF models, using a native integration via [JEP](https://github.com/ninia/jep). The native libraries, in particular TensorFlow, are transparently integrated as JNI with dynamic call based on the current OS. However, the best Deep Learning algorithms for sequence labelling provide so far only very limited improvements for just a couple models as compared to CRF, while considerably slower (10 to 1,000 times slower with GPU) and memory-intensive, so they should be considered as experimental at this stage.
 
 GROBID should run properly "out of the box" on macOS, Linux (32 and 64 bits) and Windows. 
 
@@ -54,7 +56,7 @@ GROBID should run properly "out of the box" on macOS, Linux (32 and 64 bits) and
 
 The main author is Patrice Lopez (patrice.lopez@science-miner.com). 
 
-Core committers and maintenance: Patrice Lopez (science-miner, France) and Luca Foppiano (NIMS, Japan).
+Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano (NIMS).
 
 Many thanks to:
 

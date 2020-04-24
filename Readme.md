@@ -40,7 +40,7 @@ GROBID can be considered as production ready. Deployments in production includes
 
 GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits).
 
-For more information on how the tool works, on its key features and performance, visit the [GROBID documentation](http://grobid.readthedocs.org).
+For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](http://grobid.readthedocs.org).
 
 ## Demo
 

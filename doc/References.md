@@ -32,7 +32,7 @@ P. Lopez. Automatic Extraction and Resolution of Bibliographical References in P
 
 ## Evaluation and usages
 
-The following articles are provided for information - it does not mean that we agree with all their statements about Grobid (please refer to the present documentation for the actual features and capacities of the tool) or with all the various methodology used for evaluation. 
+The following articles are provided for information - it does not mean that we agree with all their statements about Grobid (please refer to the present documentation for the actual features and capacities of the tool) or with all the various methodology used for evaluation, but they all explore interesting aspects with Grobid. 
 
 - M. Lipinski, K. Yao, C. Breitinger, J. Beel, and B. Gipp. [Evaluation of Header Metadata Extraction Approaches and Tools for Scientific PDF Documents](http://docear.org/papers/Evaluation_of_Header_Metadata_Extraction_Approaches_and_Tools_for_Scientific_PDF_Documents.pdf), in Proceedings of the 13th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL), Indianapolis, IN, USA, 2013. 
 
