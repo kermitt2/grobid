@@ -212,7 +212,7 @@ project("grobid-core") {
 
         compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
         compile "com.cybozu.labs:langdetect:1.1-20120112"
-        compile "com.rockymadden.stringmetric:stringmetric-core_2.11:0.27.4"
+        compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         compile "commons-pool:commons-pool:1.6"
         compile "commons-io:commons-io:2.5"
         compile "org.apache.commons:commons-lang3:3.6"
@@ -233,10 +233,6 @@ project("grobid-core") {
         compile 'javax.xml.bind:jaxb-api:2.3.0'
         compile 'black.ninia:jep:3.8.2'
         compile 'org.slf4j:slf4j-log4j12:1.7.25'
-
-// added because dependencies that pull them in request lower versions
-	compile "org.scala-lang:scala-library:2.+"
-        compile "xalan:xalan:2.+"
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
