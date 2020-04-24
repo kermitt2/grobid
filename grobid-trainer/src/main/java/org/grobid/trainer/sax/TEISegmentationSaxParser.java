@@ -131,10 +131,15 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<cover>";
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
-            } else if (qName.equals("other") || qName.equals("toc")) {
-                // valid table of content mark-up should be <div type="toc>", tag <toc> is ignored
+            } else if (qName.equals("other")) {
                 //currentTags.push("<other>");
 				currentTag = "<other>";
+            } else if (qName.equals("toc")) {
+                // normally valid table of content mark-up should be <div type="toc>", not tag <toc> 
+                //currentTags.push("<other>");
+                currentTag = "<toc>";
+                upperTag = currentTag;
+                upperQname = "div";
             } else if (qName.equals("note")) {
                 int length = atts.getLength();
 
@@ -224,6 +229,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 ) {
             String text = getText();
             text = text.replace("\n", " ");
+            text = text.replace("\r", " ");
             text = text.replace("  ", " ");
 			boolean begin = true;
 //System.out.println(text);	
@@ -237,7 +243,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				String line = tokens[p].trim();
 				if (line.length() == 0) 
                     continue;
-                if (line.equals("\n"))
+                if (line.equals("\n") || line.equals("\r"))
 					continue;
 				if (line.indexOf("+PAGE+") != -1) {
                     // page break should be a distinct feature
@@ -246,7 +252,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 					page = true;
                 } 
 				
-				StringTokenizer st = new StringTokenizer(line, " \t");
+				//StringTokenizer st = new StringTokenizer(line, " \t");
+                StringTokenizer st = new StringTokenizer(line, " \t\f\u00A0");
 				if (!st.hasMoreTokens()) 
 					continue;
 				String tok = st.nextToken();

@@ -431,7 +431,7 @@ public class Segmentation extends AbstractParser {
 
                     // we consider the first token of the line as usual lexical CRF token
                     // and the second token of the line as feature
-                    StringTokenizer st2 = new StringTokenizer(line, " \t");
+                    StringTokenizer st2 = new StringTokenizer(line, " \t\f\u00A0");
                     // alternatively, use a grobid analyser
                     String text = null;
                     String text2 = null;
@@ -444,7 +444,7 @@ public class Segmentation extends AbstractParser {
                         continue;
 
                     // final sanitisation and filtering
-                    text = text.replaceAll("[ \n]", "");
+                    text = text.replaceAll("[ \n\r]", "");
                     text = text.trim();
 
                     if ( (text.length() == 0) ||
@@ -910,9 +910,9 @@ public class Segmentation extends AbstractParser {
                 boolean output;
 
                 output = writeField(buffer, line, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
-                /*if (!output) {
-                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "<note type=\"other\">", addSpace, 3);
-                }*/
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "", addSpace, 3);
+                }
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<headnote>", "<note place=\"headnote\">",
                             addSpace, 3);
@@ -948,20 +948,6 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
                 }
-                /*if (!output) {
-                    if (closeParagraph) {
-                        output = writeField(buffer, s1, "", s2, "<reference_marker>", "<label>", addSpace, 3);
-                    } else
-                        output = writeField(buffer, s1, lastTag0, s2, "<reference_marker>", "<label>", addSpace, 3);
-                }*/
-                /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<citation_marker>", "<ref type=\"biblio\">",
-                            addSpace, 3);
-                }*/
-                /*if (!output) {
-                    output = writeField(buffer, s1, lastTag0, s2, "<figure_marker>", "<ref type=\"figure\">",
-                            addSpace, 3);
-                }*/
                 lastTag = s1;
 
                 if (!st.hasMoreTokens()) {
@@ -1010,51 +996,22 @@ public class Segmentation extends AbstractParser {
             // if previous and current tag are the same, we output the token
             if (s1.equals(lastTag0) || s1.equals("I-" + lastTag0)) {
                 buffer.append(line);
-            }
-            /*else if (lastTag0 == null) {
-                   for(int i=0; i<nbIndent; i++) {
-                       buffer.append("\t");
-                   }
-                     buffer.append(outField+s2);
-               }*/
-            /*else if (field.equals("<citation_marker>")) {
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } else if (field.equals("<figure_marker>")) {
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } else if (field.equals("<reference_marker>")) {
-                if (!lastTag0.equals("<references>") && !lastTag0.equals("<reference_marker>")) {
-                    for (int i = 0; i < nbIndent; i++) {
-                        buffer.append("\t");
-                    }
-                    buffer.append("<bibl>");
-                }
-                if (addSpace)
-                    buffer.append(" " + outField + s2);
-                else
-                    buffer.append(outField + s2);
-            } */
-            else if (lastTag0 == null) {
+            } else if (lastTag0 == null) {
                 // if previous tagname is null, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(line);
-            } else if (!lastTag0.equals("<titlePage>")) {
-                // if the previous tagname is not titlePage, we output the opening xml tag
+            } else {
+                // new opening tag, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(line);
-            } else {
+            } /*else {
                 // otherwise we continue by ouputting the token
                 buffer.append(line);
-            }
+            }*/
         }
         return result;
     }
@@ -1135,27 +1092,39 @@ public class Segmentation extends AbstractParser {
             // we close the current tag
             if (lastTag0.equals("<header>")) {
                 buffer.append("</front>\n\n");
+                res = true;
             } else if (lastTag0.equals("<body>")) {
                 buffer.append("</body>\n\n");
+                res = true;
             } else if (lastTag0.equals("<headnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<footnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<marginnote>")) {
                 buffer.append("</note>\n\n");
+                res = true;
             } else if (lastTag0.equals("<references>")) {
                 buffer.append("</listBibl>\n\n");
                 res = true;
             } else if (lastTag0.equals("<page>")) {
                 buffer.append("</page>\n\n");
+                res = true;
             } else if (lastTag0.equals("<cover>")) {
                 buffer.append("</titlePage>\n\n");
+                res = true;
             } else if (lastTag0.equals("<toc>")) {
                 buffer.append("</div>\n\n");
+                res = true;
             } else if (lastTag0.equals("<annex>")) {
                 buffer.append("</div>\n\n");
+                res = true;
             } else if (lastTag0.equals("<acknowledgement>")) {
                 buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<other>")) {
+                buffer.append("\n\n");
             } else {
                 res = false;
             }
