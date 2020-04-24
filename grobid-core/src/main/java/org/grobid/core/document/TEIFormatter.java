@@ -717,9 +717,9 @@ public class TEIFormatter {
         String dateISOString = df.format(new java.util.Date());
 
         tei.append("\t\t\t\t<application version=\"" + GrobidProperties.getVersion() +
-                "\" ident=\"GROBID-SDO\" when=\"" + dateISOString + "\">\n");
+                "\" ident=\"GROBID\" when=\"" + dateISOString + "\">\n");
         tei.append("\t\t\t\t\t<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>\n");
-        tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid-sdo\"/>\n");
+        tei.append("\t\t\t\t\t<ref target=\"https://github.com/kermitt2/grobid\"/>\n");
         tei.append("\t\t\t\t</application>\n");
         tei.append("\t\t\t</appInfo>\n");
         tei.append("\t\t</encodingDesc>\n");
