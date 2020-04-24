@@ -92,7 +92,7 @@ public interface GrobidPaths {
 	String PATH_CITE_NAMES = "processCitationNames";
 
     /**
-     * path extension for processing acknowledgment in document headers.
+     * path extension for processing acknowledgments.
      */
     String PATH_ACKNOWLEDGMENT = "processAcknowledgments";
 

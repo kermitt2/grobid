@@ -424,8 +424,8 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     @POST
-    public Response processAcknowledgments_post(@FormParam(ACKNOWLEDGMENTS) String acknowledgments) {
-        return restProcessString.processAcknowledgments(acknowledgments);
+    public Response processAcknowledgments_post(@FormParam(ACKNOWLEDGMENTS) String acknowledgment) {
+        return restProcessString.processAcknowledgments(acknowledgment);
     }
 
     /**
@@ -438,7 +438,6 @@ public class GrobidRestService implements GrobidPaths {
     public Response processAcknowledgments(@FormParam(ACKNOWLEDGMENTS) String acknowledgment) {
         return restProcessString.processAcknowledgments(acknowledgment);
     }
-
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)

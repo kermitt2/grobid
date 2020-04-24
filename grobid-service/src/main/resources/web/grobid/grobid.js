@@ -964,6 +964,12 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			setBaseUrl('processDate');
 		}
+		else if (selected == 'processAcknowledgments') {
+            createInputTextArea('acknowledgments'); // make sure the name is the same as path defined in GrobidRestService
+            $('#consolidateBlock1').hide();
+            $('#consolidateBlock2').hide();
+            setBaseUrl('processAcknowledgments');
+        }
 		else if (selected == 'processHeaderNames') {
 			createInputTextArea('names');
 			$('#consolidateBlock1').hide();

@@ -38,7 +38,9 @@ In the Pdf to TEI conversion services, the information regarding the acknolwdgme
                 <rs type="individual" coords="14,229.20,639.42,47.74,8.97">Constantine Sapunzakis</rs>, 
                 <rs type="individual" coords="14,106.68,651.42,38.36,8.97">Ben Pfaff</rs>, 
                 <rs type="individual" coords="14,152.73,651.42,54.30,8.97">Steve Gribble</rs>, and 
-                <rs type="individual" coords="14,233.14,651.42,61.32,8.97">Matthias Jacob</rs> for their feedback, help, and support in the course of this work. This material is based upon work supported in part by 
+                <rs type="individual" coords="14,233.14,651.42,61.32,8.97">Matthias Jacob</rs> 
+                for their feedback, help, and support in the course of this work. 
+                This material is based upon work supported in part by 
                 <rs type="fundingAgency" coords="14,110.29,687.30,116.22,8.97">the National Science Foundation</rs> under Grant No. 
                 <rs type="grantNumber" coords="14,64.80,699.18,33.05,8.97">0121481</rs>.
             </p>
@@ -47,41 +49,16 @@ In the Pdf to TEI conversion services, the information regarding the acknolwdgme
 </back>
 ```
 
-## Inter Annotator Agreement
+## Datasets
 Like other models in Grobid, annotated data for the acknowledgment falls into two folders:
 - Data for training, under `grobid/grobid-trainer/resources/dataset/acknowledgment/corpus/`, and 
 - Data for evaluation, under `grobid/grobid-trainer/resources/dataset/acknowledgment/evaluation/`.
 
 The annotated corpus received some inputs from other annotators when those data was introduced at the [DESIR Code Sprint 2019](https://desircodesprint.sciencesconf.org/) activity.
 
-Some annotators proposed to add two types of information in the label. Those two scales for the label are:
-
-####Types
-
-To whom acknowledgment is addressed, e.g.:
-- person
-- institution
-- grant number
-
-####Roles
-
-The role of whom acknowledgment is addressed, e.g.:
-- founding agency
-- technical support
-- language support
-- providing data
-- personal support
-- consulting
-- unknown & others
-
-Label could be the combination of both (types and roles) e.g. `LanguageSupportPerson`, `FoundingAgencyGrantNumber`
-
-### Consensus
-Suggestions about the labels and the labelling levels will be considered for inclusion in the next version of the acknowledgment model.
-
-### Decision for Disambiguities
-The use of `the`, for example, in `the Centre National de la Recherche Scientifique` should not be involved in the labelling.
-
+### Annotation Guide
+- Delimiters, for example `the`, in `the Centre National de la Recherche Scientifique` should NOT be involved as part of annotated data.
+- Someone's title, for example `Prof.` in the `Prof. L. T. Kuhn` should be involved as part of annotated data.
 
 
 
