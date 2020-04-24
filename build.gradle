@@ -234,10 +234,6 @@ project("grobid-core") {
         compile 'black.ninia:jep:3.8.2'
         compile 'org.slf4j:slf4j-log4j12:1.7.25'
 
-// added because dependencies that pull them in request lower versions
-//	    compile "org.scala-lang:scala-library:2.+"
-//        compile "xalan:xalan:2.+"
-
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
 
         runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
