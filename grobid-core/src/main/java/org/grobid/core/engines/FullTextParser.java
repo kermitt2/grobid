@@ -916,6 +916,10 @@ public class FullTextParser extends AbstractParser {
                     if ((referenceMarkerMatcher != null) && ( referenceMarkerMatcher.isKnownLabel(text) || referenceMarkerMatcher.isKnownFirstAuthor(text) ))
                         features.calloutKnown = true;
 
+                    if (token.isSuperscript()) {
+                        features.superscript = true;
+                    }
+
 	                // fulltext.append(features.printVector());
 	                if (previousFeatures != null) {
 						if (features.blockStatus.equals("BLOCKSTART") &&
@@ -927,6 +931,7 @@ public class FullTextParser extends AbstractParser {
 						}
                         fulltext.append(previousFeatures.printVector());
                     }
+
 	                n++;
 	                mm += text.length();
 	                nn += text.length();
