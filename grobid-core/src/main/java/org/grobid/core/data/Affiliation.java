@@ -30,6 +30,7 @@ public class Affiliation {
 
     private String addressString = null; // unspecified address field
     private String affiliationString = null; // unspecified affiliation field
+    private String rawAffiliationString = null; // raw affiliation text (excluding marker)
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
@@ -55,6 +56,7 @@ public class Affiliation {
         settlement = aff.getSettlement();
         addrLine = aff.getAddrLine();
         affiliationString = aff.getAffiliationString();
+        rawAffiliationString = aff.getRawAffiliationString();
     }
 
     public String getAcronym() { 
@@ -103,6 +105,10 @@ public class Affiliation {
 
     public String getAffiliationString() {
         return affiliationString;
+    }
+
+    public String getRawAffiliationString() {
+        return rawAffiliationString;
     }
 
     public List<String> getInstitutions() {
@@ -167,6 +173,10 @@ public class Affiliation {
 
     public void setAffiliationString(String s) {
         affiliationString = s;
+    }
+
+    public void setRawAffiliationString(String s) {
+        rawAffiliationString = s;
     }
 
     public void setInstitutions(List<String> affs) {
@@ -636,6 +646,7 @@ public class Affiliation {
                 ", marker='" + marker + '\'' +
                 ", addressString='" + addressString + '\'' +
                 ", affiliationString='" + affiliationString + '\'' +
+                ", rawAffiliationString='" + rawAffiliationString + '\'' +
                 ", failAffiliation=" + failAffiliation +
                 '}';
     }
