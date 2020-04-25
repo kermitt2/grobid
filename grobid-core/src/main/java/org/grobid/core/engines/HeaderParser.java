@@ -1119,10 +1119,13 @@ public class HeaderParser extends AbstractParser {
             String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
             if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
-                if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
+                /*if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
                     biblio.setTitle(biblio.getTitle() + clusterContent);
-                else
+                else*/
+                if (biblio.getTitle() == null)
                     biblio.setTitle(clusterContent);
+                /*else if (clusterContent.length() > biblio.getTitle().length())
+                    biblio.setTitle(clusterContent);*/
                 //List<LayoutToken> tokens = getLayoutTokens(cluster);
                 //biblio.addTitleTokens(tokens);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
