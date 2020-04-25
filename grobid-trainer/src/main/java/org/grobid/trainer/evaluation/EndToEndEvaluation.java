@@ -324,7 +324,7 @@ public class EndToEndEvaluation {
 			// get the gold file in the directory
             File[] refFiles2 = dir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".nxml") | name.endsWith(".pub2tei.tei.xml");
+                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
                 }
             });
 
@@ -1086,7 +1086,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 							totalCorrectObservedCitations += nbCorrect;
 							totalWrongObservedCitations += nbWrong;
-						}
+						}	
+
+						// cleaning
+						strictStats.removeLabel("id");
+        				softStats.removeLabel("id");
+        				levenshteinStats.removeLabel("id");;
+        				ratcliffObershelpStats.removeLabel("id");
+
 					} else if (sectionType == this.HEADER) {
 						// HEADER structures 
 						int p = 0;
@@ -1149,7 +1156,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldResult += " " + res;
 								// basic normalisation
 								goldResult = basicNormalization(goldResult);								
-								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
 								nbGoldResults = 1;
@@ -1160,20 +1166,28 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								String grobidResult = "";
 								if (g < grobidResults.size())
 									grobidResult = grobidResults.get(g);
+
+								if (goldResult.trim().length() == 0 && grobidResult.trim().length() == 0) {
+									g++;
+									continue;
+								}
+
 								// nb expected results
-								if (goldResult.length() > 0) {
+								if (goldResult.trim().length() > 0) {
                                     strictStats.incrementExpected(fieldName);
                                     softStats.incrementExpected(fieldName);
                                     levenshteinStats.incrementExpected(fieldName);
                                     ratcliffObershelpStats.incrementExpected(fieldName);
 								}
-//System.out.println("gold:   " + goldResult);
-//System.out.println("grobid: " + grobidResult);		
+	
 								// strict
-								if ((goldResult.length() > 0) && goldResult.equals(grobidResult)) {
+								if ((goldResult.trim().length() > 0) && goldResult.equals(grobidResult)) {
                                     strictStats.incrementObserved(fieldName);
 								}
 								else {
+/*System.out.println("gold:  " + fieldName);
+System.out.println("gold:   " + goldResult);
+System.out.println("grobid: " + grobidResult);*/	
 									if (grobidResult.length() > 0) {
                                         strictStats.incrementFalsePositive(fieldName);
 										allGoodStrict = false;
@@ -1191,12 +1205,17 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldResultSoft = removeFullPunct(goldResult);
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
-//System.out.println("gold:   " + goldResultSoft);
-//System.out.println("grobid: " + grobidResultSoft);								
-								if ((goldResult.length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
+								
+								if ((goldResult.trim().length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
                                     softStats.incrementObserved(fieldName);
 								}
 								else {
+//System.out.println("\n" + teiFile.getPath());
+//System.out.println("gold:" + fieldName);								
+//System.out.println("gold:   " + goldResultSoft);
+//System.out.println("grobid: " + grobidResultSoft);
+//System.out.println("gold:" + goldResult);
+//System.out.println("grobid:" + grobidResult);
 									if (grobidResultSoft.length() > 0) {
                                         softStats.incrementFalsePositive(fieldName);
 										allGoodSoft = false;
@@ -1650,8 +1669,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
-		string = string.replaceAll("\t", " ");
+		string = string.replace("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
+		string = string.replace("&apos;", "'");
 		return string.trim().toLowerCase();
 	}
 	
