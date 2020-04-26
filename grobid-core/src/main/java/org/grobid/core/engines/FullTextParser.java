@@ -140,13 +140,14 @@ public class FullTextParser extends AbstractParser {
             if (GrobidProperties.isHeaderUseHeuristics()) {
                 // heuristics for identifying the header zone, this is the old version of the header block identification, 
                 // still used because more robust than the pure machine learning approach (lack of training data)
-                parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
+                //parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
+                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, true);
             }
             
             if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 resHeader = new BiblioItem();
                 // using the segmentation model to identify the header zones
-                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader);
+                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
             } else {
                 // if the heuristics method was initially used, we anyway take the abstract derived from the segmentation 
                 // model, because this structure is significantly more reliable with this approach
@@ -156,7 +157,7 @@ public class FullTextParser extends AbstractParser {
                     GrobidAnalysisConfig.builder(config)
                     .consolidateHeader(0)
                 ).build();
-                parsers.getHeaderParser().processingHeaderSection(configWithoutConsolidate, doc, resHeader2);
+                parsers.getHeaderParser().processingHeaderSection(configWithoutConsolidate, doc, resHeader2, false);
                 if (isNotBlank(resHeader2.getAbstract())) {
                     resHeader.setAbstract(resHeader2.getAbstract());
                     resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
@@ -1025,7 +1026,8 @@ public class FullTextParser extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     parsers.getSegmentationParser().getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + 

@@ -667,11 +667,11 @@ public class BasicStructureBuilder {
             }
         }
 
-        doc.setBlockHeaders(blockHeaders);
+        /*doc.setBlockHeaders(blockHeaders);
         doc.setBlockFooters(blockFooters);
         doc.setBlockDocumentHeaders(blockDocumentHeaders);
         doc.setBlockReferences(blockReferences);
-        doc.setBlockSectionTitles(blockSectionTitles);
+        doc.setBlockSectionTitles(blockSectionTitles);*/
 
         return doc;
     }

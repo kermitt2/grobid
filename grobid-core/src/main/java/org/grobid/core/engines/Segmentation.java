@@ -673,7 +673,8 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
@@ -747,7 +748,8 @@ public class Segmentation extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
