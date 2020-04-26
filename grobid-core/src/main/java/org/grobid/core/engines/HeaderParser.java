@@ -162,22 +162,24 @@ public class HeaderParser extends AbstractParser {
                 if (resHeader.getAbstract() != null)
                     contentSample += "\n" + resHeader.getAbstract();
                 if (contentSample.length() < 200) {
-                    // we need more textual content to ensure that the language identification will be
+                    // we can exploit more textual content to ensure that the language identification will be
                     // correct
                     SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
-                    StringBuilder contentBuffer = new StringBuilder();
-                    for (DocumentPiece docPiece : documentBodyParts) {
-                        DocumentPointer dp1 = docPiece.getLeft();
-                        DocumentPointer dp2 = docPiece.getRight();
+                    if (documentBodyParts != null) {
+                        StringBuilder contentBuffer = new StringBuilder();
+                        for (DocumentPiece docPiece : documentBodyParts) {
+                            DocumentPointer dp1 = docPiece.getLeft();
+                            DocumentPointer dp2 = docPiece.getRight();
 
-                        int tokens = dp1.getTokenDocPos();
-                        int tokene = dp2.getTokenDocPos();
-                        for (int i = tokens; i < tokene; i++) {
-                            contentBuffer.append(tokenizations.get(i));
-                            contentBuffer.append(" ");
+                            int tokens = dp1.getTokenDocPos();
+                            int tokene = dp2.getTokenDocPos();
+                            for (int i = tokens; i < tokene; i++) {
+                                contentBuffer.append(tokenizations.get(i));
+                                contentBuffer.append(" ");
+                            }
                         }
+                        contentSample += " " + contentBuffer.toString();
                     }
-                    contentSample += " " + contentBuffer.toString();
                 }
                 Language langu = languageUtilities.runLanguageId(contentSample);
                 if (langu != null) {

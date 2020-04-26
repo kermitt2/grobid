@@ -162,6 +162,11 @@ public class FullTextParser extends AbstractParser {
                     resHeader.setAbstract(resHeader2.getAbstract());
                     resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
                 }
+                // we also take the language recognition information from the segmentation model driven results
+                if (isNotBlank(resHeader2.getLanguage())) {
+                    doc.setLanguage(resHeader2.getLanguage());
+                    resHeader.setLanguage(resHeader2.getLanguage());
+                }
             }
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
