@@ -5,27 +5,6 @@
 	</teiHeader>
 	<text xml:lang="en">
 		<front>
-			<lb/>
-			
-			Home Search Collections Journals About Contact us My IOPscience<lb/> IOP PUBLISHING<lb/>
-			
-			<docTitle>
-				<titlePart>Euler strut: a mechanical analogy for dynamics in the vicinity of a critical point<lb/></titlePart>
-			</docTitle>
-
-			This article has been downloaded from IOPscience. Please scroll down to see the full text article.<lb/>
-
-			<reference>2011 Eur. J. Phys. 32 1007<lb/></reference>
-
-			(<ptr type="web">http://iopscience.iop.org/0143-0807/32/4/014</ptr>)<lb/>
-			
-			View the table of contents for this issue, or go to the journal homepage for more<lb/>
-
-			Download details:<lb/> IP Address: 145.64.134.241<lb/>
-
-			The article was downloaded on 27/05/2011 at 09:39<lb/> Please note that terms and conditions apply.<lb/>
-			
-			<pb/>
 
 			IOP PUBLISHING
 
@@ -42,7 +21,7 @@
 			</docTitle>
 
 			<byline>
-				<docAuthor>Jaka Bobnar 1 , Katarina Susman 2 , V Adrian Parsegian 3 ,<lb/> Peter R Rand 4 , Mojca Čepi<lb/> 2,5 and Rudolf Podgornik 1,5<lb/></docAuthor>
+				<docAuthor>Jaka Bobnar 1 , Katarina Susman 2 , V Adrian Parsegian 3 ,<lb/> Peter R Rand 4 , MojcaČepič<lb/> 2,5 and Rudolf Podgornik 1,5<lb/></docAuthor>
 			</byline>
 
 			<byline>
@@ -77,10 +56,10 @@
 
 			<note type="submission">Received 31 March 2011, in final form 15 April 2011<lb/></note>
 
-			<date>Published 24 May 2011<lb/></date>
+			Published 
+			<date>24 May 2011<lb/></date>
 
 			Online at
-
 			<ptr type="web">stacks.iop.org/EJP/32/1007<lb/></ptr>
 
 			Abstract<lb/> 

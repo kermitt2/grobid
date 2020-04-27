@@ -1268,20 +1268,17 @@ public class FullTextParser extends AbstractParser {
                         headerTokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                //String header = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts, true);
-                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts);
                 String header = featuredHeader.getLeft();
 
                 if ((header != null) && (header.trim().length() > 0)) {
-                    String rese = parsers.getHeaderParser().label(header);
-                    //String header = doc.getHeaderFeatured(true, true);
-                    //List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
-
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
                     writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
+
+                    String rese = parsers.getHeaderParser().label(header);
 
                     // buffer for the header block
                     StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, true, headerTokenizations);
@@ -1345,8 +1342,6 @@ public class FullTextParser extends AbstractParser {
                         q++;
                     }
                     if (input.length() > 1) {
-                        /*List<String> inputs = new ArrayList<String>();
-                        inputs.add(input.trim());*/
                         bufferName = parsers.getAuthorParser().trainingExtraction(input, true);
                     }
 

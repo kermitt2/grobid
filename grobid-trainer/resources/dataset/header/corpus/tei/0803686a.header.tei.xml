@@ -6,13 +6,7 @@
 	<text xml:lang="en">
 		<front>
 			
-			<reference>International Journal of Obesity (2008) 32, 144–151 <lb/> </reference>
-
-			<note type="copyright">c 2008 Nature Publishing Group	All rights reserved	0307-0565/08	$30.00<lb/></note>
-			
-			<ptr type="web">www.nature.com/ijo<lb/></ptr>
-			
-			<note type="articleType">ORIGINAL ARTICLE<lb/></note>
+			<note type="doctype">ORIGINAL ARTICLE<lb/></note>
 	
 			<docTitle>
 				<titlePart>Body mass index and weight change since 20 years of<lb/> age and risk of coronary heart disease among<lb/> Japanese: the Japan Public Health Center-Based Study<lb/></titlePart>
@@ -22,7 +16,8 @@
 				<docAuthor>CL Chei 1 , H Iso 2 , K Yamagishi 1 , M Inoue 3 and S Tsugane 3 </docAuthor>
 			</byline>
 
-			, for the JPHC Study Group
+			, for the 
+			<note type="group">JPHC Study Group</note>
 	
 			<byline>
 			<affiliation>1 Department of Public Health Medicine, Doctoral Program in Medical Sciences, Graduate School of Comprehensive Human<lb/> Sciences, University of Tsukuba,</affiliation>
@@ -53,9 +48,25 @@
 			<date>17 July 2007<lb/></date>
 
 			Keywords: 
-			<keyword>body mass index; weight change; coronary heart disease; follow-up study; Japanese<lb/></keyword>
+			<keyword>body mass index; weight change; coronary heart disease; follow-up study; Japanese Japanese<lb/></keyword>
 
-			<div type="introduction">Introduction<lb/></div>
+			<note type="submission">Received 21 February 2007; revised 17 May 2007; accepted 4 June 2007;<lb/> </note>
+
+			published online 
+			<date>17 July 2007<lb/></date>
+
+			Correspondence: Professor H Iso, Public Health, Department of Social and<lb/> Environmental Medicine, Graduate School of Medicine, Osaka University, 2-2<lb/> Yamadaoka, Suita, Osaka-fu 565-0871, Japan.<lb/>
+
+			E-mail: 
+			<email>fvgh5640@mb.infoweb.ne.jp<lb/></email>
+
+			<reference>International Journal of Obesity (2008) 32, 144–151 <lb/> </reference>
+
+			<note type="copyright">&amp; 2008 Nature Publishing Group	All rights reserved	0307-0565/08	$30.00<lb/></note>
+			
+			<ptr type="web">www.nature.com/ijo<lb/></ptr>
+
+			
 
 		</front>
 	</text>

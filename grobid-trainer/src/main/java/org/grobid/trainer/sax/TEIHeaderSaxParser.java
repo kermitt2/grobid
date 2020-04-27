@@ -22,13 +22,6 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    /*private String title = null;
-    private String affiliation = null;
-    private String address = null;
-    private String note = null;
-    private String keywords = null;
-    private String dateString = null;*/
-
     private String fileName = null;
     //public TreeMap<String, String> pdfs = null;
     private String pdfName = null;
@@ -71,46 +64,9 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                 (qName.equals("title")) || (qName.equals("introduction")) || (qName.equals("editor")) || 
                 (qName.equals("intro")) || (qName.equals("version")) || (qName.equals("meeting")) || (qName.equals("location"))
                 ) {
-            //String text = getText();
             writeData();
-
-            // we segment the text
-            /*StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
-            boolean begin = true;
-            while (st.hasMoreTokens()) {
-                String tok = st.nextToken().trim();
-                if (tok.length() == 0) continue;
-
-                if (tok.equals("+L+")) {
-                    labeled.add("@newline\n");
-                } else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add("@newline\n");
-                } else {
-                    String content = tok;
-                    int i = 0;
-                    if (content.length() > 0) {
-                        if (begin) {
-                            labeled.add(content + " I-" + currentTag + "\n");
-                            begin = false;
-                        } else {
-                            labeled.add(content + " " + currentTag + "\n");
-                        }
-                    }
-                }
-
-                begin = false;
-            }*/
-
             accumulator.setLength(0);
-        } /*else if (qName.equals("lb")) {
-            // we note a line break
-            accumulator.append(" +L+ ");
-        } else if (qName.equals("pb")) {
-            // we note a page break
-            accumulator.append(" +PAGE+ ");
-        } */
-        else if (qName.equals("front")) {
+        } else if (qName.equals("front")) {
             // write remaining test as <other>
             String text = getText();
             if (text != null) {
@@ -129,7 +85,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                              Attributes atts)
             throws SAXException {
         if (qName.equals("lb")) {
-            accumulator.append(" +LINE+ ");
+            //accumulator.append(" +LINE+ ");
+            accumulator.append(" ");
         } else if (qName.equals("space")) {
             accumulator.append(" ");
         } else {
@@ -328,9 +285,6 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
                 if (name != null) {
                     if (name.equals("xml:id")) {
-                        /*if (pdfs != null) {
-                                  pdfs.put(fileName, value);
-                              }*/
                         pdfName = value;
                     }
                 }
