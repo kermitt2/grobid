@@ -1,0 +1,278 @@
+(env) (base) mp16-pro:delft tkristan$ python3 grobidTagger.py acknowledgment train_eval
+/Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+/Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/h5py/__init__.py:68: UserWarning: h5py is running against HDF5 1.10.4 when it was built against 1.8.4, this may cause problems
+  '{0}.{1}.{2}'.format(*version.hdf5_built_version_tuple)
+Using TensorFlow backend.
+unable to import 'smart_open.gcs', disabling that module
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/delft/sequenceLabelling/preprocess.py:15: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/delft/utilities/bert/optimization.py:87: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+Loading data...
+1135 train sequences
+127 validation sequences
+141 evaluation sequences
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+WARNING:tensorflow:From /Users/tkristan/Desktop/Tanti/delft/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+char_input (InputLayer)         (None, None, 30)     0                                            
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, None, 30, 25) 4900        char_input[0][0]                 
+__________________________________________________________________________________________________
+word_input (InputLayer)         (None, None, 300)    0                                            
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, None, 50)     10200       time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, None, 350)    0           word_input[0][0]                 
+                                                                 time_distributed_2[0][0]         
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, None, 350)    0           concatenate_1[0][0]              
+__________________________________________________________________________________________________
+bidirectional_2 (Bidirectional) (None, None, 200)    360800      dropout_1[0][0]                  
+__________________________________________________________________________________________________
+dropout_2 (Dropout)             (None, None, 200)    0           bidirectional_2[0][0]            
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, None, 100)    20100       dropout_2[0][0]                  
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, None, 20)     2020        dense_1[0][0]                    
+__________________________________________________________________________________________________
+chain_crf_1 (ChainCRF)          (None, None, 20)     440         dense_2[0][0]                    
+==================================================================================================
+Total params: 398,460
+Trainable params: 398,460
+Non-trainable params: 0
+__________________________________________________________________________________________________
+WARNING:tensorflow:From /Users/tkristan/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:2403: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+Epoch 1/100
+56/57 [============================>.] - ETA: 2s - loss: 171.8937OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 124s 2s/step - loss: 169.9342
+	f1 (micro): 9.76
+Epoch 2/100
+56/57 [============================>.] - ETA: 2s - loss: 53.9005OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 132s 2s/step - loss: 53.6600
+	f1 (micro): 28.93
+Epoch 3/100
+56/57 [============================>.] - ETA: 2s - loss: 44.1997OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 132s 2s/step - loss: 43.8133
+	f1 (micro): 41.08
+Epoch 4/100
+56/57 [============================>.] - ETA: 2s - loss: 37.8015OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 127s 2s/step - loss: 37.7834
+	f1 (micro): 49.54
+Epoch 5/100
+56/57 [============================>.] - ETA: 2s - loss: 33.3034OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 126s 2s/step - loss: 33.1538
+	f1 (micro): 52.09
+Epoch 6/100
+56/57 [============================>.] - ETA: 2s - loss: 29.8951OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 135s 2s/step - loss: 29.9032
+	f1 (micro): 55.27
+Epoch 7/100
+56/57 [============================>.] - ETA: 2s - loss: 27.2024OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 134s 2s/step - loss: 27.2717
+	f1 (micro): 58.75
+Epoch 8/100
+56/57 [============================>.] - ETA: 2s - loss: 24.7780OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 125s 2s/step - loss: 24.6316
+	f1 (micro): 61.99
+Epoch 9/100
+56/57 [============================>.] - ETA: 2s - loss: 22.5575OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 132s 2s/step - loss: 22.3966
+	f1 (micro): 62.57
+Epoch 10/100
+56/57 [============================>.] - ETA: 2s - loss: 20.8998OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 132s 2s/step - loss: 20.9131
+	f1 (micro): 65.18
+Epoch 11/100
+56/57 [============================>.] - ETA: 2s - loss: 19.1225OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 19.0513
+	f1 (micro): 66.72
+Epoch 12/100
+56/57 [============================>.] - ETA: 2s - loss: 18.1958OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 18.2574
+	f1 (micro): 68.09
+Epoch 13/100
+56/57 [============================>.] - ETA: 2s - loss: 16.9927OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 16.9302
+	f1 (micro): 69.28
+Epoch 14/100
+56/57 [============================>.] - ETA: 2s - loss: 15.7319OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 132s 2s/step - loss: 15.8063
+	f1 (micro): 69.88
+Epoch 15/100
+56/57 [============================>.] - ETA: 2s - loss: 14.9394OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 14.9588
+	f1 (micro): 70.61
+Epoch 16/100
+56/57 [============================>.] - ETA: 2s - loss: 14.3053OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 133s 2s/step - loss: 14.3284
+	f1 (micro): 71.40
+Epoch 17/100
+56/57 [============================>.] - ETA: 2s - loss: 13.6579OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 134s 2s/step - loss: 13.6397
+	f1 (micro): 71.89
+Epoch 18/100
+56/57 [============================>.] - ETA: 2s - loss: 12.7464OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 131s 2s/step - loss: 12.7304
+	f1 (micro): 72.21
+Epoch 19/100
+56/57 [============================>.] - ETA: 2s - loss: 12.4680OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 134s 2s/step - loss: 12.4031
+	f1 (micro): 72.22
+Epoch 20/100
+56/57 [============================>.] - ETA: 2s - loss: 11.8900OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 144s 3s/step - loss: 11.7980
+	f1 (micro): 74.00
+Epoch 21/100
+56/57 [============================>.] - ETA: 2s - loss: 11.2557OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 11.2341
+	f1 (micro): 73.38
+Epoch 22/100
+56/57 [============================>.] - ETA: 2s - loss: 10.6808OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 135s 2s/step - loss: 10.6772
+	f1 (micro): 74.37
+Epoch 23/100
+56/57 [============================>.] - ETA: 2s - loss: 10.4178OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 130s 2s/step - loss: 10.3630
+	f1 (micro): 75.51
+Epoch 24/100
+57/57 [==============================] - 133s 2s/step - loss: 9.9243
+	f1 (micro): 73.81
+Epoch 25/100
+56/57 [============================>.] - ETA: 2s - loss: 9.6303OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 133s 2s/step - loss: 9.6362
+	f1 (micro): 75.35
+Epoch 26/100
+56/57 [============================>.] - ETA: 2s - loss: 9.2534OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 131s 2s/step - loss: 9.2953
+	f1 (micro): 74.39
+Epoch 27/100
+56/57 [============================>.] - ETA: 2s - loss: 8.8230OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 138s 2s/step - loss: 8.8484
+	f1 (micro): 75.45
+Epoch 28/100
+56/57 [============================>.] - ETA: 2s - loss: 8.6432OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+OMP: Warning #190: Forking a process while a parallel region is active is potentially unsafe.
+57/57 [==============================] - 134s 2s/step - loss: 8.6480
+	f1 (micro): 74.43
+training runtime: 3807.173 seconds 
+
+Evaluation:
+	f1 (micro): 75.63
+                  precision    recall  f1-score   support
+
+   <affiliation>     0.6129    0.6552    0.6333        29
+<educationalInstitution>     0.2727    0.2727    0.2727        11
+ <fundingAgency>     0.6703    0.7799    0.7209       159
+     <grantName>     0.2500    0.0455    0.0769        22
+   <grantNumber>     0.7542    0.8396    0.7946       106
+    <individual>     0.8881    0.9549    0.9203       266
+<otherInstitution>     0.4000    0.4706    0.4324        34
+   <projectName>     0.1429    0.0833    0.1053        12
+<researchInstitution>     0.3846    0.2500    0.3030        20
+
+all (micro avg.)     0.7367    0.7769    0.7563       659
+
+model config file saved
+preprocessor saved
+model saved
