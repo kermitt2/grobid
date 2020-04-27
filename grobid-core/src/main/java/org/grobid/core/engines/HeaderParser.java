@@ -519,7 +519,6 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     text = text.replace(" ", "");
-                    text = text.replace("\t", "");
                     if (text.length() == 0) {
                         n++;
                         continue;
@@ -785,13 +784,16 @@ public class HeaderParser extends AbstractParser {
 
                     n++;
                 }
+
+                if (previousFeatures != null) {
+                    previousFeatures.blockStatus = "BLOCKEND";
+                    previousFeatures.lineStatus = "LINEEND";
+                    header.append(previousFeatures.printVector());
+                    previousFeatures = null;
+                }
             }
 
-            if (previousFeatures != null) {
-                previousFeatures.blockStatus = "BLOCKEND";
-                previousFeatures.lineStatus = "LINEEND";
-                header.append(previousFeatures.printVector());
-            }
+            
         }
 
         return Pair.of(header.toString(), headerTokenizations);
