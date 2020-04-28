@@ -485,7 +485,7 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
         @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-            .consolidateHeader(validateConsolidationParam(consolidate))
+            .consolidateCitations(validateConsolidationParam(consolidate))
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitation(citation, config, ExpectedResponseType.XML);
@@ -511,11 +511,11 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
         @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-            .consolidateHeader(validateConsolidationParam(consolidate))
+            .consolidateCitations(validateConsolidationParam(consolidate))
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitation(citation, config, ExpectedResponseType.BIBTEX);
-    }
+    } 
 
     @Path(PATH_CITATION)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
