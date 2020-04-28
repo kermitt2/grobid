@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="15-s0217732317501371"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Modern Physics Letters A<lb/> Vol. 32, No. 26 (2017) 1750137 (10 pages)<lb/></reference>
+
+	<note type="copyright">c World Scientific Publishing Company<lb/></note>
+
+	<idno>DOI: 10.1142/S0217732317501371<lb/></idno>
+
+	<docTitle>
+	<titlePart>Phenomenological implications of two simple modifications to<lb/> Tri-Bimaximal mixing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kanwaljeet S. Channey * and Sanjeev Kumar †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astrophysics, University of Delhi,</affiliation>
+	</byline>
+
+	<address>Delhi 110007, India<lb/></address>
+
+	*
+	<email>kjschanney@outlook.com<lb/></email>
+
+	†
+	<email>sanjeevkumarverma@outlook.in<lb/></email>
+
+	<note type="submission">Received 18 April 2017<lb/> Revised 4 July 2017<lb/> Accepted 4 July 2017<lb/></note>
+
+	Published
+	<date>27 July 2017<lb/></date>
+
+	<div type="abstract">We study the phenomenological implications of breaking the Tri-Bimaximal (TBM)<lb/> mixing in such a way that either first or second column of TBM mixing matrix remains<lb/> invariant. We present two such textures and confront them with the experimental data.<lb/> We give the predictions of these textures for atmospheric mixing angle θ 23 and Dirac-<lb/>type CP violating phase δ that will be measured in the future experiments.<lb/></div>
+
+	Keywords:
+	<keyword>Neutrino masses and mixings; TBM mixing; trimaximal mixing.<lb/></keyword>
+
+	<keyword>PACS Nos.: 12.15.Ff, 14.60.Pq<lb/></keyword> 
+
+	† Corresponding author<lb/>
+
+	1750137-1<lb/> 
+
+	<reference>Mod. Phys. Lett. A 2017.32. </reference>
+
+	Downloaded from www.worldscientific.com<lb/> by EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH (CERN) on 08/23/17. For personal use only.<lb/>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="411F170AAF0FF4EE7397FC997C20C166F6E40C26"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">Editorial<lb/> </note>
+
+	<docTitle>
+	<titlePart>Making Our Specialty Superior<lb/> </titlePart>
+	</docTitle>
+
+	0090-3019/98/$19.00<lb/>
+	
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	<idno>PII S0090-3019(97)00492-8<lb/></idno>
+
+	655 Avenue of the Americas, New York, NY 10010<lb/> 
+
+	<byline>
+	<docAuthor>George W. Tyson, MD, MBA<lb/></docAuthor>
+	</byline>
+	
+	<address>Stony Brook, New York</address>
+
+		</front>
+	</text>
+</tei>
