@@ -1798,8 +1798,8 @@ public class BiblioItem {
     /**
      * Keyword field segmentation.
      * 
-     * TBD: create a dedicated model to analyse the keyword field, segmenting them and 
-     * identifying the possible scheme
+     * TBD: create a dedicated model to analyse the keyword field, segmenting them properly and 
+     * identifying the possible schemes
      */
     public static List<Keyword> segmentKeywords(String string) {
         if (string == null)
@@ -1809,7 +1809,7 @@ public class BiblioItem {
 		String type = null;
         if (string.startsWith("Categories and Subject Descriptors")) {
             type = "subject-headers";
-			 string = string.replace("Categories and Subject Descriptors", "").trim();
+			string = string.replace("Categories and Subject Descriptors", "").trim();
         } 
 		else if (string.startsWith("PACS Numbers") || 
 				   string.startsWith("PACS") ) {

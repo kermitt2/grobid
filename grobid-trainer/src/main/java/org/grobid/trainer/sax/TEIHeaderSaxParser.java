@@ -6,6 +6,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
@@ -27,6 +29,14 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private String pdfName = null;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
+
+    private List<String> endTags = Arrays.asList("titlePart", "note", "docAuthor", "affiliation", "address", "email", "idno",
+        "date", "keywords", "keyword", "reference", "degree", "ptr", "div", "p", "web", "english-title", "title", 
+        "introduction", "editor", "intro", "version", "meeting", "location");
+
+    private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle");
+
+    private List<String> ignoredTags = Arrays.asList("page");  
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<String>();
@@ -55,7 +65,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((qName.equals("titlePart")) || (qName.equals("note")) || (qName.equals("docAuthor")) ||
+        /*if ((qName.equals("titlePart")) || (qName.equals("note")) || (qName.equals("docAuthor")) ||
                 (qName.equals("affiliation")) || (qName.equals("address")) || (qName.equals("email")) ||
                 (qName.equals("idno")) || (qName.equals("date")) || (qName.equals("biblScope")) ||
                 (qName.equals("keywords")) || (qName.equals("reference")) || (qName.equals("degree")) ||
@@ -63,7 +73,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                 (qName.equals("web")) || (qName.equals("english-title")) ||
                 (qName.equals("title")) || (qName.equals("introduction")) || (qName.equals("editor")) || 
                 (qName.equals("intro")) || (qName.equals("version")) || (qName.equals("meeting")) || (qName.equals("location"))
-                ) {
+                ) {*/
+        if (endTags.contains(qName)) {
             writeData();
             accumulator.setLength(0);
         } else if (qName.equals("front")) {
@@ -76,6 +87,10 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                 }
             }
             accumulator.setLength(0);
+        } else if (intermediaryTags.contains(qName)) {
+            // do nothing
+        } else {
+            System.out.println("Warning: Unexpected closing tag " + qName);
         }
     }
 
@@ -85,11 +100,10 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                              Attributes atts)
             throws SAXException {
         if (qName.equals("lb")) {
-            //accumulator.append(" +LINE+ ");
             accumulator.append(" ");
-        } else if (qName.equals("space")) {
+        } /*else if (qName.equals("space")) {
             accumulator.append(" ");
-        } else {
+        }*/ else {
             // add acumulated text as <other>
             String text = getText();
             if (text != null) {
@@ -114,7 +128,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     if (name.equals("type")) {
                         if (value.equals("abstract")) {
                             currentTag = "<abstract>";
-                        } else if (value.equals("intro") | value.equals("introduction")) {
+                        } else if (value.equals("intro") || value.equals("introduction")) {
                             currentTag = "<intro>";
                         } else if (value.equals("paragraph")) {
                             currentTag = "<other>";
@@ -153,7 +167,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<grant>";
                         } else if (value.equals("acknowledgment")) {
                             currentTag = "<note>";
-                        } else if (value.equals("document_type") || value.equals("doctype") || 
+                        } else if (value.equals("document_type") || value.equals("doctype") || value.equals("docType") ||
                             value.equals("documentType") || value.equals("articleType")) {
                             currentTag = "<doctype>";
                         } else if (value.equals("version")) {
@@ -185,7 +199,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if (qName.equals("biblScope")) {
+        } /*else if (qName.equals("biblScope")) {
             int length = atts.getLength();
 
             // Process each attribute
@@ -204,7 +218,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if (qName.equals("titlePart")) {
+        }*/ else if (qName.equals("titlePart")) {
             currentTag = "<title>";
         } else if (qName.equals("idno")) {
             currentTag = "<pubnum>";
@@ -267,12 +281,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if ((qName.equals("keywords")) | (qName.equals("keyword"))) {
+        } else if ((qName.equals("keywords")) || (qName.equals("keyword"))) {
             currentTag = "<keyword>";
-            accumulator.setLength(0);
         } else if (qName.equals("title")) {
             currentTag = "<journal>";
-        } else if ((qName.equals("introduction")) | (qName.equals("intro"))) {
+        } else if ((qName.equals("introduction")) || (qName.equals("intro"))) {
             currentTag = "<intro>";
         } else if (qName.equals("fileDesc")) {
             int length = atts.getLength();
@@ -289,6 +302,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
+        } else if (intermediaryTags.contains(qName)) {
+            // do nothing
+        } else {
+            System.out.println("Warning: Unexpected starting tag " + qName);
+            currentTag = "<other>";
         }
     }
 

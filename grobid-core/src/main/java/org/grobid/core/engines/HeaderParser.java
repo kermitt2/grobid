@@ -1022,7 +1022,7 @@ public class HeaderParser extends AbstractParser {
                     biblio.setVersion(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_DOCTYPE)) {
                 if (biblio.getDocumentType() != null && isDifferentContent(biblio.getDocumentType(), clusterContent)) {
-                    biblio.setDocumentType(biblio.getDocumentType() + clusterContent);
+                    biblio.setDocumentType(biblio.getDocumentType() + " \n " + clusterContent);
                 } else
                     biblio.setDocumentType(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_WORKINGGROUP)) {
