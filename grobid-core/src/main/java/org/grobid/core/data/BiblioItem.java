@@ -1826,7 +1826,7 @@ public class BiblioItem {
 		List<Keyword> result = new ArrayList<Keyword>();
 		
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",");
+		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",", ".");
 		
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);

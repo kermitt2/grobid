@@ -9,11 +9,11 @@
 			<note type="doctype">ORIGINAL ARTICLE<lb/></note>
 	
 			<docTitle>
-				<titlePart>Body mass index and weight change since 20 years of<lb/> age and risk of coronary heart disease among<lb/> Japanese: the Japan Public Health Center-Based Study<lb/></titlePart>
+			<titlePart>Body mass index and weight change since 20 years of<lb/> age and risk of coronary heart disease among<lb/> Japanese: the Japan Public Health Center-Based Study<lb/></titlePart>
 			</docTitle>
 
 			<byline>
-				<docAuthor>CL Chei 1 , H Iso 2 , K Yamagishi 1 , M Inoue 3 and S Tsugane 3 </docAuthor>
+			<docAuthor>CL Chei 1 , H Iso 2 , K Yamagishi 1 , M Inoue 3 and S Tsugane 3 </docAuthor>
 			</byline>
 
 			, for the 
@@ -55,7 +55,17 @@
 			published online 
 			<date>17 July 2007<lb/></date>
 
-			Correspondence: Professor H Iso, Public Health, Department of Social and<lb/> Environmental Medicine, Graduate School of Medicine, Osaka University, 2-2<lb/> Yamadaoka, Suita, Osaka-fu 565-0871, Japan.<lb/>
+			Correspondence: 
+
+			<byline>
+			<docAuthor>Professor H Iso,</docAuthor>
+			</byline> 
+
+			<byline>
+			<affiliation>Public Health, Department of Social and<lb/> Environmental Medicine, Graduate School of Medicine, Osaka University,</affiliation>
+			</byline> 
+
+			<address>2-2<lb/> Yamadaoka, Suita, Osaka-fu 565-0871, Japan.<lb/></address>
 
 			E-mail: 
 			<email>fvgh5640@mb.infoweb.ne.jp<lb/></email>

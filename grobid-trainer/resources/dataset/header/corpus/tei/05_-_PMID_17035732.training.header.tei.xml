@@ -43,8 +43,22 @@
 
 	<address>Chatenay-Malabry, France<lb/></address>
 
-	*Correspondence to: Gregory Lavieu; Columbia University; Department of<lb/> Physiology and Cellular Biophysics; Russ Berrie Pav Rm519; 1150 St. Nicholas Ave.;<lb/> New York, New York 10032 USA; Tel.: 212.851.5560; Fax: 212.851.5562; Email:<lb/> 
+	*Correspondence to: 
 
+	<byline>
+	<docAuthor>Gregory Lavieu</docAuthor>
+	</byline>; 
+
+	<byline>
+	<affiliation>Columbia University; Department of<lb/> Physiology and Cellular Biophysics;</affiliation>
+	</byline> 
+
+	<address>Russ Berrie Pav Rm519; 1150 St. Nicholas Ave.;<lb/> New York, New York 10032 USA</address>; 
+
+	Tel.: <phone>212.851.5560</phone>; 
+	Fax: 212.851.5562; 
+
+	Email:<lb/> 
 	<email>gl2204@columbia.edu<lb/></email>
 
 	<note type="submission">Received 09/18/06; Accepted 09/18/06<lb/></note>
