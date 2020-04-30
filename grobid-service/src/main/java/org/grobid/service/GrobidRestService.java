@@ -515,7 +515,7 @@ public class GrobidRestService implements GrobidPaths {
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitation(citation, config, ExpectedResponseType.BIBTEX);
-    }
+    } 
 
     @Path(PATH_CITATION)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
