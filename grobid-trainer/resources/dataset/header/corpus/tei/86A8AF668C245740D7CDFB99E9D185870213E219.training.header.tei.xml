@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="86A8AF668C245740D7CDFB99E9D185870213E219"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>258<lb/></page> 
+
+	<reference>J. CHEM. S O C . , CHEM. COMMUN., 1989<lb/></reference>
+
+	<docTitle>
+	<titlePart>The Superoxide Release Inhibitors, Cryptoporic Acids C, D, and E; Dimeric Drimane<lb/> Sesquiterpenoid Ethers of lsocitric Acid from the Fungus Cryptoporus volvatus<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Toshihiro Hashimoto,a Motoo Tori,a Yasuo Mizuno,a Yoshinori Asakawa,*a and Yoshimasa Fukazawab<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Faculty of Pharmaceutical Sciences, Tokushima Bunri University,</affiliation>
+	</byline>
+
+	<address>Yamashiro cho, Tokushima 770, Japan<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Chemistry, Faculty of Science, Hiroshima University,</affiliation>
+	</byline>
+
+	<address>Higashisenda-machi, Naka-ku, Hiroshima 730, Japan<lb/></address>
+
+	<div type="abstract">Three novel dimeric drimane sesquiterpenoid ethers of isocitric acid, cryptoporic acids C, D, and E, which are bitter<lb/> principles and superoxide release inhibitors, have been isolated from the fungus Cryptoporus volvatus and the<lb/> structures determined by spectroscopic methods, chemical transformations, and X-ray analysis.<lb/></div>
+
+	<note type="submission">Received, 5th July 1988;</note>
+
+	Corn. 8102671 H
+		</front>
+	</text>
+</tei>

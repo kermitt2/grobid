@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="8CE9E9BECD0A72424C91DD4FBF03E6D85B0BC816"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Rosuvastatin<lb/>
+
+	<docTitle>
+	<titlePart>Rosuvastatin calcium<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jeremy Quirk, Mark Thornton and Peter Kirkpatrick<lb/></docAuthor>
+	</byline>
+
+	FRESH FROM THE PIPELINE<lb/> N E W S &amp; A N A LY S I S<lb/>
+	<reference>NATURE REVIEWS | DRUG DISCOVERY<lb/> VOLUME 2 | OCTOBER 2003 | 7 6 9<lb/></reference>
+
+	<div type="abstract">Rosuvastatin calcium (Crestor; AstraZeneca),<lb/> the seventh drug in the statin class, was<lb/> approved by the US FDA in August 2003 for<lb/> the reduction of cholesterol levels in patients<lb/> with hypercholesterolaemia. Billed as the<lb/> most potent statin available, can it overcome<lb/> initial setbacks and make a significant impact<lb/> in the multi-billion-dollar market for<lb/> cholesterol-lowering drugs?<lb/></div>
+
+	<byline>
+	<docAuthor>Peter Kirkpatrick</docAuthor>
+	</byline>
+
+	is at 
+
+	<byline>
+	<affiliation>Nature Reviews Drug<lb/> Discovery. </affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>JeremyQuirk and Mark Thornton </docAuthor>
+	</byline>
+
+	are<lb/> at 
+
+	<byline>
+	<affiliation>Decision Resources Intl,</affiliation>
+	</byline>
+
+	<address>50-51 Russell Square,<lb/> London, WC1B 4HQ, UK.<lb/></address>
+
+	Correspondence to J. Q.<lb/> e-mail:
+	<email>jquirk@decisionresources.co.uk<lb/></email>
+
+	<idno>doi:10.1038/nrd1205</idno>
+
+		</front>
+	</text>
+</tei>

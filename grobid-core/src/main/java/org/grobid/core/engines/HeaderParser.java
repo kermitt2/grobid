@@ -934,10 +934,11 @@ public class HeaderParser extends AbstractParser {
                 //List<LayoutToken> tokens = getLayoutTokens(cluster);
                 //biblio.addAbstractTokens(tokens);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
-                if (biblio.getReference() != null) {
-                    biblio.setReference(biblio.getReference() + clusterContent);
+                //if (biblio.getReference() != null) {
+                if (biblio.getReference() != null && biblio.getReference().length() < clusterNonDehypenizedContent.length()) {
+                    biblio.setReference(clusterNonDehypenizedContent);
                 } else
-                    biblio.setReference(clusterContent);
+                    biblio.setReference(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_GRANT)) {
                 if (biblio.getGrant() != null) {
                     biblio.setGrant(biblio.getGrant() + clusterContent);

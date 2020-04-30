@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="4C71BB0ECEDEF4095C20D3BA0EAADA8044038BF0"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), pp. 117-121 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Stochastic resonance driven by Gaussian<lb/> multiplicative noise<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. V. Barzykin ( * ) and K. Seki ( * * )<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physical Chemistry, National Institute of Materials<lb/> and Chemical Research -Tsukuba,</affiliation>
+	</byline>
+
+	<address>Ibaraki 305, Japan<lb/></address>
+
+	(
+	<note type="submission">received 14 March 1997; accepted in final form 12 September 1997</note>
+
+	)<lb/>
+	
+	<keyword>PACS. 05.40+j -Fluctuation phenomena, random processes, and Brownian motion.<lb/> PACS. 02.50Ey -Stochastic processes.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">An analytically solvable linear model for stochastic resonance driven by multi-<lb/>plicative noise of the Gaussian type is presented. A maximum of the signal-to-noise ratio is<lb/> observed both as a function of the noise intensity and as a function of the autocorrelation time.<lb/> The maximum appears for low frequencies of the applied external oscillating field immediately<lb/> as soon as noise correlation is introduced, and disappears as the correlation or the frequency is<lb/> increased. No resonance occurs for white noise.<lb/></div>
+
+	( * ) Email:
+	<email>barzykin@nimc.go.jp<lb/></email>
+
+	( * * ) Email:
+	<email>seki@nimc.go.jp<lb/></email>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

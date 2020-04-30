@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="7AEB4F84EE7FF20C28D96ADD24D21570D177D75E"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), p. 233 (1997) Erratum<lb/></reference>
+
+	<docTitle>
+	<titlePart>Spin tunneling in a swept magnetic field<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>L. Gunther<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astronomy, Tufts University</affiliation>
+	</byline>
+
+	<address>-Medford, MA 02155, USA<lb/></address> 
+
+	<byline>
+	<affiliation>Laboratoire de Magnétisme, Louis Néel, CNRS -BP 166, 38042-Grenoble, France<lb/></affiliation>
+	</byline>
+
+	(
+	<reference>Europhys. Lett., 39 (1), pp. 1-6 (1997)<lb/></reference>
+	)
+
+	<keyword>PACS. 03.65−w -Quantum mechanics.<lb/> PACS. 75.20Ck -Nonmetals.<lb/> PACS. 76.20+q -General theory of resonances and relaxations.</keyword>
+
+		</front>
+	</text>
+</tei>

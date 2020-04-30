@@ -1811,8 +1811,7 @@ public class BiblioItem {
             type = "subject-headers";
 			string = string.replace("Categories and Subject Descriptors", "").trim();
         } 
-		else if (string.startsWith("PACS Numbers") || 
-				   string.startsWith("PACS") ) {
+		else if (string.startsWith("PACS Numbers") || string.startsWith("PACS") ) {
             type = "pacs";
             string = string.replace("PACS Numbers", "").replace("PACS", "").trim();
 			if (string.startsWith(":")) {
@@ -1825,24 +1824,31 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		
-		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",", ".");
-		
-		for(String separator : separators) {
-	        StringTokenizer st = new StringTokenizer(string, separator);
-	        if (st.countTokens() > 2) {
-	            while (st.hasMoreTokens()) {
-					String res = st.nextToken().trim();
-					if (res.startsWith(":")) {
-			            res = res.substring(1);
-			        }
-					res = res.replace("\n", " ").replace("  ", " ");
-					Keyword keyw = new Keyword(res, type);
-					result.add(keyw);
-	            }
-				break;
-	        }
-		}
+        String[] pieces = string.split(" / ");
+        if (pieces.length > 1) {
+            for(int j=0; j<pieces.length; j++) {
+                Keyword keyw = new Keyword(pieces[j], type);
+                result.add(keyw);
+            }
+        } else {
+    		// the list of possible keyword separators
+    		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",", ".");
+    		for(String separator : separators) {
+    	        StringTokenizer st = new StringTokenizer(string, separator);
+    	        if (st.countTokens() > 2) {
+    	            while (st.hasMoreTokens()) {
+    					String res = st.nextToken().trim();
+    					if (res.startsWith(":")) {
+    			            res = res.substring(1);
+    			        }
+    					res = res.replace("\n", " ").replace("  ", " ");
+    					Keyword keyw = new Keyword(res, type);
+    					result.add(keyw);
+    	            }
+    				break;
+    	        }
+    		}
+        }
 		
 		return result;
 	}	
