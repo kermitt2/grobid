@@ -25,7 +25,7 @@ pages:
     - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
     - 'Adding a consolidation service': 'Consolidation.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
-- Benchmarking:
+  - Benchmarking:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
     - 'Evaluation models': 'Benchmarking-models.md'
