@@ -2,7 +2,7 @@
 
 ## General
 
-This is the end-to-end benchmarking result for GROBID version 0.6.0 against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
+This is the end-to-end benchmarking result for GROBID version **0.6.0** against the `PMC_sample_1943` dataset, see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 The following end-to-end results are using CRF Wapiti as sequence labelling engine. Header extractions are consolidated by default with [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service (the results with CrossRef REST API as consolidation service are similar but much slower). See [below](https://grobid.readthedocs.io/en/latest/Benchmarking-models.md) for some evaluations with Deep-Learning architectures. 
 

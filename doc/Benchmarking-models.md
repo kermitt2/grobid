@@ -1,6 +1,6 @@
 # Evaluation CRF and Deep Learning models
 
-Here are some evaluations of individual Grobid models, using cross-validation (partitions of the annotated data into train and eval sets).  
+Here are some evaluations of individual Grobid models, using Grobid version **0.6.0**, using cross-validation (partitions of the annotated data into train and eval sets). 
 
 ## Accuracy 
 
