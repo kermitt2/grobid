@@ -233,7 +233,7 @@ public class HeaderParser extends AbstractParser {
                     String[] authorSegments = null;
                     if (resHeader.getAuthors() != null) {
 //                        List<String> auts;
-                        authorSegments = resHeader.getAuthors().split("\n");
+                        authorSegments = resHeader.getAuthors().split("\t");
                         if (authorSegments.length > 1) {
                             fragmentedAuthors = true;
                         }
@@ -839,8 +839,9 @@ public class HeaderParser extends AbstractParser {
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
                 //if (biblio.getAuthors() != null && isDifferentandNotIncludedContent(biblio.getAuthors(), clusterContent)) {
                 if (biblio.getAuthors() != null) {
-                    biblio.setAuthors(biblio.getAuthors() + "\n" + clusterNonDehypenizedContent);
-                    biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
+                    biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
+                    //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
+                    biblio.addAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
                 } else 
                     biblio.setAuthors(clusterNonDehypenizedContent);
 
@@ -962,7 +963,7 @@ public class HeaderParser extends AbstractParser {
                     biblio.setAddress(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
                 if (biblio.getEmail() != null) {
-                    biblio.setEmail(biblio.getEmail() + " ; " + clusterNonDehypenizedContent);
+                    biblio.setEmail(biblio.getEmail() + "\t" + clusterNonDehypenizedContent);
                 } else
                     biblio.setEmail(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
@@ -980,7 +981,7 @@ public class HeaderParser extends AbstractParser {
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
                 if (biblio.getKeyword() != null) {
-                        biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
+                    biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {

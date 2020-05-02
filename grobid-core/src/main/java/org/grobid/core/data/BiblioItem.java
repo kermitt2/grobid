@@ -1767,7 +1767,7 @@ public class BiblioItem {
     }
 
     /**
-     * Some little cleaning of the keyword field.
+     * Some little cleaning of the keyword field (likely unnecessary with latest header model).
      */
     public static String cleanKeywords(String string) {
         if (string == null)
@@ -1823,32 +1823,23 @@ public class BiblioItem {
 		}
 		
 		List<Keyword> result = new ArrayList<Keyword>();
-		
-        /*String[] pieces = string.split(" / ");
-        if (pieces.length > 1) {
-            for(int j=0; j<pieces.length; j++) {
-                Keyword keyw = new Keyword(pieces[j], type);
-                result.add(keyw);
-            }
-        } else {*/
-    		// the list of possible keyword separators
-    		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
-    		for(String separator : separators) {
-    	        StringTokenizer st = new StringTokenizer(string, separator);
-    	        if (st.countTokens() > 2) {
-    	            while (st.hasMoreTokens()) {
-    					String res = st.nextToken().trim();
-    					if (res.startsWith(":")) {
-    			            res = res.substring(1);
-    			        }
-    					res = res.replace("\n", " ").replace("  ", " ");
-    					Keyword keyw = new Keyword(res, type);
-    					result.add(keyw);
-    	            }
-    				break;
-    	        }
-    		}
-        //}
+		// the list of possible keyword separators
+		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
+		for(String separator : separators) {
+	        StringTokenizer st = new StringTokenizer(string, separator);
+	        if (st.countTokens() > 2) {
+	            while (st.hasMoreTokens()) {
+					String res = st.nextToken().trim();
+					if (res.startsWith(":")) {
+			            res = res.substring(1);
+			        }
+					res = res.replace("\n", " ").replace("  ", " ");
+					Keyword keyw = new Keyword(res, type);
+					result.add(keyw);
+	            }
+				break;
+	        }
+		}
 		
 		return result;
 	}	
@@ -3451,20 +3442,9 @@ public class BiblioItem {
 
             // authors
             if (authors != null) {
-                StringTokenizer st = new StringTokenizer(authors, ";");
-                if (st.countTokens() > 0) {
-                    if (st.hasMoreTokens()) { // we take just the first author
-                        String author = st.nextToken();
-                        if (author != null)
-                            author = author.trim();
-                        int ind = author.lastIndexOf(" ");
-                        if (ind != -1) {
-                            openurl += "&rft.aulast=" + URLEncoder.encode(author.substring(ind + 1), "UTF-8")
-                                    + "&rft.auinit="
-                                    + URLEncoder.encode(author.substring(0, ind), "UTF-8");
-                        } else
-                            openurl += "&rft.au=" + URLEncoder.encode(author, "UTF-8");
-                    }
+                String localAuthor = getFirstAuthorSurname();
+                if (localAuthor != null) {
+                    openurl += "&rft.aulast=" + URLEncoder.encode(localAuthor, "UTF-8");
                 }
             }
 
@@ -3558,9 +3538,9 @@ public class BiblioItem {
             return;
         // we check if we have several emails in the field
         email = email.trim();
-        email = email.replace(" and ", ";");
+        email = email.replace(" and ", "\t");
         ArrayList<String> emailles = new ArrayList<String>();
-        StringTokenizer st0 = new StringTokenizer(email, ";");
+        StringTokenizer st0 = new StringTokenizer(email, "\t");
         while (st0.hasMoreTokens()) {
             emailles.add(st0.nextToken().trim());
         }
