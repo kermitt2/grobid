@@ -4116,7 +4116,7 @@ public class BiblioItem {
                                 // check also first name if present - at least for the initial
                                 if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())
                                     &&( aut.getFirstName().equals(aut2.getFirstName()) ||
-                                    ((aut.getFirstName().length() == 1) && (aut.getFirstName().equals(aut2.getFirstName().substring(0,1)))))) {
+                                    (aut.getFirstName().substring(0,1).equals(aut2.getFirstName().substring(0,1))))) {
 
                                     // we have a either a match (full first name) or (initial)
                                     aut.setFirstName(aut2.getFirstName());
@@ -4126,7 +4126,8 @@ public class BiblioItem {
                                         aut.setTitle(aut2.getTitle());
                                     if (StringUtils.isBlank(aut.getSuffix()))
                                         aut.setSuffix(aut2.getSuffix());
-                                    if(CollectionUtils.isEmpty(aut.getAffiliations()))
+                                    //we keep extracted affiliations if there are ones
+                                    if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
                                         aut.setAffiliations(aut2.getAffiliations());
                                     break;
                                 }
