@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PhysRevLett.119.044802"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Excitation and Control of Plasma Wakefields by Multiple Laser Pulses<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Cowley, 1 C. Thornton, 1 C. Arran, 1 R. J. Shalloo, 1 L. Corner, 1 G. Cheung, 1 C. D. Gregory, 2<lb/> S. P. D. Mangles, 3 N. H. Matlis, 4 D. R. Symes, 2 R. Walczak, 1 and S. M. Hooker 1,*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 John Adams Institute for Accelerator Science, University of Oxford,<lb/></affiliation>
+	</byline>
+
+	<address>Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, United Kingdom</address>
+
+	<byline>
+	<affiliation>2<lb/> Central Laser Facility,</affiliation>
+	</byline>
+
+	<address>Rutherford Appleton Laboratory, Didcot OX11 0QX, United Kingdom</address>
+
+	<byline>
+	<affiliation>3<lb/> John Adams Institute for Accelerator Science, Blackett Laboratory, Imperial College London,<lb/></affiliation>
+	</byline>
+
+	<address>London SW7 2AZ, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>4 Deutsches Elektronen-Synchrotron (DESY),</affiliation>
+	</byline>
+
+	<address>Notkestraße 85, Hamburg 22607, Germany<lb/></address>
+
+	(
+	<note type="submission">Received 15 March 2017; revised manuscript received 31 May 2017;</note>
+	published
+	<date>27 July 2017</date>
+	)<lb/>
+
+	<div type="abstract">We demonstrate experimentally the resonant excitation of plasma waves by trains of laser pulses. We<lb/> also take an important first step to achieving an energy recovery plasma accelerator by showing that a<lb/> plasma wave can be damped by an out-of-resonance trailing laser pulse. The measured laser wakefields are<lb/> found to be in excellent agreement with analytical and numerical models of wakefield excitation in the<lb/> linear regime. Our results indicate a promising direction for achieving highly controlled, GeV-scale laser-<lb/>plasma accelerators operating at multikilohertz repetition rates.<lb/></div>
+
+	<idno>DOI: 10.1103/PhysRevLett.119.044802<lb/></idno>
+
+	<reference>PRL 119, 044802 (2017)<lb/></reference>
+
+	P H Y S I C A L R E V I E W L E T T E R S<lb/>
+
+	week ending<lb/>
+
+	<date>28 JULY 2017<lb/></date>
+
+	0031-9007=17=119(4)=044802(6)<lb/> 044802-1<lb/>
+	<note type="copyright">© 2017 American Physical Society<lb/></note>
+
+	*
+	<email>simon.hooker@physics.ox.ac.uk<lb/></email>
+
+	PRL 119, 044802 (2017)<lb/> P H Y S I C
+	A L R E V I E W L E T T E R S<lb/>
+	
+	week ending<lb/>
+	<date>28 JULY 2017<lb/></date>
+
+	044802-6
+		</front>
+	</text>
+</tei>

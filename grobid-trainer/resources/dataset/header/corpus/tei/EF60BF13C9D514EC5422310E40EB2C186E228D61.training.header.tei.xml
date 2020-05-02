@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="EF60BF13C9D514EC5422310E40EB2C186E228D61"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Multiagent-Based Peer-to-Peer Network<lb/> in Java for Distributed Spam Filtering<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jörg Metzger, Michael Schillo, and Klaus Fischer<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>German Research Center for Artificial Intelligence<lb/></affiliation>
+	</byline>
+
+	<address>Stuhlsatzenhausweg 3, 66123 Saarbrücken, Germany<lb/></address>
+
+	<email>{jmetzger,schillo,kuf}@dfki.de<lb/></email>
+
+	<ptr type="web">http://www.dfki.de/<lb/></ptr>
+
+	Abstract.
+	<div type="abstract">With the growing amount of internet users, a negative form<lb/> of sending email spreads that affects more and more users of email ac-<lb/>counts: Spamming. Spamming means that the electronic mailbox is con-<lb/>gested with unwanted advertising or personal email. Sorting out this<lb/> email costs the user time and money. This paper introduces a distributed<lb/> spam filter, which combines an off-the-shelf text classification with mul-<lb/>tiagent systems. Both the text classification as well as the multiagent<lb/> platform are implemented in Java. The content of the emails is analyzed<lb/> by the classification algorithm &apos;support vector machines&apos;. Information<lb/> about spam is exchanged between the agents through the network. Iden-<lb/>tification numbers for emails which where identified as spam are gener-<lb/>ated and forwarded to all other agents connected to the network. These<lb/> numbers allow agents to identify incoming spam email. In this way, the<lb/> quality of the filter increases continuously.<lb/></div>
+
+	<reference>V. Mařík et al. (Eds): CEEMAS 2003, LNAI 2691, pp. 616-625, 2003.<lb/> </reference>
+
+	<note type="copyright">c Springer-Verlag Berlin Heidelberg 2003</note>
+
+		</front>
+	</text>
+</tei>

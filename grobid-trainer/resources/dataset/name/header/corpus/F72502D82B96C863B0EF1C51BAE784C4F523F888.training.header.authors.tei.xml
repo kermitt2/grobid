@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>D</forename>.
+								 <surname>Craig Willcox</surname>,
+								 <marker>1,2,4</marker>
+							</persName>
+							<persName>
+								 <forename>Bradley</forename>
+								 <middlename>J</middlename>.
+								 <surname>Willcox</surname>,
+								 <marker>2,3,4</marker>
+							</persName>
+							<persName>
+								 <forename>Qimei</forename>
+								 <surname>He</surname>,
+								 <marker>2</marker>
+							</persName>
+							<persName>
+								 <forename>Nien-chiang</forename>
+								 <surname>Wang</surname>,
+								 <marker>5</marker> and
+							</persName>
+							<persName>
+								 <forename>Makoto</forename>
+								 <surname>Suzuki</surname>
+								 <marker>4,6</marker>
+							</persName>
+							<persName>
+								 <forename>D</forename>.
+								 <surname>Craig Willcox</surname>,
+								 <roleName>PhD</roleName>,
+							</persName>
+							<persName>
+								 <forename>Huber</forename>
+								 <middlename>R</middlename>.
+								 <surname>Warner</surname>,
+								 <roleName>PhD</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -31,12 +31,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
     private List<String> endTags = Arrays.asList("titlePart", "note", "docAuthor", "affiliation", "address", "email", "idno",
-        "date", "keywords", "keyword", "reference", "degree", "ptr", "div", "p", "web", "english-title", "title", 
-        "introduction", "editor", "intro", "version", "meeting", "location");
+        "date", "keywords", "keyword", "reference", "degree", "ptr", "div", "p", "web", "editor", "version", "meeting", "location");
 
     private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle");
 
-    private List<String> ignoredTags = Arrays.asList("page");  
+    private List<String> ignoredTags = Arrays.asList("page", "title", "phone");  
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<String>();
@@ -89,8 +88,10 @@ public class TEIHeaderSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         } else if (intermediaryTags.contains(qName)) {
             // do nothing
+        } else if (ignoredTags.contains(qName)) {
+            // do nothing
         } else {
-            System.out.println("Warning: Unexpected closing tag " + qName);
+            System.out.println(" **** Warning **** Unexpected closing tag " + qName);
         }
     }
 
@@ -147,9 +148,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
                 if (name != null) {
                     if (name.equals("type")) {
-                        if (value.equals("phone")) {
-                            currentTag = "<phone>";
-                        } else if (value.equals("degree")) {
+                        if (value.equals("degree")) {
                             currentTag = "<degree>";
                         } else if (value.equals("dedication")) {
                             currentTag = "<dedication>";
@@ -303,6 +302,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                 }
             }
         } else if (intermediaryTags.contains(qName)) {
+            // do nothing
+        } else if (ignoredTags.contains(qName)) {
             // do nothing
         } else {
             System.out.println("Warning: Unexpected starting tag " + qName);

@@ -8,22 +8,24 @@
 			
 			IOP PUBLISHING
 
-			<reference>PLASMA PHYSICS AND CONTROLLED FUSION<lb/> Plasma Phys. Control. Fusion 53 (2011) 082001 (7pp)<lb/></reference>
+			<title level="j">PLASMA PHYSICS AND CONTROLLED FUSION<lb/> </title>
+
+			<reference>Plasma Phys. Control. Fusion 53 (2011) 082001 (7pp)<lb/></reference>
 
 			<idno>doi:10.1088/0741-3335/53/8/082001<lb/></idno>
 
 			<note type="articleType">BRIEF COMMUNICATION<lb/></note>
 
 			<docTitle>
-				<titlePart>A linear response model of the vertical<lb/> electromagnetic force on a vessel applicable<lb/> to ITER and future tokamaks<lb/></titlePart>
+			<titlePart>A linear response model of the vertical<lb/> electromagnetic force on a vessel applicable<lb/> to ITER and future tokamaks<lb/></titlePart>
 			</docTitle>
 
 			<byline>
-				<docAuthor>S Miyamoto<lb/></docAuthor>
+			<docAuthor>S Miyamoto<lb/></docAuthor>
 			</byline>
 
 			<byline>
-				<affiliation>Naka Fusion Institute, Japan Atomic Energy Agency,</affiliation>
+			<affiliation>Naka Fusion Institute, Japan Atomic Energy Agency,</affiliation>
 			</byline>
 
 			<address>Naka, Ibaraki 311-0193, Japan<lb/></address>

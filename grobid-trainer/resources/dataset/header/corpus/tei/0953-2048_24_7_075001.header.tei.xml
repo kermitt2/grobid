@@ -7,28 +7,29 @@
 		<front>
 			<lb/>
 			IOP PUBLISHING
-			SUPERCONDUCTOR SCIENCE AND TECHNOLOGY<lb/>
+			
+			<title level="j">SUPERCONDUCTOR SCIENCE AND TECHNOLOGY<lb/></title>
 
 			<reference>Supercond. Sci. Technol. 24 (2011) 075001 (7pp)<lb/></reference>
 			
 			<idno>doi:10.1088/0953-2048/24/7/075001<lb/></idno>
 			
 			<docTitle>
-				<titlePart>Critical current and AC loss analysis of a<lb/> superconducting power transmission cable<lb/> with ferromagnetic diverters<lb/></titlePart>
+			<titlePart>Critical current and AC loss analysis of a<lb/> superconducting power transmission cable<lb/> with ferromagnetic diverters<lb/></titlePart>
 			</docTitle>
 
 			<byline>
-				<docAuthor>M Vojenčiak 1,2 , JŠouc 1 and F Gömöry 1<lb/></docAuthor>
+			<docAuthor>M Vojenčiak 1,2 , JŠouc 1 and F Gömöry 1<lb/></docAuthor>
 			</byline>
 
 			<byline>
-				<affiliation>1 Institute of Electrical Engineering, Slovak Academy of Sciences,</affiliation>
+			<affiliation>1 Institute of Electrical Engineering, Slovak Academy of Sciences,</affiliation>
 			</byline>
 
 			<address>Dubravska cesta 9,<lb/> 841 04 Bratislava, Slovakia<lb/></address>
 
 			<byline>
-				<affiliation>2 Karlsruhe Institute of Technology, Institute for Technical Physics,<lb/></affiliation>
+			<affiliation>2 Karlsruhe Institute of Technology, Institute for Technical Physics,<lb/></affiliation>
 			</byline>
 
 			<address>Hermann-von-Helmholtz-Platz 1, 76344 Eggenstein-Leopoldshafen, Germany<lb/></address>

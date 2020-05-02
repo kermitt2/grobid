@@ -182,7 +182,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								upperTag = currentTag;
 								upperQname = "div";
                             }
-                            else if (value.equals("acknowledgement")) {
+                            else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
+                                || value.equals("acknowledgments")) {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";

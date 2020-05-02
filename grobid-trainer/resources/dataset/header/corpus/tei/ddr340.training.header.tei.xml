@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ddr340"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Large common deletions associate with<lb/> mortality at old age<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Maris Kuningas 1, * , Karol Estrada 2 , Yi-Hsiang Hsu 4,5 , Kannabiran Nandakumar 4 ,<lb/> André G. Uitterlinden 1,2,6 , Kathryn L. Lunetta 7 , Cornelia M. van Duijn 1,6 , David Karasik 4 ,<lb/> Albert Hofman 1,6 , Joanne Murabito 8,9 , Fernando Rivadeneira 2,6 , Douglas P. Kiel 4<lb/> and Henning Tiemeier 1,3,6</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Epidemiology, 2 Department of Internal Medicine and 3 Department Psychiatry, Erasmus Medical<lb/> Center,</affiliation>
+	</byline>
+
+	<address>Rotterdam, CA 3000, The Netherlands</address>
+
+	<byline>
+	<affiliation>4 Hebrew Senior Life Institute for Aging Research and Harvard Medical<lb/> School,</affiliation>
+	</byline>
+
+	<address>Boston, MA 02131, USA,</address>
+
+	<byline>
+	<affiliation>5 Molecular and Integrative Physiological Sciences Program, Harvard School of<lb/> Public Health,</affiliation>
+	</byline>
+
+	<address>Boston, MA 02115, USA,</address>
+
+	<byline>
+	<affiliation>6 Netherlands Genomics Initiative (NGI)-sponsored Netherlands Consortium<lb/> for Healthy Aging (NCHA),</affiliation>
+	</byline>
+
+	<address>Leiden, RC 2300, The Netherlands,</address>
+
+	<byline>
+	<affiliation>7 Department of Biostatistics, Boston University School<lb/> of Public Health,</affiliation>
+	</byline>
+
+	<address>Boston, MA 02118, USA,</address>
+
+	<byline>
+	<affiliation>8 Sections of General Internal Medicine, Preventive Medicine, Cardiology<lb/> and Neurology, Department of Medicine, Boston University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Boston, MA 02118, USA and</address>
+
+	<byline>
+	<affiliation>9 The<lb/> National Heart Lung and Blood Institute&apos;s Framingham Heart Study,</affiliation>
+	</byline>
+
+	<address>Framingham, MA 01702-5827, USA<lb/></address>
+
+	<note type="submission">Received February 15, 2011; Revised July 1, 2011; Accepted August 1, 2011<lb/></note>
+
+	<div type="abstract">Copy-number variants (CNVs) are a source of genetic variation that increasingly are associated with human<lb/> disease. However, the role of CNVs in human lifespan is to date unknown. To identify CNVs that influence<lb/> mortality at old age, we analyzed genome-wide CNV data in 5178 participants of Rotterdam Study (RS1)<lb/> and positive findings were evaluated in 1714 participants of the second cohort of the Rotterdam Study<lb/> (RS2) and in 4550 participants of Framingham Heart Study (FHS). First, we assessed the total burden of<lb/> rare (frequency &lt;1%) and common (frequency &gt;1%) CNVs for association with mortality during follow-up.<lb/> These analyses were repeated by stratifying CNVs by type and size. Secondly, we assessed individual<lb/> common CNV regions (CNVR) for association with mortality. We observed that the burden of common but<lb/> not of rare CNVs influences mortality. A higher burden of large (≥500 kb) common deletions associated<lb/> with 4% higher mortality [hazard ratio (HR) per CNV 1.04, 95% confidence interval (CI) 1.02 -1.07, P 5<lb/> 5.82 3 10 25 ] in the 11 442 participants of RS1, RS2 and FHS. In the analysis of 312 individual common<lb/> CNVRs, we identified two regions (11p15.5; 14q21.3) that associated with higher mortality in these cohorts.<lb/> The 11p15.5 region (combined HR 1.59, 95% CI 1.31 -1.93, P 5 2.87 3 10 26 ) encompasses 41 genes, of<lb/> which some have previously been related to longevity, whereas the 14q21.3 region (combined HR 1.57,<lb/> 95% CI 1.19 -2.07, P 5 1.53 3 10 23 ) does not encompass any genes. In conclusion, the burden of large<lb/> common deletions, as well as common CNVs in 11p15.5 and 14q21.3 region, associate with higher mortality.</div>
+
+	*<lb/> To whom correspondence should be addressed. Tel: 
+	<phone>+31 107043488</phone>; 
+	Fax: +31 107044657; Email:
+	<email>m.kuningas@erasmusmc.nl<lb/></email>
+
+	<note type="copyright"># The Author 2011. Published by Oxford University Press. All rights reserved.<lb/> For Permissions, please email: journals.permissions@oup.com<lb/></note>
+
+	<reference>Human Molecular Genetics, 2011, Vol. 20, No. 21<lb/> 4290-4296<lb/></reference>
+
+	<idno>doi:10.1093/hmg/ddr340<lb/></idno>
+
+	Advance Access published on 
+	<date>August 11, 2011</date>
+		</front>
+	</text>
+</tei>

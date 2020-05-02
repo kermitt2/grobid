@@ -7,22 +7,23 @@
 		<front>
 			<lb/>
 			IOP PUBLISHING
-			NONLINEARITY<lb/>
+			
+			<title level="j">NONLINEARITY<lb/></title>
 
 			<reference>Nonlinearity 24 (2011) 1975–1986<lb/></reference>
 
 			<idno>doi:10.1088/0951-7715/24/7/004<lb/></idno>
 			
 			<docTitle>
-				<titlePart>Exact solutions for a family of spin-boson systems<lb/></titlePart>
+			<titlePart>Exact solutions for a family of spin-boson systems<lb/></titlePart>
 			</docTitle>
 
 			<byline>
-				<docAuthor>Yuan-Harng Lee, Jon Links and Yao-Zhong Zhang<lb/></docAuthor>
+			<docAuthor>Yuan-Harng Lee, Jon Links and Yao-Zhong Zhang<lb/></docAuthor>
 			</byline>
 
 			<byline>
-				<affiliation>School of Mathematics and Physics, The University of Queensland,</affiliation>
+			<affiliation>School of Mathematics and Physics, The University of Queensland,</affiliation>
 			</byline>
 
 			<address>Brisbane, Qld 4072, Australia<lb/></address>

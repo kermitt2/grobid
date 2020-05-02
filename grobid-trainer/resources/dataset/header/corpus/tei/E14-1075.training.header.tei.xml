@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="E14-1075"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the 14th Conference of the European Chapter of the Association for Computational Linguistics, pages 712-721,<lb/> Gothenburg, Sweden, April 26-30 2014.</reference>
+
+	<note type="copyright">c 2014 Association for Computational Linguistics<lb/></note>
+
+	<docTitle>
+	<titlePart>Improving the Estimation of Word Importance for News Multi-Document Summarization<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kai Hong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pennsylvania<lb/></affiliation>
+	</byline>
+
+	<address>Philadelphia, PA, 19104<lb/></address>
+
+	<email>hongkai1@seas.upenn.edu<lb/></email>
+
+	<byline>
+	<docAuthor>Ani Nenkova<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pennsylvania<lb/></affiliation>
+	</byline>
+
+	<address>Philadelphia, PA, 19104<lb/></address>
+
+	<email>nenkova@seas.upenn.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">We introduce a supervised model<lb/> for predicting word importance that<lb/> incorporates a rich set of features. Our<lb/> model is superior to prior approaches<lb/> for identifying words used in human<lb/> summaries.<lb/> Moreover we show<lb/> that an extractive summarizer using<lb/> these estimates of word importance is<lb/> comparable in automatic evaluation with<lb/> the state-of-the-art.</div>
+
+		</front>
+	</text>
+</tei>

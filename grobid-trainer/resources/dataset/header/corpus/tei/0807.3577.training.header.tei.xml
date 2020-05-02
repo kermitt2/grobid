@@ -6,7 +6,9 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-	JCAP10(2008)003<lb/> ournal of Cosmology and Astroparticle Physics<lb/> An IOP and SISSA journal<lb/> J<lb/> 
+	<reference>JCAP10(2008)003<lb/> </reference>
+	<title level="j">ournal of Cosmology and Astroparticle Physics<lb/></title> 
+	An IOP and SISSA journal<lb/> J<lb/> 
 
 	<docTitle>
 	<titlePart>Apparent and average accelerations of<lb/> the Universe<lb/></titlePart>
@@ -65,7 +67,7 @@
 
 	1475-7516/08/10003+15$30.00<lb/>
 
-	JCAP10(2008)003<lb/> 
+	<reference>JCAP10(2008)003<lb/> </reference>
 
 		</front>
 	</text>

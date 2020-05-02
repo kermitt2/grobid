@@ -1824,15 +1824,15 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		
-        String[] pieces = string.split(" / ");
+        /*String[] pieces = string.split(" / ");
         if (pieces.length > 1) {
             for(int j=0; j<pieces.length; j++) {
                 Keyword keyw = new Keyword(pieces[j], type);
                 result.add(keyw);
             }
-        } else {
+        } else {*/
     		// the list of possible keyword separators
-    		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",", ".");
+    		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
     		for(String separator : separators) {
     	        StringTokenizer st = new StringTokenizer(string, separator);
     	        if (st.countTokens() > 2) {
@@ -1848,7 +1848,7 @@ public class BiblioItem {
     				break;
     	        }
     		}
-        }
+        //}
 		
 		return result;
 	}	
