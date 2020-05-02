@@ -9,12 +9,12 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @Ignore
 public class TextUtilitiesTest extends EngineTest {
@@ -389,5 +389,22 @@ public class TextUtilitiesTest extends EngineTest {
         assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("123456"), is(true));
         assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("P.C.T."), is(true));
         assertThat(TextUtilities.isAllUpperCaseOrDigitOrDot("P.C,T."), is(false));
+    }
+
+    @Test
+    public void testOrcidPattern() {
+        String[] falseOrcids = {"1234", "1234-5698-137X", "0000-0001-9877-137Y","http://orcid.fr/0000-0001-9877-137X"};
+        String[] trueOrcids = {"0000-0001-9877-137X", "http://orcid.org/0000-0001-9877-137X", "orcid.org/0000-0001-9877-137X"};
+        for(String falseOrcid :  falseOrcids) {
+            Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(falseOrcid);
+            assertFalse (orcidMatcher.find());
+        }
+        for(String trueOrcid :  trueOrcids) {
+            Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(trueOrcid);
+            if (orcidMatcher.find()) {
+                assertThat(orcidMatcher.group(1) + "-"
+                    + orcidMatcher.group(2) + "-" + orcidMatcher.group(3) + "-" + orcidMatcher.group(4) , is("0000-0001-9877-137X"));
+            }
+        }
     }
 }
