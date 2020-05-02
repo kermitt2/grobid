@@ -25,8 +25,10 @@ pages:
     - 'Coordinates of structures in the PDF': 'Coordinates-in-PDF.md'
     - 'Adding a consolidation service': 'Consolidation.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
-    - 'End-to-end evaluation': 'End-to-end-evaluation.md'
-    - 'Benchmarking': 'Benchmarking.md'
+  - Benchmarking:
+    - 'Description': 'Benchmarking.md'
+    - 'PubMed Central': 'Benchmarking-pmc.md'
+    - 'Model-level evaluations': 'Benchmarking-models.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'
