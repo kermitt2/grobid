@@ -87,11 +87,19 @@ Email: Calum J Maclean* -
 Titles like Ph.D., MD, Dr., etc. must be included in the author field. Full job names like "Dean of...", "Research associate at..." should be excluded when possible, i.e. when it does not break the author sequence:
 
 ```xml
-   <byline>
+  <byline>
     <docAuthor>Peter O&apos;Shannassy</docAuthor>
     </byline> 
 
     (Ranger, 
+```
+
+```xml
+  <byline>
+    <docAuthor>A Dienel</docAuthor>
+    </byline> 
+
+    head of clinical trials department<lb/> 
 ```
 
 
@@ -149,7 +157,6 @@ Specific keyword scheme names like "PACS" or "Mathematics Subject Classification
 <keywords type="pacs">PACS numbers: 02.30.Ik, 03.65.Fd Fd<lb/></keywords>
 ```
 
-
 However, generic words like "Keywords", "Key words", etc. which does not bring any information about the nature of the keywords, must be excluded from the field. 
 
 ```xml
@@ -163,26 +170,47 @@ Keywords:
 
 The reference field aims at identifying a field describing the bibliographical reference information to be used to cite about the document which is annotated. As a consequence, the reference field must contain several bibliographical information, ideally all the key information to identify the document in a unique manner following the publication standards. We typically expect here a container name (journal, proceedings name) with volume/issue/page information, possibly with a date information. 
 
-If the reference includes an identifier, in particular a DOI, which cannot be tagged separately without breaking the reference sequence, the identifier must be included in the reference field:
+Strong identifiers present with a reference should preferably been excluded: 
+
+```xml
+    Citation:
+    <reference>Collins, D. B. G., and R. L. Bras (2008), Climatic control of sediment yield in dry lands following climate and land cover<lb/> change, Water Resour. Res., 44, W10405, </reference>
+
+    <idno>doi:10.1029/2007WR006474</idno>.<lb/>
+```
+
+If the reference includes an identifier, in particular a DOI, which cannot be tagged separately without breaking the reference sequence, the identifier must be included in the reference field. For instance here, the DOI is followed by the date information, it would be necessary to segment the reference into two fragments to keep the DOI as separated field, so we annotate the whole sequence as reference: 
 
 
+```xml
+    <reference>WATER RESOURCES RESEARCH, VOL. 44, W01433, doi:10.1029/2007WR006109, 2008<lb/></reference>
+```
 
 If the title of the journal where the atticle is published appears in isolation, it is not enough to have a "reference", and the tags `<title level="j">` must be used. 
-
 
 
 ### Emails
 
 Email must be tagged in a way that is limited to an actual email, exlcuding "Email" word, punctuations and person name information. 
 
+```xml
+Email: Ren H Wu -
+     <email>wurh20000@sina.com</email>; 
+```   
+
 ### Editors
 
 The name of the editor are tagged similarly as author names. Titles like Prof. Dr. MD. are included in the field, but functional words as "Editor" or "Edited by" must be excluded. 
 
+```xml
+Decision Editor:
+     <editor>Luigi Ferrucci, MD, PhD</editor>
+```
 
 ### Submission and peer review information
 
 The `<submission>` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
+
 
 
 ### Copyrights
@@ -192,11 +220,25 @@ The `<submission>` tag is used to identify, in a raw manner, the submission and 
 
 
 
-### String identifiers
+### Strong identifiers
 
 `<idno>` is used to identify strong identifiers of the document, in particular DOI, PII, ISSN, ISBN and the major Open Access repository identifiers - arXiv identifiers, HAL ID, ...  
 
 We do not tag report numbers, the identifiers here must have a global accepted level of acceptance beyond a local source of identification. 
+
+The identifier name is kept with the identifier value so that Grobid can classify more easily the type of identifier:
+
+```xml
+<idno>PII S0090-3019(97)00159-6</idno> 
+```
+
+```xml
+<idno>DOI 10.1186/s12889-015-2574-8<lb/></idno> 
+```
+
+```xml
+<idno>ISSN 1356-1294<lb/></idno>
+```
 
 
 ### Phone number
