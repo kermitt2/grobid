@@ -154,9 +154,9 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<dedication>";
                         } else if (value.equals("submission")) {
                             currentTag = "<submission>";
-                        } else if (value.equals("english-title")) {
+                        } /*else if (value.equals("english-title")) {
                             currentTag = "<entitle>";
-                        } else if (value.equals("other")) {
+                        }*/ else if (value.equals("other")) {
                             currentTag = "<note>";
                         } else if (value.equals("reference")) {
                             currentTag = "<reference>";
