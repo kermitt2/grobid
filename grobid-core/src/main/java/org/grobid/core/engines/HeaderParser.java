@@ -254,6 +254,9 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
+                    // remove invalid authors (no last name, noise, etc.)
+                    resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
+
                     resHeader.setFullAffiliations(
                             parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                     resHeader.attachEmails();
@@ -284,6 +287,9 @@ public class HeaderParser extends AbstractParser {
                         resHeader.attachAffiliations();
                     }
 
+                    // remove duplicated authors
+                    resHeader.setFullAuthors(Person.deduplicate(resHeader.getFullAuthors()));
+
                     if (resHeader.getEditors() != null) {
 //                        List<String> edits = new ArrayList<String>();
 //                        edits.add(resHeader.getEditors());
@@ -292,10 +298,12 @@ public class HeaderParser extends AbstractParser {
                         // resHeader.setFullEditors(authorParser.processingCitation(edits));
                     }
 
-                    if (resHeader.getReference() != null) {
+                    // below using the reference strings to improve the metadata extraction, it will have to
+                    // be reviewed for something safer as just a straightforward correction
+                    /*if (resHeader.getReference() != null) {
                         BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), 0);
                         BiblioItem.correct(resHeader, refer);
-                    }
+                    }*/
                 }
 
                 // keyword post-processing
@@ -929,7 +937,9 @@ public class HeaderParser extends AbstractParser {
                     biblio.setNote(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
                 if (biblio.getAbstract() != null) {
-                    biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
+                    // this will need to be reviewed with more training data, for the moment
+                    // avoid concatenation for abstracts as it brings more noise than correct pieces
+                    //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
                 } else
                     biblio.setAbstract(clusterContent);
                 //List<LayoutToken> tokens = getLayoutTokens(cluster);

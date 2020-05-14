@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="138._10.1.1.47.383"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Family of 2-process Mutual Exclusion Algorithms<lb/></titlePart>
+	</docTitle>
+
+	<docTitle>
+	<titlePart>Notes on UNITY:<lb/> 13-90<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jayadev Misra<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Sciences<lb/> The University of Texas at Austin<lb/> </affiliation>
+	</byline>
+
+	<address>Austin, Texas 78712<lb/> </address>
+
+	<phone>(512) 471-9547<lb/></phone>
+
+	<email>misra@cs.utexas.edu<lb/></email>
+
+	<date>March 7, 1994</date>
+
+		</front>
+	</text>
+</tei>

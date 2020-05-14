@@ -64,15 +64,6 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        /*if ((qName.equals("titlePart")) || (qName.equals("note")) || (qName.equals("docAuthor")) ||
-                (qName.equals("affiliation")) || (qName.equals("address")) || (qName.equals("email")) ||
-                (qName.equals("idno")) || (qName.equals("date")) || (qName.equals("biblScope")) ||
-                (qName.equals("keywords")) || (qName.equals("reference")) || (qName.equals("degree")) ||
-                (qName.equals("keyword")) || (qName.equals("ptr")) || (qName.equals("div")) || (qName.equals("p")) ||
-                (qName.equals("web")) || (qName.equals("english-title")) ||
-                (qName.equals("title")) || (qName.equals("introduction")) || (qName.equals("editor")) || 
-                (qName.equals("intro")) || (qName.equals("version")) || (qName.equals("meeting")) || (qName.equals("location"))
-                ) {*/
         if (endTags.contains(qName)) {
             writeData();
             accumulator.setLength(0);

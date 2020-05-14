@@ -6,7 +6,9 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-	<note type="submission">Manuscript submitted to<lb/> Website: http://AIMsciences.org<lb/> AIMS&apos; Journals<lb/> Volume X, Number 0X, XX 200X<lb/> pp. X-XX<lb/></note>
+	<note type="doctype">Manuscript</note> 
+
+	<note type="submission">submitted to<lb/> Website: http://AIMsciences.org<lb/> AIMS&apos; Journals<lb/> Volume X, Number 0X, XX 200X<lb/> pp. X-XX<lb/></note>
 
 	<docTitle>
 	<titlePart>AN ATTEMPT AT CLASSIFYING HOMOGENIZATION-BASED NUMERICAL MATHODS<lb/></titlePart>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1118._fulltext15"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>DOI: 10.1002/zaac.200700543<lb/></idno>
+
+	<docTitle>
+	<titlePart>Synthesis and X-ray Structures of the Polycyclic Dimers<lb/> {[PhB(μ-NtBu) 2 AsN(tBu)H]LiI} 2 and [PhB(μ-NtBu) 2 AsN(tBu)Li] 2<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jari Konu and Tristram Chivers*<lb/></docAuthor>
+	</byline>
+
+	<address>Calgary AB / Canada, </address>
+
+	<byline>
+	<affiliation>University of Calgary, Department of Chemistry<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received October 5 th , 2007; accepted December 15 th , 2007.<lb/></note>
+
+	Abstract.
+	<div type="abstract">The metathesis of [PhB(μ-NtBu) 2 ]AsCl and tBuN(H)Li<lb/> in 1:1 molar ratio in diethyl ether produced the amido derivative<lb/> [PhB(μ-NtBu) 2 AsN(tBu)H] (1) in good yield. The lithiation of 1<lb/> with one equivalent of nBuLi afforded the lithium salt [PhB(μ-<lb/>NtBu) 2 AsN(tBu)Li] (2a). Both 1 and 2a were characterized by<lb/> multinuclear NMR spectroscopy. The crystal structure of 2a is<lb/> comprised of a U-shaped, centrosymmetric dimer in which the<lb/> monomeric [PhB(μ-NtBu) 2 AsN(tBu)] Ϫ Li ϩ units are linked by<lb/></div>
+
+	<byline>
+	<docAuthor>* Prof. Dr. T. Chivers<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry<lb/> University of Calgary<lb/> 2500 University Drive N.W.<lb/></affiliation>
+	</byline>
+
+	<address>Calgary, Alberta T2N 1N4 / Canada<lb/></address>
+
+	Fax: (ϩ)1-403-289-9488<lb/> E-mail:
+	<email>chivers@ucalgary.ca<lb/></email>
+
+	<reference>Z. Anorg. Allg. Chem. 2008, 634, 875Ϫ879<lb/></reference> 
+
+	<note type="copyright">© 2008 WILEY-VCH Verlag GmbH &amp; Co. KGaA, Weinheim 875<lb/></note>
+
+	<div type="abstract">Li-N interactions to give a six-rung ladder. Oxidation of 2a with<lb/> one-half equivalent of I 2 in diethyl ether resulted in hydrogen ab-<lb/>straction from the solvent to give the dimeric lithium iodide adduct<lb/> {[PhB(μ-NtBu) 2 AsN(tBu)H]LiI} 2 (1 • LiI) with a central Li 2 I 2 ring.<lb/></div>
+
+	Keywords:
+	<keyword>Arsenic; Boraamidinate; Lithium; Polycyclic com-<lb/>pounds; Crystal structures</keyword>
+
+		</front>
+	</text>
+</tei>
