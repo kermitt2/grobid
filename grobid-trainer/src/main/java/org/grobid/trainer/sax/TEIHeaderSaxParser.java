@@ -35,7 +35,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
     private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle");
 
-    private List<String> ignoredTags = Arrays.asList("page", "title", "phone");  
+    private List<String> ignoredTags = Arrays.asList("page", "title", "phone", "publisher");  
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<String>();
