@@ -28,7 +28,7 @@
 	Abstract<lb/>
 	<div type="abstract">We de ne the ripple-carry and the carry-lookahead adder circuits in the<lb/> powerlist notation and we use the powerlist algebra to prove that these<lb/> circuits correctly implement addition for natural numbers represented as<lb/> bit vectors.<lb/></div>
 
-	This material is based in part upon work supported by National Science Foundation<lb/> Award CCR-9111912
+	<note type="funding">This material is based in part upon work supported by National Science Foundation<lb/> Award CCR-9111912</note>
 		</front>
 	</text>
 </tei>

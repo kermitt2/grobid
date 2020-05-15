@@ -28,6 +28,8 @@ The following TEI elements are used by the header model:
 * `<note type="group">` to identify a group name (typically a working group or a collaboration)
 * `<title level="j">` to identify the name of the journal where the article is published
 * `<meeting>` to identify the meeting information associated to the publication, if relevant
+* `<publisher>` for identifying mention of the publisher appearing in isolation
+* `<note type="funding">` for the funding statement
 
 Note that the mark-up follows approximatively the [TEI](http://www.tei-c.org) when used for inline encoding. 
 
@@ -340,4 +342,28 @@ If the meeting information is part of a larger reference (e.g. defintion the cit
     In:
     <reference>Proceedings of CoNLL-2000 and LLL-2000, pages 154-156, Lisbon, Portugal, 2000.<lb/></reference>
      
+```
+
+
+### Publisher
+
+Name of the publisher might appear in isolation in the header. It is then labelled with the `<publisher>` tag.
+
+```xml
+<front>
+     
+    <publisher>IOP PUBLISHING</publisher>
+  
+    <title level="j">PLASMA PHYSICS AND CONTROLLED FUSION<lb/> </title>
+```
+
+Note that this tag must only be used when no other tag can be applied. In particular, if the publisher name appears in a reference, it is labelled inside the reference tags. If the publisher name appears in the copyright statement, it is labelled inside the copyright mark-up. In practice, a publisher name in isolation in a header is not frequent.
+ 
+
+### Funding statements
+
+Some indication about the funding of the research work presented in a paper sometimes appear within the header. We mark the whole raw statement under `<note type="funding">` tag. The statement can include related disclosure information: 
+
+```xml
+    <note type="funding">This work is supported in part by ARPA and Philips Labs under contract DASG60-92-0055 to Department<lb/> of Computer Science, University of Maryland, and by National Science Foundation Grant No. NCR 89-04590. The<lb/> views, opinions, and/or ndings contained in this report are those of the author(s) and should not be interpreted as<lb/> representing the o cial policies, either expressed or implied, of the Advanced Research Projects Agency, PL, NSF,<lb/> or the U.S. Government. Computer facilities were provided in part by NSF grant CCR-8811954.</note> 
 ```

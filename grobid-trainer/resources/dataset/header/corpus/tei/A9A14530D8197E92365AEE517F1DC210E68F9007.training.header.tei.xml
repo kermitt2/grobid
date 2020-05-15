@@ -56,7 +56,11 @@
 	<byline>
 	<docAuthor>Louise Liang</docAuthor>
 	</byline> 
-	senior vice president for quality and clinical systems support, Kaiser<lb/> Foundation Health Plan<lb/>
+	senior vice president for quality and clinical systems support, 
+
+	<byline>
+	<affiliation>Kaiser<lb/> Foundation Health Plan<lb/></affiliation>
+	</byline>
 
 	Correspondence to: T Garrido
 	<email>terhilda.garrido@kp.org</email>

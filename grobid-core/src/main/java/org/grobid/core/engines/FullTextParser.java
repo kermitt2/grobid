@@ -1281,7 +1281,7 @@ public class FullTextParser extends AbstractParser {
                     String rese = parsers.getHeaderParser().label(header);
 
                     // buffer for the header block
-                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, true, headerTokenizations);
+                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
                     Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
                     if (lang != null) {
                         doc.setLanguage(lang.getLang());

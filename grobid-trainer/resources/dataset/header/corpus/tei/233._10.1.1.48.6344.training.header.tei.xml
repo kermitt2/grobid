@@ -23,7 +23,6 @@
 	S.A<lb/> <phone>(413) 545-3179</phone> (voice), (413) 545-1249
 	(fax)<lb/> 
 
-
 	<email>fsalehi,zhzhang,kurose,towsleyg@cs.umass.edu</email>
 
 	Abstract<lb/>
@@ -31,7 +30,7 @@
 
 	An earlier version of this paper appeared at the 1996 ACM SIGMETRICS conference.<lb/> 
 
-	y This work was supported by NSF under grant NCR-9206908 and by ARPA under ESD/AVS contract F-19628-92-C-<lb/>0089.
+	<note type="funding">y This work was supported by NSF under grant NCR-9206908 and by ARPA under ESD/AVS contract F-19628-92-C-<lb/>0089.</note>
 		</front>
 	</text>
 </tei>

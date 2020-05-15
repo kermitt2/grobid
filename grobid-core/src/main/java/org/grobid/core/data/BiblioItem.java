@@ -164,7 +164,7 @@ public class BiblioItem {
                 ", fullAffiliations=" + fullAffiliations +
                 ", reference='" + reference + '\'' +
                 ", copyright='" + copyright + '\'' +
-                ", grant='" + grant + '\'' +
+                ", funding='" + funding + '\'' +
                 ", affiliationAddressBlock='" + affiliationAddressBlock + '\'' +
                 ", articleTitle='" + articleTitle + '\'' +
                 ", beginPage=" + beginPage +
@@ -331,7 +331,7 @@ public class BiblioItem {
 
     private String reference = null;
     private String copyright = null;
-    private String grant = null;
+    private String funding = null;
 
     //public List<String> affiliationAddressBlock = null; 
     public String affiliationAddressBlock = null;
@@ -846,8 +846,8 @@ public class BiblioItem {
         return copyright;
     }
 
-    public String getGrant() {
-        return grant;
+    public String getFunding() {
+        return funding;
     }
 
     public String getWorkingGroup() {
@@ -1470,8 +1470,8 @@ public class BiblioItem {
         copyright = StringUtils.normalizeSpace(cop);
     }
 
-    public void setGrant(String gra) {
-        grant = StringUtils.normalizeSpace(gra);
+    public void setFunding(String gra) {
+        funding = StringUtils.normalizeSpace(gra);
     }
 
     public String getMeeting() {
@@ -1601,7 +1601,7 @@ public class BiblioItem {
         fullAffiliations = null;
         reference = null;
         copyright = null;
-        grant = null;
+        funding = null;
 
         workingGroup = null;
         documentType = null;
@@ -4380,9 +4380,9 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+            /*if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 break;
-            }
+            }*/
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 

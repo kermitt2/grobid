@@ -168,7 +168,7 @@ public class HeaderParser extends AbstractParser {
                 String res = null;
                 if ((header != null) && (header.trim().length() > 0)) {
                     res = label(header);
-                    resHeader = resultExtraction(res, true, headerTokenization, resHeader, doc);
+                    resHeader = resultExtraction(res, headerTokenization, resHeader, doc);
                 }
 
                 // language identification
@@ -808,17 +808,14 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * Extract results from a labelled header. If boolean intro is true, the
-     * extraction is stopped at the first "intro" tag identified (this tag marks
-     * the begining of the description).
+     * Extract results from a labelled header. 
      *
      * @param result        result
-     * @param intro         if intro
      * @param tokenizations list of tokens
      * @param biblio        biblio item
      * @return a biblio item
      */
-    public BiblioItem resultExtraction(String result, boolean intro, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
+    public BiblioItem resultExtraction(String result, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
 
         TaggingLabel lastClusterLabel = null;
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, result, tokenizations);
@@ -950,11 +947,11 @@ public class HeaderParser extends AbstractParser {
                     biblio.setReference(clusterNonDehypenizedContent);
                 } else
                     biblio.setReference(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_GRANT)) {
-                if (biblio.getGrant() != null) {
-                    biblio.setGrant(biblio.getGrant() + clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_FUNDING)) {
+                if (biblio.getFunding() != null) {
+                    biblio.setFunding(biblio.getFunding() + " \n " + clusterContent);
                 } else
-                    biblio.setGrant(clusterContent);
+                    biblio.setFunding(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
                 if (biblio.getCopyright() != null) {
                     biblio.setCopyright(biblio.getCopyright() + " " + clusterContent);
@@ -1042,9 +1039,15 @@ public class HeaderParser extends AbstractParser {
                     biblio.setWorkingGroup(biblio.getWorkingGroup() + clusterContent);
                 } else 
                     biblio.setWorkingGroup(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBLISHER)) {
+                if (biblio.getPublisher() != null && isDifferentandNotIncludedContent(biblio.getPublisher(), clusterContent)) {
+                    biblio.setPublisher(biblio.getPublisher() + clusterContent);
+                } else 
+                    biblio.setPublisher(clusterContent);
+            }  
+            /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
-            }
+            }*/
         }
         return biblio;
     }
@@ -1111,11 +1114,10 @@ public class HeaderParser extends AbstractParser {
      * string modification.
      *
      * @param result        result
-     * @param intro         if intro
      * @param tokenizations list of tokens
      * @return a result
      */
-    public StringBuilder trainingExtraction(String result, boolean intro, List<LayoutToken> tokenizations) {
+    public StringBuilder trainingExtraction(String result, List<LayoutToken> tokenizations) {
         // this is the main buffer for the whole header
         StringBuilder buffer = new StringBuilder();
 
@@ -1276,11 +1278,11 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<copyright>", "<note type=\"copyright\">", addSpace);
             }
             if (!output) {
-                output = writeField(buffer, s1, lastTag0, s2, "<grant>", "<note type=\"grant\">", addSpace);
+                output = writeField(buffer, s1, lastTag0, s2, "<funding>", "<note type=\"funding\">", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<intro>", "<p type=\"introduction\">", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<doctype>", "<note type=\"doctype\">", addSpace);
             }
@@ -1351,7 +1353,7 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</reference>\n");
             } else if (lastTag0.equals("<copyright>")) {
                 buffer.append("</note>\n");
-            } else if (lastTag0.equals("<grant>")) {
+            } else if (lastTag0.equals("<funding>")) {
                 buffer.append("</note>\n");
             } else if (lastTag0.equals("<entitle>")) {
                 buffer.append("</note>\n");
@@ -1367,9 +1369,9 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</idno>\n");
             } else if (lastTag0.equals("<degree>")) {
                 buffer.append("</note>\n");
-            } else if (lastTag0.equals("<intro>")) {
+            } /*else if (lastTag0.equals("<intro>")) {
                 buffer.append("</p>\n");
-            } else if (lastTag0.equals("<editor>")) {
+            }*/ else if (lastTag0.equals("<editor>")) {
                 buffer.append("</editor>\n");
             } else if (lastTag0.equals("<version>")) {
                 buffer.append("</note>\n");
