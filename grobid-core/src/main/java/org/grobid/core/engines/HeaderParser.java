@@ -291,11 +291,8 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setFullAuthors(Person.deduplicate(resHeader.getFullAuthors()));
 
                     if (resHeader.getEditors() != null) {
-//                        List<String> edits = new ArrayList<String>();
-//                        edits.add(resHeader.getEditors());
+                        // TBD: consider segments also for editors, like for authors above
                         resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(resHeader.getEditors()));
-//                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(edits));
-                        // resHeader.setFullEditors(authorParser.processingCitation(edits));
                     }
 
                     // below using the reference strings to improve the metadata extraction, it will have to
@@ -852,7 +849,7 @@ public class HeaderParser extends AbstractParser {
 
                 List<LayoutToken> tokens = cluster.concatTokens();
                 biblio.addAuthorsTokens(tokens);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
                 if (biblio.getBookType() != null) {
                     biblio.setBookType(biblio.getBookType() + clusterContent);
@@ -866,7 +863,7 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setLocation(clusterContent);
 
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
 
                 if (biblio.getMeeting() != null) {
                     biblio.setMeeting(biblio.getMeeting() + ", " + clusterContent);
@@ -894,7 +891,7 @@ public class HeaderParser extends AbstractParser {
                     biblio.setPublicationDate(clusterNonDehypenizedContent);
                 else if (biblio.getPublicationDate() == null)
                     biblio.setPublicationDate(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
                 // it appears that the same date is quite often repeated,
                 // we should check, before adding a new date segment, if it is
                 // not already present
@@ -912,22 +909,23 @@ public class HeaderParser extends AbstractParser {
                     biblio.setDownloadDate(biblio.getDownloadDate() + " " + clusterNonDehypenizedContent);
                 } else
                     biblio.setDownloadDate(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
-                if (biblio.getPageRange() != null) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
+                /*if (biblio.getPageRange() != null) {
                     biblio.setPageRange(biblio.getPageRange() + clusterContent);
-                } else
+                }*/ 
+                if (biblio.getPageRange() == null) 
                     biblio.setPageRange(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
                 if (biblio.getEditors() != null) {
                     biblio.setEditors(biblio.getEditors() + "\n" + clusterNonDehypenizedContent);
                 } else
                     biblio.setEditors(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_INSTITUTION)) {
                 if (biblio.getInstitution() != null) {
                     biblio.setInstitution(biblio.getInstitution() + clusterContent);
                 } else
                     biblio.setInstitution(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
                 if (biblio.getNote() != null) {
                     biblio.setNote(biblio.getNote() + " " + clusterContent);
                 } else
@@ -974,9 +972,6 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setEmail(clusterNonDehypenizedContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
-                /*if (biblio.getPubnum() != null && isDifferentandNotIncludedContent(biblio.getPubnum(), clusterContent)) {
-                    biblio.setPubnum(biblio.getPubnum() + " " + clusterContent);
-                } else */
                 if (biblio.getPubnum() != null && isDifferentandNotIncludedContent(biblio.getPubnum(), clusterContent)) {
                     String currentPubnum = biblio.getPubnum();
                     biblio.setPubnum(clusterContent);
@@ -996,27 +991,27 @@ public class HeaderParser extends AbstractParser {
                     biblio.setPhone(biblio.getPhone() + clusterNonDehypenizedContent);
                 } else
                     biblio.setPhone(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_DEGREE)) {
                 if (biblio.getDegree() != null) {
                     biblio.setDegree(biblio.getDegree() + clusterContent);
                 } else
                     biblio.setDegree(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
                 if (biblio.getWeb() != null) {
                     biblio.setWeb(biblio.getWeb() + clusterNonDehypenizedContent);
                 } else
                     biblio.setWeb(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_DEDICATION)) {
                 if (biblio.getDedication() != null) {
                     biblio.setDedication(biblio.getDedication() + clusterContent);
                 } else
                     biblio.setDedication(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
                 if (biblio.getSubmission() != null) {
-                    biblio.setSubmission(biblio.getSubmission() + clusterContent);
+                    biblio.setSubmission(biblio.getSubmission() + " " + clusterContent);
                 } else
                     biblio.setSubmission(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
+            } /*else if (clusterLabel.equals(TaggingLabels.HEADER_ENTITLE)) {
                 if (biblio.getEnglishTitle() != null) {
 //                    if (cluster.getFeatureBlock().contains("LINESTART")) {
 //                        biblio.setEnglishTitle(biblio.getEnglishTitle() + " " + clusterContent);
@@ -1029,22 +1024,30 @@ public class HeaderParser extends AbstractParser {
                     biblio.setVersion(biblio.getVersion() + clusterNonDehypenizedContent);
                 } else 
                     biblio.setVersion(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_DOCTYPE)) {
+            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_DOCTYPE)) {
                 if (biblio.getDocumentType() != null && isDifferentContent(biblio.getDocumentType(), clusterContent)) {
                     biblio.setDocumentType(biblio.getDocumentType() + " \n " + clusterContent);
                 } else
                     biblio.setDocumentType(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_WORKINGGROUP)) {
-                if (biblio.getWorkingGroup() != null && isDifferentandNotIncludedContent(biblio.getWorkingGroup(), clusterContent)) {
-                    biblio.setWorkingGroup(biblio.getWorkingGroup() + clusterContent);
-                } else 
+                /*if (biblio.getWorkingGroup() != null && isDifferentandNotIncludedContent(biblio.getWorkingGroup(), clusterContent)) {
+                    biblio.setWorkingGroup(biblio.getWorkingGroup() + " " + clusterContent);
+                }*/
+                if (biblio.getWorkingGroup() == null)
                     biblio.setWorkingGroup(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBLISHER)) {
-                if (biblio.getPublisher() != null && isDifferentandNotIncludedContent(biblio.getPublisher(), clusterContent)) {
-                    biblio.setPublisher(biblio.getPublisher() + clusterContent);
-                } else 
+                /*if (biblio.getPublisher() != null && isDifferentandNotIncludedContent(biblio.getPublisher(), clusterContent)) {
+                    biblio.setPublisher(biblio.getPublisher() + " " + clusterContent);
+                }*/
+                if (biblio.getPublisher() == null)  
                     biblio.setPublisher(clusterContent);
-            }  
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_JOURNAL)) {
+                /*if (biblio.getJournal() != null && isDifferentandNotIncludedContent(biblio.getJournal(), clusterContent)) {
+                    biblio.setJournal(biblio.getJournal() + " " + clusterContent);
+                }*/
+                if (biblio.getJournal() == null)
+                    biblio.setJournal(clusterContent);
+            }   
             /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }*/
@@ -1208,14 +1211,14 @@ public class HeaderParser extends AbstractParser {
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<date>", "<date>", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<date-submission>", "<date type=\"submission\">", addSpace);
             }
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<booktitle>", "<booktitle>", addSpace);
-            }
+            }*/
             if (!output) {
-                output = writeField(buffer, s1, lastTag0, s2, "<pages>", "<pages>", addSpace);
+                output = writeField(buffer, s1, lastTag0, s2, "<page>", "<page>", addSpace);
             }
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<publisher>", "<publisher>", addSpace);
@@ -1229,9 +1232,9 @@ public class HeaderParser extends AbstractParser {
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<affiliation>", "<byline>\n\t<affiliation>", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<volume>", "<volume>", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<editor>", "<editor>", addSpace);
             }
@@ -1253,24 +1256,24 @@ public class HeaderParser extends AbstractParser {
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<phone>", "<phone>", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<degree>", "<note type=\"degree\">", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<web>", "<ptr type=\"web\">", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<dedication>", "<dedication>", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<meeting>", "<meeting>", addSpace);
             }
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<submission>", "<note type=\"submission\">", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<entitle>", "<note type=\"title\">", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<reference>", "<reference>", addSpace);
             }
@@ -1286,12 +1289,12 @@ public class HeaderParser extends AbstractParser {
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<doctype>", "<note type=\"doctype\">", addSpace);
             }
-            if (!output) {
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<version>", "<note type=\"version\">", addSpace);
-            }
-            if (!output) {
+            }*/
+            /*if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<date-download>", "<date type=\"download\">", addSpace);
-            }
+            }*/
             if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<group>", "<note type=\"group\">", addSpace);
             }

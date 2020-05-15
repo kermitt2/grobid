@@ -174,6 +174,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_WORKINGGROUP = new TaggingLabelImpl(GrobidModels.HEADER, WORKINGGROUP_LABEL);
     public static final TaggingLabel HEADER_MEETING = new TaggingLabelImpl(GrobidModels.HEADER, MEETING_LABEL);
     public static final TaggingLabel HEADER_PUBLISHER = new TaggingLabelImpl(GrobidModels.HEADER, PUBLISHER_LABEL);
+    public static final TaggingLabel HEADER_JOURNAL = new TaggingLabelImpl(GrobidModels.HEADER, JOURNAL_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -266,10 +267,10 @@ public class TaggingLabels {
         register(HEADER_TITLE);
         register(HEADER_ABSTRACT);
         register(HEADER_AUTHOR);
-        register(HEADER_LOCATION);
-        register(HEADER_DATESUB);
+        //register(HEADER_LOCATION);
+        //register(HEADER_DATESUB);
         register(HEADER_EDITOR);
-        register(HEADER_INSTITUTION);
+        //register(HEADER_INSTITUTION);
         register(HEADER_NOTE);
         register(HEADER_OTHER);
         register(HEADER_REFERENCE);
@@ -281,19 +282,21 @@ public class TaggingLabels {
         register(HEADER_PUBNUM);
         register(HEADER_KEYWORD);
         register(HEADER_PHONE);
-        register(HEADER_DEGREE);
+        //register(HEADER_DEGREE);
         register(HEADER_WEB);
-        register(HEADER_DEDICATION);
+        //register(HEADER_DEDICATION);
         register(HEADER_SUBMISSION);
-        register(HEADER_ENTITLE);
+        //register(HEADER_ENTITLE);
         //register(HEADER_INTRO);
-        register(HEADER_COLLABORATION);
-        register(HEADER_VERSION);
+        //register(HEADER_COLLABORATION);
+        //register(HEADER_VERSION);
         register(HEADER_DOCTYPE);
-        register(HEADER_DOWNLOAD);
+        //register(HEADER_DOWNLOAD);
         register(HEADER_WORKINGGROUP);
         register(HEADER_MEETING);
         register(HEADER_PUBLISHER);
+        register(HEADER_JOURNAL);
+        register(HEADER_PAGE);
 
         //date
         register(DATE_YEAR);

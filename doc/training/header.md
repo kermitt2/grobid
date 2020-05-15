@@ -365,5 +365,9 @@ Note that this tag must only be used when no other tag can be applied. In partic
 Some indication about the funding of the research work presented in a paper sometimes appear within the header. We mark the whole raw statement under `<note type="funding">` tag. The statement can include related disclosure information: 
 
 ```xml
-    <note type="funding">This work is supported in part by ARPA and Philips Labs under contract DASG60-92-0055 to Department<lb/> of Computer Science, University of Maryland, and by National Science Foundation Grant No. NCR 89-04590. The<lb/> views, opinions, and/or ndings contained in this report are those of the author(s) and should not be interpreted as<lb/> representing the o cial policies, either expressed or implied, of the Advanced Research Projects Agency, PL, NSF,<lb/> or the U.S. Government. Computer facilities were provided in part by NSF grant CCR-8811954.</note> 
+    <note type="funding">This work is supported in part by ARPA and Philips Labs under contract DASG60-92-0055 to Department<lb/> 
+    of Computer Science, University of Maryland, and by National Science Foundation Grant No. NCR 89-04590. The<lb/> 
+    views, opinions, and/or ndings contained in this report are those of the author(s) and should not be interpreted as<lb/> 
+    representing the o cial policies, either expressed or implied, of the Advanced Research Projects Agency, PL, NSF,<lb/> 
+    or the U.S. Government. Computer facilities were provided in part by NSF grant CCR-8811954.</note> 
 ```

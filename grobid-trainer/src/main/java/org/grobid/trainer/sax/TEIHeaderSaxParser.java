@@ -31,11 +31,12 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
     private List<String> endTags = Arrays.asList("titlePart", "note", "docAuthor", "affiliation", "address", "email", "idno",
-        "date", "keywords", "keyword", "reference", "degree", "ptr", "div", "p", "web", "editor", "version", "meeting", "location");
+        "date", "keywords", "keyword", "reference", "ptr", "div", "editor", "meeting", 
+        "page", "title", "phone", "publisher");
 
-    private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle");
+    private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle", "p");
 
-    private List<String> ignoredTags = Arrays.asList("page", "title", "phone", "publisher");  
+    private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree");  
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<String>();
@@ -109,7 +110,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
         if (qName.equals("div")) {
             int length = atts.getLength();
-
+            currentTag = "<other>";
+            
             // Process each attribute
             for (int i = 0; i < length; i++) {
                 // Get names and values for each attribute
@@ -120,17 +122,19 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     if (name.equals("type")) {
                         if (value.equals("abstract")) {
                             currentTag = "<abstract>";
-                        } else if (value.equals("intro") || value.equals("introduction")) {
+                        } /*else if (value.equals("intro") || value.equals("introduction")) {
                             currentTag = "<intro>";
                         } else if (value.equals("paragraph")) {
                             currentTag = "<other>";
-                        }
+                        }*/
+                        else 
+                            currentTag = "<other>";
                     }
                 }
             }
         } else if (qName.equals("note")) {
             int length = atts.getLength();
-            currentTag = "<note>";
+            currentTag = "<other>";
             // Process each attribute
             for (int i = 0; i < length; i++) {
                 // Get names and values for each attribute
@@ -139,38 +143,39 @@ public class TEIHeaderSaxParser extends DefaultHandler {
 
                 if (name != null) {
                     if (name.equals("type")) {
-                        if (value.equals("degree")) {
+                        /*if (value.equals("degree")) {
                             currentTag = "<degree>";
                         } else if (value.equals("dedication")) {
                             currentTag = "<dedication>";
-                        } else if (value.equals("submission")) {
+                        } else*/ 
+                        if (value.equals("submission")) {
                             currentTag = "<submission>";
                         } /*else if (value.equals("english-title")) {
                             currentTag = "<entitle>";
-                        }*/ else if (value.equals("other")) {
+                        } else if (value.equals("other")) {
                             currentTag = "<note>";
-                        } else if (value.equals("reference")) {
+                        }*/ else if (value.equals("reference")) {
                             currentTag = "<reference>";
                         } else if (value.equals("copyright")) {
                             currentTag = "<copyright>";
                         } else if (value.equals("funding")) {
                             currentTag = "<funding>";
-                        } else if (value.equals("acknowledgment")) {
+                        } /*else if (value.equals("acknowledgment")) {
                             currentTag = "<note>";
-                        } else if (value.equals("document_type") || value.equals("doctype") || value.equals("docType") ||
+                        }*/ else if (value.equals("document_type") || value.equals("doctype") || value.equals("docType") ||
                             value.equals("documentType") || value.equals("articleType")) {
                             currentTag = "<doctype>";
                         } else if (value.equals("version")) {
                             currentTag = "<version>";
-                        } else if (value.equals("release")) {
+                        } /*else if (value.equals("release")) {
                             currentTag = "<other>";
-                        } else if (value.equals("group")) {
+                        }*/ else if (value.equals("group")) {
                             currentTag = "<group>";
                         } else
-                            currentTag = "<note>";
+                            currentTag = "<other>";
                     }
                 } else
-                    currentTag = "<note>";
+                    currentTag = "<other>";
             }
         } else if (qName.equals("ptr")) {
             int length = atts.getLength();
@@ -187,40 +192,22 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<web>";
                         }
                     }
-                }
+                } else
+                    currentTag = "<other>";
             }
-        } /*else if (qName.equals("biblScope")) {
-            int length = atts.getLength();
-
-            // Process each attribute
-            for (int i = 0; i < length; i++) {
-                // Get names and values for each attribute
-                String name = atts.getQName(i);
-                String value = atts.getValue(i);
-
-                if (name != null) {
-                    if (name.equals("type")) {
-                        if (value.equals("vol")) {
-                            currentTag = "<volume>";
-                        } else if (value.equals("pp")) {
-                            currentTag = "<pages>";
-                        }
-                    }
-                }
-            }
-        }*/ else if (qName.equals("titlePart")) {
+        } else if (qName.equals("titlePart")) {
             currentTag = "<title>";
         } else if (qName.equals("idno")) {
             currentTag = "<pubnum>";
         } else if (qName.equals("reference")) {
             currentTag = "<reference>";
-        } else if (qName.equals("degree")) {
+        } /*else if (qName.equals("degree")) {
             currentTag = "<degree>";
-        } else if (qName.equals("docAuthor")) {
+        }*/ else if (qName.equals("docAuthor")) {
             currentTag = "<author>";
-        } else if (qName.equals("web")) {
+        } /*else if (qName.equals("web")) {
             currentTag = "<web>";
-        } else if (qName.equals("affiliation")) {
+        }*/ else if (qName.equals("affiliation")) {
             currentTag = "<affiliation>";
             accumulator.setLength(0);
         } else if (qName.equals("address")) {
@@ -230,13 +217,13 @@ public class TEIHeaderSaxParser extends DefaultHandler {
             currentTag = "<email>";
         } else if (qName.equals("meeting")) {
             currentTag = "<meeting>";
-        } else if (qName.equals("location")) {
+        } /*else if (qName.equals("location")) {
             currentTag = "<location>";
-        } else if (qName.equals("editor")) {
+        }*/ else if (qName.equals("editor")) {
             currentTag = "<editor>";
         } else if (qName.equals("date")) {
             currentTag = "<date>";
-            int length = atts.getLength();
+            /*int length = atts.getLength();
 
             // Process each attribute
             for (int i = 0; i < length; i++) {
@@ -253,8 +240,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         } 
                     }
                 } 
-            }
-        } else if (qName.equals("p")) {
+            }*/
+        } /*else if (qName.equals("p")) {
             int length = atts.getLength();
 
             // Process each attribute
@@ -271,13 +258,20 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                     }
                 }
             }
-        } else if ((qName.equals("keywords")) || (qName.equals("keyword"))) {
+        }*/ else if ((qName.equals("keywords")) || (qName.equals("keyword"))) {
             currentTag = "<keyword>";
         } else if (qName.equals("title")) {
+            // only <title level="j"> for the moment, so don't need to check the attribute value
             currentTag = "<journal>";
-        } else if ((qName.equals("introduction")) || (qName.equals("intro"))) {
+        } else if (qName.equals("page")) {
+            currentTag = "<page>";
+        } else if (qName.equals("phone")) {
+            currentTag = "<phone>";
+        } else if (qName.equals("publisher")) {
+            currentTag = "<publisher>";
+        } /*else if ((qName.equals("introduction")) || (qName.equals("intro"))) {
             currentTag = "<intro>";
-        } else if (qName.equals("fileDesc")) {
+        }*/ else if (qName.equals("fileDesc")) {
             int length = atts.getLength();
 
             // Process each attribute
@@ -296,6 +290,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
             // do nothing
         } else if (ignoredTags.contains(qName)) {
             // do nothing
+            currentTag = "<other>";
         } else {
             System.out.println("Warning: Unexpected starting tag " + qName);
             currentTag = "<other>";
