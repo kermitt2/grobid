@@ -190,8 +190,11 @@ The corrected XML (note the `<figure type="table">` element):
 
 ### Formulas
 
-The label of the formula identifies all formula blocks, usually with its number. Inline formulas are part of the body.  
-The whole block is tagged with the element `<formula` while its number with the element `<label>`, as illustrated below:
+
+The `<formula>` tag is used to identify a formula appearing as an independent block in the text body. This formula often comes with a label, its "reference marker", which can be used for callout to the formula in the text body. Shorter inline formulas are not specifically annotated, they are considered as part of the body.  
+
+The label of a formula is usually a number, but can be any symbols. It is tagged with the element `<label>`, as illustrated bellow:
+
 
 ```xml
 <formula>

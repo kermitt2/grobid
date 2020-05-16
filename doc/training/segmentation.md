@@ -102,12 +102,9 @@ The following example shows a case where we have an acknowledgment (in the red f
 
 ### Tables and Figures
 
-Figures and tables belong to the main body structure: they are not to be encoded specifically.
-However, figures and table **captions**, appearing after the references, should remain inside the `<body>`.
+Figures and tables belong to the main body structure: they are not to be specifically encoded at the segmentation level.
 
-If a figure or table appears inside an annex of an article, it should remain inside the `<div type="annex">` element.
-
-If a figure or table appears in an abstract (which is rare but might happen), this item should remain within the `<front>` element.
+Figures and table, including captions, appearing after the references but related to the body (e.g. list of figures in preprints), should be under `<body>`. If a figure or table appears inside an annex of an article, it should remain inside the `<div type="annex">` element. If a figure or table appears in an abstract (which is rare but might happen), this item should remain within the `<front>` element.
 
 ### Hidden characters
 
