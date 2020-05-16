@@ -31,12 +31,11 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
     private List<String> endTags = Arrays.asList("titlePart", "note", "docAuthor", "affiliation", "address", "email", "idno",
-        "date", "keywords", "keyword", "reference", "ptr", "div", "editor", "meeting", 
-        "page", "title", "phone", "publisher");
+        "date", "keywords", "keyword", "reference", "ptr", "div", "editor", "meeting");
 
     private List<String> intermediaryTags = Arrays.asList("byline", "front", "lb", "tei", "teiHeader", "fileDesc", "text", "byline", "docTitle", "p");
 
-    private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree");  
+    private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree", "page", "title", "phone", "publisher");  
 
     public TEIHeaderSaxParser() {
         labeled = new ArrayList<String>();
