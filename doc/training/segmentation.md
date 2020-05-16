@@ -28,15 +28,15 @@ The following sections provide detailed information and examples on how to handl
 
 ### Start of the document (front)
 
-A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the the `<titlePage>` element. 
+A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the `<titlePage>` element. 
 
-The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
+The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general, we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
 
 There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
 
 Any footnotes referenced from within the `<body>` should remain there.
 
-Lines like the following that appear as a footnote on the first page of the document should be contained inside a `<front>` element:
+Lines like the following, appearing as a footnote on the first page of the document should be contained inside a `<front>` element:
 * Received: [date]
 * Revised: [date]
 * Accepted: [date]
@@ -103,11 +103,11 @@ The following example shows a case where we have an acknowledgment (in the red f
 ### Tables and Figures
 
 Figures and tables belong to the main body structure: they are not to be encoded specifically.
+However, figures and table **captions**, appearing after the references, should remain inside the `<body>`.
 
 If a figure or table appears inside an annex of an article, it should remain inside the `<div type="annex">` element.
 
-If a figure or table appears in an abstract (which is rare but it happens), this item should remain within the `<front>` element.
-
+If a figure or table appears in an abstract (which is rare but might happen), this item should remain within the `<front>` element.
 
 ### Hidden characters
 
