@@ -22,7 +22,11 @@
 	<affiliation>(2) Institut de Recherche pour le Développement (IRD)/ HSM, </affiliation>
 	</byline>
 
-	<address>CC 057, Place Eugène Bataillon,<lb/> 34095 montpellier Cedex 5, France<lb/> (3) Inria, Team LEMon<lb/></address>
+	<address>CC 057, Place Eugène Bataillon,<lb/> 34095 montpellier Cedex 5, France<lb/> </address>
+
+	<byline>
+	<affiliation>(3) Inria, Team LEMon<lb/></affiliation>
+	</byline>
 
 	Corresponding Author:
 	<byline>

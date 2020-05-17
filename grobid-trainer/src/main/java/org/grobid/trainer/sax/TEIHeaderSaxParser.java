@@ -164,9 +164,9 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         }*/ else if (value.equals("document_type") || value.equals("doctype") || value.equals("docType") ||
                             value.equals("documentType") || value.equals("articleType")) {
                             currentTag = "<doctype>";
-                        } else if (value.equals("version")) {
+                        } /*else if (value.equals("version")) {
                             currentTag = "<version>";
-                        } /*else if (value.equals("release")) {
+                        } else if (value.equals("release")) {
                             currentTag = "<other>";
                         }*/ else if (value.equals("group")) {
                             currentTag = "<group>";
@@ -259,7 +259,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
             }
         }*/ else if ((qName.equals("keywords")) || (qName.equals("keyword"))) {
             currentTag = "<keyword>";
-        } else if (qName.equals("title")) {
+        } /*else if (qName.equals("title")) {
             // only <title level="j"> for the moment, so don't need to check the attribute value
             currentTag = "<journal>";
         } else if (qName.equals("page")) {
@@ -268,9 +268,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
             currentTag = "<phone>";
         } else if (qName.equals("publisher")) {
             currentTag = "<publisher>";
-        } /*else if ((qName.equals("introduction")) || (qName.equals("intro"))) {
-            currentTag = "<intro>";
-        }*/ else if (qName.equals("fileDesc")) {
+        }*/
+        else if (qName.equals("fileDesc")) {
             int length = atts.getLength();
 
             // Process each attribute

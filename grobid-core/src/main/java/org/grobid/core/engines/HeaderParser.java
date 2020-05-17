@@ -832,23 +832,26 @@ public class HeaderParser extends AbstractParser {
                 /*if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
                     biblio.setTitle(biblio.getTitle() + clusterContent);
                 else*/
-                if (biblio.getTitle() == null)
+                if (biblio.getTitle() == null) {
                     biblio.setTitle(clusterContent);
-                /*else if (clusterContent.length() > biblio.getTitle().length())
-                    biblio.setTitle(clusterContent);*/
-                //List<LayoutToken> tokens = getLayoutTokens(cluster);
-                //biblio.addTitleTokens(tokens);
+                    List<LayoutToken> tokens = getLayoutTokens(cluster);
+                    biblio.addTitleTokens(tokens);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
                 //if (biblio.getAuthors() != null && isDifferentandNotIncludedContent(biblio.getAuthors(), clusterContent)) {
                 if (biblio.getAuthors() != null) {
                     biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
                     //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
                     biblio.addAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
-                } else 
+
+                    List<LayoutToken> tokens = cluster.concatTokens();
+                    biblio.addAuthorsTokens(tokens);
+                } else {
                     biblio.setAuthors(clusterNonDehypenizedContent);
 
-                List<LayoutToken> tokens = cluster.concatTokens();
-                biblio.addAuthorsTokens(tokens);
+                    List<LayoutToken> tokens = cluster.concatTokens();
+                    biblio.addAuthorsTokens(tokens);
+                }
             } /*else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
                 if (biblio.getBookType() != null) {
@@ -863,7 +866,8 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setLocation(clusterContent);
 
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
+            }*/ 
+            else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
 
                 if (biblio.getMeeting() != null) {
                     biblio.setMeeting(biblio.getMeeting() + ", " + clusterContent);
@@ -881,16 +885,17 @@ public class HeaderParser extends AbstractParser {
                     biblio.setPublicationDate(biblio.getPublicationDate() + " " + clusterContent);
                 else*/ 
                 // for checking if the date is a server date, we simply look at the string
-                if (biblio.getServerDate() == null) {
+                /*if (biblio.getServerDate() == null) {
                     if (clusterContent.toLowerCase().indexOf("server") != -1) {
                         biblio.setServerDate(clusterNonDehypenizedContent);
                         continue;
                     }
-                }
+                }*/
                 if (biblio.getPublicationDate() != null && biblio.getPublicationDate().length() < clusterNonDehypenizedContent.length())
                     biblio.setPublicationDate(clusterNonDehypenizedContent);
                 else if (biblio.getPublicationDate() == null)
                     biblio.setPublicationDate(clusterNonDehypenizedContent);
+
             } /*else if (clusterLabel.equals(TaggingLabels.HEADER_DATESUB)) {
                 // it appears that the same date is quite often repeated,
                 // we should check, before adding a new date segment, if it is
