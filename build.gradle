@@ -80,7 +80,7 @@ subprojects {
         compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
         testCompile "junit:junit:4.12"
-        testCompile "org.easymock:easymock:4.0.2"
+        testCompile "org.easymock:easymock:3.4"
         testCompile "org.powermock:powermock-api-easymock:2.0.0-beta.5"
         testCompile "org.powermock:powermock-module-junit4:2.0.0-beta.5"
         testCompile "xmlunit:xmlunit:1.6"
