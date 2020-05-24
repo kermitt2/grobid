@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="EPJ0290369-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High field magnetoresistivity of epitaxial La 2-x Sr x CuO 4 thin films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Vanacken 1,2 , L. Weckhuysen 1 , T. Wambecq 1 , P. Wagner 3 , and V.V. Moshchalkov 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratorium voor Vaste-Stoffysica en Magnetisme, Katholieke Universiteit Leuven,<lb/></affiliation>
+	</byline>
+
+	<address>Celestijnenlaan 200 D, B-3001 Leuven, Belgium<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratoire National de Champs Magnétiques Pulsés,<lb/></affiliation>
+	</byline>
+
+	<address>143, Avenue de Rangueil BP 4245, F31432 Toulouse, France<lb/></address>
+
+	<byline>
+	<affiliation>3 Instituut voor Materiaalonderzoek, Limburgs Universitair Centrum,<lb/></affiliation>
+	</byline>
+
+	<address>Wetenschapspark 1, B-3590 Diepenbeek, Belgium</address>
+
+	Abstract<lb/>
+	<div type="abstract">A large positive magnetoresistivity (up to tens of percents) is observed in both underdoped and<lb/> overdoped superconducting La 2-x Sr x CuO 4 epitaxial thin films at temperatures far above the<lb/> superconducting critical temperature T c . For the underdoped samples, this magnetoresistance far<lb/> above T c cannot be described by the Kohler rule and we believe it is to be attributed to the influence of<lb/> superconducting fluctuations. In the underdoped regime, the large magnetoresistance is only present<lb/> when at low temperatures superconductivity occurs. T he strong magnetoresistivity, which persists<lb/> even at temperatures far above T c , can be related to the pairs forming eventually the superconducting<lb/> state below T c . Our observations support the idea of a close relation between the pseudogap and the<lb/> superconducting gap and provide new indications for the presence of pairs above T c .<lb/></div>
+
+	<keyword>PACS numbers: 74.25.-q, 74.25.Dw, 74.25.Fy, 74.40.+k</keyword>
+
+		</front>
+	</text>
+</tei>
