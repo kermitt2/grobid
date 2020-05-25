@@ -20,7 +20,7 @@ The following TEI elements are used by the header model:
 * `<reference>` identifies the reference information (how to cite) for the document that can appear in the document itself 
 * `<email>` for the email of author or editor
 * `<editor>` for the person name information of the document editors
-* `<submission>` identifies the submission/acceptance information about the document
+* `<note type="submission">` identifies the submission/acceptance information about the document
 * `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) 
 * `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.)
 * `<phone>` for phone number
@@ -238,7 +238,7 @@ The name of the editor are tagged similarly as author names. Titles like "Prof."
 
 ### Submission and peer review information
 
-The `<submission>` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
+The `<<note type="submission">` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
 
 ```xml
     <note type="submission">Received September 14, 2009; Revised September 29, 2009; Accepted September 30, 2009</note>

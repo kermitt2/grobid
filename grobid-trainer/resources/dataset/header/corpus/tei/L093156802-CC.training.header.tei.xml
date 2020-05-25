@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L093156802-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0708.0921v2 [cond-mat.supr-con]</idno>
+
+	<date>8 May 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>Evidence for gap anisotropy in CaC 6 from directional point-contact spectroscopy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R.S. Gonnelli, 1 D. Daghero, 1 D. Delaude, 1 M. Tortello, 1 G.A. Ummarino, 1<lb/> V.A. Stepanov, 2 J.S. Kim, 3 R.K. Kremer, 3 A. Sanna, 4 G. Profeta, 5 and S. Massidda 6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Fisica and CNISM, Politecnico di Torino,</affiliation>
+	</byline>
+
+	<address>10129 Torino, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 P.N. Lebedev Physical Institute, Russian Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>119991 Moscow, Russia<lb/></address>
+
+	<byline>
+	<affiliation>3 Max-Planck-Institut für Festkörperforschung,</affiliation>
+	</byline>
+
+	<address>D-70569 Stuttgart, Germany<lb/></address>
+
+	<byline>
+	<affiliation>4 Institut für Theoretische Physik, Freie Universität Berlin,</affiliation>
+	</byline>
+
+	<address>Arnimallee 14, D-14195 Berlin, Germany<lb/></address>
+
+	<byline>
+	<affiliation>5 CNISM -Dipartimento di Fisica, Università degli studi dell&apos;Aquila,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<byline>
+	<affiliation>6 SLACS-INFM/CNR and Dipartimento di Fisica, Università degli Studi di Cagliari,</affiliation>
+	</byline>
+
+	<address>Italy<lb/></address>
+
+	<div type="abstract">We present the first results of directional point-contact spectroscopy in high quality CaC6 samples<lb/> both along the ab plane and in the c-axis direction. The superconducting order parameter ∆(0),<lb/> obtained by fitting the Andreev-reflection (AR) conductance curves at temperatures down to 400<lb/> mK with the single-band 3D Blonder-Tinkham-Klapwijk model, presents two different distributions<lb/> in the two directions of the main current injection, peaked at 1.35 and 1.71 meV, respectively. By<lb/> ab-initio calculations of the AR conductance spectra, we show that the experimental results are in<lb/> good agreement with the recent predictions of gap anisotropy in CaC6.<lb/></div>
+
+	<keyword>PACS numbers: 74.50.+r, 74.45.+c, 74.70.Ad</keyword>
+
+		</front>
+	</text>
+</tei>
