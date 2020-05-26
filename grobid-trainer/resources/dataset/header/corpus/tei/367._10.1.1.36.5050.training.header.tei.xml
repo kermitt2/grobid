@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="367._10.1.1.36.5050"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Comparative Study of Three Paradigms for Object<lb/> Recognition -Bayesian Statistics, Neural Networks and<lb/> Expert Systems.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. K. Aggarwal, Joydeep Ghosh, Dinesh Nair and Ismail Taha<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer and Vision Research Center<lb/> The University of Texas at Austin,</affiliation>
+	</byline>
+
+	<address>Austin, TX, USA<lb/></address>
+
+	email:
+	<email>aggarwaljk@mail.utexas.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">Object recognition, which involves the classi cation of objects into one of many a pri-<lb/>ori known object types, and determining object characteristics such as pose, is a di cult<lb/> problem. A wide range of approaches have been proposed and applied to this problem with<lb/> limited success. This paper presents a brief comparative study of methods from three dif-<lb/>ferent paradigms for object recognition: Bayesian, Neural Network and Expert Systems.<lb/></div>
+
+	<note type="funding">This work was supported by the Army Research O ce under Contracts DAAH 049510494 and DAAH<lb/> 0494G0417.</note>
+
+		</front>
+	</text>
+</tei>

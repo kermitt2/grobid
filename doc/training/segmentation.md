@@ -9,7 +9,7 @@ The following TEI elements are used by the segmentation model:
 * `<titlePage>` for the cover page
 * `<front>` for the document header
 * `<note place="headnote">` for the page header
-* `<note place="footnote">` for the page footer
+* `<note place="footnote">` for the page footer and numbered footnotes
 * `<body>` for the document body
 * `<listBibl>` for the bibliographical section
 * `<page>` to indicate page numbers
