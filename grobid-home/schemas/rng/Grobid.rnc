@@ -1,14 +1,15 @@
 namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace ns1 = "http://www.w3.org/1999/xhtml"
 namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2019-01-11T09:05:17Z. .
-# TEI Edition: Version 3.4.0. Last updated on
-#	23rd July 2018, revision 1fa0b54
-# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
+# Schema generated from ODD source 2020-05-26T10:47:25Z. .
+# TEI Edition: Version 4.0.0. Last updated on
+#	13th February 2020, revision ccd19b0ba
+# TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
 #
 
 #
@@ -22,7 +23,11 @@ tei_macro.paraContent =
 tei_macro.limitedContent =
   (text | tei_model.limitedPhrase | tei_model.inter)*
 tei_macro.phraseSeq =
-  (text | tei_model.gLike | tei_model.phrase | tei_model.global)*
+  (text
+   | tei_model.gLike
+   | tei_model.qLike
+   | tei_model.phrase
+   | tei_model.global)*
 tei_macro.phraseSeq.limited =
   (text | tei_model.limitedPhrase | tei_model.global)*
 tei_macro.specialPara =
@@ -88,8 +93,15 @@ tei_att.ranging.attribute.max =
     | xsd:decimal
   }?
 tei_att.ranging.attribute.confidence =
-  
-  ## specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by min and max, or the proportion of observed values that fall within that range.
+  [
+    a:documentation [
+      "specifies the degree of statistical confidence (between zero and one) that a value falls within the range specified by "
+      ns1:code [ "@min" ]
+      " and "
+      ns1:code [ "@max" ]
+      ", or the proportion of observed values that fall within that range."
+    ]
+  ]
   attribute confidence { xsd:double }?
 tei_att.dimensions.attributes =
   tei_att.ranging.attributes,
@@ -101,7 +113,7 @@ tei_att.dimensions.attributes =
 tei_att.dimensions.attribute.unit =
   
   ## names the unit used for the measurement
-  ## Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inches) ; 4] lines; 5] chars (characters) 
+  ## Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inches); 4] line; 5] char (characters)
   attribute unit {
     
     ## (centimetres) 
@@ -114,11 +126,11 @@ tei_att.dimensions.attribute.unit =
       "in"
     | 
       ## lines of text
-      "lines"
+      "line"
     | 
       ## (characters) characters of text
-      "chars"
-    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      "char"
+    | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.dimensions.attribute.quantity =
   
@@ -154,17 +166,27 @@ tei_att.dimensions.attribute.scope =
   ## where the measurement summarizes more than one observation, specifies the applicability of this measurement.
   ## Sample values include: 1] all; 2] most; 3] range
   attribute scope {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.written.attributes = tei_att.written.attribute.hand
 tei_att.written.attribute.hand =
-  
-  ## points to a handNote element describing the hand considered responsible for the content of the element concerned.
+  [
+    a:documentation [
+      "points to a "
+      ns1:code [ "<handNote>" ]
+      " element describing the hand considered responsible for the content of the element concerned."
+    ]
+  ]
   attribute hand { xsd:anyURI }?
 tei_att.cReferencing.attributes = tei_att.cReferencing.attribute.cRef
 tei_att.cReferencing.attribute.cRef =
-  
-  ## (canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header
+  [
+    a:documentation [
+      "(canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a "
+      ns1:code [ "<refsDecl>" ]
+      " element in the TEI header"
+    ]
+  ]
   attribute cRef { xsd:string }?
 tei_att.datable.w3c.attributes =
   tei_att.datable.w3c.attribute.when,
@@ -314,9 +336,9 @@ sch:pattern [
     "            "
     sch:assert [
       test = "string-length(.) gt 0"
-      "\x{a}" ~
-      "@calendar indicates the system or calendar to which the date represented by the content of this element\x{a}" ~
-      "belongs, but this "
+      " @calendar indicates the system or calendar to\x{a}" ~
+      "              which the date represented by the content of this element belongs, but this\x{a}" ~
+      "              "
       sch:name [ ]
       " element has no textual content."
     ]
@@ -416,7 +438,7 @@ tei_att.docStatus.attribute.status =
   ## Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn
   [ a:defaultValue = "draft" ]
   attribute status {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.global.responsibility.attributes =
   tei_att.global.responsibility.attribute.cert,
@@ -463,7 +485,7 @@ tei_att.editLike.attribute.evidence =
        | 
          ## the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.
          "conjecture"
-       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
+       | xsd:token { pattern = "[^\p{C}\p{Z}]+" })+
     }
   }?
 tei_att.editLike.attribute.instant =
@@ -488,7 +510,7 @@ tei_att.global.rendition.attribute.rend =
   ## (rendition) indicates how the element in question was rendered or presented in the source text.
   attribute rend {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.global.rendition.attribute.style =
@@ -533,8 +555,16 @@ tei_att.global.attribute.n =
   ## (number) gives a number (or other label) for an element, which is not necessarily unique within the document.
   attribute n { xsd:string }?
 tei_att.global.attribute.xmllang =
-  
-  ## (language) indicates the language of the element content using a tag generated according to BCP 47.
+  [
+    a:documentation [
+      "(language) indicates the language of the element content using a tag generated according to "
+      ns1:a [
+        href = "http://www.rfc-editor.org/rfc/bcp/bcp47.txt"
+        "BCP 47"
+      ]
+      "."
+    ]
+  ]
   attribute xml:lang {
     xsd:language
     | (
@@ -563,7 +593,7 @@ tei_att.internetMedia.attribute.mimeType =
   ## (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type
   attribute mimeType {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.media.attributes =
@@ -604,12 +634,13 @@ tei_att.resourced.attribute.url =
   attribute url { xsd:anyURI }
 tei_att.measurement.attributes =
   tei_att.measurement.attribute.unit,
+  tei_att.measurement.attribute.unitRef,
   tei_att.measurement.attribute.quantity,
   tei_att.measurement.attribute.commodity
 tei_att.measurement.attribute.unit =
   
   ## indicates the units used for the measurement, usually using the standard symbol for the desired units.
-  ## Suggested values include: 1] m (metre) ; 2] kg (kilogram) ; 3] s (second) ; 4] Hz (hertz) ; 5] Pa (pascal) ; 6] Ω (ohm) ; 7] L (litre) ; 8] t (tonne) ; 9] ha (hectare) ; 10] Å (ångström) ; 11] mL (millilitre) ; 12] cm (centimetre) ; 13] dB (decibel) ; 14] kbit (kilobit) ; 15] Kibit (kibibit) ; 16] kB (kilobyte) ; 17] KiB (kibibyte) ; 18] MB (megabyte) ; 19] MiB (mebibyte) 
+  ## Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (hertz); 5] Pa (pascal); 6] Ω (ohm); 7] L (litre); 8] t (tonne); 9] ha (hectare); 10] Å (ångström); 11] mL (millilitre); 12] cm (centimetre); 13] dB (decibel); 14] kbit (kilobit); 15] Kibit (kibibit); 16] kB (kilobyte); 17] KiB (kibibyte); 18] MB (megabyte); 19] MiB (mebibyte)
   attribute unit {
     
     ## (metre) SI base unit of length
@@ -628,7 +659,7 @@ tei_att.measurement.attribute.unit =
       "Pa"
     | 
       ## (ohm) SI unit of electric resistance
-      "Ω"
+      "Ω"
     | 
       ## (litre) 1 dm³
       "L"
@@ -640,7 +671,7 @@ tei_att.measurement.attribute.unit =
       "ha"
     | 
       ## (ångström) 10⁻¹⁰ m
-      "Å"
+      "Å"
     | 
       ## (millilitre) 
       "mL"
@@ -668,8 +699,19 @@ tei_att.measurement.attribute.unit =
     | 
       ## (mebibyte) 2²⁰ or 1 048 576 bytes
       "MiB"
-    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
+tei_att.measurement.attribute.unitRef =
+  [
+    a:documentation [
+      "points to a unique identifier stored in the "
+      ns1:code [ "@xml:id" ]
+      " of a "
+      ns1:code [ "<unitDef>" ]
+      " element that defines a unit of measure."
+    ]
+  ]
+  attribute unitRef { xsd:anyURI }?
 tei_att.measurement.attribute.quantity =
   
   ## specifies the number of the specified units that comprise the measurement
@@ -683,9 +725,29 @@ tei_att.measurement.attribute.commodity =
   ## indicates the substance that is being measured
   attribute commodity {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
+sch:pattern [
+  id =
+    "Grobid-att.measurement-att-measurement-unitRef-constraint-rule-5"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "tei:*[@unitRef]"
+    "\x{a}" ~
+    "        "
+    sch:report [
+      role = "info"
+      test = "@unit"
+      "The @unit attribute may be unnecessary when @unitRef is present."
+    ]
+    "\x{a}" ~
+    "      "
+  ]
+  "\x{a}" ~
+  "   "
+]
 tei_att.naming.attributes =
   tei_att.canonical.attributes,
   tei_att.naming.attribute.role,
@@ -695,7 +757,7 @@ tei_att.naming.attribute.role =
   ## may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.
   attribute role {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.naming.attribute.nymRef =
@@ -709,7 +771,7 @@ tei_att.notated.attribute.notation =
   
   ## names the notation used for the content of the element.
   attribute notation {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.placement.attributes = tei_att.placement.attribute.place
 tei_att.placement.attribute.place =
@@ -748,7 +810,7 @@ tei_att.placement.attribute.place =
        | 
          ## in a predefined space, for example left by an earlier scribe.
          "inspace"
-       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
+       | xsd:token { pattern = "[^\p{C}\p{Z}]+" })+
     }
   }?
 tei_att.typed.attributes =
@@ -757,16 +819,16 @@ tei_att.typed.attribute.type =
   
   ## characterizes the element in some sense, using any convenient classification scheme or typology.
   attribute type {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.typed.attribute.subtype =
   
   ## provides a sub-categorization of the element, if needed
   attribute subtype {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 sch:pattern [
-  id = "Grobid-att.typed-subtypeTyped-constraint-rule-5"
+  id = "Grobid-att.typed-subtypeTyped-constraint-rule-6"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -790,8 +852,18 @@ tei_att.pointing.attributes =
   tei_att.pointing.attribute.target,
   tei_att.pointing.attribute.evaluate
 tei_att.pointing.attribute.targetLang =
-  
-  ## specifies the language of the content to be found at the destination referenced by target, using a language tag generated according to BCP 47.
+  [
+    a:documentation [
+      "specifies the language of the content to be found at the destination referenced by "
+      ns1:code [ "@target" ]
+      ", using a language tag generated according to "
+      ns1:a [
+        href = "http://www.rfc-editor.org/rfc/bcp/bcp47.txt"
+        "BCP 47"
+      ]
+      "."
+    ]
+  ]
   attribute targetLang {
     xsd:language
     | (
@@ -799,7 +871,7 @@ tei_att.pointing.attribute.targetLang =
        "")
   }?
 sch:pattern [
-  id = "Grobid-att.pointing-targetLang-targetLang-constraint-rule-6"
+  id = "Grobid-att.pointing-targetLang-targetLang-constraint-rule-7"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -843,34 +915,23 @@ tei_att.sortable.attribute.sortKey =
   
   ## supplies the sort key for this element in an index, list or group which contains it.
   attribute sortKey {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
-tei_att.tableDecoration.attributes =
-  tei_att.tableDecoration.attribute.role,
-  tei_att.tableDecoration.attribute.rows,
-  tei_att.tableDecoration.attribute.cols
-tei_att.tableDecoration.attribute.role =
+tei_att.translatable.attributes =
+  tei_att.translatable.attribute.versionDate
+tei_att.translatable.attribute.versionDate =
   
-  ## indicates the kind of information held in this cell or in each cell of this row.
-  ## Suggested values include: 1] label; 2] data
-  [ a:defaultValue = "data" ]
-  attribute role {
-    
-    ## labelling or descriptive information only.
-    "label"
-    | 
-      ## data values.
-      "data"
-    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+  ## specifies the date on which the source text was extracted and sent to the translator
+  attribute versionDate {
+    xsd:date
+    | xsd:gYear
+    | xsd:gMonth
+    | xsd:gDay
+    | xsd:gYearMonth
+    | xsd:gMonthDay
+    | xsd:time
+    | xsd:dateTime
   }?
-tei_att.tableDecoration.attribute.rows =
-  
-  ## indicates the number of rows occupied by this cell or row.
-  [ a:defaultValue = "1" ] attribute rows { xsd:nonNegativeInteger }?
-tei_att.tableDecoration.attribute.cols =
-  
-  ## (columns) indicates the number of columns occupied by this cell or row.
-  [ a:defaultValue = "1" ] attribute cols { xsd:nonNegativeInteger }?
 tei_att.citing.attributes =
   tei_att.citing.attribute.unit,
   tei_att.citing.attribute.from,
@@ -904,19 +965,29 @@ tei_att.citing.attribute.unit =
     | 
       ## the element identifies an entry number or label in a list of entries.
       "entry"
-    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.citing.attribute.from =
-  
-  ## specifies the starting point of the range of units indicated by the unit attribute.
+  [
+    a:documentation [
+      "specifies the starting point of the range of units indicated by the "
+      ns1:code [ "@unit" ]
+      " attribute."
+    ]
+  ]
   attribute from {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_att.citing.attribute.to =
-  
-  ## specifies the end-point of the range of units indicated by the unit attribute.
+  [
+    a:documentation [
+      "specifies the end-point of the range of units indicated by the "
+      ns1:code [ "@unit" ]
+      " attribute."
+    ]
+  ]
   attribute to {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
   }?
 tei_model.nameLike.agent = tei_name | tei_orgName | tei_persName
 tei_model.nameLike.agent_alternation =
@@ -1011,18 +1082,21 @@ tei_model.headLike_sequence = tei_head
 tei_model.headLike_sequenceOptional = tei_head?
 tei_model.headLike_sequenceOptionalRepeatable = tei_head*
 tei_model.headLike_sequenceRepeatable = tei_head+
-tei_model.labelLike = tei_label
-tei_model.labelLike_alternation = tei_label
-tei_model.labelLike_sequence = tei_label
-tei_model.labelLike_sequenceOptional = tei_label?
-tei_model.labelLike_sequenceOptionalRepeatable = tei_label*
-tei_model.labelLike_sequenceRepeatable = tei_label+
-tei_model.listLike = tei_list | tei_table
-tei_model.listLike_alternation = tei_list | tei_table
-tei_model.listLike_sequence = tei_list, tei_table
-tei_model.listLike_sequenceOptional = tei_list?, tei_table?
-tei_model.listLike_sequenceOptionalRepeatable = tei_list*, tei_table*
-tei_model.listLike_sequenceRepeatable = tei_list+, tei_table+
+tei_model.labelLike = tei_desc | tei_label
+tei_model.labelLike_alternation = tei_desc | tei_label
+tei_model.labelLike_sequence = tei_desc, tei_label
+tei_model.labelLike_sequenceOptional = tei_desc?, tei_label?
+tei_model.labelLike_sequenceOptionalRepeatable = tei_desc*, tei_label*
+tei_model.labelLike_sequenceRepeatable = tei_desc+, tei_label+
+tei_model.listLike = tei_list | tei_listObject | tei_table
+tei_model.listLike_alternation = tei_list | tei_listObject | tei_table
+tei_model.listLike_sequence = tei_list, tei_listObject, tei_table
+tei_model.listLike_sequenceOptional =
+  tei_list?, tei_listObject?, tei_table?
+tei_model.listLike_sequenceOptionalRepeatable =
+  tei_list*, tei_listObject*, tei_table*
+tei_model.listLike_sequenceRepeatable =
+  tei_list+, tei_listObject+, tei_table+
 tei_model.noteLike = tei_note
 tei_model.lLike = notAllowed
 tei_model.lLike_alternation = notAllowed
@@ -1084,7 +1158,7 @@ tei_model.publicationStmtPart.detail =
   | tei_idno
   | tei_availability
 tei_model.availabilityPart = tei_licence
-tei_model.descLike = notAllowed
+tei_model.descLike = tei_desc
 tei_model.quoteLike = notAllowed
 tei_model.quoteLike_alternation = notAllowed
 tei_model.quoteLike_sequence = empty
@@ -1124,36 +1198,42 @@ tei_model.nameLike =
   | tei_model.placeStateLike
   | tei_idno
   | tei_model.persNamePart
+  | tei_objectName
 tei_model.nameLike_alternation =
   tei_model.nameLike.agent_alternation
   | tei_model.offsetLike_alternation
   | tei_model.placeStateLike_alternation
   | tei_idno
   | tei_model.persNamePart_alternation
+  | tei_objectName
 tei_model.nameLike_sequence =
   tei_model.nameLike.agent_sequence,
   tei_model.offsetLike_sequence,
   tei_model.placeStateLike_sequence,
   tei_idno,
-  tei_model.persNamePart_sequence
+  tei_model.persNamePart_sequence,
+  tei_objectName
 tei_model.nameLike_sequenceOptional =
   tei_model.nameLike.agent_sequenceOptional?,
   tei_model.offsetLike_sequenceOptional?,
   tei_model.placeStateLike_sequenceOptional?,
   tei_idno?,
-  tei_model.persNamePart_sequenceOptional?
+  tei_model.persNamePart_sequenceOptional?,
+  tei_objectName?
 tei_model.nameLike_sequenceOptionalRepeatable =
   tei_model.nameLike.agent_sequenceOptionalRepeatable*,
   tei_model.offsetLike_sequenceOptionalRepeatable*,
   tei_model.placeStateLike_sequenceOptionalRepeatable*,
   tei_idno*,
-  tei_model.persNamePart_sequenceOptionalRepeatable*
+  tei_model.persNamePart_sequenceOptionalRepeatable*,
+  tei_objectName*
 tei_model.nameLike_sequenceRepeatable =
   tei_model.nameLike.agent_sequenceRepeatable+,
   tei_model.offsetLike_sequenceRepeatable+,
   tei_model.placeStateLike_sequenceRepeatable+,
   tei_idno+,
-  tei_model.persNamePart_sequenceRepeatable+
+  tei_model.persNamePart_sequenceRepeatable+,
+  tei_objectName+
 tei_model.global =
   tei_model.global.meta
   | tei_model.milestoneLike
@@ -1167,6 +1247,7 @@ tei_model.biblPart =
   | tei_bibl
   | tei_edition
   | tei_availability
+  | tei_objectIdentifier
 tei_model.frontPart = tei_model.frontPart.drama | tei_listBibl
 tei_model.addrPart =
   tei_model.nameLike
@@ -1210,10 +1291,23 @@ tei_model.limitedPhrase =
 tei_model.divLike = tei_div
 tei_model.divGenLike = notAllowed
 tei_model.div1Like = notAllowed
-tei_model.teiHeaderPart = tei_profileDesc | tei_xenoData
+tei_model.applicationLike = notAllowed
+tei_model.teiHeaderPart =
+  tei_encodingDesc | tei_profileDesc | tei_xenoData
 tei_model.sourceDescPart = notAllowed
+tei_model.encodingDescPart = tei_schemaRef | tei_unitDecl | tei_appInfo
 tei_model.profileDescPart =
   tei_abstract | tei_textClass | tei_correspDesc
+tei_att.formula.attributes = tei_att.formula.attribute.formula
+tei_att.formula.attribute.formula =
+  [
+    a:documentation [
+      "An "
+      ns1:code [ "@formula" ]
+      " is provided to describe a mathematical calculation such as a conversion between measurement systems."
+    ]
+  ]
+  attribute formula { text }?
 tei_model.correspActionPart =
   tei_model.dateLike
   | tei_model.addressLike
@@ -1223,7 +1317,7 @@ tei_model.correspContextPart =
   tei_model.ptrLike | tei_model.pLike | tei_note
 tei_model.correspDescPart =
   tei_note | tei_correspAction | tei_correspContext
-tei_model.resourceLike = tei_text
+tei_model.objectLike = tei_object | tei_listObject
 tei_att.personal.attributes =
   tei_att.naming.attributes,
   tei_att.personal.attribute.full,
@@ -1254,7 +1348,7 @@ tei_p =
   element p {
     tei_macro.paraContent
     >> sch:pattern [
-         id = "Grobid-p-abstractModel-structure-p-constraint-report-4"
+         id = "Grobid-p-abstractModel-structure-p-constraint-report-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1275,7 +1369,7 @@ tei_p =
          "         "
        ]
     >> sch:pattern [
-         id = "Grobid-p-abstractModel-structure-l-constraint-report-5"
+         id = "Grobid-p-abstractModel-structure-l-constraint-report-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1308,6 +1402,44 @@ tei_hi =
     tei_macro.paraContent,
     tei_att.global.attributes,
     tei_att.written.attributes,
+    empty
+  }
+tei_desc =
+  
+  ## (description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]
+  element desc {
+    tei_macro.limitedContent
+    >> sch:pattern [
+         id =
+           "Grobid-desc-deprecationInfo-only-in-deprecated-constraint-rule-8"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:desc[ @type eq 'deprecationInfo']"
+           "\x{a}" ~
+           "               "
+           sch:assert [
+             test = "../@validUntil"
+             "Information about a\x{a}" ~
+             "        deprecation should only be present in a specification element\x{a}" ~
+             "        that is being deprecated: that is, only an element that has a\x{a}" ~
+             "        @validUntil attribute should have a child <desc\x{a}" ~
+             '        type="deprecationInfo">.'
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    tei_att.global.attributes,
+    tei_att.translatable.attributes,
+    tei_att.typed.attribute.subtype,
+    
+    ## characterizes the element in some sense, using any convenient classification scheme or typology.
+    attribute type {
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+    }?,
     empty
   }
 tei_term =
@@ -1383,10 +1515,11 @@ tei_unit =
   }
 tei_date =
   
-  ## contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]
+  ## contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.7. Dates and Times]
   element date {
     (text | tei_model.gLike | tei_model.phrase | tei_model.global)*,
     tei_att.global.attributes,
+    tei_att.canonical.attributes,
     tei_att.datable.attributes,
     tei_att.editLike.attributes,
     tei_att.dimensions.attributes,
@@ -1399,7 +1532,7 @@ tei_ptr =
   element ptr {
     empty
     >> sch:pattern [
-         id = "Grobid-ptr-ptrAtts-constraint-report-6"
+         id = "Grobid-ptr-ptrAtts-constraint-report-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1433,7 +1566,7 @@ tei_ref =
   element ref {
     tei_macro.paraContent
     >> sch:pattern [
-         id = "Grobid-ref-refAtts-constraint-report-7"
+         id = "Grobid-ref-refAtts-constraint-report-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1466,13 +1599,13 @@ tei_list =
   
   ## contains any sequence of items organized as a list. [3.7. Lists]
   element list {
-    ((tei_model.divTop | tei_model.global)*,
+    ((tei_model.divTop | tei_model.global | tei_desc*)*,
      ((tei_item, tei_model.global*)+
       | (tei_label, tei_model.global*, tei_item, tei_model.global*)+),
      (tei_model.divBottom, tei_model.global*)*)
     >> sch:pattern [
          id =
-           "Grobid-list-gloss-list-must-have-labels-constraint-rule-7"
+           "Grobid-list-gloss-list-must-have-labels-constraint-rule-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1496,8 +1629,13 @@ tei_list =
     ## describes the nature of the items in the list.
     ## Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syllogism
     attribute type {
-      
-      ## each list item glosses some term or concept, which is given by a label element preceding the list item.
+      [
+        a:documentation [
+          "each list item glosses some term or concept, which is given by a "
+          ns1:code [ "<label>" ]
+          " element preceding the list item."
+        ]
+      ]
       "gloss"
       | 
         ## each list item is an entry in an index such as the alphabetical topical index at the back of a print volume.
@@ -1511,7 +1649,7 @@ tei_list =
       | 
         ## each list item is part of an argument consisting of two or more propositions and a final conclusion derived from them.
         "syllogism"
-      | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     empty
   }
@@ -1654,14 +1792,14 @@ tei_title =
   element title {
     tei_macro.paraContent,
     tei_att.global.attributes,
-    tei_att.canonical.attributes,
     tei_att.typed.attribute.subtype,
+    tei_att.canonical.attributes,
     tei_att.datable.attributes,
     
     ## classifies the title according to some convenient typology.
-    ## Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] short; 5] desc (descriptive) 
+    ## Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] short; 5] desc (descriptive)
     attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     
     ## indicates the bibliographic level for a title, that is, whether it identifies an article, book, journal, series, or unpublished material.
@@ -1826,7 +1964,7 @@ tei_publicationStmt =
   }
 tei_idno =
   
-  ## (identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]
+  ## (identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [13.3.1. Basic Principles 2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]
   element idno {
     (text | tei_model.gLike | tei_idno)*,
     tei_att.global.attributes,
@@ -1837,8 +1975,17 @@ tei_idno =
     ## categorizes the identifier, for example as an ISBN, Social Security number, etc.
     ## Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7] OCLC
     attribute type {
-      
-      ## International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the International ISBN Agency.
+      [
+        a:documentation [
+          "International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the "
+          ns1:a [
+            href = "https://www.isbn-international.org"
+            " International ISBN Agency."
+          ]
+          "\x{a}" ~
+          "                  "
+        ]
+      ]
       "ISBN"
       | 
         ## International Standard Serial Number: an eight-digit number to uniquely identify a serial publication.
@@ -1858,7 +2005,7 @@ tei_idno =
       | 
         ## OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.
         "OCLC"
-      | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     empty
   }
@@ -1911,7 +2058,7 @@ tei_notesStmt =
   }
 tei_sourceDesc =
   
-  ## (source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]
+  ## (source description) describes the source(s) from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]
   element sourceDesc {
     (tei_model.pLike+
      | (tei_model.biblLike
@@ -1920,6 +2067,83 @@ tei_sourceDesc =
     tei_att.global.attributes,
     tei_att.declarable.attributes,
     empty
+  }
+tei_encodingDesc =
+  
+  ## (encoding description) documents the relationship between an electronic text and the source or sources from which it was derived. [2.3. The Encoding Description 2.1.1. The TEI Header and Its Components]
+  element encodingDesc {
+    (tei_model.encodingDescPart | tei_model.pLike)+,
+    tei_att.global.attributes,
+    empty
+  }
+tei_schemaRef =
+  
+  ## (schema reference) describes or points to a related customization or schema file [2.3.10. The Schema Specification]
+  element schemaRef {
+    tei_model.descLike?,
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    tei_att.resourced.attributes,
+    
+    ## the identifier used for the customization or schema
+    attribute key { xsd:NCName }?,
+    empty
+  }
+tei_unitDecl =
+  
+  ## (unit declarations) provides information about units of measurement that are not members of the International System of Units. [2.3.9. The Unit Declaration]
+  element unitDecl {
+    tei_unitDef+,
+    tei_att.canonical.attributes,
+    tei_att.datable.attributes,
+    tei_att.global.attributes,
+    empty
+  }
+tei_unitDef =
+  
+  ## (unit definition) contains descriptive information related to a specific unit of measurement. [2.3.9. The Unit Declaration]
+  element unitDef {
+    (tei_model.labelLike
+     | tei_model.placeNamePart?
+     | tei_conversion?
+     | tei_unit?)+,
+    tei_att.global.attributes,
+    tei_att.datable.attributes,
+    tei_att.canonical.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_conversion =
+  
+  ## defines how to calculate one unit of measure in terms of another. [2.3.9. The Unit Declaration]
+  element conversion {
+    empty,
+    tei_att.global.attributes,
+    tei_att.datable.attributes,
+    tei_att.formula.attributes,
+    [
+      a:documentation [
+        "indicates a source unit of measure that is to be converted into another unit indicated in "
+        ns1:code [ "@toUnit" ]
+        "."
+      ]
+    ]
+    attribute fromUnit { xsd:anyURI },
+    [
+      a:documentation [
+        "the target unit of measurement for a conversion from a source unit referenced in "
+        ns1:code [ "@fromUnit" ]
+        "."
+      ]
+    ]
+    attribute toUnit { xsd:anyURI },
+    empty
+  }
+tei_appInfo =
+  
+  ## (application information) records information about an application which has edited the TEI file. [2.3.11. The Application Information Element]
+  element appInfo {
+    tei_model.applicationLike+, tei_att.global.attributes, empty
   }
 tei_profileDesc =
   
@@ -1951,8 +2175,13 @@ tei_keywords =
     (text | tei_term)*,
     tei_list?,
     tei_att.global.attributes,
-    
-    ## identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a taxonomy element, or by some other resource.
+    [
+      a:documentation [
+        "identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a "
+        ns1:code [ "<taxonomy>" ]
+        " element, or by some other resource."
+      ]
+    ]
     attribute scheme { xsd:anyURI }?,
     empty
   }
@@ -1962,8 +2191,13 @@ tei_classCode =
   element classCode {
     tei_macro.phraseSeq.limited,
     tei_att.global.attributes,
-    
-    ## identifies the classification system in use, as defined by, e.g. a taxonomy element, or some other resource.
+    [
+      a:documentation [
+        "identifies the classification system in use, as defined by, e.g. a "
+        ns1:code [ "<taxonomy>" ]
+        " element, or some other resource."
+      ]
+    ]
     attribute scheme { xsd:anyURI },
     empty
   }
@@ -2006,7 +2240,7 @@ tei_correspAction =
       | 
         ## information concerning the forwarding of a message.
         "forwarded"
-      | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     empty
   }
@@ -2027,11 +2261,19 @@ tei_xenoData =
     empty
   }
 tei_TEI =
-  
-  ## (TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resourceLike class. Multiple TEI elements may be combined to form a teiCorpus element. [4. Default Text Structure 15.1. Varieties of Composite Text]
+  [
+    a:documentation [
+      "(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple "
+      ns1:code [ "<TEI>" ]
+      " elements may be combined within a "
+      ns1:code [ "<TEI>" ]
+      " (or "
+      ns1:code [ "<teiCorpus>" ]
+      ") element. [4. Default Text Structure 15.1. Varieties of Composite Text]"
+    ]
+  ]
   element TEI {
     tei_teiHeader,
-    tei_model.resourceLike?,
     (tei_text?)
     >> sch:ns [ prefix = "tei" uri = "http://www.tei-c.org/ns/1.0" ]
     >> sch:ns [ prefix = "xs" uri = "http://www.w3.org/2001/XMLSchema" ]
@@ -2095,7 +2337,7 @@ tei_div =
            tei_model.global*)*)),
       (tei_model.divBottom, tei_model.global*)*)?)
     >> sch:pattern [
-         id = "Grobid-div-abstractModel-structure-l-constraint-report-8"
+         id = "Grobid-div-abstractModel-structure-l-constraint-report-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2115,7 +2357,8 @@ tei_div =
          "         "
        ]
     >> sch:pattern [
-         id = "Grobid-div-abstractModel-structure-p-constraint-report-9"
+         id =
+           "Grobid-div-abstractModel-structure-p-constraint-report-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2196,7 +2439,7 @@ tei_att.datable.custom.attribute.when-custom =
   ## supplies the value of a date or time in some custom standard form.
   attribute when-custom {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.datable.custom.attribute.notBefore-custom =
@@ -2204,7 +2447,7 @@ tei_att.datable.custom.attribute.notBefore-custom =
   ## specifies the earliest possible date for the event in some custom standard form.
   attribute notBefore-custom {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.datable.custom.attribute.notAfter-custom =
@@ -2212,7 +2455,7 @@ tei_att.datable.custom.attribute.notAfter-custom =
   ## specifies the latest possible date for the event in some custom standard form.
   attribute notAfter-custom {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.datable.custom.attribute.from-custom =
@@ -2220,7 +2463,7 @@ tei_att.datable.custom.attribute.from-custom =
   ## indicates the starting point of the period in some custom standard form.
   attribute from-custom {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.datable.custom.attribute.to-custom =
@@ -2228,7 +2471,7 @@ tei_att.datable.custom.attribute.to-custom =
   ## indicates the ending point of the period in some custom standard form.
   attribute to-custom {
     list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
     }
   }?
 tei_att.datable.custom.attribute.datingPoint =
@@ -2236,8 +2479,13 @@ tei_att.datable.custom.attribute.datingPoint =
   ## supplies a pointer to some location defining a named point in time with reference to which the datable item is understood to have occurred
   attribute datingPoint { xsd:anyURI }?
 tei_att.datable.custom.attribute.datingMethod =
-  
-  ## supplies a pointer to a calendar element or other means of interpreting the values of the custom dating attributes.
+  [
+    a:documentation [
+      "supplies a pointer to a "
+      ns1:code [ "<calendar>" ]
+      " element or other means of interpreting the values of the custom dating attributes."
+    ]
+  ]
   attribute datingMethod { xsd:anyURI }?
 tei_model.persNamePart = tei_surname | tei_forename | tei_roleName
 tei_model.persNamePart_alternation =
@@ -2427,7 +2675,7 @@ tei_affiliation =
     ## characterizes the element in some sense, using any convenient classification scheme or typology.
     ## Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged
     attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     empty
   }
@@ -2442,7 +2690,7 @@ tei_org =
          | tei_model.placeLike
          | tei_model.orgPart
          | tei_model.milestoneLike)*),
-     (tei_model.noteLike | tei_model.biblLike | tei_link)*,
+     (tei_model.noteLike | tei_model.biblLike | tei_link | tei_ptr)*,
      tei_model.personLike*),
     tei_att.global.attributes,
     tei_att.typed.attributes,
@@ -2452,7 +2700,7 @@ tei_org =
     ## specifies a primary role or classification for the organization.
     attribute role {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
       }
     }?,
     empty
@@ -2469,21 +2717,91 @@ tei_persona =
     ## specifies a primary role or classification for the persona.
     attribute role {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
       }
     }?,
     
     ## specifies the sex of the persona.
     attribute sex {
       list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+        xsd:token { pattern = "[^\p{C}\p{Z}]+" }+
       }
     }?,
     
     ## specifies an age group for the persona.
     attribute age {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
+    empty
+  }
+tei_objectName =
+  
+  ## (name of an object) contains a proper noun or noun phrase used to refer to an object. [13.2.4. Object Names]
+  element objectName {
+    tei_macro.phraseSeq,
+    tei_att.datable.attributes,
+    tei_att.editLike.attributes,
+    tei_att.global.attributes,
+    tei_att.personal.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_object =
+  
+  ## contains a description of a single identifiable physical object. [13.3.5. Objects]
+  element object {
+    (tei_objectIdentifier+,
+     tei_model.headLike*,
+     (tei_model.pLike* | empty),
+     (tei_model.noteLike | tei_model.biblLike | tei_link)*,
+     tei_object?),
+    tei_att.global.attributes,
+    tei_att.sortable.attributes,
+    tei_att.typed.attributes,
+    tei_att.declaring.attributes,
+    tei_att.docStatus.attributes,
+    tei_att.canonical.attributes,
+    empty
+  }
+tei_listObject =
+  
+  ## (list of objects) contains a list of descriptions, each of which provides information about an identifiable physical object. [13.3.5. Objects]
+  element listObject {
+    (tei_model.headLike*, tei_desc*, tei_model.objectLike+, empty*),
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    tei_att.declarable.attributes,
+    tei_att.sortable.attributes,
+    empty
+  }
+tei_objectIdentifier =
+  
+  ## (object identifier) groups one or more identifiers or pieces of locating information concerning a single object. [13.3.5. Objects]
+  element objectIdentifier {
+    ((tei_model.placeNamePart
+      | tei_idno
+      | tei_objectName
+      | tei_address)*)
+    >> sch:pattern [
+         id =
+           "Grobid-objectIdentifier-objectIdentifier_minimal-constraint-report-11"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:objectIdentifier"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "not(count(*) gt 0)"
+             "An objectIdentifier must contain at minimum a single piece of locating or identifying information."
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    tei_att.global.attributes,
     empty
   }
 tei_att.global.linking.attributes =
@@ -2541,7 +2859,7 @@ tei_link =
   element link {
     empty
     >> sch:pattern [
-         id = "Grobid-link-linkTargets3-constraint-assert-5"
+         id = "Grobid-link-linkTargets3-constraint-assert-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2572,6 +2890,32 @@ tei_anchor =
   element anchor {
     empty, tei_att.global.attributes, tei_att.typed.attributes, empty
   }
+tei_att.tableDecoration.attributes =
+  tei_att.tableDecoration.attribute.role,
+  tei_att.tableDecoration.attribute.rows,
+  tei_att.tableDecoration.attribute.cols
+tei_att.tableDecoration.attribute.role =
+  
+  ## indicates the kind of information held in this cell or in each cell of this row.
+  ## Suggested values include: 1] label; 2] data
+  [ a:defaultValue = "data" ]
+  attribute role {
+    
+    ## labelling or descriptive information only.
+    "label"
+    | 
+      ## data values.
+      "data"
+    | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+  }?
+tei_att.tableDecoration.attribute.rows =
+  
+  ## indicates the number of rows occupied by this cell or row.
+  [ a:defaultValue = "1" ] attribute rows { xsd:nonNegativeInteger }?
+tei_att.tableDecoration.attribute.cols =
+  
+  ## (columns) indicates the number of columns occupied by this cell or row.
+  [ a:defaultValue = "1" ] attribute cols { xsd:nonNegativeInteger }?
 tei_table =
   
   ## contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]

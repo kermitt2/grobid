@@ -198,7 +198,7 @@
 				<elementSpec ident="age" mode="delete" module="namesdates"/>
 				<elementSpec ident="alt" mode="delete" module="linking"/>
 				<elementSpec ident="altGrp" mode="delete" module="linking"/>
-				<elementSpec ident="appInfo" mode="delete" module="header"/>
+				<!--elementSpec ident="appInfo" mode="delete" module="header"/-->
 				<elementSpec ident="application" mode="delete" module="header"/>
 				<elementSpec ident="argument" mode="delete" module="textstructure"/>
 				<elementSpec ident="authority" mode="delete" module="header"/>
@@ -227,7 +227,7 @@
 				<elementSpec ident="dateline" mode="delete" module="textstructure"/>
 				<elementSpec ident="death" mode="delete" module="namesdates"/>
 				<elementSpec ident="del" mode="delete" module="core"/>
-				<elementSpec ident="desc" mode="delete" module="core"/>
+				<!--elementSpec ident="desc" mode="delete" module="core"/-->
 				<elementSpec ident="distinct" mode="delete" module="core"/>
 				<elementSpec ident="distributor" mode="delete" module="header"/>
 				<elementSpec ident="district" mode="delete" module="namesdates"/>
@@ -247,7 +247,7 @@
 				<elementSpec ident="editorialDecl" mode="delete" module="header"/>
 				<elementSpec ident="education" mode="delete" module="namesdates"/>
 				<elementSpec ident="emph" mode="delete" module="core"/>
-				<elementSpec ident="encodingDesc" mode="delete" module="header"/>
+				<!--elementSpec ident="encodingDesc" mode="delete" module="header"/-->
 				<elementSpec ident="epigraph" mode="delete" module="textstructure"/>
 				<elementSpec ident="event" mode="delete" module="namesdates"/>
 				<elementSpec ident="expan" mode="delete" module="core"/>
