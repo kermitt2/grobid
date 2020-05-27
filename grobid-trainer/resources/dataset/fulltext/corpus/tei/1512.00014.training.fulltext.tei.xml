@@ -86,7 +86,7 @@
 
 			<p>For each lightcurve, two values are calculated in order to de-<lb/>fine whether a source is a likely transient or variable: Vν , a co-<lb/>efficient of variation, and ην , the significance of the variability<lb/> <ref type="biblio">(Scheers 2011)</ref>. Vν is defined as<lb/></p>
 
-				<formula>Vν =<lb/> sν<lb/> Iν<lb/> =<lb/> 1<lb/> Iν<lb/> N<lb/> N − 1<lb/> I 2<lb/> ν − Iν<lb/> 2<lb/> ,<lb/> <label>(1)</label><lb/></formula>
+				<formula>Vν =<lb/> sν<lb/> Iν<lb/> =<lb/> 1<lb/> Iν<lb/> N<lb/> N − 1<lb/> I 2<lb/> ν − Iν<lb/> 2<lb/> ,<lb/> (<label>1</label>)<lb/></formula>
 
 			<p>where s is the unbiased sample flux standard deviation, I is the<lb/> arithmetic mean flux of the sample, and N is the number of flux<lb/> measurements obtained for a source. The significance value, ην ,<lb/> is based on reduced χ 2 statistics and indicates how well a source<lb/></p>
 
@@ -94,7 +94,7 @@
 
 			<p>lightcurve is modelled by a constant value. It is given by<lb/></p>
 
-				<formula>ην =<lb/> N<lb/> N − 1<lb/> ωI 2<lb/> ν −<lb/> ωIν<lb/> 2<lb/> ω<lb/> ,<lb/> <label>(2)</label><lb/></formula>
+				<formula>ην =<lb/> N<lb/> N − 1<lb/> ωI 2<lb/> ν −<lb/> ωIν<lb/> 2<lb/> ω<lb/> ,<lb/> (<label>2</label>)<lb/></formula>
 
 			<p>where ω is a weight which is inversely proportional to the error<lb/> of a given flux measurement (ω = 1/σ 2<lb/> Iν ). Throughout this pa-<lb/>per we define these parameters as the &apos;variability parameters&apos;. For<lb/> more detailed discussion on these parameters we refer the reader to<lb/> <ref type="biblio">Scheers (2011)</ref> and <ref type="biblio">Swinbank et al. (2015)</ref>.<lb/></p>
 
@@ -126,7 +126,7 @@
 
 			<p>It was also important to determine whether the images pro-<lb/>duced for the transient search are confusion limited. In order to<lb/> calculate an estimate of the confusion noise for the average res-<lb/>olutions presented in <ref type="table">Table 2</ref>, we followed the same approach as<lb/> <ref type="biblio">Heald et al. (2015)</ref>, using VLSS C-configuration estimates (see <ref type="biblio">Co-<lb/>hen 2004</ref>) which we extrapolate to 60 MHz using a typical spectral<lb/> index of −0.7. We also alter the formula to account for the non-<lb/>circular beams:<lb/></p>
 
-			<formula>σconf,VLSS = 29<lb/> θ1 × θ2<lb/> 1<lb/> 0.77<lb/> 60 MHz<lb/> 74 MHz<lb/> −0.7<lb/> µJy beam −1 ,<lb/> <label>(3)</label><lb/></formula>
+			<formula>σconf,VLSS = 29<lb/> θ1 × θ2<lb/> 1<lb/> 0.77<lb/> 60 MHz<lb/> 74 MHz<lb/> −0.7<lb/> µJy beam −1 ,<lb/> (<label>3</label>)<lb/></formula>
 
 			<p>where θ1 is the synthesized beam size major axis and θ2 is<lb/> the minor axis. For the five time-scales used in the transient<lb/> search shown in <ref type="table">Table 2</ref>, beginning with 30 sec, we calculate the<lb/> confusion noise estimates to be 113, 107, 128, 111 and 57 mJy<lb/> beam −1 respectively. Thus, due to our simple reduction strategy,<lb/> our images, at best, are approximately 4× the confusion noise<lb/> level and hence would not affect our transient search.<lb/></p>
 
@@ -306,11 +306,11 @@
 
 			<p>If we consider the incoherent emission process, we can place a limit<lb/> on the maximum distance of the source, by using the known char-<lb/>acteristics of the transient along with assuming that its brightness<lb/> temperature (TB) is at the maximum TB = 10 12 K limit, TBmax, for<lb/> (un-beamed) synchrotron radiation <ref type="biblio">(Kellermann &amp; Pauliny-Toth<lb/> 1969)</ref>. To do this we make use of the Rayleigh-Jeans law, that is<lb/></p>
 
-				<formula>TBmax =<lb/> ∆Lν<lb/> 8πkν 2 ∆t 2 ,<lb/> <label>(4)</label><lb/></formula>
+				<formula>TBmax =<lb/> ∆Lν<lb/> 8πkν 2 ∆t 2 ,<lb/> (<label>4</label>)<lb/></formula>
 
 			<p>where ∆Lν is the change of the luminosity in time-scale ∆t, k<lb/> is the Boltzmann constant and ν is the observing frequency. The<lb/> luminosity at frequency ν is defined as Lν = 4πd 2 S, where d<lb/> is the distance and S is flux density. Using this and re-arranging<lb/> Equation <ref type="formula">4</ref> we obtain an expression for the distance as follows:<lb/></p>
 
-				<formula>d 2 =<lb/> 2kν 2 ∆t 2 TBmax<lb/> ∆S<lb/> .<lb/> <label>(5)</label><lb/></formula>
+				<formula>d 2 =<lb/> 2kν 2 ∆t 2 TBmax<lb/> ∆S<lb/> .<lb/> (<label>5</label>)<lb/></formula>
 
 			<p>For the flux density change ∆S = 20 Jy in time ∆t = 10 min, we<lb/> obtain a maximum distance of 13.7 pc. This points to the possibility<lb/> of the transient being a nearby flare star.<lb/></p>
 
@@ -327,13 +327,13 @@
 
 			<p><ref type="biblio">Hassall et al. (2013)</ref> showed that when the scattering of a<lb/> highly-dispersed burst is significant, imaging surveys for FRBs can<lb/> be competitive with pulsar-like, high-time-resolution surveys, if not<lb/> more sensitive, in detecting such events. To investigate this possi-<lb/>bility, we consider how the scattering time and fluence of the four<lb/> FRB events reported in <ref type="biblio">Thornton et al. (2013) at 1.3 GHz, compare<lb/></ref> to this event at 60 MHz. Firstly, to achieve estimates for the scat-<lb/>tering time of the Thornton events at 60 MHz, we use the standard<lb/> relation of<lb/></p> 
 
-			<formula>τsc(ν) ∝ ν γ ,<lb/> <label>(6)</label><lb/></formula> 
+			<formula>τsc(ν) ∝ ν γ ,<lb/> (<label>6</label>)<lb/></formula>
 
 			<table>Table 4. The observed width of the four bursts reported in <ref type="biblio">Thornton et al.<lb/> (2013)</ref> along with the estimated width of the event at 60 MHz. To calculate<lb/> the estimated width we use the relation τsc(ν) ∝ ν γ where γ = −4.<lb/> Dispersion effects are ignored and we assume a scenario of the reported<lb/> widths being dominated by scattering. Of the four reported bursts, FRB<lb/> 110220 was the sole event to show any evidence of scattering.<lb/> Event<lb/> Observed width<lb/> Estimated width<lb/> at 1.3 GHz (ms)<lb/> at 60 MHz (s)<lb/> FRB 110220<lb/> 5.6<lb/> 1234<lb/> FRB 110627<lb/> &lt; 1.4<lb/> &lt; 309<lb/> FRB 110703<lb/> &lt; 4.3<lb/> &lt; 948<lb/> FRB 120127<lb/> &lt; 1.1<lb/> &lt; 242<lb/></table>
 
 			<p>where γ = −4. For the purposes of this scenario we ignore any<lb/> dispersion effects and assume that the recorded burst duration is<lb/> dominated by scattering. This assumption is quite reasonable when<lb/> considering the value of any dispersion induced smearing of the<lb/> signal, ∆tD, which can be calculated per MHz of bandwidth by<lb/></p>
 
-			<formula>∆tD = 8.3 × 10 3 DM ν −3<lb/> MHz ,<lb/> <label>(7)</label><lb/></formula>
+			<formula>∆tD = 8.3 × 10 3 DM ν −3<lb/> MHz ,<lb/> (<label>7</label>)<lb/></formula>
 
 			<p>where DM is the dispersion measure and νMHz is the observing fre-<lb/>quency in MHz. With a bandwidth of 183 kHz and an observing<lb/> frequency of 60 MHz, ∆tD = 7 × 10 −3 DM s. Thus, even with a<lb/> DM value of 1000 pc cm −3 , ∆tD would only cause 7 s of smearing.<lb/> <ref type="table">Table 4</ref> shows that the predicted, scatter-dominated width of the<lb/> events at 60 MHz range from 242–1234 s (taking the upper limit<lb/> values), with the highest value belonging to FRB 110220. We see<lb/> that the maximum duration of our transient, ILT J225347+862146,<lb/> of &lt; 660 s is quite consistent with that expected from an FRB at 60<lb/> MHz. In reality, only FRB 110220 showed any evidence of scatter-<lb/>ing.<lb/></p> 
 
@@ -351,7 +351,7 @@
 
 			<p>No transients were found at four of the five time-scales searched,<lb/> with one detection in the other. This allows us to place upper limits<lb/> on the rate of low-frequency transient events on the whole sky at<lb/> these time-scales. To calculate the upper limits of the surface den-<lb/>sity of transients, Poisson statistics are used, specifically:<lb/> </p>
 
-			<formula>P (n) = e −ρA<lb/> <label>(8)</label><lb/></formula>
+			<formula>P (n) = e −ρA<lb/> (<label>8</label>)<lb/></formula>
 
 			<p>where ρ is the surface density of sources per square degree and A<lb/> represents the equivalent solid angle obtained by multiplying the<lb/> area of the sky surveyed, Ω, by the number of epochs N − 1. In<lb/> using this approach we are also assuming isotropic probability of a<lb/> transient detection, i.e. events are likely to be extragalactic in ori-<lb/>gin. We can define P (n) = 0.05 at the Poisson 2σ confidence level,<lb/> and by rearranging Equation <ref type="formula">8</ref> we can obtain the respective value<lb/> of ρ for each time-scale, recalling that the area of sky searched in<lb/> each case was 175 deg 2 . For no detections P (0) = 0.05 is used,<lb/> whereas for the 11-minute time-scale this becomes P (1) = 0.05<lb/> because of our single detection. These values can be found in <ref type="table">Ta-<lb/>ble 5</ref>.<lb/></p> 
 
