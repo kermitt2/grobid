@@ -14,7 +14,7 @@
 
 			<head>Patient characteristics<lb/></head>
 
-			<p>A summary of patient characteristics is found in <ref type="table">Table 1</ref>.<lb/> HBeAg-negative patients had significantly lower levels of<lb/> viral markers than HBeAg-positive patients except for a<lb/> higher ratio of S-RNA to cccDNA.<lb/></p>
+			<p>A summary of patient characteristics is found in Table <ref type="table">1</ref>.<lb/> HBeAg-negative patients had significantly lower levels of<lb/> viral markers than HBeAg-positive patients except for a<lb/> higher ratio of S-RNA to cccDNA.<lb/></p>
 
 			<head>Reduction of viral replication prior to loss of HBeAg<lb/></head>
 
@@ -68,7 +68,7 @@
 
 			<head>Conclusions<lb/> </head>
 
-			<p><ref type="figure">Figure 4</ref> summarises the main findings in this study,<lb/> pointing out three novel observations for HBeAg-negative<lb/> patients:<lb/> </p>
+			<p>Figure <ref type="figure">4</ref> summarises the main findings in this study,<lb/> pointing out three novel observations for HBeAg-negative<lb/> patients:<lb/> </p>
 
 			<item>i. A much lower HBV DNA/ihDNA ratio shows that<lb/> mechanisms downstream of reverse transcription or<lb/> downstream of secretion of virions strongly<lb/> influence HBV DNA levels in serum.<lb/> </item>
 
@@ -92,7 +92,7 @@
 
 			<p>Portions (approximately 5 mg) of liver biopsies were<lb/> investigated. The liver biopsies were stored in –70 °C<lb/> until analysed. After homogenization of the liver tissue<lb/> in a MagNA Lyser instrument (Roche Diagnostics), ex-<lb/>traction of nucleic acids was performed in the MagNA<lb/> Pure (Roche) robot according to the manufacturer&apos;s<lb/> protocol, using the DNA II Tissue kit.<lb/></p>
 
-			<p>Real-time PCR was performed using primers specific<lb/> for cccDNA as previously described <ref type="biblio">[3]</ref>. These primers<lb/> amplify a segment spanning the gaps in the plus and<lb/> minus strands of the relaxed circular form of the genome<lb/> that is present in viral particles. Levels of cccDNA were<lb/> normalised to the concentration of human betaglobin<lb/> DNA. Total intrahepatic HBV DNA was analysed by the<lb/> same primers as for pgRNA but without the reverse tran-<lb/>scription step. Part of the extracted NAs was treated with<lb/> DNase (Ambion Inc.), and S-RNA and pgRNA transcripts<lb/> were quantified by real-time PCR after a reverse transcrip-<lb/>tion step (details of the primers are shown in <ref type="table">Table 2</ref>).<lb/> Due to the overlap of S and pgRNA transcripts, the S<lb/> primers and probe also detects pgRNA. Normalization of<lb/> RNA levels was made using 18S RNA as reference.<lb/></p>
+			<p>Real-time PCR was performed using primers specific<lb/> for cccDNA as previously described <ref type="biblio">[3]</ref>. These primers<lb/> amplify a segment spanning the gaps in the plus and<lb/> minus strands of the relaxed circular form of the genome<lb/> that is present in viral particles. Levels of cccDNA were<lb/> normalised to the concentration of human betaglobin<lb/> DNA. Total intrahepatic HBV DNA was analysed by the<lb/> same primers as for pgRNA but without the reverse tran-<lb/>scription step. Part of the extracted NAs was treated with<lb/> DNase (Ambion Inc.), and S-RNA and pgRNA transcripts<lb/> were quantified by real-time PCR after a reverse transcrip-<lb/>tion step (details of the primers are shown in Table <ref type="table">2</ref>).<lb/> Due to the overlap of S and pgRNA transcripts, the S<lb/> primers and probe also detects pgRNA. Normalization of<lb/> RNA levels was made using 18S RNA as reference.<lb/></p>
 
 			<head>Statistical analysis<lb/></head>
 
