@@ -7,8 +7,6 @@ and grobid-core-`<current version>`.jar
 A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
 The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
 
-An example project for using GROBID in an **ant** project is available [here](https://github.com/kermitt2/grobid-test-ant).
-
 ## Using maven
 
 GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies/maven/grobid) repository. 
@@ -33,20 +31,20 @@ Here an example of grobid-core dependency:
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.5.6</version>
+	    <version>0.6.0</version>
 	</dependency>
 ```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.5.6` by the valid `<current version>`):
+for instance as follow (if necessary replace `0.6.0` by the valid `<current version>`):
 
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.5.6</version>
+	    <version>0.6.0</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.5.6.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.6.0.jar</systemPath>
 	</dependency>
 ```
 
@@ -64,8 +62,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.5.6'
-    compile 'org.grobid:grobid-trainer:0.5.6'
+    compile 'org.grobid:grobid-core:0.6.0'
+    compile 'org.grobid:grobid-trainer:0.6.0'
 ```
 
 
@@ -137,32 +135,6 @@ The paths to __grobid-home__ must be changed in the project property file:  `gro
 Then you can test the toy project:
 ```bash
 > mvn test
-```
-
-## ant Skeleton project example
-
-If you are using __ant__ to build your project, the following repo gives a toy example ant project integrating Grobid in a third party Java project: [grobid-test-ant](https://github.com/kermitt2/grobid-test-ant). 
-
-Create the grobid-core jar library, under the main project directory `grobid/`:
-```bash
-> ./gradlew clean install 
-```
-
-Copy the grobid-core jar library (not the onejar, the standard grobid-core jar) under grobid-test-ant/lib. 
-```bash
-> cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_test>/grobid-test-ant/lib
-```
-The skeleton project contains the other required jar. 
-
-The paths to __grobid-home__ must be changed in the project property file:  `grobid-test-ant/grobid-example.properties` according to your installation, for instance: 
-
-		grobid_test_ant.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_test_ant.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
-
-Then build and test the toy project:
-```bash
-> ant jar
-> ant test
 ```
 
 ## Javadoc
