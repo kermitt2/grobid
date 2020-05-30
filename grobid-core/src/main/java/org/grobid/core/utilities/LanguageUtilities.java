@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Class for using language guessers (singleton).
- * 
+ *
  * @author Patrice Lopez
  * @author Vyacheslav Zholudev
  */
@@ -16,30 +16,23 @@ public class LanguageUtilities {
 	public static final Logger LOGGER = LoggerFactory
 			.getLogger(LanguageUtilities.class);
 
-	private static LanguageUtilities instance = null;
+	private static volatile LanguageUtilities instance = null;
 
 	private boolean useLanguageId = false;
 	private LanguageDetectorFactory ldf = null;
 
-	public static/* synchronized */LanguageUtilities getInstance() {
+	public static LanguageUtilities getInstance() {
 		if (instance == null) {
-			getNewInstance();
+		    synchronized (LanguageUtilities.class) {
+                if (instance == null) {
+                    LOGGER.debug("synchronized getNewInstance");
+                    instance = new LanguageUtilities();
+                }
+            }
 		}
 		return instance;
 	}
 
-	/**
-	 * Return a new instance.
-	 */
-	protected static synchronized void getNewInstance() {
-		// GrobidProperties.getInstance();
-		LOGGER.debug("synchronized getNewInstance");
-		instance = new LanguageUtilities();
-	}
-
-	/**
-	 * Hidden constructor
-	 */
 	private LanguageUtilities() {
 		useLanguageId = GrobidProperties.isUseLanguageId();
 		if (useLanguageId) {
@@ -69,7 +62,7 @@ public class LanguageUtilities {
 	/**
 	 * Basic run for language identification, return the language code and
 	 * confidence score separated by a semicolon
-	 * 
+	 *
 	 * @param text
 	 *            text to classify
 	 * @return language ids concatenated with ;
@@ -81,21 +74,21 @@ public class LanguageUtilities {
         try {
             return ldf.getInstance().detect(text);
         } catch (Exception e) {
-            LOGGER.warn("Cannot detect language because of: " + e.getClass().getName() + ": " + e.getMessage());
+            LOGGER.warn("Cannot detect language. ", e);
             return null;
         }
     }
 
 	/**
-	 * Less basic run for language identification, where a maxumum length of text is used to 
-	 * identify the language. The goal is to avoid wasting resources using a too long piece of 
-	 * text, when normally only a small chunk is enough for a safe language prediction.  
+	 * Less basic run for language identification, where a maxumum length of text is used to
+	 * identify the language. The goal is to avoid wasting resources using a too long piece of
+	 * text, when normally only a small chunk is enough for a safe language prediction.
 	 * Return a Language object consisting of the language code and a confidence score.
-	 * 
+	 *
 	 * @param text
 	 *            text to classify
-	 * @param maxLength 
-	 *   		  maximum length of text to be used to identify the language, expressed in characters 	
+	 * @param maxLength
+	 *   		  maximum length of text to be used to identify the language, expressed in characters
 	 * @return language Language object consisting of the language code and a confidence score
 	 */
 	public Language runLanguageId(String text, int maxLength) {
@@ -105,10 +98,10 @@ public class LanguageUtilities {
         try {
 			int max = text.length();
 			if (maxLength < max)
-				max = maxLength; 
+				max = maxLength;
             return ldf.getInstance().detect(text.substring(0, max));
         } catch (Exception e) {
-            LOGGER.warn("Cannot detect language because of: " + e.getClass().getName() + ": " + e.getMessage());
+            LOGGER.warn("Cannot detect language. ", e);
             return null;
         }
     }
