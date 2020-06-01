@@ -1,13 +1,12 @@
 package org.grobid.core.data;
 
 /**
- * Created by zholudev on 07/01/16.
- * Representing context of a reference
+ * Representing the context of a reference (to biblio/formula/table/figure)
  */
-public class BibDataSetContext {
+public class DataSetContext {
     public String context;
     /*
-        RgPath of citation reference within @context
+        RgPath of citation/formula/table/figure reference within @context
      */
 
     private String documentCoords;

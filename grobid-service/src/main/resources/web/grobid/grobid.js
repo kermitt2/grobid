@@ -715,6 +715,30 @@ var grobid = (function($) {
 				}
 			});
 		}
+
+        // formulas
+        var formulas = json.formulas;
+        var mapFormulas = {};
+        if (formulas) {
+            for(var n in formulas) {
+                var annotation = formulas[n];
+                var theId = annotation.id;
+                var pos = annotation.pos;
+                if (pos)
+                    mapFormulas[theId] = annotation;
+                //for (var m in pos) {
+                pos.forEach(function(thePos, m) {
+                    //var thePos = pos[m];
+                    // get page information for the annotation
+                    var pageNumber = thePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateFormula(true, theId, thePos, null, page_height, page_width, null);
+                });
+            }
+        }
 	}
 
 	function annotateBib(bib, theId, thePos, url, page_height, page_width, theBibPos) {
@@ -752,14 +776,16 @@ var grobid = (function($) {
 			element.setAttribute("id", theId);
 		} else {
 			// this is a reference marker
-			// we draw a box
-			element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
-			// the link here goes to the bibliographical reference
+			// we draw a box (blue if associated to an id, gray otherwise)			
 			if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
+                // the link here goes to the bibliographical reference
 				element.onclick = function() {
 					goToByScroll(theId);
 				};
-			}
+			} else
+                element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
 			// we need the area where the actual target bibliographical reference is
 			if (theBibPos) {
 				element.setAttribute("data-toggle", "popover");
@@ -786,6 +812,73 @@ var grobid = (function($) {
 		}
 		pageDiv.append(element);
 	}
+
+    function annotateFormula(formula, theId, thePos, url, page_height, page_width, theFormulaPos) {
+        var page = thePos.p;
+        var pageDiv = $('#page-'+page);
+        var canvas = pageDiv.children('canvas').eq(0);;
+
+        var canvasHeight = canvas.height();
+        var canvasWidth = canvas.width();
+        var scale_x = canvasHeight / page_height;
+        var scale_y = canvasWidth / page_width;
+
+        var x = thePos.x * scale_x;
+        var y = thePos.y * scale_y;
+        var width = thePos.w * scale_x;
+        var height = thePos.h * scale_y;
+
+//console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
+//console.log('location: ' + canvasHeight + " " + canvasWidth);
+//console.log('location: ' + page_height + " " + page_width);
+        //make clickable the area
+        var element = document.createElement("a");
+        var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
+
+        if (formula) {
+            // this is a bibliographical reference
+            // we draw a line
+            element.setAttribute("style", attributes + "border:1px; border-style:dotted; border-color: red;");
+            element.setAttribute("title", "formula");
+            element.setAttribute("id", theId);
+        } else {
+            // this is a formula reference marker    
+            // we draw a box (red if associated to an id, gray otherwise)
+            if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: red;");
+                // the link here goes to the referenced formula
+                element.onclick = function() {
+                    goToByScroll(theId);
+                };
+            } else
+                 element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
+            // we need the area where the actual target formula is
+            if (theFormulaPos) {
+                element.setAttribute("data-toggle", "popover");
+                element.setAttribute("data-placement", "top");
+                element.setAttribute("data-content", "content");
+                element.setAttribute("data-trigger", "hover");
+                var newWidth = theBibPos.w * scale_x;
+                var newHeight = theBibPos.h * scale_y;
+                var newImg = getImagePortion(theFormulaPos.p, newWidth, newHeight, theFormulaPos.x * scale_x, theFormulaPos.y * scale_y);
+                $(element).popover({
+                    content:  function () {
+                        return '<img src=\"'+ newImg + '\" style=\"width:100%\" />';
+                        //return '<img src=\"'+ newImg + '\" />';
+                    },
+                    html: true,
+                    container: 'body'
+                    //width: newWidth + 'px',
+                    //height: newHeight + 'px'
+//                  container: canvas,
+                    //width: '600px',
+                    //height: '100px'
+                });
+            }
+        }
+        pageDiv.append(element);
+    }
 
 	/* jquery-based movement to an anchor, without modifying the displayed url and a bit smoother */
 	function goToByScroll(id) {

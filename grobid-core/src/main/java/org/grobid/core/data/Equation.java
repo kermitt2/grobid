@@ -50,7 +50,7 @@ public class Equation {
 
 		Element formulaElement = XmlBuilderUtils.teiElement("formula");
 		if (id != null) {
-			XmlBuilderUtils.addXmlId(formulaElement, "formula_" + id);
+			XmlBuilderUtils.addXmlId(formulaElement, getTeiId());
 		}
 
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("formula"))) {
@@ -150,6 +150,10 @@ public class Equation {
         return id;
     }
 
+    public String getTeiId() {
+        return "formula_" + id;
+    }
+
     /*public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
         this.blockPtrs = blockPtrs;
     }
@@ -181,5 +185,16 @@ public class Equation {
     		layoutTokens = new ArrayList<LayoutToken>();
     	for(LayoutToken token : tokens)
 	    	layoutTokens.add(token);
+    }
+
+    public List<BoundingBox> getCoordinates() {
+        if (layoutTokens == null || layoutTokens.size() == 0) 
+            return null;
+        else {
+            BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
+            List<BoundingBox> result = new ArrayList<BoundingBox>();
+            result.add(oneBox);
+            return result;
+        }
     }
 }
