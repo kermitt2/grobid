@@ -683,21 +683,25 @@ var grobid = (function($) {
 			refMarkers.forEach(function(annotation, n) {
 				//var annotation = refMarkers[n];
 				var theId = annotation.id;
-				if (!theId)
-                    return;
+				//if (!theId)
+                //    return;
 				// we take the first and last positions
 				var targetBib = mapRefBibs[theId];
 				if (targetBib) {
 					var theBibPos = {};
 					var pos = targetBib.pos;
-					//if (pos && (pos.length > 0)) {
-					var theFirstPos = pos[0];
-					var theLastPos = pos[pos.length-1];
-					theBibPos.p = theFirstPos.p;
-					theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
-					theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-					theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
-					theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					if (pos.length == 1) 
+						theBibPos = pos[0];
+					else {
+						//if (pos && (pos.length > 0)) {
+						var theFirstPos = pos[0];
+						var theLastPos = pos[pos.length-1];
+						theBibPos.p = theFirstPos.p;
+						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
+						theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
+						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					}
 					var pageNumber = theBibPos.p;
 					if (pageInfo[pageNumber-1]) {
 						page_height = pageInfo[pageNumber-1].page_height;
@@ -739,6 +743,49 @@ var grobid = (function($) {
                 });
             }
         }
+
+        var formulaMarkers = json.formulaMarkers;
+		if (formulaMarkers) {
+			formulaMarkers.forEach(function(annotation, n) {
+				var theId = annotation.id;
+				//if (!theId)
+                //    return;
+				// we take the first and last positions
+				var targetFormula = null;
+				if (theId)
+					targetFormula = mapFormulas[theId];
+				if (targetFormula) {
+					var theFormulaPos = {};
+					var pos = targetFormula.pos;
+					if (pos.length == 1) 
+						theFormulaPos = pos[0]
+					else {
+						//if (pos && (pos.length > 0)) {
+						var theFirstPos = pos[0];
+						var theLastPos = pos[pos.length-1];
+						theFormulaPos.p = theFirstPos.p;
+						theFormulaPos.w = Math.max(theFirstPos.w, theLastPos.w);
+						theFormulaPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+						theFormulaPos.x = Math.min(theFirstPos.x, theLastPos.x);
+						theFormulaPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					}
+					var pageNumber = theFormulaPos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateFormula(false, theId, annotation, null, page_height, page_width, theFormulaPos);
+					//}
+				} else {
+					var pageNumber = annotation.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateFormula(false, theId, annotation, null, page_height, page_width, null);
+				}
+			});
+		}
 	}
 
 	function annotateBib(bib, theId, thePos, url, page_height, page_width, theBibPos) {
@@ -836,7 +883,7 @@ var grobid = (function($) {
         var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
 
         if (formula) {
-            // this is a bibliographical reference
+            // this is a formula
             // we draw a line
             element.setAttribute("style", attributes + "border:1px; border-style:dotted; border-color: red;");
             element.setAttribute("title", "formula");
@@ -859,8 +906,8 @@ var grobid = (function($) {
                 element.setAttribute("data-placement", "top");
                 element.setAttribute("data-content", "content");
                 element.setAttribute("data-trigger", "hover");
-                var newWidth = theBibPos.w * scale_x;
-                var newHeight = theBibPos.h * scale_y;
+                var newWidth = theFormulaPos.w * scale_x;
+                var newHeight = theFormulaPos.h * scale_y;
                 var newImg = getImagePortion(theFormulaPos.p, newWidth, newHeight, theFormulaPos.x * scale_x, theFormulaPos.y * scale_y);
                 $(element).popover({
                     content:  function () {

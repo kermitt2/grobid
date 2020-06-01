@@ -1638,12 +1638,21 @@ public class TEIFormatter {
         return nodes;
     }
 
+    private static Pattern patternNumber = Pattern.compile("\\d+");
+
     public List<Node> markReferencesEquationTEI(String text, 
                                             List<LayoutToken> refTokens,
                                             List<Equation> equations,
                                             boolean generateCoordinates) {
         if (text == null || text.trim().isEmpty()) {
             return null;
+        }
+
+        text = TextUtilities.cleanField(text, false);
+        String textNumber = null;
+        Matcher m = patternNumber.matcher(text);
+        if (m.find()) {
+            textNumber = m.group();
         }
 
         List<Node> nodes = new ArrayList<>();
@@ -1654,11 +1663,19 @@ public class TEIFormatter {
             for (Equation equation : equations) {
                 if ((equation.getLabel() != null) && (equation.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(equation.getLabel(), false);
-                    if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                    Matcher m2 = patternNumber.matcher(label);
+                    String labelNumber = null;
+                    if (m2.find()) {
+                        labelNumber = m2.group();
+                    }
+                    //if ((label.length() > 0) &&
+                    //        (textLow.contains(label.toLowerCase()))) {
+                    if ( (labelNumber != null && textNumber != null && labelNumber.length()>0 &&
+                        labelNumber.equals(textNumber)) || 
+                        ((label.length() > 0) && (textLow.equals(label.toLowerCase()))) ) {
                         bestFormula = equation.getId();
                         break;
-                    }
+                    } 
                 }
             }
         }
