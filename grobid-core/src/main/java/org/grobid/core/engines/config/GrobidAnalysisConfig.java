@@ -225,6 +225,10 @@ public class GrobidAnalysisConfig {
         return generateTeiCoordinates;
     }
 
+    public boolean isGenerateTeiCoordinates() {
+        return getGenerateTeiCoordinates() != null && getGenerateTeiCoordinates().size()>0;
+    }
+
     public boolean isGenerateTeiCoordinates(String type) {
         return getGenerateTeiCoordinates() != null && getGenerateTeiCoordinates().contains(type);
     }

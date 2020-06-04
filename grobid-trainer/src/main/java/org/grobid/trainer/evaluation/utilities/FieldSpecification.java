@@ -98,6 +98,7 @@ public class FieldSpecification {
 			add("//publicationStmt/date[1]/@when");
 		dateField.nlmPath.
 			add("/article/front/article-meta/pub-date[@pub-type=\"pmc-release\"][1]//text()");
+		//in bioRxiv: <pub-date pub-type="epub"><year>2014</year></pub-date>
 		//headerFields.add(dateField);
 		//headerLabels.add("date");
 
@@ -162,10 +163,10 @@ public class FieldSpecification {
 		FieldSpecification authorField2 = new FieldSpecification();
 		authorField2.fieldName = "authors";
 		authorField2.isTextual = true;
-		authorField2.grobidPath.
-			add("analytic/author/persName/surname/text()");
-		authorField2.nlmPath.
-			add("*//name/surname/text()");
+		authorField2.grobidPath.add("analytic/author/persName/surname/text()");
+		authorField2.nlmPath.add("*//surname[parent::name|parent::string-name]/text()");	
+		//authorField2.nlmPath.add("*//name/surname/text()");
+		//authorField2.nlmPath.add("*//string-name/surname/text()");
 		citationsFields.add(authorField2);
 		citationsLabels.add("authors");
 
@@ -173,10 +174,10 @@ public class FieldSpecification {
 		FieldSpecification firstAuthorField2 = new FieldSpecification();
 		firstAuthorField2.fieldName = "first_author";
 		firstAuthorField2.isTextual = true;
-		firstAuthorField2.grobidPath.
-			add("analytic/author[1]/persName/surname/text()");
-		firstAuthorField2.nlmPath.
-			add("*//name[1]/surname/text()");
+		firstAuthorField2.grobidPath.add("analytic/author[1]/persName/surname/text()");
+		//firstAuthorField2.nlmPath.add("*//surname[parent::name|parent::string-name][1]/text()");
+		firstAuthorField2.nlmPath.add("*//name[1]/surname/text()");
+		firstAuthorField2.nlmPath.add("*//string-name[1]/surname/text()");
 		citationsFields.add(firstAuthorField2);
 		citationsLabels.add("first_author");
 

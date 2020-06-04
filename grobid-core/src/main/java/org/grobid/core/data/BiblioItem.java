@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
 public class BiblioItem {
     protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);
 
-    LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
+    private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
     private AuthorEmailAssigner authorEmailAssigner = new ClassicAuthorEmailAssigner();
     private EmailSanitizer emailSanitizer = new EmailSanitizer();
     private String teiId;

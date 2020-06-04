@@ -7,11 +7,18 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-	
+
 import java.io.*;
 import java.util.*;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import org.apache.commons.io.FileUtils;
 
@@ -28,9 +35,8 @@ import scala.Option;
 
 /**
  * Evaluation against native XML documents. This is an end-to-end evaluation involving
- * complete document processing, and therefore a complete set of CRF models.
+ * complete document processing, and therefore a complete set of sequence labelling models.
  *
- * @author Patrice Lopez
  */
 public class EndToEndEvaluation {
     private static String xmlInputPath = null;
@@ -61,6 +67,52 @@ public class EndToEndEvaluation {
 		
 	// the type of evaluation XML data - NLM or TEI (obtained via Pub2TEI)
 	private String inputType = null;
+
+	private class GrobidEndToEndTask implements Callable<Boolean> { 
+        private File pdfFile;
+
+        public GrobidEndToEndTask(File pdfFile) { 
+            this.pdfFile = pdfFile;
+        }
+
+        @Override
+        public Boolean call() { 
+        	boolean success = true;
+        	Engine engine = null;
+            try {
+            	engine = Engine.getEngine(true);
+				GrobidAnalysisConfig config =
+                    GrobidAnalysisConfig.builder()
+                            .consolidateHeader(1)
+                            .consolidateCitations(0)
+                            .withPreprocessImages(true)
+                            .build();
+				String tei = engine.fullTextToTEI(this.pdfFile, config);
+				// write the result in the same directory
+				File resultTEI = new File(pdfFile.getParent() + File.separator
+					+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
+				FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
+
+            } catch (NoSuchElementException nseExp) {
+            	System.out.println("Could not get an engine from the pool within configured time.");
+            	System.out.println("Could not process: " + this.pdfFile.getPath());
+        	} catch(IOException e) {
+                System.out.println("DeLFT model labelling failed for file " + this.pdfFile.getPath());
+                e.printStackTrace();
+            } catch (Exception e) {
+				System.out.println("Error when processing: " + this.pdfFile.getPath());
+				e.printStackTrace();
+				success = false;
+			} finally {
+            	if (engine != null) {
+                	GrobidPoolingFactory.returnEngine(engine);
+            	}
+        	}
+
+            return new Boolean(success);
+        } 
+    } 
+
 
 	public EndToEndEvaluation(String path, String inType) {
 		this.xmlInputPath = path;	
@@ -122,6 +174,10 @@ public class EndToEndEvaluation {
 			int n = 0;
 			long start = System.currentTimeMillis();
 			int fails = 0;
+
+			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
+			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -140,9 +196,11 @@ public class EndToEndEvaluation {
 				}
 
 	            final File pdfFile = refFiles2[0];
-				
+				Future<Boolean> future = executor.submit(new GrobidEndToEndTask(pdfFile));
+	            results.add(future);
+	            
 				// run Grobid full text and write the TEI result in the directory
-				try {
+				/*try {
 					System.out.println(n + " - " + pdfFile.getPath());
 					GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
@@ -160,15 +218,32 @@ public class EndToEndEvaluation {
 					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
 					fails++;
-				}
+				}*/
+
 				n++;
 			}
 
-			System.out.println("GROBID failed on " + fails + " PDF");
+			//executor.awaitTermination(5, TimeUnit.SECONDS);
+
+			for(Future<Boolean> result : results) { 
+				try {
+					Boolean success = result.get();
+					if (!success)
+						fails++;
+				} catch (InterruptedException e) {
+                	e.printStackTrace();
+            	} catch (ExecutionException e) {
+                	e.printStackTrace();
+            	}
+			}
+
+			executor.shutdown();
+
+			System.out.println("\n-------------> GROBID failed on " + fails + " PDF\n");
 			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
 
 			System.out.println(n + " PDF files processed in " + 
-				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file\n");
 		}
 		
 		// evaluation of the run
@@ -329,12 +404,24 @@ public class EndToEndEvaluation {
             });
 
 			if (refFiles2 == null || refFiles2.length == 0) {
-            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-			    continue;
+				// in the case of a bioRxiv NLM/JATS file, we have an .xml extension
+				refFiles2 = dir.listFiles(new FilenameFilter() {
+	                public boolean accept(File dir, String name) {
+	                    return name.endsWith(".xml") && !name.endsWith(".tei.xml");
+	                }
+	            });
+
+				if (refFiles2 == null || refFiles2.length == 0) {
+	            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
+				    continue;
+				}
 			}
 
 			if (refFiles2.length != 1) {
             	System.out.println("warning: more than one evaluation (gold) XML data files found under " + dir.getPath());
+            	for(int m=0; m<refFiles2.length;m++) {
+            		System.out.println(refFiles2[m].getPath());
+            	}
 			    System.out.println("processing only the first one...");
 			}
 			
@@ -373,24 +460,6 @@ public class EndToEndEvaluation {
 					}
 
 					File teiFile = refFiles3[0];
-				
-					refFiles3 = dir.listFiles(new FilenameFilter() {
-		                public boolean accept(File dir, String name) {
-		                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
-		                }
-		            });
-
-		            if (refFiles3 == null) {
-		            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-					    continue;
-					}
-
-					if (refFiles3.length != 1) {
-		            	System.out.println("warning: more than one evaluation (gold) XML data file found under " + 
-		            		dir.getPath());
-					    System.out.println("processing only the first one...");
-					}
-
 			        Document tei = docBuilder.parse(teiFile);
 
 					XPathFactory xpf = XPathFactory.newInstance();
@@ -1155,7 +1224,15 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								for(String res : goldResults)
 									goldResult += " " + res;
 								// basic normalisation
-								goldResult = basicNormalization(goldResult);								
+								goldResult = basicNormalization(goldResult);	
+								if (fieldName.equals("abstract")) {
+									// some additional cleaning for abstract is required, because PMC and bioRxiv
+									// tends to put the useless abstract title "Abstract" together with the abstract
+									if (goldResult.toLowerCase().startsWith("abstract") || goldResult.toLowerCase().startsWith("summary")) {
+										goldResult = goldResult.replaceAll("(?i)^(abstract)|(summary)(\\n)?( )?", "");
+									}
+								}	
+								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
 								nbGoldResults = 1;

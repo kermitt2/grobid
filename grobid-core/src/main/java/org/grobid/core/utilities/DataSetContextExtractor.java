@@ -7,7 +7,7 @@ import net.sf.saxon.om.Item;
 import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.trans.XPathException;
 import org.apache.commons.io.IOUtils;
-import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.DataSetContext;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,22 +19,30 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 /**
  * Extracting citation callout
  */
-public class BibDataSetContextExtractor {
+public class DataSetContextExtractor {
     public static final Pattern REF_PATTERN = Pattern.compile("<ref>(.*)</ref>", Pattern.DOTALL);
     public static final int CUT_DEFAULT_LENGTH = 50;
 
     static {
-        InputStream is = BibDataSetContextExtractor.class.getResourceAsStream("/xq/get-citation-context-from-tei.xq");
+        InputStream is = DataSetContextExtractor.class.getResourceAsStream("/xq/get-citation-context-from-tei.xq");
         try {
-            CONTEXT_EXTRACTION_XQ = IOUtils.toString(is, UTF_8);
+            CONTEXT_EXTRACTION_BIB_XQ = IOUtils.toString(is, UTF_8);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         IOUtils.closeQuietly(is);
 
+        is = DataSetContextExtractor.class.getResourceAsStream("/xq/get-formula-context-from-tei.xq");
+        try {
+            CONTEXT_EXTRACTION_FORMULA_XQ = IOUtils.toString(is, UTF_8);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        IOUtils.closeQuietly(is);
     }
 
-    private static final String CONTEXT_EXTRACTION_XQ;
+    private static final String CONTEXT_EXTRACTION_BIB_XQ;
+    private static final String CONTEXT_EXTRACTION_FORMULA_XQ;
 
     static <K extends Comparable<? super K>, V> ListMultimap<K, V> multimap() {
         return MultimapBuilder.treeKeys().linkedListValues().build();
@@ -53,13 +61,13 @@ public class BibDataSetContextExtractor {
         }
     }
 
-    public static Multimap<String, BibDataSetContext> getCitationReferences(String tei) throws XPathException, IOException {
+    public static Multimap<String, DataSetContext> getCitationReferences(String tei) throws XPathException, IOException {
         XQueryProcessor xQueryProcessor = new XQueryProcessor(tei);
 
-        SequenceIterator it = xQueryProcessor.getSequenceIterator(CONTEXT_EXTRACTION_XQ);
+        SequenceIterator it = xQueryProcessor.getSequenceIterator(CONTEXT_EXTRACTION_BIB_XQ);
 
         Item item;
-        Multimap<String, BibDataSetContext> contexts = multimap();
+        Multimap<String, DataSetContext> contexts = multimap();
 
         while ((item = it.next()) != null) {
             String val = item.getStringValue();
@@ -68,7 +76,7 @@ public class BibDataSetContextExtractor {
             double pos = Double.parseDouble(it.next().getStringValue());
             String coords = it.next().getStringValue();
 
-            BibDataSetContext pcc = new BibDataSetContext();
+            DataSetContext pcc = new DataSetContext();
             String context = cutContextSimple(val);
 
             pcc.setContext(extractContextSentence(context));
@@ -90,5 +98,32 @@ public class BibDataSetContextExtractor {
         }
     }
 
+
+    public static Multimap<String, DataSetContext> getFormulaReferences(String tei) throws XPathException, IOException {
+        XQueryProcessor xQueryProcessor = new XQueryProcessor(tei);
+
+        SequenceIterator it = xQueryProcessor.getSequenceIterator(CONTEXT_EXTRACTION_FORMULA_XQ);
+
+        Item item;
+        Multimap<String, DataSetContext> contexts = multimap();
+
+        while ((item = it.next()) != null) {
+            String val = item.getStringValue();
+            String formulaTeiId = it.next().getStringValue();
+            String sectionName = it.next().getStringValue();
+            double pos = Double.parseDouble(it.next().getStringValue());
+            String coords = it.next().getStringValue();
+
+            DataSetContext pcc = new DataSetContext();
+            String context = cutContextSimple(val);
+
+            pcc.setContext(extractContextSentence(context));
+            pcc.setDocumentCoords(coords);
+            pcc.setTeiId(formulaTeiId);
+
+            contexts.put(formulaTeiId, pcc);
+        }
+        return contexts;
+    }
 
 }

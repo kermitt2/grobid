@@ -91,7 +91,7 @@ Instance-level recall:  56.61   (RatcliffObershelp)
 
 ## Citation metadata
 
-Evaluation on 1942 random PDF files out of 1943 PDF (1 PDF parsing failure).
+Evaluation on 1943 random PDF files out of 1943 PDF (0 PDF parsing failure).
 
 #### Strict Matching (exact matches)
 

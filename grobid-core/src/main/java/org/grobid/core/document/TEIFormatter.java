@@ -27,6 +27,7 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
+import org.grobid.core.layout.Page;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
@@ -923,6 +924,13 @@ public class TEIFormatter {
 
         tei.append("\t</teiHeader>\n");
 
+        // output pages dimensions in the case coordinates will also be provided for some structures
+        try {
+            tei = toTEIPages(tei, doc, config);
+        } catch(Exception e) {
+            LOGGER.warn("Problem when serializing page size", e);
+        }
+
         if (doc.getLanguage() != null) {
             tei.append("\t<text xml:lang=\"").append(doc.getLanguage()).append("\">\n");
         } else {
@@ -1630,12 +1638,21 @@ public class TEIFormatter {
         return nodes;
     }
 
+    private static Pattern patternNumber = Pattern.compile("\\d+");
+
     public List<Node> markReferencesEquationTEI(String text, 
                                             List<LayoutToken> refTokens,
                                             List<Equation> equations,
                                             boolean generateCoordinates) {
         if (text == null || text.trim().isEmpty()) {
             return null;
+        }
+
+        text = TextUtilities.cleanField(text, false);
+        String textNumber = null;
+        Matcher m = patternNumber.matcher(text);
+        if (m.find()) {
+            textNumber = m.group();
         }
 
         List<Node> nodes = new ArrayList<>();
@@ -1646,11 +1663,19 @@ public class TEIFormatter {
             for (Equation equation : equations) {
                 if ((equation.getLabel() != null) && (equation.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(equation.getLabel(), false);
-                    if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                    Matcher m2 = patternNumber.matcher(label);
+                    String labelNumber = null;
+                    if (m2.find()) {
+                        labelNumber = m2.group();
+                    }
+                    //if ((label.length() > 0) &&
+                    //        (textLow.contains(label.toLowerCase()))) {
+                    if ( (labelNumber != null && textNumber != null && labelNumber.length()>0 &&
+                        labelNumber.equals(textNumber)) || 
+                        ((label.length() > 0) && (textLow.equals(label.toLowerCase()))) ) {
                         bestFormula = equation.getId();
                         break;
-                    }
+                    } 
                 }
             }
         }
@@ -1689,5 +1714,36 @@ public class TEIFormatter {
         localText = localText.replace("  ", " ");
 
         return localText.trim();
+    }
+
+    /**
+     * In case, the coordinates of structural elements are provided in the TEI
+     * representation, we need the page sizes in order to scale the coordinates 
+     * appropriately. These size information are provided via the TEI facsimile 
+     * element, with a surface element for each page carrying the page size info.  
+     */
+    public StringBuilder toTEIPages(StringBuilder buffer,
+                                   Document doc,
+                                   GrobidAnalysisConfig config) throws Exception {
+        if (!config.isGenerateTeiCoordinates()) {
+            // no cooredinates, nothing to do
+            return buffer;
+        }
+
+        // page height and width
+        List<Page> pages = doc.getPages();
+        int pageNumber = 1;
+        buffer.append("\t<facsimile>\n");
+        for(Page page : pages) {
+            buffer.append("\t\t<surface ");
+            buffer.append("n=\"" + pageNumber + "\" "); 
+            buffer.append("ulx=\"0.0\" uly=\"0.0\" ");
+            buffer.append("lrx=\"" + page.getWidth() + "\" lry=\"" + page.getHeight() + "\"");
+            buffer.append("/>\n");
+            pageNumber++;
+        }
+        buffer.append("\t</facsimile>\n");
+
+        return buffer;
     }
 }

@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2020-05-26T10:48:01Z. .
+DTD generated from ODD source 2020-06-01T09:00:59Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -32,6 +32,8 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
 <!ENTITY % teidata.outputMeasurement ' CDATA ' >
 
 <!ENTITY % teidata.pattern ' CDATA ' >
+
+<!ENTITY % teidata.point ' CDATA ' >
 
 <!ENTITY % teidata.pointer ' CDATA ' >
 
@@ -199,6 +201,14 @@ select CDATA  #IMPLIED'>
  %tei_att.global.linking.attribute.prev;
  %tei_att.global.linking.attribute.exclude;
  %tei_att.global.linking.attribute.select;'> 
+<!ENTITY % tei_att.global.facs.attribute.facs '
+facs CDATA  #IMPLIED'>
+<!ENTITY % tei_att.global.facs.attributes '
+ %tei_att.global.facs.attribute.facs;'> 
+<!ENTITY % tei_att.global.change.attribute.change '
+change CDATA  #IMPLIED'>
+<!ENTITY % tei_att.global.change.attributes '
+ %tei_att.global.change.attribute.change;'> 
 <!-- end of predeclared classes -->
 
 <!ENTITY % tei_att.canonical.attribute.key '
@@ -358,7 +368,7 @@ xml:base %teidata.pointer;  #IMPLIED'>
 
 <!ENTITY % tei_att.global.attribute.xmlspace '
 xml:space (default|preserve) #IMPLIED'>
-<!ENTITY % tei_att.global.attributes '%tei_att.global.rendition.attributes;%tei_att.global.linking.attributes;%tei_att.global.responsibility.attributes;%tei_att.global.source.attributes;
+<!ENTITY % tei_att.global.attributes '%tei_att.global.rendition.attributes;%tei_att.global.linking.attributes;%tei_att.global.facs.attributes;%tei_att.global.change.attributes;%tei_att.global.responsibility.attributes;%tei_att.global.source.attributes;
  %tei_att.global.attribute.coords;
  %tei_att.global.attribute.xmlid;
  %tei_att.global.attribute.n;
@@ -961,6 +971,38 @@ cols %teidata.count;  "1" '>
  %tei_att.tableDecoration.attribute.role;
  %tei_att.tableDecoration.attribute.rows;
  %tei_att.tableDecoration.attribute.cols;'> 
+<!ENTITY % tei_att.global.facs.attribute.facs '
+facs CDATA  #IMPLIED'>
+<!ENTITY % tei_att.global.facs.attributes '
+ %tei_att.global.facs.attribute.facs;'> 
+<!ENTITY % tei_att.global.change.attribute.change '
+change CDATA  #IMPLIED'>
+<!ENTITY % tei_att.global.change.attributes '
+ %tei_att.global.change.attribute.change;'> 
+<!ENTITY % tei_att.coordinated.attribute.start '
+start %teidata.pointer;  #IMPLIED'>
+
+<!ENTITY % tei_att.coordinated.attribute.ulx '
+ulx %teidata.numeric;  #IMPLIED'>
+
+<!ENTITY % tei_att.coordinated.attribute.uly '
+uly %teidata.numeric;  #IMPLIED'>
+
+<!ENTITY % tei_att.coordinated.attribute.lrx '
+lrx %teidata.numeric;  #IMPLIED'>
+
+<!ENTITY % tei_att.coordinated.attribute.lry '
+lry %teidata.numeric;  #IMPLIED'>
+
+<!ENTITY % tei_att.coordinated.attribute.points '
+points CDATA  #IMPLIED'>
+<!ENTITY % tei_att.coordinated.attributes '
+ %tei_att.coordinated.attribute.start;
+ %tei_att.coordinated.attribute.ulx;
+ %tei_att.coordinated.attribute.uly;
+ %tei_att.coordinated.attribute.lrx;
+ %tei_att.coordinated.attribute.lry;
+ %tei_att.coordinated.attribute.points;'> 
 <!-- start rest of patterns -->
 
 <!ENTITY % macro.paraContent '(#PCDATA|_DUMMY_model.gLike|%model.phrase;|%model.inter;|%model.global;|lg|_DUMMY_model.lLike)*' >
@@ -1181,6 +1223,12 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST encodingDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST encodingDesc
  %tei_att.global.attributes; >
+<!--doc:contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text. [11.1. Digital Facsimiles] -->
+<!ELEMENT facsimile (((front)?,(%model.graphicLike;|surface|surfaceGrp)+,(back)?))>
+<!ATTLIST facsimile xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST facsimile
+ %tei_att.global.attributes;
+ %tei_att.declaring.attributes; >
 <!--doc:(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images] -->
 <!ELEMENT figDesc %macro.limitedContent;>
 <!ATTLIST figDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1534,6 +1582,16 @@ key %teidata.xmlName;  #IMPLIED >
 <!ATTLIST street xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST street
  %tei_att.global.attributes; >
+<!--doc:defines a written surface as a two-dimensional coordinate space, optionally grouping one or more graphic representations of that space, zones of interest within that space, and transcriptions of the writing within them. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription] -->
+<!ELEMENT surface (((%model.global;|%model.labelLike;|%model.graphicLike;)*,((zone|line|path|surface|surfaceGrp),(%model.global;)*)*))>
+<!ATTLIST surface xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST surface
+ %tei_att.global.attributes;
+ %tei_att.coordinated.attributes;
+ %tei_att.declaring.attributes;
+ %tei_att.typed.attributes;
+attachment %teidata.enumerated;  #IMPLIED
+flipping %teidata.truthValue;  #IMPLIED >
 <!--doc:contains a family (inherited) name, as opposed to a given, baptismal, or nick name. [13.2.1. Personal Names] -->
 <!ELEMENT surname %macro.phraseSeq;>
 <!ATTLIST surname xmlns CDATA "http://www.tei-c.org/ns/1.0">

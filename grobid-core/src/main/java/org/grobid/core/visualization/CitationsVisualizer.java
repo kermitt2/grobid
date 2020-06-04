@@ -19,13 +19,14 @@ import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDBorderStyleDictionary;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BibDataSetContext;
+import org.grobid.core.data.DataSetContext;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.Equation;
 import org.grobid.core.document.Document;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Page;
-import org.grobid.core.utilities.BibDataSetContextExtractor;
+import org.grobid.core.utilities.DataSetContextExtractor;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
 import org.slf4j.Logger;
@@ -67,7 +68,7 @@ public class CitationsVisualizer {
         int totalBib = 0;
         int totalMarkers1 = 0;
         int totalMarkers2 = 0;
-        Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
+        Multimap<String, DataSetContext> contexts = DataSetContextExtractor.getCitationReferences(tei);
 		Map<String, Pair<Integer, Integer>> dictionary = new HashMap<>();
         int indexBib = 0;
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
@@ -95,7 +96,7 @@ public class CitationsVisualizer {
                 }
             }
             //annotating reference markers
-            for (BibDataSetContext c : contexts.get(teiId)) {
+            for (DataSetContext c : contexts.get(teiId)) {
                 //System.out.println(c.getContext());
                 String mrect = c.getDocumentCoords();
                 if ((mrect != null) && (mrect.trim().length()>0)) {
@@ -109,7 +110,7 @@ public class CitationsVisualizer {
             }
             indexBib++;
         }
-        for (BibDataSetContext c : contexts.get("")) {
+        for (DataSetContext c : contexts.get("")) {
             String mrect = c.getDocumentCoords();
             if ((mrect != null) && (mrect.trim().length()>0)) {
                 for (String coords : mrect.split(";")) {
@@ -301,8 +302,8 @@ public class CitationsVisualizer {
 
         jsonRef.writeArrayFieldStart("refBibs");
         String tei = teiDoc.getTei();
-        Multimap<String, BibDataSetContext> contexts =
-            BibDataSetContextExtractor.getCitationReferences(tei);
+        Multimap<String, DataSetContext> contexts =
+            DataSetContextExtractor.getCitationReferences(tei);
         int bibIndex = 0;
         for (BibDataSet cit : teiDoc.getBibDataSets()) {
             String teiId = cit.getResBib().getTeiId();
@@ -343,7 +344,7 @@ public class CitationsVisualizer {
             jsonRef.writeEndArray(); // pos
             jsonRef.writeEndObject(); // refBibs element
             // reference markers for this reference
-            for (BibDataSetContext c : contexts.get(teiId)) {
+            for (DataSetContext c : contexts.get(teiId)) {
                 //System.out.println(c.getContext());
                 String mrect = c.getDocumentCoords();
                 if ((mrect != null) && (mrect.trim().length()>0)) {
@@ -364,7 +365,9 @@ public class CitationsVisualizer {
         }
         jsonRef.writeEndArray(); // refBibs
 
-        for (BibDataSetContext c : contexts.get("")) {
+        // remaining reference markers which have not been solved with an actual full 
+        // bibliographical reference object 
+        for (DataSetContext c : contexts.get("")) {
             String mrect = c.getDocumentCoords();
             if ((mrect != null) && (mrect.trim().length()>0)) {
                 for (String coords : mrect.split(";")) {
@@ -383,11 +386,95 @@ public class CitationsVisualizer {
         jsonMark.close();
 
         LOGGER.debug("totalBib: " + totalBib);
-        LOGGER.debug("totalMarkers1: " + totalMarkers1);
-        LOGGER.debug("totalMarkers2: " + totalMarkers2);
+        LOGGER.debug("totalBibMarkers1: " + totalMarkers1);
+        LOGGER.debug("totalBibMarkers2: " + totalMarkers2);
 
         jsonRef.writeFieldName("refMarkers");
         jsonRef.writeRawValue(markW.toString());
+        
+
+
+
+
+
+        // for the same price, we add the formulas
+        markW = new StringWriter();
+        jsonMark = jFactory.createGenerator(markW);
+        jsonMark.writeStartArray();
+
+        totalMarkers1 = 0;
+        totalMarkers2 = 0;
+        int totalFormulas = 0;
+
+
+        jsonRef.writeArrayFieldStart("formulas");
+        contexts = DataSetContextExtractor.getFormulaReferences(tei);
+        for (Equation formula : teiDoc.getEquations()) {
+            String teiId = formula.getTeiId();
+            totalFormulas++;
+            jsonRef.writeStartObject();
+            jsonRef.writeStringField("id", teiId);
+            
+            jsonRef.writeArrayFieldStart("pos");
+            if (formula.getCoordinates() != null) {
+                for (BoundingBox b : formula.getCoordinates()) {
+                    // reference string
+                    jsonRef.writeStartObject();
+                    b.writeJsonProps(jsonRef);
+                    jsonRef.writeEndObject();
+                }
+            }
+            jsonRef.writeEndArray(); // pos
+            jsonRef.writeEndObject(); // formula element
+
+            // reference markers for this formula
+            for (DataSetContext c : contexts.get(teiId)) {
+                //System.out.println(c.getContext());
+                String mrect = c.getDocumentCoords();
+                if ((mrect != null) && (mrect.trim().length()>0)) {
+                    for (String coords : mrect.split(";")) {
+                        if ((coords == null) || (coords.length() == 0))
+                            continue;
+                        //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                        jsonMark.writeStartObject();
+                        jsonMark.writeStringField("id", teiId);
+                        BoundingBox b2 = BoundingBox.fromString(coords);
+                        b2.writeJsonProps(jsonMark);
+                        jsonMark.writeEndObject();
+                        totalMarkers1++;
+                    }
+                }
+            }
+        }
+        jsonRef.writeEndArray(); // formulas
+    
+        // remaining reference markers which have not been solved with an actual full 
+        // bibliographical reference object 
+        for (DataSetContext c : contexts.get("")) {
+            String mrect = c.getDocumentCoords();
+            if ((mrect != null) && (mrect.trim().length()>0)) {
+                for (String coords : mrect.split(";")) {
+                    if (coords.trim().length() == 0)
+                        continue;
+                    //annotatePage(document, coords, 0, 1.0f);
+                    BoundingBox b = BoundingBox.fromString(coords);
+                    jsonMark.writeStartObject();
+                    b.writeJsonProps(jsonMark);
+                    jsonMark.writeEndObject();
+                    totalMarkers2++;
+                }
+            }
+        }
+        jsonMark.writeEndArray();
+        jsonMark.close();
+
+        jsonRef.writeFieldName("formulaMarkers");
+        jsonRef.writeRawValue(markW.toString());
+
+        LOGGER.debug("totalFormulas: " + totalBib);
+        LOGGER.debug("totalFormulaMarkers1: " + totalMarkers1);
+        LOGGER.debug("totalFormulaMarkers2: " + totalMarkers2);
+
         jsonRef.writeEndObject();
         jsonRef.close();
 
@@ -397,7 +484,7 @@ public class CitationsVisualizer {
     /*
      * A variant where annotations are provided page per page
      */
-    public static String getJsonAnnotationsPerPage(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
+    /*public static String getJsonAnnotationsPerPage(Document teiDoc, List<String> resolvedBibRefUrl) throws IOException, XPathException {
         StringBuilder jsonRef = new StringBuilder();
         jsonRef.append("{\"pages\" : [");
 
@@ -420,7 +507,7 @@ public class CitationsVisualizer {
             boolean refMarkOutput = false;
 
             String tei = teiDoc.getTei();
-            Multimap<String, BibDataSetContext> contexts = BibDataSetContextExtractor.getCitationReferences(tei);
+            Multimap<String, DataSetContext> contexts = DataSetContextExtractor.getCitationReferences(tei);
 
             boolean beginMark = true;
             boolean begin = true;
@@ -460,7 +547,7 @@ public class CitationsVisualizer {
                 }
 
                 // reference markers for this reference
-                for (BibDataSetContext c : contexts.get(teiId)) {
+                for (DataSetContext c : contexts.get(teiId)) {
                     //System.out.println(c.getContext());
                     String mrect = c.getDocumentCoords();
                     if ( (mrect != null) && (mrect.trim().length()>0) ) {
@@ -487,7 +574,7 @@ public class CitationsVisualizer {
                 }
             }
 
-            for (BibDataSetContext c : contexts.get("")) {
+            for (DataSetContext c : contexts.get("")) {
                 String mrect = c.getDocumentCoords();
                 if ( (mrect != null) && (mrect.trim().length()>0) ) {
                     for (String coords : mrect.split(";")) {
@@ -523,6 +610,6 @@ public class CitationsVisualizer {
 
         jsonRef.append("]}");
         return jsonRef.toString();
-    }
+    }*/
 
 }
