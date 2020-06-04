@@ -50,7 +50,7 @@ public class Equation {
 
 		Element formulaElement = XmlBuilderUtils.teiElement("formula");
 		if (id != null) {
-			XmlBuilderUtils.addXmlId(formulaElement, getTeiId());
+			XmlBuilderUtils.addXmlId(formulaElement, this.getTeiId());
 		}
 
 		if ((config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("formula"))) {
@@ -139,19 +139,19 @@ public class Equation {
     }*/
 
     public void setId() {
-        id = TextUtilities.cleanField(label.toString(), false);
+        this.id = TextUtilities.cleanField(label.toString(), false);
     }
 
     public void setId(String theId) {
-        id = theId;
+        this.id = theId;
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getTeiId() {
-        return "formula_" + id;
+        return "formula_" + this.id;
     }
 
     /*public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
