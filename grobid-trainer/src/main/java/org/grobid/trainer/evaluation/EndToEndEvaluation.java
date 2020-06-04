@@ -324,17 +324,29 @@ public class EndToEndEvaluation {
 			// get the gold file in the directory
             File[] refFiles2 = dir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".nxml") | name.endsWith(".pub2tei.tei.xml");
+                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
                 }
             });
 
 			if (refFiles2 == null || refFiles2.length == 0) {
-            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-			    continue;
+				// in the case of a bioRxiv NLM/JATS file, we have an .xml extension
+				refFiles2 = dir.listFiles(new FilenameFilter() {
+	                public boolean accept(File dir, String name) {
+	                    return name.endsWith(".xml") && !name.endsWith(".tei.xml");
+	                }
+	            });
+
+				if (refFiles2 == null || refFiles2.length == 0) {
+	            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
+				    continue;
+				}
 			}
 
 			if (refFiles2.length != 1) {
             	System.out.println("warning: more than one evaluation (gold) XML data files found under " + dir.getPath());
+            	for(int m=0; m<refFiles2.length;m++) {
+            		System.out.println(refFiles2[m].getPath());
+            	}
 			    System.out.println("processing only the first one...");
 			}
 			
@@ -373,24 +385,6 @@ public class EndToEndEvaluation {
 					}
 
 					File teiFile = refFiles3[0];
-				
-					refFiles3 = dir.listFiles(new FilenameFilter() {
-		                public boolean accept(File dir, String name) {
-		                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
-		                }
-		            });
-
-		            if (refFiles3 == null) {
-		            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-					    continue;
-					}
-
-					if (refFiles3.length != 1) {
-		            	System.out.println("warning: more than one evaluation (gold) XML data file found under " + 
-		            		dir.getPath());
-					    System.out.println("processing only the first one...");
-					}
-
 			        Document tei = docBuilder.parse(teiFile);
 
 					XPathFactory xpf = XPathFactory.newInstance();
@@ -1148,7 +1142,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								for(String res : goldResults)
 									goldResult += " " + res;
 								// basic normalisation
-								goldResult = basicNormalization(goldResult);								
+								goldResult = basicNormalization(goldResult);	
+								if (fieldName.equals("abstract")) {
+									// some additional cleaning for abstract is required, because PMC and bioRxiv
+									// tends to put the useless abstract title "Abstract" together with the abstract
+									if (goldResult.toLowerCase().startsWith("abstract") || goldResult.toLowerCase().startsWith("summary")) {
+										goldResult = goldResult.replaceAll("(?i)^(abstract)|(summary)(\\n)?( )?", "");
+									}
+								}							
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
