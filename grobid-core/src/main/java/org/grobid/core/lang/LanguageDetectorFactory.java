@@ -6,5 +6,5 @@ package org.grobid.core.lang;
  * Time: 11:03 AM
  */
 public interface LanguageDetectorFactory {
-    public LanguageDetector getInstance();
+    LanguageDetector getInstance();
 }

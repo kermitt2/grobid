@@ -6,7 +6,7 @@ default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2020-05-26T10:47:25Z. .
+# Schema generated from ODD source 2020-06-01T09:00:26Z. .
 # TEI Edition: Version 4.0.0. Last updated on
 #	13th February 2020, revision ccd19b0ba
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -534,6 +534,8 @@ tei_att.global.source.attribute.source =
 tei_att.global.attributes =
   tei_att.global.rendition.attributes,
   tei_att.global.linking.attributes,
+  tei_att.global.facs.attributes,
+  tei_att.global.change.attributes,
   tei_att.global.responsibility.attributes,
   tei_att.global.source.attributes,
   tei_att.global.attribute.coords,
@@ -2970,6 +2972,109 @@ tei_figDesc =
   ## (description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]
   element figDesc {
     tei_macro.limitedContent, tei_att.global.attributes, empty
+  }
+tei_att.global.facs.attributes = tei_att.global.facs.attribute.facs
+tei_att.global.facs.attribute.facs =
+  
+  ## (facsimile) points to all or part of an image which corresponds with the content of the element.
+  attribute facs {
+    list { xsd:anyURI+ }
+  }?
+tei_att.global.change.attributes =
+  tei_att.global.change.attribute.change
+tei_att.global.change.attribute.change =
+  [
+    a:documentation [
+      "points to one or more "
+      ns1:code [ "<change>" ]
+      " elements documenting a state or revision campaign to which the element bearing this attribute and its children have been assigned by the encoder."
+    ]
+  ]
+  attribute change {
+    list { xsd:anyURI+ }
+  }?
+tei_att.coordinated.attributes =
+  tei_att.coordinated.attribute.start,
+  tei_att.coordinated.attribute.ulx,
+  tei_att.coordinated.attribute.uly,
+  tei_att.coordinated.attribute.lrx,
+  tei_att.coordinated.attribute.lry,
+  tei_att.coordinated.attribute.points
+tei_att.coordinated.attribute.start =
+  
+  ## indicates the element within a transcription of the text containing at least the start of the writing represented by this zone or surface.
+  attribute start { xsd:anyURI }?
+tei_att.coordinated.attribute.ulx =
+  
+  ## gives the x coordinate value for the upper left corner of a rectangular space.
+  attribute ulx {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+tei_att.coordinated.attribute.uly =
+  
+  ## gives the y coordinate value for the upper left corner of a rectangular space.
+  attribute uly {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+tei_att.coordinated.attribute.lrx =
+  
+  ## gives the x coordinate value for the lower right corner of a rectangular space.
+  attribute lrx {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+tei_att.coordinated.attribute.lry =
+  
+  ## gives the y coordinate value for the lower right corner of a rectangular space.
+  attribute lry {
+    xsd:double
+    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
+    | xsd:decimal
+  }?
+tei_att.coordinated.attribute.points =
+  
+  ## identifies a two dimensional area by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.
+  attribute points {
+    list {
+      xsd:token {
+        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+      },
+      xsd:token {
+        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+      },
+      xsd:token {
+        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+      },
+      xsd:token {
+        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+      }*
+    }
+  }?
+tei_surface =
+  
+  ## defines a written surface as a two-dimensional coordinate space, optionally grouping one or more graphic representations of that space, zones of interest within that space, and transcriptions of the writing within them. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]
+  element surface {
+    ((tei_model.global | tei_model.labelLike | tei_model.graphicLike)*,
+     ((tei_surface), tei_model.global*)*),
+    tei_att.global.attributes,
+    tei_att.coordinated.attributes,
+    tei_att.declaring.attributes,
+    tei_att.typed.attributes,
+    
+    ## describes the method by which this surface is or was connected to the main surface
+    ## Sample values include: 1] glued; 2] pinned; 3] sewn
+    attribute attachment {
+      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+    }?,
+    
+    ## indicates whether the surface is attached and folded in such a way as to provide two writing surfaces
+    attribute flipping { xsd:boolean }?,
+    empty
   }
 tei_trash =
   

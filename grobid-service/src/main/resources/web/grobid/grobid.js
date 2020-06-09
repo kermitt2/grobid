@@ -693,21 +693,25 @@ var grobid = (function($) {
 			refMarkers.forEach(function(annotation, n) {
 				//var annotation = refMarkers[n];
 				var theId = annotation.id;
-				if (!theId)
-                    return;
+				//if (!theId)
+                //    return;
 				// we take the first and last positions
 				var targetBib = mapRefBibs[theId];
 				if (targetBib) {
 					var theBibPos = {};
 					var pos = targetBib.pos;
-					//if (pos && (pos.length > 0)) {
-					var theFirstPos = pos[0];
-					var theLastPos = pos[pos.length-1];
-					theBibPos.p = theFirstPos.p;
-					theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
-					theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-					theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
-					theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					if (pos.length == 1) 
+						theBibPos = pos[0];
+					else {
+						//if (pos && (pos.length > 0)) {
+						var theFirstPos = pos[0];
+						var theLastPos = pos[pos.length-1];
+						theBibPos.p = theFirstPos.p;
+						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
+						theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
+						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					}
 					var pageNumber = theBibPos.p;
 					if (pageInfo[pageNumber-1]) {
 						page_height = pageInfo[pageNumber-1].page_height;
@@ -722,6 +726,73 @@ var grobid = (function($) {
 						page_width = pageInfo[pageNumber-1].page_width;
 					}
 					annotateBib(false, theId, annotation, null, page_height, page_width, null);
+				}
+			});
+		}
+
+        // formulas
+        var formulas = json.formulas;
+        var mapFormulas = {};
+        if (formulas) {
+            for(var n in formulas) {
+                var annotation = formulas[n];
+                var theId = annotation.id;
+                var pos = annotation.pos;
+                if (pos)
+                    mapFormulas[theId] = annotation;
+                //for (var m in pos) {
+                pos.forEach(function(thePos, m) {
+                    //var thePos = pos[m];
+                    // get page information for the annotation
+                    var pageNumber = thePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateFormula(true, theId, thePos, null, page_height, page_width, null);
+                });
+            }
+        }
+
+        var formulaMarkers = json.formulaMarkers;
+		if (formulaMarkers) {
+			formulaMarkers.forEach(function(annotation, n) {
+				var theId = annotation.id;
+				//if (!theId)
+                //    return;
+				// we take the first and last positions
+				var targetFormula = null;
+				if (theId)
+					targetFormula = mapFormulas[theId];
+				if (targetFormula) {
+					var theFormulaPos = {};
+					var pos = targetFormula.pos;
+					if (pos.length == 1) 
+						theFormulaPos = pos[0]
+					else {
+						//if (pos && (pos.length > 0)) {
+						var theFirstPos = pos[0];
+						var theLastPos = pos[pos.length-1];
+						theFormulaPos.p = theFirstPos.p;
+						theFormulaPos.w = Math.max(theFirstPos.w, theLastPos.w);
+						theFormulaPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+						theFormulaPos.x = Math.min(theFirstPos.x, theLastPos.x);
+						theFormulaPos.y = Math.min(theFirstPos.y, theLastPos.y);
+					}
+					var pageNumber = theFormulaPos.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateFormula(false, theId, annotation, null, page_height, page_width, theFormulaPos);
+					//}
+				} else {
+					var pageNumber = annotation.p;
+					if (pageInfo[pageNumber-1]) {
+						page_height = pageInfo[pageNumber-1].page_height;
+						page_width = pageInfo[pageNumber-1].page_width;
+					}
+					annotateFormula(false, theId, annotation, null, page_height, page_width, null);
 				}
 			});
 		}
@@ -762,14 +833,16 @@ var grobid = (function($) {
 			element.setAttribute("id", theId);
 		} else {
 			// this is a reference marker
-			// we draw a box
-			element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
-			// the link here goes to the bibliographical reference
+			// we draw a box (blue if associated to an id, gray otherwise)			
 			if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
+                // the link here goes to the bibliographical reference
 				element.onclick = function() {
 					goToByScroll(theId);
 				};
-			}
+			} else
+                element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
 			// we need the area where the actual target bibliographical reference is
 			if (theBibPos) {
 				element.setAttribute("data-toggle", "popover");
@@ -796,6 +869,73 @@ var grobid = (function($) {
 		}
 		pageDiv.append(element);
 	}
+
+    function annotateFormula(formula, theId, thePos, url, page_height, page_width, theFormulaPos) {
+        var page = thePos.p;
+        var pageDiv = $('#page-'+page);
+        var canvas = pageDiv.children('canvas').eq(0);;
+
+        var canvasHeight = canvas.height();
+        var canvasWidth = canvas.width();
+        var scale_x = canvasHeight / page_height;
+        var scale_y = canvasWidth / page_width;
+
+        var x = thePos.x * scale_x;
+        var y = thePos.y * scale_y;
+        var width = thePos.w * scale_x;
+        var height = thePos.h * scale_y;
+
+//console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
+//console.log('location: ' + canvasHeight + " " + canvasWidth);
+//console.log('location: ' + page_height + " " + page_width);
+        //make clickable the area
+        var element = document.createElement("a");
+        var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
+
+        if (formula) {
+            // this is a formula
+            // we draw a line
+            element.setAttribute("style", attributes + "border:1px; border-style:dotted; border-color: red;");
+            element.setAttribute("title", "formula");
+            element.setAttribute("id", theId);
+        } else {
+            // this is a formula reference marker    
+            // we draw a box (red if associated to an id, gray otherwise)
+            if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: red;");
+                // the link here goes to the referenced formula
+                element.onclick = function() {
+                    goToByScroll(theId);
+                };
+            } else
+                 element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
+            // we need the area where the actual target formula is
+            if (theFormulaPos) {
+                element.setAttribute("data-toggle", "popover");
+                element.setAttribute("data-placement", "top");
+                element.setAttribute("data-content", "content");
+                element.setAttribute("data-trigger", "hover");
+                var newWidth = theFormulaPos.w * scale_x;
+                var newHeight = theFormulaPos.h * scale_y;
+                var newImg = getImagePortion(theFormulaPos.p, newWidth, newHeight, theFormulaPos.x * scale_x, theFormulaPos.y * scale_y);
+                $(element).popover({
+                    content:  function () {
+                        return '<img src=\"'+ newImg + '\" style=\"width:100%\" />';
+                        //return '<img src=\"'+ newImg + '\" />';
+                    },
+                    html: true,
+                    container: 'body'
+                    //width: newWidth + 'px',
+                    //height: newHeight + 'px'
+//                  container: canvas,
+                    //width: '600px',
+                    //height: '100px'
+                });
+            }
+        }
+        pageDiv.append(element);
+    }
 
 	/* jquery-based movement to an anchor, without modifying the displayed url and a bit smoother */
 	function goToByScroll(id) {

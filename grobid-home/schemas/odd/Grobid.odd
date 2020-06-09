@@ -35,6 +35,7 @@
                 <moduleRef key="namesdates" except=""/>
                 <moduleRef key="linking" except=""/>
                 <moduleRef key="figures" except=""/>
+                <moduleRef key="transcr" except="addSpan am damage damageSpan delSpan ex fw handNotes handShift line listTranspose metamark mod path redo restore retrace secl sourceDoc space subst substJoin supplied surfaceGrp surplus transpose undo zone"/>
                 <elementSpec module="figures" ident="formula" mode="change">
                     <content>
                         <rng:zeroOrMore>
