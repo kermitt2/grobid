@@ -651,13 +651,14 @@ public class Segmentation extends AbstractParser {
      * @param pathTEI      path to TEI
      * @param id           id
      */
-    public void createTrainingSegmentation(String inputFile,
+    public void createTrainingSegmentation(File inputFile,
                                            String pathFullText,
                                            String pathTEI,
                                            int id) {
         DocumentSource documentSource = null;
         try {
-            File file = new File(inputFile);
+            //File file = new File(inputFile);
+            File file = inputFile;
 
             //documentSource = DocumentSource.fromPdf(file);
             documentSource = DocumentSource.fromPdf(file, -1, -1, true, true, true);
