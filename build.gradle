@@ -217,6 +217,7 @@ project("grobid-core") {
         compile "commons-io:commons-io:2.5"
         compile "org.apache.commons:commons-lang3:3.6"
         compile "org.apache.commons:commons-collections4:4.1"
+        compile "org.apache.commons:commons-text:1.8"
         compile "commons-dbutils:commons-dbutils:1.7"
         compile "org.apache.httpcomponents:httpclient:4.5.3"
         compile "xerces:xercesImpl:2.12.0"

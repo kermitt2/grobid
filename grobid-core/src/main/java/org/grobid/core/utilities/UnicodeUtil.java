@@ -1,5 +1,9 @@
 package org.grobid.core.utilities;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.apache.commons.text.TextStringBuilder;
+
 /**
  * Class for holding static methods for processing related to unicode.
  *
@@ -10,7 +14,10 @@ public class UnicodeUtil {
 	// As java \s doesn’t support the Unicode white space property (\s matches
 	// [ \t\n\x0B\f\r]), here are the 26 code points of the "official" stable
 	// p{White_Space} unicode property
-	public static String whitespace_chars = "["
+    private static final Pattern DASH_PATTERN = Pattern.compile("\\p{Pd}");
+    private static final Pattern NORMALISE_REGEX_PATTERN = Pattern.compile("[ \n]");
+
+    public static String whitespace_chars = "["
 										+ "\\u0009" // CHARACTER TABULATION, \t
 			                        	+ "\\u000A"  // LINE FEED (LF), \n -> new line
 			                        	+ "\\u000B"  // LINE TABULATION, \v -> new line
@@ -64,6 +71,7 @@ public class UnicodeUtil {
 				                        + "\\u205F"  // MEDIUM MATHEMATICAL SPACE
 				                        + "\\u3000"  // IDEOGRAPHIC SPACE
 				                        + "]";
+    private static final Pattern MY_WHITESPACE_PATTERN = Pattern.compile(my_whitespace_chars);
 
     // all the horizontal low lines
     public static String horizontal_low_lines_chars = "["
@@ -78,6 +86,8 @@ public class UnicodeUtil {
 			    								  + "\\uFE33" // Presentation Form For Vertical Low Line
 			    								  + "\\uFE34" // Presentation Form For Vertical Wavy Low Line
 			    								  + "]";
+    private static final Pattern HORIZONTAL_LOW_LINES_CHARS_PATTERN = Pattern.compile(horizontal_low_lines_chars);
+
     // all the vertical lines
     public static String vertical_lines_chars = "["
     										+ "\\u007C" 	// vertical line
@@ -86,6 +96,7 @@ public class UnicodeUtil {
 			    							+ "\\u2223" 	// Divides
 			    							+ "\\u2758"  	// Light Vertical Bar
 			    							+ "]";
+    private static final Pattern VERTICAL_LINES_CHARS_PATTERN = Pattern.compile(vertical_lines_chars);
 
     // all new lines / "vertical" white spaces
     public static String new_line_chars = "["
@@ -97,6 +108,7 @@ public class UnicodeUtil {
     									 + "\\u2029"  // PARAGRAPH SEPARATOR, \p{Zp}
     									 + "\\u2028"  // LINE SEPARATOR, \p{Zl}
     									 + "]";
+    private static final Pattern NEW_LINE_CHARS_PATTERN = Pattern.compile(new_line_chars);
 
     // all bullets
     public static String bullet_chars = "["
@@ -115,6 +127,7 @@ public class UnicodeUtil {
 										+ "\\u26AB"  // medium black circle
 										+ "\\u2B24"  // black large circle
 										+ "]";
+    private static final Pattern BULLET_CHARS_PATTERN = Pattern.compile(bullet_chars);
 
     // opening parenthesis
     public static String open_parenthesis = "["
@@ -156,36 +169,16 @@ public class UnicodeUtil {
 
         // see https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
         // for Unicode character properties supported by Java
+        TextStringBuilder textStringBuilder = new TextStringBuilder(text);
+        replaceAll(textStringBuilder, MY_WHITESPACE_PATTERN, " ");
+        textStringBuilder.replaceAll("\r\n", "\n");
+        replaceAll(textStringBuilder, NEW_LINE_CHARS_PATTERN, "\n");
+        replaceAll(textStringBuilder, DASH_PATTERN, "-");
+        replaceAll(textStringBuilder, HORIZONTAL_LOW_LINES_CHARS_PATTERN, "_");
+        replaceAll(textStringBuilder, VERTICAL_LINES_CHARS_PATTERN, "|");
+        replaceAll(textStringBuilder, BULLET_CHARS_PATTERN, "•");
 
-        // normalise all horizontal space separator characters 
-        text = text.replaceAll(my_whitespace_chars, " ");
-
-        // normalise all EOL - special handling of "\r\n" as one single newline
-        text = text.replace("\r\n", "\n").replaceAll(new_line_chars, "\n");
-
-        // normalize dash via the unicode dash punctuation property
-        // note: we don't add the "hyphen bullet" character \\u2043 because it's actually a bullet
-        text = text.replaceAll("\\p{Pd}", "-");
-
-        // normalize horizontal low lines
-        text = text.replaceAll(horizontal_low_lines_chars, "_");
-
-        // normalize vertical lines
-        text = text.replaceAll(vertical_lines_chars, "|");
-
-        // bullet normalisation
-        text = text.replaceAll(bullet_chars, "•");
-
-        // opening parenthesis normalisation
-        text = text.replaceAll(open_parenthesis, "(");
-
-        // closing parenthesis normalisation
-        text = text.replaceAll(close_parenthesis, ")");
-
-        // remove all control charcaters?
-        //text = text.replaceAll("\\p{Cntrl}", " ");
-
-        return text;
+        return textStringBuilder.toString();
     }
 
     /**
@@ -196,6 +189,13 @@ public class UnicodeUtil {
      */
     public static String normaliseTextAndRemoveSpaces(String text) {
         // parano sanitising
-        return normaliseText(text).replaceAll("[ \n]", "");
+        return NORMALISE_REGEX_PATTERN.matcher(normaliseText(text)).replaceAll("");
+    }
+
+    public static void replaceAll(TextStringBuilder textStringBuilder, Pattern pattern, String replacement) {
+        Matcher m = pattern.matcher(textStringBuilder);
+        while(m.find()) {
+            textStringBuilder.replace(m.start(), m.end(), replacement);
+        }
     }
 }

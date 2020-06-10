@@ -108,6 +108,11 @@ public class Lexicon {
         initCountryCodes();
         addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
             "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+        initJournals();
+        initConferences();
+        initPublishers();
+        initLocations();
+        initCollaborations();
     }
 
     private void initDictionary() {

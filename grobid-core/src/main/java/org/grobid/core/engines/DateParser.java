@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class DateParser extends AbstractParser {
+    public static final Pattern NEWLINE_REGEX_PATTERN = Pattern.compile("[ \n]");
 
     public DateParser() {
         super(GrobidModels.DATE);
@@ -40,7 +41,7 @@ public class DateParser extends AbstractParser {
 			for(String tok : tokenizations) {
                 if (!tok.equals(" ") && !tok.equals("\n")) {
                     // parano final sanitisation
-                    tok = tok.replaceAll("[ \n]", "");
+                    tok = NEWLINE_REGEX_PATTERN.matcher(tok).replaceAll( "");
                     dateBlocks.add(tok + " <date>");
                 }
             }
