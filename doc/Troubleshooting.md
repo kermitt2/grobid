@@ -1,5 +1,17 @@
 <h1>Troubleshooting</h1>
 
+### Windows related issues 
+
+Grobid is developed and tested on Linux. Mac is also supported, although some components might behave slighly different due to the natural incompatibility of Apple with the rest of the world.   
+ 
+Windows, unfortunately, is not supported, due to lack of experience and time to maintain three architectures. 
+We recommend Windows users to use the [Grobid Docker image](https://hub.docker.com/r/lfoppiano/grobid/) (documented [here](Grobid-docker.md)) and call the system via API using one of the various [grobid clients](Grobid-service.md#Clients-for-GROBID-Web-Services).
+
+Before opening a new issue which might be related to windows, please ensure someone else haven't already done that [here](https://github.com/kermitt2/grobid/issues?q=is%3Aissue+is%3Aopen+label%3AWindows-specific)
+
+**NOTE**: If you are a developer using Windows and you like to help, please let us know. 
+
+
 ### Invalid model format
 
 Using macOS 10.12 Sierra with a non-default locales (e.g. French), you might get the following error: 
