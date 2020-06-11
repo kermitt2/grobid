@@ -50,10 +50,9 @@
 
 <h3>Developer notes</h3>
 
-* [Developer guide](Developer-guide.md)
-
+* [Developers guide](Developer-guide.md)
+* [Notes for the Grobid Developers](Notes-grobid-developers.md)
 * [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
-
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
 
 

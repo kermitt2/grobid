@@ -39,7 +39,7 @@ pages:
     - 'Affiliation-address model': 'training/affiliation-address.md'
     - 'Date model': 'training/date.md'
   - Developer notes:
-    - 'Developer guide': 'Developer-guide.md'
+    - 'Developers guide': 'Developer-guide.md'
     - 'Notes for the Grobid Developers': 'Notes-grobid-developers.md'
     - 'Deep Learning models': 'Deep-Learning-models.md'
     - 'Recompiling CRF libraries': 'Recompiling-and-integrating-CRF-libraries.md'
