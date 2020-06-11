@@ -1,39 +1,34 @@
-<h1>Developer guide</h1>
+<h1>Grobid development guide</h1>
 
-This page contains a set of notes for the developers: 
+This page contains information for developers working with Grobid  
 
-### Release
+### Testing using the DUMMY model
 
-In order to make the release:  
+The DUMMY model (``GrobidModels.DUMMY``) is an artifact to instantiate a GrobidParser wihtout having the model under the grobid-home. 
 
-+ make sure that there are no additional models in the grobid-home (usually is better to have a second cloned project for the relesae)
+This is useful for unit test of different part of the parser, for example if you have a method that read the sequence labelling results and assemble into a set of objects. 
 
-+ Make the release: 
-```
-    > ./gradlew release
-```
+**NOTE**: this method unfortunately cannot avoid problems when the Lexicons are used in the parser. A solution for that is that you mock the Lexicon and pass it as method to the parser. 
 
-Note that the release via the gradle wrapper can only work when no prompt for the password is required by git. In practice it means it is necessary to push over ssh. 
+```java
+    public class SuperconductorsParserTest {
+    private SuperconductorsParser target;
+    private ChemDataExtractorClient mockChemspotClient;
 
-+ Add the bintray credentials in are in the file `~/.gradle/gradle.properties`, like: 
-
-```  
-bintrayUser=username
-bintrayApiKey=the api key 
-mavenRepoReleasesUrl=https://dl.bintray.com/rookies/releases
-mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
-```
-
-+ Fetch back the tag and upload the artifacts: 
- 
-```
-    > git checkout [releasetag]
+    @Before
+    public void setUp() throws Exception {
+        //Example of a mocked version of an additional service that is passed to the parser
+        mockChemspotClient = EasyMock.createMock(ChemDataExtractorClient.class);
     
-    > ./gradlew clean build
+        // Passing GrobidModels.DUMMY 
+        target = new SuperconductorsParser(GrobidModels.DUMMY, mockChemspotClient);
+    }
     
-    > ./gradlew bintray
+    @Test
+    public void test1() throws Exception {
+        target.myMethod();
+    }
+}
 ```
 
- (This last command needs to be checked, cause the standard task `uploadArtifacts` could just work)
- 
 
