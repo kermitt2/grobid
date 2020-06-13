@@ -6,7 +6,8 @@
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
-[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/https://github.com/kermitt2/grobid/)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
+[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c/)](https://archive.softwareheritage.org/swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c;origin=https://github.com/kermitt2/grobid;visit=swh:1:snp:077b6380d4be7888ba3e070bc9bdfc10285ad844;anchor=swh:1:rev:ba52cf7df737107ee278e4eabfbffcc7879cbd54;path=//)
 
 ## GROBID documentation
 
@@ -96,9 +97,9 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 [![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
-## Reference
+## How to cite
 
-For citing this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want to this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
 
 ```bibtex
 @misc{GROBID,
