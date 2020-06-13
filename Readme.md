@@ -78,7 +78,7 @@ A series of additional modules have been developed for performing __structure aw
 - [grobid-dictionaries](https://github.com/MedKhem/grobid-dictionaries): structuring dictionaries in raw PDF format
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
 
-GROBID uses optionnally Deep Learning models relying on the following library: [DeLFT](https://github.com/kermitt2/delft)
+GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. 
 
 ## Release and changes
 
