@@ -1,5 +1,17 @@
 <h1>Troubleshooting</h1>
 
+### Memory constraints and Out of Memory errors
+
+Grobid requires 8Gb of RAM for large parallel processing. 
+
+In case of running on limited memory hardware, there are various ways to deal with memory constraints in Grobid:
+- reduce the number of parallel threads on server side in grobid/grobid-home/config/grobid.properties change the property org.grobid.max.connections (default is `10`, this is the max size of the thread pool that is reported in the logs)
+
+- reduce the number of parallel processing at client side: this is the parameter `n` in the grobid python client command line
+
+- reduce the maximum amount of memory dedicated to the PDF parsing by pdfalto: in `grobid/grobid-home/config/grobid.properties` change the property `grobid.3rdparty.pdf2xml.memory.limit.mbto` a lower amount (note: not too low, PDF parsing remains memory-hungry).
+
+
 ### Windows related issues 
 
 Grobid is developed and tested on Linux. Mac is also supported, although some components might behave slighly different due to the natural incompatibility of Apple with the rest of the world.   
