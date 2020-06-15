@@ -634,6 +634,7 @@ public class Document implements Serializable {
      * heuristics to get the header section...
      * -> it is now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeader() {
         //if (firstPass)
         //BasicStructureBuilder.firstPass(this);
@@ -752,6 +753,7 @@ public class Document implements Serializable {
      * <p/>
      * -> now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeaderLastHope() {
         String res;
         StringBuilder accumulated = new StringBuilder();
@@ -791,6 +793,7 @@ public class Document implements Serializable {
      * <p/>
      * -> now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeaderByIntroduction() {
         String res;
         StringBuilder accumulated = new StringBuilder();
@@ -990,7 +993,7 @@ public class Document implements Serializable {
         this.labeledBlocks = labeledBlocks;
     }
 
-    //helper
+    // helper
     public List<LayoutToken> getDocumentPieceTokenization(DocumentPiece dp) {
         return tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos() + 1);
     }
