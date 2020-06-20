@@ -1,6 +1,6 @@
 ## Project reference
 
-To cite this work, please simply refer to the github project:
+If you want to this work, please simply refer to the github project:
 
 ```
 GROBID (2008-2020) <https://github.com/kermitt2/grobid>
@@ -10,7 +10,7 @@ Please do not include a particular person name to emphasize the project and the 
 
 We also ask you not to cite any old research papers, but the current project itself, because, yes, we can cite a software project in the bibliographical references and not just mention it in a foot note ;)
 
-Here's a BibTeX entry:
+Here's a BibTeX entry using the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier:
 
 ```bibtex
 @misc{GROBID,
