@@ -33,6 +33,8 @@
 
 * [End-to-end evaluation](End-to-end-evaluation.md)
 
+* [FAQ](Frequently-asked-questions.md)
+
 <h3>Benchmarking</h3>
 
 * [Description](Benchmarking.md)

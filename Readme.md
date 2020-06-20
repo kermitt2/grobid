@@ -38,7 +38,7 @@ GROBID includes a comprehensive web service API, batch processing, a JAVA API, a
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), scite.ai, and many more. The tool is designed for high scalability in order to address the full scientific literature corpus.
 
-GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits).
+GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 
 For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](http://grobid.readthedocs.org).
 
