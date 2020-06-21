@@ -15,6 +15,7 @@ The following TEI elements are used by the segmentation model:
 * `<page>` to indicate page numbers
 * `<div type="annex">` for annexes
 * `<div type="acknowledgment">` for acknowledgments
+* `<div type="toc">` for table of content
 
 It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
 

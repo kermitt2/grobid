@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="55001138"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<meeting>LiBD-5 2011 -Electrode materials -Arcachon, France 12-17 Juin 2011<lb/></meeting>
+
+	<docTitle>
+	<titlePart>Structure and electrochemical Li insertion properties of cryolite-type Li 3 FeF 6<lb/> prepared by precipitation from aqueous-based solutions<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Kuhn 1 , A. Basa 1,2 , E.C. Gonzalo 1 , F. García-Alvarado 1 , I. Sobrados 3 and J. Sanz 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dpto. Química, Univ San Pablo CEU,</affiliation>
+	</byline>
+
+	<address>Boadilla del Monte, E-28668, Madrid, Spain.<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of Chemistry, University of Białystok,</affiliation>
+	</byline>
+
+	<address>Hurtowa St. 1, 15-399 Białystok, Poland.<lb/></address>
+
+	<byline>
+	<affiliation>3 Instituto Ciencia de Materiales de Madrid (CSIC),</affiliation>
+	</byline>
+
+	<address>28049 Cantoblanco, Madrid, Spain.</address>
+
+		</front>
+	</text>
+</tei>
