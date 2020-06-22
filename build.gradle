@@ -34,7 +34,7 @@ allprojects {
     group = "org.grobid"
 
     jacoco {
-        toolVersion = '0.8.2'
+        toolVersion = '0.8.5'
     }
 
     tasks.withType(JavaCompile) {
@@ -175,9 +175,9 @@ subprojects {
     }
 
     jacocoTestReport {
-        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
-        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
-        classDirectories = files(sourceSets.main.output)
+//        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
+//        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
+//        classDirectories = files(sourceSets.main.output)
         reports {
             html.enabled = true
             xml.enabled = true
@@ -447,10 +447,10 @@ task jacocoRootReport(type: JacocoReport) {
     dependsOn = [subprojects.test
 //                 subprojects.jacocoTestReport
     ]
-    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
-    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories = files(subprojects.sourceSets.main.output)
-    executionData = files(subprojects.jacocoTestReport.executionData)
+//    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+//    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+//    classDirectories = files(subprojects.sourceSets.main.output)
+//    executionData = files(subprojects.jacocoTestReport.executionData)
     reports {
         html.enabled = true
         xml.enabled = true
@@ -477,7 +477,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "5.4.1"
+    gradleVersion "6.4.1"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
