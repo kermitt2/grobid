@@ -174,7 +174,7 @@ subprojects {
         }
     }
 
-    jacocoTestReport {
+/*    jacocoTestReport {
 //        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
 //        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
 //        classDirectories = files(sourceSets.main.output)
@@ -183,7 +183,7 @@ subprojects {
             xml.enabled = true
             csv.enabled = false
         }
-    }
+    }*/
 
     test {
         testLogging.showStandardStreams = true
@@ -442,8 +442,9 @@ project(":grobid-trainer") {
     }
 }
 
+/** JACOCO **/
 // coveralls does not support mutimodule, therefore merging reports
-task jacocoRootReport(type: JacocoReport) {
+/*task jacocoRootReport(type: JacocoReport) {
     dependsOn = [subprojects.test
 //                 subprojects.jacocoTestReport
     ]
@@ -465,15 +466,59 @@ task jacocoRootReport(type: JacocoReport) {
             it.exists()
         })
     }
+}*/
+
+tasks.register("codeCoverageReport", JacocoReport) {
+    // If a subproject applies the 'jacoco' plugin, add the result it to the report
+    subprojects { subproject ->
+        subproject.plugins.withType(JacocoPlugin).configureEach {
+            subproject.tasks.matching({ t -> t.extensions.findByType(JacocoTaskExtension) }).configureEach { testTask ->
+                sourceSets subproject.sourceSets.main
+                executionData(testTask)
+            }
+
+            // To automatically run `test` every time `./gradlew codeCoverageReport` is called,
+            // you may want to set up a task dependency between them as shown below.
+            // Note that this requires the `test` tasks to be resolved eagerly (see `forEach`) which
+            // may have a negative effect on the configuration time of your build.
+            subproject.tasks.matching({ t -> t.extensions.findByType(JacocoTaskExtension) }).forEach {
+                rootProject.tasks.codeCoverageReport.dependsOn(it)
+            }
+        }
+    }
+
+    // enable the different report types (html, xml, csv)
+    reports {
+        // xml is usually used to integrate code coverage with
+        // other tools like SonarQube, Coveralls or Codecov
+        xml.enabled true
+        xml.destination = file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+
+        // HTML reports can be used to see code coverage
+        // without any external tools
+        html.enabled true
+
+        csv.enabled true
+    }
+
+    onlyIf = {
+        true
+    }
+    doFirst {
+        executionData = files(executionData.findAll {
+            it.exists()
+        })
+    }
 }
 
+/** COVERALLS **/
 coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
     jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
 
 tasks.coveralls {
-    dependsOn jacocoRootReport
+    dependsOn codeCoverageReport
 }
 
 wrapper {
