@@ -465,16 +465,11 @@ tasks.register("codeCoverageReport", JacocoReport) {
         }
     }
 
-    // enable the different report types (html, xml, csv)
+    // XML -> coveralls,
+    // HTML -> for manual check
     reports {
-        // xml is usually used to integrate code coverage with
-        // other tools like SonarQube, Coveralls or Codecov
         xml.enabled true
-
-        // HTML reports can be used to see code coverage
-        // without any external tools
         html.enabled true
-
         csv.enabled true
     }
 
@@ -485,8 +480,8 @@ tasks.register("codeCoverageReport", JacocoReport) {
 
 /** COVERALLS **/
 coveralls {
-    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
-    jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
+//    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+    jacocoReportPath = "build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
 }
 
 tasks.coveralls {
