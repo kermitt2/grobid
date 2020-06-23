@@ -105,7 +105,7 @@ subprojects {
 
     task sourceJar(type: Jar) {
         description = 'A jar that contains source code'
-        classifier = 'sources'
+        archiveClassifier = 'sources'
         from project.sourceSets.main.java
     }
 
@@ -239,7 +239,7 @@ project("grobid-core") {
     }
 
     shadowJar {
-        classifier = 'onejar'
+        archiveClassifier = 'onejar'
         mergeServiceFiles()
         zip64 true
         manifest {
@@ -257,11 +257,11 @@ project("grobid-core") {
         zip64 true
         mergeServiceFiles()
         from sourceSets.main.output
-//        from {
-//            project.configurations.implementation.collect {
-//                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
-//            }
-//        }
+        from {
+            project.configurations.compile.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
         configurations = [project.configurations.shadedLib]
         relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
@@ -369,7 +369,7 @@ project(":grobid-trainer") {
     }
 
     shadowJar {
-        classifier = 'onejar'
+        archiveClassifier = 'onejar'
         mergeServiceFiles()
         zip64 true
         manifest {
