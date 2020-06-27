@@ -12,6 +12,8 @@ Grobid uses different CRF models depending on the labeling task to be realized. 
 
 * header
 
+* medical
+
 * name-citation
 
 * name-header

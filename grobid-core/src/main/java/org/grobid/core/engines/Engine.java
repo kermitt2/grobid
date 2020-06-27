@@ -465,6 +465,19 @@ public class Engine implements Closeable {
     }
 
     /**
+     * Create training data for a medical model on a new PDF
+     *
+     * @param inputFile    : the path of the PDF file to be processed
+     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathTEI      : the path where to put the annotated TEI representation (the
+     *                       file to be corrected for gold-level training data)
+     * @param id           : an optional ID to be used in the TEI file, -1 if not used
+     */
+    public void createTrainingMedical(File inputFile, String pathRaw, String pathTEI, int id) {
+        parsers.getMedicalParser().createTrainingMedical(inputFile, pathRaw, pathTEI, id);
+    }
+
+    /**
      *
      * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
      * Parse and convert the current article into TEI, this method performs the
@@ -645,6 +658,57 @@ public class Engine implements Closeable {
             for (final File pdfFile : refFiles) {
                 try {
                     createTrainingBlank(pdfFile, resultPath, resultPath, ind + n);
+                } catch (final Exception exp) {
+                    LOGGER.error("An error occured while processing the following pdf: "
+                        + pdfFile.getPath(), exp);
+                }
+                if (ind != -1)
+                    n++;
+            }
+
+            return refFiles.length;
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occured while running Grobid batch.", exp);
+        }
+    }
+
+    /**
+     * Process all the PDF in a given directory with a pdf extraction and
+     * produce blank training data, i.e. TEI files with text only
+     * without tags. This can be used to start from scratch any new model.
+     *
+     * @param directoryPath - the path to the directory containing PDF to be processed.
+     * @param resultPath    - the path to the directory where the results as XML files
+     *                        and default CRF feature files shall be written.
+     * @param ind           - identifier integer to be included in the resulting files to
+     *                        identify the training case. This is optional: no identifier
+     *                        will be included if ind = -1
+     * @return the number of processed files.
+     */
+    public int batchCreateTrainingMedical(String directoryPath, String resultPath, int ind) {
+        try {
+            File path = new File(directoryPath);
+            // we process all pdf files in the directory
+            File[] refFiles = path.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    System.out.println(name);
+                    return name.endsWith(".pdf") || name.endsWith(".PDF");
+                }
+            });
+
+            if (refFiles == null)
+                return 0;
+
+            System.out.println(refFiles.length + " files to be processed.");
+
+            int n = 0;
+            if (ind == -1) {
+                // for undefined identifier (value at -1), we initialize it to 0
+                n = 1;
+            }
+            for (final File pdfFile : refFiles) {
+                try {
+                    createTrainingMedical(pdfFile, resultPath, resultPath, ind + n);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
                         + pdfFile.getPath(), exp);

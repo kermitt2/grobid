@@ -45,6 +45,7 @@ public enum GrobidModels implements GrobidModel {
     ASTRO("astro"),
     SOFTWARE("software"),
     DATASEER("dataseer"),
+    MEDICAL("medical"),
     DUMMY("none");
 
     //I cannot declare it before

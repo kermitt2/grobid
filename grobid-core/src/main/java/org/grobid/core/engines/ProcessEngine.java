@@ -394,6 +394,19 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
+     * Generate training data for the medical model from provided directory of PDF documents.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingMedical(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingMedical(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
      * Generate blank training data from provided directory of PDF documents, i.e. where TEI files are text only
      * without tags. This can be used to start from scratch any new model. 
      *
