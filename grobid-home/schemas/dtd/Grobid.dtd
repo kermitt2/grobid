@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2020-06-01T09:00:59Z. .
+DTD generated from ODD source 2020-06-29T13:16:05Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -1600,7 +1600,7 @@ flipping %teidata.truthValue;  #IMPLIED >
  %tei_att.personal.attributes;
  %tei_att.typed.attributes; >
 <!--doc:contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables] -->
-<!ELEMENT table (#PCDATA)?>
+<!ELEMENT table (((%model.headLike;|%model.global;)*,((row,(%model.global;)*)+|((%model.graphicLike;),(%model.global;)*)+),((%model.divBottom;),(%model.global;)*)*))>
 <!ATTLIST table xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST table
  %tei_att.global.attributes;
