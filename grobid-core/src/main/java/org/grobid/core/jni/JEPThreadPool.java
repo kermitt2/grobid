@@ -5,6 +5,7 @@ import java.util.*;
 import java.io.*;
 import java.nio.file.Path;
 
+import jep.SubInterpreter;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.exceptions.GrobidResourceException;
 
@@ -103,15 +104,13 @@ public class JEPThreadPool {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new Jep(config);
+            jep = new SubInterpreter(config);
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;
         } catch(JepException e) {
-            LOGGER.error("JEP initialization failed", e);
             throw new RuntimeException("JEP initialization failed", e);
         } catch(GrobidResourceException e) {
-            LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
             throw new RuntimeException("DeLFT installation path invalid, JEP initialization failed", e);
         } finally {
             if (!success && (jep != null)) {
@@ -148,7 +147,7 @@ public class JEPThreadPool {
     }
 
     public void run(Runnable task) throws InterruptedException {
-        System.out.println("running thread: " + Thread.currentThread().getId());
+        LOGGER.info("Running thread: " + Thread.currentThread().getId());
         Future future = executor.submit(task);
         // wait until done (in ms)
         while (!future.isDone()) {
