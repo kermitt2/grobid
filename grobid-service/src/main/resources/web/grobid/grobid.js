@@ -1241,14 +1241,14 @@ var grobid = (function($) {
 
 	function download(){
         var name ="export";
-		if ((document.getElementById("input").files[0].type == 'application/pdf') ||
-            (document.getElementById("input").files[0].name.endsWith(".pdf")) ||
-            (document.getElementById("input").files[0].name.endsWith(".PDF"))) {
+		if (document.getElementById("input")
+            && document.getElementById("input").files.length > 0
+                && document.getElementById("input").files[0].name) {
              name = document.getElementById("input").files[0].name;
         }
+
 		var fileName = name + ".tei.xml";
 	    var a = document.createElement("a");
-
 
 	    var file = new Blob([teiToDownload], {type: 'application/xml'});
 	    var fileURL = URL.createObjectURL(file);
@@ -1281,9 +1281,9 @@ var grobid = (function($) {
 
 	function downloadPatent() {
         var name = "export";
-        if ((document.getElementById("input3").files[0].type == 'application/pdf') ||
-            (document.getElementById("input3").files[0].name.endsWith(".pdf")) ||
-            (document.getElementById("input3").files[0].name.endsWith(".PDF"))) {
+        if (document.getElementById("input3")
+            && document.getElementById("input3").files.length > 0
+            && document.getElementById("input3").files[0].name) {
             name = document.getElementById("input3").files[0].name;
         }
         var fileName = name + ".tei.xml";
