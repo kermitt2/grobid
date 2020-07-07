@@ -48,6 +48,19 @@ subprojects {
     apply plugin: 'maven-publish'
     apply plugin: 'com.jfrog.bintray'
 
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+
+    task install(dependsOn: publishToMavenLocal)
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -111,6 +124,7 @@ subprojects {
 
     artifacts {
         archives sourceJar
+        archives jar
     }
 
 
@@ -245,35 +259,21 @@ project("grobid-core") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
-
-        from {
-            project.configurations.compile.collect {
-                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
-            }
-        }
-    }
-
-    task mainJar(type: ShadowJar) {
-        zip64 true
-        mergeServiceFiles()
         from sourceSets.main.output
+
         from {
             project.configurations.compile.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+
         configurations = [project.configurations.shadedLib]
         relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
 
-    jar {
-        dependsOn mainJar
-        enabled false
-    }
-
     artifacts {
         archives shadowJar
-        archives mainJar
+        archives jar
     }
 
     processResources {
@@ -379,6 +379,7 @@ project(":grobid-trainer") {
 
     artifacts {
         archives shadowJar
+        archives jar
     }
 
     def trainerTasks = [
@@ -473,9 +474,6 @@ tasks.register("codeCoverageReport", JacocoReport) {
         csv.enabled true
     }
 
-//    onlyIf = {
-//        true
-//    }
 }
 
 /** COVERALLS **/
