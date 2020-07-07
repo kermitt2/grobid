@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
 ## [0.6.0] – 2020-04-24
 
 ### Added
@@ -190,7 +192,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.5.6...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/kermitt2/grobid/compare/0.5.3...0.5.4
