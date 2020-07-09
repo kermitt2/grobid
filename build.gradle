@@ -315,6 +315,7 @@ project("grobid-home") {
 project(":grobid-service") {
     apply plugin: 'application'
     apply plugin: 'jacoco'
+    apply plugin: 'com.github.johnrengelman.shadow'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
     tasks.run.workingDir = rootProject.rootDir
@@ -329,17 +330,30 @@ project(":grobid-service") {
 
     dependencies {
         implementation project(':grobid-core')
-        implementation "io.dropwizard:dropwizard-core:1.3.17"
-        implementation "io.dropwizard:dropwizard-assets:1.3.17"
+        implementation "io.dropwizard:dropwizard-core:1.3.23"
+        implementation "io.dropwizard:dropwizard-assets:1.3.23"
         implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
-        implementation "io.dropwizard:dropwizard-testing:1.3.17"
-        implementation "io.dropwizard:dropwizard-forms:1.3.17"
-        implementation "io.dropwizard:dropwizard-client:1.3.17"
-        implementation "io.dropwizard:dropwizard-auth:1.3.17"
+        implementation "io.dropwizard:dropwizard-testing:1.3.23"
+        implementation "io.dropwizard:dropwizard-forms:1.3.23"
+        implementation "io.dropwizard:dropwizard-client:1.3.23"
+        implementation "io.dropwizard:dropwizard-auth:1.3.23"
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"
 
         testImplementation "io.dropwizard:dropwizard-testing:1.3.17"
+    }
+
+    shadowJar {
+        archiveClassifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
+        }
+    }
+
+    artifacts {
+        archives shadowJar
     }
 
     distributions {
