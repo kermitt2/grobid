@@ -1,5 +1,3 @@
-//import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 buildscript {
     repositories {
         mavenLocal()
@@ -66,17 +64,15 @@ subprojects {
     repositories {
         mavenCentral()
         jcenter()
-        repositories {
-            maven {
-                url new File(rootProject.rootDir, "grobid-core/lib")
-            }
+        maven {
+            url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
     }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         //all*.exclude group: 'log4j', module: "log4j"
-        implementation.setCanBeResolved(true)
+//        implementation.setCanBeResolved(true)
     }
 
     ext {
@@ -254,7 +250,8 @@ project("grobid-core") {
 
     jar {
         from {
-            project.configurations.implementation.collect {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
@@ -270,7 +267,8 @@ project("grobid-core") {
         from sourceSets.main.output
 
         from {
-            project.configurations.implementation.collect {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
@@ -392,7 +390,8 @@ project(":grobid-trainer") {
 
     jar {
         from {
-            project.configurations.implementation.collect {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
