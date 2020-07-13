@@ -1,4 +1,4 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+//import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 buildscript {
     repositories {
@@ -13,7 +13,7 @@ buildscript {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
 }
@@ -21,7 +21,6 @@ buildscript {
 repositories {
     mavenCentral()
 }
-
 
 apply plugin: 'net.researchgate.release'
 apply plugin: 'jacoco'
@@ -77,6 +76,7 @@ subprojects {
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         //all*.exclude group: 'log4j', module: "log4j"
+        implementation.setCanBeResolved(true)
     }
 
     ext {
@@ -252,6 +252,14 @@ project("grobid-core") {
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
     }
 
+    jar {
+        from {
+            project.configurations.implementation.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+    }
+
     shadowJar {
         archiveClassifier = 'onejar'
         mergeServiceFiles()
@@ -262,7 +270,7 @@ project("grobid-core") {
         from sourceSets.main.output
 
         from {
-            project.configurations.compile.collect {
+            project.configurations.implementation.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
@@ -366,6 +374,14 @@ project(":grobid-trainer") {
         }
         implementation project(':grobid-core')
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+    }
+
+    jar {
+        from {
+            project.configurations.implementation.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
     }
 
     shadowJar {
