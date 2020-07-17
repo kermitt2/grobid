@@ -8,7 +8,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
@@ -116,6 +116,8 @@ subprojects {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -255,6 +257,8 @@ project("grobid-core") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+
+//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -324,7 +328,8 @@ project(":grobid-service") {
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-//    tasks.distZip.enabled = false
+    tasks.distZip.enabled = false
+    tasks.distTar.enabled = false
 
     dependencies {
         implementation project(':grobid-core')
@@ -348,6 +353,8 @@ project(":grobid-service") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -395,6 +402,8 @@ project(":grobid-trainer") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -404,6 +413,8 @@ project(":grobid-trainer") {
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
