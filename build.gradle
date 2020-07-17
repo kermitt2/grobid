@@ -10,7 +10,7 @@ buildscript {
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
