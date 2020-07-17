@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static shadedwipo.org.apache.commons.lang3.StringUtils.isNotBlank;
-
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * SAX parser for XML ALTO representation of fixed layout documents. Typographical and layout information 
@@ -684,7 +683,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 String name = atts.getQName(i);
                 String value = atts.getValue(i);
 
-                if (isNotBlank(name)&& isNotBlank(value)) {
+                if (isNotBlank(name) && isNotBlank(value)) {
                     if (name.equals("ID")) {
                         fontId = value;
                         blabla.append(" ");

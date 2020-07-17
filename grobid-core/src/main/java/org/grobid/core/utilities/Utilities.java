@@ -21,14 +21,12 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.common.primitives.Doubles;
 import org.apache.commons.lang3.StringUtils;
 
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
 
-import static shadedwipo.org.apache.commons.lang3.ArrayUtils.isEmpty;
 
 /**
  * Some utilities methods that I don't know where to put.
