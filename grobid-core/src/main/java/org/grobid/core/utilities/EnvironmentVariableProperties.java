@@ -4,16 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EnvironmentVariableProperties {
-
     private final Map<String, String> properties = new HashMap<>();
 
-    public EnvironmentVariableProperties(String prefix) {
-        this(System.getenv(), prefix);
+    public EnvironmentVariableProperties(String matcher) {
+        this(System.getenv(), matcher);
     }
 
-    public EnvironmentVariableProperties(Map<String, String> environmentVariablesMap, String prefix) {
+    public EnvironmentVariableProperties(Map<String, String> environmentVariablesMap, String matcher) {
         for (Map.Entry<String, String> entry: environmentVariablesMap.entrySet()) {
-            if (!entry.getKey().startsWith(prefix)) {
+            if (!entry.getKey().matches(matcher)) {
                 continue;
             }
             String propertiesKey = getPropertiesKeyForEnvironmentVariableName(entry.getKey());
