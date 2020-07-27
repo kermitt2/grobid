@@ -7,14 +7,14 @@ import org.junit.Test;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public class BibDataSetContextExtractorTest {
+public class DataSetContextExtractorTest {
 
     @Test
     public void testRefEscapes() throws Exception {
         InputStream is = this.getClass().getResourceAsStream("/test/tei-escape.xml");
         String tei = IOUtils.toString(is, StandardCharsets.UTF_8);
         is.close();
-        BibDataSetContextExtractor.getCitationReferences(tei);
+        DataSetContextExtractor.getCitationReferences(tei);
     }
 
 }

@@ -31,9 +31,13 @@
 
 * [Training and evaluating the GROBID models](Training-the-models-of-Grobid.md)
 
-* [End to end evaluation](End-to-end-evaluation.md)
+* [End-to-end evaluation](End-to-end-evaluation.md)
 
-* [Benchmarking](Benchmarking.md)
+<h3>Benchmarking</h3>
+
+* [Description](Benchmarking.md)
+* [Evaluation PubMed Central](Benchmarking-pmc.md)
+* [Model-level evaluations](Benchmarking-models.md)
 
 <h3>Annotation guidelines</h3>
 

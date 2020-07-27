@@ -182,6 +182,13 @@ public class Person {
         return layoutTokens;
     }
 
+    public void addLayoutTokens(List<LayoutToken> theTokens) {
+        if (layoutTokens == null) {
+            layoutTokens = new ArrayList<LayoutToken>();
+        }
+        layoutTokens.addAll(theTokens);
+    }
+
     public String toTEI(boolean withCoordinates) {
         if ( (firstName == null) && (middleName == null) &&
                 (lastName == null) ) {

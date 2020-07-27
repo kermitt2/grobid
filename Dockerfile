@@ -61,6 +61,9 @@ RUN unzip ./grobid-home.zip -d ./grobid && \
 
 RUN rm *.zip
 
+# below to allow logs to be written in the container
+# RUN mkdir -p logs
+
 VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 WORKDIR /opt/grobid

@@ -32,7 +32,6 @@ public class AffiliationAddressParser extends AbstractParser {
                 return null;
             }
 
-            ArrayList<String> affiliationBlocks = new ArrayList<String>();
             input = UnicodeUtil.normaliseText(input);
             input = input.trim();
 
@@ -44,21 +43,8 @@ public class AffiliationAddressParser extends AbstractParser {
             //while (st.hasMoreTokens()) {
             //    String tok = st.nextToken();
 			//int p = 0;
-			for(LayoutToken tok : tokenizations) {
-                if (tok.getText().length() == 0) continue;
-                if (tok.getText().equals("\n")) {
-					//tokenizations.set(p, new LayoutToken(" "));
-                    tok.setText(" ");
-                } 
-                if (!tok.getText().equals(" ")) {
-                    if (tok.getText().equals("\n")) {
-                        affiliationBlocks.add("@newline");
-                    } else
-                        affiliationBlocks.add(tok + " <affiliation>");
-                }
-				//p++;
-            }
 
+            List<String> affiliationBlocks = getAffiliationBlocks(tokenizations);
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
             placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
             List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
@@ -70,6 +56,27 @@ public class AffiliationAddressParser extends AbstractParser {
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
+    }
+
+    protected static List<String> getAffiliationBlocks(List<LayoutToken> tokenizations) {
+        ArrayList<String> affiliationBlocks = new ArrayList<String>();
+        for(LayoutToken tok : tokenizations) {
+            if (tok.getText().length() == 0) continue;
+
+            // is this necessary?
+            if (tok.getText().equals("\n")) {
+                //tokenizations.set(p, new LayoutToken(" "));
+                tok.setText(" ");
+            } 
+            if (!tok.getText().equals(" ")) {
+                if (tok.getText().equals("\n")) {
+                    affiliationBlocks.add("@newline");
+                } else
+                    affiliationBlocks.add(tok + " <affiliation>");
+            }
+            //p++;
+        }
+        return affiliationBlocks;
     }
 
     /**
@@ -196,7 +203,7 @@ public class AffiliationAddressParser extends AbstractParser {
     }
 
 
-    private ArrayList<Affiliation> resultBuilder(String result,
+    protected ArrayList<Affiliation> resultBuilder(String result,
                                                  List<LayoutToken> tokenizations,
                                                  boolean usePreLabel) {
         ArrayList<Affiliation> fullAffiliations = null;
@@ -695,6 +702,16 @@ public class AffiliationAddressParser extends AbstractParser {
                         } else {
                             aff.setAffiliationString(s2);
                         }
+                    }
+                }
+
+                if (!s1.endsWith("<marker>")) {
+                    if (aff.getRawAffiliationString() == null) {
+                        aff.setRawAffiliationString(s2);
+                    } else if (addSpace) {
+                        aff.setRawAffiliationString(aff.getRawAffiliationString() + " " + s2);
+                    } else {
+                        aff.setRawAffiliationString(aff.getRawAffiliationString() + s2);
                     }
                 }
 

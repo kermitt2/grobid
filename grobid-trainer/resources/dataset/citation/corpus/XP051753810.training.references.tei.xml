@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl>&quot;<title level="m">Third Generation Partnership Project 3GPP Working Procedures</title>, (<date>2010-04-23</date>)&quot;</bibl>
+	<bibl><idno>3GPP TR 21.905</idno>: &quot;<title level="m">Vocabulary for 3GPP Specifications</title>&quot;.</bibl>
+	<bibl><idno>3GPP TR 21.900</idno>: &quot;<title level="m">Technical Specification Group working methods</title>&quot;.</bibl>
+	<bibl><idno>3GPP TR 21.801</idno>: &quot;<title level="m">Specification drafting rules</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 25.410</idno>: &quot;<title level="m">UTRAN Iu Interface: general aspects and principles</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 25.420</idno>: &quot;<title level="m">UTRAN Iur interface general aspects and principles</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 25.430</idno>: &quot;<title level="m">UTRAN Iub interface: general aspects and principles</title>&quot;.</bibl>
+	<bibl><idno>3GPP TS 25.450</idno>: &quot;<title level="m">UTRAN Iupc interface general aspects and principles</title>&quot;.</bibl>
+	Void.
+	Void
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

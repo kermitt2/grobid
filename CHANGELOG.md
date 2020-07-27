@@ -6,19 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.6.0] – 2020-04-24
+
 ### Added
 
 + Table content structuring (thanks to @Vitaliy-1), see [PR #546](https://github.com/kermitt2/grobid/pull/546)
 + Support for `application/x-bibtex` at `/api/processReferences` and `/api/processCitation` (thanks to @koppor)
++ Optionally include raw affiliation string in the TEI result
++ Add dummy model for facilitating test in Grobid modules
++ Allow environment variables for config properties values to ease Docker config 
 + ChangeLog
 
 ### Changed
 
 + Improve CORS configuration #527 (thank you @lfoppiano)
 + Documentation improvements
-+ Update of segmentation and fulltext model
++ Update of segmentation and fulltext model and training data
 + Better handling of affiliation block fragments
 + Improved DOI string recognition
++ More robust n-fold cross validation (case of shared grobid-home)
 
 ### Fixed
 
@@ -186,7 +192,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.5.6...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/kermitt2/grobid/compare/0.5.3...0.5.4
