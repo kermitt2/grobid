@@ -277,7 +277,7 @@ project("grobid-core") {
             }
         }
 
-        configurations = [project.configurations.shadedLib]
+        configurations = [project.configurations.shadedLib, project.configurations.runtimeClasspath]
         relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
 
