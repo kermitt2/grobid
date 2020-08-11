@@ -119,7 +119,7 @@ public class AuthorParser {
                     continue;
                 }
 
-                if(pdfAnnotations !=null) {
+                if(pdfAnnotations != null) {
                     for (LayoutToken authorsToken : cluster.concatTokens()) {
                         for (PDFAnnotation pdfAnnotation : pdfAnnotations) {
                             BoundingBox intersectBox = pdfAnnotation.getIntersectionBox(authorsToken);
@@ -129,19 +129,22 @@ public class AuthorParser {
                                 } else {
                                     double pixPerChar = authorsToken.getWidth() / authorsToken.getText().length();
                                     int charsCovered = (int) ((intersectBox.getWidth() / pixPerChar) + 0.5);
-                                    // !! here we consider the annot is at the tail or end of the names
-                                    String newToken = authorsToken.getText().substring(0, authorsToken.getText().length() - charsCovered);
-                                    Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(pdfAnnotation.getDestination());
-                                    if (orcidMatcher.find()) {
-                                        aut.setORCID(orcidMatcher.group(1) + "-"
-                                            + orcidMatcher.group(2) + "-" + orcidMatcher.group(3)+ "-" + orcidMatcher.group(4));
-                                        authorsToken.setText(newToken);
+                                    if (pdfAnnotation.getDestination() != null && pdfAnnotation.getDestination().length() > 0) {
+                                        Matcher orcidMatcher = TextUtilities.ORCIDPattern.matcher(pdfAnnotation.getDestination());
+                                        if (orcidMatcher.find()) {
+                                            // !! here we consider the annot is at the tail or end of the names
+                                            String newToken = authorsToken.getText().substring(0, authorsToken.getText().length() - charsCovered);        
+                                            aut.setORCID(orcidMatcher.group(1) + "-"
+                                                + orcidMatcher.group(2) + "-" + orcidMatcher.group(3)+ "-" + orcidMatcher.group(4));
+                                            authorsToken.setText(newToken);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
+                } 
+
                 TaggingLabel clusterLabel = cluster.getTaggingLabel();
                 Engine.getCntManager().i(clusterLabel);
                 //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));

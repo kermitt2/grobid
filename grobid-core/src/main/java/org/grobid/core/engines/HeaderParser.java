@@ -229,21 +229,35 @@ public class HeaderParser extends AbstractParser {
                     }
 
                     resHeader.setOriginalAuthors(resHeader.getAuthors());
+                    resHeader.getAuthorsTokens();
+
                     boolean fragmentedAuthors = false;
                     boolean hasMarker = false;
                     List<Integer> authorsBlocks = new ArrayList<Integer>();
-                    String[] authorSegments = null;
-                    if (resHeader.getAuthors() != null) {
-//                        List<String> auts;
-                        authorSegments = resHeader.getAuthors().split("\t");
-                        if (authorSegments.length > 1) {
+                    List<List<LayoutToken>> authorSegments = new ArrayList<>();
+                    if (resHeader.getAuthorsTokens() != null) {
+                        // split the list of layout tokens when token "\t" is met
+                        List<LayoutToken> currentSegment = new ArrayList<>();
+                        for(LayoutToken theToken : resHeader.getAuthorsTokens()) {
+                            if (theToken.getText() != null && theToken.getText().equals("\t")) {
+                                if (currentSegment.size() > 0)
+                                    authorSegments.add(currentSegment);
+                                currentSegment = new ArrayList<>();
+                            } else
+                                currentSegment.add(theToken);
+                        }
+                        // last segment
+                        if (currentSegment.size() > 0)
+                            authorSegments.add(currentSegment);
+
+                        if (authorSegments.size() > 1) {
                             fragmentedAuthors = true;
                         }
-                        for (int k = 0; k < authorSegments.length; k++) {
-//                            auts = new ArrayList<String>();
-//                            auts.add(authorSegments[k]);
-//                            List<Person> localAuthors = parsers.getAuthorParser().processingHeader(auts);
-                            List<Person> localAuthors = parsers.getAuthorParser().processingHeader(authorSegments[k]);
+                        for (int k = 0; k < authorSegments.size(); k++) {
+                            if (authorSegments.get(k).size() == 0)
+                                continue;
+                            List<Person> localAuthors = parsers.getAuthorParser()
+                                .processingHeaderWithLayoutTokens(authorSegments.get(k), doc.getPDFAnnotations());
                             if (localAuthors != null) {
                                 for (Person pers : localAuthors) {
                                     resHeader.addFullAuthor(pers);
@@ -256,6 +270,7 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
 
+
                     // remove invalid authors (no last name, noise, etc.)
                     resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
 
@@ -266,7 +281,7 @@ public class HeaderParser extends AbstractParser {
                     if (fragmentedAuthors && !hasMarker) {
                         if (resHeader.getFullAffiliations() != null) {
                             if (authorSegments != null) {
-                                if (resHeader.getFullAffiliations().size() == authorSegments.length) {
+                                if (resHeader.getFullAffiliations().size() == authorSegments.size()) {
                                     int k = 0;
                                     List<Person> persons = resHeader.getFullAuthors();
                                     for (Person pers : persons) {
