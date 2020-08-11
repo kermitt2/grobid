@@ -12,6 +12,8 @@ import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Class for representing and exchanging person information, e.g. author or editor.
@@ -72,6 +74,16 @@ public class Person {
     }
 
     public void setTitle(String f) {
+        if (f != null) {
+            while (f.startsWith("(")) {
+                f = f.substring(1,f.length());
+            }
+
+            while (f.endsWith(")")) {
+                f = f.substring(0,f.length()-1);
+            }
+        }
+
         title = f;
     }
 
@@ -182,6 +194,9 @@ public class Person {
         return layoutTokens;
     }
 
+    /**
+     * TEI serialization via xom. 
+     */
     public void addLayoutTokens(List<LayoutToken> theTokens) {
         if (layoutTokens == null) {
             layoutTokens = new ArrayList<LayoutToken>();
@@ -220,24 +235,71 @@ public class Person {
             persElement.appendChild(XmlBuilderUtils.teiElement("genName", TextUtilities.HTMLEncode(suffix)));
         }
 
-
-
-        //        res += "</persName>";
-
-//        String res = "<persName>";
-//        if (title != null)
-//            res += "<roleName>" + title + "</roleName>";
-//        if (firstName != null)
-//            res += "<forename type=\"first\">" + firstName + "</forename>";
-//        if (middleName != null)
-//            res += "<forename type=\"middle\">" + middleName + "</forename>";
-//        if (lastName != null)
-//            res += "<surname>" + lastName + "</surname>";
-//        if (suffix != null)
-//            res += "<genName>" + suffix + "</genName>";
-//        res += "</persName>";
-
         return XmlBuilderUtils.toXml(persElement);
+    }
+
+    /**
+     * TEI serialization based on string builder, it allows to avoid namespaces and to better control
+     * the formatting.
+     */
+    public String toTEI(boolean withCoordinates, int indent) {
+        if ( (firstName == null) && (middleName == null) && (lastName == null) ) {
+            return null;
+        }
+
+        StringBuilder tei = new StringBuilder();
+
+        for (int i = 0; i < indent; i++) {
+            tei.append("\t");
+        }
+        tei.append("<persName");
+        if (withCoordinates && (getLayoutTokens() != null) && (!getLayoutTokens().isEmpty())) {
+            tei.append(" ");
+            tei.append(LayoutTokensUtil.getCoordsString(getLayoutTokens()));
+        }
+        tei.append(">\n");
+
+        if (!StringUtils.isEmpty(title)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<roleName>"+TextUtilities.HTMLEncode(title)+"</roleName>\n");
+        }
+
+        if (!StringUtils.isEmpty(firstName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<forename type=\"first\">"+TextUtilities.HTMLEncode(firstName)+"</forename>\n");
+        }
+
+        if (!StringUtils.isEmpty(middleName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<forename type=\"middle\">"+TextUtilities.HTMLEncode(middleName)+"</forename>\n");
+        }
+
+        if (!StringUtils.isEmpty(lastName)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<surname>"+TextUtilities.HTMLEncode(lastName)+"</surname>\n");
+        }
+
+        if (!StringUtils.isEmpty(suffix)) {
+            for (int i = 0; i < indent+1; i++) {
+                tei.append("\t");
+            }
+            tei.append("<genName>"+TextUtilities.HTMLEncode(suffix)+"</genName>\n");
+        }
+
+        for (int i = 0; i < indent; i++) {
+            tei.append("\t");
+        }
+        tei.append("</persName>");
+
+        return tei.toString();
     }
 
     // list of character delimiters for capitalising names
@@ -416,5 +478,225 @@ public class Person {
 		else 
 			return true;
 	}
+
+
+    /**
+     *  Deduplicate person names, optionally attached to affiliations, based 
+     *  on common forename/surname, taking into account abbreviated forms
+     */
+    public static List<Person> deduplicate(List<Person> persons) {
+        if (persons == null)
+            return null;
+        if (persons.size() == 0)
+            return persons;
+
+        // we create a signature per person based on lastname and first name first letter
+        Map<String,List<Person>> signatures = new TreeMap<String,List<Person>>();
+        
+        for(Person person : persons) {
+            if (person.getLastName() == null || person.getLastName().trim().length() == 0) {
+                // the minimal information to deduplicate is not available
+                continue;
+            }
+            String signature = person.getLastName().toLowerCase();
+            if (person.getFirstName() != null && person.getFirstName().trim().length() != 0) {
+                signature += "_" + person.getFirstName().substring(0,1);
+            }
+            List<Person> localPersons = signatures.get(signature); 
+            if (localPersons == null) {
+                localPersons = new ArrayList<Person>();
+            } 
+            localPersons.add(person);
+            signatures.put(signature, localPersons);
+        }
+
+        // match signature and check possible affiliation information
+        for (Map.Entry<String,List<Person>> entry : signatures.entrySet()) {
+            List<Person> localPersons = entry.getValue();
+            if (localPersons.size() > 1) {
+                // candidate for deduplication, check full forenames and middlenames to check if there is a clash
+                List<Person> newLocalPersons = new ArrayList<Person>();
+                for(int j=0; j < localPersons.size(); j++) {
+                    Person localPerson =  localPersons.get(j);
+                    String localFirstName = localPerson.getFirstName();
+                    if (localFirstName != null)
+                        localFirstName = localFirstName.toLowerCase();
+                    String localMiddleName = localPerson.getMiddleName();
+                    if (localMiddleName != null)
+                        localMiddleName = localMiddleName.toLowerCase();
+                    int nbClash = 0;
+                    for(int k=0; k < localPersons.size(); k++) {                        
+                        boolean clash = false;
+                        if (k == j)
+                            continue;
+                        Person otherPerson = localPersons.get(k);
+                        String otherFirstName = otherPerson.getFirstName();
+                        if (otherFirstName != null)
+                            otherFirstName = otherFirstName.toLowerCase();
+                        String otherMiddleName = otherPerson.getMiddleName();
+                        if (otherMiddleName != null)
+                            otherMiddleName = otherMiddleName.toLowerCase();
+
+                        // test first name clash
+                        if (localFirstName != null && otherFirstName != null) {
+                            if (localFirstName.length() == 1 && otherFirstName.length() == 1) {
+                                if (!localFirstName.equals(otherFirstName)) {
+                                    clash = true;
+                                }
+                            } else {
+                                if (!localFirstName.equals(otherFirstName) && 
+                                    !localFirstName.startsWith(otherFirstName) && 
+                                    !otherFirstName.startsWith(localFirstName)
+                                    ) {
+                                    clash = true;
+                                }
+                            }
+                        }
+
+                        // test middle name clash
+                        if (!clash) {
+                            if (localMiddleName != null && otherMiddleName != null) {
+                                if (localMiddleName.length() == 1 && otherMiddleName.length() == 1) {
+                                    if (!localMiddleName.equals(otherMiddleName)) {
+                                        clash = true;
+                                    }
+                                } else {
+                                    if (!localMiddleName.equals(otherMiddleName) && 
+                                        !localMiddleName.startsWith(otherMiddleName) && 
+                                        !otherMiddleName.startsWith(localMiddleName)
+                                    ) {
+                                    clash = true;
+                                }
+                                }
+                            }
+                        }
+
+                        if (clash) {
+                            // increase the clash number for index j
+                            nbClash++;
+                        } 
+                    }
+
+                    if (nbClash == 0) {
+                        newLocalPersons.add(localPerson);
+                    } 
+                }
+
+                localPersons = newLocalPersons;
+
+                if (localPersons.size() > 1) {
+                    // if identified duplication, keep the most complete person form and the most complete
+                    // affiliation information 
+                    Person localPerson =  localPersons.get(0);
+                    String localFirstName = localPerson.getFirstName();
+                    if (localFirstName != null)
+                        localFirstName = localFirstName.toLowerCase();
+                    String localMiddleName = localPerson.getMiddleName();
+                    if (localMiddleName != null)
+                        localMiddleName = localMiddleName.toLowerCase();
+                    String localTitle = localPerson.getTitle();
+                    if (localTitle != null)
+                        localTitle = localTitle.toLowerCase();
+                    String localSuffix = localPerson.getSuffix();
+                    if (localSuffix != null)
+                        localSuffix = localSuffix.toLowerCase();
+                    List<Affiliation> aff = localPerson.getAffiliations();
+                    for (int i=1; i<localPersons.size(); i++) {
+                        Person otherPerson = localPersons.get(i);
+                        // try to enrich first Person object
+                        String otherFirstName = otherPerson.getFirstName();
+                        if (otherFirstName != null)
+                            otherFirstName = otherFirstName.toLowerCase();
+                        String otherMiddleName = otherPerson.getMiddleName();
+                        if (otherMiddleName != null)
+                            otherMiddleName = otherMiddleName.toLowerCase();
+                        String otherTitle = otherPerson.getTitle();
+                        if (otherTitle != null)
+                            otherTitle = otherTitle.toLowerCase();
+                        String otherSuffix = otherPerson.getSuffix();
+                        if (otherSuffix != null)
+                            otherSuffix = otherSuffix.toLowerCase();
+
+                        if ((localFirstName == null && otherFirstName != null) || 
+                            (localFirstName != null && otherFirstName != null &&
+                            otherFirstName.length() > localFirstName.length())) {
+                            localPerson.setFirstName(otherPerson.getFirstName());
+                            localFirstName = localPerson.getFirstName().toLowerCase();
+                        }
+
+                        if ((localMiddleName == null && otherMiddleName != null) ||
+                            (localMiddleName != null && otherMiddleName != null &&
+                            otherMiddleName.length() > localMiddleName.length())) {
+                            localPerson.setMiddleName(otherPerson.getMiddleName());
+                            localMiddleName = localPerson.getMiddleName().toLowerCase();
+                        }
+
+                        if ((localTitle == null && otherTitle != null) ||
+                            (localTitle != null && otherTitle != null &&
+                            otherTitle.length() > localTitle.length())) {
+                            localPerson.setTitle(otherPerson.getTitle());
+                            localTitle = localPerson.getTitle().toLowerCase();
+                        }
+
+                        if ((localSuffix == null && otherSuffix != null) ||
+                            (localSuffix != null && otherSuffix != null &&
+                            otherSuffix.length() > localSuffix.length())) {
+                            localPerson.setSuffix(otherPerson.getSuffix());
+                            localSuffix = localPerson.getSuffix().toLowerCase();
+                        }
+
+                        if (otherPerson.getAffiliations() != null) {
+                            for(Affiliation affOther : otherPerson.getAffiliations()) {
+                                localPerson.addAffiliation(affOther);
+                            }
+                        }
+
+                        if (otherPerson.getAffiliationBlocks() != null) {
+                            for(String block : otherPerson.getAffiliationBlocks()) {
+                                localPerson.addAffiliationBlocks(block);
+                            }
+                        }
+
+                        if (otherPerson.getMarkers() != null) {
+                            for(String marker : otherPerson.getMarkers()) {
+                                if (localPerson.getMarkers() == null || !localPerson.getMarkers().contains(marker))
+                                    localPerson.addMarker(marker);
+                            }
+                        }
+
+                        if (localPerson.getEmail() == null)
+                            localPerson.setEmail(otherPerson.getEmail());
+
+                        if (persons.contains(otherPerson))
+                            persons.remove(otherPerson);
+                    }
+                }
+            }
+        }
+
+        return persons;
+    }
+
+
+    /**
+     *  Remove invalid/impossible person names (no last names, noise, etc.)
+     */
+    public static List<Person> sanityCheck(List<Person> persons) {
+        if (persons == null)
+            return null;
+        if (persons.size() == 0)
+            return persons;
+        
+        List<Person> result = new ArrayList<Person>();
+
+        for(Person person : persons) {
+            if (person.getLastName() == null || person.getLastName().trim().length() == 0) 
+                continue;
+            else
+                result.add(person);
+        }
+
+        return result;
+    }
 
 }

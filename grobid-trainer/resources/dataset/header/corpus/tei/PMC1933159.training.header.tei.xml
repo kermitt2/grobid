@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC1933159"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Nucleic Acids Research, 2007, Vol. 35, Web Server issue W325-W329<lb/></reference>
+
+	<idno>doi:10.1093/nar/gkm303<lb/></idno>
+
+	<docTitle>
+	<titlePart>taveRNA: a web suite for RNA algorithms and applications<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Cagri Aksay 1 , Raheleh Salari 1 , Emre Karakoc 1 , Can Alkan 2 and S. Cenk Sahinalp 1, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Lab for Computational Biology,</affiliation>
+	</byline>
+
+	<address>SFU, Canada</address>
+
+	and
+
+	<byline>
+	<affiliation>2 Department of Genome Sciences, University of Washington<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received January 31, 2007; Revised April 3, 2007; Accepted April 14, 2007</note>
+
+	ABSTRACT<lb/>
+	<div type="abstract">We present taveRNA, a web server package that<lb/> hosts three RNA web services: alteRNA, inteRNA<lb/> and pRuNA. alteRNA is a new alternative for RNA<lb/> secondary structure prediction. It is based on<lb/> a dynamic programming solution that minimizes<lb/> the sum of energy density and free energy of an<lb/> RNA structure. inteRNA is the first RNA-RNA<lb/> interaction structure prediction web service. It also<lb/> employs a dynamic programming algorithm to<lb/> minimize the free energy of the resulting joint<lb/> structure of the two interacting RNAs. Lastly,<lb/> pRuNA is an efficient database pruning service;<lb/> which given a query RNA, eliminates a significant<lb/> portion of an ncRNA database and returns only<lb/> a few ncRNAs as potential regulators. taveRNA is<lb/> available at http://compbio.cs.sfu.ca/taverna.<lb/> </div>
+
+	The authors wish it to be known that, in their opinion, the first three authors should be regarded as joint First Authors.<lb/> *To whom correspondence should be addressed. 
+	Tel: <phone>þ1-604-268-7040</phone>; Fax: þ1-604-291-3045; Email:
+	<email>cenk@cs.sfu.ca<lb/></email>
+
+	<note type="copyright">ß 2007 The Author(s)<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/<lb/> by-nc/2.0/uk/) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.</note>
+
+		</front>
+	</text>
+</tei>

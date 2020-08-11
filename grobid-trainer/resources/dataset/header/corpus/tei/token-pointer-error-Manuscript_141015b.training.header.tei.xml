@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="token-pointer-error-Manuscript_141015b"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Solute transport in periodical heterogeneous porous media: Importance<lb/> of observation scale and experimental sampling<lb/></titlePart>
+	</docTitle>
+
+	<reference>S. Majdalani (1), J.P. Chazarin (2) , C. Delenne (1), V. Guinot (1, 3).<lb/></reference>
+
+	<byline>
+	<affiliation>(1) Université Montpellier 2 Polytech Montpellier/HSM, </affiliation>
+	</byline>
+
+	<address>CC 057, Place Eugène Bataillon, 34095<lb/> Montpellier Cedex 5, France<lb/></address>
+
+	<byline>
+	<affiliation>(2) Institut de Recherche pour le Développement (IRD)/ HSM, </affiliation>
+	</byline>
+
+	<address>CC 057, Place Eugène Bataillon,<lb/> 34095 montpellier Cedex 5, France<lb/> </address>
+
+	<byline>
+	<affiliation>(3) Inria, Team LEMon<lb/></affiliation>
+	</byline>
+
+	Corresponding Author:
+	<byline>
+	<docAuthor>Samer Majdalani<lb/></docAuthor>
+	</byline>
+
+	Tel: <phone>+33 4 67 14 90 59<lb/></phone> Fax : +33 4 67 14 47 74<lb/> Email:
+	<email>samer.majdalani@msem.univ-montp2.fr<lb/></email>
+
+	Acepted for publication in 
+	<reference>Journal of Hydrology, 520, 52-60, 2015</reference>
+
+	Abstract<lb/>
+	<div type="abstract">This paper focuses on the effects of the observation scale and sampling on the dispersion of tracers in<lb/> periodical heterogeneous porous media. A Model Heterogeneous Porous Medium (MHPM) with a<lb/> high degree of heterogeneity was built. It consists of a preferential flow path surrounded by glass<lb/> beads. 44 tracer experiments were carried out on several series of periodic MHPM to investigate the<lb/> effect of the observation scale on solute dispersion. Each series was replicated several times, allowing<lb/> for a statistical description of the unit transfer function of the MHPM. No significant trend was found<lb/> for the dispersion coefficient as a function of the size of the MHPM. However, given the variability of<lb/> the breakthrough curves from one experiment replicate to another, under-sampling might easily lead to<lb/> conclude that the dispersion coefficient is variable with distance. Depending on the samples used, it<lb/> would be as easy to (wrongly) detect an increasing trend as to detect a decreasing one. A confidence<lb/> interval analysis of the experimental breakthrough curves in the Laplace space shows that (i) there<lb/> exists a model with scale independent parameters that can describe the experimental breakthrough<lb/> curves within the limits of experimental uncertainty, (ii) this model is not the Advection-Dispersion<lb/> (AD) model, (iii) the modelling error of the AD model decreases with the number of periods, (iv) the<lb/> size of the Reference Elementary Volume for the dispersion coefficient is between 10 and 20 periods.<lb/> The effects of sampling prove to override those of scaling. This, with the invalidity of the AD model,<lb/> leads to question attempts to calibrate and/or identify trends in the dispersion coefficient at<lb/> intermediate scales from a limited number of experiment replicates.</div>
+
+	Keywords<lb/>
+	<keyword>Dispersion modelling<lb/> Intermediate Scale Experiment<lb/> Heterogeneous media</keyword>
+
+		</front>
+	</text>
+</tei>

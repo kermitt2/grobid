@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="A2ABDDB88DC66B5081696B80961672259D5084CD"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Dumbbell Tumor of the Anterior<lb/> Skull Base<lb/> MENINGIOMA? NO, ADENOID CYSTIC<lb/> CARCINOMA!<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrea Brunori, M.D.,* Paolo Scarano, M.D.,* Giorgio Iannetti, M.D., † and<lb/> Francesco Chiappetta, M.D.*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Department of Neurosciences &quot;G.M. Lancisi,&quot; Neurosurgery, San Camillo Hospital,</affiliation>
+	</byline> 
+
+	<address>Rome,<lb/> Italy, </address>
+
+	and 
+
+	<byline>
+	<affiliation>†Department of Maxillo-Facial Surgery, University of Rome &quot;</affiliation>
+	</byline>
+
+	<address>La Sapienza,&quot;<lb/> Rome, Italy<lb/></address>
+
+	<reference>Brunori A, Scarano P, Iannetti G, Chiappetta F. Dumbbell tumor<lb/> of the anterior skull base: meningioma? No, adenoid cystic car-<lb/>cinoma! Surg Neurol 1998;50:470 -4.</reference>
+
+	<div type="abstract">BACKGROUND<lb/> Adenoid cystic carcinoma (ACC) is a rare neoplasm of the<lb/> exocrine glands. Because of its tendency for skull base<lb/> involvement and intracranial spread, ACC should be di-<lb/>agnosed promptly by the neurosurgeon, although dis-<lb/>crimination from meningioma is often difficult. Radical<lb/> resection of such tumors requires familiarity with com-<lb/>plex craniofacial approaches.<lb/> CASE DESCRIPTION<lb/> An unusual case of dumbbell-shaped ACC centered over<lb/> the planum sphenoidale is presented. Regular margins<lb/> and neuroimaging features suggested a preoperative di-<lb/>agnosis of meningioma. The lesion was gross, totally re-<lb/>sected in a two-staged procedure through frontobasal<lb/> and transfacial approaches, with good functional and aes-<lb/>thetic result. CONCLUSION<lb/> The epidemiologic, histologic, and clinical features of<lb/> ACC are reviewed. ACC is rarely encountered by the<lb/> neurosurgeon; however it should always be considered in<lb/> the differential diagnosis of skull base tumors. Interdisci-<lb/>plinary surgical approaches represent the major advance<lb/> in the treatment of these complex neoplasms.</div>
+
+	<note type="copyright">© 1998 by<lb/> Elsevier Science Inc.<lb/></note>
+
+	KEY WORDS<lb/>
+	<keyword>Adenoid cystic carcinoma, meningioma, skull base surgery.<lb/></keyword>
+
+	Address reprint requests to:
+	<byline>
+	<docAuthor>Dr. Andrea Brunori, </docAuthor>
+	</byline>
+
+	<address>Via A. Poerio 33, 00152,<lb/> Rome, Italy.<lb/></address>
+
+	<note type="submission">Received January 6, 1997; accepted May 27, 1997.<lb/></note>
+
+	0090-3019/98/$19.00<lb/>
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	<idno>PII S0090-3019(97)00340-6<lb/></idno>
+
+	655 Avenue of the Americas, New York, NY 10010
+		</front>
+	</text>
+</tei>

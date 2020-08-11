@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC3390076"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Journal of Geriatric Cardiology (2011) 8: 93−98<lb/></reference>
+
+	<note type="copyright">©2011 IGC All rights reserved</note>
+
+	; www.jgc301.com<lb/>
+	<note type="doctype">Research Articles<lb/></note>
+
+	•
+	<note type="doctype">Open Access</note> 
+
+	•<lb/>
+
+	<docTitle>
+	<titlePart>Coronary collateral circulation: Effects on outcomes of acute anterior<lb/> myocardial infarction after primary percutaneous coronary intervention<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bin Wang, Ya-Ling Han, Yi Li, Quan-Min Jing, Shou-Li Wang, Ying-Yan Ma, Geng Wang, Bo Luan,<lb/> Xiao-Zeng Wang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Cardiology, Shenyang North Hospital,</affiliation>
+	</byline>
+
+	<address>Shenyang 110016, Liao Ning Province, China</address>
+
+	Abstract<lb/>
+	<div type="abstract">Background To investigate the effects of collateral coronary circulation on the outcome of the patients with anterior myocardial<lb/> infarction (MI) with left anterior desending artery occlusion abruptly. Methods Data of 189 patients with acute anterior MI who had a<lb/> primary percutaneous coronary intervention (PCI) in the first 12 h from the onset of symptoms between January 2004 and December 2008<lb/> were retrospective analyzed. Left anterior descending arteries (LAD) of all patients were occluded. LADs were reopened with primary PCI.<lb/> According to the collateral circulation, all patients were classified to two groups: no collateral group (n = 111), patients without angiographic<lb/> collateral filling of LAD or side branches (collateral index 0) and collateral group (n = 78), and patients with angiographic collateral filling of<lb/> LAD or side branches (collateral index 1, 2 or 3). At one year&apos;s follow-up, the occurrence of death, reinfarction, stent thrombosis (ST), target<lb/> vessel revascularization and readmission because of heart failure were observed. Results At one year, the mortality was lower in patients<lb/> with collateral circulation compared with those without collateral circulation (1% vs. 8%, P = 0.049), whereas there were no differences in<lb/> the occurrence of reinfarction, ST, target vessel revascularization and readmission because of heart failure. The occurrence of composite of<lb/> endpoint was lower in patients with collateral circulation compared with those without collateral circulation (12% vs. 26%; P = 0.014).<lb/> Conclusions Pre-exist collateral circulation may prefigure the satisfactory prognosis to the patients with acute anterior MI after primary<lb/> PCI in the first 12 h of MI onset.<lb/></div>
+
+	<reference>J Geriatr Cardiol 2011; 8: 93−98.</reference>
+
+	<idno>doi: 10.3724/SP.J.1263.2011.00093<lb/></idno>
+
+	Keywords:
+	<keyword>collateral circulation; myocardial infarction; mortality; left anterior descending artery<lb/></keyword>
+
+	Correspondence to:
+	<byline>
+	<docAuthor>Ya-Ling Han, PhD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Cardiology, Shen<lb/> Yang North Hospital,</affiliation>
+	</byline>
+
+	<address>Liao Ning Province, China.</address>
+
+	<email>hanyl@medmail.com.cn<lb/></email>
+
+	Telephone:
+	<phone>+86-24-288511236</phone><lb/> Fax: +86-24-28851120<lb/>
+
+	<note type="submission">Received: February 13, 2011<lb/> Revised: March 6, 2011<lb/> Accepted: March 13, 2011<lb/></note>
+
+	Published online:
+	<date>June 28, 2011</date>
+
+		</front>
+	</text>
+</tei>

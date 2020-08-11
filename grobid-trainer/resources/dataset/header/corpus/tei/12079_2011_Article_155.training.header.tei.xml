@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="12079_2011_Article_155"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">EDITORIAL<lb/></note>
+
+	<docTitle>
+	<titlePart>ICCNS-sponsored meetings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bernard Perbal<lb/></docAuthor>
+	</byline>
+
+	Published online:
+	<date>30 November 2011<lb/></date>
+
+	<note type="copyright"># The International CCN Society 2011<lb/></note>
+
+	<byline>
+	<docAuthor>B. Perbal (*)<lb/></docAuthor>
+	</byline>
+
+	President of the 
+	
+	<byline>
+	<affiliation>ICCNS,<lb/></affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	e-mail:
+	<email>bperbal@gmail.com<lb/></email>
+
+	<reference>J. Cell Commun. Signal. (2011) 5:253-254<lb/></reference>
+
+	<idno>DOI 10.1007/s12079-011-0155-x</idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="181._jvm"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>De ning the Java Virtual Machine as Platform<lb/> for Provably Correct Java Compilation ?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Egon B orger 1 and Wolfram Schulte 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Universit a di Pisa, Dipartimento di Informatica,</affiliation>
+	</byline>
+
+	<address>I-56125 Pisa, Italy<lb/></address>
+
+	<email>boerger@di.unipi.it<lb/></email>
+
+	<byline>
+	<affiliation>2 Universit at Ulm, Fakult at f ur Informatik,</affiliation>
+	</byline>
+
+	<address>D-89069 Ulm, Germany<lb/></address>
+
+	<email>wolfram@informatik.uni-ulm.de<lb/></email>
+
+	Abstract.
+	<div type="abstract">We provide concise abstract code for running the Java Vir-<lb/>tual Machine JVM to execute compiled Java programs, and de ne a<lb/> general compilation scheme of Java programs to JVM code. These def-<lb/>initions, together with the de nition of an abstract interpreter of Java<lb/> programs given in our previous work 3 , allow us to prove that any<lb/> compiler that satis es the conditions stated in this paper compiles Java<lb/> code correctly. In addition we have validated our JVM and compiler<lb/> speci cation through experimentation.<lb/> The modularity of our de nitions for Java, the JVM and the compilation<lb/> scheme exhibit orthogonal language, machine and compiler components,<lb/> which t together and provide the basis for a stepwise and provably cor-<lb/>rect design for reuse. As a by-product we provide a challenging realistic<lb/> case study for mechanical veri cation of a compiler correctness proof.<lb/></div>
+
+	? This paper is presented to the
+	<meeting>23rd International Symposium on Mathematical Foundations of<lb/> Computer Science, Brno, Czech Republic, August 24 28, 1998, </meeting>
+
+	<publisher>Springer LNCS</publisher>, to appear.
+
+		</front>
+	</text>
+</tei>

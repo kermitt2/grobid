@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="337D5332E9D0BA1CC5879765135BBBB9F8339989"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Statin Use and Incident Frailty in Women<lb/> Aged 65 Years or Older: Prospective Findings<lb/> From the Women&apos;s Health Initiative<lb/> Observational Study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrea Z. LaCroix, 1 Shelly L. Gray, 2 Aaron Aragaki, 1 Barbara B. Cochrane, 1,3<lb/> Anne B. Newman, 4 Charles L. Kooperberg, 1 Henry Black, 5 J. David Curb, 6<lb/> Philip Greenland, 7 and Nancy F. Woods 1,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 WHI Clinical Coordinating Center, Fred Hutchinson Cancer Research Center,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington.</address>
+
+	<byline>
+	<affiliation>2<lb/> Geriatric Pharmacy Program, School of Pharmacy, and 3 School of Nursing, University of Washington,</affiliation>
+	</byline>
+
+	<address>Seattle.</address>
+
+	<byline>
+	<affiliation>4<lb/> Healthy Aging Research Program, Department of Medicine and Epidemiology, University of Pittsburgh,</affiliation>
+	</byline>
+
+	<address>Pennsylvania.</address>
+
+	<byline>
+	<affiliation>5<lb/> Department of Preventive Medicine, Rush University Medical Center,</affiliation>
+	</byline>
+
+	<address>Chicago, Illinois.</address>
+
+	<byline>
+	<affiliation>6<lb/> Department of Geriatric Medicine, John A. Burns School of Medicine, University of Hawaii,</affiliation>
+	</byline>
+
+	<address>Honolulu.<lb/></address>
+
+	<byline>
+	<affiliation>7 Departments of Preventive Medicine and Medicine, Feinberg School of Medicine, Northwestern University,</affiliation>
+	</byline>
+
+	<address>Chicago, Illinois.<lb/></address>
+
+	<div type="abstract">Background. Inflammatory biomarkers have shown consistent associations with disability and frailty in older adults.<lb/> Statin medications may reduce the incidence the frailty because of their anti-inflammatory effects. This study examines<lb/> associations between current use, duration, and potency of statin medications and incident frailty in initially nonfrail<lb/> women 65 years old or older.<lb/> Methods. The authors conducted a prospective analysis of data from the Women&apos;s Health Initiative Observational<lb/> Study (WHI-OS) conducted at 40 clinical centers in the United States. Eligible women were nonfrail and 65-79 years old<lb/> at baseline (n ¼ 25,378). Current statin use at baseline was ascertained through direct inspection of medicine containers<lb/> during clinic visits. Frailty was ascertained through self-reported indicators and physical measurements at baseline and<lb/> 3-year clinic contacts. Components of frailty included self-reported low physical function, exhaustion, low physical<lb/> activity, and unintended weight loss. Multinomial logistic regression models were used to adjust for covariates predicting<lb/> incident frailty.<lb/> Results. Among the 25,378 eligible women, 3453 (13.6%) developed frailty by the 3-year follow-up contact. Current<lb/> statin use had no association with incident frailty (multivariate-adjusted odds ratio [OR] ¼ 1.00; 95% confidence interval<lb/> [CI], 0.85-1.16). Duration and potency of statin use were also not significantly associated with incident frailty. Among<lb/> low potency statin users, longer duration of use was associated with reduced risk of frailty ( p for trend ¼ .02). A similar<lb/> pattern of results was observed when frailty was studied in the absence of intervening, incident cardiovascular events.<lb/> Conclusions. Overall, incidence of frailty was similar in current statin users and nonusers.<lb/></div>
+
+	Key Words:
+	<keyword>Statin use-Frailty-Disability-Women&apos;s Health Initiative.</keyword>
+
+	<page>369<lb/></page>
+
+	<reference>Journal of Gerontology: MEDICAL SCIENCES<lb/> Copyright 2008 by The Gerontological Society of America<lb/> 2008, Vol. 63A, No. 4, 369-375</reference>
+
+	CORRESPONDENCE<lb/> Address correspondence to
+	<byline>
+	<docAuthor>Andrea Z. LaCroix, PhD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fred Hutchinson<lb/> Cancer Research Center,</affiliation>
+	</byline>
+
+	<address>1100 Fairview Ave. N., M3-A410, PO Box<lb/> 19024, Seattle, WA 98109-1024.</address>
+
+	E-mail:
+	<email>alacroix@whi.org<lb/></email>
+
+	<note type="submission">Received March 1, 2007<lb/> Accepted June 28, 2007<lb/></note>
+
+	Decision Editor:
+	<editor>Luigi Ferrucci, MD, PhD</editor>
+
+		</front>
+	</text>
+</tei>

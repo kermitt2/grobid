@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2D12C61C317DFC96BBAAF7036B7ACD8EECEEC31F"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>NATURE IMMUNOLOGY VOLUME 7 NUMBER 2 FEBRUARY 2006 123<lb/></reference>
+
+	<docTitle>
+	<titlePart>Mal-function of TLRs by SOCS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takashi Kobayashi, Giichi Takaesu &amp; Akihiko Yoshimura<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Suppressor of cytokine signaling 1 has been linked to the negative regulation of Toll-like receptor signaling. The<lb/> mechanism for this seems to be suppressor of cytokine signaling 1-mediated degradation of the adaptor Mal, which<lb/> is required for Toll-like receptor signaling.</div>
+
+		</front>
+	</text>
+</tei>

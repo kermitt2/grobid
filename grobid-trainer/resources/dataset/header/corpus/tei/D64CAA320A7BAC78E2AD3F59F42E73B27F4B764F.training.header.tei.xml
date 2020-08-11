@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="D64CAA320A7BAC78E2AD3F59F42E73B27F4B764F"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 December 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (6), pp. 673-678 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Off-diagonal Seebeck effect and anisotropic<lb/> thermopower in Bi 2 Sr 2 CaCu 2 O 8 thin films<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Th. Zahner 1 ( * ), R. Schreiner 1 , R. Stierstorfer 1 , O. Kus 1 , S. T. Li 2<lb/> R. Roessler 2 , J. D. Pedarnig 2 , D. Bäuerle 2 and H. Lengfellner 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institut für Experimentelle und Angewandte Physik, Universität Regensburg<lb/></affiliation>
+	</byline>
+
+	<address>93040 Regensburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>2 Institut für Angewandte Physik, Johannes-Kepler-Universität Linz,</affiliation>
+	</byline>
+
+	<address>4040 Linz, Austria<lb/></address>
+
+	(
+	<note type="submission">received 9 July 1997; accepted in final form 1 November 1997</note>
+	)<lb/>
+
+	<keyword>PACS. 73.50Lw -Thermoelectric effects.<lb/> PACS. 74.72Hs -Bi-based cuprates.<lb/> PACS. 74.25Fy -Transport properties (electric and thermal conductivity, thermoelectric ef-<lb/>fects, etc.).<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">The anisotropy ∆S of the thermopower in thin films of the high-Tc superconduc-<lb/>tor Bi2Sr2CaCu2O8 is investigated using off-c-axis epitaxial film growth and the off-diagonal<lb/> Seebeck effect. The measurements represent a new method for the investigation of anisotropic<lb/> transport properties in solids, taking advantage of the availability of oriented grown crystalline<lb/> thin films instead of using bulk crystals. First results for the temperature dependence ∆S(T ) in<lb/> Bi2Sr2CaCu2O8 thin films are presented and described within a two-band model. Subjecting the<lb/> films to heat treatments in different gases at relatively low temperatures, ∆S could reversibly<lb/> be changed in a wide range.<lb/></div>
+
+	( * ) E-mail:
+	<email>thomas.zahner@physik.uni-regensburg.de<lb/></email>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

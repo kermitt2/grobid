@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="422._p451-lacroute"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<meeting>COMPUTER GRAPHICS Proceedings, Annual Conference Series, 1994<lb/></meeting>
+
+	<page>9 4<lb/></page>
+
+	<docTitle>
+	<titlePart>Fast Volume Rendering Using a Shear-Warp Factorization<lb/> of the Viewing Transformation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Philippe Lacroute<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Systems Laboratory<lb/> Stanford University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Marc Levoy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> Stanford University<lb/></affiliation>
+	</byline>
+
+	/&quot;
+
+	Abstract<lb/>
+	<div type="abstract">Several existing volume rendering algorithms operate by factor-<lb/>ing the viewing transformation into a 3D shear parallel to the data<lb/> slices, a projection to form an intermediate but distorted image,<lb/> and a 2D warp to form an undistorted final image. We extend<lb/> this class of algorithms in three ways. First, we describe a new<lb/> object-order rendering algorithm based on the factorization that is<lb/> significantly faster than published algorithms with minimal loss<lb/> of image quality. Shear-warp factorizations have the property that<lb/> rows of voxels in the volume are aligned with rows of pixels in the<lb/> intermediate image. We use this fact to construct a scanline-based<lb/> algorithm that traverses the volume and the intermediate image in<lb/> synchrony, taking advantage of the spatial coherence present in<lb/> both. We use spatial data structures based on run-length encoding<lb/> for both the volume and the intermediate image. Our implemen-<lb/>tation running on an SGI Indigo workstation renders a 2563 voxel<lb/> medical data set in one second. Our second extension is a shear-<lb/>warp factorization for perspective viewing transformations, and<lb/> we show how our rendering algorithm can support this extension.<lb/> Third, we introduce a data structure for encoding spatial coherence<lb/> in unclassified volumes (i.e. scalar fields with no precomputed<lb/> opacity). When combined with our shear-warp rendering algo-<lb/>rithm this data structure allows us to classify and render a 2563<lb/> voxel volume in three seconds. The method extends to support<lb/> mixed volumes and geometry and is parallelizable.<lb/></div>
+
+	<keyword>CR Categories: 1.3.7 [Computer Graphics]: Three-Dimensional<lb/> Graphics and Realism; 1.3.3 [Computer Graphics]: Picture/Image<lb/> Generation--Display Algorithms.<lb/></keyword>
+
+	Additional Keywords:
+	<keyword>Volume rendering, Coherence, Scientific<lb/> visualization, Medical imaging.<lb/></keyword>
+
+	Authors&apos; Address:
+	<byline>
+	<affiliation>Center for Integrated Systems, Stanford University,<lb/></affiliation>
+	</byline>
+
+	<address>Stanford, CA 94305-4070<lb/></address>
+
+	E-mail:
+	<email>lacroute@weevil.stanford.edu</email>
+
+	,
+	<email>levoy@cs.stanford.edu<lb/></email>
+
+	Word Wide Web:
+	<ptr type="web">http://www-graphics.stanford.edu/<lb/></ptr>
+
+	<note type="copyright">Permission to copy without fee all or part of this material is granted<lb/> provided that the copies are not made or distributed for direct<lb/> commercial advantage, the ACM copyright notice and the title of the<lb/> publication and its date appear, and notice is given that copying is by<lb/> permission of the Association for Computing Machinery. To copy<lb/> otherwise, or to republish, requires a fee and/or specific permission.<lb/> © 1994<lb/></note>
+
+	ACM-0-89791-667-0/94/007/0451<lb/> $01,50
+		</front>
+	</text>
+</tei>

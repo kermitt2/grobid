@@ -7,11 +7,18 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-	
+
 import java.io.*;
 import java.util.*;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import org.apache.commons.io.FileUtils;
 
@@ -28,9 +35,8 @@ import scala.Option;
 
 /**
  * Evaluation against native XML documents. This is an end-to-end evaluation involving
- * complete document processing, and therefore a complete set of CRF models.
+ * complete document processing, and therefore a complete set of sequence labelling models.
  *
- * @author Patrice Lopez
  */
 public class EndToEndEvaluation {
     private static String xmlInputPath = null;
@@ -61,6 +67,52 @@ public class EndToEndEvaluation {
 		
 	// the type of evaluation XML data - NLM or TEI (obtained via Pub2TEI)
 	private String inputType = null;
+
+	private class GrobidEndToEndTask implements Callable<Boolean> { 
+        private File pdfFile;
+
+        public GrobidEndToEndTask(File pdfFile) { 
+            this.pdfFile = pdfFile;
+        }
+
+        @Override
+        public Boolean call() { 
+        	boolean success = true;
+        	Engine engine = null;
+            try {
+            	engine = Engine.getEngine(true);
+				GrobidAnalysisConfig config =
+                    GrobidAnalysisConfig.builder()
+                            .consolidateHeader(1)
+                            .consolidateCitations(0)
+                            .withPreprocessImages(true)
+                            .build();
+				String tei = engine.fullTextToTEI(this.pdfFile, config);
+				// write the result in the same directory
+				File resultTEI = new File(pdfFile.getParent() + File.separator
+					+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
+				FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
+
+            } catch (NoSuchElementException nseExp) {
+            	System.out.println("Could not get an engine from the pool within configured time.");
+            	System.out.println("Could not process: " + this.pdfFile.getPath());
+        	} catch(IOException e) {
+                System.out.println("DeLFT model labelling failed for file " + this.pdfFile.getPath());
+                e.printStackTrace();
+            } catch (Exception e) {
+				System.out.println("Error when processing: " + this.pdfFile.getPath());
+				e.printStackTrace();
+				success = false;
+			} finally {
+            	if (engine != null) {
+                	GrobidPoolingFactory.returnEngine(engine);
+            	}
+        	}
+
+            return new Boolean(success);
+        } 
+    } 
+
 
 	public EndToEndEvaluation(String path, String inType) {
 		this.xmlInputPath = path;	
@@ -122,6 +174,10 @@ public class EndToEndEvaluation {
 			int n = 0;
 			long start = System.currentTimeMillis();
 			int fails = 0;
+
+			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
+			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -140,9 +196,11 @@ public class EndToEndEvaluation {
 				}
 
 	            final File pdfFile = refFiles2[0];
-				
+				Future<Boolean> future = executor.submit(new GrobidEndToEndTask(pdfFile));
+	            results.add(future);
+	            
 				// run Grobid full text and write the TEI result in the directory
-				try {
+				/*try {
 					System.out.println(n + " - " + pdfFile.getPath());
 					GrobidAnalysisConfig config =
                         GrobidAnalysisConfig.builder()
@@ -160,15 +218,32 @@ public class EndToEndEvaluation {
 					System.out.println("Error when processing: " + pdfFile.getPath());
 					e.printStackTrace();
 					fails++;
-				}
+				}*/
+
 				n++;
 			}
 
-			System.out.println("GROBID failed on " + fails + " PDF");
+			//executor.awaitTermination(5, TimeUnit.SECONDS);
+
+			for(Future<Boolean> result : results) { 
+				try {
+					Boolean success = result.get();
+					if (!success)
+						fails++;
+				} catch (InterruptedException e) {
+                	e.printStackTrace();
+            	} catch (ExecutionException e) {
+                	e.printStackTrace();
+            	}
+			}
+
+			executor.shutdown();
+
+			System.out.println("\n-------------> GROBID failed on " + fails + " PDF\n");
 			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
 
 			System.out.println(n + " PDF files processed in " + 
-				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file\n");
 		}
 		
 		// evaluation of the run
@@ -1080,7 +1155,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 							totalCorrectObservedCitations += nbCorrect;
 							totalWrongObservedCitations += nbWrong;
-						}
+						}	
+
+						// cleaning
+						strictStats.removeLabel("id");
+        				softStats.removeLabel("id");
+        				levenshteinStats.removeLabel("id");;
+        				ratcliffObershelpStats.removeLabel("id");
+
 					} else if (sectionType == this.HEADER) {
 						// HEADER structures 
 						int p = 0;
@@ -1149,7 +1231,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									if (goldResult.toLowerCase().startsWith("abstract") || goldResult.toLowerCase().startsWith("summary")) {
 										goldResult = goldResult.replaceAll("(?i)^(abstract)|(summary)(\\n)?( )?", "");
 									}
-								}							
+								}	
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
@@ -1161,20 +1243,28 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								String grobidResult = "";
 								if (g < grobidResults.size())
 									grobidResult = grobidResults.get(g);
+
+								if (goldResult.trim().length() == 0 && grobidResult.trim().length() == 0) {
+									g++;
+									continue;
+								}
+
 								// nb expected results
-								if (goldResult.length() > 0) {
+								if (goldResult.trim().length() > 0) {
                                     strictStats.incrementExpected(fieldName);
                                     softStats.incrementExpected(fieldName);
                                     levenshteinStats.incrementExpected(fieldName);
                                     ratcliffObershelpStats.incrementExpected(fieldName);
 								}
-//System.out.println("gold:   " + goldResult);
-//System.out.println("grobid: " + grobidResult);		
+	
 								// strict
-								if ((goldResult.length() > 0) && goldResult.equals(grobidResult)) {
+								if ((goldResult.trim().length() > 0) && goldResult.equals(grobidResult)) {
                                     strictStats.incrementObserved(fieldName);
 								}
 								else {
+/*System.out.println("gold:  " + fieldName);
+System.out.println("gold:   " + goldResult);
+System.out.println("grobid: " + grobidResult);*/	
 									if (grobidResult.length() > 0) {
                                         strictStats.incrementFalsePositive(fieldName);
 										allGoodStrict = false;
@@ -1192,12 +1282,17 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldResultSoft = removeFullPunct(goldResult);
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
-//System.out.println("gold:   " + goldResultSoft);
-//System.out.println("grobid: " + grobidResultSoft);								
-								if ((goldResult.length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
+								
+								if ((goldResult.trim().length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
                                     softStats.incrementObserved(fieldName);
 								}
 								else {
+//System.out.println("\n" + teiFile.getPath());
+//System.out.println("gold:" + fieldName);								
+//System.out.println("gold:   " + goldResultSoft);
+//System.out.println("grobid: " + grobidResultSoft);
+//System.out.println("gold:" + goldResult);
+//System.out.println("grobid:" + grobidResult);
 									if (grobidResultSoft.length() > 0) {
                                         softStats.incrementFalsePositive(fieldName);
 										allGoodSoft = false;
@@ -1651,8 +1746,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
-		string = string.replaceAll("\t", " ");
+		string = string.replace("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
+		string = string.replace("&apos;", "'");
 		return string.trim().toLowerCase();
 	}
 	

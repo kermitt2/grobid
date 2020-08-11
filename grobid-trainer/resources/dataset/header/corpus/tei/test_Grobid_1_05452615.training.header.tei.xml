@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test_Grobid_1_05452615"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A New Requirement Prioritization Model for Market Driven Products Using<lb/> Analytical Hierarchical Process<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Muhammad Atif Iqbal<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of computer Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>NUST, Pakistan<lb/></address>
+
+	<email>atif09@gmail.com<lb/></email>
+
+	<byline>
+	<docAuthor>Athar Mohsin Zaidi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of computer Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>NUST, Pakistan<lb/></address>
+
+	<email>athar-mcs@nust.edu.pk<lb/></email>
+
+	<byline>
+	<docAuthor>Dr. Saeed Murtaza<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of computer Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>NUST, Pakistan<lb/></address>
+
+	<email>shouzib@yahoo.com<lb/></email>
+
+	Abstract-
+	<div type="abstract">As compared to bespoke software development, in<lb/> market driven software development huge numbers of<lb/> requirements that comes from many different users, customers,<lb/> competitors through surveys, interviews, focus groups, and<lb/> competitor analysis intimidate to over burden the requirement<lb/> engineering process. So it is vital for product management to<lb/> select the requirements that aligned with the overall business<lb/> goals and dispose of others as early as possible. This paper<lb/> presents a new model for requirement prioritization using AHP<lb/> (Analytical Hierarchical Process). Number of comparisons as<lb/> compare to traditional AHP techniques are significantly<lb/> reduced which make it practicable and applicable. In creation of<lb/> this model qualitative and quantitative research methodologies<lb/> are used. To evaluate the model both static and dynamic<lb/> validation techniques are used to assess the model in industry<lb/> where the aspects of practicality, applicability, Implementation,<lb/> effectiveness, and efficiency were investigated, yielding<lb/> promising initial results.<lb/></div> 
+
+	Keywords: 
+	<keyword>AHP, Bespoke, Dynamic validation, Market-<lb/>driven, Model, Requirements, Static validation validation<lb/></keyword>
+
+	<meeting>2010 International Conference on Data Storage and Data Engineering<lb/></meeting>
+
+	978-0-7695-3958-4/10 $26.00
+
+	<note type="copyright">© 2010 IEEE<lb/></note>
+
+	<idno>DOI 10.1109/DSDE.2010.49<lb/></idno>
+
+	<page>142<lb/></page>
+
+	<meeting>2010 International Conference on Data Storage and Data Engineering<lb/></meeting>
+
+	978-0-7695-3958-4/10$26.00
+
+	<note type="copyright">© 2010 IEEE<lb/></note> 
+
+	<idno>DOI 10.1109/DSDE.2010.49</idno>
+
+		</front>
+	</text>
+</tei>

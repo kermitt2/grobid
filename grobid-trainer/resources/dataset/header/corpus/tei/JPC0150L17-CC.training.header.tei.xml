@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="JPC0150L17-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0201165v1 [cond-mat.supr-con]</idno>
+
+	<date>11 Jan 2002<lb/></date>
+
+	<docTitle>
+	<titlePart>Oxygen-isotope effect on the in-plane penetration depth in underdoped<lb/> Y 1−x Pr x Ba 2 Cu 3 O 7−δ as revealed by muon-spin rotation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Khasanov (1,2) , A. Shengelaya (1) , K. Conder (3) , E. Morenzoni (2) , I. M. Savić (4) , and H. Keller (1)<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) Physik-Institut der Universität Zürich,</affiliation>
+	</byline>
+
+	<address>CH-8057 Zürich, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>(2) Paul Scherrer Institut,</affiliation>
+	</byline>
+
+	<address>CH-5232 Villigen PSI, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>(3) Laboratory for Neutron Scattering, ETH Zürich and PSI Villigen,</affiliation>
+	</byline>
+
+	<address>CH-5232 Villigen PSI, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>4 Faculty of Physics, University of Belgrade,</affiliation>
+	</byline>
+
+	<address>11001 Belgrade, Yugoslavia<lb/></address>
+
+	<div type="abstract">The oxygen-isotope ( 16 O/ 18 O) effect (OIE) on the in-plane penetration depth λ ab (0) in under-<lb/>doped Y1−xPrxBa2Cu3O 7−δ was studied by muon-spin rotation. A pronounced OIE on λ −2<lb/> ab (0)<lb/> was observed with a relative isotope shift of ∆λ −2<lb/> ab /λ −2<lb/> ab = −5(2)% for x = 0.3 and -9(2)% for<lb/> x = 0.4. It arises mainly from the oxygen-mass dependence of the in-plane effective mass m *<lb/> ab .<lb/> The OIE exponents of Tc and of λ −2<lb/> ab (0) exhibit a relation that appears to be generic for cuprate<lb/> superconductors.<lb/></div>
+
+	<keyword>PACS numbers: 76.75.+i, 74.72.-h, 82.20.Tr, 71.38</keyword>
+
+		</front>
+	</text>
+</tei>

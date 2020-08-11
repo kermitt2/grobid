@@ -78,7 +78,7 @@ public class FullTextParser extends AbstractParser {
 
     //	private String tmpPathName = null;
 //    private Document doc = null;
-    private File tmpPath = null;
+    protected File tmpPath = null;
 //    private String pathXML = null;
 //	private BiblioItem resHeader = null;
 
@@ -94,7 +94,7 @@ public class FullTextParser extends AbstractParser {
 	// projection scale for line length
 	private static final int LINESCALE = 10;
 
-    private EngineParsers parsers;
+    protected EngineParsers parsers;
 
     /**
      * TODO some documentation...
@@ -140,15 +140,16 @@ public class FullTextParser extends AbstractParser {
             if (GrobidProperties.isHeaderUseHeuristics()) {
                 // heuristics for identifying the header zone, this is the old version of the header block identification, 
                 // still used because more robust than the pure machine learning approach (lack of training data)
-                parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
+                //parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
+                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, true);
             }
             
             if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
                 resHeader = new BiblioItem();
                 // using the segmentation model to identify the header zones
-                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader);
+                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
             } else {
-                // if the heuristics method was initially used, we anyway take the abstract derived from the segementation 
+                // if the heuristics method was initially used, we anyway take the abstract derived from the segmentation 
                 // model, because this structure is significantly more reliable with this approach
                 BiblioItem resHeader2 = new BiblioItem();
                 // we have already consolidated
@@ -156,10 +157,15 @@ public class FullTextParser extends AbstractParser {
                     GrobidAnalysisConfig.builder(config)
                     .consolidateHeader(0)
                 ).build();
-                parsers.getHeaderParser().processingHeaderSection(configWithoutConsolidate, doc, resHeader2);
+                parsers.getHeaderParser().processingHeaderSection(configWithoutConsolidate, doc, resHeader2, false);
                 if (isNotBlank(resHeader2.getAbstract())) {
                     resHeader.setAbstract(resHeader2.getAbstract());
                     resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
+                }
+                // we also take the language recognition information from the segmentation model driven results
+                if (isNotBlank(resHeader2.getLanguage())) {
+                    doc.setLanguage(resHeader2.getLanguage());
+                    resHeader.setLanguage(resHeader2.getLanguage());
                 }
             }
 
@@ -916,6 +922,10 @@ public class FullTextParser extends AbstractParser {
                     if ((referenceMarkerMatcher != null) && ( referenceMarkerMatcher.isKnownLabel(text) || referenceMarkerMatcher.isKnownFirstAuthor(text) ))
                         features.calloutKnown = true;
 
+                    if (token.isSuperscript()) {
+                        features.superscript = true;
+                    }
+
 	                // fulltext.append(features.printVector());
 	                if (previousFeatures != null) {
 						if (features.blockStatus.equals("BLOCKSTART") &&
@@ -927,6 +937,7 @@ public class FullTextParser extends AbstractParser {
 						}
                         fulltext.append(previousFeatures.printVector());
                     }
+
 	                n++;
 	                mm += text.length();
 	                nn += text.length();
@@ -1020,7 +1031,8 @@ public class FullTextParser extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                     parsers.getSegmentationParser().getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write first the full text untagged (but featurized with segmentation features)
             String outPathFulltext = pathFullText + File.separator + 
@@ -1256,23 +1268,20 @@ public class FullTextParser extends AbstractParser {
                         headerTokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                //String header = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts, true);
-                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts, true);
+                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts);
                 String header = featuredHeader.getLeft();
 
                 if ((header != null) && (header.trim().length() > 0)) {
-                    String rese = parsers.getHeaderParser().label(header);
-                    //String header = doc.getHeaderFeatured(true, true);
-                    //List<LayoutToken> tokenizations = doc.getTokenizationsHeader();
-
                     // we write the header untagged
                     String outPathHeader = pathTEI + File.separator + pdfFileName.replace(".pdf", ".training.header");
                     writer = new OutputStreamWriter(new FileOutputStream(new File(outPathHeader), false), StandardCharsets.UTF_8);
                     writer.write(header + "\n");
                     writer.close();
 
+                    String rese = parsers.getHeaderParser().label(header);
+
                     // buffer for the header block
-                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, true, headerTokenizations);
+                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
                     Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
                     if (lang != null) {
                         doc.setLanguage(lang.getLang());
@@ -1333,8 +1342,6 @@ public class FullTextParser extends AbstractParser {
                         q++;
                     }
                     if (input.length() > 1) {
-                        /*List<String> inputs = new ArrayList<String>();
-                        inputs.add(input.trim());*/
                         bufferName = parsers.getAuthorParser().trainingExtraction(input, true);
                     }
 
@@ -1909,7 +1916,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process figures identified by the full text model
      */
-    private List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
+    protected List<Figure> processFigures(String rese, List<LayoutToken> layoutTokens, Document doc) {
 
         List<Figure> results = new ArrayList<>();
 
@@ -2070,7 +2077,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process tables identified by the full text model
      */
-    private List<Table> processTables(String rese,
+    protected List<Table> processTables(String rese,
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Table> results = new ArrayList<>();
@@ -2228,7 +2235,7 @@ public class FullTextParser extends AbstractParser {
     /**
      * Process equations identified by the full text model
      */
-    private List<Equation> processEquations(String rese,
+    protected List<Equation> processEquations(String rese,
 									List<LayoutToken> tokenizations,
 									Document doc) {
 		List<Equation> results = new ArrayList<>();

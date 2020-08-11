@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1097._PEER_stage2_10.1088%2F0954-3899%2F37%2F9%2F094036"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Strangeness production at (sub)threshold energies<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>N. Herrmann </docAuthor>
+	</byline>
+
+	(<note type="group">FOPI collaboration</note>)<lb/>
+
+	<byline>
+	<affiliation>Physikalisches Institut der Universität Heidelberg,<lb/></affiliation>
+	</byline>
+
+	<address>Philosophenweg 12, D-69120 Heidelberg, Germany<lb/></address>
+
+	E-mail:
+	<email>herrmann@physi.uni-heidelberg.de<lb/></email>
+
+	Abstract.
+	<div type="abstract">Strange particles allow to probe the properties of hot and dense baryonic<lb/> matter. At incident energies close to the production threshold medium effects on the<lb/> strange hadrons are magnified. New data obtained with the recently completed FOPI<lb/> upgrade are presented for the system Ni+Ni at 1.91 AGeV and discussed in comparison<lb/> to earlier findings. Special emphasis is put to the search for multi-baryonic strange<lb/> bound states, of which the Λp -channel is analyzed in detail.</div>
+
+		</front>
+	</text>
+</tei>

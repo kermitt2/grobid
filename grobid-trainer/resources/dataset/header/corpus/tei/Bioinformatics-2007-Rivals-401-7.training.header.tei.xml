@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Bioinformatics-2007-Rivals-401-7"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Vol. 23 no. 4 2007, pages 401-407<lb/></reference>
+
+	<idno>doi:10.1093/bioinformatics/btl633<lb/></idno>
+
+	<title level="j">BIOINFORMATICS</title>
+
+	<note type="doctype">REVIEW<lb/> </note>
+
+	Databases and ontologies<lb/>
+
+	<docTitle>
+	<titlePart>Enrichment or depletion of a GO category within a class<lb/> of genes: which test?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Isabelle Rivals Ã , Lé on Personnaz, Lieng Taing 1 and Marie-Claude Potier 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>É quipe de Statistique Appliqué e and 1 Laboratoire de Neurobiologie et Diversité Cellulaire, É cole Supé rieure<lb/> de Physique et de Chimie Industrielles (ESPCI),</affiliation>
+	</byline>
+
+	<address>10 rue Vauquelin, 75005 Paris, France<lb/></address>
+
+	<note type="submission">Received on June 20, 2006; revised and accepted December 11, 2006<lb/> </note>
+
+	Advance Access publication 
+	<date>December 20, 2006</date><lb/>
+
+	Associate Editor:
+	<editor>Jonathan Wren<lb/></editor>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Motivation: A number of available program packages determine<lb/> the significant enrichments and/or depletions of GO categories<lb/> among a class of genes of interest. Whereas a correct formulation of<lb/> the problem leads to a single exact null distribution, these GO tools<lb/> use a large variety of statistical tests whose denominations often do<lb/> not clarify the underlying P-value computations.<lb/> Summary: We review the different formulations of the problem and<lb/> the tests they lead to: the binomial, x 2 , equality of two probabilities,<lb/> Fisher&apos;s exact and hypergeometric tests. We clarify the relationships<lb/> existing between these tests, in particular the equivalence between<lb/> the hypergeometric test and Fisher&apos;s exact test. We recall that the<lb/> other tests are valid only for large samples, the test of equality of<lb/> two probabilities and the x 2 -test being equivalent. We discuss the<lb/> appropriateness of one-and two-sided P-values, as well as some<lb/> discreteness and conservatism issues.<lb/></div>
+
+	Contact:
+	<email>isabelle.rivals@espci.fr<lb/></email>
+
+	Supplementary information: Supplementary data are available at<lb/> Bioinformatics online.<lb/> Ã To whom correspondence should be addressed.<lb/>
+	
+	<note type="copyright">Ó 2006 The Author(s)<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/<lb/> by-nc/2.0/uk/) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/> </note>
+
+	by guest <lb/> 
+
+	on March 17, 2013
+
+	http://bioinformatics.oxfordjournals.org/<lb/>
+
+	Downloaded from
+		</front>
+	</text>
+</tei>

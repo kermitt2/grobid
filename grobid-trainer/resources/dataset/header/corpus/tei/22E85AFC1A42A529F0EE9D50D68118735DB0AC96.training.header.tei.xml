@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="22E85AFC1A42A529F0EE9D50D68118735DB0AC96"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>274<lb/></page>
+
+	<reference>J . CHEM. S O C . , CHEM. COMMUN., 1989<lb/> </reference>
+
+	<docTitle>
+	<titlePart>Identification of 2,2,7,8-Tetramethyl-1,2,3,4-tetrahydronaphthalene in Petroleum<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter G. Forster, Robert Alexander,* and Robert I. Kagi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Petroleum Geochemistry Group, School o f Applied Chemistry, Curtin University o f Technolog y, </affiliation>
+	</byline>
+
+	<address>Box U 1987 GPO,<lb/> Perth 6001, Western Australia<lb/> 2,2,7,8-</address>
+
+	<div type="abstract">Tetramethyl-I ,2,3,4-tetrahydronaphthalene, a proposed key intermediate in the degradation and<lb/> aromatisation of triterpenoids of the oleanane skeletal-type, has been synthesized and identified in Cretaceous<lb/> sediments and crude oils.<lb/></div>
+
+	<note type="submission">Received, 10th August 1988; </note>
+
+	Corn. 8/03267J<lb/> 1,2,7-TMN.
+		</front>
+	</text>
+</tei>

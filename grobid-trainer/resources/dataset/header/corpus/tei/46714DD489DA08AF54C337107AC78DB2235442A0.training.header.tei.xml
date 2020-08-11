@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="46714DD489DA08AF54C337107AC78DB2235442A0"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<title level="j">J. CHEM. SOC. CHEM. COMMUN.</title>
+
+	<date>1989<lb/></date>
+
+	<page>25 1<lb/></page>
+
+	<docTitle>
+	<titlePart>Unusual 0-Alkylation with lodomethyltrimethylsilane<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>T. K. Chakraborty&quot; and G. V. Reddy<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Regional Research Laboratory,</affiliation>
+	</byline> 
+
+	<address>Hyderabad 500 007, A P, India<lb/> </address>
+
+	<div type="abstract">lodomethyltrimethylsilane alkylates alkoxide ions giving rise t o U-methyl and 0-trimethylsilyl ethers which are<lb/> formed by cleavage of the silicon-carbon bond.</div>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="FD155F28DB1078F5A34C78E4399FA32929E4327A"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>1 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (1), pp. 7-12 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Determinism test and noise estimate<lb/> for a complex time series<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J.-S. Lih 1 , J.-Y. Ko 1 , J.-L. Chern 1 and I.-M. Jiang 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Nonlinear Science Group, Department of Physics<lb/> National Cheng Kung University Tainan </affiliation>
+	</byline>
+
+	<address>-Taiwan 70101, Republic of China<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics, National Sun Yat-Sen University Kaohsiung<lb/> </affiliation>
+	</byline>
+
+	<address>Taiwan 80424, Republic of China<lb/></address>
+
+	(
+	<note type="submission">received 15 May 1997; accepted 25 August 1997</note>
+	)<lb/>
+	
+	<keyword>PACS. 05.45+b -Theory and models of chaotic systems.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">We address the issue of recognizing determinism in a time series. Specifically, we<lb/> employ the method of singular-value decomposition (SVD) to derive the eigenvalue spectra of<lb/> the trajectory matrices constructed from a number of scalar time series, mainly white noise and<lb/> chaotic signals, where a very large embedding dimension is used. The results suggest that the<lb/> SVD eigenvalue spectrum can be employed as a measure of determinism and an estimate for<lb/> the strength of a noise contained in the time series can be deduced.<lb/></div>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

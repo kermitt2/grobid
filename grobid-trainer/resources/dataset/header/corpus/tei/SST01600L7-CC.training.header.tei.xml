@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="SST01600L7-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0212282v1 [cond-mat.supr-con]</idno>
+
+	<date>12 Dec 2002</date>
+
+	<page>1<lb/></page>
+
+	<docTitle>
+	<titlePart>Under-doped La 2−x Sr x CuO 4 with x = 0.063 -0.125:<lb/> TSFZ growth of high-quality crystals and anomalous doping<lb/> dependences of superconducting properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F Zhou 1 , W X Ti 1 , J W Xiong 1 and Z X Zhao 1<lb/> X L Dong 1,2 , P H Hor 2 , Z H Zhang 2 and W K Chu 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 National Laboratory for Superconductivity, Institute of Physics &amp; Center for Condensed Matter<lb/> Physics, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>P.O. Box 603, Beijing 100080, P. R. China<lb/></address>
+
+	<byline>
+	<affiliation>2 Texas Center for Superconductivity and Department of Physics<lb/> University of Houston,</affiliation>
+	</byline>
+
+	<address>Houston, Texas 77204-5002<lb/></address>
+
+	<note type="submission">to be published on Superconductor Science and Technology<lb/></note>
+
+	<div type="abstract">A series of high-quality La2−xSrxCuO4 (LSCO) superconductor crystals in the under-doping region with x =<lb/> 0.063, 0.07, 0.09, 0.10, 0.111 and 0.125 has been successfully prepared by traveling-solvent floating-zone (TSFZ)<lb/> technique. The crystals are large and free of sub-grains and foreign phases. The high crystal quality has been<lb/> revealed by double-crystal x-ray rocking curves and Rutherford backscattering spectrometry combined with ion-<lb/>beam channeling effect. We find that the evolutions of the superconducting transition width and volume fraction<lb/> as a function of carrier concentration exhibit interesting anomalies in the vicinity of some &quot;magic number&quot; doping<lb/> levels such as x = 1/4 2 (=0.0625) and 1/3 2 (=0.111). We argue that these behaviours are of intrinsic electronic<lb/> origin.</div>
+
+	<keyword>PACS Number: 74.72.Dn; 74.25.Ha.</keyword>
+
+		</front>
+	</text>
+</tei>

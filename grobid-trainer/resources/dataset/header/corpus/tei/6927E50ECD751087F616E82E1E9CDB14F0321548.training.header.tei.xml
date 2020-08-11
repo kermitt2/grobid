@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="6927E50ECD751087F616E82E1E9CDB14F0321548"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROBIOLOGICAL BULLETIN 18(2): 109-118<lb/> </reference>
+
+	<docTitle>
+	<titlePart>A COMPARISON OF ALGAL PERIPHYTON COMPOSITION<lb/> ON ELEVEN SPECIES OF SUBMERGED MACROPHYTES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>EVA PIP and G.G.C. ROBINSON</docAuthor>
+	</byline>
+
+	<page>109 </page>
+
+	SUMMARY<lb/>
+	<div type="abstract">The composition of algal periphyton was examined on eleven species of submerged<lb/> macrophytes collected at a depth of 0.25 m in Sewell Lake, southwestern Manitoba, a shallow<lb/> nitrogen and phosphorus rich lake. There were substantial differences in the periphyton on<lb/> atl macrophyte species. Diatom subcommunities were the most similar, while the green algal<lb/> subcommunities were the most dissimilar on different plant hosts. Potamogeton<lb/> zosteriformis differed the most from all other macrophytes with respect to the composition of<lb/> its periphyton. These results and a comparison of the literature suggest that the composition<lb/> and structure of periphyton communities on living substrates is a product of the interaction<lb/> of many variables, determined by the characteristics of the host plant, the external<lb/> environment and the algae themselves. Studies of periphyton at a given site must take into<lb/> account the various substrates available.<lb/></div>
+
+	Address of the authors:<lb/>
+	<byline>
+	<docAuthor>Eva PIP,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biology, University of Winnipeg,</affiliation>
+	</byline>
+
+	<address>Winnipeg, Manitoba, Canada<lb/> R3B 2E9.<lb/></address> 
+
+	<byline>
+	<docAuthor>G,G.C. ROBINSON,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Botany, University of Manitoba,</affiliation>
+	</byline>
+
+	<address>Winnipeg, Manitoba,<lb/> Canada R3T 2N2.</address>
+
+		</front>
+	</text>
+</tei>

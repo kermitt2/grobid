@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>ERIK</forename>
+								 <middlename>H</middlename>.
+								 <surname>TEN WlNKEL</surname> and
+							</persName>
+							<persName>
+								 <forename>JOHN</forename>
+								 <middlename>T</middlename>.
+								 <surname>MEULEMANS</surname>
+							</persName>
+							<persName>
+								 <forename>Erik</forename>
+								 <middlename>H</middlename>,
+								 <surname>ten Winkel</surname> and
+							</persName>
+							<persName>
+								 <forename>John</forename>
+								 <middlename>T</middlename>.
+								 <surname>Meulemans</surname>,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

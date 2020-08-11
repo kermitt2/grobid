@@ -47,7 +47,7 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;

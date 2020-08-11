@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC4317227"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">EDITORIAL<lb/></note>
+
+	<docTitle>
+	<titlePart>Advice on statistical analysis, and new journal guidance<lb/> for experimental design and analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael J. Curtis &amp; Darrell R. Abernethy<lb/></docAuthor>
+	</byline>
+
+	Correspondence<lb/> The editors,<lb/> 
+
+	<byline>
+	<affiliation>Pharmacology Research<lb/> &amp; Perspectives, </affiliation>
+	</byline>
+
+	<address>The<lb/> Schild Plot, 16 Angel<lb/> Gate, City Road, London,<lb/> EC1V 2PT | UK.</address>
+
+	Tel: <phone>+44<lb/> (0) 20 7239 0171</phone>; Fax:<lb/> +44 (0) 20 7417 0114;<lb/> E-mail:<lb/>
+	<email>Michael.curtis@kcl.ac.uk<lb/></email>
+
+	<note type="copyright">ª 2014 The Authors. Pharmacology Research &amp; Perspectives published by John Wiley &amp; Sons Ltd,<lb/> British Pharmacological Society and American Society for Pharmacology and Experimental Therapeutics.<lb/> This is an open access article under the terms of the Creative Commons Attribution-NonCommercial-NoDerivs License,<lb/> which permits use and distribution in any medium, provided the original work is properly cited, the use is non-commercial and<lb/> no modifications or adaptations are made.</note>
+
+		</front>
+	</text>
+</tei>

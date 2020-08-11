@@ -53,10 +53,16 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
+    private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
+    private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
+    private List<LayoutToken> abstractLayoutTokens = new ArrayList<>();
+
     @Override
     public String toString() {
         return "BiblioItem{" +
                 "submission_date='" + submission_date + '\'' +
+                ", download_date='" + download_date + '\'' +
+                ", server_date='" + server_date + '\'' +
                 ", languageUtilities=" + languageUtilities +
                 ", item=" + item +
                 ", parentItem=" + parentItem +
@@ -139,6 +145,9 @@ public class BiblioItem {
                 ", s_year='" + s_year + '\'' +
                 ", s_month='" + s_month + '\'' +
                 ", s_day='" + s_day + '\'' +
+                ", d_year='" + d_year + '\'' +
+                ", d_month='" + d_month + '\'' +
+                ", d_day='" + d_day + '\'' +
                 ", a_year='" + a_year + '\'' +
                 ", a_month='" + a_month + '\'' +
                 ", a_day='" + a_day + '\'' +
@@ -155,7 +164,7 @@ public class BiblioItem {
                 ", fullAffiliations=" + fullAffiliations +
                 ", reference='" + reference + '\'' +
                 ", copyright='" + copyright + '\'' +
-                ", grant='" + grant + '\'' +
+                ", funding='" + funding + '\'' +
                 ", affiliationAddressBlock='" + affiliationAddressBlock + '\'' +
                 ", articleTitle='" + articleTitle + '\'' +
                 ", beginPage=" + beginPage +
@@ -167,6 +176,7 @@ public class BiblioItem {
                 ", postProcessEditors=" + postProcessEditors +
                 ", crossrefError=" + crossrefError +
                 ", normalized_submission_date=" + normalized_submission_date +
+                ", normalized_download_date=" + normalized_download_date +
                 ", originalAffiliation='" + originalAffiliation + '\'' +
                 ", originalAbstract='" + originalAbstract + '\'' +
                 ", originalTitle='" + originalTitle + '\'' +
@@ -176,6 +186,8 @@ public class BiblioItem {
                 ", originalKeyword='" + originalKeyword + '\'' +
                 ", originalVolumeBlock='" + originalVolumeBlock + '\'' +
                 ", originalJournal='" + originalJournal + '\'' +
+                ", workingGroup='" + workingGroup + '\'' +
+                ", documentType='" + documentType + '\'' +
                 '}';
     }
 
@@ -241,10 +253,11 @@ public class BiblioItem {
     private String istexId = null;
     private String abstract_ = null;
     private String collaboration = null;
+    private String documentType = null;
 
     // for convenience GROBIDesque
     private String authors = null;
-    private List<LayoutToken> authorsTokens = new ArrayList<>();
+    //private List<LayoutToken> authorsTokens = new ArrayList<>();
     private String firstAuthorSurname = null;
     private String location = null;
     private String bookTitle = null;
@@ -297,6 +310,11 @@ public class BiblioItem {
     private String a_month = null;
     private String a_day = null;
 
+    // date of download 
+    private String d_year = null;
+    private String d_month = null;
+    private String d_day = null;
+
     // advanced grobid recognitions
     private List<String> authorList;
     private List<String> editorList;
@@ -313,7 +331,7 @@ public class BiblioItem {
 
     private String reference = null;
     private String copyright = null;
-    private String grant = null;
+    private String funding = null;
 
     //public List<String> affiliationAddressBlock = null; 
     public String affiliationAddressBlock = null;
@@ -329,6 +347,10 @@ public class BiblioItem {
     private boolean crossrefError = true;
     private String submission_date = null;
     private Date normalized_submission_date = null;
+    private String download_date = null;
+    private Date normalized_download_date = null;
+    private String server_date = null;
+    private Date normalized_server_date = null;
 
     // for OCR post-corrections
     private String originalAffiliation = null;
@@ -340,6 +362,9 @@ public class BiblioItem {
     private String originalKeyword = null;
     private String originalVolumeBlock = null;
     private String originalJournal = null;
+
+    private String workingGroup = null;
+    private String rawMeeting = null;
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -717,6 +742,18 @@ public class BiblioItem {
         return a_day;
     }
 
+    public String getD_Year() {
+        return d_year;
+    }
+
+    public String getD_Month() {
+        return d_month;
+    }
+
+    public String getD_Day() {
+        return d_day;
+    }
+
     public String getDedication() {
         return dedication;
     }
@@ -735,6 +772,22 @@ public class BiblioItem {
 
     public Date getNormalizedSubmissionDate() {
         return normalized_submission_date;
+    }
+
+    public String getDownloadDate() {
+        return download_date;
+    }
+
+    public Date getNormalizedDownloadDate() {
+        return normalized_download_date;
+    }
+
+    public String getServerDate() {
+        return server_date;
+    }
+
+    public Date getNormalizedServerDate() {
+        return normalized_server_date;
     }
 
     public String getOriginalAffiliation() {
@@ -793,8 +846,16 @@ public class BiblioItem {
         return copyright;
     }
 
-    public String getGrant() {
-        return grant;
+    public String getFunding() {
+        return funding;
+    }
+
+    public String getWorkingGroup() {
+        return workingGroup;
+    }
+
+    public String getDocumentType() {
+        return documentType;
     }
 
     public void setISBN13(String isbn) {
@@ -937,29 +998,37 @@ public class BiblioItem {
         }
     }
 
-    public String cleanDOI(String doi) {
-        doi = StringUtils.normalizeSpace(doi);
-        doi = doi.replace(" ", "");
-        if (doi.startsWith("http://dx.doi.org/") || 
-            doi.startsWith("https://dx.doi.org/") || 
-            doi.startsWith("http://doi.org/") || 
-            doi.startsWith("https://doi.org/")) {
-            doi = doi.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
-        }
-        doi = doi.replace("//", "/");
-        if (doi.toLowerCase().startsWith("doi:") || doi.toLowerCase().startsWith("doi/")) {
-            doi = doi.substring(4);
-        }
-        
-        // pretty common wrong extraction pattern: 
-        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
-        // 367-74.DOI:10.1080/14034940210165064
-        // (pages concatenated to the DOI) - easy/safe to fix
-        int ind = doi.toLowerCase().indexOf("doi:10.");
-        if (ind != -1)
-            doi = doi.substring(ind+4);
+    private static String cleanDOI(String bibl) {
+        if (bibl != null) {
+            bibl = StringUtils.normalizeSpace(bibl);
+            bibl = bibl.replace(" ", "");
 
-        return doi;
+            if (bibl.startsWith("http://dx.doi.org/") || 
+                bibl.startsWith("https://dx.doi.org/") || 
+                bibl.startsWith("http://doi.org/") || 
+                bibl.startsWith("https://doi.org/")) {
+                bibl = bibl.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
+            }
+
+            //bibl = bibl.replace("//", "/");
+            if (bibl.toLowerCase().startsWith("doi:") || bibl.toLowerCase().startsWith("doi/")) {
+                bibl = bibl.substring(4);
+            } 
+            if (bibl.toLowerCase().startsWith("doi")) {
+                bibl = bibl.substring(3);
+            }
+            // pretty common wrong extraction pattern: 
+            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+            // 367-74.DOI:10.1080/14034940210165064
+            // (pages concatenated to the DOI) - easy/safe to fix
+            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
+                int ind = bibl.indexOf("DOI:10.");
+                if (ind == -1) 
+                    ind = bibl.indexOf("doi:10.");
+                bibl = bibl.substring(ind+4);
+            }
+        }
+        return bibl;
     }
 
     public void setArXivId(String id) {
@@ -1076,18 +1145,26 @@ public class BiblioItem {
         }
     }
 
+    public void setWorkingGroup(String wg) {
+        this.workingGroup = wg;
+    }
+
+    public void setDocumentType(String doctype) {
+        this.documentType = doctype;
+    }
+
     // temp
     public void setAuthors(String aut) {
         authors = aut;
     }
 
     public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsTokens.add(lt);
+        authorsLayoutTokens.add(lt);
         return this;
     }
 
     public List<LayoutToken> getAuthorsTokens() {
-        return authorsTokens;
+        return authorsLayoutTokens;
     }
 
     public void addAuthor(String aut) {
@@ -1301,6 +1378,18 @@ public class BiblioItem {
         s_day = d;
     }
 
+    public void setD_Year(String d) {
+        d_year = d;
+    }
+
+    public void setD_Month(String d) {
+        d_month = d;
+    }
+
+    public void setD_Day(String d) {
+        d_day = d;
+    }
+
     public void setDedication(String d) {
         dedication = StringUtils.normalizeSpace(d);
     }
@@ -1319,6 +1408,22 @@ public class BiblioItem {
 
     public void setNormalizedSubmissionDate(Date d) {
         normalized_submission_date = d;
+    }
+
+    public void setDownloadDate(String d) {
+        download_date = StringUtils.normalizeSpace(d);
+    }
+
+    public void setNormalizedDownloadDate(Date d) {
+        normalized_download_date = d;
+    }
+
+    public void setServerDate(String d) {
+        server_date = StringUtils.normalizeSpace(d);
+    }
+
+    public void setNormalizedServerDate(Date d) {
+        normalized_server_date = d;
     }
 
     public void setOriginalAffiliation(String original) {
@@ -1365,13 +1470,21 @@ public class BiblioItem {
         copyright = StringUtils.normalizeSpace(cop);
     }
 
-    public void setGrant(String gra) {
-        grant = StringUtils.normalizeSpace(gra);
+    public void setFunding(String gra) {
+        funding = StringUtils.normalizeSpace(gra);
+    }
+
+    public String getMeeting() {
+        return rawMeeting;
+    }
+
+    public void setMeeting(String meet) {
+        this.rawMeeting = meet;
     }
 
     /**
      * General string cleaining for SQL strings. This method might depend on the chosen
-     * relation database.
+     * relational database.
      */
     public static String cleanSQLString(String str) {
         if (str == null)
@@ -1472,6 +1585,10 @@ public class BiblioItem {
         day = null;
         submission_date = null;
         normalized_submission_date = null;
+        download_date = null;
+        normalized_download_date = null;
+        server_date = null;
+        normalized_server_date = null;
 
         beginPage = -1;
         endPage = -1;
@@ -1484,7 +1601,10 @@ public class BiblioItem {
         fullAffiliations = null;
         reference = null;
         copyright = null;
-        grant = null;
+        funding = null;
+
+        workingGroup = null;
+        documentType = null;
     }
 
     /**
@@ -1647,7 +1767,7 @@ public class BiblioItem {
     }
 
     /**
-     * Some little cleaning of the keyword field.
+     * Some little cleaning of the keyword field (likely unnecessary with latest header model).
      */
     public static String cleanKeywords(String string) {
         if (string == null)
@@ -1678,8 +1798,8 @@ public class BiblioItem {
     /**
      * Keyword field segmentation.
      * 
-     * TBD: create a dedicated model to analyse the keyword field, segmenting them and 
-     * identifying the possible scheme
+     * TBD: create a dedicated model to analyse the keyword field, segmenting them properly and 
+     * identifying the possible schemes
      */
     public static List<Keyword> segmentKeywords(String string) {
         if (string == null)
@@ -1689,10 +1809,9 @@ public class BiblioItem {
 		String type = null;
         if (string.startsWith("Categories and Subject Descriptors")) {
             type = "subject-headers";
-			 string = string.replace("Categories and Subject Descriptors", "").trim();
+			string = string.replace("Categories and Subject Descriptors", "").trim();
         } 
-		else if (string.startsWith("PACS Numbers") || 
-				   string.startsWith("PACS") ) {
+		else if (string.startsWith("PACS Numbers") || string.startsWith("PACS") ) {
             type = "pacs";
             string = string.replace("PACS Numbers", "").replace("PACS", "").trim();
 			if (string.startsWith(":")) {
@@ -1704,10 +1823,8 @@ public class BiblioItem {
 		}
 		
 		List<Keyword> result = new ArrayList<Keyword>();
-		
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",");
-		
+		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1936,6 +2053,16 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // ISSN
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(ISSN)) {
+            if (pubnum.toLowerCase().indexOf("issn") != -1) {
+                pubnum = pubnum.replace("issn", "");
+                pubnum = pubnum.replace("ISSN", "");
+                pubnum = TextUtilities.cleanField(pubnum, true);
+                setISSN(pubnum);
+                setPubnum(null);
+            }
+        }
 
         // TODO: PII
     }
@@ -2022,10 +2149,10 @@ public class BiblioItem {
             }
 
             // title
-            for (int i = 0; i < indent + 2; i++) {
-                tei.append("\t");
-            }
             if (title != null) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<title");
                 if ((bookTitle == null) && (journal == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
@@ -2044,6 +2171,9 @@ public class BiblioItem {
                 }
             }
 			else if (bookTitle == null) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<title/>\n");
 			}
             boolean hasEnglishTitle = false;
@@ -2429,11 +2559,14 @@ public class BiblioItem {
                     }
                 }
 
-                for (int i = 0; i < indent + 2; i++) {
+                /*for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
-                }
+                }*/
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
 					tei.append("<imprint>\n");
                     if (volumeBlock != null) {
                         for (int i = 0; i < indent + 3; i++) {
@@ -2554,6 +2687,9 @@ public class BiblioItem {
                     tei.append("</imprint>\n");
                 }
 				else {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
 					tei.append("<imprint/>\n");
 				}
             } else {
@@ -2744,6 +2880,12 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate()) + "</date>\n");
+            }
+            if (getDownloadDate() != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<date type=\"download\">" + TextUtilities.HTMLEncode(getDownloadDate()) + "</date>\n");
             }
 
             if (dedication != null) {
@@ -3300,20 +3442,9 @@ public class BiblioItem {
 
             // authors
             if (authors != null) {
-                StringTokenizer st = new StringTokenizer(authors, ";");
-                if (st.countTokens() > 0) {
-                    if (st.hasMoreTokens()) { // we take just the first author
-                        String author = st.nextToken();
-                        if (author != null)
-                            author = author.trim();
-                        int ind = author.lastIndexOf(" ");
-                        if (ind != -1) {
-                            openurl += "&rft.aulast=" + URLEncoder.encode(author.substring(ind + 1), "UTF-8")
-                                    + "&rft.auinit="
-                                    + URLEncoder.encode(author.substring(0, ind), "UTF-8");
-                        } else
-                            openurl += "&rft.au=" + URLEncoder.encode(author, "UTF-8");
-                    }
+                String localAuthor = getFirstAuthorSurname();
+                if (localAuthor != null) {
+                    openurl += "&rft.aulast=" + URLEncoder.encode(localAuthor, "UTF-8");
                 }
             }
 
@@ -3395,27 +3526,44 @@ public class BiblioItem {
     }
 
     /**
-     * Attach existing recognized emails to authors
+     * Attach existing recognized emails to authors (default) or editors
      */
     public void attachEmails() {
+        attachEmails(fullAuthors);
+    }
+
+    public void attachEmails(List<Person> folks) {
         // do we have an email field recognized? 
         if (email == null)
             return;
         // we check if we have several emails in the field
         email = email.trim();
-        email = email.replace(" and ", ";");
+        email = email.replace(" and ", "\t");
         ArrayList<String> emailles = new ArrayList<String>();
-        StringTokenizer st0 = new StringTokenizer(email, ";");
+        StringTokenizer st0 = new StringTokenizer(email, "\t");
         while (st0.hasMoreTokens()) {
             emailles.add(st0.nextToken().trim());
         }
 
-
         List<String> sanitizedEmails = emailSanitizer.splitAndClean(emailles);
 
         if (sanitizedEmails != null) {
-            authorEmailAssigner.assign(fullAuthors, sanitizedEmails);
+            authorEmailAssigner.assign(folks, sanitizedEmails);
         }
+    }
+
+    /**
+     * Attach existing recognized emails to authors
+     */
+    public void attachAuthorEmails() {
+        attachEmails(fullAuthors);
+    }
+
+    /**
+     * Attach existing recognized emails to editors
+     */
+    public void attachEditorEmails() {
+        attachEmails(fullEditors);
     }
 
     /**
@@ -4024,6 +4172,8 @@ public class BiblioItem {
             bib.setPublicationDate(bibo.getPublicationDate());
         if (bibo.getSubmissionDate() != null)
             bib.setSubmissionDate(bibo.getSubmissionDate());
+        if (bibo.getDownloadDate() != null)
+            bib.setDownloadDate(bibo.getDownloadDate());
         if (bibo.getYear() != null)
             bib.setYear(bibo.getYear());
         if (bibo.getNormalizedPublicationDate() != null)
@@ -4050,6 +4200,14 @@ public class BiblioItem {
             bib.setS_Month(bibo.getS_Month());
         if (bibo.getS_Day() != null)
             bib.setS_Day(bibo.getS_Day());
+
+        if (bibo.getD_Year() != null)
+            bib.setD_Year(bibo.getD_Year());
+        if (bibo.getD_Month() != null)
+            bib.setD_Month(bibo.getD_Month());
+        if (bibo.getD_Day() != null)
+            bib.setD_Day(bibo.getD_Day());
+
         if (bibo.getLocation() != null)
             bib.setLocation(bibo.getLocation());
         if (bibo.getPublisher() != null)
@@ -4222,9 +4380,9 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
+            /*if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 break;
-            }
+            }*/
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
@@ -4234,5 +4392,21 @@ public class BiblioItem {
                 theList.add(token);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
+    }
+
+    public void addTitleTokens(List<LayoutToken> layoutTokens) {
+        this.titleLayoutTokens.addAll(layoutTokens);
+    }
+
+    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
+        this.authorsLayoutTokens.addAll(layoutTokens);
+    }
+
+    public void addAbstractTokens(List<LayoutToken> layoutTokens) {
+        this.abstractLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getAbstractTokens() {
+        return this.abstractLayoutTokens;
     }
 }

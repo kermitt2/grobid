@@ -79,7 +79,7 @@ A series of additional modules have been developed for performing __structure aw
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
 - [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interative layout. 
 
-GROBID uses Deep Learning models relying on the following library: [DeLFT](https://github.com/kermitt2/delft)
+GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. 
 
 ## Release and changes
 
