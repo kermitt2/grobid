@@ -4242,75 +4242,13 @@ public class BiblioItem {
         if (bibo.getFullAuthors() != null) {
             if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
-            else if (bibo.getFullAuthors().size() == 1) {
-                List<Person> thePersons = bib.getFullAuthors();
-                List<Person> theOtherPersons = bib.getFullAuthors();
-                thePersons.addAll(theOtherPersons);
-                // we rely on Person object deduplcation for the author matching
-                Person.deduplicate(thePersons);
-                /*if (mergedPersons.size() == thePersons.size() - 1) {
-                    bib.setFullAuthors(mergedPersons);
-                }*/
-
-                // we have the corresponding author	
-                // check if the author exists in the obtained list
-                /*Person auto = (Person) bibo.getFullAuthors().get(0);
-                List<Person> auts = bib.getFullAuthors();
-                if (auts != null) {
-                    for (Person aut : auts) {
-                        if (aut.getLastName() != null) {
-                            if (aut.getLastName().equals(auto.getLastName())) {
-                                aut.setCorresp(true);
-                                if (StringUtils.isNotBlank(auto.getEmail())) 
-                                    aut.setEmail(auto.getEmail());
-
-                                if (StringUtils.isNotBlank(auto.getFirstName()))
-                                    aut.setFirstName(auto.getFirstName());
-                                // should we also check the country ? affiliation?
-                            }
-                        }
-                    }
-                }*/
-            } else if (bibo.getFullAuthors().size() > 1) {
+            else {
                 // we have the complete list of authors so we can take them from the second
                 // biblio item and merge some possible extra from the first when a match is 
                 // reliable
                 List<Person> thePersons = bib.getFullAuthors();
                 thePersons.addAll(bibo.getFullAuthors());
                 Person.deduplicate(thePersons);
-                /*if (mergedPersons.size() <= thePersons.size() - 1) {
-                    // at least one person merged
-                    bib.setFullAuthors(mergedPersons);
-                }*/
-
-                /*for (Person aut : bibo.getFullAuthors()) {
-                    // try to find the author in the first item (we know it's not empty)
-                    for (Person aut2 : bib.getFullAuthors()) {
-                        if (StringUtils.isNotBlank(aut2.getLastName())) {
-                            if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
-                                // check also first name if present - at least for the initial
-                                if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())
-                                    &&( aut.getFirstName().equals(aut2.getFirstName()) ||
-                                    (aut.getFirstName().substring(0,1).equals(aut2.getFirstName().substring(0,1))))) {
-
-                                    // we have a either a match (full first name) or (initial)
-                                    aut.setFirstName(aut2.getFirstName());
-                                    if (StringUtils.isBlank(aut.getMiddleName()))
-                                        aut.setMiddleName(aut2.getMiddleName());
-                                    if (StringUtils.isBlank(aut.getTitle()))
-                                        aut.setTitle(aut2.getTitle());
-                                    if (StringUtils.isBlank(aut.getSuffix()))
-                                        aut.setSuffix(aut2.getSuffix());
-                                    //we keep extracted affiliations if there are ones
-                                    if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
-                                        aut.setAffiliations(aut2.getAffiliations());
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                bib.setFullAuthors(bibo.getFullAuthors());*/
             }
         }
         //System.out.println("result: \n" + bib.toTEI(0));
