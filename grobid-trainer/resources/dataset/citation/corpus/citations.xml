@@ -3509,5 +3509,6 @@
 		<bibl><title level="m">Poppler</title>. <ptr type="web">http://poppler.freedesktop.org</ptr>. Accessed: <date>2015-05-12</date>.</bibl>
 		<bibl><title level="m">Tabula</title>. <ptr type="web">http://tabula.technology</ptr>. Accessed: <date>2015-05-13</date>.</bibl>
 		<bibl><author>Kopp, O., Armbruster, A., Zimmermann, O.</author>: <title level="a">Markdown Architectural Decision Records: Format and Tool Support</title>. In: <title level="s">ZEUS. CEUR Workshop Proceedings</title>, vol. <biblScope type="vol">2072</biblScope>. <ptr type="web">CEUR-WS.org</ptr> (<date>2018</date>)</bibl>
+		<bibl><author>Carlshamre, Pär</author>, “<title level="a">Release Planning in Market-Driven Software Product Development: Provoking an Understanding</title>”, <title level="j">Requirements Engineering</title>. <date>2002</date>, Vol. <biblScope type="vol">7</biblScope>, <note>3, pp</note>. <biblScope type="pp">139-151</biblScope>.</bibl>
 </listBibl>
 </tei>

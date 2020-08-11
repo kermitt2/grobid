@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="W12-4305"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics, pages 37-46,<lb/> Jeju, Republic of Korea, 12 July 2012.</reference>
+
+	<note type="copyright">c 2012 Association for Computational Linguistics<lb/></note>
+
+	<docTitle>
+	<titlePart>A Three-Way Perspective on Scientific Discourse Annotation for<lb/> Knowledge Extraction<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Maria Liakata<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Aberystwyth University,</affiliation>
+	</byline>
+
+	<address>UK /<lb/> </address>
+
+	<byline>
+	<affiliation>EMBL-EBI,</affiliation>
+	</byline> 
+
+	<address>UK<lb/></address>
+
+	<email>liakata@ebi.ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>Paul Thompson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Manchester,</affiliation>
+	</byline>
+
+	<address>UK<lb/></address>
+
+	<email>paul.thompson@manchester.<lb/> ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>Anita de Waard<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Elsevier Labs,</affiliation>
+	</byline>
+
+	<address>USA /<lb/></address>
+
+	<byline>
+	<affiliation>UiL-OTS, Universiteit Utrecht,</affiliation>
+	</byline>
+
+	<address>NL<lb/></address>
+
+	<email>a.dewaard@elsevier.com<lb/></email>
+
+	<byline>
+	<docAuthor>Raheel Nawaz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Manchester,</affiliation>
+	</byline>
+
+	<address>UK<lb/></address>
+
+	<email>raheel.nawaz@cs.man.<lb/> ac.uk<lb/></email>
+
+	<byline>
+	<docAuthor>Henk Pander Maat<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>UiL-OTS, Universiteit Utrecht, </affiliation>
+	</byline>
+
+	<address>NL<lb/></address>
+
+	<email>h.l.w.pandermaat@uu.nl<lb/></email>
+
+	<byline>
+	<docAuthor>Sophia Ananiadou<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Manchester,</affiliation>
+	</byline>
+
+	<address>UK<lb/></address>
+
+	<email>sophia.ananiadou@manchester.<lb/> ac.uk</email>
+
+	Abstract<lb/>
+	<div type="abstract">This paper presents a three-way perspective on<lb/> the annotation of discourse in scientific<lb/> literature. We use three different schemes, each<lb/> of which focusses on different aspects of<lb/> discourse in scientific articles, to annotate a<lb/> corpus of three full-text papers, and compare<lb/> the results. One scheme seeks to identify the<lb/> core components of scientific investigations at<lb/> the sentence level, a second annotates meta-<lb/>knowledge pertaining to bio-events and a third<lb/> considers how epistemic knowledge is<lb/> conveyed at the clause level. We present our<lb/> analysis of the comparison, and a discussion of<lb/> the contributions of each scheme.</div>
+
+		</front>
+	</text>
+</tei>

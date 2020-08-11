@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="AB1D4510688180AFC18A4F33E309D845AABB9CA9"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>240<lb/></page>
+
+	<reference>J. CHEM. SOC., CHEM. COMMUN., 1989<lb/></reference>
+	
+	<docTitle>
+	<titlePart>Quadrupole Nutation N.M.R. Reveals the Presence of a New Aluminium Species<lb/> in Hydrothermally Treated Zeolites<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Halimaton Hamdan and Jacek Klinowski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Chemistry, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Lensfield Road, Cambridge CB2 lEW, U. K.<lb/></address>
+
+	<div type="abstract">27AI Quadrupole nutation n.m.r. reveals the presence of four kinds of aluminium in dealuminated zeolite Y; we<lb/> suggest that distorted framework tetrahedral (DFT) aluminium, which is reported for the first time here, is bonded to<lb/> h yd roxyl groups formed during dea I u m i n ati o n .<lb/></div>
+
+	<note type="submission">Received, 31st August 1988;</note>
+
+	Corn. 8/03495H
+		</front>
+	</text>
+</tei>

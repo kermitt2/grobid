@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="38._10.1.1.17.2546"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Coordinated Resource Management<lb/> in a Replicated Object Server<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sanjay Ghemawat<lb/> Robert Gruber<lb/> James O&apos;Toole<lb/> Liuba Shrira</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">We propose several new techniques for resource manage-<lb/>ment in a replicated object server. By coordinating cache<lb/> and disk usage among the replicas, these techniques in-<lb/>crease throughput and reduce fetch latency. Cache splitting<lb/> speeds up fetches by avoiding redundant cache entries, ef-<lb/>fectively increasing the cache size. Coordinated writing<lb/> coordinates disk writes to ensure that one replica is always<lb/> available to service fetches. We investigate the performance<lb/> of a replicated server using these techniques, and we present<lb/> simulation results showing that these techniques provide<lb/> substantial performance improvements across a variety of<lb/> workloads.<lb/></div>
+
+	Authors&apos; addresses:
+	<email>sanjay@lcs.mit.edu</email>
+
+	,
+	<email>gruber@lcs.mit.edu</email>
+
+	,<lb/>
+	<email>otoole@lcs.mit.edu</email>
+
+	,
+	<email>liuba@lcs.mit.edu</email>
+
+	<note type="copyright">. Laboratory of Computer Science,<lb/></note>
+
+	<byline>
+	<affiliation>Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>545 Technology Square, Cam-<lb/>bridge, MA 02139.<lb/></address>
+
+	<note type="funding">This research was supported in part by the Advanced Research Projects<lb/> Agency of the Department of Defense, monitored by the Office of Naval<lb/> Research under contract N00014-91-J-4136, in part by the National Sci-<lb/>ence Foundation under Grant CCR-8822158, and in part by the Department<lb/> of the Army under Contract DABT63-92-C-0012.</note>
+
+		</front>
+	</text>
+</tei>

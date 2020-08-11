@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="01492291"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	Advanced Technologies and Reliable Design for Nanotechnology Systems<lb/> 
+	316 0740-7475/05/$20.00 
+	<note type="copyright">© 2005 IEEE<lb/> Copublished by the IEEE CS and the IEEE CASS<lb/> </note>
+	
+	<title level="j">IEEE Design &amp; Test of Computers<lb/></title>
+
+	<docTitle>
+	<titlePart>A Reconfiguration-Based<lb/> Defect-Tolerant<lb/> Design Paradigm for Nanotechnologies<lb/></titlePart>
+	</docTitle>
+
+	Editor&apos;s note:<lb/> 
+	<div type="abstract">To address the density, scalability, and reliability challenges of emerging<lb/> nanotechnologies, the authors propose a hierarchy of design abstractions,<lb/> constructed as reconfigurable fabric regions, whereby designers assign<lb/> small functional flows to each region. The approach exposes a new class of<lb/> yield, delay, and cost trade-offs that must be jointly considered when<lb/> designing computing systems in defect-prone nanotechnologies.<lb/> </div>
+
+	-
+	<editor>R. Iris Bahar, </editor>
+
+	<byline>
+	<affiliation>Brown University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Chen He<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Texas at Austin<lb/> and Freescale Semiconductor Inc.<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Margarida F. Jacome and Gustavo de Veciana<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Texas at Austin</affiliation>
+	</byline>
+
+		</front>
+	</text>
+</tei>

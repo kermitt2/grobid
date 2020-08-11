@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1046._p33-hearst"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>TextTiling: Segmenting Text into<lb/> Multi-paragraph Subtopic Passages<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marti A. Hearst*<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Xerox PARC<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">TextTiling is a technique for subdividing texts into multi-paragraph units that represent passages,<lb/> or subtopics. The discourse cues for identifying major subtopic shifts are patterns of lexical<lb/> co-occurrence and distribution. The algorithm is fully implemented and is shown to produce<lb/> segmentation that corresponds well to human judgments of the subtopic boundaries of 12 texts.<lb/> Multi-paragraph subtopic segmentation should be useful for many text analysis tasks, including<lb/> information retrieval and summarization.<lb/> </div>
+
+	*
+	<byline>
+	<affiliation>3333 Coyote Hill Rd,</affiliation>
+	</byline>
+
+	<address>Palo Alto, CA. 94304.</address>
+
+	E-mail:
+	<email>hearst@parc.xerox.com<lb/></email>
+
+	<note type="copyright">(~) 1997 Association for Computational Linguistics<lb/></note>
+	
+	<reference>Computational Linguistics<lb/> Volume 23, Number 1</reference>
+
+		</front>
+	</text>
+</tei>

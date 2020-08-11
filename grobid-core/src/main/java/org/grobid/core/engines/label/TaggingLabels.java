@@ -62,7 +62,7 @@ public class TaggingLabels {
     public final static String INSTITUTION_LABEL = "<institution>";
     public final static String NOTE_LABEL = "<note>";
     public final static String REFERENCE_LABEL = "<reference>";
-    public final static String GRANT_LABEL = "<grant>";
+    public final static String FUNDING_LABEL = "<funding>";
     public final static String COPYRIGHT_LABEL = "<copyright>";
     public final static String AFFILIATION_LABEL = "<affiliation>";
     public final static String ADDRESS_LABEL = "<address>";
@@ -75,7 +75,12 @@ public class TaggingLabels {
     public final static String DEDICATION_LABEL = "<dedication>";
     public final static String SUBMISSION_LABEL = "<submission>";
     public final static String ENTITLE_LABEL = "<entitle>";
-    public final static String INTRO_LABEL = "<intro>";
+    //public final static String INTRO_LABEL = "<intro>";
+    public final static String VERSION_LABEL = "<version>";
+    public final static String DOCTYPE_LABEL = "<doctype>";
+    public final static String DOWNLOAD_LABEL = "<date-download>";
+    public final static String WORKINGGROUP_LABEL = "<group>";
+    public final static String MEETING_LABEL = "<meeting>";
 
     public final static String COLLABORATION_LABEL = "<collaboration>";
     public final static String JOURNAL_LABEL = "<journal>";
@@ -148,7 +153,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_NOTE = new TaggingLabelImpl(GrobidModels.HEADER, NOTE_LABEL);
     public static final TaggingLabel HEADER_OTHER = new TaggingLabelImpl(GrobidModels.HEADER, OTHER_LABEL);
     public static final TaggingLabel HEADER_REFERENCE = new TaggingLabelImpl(GrobidModels.HEADER, REFERENCE_LABEL);
-    public static final TaggingLabel HEADER_GRANT = new TaggingLabelImpl(GrobidModels.HEADER, GRANT_LABEL);
+    public static final TaggingLabel HEADER_FUNDING = new TaggingLabelImpl(GrobidModels.HEADER, FUNDING_LABEL);
     public static final TaggingLabel HEADER_COPYRIGHT = new TaggingLabelImpl(GrobidModels.HEADER, COPYRIGHT_LABEL);
     public static final TaggingLabel HEADER_AFFILIATION = new TaggingLabelImpl(GrobidModels.HEADER, AFFILIATION_LABEL);
     public static final TaggingLabel HEADER_ADDRESS = new TaggingLabelImpl(GrobidModels.HEADER, ADDRESS_LABEL);
@@ -161,8 +166,15 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_DEDICATION = new TaggingLabelImpl(GrobidModels.HEADER, DEDICATION_LABEL);
     public static final TaggingLabel HEADER_SUBMISSION = new TaggingLabelImpl(GrobidModels.HEADER, SUBMISSION_LABEL);
     public static final TaggingLabel HEADER_ENTITLE = new TaggingLabelImpl(GrobidModels.HEADER, ENTITLE_LABEL);
-    public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
+    //public static final TaggingLabel HEADER_INTRO = new TaggingLabelImpl(GrobidModels.HEADER, INTRO_LABEL);
     public static final TaggingLabel HEADER_COLLABORATION = new TaggingLabelImpl(GrobidModels.HEADER, COLLABORATION_LABEL);
+    public static final TaggingLabel HEADER_VERSION = new TaggingLabelImpl(GrobidModels.HEADER, VERSION_LABEL);
+    public static final TaggingLabel HEADER_DOCTYPE = new TaggingLabelImpl(GrobidModels.HEADER, DOCTYPE_LABEL);
+    public static final TaggingLabel HEADER_DOWNLOAD = new TaggingLabelImpl(GrobidModels.HEADER, DOWNLOAD_LABEL);
+    public static final TaggingLabel HEADER_WORKINGGROUP = new TaggingLabelImpl(GrobidModels.HEADER, WORKINGGROUP_LABEL);
+    public static final TaggingLabel HEADER_MEETING = new TaggingLabelImpl(GrobidModels.HEADER, MEETING_LABEL);
+    public static final TaggingLabel HEADER_PUBLISHER = new TaggingLabelImpl(GrobidModels.HEADER, PUBLISHER_LABEL);
+    public static final TaggingLabel HEADER_JOURNAL = new TaggingLabelImpl(GrobidModels.HEADER, JOURNAL_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -255,14 +267,14 @@ public class TaggingLabels {
         register(HEADER_TITLE);
         register(HEADER_ABSTRACT);
         register(HEADER_AUTHOR);
-        register(HEADER_LOCATION);
-        register(HEADER_DATESUB);
+        //register(HEADER_LOCATION);
+        //register(HEADER_DATESUB);
         register(HEADER_EDITOR);
-        register(HEADER_INSTITUTION);
+        //register(HEADER_INSTITUTION);
         register(HEADER_NOTE);
         register(HEADER_OTHER);
         register(HEADER_REFERENCE);
-        register(HEADER_GRANT);
+        register(HEADER_FUNDING);
         register(HEADER_COPYRIGHT);
         register(HEADER_AFFILIATION);
         register(HEADER_ADDRESS);
@@ -270,13 +282,21 @@ public class TaggingLabels {
         register(HEADER_PUBNUM);
         register(HEADER_KEYWORD);
         register(HEADER_PHONE);
-        register(HEADER_DEGREE);
+        //register(HEADER_DEGREE);
         register(HEADER_WEB);
-        register(HEADER_DEDICATION);
+        //register(HEADER_DEDICATION);
         register(HEADER_SUBMISSION);
-        register(HEADER_ENTITLE);
-        register(HEADER_INTRO);
-        register(HEADER_COLLABORATION);
+        //register(HEADER_ENTITLE);
+        //register(HEADER_INTRO);
+        //register(HEADER_COLLABORATION);
+        //register(HEADER_VERSION);
+        register(HEADER_DOCTYPE);
+        //register(HEADER_DOWNLOAD);
+        register(HEADER_WORKINGGROUP);
+        register(HEADER_MEETING);
+        register(HEADER_PUBLISHER);
+        register(HEADER_JOURNAL);
+        register(HEADER_PAGE);
 
         //date
         register(DATE_YEAR);

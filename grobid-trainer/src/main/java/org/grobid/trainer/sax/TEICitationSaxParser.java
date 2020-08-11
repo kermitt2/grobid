@@ -89,8 +89,8 @@ public class TEICitationSaxParser extends DefaultHandler {
             accumulator.append(" +PAGE+ ");
         } else if (qName.equals("bibl")) {
             String text = getText();
+            currentTag = "<other>";
             if (text.length() > 0) {
-                currentTag = "<other>";
                 writeField(text);
             }
             nbCitations++;

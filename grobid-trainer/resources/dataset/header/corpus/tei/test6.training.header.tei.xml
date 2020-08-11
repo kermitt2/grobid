@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test6"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">ARTICLE OPEN<lb/></note>
+	<docTitle>
+	<titlePart>Mutant P53 induces MELK expression by release of wild-type<lb/> P53-dependent suppression of FOXM1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lakshmi Reddy Bollu 1 , Jonathan Shepherd 1 , Dekuang Zhao 1 , Yanxia Ma 1 , William Tahaney 1,2 , Corey Speers 3 , Abhijit Mazumdar 1 ,<lb/> Gordon B. Mills 4,5 and Powel H. Brown 1,2 *<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Triple-negative breast cancer (TNBC) is the most aggressive form of breast cancer, and is associated with a poor prognosis due to<lb/> frequent distant metastasis and lack of effective targeted therapies. Previously, we identified maternal embryonic leucine zipper<lb/> kinase (MELK) to be highly expressed in TNBCs as compared with ER-positive breast cancers. Here we determined the molecular<lb/> mechanism by which MELK is overexpressed in TNBCs. Analysis of publicly available data sets revealed that MELK mRNA is elevated<lb/> in p53-mutant breast cancers. Consistent with this observation, MELK protein levels are higher in p53-mutant vs. p53 wild-type<lb/> breast cancer cells. Furthermore, inactivation of wild-type p53, by loss or mutation of the p53 gene, increases MELK expression,<lb/> whereas overexpression of wild-type p53 in p53-null cells reduces MELK promoter activity and MELK expression. We further<lb/> analyzed MELK expression in breast cancer data sets and compared that with known wild-type p53 target genes. This analysis<lb/> revealed that MELK expression strongly correlates with genes known to be suppressed by wild-type p53. Promoter deletion studies<lb/> identified a p53-responsive region within the MELK promoter that did not map to the p53 consensus response elements, but to a<lb/> region containing a FOXM1-binding site. Consistent with this result, knockdown of FOXM1 reduced MELK expression in p53-mutant<lb/> TNBC cells and expression of wild-type p53 reduced FOXM1 expression. ChIP assays demonstrated that expression of wild-type p53<lb/> reduces binding of E2F1 (a critical transcription factor controlling FOXM1 expression) to the FOXM1 promoter, thereby, reducing<lb/> FOXM1 expression. These results show that wild-type p53 suppresses FOXM1 expression, and thus MELK expression, through<lb/> indirect mechanisms. Overall, these studies demonstrate that wild-type p53 represses MELK expression by inhibiting E2F1A-<lb/>dependent transcription of FOXM1 and that mutation-driven loss of wild-type p53, which frequently occurs in TNBCs, induces MELK<lb/> expression by suppressing FOXM1 expression and activity in p53-mutant breast cancers.<lb/></div>
+
+	<reference>npj Breast Cancer (2020) 6:2 ; </reference>
+	<idno>https://doi.org/10.1038/s41523-019-0143-5</idno>
+
+	<byline>
+	<affiliation>1<lb/> Department of Clinical Cancer Prevention, The University of Texas MD Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, USA.</address>
+
+	<byline>
+	<affiliation>2 Department of Molecular and Cellular Biology, Baylor<lb/> College of Medicine,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, USA.</address>
+
+	<byline>
+	<affiliation>3 Department of Radiation Oncology, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, Michigan, USA.</address>
+
+	<byline>
+	<affiliation>4 Department of Systems Biology, The<lb/> University of Texas MD Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, USA;</address>
+
+	5 Present address: 
+	<byline>
+	<affiliation>Precision Oncology, OHSU Knight Cancer Institute, Oregon Health and Science University,<lb/></affiliation>
+	</byline>
+
+	<address>2720 Southwest Moody Avenue, Knight Cancer Research Building, Level 2, Portland, Oregon 97201, USA.</address>
+
+	*email:
+	<email>phbrown@mdanderson.org<lb/></email>
+
+	www.nature.com/npjbcancer<lb/> Published in partnership with the Breast Cancer Research Foundation<lb/> 1234567890():,;<lb/>
+	<note type="submission">Received: 28 March 2019; Accepted: 3 December 2019;<lb/></note>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> © The Author(s) 2020</note>
+
+		</front>
+	</text>
+</tei>

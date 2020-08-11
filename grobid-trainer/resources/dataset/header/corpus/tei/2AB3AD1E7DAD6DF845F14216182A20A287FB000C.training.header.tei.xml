@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2AB3AD1E7DAD6DF845F14216182A20A287FB000C"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Parent Reports of Behavioral and Emotional<lb/> Problems among Children in Kenya, Thailand,<lb/> and the United States<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John R. Weisz and Marian Sigman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles<lb/> </address>
+
+	<byline>
+	<docAuthor>Bahr Weiss<lb/></docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>Vanderbilt University<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Julie Mosk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles<lb/></address>
+
+	<reference>WEISZ, JOHN R. ; SIGMAN, MARIAN; WEISS, BAHH; and MOSK, JULIE. Parent Reports of Behavioral<lb/> and Emotional Problems among Children in Kenya, Thailand, and the United States. CHILD<lb/> DEVELOPMENT, 1993, 64, 98-109.</reference>
+
+	<div type="abstract">The behavioral and emotional problems children develop<lb/> may differ from one cultural context to another. We explored this possibility, comparing 11-15-<lb/>year-old Embu children in Kenya, Thai children, African-American children, and Caucasian-<lb/>American children. Standardized parent reports on 118 problems revealed 62 significant (p &lt;<lb/> .01) culture effects. Caucasian-Americans were rated particularly high on undercontrolled prob-<lb/>lems (e.g., arguing, disobedient at home, cruel to others). Embu children were rated particularly<lb/> high on overcontrolled problems (e.g., fears, feels guilty, somatic concerns), largely because of<lb/> the numerous somatic problems reported. The findings may relate to the strict emphasis on<lb/> compliance and obedience among the Embu, as opposed to the greater independence permitted<lb/> in the United States. But alternative interpretations are discussed as well, including the effects<lb/> of parent sensitivities and Third World living conditions.<lb/></div>
+
+	[<reference>Child Development, 1993, 64, 98-109.</reference>
+
+	<note type="copyright">© 1993 by the Society for Research in Child Development, Inc.<lb/> AH rights reserved. </note>
+
+	0009-3920/93/6401-0009$01.00]
+		</front>
+	</text>
+</tei>

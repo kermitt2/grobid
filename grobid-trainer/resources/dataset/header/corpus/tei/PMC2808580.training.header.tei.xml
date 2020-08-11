@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC2808580"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<docAuthor>Dong-Jin Oh, Kwang-Jae Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine, College of Medicine,<lb/> Chung-Ang University,</affiliation>
+	</byline>
+
+	<address>Seoul, Korea<lb/></address>
+
+	Address for correspondence<lb/>
+	<byline>
+	<docAuthor>Dong-Jin Oh, M.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine, Chung-Ang University<lb/> Hospital, College of Medicine, Chung-Ang University<lb/></affiliation>
+	</byline>
+
+	<address>224-1 Heukseok-dong, Dongjak-gu, Seoul 156-070,<lb/> Korea<lb/></address>
+
+	Tel : <phone>+82.2-6299-1402</phone>, Fax : +82.2-6299-2626<lb/> E-mail :
+	<email>intmdoh@hanmail.net<lb/></email>
+
+	<note type="funding">*This study was financially supported by a Chung-Ang<lb/> University Research Grant, 2004.</note>
+
+	<page>70<lb/></page>
+
+	<reference>J Korean Med Sci 2005; 20: 70-4<lb/></reference>
+
+	<idno>ISSN 1011-8934<lb/></idno>
+
+	<note type="copyright">Copyright � The Korean Academy<lb/> of Medical Sciences<lb/></note>
+	
+	<docTitle>
+	<titlePart>The Relation Between Hypoalbuminemia and Compliance and<lb/> Intima-media Thickness of Carotid Artery in Continuous Ambulatory<lb/> Peritoneal Dialysis Patients<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">The aim of this study was to identify the main factor affecting compliance and intima-<lb/>media thickness of the elastic common carotid artery in continuous ambulatory peri-<lb/>toneal dialysis patients. Increased intima-media thickness and decreased arterial<lb/> compliance are associated with elevated risk of cardiovascular disease. This study<lb/> included 20 patients and 20 age-and sex-matched healthy control subjects. The<lb/> compliance and intima-media thickness of the right common carotid artery within 1 cm<lb/> to the bifurcation were measured three times using high-resolution B-mode echocar-<lb/>diography. Blood samples were obtained to measure levels of hemoglobin, phospho-<lb/>rus, total calcium, total CO2, serum albumin, C-reactive protein, serum total choles-<lb/>terol, LDL-and HDL-cholesterol and triglycerides. We found that the compliance of<lb/> common carotid artery was lower in the patient group than in the control group. In<lb/> the patient group, the compliance of common carotid artery was positively correlated<lb/> with serum albumin concentration, and intima-media thickness of common carotid<lb/> artery was negatively correlated with serum albumin levels. Stepwise regression<lb/> analysis showed that serum albumin concentration was independently related to<lb/> the compliance of common carotid artery, suggesting hypoalbuminemia can inde-<lb/>pendently give deleterious effects on the arterial wall in continuous ambulatory peri-<lb/>toneal dialysis patients.<lb/></div>
+
+	Key Words :
+	<keyword>Peritoneal Dialysis, Continuous Ambulatory; Artery; Compliance; Albumins<lb/></keyword>
+
+	<note type="submission">Received : 29 July 2004<lb/> Accepted : 30 August 2004</note>
+
+		</front>
+	</text>
+</tei>

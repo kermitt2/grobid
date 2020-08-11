@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="178._10.1.1.134.466"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Proving Properties of Logic Programs by<lb/> Abstract Diagnosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marco Comini 1 , Giorgio Levi 1 , Maria Chiara Meo 2 , and Giuliana Vitiello 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Informatica, Università di Pisa,</affiliation>
+	</byline>
+
+	<address>Corso Italia 40, 56125 Pisa, Italy,<lb/></address>
+
+	<email>{ comini, levi }@di.unipi.it<lb/></email>
+
+	<byline>
+	<affiliation>2 Dipartimento di Matematica Pura ed Applicata, Università di L&apos;Aquila, </affiliation>
+	</byline>
+
+	<address>via Vetoio,<lb/> località Coppito, 67010 L&apos;Aquila, Italy,</address>
+
+	<email>meo@univaq.it<lb/></email>
+
+	<byline>
+	<affiliation>3 Dipartimento di Informatica ed Applicazioni, Università di Salerno,</affiliation>
+	</byline>
+
+	<address>Baronissi<lb/> (Salerno), Italy,</address>
+
+	<email>giuvit@dia.unisa.it<lb/></email>
+
+	Abstract.
+	<div type="abstract">We show how declarative diagnosis techniques can be ex-<lb/>tended to cope with verification of operational properties, such as com-<lb/>puted answers, and of abstract properties, such as types and ground-<lb/>ness dependencies. The extension is achieved by using a simple semantic<lb/> framework, based on abstract interpretation. The resulting technique<lb/> (abstract diagnosis) leads to elegant bottom-up and top-down verifica-<lb/>tion methods, which do not require to determine the symptoms in ad-<lb/>vance, and which are effective in the case of abstract properties described<lb/> by finite domains.<lb/></div>
+
+	Keywords:
+	<keyword>Logic Programming, Declarative diagnosis, Verification, Se-<lb/>mantics, Debugging</keyword>
+
+		</front>
+	</text>
+</tei>

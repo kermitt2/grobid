@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="242._IJ.19-COA97"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>TO APPEAR IN COMPUTATIONAL OPTIMIZATION AND APPLICATIONS JOURNAL, 1997<lb/></reference>
+
+	<docTitle>
+	<titlePart>METAHEURISTICS FOR HIGH-SCHOOL TIMETABLING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alberto Colorni<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centro di Teoria dei Sistemi del CNR<lb/> Dipartimento di Elettronica e Informazione<lb/> Politecnico di Milano<lb/> </affiliation>
+	</byline>
+
+	<address>Piazza Leonardo da Vinci 32<lb/> 20133 Milano, Italy<lb/></address>
+
+	tel.<lb/>
+	<phone>+39-2-2399-3567</phone><lb/> fax<lb/> +39-2-2399-3587<lb/> e-mail:
+	<email>colorni@elet.polimi.it<lb/></email>
+
+	<byline>
+	<docAuthor>Marco Dorigo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IRIDIA<lb/> Université Libre de Bruxelles,</affiliation>
+	</byline>
+
+	<address>CP 194/6<lb/> Avenue Franklin Roosevelt 50<lb/> 1050 Bruxelles, Belgium, European Union<lb/></address>
+
+	tel.<lb/>
+	<phone>+32-2-6503169</phone><lb/> fax<lb/> +32-2-6502715<lb/> e-mail:
+	<email>mdorigo@ulb.ac.be<lb/></email>
+
+	<ptr type="web">http://iridia.ulb.ac.be/dorigo/dorigo.html<lb/></ptr>
+
+	<byline>
+	<docAuthor>Vittorio Maniezzo<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Scienze dell&apos;Informazione<lb/> Università di Bologna<lb/></affiliation>
+	</byline>
+
+	<address>Contrada Sacchi, 3<lb/> 47023 Cesena, Italy<lb/></address>
+
+	tel.<lb/>
+	<phone>+39-547-642830</phone><lb/> fax<lb/> +39-547-610100<lb/> e-mail:
+	<email>maniezzo@csr.unibo.it<lb/></email>
+
+	<ptr type="web">http://www.csr.unibo.it/~maniezzo<lb/></ptr>
+
+	Subject categories:<lb/>
+	<keyword>Programming: heuristic, stochastic;<lb/> Mathematics: combinatorics.<lb/></keyword>
+
+	<div type="abstract">The paper presents an application of simulated annealing, tabu search and an adapted<lb/> genetic algorithm to a real world instance of the timetable problem. The computational<lb/> results obtained are compared and discussed.<lb/></div>
+
+	Other keywords:
+	<keyword>timetable problem, tabu search, simulated annealing, genetic algorithms</keyword>
+
+	Abstract<lb/>
+	<div type="abstract">In this paper we present the results of an investigation of the possibilities offered by three well-<lb/>known metaheuristic algorithms to solve the timetable problem, a multi-constrained, NP-hard,<lb/> combinatorial optimization problem with real-world applications. First, we present our model of the<lb/> problem, including the definition of a hierarchical structure for the objective function, and of the<lb/> neighborhood search operators which we apply to matrices representing timetables. Then we report<lb/> about the outcomes of the utilization of the implemented systems to the specific case of the generation<lb/> of a school timetable. We compare the results obtained by simulated annealing, tabu search and two<lb/> versions, with and without local search, of the genetic algorithm. Our results show that GA with<lb/> local search and tabu search based on temporary problem relaxations both outperform simulated<lb/> annealing and handmade timetables.</div>
+
+		</front>
+	</text>
+</tei>

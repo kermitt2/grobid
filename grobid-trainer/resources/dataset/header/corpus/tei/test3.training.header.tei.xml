@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test3"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">CASE REPORT</note>
+
+	<note type="doctype">OPEN<lb/></note>
+
+	<docTitle>
+	<titlePart>Response to Olaparib in a Patient with Germline BRCA2<lb/> Mutation and Breast Cancer Leptomeningeal Carcinomatosis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pedro Exman 1 , Robert M. Mallery 2 , Nancy U. Lin 1 and Heather A. Parsons 1 *<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Leptomeningeal carcinomatosis (LC) is a devastating complication of metastatic cancer that disproportionately affects patients with<lb/> advanced breast cancer. Moreover, those with BRCA1/2-mutated disease more often experience leptomeningeal metastasis.<lb/> Treatment options for LC are limited and often include significant toxicities. PARP inhibitors offer an important potential treatment<lb/> for patients with BRCA1/2-mutated breast and ovarian cancers, but clinical studies excluded patients with central nervous system<lb/> (CNS) metastases, including LC. Efficacy data in this area are therefore limited, although a phase I study of olaparib in glioblastoma<lb/> did show CNS penetration. Here we report a case of a patient with BRCA2-mutated breast cancer and solitary recurrence in the<lb/> leptomeninges with ongoing complete response to treatment with the PARP inhibitor olaparib. PARP inhibitors may be an<lb/> important treatment option for patients with BRCA-mutated disease and LC, and warrant further study.<lb/></div>
+
+	<reference>npj Breast Cancer (2019) 5:46 ; </reference>
+
+	<idno>https://doi.org/10.1038/s41523-019-0139-1</idno>
+
+	<byline>
+	<affiliation>1<lb/> Medical Oncology, Dana-Farber Cancer Institute,</affiliation>
+	</byline>
+
+	<address>Boston, MA, USA.</address>
+
+	<byline>
+	<affiliation>2 Department of Neurology, Brigham and Women&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Boston, MA, USA.</address>
+
+	*email:
+	<email>heather_parsons@dfci.<lb/> harvard.edu<lb/></email>
+
+	www.nature.com/npjbcancer<lb/> Published in partnership with the Breast Cancer Research Foundation<lb/> 1234567890():,;<lb/>
+	<note type="submission">Received: 23 July 2019; Accepted: 30 October 2019;<lb/></note>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> © The Author(s) 2019</note>
+
+		</front>
+	</text>
+</tei>

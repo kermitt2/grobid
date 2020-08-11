@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="392BDDA6DB9F70DD69F14DECAC9EACE3D320B295"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Styles of Problem Solving in Suicidal Individuals<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Israel Orbach, PhD, Hanna Bar-Joseph, PhD, and<lb/> Nirit Dror, MA<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bar-Ilan University<lb/></affiliation>
+	</byline>
+
+	ABSTRACT:
+	<div type="abstract">This study compared qualitative aspects of problem solving among suicide<lb/> attempters, suicide ideators, and nonsuicidal patients. The subjects completed a suicidal<lb/> intent scale and a problem-solving task involving three dilemmas. Problem solving was<lb/> analyzed along eight qualitative categories: versatility of the various solutions, reliance<lb/> on self versus others, activity versus passivity, confrontation versus avoidance, relevance<lb/> of the solution to the problem, positive versus negative affect, reference to the future,<lb/> and extremity of the solution. The statistical analysis yielded differences among the<lb/> three groups. In general, the solutions of suicidal patients showed less versatility, more<lb/> avoidance, less relevance, more negative affect, and less reference to the future than<lb/> the solutions of the nonsuicidal patients. The suicide attempters and nonsuicidal patients<lb/> offered more active solutions than did the suicide ideators. Our findings emphasize the<lb/> importance of general coping styles, as well as energeticimotivational aspects and affective<lb/> aspects of the problem-solving process. Some applications to therapy are discussed.<lb/></div> 
+
+	Requests for reprints should be sent to 
+
+	<byline>
+	<docAuthor>Israel Orbach, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Psychology, Bar-<lb/>Ilan University,</affiliation>
+	</byline>
+
+	<address>Ramat-Gan 52100, Israel.</address>
+
+	<page>56<lb/></page>
+
+	<reference>Suicide and Life-Threatening Behavior, Vol. 20(1), Spring 1990<lb/></reference>
+
+	<note type="copyright">0 1990 The American Association of Suicidology</note>
+		</front>
+	</text>
+</tei>

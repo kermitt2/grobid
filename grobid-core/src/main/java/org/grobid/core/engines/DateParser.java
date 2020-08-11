@@ -263,6 +263,40 @@ public class DateParser extends AbstractParser {
                 //e.printStackTrace();
             }
         }
+
+        // if we don't have day and month, but a year with 8 digits, we might have a YYYYMMDD pattern
+        if (date.getDay() == -1 && date.getMonth() == -1 && date.getYear() != -1 && date.getYear() > 19000000 && date.getYear() < 20251231) {
+            int yearPart = date.getYear() / 10000;
+            if (yearPart > 1900 && yearPart < 2025) {
+                String yearString = ""+date.getYear();
+                String theMonthString = yearString.substring(4,6);
+                String theDayString = yearString.substring(6,8);
+
+                int dayPart = -1;
+                try {
+                    dayPart = Integer.parseInt(theDayString);
+                } catch (Exception e) {
+                    //e.printStackTrace();
+                }
+
+                int monthPart = -1;
+                try {
+                    monthPart = Integer.parseInt(theMonthString);
+                } catch (Exception e) {
+                    //e.printStackTrace();
+                }
+
+                if (dayPart != -1 && monthPart != -1) {
+                    if (dayPart > 0 && dayPart < 32 && monthPart > 0 && monthPart < 13) {
+                        date.setDay(dayPart);
+                        date.setDayString(theDayString);
+                        date.setMonth(monthPart);
+                        date.setMonthString(theMonthString);
+                        date.setYear(yearPart);
+                    }
+                }
+            }
+        }
     }
 
 

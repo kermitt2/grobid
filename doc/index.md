@@ -33,6 +33,8 @@
 
 * [End-to-end evaluation](End-to-end-evaluation.md)
 
+* [FAQ](Frequently-asked-questions.md)
+
 <h3>Benchmarking</h3>
 
 * [Description](Benchmarking.md)
@@ -42,18 +44,24 @@
 <h3>Annotation guidelines</h3>
 
 * [General principles](training/General-principles.md)
+
 * [Segmentation model](training/segmentation.md)
+
 * [Fulltext model](training/fulltext.md)
+
+* [Header model](training/header.md)
+
 * [Bibliographical reference](training/Bibliographical-references.md)
+
 * [Affiliation-address model](training/affiliation-address.md)
+
 * [Date model](training/date.md)
 
 <h3>Developer notes</h3>
 
-* [Developer guide](Developer-guide.md)
-
+* [Developers guide](Developer-guide.md)
+* [Notes for the Grobid Developers](Notes-grobid-developers.md)
 * [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
-
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
 
 

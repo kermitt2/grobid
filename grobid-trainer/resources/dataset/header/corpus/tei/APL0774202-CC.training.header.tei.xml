@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="APL0774202-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0007013v1 [cond-mat.supr-con]</idno>
+
+	<date>2 Jul 2000<lb/></date>
+
+	<docTitle>
+	<titlePart>Measurements of the absolute value of the penetration depth in high-T c<lb/> superconductors using a tunnel diode resonator<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>R. Prozorov, 1 R. W. Giannetta, 1 A. Carrington, 2 P. Fournier, 3<lb/> R. L. Greene, 3 P. Guptasarma, 4 D.G. Hinks, 4 and A. R. Banks 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Loomis Laboratory of Physics, University of Illinois at Urbana-Champaign,</affiliation>
+	</byline>
+
+	<address>1110 West Green St., Urbana, 61801 Illinois.<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics and Astronomy, University of Leeds,</affiliation>
+	</byline>
+
+	<address>Leeds LS2 9JT, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>3 Center for Superconductivity Research, Department of Physics,<lb/> University of Maryland,</affiliation>
+	</byline>
+
+	<address>College Park, Maryland 20742<lb/></address>
+
+	<byline>
+	<affiliation>4 Chemistry and Materials Science Division, Argonne National Laboratory,</affiliation>
+	</byline>
+
+	<address>Argonne, Illinois 60439<lb/></address>
+
+	<byline>
+	<affiliation>5 Materials Research Laboratory, University of Illinois at Urbana-Champaign,<lb/></affiliation>
+	</byline>
+
+	<address>104 South Goodwin Ave, Urbana, 61801 Illinois.<lb/></address>
+
+	(Dated:
+	<note type="submission">Submitted to Applied. Phys. Lett. June 30, 2000</note>
+
+	)<lb/>
+	<div type="abstract">A method is presented to measure the absolute value of the London penetration depth, λ, from<lb/> the frequency shift of a resonator. The technique involves coating a high-Tc superconductor (HTSC)<lb/> with film of low -Tc material of known thickness and penetration depth. The method is applied<lb/> to measure London penetration depth in YBa2Cu3O 7−δ (YBCO) Bi2Sr2CaCu2O 8+δ (BSCCO) and<lb/> Pr1.85Ce0.15CuO 4−δ (PCCO). For YBCO and BSCCO, the values of λ(0) are in agreement with the<lb/> literature values. For PCCO λ ≈ 2790Å, reported for the first time.</div>
+
+		</front>
+	</text>
+</tei>

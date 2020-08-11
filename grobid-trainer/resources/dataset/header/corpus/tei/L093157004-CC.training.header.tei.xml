@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L093157004-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0404542v1 [cond-mat.supr-con]</idno>
+
+	<date>22 Apr 2004<lb/></date>
+
+	<note type="doctype">PREPRINT</note> 
+
+	(<date>November 20, 2018</date>)<lb/>
+
+	<docTitle>
+	<titlePart>Pressure effects on the transition temperature and the magnetic<lb/> field penetration depth in the pyrochlore superconductor<lb/> RbOs 2 O 6<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Khasanov, 1, 2, 3 D.G. Eshchenko, 3, 4 J. Karpinski, 5 S.M. Kazakov, 5<lb/> N.D. Zhigadlo, 5 R. Brütsch, 6 D. Gavillet, 6 and H. Keller 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratory for Neutron Scattering,<lb/> ETH Zürich and Paul Scherrer Institut,</affiliation>
+	</byline>
+
+	<address>CH-5232 Villigen PSI, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>2 DPMC, Université de Genève,</affiliation>
+	</byline>
+
+	<address>24 Quai Ernest-Ansermet, 1211 Genève 4, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>3 Physik-Institut der Universität Zürich,<lb/></affiliation>
+	</byline>
+
+	<address>Winterthurerstrasse 190, CH-8057, Zürich, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>4 Laboratory for Muon Spin Spectroscopy,<lb/> PSI,</affiliation>
+	</byline>
+
+	<address>CH-5232 Villigen PSI, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>5 Solid State Physics Laboratory,ETH</affiliation>
+	</byline>
+
+	<address>8093 Zürich, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>6 Laboratory for Material Behaviour,<lb/> Paul Scherrer Institut,</affiliation>
+	</byline>
+
+	<address>CH-5232 Villigen PSI, Switzerland</address>
+
+	Abstract<lb/>
+	<div type="abstract">We report magnetization measurements under high hydrostatic pressure in the newly discovered<lb/> pyrochlore superconductor RbOs 2 O 6 (T c ≃ 6.3 K at p = 0). A pronounced and positive pressure<lb/> effect (PE) on T c with dT c /dp = 0.090(1) K/kbar was observed, whereas no PE on the magnetic<lb/> penetration depth λ was detected. The relative pressure shift of T c [d ln T c /dp ≃ 1.5 %/kbar]<lb/> is comparable with the highest values obtained for highly underdoped high-temperature cuprate<lb/> superconductors. Our results suggest that RbOs 2 O 6 is an adiabatic BCS-type superconductor.<lb/></div>
+
+	<keyword>PACS numbers: 74.70.Dd, 74.62.Fj, 74.25.Ha, 83.80.Fg</keyword>
+
+		</front>
+	</text>
+</tei>

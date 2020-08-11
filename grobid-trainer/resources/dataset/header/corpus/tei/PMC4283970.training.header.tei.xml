@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC4283970"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">B R I E F C O M M U N I C A T I O N<lb/></note>
+
+	<docTitle>
+	<titlePart>Recommended standards for dental therapy education<lb/> programs in the United States: a summary of critical issues<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frank W. Licari, DDS, MPH, MBA 1 ; Caswell A. Evans, DDS, MPH 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 College of Dental Medicine, Roseman University of Health Sciences,</affiliation>
+	</byline>
+
+	<address>South Jordan, UT, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Prevention and Public Health Sciences, University of Illinois at Chicago College of Dentistry,</affiliation>
+	</byline>
+
+	<address>Chicago, IL, USA<lb/></address>
+
+	Keywords<lb/>
+	<keyword>dental therapy; education; standards.<lb/></keyword>
+
+	Correspondence<lb/>
+	<byline>
+	<docAuthor>Dr. Caswell A. Evans,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Prevention and Public<lb/> Health Sciences, University of Illinois at Chicago<lb/> College of Dentistry,</affiliation>
+	</byline>
+
+	<address>801 S. Paulina Street<lb/> (MC621) Room 102GD, Chicago, IL 60612.<lb/></address>
+
+	Tel.: <phone>312-413-2474</phone>; Fax: 312-413-9050;<lb/> e-mail:
+	<email>casevans@uic.edu</email>. 
+
+	<byline>
+	<docAuthor>Frank W. Licari</docAuthor>
+	</byline>
+
+	is<lb/> with the
+	<byline>
+	<affiliation>College of Dental Medicine, Roseman<lb/> University of Health Sciences.</affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Caswell A. Evans<lb/></docAuthor>
+	</byline>
+
+	is with the
+	<byline>
+	<affiliation>Prevention and Public Health<lb/> Sciences, University of Illinois at Chicago<lb/> College of Dentistry.<lb/></affiliation>
+	</byline>
+
+	<note type="submission">Received: 1/24/2014; accepted: 4/5/2014.<lb/></note>
+
+	<idno>doi: 10.1111/jphd.12057<lb/></idno>
+
+	<reference>Journal of Public Health Dentistry 74 (2014) 257-260</reference>
+
+	Abstract<lb/>
+	<div type="abstract">Dental therapy is an accepted component of the dental profession in the Alaska<lb/> Native Tribal Health Consortium and in the state of Minnesota. There are also<lb/> several states working to enact legislation to permit the practice of dental therapy.<lb/> However, in the absence of nationally recognized educational standards, concerns<lb/> have been raised relating to the lack of uniformity in dental therapy education. In<lb/> 2010, a panel of academicians met and prepared a report on the principles, com-<lb/>petencies, and curriculum for educating dental therapists. Still, there remained<lb/> questions in regard to what the minimal educational standards should be for<lb/> institutions that wish to sponsor dental therapy programs. A second panel was<lb/> convened to address education standards. This paper describes the Panel&apos;s delib-<lb/>erations on three critical issues in developing the report: the length of the program<lb/> and degree to be awarded; credentials of the program director; and the nature of<lb/> supervision.<lb/></div>
+
+	<title level="j">Journal of Public Health Dentistry . </title>
+
+	<idno>ISSN 0022-4006 257<lb/></idno>
+
+	<note type="copyright">© 2014 The Authors. Journal of Public Health Dentistry published by Wiley Periodicals, Inc. on behalf of American Association of Public Health Dentistry.<lb/> This is an open access article under the terms of the Creative Commons Attribution-NonCommercial-NoDerivs License, which permits use and distribution in any medium,<lb/> provided the original work is properly cited, the use is non-commercial and no modifications or adaptations are made.</note>
+
+		</front>
+	</text>
+</tei>

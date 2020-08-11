@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="submission_161"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MAGNETO-PHOTOLUMINESCENCE AS A PROBE OF PHASES IN<lb/> QUANTUM HALL MULTI-LAYERS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yu.A.Pusep 1* , L.Fernandes dos Santos 1 , D.Smirnov 2 , A.K.Bakarov 3 , and A.I.Toropov 3<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Instituto de Fisica de São Carlos, Universidade de São Paulo,</affiliation>
+	</byline>
+
+	<address>13560-970 São Carlos, SP, Brazil<lb/></address>
+
+	<byline>
+	<affiliation>2 National High Magnetic Field Laboratory,</affiliation>
+	</byline>
+
+	<address>Tallahassee, FL 32312, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Institute of Semiconductor Physics,</affiliation>
+	</byline>
+
+	<address>Novosibirsk 630090, Russia</address>
+
+		</front>
+	</text>
+</tei>

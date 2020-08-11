@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1116._PEER_stage2_10.1088%2F0022-3727%2F43%2F26%2F264001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	MAGNONICS<lb/> 
+
+	<page>Page 1 of 21</page> 
+
+	<docTitle>
+	<titlePart>MAGNONICS<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>V. V. Kruglyak 1 , S. O. Demokritov 2 , and D. Grundler 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Physics, University of Exeter,</affiliation>
+	</byline>
+
+	<address>Stocker Road, Exeter, EX4 4QL,<lb/> United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>2 Institut für Angewandte Physik, Westfälische Wilhelms-Universität Münster,<lb/></affiliation>
+	</byline>
+
+	<address>Corrensstrasse 2-4, 48149 Münster, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 Physik-Department E10, Technische Universität München,</affiliation>
+	</byline>
+
+	<address>James-Franck-Strasse,<lb/> D-85747 Garching, Germany</address>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Magnonics is a young field of research and technology emerging at the interfaces between the study of spin<lb/> dynamics, on one hand, and a number of other fields of nanoscale science and technology, on the other. We<lb/> review the foundations and recent achievements in magnonics in view of guiding further progress from<lb/> studying fundamental magnonic phenomena towards applications. We discuss major challenges that have to<lb/> be addressed in future research in order to make magnonics a pervasive technology.</div>
+
+		</front>
+	</text>
+</tei>

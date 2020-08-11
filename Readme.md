@@ -6,7 +6,7 @@
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
-[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/https://github.com/kermitt2/grobid/)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
 ## GROBID documentation
 
@@ -38,7 +38,7 @@ GROBID includes a comprehensive web service API, batch processing, a JAVA API, a
 
 GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), scite.ai, and many more. The tool is designed for high scalability in order to address the full scientific literature corpus.
 
-GROBID should run properly "out of the box" on Linux (64 bits), MacOS, and Windows (32 and 64 bits).
+GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 
 For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](http://grobid.readthedocs.org).
 
@@ -77,8 +77,9 @@ A series of additional modules have been developed for performing __structure aw
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a bio-entity tagger using BioNLP/NLPBA 2004 dataset
 - [grobid-dictionaries](https://github.com/MedKhem/grobid-dictionaries): structuring dictionaries in raw PDF format
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
+- [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interative layout. 
 
-GROBID uses optionnally Deep Learning models relying on the following library: [DeLFT](https://github.com/kermitt2/delft)
+GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. 
 
 ## Release and changes
 
@@ -96,9 +97,9 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 [![JProfiler](doc/img/jprofiler_medium.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
-## Reference
+## How to cite
 
-For citing this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want to this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
 
 ```bibtex
 @misc{GROBID,
@@ -107,7 +108,7 @@ For citing this work, please refer to the present GitHub project, together with 
     publisher = {GitHub},
     year = {2008--2020},
     archivePrefix = {swh},
-    eprint = {1:dir:6a298c1b2008913d62e01e5bc967510500f80710}
+    eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
 ```
 

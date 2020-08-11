@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="723F2C6610D1681C53567BBC4DCAD1E735676FF5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Population-Based Study of Hemoglobin,<lb/> Race, and Mortality in Elderly Persons<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>XinQi Dong, 1 Carlos Mendes de Leon, 1 Andrew Artz, 2 YuXiao Tang, 3<lb/> Raj Shah, 4 and Denis Evans 1</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Rush Institute for Healthy Aging, Rush University Medical Center,</affiliation>
+	</byline>
+
+	<address>Chicago, Illinois.<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Medicine, University of Chicago,</affiliation>
+	</byline>
+
+	<address>Illinois.<lb/></address>
+
+	<byline>
+	<affiliation>3 PATH, Inc.,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington.<lb/></address>
+
+	<byline>
+	<affiliation>4 Rush Alzheimer&apos;s Disease Center, Rush University Medical Center,</affiliation>
+	</byline>
+
+	<address>Chicago, Illinois.<lb/></address>
+
+	<div type="abstract">Background. Anemia is associated with increased mortality risk. The impact of mildly low hemoglobin concentration<lb/> (Hb) on risk for mortality remains unclear, especially among blacks. We examined the racial differences between Hb and<lb/> mortality.<lb/> Methods. This was a population-based study conducted from 1993 through 2006, in a geographically defined<lb/> community of Chicago, Illinois. A stratified, random sample of 1806 participants 65 years old or older and 50% black,<lb/> who were participating in the Chicago Health Aging Project and underwent clinical evaluation. Mortality was ascertained<lb/> using the National Death Index. Cox proportional hazard models were used to assess the independent relation of Hb to<lb/> mortality risk.<lb/> Results. The proportion of participants with anemia by World Health Organization (WHO) criteria (Hb , 13.0 g/dL for<lb/> men and , 12.0 g/dL for women) was 39% among blacks, and 17% among whites. Blacks had lower mean Hb (12.6 6 1.5<lb/> g/dL) than did whites (13.5 6 1.5 g/dL). In multivariable analysis, anemia was associated with increased mortality risk in<lb/> blacks (hazard ratio [HR], 1.90; 95% confidence interval [CI], 1.43-2.53) and in whites (HR, 1.85; 95% CI, 1.32-2.59).<lb/> Among blacks, Hb 0-0.9 g/dL below the anemia threshold is associated with increased mortality risk compared to Hb 0-0.9<lb/> g/dL above the anemia cutoff (HR, 1.84; 95% CI, 1.21-2.79), Hb 1.1-2.0 g/dL above the anemia cutoff (HR, 1.35; 95% CI,<lb/> 0.88-2.05) and Hb 2.1-3.0 g/dL above the anemia cutoff (HR, 2.24; 95% CI, 1.12-4.47). The terms for interaction between<lb/> black ethnicity/race and anemia suggested that blacks did not have a statistically significant difference in mortality risk<lb/> compared to whites. Subgroup analyses of interaction terms suggested that Hb 0.1-1.0 g/dL above anemia cutoff group,<lb/> blacks may have lower mortality risk compared to whites in the mildly low normal ranges of Hb (p ¼ .02).<lb/> Conclusion. Both anemia by WHO criteria and mild reductions in Hb were related to increased risk of mortality in<lb/> older blacks and whites.<lb/></div>
+
+	Key Words:
+	<keyword>Hemoglobin-Anemia-Race-Mortality-Population-based study.</keyword>
+
+	<page>873<lb/></page>
+
+	<title level="j">Journal of Gerontology: MEDICAL SCIENCES<lb/> </title>
+
+	<note type="copyright">Copyright 2008 by The Gerontological Society of America<lb/> </note>
+
+	<reference>2008, Vol. 63A, No. 8, 873-878</reference>
+
+	CORRESPONDENCE<lb/> Address correspondence to
+	<byline>
+	<docAuthor>XinQi Dong, MD,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Rush University Medical<lb/> Center,</affiliation>
+	</byline>
+
+	<address>710 South Paulina St., Suite 430, Chicago, IL 60612.</address>
+
+	E-mail:<lb/>
+	<email>xinqi_dong@rush.edu<lb/></email>
+
+	<note type="submission">Received April 16, 2007<lb/> Accepted December 11, 2007<lb/></note>
+
+	Decision Editor:
+	<editor>Luigi Ferrucci, MD, PhD</editor>
+
+		</front>
+	</text>
+</tei>

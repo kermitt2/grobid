@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">ARTICLE OPEN<lb/></note>
+	<docTitle>
+	<titlePart>Androgen receptor gene expression in primary breast cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Neelima Vidula 1 * , Christina Yau 2 , Denise Wolf 2 and Hope S. Rugo 3 *<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">We studied androgen receptor (AR) gene expression in primary breast cancer (BC) to determine associations with clinical<lb/> characteristics and outcomes in the I-SPY 1 study. AR was evaluated in I-SPY 1 (n = 149) using expression microarrays.<lb/> Associations of AR with clinical and tumor features were determined using the Wilcoxon rank sum test (two-level factors) or the<lb/> Kruskal-Wallis test (multi-level factors). We identified an optimal AR cut-point to maximize recurrence-free survival (RFS)<lb/> differences between AR biomarker stratified groups, and assessed the association between the AR stratified groups and RFS<lb/> using the Cox proportional hazard model. Pearson correlations between AR and selected genes were determined in I-SPY 1,<lb/> METABRIC (n = 1992), and TCGA (n = 817). AR was lower in triple negative BC vs. hormone receptor positive (HR+)/HER2− and<lb/> HER2+ disease (p &lt; 0.00001), and lower in basal-like BC (p &lt; 0.00001). AR was higher in grade I/II vs. III tumors (p &lt; 0.00001), in<lb/> patients &gt;age 50 (p = 0.05), and in node negative disease (p = 0.006). Higher AR was associated with better RFS (p = 0.0007),<lb/> which remained significant after receptor subtype adjustment (p = 0.01). AR correlated with expression of luminal, HER2, and<lb/> steroid hormone genes. AR expression was related to clinicopathologic features, intrinsic subtype, and correlated with<lb/> improved outcome.<lb/></div>
+
+	<reference>npj Breast Cancer (2019) 5:47 ; </reference>
+
+	<idno>https://doi.org/10.1038/s41523-019-0142-6</idno>
+
+	<byline>
+	<affiliation>1<lb/> Massachusetts General Hospital,</affiliation>
+	</byline>
+
+	<address>55 Fruit Street, Boston, MA 02114, USA.</address>
+
+	<byline>
+	<affiliation>2 University of California San Francisco,</affiliation>
+	</byline>
+
+	<address>1600 Divisadero Street, San Francisco, CA 94115, USA.</address>
+
+	<byline>
+	<affiliation>3 University<lb/> of California San Francisco,</affiliation>
+	</byline>
+
+	<address>1600 Divisadero Street, San Francisco, CA 94115, USA.</address>
+
+	*email:
+	<email>nvidula@mgh.harvard.edu</email>
+
+	;
+	<email>hope.rugo@ucsf.edu<lb/></email>
+
+	www.nature.com/npjbcancer<lb/> Published in partnership with the Breast Cancer Research Foundation<lb/> 1234567890():,;<lb/>
+	<note type="submission">Received: 27 June 2019; Accepted: 22 November 2019;<lb/></note>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/>© The Author(s) 2019</note>
+
+		</front>
+	</text>
+</tei>

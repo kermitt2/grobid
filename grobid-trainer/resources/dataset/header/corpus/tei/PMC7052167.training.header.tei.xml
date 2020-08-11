@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC7052167"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">ARTICLE</note>
+
+	<note type="doctype">OPEN<lb/></note>
+
+	<docTitle>
+	<titlePart>TCR-pMHC bond conformation controls TCR ligand discrimination<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dibyendu K. Sasmal 1 , Wei Feng 1 , Sobhan Roy 2 , Peter Leung 1 , Yanran He 3 , Chufan Cai 1 , Guoshuai Cao 1 , Huada Lian 4 , Jian Qin 5 ,<lb/> Enfu Hui 6 , Hans Schreiber 3 , Erin J. Adams 2 and Jun Huang 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">A major unanswered question is how a TCR discriminates between foreign and self-peptides presented on the APC surface. Here,<lb/> we used in situ fluorescence resonance energy transfer (FRET) to measure the distances of single TCR-pMHC bonds and the<lb/> conformations of individual TCR-CD3ζ receptors at the membranes of live primary T cells. We found that a TCR discriminates<lb/> between closely related peptides by forming single TCR-pMHC bonds with different conformations, and the most potent pMHC<lb/> forms the shortest bond. The bond conformation is an intrinsic property that is independent of the binding affinity and kinetics,<lb/> TCR microcluster formation, and CD4 binding. The bond conformation dictates the degree of CD3ζ dissociation from the inner<lb/> leaflet of the plasma membrane via a positive calcium signaling feedback loop to precisely control the accessibility of CD3ζ ITAMs<lb/> for phosphorylation. Our data revealed the mechanism by which a TCR deciphers the structural differences among peptides via the<lb/> TCR-pMHC bond conformation.<lb/></div>
+
+	Keywords:
+	<keyword>Bond conformation; T cell receptor; Single molecule FRET; ligand discrimination<lb/></keyword>
+
+	<reference>Cellular &amp; Molecular Immunology (2020) 17:203-217;</reference>
+
+	<idno>https://doi.org/10.1038/s41423-019-0273-6<lb/></idno>
+
+	<note type="submission">Received: 3 August 2019 Accepted: 7 August 2019<lb/></note>
+
+	Published online:
+	<date>17 September 2019</date>
+
+	<byline>
+	<affiliation>1<lb/> The Pritzker School of Molecular Engineering, The University of Chicago,</affiliation>
+	</byline>
+
+	<address>Chicago, IL, USA;</address>
+
+	<byline>
+	<affiliation>2 Department of Biochemistry and Molecular Biology, The University of Chicago,<lb/></affiliation>
+	</byline>
+
+	<address>Chicago, IL, USA;</address>
+
+	<byline>
+	<affiliation>3 Department of Pathology, The University of Chicago,</affiliation>
+	</byline>
+
+	<address>Chicago, IL, USA;</address>
+
+	<byline>
+	<affiliation>4 Department of Materials Science &amp; Engineering, Stanford University,</affiliation>
+	</byline>
+
+	<address>Stanford, CA, USA;</address>
+
+	<byline>
+	<affiliation>5<lb/> Department of Chemical Engineering, Stanford University,</affiliation>
+	</byline>
+
+	<address>Stanford, CA, USA and</address>
+
+	<byline>
+	<affiliation>6 Section of Cell &amp; Developmental Biology, Division of Biological Sciences, University of<lb/> California,</affiliation>
+	</byline>
+
+	<address>San Diego, CA, USA<lb/></address>
+
+	Correspondence:
+	<byline>
+	<docAuthor>Jun Huang</docAuthor>
+	</byline>
+
+	(
+	<email>huangjun@uchicago.edu</email>
+
+	)<lb/> www.nature.com/cmi<lb/> 
+
+	<title level="j">Cellular &amp; Molecular Immunology<lb/></title>
+
+	<note type="copyright">© The Author(s) 2019<lb/> Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> © The Author(s) 2019</note>
+
+		</front>
+	</text>
+</tei>

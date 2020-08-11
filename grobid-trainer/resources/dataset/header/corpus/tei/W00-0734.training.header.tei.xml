@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="W00-0734"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	In:
+	<reference>Proceedings of CoNLL-2000 and LLL-2000, pages 154-156, Lisbon, Portugal, 2000.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Chunking with WPDV Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hans van Halteren<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dept. of Language and Speech, Univ. of Nijmegen<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 9103, 6500 HD Nijmegen<lb/> The Netherlands<lb/></address>
+
+	<email>hvh@let,<lb/> kun. nl</email>
+
+		</front>
+	</text>
+</tei>

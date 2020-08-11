@@ -20,13 +20,18 @@ public class HeaderTrainer extends AbstractTrainer{
 
     public HeaderTrainer() {
         super(GrobidModels.HEADER);
+
+        // adjusting CRF training parameters for this model (only with Wapiti)
+        epsilon = 0.000001;
+        window = 30;
+        nbMaxIterations = 1500;
     }
 
 
 	@Override
     public int createCRFPPData(File corpusPath, File trainingOutputPath) {
         return addFeaturesHeaders(corpusPath.getAbsolutePath() + "/tei", 
-						  		corpusPath.getAbsolutePath() + "/headers", 
+						  		corpusPath.getAbsolutePath() + "/raw", 
 								trainingOutputPath, null, 1.0);
     }
 
@@ -49,7 +54,7 @@ public class HeaderTrainer extends AbstractTrainer{
 							final File evalOutputPath, 
 							double splitRatio) {
 		return addFeaturesHeaders(corpusDir.getAbsolutePath() + "/tei", 
-								corpusDir.getAbsolutePath() + "/headers", 
+								corpusDir.getAbsolutePath() + "/raw", 
 								trainingOutputPath, 
 								evalOutputPath, 
 								splitRatio);	
@@ -92,7 +97,6 @@ public class HeaderTrainer extends AbstractTrainer{
             if (refFiles == null)
                 return 0;
 
-//            TreeMap<String, String> pdfs = new TreeMap<String, String>();
             nbExamples = refFiles.length;
             System.out.println(nbExamples + " tei files");
  
@@ -114,11 +118,11 @@ public class HeaderTrainer extends AbstractTrainer{
 
             for (File teifile : refFiles) {
                 String name = teifile.getName();
-                //System.out.println(name);
+                System.out.println(name);
 
                 TEIHeaderSaxParser parser2 = new TEIHeaderSaxParser();
                 parser2.setFileName(name);
-                //parser2.pdfs = pdfs;
+
                 // get a factory
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 //get a new instance of parser
@@ -135,13 +139,13 @@ public class HeaderTrainer extends AbstractTrainer{
                 File[] refFiles2 = refDir2.listFiles();
                 for (File aRefFiles2 : refFiles2) {
                     String localFileName = aRefFiles2.getName();
-                    if (localFileName.equals(parser2.getPDFName() + ".header")) {
+                    if (localFileName.equals(parser2.getPDFName() + ".header") || 
+                        localFileName.equals(parser2.getPDFName() + ".training.header")) {
                         headerFile = localFileName;
                         break;
                     }
-
-                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &
-                            (localFileName.endsWith(".header"))) {
+                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &&
+                            (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
                         headerFile = localFileName;
                         break;
                     }
@@ -149,7 +153,7 @@ public class HeaderTrainer extends AbstractTrainer{
 
                 if (headerFile == null)
                     continue;
-                //System.out.println(headerFile);
+
                 String pathHeader = headerPath + File.separator + headerFile;
                 int p = 0;
                 BufferedReader bis = new BufferedReader(
@@ -158,7 +162,6 @@ public class HeaderTrainer extends AbstractTrainer{
                 StringBuilder header = new StringBuilder();
 
                 String line;
-//                String lastTag = null;
                 while ((line = bis.readLine()) != null) {
                     header.append(line);
                     int ii = line.indexOf(' ');
@@ -169,7 +172,7 @@ public class HeaderTrainer extends AbstractTrainer{
                         // has been gnerated by a recent version of grobid
                         token = UnicodeUtil.normaliseTextAndRemoveSpaces(token);
                     }
-//                    boolean found = false;
+
                     // we get the label in the labelled data file for the same token
                     for (int pp = p; pp < labeled.size(); pp++) {
                         String localLine = labeled.get(pp);
@@ -183,20 +186,16 @@ public class HeaderTrainer extends AbstractTrainer{
                             if (localToken.equals(token)) {
                                 String tag = st.nextToken();
                                 header.append(" ").append(tag);
-//                                lastTag = tag;
-//                                found = true;
                                 p = pp + 1;
                                 pp = p + 10;
-                            }
+                            } /*else {
+                                System.out.println("feature:"+token + " / tei:" + localToken);
+                            }*/
                         }
                         if (pp - p > 5) {
                             break;
                         }
                     }
-                    /*if (!found) {
-                             if (lastTag != null)
-                                 header.append(lastTag);
-                         }*/
                     header.append("\n");
                 }
                 bis.close();
@@ -208,7 +207,6 @@ public class HeaderTrainer extends AbstractTrainer{
                 String lastLabel = null;
                 String lastLastLabel = null;
                 String previousLine = null;
-//                String previousPreviousLine = null;
 
                 while (sto.hasMoreTokens()) {
                     String linee = sto.nextToken();
@@ -256,8 +254,7 @@ public class HeaderTrainer extends AbstractTrainer{
                     lastLastLabel = lastLabel;
                     lastLabel = label;
                 }
-                //if (lastLabel == null)
-                //	previousLine += " <note>";
+
                 if (lastLabel != null) {
                     header2.append(previousLine);
                     header2.append("\n");

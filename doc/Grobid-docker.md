@@ -9,16 +9,10 @@ We assume in the following that docker is installed and working on your system. 
 
 The process for fetching and running the image is as follow:
 
-- Pull the image from docker HUB
+- Pull the image from docker HUB (Check the [latest version number](https://hub.docker.com/r/lfoppiano/grobid/tags)):
 
 ```bash
 > docker pull lfoppiano/grobid:${latest_grobid_version}
-```
-
-For instance, latest stable version:
-
-```bash
-> docker pull lfoppiano/grobid:0.5.6
 ```
 
 - Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):

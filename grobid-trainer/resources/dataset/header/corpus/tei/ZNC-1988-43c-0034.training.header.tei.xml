@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0034"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Novel Sesquiterpene Ethers from Liquid Cultures<lb/> of the Wood-Rotting Fungus Lentinus lepideus<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Wolf-Rainer Abraham<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>GBF -Gesellschaft für Biotechnologische Forschung mbH. </affiliation>
+	</byline>
+
+	<address>Mascheroder Weg 1,<lb/> D-3300 Braunschweig, Bundesrepublik Deutschland<lb/> </address>
+
+	<byline>
+	<docAuthor>Hans-Peter Hanssen<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universität Hamburg, Lehrstuhl für Pharmakognosie,</affiliation>
+	</byline>
+
+	<address>Bundesstraße 43,<lb/> D-2000 Hamburg 13, Bundesrepublik Deutschland<lb/> </address>
+
+	<byline>
+	<docAuthor>Claudius Möhringer<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universität Hamburg, Institut für Organische Chemie,</affiliation>
+	</byline> 
+
+	<address>Martin-Luther-King-Platz 6,<lb/> D-2000 Hamburg 13, Bundesrepublik Deutschland<lb/> </address>
+
+	<reference>Z. Naturforsch. 43c, 24-28 (1988); </reference>
+
+	<note type="submission">received August 18/October 30, 1987<lb/> </note>
+
+	Dedicated to Professor Ewald Sprecher on the occasion of his 65th birthday<lb/> 
+
+	<keywords>Lentinus lepideus, Lentideusether, Terrestrol, Fungal Sesquiterpenes,<lb/> Fungal Fragrance Compounds<lb/> </keywords>
+
+	<div type="abstract">The brown-rot fungus Lentinus lepideus (Fr.: Fr.) Fr. FPRL 7B (Basidiomycotina) was culti-<lb/>vated on a defined synthetic liquid medium containing glucose (2%), isoleucine (0.15%), and<lb/> mineral salts for 105 days. The steam distillate was separated by column chromatography. Three<lb/> novel sesquiterpene ethers with muurolane skeleton (lentideusether, isolentideusether, and<lb/> 10-hydroxylentideusether) were isolated and their structures elucidated by spectroscopic<lb/> methods, in particular by &apos;H NMR spectra and by two-dimensional &apos;H/&apos;H-and l3 C/&apos;H-chemical<lb/> shift correlation. These compounds are described for the first time as natural products. As a<lb/> further metabolite, the acyclic sesquiterpene alcohol terrestrol was identified.</div>
+
+		</front>
+	</text>
+</tei>

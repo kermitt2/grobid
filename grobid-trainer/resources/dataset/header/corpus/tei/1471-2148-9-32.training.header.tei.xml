@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1471-2148-9-32"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<publisher>BioMed Central<lb/></publisher>
+
+	<page>Page 1 of 13<lb/></page>
+
+	(page number not for citation purposes)<lb/>
+	
+	<title level="j">BMC Evolutionary Biology<lb/></title>
+
+	<note type="doctype">Open Access<lb/></note>
+
+	<note type="doctype">Research article<lb/></note>
+
+	<docTitle>
+	<titlePart>Genetic analysis of hybridization and introgression between wild<lb/> mongoose and brown lemurs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jennifer Pastorini* 1,2 , Alphonse Zaramody 3 , Deborah J Curtis 4 ,<lb/> Caroline M Nievergelt 5 and Nicholas I Mundy 6<lb/></docAuthor>
+	</byline>
+
+	Address:
+	<byline>
+	<affiliation>1 Anthropologisches Institut, Universität Zürich,</affiliation>
+	</byline>
+
+	<address>Winterthurerstrasse 190, 8057 Zürich, Switzerland,</address>
+
+	<byline>
+	<affiliation>2 Centre for Conservation and<lb/> Research,</affiliation>
+	</byline>
+
+	<address>35 Gunasekara Gardens, Nawala Road, Rajagiriya, Sri Lanka,</address>
+
+	<byline>
+	<affiliation>3 Département des Sciences de la Terre, Université de Mahajanga, Faculté<lb/> des Sciences,</affiliation>
+	</byline>
+
+	<address>Dépt. de Biologie Animale, B.P. 652, Mahajanga 401, Madagascar,</address>
+
+	<byline>
+	<affiliation>4 Department of Anthropology &amp; Geography, School of Social<lb/> Sciences &amp; Law, Oxford Brookes University,</affiliation>
+	</byline>
+
+	<address>Gipsy Lane, Headington, Oxford, OX3 0BP, UK,</address>
+
+	<byline>
+	<affiliation>5 Department of Psychiatry, University of California<lb/> at San Diego,</affiliation>
+	</byline>
+
+	<address>9500 Gilman Drive, La Jolla, CA 92093-0603, USA</address>
+
+	and
+
+	<byline>
+	<affiliation>6 Department of Zoology, University of Cambridge, Downing Street,<lb/></affiliation>
+	</byline>
+
+	<address>Cambridge, CB2 3EJ, UK<lb/></address>
+
+	Email: Jennifer Pastorini* -
+	<email>jenny@aim.uzh.ch</email>; 
+
+	Alphonse Zaramody -
+	<email>zaramody@univ-mahajanga.mg</email>;<lb/> 
+
+	Deborah J Curtis -
+	<email>curtis@scimedtrans.co.uk</email>; 
+
+	Caroline M Nievergelt -
+	<email>cnieverg@ucsd.edu</email>; 
+
+	Nicholas I Mundy -
+	<email>nim21@cam.ac.uk<lb/></email>
+
+	* Corresponding author 
+
+	Abstract<lb/>
+	<div type="abstract">Background: Hybrid zones generally represent areas of secondary contact after speciation. The<lb/> nature of the interaction between genes of individuals in a hybrid zone is of interest in the study of<lb/> evolutionary processes. In this study, data from nuclear microsatellites and mitochondrial DNA<lb/> sequences were used to genetically characterize hybridization between wild mongoose lemurs<lb/> (Eulemur mongoz) and brown lemurs (E. fulvus) at Anjamena in west Madagascar.<lb/> Results: Two segments of mtDNA have been sequenced and 12 microsatellite loci screened in<lb/> 162 brown lemurs and mongoose lemurs. Among the mongoose lemur population at Anjamena,<lb/> we identified two F1 hybrids (one also having the mtDNA haplotype of E. fulvus) and six other<lb/> individuals with putative introgressed alleles in their genotype. Principal component analysis groups<lb/> both hybrids as intermediate between E. mongoz and E. fulvus and admixture analyses revealed an<lb/> admixed genotype for both animals. Paternity testing proved one F1 hybrid to be fertile. Of the<lb/> eight brown lemurs genotyped, all have either putative introgressed microsatellite alleles and/or<lb/> the mtDNA haplotype of E. mongoz.<lb/> Conclusion: Introgression is bidirectional for the two species, with an indication that it is more<lb/> frequent in brown lemurs than in mongoose lemurs. We conclude that this hybridization occurs<lb/> because mongoose lemurs have expanded their range relatively recently. Introgressive<lb/> hybridization may play an important role in the unique lemur radiation, as has already been shown<lb/> in other rapidly evolving animals.<lb/></div>
+
+	Published:
+	<date>5 February 2009<lb/></date>
+
+	<reference>BMC Evolutionary Biology 2009, 9:32</reference>
+
+	<idno>doi:10.1186/1471-2148-9-32<lb/></idno>
+
+	<note type="submission">Received: 5 April 2008<lb/> Accepted: 5 February 2009<lb/></note>
+
+	This article is available from:
+	<ptr type="web">http://www.biomedcentral.com/1471-2148/9/32<lb/></ptr>
+
+	<note type="copyright">© 2009 Pastorini et al; licensee BioMed Central Ltd.<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0),<lb/> which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<reference>BMC Evolutionary Biology 2009, 9:32<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1471-2148/9/32</ptr>
+
+		</front>
+	</text>
+</tei>

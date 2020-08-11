@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L092227003-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0404196v1 [cond-mat.supr-con]</idno>
+
+	<date>8 Apr 2004<lb/></date>
+
+	<docTitle>
+	<titlePart>&quot;Spin-Flop&quot; Transition and Anisotropic Magnetoresistance in Pr 1.3−x La 0.7 Ce x CuO 4 :<lb/> Unexpectedly Strong Spin-Charge Coupling in Electron-Doped Cuprates<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. N. Lavrov, 1 H. J. Kang, 2, 3 Y. Kurita, 1, * T. Suzuki, 1, * Seiki Komiya, 1<lb/> J. W. Lynn, 4 S.-H. Lee, 4 Pengcheng Dai, 2, 3, † and Yoichi Ando 1, ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Central Research Institute of Electric Power Industry,</affiliation>
+	</byline>
+
+	<address>Komae, Tokyo 201-8511, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Physics and Astronomy, The University of Tennessee,</affiliation>
+	</byline>
+
+	<address>Knoxville, Tennessee 37996-1200, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Condensed Matter Sciences Division, Oak Ridge National Laboratory,</affiliation>
+	</byline>
+
+	<address>Oak Ridge, Tennessee 37831-6393, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 NIST Center for Neutron Research, National Institute of Standards and Technology,</affiliation>
+	</byline>
+
+	<address>Gaithersburg, Maryland 20899, USA<lb/></address>
+
+	(Dated:
+	<date>November 5, 2018</date>
+	)<lb/>
+	
+	<div type="abstract">We use transport and neutron-scattering measurements to show that a magnetic-field-induced<lb/> transition from noncollinear to collinear spin arrangement in adjacent CuO2 planes of lightly<lb/> electron-doped Pr1.3−xLa0.7CexCuO4 (x = 0.01) crystals affects significantly both the in-plane<lb/> and out-of-plane resistivity. In the high-field collinear state, the magnetoresistance (MR) does not<lb/> saturate, but exhibits an intriguing four-fold-symmetric angular dependence, oscillating from being<lb/> positive at B [100] to being negative at B [110]. The observed MR of more than 30% at low tem-<lb/>peratures induced by a modest modification of the spin structure indicates an unexpectedly strong<lb/> spin-charge coupling in electron-doped cuprates.<lb/></div>
+
+	<keyword>PACS numbers: 74.25.Fy, 75.25.+z, 74.20.Mn, 74.72.Jt<lb/></keyword>
+
+	<byline>
+	<affiliation>* Also at Department of Physics, Tokyo University of Sci-<lb/>ence,</affiliation>
+	</byline>
+
+	<address>Shinjuku-ku, Tokyo 162-8601, Japan.<lb/></address>
+
+	† Electronic address:
+	<email>daip@ornl.gov<lb/></email>
+
+	‡ Electronic address:
+	<email>ando@criepi.denken.or.jp</email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="7A39320AC7E7C01B78CE1F6C954DC3BCC8091D59"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROBIOLOGICAL BULLETIN 18(2): t57-158<lb/> </reference>
+
+	<note type="doctype">SHORT COMMUNICATION<lb/> </note>
+
+	<docTitle>
+	<titlePart>EFFECTS OF FISH UPON SUBMERGED VEGETATION<lb/> </titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>ERIK H. TEN WlNKEL and JOHN T. MEULEMANS </docAuthor>
+	</byline>
+
+	<page>157<lb/> </page>
+
+	Address of the authors:<lb/>
+	<byline>
+	<docAuthor>Erik H, ten Winkel and John T. Meulemans,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Aquatic Ecology, University of<lb/> Amsterdam,</affiliation>
+	</byline>
+
+	<address>Kruislaan 320, 1098 SM Amsterdam, The Netherlands.</address>
+
+		</front>
+	</text>
+</tei>

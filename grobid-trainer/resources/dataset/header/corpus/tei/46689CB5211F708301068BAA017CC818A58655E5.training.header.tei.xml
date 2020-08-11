@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="46689CB5211F708301068BAA017CC818A58655E5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Ischemia<lb/>
+
+	<docTitle>
+	<titlePart>Treatment of Acute Superior<lb/> Sagittal Sinus Thrombosis by t-PA<lb/> Infusion via Venography-Direct<lb/> Thrombolytic Therapy in the<lb/> Acute Phase<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jun Niwa, M.D., Ph.D., Hiroshi Ohyama, M.D., Shigeki Matumura, M.D.,<lb/> Yoshihiro Maeda, M.D., and Tadakazu Shimizu, M.D.<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Neurosurgery, Hakodate City Hospital,</affiliation>
+	</byline>
+
+	<address>Hakodate, Hokkaido, Japan<lb/> </address>
+
+	<reference>Niwa J, Ohyama H, Matumura S, Maeda Y, Shimizu T. Treatment<lb/> of acute superior sagittal sinus thrombosis by t-PA infusion via<lb/> venography-direct thrombolytic therapy in the acute phase.<lb/> Surg Neurol 1998;49:425-9. </reference>
+
+	<div type="abstract">BACKGROUND<lb/> Dural sinus thrombosis is a relatively rare syndrome,<lb/> often with a very poor prognosis. Systemic anticoagulant<lb/> therapy has produced poor results; therefore rapid re-<lb/>canalization of the affected vessels is essential. The re-<lb/>cent advancements in angiographic technique and cath-<lb/>eter technology enable us to perform direct selective<lb/> venography.<lb/> CASE REPORT<lb/> We observed a case of acute superior sagittal sinus<lb/> thrombosis in a pregnant woman. The patient&apos;s conscious-<lb/>ness level and motor function gradually deteriorated. Direct<lb/> thrombolysis was performed via venography. RESULTS<lb/> The patient was treated successfully by thrombolysis<lb/> with infusion of t-PA via selective venography within 2<lb/> days of rapid clinical deterioration and sustained a dra-<lb/>matic improvement of her neurological deficits. CONCLUSIONS<lb/> Direct thrombolysis via selective venography is consid-<lb/>ered a safe and useful treatment for dural sinus throm-<lb/>bosis in the acute phase.</div>
+
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	KEY WORDS<lb/>
+	<keyword>Thrombolysis, superior sagittal sinus, tissue-plasminogen<lb/> activator, venography, acute phase.<lb/></keyword>
+
+	Address reprint requests to:
+	<byline>
+	<docAuthor>Dr. Jun Niwa, M.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Neuro-<lb/>surgery, Hakodate City Hospital,</affiliation>
+	</byline>
+
+	<address>Yayoicho 2-33, Hakodate, Hokkaido, Ja-<lb/>pan 040.<lb/></address>
+
+	<note type="submission">Received March 5, 1997; accepted June 30, 1997.<lb/></note>
+
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	0090-3019/98/$19.00<lb/> 655 Avenue of the Americas, New York, NY 10010<lb/>
+	<idno>PII S0090-3019(97)00453-9</idno>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Deborah</forename>
+								 <surname>Watkins Bruner</surname>,
+								 <roleName>RN</roleName>,
+								 <roleName>PhD, FAAN</roleName>,
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>Laura</forename>
+								 <middlename>J</middlename>
+								 <surname>Hanisch</surname>,
+								 <roleName>PsyD</roleName>,
+								 <marker>2</marker>
+							</persName>
+							<persName>
+								 <forename>Bryce</forename>
+								 <middlename>B</middlename>
+								 <surname>Reeve</surname>,
+								 <roleName>PhD</roleName>,
+								 <marker>3</marker>
+							</persName>
+							<persName>
+								 <forename>Andy</forename>
+								 <middlename>M</middlename>
+								 <surname>Trotti</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>4</marker>
+							</persName>
+							<persName>
+								 <forename>Deborah</forename>
+								 <surname>Schrag</surname>,
+								 <roleName>MD, MPH</roleName>,
+								 <marker>5</marker>
+							</persName>
+							<persName>
+								 <forename>Laura</forename>
+								 <surname>Sit</surname>,
+								 <marker>6</marker>
+							</persName>
+							<persName>
+								 <forename>Tito</forename>
+								 <middlename>R</middlename>
+								 <surname>Mendoza</surname>,
+								 <roleName>PhD, MS, MEd</roleName>,
+								 <marker>7</marker>
+							</persName>
+							<persName>
+								 <forename>Lori</forename>
+								 <surname>Minasian</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>8</marker>
+							</persName>
+							<persName>
+								 <forename>Ann</forename>
+								 <surname>O&apos;Mara</surname>,
+								 <roleName>PhD, RN, FAAN</roleName>,
+								 <marker>9</marker>
+							</persName>
+							<persName>
+								 <forename>Andrea</forename>
+								 <middlename>M</middlename>
+								 <surname>Denicoff</surname>,
+								 <roleName>MS, RN, ANP</roleName>,
+								 <marker>10</marker>
+							</persName>
+							<persName>
+								 <forename>Julia</forename>
+								 <middlename>H</middlename>
+								 <surname>Rowland</surname>,
+								 <roleName>PhD</roleName>,
+								 <marker>11</marker>
+							</persName>
+							<persName>
+								 <forename>Michael</forename>
+								 <surname>Montello</surname>,
+								 <roleName>PharmD, MBA</roleName>,
+								 <marker>12</marker>
+							</persName>
+							<persName>
+								 <forename>Cindy</forename>
+								 <surname>Geoghegan</surname>,
+								 <marker>13</marker>
+							</persName>
+							<persName>
+								 <forename>Amy</forename>
+								 <middlename>P</middlename>
+								 <surname>Abernethy</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>14</marker>
+							</persName>
+							<persName>
+								 <forename>Steven</forename>
+								 <middlename>B</middlename>
+								 <surname>Clauser</surname>,
+								 <roleName>PhD</roleName>,
+								 <marker>15</marker>
+							</persName>
+							<persName>
+								 <forename>Kathleen</forename>
+								 <surname>Castro</surname>,
+								 <roleName>RN, MS, AOCN</roleName>,
+								 <marker>16</marker>
+							</persName>
+							<persName>
+								 <forename>Sandra</forename>
+								 <middlename>A</middlename>
+								 <surname>Mitchell</surname>,
+								 <roleName>CRNP</roleName>,
+								 <roleName>PhD</roleName>,
+								 <marker>17</marker>
+							</persName>
+							<persName>
+								 <forename>Laurie</forename>
+								 <surname>Burke</surname>,
+								 <roleName>RPh, MPH</roleName>,
+								 <marker>18</marker>
+							</persName>
+							<persName>
+								 <forename>Ann</forename>
+								 <middlename>Marie</middlename>
+								 <surname>Trentacosti</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>19</marker>
+							</persName>
+							<persName>
+								 <forename>Ethan</forename>
+								 <middlename>M</middlename>
+								 <surname>Basch</surname>,
+								 <roleName>MD, MSc</roleName>
+								 <marker>20</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

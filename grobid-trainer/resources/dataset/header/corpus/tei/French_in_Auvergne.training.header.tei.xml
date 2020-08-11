@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="French_in_Auvergne"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>French in Auvergne (Centre):<lb/> a speaker from Clermont-Ferrand<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Damien Chabanal, Jacques Durand and Corinne Ratier<lb/></docAuthor>
+	</byline>
+
+	A paraître dans l&apos;ouvrage « varieties of spoken french », <publisher>Oxford University Press</publisher>
+		</front>
+	</text>
+</tei>
