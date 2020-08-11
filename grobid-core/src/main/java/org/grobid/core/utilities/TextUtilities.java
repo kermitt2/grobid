@@ -48,6 +48,10 @@ public class TextUtilities {
     public static final String SLASH = "/";
 
     // note: be careful of catastrophic backtracking here as a consequence of PDF noise! 
+  
+    private static final String ORCIDRegex =
+        "^\\s*(?:(?:https?://)?orcid.org/)?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{3}[\\dX])\\s*$";
+    static public final Pattern ORCIDPattern = Pattern.compile(ORCIDRegex);
 
     // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
