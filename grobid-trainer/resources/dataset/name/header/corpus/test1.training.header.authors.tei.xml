@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Maeve</forename>
+								 <surname>Mullooly</surname>
+								 <marker>1,2,12 *</marker> ,
+							</persName>
+							<persName>
+								 <forename>Babak</forename>
+								 <surname>Ehteshami Bejnordi</surname>
+								 <marker>3,4,12</marker> ,
+							</persName>
+							<persName>
+								 <forename>Ruth</forename>
+								 <middlename>M</middlename>.
+								 <surname>Pfeiffer</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Shaoqi</forename>
+								 <surname>Fan</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Maya</forename>
+								 <surname>Palakal</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Manila</forename>
+								 <surname>Hada</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>
+								 <forename>Pamela</forename>
+								 <middlename>M</middlename>.
+								 <surname>Vacek</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Donald</forename>
+								 <middlename>L</middlename>.
+								 <surname>Weaver</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>John</forename>
+								 <middlename>A</middlename>.
+								 <surname>Shepherd</surname>
+								 <marker>6,7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Bo</forename>
+								 <surname>Fan</surname>
+								 <marker>6</marker> ,
+							</persName>
+							<persName>
+								 <forename>Amir</forename>
+								 <surname>Pasha Mahmoudzadeh</surname>
+								 <marker>6</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Jeff</forename>
+								 <surname>Wang</surname>
+								 <marker>8</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Serghei</forename>
+								 <surname>Malkov</surname>
+								 <marker>6</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jason</forename>
+								 <middlename>M</middlename>.
+								 <surname>Johnson</surname>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Sally</forename>
+								 <middlename>D</middlename>.
+								 <surname>Herschorn</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Brian</forename>
+								 <middlename>L</middlename>.
+								 <surname>Sprague</surname>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <forename>Stephen</forename>
+								 <surname>Hewitt</surname>
+								 <marker>10</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Louise</forename>
+								 <middlename>A</middlename>.
+								 <surname>Brinton</surname>
+								 <marker>2</marker> ,
+							</persName>
+							<persName>	 
+								 <forename>Nico</forename>
+								 <surname>Karssemeijer</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jeroen</forename>
+								 <surname>van der Laak</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrew</forename>
+								 <surname>Beck</surname>
+								 <marker>4,13</marker> ,
+							</persName>
+							<persName>
+								 <forename>Mark</forename>
+								 <middlename>E</middlename>.
+								 <surname>Sherman</surname>
+								 <marker>11,13</marker> and
+							</persName>
+							<persName>
+								 <forename>Gretchen</forename>
+								 <middlename>L</middlename>.
+								 <surname>Gierach</surname>
+								 <marker>2,13</marker>
+							</persName>
+							<persName>
+								 <forename>Maeve</forename>
+								 <surname>Mullooly</surname>,
+							</persName>
+							<persName>
+								 <forename>Babak</forename>
+								 <surname>Ehteshami Bejnordi</surname>.
+							</persName>
+							<persName>	 
+								 <forename>Andrew</forename>
+								 <surname>Beck</surname>,
+							</persName>
+							<persName>	 
+								 <forename>Mark</forename>
+								 <middlename>E</middlename>.
+								 <surname>Sherman</surname>,
+							</persName>
+							<persName>
+								 <forename>Gretchen</forename>
+								 <middlename>L</middlename>.
+								 <surname>Gierach</surname>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

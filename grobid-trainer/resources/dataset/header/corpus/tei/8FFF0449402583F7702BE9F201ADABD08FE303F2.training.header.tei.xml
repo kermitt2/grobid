@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="8FFF0449402583F7702BE9F201ADABD08FE303F2"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 November 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (4), pp. 363-368 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Photo-ionization of the helium atom close to the<lb/> double-ionization threshold: Towards the Ericson regime<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>B. Grémaud and D. Delande<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire Kastler-Brossel, Université Pierre et Marie Curie<lb/> </affiliation>
+	</byline>
+
+	<address>4 Place Jussieu, 75005 Paris, France<lb/></address>
+
+	(
+	<note type="submission">received 21 July 1997; accepted in final form 1 October 1997</note>
+	)<lb/>
+	
+	<keyword>PACS. 05.45+b -Theory and models of chaotic systems.<lb/> PACS. 31.15Ar -Ab initio calculations.<lb/> PACS. 32.80Fb -Photoionization of atoms and ions.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">We calculate the photo-ionization cross-section from the ground state of the<lb/> helium atom, using the complex rotation method and diagonalization of sparse matrices. This<lb/> produces directly the positions and widths of the doubly excited 1 P o resonances together with<lb/> the photo-ionization cross-section. Our calculations up to the N = 9 threshold are in perfect<lb/> agreement with recent experimental data and show the transition from a regular structure at<lb/> low energy to a chaotic one at high energy, where various resonances strongly overlap.</div>
+
+		</front>
+	</text>
+</tei>

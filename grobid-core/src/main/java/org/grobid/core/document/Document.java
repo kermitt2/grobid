@@ -86,17 +86,7 @@ public class Document implements Serializable {
     protected transient List<Cluster> clusters = null;
     protected transient List<Block> blocks = null;
 
-    // not used anymore
-    protected List<Integer> blockHeaders = null;
-    protected List<Integer> blockFooters = null;
-    protected List<Integer> blockSectionTitles = null;
-    protected List<Integer> acknowledgementBlocks = null;
     protected List<Integer> blockDocumentHeaders = null;
-    protected transient SortedSet<DocumentPiece> blockReferences = null;
-    protected List<Integer> blockTables = null;
-    protected List<Integer> blockFigures = null;
-    protected List<Integer> blockHeadTables = null;
-    protected List<Integer> blockHeadFigures = null;
 
     protected transient FeatureFactory featureFactory = null;
 
@@ -162,9 +152,12 @@ public class Document implements Serializable {
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
+    protected double byteSize = 0; 
+
     public Document(DocumentSource documentSource) {
         this.documentSource = documentSource;
         setPathXML(documentSource.getXmlFile());
+        this.byteSize = documentSource.getByteSize();
     }
 
     protected Document() {
@@ -174,6 +167,14 @@ public class Document implements Serializable {
     public static Document createFromText(String text) {
         Document doc = new Document();
         doc.fromText(text);
+        if (text != null) {
+            try {
+                final byte[] utf8Bytes = text.getBytes("UTF-8");
+                doc.byteSize = utf8Bytes.length;
+            } catch(Exception e) {
+                LOGGER.warn("Could not set the original text document size in bytes for UTF-8 encoding");
+            }
+        }
         return doc;
     }
 
@@ -252,57 +253,6 @@ public class Document implements Serializable {
 
     public Analyzer getAnalyzer() {
         return this.analyzer;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsHeader() {
-        List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
-        for (Integer blocknum : blockDocumentHeaders) {
-            Block blo = blocks.get(blocknum);
-            /*int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsHeader.add(tokenizations.get(i));
-            }*/
-            List<LayoutToken> tokens = blo.getTokens();
-            if ((tokens == null) || (tokens.size() == 0)) {
-                continue;
-            } else {
-                for (LayoutToken token : tokens) {
-                    tokenizationsHeader.add(token);
-                }
-            }
-        }
-
-        return tokenizationsHeader;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsFulltext() {
-        List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
-        for (Block blo : blocks) {
-            int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsFulltext.add(tokenizations.get(i));
-            }
-        }
-
-        return tokenizationsFulltext;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsReferences() {
-        List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
-
-        for (DocumentPiece dp : blockReferences) {
-            tokenizationsReferences.addAll(tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos()));
-        }
-
-        return tokenizationsReferences;
     }
 
     public List<LayoutToken> fromText(final String text) {
@@ -586,7 +536,6 @@ public class Document implements Serializable {
             toGlue.add(new Pair<>(start, end + 1));
         }
 
-
         if (toGlue.isEmpty()) {
             return null;
         }
@@ -603,7 +552,6 @@ public class Document implements Serializable {
 
         }
 
-
         validGraphicObjectPredicate = new Predicate<GraphicObject>() {
             @Override
             public boolean apply(GraphicObject graphicObject) {
@@ -614,7 +562,6 @@ public class Document implements Serializable {
 
 
     }
-
 
     protected static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
         List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
@@ -639,274 +586,55 @@ public class Document implements Serializable {
         return res;
     }
 
-
     /**
-     * Add features in the header section
-     * <p/>
-     * -> should be moved to the header parser class!
+     *  Identify the header parts with heuristics
      */
-    public String getHeaderFeatured(boolean getHeader,
-                                    boolean withRotation) {
-        if (getHeader) {
-            String theHeader = getHeader();
-            if ((theHeader == null) || (theHeader.trim().length() <= 1)) {
-                theHeader = getHeaderLastHope();
-            }
-//System.out.println(theHeader);
+    public SortedSet<DocumentPiece> getDocumentPartsWithHeuristics() {
+        String theHeader = getHeader();
+        if ((theHeader == null) || (theHeader.trim().length() <= 1)) {
+            theHeader = getHeaderLastHope();
         }
-        featureFactory = FeatureFactory.getInstance();
-        StringBuilder header = new StringBuilder();
-        String currentFont = null;
-        int currentFontSize = -1;
+        
+        SortedSet<DocumentPiece> theDocumentParts = new TreeSet<DocumentPiece>();
 
-        // vector for features
-        FeaturesVectorHeader features;
-        boolean endblock;
+        DocumentPointer start = null;
+        DocumentPointer end = null;
+        Integer previousBlocknum = null;
         for (Integer blocknum : blockDocumentHeaders) {
             Block block = blocks.get(blocknum);
-            boolean newline;
-            boolean previousNewline = false;
-            endblock = false;
-            List<LayoutToken> tokens = block.getTokens();
-            if (tokens == null)
-                continue;
-            int n = 0;
-            while (n < tokens.size()) {
-                LayoutToken token = tokens.get(n);
-                features = new FeaturesVectorHeader();
-                features.token = token;
-                String text = token.getText();
-                if (text == null) {
-                    n++;
-                    continue;
-                }
-                //text = text.replace(" ", "").replace("\t", "").replace("\u00A0", "");
-                text = text.replace(" ", "");
-                if (text.length() == 0) {
-                    n++;
-                    continue;
-                }
 
-                //if (text.equals("\n") || text.equals("\r")) {
-                if (text.equals("\n")) {
-                    newline = true;
-                    previousNewline = true;
-                    n++;
-                    continue;
-                } else
-                    newline = false;
-
-                if (previousNewline) {
-                    newline = true;
-                    previousNewline = false;
-                }
-
-                // final sanitisation and filtering
-                text = text.replaceAll("[ \n]", "");
-                if (TextUtilities.filterLine(text)) {
-                    n++;
-                    continue;
-                }
-
-                features.string = text;
-
-                if (newline)
-                    features.lineStatus = "LINESTART";
-                Matcher m0 = featureFactory.isPunct.matcher(text);
-                if (m0.find()) {
-                    features.punctType = "PUNCT";
-                }
-                if (text.equals("(") || text.equals("[")) {
-                    features.punctType = "OPENBRACKET";
-
-                } else if (text.equals(")") || text.equals("]")) {
-                    features.punctType = "ENDBRACKET";
-
-                } else if (text.equals(".")) {
-                    features.punctType = "DOT";
-
-                } else if (text.equals(",")) {
-                    features.punctType = "COMMA";
-
-                } else if (text.equals("-")) {
-                    features.punctType = "HYPHEN";
-
-                } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
-                    features.punctType = "QUOTE";
-                }
-
-                if (n == 0) {
-                    features.lineStatus = "LINESTART";
-                    features.blockStatus = "BLOCKSTART";
-                } else if (n == tokens.size() - 1) {
-                    features.lineStatus = "LINEEND";
-                    previousNewline = true;
-                    features.blockStatus = "BLOCKEND";
-                    endblock = true;
-                } else {
-                    // look ahead...
-                    boolean endline = false;
-
-                    int ii = 1;
-                    boolean endloop = false;
-                    while ((n + ii < tokens.size()) && (!endloop)) {
-                        LayoutToken tok = tokens.get(n + ii);
-                        if (tok != null) {
-                            String toto = tok.getText();
-                            if (toto != null) {
-                                if (toto.equals("\n")) {
-                                    endline = true;
-                                    endloop = true;
-                                } else {
-                                    if ((toto.trim().length() != 0)
-                                            && (!text.equals("\u00A0"))
-                                            && (!(toto.contains("@IMAGE")))
-                                            && (!(toto.contains("@PAGE")))
-                                            && (!text.contains(".pbm"))
-                                            && (!text.contains(".ppm"))
-                                            && (!text.contains(".svg"))
-                                            && (!text.contains(".png"))
-                                            && (!text.contains(".jpg"))) {
-                                        endloop = true;
-                                    }
-                                }
-                            }
-                        }
-
-                        if (n + ii == tokens.size() - 1) {
-                            endblock = true;
-                            endline = true;
-                        }
-
-                        ii++;
-                    }
-
-                    if ((!endline) && !(newline)) {
-                        features.lineStatus = "LINEIN";
-                    } else if (!newline) {
-                        features.lineStatus = "LINEEND";
-                        previousNewline = true;
-                    }
-
-                    if ((!endblock) && (features.blockStatus == null))
-                        features.blockStatus = "BLOCKIN";
-                    else if (features.blockStatus == null)
-                        features.blockStatus = "BLOCKEND";
-
-                }
-
-                if (text.length() == 1) {
-                    features.singleChar = true;
-                }
-
-                if (Character.isUpperCase(text.charAt(0))) {
-                    features.capitalisation = "INITCAP";
-                }
-
-                if (featureFactory.test_all_capital(text)) {
-                    features.capitalisation = "ALLCAP";
-                }
-
-                if (featureFactory.test_digit(text)) {
-                    features.digit = "CONTAINSDIGITS";
-                }
-
-                if (featureFactory.test_common(text)) {
-                    features.commonName = true;
-                }
-
-                if (featureFactory.test_names(text)) {
-                    features.properName = true;
-                }
-
-                if (featureFactory.test_month(text)) {
-                    features.month = true;
-                }
-
-                if (text.contains("-")) {
-                    features.containDash = true;
-                }
-
-                Matcher m = featureFactory.isDigit.matcher(text);
-                if (m.find()) {
-                    features.digit = "ALLDIGIT";
-                }
-
-                Matcher m2 = featureFactory.year.matcher(text);
-                if (m2.find()) {
-                    features.year = true;
-                }
-
-                Matcher m3 = featureFactory.email.matcher(text);
-                if (m3.find()) {
-                    features.email = true;
-                }
-
-                Matcher m4 = featureFactory.http.matcher(text);
-                if (m4.find()) {
-                    features.http = true;
-                }
-
-                if (currentFont == null) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else if (!currentFont.equals(token.getFont())) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else
-                    features.fontStatus = "SAMEFONT";
-
-                int newFontSize = (int) token.getFontSize();
-                if (currentFontSize == -1) {
-                    currentFontSize = newFontSize;
-                    features.fontSize = "HIGHERFONT";
-                } else if (currentFontSize == newFontSize) {
-                    features.fontSize = "SAMEFONTSIZE";
-                } else if (currentFontSize < newFontSize) {
-                    features.fontSize = "HIGHERFONT";
-                    currentFontSize = newFontSize;
-                } else if (currentFontSize > newFontSize) {
-                    features.fontSize = "LOWERFONT";
-                    currentFontSize = newFontSize;
-                }
-
-                if (token.getBold())
-                    features.bold = true;
-
-                if (token.getItalic())
-                    features.italic = true;
-
-                if (token.getRotation())
-                    features.rotation = true;
-
-                // CENTERED
-                // LEFTAJUSTED
-
-                if (features.capitalisation == null)
-                    features.capitalisation = "NOCAPS";
-
-                if (features.digit == null)
-                    features.digit = "NODIGIT";
-
-                if (features.punctType == null)
-                    features.punctType = "NOPUNCT";
-
-                header.append(features.printVector(withRotation));
-
-                n++;
+            if (previousBlocknum != null && blocknum != previousBlocknum+1) {
+                // new piece
+                DocumentPiece thePiece = new DocumentPiece(start, end);
+                theDocumentParts.add(thePiece);
+                start = null;
             }
+
+            if (start == null) {
+                start = new DocumentPointer(this, blocknum, block.getStartToken());
+                end = new DocumentPointer(this, blocknum, block.getEndToken());
+            } else {
+                // the block is adjacent to the previous one, so we just extend the end pointer
+                end = new DocumentPointer(this, blocknum, block.getEndToken());
+            } 
+            
+            previousBlocknum = blocknum;
         }
 
-        return header.toString();
-    }
+        // add last piece
+        if (start != null && end != null) {
+            DocumentPiece thePiece = new DocumentPiece(start, end);
+            theDocumentParts.add(thePiece);
+        }
 
-    // default bins for relative position
-    protected static final int nbBins = 12;
+        return theDocumentParts;
+    }
 
     /**
      * heuristics to get the header section...
      * -> it is now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeader() {
         //if (firstPass)
         //BasicStructureBuilder.firstPass(this);
@@ -1025,6 +753,7 @@ public class Document implements Serializable {
      * <p/>
      * -> now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeaderLastHope() {
         String res;
         StringBuilder accumulated = new StringBuilder();
@@ -1064,6 +793,7 @@ public class Document implements Serializable {
      * <p/>
      * -> now covered by the CRF segmentation model
      */
+    @Deprecated
     public String getHeaderByIntroduction() {
         String res;
         StringBuilder accumulated = new StringBuilder();
@@ -1098,115 +828,6 @@ public class Document implements Serializable {
         }
 
         return null;
-    }
-
-    /**
-     * Return the text content of the body of the document. getHeader() and getReferences() must
-     * have been called before.
-     * <p/>
-     * -> this should be removed at some point... it is only used now as default solution to determine
-     * the language of an article with the language identifier
-     */
-    public String getBody() {
-        StringBuilder accumulated = new StringBuilder();
-
-        if (blockFooters == null)
-            blockFooters = new ArrayList<Integer>();
-
-        if (blockHeaders == null)
-            blockHeaders = new ArrayList<Integer>();
-
-        // Wiley specific pre-treatment
-        // it looks very ad-hoc but actually it is
-        int i = 0;
-        boolean wiley = false;
-        for (Block block : blocks) {
-            Integer ii = i;
-
-            if (blockDocumentHeaders.contains(ii)) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = localText.replace("  ", " ");
-                    // we check if we have a Wiley publication - there is always
-                    // the DOI around
-                    // in a single block
-
-                    if (localText.startsWith("DOI: 10.1002")) {
-                        wiley = true;
-                    }
-                }
-            }
-
-            if ((!blockFooters.contains(ii))
-                    && (!blockDocumentHeaders.contains(ii))
-                    & (!blockHeaders.contains(ii)) && wiley) {
-                String localText = block.getText();
-
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = localText.replace("  ", " ");
-
-                    // the keyword block needs to join the header section
-                    if (localText.startsWith("Keywords: ")) {
-                        // the block before the keyword block is part of the
-                        // abstract and needs to be
-                        // move up in the header section
-                        blockDocumentHeaders.add(i - 1);
-                        blockDocumentHeaders.add(ii);
-
-                        break;
-                    }
-                }
-            }
-            i++;
-        }
-
-        i = 0;
-        for (Block block : blocks) {
-            Integer ii = i;
-            // if ( (i >= beginBody) && (i < beginReferences) ) {
-
-            if (blockFooters == null) {
-                blockFooters = new ArrayList<Integer>();
-            }
-            if (blockDocumentHeaders == null) {
-                blockDocumentHeaders = new ArrayList<Integer>();
-            }
-            if (blockHeaders == null) {
-                blockHeaders = new ArrayList<Integer>();
-            }
-            if (blockReferences == null) {
-                blockReferences = new TreeSet<DocumentPiece>();
-            }
-
-            if ((!blockFooters.contains(ii))
-                    && (!blockDocumentHeaders.contains(ii))
-                    && (!blockHeaders.contains(ii))
-                    && (!blockReferences.contains(ii))) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    /*if (localText.startsWith("@BULLET")) {
-                        localText = localText.replace("@BULLET", " • ");
-                    }*/
-                    if (localText.startsWith("@IMAGE")) {
-                        localText = "";
-                    }
-
-                    if (localText.length() > 0) {
-                        if (featureFactory == null) {
-                            featureFactory = FeatureFactory.getInstance();
-                            // featureFactory = new FeatureFactory();
-                        }
-                        localText = TextUtilities.dehyphenize(localText);
-                        accumulated.append(localText).append("\n");
-                    }
-                }
-            }
-            i++;
-        }
-        return accumulated.toString();
     }
 
     /**
@@ -1304,44 +925,8 @@ public class Document implements Serializable {
         return clusters;
     }
 
-    public void setBlockHeaders(List<Integer> blockHeaders) {
-        this.blockHeaders = blockHeaders;
-    }
-
-    public void setBlockFooters(List<Integer> blockFooters) {
-        this.blockFooters = blockFooters;
-    }
-
-    public void setBlockSectionTitles(List<Integer> blockSectionTitles) {
-        this.blockSectionTitles = blockSectionTitles;
-    }
-
-    public void setAcknowledgementBlocks(List<Integer> acknowledgementBlocks) {
-        this.acknowledgementBlocks = acknowledgementBlocks;
-    }
-
     public void setBlockDocumentHeaders(List<Integer> blockDocumentHeaders) {
         this.blockDocumentHeaders = blockDocumentHeaders;
-    }
-
-    public void setBlockReferences(SortedSet<DocumentPiece> blockReferences) {
-        this.blockReferences = blockReferences;
-    }
-
-    public void setBlockTables(List<Integer> blockTables) {
-        this.blockTables = blockTables;
-    }
-
-    public void setBlockFigures(List<Integer> blockFigures) {
-        this.blockFigures = blockFigures;
-    }
-
-    public void setBlockHeadTables(List<Integer> blockHeadTables) {
-        this.blockHeadTables = blockHeadTables;
-    }
-
-    public void setBlockHeadFigures(List<Integer> blockHeadFigures) {
-        this.blockHeadFigures = blockHeadFigures;
     }
 
     public void setClusters(List<Cluster> clusters) {
@@ -1408,7 +993,7 @@ public class Document implements Serializable {
         this.labeledBlocks = labeledBlocks;
     }
 
-    //helper
+    // helper
     public List<LayoutToken> getDocumentPieceTokenization(DocumentPiece dp) {
         return tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos() + 1);
     }
@@ -1715,7 +1300,6 @@ public class Document implements Serializable {
             }
 
         }
-
 
         // special case, when we didn't detect figures, but there is a nice figure on this page
         int maxPage = pages.size();
@@ -2194,4 +1778,11 @@ public class Document implements Serializable {
         }
     }*/
 
+    public double getByteSize() {
+        return byteSize;
+    }
+
+    public void setByteSize(double size) {
+        byteSize = size;
+    }
 }

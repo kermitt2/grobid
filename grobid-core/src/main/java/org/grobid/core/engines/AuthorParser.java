@@ -160,6 +160,7 @@ public class AuthorParser {
                     } else {
                         aut.setTitle(clusterContent);
                     }
+                    aut.addLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
                     if (newMarker) {
@@ -177,6 +178,7 @@ public class AuthorParser {
                     } else {
                         aut.setFirstName(clusterContent);
                     }
+                    aut.addLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
                     if (newMarker) {
@@ -187,6 +189,7 @@ public class AuthorParser {
                     } else {
                         aut.setMiddleName(clusterContent);
                     }
+                    aut.addLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
                     if (newMarker) {
@@ -204,6 +207,7 @@ public class AuthorParser {
                     } else {
                         aut.setLastName(clusterContent);
                     }
+                    aut.addLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
                     /*if (newMarker) {
@@ -215,6 +219,7 @@ public class AuthorParser {
                     } else {
                         aut.setSuffix(clusterContent);
                     }
+                    aut.addLayoutTokens(cluster.concatTokens());
                 }
             }
 

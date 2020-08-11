@@ -18,7 +18,7 @@ public class EnvironmentVariablePropertiesTest {
             Collections.emptyMap(),
             new EnvironmentVariableProperties(
                 environmentVariables,
-                "APP__"
+                "APP__.+"
             ).getProperties()
         );
     }
@@ -30,7 +30,7 @@ public class EnvironmentVariablePropertiesTest {
             Collections.emptyMap(),
             new EnvironmentVariableProperties(
                 environmentVariables,
-                "APP__"
+                "APP__.+"
             ).getProperties()
         );
     }
@@ -42,7 +42,7 @@ public class EnvironmentVariablePropertiesTest {
             Collections.singletonMap("app.abc", "value1"),
             new EnvironmentVariableProperties(
                 environmentVariables,
-                "APP__"
+                "APP__.+"
             ).getProperties()
         );
     }
@@ -54,7 +54,7 @@ public class EnvironmentVariablePropertiesTest {
             Collections.singletonMap("app.abc.xyz", "value1"),
             new EnvironmentVariableProperties(
                 environmentVariables,
-                "APP__"
+                "APP__.+"
             ).getProperties()
         );
     }
@@ -66,7 +66,7 @@ public class EnvironmentVariablePropertiesTest {
             Collections.singletonMap("app.abc_xyz", "value1"),
             new EnvironmentVariableProperties(
                 environmentVariables,
-                "APP__"
+                "APP__.+"
             ).getProperties()
         );
     }

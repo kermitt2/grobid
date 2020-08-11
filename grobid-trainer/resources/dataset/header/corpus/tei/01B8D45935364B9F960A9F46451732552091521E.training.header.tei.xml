@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="01B8D45935364B9F960A9F46451732552091521E"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Genetically encoded optical indicators<lb/> for the analysis of neuronal circuits<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Thomas Knöpfel<lb/></docAuthor>
+	</byline>
+
+	Abstract |
+	<div type="abstract">In a departure from previous top-down or bottom-up strategies used to<lb/> understand neuronal circuits, many forward-looking research programs now place the circuit<lb/> itself at their centre. This has led to an emphasis on the dissection and elucidation of<lb/> neuronal circuit elements and mechanisms, and on studies that ask how these circuits<lb/> generate behavioural outputs. This movement towards circuit-centric strategies is<lb/> progressing rapidly as a result of technological advances that combine genetic manipulation<lb/> with light-based methods. The core tools of these new approaches are genetically encoded<lb/> optical indicators and actuators that enable non-destructive interrogation and manipulation<lb/> of neuronal circuits in behaving animals with cellular-level precision. This Review examines<lb/> genetically encoded reporters of neuronal function and assesses their value for<lb/> circuit-oriented neuroscientific investigations.<lb/></div>
+
+	N E U R A L C I R C U I T S<lb/>
+
+	<byline>
+	<affiliation>RIKEN Brain Science Institute,<lb/></affiliation>
+	</byline>
+
+	<address>2-1 Hirosawa, Wako City,<lb/> Saitama 351-0198, Japan.<lb/></address>
+
+	e-mail:<lb/>
+	<email>tknopfel@knopfel-lab.net<lb/></email>
+
+	<idno>doi:10.1038/nrn3293<lb/></idno>
+
+	Published online<lb/>
+	<date>30 August 2012<lb/></date>
+
+	<note type="doctype">R E V I E W S<lb/></note>
+	
+	<reference>NATURE REVIEWS | NEUROSCIENCE<lb/> VOLUME 13 | OCTOBER 2012 | 687<lb/></reference>
+
+	<note type="copyright">© 2012 Macmillan Publishers Limited. All rights reserved</note>
+
+		</front>
+	</text>
+</tei>

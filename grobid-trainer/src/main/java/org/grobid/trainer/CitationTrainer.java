@@ -31,7 +31,7 @@ public class CitationTrainer extends AbstractTrainer {
 
         // adjusting CRF training parameters for this model (only with Wapiti)
         epsilon = 0.00001;
-        window = 20;
+        window = 50;
         nbMaxIterations = 3000;
     }
 

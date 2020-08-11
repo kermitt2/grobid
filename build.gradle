@@ -408,7 +408,7 @@ project(":grobid-trainer") {
         return project.hasProperty(propName) ? project.getProperty(propName) : defaultVal;
     }
 
-    // run like:
+    // run like this:
     // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet
     // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
     // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 

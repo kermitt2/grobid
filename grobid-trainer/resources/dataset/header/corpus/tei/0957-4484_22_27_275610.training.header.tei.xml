@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0957-4484_22_27_275610"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<publisher>IOP PUBLISHING</publisher>
+
+	<title level="j">NANOTECHNOLOGY<lb/></title>
+	<reference>Nanotechnology 22 (2011) 275610 (7pp)<lb/></reference>
+
+	<idno>doi:10.1088/0957-4484/22/27/275610<lb/></idno>
+
+	<docTitle>
+	<titlePart>Defined-size DNA triple crossover<lb/> construct for molecular electronics:<lb/> modification, positioning and conductance properties<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Veikko Linko 1,3,4 , Jenni Leppiniemi 2,3 , Seppo-Tapio Paasonen 1,3 ,<lb/> Vesa P Hytönen 2 and J Jussi Toppari 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Nanoscience Center, Department of Physics, University of Jyväskylä,</affiliation>
+	</byline>
+
+	<address>PO Box 35,<lb/> FIN-40014, Finland<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of Biomedical Technology, University of Tampere and Tampere University Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>FIN-33014, Finland<lb/></address>
+
+	E-mail:
+	<email>veikko.linko@jyu.fi<lb/></email>
+
+	<note type="submission">Received 28 September 2010, in final form 19 April 2011<lb/></note>
+
+	Published
+	<date>25 May 2011<lb/></date>
+
+	Online at
+	<ptr type="web">stacks.iop.org/Nano/22/275610<lb/></ptr>
+
+	Abstract<lb/>
+	<div type="abstract">We present a novel, defined-size, small and rigid DNA template, a so-called B-A-B complex,<lb/> based on DNA triple crossover motifs (TX tiles), which can be utilized in molecular scale<lb/> patterning for nanoelectronics, plasmonics and sensing applications. The feasibility of the<lb/> designed construct is demonstrated by functionalizing the TX tiles with one biotin-triethylene<lb/> glycol (TEG) and efficiently decorating them with streptavidin, and furthermore by positioning<lb/> and anchoring single thiol-modified B-A-B complexes to certain locations on a chip via<lb/> dielectrophoretic trapping. Finally, we characterize the conductance properties of the<lb/> non-functionalized construct, first by measuring DC conductivity and second by utilizing AC<lb/> impedance spectroscopy in order to describe the conductivity mechanism of a single B-A-B<lb/> complex using a detailed equivalent circuit model. This analysis also reveals further<lb/> information about the conductivity of DNA structures in general.<lb/> </div>
+
+	S Online supplementary data available from stacks.
+
+	<ptr type="web">iop.org/Nano/22/275610/mmedia<lb/></ptr>
+
+	(Some figures in this article are in colour only in the electronic version)<lb/> 0957-4484/11/275610+07$33.00<lb/>
+	<note type="copyright">© 2011 IOP Publishing Ltd</note>
+
+	Printed in the UK &amp; the USA
+		</front>
+	</text>
+</tei>

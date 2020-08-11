@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="E377A3FCF474449DDDFFD211771224F304EE94A7"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">Editorial<lb/></note>
+	
+	<docTitle>
+	<titlePart>Venous Thromboembolism<lb/> Prophylaxis in the Craniotomy<lb/> Patient: an Editorial<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ursula Guidry, M.D.,* Peter McLaren Black, M.D., Ph.D., † and<lb/> Samuel Z. Goldhaber, M.D.*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Cardiovascular Division, Department of Medicine, and the †Division of Neurosurgery,<lb/> Department of Surgery, Brigham and Women&apos;s Hospital, Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts<lb/></address>
+
+	<reference>Guidry U, McLaren Black P, Goldhaber SZ. Venous thromboem-<lb/>bolism prophylaxis in the craniotomy patient: an editorial. Surg<lb/> Neurol 1998;50:182-3.<lb/></reference>
+
+	KEY WORDS<lb/>
+	<keyword>Craniotomy, prevention, deep venous thrombosis, pulmo-<lb/>nary embolism, clinical trial.<lb/></keyword>
+
+	Address reprint requests to:
+	<byline>
+	<docAuthor>Dr. Samuel Z. Goldhaber, M.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cardiovas-<lb/>cular Division, Brigham and Women&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>75 Francis Street; Boston,<lb/> MA 02115.<lb/></address>
+
+	0090-3019/98/$19.00<lb/>
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	<idno>PII S0090-3019(97)00310-8<lb/></idno>
+
+	655 Avenue of the Americas, New York, NY 10010
+		</front>
+	</text>
+</tei>

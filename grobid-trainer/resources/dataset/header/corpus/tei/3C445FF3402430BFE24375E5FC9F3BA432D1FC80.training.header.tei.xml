@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="3C445FF3402430BFE24375E5FC9F3BA432D1FC80"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">Scientific Update<lb/></note>
+
+	<docTitle>
+	<titlePart>Antiepileptic Drug Review: Part 1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Susan R. Winkler, Pharm.D., BCPS,* and Mark S. Luer, Pharm.D. †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*University of Illinois at Chicago, College of Pharmacy, Chicago, Illinois; and †University<lb/> of Arkansas for Medical Sciences, College of Pharmacy,</affiliation>
+	</byline>
+
+	<address>Little Rock, Arkansas<lb/></address>
+
+	<reference>Winkler SR, Luer MS. Antiepileptic drug review: part 1. Surg<lb/> Neurol 1998;49:449 -52.<lb/></reference>
+
+	Address reprint requests to:
+	<byline>
+	<docAuthor>Susan R. Winkler, Pharm.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of<lb/> Illinois at Chicago, College of Pharmacy, Department of Pharmacy Prac-<lb/>tice,</affiliation>
+	</byline>
+
+	<address>833 South Wood Street (M/C 886), Chicago, IL 60612-7230.<lb/></address>
+
+	<note type="submission">Received July 23, 1996; accepted August 29, 1996.<lb/></note>
+
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	0090-3019/98/$19.00<lb/> 655 Avenue of the Americas, New York, NY 10010<lb/>
+	
+	<idno>PII S0090-3019(97)00223-1</idno>
+
+		</front>
+	</text>
+</tei>

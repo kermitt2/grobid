@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="FC8DFEDBC22014834B3D6F09DAAAAEB9C4B90A8D"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Prior knowledge of mechanics amongst<lb/> first year Engineering students<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dick Clements<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Submitted March 2007; accepted May 2007</note>
+
+	Abstract<lb/>
+	<div type="abstract">In the last 25 years, A-level Mathematics syllabi have changed very considerably,<lb/> introducing a broader range of application areas but reducing the previous emphasis<lb/> on classical mechanics. This article describes a baseline survey undertaken to estab-<lb/>lish in detail the entry levels in mechanics for the cohort of students entering<lb/> Engineering courses at Bristol University in October 2005. The survey results con-<lb/>¢rm and quantify existing anecdotal evidence indicating that universities must now<lb/> assume a considerably reduced familiarity with concepts in basic mechanics. These<lb/> changes have strong implications for future course design.<lb/></div>
+
+	<reference>TEACHING MATHEMATICS AND ITS APPLICATIONS, Volume 26, No. 3, 2007 119<lb/></reference>
+
+	Advance Access Published on
+	<date>6 August 2007</date>
+
+	<idno>doi:10.1093/teamat/hrm005<lb/></idno>
+
+	<note type="copyright">ß The Author 2007. Published by Oxford University Press on behalf of The Institute of Mathematics and its Applications.<lb/> All rights reserved. For permissions, please email: journals.permissions@oxfordjournals.org<lb/> </note>
+
+	<byline>
+	<docAuthor>Dick Clements</docAuthor>
+	</byline> 
+
+	has an MA in Mathematics and a PhD in Aeronautical Engineering from Cambridge<lb/> University, a PGCE from Leicester University and is a Chartered Engineer. He has enjoyed teaching<lb/> mathematics to engineering students at Bristol University since 1973 and was awarded the title of<lb/> Professorial Teaching Fellow in 2005.<lb/>
+
+	Address for correspondence:
+	<byline>
+	<docAuthor>Prof R. R. Clements,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Faculty of Engineering, University of Bristol,<lb/></affiliation>
+	</byline>
+
+	<address>Bristol, BS8 1TR, UK.</address>
+
+	E-mail: 
+	<email>rr-clements@cantab.net</email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2BFC777973A535C282DAF3B611C27A816EA29A3E"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>1 Laboratory of Molecular Biology, National Institute of Diabetes and Digestive and Kidney Diseases, National Institutes of Health, Department of Health and Human<lb/> Services,</affiliation>
+	</byline>
+
+	<address>Bethesda, Maryland 20892, USA.</address>
+
+	<byline>
+	<affiliation>2 Department of Horticulture, Plant Physiology/Biochemistry/Molecular Biology Program, University of Kentucky,<lb/></affiliation>
+	</byline>
+
+	<address>Lexington, Kentucky 40546-0091, USA. </address>
+
+	Correspondence should be addressed to J.H.H. (
+	<email>jh8e@nih.gov</email>
+	)<lb/>
+
+	<docTitle>
+	<titlePart>Mechanism of multiple lysine methylation by the SET<lb/> domain enzyme Rubisco LSMT<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Raymond C Trievel 1 , E Megan Flynn 2 , Robert L Houtz 2 &amp; James H Hurley 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">SET domain protein methyltransferases catalyze the transfer of methyl groups from the cofactor S-adenosylmethionine (AdoMet)<lb/> to specific lysine residues of protein substrates, such as the N-terminal tails of histones H3 and H4 and the large subunit of the<lb/> Rubisco holoenzyme complex. The crystal structures of pea Rubisco large subunit methyltransferase (LSMT) in ternary complexes<lb/> with either lysine or ε-N-methyllysine (MeLys) and the product S-adenosylhomocysteine (AdoHcy) were determined to<lb/> resolutions of 2.65 and 2.55 Å, respectively. The ζ-methyl group of MeLys is bound to the enzyme via carbon-oxygen hydrogen<lb/> bonds that play a key role in catalysis. The methyl donor and acceptor are aligned in a linear geometry for S N 2 nucleophilic<lb/> transfer of the methyl group during catalysis. Differences in hydrogen bonding between the MeLys ε-amino group and Rubisco<lb/> LSMT and SET7/9 explain why Rubisco LSMT generates multiply methylated Lys, wheras SET7/9 generates only MeLys.<lb/></div>
+
+	<reference>NATURE STRUCTURAL BIOLOGY VOLUME 10 NUMBER 7 JULY 2003 545<lb/></reference>
+
+	<note type="submission">Received 10 March; accepted 28 May 2003<lb/></note>
+
+	Published online
+	<date>22 June 2003</date>
+
+	; 
+	<idno>doi:10.1038/nsb946</idno>
+	
+		</front>
+	</text>
+</tei>

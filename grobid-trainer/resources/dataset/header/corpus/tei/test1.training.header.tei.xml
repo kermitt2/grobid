@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">ARTICLE OPEN<lb/></note>
+
+	<docTitle>
+	<titlePart>Application of convolutional neural networks to breast<lb/> biopsies to delineate tissue correlates of mammographic breast density<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Maeve Mullooly 1,2,12 * , Babak Ehteshami Bejnordi 3,4,12 , Ruth M. Pfeiffer 2 , Shaoqi Fan 2 , Maya Palakal 2 , Manila Hada 2 , Pamela M. Vacek 5 ,<lb/> Donald L. Weaver 5 , John A. Shepherd 6,7 , Bo Fan 6 , Amir Pasha Mahmoudzadeh 6 , Jeff Wang 8 , Serghei Malkov 6 , Jason M. Johnson 9 ,<lb/> Sally D. Herschorn 5 , Brian L. Sprague 5 , Stephen Hewitt 10 , Louise A. Brinton 2 , Nico Karssemeijer 3 , Jeroen van der Laak 3 ,<lb/> Andrew Beck 4,13 , Mark E. Sherman 11,13 and Gretchen L. Gierach 2,13<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Breast density, a breast cancer risk factor, is a radiologic feature that reflects fibroglandular tissue content relative to breast area or<lb/> volume. Its histology is incompletely characterized. Here we use deep learning approaches to identify histologic correlates in<lb/> radiologically-guided biopsies that may underlie breast density and distinguish cancer among women with elevated and low<lb/> density. We evaluated hematoxylin and eosin (H&amp;E)-stained digitized images from image-guided breast biopsies (n = 852 patients).<lb/> Breast density was assessed as global and localized fibroglandular volume (%). A convolutional neural network characterized H&amp;E<lb/> composition. In total 37 features were extracted from the network output, describing tissue quantities and morphological structure.<lb/> A random forest regression model was trained to identify correlates most predictive of fibroglandular volume (n = 588).<lb/> Correlations between predicted and radiologically quantified fibroglandular volume were assessed in 264 independent patients. A<lb/> second random forest classifier was trained to predict diagnosis (invasive vs. benign); performance was assessed using area under<lb/> receiver-operating characteristics curves (AUC). Using extracted features, regression models predicted global (r = 0.94) and<lb/> localized (r = 0.93) fibroglandular volume, with fat and non-fatty stromal content representing the strongest correlates, followed by<lb/> epithelial organization rather than quantity. For predicting cancer among high and low fibroglandular volume, the classifier<lb/> achieved AUCs of 0.92 and 0.84, respectively, with epithelial organizational features ranking most important. These results suggest<lb/> non-fatty stroma, fat tissue quantities and epithelial region organization predict fibroglandular volume. The model holds promise<lb/> for identifying histological correlates of cancer risk in patients with high and low density and warrants further evaluation.<lb/></div>
+
+	<reference>npj Breast Cancer (2019) 5:43 ; </reference>
+
+	<idno>https://doi.org/10.1038/s41523-019-0134-6</idno>
+
+	<byline>
+	<affiliation>1<lb/> Division of Population Health Sciences, Royal College of Surgeons in Ireland,</affiliation>
+	</byline>
+
+	<address>Dublin, Ireland.</address>
+
+	<byline>
+	<affiliation>2 Division of Cancer Epidemiology and Genetics, National Cancer Institute,</affiliation>
+	</byline>
+
+	<address>Bethesda,<lb/> MD, USA.</address>
+
+	<byline>
+	<affiliation>3 Department of Pathology, Radboud University Medical Center Nijmegen,</affiliation>
+	</byline>
+
+	<address>Nijmegen, the Netherlands.</address>
+
+	<byline>
+	<affiliation>4 Beth Israel Deaconess Medical Center, Harvard Medical School,<lb/></affiliation>
+	</byline>
+
+	<address>Boston, MA, USA.</address>
+
+	<byline>
+	<affiliation>5 University of Vermont and University of Vermont Cancer Center,</affiliation>
+	</byline>
+
+	<address>Burlington, VT, USA.</address>
+
+	<byline>
+	<affiliation>6 University of California,</affiliation>
+	</byline>
+
+	<address>San Francisco, San Francisco, CA, USA.</address>
+
+	<byline>
+	<affiliation>7 University<lb/> of Hawaii Cancer Center,</affiliation>
+	</byline>
+
+	<address>Honolulu, HI, USA.</address>
+
+	<byline>
+	<affiliation>8 Department of Radiation Medicine, Hokkaido University Graduate School of Medicine,</affiliation>
+	</byline>
+
+	<address>Sapporo, Hokkaido, Japan.</address>
+
+	<byline>
+	<affiliation>9 The University of<lb/> Texas MD Anderson Cancer Center,</affiliation>
+	</byline>
+
+	<address>Houston, TX, USA.</address>
+
+	<byline>
+	<affiliation>10 Center for Cancer Research, National Cancer Institute,</affiliation>
+	</byline>
+
+	<address>Bethesda, MD, USA.</address>
+
+	<byline>
+	<affiliation>11 Mayo Clinic,</affiliation>
+	</byline>
+
+	<address>Jacksonville, FL, USA.</address>
+
+	12 These<lb/> authors contributed equally:
+	<byline>
+	<docAuthor>Maeve Mullooly, Babak Ehteshami Bejnordi.</docAuthor>
+	</byline>
+
+	13 These authors jointly supervised this work:
+	<byline>
+	<docAuthor>Andrew Beck, Mark E. Sherman, Gretchen L. Gierach.<lb/></docAuthor>
+	</byline>
+
+	*email:
+	<email>maevemullooly@rcsi.ie<lb/></email>
+
+	www.nature.com/npjbcancer<lb/> Published in partnership with the Breast Cancer Research Foundation<lb/> 1234567890():,;<lb/>
+	<note type="submission">Received: 31 January 2019; Accepted: 30 September 2019;<lb/></note>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> This is a U.S. government work and not under copyright protection in the U.S.; foreign<lb/> copyright protection may apply 2019</note>
+
+		</front>
+	</text>
+</tei>

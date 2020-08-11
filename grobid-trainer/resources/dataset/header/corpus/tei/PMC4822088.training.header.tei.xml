@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC4822088"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	GUT INSTINCTS: MY PERSPECTIVE<lb/>
+	<docTitle>
+	<titlePart>Understanding Legal and Regulatory Adverse Actions:<lb/> How Trouble Could Come at You<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kayla A. Feld, JD 1 and Andrew D. Feld, MD, JD 2,3<lb/></docAuthor>
+	</byline>
+
+	<reference>Clinical and Translational Gastroenterology (2016) 7, e158;</reference>
+
+	<idno>doi:10.1038/ctg.2015.56</idno>
+
+	; published online
+	<date>24 March 2016</date>
+
+	<byline>
+	<affiliation>1<lb/> Sidley Austin LLP,</affiliation>
+	</byline>
+
+	<address>Singapore, Singapore;</address>
+
+	<byline>
+	<affiliation>2 Program Chief, Gastroenterology Group Health Cooperative,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington, USA</address>
+
+	and
+
+	<byline>
+	<affiliation>3 Clinical Professor of Medicine,<lb/> University of Washington,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington, USA<lb/></address>
+
+	Correspondence:
+	<byline>
+	<docAuthor>Andrew D. Feld, MD, JD,</docAuthor>
+	</byline>
+
+	Program Chief, 
+
+	<byline>
+	<affiliation>Gastroenterology Group Health Cooperative, Clinical Professor of Medicine,</affiliation>
+	</byline>
+
+	<address>Seattle, Washington, USA.<lb/></address>
+
+	E-mail:
+	<email>afeld@u.washington.edu<lb/></email>
+
+	Citation:
+	<reference>Clinical and Translational Gastroenterology (2016) 7, e158; doi:10.1038/ctg.2015.56<lb/> </reference>
+
+	<note type="copyright">&amp; 2016 the American College of Gastroenterology All rights reserved</note>
+	2155-384X/16<lb/>
+	www.nature.com/ctg
+		</front>
+	</text>
+</tei>

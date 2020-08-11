@@ -115,7 +115,26 @@ The GROBID console offers a reference implementation with PDF.js for dynamically
 
 Coordinates for a given structure appear via an extra attribute ```@coord```. This is part of the [customization to the TEI](TEI-encoding-of-results.md) used by GROBID.
 
-Similarly as for JSON, the coordinates of a structure is provided as a list of bounding boxes, each one separated by a semicolon ```;```, each bounding box being defined by 5 attributes separated by a comma ```,```:
+* the list of page size is encoded under the TEI element `<facsimile>`. The dimension of each page is given successively by the TEI attributes `@lrx` and `@lry` of the element `<surface>` to be conformant with the TEI (`@ulx` and `@uly` are used to set the orgine coordinates, which is always `(0,0)` for us).
+
+Example: 
+
+
+```xml
+	...
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="612.0" lry="794.0"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="612.0" lry="794.0"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="612.0" lry="794.0"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="612.0" lry="794.0"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="612.0" lry="794.0"/>
+	</facsimile>
+	<text xml:lang="en">
+	...
+```
+
+* for each entity, similarly as for JSON, the coordinates of a structure is provided as a list of bounding boxes, each one separated by a semicolon ```;```, each bounding box being defined by 5 attributes separated by a comma ```,```:
 
 Example 1: 
 ```xml

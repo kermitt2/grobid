@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="art_fin"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Nonlinear stability of a Vlasov equation for magnetic plasmas<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Frédérique Charles * †<lb/> Bruno Després * ‡<lb/> Benoît Perthame * §<lb/> Rémi Sentis ¶<lb/></docAuthor>
+	</byline>
+
+	<date>April 20, 2012</date>
+
+	Abstract<lb/>
+	<div type="abstract">The mathematical description of laboratory fusion plasmas produced in Tokamaks is still challenging. Com-<lb/>plete models for electrons and ions, as Vlasov-Maxwell systems, are computationally too expensive because they<lb/> take into account all details and scales of magneto-hydrodynamics. In particular, for most of the relevant stud-<lb/>ies, the mass electron is negligible and the velocity of material waves is much smaller than the speed of light.<lb/> Therefore it is useful to understand simplified models. Here we propose and study one of those which keeps<lb/> both the complexity of the Vlasov equation for ions and the Hall effect in Maxwell&apos;s equation. Based on energy<lb/> dissipation, a fundamental physical property, we show that the model is nonlinear stable and consequently prove<lb/> existence.<lb/></div>
+
+	Key words:
+	<keyword>Vlasov equations; Plasma physics; Kinetic averaging lemma; Maxwell&apos;s equations.<lb/></keyword>
+
+	<keyword>Mathematics Subject Classification: 35B35, 35L60, 82D10<lb/></keyword>
+
+	<byline>
+	<affiliation>* UPMC-Paris06, CNRS UMR 7598, Laboratoire Jacques-Louis Lions, </affiliation>
+	</byline>
+
+	<address>4, pl. Jussieu F75252 Paris cedex 05.<lb/></address>
+
+	† Email:
+	<email>charles@ann.jussieu.fr<lb/></email>
+
+	‡ Email:
+	<email>despres@ann.jussieu.fr<lb/></email>
+
+	<byline>
+	<affiliation>§ INRIA Rocquencourt EPI BANG.</affiliation>
+	</byline>
+
+	Email:
+	<email>benoit.perthame@upmc.fr<lb/></email>
+
+	<byline>
+	<affiliation>¶ CEA</affiliation>
+	</byline>
+
+	<address>Bruyères-le-Chatel.</address> 
+
+	Email:
+	<email>remi.sentis@CEA.FR</email>
+
+		</front>
+	</text>
+</tei>

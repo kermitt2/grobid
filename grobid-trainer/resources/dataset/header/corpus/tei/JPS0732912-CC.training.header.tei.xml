@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="JPS0732912-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>High Pressure Effects on Superconductivity in the β-pyrochlore Oxides AOs 2 O 6 (A=K, Rb, Cs)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takaki MURAMATSU, Shigeki YONEZAWA, Yuji MURAOKA and Zenji HIROI<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Solid States Physics, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Kashiwa, Chiba 277-8581<lb/></address>
+
+	KEYWORDS:
+	<keyword>superconductivity, β-pyrochlore oxide, pressure, magnetization<lb/></keyword>
+
+	*E-mail address:
+	<email>muramatu@issp.u-tokyo.ac.jp</email>
+
+		</front>
+	</text>
+</tei>

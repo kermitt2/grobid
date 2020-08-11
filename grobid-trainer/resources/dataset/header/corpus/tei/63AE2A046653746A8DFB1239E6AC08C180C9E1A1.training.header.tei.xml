@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="63AE2A046653746A8DFB1239E6AC08C180C9E1A1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Library budgets and<lb/> academic library<lb/> rankings in times of transition<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johann van Reenen<lb/></docAuthor>
+	</byline>
+
+	The author<lb/> 
+	<byline>
+	<docAuthor>Johann van Reenen<lb/></docAuthor>
+	</byline> 
+
+	is Assistant Professor, Head of Public<lb/> Services and Director, 
+
+	<byline>
+	<affiliation>Centennial Science and Engineering<lb/> Library, University of New Mexico Libraries,</affiliation>
+	</byline>
+
+	<address>Albuquerque,<lb/> New Mexico.</address>
+
+	Keywords<lb/>
+	<keyword>Finance, Performance measurement, Rating,<lb/> Academic libraries, Benchmarking</keyword>
+
+	Abstract<lb/>
+	<div type="abstract">An analysis of the ability of a particular library to<lb/> significantly increase its Association of Research Libraries<lb/> (ARL) ranking in a reasonable time period is presented. A<lb/> discussion follows to show why this is not a useful objective<lb/> at a time when academic libraries are transitioning to new<lb/> types of products and services made possible by emerging<lb/> technologies. Various initiatives are under way in the USA<lb/> and Europe to create more meaningful performance<lb/> measures for academic libraries.<lb/></div>
+
+	Electronic access<lb/> The research register for this journal is available at<lb/> http://www.mcbup.com/research_registers<lb/>
+
+	The current issue and full text archive of this journal is<lb/> available at<lb/> http://www.emerald-library.com/ft
+
+	<page>213<lb/></page>
+
+	<reference>The Bottom Line: Managing Library Finances<lb/> Volume 14 . Number 4 . 2001 . pp. 213±218<lb/></reference>
+
+	<note type="copyright"># MCB University Press</note> . 
+
+	<idno>ISSN 0888-045X</idno>
+	
+		</front>
+	</text>
+</tei>

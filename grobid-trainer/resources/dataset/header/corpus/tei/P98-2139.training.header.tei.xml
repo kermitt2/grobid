@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="P98-2139"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Deriving Transfer Rules from Dominance-Preserving Alignments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Adam Meyers, Roman Yangarber, Ralph Grishman,<lb/> Catherine Macleod, Antonio Moreno-Sandoval t<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New York University<lb/></affiliation>
+	</byline>
+
+	<address>715 Broadway, 7th Floor, NY, NY 10003, USA<lb/> </address>
+
+	<byline>
+	<affiliation>tUniversidad Aut6noma de Madrid<lb/></affiliation>
+	</byline>
+
+	<address>Cantoblanco, 28049-Madrid, SPAIN<lb/></address>
+
+	<email>meyers/roman/grishman/macleod©cs, nyu. edu<lb/></email> 
+
+	<email>sandoval©lola, lllf. uam. es</email>
+
+		</front>
+	</text>
+</tei>

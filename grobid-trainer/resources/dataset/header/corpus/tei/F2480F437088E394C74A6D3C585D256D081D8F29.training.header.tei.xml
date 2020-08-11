@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="F2480F437088E394C74A6D3C585D256D081D8F29"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROBIOL. BULL. 25(2), 145-149 (1991)<lb/></reference>
+
+	<docTitle>
+	<titlePart>HETEROTROPHIC BACTERIAL PRODUCTION IN LAKE XOLOTI..AN<lb/> (MANAGUA) DURING 1988-1989<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>RUSSELL T. BELL 1, ROLF ERIKSON 1, KATHLEEN VAMMEN, MARIA HELENA VARGAS<lb/> and ARGENTINA ZELAYA<lb/></docAuthor>
+	</byline>
+
+	KEYWORDS:
+	<keyword>heterotrophic bacterioplankton, biomass, production, tropical lake</keyword>
+
+	ABSTRACT<lb/>
+	<div type="abstract">The biomass and production (thymidine incorporation) of heterotrophic bacterioplankton has been<lb/> assessed from July, 1988, to October,1989, in Lake Xolotl~n, Nicaragua. Bacterial abundance was high,<lb/> 2-3.10 lo cells.1-1, and bacterial biomass averaged ca. 0.75 mg C.1-1, or roughly 20% of the particuJate organic<lb/> carbon. Bacterial production averaged between 3.5-5 l~g C.1-1.h-1 and on an areal basis was 650-959 mg<lb/> C.m-2.d-1 or 13-20% of the primary production. Although bacterial production (volumetric basis) was typical<lb/> for eutrophic lakes, the bacterial specific growh rate was low, the bacterial population doubling time was ca. 1<lb/> week, perhaps indicating that there was a low grazing pressure on the bacteria.</div>
+
+	<page>145<lb/></page> 
+
+	Addresses of the authors:<lb/>
+	<byline>
+	<affiliation>CENTRO PARA LA INVESTIGAClON EN RECURSOS ACUATICOS DE NICARAGUA (CIRA),</affiliation>
+	</byline>
+
+	<address>Apartado Postal 4598, Managua, Nicaragua.<lb/></address>
+
+	1 Permanent address:
+	<byline>
+	<affiliation>Institute of Limnology, Uppsala University,</affiliation>
+	</byline>
+
+	<address>S-751 22 Uppsala Sweden.</address>
+
+		</front>
+	</text>
+</tei>

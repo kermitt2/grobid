@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1036._0908.2615v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Modeling scientific-citation patterns and other triangle-rich acyclic networks<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Zhi-Xi Wu * and Petter Holme †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Umeå University,</affiliation>
+	</byline>
+
+	<address>901 87 Umeå, Sweden<lb/></address>
+
+	<div type="abstract">We propose a model of the evolution of the networks of scientific citations. The model takes<lb/> an out-degree distribution (distribution of number of citations) and two parameters as input. The<lb/> parameters capture the two main ingredients of the model, the aging of the relevance of papers and<lb/> the formation of triangles when new papers cite old. We compare our model with three network<lb/> structural quantities of an empirical citation network. We find that an unique point in parameter<lb/> space optimizing the match between the real and model data for all quantities. The optimal param-<lb/>eter values suggest that the impact of scientific papers, at least in the empirical data set we model<lb/> is proportional to the inverse of the number of papers since they were published.<lb/></div>
+
+	<keyword>PACS numbers: 89.65.-s, 89.75.-k<lb/></keyword>
+
+	<idno>arXiv:0908.2615v1 [physics.soc-ph]</idno>
+
+	<date>18 Aug 2009</date>
+
+		</front>
+	</text>
+</tei>

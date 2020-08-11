@@ -25,7 +25,7 @@ public class TaggerFactory {
     private TaggerFactory() {}
 
     public static synchronized GenericTagger getTagger(GrobidModel model) {
-        return getTagger(model, GrobidProperties.getGrobidCRFEngine());
+        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model));
     }
 
     public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine) {
@@ -53,12 +53,7 @@ public class TaggerFactory {
 //                            LOGGER.info("Loading JEP native library for DeLFT failed", e);
 //                        }
 
-                        // if model is fulltext or segmentation we use currently WAPITI as fallback because they
-                        // are not covered by DeLFT for the moment
-                        if (model.equals(GrobidModels.FULLTEXT) || model.equals(GrobidModels.SEGMENTATION))
-                            t = new WapitiTagger(model);
-                        else
-                            t = new DeLFTTagger(model);
+                        t = new DeLFTTagger(model);
                         break;
                     default:
                         throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());

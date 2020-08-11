@@ -134,6 +134,7 @@ public class FeaturesVectorSegmentation {
         else
             res.append(" 0");
 
+        /* TODO: to review, never set! */ 
         if (firstName)
             res.append(" 1");
         else

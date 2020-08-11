@@ -30,7 +30,7 @@
 
 			<head>Gene correlations with AR expression<lb/></head>
 
-			<p>We determined correlations between the gene expression of AR<lb/> and a set of 79 selected genes which may be involved in the<lb/> development of breast cancer, using the I-SPY 1, METABRIC, and<lb/> TCGA datasets in the population as a whole, and in the triple<lb/> negative (TN) cohorts of METABRIC and TCGA. <ref type="table">Table 1</ref> shows the<lb/> Pearson correlation coefficient of genes showing significant<lb/> correlation with AR expression in ≥2 datasets.<lb/></p>
+			<p>We determined correlations between the gene expression of AR<lb/> and a set of 79 selected genes which may be involved in the<lb/> development of breast cancer, using the I-SPY 1, METABRIC, and<lb/> TCGA datasets in the population as a whole, and in the triple<lb/> negative (TN) cohorts of METABRIC and TCGA. Table <ref type="table">1</ref> shows the<lb/> Pearson correlation coefficient of genes showing significant<lb/> correlation with AR expression in ≥2 datasets.<lb/></p>
 
 			<p>AR gene expression positively correlated with the expression of<lb/> multiple luminal genes including FOXA1, GATA3, AGR2, PIP, CA12,<lb/> ESR1, PGR, TOX3, MUC1, DHRS2, ITGB5, CCND1, and RET as well as<lb/> with the expression of steroid hormone genes such as ADRA2A,<lb/> PTGER3, GHR, and ADRB2. In addition, AR gene expression<lb/> positively correlated with the expression of HER2 pathway genes<lb/> including ERBB2, ERBB3, and ERBB4, and the expression of<lb/> TNFSF10, KRAS, and PTEN. Most these gene correlations were<lb/> also apparent in the TN cohorts.<lb/></p>
 

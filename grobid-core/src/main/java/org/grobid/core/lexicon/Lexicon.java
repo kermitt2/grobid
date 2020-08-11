@@ -1013,7 +1013,7 @@ public class Lexicon {
      * Identify in tokenized input the positions of an URL pattern with token positions
      */
     public List<OffsetPosition> tokenPositionsUrlPattern(List<LayoutToken> tokens) {
-        List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+        //List<OffsetPosition> result = new ArrayList<OffsetPosition>();
         String text = LayoutTokensUtil.toText(tokens);
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher urlMatcher = TextUtilities.urlPattern.matcher(text);
@@ -1022,8 +1022,23 @@ public class Lexicon {
             textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
         }
         return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+    }
 
-
+    /**
+     * Identify in tokenized input the positions of an email address pattern with token positions
+     */
+    public List<OffsetPosition> tokenPositionsEmailPattern(List<LayoutToken> tokens) {
+        //List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+        String text = LayoutTokensUtil.toText(tokens);
+        if (text.indexOf("@") == -1)
+            return new ArrayList<OffsetPosition>();
+        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
+        Matcher urlMatcher = TextUtilities.emailPattern.matcher(text);
+        while (urlMatcher.find()) {  
+            //System.out.println(urlMatcher.start() + " / " + urlMatcher.end() + " / " + text.substring(urlMatcher.start(), urlMatcher.end()));                 
+            textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
+        }
+        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
     }
 
 }

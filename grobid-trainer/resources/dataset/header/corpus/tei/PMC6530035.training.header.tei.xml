@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC6530035"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">L E T T E R<lb/></note> 
+
+	<note type="doctype">Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>How to treat combined respiratory and<lb/> metabolic acidosis after extracorporeal<lb/> cardiopulmonary resuscitation?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xavier Bemtgen 1* , Florentine Schroth 1 , Tobias Wengenmayer 1 , Paul M. Biever 1 , Daniel Duerschmied 1 ,<lb/> Christoph Benk 2 , Christoph Bode 1 and Dawid L. Staudacher 1<lb/></docAuthor>
+	</byline>
+
+	This comment refers to the article available at
+	<idno>https://doi.org/10.1186/cc9976<lb/></idno>
+
+	Keywords:
+	<keyword>VA-ECMO, eCPR, Survival, Carbon dioxide, paCO 2 , pH<lb/></keyword>
+
+	<note type="copyright">© The Author(s). 2019 Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0<lb/> International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to<lb/> the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver<lb/> (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.<lb/></note>
+
+	* Correspondence:
+	<email>xavier.bemtgen@uniklinik-freiburg.de</email>
+
+	<byline>
+	<affiliation>1<lb/> Department of Cardiology and Angiology I, Heart Center Freiburg<lb/> University,</affiliation>
+	</byline>
+
+	<address>Hugstetter Straße 55, Freiburg 79106, Germany<lb/></address>
+
+	Full list of author information is available at the end of the article<lb/>
+	<reference>Bemtgen et al. Critical Care<lb/> (2019) 23:183<lb/></reference>
+
+	<idno>https://doi.org/10.1186/s13054-019-2461-2<lb/></idno>
+
+	Author details
+	<byline>
+	<affiliation>1<lb/> Department of Cardiology and Angiology I, Heart Center Freiburg<lb/> University,</affiliation>
+	</byline>
+
+	<address>Hugstetter Straße 55, Freiburg 79106, Germany.</address>
+
+	<byline>
+	<affiliation>2 Department of<lb/> Cardiovascular Surgery, Heart Center Freiburg University,</affiliation>
+	</byline>
+
+	<address>Hugstetter Straße<lb/> 55, Freiburg 79106, Germany.<lb/></address>
+
+	<note type="submission">Received: 19 February 2019 Accepted: 29 April 2019</note>
+
+		</front>
+	</text>
+</tei>
