@@ -29,8 +29,8 @@ public class Person {
     private String rawName = null; // raw full name if relevant/available, e.g. name exactly as displayed
     private String orcid = null;
     private boolean corresp = false;
-    private List<LayoutToken> layoutTokens = new ArrayList<>();
 
+    private List<LayoutToken> layoutTokens = new ArrayList<>();
     private List<String> affiliationBlocks = null;
     private List<Affiliation> affiliations = null;
     private List<String> affiliationMarkers = null;
@@ -116,6 +116,10 @@ public class Person {
         return affiliationBlocks;
     }
 
+    public void setAffiliationBlocks(List<String> blocks) {
+        this.affiliationBlocks = blocks;
+    }
+
     public void addAffiliationBlocks(String f) {
         if (affiliationBlocks == null)
             affiliationBlocks = new ArrayList<String>();
@@ -136,6 +140,10 @@ public class Person {
         return affiliationMarkers;
     }
 
+    public void setAffiliationMarkers(List<String> affiliationMarkers) {
+        this.affiliationMarkers = affiliationMarkers;
+    }
+
     public void addAffiliationMarker(String s) {
         if (affiliationMarkers == null)
             affiliationMarkers = new ArrayList<String>();
@@ -148,6 +156,10 @@ public class Person {
 
     public List<String> getMarkers() {
         return markers;
+    }
+
+    public void setMarkers(List<String> markers) {
+        this.markers = markers;
     }
 
     public void addMarker(String f) {
@@ -174,6 +186,35 @@ public class Person {
             return false;
         else
             return true;
+    }
+
+    /**
+     * Create a new instance of Person object from current instance (shallow copy)
+     */
+    public Person clonePerson() {
+        Person person = new Person();
+        person.firstName = this.firstName ;
+        person.middleName = this.middleName;
+        person.lastName = this.lastName;
+        person.title = this.title;
+        person.suffix = this.suffix;
+        person.rawName = this.rawName; 
+        person.orcid = this.orcid;
+        person.corresp = this.corresp;
+        person.email = this.email;
+
+        if (this.layoutTokens != null)
+            person.layoutTokens = new ArrayList<>(this.layoutTokens);
+        if (this.affiliationBlocks != null)
+            person.affiliationBlocks = new ArrayList<>(this.affiliationBlocks);
+        if (this.affiliations != null)
+            person.affiliations = new ArrayList<>(this.affiliations);
+        if (this.affiliationMarkers != null)
+            person.affiliationMarkers = new ArrayList<>(this.affiliationMarkers);
+        if (this.markers != null)
+            person.markers = new ArrayList<>(this.markers);
+
+        return person;
     }
 
     public String toString() {
@@ -204,6 +245,10 @@ public class Person {
 
     public List<LayoutToken> getLayoutTokens() {
         return layoutTokens;
+    }
+
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        this.layoutTokens = tokens;
     }
 
     /**
@@ -664,6 +709,10 @@ public class Person {
                             localPerson.setSuffix(otherPerson.getSuffix());
                             localSuffix = localPerson.getSuffix().toLowerCase();
                         }
+
+                        String otherOrcid = otherPerson.getORCID();
+                        if (otherOrcid != null)
+                            localPerson.setORCID(otherOrcid);
 
                         if (otherPerson.getAffiliations() != null) {
                             for(Affiliation affOther : otherPerson.getAffiliations()) {

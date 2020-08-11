@@ -197,7 +197,6 @@ public class BiblioItemTest {
 
         assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
         assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
-
     }
 
     @Test
@@ -248,7 +247,7 @@ public class BiblioItemTest {
         assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
         assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(1).getFirstName()));
         assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
-        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(1).getAffiliationString(), is(biblio2.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio2.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
     }
 
     @Test
