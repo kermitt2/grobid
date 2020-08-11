@@ -341,7 +341,7 @@ public class GrobidProperties {
 
     protected static Map<String, String> getEnvironmentVariableOverrides(Map<String, String> environmentVariablesMap) {
         Map<String, String> properties = new EnvironmentVariableProperties(
-            environmentVariablesMap, "GROBID__"
+            environmentVariablesMap, "(GROBID__|ORG__GROBID__).+"
         ).getProperties();
         LOGGER.info("environment variables overrides: {}", properties);
         return properties;
