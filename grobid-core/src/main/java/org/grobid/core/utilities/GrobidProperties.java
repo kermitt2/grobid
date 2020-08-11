@@ -312,7 +312,7 @@ public class GrobidProperties {
         loadCrfEngine();
     }
 
-    private static void loadCrfEngine() {
+    protected static void loadCrfEngine() {
         grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
             GrobidCRFEngine.WAPITI.name()));
     }
@@ -699,15 +699,36 @@ public class GrobidProperties {
         return pathToPdfToXml;
     }
 
+    private static String getModelPropertySuffix(final String modelName) {
+        return modelName.replaceAll("-", "_");
+    }
+
+    private static String getGrobidCRFEngineName(final String modelName) {
+        String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
+        return getPropertyValue(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + getModelPropertySuffix(modelName),
+            defaultEngineName
+        );
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
+        String engineName = getGrobidCRFEngineName(modelName);
+        if (grobidCRFEngine.name().equals(engineName)) {
+            return grobidCRFEngine;
+        }
+        return GrobidCRFEngine.get(engineName);
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final GrobidModel model) {
+        return getGrobidCRFEngine(model.getModelName());
+    }
+
     public static GrobidCRFEngine getGrobidCRFEngine() {
         return grobidCRFEngine;
     }
 
     public static File getModelPath(final GrobidModel model) {
-        String extension = grobidCRFEngine.getExt();
-        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT &&
-            (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
-            extension = "wapiti";
+        String extension = getGrobidCRFEngine(model).getExt();
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
             + model.getFolderName() + File.separator
             + FILE_NAME_MODEL + "." + extension);

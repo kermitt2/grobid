@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2020-06-01T09:51:12Z. .
+    Schema generated from ODD source 2020-06-29T13:15:55Z. .
     TEI Edition: Version 4.0.0. Last updated on
     	13th February 2020, revision ccd19b0ba
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -4408,7 +4408,27 @@ Suggested values include: 1] label; 2] data</xs:documentation>
     <xs:annotation>
       <xs:documentation>contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</xs:documentation>
     </xs:annotation>
-    <xs:complexType mixed="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="tei:tei_model.headLike"/>
+          <xs:group ref="tei:tei_model.global"/>
+        </xs:choice>
+        <xs:choice>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="tei:row"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+          </xs:sequence>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:group ref="tei:tei_model.graphicLike"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+          </xs:sequence>
+        </xs:choice>
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="tei:tei_model.divBottom"/>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+        </xs:sequence>
+      </xs:sequence>
       <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
       <xs:attribute name="rows" type="xs:nonNegativeInteger">
@@ -4421,6 +4441,18 @@ Suggested values include: 1] label; 2] data</xs:documentation>
           <xs:documentation>(columns) indicates the number of columns in each row of the table.</xs:documentation>
         </xs:annotation>
       </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="row">
+    <xs:annotation>
+      <xs:documentation>contains one row of a table. [14.1.1. TEI Tables]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tei:cell"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.tableDecoration.attributes"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="cell">
