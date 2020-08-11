@@ -4291,16 +4291,21 @@ public class BiblioItem {
                         if (StringUtils.isNotBlank(aut2.getLastName())) {
                             if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
                                 // check also first name if present - at least for the initial
-                                if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName()) ) {
-                                    // we have a match (full first name)
+                                if ( StringUtils.isBlank(aut2.getFirstName()) || 
+                                     (StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())) ) {
+                                    // we have no first name or a match (full first name)
 
-                                    if ( aut.getFirstName().equals(aut2.getFirstName())
+                                    if ( StringUtils.isBlank(aut2.getFirstName()) 
+                                        || 
+                                         aut.getFirstName().equals(aut2.getFirstName())
                                         ||
                                          ( aut.getFirstName().length() == 1 && 
                                            aut.getFirstName().equals(aut2.getFirstName().substring(0,1))) 
                                         ) {
                                         // we have a match (full or initial)
-                                        //aut.setFirstName(aut2.getFirstName());
+                                        if (StringUtils.isNotBlank(aut2.getFirstName()) &&
+                                            aut2.getFirstName().length() > aut.getFirstName().length())
+                                            aut.setFirstName(aut2.getFirstName());
                                         if (StringUtils.isBlank(aut.getMiddleName()))
                                             aut.setMiddleName(aut2.getMiddleName());
                                         if (StringUtils.isBlank(aut.getTitle()))
