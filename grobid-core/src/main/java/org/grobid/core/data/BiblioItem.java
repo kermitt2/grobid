@@ -4239,7 +4239,7 @@ public class BiblioItem {
 
         // authors present in fullAuthors list should be in the existing resources 
         // at least the corresponding author
-        if (bibo.getFullAuthors() != null) {
+        if (!CollectionUtils.isEmpty(bibo.getFullAuthors())) {
             if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
             else {

@@ -119,7 +119,7 @@ public class Person {
 
     public void addAffiliation(org.grobid.core.data.Affiliation f) {
         if (affiliations == null)
-            affiliations = new ArrayList<org.grobid.core.data.Affiliation>();
+            affiliations = new ArrayList<>();
         affiliations.add(f);
     }
 
