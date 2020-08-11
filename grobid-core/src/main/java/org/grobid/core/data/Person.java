@@ -519,11 +519,15 @@ public class Person {
                 for(int j=0; j < localPersons.size(); j++) {
                     Person localPerson =  localPersons.get(j);
                     String localFirstName = localPerson.getFirstName();
-                    if (localFirstName != null)
+                    if (localFirstName != null) {
                         localFirstName = localFirstName.toLowerCase();
+                        localFirstName = localFirstName.replaceAll("[\\-\\.]", "");
+                    }
                     String localMiddleName = localPerson.getMiddleName();
-                    if (localMiddleName != null)
+                    if (localMiddleName != null) {
                         localMiddleName = localMiddleName.toLowerCase();
+                        localMiddleName = localMiddleName.replaceAll("[\\-\\.]", "");
+                    }
                     int nbClash = 0;
                     for(int k=0; k < localPersons.size(); k++) {                        
                         boolean clash = false;
@@ -531,11 +535,15 @@ public class Person {
                             continue;
                         Person otherPerson = localPersons.get(k);
                         String otherFirstName = otherPerson.getFirstName();
-                        if (otherFirstName != null)
+                        if (otherFirstName != null) {
                             otherFirstName = otherFirstName.toLowerCase();
+                            otherFirstName = otherFirstName.replaceAll("[\\-\\.]", "");
+                        }
                         String otherMiddleName = otherPerson.getMiddleName();
-                        if (otherMiddleName != null)
+                        if (otherMiddleName != null) {
                             otherMiddleName = otherMiddleName.toLowerCase();
+                            otherMiddleName = otherMiddleName.replaceAll("[\\-\\.]", "");
+                        }
 
                         // test first name clash
                         if (localFirstName != null && otherFirstName != null) {

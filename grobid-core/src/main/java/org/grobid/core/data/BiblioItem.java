@@ -4243,9 +4243,18 @@ public class BiblioItem {
             if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
             else if (bibo.getFullAuthors().size() == 1) {
+                List<Person> thePersons = bib.getFullAuthors();
+                List<Person> theOtherPersons = bib.getFullAuthors();
+                thePersons.addAll(theOtherPersons);
+                // we rely on Person object deduplcation for the author matching
+                Person.deduplicate(thePersons);
+                /*if (mergedPersons.size() == thePersons.size() - 1) {
+                    bib.setFullAuthors(mergedPersons);
+                }*/
+
                 // we have the corresponding author	
                 // check if the author exists in the obtained list
-                Person auto = (Person) bibo.getFullAuthors().get(0);
+                /*Person auto = (Person) bibo.getFullAuthors().get(0);
                 List<Person> auts = bib.getFullAuthors();
                 if (auts != null) {
                     for (Person aut : auts) {
@@ -4261,12 +4270,20 @@ public class BiblioItem {
                             }
                         }
                     }
-                }
+                }*/
             } else if (bibo.getFullAuthors().size() > 1) {
                 // we have the complete list of authors so we can take them from the second
                 // biblio item and merge some possible extra from the first when a match is 
                 // reliable
-                for (Person aut : bibo.getFullAuthors()) {
+                List<Person> thePersons = bib.getFullAuthors();
+                thePersons.addAll(bibo.getFullAuthors());
+                Person.deduplicate(thePersons);
+                /*if (mergedPersons.size() <= thePersons.size() - 1) {
+                    // at least one person merged
+                    bib.setFullAuthors(mergedPersons);
+                }*/
+
+                /*for (Person aut : bibo.getFullAuthors()) {
                     // try to find the author in the first item (we know it's not empty)
                     for (Person aut2 : bib.getFullAuthors()) {
                         if (StringUtils.isNotBlank(aut2.getLastName())) {
@@ -4293,7 +4310,7 @@ public class BiblioItem {
                         }
                     }
                 }
-                bib.setFullAuthors(bibo.getFullAuthors());
+                bib.setFullAuthors(bibo.getFullAuthors());*/
             }
         }
         //System.out.println("result: \n" + bib.toTEI(0));
