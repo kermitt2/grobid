@@ -27,6 +27,7 @@ public class Person {
     private String title = null;
     private String suffix = null;
     private String rawName = null; // raw full name if relevant/available, e.g. name exactly as displayed
+    private String orcid = null;
     private boolean corresp = false;
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
@@ -101,6 +102,14 @@ public class Person {
 
     public void setCorresp(boolean b) {
         corresp = b;
+    }
+
+    public String getORCID() {
+        return orcid;
+    }
+
+    public void setORCID(String id) {
+        orcid = id;
     }
 
     public List<String> getAffiliationBlocks() {
@@ -181,6 +190,9 @@ public class Person {
             res += suffix;
         if (email != null) {
             res += " (email:" + email + ")";
+        }
+        if (orcid != null) {
+            res += " (orcid:" + orcid + ")";
         }
         if (affiliations != null) {
             for(Affiliation aff : affiliations) {

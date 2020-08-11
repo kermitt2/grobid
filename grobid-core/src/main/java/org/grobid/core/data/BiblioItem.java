@@ -3838,6 +3838,10 @@ public class BiblioItem {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);
                         tei.append("<email>" + TextUtilities.HTMLEncode(author.getEmail()) + "</email>\n");
                     }
+                    if (author.getORCID() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 1);
+                        tei.append("<idno type=\"ORCID\">" + TextUtilities.HTMLEncode(author.getORCID()) + "</idno>\n");
+                    }
 
                     if (author.getAffiliations() != null) {
                         for (Affiliation aff : author.getAffiliations()) {
