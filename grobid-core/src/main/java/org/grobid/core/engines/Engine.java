@@ -461,6 +461,7 @@ public class Engine implements Closeable {
      * @param id           : an optional ID to be used in the TEI file, -1 if not used
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
+        System.out.println(inputFile.getPath());
         Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id);
     }
 

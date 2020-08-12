@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="88CD6E611BBB3F828D2FDF4658E474EFFF674ACC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J . CHEM. SOC., CHEM. COMMUN., I989<lb/> 26 1<lb/></reference>
+
+	<docTitle>
+	<titlePart>Ring-opening Hydroformylation of a-Cyclopropylstyrene by HMn(C0)5, and Structure<lb/> of a Novel Mn2(CO)9(q1-Aldehyde) Complex<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>R. Morris Bullock,a* Brian J. Rappoli,&quot; Edward G. Samsel,a and Arnold L. Rheingoldb<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Chemistry, Brookhaven National Laboratory, </affiliation>
+	</byline>
+
+	<address>Upton, New York 11973, U.S.A.<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Chemistry, University of Delaware,</affiliation>
+	</byline>
+
+	<address>Newark, Delaware 19716, U.S.A.<lb/></address>
+
+	<div type="abstract">An q1-aldehyde complex, Mn2(CO)9[Me(Ph)C=CHCH2CH2CHO], was isolated from the reaction of a-cyclopropyl-<lb/>styrene with wet HMn(C0)5; the crystal structure of this unusual compound confirmed the ql ( 0 ) bonding of the<lb/> aldehyde oxygen as an equatorial ligand on Mn2(CO)9.<lb/></div>
+
+	<note type="submission">Received, 27th September 1988;</note>
+
+	Com. 8103796E
+
+		</front>
+	</text>
+</tei>

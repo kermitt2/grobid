@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="130606_Jouhet_et_al_2006_Progress_in_Lipid_research"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Glycerolipid transfer for the building of membranes in plant cells<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Juliette JOUHET (1), Eric MARECHAL, and Maryse A. BLOCK<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratoire de Physiologie Cellulaire Végétale, UMR 5168 (CNRS/CEA/Université Joseph<lb/> Fourier/INRA), DRDC/PCV, CEA-Grenoble, </affiliation>
+	</byline>
+
+	<address>17 rue des Martyrs, F-38054, Grenoble-cedex 9,<lb/> France.<lb/> </address>
+
+	Corresponding author: 
+
+	<byline>
+	<docAuthor>Maryse A. Block<lb/></docAuthor>
+	</byline> 
+
+	Tel: 
+	<phone>33 (0) 438 78 49 85</phone> 
+	FAX: 33 (0) 438 78 50 91 
+
+	E-mail: 
+	<email>maryse.blockatcea.fr<lb/></email>
+
+	(1) Present address:
+	
+	<byline>
+	<affiliation>Department of Plant Sciences, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Downing Street,<lb/> Cambridge CB2 3EA, UK<lb/></address>
+
+	Running title: Lipid transfer in plant cell<lb/> 
+
+	Keywords: 
+	<keyword>lipid transfer, membrane, plant cell, vesicle, membrane contact, glycerolipid<lb/></keyword>
+	
+	Type of article: 
+	<note type="doctype">Review</note>
+
+	Abstract<lb/> 
+	<div type="abstract">Membranes of plant organelles have specific glycerolipid compositions. Selective distribution<lb/> of lipids at the levels of subcellular organelles, membrane leaflets and membrane domains<lb/> reflects a complex and finely tuned lipid homeostasis. Glycerolipid neosynthesis occurs<lb/> mainly in plastid envelope and endoplasmic reticulum membranes. Since most lipids are not<lb/> only present in the membranes where they are synthesised, one cannot explain membrane<lb/> specific lipid distribution by metabolic processes confined in each membrane compartment. In<lb/> this review, we present our current understanding of glycerolipid trafficking in plant cells. We<lb/> examine the potential mechanisms involved in lipid transport inside bilayers and from one<lb/> membrane to another. We survey lipid transfers going through vesicular membrane flow and<lb/> those dependent on lipid transfer proteins at membrane contact sites. By introducing recently<lb/> described membrane lipid reorganisation during phosphate deprivation and recent<lb/> developments issued from mutant analyses, we detail the specific lipid transfers towards or<lb/> outwards the chloroplast envelope.</div>
+
+		</front>
+	</text>
+</tei>

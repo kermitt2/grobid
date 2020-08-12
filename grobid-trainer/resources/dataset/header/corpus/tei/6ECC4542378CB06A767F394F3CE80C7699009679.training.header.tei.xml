@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="6ECC4542378CB06A767F394F3CE80C7699009679"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	An application of<lb/> the stages of<lb/> change model
+
+	<page>661<lb/></page>
+
+	<reference>British Food Journal,<lb/> Vol. 102 No. 9, 2000, pp. 661-668.<lb/> </reference>
+
+	<note type="copyright"># MCB University Press</note>
+
+	, 0007-070X<lb/>
+
+	<docTitle>
+	<titlePart>An application of the stages of<lb/> change model to consumer use<lb/> of food labels<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Neil S. Coulson<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Plymouth,</affiliation>
+	</byline>
+
+	<address>Plymouth, UK<lb/></address>
+
+	Keywords
+	<keyword>Consumer behaviour, Diet, Food, Labelling<lb/></keyword>
+
+	Abstract
+	<div type="abstract">Describes a study which applied the stages of change model formulated by Prochaska<lb/> and DiClemente to consumer use of food labels. A total of 165 students completed a self-report<lb/> questionnaire measuring stages of change, decisional balance, dietary behaviour and food choice<lb/> motivations. The percentage of participants classified into each stage was as follows:<lb/> precontemplation 30.0, contemplation 4.5, action 16.4 and maintenance 49.1. Significant<lb/> associations with stage of change and decisional balance were observed. In addition, consumption<lb/> of fruit and fatty foods was associated with stage of change as was a range of motivational<lb/> factors in food choice.<lb/> </div>
+
+	The current issue and full text archive of this journal is available at<lb/>
+
+	http://www.emerald-library.com
+
+		</front>
+	</text>
+</tei>

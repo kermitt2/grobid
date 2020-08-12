@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="118._10.1.1.45.3116"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	TR-1923<lb/> 
+
+	<date>September 1987<lb/></date>
+
+	<docTitle>
+	<titlePart>Invariant Subspaces<lb/> and<lb/> Capital Punishment<lb/> (A Participatory Paper)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. W. Stewart</docAuthor> 
+	</byline>
+
+	abstract<lb/>
+	<div type="abstract">The notion of invariant subspaces is useful in a number of the-<lb/>oretical and practical applications. In this paper we give an<lb/> elementary treatment of invariant subspaces that stresses their<lb/> connection with simple eigenvalues and their eigenvectors.<lb/></div>
+
+	<byline>
+	<affiliation>Department of Computer Science and Institute for Physical Science and Technology,<lb/> University of Maryland,</affiliation>
+	</byline>
+
+	<address>College Park, MD 20742.<lb/></address>
+
+	Invariant Subspaces<lb/> and<lb/> Capital Punishment<lb/> (A Participatory Paper)<lb/> 
+
+	<byline>
+	<docAuthor>G. W. Stewart</docAuthor> 
+	</byline>
+	
+		</front>
+	</text>
+</tei>

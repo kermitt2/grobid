@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="A2E93ADB25071A8CC73BC354924E574E9A6C6E55"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROBIOL. BULL. 25(2), 121-124 (1991)<lb/></reference>
+
+	<docTitle>
+	<titlePart>PHYTOPLANKTON COMMUNITY COMPOSITION IN LAKE XOLOTLAN<lb/> (MANAGUA)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. HOOKER, M. RUIZ and M. PUM<lb/></docAuthor>
+	</byline>
+
+	KEYWORDS:
+	<keyword>community composition; phytoplankton; tropical lake</keyword>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Results of two years of research on phytoplankton species composition in Lake Xolotl,~n (Managua) are<lb/> presented. A summary of the planktonic algae from other Nicaraguan lakes is also included. One hundred and<lb/> twenty phytoplankton taxa were identified. A list of species and comments about relevant properties of the<lb/> most frequent taxa are given. The qualitative composition of Lake Xolotl~n phytoplankton is compared with<lb/> that of other tropical waterbodies.</div>
+
+	<page>121<lb/></page> 
+
+	Address of the authors:<lb/>
+	<byline>
+	<affiliation>CENTRO PARA LA INVESTIGACION EN RECURSOS ACUATICOS DE NICARAGUA, </affiliation>
+	</byline>
+
+	<address>Apartado Postal 4598, Managua, Nicaragua.</address>
+
+		</front>
+	</text>
+</tei>

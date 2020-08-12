@@ -139,4 +139,27 @@ public class PDFAnnotation {
 		}
 		return res;
 	}
+
+    /**
+     * Return the intersection box between token and annotation
+     */
+    public BoundingBox getIntersectionBox(LayoutToken token) {
+        if (token == null)
+            return null;
+        BoundingBox intersectBox = null;
+        int pageToken = token.getPage();
+        if (pageToken == pageNumber) {
+            BoundingBox tokenBox = BoundingBox.fromLayoutToken(token);
+            for(BoundingBox box : boundingBoxes) {
+                if (box.intersect(tokenBox)) {
+                    if (box.contains(tokenBox)) {
+                        intersectBox = tokenBox;
+                        break;
+                    }
+                    intersectBox = box.boundingBoxIntersection(tokenBox);
+                }
+            }
+        }
+        return intersectBox;
+    }
 }

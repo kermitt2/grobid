@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="C12-1005"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of COLING 2012: Technical Papers, pages 67-82,<lb/> COLING 2012, Mumbai, December 2012.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Experiments with Term Translation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M ihael ARCAN 1 Chr ist ian F E DERM AN N 2 Paul BU I T E LAAR 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>(1) Unit for Natural Language Processing, Digital Enterprise Research Institute<lb/> National University of Ireland Galway<lb/></affiliation>
+	</byline>
+
+	<address>Galway, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>(2) Language Technology Lab, German Research Center for AI<lb/></affiliation>
+	</byline>
+
+	<address>Saarbrücken, Germany<lb/></address>
+
+	<email>mihael.arcan@deri.org</email>, <email>paul.buitelaer@deri.org</email>,<lb/> <email>cfedermann@dfki.de</email>
+
+	Abstract<lb/>
+	<div type="abstract">In this article we investigate the translation of financial terms from English into German in the<lb/> isolation of an ontology vocabulary. For this study we automatically built new domain-specific<lb/> resources from the translation search engine Linguee and from the online encyclopaedia Wikipedia.<lb/> Due to the fact that we performed the translation approach on a monolingual ontology, we ran<lb/> several sub-experiments to find the most appropriate model to translate the financial vocabulary.<lb/> The findings from these experiments lead to the conclusion that a hybrid translation system, a<lb/> combination of bilingual terminological resources and statistical machine translation, can help<lb/> to improve translation of domain-specific terms. Finally we undertook a manual cross-lingual<lb/> evaluation on the monolingual ontology to get a better understanding on this specific short text<lb/> translation task.<lb/></div>
+
+	Keywords:
+	<keyword>Ontologies and terminology, Empirical machine translation.</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="804B9E237B1578672A990FD71526F92B6EB24074"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	Vascular: Aneurysm<lb/>
+	<docTitle>
+	<titlePart>Do Cerebral Aneurysms Originate<lb/> at the Site of Medial Defects?<lb/> Microscopic Examinations of<lb/> Experimental Aneurysms at the<lb/> Fenestration of the Anterior<lb/> Cerebral Artery in Rats<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kazuya Futami, M.D.,* Junkoh Yamashita, M.D., Ph.D., F.R.C.S. ED.,* and<lb/> Sotaro Higashi, M.D. †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Department of Neurosurgery, Kanazawa University School of Medicine, Kanazawa, and<lb/> †Division of Neurosurgery, Keijyu General Hospital,</affiliation>
+	</byline>
+
+	<address>Nanao, Japan<lb/></address>
+
+	<reference>Futami K, Yamashita J, Higashi S. Do cerebral aneurysms origi-<lb/>nate at the site of medial defects? Microscopic examinations of<lb/> experimental aneurysms at the fenestration of the anterior ce-<lb/>rebral artery in rats. Surg Neurol 1998;50:141-6.</reference>
+
+	<div type="abstract">BACKGROUND<lb/> The role of medial defects on cerebral aneurysm forma-<lb/>tion remains obscure. To examine whether cerebral an-<lb/>eurysms originate at the site of medial defects, we deter-<lb/>mined the exact locations of both the origin of<lb/> experimental aneurysms and medial defects at the apex<lb/> of fenestrations of the anterior cerebral artery (ACA) in<lb/> rats. METHODS<lb/> Cerebral aneurysms were induced in rats by means of the<lb/> combination of ligation of the unilateral common carotid<lb/> artery and induced hypertension. The ACA opposite the<lb/> ligation was examined under a light microscope. RESULTS<lb/> Medial defects, which could be observed in approxi-<lb/>mately one-half of the fenestrations, existed always<lb/> around the lateral margin of the intimal pads. On the<lb/> contrary, early aneurysmal lesions exclusively occurred<lb/> at the portion just medial to the intimal pads. Subse-<lb/>quently, both pads and defects seemed to be involved in<lb/> aneurysm walls. CONCLUSION<lb/> These results clearly indicate that cerebral aneurysms do<lb/> not originate at the site of medial defects.</div>
+
+	<note type="copyright">© 1998 by<lb/> Elsevier Science Inc.<lb/></note>
+
+	KEY WORDS<lb/>
+	<keyword>Cerebral aneurysm, rat, pathogenesis, medial defect, inti-<lb/>mal pad.<lb/></keyword>
+
+	Address reprint requests to:
+	<byline>
+	<docAuthor>Kazuya Futami, M.D.,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Division of Neuro-<lb/>surgery, Himi Municipal Hospital,</affiliation>
+	</byline>
+
+	<address>Saiwai-cho 31-9, Himi 935-0021, Japan.<lb/></address>
+
+	<note type="submission">Received February 14, 1996; accepted July 23, 1996.<lb/></note>
+
+	<note type="copyright">© 1998 by Elsevier Science Inc.<lb/></note>
+
+	0090-3019/98/$19.00<lb/> 655 Avenue of the Americas, New York, NY 10010<lb/>
+	<idno>PII S0090-3019(96)00371-0</idno>
+
+		</front>
+	</text>
+</tei>

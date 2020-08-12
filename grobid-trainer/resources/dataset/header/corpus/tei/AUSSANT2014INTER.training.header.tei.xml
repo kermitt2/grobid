@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="AUSSANT2014INTER"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>DOSSIERS D&apos;HEL 2014 SHESL 1<lb/></reference>
+
+	<docTitle>
+	<titlePart>LA LECTURE ARYASAMAJISTE DU VYĀKARAṆA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Émilie Aussant<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CNRS UMR 7597 HTL<lb/> Univ Paris Diderot Sorbonne Paris Cité,</affiliation>
+	</byline>
+
+	<address>France</address>
+
+		</front>
+	</text>
+</tei>

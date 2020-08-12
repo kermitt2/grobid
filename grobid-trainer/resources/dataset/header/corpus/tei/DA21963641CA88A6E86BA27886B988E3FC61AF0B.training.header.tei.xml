@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="DA21963641CA88A6E86BA27886B988E3FC61AF0B"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Analysis of factors predictive of survival based<lb/> on 49 patients with systemic Wegener&apos;s<lb/> granulomatosis and prospective follow-up<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A. Mahr, T. Girard, R. Agher 1 and L. Guillevin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Service de Me Âdecine Interne, Ho Ãpital Avicenne, Universite Â Paris-Nord,<lb/></affiliation>
+	</byline>
+
+	<address>125, route de Stalingrad, 93009 Bobigny Cedex and</address>
+
+	<byline>
+	<affiliation>1 Service des Maladies<lb/> Infectieuses et Tropicales, Ho Ãpital Pitie Â-Salpe Âtrie Áre,</affiliation>
+	</byline>
+
+	<address>47±83, boulevard de<lb/> l&apos;Ho Ãpital, 75651 Paris Cedex 13, France</address>
+
+	Abstract<lb/>
+	<div type="abstract">Objectives. This prospective study attempted to determine factors predictive of survival in<lb/> systemic Wegener&apos;s granulomatosis (WG) based on 49 patients.<lb/> Patients and methods. All patients had previously untreated systemic WG. Treatment was with<lb/> oral or pulse cyclophosphamide plus corticosteroids. Univariate and multivariate analyses of<lb/> survival were performed using 13 parameters evaluated at diagnosis.<lb/> Results. The mortality rate was 37% during a mean follow-up period of 1.9 yr. Among the<lb/> 13 parameters evaluated, univariate analysis selected the following factors as predictors of a poor<lb/> outcome: serum creatinine 018.1 mgudl, age 057 yr, and erythrocyte sedimentation rate (ESR)<lb/> 090 mmu1st h. The absence of ear, nose and throat (ENT) involvement also tended to predict a<lb/> greater risk of mortality. Glomerulonephritis, when present and regardless of creatininaemia,<lb/> and pulmonary involvement had no signi®cant effect. Multivariate analysis retained serum<lb/> creatinine 018.1 mgudl and age 057 yr as signi®cant predictors of poor prognosis.<lb/> Conclusions. Our results suggest that impaired renal function and older age are independent<lb/> factors predicting poor outcome in WG. ESR proved to be a good marker of disease severity.<lb/> Conversely, univariate analysis indicated that patients with ENT involvement tended to have<lb/> a better outcome, suggesting a more benign evolution of granulomatous disease compared with<lb/> more aggressive vasculitis.<lb/></div>
+
+	KEY WORDS:
+	<keyword>Wegener&apos;s granulomatosis, Prognostic factors.<lb/></keyword>
+
+	Correspondence to:
+	<byline>
+	<docAuthor>L. Guillevin,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Service de Me Âdecine Interne,<lb/></affiliation>
+	</byline>
+
+	<address>Ho Ã pital Avicenne, 125, route de Stalingrad, 93009 Bobigny Cedex,<lb/> France.<lb/></address>
+
+	<note type="submission">Submitted 5 May 2000; revised version accepted 14 November 2000.<lb/></note>
+
+	<reference>Rheumatology 2001;40:492±498<lb/></reference>
+
+	<note type="copyright">ß 2001 British Society for Rheumatology</note>
+
+	<page>492</page>
+
+		</front>
+	</text>
+</tei>

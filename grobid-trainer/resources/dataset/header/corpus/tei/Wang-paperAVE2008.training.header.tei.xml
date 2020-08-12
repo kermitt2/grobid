@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Wang-paperAVE2008"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Information Synthesis for Answer Validation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rui Wang 1 and Günter Neumann 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Saarland University<lb/> </affiliation>
+	</byline>
+
+	<address>66123 Saarbrücken, Germany<lb/></address>
+
+	<email>rwang@coli.uni-sb.de<lb/></email>
+
+	<byline>
+	<affiliation>2 LT-Lab, DFKI<lb/></affiliation>
+	</byline>
+
+	<address>Stuhlsatzenhausweg 3, 66123 Saarbrücken, Germany<lb/></address>
+
+	<email>neumann@dfki.de<lb/></email>
+
+	Abstract.
+	<div type="abstract">This report is about our participation in the Answer Validation Exercise (AVE2008).<lb/> Our system casts the AVE task into a Recognizing Textual Entailment (RTE) problem and uses an<lb/> existing RTE system to validate answers. Additional information from named-entity (NE)<lb/> recognizer, question analysis component, and so on, is also considered as assistances to make the<lb/> final decision. In all, we have submitted two runs, one run for English and the other for German.<lb/> They have achieved f-measures of 0.64 and 0.61 respectively. Compared with our system last year,<lb/> which purely depends on the output of the RTE system, the extra information does show its<lb/> effectiveness.<lb/></div>
+
+	Keywords: 
+	<keyword>Answer Validation, Recognizing Textual Entailment, Information Synthesis</keyword>
+
+		</front>
+	</text>
+</tei>

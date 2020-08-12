@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="177._10.1.1.51.7157"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Space of Presentation Emphasis Techniques for Visualizing Graphs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Emanuel G. Noik<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Systems Research Institute<lb/> University of Toronto<lb/></affiliation>
+	</byline>
+
+	<address>6 King&apos;s College Road<lb/> Toronto, Ontario, Canada m4s 1a1<lb/></address>
+
+	e-mail:
+	<email>noik@db.toronto.edu<lb/></email>
+
+	Telephone: (416) 978 8609 Abstract<lb/>
+	<div type="abstract">The graph topo-visual formalism has been shown to<lb/> be well-suited to the task of visualizing complex rela-<lb/>tions on a set of elements. Unfortunately, most visual<lb/> formalisms do not scale very well. This observation is<lb/> particularly true of graphs, which even when hand-drawn<lb/> by an artist, are seldom meaningful when the number of<lb/> nodes or links exceeds a very modest threshold -typi-<lb/>cally only a few hundred elements. This severe limitation<lb/> has prompted many researchers to seek alternative visu-<lb/>alization techniques that may eliminate, or, at the very<lb/> least, raise this threshold.<lb/> In this paper we analyze these recent efforts, describe<lb/> an abstract space of presentation emphasis techniques,<lb/> and locate the current approaches within this space. The<lb/> contributions of this paper are several: (1) a significant<lb/> portion of recent work is collected and reviewed; (2) a<lb/> common set of criteria and a taxonomy of graph views<lb/> are proposed; these, (3) permit a more direct comparison<lb/> of previous work; which helps to, (4) identify common<lb/> shortcomings and limitations; which in turn, (5) suggest<lb/> future directions.<lb/></div>
+
+	Keywords:
+	<keyword>presentation emphasis techniques, fisheye<lb/> views, relational data visualization, graphs, nested<lb/> graphs.</keyword>
+
+		</front>
+	</text>
+</tei>

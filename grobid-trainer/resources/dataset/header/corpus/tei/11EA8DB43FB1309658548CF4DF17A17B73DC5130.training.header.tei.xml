@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="11EA8DB43FB1309658548CF4DF17A17B73DC5130"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Depth and homogeneity in regional flood frequency analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>F. Chebana 1 and T. B. M. J. Ouarda 1<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 17 December 2007; revised 22 July 2008; accepted 3 September 2008;</note>
+
+	published
+	<date>15 November 2008.<lb/></date>
+
+	[1]
+	<div type="abstract">Regional frequency analysis (RFA) consists generally of two steps: (1) delineation of<lb/> hydrological homogeneous regions and (2) regional estimation. Existing regionalization<lb/> methods which adopt this two-step approach suffer from two principal drawbacks. First,<lb/> the restriction of the regional estimation to a particular region by excluding some sites can<lb/> correspond to a loss of some information. Second, the definition of a region generates a<lb/> border effect problem. To overcome these problems, a new method is proposed in the<lb/> present paper. The proposed method is based on three elements: (1) a weight function to<lb/> treat the border effect problem, (b) a function to evaluate how &apos;&apos;similar&apos;&apos; each site is to the<lb/> target one, and (c) an iterative procedure to improve estimation results. Element (b) is<lb/> treated using the statistical notion of depth functions which is introduced to provide a<lb/> ranking of stations in a multivariate context. Furthermore, the properties of depth<lb/> functions meet the characteristics sought in RFA. It is shown that the proposed method<lb/> is flexible and general and that traditional RFA methods represent special cases of the<lb/> depth-based approach corresponding to particular weight functions. A comparison is<lb/> carried out with the canonical correlation analysis (CCA) approach. Results indicate<lb/> that the depth-based approach performs better than does CCA both in terms of relative bias<lb/> and relative root mean squares error.<lb/></div>
+
+	Citation: 
+	<reference>Chebana, F., and T. B. M. J. Ouarda (2008), Depth and homogeneity in regional flood frequency analysis, Water Resour.<lb/> Res., 44, W11422, </reference>
+
+	<idno>doi:10.1029/2007WR006771</idno>.<lb/>
+
+	<byline>
+	<affiliation>1 Institut National de la Recherche Scientifique, Centre Eau Terre et<lb/> Environment,</affiliation>
+	</byline>
+
+	<address>Quebec, Quebec, Canada.<lb/></address>
+
+	<note type="copyright">Copyright 2008 by the American Geophysical Union.<lb/></note>
+
+	0043-1397/08/2007WR006771 W11422<lb/>
+	<reference>WATER RESOURCES RESEARCH, VOL. 44, W11422, doi:10.1029/2007WR006771, 2008<lb/></reference>
+
+	<page>1 of 14<lb/></page>
+
+	<byline>
+	<docAuthor>F. Chebana and T. B. M. J. Ouarda, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut de la Recherche Scientifique,<lb/> Centre Eau Terre et Environment,</affiliation>
+	</byline>
+
+	<address>490 rue de la Couronne, Quebec, QC,<lb/> Canada G1K 9A9.</address>
+
+	(<email>fateh_chebana@ete.inrs.ca</email>)
+		</front>
+	</text>
+</tei>

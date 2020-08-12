@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="20838D35117BAA646121A080BE2AD1DE5388AA44"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), pp. 207-211 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Low-lying excitations around a single vortex<lb/> in a d-wave superconductor<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Y. Morita 1 , M. Kohmoto 2 ( * ) and K. Maki 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Applied Physics, University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo Bunkyo-ku, Tokyo 113, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Solid State Physics, University of Tokyo<lb/></affiliation>
+	</byline>
+
+	<address>7-22-1 Roppongi Minato-ku, Tokyo 106, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Physics and Astronomy, University of Southern California<lb/></affiliation>
+	</byline>
+
+	<address>Los Angeles, CA 90089-0484, USA<lb/></address>
+
+	(
+	<note type="submission">received 23 May 1997; accepted in final form 10 September 1997</note>
+
+	)<lb/>
+
+	<keyword>PACS. 74.60Ec -Mixed state, critical fields, and surface sheath.<lb/> PACS. 74.72−h -High-Tc compounds.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">A full quantum-mechanical treatment of the Bogoliubov-de Gennes equation for a<lb/> single vortex in a d-wave superconductor is presented. First, we find low-energy states extended<lb/> in four diagonal directions, which have no counterpart in a vortex of s-wave superconductors.<lb/> The four-fold symmetry is due to &quot;quantum effect &quot;, which is enhanced when pFξ is small. On<lb/> the other hand, when pFξ is large, the four-fold symmetry is suppressed. Second, for pFξ ∼ 1,<lb/> a peak with a large energy gap E0 ∼ ∆ is found in the density of states, which is due to the<lb/> formation of the lowest bound states.<lb/></div>
+
+	( * ) E-mail:
+	<email>kohmoto@issp.u-tokyo.ac.jp<lb/></email>
+
+	<note type="copyright">c Les Editions de Physique</note>
+		</front>
+	</text>
+</tei>

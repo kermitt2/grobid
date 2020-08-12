@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="445._10.1.1.76.3572"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Taxonomic Syntax for First Order Inference<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>DAVID MCALLESTER and ROBERT GIVAN<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Massachusetts Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Cambridge Massachusetts<lb/></address>
+
+	Abstract:
+	<div type="abstract">We identify a new polynomial time decidable fragment of rst order<lb/> logic and present a general method for using polynomial time inference procedures<lb/> in knowledge representation systems. Our results indicate that a non-standard<lb/> \taxonomic&quot; syntax is essential in constructing natural and powerful polynomial<lb/> time inference procedures. The central role of taxonomic syntax in our polyno-<lb/>mial time inference procedures provides technical support for the often expressed<lb/> intuition that knowledge is better represented in terms of taxonomic relationships<lb/> than classical rst order formulas. To use our procedures in a knowledge repre-<lb/>sentation system we de ne a \Socratic proof system&quot; which is complete for rst<lb/> order inference and which can be used as a semi-automated interface to a rst<lb/> order knowledge base.<lb/></div>
+
+	Categories and Subject Descriptors:
+	<keyword> F.4.1 Mathematical Logic and For-<lb/>mal Languages]: Mathematical logic | computational logic, mechanical theorem<lb/> proving; I.2.3 Arti cial Intelligence]: Deduction and Theorem Proving | de-duction<lb/></keyword>
+
+	General Terms:
+	<keyword>Deduction, Algorithms<lb/></keyword>
+
+	Additional Keywords and Phrases:
+	<keyword>Proof Theory, Machine Inference, The-<lb/>orem Proving, Automated Reasoning, Polynomial Time Algorithms, Inference<lb/> Rules, Proof Systems, Mechanical Veri cation.<lb/></keyword>
+
+	<note type="funding">This research was supported in part by National Science Foundation Grant IRI-<lb/>8819624 and in part by the Advanced Research Projects Agency of the Department<lb/> of Defense under O ce of Naval Research contract N00014-85-K-0124 and N00014-<lb/>89-J-3202.<lb/></note>
+
+	Author&apos;s Address:
+	<byline>
+	<affiliation>MIT Arti cial Intelligence Laboratory, </affiliation>
+	</byline>
+
+	<address>545 Technology Square,<lb/> Cambridge Mass, 02139,</address>
+
+	<email>DAM@ai.mit.edu<lb/></email>
+
+	This paper appeared in 
+	<reference>JACM, vol. 40, no. 2, April 1993.</reference>
+
+	A postscript electronic source<lb/> for this paper can be found in ftp.ai.mit.edu:/pub/dam/jacm1.ps. A bibtex reference can<lb/> be found in internet le ftp.ai.mit.edu:/pub/dam/dam.bib.
+
+		</front>
+	</text>
+</tei>

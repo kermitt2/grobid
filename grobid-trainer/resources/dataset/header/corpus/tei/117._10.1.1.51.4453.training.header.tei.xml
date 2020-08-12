@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="117._10.1.1.51.4453"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>DTP: An E cient Transport Protocol<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dheeraj Sanghi and Ashok K. Agrawala<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Science, University of Maryland,</affiliation>
+	</byline>
+
+	<address>College Park,<lb/> MD 20742, USA</address>
+
+	Abstract<lb/>
+	<div type="abstract">We recently introduced a new ow control scheme, called send-time control, which is<lb/> based on a deterministic model of virtual circuits in a computer network. In this scheme,<lb/> the time at which a packet is sent by a source is computed from estimates of round-trip<lb/> time, tra c in the network and bottleneck service time. In this paper, we describe a new<lb/> transport protocol, called DTP, which uses send-time control as its ow control scheme.<lb/> Preliminary measurements of coast-to-coast connections over the Internet show signi cant<lb/> performance improvement over TCP, which is the most commonly used transport protocol<lb/> in the Internet today.<lb/></div>
+
+	Keyword Codes: 
+	<keyword>C.2.2<lb/> </keyword>
+
+	Keywords:
+	<keyword>Computer-Communication Networks, Network Protocols<lb/></keyword>
+
+	<note type="funding">This work is supported in part by Rome Labs and DARPA under contract F30602-90-C-0010 to<lb/> UMIACS at the University of Maryland. The views, opinions, and/or ndings contained in this report<lb/> are those of the author(s) and should not be interpreted as representing the o cial policies, either<lb/> expressed or implied, of the Defense Advanced Research Projects Agency, RL, or the U.S. Government.<lb/> Computer facilities were provided in part by NSF grant CCR-8811954.</note>
+		</front>
+	</text>
+</tei>

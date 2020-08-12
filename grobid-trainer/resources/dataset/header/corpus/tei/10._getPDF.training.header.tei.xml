@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10._getPDF"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>IEEE TRANSACTIONS ON PARALLEL AND DISTRIBUTED SYSTEMS, VOL. 9, NO. 5, MAY 1998 481<lb/></reference>
+
+	<docTitle>
+	<titlePart>Alleviating Consumption Channel Bottleneck in<lb/> Wormhole-Routed k-ary n-Cube Systems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Debashis Basak, Member, IEEE, and Dhabaleswar K. Panda, Member, IEEE<lb/></docAuthor>
+	</byline>
+
+	Abstract-
+	<div type="abstract">This paper identifies performance degradation in wormhole routed k-ary n-cube networks due to limited number of<lb/> router-to-processor consumption channels at each node. Many recent research in wormhole routing have advocated the advantages<lb/> of adaptive routing and virtual channel flow control schemes to deliver better network performance. This paper indicates that the<lb/> advantages associated with these schemes cannot be realized with limited consumption capacity. To alleviate such performance<lb/> bottlenecks, a new network interface design using multiple consumption channels is proposed. To match virtual multiplexing on<lb/> network channels, we also propose each consumption channel to support multiple virtual consumption channels. The impact of<lb/> message arrival rate at a node on the required number of consumption channels is studied analytically. It is shown that wormhole<lb/> networks with higher routing adaptivity, dimensionality, degree of hot-spot traffic, and number of virtual lanes have to take advantage<lb/> of multiple consumption channels to deliver better performance. The interplay between system topology, routing algorithm, number<lb/> of virtual lanes, messaging overheads, and communication traffic is studied through simulation to derive the effective number of<lb/> consumption channels required in a system. Using the ongoing technological trend, it is shown that wormhole-routed systems can<lb/> use up to two-four consumption channels per node to deliver better system performance.<lb/> </div>
+
+	Index Terms-
+
+	<keywords>Parallel computer architecture, wormhole routing, k-ary n-cube, consumption channel, virtual channel, deterministic<lb/> routing, adaptive routing, hot-spot traffic, and interprocessor communication.<lb/></keywords>
+
+	----------3 ----------<lb/>
+
+	1045-9219/98/$10.00
+	<note type="copyright">© 1998 IEEE</note>
+
+	²²²²²²²²²²²²²²²²<lb/>
+	<byline>
+	<docAuthor>• D. Basak</docAuthor>
+	</byline>
+
+	is with 
+
+	<byline>
+	<affiliation>FORE Systems, Inc.,</affiliation>
+	</byline>
+
+	<address>1000 Fore Drive, Warrendale, PA<lb/> 15086-7502.</address>
+
+	E-mail:
+	<email>dbasak@fore.com</email>
+
+	.<lb/>
+	<byline>
+	<docAuthor>• D.K. Panda</docAuthor>
+	</byline>
+
+	is with the
+	<byline>
+	<affiliation>Department of Computer and Information Science,<lb/> Ohio State University,</affiliation>
+	</byline>
+
+	<address>Columbus, OH 43210-1277.<lb/></address>
+
+	E-mail:
+	<email>panda@cis.ohio-state.edu</email>
+
+	.<lb/> Manuscript
+	<note type="submission">received 31 Aug. 1995.<lb/></note>
+
+	For information on obtaining reprints of this article, please send e-mail to:<lb/> tpds@computer.org
+	, and reference IEEECS Log Number 101299. T<lb/> Authorized licensed use limited to:
+	<reference>European Patent Office. Downloaded on July 10, 2009 at 03:57 from IEEE Xplore. Restrictions apply.<lb/></reference>
+
+	Authorized licensed use limited to:
+	<reference>European Patent Office. Downloaded on July 10, 2009 at 03:57 from IEEE Xplore. Restrictions apply.</reference>
+
+		</front>
+	</text>
+</tei>

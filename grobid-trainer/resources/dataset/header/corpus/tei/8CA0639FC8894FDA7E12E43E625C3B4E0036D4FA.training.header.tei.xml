@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="8CA0639FC8894FDA7E12E43E625C3B4E0036D4FA"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROBIOL. BULL. 25(2), 105-109 (1991)<lb/></reference>
+
+	<docTitle>
+	<titlePart>LIMNOLOGICAL PERSPECTIVE OF LAKE XOLOTL.~N (MANAGUA):<lb/> THE PLALM<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>SALVADOR MONTENE(3RO-GUILLEN<lb/></docAuthor>
+	</byline>
+
+	KEYWORDS:
+	<keyword>Nicaragua; Xolotl~n; tropical lake; scientific cooperation</keyword>
+
+	ABSTRACT<lb/>
+	<div type="abstract">A general view of Lake Xolotl;in (known also as Lake Managua) and the research carried out during the<lb/> Project Limnology Applied to Lake Managua (PLALM) are reported here. A summarized account o? the results,<lb/> given in details as seperated papers elsewhere in the same volume, is also presented.<lb/> Fig. 1. Geographic localization of lake XolotlAn. </div>
+
+	<page>105<lb/></page> 
+
+	Address of the author:<lb/>
+	<byline>
+	<affiliation>CENTRO PARA LA INVESTIGACION EN RECURSOS ACUATICOS DE NICARAGUA,</affiliation>
+	</byline> 
+
+	<address>Apartado Postal 4598, Managua, Nicaragua.</address>
+
+		</front>
+	</text>
+</tei>

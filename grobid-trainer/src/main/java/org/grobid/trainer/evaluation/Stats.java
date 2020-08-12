@@ -37,6 +37,10 @@ public final class Stats {
         return this.labelStats.keySet();
     }
 
+    public void removeLabel(String label) {
+        this.labelStats.remove(label);
+    }
+
     public void incrementFalsePositive(String label) {
         this.incrementFalsePositive(label, 1);
     }

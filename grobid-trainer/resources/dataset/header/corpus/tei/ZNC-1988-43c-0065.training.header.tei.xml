@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ZNC-1988-43c-0065"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Energy Transfer within PC Trimers of Mastigocladus laminosus<lb/> Studied by Picosecond Time-Resolved Transient Absorption<lb/> Spectroscopy<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Schneider and P. Geiselhart<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institut für Physikalische und Theoretische Chemie der Technischen Universität München,<lb/></affiliation>
+	</byline>
+
+	<address>Lichtenbergstraße 4, D-8046 Garching, Bundesrepublik Deutschland<lb/></address>
+
+	<byline>
+	<docAuthor>S. Siebzehnrübl, R. Fischer, and H. Scheer<lb/></docAuthor>
+	</byline>
+	
+	<byline>
+	<affiliation>Botanisches Institut der Ludwig-Maximilians-Universität,</affiliation>
+	</byline>
+
+	<address>Menzinger Straße 67,<lb/> D-8000 München 19, Bundesrepublik Deutschland<lb/></address>
+
+	<reference>Z. Naturforsch. 43c, 55-62 (1988);</reference> 
+
+	<note type="submission">received July 2/October 12, 1987<lb/></note>
+
+	<keywords>Energy Transfer, Phycocyanin Trimer, Excited State Lifetimes, Transient Absorption Recovery<lb/></keywords>
+
+	<div type="abstract">The transient absorption recovery induced in phycocyanin trimers by picosecond pulses of<lb/> variable wavelength (570-620 nm) has been recorded and analyzed by applying a least-squares<lb/> multi-exponential fit procedure.<lb/> The results suggest that in native PC trimers the chromophores exhibit a microheterogeneity<lb/> with the effect that the derived apparent lifetimes are functions of excitation and probing wave-<lb/>length. It is suggested that, due to strong excitonic coupling between a-84 and ß-84<lb/> chromophores, the lifetime of the terminal acceptor state is reduced to about 900 ps; the apparent<lb/> energy transfer time from chromophore ß-155 to a-84 and ß-84 chromophores varies between<lb/> 20-50 ps depending on the actual chromophore-protein arrangement (microheterogeneity).</div>
+
+		</front>
+	</text>
+</tei>

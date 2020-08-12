@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>T</forename>
+								 <surname>Harada</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>P</forename>
+								 <surname>Baril</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>R</forename>
+								 <surname>Gangeswaran</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>G</forename>
+								 <surname>Kelly</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>C</forename>
+								 <surname>Chelala</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>V</forename>
+								 <surname>Bhakta</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>K</forename>
+								 <surname>Caulee</surname>
+								 <marker>1,2</marker> ,
+							</persName>
+							<persName>
+								 <forename>PC</forename>
+								 <surname>Mahon</surname>
+								 <marker>1,2</marker> and
+							</persName>
+							<persName>
+								 <forename>NR</forename>
+								 <surname>Lemoine</surname>
+								 <marker>* ,1,2</marker>
+								 <roleName>Professor</roleName>
+							</persName>
+							<persName>
+								 <forename>NR</forename>
+								 <surname>Lemoine</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -162,13 +162,16 @@
 				
 				<!-- allow text in table, because Grobid does not include yet a model for 
 					 structuring table -->
-		        <elementSpec ident="table" mode="change" module="figures">
+		        <!-- elementSpec ident="table" mode="change" module="figures">
 		          <content>
+                    <rng:optional>
+                        <rng:ref name="model.resourceLike"/>
+                    </rng:optional>
 		            <rng:optional>
 		                <rng:text/>
 		            </rng:optional>
 		          </content>
-		        </elementSpec>
+		        </elementSpec-->
 				
 				<!-- allow <text> under <TEI> to be optional -->
 		        <elementSpec ident="TEI" mode="change" module="textstructure">

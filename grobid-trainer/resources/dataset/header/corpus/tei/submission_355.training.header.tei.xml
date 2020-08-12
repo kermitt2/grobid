@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="submission_355"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>INTERFERENCE OF SINGLE PHOTONS FROM DISSIMILAR<lb/> SINGLE PHOTON SOURCES<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andreas Muller, 1,* Sergey V. Polyakov, 2 Alex Ling, 2 Natalia Borjemscala, 2, 3 Edward B. Flagg, 2 Edward Van<lb/> Keuren, 3 Alan Migdall, 2 and Glenn S. Solomon 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Physics Department, University of South Florida,</affiliation>
+	</byline>
+
+	<address>Tampa, FL, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Joint Quantum Institute, National Institute of Standards and Technology &amp; University of Maryland,<lb/></affiliation>
+	</byline>
+
+	<address>Gaithersburg, MD, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Physics Department, Georgetown University,</affiliation>
+	</byline>
+
+	<address>Washington, DC, USA</address>
+
+		</front>
+	</text>
+</tei>

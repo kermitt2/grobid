@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1081._PEER_stage2_10.1088_1751-8113_40_1_001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">INSTITUTE OF PHYSICS PUBLISHING<lb/></note>
+
+	<title level="j">JOURNAL OF PHYSICS A: MATHEMATICAL AND THEORETICAL<lb/></title>
+	
+	<reference>J. Phys. A: Math. Theor. 40 (2007) 1-17<lb/></reference>
+
+	<idno>doi:10.1088/1751-8113/40/1/001<lb/></idno>
+
+	<docTitle>
+	<titlePart>Low-temperature asymptotics of integrable systems in<lb/> an external field<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael Bortz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Theoretical Physics, Research School of Physics and Engineering,<lb/> Australian National University,</affiliation>
+	</byline>
+
+	<address>Canberra ACT 0200, Australia<lb/></address>
+
+	<note type="submission">Received 23 October 2006, in final form 12 November 2006<lb/></note>
+
+	Published
+	<date>6 December 2006<lb/></date>
+
+	Online at
+	<ptr type="web">stacks.iop.org/JPhysA/40/1<lb/></ptr>
+
+	Abstract<lb/>
+	<div type="abstract">An asymptotic low-temperature expansion is performed for an integrable<lb/> bosonic lattice model and for the critical spin-1/2 Heisenberg chain in a<lb/> magnetic field. The results apply to the integrable Bose gas as well. We<lb/> also comment on a high-temperature expansion of the bosonic lattice model.<lb/></div>
+
+	<keyword>PACS numbers: 02.30.Ik, 05.30.−d, 05.30.Jp, 75.10.Pq<lb/></keyword>
+
+	(Some figures in this article are in colour only in the electronic version)<lb/> 1751-8113/07/010001+17$30.00
+	<note type="copyright">© 2007 IOP Publishing Ltd</note>
+
+	Printed in the UK
+		</front>
+	</text>
+</tei>

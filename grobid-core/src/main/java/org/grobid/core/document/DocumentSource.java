@@ -82,7 +82,7 @@ public class DocumentSource {
         pdfToXml.append(
                 GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
 
-        pdfToXml.append(" -blocks -noImageInline -fullFontName ");
+        pdfToXml.append(" -noImageInline -fullFontName -noLineNumbers");
 
         if (!withImage) {
             pdfToXml.append(" -noImage ");
@@ -382,6 +382,12 @@ public class DocumentSource {
 
     public void setXmlFile(File xmlFile) {
         this.xmlFile = xmlFile;
+    }
+
+    public double getByteSize() {
+        if (pdfFile != null)
+            return pdfFile.length();
+        return 0;
     }
 
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="JPC0150519-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0305503v2 [cond-mat.supr-con]</idno>
+
+	<date>26 May 2003<lb/></date>
+
+	<docTitle>
+	<titlePart>Superconductivity in a layered cobalt oxyhydrate Na 0.31 CoO 2 •1.3H 2 O<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Guanghan Cao, 1, * Chunmu Feng, 2 Yi Xu, 1 Wen Lu, 1 Jingqin Shen, 1 Minghu Fang, 1 and Zhu&apos;an Xu 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Physics, Zhejiang University,</affiliation>
+	</byline>
+
+	<address>Hangzhou 310027, P. R. China<lb/></address>
+
+	<byline>
+	<affiliation>2 Test &amp; Analysis Center, Zhejiang University,</affiliation>
+	</byline>
+
+	<address>Hangzhou 310027, P. R. China<lb/></address>
+
+	(Dated:
+	<date>November 18, 2018</date>
+
+	)<lb/>
+	<div type="abstract">We report the electrical, magnetic and thermal measurements on a layered cobalt oxyhydrate<lb/> Na0.31CoO2•1.3H2O. Bulk superconductivity at 4.3 K has been confirmed, however, the measured<lb/> superconducting fraction is relatively low probably due to the sample&apos;s intrinsic two-dimensional<lb/> characteristic. The compound exhibits weak-coupled and extreme type-II superconductivity with<lb/> the average energy gap ∆a(0) and the Ginzburg-Landau parameter κ of ∼ 0.50 meV and ∼ 140,<lb/> respectively. The normalized electronic specific heat data in the superconducting state well fit the<lb/> T 3 dependence, suggesting point nodes for the superconducting gap structure.<lb/></div>
+
+	<keyword>PACS numbers: 74.70.-b, 74.25.-q, 74.20.Rp<lb/></keyword>
+
+	Keywords:
+	<keyword>Cobalt oxyhydrate superconductor, Type-II superconductivity, Superconducting gap structure<lb/></keyword>
+
+	* Author to whom correspondence should be addressed;<lb/> Electronic address:
+	<email>ghcao@zju.edu.cn</email>
+
+		</front>
+	</text>
+</tei>

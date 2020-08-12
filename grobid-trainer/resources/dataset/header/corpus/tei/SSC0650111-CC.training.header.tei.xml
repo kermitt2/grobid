@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="SSC0650111-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	_<lb/> Printed in Great Britain.<lb/> 0038-I098/88 $3.00 + .00<lb/> 
+
+	<publisher>Pergamon Journals Ltd.<lb/> </publisher>
+
+	<docTitle>
+	<titlePart>NOVEL PHASE TRANSITION IN NON-ANTIFERRObIAGNETICALLY ORDERED CRYSTALS OF La2Cu04<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>S-W. Cheong, Z. Flsk, J. O. Willis, S. E. Brown, J. D. Thompson,<lb/> J. P. RemeikaN, A. S. Coopers, R. M. Aikin, D. Schiferl, and C. Cruner~-~<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Los Alamos National Laboratory,</affiliation>
+	</byline>
+
+	<address>Los Alamos, NM 87545<lb/> ~AT&amp;T Bell Laboratories, Murray Hill, NJ 07974<lb/></address>
+
+	~O~Also at 
+	<byline>
+	<affiliation>UCtA, Department of Physics and Solid State Science Center,<lb/></affiliation>
+	</byline>
+
+	<address>Los Angeles, CA 90024<lb/></address>
+
+	(
+	<note type="submission">Received 6 October 1987 by G. Burns</note>
+	)<lb/>
+
+	<div type="abstract">We report the discovery of a new phase diagram in the magnetic field-<lb/>temperature plane for single crystals o£ La2Cu04 that show no sign of<lb/> antiferromagnetic order.<lb/> The phase boundary is defined by magneto-<lb/>resistance and sucseptibility<lb/> measurements. We discuss several possibi-<lb/>lities<lb/> that may lead to the phase diagram observed.</div>
+
+		</front>
+	</text>
+</tei>

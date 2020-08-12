@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="71CD018CB31CF40490D10EAE8DA5F1FDE7032241"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<title level="j"> <lb/> </title>
+
+	<reference>Prenat. Diagn. 19: 955-958 (1999)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Elevated Second-trimester Maternal Serum hCG in Patients<lb/> Undergoing Haemodialysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Po-Jen Cheng, Ching-Ming Liu, Shuenn-Dyh Chang*, Yu-Ting Lin and Yung-Kwei Soong<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Obstetrics and Gynecology, Chang Gung Memorial Hospital, Linkou Medical Center,</affiliation>
+	</byline>
+
+	<address>Taiwan, ROC<lb/></address>
+
+	<div type="abstract">Prenatal Down syndrome screening with maternal serum alpha-fetoprotein (AFP) and human chorionic<lb/> gonadotrophin (hCG) has become common. High levels of maternal serum hCG and low levels of AFP have<lb/> been associated with an increased risk of fetal Down syndrome. In this paper, we report five pregnancies in<lb/> patients undergoing long-term haemodialysis, all of whom had false-positive second-trimester Down<lb/> syndrome screening results. All of our five patients had extremely high levels of maternal serum hCG, but<lb/> normal AFP values for their gestational age, and all had serious complications during pregnancy.</div>
+
+	<note type="copyright">Copyright<lb/> 1999 John Wiley &amp; Sons, Ltd.<lb/></note>
+
+	 :
+	<keyword>haemodialysis during pregnancy; false-positive Down syndrome screening<lb/></keyword>
+
+	*Correspondence to:
+	<byline>
+	<docAuthor>S.-D. Chang,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Obstetrics and<lb/> Gynecology, Chang Gung Memorial Hospital, Linkou Medical<lb/> Center,</affiliation>
+	</byline>
+
+	<address>No. 5 Fu-sin Street, Kweishang, Tao-Yuan Hsien, Taiwan,<lb/> ROC.<lb/></address>
+
+	CCC 0197-3851/99/100955-04$17.50<lb/>
+	<note type="copyright">Copyright 1999 John Wiley &amp; Sons, Ltd.<lb/></note>
+
+	<note type="submission">Received 4 January 1999<lb/> Revised 10 March 1999<lb/> Accepted 3 June 1999</note>
+
+		</front>
+	</text>
+</tei>

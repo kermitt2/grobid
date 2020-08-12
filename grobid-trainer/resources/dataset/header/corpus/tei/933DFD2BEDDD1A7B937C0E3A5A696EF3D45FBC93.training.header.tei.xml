@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="933DFD2BEDDD1A7B937C0E3A5A696EF3D45FBC93"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An exact solution for ideal dam-break floods on steep slopes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. Ancey, 1 R. M. Iverson, 2 M. Rentschler, 1 and R. P. Denlinger 2<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 17 July 2007; revised 23 September 2007; accepted 17 October 2007;</note>
+
+	published
+	<date>25 January 2008.<lb/></date>
+
+	[1]
+	<div type="abstract">The shallow-water equations are used to model the flow resulting from the sudden<lb/> release of a finite volume of frictionless, incompressible fluid down a uniform slope of<lb/> arbitrary inclination. The hodograph transformation and Riemann&apos;s method make it<lb/> possible to transform the governing equations into a linear system and then deduce an<lb/> exact analytical solution expressed in terms of readily evaluated integrals. Although the<lb/> solution treats an idealized case never strictly realized in nature, it is uniquely well-suited<lb/> for testing the robustness and accuracy of numerical models used to model shallow-water<lb/> flows on steep slopes.<lb/></div>
+
+	Citation:
+	<reference>Ancey, C., R. M. Iverson, M. Rentschler, and R. P. Denlinger (2008), An exact solution for ideal dam-break floods on steep<lb/> slopes, Water Resour. Res., 44, W01430, </reference>
+
+	<idno>doi:10.1029/2007WR006353</idno>.<lb/>
+
+	<byline>
+	<affiliation>1 School of Architecture, Civil and Environmental Engineering,</affiliation>
+	</byline>
+
+	<address>É cole<lb/> Polytechnique Fédérale de Lausanne, Lausanne, Switzerland.<lb/></address>
+
+	<byline>
+	<affiliation>2 U.S. Geological Survey, Cascades Volcano Observatory,</affiliation>
+	</byline>
+
+	<address>Vancouver,<lb/> Washington, USA.<lb/></address>
+
+	<note type="copyright">Copyright 2008 by the American Geophysical Union.<lb/></note>
+
+	0043-1397/08/2007WR006353 W01430<lb/>
+	<reference>WATER RESOURCES RESEARCH, VOL. 44, W01430, doi:10.1029/2007WR006353, 2008<lb/></reference>
+
+	<page>1 of 10<lb/></page>
+
+	<byline>
+	<docAuthor>C. Ancey and M. Rentschler,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Architecture, Civil and<lb/> Environmental Engineering, É cole Polytechnique Fédérale de Lausanne,<lb/></affiliation>
+	</byline>
+
+	<address>1015 Lausanne, Switzerland.</address>
+
+	(
+	<email>christophe.ancey@epfl.ch</email>
+	)<lb/> 
+
+	<byline>
+	<docAuthor>R. P. Denlinger and R. M. Iverson,</docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>U.S. Geological Survey, Cascades<lb/> Volcano Observatory,</affiliation>
+	</byline>
+
+	<address>Vancouver, WA, USA.</address>
+
+		</front>
+	</text>
+</tei>

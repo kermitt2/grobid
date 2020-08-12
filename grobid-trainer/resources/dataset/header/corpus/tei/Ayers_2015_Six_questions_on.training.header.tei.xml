@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Ayers_2015_Six_questions_on"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Six Questions on Topology in Theoretical Chemistry<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul L. Ayers a , Russell J. Boyd b , Patrick Bultinck c , Michel Ca↵arel d , Ramon Carbó-Dorca e , Mauro Causá f , Jerzy<lb/> Cioslowski g , Julia Contreras-Garcia h , David L. Cooper i , Philip Coppens j , Carlo Gatti k , Simon Grabowsky l , Paolo<lb/> Lazzeretti m , Piero Macchi n , Ángel Martín Pendás o , Paul L. A. Popelier p,q , Klaus Ruedenberg r , Henry Rzepa s ,<lb/> Andreas Savin h , Alexander Sax t , W. H. Eugen Schwarz u , Shant Shahbazian v , Bernard Silvi h,⇤ , Miquel Solà w ,<lb/> Vladimir Tsirelson x<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Chemistry and Chemical Biology, McMaster University,</affiliation>
+	</byline>
+
+	<address>1280 Main Street West, L8S 4M1, Hamilton, Ontario, Canada<lb/></address>
+
+	<byline>
+	<affiliation>b Department of Chemistry, Dalhousie University,</affiliation>
+	</byline>
+
+	<address>Halifax, Nova Scotia, Canada B3H 4R2<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Inorganic and Physical Chemistry, Ghent University,</affiliation>
+	</byline>
+
+	<address>Krijgslaan 281 (S3), B9000 Ghent, Belgium<lb/></address>
+
+	<byline>
+	<affiliation>d Laboratoire de Chimie et Physique Quantiques, CNRS-IRSAMC Université de Toulouse,</affiliation>
+	</byline>
+
+	<address>France<lb/> </address>
+
+	<byline>
+	<affiliation>e Institute of Computational Chemistry, University of Girona,</affiliation>
+	</byline>
+
+	<address>Campus de Montilivi, 17071 Girona, Spain<lb/></address>
+
+	<byline>
+	<affiliation>f Dipartimento di Chimica Paolo Corradini, Universitá degli Studi di Napoli &quot;Federico II&quot;,</affiliation>
+	</byline>
+
+	<address>Via Cintia, 80126 Napoli, Italy<lb/></address>
+
+	<byline>
+	<affiliation>g Institute of Physics, University of Szczecin,</affiliation>
+	</byline>
+
+	<address>Wielkopolska 15, 70-451 Szczecin, Poland<lb/></address>
+
+	<byline>
+	<affiliation>h Sorbonne Universités, UPMC, Univ Paris 06, UMR 7616, Laboratoire de Chimie Théorique, </affiliation>
+	</byline>
+
+	<address>case courrier 137, 4 place Jussieu, F-75005 Paris,<lb/> France<lb/></address>
+
+	<byline>
+	<affiliation>i Department of Chemistry, University of Liverpool,</affiliation>
+	</byline>
+
+	<address>Liverpool L69 7ZD, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>j Chemistry Department, University at Bu↵alo,</affiliation>
+	</byline>
+
+	<address>SUNY, Bu↵alo, New York 14260-3000, United States<lb/></address>
+
+	<byline>
+	<affiliation>k CNR-ISTM Istituto di Scienze e Tecnologie Molecolari,</affiliation>
+	</byline>
+
+	<address>via Golgi 19, 20133 Milano, Italy<lb/></address>
+
+	<byline>
+	<affiliation>l School of Chemistry and Biochemistry, Chemistry M310, The University of Western Australia,</affiliation>
+	</byline>
+
+	<address>35 Stirling Highway, Crawley WA 6009, Australia<lb/></address>
+
+	<byline>
+	<affiliation>m Dipartimento di Scienze Chimiche e Geologiche, Universitá degli Studi di Modena,</affiliation>
+	</byline>
+
+	<address>via G. Campi 183, 41100 Modena, Italy<lb/></address>
+
+	<byline>
+	<affiliation>n Department of Chemistry and Biochemistry, University of Berne,</affiliation>
+	</byline>
+
+	<address>Freiestrasse 3, CH-3012 Berne, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>o Departamento de Química Física y Analítica, Universidad de Oviedo,</affiliation>
+	</byline>
+
+	<address>E-33006 Oviedo, Spain<lb/></address>
+
+	<byline>
+	<affiliation>p Manchester Institute of Biotechnology (MIB),</affiliation>
+	</byline>
+
+	<address>131 Princess Street, Manchester, M1 7DN, Great Britain<lb/></address>
+
+	<byline>
+	<affiliation>q School of Chemistry, University of Manchester,</affiliation>
+	</byline>
+
+	<address>Oxford Road, Manchester, M13 9PL, Great Britain<lb/></address>
+
+	<byline>
+	<affiliation>r Department of Chemistry and Ames Laboratory USDOE, Iowa State University,</affiliation>
+	</byline>
+
+	<address>Ames, Iowa 50011,USA<lb/></address>
+
+	<byline>
+	<affiliation>s Department of Chemistry, Imperial College London, South Kensington Campus,</affiliation>
+	</byline>
+
+	<address>Exhibition Road, London SW7 2AY, U.K<lb/></address>
+
+	<byline>
+	<affiliation>t Department of Chemistry, University of Graz,</affiliation>
+	</byline>
+
+	<address>Heinrichstrasse 28, 8010 Graz, Austria<lb/></address>
+
+	<byline>
+	<affiliation>u Theoretical Chemistry Groups at Tsinghua University,</affiliation>
+	</byline>
+
+	<address>Beijing, 100084, China,</address>
+
+	and 
+
+	<byline>
+	<affiliation>Physical and Theoretical Chemistry Laboratory, Faculty of<lb/> Science and Engineering, University of Siegen,</affiliation>
+	</byline>
+
+	<address>Siegen, 57068, Germany<lb/></address>
+
+	<byline>
+	<affiliation>v Faculty of Chemistry, Department of Pure Chemistry, Shahid Beheshti University,</affiliation>
+	</byline>
+
+	<address>G.C., Evin, Tehran, Iran<lb/></address>
+
+	<byline>
+	<affiliation>w Institut de Química Computacional i Catàlisi (IQCC) and Departament de Química, Universitat de Girona, </affiliation>
+	</byline>
+
+	<address>Campus de Montilivi, E-17071<lb/> Girona, Catalonia, Spain<lb/></address>
+
+	<byline>
+	<affiliation>x Department of Quantum Chemistry, Mendeleev University of Chemical Technology,</affiliation>
+	</byline>
+
+	<address>Miusskaya Square 9, 125047 Moscow, Russia<lb/></address>
+
+	Abstract<lb/>
+	<div type="abstract">The paper collects the answers of the authors to the following questions:<lb/> • What is the significance of the topological approach?<lb/> • Can new chemical concepts be found by a topological approach?<lb/> • What is the status of a chemical concept within a topological approach?<lb/> • Should topological approaches provide measurable quantities?<lb/> • Is it possible to predict the outcome of a topological approach without performing a calculation on a computer?<lb/> • What are new domains for which topological approaches would be useful?<lb/></div>
+
+	⇤ Corresponding author<lb/> Email address:
+	<email>silvi@lct.jussieu.fr</email>
+
+	(Bernard Silvi)<lb/>
+	<note type="submission">Preprint submitted to Computational and Theoretical Chemistry<lb/></note> 
+
+	<date>September 24, 2014</date>
+
+		</front>
+	</text>
+</tei>

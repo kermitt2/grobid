@@ -51,7 +51,11 @@ We recommend, in particular to have a look at the metrics (using the [Metric lib
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
-You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. For preloading all the models, set the following config parameter to `true`:
+### Model loading strategy 
+You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
+Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. 
+
+For preloading all the models, set the following config parameter to `true`:
 
 ```yaml
 grobid:

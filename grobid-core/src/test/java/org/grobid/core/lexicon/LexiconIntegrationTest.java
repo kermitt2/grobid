@@ -386,4 +386,17 @@ public class LexiconIntegrationTest {
         assertThat(positions.get(4).start, is(71));
         assertThat(positions.get(4).end, is(79));
     }
+
+    @Test
+    public void testInEmailPatternLayoutToken() {
+        String piece = "20000 NW Walker Rd, Beaverton, Oregon 97006 \nericwan @ece.ogi.edu, rvdmerwe@ece.ogi.edu \nAbstract \n";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        List<OffsetPosition> positions = target.tokenPositionsEmailPattern(tokens);
+
+        assertThat(positions, hasSize(2));
+        assertThat(positions.get(0).start, is(17));
+        assertThat(positions.get(0).end, is(24));
+        assertThat(positions.get(1).start, is(27));
+        assertThat(positions.get(1).end, is(33));
+    }
 }

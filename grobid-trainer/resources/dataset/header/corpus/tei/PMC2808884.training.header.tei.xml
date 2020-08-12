@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC2808884"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>REBASE-a database for DNA restriction and<lb/> modification: enzymes, genes and genomes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Richard J. Roberts*, Tamas Vincze, Janos Posfai and Dana Macelis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>New England Biolabs, Inc.,</affiliation>
+	</byline>
+
+	<address>240 County Road, Ipswich, MA 01938, USA<lb/></address>
+
+	<note type="submission">Received September 14, 2009; Revised September 29, 2009; Accepted September 30, 2009</note>
+
+	ABSTRACT<lb/>
+	<div type="abstract">REBASE is a comprehensive database of informa-<lb/>tion about restriction enzymes, DNA methyl-<lb/>transferases and related proteins involved in the<lb/> biological process of restriction-modification<lb/> (R-M). It contains fully referenced information<lb/> about recognition and cleavage sites, isoschi-<lb/>zomers, neoschizomers, commercial availability,<lb/> methylation sensitivity, crystal and sequence data.<lb/> Experimentally characterized homing endonucle-<lb/>ases are also included. The fastest growing<lb/> segment of REBASE contains the putative R-M<lb/> systems found in the sequence databases.<lb/> Comprehensive descriptions of the R-M content of<lb/> all fully sequenced genomes are available including<lb/> summary schematics. The contents of REBASE may<lb/> be browsed from the web (http://rebase.neb.com)<lb/> and selected compilations can be downloaded by<lb/> ftp (ftp.neb.com). Additionally, monthly updates<lb/> can be requested via email.<lb/></div>
+
+	*To whom correspondence should be addressed. Tel: <phone>+1 978 380 7405</phone>; Fax: +1 978 380 7406; Email:
+	<email>roberts@neb.com<lb/></email>
+
+	<reference>D234-D236 Nucleic Acids Research, 2010, Vol. 38, Database issue<lb/></reference>
+
+	Published online
+	<date>21 October 2009<lb/></date>
+
+	<idno>doi:10.1093/nar/gkp874<lb/></idno>
+
+	<note type="copyright">ß The Author(s) 2009. Published by Oxford University Press.<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/<lb/> by-nc/2.5/uk/) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.</note>
+
+		</front>
+	</text>
+</tei>

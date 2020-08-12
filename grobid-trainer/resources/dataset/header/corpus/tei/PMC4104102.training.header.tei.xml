@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC4104102"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Asian Journal of Andrology (2014) 16, 643<lb/> </reference>
+
+	<note type="copyright">© 2014 AJA, SIMM &amp; SJTU. All rights reserved</note> 
+
+	1008-682X<lb/>
+
+	www.asiaandro.com; www.ajandrology.com<lb/> 
+
+	<note type="doctype">INVITED COMMENTARY<lb/></note>
+	<note type="doctype">Open Access<lb/></note> 
+
+	Male Health<lb/>
+
+	<docTitle>
+	<titlePart>Re: Gene mapping of serotoninergic<lb/> system polymorphisms provides insight on<lb/> pathology and treatment of men with lifelong<lb/> premature ejaculation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paddy KC Janssen, Ron van Schaik, Berend Olivier,<lb/> Marcel D Waldinger<lb/></docAuthor>
+	</byline>
+
+	<reference>Asian Journal of Andrology (2014) 16, 643; </reference>
+
+	<idno>doi: 10.4103/1008-<lb/>682X.126375</idno>,
+
+	published online:
+	<date>29 April 2014<lb/></date>
+
+	<byline>
+	<affiliation>Department of Pharmaceutical Sciences, Division of Pharmacology, Utrecht<lb/> University,</affiliation>
+	</byline>
+
+	<address>Utrecht, The Netherlands.<lb/></address>
+
+	Correspondence:
+	<byline>
+	<docAuthor>Dr. MD Waldinger</docAuthor>
+	</byline>
+
+	(
+	<email>md@waldinger.demon.nl</email>
+	)
+		</front>
+	</text>
+</tei>

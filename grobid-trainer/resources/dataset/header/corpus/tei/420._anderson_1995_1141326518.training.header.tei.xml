@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="420._anderson_1995_1141326518"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Segregating Planners and Their Environments<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Scott D. Anderson<lb/> Paul R. Cohen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Experimental Knowledge Systems Laboratory<lb/> Computer Science Department, LGRC<lb/> University of Massachusetts<lb/></affiliation>
+	</byline>
+
+	<address>Amherst MA 01003-4610<lb/></address>
+
+	<email>fanderson,coheng@cs.umass.edu<lb/></email>
+
+	To bepublished in the proceedings of the<lb/> 
+	<meeting>Spring Symposium on Integrated Planning Applications</meeting> 
+
+	Abstract<lb/>
+	<div type="abstract">By implementing agents and environ-<lb/>ments using a domain-independent, exten-<lb/>sible simulation substrate, described in this<lb/> paper, agents will have clean interfaces to<lb/> their environments. These makes it easier<lb/> for agents to be plugged into other environ-<lb/>ments that have been similarly de ned. If<lb/> agents can interact with multiple environ-<lb/>ments, their behaviors and the associated<lb/> experimental results will be more general<lb/> and interesting.</div>
+
+		</front>
+	</text>
+</tei>

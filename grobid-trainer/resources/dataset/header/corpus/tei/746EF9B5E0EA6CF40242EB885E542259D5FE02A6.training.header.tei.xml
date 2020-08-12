@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="746EF9B5E0EA6CF40242EB885E542259D5FE02A6"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Stochastic flocculation of cohesive sediment: Analysis<lb/> of floc mobility within the floc size spectrum<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Federico Maggi 1<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 11 April 2007; revised 23 October 2007; accepted 31 October 2007;</note>
+
+	published
+	<date>26 January 2008.<lb/></date>
+
+	[1]
+	<div type="abstract">A stochastic Lagrangian model is proposed to describe flocculation of suspended<lb/> cohesive sediment flocs. This model takes into account the floc population in a parametric<lb/> fashion, and predicts the time evolution of an individual floc by a sequence of stochastic<lb/> aggregation and breakup events. Upon calibration on experimental data, the model was<lb/> used to investigate floc mobility within the population size spectrum, bringing to light<lb/> dynamical aspects not otherwise detectable with deterministic models. Our analysis<lb/> showed that floc size fluctuations correlated with the population size distribution and<lb/> breakup probability, and that size-dependent burst events repeated intermittently in time.<lb/> Further analysis showed the effect of the floc population distribution on individual floc<lb/> size transition and equilibrium, and the effect of using either a constant or variable floc<lb/> capacity dimension to describe floc geometry.<lb/></div>
+
+	Citation:
+	<reference>Maggi, F. (2008), Stochastic flocculation of cohesive sediment: Analysis of floc mobility within the floc size spectrum,<lb/> Water Resour. Res., 44, W01433, </reference>
+
+	<idno>doi:10.1029/2007WR006109</idno>.<lb/>
+
+	<byline>
+	<affiliation>1 Civil and Environmental Engineering, Berkeley Water Center, University<lb/> of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, California, USA.<lb/></address>
+
+	<note type="copyright">Copyright 2008 by the American Geophysical Union.<lb/></note>
+
+	0043-1397/08/2007WR006109 W01433<lb/>
+	<reference>WATER RESOURCES RESEARCH, VOL. 44, W01433, doi:10.1029/2007WR006109, 2008<lb/></reference>
+
+	<page>1 of 10<lb/></page>
+	
+	<byline>
+	<docAuthor>F. Maggi,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Civil and Environmental Engineering, Berkeley Water Center,<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>413 O&apos;Brien Hall, Berkeley, CA 94720-1710,<lb/> USA.</address>
+
+	(
+	<email>fmaggi@berkeley.edu</email>
+
+	)
+		</front>
+	</text>
+</tei>

@@ -13,7 +13,7 @@ Go under the project directy `grobid/`:
 
 The following command display some help for the batch commands:
 ```bash
-> java -jar grobid-core/build/libs/grobid-core-`<current version>`.onejar.jar -h
+> java -jar grobid-core/build/libs/grobid-core-`<current version>`-onejar.jar -h
 ```
 
 Be sure to replace `<current version>` with the current version of GROBID that you have installed and built. For example:
