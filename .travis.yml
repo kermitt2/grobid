@@ -1,5 +1,6 @@
 language: java
-sudo: true
+os: linux
+dist: xenial
 
 jdk:
   - openjdk8
@@ -19,7 +20,7 @@ script:
   - ./gradlew build --stacktrace --info --no-daemon
 
 after_success:
-- ./gradlew jacocoRootReport coveralls --no-daemon
+- ./gradlew codeCoverageReport coveralls --no-daemon
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
