@@ -1,5 +1,16 @@
 package org.grobid.core.data;
 
+import org.grobid.core.main.LibraryLoader;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.*;
+
 import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
@@ -35,6 +46,12 @@ import static org.hamcrest.Matchers.empty;
 public class BiblioItemTest {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(BiblioItemTest.class);
+
+
+    @Before
+    public void setUp() throws Exception {
+        LibraryLoader.load();
+    }
 
     private GrobidAnalysisConfig.GrobidAnalysisConfigBuilder configBuilder = (
         new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -152,5 +169,151 @@ public class BiblioItemTest {
             getXpathStrings(doc, "//note[@type=\"raw_affiliation\"]/text()"),
             is(empty())
         );
+    }
+
+    @Test
+    public void injectDOI() {
+    }
+
+    @Test
+    public void correct_empty_shouldNotFail() {
+        BiblioItem.correct(new BiblioItem(), new BiblioItem());
+    }
+
+
+    @Test
+    public void correct_1author_shouldWork() {
+        BiblioItem biblio1 = new BiblioItem();
+        List<Person> authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe"));
+        biblio1.setFullAuthors(authors);
+
+        BiblioItem biblio2 = new BiblioItem();
+        authors = new ArrayList<>();
+        authors.add(createPerson("John1", "Doe"));
+        biblio2.setFullAuthors(authors);
+
+        BiblioItem.correct(biblio1, biblio2);
+
+        assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
+        assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+    }
+
+    @Test
+    public void correct_2authors_shouldMatchFullName_shouldUpdateAffiliation() {
+        BiblioItem biblio1 = new BiblioItem();
+        List<Person> authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe"));
+        authors.add(createPerson("Jane", "Will"));
+        biblio1.setFullAuthors(authors);
+
+        BiblioItem biblio2 = new BiblioItem();
+        authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe", "UCLA"));
+        authors.add(createPerson("Jane", "Will","Harward"));
+        biblio2.setFullAuthors(authors);
+
+        BiblioItem.correct(biblio1, biblio2);
+
+        assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
+        assertThat(biblio1.getFullAuthors(), hasSize(2));
+        assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+        // biblio1 affiliations empty we update them with ones from biblio2
+        assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio2.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
+        assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(1).getFirstName()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio2.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+    }
+
+    @Test
+    public void correct_2authors_shouldMatchFullName_shouldKeepAffiliation() {
+        BiblioItem biblio1 = new BiblioItem();
+        List<Person> authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe", "Stanford"));
+        authors.add(createPerson("Jane", "Will", "Cambridge"));
+        biblio1.setFullAuthors(authors);
+
+        BiblioItem biblio2 = new BiblioItem();
+        authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe" ));
+        authors.add(createPerson("Jane", "Will", "UCLA"));
+        biblio2.setFullAuthors(authors);
+
+        BiblioItem.correct(biblio1, biblio2);
+
+        assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
+        assertThat(biblio1.getFullAuthors(), hasSize(2));
+        assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+        // biblio1 affiliations not empty, we keep biblio1 as is
+        assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
+        assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(1).getFirstName()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio2.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+    }
+
+    @Test
+    public void correct_2authors_initial_2_shouldUpdateAuthor() {
+        BiblioItem biblio1 = new BiblioItem();
+        List<Person> authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe", "ULCA"));
+        authors.add(createPerson("J", "Will", "Harward"));
+        biblio1.setFullAuthors(authors);
+
+        BiblioItem biblio2 = new BiblioItem();
+        authors = new ArrayList<>();
+        authors.add(createPerson("John1", "Doe", "Stanford"));
+        authors.add(createPerson("Jane", "Will", "Berkeley"));
+        biblio2.setFullAuthors(authors);
+
+        BiblioItem.correct(biblio1, biblio2);
+
+        assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
+        assertThat(biblio1.getFullAuthors(), hasSize(2));
+        assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+        // affiliation should be kept though since not empty
+        assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
+        assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(1).getFirstName()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+    }
+
+    @Test
+    public void correct_2authors_initial_shouldUpdateAuthor() {
+        BiblioItem biblio1 = new BiblioItem();
+        List<Person> authors = new ArrayList<>();
+        authors.add(createPerson("John", "Doe", "ULCA"));
+        authors.add(createPerson("Jane", "Will", "Harward"));
+        biblio1.setFullAuthors(authors);
+
+        BiblioItem biblio2 = new BiblioItem();
+        authors = new ArrayList<>();
+        authors.add(createPerson("John1", "Doe", "Stanford"));
+        authors.add(createPerson("J", "Will", "Berkeley"));
+        biblio2.setFullAuthors(authors);
+
+        BiblioItem.correct(biblio1, biblio2);
+
+        assertThat(biblio1.getFirstAuthorSurname(), is(biblio2.getFirstAuthorSurname()));
+        assertThat(biblio1.getFullAuthors(), hasSize(2));
+        assertThat(biblio1.getFullAuthors().get(0).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+        // affiliation should be kept though
+        assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
+        //assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
+        assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+    }
+
+    private Person createPerson(String firstName, String secondName) {
+        final Person person = new Person();
+        person.setFirstName(firstName);
+        person.setLastName(secondName);
+        return person;
+    }
+
+    private Person createPerson(String firstName, String secondName, String affiliation) {
+        final Person person = createPerson(firstName, secondName);
+        final Affiliation affiliation1 = new Affiliation();
+        affiliation1.setAffiliationString(affiliation);
+        List<Affiliation> affiliations = new ArrayList<>();
+        affiliations.add(affiliation1);
+        person.setAffiliations(affiliations);
+        return person;
     }
 }

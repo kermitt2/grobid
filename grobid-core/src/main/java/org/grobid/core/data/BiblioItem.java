@@ -4243,22 +4243,30 @@ public class BiblioItem {
 
         // authors present in fullAuthors list should be in the existing resources 
         // at least the corresponding author
-        if (bibo.getFullAuthors() != null) {
-            if ( (bib.getFullAuthors() == null) || (bib.getFullAuthors().size() == 0) )
+        if (!CollectionUtils.isEmpty(bibo.getFullAuthors())) {
+            if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
             else if (bibo.getFullAuthors().size() == 1) {
-                // we have the corresponding author	
+                // we have the corresponding author 
                 // check if the author exists in the obtained list
                 Person auto = (Person) bibo.getFullAuthors().get(0);
                 List<Person> auts = bib.getFullAuthors();
                 if (auts != null) {
                     for (Person aut : auts) {
-                        if (aut.getLastName() != null) {
-                            if (aut.getLastName().equals(auto.getLastName())) {
-                                aut.setCorresp(true);
-                                if (StringUtils.isNotBlank(auto.getEmail())) 
-                                    aut.setEmail(auto.getEmail());
-                                // should we also check the country ? affiliation?
+                        if (StringUtils.isNotBlank(aut.getLastName()) && StringUtils.isNotBlank(auto.getLastName())) {
+                            if (aut.getLastName().toLowerCase().equals(auto.getLastName().toLowerCase())) {
+                                if (StringUtils.isBlank(aut.getFirstName()) ||
+                                   (auto.getFirstName() != null && 
+                                    aut.getFirstName().length() <= auto.getFirstName().length() && 
+                                         auto.getFirstName().toLowerCase().startsWith(aut.getFirstName().toLowerCase()))) {
+                                    aut.setFirstName(auto.getFirstName());
+                                    aut.setCorresp(true);
+                                    if (StringUtils.isNotBlank(auto.getEmail())) 
+                                        aut.setEmail(auto.getEmail());
+                                    // should we also check the country ? affiliation?
+                                    if (StringUtils.isNotBlank(auto.getMiddleName()) && (StringUtils.isBlank(aut.getMiddleName())))
+                                        aut.setMiddleName(auto.getMiddleName());
+                                }
                             }
                         }
                     }
@@ -4270,31 +4278,54 @@ public class BiblioItem {
                 for (Person aut : bibo.getFullAuthors()) {
                     // try to find the author in the first item (we know it's not empty)
                     for (Person aut2 : bib.getFullAuthors()) {
+
+
                         if (StringUtils.isNotBlank(aut2.getLastName())) {
-                            if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
-                                // check also first name if present - at least for the initial
-                                if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName()) ) {
-                                    // we have a match (full first name)
-                                    if (StringUtils.isBlank(aut.getMiddleName()))
-                                        aut.setMiddleName(aut2.getMiddleName());
-                                    if (StringUtils.isBlank(aut.getTitle()))
-                                        aut.setTitle(aut2.getTitle());
-                                    if (StringUtils.isBlank(aut.getSuffix()))
-                                        aut.setSuffix(aut2.getSuffix());
-                                    break;
-                                } else if ( StringUtils.isNotBlank(aut.getFirstName()) && 
-                                    StringUtils.isNotBlank(aut2.getFirstName()) &&
-                                    (aut.getFirstName().length() == 1) && 
-                                    (aut.getFirstName().equals(aut2.getFirstName().substring(0,1))) ) {
-                                    // we have a match (initial)
-                                    aut.setFirstName(aut2.getFirstName());
-                                    if (StringUtils.isBlank(aut.getMiddleName()))
-                                        aut.setMiddleName(aut2.getMiddleName());
-                                    if (StringUtils.isBlank(aut.getTitle()))
-                                        aut.setTitle(aut2.getTitle());
-                                    if (StringUtils.isBlank(aut.getSuffix()))
-                                        aut.setSuffix(aut2.getSuffix());
-                                    break;
+                            String aut2_lastname = aut2.getLastName().toLowerCase();
+
+                            if (StringUtils.isNotBlank(aut.getLastName())) {
+                                String aut_lastname = aut.getLastName().toLowerCase();
+
+                                if (aut_lastname.equals(aut2_lastname)) {
+                                    // check also first name if present - at least for the initial
+                                    if ( StringUtils.isBlank(aut2.getFirstName()) || 
+                                         (StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())) ) {
+                                        // we have no first name or a match (full first name)
+
+                                        if ( StringUtils.isBlank(aut2.getFirstName()) 
+                                            || 
+                                             aut.getFirstName().equals(aut2.getFirstName())
+                                            ||
+                                             ( aut.getFirstName().length() == 1 && 
+                                               aut.getFirstName().equals(aut2.getFirstName().substring(0,1)) ) 
+                                            ) {
+                                            // we have a match (full or initial)
+                                            if (StringUtils.isNotBlank(aut2.getFirstName()) &&
+                                                aut2.getFirstName().length() > aut.getFirstName().length())
+                                                aut.setFirstName(aut2.getFirstName());
+                                            if (StringUtils.isBlank(aut.getMiddleName()))
+                                                aut.setMiddleName(aut2.getMiddleName());
+                                            if (StringUtils.isBlank(aut.getTitle()))
+                                                aut.setTitle(aut2.getTitle());
+                                            if (StringUtils.isBlank(aut.getSuffix()))
+                                                aut.setSuffix(aut2.getSuffix());
+                                            if (StringUtils.isBlank(aut.getORCID()))
+                                                aut.setORCID(aut2.getORCID());
+                                            if (StringUtils.isBlank(aut.getEmail()))
+                                                aut.setEmail(aut2.getEmail());
+                                            if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
+                                                aut.setAffiliations(aut2.getAffiliations());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationBlocks())) 
+                                                aut.setAffiliationBlocks(aut2.getAffiliationBlocks());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationMarkers())) 
+                                                aut.setAffiliationMarkers(aut2.getAffiliationMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getMarkers())) 
+                                                aut.setMarkers(aut2.getMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
+                                                aut.setLayoutTokens(aut2.getLayoutTokens());
+                                            break;
+                                        } 
+                                    }  
                                 }
                             }
                         }
@@ -4303,7 +4334,6 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
-        //System.out.println("result: \n" + bib.toTEI(0));
     }
 
 	/**

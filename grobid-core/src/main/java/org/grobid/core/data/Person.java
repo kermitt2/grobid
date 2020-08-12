@@ -29,8 +29,8 @@ public class Person {
     private String rawName = null; // raw full name if relevant/available, e.g. name exactly as displayed
     private String orcid = null;
     private boolean corresp = false;
-    private List<LayoutToken> layoutTokens = new ArrayList<>();
 
+    private List<LayoutToken> layoutTokens = new ArrayList<>();
     private List<String> affiliationBlocks = null;
     private List<Affiliation> affiliations = null;
     private List<String> affiliationMarkers = null;
@@ -116,6 +116,10 @@ public class Person {
         return affiliationBlocks;
     }
 
+    public void setAffiliationBlocks(List<String> blocks) {
+        this.affiliationBlocks = blocks;
+    }
+
     public void addAffiliationBlocks(String f) {
         if (affiliationBlocks == null)
             affiliationBlocks = new ArrayList<String>();
@@ -128,12 +132,16 @@ public class Person {
 
     public void addAffiliation(org.grobid.core.data.Affiliation f) {
         if (affiliations == null)
-            affiliations = new ArrayList<org.grobid.core.data.Affiliation>();
+            affiliations = new ArrayList<>();
         affiliations.add(f);
     }
 
     public List<String> getAffiliationMarkers() {
         return affiliationMarkers;
+    }
+
+    public void setAffiliationMarkers(List<String> affiliationMarkers) {
+        this.affiliationMarkers = affiliationMarkers;
     }
 
     public void addAffiliationMarker(String s) {
@@ -148,6 +156,10 @@ public class Person {
 
     public List<String> getMarkers() {
         return markers;
+    }
+
+    public void setMarkers(List<String> markers) {
+        this.markers = markers;
     }
 
     public void addMarker(String f) {
@@ -174,6 +186,35 @@ public class Person {
             return false;
         else
             return true;
+    }
+
+    /**
+     * Create a new instance of Person object from current instance (shallow copy)
+     */
+    public Person clonePerson() {
+        Person person = new Person();
+        person.firstName = this.firstName ;
+        person.middleName = this.middleName;
+        person.lastName = this.lastName;
+        person.title = this.title;
+        person.suffix = this.suffix;
+        person.rawName = this.rawName; 
+        person.orcid = this.orcid;
+        person.corresp = this.corresp;
+        person.email = this.email;
+
+        if (this.layoutTokens != null)
+            person.layoutTokens = new ArrayList<>(this.layoutTokens);
+        if (this.affiliationBlocks != null)
+            person.affiliationBlocks = new ArrayList<>(this.affiliationBlocks);
+        if (this.affiliations != null)
+            person.affiliations = new ArrayList<>(this.affiliations);
+        if (this.affiliationMarkers != null)
+            person.affiliationMarkers = new ArrayList<>(this.affiliationMarkers);
+        if (this.markers != null)
+            person.markers = new ArrayList<>(this.markers);
+
+        return person;
     }
 
     public String toString() {
@@ -206,6 +247,10 @@ public class Person {
         return layoutTokens;
     }
 
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        this.layoutTokens = tokens;
+    }
+
     /**
      * TEI serialization via xom. 
      */
@@ -228,23 +273,23 @@ public class Person {
             XmlBuilderUtils.addCoords(persElement, LayoutTokensUtil.getCoordsString(getLayoutTokens()));
         }
         if (title != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("roleName", TextUtilities.HTMLEncode(title)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("roleName", title));
         }
         if (firstName != null) {
-            Element forename = XmlBuilderUtils.teiElement("forename", TextUtilities.HTMLEncode(firstName));
+            Element forename = XmlBuilderUtils.teiElement("forename", firstName);
             forename.addAttribute(new Attribute("type", "first"));
             persElement.appendChild(forename);
         }
         if (middleName != null) {
-            Element mn = XmlBuilderUtils.teiElement("forename", TextUtilities.HTMLEncode(middleName));
+            Element mn = XmlBuilderUtils.teiElement("forename", middleName);
             mn.addAttribute(new Attribute("type", "middle"));
             persElement.appendChild(mn);
         }
         if (lastName != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("surname", TextUtilities.HTMLEncode(lastName)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("surname", lastName));
         }
         if (suffix != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("genName", TextUtilities.HTMLEncode(suffix)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("genName", suffix));
         }
 
         return XmlBuilderUtils.toXml(persElement);
@@ -531,11 +576,15 @@ public class Person {
                 for(int j=0; j < localPersons.size(); j++) {
                     Person localPerson =  localPersons.get(j);
                     String localFirstName = localPerson.getFirstName();
-                    if (localFirstName != null)
+                    if (localFirstName != null) {
                         localFirstName = localFirstName.toLowerCase();
+                        localFirstName = localFirstName.replaceAll("[\\-\\.]", "");
+                    }
                     String localMiddleName = localPerson.getMiddleName();
-                    if (localMiddleName != null)
+                    if (localMiddleName != null) {
                         localMiddleName = localMiddleName.toLowerCase();
+                        localMiddleName = localMiddleName.replaceAll("[\\-\\.]", "");
+                    }
                     int nbClash = 0;
                     for(int k=0; k < localPersons.size(); k++) {                        
                         boolean clash = false;
@@ -543,11 +592,15 @@ public class Person {
                             continue;
                         Person otherPerson = localPersons.get(k);
                         String otherFirstName = otherPerson.getFirstName();
-                        if (otherFirstName != null)
+                        if (otherFirstName != null) {
                             otherFirstName = otherFirstName.toLowerCase();
+                            otherFirstName = otherFirstName.replaceAll("[\\-\\.]", "");
+                        }
                         String otherMiddleName = otherPerson.getMiddleName();
-                        if (otherMiddleName != null)
+                        if (otherMiddleName != null) {
                             otherMiddleName = otherMiddleName.toLowerCase();
+                            otherMiddleName = otherMiddleName.replaceAll("[\\-\\.]", "");
+                        }
 
                         // test first name clash
                         if (localFirstName != null && otherFirstName != null) {
@@ -656,6 +709,10 @@ public class Person {
                             localPerson.setSuffix(otherPerson.getSuffix());
                             localSuffix = localPerson.getSuffix().toLowerCase();
                         }
+
+                        String otherOrcid = otherPerson.getORCID();
+                        if (otherOrcid != null)
+                            localPerson.setORCID(otherOrcid);
 
                         if (otherPerson.getAffiliations() != null) {
                             for(Affiliation affOther : otherPerson.getAffiliations()) {
