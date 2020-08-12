@@ -29,7 +29,7 @@ mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
 ```
     > git checkout [releasetag]
     
-    > ./gradlew clean build
+    > ./gradlew clean build install
     
     > ./gradlew bintrayUpload
 ```
