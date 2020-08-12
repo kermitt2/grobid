@@ -273,23 +273,23 @@ public class Person {
             XmlBuilderUtils.addCoords(persElement, LayoutTokensUtil.getCoordsString(getLayoutTokens()));
         }
         if (title != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("roleName", TextUtilities.HTMLEncode(title)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("roleName", title));
         }
         if (firstName != null) {
-            Element forename = XmlBuilderUtils.teiElement("forename", TextUtilities.HTMLEncode(firstName));
+            Element forename = XmlBuilderUtils.teiElement("forename", firstName);
             forename.addAttribute(new Attribute("type", "first"));
             persElement.appendChild(forename);
         }
         if (middleName != null) {
-            Element mn = XmlBuilderUtils.teiElement("forename", TextUtilities.HTMLEncode(middleName));
+            Element mn = XmlBuilderUtils.teiElement("forename", middleName);
             mn.addAttribute(new Attribute("type", "middle"));
             persElement.appendChild(mn);
         }
         if (lastName != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("surname", TextUtilities.HTMLEncode(lastName)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("surname", lastName));
         }
         if (suffix != null) {
-            persElement.appendChild(XmlBuilderUtils.teiElement("genName", TextUtilities.HTMLEncode(suffix)));
+            persElement.appendChild(XmlBuilderUtils.teiElement("genName", suffix));
         }
 
         return XmlBuilderUtils.toXml(persElement);

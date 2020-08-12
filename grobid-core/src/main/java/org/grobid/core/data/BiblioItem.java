@@ -4253,12 +4253,12 @@ public class BiblioItem {
                 List<Person> auts = bib.getFullAuthors();
                 if (auts != null) {
                     for (Person aut : auts) {
-                        if (aut.getLastName() != null) {
-                            if (aut.getLastName().equals(auto.getLastName())) {
+                        if (StringUtils.isNotBlank(aut.getLastName()) && StringUtils.isNotBlank(auto.getLastName())) {
+                            if (aut.getLastName().toLowerCase().equals(auto.getLastName().toLowerCase())) {
                                 if (StringUtils.isBlank(aut.getFirstName()) ||
                                    (auto.getFirstName() != null && 
                                     aut.getFirstName().length() <= auto.getFirstName().length() && 
-                                         auto.getFirstName().startsWith(aut.getFirstName()))) {
+                                         auto.getFirstName().toLowerCase().startsWith(aut.getFirstName().toLowerCase()))) {
                                     aut.setFirstName(auto.getFirstName());
                                     aut.setCorresp(true);
                                     if (StringUtils.isNotBlank(auto.getEmail())) 
@@ -4271,16 +4271,6 @@ public class BiblioItem {
                         }
                     }
                 }
-
-                /*List<Person> thePersons = new ArrayList<>();
-                for(Person thePerson : bib.getFullAuthors()) {
-                    thePersons.add(thePerson.clonePerson());
-                }
-                thePersons.add(bibo.getFullAuthors().get(0));
-                Person.deduplicate(thePersons);
-                if (thePersons.size() == bib.getFullAuthors().size()) {
-                    bib.setFullAuthors(thePersons);
-                }*/
             } else if (bibo.getFullAuthors().size() > 1) {
                 // we have the complete list of authors so we can take them from the second
                 // biblio item and merge some possible extra from the first when a match is 
@@ -4288,84 +4278,61 @@ public class BiblioItem {
                 for (Person aut : bibo.getFullAuthors()) {
                     // try to find the author in the first item (we know it's not empty)
                     for (Person aut2 : bib.getFullAuthors()) {
-                        if (StringUtils.isNotBlank(aut2.getLastName())) {
-                            if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
-                                // check also first name if present - at least for the initial
-                                if ( StringUtils.isBlank(aut2.getFirstName()) || 
-                                     (StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())) ) {
-                                    // we have no first name or a match (full first name)
 
-                                    if ( StringUtils.isBlank(aut2.getFirstName()) 
-                                        || 
-                                         aut.getFirstName().equals(aut2.getFirstName())
-                                        ||
-                                         ( aut.getFirstName().length() == 1 && 
-                                           aut.getFirstName().equals(aut2.getFirstName().substring(0,1))) 
-                                        ) {
-                                        // we have a match (full or initial)
-                                        if (StringUtils.isNotBlank(aut2.getFirstName()) &&
-                                            aut2.getFirstName().length() > aut.getFirstName().length())
-                                            aut.setFirstName(aut2.getFirstName());
-                                        if (StringUtils.isBlank(aut.getMiddleName()))
-                                            aut.setMiddleName(aut2.getMiddleName());
-                                        if (StringUtils.isBlank(aut.getTitle()))
-                                            aut.setTitle(aut2.getTitle());
-                                        if (StringUtils.isBlank(aut.getSuffix()))
-                                            aut.setSuffix(aut2.getSuffix());
-                                        if (StringUtils.isBlank(aut.getORCID()))
-                                            aut.setORCID(aut2.getORCID());
-                                        if (StringUtils.isBlank(aut.getEmail()))
-                                            aut.setEmail(aut2.getEmail());
-                                        if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
-                                            aut.setAffiliations(aut2.getAffiliations());
-                                        if (!CollectionUtils.isEmpty(aut2.getAffiliationBlocks())) 
-                                            aut.setAffiliationBlocks(aut2.getAffiliationBlocks());
-                                        if (!CollectionUtils.isEmpty(aut2.getAffiliationMarkers())) 
-                                            aut.setAffiliationMarkers(aut2.getAffiliationMarkers());
-                                        if (!CollectionUtils.isEmpty(aut2.getMarkers())) 
-                                            aut.setMarkers(aut2.getMarkers());
-                                        if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
-                                            aut.setLayoutTokens(aut2.getLayoutTokens());
-                                        break;
-                                    } 
-                                }  
+
+                        if (StringUtils.isNotBlank(aut2.getLastName())) {
+                            String aut2_lastname = aut2.getLastName().toLowerCase();
+
+                            if (StringUtils.isNotBlank(aut.getLastName())) {
+                                String aut_lastname = aut.getLastName().toLowerCase();
+
+                                if (aut_lastname.equals(aut2_lastname)) {
+                                    // check also first name if present - at least for the initial
+                                    if ( StringUtils.isBlank(aut2.getFirstName()) || 
+                                         (StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())) ) {
+                                        // we have no first name or a match (full first name)
+
+                                        if ( StringUtils.isBlank(aut2.getFirstName()) 
+                                            || 
+                                             aut.getFirstName().equals(aut2.getFirstName())
+                                            ||
+                                             ( aut.getFirstName().length() == 1 && 
+                                               aut.getFirstName().equals(aut2.getFirstName().substring(0,1)) ) 
+                                            ) {
+                                            // we have a match (full or initial)
+                                            if (StringUtils.isNotBlank(aut2.getFirstName()) &&
+                                                aut2.getFirstName().length() > aut.getFirstName().length())
+                                                aut.setFirstName(aut2.getFirstName());
+                                            if (StringUtils.isBlank(aut.getMiddleName()))
+                                                aut.setMiddleName(aut2.getMiddleName());
+                                            if (StringUtils.isBlank(aut.getTitle()))
+                                                aut.setTitle(aut2.getTitle());
+                                            if (StringUtils.isBlank(aut.getSuffix()))
+                                                aut.setSuffix(aut2.getSuffix());
+                                            if (StringUtils.isBlank(aut.getORCID()))
+                                                aut.setORCID(aut2.getORCID());
+                                            if (StringUtils.isBlank(aut.getEmail()))
+                                                aut.setEmail(aut2.getEmail());
+                                            if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
+                                                aut.setAffiliations(aut2.getAffiliations());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationBlocks())) 
+                                                aut.setAffiliationBlocks(aut2.getAffiliationBlocks());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationMarkers())) 
+                                                aut.setAffiliationMarkers(aut2.getAffiliationMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getMarkers())) 
+                                                aut.setMarkers(aut2.getMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
+                                                aut.setLayoutTokens(aut2.getLayoutTokens());
+                                            break;
+                                        } 
+                                    }  
+                                }
                             }
                         }
                     }
                 }
                 bib.setFullAuthors(bibo.getFullAuthors());
-
-                /*List<Person> correctedAuthors = new ArrayList<>();
-                for (Person aut : bib.getFullAuthors()) {
-                    boolean found = false;
-                    for (Person aut2 : bibo.getFullAuthors()) {
-                        List<Person> thePersons = new ArrayList<>();
-                        thePersons.add(aut2.clonePerson());
-                        thePersons.add(aut.clonePerson());
-                        Person.deduplicate(thePersons);
-                        if (thePersons.size() == 1) {
-                            correctedAuthors.add(thePersons.get(0));
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        correctedAuthors.add(aut);
-                    }
-                }
-                bib.setFullAuthors(correctedAuthors);*/
             }
-
-            /*if (CollectionUtils.isEmpty(bib.getFullAuthors()))
-                bib.setFullAuthors(bibo.getFullAuthors());
-            else {
-                // we have the complete list of authors so we can take them from the second
-                // biblio item and merge some possible extra from the first when a match is 
-                // reliable
-                List<Person> thePersons = bib.getFullAuthors();
-                thePersons.addAll(bibo.getFullAuthors());
-                Person.deduplicate(thePersons);
-            }*/
         }
     }
 
