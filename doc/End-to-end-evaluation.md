@@ -2,7 +2,7 @@
 
 Individual models can be evaluated as explained in [Training the different models of Grobid](Training-the-models-of-Grobid.md).
 
-For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several CRF models, GROBID includes two possible evaluation progresses:
+For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several sequence labelling models, GROBID includes two possible evaluation progresses:
 
 * against a set of JATS-encoded (NLM) articles, such as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) or [bioRxiv](https://www.biorxiv.org). For its publications, PubMed Central aprovides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. bioRxiv is used in Grobid to evaluate more precisely performance on preprint articles. 
 
