@@ -22,7 +22,7 @@ The following functionalities are available:
 
 - __Header extraction and parsing__ from article in PDF format. The extraction here covers the usual bibliographical information (e.g. title, abstract, authors, affiliations, keywords, etc.).
 - __References extraction and parsing__ from articles in PDF format, around .85 f-score against on an independent PubMed Central set of 1943 PDF containing 90,125 references. All the usual publication metadata are covered (including DOI).
-- __Citation contexts recognition and linking__ to the full bibliographical references of the article. The accuracy of citation contexts resolution is around 0.75 f-score (which corresponds to both the correct identification of the citation callout and its correct association with a full bibliographical reference).
+- __Citation contexts recognition and resolution__ to the full bibliographical references of the article. The accuracy of citation contexts resolution is around 0.75 f-score (which corresponds to both the correct identification of the citation callout and its correct association with a full bibliographical reference).
 - Parsing of __references in isolation__ (around 0.89 f-score).
 - __Parsing of names__ (e.g. person title, forenames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
 - __Parsing of affiliation and address__ blocks.
@@ -36,7 +36,7 @@ In a complete PDF processing, GROBID manages 55 final labels used to build relat
 
 GROBID includes a comprehensive web service API, batch processing, a JAVA API, a Docker image, a generic evaluation framework (precision, recall, etc., n-fold cross-evaluation) and the semi-automatic generation of training data.
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), scite.ai, and many more. The tool is designed for high scalability in order to address the full scientific literature corpus.
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, INIST-CNRS, CERN (Invenio), scite.ai, and many more. The tool is designed for high scalability in order to address the full scientific literature corpus.
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 

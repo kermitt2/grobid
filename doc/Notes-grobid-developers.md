@@ -31,9 +31,5 @@ mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
     
     > ./gradlew clean build
     
-    > ./gradlew bintray
+    > ./gradlew bintrayUpload
 ```
-
- (This last command needs to be checked, cause the standard task `uploadArtifacts` could just work)
- 
-

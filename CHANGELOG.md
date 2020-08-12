@@ -6,6 +6,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+# [0.6.1] – 2020-08-12
+
+### Added
+
++ Support of line number (typically in preprints)
++ End-to-end evaluation and benchmark for preprints using the bioRxiv 10k dataset 
++ Check whether PDF annotation is orcid and add orcid to author in the TEI result
++ Configuration for making sequence labeling engine (CRF Wapiti or Deep Learning) specific to models
++ Add a developers guide and a FAQ section in the documentation
++ Visualization of formulas on PDF layout in the demo console
++ Feature for subscript/superscript style in fulltext model
+
+### Changed
+
++ New significantly improved header model: with new features, new training data (600 new annotated examples, old training data is entirely removed), new labels and updated data structures in line with the other models
++ Update of the segmentation models with more training data
++ Removal of heuristics related to the header
++ Update to gradle 6.5.1 to support JDK 13 and 14
++ TEI schemas 
++ Windows is not supported in this release
+
+### Fixed
+
++ Preserve affiliations after consolidation of the authors 
++ Environment variable config override for all properties 
++ Unfrequent duplication of the abstract in the TEI result
++ Incorrect merging of affiliations
++ Noisy parentheses in the bibliographical reference markers
++ In the console demo, fix the output filename wrongly taken from the input form when the text form is used
++ Synchronisation of the language detection singleton initialisation in case of multithread environment
++ Other minor fixes
+
 ## [0.6.0] – 2020-04-24
 
 ### Added
