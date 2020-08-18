@@ -174,11 +174,14 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 // language identification
-                String contentSample = "";
-                if (resHeader.getTitle() != null)
-                    contentSample += resHeader.getTitle();
-                if (resHeader.getAbstract() != null)
-                    contentSample += "\n" + resHeader.getAbstract();
+                StringBuilder contentSample = new StringBuilder();
+                if (resHeader.getTitle() != null) {
+                    contentSample.append(resHeader.getTitle());
+                }
+                if (resHeader.getAbstract() != null) {
+                    contentSample.append("\n");
+                    contentSample.append(resHeader.getAbstract());
+                }
                 if (contentSample.length() < 200) {
                     // we can exploit more textual content to ensure that the language identification will be
                     // correct
@@ -196,10 +199,11 @@ public class HeaderParser extends AbstractParser {
                                 contentBuffer.append(" ");
                             }
                         }
-                        contentSample += " " + contentBuffer.toString();
+                        contentSample.append(" ");
+                        contentSample.append(contentBuffer.toString());
                     }
                 }
-                Language langu = languageUtilities.runLanguageId(contentSample);
+                Language langu = languageUtilities.runLanguageId(contentSample.toString());
                 if (langu != null) {
                     String lang = langu.getLang();
                     doc.setLanguage(lang);
