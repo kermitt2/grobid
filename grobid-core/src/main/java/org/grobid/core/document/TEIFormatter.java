@@ -819,15 +819,6 @@ public class TEIFormatter {
         }
 
         if ((abstractText != null) && (abstractText.length() != 0)) {
-            /*String abstractHeader = biblio.getAbstractHeader();
-            if (abstractHeader == null)
-                abstractHeader = "Abstract";
-            tei.append("\t\t\t\t<head");
-			if (generateIDs) {
-				String divID = KeyGen.getKey().substring(0,7);
-				tei.append(" xml:id=\"_" + divID + "\"");
-			}
-			tei.append(">").append(TextUtilities.HTMLEncode(abstractHeader)).append("</head>\n");*/
 
             if ( (biblio.getLabeledAbstract() != null) && (biblio.getLabeledAbstract().length() > 0) ) {
                 // we have available structured abstract, which can be serialized as a full text "piece"
@@ -1337,6 +1328,11 @@ public class TEIFormatter {
             lastClusterLabel = cluster.getTaggingLabel();
         }
 
+        // in case we segment paragraph into sentences, we still need to do it for the last paragraph 
+        if (curParagraph != null && config.isWithSentenceSegmentation()) {
+            segmentIntoSentences(curParagraph, curParagraphTokens, config);
+        }
+
         // remove possibly empty div in the div list
         if (divResults.size() != 0) {
             for(int i = divResults.size()-1; i>=0; i--) {
@@ -1407,43 +1403,43 @@ public class TEIFormatter {
         if (curParagraph == null)
             return;
 
-        StringBuilder localText = new StringBuilder();
-        Map<Integer,List<Node>> mapRefNodes = new HashMap<>();
+        // in xom, the following gives all the text under the element, for the whole subtree
+        String text = curParagraph.getValue();
+
+        // identify ref nodes, ref spans and ref positions
+        Map<Integer,Node> mapRefNodes = new HashMap<>();
         List<Integer> refPositions = new ArrayList<>();
+        List<OffsetPosition> forbiddenPositions = new ArrayList<>();
         int pos = 0;
         for(int i=0; i<curParagraph.getChildCount(); i++) {
             Node theNode = curParagraph.getChild(i);
             if (theNode instanceof Text) {
                 String chunk = theNode.getValue();
-                localText.append(chunk);
                 pos += chunk.length();
             } else if (theNode instanceof Element) {
                 // for readability in another conditional
                 if (((Element) theNode).getLocalName().equals("ref")) {
                     // map character offset of the node
-                    List<Node> valueNodes = mapRefNodes.get(new Integer(pos));
-                    if (valueNodes == null)
-                        valueNodes = new ArrayList<>();
-                    valueNodes.add(theNode);
-                    mapRefNodes.put(new Integer(pos), valueNodes);
-                    if (!refPositions.contains(new Integer(pos)))
-                        refPositions.add(new Integer(pos));
+                    mapRefNodes.put(new Integer(pos), theNode);
+                    refPositions.add(new Integer(pos));
+
+                    String chunk = theNode.getValue();
+                    forbiddenPositions.add(new OffsetPosition(pos, pos+chunk.length()));
+                    pos += chunk.length();                    
                 }
             }
         }
 
-        String text = localText.toString();
+System.out.println("\n"+text);
 
-//System.out.println("\n"+text);
+        List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions);
 
-        List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text);
-
-System.out.print("[ ");
+/*System.out.print("[ ");
 for(OffsetPosition position : theSentences) {
     System.out.print("["+text.substring(position.start, position.end)+"]");
     System.out.print(",");
 }
-System.out.println(" ]");
+System.out.println(" ]");*/
     
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
@@ -1483,8 +1479,9 @@ System.out.println(" ]");
         int posInSentence = 0;
         int refIndex = 0;
         for(int i=0; i<theSentences.size(); i++) {
-            pos += theSentences.get(i).start;
-
+            pos = theSentences.get(i).start;
+            posInSentence = 0;
+//System.out.println("new sentence: " + pos + " -> " + theSentences.get(i).end);
             Element sentenceElement = teiElement("s");
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1498,8 +1495,7 @@ System.out.println(" ]");
                 }
             }
             
-            int sentenceLength = theSentences.get(i).end - theSentences.get(i).start;
-
+            int sentenceLength = theSentences.get(i).end - pos;
             // check if we have a ref between pos and pos+sentenceLength
             for(int j=refIndex; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j).intValue();
@@ -1507,25 +1503,23 @@ System.out.println(" ]");
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
-                    sentenceElement.appendChild(text.substring(theSentences.get(i).start+posInSentence, refPos));
-                    List<Node> valueNodes = mapRefNodes.get(new Integer(refPos));
-                    for(Node theNode : valueNodes) {
-                        theNode.detach();
-                        sentenceElement.appendChild(theNode);
-                    }
+                    sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
+                    Node valueNode = mapRefNodes.get(new Integer(refPos));
+//System.out.println("refPos: " + refPos + " with ref string length: " + valueNode.getValue().length());
+//System.out.println("ref: " + valueNode.getValue());
+                    valueNode.detach();
+                    sentenceElement.appendChild(valueNode);
                     refIndex = j;
-                    posInSentence = refPos-pos;
+                    posInSentence = refPos+valueNode.getValue().length()-pos;
                 }
                 if (refPos > pos+sentenceLength) {
+//System.out.println("break / posInSentence: " + posInSentence);
                     break;
                 }
-
             }
-            //sentenceElement.appendChild(theSentences[i].substring(posInSentence, theSentences[i].length()));
-            sentenceElement.appendChild(text.substring(theSentences.get(i).start+posInSentence, theSentences.get(i).end));
-            posInSentence = 0;
-            //pos += theSentences[i].length()+1;
-
+         
+//System.out.println(text.length() + " : " + (pos+posInSentence) + " / " + theSentences.get(i).end);
+            sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
             curParagraph.appendChild(sentenceElement);
         }
 

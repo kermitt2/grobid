@@ -3,7 +3,7 @@ package org.grobid.core.utilities;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.SentenceDetectorFactory;
 
-import java.util.List;
+import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,6 +64,52 @@ public class SentenceUtilities {
     public List<OffsetPosition> runSentenceDetection(String text) {
         try {
             return sdf.getInstance().detect(text);
+        } catch (Exception e) {
+            LOGGER.warn("Cannot detect sentences. ", e);
+            return null;
+        }
+    }
+
+    /**
+     * Run for sentence identification with some forbidden span constraints, return the offset positions of the 
+     * identified sentences without sentence boundaries within a forbidden span (typically a reference marker
+     * and we don't want a sentence end/start in the middle of that).
+     *
+     * @param text
+     *            text to segment into sentences
+     * @param forbidden
+     *            list of offset positions where sentence boundaries are forbidden
+     * @return list of offset positions for the identified sentence, relative to the input text
+     */
+    public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden) {
+        try {
+            List<OffsetPosition> sentencePositions = sdf.getInstance().detect(text);
+
+            // to be sure, we sort the forbidden positions
+            Collections.sort(forbidden);
+
+            // cancel sentence boundaries within the forbidden spans
+            List<OffsetPosition> finalSentencePositions = new ArrayList<>();
+            int forbiddenIndex = 0;
+            for(int j=0; j < sentencePositions.size(); j++) {
+                OffsetPosition position = sentencePositions.get(j);
+                for(int i=forbiddenIndex; i < forbidden.size(); i++) {
+                    OffsetPosition forbiddenPos = forbidden.get(i);
+                    if (forbiddenPos.end < position.end) 
+                        continue;
+                    if (forbiddenPos.start > position.end) 
+                        break;
+                    if ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
+                        if (j+1 < sentencePositions.size()) {
+                            position.end = sentencePositions.get(j+1).end;
+                            j++;
+                            forbiddenIndex = i;
+                        }
+                    }
+                }
+                finalSentencePositions.add(position);
+            }
+            return finalSentencePositions;
         } catch (Exception e) {
             LOGGER.warn("Cannot detect sentences. ", e);
             return null;
