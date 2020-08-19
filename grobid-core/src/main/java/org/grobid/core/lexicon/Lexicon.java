@@ -67,10 +67,11 @@ public class Lexicon {
     public static Lexicon getInstance() {
         if (instance == null) {
             //double check idiom
-            // synchronized (instanceController) {
-                if (instance == null)
+            synchronized (this) {
+                if (instance == null) {
 					getNewInstance();
-            // }
+                }
+            }
         }
         return instance;
     }
