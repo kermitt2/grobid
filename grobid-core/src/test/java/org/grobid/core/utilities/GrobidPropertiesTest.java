@@ -155,18 +155,6 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testShouldUseHeaderHeuristicsByDefault() {
-        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS);
-        assertTrue("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
-    public void testShouldNotUseHeaderHeuristicsIfDisabled() {
-        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false");
-        assertFalse("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
     public void testsetisResourcesInHome() {
         String value = "true";
         GrobidProperties.setResourcesInHome(value);
