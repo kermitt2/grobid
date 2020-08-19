@@ -22,6 +22,7 @@ public interface GrobidPropertyKeys {
     String PROP_GROBID_DELFT_ELMO = "grobid.delft.useELMo";
     String PROP_USE_LANG_ID = "grobid.use_language_id";
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";
+    String PROP_SENTENCE_DETECTOR_FACTORY = "grobid.sentence_detector_factory";
 
     //String PROP_WITH_SENTENCE_SEGMENTATION = "grobid.with_sentence_segmentation";
 

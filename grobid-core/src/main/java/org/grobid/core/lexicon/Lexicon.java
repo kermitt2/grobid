@@ -66,8 +66,7 @@ public class Lexicon {
 
     public static Lexicon getInstance() {
         if (instance == null) {
-            //double check idiom
-            synchronized (this) {
+            synchronized (Lexicon.class) {
                 if (instance == null) {
 					getNewInstance();
                 }

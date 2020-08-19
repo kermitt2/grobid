@@ -3,10 +3,7 @@ package org.grobid.core.lang;
 import org.grobid.core.exceptions.GrobidException;
 
 /**
- * Date: 11/24/11
- * Time: 11:39 AM
- *
- * @author Vyacheslav Zholudev
+ * Language recognition result
  */
 public final class Language {
     //common language constants

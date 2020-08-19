@@ -23,6 +23,7 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.SentenceUtilities;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.LayoutToken;
@@ -49,8 +50,6 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
-import opennlp.tools.sentdetect.SentenceDetectorME; 
-import opennlp.tools.sentdetect.SentenceModel;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -90,22 +89,9 @@ public class TEIFormatter {
 
     private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
 
-    // components for sentence segmentation
-    private SentenceDetectorME detector = null;
-
     public TEIFormatter(Document document, FullTextParser fullTextParser) {
         this.doc = document;
         this.fullTextParser = fullTextParser;
-
-        // Loading sentence detector model
-        final String openNLPModelFile = GrobidProperties.getGrobidHomePath() + 
-            File.separator + "lexicon" + File.separator + "openNLP" + File.separator + "en-sent.bin";
-        try(InputStream inputStream = new FileInputStream(openNLPModelFile)) {
-            SentenceModel model = new SentenceModel(inputStream);
-            detector = new SentenceDetectorME(model);
-        } catch(IOException e) {
-            LOGGER.warn("Problem when loading the sentence segmenter", e);
-        }
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
@@ -1450,15 +1436,14 @@ public class TEIFormatter {
 
 //System.out.println("\n"+text);
 
-        String theSentences[] = detector.sentDetect(text);
+        List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text);
 
-/*System.out.print("[ ");
-for(int i=0; i<theSentences.length; i++) {
-    System.out.print("["+theSentences[i]+"]");
-    if (i!=theSentences.length-1)
-        System.out.print(",");
+System.out.print("[ ");
+for(OffsetPosition position : theSentences) {
+    System.out.print("["+text.substring(position.start, position.end)+"]");
+    System.out.print(",");
 }
-System.out.println(" ]");*/
+System.out.println(" ]");
     
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
@@ -1469,7 +1454,8 @@ System.out.println(" ]");*/
             for(LayoutToken token : curParagraphTokens) {
                 if (token.getText() == null || token.getText().length() == 0) 
                     continue;
-                if (pos + token.getText().length() <= theSentences[currentSentenceIndex].length()) {
+                int sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
+                if (pos + token.getText().length() <= sentenceLength) {
                     currentSentenceTokens.add(token);
                 } else {
                     if (currentSentenceTokens.size() > 0) {
@@ -1481,6 +1467,8 @@ System.out.println(" ]");*/
                     pos = 0;
                 }
                 pos = token.getText().length();
+                if (currentSentenceIndex >= theSentences.size())
+                    break;
             }
             // last sentence
             if (currentSentenceTokens.size() > 0) {
@@ -1494,7 +1482,9 @@ System.out.println(" ]");*/
         pos = 0;
         int posInSentence = 0;
         int refIndex = 0;
-        for(int i=0; i<theSentences.length; i++) {
+        for(int i=0; i<theSentences.size(); i++) {
+            pos += theSentences.get(i).start;
+
             Element sentenceElement = teiElement("s");
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1508,13 +1498,16 @@ System.out.println(" ]");*/
                 }
             }
             
-            // check if we have a ref between pos and pos+theSentences[i].length()
+            int sentenceLength = theSentences.get(i).end - theSentences.get(i).start;
+
+            // check if we have a ref between pos and pos+sentenceLength
             for(int j=refIndex; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j).intValue();
                 if (refPos < pos+posInSentence) 
                     continue;
-                if (refPos > pos+posInSentence && refPos <= pos+theSentences[i].length()) {
-                    sentenceElement.appendChild(theSentences[i].substring(posInSentence,refPos-pos));
+
+                if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
+                    sentenceElement.appendChild(text.substring(theSentences.get(i).start+posInSentence, refPos));
                     List<Node> valueNodes = mapRefNodes.get(new Integer(refPos));
                     for(Node theNode : valueNodes) {
                         theNode.detach();
@@ -1523,14 +1516,15 @@ System.out.println(" ]");*/
                     refIndex = j;
                     posInSentence = refPos-pos;
                 }
-                if (refPos > pos+theSentences[i].length()) {
+                if (refPos > pos+sentenceLength) {
                     break;
                 }
 
             }
-            sentenceElement.appendChild(theSentences[i].substring(posInSentence, theSentences[i].length()));
+            //sentenceElement.appendChild(theSentences[i].substring(posInSentence, theSentences[i].length()));
+            sentenceElement.appendChild(text.substring(theSentences.get(i).start+posInSentence, theSentences.get(i).end));
             posInSentence = 0;
-            pos += theSentences[i].length()+1;
+            //pos += theSentences[i].length()+1;
 
             curParagraph.appendChild(sentenceElement);
         }
