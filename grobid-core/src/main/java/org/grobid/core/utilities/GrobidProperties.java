@@ -425,11 +425,11 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
-    public static boolean isHeaderUseHeuristics() {
+    /*public static boolean withSentenceSegmentation() {
         return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
+            getPropertyValue(GrobidPropertyKeys.PROP_WITH_SENTENCE_SEGMENTATION, "false")
         );
-    }
+    }*/
 
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using

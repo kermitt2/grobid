@@ -23,7 +23,7 @@ public interface GrobidPropertyKeys {
     String PROP_USE_LANG_ID = "grobid.use_language_id";
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";
 
-    String PROP_HEADER_USE_HEURISTICS = "grobid.header.use_heuristics";
+    //String PROP_WITH_SENTENCE_SEGMENTATION = "grobid.with_sentence_segmentation";
 
     String PROP_CROSSREF_ID = "grobid.crossref_id";
     String PROP_CROSSREF_PW = "grobid.crossref_pw";

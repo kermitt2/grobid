@@ -137,37 +137,9 @@ public class FullTextParser extends AbstractParser {
             // header processing
             BiblioItem resHeader = new BiblioItem();
             Pair<String, LayoutTokenization> featSeg = null;
-            if (GrobidProperties.isHeaderUseHeuristics()) {
-                // heuristics for identifying the header zone, this is the old version of the header block identification, 
-                // still used because more robust than the pure machine learning approach (lack of training data)
-                //parsers.getHeaderParser().processingHeaderBlock(config, doc, resHeader);
-                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, true);
-            }
-            
-            if (isBlank(resHeader.getTitle()) || isBlank(resHeader.getAuthors()) || CollectionUtils.isEmpty(resHeader.getFullAuthors())) {
-                resHeader = new BiblioItem();
-                // using the segmentation model to identify the header zones
-                parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
-            } else {
-                // if the heuristics method was initially used, we anyway take the abstract derived from the segmentation 
-                // model, because this structure is significantly more reliable with this approach
-                BiblioItem resHeader2 = new BiblioItem();
-                // we have already consolidated
-                GrobidAnalysisConfig configWithoutConsolidate = (
-                    GrobidAnalysisConfig.builder(config)
-                    .consolidateHeader(0)
-                ).build();
-                parsers.getHeaderParser().processingHeaderSection(configWithoutConsolidate, doc, resHeader2, false);
-                if (isNotBlank(resHeader2.getAbstract())) {
-                    resHeader.setAbstract(resHeader2.getAbstract());
-                    resHeader.setLayoutTokensForLabel(resHeader2.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT), TaggingLabels.HEADER_ABSTRACT);
-                }
-                // we also take the language recognition information from the segmentation model driven results
-                if (isNotBlank(resHeader2.getLanguage())) {
-                    doc.setLanguage(resHeader2.getLanguage());
-                    resHeader.setLanguage(resHeader2.getLanguage());
-                }
-            }
+
+            // using the segmentation model to identify the header zones
+            parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 

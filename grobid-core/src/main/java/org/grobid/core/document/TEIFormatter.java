@@ -43,10 +43,14 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.*;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+
+import opennlp.tools.sentdetect.SentenceDetectorME; 
+import opennlp.tools.sentdetect.SentenceModel;
 
 /**
  * Class for generating a TEI representation of a document.
@@ -86,9 +90,22 @@ public class TEIFormatter {
 
     private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
 
+    // components for sentence segmentation
+    private SentenceDetectorME detector = null;
+
     public TEIFormatter(Document document, FullTextParser fullTextParser) {
         this.doc = document;
         this.fullTextParser = fullTextParser;
+
+        // Loading sentence detector model
+        final String openNLPModelFile = GrobidProperties.getGrobidHomePath() + 
+            File.separator + "lexicon" + File.separator + "openNLP" + File.separator + "en-sent.bin";
+        try(InputStream inputStream = new FileInputStream(openNLPModelFile)) {
+            SentenceModel model = new SentenceModel(inputStream);
+            detector = new SentenceDetectorME(model);
+        } catch(IOException e) {
+            LOGGER.warn("Problem when loading the sentence segmenter", e);
+        }
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
@@ -1191,6 +1208,7 @@ public class TEIFormatter {
         }
         divResults.add(curDiv);
         Element curParagraph = null;
+        List<LayoutToken> curParagraphTokens = null;
         Element curList = null;
         int equationIndex = 0; // current equation index position 
         for (TaggingTokenCluster cluster : clusters) {
@@ -1276,14 +1294,19 @@ public class TEIFormatter {
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 if (isNewParagraph(lastClusterLabel, curParagraph)) {
+                    if (curParagraph != null && config.isWithSentenceSegmentation()) {
+                        segmentIntoSentences(curParagraph, curParagraphTokens, config);
+                    }
                     curParagraph = teiElement("p");
                     if (config.isGenerateTeiIds()) {
                         String divID = KeyGen.getKey().substring(0, 7);
                         addXmlId(curParagraph, "_" + divID);
                     }
                     curDiv.appendChild(curParagraph);
+                    curParagraphTokens = new ArrayList<>();
                 }
                 curParagraph.appendChild(clusterContent);
+                curParagraphTokens.addAll(cluster.concatTokens());
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 refTokens = LayoutTokensUtil.dehyphenize(refTokens);
@@ -1317,6 +1340,8 @@ public class TEIFormatter {
                         parent.appendChild(n);
                     }
                 }
+                if (curParagraph != null)
+                    curParagraphTokens.addAll(cluster.concatTokens());
             } else if (clusterLabel.equals(TaggingLabels.FIGURE) || clusterLabel.equals(TaggingLabels.TABLE)) {
                 //figureBlock = true;
                 if (curParagraph != null)
@@ -1387,6 +1412,141 @@ public class TEIFormatter {
     private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
         return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
+    }
+
+    private void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config) {
+        // in order to avoid having a sentence boundary in the middle of a ref element 
+        // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
+        // we only consider for sentence segmentation texts under <p> and skip the text under <ref>.
+        if (curParagraph == null)
+            return;
+
+        StringBuilder localText = new StringBuilder();
+        Map<Integer,List<Node>> mapRefNodes = new HashMap<>();
+        List<Integer> refPositions = new ArrayList<>();
+        int pos = 0;
+        for(int i=0; i<curParagraph.getChildCount(); i++) {
+            Node theNode = curParagraph.getChild(i);
+            if (theNode instanceof Text) {
+                String chunk = theNode.getValue();
+                localText.append(chunk);
+                pos += chunk.length();
+            } else if (theNode instanceof Element) {
+                // for readability in another conditional
+                if (((Element) theNode).getLocalName().equals("ref")) {
+                    // map character offset of the node
+                    List<Node> valueNodes = mapRefNodes.get(new Integer(pos));
+                    if (valueNodes == null)
+                        valueNodes = new ArrayList<>();
+                    valueNodes.add(theNode);
+                    mapRefNodes.put(new Integer(pos), valueNodes);
+                    if (!refPositions.contains(new Integer(pos)))
+                        refPositions.add(new Integer(pos));
+                }
+            }
+        }
+
+        String text = localText.toString();
+
+//System.out.println("\n"+text);
+
+        String theSentences[] = detector.sentDetect(text);
+
+/*System.out.print("[ ");
+for(int i=0; i<theSentences.length; i++) {
+    System.out.print("["+theSentences[i]+"]");
+    if (i!=theSentences.length-1)
+        System.out.print(",");
+}
+System.out.println(" ]");*/
+    
+        // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
+        List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
+        List<LayoutToken> currentSentenceTokens = new ArrayList<>();
+        pos = 0;
+        int currentSentenceIndex = 0;
+        if (config.isGenerateTeiCoordinates("s")) {
+            for(LayoutToken token : curParagraphTokens) {
+                if (token.getText() == null || token.getText().length() == 0) 
+                    continue;
+                if (pos + token.getText().length() <= theSentences[currentSentenceIndex].length()) {
+                    currentSentenceTokens.add(token);
+                } else {
+                    if (currentSentenceTokens.size() > 0) {
+                        segmentedParagraphTokens.add(currentSentenceTokens);
+                        currentSentenceIndex++;
+                    }
+                    currentSentenceTokens = new ArrayList<>();
+                    currentSentenceTokens.add(token);
+                    pos = 0;
+                }
+                pos = token.getText().length();
+            }
+            // last sentence
+            if (currentSentenceTokens.size() > 0) {
+                // check sentence index too ?
+                segmentedParagraphTokens.add(currentSentenceTokens);
+            }
+        }
+
+        // update the xml paragraph element
+        int currenChildIndex = 0;
+        pos = 0;
+        int posInSentence = 0;
+        int refIndex = 0;
+        for(int i=0; i<theSentences.length; i++) {
+            Element sentenceElement = teiElement("s");
+            if (config.isGenerateTeiIds()) {
+                String sID = KeyGen.getKey().substring(0, 7);
+                addXmlId(sentenceElement, "_" + sID);
+            }
+            if (config.isGenerateTeiCoordinates("s")) {
+                currentSentenceTokens = segmentedParagraphTokens.get(i);
+                String coords = LayoutTokensUtil.getCoordsString(currentSentenceTokens);
+                if (coords != null) {
+                    sentenceElement.addAttribute(new Attribute("coords", coords));
+                }
+            }
+            
+            // check if we have a ref between pos and pos+theSentences[i].length()
+            for(int j=refIndex; j<refPositions.size(); j++) {
+                int refPos = refPositions.get(j).intValue();
+                if (refPos < pos+posInSentence) 
+                    continue;
+                if (refPos > pos+posInSentence && refPos <= pos+theSentences[i].length()) {
+                    sentenceElement.appendChild(theSentences[i].substring(posInSentence,refPos-pos));
+                    List<Node> valueNodes = mapRefNodes.get(new Integer(refPos));
+                    for(Node theNode : valueNodes) {
+                        theNode.detach();
+                        sentenceElement.appendChild(theNode);
+                    }
+                    refIndex = j;
+                    posInSentence = refPos-pos;
+                }
+                if (refPos > pos+theSentences[i].length()) {
+                    break;
+                }
+
+            }
+            sentenceElement.appendChild(theSentences[i].substring(posInSentence, theSentences[i].length()));
+            posInSentence = 0;
+            pos += theSentences[i].length()+1;
+
+            curParagraph.appendChild(sentenceElement);
+        }
+
+        for(int i=curParagraph.getChildCount()-1; i>=0; i--) {
+            Node theNode = curParagraph.getChild(i);
+            if (theNode instanceof Text) {
+                curParagraph.removeChild(theNode);
+            } else if (theNode instanceof Element) {
+                // for readability in another conditional
+                if (!((Element) theNode).getLocalName().equals("s")) {
+                    curParagraph.removeChild(theNode);
+                }
+            }
+        }
+
     }
 
 

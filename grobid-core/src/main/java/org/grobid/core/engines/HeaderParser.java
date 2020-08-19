@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
-            String tei = processingHeaderSection(config, doc, resHeader, false);
+            String tei = processingHeaderSection(config, doc, resHeader);
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
@@ -111,42 +111,11 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * Processing without application of the segmentation model, regex are used to identify the header
-     * zone.
+     * Header processing after application of the segmentation model 
      */
-    public Pair<String, Document> processing2(String pdfInput, BiblioItem resHeader, GrobidAnalysisConfig config) {
-        DocumentSource documentSource = null;
+    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader) {
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
-            Document doc = new Document(documentSource);
-            doc.addTokenizedDocument(config);
-
-            if (doc.getBlocks() == null) {
-                throw new GrobidException("PDF parsing resulted in empty content");
-            }
-
-            //String tei = processingHeaderBlock(config, doc, resHeader);
-            String tei = processingHeaderSection(config, doc, resHeader, true);
-            return Pair.of(tei, doc);
-        } catch (Exception e) {
-            throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
-        } finally {
-            if (documentSource != null) {
-                documentSource.close(true, true, true);
-            }
-        }
-    }
-
-    /**
-     * Header processing after application of the segmentation model (new approach)
-     */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean applyHeuristics) {
-        try {
-            SortedSet<DocumentPiece> documentHeaderParts = null;
-            if (applyHeuristics)
-                documentHeaderParts = doc.getDocumentPartsWithHeuristics();
-            else
-                documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
+            SortedSet<DocumentPiece> documentHeaderParts = documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
