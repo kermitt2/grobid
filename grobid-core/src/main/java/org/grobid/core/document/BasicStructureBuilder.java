@@ -11,7 +11,6 @@ import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.Cluster;
 import org.grobid.core.layout.LayoutToken;
-//import org.grobid.core.utilities.Pair;
 import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,7 +74,7 @@ public class BasicStructureBuilder {
      * @param doc a document
      * @return if found numbering
      */
-    public boolean filterLineNumber(Document doc) {
+    /*public boolean filterLineNumber(Document doc) {
         // we first test if we have a line numbering by checking if we have an increasing integer
         // at the begin or the end of each block
         boolean numberBeginLine = false;
@@ -182,7 +181,7 @@ public class BasicStructureBuilder {
         }
 
         return foundNumbering;
-    }
+    }*/
 
     /**
      * Cluster the blocks following the font, style and size aspects

@@ -819,12 +819,10 @@ public class TEIFormatter {
         }
 
         if ((abstractText != null) && (abstractText.length() != 0)) {
-
             if ( (biblio.getLabeledAbstract() != null) && (biblio.getLabeledAbstract().length() > 0) ) {
                 // we have available structured abstract, which can be serialized as a full text "piece"
                 StringBuilder buffer = new StringBuilder();
                 try {
-//System.out.println(biblio.getLabeledAbstract());
                     buffer = toTEITextPiece(buffer,
                                             biblio.getLabeledAbstract(),
                                             biblio,
@@ -840,7 +838,6 @@ public class TEIFormatter {
                     throw new GrobidException("An exception occurred while serializing TEI.", e);
                 }
                 tei.append(buffer.toString());
-//System.out.println(buffer.toString());
             } else {
                 tei.append("\t\t\t\t<p");
                 if (generateIDs) {
@@ -1430,16 +1427,7 @@ public class TEIFormatter {
             }
         }
 
-System.out.println("\n"+text);
-
         List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions);
-
-/*System.out.print("[ ");
-for(OffsetPosition position : theSentences) {
-    System.out.print("["+text.substring(position.start, position.end)+"]");
-    System.out.print(",");
-}
-System.out.println(" ]");*/
     
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
@@ -1481,7 +1469,6 @@ System.out.println(" ]");*/
         for(int i=0; i<theSentences.size(); i++) {
             pos = theSentences.get(i).start;
             posInSentence = 0;
-//System.out.println("new sentence: " + pos + " -> " + theSentences.get(i).end);
             Element sentenceElement = teiElement("s");
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1505,20 +1492,16 @@ System.out.println(" ]");*/
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
                     sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
                     Node valueNode = mapRefNodes.get(new Integer(refPos));
-//System.out.println("refPos: " + refPos + " with ref string length: " + valueNode.getValue().length());
-//System.out.println("ref: " + valueNode.getValue());
                     valueNode.detach();
                     sentenceElement.appendChild(valueNode);
                     refIndex = j;
                     posInSentence = refPos+valueNode.getValue().length()-pos;
                 }
                 if (refPos > pos+sentenceLength) {
-//System.out.println("break / posInSentence: " + posInSentence);
                     break;
                 }
             }
          
-//System.out.println(text.length() + " : " + (pos+posInSentence) + " / " + theSentences.get(i).end);
             sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
             curParagraph.appendChild(sentenceElement);
         }

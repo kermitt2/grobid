@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
-            String tei = processingHeaderSection(config, doc, resHeader);
+            String tei = processingHeaderSection(config, doc, resHeader, true);
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
@@ -113,7 +113,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model 
      */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader) {
+    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -354,11 +354,15 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
-                tei.append("\t</text>\n");
-                tei.append("</TEI>\n");
-                return tei.toString();
+                // we don't need to serialize if we process the full text (it would be done 2 times)
+                if (serialize) {
+                    TEIFormatter teiFormatter = new TEIFormatter(doc, null);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
+                    tei.append("\t</text>\n");
+                    tei.append("</TEI>\n");                
+                    return tei.toString();
+                } else 
+                    return null;
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -930,10 +934,11 @@ public class HeaderParser extends AbstractParser {
                     // this will need to be reviewed with more training data, for the moment
                     // avoid concatenation for abstracts as it brings more noise than correct pieces
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
-                } else
+                } else {
                     biblio.setAbstract(clusterContent);
-                //List<LayoutToken> tokens = getLayoutTokens(cluster);
-                //biblio.addAbstractTokens(tokens);
+                    List<LayoutToken> tokens = getLayoutTokens(cluster);
+                    biblio.addAbstractTokens(tokens);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
                 //if (biblio.getReference() != null) {
                 if (biblio.getReference() != null && biblio.getReference().length() < clusterNonDehypenizedContent.length()) {
