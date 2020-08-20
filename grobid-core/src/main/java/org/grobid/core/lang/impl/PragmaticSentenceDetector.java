@@ -3,6 +3,7 @@ package org.grobid.core.lang.impl;
 import org.jruby.embed.PathType;
 import org.jruby.embed.ScriptingContainer;
 import org.jruby.embed.LocalContextScope;
+import org.jruby.embed.LocalVariableBehavior;
 
 import org.grobid.core.lang.SentenceDetector;
 import org.grobid.core.utilities.OffsetPosition;
@@ -37,7 +38,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         loadPaths.add(segmenterLoadPath);
         loadPaths.add(unicodeLoadPath);
 
-        instance = new ScriptingContainer(LocalContextScope.THREADSAFE);
+        instance = new ScriptingContainer(LocalContextScope.CONCURRENT, LocalVariableBehavior.PERSISTENT);
         instance.setClassLoader(instance.getClass().getClassLoader());
         instance.setLoadPaths(loadPaths);
         instance.runScriptlet(PathType.ABSOLUTE, segmenterRbFile);
