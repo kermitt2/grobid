@@ -1501,7 +1501,7 @@ public class TEIFormatter {
                     break;
                 }
             }
-         
+
             sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
             curParagraph.appendChild(sentenceElement);
         }

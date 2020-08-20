@@ -106,12 +106,13 @@ public class SentenceUtilities {
                         continue;
                     if (forbiddenPos.start > position.end) 
                         break;
-                    if ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
+                    while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
                         if (j+1 < sentencePositions.size()) {
                             position.end = sentencePositions.get(j+1).end;
                             j++;
                             forbiddenIndex = i;
-                        }
+                        } else
+                            break;
                     }
                 }
                 finalSentencePositions.add(position);

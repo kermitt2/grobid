@@ -23,15 +23,14 @@ public class OpenNLPSentenceDetector implements SentenceDetector {
     private static final Logger LOGGER  = LoggerFactory.getLogger(OpenNLPSentenceDetector.class);
 
     // components for sentence segmentation
-    private SentenceDetectorME detector = null;
+    private SentenceModel model = null;
 
     public OpenNLPSentenceDetector() {
         // Loading sentence detector model
         String openNLPModelFile = GrobidProperties.getGrobidHomePath() + 
             File.separator + "lexicon" + File.separator + "openNLP" + File.separator + "en-sent.bin";
         try(InputStream inputStream = new FileInputStream(openNLPModelFile)) {
-            SentenceModel model = new SentenceModel(inputStream);
-            detector = new SentenceDetectorME(model);
+            model = new SentenceModel(inputStream);
         } catch(IOException e) {
             LOGGER.warn("Problem when loading the sentence segmenter", e);
         }
@@ -39,6 +38,8 @@ public class OpenNLPSentenceDetector implements SentenceDetector {
 
     @Override
     public List<OffsetPosition> detect(String text) {
+        // unfortunately OpenNLP sentence detector is not thread safe, only the model can be share 
+        SentenceDetectorME detector = new SentenceDetectorME(model);
         Span spans[] = detector.sentPosDetect(text); 
         List<OffsetPosition> result = new ArrayList<>();
 
