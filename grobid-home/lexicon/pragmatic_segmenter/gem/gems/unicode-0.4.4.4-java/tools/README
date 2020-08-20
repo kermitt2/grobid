@@ -1,0 +1,7 @@
+The bundled unidata.map is created from UnicodeData.txt,
+DerivedNormalizationProps.txt, SpecialCasing.txt and EastAsianWidth.txt
+of Unicode 6.0.
+
+To update unidata.map,
+
+  ruby mkunidata.rb UnicodeData.txt DerivedNormalizationProps.txt SpecialCasing.txt EastAsianWidth.txt  > unidata.map

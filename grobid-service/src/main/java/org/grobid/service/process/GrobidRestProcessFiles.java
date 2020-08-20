@@ -176,6 +176,7 @@ public class GrobidRestProcessFiles {
                     .generateTeiIds(generateIDs)
                     .generateTeiCoordinates(teiCoordinates)
                     .withSentenceSegmentation(segmentSentences)
+                    //.withSentenceSegmentation(true)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);

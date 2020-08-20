@@ -1,0 +1,156 @@
+		   Unicode Library for Ruby
+			Version 0.4.4
+
+		       Yoshida Masato
+
+
+- Introduction
+
+  Unicode string manipulation library for Ruby.
+  This library is based on UAX #15 Unicode Normalization Forms(*1).
+
+    *1 <URL:http://www.unicode.org/unicode/reports/tr15/>
+
+
+- Install
+
+  This can work with ruby-1.8.7 or later. I recommend you to
+  use ruby-1.9.3 or later.
+
+  Make and install usually.
+  For example, when Ruby supports dynamic linking on your OS,
+
+    ruby extconf.rb
+    make
+    make install
+
+  To install using gem, for exapmle:
+
+    gem build unicdoe.gemspac
+    gem install unicode
+
+
+- Usage
+
+  If you do not link this module with Ruby statically, 
+
+    require "unicode"
+
+  before using.
+
+
+- Module Functions
+
+  All parameters of functions must be UTF-8 strings.
+
+  Unicode::strcmp(str1, str2)
+  Unicode::strcmp_compat(str1, str2)
+    Compare Unicode strings with a normalization.
+    strcmp uses the Normalization Form D, strcmp_compat uses
+    Normalization Form KD.
+
+  Unicode::decompose(str)
+  Unicode::decompose_compat(str)
+    Decompose Unicode string. Then the trailing characters
+    are sorted in canonical order.
+    decompose uses the canonical decomposition,
+    decompose_compat uses the compatibility decomposition.
+    The decomposition is based on the character decomposition
+    mapping in UnicodeData.txt and the Hangul decomposition
+    algorithm.
+
+  Unicode::decompose_safe(str)
+    Decompose Unicode string with a non-standard mapping.
+    It does not decompose the characters in
+    CompositionExclusions.txt.
+
+  Unicode::compose(str)
+    Compose Unicode string. Before composing, the trailing
+    characters are sorted in canonical order.
+    The parameter must be decomposed.
+    The composition is based on the reverse of the
+    character decomposition mapping in UnicodeData.txt,
+    CompositionExclusions.txt and the Hangul composition
+    algorithm.
+
+  Unicode::normalize_D(str)  (Unicode::nfd(str))
+  Unicode::normalize_KD(str)  (Unicode::nfkd(str))
+    Normalize Unicode string in form D or form KD.
+    These are aliases of decompose/decompose_compat.
+
+  Unicode::normalize_D_safe(str)  (Unicode::nfd_safe(str))
+    This is an alias of decompose_safe.
+
+  Unicode::normalize_C(str) (Unicode::nfc(str))
+  Unicode::normalize_KC(str) (Unicode::nfkc(str))
+    Normalize Unicode string in form C or form KC.
+      normalize_C  = decompose + compose
+      normalize_KC = decompose_compat + compose
+
+  Unicode::normalize_C_safe(str) (Unicode::nfc_safe(str))
+    Normalize Unicode string with decompose_safe.
+      normalize_C_safe  = decompose_safe + compose
+
+  Unicode::upcase(str)
+  Unicode::downcase(str)
+  Unicode::capitalize(str)
+    Case conversion functions.
+    The mappings that are used by these functions are not normative
+    in UnicodeData.txt.
+
+  Unicode::categories(str)
+  Unicode::abbr_categories(str)
+    Get an array of general category names of the string.
+    get_abbr_categories returns abbreviated names.
+    These can be called with a block.
+
+      Unicode.get_category do |category| p category end
+
+  Unicode::text_elements(str)
+    Get an array of text elements.
+    A text element is a unit that is displayed as a single character.
+    These can be called with a block.
+
+  Unicode::width(str[, cjk])
+    Estimate the display width on the fixed pitch text terminal.
+    It based on Markus Kuhn's mk_wcwidth.
+    If the optional argument 'cjk' is true, East Asian
+    Ambiguous characters are treated as wide characters.
+
+      Unicode.width("\u03b1") #=> 1
+      Unicode.width("\u03b1", true) #=> 2
+
+
+- Bugs
+
+  UAX #15 suggests that the look up for Normalization Form C
+  should not be implemented with a hash of string for better
+  performance.
+
+
+- Copying
+
+  This extension module is copyrighted free software by
+  Yoshida Masato.
+
+  You can redistribute it and/or modify it under the same
+  term as Ruby.
+
+
+- Author
+
+  Yoshida Masato <yoshidam@yoshidam.net>
+
+
+- History
+
+  Feb  7, 2013 version 0.4.4 update unidata.map for Unicode 6.2
+  Aug  8, 2012 version 0.4.3 add categories, text_elements and width
+  Feb 29, 2012 version 0.4.2 add decompose_safe
+  Feb  3, 2012 version 0.4.1 update unidata.map for Unicode 6.1
+  Oct 14, 2010 version 0.4.0 fix the composition algorithm, and support Unicode 6.0
+  Feb 26, 2010 version 0.3.0 fix a capitalize bug and support SpecialCasing
+  Dec 29, 2009 version 0.2.0 update for Ruby 1.9.1 and Unicode 5.2
+  Sep 10, 2005 version 0.1.2 update unidata.map for Unicode 4.1.0
+  Aug 26, 2004 version 0.1.1 update unidata.map for Unicode 4.0.1
+  Nov 23, 1999 version 0.1
