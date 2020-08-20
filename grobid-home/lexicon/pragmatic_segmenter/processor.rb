@@ -47,7 +47,8 @@ module PragmaticSegmenter
       return if consecutive_underscore?(txt) || txt.length < 2
       txt.apply(
         @language::ReinsertEllipsisRules::All,
-        @language::ExtraWhiteSpaceRule
+        # PL: avoid removal of white spaces in the original string
+        #@language::ExtraWhiteSpaceRule
       )
 
       if txt =~ @language::QUOTATION_AT_END_OF_SENTENCE_REGEX
