@@ -1450,7 +1450,7 @@ public class TEIFormatter {
                     currentSentenceTokens.add(token);
                     pos = 0;
                 }
-                pos = token.getText().length();
+                pos += token.getText().length();
                 if (currentSentenceIndex >= theSentences.size())
                     break;
             }
