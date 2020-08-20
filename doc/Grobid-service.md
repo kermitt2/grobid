@@ -158,6 +158,7 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
+|           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
 
 Response status codes:
 
@@ -170,6 +171,8 @@ Response status codes:
 |         503          |     The service is not available, which usually means that all the threads are currently used                       |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service.
+
+The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid property file (under `grobid-home/config/grobid.properties`). As of August 2020, available segmenters are the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter) (recommended) and [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect).
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
@@ -193,6 +196,12 @@ Regarding the bibliographical references, it is possible to include the original
 
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
+```
+
+Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
+
+```console
+curl -v --form input=@./0thefile.pdf  --form segmentSentences=1 --form teiCoordinates=s localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences
