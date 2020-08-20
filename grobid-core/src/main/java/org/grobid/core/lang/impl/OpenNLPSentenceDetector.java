@@ -28,7 +28,7 @@ public class OpenNLPSentenceDetector implements SentenceDetector {
     public OpenNLPSentenceDetector() {
         // Loading sentence detector model
         String openNLPModelFile = GrobidProperties.getGrobidHomePath() + 
-            File.separator + "lexicon" + File.separator + "openNLP" + File.separator + "en-sent.bin";
+            File.separator + "sentence-segmentation" + File.separator + "openNLP" + File.separator + "en-sent.bin";
         try(InputStream inputStream = new FileInputStream(openNLPModelFile)) {
             model = new SentenceModel(inputStream);
         } catch(IOException e) {

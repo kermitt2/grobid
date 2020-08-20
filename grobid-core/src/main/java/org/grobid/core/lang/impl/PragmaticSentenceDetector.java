@@ -26,12 +26,14 @@ public class PragmaticSentenceDetector implements SentenceDetector {
     private ScriptingContainer instance = null;
 
     public PragmaticSentenceDetector() {
-        String segmenterRbFile = GrobidProperties.getGrobidHomePath() + 
-            File.separator + "lexicon" + File.separator + "pragmatic_segmenter"+ File.separator + "segmenter.rb";
-        String segmenterLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "lexicon";  
-        String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "lexicon" + 
+        String segmenterRbFile = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
+            File.separator + "pragmatic_segmenter"+ File.separator + "segmenter.rb";
+        String segmenterLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation";  
+        /*String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
             File.separator + "pragmatic_segmenter" + File.separator + "gem" + File.separator + "gems" +
-            File.separator + "unicode-0.4.4.4-java" + File.separator + "lib";    
+            File.separator + "unicode-0.4.4.4-java" + File.separator + "lib";*/
+        String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
+            File.separator + "pragmatic_segmenter" + File.separator + "lib";
 //System.out.println(vendorLoadPath);
 
         List<String> loadPaths = new ArrayList();
@@ -93,11 +95,15 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                         // we need to correct the previous sentence end offset given the start of the current sentence
                         if (result.size() > 0) {
                             int newPreviousEnd = start;
-                            while(text.charAt(newPreviousEnd) == ' ') {
+                            while(newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
                                 newPreviousEnd--;
                                 if (start - newPreviousEnd > 10) {
                                     // this is a break to avoid going too far 
                                     newPreviousEnd = start;
+                                    // but look back previous character to cover general case
+                                    if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
+                                        newPreviousEnd--;
+                                    }
                                 }
                             }
                             result.get(result.size()-1).end = newPreviousEnd;
