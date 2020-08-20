@@ -1469,7 +1469,6 @@ public class TEIFormatter {
         for(int i=0; i<theSentences.size(); i++) {
             pos = theSentences.get(i).start;
             posInSentence = 0;
-//System.out.println(text.length() + " : " + pos + " - " + theSentences.get(i).end);
             Element sentenceElement = teiElement("s");
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1491,12 +1490,9 @@ public class TEIFormatter {
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
-//System.out.println("posInSentence: " + posInSentence);
-//System.out.println("refPos: " + refPos);
                     Node valueNode = mapRefNodes.get(new Integer(refPos));
-//System.out.println(valueNode.getValue());
-                    sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
-                    
+                    if (pos+posInSentence < refPos)
+                        sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
                     valueNode.detach();
                     sentenceElement.appendChild(valueNode);
                     refIndex = j;
@@ -1506,9 +1502,11 @@ public class TEIFormatter {
                     break;
                 }
             }
-//System.out.println("posInSentence: " + posInSentence);
-            sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
-            curParagraph.appendChild(sentenceElement);
+
+            if (pos+posInSentence < theSentences.get(i).end) {
+                sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
+                curParagraph.appendChild(sentenceElement);
+            }
         }
 
         for(int i=curParagraph.getChildCount()-1; i>=0; i--) {
