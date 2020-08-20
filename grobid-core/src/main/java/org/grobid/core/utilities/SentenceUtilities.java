@@ -62,6 +62,8 @@ public class SentenceUtilities {
      * @return list of offset positions for the identified sentence, relative to the input text
      */
     public List<OffsetPosition> runSentenceDetection(String text) {
+        if (text == null)
+            return null;
         try {
             return sdf.getInstance().detect(text);
         } catch (Exception e) {
@@ -82,10 +84,15 @@ public class SentenceUtilities {
      * @return list of offset positions for the identified sentence, relative to the input text
      */
     public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden) {
+        if (text == null)
+            return null;
         try {
             List<OffsetPosition> sentencePositions = sdf.getInstance().detect(text);
 
             // to be sure, we sort the forbidden positions
+            if (forbidden == null)
+                return sentencePositions;
+
             Collections.sort(forbidden);
 
             // cancel sentence boundaries within the forbidden spans
