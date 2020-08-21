@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-08-20T01:39:02Z. .
+Schema generated from ODD source 2020-08-21T03:03:09Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -5026,7 +5026,14 @@ Suggested values include: 1] label; 2] data</a:documentation>
    <define name="tei_figDesc">
       <element name="figDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]</a:documentation>
-         <ref name="tei_macro.limitedContent"/>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.limitedPhrase"/>
+               <ref name="tei_model.inter"/>
+               <ref name="tei_model.divLike"/>
+            </choice>
+         </zeroOrMore>
          <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>

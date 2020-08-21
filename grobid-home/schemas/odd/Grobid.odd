@@ -183,6 +183,21 @@
                     </attList>
                 </classSpec>
 
+                <!-- we modify figDesc so that it can contain generic structural divisions -->
+                <elementSpec ident="figDesc" module="figures" mode="change">
+                    <content>
+                        <rng:zeroOrMore>
+                            <rng:choice>
+                                <rng:text/>
+                                <rng:ref name="model.limitedPhrase"/>
+                                <rng:ref name="model.inter"/>
+                                <rng:ref name="model.divLike"/>
+                            </rng:choice>
+                        </rng:zeroOrMore>
+                    </content>
+
+                </elementSpec>
+
                 <!-- removing elements not used in Grobid results -->
                 <elementSpec ident="ab" mode="delete" module="linking"/>
                 <elementSpec ident="abbr" mode="delete" module="core"/>
@@ -357,6 +372,7 @@
                 <elementSpec ident="unclear" mode="delete" module="core"/>
                 <!-- only s from the analysis module, in case we want the final result with sentence segmentation -->
                 <moduleRef key="analysis" except="c cl interp interpGrp m pc phr span spanGrp w"/>
+
             </schemaSpec>
         </body>
     </text>

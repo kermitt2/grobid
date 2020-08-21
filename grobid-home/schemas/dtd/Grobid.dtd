@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2020-08-20T01:39:39Z. .
+DTD generated from ODD source 2020-08-21T03:03:48Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -1291,7 +1291,7 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.declaring.attributes; >
 <!--doc:(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images] -->
-<!ELEMENT figDesc %macro.limitedContent;>
+<!ELEMENT figDesc (#PCDATA|%model.limitedPhrase;|%model.inter;|%model.divLike;)*>
 <!ATTLIST figDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST figDesc
  %tei_att.global.attributes; >
