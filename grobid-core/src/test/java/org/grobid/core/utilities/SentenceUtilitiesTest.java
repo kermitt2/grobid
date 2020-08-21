@@ -4,6 +4,7 @@ import org.grobid.core.main.LibraryLoader;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -65,5 +66,19 @@ public class SentenceUtilitiesTest {
         forbidden.add(new OffsetPosition(9, 15));
         List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text, forbidden);
         assertThat(theSentences.size(), is(1));
+    }
+
+    @Test
+    public void testGetText() throws Exception {
+        String text = "Bla bla bla. Bli bli bli.";
+
+        List<OffsetPosition> offsetPositions = Arrays.asList(
+            new OffsetPosition(0, 12),
+            new OffsetPosition(14, 21)
+        );
+
+        String outputText = SentenceUtilities.getInstance().getXml(text, offsetPositions);
+
+        assertThat(outputText, is("<s>Bla bla bla.</s> B<s>li bli </s>bli."));
     }
 }
