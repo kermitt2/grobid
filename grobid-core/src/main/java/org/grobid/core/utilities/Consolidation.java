@@ -36,8 +36,6 @@ import java.util.HashMap;
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
 
-import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
-
 /**
  * Singleton class for managing the extraction of bibliographical information from pdf documents.
  * When consolidation operations are realized, be sure to call the close() method
@@ -202,7 +200,7 @@ public class Consolidation {
                 arguments = new HashMap<String,String>();
             if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
                 (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
-                arguments.put("query.bibliographic", title);
+                arguments.put("query.title", title);
         }
         if (StringUtils.isNotBlank(journalTitle)) {
             // call based on partial metadata
@@ -264,11 +262,11 @@ public class Consolidation {
                 doiQuery = false;
             }
 
-            client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+            client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
                 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
-                    if (isNotEmpty(res)) {
+                    if ((res != null) && (res.size() > 0) ) {
                         // we need here to post-check that the found item corresponds
                         // correctly to the one requested in order to avoid false positive
                         for(BiblioItem oneRes : res) {

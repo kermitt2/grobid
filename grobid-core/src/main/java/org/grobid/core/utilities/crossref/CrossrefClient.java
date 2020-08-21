@@ -120,11 +120,11 @@ public class CrossrefClient implements Closeable {
 			request.addListener(listener);
 		synchronized(this) {
 			Future<?> f = executorService.submit(new CrossrefRequestTask<T>(this, request));
-			List<Future<?>> localFutures = this.futures.get(threadId);
+			List<Future<?>> localFutures = this.futures.get(new Long(threadId));
 			if (localFutures == null)
-				localFutures = new ArrayList<>();
+				localFutures = new ArrayList<Future<?>>();
 			localFutures.add(f);
-			this.futures.put(threadId, localFutures);
+			this.futures.put(new Long(threadId), localFutures);
 //System.out.println("add request to thread " + threadId + " / current total for the thread: " +  localFutures.size());			
 		}
 	}
@@ -152,7 +152,7 @@ public class CrossrefClient implements Closeable {
 	public void finish(long threadId) {
 		synchronized(this.futures) {
 			try {
-				List<Future<?>> threadFutures = this.futures.get(threadId);
+				List<Future<?>> threadFutures = this.futures.get(new Long(threadId));
 				if (threadFutures != null) {
 //System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< thread: " + threadId + " / waiting for " + threadFutures.size() + " requests to finish...");
 					for(Future<?> future : threadFutures) {
