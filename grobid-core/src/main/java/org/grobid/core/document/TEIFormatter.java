@@ -1393,7 +1393,7 @@ public class TEIFormatter {
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
-    private void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config) {
+    public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config) {
         // in order to avoid having a sentence boundary in the middle of a ref element 
         // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
         // we only consider for sentence segmentation texts under <p> and skip the text under <ref>.
