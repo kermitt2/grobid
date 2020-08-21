@@ -54,7 +54,7 @@ public class SentenceUtilities {
     }
 
     /**
-     * Basic run for sentence identification, return the offset positions of the 
+     * Basic run for sentence identification, return the offset positions of the
      * identified sentences
      *
      * @param text
@@ -73,7 +73,7 @@ public class SentenceUtilities {
     }
 
     /**
-     * Run for sentence identification with some forbidden span constraints, return the offset positions of the 
+     * Run for sentence identification with some forbidden span constraints, return the offset positions of the
      * identified sentences without sentence boundaries within a forbidden span (typically a reference marker
      * and we don't want a sentence end/start in the middle of that).
      *
@@ -102,9 +102,9 @@ public class SentenceUtilities {
                 OffsetPosition position = sentencePositions.get(j);
                 for(int i=forbiddenIndex; i < forbidden.size(); i++) {
                     OffsetPosition forbiddenPos = forbidden.get(i);
-                    if (forbiddenPos.end < position.end) 
+                    if (forbiddenPos.end < position.end)
                         continue;
-                    if (forbiddenPos.start > position.end) 
+                    if (forbiddenPos.start > position.end)
                         break;
                     while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
                         if (j+1 < sentencePositions.size()) {
@@ -124,4 +124,23 @@ public class SentenceUtilities {
         }
     }
 
+    public String getXml(String text, List<OffsetPosition> offsetPositions) {
+        StringBuilder outputText = new StringBuilder();
+
+        outputText.append(text.substring(offsetPositions.get(offsetPositions.size() - 1).end));
+        int previousStart = -1;
+
+        for (int i = offsetPositions.size() - 1; i >= 0; i--) {
+            if (previousStart != -1) {
+                outputText.insert(0, text.substring(offsetPositions.get(i).end, previousStart));
+            }
+            outputText.insert(0, "<s>" + text.substring(offsetPositions.get(i).start, offsetPositions.get(i).end)
+                + "</s>");
+            previousStart = offsetPositions.get(i).start;
+        }
+
+        outputText.insert(0, text.substring(0, offsetPositions.get(0).start));
+
+        return "<sents>" + outputText.toString() + "</sents>";
+    }
 }
