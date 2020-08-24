@@ -702,21 +702,6 @@ public class GrobidRestService implements GrobidPaths {
         return restProcessFiles.annotateCitationPatentPDF(inputStream, consol, includeRaw);
     }
 
-    @Path("/segmentSentence")
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @POST
-    public Response segmentSentenceText_post(@FormDataParam(INPUT) String text) {
-        return restProcessString.segmentSentences(text);
-    }
-
-    @Path("/segmentSentence")
-    @Produces(MediaType.APPLICATION_XML)
-    @GET
-    public Response segmentSentenceText_get(@QueryParam(INPUT) String text) {
-        return restProcessString.segmentSentences(text);
-    }
-
     public void setRestProcessFiles(GrobidRestProcessFiles restProcessFiles) {
         this.restProcessFiles = restProcessFiles;
     }
