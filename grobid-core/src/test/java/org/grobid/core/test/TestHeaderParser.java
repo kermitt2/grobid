@@ -71,7 +71,7 @@ public class TestHeaderParser extends EngineTest {
 
     }
 
-    @Test
+    /*@Test
     public void testSegmentationHeader() throws Exception {
         getTestResourcePath();
 
@@ -85,5 +85,5 @@ public class TestHeaderParser extends EngineTest {
         assertThat(resHeader.getKeyword(),
                 is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
         assertNotNull(resHeader.getFullAuthors());
-    }
+    }*/
 }

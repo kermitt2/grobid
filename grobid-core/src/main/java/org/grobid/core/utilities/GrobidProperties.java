@@ -425,11 +425,11 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
-    public static boolean isHeaderUseHeuristics() {
+    /*public static boolean withSentenceSegmentation() {
         return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
+            getPropertyValue(GrobidPropertyKeys.PROP_WITH_SENTENCE_SEGMENTATION, "false")
         );
-    }
+    }*/
 
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using
@@ -649,6 +649,14 @@ public class GrobidProperties {
      */
     public static void setUseLanguageId(final String useLanguageId) {
         setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
+    }
+
+    public static String getSentenceDetectorFactory() {
+        String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_SENTENCE_DETECTOR_FACTORY);
+        if (StringUtils.isBlank(factoryClassName)) {
+            throw new GrobidPropertyException("Sentence detection is enabled but a factory class name is not provided");
+        }
+        return factoryClassName;
     }
 
     /**

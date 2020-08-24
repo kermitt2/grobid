@@ -60,6 +60,8 @@ WARNING: the expected extension of the PDF files to be processed is .pdf
 
 * -teiCoordinates: output a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present
 
+* -segmentSentences: add sentence segmentation level structures for paragraphs in the TEI XML result, by default no sentence segmentation is done 
+
 Example:
 ```bash
 > java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.6.1-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -exe processFullText 

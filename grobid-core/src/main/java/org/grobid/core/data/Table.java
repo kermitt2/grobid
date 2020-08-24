@@ -130,6 +130,22 @@ public class Table extends Figure {
                     } else {
                         desc.appendChild(textNode(clusterContent));
                     }
+
+                    if (desc != null && config.isWithSentenceSegmentation()) {
+                        formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config);
+
+                        // we need a sentence segmentation of the figure caption, for that we need to introduce 
+                        // a <div>, then a <p>
+                        desc.setLocalName("p");
+
+                        Element div = XmlBuilderUtils.teiElement("div");
+                        div.appendChild(desc);
+
+                        Element figDesc = XmlBuilderUtils.teiElement("figDesc");                
+                        figDesc.appendChild(div);
+
+                        desc = figDesc;
+                    }
                 }
             } else {
                 desc.appendChild(LayoutTokensUtil.normalizeText(caption.toString()).trim());

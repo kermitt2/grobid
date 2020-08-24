@@ -101,7 +101,7 @@ public class HeaderParser extends AbstractParser {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
-            String tei = processingHeaderSection(config, doc, resHeader, false);
+            String tei = processingHeaderSection(config, doc, resHeader, true);
             return new ImmutablePair<String, Document>(tei, doc);
         } finally {
             if (documentSource != null) {
@@ -111,42 +111,11 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * Processing without application of the segmentation model, regex are used to identify the header
-     * zone.
+     * Header processing after application of the segmentation model 
      */
-    public Pair<String, Document> processing2(String pdfInput, BiblioItem resHeader, GrobidAnalysisConfig config) {
-        DocumentSource documentSource = null;
+    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
         try {
-            documentSource = DocumentSource.fromPdf(new File(pdfInput), config.getStartPage(), config.getEndPage());
-            Document doc = new Document(documentSource);
-            doc.addTokenizedDocument(config);
-
-            if (doc.getBlocks() == null) {
-                throw new GrobidException("PDF parsing resulted in empty content");
-            }
-
-            //String tei = processingHeaderBlock(config, doc, resHeader);
-            String tei = processingHeaderSection(config, doc, resHeader, true);
-            return Pair.of(tei, doc);
-        } catch (Exception e) {
-            throw new GrobidException(e, GrobidExceptionStatus.GENERAL);
-        } finally {
-            if (documentSource != null) {
-                documentSource.close(true, true, true);
-            }
-        }
-    }
-
-    /**
-     * Header processing after application of the segmentation model (new approach)
-     */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean applyHeuristics) {
-        try {
-            SortedSet<DocumentPiece> documentHeaderParts = null;
-            if (applyHeuristics)
-                documentHeaderParts = doc.getDocumentPartsWithHeuristics();
-            else
-                documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
+            SortedSet<DocumentPiece> documentHeaderParts = documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
@@ -385,11 +354,15 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-                TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
-                tei.append("\t</text>\n");
-                tei.append("</TEI>\n");
-                return tei.toString();
+                // we don't need to serialize if we process the full text (it would be done 2 times)
+                if (serialize) {
+                    TEIFormatter teiFormatter = new TEIFormatter(doc, null);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
+                    tei.append("\t</text>\n");
+                    tei.append("</TEI>\n");                
+                    return tei.toString();
+                } else 
+                    return null;
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -961,10 +934,11 @@ public class HeaderParser extends AbstractParser {
                     // this will need to be reviewed with more training data, for the moment
                     // avoid concatenation for abstracts as it brings more noise than correct pieces
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
-                } else
+                } else {
                     biblio.setAbstract(clusterContent);
-                //List<LayoutToken> tokens = getLayoutTokens(cluster);
-                //biblio.addAbstractTokens(tokens);
+                    List<LayoutToken> tokens = getLayoutTokens(cluster);
+                    biblio.addAbstractTokens(tokens);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
                 //if (biblio.getReference() != null) {
                 if (biblio.getReference() != null && biblio.getReference().length() < clusterNonDehypenizedContent.length()) {

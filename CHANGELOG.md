@@ -6,7 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-# [0.6.1] – 2020-08-12
+### Added
+
++ Option to get sentence segmented text in extracted structures (choice between the Pragmatic Segmenter, integrated via JRuby, and OpenNLP sentence detector)
++ Option to get PDF coordinates for `<s>` structures
+
+### Changed
+
++ Update of TEI XML schema to allow `<s>` structurs in the result
+
+### Fixed
+
++ Structuration of abstract is back
++ Deprecated CrossRef `query.title` field for the CrossRef consolidation service
+
+## [0.6.1] – 2020-08-12
 
 ### Added
 
