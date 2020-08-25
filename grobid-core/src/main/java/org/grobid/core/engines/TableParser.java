@@ -39,7 +39,7 @@ public class TableParser extends AbstractParser {
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+            throw new GrobidException("CRF labeling with table model fails.", e);
         }
 
         if (res == null) {
@@ -81,6 +81,7 @@ public class TableParser extends AbstractParser {
             } else if (clusterLabel.equals(TBL_NOTE)) {
                 table.appendNote(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
+                table.addAllNoteLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
             } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);

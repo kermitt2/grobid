@@ -911,6 +911,7 @@ public class Document implements Serializable {
                     f.setLayoutTokens(realCaptionTokens);
                     f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
                     f.setCaption(new StringBuilder(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(realCaptionTokens))));
+                    f.setCaptionLayoutTokens(realCaptionTokens);
                     pageFigures.add(f);
                 }
             }

@@ -270,6 +270,11 @@ public class FullTextParser extends AbstractParser {
                         table.setLabeledCaption(captionProcess.getLeft());
                         table.setCaptionLayoutTokens(captionProcess.getRight());
                     }
+                    if ( (table.getNoteLayoutTokens() != null) && (table.getNoteLayoutTokens().size() > 0) ) {
+                        Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
+                        table.setLabeledNote(noteProcess.getLeft());
+                        table.setNoteLayoutTokens(noteProcess.getRight());
+                    }
                 }
 
 				equations = processEquations(rese, layoutTokenization.getTokenization(), doc);
