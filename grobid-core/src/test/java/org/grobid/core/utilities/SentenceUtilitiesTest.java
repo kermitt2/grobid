@@ -4,14 +4,13 @@ import org.grobid.core.main.LibraryLoader;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 
 public class SentenceUtilitiesTest {
 
@@ -79,6 +78,29 @@ public class SentenceUtilitiesTest {
 
         String outputText = SentenceUtilities.getInstance().getXml(text, offsetPositions);
 
-        assertThat(outputText, is("<s>Bla bla bla.</s> B<s>li bli </s>bli."));
+        assertThat(outputText, is("<sents><s>Bla bla bla.</s> B<s>li bli </s>bli.</sents>"));
+    }
+
+    @Test
+    public void testParagraphWithMarkersOutsideTheSentence() throws Exception {
+        String text = "Precisely controlling surface chemistry using self-assembled monolayers (SAMs) and bilayers " +
+            "has been a central focus of research in both synthetic and biological interfaces. " +
+            "1−4 Much synthetic monolayer chemistry has its basis in the formation of SAMs of alkanethiols " +
+            "on gold and the coinage metals, pioneered by groups including those of Whitesides, " +
+            "Nuzzo, and Allara in the 1980s. 5−8 ";
+
+        List<OffsetPosition> forbidden = Arrays.asList(
+            new OffsetPosition(174, 177),
+            new OffsetPosition(383, 386)
+        );
+
+        List<OffsetPosition> offsetPositions = SentenceUtilities.getInstance().runSentenceDetection(text, forbidden);
+        assertThat(SentenceUtilities.getInstance().getXml(text, offsetPositions), is("<sents><s>Precisely controlling " +
+            "surface chemistry using self-assembled monolayers (SAMs) and bilayers " +
+            "has been a central focus of research in both synthetic and biological interfaces. " +
+            "1−4</s> <s>Much synthetic monolayer chemistry has its basis in the formation of SAMs of alkanethiols " +
+            "on gold and the coinage metals, pioneered by groups including those of Whitesides, " +
+            "Nuzzo, and Allara in the 1980s. 5−8</s> </sents>"));
+
     }
 }
