@@ -502,7 +502,6 @@ public class FullTextParser extends AbstractParser {
                 else if (nbNumbType > (bibDataSets.size() / 2))
                     bibRefCalloutType = "AUTHOR";
             } catch(EntityMatcherException e) {
-                e.printStackTrace();
                 LOGGER.info("Could not build the bibliographical matcher", e);
             }
         }

@@ -200,12 +200,12 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	}
 	
 	public String toString() {
-		String str = " (";
+		StringBuilder str = new StringBuilder(" (");
 		if (params != null) {
 			for (Entry<String, String> cursor : params.entrySet())
-				str += ","+cursor.getKey()+"="+cursor.getValue();
+				str.append(",").append(cursor.getKey()).append("=").append(cursor.getValue());
 		}
-		str += ")";
-		return str;
+		str.append(")");
+		return str.toString();
 	}
 }
