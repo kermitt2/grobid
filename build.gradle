@@ -330,7 +330,7 @@ project(":grobid-service") {
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-    tasks.distZip.enabled = false
+    tasks.distZip.enabled = true
     tasks.distTar.enabled = false
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
