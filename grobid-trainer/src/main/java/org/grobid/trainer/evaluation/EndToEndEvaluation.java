@@ -390,6 +390,9 @@ public class EndToEndEvaluation {
 		Random rand = new Random();
 		int nbFile = 0;
         for (File dir : refFiles) {
+        	if (!dir.isDirectory())
+        		continue;
+
 			// file ratio filtering
 			double random = rand.nextDouble();
 			if (random > fileRatio) {
@@ -439,7 +442,7 @@ public class EndToEndEvaluation {
 					}
 				}); // swap in a dummy resolver to neutralise the online DTD
 				Document gold = docBuilder.parse(goldFile);
-
+//System.out.println(goldFile.getPath());
 				// get the results of the evaluated tool for this file
 				if (runType == this.GROBID) {
 					// results are produced in a TEI file
@@ -539,13 +542,18 @@ public class EndToEndEvaluation {
 									List<String> goldResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											goldResults.add(content);
+										}
 									}
 									
 									if (goldResults.size() > 0) {
 										fieldsValues.put(fieldName, goldResults);
-//System.out.println("gold / " + fieldName + " / " + goldResults.toString());
+//if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid"))
+//	System.out.println("gold / " + fieldName + " / " + goldResults.toString());
 										if (!fieldName.equals("id")) {
 	                                        strictStats.incrementExpected(fieldName);
 	                                        softStats.incrementExpected(fieldName);
@@ -709,11 +717,18 @@ for(String sign : goldCitationSignaturesLevel4)
 									List<String> grobidResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											grobidResults.add(content);
+										}
 									}
-									if (grobidResults.size() > 0)
+									if (grobidResults.size() > 0) {
+//if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid"))
+//	System.out.println("grobid / " + fieldName + " / " + grobidResults.toString());
 										fieldsValues.put(fieldName, grobidResults);
+									}
 								}
 								p++;
 							}
@@ -787,6 +802,27 @@ for(String sign : goldCitationSignaturesLevel4)
 							if ((idResults != null) && (idResults.size() > 0))
 								grobidId = idResults.get(0);
 							grobidId = basicNormalization(grobidId);
+
+							// DOI
+							List<String> doiResults = grobidCitation.get("doi");
+							String grobidDOI = "";
+							if ((doiResults != null) && (doiResults.size() > 0))
+								grobidDOI = doiResults.get(0);
+							grobidDOI = identifierNormalization(grobidDOI);
+
+							// PMID
+							List<String> pmidResults = grobidCitation.get("pmid");
+							String grobidPMID = "";
+							if ((pmidResults != null) && (pmidResults.size() > 0))
+								grobidPMID = pmidResults.get(0);
+							grobidPMID = identifierNormalization(grobidPMID);
+
+							// PMCID
+							List<String> pmcidResults = grobidCitation.get("pmcid");
+							String grobidPMCID = "";
+							if ((pmcidResults != null) && (pmcidResults.size() > 0))
+								grobidPMCID = pmcidResults.get(0);
+							grobidPMCID = identifierNormalization(grobidPMCID);
 
 							String grobidSignature1 = null;								
 							if ( (grobidTitleSoft.length()>0) && (grobidDate.length()>0) ) {
@@ -1749,6 +1785,29 @@ System.out.println("grobid: " + grobidResult);*/
 		string = string.replace("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
 		string = string.replace("&apos;", "'");
+		return string.trim().toLowerCase();
+	}
+
+	private static String identifierNormalization(String string) {
+		string = basicNormalization(string);
+		if (string.startsWith("pmcpmc")) {
+			string = string.replace("pmcpmc", "");
+		}
+		string = string.replace("pmc", "");
+		if (string.startsWith("doi")) {
+			string = string.replace("doi", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
+		if (string.startsWith("pmid")) {
+			string = string.replace("pmid", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
 		return string.trim().toLowerCase();
 	}
 	

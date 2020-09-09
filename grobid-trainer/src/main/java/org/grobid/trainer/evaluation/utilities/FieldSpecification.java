@@ -124,7 +124,7 @@ public class FieldSpecification {
 		headerFields.add(keywordsField);
 		headerLabels.add("keywords");
 
-		// DOI
+		// DOI (header)
 		FieldSpecification doiField = new FieldSpecification();
 		doiField.fieldName = "doi";
 		doiField.grobidPath.
@@ -253,6 +253,40 @@ public class FieldSpecification {
 			add("@id");
 		citationsFields.add(citationIdField);
 		citationsLabels.add("id");
+
+		// DOI
+		FieldSpecification citationDOIField = new FieldSpecification();
+		citationDOIField.fieldName = "doi";
+		citationDOIField.isTextual = true;
+		citationDOIField.grobidPath.
+			add("analytic/idno[@type=\"DOI\"]/text()");
+		citationDOIField.nlmPath.
+			add("*/pub-id[@pub-id-type=\"doi\"]/text()");
+		citationsFields.add(citationDOIField);
+		citationsLabels.add("doi");
+
+		// PMID
+		FieldSpecification citationPMIDField = new FieldSpecification();
+		citationPMIDField.fieldName = "pmid";
+		citationPMIDField.isTextual = true;
+		citationPMIDField.grobidPath.
+			add("analytic/idno[@type=\"PMID\"]/text()");
+		citationPMIDField.nlmPath.
+			add("*/pub-id[@pub-id-type=\"pmid\"]/text()");
+		citationsFields.add(citationPMIDField);
+		citationsLabels.add("pmid");
+
+		// PMC
+		FieldSpecification citationPMCIDField = new FieldSpecification();
+		citationPMCIDField.fieldName = "pmcid";
+		citationPMCIDField.isTextual = true;
+		citationPMCIDField.grobidPath.
+			add("analytic/idno[@type=\"PMCID\"]/text()");
+		citationPMCIDField.nlmPath.
+			add("*/pub-id[@pub-id-type=\"pmcid\"]/text()");
+		citationsFields.add(citationPMCIDField);
+		citationsLabels.add("pmcid");
+
 
 		// full text structures
 		/*FieldSpecification sectionReferenceField = new FieldSpecification();
