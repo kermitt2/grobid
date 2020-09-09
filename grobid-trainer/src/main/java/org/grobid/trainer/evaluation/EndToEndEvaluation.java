@@ -198,28 +198,6 @@ public class EndToEndEvaluation {
 	            final File pdfFile = refFiles2[0];
 				Future<Boolean> future = executor.submit(new GrobidEndToEndTask(pdfFile));
 	            results.add(future);
-	            
-				// run Grobid full text and write the TEI result in the directory
-				/*try {
-					System.out.println(n + " - " + pdfFile.getPath());
-					GrobidAnalysisConfig config =
-                        GrobidAnalysisConfig.builder()
-                                .consolidateHeader(1)
-                                .consolidateCitations(0)
-                                .withPreprocessImages(true)
-                                .build();
-					String tei = engine.fullTextToTEI(pdfFile, config);
-					// write the result in the same directory
-					File resultTEI = new File(dir.getPath() + File.separator
-						+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
-					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
-				} 
-				catch (Exception e) {
-					System.out.println("Error when processing: " + pdfFile.getPath());
-					e.printStackTrace();
-					fails++;
-				}*/
-
 				n++;
 			}
 
@@ -369,6 +347,31 @@ public class EndToEndEvaluation {
 		int match3 = 0;
 		int match4 = 0;
 		
+		String profile = "JATS";
+		if (xmlInputPath.indexOf("PMC") != -1) {
+			// for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
+			profile =  "PMC";
+			
+			citationsLabels.remove("doi");
+			citationsLabels.remove("pmid");
+			citationsLabels.remove("pmcid");
+
+			List<FieldSpecification> toRemove = new ArrayList<>();
+			if (citationsFields != null && citationsFields.size() > 0) {
+				for(FieldSpecification citationsField : citationsFields) {
+					if (citationsField.fieldName.equals("doi") || 
+						citationsField.fieldName.equals("pmid") || 
+						citationsField.fieldName.equals("pmcid"))
+					toRemove.add(citationsField);
+				}
+			}
+			if (toRemove.size() > 0) {
+				for(FieldSpecification citationsField : toRemove) {
+					citationsFields.remove(citationsField);
+				}
+			}
+		}
+
         File input = new File(xmlInputPath);
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
