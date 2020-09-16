@@ -10,7 +10,7 @@
 
 ## GROBID documentation
 
-Visit the [GROBID documentation](http://grobid.readthedocs.org) for more detailed information.
+Visit the [GROBID documentation](https://grobid.readthedocs.org) for more detailed information.
 
 ## Purpose
 
@@ -40,13 +40,13 @@ GROBID can be considered as production ready. Deployments in production includes
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 
-For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](http://grobid.readthedocs.org).
+For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](https://grobid.readthedocs.org).
 
 ## Demo
 
-For testing purposes, a public GROBID demo server is available at the following address: [http://grobid.science-miner.com](http://grobid.science-miner.com)
+For testing purposes, a public GROBID demo server is available at the following address: [https://grobid.science-miner.com](https://grobid.science-miner.com)
 
-The Web services are documented [here](http://grobid.readthedocs.io/en/latest/Grobid-service/).
+The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
 _Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
 
@@ -112,6 +112,6 @@ If you want to this work, please refer to the present GitHub project, together w
 }
 ```
 
-See the [GROBID documentation](http://grobid.readthedocs.org/en/latest/References) for more related resources. 
+See the [GROBID documentation](https://grobid.readthedocs.org/en/latest/References) for more related resources. 
 
 <!-- markdownlint-disable-file MD033 -->
