@@ -302,6 +302,7 @@ project("grobid-home") {
         from('.') {
             include("config/*")
             include("language-detection/**")
+            include("sentence-segmentation/**")
             include("lib/**")
             include("pdf2xml/**")
             include("models/**")
