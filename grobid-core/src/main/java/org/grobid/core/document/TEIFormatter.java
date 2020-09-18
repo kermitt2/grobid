@@ -1393,6 +1393,13 @@ public class TEIFormatter {
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
+    private boolean toSkipToken(String tok) {
+         if (tok.equals("-") || tok.equals(" ") || tok.equals("\n") || tok.equals("\t"))
+            return true;
+        else
+            return false;
+    }
+
     public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config) {
         // in order to avoid having a sentence boundary in the middle of a ref element 
         // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
@@ -1433,24 +1440,37 @@ public class TEIFormatter {
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
         List<LayoutToken> currentSentenceTokens = new ArrayList<>();
         pos = 0;
-        int currentSentenceIndex = 0;
+        
         if (config.isGenerateTeiCoordinates("s")) {
-            for(LayoutToken token : curParagraphTokens) {
+            
+            int currentSentenceIndex = 0;
+            String sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
+            int sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
+
+            for(int i=0; i<curParagraphTokens.size(); i++) {
+                LayoutToken token = curParagraphTokens.get(i);
                 if (token.getText() == null || token.getText().length() == 0) 
                     continue;
-                int sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
-                if (pos + token.getText().length() <= sentenceLength) {
+                int newPos = sentenceChunk.indexOf(token.getText(), pos);
+                if ((newPos != -1) || toSkipToken(token.getText())) {
+                    // just move on
                     currentSentenceTokens.add(token);
+                    if (newPos != -1 && !toSkipToken(token.getText()))
+                        pos = newPos;
                 } else {
                     if (currentSentenceTokens.size() > 0) {
                         segmentedParagraphTokens.add(currentSentenceTokens);
                         currentSentenceIndex++;
+                        if (currentSentenceIndex >= theSentences.size())
+                            break;
+                        sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
+                        sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
                     }
                     currentSentenceTokens = new ArrayList<>();
                     currentSentenceTokens.add(token);
                     pos = 0;
                 }
-                pos += token.getText().length();
+                
                 if (currentSentenceIndex >= theSentences.size())
                     break;
             }
@@ -1459,6 +1479,13 @@ public class TEIFormatter {
                 // check sentence index too ?
                 segmentedParagraphTokens.add(currentSentenceTokens);
             }
+
+/*if (segmentedParagraphTokens.size() != theSentences.size()) {
+System.out.println("ERROR, segmentedParagraphTokens size:" + segmentedParagraphTokens.size() + " vs theSentences size: " + theSentences.size());
+System.out.println(text);
+System.out.println(theSentences.toString());
+}*/
+
         }
 
         // update the xml paragraph element
@@ -1475,10 +1502,12 @@ public class TEIFormatter {
                 addXmlId(sentenceElement, "_" + sID);
             }
             if (config.isGenerateTeiCoordinates("s")) {
-                currentSentenceTokens = segmentedParagraphTokens.get(i);
-                String coords = LayoutTokensUtil.getCoordsString(currentSentenceTokens);
-                if (coords != null) {
-                    sentenceElement.addAttribute(new Attribute("coords", coords));
+                if (segmentedParagraphTokens.size()>=i+1) {
+                    currentSentenceTokens = segmentedParagraphTokens.get(i);
+                    String coords = LayoutTokensUtil.getCoordsString(currentSentenceTokens);
+                    if (coords != null) {
+                        sentenceElement.addAttribute(new Attribute("coords", coords));
+                    }
                 }
             }
             

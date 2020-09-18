@@ -35,17 +35,19 @@ class FigureParser extends AbstractParser {
      * the resulting Figure object.
      */
     public Figure processing(List<LayoutToken> tokenizationFigure, String featureVector) {
-
         String res;
         try {
-            res = label(featureVector);
+//System.out.println("---------------------featureVector-----------------------");
+//System.out.println(featureVector);
+            res = label(featureVector);;
+//System.out.println("---------------------res-----------------------");
+//System.out.println(res);
         } catch (Exception e) {
-            throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+            throw new GrobidException("CRF labeling with figure model fails.", e);
         }
         if (res == null) {
             return null;
         }
-
         return getExtractionResult(tokenizationFigure, res);
     }
 

@@ -1027,6 +1027,19 @@ public class BiblioItem {
                     ind = bibl.indexOf("doi:10.");
                 bibl = bibl.substring(ind+4);
             }
+
+            // for DOI coming from PDF links, we have some prefix cleaning to make 
+            if (bibl.startsWith("file://") || bibl.startsWith("https://") || bibl.startsWith("http://")) {
+                int ind = bibl.indexOf("/10.");
+                if (ind != -1)
+                    bibl = bibl.substring(ind+1);
+            }
+            
+            bibl = bibl.trim();
+            int ind = bibl.indexOf("http://");
+            if (ind != -1 && ind > 10) {
+                bibl = bibl.substring(0,ind);
+            }
         }
         return bibl;
     }

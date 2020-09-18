@@ -139,4 +139,4 @@ Then you can test the toy project:
 
 ## Javadoc
 
-The javadoc of the Grobid project is available [here](http://grobid.github.io/). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](http://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.
+The javadoc of the Grobid project is available [here](https://grobid.github.io). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](https://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.
