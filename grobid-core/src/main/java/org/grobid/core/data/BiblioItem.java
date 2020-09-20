@@ -2077,7 +2077,22 @@ public class BiblioItem {
             }
         }
 
+        // ISBN
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(ISBN13)) {
+            if (pubnum.toLowerCase().indexOf("isbn") != -1) {
+                pubnum = pubnum.replace("isbn", "");
+                pubnum = pubnum.replace("ISBN", "");
+                pubnum = TextUtilities.cleanField(pubnum, true);
+                if (pubnum.length() == 10)
+                    setISBN10(pubnum);
+                else 
+                    setISBN13(pubnum);
+                setPubnum(null);
+            }
+        }
+
         // TODO: PII
+
     }
 
     /**
