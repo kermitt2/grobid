@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L090137001-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0303278v1 [cond-mat.supr-con]</idno>
+
+	<date>14 Mar 2003<lb/></date>
+
+	APS/123-QED<lb/>
+
+	<docTitle>
+	<titlePart>Superconductivity of the Sr 2 Ca 12 Cu 24 O 41 spin ladder system : Are the<lb/> superconducting pairing and the spin-gap formation of the same origin?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Naoki Fujiwara, * Nobuo Môri, † and Yoshiya Uwatoko<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Solid State Physics, University of Tokyo,<lb/></affiliation>
+	</byline>
+
+	<address>5-1-5 Kashiwanoha, Kashiwa, Chiba 277-8581,Japan<lb/></address>
+
+	<byline>
+	<docAuthor>Takehiko Matsumoto<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute for Materials Science,</affiliation>
+	</byline>
+
+	<address>Tsukuba 305-0047, Japan<lb/></address>
+
+	<byline>
+	<docAuthor>Naoki Motoyama and Shinichi Uchida<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Superconductivity, University of Tokyo,<lb/></affiliation>
+	</byline>
+
+	<address>7-3-1 Hongo, Bunkyo-ku, Tokyo 113-8656, Japan<lb/></address>
+
+	(Dated:
+	<date>July 17 2002</date>
+	)<lb/>
+
+	<div type="abstract">Pressure-induced superconductivity in a spin-ladder cuprate Sr2Ca12Cu24O41 has not been studied<lb/> on a microscopic level so far although the superconductivity was already discovered in 1996. We have<lb/> improved high-pressure technique with using a large high-quality crystal, and succeeded in studying<lb/> the superconductivity using 63 Cu nuclear magnetic resonance (NMR). We found that anomalous<lb/> metallic state reflecting the spin-ladder structure is realized and the superconductivity possesses<lb/> a s-wavelike character in the meaning that a finite gap exists in the quasi-particle excitation: At<lb/> pressure of 3.5GPa we observed two excitation modes in the normal state from the relaxation rate<lb/> T −1<lb/> 1 . One gives rise to an activation-type component in T −1<lb/> 1 , and the other T -linear component<lb/> linking directly with the superconductivity. This gapless mode likely arises from free motion of<lb/> holon-spinon bound states appearing by hole doping, and the pairing of them likely causes the<lb/> superconductivity.<lb/></div>
+
+	<keyword>PACS numbers: 74.25. Ha, 74.72. Jt,74.70. -b<lb/></keyword>
+
+	* Email:
+	<email>naokif@issp.u-tokyo.ac.jp<lb/></email>
+
+	<byline>
+	<affiliation>† Department of Physics, Faculty of Science, Saitama University,<lb/></affiliation>
+	</byline>
+
+	<address>255 Simookubo, Saitama 338-8581, Japan</address>
+
+		</front>
+	</text>
+</tei>

@@ -2,11 +2,11 @@
 
 Individual models can be evaluated as explained in [Training the different models of Grobid](Training-the-models-of-Grobid.md).
 
-For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several CRF models, GROBID includes two possible evaluation progresses:
+For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several sequence labelling models, GROBID includes two possible evaluation progresses:
 
-* against a set of [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) articles. For its publications, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. 
+* against a set of JATS-encoded (NLM) articles, such as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) or [bioRxiv](https://www.biorxiv.org). For its publications, PubMed Central aprovides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. bioRxiv is used in Grobid to evaluate more precisely performance on preprint articles. 
 
-* against TEI documents produced by [Pub2TEI](http://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
+* against TEI documents produced by [Pub2TEI](https://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
 ## Getting PubMedCentral gold-standard data 
 
@@ -16,11 +16,15 @@ Any similar PubMed Central set of articles could normally be used, as long they 
 
 We suppose in the following that the archive is decompressed under `PATH_TO_PMC/PMC_sample_1943/`.
 
+## Getting bioRxiv gold-standard data 
+
+For evaluation on preprint articles, we are using the balanced bioRxiv 10k dataset compiled with care and published by Daniel Ecer ([eLife](https://elifesciences.org)), available on [Zenodo](https://zenodo.org/record/3873702). More precisely we publish benchmarks using the [test set](https://zenodo.org/record/3873702/files/biorxiv-10k-test-2000.zip?download=1) of 2000 articles. The zip archive is similar in structure to the above PMC sample 1943 dataset and further documented below. 
+
 ## Getting publisher gold-standard data 
 
-Some publishers release publications in XML format complementary to PDF in Open Access, allowing text mining (see for instance the dedicated subset of PMC publications). On contractual basis, it is possible to acquire native XML from mainstream publishers. Unfortunately, each publisher uses a different XML schema and covering all these formats would be a very time-consuming work. To ease the processing of these XML documents, the projet [Pub2TEI](http://github.com/kermitt2/Pub2TEI) permits to transform the native XML formats of a dozen mainstream publishers into a common TEI format which is the same as the output of GROBID. 
+Some publishers release publications in XML format complementary to PDF in Open Access, allowing text mining (see for instance the dedicated subset of PMC publications). On contractual basis, it is possible to acquire native XML from mainstream publishers. Unfortunately, each publisher uses a different XML schema and covering all these formats would be a very time-consuming work. To ease the processing of these XML documents, the projet [Pub2TEI](https://github.com/kermitt2/Pub2TEI) permits to transform the native XML formats of a dozen mainstream publishers into a common TEI format which is the same as the output of GROBID. 
 
-See [Pub2TEI](http://github.com/kermitt2/Pub2TEI) for converting native publisher XML into usable TEI. 
+See [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for converting native publisher XML into usable TEI. 
 
 ## Directory structure
 
@@ -30,7 +34,7 @@ For running the evaluation, the tool assumes that the files are organised in a s
 
 * each article sub-directory containing at least the PDF version and a gold XML structured version of the article (in NLM format for PubMedCentral evaluation or in TEI format for the Pub2TEI-based evaluation). See the diagram bellow - the name of the sub-directory and the files is free.  
 
-* extension for files generated with [Pub2TEI](http://github.com/kermitt2/Pub2TEI) is `.pub2tei.tei.xml`. Extension for NLM files is `.nxlm`. GROBID will generate additional TEI files with extension `.fulltext.tei.xml`. 
+* extension for files generated with [Pub2TEI](https://github.com/kermitt2/Pub2TEI) is `.pub2tei.tei.xml`. Extension for NLM files is `.nxlm` (PMC) or `xml` (bioRxiv). GROBID will generate additional TEI files with extension `.fulltext.tei.xml`. 
 
 ```
 ├── article1
@@ -45,36 +49,55 @@ For running the evaluation, the tool assumes that the files are organised in a s
 ...
 ```
 
+## Warning on JATS/NLM format
+
+JATS/NLM is a very loose XML format, in the sense that there are multiple ways to encode the same information. As a consequence, there are a variety of JATS flavors depending on the publisher and it is not possible to garantee that any JATS files will be supported as gold standard dataset by the `jatsEval` process. PMC and bioRxiv JATS articles are supported, but for a larger variety of JATS files it is recommanded to convert them first into TEI with [Pub2TEI](https://github.com/kermitt2/Pub2TEI) and use the `teiEval` process. [Pub2TEI](https://github.com/kermitt2/Pub2TEI) supports all the JATS/NLM variants we are aware of, and convert them into a constrained and unambiguous single TEI format without information loss. 
+
 ## Running and evaluating 
 
-### PubMedCentral
+### PubMed Central
 
 Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
-> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=1
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=1
 ```
 The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
 ```bash
-> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0
 ```
 It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the PubMedCentral files, use:
 ```bash
-> ./gradlew PubMedCentralEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0 -PfileRatio=0.1
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0 -PfileRatio=0.1
+```
+
+### bioRxiv
+
+Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
+```bash
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=1
+```
+The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
+```bash
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=0
+```
+It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the bioRxiv files, use:
+```bash
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=0 -PfileRatio=0.1
 ```
 
 ### Pub2TEI-based
 
 Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
-> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=1
+> ./gradlew teiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=1
 ```
 The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting GROBID TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
 ```bash
-> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0
+> ./gradlew teiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0
 ```
 It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the Pub2TEI-produced files, use:
 ```bash
-> ./gradlew Pub2TeiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0 -PfileRatio=0.1
+> ./gradlew teiEval -Pp2t=ABS_PATH_TO_TEI/ -Prun=0 -PfileRatio=0.1
 ```
 
 ## Evaluation results

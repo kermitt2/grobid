@@ -121,22 +121,22 @@ killed processes.
 The following part is normally only for development purposes. You can use the official stable docker images from the docker HUB as described above.
 However if you are interested in using the master version of Grobid in container, building a new image is the way to go.
 
-The docker build for a particular version (here for example the latest stable version `0.5.6`) will clone the repository using git, so no need to custom builds. Only important information is the version which will be checked out from the tags.
+The docker build for a particular version (here for example the latest stable version `0.6.1`) will clone the repository using git, so no need to custom builds. Only important information is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.5.6 --build-arg GROBID_VERSION=0.5.6 .
+> docker build -t grobid/grobid:0.6.1 --build-arg GROBID_VERSION=0.6.1 .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-> docker build -t grobid/grobid:0.6.0-SNAPSHOT --build-arg GROBID_VERSION=0.6.0-SNAPSHOT .
+> docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT .
 ```
 
-In order to run the container of the newly created image for version `0.5.6`:
+In order to run the container of the newly created image for version `0.6.1`:
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.5.6
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.6.1
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):

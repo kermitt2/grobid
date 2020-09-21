@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="4EE4CA4527C3CBD0A238BC82EF137E0445AEE879"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Systematic functional analysis<lb/> of the Caenorhabditis elegans<lb/> genome using RNAi<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ravi S. Kamath* †, Andrew G. Fraser* † §, Yan Dong*, Gino Poulin*, Richard Durbin ‡, Monica Gotta* §, Alexander Kanapink, Nathalie Le Bot*,<lb/> Sergio Moreno*{, Marc Sohrmann ‡ §, David P. Welchman*, Peder Zipperlen* &amp; Julie Ahringer*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Wellcome Trust/Cancer Research UK Institute and Department of Genetics, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Tennis Court Road, Cambridge CB2 1QR, UK<lb/></address>
+
+	<byline>
+	<affiliation>‡ Wellcome Trust Sanger Institute,</affiliation>
+	</byline>
+
+	<address>Hinxton, Cambridge CB10 1SA, UK<lb/></address>
+
+	<byline>
+	<affiliation>k EMBL-European Bioinformatics Institute, </affiliation>
+	</byline>
+
+	<address>Wellcome Trust Genome Campus, Hinxton, Cambridge CB10 1SD, UK<lb/></address>
+
+	<byline>
+	<affiliation>{ Centro de Investigacion del Cancer, CSIC / Univ. Salamanca, </affiliation>
+	</byline>
+
+	<address>Campus Miguel de Unamuno, 37007 Salamanca, Spain<lb/></address>
+
+	† These authors contributed equally to this work<lb/> ...........................................................................................................................................................................................................................<lb/>
+
+	<div type="abstract">A principal challenge currently facing biologists is how to connect the complete DNA sequence of an organism to its development<lb/> and behaviour. Large-scale targeted-deletions have been successful in defining gene functions in the single-celled yeast<lb/> Saccharomyces cerevisiae, but comparable analyses have yet to be performed in an animal. Here we describe the use of RNA<lb/> interference to inhibit the function of ,86% of the 19,427 predicted genes of C. elegans. We identified mutant phenotypes for 1,722<lb/> genes, about two-thirds of which were not previously associated with a phenotype. We find that genes of similar functions are<lb/> clustered in distinct, multi-megabase regions of individual chromosomes; genes in these regions tend to share transcriptional<lb/> profiles. Our resulting data set and reusable RNAi library of 16,757 bacterial clones will facilitate systematic analyses of the<lb/> connections among gene sequence, chromosomal location and gene function in C. elegans.<lb/></div>
+
+	§ Present addresses: 
+
+	<byline>
+	<affiliation>Wellcome Trust Sanger Institute,</affiliation>
+	</byline> 
+
+	<address>Hinxton, Cambridge CB10 1SA, UK</address> 
+
+	(A.G.F.);<lb/> 
+
+	<byline>
+	<affiliation>Institute of Biochemistry ETH Hoenggerberg,</affiliation>
+	</byline> 
+
+	<address>8093-Zurich, Switzerland</address> 
+
+	(M.G., M.S.).. 
+
+	<note type="doctype">articles<lb/></note> 
+
+	<reference>NATURE | VOL 421 | 16 JANUARY 2003 | www.nature.com/nature<lb/> </reference>
+
+	<page>231<lb/></page>
+
+	<note type="copyright">© 2003 Nature Publishing Group<lb/></note>
+
+	<note type="submission">Received 2 July; accepted 29 October 2002</note>
+	;
+	<idno>doi:10.1038/nature01278.</idno>
+
+		</front>
+	</text>
+</tei>

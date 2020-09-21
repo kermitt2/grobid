@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1016._10.1.1.1.7427"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Text verification in an automated system for<lb/> the extraction of bibliographic data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>George R. Thoma, Glenn Ford, Daniel Le, Zhirong Li<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Library of Medicine<lb/></affiliation>
+	</byline>
+
+	<address>Bethesda, Maryland<lb/></address>
+
+	Abstract.
+	<div type="abstract">An essential stage in any text extraction system is the manual<lb/> verification of the printed material converted by OCR. This proves to be the most<lb/> labor-intensive step in the process. In a system built and deployed at the National<lb/> Library of Medicine to automatically extract bibliographic data from scanned<lb/> biomedical journals, alternative means were considered to validate the text. This<lb/> paper describes two approaches and gives preliminary performance data.</div>
+
+		</front>
+	</text>
+</tei>

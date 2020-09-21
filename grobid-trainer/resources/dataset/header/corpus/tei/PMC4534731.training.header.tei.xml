@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC4534731"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="copyright">©Copyrights 2015. The Korean Academy of Conservative Dentistry. 249<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/<lb/> by-nc/3.0) which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<docTitle>
+	<titlePart>Statistical notes for clinical researchers: Type I and<lb/> type II errors in statistical decision<lb/> Open lecture on statistics<lb/></titlePart>
+	</docTitle>
+
+	<idno>ISSN 2234-7658 (print)</idno> / 
+	<idno>ISSN 2234-7666 (online)</idno><lb/> 
+	<idno>http://dx.doi.org/10.5395/rde.2015.40.3.249<lb/></idno>
+
+	<byline>
+	<docAuthor>Hae-Young Kim*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Health Policy and<lb/> Management, College of Health<lb/> Science, and Department of Public<lb/> Health Sciences, Graduate School,<lb/> Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul, Korea<lb/></address>
+
+	*Correspondence to<lb/>
+	<byline>
+	<docAuthor>Hae-Young Kim, DDS, PhD.<lb/></docAuthor>
+	</byline>
+
+	Associate Professor,
+	<byline>
+	<affiliation>Department<lb/> of Health Policy and Management,<lb/> College of Health Science, and<lb/> Department of Public Health<lb/> Sciences, Graduate School, Korea<lb/> University,</affiliation>
+	</byline>
+
+	<address>145 Anam-ro, Seongbuk-<lb/>gu, Seoul, Korea 136-701<lb/> </address>
+
+	TEL, <phone>+82-2-3290-5667</phone>; FAX, +82-2-<lb/>940-2879; E-mail,
+	<email>kimhaey@korea.<lb/> ac.kr</email>
+
+		</front>
+	</text>
+</tei>

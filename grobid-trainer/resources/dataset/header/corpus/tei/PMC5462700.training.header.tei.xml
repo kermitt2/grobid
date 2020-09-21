@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC5462700"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">Original Article<lb/></note>
+
+	<docTitle>
+	<titlePart>Comparison therapeutic efficacy of underwater<lb/> and overground walking training on the healthy<lb/> subjects balancing ability<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Si-A Lee, PT 1) , Myoung-Kwon KiM, PT, PhD 1)*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1) Department of Physical Therapy, College of Rehabilitation Sciences, Daegu University:<lb/></affiliation>
+	</byline>
+
+	<address>Jillyang, Gyeongsan, Gyeongbuk 712-714, Republic of Korea<lb/></address>
+
+	Abstract. [Purpose]
+	<div type="abstract">This study&apos;s working hypothesis is that underwater walking training is beneficial for healthy<lb/> subjects balance. [Subjects and Methods] Forty eight subjects (Underwater walking group=25, Overground walk-<lb/>ing group=23) completed the experiment. Healthy subjects with no orthopedic history of lower extremity injuries<lb/> were recruited. Gait training is performed using the underwater treadmill consisted of 30-minute walking sessions,<lb/> five times per week for four weeks. [Results] After the intervention, the medial-lateral and anterior-posterior bal-<lb/>ance indices increased significantly. [Conclusion] This study conducted underwater walking training on the healthy<lb/> subjects, with positive effects on balancing ability.<lb/></div>
+
+	Key words:
+	<keyword>Balance, Gait, Underwater treadmill<lb/></keyword>
+
+	(
+	<note type="submission">This article was submitted Jan. 26, 2017, and was accepted Feb. 20, 2017</note>
+	)<lb/> 
+
+	*Corresponding author. 
+	Myoung-Kwon Kim (E-mail:
+	<email>skybird-98@hanmail.net</email>
+	)<lb/>
+	
+	<note type="copyright">©2017 The Society of Physical Therapy Science. Published by IPEC Inc.<lb/> This is an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial No Derivatives (by-nc-nd)<lb/> License. (CC-BY-NC-ND 4.0: http://creativecommons.org/licenses/by-nc-nd/4.0/)<lb/></note>
+
+	<title level="j">The Journal of Physical Therapy Science<lb/></title> 
+	<title level="j">The Journal of Physical Therapy Science</title>
+
+		</front>
+	</text>
+</tei>

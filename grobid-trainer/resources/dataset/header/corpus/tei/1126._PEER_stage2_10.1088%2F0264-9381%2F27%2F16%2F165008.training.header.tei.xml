@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1126._PEER_stage2_10.1088%2F0264-9381%2F27%2F16%2F165008"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Axially symmetric solutions in f (R)-gravity<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Salvatore Capozziello 1 , Mariafelicia De Laurentis 1 , Arturo Stabile 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dipartimento di Scienze Fisiche, Università di Napoli &quot;Federico II&quot;, INFN Sez. di Napoli,<lb/> Compl. Univ. di Monte S. Angelo,</affiliation>
+	</byline>
+
+	<address>Edificio G, Via Cinthia, I-80126, Napoli, Italy<lb/></address>
+
+	<byline>
+	<affiliation>2 Dipartimento di Ingegneria, Università del Sannio,<lb/></affiliation>
+	</byline>
+
+	<address>Benevento, C.so Garibaldi 107, I-80125 Benevento, Italy<lb/></address>
+
+	(Dated:
+	<date>May 11, 2010</date>
+	)<lb/>
+
+	<div type="abstract">Axially symmetric solutions for f (R)-gravity can be derived starting from exact spherically sym-<lb/>metric solutions achieved by Noether symmetries. The method takes advantage of a complex coordi-<lb/>nate transformation previously developed by Newman and Janis in General Relativity. An example<lb/> is worked out to show the general validity of the approach. The physical properties of the solution<lb/> are also considered.<lb/></div>
+
+	<keyword>PACS numbers: 98.80.-k, 95.35.+x, 95.35.+d, 04.50.+h</keyword>
+
+		</front>
+	</text>
+</tei>

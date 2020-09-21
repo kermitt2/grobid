@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="BA2023055BB533CF245B3160496C3A724F7DEEF1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Adiponectin Levels and Genotype: A Potential<lb/> Regulator of Life Span in Humans<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gil Atzmon, 1 Toni I. Pollin, 2 Jill Crandall, 1 Keith Tanner, 2 Clyde B. Schechter, 3<lb/> Philipp E. Scherer, 4 Marielisa Rincon, 5 Glenn Siegel, 1 Micol Katz, 1<lb/> Richard B. Lipton, 6 Alan R. Shuldiner, 2,7 and Nir Barzilai 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute for Aging Research, Diabetes Research and Training Center<lb/> Department of Medicine, Albert Einstein College of Medicine,</affiliation>
+	</byline>
+
+	<address>New York.</address>
+
+	<byline>
+	<affiliation>2<lb/> University of Maryland School of Medicine,</affiliation>
+	</byline>
+
+	<address>Baltimore.<lb/></address>
+
+	<byline>
+	<affiliation>Departments of 3 Family and Social Medicine, 4 Cell Biology, 5 Pediatrics, and 6 Neurology, Albert Einstein College of Medicine,</affiliation>
+	</byline>
+
+	<address>New York.<lb/></address>
+
+	<byline>
+	<affiliation>7 Geriatrics Research and Education Clinical Center, Veterans Administration Medical Center,</affiliation>
+	</byline>
+
+	<address>Baltimore.<lb/></address>
+
+	<div type="abstract">Although caloric restriction in numerous models extends life, longevity in humans is suggested<lb/> to be limited by the increased prevalence of obesity. Adiponectin, a fat-derived peptide, has<lb/> a protective role against age-related disease, and thus is an excellent candidate gene for longevity.<lb/> We studied adiponectin levels in centenarians (n ¼ 118), their offspring (n ¼ 228), and unrelated<lb/> participants ,95 (n ¼ 78). Adiponectin levels were significantly greater in participants older than<lb/> 95 years (p ¼ .01), an effect that was independent of sex and body mass index (BMI).<lb/> Adiponectin levels in the offspring were higher (following adjustment for age, sex, and BMI)<lb/> compared to controls (p ¼ .02), suggesting that inherited factors play a role in determining<lb/> adiponectin levels. Over-representation of two common variants in Adiponectin gene (ADIPOQ)<lb/> in male long-lived individuals combined with their independent association with elevated plasma<lb/> adiponectin levels (in men and women) suggests that their presence may promote increased life<lb/> span through the regulation of adiponectin production and/or secretion.<lb/></div>
+
+	Key Words:
+	<keyword>Adiponectin-Genetics-Longevity-Metabolic syndrome-Cardiovascular disease.</keyword>
+
+	<page>447<lb/></page>
+
+	<reference>Journal of Gerontology: BIOLOGICAL SCIENCES<lb/> Copyright 2008 by The Gerontological Society of America<lb/> 2008, Vol. 63A, No. 5, 447-453</reference>
+
+	CORRESPONDENCE<lb/> Address correspondence to 
+
+	<byline>
+	<docAuthor>Nir Barzilai, MD, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Aging<lb/> Research, </affiliation>
+	</byline>
+
+	<address>Belfer Bldg. #701,</address>
+
+	<byline>
+	<affiliation>Albert Einstein College of Medicine,</affiliation>
+	</byline>
+
+	<address>1300<lb/> Morris Park Avenue, Bronx, NY 10461.</address>
+
+	E-mail:
+	<email>barzilai@aecom.yu.edu<lb/></email>
+
+	<note type="submission">Received November 23, 2007<lb/> Accepted March 1, 2008<lb/></note>
+
+	Decision Editor:
+	<editor>Huber R. Warner, PhD</editor>
+
+		</front>
+	</text>
+</tei>

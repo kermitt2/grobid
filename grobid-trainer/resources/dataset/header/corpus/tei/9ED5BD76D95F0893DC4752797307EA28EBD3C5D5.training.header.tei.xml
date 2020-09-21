@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="9ED5BD76D95F0893DC4752797307EA28EBD3C5D5"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	CATALYSIS<lb/>
+	
+	<docTitle>
+	<titlePart>Triumph of a chemical underdog<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Gorka Peris and Scott J. Miller<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">In the fable of the tortoise and the hare, the reptilian slowcoach beats its fleet-footed rival in a race. A zinc<lb/> catalyst recreates this story by giving a less reactive chemical group a turn of speed over a rival group.</div>
+
+		</front>
+	</text>
+</tei>

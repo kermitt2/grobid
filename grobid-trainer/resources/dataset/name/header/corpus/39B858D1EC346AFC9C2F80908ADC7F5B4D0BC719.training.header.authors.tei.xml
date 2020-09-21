@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>David</forename>
+								 <middlename>D</middlename>.
+								 <surname>Rabb</surname>,
+								 <roleName>MA</roleName>,
+								 <roleName>LICSW</roleName>,
+								 <roleName>A CSW</roleName>
+							</persName>
+							<persName>
+								 <forename>Robert</forename>
+								 <middlename>J</middlename>.
+								 <surname>Baumer</surname>,
+								 <roleName>M.D</roleName>.
+							</persName>
+							<persName>
+								 <forename>Norman</forename>
+								 <middlename>A</middlename>.
+								 <surname>Wieseler</surname>,
+								 <roleName>Ph.D</roleName>.
+							</persName>
+							<persName>
+								 <forename>David</forename>
+								 <middlename>D</middlename>.
+								 <surname>Rabb</surname>
+							</persName>
+							<persName>
+								 <forename>Robert</forename>
+								 <middlename>J</middlename>.
+								 <surname>Baumer</surname>
+							</persName>
+							<persName>	 
+								 <forename>Norman</forename>
+								 <middlename>A</middlename>.
+								 <surname>Wieseler</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

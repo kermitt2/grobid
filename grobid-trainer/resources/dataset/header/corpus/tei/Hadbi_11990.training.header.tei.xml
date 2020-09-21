@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Hadbi_11990"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>COMPARISON BETWEEN SYSTEM DESIGN OPTIMIZATION<lb/> STRATEGIES FOR MORE ELECTRIC AIRCRAFT NETWORKS<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Djamel Hadbi * , ** , Nicolas Retière * , Frederic Wurtz * , Xavier Roboam ** , Bruno Sareni **<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>* Univ. Grenoble Alpes, G2Elab, </affiliation>
+	</byline>
+
+	<address>F-38000 Grenoble, France,</address> 
+
+	<byline>
+	<affiliation>CNRS, G2Elab,</affiliation>
+	</byline> 
+
+	<address>F-38000 Grenoble, France<lb/></address>
+
+	<email>firstname.lastname@g2elab.grenoble-inp.fr<lb/></email>
+
+	<byline>
+	<affiliation>** Université de Toulouse, LAPLACE, UMR CNRS-INPT-UPS,</affiliation>
+	</byline>
+
+	<address>2 rue Camichel, 31071 Toulouse, France<lb/></address>
+
+	<email>firstname.lastname@laplace.univ-tlse.fr<lb/></email>
+
+	Abstract.
+	<div type="abstract">Nowadays, embedded aircraft system contains electrical devices which must cooperate in safe and light<lb/> weight network. For designing such systems, different local strategies have been developed but no global<lb/> optimization has been performed so far. In this paper, we present and compare three strategies applied to the sizing<lb/> of a whole network of more electric aircraft: a simplified case study with only two components is considered to<lb/> illustrate methodological issues. The quality of the solution found from each method is compared, with regards to<lb/> the &quot;cost of the collaborative approach&quot; and the volume of data generation. This comparison should provide system<lb/> designers an evaluation of the applicability of these methods according to the nature of the design problem.<lb/></div>
+
+	Keywords:
+	<keyword>system design, integrated design, multilevel optimization, embedded electrical system.</keyword>
+
+		</front>
+	</text>
+</tei>

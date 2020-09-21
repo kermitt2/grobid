@@ -144,5 +144,12 @@ UN3:%x[0,25]
 UN4:%x[1,25]
 UN5:%x[2,25]
 
+# if token is superscript
+UO1:%x[-2,26]
+UO2:%x[-1,26]
+UO3:%x[0,26]
+UO4:%x[1,26]
+UO5:%x[2,26]
+
 # Output
 B

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="C12-1051"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of COLING 2012: Technical Papers, pages 833-848,<lb/> COLING 2012, Mumbai, December 2012.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Flexible Structural Analysis of Near-Meet-Semilattices for<lb/> Typed Unification-based Grammar Design<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Rouz beh FARAH M AN D Ger al d P EN N<lb/></docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>University of Toronto<lb/> </affiliation>
+	</byline>
+
+	<email>{rouzbeh,gpenn}@cs.toronto.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">We present a new method for directly working with typed unification grammars in which<lb/> type unification is not well-defined. This is often the case, as large-scale HPSG grammars<lb/> now usually have type systems for which many pairs do not have least upper bounds. Our<lb/> method yields a unification algorithm that compiles quickly and yet is nearly as fast during<lb/> parsing as one that requires least upper bounds. The method also provides a natural naming<lb/> convention for unification results in cases where no user-defined type exists.<lb/></div>
+
+	Keywords:
+	<keyword>HPSG, typed feature structures, unification-based grammar.</keyword>
+
+		</front>
+	</text>
+</tei>

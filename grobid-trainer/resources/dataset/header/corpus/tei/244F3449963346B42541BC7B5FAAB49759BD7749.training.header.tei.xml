@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="244F3449963346B42541BC7B5FAAB49759BD7749"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>J . CHEM. SOC., CHEM. COMMUN., 1989 </reference>
+
+	<page>229<lb/></page>
+
+	<docTitle>
+	<titlePart>TI Values in Hydride and New Molecular Hydrogen Phosphite Complexes of<lb/> Comparable Structure<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stefan0 Antoniutti, Gabriele Albertin,&quot; Paola Amendola, and Emilio Bordignon*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Chimica deII&apos;Universita di Venezia,</affiliation>
+	</byline>
+
+	<address>Calle Larga S. Marta 2137, 30123 Venice, Italy<lb/></address>
+
+	<div type="abstract">The molecular hydrogen complexes {MH(q2-H2)[PhP(OEt)2]4}BPh4 (M = Fe, Ru, 0 s ) and dihydride species<lb/> { C O H~[ P~P ( O E~)~]~} B P~~<lb/>	have been prepared and T1 measurements for H-and q2-H2 resonances give Tl &lt;I00 ms<lb/> for all complexes at 80 MHz.</div>
+		</front>
+	</text>
+</tei>

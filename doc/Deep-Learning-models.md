@@ -2,19 +2,19 @@
 
 ## Integration with DeLFT
 
-Since version 0.5.4, it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft).  The available neural models are currently BidLSTM-CRF with Glove embeddings, which can be used as alternative to the default Wapiti CRF.
+Since version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft).  The available neural models include in particular BidLSTM-CRF with Glove embeddings, with ELMo, and BERT fine-tuned architectures with CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
 
-This architecture has been tested on Linux 64bit and macOS.   
+These architectures have been tested on Linux 64bit and macOS.   
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink), and it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
-There are no neural model for the segmentation and the fulltext models, because the input sequence is far too big. The problem would need to be formulated differently for these tasks.
+There are no neural model for the segmentation and the fulltext models, because the input sequence is far too big. The problem would need to be formulated differently for these tasks or to use alternative DL architectures.
 
-Low level models not using layout features (author name, dates, affliliations...) perform similarly as CRF, but CRF is much better when layout features are involved (in particular for the header model). However, the neural models do not use additional features for the moment.
+Low level models not using layout features (author name, dates, affliliations...) perform better than CRF, but CRF is better when layout features are involved (in particular for the header model). However, the neural models will also use additional feature channels in future versions to integrate the layout features.
 
-See some evaluation under `grobid-trainer/docs`.
+See some evaluation under [model benchmarking](Benchmarking-models.md) and `grobid-trainer/docs`.
 
-Current neural models are 3-4 time slower than CRF: we do not use batch processing for the moment. It is not clear how to use batch processing with a cascading approach.
+Current neural models are at least 3-4 time slower than CRF: we do not use batch processing for the moment. It is not clear how to use batch processing with a cascading approach.
 
 
 ### Getting started with DL
@@ -63,14 +63,6 @@ GPU (has not been tested):
 - run grobid
 
 > ./gradlew run
-
-
-## Future improvements
-
-ELMo embeddings have not been experimented for the GROBID models yet, but they could make some models better than their CRF counterpart, although probably too slow for concrete usage (it will make these models 100 times slower than the current CRF in our estimate). ELMo embeddings are already integrated in DeLFT.
-
-However, we have also recently experimented with BERT fine-tuning for sequence labelling and more particularly with [SciBERT](https://github.com/allenai/scibert) (a BERT base model trained on Wikipedia and some semantic-scholar full texts). 
-We got excellent results with a runtime close to RNN with Gloves embeddings (20 times faster than with ELMo embeddings). This is the target architectures for future GROBID Deep Learning models. 
 
 
 ## Troubleshooting

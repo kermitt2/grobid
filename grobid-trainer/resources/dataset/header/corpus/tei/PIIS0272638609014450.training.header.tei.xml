@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PIIS0272638609014450"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">ORIGINAL INVESTIGATIONS<lb/></note>
+
+	Pathogenesis and Treatment of Kidney Disease<lb/> 
+
+	<docTitle>
+	<titlePart>Prediction of ESRD in Pauci-immune Necrotizing Glomerulonephritis:<lb/> Quantitative Histomorphometric Assessment and Serum Creatinine<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Clara J. Day, BMBCh, PhD, 1 Alec J. Howie, MD, 2 Peter Nightingale, PhD, 3<lb/> Shazia Shabir, MBChB, 1 Dwomoa Adu, MD, 1 Caroline O. Savage, FMedSci, 4 and<lb/> Peter Hewins, MBChB, PhD 1,4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Background: Clinical and pathologic features that predict outcome have important potential applica-<lb/>tion in patients with pauci-immune necrotizing glomerulonephritis (usually antineutrophil cytoplasmic<lb/> antibody-associated vasculitis). This study examines the predictive value of simple quantitative renal<lb/> histologic measurements in a large cohort with extended follow-up.<lb/> Study Design: Cohort study.<lb/> Setting &amp; Participants: 390 consecutive patients with pauci-immune necrotizing glomerulonephritis<lb/> at a single hospital (1983-2002); 90 patients underwent repeated kidney biopsy during follow-up.<lb/> Predictors: Age and serum creatinine concentration at biopsy, antineutrophil cytoplasmic antibody specificity,<lb/> percentage of normal glomeruli, percentage of glomeruli with active lesions, and index of chronic damage<lb/> (quantitative measurement of established cortical damage) in the initial kidney biopsy for all patients. The same<lb/> factors were assessed in both biopsy specimens for patients undergoing an additional biopsy.<lb/> Outcomes &amp; Measurements: End-stage renal disease and patient survival.<lb/> Results: Mortality at 1 and 5 years was 23% and 40%, respectively: standardized mortality ratio, 4.74<lb/> (95% CI, 3.62-6.32). End-stage renal disease was reached by 14% and 18% at 1 and 5 years,<lb/> respectively. In multivariable analysis, serum creatinine level at biopsy and percentage of normal<lb/> glomeruli in the initial biopsy specimen were the best predictors of kidney survival. C Statistics were 0.80<lb/> for creatinine level alone and 0.83 for creatinine level with normal glomeruli. In patients undergoing an<lb/> additional biopsy, rapid progression in the index of chronic damage and serum creatinine level at the<lb/> second biopsy were associated with kidney survival in multivariable analysis.<lb/> Limitations: Retrospective analysis. External validity of the index of chronic damage requires further<lb/> assessment. Selection bias may influence repeated biopsy analyses.<lb/> Conclusions: Serum creatinine level at biopsy best predicts kidney survival in patients with<lb/> pauci-immune necrotizing glomerulonephritis overall.<lb/></div>
+
+	<reference>Am J Kidney Dis 55:250-258. </reference>
+
+	<note type="copyright">Crown Copyright © 2010 Published by Elsevier Inc. on behalf of the<lb/> National Kidney Foundation, Inc. All rights reserved.<lb/></note>
+
+	INDEX WORDS:
+	<keyword>Vasculitis; necrotizing glomerulonephritis; antineutrophil cytoplasm autoantibody;<lb/> kidney biopsy; end-stage renal disease (ESRD).<lb/></keyword>
+
+	From the
+	<byline>
+	<affiliation>1 Department of Nephrology, University Hospi-<lb/>tals Birmingham NHS Foundation Trust; 2 Department of<lb/> Pathology, University College London; 3 Wellcome Trust<lb/> Clinical Research Facility, University Hospitals Birming-<lb/>ham NHS Foundation Trust;</affiliation>
+	</byline>
+
+	and
+	<byline>
+	<affiliation>4 School of Immunity &amp;<lb/> Infection, College of Medical and Dental Sciences, Univer-<lb/>sity of Birmingham,</affiliation>
+	</byline>
+
+	<address>Birmingham, UK.<lb/></address>
+
+	<note type="submission">Received May 6, 2009. Accepted in revised form Septem-<lb/>ber 28, 2009. </note>
+
+	Originally published online as 
+
+	<idno>doi:10.1053/j.<lb/> ajkd.2009.10.047</idno> on 
+	<date>January 4, 2010</date>.<lb/>
+
+	Address correspondence to
+	<byline>
+	<docAuthor>Peter Hewins, MBChB, PhD,<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Birmingham, Division of Immunity and Infec-<lb/>tion, Medical School,</affiliation>
+	</byline>
+
+	<address>Birmingham, West Midlands B15 2 TT,<lb/> UK.</address>
+
+	E-mail:
+	<email>peter.hewins@uhb.nhs.uk</email>
+
+	and
+	<email>p.hewins@<lb/> bham.ac.uk<lb/></email>
+
+	
+	<note type="copyright">Crown Copyright © 2010 Published by Elsevier Inc. on behalf<lb/> of the National Kidney Foundation, Inc. All rights reserved.<lb/> </note>
+
+	0272-6386/10/5502-0013$36.00/0<lb/>
+	<idno>doi:10.1053/j.ajkd.2009.10.047<lb/></idno>
+
+	<reference>American Journal of Kidney Diseases, Vol 55, No 2 (February), 2010: pp 250-258<lb/></reference>
+
+	Outcomes in Pauci-immune Necrotizing GN 257
+		</front>
+	</text>
+</tei>

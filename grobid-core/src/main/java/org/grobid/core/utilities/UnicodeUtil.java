@@ -114,6 +114,7 @@ public class UnicodeUtil {
 										+ "\\u25CF"  // black circle
 										+ "\\u26AB"  // medium black circle
 										+ "\\u2B24"  // black large circle
+                                        + "\\u00B7"  // middle dot
 										+ "]";
 
     // opening parenthesis

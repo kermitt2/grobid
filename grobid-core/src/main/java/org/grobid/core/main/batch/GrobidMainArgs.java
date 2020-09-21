@@ -32,6 +32,8 @@ public class GrobidMainArgs {
 
 	private boolean consolidateCitation = false;
 
+	private boolean segmentSentences = false;
+
 	/**
 	 * @return the path2grobidHome
 	 */
@@ -207,6 +209,21 @@ public class GrobidMainArgs {
 	 */
 	public final void setTeiCoordinates(final boolean pTeiCoordinates) {
 		teiCoordinates = pTeiCoordinates;
+	}
+
+	/**
+	 * @return true if we add sentence segmentation level structures for paragraphs in the TEI XML result 
+	 */
+	public final boolean getSegmentSentences() {
+		return segmentSentences;
+	}
+
+	/**
+	 * @param pSegmentSentences
+	 *            add sentence segmentation level structures for paragraphs in the TEI XML result 
+	 */
+	public final void setSegmentSentences(final boolean pSegmentSentences) {
+		segmentSentences = pSegmentSentences;
 	}
 
 }

@@ -2,7 +2,7 @@
 
 ## Models
 
-Grobid uses different CRF models depending on the labeling task to be realized. For a complex extraction and parsing tasks (for instance header extraction and parsing), several models are used in cascade. The current models are the following ones:
+Grobid uses different sequence labelling models depending on the labeling task to be realized. For a complex extraction and parsing tasks (for instance header extraction and parsing), several models are used in cascade. The current models are the following ones:
 
 * affiliation-address
 
@@ -131,4 +131,3 @@ If you wish to maintain the training corpus as gold standard, these automaticall
 ## Training guidelines
 
 Annotation guidelines for creating the training data corresponding to the different GROBID models are available from the [following page](training/General-principles.md).
-

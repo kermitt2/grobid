@@ -1,5 +1,3 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 buildscript {
     repositories {
         mavenLocal()
@@ -10,10 +8,10 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:5.0.0'
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
+        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
 }
@@ -22,20 +20,20 @@ repositories {
     mavenCentral()
 }
 
-
 apply plugin: 'net.researchgate.release'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = '0.8.5'
+}
 
 allprojects {
-    apply plugin: 'jacoco'
+    apply plugin: 'java-library'
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
     apply plugin: 'com.adarshr.test-logger'
 
     group = "org.grobid"
-
-    jacoco {
-        toolVersion = '0.8.2'
-    }
 
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
@@ -44,8 +42,21 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
     apply plugin: 'com.jfrog.bintray'
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+
+    task install(dependsOn: publishToMavenLocal)
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -53,21 +64,20 @@ subprojects {
     repositories {
         mavenCentral()
         jcenter()
-        repositories {
-            maven {
-                url new File(rootProject.rootDir, "grobid-core/lib")
-            }
+        maven {
+            url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
     }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         //all*.exclude group: 'log4j', module: "log4j"
+//        implementation.setCanBeResolved(true)
     }
 
     ext {
         // treating them separately, these jars will be flattened into grobid-core.jar on installing,
-        // to avoid missing dependencies from the projects that include grobid-core (see 'jar' taskin grobid-core)
+        // to avoid missing dependencies from the projects that include grobid-core (see 'jar' task in grobid-core)
         localLibs = ['crfpp-1.0.2.jar',
                      'langdetect-1.1-20120112.jar',
                      'wipo-analysers-0.0.2.jar',
@@ -77,26 +87,42 @@ subprojects {
 
     dependencies {
         // packaging local libs inside grobid-core.jar
-        compile fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
+        implementation fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
-        testCompile "junit:junit:4.12"
-        testCompile "org.easymock:easymock:3.4"
-        testCompile "org.powermock:powermock-api-easymock:2.0.0-beta.5"
-        testCompile "org.powermock:powermock-module-junit4:2.0.0-beta.5"
-        testCompile "xmlunit:xmlunit:1.6"
-        testCompile "org.hamcrest:hamcrest-all:1.3"
+        testImplementation "junit:junit:4.12"
+        testImplementation "org.easymock:easymock:3.4"
+        testImplementation "org.powermock:powermock-api-easymock:2.0.7"
+        testImplementation "org.powermock:powermock-module-junit4:2.0.7"
+        testImplementation "xmlunit:xmlunit:1.6"
+        testImplementation "org.hamcrest:hamcrest-all:1.3"
 
-        compile 'org.apache.commons:commons-text:1.8'
+        implementation "com.cybozu.labs:langdetect:1.1-20120112"
+        implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+        implementation "commons-pool:commons-pool:1.6"
+        implementation "commons-io:commons-io:2.5"
+        implementation "org.apache.commons:commons-lang3:3.6"
+        implementation "org.apache.commons:commons-collections4:4.1"
+        implementation "commons-dbutils:commons-dbutils:1.7"
+        implementation "com.google.guava:guava:28.2-jre"
+        implementation "org.apache.httpcomponents:httpclient:4.5.3"
+
+        implementation 'org.apache.commons:commons-text:1.8'
+        implementation "com.fasterxml.jackson.core:jackson-core:2.10.1"
+        implementation "com.fasterxml.jackson.core:jackson-databind:2.10.1"
+        implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
     }
 
     task sourceJar(type: Jar) {
         description = 'A jar that contains source code'
-        classifier = 'sources'
+        archiveClassifier = 'sources'
         from project.sourceSets.main.java
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
         archives sourceJar
+        archives jar
     }
 
 
@@ -125,29 +151,29 @@ subprojects {
 
     //compileJava.dependsOn(changeVersionIfNeeded)
 
-    uploadArchives {
-        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
-        /*
-            mavenRepoUserName=maven_username
-            mavenRepoPassword=super_secret
-            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
-            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
-        */
-        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
-        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
-        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
-        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
-
-        repositories.mavenDeployer {
-            repository(url: rurl) {
-                authentication(userName: user, password: password)
-            }
-            snapshotRepository(url: surl) {
-                authentication(userName: user, password: password)
-            }
-
-        }
-    }
+//    uploadArchives {
+//        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
+//        /*
+//            mavenRepoUserName=maven_username
+//            mavenRepoPassword=super_secret
+//            mavenRepoReleasesUrl=https://nexus3.example.org/repository/maven-releases/
+//            mavenRepoSnapshotsUrl=https://nexus3.example.org/repository/maven-snapshots/
+//        */
+//        def user = project.hasProperty('mavenRepoUserName') ? project.findProperty('mavenRepoUserName') : ''
+//        def password = project.hasProperty('mavenRepoPassword') ? project.findProperty('mavenRepoPassword') : ''
+//        def rurl = project.hasProperty('mavenRepoReleasesUrl') ? project.findProperty('mavenRepoReleasesUrl') : ''
+//        def surl = project.hasProperty('mavenRepoSnapshotsUrl') ? project.findProperty('mavenRepoSnapshotsUrl') : ''
+//
+//        repositories.mavenDeployer {
+//            repository(url: rurl) {
+//                authentication(userName: user, password: password)
+//            }
+//            snapshotRepository(url: surl) {
+//                authentication(userName: user, password: password)
+//            }
+//
+//        }
+//    }
 
     bintray {
         dryRun = false // Whether to run this as dry-run, without deploying
@@ -174,17 +200,6 @@ subprojects {
         }
     }
 
-    jacocoTestReport {
-        additionalSourceDirs = files(sourceSets.main.allSource.srcDirs)
-        sourceDirectories = files(sourceSets.main.allSource.srcDirs)
-        classDirectories = files(sourceSets.main.output)
-        reports {
-            html.enabled = true
-            xml.enabled = true
-            csv.enabled = false
-        }
-    }
-
     test {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
@@ -195,86 +210,82 @@ subprojects {
     rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
+/** SUBPROJECTS **/
+
 project("grobid-core") {
     apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'jacoco'
 
     configurations {
         shadedLib
     }
 
     dependencies {
-        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+        implementation(group: 'xml-apis', name: 'xml-apis') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
             // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
             //TODO: sort out this problem better
-            force = true
+            version {
+                strictly '1.4.01'
+            }
         }
 
-        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-        compile "com.cybozu.labs:langdetect:1.1-20120112"
-        compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
-        compile "commons-pool:commons-pool:1.6"
-        compile "commons-io:commons-io:2.5"
-        compile "org.apache.commons:commons-lang3:3.6"
-        compile "org.apache.commons:commons-collections4:4.1"
-        compile "commons-dbutils:commons-dbutils:1.7"
-        compile "org.apache.httpcomponents:httpclient:4.5.3"
-        compile "xerces:xercesImpl:2.12.0"
-        compile "com.google.guava:guava:28.2-jre"
-        compile "net.arnx:jsonic:1.3.10"
-        compile "org.apache.pdfbox:pdfbox:2.0.18"
-        compile "net.sf.saxon:Saxon-HE:9.6.0-9"
-        compile "xom:xom:1.3.2"
-        compile "com.fasterxml.jackson.core:jackson-core:2.10.1"
-        compile "com.fasterxml.jackson.core:jackson-databind:2.10.1"
-        compile "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
-        compile "joda-time:joda-time:2.9.9"
-        compile "org.apache.lucene:lucene-analyzers-common:4.5.1"
-        compile 'javax.xml.bind:jaxb-api:2.3.0'
-        compile 'black.ninia:jep:3.8.2'
-        compile 'org.slf4j:slf4j-log4j12:1.7.25'
+        // Logs
+        api 'org.slf4j:slf4j-api:1.7.25'
+        api 'org.slf4j:slf4j-log4j12:1.7.25'
+        runtimeOnly 'org.slf4j:slf4j-jdk14:1.7.25'
+
+        implementation "org.apache.pdfbox:pdfbox:2.0.18"
+
+        api "xerces:xercesImpl:2.12.0"
+        api "net.arnx:jsonic:1.3.10"
+        api "net.sf.saxon:Saxon-HE:9.6.0-9"
+        api "xom:xom:1.3.2"
+        api 'javax.xml.bind:jaxb-api:2.3.0'
+
+        implementation "joda-time:joda-time:2.9.9"
+        implementation "org.apache.lucene:lucene-analyzers-common:4.5.1"
+        implementation 'black.ninia:jep:3.8.2'
+        implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
+        implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
+    }
 
-        runtime group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+    jar {
+        from {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+
+//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
-        classifier = 'onejar'
+        archiveClassifier = 'onejar'
         mergeServiceFiles()
         zip64 true
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
-
-        from {
-            project.configurations.compile.collect {
-                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
-            }
-        }
-    }
-
-    task mainJar(type: ShadowJar) {
-        zip64 true
-        mergeServiceFiles()
         from sourceSets.main.output
+
         from {
-            project.configurations.compile.collect {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
-        configurations = [project.configurations.shadedLib]
-        relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
-    }
 
-    jar {
-        dependsOn mainJar
-        enabled false
+        configurations = [project.configurations.shadedLib, project.configurations.runtimeClasspath]
+        relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
 
     artifacts {
         archives shadowJar
-        archives mainJar
+        archives jar
     }
 
     processResources {
@@ -291,6 +302,7 @@ project("grobid-home") {
         from('.') {
             include("config/*")
             include("language-detection/**")
+            include("sentence-segmentation/**")
             include("lib/**")
             include("pdf2xml/**")
             include("models/**")
@@ -307,7 +319,8 @@ project("grobid-home") {
 
 project(":grobid-service") {
     apply plugin: 'application'
-//    apply plugin: 'war'
+    apply plugin: 'jacoco'
+    apply plugin: 'com.github.johnrengelman.shadow'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
     tasks.run.workingDir = rootProject.rootDir
@@ -318,21 +331,39 @@ project(":grobid-service") {
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-//    tasks.distZip.enabled = false
+    tasks.distZip.enabled = true
+    tasks.distTar.enabled = false
+    tasks.shadowDistZip.enabled = false
+    tasks.shadowDistTar.enabled = false
 
     dependencies {
-        compile project(':grobid-core')
-        compile "io.dropwizard:dropwizard-core:1.3.17"
-        compile "io.dropwizard:dropwizard-assets:1.3.17"
-        compile "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
-        compile "io.dropwizard:dropwizard-testing:1.3.17"
-        compile "io.dropwizard:dropwizard-forms:1.3.17"
-        compile "io.dropwizard:dropwizard-client:1.3.17"
-        compile "io.dropwizard:dropwizard-auth:1.3.17"
-        compile "org.apache.pdfbox:pdfbox:2.0.3"
-        compile "javax.activation:activation:1.1.1"
+        implementation project(':grobid-core')
+        implementation "io.dropwizard:dropwizard-core:1.3.23"
+        implementation "io.dropwizard:dropwizard-assets:1.3.23"
+        implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
+        implementation "io.dropwizard:dropwizard-testing:1.3.23"
+        implementation "io.dropwizard:dropwizard-forms:1.3.23"
+        implementation "io.dropwizard:dropwizard-client:1.3.23"
+        implementation "io.dropwizard:dropwizard-auth:1.3.23"
+        implementation "org.apache.pdfbox:pdfbox:2.0.3"
+        implementation "javax.activation:activation:1.1.1"
 
-        testCompile "io.dropwizard:dropwizard-testing:1.3.17"
+        testImplementation "io.dropwizard:dropwizard-testing:1.3.17"
+    }
+
+    shadowJar {
+        archiveClassifier = 'onejar'
+        mergeServiceFiles()
+        zip64 true
+        manifest {
+            attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
+        }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    artifacts {
+        archives shadowJar
     }
 
     distributions {
@@ -354,29 +385,46 @@ project(":grobid-service") {
 
 project(":grobid-trainer") {
     apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'jacoco'
 
     dependencies {
-        compile(group: 'xml-apis', name: 'xml-apis', version: '1.4.01') {
+        implementation(group: 'xml-apis', name: 'xml-apis') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
             // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
             //TODO: sort out this problem better
-            force = true
+            version {
+                strictly '1.4.01'
+            }
         }
-        compile project(':grobid-core')
-        compile "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+        implementation project(':grobid-core')
+        implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+    }
+
+    jar {
+        from {
+//            project.configurations.implementation.collect {
+            project.configurations.runtimeClasspath.collect {
+                it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
+            }
+        }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
-        classifier = 'onejar'
+        archiveClassifier = 'onejar'
         mergeServiceFiles()
         zip64 true
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
         archives shadowJar
+        archives jar
     }
 
     def trainerTasks = [
@@ -410,18 +458,19 @@ project(":grobid-trainer") {
     }
 
     // run like this:
-    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet
-    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew jatsEval -Pp2t=/path/to/goldenSet
+    // ./gradlew jatsEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew teiEval -Pp2t=/path/to/goldenSet
     // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
-    task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(jatsEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
     }
 
-    task(Pub2TeiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
@@ -443,42 +492,49 @@ project(":grobid-trainer") {
     }
 }
 
-// coveralls does not support mutimodule, therefore merging reports
-task jacocoRootReport(type: JacocoReport) {
-    dependsOn = [subprojects.test
-//                 subprojects.jacocoTestReport
-    ]
-    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
-    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories = files(subprojects.sourceSets.main.output)
-    executionData = files(subprojects.jacocoTestReport.executionData)
+/** JACOCO **/
+
+tasks.register("codeCoverageReport", JacocoReport) {
+    // If a subproject applies the 'jacoco' plugin, add the result it to the report
+    subprojects { subproject ->
+        subproject.plugins.withType(JacocoPlugin).configureEach {
+            subproject.tasks.matching({ t -> t.extensions.findByType(JacocoTaskExtension) }).configureEach { testTask ->
+                sourceSets subproject.sourceSets.main
+                executionData(testTask)
+            }
+
+            // To automatically run `test` every time `./gradlew codeCoverageReport` is called,
+            // you may want to set up a task dependency between them as shown below.
+            // Note that this requires the `test` tasks to be resolved eagerly (see `forEach`) which
+            // may have a negative effect on the configuration time of your build.
+            subproject.tasks.matching({ t -> t.extensions.findByType(JacocoTaskExtension) }).forEach {
+                rootProject.tasks.codeCoverageReport.dependsOn(it)
+            }
+        }
+    }
+
+    // XML -> coveralls,
+    // HTML -> for manual check
     reports {
-        html.enabled = true
-        xml.enabled = true
-        csv.enabled = false
-        xml.destination = file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+        xml.enabled true
+        html.enabled true
+        csv.enabled true
     }
-    onlyIf = {
-        true
-    }
-    doFirst {
-        executionData = files(executionData.findAll {
-            it.exists()
-        })
-    }
+
 }
 
+/** COVERALLS **/
 coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
-    jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
+    jacocoReportPath = "build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
 }
 
 tasks.coveralls {
-    dependsOn jacocoRootReport
+    dependsOn codeCoverageReport
 }
 
 wrapper {
-    gradleVersion "5.4.1"
+    gradleVersion "6.5.1"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })

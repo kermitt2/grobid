@@ -31,20 +31,20 @@ Here an example of grobid-core dependency:
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.0</version>
+	    <version>0.6.1</version>
 	</dependency>
 ```
  
 If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.6.0` by the valid `<current version>`):
+for instance as follow (if necessary replace `0.6.1` by the valid `<current version>`):
 
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.0</version>
+	    <version>0.6.1</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.6.0.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.6.1.jar</systemPath>
 	</dependency>
 ```
 
@@ -62,8 +62,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.6.0'
-    compile 'org.grobid:grobid-trainer:0.6.0'
+    compile 'org.grobid:grobid-core:0.6.1'
+    compile 'org.grobid:grobid-trainer:0.6.1'
 ```
 
 
@@ -139,4 +139,4 @@ Then you can test the toy project:
 
 ## Javadoc
 
-The javadoc of the Grobid project is available [here](http://grobid.github.io/). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](http://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.
+The javadoc of the Grobid project is available [here](https://grobid.github.io). All the main methods of the Grobid Java API are currently accessible via the single class [org.grobid.core.engines.Engine](https://grobid.github.io/grobid-core/org/grobid/core/engines/Engine.html). The various test files under `grobid/grobid-core/src/test/java/org/grobid/core/test` further illustrate how to use the Grobid java API.

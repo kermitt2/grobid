@@ -96,20 +96,6 @@ public class TestFullTextParser extends EngineTest {
         assertTei(tei);
     }
 
-    @Test
-    public void testFullTextParser_7() throws Exception {
-        File inputTmpFile = getInputDocument("/test/ApplPhysLett_98_082505.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
-        assertTei(tei);
-    }
-
-    @Test
-    public void testFullTextParser_8() throws Exception {
-        File inputTmpFile = getInputDocument("/test/1996PRBAConfProc00507417Vos.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
-        assertTei(tei);
-    }
-
     private void assertTei(Document doc) {
         assertDocAndBlockTokenizationSync(doc);
         assertNotNull(doc.getTei());

@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC2815316"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Nutrition Research and Practice (2008), 2(2), 114-120<lb/></reference> 
+
+	<note type="copyright">ⓒ2008 The Korean Nutrition Society and the Korean Society of Community Nutrition<lb/></note>
+
+	<docTitle>
+	<titlePart>Construction of web-based nutrition education contents and searching engine for<lb/> usage of healthy menu of children*<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Soon-Myung Hong<lb/> 1 §<lb/> , Tae-Kyong Lee 2<lb/> , Hea-Jung Chung 3<lb/> , Hye-Kyung Park 4<lb/> , Eun-Ju Lee 4<lb/> , Hye-Seon Nam 4<lb/> ,<lb/> Soon-Im Jung 1<lb/> , Jee-Ye Cho 1<lb/> , Jin-Hee Lee 1<lb/>, Gon Kim<lb/> 5 and Min-Chan Kim 5</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1<lb/> Department of Food and Nutrition, University of Ulsan,</affiliation>
+	</byline>
+
+	<address>Ulsan 680-749, Korea</address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Digital Information Design, University of Ulsan,</affiliation>
+	</byline>
+
+	<address>Ulsan 680-749, Korea</address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Culinary Arts, Woosong University,</affiliation>
+	</byline>
+
+	<address>Daejeon 300-718, Korea</address>
+
+	<byline>
+	<affiliation>4<lb/> Nutritional Evaluation Division, Korea Food and Drug Administration,</affiliation>
+	</byline>
+
+	<address>Seoul 122-704, Korea</address>
+
+	<byline>
+	<affiliation>5<lb/> School of Computer Engineering &amp; Information Technology, University of Ulsan,</affiliation>
+	</byline>
+
+	<address>Ulsan 680-749, Korea<lb/></address>
+
+	<note type="submission">Received March 21, 2008; March 28, 2008; Accepted April 25, 2008</note>
+
+	Abstract<lb/>
+	<div type="abstract">A diet habit, which is developed in childhood, lasts for a life time. In this sense, nutrition education and early exposure to healthy menus in<lb/> childhood is important. Children these days have easy access to the internet. Thus, a web-based nutrition education program for children is an<lb/> effective tool for nutrition education of children. This site provides the material of the nutrition education for children with characters which are<lb/> personified nutrients. The 151 menus are stored in the site together with video script of the cooking process. The menus are classified by the<lb/> criteria based on age, menu type and the ethnic origin of the menu. The site provides a search function. There are three kinds of search conditions<lb/> which are key words, menu type and &quot;between&quot; expression of nutrients such as calorie and other nutrients. The site is developed with the operating<lb/> system Windows 2003 Server, the web server ZEUS 5, development language JSP, and database management system Oracle 10 g.<lb/></div>
+
+	Key Words:
+	<keyword>Web-based nutrition program, healthy menu, nutrition education<lb/></keyword>
+
+	<note type="funding">* This study was supported by Research Funds of Korea Food and Drug Administration.<lb/></note>
+
+	§ Corresponding Author:
+	<byline>
+	<docAuthor>Soon-Myung Hong</docAuthor>
+	</byline>, 
+
+	Tel. <phone>82-52-259-2374</phone>, Fax. 82-52-259-1496, Email.
+
+	<email>smhong@ulsan.ac.kr</email>
+
+		</front>
+	</text>
+</tei>

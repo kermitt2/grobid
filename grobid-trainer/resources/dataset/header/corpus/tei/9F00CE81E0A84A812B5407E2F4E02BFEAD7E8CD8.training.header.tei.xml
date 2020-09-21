@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="9F00CE81E0A84A812B5407E2F4E02BFEAD7E8CD8"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYOROBIOL BULL. 25(1), 65-72 (1991)<lb/></reference>
+
+	<docTitle>
+	<titlePart>DEGRADATION OF DIATOM CHLOROPHYLL TO COLOURLESS,<lb/> NON-FLUORESCING COMPOUNDS DURING COPEPOD GRAZING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>W.W.C. GIESKES 1, M.M. ENGELKES 2 and G.W. KRAAy3<lb/></docAuthor>
+	</byline>
+
+	KEYWORDS:
+	<keyword>copepod grazing; chlorophyll degradation; carotenoid enrichment.</keyword>
+
+	ABSTRACT<lb/>
+	<div type="abstract">During grazing of the copepod Temora Iongicomis on Thalassiosira eccentrica phaeophorbide-a and<lb/> several phaeophytins-a appeared in the culture vessels. However, a variable portion of the diatom&apos;s<lb/> chlorophyll-a was degraded to substances that could not be detected either spectrophotometrically or<lb/> fluorometrically. Chlorophyll-cand fucoxanthin were also lost during diatom cell transit through Temora&apos;s gut.<lb/> The variability between experiments in the destruction of chl.a to colourless residues is ascribed to differences<lb/> in coprophagy and in transit time through the copepod gut, processes related to filtering rate and the ambient<lb/> food concentration. Because the pigment loss is variable, grazing pressure cannot be estimated by simply<lb/> recording bulk phaeopigment concentrations. The net result of the appearance of a fucoxanthinol-tike pigment<lb/> while all other pigments disappeared is a gradual carotenoid enrichment of the samples during grazing. </div>
+
+	<page>65<lb/></page>
+
+	Addresses ofthe authors<lb/>
+	<byline>
+	<affiliation>1, University of Groningen, Dept. of Marine Biology,</affiliation>
+	</byline>
+
+	<address>Box 14, 9750 AA Haren (Gn), The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>2. University of Groningen, DepL of Microbiology,</affiliation>
+	</byline>
+
+	<address>Box 14, 9750 AA Haren (Gn), The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>3. Netherlands Institute for Sea Research,</affiliation>
+	</byline>
+
+	<address>Box 59, 1790 A8 Den Burg, Texel, The Netherlands</address>
+
+		</front>
+	</text>
+</tei>

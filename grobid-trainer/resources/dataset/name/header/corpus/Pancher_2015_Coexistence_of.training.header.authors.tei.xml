@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <surname>Pancher</surname>
+								 <forename>Marie</forename>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>
+								 <surname>Désiré</surname>
+								 <forename>Nathalie</forename>
+								 <marker>1,6</marker> ,
+							</persName>
+							<persName>
+								 <surname>Ngo</surname>
+								 <forename>Yen</forename>
+								 <marker>2,3</marker> ,
+							</persName>
+							<persName>
+								 <surname>Akhavan</surname>
+								 <forename>Sepideh</forename>
+								 <marker>1</marker> ,
+							</persName>
+							<persName>	 
+								 <surname>Pallier</surname>
+								 <forename>Coralie</forename>
+								 <marker>5</marker> ,
+							</persName>
+							<persName>
+								 <surname>Poynard</surname>
+								 <forename>Thierry</forename>
+								 <marker>2,3</marker> ,
+							</persName>
+							<persName>
+								 <surname>Thibault</surname>
+								 <forename>Vincent</forename>
+								 <marker>#1,4</marker>
+							</persName>
+							<persName>
+								<roleName>Dr</roleName>
+								 <forename>Vincent</forename>
+								 <surname>THIBAULT</surname>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

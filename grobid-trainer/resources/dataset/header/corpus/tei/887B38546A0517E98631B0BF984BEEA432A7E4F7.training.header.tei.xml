@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="887B38546A0517E98631B0BF984BEEA432A7E4F7"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>HYDROB(OLOGICAL BULLETIN 18(2): 159 -163<lb/></reference> 
+
+	<note type="doctype">SHORT COMMUNICATION<lb/></note> 
+
+	<docTitle>
+	<titlePart>PRELIMINARY DATA ON SIZE COMPOSITION AND SETTLEMENT<lb/> OF DREISSENA POL YMORPHA (PALLAS)<lb/> (MOLLUSCA: BIVALVlA) IN LAKES DIFFERING<lb/> IN TROPHIC STATE<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>JAAP DORGELO and MAARTEN GORTER </docAuthor>
+	</byline>
+
+	<page>159</page>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Size composition of colonies and settlement of larvae on nylon substrates as function of<lb/> depth in Dreissena polymorpha demonstrated differences in three lakes of different trophic<lb/> state. In one lake, the data on size distribution in the colony and of the settled larvae also<lb/> differed. The explanation requires further research,<lb/></div>
+
+	Address of the authors:<lb/>
+
+	<byline>
+	<docAuthor>Jaap Dorgelo and Maarten Gorter, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vakgroep Aquatische Oecologie, Universiteit van<lb/> Amsterdam,</affiliation>
+	</byline>
+
+	<address>Kruislaan 320, 1098 SM Amsterdam, The Netherlands.</address>
+
+		</front>
+	</text>
+</tei>

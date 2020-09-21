@@ -143,9 +143,10 @@ public class ProcessEngine implements Closeable {
         } else {
             List<String> elementCoordinates = null;
             if (pGbdArgs.getTeiCoordinates()) {
-                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula");
+                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula", "s");
             }
-            processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), elementCoordinates);
+            processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), 
+                elementCoordinates, pGbdArgs.getSegmentSentences());
             System.out.println(Engine.getCntManager());
         }
     }
@@ -161,7 +162,8 @@ public class ProcessEngine implements Closeable {
                                           final GrobidMainArgs pGbdArgs,
                                           String outputPath,
                                           boolean saveAssets,
-                                          List<String> elementCoordinates) {
+                                          List<String> elementCoordinates,
+                                          boolean segmentSentences) {
         if (files != null) {
             boolean recurse = pGbdArgs.isRecursive();
             String result;
@@ -177,9 +179,13 @@ public class ProcessEngine implements Closeable {
                             config = GrobidAnalysisConfig.builder()
                                     .pdfAssetPath(new File(assetPath))
                                     .generateTeiCoordinates(elementCoordinates)
+                                    .withSentenceSegmentation(segmentSentences)
                                     .build();
                         } else
-                            config = GrobidAnalysisConfig.builder().generateTeiCoordinates(elementCoordinates).build();
+                            config = GrobidAnalysisConfig.builder()
+                                    .generateTeiCoordinates(elementCoordinates)
+                                    .withSentenceSegmentation(segmentSentences)
+                                    .build();
                         result = getEngine().fullTextToTEI(currPdf, config);
                         File outputPathFile = new File(outputPath);
                         if (!outputPathFile.exists()) {
@@ -199,7 +205,7 @@ public class ProcessEngine implements Closeable {
                         if (newFiles != null) {
                             String newLevel = currPdf.getName();
                             processFullTextDirectory(newFiles, pGbdArgs, outputPath +
-                                    File.separator + newLevel, saveAssets, elementCoordinates);
+                                    File.separator + newLevel, saveAssets, elementCoordinates, segmentSentences);
                         }
                     }
                 } catch (final Exception exp) {
@@ -653,6 +659,7 @@ public class ProcessEngine implements Closeable {
         isUsable |= StringUtils.equals("getUsableMethods", pMethod);
         isUsable |= StringUtils.equals("inferPdfInputPath", pMethod);
         isUsable |= StringUtils.equals("inferOutputPath", pMethod);
+        isUsable |= StringUtils.equals("close", pMethod);
         return !isUsable;
     }
 

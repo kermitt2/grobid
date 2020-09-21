@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Pancher_2015_Coexistence_of"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Coexistence of circulating HBsAg and anti-HBs antibodies in chronic hepatitis B<lb/> carriers is not a simple analytical artifact and does not influence HBsAg quantification<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Pancher Marie 1 , Désiré Nathalie 1,6 , Ngo Yen 2,3 , Akhavan Sepideh 1 , Pallier Coralie 5 ,<lb/> Poynard Thierry 2,3 , Thibault Vincent #1,4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1-AP-HP, Pitié-Salpêtrière Hospital, Virology Department, </affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	<byline>
+	<affiliation>2-AP-HP, Pitié-Salpêtrière Hospital, Service d&apos;Hépato-Gastro-Entérologie, </affiliation>
+	</byline>
+
+	<address>Paris, France<lb/></address>
+
+	<byline>
+	<affiliation>3-Sorbonne Universités, UPMC Univ Paris 06, UMR 8149, </affiliation>
+	</byline>
+
+	<address>F-75005, Paris, France<lb/></address> 
+
+	<byline>
+	<affiliation>4-Inserm U1135,</affiliation>
+	</byline> 
+
+	<address>F-75013, Paris, France<lb/></address>
+
+	<byline>
+	<affiliation>5-AP-HP, Paul Brousse Hospital, Virology, </affiliation>
+	</byline>
+
+	<address>Villejuif, France<lb/></address>
+
+	Running title: HBsAg quantification in anti-HBs positive HBV carriers<lb/>
+
+	Abstract word count: 250<lb/> Text word count: 2498 #<lb/> Corresponding Author<lb/>
+	<byline>
+	<docAuthor>Dr Vincent THIBAULT<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Virology Dept -CERVI<lb/> Hôpitaux Universitaires La Pitié Salpêtrière -Charles Foix<lb/></affiliation>
+	</byline>
+
+	<address>83 Bd De l&apos;Hôpital<lb/> 75651 PARIS Cedex 13<lb/> FRANCE<lb/> </address>
+
+	Tel: <phone>+33 -1 42 17 74 01</phone><lb/> 
+	Fax: +33 -1 42 17 74 11<lb/>
+	<email>vincent.thibault@psl.aphp.fr</email>
+
+	Abstract<lb/>
+	<div type="abstract">Background Presence at the same time of HBsAg and anti-HBs antibodies (HBsAg/Ab) is an entity<lb/> sometimes encountered in chronic hepatitis B (CHB) carriers.<lb/> Objectives This study was designed to characterize such serological profiles and to assess the<lb/> reliability of serological marker quantification by three commercially available assays in this setting.<lb/> Study design Among 2578 CHB identified patients, 129 (5%) had an HBsAg/Ab profile as determined<lb/> by Abbott Architect. After exclusion of co-infections (HIV, HCV, HDV), HBV reactivation or HBIg<lb/> treatment, 101 samples from 62 patients were tested for HBsAg and anti-HBs quantification using<lb/> Architect, DiaSorin Liaison-XL and Roche Modular-Cobas. Influence of genotype and HBsAg variants<lb/> was studied in 31 samples with HBV replication.<lb/> Results HBsAg detection was confirmed with the 3 techniques for 98% (n=99) of the samples while the<lb/> HBsAg/Ab profile was concordant between all techniques for 65% of them. The overall correlation<lb/> between the 3 HBsAg quantification techniques was good (r 2<lb/> : 0.94-0.97). The median HBsAg<lb/> concentration was comparable for the 99 samples whatever the used technique but a bias of -0.11<lb/> and 0.02 log IU/mL were noticed for DiaSorin and Roche compared to Abbott, respectively. Anti-HBs<lb/> quantifications were poorly correlated between techniques with major discrepancies observed.<lb/> Genotype and substitutions within the &quot;a&quot; determinant showed an impact on HBsAg quantification.<lb/> Conclusions The double HBsAg/Ab profile is not an analytical artifact and is confirmed on all<lb/> commercially available techniques. While such profile does not influence HBsAg quantification,<lb/> differences of HBsAg quantification were noticed according to HBV genotype or HBsAg variant.<lb/></div>
+
+	Keywords:
+	<keyword>HBsAg quantification -HBsAg variant -Genotype -immune complexes -interference Highlights</keyword>
+
+		</front>
+	</text>
+</tei>

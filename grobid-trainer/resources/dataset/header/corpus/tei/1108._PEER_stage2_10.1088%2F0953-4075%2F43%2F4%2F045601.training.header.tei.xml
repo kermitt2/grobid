@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1108._PEER_stage2_10.1088%2F0953-4075%2F43%2F4%2F045601"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">LETTER TO THE EDITOR<lb/></note>
+
+	<docTitle>
+	<titlePart>Influence of autoionizing states on the pulse-length<lb/> dependence of strong-field Ne + photoionization at<lb/> 38.4 eV<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Linda Hamonou, Michael A. Lysaght and Hugo W. van der Hart<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centre for Theoretical Atomic, Molecular and Optical Physics, Queen&apos;s University<lb/></affiliation>
+	</byline>
+
+	<address>Belfast, Belfast BT7 1NN, United Kingdom<lb/></address>
+
+	Abstract.
+	<div type="abstract">Using the time-dependent R-matrix approach, we investigate ionization<lb/> of ground-state Ne + , irradiated by laser light with a photon energy of 38.4 eV at<lb/> intensities 10 13 W cm −2 , 2 × 10 13 W cm −2 and 10 14 W cm −2 as a function of pulse<lb/> length. Although the photon energy is below the threshold for single-photon ionization,<lb/> we obtain a significant contribution from single-photon ionization to the ionization<lb/> probability due to the finite duration of the pulse. The two-photon ionization rates<lb/> deduced from the calculations are consistent with those obtained in R-matrix-Floquet<lb/> rate calculations. The ionization probability oscillates with pulse length, which is<lb/> ascribed to population and depopulation of autoionizing states just above the Ne 2+<lb/> ground state, reached after absorption of a single photon. At an intensity of 10 14 W<lb/> cm −2 , pulse lengths longer than 50 cycles are required for two-photon ionization to<lb/> dominate the ionization probability.<lb/></div>
+
+	<keyword>PACS numbers: 32.80.Rm, 32.30.Rj<lb/></keyword>
+
+	Confidential: not for distribution. 
+	<note type="submission">Submitted to IOP Publishing for peer review</note>
+	<date>30 November 2009</date>
+
+		</front>
+	</text>
+</tei>

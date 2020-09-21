@@ -80,6 +80,9 @@ public class GrobidAnalysisConfig {
     // a particular Grobid Analyzer to be used for tokenizing/filtering text
     private Analyzer analyzer = null;
 
+    // if true, the TEI text will be segmented into sentences 
+    private boolean withSentenceSegmentation = false;
+
     // BUILDER
 
     public static class GrobidAnalysisConfigBuilder {
@@ -156,6 +159,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder withProcessVectorGraphics(boolean b) {
             config.processVectorGraphics = b;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder withSentenceSegmentation(boolean b) {
+            config.withSentenceSegmentation = b;
             return this;
         }
 
@@ -255,5 +263,9 @@ public class GrobidAnalysisConfig {
 
     public Analyzer getAnalyzer() {
         return analyzer;
+    }
+
+    public boolean isWithSentenceSegmentation() {
+        return withSentenceSegmentation;
     }
 }

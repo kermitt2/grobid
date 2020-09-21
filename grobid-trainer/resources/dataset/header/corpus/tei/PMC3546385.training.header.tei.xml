@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC3546385"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Re-mating across years and intralineage polygyny are associated<lb/> with greater than expected levels of inbreeding in wild red deer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K . V . S T O P H E R * † , D. H. NUSSEY* ‡ , T. H. CLUTTON-BROCK § , F . G U I N N E S S § ,<lb/> A . M O R R I S * &amp; J . M . P E M B E R T O N *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Institute of Evolutionary Biology, University of Edinburgh,</affiliation>
+	</byline>
+
+	<address>Edinburgh, UK<lb/></address>
+
+	<byline>
+	<affiliation>†James Hutton (formerly Macaulay) Institute,</affiliation>
+	</byline>
+
+	<address>Craigiebuckler, Aberdeen, UK<lb/></address>
+
+	<byline>
+	<affiliation>‡Centre for Immunity, Infection and Evolution, University of Edinburgh,</affiliation>
+	</byline>
+
+	<address>Edinburgh, UK<lb/></address>
+
+	<byline>
+	<affiliation>§Department of Zoology, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK<lb/></address>
+
+	Keywords:<lb/>
+	<keyword>Cervus elaphus;<lb/> dispersal;<lb/> genetic structure;<lb/> inbreeding avoidance;<lb/> philopatry;<lb/> relatedness.</keyword>
+
+	Abstract<lb/>
+	<div type="abstract">The interaction between philopatry and nonrandom mating has important<lb/> consequences for the genetic structure of populations, influencing co-ances-<lb/>try within social groups but also inbreeding. Here, using genetic paternity<lb/> data, we describe mating patterns in a wild population of red deer (Cervus<lb/> elaphus) which are associated with marked consequences for co-ancestry<lb/> and inbreeding in the population. Around a fifth of females mate with a<lb/> male with whom they have mated previously, and further, females<lb/> frequently mate with a male with whom a female relative has also mated<lb/> (intralineage polygyny). Both of these phenomena occur more than<lb/> expected under random mating. Using simulations, we demonstrate that<lb/> temporal and spatial factors, as well as skew in male breeding success, are<lb/> important in promoting both re-mating behaviours and intralineage poly-<lb/>gyny. However, the information modelled was not sufficient to explain the<lb/> extent to which these behaviours occurred. We show that re-mating and<lb/> intralineage polygyny are associated with increased pairwise relatedness in<lb/> the population and a rise in average inbreeding coefficients. In particular,<lb/> the latter resulted from a correlation between male relatedness and rutting<lb/> location, with related males being more likely to rut in proximity to one<lb/> another. These patterns, alongside their consequences for the genetic struc-<lb/>ture of the population, have rarely been documented in wild polygynous<lb/> mammals, yet they have important implications for our understanding of<lb/> genetic structure, inbreeding avoidance and dispersal in such systems.<lb/></div>
+
+	Correspondence:
+	<byline>
+	<docAuthor>Katie V. Stopher,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Evolutionary Biology,<lb/> University of Edinburgh,</affiliation>
+	</byline>
+
+	<address>Edinburgh EH9 3JT, UK.<lb/></address>
+
+	Tel.: <phone>+44 131 650 5440</phone>; fax: +44 131 650 6564;<lb/> e-mail:
+	<email>katie.stopher@ed.ac.uk<lb/></email>
+
+	Re-use of this article is permitted in accordance with the Terms and<lb/> Conditions set out at http://wileyonlinelibrary.com/onlineopen#Online Open_Terms<lb/> ª 2 0 1 2 T H E A U T H O R S . J . E V O L . B I O L . 2 5 ( 2 0 1 2 ) 2 4 5 7 -2 4 6 9 
+
+	<page>2457<lb/></page> 
+
+	J O U R N A L O F E V O L U T I O N A R Y B I O L O G Y ª 2 0 1 2 E U R O P E A N S O C I E T Y F O R E V O L U T I O N A R Y B I O L O G Y<lb/>
+	
+	<idno>doi: 10.1111/j.1420-9101.2012.02626.x<lb/></idno>
+
+	<note type="submission">Received 21 June 2012; accepted 7 August 2012</note>
+
+		</front>
+	</text>
+</tei>

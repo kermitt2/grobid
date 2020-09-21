@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="SSC0630721-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	0038-1098/87 $3.00 + .00<lb/> Printed in Great Britaln.<lb/>
+	
+	<publisher>Pergamon Journals Ltd.<lb/></publisher>
+
+	<docTitle>
+	<titlePart>MAGNETIC AND THERMAL MFASURF.MENI&apos;S ON HIGH-T c (Lao.9Bao. I )2CuO~i-y<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Zirngiebl, J. O. Willis, J. D. Thompson, C. Y. Huang,<lb/> J. L. Smith, and Z. Flsk<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Los Alamos National Laboratory,</affiliation>
+	</byline>
+
+	<address>Los Alamos, NI4 87545<lb/></address>
+
+	<byline>
+	<docAuthor>P. H. Hor, R. L. Meng, C. W. Chu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Space Vacuum, Epitaxy Center<lb/> University of Houston,</affiliation>
+	</byline>
+
+	<address>Houston, TX 77004</address>
+
+	and<lb/>
+	<byline>
+	<docAuthor>M. K. Wu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, University of Alabema<lb/></affiliation>
+	</byline>
+
+	<address>Huntsville, AL 35899<lb/></address>
+
+	(
+	<note type="submission">Received April 7, 1987 by H. Suhl</note>
+	)<lb/>
+
+	<div type="abstract">We have measured the magnetic moment of (l-~to.gBao.t)=C-&quot;u.O,-as a<lb/> function of temperature and magnetic field and have found the onset of<lb/> superconductivity at a temperature T ~ 3,5 K. From the magnetic field<lb/> dependencies, we have shown that the sample is a type-II superconductor<lb/> with ~ ~ 11. Specific heat measurements ~ield a finite electronic<lb/> specific heat coefficient of ~6 mJ/mole-K at 4 K and a Debye<lb/> temperature of only 330 K, suggesting that a strong electron-phonon<lb/> interaction may be responsible for the high T in our sample.</div>
+
+		</front>
+	</text>
+</tei>

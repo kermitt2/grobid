@@ -312,7 +312,7 @@ public class GrobidProperties {
         loadCrfEngine();
     }
 
-    private static void loadCrfEngine() {
+    protected static void loadCrfEngine() {
         grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
             GrobidCRFEngine.WAPITI.name()));
     }
@@ -341,7 +341,7 @@ public class GrobidProperties {
 
     protected static Map<String, String> getEnvironmentVariableOverrides(Map<String, String> environmentVariablesMap) {
         Map<String, String> properties = new EnvironmentVariableProperties(
-            environmentVariablesMap, "GROBID__"
+            environmentVariablesMap, "(GROBID__|ORG__GROBID__).+"
         ).getProperties();
         LOGGER.info("environment variables overrides: {}", properties);
         return properties;
@@ -425,11 +425,11 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
-    public static boolean isHeaderUseHeuristics() {
+    /*public static boolean withSentenceSegmentation() {
         return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
+            getPropertyValue(GrobidPropertyKeys.PROP_WITH_SENTENCE_SEGMENTATION, "false")
         );
-    }
+    }*/
 
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using
@@ -651,6 +651,14 @@ public class GrobidProperties {
         setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
     }
 
+    public static String getSentenceDetectorFactory() {
+        String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_SENTENCE_DETECTOR_FACTORY);
+        if (StringUtils.isBlank(factoryClassName)) {
+            throw new GrobidPropertyException("Sentence detection is enabled but a factory class name is not provided");
+        }
+        return factoryClassName;
+    }
+
     /**
      * Returns if resources like firstnames, lastnames and countries are
      * supposed to be read from grobid-home folder, given in the grobid-property
@@ -699,15 +707,36 @@ public class GrobidProperties {
         return pathToPdfToXml;
     }
 
+    private static String getModelPropertySuffix(final String modelName) {
+        return modelName.replaceAll("-", "_");
+    }
+
+    private static String getGrobidCRFEngineName(final String modelName) {
+        String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
+        return getPropertyValue(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + getModelPropertySuffix(modelName),
+            defaultEngineName
+        );
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
+        String engineName = getGrobidCRFEngineName(modelName);
+        if (grobidCRFEngine.name().equals(engineName)) {
+            return grobidCRFEngine;
+        }
+        return GrobidCRFEngine.get(engineName);
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final GrobidModel model) {
+        return getGrobidCRFEngine(model.getModelName());
+    }
+
     public static GrobidCRFEngine getGrobidCRFEngine() {
         return grobidCRFEngine;
     }
 
     public static File getModelPath(final GrobidModel model) {
-        String extension = grobidCRFEngine.getExt();
-        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT &&
-            (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
-            extension = "wapiti";
+        String extension = getGrobidCRFEngine(model).getExt();
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
             + model.getFolderName() + File.separator
             + FILE_NAME_MODEL + "." + extension);

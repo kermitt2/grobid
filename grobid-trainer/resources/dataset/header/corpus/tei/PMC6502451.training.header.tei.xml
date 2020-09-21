@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC6502451"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Characterisation of white and yellow eye<lb/> colour mutant strains of house cricket, Acheta domesticus<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jacek Francikowski ID 1<lb/> *, Michał Krzyżowski 1 , Barbara Kochańska 2 , Marta Potrzebska 1 ,<lb/> Bartosz Baran 1 , Łukasz Chajec 3 , Anna Urbisz 3 , Karol Małota 3 , Bartosz Łozowski 1 ,<lb/> Malgorzata Kloc 4,5,6 , Jacek Kubiak 7,8<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Animal Physiology and Ecotoxicology, Faculty of Biology and Environmental Protection,<lb/> University of Silesia in Katowice,</affiliation>
+	</byline>
+
+	<address>Katowice, Poland,</address>
+
+	<byline>
+	<affiliation>2 The Faculty of Veterinary Medicine, Wroclaw University<lb/> of Environmental and Life Sciences,</affiliation>
+	</byline>
+
+	<address>Wroclaw, Poland,</address>
+
+	<byline>
+	<affiliation>3 Department of Embryology and Histology, Faculty of<lb/> Biology and Environmental Protection, University of Silesia in Katowice,</affiliation>
+	</byline>
+
+	<address>Katowice, Poland,</address>
+
+	<byline>
+	<affiliation>4 The Houston<lb/> Methodist Research Institute, Houston,Texas, United States of America, 5 The Houston Methodist Hospital,<lb/> Department of Surgery,</affiliation>
+	</byline>
+
+	<address>Houston, Texas, United States of America,</address>
+
+	<byline>
+	<affiliation>6 The University of Texas, M.D.<lb/> Anderson Cancer Center, Department of Genetics, Houston Texas, United States of America, 7 Department<lb/> of Regenerative Medicine and Cell Biology, Military Institute of Hygiene and Epidemiology (WIHE),</affiliation>
+	</byline>
+
+	<address>Warsaw,<lb/> Poland,</address>
+
+	<byline>
+	<affiliation>8 UnivRennes, CNRS, IGDR (Institute of Genetics and Development of Rennes), UMR 6290, Cell<lb/> Cycle Group, Faculty of Medicine,</affiliation>
+	</byline>
+
+	<address>Rennes, France<lb/></address>
+
+	*
+	<email>jacek.francikowski@us.edu.pl</email>
+
+	Abstract<lb/>
+	<div type="abstract">Two eye-colour mutant strains, white (W) and yellow (Y) of house cricket Acheta domesticus<lb/> were established in our laboratory. We phenotyped and genotyped the mutants, performed<lb/> genetic crossings and studied the eye structure and pigment composition using light and<lb/> electron microscopy and biochemical analysis. We show that W and Y phenotypes are con-<lb/>trolled by a single autosomal recessive allele, as both traits are metabolically independent.<lb/> The analysis of the mutants&apos;eye structure showed a reduced number of dark pigment gran-<lb/>ules while simultaneously, and an increased amount of light vacuoles in white eye mutants<lb/> was observed. Significant differences in eye pigment composition between strains were<lb/> also found. The Y mutant had a lower number of ommochromes, while the W mutant had a<lb/> lower number of ommochromes and pteridines. This indicates that mutated genes are<lb/> involved in two different, independent metabolic pathways regulating tryptophan metabolism<lb/> enzymes, pigment transporter granules or pigment granule formation.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0216281 May 6, 2019<lb/></reference>
+
+	<page>1 / 20<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Francikowski J, Krzyżowski M, Kochańska<lb/> B, Potrzebska M, Baran B, Chajec Ł, et al. (2019)<lb/> Characterisation of white and yellow eye colour<lb/> mutant strains of house cricket, Acheta<lb/> domesticus. PLoS ONE 14(5): e0216281.</reference>
+
+	<idno>https://<lb/> doi.org/10.1371/journal.pone.0216281<lb/></idno>
+
+	Editor:
+	<editor>Mathias Wernet,</editor>
+
+	<byline>
+	<affiliation>Freie Universitat Berlin<lb/></affiliation>
+	</byline>
+
+	<address>Fachbereich Biologie Chemie Pharmazie, GERMANY<lb/></address>
+
+	<note type="submission">Received: July 29, 2018<lb/> Accepted: April 17, 2019<lb/></note>
+
+	Published:
+	<date>May 6, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Francikowski et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/> Data Availability Statement: All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
+
+	Funding: The authors
+	<note type="funding">received no specific funding<lb/> for this work.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

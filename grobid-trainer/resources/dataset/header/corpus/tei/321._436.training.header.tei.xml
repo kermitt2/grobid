@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="321._436"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A Randomized Linear-Time Algorithm for Finding Minimum Spanning Trees<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Philip N. Klein<lb/> Robert E. Tarjan y<lb/></docAuthor>
+	</byline>
+	
+	<date>October 12, 1993</date>
+
+	Abstract<lb/>
+	<div type="abstract">We present a randomized linear-time algorithm for nding a minimum spanning tree in a connected<lb/> graph with edge weights. The algorithm is a modi cation of one proposed by Karger and uses random<lb/> sampling in combination with a recently discovered linear-time algorithm for verifying a minimum span-<lb/>ning tree. Our computational model is a unit-cost random-access machine with the restriction that the<lb/> only operations allowed on edge weights are binary comparisons.<lb/> 1 Introduction<lb/> We consider the problem of nding a minimum spanning tree in a connected graph with real-valued edge<lb/> weights. This problem has a long and rich history; the rst fully realized algorithm was devised by Bor uvka<lb/> in the 1920&apos;s 3]. An informative survey paper by Graham and Hell 9] describes the history of the problem<lb/> up to 1985. In the last two decades faster and faster algorithms were found, the fastest being an algorithm<lb/> of Gabow, Galil, and Spencer 7] (see also 8]), with a running time of O(m log (m; n)) on a graph of n<lb/> vertices and m edges. Here (m; n) = minfi j log (i) n m=ng.<lb/></div>
+
+	<byline>
+	<affiliation>Department of Computer Science, Brown University,</affiliation>
+	</byline>
+
+	<address>Providence, RI 02912-1910. </address>
+
+	<note type="funding">Research partially supported by an NSF<lb/> PYI award, CCR-9157620, together with PYI matching funds from Thinking Machines Corporation, Xerox Corporation, and<lb/> Honeywell Corporation. Additional support provided by DARPA Contract No. N00014-91-J-4052, ARPA Order No. 8225,<lb/> and by the NEC Research Institute, Princeton, NJ.<lb/> </note>
+
+	<byline>
+	<affiliation>y Department of Computer Science, Princeton University,</affiliation>
+	</byline>
+
+	<address>Princeton, NJ </address>
+
+	and the 
+	<byline>
+	<affiliation>NEC Research Institute,</affiliation>
+	</byline>
+
+	<address>Princeton, NJ.<lb/></address>
+
+	<note type="funding">Research at Princeton University partially supported by the National Science Foundation, Grant No. CCR-8920505; the O ce<lb/> of Naval Research, Contract No. N0014-91-J-1463; and DIMACS (Center for Discrete Mathematics and Theoretical Computer<lb/> Science), a National Science and Technology Center, Grant No. NSF-STC88-09648.</note>
+		</front>
+	</text>
+</tei>

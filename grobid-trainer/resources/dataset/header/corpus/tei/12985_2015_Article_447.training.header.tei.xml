@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="12985_2015_Article_447"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">R E S E A R C H<lb/></note> 
+
+	<note type="doctype">Open Access<lb/></note>
+	
+	<docTitle>
+	<titlePart>Mechanisms downstream of reverse<lb/> transcription reduce serum levels of HBV<lb/> DNA but not of HBsAg in chronic hepatitis<lb/> B virus infection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Simon B. Larsson * , Sebastian Malmström, Charles Hannoun, Gunnar Norkrans and Magnus Lindh</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">Background: Hepatitis B virus (HBV) DNA in serum of chronically infected patients declines by 3-4 log 10 units at<lb/> loss of HBe antigen (HBeAg) from serum. The mechanisms behind this decline, and the much smaller decline of<lb/> surface antigen (HBsAg) levels, are still not well known. The aim of this study was to get a better understanding of<lb/> this process by analysing both serum and intrahepatic markers of HBV replication.<lb/> Methods: Levels of HBV DNA and HBsAg in serum, and covalently closed circular DNA (cccDNA), pregenomic RNA<lb/> (pgRNA) and S-RNA and total intrahepatic HBV DNA (ihDNA) in liver biopsies from 84 chronically infected patients<lb/> (16 positive and 68 negative for HBeAg) were analysed.<lb/> Results: Lower HBV DNA levels within HBeAg-positive stage reflected lower levels of cccDNA and pgRNA with<lb/> strong correlation. In HBeAg-negative patients, ihDNA levels were greater and HBV DNA levels in serum lower than<lb/> expected from pgRNA levels. A lower HBV DNA/HBsAg ratio corresponded with lower pgRNA/cccDNA (p &lt; 0.01)<lb/> and higher S-RNA/cccDNA (p &lt; 0.0001) ratios, suggesting that in HBeAg-negative patients transcription of pgRNA,<lb/> but not of S-RNA, becomes suppressed.<lb/> Conclusions: The marked reduction of HBV DNA in serum after loss of HBeAg appears to be due to combined<lb/> reduction of cccDNA, pgRNA and yet unidentified mechanisms downstream of reverse transcription. Such mechanisms<lb/> include faster clearance of circulating virus or blocked secretion of virions, the latter supported by the observed relative<lb/> increase of ihDNA in HBeAg-negative patients. The smaller reduction of S-RNA than of pgRNA partly explains why<lb/> HBsAg remain high in the HBeAg-negative stage, supporting the possibility of HBsAg synthesis from integrated<lb/> HBV DNA.<lb/></div>
+
+	Keywords:
+	<keyword>HBV DNA, HBsAg, cccDNA, Replication, pgRNA<lb/></keyword>
+
+	* Correspondence:
+	<email>simon.b.larsson@gu.se<lb/></email>
+
+	<byline>
+	<affiliation>Department of Infectious Diseases, Institute of Biomedicine, Sahlgrenska<lb/> Academy, University of Gothenburg,</affiliation>
+	</byline>
+
+	<address>Gothenburg, Sweden<lb/></address>
+
+	<note type="copyright">© 2015 Larsson et al. Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0<lb/> International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to<lb/> the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver<lb/> (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.<lb/></note>
+
+	<reference>Larsson et al. Virology Journal (2015) 12:213<lb/></reference>
+
+	<idno>DOI 10.1186/s12985-015-0447-5<lb/></idno>
+
+	<reference>Larsson et al. Virology Journal (2015) 12:213<lb/></reference>
+
+	<note type="submission">Received: 30 October 2015 Accepted: 3 December 2015</note>
+
+		</front>
+	</text>
+</tei>
