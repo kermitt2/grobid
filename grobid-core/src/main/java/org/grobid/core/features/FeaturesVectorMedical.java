@@ -4,9 +4,10 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.TextUtilities;
 
 /**
- * This class is taken and adapted from the class FeaturesVectorSegmentation for high level segmentation of medical document.
+ * This class is taken and adapted from the class FeaturesVectorSegmentation (@author Patrice Lopez)
+ * for high level segmentation of medical document.
  *
- * Created: Tanti, 2020
+ * Tanti, 2020
  */
 public class FeaturesVectorMedical {
     public LayoutToken token = null; // not a feature, reference value

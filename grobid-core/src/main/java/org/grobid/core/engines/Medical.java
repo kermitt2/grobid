@@ -31,16 +31,17 @@ import static org.apache.commons.lang3.StringUtils.*;
 // the jar for this plugin is located in the local repository
 
 /**
- * This class is taken and adapted from Segmentation class.
+ * This class is taken and adapted from Segmentation class (@author Patrice Lopez).
  * Realise a high level segmentation of a medical document into document header, page header,
  * page footer, left note, right note, document body, page, and acknowledgment.
  *
- * Created: Tanti, 2020
+ * Tanti, 2020
  */
 public class Medical extends AbstractParser {
 
 	/*
         9 labels for this model:
+            document header <front> : for document header
             page header (<headnote>): note type headnote,
             page footer (<footnote>): note type footnote,
             left note (<leftnote>): note type left,
@@ -76,8 +77,8 @@ public class Medical extends AbstractParser {
     }
 
     /**
-     * Segment a PDF document into high level zones: cover page, document header,
-     * page footer, page header, body, page numbers, biblio section and annexes.
+     * Segment a PDF document into high level zones: document header, page footer,
+     * page header, left note, right note, body, page number, and acknowledgment.
      *
      * @param documentSource document source
      * @return Document object with segmented medical information
@@ -392,7 +393,7 @@ public class Medical extends AbstractParser {
 
                     // we consider the first token of the line as usual lexical CRF token
                     // and the second token of the line as feature
-                    StringTokenizer st2 = new StringTokenizer(line, " \t");
+                    StringTokenizer st2 = new StringTokenizer(line, " \t\f\u00A0");
                     // alternatively, use a grobid analyser
                     String text = null;
                     String text2 = null;
@@ -405,7 +406,7 @@ public class Medical extends AbstractParser {
                         continue;
 
                     // final sanitisation and filtering
-                    text = text.replaceAll("[ \n]", "");
+                    text = text.replaceAll("[ \n\r]", "");
                     text = text.trim();
 
                     if ((text.length() == 0) || (TextUtilities.filterLine(line))) {
@@ -626,7 +627,7 @@ public class Medical extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                 getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator +
@@ -700,7 +701,7 @@ public class Medical extends AbstractParser {
 
             String fulltext = //getAllTextFeatured(doc, false);
                 getAllLinesFeatured(doc);
-            List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
+            List<LayoutToken> tokenizations = doc.getTokenizations();
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator +
@@ -865,6 +866,10 @@ public class Medical extends AbstractParser {
                 output = writeField(buffer, line, s1, lastTag0, s2, "<header>", "<front>", addSpace, 3);
 
                 if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "", addSpace, 3);
+                }
+
+                if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<headnote>", "<note place=\"headnote\">",
                         addSpace, 3);
                 }
@@ -888,9 +893,6 @@ public class Medical extends AbstractParser {
                 }
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
-                }
-                if (!output) {
-                    output = writeField(buffer, line, s1, lastTag0, s2, "<other>", "<other>", addSpace, 3);
                 }
 
                 lastTag = s1;
@@ -946,9 +948,6 @@ public class Medical extends AbstractParser {
                     buffer.append("\t");
                 }
                 buffer.append(outField).append(line);
-            } else {
-                // otherwise we continue by ouputting the token
-                buffer.append(line);
             }
         }
         return result;
@@ -991,7 +990,7 @@ public class Medical extends AbstractParser {
             } else if (lastTag0.equals("<acknowledgement>")) {
                 buffer.append("</div>\n\n");
             } else if (lastTag0.equals("<other>")) {
-                buffer.append("</other>\n\n");
+                buffer.append("\n\n");
             }else {
                 res = false;
             }

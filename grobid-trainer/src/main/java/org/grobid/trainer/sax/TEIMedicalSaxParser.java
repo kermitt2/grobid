@@ -128,15 +128,15 @@ public class TEIMedicalSaxParser extends DefaultHandler {
                                 currentTag = "<footnote>";
                             } else if (value.equals("headnote") || value.equals("head")) {
                                 currentTag = "<headnote>";
-                            } else if (value.equals("left")) {
+                            } else if (value.equals("leftnote") || value.equals("left")) {
                                 currentTag = "<leftnote>";
-                            } else if (value.equals("right")) {
+                            } else if (value.equals("rightnote") || value.equals("right")) {
                                 currentTag = "<rightnote>";
                             } else {
                                 logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
                         } else {
-                            logger.error("Invalid attribute name for element div: " + name);
+                            logger.error("Invalid attribute name for element note: " + name);
                         }
                     }
                 }
@@ -165,7 +165,7 @@ public class TEIMedicalSaxParser extends DefaultHandler {
                 }
             } else if (qName.equals("page") || qName.equals("pages")) {
                 currentTag = "<page>";
-            } else if (qName.equals("other")) {
+            } else if (qName.equals("text")) {
                 currentTag = "<other>";
                 upperTag = null;
                 upperQname = null;
@@ -184,6 +184,7 @@ public class TEIMedicalSaxParser extends DefaultHandler {
         ) {
             String text = getText();
             text = text.replace("\n", " ");
+            text = text.replace("\r", " ");
             text = text.replace("  ", " ");
             boolean begin = true;
             //System.out.println(text);
@@ -202,7 +203,8 @@ public class TEIMedicalSaxParser extends DefaultHandler {
                     page = true;
                 }
 
-                StringTokenizer st = new StringTokenizer(line, " \t");
+                //StringTokenizer st = new StringTokenizer(line, " \t");
+                StringTokenizer st = new StringTokenizer(line, " \t\f\u00A0");
                 if (!st.hasMoreTokens())
                     continue;
                 String tok = st.nextToken();

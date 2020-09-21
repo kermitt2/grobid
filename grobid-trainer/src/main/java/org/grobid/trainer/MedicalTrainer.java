@@ -25,7 +25,7 @@ public class MedicalTrainer extends AbstractTrainer {
         // adjusting CRF training parameters for this model (only with Wapiti)
         epsilon = 0.0000001;
         window = 50;
-        nbMaxIterations = 1000;
+        nbMaxIterations = 2000;
     }
 
     @Override
