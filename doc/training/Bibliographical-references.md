@@ -124,4 +124,4 @@ As a principle for identifiers, the identifier type string/prefix must be kept i
 	<idno type="ISSN">issn: 1546- 1726</idno>. 
 	<idno type="DOI">doi: 10. 1038/nn.3332</idno>.
 </bibl>
-
+```
