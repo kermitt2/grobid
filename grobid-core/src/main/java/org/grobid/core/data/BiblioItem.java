@@ -181,6 +181,7 @@ public class BiblioItem {
                 ", originalAbstract='" + originalAbstract + '\'' +
                 ", originalTitle='" + originalTitle + '\'' +
                 ", originalAuthors='" + originalAuthors + '\'' +
+                ", originalEditors='" + originalEditors + '\'' +
                 ", originalAddress='" + originalAddress + '\'' +
                 ", originalNote='" + originalNote + '\'' +
                 ", originalKeyword='" + originalKeyword + '\'' +
@@ -357,6 +358,7 @@ public class BiblioItem {
     private String originalAbstract = null;
     private String originalTitle = null;
     private String originalAuthors = null;
+    private String originalEditors = null;
     private String originalAddress = null;
     private String originalNote = null;
     private String originalKeyword = null;
@@ -800,6 +802,10 @@ public class BiblioItem {
 
     public String getOriginalAuthors() {
         return originalAuthors;
+    }
+
+    public String getOriginalEditors() {
+        return originalEditors;
     }
 
     public String getOriginalTitle() {
@@ -1449,6 +1455,10 @@ public class BiblioItem {
 
     public void setOriginalAuthors(String original) {
         originalAuthors = original;
+    }
+
+    public void setOriginalEditors(String original) {
+        originalEditors = original;
     }
 
     public void setOriginalTitle(String original) {
@@ -2164,12 +2174,9 @@ public class BiblioItem {
                 }
             }
 
-            if ((bookTitle == null) && (journal == null)) {
-                for (int i = 0; i < indent + 1; i++) {
-                    tei.append("\t");
-                }
-                tei.append("<monogr>\n");
-            } else if ((bookTitle != null) && (journal == null) && (title == null) && (articleTitle == null)) {
+            boolean openAnalytic = false;
+            if ( ((bookTitle == null) && (journal == null) && (serieTitle == null)) || 
+                ((bookTitle != null) && (title == null) && (articleTitle == null) && (journal == null) && (serieTitle == null)) ) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2179,6 +2186,7 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<analytic>\n");
+                openAnalytic = true;
             }
 
             // title
@@ -2187,7 +2195,7 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<title");
-                if ((bookTitle == null) && (journal == null)) {
+                if ((bookTitle == null) && (journal == null) && (serieTitle == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
                 } else
                     tei.append(" level=\"a\" type=\"main\"");
@@ -2309,8 +2317,7 @@ public class BiblioItem {
                 tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(web)).append("\" />\n");
             }
 
-            if ((!StringUtils.isEmpty(bookTitle) && ((title != null) || (articleTitle != null))) || 
-                !StringUtils.isEmpty(journal)) {
+            if (openAnalytic) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2332,7 +2339,37 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                if (!StringUtils.isEmpty(editors)) {
+                // in case the book is part of an indicated series
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
+                }
+
+                if (fullEditors != null && fullEditors.size()>0) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<editor>\n");
+                    for(Person editor : fullEditors) {
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        String localString = editor.toTEI(false);
+                        localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        tei.append(localString).append("\n");
+                    }
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</editor>\n");
+                } else if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -3875,7 +3912,10 @@ public class BiblioItem {
                         tei.append(">\n");
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append(author.toTEI(withCoordinates)).append("\n");
+                    
+                    String localString = author.toTEI(withCoordinates);
+                    localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    tei.append(localString).append("\n");
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);
                         tei.append("<email>" + TextUtilities.HTMLEncode(author.getEmail()) + "</email>\n");

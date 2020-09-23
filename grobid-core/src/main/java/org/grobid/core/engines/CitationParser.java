@@ -105,7 +105,6 @@ public class CitationParser extends AbstractParser {
                 collaborationsPositions, identifiersPositions, urlPositions);
 
             String res = label(ress);
-//System.out.println(res);
             resCitation = resultExtractionLayoutTokens(res, true, tokens);
             // post-processing (additional field parsing and cleaning)
             if (resCitation != null) {
@@ -144,6 +143,10 @@ public class CitationParser extends AbstractParser {
                 resCitation.setJournal(TextUtilities.cleanField(
                         resCitation.getJournal(), true));
                 resCitation.postProcessPages();
+
+                // editors (they are human persons in theory)
+                resCitation.setOriginalEditors(resCitation.getEditors());
+                resCitation.setFullEditors(parsers.getAuthorParser().processingCitation(resCitation.getEditors()));
             }
 
             //if (consolidate != 0) 
