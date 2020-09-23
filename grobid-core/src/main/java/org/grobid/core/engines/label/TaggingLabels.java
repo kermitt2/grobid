@@ -85,6 +85,7 @@ public class TaggingLabels {
     public final static String COLLABORATION_LABEL = "<collaboration>";
     public final static String JOURNAL_LABEL = "<journal>";
     public final static String BOOKTITLE_LABEL = "<booktitle>";
+    public final static String SERIES_LABEL = "<series>";
     public final static String VOLUME_LABEL = "<volume>";
     public final static String ISSUE_LABEL = "<issue>";
     public final static String PAGES_LABEL = "<pages>";
@@ -200,7 +201,6 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_AUTHOR = new TaggingLabelImpl(GrobidModels.CITATION, AUTHOR_LABEL);
     public static final TaggingLabel CITATION_EDITOR = new TaggingLabelImpl(GrobidModels.CITATION, EDITOR_LABEL);
     public static final TaggingLabel CITATION_DATE = new TaggingLabelImpl(GrobidModels.CITATION, DATE_LABEL);
-    public static final TaggingLabel CITATION_KEYWORD = new TaggingLabelImpl(GrobidModels.CITATION, KEYWORD_LABEL);
     public static final TaggingLabel CITATION_INSTITUTION = new TaggingLabelImpl(GrobidModels.CITATION, INSTITUTION_LABEL);
     public static final TaggingLabel CITATION_NOTE = new TaggingLabelImpl(GrobidModels.CITATION, NOTE_LABEL);
     public static final TaggingLabel CITATION_TECH = new TaggingLabelImpl(GrobidModels.CITATION, TECH_LABEL);
@@ -211,6 +211,8 @@ public class TaggingLabels {
     public static final TaggingLabel CITATION_PUBLISHER = new TaggingLabelImpl(GrobidModels.CITATION, PUBLISHER_LABEL);
     public static final TaggingLabel CITATION_WEB = new TaggingLabelImpl(GrobidModels.CITATION, WEB_LABEL);
     public static final TaggingLabel CITATION_PUBNUM = new TaggingLabelImpl(GrobidModels.CITATION, PUBNUM_LABEL);
+    public static final TaggingLabel CITATION_SERIES = new TaggingLabelImpl(GrobidModels.CITATION, SERIES_LABEL);
+    public static final TaggingLabel CITATION_OTHER = new TaggingLabelImpl(GrobidModels.CITATION, OTHER_LABEL);
 
     public static final TaggingLabel NAMES_HEADER_MARKER = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, MARKER_LABEL);
     public static final TaggingLabel NAMES_HEADER_TITLE = new TaggingLabelImpl(GrobidModels.NAMES_HEADER, TITLE_LABEL);
@@ -325,7 +327,6 @@ public class TaggingLabels {
         register(CITATION_AUTHOR);
         register(CITATION_EDITOR);
         register(CITATION_DATE);
-        register(CITATION_KEYWORD);
         register(CITATION_INSTITUTION);
         register(CITATION_NOTE);
         register(CITATION_TECH);
@@ -336,6 +337,8 @@ public class TaggingLabels {
         register(CITATION_PUBLISHER);
         register(CITATION_WEB);
         register(CITATION_PUBNUM);
+        register(CITATION_OTHER);
+        register(CITATION_SERIES);
 
         // person names
         register(NAMES_HEADER_MARKER);

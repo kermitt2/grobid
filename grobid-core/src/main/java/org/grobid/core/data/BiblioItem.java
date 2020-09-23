@@ -1946,6 +1946,11 @@ public class BiblioItem {
                 bibtex.add("  booktitle = {" + bookTitle + "}");
             }
 
+            // booktitle
+            if ((journal == null) && (serieTitle != null)) {
+                bibtex.add("  series = {" + serieTitle + "}");
+            }
+
             // publisher
             if (publisher != null) {
                 bibtex.add("  publisher = {" + publisher + "}");
@@ -2527,23 +2532,32 @@ public class BiblioItem {
 	                }
                     tei.append("</imprint>\n");
                 }
-            } else if (!StringUtils.isEmpty(journal)) {
+            } else if (!StringUtils.isEmpty(journal) || !StringUtils.isEmpty(serieTitle)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                tei.append("<title level=\"j\"");
-				if (generateIDs) {
-					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" xml:id=\"_" + divID + "\"");
-				}	
-				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
+                if (!StringUtils.isEmpty(journal)) {
+                    tei.append("<title level=\"j\"");
+    				if (generateIDs) {
+    					String divID = KeyGen.getKey().substring(0,7);
+    					tei.append(" xml:id=\"_" + divID + "\"");
+    				}	
+    				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
-                if (!StringUtils.isEmpty(getJournalAbbrev())) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
+                    if (!StringUtils.isEmpty(getJournalAbbrev())) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<title level=\"j\" type=\"abbrev\">"
+                                + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
                     }
-                    tei.append("<title level=\"j\" type=\"abbrev\">"
-                            + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
+                } else if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
                 if (!StringUtils.isEmpty(editors)) {

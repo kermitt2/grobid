@@ -128,10 +128,12 @@ public class TEICitationSaxParser extends DefaultHandler {
                     if (name.equals("level")) {
                         if (value.equals("a")) {
                             currentTag = "<title>";
-                        } else if (value.equals("j") || value.equals("s")) {
+                        } else if (value.equals("j")) {
                             currentTag = "<journal>";
                         } else if (value.equals("m")) {
                             currentTag = "<booktitle>";
+                        } else if (value.equals("s")) {
+                            currentTag = "<series>";
                         }
                     }
                 }
