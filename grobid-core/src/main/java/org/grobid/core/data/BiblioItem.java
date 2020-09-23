@@ -4138,35 +4138,63 @@ public class BiblioItem {
         tei.append("</affiliation>\n");
     }
 
-    private static volatile Pattern page = Pattern.compile("(\\d+)");
+    private static volatile Pattern page = Pattern.compile("([A-Ze]?\\d+)");
+    private static volatile Pattern pageDigits = Pattern.compile("\\d+");
 
     /**
-     * Correct fields of the first biblio item based on the second one and the reference string.
+     * Try to normalize the page range, which can be expressed in abbreviated forms and with letter prefix.
      */
     public void postProcessPages() {
         if (pageRange != null) {
             Matcher matcher = page.matcher(pageRange);
             if (matcher.find()) {
+
+                // below for the string form of the page numbers
                 String firstPage = null;
                 String lastPage = null;
+
+                // alphaPrefix is for storing possible alphabetical prefix to page number, e.g. "L" in
+                // Smith, G. P., Mazzotta, P., Okabe, N., et al. 2016, MNRAS, 456, L74  
+                String alphaPrefixStart = null;
+                String alphaPrefixEnd = null;
+
+                // below for the integer form of the page numbers (part in case alphaPrefix is not null)
+                int beginPage = -1;
+                int endPage = -1;
+
                 if (matcher.groupCount() > 0) {
                     firstPage = matcher.group(0);
                 }
+
                 if (firstPage != null) {
                     try {
                         beginPage = Integer.parseInt(firstPage);
                     } catch (Exception e) {
                         beginPage = -1;
                     }
-					if (beginPage != -1)
+					if (beginPage != -1) {
 						pageRange = "" + beginPage;
-					else
-						pageRange = firstPage;
+                    } else {
+                        pageRange = firstPage;
+
+                        // try to get the numerical part of the page number, useful for later
+                        Matcher matcher2 = pageDigits.matcher(firstPage);
+                        if (matcher2.find()) {
+                            try {
+                                beginPage = Integer.parseInt(matcher2.group());
+                                if (firstPage.length() > 0)
+                                    alphaPrefixStart = firstPage.substring(0,1);
+                            } catch (Exception e) {
+                                beginPage = -1;
+                            }
+                        }
+                    }
 
                     if (matcher.find()) {
                         if (matcher.groupCount() > 0) {
                             lastPage = matcher.group(0);
                         }
+
                         if (lastPage != null) {
                             try {
                                 endPage = Integer.parseInt(lastPage);
@@ -4174,18 +4202,80 @@ public class BiblioItem {
                                 endPage = -1;
                             }
 							
-							if ( (endPage != -1) && (endPage < beginPage) && (endPage < 50) ) {
-								endPage = beginPage + endPage;
-								pageRange += "--" + endPage;
-							}
-							else 
-								pageRange += "--" + lastPage;
+                            if (endPage == -1) {
+                                // try to get the numerical part of the page number, to be used for later
+                                Matcher matcher2 = pageDigits.matcher(lastPage);
+                                if (matcher2.find()) {
+                                    try {
+                                        endPage = Integer.parseInt(matcher2.group());
+                                        if (lastPage.length() > 0)
+                                            alphaPrefixEnd = lastPage.substring(0,1);
+                                    } catch (Exception e) {
+                                        endPage = -1;
+                                    }
+                                }
+                            }
+
+							if ( (endPage != -1) && (endPage < beginPage)) {
+                                // there are two possibilities: 
+                                // - the substitution, e.g. 433–8 -> 433--438, for example American Medical Association citation style
+                                // - the addition, e.g. 433–8 -> 433--441
+                                // unfortunately, it depends on the citation style
+
+                                // we try to guess/refine the re-composition of pages
+
+                                if (endPage >= 50) {
+                                    // we assume no journal articles have more than 49 pages and is expressed as addition, 
+                                    // so it's a substitution
+
+                                    lastPage = firstPage.substring(0, firstPage.length() - lastPage.length()) + lastPage;
+                                    pageRange += "--" + lastPage;
+                                } else {
+                                    if (endPage < 10) {
+                                        // case 1 digit for endPage
+
+                                        // last digit of begin page
+                                        int lastDigitBeginPage = beginPage % 10;
+
+                                        // if digit of lastPage lower than last digit of beginPage, it's an addition for sure
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    } else if (endPage < 50) {
+                                        // case 2 digit for endPage, we apply a similar heuristics
+                                        int lastDigitBeginPage = beginPage % 100;
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    }
+
+                                    // we assume there is no article of more than 99 pages expressed in this abbreviated way 
+                                    // (which are for journal articles only, so short animals)
+    								
+                                    if (alphaPrefixEnd == null)
+        								pageRange += "--" + endPage;
+                                    else
+                                        pageRange += "--" + alphaPrefixEnd + endPage;
+                                }
+							} else if ((endPage != -1)) {
+                                if (alphaPrefixEnd == null)
+    								pageRange += "--" + lastPage;
+                                else 
+                                    pageRange += "--" + alphaPrefixEnd + endPage;
+                            } else {
+                                pageRange += "--" + lastPage;
+                            }
                         }
                     }
                 }
             }
         }
-
     }
 
     /**
