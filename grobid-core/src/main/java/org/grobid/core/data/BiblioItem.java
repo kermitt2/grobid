@@ -4138,7 +4138,9 @@ public class BiblioItem {
         tei.append("</affiliation>\n");
     }
 
-    private static volatile Pattern page = Pattern.compile("([A-Ze]?\\d+)");
+    private static volatile String possiblePreFixPageNumber = "[A-Ze]?";
+    private static volatile String possiblePostFixPageNumber = "[A-Z]?";
+    private static volatile Pattern page = Pattern.compile("("+possiblePreFixPageNumber+"\\d+"+possiblePostFixPageNumber+")");
     private static volatile Pattern pageDigits = Pattern.compile("\\d+");
 
     /**
@@ -4153,10 +4155,13 @@ public class BiblioItem {
                 String firstPage = null;
                 String lastPage = null;
 
-                // alphaPrefix is for storing possible alphabetical prefix to page number, e.g. "L" in
-                // Smith, G. P., Mazzotta, P., Okabe, N., et al. 2016, MNRAS, 456, L74  
+                // alphaPrefix or alphaPostfix are for storing possible alphabetical prefix or postfix to page number, 
+                // e.g. "L" in Smith, G. P., Mazzotta, P., Okabe, N., et al. 2016, MNRAS, 456, L74  
+                // or "D" in  "Am J Cardiol. 1999, 83:143D-150D. 10.1016/S0002-9149(98)01016-9"
                 String alphaPrefixStart = null;
                 String alphaPrefixEnd = null;
+                String alphaPostfixStart = null;
+                String alphaPostfixEnd = null;
 
                 // below for the integer form of the page numbers (part in case alphaPrefix is not null)
                 int beginPage = -1;
@@ -4182,8 +4187,18 @@ public class BiblioItem {
                         if (matcher2.find()) {
                             try {
                                 beginPage = Integer.parseInt(matcher2.group());
-                                if (firstPage.length() > 0)
+                                if (firstPage.length() > 0) {
                                     alphaPrefixStart = firstPage.substring(0,1);
+                                    // is it really alphabetical character?
+                                    if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixStart)) {
+                                        alphaPrefixStart = null;
+                                        // look at postfix
+                                        alphaPostfixStart = firstPage.substring(firstPage.length()-1,firstPage.length());
+                                        if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixStart)) {
+                                            alphaPostfixStart = null;
+                                        }
+                                    }
+                                }
                             } catch (Exception e) {
                                 beginPage = -1;
                             }
@@ -4208,8 +4223,18 @@ public class BiblioItem {
                                 if (matcher2.find()) {
                                     try {
                                         endPage = Integer.parseInt(matcher2.group());
-                                        if (lastPage.length() > 0)
+                                        if (lastPage.length() > 0) {
                                             alphaPrefixEnd = lastPage.substring(0,1);
+                                            // is it really alphabetical character?
+                                            if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixEnd)) {
+                                                alphaPrefixEnd = null;
+                                                // look at postfix
+                                                alphaPostfixEnd = lastPage.substring(lastPage.length()-1,lastPage.length());
+                                                if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixEnd)) {
+                                                    alphaPostfixEnd = null;
+                                                }
+                                            }
+                                        }
                                     } catch (Exception e) {
                                         endPage = -1;
                                     }
@@ -4258,17 +4283,21 @@ public class BiblioItem {
 
                                     // we assume there is no article of more than 99 pages expressed in this abbreviated way 
                                     // (which are for journal articles only, so short animals)
-    								
-                                    if (alphaPrefixEnd == null)
-        								pageRange += "--" + endPage;
-                                    else
+
+                                    if (alphaPrefixEnd != null) 
                                         pageRange += "--" + alphaPrefixEnd + endPage;
+                                    else if (alphaPostfixEnd != null) 
+                                        pageRange += "--" + endPage + alphaPostfixEnd;
+                                    else
+                                        pageRange += "--" + endPage;
                                 }
 							} else if ((endPage != -1)) {
-                                if (alphaPrefixEnd == null)
-    								pageRange += "--" + lastPage;
-                                else 
+                                if (alphaPrefixEnd != null) 
                                     pageRange += "--" + alphaPrefixEnd + endPage;
+                                else if (alphaPostfixEnd != null) 
+                                    pageRange += "--" + endPage + alphaPostfixEnd;
+                                else
+                                    pageRange += "--" + lastPage;
                             } else {
                                 pageRange += "--" + lastPage;
                             }
