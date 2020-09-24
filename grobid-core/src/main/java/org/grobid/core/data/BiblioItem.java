@@ -4227,8 +4227,9 @@ public class BiblioItem {
                                 if (endPage >= 50) {
                                     // we assume no journal articles have more than 49 pages and is expressed as addition, 
                                     // so it's a substitution
-
-                                    lastPage = firstPage.substring(0, firstPage.length() - lastPage.length()) + lastPage;
+                                    int upperBound = firstPage.length() - lastPage.length();
+                                    if (upperBound<firstPage.length() && upperBound > 0)
+                                        lastPage = firstPage.substring(0, upperBound) + lastPage;
                                     pageRange += "--" + lastPage;
                                 } else {
                                     if (endPage < 10) {
