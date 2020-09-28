@@ -1436,6 +1436,13 @@ public class TEIFormatter {
 
         List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions);
     
+        if (theSentences.size() == 0) {
+            // this should normally not happen, but it happens (depending on sentence splitter, usually the text 
+            // is just a punctuation)
+            // in this case we consider the current text as a unique sentence as fall back
+            theSentences.add(new OffsetPosition(0, text.length()));
+        }
+
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
         List<LayoutToken> currentSentenceTokens = new ArrayList<>();
@@ -1444,6 +1451,8 @@ public class TEIFormatter {
         if (config.isGenerateTeiCoordinates("s")) {
             
             int currentSentenceIndex = 0;
+//System.out.println(text);            
+//System.out.println("theSentences.size(): " + theSentences.size());
             String sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
             int sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
 
