@@ -12,7 +12,7 @@ See the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations 
 
 - We think that these metrics are very good to compare improvements over time and to catch possible regressions, because relative improvements can be reliable with slighty imperfect evaluation data. 
 
-More recent versions of these benchmarks might be available [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc).
+More recent versions of these benchmarks (for master snapshots) are available [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc).
 
 
 ## General
