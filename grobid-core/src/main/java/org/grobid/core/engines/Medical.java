@@ -37,7 +37,7 @@ import static org.apache.commons.lang3.StringUtils.*;
  *
  * Tanti, 2020
  */
-public class Medical extends AbstractParser {
+public class MedicalParser extends AbstractParser {
 
 	/*
         9 labels for this model:
@@ -52,7 +52,7 @@ public class Medical extends AbstractParser {
             other (<other>): other
 	*/
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Medical.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MedicalParser.class);
 
     // default bins for relative position
     private static final int NBBINS_POSITION = 12;
@@ -72,7 +72,7 @@ public class Medical extends AbstractParser {
     /**
      * TODO some documentation...
      */
-    public Medical() {
+    public MedicalParser() {
         super(GrobidModels.MEDICAL);
     }
 
@@ -329,7 +329,7 @@ public class Medical extends AbstractParser {
                 }
 
                 if (lowestPos > block.getY()) {
-                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting 
+                    // we have a vertical shift, which can be due to a change of column or other particular layout formatting
                     spacingPreviousBlock = doc.getMaxBlockSpacing() / 5.0; // default
                 } else
                     spacingPreviousBlock = block.getY() - lowestPos;
@@ -545,13 +545,13 @@ public class Medical extends AbstractParser {
 
                     features.relativeDocumentPosition = featureFactory
                         .linearScaling(nn, documentLength, NBBINS_POSITION);
-//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition); 
+//System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition);
                     features.relativePagePositionChar = featureFactory
                         .linearScaling(mm, pageLength, NBBINS_POSITION);
-//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);                     			
+//System.out.println(mm + " " + pageLength + " " + NBBINS_POSITION + " " + features.relativePagePositionChar);
                     int pagePos = featureFactory
                         .linearScaling(coordinateLineY, pageHeight, NBBINS_POSITION);
-//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);  
+//System.out.println(coordinateLineY + " " + pageHeight + " " + NBBINS_POSITION + " " + pagePos);
                     if (pagePos > NBBINS_POSITION)
                         pagePos = NBBINS_POSITION;
                     features.relativePagePosition = pagePos;
@@ -567,7 +567,7 @@ public class Medical extends AbstractParser {
                     if (density != -1.0) {
                         features.characterDensity = featureFactory
                             .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
-//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);             
+//System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);
                     }
 
                     if (previousFeatures != null) {
@@ -577,8 +577,8 @@ public class Medical extends AbstractParser {
                     previousFeatures = features;
                 }
 
-//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " " 
-//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));    
+//System.out.println((spacingPreviousBlock-doc.getMinBlockSpacing()) + " " + (doc.getMaxBlockSpacing()-doc.getMinBlockSpacing()) + " " + NBBINS_SPACE + " "
+//    + featureFactory.linearScaling(spacingPreviousBlock-doc.getMinBlockSpacing(), doc.getMaxBlockSpacing()-doc.getMinBlockSpacing(), NBBINS_SPACE));
 
                 // lowest position of the block
                 lowestPos = block.getY() + block.getHeight();
@@ -857,7 +857,7 @@ public class Medical extends AbstractParser {
 
                 //boolean closeParagraph = false;
                 if (lastTag != null) {
-                    //closeParagraph = 
+                    //closeParagraph =
                     testClosingTag(buffer, currentTag0, lastTag0, s1);
                 }
 
@@ -944,6 +944,12 @@ public class Medical extends AbstractParser {
                 buffer.append(line);
             } else if (lastTag0 == null) {
                 // if previous tagname is null, we output the opening xml tag
+                for (int i = 0; i < nbIndent; i++) {
+                    buffer.append("\t");
+                }
+                buffer.append(outField).append(line);
+            } else {
+                // new opening tag, we output the opening xml tag
                 for (int i = 0; i < nbIndent; i++) {
                     buffer.append("\t");
                 }
