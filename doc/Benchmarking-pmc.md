@@ -6,6 +6,8 @@ This is the end-to-end benchmarking result for GROBID version **0.6.0** against 
 
 The following end-to-end results are using CRF Wapiti as sequence labelling engine. Header extractions are consolidated by default with [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service (the results with CrossRef REST API as consolidation service are similar but much slower). See [below](https://grobid.readthedocs.io/en/latest/Benchmarking-models.md) for some evaluations with Deep-Learning architectures. 
 
+More recent versions of these benchmarks with variants and Deep Learning models (e.g. newer versions and master snapshots) are available [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc).
+
 Evaluation on 1943 random PDF PMC files out of 1943 PDF from 1943 different journals (0 PDF parsing failure).
 
 ## Header metadata
