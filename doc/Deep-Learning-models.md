@@ -45,25 +45,17 @@ Current neural models are at least 3-4 time slower than CRF: we do not use batch
 
 - create the anaconda environment
 
-CPU only: 
-
-```shell
-conda create --name grobidDelft --file requirements.conda.delft.cpu.txt
-```
-
-GPU: 
-
-```shell
-conda create --name grobidDelft --file requirements.conda.delft.gpu.txt
-```
+> conda create --name grobidDelft pip 
 
 - activate the environment: 
 
-```shell
-conda activate grobidDelft
-```
+> conda activate grobidDelft
 
-- install [DeLFT](https://github.com/kermitt2/delft), ignore the pip command for the installation in the delft documentation
+- **NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
+
+- install [DeLFT](https://github.com/kermitt2/delft) and install its dependencies with pip
+                                                                                  
+> pip install -r ../delft/requirements.txt 
 
 - indicate the path of the DeLFT install in `grobid.properties` (`grobid-home/config/grobid.properties`)
 
@@ -74,6 +66,22 @@ conda activate grobidDelft
 ```shell
 ./gradlew run
 ```
+
+## Configuration
+GROBID allows running models in mixed mode. While selecting DeLFT, it is possible to select the preferred engine for each individual models, in the configuration the preferred engine for each individual model. 
+This practice comes very handy for model that are dealing with long sequences, where the Deep Learning will be limited to certain size. 
+For example, selecting DeLFT as main engine: 
+```properties
+grobid.crf.engine=delft
+```
+The following models (segmentation, fulltext  and reference-segmenter) will run with wapiti by adding: 
+```properties
+grobid.crf.engine.segmentation=wapiti
+grobid.crf.engine.fulltext=wapiti
+grobid.crf.engine.reference_segmenter=wapiti
+```  
+**NOTE**: use the underscore for models whose name contains hyphens.
+  
 
 ## Troubleshooting
 
