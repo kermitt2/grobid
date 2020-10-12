@@ -7,12 +7,15 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -313,19 +316,19 @@ public class GrobidProperties {
 
     /** Return the distinct values of all the engines that are needed */
     public static Set<GrobidCRFEngine> getDistinctModels() {
-        List<GrobidCRFEngine> modelSpecificEngines = getModelSpecificEngines();
+        final Set<GrobidCRFEngine> modelSpecificEngines = new HashSet<>(getModelSpecificEngines());
         modelSpecificEngines.add(getGrobidCRFEngine());
 
-        return new HashSet(modelSpecificEngines);
+        return modelSpecificEngines;
     }
 
     /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
-    public static List<GrobidCRFEngine> getModelSpecificEngines() {
+    public static Set<GrobidCRFEngine> getModelSpecificEngines() {
         return getProps().keySet().stream()
             .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
             .map(k -> GrobidCRFEngine.get(StringUtils.lowerCase(getPropertyValue((String) k))))
             .distinct()
-            .collect(Collectors.toList());
+            .collect(Collectors.toSet());
     }
 
     protected static void loadCrfEngine() {
