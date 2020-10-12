@@ -18,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Set;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
@@ -96,8 +97,9 @@ public class LibraryLoader {
 
             }
 
+            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getDistinctModels();
             if (CollectionUtils
-                .containsAny(GrobidProperties.getDistinctModels(), Arrays.asList(GrobidCRFEngine.WAPITI, GrobidCRFEngine.DELFT))) {
+                .containsAny(distinctModels, Arrays.asList(GrobidCRFEngine.WAPITI, GrobidCRFEngine.DELFT))) {
                 // note: if DeLFT is used, we still make Wapiti available for models not existing in DeLFT (currently segmentation and 
                 // fulltext)
                 File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
@@ -111,7 +113,7 @@ public class LibraryLoader {
                     LOGGER.info("No wapiti library in the Grobid home folder");
                 } else {
                     LOGGER.info("Loading Wapiti native library...");
-                    if (CollectionUtils.containsAny(GrobidProperties.getDistinctModels(), Collections.singletonList(GrobidCRFEngine.DELFT))) {
+                    if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.DELFT))) {
                         // if DeLFT will be used, we must not load libstdc++, it would create a conflict with tensorflow libstdc++ version
                         // so we temporary rename the lib so that it is not loaded in this case
                         // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
@@ -127,7 +129,7 @@ public class LibraryLoader {
                     try {
                         System.load(wapitiLibFiles[0].getAbsolutePath());
                     } finally {
-                        if (CollectionUtils.containsAny(GrobidProperties.getDistinctModels(), Arrays.asList(GrobidCRFEngine.DELFT))) {
+                        if (CollectionUtils.containsAny(distinctModels, Arrays.asList(GrobidCRFEngine.DELFT))) {
                             // restore libstdc++
                             String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
                             File libstdcppFileNew = new File(libstdcppPathNew);
@@ -141,7 +143,7 @@ public class LibraryLoader {
             }
 
 
-            if (CollectionUtils.containsAny(GrobidProperties.getDistinctModels(), Collections.singletonList(GrobidCRFEngine.DELFT))) {
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.DELFT))) {
                 LOGGER.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
                 // actual loading will be made at JEP initialization, so we just need to add the path in the 
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 

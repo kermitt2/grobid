@@ -312,18 +312,18 @@ public class GrobidProperties {
     }
 
     /** Return the distinct values of all the engines that are needed */
-    public static Set<String> getDistinctModels() {
-        List<String> modelSpecificEngines = getModelSpecificEngines();
-        modelSpecificEngines.add(getGrobidCRFEngine().getExt());
+    public static Set<GrobidCRFEngine> getDistinctModels() {
+        List<GrobidCRFEngine> modelSpecificEngines = getModelSpecificEngines();
+        modelSpecificEngines.add(getGrobidCRFEngine());
 
         return new HashSet(modelSpecificEngines);
     }
 
     /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
-    public static List<String> getModelSpecificEngines() {
+    public static List<GrobidCRFEngine> getModelSpecificEngines() {
         return getProps().keySet().stream()
             .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
-            .map(k -> StringUtils.lowerCase(getPropertyValue((String) k)))
+            .map(k -> GrobidCRFEngine.get(StringUtils.lowerCase(getPropertyValue((String) k))))
             .distinct()
             .collect(Collectors.toList());
     }
