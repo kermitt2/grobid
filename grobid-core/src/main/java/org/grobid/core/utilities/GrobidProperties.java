@@ -15,9 +15,8 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * This class loads contains all names of grobid-properties and provide methods
@@ -298,10 +297,10 @@ public class GrobidProperties {
         try {
             getProps().load(new FileInputStream(getGrobidPropertiesPath()));
         } catch (IOException exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid.properties at location'" + GROBID_PROPERTY_PATH.getAbsolutePath()
+            throw new GrobidPropertyException("Cannot open file of grobid.properties at location '" + GROBID_PROPERTY_PATH.getAbsolutePath()
                 + "'", exp);
         } catch (Exception exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid properties" + getGrobidPropertiesPath().getAbsolutePath(), exp);
+            throw new GrobidPropertyException("Cannot open file of grobid properties " + getGrobidPropertiesPath().getAbsolutePath(), exp);
         }
 
         getProps().putAll(getEnvironmentVariableOverrides(System.getenv()));
@@ -310,6 +309,23 @@ public class GrobidProperties {
         //checkProperties();
         loadPdf2XMLPath();
         loadCrfEngine();
+    }
+
+    /** Return the distinct values of all the engines that are needed */
+    public static Set<String> getDistinctModels() {
+        List<String> modelSpecificEngines = getModelSpecificEngines();
+        modelSpecificEngines.add(getGrobidCRFEngine().getExt());
+
+        return new HashSet(modelSpecificEngines);
+    }
+
+    /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
+    public static List<String> getModelSpecificEngines() {
+        return getProps().keySet().stream()
+            .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
+            .map(k -> StringUtils.lowerCase(getPropertyValue((String) k)))
+            .distinct()
+            .collect(Collectors.toList());
     }
 
     protected static void loadCrfEngine() {
