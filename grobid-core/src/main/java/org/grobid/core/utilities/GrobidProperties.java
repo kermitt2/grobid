@@ -242,18 +242,21 @@ public class GrobidProperties {
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
-     * null, return the default value.
+     * Return the value corresponding to the property key. If the properties are not initialised, it returns null
      *
      * @param pkey the property key
      * @return the value of the property.
      */
     protected static String getPropertyValue(final String pkey) {
-        return getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props != null) {
+            return props.getProperty(pkey);
+        }
+        return null;
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
+     * Return the value corresponding to the property key. If this value or the properties has not been loaded, is
      * null, return the default value.
      *
      * @param pkey        the property key
@@ -261,7 +264,11 @@ public class GrobidProperties {
      * @return the value of the property, pDefaultVal else.
      */
     protected static String getPropertyValue(final String pkey, final String pDefaultVal) {
-        String prop = getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props == null) {
+            return pDefaultVal;
+        }
+        String prop = props.getProperty(pkey);
         return StringUtils.isNotBlank(prop) ? prop.trim() : pDefaultVal;
     }
 
