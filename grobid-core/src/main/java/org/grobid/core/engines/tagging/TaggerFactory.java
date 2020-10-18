@@ -48,15 +48,6 @@ public class TaggerFactory {
                         t = new WapitiTagger(model);
                         break;
                     case DELFT:
-                        // be sure the native JEP lib can be loaded
-//                        try {
-//                            String libraryFolder = LibraryLoader.getLibraryFolder();
-//                            System.out.println(libraryFolder);
-//                            LibraryLoader.addLibraryPath(libraryFolder);
-//                        } catch (Exception e) {
-//                            LOGGER.info("Loading JEP native library for DeLFT failed", e);
-//                        }
-
                         t = new DeLFTTagger(model, architecture);
                         break;
                     default:

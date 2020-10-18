@@ -32,7 +32,7 @@ public class DeLFTModel {
     public DeLFTModel(GrobidModel model, String architecture) {
         this.modelName = model.getModelName().replace("-", "_");
         try {
-            LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
+            LOGGER.info("Loading DeLFT model for " + model.getModelName() + " with architecture " + architecture + "...");            
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), architecture));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
@@ -54,10 +54,15 @@ public class DeLFTModel {
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             try { 
-                if (this.architecture == null)
-                    jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
-                else
-                    jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "', model_type='" + this.architecture + "')");
+                String fullModelName = this.modelName.replace("_", "-");
+
+                if (architecture != null && !architecture.equals("BidLSTM_CRF"))
+                    fullModelName += "-" + this.architecture;
+
+                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1)
+                    fullModelName += "-with_ELMo";
+
+                jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);
@@ -211,7 +216,7 @@ public class DeLFTModel {
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo()) {
+                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
                     useELMo = "True";
                 }
 
@@ -266,7 +271,7 @@ public class DeLFTModel {
                 command.add("--architecture");
                 command.add(architecture);
             }
-            if (GrobidProperties.getInstance().useELMo()) {
+            if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
             }
 
