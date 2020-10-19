@@ -181,6 +181,7 @@ public class BiblioItem {
                 ", originalAbstract='" + originalAbstract + '\'' +
                 ", originalTitle='" + originalTitle + '\'' +
                 ", originalAuthors='" + originalAuthors + '\'' +
+                ", originalEditors='" + originalEditors + '\'' +
                 ", originalAddress='" + originalAddress + '\'' +
                 ", originalNote='" + originalNote + '\'' +
                 ", originalKeyword='" + originalKeyword + '\'' +
@@ -357,6 +358,7 @@ public class BiblioItem {
     private String originalAbstract = null;
     private String originalTitle = null;
     private String originalAuthors = null;
+    private String originalEditors = null;
     private String originalAddress = null;
     private String originalNote = null;
     private String originalKeyword = null;
@@ -802,6 +804,10 @@ public class BiblioItem {
         return originalAuthors;
     }
 
+    public String getOriginalEditors() {
+        return originalEditors;
+    }
+
     public String getOriginalTitle() {
         return originalTitle;
     }
@@ -1026,6 +1032,19 @@ public class BiblioItem {
                 if (ind == -1) 
                     ind = bibl.indexOf("doi:10.");
                 bibl = bibl.substring(ind+4);
+            }
+
+            // for DOI coming from PDF links, we have some prefix cleaning to make 
+            if (bibl.startsWith("file://") || bibl.startsWith("https://") || bibl.startsWith("http://")) {
+                int ind = bibl.indexOf("/10.");
+                if (ind != -1)
+                    bibl = bibl.substring(ind+1);
+            }
+            
+            bibl = bibl.trim();
+            int ind = bibl.indexOf("http://");
+            if (ind != -1 && ind > 10) {
+                bibl = bibl.substring(0,ind);
             }
         }
         return bibl;
@@ -1436,6 +1455,10 @@ public class BiblioItem {
 
     public void setOriginalAuthors(String original) {
         originalAuthors = original;
+    }
+
+    public void setOriginalEditors(String original) {
+        originalEditors = original;
     }
 
     public void setOriginalTitle(String original) {
@@ -1933,6 +1956,11 @@ public class BiblioItem {
                 bibtex.add("  booktitle = {" + bookTitle + "}");
             }
 
+            // booktitle
+            if ((journal == null) && (serieTitle != null)) {
+                bibtex.add("  series = {" + serieTitle + "}");
+            }
+
             // publisher
             if (publisher != null) {
                 bibtex.add("  publisher = {" + publisher + "}");
@@ -2064,7 +2092,22 @@ public class BiblioItem {
             }
         }
 
+        // ISBN
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(ISBN13)) {
+            if (pubnum.toLowerCase().indexOf("isbn") != -1) {
+                pubnum = pubnum.replace("isbn", "");
+                pubnum = pubnum.replace("ISBN", "");
+                pubnum = TextUtilities.cleanField(pubnum, true);
+                if (pubnum.length() == 10)
+                    setISBN10(pubnum);
+                else 
+                    setISBN13(pubnum);
+                setPubnum(null);
+            }
+        }
+
         // TODO: PII
+
     }
 
     /**
@@ -2131,12 +2174,9 @@ public class BiblioItem {
                 }
             }
 
-            if ((bookTitle == null) && (journal == null)) {
-                for (int i = 0; i < indent + 1; i++) {
-                    tei.append("\t");
-                }
-                tei.append("<monogr>\n");
-            } else if ((bookTitle != null) && (journal == null) && (title == null) && (articleTitle == null)) {
+            boolean openAnalytic = false;
+            if ( ((bookTitle == null) && (journal == null) && (serieTitle == null)) || 
+                ((bookTitle != null) && (title == null) && (articleTitle == null) && (journal == null) && (serieTitle == null)) ) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2146,6 +2186,7 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<analytic>\n");
+                openAnalytic = true;
             }
 
             // title
@@ -2154,7 +2195,7 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<title");
-                if ((bookTitle == null) && (journal == null)) {
+                if ((bookTitle == null) && (journal == null) && (serieTitle == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
                 } else
                     tei.append(" level=\"a\" type=\"main\"");
@@ -2276,8 +2317,7 @@ public class BiblioItem {
                 tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(web)).append("\" />\n");
             }
 
-            if ((!StringUtils.isEmpty(bookTitle) && ((title != null) || (articleTitle != null))) || 
-                !StringUtils.isEmpty(journal)) {
+            if (openAnalytic) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2299,7 +2339,37 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                if (!StringUtils.isEmpty(editors)) {
+                // in case the book is part of an indicated series
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
+                }
+
+                if (fullEditors != null && fullEditors.size()>0) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<editor>\n");
+                    for(Person editor : fullEditors) {
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        String localString = editor.toTEI(false);
+                        localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        tei.append(localString).append("\n");
+                    }
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</editor>\n");
+                } else if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -2499,23 +2569,32 @@ public class BiblioItem {
 	                }
                     tei.append("</imprint>\n");
                 }
-            } else if (!StringUtils.isEmpty(journal)) {
+            } else if (!StringUtils.isEmpty(journal) || !StringUtils.isEmpty(serieTitle)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                tei.append("<title level=\"j\"");
-				if (generateIDs) {
-					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" xml:id=\"_" + divID + "\"");
-				}	
-				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
+                if (!StringUtils.isEmpty(journal)) {
+                    tei.append("<title level=\"j\"");
+    				if (generateIDs) {
+    					String divID = KeyGen.getKey().substring(0,7);
+    					tei.append(" xml:id=\"_" + divID + "\"");
+    				}	
+    				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
-                if (!StringUtils.isEmpty(getJournalAbbrev())) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
+                    if (!StringUtils.isEmpty(getJournalAbbrev())) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<title level=\"j\" type=\"abbrev\">"
+                                + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
                     }
-                    tei.append("<title level=\"j\" type=\"abbrev\">"
-                            + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
+                } else if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
                 if (!StringUtils.isEmpty(editors)) {
@@ -3833,7 +3912,10 @@ public class BiblioItem {
                         tei.append(">\n");
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append(author.toTEI(withCoordinates)).append("\n");
+                    
+                    String localString = author.toTEI(withCoordinates);
+                    localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    tei.append(localString).append("\n");
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);
                         tei.append("<email>" + TextUtilities.HTMLEncode(author.getEmail()) + "</email>\n");
@@ -4056,35 +4138,78 @@ public class BiblioItem {
         tei.append("</affiliation>\n");
     }
 
-    private static volatile Pattern page = Pattern.compile("(\\d+)");
+    private static volatile String possiblePreFixPageNumber = "[A-Ze]?";
+    private static volatile String possiblePostFixPageNumber = "[A-Z]?";
+    private static volatile Pattern page = Pattern.compile("("+possiblePreFixPageNumber+"\\d+"+possiblePostFixPageNumber+")");
+    private static volatile Pattern pageDigits = Pattern.compile("\\d+");
 
     /**
-     * Correct fields of the first biblio item based on the second one and the reference string.
+     * Try to normalize the page range, which can be expressed in abbreviated forms and with letter prefix.
      */
     public void postProcessPages() {
         if (pageRange != null) {
             Matcher matcher = page.matcher(pageRange);
             if (matcher.find()) {
+
+                // below for the string form of the page numbers
                 String firstPage = null;
                 String lastPage = null;
+
+                // alphaPrefix or alphaPostfix are for storing possible alphabetical prefix or postfix to page number, 
+                // e.g. "L" in Smith, G. P., Mazzotta, P., Okabe, N., et al. 2016, MNRAS, 456, L74  
+                // or "D" in  "Am J Cardiol. 1999, 83:143D-150D. 10.1016/S0002-9149(98)01016-9"
+                String alphaPrefixStart = null;
+                String alphaPrefixEnd = null;
+                String alphaPostfixStart = null;
+                String alphaPostfixEnd = null;
+
+                // below for the integer form of the page numbers (part in case alphaPrefix is not null)
+                int beginPage = -1;
+                int endPage = -1;
+
                 if (matcher.groupCount() > 0) {
                     firstPage = matcher.group(0);
                 }
+
                 if (firstPage != null) {
                     try {
                         beginPage = Integer.parseInt(firstPage);
                     } catch (Exception e) {
                         beginPage = -1;
                     }
-					if (beginPage != -1)
+					if (beginPage != -1) {
 						pageRange = "" + beginPage;
-					else
-						pageRange = firstPage;
+                    } else {
+                        pageRange = firstPage;
+
+                        // try to get the numerical part of the page number, useful for later
+                        Matcher matcher2 = pageDigits.matcher(firstPage);
+                        if (matcher2.find()) {
+                            try {
+                                beginPage = Integer.parseInt(matcher2.group());
+                                if (firstPage.length() > 0) {
+                                    alphaPrefixStart = firstPage.substring(0,1);
+                                    // is it really alphabetical character?
+                                    if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixStart)) {
+                                        alphaPrefixStart = null;
+                                        // look at postfix
+                                        alphaPostfixStart = firstPage.substring(firstPage.length()-1,firstPage.length());
+                                        if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixStart)) {
+                                            alphaPostfixStart = null;
+                                        }
+                                    }
+                                }
+                            } catch (Exception e) {
+                                beginPage = -1;
+                            }
+                        }
+                    }
 
                     if (matcher.find()) {
                         if (matcher.groupCount() > 0) {
                             lastPage = matcher.group(0);
                         }
+
                         if (lastPage != null) {
                             try {
                                 endPage = Integer.parseInt(lastPage);
@@ -4092,18 +4217,95 @@ public class BiblioItem {
                                 endPage = -1;
                             }
 							
-							if ( (endPage != -1) && (endPage < beginPage) && (endPage < 50) ) {
-								endPage = beginPage + endPage;
-								pageRange += "--" + endPage;
-							}
-							else 
-								pageRange += "--" + lastPage;
+                            if (endPage == -1) {
+                                // try to get the numerical part of the page number, to be used for later
+                                Matcher matcher2 = pageDigits.matcher(lastPage);
+                                if (matcher2.find()) {
+                                    try {
+                                        endPage = Integer.parseInt(matcher2.group());
+                                        if (lastPage.length() > 0) {
+                                            alphaPrefixEnd = lastPage.substring(0,1);
+                                            // is it really alphabetical character?
+                                            if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixEnd)) {
+                                                alphaPrefixEnd = null;
+                                                // look at postfix
+                                                alphaPostfixEnd = lastPage.substring(lastPage.length()-1,lastPage.length());
+                                                if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixEnd)) {
+                                                    alphaPostfixEnd = null;
+                                                }
+                                            }
+                                        }
+                                    } catch (Exception e) {
+                                        endPage = -1;
+                                    }
+                                }
+                            }
+
+							if ( (endPage != -1) && (endPage < beginPage)) {
+                                // there are two possibilities: 
+                                // - the substitution, e.g. 433–8 -> 433--438, for example American Medical Association citation style
+                                // - the addition, e.g. 433–8 -> 433--441
+                                // unfortunately, it depends on the citation style
+
+                                // we try to guess/refine the re-composition of pages
+
+                                if (endPage >= 50) {
+                                    // we assume no journal articles have more than 49 pages and is expressed as addition, 
+                                    // so it's a substitution
+                                    int upperBound = firstPage.length() - lastPage.length();
+                                    if (upperBound<firstPage.length() && upperBound > 0)
+                                        lastPage = firstPage.substring(0, upperBound) + lastPage;
+                                    pageRange += "--" + lastPage;
+                                } else {
+                                    if (endPage < 10) {
+                                        // case 1 digit for endPage
+
+                                        // last digit of begin page
+                                        int lastDigitBeginPage = beginPage % 10;
+
+                                        // if digit of lastPage lower than last digit of beginPage, it's an addition for sure
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    } else if (endPage < 50) {
+                                        // case 2 digit for endPage, we apply a similar heuristics
+                                        int lastDigitBeginPage = beginPage % 100;
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    }
+
+                                    // we assume there is no article of more than 99 pages expressed in this abbreviated way 
+                                    // (which are for journal articles only, so short animals)
+
+                                    if (alphaPrefixEnd != null) 
+                                        pageRange += "--" + alphaPrefixEnd + endPage;
+                                    else if (alphaPostfixEnd != null) 
+                                        pageRange += "--" + endPage + alphaPostfixEnd;
+                                    else
+                                        pageRange += "--" + endPage;
+                                }
+							} else if ((endPage != -1)) {
+                                if (alphaPrefixEnd != null) 
+                                    pageRange += "--" + alphaPrefixEnd + endPage;
+                                else if (alphaPostfixEnd != null) 
+                                    pageRange += "--" + endPage + alphaPostfixEnd;
+                                else
+                                    pageRange += "--" + lastPage;
+                            } else {
+                                pageRange += "--" + lastPage;
+                            }
                         }
                     }
                 }
             }
         }
-
     }
 
     /**

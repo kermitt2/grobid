@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.util.List;
 
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
@@ -19,7 +20,7 @@ public class IOUtilities {
     private static final Logger LOGGER = LoggerFactory.getLogger(IOUtilities.class);
 
     /**
-     * Creates a file and writes some content in it.
+     * Creates a file and writes some string content in it.
      *
      * @param file    The file to write in.
      * @param content the content to write
@@ -30,6 +31,29 @@ public class IOUtilities {
         FileWriter filew = new FileWriter(new File(file));
         BufferedWriter buffw = new BufferedWriter(filew);
         buffw.write(content);
+        buffw.close();
+    }
+
+    /**
+     * Creates a file and writes a list of string in it separated by a given separator.
+     *
+     * @param file    The file to write in.
+     * @param content the list of string to write
+     * @param sep separator to used for the list elements
+     * @throws IOException
+     */
+    public static void writeListInFile(String file, List<String> content, String sep)
+            throws IOException {
+        FileWriter filew = new FileWriter(new File(file));
+        BufferedWriter buffw = new BufferedWriter(filew);
+        boolean start = true;
+        for(String cont : content) {
+            if (start) {
+                buffw.write(cont);
+                start = false;
+            } else
+                buffw.write(sep + cont);
+        }
         buffw.close();
     }
 

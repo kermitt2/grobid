@@ -108,3 +108,20 @@ there is no spacing between the title of the journal `Phys. Rev. D` and the volu
 </bibl>
 ```
 
+### Identifiers
+
+In the case of identifiers, we expect the following identifier types to be indicated: `DOI`, `PMID`, `PMC` (for PMC ID), `ISSN`, `PII`, `ISBN` and `arxiv` (in lowercase). Identifier for technical reports are identicated as type `report` (e.g. `<idno type="report">`).
+
+As a principle for identifiers, the identifier type string/prefix must be kept in the tagged field (except when it's impossible, for instance due to a formatting error in the PDF). This will help to disambiguate the recognized identifiers when the trained models are labelling new content. For example, see the different `<idno>` in the following reference:
+
+```xml
+<bibl>
+	<author>Dillman, Allissa A et al.</author> (<date>2013</date>). 
+	"<title level="a">mRNA expression, splicing and editing in the embryonic and adultmouse cerebral cortex</title>". eng. 
+	In :<title level="j">Nature neuroscience</title> <biblScope unit="volume">16</biblScope>. 
+	<biblScope unit="issue">4</biblScope>. <idno type="PMID">PMID :23416452</idno> 
+	<idno type="PMC">PMCID: PMC3609882</idno>, pp. <biblScope unit="page">499-506</biblScope>. 
+	<idno type="ISSN">issn: 1546- 1726</idno>. 
+	<idno type="DOI">doi: 10. 1038/nn.3332</idno>.
+</bibl>
+```

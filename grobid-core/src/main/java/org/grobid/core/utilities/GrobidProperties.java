@@ -7,17 +7,19 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * This class loads contains all names of grobid-properties and provide methods
@@ -240,18 +242,21 @@ public class GrobidProperties {
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
-     * null, return the default value.
+     * Return the value corresponding to the property key. If the properties are not initialised, it returns null
      *
      * @param pkey the property key
      * @return the value of the property.
      */
     protected static String getPropertyValue(final String pkey) {
-        return getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props != null) {
+            return props.getProperty(pkey);
+        }
+        return null;
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
+     * Return the value corresponding to the property key. If this value or the properties has not been loaded, is
      * null, return the default value.
      *
      * @param pkey        the property key
@@ -259,7 +264,11 @@ public class GrobidProperties {
      * @return the value of the property, pDefaultVal else.
      */
     protected static String getPropertyValue(final String pkey, final String pDefaultVal) {
-        String prop = getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props == null) {
+            return pDefaultVal;
+        }
+        String prop = props.getProperty(pkey);
         return StringUtils.isNotBlank(prop) ? prop.trim() : pDefaultVal;
     }
 
@@ -298,10 +307,10 @@ public class GrobidProperties {
         try {
             getProps().load(new FileInputStream(getGrobidPropertiesPath()));
         } catch (IOException exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid.properties at location'" + GROBID_PROPERTY_PATH.getAbsolutePath()
+            throw new GrobidPropertyException("Cannot open file of grobid.properties at location '" + GROBID_PROPERTY_PATH.getAbsolutePath()
                 + "'", exp);
         } catch (Exception exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid properties" + getGrobidPropertiesPath().getAbsolutePath(), exp);
+            throw new GrobidPropertyException("Cannot open file of grobid properties " + getGrobidPropertiesPath().getAbsolutePath(), exp);
         }
 
         getProps().putAll(getEnvironmentVariableOverrides(System.getenv()));
@@ -310,6 +319,23 @@ public class GrobidProperties {
         //checkProperties();
         loadPdf2XMLPath();
         loadCrfEngine();
+    }
+
+    /** Return the distinct values of all the engines that are needed */
+    public static Set<GrobidCRFEngine> getDistinctModels() {
+        final Set<GrobidCRFEngine> modelSpecificEngines = new HashSet<>(getModelSpecificEngines());
+        modelSpecificEngines.add(getGrobidCRFEngine());
+
+        return modelSpecificEngines;
+    }
+
+    /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
+    public static Set<GrobidCRFEngine> getModelSpecificEngines() {
+        return getProps().keySet().stream()
+            .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
+            .map(k -> GrobidCRFEngine.get(StringUtils.lowerCase(getPropertyValue((String) k))))
+            .distinct()
+            .collect(Collectors.toSet());
     }
 
     protected static void loadCrfEngine() {

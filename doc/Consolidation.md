@@ -51,4 +51,4 @@ org.grobid.glutton.host=localhost
 org.grobid.glutton.port=8080
 ```
 
-Note that the GROBID online demo hosted [here](http://grobid.science-miner.com) uses  biblio-glutton as consolidation service. 
+Note that the GROBID online demo hosted [here](https://grobid.science-miner.com) uses biblio-glutton as consolidation service. 
