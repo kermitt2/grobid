@@ -52,7 +52,7 @@
 			<p>This section describes how our system works. Our system works in Japanese, but in the following<lb/> section, English translation is provided for the reader&apos;s convenience. In our system, the user obtains<lb/> the relevant passage in the user&apos;s manual with the voice query according to the following steps.<lb/></p> 
 			
  			<list>
- 				<item>Step 1: The user first accesses the system&apos;s main page of our system with the cellular phone (<ref type="figure">Figure<lb/> 3</ref>). The page contains two hyperlinks along with brief instructions and query examples.<lb/></item> 
+ 				<item>Step 1: The user first accesses the system&apos;s main page of our system with the cellular phone (Figure<lb/> <ref type="figure">3</ref>). The page contains two hyperlinks along with brief instructions and query examples.<lb/></item> 
 			
 				<item>Step 2: The user follows the first link labeled &quot; Input query by voice. &quot; It is linked to the telephone<lb/> service module, allowing the user to call the telephone service module.<lb/></item>  
 			
