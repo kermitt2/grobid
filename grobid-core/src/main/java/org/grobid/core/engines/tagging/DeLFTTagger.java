@@ -16,7 +16,11 @@ public class DeLFTTagger implements GenericTagger {
     private final DeLFTModel delftModel;
 
     public DeLFTTagger(GrobidModel model) {
-        delftModel = new DeLFTModel(model);
+        delftModel = new DeLFTModel(model, null);
+    }
+
+    public DeLFTTagger(GrobidModel model, String architecture) {
+        delftModel = new DeLFTModel(model, architecture);
     }
 
     @Override

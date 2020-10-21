@@ -506,6 +506,14 @@ public class GrobidProperties {
         return false;
     }
 
+    public static String getDelftArchitecture() {
+        return getPropertyValue(GrobidPropertyKeys.PROP_DELFT_ARCHITECTURE);
+    }
+
+    public static void setDelftArchitecture(final String theArchitecture) {
+        setPropertyValue(GrobidPropertyKeys.PROP_DELFT_ARCHITECTURE, theArchitecture);
+    }
+
     /**
      * Returns the host for a proxy connection, given in the grobid-property
      * file.

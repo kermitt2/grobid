@@ -25,10 +25,14 @@ public class TaggerFactory {
     private TaggerFactory() {}
 
     public static synchronized GenericTagger getTagger(GrobidModel model) {
-        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model));
+        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model), GrobidProperties.getDelftArchitecture());
     }
 
     public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine) {
+        return getTagger(model, engine, GrobidProperties.getDelftArchitecture());
+    }
+
+    public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine, String architecture) {
         GenericTagger t = cache.get(model);
         if (t == null) {
             if(model.equals(GrobidModels.DUMMY)) {
@@ -44,16 +48,7 @@ public class TaggerFactory {
                         t = new WapitiTagger(model);
                         break;
                     case DELFT:
-                        // be sure the native JEP lib can be loaded
-//                        try {
-//                            String libraryFolder = LibraryLoader.getLibraryFolder();
-//                            System.out.println(libraryFolder);
-//                            LibraryLoader.addLibraryPath(libraryFolder);
-//                        } catch (Exception e) {
-//                            LOGGER.info("Loading JEP native library for DeLFT failed", e);
-//                        }
-
-                        t = new DeLFTTagger(model);
+                        t = new DeLFTTagger(model, architecture);
                         break;
                     default:
                         throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
