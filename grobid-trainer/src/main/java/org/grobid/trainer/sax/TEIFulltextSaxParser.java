@@ -80,7 +80,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
                              Attributes atts)
             throws SAXException {
         if (qName.equals("lb")) {
-            accumulator.append(" +LINE+ ");
+            //accumulator.append(" +LINE+ ");
+            accumulator.append(" ");
         } 
 		else if (qName.equals("space")) {
             accumulator.append(" ");
