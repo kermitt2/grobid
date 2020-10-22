@@ -374,7 +374,7 @@ the semi-cylindrical drum. The dynamics of the avalanches of eqs.
 </p>
 ```
 
-Markers to figure, table or formula are annotated by including only the key information of the refered object. Brackets, parenthesis, extra wording, extra information are left outside of the tagged text (in contrast to bibliographical markers, where we keep the brackets and parenthesis by convention). 
+As visible in the examples, markers to figure, table or formula are annotated by including only the key information of the refered object. Brackets, parenthesis, extra wording, extra information are left outside of the tagged text (in contrast to bibliographical markers, where we keep the brackets and parenthesis by convention). 
 Here are some more short examples for figure markers:
 
 ```xml
