@@ -4,6 +4,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.trainer.sax.TEIFulltextSaxParser;
 
 import javax.xml.parsers.SAXParser;
@@ -208,17 +209,112 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                     
                     bis.close();   
 
+                    // Dataseer modification experiment: we neutralize figures and tables of more than 100 tokens
+                    String theLocalData = fulltext.toString();
+                    String[] theLocalLines = theLocalData.split("\n");
+                    OffsetPosition currentOffset = null;
+                    List<OffsetPosition> figurePositions = new ArrayList<>();
+                    for(int i=0; i<theLocalLines.length; i++) {
+                        String theLine = theLocalLines[i];
+                        if (theLine.trim().length() == 0)
+                            continue;
+                        if (theLine.endsWith("I-<figure>")) {
+                            // case 2 figures just following each other
+                            if (currentOffset != null && currentOffset.end == -1) {
+                                currentOffset.end = i-1;
+                                figurePositions.add(currentOffset);
+                            }
+                            currentOffset = new OffsetPosition();
+                            currentOffset.start = i;
+                        } else if (!theLine.endsWith("<figure>")) {
+                            if (currentOffset != null) {
+                                if (currentOffset.start != -1 && currentOffset.end == -1) {
+                                    currentOffset.end = i-1;
+                                    figurePositions.add(currentOffset);
+                                    currentOffset = null;
+                                }
+                            }
+                        }
+                    }
+
+                    currentOffset = null;
+                    List<OffsetPosition> tablePositions = new ArrayList<>();
+                    for(int i=0; i<theLocalLines.length; i++) {
+                        String theLine = theLocalLines[i];
+                        if (theLine.trim().length() == 0)
+                            continue;
+                        if (theLine.endsWith("I-<table>")) {
+                            // case 2 tables just following each other
+                            if (currentOffset != null && currentOffset.end == -1) {
+                                currentOffset.end = i-1;
+                                tablePositions.add(currentOffset);
+                            }
+
+                            currentOffset = new OffsetPosition();
+                            currentOffset.start = i;
+                        } else if (!theLine.endsWith("<table>")) {
+                            if (currentOffset != null) {
+                                if (currentOffset.start != -1 && currentOffset.end == -1) {
+                                    currentOffset.end = i-1;
+                                    tablePositions.add(currentOffset);
+                                    currentOffset = null;
+                                }
+                            }
+                        }
+                    }
+
+                    System.out.println("number of figures: " + figurePositions.size());
+                    System.out.println(figurePositions.toString());
+
+                    // we filter only figure beyond a certain number of tokens
+                    final int MAX_TOKEN_FIGURES = 70;
+                    final int MAX_TOKEN_TABLES = 100;
+
+                    if (figurePositions.size() > 0) {
+                        for(int i=figurePositions.size()-1; i>=0; i--) {
+                            if ( 
+                                (figurePositions.get(i).end - figurePositions.get(i).start < MAX_TOKEN_FIGURES)
+                                ||
+                                (figurePositions.get(i).end == figurePositions.get(i).start)
+                            )
+                                figurePositions.remove(i);
+                        }
+                    }
+                    System.out.println(figurePositions.toString());
+
+                    System.out.println("number of tables: " + tablePositions.size());
+                    System.out.println(tablePositions.toString());
+                    if (tablePositions.size() > 0) {
+                        for(int i=tablePositions.size()-1; i>=0; i--) {
+                            if ( 
+                                (tablePositions.get(i).end - tablePositions.get(i).start < MAX_TOKEN_TABLES)
+                                ||
+                                (tablePositions.get(i).end == tablePositions.get(i).start)
+                            )
+                                tablePositions.remove(i);
+                        }
+                    }
+                    System.out.println(tablePositions.toString());
+
+                    StringBuilder theNewLocalData = new StringBuilder();
+                    for(int i=0; i<theLocalLines.length; i++) {
+                        if (!this.overlapZone(i, figurePositions) && !this.overlapZone(i, tablePositions)) {
+                            theNewLocalData.append(theLocalLines[i]);
+                            theNewLocalData.append("\n");
+                        }
+                    }
+
                     // format with features for sequence tagging...
                     if (nbInvalid < 10) {
                         if ((writer2 == null) && (writer3 != null))
-                            writer3.write(fulltext.toString() + "\n");
+                            writer3.write(theNewLocalData.toString() + "\n");
                         if ((writer2 != null) && (writer3 == null))
-                            writer2.write(fulltext.toString() + "\n");
+                            writer2.write(theNewLocalData.toString() + "\n");
                         else {
                             if (Math.random() <= splitRatio)
-                                writer2.write(fulltext.toString() + "\n");
+                                writer2.write(theNewLocalData.toString() + "\n");
                             else
-                                writer3.write(fulltext.toString() + "\n");
+                                writer3.write(theNewLocalData.toString() + "\n");
                         }
                         totalExamples++;
                     } else {
@@ -243,6 +339,23 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
         }
         return totalExamples;					
 	}
+
+    /**
+     * Return true if the index is in one of position ranges. Position ranges are sorted.  
+     */
+    private boolean overlapZone(int index, List<OffsetPosition> positions) {
+        if (positions.size() == 0)
+            return false;
+        for(OffsetPosition position : positions) {
+            if (index < position.start)
+                continue;
+            if (position.start <= index && index <= position.end) 
+                return true;
+            if (position.end < index)
+                return false;
+        }
+        return false;
+    }
 
     /**
      * Command line execution.
