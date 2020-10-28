@@ -1,0 +1,285 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<head>I. INTRODUCTION<lb/></head>
+
+			<p>Identifying of the pairing symmetry in high-T c superconductors is important to clarify the<lb/> mechanism of the superconductivity. A great deal of experimental and theoretical studies<lb/> have revealed that the superconducting pair potential has d x 2 −y 2 -wave symmetry in the<lb/> bulk state <ref type="biblio">1-4</ref> . Since the pair potential of the d x 2 −y 2 -wave superconductor is anisotropic, the<lb/> amplitude of the pair potential near the surface or interface is significantly reduced. This<lb/> suppression of the pair potential causes a very interesting phenomena, i.e. the formation of<lb/> Andreev bound state (ABS) at the Fermi energy (zero-energy) near a specularly reflecting<lb/> surface <ref type="biblio">5</ref> when the angle between the lobe direction of the d x 2 −y 2 -wave pair potential and<lb/> the normal to the interface is nonzero. This state is originated from the interference effect<lb/> in the effective pair potential of the d x 2 −y 2 -wave symmetry through the reflection at the<lb/> surface or interface. The ABS manifests itself as a sharp peak in the middle of the tunneling<lb/> conductance spectra, the so-called zero-bias conductance peak (ZBCP), <ref type="biblio">6</ref> and the consistency<lb/> between theory and experiments has been checked in details <ref type="biblio">4,7,9-15</ref> .<lb/></p>
+
+			<p>On the other hand, there still remains a controversial issue; formation of a broken<lb/> time reversal symmetry state (BTRSS) at low temperature due to the mixing of subdom-<lb/>inant s-, <ref type="biblio">16-18</ref> or d xy -wave component <ref type="biblio">19-21</ref> as the imaginary part of the pair potential to<lb/> the predominant d x 2 −y 2 -wave component <ref type="biblio">25</ref> . Theoretical studies based on the quasiclassical<lb/> approximation <ref type="biblio">25,26</ref> and several lattice models <ref type="biblio">28,29</ref> reported the presence of the induced sub-<lb/>dominant pair potential near the surface which breaks the time reversal symmetry <ref type="biblio">25</ref> . The<lb/> resulting surface density of states with the BTRSS shows the splitting of the zero-energy<lb/> peak <ref type="biblio">25</ref> and the corresponding tunneling conductance shows the ZBCP splitting. It has also<lb/> been clarified that the magnitude of the splitting depends on the induced subdominant pair<lb/> potential near the surface. Actually, Covington et al. <ref type="biblio">22</ref> , Krupke et al. <ref type="biblio">23</ref> , and Sharoni et al. <ref type="biblio">24<lb/></ref> reports the ZBCP splitting at low temperature and they ascribed the origin of the ZBCP<lb/> splitting to the above BTRSS <ref type="biblio">30</ref> . However, at the same time, there are many experiments<lb/> which do not show the ZBCP splitting, and in these experiments, ZBCP survives even at<lb/> low temperatures <ref type="biblio">4,12,14,15,13</ref> . Although there are several pre-existing theories which discuss<lb/> the BTRSS <ref type="biblio">25</ref> , almost all these theories treat the semi-infinite d x 2 −y 2 -wave superconductor<lb/> and the relevance to the actual experiments of tunneling spectroscopy has not been fully<lb/> clarified yet. At this stage, it is an important problem to clarify the stability and the possible<lb/> observability of the formation of BTRSS, i.e., the ZBCP splitting, for various condition of<lb/> the junctions. There are several factors which determine the magnitude of the splitting of<lb/> ZBCP; (i) inter-electron potential which induces the subdominant pair potential near the<lb/> interface, (ii) transmission probability of the particles at the interface, (iii) orientation of<lb/> the junctions, i.e., the angle between the normal to the interface and the crystal axis of<lb/> d x 2 −y 2 -wave superconductor, (iv) finite temperature effect, (v) roughness of the interface 27 ,<lb/> and (vi) impurity concentration in the superconductor <ref type="biblio">31</ref> .<lb/></p>
+
+			<p>Although there are several factors which determine the magnitude of the splitting of<lb/> ZBCP, in this paper, we concentrate on (i), (ii), (iii), and (iv). First, we calculate the<lb/> spatial variation of the pair potential in the normal metal / d x 2 −y 2 -wave superconductor<lb/> junction (N/D junction) in the presence of subdominant pair potential using a quasiclassical<lb/> formalism for various conditions of the junctions. Using these results, we calculate tunneling<lb/> conductance.<lb/></p>
+
+			<p>The organization of this paper is as follows. In Sec. II, a formulation to calculate the<lb/> spatial dependence of the pair potential, and the tunneling conductance is presented. In<lb/> Sec. III, results of the numerical calculations for both d x 2 −y 2 +is-and d x 2 −y 2 +id xy -wave<lb/> states are discussed in detail. Section IV is devoted to conclusions and future problems.<lb/></p>
+
+			<head>II. THEORETICAL FORMULATION<lb/></head>
+
+			<p>We study N/D junctions in the clean limit, where the normal metal is located at x &lt; 0<lb/> and the d x 2 −y 2 -wave superconductor extends elsewhere. For the simplicity, two dimensional<lb/> system is assumed and the x-axis is taken perpendicular to the flat interface located at x = 0.<lb/></p>
+
+			<p>When quasiparticles are in the xy-plane, a transmitted electron-like quasiparticle and hole-<lb/>like quasiparticle feel different effective pair potentials ∆(φ + ) and ∆(φ − ), with φ + = φ and<lb/> φ − = π − φ. Here, φ is the azimuthal angle in the xy-plane given by (k x + ik y )/|k| = e iφ .<lb/></p>
+
+			<p>The barrier potential at the interface has a δ-functional form Hδ(x), where δ(x) and H are<lb/> the δ-function and its amplitude, respectively. A cylindrical Fermi surface is assumed and<lb/> the magnitude of the Fermi momentum and the effective mass are chosen to be equal both<lb/> in the normal metal and in the superconductor.<lb/></p>
+
+			<p>The quasiclassical Green&apos;s function method <ref type="biblio">25,26,32-38</ref> developed by Ashida et al. <ref type="biblio">39,40</ref> is<lb/> used in order to determine the spatial variation of the pair potential self-consistently. In<lb/> the following, we briefly summarize this quasiclassical method we used. We start with the<lb/> Bogoliubov-de Gennes (BdG) equation for unconventional spin-singlet superconductors <ref type="biblio">33,41</ref> ,<lb/></p>
+
+				<formula>E nũn (r) = H 0ũn (r) + dr ′ ∆(r, r ′ )ṽ n (r ′ ),<lb/></formula>
+
+				<label>(1)<lb/></label>
+
+				<formula>E nṽn (r) = −H 0ṽn (r) + dr ′ ∆ * (r, r ′ )ũ n (r ′ ),<lb/></formula>
+
+				<label>(2)<lb/></label>
+
+				<formula>H 0 = −h<lb/> 2<lb/> 2m<lb/> ∇ 2 − µ,<lb/></formula>
+
+				<label>(3)<lb/></label>
+
+			<p>where µ is the chemical potential, whileũ n (r) andṽ n (r) denote the electron-like and hole-like<lb/> components of the wave function,<lb/></p>
+
+				<formula>Ψ n (r) =<lb/> <lb/> <lb/> <lb/> ũ<lb/> n (r)<lb/> v n (r)<lb/> <lb/> <lb/> <lb/>  ,<lb/> ≡<lb/> <lb/> <lb/> <lb/> <lb/> u n (k, r)<lb/> v n (k, r)<lb/> <lb/> <lb/> <lb/>  e ik F •r = Ψ n (k, r)e ik F •r .<lb/></formula>
+
+				<label>(4)<lb/></label>
+
+			<p>Here the quantitiesk and r stand for the unit vector of the wave number of the Cooper<lb/> pair which is fixed on the Fermi surface (k = k F /|k F |), and the position of the center of<lb/> mass of Cooper pair, respectively. After applying the quasiclassical approximation, the BdG<lb/> equation is reduced to the Andreev equation <ref type="biblio">5,33,42</ref> ,<lb/></p>
+
+				<formula>E n Ψ n (k, r) = − ihv F k • ∇ +∆(k, r) τ 3 Ψ n (k, r),<lb/></formula>
+
+				<label>(5)<lb/></label>
+
+				<formula>∆(k, r) =<lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> ∆(k, r)<lb/> −∆ * (k, r)<lb/> 0<lb/> <lb/> <lb/> <lb/>  ,<lb/></formula>
+
+				<label>(6)<lb/></label>
+
+			<p>where v F andτ i (i = 1, 2, 3) stand for Fermi velocity and Pauli matrices, respectively. The<lb/> wave function Ψ n (k, r) is obtained by neglecting the rapidly oscillating plane-wave part<lb/> following the quasiclassical approximation <ref type="biblio">33,42</ref> . Thek dependence of ∆(k, r) represents the<lb/> symmetry of the pair potential.<lb/></p>
+
+		<p>Now, we consider the case where a specularly reflecting surface or interface runs along<lb/> the y-direction. In this case, the pair potential depends only on x since the system is<lb/> homogeneous along the y-direction. It is convenient to introduce the following directional<lb/> notation, <ref type="biblio">25,39</ref><lb/></p>
+
+		<formula>Ψ n (k, r) = Φ (+)<lb/> n (φ + , x)e i|k Fx |x + Φ (−)<lb/> n (φ − , x)e −i|k Fx |x ,<lb/> Φ (α)<lb/> n (φ α , x) =<lb/> <lb/> <lb/> <lb/> <lb/> u (α)<lb/> n (φ α , x)<lb/> v (α)<lb/> n (φ α , x)<lb/> <lb/> <lb/> <lb/>  .<lb/></formula>
+
+				<label>(7)<lb/></label>
+
+			<p>Here ± represents the sign of the x component of the Fermi wave number k Fx and α(β) = ±.<lb/></p>
+
+			<p>We define a Green&apos;s function G αβ (φ, x, x ′ ) and a quasiclassical Green&apos;s function g αβ (φ, x),<lb/></p>
+
+				<formula>G αβ (φ, x, x ′ ) =<lb/> n<lb/> Φ (α)<lb/> n (φ α , x)Φ (β) †<lb/> n (φ β , x)<lb/> iω m − E n<lb/> ,<lb/></formula>
+
+				<label>(8)<lb/></label>
+
+				<formula>g αβ (φ, x) ± i(γ 3 ) αβ = −2h|v Fx |τ 3 G αβ (φ, x ± 0, x).<lb/></formula>
+
+				<label>(9)<lb/></label>
+
+		<p>In the above,γ is the Pauli matrix in the directional space <ref type="biblio">39</ref> and v Fx is the x-component<lb/> of the Fermi velocity. The quasiclassical Green&apos;s function g αβ (φ, x) obeys the Eilenberger<lb/> equation, <ref type="biblio">32</ref><lb/> i|v</p>
+
+				<formula>Fx |<lb/> ∂<lb/> ∂x<lb/> g αβ (φ, x) = − α iω mτ3 +∆(φ α , x) g αβ (φ, x)<lb/> + β g αβ (φ, x) iω mτ3 +∆(φ β , x) ,<lb/></formula>
+
+				<label>(10)<lb/></label>
+
+				<formula>∆(φ α , x) =<lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> ∆(φ α , x)<lb/> −∆ * (φ α , x)<lb/> 0<lb/> <lb/> <lb/> <lb/>  ,<lb/></formula>
+
+				<label>(11)<lb/></label>
+
+			<p>where ω m is the Matsubara frequency. The quasiclassical Green&apos;s function can be written<lb/> by the following evolution operator U α (φ α , x, x ′ ) as<lb/></p>
+
+				<formula>g αβ (φ, x) = U α (φ α , x, x ′ )g αβ (φ, x ′ )U −1<lb/> β (φ β , x, x ′ ),<lb/></formula>
+
+				<label>(12)<lb/></label>
+
+			<p>where U α (φ α , x, x ′ ) satisfies the Andreev equation<lb/></p>
+
+				<formula>ih|v Fx |<lb/> ∂<lb/> ∂x<lb/> U α (φ α , x, x ′ ) = −α iω mτ3 +∆(φ α , x) U α (φ α , x, x ′ ),<lb/></formula>
+
+				<label>(13)<lb/></label>
+
+			<p>with U α (φ α , x, x) = 1.<lb/></p>
+
+			<p>Considering a semi-infinite N/D junction geometry, the pair potential in the superconduc-<lb/>tor side approaches to the bulk value ∆(φ α , ∞) at sufficiently large x. Hence, the evolution<lb/> operator can be divided into a growing part and a decaying part:<lb/></p>
+
+				<formula>U α (φ α , x, x ′ ) = Λ (+)<lb/> α (φ α , x, x ′ )e κα(x−x ′ ) + Λ (−)<lb/> α (φ α , x, x ′ )e −κα(x−x ′ ) ,<lb/></formula>
+
+				<label>(14)<lb/></label>
+
+				<formula>Λ (+)<lb/> α (φ α , x, x ′ ) = −<lb/> 1<lb/> W α<lb/> Φ (+)<lb/> n (φ α , x) T Φ (−)<lb/> n (φ α , x ′ )τ 2 ,<lb/> Λ (−)<lb/> α (φ α , x, x ′ ) =<lb/> 1<lb/> W α<lb/> Φ (−)<lb/> n (φ α , x) T Φ (+)<lb/> n (φ α , x ′ )τ 2 ,<lb/></formula>
+
+				<label>(15)<lb/></label>
+
+			<p>where<lb/></p>
+
+				<formula>κ α =<lb/> Ω α<lb/> |v Fx |<lb/> , Ω α = ω 2<lb/> m + |∆(φ α , ∞)| 2 ,<lb/> W α = T Φ (+)<lb/> n (φ α , x)τ 2 Φ (−)<lb/> n (φ α , x) = − T Φ (−)<lb/> n (φ α , x)τ 2 Φ (+)<lb/> n (φ α , x)<lb/> = constant.<lb/></formula>
+
+				<label>(16)<lb/></label>
+
+			<p>In the above, T Φ (α)<lb/> n (φ α , x) denotes the transposition of Φ (α)<lb/> n (φ α , x).<lb/> Retaining the most divergent term in semi-infinite limit, we find the quasiclassical Green&apos;s<lb/> functionĝ αα (φ, x) in the superconductor side given by <ref type="biblio">35,40</ref> ,<lb/></p>
+
+				<formula>g αα (φ α , x) = i<lb/> 2Â Sα (x)<lb/> Tr[Â Sα (x)]<lb/> − 1 ,<lb/></formula>
+
+				<label>(17)<lb/></label>
+
+			<p>where</p>
+
+				<formula>Â<lb/>S+ (x) = Λ<lb/> (−)<lb/> + (φ + , x, L)Λ<lb/> (+)<lb/> − (φ − , L, 0)R N U + (φ + , 0, x)e −κx<lb/> =λ S+ (x, 0)R NŨ+ (φ + , 0, x),<lb/></formula>
+
+				<label>(18)<lb/></label>
+
+				<formula>λ S+ (x, 0) ∝<lb/> <lb/> <lb/> <lb/> <lb/> u (−)<lb/> n (φ + , x)<lb/> v (−)<lb/> n (φ + , x)<lb/> <lb/> <lb/> <lb/>  u (−)<lb/> n (φ − , 0) v (−)<lb/> n (φ − , 0) τ 2 .<lb/></formula>
+
+				<label>(19)<lb/></label>
+
+			<p>In the above, the matrixR N represents resistance at the interface which is given by <ref type="biblio">38<lb/></ref></p>
+
+				<formula>R N ∝<lb/> <lb/> <lb/> <lb/> <lb/> 1<lb/> 0<lb/> 0 1 − σ N (φ)<lb/> <lb/> <lb/> <lb/>  , σ N (φ) =<lb/> 4 cos φ 2<lb/> 4 cos φ 2 + Z 2 ,<lb/></formula>
+
+				<label>(20)<lb/></label>
+
+			<p>where σ N (φ) stands for tunneling conductance when the system is in the normal state <ref type="biblio">43</ref> and<lb/> Z is the effective barrier height at the interface with Z = 2mH/(h 2 k F ). In order to obtain<lb/> the quantityŨ + (φ + , 0, x) in eq.<ref type="formula">(18)</ref>, we rewriteÂ S+ (x) as <ref type="biblio">40<lb/></ref></p>
+
+				<formula>A S+ (x) =<lb/> <lb/> <lb/> <lb/> <lb/> u (−)<lb/> n (φ + , x)<lb/> v (−)<lb/> n (φ + , x)<lb/> <lb/> <lb/> <lb/>  X + (x) Y + (x) τ 2 ,<lb/></formula>
+
+				<label>(21)<lb/></label>
+
+			<p>where D α (x) = (−i)v (−)<lb/> n (φ α , x)/u (−)<lb/> n (φ α , x) and F + (x) = iX + (x)/Y + (x) obey the following<lb/> Riccati type equations<lb/></p>
+
+			 <formula>h|v Fx |<lb/> ∂<lb/> ∂x<lb/> D α (x) = α −2ω m D α (x) + ∆(φ α , x)D 2<lb/> α (x) − ∆ * (φ α , x) ,<lb/></formula>
+
+				<label>(22)<lb/></label>
+
+				<formula>h|vFx |<lb/> ∂<lb/> ∂x<lb/> F + (x) = 2ω m F + (x) + ∆ * (φ + , x)F 2<lb/> + (x) − ∆(φ + , x).<lb/></formula>
+
+				<label>(23)<lb/></label>
+
+			<p>We can write the quasiclassical Green&apos;s function in a compact form <ref type="biblio">35</ref> ,<lb/></p>
+
+				<formula>g ++ (φ + , x) = i<lb/> <lb/> <lb/> <lb/> <lb/> 2<lb/> 1 − D + (x)F + (x)<lb/> <lb/> <lb/> <lb/> <lb/> 1<lb/> iF + (x)<lb/> iD + (x) −D + (x)F + (x)<lb/> <lb/> <lb/> <lb/>  − 1<lb/> <lb/> <lb/> <lb/>  .<lb/></formula>
+
+				<label>(24)<lb/></label>
+
+			<p>Initial conditions of these equations are<lb/></p>
+
+				<formula>D α (∞) =<lb/> ∆ * (φ α , ∞)<lb/> ω m + αΩ α<lb/> , F + (0) =<lb/> 1 − σ N (φ)<lb/> D − (0)<lb/> .<lb/></formula>
+
+				<label>(25)<lb/></label>
+
+			<p>The pair potential is given by <ref type="biblio">25,39,40,38,33,34<lb/></ref></p>
+
+			  <formula>∆(φ, x) =<lb/> 0≤m&lt;ωc/2πT<lb/> 1<lb/> 2π<lb/> π/2<lb/> −π/2<lb/> dφ ′<lb/> α<lb/> V (φ, φ ′<lb/> α )[ĝ αα (φ ′<lb/> α , x)] 12 ,<lb/></formula>
+
+				<label>(26)<lb/></label>
+
+		<p>withĝ −− (φ − , x) = −ĝ ++ (−φ + , x), where ω c is the cutoff energy and [ĝ αα (φ α , x)] 12 means<lb/> the 12 element ofĝ αα (φ α , x). Here V (φ, φ α ) is the effective inter-electron potential of the<lb/> Cooper pair. In our numerical calculations, new ∆(φ α , x) andĝ αα (φ α , x) are obtained using<lb/> eqs.<ref type="formula">(22)-(24)</ref> and eq. <ref type="formula">(26)</ref>. We repeat this iteration process until the sufficient convergence<lb/> is obtained.<lb/></p>
+
+			<p>Next, we calculate the tunneling conductance spectra based on the self-consistently de-<lb/>termined pair potential. The resulting normalized tunneling conductance σ T (eV ) with the<lb/> bias voltage V is given by <ref type="biblio">31,43<lb/></ref></p>
+
+				<formula>σ T (eV ) =<lb/> π/2<lb/> −π/2<lb/> dφ<lb/> ∞<lb/> −∞<lb/> dEσ N (φ)σ S (E, φ)sech 2 E − eV<lb/> 2k B T<lb/> cos φ<lb/> π/2<lb/> −π/2<lb/> dφ<lb/> ∞<lb/> −∞<lb/> dEσ N (φ)sech 2 E − eV<lb/> 2k B T<lb/> cos φ<lb/> ,<lb/></formula>
+
+				<label>(27)<lb/></label>
+
+				<formula>σ S (E, φ) =<lb/> 1 + σ N (φ)|Γ S+ (E, φ + , 0)| 2 + [σ N (φ) − 1]|Γ S+ (E, φ + , 0)| 2 |Γ S− (E, φ − , 0)| 2<lb/> |1 + [σ N (φ) − 1]Γ S+ (E, φ + , 0)Γ S− (E, φ − , 0)| 2<lb/> .</formula>
+
+				<label>(28)<lb/></label>
+
+			<p>In the above, Γ Sα (E, φ α , x) is obtained by solving following equations,<lb/></p>
+
+				<formula>ih|v Fx |<lb/> ∂<lb/> ∂x<lb/> Γ S+ (E, φ + , x) = 2EΓ S+ (E, φ + , x) − ∆(φ + , x)Γ 2<lb/> S+ (E, φ + , x) − ∆ * (φ + , x),<lb/></formula>
+
+				<label>(29)<lb/></label>
+
+				<formula>ih|v Fx |<lb/> ∂<lb/> ∂x<lb/> Γ S− (E, φ − , x) = 2EΓ S− (E, φ − , x) − ∆ * (φ − , x)Γ 2<lb/> S− (E, φ − , x) − ∆(φ − , x).<lb/></formula>
+
+				<label>(30)<lb/></label>
+
+			<p>In the following, almost calculations are performed on the temperature T /T c = 0.05, where<lb/>T c is the critical temperature of the bulk d x 2 −y 2 -wave superconductor.<lb/></p>
+
+			<head>III. BROKEN TIME REVERSAL SYMMETRY STATE NEAR AN INTERFACE<lb/> OF A D X 2 −Y 2 -WAVE SUPERCONDUCTOR<lb/></head>
+
+			<p>In this section, the spatial dependence of the self-consistently determined pair potential<lb/> and the corresponding tunneling conductance are presented for the d x 2 −y 2 -wave supercon-<lb/>ducting state. In the middle of the d x 2 −y 2 -wave superconductor, the pair potential is given<lb/> by ∆(φ α , ∞) = ∆ 0 cos[2(φ − θ)], where θ is the angle between normal to the interface and<lb/> the lobe direction of the d x 2 −y 2 -wave pair potential, i.e., the angle between the x-axis and<lb/> the crystal a-axis of the d x 2 −y 2 -wave. In this paper, we choose various θ (0 ≤ θ ≤ π/4) by<lb/> changing the magnitude of Z and T s (T dxy ).<lb/></p>
+
+			<head>A. d x 2 −y 2 + is-wave state<lb/></head>
+
+			<p>In this subsection, we show the spatial dependence of the pair potential and the resulting<lb/> tunneling conductance of the d x 2 −y 2 +is-wave state realized near the interface of the N/D<lb/> junction. The spatial dependence of the pair potential is expressed as<lb/></p>
+
+				<formula>∆(φ, x) = ∆ d (x) cos[2(φ − θ)] + ∆ s (x),<lb/></formula>
+
+				<label>(31)<lb/></label>
+
+			<p>where ∆ d (x) and ∆ s (x) correspond to the amplitude of the d x 2 −y 2 -wave and s-wave super-<lb/>conducting states, respectively. The attractive potential V (φ, φ ′ ) is given by<lb/></p>
+
+				<formula>V (φ, φ ′ ) = 2V d cos[2(φ − θ)] cos[2(φ ′ − θ)] + V s<lb/></formula>
+
+				<label>(32)<lb/></label>
+
+			<p>where V d and V s denote the attractive potential of predominant d x 2 −y 2 -wave and subdomi-<lb/>nant s-wave, respectively, and they are given as<lb/></p>
+
+				<formula>V d =<lb/> 2πk B T<lb/> log<lb/> T<lb/> T c<lb/> +<lb/> 0≤m&lt;ωc/2πT<lb/> 1<lb/> m + 1/2<lb/> ,<lb/></formula>
+
+				<label>(33)<lb/></label>
+
+				<formula>V s =<lb/> 2πk B T<lb/> log<lb/> T<lb/> T s<lb/> +<lb/> 0≤m&lt;ωc/2πT<lb/> 1<lb/> m + 1/2<lb/> .<lb/></formula>
+
+				<label>(34)<lb/></label>
+
+		<p>Here, T s denotes the transition temperature of s-wave component of the pair potential<lb/> without predominant d x 2 −y 2 -wave component. For θ = 0 or θ = π/4, only Re[∆ d (x)]<lb/> and Im[∆ s (x)] are nonzero. The spatial dependence of the pair potentials Re[∆ d (x)] and<lb/> Im[∆ s (x)] is plotted in Fig. <ref type="figure">1(a)</ref> for various θ with T s /T d = 0.2 and Z = 3. The x-axis of<lb/> Fig. <ref type="figure">1(a)</ref> is normalized by ξ 0 =hv F /∆ 0 which is the coherence length of the superconductor.<lb/> For θ = 0 [(100) surface], since Im[∆ s (x)] = 0 is satisfied, the time reversal symmetry is not<lb/> broken and the amplitude of Re[∆ d (x)] is not suppressed at the interface. By changing the<lb/> angle θ from zero, the magnitude of Re[∆ d (x)] is reduced near the interface, while Im[∆ s (x)]<lb/> is induced at the interface <ref type="biblio">25</ref> . The suppression of Re[∆ d (x)] is originated from a depairing<lb/> effect that the effective pair potentials ∆(φ + , 0) and ∆(φ − , 0) have reversed contribution to<lb/> the pairing interaction for certain range of φ for θ = 0. When Re[∆ d (x)] is suppressed at<lb/> the interface, the quasiparticle forms the ABS near the interface at zero-energy <ref type="biblio">5</ref> . The ABS<lb/> is unstable with the introduction of s-wave attractive potential, then Im[∆ s (x)] is induced<lb/> at the interface . The magnitude of Im[∆ s (x)] becomes maximum at θ = π/4, where the<lb/> above suppression effect is most significant. In Fig. <ref type="figure">1(b)</ref>, Re[∆ d (x)] and Im[∆ s (x)] are plot-<lb/>ted for various Z with T s /T d = 0.2 and θ = π/4. Even if the BTRSS becomes to be most<lb/> stable at θ = π/4, when the height of barrier is small, the magnitude of the subdominant<lb/> imaginary component of ∆ s (x) is not induced at all. The induced imaginary component of<lb/> ∆ s (x) is enhanced with the increase of Z.<lb/> The spatial dependence of the pair potentials near the interface with the intermediate<lb/> angle (θ = π/6) is shown in Fig. <ref type="figure">2</ref> for various height of barrier. In such a case, both<lb/> Im[∆ d (x)] and Re[∆ s (x)] becomes nonzero and the spatial dependence is much more complex<lb/> as compared to that for θ = 0 or θ = π/4. The amplitudes of Im[∆ d (x)], Re[∆ s (x)], and<lb/> Im[∆ s (x)] are enhanced for larger magnitude of Z, where the suppression of Re[∆ d (x)] is<lb/> significant. However, the amplitudes of Im[∆ d (x)] and Re[∆ s (x)] are one order smaller than<lb/> that of Im[∆ s (x)].<lb/> Next, we look at the magnitude of subdominant components of the pair potential at<lb/> the interface, Im[∆ s (0)], Im[∆ d (0)], and Re[∆ s (0)], for various T s , Z, and θ. As shown in<lb/> Fig. <ref type="figure">3(a)</ref>, the magnitude of Im[∆ s (0)] increases monotonically with T s for fixed θ and Z,<lb/> and it is enhanced for larger magnitude of Z. In other words, the amplitude of Im[∆ s (0)] is<lb/> sensitive to the transmission probability of the junctions. In Fig. <ref type="figure">3(b)</ref>, Im[∆ s (0)] is plotted<lb/> as a function of θ for sufficiently larger magnitude of Z(= 5.0). For θ = 0, i.e., junction<lb/> with (100) interface, the magnitude of Im[∆ s (0)] is negligibly small near the interface even<lb/> at the larger magnitude of T s . The magnitude of Im[∆ s (0)] is a monotonically increasing<lb/> function with the increase of θ and has a maximum at θ = π/4. As seen from Figs. <ref type="figure">3(c) and<lb/> 3(d)</ref>, both the magnitude of Im[∆ d (0)] and Re[∆ s (0)] is enhanced and has a maximum at a<lb/> certain θ. In the intermediate θ, i.e., θ = 0 or θ = π/4, the magnitude of ∆(φ + , x) and that<lb/> of ∆(φ − , x) does not coincide any more, the interference with the quasiparticle and the pair<lb/> potential becomes complex. Then, not only Im[∆ s (0)] but also Re[∆ s (0)] and Im[∆ d (0)]<lb/> become nonzero.<lb/> Using self-consistently determined pair potentials, let us look at the normalized tunneling<lb/> conductance σ T (eV ). In order to clarify the temperature T dependence of σ T (eV ), we choose<lb/> T = 0 in the left panels of Fig. <ref type="figure">4</ref> and T = 0.05T c in the right panels. Only for θ = 0, line<lb/> shape of σ T (eV ) is similar to that of the bulk density of states of d x 2 −y 2 -wave superconducting<lb/> state. In other cases, σ T (eV ) has a zero bias enhanced line shape. As clarified in previous<lb/> literatures <ref type="biblio">4</ref> , when θ deviates from zero, since the injected and reflected quasiparticles have<lb/> a chance to feel the sign change of the pair potentials, zero-energy ABS is formed at the<lb/> interface. This zero-energy ABS causes the ZBCP when the magnitude of T s is small. With<lb/> the increase of the magnitude of T s , the zero energy ABS is unstable and s-wave subdominant<lb/> component is induced which breaks time reversal symmetry and it blocks the motion of the<lb/> quasiparticles. Then, the energy levels of bound state shift from zero and the local density<lb/> of states has a zero-energy peak splitting. The resulting σ T (eV ) has a ZBCP splitting as<lb/> shown in Fig. <ref type="figure">4(b)</ref>. However, with the increase of T , the slight splitting of ZBCP fades out<lb/> due to smearing effect by finite temperature and the resulting σ T (eV ) has a rather broad<lb/> ZBCP [see Fig. <ref type="figure">4(c)</ref> and Fig. <ref type="figure">4(d)</ref>].<lb/></p>
+
+			<p>Next, we concentrate on how σ T (eV ) is influenced by the transmission probability of the<lb/> junctions, i.e., the magnitude of Z. In Fig. <ref type="figure">5</ref>, σ T (eV ) with θ = π/4 is plotted for T = 0 (left<lb/> panels) and T = 0.05T c (right panels). For the junctions with high transmissivity, σ T (eV )<lb/> has a ZBCP, [see Fig. <ref type="figure">5(a)</ref>] and the magnitude of σ T (0) is firstly enhanced with the increase<lb/> of Z. In this case, the predominant d x 2 −y 2 -wave component only exists near the interface as<lb/> shown in Fig. <ref type="figure">1(b)</ref>. However, with the increase of Z, σ T (eV ) starts to have a ZBCP splitting<lb/> at a certain value of Z, where the magnitude of subdominant component Im[∆ s (x)] at the<lb/> interface becomes the same order as that of the predominant component Re[∆ d (x)]. For<lb/> sufficiently larger magnitude of Z, σ T (eV ) has a ZBCP splitting, [see Fig. <ref type="figure">5(b) and 5(c)</ref>,]<lb/> and the magnitude of σ T (0) decreases with the increase of Z. However, the above obtained<lb/> results are influenced by finite temperature effect. The right panels of Fig. <ref type="figure">5</ref> is shown<lb/> for the tunneling conductance in T /T c = 0.05. The slight enhanced structure of σ T (eV )<lb/> at eV = ±∆ 0 in Fig. <ref type="figure">5(a), 5(b), and 5(c)</ref> is invisible due to the smearing effect by finite<lb/> temperature [see Fig. <ref type="figure">5(c), 5(d), and 5(e)</ref>]. With the increase of the magnitude of Z, σ T (eV )<lb/> has a ZBCP with tiny dip even at Z = 2.5, where the order of the amplitude of Im[∆ s (0)] is<lb/> 0.2∆ 0 . With the further increase of Z, σ T (eV ) has a ZBCP splitting [see Fig. <ref type="figure">5(f)</ref>], however<lb/> the degree of the splitting is significantly weakened as compared to the corresponding curves<lb/> in Fig. <ref type="figure">5(c)</ref>.<lb/></p>
+
+			<p>Finally, we look at the relation between the position of the splitted peak and the mag-<lb/>nitude of Im[∆ s (0)]. In Fig. <ref type="figure">6(a)</ref>, σ T (eV ) is plotted for various T s with Z = 5 and T = 0.<lb/></p>
+
+			<p>As shown in Fig. <ref type="figure">3(b)</ref>, the magnitude of the induced subdominant imaginary component of<lb/> Im[∆ s (0)] is about 0.16∆ 0 , 0.3∆ 0 , and 0.42∆ 0 for T s /T d = 0.1, T s /T d = 0.3 and T s /T d = 0.5,<lb/> respectively. The corresponding σ T (eV ) has a splitted peak locating at ±0.16∆ 0 , ±0.3∆ 0 ,<lb/> and ±0.42∆ 0 , respectively. With the increase of T , the height of these peaks are drastically<lb/> suppressed as shown in Fig. <ref type="figure">6(b)</ref>. Finally, we show how the line shape of σ T (eV ) changes<lb/> at the temperature T = Ts (Ts = 0.12T c ) where Im[∆ s (x)] becomes nonzero. As seen from<lb/> Fig. <ref type="figure">6(c)</ref>, the magnitude of σ T (0) is reduced with the introduction of Im[∆ s (x)].<lb/></p>
+
+			<p>At the end of this subsection, we can summarize that even in the presence of BTRSS, the<lb/> resulting σ T (eV ) does not always have a clear ZBCP splitting due to the finite temperature<lb/> effect when the magnitude of the transmission probability of the junctions is not low.<lb/></p>
+
+			<head>B. d x 2 −y 2 +id xy -wave state<lb/></head>
+
+			<p>In this subsection, we study spatial dependence of the pair potentials of the d x 2 −y 2 +id xy -<lb/>wave state and the resulting tunneling conductance in N/D junctions. The pair potential is<lb/> given by<lb/></p>
+
+				<formula>∆(φ, x) = ∆ d (x) cos[2(φ − θ)] + ∆ dxy (x) sin[2(φ − θ)],<lb/></formula>
+
+				<label>(35)<lb/></label>
+
+			<p>where ∆ dxy (x) is an amplitude of the d xy -wave superconducting state and a complex number.<lb/></p>
+
+			<p>The attractive inter-electron potential V (φ, φ ′ ) is given by<lb/></p>
+
+				<formula>V (φ, φ ′ ) = 2V d cos[2(φ − θ)] cos[2(φ ′ − θ)] + 2V dxy sin[2(φ − θ)] sin[2(φ ′ − θ)],<lb/></formula>
+
+				<label>(36)<lb/></label>
+
+			<p>where V d and V dxy stand for the attractive potential of predominant d x 2 −y 2 -wave and sub-<lb/>dominant d xy -wave, respectively, and they are given as<lb/></p>
+
+				<formula>V d =<lb/> 2πk B T<lb/> log<lb/> T<lb/> T c<lb/> +<lb/> 0≤m&lt;ωc/2πT<lb/> 1<lb/> m + 1/2<lb/> ,<lb/></formula>
+
+				<label>(37)<lb/></label>
+
+				<formula>V dxy =<lb/> 2πk B T<lb/> log<lb/> T<lb/> T dxy<lb/> +<lb/> 0≤m&lt;ωc/2πT<lb/> 1<lb/> m + 1/2<lb/> .<lb/></formula>
+
+				<label>(38)<lb/></label>
+
+			<p>The spatial dependence of the pair potentials with a finite transmissivity for Z = 3.0 and<lb/> θ = π/4 is shown in Fig. <ref type="figure">7(a)</ref>. As in the case for d x 2 −y 2 +is-wave state, the amplitude of<lb/> Im[∆ dxy (x)] vanishes at θ = 0. For θ = π/4, the suppression of the magnitude of Re[∆ d (x)] is<lb/> most significant, while ∆ dxy (x) is induced at the interface. At this θ, the d xy -wave component<lb/> is not affected by depairing effect seriously since the lobe direction of d xy -wave pair potential<lb/> is parallel or perpendicular to the interface as in the case for predominant d x 2 −y 2 -wave with<lb/> θ = 0. As shown in Fig. <ref type="figure">7(b)</ref>, the amplitude of Im[∆ dxy (x)] is enhanced with the increase of<lb/> Z.<lb/> The spatial dependencies of Re[∆ d (x)], Im[∆ d (x)], Re[∆ s (x)], and Im[∆ s (x)] are plotted<lb/> in Figs. <ref type="figure">8(a), 8(b), 8(c), and 8(d)</ref>, respectively, with the intermediate θ (θ = π/6) for various<lb/> Z. In such a case, the spatial dependence is much more complex as compared to that for<lb/> θ = 0 or θ = π/4, and both Im[∆ d (x)] and Re[∆ dxy (x)] become nonzero. The amplitudes<lb/> of Im[∆ d (x)], Re[∆ dxy (x)], and Im[∆ s (x)] are enhanced for larger magnitude of Z, where<lb/> the suppression of Re[∆ d (x)] is significant. The remarkable feature is that the amplitude of<lb/> Im[∆ d (x)] and Re[∆ dxy (x)] can become the same order of Im[∆ s (x)] for larger Z.<lb/> Next, we look at the magnitude of subdominant components of the pair potential at<lb/> the interface, Im[∆ dxy (0)], Im[∆ d (0)], and Re[∆ dxy (0)] for various parameters T dxy , Z and θ<lb/> shown in Fig. <ref type="figure">9</ref>. The magnitude of Im[∆ dxy (0)] increases monotonically with T dxy for fixed<lb/> θ and Z. It is also enhanced for larger magnitude of Z. Comparing the corresponding<lb/> situation of d x 2 −y 2 + is-wave shown in Fig. <ref type="figure">3(a)</ref>, the magnitude of Im[∆ dxy (0)] is suppressed<lb/> for the small magnitude of T dxy . In Fig. <ref type="figure">9(b)</ref>, Im[∆ dxy (0)] is plotted as a function of θ for<lb/> sufficiently larger magnitude of Z(= 5.0). The magnitude of Im[∆ dxy (0)] is a monotonically<lb/> increasing function with the increase of θ and has a maximum at θ = π/4. The amplitudes of<lb/> Im[∆ d (0)] and Re[∆ dxy (0)] are negligibly small for θ = 0 and θ = π/4, and has a maximum<lb/> at a certain θ as shown in Figs. <ref type="figure">9(c) and 9(d)</ref>, respectively.<lb/> The resulting normalized tunneling conductance σ T (eV ) is plotted in Figs. <ref type="figure">10(a) and<lb/> 10(b)</ref> with T = 0 and the corresponding quantities with T = 0.05T c is plotted in Figs. <ref type="figure">10(c)<lb/> and 10(d)</ref> for various θ. Only for θ = 0, line shape of σ T (eV ) is similar to that of the bulk<lb/> density of states of d x 2 −y 2 -wave superconducting state. In other cases, σ T (eV ) has a zero-bias<lb/> enhanced line shape due to the formation of ABS [see Fig. 4(a)]. The ABS causes the ZBCP<lb/> when the magnitude of T dxy is small. However, with the increase of the magnitude of T dxy , the<lb/> zero-energy ABS is unstable and subdominant d xy -wave component is induced. The energy<lb/> levels of bound state shifts from zero and the local density of states has a zero-energy peak<lb/> splitting. The resulting σ T (eV ) has a ZBCP splitting as shown in Fig. <ref type="figure">10(b)</ref>. As compared<lb/> to the case of d x 2 −y 2 +is state, the magnitude of σ T (0) is not reduced seriously since the<lb/> effective d xy -wave pair potential felt by quasiparticles is distributed from −Im[∆ dxy (0)] to<lb/> Im[∆ dxy (0)]. With the increase of temperature, the ZBCP splitting is not visible any more.<lb/> [see Fig. <ref type="figure">10(c)</ref> and Fig. <ref type="figure">10(d)</ref>].<lb/> Next, we concentrate on how σ T (eV ) is influenced by the transmissivity of the junctions,<lb/> i.e., the magnitude of Z. In Fig. <ref type="figure">11</ref>, σ T (eV ) with θ = π/4 is plotted for T = 0 (left<lb/> panels) and T = 0.05T c (right panels). As shown in Fig. <ref type="figure">11</ref>, σ T (eV ) with θ = π/4 depends<lb/> on the transmissivity of the junction crucially. For the junctions with high transmissivity,<lb/> σ T (eV ) has a ZBCP [see Fig. <ref type="figure">11(a)</ref>] and the magnitude of σ T (0) is firstly enhanced with<lb/> the increase of Z. In this case, only the predominant d x 2 −y 2 -wave component exists near<lb/> the interface as shown in Fig. <ref type="figure">1(b)</ref>. However, with the increase of Z, σ T (eV ) starts to have<lb/> a peak splitting at a certain value of Z, where the magnitude of the induced subdominant<lb/> component at the interface Im[∆ dxy (0)] overlaps that of the predominant one Re[∆ d (x)]. For<lb/> sufficiently larger magnitude of Z, σ T (eV ) has a ZBCP splitting [see Figs. <ref type="figure">11(b) and 11(c)</ref>]<lb/> and the magnitude of σ T (0) decreases with the increase of Z. The right panels of Fig. <ref type="figure">11</ref><lb/> are shown for the σ T (eV ) with finite temperature. Only for the junctions with the lowest<lb/> transmissivity (Z = 5), the subtle splitting of ZBCP appears in σ T (eV ). For T = 0.05T C ,<lb/> similar line shapes of σ T (eV ) with smeared ZBCP splitting are obtained [see Fig. <ref type="figure">11(d)</ref>,<lb/> Fig. <ref type="figure">11(e)</ref> and Fig. <ref type="figure">11(f)</ref>]. However, the slight enhanced structure of σ T (eV ) at eV = ±∆ 0<lb/> vanishes.<lb/></p>
+
+			<p>Finally, we look at the relation between the position of the splitted peak and the magni-<lb/> tude of Im[∆ dxy (0)]. In Fig. <ref type="figure">12(a)</ref>, we show T dxy dependence of the tunneling conductance<lb/> spectra σ T (eV ) for θ = 0 with Z = 5. As shown in Fig. <ref type="figure">9(b)</ref>, the magnitude of the induced<lb/> subdominant imaginary component of Im[∆ dxy (0)] is about 0.15∆ 0 , 0.35∆ 0 , and 0.52∆ 0 for<lb/> T dxy /T d = 0.1, T dxy /T d = 0.3 and T dxy /T d = 0.5, respectively. The corresponding σ T (eV )<lb/> has a splitted peak locating at ±0.16∆ 0 , ±0.3∆ 0 , and ±0.42∆ 0 , respectively. The width of<lb/> the two splitted peaks depends on the temperature as shown in Fig. <ref type="figure">12(b)</ref>. Next, we show<lb/> how the line shape of σ T (eV ) changes at the temperature T = Td<lb/> xy [Td<lb/> xy = 0.07T c ] where<lb/> Im[∆ dxy (x)] becomes nonzero. As seen from Fig. <ref type="figure">12(c)</ref>, the magnitude of σ T (0) is reduced<lb/> with the introduction of Im[∆ s (x)].<lb/></p>
+
+			<p>At the end of this section, we can summarize that even in the presence of BTRSS, the<lb/> resulting σ T (eV ) does not always have a clear ZBCP splitting due to the finite temperature<lb/> effect when the transmission probability of the particles at the interface is not low. In<lb/> order to observe the ZBCP splitting which is one of the evidence supporting BTRSS, we<lb/> must measure σ T (eV ) for the junctions with low transmissivity with (110) oriented interface<lb/> (θ = π/4) at low temperatures. In such a case, we can classify the the d x 2 −y 2 +is-and<lb/> d x 2 −y 2 +id xy -wave state through the magnitude of σ T (0) and the width of the ZBCP splitting<lb/> for the junctions with low transmission probability.<lb/></p>
+
+			<head>IV. CONCLUSION<lb/></head>
+
+			<p>In this paper, spatial dependence of the pair potential in the N/D junctions is determined<lb/> on the basis of the quasiclassical theory in the presence of subdominant component of the<lb/> pair potential near the interface. We clarified the influence of the spatial variation of the<lb/> pair potentials on the tunneling conductance spectra for various conditions of the junctions.<lb/> We selected two kinds of subdominant components s-and d xy -wave which are induced as<lb/> d x 2 −y 2 +is-and d x 2 −y 2 +id xy -wave state, respectively. The amplitude of ∆ s (x) [∆ dxy (x)] is<lb/> enhanced with the increase of the magnitude of Z, T s [T dxy ], and θ (0 &lt; θ &lt; π/4). In the<lb/> intermediate θ, both Im[∆ d (x)] and Re[∆ s (x)] {Re[∆ dxy ]} becomes nonzero, although these<lb/> magnitudes are small as compared to those of Re[∆ d (x)] and Im[∆ s (x)] {Im[∆ dxy ]}. The<lb/> resulting σ T (eV ) depends on Z, T s (or T dxy ), and θ. For fixed Z, the magnitude of σ T (0)<lb/> increases with the increase of θ (0 &lt; θ &lt; π/4) for small magnitude of T s /T d [T dxy /T d ].<lb/> While σ T (0) increases and decreases again with the increase of θ (0 &lt; θ &lt; π/4) due to the<lb/> formation of d x 2 −y 2 +is-[d x 2 −y 2 +id xy ]-wave state for sufficiently larger magnitude of T s /T d<lb/> [T dxy /T d ]. For fixed θ and T s /T d [T dxy /T d ], σ T (eV ) has a ZBCP for small magnitude of Z,<lb/> while it has a ZBCP splitting for sufficiently larger magnitude of Z. Using junctions with<lb/> small transmissivity, we can distinguish d x 2 −y 2 +is-wave state from d x 2 −y 2 +id xy -wave state<lb/> since the magnitude of σ T (0) for d x 2 −y 2 +is-wave state is much more reduced as compared<lb/> to that for d x 2 −y 2 +id xy -wave state as seen from Fig. <ref type="figure">4</ref> [Fig. <ref type="figure">6</ref>] to Fig. <ref type="figure">10</ref> [<ref type="figure">Fig. 12</ref>]. By taking<lb/> into account finite temperature effect, the degree of the ZBCP splitting is suppressed and<lb/> the fine structure at eV ∼ ∆ 0 in σ T (eV ) becomes invisible.<lb/></p>
+
+			<p>In the light of our theory, one of the reason for the absence of ZBCP splitting for many<lb/> tunneling experiments may be due to their high transmissivity of the junctions (small mag-<lb/>nitude of Z) and high temperatures. If we choose T c as 90K, unless the transmissivity of the<lb/> junction is sufficiently low, it is difficult to observe ZBCP splitting clearly at 4.5K. In order<lb/> to see the ZBCP splitting clearly, we must observe much more low temperature (T &lt; 4.5K)<lb/> using a clean junctions with low transmissivity for θ = π/4.<lb/></p>
+
+			<p>In this paper, we have chosen a free electron model with cylindrical Fermi surfaces. In<lb/> order to compare actual tunneling conductance, we must calculate spatial dependence of the<lb/> pair potential and the tunneling conductance by taking into account of the actual shape of<lb/> Fermi surface. For this purpose, it is a promising way to perform the calculation based on the<lb/> t-J model with Gutzwiller approximation <ref type="biblio">44</ref> , where the doping dependence is naturally taken<lb/> into account. Using this model, we succeeded to explain detailed line shape of the scanning<lb/> tunneling conductance spectra around Zn impurity <ref type="biblio">45-47</ref> . As regards quasiparticle states near<lb/> the interface, the pre-existing calculations are performed for infinite barrier limit 10,<ref type="biblio">28,29</ref> . In<lb/> order to compare actual tunneling experiments, we must calculate the N/D junctions based<lb/> on the t-J model using Gutzwiller approximation. In the t-J model, the subdominant d xy -<lb/>wave component is hard to be realized <ref type="biblio">44</ref> since a nearest neighbor attractive potential is taken<lb/> into account. In order to discuss the d xy -wave component, we must consider much more long<lb/> range interaction including three site hopping term.<lb/></p>
+
+			<p>It is also revealed by recent theory that the BTRSS influences significantly on the Joseph-<lb/>son effect <ref type="biblio">48-50</ref> . The previous theory assumes a sufficient larger magnitude of barrier <ref type="biblio">50</ref> . In<lb/> order to compare the existing experiments, we must calculate Josephson current in the<lb/> presence of BTRSS for arbitrary transmissivity of the junctions.<lb/></p>
+
+			<!-- <head>ACKNOWLEDGMENTS<lb/></head>
+
+			<p>First author (Y.T.) would like to thank K. Machida and M. Ichioka for useful and fruitful<lb/> discussions. He acknowledges the financial support of Research Fellowships of Japan Society<lb/> for the Promotion of Science (JSPS) for Young Scientists. This work is supported by the<lb/> Core Research for Evolutional Science and Technology (CREST) of the Japan Science and<lb/> Technology Corporation (JST). The computational aspect of this work has been performed<lb/> at the facilities of the Supercomputer Center, Institute for Solid State Physics, University<lb/> of Tokyo and the Computer Center.<lb/></p> -->
+
+			<figure>FIGURES<lb/> 0<lb/> 2<lb/> 4<lb/> 0<lb/> 0.5<lb/> 1<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> ∆ d (x)<lb/> ∆ s (x)<lb/> x / ξ 0<lb/> ∆(x)/ ∆<lb/> 0<lb/> (a)<lb/> Re[<lb/> ]<lb/> Im[<lb/> ]<lb/> 0<lb/> 2<lb/> 4<lb/> 0<lb/> 0.5<lb/> 1<lb/> Z=1.0<lb/> 2.5<lb/> 5.0<lb/> ∆ d (x)<lb/> ∆ s (x)<lb/> x / ξ 0<lb/> ∆(x)/ ∆<lb/> 0<lb/> (b)<lb/> Re[<lb/> ]<lb/> Im[<lb/> ]<lb/></figure>
+
+			<figure>FIG. 1. Spatial dependences of the pair potential at T s /T d = 0.2; (a) near the interface for the<lb/> angle θ between x-axis and crystal axis at Z = 3.0, and (b) near the (110) interface [θ = π/4] for<lb/> various height of barrier Z. T = 0.05T c .<lb/> 1<lb/> 2<lb/> 3<lb/> 0<lb/> 0.5<lb/> 1<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d (x)<lb/> / ∆<lb/> 0<lb/> (a)<lb/> Re[<lb/> ]<lb/> 0<lb/> 5<lb/> 10<lb/> -0.08<lb/> -0.04<lb/> 0<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d (x)<lb/> / ∆<lb/> 0<lb/> (b)<lb/> Im[<lb/> ]<lb/> 0<lb/> 5<lb/> 10<lb/> -0.02<lb/> 0<lb/> 0.02<lb/> 0.04<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> s (x)<lb/> / ∆<lb/> 0<lb/> (c)<lb/> Re[<lb/> ]<lb/> 0<lb/> 5<lb/> 10<lb/> 0.1<lb/> 0.2<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> s (x)<lb/> / ∆<lb/> 0<lb/> (d)<lb/> Im[<lb/> ]<lb/> FIG. 2.<lb/> Spatial dependence of the pair potentials near the interface with θ = π/6 and<lb/> T s /T d = 0.3; (a) real part of ∆ d (x), (b) imaginary part of ∆ d (x), (c) real part of ∆ s (x), and<lb/> (d) imaginary part of ∆ s (x). T = 0.02T c .<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> Z=1.0<lb/> 2.0<lb/> 3.0<lb/> 5.0<lb/> ∆ (0) / ∆<lb/> 0<lb/> T s / T d<lb/> s<lb/> (a)<lb/> Im[<lb/> ]<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> ∆ (0) / ∆<lb/> 0<lb/> T s / T d = 0.05<lb/> 0.2<lb/> 0.3<lb/> 0.5<lb/> 0.1<lb/> s<lb/> θ<lb/> π/4<lb/> 0<lb/> π/8<lb/> (b)<lb/> Im[<lb/> ]<lb/> -0.08<lb/> -0.04<lb/> 0<lb/> ∆ (0) / ∆<lb/> 0<lb/> T s / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> 0.2<lb/> d<lb/> θ<lb/> π/4<lb/> 0<lb/> π/8<lb/> (c)<lb/> Im[<lb/> ]<lb/> 0<lb/> 0.05<lb/> 0.1<lb/> ∆ (0) / ∆<lb/> 0<lb/> T s / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> 0.2<lb/> s<lb/> θ<lb/> π/4<lb/> 0<lb/> π/8<lb/> (d)<lb/> Re[<lb/> ]<lb/> FIG. 3. Subdominant components of the pair potentials at the at the interface. T = 0.05T c .<lb/> (a) θ = π/4. Z = 5.0 for (b), (c), and (d).<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 5<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> -1<lb/> 0<lb/> 1<lb/> 2<lb/> 4<lb/> 6<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 2<lb/> 4<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (d)<lb/> FIG. 4. The normalized tunneling conductance in the d x 2 −y 2 +is-wave state near the interface<lb/> at Z = 3.0. T s /T d = 0.05 for (a) and (c). T s /T d = 0.1 for (b) and (d). T = 0 for (a) and (b).<lb/> T /T c = 0.05 for (c) and (d).<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=1.0<lb/> 2.0<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=2.5<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=3.0<lb/> 5.0<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=1.0<lb/> 2.0<lb/> σ (eV)<lb/> T<lb/> (d)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=2.5<lb/> σ (eV)<lb/> T<lb/> (e)<lb/> -1<lb/> 0<lb/> 1<lb/> 1<lb/> 2<lb/> 3<lb/> Z=3.0<lb/> 5.0<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (f)<lb/> FIG. 5. Tunneling conductance for d x 2 −y 2 +is-wave state with T s /T d = 0.2 and θ = π/4 for<lb/> various Z; (a) [(d)] low barrier (Z = 1.0, 2.0) (b) [(e)] middle barrier (Z = 2.5), and (c) [(f)] high<lb/> barier (Z = 3.0, 5.0). T = 0 for (a), (b), and (c). T /T c = 0.05 for (d), (e), and (f).<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> T s / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> T s / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> T / T c = 0.10<lb/> 0.12<lb/> 0.13<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> FIG. 6. Tunneling conductance for d x 2 −y 2 +is-wave state. Z = and θ = π/4. (a) T = 0, (b)<lb/> T = 0.05T c for various magnitude of T s . (c) various temperature with T s /T d = 0.2.<lb/> 0<lb/> 2<lb/> 4<lb/> 0<lb/> 0.5<lb/> 1<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> ∆ d (x)<lb/> ∆ d xy (x)<lb/> x / ξ 0<lb/> ∆(x)/ ∆<lb/> 0<lb/> (a)<lb/> Re[<lb/> ]<lb/> Im[<lb/> ]<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 0<lb/> 0.5<lb/> 1<lb/> Z=1.0<lb/> 2.5<lb/> 5.0<lb/> ∆ d (x)<lb/> ∆ d xy (x)<lb/> x / ξ 0<lb/> ∆(x)/ ∆<lb/> 0<lb/> (b)<lb/> Re[<lb/> ]<lb/> Im[<lb/> ]<lb/> FIG. 7. Spatial dependences of the pair potential with T dxy /T d = 0.2. T = 0.05T c . (a) Z = 3.0<lb/> for various θ. (b) θ = 0 for various Z.<lb/> 0<lb/> 1<lb/> 2<lb/> 3<lb/> 0<lb/> 0.5<lb/> 1<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d (x)<lb/> / ∆<lb/> 0<lb/> (a)<lb/> Re[<lb/> ]<lb/> 0<lb/> 5<lb/> 10<lb/> -0.2<lb/> -0.1<lb/> 0<lb/> 0.1<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d (x)<lb/> / ∆<lb/> 0<lb/> (b)<lb/> Im[<lb/> ]<lb/> 0<lb/> 5<lb/> 10<lb/> -0.2<lb/> -0.1<lb/> 0<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d<lb/> xy (x)<lb/> / ∆<lb/> 0<lb/> (c)<lb/> Re[<lb/> ]<lb/> 0<lb/> 0<lb/> 0.1<lb/> 0.2<lb/> Z=2.0<lb/> 3.0<lb/> 5.0<lb/> x / ξ 0<lb/> ∆<lb/> d<lb/> xy<lb/> (x)<lb/> / ∆<lb/> 0<lb/> (d)<lb/> Im[<lb/> ]<lb/> FIG. 8.<lb/> Spatial dependence of the pair potentials near the interface with θ = π/6 and<lb/> T dxy /T d = 0.3; (a) real part of ∆ d (x), (b) imaginary part of ∆ d (x), (c) real part of ∆ dxy (x),<lb/> and (d) imaginary part of ∆ dxy (x). T = 0.02T c .<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> Z=1.0<lb/> 2.0<lb/> 3.0<lb/> 5.0<lb/> ∆ (0) / ∆<lb/> 0<lb/> d<lb/> xy<lb/> T d xy / T d<lb/> (a)<lb/> Im[<lb/> ]<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> ∆ (0) / ∆<lb/> 0<lb/> T d xy / T d = 0.05<lb/> 0.2<lb/> 0.3<lb/> 0.5<lb/> 0.1<lb/> (b)<lb/> 0<lb/> π/8<lb/> π/4<lb/> θ<lb/> d<lb/> xy<lb/> Im[<lb/> ]<lb/> -0.4<lb/> -0.2<lb/> 0<lb/> ∆ (0) / ∆<lb/> 0<lb/> T d xy / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> 0.2<lb/> (c)<lb/> 0<lb/> π/8<lb/> π/4<lb/> θ<lb/> d<lb/> Im[<lb/> ]<lb/> -0.4<lb/> -0.2<lb/> 0<lb/> ∆ (0) / ∆<lb/> 0<lb/> T d xy / T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> 0.2<lb/> (d)<lb/> 0<lb/> π/8<lb/> π/4<lb/> θ<lb/> d<lb/> xy<lb/> Re[<lb/> ]<lb/> FIG. 9. Subdominant components of the pair potentials at the interface. T = 0.05T c . (a)<lb/> θ = π/4. Z = 5.0 for (b), (c), and (d).<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 5<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> -1<lb/> 0<lb/> 1<lb/> 2<lb/> 4<lb/> 6<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 2<lb/> 4<lb/> θ = 0<lb/> π/6<lb/> π/4<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (d)<lb/> FIG. 10. The normalized tunneling conductance for d x 2 −y 2 +id xy -wave state with Z = 3.0. (a)<lb/> T dxy /T d = 0.1 and T = 0.0. (b) T dxy /T d = 0.2 and T = 0.0. (c) T dxy /T d = 0.1 and T = 0.05T c . (d)<lb/> T dxy /T d = 0.2 and T = 0.05T c .<lb/> -1<lb/> 1<lb/> 0<lb/> Z=1.0<lb/> 2.0<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=2.5<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=3.0<lb/> 5.0<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=1.0<lb/> 2.0<lb/> σ (eV)<lb/> T<lb/> (d)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=2.5<lb/> σ (eV)<lb/> T<lb/> (e)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> Z=3.0<lb/> 5.0<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (f)<lb/> FIG. 11. Tunneling conductance for d x 2 −y 2 +id xy -wave state with θ = π/4 and T dxy /T d = 0.2<lb/> for various Z. (a) [(d)] low barrier (Z = 1.0, 2.0) (b) [(e)] middle barrier (Z = 2.5), and (c) [(f)]<lb/> high barier (Z = 3.0, 5.0). T = 0 for (a), (b), and (c). T = 0.05T c for (d), (e), and (f).<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> T d xy /T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> σ (eV)<lb/> T<lb/> (a)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> T d xy /T d = 0.1<lb/> 0.3<lb/> 0.5<lb/> σ (eV)<lb/> T<lb/> (b)<lb/> -1<lb/> 0<lb/> 1<lb/> 0<lb/> 2<lb/> 4<lb/> T / T c = 0.06<lb/> 0.08<lb/> 0.10<lb/> eV/ ∆ 0<lb/> σ (eV)<lb/> T<lb/> (c)<lb/> FIG. 12. Tunneling conductance for d x 2 −y 2 +id xy -wave state with θ = π/4 and Z = 5. (a)<lb/> T = 0, (b) T = 0.05T c for various magnitude of T s . (c) various temperature with T s /T d = 0.2.</figure>
+
+
+	</text>
+</tei>
