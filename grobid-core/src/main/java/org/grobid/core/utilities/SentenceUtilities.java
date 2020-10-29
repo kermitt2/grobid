@@ -172,7 +172,7 @@ for(OffsetPosition position : finalSentencePositions) {
     System.out.println(text.substring(position.start, position.end));
 }*/
 
-            /*int pos = 0;
+            int pos = 0;
 
             // init sentence index
             int currentSentenceIndex = 0;
@@ -261,7 +261,7 @@ for(OffsetPosition position : finalSentencePositions) {
                 
                 if (currentSentenceIndex >= finalSentencePositions.size())
                     break;
-            }*/
+            }
 
             // other heuristics/post-corrections based on layout/style features of the tokens could be added
             // here, for instance non-breakable italic or bold chunks, or adding sentence split based on 
