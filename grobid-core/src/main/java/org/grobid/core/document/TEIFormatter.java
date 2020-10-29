@@ -1393,13 +1393,6 @@ public class TEIFormatter {
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
 
-    private boolean toSkipToken(String tok) {
-         if (tok.equals("-") || tok.equals(" ") || tok.equals("\n") || tok.equals("\t"))
-            return true;
-        else
-            return false;
-    }
-
     public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config) {
         // in order to avoid having a sentence boundary in the middle of a ref element 
         // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
@@ -1434,14 +1427,15 @@ public class TEIFormatter {
             }
         }
 
-        List<OffsetPosition> theSentences = SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions);
+        List<OffsetPosition> theSentences = 
+            SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens);
     
-        if (theSentences.size() == 0) {
+        /*if (theSentences.size() == 0) {
             // this should normally not happen, but it happens (depending on sentence splitter, usually the text 
             // is just a punctuation)
             // in this case we consider the current text as a unique sentence as fall back
             theSentences.add(new OffsetPosition(0, text.length()));
-        }
+        }*/
 
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
         List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
@@ -1454,17 +1448,16 @@ public class TEIFormatter {
 //System.out.println(text);            
 //System.out.println("theSentences.size(): " + theSentences.size());
             String sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
-            int sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
 
             for(int i=0; i<curParagraphTokens.size(); i++) {
                 LayoutToken token = curParagraphTokens.get(i);
                 if (token.getText() == null || token.getText().length() == 0) 
                     continue;
                 int newPos = sentenceChunk.indexOf(token.getText(), pos);
-                if ((newPos != -1) || toSkipToken(token.getText())) {
+                if ((newPos != -1) || SentenceUtilities.toSkipToken(token.getText())) {
                     // just move on
                     currentSentenceTokens.add(token);
-                    if (newPos != -1 && !toSkipToken(token.getText()))
+                    if (newPos != -1 && !SentenceUtilities.toSkipToken(token.getText()))
                         pos = newPos;
                 } else {
                     if (currentSentenceTokens.size() > 0) {
@@ -1473,7 +1466,6 @@ public class TEIFormatter {
                         if (currentSentenceIndex >= theSentences.size())
                             break;
                         sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
-                        sentenceLength = theSentences.get(currentSentenceIndex).end - theSentences.get(currentSentenceIndex).start;
                     }
                     currentSentenceTokens = new ArrayList<>();
                     currentSentenceTokens.add(token);
@@ -1541,7 +1533,7 @@ System.out.println(theSentences.toString());
                 }
             }
 
-            if (pos+posInSentence < theSentences.get(i).end) {
+            if (pos+posInSentence <= theSentences.get(i).end) {
                 sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
                 curParagraph.appendChild(sentenceElement);
             }
