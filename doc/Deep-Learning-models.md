@@ -111,7 +111,7 @@ implementation 'black.ninia:jep:3.9.1'
 
 So if another version of JEP is installed globally on the system, you should update the GROBID `build.gradle` to match this version.
 
-<span>5.</span> Run GROBID, this is the *but on my machine it works* moment: 
+<span>5.</span> Run GROBID, this is the "*but on my machine it works*" moment: 
 
 To run the grobid service, under `grobid/`:
 
@@ -137,11 +137,15 @@ In case you use an anaconda environment instead of a Virtualenv:
 
 - create the anaconda environment
 
-> conda create --name grobidDelft pip 
+```shell
+conda create --name grobidDelft pip 
+```
 
 - activate the environment: 
 
-> conda activate grobidDelft
+```shell
+conda activate grobidDelft
+```
 
 **NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
 
