@@ -47,7 +47,6 @@ tensorflow_gpu==1.12.0
 ```shell
 cd deflt/
 python3 grobidTagger.py citation tag 
-
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for all GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
@@ -56,35 +55,35 @@ If it works (you see some annotations in JSON format), you are sure to have a wo
 
 Indicate the path to the DeLFT install in the GROBID properties file `grobid.properties` (`grobid-home/config/grobid.properties`), 
 
-```
+```properties
 grobid.delft.install=../delft
 ```
 
 Indicate the GROBID model that should use a Deep Learning implementation in the same properties file, for instance if you wish to use a Deep Learning model for the citation model (it provides 1-2 additional points to the f-score for bibliographical reference recognition) use:
 
-```
+```properties
 grobid.crf.engine.citation=delft
 ```
 
 The default Deep Learning architecture will be `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Gloves embeddings). If you wish to use another architecture, you need to specify it in the same properties file, for instance:
 
-```
+```properties
 grobid.delft.architecture=scibert
 ```
 
-However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` models is shipped with GROBID, given the huge size of transformer models (1.3GB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under `grobid-home/models/**model**/`. 
+However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` models is shipped with GROBID, given the huge size of transformer models (1.3GB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under the specific model subdirectory `grobid-home/models/**model**/`. 
 
 
 If you are using a Python environment for the DeLFT installation, you can set the environment path in the properties file as well:
 
-```
+```properties
 grobid.delft.python.virtualEnv=/where/my/damned/python/virtualenv/is/
 ```
 
 Normally by setting the Python environment path in the properties file, you will not need to launch GROBID in the same activated environment. 
 
 
-<span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.5/site-packages/`):
+<span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`):
 
 ```shell
 git clone https://github.com/ninia/jep
@@ -92,19 +91,19 @@ cd jep
 sudo -E python3 setup.py build install
 ```
 
-the `sudo -E` should ensure that JEP is installed globally and that the right JVM version is used (`-E` indicates to preserve the environment variables, in particular the JAVA_HOME). Installing JEP gloablly is the only safe way we found to be sure that JEP will work correctly in the JVM.
+the `sudo -E` should ensure that JEP is installed globally and that the right JVM version is used (`-E` indicates to preserve the environment variables, in particular the `JAVA_HOME`). Installing JEP gloablly is the only safe way we found to be sure that JEP will work correctly in the JVM.
 
 (here we are unfortunately touching the limit of the messy Python package management system, an install of JEP in a virtualenv should isolate the library depending on the pip/python version, but the JVM might not be able to found and linked these local/isolated libraries, even when the JVM is launched in the virtual env. A global install of JEP should however always work. pip in a virtual env still uses global python libraries when installed, but when pip uses user-level local libraries (e.g. libraries installed under `~/.local/lib/python3.5/site-packages/`) in the virtual env, we did not find a reliable way to make JEP working in the JVM.)
 
-Copy the built JEP library to GROBID home lib - for instance on a Linux 64 machine with Python 3.5:
+Copy the built JEP library to the `grobid-home/lib/` area - for instance on a Linux 64 machine with Python 3.5:
 
 ```shell
 lopez@work:~/jep$ cp build/lib.linux-x86_64-3.5/jep/jep.cpython-35m-x86_64-linux-gnu.so ~/grobid/grobid-home/lib/lin-64/libjep.so
 ```
 
-This will ensure that the GROBID native JEP library matches the JEP version of the system/environment (i.e. same OS and the same python version) and the JEP jar (note GROBID contains a default `libjep.so` for python3.6 and JEP `3.9.1`, it will not work with other version of python and other version of JEP).
+This will ensure that the GROBID native JEP library matches the JEP version of the system/environment (i.e. same OS and the same python version) and the JEP jar version (GROBID contains a default `libjep.so` for python3.6 and JEP `3.9.1`, it will not work with other version of python and other version of JEP).
 
-Note: the installed version of JEP must be the same as given in `grobid/build.gradle`. The python version used in the system or environment must match the native JEP library. At the time this documentation is written, we are using JEP version `3.9.1`:
+Also note that the installed version of JEP must be the same as given in `grobid/build.gradle`. The python version used in the system or environment must match the native JEP library. At the time this documentation is written, we are using JEP version `3.9.1`:
 
 ```
 implementation 'black.ninia:jep:3.9.1'
@@ -129,7 +128,7 @@ INFO  [2020-10-30 23:04:07,756] org.grobid.core.jni.DeLFTModel: Loading DeLFT mo
 INFO  [2020-10-30 23:04:07,758] org.grobid.core.jni.JEPThreadPool: Creating JEP instance for thread 44
 ```
 
-It is then possible to [benchmark end-to-end](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, currently, due to the limited amount of training data, Deep Learning models significantly perform better than CRF for only two models (`citation` and `affiliation-address`), so there is no practical interest to use Deep Learning for the other models - see the [model-level evaluations](https://grobid.readthedocs.io/en/latest/Benchmarking-models/). This will of course certainly change in the future! 
+It is then possible to [benchmark end-to-end](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, note that, currently, due to the limited amount of training data, Deep Learning models perform significantly better than CRF only for two models (`citation` and `affiliation-address`), so there is likely no practical interest to use Deep Learning for the other models - see the [model-level evaluations](https://grobid.readthedocs.io/en/latest/Benchmarking-models/). This will of course certainly change in the future! 
 
 
 #### Anaconda 
@@ -144,26 +143,43 @@ In case you use an anaconda environment instead of a Virtualenv:
 
 > conda activate grobidDelft
 
-- **NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
+**NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
 
 Follow the steps described above, having the conda environment activated. Do not indicate a virtualEnv path in the GROBID properties file and launch the GROBID service with the conda environment activated. For conda too, it is preferable to install JEP globally as indicated. 
 
 ## Configuration
 
-GROBID allows running models in mixed mode. While selecting DeLFT, it is possible to select the preferred engine for each individual models, in the configuration the preferred engine for each individual model. 
-This practice comes very handy for model that are dealing with long sequences, where the Deep Learning will be limited to certain size. 
-For example, selecting DeLFT as main engine: 
+GROBID allows running models in mixed mode, i.e. to use DeLFT Deep Learning architectures for certain models, and Wapiti CRF for others. It is advised to select the preferred engine for each individual models in the GROBID properties file. 
+
+For example, selecting Wapiti CRF as main engine: 
+
+```properties
+grobid.crf.engine=crf
+```
+
+By default, all the models will then use Wapiti CRF as sequence labeling implementation. The following models (citation) will run with DeLFT `BidLSTM-CRF` by adding: 
+
+```properties
+grobid.crf.engine.citation=delft
+grobid.delft.architecture=BidLSTM_CRF
+```
+
+In contrast, selecting now DeLFT as main default engine: 
+
 ```properties
 grobid.crf.engine=delft
 ```
-The following models (segmentation, fulltext  and reference-segmenter) will run with wapiti by adding: 
+
+The following models (segmentation, fulltext and reference-segmenter) will run with Wapiti CRF by adding: 
+
 ```properties
 grobid.crf.engine.segmentation=wapiti
 grobid.crf.engine.fulltext=wapiti
 grobid.crf.engine.reference_segmenter=wapiti
 ```  
+
 **NOTE**: use the underscore for models whose name contains hyphens.
-  
+
 
 ## Troubleshooting
 
