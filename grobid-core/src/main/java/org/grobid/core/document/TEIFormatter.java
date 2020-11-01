@@ -1211,7 +1211,7 @@ public class TEIFormatter {
                 }
 
                 if (config.isGenerateTeiCoordinates("head") ) {
-                    String coords = getCoordsAttribute(BoundingBoxCalculator.calculate(cluster.concatTokens()), true);
+                    String coords = LayoutTokensUtil.getCoordsString(cluster.concatTokens());
                     if (coords != null) {
                         head.addAttribute(new Attribute("coords", coords));
                     }
