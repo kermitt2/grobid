@@ -1215,6 +1215,13 @@ public class TEIFormatter {
                     addXmlId(head, "_" + divID);
                 }
 
+                if (config.isGenerateTeiCoordinates("head") ) {
+                    String coords = LayoutTokensUtil.getCoordsString(cluster.concatTokens());
+                    if (coords != null) {
+                        head.addAttribute(new Attribute("coords", coords));
+                    }
+                }
+
                 curDiv.appendChild(head);
                 divResults.add(curDiv);
             } else if (clusterLabel.equals(TaggingLabels.EQUATION) || 
