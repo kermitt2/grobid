@@ -1,3 +1,5 @@
+citation model is BidLSTM-CRF
+
 -------------> GROBID failed on 2 PDF
 
 2000 PDF files processed in 1947.314 seconds, 0.973657 seconds per PDF file
