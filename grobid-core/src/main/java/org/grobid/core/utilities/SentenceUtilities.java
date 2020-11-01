@@ -110,10 +110,6 @@ public class SentenceUtilities {
             return null;
         try {
             List<OffsetPosition> sentencePositions = sdf.getInstance().detect(text);
-/*System.out.println(text); 
-for(OffsetPosition position : sentencePositions) {
-    System.out.println("detect: " + text.substring(position.start, position.end));
-}*/
 
             // to be sure, we sort the forbidden positions
             if (forbidden == null)
@@ -165,12 +161,6 @@ for(OffsetPosition position : sentencePositions) {
 
             if (textLayoutTokens == null || textLayoutTokens.size() == 0)
                 return finalSentencePositions;
-
-           
-/*System.out.println("before finalSentencePositions.size(): " + finalSentencePositions.size());
-for(OffsetPosition position : finalSentencePositions) {
-    System.out.println(text.substring(position.start, position.end));
-}*/
 
             int pos = 0;
 
@@ -225,8 +215,6 @@ for(OffsetPosition position : finalSentencePositions) {
                     }
 
                     if (pushedEnd > 0) {
-//System.out.println("found extra ref marker: " + text.substring(finalSentencePositions.get(currentSentenceIndex).end, 
-//    finalSentencePositions.get(currentSentenceIndex).end+pushedEnd+1));
 
                         OffsetPosition newPosition = finalSentencePositions.get(currentSentenceIndex);
                         newPosition.end += pushedEnd+1;
@@ -266,12 +254,6 @@ for(OffsetPosition position : finalSentencePositions) {
             // other heuristics/post-corrections based on layout/style features of the tokens could be added
             // here, for instance non-breakable italic or bold chunks, or adding sentence split based on 
             // spacing/indent
-
-/*System.out.println(text);            
-System.out.println("after finalSentencePositions.size(): " + finalSentencePositions.size());
-for(OffsetPosition position : finalSentencePositions) {
-    System.out.println(text.substring(position.start, position.end));
-}*/
 
             return finalSentencePositions;
         } catch (Exception e) {
