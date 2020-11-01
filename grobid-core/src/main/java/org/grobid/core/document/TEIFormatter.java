@@ -1195,11 +1195,6 @@ public class TEIFormatter {
             if (clusterLabel.equals(TaggingLabels.SECTION)) {
                 String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
                 curDiv = teiElement("div");
-                /*if (config.isGenerateTeiIds()) {
-                    String divID = KeyGen.getKey().substring(0, 7);
-                    addXmlId(curDiv, "_" + divID);
-                }*/
-                
                 Element head = teiElement("head");
                 // section numbers
                 org.grobid.core.utilities.Pair<String, String> numb = getSectionNumber(clusterContent);
@@ -1216,7 +1211,7 @@ public class TEIFormatter {
                 }
 
                 if (config.isGenerateTeiCoordinates("head") ) {
-                    String coords = LayoutTokensUtil.getCoordsString(cluster.concatTokens());
+                    String coords = getCoordsAttribute(BoundingBoxCalculator.calculate(cluster.concatTokens()), true);
                     if (coords != null) {
                         head.addAttribute(new Attribute("coords", coords));
                     }
