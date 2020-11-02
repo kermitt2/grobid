@@ -27,7 +27,7 @@
 
 			<p>Following the same formalism developed for the fermionic<lb/> sector <ref type="biblio">[15]</ref>, it is useful to define the corrected proper mo-<lb/>mentum q i ≡ a p i , q j = q n j , where n j is its direction unit<lb/> vector and a is the scale factor. The proper momentum p i<lb/> was defined in terms of the canonical conjugate momentum<lb/> P i = a(1 − ψ)p i of the the comoving coordinate x i . The co-<lb/>movil proper energy is ε ≡ a(p 2 + m 2 ) 1/2 . We also know that<lb/> the linear metric perturbations induce linear statistical pertur-<lb/>bations in the distribution function.<lb/></p>
 
-			<formula>f (x i , P j , τ) = f 0 (q)<lb/> 1 + Ψ(x i , q,<lb/> j , τ)<lb/> , (<label>2</label>)<lb/></formula>
+			<formula>f (x i , P j , τ) = f 0 (q)<lb/> 1 + Ψ(x i , q, n<lb/> j , τ)<lb/> , (<label>2</label>)<lb/></formula>
 
 			<p>where f 0 is the phase-space distribution function in an homo-<lb/>geneus background universe<lb/></p>
 
@@ -35,11 +35,11 @@
 
 			<p>and Ψ is related to the perturbation of the bosons temperature<lb/></p>
 
-			<formula>Ψ(x i , q,<lb/> j , τ) = −<lb/> ∂ ln f 0<lb/> ∂ ln q<lb/> (q)<lb/> δ T B<lb/> T B<lb/> (x i , q,<lb/> j , τ).<lb/> (<label>4</label>)<lb/></formula>
+			<formula>Ψ(x i , q, n<lb/> j , τ) = −<lb/> ∂ ln f 0<lb/> ∂ ln q<lb/> (q)<lb/> δ T B<lb/> T B<lb/> (x i , q, n<lb/> j , τ).<lb/> (<label>4</label>)<lb/></formula>
 
 			<p>The evolution of the ULBDM is described by the collision-<lb/>less Boltzmann (or Vlasov) equation, which in Fourier space<lb/> reads<lb/></p>
 
-			<formula>˙ Ψ − i<lb/> q<lb/> ε Ψ = −<lb/> ( k ·<lb/> ) ˙<lb/> ψ + i<lb/> ε q<lb/> ( k ·<lb/> )φ ∂ ln f 0<lb/> ∂ ln q<lb/> . (<label>5</label>)<lb/></formula>
+			<formula>Ψ − i<lb/> q<lb/> ε Ψ = −<lb/> ( k ·<lb/> ) ˙<lb/> ψ + i<lb/> ε q<lb/> ( k ·<lb/> )φ ∂ ln f 0<lb/> ∂ ln q<lb/> . (<label>5</label>)<lb/></formula>
 
 			<p>This equation gives the response of the phase-space distribu-<lb/>tion function to the metric perturbations.<lb/></p>
 

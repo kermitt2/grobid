@@ -480,7 +480,7 @@
 
 			<p>This monitoring tool enables the risk managers to run a certain number of studies, even<lb/> at the beginning of the monitoring period, in order ton anticipate the impact of future<lb/> risk deviations for example.<lb/></p> 
 
-			<p>Sensitivity study and stress testing. The parametric proxy that replicates the central<lb/> NAV can also be used to stress the marginal and joint sensitivities of the NAV to the<lb/> various risks embedded in our proxies. Even more interesting for the risk managers,<lb/> it is possible to assess a complete sensitivity study directly on the SR of the company,<lb/> which is very difficult to compute without using an approximation tool (see <ref type="figure">Figures 9<lb/> and 10</ref>).<lb/></p>
+			<p>Sensitivity study and stress testing. The parametric proxy that replicates the central<lb/> NAV can also be used to stress the marginal and joint sensitivities of the NAV to the<lb/> various risks embedded in our proxies. Even more interesting for the risk managers,<lb/> it is possible to assess a complete sensitivity study directly on the SR of the company,<lb/> which is very difficult to compute without using an approximation tool (see Figures <ref type="figure">9<lb/> and 10</ref>).<lb/></p>
 
 			<p>This sensitivity analyses needs no additional calculations to the proxies&apos; assess-<lb/>ment and enables the risk managers to compute as many &quot; approximate &quot; stress tests as<lb/> needed. In practice such a use of the tool enables to gain better insight about the impact<lb/> of each risk, taken either individually or jointly, on the SR.<lb/></p>
 
@@ -488,7 +488,7 @@
 
 			<figure>Figure 10: 2D solvency ratio sensitivities.<lb/></figure>
 
-			<p>Monitoring the marginal impacts of the risks and market anticipations. Using<lb/> our monitoring tool it is possible to trace the evolution of the SR risk after risk (only<lb/> for the monitored risks). <ref type="figure">Figures 11 and 12</ref> correspond to a ficticious evolution of the<lb/> risks implemented between the calibration date and a &quot; virtual &quot; monitoring date).<lb/></p> 
+			<p>Monitoring the marginal impacts of the risks and market anticipations. Using<lb/> our monitoring tool it is possible to trace the evolution of the SR risk after risk (only<lb/> for the monitored risks). Figures <ref type="figure">11 and 12</ref> correspond to a ficticious evolution of the<lb/> risks implemented between the calibration date and a &quot; virtual &quot; monitoring date).<lb/></p> 
 
 			<p>Such a study can be run at each monitoring date, or on fictitious scenarios (e.g. mar-<lb/>ket anticipations), in order to provide better insight about the SR movements through<lb/> time.<lb/></p> 
 
