@@ -139,6 +139,33 @@ public class SentenceUtilities {
                 finalSentencePositions.add(position);
             }
 
+            // adjust the forbidden spans - if they are present at the beginning of the sentence, move them to the
+            // end of the previous sentence
+
+            for (int index = 0; index < finalSentencePositions.size(); index++) {
+                OffsetPosition currentSentence = finalSentencePositions.get(index);
+                for (OffsetPosition forbiddenSpan : forbidden) {
+                    if (forbiddenSpan.start == currentSentence.start && index > 0) {
+                        // Adjust the previous sentence to include this span
+                        OffsetPosition previousSentence = finalSentencePositions.get(index - 1);
+                        previousSentence.end = forbiddenSpan.end;
+                        currentSentence.start = forbiddenSpan.end;
+                        while (text.charAt(currentSentence.start) == ' ') {
+                            if (currentSentence.start == text.length() - 1) {
+                                break;
+                            } else {
+                                currentSentence.start++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            finalSentencePositions = finalSentencePositions
+                .stream()
+                .filter(offsetPosition -> offsetPosition.end - offsetPosition.start > 0)
+                .collect(Collectors.toList());
+
             // as a heuristics for all implementations, because they clearly all fail for this case, we
             // attached to the right sentence the numerical bibliographical references markers expressed
             // in superscript just *after* the final sentence comma, e.g.
@@ -251,44 +278,18 @@ public class SentenceUtilities {
                     break;
             }
 
+
             // other heuristics/post-corrections based on layout/style features of the tokens could be added
             // here, for instance non-breakable italic or bold chunks, or adding sentence split based on
             // spacing/indent
 
             return finalSentencePositions;
 
-            // adjust the forbidden spans - if they are present at the beginning of the sentence, move them to the
-            // end of the previous sentence
-
-            for (int index = 0; index < finalSentencePositions.size(); index++) {
-                OffsetPosition currentSentence = finalSentencePositions.get(index);
-                for (OffsetPosition forbiddenSpan : forbidden) {
-                    if (forbiddenSpan.start == currentSentence.start && index > 0) {
-                        // Adjust the previous sentence to include this span
-                        OffsetPosition previousSentence = finalSentencePositions.get(index - 1);
-                        previousSentence.end = forbiddenSpan.end;
-                        currentSentence.start = forbiddenSpan.end;
-                        while (text.charAt(currentSentence.start) == ' ') {
-                            if (currentSentence.start == text.length() - 1) {
-                                break;
-                            } else {
-                                currentSentence.start++;
-                            }
-                        }
-                    }
-                }
-            }
-
-            List<OffsetPosition> cleanedSentencesPositions = finalSentencePositions
-                .stream()
-                .filter(offsetPosition -> offsetPosition.end - offsetPosition.start > 0)
-                .collect(Collectors.toList());
-
-            return cleanedSentencesPositions;
         } catch (Exception e) {
             LOGGER.warn("Cannot detect sentences. ", e);
             return null;
         }
+
     }
 
     public String getXml(String text, List<OffsetPosition> offsetPositions) {
