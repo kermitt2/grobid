@@ -1,0 +1,361 @@
+-------------> GROBID failed on 0 PDF
+
+1943 PDF files processed in 1608.67 seconds, 0.8279310344827586 seconds per PDF file
+
+Evaluation metrics produced in 1012.912 seconds
+
+======= Header metadata ======= 
+
+Evaluation on 1943 random PDF files out of 1942 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             82.32        15.99        15.75        15.87        1911   
+authors              98.21        91.79        91.6         91.7         1941   
+first_author         99.13        96.13        95.93        96.03        1941   
+keywords             93.3         66.61        58.12        62.07        1380   
+title                96.86        85.84        85.18        85.51        1943   
+
+all (micro avg.)     93.96        71.98        70.18        71.07        9116   
+all (macro avg.)     93.96        71.27        69.32        70.23        9116   
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             91.23        59.32        58.45        58.88        1911   
+authors              98.35        92.46        92.27        92.37        1941   
+first_author         99.17        96.33        96.14        96.24        1941   
+keywords             94.45        75.33        65.72        70.2         1380   
+title                98.54        93.83        93.1         93.46        1943   
+
+all (micro avg.)     96.35        84.26        82.16        83.2         9116   
+all (macro avg.)     96.35        83.46        81.14        82.23        9116   
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             96.92        87.04        85.77        86.4         1911   
+authors              99.03        95.66        95.47        95.56        1941   
+first_author         99.21        96.54        96.34        96.44        1941   
+keywords             95.74        85.22        74.35        79.41        1380   
+title                99.23        97.1         96.35        96.72        1943   
+
+all (micro avg.)     98.03        92.92        90.61        91.75        9116   
+all (macro avg.)     98.03        92.31        89.65        90.91        9116   
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             95.97        82.42        81.21        81.81        1911   
+authors              98.65        93.86        93.66        93.76        1941   
+first_author         99.13        96.13        95.93        96.03        1941   
+keywords             95.19        80.98        70.65        75.46        1380   
+title                99.06        96.32        95.57        95.94        1943   
+
+all (micro avg.)     97.6         90.72        88.46        89.58        9116   
+all (macro avg.)     97.6         89.94        87.41        88.6         9116   
+
+===== Instance-level results =====
+
+Total expected instances:       1943
+Total correct instances:        204 (strict) 
+Total correct instances:        805 (soft) 
+Total correct instances:        1265 (Levenshtein) 
+Total correct instances:        1154 (ObservedRatcliffObershelp) 
+
+Instance-level recall:  10.5    (strict) 
+Instance-level recall:  41.43   (soft) 
+Instance-level recall:  65.11   (Levenshtein) 
+Instance-level recall:  59.39   (RatcliffObershelp) 
+
+======= Citation metadata ======= 
+
+Evaluation on 1943 random PDF files out of 1942 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              97.73        84.48        74.75        79.32        85778  
+date                 98.98        93.27        81.45        86.96        87067  
+first_author         98.64        91           80.51        85.43        85778  
+inTitle              96.01        72.09        69.52        70.78        81007  
+issue                99.57        89.31        83.01        86.04        16635  
+page                 98.75        94.86        83.54        88.84        80501  
+title                97.05        78.97        72.14        75.4         80736  
+volume               99.25        95.46        87.09        91.08        80067  
+
+all (micro avg.)     98.25        87.08        78.56        82.6         597569 
+all (macro avg.)     98.25        87.43        79           82.98        597569 
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              97.83        85.17        75.36        79.97        85778  
+date                 98.98        93.27        81.45        86.96        87067  
+first_author         98.68        91.29        80.76        85.71        85778  
+inTitle              97.66        83.63        80.64        82.11        81007  
+issue                99.57        89.31        83.01        86.04        16635  
+page                 98.75        94.86        83.54        88.84        80501  
+title                98.56        90.1         82.31        86.03        80736  
+volume               99.25        95.46        87.09        91.08        80067  
+
+all (micro avg.)     98.66        90.41        81.57        85.76        597569 
+all (macro avg.)     98.66        90.39        81.77        85.84        597569 
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.48        89.88        79.54        84.39        85778  
+date                 98.98        93.27        81.45        86.96        87067  
+first_author         98.69        91.37        80.83        85.77        85778  
+inTitle              97.8         84.65        81.62        83.11        81007  
+issue                99.57        89.31        83.01        86.04        16635  
+page                 98.75        94.86        83.54        88.84        80501  
+title                98.99        93.26        85.19        89.04        80736  
+volume               99.25        95.46        87.09        91.08        80067  
+
+all (micro avg.)     98.81        91.67        82.7         86.95        597569 
+all (macro avg.)     98.81        91.51        82.78        86.91        597569 
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.12        87.29        77.24        81.96        85778  
+date                 98.98        93.27        81.45        86.96        87067  
+first_author         98.64        91.02        80.52        85.45        85778  
+inTitle              97.46        82.22        79.29        80.73        81007  
+issue                99.57        89.31        83.01        86.04        16635  
+page                 98.75        94.86        83.54        88.84        80501  
+title                98.85        92.28        84.3         88.11        80736  
+volume               99.25        95.46        87.09        91.08        80067  
+
+all (micro avg.)     98.7         90.77        81.89        86.1         597569 
+all (macro avg.)     98.7         90.71        82.05        86.15        597569 
+
+===== Instance-level results =====
+
+Total expected instances:               90125
+Total extracted instances:              88483
+Total correct instances:                38400 (strict) 
+Total correct instances:                49919 (soft) 
+Total correct instances:                54171 (Levenshtein) 
+Total correct instances:                51123 (RatcliffObershelp) 
+
+Instance-level precision:       43.4 (strict) 
+Instance-level precision:       56.42 (soft) 
+Instance-level precision:       61.22 (Levenshtein) 
+Instance-level precision:       57.78 (RatcliffObershelp) 
+
+Instance-level recall:  42.61   (strict) 
+Instance-level recall:  55.39   (soft) 
+Instance-level recall:  60.11   (Levenshtein) 
+Instance-level recall:  56.72   (RatcliffObershelp) 
+
+Instance-level f-score: 43 (strict) 
+Instance-level f-score: 55.9 (soft) 
+Instance-level f-score: 60.66 (Levenshtein) 
+Instance-level f-score: 57.25 (RatcliffObershelp) 
+
+Matching 1 :    64892
+
+Matching 2 :    4695
+
+Matching 3 :    2750
+
+Matching 4 :    681
+
+Total matches : 73018
+
+======= Citation context resolution ======= 
+
+Total expected references:       90125 - 46.38 references per article
+Total predicted references:      88483 - 45.54 references per article
+
+Total expected citation contexts:        139835 - 71.97 citation contexts per article
+Total predicted citation contexts:       120224 - 61.88 citation contexts per article
+
+Total correct predicted citation contexts:       97958 - 50.42 citation contexts per article
+Total wrong predicted citation contexts:         22266 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     81.48
+Recall citation contexts:        70.05
+fscore citation contexts:        75.34
+
+======= Fulltext structures ======= 
+
+Evaluation on 1943 random PDF files out of 1942 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+figure_title         96.59        27.72        21.11        23.97        7058   
+reference_citation   59.01        57.43        58.93        58.17        134196 
+reference_figure     94.98        63.83        64.41        64.12        19330  
+reference_table      99.13        83.12        84.17        83.64        7327   
+section_title        94.62        76.15        66.91        71.23        27619  
+table_title          98.84        57.67        55.52        56.58        3784   
+
+all (micro avg.)     90.53        60.52        60.09        60.3         199314 
+all (macro avg.)     90.53        60.99        58.51        59.62        199314 
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+figure_title         98.37        75.2         57.27        65.02        7058   
+reference_citation   61.68        61.57        63.18        62.37        134196 
+reference_figure     94.86        64.35        64.94        64.64        19330  
+reference_table      99.1         83.26        84.3         83.78        7327   
+section_title        95.32        81           71.17        75.77        27619  
+table_title          99.4         80.07        77.09        78.55        3784   
+
+all (micro avg.)     91.46        65.75        65.29        65.52        199314 
+all (macro avg.)     91.46        74.24        69.66        71.69        199314 
+
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.TableRejectionCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  CANNOT_PARSE_LABEL_TO_INT:          133
+  CONTENT_SIZE_TOO_SMALL:             85
+  CONTENT_WIDTH_TOO_SMALL:            14
+  EMPTY_LABEL_OR_HEADER_OR_CONTENT:   2574
+  HEADER_NOT_STARTS_WITH_TABLE_WORD:  144
+  HEADER_NOT_CONSECUTIVE:             945
+  HEADER_AND_CONTENT_DIFFERENT_PAGES: 3
+  HEADER_AND_CONTENT_INTERSECT:       702
+  FEW_TOKENS_IN_HEADER:               6
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  UNMATCHED_REF_MARKERS:                    7664
+  MATCHED_REF_MARKERS_AFTER_POST_FILTERING: 2721
+  STYLE_AUTHORS:                            37141
+  STYLE_NUMBERED:                           53141
+  MANY_CANDIDATES:                          4059
+  MANY_CANDIDATES_AFTER_POST_FILTERING:     514
+  NO_CANDIDATES:                            16218
+  INPUT_REF_STRINGS_CNT:                    92532
+  MATCHED_REF_MARKERS:                      120224
+  NO_CANDIDATES_AFTER_POST_FILTERING:       564
+  STYLE_OTHER:                              2250
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  HEADER_DOCTYPE:           1930
+  CITATION_TITLE:           83777
+  HEADER_DATE:              1077
+  HEADER_KEYWORD:           1282
+  NAME-HEADER_MIDDLENAME:   6003
+  TABLE_FIGDESC:            4161
+  NAME-HEADER_SURNAME:      14034
+  NAME-CITATION_OTHER:      427298
+  CITATION_BOOKTITLE:       3904
+  HEADER_FUNDING:           76
+  HEADER_ADDRESS:           6065
+  HEADER_AFFILIATION:       6224
+  CITATION_NOTE:            11077
+  FULLTEXT_CITATION_MARKER: 181631
+  TABLE_NOTE:               2730
+  HEADER_EMAIL:             2166
+  FULLTEXT_TABLE_MARKER:    14730
+  CITATION_WEB:             1285
+  HEADER_GROUP:             1
+  TABLE_LABEL:              3593
+  FULLTEXT_SECTION:         51150
+  NAME-HEADER_FORENAME:     14157
+  TABLE_CONTENT:            5699
+  CITATION_COLLABORATION:   669
+  CITATION_ISSUE:           16247
+  HEADER_MEETING:           24
+  HEADER_EDITOR:            107
+  CITATION_SERIES:          135
+  CITATION_JOURNAL:         77084
+  NAME-CITATION_SURNAME:    325018
+  TABLE_FIGURE_HEAD:        5044
+  FULLTEXT_EQUATION_MARKER: 1507
+  CITATION_OTHER:           439202
+  FULLTEXT_FIGURE_MARKER:   38903
+  HEADER_TITLE:             2142
+  CITATION_TECH:            228
+  FIGURE_CONTENT:           2481
+  FIGURE_LABEL:             5599
+  FULLTEXT_EQUATION_LABEL:  1866
+  HEADER_OTHER:             11688
+  FULLTEXT_EQUATION:        3958
+  CITATION_DATE:            85494
+  CITATION_AUTHOR:          85393
+  FULLTEXT_FIGURE:          13552
+  FULLTEXT_TABLE:           12190
+  CITATION_EDITOR:          2394
+  FULLTEXT_OTHER:           139
+  HEADER_SUBMISSION:        1214
+  NAME-HEADER_OTHER:        17411
+  FIGURE_FIGDESC:           6494
+  NAME-HEADER_SUFFIX:       14
+  CITATION_VOLUME:          74885
+  CITATION_LOCATION:        7069
+  NAME-CITATION_SUFFIX:     559
+  NAME-HEADER_TITLE:        760
+  HEADER_WEB:               344
+  CITATION_INSTITUTION:     960
+  HEADER_ABSTRACT:          2569
+  HEADER_REFERENCE:         2816
+  CITATION_PAGES:           78911
+  HEADER_AUTHOR:            4116
+  NAME-HEADER_MARKER:       7908
+  NAME-CITATION_FORENAME:   313093
+  CITATION_PUBLISHER:       4450
+  HEADER_PUBNUM:            1642
+  NAME-CITATION_MIDDLENAME: 64696
+  CITATION_PUBNUM:          3140
+  HEADER_COPYRIGHT:         1874
+  FULLTEXT_PARAGRAPH:       378724
+  FIGURE_FIGURE_HEAD:       9379
+====================================================================================
+====================================================================================
+
