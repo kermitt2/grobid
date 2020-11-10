@@ -3,13 +3,13 @@ package org.grobid.core.utilities;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.SentenceDetectorFactory;
 import org.grobid.core.layout.LayoutToken;
-
-import java.util.*;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Class for using sentence segmentation (singleton). The actual sentence segmentation implementation
@@ -59,7 +59,7 @@ public class SentenceUtilities {
     }
 
     /**
-     * Basic run for sentence identification, return the offset positions of the 
+     * Basic run for sentence identification, return the offset positions of the
      * identified sentences
      *
      * @param text text to segment into sentences
@@ -77,7 +77,7 @@ public class SentenceUtilities {
     }
 
     /**
-     * Run for sentence identification with some forbidden span constraints, return the offset positions of the 
+     * Run for sentence identification with some forbidden span constraints, return the offset positions of the
      * identified sentences without sentence boundaries within a forbidden span (typically a reference marker
      * and we don't want a sentence end/start in the middle of that).
      *
@@ -123,9 +123,9 @@ public class SentenceUtilities {
                 OffsetPosition position = sentencePositions.get(j);
                 for(int i=forbiddenIndex; i < forbidden.size(); i++) {
                     OffsetPosition forbiddenPos = forbidden.get(i);
-                    if (forbiddenPos.end < position.end) 
+                    if (forbiddenPos.end < position.end)
                         continue;
-                    if (forbiddenPos.start > position.end) 
+                    if (forbiddenPos.start > position.end)
                         break;
                     while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
                         if (j+1 < sentencePositions.size()) {
