@@ -18,7 +18,7 @@
 
 			<p>The Rietveld analysis of the powder x-ray diffractogram of the polycrystalline sample of<lb/> DyNi showed that this compound is single phase crystallizing in the orthorhombic FeB<lb/> structure (space group Pnma, no. 62) <ref type="biblio">11-12<lb/></ref> .</p>
 
-		<p>Figure <ref type="figure">1</ref> shows the observed and refined<lb/> powder x-ray diffractogram of DyNi. The lattice parameters obtained from the refinement<lb/> are<lb/> 3±0.001 Å, b<lb/> 3±0.001 Å and c = 5.439±0.001 Å which compare well<lb/> with the reported values<lb/> 02<lb/> .<lb/> 7<lb/> =<lb/> a<lb/> 17<lb/> . =<lb/> <ref type="biblio">11</ref> . Both Dy and Ni occupy the 4c site of the unit cell. The<lb/> structure is made up of trigonal prisms with Dy at the corners and Ni at the center.<lb/></p>
+			<p>Figure <ref type="figure">1</ref> shows the observed and refined<lb/> powder x-ray diffractogram of DyNi. The lattice parameters obtained from the refinement<lb/> are<lb/> 3±0.001 Å, b<lb/> 3±0.001 Å and c = 5.439±0.001 Å which compare well<lb/> with the reported values<lb/> 02<lb/> .<lb/> 7<lb/> =<lb/> a<lb/> 17<lb/> .<lb/> 4<lb/> =<lb/> <ref type="biblio">11</ref> . Both Dy and Ni occupy the 4c site of the unit cell. The<lb/> structure is made up of trigonal prisms with Dy at the corners and Ni at the center.<lb/></p>
 
 		<figure>Fig 1. Observed and fitted powder x-ray diffraction patterns of DyNi. The difference plot<lb/> between the experimental and calculated patterns is given at the bottom of the figure.<lb/></figure>
 
@@ -48,8 +48,10 @@
 
 			<p>Figure <ref type="figure">5</ref> shows the variation of ∆<lb/> for DyNi as a function of temperature close to T<lb/> M<lb/> S<lb/> C ,<lb/> for ∆H = 20 kOe, 50 kOe and 60 kOe. As can be seen from the figure, the maximum<lb/> entropy change of about 19 JKg -1 K -1 is obtained at the transition temperature for ∆H =<lb/> 60 kOe. Moreover, the magnitude of<lb/> is considerably large over a wide temperature<lb/> range near T<lb/></p>
 
-		<figure>M<lb/> S<lb/> ∆<lb/></figure> <p>C .<lb/></p>
-			<!-- the stream is scrambled here -->
+		<!-- the stream is not in the correct order here -->
+		<figure>M<lb/> S<lb/> ∆<lb/></figure>
+
+		<p>C .<lb/></p>
 
 			<figure>Fig. 5. Variation of the isothermal magnetic entropy change ( ∆ ) as a function of<lb/> temperature (T) in DyNi for ∆H=40 kOe and 60 kOe.<lb/> M<lb/> S<lb/></figure>
 
