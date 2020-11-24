@@ -7,11 +7,18 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-	
+
 import java.io.*;
 import java.util.*;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import org.apache.commons.io.FileUtils;
 
@@ -28,9 +35,8 @@ import scala.Option;
 
 /**
  * Evaluation against native XML documents. This is an end-to-end evaluation involving
- * complete document processing, and therefore a complete set of CRF models.
+ * complete document processing, and therefore a complete set of sequence labelling models.
  *
- * @author Patrice Lopez
  */
 public class EndToEndEvaluation {
     private static String xmlInputPath = null;
@@ -61,6 +67,53 @@ public class EndToEndEvaluation {
 		
 	// the type of evaluation XML data - NLM or TEI (obtained via Pub2TEI)
 	private String inputType = null;
+
+	private class GrobidEndToEndTask implements Callable<Boolean> { 
+        private File pdfFile;
+
+        public GrobidEndToEndTask(File pdfFile) { 
+            this.pdfFile = pdfFile;
+        }
+
+        @Override
+        public Boolean call() { 
+        	boolean success = true;
+        	Engine engine = null;
+            try {
+            	engine = Engine.getEngine(true);
+				GrobidAnalysisConfig config =
+                    GrobidAnalysisConfig.builder()
+                            .consolidateHeader(1)
+                            .consolidateCitations(0)
+                            .withPreprocessImages(true)
+//                            .withSentenceSegmentation(true)
+                            .build();
+				String tei = engine.fullTextToTEI(this.pdfFile, config);
+				// write the result in the same directory
+				File resultTEI = new File(pdfFile.getParent() + File.separator
+					+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
+				FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
+
+            } catch (NoSuchElementException nseExp) {
+            	System.out.println("Could not get an engine from the pool within configured time.");
+            	System.out.println("Could not process: " + this.pdfFile.getPath());
+        	} catch(IOException e) {
+                System.out.println("DeLFT model labelling failed for file " + this.pdfFile.getPath());
+                e.printStackTrace();
+            } catch (Exception e) {
+				System.out.println("Error when processing: " + this.pdfFile.getPath());
+				e.printStackTrace();
+				success = false;
+			} finally {
+            	if (engine != null) {
+                	GrobidPoolingFactory.returnEngine(engine);
+            	}
+        	}
+
+            return new Boolean(success);
+        } 
+    } 
+
 
 	public EndToEndEvaluation(String path, String inType) {
 		this.xmlInputPath = path;	
@@ -122,6 +175,10 @@ public class EndToEndEvaluation {
 			int n = 0;
 			long start = System.currentTimeMillis();
 			int fails = 0;
+
+			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
+			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+
             for (File dir : refFiles) {
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
@@ -140,35 +197,32 @@ public class EndToEndEvaluation {
 				}
 
 	            final File pdfFile = refFiles2[0];
-				
-				// run Grobid full text and write the TEI result in the directory
-				try {
-					System.out.println(n + " - " + pdfFile.getPath());
-					GrobidAnalysisConfig config =
-                        GrobidAnalysisConfig.builder()
-                                .consolidateHeader(1)
-                                .consolidateCitations(0)
-                                .withPreprocessImages(true)
-                                .build();
-					String tei = engine.fullTextToTEI(pdfFile, config);
-					// write the result in the same directory
-					File resultTEI = new File(dir.getPath() + File.separator
-						+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
-					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
-				} 
-				catch (Exception e) {
-					System.out.println("Error when processing: " + pdfFile.getPath());
-					e.printStackTrace();
-					fails++;
-				}
+				Future<Boolean> future = executor.submit(new GrobidEndToEndTask(pdfFile));
+	            results.add(future);
 				n++;
 			}
 
-			System.out.println("GROBID failed on " + fails + " PDF");
+			//executor.awaitTermination(5, TimeUnit.SECONDS);
+
+			for(Future<Boolean> result : results) { 
+				try {
+					Boolean success = result.get();
+					if (!success)
+						fails++;
+				} catch (InterruptedException e) {
+                	e.printStackTrace();
+            	} catch (ExecutionException e) {
+                	e.printStackTrace();
+            	}
+			}
+
+			executor.shutdown();
+
+			System.out.println("\n-------------> GROBID failed on " + fails + " PDF\n");
 			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
 
 			System.out.println(n + " PDF files processed in " + 
-				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file\n");
 		}
 		
 		// evaluation of the run
@@ -294,6 +348,31 @@ public class EndToEndEvaluation {
 		int match3 = 0;
 		int match4 = 0;
 		
+		String profile = "JATS";
+		if (xmlInputPath.indexOf("PMC") != -1) {
+			// for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
+			profile =  "PMC";
+			
+			citationsLabels.remove("doi");
+			citationsLabels.remove("pmid");
+			citationsLabels.remove("pmcid");
+
+			List<FieldSpecification> toRemove = new ArrayList<>();
+			if (citationsFields != null && citationsFields.size() > 0) {
+				for(FieldSpecification citationsField : citationsFields) {
+					if (citationsField.fieldName.equals("doi") || 
+						citationsField.fieldName.equals("pmid") || 
+						citationsField.fieldName.equals("pmcid"))
+					toRemove.add(citationsField);
+				}
+			}
+			if (toRemove.size() > 0) {
+				for(FieldSpecification citationsField : toRemove) {
+					citationsFields.remove(citationsField);
+				}
+			}
+		}
+
         File input = new File(xmlInputPath);
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
@@ -315,6 +394,9 @@ public class EndToEndEvaluation {
 		Random rand = new Random();
 		int nbFile = 0;
         for (File dir : refFiles) {
+        	if (!dir.isDirectory())
+        		continue;
+
 			// file ratio filtering
 			double random = rand.nextDouble();
 			if (random > fileRatio) {
@@ -324,17 +406,29 @@ public class EndToEndEvaluation {
 			// get the gold file in the directory
             File[] refFiles2 = dir.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".nxml") | name.endsWith(".pub2tei.tei.xml");
+                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
                 }
             });
 
 			if (refFiles2 == null || refFiles2.length == 0) {
-            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-			    continue;
+				// in the case of a bioRxiv NLM/JATS file, we have an .xml extension
+				refFiles2 = dir.listFiles(new FilenameFilter() {
+	                public boolean accept(File dir, String name) {
+	                    return name.endsWith(".xml") && !name.endsWith(".tei.xml");
+	                }
+	            });
+
+				if (refFiles2 == null || refFiles2.length == 0) {
+	            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
+				    continue;
+				}
 			}
 
 			if (refFiles2.length != 1) {
             	System.out.println("warning: more than one evaluation (gold) XML data files found under " + dir.getPath());
+            	for(int m=0; m<refFiles2.length;m++) {
+            		System.out.println(refFiles2[m].getPath());
+            	}
 			    System.out.println("processing only the first one...");
 			}
 			
@@ -352,7 +446,7 @@ public class EndToEndEvaluation {
 					}
 				}); // swap in a dummy resolver to neutralise the online DTD
 				Document gold = docBuilder.parse(goldFile);
-
+//System.out.println(goldFile.getPath());
 				// get the results of the evaluated tool for this file
 				if (runType == this.GROBID) {
 					// results are produced in a TEI file
@@ -373,24 +467,6 @@ public class EndToEndEvaluation {
 					}
 
 					File teiFile = refFiles3[0];
-				
-					refFiles3 = dir.listFiles(new FilenameFilter() {
-		                public boolean accept(File dir, String name) {
-		                    return name.endsWith(".nxml") || name.endsWith(".pub2tei.tei.xml");
-		                }
-		            });
-
-		            if (refFiles3 == null) {
-		            	System.out.println("warning: no evaluation (gold) XML data file found under " + dir.getPath());
-					    continue;
-					}
-
-					if (refFiles3.length != 1) {
-		            	System.out.println("warning: more than one evaluation (gold) XML data file found under " + 
-		            		dir.getPath());
-					    System.out.println("processing only the first one...");
-					}
-
 			        Document tei = docBuilder.parse(teiFile);
 
 					XPathFactory xpf = XPathFactory.newInstance();
@@ -470,13 +546,18 @@ public class EndToEndEvaluation {
 									List<String> goldResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											goldResults.add(content);
+										}
 									}
 									
 									if (goldResults.size() > 0) {
 										fieldsValues.put(fieldName, goldResults);
-//System.out.println("gold / " + fieldName + " / " + goldResults.toString());
+//if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid"))
+//	System.out.println("gold / " + fieldName + " / " + goldResults.toString());
 										if (!fieldName.equals("id")) {
 	                                        strictStats.incrementExpected(fieldName);
 	                                        softStats.incrementExpected(fieldName);
@@ -640,11 +721,18 @@ for(String sign : goldCitationSignaturesLevel4)
 									List<String> grobidResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											grobidResults.add(content);
+										}
 									}
-									if (grobidResults.size() > 0)
+									if (grobidResults.size() > 0) {
+//if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid"))
+//	System.out.println("grobid / " + fieldName + " / " + grobidResults.toString());
 										fieldsValues.put(fieldName, grobidResults);
+									}
 								}
 								p++;
 							}
@@ -718,6 +806,27 @@ for(String sign : goldCitationSignaturesLevel4)
 							if ((idResults != null) && (idResults.size() > 0))
 								grobidId = idResults.get(0);
 							grobidId = basicNormalization(grobidId);
+
+							// DOI
+							List<String> doiResults = grobidCitation.get("doi");
+							String grobidDOI = "";
+							if ((doiResults != null) && (doiResults.size() > 0))
+								grobidDOI = doiResults.get(0);
+							grobidDOI = identifierNormalization(grobidDOI);
+
+							// PMID
+							List<String> pmidResults = grobidCitation.get("pmid");
+							String grobidPMID = "";
+							if ((pmidResults != null) && (pmidResults.size() > 0))
+								grobidPMID = pmidResults.get(0);
+							grobidPMID = identifierNormalization(grobidPMID);
+
+							// PMCID
+							List<String> pmcidResults = grobidCitation.get("pmcid");
+							String grobidPMCID = "";
+							if ((pmcidResults != null) && (pmcidResults.size() > 0))
+								grobidPMCID = pmcidResults.get(0);
+							grobidPMCID = identifierNormalization(grobidPMCID);
 
 							String grobidSignature1 = null;								
 							if ( (grobidTitleSoft.length()>0) && (grobidDate.length()>0) ) {
@@ -1086,7 +1195,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 							totalCorrectObservedCitations += nbCorrect;
 							totalWrongObservedCitations += nbWrong;
-						}
+						}	
+
+						// cleaning
+						strictStats.removeLabel("id");
+        				softStats.removeLabel("id");
+        				levenshteinStats.removeLabel("id");;
+        				ratcliffObershelpStats.removeLabel("id");
+
 					} else if (sectionType == this.HEADER) {
 						// HEADER structures 
 						int p = 0;
@@ -1148,7 +1264,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								for(String res : goldResults)
 									goldResult += " " + res;
 								// basic normalisation
-								goldResult = basicNormalization(goldResult);								
+								goldResult = basicNormalization(goldResult);	
+								if (fieldName.equals("abstract")) {
+									// some additional cleaning for abstract is required, because PMC and bioRxiv
+									// tends to put the useless abstract title "Abstract" together with the abstract
+									if (goldResult.toLowerCase().startsWith("abstract") || goldResult.toLowerCase().startsWith("summary")) {
+										goldResult = goldResult.replaceAll("(?i)^(abstract)|(summary)(\\n)?( )?", "");
+									}
+								}	
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
@@ -1160,20 +1283,28 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								String grobidResult = "";
 								if (g < grobidResults.size())
 									grobidResult = grobidResults.get(g);
+
+								if (goldResult.trim().length() == 0 && grobidResult.trim().length() == 0) {
+									g++;
+									continue;
+								}
+
 								// nb expected results
-								if (goldResult.length() > 0) {
+								if (goldResult.trim().length() > 0) {
                                     strictStats.incrementExpected(fieldName);
                                     softStats.incrementExpected(fieldName);
                                     levenshteinStats.incrementExpected(fieldName);
                                     ratcliffObershelpStats.incrementExpected(fieldName);
 								}
-//System.out.println("gold:   " + goldResult);
-//System.out.println("grobid: " + grobidResult);		
+	
 								// strict
-								if ((goldResult.length() > 0) && goldResult.equals(grobidResult)) {
+								if ((goldResult.trim().length() > 0) && goldResult.equals(grobidResult)) {
                                     strictStats.incrementObserved(fieldName);
 								}
 								else {
+/*System.out.println("gold:  " + fieldName);
+System.out.println("gold:   " + goldResult);
+System.out.println("grobid: " + grobidResult);*/	
 									if (grobidResult.length() > 0) {
                                         strictStats.incrementFalsePositive(fieldName);
 										allGoodStrict = false;
@@ -1191,12 +1322,17 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldResultSoft = removeFullPunct(goldResult);
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
-//System.out.println("gold:   " + goldResultSoft);
-//System.out.println("grobid: " + grobidResultSoft);								
-								if ((goldResult.length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
+								
+								if ((goldResult.trim().length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
                                     softStats.incrementObserved(fieldName);
 								}
 								else {
+//System.out.println("\n" + teiFile.getPath());
+//System.out.println("gold:" + fieldName);								
+//System.out.println("gold:   " + goldResultSoft);
+//System.out.println("grobid: " + grobidResultSoft);
+//System.out.println("gold:" + goldResult);
+//System.out.println("grobid:" + grobidResult);
 									if (grobidResultSoft.length() > 0) {
                                         softStats.incrementFalsePositive(fieldName);
 										allGoodSoft = false;
@@ -1650,8 +1786,32 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
-		string = string.replaceAll("\t", " ");
+		string = string.replace("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
+		string = string.replace("&apos;", "'");
+		return string.trim().toLowerCase();
+	}
+
+	private static String identifierNormalization(String string) {
+		string = basicNormalization(string);
+		if (string.startsWith("pmcpmc")) {
+			string = string.replace("pmcpmc", "");
+		}
+		string = string.replace("pmc", "");
+		if (string.startsWith("doi")) {
+			string = string.replace("doi", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
+		if (string.startsWith("pmid")) {
+			string = string.replace("pmid", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
 		return string.trim().toLowerCase();
 	}
 	

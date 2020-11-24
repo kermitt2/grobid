@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1A276C42D47BD849B5786969218F5211C2C65A02"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Infancy<lb/> The first year of life.<lb/>
+
+	<docTitle>
+	<titlePart>The impact of differential antiviral<lb/> immunity in children and adults<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew J. Prendergast 1 , Paul Klenerman 2 and Philip J. R. Goulder 3<lb/></docAuthor>
+	</byline>
+
+	Abstract |
+	<div type="abstract">The course of immune maturation has evolved to favour survival at each<lb/> stage of development in early life. Fetal and neonatal immune adaptations facilitate<lb/> intrauterine survival and provide early postnatal protection against extracellular<lb/> pathogens, but they leave infants susceptible to intracellular pathogens such as viruses<lb/> that are acquired perinatally. This Review focuses on three such pathogens -HIV,<lb/> hepatitis B virus and cytomegalovirus -and relates the differential impact of these<lb/> infections in infants and adults to the antiviral immunity that is generated at different<lb/> ages. A better understanding of age-specific antiviral immunity may inform the<lb/> development of integrated prevention, treatment and vaccine strategies to minimize<lb/> the global disease burden resulting from these infections.</div>
+
+	<byline>
+	<affiliation>1<lb/> Centre for Paediatrics,<lb/> Blizard Institute, Queen Mary<lb/> University of London,</affiliation>
+	</byline>
+
+	<address>Newark<lb/> Street, London E1 2AT, UK.</address>
+
+	<byline>
+	<affiliation>2<lb/> NIHR Biomedical Research<lb/> Centre and Nuffield<lb/> Department of Medicine,<lb/> University of Oxford,<lb/></affiliation>
+	</byline>
+
+	<address>Peter Medawar Building,<lb/> South Parks Road,<lb/> Oxford OX1 3SY, UK.</address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Paediatrics,<lb/> University of Oxford,<lb/></affiliation>
+	</byline>
+
+	<address>Peter Medawar Building,<lb/> South Parks Road,<lb/> Oxford OX1 3SY, UK.<lb/></address>
+
+	Correspondence to P.J.R.G.<lb/> 
+	e-mail: 
+	<email>philip.goulder@<lb/> paediatrics.ox.ac.uk<lb/></email>
+
+	<idno>doi:10.1038/nri3277<lb/></idno>
+
+	<note type="doctype">R E V I E W S<lb/></note>
+	
+	<page>636</page> 
+
+	<reference>| SEPTEMBER 2012 | VOLUME 12<lb/></reference>
+	www.nature.com/reviews/immunol<lb/>
+
+	<note type="copyright">© 2012 Macmillan Publishers Limited. All rights reserved</note>
+
+		</front>
+	</text>
+</tei>

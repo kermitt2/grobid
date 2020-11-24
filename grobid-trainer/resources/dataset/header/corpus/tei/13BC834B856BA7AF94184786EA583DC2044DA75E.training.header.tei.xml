@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="13BC834B856BA7AF94184786EA583DC2044DA75E"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>FUNDAMENTAL AND APPLIED TOXICOLOGY 9, 367-379 ( 1987)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Methyl Isocyanate: A Review of Health Effects Research since Bhopal<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>JOHN R. BUCHER<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Toxicology Program, National Institute of Environmental Health Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>Research Triangle Park, North Carolina 27709<lb/></address>
+
+	<page>367<lb/> </page>
+
+	0272-0590/87 $3.00<lb/>
+	
+	<note type="copyright">Copyright © 1987 by the Society of Toxicology.<lb/> All rights of reproduction in any form reserved.</note>
+
+		</front>
+	</text>
+</tei>

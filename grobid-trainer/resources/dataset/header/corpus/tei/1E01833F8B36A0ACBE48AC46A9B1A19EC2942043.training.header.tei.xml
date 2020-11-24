@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1E01833F8B36A0ACBE48AC46A9B1A19EC2942043"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">A R T I C L E S<lb/></note>
+
+	<reference>NATURE CELL BIOLOGY VOLUME 7 | NUMBER 5 | MAY 2005 493<lb/></reference>
+
+	<docTitle>
+	<titlePart>Suppression of HIV-1 infection by a small molecule<lb/> inhibitor of the ATM kinase<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Alan Lau 1 , Karra M. Swinbank 2 , Parvin S. Ahmed 2 , Debra L. Taylor 2 , Stephen P. Jackson 1,3 , Graeme C. M. Smith 1<lb/> and Mark J. O&apos;Connor 1,4<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Chemotherapy that is used to treat human immunodeficiency virus type-1 (HIV-1) infection focuses primarily on targeting virally<lb/> encoded proteins. However, the combination of a short retroviral life cycle and high mutation rate leads to the selection of drug-<lb/>resistant HIV-1 variants. One way to address this problem is to inhibit non-essential host cell proteins that are required for viral<lb/> replication. Here we show that the activity of HIV-1 integrase stimulates an ataxia-telangiectasia-mutated (ATM)-dependent DNA<lb/> damage response, and that a deficiency of this ATM kinase sensitizes cells to retrovirus-induced cell death. Consistent with these<lb/> observations, we demonstrate that a novel and specific small molecule inhibitor of ATM kinase activity, KU-55933, is capable of<lb/> suppressing the replication of both wild-type and drug-resistant HIV-1.<lb/></div>
+
+	<byline>
+	<affiliation>1 KuDOS Pharmaceuticals Limited,</affiliation>
+	</byline>
+
+	<address>327 Cambridge Science Park, Milton Road, Cambridge CB4 0WG, UK.</address>
+
+	<byline>
+	<affiliation>2 MRC Technology,</affiliation>
+	</byline>
+
+	<address>1-3 Burtonhole Lane, Mill Hill, London<lb/> NW7 1AD, UK.</address>
+
+	<byline>
+	<affiliation>3 The Wellcome Trust/Cancer Research UK Gurdon Institute,</affiliation>
+	</byline>
+
+	<address>Tennis Court Road, Cambridge CB3 1QN, UK.<lb/></address>
+
+	4 Correspondence should be addressed to M.O.C. (e-mail:
+	<email>mjoconnor@kudospharma.co.uk</email>
+	)<lb/>
+
+	Published online: 
+	<date>17 April 2005</date>;
+
+	<idno>DOI: 10.1038/ncb1250<lb/></idno>
+	
+	<note type="copyright">Nature Publishing Group<lb/> © 2005<lb/></note>
+
+	<note type="submission">Received 7 September 2004; accepted 29 March 2005<lb/></note>
+
+	Published online at http://www.nature.com/naturecellbiology.
+
+		</front>
+	</text>
+</tei>

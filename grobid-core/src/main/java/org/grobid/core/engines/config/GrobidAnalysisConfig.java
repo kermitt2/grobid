@@ -46,6 +46,9 @@ public class GrobidAnalysisConfig {
     // if consolidate header
     private int consolidateHeader = 0;
 
+    // if the raw affiliation string should be included in the parsed results
+    private boolean includeRawAffiliations = false;
+
     // if the raw bibliographical string should be included in the parsed results
     private boolean includeRawCitations = false;
 
@@ -77,10 +80,22 @@ public class GrobidAnalysisConfig {
     // a particular Grobid Analyzer to be used for tokenizing/filtering text
     private Analyzer analyzer = null;
 
+    // if true, the TEI text will be segmented into sentences 
+    private boolean withSentenceSegmentation = false;
+
     // BUILDER
 
     public static class GrobidAnalysisConfigBuilder {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig();
+
+        public GrobidAnalysisConfigBuilder() {
+        }
+
+        public GrobidAnalysisConfigBuilder(GrobidAnalysisConfig config) {
+            // TODO add more properties
+            this.config.includeRawAffiliations = config.getIncludeRawAffiliations();
+            this.config.includeRawCitations = config.getIncludeRawCitations();
+        }
 
         public GrobidAnalysisConfigBuilder consolidateHeader(int consolidate) {
             config.consolidateHeader = consolidate;
@@ -94,6 +109,11 @@ public class GrobidAnalysisConfig {
          */
         public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder includeRawAffiliations(boolean rawAffiliations) {
+            config.includeRawAffiliations = rawAffiliations;
             return this;
         }
 
@@ -142,6 +162,11 @@ public class GrobidAnalysisConfig {
             return this;
         }
 
+        public GrobidAnalysisConfigBuilder withSentenceSegmentation(boolean b) {
+            config.withSentenceSegmentation = b;
+            return this;
+        }
+
         public GrobidAnalysisConfigBuilder analyzer(Analyzer a) {
             config.analyzer = a;
             return this;
@@ -168,6 +193,10 @@ public class GrobidAnalysisConfig {
         return new GrobidAnalysisConfigBuilder();
     }
 
+    public static GrobidAnalysisConfigBuilder builder(GrobidAnalysisConfig config) {
+        return new GrobidAnalysisConfigBuilder(config);
+    }
+
     public static GrobidAnalysisConfig defaultInstance() {
         return new GrobidAnalysisConfig();
     }
@@ -188,6 +217,10 @@ public class GrobidAnalysisConfig {
         return consolidateHeader;
     }
 
+    public boolean getIncludeRawAffiliations() {
+        return includeRawAffiliations;
+    }
+
     public boolean getIncludeRawCitations() {
         return includeRawCitations;
     }
@@ -198,6 +231,10 @@ public class GrobidAnalysisConfig {
 
     public List<String> getGenerateTeiCoordinates() {
         return generateTeiCoordinates;
+    }
+
+    public boolean isGenerateTeiCoordinates() {
+        return getGenerateTeiCoordinates() != null && getGenerateTeiCoordinates().size()>0;
     }
 
     public boolean isGenerateTeiCoordinates(String type) {
@@ -226,5 +263,9 @@ public class GrobidAnalysisConfig {
 
     public Analyzer getAnalyzer() {
         return analyzer;
+    }
+
+    public boolean isWithSentenceSegmentation() {
+        return withSentenceSegmentation;
     }
 }

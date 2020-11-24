@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class TextUtilities {
 
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
+    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$#@]*\u2666\u2665\u2663\u2660\u00A0";
     public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
     public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
 
@@ -46,6 +46,12 @@ public class TextUtilities {
     public static final String AND = "&";
     public static final String ESC_AND = "&amp;";
     public static final String SLASH = "/";
+
+    // note: be careful of catastrophic backtracking here as a consequence of PDF noise! 
+  
+    private static final String ORCIDRegex =
+        "^\\s*(?:(?:https?://)?orcid.org/)?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{4})\\-?([0-9]{3}[\\dX])\\s*$";
+    static public final Pattern ORCIDPattern = Pattern.compile(ORCIDRegex);
 
     // the magical DOI regular expression...
     static public final Pattern DOIPattern = Pattern
@@ -69,6 +75,11 @@ public class TextUtilities {
     static public final Pattern urlPattern = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
 
+    // a regular expression for identifying email pattern in text
+    // TODO: maybe find a better regex (better == more robust, not more "standard")
+    static public final Pattern emailPattern = Pattern.compile("\\w+((\\.|-|_|,)\\w+)?\\s?((\\.|-|_|,)\\w+)?\\s?@\\s?\\w+(\\s?(\\.|-)\\s?\\w+)+");
+    // variant: \w+(\s?(\.|-|_|,)\w+)?(\s?(\.|-|_|,)\w+)?\s?@\s?\w+(\s?(\.|\-)\s?\w+)+
+    
     /**
      * Replace numbers in the string by a dummy character for string distance evaluations
      *

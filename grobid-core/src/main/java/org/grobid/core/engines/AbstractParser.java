@@ -32,6 +32,11 @@ public abstract class AbstractParser implements GenericTagger, Closeable {
         genericTagger = TaggerFactory.getTagger(model, engine);
     }
 
+    protected AbstractParser(GrobidModel model, CntManager cntManager, GrobidCRFEngine engine, String architecture) {
+        this.cntManager = cntManager;
+        genericTagger = TaggerFactory.getTagger(model, engine, architecture);
+    }
+
     @Override
     public String label(Iterable<String> data) {
         return genericTagger.label(data);

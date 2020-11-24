@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Max</forename>
+								 <middlename>Jordan</middlename>
+								 <surname>Nguemeni Tiako</surname>,
+								 <roleName>MS</roleName>;
+								 <marker>1</marker>
+							</persName>
+							<persName>	 
+								 <forename>Seong</forename>
+								 <surname>Hong</surname> ;
+								 <roleName>BS</roleName>
+								 <marker>1</marker>
+							</persName>
+							<persName>
+								 <forename>Syed</forename>
+								 <middlename>Usman</middlename>
+								 <surname>Bin Mahmood</surname>
+								 <roleName>MBBS</roleName>;
+								 <marker>1</marker>
+							</persName>
+							<persName>	 
+								 <forename>Makoto</forename>
+								 <surname>Mori</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>1</marker>
+							</persName>
+							<persName>	 
+								 <forename>Abeel</forename>
+								 <surname>Mangi</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>1</marker>
+							</persName>
+							<persName>	 
+								 <forename>James</forename>
+								 <surname>Yun</surname>,
+								 <roleName>MD</roleName>,
+								 <roleName>PhD</roleName>,
+								 <marker>2</marker>
+							</persName>
+							<persName>	 
+								 <forename>Manisha</forename>
+								 <surname>Juthani-Mehta</surname>,
+								 <roleName>MD</roleName>,
+								 <marker>3,4</marker>
+							</persName>
+							<persName>
+								 <forename>Arnar</forename>
+								 <surname>Geirsson</surname>,
+								 <roleName>MD</roleName>
+								 <marker>1</marker>
+							</persName>
+							<persName>	 
+								 <forename>Arnar</forename>
+								 <surname>Geirsson</surname>,
+								 <roleName>MD</roleName>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

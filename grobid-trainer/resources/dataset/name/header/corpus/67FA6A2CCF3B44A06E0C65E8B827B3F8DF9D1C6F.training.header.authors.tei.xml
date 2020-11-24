@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Sherryl</forename>
+								 <middlename>H</middlename>.
+								 <surname>Goodman</surname>,
+								 <roleName>Ph.D</roleName>.
+							</persName>
+							<persName>
+								 <forename>Daniel</forename>
+								 <middlename>R</middlename>.
+								 <surname>Sewell</surname>,
+								 <roleName>Ph.D</roleName>.
+							</persName>
+							<persName>
+								 <forename>Eileen</forename>
+								 <middlename>L</middlename>.
+								 <surname>Cooley</surname>,
+								 <roleName>Ph.D</roleName>.
+							</persName>
+							<persName>	 
+								 <forename>Naomi</forename>
+								 <surname>Leavitt</surname>,
+								 <roleName>Ph.D</roleName>.
+							</persName>
+							<persName>
+								 <forename>Sherryl</forename>
+								 <middlename>H</middlename>.
+								 <surname>Goodman</surname>
+							</persName>
+							<persName>	 
+								 <forename>Daniel</forename>
+								 <middlename>R</middlename>.
+								 <surname>Sewell</surname>
+							</persName>
+							<persName>	 
+								 <forename>Eileen</forename>
+								 <middlename>L</middlename>.
+								 <surname>Cooley</surname>
+							</persName>
+							<persName>
+								 <forename>Naomi</forename>
+								 <surname>Leavitt</surname>
+							</persName>
+							<persName>
+								 <forename>Sherryl</forename>
+								 <surname>Goodman</surname>,
+							</persName>
+							<persName>
+								 <forename>Sherryl</forename>
+								 <surname>Goodman</surname>.
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

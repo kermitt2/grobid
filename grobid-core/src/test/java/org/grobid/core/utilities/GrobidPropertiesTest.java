@@ -3,6 +3,7 @@ package org.grobid.core.utilities;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.junit.After;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -53,6 +55,16 @@ public class GrobidPropertiesTest {
     public void testLoadGrobidProperties_PathNoContext_shouldThrowException() throws Exception {
         GrobidProperties.reset();
         GrobidProperties.loadGrobidPropertiesPath();
+    }
+
+    @Test
+    public void shouldReturnAndConvertMatchingEnvironmentVariable() throws Exception {
+        assertEquals(
+            Collections.singletonMap("grobid.abc", "value1"),
+            GrobidProperties.getEnvironmentVariableOverrides(
+                Collections.singletonMap("GROBID__ABC", "value1")
+            )
+        );
     }
 
     @Test
@@ -169,18 +181,6 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testShouldUseHeaderHeuristicsByDefault() {
-        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS);
-        assertTrue("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
-    public void testShouldNotUseHeaderHeuristicsIfDisabled() {
-        GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "false");
-        assertFalse("header use heuristics", GrobidProperties.isHeaderUseHeuristics());
-    }
-
-    @Test
     public void testsetisResourcesInHome() {
         String value = "true";
         GrobidProperties.setResourcesInHome(value);
@@ -188,15 +188,97 @@ public class GrobidPropertiesTest {
                 GrobidProperties.isResourcesInHome());
     }
 
-    //@Test
-    public void testGetModelPath() {
-        GrobidModels value = GrobidModels.DATE;
-        assertEquals("The property has not the value expected",
-                new File(GrobidProperties.get_GROBID_HOME_PATH(),
-                        GrobidProperties.FOLDER_NAME_MODELS + File.separator
-                                + value.getFolderName() + File.separator
-                                + GrobidProperties.FILE_NAME_MODEL),
-                GrobidProperties.getModelPath(value));
+    @Test
+    public void testShouldReturnWapitiAsDefaultEngine() {
+        GrobidProperties.getProps().remove(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE);
+        GrobidProperties.loadCrfEngine();
+        assertEquals(
+            "engine",
+            GrobidCRFEngine.WAPITI,
+            GrobidProperties.getGrobidCRFEngine("dummy")
+        );
+    }
+
+    @Test
+    public void testShouldReturnConfiguredEngineIfNotConfiguredForModel() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
+            GrobidCRFEngine.DELFT.name()
+        );
+        GrobidProperties.loadCrfEngine();
+        assertEquals(
+            "engine",
+            GrobidCRFEngine.DELFT,
+            GrobidProperties.getGrobidCRFEngine("model1")
+        );
+    }
+
+    @Test
+    public void testShouldAllowModelSpecificEngineConfiguration() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
+            GrobidCRFEngine.WAPITI.name()
+        );
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
+            + GrobidModels.SEGMENTATION.getModelName(),
+            GrobidCRFEngine.DELFT.name()
+        );
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
+            + GrobidModels.FULLTEXT.getModelName(),
+            GrobidCRFEngine.DELFT.name()
+        );
+        GrobidProperties.loadCrfEngine();
+        assertEquals(
+            "segmentation engine",
+            GrobidCRFEngine.DELFT,
+            GrobidProperties.getGrobidCRFEngine(GrobidModels.SEGMENTATION)
+        );
+        assertEquals(
+            "fulltext engine",
+            GrobidCRFEngine.DELFT,
+            GrobidProperties.getGrobidCRFEngine(GrobidModels.FULLTEXT)
+        );
+    }
+
+
+    @Test
+    public void testShouldReplaceHyphenWithUnderscoreForModelSpecificEngineConfiguration() {
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
+            GrobidCRFEngine.WAPITI.name()
+        );
+        GrobidProperties.getProps().put(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "."
+            + "model_name1",
+            GrobidCRFEngine.DELFT.name()
+        );
+        GrobidProperties.loadCrfEngine();
+        assertEquals(
+            "segmentation engine",
+            GrobidCRFEngine.DELFT,
+            GrobidProperties.getGrobidCRFEngine("model-name1")
+        );
+    }
+
+    @Test
+    public void testShouldReturnModelPathWithExtension() {
+        GrobidModels model = GrobidModels.DATE;
+        String extension = GrobidProperties.getGrobidCRFEngine(model).getExt();
+        assertEquals(
+            "model path for " + model.name(),
+            new File(GrobidProperties.get_GROBID_HOME_PATH(),
+                GrobidProperties.FOLDER_NAME_MODELS
+                + File.separator
+                + model.getFolderName()
+                + File.separator
+                + GrobidProperties.FILE_NAME_MODEL
+                + "."
+                + extension
+            ).getAbsoluteFile(),
+            GrobidProperties.getModelPath(model).getAbsoluteFile()
+        );
     }
 
     //@Test

@@ -31,11 +31,11 @@ public class DeLFTModel {
     // Exploit JNI CPython interpreter to execute load and execute a DeLFT deep learning model 
     private String modelName;
 
-    public DeLFTModel(GrobidModel model) {
+    public DeLFTModel(GrobidModel model, String architecture) {
         this.modelName = model.getModelName().replace("-", "_");
         try {
-            LOGGER.info("Loading DeLFT model for " + model.getModelName() + "...");
-            JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath()));
+            LOGGER.info("Loading DeLFT model for " + model.getModelName() + " with architecture " + architecture + "...");            
+            JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), architecture));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
         }
@@ -44,17 +44,27 @@ public class DeLFTModel {
     class InitModel implements Runnable { 
         private String modelName;
         private File modelPath;
+        private String architecture;
           
-        public InitModel(String modelName, File modelPath) { 
+        public InitModel(String modelName, File modelPath, String architecture) { 
             this.modelName = modelName;
             this.modelPath = modelPath;
+            this.architecture = architecture;
         } 
           
         @Override
         public void run() { 
             Jep jep = JEPThreadPool.getInstance().getJEPInstance(); 
             try { 
-                jep.eval(this.modelName+" = Sequence('" + this.modelName.replace("_", "-") + "')");
+                String fullModelName = this.modelName.replace("_", "-");
+
+                if (architecture != null && !architecture.equals("BidLSTM_CRF"))
+                    fullModelName += "-" + this.architecture;
+
+                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1)
+                    fullModelName += "-with_ELMo";
+
+                jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);
@@ -173,10 +183,11 @@ public class DeLFTModel {
      * usually hangs... Possibly issues with IO threads at the level of JEP (output not consumed because
      * of \r and no end of line?). 
      */
-    public static void trainJNI(String modelName, File trainingData, File outputModel) {
+    public static void trainJNI(String modelName, File trainingData, File outputModel, String architecture) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            JEPThreadPool.getInstance().run(new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath()));
+            JEPThreadPool.getInstance().run(
+                new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath(), architecture));
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT model " + modelName + " task failed", e);
         }
@@ -186,12 +197,14 @@ public class DeLFTModel {
         private String modelName;
         private File trainPath;
         private File modelPath;
+        private String architecture;
 
-        public TrainTask(String modelName, File trainPath, File modelPath) { 
+        public TrainTask(String modelName, File trainPath, File modelPath, String architecture) { 
             //System.out.println("train thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.trainPath = trainPath;
             this.modelPath = modelPath;
+            this.architecture = architecture;
         } 
           
         @Override
@@ -205,13 +218,18 @@ public class DeLFTModel {
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo()) {
+                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
                     useELMo = "True";
                 }
 
                 // init model to be trained
-                jep.eval("model = Sequence('"+this.modelName+
-                    "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
+                if (architecture == null)
+                    jep.eval("model = Sequence('"+this.modelName+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
+                else
+                    jep.eval("model = Sequence('"+this.modelName+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+
+                        ", model_type='"+architecture+"')");
 
                 // actual training
                 //start_time = time.time()
@@ -238,19 +256,24 @@ public class DeLFTModel {
         } 
     }
 
-    protected static List<String> getTrainCommand(String modelName, File trainingData) {
+    protected static List<String> getTrainCommand(String modelName, File trainingData, String architecture) {
         String trainModule = GrobidProperties.getDeLFTTrainModule();
         if (StringUtils.isEmpty(trainModule)) {
             trainModule = "grobidTagger.py";
         }
-        List<String> command = new ArrayList<>(Arrays.asList("python3", 
+        List<String> command = new ArrayList<>(Arrays.asList(
+            "python3", 
             trainModule,
             modelName,
             "train",
             "--input", trainingData.getAbsolutePath(),
             "--output", GrobidProperties.getModelPath().getAbsolutePath()
         ));
-        if (GrobidProperties.useELMo()) {
+        if (architecture != null) {
+            command.add("--architecture");
+            command.add(architecture);
+        }
+        if (GrobidProperties.useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
             command.add("--use-ELMo");
         }
         if (StringUtils.isNotEmpty(GrobidProperties.getDeLFTTrainArgs())) {
@@ -265,10 +288,10 @@ public class DeLFTModel {
      *  Train with an external process rather than with JNI, this approach appears to be more stable for the
      *  training process (JNI approach hangs after a while) and does not raise any runtime/integration issues. 
      */
-    public static void train(String modelName, File trainingData, File outputModel) {
+    public static void train(String modelName, File trainingData, File outputModel, String architecture) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = getTrainCommand(modelName, trainingData);
+            List<String> command = getTrainCommand(modelName, trainingData, architecture);
             LOGGER.info("Running: {}", command);
 
             ProcessBuilder pb = new ProcessBuilder(command);

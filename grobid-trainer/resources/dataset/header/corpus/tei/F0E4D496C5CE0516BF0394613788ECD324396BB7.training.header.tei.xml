@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="F0E4D496C5CE0516BF0394613788ECD324396BB7"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), pp. 171-175 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Strong spin-dependent electron correlation effects<lb/> in photoemission from itinerant magnets<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>H. A. Dürr 1 , G. van der Laan 1 , D. Spanke 2<lb/> F. U. Hillebrecht 2 and N. B. Brookes 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Synchrotron Radiation Source, Daresbury Laboratory </affiliation>
+	</byline>
+
+	<address>-Warrington WA4 4AD, UK<lb/></address>
+
+	<byline>
+	<affiliation>2 Institut für Angewandte Physik, Heinrich-Heine-Universität<lb/></affiliation>
+	</byline>
+
+	<address>40225 Düsseldorf, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 European Synchrotron Radiation Facility</affiliation>
+	</byline>
+
+	<address>-BP 220, F-38043 Grenoble, France<lb/></address>
+
+	(
+	<note type="submission">received 19 June 1997; accepted in final form 9 September 1997</note>
+	)<lb/>
+
+	<keyword>PACS. 71.70−d -Level splitting and interactions.<lb/> PACS. 75.25+z -Spin arrangements in magnetically ordered materials (including neutron and<lb/> spin-polarized electron studies, synchrotron-source X-ray scattering, etc.).<lb/> PACS. 78.20Ls -Magnetooptical effects.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">The Fe 2p photoemission of ferromagnetic iron shows a dichroism which indicates<lb/> a strong difference in hybridization for spin-up and spin-down electrons. In contrast, the<lb/> dichroism of the localized Mn surface alloys reveals intense unscreened satellite structure. The<lb/> spin polarization of the core hole is quantified using the dichroism in the Fe L3M2,3M2,3 Auger<lb/> spectrum measured with the light helicity vector perpendicular to the magnetization direction.<lb/> The observations in the 3d metals are in strong contradiction with the expectations from an<lb/> independent-particle model.<lb/></div>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

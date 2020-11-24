@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="stokes_ddfv_omnes_hal_v2"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A discrete duality finite volume discretization of the<lb/> vorticity-velocity-pressure Stokes problem on almost arbitrary<lb/> two-dimensional grids<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sarah Delcourte 1 and Pascal Omnes 23</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">We present an application of the discrete duality finite volume method to the numerical<lb/> approximation of the vorticity-velocity-pressure formulation of the 2D Stokes equations,<lb/> associated to various non-standard boundary conditions. The finite volume method is<lb/> based on the use of discrete differential operators obeying some discrete duality principles.<lb/> The scheme may be seen as an extension of the classical MAC scheme to almost arbitrary<lb/> meshes, thanks to an appropriate choice of degrees of freedom. The efficiency of the scheme<lb/> is illustrated by numerical examples over unstructured triangular and locally refined non-<lb/>conforming meshes, which confirm the theoretical convergence analysis led in the article.<lb/></div>
+
+	Keywords:
+	<keyword>Stokes equations; vorticity-velocity-pressure formulation; boundary conditions;<lb/> discrete duality; finite volumes; arbitrary meshes; a priori estimates<lb/></keyword>
+
+	<byline>
+	<affiliation>1 Université de Lyon, CNRS UMR 5208, Université Lyon 1, Institut Camille Jordan,</affiliation>
+	</byline>
+
+	<address>43 boulevard du 11<lb/> novembre 1918, F-69622 Villeurbanne cedex, France. </address>
+
+	<note type="funding">Partially supported by the European Research Council<lb/> ERC Starting Grant 2009, project 239983-NuSiKiMo.</note>
+
+	<email>delcourte@math.univ-lyon1.fr<lb/></email>
+
+	<byline>
+	<affiliation>2 CEA-Saclay, DEN, DM2S, STMF, LMSF,</affiliation>
+	</byline>
+
+	<address>F-91191 Gif-sur-Yvette, France.</address>
+
+	E-Mail:
+	<email>pascal.omnes@cea.fr<lb/></email>
+
+	<byline>
+	<affiliation>3 Université Paris 13, Sorbonne Paris Cité, LAGA, CNRS UMR 7539, Institut Galilée,</affiliation>
+	</byline>
+
+	<address>99, Avenue J.-B.<lb/> Clément F-93430 Villetaneuse Cedex, France.</address>
+
+		</front>
+	</text>
+</tei>

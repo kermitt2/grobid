@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="W09-1403"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of the Workshop on BioNLP: Shared Task, pages 19-27,<lb/> Boulder, Colorado, June 2009.</reference>
+
+	<note type="copyright">c 2009 Association for Computational Linguistics<lb/></note>
+
+	<docTitle>
+	<titlePart>Event Extraction from Trimmed Dependency Graphs<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ekaterina Buyko, Erik Faessler, Joachim Wermter and Udo Hahn<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Jena University Language &amp; Information Engineering (JULIE) Lab<lb/> Friedrich-Schiller-Universität Jena<lb/></affiliation>
+	</byline>
+
+	<address>Fürstengraben 30, 07743 Jena, Germany<lb/></address>
+
+	<email>{ekaterina.buyko|erik.faessler|joachim.wermter|udo.hahn}@uni-jena.de</email>
+
+	Abstract<lb/>
+	<div type="abstract">We describe the approach to event extrac-<lb/>tion which the JULIELab Team from FSU<lb/> Jena (Germany) pursued to solve Task 1 in<lb/> the &quot;BioNLP&apos;09 Shared Task on Event Ex-<lb/>traction&quot;. We incorporate manually curated<lb/> dictionaries and machine learning method-<lb/>ologies to sort out associated event triggers<lb/> and arguments on trimmed dependency graph<lb/> structures. Trimming combines pruning ir-<lb/>relevant lexical material from a dependency<lb/> graph and decorating particularly relevant lex-<lb/>ical material from that graph with more ab-<lb/>stract conceptual class information. Given<lb/> that methodological framework, the JULIELab<lb/> Team scored on 2nd rank among 24 competing<lb/> teams, with 45.8% precision, 47.5% recall and<lb/> 46.7% F1-score on all 3,182 events.</div>
+
+		</front>
+	</text>
+</tei>

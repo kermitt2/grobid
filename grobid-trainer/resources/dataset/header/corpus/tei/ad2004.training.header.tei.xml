@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ad2004"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Automatic differentiation: a tool for variational<lb/> data assimilation and adjoint sensitivity<lb/> analysis for flood modeling<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>W. Castaings 1 , D. Dartus 2 , M. Honnorat 3 , F.-X. Le Dimet 4 , Y. Loukili 5 ,<lb/> and J. Monnier 6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 INRIA/IDOPT</affiliation>
+	</byline>
+	<email>william.castaings@imag.fr<lb/></email>
+
+	<byline>
+	<affiliation>2 INPT -IMFT/HYDRE</affiliation>
+	</byline>
+	<email>dartus@imft.fr<lb/></email>
+
+	<byline>
+	<affiliation>3 INPG -INRIA/IDOPT</affiliation>
+	</byline>
+	<email>marc.honnorat@imag.fr<lb/></email>
+
+	<byline>
+	<affiliation>4 UJF -INRIA/IDOPT</affiliation>
+	</byline>
+	<email>francois-xavier.le-dimet@imag.fr<lb/></email>
+
+	<byline>
+	<affiliation>5 INRIA/IDOPT</affiliation>
+	</byline>
+	<email>youssef.loukili@imag.fr<lb/></email>
+
+	<byline>
+	<affiliation>6 INPG -INRIA/IDOPT</affiliation>
+	</byline>
+	<email>jerome.monnier@imag.fr</email>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="3A8EACA303160EDE4E66A19A97097F6FAECD5358"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Fast neurotransmitter release triggered by Ca influx<lb/> through AMPA-type glutamate receptors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrés E. Chávez 1 , Joshua H. Singer 1 † &amp; Jeffrey S. Diamond 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Feedback inhibition at reciprocal synapses between A17 amacrine<lb/> cells and rod bipolar cells (RBCs) shapes light-evoked responses in<lb/> the retina 1-3 . Glutamate-mediated excitation of A17 cells elicits<lb/> GABA (g-aminobutyric acid)-mediated inhibitory feedback onto<lb/> RBCs 4-6 , but the mechanisms that underlie GABA release from the<lb/> dendrites of A17 cells are unknown. If, as observed at all other<lb/> synapses studied, voltage-gated calcium channels (VGCCs) couple<lb/> membrane depolarization to neurotransmitter release 7 , feed-<lb/>forward excitatory postsynaptic potentials could spread through<lb/> A17 dendrites to elicit &apos;surround&apos; feedback inhibitory transmission<lb/> at neighbouring synapses. Here we show, however, that GABA<lb/> release from A17 cells in the rat retina does not depend on VGCCs<lb/> or membrane depolarization. Instead, calcium-permeable AMPA<lb/> (a-amino-3-hydroxy-5-methyl-4-isoxazole propionic acid) recep-<lb/>tors (AMPARs), activated by glutamate released from RBCs, provide<lb/> the calcium influx necessary to trigger GABA release from A17 cells.<lb/> The AMPAR-mediated calcium signal is amplified by calcium-<lb/>induced calcium release (CICR) from intracellular calcium stores.<lb/> These results describe a fast synapse that operates independently<lb/> of VGCCs and membrane depolarization and reveal a previously<lb/> unknown form of feedback inhibition within a neural circuit.</div>
+
+	<note type="doctype">LETTERS<lb/></note>
+
+	<byline>
+	<affiliation>1 Synaptic Physiology Unit, National Institute of Neurological Disorders and Stroke, National Institutes of Health,</affiliation>
+	</byline>
+
+	<address>Bethesda, Maryland 20892-3701, USA.</address>
+
+	†Present address:<lb/>
+	<byline>
+	<affiliation>Northwestern University, Departments of Ophthalmology and Physiology,</affiliation>
+	</byline>
+
+	<address>303 E. Chicago Avenue, Tarry Building, 5-727, Chicago, Illinois 60611, USA.<lb/></address>
+
+	<reference>Vol 443|12 October 2006|</reference>
+
+	<idno>doi:10.1038/nature05123</idno>
+
+	<page>705<lb/></page>
+
+	<note type="copyright">© 2006 Nature Publishing Group<lb/></note>
+
+	<note type="submission">Received 10 May; accepted 31 July 2006.<lb/></note>
+
+	Published online
+	<date>1 October 2006</date>.
+
+		</front>
+	</text>
+</tei>

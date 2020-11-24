@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="17._Sheng_29"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>SIMULATION OF SEMICONDUCTOR DEVICES AND PROCESSES Vol. 4<lb/> Edited by W. Fichtner, D. Aemmer -Zurich (Switzerland) September 12-14,1991 -Hartung-Gorre<lb/></reference>
+
+	<docTitle>
+	<titlePart>Massively Parallel Computation for Three-Dimensional<lb/> Monte Carlo Semiconductor Device Simulation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Henry Sheng, Roberto Guenieri t<lb/> and Alberto Sangiovanni-Vincentelli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Electrical Engineering and Computer Sciences<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA 94720, U.S.A.<lb/></address>
+
+	<byline>
+	<affiliation>t Dipartimento di Elettronica e Informatica<lb/> Universita di Bologna,</affiliation>
+	</byline>
+
+	<address>Italy</address>
+
+	Abstract<lb/>
+	<div type="abstract">This work presents a study of the applicability of a massively parallel computing paradigm<lb/> to Monte Carlo techniques for device simulation. A unique mapping of Monte Carlo to SIMD<lb/> fine-grained parallelism has been developed, decoupling the problem into separate compu-<lb/>tational domains. For MOSFET simulation, this novel mapping allows estimated speeds of<lb/> over 200,000 scatterings processed per second on a 65,536 processor Connection Machine,<lb/> nearly a factor of six over the fastest known to date.</div>
+
+		</front>
+	</text>
+</tei>

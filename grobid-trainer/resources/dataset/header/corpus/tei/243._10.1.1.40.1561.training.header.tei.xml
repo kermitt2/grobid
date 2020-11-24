@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="243._10.1.1.40.1561"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Simulations with an Evolvable Fitness Formula<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Henrik Hautop Lund x Domenico Parisi x<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>x Institute of Psychology<lb/> National Research Council,</affiliation>
+	</byline>
+
+	<address>Viale Marx 15, 00137 Rome, Italy<lb/></address>
+
+	tel.: <phone>+39 6 88 94 596</phone><lb/> fax : +39 6 82 47 37<lb/> 
+
+	<byline>
+	<affiliation>DAIMI<lb/> University o f A a r h us,</affiliation>
+	</byline>
+
+	<address>Ny Munkegade, 8000 Aarhus C., Denmark<lb/></address>
+
+	tel.: <phone>+45 89 42 32 21</phone><lb/> fax : +45 89 42 32 55<lb/> e-mail:
+	<email>hhl@daimi.aau.dk</email> 
+	<email>domenico@gracco.irmkant.rm.cnr.it</email>
+
+	Abstract<lb/>
+	<div type="abstract">The concept of a tness formula as a property of an organism is proposed. In<lb/> arti cial life simulations with organisms living in an environment, the tness formula<lb/> can be interpreted as the ability of organisms to extract energy from potential food<lb/> sources distributed in the environment. In simulations where the goal of the genetic<lb/> algorithm is that of developing systems which exhibit a certain type of behavior in a<lb/> particular environment, the tness formula becomes an independent v ariable which c a n<lb/> be manipulated in order to obtain the desired behavior. The tness formula can be<lb/> viewed as an evolvable trait of organisms, and therefore not xed and decided by the<lb/> researcher. Simulations with xed and evolvable tness formulae show that the tness<lb/> formula, the sensory apparatus, and the behavior of organisms may co-evolve a n d b e<lb/> co-adapted.</div>
+
+		</front>
+	</text>
+</tei>

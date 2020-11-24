@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="199._10.1.1.51.2034-1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>An E cient Parallel Algorithm<lb/> for Computing a Maximal<lb/> Independent Set in a<lb/> Hypergraph of Dimension 3<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Elias Dahlhaus 1<lb/> Marek Karpinski 2<lb/> Peter Kelsen 3<lb/></docAuthor>
+	</byline>
+
+	TR-92-071<lb/> 
+
+	<date>October, 1992</date> 
+
+	Abstract<lb/>
+	<div type="abstract">The paper considers the problem of computing a maximal independent set<lb/> in a hypergraph (see 3] and 7]). We present an e cient deterministic NC<lb/> algorithm for nding a maximal independent set in a hypergraph of dimension<lb/> 3: the algorithm runs in time O(log 4 n) time on n + m processors of an<lb/> EREW PRAM and is optimal up to a polylogarithmic factor. Our algorithm<lb/> adapts the technique of Goldberg and Spencer ( 5]) for nding a maximal<lb/> independent set in a graph (or hypergraph of dimension 2). It is the rst<lb/> e cient NC algorithm for nding a maximal independent set in a hypergraph<lb/> of dimension greater than 2.<lb/></div>
+
+	<byline>
+	<affiliation>1 Department of Computer Science, University of Bonn,</affiliation>
+	</byline>
+
+	<address>5300 Bonn 1.<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Computer Science, University of Bonn 5300 Bonn 1 and International Computer<lb/> Science Institute,</affiliation>
+	</byline>
+
+	<address>Berkeley, California.</address>
+
+	Supported in part by the Leibniz Center for Research in<lb/> Computer Science, by the DFG Grant KA 673/4{1 and by the SERC Grant GR{E 68297.<lb/>
+
+	<byline>
+	<affiliation>3 Department of Computer Science, University of Texas,</affiliation>
+	</byline>
+
+	<address>Austin, TX 78712. </address>
+
+	<note type="funding">Supported by NSF<lb/> Grant CCR89-10707.</note>
+
+		</front>
+	</text>
+</tei>

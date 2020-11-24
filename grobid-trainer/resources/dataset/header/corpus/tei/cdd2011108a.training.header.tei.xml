@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="cdd2011108a"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">Meeting Report<lb/></note>
+
+	<docTitle>
+	<titlePart>International EMBO Molecular Medicine Workshop<lb/> 2011 on &apos;Cell Death and Disease&apos;<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>A Hague* ,1 and LS Dickens 2<lb/></docAuthor>
+	</byline>
+
+	<reference>Cell Death and Differentiation (2011) 18, 1944-1947;</reference>
+
+	<idno>doi:10.1038/cdd.2011.108</idno>
+
+	; published online
+	<date>26 August 2011<lb/></date>
+
+	<meeting>Obergurgl, Austria, 10-14 March 2011<lb/></meeting>
+
+	<byline>
+	<affiliation>1 School of Oral and Dental Sciences, University of Bristol, Lower Maudlin Street,</affiliation>
+	</byline>
+
+	<address>Bristol BS1 2LY, UK and</address>
+
+	<byline>
+	<affiliation>2 MRC Toxicology Unit,</affiliation>
+	</byline>
+
+	<address>Hodgkin Building, PO Box 138,<lb/></address>
+
+	<byline>
+	<affiliation>University of Leicester,</affiliation>
+	</byline>
+
+	<address>Lancaster Road, Leicester LE1 9HN, UK<lb/></address>
+
+	*Corresponding author:
+	<byline>
+	<docAuthor>A Hague,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Oral and Dental Sciences, University of Bristol, Lower Maudlin Street,</affiliation>
+	</byline>
+
+	<address>Bristol BS1 2LY, UK.</address>
+
+	Tel: þ
+	<phone>44 117 342 4114</phone>;<lb/> Fax: þ 44 117 342 4428
+
+	; Email:
+	<email>a.hague@bristol.ac.uk<lb/></email>
+
+	<reference>Cell Death and Differentiation (2011) 18, 1944-1947<lb/></reference>
+
+	<note type="copyright">&amp; 2011 Macmillan Publishers Limited All rights reserved </note>
+
+	1350-9047/11<lb/>
+	
+	www.nature.com/cdd
+		</front>
+	</text>
+</tei>

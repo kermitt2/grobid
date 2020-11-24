@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="SAM-P6_Dantan_revised_version_3"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Geometrical Specification Model for Gear -<lb/>Expression, Metrology and Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J.Y. Dantan<lb/> 1 , J. Bruyere<lb/> 1 , C. Baudouin<lb/> 1 , L. Mathieu<lb/> 2 (1),<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratoire de Génie Industriel et Production Mécanique -<lb/>Ecole Nationale Supérieure d&apos;Arts et Métiers,</affiliation>
+	</byline>
+
+	<address>Metz, France<lb/></address>
+
+	<byline>
+	<affiliation>2 Laboratoire Universitaire de Recherche en Production Automatisée<lb/> Ecole Normale Supérieure,</affiliation>
+	</byline>
+
+	<address>Cachan, France<lb/></address>
+
+	Abstract<lb/>
+	<div type="abstract">To ensure the gear precision, industries need a coherent model to express, to analyse and to check<lb/> geometrical specifications. Most gear tolerance representations are directly driven by the convenience of<lb/> dimensional metrology and not by the convenience of the set of activities of the tolerancing process.<lb/> Therefore, to ensure the coherence of all tolerancing process activities, there is a necessity to develop a<lb/> complete gear tolerance model which should: represent standard tolerance practices; be integrated in the<lb/> Computer-Aided systems of design, manufacturing and metrology; be controlled by CMM; and support<lb/> automated tolerance analysis. The proposed model extends capabilities of a vectorial dimensioning &amp;<lb/> tolerancing model in order to satisfy the four requirements. This model is based on GeoSpelling [1]. Its<lb/> coherence is illustrated by two applications: gear tolerance analysis and gear tolerance verification by CMM.<lb/></div>
+
+	Keywords:<lb/>
+	<keyword>Tolerancing Model, Functional Metrology, Gear<lb/></keyword>
+
+	<reference>Annals of the CIRP Vol. 56/1/2007</reference>
+
+		</front>
+	</text>
+</tei>

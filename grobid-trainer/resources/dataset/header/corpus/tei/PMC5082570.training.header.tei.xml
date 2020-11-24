@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC5082570"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Structure and biochemical properties of recombinant<lb/> human dimethylglycine dehydrogenase and comparison to<lb/> the disease-related H109R variant<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Peter Augustin 1 , Altijana Hromic 2 , Tea Pavkov-Keller 3 , Karl Gruber 2 and Peter Macheroux 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute of Biochemistry, Graz University of Technology,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of Molecular Biosciences, University of Graz,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	<byline>
+	<affiliation>3 Austrian Centre of Industrial Biotechnology,</affiliation>
+	</byline>
+
+	<address>Austria<lb/></address>
+
+	Keywords<lb/>
+	<keyword>electron transfer; flavin adenine<lb/> dinucleotide; genetic disease; recombinant<lb/> protein expression; X-ray crystallography<lb/></keyword>
+
+	Correspondence<lb/>
+	<byline>
+	<docAuthor>P. Macheroux,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Biochemistry,<lb/> Graz University of Technology,</affiliation>
+	</byline>
+
+	<address>Petersgasse<lb/> 12/II, A-8010 Graz, Austria<lb/></address>
+
+	Fax: +43 (0)316 873 6952<lb/> Tel: <phone>+43 (0)316 873 6450</phone><lb/> E-mail:
+	<email>peter.macheroux@tugraz.at<lb/></email>
+
+	(
+	<note type="submission">Received 15 June 2016, revised 25 July<lb/> 2016, accepted 1 August 2016</note>
+
+	)<lb/>
+	<idno>doi:10.1111/febs.13828<lb/></idno>
+
+	<div type="abstract">The human dimethylglycine dehydrogenase (hDMGDH) is a flavin adenine<lb/> dinucleotide (FAD)-and tetrahydrofolate (THF)-dependent, mitochondrial<lb/> matrix enzyme taking part in choline degradation, one-carbon metabolism<lb/> and electron transfer to the respiratory chain. The rare natural variant<lb/> H109R causes dimethylglycine dehydrogenase deficiency leading to<lb/> increased blood and urinary dimethylglycine concentrations. A detailed<lb/> biochemical and structural characterization of hDMGDH was thus far<lb/> hampered by insufficient heterologous expression of the protein. In the pre-<lb/>sent study, we report the development of an intracellular, heterologous<lb/> expression system in Komagataella phaffii (formerly known as Pichia pas-<lb/>toris) providing the opportunity to determine kinetic parameters, spectro-<lb/>scopic properties, thermostability, and the redox potential of hDMGDH.<lb/> Moreover, we have successfully crystallized the wild-type enzyme and<lb/> determined the structure to 3.1-<lb/>A resolution. The structure-based analysis<lb/> of our biochemical data provided new insights into the kinetic properties<lb/> of the enzyme in particular with respect to oxygen reactivity. A compara-<lb/>tive study with the H109R variant demonstrated that the variant suffers<lb/> from decreased protein stability, cofactor saturation, and substrate affinity.<lb/></div>
+
+	Database<lb/> Structural data are available in the PDB database under the accession number 5L46.<lb/>
+
+	Abbreviations<lb/> AgDMGO, Arthrobacter globiformis dimethylglycine oxidase; DCPIP, 2,6-dichlorophenolindophenol; DMG, dimethylglycine; DMGDH,<lb/> dimethylglycine dehydrogenase; ETF-QO, ETF-ubiquinone oxidoreductase; hDMGDH, human dimethylglycine dehydrogenase; hETF, human<lb/> electron-transferring flavoprotein; hMCAD, human medium-chain acyl-CoA dehydrogenase; MRE, mean residue ellipticity; PMS, phenazine<lb/> methosulfate; THF, tetrahydrofolate; WT, wild-type.
+
+	<page>3587<lb/></page>
+
+	<reference>The FEBS Journal 283 (2016) 3587-3603</reference>
+
+	<note type="copyright">ª 2016 The Authors. The FEBS Journal published by John Wiley &amp; Sons Ltd on behalf of<lb/> Federation of European Biochemical Societies.<lb/> This is an open access article under the terms of the Creative Commons Attribution License, which permits use,<lb/> distribution and reproduction in any medium, provided the original work is properly cited.</note>
+
+		</front>
+	</text>
+</tei>

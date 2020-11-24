@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="J09-3003"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Recognizing Contextual Polarity:<lb/> An Exploration of Features for Phrase-Level<lb/> Sentiment Analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Theresa Wilson *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Edinburgh<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Janyce Wiebe * *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pittsburgh<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<docAuthor>Paul Hoffmann * *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Pittsburgh<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Many approaches to automatic sentiment analysis begin with a large lexicon of words marked<lb/> with their prior polarity (also called semantic orientation). However, the contextual polarity of<lb/> the phrase in which a particular instance of a word appears may be quite different from the<lb/> word&apos;s prior polarity. Positive words are used in phrases expressing negative sentiments, or<lb/> vice versa. Also, quite often words that are positive or negative out of context are neutral in<lb/> context, meaning they are not even being used to express a sentiment. The goal of this work is to<lb/> automatically distinguish between prior and contextual polarity, with a focus on understanding<lb/> which features are important for this task. Because an important aspect of the problem is<lb/> identifying when polar terms are being used in neutral contexts, features for distinguishing<lb/> between neutral and polar instances are evaluated, as well as features for distinguishing between<lb/> positive and negative contextual polarity. The evaluation includes assessing the performance<lb/> of features across multiple machine learning algorithms. For all learning algorithms except<lb/> one, the combination of all features together gives the best performance. Another facet of the<lb/> evaluation considers how the presence of neutral instances affects the performance of features for<lb/> distinguishing between positive and negative polarity. These experiments show that the presence<lb/> of neutral instances greatly degrades the performance of these features, and that perhaps the<lb/> best way to improve performance across all polarity classes is to improve the system&apos;s ability to<lb/> identify when an instance is neutral.<lb/></div>
+
+	<byline>
+	<affiliation>* School of Informatics,</affiliation>
+	</byline>
+
+	<address>Edinburgh EH8 9LW, U.K.</address>
+
+	E-mail:
+	<email>twilson@inf.ed.ac.uk.<lb/></email>
+
+	<byline>
+	<affiliation>* * Department of Computer Science,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA 15260, USA.</address>
+
+	E-mail:
+	<email>{wiebe,hoffmanp}@cs.pitt.edu</email>.<lb/> 
+
+	Submission
+	<note type="submission">received: 14 November 2006; revised submission received: 8 March 2008; accepted for publication:<lb/> 16 April 2008.<lb/></note>
+
+	<note type="copyright">© 2009 Association for Computational Linguistics<lb/> </note>
+
+	<reference>Computational Linguistics<lb/> Volume 35, Number 3</reference>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="670F6D10B9C90C8478F0DEEE1C701B5D49EEED77"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Three-way switching in a cyanide-bridged<lb/> [CoFe] chain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Norihisa Hoshino 1 , Fumichika Iijima 1 , Graham N. Newton 1 , Norifumi Yoshida 1 , Takuya Shiga 1 ,<lb/> Hiroyuki Nojiri 2 , Akiko Nakao 3 , Reiji Kumai 3 , Youichi Murakami 3 and Hiroki Oshio 1 *<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Bistable compounds that exist in two interchangeable phases under identical conditions can act as switches under external<lb/> stimuli. Among such switchable materials, coordination complexes have energy levels (or phases) that are determined by<lb/> the electronic states of their constituent metal ions and ligands. They can exhibit multiple bistabilities and hold promise in<lb/> the search for multifaceted materials that display different properties in different phases, accessible through the<lb/> application of contrasting external stimuli. Molecular systems that exhibit both thermo-and photoinduced magnetic<lb/> bistabilities are excellent candidates for such systems. Here we describe a cyanide-bridged [CoFe] one-dimensional chiral<lb/> coordination polymer that displays both magnetic and electric bistabilities in the same temperature range. Both the<lb/> electric and magnetic switching probably arise from the same electron-transfer coupled spin-transition phenomenon, which<lb/> enables the reversible conversion between an insulating diamagnetic phase and either a semiconducting paramagnetic<lb/> (thermoinduced) or a type of ferromagnetic single-chain magnet (photoinduced) state.<lb/></div>
+
+	<byline>
+	<affiliation>1 Graduate School of Pure and Applied Sciences, Department of Chemistry, University of Tsukuba,</affiliation>
+	</byline>
+
+	<address>Tennodai 1-1-1, Tsukuba 305-8571, Japan,<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute for Materials Research, Tohoku University,</affiliation>
+	</byline>
+
+	<address>Katahira 2-1-1, Sendai 980-8577, Japan,</address>
+
+	<byline>
+	<affiliation>3 Photon Factory and Condensed Matter Research<lb/> Center, Institute of Materials Structure Science, High Energy Accelerator Research Organization (KEK),</affiliation>
+	</byline>
+
+	<address>1-1 Oho, Tsukuba, Ibaraki 305-0801, Japan.<lb/></address>
+
+	*e-mail:
+	<email>oshio@chem.tsukuba.ac.jp</email>
+
+	<note type="doctype">ARTICLES<lb/></note>
+
+	PUBLISHED ONLINE: 
+	<date>16 SEPTEMBER 2012</date> |
+
+	<idno>DOI: 10.1038/NCHEM.1455<lb/></idno>
+
+	<reference>NATURE CHEMISTRY | VOL 4 | NOVEMBER 2012 | www.nature.com/naturechemistry </reference>
+	
+	<page>921<lb/></page>
+
+	<note type="copyright">© 2012 Macmillan Publishers Limited. All rights reserved.<lb/></note>
+
+	<note type="submission">Received 22 March 2012; accepted 10 August 2012;<lb/></note>
+
+	published online
+	<date>16 September 2012</date>
+
+		</front>
+	</text>
+</tei>

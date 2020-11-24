@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC6270404"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Molecules 2013, 18, 9582-9593;</reference>
+
+	<idno>doi:10.3390/molecules18089582</idno>
+
+	<title level="j">molecules<lb/></title>
+
+	<idno>ISSN 1420-3049<lb/></idno>
+
+	www.mdpi.com/journal/molecules 
+
+	<note type="doctype">Article<lb/></note>
+	
+	<docTitle>
+	<titlePart>Evaluation of the Effect of Different Growth Media and<lb/> Temperature on the Suitability of Biofilm Formation by<lb/> Enterobacter cloacae Strains Isolated from Food Samples in<lb/> South Africa<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Mirriam E. Nyenje 1 , Ezekiel Green 1 and Roland N. Ndip 1,2, *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Biochemistry and Microbiology, Faculty of Science and Agriculture,<lb/> University of Fort Hare,</affiliation>
+	</byline>
+
+	<address>PMB X1314, Alice 5700, South Africa;<lb/></address>
+
+	E-Mails:
+	<email>nyenjem@yahoo.com</email>
+
+	(M.E.N.);
+	<email>egreen@ufh.ac.za</email>
+
+	(E.G.)<lb/>
+	<byline>
+	<affiliation>2 Department of Microbiology and Parasitology, Faculty of Science, University of Buea,</affiliation>
+	</byline>
+
+	<address>Box 63,<lb/> Buea, Cameroon<lb/></address>
+
+	* Author to whom correspondence should be addressed; E-Mail:
+	<email>rndip@ufh.ac.za</email>
+
+	or<lb/>
+	<email>ndip3@yahoo.com</email>
+
+	; Tel.: <phone>+27-782696191</phone>; Fax: +27-86624759.<lb/>
+	<note type="submission">Received: 20 May 2013; in revised form: 22 July 2013 / Accepted: 23 July 2013 /<lb/></note>
+
+	Published:
+	<date>9 August 2013<lb/></date>
+
+	Abstract:
+	<div type="abstract">This study evaluated the effects of growth medium, temperature, and incubation<lb/> time on biofilm formation by Enterobacter cloacae strains. The ability to adhere to a<lb/> surface was demonstrated using a microtiter plate adherence assay whereas the role of cell<lb/> surface properties in biofilm formation was assessed using the coaggregation and<lb/> autoaggregation assays. The architecture of the biofilms was examined under scanning<lb/> electron microscope (SEM). All the strains adhered to the well of the microtiter plate when<lb/> incubated for 48 h, irrespective of the growth medium and incubation temperature. It was<lb/> also noted that 90% and 73% of strains prepared from nutrient broth and cultured in brain<lb/> heart infusion (BHI) broth and tryptic soy broth (TSB), respectively, were able to form<lb/> biofilms, in contrast to 73% and 60% strains from nutrient agar and cultured in BHI and<lb/> TSB respectively grown under similar conditions. However, no statistically significant<lb/> difference was observed when the two methods were compared. The coaggregation index<lb/> ranged from 12% to 74%, with the best coaggregate activity observed when partnered with<lb/> Streptococcus pyogenes (54%-74%). The study indicates the suitability of BHI and TSB<lb/> medium for the cultivation of E. cloacae biofilms, however, temperature and incubation<lb/> time significantly affect biofilm formation by these bacteria.<lb/></div>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	<reference>Molecules 2013, 18 </reference>
+
+	<page>9583<lb/></page>
+
+	Keywords:
+	<keyword>Enterobacter cloacae; biofilm; growth medium; coaggregation;<lb/> autoaggregation; temperature<lb/></keyword>
+
+	<note type="copyright">© 2013 by the authors; licensee MDPI, Basel, Switzerland. This article is an open access article<lb/> distributed under the terms and conditions of the Creative Commons Attribution license<lb/> (http://creativecommons.org/licenses/by/3.0/).</note>
+
+		</front>
+	</text>
+</tei>

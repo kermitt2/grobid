@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="sdarticle02"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Disturbed sleep, fatigue, anxiety and depression in myocardial<lb/> infarction patients<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ingvor Johansson a , Björn W. Karlson b , Gunne Grankvist c , Eva Brink d,e, ⁎<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Department of Internal Medicine, NU Hospital group,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<byline>
+	<affiliation>b Astra Zeneca R&amp;D,</affiliation>
+	</byline>
+
+	<address>Mölndal, Sweden<lb/></address>
+
+	<byline>
+	<affiliation>c Department of Social and Behavioural Studies, University West, </affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<byline>
+	<affiliation>d Department of Nursing, Health and Culture, University West, </affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<byline>
+	<affiliation>e Institute of Health and Care Sciences, The Sahlgrenska Academy at University of Gothenburg,</affiliation>
+	</byline>
+
+	<address>Sweden<lb/></address>
+
+	<note type="submission">Received 17 April 2009; received in revised form 4 November 2009; accepted 15 December 2009<lb/></note>
+
+	Available online
+	<date>13 January 2010</date>
+
+	Abstract<lb/>
+	<div type="abstract">Background: Disturbed sleep has been linked to increased morbidity, mortality and depression and worsened health-related quality of life in<lb/> patients with chronic illness. Few studies of readjustment after coronary artery disease have explicitly focused on sleep disturbance.<lb/> Aim: To explore associations between disturbed sleep, fatigue, anxiety and depression, and to assess to what extent fatigue four months post-<lb/>MI could be explained.<lb/> Method: The sample included 204 consecutive patients, ≤ 80 years of age who answered questionnaires about disturbed sleep, fatigue,<lb/> anxiety and depression four months after MI.<lb/> Results: The variables anxiety, depression and disturbed sleep were all associated with fatigue. The regression model accounted for 46% of<lb/> the variance in fatigue with depression and disturbed sleep as predictors. Infarct size measured by conventional biochemical markers, left<lb/> ventricle ejection fraction and history of previous MI were not correlated with disturbed sleep, fatigue, anxiety or depression.<lb/> Conclusions: From knowledge about associations between disturbed sleep, fatigue, anxiety and depression after MI, cardiac nurses could be<lb/> trained to observe such symptoms. Optimal care for sleep disturbance may include actions to reduce anxiety and depression as well as self-<lb/>care advices about sleep hygiene in order to improve sleep quality and reduce fatigue.<lb/></div>
+
+	<note type="copyright">© 2009 European Society of Cardiology. Published by Elsevier B.V. All rights reserved.<lb/></note>
+
+	Keywords:
+	<keyword>Anxiety; Depression; Disturbed sleep; Fatigue; Myocardial infarction<lb/></keyword>
+
+	<reference>European Journal of Cardiovascular Nursing 9 (2010) 175 -180<lb/></reference>
+
+	www.elsevier.com/locate/ejcnurse<lb/> ⁎ Corresponding author. 
+
+	<byline>
+	<affiliation>Institute of Health and Care Sciences, The<lb/> Sahlgrenska Academy at University of Gothenburg,</affiliation>
+	</byline>
+
+	<address>Box 457, SE 405 30<lb/> Göteborg, Sweden.</address>
+
+	Tel.: <phone>+46 31 7866104</phone>.<lb/> E-mail address:
+	<email>eva.brink@gu.se</email>
+
+	(E. Brink).<lb/> 1474-5151/$ -see front matter
+	<note type="copyright">© 2009 European Society of Cardiology. Published by Elsevier B.V. All rights reserved.<lb/></note>
+
+	<idno>doi:10.1016/j.ejcnurse.2009.12.003</idno>
+
+		</front>
+	</text>
+</tei>

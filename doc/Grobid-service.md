@@ -23,9 +23,9 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.5.6.zip
-mv grobid-service-0.5.6 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.5.6.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.1.zip
+mv grobid-service-0.6.1 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.1.zip
 ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
 ```
 
@@ -51,7 +51,11 @@ We recommend, in particular to have a look at the metrics (using the [Metric lib
 
 If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
-You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. For preloading all the models, set the following config parameter to `true`:
+### Model loading strategy 
+You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
+Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. 
+
+For preloading all the models, set the following config parameter to `true`:
 
 ```yaml
 grobid:
@@ -121,6 +125,8 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |---        |---                    |---                   |---                  |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
 |           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+
 
 Response status codes:
 
@@ -149,8 +155,10 @@ Convert the complete input document into TEI XML format (header, body and biblio
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
 |           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
-|           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+|           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
+|           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
 
 Response status codes:
 
@@ -163,6 +171,8 @@ Response status codes:
 |         503          |     The service is not available, which usually means that all the threads are currently used                       |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service.
+
+The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid property file (under `grobid-home/config/grobid.properties`). As of August 2020, available segmenters are the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter) (recommended) and [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect).
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
@@ -186,6 +196,12 @@ Regarding the bibliographical references, it is possible to include the original
 
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
+```
+
+Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
+
+```console
+curl -v --form input=@./0thefile.pdf  --form segmentSentences=1 --form teiCoordinates=s localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences

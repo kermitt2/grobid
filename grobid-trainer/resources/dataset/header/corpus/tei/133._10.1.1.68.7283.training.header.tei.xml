@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="133._10.1.1.68.7283"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Testing the FM9001 Microprocessor<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kenneth L. Albin, Bishop C. Brock,<lb/> Warren A. Hunt, Jr., Lawrence M. Smith<lb/> </docAuthor>
+	</byline>
+
+	<note type="doctype">Technical Report</note> 
+	90<lb/> 
+	<date>January 6, 1995<lb/></date> 
+
+	<byline>
+	<affiliation>Computational Logic, Inc.<lb/> </affiliation>
+	</byline>
+
+	<address>1717 West Sixth Street, Suite 290<lb/> Austin, Texas 78703-4776<lb/></address>
+
+	TEL: <phone>+1 512 322 9951</phone><lb/> FAX: +1 512 322 0656<lb/> EMAIL:
+	<email>hunt@cli.com<lb/></email>
+
+	<note type="submission">This work was supported in part at Computational Logic, Inc. and by the<lb/> Defense Advanced Research Projects Agency, ARPA Orders 6082 and 9151. The<lb/> views and conclusions contained in this document are those of the author(s) and<lb/> should not be interpreted as representing the o cial policies, either expressed or<lb/> implied, of Computational Logic, Inc.<lb/></note>
+
+	<note type="copyright">Copyright c 1995 Computational Logic, Inc.<lb/></note>
+
+	CLI <note type="doctype">Technical Report</note> 90 
+
+	<page>1 </page>
+
+	Abstract<lb/>
+	<div type="abstract">The FM9001 is a general-purpose 32-bit microprocessor that was fabricated for<lb/> Computational Logic, Inc., by LSI Logic, Inc., as an ASIC. Prior to fabrication,<lb/> the FM9001 netlist was formally and mechanically proved to implement its user-<lb/>level speci cation by Brock and Hunt using the Nqthm theorem prover. In this<lb/> report, we document our post-fabrication testing of the physical device. The testing<lb/> included both executing FM9001 machine code and also low-level testing with a<lb/> Tektronix LV500 chip tester. To date, all tests have con rmed that the FM9001<lb/> behaves as formally speci ed.</div>
+
+		</front>
+	</text>
+</tei>

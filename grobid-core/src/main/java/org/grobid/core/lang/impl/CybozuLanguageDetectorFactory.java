@@ -2,8 +2,6 @@ package org.grobid.core.lang.impl;
 
 import com.cybozu.labs.langdetect.DetectorFactory;
 import com.cybozu.labs.langdetect.LangDetectException;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.lang.LanguageDetector;
 import org.grobid.core.lang.LanguageDetectorFactory;
 import org.grobid.core.utilities.GrobidProperties;
@@ -13,13 +11,11 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * User: zholudev
- * Date: 11/24/11
- * Time: 11:10 AM
+ * Implementation of a language detector factory with Cybozu language identifier
  */
 public class CybozuLanguageDetectorFactory implements LanguageDetectorFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(CybozuLanguageDetectorFactory.class);
-    private static LanguageDetector instance = null;
+    private static volatile LanguageDetector instance = null;
 
     private static void init() {
         File profilePath = new File(GrobidProperties.getLanguageDetectionResourcePath(), "cybozu/profiles").getAbsoluteFile();
@@ -35,20 +31,17 @@ public class CybozuLanguageDetectorFactory implements LanguageDetectorFactory {
     }
 
     public LanguageDetector getInstance() {
-        // synchronized (this.getClass()) {
         if (instance == null) {
-            getNewInstance();
+            synchronized (this) {
+                if(instance == null) {
+                    init();
+                    LOGGER.debug("synchronized getNewInstance");
+                    instance = new CybozuLanguageDetector();
+                }
+            }
+
         }
-        // }
         return instance;
     }
 
-    /**
-     * return new instance.
-     */
-    private synchronized void getNewInstance() {
-        init();
-        LOGGER.debug("synchronized getNewInstance");
-        instance = new CybozuLanguageDetector();
-    }
 }

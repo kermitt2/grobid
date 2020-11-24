@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="title-missing-affiliation-correspondence-attachment-868398v2.full"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+    <lb/>
+	Title: 
+	<docTitle>
+	<titlePart>Anesthetic agents affect urodynamic parameters and anesthetic depth at doses necessary<lb/> to facilitate preclinical testing in felines<lb/> </titlePart>
+	</docTitle>
+
+	Authors:
+	<byline>
+	<docAuthor>Jiajie Jessica Xu 1,2 , Zuha Yousuf 2,3 , Zhonghua Ouyang 2,3 , Eric Kennedy 2,3 , Patrick A.<lb/> Lester 1 , Tara Martin 1 , *Tim M. Bruns 2,3<lb/></docAuthor>
+	</byline>
+
+	Affiliations:<lb/>
+	<byline>
+	<affiliation>1. Unit for Laboratory Animal Medicine, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI<lb/></address>
+
+	<byline>
+	<affiliation>2. Biointerfaces Institute, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI<lb/></address>
+
+	<byline>
+	<affiliation>3. Biomedical Engineering Department, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI<lb/></address>
+
+	*Corresponding Author:<lb/>
+	<byline>
+	<docAuthor>Tim M. Bruns<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biomedical Engineering<lb/> University of Michigan<lb/></affiliation>
+	</byline>
+
+	<address>2800 Plymouth Road<lb/> NCRC B10-A169<lb/> Ann Arbor, MI, 48109, USA<lb/></address>
+
+	.<lb/> 
+
+	<note type="copyright">CC-BY-NC-ND 4.0 International license<lb/> is made available under a<lb/> The copyright holder for this preprint (which was not peer-reviewed) is the author/funder.</note> 
+
+	It<lb/> .<lb/>
+	
+	<idno>https://doi.org/10.1101/868398<lb/></idno>
+	doi:<lb/> bioRxiv preprint<lb/> 
+
+	Abstract:<lb/>
+	<div type="abstract">Urodynamic studies, used to understand bladder function, diagnose bladder disease, and<lb/> develop treatments for dysfunctions, are ideally performed with awake subjects. However, in<lb/> animal models, especially cats (a common model of spinal cord injury and associated bladder<lb/> pathology), anesthesia is often required for these procedures and can be a research<lb/> confounder. This study compared the effects of select agents (dexmedetomidine, alfaxalone,<lb/> propofol, isoflurane, and α-chloralose) on urodynamic (Δpressure, bladder capacity, bladder<lb/> compliance, non-voiding contractions, bladder pressure slopes) and anesthetic (change in heart<lb/> rate [∆HR], average heart rate [HR], reflexes, induction/recovery times) parameters in repeated<lb/> cystometrograms across five adult male cats. Δpressure was greatest with propofol, bladder<lb/> capacity was highest with α-chloralose, non-voiding contractions were greatest with α-<lb/>chloralose. Propofol and dexmedetomidine had the highest bladder pressure slopes during the<lb/> initial and final portions of the cystometrograms respectively. Cats progressed to a deeper plane<lb/> of anesthesia (lower HR, smaller ΔHR, decreased reflexes) under dexmedetomidine, compared<lb/> to propofol and alfaxalone. Time to induction was shortest with propofol, and time to recovery<lb/> was shortest with dexmedetomidine. These agent-specific differences in urodynamic and<lb/> anesthetic parameters in cats will facilitate appropriate study-specific anesthetic choices.<lb/></div>
+
+	Key words:
+	<keyword>anesthesia, bladder, cats, urodynamics</keyword>
+
+		</front>
+	</text>
+</tei>

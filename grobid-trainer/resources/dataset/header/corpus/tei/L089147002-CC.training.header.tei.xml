@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L089147002-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0111187v1 [cond-mat.supr-con]</idno>
+
+	<date>10 Nov 2001<lb/></date>
+
+	<docTitle>
+	<titlePart>Temperature Dependence of the Magnetic Penetration Depth in the Vortex State of<lb/> the Pyrochlore Superconductor, Cd 2 Re 2 O 7<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. D. Lumsden, 1 S. R. Dunsiger, 2 J. E. Sonier, 3 R. I. Miller, 4 R. F. Kiefl, 4, 5, 9<lb/> R. Jin, 1 J. He, 6 D. Mandrus, 1, 6 S. T. Bramwell, 7 and J. S. Gardner 8<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Solid State Division, Oak Ridge National Laboratory,</affiliation>
+	</byline>
+
+	<address>Oak Ridge, TN 37831<lb/></address>
+
+	<byline>
+	<affiliation>2 Los Alamos National Laboratory,</affiliation>
+	</byline>
+
+	<address>MST-10, MS K764 Los Alamos, NM 87545<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Physics, Simon Fraser University,</affiliation>
+	</byline>
+
+	<address>British Columbia Canada V5A 1S6<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Physics and Astronomy, University of British Columbia,</affiliation>
+	</byline>
+
+	<address>V6T 1Z1, Canada<lb/></address>
+
+	<byline>
+	<affiliation>5 TRIUMF,</affiliation>
+	</byline>
+
+	<address>Vancouver, British Columbia V6T 2A3, Canada<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Physics and Astronomy, University of Tennessee,</affiliation>
+	</byline>
+
+	<address>Knoxville, TN 37996<lb/></address>
+
+	<byline>
+	<affiliation>7 Department of Chemistry, University College London,</affiliation>
+	</byline>
+
+	<address>London WC1H OAJ, U.K.<lb/></address>
+
+	<byline>
+	<affiliation>8 National Research Council, NPMR, Chalk River Laboratories,</affiliation>
+	</byline>
+
+	<address>Chalk River, Ontario, K0J 1J0, Canada<lb/></address>
+
+	<byline>
+	<affiliation>9 Canadian Institute for Advanced Research,</affiliation>
+	</byline>
+
+	<address>180 Dundas Street West, Toronto, Ontario, M5G 1Z8, Canada<lb/></address>
+
+	(Dated:
+	<date>October 31, 2018</date>
+
+	)<lb/>
+	<div type="abstract">We report transverse field and zero field muon spin rotation studies of the superconducting rhe-<lb/>nium oxide pyrochlore, Cd2Re2O7. Transverse field measurements (H=0.007 T) show line broaden-<lb/>ing below Tc, which is characteristic of a vortex state, demonstrating conclusively the type-II nature<lb/> of this superconductor. The penetration depth is seen to level off below about 400 mK (T /Tc ∼ 0.4),<lb/> with a rather large value of λ(T = 0) ∼ 7500Å. The temperature independent behavior below ∼ 400<lb/> mK is consistent with a nodeless superconducting energy gap. Zero-field measurements indicate no<lb/> static magnetic fields developing below the transition temperature.<lb/></div>
+
+	<keyword>PACS numbers: 74.70.Dd, 74.60.-w, 76.75.+i</keyword>
+
+		</front>
+	</text>
+</tei>

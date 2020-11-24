@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="384._S2K-95-65"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<docTitle>
+	<titlePart>BigSur:<lb/> ASystem For the Management of Earth Science Data<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul Brown<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>EECS Department<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley<lb/></address>
+
+	<byline>
+	<docAuthor>Michael Stonebraker<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>EECS Department<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley</address>
+
+	ABSTRACT<lb/>
+	<div type="abstract">In this paper we present a prototype system for<lb/> the management of earth science data which is<lb/> novelinthat it takes a DBMS centric viewofthe<lb/> the task. Our prototype --called &quot;BigSur&quot; --is<lb/> shown in the context of its use by twogeographi-<lb/>cally distributed scientific groups with demand-<lb/>ing data storage and processing requirements.<lb/> BigSur currently stores 1 Terabyte of data, about<lb/> one thousandth of the volume EOSDIS must<lb/> store. Wec laim that the design principles<lb/> embodied in BigSur provide sufficient flexibility<lb/> to achieve the difficult scientific and technical<lb/> objectivesofMission to Planet Earth.</div>
+
+		</front>
+	</text>
+</tei>

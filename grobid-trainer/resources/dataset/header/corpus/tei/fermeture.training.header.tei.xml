@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="fermeture"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Empirical Natural Closure Relation for Short Fiber<lb/> Suspension Models<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Prulière 1 , A. Ammar 1* , F. Chinesta 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Laboratoire de Rhéologie, INPG, UJF, CNRS (UMR 5520)<lb/></affiliation>
+	</byline>
+
+	<address>1301 rue de la piscine, BP 53 Domaine universitaire<lb/> 38041 Grenoble Cedex 9, France<lb/></address>
+
+	<email>pruliere@ujf-grenoble.fr</email><lb/> * <email>Amine.Ammar@ujf-grenoble.fr</email>
+
+	(corresponding author)<lb/>
+
+	<byline>
+	<affiliation>2 LMSP UMR 8106 CNRS-ENSAM-ESEM<lb/></affiliation>
+	</byline>
+
+	<address>151 Boulevard de l&apos;Hôpital, F-75013 Paris, France<lb/></address>
+
+	<email>francisco.chinesta@paris.ensam.fr<lb/></email>
+
+	ABSTRACT.
+	<div type="abstract">This work focuses on the resolution of the Fokker-Planck equation that governs the<lb/> evolution of the fibers orientation distribution. To reduce the computing time, that equation is solved<lb/> along some flow trajectories in order to extract the significant information of the solution from the<lb/> application of the Karhunen-Loève decomposition. Now, from this information one could solve the<lb/> Fokker-Planck equation everywhere in the flow domain or simply adjust a closure relation that becomes<lb/> optimal for such flow, solving the evolution of some orientation moments which require a less amount of<lb/> computation. This paper focuses on this last strategy. For this purpose we start introducing the<lb/> Karhunen-Loève decomposition that is applied later to automatically extract the main solution<lb/> characteristics for adjusting empirically a natural closure relation.<lb/></div>
+
+	KEYWORDS:
+	<keyword>Short fiber suspensions; Closure relations; Numerical modeling; Model reduction;<lb/> Karhunen-Loève decomposition </keyword>
+
+	<note type="doctype">Manuscript</note>
+
+		</front>
+	</text>
+</tei>

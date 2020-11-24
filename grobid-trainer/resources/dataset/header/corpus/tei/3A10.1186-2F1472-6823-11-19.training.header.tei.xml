@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="3A10.1186-2F1472-6823-11-19"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">R E S E A R C H A R T I C L E<lb/> </note>
+
+	<note type="doctype">Open Access<lb/></note>
+	
+	<docTitle>
+	<titlePart>Assessment of quality of care given to diabetic<lb/> patients at Jimma University Specialized Hospital<lb/> diabetes follow-up clinic, Jimma, Ethiopia<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Esayas K Gudina 1* , Solomon T Amade 2 , Fessahaye A Tesfamichael 3 and Rana Ram 4</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">Background: Sub-Saharan Africa is currently enduring the heaviest global burden of diabetes and diabetes care in<lb/> such resource poor countries is far below standards. This study aims to describe the gaps in the care of Ethiopian<lb/> diabetic patients at Jimma University Specialized Hospital.<lb/> Methods: 329 diabetic patients were selected as participants in the study, aged 15 years or greater, who have<lb/> been active in follow-up for their diabetes for more than 1 year at the hospital. They were interviewed for their<lb/> demographic characters and relevant clinical profiles. Their charts were simultaneously reviewed for characters<lb/> related to diabetes and related morbidities. Descriptive statistics was used for most variables and Chi-square test,<lb/> where necessary, was used to test the association among various variables. P-value of &lt; 0.05 was used as statistical<lb/> significance.<lb/> Results: Blood glucose determination was done for 98.5% of patients at each of the last three visits, but none ever<lb/> had glycosylated haemoglobin results. The mean fasting blood sugar (FBS) level was 171.7 ± 63.6 mg/dl and 73.1%<lb/> of patients had mean FBS levels above 130 mg/dl. Over 44% of patients have already been diagnosed to be<lb/> hypertensive and 64.1% had mean systolic BP of &gt; 130 and/or diastolic &gt; 80 mmHg over the last three visits.<lb/> Diabetes eye and neurologic evaluations were ever done for 42.9% and 9.4% of patients respectively. About 66%<lb/> had urine test for albumin, but only 28.2% had renal function testing over the last 5 years. The rates for lipid test,<lb/> electrocardiography, echocardiography, or ultrasound of the kidneys during the same time were &lt; 5% for each.<lb/> Diabetic neuropathy (25.0%) and retinopathy (23.1%) were the most common chronic complications documented<lb/> among those evaluated for complications.<lb/> Conclusions: The overall aspects of diabetes care at the hospital were far below any recommended standards.<lb/> Hence, urgent action to improve care for patients with diabetes is mandatory. Future studies examining patterns<lb/> and prevalence of chronic complications using appropriate parameters is strongly recommended to see the true<lb/> burden of diabetes.<lb/></div>
+
+	* Correspondence:
+	<email>esakgd@gmail.com</email>
+
+	<byline>
+	<affiliation>1<lb/> Department of Internal Medicine, Jimma University,</affiliation>
+	</byline>
+
+	<address>Jimma, Ethiopia<lb/></address>
+
+	Full list of author information is available at the end of the article<lb/>
+	<reference>Gudina et al. BMC Endocrine Disorders 2011, 11:19<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/19<lb/></ptr>
+
+	<note type="copyright">© 2011 Gudina et al; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the Creative Commons<lb/> Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and reproduction in<lb/> any medium, provided the original work is properly cited.<lb/></note>
+
+	<reference>Gudina et al. BMC Endocrine Disorders 2011, 11:19<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/19<lb/></ptr>
+
+	<reference>Gudina et al. BMC Endocrine Disorders 2011, 11:19<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1472-6823/11/19<lb/></ptr>
+
+	Author details
+	<byline>
+	<affiliation>1<lb/> Department of Internal Medicine, Jimma University,</affiliation>
+	</byline>
+
+	<address>Jimma, Ethiopia.</address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Internal Medicine, Jimma University,</affiliation>
+	</byline>
+
+	<address>Jimma, Ethiopia.</address>
+
+	<byline>
+	<affiliation>3<lb/> Department of Epidemiology and Biostatistics, Jimma University,</affiliation>
+	</byline>
+
+	<address>Jimma,<lb/> Ethiopia.</address>
+
+	<byline>
+	<affiliation>4 Emergency Medicine Resident, St Barnabas Hospital.</affiliation>
+	</byline>
+
+	<address>Bronx, NY.</address>
+
+		</front>
+	</text>
+</tei>

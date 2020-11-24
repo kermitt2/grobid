@@ -94,7 +94,7 @@
 
 			<figure>Figure 1: Continuous compliance framework.<lb/></figure>
 
-			<p>Continuous compliance framework. Under Solvency II, companies will set a fre-<lb/>quency (at least annual) for the full calculation of the SCR 4 . Additionally, they will<lb/> set a list of pre-defined events and circumstances that will trigger a full calculation<lb/> whenever they happen. The proxies will be used to estimate the SR between two full<lb/> calculations and should be calibrated every time a full calculation is performed. This<lb/> process is summarized in <ref type="figure">Figure 1</ref> below.<lb/></p> 
+			<p>Continuous compliance framework. Under Solvency II, companies will set a fre-<lb/>quency (at least annual) for the full calculation of the SCR 4 . Additionally, they will<lb/> set a list of pre-defined events and circumstances that will trigger a full calculation<lb/> whenever they happen. The proxies will be used to estimate the SR between two full<lb/> calculations and should be calibrated every time a full calculation is performed. This<lb/> process is summarized in Figure <ref type="figure">1</ref> below.<lb/></p>
 
 			<p>Here below are a few examples of pre-defined events and circumstance,<lb/></p> 
 
@@ -139,13 +139,13 @@
 
 			<p>In this simplified framework, a change of the economic conditions over time will<lb/> be summarize in the realized indexes&apos; level transition. It is then possible to build a<lb/> proxy enabling one to approximate quickly the SR at each monitoring date, knowing<lb/> the current level of the composite indicators.<lb/></p> 
 
-			<p><ref type="figure">Figure 2</ref> illustrates the process to follow and the underlying assumptions made in<lb/> a simplified framework. Let us develop a case where the company&apos;s asset portfolio<lb/> can be divided into one stock and one bond pools. Two underlying risks have been<lb/> identified, the stock level risk and the interest rate level risk (average level change of<lb/> the rates curve 5 ). Our assumptions lead to consider that, once the risks associated to<lb/> composite indexes, it is possible to approximate the asset portfolio by a mix between,<lb/></p> 
+			<p>Figure <ref type="figure">2</ref> illustrates the process to follow and the underlying assumptions made in<lb/> a simplified framework. Let us develop a case where the company&apos;s asset portfolio<lb/> can be divided into one stock and one bond pools. Two underlying risks have been<lb/> identified, the stock level risk and the interest rate level risk (average level change of<lb/> the rates curve 5 ). Our assumptions lead to consider that, once the risks associated to<lb/> composite indexes, it is possible to approximate the asset portfolio by a mix between,<lb/></p>
 
 			<item>• a stock basket with the same returns, composed with the composite stock index<lb/> only (e.g. 70% CAC 40 / 30% EUROSTOXX50),<lb/></item> 
 
 			<item>• a bond basket replicating the cash-flows of the bonds discounted using a rate<lb/> curve induiced from the initial curve translated of the average variation of the<lb/> reference rate curve (the &quot; composite &quot; curve, e.g. the Euro swap curve).<lb/></item>
 
-			<p>Eventually we can decompose the process presented in <ref type="figure">Figure 2</ref> between,<lb/></p> 
+			<p>Eventually we can decompose the process presented in Figure <ref type="figure">2</ref> between,<lb/></p>
 
 			<item>• a vertical axe where one simplifies the risks themselves,<lb/></item> 
 
@@ -244,7 +244,7 @@
 
 			<p>When P = 1 we obtain an inefficient estimator of NAV 0 + (ε) which we will denote<lb/> by NPV 0 + (ε) (Net Present Value of margins), according to the notation of Vedani and<lb/> Devineau <ref type="biblio">[32]</ref>. Note that for a given transition ε, NPV 0 + (ε) is generally very volatile<lb/> and it is necessary to have P high to get an efficient estimator of NAV 0 + (ε).<lb/></p> 
 
-			<p>Methodology. Let us consider a set of N transitions obtained randomly from a proba-<lb/>ble space of economic transitions and denoted by<lb/> ε n =<lb/> 1 ε n , ..., J ε n<lb/> n ∈ 1;N<lb/> . We now<lb/> have to aggregate all the N associated risk-neutral scenarios tables, each one initialized<lb/> by the drivers&apos; levels (and volatilities if needed) corresponding to one of the economic<lb/> transitions in the set, in a unique table (see <ref type="figure">Figure 5</ref>).<lb/></p>
+			<p>Methodology. Let us consider a set of N transitions obtained randomly from a proba-<lb/>ble space of economic transitions and denoted by<lb/> ε n =<lb/> 1 ε n , ..., J ε n<lb/> n ∈ 1;N<lb/> . We now<lb/> have to aggregate all the N associated risk-neutral scenarios tables, each one initialized<lb/> by the drivers&apos; levels (and volatilities if needed) corresponding to one of the economic<lb/> transitions in the set, in a unique table (see Figure <ref type="figure">5</ref>).<lb/></p>
 
 			<figure>Figure 5: Aggregate table.<lb/></figure>
 
@@ -448,13 +448,13 @@
 
 			<p>This, with other stability assumptions such as stability of the tax rate and of the<lb/> tier-one own funds, enables one to reconstruct the Basic SCR, the operational SCR and<lb/> the Tax adjustments and, eventually, to approximate the overall SCR and the SR at the<lb/> monitoring date.<lb/></p>
 
-			<p>Note that this process can be automated to provide a monitoring target such as the<lb/> one depicted below and a set of outputs such as the eligible own funds, the overall SCR,<lb/> the SR, but also the various marginal SCR (see <ref type="figure">Figure 6</ref>).<lb/></p>
+			<p>Note that this process can be automated to provide a monitoring target such as the<lb/> one depicted below and a set of outputs such as the eligible own funds, the overall SCR,<lb/> the SR, but also the various marginal SCR (see Figure <ref type="figure">6</ref>).<lb/></p>
 
 			<head>4.2.2 Monitoring the daily evolution of the SR<lb/></head>
 
-			<p>In practice the ability to monitor the SR day by day is very interesting and provides a<lb/> good idea of the empirical volatility of such a ratio (see <ref type="figure">Figure 7</ref>).<lb/></p> 
+			<p>In practice the ability to monitor the SR day by day is very interesting and provides a<lb/> good idea of the empirical volatility of such a ratio (see Figure <ref type="figure">7</ref>).<lb/></p>
 
-			<p>In particular, in an ORSA framework it could be relevant to consider an artificially<lb/> smoothed SR, for example using a 2-week moving average, in order to depict a more<lb/> consistent solvency indicator. Considering the same data as presented in the previous<lb/> figure we would obtain the following two graphs (see <ref type="figure">Figure 8</ref>).<lb/></p> 
+			<p>In particular, in an ORSA framework it could be relevant to consider an artificially<lb/> smoothed SR, for example using a 2-week moving average, in order to depict a more<lb/> consistent solvency indicator. Considering the same data as presented in the previous<lb/> figure we would obtain the following two graphs (see Figure <ref type="figure">8</ref>).<lb/></p>
 
 			<figure>Figure 6: Target used to monitor the evolution of the risk factors<lb/></figure> 
 
@@ -480,7 +480,7 @@
 
 			<p>This monitoring tool enables the risk managers to run a certain number of studies, even<lb/> at the beginning of the monitoring period, in order ton anticipate the impact of future<lb/> risk deviations for example.<lb/></p> 
 
-			<p>Sensitivity study and stress testing. The parametric proxy that replicates the central<lb/> NAV can also be used to stress the marginal and joint sensitivities of the NAV to the<lb/> various risks embedded in our proxies. Even more interesting for the risk managers,<lb/> it is possible to assess a complete sensitivity study directly on the SR of the company,<lb/> which is very difficult to compute without using an approximation tool (see <ref type="figure">Figures 9<lb/> and 10</ref>).<lb/></p>
+			<p>Sensitivity study and stress testing. The parametric proxy that replicates the central<lb/> NAV can also be used to stress the marginal and joint sensitivities of the NAV to the<lb/> various risks embedded in our proxies. Even more interesting for the risk managers,<lb/> it is possible to assess a complete sensitivity study directly on the SR of the company,<lb/> which is very difficult to compute without using an approximation tool (see Figures <ref type="figure">9<lb/> and 10</ref>).<lb/></p>
 
 			<p>This sensitivity analyses needs no additional calculations to the proxies&apos; assess-<lb/>ment and enables the risk managers to compute as many &quot; approximate &quot; stress tests as<lb/> needed. In practice such a use of the tool enables to gain better insight about the impact<lb/> of each risk, taken either individually or jointly, on the SR.<lb/></p>
 
@@ -488,7 +488,7 @@
 
 			<figure>Figure 10: 2D solvency ratio sensitivities.<lb/></figure>
 
-			<p>Monitoring the marginal impacts of the risks and market anticipations. Using<lb/> our monitoring tool it is possible to trace the evolution of the SR risk after risk (only<lb/> for the monitored risks). <ref type="figure">Figures 11 and 12</ref> correspond to a ficticious evolution of the<lb/> risks implemented between the calibration date and a &quot; virtual &quot; monitoring date).<lb/></p> 
+			<p>Monitoring the marginal impacts of the risks and market anticipations. Using<lb/> our monitoring tool it is possible to trace the evolution of the SR risk after risk (only<lb/> for the monitored risks). Figures <ref type="figure">11 and 12</ref> correspond to a ficticious evolution of the<lb/> risks implemented between the calibration date and a &quot; virtual &quot; monitoring date).<lb/></p> 
 
 			<p>Such a study can be run at each monitoring date, or on fictitious scenarios (e.g. mar-<lb/>ket anticipations), in order to provide better insight about the SR movements through<lb/> time.<lb/></p> 
 

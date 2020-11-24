@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ZFN-A-054-0304-0272"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Exact Solitary-wave Solutions for the General<lb/> Fifth-order Shallow Water-wave Models<lb/> </titlePart>
+	</docTitle>
+
+	<note type="doctype">Notes<lb/></note> 
+
+	(tanh^): -2^(0 [-840a/#2« ^(O&quot;<lb/> 
+
+	<byline>
+	<docAuthor>Woo-Pyo Hong and Young-Dae Jung&apos;&apos;<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Catholic University of Taegu-Hyosung,<lb/> </affiliation>
+	</byline>
+
+	<address>Hayang, Kyongsan, Kyungbuk 712-702, South Korea<lb/> </address>
+
+	<byline>
+	<affiliation>* Department of Physics, Hanyang University,</affiliation>
+	</byline> 
+
+	<address>Ansan,<lb/> Kyunggi-Do 425-791, South Korea<lb/> </address>
+
+	<reference>Z. Naturforsch. 54 a, 272-273 (1999);<lb/></reference>
+
+	<note type="submission">received December 15, 1998<lb/></note>
+
+	<div type="abstract">We perform a computerized symbolic computation to find<lb/> some general solitonic solutions forthe general fifth-order shal-<lb/>low water-wave models. Applying the tanh-typed method, we<lb/> have found certain new exact solitary wave solutions. The pre-<lb/>viously published solutions turn out to be special cases with<lb/> restricted model parameters.</div>
+
+		</front>
+	</text>
+</tei>

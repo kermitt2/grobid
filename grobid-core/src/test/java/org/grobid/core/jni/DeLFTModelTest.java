@@ -26,7 +26,7 @@ public class DeLFTModelTest {
     @Test
     public void testShouldBuildTrainCommand() {
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData),
+            DeLFTModel.getTrainCommand("model1", trainingData, null),
             contains(
                 "python3", "grobidTagger.py", "model1", "train",
                 "--input", this.trainingData.getAbsolutePath(),
@@ -39,7 +39,7 @@ public class DeLFTModelTest {
     public void testShouldAddUseELMO() {
         GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_ELMO, "true");
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData),
+            DeLFTModel.getTrainCommand("model1", trainingData, null),
             contains(
                 "python3", "grobidTagger.py", "model1", "train",
                 "--input", this.trainingData.getAbsolutePath(),
@@ -55,7 +55,7 @@ public class DeLFTModelTest {
             GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_MODULE, "module1.py"
         );
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData),
+            DeLFTModel.getTrainCommand("model1", trainingData, null),
             contains(
                 "python3", "module1.py", "model1", "train",
                 "--input", this.trainingData.getAbsolutePath(),
@@ -68,7 +68,7 @@ public class DeLFTModelTest {
     public void testShouldAddSingleCustomTrainArg() {
         GrobidProperties.getProps().put(GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "arg1");
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData),
+            DeLFTModel.getTrainCommand("model1", trainingData, null),
             contains(
                 "python3", "grobidTagger.py", "model1", "train",
                 "--input", this.trainingData.getAbsolutePath(),
@@ -84,7 +84,7 @@ public class DeLFTModelTest {
             GrobidPropertyKeys.PROP_GROBID_DELFT_TRAIN_ARGS, "arg1 arg2"
         );
         assertThat(
-            DeLFTModel.getTrainCommand("model1", trainingData),
+            DeLFTModel.getTrainCommand("model1", trainingData, null),
             contains(
                 "python3", "grobidTagger.py", "model1", "train",
                 "--input", this.trainingData.getAbsolutePath(),

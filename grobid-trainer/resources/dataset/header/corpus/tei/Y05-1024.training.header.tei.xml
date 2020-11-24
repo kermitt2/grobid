@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="Y05-1024"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Proceedings of PACLIC 19, the 19 th Asia-Pacific Conference on Language, Information and Computation.<lb/></reference>
+
+	<docTitle>
+	<titlePart>Speech-Activated Text Retrieval System<lb/> for Cellular Phones with Web Browsing Capability<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Takahiro Ikeda<lb/> Shin-ya Ishikawa<lb/> Kiyokazu Miki<lb/> Fumihiro Adachi<lb/> Ryosuke Isotani<lb/> Kenji Satoh<lb/> Akitoshi Okumura<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Media and Information Research Laboratories, NEC Corporation<lb/></affiliation>
+	</byline>
+
+	<address>1753 Shimonumabe, Nakahara-Ku, Kawasaki, Kanagawa 211-8666, Japan<lb/></address>
+
+	<email>t-ikeda@di.jp.nec.com<lb/></email>
+
+	<email>s-ishikawa@dg.jp.ne.com<lb/></email>
+
+	<email>k-miki@bq.jp.nec.com<lb/></email>
+
+	<email>f-adachi@aj.jp.nec.com<lb/></email>
+
+	<email>r-isotani@bp.jp.nec.com<lb/></email>
+	
+	<email>k-satoh@da.jp.nec.com<lb/></email>
+
+	<email>a-okumura@bx.jp.nec.com<lb/></email>
+
+	Abstract<lb/>
+	<div type="abstract">This paper describes a text retrieval system for cellular phones with Web browsing<lb/> capability, which accepts spoken queries over the cellular phone and provides the<lb/> search result on the cellular phone screen. This system recognizes spoken queries by<lb/> large vocabulary continuous speech recognition (LVCSR), retrieves relevant<lb/> document by text retrieval, and provides the search result on the World Wide Web by<lb/> the integration of the Web and the voice systems. The text retrieval in this system<lb/> improves the performance for spoken short queries by: 1) utilizing word pairs with<lb/> dependency relations, 2) distinguishing affirmative and negative expressions, and 3)<lb/> converging synonyms. The LVCSR in this system shows enough performance level<lb/> for speech over the cellular phone with acoustic and language models derived from a<lb/> query corpus with target contents. The system constructed for user&apos;s manual for a<lb/> cellular phone navigates users to relevant passages for 81.4% of spoken queries.</div>
+
+		</front>
+	</text>
+</tei>

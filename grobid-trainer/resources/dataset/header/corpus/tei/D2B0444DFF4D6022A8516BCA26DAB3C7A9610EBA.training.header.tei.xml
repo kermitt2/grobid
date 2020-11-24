@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="D2B0444DFF4D6022A8516BCA26DAB3C7A9610EBA"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), pp. 153-158 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Microscopic dynamics in liquid deuterium:<lb/> A transition from collective to single-particle regimes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Mukherjee 1 , F. J. Bermejo 1 , B. Fåk 2 and S. M. Bennington 3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Instituto de Estructura de la Materia, Consejo Superior de Investigaciones Científicas<lb/> </affiliation>
+	</byline>
+
+	<address>Serrano 123, E-28006 Madrid, Spain<lb/></address>
+
+	<byline>
+	<affiliation>2 Département de Recherche Fondamentale sur la Matière Condensée, SPSMS/MDN<lb/> CEA Grenoble </affiliation>
+	</byline>
+
+	<address>-38054 Grenoble, France<lb/></address>
+
+	<byline>
+	<affiliation>3 Rutherford Appleton Laboratory -Chilton,</affiliation>
+	</byline>
+
+	<address>Didcot Oxon, OX11 0QX, UK<lb/></address>
+
+	(
+	<note type="submission">received 16 June 1997; accepted 9 September 1997</note>
+	)<lb/>
+	
+	<keyword>PACS. 62.10+s -Mechanical properties of liquids.<lb/> PACS. 62.60+v -Acoustical properties of liquids.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">Well-defined (propagating) collective density fluctuations are found for liquid<lb/> deuterium up to large wave vectors at SVP conditions. Their phase velocities as well as<lb/> the wave vector dependence of the excitation linewidths and strengths indicate that what is<lb/> experimentally observed is dominated by a continuation to large wave vectors of hydrodynamic<lb/> (sound-mode) excitations. For wave vectors 2.3 ≤ Q ≤ 4Å<lb/> −1 , the spectrum approaches that<lb/> of a weakly interacting fluid. A transition to a regime dominated by single-particle (recoil and<lb/> quantized rotation) motions is found to occur within 4.2 ≤ Q ≤ 4.5Å<lb/> −1 , depending upon<lb/> thermodynamic conditions.<lb/></div>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

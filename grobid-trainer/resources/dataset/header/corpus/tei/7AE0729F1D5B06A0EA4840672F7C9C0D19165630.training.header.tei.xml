@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="7AE0729F1D5B06A0EA4840672F7C9C0D19165630"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>FUNDAMENTAL AND APPLIED TOXICOLOGY 9, 595-597 (1987)<lb/></reference>
+
+	<note type="doctype">SHORT COMMUNICATION<lb/></note>
+
+	<docTitle>
+	<titlePart>Effect of Fusarochromanone and T-2 Toxin on Articular<lb/> Chondrocytes in Monolayer Culture<lb/></titlePart>
+	</docTitle>
+
+	<reference>Effect of Fusarochromanone and T-2 Toxin on Articular Chondrocytes in Monolayer Cul-<lb/>ture. WRIGHT, G. C, JR., MARASAS. W. F. O., AND SOKOLOFF, L. (1987). Fundam. Appl. Toxi-<lb/>col. 9, 595-597.</reference>
+
+	<div type="abstract">The effect of fusarochromanone and T-2 toxin on DNA synthesis and radio-<lb/>sulfate incorporation by rabbit articular chondrocytes was studied in monolayer culture. T-2<lb/> toxin reduced DNA more than 50% at 5 X 10~9 M; fusarochromanone caused small but progres-<lb/>sive decrements over a range of 5 X 10~8 to 10~6 M. These actions are not specific for chondro-<lb/>cytes. The findings lend no support to the hypothesis that fusarochroraanone, at least in unmodi-<lb/>fied form, is the etiologic agent in Kashin-Beck disease.</div>
+
+	<note type="copyright">© 1987 Society of Toxicology<lb/></note>
+
+	0272-0590/87 $3.00<lb/>
+	<note type="copyright">Copyright © 1987 by the Society of Toxicology.<lb/> AU rights of reproduction in any form reserved.<lb/></note>
+
+	<byline>
+	<docAuthor>GEORGE C. WRIGHT, JR.<lb/> WALTER F. O. MARASAS<lb/> LEON SOKOLOFF<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Pathology<lb/> State University of New York<lb/></affiliation>
+	</byline>
+
+	<address>Stony Brook, New York 11794<lb/> </address>
+
+	<byline>
+	<affiliation>Research Institute for Nutritional Diseases<lb/> South African Medical Research Council<lb/></affiliation>
+	</byline>
+
+	<address>P.O. Box 70<lb/> Tygerberg 7505, RSA<lb/></address>
+
+	<byline>
+	<affiliation>Department of Pathology<lb/> State University of New York<lb/></affiliation>
+	</byline>
+
+	<address>Stony Brook, New York 11794</address>
+
+		</front>
+	</text>
+</tei>

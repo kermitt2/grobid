@@ -56,7 +56,11 @@ public class GrobidRestProcessFiles {
      * @param consolidate consolidation parameter for the header extraction
      * @return a response object which contains a TEI representation of the header part
      */
-    public Response processStatelessHeaderDocument(final InputStream inputStream, final int consolidate) {
+    public Response processStatelessHeaderDocument(
+        final InputStream inputStream,
+        final int consolidate,
+        final boolean includeRawAffiliations
+    ) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
         Response response = null;
@@ -78,7 +82,12 @@ public class GrobidRestProcessFiles {
             } 
 
             // starts conversion process
-            retVal = engine.processHeader(originFile.getAbsolutePath(), consolidate, null);
+            retVal = engine.processHeader(
+                originFile.getAbsolutePath(),
+                consolidate,
+                includeRawAffiliations,
+                null
+            );
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
@@ -127,10 +136,12 @@ public class GrobidRestProcessFiles {
     public Response processFulltextDocument(final InputStream inputStream,
                                           final int consolidateHeader,
                                           final int consolidateCitations,
+                                          final boolean includeRawAffiliations,
                                           final boolean includeRawCitations,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
+                                          final boolean segmentSentences,
                                           final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
 
@@ -158,11 +169,13 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .generateTeiCoordinates(teiCoordinates)
+                    .withSentenceSegmentation(segmentSentences)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);
@@ -215,10 +228,12 @@ public class GrobidRestProcessFiles {
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
                                                           final int consolidateHeader,
                                                           final int consolidateCitations,
+                                                          final boolean includeRawAffiliations,
                                                           final boolean includeRawCitations,
                                                           final int startPage,
                                                           final int endPage,
-                                                          final boolean generateIDs) throws Exception {
+                                                          final boolean generateIDs,
+                                                          final boolean segmentSentences) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -248,11 +263,13 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .pdfAssetPath(new File(assetPath))
+                    .withSentenceSegmentation(segmentSentences)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);
@@ -556,6 +573,7 @@ public class GrobidRestProcessFiles {
                                          final String fileName,
                                          final int consolidateHeader,
                                          final int consolidateCitations,
+                                         final boolean includeRawAffiliations,
                                          final boolean includeRawCitations,
                                          final GrobidRestUtils.Annotation type) throws Exception {
         LOGGER.debug(methodLogIn());
@@ -578,7 +596,11 @@ public class GrobidRestProcessFiles {
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
-            out = annotate(originFile, type, engine, consolidateHeader, consolidateCitations, includeRawCitations);
+            out = annotate(
+                originFile, type, engine,
+                consolidateHeader, consolidateCitations,
+                includeRawAffiliations, includeRawCitations
+            );
             if (out != null) {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 out.save(outputStream);
@@ -655,7 +677,6 @@ public class GrobidRestProcessFiles {
                 .generateTeiCoordinates(elementWithCoords)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
-                .generateTeiCoordinates(elementWithCoords)
                 .build();
 
             DocumentSource documentSource = DocumentSource.fromPdf(originFile);
@@ -762,6 +783,7 @@ public class GrobidRestProcessFiles {
                                   final GrobidRestUtils.Annotation type, Engine engine,
                                   final int consolidateHeader,
                                   final int consolidateCitations,
+                                  final boolean includeRawAffiliations,
                                   final boolean includeRawCitations) throws Exception {
         // starts conversion process
         PDDocument outputDocument = null;
@@ -778,6 +800,7 @@ public class GrobidRestProcessFiles {
             .GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateCitations(consolidateCitations)
+            .includeRawAffiliations(includeRawAffiliations)
             .includeRawCitations(includeRawCitations)
             .generateTeiCoordinates(elementWithCoords)
             .build();

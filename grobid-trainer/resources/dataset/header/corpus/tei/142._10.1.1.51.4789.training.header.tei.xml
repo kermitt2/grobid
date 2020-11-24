@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="142._10.1.1.51.4789"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	To Appear: 
+	<meeting>Proc. IEEE ICC&apos;96 Conference, Dallas, June 1996.<lb/></meeting>
+
+	<docTitle>
+	<titlePart>A Bandwidth Control Scheme for Connectionless ATM<lb/> Tra c with Multiple Tra c Classes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J org Liebeherr y<lb/> Ian F. Akyildiz z<lb/> Debapriya Sarkar ?<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>y Computer Science Department, University of Virginia,</affiliation>
+	</byline>
+
+	<address>Charlottesville, VA 22903.<lb/></address>
+
+	<byline>
+	<affiliation>z School of ECE, Georgia Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Atlanta, GA 30332.<lb/></address>
+
+	<byline>
+	<affiliation>? Hughes Network Systems, Hughes Network Systems,</affiliation>
+	</byline>
+
+	<address>Germantown, MD 20876.</address>
+
+	Abstract<lb/>
+	<div type="abstract">A bandwidth control mechanism is proposed for ATM<lb/> networks that can control the usage of bandwidth in the<lb/> presence of both connection-oriented and connection-<lb/>less tra c, as well as multiple classes of connectionless<lb/> tra c. The bandwidth control mechanism operates at<lb/> three levels. At the topmost level, bandwidth is dy-<lb/>namically regulated between connection-oriented and<lb/> connectionless tra c based on the utilization of each<lb/> tra c type. At the next level, bandwidth is controlled<lb/> between di erent classes of connectionless tra c, such<lb/> as real-time tra c, bulk data tra c, and so on. At the<lb/> lowest level, bandwidth is distributed among ows be-<lb/>longing to the same connectionless tra c class.</div>
+
+		</front>
+	</text>
+</tei>

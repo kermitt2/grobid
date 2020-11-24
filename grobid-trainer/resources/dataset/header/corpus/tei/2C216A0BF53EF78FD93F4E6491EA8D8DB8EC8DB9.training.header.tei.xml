@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2C216A0BF53EF78FD93F4E6491EA8D8DB8EC8DB9"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Ž<lb/>.<lb/> 
+
+	<reference>Brain Research 839 1999 164-172<lb/></reference>
+
+	www.elsevier.comrlocaterbres<lb/>
+
+	<note type="doctype">Research report<lb/> </note>
+
+	<docTitle>
+	<titlePart>Developmental effects of in vivo and in vitro inhibition of nitric oxide<lb/> synthase in neurons<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marco Virgili, Barbara Monti, Anna LoRusso, Monia Bentivogli, Antonio Contestabile )<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Biology, UniÕersity of Bologna,</affiliation>
+	</byline>
+
+	<address>Via Selmi 3, 40126 Bologna, Italy<lb/></address>
+
+	<note type="submission">Accepted 15 June 1999</note>
+
+	Abstract<lb/>Ž .<lb/> 
+	<div type="abstract">The diffusible chemical messenger nitric oxide NO is involved in neuronal plasticity and it is, therefore, supposed to play a role in<lb/> brain development. A shortage of NO during the critical period of brain maturation may theoretically have long-lasting consequences on<lb/> the organization of the adult brain. We have performed in neonatal rats a chronic inhibition of the enzyme responsible for NO production,<lb/> Ž<lb/> .<lb/> nitric oxide synthase NOS , from postnatal day 3 to postnatal day 23, through administration of the competitive antagonist<lb/> Ž<lb/> .<lb/> N-nitro-L-arginine methylester L-NAME . The calcium-dependent catalytic activity resulted almost completely inhibited throughout the<lb/> period of treatment and it took more than 4 days after its suspension to get a full recovery. The expression of the neuronal isoform of the<lb/> Ž<lb/> .<lb/> enzyme nNOS , revealed by immunoblotting, was unchanged during the treatment and after it. The histochemical reaction for NADPH<lb/> diaphorase was reduced at the end of the treatment and recovered in concomitance with the recovery of the catalytic NOS activity. No<lb/> gross structural alterations were detected in brain morphology. The levels of three neurotransmitter-related and one astrocytic marker were<lb/> unchanged in the cerebellum, hippocampus and cortex of 60-day-old rats which had been neonatally treated. A similar lack of significant<lb/> effects on neurochemical brain maturation was also noticed in a parallel series of experiments, in which a short pulse of NOS inhibition<lb/> was performed at a critical prenatal time of brain development, from gestational day 14 to gestational day 19. In vitro, chronic exposure<lb/> Ž<lb/> .<lb/> of cerebellar granule cells to L-NAME 500 mM resulted in slight decrease of surviving neurons after 8 days in culture and in better<lb/> resistance to the challenge of stressful culture conditions. The present results suggest that the basic plan of brain organization can be<lb/> achieved despite an almost complete NOS inhibition during the maturation period. In vitro, NOS inhibition may bring to more<lb/> pronounced consequences on neuronal viability and function.</div> 
+
+	<note type="copyright">q 1999 Published by Elsevier Science B.V. All rights reserved.<lb/></note>
+
+	Keywords:
+	<keyword>Brain development; Nitric oxide; Nitric oxide synthase inhibitor; Cerebellar granule cell culture; Neurochemistry<lb/></keyword>
+
+	) Corresponding author. Fax: q 39-51-251208; E-m ail:<lb/>
+	<email>acontest@alma.unibo.it<lb/></email>
+
+	w x<lb/>0006-8993r99r$ -see front matter 
+	<note type="copyright">q 1999 Published by Elsevier Science B.V. All rights reserved.<lb/> </note>
+
+	Ž .<lb/> 
+
+	<idno>PII: S 0 0 0 6 -8 9 9 3 9 9 0 1 7 5 0 -3</idno>
+
+	( )
+		</front>
+	</text>
+</tei>

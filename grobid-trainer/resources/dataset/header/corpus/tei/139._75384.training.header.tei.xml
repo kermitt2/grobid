@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="139._75384"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Verifying adder circuits using powerlists<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>William Adams<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Computer Sciences<lb/> The University of Texas at Austin<lb/></affiliation>
+	</byline>
+
+	<address>Austin, TX 78712{1188<lb/> USA<lb/></address>
+
+	e-mail:
+	<email>will@cs.utexas.edu<lb/></email>
+
+	<date>March 29, 1994</date>
+
+	Abstract<lb/>
+	<div type="abstract">We de ne the ripple-carry and the carry-lookahead adder circuits in the<lb/> powerlist notation and we use the powerlist algebra to prove that these<lb/> circuits correctly implement addition for natural numbers represented as<lb/> bit vectors.<lb/></div>
+
+	<note type="funding">This material is based in part upon work supported by National Science Foundation<lb/> Award CCR-9111912</note>
+		</front>
+	</text>
+</tei>
