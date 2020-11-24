@@ -1,5 +1,7 @@
 package org.grobid.core.jni;
 
+import org.apache.commons.lang3.StringUtils;
+
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
@@ -252,7 +254,35 @@ public class DeLFTModel {
                 LOGGER.error("DeLFT model training via JEP failed", e);
             } 
         } 
-    } 
+    }
+
+    protected static List<String> getTrainCommand(String modelName, File trainingData, String architecture) {
+        String trainModule = GrobidProperties.getDeLFTTrainModule();
+        if (StringUtils.isEmpty(trainModule)) {
+            trainModule = "grobidTagger.py";
+        }
+        List<String> command = new ArrayList<>(Arrays.asList(
+            "python3", 
+            trainModule,
+            modelName,
+            "train",
+            "--input", trainingData.getAbsolutePath(),
+            "--output", GrobidProperties.getModelPath().getAbsolutePath()
+        ));
+        if (architecture != null) {
+            command.add("--architecture");
+            command.add(architecture);
+        }
+        if (GrobidProperties.useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
+            command.add("--use-ELMo");
+        }
+        if (StringUtils.isNotEmpty(GrobidProperties.getDeLFTTrainArgs())) {
+            command.addAll(Arrays.asList(
+                GrobidProperties.getDeLFTTrainArgs().split(" ")
+            ));
+        }
+        return command;
+    }
 
     /**
      *  Train with an external process rather than with JNI, this approach appears to be more stable for the
@@ -261,19 +291,8 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel, String architecture) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = Arrays.asList("python3", 
-                "grobidTagger.py", 
-                modelName,
-                "train",
-                "--input", trainingData.getAbsolutePath(),
-                "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
-            if (architecture != null) {
-                command.add("--architecture");
-                command.add(architecture);
-            }
-            if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
-                command.add("--use-ELMo");
-            }
+            List<String> command = getTrainCommand(modelName, trainingData, architecture);
+            LOGGER.info("Running: {}", command);
 
             ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
