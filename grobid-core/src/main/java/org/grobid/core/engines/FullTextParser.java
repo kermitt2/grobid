@@ -248,7 +248,8 @@ public class FullTextParser extends AbstractParser {
 				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {				
 					rese = label(bodytext);
 				} else {
-					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
+					LOGGER.info("Fulltext model: The input to the CRF processing is empty");
+					rese = "";
 				}
 
 				// we apply now the figure and table models based on the fulltext labeled output
