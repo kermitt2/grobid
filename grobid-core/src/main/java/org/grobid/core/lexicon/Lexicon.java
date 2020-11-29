@@ -131,12 +131,7 @@ public class Lexicon {
         InputStreamReader isr = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.isResourcesInHome())
-                ist = new FileInputStream(file);
-            else
-                ist = getClass().getResourceAsStream(path);
-
-
+            ist = new FileInputStream(file);
             isr = new InputStreamReader(ist, "UTF8");
             dis = new BufferedReader(isr);
 
@@ -203,18 +198,11 @@ public class Lexicon {
                     file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
-        InputStreamReader isr = null;
-        BufferedReader dis = null;
+        //InputStreamReader isr = null;
+        //BufferedReader dis = null;
         try {
-            if (GrobidProperties.isResourcesInHome())
-                ist = new FileInputStream(file);
-            else
-                ist = getClass().getResourceAsStream(path);
-
-            isr = new InputStreamReader(ist, "UTF8");
-            dis = new BufferedReader(isr);
+            ist = new FileInputStream(file);
             CountryCodeSaxParser parser = new CountryCodeSaxParser(countryCodes, countries);
-
             SAXParserFactory spf = SAXParserFactory.newInstance();
             //get a new instance of parser
             SAXParser p = spf.newSAXParser();
@@ -226,10 +214,6 @@ public class Lexicon {
             try {
                 if (ist != null)
                     ist.close();
-                if (isr != null)
-                    isr.close();
-                if (dis != null)
-                    dis.close();
             } catch (Exception e) {
                 throw new GrobidResourceException("Cannot close all streams.", e);
             }
@@ -254,11 +238,7 @@ public class Lexicon {
         InputStream ist = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.isResourcesInHome()) {
-                ist = new FileInputStream(file);
-            } else {
-                ist = getClass().getResourceAsStream(path);
-            }
+            ist = new FileInputStream(file);
             dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
 
             String l = null;
@@ -274,10 +254,8 @@ public class Lexicon {
                 }
             }
         } catch (FileNotFoundException e) {
-//    		e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } catch (IOException e) {
-//    		e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
             try {
@@ -304,11 +282,7 @@ public class Lexicon {
         InputStream ist = null;
         BufferedReader dis = null;
         try {
-            if (GrobidProperties.isResourcesInHome())
-                ist = new FileInputStream(file);
-            else
-                ist = getClass().getResourceAsStream(path);
-
+            ist = new FileInputStream(file);
             dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
 
             String l = null;
@@ -324,10 +298,8 @@ public class Lexicon {
                 }
             }
         } catch (FileNotFoundException e) {
-//    		e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } catch (IOException e) {
-//    		e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
         } finally {
             try {
