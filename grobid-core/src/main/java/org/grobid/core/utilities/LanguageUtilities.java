@@ -18,7 +18,7 @@ public class LanguageUtilities {
 
 	private static volatile LanguageUtilities instance = null;
 
-	private boolean useLanguageId = false;
+	//private boolean useLanguageId = false;
 	private LanguageDetectorFactory ldf = null;
 
 	public static LanguageUtilities getInstance() {
@@ -34,28 +34,25 @@ public class LanguageUtilities {
 	}
 
 	private LanguageUtilities() {
-		useLanguageId = GrobidProperties.isUseLanguageId();
-		if (useLanguageId) {
-			String className = GrobidProperties.getLanguageDetectorFactory();
-			try {
-				ldf = (LanguageDetectorFactory) Class.forName(className)
-						.newInstance();
-			} catch (ClassCastException e) {
-				throw new GrobidException("Class " + className
-						+ " must implement "
-						+ LanguageDetectorFactory.class.getName(), e);
-			} catch (ClassNotFoundException e) {
-				throw new GrobidException(
-						"Class "
-								+ className
-								+ " were not found in the classpath. "
-								+ "Make sure that it is provided correctly is in the classpath", e);
-			} catch (InstantiationException e) {
-				throw new GrobidException("Class " + className
-						+ " should have a default constructor", e);
-			} catch (IllegalAccessException e) {
-				throw new GrobidException(e);
-			}
+		String className = GrobidProperties.getLanguageDetectorFactory();
+		try {
+			ldf = (LanguageDetectorFactory) Class.forName(className)
+					.newInstance();
+		} catch (ClassCastException e) {
+			throw new GrobidException("Class " + className
+					+ " must implement "
+					+ LanguageDetectorFactory.class.getName(), e);
+		} catch (ClassNotFoundException e) {
+			throw new GrobidException(
+					"Class "
+							+ className
+							+ " were not found in the classpath. "
+							+ "Make sure that it is provided correctly is in the classpath", e);
+		} catch (InstantiationException e) {
+			throw new GrobidException("Class " + className
+					+ " should have a default constructor", e);
+		} catch (IllegalAccessException e) {
+			throw new GrobidException(e);
 		}
 	}
 
@@ -68,9 +65,6 @@ public class LanguageUtilities {
 	 * @return language ids concatenated with ;
 	 */
 	public Language runLanguageId(String text) {
-		if (!useLanguageId) {
-			return null;
-		}
         try {
             return ldf.getInstance().detect(text);
         } catch (Exception e) {
@@ -92,9 +86,6 @@ public class LanguageUtilities {
 	 * @return language Language object consisting of the language code and a confidence score
 	 */
 	public Language runLanguageId(String text, int maxLength) {
-		if (!useLanguageId) {
-			return null;
-		}
         try {
 			int max = text.length();
 			if (maxLength < max)

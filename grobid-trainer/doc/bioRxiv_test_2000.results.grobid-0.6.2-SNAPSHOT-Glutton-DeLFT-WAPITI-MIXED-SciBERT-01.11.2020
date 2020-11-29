@@ -1,4 +1,4 @@
-citation model is BidLSTM-CRF
+citation model is SciBERT-CRF
 
 -------------> GROBID failed on 2 PDF
 

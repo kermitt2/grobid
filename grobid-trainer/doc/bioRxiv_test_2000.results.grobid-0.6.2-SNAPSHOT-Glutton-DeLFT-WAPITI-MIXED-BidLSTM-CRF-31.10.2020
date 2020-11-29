@@ -4,12 +4,6 @@ citation model is BidLSTM-CRF
 
 2000 PDF files processed in 3677.49 seconds, 1.8387449999999999 seconds per PDF file
 
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/392563v1
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/454355v1
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/392563v1
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/454355v1
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/392563v1
-warning: no Grobid TEI file found under /media/lopez/store/biblio/biorxiv-10k-test-2000/454355v1
 Evaluation metrics produced in 1052.236 seconds
 
 ======= Header metadata ======= 

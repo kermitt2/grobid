@@ -160,10 +160,7 @@ public class PatentRefParser {
 	        InputStreamReader isr = null;
 	        BufferedReader dis = null;
 	        try {
-	            if (GrobidProperties.isResourcesInHome())
-	                ist = new FileInputStream(localFile);
-	            else
-	                ist = getClass().getResourceAsStream(path);
+	            ist = new FileInputStream(localFile);
 	            isr = new InputStreamReader(ist, "UTF8");
 	            dis = new BufferedReader(isr);
 
