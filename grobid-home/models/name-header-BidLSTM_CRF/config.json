@@ -10,7 +10,7 @@
     "case_embedding_size": 5,
     "recurrent_dropout": 0.5,
     "fold_number": 1,
-    "model_name": "name-header",
+    "model_name": "name-header-BidLSTM_CRF",
     "max_char_length": 30,
     "char_embedding_size": 25,
     "word_embedding_size": 300,

@@ -4,7 +4,7 @@
     "char_embedding_size": 25,
     "use_crf": true,
     "num_char_lstm_units": 25,
-    "model_name": "header",
+    "model_name": "header-BidLSTM_CRF",
     "dropout": 0.5,
     "char_vocab_size": 338,
     "batch_size": 10,

@@ -1,5 +1,5 @@
 {
-    "model_name": "citation",
+    "model_name": "citation-BidLSTM_CRF",
     "features_vocabulary_size": 12,
     "features_embedding_size": 4,
     "fold_number": 1,

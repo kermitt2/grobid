@@ -11,7 +11,7 @@
     "embeddings_name": "glove-840B",
     "num_word_lstm_units": 100,
     "use_crf": true,
-    "model_name": "reference-segmenter",
+    "model_name": "reference-segmenter-BidLSTM_CRF",
     "num_char_lstm_units": 25,
     "case_vocab_size": 8,
     "char_embedding_size": 25,

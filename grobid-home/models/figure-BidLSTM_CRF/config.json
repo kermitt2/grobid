@@ -10,7 +10,7 @@
     "char_vocab_size": 103,
     "dropout": 0.5,
     "model_type": "BidLSTM_CRF",
-    "model_name": "figure",
+    "model_name": "figure-BidLSTM_CRF",
     "recurrent_dropout": 0.5,
     "fold_number": 1,
     "num_char_lstm_units": 25,

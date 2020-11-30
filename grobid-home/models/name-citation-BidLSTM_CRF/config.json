@@ -6,7 +6,7 @@
     "case_embedding_size": 5,
     "num_char_lstm_units": 25,
     "embeddings_name": "glove-840B",
-    "model_name": "name-citation",
+    "model_name": "name-citation-BidLSTM_CRF",
     "model_type": "BidLSTM_CRF",
     "recurrent_dropout": 0.5,
     "char_vocab_size": 84,
