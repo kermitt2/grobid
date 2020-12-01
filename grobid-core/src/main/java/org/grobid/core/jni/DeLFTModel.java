@@ -173,6 +173,9 @@ public class DeLFTModel {
         } catch(ExecutionException e) {
             LOGGER.error("DeLFT model " + this.modelName + " labelling failed", e);
         }
+        // In some areas, GROBID currently expects tabs as feature separators.
+        // (Same as in WapitiModel.label)
+        result = result.replaceAll(" ", "\t");
         return result;
     }
 
