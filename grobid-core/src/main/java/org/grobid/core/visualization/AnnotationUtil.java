@@ -34,17 +34,14 @@ public class AnnotationUtil {
         PDRectangle mediaBox = page.getCropBox();
         if (mediaBox == null) {
             mediaBox = page.getMediaBox();
+            // this will look for the main media box of the page up in the PDF element hierarchy
             if (mediaBox == null) {
-                mediaBox = page.getMediaBox();
-                // this will look for the main media box of the page up in the PDF element hierarchy
+                // last hope
+                mediaBox = page.getArtBox();
                 if (mediaBox == null) {
-                    // last hope
-                    mediaBox = page.getArtBox();
-                    if (mediaBox == null) {
-                        // we tried our best given PDFBox
-                        LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
-                        return null;
-                    }
+                    // we tried our best given PDFBox
+                    LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
+                    return null;
                 }
             }
         }
