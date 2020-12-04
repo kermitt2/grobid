@@ -28,7 +28,7 @@ The process for fetching and running the image is as follow:
 > docker run -t --rm --init -p 8080:8070 -p 8081:8071 $image_id_from_previous_command
 ```
 
-- Access the service:
+Access the service:
   - open the browser at the address `http://localhost:8080`
   - the health check will be accessible at the address `http://localhost:8081`
 

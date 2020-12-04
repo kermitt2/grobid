@@ -40,7 +40,7 @@ GROBID can be considered as production ready. Deployments in production includes
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 
-GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. The tool can run with feature engineered CRF (default), deep learning architectures (with or without layout features) or a mixture of CRF and DL. 
+GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. The tool can run with feature engineered CRF (default), Deep Learning architectures (with or without layout feature channels) or any mixtures of CRF and DL to balance scalability and accuracy.
 
 For more information on how the tool works, on its key features and [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/), visit the [GROBID documentation](https://grobid.readthedocs.org).
 

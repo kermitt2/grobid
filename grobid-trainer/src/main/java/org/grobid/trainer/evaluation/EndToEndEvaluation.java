@@ -86,6 +86,7 @@ public class EndToEndEvaluation {
                             .consolidateHeader(1)
                             .consolidateCitations(0)
                             .withPreprocessImages(true)
+//                            .withSentenceSegmentation(true)
                             .build();
 				String tei = engine.fullTextToTEI(this.pdfFile, config);
 				// write the result in the same directory

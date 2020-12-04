@@ -451,12 +451,6 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
-    /*public static boolean withSentenceSegmentation() {
-        return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_WITH_SENTENCE_SEGMENTATION, "false")
-        );
-    }*/
-
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using
      * a Deep Learning sequence labelling engine.
@@ -475,12 +469,6 @@ public class GrobidProperties {
             pathFile = new File(rawPath);
         }
         return pathFile.getAbsolutePath();
-    }
-
-    public static boolean isDeLFTRedirectOutput() {
-        return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT)
-        );
     }
 
     public static String getGluttonHost() {
@@ -658,19 +646,9 @@ public class GrobidProperties {
         setPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS, nbThreads);
     }
 
-    /**
-     * Returns if a language id shall be used, given in the grobid-property
-     * file.
-     *
-     * @return true if a language id shall be used
-     */
-    public static Boolean isUseLanguageId() {
-        return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
-    }
-
     public static String getLanguageDetectorFactory() {
         String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_LANG_DETECTOR_FACTORY);
-        if (isUseLanguageId() && (StringUtils.isBlank(factoryClassName))) {
+        if (StringUtils.isBlank(factoryClassName)) {
             throw new GrobidPropertyException("Language detection is enabled but a factory class name is not provided");
         }
         return factoryClassName;
@@ -681,9 +659,9 @@ public class GrobidProperties {
      *
      * @param useLanguageId true, if a language id shall be used
      */
-    public static void setUseLanguageId(final String useLanguageId) {
+    /*public static void setUseLanguageId(final String useLanguageId) {
         setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
-    }
+    }*/
 
     public static String getSentenceDetectorFactory() {
         String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_SENTENCE_DETECTOR_FACTORY);
@@ -691,27 +669,6 @@ public class GrobidProperties {
             throw new GrobidPropertyException("Sentence detection is enabled but a factory class name is not provided");
         }
         return factoryClassName;
-    }
-
-    /**
-     * Returns if resources like firstnames, lastnames and countries are
-     * supposed to be read from grobid-home folder, given in the grobid-property
-     * file.
-     *
-     * @return true if a language id shall be used
-     */
-    public static Boolean isResourcesInHome() {
-        return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, "true"));
-    }
-
-    /**
-     * Sets if resources like firstnames, lastnames and countries are supposed
-     * to be read from grobid-home folder, given in the grobid-property file.
-     *
-     * @param resourceInHome true, if a language id shall be used
-     */
-    public static void setResourcesInHome(final String resourceInHome) {
-        setPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, resourceInHome);
     }
 
     /**

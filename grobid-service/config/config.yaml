@@ -23,7 +23,6 @@ server:
       port: 8071
     registerDefaultExceptionMappers: false
 
-
 logging:
   level: INFO
   loggers:

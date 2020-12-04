@@ -10,7 +10,6 @@ public interface GrobidPropertyKeys {
 
     String PROP_GROBID_VERSION = "org.grobid.version";
     String PROP_TMP_PATH = "grobid.temp.path";
-    //    public static final String PROP_BIN_PATH = "grobid.bin.path";
     String PROP_NATIVE_LIB_PATH = "grobid.nativelibrary.path";
     String PROP_3RD_PARTY_PDFTOXML = "grobid.3rdparty.pdf2xml.path";
     String PROP_3RD_PARTY_PDFTOXML_MEMORY_LIMIT = "grobid.3rdparty.pdf2xml.memory.limit.mb";
@@ -18,14 +17,11 @@ public interface GrobidPropertyKeys {
 
     String PROP_GROBID_CRF_ENGINE = "grobid.crf.engine";
     String PROP_GROBID_DELFT_PATH = "grobid.delft.install";
-    String PROP_GROBID_DELFT_REDIRECT_OUTPUT = "grobid.delft.redirect_output";
     String PROP_GROBID_DELFT_ELMO = "grobid.delft.useELMo";
     String PROP_DELFT_ARCHITECTURE = "grobid.delft.architecture";
-    String PROP_USE_LANG_ID = "grobid.use_language_id";
+
     String PROP_LANG_DETECTOR_FACTORY = "grobid.language_detector_factory";
     String PROP_SENTENCE_DETECTOR_FACTORY = "grobid.sentence_detector_factory";
-
-    //String PROP_WITH_SENTENCE_SEGMENTATION = "grobid.with_sentence_segmentation";
 
     String PROP_CROSSREF_ID = "grobid.crossref_id";
     String PROP_CROSSREF_PW = "grobid.crossref_pw";
@@ -45,12 +41,6 @@ public interface GrobidPropertyKeys {
      */
     String PROP_CROSSREF_TOKEN = "org.grobid.crossref.token";
 
-    /*String PROP_MYSQL_HOST = "grobid.mysql_host";
-    String PROP_MYSQL_PORT = "grobid.mysql_port";
-    String PROP_MYSQL_USERNAME = "grobid.mysql_username";
-    String PROP_MYSQL_PW = "grobid.mysql_passwd";
-    String PROP_MYSQL_DB_NAME = "grobid.mysql_db_name";*/
-
     String PROP_PROXY_HOST = "grobid.proxy_host";
     String PROP_PROXY_PORT = "grobid.proxy_port";
 
@@ -66,13 +56,6 @@ public interface GrobidPropertyKeys {
     String PROP_GLUTTON_PORT = "org.grobid.glutton.port";
 
     /**
-     * Determines if properties like the firstnames, lastnames country codes and
-     * dictionaries are supposed to be read from $GROBID_HOME path or not
-     * (possible values (true|false) default is false)
-     */
-    String PROP_RESOURCE_INHOME = "grobid.resources.inHome";
-
-    /**
      * The name of the env-entry located in the web.xml, via which the
      * grobid-service.propeties path is set.
      */
@@ -83,12 +66,6 @@ public interface GrobidPropertyKeys {
      * grobid.propeties path is set.
      */
     String PROP_GROBID_PROPERTY = "org.grobid.property";
-
-    /**
-     * The name of the system property, via which the grobid home folder can be
-     * located.
-     */
-//    String PROP_GROBID_SERVICE_PROPERTY = "org.grobid.property.service";
 
     /**
      * name of the property setting the admin password

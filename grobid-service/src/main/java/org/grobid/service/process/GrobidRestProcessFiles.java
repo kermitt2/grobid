@@ -677,7 +677,6 @@ public class GrobidRestProcessFiles {
                 .generateTeiCoordinates(elementWithCoords)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
-                .generateTeiCoordinates(elementWithCoords)
                 .build();
 
             DocumentSource documentSource = DocumentSource.fromPdf(originFile);
