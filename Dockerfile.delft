@@ -47,8 +47,8 @@ FROM openjdk:8u212-jre-slim
 #COPY --from=openjdk:8u212-jre-slim / /
 COPY --from=python:3.6-slim / /
 
-RUN apt-get update
-RUN apt-get install -y apt-utils build-essential gcc apt-utils libxml2 unzip git curl
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip git curl
 
 WORKDIR /opt
 
@@ -89,10 +89,10 @@ ENV PYTHONWARNINGS="ignore"
 WORKDIR /opt/grobid
 
 # enable DeLFT in GROBID
-COPY --from=builder /opt/grobid-source/grobid-core/src/main/resources/set-grobid-config.sh /opt/scripts/
-ENV PATH /opt/scripts:$PATH
-ARG grobid_config=/opt/grobid/grobid-home/config/grobid.properties
-ENV GROBID_CONFIG=${grobid_config}
+#COPY --from=builder /opt/grobid-source/grobid-core/src/main/resources/set-grobid-config.sh /opt/scripts/
+#ENV PATH /opt/scripts:$PATH
+#ARG grobid_config=/opt/grobid/grobid-home/config/grobid.properties
+#ENV GROBID_CONFIG=${grobid_config}
 #RUN set-grobid-config.sh "grobid.crf.engine" "delft" \
 #    && set-grobid-config.sh "grobid.delft.install" "/opt/delft" \
 #    && set-grobid-config.sh "grobid.delft.redirect_output" "true" \
