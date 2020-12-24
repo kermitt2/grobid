@@ -1,6 +1,9 @@
-## Docker GROBID image
+## Docker GROBID image using deep learning models and/or CRF models
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
+
+## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
+## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
 
 # -------------------
 # build builder image
@@ -76,7 +79,7 @@ VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 RUN python3 -m pip install pip --upgrade
 
-# install DeLFT
+# install DeLFT - for the moment we clone the repo to simplify, but we would need install the pypi lib and set the data path in the future
 RUN git clone https://github.com/kermitt2/delft
 WORKDIR /opt/delft
 RUN pip3 install -r requirements.txt
@@ -127,6 +130,12 @@ ENV LD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/jep:${LD_LIBRARY_PATH
 # remove libjep.so because we are providng our own version in the virtual env
 RUN rm /opt/grobid/grobid-home/lib/lin-64/libjep.so
 
+# preload embeddings, for GROBID all the models use glove-840B (default for the script)
+WORKDIR /opt/delft
+COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
+RUN python3 preload_embeddings.py
+
+WORKDIR /opt/grobid
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 
 ARG GROBID_VERSION
