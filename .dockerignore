@@ -54,6 +54,12 @@ grobid-books
 grobid-smecta
 grobid-example
 grobid-test-ant
+grobid-software
+software-mentions
+grobid-books
+grobid-smecta
+grobid-keyterm
+dataseer-ml
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
 grobid-home/models/units
@@ -68,3 +74,9 @@ grobid-home/models/lexical-entry/model.wapiti
 grobid-home/models/dictionary*
 grobid-home/models/dictionaries*
 
+grobid-home/models/software*
+grobid-home/models/superconductors*
+grobid-home/models/values
+grobid-home/models/dataseer
+grobid-home/models/*-bert*/
+grobid-home/models/*scibert*/

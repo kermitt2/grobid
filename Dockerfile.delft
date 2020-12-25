@@ -1,0 +1,150 @@
+## Docker GROBID image using deep learning models and/or CRF models
+
+## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
+
+## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
+## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+
+# -------------------
+# build builder image
+# -------------------
+
+FROM openjdk:8u212-jdk as builder
+
+USER root
+
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install apt-utils libxml2 
+
+WORKDIR /opt/grobid-source
+
+RUN mkdir -p .gradle
+VOLUME /opt/grobid-source/.gradle
+
+# gradle
+COPY gradle/ ./gradle/
+COPY gradlew ./
+COPY gradle.properties ./
+COPY build.gradle ./
+COPY settings.gradle ./
+
+# source
+COPY grobid-home/ ./grobid-home/
+COPY grobid-core/ ./grobid-core/
+COPY grobid-service/ ./grobid-service/
+COPY grobid-trainer/ ./grobid-trainer/
+
+RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
+
+WORKDIR /opt
+
+# -------------------
+# build runtime image
+# -------------------
+
+# use NVIDIA Container Toolkit to automatically recognize GPU drivers on the host machine
+#FROM nvidia/cuda:10.2-base
+#CMD nvidia-smi
+# using multi-stage docker containers to include both JRE 8 and Python 3.6
+FROM openjdk:8u212-jre-slim
+#COPY --from=openjdk:8u212-jre-slim / /
+COPY --from=python:3.6-slim / /
+
+RUN apt-get update && \
+    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip git curl
+
+WORKDIR /opt
+
+COPY --from=builder /opt/grobid-source/grobid-core/build/libs/grobid-core-*-onejar.jar ./grobid/grobid-core-onejar.jar
+COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip ./grobid-service.zip
+COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip ./grobid-home.zip
+
+RUN unzip -o ./grobid-service.zip -d ./grobid && \
+    mv ./grobid/grobid-service-* ./grobid/grobid-service
+
+RUN unzip ./grobid-home.zip -d ./grobid && \
+    mkdir -p /opt/grobid/grobid-home/tmp
+
+RUN rm *.zip
+RUN rm -rf /opt/grobid/grobid-home/pdf2xml/lin-32
+RUN rm -rf /opt/grobid/grobid-home/pdf2xml/mac-64
+RUN rm -rf /opt/grobid/grobid-home/pdf2xml/win-*
+RUN rm -rf /opt/grobid/grobid-home/lib/lin-32
+RUN rm -rf /opt/grobid/grobid-home/lib/win-*
+
+# below to allow logs to be written in the container
+# RUN mkdir -p logs
+
+VOLUME ["/opt/grobid/grobid-home/tmp"]
+
+RUN python3 -m pip install pip --upgrade
+
+# install DeLFT - for the moment we clone the repo to simplify, but we would need install the pypi lib and set the data path in the future
+RUN git clone https://github.com/kermitt2/delft
+WORKDIR /opt/delft
+RUN pip3 install -r requirements.txt
+# cleaning useless delft data
+RUN rm -rf data/sequenceLabelling data/textClassification data/test data/models/sequenceLabelling data/models/textClassification .git
+
+# disable python warnings (and fix logging)
+ENV PYTHONWARNINGS="ignore"
+
+WORKDIR /opt/grobid
+
+# enable DeLFT in GROBID
+#COPY --from=builder /opt/grobid-source/grobid-core/src/main/resources/set-grobid-config.sh /opt/scripts/
+#ENV PATH /opt/scripts:$PATH
+#ARG grobid_config=/opt/grobid/grobid-home/config/grobid.properties
+#ENV GROBID_CONFIG=${grobid_config}
+#RUN set-grobid-config.sh "grobid.crf.engine" "delft" \
+#    && set-grobid-config.sh "grobid.delft.install" "/opt/delft" \
+#    && set-grobid-config.sh "grobid.delft.redirect_output" "true" \
+#    && tail -5 "${grobid_config}"
+
+ENV JAVA_OPTS=-Xmx4g
+
+# Add Tini
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "-s", "--"]
+
+RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
+RUN chmod 777 /opt/grobid/grobid-home/tmp
+
+# install jep (and temporarily the matching JDK)
+ENV TEMP_JDK_HOME=/tmp/jdk-${JAVA_VERSION}
+ENV JDK_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-x64_linux_8u212b04.tar.gz
+RUN curl --fail --show-error --location -q ${JDK_URL} -o /tmp/openjdk.tar.gz \
+    && ls -lh /tmp/openjdk.tar.gz \
+    && mkdir - "${TEMP_JDK_HOME}" \
+    && tar --extract \
+        --file /tmp/openjdk.tar.gz \
+        --directory "${TEMP_JDK_HOME}" \
+        --strip-components 1 \
+        --no-same-owner \
+    && JAVA_HOME=${TEMP_JDK_HOME} pip3 install jep==3.9.1 \
+    && rm -f /tmp/openjdk.tar.gz \
+    && rm -rf "${TEMP_JDK_HOME}"
+ENV LD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/jep:${LD_LIBRARY_PATH}
+# remove libjep.so because we are providng our own version in the virtual env
+RUN rm /opt/grobid/grobid-home/lib/lin-64/libjep.so
+
+# preload embeddings, for GROBID all the models use glove-840B (default for the script)
+WORKDIR /opt/delft
+COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
+RUN python3 preload_embeddings.py
+
+WORKDIR /opt/grobid
+CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+
+ARG GROBID_VERSION
+
+LABEL \
+    authors="The GROBID contributors" \
+    org.label-schema.name="GROBID" \
+    org.label-schema.description="Image with GROBID service" \
+    org.label-schema.url="https://github.com/kermitt2/grobid" \
+    org.label-schema.version=${GROBID_VERSION}
+
+

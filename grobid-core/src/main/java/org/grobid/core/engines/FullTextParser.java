@@ -233,51 +233,48 @@ public class FullTextParser extends AbstractParser {
 
 			// full text processing
 			featSeg = getBodyTextFeatured(doc, documentBodyParts);
-			String rese = null;
+			String resultBody = null;
 			LayoutTokenization layoutTokenization = null;
 			List<Figure> figures = null;
 			List<Table> tables = null;
 			List<Equation> equations = null;
-			if (featSeg != null) {
+			if (featSeg != null && isNotBlank(featSeg.getLeft())) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
 				layoutTokenization = featSeg.getRight();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
-				if ( (bodytext != null) && (bodytext.trim().length() > 0) ) {				
-					rese = label(bodytext);
-				} else {
-					LOGGER.debug("Fulltext model: The input to the CRF processing is empty");
-				}
+
+                resultBody = label(bodytext);
 
 				// we apply now the figure and table models based on the fulltext labeled output
-				figures = processFigures(rese, layoutTokenization.getTokenization(), doc);
+				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Figure figure : figures) {
-                    if ((figure.getCaptionLayoutTokens() != null) && (figure.getCaptionLayoutTokens().size() > 0) ) {
+                    if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
                         Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
                         figure.setLabeledCaption(captionProcess.getLeft());
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
                 }
 
-				tables = processTables(rese, layoutTokenization.getTokenization(), doc);
+				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Table table : tables) {
-                    if ( (table.getCaptionLayoutTokens() != null) && (table.getCaptionLayoutTokens().size() > 0) ) {
+                    if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
                         Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
                         table.setLabeledCaption(captionProcess.getLeft());
                         table.setCaptionLayoutTokens(captionProcess.getRight());
                     }
-                    if ( (table.getNoteLayoutTokens() != null) && (table.getNoteLayoutTokens().size() > 0) ) {
+                    if ( CollectionUtils.isNotEmpty(table.getNoteLayoutTokens())) {
                         Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
                         table.setLabeledNote(noteProcess.getLeft());
                         table.setNoteLayoutTokens(noteProcess.getRight());
                     }
                 }
 
-				equations = processEquations(rese, layoutTokenization.getTokenization(), doc);
+				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
@@ -286,21 +283,20 @@ public class FullTextParser extends AbstractParser {
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
-			String rese2 = null;
+			String resultAnnex = null;
 			List<LayoutToken> tokenizationsBody2 = null;
-			if (featSeg != null) {
+			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
 				tokenizationsBody2 = featSeg.getRight().getTokenization();
-				if (isNotEmpty(trim(bodytext))) 
-	            	rese2 = label(bodytext);
+				resultAnnex = label(bodytext);
 				//System.out.println(rese);
 			}
 
             // final combination
             toTEI(doc, // document
-				rese, rese2, // labeled data for body and annex
+				resultBody, resultAnnex, // labeled data for body and annex
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, // header 
 				figures, tables, equations, 
