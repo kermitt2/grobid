@@ -2,8 +2,14 @@
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
 
-## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
+## usage example with version 0.6.2-SNAPSHOT:
+## docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.delft .
+
+## no GPU:
 ## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+
+## allocate all available GPUs (only Linux with proper nvidia driver installed on host machine):
+## docker run --rm --gpus all --init -p 8070:8070 -p 8071:8071 -v /home/lopez/obid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
 
 # -------------------
 # build builder image
@@ -42,13 +48,21 @@ WORKDIR /opt
 # build runtime image
 # -------------------
 
-# use NVIDIA Container Toolkit to automatically recognize GPU drivers on the host machine
-#FROM nvidia/cuda:10.2-base
-#CMD nvidia-smi
-# using multi-stage docker containers to include both JRE 8 and Python 3.6
-FROM openjdk:8u212-jre-slim
-#COPY --from=openjdk:8u212-jre-slim / /
+# use NVIDIA Container Toolkit to automatically recognize possible GPU drivers on the host machine
+FROM nvidia/cuda:10.1-base
+CMD nvidia-smi
+
+# setting locale is likely useless but to be sure
+ENV LANG C.UTF-8
+
+# include both JRE 8 and Python 3.6 using base images - this is probably terrible practice but it works fine
+COPY --from=openjdk:8u212-jre-slim / /
+ENV JAVA_HOME /usr/local/openjdk-8
+ENV PATH $JAVA_HOME/bin:$PATH
+ENV JAVA_VERSION 8u212
 COPY --from=python:3.6-slim / /
+# ensure local python is preferred over distribution python
+ENV PATH /usr/local/bin:$PATH
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip git curl
@@ -79,7 +93,7 @@ VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 RUN python3 -m pip install pip --upgrade
 
-# install DeLFT - for the moment we clone the repo to simplify, but we would need install the pypi lib and set the data path in the future
+# install DeLFT - for the moment we clone the repo to simplify at dev time, but we will need install an updated pypi lib and set the data path in the future
 RUN git clone https://github.com/kermitt2/delft
 WORKDIR /opt/delft
 RUN pip3 install -r requirements.txt
@@ -90,16 +104,6 @@ RUN rm -rf data/sequenceLabelling data/textClassification data/test data/models/
 ENV PYTHONWARNINGS="ignore"
 
 WORKDIR /opt/grobid
-
-# enable DeLFT in GROBID
-#COPY --from=builder /opt/grobid-source/grobid-core/src/main/resources/set-grobid-config.sh /opt/scripts/
-#ENV PATH /opt/scripts:$PATH
-#ARG grobid_config=/opt/grobid/grobid-home/config/grobid.properties
-#ENV GROBID_CONFIG=${grobid_config}
-#RUN set-grobid-config.sh "grobid.crf.engine" "delft" \
-#    && set-grobid-config.sh "grobid.delft.install" "/opt/delft" \
-#    && set-grobid-config.sh "grobid.delft.redirect_output" "true" \
-#    && tail -5 "${grobid_config}"
 
 ENV JAVA_OPTS=-Xmx4g
 
@@ -130,7 +134,8 @@ ENV LD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/jep:${LD_LIBRARY_PATH
 # remove libjep.so because we are providng our own version in the virtual env
 RUN rm /opt/grobid/grobid-home/lib/lin-64/libjep.so
 
-# preload embeddings, for GROBID all the models use glove-840B (default for the script)
+# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
+# to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected
 WORKDIR /opt/delft
 COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
 RUN python3 preload_embeddings.py
@@ -141,10 +146,8 @@ CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/con
 ARG GROBID_VERSION
 
 LABEL \
-    authors="The GROBID contributors" \
+    authors="The contributors" \
     org.label-schema.name="GROBID" \
     org.label-schema.description="Image with GROBID service" \
     org.label-schema.url="https://github.com/kermitt2/grobid" \
     org.label-schema.version=${GROBID_VERSION}
-
-
