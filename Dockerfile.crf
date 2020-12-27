@@ -40,7 +40,6 @@ COPY grobid-trainer/ ./grobid-trainer/
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
-
 # -------------------
 # build runtime image
 # -------------------
@@ -78,30 +77,16 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
+RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
+RUN chmod 777 /opt/grobid/grobid-home/tmp
+
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 
 ARG GROBID_VERSION
 
 LABEL \
-    authors="Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>" \
-    org.label-schema.name="Grobid" \
+    authors="The contributors" \
+    org.label-schema.name="GROBID" \
     org.label-schema.description="Image with GROBID service" \
     org.label-schema.url="https://github.com/kermitt2/grobid" \
     org.label-schema.version=${GROBID_VERSION}
-
-## Docker tricks:
-
-# - remove all stopped containers
-# > docker rm $(docker ps -a -q)
-
-# - remove all unused images
-# > docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
-
-# - remove all untagged images
-# > docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
-
-# - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
-# > docker-machine restart
-
-RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
-RUN chmod 777 /opt/grobid/grobid-home/tmp

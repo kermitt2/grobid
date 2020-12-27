@@ -54,7 +54,11 @@ def preload(embeddings_name, input_path=None):
         return
 
     # create and load the database in write mode
-    envFilePath = os.path.join(embeddings.registry["embedding-lmdb-path"], embeddings_name)
+    embedding_lmdb_path = embeddings.registry["embedding-lmdb-path"]
+    if not os.path.isdir(embedding_lmdb_path):
+        os.makedirs(embedding_lmdb_path)
+
+    envFilePath = os.path.join(embedding_lmdb_path, embeddings_name)
     embeddings.env = lmdb.open(envFilePath, map_size=map_size)
     embeddings.load_embeddings_from_file(embeddings_path)
     embeddings.clean_downloads()
