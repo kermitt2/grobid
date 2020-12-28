@@ -4,9 +4,9 @@ Docker is an open-source project that automates the deployment of applications i
 
 GROBID can be instantiated and run using Docker. For convenience, we provide two docker images:
 
-- a lightweight image with only CRF models: this image offers best performance in term of runtime and memory usage, as well as limiting the size of the image. The image information can be found [here](https://hub.docker.com/r/lfoppiano/grobid/).
+- a **lightweight image** with only CRF models: this image offers best performance in term of runtime and memory usage, as well as limiting the size of the image. The image information can be found [here](https://hub.docker.com/r/lfoppiano/grobid/).
 
-- a full image able to run both CRF and Deep Learning models: this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide slighly more accurate results but at the cost of much slower runtime and higher memory usage. The image is also considerably larger (python and tensorflow libraries taking more than 2GB and pre-loaded embeddings around 5GB).
+- a **full image** able to run both CRF and Deep Learning models: this image includes all the required python and TensorFlow libraries, GPU support and all DL model resources. It can provide slighly more accurate results, but at the cost of much slower runtime and higher memory usage. The image is also considerably larger (python and tensorflow libraries taking more than 2GB and pre-loaded embeddings around 5GB).
 
 We assume in the following that docker is installed and working on your system. Note that the default memory available for your container might need to be increased for using all the available GROBID services, in particular on `macos`, see the Troubleshooting section below.
 
@@ -40,7 +40,7 @@ Grobid web services are then available as described in the [service documentatio
 
 ##CRF and Deep Learning image
 
-**The image is not available on DockerHub yet ! Home-based internet connection not stable enough, we are working on it :) In the meantime you can rebuild the image as indicated [below](#Building-the-CRF-and-Deep-Learning-image).** 
+**The image is not available on DockerHub yet ! Home-based internet connection not stable enough, we are working on it :) In the meantime you can rebuild the image as indicated [below](#building-the-crf-and-deep-learning-image).** 
 
 The process for retrieving and running the image is as follow:
 
@@ -88,7 +88,7 @@ docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobi
 
 You need to use an absolute path to specify your modified `grobid.properties` file.
 
-## onfiguration using Environment Variables
+##Configuration using Environment Variables
 
 Properties from the `grobid-home/config/grobid.properties` can be overridden using environment variables. Given a property key, the corresponding environment variable is the property key converted to upper case and the dot (`.`) replaced by two underscores `__`. (Property keys must be all lower case)
 
