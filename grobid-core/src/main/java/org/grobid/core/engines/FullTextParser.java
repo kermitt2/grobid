@@ -208,7 +208,7 @@ public class FullTextParser extends AbstractParser {
                 processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), 0);
 
             // consolidate the set
-            if (config.getConsolidateCitations() != 0) {
+            if (config.getConsolidateCitations() != 0 && resCitations != null) {
                 Consolidation consolidator = Consolidation.getInstance();
                 if (consolidator.getCntManager() == null)
                     consolidator.setCntManager(Engine.getCntManager());
