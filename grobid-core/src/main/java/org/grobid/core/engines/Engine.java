@@ -170,7 +170,7 @@ public class Engine implements Closeable {
         if (reference != null) {
             reference = reference.replaceAll("\\\\", "");
         }
-        return parsers.getCitationParser().processing(reference, consolidate);
+        return parsers.getCitationParser().processingString(reference, consolidate);
     }
 
     /**
@@ -188,7 +188,7 @@ public class Engine implements Closeable {
         if (references == null || references.size() == 0)
             return finalResults;
         for (String reference : references) {
-            BiblioItem bib = parsers.getCitationParser().processing(reference, 0);
+            BiblioItem bib = parsers.getCitationParser().processingString(reference, 0);
             //if ((bib != null) && !bib.rejectAsReference()) 
             {
                 BibDataSet bds = new BibDataSet();

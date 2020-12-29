@@ -279,7 +279,6 @@ public class FullTextParser extends AbstractParser {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
 
-
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
@@ -1134,7 +1133,7 @@ public class FullTextParser extends AbstractParser {
 
                     for (LabeledReferenceResult ref : references) {
                         if ( (ref.getReferenceText() != null) && (ref.getReferenceText().trim().length() > 0) ) {
-                            BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), 0);
+                            BiblioItem bib = parsers.getCitationParser().processingString(ref.getReferenceText(), 0);
                             String authorSequence = bib.getAuthors();
                             if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
                                 /*List<String> inputs = new ArrayList<String>();
