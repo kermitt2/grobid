@@ -143,8 +143,10 @@ public class DeLFTModel {
                         continue;
                     }
 
-                    if (inputLine.length() == 0)
+                    if (inputLine.length() == 0) {
+                        labelledData.append("\n");
                         continue;
+                    }
                     labelledData.append(inputLine);
                     labelledData.append(" ");
 
