@@ -166,7 +166,8 @@ public class EndToEndEvaluation {
             // we process all tei files in the output directory
             File[] refFiles = input.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-					if (dir.isDirectory())
+                	File localDir = new File(dir.getAbsolutePath() + File.separator + name);
+					if (localDir.isDirectory())
 						return true;
 					else
 						return false;
@@ -216,6 +217,7 @@ public class EndToEndEvaluation {
 			
 			//executor.awaitTermination(5, TimeUnit.SECONDS);
 
+			System.out.println("\n");
 			try (ProgressBar pb = new ProgressBar("PDF processing", refFiles.length)) {
 				for(Future<Boolean> result : results) { 
 					try {
@@ -412,12 +414,14 @@ public class EndToEndEvaluation {
 			}
 		}
 
-        File input = new File(xmlInputPath);
+        File input = new File(xmlInputPath);      
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
-				if (dir.isDirectory())
+            	File localDir = new File(dir.getAbsolutePath() + File.separator + name);
+				if (localDir.isDirectory()) {
 					return true;
+				}
 				else
 					return false;
             }
@@ -441,6 +445,7 @@ public class EndToEndEvaluation {
 		if (sectionType == this.CITATION)
 			typeEval = "citation";
 
+		System.out.println("\n");
 		try (ProgressBar pb = new ProgressBar("Evaluation "+typeEval, refFiles.length)) {
 
         for (File dir : refFiles) {
