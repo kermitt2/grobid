@@ -13,7 +13,7 @@ grobid:
   pdf:
     pdfalto:
       # path relative to the grobid-home path (e.g. grobid-home/pdf2xml), you don't want to change this normally
-      path: "./pdf2xml"
+      path: "pdf2xml"
       # security for PDF parsing
       memory_limit_mb: 6096
       timeout_sec: 60
@@ -33,12 +33,16 @@ grobid:
       #host: "localhost"
       #port: 8080
     crossref:
-      mailto: "toto@titi.tutu"
-      token: "yourmysteriouscrossrefmetadataplusauthorizationtokentobeputhere"
+      mailto: 
+      # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g. 
+      #mailto: "toto@titi.tutu"
+      token:
+      # to use Crossref metadata plus service (available by subscription)
+      #token: "yourmysteriouscrossrefmetadataplusauthorizationtokentobeputhere"
 
   proxy:
-    # proxy to be used when doing external call to the consolidation service, "null" if none
-    host: "null"
+    # proxy to be used when doing external call to the consolidation service
+    host: 
     port: 
 
   # CORS configuration for the GROBID web API service

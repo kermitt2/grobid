@@ -170,7 +170,6 @@ public class CrossrefClient implements Closeable {
 		}
 	}
 
-
 	@Override
 	public void close() throws IOException {
 		timedSemaphore.shutdown();

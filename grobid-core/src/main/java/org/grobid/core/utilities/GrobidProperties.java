@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 
 /**
  * This class provide methods to set/load/access grobid config value from a yaml config file loaded 
@@ -230,6 +231,7 @@ public class GrobidProperties {
 
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
             grobidConfig = mapper.readValue(GROBID_CONFIG_PATH, GrobidConfig.class);
         } catch (IOException exp) {
             throw new GrobidPropertyException("Cannot open GROBID config yaml file at location '" + GROBID_CONFIG_PATH.getAbsolutePath()
@@ -357,7 +359,7 @@ public class GrobidProperties {
         if (grobidConfig.grobid.temp == null)
             return new File(System.getProperty("java.io.tmpdir"));
         else 
-            return new File(grobidConfig.grobid.temp);
+            return new File(grobidHome.getPath(), grobidConfig.grobid.temp);
     }
 
     public static void setNativeLibraryPath(final String nativeLibPath) {
@@ -370,7 +372,7 @@ public class GrobidProperties {
      * @return folder that contains native libraries
      */
     public static File getNativeLibraryPath() {
-        return new File(grobidConfig.grobid.nativelibrary);
+        return new File(grobidHome.getPath(), grobidConfig.grobid.nativelibrary);
     }
 
     /**
@@ -446,7 +448,10 @@ public class GrobidProperties {
      * @return host for connecting crossref
      */
     public static String getProxyHost() {
-        return grobidConfig.grobid.proxy.host;
+        if (grobidConfig.grobid.proxy.host == null || grobidConfig.grobid.proxy.host.trim().length() == 0)
+            return null;
+        else
+            return grobidConfig.grobid.proxy.host;
     }
 
     /**
@@ -456,8 +461,8 @@ public class GrobidProperties {
      */
     public static void setProxyHost(final String host) {
         grobidConfig.grobid.proxy.host = host;
-        System.setProperty("http.proxyHost", "host");
-        System.setProperty("https.proxyHost", "host");
+        System.setProperty("http.proxyHost", host);
+        System.setProperty("https.proxyHost", host);
     }
 
     /**
@@ -486,7 +491,10 @@ public class GrobidProperties {
      * @return string of the email parameter to be used for requesting crossref
      */
     public static String getCrossrefMailto() {
-        return grobidConfig.grobid.consolidation.crossref.mailto;
+        if (grobidConfig.grobid.consolidation.crossref.mailto == null || grobidConfig.grobid.consolidation.crossref.mailto.trim().length() == 0)
+            return null;
+        else
+            return grobidConfig.grobid.consolidation.crossref.mailto;
     }
 
     /**
@@ -508,7 +516,10 @@ public class GrobidProperties {
      * @return authorization token to be used for requesting crossref
      */
     public static String getCrossrefToken() {
-        return grobidConfig.grobid.consolidation.crossref.token;
+        if (grobidConfig.grobid.consolidation.crossref.token == null || grobidConfig.grobid.consolidation.crossref.token.trim().length() == 0)
+            return null;
+        else
+            return grobidConfig.grobid.consolidation.crossref.token;
     }
 
     /**
@@ -593,8 +604,7 @@ public class GrobidProperties {
     public static void loadPdf2XMLPath() {
         LOGGER.debug("loading pdfalto command path");
         String pathName = grobidConfig.grobid.pdf.pdfalto.path;
-
-        pathToPdfToXml = new File(pathName);
+        pathToPdfToXml = new File(grobidHome.getPath(), pathName);
         if (!pathToPdfToXml.exists()) {
             throw new GrobidPropertyException(
                 "Path to pdfalto doesn't exists. " + 
@@ -622,7 +632,7 @@ public class GrobidProperties {
     private static String getGrobidCRFEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.error("No configuration parameter defnied for model " + modelName);
+            LOGGER.error("No configuration parameter defined for model " + modelName);
             return null;
         }
         return param.engine;
@@ -630,10 +640,10 @@ public class GrobidProperties {
 
     public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
         String engineName = getGrobidCRFEngineName(modelName);
-        /*if (grobidCRFEngine.name().equals(engineName)) {
-            return grobidCRFEngine;
-        }*/
-        return GrobidCRFEngine.get(engineName);
+        if (engineName == null)
+            return null;
+        else
+            return GrobidCRFEngine.get(engineName);
     }
 
     public static GrobidCRFEngine getGrobidCRFEngine(final GrobidModel model) {
@@ -641,6 +651,10 @@ public class GrobidProperties {
     }
 
     public static File getModelPath(final GrobidModel model) {
+        if (modelMap.get(model.getModelName()) == null) {
+            // model is not specified in the config, ignoring
+            return null;
+        }
         String extension = getGrobidCRFEngine(model).getExt();
         return new File(getGrobidHome(), FOLDER_NAME_MODELS + File.separator
             + model.getFolderName() + File.separator
@@ -652,6 +666,10 @@ public class GrobidProperties {
     }
 
     public static File getTemplatePath(final File resourcesDir, final GrobidModel model) {
+        if (modelMap.get(model.getModelName()) == null) {
+            // model is not specified in the config, ignoring
+            return null;
+        }
         File theFile = new File(resourcesDir, "dataset/" + model.getFolderName()
             + "/crfpp-templates/" + model.getTemplateName());
         if (!theFile.exists()) {
@@ -709,6 +727,8 @@ public class GrobidProperties {
      * @return the consolidation service to be used
      */
     public static GrobidConsolidationService getConsolidationService() {
+        if (grobidConfig.grobid.consolidation.service == null)
+            grobidConfig.grobid.consolidation.service = "crossref";
         return GrobidConsolidationService.get(grobidConfig.grobid.consolidation.service);
     }
 

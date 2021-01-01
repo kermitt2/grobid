@@ -15,6 +15,10 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
  * @author Patrice Lopez
  */
 public enum GrobidModels implements GrobidModel {
+
+    // models are declared with a enumerated unique name associated to a **folder name** for the model
+    // the folder name is where we will find the model implementation and its resources under grobid-home
+
     AFFIILIATON_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
     CITATION("citation"),
@@ -78,7 +82,7 @@ public enum GrobidModels implements GrobidModel {
     private static final ConcurrentMap<String, GrobidModel> models = new ConcurrentHashMap<>();
 
     GrobidModels(String folderName) {
-        if(StringUtils.equals(DUMMY_FOLDER_LABEL, folderName)) {
+        if (StringUtils.equals(DUMMY_FOLDER_LABEL, folderName)) {
             modelPath = DUMMY_FOLDER_LABEL;
             this.folderName = DUMMY_FOLDER_LABEL;
             return;
@@ -86,13 +90,8 @@ public enum GrobidModels implements GrobidModel {
 
         this.folderName = folderName;
         File path = GrobidProperties.getModelPath(this);
-        if (!path.exists()) {
-            // to be reviewed
-            /*System.err.println("Warning: The file path to the "
-                    + this.name() + " CRF model is invalid: "
-					+ path.getAbsolutePath());*/
-        }
-        modelPath = path.getAbsolutePath();
+        if (path != null)
+            modelPath = path.getAbsolutePath();
     }
 
     public String getFolderName() {
@@ -131,12 +130,13 @@ public enum GrobidModels implements GrobidModel {
             @Override
             public String getModelPath() {
                 File path = GrobidProperties.getModelPath(this);
-                if (!path.exists()) {
-                    LOGGER.warn("The file path to the "
-                            + name + " model is invalid: "
-                            + path.getAbsolutePath());
+                if (path == null || !path.exists()) {
+                    LOGGER.warn("The file path to the " + name + " model is invalid: " + path.getAbsolutePath());
                 }
-                return path.getAbsolutePath();
+                if (path == null)
+                    return null;
+                else
+                    return path.getAbsolutePath();
             }
 
             @Override
