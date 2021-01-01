@@ -83,7 +83,8 @@ public class Block {
             for(LayoutToken token : tokens) {
                 localText.append(token.getText());
             }
-            return localText.toString();
+            text = localText.toString();
+            return text;
         }
     }
 
