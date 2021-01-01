@@ -61,7 +61,7 @@ public class Block {
     }
 
     public void setText(String t) {
-        text = t;
+        //text = t;
     }
 
     public void setNbTokens(int t) {
@@ -73,11 +73,12 @@ public class Block {
     }
 
     public String getText() {
-        if (text.trim().startsWith("@"))
+        if (text != null && text.trim().startsWith("@"))
             return text.trim();
-        else if (tokens == null) {
+        else if (tokens == null)
             return null;
-        }
+        else if (text != null)
+            return text;
         else {
             StringBuilder localText = new StringBuilder();
             for(LayoutToken token : tokens) {
