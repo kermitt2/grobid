@@ -1,7 +1,6 @@
 package org.grobid.core.document;
 
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
