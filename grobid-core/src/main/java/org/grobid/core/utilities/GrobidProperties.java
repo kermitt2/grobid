@@ -234,7 +234,7 @@ public class GrobidProperties {
 
         //getProps().putAll(getEnvironmentVariableOverrides(System.getenv()));
 
-        //initializePaths();
+        initializeTmpPath();
         // TBD: tmp to be created
         loadPdfaltoPath();
         createModelMap();
@@ -243,11 +243,23 @@ public class GrobidProperties {
     /**
      * Create a map between model names and associated parameters
      */
-    private void createModelMap() {
+    private static void createModelMap() {
         for(ModelParameters modelParameter : grobidConfig.grobid.models) {
             if (modelMap == null) 
                 modelMap = new TreeMap<>();
             modelMap.put(modelParameter.name, modelParameter);
+        }
+    }
+
+    /**
+     * Create indicated tmp path if it does not exist
+     */ 
+    private void initializeTmpPath() {
+        File tmpDir = getTempPath();
+        if (!tmpDir.exists()) {
+            if (!tmpDir.mkdirs()) {
+                LOGGER.warn("tmp does not exist and unable to create tmp directory: " + tmpDir.getAbsolutePath());
+            }
         }
     }
 
