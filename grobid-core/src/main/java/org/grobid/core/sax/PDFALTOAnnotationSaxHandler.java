@@ -17,8 +17,8 @@ import org.xml.sax.helpers.*;
 import java.util.*;
 
 /**
- *  SAX parser for XML representation of the annotations present on PDF files 
- *  obtained via xpdf pdf2xml. We only consider here link annotations, other type
+ *  SAX parser for ALTO XML representation of the annotations present on PDF files 
+ *  obtained via pdfalto. We only consider here link annotations, other type
  * of annotations (e.g. highlight) are ignored. 
  * 
  *  @author Patrice Lopez

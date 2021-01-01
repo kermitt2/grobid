@@ -241,14 +241,6 @@ public class BasicStructureBuilder {
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
         doc.setLabeledBlocks(labeledBlocks);
 
-		/*try {
-        	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labeledResult);
-			FileUtils.writeStringToFile(new File("/tmp/x2.txt"), documentTokens.toString());
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}*/
-
         List<Block> docBlocks = doc.getBlocks();
 		int indexLine = 0;		
         int blockIndex = 0;

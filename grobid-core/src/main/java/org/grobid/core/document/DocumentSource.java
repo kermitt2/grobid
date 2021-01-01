@@ -175,7 +175,7 @@ public class DocumentSource {
      * @param timeout    in ms.   null, if default
      * @param pdfPath    path to pdf
      * @param tmpPathXML temporary path to save the converted file
-     * @param cmd        arguments to call the executable pdf2xml
+     * @param cmd        arguments to call the executable pdfalto
      * @return the path the the converted file.
      */
     private File processPdfaltoThreadMode(Integer timeout, File pdfPath,
@@ -223,7 +223,7 @@ public class DocumentSource {
      *
      * @param pdfPath    path to pdf
      * @param tmpPathXML temporary path to save the converted file
-     * @param cmd        arguments to call the executable pdf2xml
+     * @param cmd        arguments to call the executable pdfalto
      * @return the path the the converted file.
      */
     private File processPdfaltoServerMode(File pdfPath, File tmpPathXML, List<String> cmd) {

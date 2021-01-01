@@ -25,13 +25,15 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import static org.grobid.core.utilities.GrobidPropertyKeys.PROP_GROBID_HOME;
-import static org.grobid.core.utilities.GrobidPropertyKeys.PROP_GROBID_CONFIG;
+
 
 /**
  * This class is responsible for finding a right grobid home
  */
 public class GrobidHomeFinder {
+    private static final String PROP_GROBID_HOME = "org.grobid.home";
+    private static final String PROP_GROBID_CONFIG = "org.grobid.config";
+
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidHomeFinder.class);
     private static final List<String> GROBID_FOLDER_POSSIBLE_LOCATIONS = Lists.newArrayList("../grobid-home", "grobid-home", "GROBID_HOME");
     private static final int BUFFER_SIZE = 4096;
@@ -48,7 +50,6 @@ public class GrobidHomeFinder {
             this.grobidHomePossibleLocations = grobidHomePossibleLocations;
         }
     }
-
 
     public File findGrobidHomeOrFail() {
         File gh = getGrobidHomePathOrLoadFromClasspath();
