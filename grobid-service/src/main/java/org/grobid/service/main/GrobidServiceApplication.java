@@ -26,7 +26,7 @@ import java.util.List;
 
 public final class GrobidServiceApplication extends Application<GrobidServiceConfiguration> {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidServiceApplication.class);
-    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-service/config/config.yaml", "config/config.yaml"};
+    private static final String[] DEFAULT_CONF_LOCATIONS = {"../grobid-home/config/grobid.yaml", "config/config.yaml"};
     private static final String RESOURCES = "/api";
 
 

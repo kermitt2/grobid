@@ -60,8 +60,8 @@ public class BlockVisualizer {
             final PDDocument document = PDDocument.load(input);
             File outPdf = new File("/tmp/test.pdf");
 
-            GrobidProperties.set_GROBID_HOME_PATH("grobid-home");
-            GrobidProperties.setGrobidPropertiesPath("grobid-home/config/grobid.properties");
+            GrobidProperties.setGrobidHome("grobid-home");
+            GrobidProperties.setGrobidConfigPath("grobid-home/config/grobid.yaml");
             LibraryLoader.load();
             final Engine engine = GrobidFactory.getInstance().getEngine();
             GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()

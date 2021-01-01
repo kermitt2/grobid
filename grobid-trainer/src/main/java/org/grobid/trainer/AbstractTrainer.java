@@ -85,7 +85,7 @@ public abstract class AbstractTrainer implements Trainer {
     public void train() {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
@@ -105,7 +105,7 @@ public abstract class AbstractTrainer implements Trainer {
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
         // if we are here, that means that training succeeded
         // rename model for CRF sequence labellers (not with DeLFT deep learning models)
-        if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT)
+        if (GrobidProperties.getGrobidCRFEngine(this.model) != GrobidCRFEngine.DELFT)
             renameModels(oldModelPath, tempModelPath);
     }
 
@@ -143,7 +143,7 @@ public abstract class AbstractTrainer implements Trainer {
     public String splitTrainEvaluate(Double split) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
@@ -179,7 +179,7 @@ public abstract class AbstractTrainer implements Trainer {
     public String nFoldEvaluate(int numFolds, boolean includeRawResults) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         String randomString = randomStringGenerator.generate(10);
 
@@ -518,7 +518,7 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     protected static File getFilePath2Resources() {
-        File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
+        File theFile = new File(GrobidProperties.getGrobidHome().getAbsoluteFile() + File.separator + ".." + File.separator
             + "grobid-trainer" + File.separator + "resources");
         if (!theFile.exists()) {
             theFile = new File("resources");

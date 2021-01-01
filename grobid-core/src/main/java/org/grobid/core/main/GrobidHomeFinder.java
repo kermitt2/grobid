@@ -26,7 +26,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import static org.grobid.core.utilities.GrobidPropertyKeys.PROP_GROBID_HOME;
-import static org.grobid.core.utilities.GrobidPropertyKeys.PROP_GROBID_PROPERTY;
+import static org.grobid.core.utilities.GrobidPropertyKeys.PROP_GROBID_CONFIG;
 
 /**
  * This class is responsible for finding a right grobid home
@@ -64,24 +64,25 @@ public class GrobidHomeFinder {
         return gh;
     }
 
-    public File findGrobidPropertiesOrFail(File grobidHome) {
+    public File findGrobidConfigOrFail(File grobidHome) {
         if (grobidHome == null || !grobidHome.exists() || !grobidHome.isDirectory()) {
             fail("Grobid home folder '" + grobidHome + "' was detected for usage, but does not exist or null");
         }
 
-        String grobidProperty = System.getProperty(PROP_GROBID_PROPERTY);
-        File grobidPropertyFile;
-        if (grobidProperty == null) {
-            grobidPropertyFile = new File(grobidHome, "config/grobid.properties").getAbsoluteFile();
-            LOGGER.warn("Grobid property file location was not explicitly set via '" + PROP_GROBID_PROPERTY + "' system variable, defaulting to: " + grobidPropertyFile);
+        String grobidConfig = System.getProperty(PROP_GROBID_CONFIG);
+        File grobidConfigFile;
+        if (grobidConfig == null) {
+            grobidConfigFile = new File(grobidHome, "config/grobid.yaml").getAbsoluteFile();
+            LOGGER.warn("Grobid config file location was not explicitly set via '" + PROP_GROBID_CONFIG + 
+                "' system variable, defaulting to: " + grobidConfigFile);
         } else {
-            grobidPropertyFile = new File(grobidProperty).getAbsoluteFile();
+            grobidConfigFile = new File(grobidConfig).getAbsoluteFile();
         }
 
-        if (!grobidPropertyFile.exists() || grobidPropertyFile.isDirectory()) {
-            fail("Grobid property file '" + grobidPropertyFile + "' does not exist or a directory");
+        if (!grobidConfigFile.exists() || grobidConfigFile.isDirectory()) {
+            fail("Grobid property file '" + grobidConfigFile + "' does not exist or a directory");
         }
-        return grobidPropertyFile;
+        return grobidConfigFile;
     }
 
     private static void fail(String msg, Throwable e) {

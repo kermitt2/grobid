@@ -81,7 +81,7 @@ public class EvaluationDOIMatching {
 
         try {
             GrobidProperties.getInstance();
-            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
             engine = GrobidFactory.getInstance().createEngine();
         }

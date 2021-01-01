@@ -218,7 +218,6 @@ public class FigureTableVisualizer {
                 .withProcessVectorGraphics(true)
                 .build();
 
-
         DocumentSource documentSource = DocumentSource.fromPdf(input, -1, -1, true, false, false);
 
         File pdf2xmlDirectory = new File(contentDir, "pdf2xml");
@@ -258,8 +257,8 @@ public class FigureTableVisualizer {
     }
 
     private static Engine setupEngine() {
-        GrobidProperties.set_GROBID_HOME_PATH("grobid-home");
-        GrobidProperties.setGrobidPropertiesPath("grobid-home/config/grobid.properties");
+        GrobidProperties.setGrobidHome("grobid-home");
+        GrobidProperties.setGrobidConfigPath("grobid-home/config/grobid.yaml");
         LibraryLoader.load();
         return GrobidFactory.getInstance().getEngine();
     }

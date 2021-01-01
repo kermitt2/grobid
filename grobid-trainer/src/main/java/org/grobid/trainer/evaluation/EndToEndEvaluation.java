@@ -131,7 +131,7 @@ public class EndToEndEvaluation {
 
 		try {
 			GrobidProperties.getInstance();
-			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
 			engine = GrobidFactory.getInstance().createEngine();
 		}

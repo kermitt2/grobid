@@ -112,7 +112,7 @@ public class TEIFormatter {
             tei.append("<?xml-stylesheet type=\"text/xsl\" href=\"../jsp/xmlverbatimwrapper.xsl\"?> \n");
         }
         if (schemaDeclaration == SchemaDeclaration.DTD) {
-            tei.append("<!DOCTYPE TEI SYSTEM \"" + GrobidProperties.get_GROBID_HOME_PATH()
+            tei.append("<!DOCTYPE TEI SYSTEM \"" + GrobidProperties.getGrobidHome()
                     + "/schemas/dtd/Grobid.dtd" + "\">\n");
         } else if (schemaDeclaration == SchemaDeclaration.XSD) {
             // XML schema
@@ -121,18 +121,18 @@ public class TEIFormatter {
                     //"\n xsi:noNamespaceSchemaLocation=\"" +
                     //GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\""	+
                     "xsi:schemaLocation=\"http://www.tei-c.org/ns/1.0 " +
-                    GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/xsd/Grobid.xsd\"" +
+                    GrobidProperties.getGrobidHome() + "/schemas/xsd/Grobid.xsd\"" +
                     "\n xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
 //				"\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
         } else if (schemaDeclaration == SchemaDeclaration.RNG) {
             // standard RelaxNG
             tei.append("<?xml-model href=\"file://" +
-                    GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/rng/Grobid.rng" +
+                    GrobidProperties.getGrobidHome() + "/schemas/rng/Grobid.rng" +
                     "\" schematypens=\"http://relaxng.org/ns/structure/1.0\"?>\n");
         } else if (schemaDeclaration == SchemaDeclaration.RNC) {
             // compact RelaxNG
             tei.append("<?xml-model href=\"file://" +
-                    GrobidProperties.get_GROBID_HOME_PATH() + "/schemas/rng/Grobid.rnc" +
+                    GrobidProperties.getGrobidHome() + "/schemas/rng/Grobid.rnc" +
                     "\" type=\"application/relax-ng-compact-syntax\"?>\n");
         }
         // by default there is no schema association

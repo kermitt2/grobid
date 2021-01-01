@@ -1,14 +1,16 @@
 package org.grobid.trainer;
 
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.GrobidModel;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
 /**
  * User: zholudev
  * Date: 3/20/14
  */
 public class TrainerFactory {
-    public static GenericTrainer getTrainer() {
-        switch (GrobidProperties.getGrobidCRFEngine()) {
+    public static GenericTrainer getTrainer(GrobidModel model) {
+        switch (GrobidProperties.getGrobidCRFEngine(model)) {
             case CRFPP:
                 return new CRFPPGenericTrainer();
             case WAPITI:
@@ -18,7 +20,7 @@ public class TrainerFactory {
             case DUMMY:
                 return new DummyTrainer();
             default:
-                throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
+                throw new IllegalStateException("Unsupported GROBID sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine(model));
         }
     }
 }

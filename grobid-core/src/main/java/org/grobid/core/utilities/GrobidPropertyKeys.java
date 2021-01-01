@@ -65,12 +65,13 @@ public interface GrobidPropertyKeys {
      * The name of the env-entry located in the web.xml, via which the
      * grobid.propeties path is set.
      */
-    String PROP_GROBID_PROPERTY = "org.grobid.property";
+    //String PROP_GROBID_PROPERTY = "org.grobid.property";
+    String PROP_GROBID_CONFIG = "org.grobid.config";
 
     /**
      * name of the property setting the admin password
      */
-    String PROP_GROBID_SERVICE_ADMIN_PW = "org.grobid.service.admin.pw";
+    //String PROP_GROBID_SERVICE_ADMIN_PW = "org.grobid.service.admin.pw";
 
     /**
      * If set to true, parallel execution will be done, else a queuing of

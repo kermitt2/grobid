@@ -62,7 +62,7 @@ public class DeLFTModel {
                 if (architecture != null)
                     fullModelName += "-" + this.architecture;
 
-                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1)
+                if (GrobidProperties.getInstance().useELMo(this.modelName) && modelName.toLowerCase().indexOf("bert") == -1)
                     fullModelName += "-with_ELMo";
 
                 jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
@@ -231,7 +231,7 @@ public class DeLFTModel {
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
+                if (GrobidProperties.getInstance().useELMo(this.modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                     useELMo = "True";
                 }
 
@@ -286,7 +286,7 @@ public class DeLFTModel {
                 command.add("--architecture");
                 command.add(architecture);
             }
-            if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
+            if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
             }
 

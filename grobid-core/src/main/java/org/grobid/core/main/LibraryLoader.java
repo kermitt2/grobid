@@ -22,16 +22,10 @@ import java.util.Set;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
-//import org.grobid.core.mock.MockContext;
-
-/**
- * @author Slava, Patrice
- */
 public class LibraryLoader {
 
     private static Logger LOGGER = LoggerFactory.getLogger(LibraryLoader.class);
 
-    //a name of a native CRF++ library without an extension
     public static final String CRFPP_NATIVE_LIB_NAME = "libcrfpp";
     public static final String WAPITI_NATIVE_LIB_NAME = "libwapiti";
     public static final String DELFT_NATIVE_LIB_NAME_LINUX = "libjep";
@@ -39,29 +33,28 @@ public class LibraryLoader {
 
     private static boolean loaded = false;
 
-//    private static boolean isContextMocked = false;
-
     public static void load() {
         if (!loaded) {
             LOGGER.info("Loading external native sequence labelling library");
             LOGGER.debug(getLibraryFolder());
 
-            if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.CRFPP &&
-                GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.WAPITI &&
-                GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT) {
-                throw new IllegalStateException("Unsupported sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
+            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getDistinctModels();
+            for(GrobidCRFEngine distinctModel : distinctModels) {
+                if (distinctModel != GrobidCRFEngine.CRFPP &&
+                    distinctModel != GrobidCRFEngine.WAPITI &&
+                    distinctModel != GrobidCRFEngine.DELFT) {
+                    throw new IllegalStateException("Unsupported sequence labelling engine: " + distinctModel);
+                }
             }
 
             File libraryFolder = new File(getLibraryFolder());
             if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-                LOGGER.error("Unable to find a native sequence labelling library: Folder "
-                    + libraryFolder + " does not exist");
+                LOGGER.error("Unable to find a native sequence labelling library: Folder " + libraryFolder + " does not exist");
                 throw new RuntimeException(
-                    "Unable to find a native sequence labelling library: Folder "
-                        + libraryFolder + " does not exist");
+                    "Unable to find a native sequence labelling library: Folder " + libraryFolder + " does not exist");
             }
 
-            if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.CRFPP))) {
                 File[] files = libraryFolder.listFiles(file -> file.getName().toLowerCase().startsWith(CRFPP_NATIVE_LIB_NAME));
 
                 if (ArrayUtils.isEmpty(files)) {
@@ -75,11 +68,9 @@ public class LibraryLoader {
                 }
 
                 if (files.length > 1) {
-                    LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in "
-                        + libraryFolder);
+                    LOGGER.error("Unable to load a native CRF++ library: More than 1 library exists in " + libraryFolder);
                     throw new RuntimeException(
-                        "Unable to load a native CRF++ library: More than 1 library exists in "
-                            + libraryFolder);
+                        "Unable to load a native CRF++ library: More than 1 library exists in " + libraryFolder);
                 }
 
                 String libPath = files[0].getAbsolutePath();
@@ -88,20 +79,13 @@ public class LibraryLoader {
                 try {
                     System.load(libPath);
                 } catch (Exception e) {
-                    LOGGER.error("Unable to load a native CRF++ library, although it was found under path "
-                        + libPath);
+                    LOGGER.error("Unable to load a native CRF++ library, although it was found under path " + libPath);
                     throw new RuntimeException(
-                        "Unable to load a native CRF++ library, although it was found under path "
-                            + libPath, e);
+                        "Unable to load a native CRF++ library, although it was found under path " + libPath, e);
                 }
-
             }
-
-            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getDistinctModels();
-            if (CollectionUtils
-                .containsAny(distinctModels, Arrays.asList(GrobidCRFEngine.WAPITI, GrobidCRFEngine.DELFT))) {
-                // note: if DeLFT is used, we still make Wapiti available for models not existing in DeLFT (currently segmentation and 
-                // fulltext)
+            
+            if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.WAPITI))) {    
                 File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
                     @Override
                     public boolean accept(File dir, String name) {
@@ -142,7 +126,6 @@ public class LibraryLoader {
                 }
             }
 
-
             if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.DELFT))) {
                 LOGGER.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
                 // actual loading will be made at JEP initialization, so we just need to add the path in the 
@@ -181,7 +164,6 @@ public class LibraryLoader {
                 }
             }
 
-
             loaded = true;
             LOGGER.info("Native library for sequence labelling loaded");
         }
@@ -203,34 +185,10 @@ public class LibraryLoader {
         usrPathsField.set(null, newPaths);
     }
 
-    //    /**
-//     * Initialize the context with mock parameters if they doesn't already
-//     * exist.
-//     */
-//    protected static void mockContextIfNotSet() {
-//        try {
-//            new InitialContext().lookup("java:comp/env/"
-//                    + GrobidPropertyKeys.PROP_GROBID_HOME);
-//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-//                    + " already exists. No mocking of context made.");
-//        } catch (Exception exp) {
-//            LOGGER.debug("The property " + GrobidPropertyKeys.PROP_GROBID_HOME
-//                    + " does not exist. Mocking the context.");
-////            try {
-////                MockContext.setInitialContext();
-////                isContextMocked = true;
-////            } catch (Exception mexp) {
-////                LOGGER.error("Could not mock the context." + mexp);
-////                throw new GrobidException("Could not mock the context.",  mexp);
-////            }
-//        }
-//    }
-//
     public static String getLibraryFolder() {
         GrobidProperties.getInstance();
-        // TODO: change to fetching the basic dir from GrobidProperties object
-        return String.format("%s" + File.separator + "%s", GrobidProperties
-            .getNativeLibraryPath().getAbsolutePath(), Utilities
-            .getOsNameAndArch());
+        return String.format("%s" + File.separator + "%s", 
+            GrobidProperties.getNativeLibraryPath().getAbsolutePath(), 
+            Utilities.getOsNameAndArch());
     }
 }
