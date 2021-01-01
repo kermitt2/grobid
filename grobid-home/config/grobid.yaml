@@ -12,8 +12,8 @@ grobid:
 
   pdf:
     pdfalto:
-      # path relative to the grobid-home path (e.g. grobid-home/pdf2xml), you don't want to change this normally
-      path: "pdf2xml"
+      # path relative to the grobid-home path (e.g. grobid-home/pdfalto), you don't want to change this normally
+      path: "pdfalto"
       # security for PDF parsing
       memory_limit_mb: 6096
       timeout_sec: 60
@@ -157,6 +157,9 @@ grobid:
       #architecture: "BidLSTM_CRF_FEATURES"
       #architecture: "scibert"
       #useELMo: false
+
+    - name: "patent-all"
+      engine: "wapiti"
 
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly

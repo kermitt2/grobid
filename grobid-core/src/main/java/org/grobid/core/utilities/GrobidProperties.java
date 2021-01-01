@@ -28,9 +28,12 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 /**
  * This class provide methods to set/load/access grobid config value from a yaml config file loaded 
  * in the class {@link GrobidConfig}. 
- * New yaml parameters and former properties should be equivalent via this class. 
+ *
+ * New yaml parameters and former properties should be equivalent via this class. We keep the 
+ * class name "GrobidProperties" for compatibility with Grobid modules and other Java applications
+ * using Grobid as a library.
  * 
- * TBD: Each parameter can be overridden by a system property having the same name. 
+ * to be done: having parameters that can be overridden by a system property having a compatible name. 
  */
 public class GrobidProperties {
     public static final Logger LOGGER = LoggerFactory.getLogger(GrobidProperties.class);
@@ -39,7 +42,7 @@ public class GrobidProperties {
     static final String FILE_NAME_MODEL = "model";
     private static final String GROBID_VERSION_FILE = "/grobid-version.txt";
     static final String UNKNOWN_VERSION_STR = "unknown";
-
+    
     private static GrobidProperties grobidProperties = null;
 
     // indicate if GROBID is running in server mode or not
@@ -50,40 +53,24 @@ public class GrobidProperties {
      */
     private static GrobidConfig grobidConfig = null;
 
-
+    /**
+     * Map models specified inthe config file to their parameters
+     */
     private static Map<String, ModelParameters> modelMap = null;
-
-    /**
-     * Type of CRF framework used
-     */
-    //private static GrobidCRFEngine grobidCRFEngine = GrobidCRFEngine.WAPITI;
-
-    /**
-     * Default consolidation service, if used
-     */
-    //private static GrobidConsolidationService consolidationService = GrobidConsolidationService.CROSSREF;
 
     /**
      * Path to pdf to xml converter.
      */
-    private static File pathToPdfToXml = null;
+    private static File pathToPdfalto = null;
+
+    private static File grobidHome = null;
 
     /**
-     * Determines the path of grobid-home for all objects of this class. When
-     * grobidHome is set, all created objects will refer to that
-     * path. When it is reset, old object refer to the old path whereas objects
-     * created after reset will refer to the new path.
-     */
-    static File grobidHome = null;
-
-    private static String GROBID_VERSION = null;
-
-    /**
-     * Path to config file
+     * Path to the yaml config file
      */
     static File GROBID_CONFIG_PATH = null;
 
-    //private static String pythonVirtualEnv = "";
+    private static String GROBID_VERSION = null;
 
     /**
      * Returns an instance of {@link GrobidProperties} object. If no one is set, then
@@ -107,9 +94,13 @@ public class GrobidProperties {
     }
 
     /**
-     * Reload grobidConfig
+     * Reload grobid config
      */
     public static void reload() {
+        getNewInstance();
+    }
+
+    public static void reset() {
         getNewInstance();
     }
 
@@ -202,9 +193,9 @@ public class GrobidProperties {
             throw new GrobidPropertyException("Cannot set GROBID config file to null or empty.");
 
         File grobidConfigPath = new File(pGrobidConfigPath);
-        // exception if prop file does not exist
+        // exception if config file does not exist
         if (!grobidConfigPath.exists()) {
-            throw new GrobidPropertyException("Could not read GROBID config file, the file '" + pGrobidConfigPath + "' does not exist.");
+            throw new GrobidPropertyException("Cannot read GROBID yaml config file, the file '" + pGrobidConfigPath + "' does not exist.");
         }
 
         try {
@@ -217,12 +208,13 @@ public class GrobidProperties {
 
     /**
      * Create a new object and search where to find the grobid-home folder.
-     * First step is to check if the system property GrobidPropertyKeys.PROP_GROBID_HOME
-     * is set, then the path matching to that property is used. Otherwise, the
-     * method will search for a folder named grobid-home, 
-     * if this is also not set, the method will search for a folder named
+     * 
+     * We check if the system property GrobidPropertyKeys.PROP_GROBID_HOME
+     * is set. If not set, the method will search for a folder named
      * grobid-home in the current project.
-     * Finally from the found grobid-home, native and data resource paths are initialized. 
+     * 
+     * Finally from the found grobid-home, the yaml config file is loaded and 
+     * the native and data resource paths are initialized. 
      */
     public GrobidProperties() {
         assignGrobidHomePath();
@@ -244,9 +236,8 @@ public class GrobidProperties {
 
         //initializePaths();
         // TBD: tmp to be created
-        loadPdf2XMLPath();
+        loadPdfaltoPath();
         createModelMap();
-        //loadSequenceLabelingEngine();
     }
 
     /**
@@ -277,20 +268,6 @@ public class GrobidProperties {
         return distinctModels;
     }
 
-    /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
-    /*public static Set<GrobidCRFEngine> getModelSpecificEngines() {
-        return getProps().keySet().stream()
-            .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
-            .map(k -> GrobidCRFEngine.get(StringUtils.lowerCase(getPropertyValue((String) k))))
-            .distinct()
-            .collect(Collectors.toSet());
-    }*/
-
-    /*protected static void loadSequenceLabelingEngine() {
-        grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
-            GrobidCRFEngine.WAPITI.name()));
-    }*/
-
     /**
      * Returns the current version of GROBID
      *
@@ -312,43 +289,6 @@ public class GrobidProperties {
         }
         return GROBID_VERSION;
     }
-
-    /**
-     * Initialize the different paths set in the configuration file
-     * grobid.properties.
-     */
-    /*protected static void initializePaths() {
-        Enumeration<?> properties = getProps().propertyNames();
-        for (String propKey; properties.hasMoreElements(); ) {
-            propKey = (String) properties.nextElement();
-            String propVal = getPropertyValue(propKey, StringUtils.EMPTY);
-            if (propKey.endsWith(".path")) {
-                File path = new File(propVal);
-                if (!path.isAbsolute()) {
-                    try {
-                        getProps().put(propKey,
-                            new File(getGrobidHome().getAbsoluteFile(), path.getPath()).getCanonicalFile().toString());
-                    } catch (IOException e) {
-                        throw new GrobidResourceException("Cannot read the path of '" + propKey + "'.");
-                    }
-                }
-            }
-        }
-
-        // start: creating all necessary folders
-        for (String path2create : GrobidPropertyKeys.PATHES_TO_CREATE) {
-            String prop = getProps().getProperty(path2create);
-            if (prop != null) {
-                File path = new File(prop);
-                if (!path.exists()) {
-                    LOGGER.debug("creating directory {}", path);
-                    if (!path.mkdirs())
-                        throw new GrobidResourceException("Cannot create the folder '" + path.getAbsolutePath() + "'.");
-                }
-            }
-        }
-        // end: creating all necessary folders
-    }*/
 
     /**
      * Returns the temprorary path of grobid
@@ -427,25 +367,11 @@ public class GrobidProperties {
     public static String getDelftArchitecture(final GrobidModel model) {
         return getDelftArchitecture(model.getModelName());
     }   
-    
-
-    /*public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
-        if (param == null) {
-            LOGGER.error("No configuration parameter defnied for model " + modelName);
-            return null;
-        }
-        return param.engine;
-    }*/
-
-    /*public static void setDelftArchitecture(final String modelName, final String theArchitecture) {
-        setPropertyValue(GrobidPropertyKeys.PROP_DELFT_ARCHITECTURE, theArchitecture);
-    }*/
 
     /**
      * Returns the host for a proxy connection, given in the grobid config file.
      *
-     * @return host for connecting crossref
+     * @return proxy host 
      */
     public static String getProxyHost() {
         if (grobidConfig.grobid.proxy.host == null || grobidConfig.grobid.proxy.host.trim().length() == 0)
@@ -457,7 +383,7 @@ public class GrobidProperties {
     /**
      * Sets the host a proxy connection, given in the config file.
      *
-     * @param host for connecting crossref
+     * @param the proxy host to be used
      */
     public static void setProxyHost(final String host) {
         grobidConfig.grobid.proxy.host = host;
@@ -468,7 +394,7 @@ public class GrobidProperties {
     /**
      * Returns the port for a proxy connection, given in the grobid config file.
      *
-     * @return port for connecting crossref
+     * @return proxy port 
      */
     public static Integer getProxyPort() {
         return grobidConfig.grobid.proxy.port;
@@ -525,7 +451,7 @@ public class GrobidProperties {
     /**
      * Sets the port for a proxy connection, given in the grobid config file.
      *
-     * @param port for connecting crossref
+     * @param proxy port 
      */
     public static void setProxyPort(int port) {
         grobidConfig.grobid.proxy.port = port;
@@ -533,16 +459,16 @@ public class GrobidProperties {
         System.setProperty("https.proxyPort", ""+port);
     }
 
-    public static Integer getPdfToXMLMemoryLimitMb() {
+    public static Integer getPdfaltoMemoryLimitMb() {
         return grobidConfig.grobid.pdf.pdfalto.memory_limit_mb;
     }
 
-    public static Integer getPdfToXMLTimeoutMs() {
+    public static Integer getPdfaltoTimeoutMs() {
         return grobidConfig.grobid.pdf.pdfalto.timeout_sec * 1000;
     }
 
     /**
-     * Returns the number of threads, given in the grobid config file.
+     * Returns the number of threads to be used when training, given in the grobid config file.
      *
      * @return number of threads
      */
@@ -601,33 +527,29 @@ public class GrobidProperties {
     /**
      * Returns the path to the home folder of pdf to xml converter.
      */
-    public static void loadPdf2XMLPath() {
+    public static void loadPdfaltoPath() {
         LOGGER.debug("loading pdfalto command path");
         String pathName = grobidConfig.grobid.pdf.pdfalto.path;
-        pathToPdfToXml = new File(grobidHome.getPath(), pathName);
-        if (!pathToPdfToXml.exists()) {
+        pathToPdfalto = new File(grobidHome.getPath(), pathName);
+        if (!pathToPdfalto.exists()) {
             throw new GrobidPropertyException(
                 "Path to pdfalto doesn't exists. " + 
                 "Please set the path to pdfalto in the config file");
         }
 
-        pathToPdfToXml = new File(pathToPdfToXml, Utilities.getOsNameAndArch());
+        pathToPdfalto = new File(pathToPdfalto, Utilities.getOsNameAndArch());
 
-        LOGGER.debug("pdfalto executable home directory set to " + pathToPdfToXml.getAbsolutePath());
+        LOGGER.debug("pdfalto executable home directory set to " + pathToPdfalto.getAbsolutePath());
     }
 
     /**
-     * Returns the path to the home folder of pdf to xml program.
+     * Returns the path to the home folder of pdfalto program.
      *
-     * @return path to pdf to xml program
+     * @return path to pdfalto program
      */
-    public static File getPdfToXMLPath() {
-        return pathToPdfToXml;
+    public static File getPdfaltoPath() {
+        return pathToPdfalto;
     }
-
-    /*private static String getModelPropertySuffix(final String modelName) {
-        return modelName.replaceAll("-", "_");
-    }*/
 
     private static String getGrobidCRFEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);

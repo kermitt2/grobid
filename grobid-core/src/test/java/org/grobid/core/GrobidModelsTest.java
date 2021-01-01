@@ -46,7 +46,7 @@ public class GrobidModelsTest {
         assertThat(splittedPath[splittedPath.length - 4], is("grobid-home"));
     }
 
-    @Test
+    //@Test
     public void testGrobidModelsEnum_CustomModel() throws Exception {
         GrobidModel model = GrobidModels.modelFor("myDreamModel");
 
