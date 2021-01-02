@@ -377,9 +377,9 @@ project(":grobid-service") {
                 //from(new File(rootProject.rootDir, "grobid-service/config/config.yaml")) {
                 //    into "config"
                 //}
-                from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
-                    into "config"
-                }
+                //from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
+                //    into "config"
+                //}
                 //from(new File(rootProject.rootDir, "grobid-service/config/grobid_service.properties")) {
                 //    into "config"
                 //}

@@ -110,8 +110,8 @@ public class TaggingLabels {
     public final static String GLOSSARY_LABEL = "<glossary>";
     public final static String BACK_LABEL = "<back>";
 
-    public final static String PATENT_CITATION_PL_LABEL = "<refPatent>"
-    public final static String PATENT_CITATION_NLP_LABEL = "<refNPL>"
+    public final static String PATENT_CITATION_PL_LABEL = "<refPatent>";
+    public final static String PATENT_CITATION_NPL_LABEL = "<refNPL>";
 
 
     /* title page (secondary title page)
@@ -361,8 +361,8 @@ public class TaggingLabels {
         register(NAMES_CITATION_SUFFIX);
 
         // citations in patent
-        register(PATENT_CITATION_PL)
-        register(PATENT_CITATION_NPL)
+        register(PATENT_CITATION_PL);
+        register(PATENT_CITATION_NPL);
 
         // monograph
         register(MONOGRAPH_COVER);
