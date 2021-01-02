@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="DE" ucid="EP-1124001-B1" country="EP" doc-number="1124001" kind="B1" date="20050413"><bibliographic-data><publication-reference fvid="23222853" ucid="EP-1124001-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1124001</doc-number><kind>B1</kind><date>20050413</date><lang>DE</lang></document-id></publication-reference><application-reference ucid="EP-01101562-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01101562</doc-number><kind>A</kind><date>20010125</date><lang>DE</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="AT-169002000" status="new"><document-id format="original" status="new"><country>AT</country><doc-number>169002000</doc-number><date>20000203</date></document-id></priority-claim><priority-claim ucid="AT-1692000-A" status="new"><document-id format="epo" status="new"><country>AT</country><doc-number>1692000</doc-number><kind>A</kind><date>20000203</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20041022</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B01F   3/04        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   3/04        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   3/08        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   3/08        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/02        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/02        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/04        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/04        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F   5/06        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F  13/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01F  13/10        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B03D   1/14        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B03D   1/14        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">D21B   1/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">D21B   1/32        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">D21F   1/66        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">D21F   1/70        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B01F13/10B</classification-symbol><classification-symbol scheme="EC">B01F3/04P</classification-symbol><classification-symbol scheme="EC">B01F3/08F4</classification-symbol><classification-symbol scheme="EC">B01F5/02B</classification-symbol><classification-symbol scheme="EC">B01F5/02F</classification-symbol><classification-symbol scheme="EC">B01F5/04C12M</classification-symbol><classification-symbol scheme="EC">B01F5/06B3F</classification-symbol><classification-symbol scheme="EC">B03D1/14</classification-symbol><classification-symbol scheme="EC">D21B1/32C</classification-symbol><classification-symbol scheme="EC">D21F1/70</classification-symbol><classification-symbol scheme="ICO">L01F13:10A</classification-symbol><classification-symbol scheme="ICO">L01F3:04C</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verfahren und Vorrichtung zur Belüftung von Dispersionen</invention-title><invention-title lang="EN" status="new">Method and device for aerating dispersions</invention-title><invention-title lang="FR" status="new">Procédé et dispositif pour l'aération de dispersions</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>ANDRITZ AG MASCHF</name><address><country>AT</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>ANDRITZ AG</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>GABL HELMUTH DIPL ING DR</name><address><country>AT</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SCHERZINGER BERNHARD DIPL ING</name><address><country>AT</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>HERTL ERWIN ING</name><address><country>AT</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>GABL, HELMUTH, DIPL.ING.DR.</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SCHERZINGER, BERNHARD, DIPL.ING.DR.</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HERTL, ERWIN, ING.</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>GABL, HELMUTH, DIPL.ING.DR.</last-name><address><street>Rannachstrasse 47,</street><city>8046 Graz</city><country>AT</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>SCHERZINGER, BERNHARD, DIPL.ING.DR.</last-name><address><street>Seidlgasse 22/8a</street><city>1030 Wien</city><country>AT</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HERTL, ERWIN, ING.</last-name><address><street>Fichtengasse 9,</street><city>8111 Judendorf</city><country>AT</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Andritz AG</last-name><address><street>Stattegger Strasse 18</street><city>8045 Graz</city><country>AT</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Schweinzer, Friedrich</last-name><address><street>Stattegger Strasse 18</street><city>8045 Graz</city><country>AT</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="DE" source="EPO" status="new"><p>Die Erfindung betrifft ein Verfahren zur Belüftung von Dispersionen, insbesondere zur Flotation, beispielsweise beim Deinken von Faserstoffsuspensionen, bei dem mindestens zwei Stufen vorgesehen sind. Sie ist vornehmlich dadurch gekennzeichnet, daß in jeder Stufe ein eigener, getrennter Flüssigkeitskreislauf vorgesehen ist, der das Gas bzw. die Luft ansaugt und vermischt. Weiters betrifft die Erfindung eine Vorrichtung mit mindestens zwei Flotationszellen, bei der in jeder Stufe ein eigener Injektor 2 vorgesehen ist, der mit einer zugeordneten Pumpe zu einem Flüssigkeitskreislauf 1 verbunden ist. &lt;IMAGE&gt;</p></abstract><abstract lang="DE" status="new"><p num="">Die Erfindung betrifft ein Verfahren zur Belüftung von Dispersionen,
+insbesondere zur Flotation, beispielsweise beim Deinken von
+Faserstoffsuspensionen, bei dem mindestens zwei Stufen vorgesehen
+sind. Sie ist vornehmlich dadurch gekennzeichnet, daß in jeder Stufe ein
+eigener, getrennter Flüssigkeitskreislauf vorgesehen ist, der das Gas bzw.
+die Luft ansaugt und vermischt. Weiters betrifft die Erfindung eine
+Vorrichtung mit mindestens zwei Flotationszellen, bei der in jeder Stufe ein
+eigener Injektor 2 vorgesehen ist, der mit einer zugeordneten Pumpe zu
+einem Flüssigkeitskreislauf 1 verbunden ist.
+<img file="00000001.tif" id="img-EP-1124015-A2-00000001" he="101" wi="163" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="DE" status="new"><p num="0001">Die Erfindung betrifft ein Verfahren zur Belüftung von Dispersionen zur
+Flotation beim Deinken von Faserstoffsuspensionen, bei dem mindestens
+zwei Stufen vorgesehen sind. Weiters betrifft die Erfindung eine
+Vorrichtung zur Durchführung des Verfahrens.</p><p num="0002">Die Deinking-Flotation ist ein mechanisches Verfahren zur Abtrennung
+von Störstoffen und Druckfarbenpartikel aus insbesondere in der
+Altpapieraufbereitung hergestellten Faserstoffsuspensionen. Dabei
+werden in einer geeigneten Flotationszelle hydrophobe Feststoffe wie
+Druckfarbenpartikel oder Stickies mit Gasblasen in Kontakt gebracht. Die
+anhaftenden Feststoffe werden mit den Gasblasen an die Flüssigkeitsoberfläche
+getragen und können dort als Schaum entfernt werden. Der
+Faserstoff wird aufgrund seines hydrophilen Charakters mit dem Gutstoff
+ausgetragen. Zur Erzeugung der Gasblasen hat sich u.a. der Einsatz von
+selbstansaugenden Injektoren bewährt. Da der Prozeß der selektiven
+Entfernung von Druckfarben aus Faserstoffsuspensionen nur mit
+geringem Wirkungsgrad vor sich geht, werden meist mehrstufige
+Verfahren, wie sie z.B. aus der <ref type="patent">DE 41 16 916 C2</ref> bekannt sind, eingesetzt.
+Dabei wird die gesamte Faserstoffsuspension durch Injektoren geleitet,
+um eine genügend große Blasenoberfläche für eine erfolgreiche Flotation
+zu schaffen. Der Gutstoff jeder Stufe wird als Zulauf der folgenden Stufe
+zum Ansaugen des Gasstromes durch Injektoren benutzt. Der Schaum
+aller Stufen wird gesammelt und kann dann zur Rückführung von Fasern
+in einer Sekundärstufe nochmals flotiert werden. Derartige Verfahren
+haben den Nachteil, daß sie bezüglich Produktionsschwankungen anfällig
+sind, keine Anpassungsmöglichkeit des Luftgehalts an den Anwendungsfall
+vorhanden ist und ein großer messtechnischer und apparativer Aufwand
+für den Betrieb der Sekundärflotation erforderlich ist.
+Ein weiteres Verfahren zur Flotation ist aus der <ref type="patent">EP 0 035 243 A2</ref> bekannt,
+wobei hier Abwasser von Feststoffen gereinigt wird. Bei der Reinigung 
+bzw. Trennung von Feststoff und Feststoff ist dies nicht einsetzbar, da hier
+zu hohe Faserverluste auftreten würden. Weiters sind Regelungsverfahren
+für Flotationsanlagen aus der <ref type="patent">EP 0 391 042 A1</ref> bekannt. Es kann aber nur
+eine Regelung der gesamten Anlage erfolgen und nicht der einzelnen
+Stufen.</p><p num="0003">Der Erfindung liegt daher die Aufgabe zugrunde, ein mehrstufiges,
+energetisch effizientes Verfahren zur Flotation von Faserstoffsuspension
+zu gestalten, das unempfindlich gegen Produktionsschwankungen und
+leicht an verschiedene Anwendungsfälle, wie unterschiedliche Rohstoffzusammensetzungen,
+anpassbar ist.</p><p num="0004">Die Erfindung ist daher dadurch gekennzeichnet, daß mindestens eine
+Sekundärstufe vorgesehen ist, die mit dem Überlauf der Primärstufen
+betrieben wird und deren Gutstoff der ersten Primärstufe zugeführt wird,
+wobei in jeder Stufe ein eigener, getrennter Flüssigkeitskreislauf vorgesehen
+ist, der das Gas bzw. die Luft ansaugt und vermischt. Durch die
+Entkoppelung von Zulauf- und Injektortreibstrahl, der zum Ansaugen des
+Gases dient, wird ein zusätzlicher Freiheitsgrad gebildet, der die
+Einstellung des Luftgehaltes unabhängig vom Zulauf ermöglicht. Dadurch
+kann die Anlage sehr einfach an veränderte Zulaufvolumenströme angepaßt
+werden und es können bei der Flotation von Faserstoffsuspensionen
+geringe Faserverluste realisiert werden, wobei die Sekundärzellen in derselben
+Weise wie Primärzellen ausgeführt sein können.</p><p num="0005">Eine vorteilhafte Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß der Luftgehalt unabhängig vom Zulaufstrom geregelt wird. Durch
+diese Regelung wird der Luftgehalt in einfacher Weise an veränderte
+Zulaufbedingungen angepaßt.</p><p num="0006">Eine günstige Ausgestaltung der Erfindung ist dadurch gekennzeichnet,
+daß die zugeführte Luftmenge in Abhängigkeit der Eigenschaften der 
+Faserstoffsuspension eingestellt wird. Dadurch kann für jeden
+Anwendungsfall ein optimaler Flotationserfolg erzielt werden.</p><p num="0007">Eine günstige Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß die einzelnen Stufen mit unterschiedlichen Luftmengen beaufschlagt
+werden. Damit können auch besondere Rohstoffe effizient flotiert werden,
+ohne den Rohstoffzulauf und damit den Durchsatz zu beeinflussen.</p><p num="0008">Eine vorteilhafte Ausgestaltung der Erfindung ist dadurch gekennzeichnet,
+daß die Suspension im unteren Bereich der Zelle/Stufe der nächsten
+Zelle/Stufe zugeführt wird. Durch Zuführung der Suspension im unteren
+Bereich der Zelle/Stufe wird verhindert, daß im Schaum gebundene Störstoffe
+mit in den Gutstoff ausgetragen werden.</p><p num="0009">Die Erfindung betrifft auch eine Vorrichtung zur Belüftung von
+Dispersionen, insbesondere Flotationseinrichtung, beispielsweise zum
+Deinken von Faserstoffsuspension, mit mindestens zwei Flotationszellen,
+die dadurch gekennzeichnet ist, dass mindestens eine Sekundärflotationszelle,
+die mit dem Überlauf der Primärzellen betrieben wird und deren
+Gutstoff der ersten Primärzelle zugeführt wird, vorgesehen ist und mit dem
+Sammelbehälter in Verbindung steht, wobei in jeder Stufe ein eigener
+Injektor vorgesehen ist, der mit einer zugeordneten Pumpe zu einem
+Flüssigkeitskreislauf verbunden ist. Dadurch lässt sich in günstiger Weise
+eine Entkoppelung von Zulauf- und Injektortreibstrahl erreichen, wodurch
+ein zusätzlicher Freiheitsgrad gebildet wird und durch den Einsatz einer
+Sekundärflotationszelle, die der Primärflotation vorangesetzt ist, können
+die Faserveriuste noch weiter verringert werden.</p><p num="0010">Eine günstige Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß in den Trennwänden der Zellen im Bereich des Bodens Öffnungen
+vorgesehen sind. Dadurch kann die Dispersion jeweils in die nächste Zelle
+fließen, wobei verhindert wird, das Schaum mitgerissen wird. </p><p num="0011">Eine vorteilhafte Gestaltung der Erfindung ist dadurch gekennzeichnet,
+daß in jeder Zelle Überlaufrinnen vorgesehen sind, die über eine Sammelleitung
+mit einem Sammelbehälter verbunden sind. Damit kann der
+Schaum aus allen Primärzellen gesammelt und gemeinsam entweder abgeführt
+oder weiterbehandelt werden.</p><p num="0012">Eine günstige Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß mindestens zwei Zellen in einem Turm angeordnet sind. Eine derartige
+Anordnung ermöglicht eine noch bessere Trennung der Störstoffe
+vom Gutstoff.</p><p num="0013">Eine vorteilhafte Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß mindestens drei Zellen als kreisförmige Flotationsanlage zusammengefaßt
+sind. Durch diese Anordnung kann bei geringsten Platzbedarf eine
+gute Abtrennung der Störstoffe erreicht werden.</p><p num="0014">Eine günstige Weiterbildung der Erfindung ist dadurch gekennzeichnet,
+daß mehrere Injektoren in jeder Zelle vorgesehen sind. Durch die
+Anbringung mehrerer Injektoren, insbesondere an unterschiedlichen
+Stellen einer Zelle, läßt sich einerseits der Durchsatz erhöhen und
+andererseits eine bessere Verteilung der Suspension und auch der
+Flüssigkeitsblasen erreichen.</p><p num="0015">Die Erfindung wird nun im folgenden an Hand der Zeichnungen beispielhaft
+erläutert, wobei Fig. 1 eine schematische Darstellung des Verfahrens,
+Fig. 2 eine weitere Variante des erfindungsgemäßen 
+Verfahrens, Fig. 3 eine Ausführungsform einer Flotationszelle gemäß der
+Erfindung, Fig. 4 eine Ausführung einer weiteren Variante der Erfindung
+und Fig. 5 einen möglichen Querschnitt einer Anlage gemäß Fig. 1
+darstellt.</p><p num="0016">In Fig. 1 ist eine Flotationsanlage mit vier Primärzellen P1, P2, P3, P4 und
+zwei Sekundärzellen S1, S2, schematisch dargestellt. Der Zulauf der
+Faserstoffsuspension Z wird an geeigneter Stelle in die erste Primärzelle
+P1 eingebracht. Die Blasen werden über den vom Zulauf
+entkoppelten Kreislauf 1 innerhalb dieser Zelle mit dem Injektor 2 durch
+Ansaugung von Luft L und Vermischen mit der Suspension erzeugt. Die
+gesamte Flotationsanlage ist zum überwiegenden Teil mit Suspension
+gefüllt, an deren Oberfläche O sich ein Schaum bildet, der einen möglichst
+großen Teil der auszuflotierenden Stoffe und Druckfarbenpartikel enthält.
+Der von Druckfarben und Störstoffen in der ersten Primärzelle P1
+gereinigte Gutstoff tritt durch eine am Boden angeordnete Öffnung 5 in der
+Trennwand 10 zur zweiten Primärzelle P2 über. Dort und in allen weiteren
+Primärzellen wird die Suspension in gleicher Weise, mit
+Blasenerzeugungsinjektoren, die durch zelleninterne Kreisläufe betrieben
+werden, behandelt und tritt am Ende der Anlage als Gutstoff G aus. Der
+gesammelte Schaum aller Primärzellen P1 bis P4 kann über eine
+Schaumrinne 3 in einen Behälter 4 abfliessen. Aus diesem
+Zwischenbehälter 4 wird der inzwischen weitgehend entschäumte
+Überlauf in die Sekundärzelle S2 eingebracht. Die Begasung erfolgt dort
+wieder um den zelleninternen Kreislauf 6. Der Übertritt des Gutstoffes der
+Sekundärzelle S2 in die Sekundärzelle S1 erfolgt durch die am Boden
+angeordnete Öffnung 7. Nach der Begasung mittels Kreislaufs 8 kann der
+Schaum der Sekundärzellen als Überlauf Ü abgeführt werden. Der
+Gutstoff der Sekundärzelle S1 gelangt durch die am Boden angeordnete
+Öffnung 9 in der Trennwand 11 in die erste Primärzelle P1. </p><p num="0017">In Fig. 2 wird nur eine Sekundärzelle S1 verwendet und der Zulauf Z zum
+Teil als Treibstrahl für den Injektor 3 verwendet. Der restliche Teilstrahl
+des Zulaufs Z tritt an geeigenter Stelle in die erste Primärzelle P1 ein. Der
+Gutstoff der einzelnen Zellen gelangt über Öffnungen 5 der Trennwände
+10 in die jeweilige nächste Primärzelle P2, P3, P4, P5 und kann
+dann als Gutstoff G ausgetragen werden. Um das Ansaugen von Luft L
+mit den zelleninternen Injektorkreislauf zu vermeiden, wird eine
+Schutzvorrichtung 13 in jeder Zelle verwendet und erst dahinter die
+Suspension für den Injektortreibstrahl abgeführt. Der gesammelte Schaum
+der Primärzellen P1 bis P5 gelangt über eine Schaumrinne 3 in einen
+Zwischenbehälter 4, von dem aus der entschäumte Überlauf in die
+Sekundärzelle S1 eingebracht wird. Die Blasenerzeugung erfolgt über den
+Kreislauf 8 mit einem Injektor. Der Gutstoff der Sekundärzelle S1 fließt
+durch die Öffnung 9 in die Primärzelle P1, der Schaum der Sekundärzelle
+S1 wird als Überlauf Ü abgeführt.</p><p num="0018">Fig. 3 zeigt eine Anordnung von zwei Primärzellen P1 und P2 in einem
+Turm, um teilweise das Gegenstromprinzip zu nutzen und auch durch die
+Höhe der Flüssigkeit eine bessere Trennwirkung zu erzielen. Der Zulauf Z
+wird über den Injektor, bei dem die Luft bei zu hohem Suspensionsstand
+mit einem Verdichter 15 eingebracht wird, der Primärzelle P1 zugeführt.
+Der Übertritt des Gutstoffes in die zweite Prämärzelle P2 erfolgt durch die
+Öffnung 5 in der Trennwand 10 zwischen den beiden Zellen. Die Blasen in
+der zweiten Primärzelle P2 werden mit dem Suspensionskreislauf 16
+unter Einsatz des Verdichters 17 erzeugt. Der Gutstoff G und der
+gesammelte Überlauf Ü (Schaum) können abgeführt werden.</p><p num="0019">In Fig. 4 ist eine Ausführung der Erfindung mit vier Primärzellen als
+kreisförmige Flotationsanlage abgebildet. Die Druckfarben und Störstoffe
+des Zulaufes Z werden mit Blasen aus den Begasungseinrichtungen
+(Injektoren 2) in der ersten Primärzelle P1 flotiert. Der Gutstoff tritt durch 
+Öffnungen 5 an der Unterseite der Trennwände 10 in die jeweils nächste
+Primärzelle P2, P3 bzw. P4 über und kann nach viermaliger Flotation aus
+der vierten Primärzelle P4 als Gutstoff G abgeführt werden. Der Überlauf
+aller Zellen wird in der Schaumrinne 3 gesammelt und als Überlauf Ü
+ausgetragen.</p><p num="0020">Fig. 5 zeigt einen möglichen Querschnitt einer Flotationsanlage nach
+Fig. 1 bzw. 2. Die wannenförmige Flotationszelle mit der Abdeckung 17 ist
+zum größten Teil mit Suspension gefüllt. Die Blasen werden über die
+Belüftungseinrichtung (Injektor) 2 erzeugt und befördern die Druckfarben
+bzw. Störstoffe an die Flüssigkeitsoberfläche O, wo sie als Schaum über
+die Schaumrinne 3 abfliessen können. Der Gutstoff dieser Zelle gelangt
+durch die Öffnung 5 in der Trennwand 10 in die nächste Zelle und wird
+dort wieder mit Gasblasen in Kontakt gebracht.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zur Belüftung von Dispersionen zur Flotation beim
+Deinken von Faserstoffsuspensionen, bei dem mindestens zwei
+Stufen vorgesehen sind, dadurch gekennzeichnet, dass
+mindestens eine Sekundärstufe vorgesehen ist, die mit dem
+Überlauf der Primärstufen betrieben wird und deren Gutstoff der
+ersten Primärstufe zugeführt wird, wobei in jeder Stufe ein eigener,
+getrennter Flüssigkeitskreislauf vorgesehen ist, der das Gas bzw.
+die Luft ansaugt und vermischt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, dadurch gekennzeichnet, dass der
+Gas- bzw. Luftgehalt unabhängig vom Zulaufstrom geregelt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1 oder 2, dadurch gekennzeichnet,
+dass die zugeführte Gas- bzw. Luftmenge in Abhängigkeit der
+Eigenschaften der Faserstoffsuspension eingestellt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 3, dadurch gekennzeichnet,
+dass die einzelnen Stufen mit unterschiedlichen Gas-
+bzw. Luftmengen beaufschlagt werden.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 4, dadurch gekennzeichnet,
+dass die Suspension im unteren Bereich der Zelle/Stufe
+der nächsten Zelle/Stufe zugeführt wird.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung zur Belüftung von Dispersionen zum Deinken von
+Faserstoffsuspensionen, mit mindestens zwei Flotationszellen,
+dadurch gekennzeichnet, dass mindestens eine Sekundärflotationszelle
+(S1, S2) , die mit dem Überlauf der Primärzellen (P1,
+P2, P3, P4, P5) betrieben wird und deren Gutstoff der ersten
+Primärzelle (P1) zugeführt wird, vorgesehen ist und mit dem
+Sammelbehälter (4) in Verbindung steht, wobei in jeder Stufe (P1,
+P2, P3, P4, P5) ein eigener Injektor (2) vorgesehen ist, der mit einer
+zugeordneten Pumpe zu einem Flüssigkeitskreislauf (1) verbunden
+ist.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung nach Anspruch 6, dadurch gekennzeichnet, dass in
+den Trennwänden (10) der Zellen (P1, P2, P3, P4) im Bereich des
+Bodens Öffnungen (5) vorgesehen sind.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung nach einem der Ansprüche 6 oder 7, dadurch gekennzeichnet,
+dass in jeder Zelle Überlaufrinnen vorgesehen sind, die
+über eine Sammelleitung (3) mit einem Sammelbehälter
+(4) verbunden sind.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung nach Anspruch 6 oder 7, dadurch gekennzeichnet,
+dass mindestens zwei Zellen (P1, P2) in einem Turm angeordnet
+sind.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung nach einem der Ansprüche 6 bis 8, dadurch gekennzeichnet,
+dass mindestens drei Zellen (P1, P2, P3, P4) als kreisförmige
+Flotationsanlage zusammengefasst sind.</claim-text></claim><claim num="xx"><claim-text>Vorrichtung nach Anspruch 10, dadurch gekennzeichnet, dass
+mehrere Injektoren (2) in jeder Zelle (P1, P2, P3, P4) vorgesehen
+sind.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Process for aerating dispersions for the flotation of pulp suspensions
+in the deinking process, in which at least two stages are provided,
+characterised by at least one secondary stage being provided that is
+operated with the overflow from the primary stages and by its accept
+being fed to the first primary stage, and by each stage having a
+separate liquid circulating system which sucks in the gas or air and
+mixes it with the liquid.</claim-text></claim><claim num="xx"><claim-text>Process according to Claim 1, characterised by the gas or air
+content being controlled independently of the feed rate.</claim-text></claim><claim num="xx"><claim-text>Process according to Claim 1 or 2, characterised by the gas or air
+feed rate being set according to the properties of the pulp suspension.</claim-text></claim><claim num="xx"><claim-text>Process according to one of Claims 1 to 3, characterised by different
+quantities of gas or air being applied in the individual stages.</claim-text></claim><claim num="xx"><claim-text>Process according to one of Claims 1 to 4, characterised by the
+suspension being fed to the next cell/stage in the lower section of the
+cell/stage.</claim-text></claim><claim num="xx"><claim-text>Device for aerating dispersions for deinking pulp suspensions, with at
+least two flotation cells, characterised by at least one secondary
+flotation cell (S1, S2) being provided, which is operated with the
+overflow from the primary cells (P1, P2, P3, P4, P5) and whose
+accept is fed to the first primary stage (P1) and which is connected
+with the collecting tank (4), where a separate injector (2) is provided
+in each stage (P1, P2, P3, P4, P5) which is joined up with an
+assigned pump to form a liquid circulating system (1).</claim-text></claim><claim num="xx"><claim-text>Device according to Claim 6, characterised by openings (5) being
+provided in the dividing walls (10) of cells (P1, P2, P3, P4) at floor
+level.</claim-text></claim><claim num="xx"><claim-text>Device according to one of Claims 6 or 7, characterised by overflow
+channels being provided in each cell, which are connected to a
+collecting tank (4) via a collecting main (3).</claim-text></claim><claim num="xx"><claim-text>Device according to Claim 6 or 7, characterised by at least two cells
+(P1, P2) being arranged in a tower.</claim-text></claim><claim num="xx"><claim-text>Device according to one of Claims 6 to 8, characterised by at least
+three cells (P1, P2, P3, P4) being combined to form a circular flotation
+plant.</claim-text></claim><claim num="xx"><claim-text>Device according to Claim 10, characterised by several injectors (2)
+being provided in each cell (P1, P2, P3, P4).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé d'aération des dispersions pour la flottation des suspension
+de pâte dans un procédé de désencrage, où au moins deux étapes
+sont prévues, caractérisé en ce qu' au moins une étape secondaire
+est prévue qui s'opère avec le trop-plein des étapes primaires, ses
+acceptées se trouvant alimentées à la première étape primaire, et que
+chacune des étapes a un système de circulation de liquide individuel
+qui aspire le gaz ou l'air et le mélange avec le liquide.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, caractérisé en ce que le contenu
+de gaz ou d'air est contrôlé indépendamment du débit d'alimentation.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1 ou 2, caractérisé en ce que le débit
+du gaz ou de l'air est réglé selon les caractéristiques de la suspension
+de pâte.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une des revendications 1 à 3, caractérisé en ce que
+des quantités différentes de gaz ou d'air sont utilisées dans les étapes
+individuelles.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une des revendications 1 à 4, caractérisé en ce que
+la suspension est alimentée à la cellule/étape suivante dans la
+section inférieure de la cellule/étape.</claim-text></claim><claim num="xx"><claim-text>Dispositif d'aération des dispersions pour procédés de désencrage de
+pâte, avec au moins deux cellules de flottation, caractérisé en ce qu'
+au moins une étape secondaire (S1, S2) est prévue qui s'opère avec
+le trop-plein des cellules primaires (P1, P2, P3, P4, P5), ses
+acceptées se trouvant alimentées à la première étape primaire (P1),
+et qui est connectée au bac collecteur (4), avec un injecteur séparé
+étant prévu dans chacune des étapes (P1, P2, P3, P4, P5) et relié à
+une pompe assignée pour obtenir un système de circulation de liquide
+(1 ).</claim-text></claim><claim num="xx"><claim-text>Dispositif selon la revendication 6, caractérisé en ce que des
+ouvertures (5) sont prévues dans les cloisons (10) des cellules (P1,
+P2, P3, P4) au fond.</claim-text></claim><claim num="xx"><claim-text>Dispositif selon l'une des revendications 6 ou 7, caractérisé en ce
+que des canaux de trop-plein sont pourvus dans chaque cellule, qui
+sont connectés à un bac collecteur (4) par une conduite collectrice
+(3).</claim-text></claim><claim num="xx"><claim-text>Dispositif selon la revendication 6 ou 7, caractérisé en ce qu'au
+moins deux cellules (P1, P2) sont disposées dans une tour.</claim-text></claim><claim num="xx"><claim-text>Dispositif selon l'une des revendications 6 à 8, caractérisé en ce
+qu'au moins trois cellules (P1, P2, P3, P4) sont combinées pour
+former une flottation circulaire.</claim-text></claim><claim num="xx"><claim-text>Dispositif selon la revendication 10, caractérisé en ce que plusieurs
+injecteurs (2) sont prévus dans chaque cellule (P1, P2, P3, P4).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="REG" date="20060915"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>PL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="EN" date="20060609"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="25" date="20060607"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>NL</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>PT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050413</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050413</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050713</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050713</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050713</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050913</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060405"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060116</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051130"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FD4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051016"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2240246</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="NLV1" date="20051003"><legal-event-body><event-title>NL: LAPSED OR ANNULED DUE TO FAILURE TO FULFILL THE REQUIREMENTS OF ART. 29P AND 29M OF THE PATENTS ACT; NO LEGAL EFFECT FROM</event-title></legal-event-body></legal-event><legal-event country="EP" code="GBT" date="20050803"><legal-event-body><event-title>GB: TRANSLATION OF EP PATENT FILED (GB SECTION 77(6)(A)/1977)</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050712</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050519"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>50105872</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050519</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050518"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>LANGUAGE OF EP DOCUMENT: GERMAN</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050415"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050413"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20050413"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>Countries concerned </event-attribute-label><event-attribute-value>SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050413"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>NOT ENGLISH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIN1" date="20041215"><legal-event-body><event-title>INVENTOR (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>GABL, HELMUTH, DIPL.ING.DR.</event-attribute-value></event-attribute><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>HERTL, ERWIN, ING.</event-attribute-value></event-attribute><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>SCHERZINGER, BERNHARD, DIPL.ING.DR.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20040310"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040126</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020904"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AT BE CH CY DE DK ES FI FR GB GR IE IT LI LU MC NL PT SE TR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AXX" date="20020904"><legal-event-body><event-title>PAYMENT OF EXTENSION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>SI PAYMENT 20020417</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020626"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020417</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20011212"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20011212"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010816"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010816"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

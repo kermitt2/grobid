@@ -110,6 +110,9 @@ public class TaggingLabels {
     public final static String GLOSSARY_LABEL = "<glossary>";
     public final static String BACK_LABEL = "<back>";
 
+    public final static String PATENT_CITATION_PL_LABEL = "<refPatent>"
+    public final static String PATENT_CITATION_NLP_LABEL = "<refNPL>"
+
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -226,6 +229,9 @@ public class TaggingLabels {
     public static final TaggingLabel NAMES_CITATION_MIDDLENAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, MIDDLENAME_LABEL);
     public static final TaggingLabel NAMES_CITATION_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SURNAME_LABEL);
     public static final TaggingLabel NAMES_CITATION_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_CITATION, SUFFIX_LABEL);
+
+    public static final TaggingLabel PATENT_CITATION_PL = new TaggingLabelImpl(GrobidModels.PATENT_CITATION, PATENT_CITATION_PL_LABEL);
+    public static final TaggingLabel PATENT_CITATION_NPL = new TaggingLabelImpl(GrobidModels.PATENT_CITATION, PATENT_CITATION_NPL_LABEL);
 
     public static final TaggingLabel MONOGRAPH_COVER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, COVER_LABEL);
     public static final TaggingLabel MONOGRAPH_TITLE = new TaggingLabelImpl(GrobidModels.MONOGRAPH, TITLE_LABEL);
@@ -353,6 +359,10 @@ public class TaggingLabels {
         register(NAMES_CITATION_MIDDLENAME);
         register(NAMES_CITATION_SURNAME);
         register(NAMES_CITATION_SUFFIX);
+
+        // citations in patent
+        register(PATENT_CITATION_PL)
+        register(PATENT_CITATION_NPL)
 
         // monograph
         register(MONOGRAPH_COVER);

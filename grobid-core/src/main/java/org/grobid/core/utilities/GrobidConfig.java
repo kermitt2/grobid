@@ -67,9 +67,9 @@ public class GrobidConfig {
         public String name; 
         public String engine;
 
-        public double epsilon;
-        public double window;
-        public double nbMaxIterations;
+        public double epsilon = 0.00001;
+        public int window = 20;
+        public int nbMaxIterations = 2000;
 
         public String architecture;
         public boolean useELMo = false;

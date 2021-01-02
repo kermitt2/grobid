@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="annotation.xsl"?>
+<?oxygen NVDLSchema="annotation.nvdl"?>
+<fulltext-document system="ops.epo.org" fulltext-format="text-only" xmlns="http://www.epo.org/fulltext"><bibliographic-data><publication-reference data-format="docdb"><document-id><country>WO</country><doc-number>03092592</doc-number><kind>A2</kind></document-id></publication-reference></bibliographic-data><description lang="EN">
+<p> DENGUE TETRAVALENT VACCINE CONTAINING A COMMON 30 
+NUCLEOTIDE DELETION IN THE 3'-UTR OF DENGUE TYPES 1,2, 3, AND 4, 
+OR ANTIGENIC CHIMERIC DENGUE VIRUSES 1,2, 3, AND 4 
+Field of the Invention 
+The invention relates to a dengue virus tetravalent vaccine containing a common 30 nucleotide deletion (A30) in the 3'-untranslated region of the genome of dengue virus serotypes 1,2, 3, and 4, or antigenic chimeric dengue viruses of serotypes 1, 2,3, and 4. </p><p> Background of the Invention 
+Dengue virus is a positive-sense RNA virus belonging to the Flavivirus genus of the family Flaviviridae. Dengue virus is widely distributed throughout the tropical and semitropical regions of the world and is transmitted to humans by mosquito vectors. </p><p> Dengue virus is a leading cause of hospitalization and death in children in at least eight tropical Asian countries (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">WHO 1997 Dengue Haemorrhagic Fever. Diagnosis, Treatment, 
+Prevention, and Control 2nd Edition, Geneva</bibl>). There are four serotypes of dengue virus (DEN1, DEN2, DEN3, and DEN4) that annually cause an estimated 50-100 million cases of dengue fever and 500,000 cases of the more severe form of dengue virus infection known as dengue hemorrhagic fever/dengue shock syndrome (DHF/DSS) (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Gubler, D. J. and 
+Meltzer, M. 1999 Adv Virus Res 53: 35-70</bibl>). This latter disease is seen predominantly in children and adults experiencing a second dengue virus infection with a serotype different than that of their first dengue virus infection and in primary infection of infants who still have circulating dengue-specific maternal antibody (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Burke, D. S. et al. 1988 Am JTrop Med 
+Hyg 38: 172-180</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Halstead, S. B. et al. 1969 Am J Trop Med Hyg 18: 997-1021</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Thein, S. et al. 1997 Am J Trop Med Hyg 56: 566-575</bibl>). A dengue vaccine is needed to lessen disease burden caused by dengue virus, but none is licensed. Because of the association of more severe disease with secondary dengue virus infection, a successful vaccine must simultaneously induce immunity to all four serotypes. Immunity is primarily mediated by neutralizing antibody directed against the envelope (E) glycoprotein, a virion structural protein. Infection with one serotype induces long-lived homotypic immunity and a short- lived heterotypic immunity (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Sabin, A. 1955 Am J 7 : rop Med Hyg 4: 198-207</bibl>). Therefore, the goal of immunization is to induce a long-lived neutralizing antibody response against </p> <p> DEN1, DEN2, DEN3, and DEN4, which can best be achieved economically using live attenuated virus vaccines. This is a reasonable goal since a live attenuated vaccine has already been developed for the related yellow fever virus, another mosquito-borne flavivirus present in tropical and semitropical regions of the world (<bibl type="book" xmlns="http://www.tei-c.org/ns/1.0">Monath, T. P. and Heinz, F. X. 1996 in: Fields Virology, Fields, D. M et al. eds. Philadelphia: Lippincott- Raven Publishers, pp. 961-1034</bibl>). </p><p> Several live attenuated dengue vaccine candidates have been developed and evaluated in humans and non-human primates. The first live attenuated dengue vaccine candidates were host range mutants developed by serial passage of wild-type dengue viruses in the brains of mice and selection of mutants attenuated for humans (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Kimura, R. and Hotta, S. 1944 Jpn J Bacteriol 1: 96-99</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Sabin, A. B. and Schlesinger, R. W. 1945 Science 101: 640</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Wisserman, C. L. et al. 1963 Am JTrop Med Hyg 12: 620-623</bibl>). Although these candidate vaccine viruses were immunogenic in humans, their poor growth in cell culture discouraged further development. Additional live attenuated DEN1, DEN2, DEN3, and DEN4 vaccine candidates have been developed by serial passage in non-human tissue culture (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Angsubhakorn, S. et al. 1994 Southeast Asian J Trop Med Public Health 25: 554- 559</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bancroft, W. H. et al. 1981 Infect Immun 31: 698-703</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bhamarapravati, N. et al. 1987 Bull World Health Organ 65: 189-195</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Eckels, K. H. et al. 1984 Am J Trop Med Hyg 33: 684-698</bibl> ; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Hoke, C. H. Jr. et al.  1990 Am J Trop Med Hyg 43: 219-226</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Kanesa-Thasan, N. et al. 2001 Vaccine 19: 3179-3188</bibl>) or by chemical mutagenesis (<bibl next="bibl91" type="journal" xmlns="http://www.tei-c.org/ns/1.0">McKee, K. T. et al. 1987 4m J Trop Med Hyg 36: 435-442</bibl>). It has proven very difficult to achieve a satisfactory balance between attenuation and immunogenicity for each of the four serotypes of dengue virus using these approaches and to formulate a tetravalent vaccine that is safe and satisfactorily immunogenic against each of the four dengue viruses (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Kanesa-Thasan, N. et al. 2001 Vaccine 19: 3179-3188</bibl> ; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bhamarapravati, N. and Sutee, Y. 2000 Vaccine 18: 44- 47</bibl>). </p><p> Two major advances using recombinant DNA technology have recently made it possible to develop additional promising live attenuated dengue virus vaccine candidates. </p><p>First, methods have been developed to recover infectious dengue virus from cells transfected with RNA transcripts derived from a full-length cDNA clone of the dengue virus genome, thus making it possible to derive infectious viruses bearing attenuating mutations that have been introduced into the cDNA clone by site-directed mutagenesis </p> <p> (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Lai, C. J. et al. 1991 PNAS USA 88: 5139-5143</bibl>). Second, it is possible to produce antigenic chimeric viruses in which the structural protein coding region of the full-length cDNA clone of dengue virus is replaced by that of a different dengue virus serotype or from a more divergent flavivirus (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. and Lai, C. J. 1991 PNAS USA 88: 10342-10346</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Chen, W. et al. 1995 J Virol 69 : 5186-5190</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Huang, C. Y. et al. 2000 J Virol 74 : 3020-3028</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Pletnev, A. G. and Men, R. 1998 PNAS USA 95: 1746-1751</bibl>). These techniques have been used to construct intertypic chimeric dengue viruses that have been shown to be effective in protecting monkeys against homologous dengue virus challenge (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. et al. 1996 J Tirol 70 : 4162-4166</bibl>). A similar strategy is also being used to develop attenuated antigenic chimeric dengue virus vaccines based on the attenuation of the yellow fever vaccine virus or the attenuation of the cell-culture passaged dengue viruses (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Monath, T. P. et al. 1999 Vaccine 17: 1869-1882</bibl> ; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Huang, C. Y. et al. 2000 J Virol 74: 3020-3028</bibl>). </p><p> Another study examined the level of attenuation for humans of a DEN4 mutant bearing a 30-nucleotide deletion (A30) introduced into its 3'-untranslated region by site- directed mutagenesis and that was found previously to be attenuated for rhesus monkeys (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Men, R. et al. 1996 J Virol 70 : 3930-3937</bibl>). Additional studies were carried out to examine whether this A30 mutation present in the DEN4 vaccine candidate was the major determinant of its attenuation for monkeys. It was found that the A30 mutation was indeed the major determinant of attenuation for monkeys, and that it specified a satisfactory balance between attenuation and immunogenicity for humans (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am JTrop Med Hyg 65: 405-13</bibl>). </p><p> Summary of the Invention 
+The previously identified A30 attenuating mutation, created in dengue virus type 4 (DEN4) by the removal of 30 nucleotides from the 3'-UTR, is also capable of attenuating a wild-type strain of dengue virus type 1 (DEN1). Removal of 30 nucleotides from the DEN1 3'-UTR in a highly conserved region homologous to the DEN4 region encompassing the A30 mutation yielded a recombinant virus attenuated in rhesus monkeys to a level similar to recombinant virus DEN4A30. This establishes the transportability of the A30 mutation and its attenuation phenotype to a dengue virus type other than DEN4. </p><p>The effective transferability of the A30 mutation, described by this work, establishes the usefulness of the A30 mutation to attenuate and improve the safety of commercializable </p> <p> dengue virus vaccines of any serotype. We envision a tetravalent dengue virus vaccine containing dengue virus types 1,2, 3, and 4 each attenuated by the A30 mutation. We also envision a tetravalent dengue virus vaccine containing recombinant antigenic chimeric viruses in which the structural genes of dengue virus types 1,2, and 3 replace those of DEN4A30 ; 1,2, and 4 replace those of DEN3A30 ; 1, 3, and 4 replace those of DEN2~30 ; and 2,3, and 4 replace those of DEN1A30. In some instances, such chimeric dengue viruses are attenuated not only by the A30 mutation, but also by their chimeric nature. The presence of the A30 attenuating mutation in each virus component precludes the reversion to a wild-type virus by intertypic recombination. In addition, because of the inherent genetic stability of deletion mutations, the A30 mutation represents an excellent alternative for use as a common mutation shared among each component of a tetravalent vaccine. </p><p> Brief Description of the Drawings 
+Figure 1. The live attenuated tetravalent dengue virus vaccine contains dengue viruses representing each of the 4 serotypes, with each serotype containing its full set of unaltered wild-type structural and non-structural proteins and a shared A30 attenuating mutation. The relative location of the A30 mutation in the 3'untranslated region (UTR) of each component is indicated by an arrow. </p><p> Figure 2. A. The A30 mutation removes 30 contiguous nucleotides (shaded) from the 3'UTR of DEN4. Nucleotides are numbered from the 3'terminus. B. Nucleotide sequence alignment of the TL2 region of DEN1, DEN2, DEN3, and DEN4 and their A30 derivatives. Also shown is the corresponding region for each of the four DEN serotypes. </p><p>Upper case letters indicate sequence homology among all 4 serotypes, underlining indicates nucleotide pairing to form the stem structure. C. Predicted secondary structure of the TL2 region of each DEN serotype. Nucleotides that are removed by the A30 mutation are boxed (DEN1-between nts 10562-10591, DEN2 Tonga/74-between nts 10541-10570, DEN3 Sleman/78-between nts 10535-10565, and DEN4-between nts 10478-10507). </p><p> Figure 3. Viremia levels in rhesus monkeys inoculated with rDEN4 vaccine candidates bearing 5-FU derived mutations. Groups of four or two (rDEN4 and rDEN4A30) monkeys were inoculated with 5.0 logl0PFU virus subcutaneously. Serum was collected daily and virus titers were determined by plaque assay in Vero cells. The limit of virus detection was 0.7 logl0PFU/ml. Mean virus titers are indicated for each group. </p> <p> Figure 4. Viremia levels in rhesus monkeys inoculated with rDEN4 vaccine candidates bearing pairs of charge-to-alanine mutations in NS5. Groups of four or two (rDEN4 and rDEN4A30) monkeys were inoculated with 5.0 log, 0PFU virus subcutaneously. Serum was collected daily and virus titers were determined by plaque assay in Vero cells. The limit of virus detection was 1.0 logloPFU/ml. Mean virus titers are indicated for each group. Viremia was not detected in any monkey after day 4. </p><p> Figure 5. The A30 mutation attenuates both DEN1 and DEN4 for rhesus monkeys. </p><p>Groups of 4 monkeys were immunized subcutaneously with 5.0 log, 0 PFU of the indicated virus. Serum was collected each day following immunization and virus titers were determined and are shown as mean log, o PFU/ml. </p><p> Figure 6. A. Diagram of the p2 (Tonga/74) full-length cDNA plasmid. Regions subcloned are indicated above the plasmid. Numbering begins at the 5'end of the viral sequence. B. The A30 mutation removes the indicated 30 nucleotides from the 3'UTR sequence to create p2A30. </p><p> Figure 7. Viremia levels in rhesus monkeys inoculated with DEN2 (Tonga/74), rDEN2, and rDEN2A30 vaccine candidate. Groups of four monkeys were inoculated with 5.0 logloPFU virus subcutaneously. Serum was collected daily and virus titers were determined by plaque assay in Vero cells. The limit of virus detection was 0.7 logl0PFU/ml. Mean virus titers are indicated for each group. Viremia was not detected in any monkey after day 8. </p><p> Figure 8. A. Diagram of the p3 (Sleman/78) full-length cDNA plasmid. Regions subcloned are indicated above the plasmid. Numbering begins at the 5'end of the viral sequence. The sequence and insertion location of the SpeI linker is shown. B. The A30 mutation removes the indicated 31 nucleotides from the 3'UTR sequence to create p3A30. </p><p> Figure 9. A. Recombinant chimeric dengue viruses were constructed by introducing either the CME or the ME regions of DEN2 (Tonga/74) into the DEN4 genetic background. The relative location of the A30 mutation in the 3'UTR is indicated by an arrow and intertypic junctions 1,2, and 3 are indicated. B. Nucleotide and amino acid sequence of the intertypic junction regions. Restriction enzyme recognition sites used in assembly of each chimeric cDNA are indicated. </p><p> Figure 10. Growth kinetics in Vero cells of chimeric rDEN2/4A30 viruses encoding single or combined Vero cell adaptation mutations. Vero cells were infected with the </p> <p> indicated viruses at an MOI of 0.01. At the indicated time points post-infection, 1 ml samples of tissue culture medium were removed, clarified by centrifugation, and frozen at- 80 C. The level of virus replication was assayed by plaque titration in C6/36 cells. Lower limit of detection was 0.7 log, oPFU/ml. Replication levels on day 4 post-infection are indicated by the dashed line. </p><p> Figure 11. A. Recombinant chimeric dengue viruses were constructed by introducing either the CME or the ME regions of DEN3 (Sleman/78) into the DEN4 genetic background. The relative location of the A30 mutation in the 3'UTR is indicated by an arrow and intertypic junctions 1, 2, and 3 are indicated. Restriction enzyme recognition sites used in assembly of each chimeric cDNA are indicated. B. Nucleotide and amino acid sequence of the intertypic junction regions. Restriction enzyme recognition sites used in assembly of each chimeric cDNA are indicated. </p><p> Figure 12. A. Recombinant chimeric dengue viruses were constructed by introducing either the CME or the ME regions of DEN1 (Puerto Rico/94) into the DEN4 genetic background. The relative location of the A30 mutation in the 3'UTR is indicated by an arrow and intertypic junctions 1,2, and 3 are indicated. Restriction enzyme recognition sites used in assembly of each chimeric cDNA are indicated. B. Nucleotide and amino acid sequence of the intertypic junction regions. Restriction enzyme recognition sites used in assembly of each chimeric cDNA are indicated. </p><p> Brief Description of the Sequences 
+EMI6.1
+ 
+&lt;tb&gt; Serotype &lt;SEP&gt; GenBank &lt;SEP&gt; Accession &lt;SEP&gt; No. &lt;SEP&gt; or &lt;SEP&gt; description
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; DEN1 &lt;SEP&gt; U88535
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; DEN2 &lt;SEP&gt; Tonga/74
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; DEN3 &lt;SEP&gt; Sleman/78
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; DEN4 &lt;SEP&gt; AF326825
+&lt;tb&gt; 
+ </p> <p> Brief Description of the SEQ ID NOs 
+EMI7.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Identifiication &lt;SEP&gt; Figure, &lt;SEP&gt; Table, &lt;SEP&gt; or &lt;SEP&gt; SEQ &lt;SEP&gt; ID &lt;SEP&gt; NO.
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Appendix
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN1 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 1
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN2 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 2
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN3 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 3
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN &lt;SEP&gt; 4 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 4
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN1A30 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 5
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN2030 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 6
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN3A30 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 7
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; DEN4A30 &lt;SEP&gt; Figure &lt;SEP&gt; 2 &lt;SEP&gt; 8
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; p2 &lt;SEP&gt; Figure &lt;SEP&gt; 6 &lt;SEP&gt; 9
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; p2A30 &lt;SEP&gt; Figure &lt;SEP&gt; 6 &lt;SEP&gt; 10
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; p3 &lt;SEP&gt; Figure &lt;SEP&gt; 8 &lt;SEP&gt; 11
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TL2 &lt;SEP&gt; region &lt;SEP&gt; of &lt;SEP&gt; p3A30 &lt;SEP&gt; Figure &lt;SEP&gt; 8 &lt;SEP&gt; 12
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; Spel &lt;SEP&gt; linker &lt;SEP&gt; in &lt;SEP&gt; p3 &lt;SEP&gt; Figure &lt;SEP&gt; 8 &lt;SEP&gt; 13
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4 &lt;SEP&gt; junction &lt;SEP&gt; 1 &lt;SEP&gt; Figure &lt;SEP&gt; 9 &lt;SEP&gt; 14-nt, &lt;SEP&gt; 15-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4 &lt;SEP&gt; junction &lt;SEP&gt; 2 &lt;SEP&gt; Figure &lt;SEP&gt; 9 &lt;SEP&gt; 16-nt, &lt;SEP&gt; 17-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4 &lt;SEP&gt; junction &lt;SEP&gt; 3Figure &lt;SEP&gt; 918-nt, &lt;SEP&gt; 19-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; junction &lt;SEP&gt; 1 &lt;SEP&gt; Figure &lt;SEP&gt; 11 &lt;SEP&gt; 20-nt, &lt;SEP&gt; 21-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; junction &lt;SEP&gt; 2 &lt;SEP&gt; Figure &lt;SEP&gt; 11 &lt;SEP&gt; 22-nt, &lt;SEP&gt; 23-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; junction &lt;SEP&gt; 3 &lt;SEP&gt; Figure &lt;SEP&gt; 11 &lt;SEP&gt; 24-nt, &lt;SEP&gt; 25-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4 &lt;SEP&gt; junction &lt;SEP&gt; 1 &lt;SEP&gt; Figure &lt;SEP&gt; 12 &lt;SEP&gt; 26-nt, &lt;SEP&gt; 27-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4 &lt;SEP&gt; junction &lt;SEP&gt; 2 &lt;SEP&gt; Figure &lt;SEP&gt; 12 &lt;SEP&gt; 28-nt, &lt;SEP&gt; 29-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4 &lt;SEP&gt; junction &lt;SEP&gt; 3 &lt;SEP&gt; Figure &lt;SEP&gt; 12 &lt;SEP&gt; 30-nt, &lt;SEP&gt; 31-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; D4 &lt;SEP&gt; selected &lt;SEP&gt; NS4B &lt;SEP&gt; region &lt;SEP&gt; Table &lt;SEP&gt; 15 &lt;SEP&gt; 32-nt, &lt;SEP&gt; 33-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; D1 &lt;SEP&gt; selectedNS4B &lt;SEP&gt; region &lt;SEP&gt; Table &lt;SEP&gt; 15 &lt;SEP&gt; 34-nt, &lt;SEP&gt; 35-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; D2 &lt;SEP&gt; selected &lt;SEP&gt; NS4B &lt;SEP&gt; region &lt;SEP&gt; Table &lt;SEP&gt; 15 &lt;SEP&gt; 36-nt, &lt;SEP&gt; 37-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; D3 &lt;SEP&gt; selected &lt;SEP&gt; NS4B &lt;SEP&gt; region &lt;SEP&gt; Table &lt;SEP&gt; 15 &lt;SEP&gt; 38-nt, &lt;SEP&gt; 39-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; CCACGGGCGCCGT &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 40
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; AAGGCCTGGA &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 41
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; TATCCCCGGGAC &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 42
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; AGAGCTCTCTC &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 43
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; GAATCTCCACCCGGA &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 44
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; CTGTCGAATC &lt;SEP&gt; Table &lt;SEP&gt; 26 &lt;SEP&gt; 45
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN2 &lt;SEP&gt; (Tonga/74) &lt;SEP&gt; cDNA &lt;SEP&gt; plasmid &lt;SEP&gt; p2 &lt;SEP&gt; Appendix &lt;SEP&gt; 1 &lt;SEP&gt; 46-nt, &lt;SEP&gt; 47-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN3 &lt;SEP&gt; (Sleman/78) &lt;SEP&gt; cDNA &lt;SEP&gt; plasmid &lt;SEP&gt; p3 &lt;SEP&gt; Appendix &lt;SEP&gt; 2 &lt;SEP&gt; 48-nt, &lt;SEP&gt; 49-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN1 &lt;SEP&gt; (Puerto &lt;SEP&gt; Rico/94) &lt;SEP&gt; CME &lt;SEP&gt; chimeric &lt;SEP&gt; region &lt;SEP&gt; Appendix &lt;SEP&gt; 3 &lt;SEP&gt; 50-nt, &lt;SEP&gt; 51-aa
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN1 &lt;SEP&gt; (Puerto &lt;SEP&gt; Rico/94) &lt;SEP&gt; ME &lt;SEP&gt; chimeric &lt;SEP&gt; region &lt;SEP&gt; Appendix &lt;SEP&gt; 4 &lt;SEP&gt; 52-nt, &lt;SEP&gt; 53-aa
+&lt;tb&gt; 
+ 
+Detailed Description of the Preferred Embodiment 
+Introduction 
+A molecular approach is herewith used to develop a genetically stable live attenuated tetravalent dengue virus vaccine. Each component of the tetravalent vaccine, </p> <p> namely, DEN1, DEN2, DEN3, and DEN4, must be attenuated, genetically stable, and immunogenic. A tetravalent vaccine is needed to ensure simultaneous protection against each of the four dengue viruses, thereby precluding the possibility of developing the more serious illnesses dengue hemorrhagic fever/dengue shock syndrome (DHF/DSS), which occur in humans during secondary infection with a heterotypic wild-type dengue virus. </p><p>Since dengue viruses can undergo genetic recombination in nature (<bibl next="bibl92" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Worobey, M. et al. 1999 PNAS USA 96: 7352-7</bibl>), the tetravalent vaccine should be genetically incapable of undergoing a recombination event between its four virus components that could lead to the generation of viruses lacking attenuating mutations. Previous approaches to develop a tetravalent dengue virus vaccine have been based on independently deriving each of the four virus components through separate mutagenic procedures, such as passage in tissue culture cells derived from a heterologous host. This strategy has yielded attenuated vaccine candidates (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bhamarapravati, N. and Sutee, Y. 2000 Vaccine 18: 44-7</bibl>). However, it is possible that gene exchanges among the four components of these independently derived tetravalent vaccines could occur in vaccinees, possibly creating a virulent recombinant virus. Virulent polioviruses derived from recombination have been generated in vaccinees following administration of a trivalent poliovirus vaccine (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Guillot, S. et al. 2000 J Virol 74: 8434-43</bibl>). </p><p> The present invention describes: (1) improvements to the previously described rDEN4A30 vaccine candidate, 2) attenuated rDEN1A30, rDEN2A30, and rDEN3A30 recombinant viruses containing a 30 nucleotide deletion (A30) in a section of the 3' untranslated region (UTR) that is homologous to that in the rDEN4A30 recombinant virus, (3) a method to generate a tetravalent dengue virus vaccine composed of rDEN ! A30,  rDEN2A30,  rDEN3A30, and rDEN4A30, 4) attenuated antigenic chimeric viruses, rDENl/4A30,  rDEN2/4A30, and rDEN3/4A30, for which the CME, ME, or E gene regions of rDEN4A30 have been replaced with those derived from DEN1, DEN2, or DEN3 ; alternatively rDENl/3A30, rDEN2/3A30, and rDEN4/3A30 for which CME, ME, or E gene regions of rDEN3A30 have been replaced with those derived from DEN1,2, or 4; alternatively rDENl/2A30, rDEN3/2A30, and rDEN4/2A30 for which CME, ME, or E gene regions of rDEN2A30 have been replaced with those derived from DEN1, 3, or, 4; and alternatively rDEN2/lA30, rDEN3/1A30, and rDEN4/lA30 for which CME, ME, or E gene regions of rDEN1A30 have been replaced with those derived from DEN2,3, or 4, and 5) a </p> <p> method to generate a tetravalent dengue virus vaccine composed of rDENl/4A30,  rDEN2/4A30,  rDEN3/4A30, and rDEN4A30, alternatively rDENl/3A30,  rDEN2/3A30, rDEN4/3A30, and rDEN3A30, alternatively rDENl/2A30,  rDEN3/2A30, rDEN4/2A30, and rDEN2A30, and alternatively rDEN2/lA30, rDEN3/lA30, rDEN4/1A30, and rDEN ! A30. </p><p>These tetravalent vaccines are unique since they contain a common shared attenuating mutation which eliminates the possibility of generating a virulent wild-type virus in a vaccinee since each component of the vaccine possesses the same A30 attenuating deletion mutation. In addition, the rDEN1A30, rDEN2A30, rDEN3A30, rDEN4A30 tetravalent vaccine is the first to combine the stability of the A30 mutation with broad antigenicity. </p><p>Since the A30 deletion mutation is in the 3'UTR of each virus, all of the proteins of the four component viruses are available to induce a protective immune response. Thus, the method provides a mechanism of attenuation that maintains each of the proteins of DEN1, DEN2, DEN3, and DEN4 viruses in a state that preserves the full capability of each of the proteins of the four viruses to induce humoral and cellular immune responses against all of the structural and non-structural proteins present in each dengue virus serotype. </p><p> As previously described, the DEN4 recombinant virus, rDEN4A30 (previously referred to as 2AA30), was engineered to contain a 30 nucleotide deletion in the 3'UTR of the viral genome (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl> ; <bibl next="bibl93" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Men, R. et al. 1996 J  Virol 70: 3930-7</bibl>). Evaluation in rhesus monkeys showed the virus to be significantly attenuated relative to wild-type parental virus, yet highly immunogenic and completely protective. Also, a phase I clinical trial with adult human volunteers showed the rDEN4A30 recombinant virus to be safe and satisfactorily immunogenic (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am I Trop Med Hyg 65: 405-13</bibl>). To develop a tetravalent vaccine bearing a shared attenuating mutation in a untranslated region, we selected the A30 mutation to attenuate wild-type dengue viruses of serotypes 1,2, and 3 since it attenuated wild-type DEN4 virus for rhesus monkeys and was safe in humans (Figure 1). </p><p> The A30 mutation was first described and characterized in the DEN4 virus (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Men, R. et al. 1996 J Virol 70 : 3930-7</bibl>). In DEN4, the mutation consists of the removal of 30 contiguous nucleotides comprising nucleotides 10478-10507 of the 3'UTR (Figure 2A) which form a putative stem-loop structure referred to as TL2 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Proutski, V. et al. 1997 Nucleic Acids Res 25: 1194-202</bibl>). Among the flaviviruses, large portions of the UTR form highly conserved secondary structures (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Hahn, C. S. et al. 1987 J Mol Biol 198 : 33-41</bibl> ; </p> <p> <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Proutski, V. et al. 1997 Nucleic Acids Res 25: 1194-202</bibl>). Although the individual nucleotides are not necessarily conserved in these regions, appropriate base pairing preserves the stem-loop structure in each serotype, a fact that is not readily apparent when only considering the primary sequence (Figure 2B, C). </p><p> Immunogenic Dengue Chimeras and Methods for Their Preparation 
+Immunogenic dengue chimeras and methods for preparing the dengue chimeras are provided herein. The immunogenic dengue chimeras are useful, alone or in combination, in a pharmaceutically acceptable carrier as immunogenic compositions to minimize, inhibit, or immunize individuals and animals against infection by dengue virus. </p><p> Chimeras of the present invention comprise nucleotide sequences encoding the immunogenicity of a dengue virus of one serotype and further nucleotide sequences selected from the backbone of a dengue virus of a different serotype. These chimeras can be used to induce an immunogenic response against dengue virus. </p><p> In another embodiment, the preferred chimera is a nucleic acid chimera comprising a first nucleotide sequence encoding at least one structural protein from a dengue virus of a first serotype, and a second nucleotide sequence encoding nonstructural proteins from a dengue virus of a second serotype different from the first. In another embodiment the dengue virus of the second serotype is DEN4. In another embodiment, the structural protein can be the C protein of a dengue virus of the first serotype, the prM protein of a dengue virus of the first serotype, the E protein of a dengue virus of the first serotype, or any combination thereof. </p><p> The term"residue"is used herein to refer to an amino acid (D or L) or an amino acid mimetic that is incorporated into a peptide by an amide bond. As such, the amino acid may be a naturally occurring amino acid or, unless otherwise limited, may encompass known analogs of natural amino acids that function in a manner similar to the naturally occurring amino acids (i. e. , amino acid mimetics). Moreover, an amide bond mimetic includes peptide backbone modifications well known to those skilled in the art. </p><p> Furthermore, one of skill in the art will recognize that individual substitutions, deletions or additions in the amino acid sequence, or in the nucleotide sequence encoding for the amino acids, which alter, add or delete a single amino acid or a small percentage of amino acids (typically less than 5%, more typically less than 1%) in an encoded sequence are conservatively modified variations, wherein the alterations result in the substitution of </p> <p> an amino acid with a chemically similar amino acid. Conservative substitution tables providing functionally similar amino acids are well known in the art. The following six groups each contain amino acids that are conservative substitutions for one another: 
+1) Alanine (A), Serine (S), Threonine (T); 
+2) Aspartic acid (D), Glutamic acid (E); 
+3) Asparagine (N), Glutamine (Q) ; 
+4) Arginin (R), Lysine (K); 
+5) Isoleucine (I), Leucine (L), Methionine (M), Valine (V); and 
+6) Phenylalanine (F), Tyrosine (Y), Tryptophan (W). </p><p> As used herein, the terms"virus chimera, ""chimeric virus, ""dengue chimera"and "chimeric dengue virus"means an infectious construct of the invention comprising nucleotide sequences encoding the immunogenicity of a dengue virus of one serotype and further nucleotide sequences derived from the backbone of a dengue virus of a different serotype. </p><p> As used herein, "infectious construct"indicates a virus, a viral construct, a viral chimera, a nucleic acid derived from a virus or any portion thereof, which may be used to infect a cell. </p><p> As used herein, "nucleic acid chimera"means a construct of the invention comprising nucleic acid comprising nucleotide sequences encoding the immunogenicity of a dengue virus of one serotype and further nucleotide sequences derived from the backbone of a dengue virus of a different serotype. Correspondingly, any chimeric virus or virus chimera of the invention is to be recognized as an example of a nucleic acid chimera. </p><p> The structural and nonstructural proteins of the invention are to be understood to include any protein comprising or any gene encoding the sequence of the complete protein, an epitope of the protein, or any fragment comprising, for example, three or more amino acid residues thereof. </p><p>Dengue Chimeras 
+Dengue virus is a mosquito-borne flavivirus pathogen. The dengue virus genome contains a 5'untranslated region (5'UTR), followed by a capsid protein (C) encoding region, followed by a premembrane/membrane protein (prM) encoding region, followed by an envelope protein (E) encoding region, followed by the region encoding the nonstructural proteins (NS1-NS2A-NS2B-NS3-NS4A-NS4B-NS5) and finally a 3'untranslated region (3' </p> <p> UTR). The viral structural proteins are C, prM and E, and the nonstructural proteins are NS1-NS5. The structural and nonstructural proteins are translated as a single polyprotein and processed by cellular and viral proteases. </p><p> The dengue chimeras of the invention are constructs formed by fusing structural protein genes from a dengue virus of one serotype, e. g. DEN1, DEN2, DEN3, or DEN4, with non-structural protein genes from a dengue virus of a different serotype, e. g., DEN1, DEN2, DEN3, or DEN4. </p><p> The attenuated, immunogenic dengue chimeras provided herein contain one or more of the structural protein genes, or antigenic portions thereof, of the dengue virus of one serotype against which immunogenicity is to be conferred, and the nonstructural protein genes of a dengue virus of a different serotype. </p><p> The chimera of the invention contains a dengue virus genome of one serotype as the backbone, in which the structural protein gene (s) encoding C, prM, or E protein (s) of the dengue genome, or combinations thereof, are replaced with the corresponding structural protein gene (s) from a dengue virus of a different serotype that is to be protected against. </p><p>The resulting viral chimera has the properties, by virtue of being chimerized with a dengue virus of another serotype, of attenuation and is therefore reduced in virulence, but expresses antigenic epitopes of the structural gene products and is therefore immunogenic. </p><p> The genome of any dengue virus can be used as the backbone in the attenuated chimeras described herein. The backbone can contain mutations that contribute to the attenuation phenotype of the dengue virus or that facilitate replication in the cell substrate used for manufacture, e. g., Vero cells. The mutations can be in the nucleotide sequence encoding nonstructural proteins, the 5'untranslated region or the 3'untranslated region. </p><p>The backbone can also contain further mutations to maintain the stability of the attenuation phenotype and to reduce the possibility that the attenuated virus or chimera might revert back to the virulent wild-type virus. For example, a first mutation in the 3'untranslated region and a second mutation in the 5'untranslated region will provide additional attenuation phenotype stability, if desired. In particular, a mutation that is a deletion of 30 nts from the 3'untranslated region of the DEN4 genome between nts 10478-10507 results in attenuation of the DEN4 virus (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Men et al. 1996 J Virology 70: 3930-3933</bibl>; <bibl next="bibl94" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin et al. 2001 Am J Trop Med 65: 405-413,2001</bibl>). Therefore, the genome of any dengue type 4 virus containing such a mutation at this locus can be used as the backbone in the attenuated </p> <p> chimeras described herein. Furthermore, other dengue virus genomes containing an analogous deletion mutation in the 3'untranslated region of the genomes of other dengue virus serotypes may also be used as the backbone structure of this invention. </p><p> Such mutations may be achieved by site-directed mutagenesis using techniques known to those skilled in the art. It will be understood by those skilled in the art that the virulence screening assays, as described herein and as are well known in the art, can be used to distinguish between virulent and attenuated backbone structures. </p><p>Construction of Dengue Chimeras 
+The dengue virus chimeras described herein can be produced by substituting at least one of the structural protein genes of the dengue virus of one serotype against which immunity is desired into a dengue virus genome backbone of a different serotype, using recombinant engineering techniques well known to those skilled in the art, namely, removing a designated dengue virus gene of one serotype and replacing it with the desired corresponding gene of dengue virus of a different serotype. Alternatively, using the sequences provided in GenBank, the nucleic acid molecules encoding the dengue proteins may be synthesized using known nucleic acid synthesis techniques and inserted into an appropriate vector. Attenuated, immunogenic virus is therefore produced using recombinant engineering techniques known to those skilled in the art. </p><p> As mentioned above, the gene to be inserted into the backbone encodes a dengue structural protein of one serotype. Preferably the dengue gene of a different serotype to be inserted is a gene encoding a C protein, a prM protein and/or an E protein. The sequence inserted into the dengue virus backbone can encode both the prM and E structural proteins of the other serotype. The sequence inserted into the dengue virus backbone can encode the C, prM and E structural proteins of the other serotype. The dengue virus backbone is the DEN1, DEN2, DEN3, or DEN4 virus genome, or an attenuated dengue virus genome of any of these serotypes, and includes the substituted gene (s) that encode the C, prM and/or E structural protein (s) of a dengue virus of a different serotype, or the substituted gene (s) that encode the prM and/or E structural protein (s) of a dengue virus of a different serotype. </p><p> Suitable chimeric viruses or nucleic acid chimeras containing nucleotide sequences encoding structural proteins of dengue virus of any of the serotypes can be evaluated for usefulness as vaccines by screening them for phenotypic markers of attenuation that indicate reduction in virulence with retention of immunogenicity. Antigenicity and </p> <p> immunogenicity can be evaluated using in vitro or in vivo reactivity with dengue antibodies or immunoreactive serum using routine screening procedures known to those skilled in the art. </p><p>Dengue Vaccines 
+The preferred chimeric viruses and nucleic acid chimeras provide live, attenuated viruses useful as immunogens or vaccines. In a preferred embodiment, the chimeras exhibit high immunogenicity while at the same time not producing dangerous pathogenic or lethal effects. </p><p> The chimeric viruses or nucleic acid chimeras of this invention can comprise the structural genes of a dengue virus of one serotype in a wild-type or an attenuated dengue virus backbone of a different serotype. For example, the chimera may express the structural protein genes of a dengue virus of one serotype in either of a dengue virus or an attenuated dengue virus background of a different serotype. </p><p> The strategy described herein of using a genetic background that contains nonstructural regions of a dengue virus genome of one serotype, and, by chimerization, the properties of attenuation, to express the structural protein genes of a dengue virus of a different serotype has lead to the development of live, attenuated dengue vaccine candidates that express structural protein genes of desired immunogenicity. Thus, vaccine candidates for control of dengue pathogens can be designed. </p><p> Viruses used in the chimeras described herein are typically grown using techniques known in the art. Virus plaque or focus forming unit (FFU) titrations are then performed and plaques or FFU are counted in order to assess the viability, titer and phenotypic characteristics of the virus grown in cell culture. Wild type viruses are mutagenized to derive attenuated candidate starting materials. </p><p> Chimeric infectious clones are constructed from various dengue serotypes. The cloning of virus-specific cDNA fragments can also be accomplished, if desired. The cDNA fragments containing the structural protein or nonstructural protein genes are amplified by reverse transcriptase-polymerase chain reaction (RT-PCR) from dengue RNA with various primers. Amplified fragments are cloned into the cleavage sites of other intermediate clones. Intermediate, chimeric dengue clones are then sequenced to verify the sequence of the inserted dengue-specific cDNA. </p> <p> Full genome-length chimeric plasmids constructed by inserting the structural or nonstructural protein gene region of dengue viruses into vectors are obtainable using recombinant techniques well known to those skilled in the art. </p><p>Methods of Administration 
+The viral chimeras described herein are individually or jointly combined with a pharmaceutically acceptable carrier or vehicle for administration as an immunogen or vaccine to humans or animals. The terms"pharmaceutically acceptable carrier"or "pharmaceutically acceptable vehicle"are used herein to mean any composition or compound including, but not limited to, water or saline, a gel, salve, solvent, diluent, fluid ointment base, liposome, micelle, giant micelle, and the like, which is suitable for use in contact with living animal or human tissue without causing adverse physiological responses, and which does not interact with the other components of the composition in a deleterious manner. </p><p> The immunogenic or vaccine formulations may be conveniently presented in viral plaque forming unit (PFU) unit or focus forming unit (FFU) dosage form and prepared by using conventional pharmaceutical techniques. Such techniques include the step of bringing into association the active ingredient and the pharmaceutical carrier (s) or excipient (s). In general, the formulations are prepared by uniformly and intimately bringing into association the active ingredient with liquid carriers. Formulations suitable for parenteral administration include aqueous and non-aqueous sterile injection solutions which may contain anti-oxidants, buffers, bacteriostats and solutes which render the formulation isotonic with the blood of the intended recipient, and aqueous and non-aqueous sterile suspensions which may include suspending agents and thickening agents. The formulations may be presented in unit-dose or multi-dose containers, for example, sealed ampoules and vials, and may be stored in a freeze-dried (lyophilized) condition requiring only the addition of the sterile liquid carrier, for example, water for injections, immediately prior to use. Extemporaneous injection solutions and suspensions may be prepared from sterile powders, granules and tablets commonly used by one of ordinary skill in the art. </p><p> Preferred unit dosage formulations are those containing a dose or unit, or an appropriate fraction thereof, of the administered ingredient. It should be understood that in addition to the ingredients particularly mentioned above, the formulations of the present invention may include other agents commonly used by one of ordinary skill in the art. </p> <p> The immunogenic or vaccine composition may be administered through different routes, such as oral or parenteral, including, but not limited to, buccal and sublingual, rectal, aerosol, nasal, intramuscular, subcutaneous, intradermal, and topical. The composition may be administered in different forms, including, but not limited to, solutions, emulsions and suspensions, microspheres, particles, microparticles, nanoparticles and liposomes. It is expected that from about 1 to about 5 doses may be required per immunization schedule. Initial doses may range from about 100 to about 100,000 PFU or FFU, with a preferred dosage range of about 500 to about 20,000 PFU or FFU, a more preferred dosage range of from about 1000 to about 12,000 PFU or FFU and a most preferred dosage range of about 1000 to about 4000 PFU or FFU. Booster injections may range in dosage from about 100 to about 20,000 PFU or FFU, with a preferred dosage range of about 500 to about 15,000, a more preferred dosage range of about 500 to about 10,000 PFU or FFU, and a most preferred dosage range of about 1000 to about 5000 PFU or FFU. </p><p>For example, the volume of administration will vary depending on the route of administration. Intramuscular injections may range in volume from about 0.1 ml to 1.0 ml. </p><p> The composition may be stored at temperatures of from about-100 C to about 4 C. </p><p>The composition may also be stored in a lyophilized state at different temperatures including room temperature. The composition may be sterilized through conventional means known to one of ordinary skill in the art. Such means include, but are not limited to, filtration. The composition may also be combined with bacteriostatic agents to inhibit bacterial growth. </p><p>Administration Schedule 
+The immunogenic or vaccine composition described herein may be administered to humans, especially individuals travelling to regions where dengue virus infection is present, and also to inhabitants of those regions. The optimal time for administration of the composition is about one to three months before the initial exposure to the dengue virus. </p><p>However, the composition may also be administered after initial infection to ameliorate disease progression, or after initial infection to treat the disease. </p><p>Adjuvants 
+A variety of adjuvants known to one of ordinary skill in the art may be administered in conjunction with the chimeric virus in the immunogen or vaccine composition of this invention. Such adjuvants include, but are not limited to, the following: polymers, co- </p> <p> polymers such as polyoxyethylene-polyoxypropylene copolymers, including block co- polymers, polymer p 1005, Freund's complete adjuvant (for animals), Freund's incomplete adjuvant ; sorbitan monooleate, squalene, CRL-8300 adjuvant, alum, QS 21, muramyl dipeptide, CpG oligonucleotide motifs and combinations of CpG oligonucleotide motifs, trehalose, bacterial extracts, including mycobacterial extracts, detoxified endotoxins, membrane lipids, or combinations thereof. </p><p>Nucleic Acid Sequences 
+Nucleic acid sequences of dengue virus of one serotype and dengue virus of a different serotype are useful for designing nucleic acid probes and primers for the detection of dengue virus chimeras in a sample or specimen with high sensitivity and specificity. </p><p>Probes or primers corresponding to dengue virus can be used to detect the presence of a vaccine virus. The nucleic acid and corresponding amino acid sequences are useful as laboratory tools to study the organisms and diseases and to develop therapies and treatments for the diseases. </p><p> Nucleic acid probes and primers selectively hybridize with nucleic acid molecules encoding dengue virus or complementary sequences thereof. By"selective"or "selectively"is meant a sequence which does not hybridize with other nucleic acids to prevent adequate detection of the dengue virus sequence. Therefore, in the design of hybridizing nucleic acids, selectivity will depend upon the other components present in the sample. The hybridizing nucleic acid should have at least 70% complementarity with the segment of the nucleic acid to which it hybridizes. As used herein to describe nucleic acids, the term"selectively hybridizes"excludes the occasional randomly hybridizing nucleic acids, and thus has the same meaning as"specifically hybridizing. "The selectively hybridizing nucleic acid probes and primers of this invention can have at least 70%, 80%, 85%, 90%, 95%, 97%, 98% and 99% complementarity with the segment of the sequence to which it hybridizes, preferably 85% or more. </p><p> The present invention also contemplates sequences, probes and primers that selectively hybridize to the encoding nucleic acid or the complementary, or opposite, strand of the nucleic acid. Specific hybridization with nucleic acid can occur with minor modifications or substitutions in the nucleic acid, so long as functional species-species hybridization capability is maintained. By"probe"or"primer"is meant nucleic acid sequences that can be used as probes or primers for selective hybridization with </p> <p> complementary nucleic acid sequences for their detection or amplification, which probes or primers can vary in length from about 5 to 100 nucleotides, or preferably from about 10 to 50 nucleotides, or most preferably about 18-24 nucleotides. Isolated nucleic acids are provided herein that selectively hybridize with the species-specific nucleic acids under stringent conditions and should have at least five nucleotides complementary to the sequence of interest as described in <bibl type="book" xmlns="http://www.tei-c.org/ns/1.0">Molecular Cloning: A Laboratory Manual, 2nd ed., Sambrook, Fritsch and Maniatis, Cold Spring Harbor Laboratory, Cold Spring Harbor, NY, 1989</bibl>. </p><p> If used as primers, the composition preferably includes at least two nucleic acid molecules which hybridize to different regions of the target molecule so as to amplify a desired region. Depending on the length of the probe or primer, the target region can range between 70% complementary bases and full complementarity and still hybridize under stringent conditions. For example, for the purpose of detecting the presence of dengue virus, the degree of complementarity between the hybridizing nucleic acid (probe or primer) and the sequence to which it hybridizes is at least enough to distinguish hybridization with a nucleic acid from other organisms. </p><p> The nucleic acid sequences encoding dengue virus can be inserted into a vector, such as a plasmid, and recombinantly expressed in a living organism to produce recombinant dengue virus peptide and/or polypeptides. </p><p> The nucleic acid sequences of the invention include a diagnostic probe that serves to report the detection of a cDNA amplicon amplified from the viral genomic RNA template by using a reverse-transcription/polymerase chain reaction (RT/PCR), as well as forward and reverse amplimers that are designed to amplify the cDNA amplicon. In certain instances, one of the amplimers is designed to contain a vaccine virus-specific mutation at the 3'-terminal end of the amplimer, which effectively makes the test even more specific for the vaccine strain because extension of the primer at the target site, and consequently amplification, will occur only if the viral RNA template contains that specific mutation. </p><p> Automated PCR-based nucleic acid sequence detection systems have been recently developed. TaqMan assay (Applied Biosystems) is widely used. A more recently developed strategy for diagnostic genetic testing makes use of molecular beacons (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Tyagi and Kramer, 1996 Nature Biotechnology 14: 303-308</bibl>). Molecular beacon assays employ </p> <p> quencher and reporter dyes that differ from those used in the TaqMan assay. These and other detection systems may used by one skilled in the art. </p><p> EXAMPLE 1 
+Improvement of Dengue Virus Vaccine Candidate rDEN4A30 
+The safety of recombinant live-attenuated dengue-4 vaccine candidate rDEN4A30 was evaluated in twenty human volunteers who received a dose of 5.0 log, 0 plaque forming units (PFU) (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin A. P. et al. 2001 Am J Trop Med Hyg 65: 405-413</bibl>). The vaccine candidate was found to be safe, well-tolerated and immunogenic in all of the vaccinees. </p><p>However, five of the vaccinees experienced a transient elevation in alanine aminotransferase levels, three experienced neutropenia and ten vaccinees developed an asymptomatic macular rash, suggesting that it may be necessary to further attenuate this vaccine candidate. </p><p> Currently, a randomized, double-blind, placebo-controlled, dose de-escalation study is being conducted to determine the human infectious dose 50 (HIDso) of rDEN4A30. </p><p>Each dose cohort consists of approximately twenty vaccinees and four placebo recipients. </p><p>To date, complete data for doses of 3.0 log, o PFU and 2.0 log, o PFU has been collected. rDEN4A30 infected 100% of vaccinees when 3.0 log, o PFU was administered and 95% of vaccinees when 2.0 log, 0 PFU was administered (Table 1). The vaccine candidate caused no symptomatic illness at either dose (Table 1). One vaccinee who received 3.0 log, 0 PFU experienced a transient elevation in alanine aminotransferase levels and approximately one fourth of the vaccinees experienced neutropenia at both doses (Table 1). Neutropenia was transient and mild. More than half of the vaccinees developed a macular rash at both doses ; the occurrence of rash was not correlated with vaccination dose or with viremia (Table 1 and Table 2). Neither peak titer nor onset of viremia differed between the 3.0 log, 0 PFU and 2.0 log,,) PFU doses, though both measures of viremia were significantly lower for these doses than for a dose of 5.0 log, 0 PFU (Table 3). The vaccine candidate was immunogenic in 95% of vaccinees at both doses and neutralizing antibody did not decline between days 28 and 42 post-vaccination (Table 4). Although the HID, has not been determined yet, it is clearly less than 2.0 log,, PFU. Interestingly, decreases in the dose of vaccine have had no consistent effect on immunogenicity, viremia, benign neutropenia or the occurrence of rash. Thus it will not necessarily be possible to further attenuate </p> <p> rDEN4A30 by decreasing the dose of virus administered, and other approaches must be developed. </p><p> Table 1. rDEN4A30 clinical summary 
+EMI20.1
+ 
+No. volunteers with : 
+No. of No. No. with Mean peak Neutro- subjects Dose'infected viremia titerb Fever Rash penia tALT 
+20 5. 0 20 14 1. (0-2) lu 10 3 5 
+20 3. 0 20 7 0. 4 (0. 0) 0 11 5 le 
+20 2. 0 19 11 0. 6 (0. 1) 1d 16 4 0 
+8 0 0 0 0 0 0 0 0 aLog10 pfu bLog10 pfu/mL cNeutropenia defined as ANC &lt; 1500/dl d T Max in volunteer =100. 4 F e ALT day 0 = 78, ALT max = 91 (day 14) 
+Table 2. Pattern of rash in vaccinees 
+EMI20.2
+ 
+&lt;tb&gt; 
+&lt;tb&gt; No. &lt;SEP&gt; with &lt;SEP&gt; No. &lt;SEP&gt; with &lt;SEP&gt; Viremia &lt;SEP&gt; Viremia &lt;SEP&gt; Mean &lt;SEP&gt; day &lt;SEP&gt; of &lt;SEP&gt; Mean &lt;SEP&gt; duration
+&lt;tb&gt; Dose 
+&lt;tb&gt; &lt;SEP&gt; viremia &lt;SEP&gt; rash &lt;SEP&gt; &amp; &lt;SEP&gt; rash &lt;SEP&gt; no &lt;SEP&gt; rash &lt;SEP&gt; onset &lt;SEP&gt; ~ &lt;SEP&gt; SD &lt;SEP&gt; (days &lt;SEP&gt; ~ &lt;SEP&gt; SD)
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 5 &lt;SEP&gt; 14/20 &lt;SEP&gt; 10/20 &lt;SEP&gt; 9/20 &lt;SEP&gt; 5/20 &lt;SEP&gt; 8.1 &lt;SEP&gt; ~ &lt;SEP&gt; 1. &lt;SEP&gt; 3 &lt;SEP&gt; [A]a &lt;SEP&gt; 3. &lt;SEP&gt; 6 &lt;SEP&gt; ~ &lt;SEP&gt; 2. &lt;SEP&gt; 0 &lt;SEP&gt; [A]
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 3 &lt;SEP&gt; 7/20 &lt;SEP&gt; 11/20 &lt;SEP&gt; 6/20 &lt;SEP&gt; 1/20 &lt;SEP&gt; 12.2 &lt;SEP&gt; 1.4 &lt;SEP&gt; [B] &lt;SEP&gt; 5.0 &lt;SEP&gt; 2.1 &lt;SEP&gt; [A]
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 2 &lt;SEP&gt; 11/20 &lt;SEP&gt; 16/20 &lt;SEP&gt; 9/20 &lt;SEP&gt; 2/20 &lt;SEP&gt; 11. &lt;SEP&gt; 21. &lt;SEP&gt; 4 &lt;SEP&gt; [B] &lt;SEP&gt; 6.9 &lt;SEP&gt; 1. &lt;SEP&gt; 7 &lt;SEP&gt; [B]
+&lt;tb&gt; 
+ alog10 pfu bMeans in each column with different letters are significantly different (a  = 0.05) 
+Table 3. rDEN4A30 viremia summary 
+EMI20.3
+ 
+Mean onset of &amp;num; with Mean peak titer viremia Mean duration of viremia viremia (log, o pfu/mL) (day SD) (day SD) 
+5 14 1. 2 i 0. 2 [A] 5. 8 : L 2. 4 [A] b 4. 4 2. 4 [A] 
+3 7 0. 4 0. 0 [B] 9. 1 i 2. 5 [B] 1. 6 i 1. 0 [B] 
+2 11 0. 60. 1 [B] 8. 7 b 2. 4 [B] 2. 6 2. 0 [A] logo0 pou 'Means in each column with different letters are significantly different (a = 0.05) </p> <p> Table 4. Immunogenicity of rDEN4A30 
+EMI21.1
+ 
+Geometric mean serum neutralizing 
+No. of Dose No. antibody titer (range) % subjects (loglo) infeeted Day 28 Day 42 seroconversion 
+Y Y 
+20 5. 0 20 567 (72-2455) 399 (45-1230) 100 
+20 3. 0 20 156 (5-2365) 158 (25-1222) 95 
+20 2. 0 19 163 (5-943) 165 (5-764) 95 
+8 0 0 0 0 0 
+Two approaches have been taken to further attenuate rDEN4A30. This first is the generation and characterization of attenuating point mutations in rDEN4 using 5' fluorouracil mutagenesis (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. Jr. et al. 2002 Virology 300: 125-139</bibl>; <bibl next="bibl95" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. Jr. et al. 2001 J. Virol. 75: 9731-9740</bibl>). This approach has identified a panel of point mutations that confer a range of temperature sensitivity (ts) and small plaque (sp) phenotypes in Vero and HuH-7 cells and attenuation (att) phenotypes in suckling mouse brain and SCID mice engrafted with HuH-7 cells (SCID-HuH-7 mice). In this example, a subset of these mutations has been introduced to rDEN4A30 and the phenotypes of the resulting viruses evaluated. </p><p> A second approach was to create a series of paired charge-to-alanine mutations in contiguous pairs of charged amino acid residues in the rDEN4 NS5 gene. As demonstrated previously, mutation of 32 individual contiguous pairs of charged amino acid residues in rDEN4 NS5 conferred a range of ts phenotypes in Vero and HuH-7 cells and a range of att phenotypes in suckling mouse brain (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Hanley, K. H. et al. 2002 J Virol. 76 525-531</bibl>). As demonstrated below, these mutations also confer an att phenotype in SCID-HuH-7 mice. </p><p>These mutations have been introduced, either as single pairs or sets of two pairs, into rDEN4A30 to determine whether they are compatible with the A30 mutation and whether they enhance the att phenotypes of rDEN4A30. </p><p> A panel of rDEN4 viruses bearing individual point mutations have been characterized which possess temperature sensitive and/or small plaque phenotypes in tissue culture and varying levels of attenuated replication in suckling mouse brain when compared to wild type rDEN4 virus (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 JVirol. 75: 9731-9740</bibl>). Three mutations have been selected to combine with the </p> <p> A30 deletion mutation to evaluate their ability to further restrict replication of rDEN4A30 in rhesus monkeys. First, the missense mutation in NS3 at nucleotide 4995 (Ser &gt; Pro) which confers temperature sensitivity in Vero and HuH-7 cells and restricted replication in suckling mouse brain was previously combined with the A30 mutation (<bibl next="bibl96" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 JVirol. 75: 9731-9740</bibl>). The resulting virus, rDEN4A30-4995, was found to be more restricted (1, 000-fold) in mouse brain replication than rDEN4A30 virus ( &lt; 5-fold) when compared to wild type rDEN4 virus. Second, a missense mutation at nucleotide 8092 (Glu &gt; Gly) which also confers temperature sensitivity in Vero and HuH-7 cells and 10, 000-fold restricted replication in suckling mouse brain was combined with the A30 mutation here. </p><p>Third, a substitution in the 3'UTR at nucleotide 10634 which confers temperature sensitivity in Vero and HuH-7 cells, small plaque size in HuH-7 cells, and approximately 1, 000-fold restricted replication in suckling mouse brain and SCID mice transplanted with HuH-7 cells was combined with the A30 mutation here (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>). </p><p> For the present investigation, subcloned fragments of p4 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>) containing the above mutations were introduced into the p4A30 cDNA clone. For transcription and recovery of virus, cDNA was linearized with Acc65I (isoschizomer of KpnI which cleaves leaving only a single 3'nucleotide) and used as template for transcription by SP6 RNA polymerase as previously described (<bibl next="bibl97" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>). C6/36 mosquito cells were transfected using liposome-mediated transfection and cell culture supernatants were harvested between days five and seven. Recovered virus was terminally diluted twice in Vero cells and passaged two (rDEN4A30-4995) or three (rDEN4A30-8092 and rDEN4A30-10634) times in Vero cells. </p><p> The complete genomic sequences of rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30-10634 viruses were determined as previously described (<bibl next="bibl98" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin et al. 2001 Am. J Trop. Med. Hyg. 65: 405-413</bibl>). As expected, each rDEN4A30 virus derivative contained the A30 mutation. Unexpectedly, in rDEN4A30-4995 virus, the nucleotide changes in the codon containing nucleotide 4995, resulted in a Ser &gt; Leu amino acid change rather than a Ser &gt; Pro change since the p4A30-4995 cDNA was designed to introduce the Ser &gt; Pro change (Table 5). The p4A30-4995 cDNA clone was indeed found to encode a Ser &gt; Pro change at nucleotide 4995, so it is unclear how the virus population acquired the Ser &gt; Leu </p> <p> mutation. Nevertheless, this virus was evaluated to assess the phenotype specified by this missense mutation. rDEN4A30-4995 virus was also found to contain an incidental mutation at nucleotides 4725-6 which resulted in a single amino acid change (Ser &gt; Asp). </p><p>The rDEN4A30-8092 and rDEN4A30-10634 viruses contained the appropriate nucleotide substitutions as well as additional incidental mutations in E, NS4B and NS4B, respectively (Table 5). </p><p> Table 5. Missense and UTR mutations present in rDEN4A30 virus derivatives bearing introduced point mutations. 
+EMI23.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Virus &lt;SEP&gt; Gene &lt;SEP&gt; Nucleotide &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; acid &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; position &lt;SEP&gt; substitution &lt;SEP&gt; position'change
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4A30-4995 &lt;SEP&gt; NS3 &lt;SEP&gt; 4725 &lt;SEP&gt; U &gt; G &lt;SEP&gt; 1542 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Asp
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS3 &lt;SEP&gt; 4726 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; A &lt;SEP&gt; 1542 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Asp
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS3 &lt;SEP&gt; 4995b &lt;SEP&gt; U &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 1632 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4A30-8092 &lt;SEP&gt; E &lt;SEP&gt; 1612 &lt;SEP&gt; A &gt; C &lt;SEP&gt; 504 &lt;SEP&gt; Asp &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS4B &lt;SEP&gt; 7131 &lt;SEP&gt; A &gt; G &lt;SEP&gt; 2344 &lt;SEP&gt; Thr &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS5 &lt;SEP&gt; 8092b &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; G &lt;SEP&gt; 2664 &lt;SEP&gt; Glu &lt;SEP&gt; &gt; &lt;SEP&gt; Gly
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4A30-NS4B &lt;SEP&gt; 6969 &lt;SEP&gt; A &gt; U &lt;SEP&gt; 2290 &lt;SEP&gt; Met &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 10634 &lt;SEP&gt; NS4B &lt;SEP&gt; 7182 &lt;SEP&gt; G &gt; C &lt;SEP&gt; 2361 &lt;SEP&gt; Gly &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 3'UTR &lt;SEP&gt; 10634b &lt;SEP&gt; U &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; none &lt;SEP&gt; none
+&lt;tb&gt; 
+ a Amino acid position in DEN4 polyprotein beginning with the methionine residue of the C protein (nucleotides 102-104) as position 1. b Mutation restricts replication in mouse models of DEN4 infection which were introduced by Kunkel mutagenesis. </p><p> Replication of the three modified rDEN4A30 viruses were compared to rDEN4A30 and wild type rDEN4 virus in the suckling mouse brain model and SCID mice transplanted with HuH-7 cells (SCID-HuH-7 mice). Experiments were conducted as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>; <bibl next="bibl99" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 JVirol. 75: 9731-9740</bibl>). Briefly, for infection of suckling mouse brain, groups of six seven-day-old mice were inoculated intracerebrally with 4.0 log, 0 PFU of virus and the brain of each mouse was removed five days later. Clarified supernatants of 10% brain suspensions were then frozen at-70 C, and the virus titer was determined by plaque assay in Vero cells. For analysis of DEN4 virus replication in SCID-HuH-7 mice, four to six week-old SCID mice were injected intraperitoneally with 107 HuH-7 cells. Five to six weeks after </p> <p> transplantation, mice were infected by direct inoculation into the tumor with 4.0 loglo PFU of virus, and serum for virus titration was obtained by tail-nicking on day 7. The virus titer was determined by plaque assay in Vero cells. </p><p> Wild type rDEN4 virus replicated to 6.0 logjoPFU/g in suckling mouse brain, and rDEN4A30 was restricted in replication by 0.7 log, 0PFU/g, which is similar to previous observations (Table 6) (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 J Virol. 75: 9731-9740</bibl>). rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30-10634 viruses were found to have restricted replication in suckling mouse brain when compared to rDEN4 virus of 3.3, 2. 8, and 2.4 log,oPFU/g, respectively. These results indicate that the additional attenuating mutations serve to further restrict replication of the rDEN4A30 virus in mouse brain ranging from 50-fold (rDEN4A30-10634) to 400-fold (rDEN4A30-4995). In SCID-HuH-7 mice, virus titer of rDEN4A30 virus was 0.4 log,oPFU/ml lower than rDEN4 virus, which is also similar to previous studies (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>). Each modified rDEN4A30 virus was found to be further restricted in replication in SCID-HuH-7 mice (Table 6). rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30-10634 viruses had restricted replication in SCID-HuH-7 mice when compared to rDEN4 virus of 2.9, 1.1, and 2.3 logOPFU/g below the level of wild type rDEN4 virus, respectively. Two important observations were made: (1) The 4995,8092 and 10634 mutations were compatible for viability with the A30 mutation, and (2) These three modified rDEN4A30 viruses had between a 10 and 1, 000-fold reduction in replication in comparison to rDEN4 wild-type virus, which allows viruses with a wide range of attenuation in this model to be further evaluated in monkeys or humans. </p> <p> Table 6. Addition of point mutations in NS3, NS5, or the 3'UTR to rDEN4A30 virus further attenuates the virus for suckling mouse brain and SCID-HuH-7 mice. 
+EMI25.1
+ </p><p> Replication in suckling mouse Replication in SCID-HuH-7 brain"mice" brain'mice' 
+Virus No. of Virus titer Mean loglo-No. of Virus titer : Mean mice SE unit mice SE log, 0-unit logloPFU/g reduction logl0PFU/ml reduction brain from we serum from we rDEN4 12 6. 0i0. 1 13 6. 4i0. 2 rDEN4A30 12 5. 3 i 0. 1 0. 7 20 6. 0 i 0. 2 0. 4 rDEN4A30-4995 6 2. 7 i 0. 4 3. 3 5 3. 5 A 0. 3 2. 9 rDEN4A30-8092 6 3. 2 0. 2 2. 8 7 5. 0 zt 0. 4 1. 1 rDEN4A30-10634 12 3. 6 0. 1 2. 4 5 4. 4 0. 3 2. 3 a Groups of 6 suckling mice were inoculated i. c. with 104 PFU of virus. Brains were removed 5 days later, homogenized, and titered in Vero cells. b Comparison of mean virus titers of mice inoculated with mutant virus and concurrent rDEN4 wt control. </p><p>  Groups of HuH-7-SCID mice were inoculated directly into the tumor with 10'PFU virus. Serum was collected on day 6 and 7 and titered in Vero cells. </p><p> Based on the findings in the two mouse models of DEN4 virus infection, each of the rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30-10634 viruses was evaluated in the rhesus macaque model of DEN4 infection which has been previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin et al. 2001 Am. J Trop. Med. Hyg., 65: 405-413</bibl>). Briefly, groups of four (rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30-10634) or two (rDEN4, rDEN4A30, mock) monkeys were inoculated with 5.0 logl0PFU virus subcutaneously. Monkeys were observed daily and serum was collected on days 0 to 6,8, 10, and 12, and virus titers were determined by plaque assay in Vero cells for measurement of viremia. On day 28, serum was drawn and the level of neutralizing antibodies was tested by plaque reduction assay in Vero cells as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin et al. 2001 A m. J ; Trop. M ed. Hyg 65: 405-413</bibl>). </p><p> Viremia was detected beginning on day 1 post-infection and ended by day 4 in all monkeys (Table 7, Figure 3). Viremia was present in each monkey infected with rDEN4, rDEN4A30, or rDEN4A30-10634 virus, but only 2 out of 4 monkeys infected with rDEN4A30-4995 or rDEN4A30-8092 virus had detectable viremia. As expected, infection with rDEN4 virus resulted in the highest mean number of viremic days per monkey (3.0 days) as well as mean peak virus titer (2.2 log, OPFU/ml). Monkeys infected with </p> <p> rDEN4A30 virus had both a lower mean number of viremic days per monkey (2.0 days) and mean peak virus titer (1.1 logl0PFU/ml) compared to rDEN4 virus. Groups of monkeys infected with each of the modified rDEN4A30 viruses had a further restricted mean number of viremic days with those inoculated with rDEN4A30-8092 virus having the lowest value, 0.5 days, a 4-fold reduction compared to rDEN4A30 virus. The mean peak virus titer of monkeys infected with rDEN4A30-4995 (0.9 log, OPFU/ml) or rDEN4A30-8092 (0.7 logloPFU/ml) was also lower than those infected with rDEN4A30 virus. However, the mean peak virus titer of monkeys infected with rDEN4A30-10634 (1.3 log, OPFU/ml) was slightly higher than those infected with rDEN4A30 particularly on day 2 (Figure 3). </p><p> Table 7. Addition of point mutations to rDEN4A30 further attenuates the virus for rhesus monkeys. 
+EMI26.1
+ </p><p> Geometric mean 
+No. of No. of Mean no. Mean peak serum neutralizing 
+Virusa monkeys monkeys of viremic virus titer antibody titer with days per (logl0PFU/ml (reciprocal dilution) viremia monkeyb SE) Day 0 Day 28 mock 2 0 &lt; 0. 7 &lt; 10 &lt; 10 rDEN4 2 2 3. 0 2. 2 0. 6 &lt; 10 398 rDEN4A3022201. 10. 4 &lt; 1011 rDEN4A30-4995 0. 8 0. 9 i 0. 2 &lt; 10 78 rDEN4A30-809242050. 70. 11061 rPEN4A30-1063444L31. 30. 2 &lt; 10107 a Groups of rhesus monkeys were inoculated subcutaneously with 105 PFU of the indicated virus in a 1 ml dose. Serum was collected on days 0 to 6,8, 10,12, and 28. </p><p>Virus titer was determined by plaque assay in Vero cells. b Viremia was not detected in any monkey after day 4. </p><p> Serum collected on day 0 and 28 was tested for the level of neutralizing antibodies against rDEN4. No detectable neutralizing antibodies were found against DEN4 on day 0, as expected, since the monkeys were pre-screened to be negative for neutralizing antibodies against flaviviruses (Table 7). On day 28, monkeys infected with rDEN4 had a mean serum neutralizing antibody titer (reciprocal dilution) of 398 which was approximately two- fold higher than monkeys infected with rDEN4A30 virus (1: 181). This result and the two- fold higher level of viremia in rDEN4 virus-infected monkeys are similar to results obtained previously (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin et al. 2001 Am.  J Trop. Med. Hyg. 65: 405-413</bibl>). Monkeys </p> <p> infected with rDEN4A30-4995 (1: 78), rDEN4A30-8092 (1: 61), and rDEN4A30-10634 (1: 107) viruses each had a reduced mean serum neutralizing antibody titer compared to monkeys infected with rDEN4A30 virus. The four monkeys which had no detectable viremia did have serum neutralizing antibody titers indicating that they were indeed infected. Despite the slight increase in mean peak virus titer of rDEN4A30-10634 virus compared with rDEN4A30 virus, rDEN4A30-10634 virus had a lower mean serum neutralizing antibody titer compared to monkeys infected with rDEN4A30 virus. This and the lower mean number of viremic days per monkey suggests that the 10634 mutation can attenuate the replication of rDEN4A30 virus in monkeys. </p><p> On day 28 after inoculation, all monkeys were challenged with 5.0 logl0PFU wild type rDEN4 virus subcutaneously. Monkeys were observed daily and serum was collected on days 28 to 34, 36, and 38, and virus titers were determined by plaque assay in Vero cells for measurement of viremia after challenge. Twenty eight days after rDEN4 virus challenge, serum was drawn and the level of neutralizing antibodies was tested by plaque reduction assay in Vero cells. Mock-inoculated monkeys had a mean peak virus titer of 2.3 logl0PFU/ml after challenge with a mean number of viremic days of 3.5 (Table 8). </p><p>However, monkeys inoculated with rDEN4, rDEN4A30, or each of the modified rDEN4A30 viruses had no detectable viremia, indicating that despite the decreased replication and immunogenicity of rDEN4A30-4995, rDEN4A30-8092, and rDEN4A30- 10634 viruses, each was sufficiently immunogenic to induce protection against wild type rDEN4. Increases in mean neutralizing antibody titer were minimal ( &lt; 3-fold) following challenge in all inoculation groups except mock-infected providing further evidence that the monkeys were protected from the challenge. </p> <p> Table 8. rDEN4A30 containing additional point mutations protects rhesus monkeys from wt DEN4 virus challenge 
+EMI28.1
+ 
+Mean no. of Geometric mean serum viremic days per Mean peak neutralizing antibody 
+No. of monkey after virus titer titer (reciprocal 
+Virusa monkeys rDEN4 (log,,, + dilution) challenge SE) Day 28 Day 56 Mock 2 3. 5 2. 3 zE 0. 1 &lt; 10 358 rDEN4 2 0. 0 &lt; 0. 7 398 753 rDEN4A30 2 0. 0 &lt; 0. 7 181 202 rDEN4A30-4995 4 0. 0 &lt; 0. 7 78 170 rDEN4A30-8092 4 0. 0 &lt; 0. 7 61 131 rDEN4A30-10634 4 0. 0 &lt; 0. 7 107 177 a 28 days after primary inoculation with the indicated viruses, rhesus monkeys were challenged subcutaneously with 105 PFU rDEN4 virus in a 1 ml dose. Serum was collected on days 28 to 34,36, 38, and 56. Virus titer was determined by plaque assay in Vero cells. </p><p> Taken together, these results indicate that the three point mutations, 4995,8092, and 10634) described above do further attenuate the rDEN4A30 vaccine candidate in suckling mouse brain, SCID-HuH-7 mice, and rhesus monkeys. Because of additional incidental mutations (Table 4) present in each modified rDEN4A30 virus, the phenotypes cannot be directly attributed to the individual 4995,8092, and 10634 point mutations. However, the presence of similar mouse-attenuation phenotypes in other rDEN4 viruses bearing one of these three mutations supports the contention that the 4995,8092, and 10634 point mutations are responsible for the att phenotypes of the modified rDEN4A30 viruses. Since rDEN4A30-4995,  rDEN4A30-8092, and rDEN4A30-10634 virus demonstrated decreased replication in rhesus monkeys while retaining sufficient immunogenicity to confer protective immunity, these viruses are contemplated as dengue vaccines for humans. </p><p> DEN4 viruses carrying both A30 and charge-to-alanine mutations were next generated. A subset of seven groups of charge-to-alanine mutations described above were identified that conferred between a 10-fold and 1, 000-fold decrease in replication in SCID- HuH-7 mice and whose unmutated sequence was well-conserved across the four dengue serotypes. These mutations were introduced as single pairs and as two sets of pairs to rDEN4A30 using conventional cloning techniques. Transcription and recovery of virus and terminal dilution of viruses were conducted as described above. Assay of the level of </p> <p> temperature sensitivity of the charge-cluster-to-alanine mutant viruses in Vero and HuH-7 cells, level of replication in the brain of suckling mice and level of replication in SCID- HuH-7 mice was conducted as described above. </p><p> Introduction of one pair of charge-to-alanine mutations to rDEN4 produced recoverable virus in all cases (Table 9). Introduction of two pairs of charge-to-alanine mutations produced recoverable virus in two out of three cases (rDEN4A30-436-437-808- 809 was not recoverable). rDEN4A30 is not ts in Verso or HuH-7 cells. In contrast, seven of the seven sets of charge-to-alanine mutations used in this example conferred a ts phenotype in HuH-7 cells and five also conferred a ts phenotype in Vero cells. All six viruses carrying both A30 and charge-to-alanine mutations showed a ts phenotype in both Vero and HuH-7 cells (Table 9). rDEN4A30 is not attenuated in suckling mouse brain, whereas five of the seven sets of charge-to-alanine mutations conferred an att phenotype in suckling mouse brain (Table 10). </p><p>Four of the viruses carrying both A30 and charge-to-alanine mutations were attenuated in suckling mouse brain (Table 10). In one case (rDEN4A30-23-24-396-397) combination of two mutations that did not attenuate alone resulted in an attenuated virus. Generally, viruses carrying both A30 and charge-to-alanine mutations showed levels of replication in the suckling mouse brain more similar to their charge-to-alanine mutant parent virus than to rDEN4A30.  rDEN4A30 is attenuated in SCID-HuH-7 mice, as are six of the seven charge-to- alanine mutant viruses used in this example. Viruses carrying both A30 and charge-to- alanine mutations tended to show similar or slightly lower levels of replication in SCID- HuH-7 mice compared to their charge-to-alanine mutant parent virus (Table 10). In three cases, viruses carrying both A30 and charge-to-alanine mutations showed at least a fivefold greater reduction in SCID-HuH-7 mice than rDEN4A30. </p><p> The complete genomic sequence of five viruses (rDEN4-200-201, rDEN4A30-200- 201, rDEN4-436-437 [clone 1], rDEN4A30-436-437, and rDEN4-23-24-200-201) that replicated to &gt; 105 PFU/ml in Vero cells at 35 C and that showed a hundredfold or greater reduction in replication in SCID-HuH-7 mice was determined (Table 11). Each of the five contained one or more incidental mutations. In one virus, rDEN4A30-436-437, the one additional mutation has been previously associated with Vero cell adaptation (<bibl next="bibl100" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. Jr. et al. 2002 Virology 300: 125-139</bibl>). Each of the remaining viruses contained at least one </p> <p> incidental mutation whose phenotypic effect is unknown. Consequently, the phenotypes described cannot be directly attributed to the charge-to-alanine mutations. However, the fact that rDEN4 and rDEN4A30 viruses carrying the same charge-to-alanine mutations shared similar phenotypes provides strong support for the ability of charge-to-alanine mutations to enhance the attenuation of rDEN4A30. Because rDEN4-436-437 [clone 1] contained 4 incidental mutations, a second clone of this virus was prepared. rDEN4-436- 437 [clone2] contained only one incidental mutation (Table 11), and showed the same phenotypes as rDEN4-436-437 in cell culture and SCID-HuH-7 mice. rDEN4-436-437 [clone 2] was used in the rhesus monkey study described below. </p> <p> Table 9. Addition of charge-to-alanine mutations to rDEN4#30 confers a ts phenotype in both Vero and HuH-7 cells. 
+EMI31.1
+ </p><p>AA Mean virus titer (logipPFU/ml) at indicated temperature (oc) a Virus changed No. nt Vero HUH-7 b changed 35 37 38 39 Ac 35 37 38 39 A rDEN4 none 0 7. 4 7. 1 7. 7 7. 2 0. 2 7. 7 7. 5 7. 5 7. 4 0. 3 rDEN4A30 none 30 6. 6 6. 6 6. 5 6. 5 0. 1 7. 4 6. 9 7. 0 6. 4 1. 0 rDEN4-23-24 KE 3 6. 7 6. 6 6. 0 6. 5 0. 2 7. 1 7. 3 5. 6 &lt; 1. 7 &gt; 5. 4 rDEN4030-23-24 6. 1 5. 5 4. 9 &lt; 1. 7 4. 4 6. 5 5. 9 4. 7 &lt; 1. 7 &gt; 4. 2 rDEN4-200-201 KH 4 5. 3 4. 8 4. 8 4. 3 1. 0 5. 7 5. 4 2. 7 &lt; 1. 7 &gt; 4. 0 rDEN4A30-200-201 6. 0 5. 3 5. 6 &lt; 1. 7 &gt; 4. 3 5. 8 5. 0 5. 9 &lt; 1. 7 &gt; 4. 1 rDEN4-436-437 DK 4 5. 2 4. 2 3. 4 1-. 9 3. 3 5. 9 4. 9 3. 2 7 &gt; 4. 2 rDEN4A30-436-437 [clonel] 6. 3 5. 7 5. 5 ¦ &lt; 1. 7 1 &gt; 4. 6 6. 5 5. 7 5. 1 : 1. 7 &gt; 4. 8 rDEN4-808-809 ED 3 4. 6 4. 1 &lt; 1. 7 &lt; 1. 7 &gt; 2. 9 5. 2 &lt; 1. 7 &lt; 1. 7 &lt; 1. 7 &gt; 3. 5 rDEN4A30-808-809 5. 6 4. 9 4. 9 &lt; 1. 7 &gt; 3. 9 5. 9 4. 8 5. 1 &lt; 1. 7 &gt; 4. 2 rDEN4-23-24-200-201 KE, KH 7 6. 0 5. 2 4. 2 &lt; l. 7 &gt; 4. 3 6. 9 6. 3 &lt; 1. 7 &lt; l. &gt; 5. 2 rDEN4A30-23-24-200-201 4. 5 4. 2 4. 8 &lt; 1. 7 &gt; 2. 8 4. 9 4. 5 2. 9 &lt; 1. 7 &gt; 3. 2 rDEN4-23-24-396-397 KE, RE 7 6. 5-F-5. 8 7. 1 =9 5. 4 &lt; 1. 7 &gt; 5. 4 rDEN4A30-23-24-396-397 6. 1 5. 2 1 4. 8 &lt; 1. 7 &gt; 4. 4 6. 9 5. 4 4. 9 &lt; 1. 7 &gt; 5. 2 rDEN-436-437-808-809 DK, ED 7 4. 9 4. 9 5. 1 &lt; 1. 7 &gt; 3. 2 5. 5 3. 2 &lt; l.'7 &lt; 1. 7 &gt; 3. 8 aUnderlined values indicate a 2.5 or 3.5 log10PFU/ml reduction in titer in Vero or HuH-7 cells, respectively, at the indicated temperature when compared to the permissive temperature (35 C). bAmino acid pair(s) changed to pair of Ala residues. cReduction in titer (log10pfu/ml) compared to the permissive temperature (35 C). </p> <p> Table 10. Addition of charge-to-alanine mutations attenuates rDEN4#30 in suckling mouse brain and enhances attenuation in SCID-HuH-7 mice. 
+EMI32.1
+ </p><p>Replication in suckling micea Replication in SCID-HuH-7 miceC Virus n Mean virus titer + SE Mean log reduction Mean virus titer SE Mean log reduction from " (loglpPFU/g brain) from wtb (1og10PFU/ml serum) wtd rDEN4 18 6. 2i0. 4 33 5. 4i0. 3 rDEN4A30 12 5. 9 : L 0. 8 0. 2 8 3. 4 : L 0. 3 2. 3 rDEN4-23-24 18 4. 7i0. 1 1. 6 19 4. 7 =L 0. 5 1. 3 rDEN4A30-23-24 6 5. 6 0. 3 0. 7 7 4. 6 0. 4 1. 5 rDEN4-200-201 12 5. 5i0. 5 0. 6 12 3. 7 0. 2 2. 6 rDEN4A30-200-201 6 5. 5 5. 5t0. 6 0. 1 4 3. 3 0. 6 1. 8 rDEN4-436-437 18 2. 7i0. 4 3. 5 10 2. 9 0. 7 2. 5 rDEN4A30-436-437 [clonel] 6 2. 9 =L 0. 3 3. 4 4 2. 3 0. 4 2. 8 rDEN4-808-809 6 1. =L : 0. 1 3. 1 8 3. 3. 2tO. 4 3. 0 rDEN4A30-808-809 12 3. 9 : L 0. 7 2. 1 4 3. 7 3. 7i0. 6 2. 4 rDEN4-23-24-200-201 12 5. 3i0. 5 0. 7 13 3. 4tO. 1 2. 9 rDEN4A30-23-24-200-201 6 3. 0 0. 2 2. 6 5 1. 8 =L 0. 1 3. 3 rDEN4-23-24-396-397"12"4. 6 0. 918 3. 6i0. 3 1 2. 3 rDEN4A30-23-24-396-397 6 3. 0 0. 2 2. 6 5 2. 2 0. 3 2. 9 rDEN-436-437-808-809 6 &lt; 1. 7 0. 0 3. 6 2. 1 0. 3 2. 4 aGroups of six suckling mice were inoculated i.c. with 104 PFU virus in a 30 l inoculum. The brain was removed 5 days later, homogenized, and virus was quantitated by titration in Vero cells. bDetermined by comparing the mean viral titers in mice inoculated with sample virus and concurrent wt controls (n = 6). the attenuation (att) phenotype is defined as a reduction of # 1.5 log10PFU/g compared to wt virus; reductions of # 1.5 are listed in boldface. aGroups of SCID-HuH-7 mice were inoculated directly into the tumor with 104 PFU virus. dDetermined by comparing mean viral titers in mice inoculated with sample virus and concurrent wt controls. The attenuation phenotype is defined as a reduction of #1.5 log10 PFU/g compared to wt virus; reduction of #1.5 are listed in boldface. </p> <p> Table 11. Missense and UTR mutations present in rDEN4 virus derivatives bearing charge-to-alanine and the #40 mutation. 
+EMI33.1
+ 
+&lt;tb&gt; </p><p>Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; Virus &lt;SEP&gt; Genea,b &lt;SEP&gt; Nucleotide &lt;SEP&gt; position &lt;SEP&gt; substitution &lt;SEP&gt; positionc &lt;SEP&gt; Amino &lt;SEP&gt; acid &lt;SEP&gt; changeb
+&lt;tb&gt; prM &lt;SEP&gt; 626 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; T &lt;SEP&gt; 61 &lt;SEP&gt; Glu &lt;SEP&gt; &gt; &lt;SEP&gt; Asp
+&lt;tb&gt; rDEN4-200-201 &lt;SEP&gt; NS4A &lt;SEP&gt; 6659 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; T &lt;SEP&gt; 93 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; NS5 &lt;SEP&gt; 8160-8165 &lt;SEP&gt; AAACA &lt;SEP&gt; &gt; &lt;SEP&gt; GCAGC &lt;SEP&gt; 200-201 &lt;SEP&gt; LysHis &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; NS3 &lt;SEP&gt; 4830 &lt;SEP&gt; G &lt;SEP&gt; &gt; &lt;SEP&gt; A &lt;SEP&gt; 102 &lt;SEP&gt; Gl6 &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; NS5 &lt;SEP&gt; 8106 &lt;SEP&gt; G &lt;SEP&gt; &gt; &lt;SEP&gt; A &lt;SEP&gt; 181 &lt;SEP&gt; Val &lt;SEP&gt; &gt; &lt;SEP&gt; Ile
+&lt;tb&gt; rDEN4#30-200-201
+&lt;tb&gt; NS5 &lt;SEP&gt; 8160-8165 &lt;SEP&gt; AAACA &gt; GCAGC &lt;SEP&gt; 200-201 &lt;SEP&gt; LysHis &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; 3' &lt;SEP&gt; UTR &lt;SEP&gt; 10478-10507 &lt;SEP&gt; #30 &lt;SEP&gt; deletion &lt;SEP&gt; None &lt;SEP&gt; None
+&lt;tb&gt; E &lt;SEP&gt; 2331 &lt;SEP&gt; T &lt;SEP&gt; &gt; &lt;SEP&gt; G &lt;SEP&gt; 464 &lt;SEP&gt; Trp &lt;SEP&gt; &gt; &lt;SEP&gt; Gly
+&lt;tb&gt; NS1 &lt;SEP&gt; 2845 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; T &lt;SEP&gt; 140 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; rDEN4-436-437 &lt;SEP&gt; [clone &lt;SEP&gt; 1] &lt;SEP&gt; NS3* &lt;SEP&gt; 4891 &lt;SEP&gt; T &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 122 &lt;SEP&gt; Ile &lt;SEP&gt; &gt; &lt;SEP&gt; Thr
+&lt;tb&gt; NS5 &lt;SEP&gt; 8869-8873 &lt;SEP&gt; GACAA &lt;SEP&gt; &gt; &lt;SEP&gt; GCAGC &lt;SEP&gt; 436-437 &lt;SEP&gt; AspLys &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; NS5 &lt;SEP&gt; 9659 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; G &lt;SEP&gt; 699 &lt;SEP&gt; Lys &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; NS4B &lt;SEP&gt; 7153 &lt;SEP&gt; T &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 108 &lt;SEP&gt; Val &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; rDEN4-436-437 &lt;SEP&gt; [clone &lt;SEP&gt; 2]
+&lt;tb&gt; NS5 &lt;SEP&gt; 8869-8873 &lt;SEP&gt; GACAA &lt;SEP&gt; &gt; &lt;SEP&gt; GCAGC &lt;SEP&gt; 436-437 &lt;SEP&gt; AspLys &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; NS4B* &lt;SEP&gt; 7163 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 111 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; rDEN4#30-436-437 &lt;SEP&gt; NS5 &lt;SEP&gt; 8869-73 &lt;SEP&gt; GACAA &lt;SEP&gt; &gt; &lt;SEP&gt; GCAGC &lt;SEP&gt; 436-437 &lt;SEP&gt; AspLys &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; 3' &lt;SEP&gt; UTR &lt;SEP&gt; 10478-10507 &lt;SEP&gt; #30 &lt;SEP&gt; deletion &lt;SEP&gt; None &lt;SEP&gt; None
+&lt;tb&gt; NS3 &lt;SEP&gt; 6751 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 124 &lt;SEP&gt; Lys &lt;SEP&gt; &gt; &lt;SEP&gt; Thr
+&lt;tb&gt; rDEN4-23-24-200-201 &lt;SEP&gt; NS5 &lt;SEP&gt; 7629-7633 &lt;SEP&gt; AAAGA &gt; GCAGC &lt;SEP&gt; 23-24 &lt;SEP&gt; LysGlu &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; NS5 &lt;SEP&gt; 8160-8165 &lt;SEP&gt; AAACA &lt;SEP&gt; &gt; &lt;SEP&gt; GCAGC &lt;SEP&gt; 200-201 &lt;SEP&gt; LysHis &lt;SEP&gt; &gt; &lt;SEP&gt; AlaAla
+&lt;tb&gt; 
+ aAsterisk indicates previously identified Vero cell adaptation mutation. bBold values indicate mutations designed to occur in the designated virus. cAmino acid position in the protein product of the designated DEN4 gene; numbering starts with the amino terminus of the protein. </p> <p> Based on the attenuation in the SCID-HuH7 mouse model, four of the charge-to- alanine mutant viruses (rDEN4-200-201, rDEN4A30-200-201, rDEN4-436-437 [clone 2], rDEN4A30-436-437) were evaluated in rhesus macaques as described above. As with the study of viruses carrying attenuating point mutations, viremia was detected on day 1 post- infection and ended by day 4 in all monkeys (Figure 4, Table 12). Viremia was detected in most of the monkeys infected; only one of the four monkeys infected with rDEN4A30-200- 201 and one of the four monkeys infected with rDEN4A30-436-437 showed no detectable viremia. Monkeys infected with rDEN4 showed the highest mean peak virus titer; and in each case viruses carrying the A30 mutation showed an approximately 0.5 log decrease in mean peak virus titer relative to their parental viruses and a 0.5 to 2 day decrease in mean number of viremic days per monkey. Monkeys infected with viruses carrying both the A30 and charge-to-alanine mutations showed a two-fold reduction in mean peak viremia relative to those infected with rDEN4A30. This suggests that addition of the charge-to-alanine mutations further attenuates rDEN4A30 for rhesus macaques. </p><p> As expected, none of the monkeys in this study showed detectable levels of neutralizing antibody on day 0. On day 28, every monkey infected with a virus showed a detectable levels of neutralizing antibody, indicating that all of the monkeys, even those that showed no detectable viremia, had indeed been infected. As in the study of attenuating point mutations, monkeys infected with rDEN4 had a mean serum neutralizing antibody titer (reciprocal dilution) which was approximately twice that of monkeys that had been infected with rDEN4A30. Monkeys infected with rDEN4-200-201 and rDEN4-436-437 [clone 2] had similar mean neutralizing antibody titers to rDEN4, and those infected with rDEN4A30-200-201 and rDEN4A30-436-437 had similar mean neutralizing antibody titers to rDEN4. In each case the addition of the A30 mutation to a virus resulted in a two-fold decrease in neutralizing antibody. Thus, although the addition of charge-to-alanine mutations to rDEN4A30 decreased mean peak viremia below that of rDEN4A30 alone, it did not affect levels of neutralizing antibody. </p> <p> Table 12. Addition of paired charge-to-alanine mutations to rDEN4A30 further attenuates the virus for rhesus monkeys. 
+EMI35.1
+ </p><p> Geometric mean 
+No. of No. of Mean no. Mean peak serum neutralizing 
+Virusa monkeys monkeys of viremic virus titer antibody titer with days per (logloPFU/ml (reciprocal viremia monkeyb + SE) dilution) 
+Day 0 Day 28 mock 2 0 0 &lt; 0. 7 &lt; 5 &lt; 5 rDEN4 2 2 2. 5 2. 6 i 0. 3 &lt; 5 276 rDEN4A30 2 2 2. 0 2. 10. 1 &lt; 5 131 rDEN4-200, 201 4 4 2. 3 1. 8 0. 3 &lt; 5 212 rDEN4A30-200, 201 4 3 1. 5 1. 3 i 0. 2 &lt; 5 139 rDEN4-436, 437 [cl 2) 4 3. 3 1. 8 i 0. 2 &lt; 5 273 rDEN4A30-436, 437 4 3 1. 3 1. 0 i 0. 0 &lt; 5 143 a Groups of rhesus monkeys were inoculated subcutaneously with 105 PFU of the indicated virus in a 1 ml dose. Serum was collected on days 0 to 6,8, 10 and 28. Virus titer was determined by plaque assay in Vero cells. b Viremia was not detected in any monkey after day 4. </p><p> After challenge with rDEN4 on day 28, mock-infected monkeys had a mean peak virus titer of 1.5 logl0PFU/ml and a mean number of viremic days of 3.0 (Table 13). </p><p>However, none of the monkeys previously inoculated with rDEN4, rDEN4A30 or the charge-to-alanine mutant viruses showed detectable viremia. Additionally, none of the monkeys showed a greater than four-fold increase in serum neutralizing antibody titer. </p><p>Together these data indicate that infection with any of the viruses, including those carrying both A30 and the charge-to-alanine mutations, protected rhesus macaques from challenge with rDEN4. </p> <p> Table 13. rDEN4A30 containing charge-to-alanine mutations protects rhesus monkeys from wt DEN4 virus challenge 
+EMI36.1
+ 
+Mean no. of Mean peak Geometric mean serum 
+No. of man peak viremic days neutralizing antibody 
+Virusa virus titer monkeys per monkey titer (reciprocal after rDEN4'sE dilution) challenge Day 28 Day 56 mock 2 3. 0 1. 5 A 0. 7 &lt; 5 284 rDEN4 2 0. 0 &lt; 0. 7 276 316 rDEN4030 2 0. 0 &lt; 0. 7 131 96 rDEN4-200, 201 4 0. 0 &lt; 0. 7 212 356 rDEN4A30-200, 201 0. 0 &lt; 0. 7 139 132 rDEN4-436, 437 [cl 2] 4 0. 0 &lt; 0. 7 273 401 rDEN4A30-436, 437 0. 0 &lt; 0. 7 143 182 a 28 days after primary inoculation with the indicated viruses, rhesus monkeys were challenged subcutaneously with 105 PFU rDEN4 virus in a 1 ml dose. Serum was collected on days 28 to 34,36, 10, and 56. Virus titer was determined by plaque assay in Vero cells. </p><p> Addition of charge-to-alanine mutations to rDEN4A30 can confer a range of ts phenotypes in both Vero and HuH-7 cells and att phenotypes in suckling mouse brain and can either enhance or leave unchanged attenuation in SCID-HuH-7 mice. Most importantly, addition of these mutations can decrease the viremia produced by rDEN4A30 in rhesus macaques without decreasing neutralizing antibody titer or protective efficacy. </p><p>Thus addition of such mutations to rDEN4A30 is contemplated as enhancing attenuation in humans. Also, mutations are contemplated as being added that do not change the overall level of attenuation, but stabilize the attenuation phenotype because they themselves are independently attenuating even in the absence of the A30 mutation. Charge-to-alanine mutations are particularly useful because they occur outside of the structural gene regions, and so can be used to attenuate structural gene chimeric viruses. Moreover, they involve at least three nucleotide changes, making them unlikely to revert to wild type sequence. </p><p> A series of point mutations that enhance the replication of rDEN4 in Vero cells tissue culture have been identified; these are primarily located in the NS4B gene (<bibl next="bibl101" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et. al. 2002 Virology 300: 125-139</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 J Virol 75: 9731-9740</bibl>). Vero cell adaptation mutations confer two desirable features upon a vaccine candidate. First, they enhance virus yield in Vero cells, the intended substrate for vaccine production, and </p> <p> thus render vaccine production more cost-effective. Second, although each of these Vero adaptation mutations are point mutations, they are likely to be extremely stable during vaccine manufacture, because they give a selective advantage in Vero cells. At least one Vero cell adaptation mutation, at position 7129, was also shown to decrease mosquito infectivity of rDEN4; poor mosquito infectivity is another desirable characteristic of a dengue vaccine candidate. To investigate the generality of this finding, we tested the effect of the remaining Vero cell adaptation mutations on the ability of rDEN4 to infect Aedes aegypti mosquitoes fed on an infectious bloodmeal. Table 14 shows the infectivity of each virus carrying a single Vero cell adaptation mutation at high titer. Of these, only one mutation, at position 7182, was associated with a large decrease in mosquito infectivity. </p><p>Thus 7182 may be a particularly valuable mutation to include in an rDEN4 vaccine candidate, as it has opposite effects on replication in Vero cells and in mosquitoes. </p><p> Table 14. Effect of Vero cell adaptation mutations on rDEN4 mosquito infectivity 
+EMI37.1
+ 
+Aedes aegypti (oral infection) 
+Dose'% infected' 
+Virus (loglopfu) No. tested Midgut Head rDEN4 4. 3 27 70 25 rDEN4-4891 4. 4 23 74 13 rDEN4-4995 4. 8 20 80 50 rDEN4-7153 4. 8 20 80 30 rDEN4-7546 4. 6 20 55 10 rDEN4-7162 5. 0 20 55 25 rDEN4-7163 4. 9 15 73 72 rDEN4-7182 5. 0 20 20 0 rDEN4-7630 4. 3 10 70 10 a Virus titer ingested, assuming a 2 n. l bloodmeal. </p><p> 'Percentage of mosquitoes with IFA detectable antigen in midgut or head tissue prepared 21 days after oral infection. </p><p> EXAMPLE 2 
+Generation and Characterization of a Recombinant DEN1 Virus Containing the A30 Mutation 
+We first sought to determine if the A30 mutation was able to satisfactorily attenuate a wild-type DEN virus other than the DEN4 serotype. To do this, the A30 mutation was introduced into the cDNA for DEN1 (Western Pacific). The pRS424DENlWP cDNA clone (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Puri, B. et al. 2000 Virus Genes 20: 57-63</bibl>) was digested with BamHI and used as </p> <p> template in a PCR using Pfu polymerase with forward primer 30 (DEN1 nt 10515-10561 and 10592-10607) and the M13 reverse sequencing primer (101 nt beyond the 3'end of DEN1 genome sequence). The resulting PCR product was 292 bp and contained the A30 mutation. The pRS424DENlWP cDNA was partially digested with Apa I, then digested to completion with Sac II and the vector was gel isolated, mixed with PCR product, and used to transform yeast strain YPH857 to yield growth on plates lacking tryptophan (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Polo, S. et al. 1997 J Virol 71 : 5366-74</bibl>). Positive yeast colonies were confirmed by PCR and restriction enzyme analysis. DNA isolated from two independent yeast colonies was used to transform E. coli strain STBL2. Plasmid DNA suitable for generating RNA transcripts was prepared and the presence of the A30 mutation was verified by sequence analysis. </p><p> For transcription and generation of virus, cDNA (designated pRS424DEN1A30) that was linearized with Sac II was used as template in a transcription reaction using SP6 RNA polymerase as described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Polo, S. et al. 1997 J Virol 71 : 5366-74</bibl>). Transcription reactions were electroporated into LLC-MK2 cells and infection was confirmed by observation of CPE and immunofluorescence and harvested on day 14. Virus stocks were amplified on C6/36 mosquito cells and titered on LLC-MK2 cells. The genome of the resulting virus, rDEN1030, was sequenced to confirm the presence of the A30 mutation. </p><p>The A30 mutation removes nucleotides 10562-10591 of DEN1 (Figure 2B, C), which corresponds to the TL2 of DEN1. The virus replicates efficiently in Vero cell culture to titers of 6.5 log, 0 PFU/ml, indicating that the A30 mutation is compatible with efficient growth of DEN1 in cell culture, a property essential for manufacture of the vaccine. Using similar techniques, parent virus rDENl was generated. Incidental mutations arising from virus passage in tissue culture were identified in both rDEN1 and rDEN ! A30 using sequence analysis and are listed in Table 15. An additional rDEN ! A30 virus was derived by transfection and amplification in Vero cells. Although this virus was not evaluated in the studies described below, its sequence analysis is included in Table 15. The properties of rDEN1A30 as a vaccine in vivo were next examined. </p> <p> Table 15. Missense mutations present among the recombinant DEN1 viruses and correlation of NS4B region mutations with those found in DEN4 
+EMI39.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Amino &lt;SEP&gt; Amino
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Transfection &lt;SEP&gt; Nucleotide &lt;SEP&gt; Nucleotide &lt;SEP&gt; acid &lt;SEP&gt; acid
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virus &lt;SEP&gt; cell &lt;SEP&gt; type &lt;SEP&gt; Gene &lt;SEP&gt; position &lt;SEP&gt; change &lt;SEP&gt; position &lt;SEP&gt; change
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; prM &lt;SEP&gt; 816 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 241 &lt;SEP&gt; Ala &lt;SEP&gt; &gt; &lt;SEP&gt; Val
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; wt &lt;SEP&gt; rDENl &lt;SEP&gt; LLC-MK2 &lt;SEP&gt; NS4B &lt;SEP&gt; 7165a &lt;SEP&gt; U &gt; G &lt;SEP&gt; 2357 &lt;SEP&gt; Phe &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS4B &lt;SEP&gt; 7173b &lt;SEP&gt; U &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 2360 &lt;SEP&gt; Val &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENlA30 &lt;SEP&gt; LLC-MK2 &lt;SEP&gt; E &lt;SEP&gt; 1748 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 552 &lt;SEP&gt; Thr &lt;SEP&gt; &gt; &lt;SEP&gt; Ser
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN1A30 &lt;SEP&gt; Vero &lt;SEP&gt; E &lt;SEP&gt; 1545 &lt;SEP&gt; A &gt; G &lt;SEP&gt; 484 &lt;SEP&gt; Lys &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; 
+ a Same nucleotide as 7154 in rDEN4. bSame nucleotide as 7162 in rDEN4 *Nucleotide and amino acid comparison of selected NS4B region: 7 7 7 7 7 7 DEN4 1 1 1 1 1 1 base 3 4 5 6 7 8 Number: 890123456789012345678901234567890123456789012345678901234567 ++ ++ + +++++ + + + + ++ + ++++++++ ++ ++ ++ ++ D4 7128-CCAACAACCWGACAGCAUCCWAGUCAUGCUUUUAGUCCAWAUGCAAUAAUAGGCCCA 
+P T T L T A S L V M L L V H T A I I G P D1 7139-CCGCUGACGCUGACAGCGGCGGUAUUUAUGCUAGUGGCUCAUUAUGCCAUAAWGGACCC 
+P L T L T A A V P M L V A H T A I I G P  D2 7135-CCUAUAACCCUCACAGCGGCUCUUCUUUUAWGGUAGCACAWAUGCCAUCAUAGGACCG 
+PITLTAALLLLVAHTAIIGP D3 7130-CCACUAACUCUCACAGCGGCAGWCUCCUGCUAGUCACGCAWAUGCUAWAUAGGUCCA 
+P L T L T A A V L L L V T H T A I I G P + + + + + + + + + + + + + D4 = rDEN4 D1 = rDENl (WP) D2 = rDEN2 (Tonga/74) D3 = rDEN3 (Sleman/78) +Homology among all four serotypes Nucleotides are underlined in even multiples of 10. </p><p> Evaluation of the replication, immunogenicity, and protective efficacy of rDEN1030 and wild-type parental rDENl virus (derived from the pRS424DENlWP cDNA) in juvenile rhesus monkeys was performed as follows. Dengue virus-seronegative monkeys were injected subcutaneously with 5.0 log10 PFU of virus in a 1 ml dose divided between two injections in each side of the upper shoulder area. Monkeys were observed daily and blood was collected on days 0-10 and 28 and serum was stored at-70 C. Titer </p> <p> of virus in serum samples was determined by plaque assay in Vero cells as described previously (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). Plaque reduction neutralization titers were determined for the day 28 serum samples as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). All monkeys were challenged on day 28 with a single dose of 5.0 loglo PFU of wild-type rDENl and blood was collected for 10 days. Virus titer in post-challenge sera was determined by plaque assay in Vero cells. Monkeys inoculated with full-length wild-type rDENl were viremic for 2-3 days with a mean peak titer of 2.1 loglo PFU/ml (Table 16), and monkeys inoculated with rDEN1030 were viremic for less than 1 day with a mean peak titer of 0.8 loglo PFU/ml, indicating that the A30 mutation is capable of attenuating DEN1. As expected for an attenuated virus, the immune response, as measured by neutralizing antibody titer, was lower following inoculation with rDEN1030 compared to inoculation with wild-type rDENl (Table 16), yet sufficiently high to protect the animals against wild-type DEN1 virus challenge. Wild-type rDENl virus was not detected in any serum sample collected following virus challenge, indicating that monkeys were completely protected following immunization with either full-length wild-type rDENl or recombinant virus rDEN1A30. </p><p>The level of attenuation specified by the A30 mutation was comparable in both the DEN1 and DEN4 genetic backgrounds (Figure 5). </p><p> Table 16. The A30 mutation attenuates rDENl for rhesus monkeys 
+EMI40.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Mean &lt;SEP&gt; no. &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; Mean &lt;SEP&gt; Mean &lt;SEP&gt; peak
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virus* &lt;SEP&gt; n &lt;SEP&gt; days &lt;SEP&gt; with &lt;SEP&gt; titer &lt;SEP&gt; neutralization &lt;SEP&gt; titer &lt;SEP&gt; of
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; viremia &lt;SEP&gt; (log10pfu/ml) &lt;SEP&gt; titer &lt;SEP&gt; challenge &lt;SEP&gt; virus
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN1 &lt;SEP&gt; 4 &lt;SEP&gt; 2.8 &lt;SEP&gt; 2.1 &lt;SEP&gt; 1230 &lt;SEP&gt; &lt; 0.7
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN1#30 &lt;SEP&gt; 4 &lt;SEP&gt; 0.5 &lt;SEP&gt; 0.8 &lt;SEP&gt; 780 &lt;SEP&gt; &lt; 0.7
+&lt;tb&gt; 
+ * Rhesus monkeys were inoculated subcuateously with 5.0 loglo PFU of virus. </p><p>Serum samples were collected daily for 10 days. Serum for neutralization assay was collected on day 28. All monkeys were challenged on day 28 with 5.0 log10 PFU of rDENl. </p><p> As previously reported, rDEN4 virus replicated to greater than 6.0 logl0PFU/ml serum in SCID-HuH-7 mice, while the replication of rDEN4 virus bearing the A30 mutation was reduced by about 10-fold (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. Jr. et al. 2002 Virology 300: 125-139</bibl>). </p><p>The replication of rDEN1030 was compared to that of wt rDENl in SCID-HuH-7 mice (Table 17). rDEN ! A30 replicated to a level approximately 100-fold less than its wt rDENl parent. This result further validates the use of the SCID-HuH-7 mouse model for the </p> <p> evaluation of attenuated strains of DEN virus, with results correlating closely with those observed in rhesus monkeys. </p><p> Table 17. The A30 mutation attenuates rDENl for HuH-7-SCID mice 
+EMI41.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virus &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; virus &lt;SEP&gt; titer6
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Mice5 &lt;SEP&gt; (loglopfu/ml &lt;SEP&gt; SE)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; wtrDENI &lt;SEP&gt; 9 &lt;SEP&gt; 7. &lt;SEP&gt; 3 &lt;SEP&gt; 0. &lt;SEP&gt; 2
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN1A30 &lt;SEP&gt; 5.0 &lt;SEP&gt; 0.3
+&lt;tb&gt; 
+ 
+5 Groups of HuH-7-SCID mice were inoculated directly into the tumor with 4.0 loglopfu virus. Serum was collected on day 6 and 7, and virus titer was determined by plaque assay in Vero cells. </p><p> 6 Significant difference was found between rDENl and rDEN1030 viruses, Tukey- Kramer test (P &lt; 0.005). </p><p> Finally, the infectivity of rDENl and rDENlA30 for mosquitoes was assessed, using the methods described in detail in Example 5. Previously, the A30 mutation was shown to decrease the ability of rDEN4 to cross the mosquito midgut barrier and establish a salivary gland infection (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Troyer, J. M. et al. 2001 Am J Trop Med Hyg 65: 414-419</bibl>). </p><p>However neither rDENl nor rDEN1A30 was able to infect the midgut of Aedes aegypti mosquitoes efficiently via an artificial bloodmeal (Table 18), so it was not possible to determine whether A30 might further block salivary gland infection. A previous study also showed that the A30 had no effect on the infectivity of rDEN4 for Toxorhynchites splendens mosquitoes infected via intrathoracic inoculation (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Troyer, J. M. et al. 2001 Am J Trop Med Hyg 65: 414-419</bibl>), and a similar pattern was seen for rDENl and rDEN1030 (Table 18). The genetic basis for the inability of rDEN1 to infect the mosquito midgut has not been defined at this time. However, this important property of restricted infectivity for the mosquito midgut is highly desirable in a vaccine candidate since it would serve to greatly restrict transmission of the vaccine virus from a vaccinee to a mosquito vector. </p> <p> Table 18. DEN1 and DEN1A30 viruses are both highly infectious for Toxorhynchites splendens, but do not infect Aedes aegypti efficiently. 
+EMI42.1
+ </p><p> Toxorhynchites splendefzs Aedes aegypti (intrathoracic inoculation) (oral infection) 
+Dose'No. Dose'No. % infectedd Virus (log, opfu) tested % infected' (log, opfu) tested Midgut Head 
+3. 5 7 100 4. 0 26 11 0 
+2. 5 8 75 rDENl 1. 5 7 71 
+0. 5 5 60 
+MIDST &lt; 0. 5 MID50 &gt; 4. 4 
+2. 7 8 100 3. 2 20 10 0 rDENl 1. 7 7 100 A30 0. 7 6 83 
+MIDST &lt; 0. 7 MID$p &gt; ~ 3. 6 'Amount of virus present in 0.22 1 inoculum. b Percentage of mosquitoes with IFA detectable antigen in head tissue prepared 14 days after inoculation. c Virus titer ingested, assuming a 2 gel bloodmeal. dPercentage of mosquitoes with IFA detectable antigen in midgut or head tissue prepared 21 days after oral infection. When virus infection was detected, but did not exceed a frequency of 50% at the highest dose of virus ingested, the MIDso was estimated by assuming that a 10-fold more concentrated virus dose would infect 100% of the mosquitoes. </p><p> Thus, the A30 mutation, first described in DEN4, was successfully transferred to rDENl. The resulting virus, rDEN1030, was shown to be attenuated in monkeys and SCID-HuH-7 mice to levels similar to recombinant virus rDEN4A30, thereby establishing the conservation of the attenuation phenotype specified by the A30 mutation in a different DEN virus background. Based on the favorable results of rDEN4A30 in recent clinical trials (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>), it is predicted that rDEN ! A30 will be suitably attenuated in humans. To complete the tetravalent vaccine, attenuated rDEN2 and rDEN3 recombinant viruses bearing the A30 mutation are contemplated as being prepared (See Examples 3 and 4 below). The demonstration that the A30 mutation specifies a phenotype that is transportable to another DEN serotype has important implications for development of the tetravalent vaccine. This indicates that the A30 mutation is expected to have a corresponding effect on DEN2 and DEN3 wild-type viruses. </p> <p> EXAMPLE 3 
+Generation and Characterization of a Recombinant DEN2 Virus Containing the A30 
+Mutation 
+Evaluation of rDEN1A30 showed that it was satisfactorily attenuated. Based on this result, we sought to extend our technology to the creation of a DEN2 vaccine candidate. To do this, the A30 mutation was introduced into the cDNA of DEN2. A DEN2 virus isolate from a 1974 dengue epidemic in the Kingdom of Tonga (Tonga/74) (<bibl next="bibl102" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Gubler, D. J. et al. 1978 Am J Trop Med Hyg 27: 581-589</bibl>) was chosen to represent wt DEN2. The genome of DEN2 (Tonga/74) was sequenced in its entirety and served as consensus sequence for the construction of a full-length cDNA clone (Appendix 1). cDNA fragments of DEN2 (Tonga/74) were generated by reverse-transcription of the genome as indicated in Figure 6A. Each fragment was subcloned into a plasmid vector and sequenced to verify that it matched the consensus sequence as determined for the virus. This yielded seven cloned cDNA fragments spanning the genome. Cloned fragments were modified as follows: Fragment X, representing the 5'end of the genome was abutted to the SP6 promoter; Fragment L was modified to contain a translationally-silent SpeI restriction site at genomic nucleotide 2353; Fragment R was modified to contain a translationally-silent SpeI restriction site also at genomic nucleotide 2353, and to stabilize the eventual full-length clone, two additional translationally-silent mutations at nucleotides 2362-2364 and 2397 were created to ensure that translation stop codons were present in all reading frames other than that used to synthesize the virus polyprotein; Fragment A was modified at nucleotide 3582 to ablate a naturally occurring SpeI restriction site and at nucleotide 4497 to ablate a naturally occurring KpnI restriction site; Fragment C was modified at nucleotide 9374 to ablate a naturally occurring KpnI restriction site; and Fragment Y, representing the 3'end of the genome was abutted to a KpnI restriction site. Each fragment was added incrementally between the AscI and KpnI restriction sites of DEN4 cDNA clone p4 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>) to generate a full-length DEN2 cDNA clone (p2) with the same vector background successfully used to generate rDEN4 and rDEN4A30. cDNA clone p2 was sequenced to confirm that the virus genome region matched the DEN2 (Tonga/74) consensus sequence, with the exception of the translationally-silent modifications noted above. The A30 mutation was introduced into </p> <p> Fragment Y to generate Fragment YA30. To create p2A30, the Fragment Y region of p2 was replaced with Fragment YA30 (Figure 6A, B). </p><p> For transcription and generation of infectious virus, cDNA (p2 and p2A30) was linearized with Acc65I (isoschizomer of KpnI which cleaves leaving only a single 3' nucleotide) and used as template in a transcription reaction using SP6 RNA polymerase as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et. al. 2002 Virology 300: 125-139</bibl>). Transcripts were introduced into Vero cells or C6/36 mosquito cells using liposome-mediated transfection and cell culture supernatants were harvested on day 7. rDEN2 virus was recovered from the p2 cDNA in both Vero and C6/36 cells, while rDEN2A30 was recovered from the p2A30 cDNA clone in only C6/36 cells (Table 19). </p><p>The level of infectious virus recovered in C6/36 cells was comparable for the p2 and p2A30 cDNA clones when assayed by plaque titration and immunostaining in Vero or C6/36 cells. </p><p>As previously observed, the efficiency of transfection in C6/36 cells was higher than that in Vero cells. Two rDEN2A30 viruses were recovered from independent cDNA clones, &amp;num;2 and &amp;num;10. </p><p> Table 19. rDEN2 virus is recovered in Vero and C6/36 cells, but rDEN2A30 virus is recovered only in C6/36 cells. 
+EMI44.1
+ </p><p> Virus titer of transfection harvest Transfection cDNA Clone Virus (day 7) determined in the indicated cell type construct cell type (log, OPFU/ml) 
+Vero cells C6/36 cells p2 &amp;num;8A rDEN2 3. 1 4. 3 
+Vero cells p2A30 &amp;num;2 rDEN2A30 &lt; 0. 7 &lt; 0. 7 p2A30 &amp;num;10 rDEN2A30 &lt; 0. 7 &lt; 0. 7 p2 &amp;num;8A rDEN2 5. 5 7. 5 
+C6/36 cells p2A30 &amp;num;2 rDEN2A30 4. 8 7. 6 p2A30 &amp;num;10 rDEN2A30 4. 6 7. 5 
+To produce working stocks of rDEN2 and rDEN2A30 viruses, transfection harvests were passaged and terminally diluted in Vero cells, and genomic sequences of the viruses were determined. The Vero cell transfection harvest of rDEN2 virus was terminally diluted once in Vero cells, and individual virus clones were passaged once in Vero cells. To assess whether any homologous Vero cell adaptation mutations identified in the rDEN4 NS4B 7100-7200 region were present in these virus clones, seven independent terminally diluted </p> <p> clones were sequenced over this region. Each of the seven rDEN2 viruses contained a single nucleotide substitution in this region at nucleotide 7169 (U &gt; C) resulting in a Val &gt; Ala amino acid change. This nucleotide corresponds to the 7162 mutation identified in rDEN4 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et. al. 2002 Virology 300: 125-139</bibl>), which has a known Vero cell adaptation phenotype suggesting that this mutation may confer a replication enhancement phenotype in rDEN2 virus. One rDEN2 virus clone was completely sequenced and in addition to the 7169 mutation, a missense mutation (Glu &gt; Ala) was found in NS5 at residue 3051 (Table 20). </p><p> Table 20. Missense mutations which accumulate in rDEN2 and rDEN2A30 viruses after transfection or passage in Vero cells. 
+EMI45.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Virus &lt;SEP&gt; Gene &lt;SEP&gt; Nucleotide &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; acid &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; position &lt;SEP&gt; substitution &lt;SEP&gt; positiona &lt;SEP&gt; change
+&lt;tb&gt; rDEN2b &lt;SEP&gt; NS4B &lt;SEP&gt; 7169c &lt;SEP&gt; U &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 2358 &lt;SEP&gt; Val &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; (Vero) &lt;SEP&gt; NS5 &lt;SEP&gt; 9248 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 3051 &lt;SEP&gt; Glu &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2A30d &lt;SEP&gt; NS3 &lt;SEP&gt; 4946 &lt;SEP&gt; A &gt; G &lt;SEP&gt; 1617 &lt;SEP&gt; Lys &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; 
+&lt;tb&gt; (Vero) &lt;SEP&gt; NS4B &lt;SEP&gt; 7169c &lt;SEP&gt; U &gt; C &lt;SEP&gt; 2358 &lt;SEP&gt; Val &lt;SEP&gt; &gt; &lt;SEP&gt; Ala
+&lt;tb&gt; 
+ a Amino acid position in DEN2 polyprotein beginning with the methionine residue of the C protein (nucleotides 97-99) as position 1. b Virus was recovered in Vero cells and terminally-diluted once in Vero cells. Virus stock was prepared in Vero cells. c Same nucleotide position as 7162 in rDEN4. d Virus was recovered in C6/36 cells and passaged three times in Vero cells. Virus was then terminally diluted and a stock was prepared in Vero cells. </p><p> Because both rDEN2 and rDEN2A30 viruses grown in Vero cells acquired the same mutation at nucleotide 7169, which corresponds to the Vero cell adaptation mutation previously identified in rDEN4 at nucleotide 7162, it was reasoned that this mutation is associated with growth adaptation of rDEN2 and rDEN2A30 in Vero cells. In anticipation that the 7169 mutation may allow rDEN2A30 to be recovered directly in Vero cells, the mutation was introduced into the rDEN2A30 cDNA plasmid to create p2A30-7169. </p><p>Transcripts synthesized from p2A30-7169, as well as p2 and p2A30 were introduced into Vero cells or C6/36 mosquito cells using liposome-mediated transfection as described above. Virus rDEN2A30-7169 was recovered from the p2A30-7169 cDNA in both Vero and C6/36 cells, while rDEN2A30 was recovered from the p2A30 cDNA clone in only </p> <p> C6/36 cells (Table 21). The 7169 mutation is both necessary and sufficient for the recovery of rDEN2A30 in Vero cells. </p><p> Table 21. rDEN2A30-7169 virus containing the 7169 Vero cell adaptation mutation is recovered in both Vero and C6/36 cells 
+EMI46.1
+ 
+Virus titer of transfection Transfection cDNA Clone Virus harvest (day 14) determined cell type construct in 
+C6/36 cells (logloPFU/ml) p2 &amp;num;8A rDEN2 6. 8 
+Vero cells p2A30 &amp;num;2 rDEN2A30 &lt; 0. 7 p2A30-7169'&amp;num;37 rDEN2A30-7169 5. 1 p2 &amp;num;8A rDEN2 6. 9 
+C6/36 cells p2A30 &amp;num;2 rDEN2A30 7. 1 p2A30-7169 &amp;num;37 rDEN2A30-7169 7. 2 a Nucleotide 7169 in rDEN2 corresponds to nucleotide 7162 in rDEN4 which has been shown to be associated with growth adaptation in Vero cells. </p><p> To initially assess the ability of the A30 mutation to attenuate rDEN2 virus in an animal model, the replication of DEN2 (Tonga/74), rDEN2, and rDEN2A30 viruses was evaluated in SCID-HuH-7 mice. Previously, attenuation of vaccine candidates in SCID- HuH-7 mice has been demonstrated to be predictive of attenuation in the rhesus monkey model of infection (Examples 1 and 2). The recombinant viruses tested in this experiment were recovered in C6/36 cells. The DEN2 Tonga/74 virus isolate, rDEN2, and two independent rDEN2A30 viruses, (clones 20A and 21A) which were derived from two independent p2A30 cDNA clones, were terminally diluted twice in C6/36 cells prior to production of a working stock in C6/36 cells. These viruses should not contain any Vero cell adaptation mutations. DEN2 Tonga/74 virus replicated to a mean virus titer of 6.2 logl0PFU/ml in the serum of SCID-HuH-7 mice, and rDEN2 virus replicated to a similar level, 5.6 logloPFU/ml (Table 22). Both rDEN2A30 viruses were greater than 100-fold restricted in replication compared to rDEN2 virus. These results indicate that the A30 mutation has an attenuating effect on replication of rDEN2 virus similar to that observed for rDEN4 and rDENl viruses. </p> <p>Table 22. The A30 mutation restricts rDEN2 virus replication in SCID-HuH-7 mice. 
+EMI47.1
+ 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Mean &lt;SEP&gt; log10-unit
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Mean &lt;SEP&gt; virustiter
+&lt;tb&gt; SEVirus &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; mice &lt;SEP&gt; reduction &lt;SEP&gt; from
+&lt;tb&gt; &lt;SEP&gt; (log10PFU/ml &lt;SEP&gt; serum) 
+&lt;tb&gt; &lt;SEP&gt; value &lt;SEP&gt; for &lt;SEP&gt; wtb
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN2 &lt;SEP&gt; (Tonga/74) &lt;SEP&gt; 8 &lt;SEP&gt; 6.2 &lt;SEP&gt; ~ &lt;SEP&gt; 0.3 &lt;SEP&gt; -
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2 &lt;SEP&gt; 5. &lt;SEP&gt; 6 &lt;SEP&gt; i &lt;SEP&gt; 0. &lt;SEP&gt; 2
+&lt;tb&gt; &lt;SEP&gt; rDEN2A30 &lt;SEP&gt; (clone &lt;SEP&gt; 20A) &lt;SEP&gt; 3. &lt;SEP&gt; 1 &lt;SEP&gt; i &lt;SEP&gt; 0.2 &lt;SEP&gt; 2.
+&lt;tb&gt; rDEN2A30 &lt;SEP&gt; (clone &lt;SEP&gt; 21A) &lt;SEP&gt; 9 &lt;SEP&gt; 2.9 &lt;SEP&gt; ~ &lt;SEP&gt; 0.3 &lt;SEP&gt; 2.7
+&lt;tb&gt; 
+ a Groups of SCID-HuH-7 mice were inoculated directly into the tumor with 104 PFU virus grown in C6/36 cells. Serum was collected on day 7 and titered in C6/36 cells. </p><p> 'Comparison of mean virus titers of mice inoculated with mutant virus and concurrent rDEN2 control. </p><p> DEN2 virus replication in SCID-HuH-7 mice was also determined using DEN2 (Tonga/74), rDEN2, and rDEN2A30 which were passaged in Vero cells (see Table 20, footnotes b and d). Both rDEN2 and rDEN2A30 had acquired a mutation in NS4B, nucleotide 7169, corresponding to the 7162 mutation identified in rDEN4 as Vero cell adaptation mutation. In the presence of the 7169 mutation, the A30 mutation reduced replication of rDEN2A30 by 1.0 log10PFU/ml (Table 23). Previously, using virus grown in C6/36 cells and lacking the 7169 mutation, the A30 mutation reduced replication of rDEN2A30 by about 2.5 log, OPFU/ml (Table 22). These results indicate that Vero cell growth adaptation in DEN2 may also confer a slight growth advantage in HuH-7 liver cells. </p><p>Nevertheless, the attenuation conferred by the A30 mutation is still discernible in these Vero cell growth adapted viruses. </p><p> Table 23. The A30 mutation restricts Vero cell adapted rDEN2 virus replication in SCID- 
+HuH-7 mice. 
+EMI47.2
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Mean &lt;SEP&gt; log16-unit
+&lt;tb&gt; &lt;SEP&gt; Mean &lt;SEP&gt; virus &lt;SEP&gt; titer &lt;SEP&gt; + &lt;SEP&gt; SE
+&lt;tb&gt; Virus &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; mice &lt;SEP&gt; reduction &lt;SEP&gt; from
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; (log10PFU/ml &lt;SEP&gt; serum) 
+&lt;tb&gt; &lt;SEP&gt; value &lt;SEP&gt; for &lt;SEP&gt; wtb
+&lt;tb&gt; DEN2 &lt;SEP&gt; (Tonga/74) &lt;SEP&gt; 6 &lt;SEP&gt; 5.9 &lt;SEP&gt; ~ &lt;SEP&gt; 0.3 &lt;SEP&gt; rDEN2 &lt;SEP&gt; 7 &lt;SEP&gt; 5. &lt;SEP&gt; 9 &lt;SEP&gt; i &lt;SEP&gt; 0. &lt;SEP&gt; 2-
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2A3094. &lt;SEP&gt; 90. &lt;SEP&gt; 3L0
+&lt;tb&gt; 
+ 
+Groups of SCID-HuH-7 mice were inoculated directly into the tumor with 104 PFU virus. Serum was collected on day 7 and titered in C6/36 cells. </p><p> 'Comparison of mean virus titers of mice inoculated with rDEN2A30 and rDEN2 control. </p> <p> Evaluation of the replication, immunogenicity, and protective efficacy of rDEN2A30 and wild-type parental rDEN2 virus in juvenile rhesus monkeys was performed as follows. Dengue virus-seronegative monkeys were injected subcutaneously with 5.0 log, o PFU of virus in a 1 ml dose divided between two injections in each side of the upper shoulder area. Monkeys were observed daily and blood was collected on days 0-10 and 28 and serum was stored at-70 C. Viruses used in this experiment were passaged in Vero cells, and recombinant viruses contained the mutations shown in Table 20 (See footnotes b and d). Titer of virus in serum samples was determined by plaque assay in Vero cells as described previously (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65 : 405-13</bibl>). Plaque reduction neutralization titers were determined for the day 28 serum samples as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). All monkeys were challenged on day 28 with a single dose of 5.0 log, o PFU of wt DEN2 (Tonga/74) and blood was collected for 10 days. Virus titer in post-challenge sera was determined by plaque assay in Vero cells. Monkeys inoculated with wt DEN2 (Tonga/74) or rDEN2 were viremic for 4-5 days with a mean peak titer of 2.1 or 1.9 log,,, PFU/ml, respectively. </p><p> Monkeys inoculated with rDEN2A30 were viremic for 2-3 days with a mean peak titer of 1.7 loglo PFU/ml (Table 24, Figure 7), indicating that the A30 mutation is capable of attenuating DEN2, although not to the same low level observed in rDEN1030 (Table 16). </p><p>As expected for an attenuated virus, the immune response, as measured by neutralizing antibody titer, was lower following inoculation with rDEN2A30 compared to inoculation with wt DEN2 (Tonga/74) or rDEN2 (Table 24), yet sufficiently high to protect the animals against wt DEN2 virus challenge (Table 25). Thus, the decreased number of days of viremia for rDEN2A30, the decreased mean peak titer, and the decreased serum antibody response indicate that the A30 mutation attenuates rDEN2 for rhesus monkeys. </p> <p>*Table 24. rDEN2A30 is slightly more attenuated for rhesus monkeys than rDEN2 
+EMI49.1
+ 
+Geometric mean 
+No. of No. of Mean no. Mean peak serum neutralizing 
+Virusa monkeys monkeys of viremic virus titer antibody titer with days per (lOgl0pFulml (reciprocal viremia monkeyb SE) dilution) 
+Day 0 Day 28 mock 2 0 0 &lt; 0. 7 &lt; 10 &lt; 10 DEN2 (Tonga/74) 4 4 4. 5 2. 1 0. 3 &lt; 10 311 rDEN2 (Vero) 4 4 4. 0 1. 9 0. 1 &lt; 10 173 rDEN2A30 (Vero) 4 4 2. 8 1. 7 0. 2 &lt; 10 91 a Groups of rhesus monkeys were inoculated subcutaneously with 105 PFU of the indicated virus in a 1 ml dose. Serum was collected on days 0 to 6,8, 10,12, and 28. </p><p>Virus titer was determined by plaque assay in Vero cells. b Viremia was not detected in any monkey after day 8. </p><p> Table 25. rDEN2A30 protects rhesus monkeys from wt DEN2 virus challenge 
+EMI49.2
+ 
+Mean no. of Mean peak Geometric mean nô. ou Mean peak viremic days per virus titer serum neutralizing 
+Virusa monke s virus titer 
+Virus'monkeys monkey after antibody titer
+DEN2 challenge SE) (reciprocal dilution) 
+Day 28 Day 56 Mock 2 4. 0 2. 1 0. 1 &lt; 10 338 DEN2 (Tonga/74) 4 0 &lt; 0. 7 311 334 rDEN2 (Vero) 4 0 &lt; 0. 7 173 318 rDEN2A30 (Vero) 4 &lt; 0. 7 267 a 28 days after inoculation with the indicated viruses, monkeys were challenged subcutaneously with 105 PFU DEN2 (Tonga/74) in a 1 ml dose. Serum was collected on days 28 to 34,36, 38, and 56. Virus titer was determined by plaque assay in Vero cells. </p><p> The infectivity of DEN2 (Tonga/74), rDEN2 and rDEN2A30 for Aedes aegypti mosquitoes via an artificial bloodmeal was evaluated using the methods described in detail in Example 5. However at doses of 3.3 to 3.5 logo pou ingested, none of these three viruses infected any mosquitoes, indicating that DEN2 (Tonga/74) is poorly infectious for Aedes aegypti. As with rDENl, the genetic basis for this lack of infectivity remains to be defined. </p><p>The important property of restricted infectivity for the mosquito midgut is highly desirable in a vaccine candidate because it would serve to greatly restrict transmission of the virus from a vaccinee to a mosquito vector. </p> <p> Several missense mutation identified in rDEN4 have been demonstrated to confer attenuated replication in suckling mouse brain and/or  SCID-HuH-7 mice (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2001 J Tirol 75 : 9731-9740</bibl>). In addition, missense mutations that enhance replication of rDEN4 virus in Vero cells have been characterized. The significant sequence conservation among the DEN virus serotypes provides a strategy by which the mutations identified in rDEN4 viruses are contemplated as being used to confer similar phenotypes upon rDEN2 virus. Six mutations identified in rDEN4 virus that are at a site conserved in rDEN2 virus are being introduced into the p2 and p2A30 cDNA clones (Table 26). Specifically, two rDEN4 mutations, NS3 4891 and 4995, which confer Vero cell adaptation phenotypes and decreased replication in mouse brain, one mutation, NS4B 7182, which confers a Vero cell adaptation phenotype, and three mutations, NS1 2650, NS3 5097, and 3'UTR 10634 which confer decreased replication in mouse brain and SCID-HuH-7 mice are being evaluated. These mutations have been introduced into sub-cloned fragments of the p2 and p2A30 cDNA clones, and have been used to generate mutant full-length cDNA clones (Table 26), from which virus has been recovered in C6/36 cells (Table 27). The evaluation of these mutant rDEN2 viruses is contemplated as determining that such point mutations can be transported into a different DEN virus serotype and confer a similar useful phenotype, as has been demonstrated for the A30 deletion mutation. </p> <p> Table 26. Introduction of conserved point mutations characterized in rDEN4 viruses into rDEN2 Tonga/74 virus. 
+EMI51.1
+ 
+&lt;tb&gt; </p><p>Phenotype &lt;SEP&gt; in &lt;SEP&gt; rDEN4 &lt;SEP&gt; virus &lt;SEP&gt; Mutation &lt;SEP&gt; in &lt;SEP&gt; rDEN4 &lt;SEP&gt; virus &lt;SEP&gt; Mutation &lt;SEP&gt; introduced &lt;SEP&gt; into &lt;SEP&gt; DEN2 &lt;SEP&gt; virus
+&lt;tb&gt; Vero &lt;SEP&gt; Mouse &lt;SEP&gt; SCID- &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; Amino &lt;SEP&gt; acid &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; Gene/
+&lt;tb&gt; Adaptationa &lt;SEP&gt; brain &lt;SEP&gt; HuH-7 &lt;SEP&gt; position &lt;SEP&gt; acid &lt;SEP&gt; change &lt;SEP&gt; position &lt;SEP&gt; acid &lt;SEP&gt; change &lt;SEP&gt; RE &lt;SEP&gt; site &lt;SEP&gt; / &lt;SEP&gt; mutagenic &lt;SEP&gt; regione
+&lt;tb&gt; region
+&lt;tb&gt; attb &lt;SEP&gt; attc &lt;SEP&gt; positiond &lt;SEP&gt; positiond
+&lt;tb&gt; + &lt;SEP&gt; + &lt;SEP&gt; - &lt;SEP&gt; NS3 &lt;SEP&gt; 4891 &lt;SEP&gt; 1597 &lt;SEP&gt; Ile &lt;SEP&gt; &gt; &lt;SEP&gt; thr &lt;SEP&gt; 4889 &lt;SEP&gt; 1598 &lt;SEP&gt; Ile &lt;SEP&gt; &gt; &lt;SEP&gt; Thr &lt;SEP&gt; Nar &lt;SEP&gt; I &lt;SEP&gt; CCAcgGGcGCCGT
+&lt;tb&gt; + &lt;SEP&gt; + &lt;SEP&gt; - &lt;SEP&gt; NS3 &lt;SEP&gt; 4995 &lt;SEP&gt; 1632 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Pro &lt;SEP&gt; 4993 &lt;SEP&gt; 1633 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Pro &lt;SEP&gt; Stu &lt;SEP&gt; I &lt;SEP&gt; AAGGccTGGA
+&lt;tb&gt; + &lt;SEP&gt; - &lt;SEP&gt; - &lt;SEP&gt; NS4b &lt;SEP&gt; 7182 &lt;SEP&gt; 2361 &lt;SEP&gt; Gly &lt;SEP&gt; &gt; &lt;SEP&gt; Ser &lt;SEP&gt; 7189 &lt;SEP&gt; 2365 &lt;SEP&gt; Gly &lt;SEP&gt; &gt; &lt;SEP&gt; Ser &lt;SEP&gt; Xma &lt;SEP&gt; I &lt;SEP&gt; TAtccCCGGGAC
+&lt;tb&gt; - &lt;SEP&gt; + &lt;SEP&gt; + &lt;SEP&gt; NS1 &lt;SEP&gt; 2650 &lt;SEP&gt; 850 &lt;SEP&gt; Asn &lt;SEP&gt; &gt; &lt;SEP&gt; Ser &lt;SEP&gt; 2648 &lt;SEP&gt; 851 &lt;SEP&gt; Asn &lt;SEP&gt; &gt; &lt;SEP&gt; Ser &lt;SEP&gt; Sac &lt;SEP&gt; I &lt;SEP&gt; AGAgcTctcTC
+&lt;tb&gt; - &lt;SEP&gt; + &lt;SEP&gt; + &lt;SEP&gt; NS3 &lt;SEP&gt; 5097 &lt;SEP&gt; 1666 &lt;SEP&gt; Asp &lt;SEP&gt; &gt; &lt;SEP&gt; Asn &lt;SEP&gt; 5095 &lt;SEP&gt; 1667 &lt;SEP&gt; Asp &lt;SEP&gt; &gt; &lt;SEP&gt; Asn &lt;SEP&gt; Xma &lt;SEP&gt; I &lt;SEP&gt; GaATCTCCACCCgGA
+&lt;tb&gt; - &lt;SEP&gt; + &lt;SEP&gt; + &lt;SEP&gt; 3'UTR &lt;SEP&gt; 10634 &lt;SEP&gt; n/at &lt;SEP&gt; n/a &lt;SEP&gt; 10698 &lt;SEP&gt; n/a &lt;SEP&gt; n/a &lt;SEP&gt; none &lt;SEP&gt; CTGTcGAATC
+&lt;tb&gt; 
+ aPresence of the indicated mutation increases plaque size in Vero cells two-fold or greater than rDEN4 virus. bPresence of the indicated mutation restricts replication in 7-day-old mouse brain greater than 100-fold compared to rDEN4 virus. cPresence of the indicated mutation restricts replication in SCID-HuH-7 mice greater than 100-fold compared to rDEN4 virus. dAmino acid position in DEN4 or DEN2 polyprotein beginning with the methionine residue of the C protein (nucleotides 102-104 or 97- 99, respectively) as position 1. cPrimers were enginneered which introduced (underline) translationally-silent restriction enzyme (RE) sites. Lowercase letters indicate nt changes and bold letters indicate the site of the 5-FU mutation, which in some oligonucleotides differs from the original nucleotide substitution change in order to create a unique RE site. The change preserves the codon for the amino acid substitution. fNucleotide substitution in the 3' UTR is U &gt; C in DEN4 and DEN2 virus. </p> <p> Table 27. rDEN2 viruses containing conserved 5-FU mutations are recovered in C6/36 cells. 
+EMI52.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Virus
+&lt;tb&gt; &lt;SEP&gt; Nucleotide &lt;SEP&gt; Virus &lt;SEP&gt; titer &lt;SEP&gt; of &lt;SEP&gt; transfection
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; (nucleotide &lt;SEP&gt; position &lt;SEP&gt; in &lt;SEP&gt; harvest &lt;SEP&gt; (day &lt;SEP&gt; 7) &lt;SEP&gt; determined &lt;SEP&gt; in
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; position &lt;SEP&gt; in &lt;SEP&gt; rDEN4 &lt;SEP&gt; C6/36 &lt;SEP&gt; cells &lt;SEP&gt; (logl0PFU/ml)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; rDEN2)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-4889 &lt;SEP&gt; 4891 &lt;SEP&gt; 7.6
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-4993 &lt;SEP&gt; 4995 &lt;SEP&gt; 7. &lt;SEP&gt; 2
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-7189 &lt;SEP&gt; 7182 &lt;SEP&gt; 3. &lt;SEP&gt; 5
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-2648 &lt;SEP&gt; 2650
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-5095 &lt;SEP&gt; 5097
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2-10698 &lt;SEP&gt; 10634 &lt;SEP&gt; 7. &lt;SEP&gt; 7
+&lt;tb&gt; 
+ a Transfection has not yet been attempted. </p><p> EXAMPLE 4 
+Generation and Characterization of a Recombinant DEN3 Virus Containing the A30 
+Mutation 
+Because rDEN ! A30 was satisfactorily attenuated, we sought to extend our technology to the creation of a DEN3 vaccine candidate. To do this, the A30 mutation was introduced into the cDNA of DEN3, similar to the method used to create rDEN2A30. A DEN3 virus isolate from a 1978 dengue epidemic in rural Sleman, Central Indonesia (Sleman/78) (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Gubler, D. J. et al. 1981 Am J Trop Med Hyg 30: 1094-1099</bibl>) was chosen to represent wt DEN3. The genome of DEN3 (Sleman/78) was sequenced in its entirety and served as consensus sequence for the construction of a full-length cDNA clone (Appendix 2). cDNA fragments of DEN3 (Sleman/78) were generated by reverse-transcription of the genome as indicated in Figure 8A. Each fragment was subcloned into a plasmid vector and sequenced to verify that it matched the consensus sequence as determined for the virus. </p><p>This yielded six cloned cDNA fragments spanning the genome. Cloned fragments were modified as follows: Fragment 5, representing the 5'end of the genome was abutted to the SP6 promoter preceded by an AscI restriction site; Fragment 1L was modified to contain a translationally-silent SpeI restriction site at genomic nucleotide 2345 ; Fragment 1R was modified to contain a translationally-silent SpeI restriction site also at genomic nucleotide 2345, and to stabilize the eventual full-length clone, three additional translationally-silent mutations at nucleotides 2354-2356, 2360-2362, and 2399 were created to ensure that translation stop codons were present in all reading frames other than that used to synthesize </p> <p> the virus polyprotein; Fragment 3 was modified at nucleotide 9007 to ablate a naturally occurring KpnI restriction site; and Fragment 4, representing the 3'end of the genome was abutted to a KpnI restriction site. Each fragment was added incrementally between the AscI and KpnI restriction sites of DEN4 cDNA clone p4 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>) to generate a full-length DEN3 cDNA clone with the same vector background successfully used to generate rDEN4 and rDEN2. However, a stable, full- length clone could not be recovered in E. coli when fragments 1L and 1R were combined into the same cDNA molecule. To overcome this instability, a synthetic DNA linker (Figure 8A) containing redundant termination codons in each of the forward and reverse open reading frames was introduced into the SpeI restriction site at the same time that fragment 1L was added to complete the full-length cDNA construct. The resulting p3 clone containing the linker sequence was stable in E. coli, indicating that the linker sequence was sufficient to interrupt whatever deleterious element exists in this region. cDNA clone p3 was sequenced and the virus genome was found to match the DEN3 (Sleman/78) consensus sequence, with the exception of the linker sequence and translationally-silent modifications noted above (Appendix 2-shown with the linker sequence removed). The A30 mutation was introduced into Fragment 4 to generate Fragment 4A30. To create p3A30, the Fragment 4 region of p3 was replaced with Fragment 4A30 (Figure 8A, B). </p><p> For transcription and generation of infectious virus, cDNA plasmids p3 and p3A30 were digested with SpeI and re-ligated to remove the linker sequence, linearized with Acc651 (isoschizomer of KpnI which cleaves leaving only a single 3'nucleotide), and used as templates in a transcription reaction using SP6 RNA polymerase as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et. al. 2002 Virology 300: 125-139</bibl>). Transcripts were introduced into Vero cells or C6/36 mosquito cells using liposome-mediated transfection and cell culture supernatants were harvested on day 14. rDEN3 virus was recovered from the p3 cDNA in both Vero and C6/36 cells, while rDEN3A30 was recovered from the p3A30 cDNA clone in only C6/36 cells (Table 28). </p><p>The level of infectious virus recovered in C6/36 cells was comparable for the p3 and p3A30 cDNA clones when assayed by plaque titration in Vero or C6/36 cells. As previously observed, the efficiency of transfection in C6/36 cells was higher than that in Vero cells. </p><p>Two rDEN3A30 viruses were recovered from independent cDNA clones, &amp;num;22 and &amp;num;41. </p> <p> Table 28. rDEN3 virus is recovered in Vero and C6/36 cells, but rDEN3A30 virus is recovered only in C6/36 cells. 
+EMI54.1
+ </p><p> Virus titer of transfection harvest Transfection cDNA Clone Virus (day 14) determined in the indicated cell type construct cell type (logl0PFU/ml) 
+Vero cells C6/36 cells p3 &amp;num;50 rDEN3 5. 2 6. 3 
+Vero cells p3A30 &amp;num;22 rDEN3A30 &lt; 0. 7 &lt; 0. 7 p3A30 &amp;num;41 rDEN3A30 &lt; 0. 7 &lt; 0. 7 p3 &amp;num;50 rDEN3 5. 2 6. 0 
+C6/36 cells p3A30 &amp;num;22 rDEN3A30 5. 9 6. 9 p3A30 &amp;num;41 rDEN3A30 5. 1 7. 2 
+To produce working stocks of viruses, transfection harvests will be passaged and terminally diluted in Vero cells, and genomic sequences of the viruses will be determined. </p><p>To improve virus yield in Vero cells, the Vero cell adaptation mutation previously identified in rDEN4 at nucleotide 7162 was introduced into the homologous NS4B region of p3 and p3A30 to create p3-7164 and p3A30-7164. This mutation creates a Val to Ala substitution at amino acid position 2357. As demonstrated for rDEN2A30, this mutation allowed for the direct recovery of virus in Vero cells (Table 27) and is anticipated to have the same effect for rDEN3A30. </p><p> To. initially assess the ability of the A30 mutation to attenuate rDEN3 virus in an animal model, the replication of DEN3 (Sleman/78), rDEN3, and rDEN3A30 viruses will be evaluated in SCID-HuH-7 mice and rhesus monkeys. Previously, attenuation of vaccine candidates in SCID-HuH-7 mice has been demonstrated to be predictive of attenuation in the rhesus monkey model of infection (Examples 1 and 2). The evaluation of these mutant rDEN3 viruses is contemplated as determining that the A30 deletion mutations can be transported into the DEN3 virus serotype and confer a similar useful phenotype, as has been demonstrated for DEN1, DEN2, and DEN4. </p><p> In summary, the strategy of introducing the A30 mutation into wild-type DEN viruses of each serotype to generate a suitably attenuated tetravalent vaccine formulation is a unique and attractive approach for several reasons. First, the mutation responsible for attenuation is a 30-nucleotide deletion in the 3'UTR, thus assuring that all of the structural and non-structural proteins expressed by each of the four components of the tetravalent </p> <p> vaccine are authentic wild-type proteins. Such wild-type proteins should elicit an antibody response that is broad based, rather than based solely on the M and E proteins that are present in chimeric dengue virus vaccine candidates (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Guirakhoo, F. et al. 2001 J Virol 75: 7290-304</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Huang, C. Y. et al. 2000 J Virol 74 : 3020-8</bibl>). The uniqueness of this approach derives from the fact that other live attenuated dengue virus vaccines have mutations in their structural or non-structural proteins (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Butrapet, S. et al. 2000 J Virol 74 : 3011-9</bibl>; <bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Puri, B. et al. 1997 J Gen Virol 78 : 2287-91</bibl>), therefore the immune response induced by these viruses will be to a mutant protein, rather than a wild-type protein. Second, deletion mutations are genetically more stable than point mutations, and reversion of the attenuation phenotype is unlikely. In humans, DEN4A30 present in serum of vaccinees retained its A30 mutation, confirming its genetic stability in vivo (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P. et al. 2001 Am J Trop Med Hyg 65 : 405-13</bibl>). The attenuating mutations in other existing dengue live attenuated vaccine candidates are based on less stable point mutations (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Butrapet, S. et al. 2000 J Virol 74: 3011-9: Puri, B. et al. 1997 J Ge7l Virol 78: 2287-91</bibl>). Third, since the A30 mutation is common to each of the four viruses of the tetravalent vaccine, recombination between any of the four vaccine serotypes would not lead to loss of the attenuating mutation or reversion to a wild-type phenotype. Recombination between components of the trivalent polio vaccine has been observed (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Guillot, S. et al. 2000  J  Virol 74: 8434-43</bibl>), and naturally occurring recombinant dengue viruses have been described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Worobey, M. et al. 1999 PNAS USA 96: 7352-7</bibl>) indicating the ability of this flavivirus to exchange genetic elements between two different viruses. Clearly, gene exchange is readily achieved between different DEN virus serotypes using recombinant cDNA techniques (<bibl next="bibl103" type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. and Lai, C. J. 1991 PNAS USA 88: 10342-6</bibl>). Fourth, viruses with wild-type structural proteins appear more infectious than viruses with altered structural proteins (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Huang, C. Y. et al. 2000 J Virol 74 : 3020-80</bibl>). This permits the use of a low quantity of each of the four virus components in the final vaccine, contributing to the low cost of manufacture. Low-cost manufacture is an essential element in defining the ultimate utility of a dengue virus vaccine. </p> <p> EXAMPLE 5 
+Generation and Characterization of Intertypic Chimeric DEN2 Viruses Containing the A30 Mutation 
+The four serotypes of dengue virus are defined by antibody responses induced by the structural proteins of the virus, primarily by a neutralizing antibody response to the envelope (E) protein. These structural proteins include the E glycoprotein, a membrane protein (M), and a capsid (C) protein. The mature virus particle consists of a well- organized outer protein shell surrounding a lipid bilayer membrane and a less-well-defined inner nucleocapsid core (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Kuhn, R. J. et al. 2002 Cell 108: 717-25</bibl>). The E glycoprotein is the major protective antigen and readily induces virus neutralizing antibodies that confer protection against dengue virus infection. An effective dengue vaccine must therefore minimally contain the E protein of all four serotypes, namely DEN1, DEN2, DEN3, and DEN4, thereby inducing broad immunity and precluding the possibility of developing the more serious illnesses DHF/DSS, which occur in humans during secondary infection with a heterotypic wild-type dengue virus. Based on a previously reported strategy (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. and Lai, C. J. 1991 PNAS USA 88: 10342-6</bibl>), a recombinant cDNA technology is being used to develop a live attenuated tetravalent dengue virus vaccine composed of a set of intertypic chimeric dengue viruses bearing the structural proteins of each serotype. </p><p> Following the identification of a suitably attenuated and immunogenic DEN4 recombinant virus, namely DEN4A30 (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>), chimeric viruses based on the DEN4 cDNA have been generated in which the C-M-E (CME) or M-E (ME) genes have been replaced with the corresponding genes derived from the prototypic DEN2 New Guinea C (NGC) strain (Figure 9A). To create the CME chimeric viruses, the BglII I XhoI region of the cDNA for either rDEN4 or rDEN4A30 was replaced with a similar region derived from DEN2. Likewise, to create the ME chimeric viruses, the PstI/XhoI region of the cDNA for either rDEN4 or rDEN4A30 was replaced with a homologous region derived from DEN2. The nucleotide and amino acid sequences of the resulting junctions are shown in Figure 9B. The GenBank accession number for the nucleotide sequence of rDEN4A30 is AF326837. The GenBank accession number for DEN2 NGC is M29095, which represents the mouse neurovirulent strain of DEN2 NGC and differs from the prototypic strain used here as previously documented (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. et al. 1998 J Virol 72: 1647-51</bibl>). </p> <p> For transcription and generation of virus, chimeric cDNA clones were linearized and used as template in a transcription reaction using SP6 RNA polymerase as described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). Transcripts were introduced into Vero cells using liposome-mediated transfection and recombinant dengue virus was harvested on day 7. The genomes of the resulting viruses were confirmed by sequence analysis of viral RNA isolated from recovered virus as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). Incidental mutations arising from virus passage in tissue culture were identified in all viruses and are listed in Table 29. Notably, each virus contained a missense mutation in NS4B corresponding to a previously identified mutation from rDEN4 and associated with adaptation to replication in Vero cells (See Table 30 for correlation of nucleotide positions between rDEN4 and chimeric viruses). All viruses replicated in Vero cells to titers in excess of 6.0 loglo PFU/ml, indicating that the chimeric viruses, even those containing the A30 mutation, replicate efficiently in cell culture, a property essential for manufacture of the vaccine. </p><p> Table 29. Missense mutations observed among the Vero cell-grown chimeric DEN2/4 viruses 
+EMI57.1
+ 
+&lt;tb&gt; Amino
+&lt;tb&gt; &lt;SEP&gt; Nucleotide &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; &lt;SEP&gt; Virus &lt;SEP&gt; Gene &lt;SEP&gt; acid
+&lt;tb&gt; &lt;SEP&gt; position &lt;SEP&gt; change &lt;SEP&gt; change
+&lt;tb&gt; &lt;SEP&gt; position
+&lt;tb&gt; &lt;SEP&gt; rDEN2/4 &lt;SEP&gt; (CME) &lt;SEP&gt; NS4B &lt;SEP&gt; 7161a &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 2355 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; &lt;SEP&gt; M &lt;SEP&gt; 743 &lt;SEP&gt; G &gt; A &lt;SEP&gt; 216 &lt;SEP&gt; Gly &lt;SEP&gt; &gt; &lt;SEP&gt; Glu
+&lt;tb&gt; &lt;SEP&gt; rDEN2/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; E &lt;SEP&gt; 1493 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 466 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; &lt;SEP&gt; NS4B &lt;SEP&gt; 7544b &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; T &lt;SEP&gt; 2483 &lt;SEP&gt; Ala &lt;SEP&gt; &gt; &lt;SEP&gt; Val
+&lt;tb&gt; &lt;SEP&gt; E &lt;SEP&gt; 1065 &lt;SEP&gt; U &gt; C &lt;SEP&gt; 322 &lt;SEP&gt; Phe &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; &lt;SEP&gt; rDEN2/4 &lt;SEP&gt; (ME)
+&lt;tb&gt; &lt;SEP&gt; NS4B &lt;SEP&gt; 7163a &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 2354 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; &lt;SEP&gt; rDEN2/4A30 &lt;SEP&gt; (ME) &lt;SEP&gt; NS4B &lt;SEP&gt; 7163 &lt;SEP&gt; a &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 2354 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; 
+ 'Same nucleotide position as 7163 in rDEN4. bSame nucleotide position as 7546 in rDEN4. </p> <p> Table 30. Nucleotide (nt) length differences for DEN chimeric viruses compared to rDEN4. 
+EMI58.1
+ nt difference rDEN from rDEN4 Amino acid length chimeric (following CME ORF start virus region) (nt position) C M E 
+1/4 ME 0 102 113 166 495 
+1/4 CME +3 102 114 166 495 
+2/4 ME 0 102 113 166 495 
+2/4 CME-2 97 114 166 495 
+3/4 ME-6 102 113 166 493 
+3/4 CME-3 102 114 166 493 rDEN4 102 113 166 495 
+Results of a safety, immunogenicity, and efficacy study in monkeys are presented in Table 31. Monkeys inoculated with wild-type DEN2 were viremic for approximately 5 days with a mean peak titer of 2.1 logic PFU/ml, while monkeys inoculated with any of the chimeric DEN2 viruses were viremic for 1.2 days or less and had a mean peak titer of less than 1.0 logic PFU/ml. This reduction in the magnitude and duration of viremia clearly indicates that the chimeric viruses containing either the CME or ME proteins of DEN2 were more attenuated than the parental DEN2 NGC virus. Neither the animals receiving the wild-type DEN2 nor the DEN2/4 chimeric viruses were ill. The decreased replication of the attenuated viruses in monkeys is accompanied by a reduction in the immune response of inoculated monkeys. This is indicated in Table 31 by approximately a 5-fold reduction in the level of neutralizing antibody following inoculation with the chimeric viruses in comparison to titers achieved in animals inoculated with wild-type virus. Addition of the A30 mutation to the CME chimeric virus further attenuated the virus, such that rDEN2/4A30 (CME) did not replicate in monkeys to a detectable level and did not induce a detectable immune response. This virus appeared over-attenuated, and if similar results were seen in humans, this virus would not be suitable for use as a vaccine. However, addition of the A30 mutation to the ME chimeric virus did not further attenuate this chimeric virus and the resulting rDEN2/4A30  (ME) virus appears satisfactorily attenuated and immunogenic for use as a vaccine. </p> <p> Table 31. Chimerization between dengue virus types 2 and 4 results in recombinant viruses which are attenuated for rhesus monkeys. 
+EMI59.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Geometric &lt;SEP&gt; mean
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Mean &lt;SEP&gt; no. &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; neutralizing
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; days &lt;SEP&gt; with &lt;SEP&gt; virus &lt;SEP&gt; titer &lt;SEP&gt; antibody &lt;SEP&gt; titer
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; Group* &lt;SEP&gt; Virus &lt;SEP&gt; n &lt;SEP&gt; viremia &lt;SEP&gt; (loglopfu/ml) &lt;SEP&gt; (reciprocal)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 1 &lt;SEP&gt; rDEN2/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 6 &lt;SEP&gt; 1. &lt;SEP&gt; 2 &lt;SEP&gt; 0.9 &lt;SEP&gt; 50
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 2 &lt;SEP&gt; rDEN2/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 8 &lt;SEP&gt; 0 &lt;SEP&gt; &lt; 0. &lt;SEP&gt; 7 &lt;SEP&gt; &lt; 5
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 3 &lt;SEP&gt; rDEN2/4 &lt;SEP&gt; (ME) &lt;SEP&gt; 4 &lt;SEP&gt; 1.0 &lt;SEP&gt; 0. &lt;SEP&gt; 8 &lt;SEP&gt; 76
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 4 &lt;SEP&gt; rDEN2/4A30 &lt;SEP&gt; (ME) &lt;SEP&gt; 4 &lt;SEP&gt; 0.3 &lt;SEP&gt; 0. &lt;SEP&gt; 7 &lt;SEP&gt; 62
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 5 &lt;SEP&gt; DEN2 &lt;SEP&gt; NGC &lt;SEP&gt; 6 &lt;SEP&gt; 5.5 &lt;SEP&gt; 2. &lt;SEP&gt; 1 &lt;SEP&gt; 312
+&lt;tb&gt; 
+ * Rhesus monkeys were inoculated subcutaneously with 5.0 log, o PFU of virus. </p><p>Serum samples were collected daily for 10 days. Serum for neutralization assay was collected on day 28. Serum samples obtained before virus inoculation had a neutralizing antibody titer of &lt; 5. </p><p> As described in the previous examples, SCID mice transplanted with the HuH-7 cells are a sensitive model for the evaluation of dengue virus attenuation. Each chimeric DEN2/4 virus was inoculated into groups of SCID-HuH-7 mice and levels of virus in the serum were determined (Table 32). Chimeric viruses replicated to levels between 20-and 150-fold lower than either of the parental viruses (rDEN4 and DEN2-NGC). CME chimeric viruses were slightly more attenuated than the comparable ME chimeric viruses, with the A30 mutation providing a 0.5 loglo reduction in replication. This level of attenuation exerted by the A30 mutation was similar to that observed previously for rDEN4A30. </p> <p> Table 32. Chimerization between dengue virus types 2 and 4 results in recombinant viruses which are attenuated for HuH-7-SCID mice. 
+EMI60.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; virus &lt;SEP&gt; titer &lt;SEP&gt; Statistical
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virusa &lt;SEP&gt; mice &lt;SEP&gt; (loglOpfu/ml &lt;SEP&gt; + &lt;SEP&gt; SE) &lt;SEP&gt; groupb
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4 &lt;SEP&gt; 32 &lt;SEP&gt; 6.3 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN2-NGC &lt;SEP&gt; 9 &lt;SEP&gt; 6.1 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 7 &lt;SEP&gt; 4. &lt;SEP&gt; 4 &lt;SEP&gt; 0. &lt;SEP&gt; 3 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 7 &lt;SEP&gt; 3. &lt;SEP&gt; 9 &lt;SEP&gt; 0. &lt;SEP&gt; 3 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4 &lt;SEP&gt; (ME) &lt;SEP&gt; 6 &lt;SEP&gt; 4.8 &lt;SEP&gt; 0. &lt;SEP&gt; 5 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN2/4A30 &lt;SEP&gt; (ME) &lt;SEP&gt; 9 &lt;SEP&gt; 4. &lt;SEP&gt; 3 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; B
+&lt;tb&gt; 
+ 'Groups of HuH-7-SCID mice were inoculated into the tumor with 4.0 log10 PFU of the indicated virus. Serum was collected on day 7 and virus titer was determined in Vero cells. </p><p> 'Mean peak titers were assigned to statistical groups using the Tukey post-hoc test (P &lt; 0.05). Groups with the same letter designation are not significantly different. </p><p> To evaluate the replication levels of each DEN2/4 chimeric virus in mosquitoes, two different genera of mosquitoes were experimentally infected. Aedes aegypti were infected by ingesting a virus-containing blood meal. By evaluating the presence of virus antigen in both the midgut and head tissue, infectivity could be determined for the local tissues (midgut), and the ability of virus to disseminate and replicate in tissues beyond the midgut barrier (head) could also be measured. The presence of virus in the head is limited by the ability of the ingested virus to replicate in the midgut and then disseminate to the salivary glands in the head, as well as the innate ability of the virus to replicate in the salivary glands. Intrathoracic inoculation of virus into Toxorhynchites splendens bypasses the mosquito midgut barrier. Parental viruses rDEN4 and DEN2-NGC readily infect Ae. aegypti and T. splendens (Table 33), with DEN2-NGC appearing to be much more infectious in T. splendens. Each of the rDEN2/4 chimeric viruses was also tested in both mosquito types. In many cases it was not possible to inoculate Ae. aegypti with an undiluted virus stock of sufficient titer to achieve a detectable infection due to the very low infectivity of several of the viruses. Nevertheless, it is clear that the rDEN2/4 chimeric viruses are less infectious for the midgut and head. Parental viruses rDEN4 and DEN2- NGC, administered at a maximum dose of approximately 4.0 logl0PFU, were detectable in 74% and 94% of midgut preparations, and 32% and 71 % of head preparations, respectively. </p> <p> Among the chimeric viruses, the highest level of infectivity, as observed for rDEN2/4A30  (CME), resulted in only 26% infected midgut samples and 6% head samples. </p><p>In the more permissive T splendens, the rDEN2/4 chimeric viruses were generally less infectious than either parental virus, with CME chimeric viruses being less infectious than ME viruses. It has previously been reported for DEN4 that the A30 mutation does not have a discernable effect on virus infectivity in T. splendens similar to that observed here for the rDEN2/4 chimeric viruses (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Troyer, J. M. et al. 2001 Am JTrop Med Hyg 65: 414-419</bibl>). </p> <p> Table 33. Dengue 2/4 chimeric viruses are less infectious compared to either parental virus strain in mosquitoes 
+EMI62.1
+ 
+Toxorlayncliites splendens Aedes aegypti (intrathoracic inoculation) (oral infection) 
+Dosea No. % Dose No. % infected Virus log1Opfu tested infected iogiopfu tested Midgut Head 
+3. 3 6 83 3. 8 38 74 32 rDEN4 2. 3 7 57 2. 8 15 26 6 
+1. 3 6 0 1. 8 20 10 5 
+MIDgo-2. 2MID ;,,- 3. 4 MIDso &gt; 4. 1 
+2. 5 5 100 4. 0 17 94 71 
+1. 2 15 93 3. 0 25 36 16 DEN2-NGC 0. 2 4 75 2. 0 30 0 0 
+0. 02 8 38 
+MIDso= 0. 5MIDs, = 3. 2 MIDso= 3. 6 
+3. 9 9 11 4. 4 11 9 0 rDEN2/4 (CME) 2. 9 5 0 3. 4 10 0 0 
+MIDs. &gt; 4. 3MIDs. &gt; 4. 9 Nc' 
+3. 5 6 17 4. 0 15 26 6 rDEN2/4A30 (CME) 
+MIDsp &gt; 3. 9MID &gt; 4. 3 MIDso &gt; 4. 5 
+3. 4 6 100 3. 9 23 4 0 24 5 20 rDEN2/4 (ME) 2. 4 5 20 
+1. 4 5 0 
+MIDso= 2-8 MIDso2 4. 4 Nc rDEN2/4A30 2. 6 11 9 3. 1 30 0 0 (ME) MIDs, &gt; 3. 0nc Nc "Amount of virus present in 0. 22 ul inoculum. b Percentage of mosquitoes with IFA detectable antigen in head tissue prepared 14 days after inoculation. </p><p> 'Virus titer ingested, assuming a 2 u. l bloodmeal. dPercentage of mosquitoes with IFA detectable antigen in midgut or head tissue prepared 21 days after oral infection. When virus infection was detected, but did not exceed a frequency of 50% at the highest dose of virus ingested, the MIDso was estimated by assuming that a 10-fold more concentrated virus dose would infect 100% of the mosquitoes. enc = not calculated, since virus antigen was not detected. </p><p> Chimerization of the DEN2 structural genes with rDEN4A30 virus resulted in a virus, rDEN2/4A30 (CME), that had decreased replication in Vero cells compared to either parent virus. To evaluate Vero cell adaptation mutations (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Blaney, J. E. et al. 2002 Virology 300: 125-139</bibl>) as a means of increasing the virus yield of a DEN vaccine candidate in Vero cells, selected mutations were introduced into this chimeric virus. Accordingly, rDEN2/4A30 (CME) viruses bearing adaptation mutations were recovered, terminally </p> <p>  t diluted, and propagated in C6/36 cells to determine if the virus yield in Vero cells could be increased. rDEN2/4A30 (CME) viruses bearing Vero cell adaptation mutations were generated as follows. DNA fragments were excised from rDEN4 cDNA constructs encompassing single or double DEN4 Vero cell adaptation mutations and introduced into the cDNA clone of rDEN2/4A30 (CME). The presence of the Vero cell adaptation mutation was confirmed by sequence analysis, and RNA transcripts derived from the mutant cDNA clones were transfected, terminally diluted, and propagated in C6/36 cells. </p><p> For evaluation of growth kinetics, Vero cells were infected with the indicated viruses at a multiplicity of infection (MOI) of 0.01. Confluent cell monolayers in duplicate 25-cm2 tissue culture flasks were washed and overlaid with a 1 ml inoculum containing the indicated virus. After a two hour incubation at 37 C, cells were washed three times in MEM and 5 ml of MEM supplemented with 2% FBS was added. A 1 ml aliquot of tissue culture medium was removed, replaced with fresh medium, and designated the day 0 time- point. At the indicated time points post-infection, 1 ml samples of tissue culture medium were removed, clarified by centrifugation, and frozen at-80 C. The level of virus replication was assayed by plaque titration in C6/36 cells and visualized by immunoperoxidase staining. The limit of detection was &lt; 0.7 logl0PFU/ml. </p><p> The growth properties of rDEN2/4A30 (CME) viruses bearing single Vero cell adaptation mutations at NS4B-7153,-7162,-7163,-7182, NS5-7630 or three combinations of mutations were compared in Vero cells with rDEN2/4A30 (CME) virus (Figure 10). Without an introduced Vero cell adaptation mutation, rDEN2/4A30 (CME) virus yield peaked at 4.4 logloPFU/ml. Each individual adaptation mutation and the combined mutations conferred a substantial increase in replication. Specifically, rDEN2/4A30 (CME) -7182 grew to the highest titer of 7.1 logl0PFU/ml, which was a 500- fold increase in yield. rDEN2/4A30 (CME) -7162 had the lowest yield but still was increased 125-fold over the level of replication by rDEN2/4A30 (CME) virus. Introduction of two adaptation mutations into rDEN2/4A30 (CME) virus did not significantly increase virus yield over that of viruses bearing single Vero cell adaptation mutations. The observed increase of up to 500-fold in virus yield by the introduction of a Vero cell adaptation mutation into this chimeric vaccine candidate demonstrates the value of identifying and characterizing specific replication-promoting sequences in DEN viruses. </p> <p> These results have particular significance for the development of a live attenuated dengue virus vaccine. First, it is clear that chimerization leads to attenuation of the resulting virus, as indicated by studies in rhesus monkeys, HuH7-SCID mice and mosquitoes. Although this conclusion was not made in the previous study with DEN2/DEN4 or DEN1/DEN4 chimeric viruses (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Bray, M. et al. 1996 J Virol 70 : 4162-6</bibl>), careful examination of the data would suggest that the chimeric viruses are more attenuated in monkeys compared to the wild-type parent viruses. Second, the A30 mutation can further augment this attenuation in a chimeric-dependent manner. Specifically, in this example, chimeric viruses bearing the CME region of DEN2 were over-attenuated by the addition of A30, whereas the attenuation phenotype of chimeric viruses bearing just the ME region of DEN2 was unaltered by the addition of the A30 mutation. This unexpected finding indicates that in a tetravalent vaccine comprised of individual component viruses bearing a shared attenuating mutation, such as the A30 mutation, only ME chimeric viruses can be utilized since CME chimeric viruses bearing the A30 mutation can be over- attenuated in rhesus monkeys and might provide only limited immunogenicity in humans. </p><p> EXAMPLE 6 
+Generation and Characterization of Intertypic Chimeric DEN3 Viruses Containing the A30 Mutation 
+Chimeric viruses based on the DEN4 cDNA have been generated in which the CME or ME genes have been replaced with the corresponding genes derived from DEN3 (Sleman/78), a virus isolate from the 1978 dengue outbreak in the Sleman region of Indonesia (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Gubler, D. J. et al. 1981 Am J Trop Med Hyg 30: 1094-1099</bibl>) (Appendix 2). As described in Example 5 for the DEN2 chimeric viruses, CME chimeric viruses for DEN3 were generated by replacing the BgllI/XhoI region of the cDNA for either rDEN4 or rDEN4A30 with a similar region derived from DEN3 (Sleman/78) (Figure 11A). Likewise, to create the ME chimeric viruses, the PstI I XlçoI region of the cDNA for either rDEN4 or rDEN4A30 was replaced with a similar region derived from DEN3 (Sleman/78). The nucleotide and amino acid sequences of the resulting junctions are shown in Figure 1 in. </p><p>The genomes of the resulting viruses were confirmed by sequence analysis of viral RNA isolated from recovered virus as previously described (<bibl type="journal" xmlns="http://www.tei-c.org/ns/1.0">Durbin, A. P et al. 2001 Am J Trop Med Hyg 65: 405-13</bibl>). Incidental mutations arising from virus passage in tissue culture were </p> <p> identified in all viruses and are listed in Table 34. Notably, each virus contained a missense mutation in NS4B corresponding to a previously identified mutation from rDEN4 and associated with adaptation to growth in Vero cells (See Table 30 for correlation of nucleotide positions between rDEN4 and chimeric viruses). All viruses replicated in Vero cells to titers in excess of 5.7 loglo PFU/ml, indicating that the chimeric viruses, even those containing the A30 mutation, replicate efficiently in cell culture, a property essential for manufacture of the vaccine. </p><p>Table 34. Missense mutations observed among Vero cell-grown chimeric DEN3/4 viruses 
+EMI65.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Nucleotide &lt;SEP&gt; Nucleotide &lt;SEP&gt; Amino &lt;SEP&gt; acid &lt;SEP&gt; Amino &lt;SEP&gt; acid
+&lt;tb&gt; &lt;SEP&gt; Virus &lt;SEP&gt; Gene
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; position &lt;SEP&gt; change &lt;SEP&gt; position &lt;SEP&gt; change
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; M &lt;SEP&gt; 825 &lt;SEP&gt; T &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 242 &lt;SEP&gt; Phe &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; E &lt;SEP&gt; 1641 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; T &lt;SEP&gt; 514 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; 
+&lt;tb&gt; rDeN3/4#30(CME)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; E &lt;SEP&gt; 2113 &lt;SEP&gt; A &lt;SEP&gt; &gt; &lt;SEP&gt; G &lt;SEP&gt; 671 &lt;SEP&gt; Lys &lt;SEP&gt; &gt; &lt;SEP&gt; Arg
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS4B &lt;SEP&gt; 7159a &lt;SEP&gt; T &lt;SEP&gt; &gt; &lt;SEP&gt; C &lt;SEP&gt; 2353 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Ser
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; M &lt;SEP&gt; 460 &lt;SEP&gt; A &gt; G &lt;SEP&gt; 120 &lt;SEP&gt; Asp &lt;SEP&gt; &gt; &lt;SEP&gt; Gly
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; (ME) &lt;SEP&gt; NS4B &lt;SEP&gt; 7177b &lt;SEP&gt; G &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 2359 &lt;SEP&gt; Gly &lt;SEP&gt; &gt; &lt;SEP&gt; Val
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS5 &lt;SEP&gt; 7702 &lt;SEP&gt; C &lt;SEP&gt; &gt; &lt;SEP&gt; U &lt;SEP&gt; 2534 &lt;SEP&gt; Ser &lt;SEP&gt; &gt; &lt;SEP&gt; Phe
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; E &lt;SEP&gt; 1432 &lt;SEP&gt; A &gt; U &lt;SEP&gt; 444 &lt;SEP&gt; Gln &lt;SEP&gt; &gt; &lt;SEP&gt; Leu
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4A30 &lt;SEP&gt; (ME) &lt;SEP&gt; NS4B &lt;SEP&gt; 7156a &lt;SEP&gt; U &gt; C &lt;SEP&gt; 2352 &lt;SEP&gt; Leu &lt;SEP&gt; &gt; &lt;SEP&gt; Ser
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; NS5 &lt;SEP&gt; 8692 &lt;SEP&gt; A &gt; C &lt;SEP&gt; 2864 &lt;SEP&gt; Asn &lt;SEP&gt; &gt; &lt;SEP&gt; His
+&lt;tb&gt; 
+ 'Same nucleotide position as 7162 in rDEN4. bSame nucleotide position as 7183 in rDEN4. </p><p> As described in the previous examples, SCID mice transplanted with HuH-7 cells are a sensitive model for the evaluation of dengue virus attenuation. Each chimeric DEN3/4 virus was inoculated into groups of SCID-HuH-7 mice and levels of virus in the serum were determined (Table 35). While chimeric virus rDEN3/4 (CME) was not attenuated, the remaining chimeric viruses replicated to levels between 40-and 400-fold lower than either of the parental viruses (rDEN4 and DEN3-Sleman/78). In the CME chimeric virus, the A30 mutation providing a remarkable 2.7 logic reduction in replication. </p><p>This level of attenuation conferred by the A30 mutation in the CME chimeric virus was much greater than that observed previously for rDEN4A30. The rDEN3/4 (ME) virus was 100-fold reduced in replication compared to either parent virus indicating that the ME chimerization was attenuating per se. Addition of the A30 mutation to rDEN3/4 (ME) did not result in additional attenuation. </p> <p> Table 35. Chimerization between dengue virus types 3 and 4 results in recombinant viruses which are attenuated for HuH-7-SCID mice. 
+EMI66.1
+ 
+&lt;tb&gt; </p><p> &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; virus &lt;SEP&gt; titer &lt;SEP&gt; Statistical
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virusa &lt;SEP&gt; mice &lt;SEP&gt; (loglopfu/ml &lt;SEP&gt; SE) &lt;SEP&gt; group'
+&lt;tb&gt; rDEN4 &lt;SEP&gt; 32 &lt;SEP&gt; 6.3 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; DEN3-Sleman/78 &lt;SEP&gt; 23 &lt;SEP&gt; 6.4 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 7 &lt;SEP&gt; 6.4 &lt;SEP&gt; 0. &lt;SEP&gt; 6 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 5 &lt;SEP&gt; 3. &lt;SEP&gt; 7 &lt;SEP&gt; 0. &lt;SEP&gt; 4 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; (ME) &lt;SEP&gt; 6 &lt;SEP&gt; 4.2 &lt;SEP&gt; 0. &lt;SEP&gt; 7 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4A30 &lt;SEP&gt; (ME) &lt;SEP&gt; 7 &lt;SEP&gt; 4. &lt;SEP&gt; 7 &lt;SEP&gt; 0. &lt;SEP&gt; 4 &lt;SEP&gt; A, &lt;SEP&gt; B
+&lt;tb&gt; 
+ "Groups of HuH-7-SCID mice were inoculated into the tumor with 4.0 log,, PFU of the indicated virus. Serum was collected on day 7 and virus titer was determined in Vero cells. </p><p> 'Mean peak titers were assigned to statistical groups using the Tukey post-hoc test (P &lt; 0.05). Groups with the same letter designation are not significantly different. </p><p> Evaluation of the replication and immunogenicity of the DEN3 chimeric recombinant viruses and wild-type DEN3 virus in monkeys was performed as described in Example 5. Results of this safety and immunogenicity study in monkeys are presented in Table 36. Monkeys inoculated with rDEN3/4 (CME) and wild-type DEN (Sleman/78) were viremic for approximately 2 days with a mean peak titer of between 1.6 and 1. 8  logic PFU/ml, respectively, indicating that chimerization of the CME structural genes of DEN3 did not lead to attenuation of virus replication, a different pattern than that observed for DEN2 chimerization (Table 31). However, chimerization of the ME structural genes resulted in attenuated viruses with undetectable viremia in monkeys, although all monkeys seroconverted with a greater than 10-fold increase in serum antibody levels. As expected for an attenuated virus, the immune response, as measured by neutralizing antibody titer, was lower following inoculation with any of the chimeric viruses compared to inoculation with wt DEN3 (Sleman/78), yet sufficiently high to protect the animals against wt DEN3 virus challenge (Table 37). It is clear that addition of the A30 mutation to rDEN3/4 (CME) was capable of further attenuating the resulting virus rDEN3/4A30 (CME). </p> <p>Table 36. The A30 mutation further attenuates rDEN3/4 (CME) for rhesus monkeys 
+EMI67.1
+ 
+Geometric mean serum 
+No. of Mean no. Mean peak neutralizing antibody 
+Virusa monkeys of viremic virus titer titer (reciprocal dilution) days per (log, OPFU/ml monkeyb SE) Day 0 Day 28 DEN3 (Sleman/78) 4 2. 3 1. 8 &lt; 5 707 rDEN3/4 (CME) 4 2. 0 1. 6 &lt; 5 211 rDEN3/4A30 (CME) 4 0 &lt; 1. 0 &lt; 5 53 rDEN3/4 (ME) 4 0 &lt; 1. 0 &lt; 5 70 rDEN3/4A30 (ME) 4 0 &lt; 1. 0 &lt; 5 58 a Groups of rhesus monkeys were inoculated subcutaneously with 105 PFU of the indicated virus in a 1 ml dose. Serum was collected on days 0 to 6, 8, 10, 12, and 28. </p><p>Virus titer was determined by plaque assay in Vero cells. b Viremia was not detected in any monkey after day 4. </p><p> Table 37. rDEN3/4 chimeric viruses protect rhesus monkeys from wt DEN3 virus 
+EMI67.2
+ challenge 
+Mean no. of Geometric mean viremic days per Mean peak serum neutralizing 
+No. of monkey after virus titer antibody titer 
+Virusa monkeys rDEN3 (logl0PFU/ml (reciprocal dilution) challenge + SE) Day 28 Day 56 Mock 2 5. 0 2. 5 0. 4 &lt; 5 372 DEN3 (Sleman/78) 4 &lt; 1. 0 707 779 rDEN3/4 (CME) 4 0 &lt; 1. 0 211 695 rDEN3/4A30 (CME) 4 0. 8 1. 1 0. 2 53 364 rDEN3/4 (ME) 4 0 &lt; 1. 0 70 678 rDEN3/4A30 (ME) 4 0 &lt; 1. 0 58 694 10 15 a 28 days after primary inoculation with the indicated viruses, rhesus monkeys were challenged subcutaneously with 105 PFU DEN3 (Sleman/78) virus in a 1 ml dose. Serum was collected on days 28 to 34,36, 38, and 56. Virus titer was determined by plaque assay in Vero cells. </p><p> To evaluate the replication levels of each DEN3/4 chimeric virus in mosquitoes, Aedes aegypti were infected by ingesting a virus-containing blood meal (Table 38). </p><p>Parental viruses rDEN4 and DEN3 (Sleman/78) readily infect Ae. aegypti. Each of the rDEN3/4 chimeric viruses was also tested. In many cases it was not possible to infect Ae. aegypti with an undiluted virus stock of sufficient titer to achieve a detectable infection due </p> <p> to the very low infectivity of several of the viruses. At a dose of approximately 2.8-2. 9 logloPFU, rDEN4, DEN3 (Sleman/78), and rDEN3/4 (CME) were equally infectious and disseminated to the head with equal efficiency. For the remaining chimeric viruses, infection was not detectable even at a dose of 3.4 logloPFU, indicating that replication of rDEN3/4 (ME) and rDEN3/4A30 (CME) is restricted in Ae. aegypti. By comparing infectivity of rDEN3/4 (CME) and rDEN3/4A30 (CME), it is clear that the A30 mutation is capable of further attenuating the chimeric virus for mosquitoes. </p><p> Table 38. Ability of DEN3/4 chimeric viruses to infect Aedes aegypti fed an infectious bloodmeal. 
+EMI68.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Dose &lt;SEP&gt; No. &lt;SEP&gt; No. &lt;SEP&gt; (%) &lt;SEP&gt; No. &lt;SEP&gt; (%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virus &lt;SEP&gt; Tested &lt;SEP&gt; Ingested &lt;SEP&gt; Mosquitoes &lt;SEP&gt; Midgut &lt;SEP&gt; Disseminated
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; (loglopfu) &lt;SEP&gt; a &lt;SEP&gt; Tested &lt;SEP&gt; Infectionsb,c,d &lt;SEP&gt; Infectionse
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4 &lt;SEP&gt; 3.8 &lt;SEP&gt; 18 &lt;SEP&gt; 14 &lt;SEP&gt; (77%) &lt;SEP&gt; 2 &lt;SEP&gt; (14%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 2.8 &lt;SEP&gt; 20 &lt;SEP&gt; 7 &lt;SEP&gt; (34%) &lt;SEP&gt; 2 &lt;SEP&gt; (10%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 1.8 &lt;SEP&gt; 18 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MID50 &lt;SEP&gt; = &lt;SEP&gt; 3.4 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4. &lt;SEP&gt; 4
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN3 &lt;SEP&gt; (Sleman) &lt;SEP&gt; 2.9 &lt;SEP&gt; 16 &lt;SEP&gt; 3 &lt;SEP&gt; (18%) &lt;SEP&gt; 2 &lt;SEP&gt; (12%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 1.9 &lt;SEP&gt; 10 &lt;SEP&gt; 1 &lt;SEP&gt; (10%) &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 3. &lt;SEP&gt; 5 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 3. &lt;SEP&gt; 5
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN3/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 3. &lt;SEP&gt; 9 &lt;SEP&gt; 20 &lt;SEP&gt; 6 &lt;SEP&gt; (30%) &lt;SEP&gt; 2 &lt;SEP&gt; (10%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 2.9 &lt;SEP&gt; 18 &lt;SEP&gt; 4 &lt;SEP&gt; (22%) &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 1.9 &lt;SEP&gt; 13 &lt;SEP&gt; 1 &lt;SEP&gt; (7%) &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MID50 &lt;SEP&gt; &gt; &lt;SEP&gt; 4.2 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4.5
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN3/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 3.3 &lt;SEP&gt; 20 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4.3 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4.3
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN3/4 &lt;SEP&gt; (ME) &lt;SEP&gt; 3. &lt;SEP&gt; 4 &lt;SEP&gt; 15 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4. &lt;SEP&gt; 4 &lt;SEP&gt; MID50 &lt;SEP&gt; &gt; &lt;SEP&gt; 4. &lt;SEP&gt; 4
+&lt;tb&gt; 
+ a Amount of virus ingested, assuming a 2 bloodmeal. b Number (percentage) of mosquitoes with detectable dengue virus in midgut tissue; mosquitoes were assayed 21 days post feed, and dengue virus antigen was identified by IFA. </p><p> 'When infection was detected, but did not exceed a frequency of 50% at the highest dose of virus ingested, the MIso was estimated by assuming that a 10-fold more concentrated virus dose would infect 100% of the mosquitoes. d When no infection was detected, the MID,,, was assumed to be greater than a 10- fold higher dose of virus than the one used. </p><p> 'Number (percentage) of mosquitoes with detectable dengue virus antigen in both midgut and head tissue. </p> <p> EXAMPLE 7 
+Generation and Characterization of Intertypic Chimeric DEN1 Viruses Containing the A30 Mutation 
+Chimeric viruses based on the DEN4 cDNA have been generated in which the CME or ME genes have been replaced with the corresponding genes derived from DEN1 (Puerto Rico/94), a virus isolate from a 1994 dengue outbreak in Puerto Rico (Appendices 3 and 4). </p><p>As described in Example 4 for the DEN2 chimeric viruses, CME chimeric viruses for DEN1 were generated by replacing the BglII/SoI region of the cDNA for either rDEN4 or rDEN4A30 with a similar region derived from DEN1 (Puerto Rico/94) (Figure 12A). </p><p>Likewise, to create the ME chimeric viruses, the PstI/XhoI region of the cDNA for either rDEN4 or rDEN4A30 was replaced with a similar region derived from DEN1 (Puerto Rico/94). The nucleotide and amino acid sequences of the resulting junctions are shown in Figure 12B. </p><p> For transcription and generation of virus, chimeric cDNA clones were linearized and used as template in a transcription reaction using SP6 RNA polymerase as described. </p><p>Transcripts were introduced into C6/36 mosquito cells using liposome-mediated transfection and recombinant dengue virus was harvested between day 7 and 14. Viruses were subsequently grown in Vero cells and biologically cloned by terminal dilution in Vero cells. All viruses replicated in Vero cells to titers in excess of 6.0 log,,, PFU/ml, indicating that the chimeric viruses, even those containing the A30 mutation, replicate efficiently in cell culture. Genomic sequence analysis is currently underway to identify incidental mutations arising from virus passage in tissue culture. </p><p> To evaluate the replication levels of DEN1/4 (CME) and rDENl/4A30 (CME) chimeric virus in mosquitoes, Aedes aegypti were infected by ingesting a virus-containing blood meal (Table 39). Parental virus rDEN4 infects Ae. aegypti with an MID50 of 4.0 loglOPFU. However, parental virus DEN1 (Puerto Rico/94), is unable to infect Ae. aegypti at a dose of up to 3.4 logloPFU. Thus CME chimeric viruses DEN1/4 and rDENl/4A30 share this inability to infect Ae. aegypti. Therefore, it is unnecessary in Ae. aegypti to evaluate the effect of the A30 mutation on the infectivity of the DEN1/4 chimeric viruses, in a manner similar to that used for the DEN2/4 and DEN3/4 chimeric viruses. </p> <p> Table 39. Inability of DEN1/4 chimeric viruses to infect Aedes aegypti fed an infectious bloodmeal. 
+EMI70.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Virus &lt;SEP&gt; Dose &lt;SEP&gt; No. &lt;SEP&gt; No. &lt;SEP&gt; (%) &lt;SEP&gt; No. &lt;SEP&gt; (%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; tested &lt;SEP&gt; ingested &lt;SEP&gt; Mosquitoes &lt;SEP&gt; Midgut &lt;SEP&gt; Disseminated
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; (loglopfu) &lt;SEP&gt; a &lt;SEP&gt; Tested &lt;SEP&gt; Infectionsb , &lt;SEP&gt; a &lt;SEP&gt; Infectionse
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4 &lt;SEP&gt; 4. &lt;SEP&gt; 3 &lt;SEP&gt; 21 &lt;SEP&gt; 18 &lt;SEP&gt; (85%) &lt;SEP&gt; 8 &lt;SEP&gt; (44%)
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 3.3 &lt;SEP&gt; 15 &lt;SEP&gt; 3 &lt;SEP&gt; (20%) &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; 2.3 &lt;SEP&gt; 20 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MIDso &lt;SEP&gt; = &lt;SEP&gt; 4. &lt;SEP&gt; 0 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4.3
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN1 &lt;SEP&gt; (Puerto &lt;SEP&gt; Rico/94) &lt;SEP&gt; 3.4 &lt;SEP&gt; 21 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MIDsp4. &lt;SEP&gt; 4 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 4. &lt;SEP&gt; 4
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN &lt;SEP&gt; 1/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 3.8 &lt;SEP&gt; 20 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MIDso &lt;SEP&gt; &gt; &lt;SEP&gt; 4.8 &lt;SEP&gt; MID50 &lt;SEP&gt; &gt; &lt;SEP&gt; 4-8
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 2.8 &lt;SEP&gt; 20 &lt;SEP&gt; 0 &lt;SEP&gt; 0
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; MIDso &gt; 3. &lt;SEP&gt; 8 &lt;SEP&gt; MID50 &lt;SEP&gt; # &lt;SEP&gt; 3. &lt;SEP&gt; 8
+&lt;tb&gt; 
+ "Amount of virus ingested, assuming a 2p1 bloodmeal. bNumber (percentage) of mosquitoes with detectable dengue virus in midgut tissue; mosquitoes were assayed 21 days post feed, and dengue virus antigen was identified by IFA. </p><p> "When infection was detected, but did not exceed a frequency of 50% at the highest dose of virus ingested, the MIDso was estimated by assuming that a 10-fold more concentrated virus dose would infect 100% of the mosquitoes. d When no infection was detected, the MIDso was assumed to be greater than a 10- fold higher dose of virus than the one used. eNumber (percentage) of mosquitoes with detectable dengue virus antigen in both midgut and head tissue. </p><p> As described in the previous examples, SCID mice transplanted with the HuH-7 cells are a sensitive model for the evaluation of dengue virus attenuation. Each chimeric DEN1/4 virus was inoculated into groups of SCID-HuH-7 mice and levels of virus in the serum were determined (Table 40). Chimeric viruses replicated to levels between 15-and 250-fold lower than either of the parental viruses, rDEN4 and DEN1 (Puerto Rico/94). </p><p>CME chimeric viruses were more attenuated than the comparable ME chimeric viruses, with the A30 mutation providing a 0.8 log10 reduction in replication. This level of attenuation exerted by the A30 mutation in the CME chimeric viruses was similar to that observed previously for rDEN4A30. However, the attenuating effect of the A30 mutation in the ME chimeric viruses is indiscernible. </p> <p> Table 40. Chimerization between dengue virus types 1 and 4 results in recombinant viruses which are attenuated for HuH-7-SCID mice. 
+EMI71.1
+ 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; </p><p> &lt;SEP&gt; Mean &lt;SEP&gt; peak &lt;SEP&gt; virus
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; No. &lt;SEP&gt; of &lt;SEP&gt; titer &lt;SEP&gt; (log, &lt;SEP&gt; opfu/ml &lt;SEP&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; &lt;SEP&gt; Virusa &lt;SEP&gt; mice &lt;SEP&gt; SE) &lt;SEP&gt; Statistical &lt;SEP&gt; groupb
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN4 &lt;SEP&gt; 32 &lt;SEP&gt; 6. &lt;SEP&gt; 3 &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; DEN1 &lt;SEP&gt; (Puerto &lt;SEP&gt; Rico/94) &lt;SEP&gt; 4 &lt;SEP&gt; 6.4 &lt;SEP&gt; 0.2 &lt;SEP&gt; A
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4 &lt;SEP&gt; (CME) &lt;SEP&gt; 8 &lt;SEP&gt; 4.7 &lt;SEP&gt; ~ &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; B, &lt;SEP&gt; C
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4A30 &lt;SEP&gt; (CME) &lt;SEP&gt; 6 &lt;SEP&gt; 3. &lt;SEP&gt; 9 &lt;SEP&gt; ~ &lt;SEP&gt; 0. &lt;SEP&gt; 4 &lt;SEP&gt; C
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDENl/4 &lt;SEP&gt; (ME) &lt;SEP&gt; 6 &lt;SEP&gt; 5. &lt;SEP&gt; 0 &lt;SEP&gt; ~ &lt;SEP&gt; 0. &lt;SEP&gt; 2 &lt;SEP&gt; B
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; 
+&lt;tb&gt; rDEN1/4#30 &lt;SEP&gt; (ME) &lt;SEP&gt; 6 &lt;SEP&gt; 5. &lt;SEP&gt; 1 &lt;SEP&gt; ~ &lt;SEP&gt; 0. &lt;SEP&gt; 3 &lt;SEP&gt; B
+&lt;tb&gt; 
+ "Groups of HuH-7-SCID mice were inoculated into the tumor with 4.0 logic PFU of the indicated virus. Serum was collected on day 7 and virus titer was determined in Vero cells. bMean peak titers were assigned to statistical groups using the Tukey post-hoc test (P &lt; 0.05). Groups with the same letter designation are not significantly different. </p> <p> APPENDIX 1 Nucleotide and amino acid sequence of DEN2 (Tonga/74) cDNA plasmid p2 Bases 1 to 10713: DEN2 virus genome cDNA Bases 97 to 10269: DEN2 polyprotein ORF Bases 97 to 438: C protein ORF Bases 439 to 936: prM protein ORF Bases 937 to 2421: E protein ORF Bases 2422 to 3477: NS1 protein ORF Bases 3478 to 4131: NS2A protein ORF Bases 4132 to 4521: NS2B protein ORF Bases 4522 to 6375: NS3 protein ORF Bases 6376 to 6756: NS4A protein ORF Bases 6757 to 6825: 2K protein ORF Bases 6826 to 7569: NS4B protein ORF Bases 7570 to 10269: NS5 protein ORF 
+EMI72.1
+ </p> <p> 
+EMI73.1
+ </p> <p> 
+EMI74.1
+ </p> <p> 
+EMI75.1
+ </p> <p> 
+EMI76.1
+ </p> <p> 
+EMI77.1
+ </p> <p> 
+EMI78.1
+ </p> <p> 
+EMI79.1
+ </p> <p> 
+EMI80.1
+ </p> <p> 
+EMI81.1
+ </p> <p> 
+EMI82.1
+ </p> <p> 
+EMI83.1
+ </p> <p> 
+EMI84.1
+ </p> <p> 
+EMI85.1
+ </p> <p> 
+EMI86.1
+ </p> <p> 
+EMI87.1
+ </p> <p> 
+EMI88.1
+ </p> <p> APPENDIX 2 Nucleotide and amino acid sequence of DEN3 (Sleman/78) cDNA plasmid p3 Bases 1 to 10707: DEN 3 virus genome cDNA Bases 95 to 10264: DEN3 polyprotein ORF Bases 95 to 436: C protein ORF Bases 437 to 934: prM protein ORF Bases 935 to 2413: E protein ORF Bases 2414 to 3469: NS1 protein ORF Bases 3470 to 4123: NS2A protein ORF Bases 4124 to 4513: NS2B protein ORF Bases 4514 to 6370: NS3 protein ORF Bases 6371 to 6751: NS4A protein ORF Bases 6752 to 6820: 2K protein ORF Bases 6821 to 7564: NS4B protein ORF Bases 7575 to 10264: NS5 protein ORF 
+EMI89.1
+ </p> <p> 
+EMI90.1
+ </p> <p> 
+EMI91.1
+ </p> <p> 
+EMI92.1
+ </p> <p> 
+EMI93.1
+ </p> <p> 
+EMI94.1
+ </p> <p> 
+EMI95.1
+ </p> <p> 
+EMI96.1
+ </p> <p> 
+EMI97.1
+ </p> <p> 
+EMI98.1
+ </p> <p> 
+EMI99.1
+ </p> <p> 
+EMI100.1
+ </p> <p> 
+EMI101.1
+ </p> <p> 
+EMI102.1
+ </p> <p> 
+EMI103.1
+ </p> <p> 
+EMI104.1
+ </p> <p> 
+EMI105.1
+ </p> <p> APPENDIX 3 Nucleotide and amino acid sequence of DEN1 (Puerto Rico/94) CME chimeric region Bases 1 to 88 (BglII): DEN4 Bases 89 (BglII) to 2348 (XhoI): DEN1 Bases 2349 (XhoI) to 2426: DEN4 Bases 102 to 443: C protein ORF Bases 444 to 941: prM protein ORF Bases 942 to 2426: E protein ORF 
+EMI106.1
+ </p> <p> 
+EMI107.1
+ </p> <p> 
+EMI108.1
+ </p> <p> 
+EMI109.1
+ </p> <p> APPENDIX 4 Nuelcotide and amino acid sequence of DEN1 (Puerto Rico/94) ME chimeric region Bases 1 to 404 (PstI): DEN4 Bases 405 (PstI): to 2345 (XhoI): DEN1 Bases 2346 (XhoI) to 2423: DEN4 Bases 102 to 440: C protein ORF Bases 441 to 938: prM protein ORF Bases 939 to 2423: E protein ORF 
+EMI110.1
+ </p> <p> 
+EMI111.1
+ </p> <p> 
+EMI112.1
+ </p> <p> 
+EMI113.1
+ </p> <p> 
+While the present invention has been described in some detail for purposes of clarity and understanding, one skilled in the art will appreciate that various changes in form and detail can be made without departing from the true scope of the invention. All figures, tables, appendices, patents, patent applications and publications, referred to above, are hereby incorporated by reference.</p></description></fulltext-document>

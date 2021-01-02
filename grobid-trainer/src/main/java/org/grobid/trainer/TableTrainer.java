@@ -20,10 +20,6 @@ public class TableTrainer extends AbstractTrainer {
 
     public TableTrainer() {
         super(GrobidModels.TABLE);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.00001;
-        window = 20;
     }
 
     @Override

@@ -158,8 +158,10 @@ grobid:
       #architecture: "scibert"
       #useELMo: false
 
-    - name: "patent-all"
+    - name: "patent-citation"
       engine: "wapiti"
+      epsilon: 0.0001
+      window: 20
 
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly

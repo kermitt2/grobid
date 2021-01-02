@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="DE" ucid="EP-1132161-B1" country="EP" doc-number="1132161" kind="B1" date="20050504"><bibliographic-data><publication-reference fvid="23245880" ucid="EP-1132161-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132161</doc-number><kind>B1</kind><date>20050504</date><lang>DE</lang></document-id></publication-reference><application-reference ucid="EP-01105743-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01105743</doc-number><kind>A</kind><date>20010308</date><lang>DE</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="DE-10011689-A" status="new"><document-id format="epo" status="new"><country>DE</country><doc-number>10011689</doc-number><kind>A</kind><date>20000310</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20041015</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B22D  11/12        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B22D  11/12        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B22D  11/128       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B22D  11/128       20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B22D  11/16        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B22D  11/16        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B22D  11/20        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B22D  11/20        20060101CFI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B22D11/12A</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verfahren zum Stranggiessen von Brammen, und insbesondere von Dünnbrammen</invention-title><invention-title lang="EN" status="new">Process for continuous casting slabs, especially thin slabs</invention-title><invention-title lang="FR" status="new">Procédé pour la coulée continue de brames, en particulier de brames minces</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>SMS DEMAG AG</name><address><country>DE</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SMS DEMAG AG</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>STREUBEL HANS</name><address><country>DE</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>STREUBEL, HANS</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>STREUBEL, HANS</last-name><address><street>Schlüterstrasse 3</street><city>40699 Erkrath</city><country>DE</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>SMS Demag AG</last-name><address><street>Eduard-Schloemann-Strasse 4</street><city>40237 Düsseldorf</city><country>DE</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Valentin, Ekkehard, Dipl.-Ing.</last-name><address><street>Patentanwälte Hemmerich &amp;amp; Kollegen, Hammerstrasse 2</street><city>57072 Siegen</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="DE" source="EPO" status="new"><p>Die Erfindung betrifft ein Verfahren zum Stranggießen von Brammen, insbesondere von Dünnbrammen, in einer Stranggießanlage mit einer Strangführung (20), umfassend unterhalb einer Kokille (1) im lichten Abstand einstellbare Strangführungssegmente (2.1 - 2.n) insbesondere mit Rollenpaaren (3, 3'), wobei zur Verminderung von Seigerungen und Kemporositäten der Gießstrang (4) im Bereich seiner Resterstarrung durch Anstellung der Strangführungssegmente in der Dicke reduziert wird (Soft-Reduction). Zur weiteren Verbesserung der Strangqualität wird der Gießstrang (4) vor dem Bereich der Soft-Reduction-Strecke (III) durch entsprechende Maulweiten-Einstellung (W) der Segmente (2.1 - 2.n) (3, 3') infolge des ferrostatischen Innendrucks mit einer gezielten Ausbauchung (5) versehen. Diese Ausbauchung (5) wird in der angestellten Segmentführung der Soft-Reduction-Strecke ganz oder teilweise auf die Strangdicke zurückgedrückt, in der dann die Resterstarrung stattfindet. &lt;IMAGE&gt;</p></abstract><abstract lang="DE" status="new"><p num="">Die Erfindung betrifft ein Verfahren zum Stranggießen von Brammen, insbesondere
+von Dünnbrammen, in einer Stranggießanlage mit einer
+Strangführung (20), umfassend unterhalb einer Kokille (1) im lichten Abstand
+einstellbare Strangführungssegmente (2.1 - 2.n) insbesondere mit
+Rollenpaaren (3, 3'), wobei zur Verminderung von Seigerungen und Kemporositäten
+der Gießstrang (4) im Bereich seiner Resterstarrung durch Anstellung
+der Strangführungssegmente in der Dicke reduziert wird (Soft-Reduction).
+Zur weiteren Verbesserung der Strangqualität wird der Gießstrang
+(4) vor dem Bereich der Soft-Reduction-Strecke (III) durch entsprechende
+Maulweiten-Einstellung (W) der Segmente (2.1 - 2.n) (3, 3') infolge
+des ferrostatischen Innendrucks mit einer gezielten Ausbauchung (5) versehen.
+Diese Ausbauchung (5) wird in der angestellten Segmentführung
+der Soft-Reduction-Strecke ganz oder teilweise auf die Strangdicke zurückgedrückt,
+in der dann die Resterstarrung stattfindet.
+<img file="00000001.tif" id="img-EP-1132215-A2-00000001" he="141" wi="73" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><abstract lang="EN" source="EPO" status="new"><p>Process for continuously casting thin slabs comprises: providing the casting thread (4) with a bulge (5) before the region of soft reduction stage (III) by adjusting the jaw (W) of the segments (2.1 - 2.n) as a result of the ferrostatic inner pressure; and partially or completely pushing back the bulge to the thread thickness in the segment feed of the soft reduction stage. Preferred Features: The jaw width of at least one segment is adjusted to a size larger than the outlet thickness of the mold (1) before the soft reduction stage.</p></abstract><description lang="DE" status="new"><p num="0001">Die Erfindung betrifft ein Verfahren zum Stranggießen von Brammen, und insbesondere
+von Dünnbrammen, in einer Stranggießanlage mit einer Strangführung,
+umfassend unterhalb einer Kokille im lichten Abstand einstellbare Strangführungssegmente,
+insbesondere mit Rollenpaaren, wobei zur Verminderung von Seigerungen
+und Kemporositäten der Gießstrang im Bereich seiner Resterstarrung
+durch Anstellung der Strangführungssegmente in der Dicke reduziert wird (Soft-Reduction).</p><p num="0002">Bei einem bekannten Verfahren (<ref type="patent">DE 41 38 740 A1</ref>) durchläuft der Strang eine
+Soft-Reduction-Strecke bei deren Eintritt er noch nicht durcherstarrt ist, an deren
+Ende er jedoch durcherstarrt sein soll, wofür u. a. die Gießgeschwindigkeit einen
+wesentlichen Betriebsparameter darstellt. Im Bereich der Enderstarrung wird dabei
+eine Dickenreduktion bspw. für Dünnbrammen zwischen 0,5 und 3 mm pro Meter
+Gießlänge durchgeführt. Dazu werden in der Soft-Reduction-Strecke die Rollenpaare
+einzelner Segmente über das Schrumpfverhalten des Stranges hinausgehend
+enger eingestellt, um im Bereich der Resterstarrung eine Verbesserung der
+Strang-Innenqualität zu erreichen. </p><p num="0003">Die <ref type="patent">EP 0 834 364</ref> beschreibt ein Verfahren und eine Vorrichtung für Hochgeschwindigkeits-Stranggießanlagen
+mit einer Strangdickenreduktion während der
+Erstarrung, wobei Schmelze vorzugsweise in eine oszillierende Kokille gegossen
+und der Strangquerschnitt linear über eine Mindestlänge der Strangführung unmittelbar
+unter der Kokille, dem sogenannten Gießwalzen, reduziert wird, mit sich
+anschließender weiterer Strang-Reduktion über die restliche Strangführung, der
+&quot;Soft-Reduction&quot;, bis maximal unmittelbar vor der Enderstarrung bzw. Sumpfspitze.
+Durch diese verfahrenstechnischen Maßnahmen wird die Deformationsdichte
+der Strangquerschnittsreduktion so vorgegeben, dass die kritische Deformation
+der Strangschale unter Berücksichtigung der hohen Gießgeschwindigkeit und
+Stahlgüte nicht überschritten wird.</p><p num="0004">Die <ref type="patent">EP 0 177 796 B1</ref> offenbart ein Verfahren zum Führen und Richten eines
+Gießstranges im Richt- und Auslaufbereich einer Bogenstranggießanlage, wobei
+gegenüberliegend angeordnete Rollen von einer Federkraft gegen den ferrostatischen
+Druck des Gießstranges in einem dem Gießverfahren entsprechenden Abstand
+gehalten werden. Dabei wird ein Gießstrangbereich erhöhter Festigkeit
+wegverfolgt und bei dessen Durchlauf zwischen gegenüberliegenden Rollen wird
+die jeweilige Federkraft durch eine geringere Zusatzkraft reduziert. Dieser Vorschlag,
+nämlich den lichten Abstand bzw. die Maulweite über Hydraulikzylinder mit
+eingebauter induktiver Wegemessung und Servoventilen stufenlos einzustellen,
+erfordert eine rechnerische oder messtechnische Ermittlung der Lage der Sumpfspitze.</p><p num="0005">Die in Stranggießanlagen entsprechend den vorgenannten Dokumenten und den
+darin beschriebenen Verfahren und Anlagen hergestellten Brammen oder Blöcke
+dienen als Ausgangsmaterial für Walzwerksprodukte zum Erzeugen von Blechen
+oder Bändern. </p><p num="0006">Um beim Stranggießen, insbesondere von Dünnbrammen, Seigerungen im Strang
+zu verringern und ein vergleichsweises optimales Gefüge zu erzielen, wird in der
+Strangführungs-Strecke der Anlage im Bereich der Enderstarrung zwecks Dickenreduktion,
+z. B. zwischen 0,5 und 3 mm pro Meter Strang, das Oberjoch eines
+Strangführungssegmentes mit den darin gelagerten Rollen zwischen Einlauf und
+Auslauf schräg angestellt, so dass auslaufseitig eine kleinere Maulweite als einlaufseitig
+vorhanden ist. Dabei wird vielfach der Strang im Bereich der Resterstarrung
+in der Dicke einschließlich der bereits durcherstarrten Kantenbereiche reduziert.
+Dies führt jedoch zu einer unnötig erhöhten Belastung von Rollen und ihren
+Lagerungen, ohne dass hierbei die Gefüge-Innenqualität im Kantenbereich des
+Stranges beeinflusst wird.</p><p num="0007">Ausgehend von diesen Zusammenhängen und den sich daraus ergebenden Erkenntnissen
+beim Stand der Technik liegt der Erfindung die Aufgabe zugrunde, ein
+effektives Verfahren zur Verbesserung des Strang-Innengefüges in dessen Reduktionsbereich
+der Resterstarrung unter Vermeidung erhöhter Rollen- und Lagerbelastung
+anzugeben, welches hauptsächlich auf die mittleren Partien des
+Stranges einwirkt und die bereits durcherstarrten, Randpartien des Stranges bei
+der Verdichtungsarbeit ausspart.</p><p num="0008">Zur Lösung der Aufgabe wird mit der Erfindung bei einem Verfahren der im Oberbegriff
+von Anspruch 1 genannten Art vorgeschlagen, dass der Gießstrang vor
+dem Bereich der Soft-Reduction-Strecke durch entsprechende Maulweiten-Einstellung
+der Segmente infolge des ferrostatischen Innendrucks mit einer gezielten
+Ausbauchung versehen wird, und dass die Ausbauchung in der Segmentführung
+der Soft-Reduction-Strecke ganz oder teilweise auf die Strangdicke zurückgedrückt
+wird, in der die Resterstarrung stattfindet.</p><p num="0009">Damit wird im Vergleich zum Stand der Technik und den bisherigen Verfahrenskonzepten
+bei gleicher Dickenreduzierung und Kernverdichtung eine geringere 
+Krafteinwirkung erforderlich, und die Rollen- bzw. Lagerbelastung verringert, was
+der gesamten Stützkonstruktion der Strangführung zugute kommt und darüber
+hinaus die Strangqualität infolge verminderter Seigerungen und Kernporositäten
+signifikant verbessert bzw. bei unveränderter Krafteinwirkung eine größere Dikkenreduzierung
+und Kernverdichtung ergibt.</p><p num="0010">Eine Ausgestaltung des Verfahrens sieht vor, daß der Gießstrang vor dem Bereich
+der Soft-Reduction-Strecke bei veränderlich einstellbarer Maulweite der Segmente
+in wenigstens einem Segment zuerst in einen Streckenbereich sich verringernder
+Maulweite im kernflüssigen Bereich reduziert wird (&quot;Liquid-Core-Reduction&quot;) und
+anschließend einen Streckenbereich sich vergrößernder Maulweite durchläuft, und
+danach in weiteren Segmenten in eine bis zur Sumpfspitze reichende Soft-Reduction-Strecke
+einmündet.</p><p num="0011">Weitere Ausgestaltungen des Verfahrens sind entsprechend den Unteransprüchen
+vorgesehen.</p><p num="0012">Einzelheiten, Merkmale und Vorteile der Erfindung ergeben sich aus der nachstehenden
+Erläuterung eines in den Zeichnungen schematisch dargestellten Ausführungsbeispiels.
+Es zeigen:
+<dl tsize="7"><dt>Figur 1</dt><dd>in rein schematischer Darstellung einen Anfangsbereich einer
+Strangführung unterhalb einer Kokille nach dem Stand der Technik
+lediglich mit einer Soft-Reduction-Strecke;</dd><dt>Figur 2</dt><dd>ein Stück einer Strangführung unterhalb einer Kokille mit sowohl
+einer Liquid-Core-Reduction-Strecke und einen anschließenden Bereich
+mit einer Soft-Reduction-Strecke;</dd><dt>Figur 3</dt><dd>Querschnittskontur des Gießstranges</dd></dl></p><p num="0013">In der Figur 1 befindet sich unterhalb der Kokille 1 ein Stück einer Strangführung
+mit den Segmenten 2.1, 2.2 und 2.3. Das Segment 2.2 ist unterteilt in die Segmentbereiche
+2.2a und 2.2b. Alle Segmente weisen Führungsrollen 3, 3' auf und
+sind im lichten Abstand zueinander einstellbar.</p><p num="0014">Zur Vermeidung von Seigerungen im Strang 4 bei dessen Erstarrung sowie zur
+Erzielung eines dichten Gefüges wird bei diesem in einer Soft-Reduction-Strecke
+III der Strangführung 20 im Bereich der Enderstarrung eine Dickenreduzierung mit
+einer Marge zwischen 0,5 und 3 mm pro Meter durchgeführt.</p><p num="0015">Im Stammbaum des Gießstranges 4 der Figur 1 ist dargestellt, daß der Gießstrang
+vor dem Bereich der Soft-Reduction-Strecke III durch entsprechende Maulweiten-Einstellung
+der Rollen 3, 3' nach vor dem Bereich der Soft-Reduction-Strecke III
+gezielt eine Ausbauchung 5 erhält, wonach die Ausbauchung 5 in der konisch angestellten
+Rollenführung der Soft-Reduction-Strecke III auf diejenige Strangdicke
+reduziert wird, in der die Resterstarrung stattfindet.</p><p num="0016">Damit wird ein effektives Verfahren zur Reduzierung von Seigerungen und zur
+Verdichtung des Strang-Innengefüges in dessen Reduktionsbereich der Resterstarrung
+unter Vermeidung erhöhter Rollen- und Lagerbelastung angegeben, welches
+hauptsächlich auf die noch nicht vollständig durcherstarrten, insbesondere
+mittleren Partien des Stranges einwirkt und das die bereits durcherstarrten Randpartien
+bei der Verdichtungsarbeit ausspart.</p><p num="0017">In Fig. 2 ist eine Ausgestaltung des Verfahrens nach der Erfindung dargestellt,
+wonach der Gießstrang 4 vor dem Bereich der Soft-Reduction-Strecke bei veränderlich
+einstellbarer Maulweite (W) der Rollen 3, 3' zuerst eine parallele Strecke 1
+unterhalb der Kokille 1 in wenigstens einem ersten Segment 2.1 durchläuft. In einem
+folgenden Segment 2.2 wird zuerst in einem Streckenbereich 2a sich verringemder 
+Maulweite (-W) eine &quot;Liquid-Core-Reduction&quot; durchgeführt, anschließend
+durchläuft der Gießstrang einen Streckenbereich IIb sich vergrößernder Maulweite
+(+W). Danach mündet der Gießstrang 4 in weiteren Segmenten 2.3 bis 2.4 bzw.
+2.5 (nicht gezeigt) in eine bis zur Sumpfspitze reichende Soft-Reduction-Strecke III
+ein. Der Bereich vergrößerter Maulweite +W der Strecke IIb der Figur 2 ist zwischen
+den Bereichen von Liquid-Core-Reduction (IIa) und Soft-Reduction III angeordnet.</p><p num="0018">Eine Ausgestaltung des Verfahren nach der Erfindung sieht vor, dass die Maulweite
+W vor dem Bereich der Soft-Reduction III linear vergrößert wird. Es kann
+aber auch von der Maßnahme Gebrauch gemacht sein, dass die Maulweite W vor
+dem Bereich III der Soft-Reduction nicht-linear vergrößert wird.</p><p num="0019">Von Vorteil ist, dass bei der Herstellung von Dünnbrammen zur Vermeidung einer
+kritischen Deformation der Strangschale die Vergrößerung der Maulweite W zwischen
+1 und 8 mm eingestellt wird.</p><p num="0020">Dagegen kann bei der Herstellung üblicher Brammen mit Brammendicken von
+bspw. 250 mm und mehr eine Vergrößerung der Maulweite (+W) zwischen 3 und
+20 mm eingestellt werden.</p><p num="0021">In Fig. 3 ist der Gießstrang im Querschnitt dargestellt. Die beidseitige Ausbauchung
+5 entsteht durch eine vergrößerte Maulweiteneinstellung vor dem Bereich
+der Soft-Reduction-Strecke III. Diese Ausbauchung 5 wird im Bereich der Soft-Reduction-Strecke
+III ganz oder teilweise zurückgedrückt. Die durchgezogene Linie
+zeigt die Querschnittskontur des ausgebauchten Stranges. Die gestrichelte
+Linie 5' zeigt die Kontur des Stranges nach dem Verlassen der Soft-Reduction-Strecke.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zum Stranggießen von Brammen, insbesondere von Dünnbrammen,
+in einer Stranggießanlage mit einer Strangführung (20), umfassend
+unterhalb einer Kokille (1) im lichten Abstand einstellbare Strangführungssegmente
+(2.1 - 2.n) insbesondere mit Rollenpaaren (3, 3'), wobei zur
+Verminderung von Seigerungen und Kernporositäten der Gießstrang (4) im
+Bereich seiner Resterstarrung durch Anstellung der Strangführungssegmente
+in der Dicke reduziert wird (Soft-Reduction),dadurch gekennzeichnet,
+dass der Gießstrang (4) vor dem Bereich der Soft-Reduction-Strecke (III)
+durch entsprechende Maulweiten-Einstellung (W) der Segmente (2.1 bis
+2.n) infolge des ferrostatischen Innendrucks mit einer gezielten Ausbauchung
+(5) versehen wird, und dass die Ausbauchung (5) in der Segmentführung
+der Soft-Reduction-Strecke ganz oder teilweise auf die Strangdicke
+zurückgedrückt wird, in der die Resterstarrung stattfindet.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1,dadurch gekennzeichnet,
+daß die Maulweite (W) mindestens eines Segments (2.1 bis 2.n) vor der
+Soft-Reduction-Strecke (III) auf ein Maß größer als die Austrittsdicke der
+Kokille (1) eingestellt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1 oder 2,dadurch gekennzeichnet,
+dass der Gießstrang (4) vor dem Bereich der Soft-Reduction-Strecke (III)
+bei veränderlich einstellbarer Maulweite (W) der Segmente (2.1 bis 2.n) in
+wenigstens einem Segment (2.2) zuerst in einem Streckenbereich (IIa) mit
+sich verringernder Maulweite (-W) im kemflüssigen Bereich reduziert wird
+(&quot;Liquid-Core-Reduction&quot;) und anschließend einen Streckenbereich (IIb)
+sich vergrößernder Maulweite (+W) durchläuft, und danach in weiteren
+Segmenten (2.3 bis 2.n) in eine bis zur Sumpfspitze reichende Soft-Reduction-Strecke
+(III) einmündet.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 3,dadurch gekennzeichnet,
+daß die Maulweite (W) wenigstens eines Segments (2.1 bis 2.n) vor der
+Soft-Reduction-Strecke (III) auf ein größeres Maß eingestellt wird als die
+Strangdicke nach der Liquid Core Reduction Strecke.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der Ansprüche 1 bis 4,dadurch gekennzeichnet,
+daß die Maulweiteneinstellung der Segmente (2.1 bis 2.n) parallel oder konisch
+zu dem Gießstrang erfolgt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 5,dadurch gekennzeichnet,
+dass die Maulweite (W) vor dem Bereich der Soft-Reduction (III) linear vergrößert
+wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 6,dadurch gekennzeichnet,
+dass die Maulweite (W) vor dem Bereich (III) der Soft-Reduction nicht-linear
+vergrößert wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 7,dadurch gekennzeichnet,
+dass bei der Herstellung von Dünnbrammen die Vergrößerung der Maulweite
+(+W) zwischen 1 und 8 mm eingestellt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 8,dadurch gekennzeichnet,
+dass bei der Herstellung von Brammen eine Vergrößerung der Maulweite
+(+W) zwischen 3 und 20 mm eingestellt wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 9,dadurch gekennzeichnet,
+dass der Bereich vergrößerter Maulweite (+W) zwischen den Bereichen von
+Liquid-Core-Reduction (lla) und Soft-Reduction (III) angeordnet wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach mindestens einem der vorhergehenden Ansprüche 1 bis 10,dadurch gekennzeichnet,
+daß der Gießstrang (4) zuerst eine parallele Strecke (I) unterhalb der Kokille
+(1) in wenigstens einem ersten Segment (2.1) durchläuft und sich der
+Streckenbereich (II a) der Liquid-Core-Reduction und der Streckenbereich
+(III) der Soft-Reduction anschließen.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Method of continuous casting of slabs, particularly of thin slabs, in a continuous
+casting plant with a strip guide (20), comprising, below a mould (1), strip guide segments
+(2.1 - 2.n), which are adjustable in clear spacing, particularly with roller pairs (3, 3'),
+wherein for avoidance of liquations and core porosities the cast strip (5) is reduced in
+thickness in the region of its residual hardening by adjustment of the strip guide segments
+(soft reduction), characterised in that the cast strip (4) is provided in front of the region of
+the soft reduction path (III) with a selective convexity (5) by appropriate mouth width
+adjustment (W) of the segments (2.1 to 2.n) as a consequence of ferrostatic internal
+pressure and that the convexity (5) is entirely or partly pressed back to the strip thickness
+in the segment guide of the soft reduction path in which the residual hardening takes
+place.</claim-text></claim><claim num="xx"><claim-text>Method according to claim 1, characterised in that the mouth width (W) of at least
+one segment (2.1 to 2.n) is adjusted before the soft reduction path (III) to a dimension
+greater than the exit thickness of the mould (1).</claim-text></claim><claim num="xx"><claim-text>Method according to claim 1 or 2, characterised in that the cast strip (4) before the
+region of the soft reduction path (III) is reduced, in the case of variably adjustable mouth
+width (W) of the segments (2.1 to 2.n), in at least one segment (2.2) initially in a path
+region (IIa) with reducing mouth width (-W) in the liquid core region (&quot;liquid core reduction&quot;)
+and subsequently runs through a path region (IIb) of enlarging mouth width (+W), and
+thereafter in further segments (2.3 to 2.n) opens into a soft reduction path (III) reaching up
+to the end of the liquid phase.</claim-text></claim><claim num="xx"><claim-text>Method according to claim 3, characterised in that the mouth width (W) of at least
+one segment (2.1 to 2.n) is adjusted before the soft reduction path (III) to a larger
+dimension than the strip thickness after the liquid core reduction path.</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of claims 1 to 4, characterised in that the mouth
+width adjustment of the segments (2.1 to 2.n) takes place parallelly or conically relative to
+the cast strip.</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 5, characterised in
+that the mouth width (W) is linearly enlarged before the region of the soft reduction (III).</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 6, characterised in
+that the mouth width (W) is non-linearly enlarged before the region (III) of the soft
+reduction.</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 7, characterised in
+that in the case of production of thin slabs the enlargement of the mouth width (+W) is
+adjusted to between 1 and 8 millimetres.</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 8, characterised in
+that in the case of production of slabs an enlargement of the mouth width (+W) is adjusted
+to between 3 and 20 millimetres.</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 9, characterised in
+that the region of enlarged mouth width (+W) is arranged between the regions of liquid
+core reduction (IIa) and soft reduction (III).</claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims 1 to 10, characterised in
+that the cast strip (4) initially runs through a parallel path (I) below the mould (1) in at least
+one first segment (2.1), and the path region (IIa) of the liquid core reduction and the path
+region (III) of the soft reduction adjoin one another.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé pour la coulée continue de brames, en particulier de brames minces,
+dans une installation de coulée continue avec un guidage du brin (20), comprenant des
+segments (2.1 - 2.n) de guidage de brin sous une lingotière (1), avec un écartement
+réglable, en particulier avec des paires de rouleaux (3, 3'), l'épaisseur du brin (4) étant
+réduite dans la zone de sa solidification résiduelle par réglage des segments de guidage
+du brin (réduction douce) en vue de réduire les ressuages et les porosités du noyau du
+brin coulé (4), caractérisé en ce que le brin coulé (4), avant la zone de la réduction
+douce (III), est pourvu d'un renflement (5) ciblé par un réglage (W) correspondant de la
+largeur de l'ouverture des segments (2.1 - 2.n) suite à la pression interne ferrostatique et
+en ce que le renflement (5), dans le guidage des segments de la zone de réduction
+douce, est réduit totalement ou partiellement à l'épaisseur du brin dans laquelle la
+solidification résiduelle a lieu.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, caractérisé en ce que la largeur de
+l'ouverture (W) d'au moins un segment (2.1 - 2.n) est réglée avant la zone de réduction
+douce (III) à une dimension supérieure à l'épaisseur de sortie de la lingotière (1).</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1 ou 2, caractérisé en ce que le brin coulé (4),
+avant la zone de la réduction douce (III), avec une largeur d'ouverture (W) réglable de
+manière variable des segments (2.1 - 2.n), est d'abord réduit dans au moins un segment
+(2.2) dans une zone (IIa) avec une largeur d'ouverture qui diminue (-W) dans la zone à
+noyau liquide (&quot;réduction du noyau liquide&quot;) puis il passe dans une zone (IIb) avec une
+largeur d'ouverture qui s'agrandit (+W) puis débouche dans d'autres segments (2.3 - 2.n)
+dans une zone de réduction douce (III) s'étendant jusqu'à une pointe de bain.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 3, caractérisé en ce que la largeur d'ouverture
+(W) d'au moins un segment (2.1 à 2.n) est réglée avant la zone de réduction douce (III) à
+une dimension supérieure à l'épaisseur du brin après la zone de réduction du noyau
+liquide.</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications 1 à 4, caractérisé
+en ce que le réglage de la largeur de l'ouverture des segments (21.1 à 2.n) est parallèle
+ou conique par rapport au brin coulé.</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+5, caractérisé en ce que la largeur de l'ouverture (W) est agrandie linéairement avant la
+zone de la réduction douce (III).</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+6, caractérisé en ce que la largeur de l'ouverture (W) est agrandie de manière non
+linéaire avant la zone de la réduction douce (III).</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+7, caractérisé en ce que lors de la fabrication de brames minces, l'agrandissement de la
+largeur de l'ouverture (+W) est réglée entre 1 et 8 mm.</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+8, caractérisé en ce que lors de la fabrication de brames, on règle un agrandissement de
+la largeur de l'ouverture (+W) entre 3 et 20 mm.</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+9, caractérisé en ce que la zone de largeur de l'ouverture (+W) agrandie est disposée
+entre les zones de la réduction du noyau liquide (IIa) et la zone de réduction douce (III).</claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins l'une quelconque des revendications précédentes 1 à
+10, caractérisé en ce que le brin coulé (4) passe d'abord dans une zone parallèle (I) sous
+la lingotière (1) dans au moins un premier segment (2.1) et la zone (IIa) de la réduction
+du noyau liquide et la zone (III) de réduction douce sont consécutives.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="REG" date="20061115"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>PL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="25" date="20060607"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>PT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050504</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050504</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050804</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050804</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050804</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051017</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060426"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060207</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060310"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051229"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FD4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20051016"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2240262</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="GBT" date="20050928"><legal-event-body><event-title>GB: TRANSLATION OF EP PATENT FILED (GB SECTION 77(6)(A)/1977)</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050907</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050609"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>50106063</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050609</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050601"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>LANGUAGE OF EP DOCUMENT: GERMAN</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050513"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050504"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050504"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>NOT ENGLISH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020605"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AT BE CH CY DE DK ES FI FR GB GR IE IT LI LU MC NL PT SE TR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20010912"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20010321</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

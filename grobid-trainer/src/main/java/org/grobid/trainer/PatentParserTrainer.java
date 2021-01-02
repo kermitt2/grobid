@@ -1,16 +1,9 @@
 package org.grobid.trainer;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.StringTokenizer;
-
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import java.io.*;
+import java.util.*;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
@@ -28,17 +21,13 @@ import org.grobid.trainer.evaluation.PatentEvaluation;
 public class PatentParserTrainer extends AbstractTrainer {
 
     // the window value indicate the right and left context of text to consider for an annotation when building
-    // the training or the test data - the value is experimentally set
-    // this window is used to maintain a certain level of occurence of the patent and NPL references, and avoid
-    // to have the citation annotation diluted because they are very rare (less than 1 token per 1000)
+    // the training or the test data - the value is empirically set
+    // this window is used to maintain a certain level of over-sampling of the patent and NPL references, and avoid
+    // to have the citation annotation too diluted because they are very rare (less than 1 token per 1000)
     private static final int trainWindow = 200;
 
     public PatentParserTrainer() {
-        super(GrobidModels.PATENT_PATENT);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.0001;
-        window = 20;
+        super(GrobidModels.PATENT_CITATION);
     }
 
     public int createTrainingData(String trainingDataDir) {
@@ -46,28 +35,185 @@ public class PatentParserTrainer extends AbstractTrainer {
         try {
             String path = new File(new File(getFilePath2Resources(),
                     "dataset/patent/corpus/").getAbsolutePath()).getAbsolutePath();
-            createDataSet(null, null, path, trainingDataDir, 0);
+            createDataSet(null, path, trainingDataDir, 0);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while training Grobid.", e);
         }
         return nb;
     }
 
-    // we have our own train() method that trains several models at once, 
-    // therefore we don't need these methods which typically
-    // were executed from AbstractTrainer. 
+    /**
+     * Add the selected features to the affiliation/address model training for
+     * names
+     * 
+     * @param corpusDir
+     *            a path where corpus files are located
+     * @return the total number of used corpus items
+     */
     @Override
-    public int createCRFPPData(File corpusPath, File outputFile) {
-        return 0;
+    public int createCRFPPData(final File corpusDir, final File modelOutputPath) {
+        return createCRFPPData(corpusDir, modelOutputPath, null, 1.0);
     }
 
+    /**
+     * Add the selected features to the affiliation/address model training for
+     * names
+     * 
+     * @param corpusDir
+     *            a path where corpus files are located
+     * @param trainingOutputPath
+     *            path where to store the temporary training data
+     * @param evalOutputPath
+     *            path where to store the temporary evaluation data
+     * @param splitRatio
+     *            ratio to consider for separating training and evaluation data, e.g. 0.8 for 80% 
+     * @return the total number of used corpus items 
+     */
     @Override
-    public int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio) {
-        return 0;
+    public int createCRFPPData(File corpusPath, File trainingOutputPath, File evalOutputPath, double splitRatio) {
+        int totalExamples = 0;
+        int nbFiles = 0;
+        int nbNPLRef = 0;
+        int nbPatentRef = 0;
+        int maxRef = 0;
+        int srCitations = 0;
+        int previousSrCitations = 0;
+        int withSR = 0;
+        try {
+            System.out.println("sourcePathLabel: " + corpusPath);
+            if (trainingOutputPath != null)
+                System.out.println("outputPath for training data: " + trainingOutputPath);
+            if (evalOutputPath != null)
+                System.out.println("outputPath for evaluation data: " + evalOutputPath);
+
+            // we convert the xml files into the usual CRF label format
+            // we process all xml files in the output directory
+            final File[] refFiles = corpusPath.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    return name.endsWith(".xml");
+                }
+            }); 
+
+            if (refFiles == null) {
+                throw new IllegalStateException("Folder " + corpusPath.getAbsolutePath()
+                        + " does not seem to contain training data. Please check");
+            }
+
+            System.out.println(refFiles.length + " xml files");
+
+            // the file for writing the training data
+            OutputStream os2 = null;
+            Writer writer2 = null;
+            if (trainingOutputPath != null) {
+                os2 = new FileOutputStream(trainingOutputPath);
+                writer2 = new OutputStreamWriter(os2, "UTF8");
+            }
+
+            // the file for writing the evaluation data
+            OutputStream os3 = null;
+            Writer writer3 = null;
+            if (evalOutputPath != null) {
+                os3 = new FileOutputStream(evalOutputPath);
+                writer3 = new OutputStreamWriter(os3, "UTF8");
+            }
+
+            // get a factory for SAX parser
+            SAXParserFactory spf = SAXParserFactory.newInstance();
+            spf.setValidating(false);
+            spf.setFeature("http://xml.org/sax/features/namespaces", false);
+            spf.setFeature("http://xml.org/sax/features/validation", false);
+
+            List<OffsetPosition> journalsPositions = null;
+            List<OffsetPosition> abbrevJournalsPositions = null;
+            List<OffsetPosition> conferencesPositions = null;
+            List<OffsetPosition> publishersPositions = null;
+
+            int n = 0;
+            nbFiles = refFiles.length;
+            for (; n < refFiles.length; n++) {
+                final File xmlfile = refFiles[n];
+                String name = xmlfile.getName();
+                System.out.println(name);
+
+                // Patent + NPL REF. textual data (the "all" model)
+                MarecSaxParser sax = new MarecSaxParser();
+                sax.patentReferences = true;
+                sax.nplReferences = true;
+                sax.setN(trainWindow);
+
+                // get a new instance of parser
+                final SAXParser p = spf.newSAXParser();
+                p.parse(xmlfile, sax);
+
+                nbNPLRef += sax.getNbNPLRef();
+                nbPatentRef += sax.getNbPatentRef();
+                if (sax.nbAllRef > maxRef) {
+                    maxRef = sax.nbAllRef;
+                }
+                if (sax.citations != null) {
+                    if (sax.citations.size() > previousSrCitations) {
+                        previousSrCitations = sax.citations.size();
+                        withSR++;
+                    }
+                }
+                journalsPositions = sax.journalsPositions;
+                abbrevJournalsPositions = sax.abbrevJournalsPositions;
+                conferencesPositions = sax.conferencesPositions;
+                publishersPositions = sax.publishersPositions;
+                //totalLength += sax.totalLength;
+
+                Writer writer = null;
+                if ( (writer2 == null) && (writer3 != null) )
+                        writer = writer3;
+                if ( (writer2 != null) && (writer3 == null) )
+                    writer = writer2;
+                else {      
+                    if (Math.random() <= splitRatio)
+                        writer= writer2;
+                    else 
+                        writer = writer3;
+                }
+
+                if (sax.accumulatedText != null) {
+                    String text = sax.accumulatedText.toString();
+                    // add features for patent+NPL
+                    addFeatures(text,
+                            writer,
+                            journalsPositions,
+                            abbrevJournalsPositions,
+                            conferencesPositions,
+                            publishersPositions);
+                    writer.write("\n \n");
+                }
+                
+            }
+
+            if (writer2 != null) {
+                writer2.close();
+                os2.close();
+            }
+
+            if (writer3 != null) {
+                writer3.close();
+                os3.close();
+            }
+
+            System.out.println("\nNumber of references: " + (nbNPLRef + nbPatentRef));
+            System.out.println("Number of patent references: " + nbPatentRef);
+            System.out.println("Number of NPL references: " + nbNPLRef);
+            //System.out.println("Number of search report citations: " + srCitations);
+            System.out.println("Average number of references: " +
+                    TextUtilities.formatTwoDecimals((double) (nbNPLRef + nbPatentRef) / nbFiles));
+            System.out.println("Max number of references in file: " + maxRef +"\n");
+
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+        return totalExamples;
     }
 
 
-    public void train() {
+/*    public void train() {
         createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
 //        String path = new File(new File("resources/dataset/patent/crfpp-templates/").getAbsolutePath()).getAbsolutePath();
 
@@ -83,8 +229,9 @@ public class PatentParserTrainer extends AbstractTrainer {
                 new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
 
         GenericTrainer trainer = TrainerFactory.getTrainer(model);
-        trainer.setEpsilon(epsilon);
-        trainer.setWindow(window);
+        trainer.setEpsilon(GrobidProperties.getEpsilon(model));
+        trainer.setWindow(GrobidProperties.getWindow(model));
+        trainer.setNbMaxIterations(GrobidProperties.getNbMaxIterations(model));
         //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
         //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
         File modelPath3 =
@@ -99,26 +246,24 @@ public class PatentParserTrainer extends AbstractTrainer {
         //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), modelPath2);
         renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), modelPath3);
     }
-
+*/
 
     /**
      * Create the set of training and evaluation sets from the annotated examples with
      * extraction of citations in the patent description body.
      *
-     * @param rank rank associated to the set for n-fold data generation
      * @param type type of data to be created, 0 is training data, 1 is evaluation data
      */
-    public void createDataSet(String setName, String rank, String corpusPath, String outputPath, int type) {
+    public void createDataSet(String setName, String corpusPath, String outputPath, int type) {
         int nbFiles = 0;
         int nbNPLRef = 0;
         int nbPatentRef = 0;
         int maxRef = 0;
         try {
-            // PATENT REF. textual data
             // we use a SAX parser on the patent XML files
             MarecSaxParser sax = new MarecSaxParser();
             sax.patentReferences = true;
-            sax.nplReferences = false;
+            sax.nplReferences = true;
             int srCitations = 0;
             int previousSrCitations = 0;
             int withSR = 0;
@@ -135,186 +280,7 @@ public class PatentParserTrainer extends AbstractTrainer {
                 // for the test set we enlarge the focus window to include all the document.
                 sax.setN(-1);
             }
-            // get a factory
-            /*SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setValidating(false);
-            spf.setFeature("http://xml.org/sax/features/namespaces", false);
-            spf.setFeature("http://xml.org/sax/features/validation", false);
 
-            LinkedList<File> fileList = new LinkedList<File>();
-            if (setName == null) {
-                fileList.add(new File(corpusPath));
-            } else if (rank == null) {
-                fileList.add(new File(corpusPath));
-            } else {
-                // n-fold evaluation
-                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
-            }
-            Writer writer = null;
-            if ((setName == null) || (setName.length() == 0)) {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/patent.train"), false), "UTF-8");
-            } else if (rank == null) {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/patent." + setName), false), "UTF-8");
-            } else {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + setName + "ing" + rank + "/patent." + setName), false), "UTF-8");
-            }
-
-            while (fileList.size() > 0) {
-                File file = fileList.removeFirst();
-                if (file.isDirectory()) {
-                    for (File subFile : file.listFiles())
-                        fileList.addLast(subFile);
-                } else {
-                    if (file.getName().endsWith(".xml")) {
-                        nbFiles++;
-                        System.out.println(file.getAbsolutePath());
-                        try {
-                            //get a new instance of parser
-                            SAXParser p = spf.newSAXParser();
-                            FileInputStream in = new FileInputStream(file);
-                            sax.setFileName(file.getName());
-                            p.parse(in, sax);
-                            //writer1.write("\n");
-                            nbPatentRef += sax.getNbPatentRef();
-                            if (sax.citations != null) {
-                                if (sax.citations.size() > previousSrCitations) {
-                                    previousSrCitations = sax.citations.size();
-                                    withSR++;
-                                }
-                            }
-                            journalsPositions = sax.journalsPositions;
-                            abbrevJournalsPositions = sax.abbrevJournalsPositions;
-                            conferencesPositions = sax.conferencesPositions;
-                            publishersPositions = sax.publishersPositions;
-
-                            if (sax.accumulatedText != null) {
-                                String text = sax.accumulatedText.toString();
-                                if (text.trim().length() > 0) {
-                                    // add features for the patent tokens
-                                    addFeatures(text,
-                                            writer,
-                                            journalsPositions,
-                                            abbrevJournalsPositions,
-                                            conferencesPositions,
-                                            publishersPositions);
-                                    writer.write("\n \n");
-                                }
-                            }
-                        } catch (Exception e) {
-                            throw new GrobidException("An exception occured while running Grobid.", e);
-                        }
-                    }
-                }
-            }*/
-
-            // NPL REF. textual data
-            /*sax = new MarecSaxParser();
-            sax.patentReferences = false;
-            sax.nplReferences = true;
-
-			if (type == 0) {
-				// training set
-				sax.setN(trainWindow);
-			}
-            else {
-				// for the test set we enlarge the focus window to include all the document.
-             	sax.setN(-1);
-           	}
-            // get a factory
-            spf = SAXParserFactory.newInstance();
-            spf.setValidating(false);
-            spf.setFeature("http://xml.org/sax/features/namespaces", false);
-            spf.setFeature("http://xml.org/sax/features/validation", false);
-
-            fileList = new LinkedList<File>();
-            if (setName == null) {
-                fileList.add(new File(corpusPath));
-            } else if (rank == null) {
-                fileList.add(new File(corpusPath));
-            } else {
-                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
-            }
-            if ((setName == null) || (setName.length() == 0)) {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/npl.train"), false), "UTF-8");
-            } else if (rank == null) {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + "/npl." + setName), false), "UTF-8");
-            } else {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator + 
-						"npl." + setName), false), "UTF-8");
-            }
-            while (fileList.size() > 0) {
-                File file = fileList.removeFirst();
-                if (file.isDirectory()) {
-                    for (File subFile : file.listFiles())
-                        fileList.addLast(subFile);
-                } else {
-                    if (file.getName().endsWith(".xml")) {
-                        //nbFiles++;
-                        //String text = Files.readFromFile(file,"UTF-8");
-
-                        try {
-                            //get a new instance of parser
-                            SAXParser p = spf.newSAXParser();
-                            FileInputStream in = new FileInputStream(file);
-                            sax.setFileName(file.toString());
-                            p.parse(in, sax);
-                            //writer2.write("\n");
-                            nbNPLRef += sax.getNbNPLRef();
-                            if (sax.nbAllRef > maxRef) {
-                                maxRef = sax.nbAllRef;
-                            }
-                            if (sax.citations != null) {
-                                if (sax.citations.size() > previousSrCitations) {
-                                    previousSrCitations = sax.citations.size();
-                                    withSR++;
-                                }
-                            }
-                            journalsPositions = sax.journalsPositions;
-                            abbrevJournalsPositions = sax.abbrevJournalsPositions;
-                            conferencesPositions = sax.conferencesPositions;
-                            publishersPositions = sax.publishersPositions;
-                            //totalLength += sax.totalLength;
-
-                            if (sax.accumulatedText != null) {
-                                String text = sax.accumulatedText.toString();
-                                // add features for NPL
-                                addFeatures(text,
-                                        writer,
-                                        journalsPositions,
-                                        abbrevJournalsPositions,
-                                        conferencesPositions,
-                                        publishersPositions);
-                                writer.write("\n");
-                            }
-
-                        } catch (Exception e) {
-                            throw new GrobidException("An exception occured while running Grobid.", e);
-                        }
-                    }
-                }
-            }
-
-            if (sax.citations != null)
-                srCitations += sax.citations.size();*/
-
-            // Patent + NPL REF. textual data (the "all" model)
-            sax = new MarecSaxParser();
-            sax.patentReferences = true;
-            sax.nplReferences = true;
-
-            if (type == 0) {
-                // training set
-                sax.setN(trainWindow);
-            } else {
-                // for the test set we enlarge the focus window to include all the document.
-                sax.setN(-1);
-            }
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -324,24 +290,19 @@ public class PatentParserTrainer extends AbstractTrainer {
             LinkedList<File> fileList = new LinkedList<File>();
             if (setName == null) {
                 fileList.add(new File(corpusPath));
-            } else if (rank == null) {
-                fileList.add(new File(corpusPath));
             } else {
-                fileList.add(new File(corpusPath + File.separator + setName + "ing" + rank + File.separator));
-            }
+                fileList.add(new File(corpusPath));
+            } 
 
             Writer writer = null;
             if ((setName == null) || (setName.length() == 0)) {
                 writer = new OutputStreamWriter(new FileOutputStream(
                         new File(outputPath + File.separator + "all.train"), false), "UTF-8");
-            } else if (rank == null) {
-                writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + File.separator + "all." + setName), false), "UTF-8");
             } else {
                 writer = new OutputStreamWriter(new FileOutputStream(
-                        new File(outputPath + File.separator + setName + "ing" + rank + File.separator +
-                                "all." + setName), false), "UTF-8");
-            }
+                        new File(outputPath + File.separator + "all." + setName), false), "UTF-8");
+            } 
+
             //int totalLength = 0;
             while (fileList.size() > 0) {
                 File file = fileList.removeFirst();
@@ -411,16 +372,6 @@ public class PatentParserTrainer extends AbstractTrainer {
                     TextUtilities.formatTwoDecimals((double) (nbNPLRef + nbPatentRef) / nbFiles));
             System.out.println("Max number of references in file: " + maxRef);
 
-            /*if ((setName == null) || (setName.length() == 0)) {
-                System.out.println("patent data set under: " + outputPath + "/patent.train");
-            } else {
-                System.out.println("patent data set under: " + outputPath + "/patent." + setName);
-            }
-            if ((setName == null) || (setName.length() == 0)) {
-                System.out.println("npl data set under: " + outputPath + "/npl.train");
-            } else {
-                System.out.println("npl data set under: " + outputPath + "/npl." + setName);
-            }*/
             if ((setName == null) || (setName.length() == 0)) {
                 System.out.println("common data set under: " + outputPath + "/all.train");
             } else {
@@ -577,12 +528,6 @@ public class PatentParserTrainer extends AbstractTrainer {
         }
     }
 
-    @Override
-    public String evaluate() {
-        //parameter 2 was in the former main() method of ParentEvaluation
-        return new PatentEvaluation().evaluate();
-    }
-
     /**
      * Command line execution.
      *
@@ -591,7 +536,9 @@ public class PatentParserTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new PatentParserTrainer());
+        Trainer trainer = new PatentParserTrainer();
+        AbstractTrainer.runTraining(trainer);
+        System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);
     }
 

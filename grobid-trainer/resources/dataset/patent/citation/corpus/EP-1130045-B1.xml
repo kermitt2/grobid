@@ -1,0 +1,1944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1130045-B1" country="EP" doc-number="1130045" kind="B1" date="20050817"><bibliographic-data><publication-reference fvid="23211199" ucid="EP-1130045-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130045</doc-number><kind>B1</kind><date>20050817</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01104153-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01104153</doc-number><kind>A</kind><date>20010221</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000052808-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000052808</doc-number><kind>A</kind><date>20000229</date></document-id></priority-claim><priority-claim ucid="JP-2000243951-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000243951</doc-number><kind>A</kind><date>20000811</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050210</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C08J   3/12        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08J   3/12        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C08J3/12+L101/14</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verfaren zur Herstellung eines wasserabsorbierenden Harzpulvers</invention-title><invention-title lang="EN" status="new">Process for producing a water-absorbent resin powder</invention-title><invention-title lang="FR" status="new">Procédé de préparation d'une poudre de résine absorbant l'eau</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>NIPPON CATALYTIC CHEM IND</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>NIPPON SHOKUBAI CO., LTD.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>HATSUDA TAKUMI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>FUJINO SHINICHI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>HARADA NOBUYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>ISHIZAKI KUNIHIKO</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KANTO TERUYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HATSUDA, TAKUMI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>FUJINO, SHINICHI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HARADA, NOBUYUKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>ISHIZAKI, KUNIHIKO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KANTO, TERUYUKI</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HATSUDA, TAKUMI</last-name><address><street>389-23, Uohashi, Amida-cho</street><city>Takasago-shi, Hyogo 676-0822</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>ISHIZAKI, KUNIHIKO</last-name><address><street>A6-101, 2-7, Aoyamadai</street><city>Suita-shi, Osaka 565-0875</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>FUJINO, SHINICHI</last-name><address><street>550-4, Hamada, Aboshi-ku</street><city>Himeji-shi, Hyogo 671-1242</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HARADA, NOBUYUKI</last-name><address><street>1-604, 4-41, Yamadahigashi</street><city>Suita-shi, Osaka 565-0821</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KANTO, TERUYUKI</last-name><address><street>Hamada-ryo, 931-11, Hamada, Aboshi-ku</street><city>Himeji-shi, Hyogo 671-1242</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Nippon Shokubai Co., Ltd.</last-name><address><street>1-1, Koraibashi 4-chome, Chuo-ku</street><city>Osaka-shi, Osaka 541-0043</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Glawe, Delfs, Moll &amp;amp; Partner</last-name><address><street>Patentanwälte Postfach 26 01 62</street><city>80058 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>BE</country><country>DE</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>The present invention provides a production process for a water-absorbent resin powder which is excellent in particle diameter distribution and properties, wherein the production process not only inhibits adhesion and aggregation in the production steps, but also is excellent in energy efficiency, drying efficiency, and productivity. The production process for a water-absorbent resin powder comprises the steps of: polymerizing an aqueous monomer solution containing a crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; and pulverizing the resultant dry polymer; wherein: the dry polymer resultant from the heat-drying step is forcibly cooled before or during the pulverization step; and the water-absorbent resin powder has an average particle diameter of 200 to 600  mu m after the pulverization step wherein the total ratio of particles having particle diameters of not larger than 150  mu m and particles having particle diameters of not smaller than 850  mu m in the water-absorbent resin powder is not more than 15 weight % of the water-absorbent resin powder.</p></abstract><abstract lang="EN" status="new"><p num="">The present invention provides a production process for a water-absorbent
+resin powder which is excellent in particle diameter
+distribution and properties, wherein the production process not only
+inhibits adhesion and aggregation in the production steps, but also is
+excellent in energy efficiency, drying efficiency, and productivity. The
+production process for a water-absorbent resin powder comprises the
+steps of: polymerizing an aqueous monomer solution containing a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel
+polymer; and pulverizing the resultant dry polymer; wherein: the dry
+polymer resultant from the heat-drying step is forcibly cooled before or
+during the pulverization step; and the water-absorbent resin powder has
+an average particle diameter of 200 to 600 µm after the pulverization step
+wherein the total ratio of particles having particle diameters of not larger
+than 150 µm and particles having particle diameters of not smaller than
+850 µm in the water-absorbent resin powder is not more than 15 weight
+% of the water-absorbent resin powder.</p></abstract><description lang="EN" status="new"><heading><b>BACKGROUND OF THE INVENTION</b></heading><heading><u style="single">A. TECHNICAL FIELD</u></heading><p num="0001">The present invention relates to a production process for a water-absorbent resin powder.
+More specifically, the present invention
+relates to a production process for a water-absorbent resin powder which
+is excellent in particle diameter distribution and properties, wherein the
+production process not only inhibits adhesion and aggregation in the
+production steps, but also is excellent in energy efficiency, drying
+efficiency, and productivity.</p><p num="0002">Furthermore, the present invention relates to a process for obtaining
+a water-absorbent resin powder as modified by adding an aqueous liquid
+to the resultant powder, which process is to more improve properties of
+the water-absorbent resin powder by bettering the uniform mixability of
+the aqueous liquid even if a special mixer or organic solvent is not
+especially used.</p><heading><u style="single">B. BACKGROUND ART</u></heading><p num="0003">In recent years, water-absorbent resins are widely used as
+components of sanitary materials, such as disposable diapers, sanitary
+napkins and incontinent pads, for the purpose of causing the water-absorbent
+resins to absorb much water. In addition, the water-absorbent
+resins are widely used not only for the sanitary materials, but also for the
+purpose of absorbing or retaining water, like water-retaining agents for
+soil and drip sheets for foods.</p><p num="0004">As to the above water-absorbent resins, the following are known as 
+their examples: partially-neutralized and crosslinked poly(acrylic acids);
+hydrolyzed copolymers of starch-acrylonitrile; neutralized graft polymers
+of starch-acrylic acid; saponified copolymers of vinyl acetate-acrylic acid
+ester; hydrolyzed copolymers of acrylonitrile or acrylamide, or crosslinked
+polymers of these hydrolyzed copolymers; crosslinked polymers of
+carboxymethyl cellulose; crosslinked copolymers of 2-acrylamido-2-methylpropanesulfonic
+acid (AMPS); crosslinked poly(ethylene oxide);
+crosslinked polyallylamine; and crosslinked polyethylenimine. Many of
+them are used as powders.</p><p num="0005">The mainstream of production processes for these water-absorbent
+resins is a process comprising the steps of: polymerizing an aqueous
+monomer solution (containing a crosslinking agent, if necessary); and
+drying the resultant crosslinked hydrogel polymer; and further, if
+necessary, pulverizing the resultant dry polymer; thus obtaining a water-absorbent
+resin as a powder. However, because of high absorbency,
+tackiness, and adhesion, and inferior heat resistance, the crosslinked
+hydrogel polymer of the water-absorbent resin has disadvantages in that:
+drying and pulverizing thereafter are very difficult, the productivity is
+low, and the properties of the resultant water-absorbent resin and the
+energy efficiency are very bad.</p><p num="0006">Known examples of methods for drying such a crosslinked hydrogel
+polymer of the water-absorbent resin include: drying with a drum dryer
+(<ref type="patent">JP-A-053165/1979</ref>); a method in which a dry powdery acrylic acid polymer
+and a hydrogel are mixed together and then dried while being stirred (<ref type="patent">JP-A-117551/1982</ref>);
+azeotropic dehydration (<ref type="patent">JP-A-198714/1982</ref>); drying at a
+specific dew point (<ref type="patent">JP-A-026604/1989</ref>/<ref type="patent">USP 4,920,202</ref>); freeze-drying (<ref type="patent">JP-A-304127/1989</ref>,
+<ref type="patent">JP-A-304128/1989</ref>); a method which involves stir-drying in a 
+cylindrical dryer (<ref type="patent">JP-A-240112/1990</ref>/<ref type="patent">USP 5,005,771</ref>); a method in which a
+gel is extruded through specific apertures and then dried (<ref type="patent">USP 5,275,773</ref>);
+microwave drying (<ref type="patent">JP-A-209010/1993</ref>/<ref type="patent">USP 5,075,344</ref>); a method which
+involves the use of a specific gel cutter followed by hot-wind drying (<ref type="patent">JP-A-230124/1993</ref>);
+a method which involves hot-wind drying while
+measuring the differential pressure (<ref type="patent">JP-A-073518/1996</ref>); a method which
+involves stir-drying after adding a surfactant (<ref type="patent">JP-A-134134/1996</ref>); and a
+method which involves static drying, and then pulverizing, and then
+stirring or fluidize-drying (<ref type="patent">JP-A-240914/1999</ref>/<ref type="patent">EP 0926162</ref>).</p><p num="0007">In addition, a drying method in which the crosslinked hydrogel
+polymer is dried in a state laminated on a punching metal or a metal
+gauze is known. However, after being dried, the resultant dry polymer
+displays bad releasability to adhere to or clog the metal gauze or the
+apertures, therefore particularly the hot-wind drying etc. have problems
+of much deterioration of the drying efficiency involved by deterioration
+of permeability. Thus, a method is also known in which method a
+special conveyer having pins is used for the purpose of inhibiting such
+adhesion and clogging (<ref type="patent">JP-A-270070/1995</ref>/<ref type="patent">DE 19511769</ref>).</p><p num="0008">Furthermore, besides properties (such as water absorption capacity,
+water-extractable content, and liquid permeability), the particle diameter
+distribution is important for the water-absorbent resin, and the
+importance of water-absorbent resins having specific narrow particle
+diameter distributions is also known (<ref type="patent">JP-A-132802/1989</ref>/<ref type="patent">USP 5,061,259</ref>, <ref type="patent">JP-A-196802/1990</ref>/<ref type="patent">USP
+5,244,735</ref>, <ref type="patent">JP-A-191604/1990</ref>/<ref type="patent">USP 4,973,632</ref>, <ref type="patent">JP-A-507564/1994</ref>/<ref type="patent">USP
+5,419,956</ref>, and <ref type="patent">EP 0629411</ref>). In addition, a water-absorbent
+resin having a plurality of particle diameter distributions is also
+known (<ref type="patent">EP 0845272</ref> and <ref type="patent">JP-A-130978/1999</ref>). </p><p num="0009">Thus, efficient classification is demanded as a classification method
+for such an aimed particle diameter adjustment, and the following
+methods are also known as methods for classifying water-absorbent resins
+after drying them: a method which involves the use of a heated or heat-retained
+sieve (<ref type="patent">JP-A-202187/1998</ref>/<ref type="patent">EP 0855232</ref>); and a method which
+involves the use of a classifying gauze as coated with such as Teflon (<ref type="patent">JP-A-156299/1999</ref>).
+Also known is a method in which an undried product
+from the drying step is classified before or during the pulverization step
+(<ref type="patent">JP-A-292919/1989</ref>/<ref type="patent">EP 0948997</ref>).</p><p num="0010">However, even in these methods, because of high absorbency and
+tackiness and inferior heat resistance, the water-absorbent resin and its
+crosslinked hydrogel polymer have disadvantages in that: drying and
+pulverizing thereafter are very difficult, and the deterioration of
+properties and particle diameter distribution of the resultant water-absorbent
+resin are seen, and further, the energy efficiency and the
+productivity are very bad. In addition, there are problems in that
+aggregation of powder in the production steps is seen also after the
+pulverization or classification step, so that the production efficiency and
+the quality are deteriorated.</p><p num="0011">Furthermore, there is a known method in which the particle
+diameter distribution of the water-absorbent resin powder or its
+absorption properties under a load are improved by adding water only or
+an aqueous liquid containing an additive to the resultant polymer
+powder. Such a method is often used for such as granulation (<ref type="patent">USP
+5,369,148</ref>), surface-crosslinking (<ref type="patent">USP 5,409,771</ref>, <ref type="patent">USP 5,422,405</ref>, and <ref type="patent">USP
+5,597,873</ref>), and decrease of residual epoxy compounds (<ref type="patent">USP 5,981,070</ref>).</p><p num="0012">However, the water-absorbent resin absorbs water in a moment and 
+thereby displays tackiness. Therefore, hitherto, the improvement of
+properties of the water-absorbent resin is insufficient because of
+nonuniform mixing of the aqueous liquid, and further, according to
+circumstance, continuous operation itself might be difficult because the
+water-absorbent resin, as aggregated due to the nonuniform mixing,
+adheres to the mixer. In addition, a polyhydric alcohol is favorable as the
+crosslinking agent or a solvent therefor also in respect to properties and
+safety, but it is difficult to uniformly mix the water-absorbent resin with
+aqueous liquids, particularly, an aqueous polyhydric alcohol solution
+because of its high hydrophilicity and viscosity.</p><p num="0013">Thus, there are known arts in which, when modifying a water-absorbent
+resin powder by adding thereto an aqueous liquid, a special
+mixer is used (<ref type="patent">EP 0450923</ref>, <ref type="patent">EP 0812873</ref>, etc.), or an inorganic powder is
+used (<ref type="patent">USP 4,587,308</ref>), or an organic solvent is also used by adding it into
+an aqueous liquid (<ref type="patent">USP 4,734,478</ref>). However, the use of organic solvents,
+particularly, volatile ones, involves problems of causing the deterioration
+of properties in addition to problems of cost, environment, and safety.
+Furthermore, there is a known art in which, when adding an aqueous
+liquid to a water-absorbent resin, properties (AUL/Absorbency under
+Load) of the resin are controlled in a specific range (<ref type="patent">WO 98/49221</ref>).
+However, in such a method, the water-absorbent resin powder to which
+this method is applied is also very much limited, and its production is
+also difficult.</p><heading><b>SUMMARY OF THE INVENTION</b></heading><heading><u style="single">A. OBJECTS OF THE INVENTION</u></heading><p num="0014">The present invention has been made in consideration of the above-mentioned
+prior art problems and, from the above-mentioned present 
+circumstances, an object of the present invention is to provide a
+production process which can produce a water-absorbent resin powder
+having a narrow particle diameter distribution and high properties by
+efficiently drying or pulverizing a crosslinked hydrogel polymer and
+making a particle diameter adjustment without thermal deterioration,
+and which inhibits adhesion and aggregation of the water-absorbent resin
+powder in the production steps, and displays good energy efficiency and
+high productivity.</p><p num="0015">Furthermore, another object of the present invention is to more
+improve properties of the water-absorbent resin powder by adding a
+uniform aqueous liquid (particular, aqueous crosslinking agent solution)
+by more improving the mixability even if a special mixer or organic
+solvent is not used.</p><heading><u style="single">B. DISCLOSURE OF THE INVENTION</u></heading><p num="0016">The present inventors diligently studied to achieve the above-mentioned
+objects. As a result, they have completed the present
+invention by finding that a production process for a water-absorbent resin
+powder provides the following good results that: the energy efficiency is
+good; the aggregation of the powder does not occur in the production
+steps; the thermal deterioration and the adhesion are very little in the
+drying step; and the pulverization step following the drying step is also
+extremely efficiently done; wherein the production process comprises the
+steps of: polymerizing an aqueous monomer solution containing a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel
+polymer; and pulverizing the resultant dry polymer; wherein:
+<sl><li>the dry polymer resultant from the heat-drying step is cooled before
+or during the pulverization step; and </li><li>the water-absorbent resin powder has an average particle diameter of
+200 to 600 µm after the pulverization step wherein the total ratio of
+particles having particle diameters of not larger than 150 µm and particles
+having particle diameters of not smaller than 850 µm in the water-absorbent
+resin powder is not more than 15 weight % of the water-absorbent
+resin powder.</li></sl></p><p num="0017">In addition, the present inventors have completed the present
+invention by further finding that if the water-absorbent resin powder is
+cooled and further if its bulk density is adjusted, then its mixability with
+aqueous liquids (particularly, aqueous crosslinking agent solution) can be
+improved to thereby improve the continuous operability and the
+properties. </p><p num="0018">These and other objects and the advantages of the present invention
+will be more fully apparent from the following detailed disclosure.</p><heading><b>BRIEF DESCRIPTION OF THE DRAWING</b></heading><p num="0019"><sl><li>Fig. 1 is a flowchart which illustrating a representative example of
+the present invention production process for a water-absorbent resin
+powder. The present invention is suitable for a continuous process
+including the steps of polymerization, drying, and pulverization, and one
+example thereof is shown.</li></sl></p><heading><b>DETAILED DESCRIPTION OF THE INVENTION</b></heading><p num="0020">Hereinafter, one of modes for carrying out the present invention is
+explained in detail.</p><p num="0021">The production process for a water-absorbent resin powder,
+according to the present invention, is a production process for a water-absorbent
+resin powder which comprises the steps of: polymerizing an
+aqueous monomer solution containing a crosslinking agent; heat-drying
+the resultant crosslinked hydrogel polymer; and pulverizing the resultant
+dry polymer; wherein:
+<sl><li>the dry polymer resultant from the heat-drying step is cooled before
+or during the pulverization step; and</li><li>the water-absorbent resin powder has an average particle diameter of
+200 to 600 µm after the pulverization step wherein the total ratio of
+particles having particle diameters of not larger than 150 µm and particles
+having particle diameters of not smaller than 850 µm in the water-absorbent
+resin powder is not more than 15 weight % of the water-absorbent
+resin powder.</li></sl></p><p num="0022">In the first place, hereinafter, a production process for the
+crosslinked hydrogel polymer in the present invention is explained.</p><p num="0023">The water-absorbent resin in the present invention means a
+crosslinked polymer which can absorb 3 to 1,000 times, preferably 5 to
+1,000 times, more preferably 10 to 800 times, still more preferably 100 to
+700 times, as large a quantity of ion-exchanged water as its own weight
+without load when being swollen to saturation, thereby forming a water-insoluble
+swollen hydrogel. Incidentally, the term &quot;water-insoluble&quot; in
+the present invention usually means that the water-extractable content in
+the water-absorbent resin is not more than 40 weight %, preferably not 
+more than 20 weight %, more preferably not more than 15 weight %,
+particularly preferably not more than 10 weight %, most preferably not
+more than 5 weight %, of the water-absorbent resin. Incidentally, the
+methods for measuring these properties will be described in the below-mentioned
+&quot;DETAILED DESCRIPTION OF THE PREFERRED
+EMBODIMENTS&quot; portion hereof. In the case where the water-extractable
+content is much, there are disadvantages not only in that the properties
+(e.g. absorption capacity under load, liquid permeation quantity under
+load) are deteriorated, but also in that it is difficult to uniformly add the
+aqueous liquid to the water-absorbent resin powder.</p><p num="0024">The crosslinked hydrogel polymer, as used in the present invention
+production process for the water-absorbent resin powder, is a polymer
+obtained by polymerizing an aqueous monomer solution containing a
+crosslinking agent. Examples of this crosslinked hydrogel polymer
+include crosslinked polymers which are water-absorbent and cationic,
+anionic, or nonionic, and they may be used either alone respectively or in
+combinations with each other. However, preferably for most displaying
+the effects of the present invention, the crosslinked hydrogel polymer
+comprises a major proportion of anionic crosslinked polymer as an
+essential component, and more preferably, its functional groups
+comprises a major proportion of carboxyl groups.</p><p num="0025">In the present invention, from the viewpoint of obtaining great
+effects, the anionic crosslinked polymer is preferably a crosslinked
+hydrogel polymer obtained by using acrylic acid (salt) as an acid-group-containing
+unsaturated monomer (salt), and is more preferably a
+crosslinked hydrogel polymer obtained by polymerizing acrylic acid (salt)
+as neutralized in a ratio of 0 to 90 mol %, still more preferably 0 to 80 mol 
+%, and particularly still more preferably 0 to 10 mol %. In other words,
+the process according to the present invention is preferably applied to
+crosslinked poly(acrylic acids), particularly, unneutralized or low-neutralized
+ones, because their properties are greatly deteriorated in the
+drying or pulverizing step of conventional processes.</p><p num="0026">In addition, the above monomer comprises a major proportion of
+acrylic acid (salt) as stated above, and may, if necessary, further comprise
+monomers other than this acrylic acid (salt), namely, other monomers
+copolymerizable therewith, and further, the water-absorbent resin may be
+obtained from the monomers other than acrylic acid.</p><p num="0027">The usable monomer other than acrylic acid is not especially
+limited, but examples thereof include: acid-group-containing unsaturated
+monomers, such as methacrylic acid, maleic acid, crotonic acid, sorbic
+acid, itaconic acid, cinnamic acid, maleic anhydride, vinylsulfonic acid,
+allylsulfonic acid, vinyltoluenesulfonic acid, styrenesulfonic acid, 2-(meth)acrylamido-2-methylpropanesulfonic
+acid, 2-(meth)acryloylethanesulfonic
+acid, 2-(meth)acryloylpropanesulfonic acid,
+and 2-hydroxyethyl (meth)acryloylphosphate, and their salts; and
+nonionic unsaturated monomers containing hydrophilic groups, such as
+acrylamide, methacrylamide, N-ethyl(meth)acrylamide, N,N-dimethyl(meth)acrylamide,
+2-hydroxyethyl (meth)acrylate, 2-hydroxypropyl
+(meth)acrylate, methoxypolyethylene glycol
+(meth)acrylate, polyethylene glycol mono(meth)acrylate, vinylpyridine,
+N-vinylpyrrolidone, N-acryloylpiperidine, and N-acryloylpyrrolidine.
+These other monomers may be used either alone respectively or fitly in
+combinations with each other. When using these other unsaturated
+monomers, their content may be set at not more than 50 mol %, 
+preferably not more than 30 mol %, of the monomers including acrylic
+acid.</p><p num="0028">When using the acid-group-containing or basic-group-containing
+monomer in the present invention, the acid or basic functional group of
+the monomer or polymer may be neutralized. The neutralizing agent as
+used in the present invention is not especially limited, but conventional
+inorganic or organic base or acid can be used for the monomer or
+polymer.</p><p num="0029">For example, when using the acid-group-containing monomer in
+the present invention, specific examples of the base which is used as the
+neutralizing agent for the monomer or its polymer include: inorganic
+bases, such as sodium hydroxide, potassium hydroxide, lithium
+hydroxide, lithium carbonate, ammonium hydroxide, sodium carbonate,
+potassium carbonate, ammonium carbonate, sodium hydrogencarbonate,
+potassium hydrogencarbonate, and ammonium hydrogencarbonate; and
+organic bases, such as ethanolamine, diethanolamine, triethanolamine,
+polyethylenimine, polyallylamine, (poly)lysine, and (poly)arginine. In
+addition, when using the basic-group-containing monomer in the
+present invention, inorganic or organic acids similarly may fitly be
+selected as the neutralizing agents.</p><p num="0030">Incidentally, when using a high-molecular neutralizing agent (for
+example, polyamine), the crosslinking may be carried out by this
+neutralizing agent, but, of the above neutralizing agents, alkaline metal
+salts, particularly, lithium or sodium salts, are preferably used, and 50 to
+90 mol %, preferably 60 to 80 mol %, of the acid groups in the water-absorbent
+resin are neutralized. The final neutralization ratio of the
+water-absorbent resin as obtained in the present invention is preferably in 
+the above range.</p><p num="0031">In addition, the neutralization may be carried out by using the above
+base or acid in the form of aqueous solution, dispersion, or gel, or by
+adding the base or acid as it is a solid, in other words, by what is called dry
+blending (powder blending). In addition, the neutralization may be
+carried out upon the monomer, or upon the crosslinked hydrogel
+polymer before drying, or upon the dry polymer after drying, or upon a
+pulverized or classified product thereof, or these neutralizations can be
+used jointly with each other. Furthermore, the neutralization may be
+carried out by allowing the acid and the base to entirely react with each
+other, or by allowing the acid and the base to only partially react with each
+other by such as dry blending, thus obtaining a water-absorbent resin
+composition which is a mixture of the above acid and the above base.</p><p num="0032">In addition, when carrying out the neutralization in the present
+invention, the post-neutralization of the crosslinked hydrogel polymer or
+its dry polymer, particularly, the post-neutralization of the dry polymer, is
+one of favorable methods in the present invention. Specifically, in the
+present invention, because an unneutralized or low-neutralized
+crosslinked poly(acrylic acid) can efficiently be dried (powdered) without
+deteriorating its properties, it is possible to carry out the post-neutralization
+of the resultant crosslinked poly(acrylic acid) powder.
+Accordingly, there are advantages in that a water-absorbent resin having
+higher properties can be obtained by the method in which the crosslinked
+poly(acrylic acid) powder is post-neutralized.</p><p num="0033">In addition, when obtaining the above-mentioned crosslinked
+hydrogel polymer, the means therefor may be such as radical crosslinking
+or self crosslinking if the resultant polymer is water-insoluble. However, 
+usually, a crosslinked structure is introduced into the polymer by using
+an internal-crosslinking agent. This internal-crosslinking agent may be a
+compound having at least two polymerizable unsaturated groups and/or
+reactive groups per molecule, or a compound having at least two
+substituents copolymerizable and/or reactable with the monomer per
+molecule. In addition, when using the compound having at least two
+reactable substituents per molecule, the crosslinking agent may
+uniformly be added to a water-soluble or water-insoluble polymer gel
+resultant from the polymerization, thereby post-crosslinking the inside of
+the polymer gel.</p><p num="0034">Specific examples of the above internal-crosslinking agent include
+N,N'-methylenebis(meth)acrylamide, (poly)ethylene glycol
+di(meth)acrylate, (poly)propylene glycol di(meth)acrylate,
+trimethylolpropane tri(meth)acrylate, trimethylolpropane
+di(meth)acrylate, glycerol tri(meth)acrylate, glycerol acrylate methacrylate,
+ethylene-oxide-modified trimethylolpropane tri(meth)acrylate,
+pentaerythritol tetra(meth)acrylate, dipentaerythritol hexa(meth)acrylate,
+triallyl cyanurate, triallyl isocyanurate, triallyl phosphate, triallylamine,
+poly(meth)allyloxyalkanes, (poly)ethylene glycol diglycidyl ether, glycerol
+diglycidyl ether, ethylene glycol, polyethylene glycol, propylene glycol,
+glycerol, pentaerythritol, ethylenediamine, polyethylenimine, and
+glycidyl (meth)acrylate. However, the internal-crosslinking agent is not
+especially limited.</p><p num="0035">These internal-crosslinking agents may be used either alone
+respectively or in the form mixed with or separately from each other. Of
+the above-exemplified internal-crosslinking agents, those which have at
+least two polymerizable unsaturated groups per molecule are preferably 
+used during the polymerization because they can give a water-absorbent
+resin of which the properties are more improved.</p><p num="0036">The amount of the internal-crosslinking agent, as used, depends
+upon the kind of the crosslinking agent or upon the aimed crosslinking
+density, but is preferably in the range of 0.005 to 3 mol %, more preferably
+0.01 to 1.5 mol %, still more preferably 0.05 to 1 mol %, of the above
+monomer. In the case where the amount of the above internal-crosslinking
+agent as used is smaller than 0.005 mol % or larger than 3
+mol %, a water-absorbent resin with desired properties might not be
+obtained.</p><p num="0037">Incidentally, when carrying out the polymerization, the following
+materials may be added to the reaction system: hydrophilic polymers such
+as starch, its derivatives, cellulose, its derivatives, poly(vinyl alcohol),
+poly(acrylic acid) (or its salts), and crosslinked poly(acrylic acid) (or its
+salts) (the amount of these materials as added is preferably in the range of
+0 to 40 parts by weight, more preferably 0 to 10 parts by weight, per 100
+parts by weight of the monomer); and chain transfer agents (e.g.
+hypophosphorous acid (or its salts)), chelating agents, and foaming agents
+(e.g. carbonate salts) (the amount of these materials as added is preferably
+in the range of 0 to 5 parts by weight, more preferably 0 to 1 parts by
+weight, per 100 parts by weight of the monomer).</p><p num="0038">The method for polymerizing the above monomer is not especially
+limited. For example, conventional methods, such as aqueous solution
+polymerization, reversed-phase suspension polymerization, bulk
+polymerization and precipitation polymerization, are available. Of these
+polymerization methods, methods in which an aqueous solution of the
+monomer is prepared and then polymerized, namely, the aqueous 
+solution polymerization and the reversed-phase suspension
+polymerization, are preferable in the present invention in consideration
+of the easiness of the polymerization reaction control and the
+performance of the resultant water-absorbent resin.</p><p num="0039">Incidentally, the reversed-phase suspension polymerization is a
+polymerization method which comprises the step of suspending an
+aqueous monomer solution into a hydrophobic organic solvent.
+Examples thereof are disclosed in US patents such as <ref type="patent">USP 4,093,776</ref>, <ref type="patent">USP
+4,367,323</ref>, <ref type="patent">USP 4,446,261</ref>, <ref type="patent">USP 4,683,274</ref>, and <ref type="patent">USP 5,244,735</ref>. The aqueous
+solution polymerization is a polymerization method which comprises
+the step of polymerizing an aqueous monomer solution without using a
+dispersing solvent. Examples thereof are disclosed in US patents such as
+<ref type="patent">USP 4,625,001</ref>, <ref type="patent">USP 4,873,299</ref>, <ref type="patent">USP 4,286,082</ref>, <ref type="patent">USP 4,973,632</ref>, <ref type="patent">USP 4,985,518</ref>,
+<ref type="patent">USP 5,124,416</ref>, <ref type="patent">USP 5,250,640</ref>, <ref type="patent">USP 5,264,495</ref>, <ref type="patent">USP 5,145,906</ref>, and <ref type="patent">USP
+5,380,808</ref>, and European patents such as <ref type="patent">EP 0811636</ref>, <ref type="patent">EP 0955086</ref>, and <ref type="patent">EP
+0922717</ref>. Including the above methods, the polymerization method is not
+especially limited in the present invention, but the present invention is
+particularly favorably utilized for the aqueous solution polymerization in
+which drying and pulverization are conventionally difficult.</p><p num="0040">When adopting the aqueous solution polymerization and the
+reversed-phase suspension polymerization as the polymerization
+methods, the concentration of the monomer component, that is, the ratio
+of the monomer in the aqueous solution, is not especially limited, but is
+preferably in the range of 10 to 70 weight %, more preferably 15 to 60
+weight %, still more preferably 20 to 50 weight %, particularly preferably
+30 to 45 weight %, in consideration of properties.</p><p num="0041">In addition, the reaction conditions such as reaction temperature 
+and reaction time may be set fitly for the monomer as used, and are not
+especially limited. However, the polymerization is usually carried out in
+the range of 0 °C to the boiling point, preferably 10 to 110 °C, more
+preferably 15 to 100 °C (lowest temperature to highest temperature, or
+initiation temperature to peak temperature), and such polymerization is
+preferably carried out under an atmosphere of an inert gas such as
+nitrogen. Furthermore, the atmosphere during the polymerization may
+be put at a reduced or increased pressure, but usually the polymerization
+is carried out under normal pressure.</p><p num="0042">Usable for initiating the polymerization are, for example, radical
+polymerization initiators, such as potassium persulfate, ammonium
+persulfate, sodium persulfate, t-butyl hydroperoxide, hydrogen peroxide,
+and 2,2'-azobis(2-amidinopropane) dihydrochloride, or active energy rays,
+such as ultraviolet rays (using an ultraviolet polymerization initiator, if
+necessary) and electron beam. These may be used in combinations with
+each other.</p><p num="0043">In addition, when using the above oxidizable radical polymerization
+initiators, they may be combined with reducing agents, such as sodium
+sulfite, sodium hydrogensulfite, ferrous sulfate, and L-ascorbic acid,
+thereby carrying out redox polymerization. The amount of these
+polymerization initiators as used is preferably in the range of 0.001 to 2
+mol %, more preferably 0.01 to 0.5 mol %. Incidentally, the
+polymerization initiator may usually be added by dissolving or dispersing
+it into a solvent such as water.</p><p num="0044">The crosslinked hydrogel polymer as obtained by the above
+polymerization is pulverized, if necessary, and then dried. As to this
+crosslinked hydrogel polymer which gets subjected to the drying step, in 
+the present invention, a particulate one (its average particle diameter is,
+for example, not larger than 2 cm, preferably not larger than 1 cm, more
+preferably not larger than 5 mm) is preferable also for the resulting
+properties. As to the pulverization method for forming the crosslinked
+hydrogel polymer into particles, in the present invention, the
+pulverization may be carried out at the same time as the polymerization
+by use of a kneader, or separately after the polymerization, or the
+pulverization during the polymerization may be used jointly with the
+pulverization after the polymerization. Incidentally, when the
+crosslinked hydrogel polymer is not dried in a particulate state, for
+example, when the crosslinked hydrogel polymer is dried in a filmy state,
+the resultant properties or particle diameters might be inferior.</p><p num="0045">As to the particle diameter of the crosslinked hydrogel polymer
+before drying, the weight-average particle diameter is preferably in the
+range of 45 to 4,000 µm, more preferably 50 to 2,000 µm, still more
+preferably 100 to 1,500 µm, yet still more preferably 200 to 1,000 µm, in
+consideration of the drying efficiency and the properties. Examples of
+apparatuses suitable for such pulverization include a kneader, a vertically
+cutting type slitter having cutter blades, a horizontally cutting type slitter
+having cutter blades, a cutter type pulverizer having rotary blades, and a
+meat chopper having a predetermined aperture diameter. Incidentally,
+in the case where the weight-average particle diameter of the crosslinked
+hydrogel polymer deviates from the above range, there is a possibility
+such that the water absorption capacity of the resultant water-absorbent
+resin powder might be low, or that its water-extractable content might be
+high.</p><p num="0046">The crosslinked hydrogel polymer as obtained in the above way 
+needs to be heat-dried. Incidentally, the term &quot;drying&quot; in the present
+invention means putting the crosslinked hydrogel polymer in a solid
+state with a solid content of not less than 80 weight %, preferably not less
+than 85 weight %, more preferably not less than 90 weight %, particularly
+preferably not less than 93 weight %.</p><p num="0047">In addition, such a drying step in the present invention does not
+need to give a dry polymer having a solid content of 100 weight % (water
+content: 0), and the crosslinked hydrogel polymer is preferably dried to
+not more than 99 weight %, more preferably not more than 98 weight %,
+still more preferably not more than 97 weight %, most preferably into the
+range of 97 to 93 weight %, in terms of solid content.</p><p num="0048">That is to say, when the solid content is high after the drying step, it
+is easy to improve properties by surface-crosslinking, and further, the
+powder aggregates little in the subsequent production steps, therefore
+handling in a powdery state is easy. However, not only might much time
+be needed for drying, but also the properties might be deteriorated by the
+increase of fine powders in the pulverizing step or subsequent steps or
+when being used, or by the drying for a long time. However, the present
+invention, which involves the forcible cooling step after the drying step,
+is advantageous in that: it is not necessary to, conventionally, excessively
+increase the solid content of the dry polymer or water-absorbent resin
+powder in order to inhibit the powder from aggregating in the production
+steps and to pulverize the dry polymer, therefore the drying time can be
+shortened and the properties can be improved.</p><p num="0049">The heat-drying method as used in the present invention is not
+especially limited. Examples thereof include drying methods such as hot-wind
+drying, thin-film drying with such as a drum dryer, reduced-pressure 
+drying, stir-drying, and fluidized-bed drying. These drying
+methods may be used either alone respectively or in combinations with
+each other, and it doesn't especially matter whether the drying type is a
+continuous type or batch type. Of the above drying methods, the hot-wind
+drying, particularly, continuous hot-wind drying, is preferably used
+in consideration of the properties as well as the drying efficiency in the
+present invention and, for example, the continuous hot-wind drying may
+be carried out by static drying on a belt.</p><p num="0050">From the viewpoint of the drying efficiency, the above hot-wind
+drying may be carried out by laminating the particulate crosslinked
+hydrogel polymer onto a metal gauze and/or a punching metal with
+apertures or slits and then passing a hot wind through spaces between the
+laminated particles in a vertical or horizontal direction, preferably in a
+vertical direction, of the gel. As to the metal gauze as used or the
+aperture diameter, for a example, the aperture or metal gauze may have
+aeration holes of the diameter of about 0.1 to about 5 mm, preferably
+about 0.2 to about 2 mm. In addition, as to the lamination of the gel onto
+the metal gauze or the punching metal, the particulate crosslinked
+hydrogel polymer may be laminated into a definite thickness of 1 to 20
+cm, preferably 1.5 to 10 cm, more preferably 2 to 8 cm, in consideration of
+the properties resultant from the drying step.</p><p num="0051">When drying the above crosslinked hydrogel polymer, the drying
+temperature may be set usually at not lower than about 100 °C, preferably
+in the range of about 110 to about 230 °C, more preferably about 130 to
+about 200 °C, particularly preferably about 150 to about 190 °C, in
+consideration of the properties and the productivity. Incidentally, the
+drying temperature is determined by the material temperature or the 
+temperature of the heat medium (e.g. hot wind), but, preferably, is
+determined by the temperature of the heat medium. In addition, the
+drying temperature may be kept constant during the drying step, or may
+be changed fitly in the above temperature range on a way of the drying
+step. Furthermore, when the hot-wind drying is carried out, the dew
+point of the hot wind is preferably in the range of 40 to 100 °C, more
+preferably 50 to 90 °C, still more preferably 60 to 85 °C, in consideration of
+the properties and the energy efficiency.</p><p num="0052">The dry polymer as obtained in the above way is necessarily forcibly
+cooled, and thereafter or simultaneously therewith pulverized. In the
+present invention, the forcible cooling and the pulverization may be
+carried out simultaneously with each other, but, preferably, the
+pulverization is carried out after the forcible cooling. In the present
+invention, the term &quot;forcible cooling&quot; represents a procedure or step for
+cooling the dry polymer externally and intentionally. In addition, the
+term &quot;pulverization&quot; represents a mechanical procedure for forming the
+resultant dry polymer or its aggregate (block-shaped material) into a fluid
+powder. Furthermore, the term &quot;disintegration&quot; represents a mechanical
+procedure which does not lead to physical destruction of the dry polymer
+or its particle diameter reduction, but lightly disintegrates the aggregation
+into several millimeters to tens of millimeters, and.</p><p num="0053">Incidentally, it is also herein mentioned that the particulate
+crosslinked hydrogel polymer as dried in the laminated state easily
+becomes a block-shaped dry material by losing the fluidity due to
+aggregation between particles after being dried. Such a block-shaped
+material is an aggregate of particles of the dry polymer and therefore has
+continuous spaces and gas permeability through the blocks, but has 
+nonfluidity due to aggregation and therefore needs the pulverization
+(disintegration) step.</p><p num="0054">As to the method for carrying out the forcible cooling in the present
+invention, the dry polymer may be cooled to a predetermined
+temperature by intentionally inserting the cooling step between the
+drying step and the pulverizing step. Examples of the forcible cooling
+method include: (1) a method in which the dry polymer is placed into a
+vessel (hopper) or cylinder having a cooled heat transfer surface and, if
+necessary, involving agitation, and then forcibly cooled; (2) a method in
+which the dry polymer is sufficiently cooled by heat radiation therefrom
+on a continuous belt (which has been used in the drying step); (3) a
+method in which the dry polymer is forcibly cooled by passing a cold
+wind through it; (4) a method in which the dry polymer is forcibly cooled
+simultaneously with transportation using a cold air; and (5) a method in
+which the dry polymer is forcibly cooled using a low-temperature screw
+conveyer having a cooled heat transfer surface; wherein the dry polymer
+is a product by the heat-drying.</p><p num="0055">Of these methods, the method (3) involving the cold wind through-passing
+is preferably used in view of the cooling efficiency and the fluidity
+of the dry polymer in the present invention. In this method, the cold
+wind may be passed only through the surface of the dry polymer, but is
+preferably passed through spaces between the laminated particles in a
+vertical or horizontal direction, preferably in a vertical direction, of the
+laminated dry polymer or its block-shaped material because thereby the
+forcible cooling can more efficiently be carried out. Incidentally, in the
+case where the lamination is performed, its thickness is preferably in the
+aforementioned range. </p><p num="0056">The forcible cooling in the present invention is necessarily carried
+out before or during the pulverization. In addition, the present
+inventors have found that the object of the present invention is not
+achieved unless the forcible cooling is carried out before or during the
+pulverization rather in the case of drying on a production scale, unlike
+the case of drying and pulverization on a laboratory scale which are
+polymerization, drying, and pulverization on a small scale in a
+laboratory, and further, involve easy natural heat radiation cooling
+because the experimental procedures are discontinuous therebetween and
+because the interval therebetween is in the range of tens of minutes to
+several hours or more. That is to say, the present invention is more
+favorable for continuous drying, continuous pulverization, and the
+subsequent continuous addition of the aqueous liquid on a large scale in
+production facilities (for example, treating not less than 1 ton/day,
+preferably not less than 10 tons/day, of water-absorbent resin powder per
+line).</p><p num="0057">In the case where the forcible cooling (which is an essential feature
+of the present invention) is not carried out after the heat-drying, the
+efficiency of the pulverization or classification is greatly deteriorated,
+therefore the water-absorbent resin powder which has excellent particle
+diameter distribution cannot be obtained with good productivity.
+Furthermore, in the case where the hot-wind drying is carried out on the
+metal gauze or the punching metal, conventionally the resultant dry
+polymer adheres to or clogs the metal gauze or the punching metal and
+therefore greatly deteriorates the gas permeability, the drying efficiency
+and the productivity. However, the present invention which involves
+the forcible cooling does not have such problems and does not need 
+either a special apparatus for inhibiting the adhesion (<ref type="patent">JP-A-270070/1995</ref>)
+or the periodic removal of the adhesion or clogging from the dryer. In
+addition, the forcible cooling before or during the pulverization has
+advantages in that the particle diameter distribution and the
+pulverization rate of the resultant water-absorbent resin powder are also
+excellent, and in that the adhesion to the pulverizer and the aggregation
+of the powder in the production steps are also greatly decreased, and
+further in that it is not necessary to excessively dry the water-absorbent
+resin powder in order to inhibit the powder from aggregating in the
+subsequent production steps, therefore the drying time can be shortened
+and the properties can be improved.</p><p num="0058">The cold wind (gas) as used for the aforementioned method (3) in
+the present invention is fitly determined according to the temperature of
+the aimed dry polymer. The forcible cooling is carried out by a gas having
+a temperature of not higher than 60 °C, preferably in the range of 50 to
+-50 °C, more preferably 40 to -10 °C, particularly preferably 35 to 5 °C, in
+consideration of the cooling efficiency. On this occasion, the dew point of
+the gas is preferably not higher than 60 °C, more preferably not higher
+than 50 °C. In addition, such a gas may be an inert gas, such as nitrogen,
+or a mixed gas comprising the inert gas and air, but air, particularly,
+filtered air, is preferably used.</p><p num="0059">Furthermore, the wind speed of the cold wind is in the range of
+about 10 to about 0.1 m/s, preferably about 5 to about 0.5 m/s. The cooling
+time is preferably in the range of 60 to 0.1 minutes, more preferably 20 to
+0.2 minutes, still more preferably 10 to 0.5 minutes.</p><p num="0060">As to the forcible cooling temperature in the present invention, the
+dry polymer is forcibly cooled to a temperature of not higher than 95 °C, 
+preferably into the range of 85 to 35 °C, more preferably 80 to 40 °C, still
+more preferably 70 to 45 °C. Incidentally, the forcible cooling temperature
+is determined by fitly measuring the material temperature with such as a
+contacting thermometer or noncontacting thermometer (infrared
+thermometer), and further, if necessary, controlled.</p><p num="0061">In the case where the temperature of the dry polymer is higher than
+95 °C, it is so difficult to release the polymer from the metal gauze or
+punching metal of the dryer that the drying efficiency is low, and further,
+the efficiency of the pulverization or classification of the dry polymer is
+greatly deteriorated and, as a result, it is difficult to obtain an excellent
+water-absorbent resin powder having a narrow particle diameter
+distribution. In addition, in the case where the temperature is too low,
+there are disadvantages not only in that a long time or large facilities are
+needed for cooling, but also in that an aggregate of the water-absorbent
+resin powder unexpectedly forms during the pulverization or
+classification. Furthermore, the overcooling might be disadvantageous to
+the below-mentioned forcible heating and surface-crosslinking in respect
+to properties and energy.</p><p num="0062">In addition, as to the temperature lowering of the dry polymer by the
+forcible cooling in order to achieve the present invention, although it
+depends upon the heat-drying temperature, the dry polymer may be
+forcibly cooled to the above-mentioned aimed temperature (for example,
+more preferably in the range of 80 to 40 °C) by forcibly cooling the dry
+polymer so that the temperature of the dry polymer can change by
+preferably not less than 40 °C, more preferably not less than 60 °C, still
+more preferably not less than 80 °C, particularly preferably not less than
+100 °C, from before till after the forcible cooling. </p><p num="0063">Incidentally, the heat as taken away from the dry polymer by the
+forcible cooling is preferably recycled. For example, as is aforementioned,
+in the present invention, the heat-drying is carried out by hot-wind
+drying (particularly preferably in the range of 150 to 180 °C), and the
+forcible cooling is carried out by wind-cooling (particularly preferably, the
+polymer is forcibly cooled into the range of 70 to 45 °C). When carrying
+out such drying by hot-wind and forcible cooling by wind-cooling in the
+present invention, the cold wind as used for the forcible cooling of the
+dry polymer is controlled fitly for factors, such as the wind speed or
+through-flow rate of the cold wind or the temperature of the polymer, but
+becomes a warm or hot wind (usually of not lower than 50 °C, preferably
+in the range of 50 to 200 °C, more preferably in the range of 60 to 150 °C,
+still more preferably in the range of 70 to 110 °C) due to the forcible
+cooling. Therefore, the resultant warm or hot wind may be recycled and
+then, as it is, utilized for the production steps for the water-absorbent
+resin, or may be reheated and then utilized for the production steps for
+the water-absorbent resin, such as the aforementioned hot-wind drying.</p><p num="0064">In the present invention the heat obtained by the forcible cooling is
+preferably recycled. Examples of the production steps in which the
+recycled heat is used include the heat-retaining step, but the below-mentioned
+drying step is the most preferable. Specifically, the cold wind
+used for the forcible cooling becomes a warm wind by being passed
+through the dry polymer, therefore preferably in the present invention
+this warm wind (e.g. 60 to 150 °C) resultant from the forcible cooling is
+supplied through piping into an air-supplying inlet of a hot-wind dryer to
+thereby be used as a raw material for drying, so that the continuous
+drying can be carried out. In the hot-wind drying step in the present 
+invention, in this way, the warm wind resultant from the forcible cooling
+is used in place of air of room temperature in order to produce a hot
+wind, therefore there are advantages in that much energy saving is
+realizable rewarding it and in that the warm wind (waste gas) is not
+discharged to the environment. Also in view of such recycling, forcible
+cooling by passing a cold wind through the polymer is used for the
+forcible cooling step in the present invention, and further, hot-wind
+drying is used for the heat-drying step in the present invention.</p><p num="0065">That is to say, the present invention further provides a production
+process for a water-absorbent resin powder which comprises the steps of:
+polymerizing an aqueous monomer solution containing a crosslinking
+agent; heat-drying the resultant crosslinked hydrogel polymer; and
+pulverizing the resultant dry polymer; with the production process
+further comprising the steps of: forcibly cooling the dry polymer after the
+heat-drying step; and recycling the resultant heat in order to utilize it for
+forcible heating in a production process for a water-absorbent resin
+(which involves heating of the gel such as drying step). In this
+production process, the recycling for the forcible heating means that the
+heat as obtained in the forcible cooling step is utilized for the forcible
+heating step. The forcible cooling step and the forcible heating step may
+both be included in the same production line, or may separately be
+included in their respective production lines.</p><p num="0066">In addition, when carrying out the hot-wind drying and the wind-cooling
+in the present invention, such as a fluid bed is separately set as a
+drying and cooling apparatus. For example, when carrying out
+continuous hot-wind drying, also preferable is a method in which: a belt
+type dryer is used and a portion of the second half of the dryer is utilized 
+for the cooling step. In this method, even if the cooling apparatus is not
+separately set, a 1/4 to 1/20 portion (preferably 1/8 to 1/16 portion) of the
+second half of the belt of the hot-wind dryer may be partitioned off as a
+cooling apparatus to feed a cold wind to this portion to thereby carrying
+out the forcible cooling step, and then the heat as taken away from the dry
+polymer may be recycled.</p><p num="0067">The present invention can afford excellent energy efficiency to the
+process because the heat as obtained by forcibly cooling the dry polymer is
+recycled. In addition, there are advantages in that: the releasability of the
+dry polymer from the metal gauze or punching metal of the belt is greatly
+enhanced by forcibly cooling the second half of the dryer, and the drying
+efficiency is also enhanced because of the enhancement of the gas
+permeability due to no clogging of the belt.</p><p num="0068">The dry polymer, as forcibly cooled to a predetermined temperature
+in the above way, is then pulverized or classified, preferably, necessarily
+pulverized and then classified. The drying step and the pulverization or
+classification step, as mentioned above, are preferably carried out
+continuously to each other, and the residence time from an outlet of the
+dryer to an inlet of the pulverizer is within 10 minutes, preferably within
+5 minutes, more preferably within 2 minutes. In the present invention,
+even if the above steps are carried out continuously to each other in this
+way, the drying and pulverizing efficiencies can greatly be enhanced by
+inserting the forcible cooling step between the drying step and the
+pulverizing step.</p><p num="0069">There is no especial limitation with regard to the pulverization
+method in the present invention if the dry polymer or its aggregate
+(block-shaped material) can be formed into a fluid powder, preferably a 
+powder having an average particle diameter of not larger than 2 mm.
+Examples thereof include: a pulverization method involving the use of a
+hammer type pulverizer, a roll type pulverizer, or a jet air stream type
+pulverizer; and conventional various pulverization or disintegration
+methods. These methods may be used either alone respectively or in
+combinations with each other. In addition, in the case where the
+aggregation is weak in the drying step, the pulverizing step may be carried
+out by classifying the dry polymer while vibrating it, thereby loosening
+the aggregation of the polymer, even if no pulverizer is especially used.</p><p num="0070">In the present invention, coarse particles and fine powders are if
+necessary or preferably removed by classification after the above
+pulverization. The average particle diameter of the water-absorbent resin
+powder as obtained in this way is determined according to purposes, but,
+for example, in the case where this powder is used for sanitary materials,
+the average particle diameter of the water-absorbent resin powder as
+finally obtained is in the range of 200 to 600 µm, preferably 300 to 600 µm,
+more preferably 300 to 550 µm, and the total ratio of particles having
+particle diameters of not larger than 150 µm and particles having particle
+diameters of not smaller than 850 µm in the water-absorbent resin
+powder is preferably not more than 15 weight %, more preferably not
+more than 10 weight %, still more preferably not more than 5 weight %,
+of the water-absorbent resin powder.</p><p num="0071">In the present invention, particularly, it is preferable that the water-absorbent
+resin powder, as obtained after the pulverization step and then
+used for the next step, has an average particle diameter in the above
+range, namely, in the range of 200 to 600 µm wherein the total ratio of
+particles having particle diameters of not larger than 150 µm and particles 
+having particle diameters of not smaller than 850 µm in the water-absorbent
+resin powder is not more than 15 weight % of the water-absorbent
+resin powder.</p><p num="0072">The bulk density of the water-absorbent resin powder as obtained in
+the above way variously changes according to true density (g/cm<sup>3</sup>) which
+is absolutely determined by the monomer composition one by one.
+However, for example, when the water-absorbent resin is a poly(sodium
+acrylate), particularly, that which has a neutralization ratio of 50 to 90 mol
+%, preferably 60 to 80 mol %, the bulk density is usually not less than 0.63
+g/ml, particularly preferably not less than 0.65 g/ml, as measured by the
+apparatus according to JIS K-3362. In the forcible cooling method in the
+present invention, the water-absorbent resin powder resultant from the
+pulverization has few scales and has a more roundish and uniform
+shape. Therefore, the bulk density of the powder tends to be high, and is
+preferably adjusted into the range of 0.65 to 0.89 g/ml, more preferably
+0.67 to 0.88 g/ml, still more preferably 0.73 to 0.87 g/ml, yet still more
+preferably 0.74 to 0.86 g/ml, yet still more preferably 0.75 to 0.85 g/ml.</p><p num="0073">In the case where the bulk density is lower than 0.63 g/ml, there are
+disadvantages in that: it becomes difficult to mix the below-mentioned
+aqueous liquid even if the temperature is controlled; and not only
+deterioration of properties (absorption capacity under a load, liquid
+permeability under a load), but also, for example, deterioration of impact
+resistance (process damage) of the water-absorbent resin powder, and
+increase of the transportation cost due to decrease of the weight per unit
+volume might be observed. In addition, in the case where the bulk
+density is higher than 0.89 g/ml, it can be difficult to ensure liquid
+permeation spaces in a gel when being swollen by liquid permeation 
+under a load.</p><p num="0074">After the above pulverization, coarse particles (e.g. 850-µm-on
+fractions) or fine powders (e.g. 150-µm-passed fractions) may be recycled
+fitly as the case may be. The coarse particles may be repulverized, and the
+fine particles may be removed or recovered, thus adjusting the particle
+diameter distribution into the aforementioned range. However, in the
+present invention the necessity of such recycling is greatly decreased
+because the particle diameter distribution is narrow. Incidentally,
+methods for recycling the fine powders of water-absorbent resins are, for
+example, disclosed in <ref type="patent">USP 4,950,692</ref>, <ref type="patent">USP 5,064,582</ref>, <ref type="patent">USP 5,264,495</ref>, <ref type="patent">USP
+5,478,879</ref>, <ref type="patent">EP 0812873</ref>, <ref type="patent">EP 0885917</ref>, and <ref type="patent">EP 0844270</ref>, and these fine powder
+recycling methods can also be applied to the present invention.</p><p num="0075">In addition, the amount of fine powders being recycled is not larger
+than 15 weight %, preferably in the range of 1 to 10 weight %, more
+preferably 2 to 8 weight %, of the entirety. In the present invention, a
+water-absorbent resin powder having a narrow particle diameter
+distribution can be obtained with good productivity, therefore there are
+advantages in that a water-absorbent resin powder having a narrower
+particle diameter distribution can be obtained by the recycling of a small
+amount of fine powder.</p><p num="0076">In the present invention in which the cooling is carried out before
+the pulverization, the resultant particle diameter distribution is narrower
+than conventional ones, and further, there are the following effects: the
+pulverization time to obtain such a particle diameter distribution is
+shortened; coarse water-absorbent resin powders having particle
+diameters larger than the aimed ones are decreased; it is unnecessary to
+take the trouble to separate the largest particles or fine powders which 
+deviate from the purpose; and the labor for recycling such as
+repulverization of large particles (e.g. 850-µm-on fractions) and
+reclassification of fines (e.g. 150-µm-passed fractions) decreases.</p><p num="0077">It is preferable that after being cooled and then pulverized and then
+classified, the water-absorbent resin powder is, further, heat-retained or
+forcibly heated in the next step. The temperature of the heat-retention
+from the outside is in the range of 40 to 100 °C, preferably 50 to 90 °C. The
+heat-retention of the water-absorbent resin powder at such a temperature
+improves the handling ability of the water-absorbent resin powder and
+inhibits the aggregation and adhesion of the water-absorbent resin
+powder in the production steps. In the present invention, the drying and
+pulverizing efficiencies may be enhanced by daring to forcibly cool and
+then pulverize or classify the dry polymer and, separately, the water-absorbent
+resin powder may further be heat-retained or forcibly heated
+(reheated) after being cooled.</p><p num="0078">Incidentally, in the case where the aqueous liquid, especially, an
+aqueous crosslinking agent solution, is added, it is preferable that the
+water-absorbent resin powder, as obtained by carrying out the forcible
+cooling before the pulverization, is further forcibly cooled after the
+pulverization, thereby adjusting the temperature of the powder. The
+means for this temperature controlling or cooling is not especially
+limited, but the pulverization increases the fluidity and the specific
+surface area of the water-absorbent resin powder, therefore it is possible to
+more preferably apply the aforementioned cooling means, for example:
+(1) a method in which the powder is placed into a vessel (hopper) or
+cylinder having a cooled heat transfer surface and, if necessary, involving
+agitation, and then forcibly cooled; (2) a method in which the powder is 
+sufficiently cooled by heat radiation therefrom on a continuous belt; (3) a
+method in which the powder is forcibly cooled by passing a cold wind
+through it; (4) a method in which the powder is forcibly cooled
+simultaneously with transportation using a cold air; and (5) a method in
+which the powder is forcibly cooled using a low-temperature screw
+conveyer having a cooled heat transfer surface. It is, however, preferable
+to use at least the method (1).</p><p num="0079">Specifically, the temperature of the water-absorbent resin powder, to
+which the aqueous liquid has not been added yet, is preferably lowered
+(controlled) into the range of 80 to 35 °C, more preferably 70 to 35 °C, still
+more preferably 60 to 35 °C, particularly preferably 50 to 35 °C, by the
+aforementioned forcible cooling and, if necessary, further heat-retaining
+or cooling, and then the aqueous liquid is added to this powder. In the
+case where the temperature of the water-absorbent resin powder, to
+which the aqueous liquid has not been added yet, is high, the mixing of
+the aqueous liquid is nonuniform. In addition, in the case where the
+powder is cooled forcibly or by heat radiation as much as to lower than 35
+°C, there are disadvantages in that: not only does it take much time, but
+also the aggregation of the cooled powder is observed, or the energy loss is
+much in the reheating step.</p><p num="0080">The water-absorbent resin powder as obtained in the above way has
+excellent particle diameter distribution and is therefore favorable for
+more improving its properties by surface-crosslinking. The following
+forcible heating may separately be carried out for the surface-crosslinking.</p><p num="0081">Specifically, considering the step of forcibly heating the water-absorbent
+resin powder after the pulverization or classification step, the
+forcible cooling step in the present invention appears to be in vain with 
+respect to energy and process, but, unexpectedly, comparatively increases
+the drying and pulverizing efficiencies, and also enhances the mixability
+of the resultant water-absorbent resin powder with the aqueous liquid.</p><p num="0082">There is no especial limitation in the surface-crosslinking agent as
+used in the present invention, if this agent comprises a compound
+reactable with a functional group of the above polymer. Specific
+examples of the above surface-crosslinking agent include: polyhydric
+alcohols such as propylene glycol, glycerol, and butanediol; polyepoxy
+compounds such as ethylene glycol diglycidyl ether; polyamine
+compounds such as (poly)ethylenimine; alkylene carbonate compounds;
+polyoxazoline compounds; haloepoxy compounds and their polyamine
+adducts (e.g. polyamide-polyamide epihalohydrin adducts: Kymene
+(trademark) made by Hercules); mono-, di-, or polyoxazolidinone
+compounds; and polyvalent metals, but there is no especial limitation
+thereto. These surface-crosslinking agents may be used either alone
+respectively or in combinations with each other. In the case where the
+combinations are used in the present invention, the use of a surface-crosslinking
+agent comprising a combination of a first surface-crosslinking
+agent and a second surface-crosslinking agent whose
+solubility parameters (SP values) are deferent from each other (refer to
+<ref type="patent">USP 5,422,405</ref>), of the above surface-crosslinking agents, has the
+advantage of enabling to obtain a water-absorbent resin powder which
+exhibits particularly excellent absorption capacity under a heavy load (e.g.
+not less than 4.90 kPa).</p><p num="0083">The amount of the above crosslinking agent, as used, is determined
+fitly for such as its type and reaction conditions, but is usually in the
+range of 0.001 to 10 parts by weight, preferably 0.01 to 5 parts by weight, 
+more preferably 0.5 to 4 parts by weight, per 100 parts by weight of the
+solid content of the water-absorbent resin powder.</p><p num="0084">When the step of mixing the above polymer and surface-crosslinking
+agent together is carried out, such as water, steam, or an
+aqueous liquid comprising water and a hydrophilic organic solvent may
+be added during or after this mixing step, if necessary. The amount of
+water, as used in this case, depends upon such as the kind or particle
+diameter of the polymer as used, but is not larger than 10 parts by weight,
+preferably in the range of 0.1 to 10 parts by weight, more preferably 1 to 5
+parts by weight, per 100 parts by weight of the solid content of the water-absorbent
+resin powder.</p><p num="0085">The hydrophilic organic solvent is not especially limited, but specific
+examples thereof include: lower alcohols such as methyl alcohol, ethyl
+alcohol, n-propyl alcohol, iso-propyl alcohol, n-butyl alcohol, iso-butyl
+alcohol, and t-butyl alcohol; ketones such as acetone; ethers such as
+dioxane and tetrahydrofuran; amides such N,N-dimethylformamide; and
+sulfoxides such as dimethyl sulfoxide.</p><p num="0086">When mixing the above polymer and surface-crosslinking agent
+together, for example, the polymer may be dispersed into the above
+aqueous liquid to then mix the resultant dispersion with the surface-crosslinking
+agent, or the surface-crosslinking agent may be dissolved
+into water or the aqueous liquid to then spraying or dropwise adding the
+resultant solution directly to the polymer, thereby mixing them together.
+In addition, in the case where the mixing step is carried out using water,
+there may coexist such as water-insoluble finely-particulate powders,
+various organic or inorganic acids, or surfactants. Of these mixing
+methods, the spray-mixing method is preferable, and in this method the 
+aqueous liquid is added in the form of fine drops of preferably not larger
+than 500 µm, more preferably not larger than 300 µm.</p><p num="0087">In addition, in the case where the aqueous liquid is added in the
+present invention, the internal wall of the mixer preferably has a
+temperature higher than room temperature. It is preferable that the
+internal wall temperature of the mixer is maintained at not lower than 40
+°C, more preferably in the range of 45 to 100 °C, still more preferably 50 to
+95 °C, yet still more preferably 55 to 90 °C, and that the internal wall
+temperature is higher than the temperature of the water-absorbent resin
+powder to which the aqueous liquid has not been added yet, more
+preferably by within 40 °C, still more preferably by within 20 °C,
+particularly preferably by within 10 °C. Incidentally, the term &quot;internal
+wall&quot; represents internal surfaces, including agitation blades, of the
+mixer. In the case of the continuous mixing, it is preferable that these
+temperatures are controlled to temperature in a stationary state,
+particularly, metal portions are necessarily controlled.</p><p num="0088">In the case where the internal wall temperature of the mixer is not
+higher than room temperature, even if the temperature of the powder is
+controlled there is a possibility that the water-absorbent resin powder to
+which the aqueous liquid has been added might adhere to the internal
+wall, or that the properties of the resultant water-absorbent resin powder
+might be deteriorated. In addition, in the case where the internal wall
+temperature is too high, there is a possibility that such as the crosslinking
+agent in the aqueous solution might lose its effects, or that the aqueous
+liquid might nonuniformly be mixed.</p><p num="0089">There is no especial limitation in the control of the internal wall
+temperature of the mixer if the control to the above-mentioned 
+temperature is possible. The temperature may be controlled, for example,
+by a method (1) which involves external heating with a warm wind or
+heating medium, or the mixer itself may be structured so as to sufficiently
+heat-retain itself and then the internal wall temperature of the mixer
+may be controlled by a method (2) which involves continuously mixing a
+large amount (for example, not smaller than 500 kg/hr) of powder or
+aqueous liquid having a specific temperature, or by a method (3) which
+involves utilizing either hydration heat of the water-absorbent resin
+powder as generated by adding thereto the aqueous liquid or frictional
+heat as generated when mixing. These controlling methods may be used
+in combinations with each other, but the method (1) is preferably used.</p><p num="0090">Furthermore, as to these methods, it is preferable that the mixer
+having a specific internal wall temperature is a high-speed-stirring-type
+mixer with stirring blades. The mixer usually operates to perform stir-mixing
+at a revolution rate of not slower than 10 rpm, preferably in the
+range of 100 to 10,000 rpm, more preferably 300 to 5,000 rpm, most
+preferably 500 to 3,000 rpm. The stirring time is usually within 5 minutes,
+preferably within 3 minutes, more preferably within 1 minute, still more
+preferably within 0.2 minute. In addition, it is more preferable to use a
+gas-current-stirring-type mixer having a plurality of stirring blades as a
+mixer.</p><p num="0091">In the process according to the present invention, the improvement
+of properties due to the mixability improvement is great, therefore it is
+preferable that the aqueous liquid is an aqueous crosslinking agent
+solution and, for greatly displaying the effects of the present invention, it
+is particularly preferable that the aqueous crosslinking agent solution,
+which is conventionally difficult to mix with the water-absorbent resin, is 
+an aqueous polyhydric alcohol solution (which further contains a
+crosslinking agent other than the polyhydric alcohol, if necessary),
+especially, an aqueous solution containing only the polyhydric alcohol as
+the crosslinking agent, and/or that the aqueous liquid contains no
+organic solvents other than the polyhydric alcohol, especially, no volatile
+organic solvents. In addition, in the case where the internal wall
+temperature of the mixer is raised, the addition of the aqueous liquid in
+the present invention can favorably be applied to crosslinking agents
+which are inactive even at the internal wall temperature, such as
+crosslinking agents having a reaction temperature of not lower than 110
+°C which is necessary for reheating, particularly, polyhydric alcohols.</p><p num="0092">In addition, in the present invention, the polyhydric alcohol may be
+used as a crosslinking agent, or as a solvent for a crosslinking agent by
+being used at not higher than the reaction temperature of the polyhydric
+alcohol, or these functions may be combined. Incidentally, the
+crosslinking agent other than the polyhydric alcohol, as used, is
+exemplified by the aforementioned crosslinking agents and by the below-mentioned
+prior art documents. Examples of polyhydric alcohols which
+most greatly give the effects of the present invention in respect to
+properties include those which have 3 to 8 carbon atoms, particularly,
+glycerol, propylene glycol, butanediol, pentanediol, hexanediol
+(incidentally, the diol substituent position is not limited).</p><p num="0093">Incidentally, the volatile organic solvent, as referred to in the
+present invention, means solvents having a boiling point of not higher
+than the temperature at which the below-mentioned crosslinking
+reaction is carried out, particularly, organic solvents having a boiling
+point of not higher than 100 °C, preferably not higher than 85 °C. In the 
+present invention, the addition of an aqueous liquid which involves no
+use of these organic solvents has the advantage of giving a water-absorbent
+resin which is also excellent in respect to environment, cost
+and safety.</p><p num="0094">In the present invention, after the above polymer and surface-crosslinking
+agent are mixed together, the surface vicinity of the polymer
+is crosslinked wherein this crosslinking is carried out by forcible heating
+if necessary according to the kind of the surface-crosslinking agent. The
+forcible heating temperature depends upon the kind of the surface-crosslinking
+agent, but is preferably not lower than 100 °C, more
+preferably in the range of 110 to 230 °C, still more preferably 160 to 220 °C.
+The forcible heating time is fitly determined, but is preferably in the range
+of 1 to 120 minutes, more preferably 5 to 60 minutes. In addition,
+examples of the apparatus used for the forcible heating include: channel
+type blending dryers, rotary dryers, disk dryers, fluidized-bed dryers, air
+blow type dryers, and infrared dryers. Incidentally, these heating
+apparatuses are set separately from the aforementioned mixing
+apparatuses and preferably connected thereto.</p><p num="0095">Incidentally, the above surface-crosslinking methods are also
+disclosed in: various European patent publications, such as <ref type="patent">EP 0349240</ref>, <ref type="patent">EP
+0605150</ref>, <ref type="patent">EP 0450923</ref>, <ref type="patent">EP 0812873</ref>, <ref type="patent">EP 0450924</ref>, and <ref type="patent">EP 0668080</ref>; various
+Japanese patents, such as <ref type="patent">JP-A-242709/1995</ref> and <ref type="patent">JP-A-224304/1995</ref>; various
+US patents, such as <ref type="patent">USP 5,409,771</ref>, <ref type="patent">USP 5,597,873</ref>, <ref type="patent">USP 5,385,983</ref>, <ref type="patent">USP
+5,610,220</ref>, <ref type="patent">USP 5,633,316</ref>, <ref type="patent">USP 5,674,633</ref>, and <ref type="patent">USP 5,462,972</ref>; and various
+international patent publications, such as <ref type="patent">WO 99/42494</ref>, <ref type="patent">WO 99/43720</ref>,
+and <ref type="patent">WO 99/42496</ref>. These surface-crosslinking methods are also applicable
+to the reheating or the addition of the aqueous liquid in the present 
+invention.</p><p num="0096">As is mentioned above, the present invention further provides a
+production process for a water-absorbent resin powder which comprises
+the steps of: polymerizing an aqueous monomer solution containing a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel
+polymer; pulverizing the resultant dry polymer; and adding an aqueous
+liquid to the resultant powder in a mixer; wherein:
+<sl><li>the temperature of the heat-drying step is in the range of 110 to 230
+°C; the dry polymer is cooled into the range of 80 to 35 °C before the
+addition of the aqueous liquid; and the dry polymer is adjusted so as to
+have a bulk density of not less than 0.65 g/ml after the pulverization step.</li></sl></p><p num="0097">In addition, the present invention further provides a production
+process for a water-absorbent resin powder which comprises the steps of:
+polymerizing an aqueous monomer solution containing a crosslinking
+agent; heat-drying the resultant crosslinked hydrogel polymer;
+pulverizing the resultant dry polymer; and adding an aqueous liquid to
+the resultant powder in a mixer; wherein:
+<sl><li>the temperature of the heat-drying step is in the range of 110 to 230
+°C; the dry polymer is cooled into the range of 80 to 35 °C before the
+addition of the aqueous liquid; the mixer is a stirring mixer having an
+internal wall temperature of not lower than 40 °C; and the mixture
+resultant from the addition of the aqueous liquid is reheated into the
+range of 110 to 230 °C.</li></sl></p><p num="0098">Incidentally, in these two processes, the larger the temperature
+difference between the drying temperature and the cooling temperature
+is, the greater the effects of the present invention are. Such as the
+preferable temperature range is as aforementioned. </p><p num="0099">The absorption capacity of the water-absorbent resin powder, as
+obtained in the above way, under a load of 1.96 kPa or its absorption
+capacity without load (for physiological saline solution) is preferably not
+less than 25 g/g, more preferably not less than 27 g/g, still more preferably
+not less than 30 g/g, particularly preferably not less than 35 g/g. In
+addition, such as water-extractable content, particle diameter, bulk
+density, and water absorption capacity of this water-absorbent resin
+powder are in the aforementioned ranges.</p><p num="0100">Furthermore, the absorption capacity of the water-absorbent resin
+powder under a load of 4.9 kPa is preferably not less than 23 g/g, more
+preferably not less than 25 g/g, still more preferably not less than 27 g/g.
+In the present invention, the water-absorbent resin powder having such
+high properties can be produced easily and stably.</p><p num="0101">In addition, the present invention further provides a production
+process for a water-absorbent resin powder which comprises the steps of:
+polymerizing an aqueous monomer solution containing a crosslinking
+agent; heat-drying the resultant crosslinked hydrogel polymer; and
+pulverizing the resultant dry polymer; wherein:
+<sl><li>the dry polymer is forcibly cooled after the heat-drying step;</li><li>the step of pulverizing the dry polymer is carried out so as to form a
+water-absorbent resin powder having a bulk density of not less than 0.65
+g/ml; and</li><li>the cooled water-absorbent resin powder is further surface-crosslinked.</li></sl></p><p num="0102">In addition, the present invention further provides a production
+process for a water-absorbent resin powder which comprises the steps of:
+polymerizing an aqueous monomer solution containing a crosslinking 
+agent; heat-drying the resultant crosslinked hydrogel polymer; and
+pulverizing the resultant dry polymer; wherein:
+<sl><li>the dry polymer is forcibly cooled after the heat-drying step;</li><li>the step of pulverizing the dry polymer is carried out so as to form a
+water-absorbent resin powder having a bulk density of not less than 0.65
+g/ml; and</li><li>an aqueous liquid is further added to the cooled water-absorbent
+resin powder in a stirring mixer having a heated internal wall.</li></sl></p><p num="0103">Accordingly, the present invention further provides a water-absorbent
+resin powder which is obtained by a process including the steps
+of: polymerizing an aqueous monomer solution containing a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel
+polymer; pulverizing the resultant dry polymer; and adding an aqueous
+polyhydric alcohol solution to the resultant powder in a mixer wherein
+the aqueous polyhydric alcohol solution does not contain any volatile
+organic solvents; wherein the resultant water-absorbent resin powder has
+the following properties: (1) the bulk density is not less than 0.65 g/ml; (2)
+the average particle diameter is in the range of 200 to 600 µm; (3) the total
+ratio of particles having particle diameters of not larger than 150 µm and
+particles having particle diameters of not smaller than 850 µm in the
+water-absorbent resin powder is not more than 10 weight % of the water
+absorbent resin powder; and (4) the absorption capacity under a load (1.96
+kPa) is not less than 25 g/g.</p><p num="0104">The present invention improves continuous mixability of the
+water-absorbent resin powder with the aqueous liquid. Therefore, even if
+the aqueous polyhydric alcohol solution (which would conventionally be
+difficult to mix with the powder but for volatile organic solvents as 
+conventionally used) is used, the present invention can provide a water-absorbent
+resin powder which exhibits high absorption capacity under a
+load and has high bulk density.</p><p num="0105">Various functions may be given to the present invention water-absorbent
+resin powder, as obtained in the above way, by further adding
+thereto materials such as deodorants, antimicrobial agents, perfumes,
+various inorganic powders, foaming agents, pigments, dyes, hydrophilic
+short fibers, plasticizers, pressure sensitive adhesives, surfactants,
+manure, oxidants, reductants, chelating agents, antioxidants, water,
+aqueous polymers, binders, and salts, if necessary.</p><p num="0106">The water-absorbent resin powder, as obtained by involving the
+production process according to the present invention, has excellent
+particle diameter distribution and properties, and therefore can be
+modified into a water-absorbent resin powder which displays higher
+properties by such as surface-crosslinking or post-neutralization. In
+addition, in the present invention, such a water-absorbent resin powder
+can be obtained with high productivity and ease, and at a low energy cost
+and a moderate price without adhesion or aggregation in the production
+steps.</p><p num="0107">Therefore, the water-absorbent resin powder according to the present
+invention can be utilized for the wide range of uses, but is favorable
+particularly for sanitary materials and absorbent articles, such as
+disposable diaper and sanitary napkins, and can preferably be used as
+sanitary materials by being combined with hydrophilic fiber materials
+such as pulverized pulp. In addition, the water-absorbent resin powder
+according to the present invention has high properties and therefore can
+be used suitably for sanitary materials in which the core concentration 
+(weight ratio of the water-absorbent resin powder to the total of the fiber
+and the water-absorbent resin powder) is high, for example, the
+concentration of the water-absorbent resin powder is in the range of 30 to
+100 weight %, preferably 40 to 95 weight %, more preferably 50 to 90
+weight %.</p><heading><b>DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS</b></heading><p num="0108">Hereinafter, the present invention is more specifically illustrated by
+the following examples of some preferred embodiments in comparison
+with comparative examples not according to the invention. However,
+the invention is not limited to these examples. Incidentally, the
+performances of the water-absorbent resin powder were measured by the
+methods shown below. In addition, such as polymerization, drying, and
+pulverization in the examples were carried out by a series of continuous
+procedures which simulated actual production.</p><heading>(a) Water absorption capacity without load:</heading><p num="0109">First, 0.200 g of water-absorbent resin powder was uniformly placed
+into a nonwoven-fabric-made bag (60 mm x 60 mm), and then the bag
+was heat-sealed and then immersed into a great excess (about 200 g) of 0.9
+weight % physiological saline solution at room temperature. Sixty
+minutes later than this immersion, the bag was drawn up and then
+drained at 250 G for 3 minutes with a centrifuge, and the resultant weight
+W1 (g) of the bag was then measured. On the other hand, the same
+procedure was carried out without the water-absorbent resin powder, and
+the resultant weight W0 (g) was measured. Thus, the water absorption
+capacity (g/g) without load was calculated from these weights W1 and W0
+in accordance with the following equation (a): <st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">water absorption capacity (g/g) without load<st32:break type="required" />
+= (weight W1 (g) - weight W0 (g) - 0.2)/0.2 (g).</st32:df></p><heading>(b) Water-extractable content:</heading><p num="0110">First, 1.000 g of water-absorbent resin powder was swollen and
+dispersed in 184.3 g of physiological saline solution, and then stirred in a
+beaker (capacity: 200 ml) for 16 hours. Thereafter, the resultant swollen
+gel was separated by filtration with a paper filter. Next, carboxyl groups in
+the resultant filtrate were subjected to neutralization titration with a 0.1
+N (0.1 mol/l) aqueous sodium hydroxide solution and a 0.1 N (0.1 mol/l)
+aqueous hydrochloric acid solution, thereby calculating the amount of
+water-soluble polymer (= water-soluble poly(acrylic acid) (salt)) in the
+filtrate which water-soluble polymer had been extracted from the water-absorbent
+resin powder (swollen gel), namely, the water-extractable
+content (weight %) of the water-absorbent resin powder.</p><heading>(c) Solid content of water-absorbent resin:</heading><p num="0111">First, 1.000 g of water-absorbent resin powder, as obtained from the
+dry polymer, was placed into an aluminum-made cup (inner diameter 53
+mm × height 23 mm) and then redried in a wind-free oven of 180 °C for 3
+hours to calculate the solid content (weight %) of the water-absorbent
+resin powder (or dry polymer) from its weight loss (g) on drying.
+Incidentally, the solid content of the dry polymer was that of the
+pulverized one as measured in the same way as the above after the
+pulverization of the dry polymer.</p><heading>(d) Particle diameter distribution and average particle diameter:</heading><p num="0112">The water-absorbent resin powder was classified with JIS standard
+sieves (850 µm, 600 µm, 300 µm, and 150 µm), and then the weight of
+fractions having particle diameters corresponding to each sieve (850-µm-on 
+fractions/fractions ranging from 850 to 600 µm/fractions ranging from
+600 to 300 µm/fractions ranging from 300 to 150 µm/150-µm-passed
+fractions) was measured. In addition, another JIS standard sieve was
+added, if necessary, and then the measured particle diameter distribution
+was plotted on logarithmic probability paper to determine the weight-average
+particle diameter (D50).</p><heading>(e) Absorption capacity under load:</heading><p num="0113">In accordance with the methods as disclosed in the working
+examples portions of <ref type="patent">EP 0885917</ref>, <ref type="patent">EP 0817873</ref>, and <ref type="patent">EP 0811636</ref>, the
+absorption capacity of the water-absorbent resin powder for physiological
+saline solution under a load of 50 g/cm<sup>2</sup> (corresponding to about 4.90 kPa)
+was measured.</p><p num="0114">Namely, while a load of 50 g/cm<sup>2</sup> (about 4.90 kPa) was uniformly
+applied to 0.900 g of water-absorbent resin powder, the weight W2 (g) of
+the physiological saline solution as absorbed at room temperature by the
+water-absorbent resin powder over a period of 60 minutes was measured
+with a balance. Then, the water absorption capacity (g/g) under the load
+in 60 minutes from the absorption initiation was calculated from the
+above weight W2 in accordance with the following equation (b) to
+determine the absorption capacity (g/g) under the load of 50 g/cm<sup>2</sup> (about
+4.90 kPa).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Equation (b): absorption capacity (g/g) under load<st32:break type="required" />
+= weight W2 (g)/weight (g) of water-absorbent resin powder</st32:df></p><p num="0115">Incidentally, in the case where the absorption capacity under a load
+was measured in the same way as the above except that the load was
+changed into 20 g/cm<sup>2</sup> (corresponding to about 1.96 kPa), the measured
+value was referred to as water absorption capacity under a load (1.96 kPa). </p><heading>(f) Bulk density:</heading><p num="0116">The bulk density was measured with a bulk density meter (made by
+Kuramochi Scientific Instrument Seisakusho K.K.) in accordance with JIS
+K3362 (incidentally, as to the bulk density measurement method, please
+also refer to <ref type="patent">European Patent Application No. 1029886</ref> and <ref type="patent">Japanese
+Patent Application No. 035941/2000</ref>).</p><p num="0117">Namely, 120 g of water-absorbent resin powder was placed into a
+funnel with its damper closed in a room having a temperature of 25 ± 2
+°C and a relative humidity of 30 to 50 %. Immediately thereafter, the
+damper was opened to drop the sample into a receiver (capacity: 100 ml).
+A portion, as overbrimmed from the receiver, of the sample was scraped
+off with a glass rod. Then, the weight (g) of the receiver containing the
+sample was measured with an accuracy to 0.1 g to calculate the bulk
+density (g/ml).</p><heading>(g) Impact resistance:</heading><p num="0118">In accordance with <ref type="patent">EP 0817873</ref> (<ref type="patent">USP 6,071,976</ref>), 30.0 g of water-absorbent
+resin powder was placed into a glass vessel and then vibrated
+along with 10.0 g of glass beads for 30 minutes to evaluate the decrease of
+the absorption capacity under load, thus measuring the impact resistance
+of the water-absorbent resin powder.</p><heading>(h) Weight-average particle diameter of crosslinked hydrogel
+polymer:</heading><p num="0119">The particle diameter distribution was measured by using a 20
+weight % aqueous sodium chloride solution with which only a slight
+portion of the crosslinked hydrogel polymer (hydrogel) is swollen and
+shrunk. Namely, 30 g of the hydrogel was dispersed into 1,000 g of the 20
+weight % aqueous sodium chloride solution and then stirred at 300 rpm 
+by a stirrer chip for 2 hours. Two hours later, the resultant dispersion was
+placed into with six-piled JIS standard sieves (mesh opening sizes: 9,500
+µm, 2,000 µm, 850 µm, 600 µm, 300 µm, and 75 µm/JIS Z8801/stainless
+sieves/inner diameter: 20 cm) to classify the hydrogel further using 6,000
+g of the 20 weight % aqueous sodium chloride solution by pouring this
+onto the hydrogel in sequence. Next, the bottoms of the sieves was
+sufficiently drained with paper, and then the weights of the classified
+portions having their respective particle diameter ranges of the hydrogel
+were measured and, from their total weight (g) and the initial weight (30
+g) of the hydrogel, the swelling capacity was determined and then
+converted into what each particle diameter (µm) range had been before
+the above swelling. The results of this conversion was plotted on
+logarithmic probability paper to determine the weight-average particle
+diameter D50 of the hydrogel.</p><heading>(Production Example 1): polymerization and drying of
+unneutralized crosslinked poly(acrylic acid)</heading><p num="0120">First, an aqueous monomer solution (1), comprising 1,066.61 g of
+acrylic acid, 9.12 g of N,N'-methylenebisacrylamide (copolymerizable
+crosslinking agent), and 4,280.11 g of water, was degassed with nitrogen
+gas for 60 minutes and then charged into an airtight polymerization
+vessel possible to open and close.</p><p num="0121">Next, while the space in the vessel was put under a nitrogen flow, a
+polymerization initiator comprising 32.27 g of 10 weight % aqueous 2,2'-azobis(2-amidinopropane)
+dihydrochloride solution, 10.66 g of 10 weight
+% aqueous hydrogen peroxide solution, and 26.64 g of 1 weight %
+aqueous L-ascorbic acid solution was added into the vessel at a liquid
+temperature of 23 °C. As a result, polymerization started after about 5 
+minutes, and then static polymerization was carried out for 1 hour. The
+resultant polymer was got out of the vessel and then finely divided into
+particles of several millimeters with a meat chopper having a die
+diameter of 7.5 mm (made by Hiraga Seisakusho Co., Ltd.), thus obtaining
+a particulate crosslinked hydrogel polymer (1) having an average particle
+diameter of 1,500 µm.</p><p num="0122">Next, the particulate crosslinked hydrogel polymer (1) was spread
+onto a metal gauze with a mesh opening size of 300 µm to form a
+laminate of about 50 mm in thickness. Then, the hydrogel was hot-wind-dried
+by passing a hot wind of 135 °C (dew point: 65 °C) at a speed of 1 m/s
+through the hydrogel in its vertical direction for 1 hour, thus obtaining a
+block-shaped material comprising a particulate dry polymer (1) having a
+solid content of 95 weight %. The material temperature thereof was
+about 135 °C.</p><heading>(Production Example 2): polymerization and drying of partially-neutralized
+crosslinked poly(acrylic acid)</heading><p num="0123">First, an aqueous monomer solution (2), comprising 673.79 g of
+acrylic acid, 5,904.7 g of 37 weight % aqueous sodium acrylate solution,
+15.87 g of polyethylene glycol diacrylate (average number of polyethylene
+glycol units: 8) (internal-crosslinking agent), and 714.2 g of water, was
+degassed with nitrogen gas for 60 minutes and then supplied into a
+reactor as prepared by lidding a jacketed stainless-steel-made twin-arm
+kneader of 10 liters in capacity having two sigma type blades. While
+maintaining the solution at 20 °C, the displacement of the internal air of
+the reaction system with nitrogen was continued.</p><p num="0124">Next, while the blades were rotated, 19.55 g of 20 weight % aqueous
+sodium persulfate solution and 1.47 g of 1.0 weight % aqueous L-ascorbic 
+acid solution were added into the reactor. As a result, after 1 minute,
+polymerization started, and after 20 minutes, the reaction system reached
+its peak temperature, when the resultant crosslinked hydrogel polymer
+had a finely divided diameter of about 5 mm. Thereafter, this polymer
+was further stirred and then, after 60 minutes from the start of the
+polymerization, the resultant particulate crosslinked hydrogel polymer
+(2) having an average particle diameter of 1,600 µm was got out.</p><p num="0125">Next, the particulate crosslinked hydrogel polymer (2) was spread
+onto a metal gauze with a mesh opening size of 300 µm to form a
+laminate of about 50 mm in thickness. Then, the hydrogel was hot-wind-dried
+by passing a hot wind of 170 °C (dew point: 50 °C) at a speed of 1 m/s
+through the hydrogel in its vertical direction for 1 hour, thus obtaining a
+block-shaped material comprising a particulate dry polymer (2) having a
+solid content of 95 weight %. The material temperature thereof was
+about 170 °C.</p><heading>(Production Example 3): polymerization and drying of partially-neutralized
+crosslinked poly(acrylic acid)</heading><p num="0126">A particulate crosslinked hydrogel polymer (3) having an average
+particle diameter of 1,700 µm was obtained by carrying out aqueous
+solution polymerization in a kneader in the same way as of Production
+Example 2 except that an aqueous monomer solution (3), comprising
+425.1 g of acrylic acid, 4,497.2 g of 37 weight % aqueous sodium acrylate
+solution, 1.40 g of trimethylolpropane triacrylate (internal-crosslinking
+agent), and 577.7 g of water, was used instead of the aqueous monomer
+solution (2).</p><p num="0127">Next, the particulate crosslinked hydrogel polymer (3) was hot-wind-dried
+at 170 °C for 1 hour in the same way as of Production Example 2, 
+thus obtaining a block-shaped material comprising a particulate dry
+polymer (3) having a solid content of 95 weight %. The material
+temperature thereof was about 170 °C.</p><heading>(Production Example 4): polymerization and drying of partially-neutralized
+crosslinked poly(acrylic acid)</heading><p num="0128">A particulate crosslinked hydrogel polymer (4) having an average
+particle diameter of 1,700 µm was obtained by carrying out aqueous
+solution polymerization in a kneader in the same way as of Production
+Example 2 except that an aqueous monomer solution (4), comprising 369
+g of acrylic acid, 3,907 g of 37 weight % aqueous sodium acrylate solution,
+4.99 g of polyethylene glycol diacrylate (average number of polyethylene
+glycol units: 8) (internal-crosslinking agent), and 1,216 g of water, was
+used instead of the aqueous monomer solution (2).</p><p num="0129">Next, the particulate crosslinked hydrogel polymer (4) was
+continuously hot-wind-dried in the same way as of Production Example
+2, thus obtaining a block-shaped material comprising a particulate dry
+polymer (4) having a solid content of 95 weight %. The material
+temperature thereof was about 170 °C.</p><heading>(Production Example 5): polymerization and drying of partially-neutralized
+crosslinked poly(acrylic acid)</heading><p num="0130">First, 100 parts of acrylic acid, 656.4 parts of 37 weight % aqueous
+sodium acrylate solution, 0.77 part of polyethylene glycol diacrylate
+(average number of polyethylene glycol units: 8), and 216.7 parts of
+deionized water were mixed enough to prepare an aqueous monomer
+solution (5). The resultant aqueous monomer solution (5) was
+continuously fed at a rate of 290 kg/h by using a metering pump, while
+the oxygen concentration of the aqueous monomer solution (5) was 
+adjusted to not more than 0.5 ppm by continuously introducing nitrogen
+gas into a way of piping. Four kinds of aqueous initiator solutions,
+containing 0.08 parts (as initiator solid content) of 2,2'-azobis(2-amidinopropane)
+dihydrochloride (trade name: V-50, made by Wako
+Pure Chemical Industries, Ltd.), 0.08 parts (as initiator solid content) of
+sodium persulfate, 0.008 parts (as initiator solid content) of L-ascorbic acid,
+and 0.006 parts (as initiator content) of hydrogen peroxide respectively,
+were further line-mixed with the aqueous monomer solution (5) in
+order, and then the resultant mixture was continuously supplied into a
+steel endless-belt polymerization machine (flat belt having a dam of 50
+mm at both edges), which was moving at a speed of 12 cm/min, so that
+the thickness of the mixture might be 25 mm. Polymerization started at
+once, and then the resultant polymer was discharged from an end of the
+belt polymerization machine, and then cut into pieces of about 5 to about
+10 cm with a continuous cutter, and then pulverized with a meat chopper
+(die diameter: 9 mm), thus obtaining a particulate crosslinked hydrogel
+polymer (5) having an average particle diameter of 1,600 µm.</p><p num="0131">Next, the particulate crosslinked hydrogel polymer (5) was placed
+onto a punching metal in a thickness of 50 mm and then continuously
+hot-wind-dried (by passing a hot wind of 180 °C (dew point: 60 °C)
+through the polymer in a vertical direction for 20 minutes) with a belt
+type dryer, thus obtaining a block-shaped material comprising a
+particulate dry polymer (5) having a solid content of 94 weight %. The
+material temperature thereof was about 180 °C.</p><heading>(Example 1): forcible cooling of dry polymer (1) to 60 °C</heading><p num="0132">A cold wind (speed: 1 m/s) of room temperature instead of the hot
+wind was passed through the block-shaped material of the particulate dry 
+polymer (1) (material temperature: about 135 °C, as obtained in
+Production Example 1) in a vertical direction, thereby forcibly cooling the
+block-shaped material of the particulate dry polymer (1) to 60 °C. The
+resultant block-shaped aggregate on the metal gauze was disintegrated
+immediately after being got out of the wind-cooling apparatus. The
+resultant particulate dry material (1) was continuously pulverized within
+30 seconds by a three-stage roll granulator (roll setting gaps: 1.0 mm/0.45
+mm/0.25 mm in order from the top). The releasability of the block-shaped
+material of the dry polymer (1) from the metal gauze having a
+mesh opening size of 300 µm was very good during the drying step, and
+the particle diameter distribution of a water-absorbent resin powder (1) as
+obtained by the above pulverization is shown in Table 1.</p><heading>(Example 2): forcible cooling of dry polymer (1) to 45 °C</heading><p num="0133">The block-shaped material was forcibly cooled to 45 °C by adjusting
+the passing time of the cold wind in Example 1. Thereafter, in the same
+way as of Example 1, the cooled material was disintegrated, and then the
+resultant particulate dry material (2) was pulverized. The releasability of
+the block-shaped material of the dry polymer (1) from the metal gauze
+having a mesh opening size of 300 µm was very good during the drying
+step, and the particle diameter distribution of a water-absorbent resin
+powder (2) as obtained by the above pulverization is shown in Table 1.</p><heading>(Example 3): forcible cooling of dry polymer (1) to 95 °C</heading><p num="0134">The block-shaped material was forcibly cooled to 95 °C by adjusting
+the passing time of the cold wind in Example 1. Thereafter, in the same
+way as of Example 1, the cooled material was disintegrated, and then the
+resultant particulate dry material (3) was pulverized. The releasability of
+the block-shaped material of the dry polymer (1) from the metal gauze 
+having a mesh opening size of 300 µm was a little worse than that in
+Example 1 or 2, but good during the drying step, and the particle diameter
+distribution of a water-absorbent resin powder (3) as obtained by the
+above pulverization is shown in Table 1.</p><heading>(Example 4): forcible cooling of dry polymer (1) to 80 °C</heading><p num="0135">The block-shaped material was forcibly cooled to 80 °C by adjusting
+the passing time of the cold wind in Example 1. Thereafter, in the same
+way as of Example 1, the cooled material was disintegrated, and then the
+resultant particulate dry material (4) was pulverized. The releasability of
+the block-shaped material of the dry polymer (1) from the metal gauze
+having a mesh opening size of 300 µm was a little worse than that in
+Example 1 or 2, but good during the drying step, and the particle diameter
+distribution of a water-absorbent resin powder (4) as obtained by the
+above pulverization is shown in Table 1.</p><heading>(Example 5): forcible cooling of dry polymer (2) to 40 °C</heading><p num="0136">A cold wind (speed: 1 m/s) of room temperature instead of the hot
+wind was passed through the block-shaped material of the particulate dry
+polymer (2) (material temperature: about 170 °C, as obtained in
+Production Example 2) in a vertical direction, thereby forcibly cooling the
+block-shaped material of the particulate dry polymer (2) to 40 °C. The
+resultant block-shaped aggregate on the metal gauze was disintegrated
+immediately after being got out of the wind-cooling apparatus. The
+resultant particulate dry material (5) was continuously pulverized within
+30 seconds by a three-stage roll granulator (roll setting gaps: 1.0 mm/0.45
+mm/0.25 mm in order from the top). The releasability of the block-shaped
+material of the dry polymer (2) from the metal gauze having a
+mesh opening size of 300 µm was very good during the drying step, and 
+the particle diameter distribution of a water-absorbent resin powder (5) as
+obtained by the above pulverization is shown in Table 1.</p><heading>(Example 6): adding aqueous liquid and reheating</heading><p num="0137">A surface-crosslinking agent solution with a composition of 1,4-butanediol/propylene
+glycol/water/isopropanol = 0.32/0.50/2.73/0.45
+(parts by weight) was mixed into 100 parts by weight of the water-absorbent
+resin powder (5) (as obtained by the process involving the
+forcible cooling step) at a powder temperature of 35 °C, and then the
+resultant mixture was reheated at 210 °C for 30 minutes, thus obtaining a
+surface-crosslinked water-absorbent resin powder (6), which exhibited a
+water absorption capacity of 28 g/g without load and a water absorption
+capacity of 25 g/g under a load (4.90 kPa).</p><p num="0138">Incidentally, the water-absorbent resin powder (5) as obtained in
+example 5 was measured by the water absorption capacity without load
+and the water-extractable content, with the result that they were 31 g/g
+and 5 weight % respectively. In addition, the bulk density and the
+temperature of the water-absorbent resin powder (5) were 0.67 g/ml and
+35 °C respectively before the addition of the aqueous liquid.</p><heading>(Example 7): post-neutralization</heading><p num="0139">The water-absorbent resin powder (7) of 75 mol % in neutralization
+ratio was obtained by dry blending (powder mixing) of the water-absorbent
+resin powder (1), as obtained in Example 1, and a
+predetermined amount of sodium carbonate powder together in order to
+post-neutralize carboxyl groups. As to the water-absorbent resin powder
+(7), the water absorption capacity without load was 42 g/g, and the water-extractable
+content was 3 weight %.</p><p num="0140">Furthermore, the water-absorbent resin powders (2) to (4) as 
+obtained in Examples 2 to 4 were also post-neutralized in the same way as
+the above. As a result, they exhibited a water absorption capacity of 42 g/g
+without load and had a water-extractable content of 3 weight %.</p><heading>(Comparative Example 1): no forcible cooling</heading><p num="0141">The block-shaped material of the dry polymer (1) as obtained in
+Production Example 1 was got out of the dryer without passing the cold
+wind through the block-shaped material in Example 1. Immediately
+thereafter, in the same way as of Example 1, the block-shaped material
+was disintegrated, and then the resultant comparative particulate dry
+material (1) (temperature during pulverization: 120 °C) was pulverized.
+During the drying step, the releasability of the block-shaped material of
+the dry polymer (1) from the metal gauze having a mesh opening size of
+300 µm was bad, and clogging of the metal gauze with particles of the dry
+polymer (1) was seen. Therefore, as the continuous drying proceeded, the
+drying efficiency (uniformity and drying speed) was decreasing. The
+particle diameter distribution of a comparative water-absorbent resin
+powder (1) as obtained by the above pulverization is shown in Table 1.</p><heading>(Comparative Example 2): no forcible cooling</heading><p num="0142">The block-shaped material of the dry polymer (2) as obtained in
+Production Example 2 was got out of the dryer without passing the cold
+wind through the block-shaped material in Example 5. Immediately
+thereafter, in the same way as of Example 1, the block-shaped material
+was disintegrated, and then the resultant comparative particulate dry
+material (2) (temperature during pulverization: 120 °C) was pulverized.
+During the drying step, the releasability of the block-shaped material of
+the dry polymer (2) from the metal gauze having a mesh opening size of
+300 µm was bad, and clogging of the metal gauze with particles of the dry 
+polymer (2) was seen. Therefore, as the continuous drying proceeded, the
+drying efficiency (uniformity and drying speed) was decreasing. The
+particle diameter distribution of a comparative water-absorbent resin
+powder (2) as obtained by the above pulverization is shown in Table 1.</p><heading>(Comparative Example 3): adding aqueous liquid and post-heating/but
+no forcible cooling</heading><p num="0143">The aqueous liquid was added to the comparative water-absorbent
+resin powder (2), as obtained in Comparative Example 2 (without forcible
+cooling of the dry polymer (2)), in the same way as of Example 6
+(involving forcible cooling of the dry polymer (2)). As to the comparative
+water-absorbent resin powder (2) as obtained without cooling to 35 to 80
+°C, even if the particle diameter distribution was adjusted to the same as
+of the water-absorbent resin powder (5), aggregation and adhesion in the
+mixer were gradually observed and the continuous mixing was difficult,
+because of high temperature of the powder.</p><heading>(Example 8): forcible cooling of dry polymer (3)</heading><p num="0144">A cold wind (speed: 1 m/s) of room temperature instead of the hot
+wind was passed through the block-shaped material of the particulate dry
+polymer (3) (material temperature: about 170 °C, as obtained in
+Production Example 3) in a vertical direction, thereby forcibly cooling the
+block-shaped material of the particulate dry polymer (3) to 50 °C. The
+resultant block-shaped aggregate on the metal gauze was disintegrated
+immediately after being got out of the wind-cooling apparatus. The
+resultant particulate dry material (6) was continuously pulverized within
+30 seconds by a three-stage roll granulator (roll setting gaps: 1.0 mm/0.45
+mm/0.10 mm in order from the top). The releasability of the block-shaped
+material of the dry polymer (3) from the metal gauze having a 
+mesh opening size of 300 µm was very good during the drying step, and
+the particle diameter distribution of a water-absorbent resin powder (8) as
+obtained by the above pulverization is shown in Table 1. Incidentally, as
+to the water-absorbent resin powder (8), the water absorption capacity
+without load was 44 g/g, and the water-extractable content was 17 weight
+%.</p><heading>(Example 9): forcible cooling of dry polymer (3) and change of
+pulverization conditions</heading><p num="0145">The pulverization conditions of the dry polymer (6) in Example 8
+were changed. Namely, a water-absorbent resin powder (9) was obtained
+by pulverizing the particulate dry material (6) with a pin mill (sample
+mill KII-1, made by Fuji Paudal Industry) (so that the ratio of particles
+having particle diameters in the range of 850 to 150 µm would be 85
+weight %) and then grinding surfaces thereof with a homogenizer (high-speed
+homogenizer MX-7, made by Nihonseiki Kaisha Ltd.). The particle
+diameter distribution is shown in Table 1.</p><heading>(Example 10): adding aqueous liquid to water-absorbent resin powder
+having bulk density of 0.74 g/ml</heading><p num="0146">An aqueous liquid with a composition of propylene
+glycol/water/ethanol = 0.3/2.5/1 (parts by weight) was spray-added to 100
+parts by weight of water-absorbent resin powder (9A) (bulk density = 0.74
+g/ml) (which was obtained by classifying the water-absorbent resin
+powder (9) into the particle diameter range of 300 to 150 µm and had a
+temperature of 40 °C wherein the water-absorbent resin powder (9) was
+obtained in Example 9) in a high-speed mixer, and then the resultant
+mixture was heat-treated with an oil bath of 210 °C under stirred
+conditions for 30 minutes, thus obtaining a surface-crosslinked water-absorbent 
+resin powder (10), of which the absorption capacities without
+load and under loads (1.96 kPa and 4.90 kPa) are shown in Table 2. In this
+table, the values of the absorption capacities under the loads, after the
+impact resistance test, are shown in the parentheses.</p><heading>(Example 11): adding aqueous liquid to water-absorbent resin powder
+having bulk density of 0.63 g/ml</heading><p num="0147">In the same way as of Example 10, the aqueous liquid was added to a
+water-absorbent resin powder (8A) (bulk density = 0.63 g/ml) (which was
+obtained by classifying the water-absorbent resin powder (8) into the
+particle diameter range of 300 to 150 µm and had a temperature of 40 °C
+wherein the water-absorbent resin powder (8) was obtained in Example 8),
+and then the resultant mixture was heat-treated for 30 minutes. The
+results of analyzing the resultant water-absorbent resin powder (11) are
+shown in Table 2.</p><heading>(Example 12): adding aqueous liquid to water-absorbent resin powder
+having bulk density of 0.73 g/ml</heading><p num="0148">In the same way as of Examples 10 and 11, the aqueous liquid was
+added to 100 parts by weight of water-absorbent resin powder (9B) (bulk
+density = 0.73 g/ml) (which was obtained by classifying the water-absorbent
+resin powder (9) into the particle diameter range of 500 to 150
+µm and had a temperature of 40 °C wherein the water-absorbent resin
+powder (9) was obtained in Example 9), and then the resultant mixture
+was heat-treated for 25 minutes. The results of analyzing the resultant
+water-absorbent resin powder (12) are shown in Table 2.</p><heading>(Example 13): adding aqueous liquid to water-absorbent resin powder
+having bulk density of 0.63 g/ml</heading><p num="0149">In the same way as of Examples 10 to 12, the aqueous liquid was 
+added to a water-absorbent resin powder (8B) (bulk density = 0.63 g/ml)
+(which was obtained by classifying the water-absorbent resin powder (8)
+into the particle diameter range of 500 to 150 µm and had a temperature
+of 40 °C wherein the water-absorbent resin powder (8) was obtained in
+Example 8), and then the resultant mixture was heat-treated for 25
+minutes. The results of analyzing the resultant water-absorbent resin
+powder (13) are shown in Table 2.</p><heading>(Example 14): forcible cooling of dry polymer (4)</heading><p num="0150">A cold wind (speed: 1 m/s) of room temperature instead of the hot
+wind was passed through the block-shaped material of the particulate dry
+polymer (4) (material temperature: about 170 °C, as obtained in
+Production Example 4) in a vertical direction, thereby forcibly cooling the
+block-shaped material of the particulate dry polymer (3) to 65 °C. The
+resultant block-shaped aggregate on the metal gauze was disintegrated
+immediately after being got out of the wind-cooling apparatus. The
+resultant particulate dry material (8) was continuously pulverized within
+30 seconds by a three-stage roll granulator (roll setting gaps: 1.0 mm/0.45
+mm/0.09 mm in order from the top). Incidentally, the releasability of the
+block-shaped material of the dry polymer (4) from the metal gauze
+having a mesh opening size of 300 µm was very good during the drying
+step. As to the resultant water-absorbent resin powder (14), the water
+absorption capacity without load was 43 g/g, and the water-extractable
+content was 10 weight %, and the particle diameter distribution is shown
+in Table 1.</p><heading>(Example 15): adding aqueous liquid and post-heating/powder
+temperature = 60 °C</heading><p num="0151">In a Lödige mixer (M5R, made by Gebrüder Lödige Maschinenbau 
+GmbH) of which the internal wall temperature was controlled to 60 °C by
+external heating, an aqueous solution with a composition of ethylene
+glycol diglycidyl ether/propylene glycol/water = 0.1/3/1 (weight %) was
+mixed into 500 g of the water-absorbent resin powder (14) (which was
+obtained in Example 14 and had a temperature of 60 °C) at a high speed
+(revolution rate: 320 rpm), when and the mixing could continuously be
+carried out involving little adhesion of the water-absorbent resin powder
+even without an organic solvent. Then, the resultant mixture was
+heated while being stirred with a 5 L mortar mixer (made by Nishi Nihon
+Seisakusho K.K.) in an oil bath of 205 °C for 50 minutes, thus obtaining a
+surface-crosslinked water-absorbent resin powder (15). The results are
+shown in Table 2.</p><heading>(Example 16): adding aqueous liquid and post-heating/powder
+temperature = 40 °C</heading><p num="0152">The water-absorbent resin powder (14) (which was obtained in
+Example 14 and had a temperature of 60 °C) was cooled to a temperature
+of 40 °C by continuous wind-cooling. Thereafter, in the same way as of
+Example 15, the aqueous liquid was added to the resultant water-absorbent
+resin powder (14) having a temperature of 40 °C. As a result,
+the adhesion to the mixer more decreased. The resultant mixture was
+heat-treated in the same way as of Example 12, thus obtaining a water-absorbent
+resin powder (16). The results by analysis are shown in Table 2.</p><heading>(Example 17): adding aqueous liquid and post-heating/internal wall
+temperature having room temperature</heading><p num="0153">The aqueous liquid was added in the same way as of Example 14
+except that the temperature of the mixer was room temperature by no
+external heating. As a result, the adhesion to the internal wall greatly 
+increased to deteriorate the continuous operability.</p><heading>(Example 18): forcible cooling of dry polymer (5)</heading><p num="0154">A cold wind (speed: 1 m/s) of room temperature instead of the hot
+wind was continuously supplied to the block-shaped material of the
+particulate dry polymer (5) (material temperature: about 180 °C, as
+obtained in Production Example 5) in a vertical direction, thereby forcibly
+cooling the block-shaped material of the particulate dry polymer (5) to 60
+°C. Thereafter, the dry polymer (5) was got out of the endless belt type
+wind-cooling apparatus and then continuously supplied to a roll
+pulverizer at a rate of 100 kg/h to thereby carry out continuous
+polymerization, continuous drying, and continuous pulverization. The
+releasability of the dry polymer (5) from the punching metal was very
+good during the drying step, and the particle diameter distribution of a
+water-absorbent resin powder (18) as obtained by the above pulverization
+is shown in Table 1. As to the water-absorbent resin powder (18), the
+water absorption capacity without load was 55 g/g, and the water-extractable
+content was 6 weight %.</p><p num="0155">In addition, the cold wind, as used for the forcible cooling of the
+block-shaped material of the particulate dry polymer (5), was heated to
+about 90 °C due to this use for the forcible cooling, therefore the resultant
+warm wind was supplied to an air-supplying inlet of the belt type hot-wind
+dryer of Production Example 5 through piping to recycle the warm
+wind as a raw material of a hot wind (180 °C) for drying, thereby carrying
+out the continuous drying of Production Example 5. In this way, in the
+hot-wind drying of Production Example 5, the hot wind of 180 °C is
+produced by using the warm wind of about 90 °C instead of air of room
+temperature, therefore there are advantages in that energy is greatly 
+saved at that rate, and in that the warm gas (exhaust gas) is not discharged
+into the environment.</p><heading>(Example 19): adding aqueous liquid and post-heating/powder
+temperature = 50 °C</heading><p num="0156">The water-absorbent resin powder (18), as obtained by undergoing
+the forcible cooling, was supplied at a powder temperature of 50 °C to a
+high-speed continuous mixer (turbilizer/1,000 rpm) at a rate of 100 kg/h.
+Furthermore, an aqueous surface-crosslinking agent solution with a
+composition of 1,4-butanediol/propylene glycol/water/isopropanol =
+0.32/0.50/2.73/0.5 (weight % based on the powder) was sprayed to the
+water-absorbent resin powder (18) under conditions of spray diameter =
+about 250 µm. Next, the resultant mixture was continuously reheat-treated
+at 195 °C for 40 minutes, thus obtaining a surface-crosslinked
+water-absorbent resin powder (19). The results are shown in Table 2.
+Incidentally, the internal wall temperature of the high-speed continuous
+mixer (turbilizer) during the continuous mixing was in the range of
+about 70 to about 80 °C due to the powder temperature and the frictional
+heat, and the powder was therefore heated, with the result that there
+occurred little adhesion.</p><heading>(Example 20): adding aqueous liquid and post-heating/powder
+temperature = 50 °C</heading><p num="0157">A surface-crosslinked water-absorbent resin powder (20) was
+obtained in the same way as of Example 19 except that: the aqueous
+surface-crosslinking agent solution was changed to an aqueous surface-crosslinking
+agent solution with a composition of ethylene glycol
+diglycidyl ether/propylene glycol/water/isopropanol = 0.03/1/3/0.9
+(weight % based on the powder) to spray this solution to the water-absorbent 
+resin powder (18), and then the resultant mixture was
+continuously reheat-treated at 190 °C for 35 minutes. The results are
+shown in Table 2.</p><heading>(Example 21): adding aqueous liquid and post-heating/powder
+temperature = 30 °C</heading><p num="0158">The water-absorbent resin powder (18), as obtained in Example 18,
+was further cooled to a powder temperature of 30 °C and then mixed with
+the aqueous surface-crosslinking agent solution in the same way as of
+Example 19, and then the resultant mixture was continuously reheat-treated
+at 195 °C for 40 minutes. Because of the cooling to the powder
+temperature of 30 °C, a long term operation resulted in a little aggregation
+during the continuous mixing and transportation, and in a little
+prolongation of the reaction time. The results are shown in Table 2.</p><heading>(Comparative Example 4): adding aqueous liquid and post-heating/but
+no forcible cooling</heading><p num="0159">A comparative water-absorbent resin powder (3) was obtained in the
+same way as of Example 14 except that the dry polymer (4) was got out of
+the dryer without being forcible cooled, and immediately thereafter
+pulverized. Next, the aqueous liquid was added to the water-absorbent
+resin powder in the same way as of Example 15 except that the water-absorbent
+resin powder (14) was replaced with the comparative water-absorbent
+resin powder (3) of which the particle diameter distribution was
+adjusted to not larger than 850 µm. As to the comparative water-absorbent
+resin powder (3) as obtained without cooling to 40 to 80 °C,
+even if the particle diameter distribution was adjusted to the same as of
+Example 15, aggregation and adhesion in the mixer were gradually
+observed and the continuous operation was difficult. The results are 
+shown in Table 2.</p><heading>(Comparative Example 5): pulverization of dry polymer (5)/but no
+forcible cooling</heading><p num="0160">The dry polymer (5) was treated in the same way as of Example 18
+except that the dry polymer (5) was not forcibly cooled before being
+supplied to the roll pulverizer. After 2 hours from the start of the
+continuous pulverization, there began to occur the following troubles:
+aggregate-derived extraordinary noises of the pulverizer; and adhesion of
+the aggregate to the pulverizer. The particle diameter distribution of a
+comparative water-absorbent resin powder (5) as obtained by the
+pulverization is shown in Table 1.</p><heading>(Comparative Example 6): adding aqueous liquid and post-heating/but
+no forcible cooling</heading><p num="0161">A comparative surface-crosslinked water-absorbent resin powder (6)
+was obtained in the same way as of Example 19 except that the water-absorbent
+resin powder (19) was replaced with the comparative water-absorbent
+resin powder (5) as obtained in Comparative Example 5. The
+results are shown in Table 2.</p><heading>(Example 22): preparation of sanitary material</heading><p num="0162">First, 50 parts by weight of the surface-crosslinked water-absorbent
+resin powder (19) (as obtained in Example 19) and 50 parts by weight of
+pulverized wood pulp were mixed together in a dry manner with a
+mixer. Next, the resultant mixture was shaped into a web of the size of 12
+cm × 38 cm by pneumatically molding the mixture. Then, this web was
+pressed under a pressure of 2 kg/cm<sup>2</sup> (about 193 kPa), thus obtaining an
+absorbent structure (1) having a basis weight of about 526 g/m<sup>2</sup>. Next, this
+absorbent structure (1) was inserted between a back sheet (liquid-impermeable 
+sheet) with a leg gather and a liquid-permeable top sheet,
+thus preparing a disposable diaper (1) having a weight of 47 g and a core
+concentration of 50 weight %.</p><p num="0163">While a load of 20 g/cm<sup>2</sup> (about 1.93 kPa) was applied to the
+disposable diaper (1) by a flat-plate-shaped weight, a physiological saline
+solution was injected from a central hole of the plate into the disposable
+diaper under the load. As a result, the disposable diaper (1), which was
+prepared from the water-absorbent resin powder (19) as obtained by
+undergoing the cooling step, exhibited a saturated absorbency of about 470
+g.</p><heading>(Comparative Example 7): preparation of sanitary material</heading><p num="0164">A comparative disposable diaper (1) was obtained in the same way as
+of Example 22 except that the water-absorbent resin powder (19) was
+replaced with the comparative water-absorbent resin powder (6) as
+obtained in Comparative Example 6. In the same way as of Example 22,
+while a load of 20 g/cm<sup>2</sup> (about 1.93 kPa) was applied to the comparative
+disposable diaper (1) by a flat-plate-shaped weight, a physiological saline
+solution was injected from a central hole of the plate into the disposable
+diaper under the load. As a result, the comparative disposable diaper (1)
+exhibited a saturated absorbency of about 410 g and was therefore inferior
+to the disposable diaper (1) which was prepared from the water-absorbent
+resin powder (19) as obtained by undergoing the cooling step. <tables><table><tgroup cols="10"><tbody><row><entry namest="1" nameend="10">Particle diameter distribution and drying efficiency of water-absorbent resin powder</entry></row><row><entry namest="1" align="center">Example or Comparative Example</entry><entry namest="2" align="center">Dry polymer</entry><entry namest="3" align="center">Temperat ure</entry><entry namest="4" align="center">Releasabil ity</entry><entry namest="5" nameend="9" align="center">Weight % of each particle diameter range (µm)</entry><entry namest="10" align="center">Average particle diameter</entry></row><row><entry align="center" /><entry align="center" /><entry align="center" /><entry align="center" /><entry align="center">850-on</entry><entry align="center">850-600</entry><entry align="center">600-300</entry><entry align="center">300-150</entry><entry align="center">150-passed</entry></row><row><entry align="center" /><entry align="center" /><entry align="center">(°C)</entry><entry align="center">(o ○ to ×)</entry><entry align="center" /><entry align="center" /><entry align="center">(weight %)</entry><entry align="center" /><entry align="center" /><entry align="center">(µm)</entry></row><row><entry align="center">Example 1</entry><entry align="center">(1)</entry><entry align="center">60</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">17</entry><entry align="center">66</entry><entry align="center">15</entry><entry align="center">2</entry><entry align="center">420</entry></row><row><entry align="center">Example 2</entry><entry align="center">(1)</entry><entry align="center">45</entry><entry align="center">o ○</entry><entry align="center">3</entry><entry align="center">16</entry><entry align="center">72</entry><entry align="center">8</entry><entry align="center">1</entry><entry align="center">460</entry></row><row><entry align="center">Example 3</entry><entry align="center">(1)</entry><entry align="center">95</entry><entry align="center">○</entry><entry align="center">14</entry><entry align="center">26</entry><entry align="center">56</entry><entry align="center">4</entry><entry align="center">0</entry><entry align="center">540</entry></row><row><entry align="center">Example 4</entry><entry align="center">(1)</entry><entry align="center">85</entry><entry align="center">○</entry><entry align="center">10</entry><entry align="center">24</entry><entry align="center">61</entry><entry align="center">5</entry><entry align="center">0</entry><entry align="center">520</entry></row><row><entry align="center">Example 5</entry><entry align="center">(2)</entry><entry align="center">40</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">13</entry><entry align="center">74</entry><entry align="center">11</entry><entry align="center">1</entry><entry align="center">420</entry></row><row><entry align="center">Example 8</entry><entry align="center">(3)</entry><entry align="center">40</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">14</entry><entry align="center">62</entry><entry align="center">18</entry><entry align="center">6</entry><entry align="center">390</entry></row><row><entry align="center">Example 9</entry><entry align="center">(3)</entry><entry align="center">40</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">9</entry><entry align="center">37</entry><entry align="center">32</entry><entry align="center">22</entry><entry align="center">270</entry></row><row><entry align="center">Example 14</entry><entry align="center">(4)</entry><entry align="center">50</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">3</entry><entry align="center">47</entry><entry align="center">43</entry><entry align="center">7</entry><entry align="center">300</entry></row><row><entry align="center">Example 18</entry><entry align="center">(5)</entry><entry align="center">50</entry><entry align="center">o ○</entry><entry align="center">0</entry><entry align="center">14</entry><entry align="center">62</entry><entry align="center">19</entry><entry align="center">5</entry><entry align="center">390</entry></row><row><entry namest="1" nameend="10" align="center">There is forcible cooling before pulverization in Examples 1 to 5, 8, 9, 14 and 18 above.</entry></row><row><entry align="center">Comparative Example 1</entry><entry align="center">(1)</entry><entry align="center">120</entry><entry align="center">×</entry><entry align="center">75</entry><entry align="center">20</entry><entry align="center">5</entry><entry align="center">0</entry><entry align="center">0</entry><entry align="center">1,100</entry></row><row><entry align="center">Comparative Example 2</entry><entry align="center">(2)</entry><entry align="center">120</entry><entry align="center">×</entry><entry align="center">24</entry><entry align="center">31</entry><entry align="center">30</entry><entry align="center">11</entry><entry align="center">4</entry><entry align="center">640</entry></row><row><entry align="center">Comparative Example 5</entry><entry align="center">(5)</entry><entry align="center">140</entry><entry align="center">×</entry><entry align="center">7</entry><entry align="center">31</entry><entry align="center">40</entry><entry align="center">18</entry><entry align="center">4</entry><entry align="center">490</entry></row><row><entry namest="1" nameend="10" align="center">There is no forcible cooling before pulverization in Comparative Examples 1, 2 and 5 above.</entry></row><row><entry>(Notes) Table 1: Releasability: releasability of dry polymer from metal gauze (drying efficiency)
+o ○ (Very good releasability/neither clogging nor adhesion to metal gauze)
+
+○ (Good releasability/a little clogging and adhesion to metal gauze)
+
+Δ (Somewhat bad releasability/clogging and adhesion to metal gauze)
+
+× (Bad releasability/much clogging and adhesion to metal gauze)</entry></row></tbody></tgroup></table></tables><tables><table><tgroup cols="7"><tbody><row><entry namest="1" nameend="7">Pulverization of dry polymers (2) to (5) and addition of aqueous liquid</entry></row><row><entry namest="1" align="center">Example or Comparative Example</entry><entry namest="2" align="center">Powder temperature (°C)</entry><entry namest="3" align="center">Particle diameter range (µm)</entry><entry namest="4" align="center">Bulk density (g/ml)</entry><entry namest="5" align="center">Water absorption capacity without load (g/g)</entry><entry namest="6" nameend="7" align="center">Absorption capacity under load</entry></row><row><entry align="center" /><entry align="center" /><entry align="center" /><entry align="center" /><entry align="center" /><entry align="center">4.90 kPa (g/g)</entry><entry align="center">1.96 kPa (g/g)</entry></row><row><entry align="center">Example 10</entry><entry align="center">40</entry><entry align="center">300-150</entry><entry align="center">0.74</entry><entry align="center">35</entry><entry align="center">24 (23)</entry><entry align="center">35 (34)</entry></row><row><entry align="center">Example 11</entry><entry align="center">40</entry><entry align="center">300-150</entry><entry align="center">0.63</entry><entry align="center">36</entry><entry align="center">18 (16)</entry><entry align="center">34 (31)</entry></row><row><entry align="center">Example 12</entry><entry align="center">40</entry><entry align="center">500-150</entry><entry align="center">0.76</entry><entry align="center">37</entry><entry align="center">25 (23)</entry><entry align="center">35 (34)</entry></row><row><entry align="center">Example 13</entry><entry align="center">40</entry><entry align="center">500-150</entry><entry align="center">0.63</entry><entry align="center">39</entry><entry align="center">20 (17)</entry><entry align="center">35 (31)</entry></row><row><entry namest="1" nameend="7" align="center">The above is comparison of dry polymer (3).</entry></row><row><entry align="center">Example 6</entry><entry align="center">35</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">28</entry><entry align="center">25</entry><entry align="center">28</entry></row><row><entry align="center">Comparative Example 3</entry><entry align="center">No cooling</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">29</entry><entry align="center">19</entry><entry align="center">26</entry></row><row><entry namest="1" nameend="7" align="center">The above is comparison of dry polymer (2).
+
+(Comparative Example 3: much aggregation and adhesion/difficult continuous mixing)</entry></row><row><entry align="center">Example 15</entry><entry align="center">60</entry><entry align="center">not larger than 850</entry><entry align="center">0.68</entry><entry align="center">32</entry><entry align="center">25</entry><entry align="center">30</entry></row><row><entry align="center">Example 16</entry><entry align="center">40</entry><entry align="center">not larger than 850</entry><entry align="center">0.68</entry><entry align="center">31</entry><entry align="center">27</entry><entry align="center">32</entry></row><row><entry align="center">Comparative Example 4</entry><entry align="center">No cooling</entry><entry align="center">not larger than 850</entry><entry align="center">0.68</entry><entry align="center">33</entry><entry align="center">19</entry><entry align="center">27</entry></row><row><entry namest="1" nameend="7" align="center">The above is comparison of dry polymer (4).
+
+(Comparative Example 4: much aggregation and adhesion/difficult continuous mixing)</entry></row><row><entry align="center">Example 19</entry><entry align="center">50</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">35</entry><entry align="center">27</entry><entry align="center">35</entry></row><row><entry align="center">Example 20</entry><entry align="center">50</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">34</entry><entry align="center">28</entry><entry align="center">34</entry></row><row><entry align="center">Example 21</entry><entry align="center">30</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">34</entry><entry align="center">28</entry><entry align="center">35</entry></row><row><entry align="center">Comparative Example 6</entry><entry align="center">No cooling</entry><entry align="center">not larger than 850</entry><entry align="center">0.67</entry><entry align="center">37</entry><entry align="center">21</entry><entry align="center">26</entry></row><row><entry namest="1" nameend="7" align="center">The above is comparison of dry polymer (5).
+
+(Comparative Example 6: much aggregation and adhesion/difficult continuous mixing)</entry></row><row><entry>(Note): The values in the parentheses of the absorption capacities under the loads of Examples 10 to 13 are what they are after the impact resistance test.</entry></row></tbody></tgroup></table></tables></p><p num="0165">As is understood from the data shown in Table 1, Examples 1 to 7
+and 14 are included in the preferable scope of the present invention in
+which the water-absorbent resin powder has an average particle diameter
+of 200 to 600 µm after the pulverization step wherein the total ratio of
+particles having particle diameters of not larger than 150 µm and particles
+having particle diameters of not smaller than 850 µm in the water-absorbent 
+resin powder is not more than 15 weight % of the water-absorbent
+resin powder. On the other hand, as to Comparative Examples
+1 and 2, it would be understood that the average particle diameter of the
+water-absorbent resin powder deviates from the range of 200 to 600 µm
+and further that the total ratio of particles having particle diameters of
+not larger than 150 µm and particles having particle diameters of not
+smaller than 850 µm in the water-absorbent resin powder is more than 15
+weight % of the water-absorbent resin powder.</p><p num="0166">In addition, as is understood from the results shown in Table 1, the
+on-sieve fractions (not smaller than 850 µm) deviating from the specified
+particle diameter range are very much less in Examples 1 to 5 according to
+the present invention in which the dry polymer is forcibly cooled
+preferably into the range of 85 to 35 °C, more preferably 80 to 40 °C, still
+more preferably 70 to 45 °C, after the heat-drying step than in
+Comparative Examples 1 and 2 not according to the present invention in
+which the forcible cooling was not carried out, therefore the average
+particle diameter and the particle diameter distribution are excellent in
+the present invention.</p><p num="0167">In addition, as is understood from the results shown in Table 1, as to
+the present invention, the adhesion and clogging of the dry polymer to
+the metal gauze also decreases, and the drying efficiency (drying speed,
+uniformity) increases. In addition, it would also be understood that: the
+difference between the effects at 40 °C and at 60 °C is not large, and cooling
+to not lower than 60 °C is sufficient in consideration of the scale of the
+cooling facilities. In addition, although not described in the table, the
+water-absorbent resin powder according to the present invention shows
+the advantage of little aggregating after the pulverization. </p><p num="0168">As is understood from the results shown in Table 2, as to the present
+invention, the aqueous liquid is uniformly added, and the resultant
+properties are therefore excellent. In addition, from comparison among
+Examples 10 to 13, it would be understood that if the bulk density is not
+less than 0.65 g/ml after the pulverization, the absorption capacity under
+a load (especially 4.90 kPa) is also more enhanced. Incidentally, as is
+shown in the parentheses in the table, the absorption capacities under
+loads (1.93 kPa and 4.90 kPa) are little deteriorated by the impact, and the
+impact resistance and the liquid permeability are also excellent. From
+comparison among Examples 15 to 17, it would be understood that the
+temperature of the powder and the internal wall temperature of the
+mixer are important for the addition of the aqueous liquid.</p><p num="0169">Furthermore, the above working examples according to the present
+invention are compared with regard to a series of continuous procedures.
+The effects of the present invention are shown more remarkably when
+continuously carrying out the production, especially, when carrying out
+continuous drying and continuous pulverization of not less than 1
+ton/day, preferably not less than 10 tons/day, of the water-absorbent resin
+powder per line and then adding the aqueous liquid.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver mit den Schritten:
+<claim-text><claim-text>Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vemetzungsmittel
+enthält; Wärmetrocknung des erhaltenen vernetzten Hydrogelpolymers; und</claim-text><claim-text>Zerkleinern des erhaltenen trockenen Polymers, um das Wasser absorbierende Harzpulver
+herzustellen; wobei:
+<claim-text><claim-text>das Wasser absorbierende Harzpulver einen Gewichtsmittel-Teilchendurchmesser
+von 200 bis 600 µm nach dem Zerkleinerungsschritt aufweist, wobei die Gesamtmenge
+von Teilchen der JIS 150 µm siebgängigen Fraktion und JIS 850 µm abgesiebten Fraktion
+im Wasser absorbierenden Harzpulver nicht mehr als 15 Gew.- % des Wasser absorbierenden
+Harzpulvers beträgt;</claim-text></claim-text></claim-text></claim-text>
+   dadurch gekennzeichnet, dass das trockene Polymer, das aus dem Wärmetrocknungsschritt
+erhalten wird, vor oder während des Zerkleinerungsschritts zwangsgekühlt
+wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch 1,
+<claim-text><claim-text>das zusätzlich den Schritt des Oberflächenvernetzens des Wasser absorbierenden
+Harzpulvers nach dem Zerkleinerungsschritt umfasst.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch 2,
+   wobei: die Temperatur des Wärmetrocknungsschritts im Bereich von 110 bis 230 °C
+liegt; die Temperatur des Zwangskühlungsschritts, der dem Wärmetrocknungsschritt folgt,
+im Bereich von 85 bis 35 °C liegt; und die Temperatur des Oberflächenvernetzungsschritts,
+der dem Zerkleinerungsschritt folgt, im Bereich von 110 bis 230 °C liegt.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 3, wobei das trockene Polymer einen Feststoffgehalt von 93 bis 97 Gew.-%
+aufweist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 4, das zusätzlich die Schritte des Laminierens des vemetzten Hydrogelpolymers
+in eine bestimmte Dicke von 1 bis 20 cm in teilchenförmiger Form und anschließendes
+Trocknen umfasst.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 5, das zusätzlich den Schritt des Rezyklierens von Wärme umfasst, welche
+durch die Zwangskühlung des trockenen Polymers erhalten wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 6, wobei das Wasser absorbierende Harzpulver eine Schüttdichte, gemessen
+durch eine Vorrichtung gemäß JIS K-3362, von nicht weniger als 0,65 g/ml nach dem
+Zerkleinerungsschritt aufweist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 7, das zusätzlich den Schritt der Zwangserwärmung oder Wärmeerhaltung
+des erhaltenen Wasser absorbierenden Harzpulvers nach dem Zerkleinerungsschritt umfasst.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 8, das zusätzlich den Schritt der Zugabe einer wässrigen Flüssigkeit zu
+dem Wasser absorbierenden Harzpulver, das nach dem Zerkleinerungsschritt erhalten wird,
+im Anschluss an den Zwangskühlungsschritt umfasst.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver, mit den Schritten:<claim-text><claim-text>Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vernetzungsmittel
+umfasst; Wärmetrocknung des erhaltenen vemetzten Hydrogelpolymers;
+und Zerkleinerung des erhaltenen trockenen Polymers;</claim-text></claim-text>
+   wobei das Herstellungsverfahren dadurch gekennzeichnet ist, dass es die
+Schritte umfasst: Zwangskühlung des trockenen Polymers nach dem Wärmetrocknungsschritt;
+und Rezyklieren der erhaltenen Wärme, um sie zur Zwangserwärmung in einem
+Herstellungsverfahren für ein Wasser absorbierendes Harz zu verwenden.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver mit den Schritten:
+Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vemetzungsmittel
+umfasst; Wärmetrocknung des erhaltenen vernetzten Hydrogelpolymers; Zerkleinern
+des erhaltenen trockenen Polymers; und Zugeben einer wässrigen Flüssigkeit zu
+dem erhaltenen Pulver in einem Mischer; wobei:
+<claim-text><claim-text>die Temperatur des Wärmetrocknungsschritts im Bereich von 110 bis 230 °C liegt;
+und das trockene Polymer so eingestellt wird, dass es eine Schüttdichte, gemessen durch
+eine Vorrichtung gemäß JIS K-3362, von nicht weniger als 0,65 g/ml nach dem Zerkleinerungsschritt
+aufweist;</claim-text></claim-text>
+   dadurch gekennzeichnet, dass das trockene Polymer vor der Zugabe der
+wässrigen Flüssigkeit in den Bereich von 80 bis 35 °C zwangsgekühlt wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch
+11, wobei die Zwangskühlung des trockenen Polymers vor dem Zerkleinerungsschritt ausgeführt
+wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch 9
+oder 11, wobei die wässrige Flüssigkeit ein Vemetzungsmittel enthält.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch 9
+oder 11, wobei die wässrige Flüssigkeit eine wässrige mehrwertige Alkohollösung ist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 14, wobei das am Ende erhaltene Wasser absorbierende Harzpulver einen
+Gewichtsmittel-Teilchendurchmesser von 200 bis 600 µm aufweist, wobei die Gesamtmenge
+von Teilchen der JIS 150 µm siebgängigen Fraktionen und JIS 850 µm abgesiebten
+Fraktionen im Wasser absorbierenden Harzpulver nicht mehr als 15 Gew.- % des Wasser
+absorbierenden Harzpulvers beträgt.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver mit den Schritten:
+Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vemetzungsmittel
+enthält; Wärmetrocknung des erhaltenen vemetzten Hydrogelpolymers; Zerkleinern
+des erhaltenen trockenen Polymers; und Zugabe einer wässrigen Flüssigkeit zu
+dem erhaltenen Pulver in einem Mischer; wobei:
+<claim-text><claim-text>die Temperatur des Wärmetrocknungsschritts im Bereich von 110 bis 230 °C liegt;
+der Mischer ein Rührmischer ist, der eine innere Wandtemperatur von nicht weniger als 40
+°C aufweist; und die aus der Zugabe der wässrigen Flüssigkeit erhaltene Mischung wieder
+auf einen Bereich von 110 bis 230 °C erwärmt wird;</claim-text></claim-text>
+   dadurch gekennzeichnet, dass das trockene Polymer vor der Zugabe der
+wässrigen Flüssigkeit in den Bereich von 80 bis 35 °C zwangsgekühlt wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver mit den Schritten:
+Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vemetzungsmittel
+enthält; Wärmetrocknung des erhaltenen vemetzten Hydrogelpolymers; und
+Zerkleinern des erhaltenen trockenen Polymers; wobei:
+<claim-text><claim-text>der Schritt des Zerkleinems des trockenen Polymers so aufgeführt wird, dass ein
+Wasserabsorbierendes Harzpulver mit einer Schüttdichte, gemessen durch eine Vorrichtung
+gemäß JIS K-3362, von nicht weniger als 0,65 g/ml gebildet wird;</claim-text></claim-text>
+   dadurch gekennzeichnet, dass das trockene Polymer nach dem Wärmetrocknungsschritt
+zwangsgekühlt wird; und das gekühlte, Wasser absorbierende Harzpulver
+zusätzlich oberflächenvernetzt wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver mit den Schritten:
+Polymerisieren einer wässrigen Monomerlösung, welche ein Monomer und ein Vemetzungsmittel
+enthält; Wärmetrocknung des erhaltenen vemetzten Hydrogelpolymers; und
+Zerkleinern des erhaltenen trockenen Polymers; wobei:
+<claim-text><claim-text>der Schritt des Zerkleinems des trockenen Polymers so ausgeführt wird, dass ein
+Wasser absorbierendes Harzpulver mit einer Schüttdichte, gemessen durch eine Vorrichtung
+gemäß JIS K-3362, von nicht weniger als 0,65 g/ml gebildet wird;</claim-text></claim-text>
+   dadurch gekennzeichnet, dass das trockene Polymer nach dem Wärmetrocknungsschritt
+zwangsgekühlt wird; und eine wässrige Flüssigkeit zu dem gekühlten,
+Wasser absorbierenden Harzpulver in einem Rührmischer mit einer erwärmten Innenwand
+zusätzlich zugegeben wird.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 18, wobei:
+<claim-text><claim-text>der Zwangskühlungsschritt durch Hindurchleiten eines Kühlgases durch das trockene
+Polymer, um das trockene Polymer zu kühlen, ausgeführt wird.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß Anspruch
+19, wobei das Kühlgas eine Temperatur von nicht mehr als 60 °C aufweist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harz gemäß Anspruch 18, wobei
+die wässrige Flüssigkeit eine wässrige mehrwertige Alkohollösung ist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 1 bis 21, das kontinuierliche Trocknung, kontinuierliche Zerkleinerung und die
+nachfolgende kontinuierliche Zugabe der wässrigen Flüssigkeit in einem großen Maßstab
+von nicht weniger als 1 Tonne/ Tag des Wasser absorbierenden Harzpulvers pro Linie umfasst.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren gemäß einem der Ansprüche 1 bis 22, wobei das Wasser absorbierende
+Harzpulver ein Absorptionsvermögen von nicht weniger als 25 g/g für 0,9
+Gew.- %ige physiologische Kochsalzlösung unter Belastung (1,96 kPa) während 60 Minuten
+aufweist.</claim-text></claim><claim num="xx"><claim-text>Herstellungsverfahren für ein Wasser absorbierendes Harzpulver gemäß einem der
+Ansprüche 10, 11, 16, 17 und 18, das zusätzlich den Schritt des Oberflächenvernetzens des
+Wasser absorbierenden Harzpulvers nach dem Zerkleinerungsschritt umfasst.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the steps
+of: polymerizing an aqueous monomer solution containing a monomer and a crosslinking
+agent; heat-drying the resultant crosslinked hydrogel polymer; and pulverizing the resultant
+dry polymer to produce said water-absorbent resin powder; wherein:
+<claim-text><claim-text>the water-absorbent resin powder has a weight-average particle diameter of 200 to 600 µm
+after the pulverization step wherein the total amount of particles of JIS 150 µm sieve-passed
+fraction and JIS 850 µm sieve-on fraction in the water-absorbent resin powder is not
+more than 15 weight % of the water-absorbent resin powder;</claim-text></claim-text>characterized in that the dry polymer resultant from the heat-drying step is forcibly cooled
+before or during the pulverization step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 1,
+which further comprises the step of surface-crosslinking the water-absorbent resin powder
+after the pulverization step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 2,
+wherein: the temperature of the heat-drying step is in the range of 110 to 230 °C; the
+temperature of the forcible cooling step following the heat-drying step is in the range of 85
+to 35 °C; and the temperature of the surface-crosslinking step following the pulverization
+step is in the range of 110 to 230 °C.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 3, wherein the dry polymer has a solid content of 93 to 97 weight %.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 4, which further comprises the steps of laminating the crosslinked hydrogel
+polymer into a definite thickness of 1 to 20 cm in particulate form and then drying it.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1-5, which further comprises the step of recycling heat obtained by forcibly cooling
+the dry polymer.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 6, wherein the water-absorbent resin powder has a bulk density, as measured by
+an apparatus according to JIS K-3362, of not less than 0.65 g/ml after the pulverization
+step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 7, which further comprises the step of forcibly heating or heat-retaining the
+resultant water-absorbent resin powder after the pulverization step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 8, which further comprises the step of adding an aqueous liquid to the water-absorbent
+resin powder obtained after the pulverization step following the forcible cooling
+step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the
+steps of: polymerizing an aqueous monomer solution containing a monomer and a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; and pulverizing
+the resultant dry polymer;
+with the production process characterized by comprising the steps of: forcibly cooling the
+dry polymer after the heat-drying step; and recycling the resultant heat in order to utilize it
+for forcible heating in a production process for a water-absorbent resin.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the
+steps of: polymerizing an aqueous monomer solution containing a monomer and a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; pulverizing the
+resultant dry polymer; and adding an aqueous liquid to the resultant powder in a mixer;
+wherein:
+<claim-text><claim-text>the temperature of the heat-drying step is in the range of 110 to 230 °C; and the dry
+polymer is adjusted so as to have a bulk density, as measured by an apparatus according to
+JIS K-3362, of not less than 0.65 g/ml after the pulverization step;</claim-text></claim-text>characterized in that the dry polymer is forcibly cooled into the range of 80 to 35 °C before
+the addition of the aqueous liquid.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 11,
+wherein the forcible cooling of the dry polymer is carried out before the pulverization step.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 9 or
+11, wherein the aqueous liquid contains a crosslinking agent.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 9 or
+11, wherein the aqueous liquid is an aqueous polyhydric alcohol solution.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 14, wherein the water-absorbent resin powder as finally obtained has a weight-average
+particle diameter of 200 to 600 µm wherein the total amount of particles of JIS
+150 µm sieve-passed fractions and JIS 850 µm sieve-on fractions in the water-absorbent
+resin powder is not more than 15 weight % of the water-absorbent resin powder.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the
+steps of: polymerizing an aqueous monomer solution containing a monomer and a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; pulverizing
+the resultant dry polymer; and adding an aqueous liquid to the resultant powder in a mixer;
+wherein:
+<claim-text><claim-text>the temperature of the heat-drying step is in the range of 110 to 230 °C; the mixer is a
+stirring mixer having an internal wall temperature of not lower than 40 °C; and the mixture
+resultant from the addition of the aqueous liquid is reheated into the range of 110 to
+230 °C;</claim-text></claim-text>characterized in that the dry polymer is forcibly cooled into the range of 80 to 35 °C before
+the addition of the aqueous liquid;</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the
+steps of: polymerizing an aqueous monomer solution containing a monomer and a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; and pulverizing
+the resultant dry polymer; wherein:
+<claim-text><claim-text>the step of pulverizing the dry polymer is carried out so as to form a water-absorbent resin
+powder having a bulk density, as measured by an apparatus according to JIS K-3362, of not
+less than 0.65 g/ml;</claim-text></claim-text>characterized in that the dry polymer is forcibly cooled after the heat-drying step; and the
+cooled water-absorbent resin powder is further surface-crosslinked.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder, which comprises the
+steps of: polymerizing an aqueous monomer solution containing a monomer and a
+crosslinking agent; heat-drying the resultant crosslinked hydrogel polymer; and pulverizing
+the resultant dry polymer; wherein:
+<claim-text><claim-text>the step of pulverizing the dry polymer is carried out so as to form a water-absorbent resin
+powder having a bulk density, as measured by an apparatus according to JIS K-3362, of not
+less than 0.65 g/ml;</claim-text></claim-text>characterized in that the dry polymer is forcibly cooled after the heat-drying step; and
+an aqueous liquid is further added to the cooled water-absorbent resin powder in a stirring
+mixer having a heated internal wall.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 18, wherein:
+<claim-text><claim-text>the forcible cooling step is carried out by passing a cooling gas through the dry polymer to
+cool the dry polymer.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to claim 19,
+wherein said cooling gas is at a temperature of not higher than 60°C.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin according to claim 18, wherein the
+aqueous liquid is an aqueous polyhydric alcohol solution.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 1 to 21, which involves continuous drying, continuous pulverization and the
+subsequent continuous addition of the aqueous liquid on a large scale of not less than
+1 ton/day of the water-absorbent resin powder per line.</claim-text></claim><claim num="xx"><claim-text>A production process according to anyone of claims 1 to 22, wherein said water-absorbent
+resin powder exhibits an absorption capacity of not less than 25 g/g for
+0.9 weight % physiological saline solution under a load (1.96 kPa) over 60 minutes.</claim-text></claim><claim num="xx"><claim-text>A production process for a water-absorbent resin powder according to anyone of
+claims 10, 11, 16, 17 and 18, which further comprises the step of surface-crosslinking the
+water-absorbent resin powder after the pulverization step.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; et pulvérisation du polymère sec résultant
+pour produire ladite poudre de résine absorbant l'eau ;
+dans lequel :
+<claim-text><claim-text>la poudre de résine absorbant l'eau a un diamètre
+particulaire moyen en poids de 200 à 600 µm après
+l'étape de pulvérisation où la quantité totale des
+particules de la fraction qui passe le tamis de 150 µm
+JIS et de la fraction qui reste sur le tamis de 850 µm
+JIS dans la poudre de résine absorbant l'eau n'est pas
+de plus de 15% en poids de la poudre de résine absorbant
+l'eau ;</claim-text></claim-text>caractérisé en ce que le polymère sec résultant de
+l'étape de séchage à la chaleur est refroidi de force
+avant ou durant l'étape de pulvérisation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 1, qui
+comprend en outre l'étape de réticulation en surface de
+la poudre de résine absorbant l'eau après l'étape de
+pulvérisation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 2, dans
+lequel : la température de l'étape de séchage à la
+chaleur est dans l'intervalle de 110 à 230°C ; la
+température de refroidissement forcé suivant l'étape de
+séchage à la chaleur est dans l'intervalle de 85 à
+35°C ; et la température de l'étape de réticulation en
+surface suivant l'étape de pulvérisation est dans
+l'intervalle de 110 à 230°C.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine selon l'une quelconque des revendications 1 à 3,
+dans lequel le polymère sec a une teneur en solides de
+93 à 97% en poids.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 4, qui comprend en plus l'étape de
+stratification du polymère d'hydrogel réticulé à une
+épaisseur définie de 1 à 20 cm sous forme particulaire
+et ensuite son séchage.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1-5, qui comprend en outre l'étape de
+recyclage de la chaleur obtenue par le refroidissement
+forcé du polymère sec.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 6, dans lequel la poudre de résine
+absorbant l'eau a une masse volumique apparente, comme
+mesurée par un appareil selon JIS K-3362, de pas moins
+de 0,65 g/ml après l'étape de pulvérisation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 7, qui comprend en outre l'étape de
+chauffage forcé ou de conservation de la chaleur forcée
+de la poudre de résine absorbant l'eau résultante après
+l'étape de pulvérisation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 8, qui comprend en outre l'étape
+d'addition d'un liquide aqueux à la poudre de résine
+absorbant l'eau obtenue après l'étape de pulvérisation
+suivant l'étape de refroidissement forcé.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; et pulvérisation du polymère sec résultant ;
+le procédé de préparation étant caractérisé en qu'il
+comprend les étapes de : refroidissement forcé du
+polymère sec après l'étape de séchage à la chaleur ; et
+le recyclage de la chaleur résultante pour l'utiliser
+pour le chauffage forcé dans un procédé de préparation
+d'une résine absorbant l'eau.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; pulvérisation du polymère sec résultant ; et
+addition d'un liquide aqueux à la poudre résultante dans
+un mélangeur ; dans lequel :
+<claim-text><claim-text>la température de l'étape de séchage à la chaleur est
+dans l'intervalle de 110 à 230°C ; et le polymère sec
+est ajusté de manière à avoir une masse volumique
+apparente, comme mesurée par un appareil selon JIS
+K-3362, de pas moins de 0,65 g/ml après l'étape de
+pulvérisation ;</claim-text></claim-text>caractérisé en ce que le polymère sec est refroidi de
+force dans l'intervalle de 80 à 35°C avant l'addition du
+liquide aqueux.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 11, dans
+lequel le refroidissement forcé du polymère sec est
+effectué avant l'étape de pulvérisation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 9 ou 11,
+dans lequel le liquide aqueux contient un agent de
+réticulation.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 9 ou 11,
+dans lequel le liquide aqueux est une solution aqueuse
+d'alcool polyvalent.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 14, dans lequel la poudre de résine
+absorbant l'eau comme finalement obtenue a un diamètre
+particulaire moyen en poids de 200 à 600 µm où la
+quantité totale des particules des fractions qui passent
+le tamis 150 µm JIS et des fractions qui restent sur le
+tamis de 850 µm JIS dans la poudre de résine absorbant
+l'eau est de pas plus de 15% en poids de la poudre de
+résine absorbant l'eau.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; pulvérisation du polymère sec résultant ; et
+addition d'un liquide aqueux à la poudre résultante dans
+un mélangeur ; dans lequel :
+<claim-text><claim-text>la température de l'étape de séchage à la chaleur est
+dans l'intervalle de 110 à 230°C ; le mélangeur est un
+mélangeur à agitation ayant une température de paroi
+interne non inférieure à 40°C ; et le mélange résultant
+de l'addition du liquide aqueux est réchauffé dans
+l'intervalle de 110 à 230°C ;</claim-text></claim-text>caractérisé en ce que le polymère sec est refroidi de
+force dans l'intervalle de 80 à 35°C avant l'addition du
+liquide aqueux.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; et pulvérisation du polymère sec résultant ;
+dans lequel :
+<claim-text><claim-text>l'étape de pulvérisation du polymère sec est effectuée
+de manière à former une poudre de résine absorbant l'eau
+ayant une masse volumique apparente, comme mesurée par
+un appareil selon JIS K-3362, de pas moins de 0,65 g/ml;</claim-text></claim-text>caractérisé en ce que le polymère sec est refroidi de
+force après l'étape de séchage à la chaleur ; et la
+poudre de résine absorbant l'eau refroidie est en outre
+réticulée en surface.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau, qui comprend les étapes de :
+polymérisation d'une solution aqueuse de monomère
+contenant un monomère et un agent de réticulation ;
+séchage à la chaleur du polymère d'hydrogel réticulé
+résultant ; et pulvérisation du polymère sec résultant ;
+dans lequel :
+<claim-text><claim-text>l'étape de pulvérisation du polymère sec est effectuée
+se manière à former une poudre de résine absorbant l'eau
+ayant une masse volumique apparente, comme mesurée par
+un appareil selon JIS K-3362, de pas moins de 0,65 g/ml;</claim-text></claim-text>caractérisé en ce que le polymère sec est refroidi de
+force après l'étape de séchage à la chaleur ; et un
+liquide aqueux est en outre ajouté à la poudre de résine
+absorbant l'eau dans un mélangeur à agitation ayant une
+paroi interne chauffée.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 18, dans lequel :
+<claim-text><claim-text>l'étape de refroidissement forcé est effectuée par
+passage d'un gaz de refroidissement à travers le
+polymère sec pour refroidir le polymère sec.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 19, dans
+lequel ledit gaz de refroidissement est à une
+température de pas plus de 60°C.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon la revendication 18, dans
+lequel le liquide aqueux est une solution aqueuse
+d'alcool polyvalent.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 1 à 21, qui inclut le séchage continu, la
+pulvérisation continue et l'addition ultérieure continue
+du liquide aqueux sur une grande échelle de pas moins de
+1 tonne/jour de la poudre de résine absorbant l'eau par
+ligne.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation selon l'une
+quelconque des revendications 1 à 22, dans lequel ladite
+poudre de résine absorbant l'eau montre une capacité
+d'absorption de pas moins de 25 g/g pour une solution
+physiologique de 0,9% en poids sous une charge
+(1,96 kPa) sur 60 minutes.</claim-text></claim><claim num="xx"><claim-text>Procédé de préparation d'une poudre de
+résine absorbant l'eau selon l'une quelconque des
+revendications 10, 11, 16, 17 et 18, qui comprend en
+outre l'étape de réticulation en surface de la poudre de
+résine absorbant l'eau après l'étape de pulvérisation.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26" date="20060628"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>BASF AKTIENGESELLSCHAFT GLOBAL INTELLECTUAL PROPER</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060511</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050922"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60112630</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050922</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050817"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>BEDEGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050817"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RTI1" date="20041117"><legal-event-body><event-title>TITLE (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>PROCESS FOR PRODUCING A WATER-ABSORBENT RESIN POWDER</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20031203"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20031021</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030806"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>BEDEGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20030625"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030424</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20021120"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20021120"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

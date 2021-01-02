@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1122871-B1" country="EP" doc-number="1122871" kind="B1" date="20050504"><bibliographic-data><publication-reference fvid="23187396" ucid="EP-1122871-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1122871</doc-number><kind>B1</kind><date>20050504</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01300836-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01300836</doc-number><kind>A</kind><date>20010131</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000025572-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000025572</doc-number><kind>A</kind><date>20000202</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20031002</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G05F   1/10        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G05F   1/10        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G05F   1/56        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H02J   1/00        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H02J   1/00        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H03K  17/08        20060101A N20051008RMEP        </classification-ipcr><classification-ipcr status="new">H03K  17/08        20060101C N20051008RMEP        </classification-ipcr><classification-ipcr status="new">H03K  17/082       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H03K  17/082       20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">H03K17/082B</classification-symbol><classification-symbol scheme="ICO">T03K17:08T</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Steuerungsgerät für Leistungsversorgung und Verfahren</invention-title><invention-title lang="EN" status="new">Power supply control device and method</invention-title><invention-title lang="FR" status="new">Dispositif de control pour une alimentation de puissance et méthode</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>YAZAKI CORP</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>YAZAKI CORPORATION</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>OHSHIMA SHUNZOU</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>OHSHIMA, SHUNZOU</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>OHSHIMA, SHUNZOU</last-name><address><street>C/o Yazaki Parts Co., Ltd., 2464-48 Washizu</street><city>Kosai-shi, Shizuoka</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Yazaki Corporation</last-name><address><street>4-28 Mita 1-chome</street><city>Minato-ku, Tokyo</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Haley, Stephen</last-name><address><street>GILL JENNINGS &amp;amp; EVERY, Broadgate House, 7 Eldon Street</street><city>London EC2M 7LH</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>When the supply of electric power from a power supply (101) to a load (102) is controlled in a switching manner by a semiconductor switch (QA), reference current generating device (R11, Q2, Q3) generates a reference current, andreference voltage generating device (QB) generates a reference voltage (VDSB) based on the reference current. Detector CMP1 detects a difference between a terminal voltage (VDSA) of the semiconductor switch (QA) and the reference voltage, and the semiconductor switch (QA) is on/off controlled in accordance with the difference between the terminal voltage (VDSA) of the semiconductor switch (QA) and the reference voltage.</p></abstract><abstract lang="EN" status="new"><p num="">When the supply of electric power from a power supply
+(101) to a load (102) is controlled in a switching manner by
+a semiconductor switch (QA), reference current generating
+device (R11, Q2, Q3) generates a reference current, andreference
+voltage generating device (QB) generates a reference voltage
+(VDSB) based on the reference current. Detector CMP1 detects
+a difference between a terminal voltage (VDSA) of the
+semiconductor switch (QA) and the reference voltage, and the
+semiconductor switch (QA) is on/off controlled in accordance
+with the difference between the terminal voltage (VDSA) of the
+semiconductor switch (QA) and the reference voltage.</p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a power supply control
+device and method. More particularly, the invention relates
+to a power supply control device having a semiconductor switch
+which is controlled in accordance with a control signal supplied
+to a control signal input terminal to control the supply of
+electric power from a power supply to a load under the switching
+control, and a power supply control method in use for the power
+supply control device.</p><p num="0002">The power supply control device with a semiconductor
+device, which arranged as shown in Fig. 8 is known. This power
+supply control device, which is used in a vehicle, selectively
+supplies electric power source from a battery to respective
+loads, and controls the power supply to the load.</p><p num="0003">As shown, the related power supply control device is
+arranged such that a shunt resistor RS and a drain (D) - source
+(S) path of a thermal FET QF are connected in series in a power 
+supply path for supplying an output voltage VB of a power supply
+101 to a load 102 including head lights, power windows and others .
+The power supply control device includes a driver 901 which
+detects a current flowing through the shunt resistor RS and
+controls the drive of the thermal FETQF by a hardware circuit,
+an A/D converter 902 for translating the analogue value of a
+current monitored by the driver 901 into the digital value,
+and a microcomputer (CPU) 903.</p><p num="0004">The thermal FET QF is contained with a thermosensor (not
+shown). The thermal FET QF as a semiconductor switch has an
+overheat shut-off function to forcibly shut off the thermal
+FET QF by a gate shut-off circuit contained therein when
+temperature of the thermal FET QF rises in excess of a
+predetermined temperature. In the figure, RG is a resistor,
+and ZD1 is a Zener diode which keeps the voltage between the
+gate G and the source S of the thermal FET QF at 12V, and when
+overvoltage is applied to the gate G of the FET, forms a bypass
+for a current caused by the overvoltage.</p><p num="0005">This related power supply control device has a protecting
+function against an over current flowing through the load 102
+or the drain-source path of the thermal FET QF. The driver
+901 includes differential amplifiers 911 and 913, which serves 
+as a current monitoring circuit, a differential amplifier 912
+as a current restricting circuit, a charge/pump circuit 915,
+and a drive circuit 914 which drives the gate G of the thermal
+FET QF through the resistor RG based on an on/off control signal
+from the microcomputer (referred to as MICROCOMPUTER) 903 and
+the overcurrent judgement result output from the current
+restricting circuit.</p><p num="0006">When the differential amplifier 912 judges on a voltage
+drop through the shunt resistor RS that the current exceeds
+a reference value (upper limit), viz., it detects overcurrent,
+the drive circuit 914 turns off the thermal FET QF. Thereafter,
+when the current decreases to below another reference value
+(lower limit), it turns on the FET again.</p><p num="0007">The MICROCOMPUTER 903 monitors the current by the current
+monitor circuit (differential amplifiers 911 and 913) at all
+times. When an abnormal current in excess of a normal value
+flows, the MICROCOMPUTER 903 stops the drive current for the
+thermal FET QF to turn off the FET. When temperature of the
+thermal FET QF exceeds a prescribed value before a drive signal
+for the off control is output from the MICROCOMPUTER 903, the
+overheat shut-off function operates to turn off the thermal
+FET QF. </p><p num="0008">The related power supply control device mentioned above
+needs the shunt resistor RS connected in series to the power
+supply path, in order to make the current detection. In the
+recent trend of large load currents, which induces reduction
+of the resistance of the thermal FET QF, the heat loss by the
+shut resistor is not negligible.</p><p num="0009">The overheat shut-off function and the overcurrent
+restricting circuit operate when an almost perfect short occurs
+in the load 102 or the wiring, and large current flows . However,
+those fail to operate when a layer short, e.g., an imperfect
+short having some short resistance, occurs and small short
+current flows. A possible measure taken for the layer short
+is that the MICROCOMPUTER 903 detects an abnormal current by
+only using the monitor circuit and turns off the thermal FET
+QF. A response of the MICROCOMPUTER basis control to such an
+abnormal current is poor.</p><p num="0010">Since the shunt resistor RS, the MICROCOMPUTER 903 and
+the like are indispensably used in the related power supply
+control device, a large packaging space is required.
+Additionally, those part and component are relatively expensive,
+so that the resultant device is high in cost. </p><p num="0011">Accordingly, the present invention is directed to
+solve the above problems and to eliminate the inconvenient
+circumstances, and has an object to provide a power supply
+control device and method which eliminates the shunt
+resistor connected in series to the power supply path in
+order to detect the current, hereby repressing the heat
+loss, quickly responses to an abnormal current flowing when
+a layer short, e.g., an imperfect short having some
+resistance, occurs, and is easy to integrate and is low in
+cost.</p><p num="0012"><ref typ="patent">EP-A-789458</ref> discloses a power supply control device
+with reference current and reference voltage generating
+devices and associated detector and controller. <ref typ="patent">EP-A-1017173</ref>,
+which constitutes prior art under Article 54(3)
+and 54 (4) EPC, also discloses a power supply control device
+with reference current and voltage generating devices and
+related detector and controller.</p><p num="0013">According to the present invention, there is provided
+a power supply control device comprising:
+<sl><li>a first semiconductor switch which controls a supply
+of electric power from a power supply to a load in
+accordance with a control signal;</li><li>a reference current generating device which generates
+a constant reference current;</li><li>a reference voltage generating device which generates
+a reference voltage based on said reference current and
+connected in parallel to the first semiconductor switch,
+wherein the voltage characteristic of the reference voltage
+is substantially equal to a voltage between terminals of
+the first semiconductor switch whenever the load current
+reaches a predetermined over current value;</li><li>a detector which detects a difference between the
+voltage between the terminals of said first semiconductor
+switch and said reference voltage; and</li><li>a controller which controls on/off state of said first
+semiconductor switch in accordance with said detected
+difference.</li></sl></p><p num="0014">In the power supply control device, the reference
+voltage generating device may include a second
+semiconductor switch controlled in accordance with the
+control signal, and the second semiconductor is connected
+in series to the reference current generating device to
+form a series circuit, which is connected in parallel to
+the semiconductor switch and the load, whereby the
+terminal-terminal voltage of the second semiconductor
+switch is generated in the form of the reference voltage.</p><p num="0015">In the power supply control device, the reference
+current generating device may generate the reference
+current dependent on an output voltage of the power supply.</p><p num="0016">In the power supply control device, a voltage</p><p num="0017">characteristic of the reference voltage of the reference
+voltage generating device may be substantially equal to a
+voltage characteristic in a state that a target current
+flows, which is in excess of a maximum current within a
+range where the semiconductor switch and the load are
+normally operable.</p><p num="0018">In the power supply control device, the semiconductor
+switch and the second semiconductor switch are equivalent
+to each other in a transient voltage characteristic of the
+terminal-terminal voltage when each semiconductor switch
+shifts its state from an off state to an on state.</p><p num="0019">The power supply control device may further include an
+overheat protector operating such that when the
+semiconductor switch is overheated, the overheat protector
+turns off the semiconductor switch, to thereby protect the
+semiconductor switch.</p><p num="0020">In the power supply control device, the semiconductor
+switch, the reference voltage generating device, the
+detector, the controller, and the overheat protector may be
+formed on a same chip, and</p><p num="0021">in the power supply control device, the reference
+current generating device may be located outside the chip.</p><p num="0022">The power supply control device may further comprise
+a prohibiting device for prohibiting the controller from 
+turning on and off the semiconductor switch for a fixed
+period after the semiconductor switch is turned on.</p><p num="0023">The power supply control device may further include
+a number-of-times controller operating such that the
+number-of-times controller adds up the number of times the
+controller turns on and off the semiconductor switch, and
+when the number of on/off control times reaches a
+predetermined number of times, the number-of-times
+controller turns off the semiconductor switch.</p><p num="0024">According to the present invention, there is also
+provided a power supply control method of power supply
+device including a semiconductor switch controlled in
+accordance with a control signal to control a supply of
+electric power from a power supply to a load, said power
+supply control method comprising the steps of:
+<sl><li>generating a constant reference current;</li><li>generating a reference voltage based on said reference
+current, wherein the voltage characteristic of the
+reference voltage is substantially equal to a voltage
+between terminals of the first semiconductor switch
+whenever the load current reaches a predetermined over
+current value;</li><li>detecting a difference between the voltage between the
+terminals of said semiconductor switch and said reference
+voltage; and</li><li>controlling on/off state of said semiconductor switch
+in accordance with said detected difference.</li></sl></p><p num="0025">In the power supply control devices and in the power
+supply control method, when the supply of electric power
+from the power supply to the load is controlled by the
+semiconductor switch in a switching manner, a reference
+current is generated by the 
+reference current generating device (reference current
+generating step) . A reference voltage is generated based on
+the reference current by the reference voltage generating device
+(reference voltage generating step) . A difference between the
+voltage between terminals of the semiconductor switch and the
+reference voltage is detected by the detector (detecting step) .
+The semiconductor switch is on/off controlled in accordance
+with the detected voltage difference between the
+terminal-terminal voltage and the reference voltage by the
+controller (control step) .</p><p num="0026">The semiconductor switch (second and third semiconductor
+switches to be described later) may be any of the following
+switching elements: field effect transistors (FETs) and static
+induced transistor (SITs), or emitter switched thyristors
+(ESTs), MOS complex devices, e.g., MOS controlled thyristors
+(MCTs), and insulated gate power devices, e.g., IGBT (insulated
+gate bipolar transistors. Those switching elements may be of
+the n-channel type or the p-channel type.</p><p num="0027">In particular, in the power supply control device, it
+is preferable that the reference voltage generating device
+includes a second semiconductor switch controlled in accordance
+with the control signal. Further, the second semiconductor
+is connected in series to the reference current generating device 
+to form a series circuit. The series circuit is connected in
+parallel to the semiconductor switch and the load. The
+terminal-terminal voltage of the second semiconductor switch
+is generated in the form of the reference voltage. It is
+desirable that the reference current generating device, as in
+the third power supply control device, generates a reference
+current dependent on an output voltage of the power supply,
+or that it is a constant current source, as in the fourth power
+supply control device.</p><p num="0028">In the power supply control device, it is desirable that
+a voltage characteristic of the reference voltage of the
+reference voltage generating device is substantially equal to
+a voltage characteristic in a state that a target current flows,
+which is in excess of a maximum current within a range where
+the semiconductor switch and the load are normally operable.
+In the sixth power supply control device, it is desirable that
+the semiconductor switch and the second semiconductor switch
+are equivalent to each other in a transient voltage
+characteristic of the terminal-terminal voltage when each
+semiconductor switch shifts its state from an off state to an
+on state.</p><p num="0029">In a case where an FET is used for the semiconductor switch,
+the terminal-terminal voltage (between the drain and the source) 
+of the FET forming a part of the power supply path varies depending
+on states of the power supply path and the load, viz., a time
+constant defined by wiring inductance and resistance of the
+path and short resistance, in the voltage characteristic when
+the FET shifts its state from an on state to an off state (the
+descending voltage characteristic in the case of the n-channel
+FET). In a normal operation where no short occurs, the
+terminal-terminal voltage swiftly converges to a voltage value
+below a reference voltage value. Where a short occurs, it does
+not converge to below the reference voltage value. Where an
+imperfect short having some resistance occurs, it takes a long
+time till the terminal-terminal voltage converges to below the
+reference voltage value.</p><p num="0030">The present invention utilizes the transient voltage
+characteristic of the semiconductor switch when it shifts its
+state from an off state to an on state. In the invention,
+judgement is made as to whether or not the terminal-terminal
+voltage of the semiconductor switch (or the current in the power
+supply path), which forms a part of the power supply path, is
+out of a normal state by detecting a difference between the
+terminal-terminal voltage of the semiconductor switch and the
+reference voltage generating device (reference voltage
+generating step) . Overcurrent can be detected by the detector
+(detecting step) if the voltage characteristic of the reference 
+voltage is set to bear a closest resemblance to the voltage
+characteristic in a state that a target current, which is in
+excess of the maximum current within a normal operation range,
+flows to the load.</p><p num="0031">Therefore, the power supply control device and method
+of the invention does not need the shunt resistor, conventionally
+used, which is connected in series to the power supply path
+for the current detection. With this feature, the heat loss
+of the device is suppressed. An abnormal current by a layer
+short, such as an imperfect short having some short resistance,
+as well as an overcurrent by a perfect short, can continuously
+be detected by use of the hardware circuit or the program
+processing by the MICROCOMPUTER or the like. Further, the
+overcurrent can be detected without the shunt resistor.
+Particularly, when the on/off control process for the
+semiconductor switch is realized by a hardware circuit, there
+is no need of using the MICROCOMPUTER. This feature brings
+about the packaging space reduction, and considerable reduction
+of the device cost.</p><p num="0032">In a case where, as in the power supply control device,
+the power supply control device further comprises overheat
+protector operating such that when the semiconductor switch
+is overheated, the overheat protector turns off the 
+semiconductor switch, to thereby protect the semiconductor
+switch, when an imperfect short having some short resistance
+occurs, the semiconductor switch is repeatedly turned on and
+off by the controller, whereby the current is greatly varied.
+That is, in this case, the periodic heating of the semiconductor
+switch quickens the turning off of the semiconductor switch
+by the overheat protector. In particular, the power supply
+control device of the invention can process the abnormal current
+caused by the imperfect short (layer short), which cannot be
+processed by any way than the program processing by the
+MICROCOMPUTER or the like in the conventional device, by using
+only the hardware circuit contained in the power supply control
+device per se, or not using the control from an external device,
+such as MICROCOMPUTER. Therefore, the device circuit is
+simplified, and hence the device cost is reduced.</p><p num="0033">In the power supply control device, it is preferable that
+the semiconductor switch, the reference voltage generating
+device, the detector, the controller, and the second reference
+voltage generating device or the overheat protector are formed
+on one and the same chip. In the ninth power supply control
+device, the reference current generating device is preferably
+located outside the chip. By fabricating those means and switch
+into one chip in an integrating fashion, the device circuit
+construction is reduced in size, the packing space is reduced, 
+and the device cost is reduced. In the invention, the current
+and the device cost is reduced. In the invention, the current
+detection is based on the detection of a difference between
+the terminal-terminal voltage of the semiconductor switch and
+the reference voltage. With formation of the semiconductor
+switch and the second semiconductor switch on one and the same
+chip, the invention succeeds in eliminating (removing) common
+mode error factors which will appears in both the main
+semiconductor switch and the second semiconductor switch
+(reference voltage generator) to the almost same extend in the
+current detecting operation, i.e., adverse influences by power
+voltage drift and temperature drift, and uneven quality among
+lots. Additionally, with the feature that the reference
+current generating device is located outside the chip, the
+reference voltage (reference current) is made to be insensitive
+to temperature variation of the chip. Accordingly, high
+precision current detection is realized.</p><p num="0034">The power source terminal and the control signal input
+terminal of the semiconductor switch are connected to the power
+source terminal and the control signal input terminal of the
+second semiconductor switch of the reference voltage generating
+device, respectively. Further, the negative terminal of the
+second semiconductor switch is connected to the reference
+current generating device. With such an arrangement, judgement
+is made as to whether or not current flowing through the power 
+supply path is within a normal range or an abnormal range by
+comparing a potential at the load terminal of the semiconductor
+switch with that at the negative terminal of the second
+semiconductorswitch. Thus, the terminals of the semiconductor
+switch and the second semiconductor switch are commonized.
+Accordingly, those switches may easily be integrated onto one
+chip.</p><p num="0035">In the power supply control device, prohibiting device
+prohibits the controller from turning on and off the
+semiconductor switch for a fixed period after the semiconductor
+switch is turned on. Usually, when the load starts its operation,
+an inrush current usually flows into the power supply path.
+The inrush current is much greater than the current in a
+stationary state. If the controller executes the overcurrent
+control for the inrush current, some time is taken till the
+load is settled down into a stationary state. As a result,
+the response of the load per se delays sometimes . The invention
+solves this problem through the prohibiting control by the
+prohibiting device.</p><p num="0036">In the power supply control device, number-of-times
+controller adds up the number of times that the control means
+turns on and off the semiconductor switch, and when the number
+of on/off control times reaches a predetermined number of times, 
+the number-of-times controller turns off the semiconductor
+switch. When an overcurrent by a short circuit is detected,
+the overheat protector quickly functions to make an overheat
+shut-off (turn off) of the semiconductor switch. In the case
+of the imperfect short, the semiconductor switch is repeatedly
+turned on and off. The resultant periodic heating of the
+semiconductor switch causes the overheat protector to function.
+Accordingly, it is estimated that time taken till the overheat
+shut-off is relatively long. In this connection, in the
+invention, when the number of on/off controls reaches a
+predetermined number of times, the semiconductor switch is
+turned off. Therefore, even when the imperfect short occurs,
+the turning-off of the semiconductor switch may be quickened
+to a desired turning-off time.</p><p num="0037">In the Drawings;
+<sl><li>Fig. 1 is a circuit diagram showing a power supply control
+device which is a first embodiment of the present invention.</li><li>Fig. 2 is a circuit diagram showing the detail of a
+semiconductor switch (main control FET) used in the embodiment.</li><li>Fig. 3 is a graph showing operation characteristics of
+a main control FET and a reference FET in the power supply control
+device of the embodiment.</li><li>Fig. 4 is a waveform diagram showing variations of current
+and voltage in the semiconductor switch in the power supply 
+control device when the device suffers from a short and it
+normally operates.</li><li>Fig. 5 is a circuit diagram showing a power supply control
+device which is a second embodiment of the invention.</li><li>Fig. 6 is a circuit diagram showing a circuit additionally
+used in a modification of the power supply control device.</li><li>Fig. 7 is a circuit diagram showing a second modification
+of the power supply control device.</li><li>Fig. 8 is a circuit diagram showing a conventional power
+supply control device with a semiconductor switch.</li></sl></p><p num="0038">The preferred embodiments of the present invention will
+be described in the order of first embodiment, second embodiment
+and modification, while referring to Figs. 1 through 7. In
+the embodiment descriptions to be given hereafter, a power supply
+control device and method is applied to a device which
+selectively supplies power source from a battery to loads, such
+as lamps, in a vehicle, and controls the supply of electric
+power to the loads. It should be understood that the invention
+may be applied to any form of the power supply control device
+and method if it controls the supply of electric power from
+a power supply to the load or loads in a switching manner.</p><p num="0039">Fig. 1 is a circuit diagram showing a power supply control 
+device which is a first embodiment of the present invention.
+Fig. 2 is a circuit diagram showing the detail of a semiconductor
+switch (main control FET) used in the embodiment. Fig. 3 is
+a graph showing operation characteristics of a main control
+FET and a reference FET in the power supply control device of
+the embodiment. Fig. 4 is a waveform diagram showing variations
+of current and voltage in the semiconductor switch in the power
+supply control device when the device suffers from a short and
+it normally operates. Fig. 5 is a circuit diagram showing a
+power supply control device which is a second embodiment of
+the invention. Fig. 6 is a circuit diagram showing a circuit
+additionally used in a modification of the power supply control
+device. Fig. 7 is a circuit diagram showing a second
+modification of the power supply control device.</p><p num="0040">A power supply control device, which forms a first
+embodiment of the present invention, will be described in
+accordance with Fig. 1. The power supply control device is
+arranged such that a drain (D) - source (SA) path of a main
+control FET QA as a semiconductor switch is inserted in a series
+fashion in a path for supplying an output voltage VB of a power
+supply 101 to a load 102. In this instance, the main control
+FET QA is an NMOS FET having a DMOS structure. If required,
+it may be a PMOS FET. </p><p num="0041">In the figure, a circuit section for driving and
+controlling the main control FET QA includes a reference FET
+(second semiconductor switch) QB, resistors R1 to R12, and RG,
+a Zener diode ZD1, diodes D1 to D3, transistors Q1 to Q4, a
+comparator CMP1, a drive circuit 111, and a switch SW1. In
+the specification description to follow and the accompanying
+drawings attached thereto, the resistors are denoted as R
+followed by reference numerals and characters. Those
+denotations specifically represent the resistors and
+resistance values of those resistors. A circuit section 110a
+enclosed with a dotted line indicates a circuit section to be
+analog integrated onto a chip (this section will be referred
+to a chip-circuitry section).</p><p num="0042">The load 102 includes for example, head lights, drive
+motors for power windows and others, and starts to operate upon
+turning-on of a related switch SW1 by a user. The drive circuit
+111 contains transistors being connected in series; a source
+transistor whose collector is connected to potential VP and
+a sink transistor whose emitter is connected to ground potential
+(GND) . In accordance with signals produced by turning on and
+off a switch SW1, the source and sink transistors in the drive
+circuit are turned on and off, so that a signal for driving
+and controlling the main FET QA is produced. In the figure, 
+VB indicates an output voltage of the power supply 101, e.g.,
+12V, and VP stands for an output voltage of the charge pump
+circuit, e.g., VB + 10V.</p><p num="0043">The detail of the main FET QA as the semiconductor switch
+is as shown in Fig. 2. In Fig. 2, the main FET QA includes
+an internal resistor RG, a temperature sensor 121, a latch
+circuit 122 and an overheat shut-off FET QS. ZD1 represents
+a Zener diode. The Zener diode keeps the voltage between the
+gate G and the source SA at 12V. If more than 12V voltage is
+applied between the gate G and source SA of FET, the Zener diode
+forms a bypass for a current caused by the overvoltage.</p><p num="0044">The main FET QA of the embodiment has the following overheat
+shut-off function. When a temperature sensor 121 detects that
+temperature of the main FET QA rises to be in excess of a
+predetermined temperature value, the detected information is
+held by a latch circuit 122, and an overheat shut-off FET QS
+is turned on so as to reduce a voltage between the gate TG and
+source SA to be zero volt. In turn, the main FET QA is forcibly
+turned off.</p><p num="0045">The temperature sensor 121 includes four diodes to be
+connected in cascade, and is formed at a location near the main
+FET QA by packaging requirements. With rising of temperature 
+of the main FET QA, forward voltage drops of those diodes of
+the temperature sensor 121 decrease. When the gate potential
+of an FET Q51 decreases to a potential of an &quot;L&quot; level, a state
+of the FET Q51 shifts from and an on state to an off state.
+As a result, a gate potential of an FET Q54 is pulled up to
+a potential at the gate control terminal G of the main FET QA.
+The FET Q54 shifts its state from an off state to an on state,
+so that &quot;1&quot; is latched in the latch circuit 122. At this time,
+the output of the latch circuit 122 is put at &quot;H&quot; level, and
+the overheat shut-off FET QS shifts its state from an off state
+to an on state. IN turn, a potential at the true gate TG of
+the main FET QA becomes the same potential at the source SA
+so that FET QA turns off.</p><p num="0046">This embodiment of the power supply control device
+provides such protection from over current that if there happens
+to be a complete short circuit or a incomplete short circuit
+between the wiring from source SA of FET QA to the load 102,
+and the ground potential level, it prevents an over current
+from flowing through FET QA. This protection will be explained
+with reference to Fig. 1 as follows.</p><p num="0047">Reference current generating device, which will be found
+in the claim description, is formed with a resistor R11 and
+NPN transistors Q2 and Q3. As shown, the bases of the transistors 
+Q2 and Q3 are interconnected, and the emitters of those
+transistors are connected to ground potential. The collector
+of the transistor Q3 is connected to one end of the resistor
+R11 and the bases of the transistors Q2 and Q3. The other end
+of the resistor R11 is connected to the collector of a transistor
+Q1, which is used for dark-current measure as will be described
+later. The collector of the other transistor Q2 is connected
+to the source SB of the reference FET QB.</p><p num="0048">In the circuitry thus arranged, the collector current
+IC(Q3) of the transistor Q3 is expressed by
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">IC(Q3) = {VB - (on-voltage of Q1) -<st32:break type="required" />
+(on-voltage of Q3)}/R11.</st32:df>
+The (on-voltage of Q1) and (on-voltage of Q3) are smaller than
+the power voltage VB. Accordingly, those voltages may be
+neglected, and then IC(Q3) ≒ VB/R11. From this, it is seen
+that the collector current IC (Q3) is proportional to the power
+voltage VB, and depends on the same.</p><p num="0049">The reference current generating device includes a current
+mirror circuit. Accordingly, the collector current IC (Q2) of
+the transistor Q2 is equal to the collector current IC(Q3) of
+the transistor Q3; IC (Q2) = IC (Q3). The reference current Iref
+flowing through the reference FET QB equals to IC (Q2), therefore,
+it depends on the power voltage VB. In the case of Fig. 1, 
+the two transistors Q2 and Q3 are provided outside the
+chip-circuitry section or chip 110a. To satisfy IC (Q2) = IC (Q3),
+those transistors Q2 and Q3 must be equal in dimension. It
+is preferable that the transistors Q2 and Q3 are formed within
+the chip 110a rather than outside the chip 110a so that formation
+of the transistors having the same dimensions is easy, and the
+integration in fabricating the power supply control device is
+more enhanced.</p><p num="0050">The reference voltage generating device includes the
+reference FET QB. The voltage between the drain and source
+of the reference FET QB is the reference voltage to be generated.
+The drain and gate of the reference FET QB are connected to
+the drain D and true gate TG of the main control FET QA. The
+source SB of the reference FET QB is connected to the collector
+of the transistor Q2. In this circuit, the reference FET QB
+and the main control FET QA are common in the drain D and the
+gate TG have the common potentials in their drains and gates
+respectively. This feature makes it easy to integrate them
+onto one chip (110a).</p><p num="0051">The reference FET QB and the main control FET QA are formed
+on one and the same chip (110a) by one fabricating process.
+The current detecting method in the embodiment is based on the
+difference between the voltage VDSA between the drain and source 
+of the main control FET QA and the reference voltage VDSB between
+those of the reference FET QB, which is detected by the comparator
+CMP1. Thus, the reference FET QB and the main control FET
+QA are fabricated onto one chip. Accordingly, the invention
+succeeds in eliminating (removing) common mode error factors
+witch sill appears in both the main semiconductor switch and
+the second semiconductor switch (reference voltage generator)
+to the almost in the current detecting operation, i.e., adverse
+influences by power voltage drift and temperature drift, and
+uneven quality among lots. Further, the resistor included in
+the current mirror circuit (resistor R11) as the reference
+current generating device is located outside the chip 110a.
+With this feature, the reference voltage is made to be
+insensitive to temperature variation of the chip 110a.
+Accordingly, high precision current detection is realized.</p><p num="0052">In order that a current capacity of the reference FET
+QB is smaller than that of the main control FET QA, a ratio
+of the number of the parallel connected transistors forming
+the reference FET QB and the number of the parallel connected
+transistors forming the main FET QA is selected typically as
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">(number of the transistors of FET QB: 1) &lt;<st32:break type="required" />
+(number of the transistors of FET QA: 1000)</st32:df></p><p num="0053">A resistance value of the resistor R11 is selected so
+as to satisfy
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">IC(Q3) = IC (Q2) = Iref = IDQALimX (number of the transistors<st32:break type="required" />
+of FET QB : 1)/(number of the transistors of FET QA: 1000) =<st32:break type="required" />
+IDQALim/1000.</st32:df>
+In the above relations, IDQALim is reference current value used
+for judging whether or not the current of the load 102 is an
+over current. Assuming that load resistance when a current
+of the reference current value IDQALim flows, as a load current,
+through the main FET QA is Rlim, the following relation holds
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">IDQALim = {(VB - (on-voltage of QA)}/RLim<st32:break type="required" />
+≒ VB/Rlim</st32:df>
+Since IC (Q3) ≒ VB/R11, then VB/R11 = VB/ (Rlim x 1000), and R11
+= RLim x 1000. Here, Rlim is a load resistance value used for
+judging whether or not the load is an over load, or abnormal.
+Therefore, the resistance R11 is a fixed resistance value
+determined corresponding to the reference resistance value
+Rlim.</p><p num="0054">As described above, since the current of the reference
+current value Iref, which flows through the reference FET QB
+is VB/R11, the reference current value Iref depends on 
+(proportional to) the power voltage VB. Accordingly, the
+reference current value IDQALim is proportional to the power
+voltage VB. However, the reference resistance value Rlim is
+fixed, independent of the power voltage VB.</p><p num="0055">This will be described using numerical values. In an
+example where when R11 = 2.4kΩ, the load resistance is 2.4Ω
+(2.4kΩ/1000 = 2.4Ω), the drain-source voltage of the main FET
+QA is equal to that of the reference FET QB; VDSA = VDSB. When
+the load resistance decreases to below 2.4Ω, VDSA &gt; VDSB. This
+state is judged to be an overload state. This will be described
+by using the load current. When VB (power voltage) = 12V, current
+of 5mA (collector current IC(Q3) of the transistor Q3) flows
+through the resistor R11. When the load current is 5A (5mA
+x 1000 = 5A), the drain-source voltage of the main control FET
+QA is equal to that of the reference FET QB; VDSA = VDSB. When
+the load current of 5A or larger flows, it is judged that it
+is an overcurrent (overload). When the power voltage VB is
+16V, the reference resistance value for overload judgement is
+invariable at 2.4Ω, the reference current value for overload
+judgement is 6.67A (16V/2.4Ω = 6.67A), and its value is changed
+(increased) to be higher than 5A when VB = 12V.</p><p num="0056">So long as the load and the wiring are normal, the total
+resistance of the load (= load resistance + wiring resistance) 
+remains unchanged. For this reason, to judge whether or not
+a state of the load including the wiring is normal, it is desirable
+that the reference resistance value for the overload judgement
+is set at a fixed value. This condition is satisfied by the
+method employed in the embodiment, viz. the reference current
+value Iref depends on the power voltage VB, since in the method,
+the reference resistance value for the overload judgement is
+set at a fixed value. However, a constant current method (second
+embodiment) to be described later in which the reference current
+value Iref is fixed independently of the power voltage, is more
+preferable for a case where it is required to judge as to whether
+or not the value of the current flowing through the load exceeds
+a reference current value, while being independent of the power
+voltage VB.</p><p num="0057">Where the circuit specifications mentioned above are
+employed, the Reference current generating device and the
+reference voltage generating device (reference FET QB) may be
+minimized in circuit scale. The result is minimization of the
+packaging space and reduction of the device cost.</p><p num="0058">The comparator CMP1 forms a part of &quot;detector&quot; used in
+the claim descriptions. The source voltage VSA of the main
+control FET QA is applied through the resistor R5 to the &quot;+&quot;
+input terminal of the comparator CMP1. A source voltage VSB 
+of the reference FET QB is applied through the resistor R6 to
+the &quot;-&quot; input terminal of the comparator CMP1. When a potential
+applied to the &quot;+&quot; input terminal of the comparator CMP1 is
+higher than that applied to the &quot;-&quot; input terminal, its output
+is valid (&quot;H&quot; level) . When a potential applied to the &quot;+&quot; input
+terminal of the comparator is lower than that at the &quot;-&quot; input
+terminal, the comparator output is invalid (&quot;L&quot;).</p><p num="0059">The reference voltage of the reference voltage generating
+device, viz., a threshold value at which the output level of
+the comparator CMP1 shifts from an &quot;H&quot; level to an &quot;L&quot; level,
+may be changed to another value by adjusting the reference
+current value Iref of the Reference current generating device.
+Some possible ways of changing the setting of the reference
+current value Iref of the Reference current generating device
+(i.e., the reference of the reference voltage generating device)
+are:
+<sl><li>a) To locate the two transistors Q2 and Q3 outside the chip,
+and to select their configurations and dimensions according
+to required specifications.</li><li>b) To locate the resistor R11 outside the chip, and to select
+its configuration and dimension according to required
+specifications.</li><li>c) To use the combination of a) and b) above.</li><li>d) To change a resistance value of the resistor R11 within 
+the chip.</li></sl></p><p num="0060">A value of the reference current (reference voltage) may
+be set at a target value in a manner that a plurality of resistors
+are disposed in parallel in the chip, and a desired resistor
+is selected from among those plural resistors by means of
+switching means when the chip is packaged or the bare chip is
+mounted. By so doing, even when the power supply control device
+is fabricated in an integrated fashion, a plurality of
+specifications can be covered with one type of chip. With the
+variable setting of the reference current (reference voltage),
+it is possible to reliably detect the discrimination of the
+perfect short from the imperfect short for each type of the
+load (head lamps, drive motors or the like) . Device protection
+against the short trouble is accurately performed.</p><p num="0061">The PNP transistor Q1 inserted between the power supply
+101 and the resistor R1 is provided for dealing with a dark
+current. Where the transistor Q1 is not used, even when the
+power supply to the load 102 is not instructed, viz., the drive
+control of the main control FET QA is not carried out, a path
+of the dark current ranging from the power supply 101 to GND
+(ground potential) exists. Accordingly, the electric power
+of the power supply 101 is consumed, although its amount is
+small, even when the switch SWlis in an off state. For reducing 
+the electricity consumption of power supply 101 by the dark
+current, the transistor Q1 is turned on when the switch SW1
+is turned on (instruct to supply the power to the load 102),
+and the transistor Q1 is turned off when the switch Sw1 is turned
+off. Therefore, the path for dark current is cut off.</p><p num="0062">The resistors R1 to R3, and the diodes D2 and D3 form
+a diode clamping circuit. When the transistor Q1 is in an on
+state, VC &gt; VE holds where VC is a potential at a node between
+the resistors R1 and R3, and VE is a potential at a node between
+the resistors R3 and R2.</p><p num="0063">When VSA (source voltage of FET QA) ≧ VC - 0.7V (= forward
+voltage drop of the diode), the source voltage VSA is applied
+to the &quot;+&quot; input terminal of the comparator CMP1. When VSA
+&lt; VC - 0.7V, a potential of (VC - 0.7V) is applied to the &quot;+&quot;
+input terminal of the comparator CMP1, independently of the
+source voltage VSA. Thus, even if the source voltage VSA drops,
+the &quot;+&quot; input terminal of the comparator CMP1 is held at VC
+- 0.7V and does not drop below this potential. The &quot;-&quot; input
+terminal of the comparator CMP1 is held at a potential of VE
+- 0.7V even if the source voltage VSB of the reference FET QB
+drops to a value lower than the potential (VE - 0.7V).</p><p num="0064">With provision of the diode clamping circuit, even when
+the main control FET QA and the reference FET QB shift their 
+state to an off state and the source voltage VSA and the source
+voltage VSB drop, the &quot;+&quot; input terminal and &quot;-&quot; input terminal
+of the comparator CMP1 are clamped at (VC - 0.7V) and (VE -
+0.7V), respectively. Since VC&gt;VE, the output of the comparator
+CMP1 is set at &quot;H&quot; level. And the main control FET QA is reliably
+controlled irrespective of the amplitudes of the source voltage
+VSA and the source voltage VSB. It never happens that the
+potential at the &quot;+&quot; input terminal and the &quot;-&quot; input terminal
+of the comparator CMP1 drops to a reference potential value.
+In this respect, the voltage withstand capability of the &quot;+&quot;
+input terminal and &quot;-&quot; input terminal is improved.</p><p num="0065">An operation of the power supply control device of the
+embodiment, viz., a power supply control method, will be
+described with reference to Fig. 3. In gathering data plotted
+in a graph of Fig. 3, the main control FET QA is a thermal FET,
+&quot;HAF2001&quot;, manufactured by Hitachi Corporation in Japan.
+Operation characteristics of the main control FET QA and the
+reference FET QB are plotted where the power voltage VB = 12V.
+In Fig. 3, the abscissa represents the drain-source VDS (VDSA
+or VDSB), and the ordinate represents the drain current ID (IDQA
+or 1000 × IDQB).</p><p num="0066">In Fig. 3, a one-dot chain line indicates a reference
+value for the overload (overcurrent) when Iref (reference 
+current) = 5mA. Since 1000 x Iref = 5A, it is depicted in (1)
+as a horizontal line of 5A. This represents an operating line
+of the reference FET QB when it is converted into that of the
+main control FET QA. When the load and wiring are normal and
+the main control FET QA and the reference FET QB are in an on
+state, an operating point of the reference FET QB is a point
+A in the figure. The operating point of the main control FET
+QA is present between the origin and the point A. It is assumed
+that the load is in an overload state and an overcurrent, for
+instance, the drain current IDQA = 8A, flows. An operating
+point of the main control FET QA at that moment is a point B.
+At this time, IDQA (drain current of FET QA) &gt; 1000×Iref.
+Accordingly, the output of the comparator CMP1 is at an &quot;L&quot;
+level, and the main control FET QA and the reference FET QB
+shift their state to an off state.</p><p num="0067">In Fig. 3, a dotted line (2) indicates a load line depicted
+when the load is a resistive load and in an overload state,
+and further it contains the operating point B. Here, the
+resistive load is such a load that the inductance component
+of the load and wiring is much smaller than the resistive
+component. A specific example of it is a lamp load. When the
+load is the resistive load, the operating point of the main
+control FET QA moves from the point B to the right side along
+the straight load line (2), with increase of the drain-source 
+voltage VDSA. If the load line (2) intersects the reference
+value line (1) for overload judgment at a point D, a relation
+IDQA &gt; 1000 × Iref holds when the drain-source voltage VDSA lies
+in a region on the left side of the point D. When the operating
+point of the main control FET QA lies in a region on the right
+side of the point D, a relation IDQA &lt; 1000×Iref holds. The
+main control FET QA shifts its state to an on state.</p><p num="0068">Measures for preventing the main control FET from turning
+on as soon as the operating point enters the region on the right
+side of the point D are taken by the embodiment. The measure
+utilizes such a phenomenon that when the gate drive of the main
+control FET QA by the drive circuit 111 is turned off, a potential
+at the output node of the drive circuit 111 becomes ground
+potential by the sink transistor within the drive circuit 111.
+By the utilization of the phenomenon, current is made to flow
+through a path of base of the transistor Q4 → resistor R9 →
+diode D1 → node N8 → GND (ground potential), whereby the
+transistor Q4 is turned on. By so doing, the &quot;-&quot; input terminal
+of the comparator CMP1 is kept at high potential, and even if
+the operating point of the main control FET QA is on the right
+side of the point D, it maintains its off state. In a case
+where the potential at the &quot;-&quot; input terminal of the comparator
+CMP1 is excessively pulled up to the high potential, when the
+source voltage VSA and the source voltage VSB drop, a timing 
+where a logic level at the output of the comparator CMP1 is
+inverted from an &quot;L&quot; level to an &quot;H&quot; level by the diode clamping
+circuit, delays. To prevent this, it is desirable to select
+a resistance value of the resistor R10, which is connected
+between the collector of the transistor Q4 and the &quot;-&quot; input
+terminal of the comparator CMP1, so as to satisfy R10: R6 =
+R1: R3.</p><p num="0069">In the diode clamping circuit, voltage VC obtained by
+dividing the power voltage VB by a series circuit of the resistors
+R1, R2 and R3 is
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">VC = VB·(R2+R3)/(R1+R2+R3)</st32:df>
+When the forward voltage drop of the diode D2 is 0.7V, the
+drain-source voltage VDSA of the main control FET QA whereupon
+the potential at &quot;+&quot; input terminal being to be clamped by the
+potential of VC - 0.7V is
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">VDSA = (VB - VC + 0.7)</st32:df>
+In Fig. 3, this is depicted as a hatched vertical line located
+near VDSA = 7.3V.</p><p num="0070">An intersection of the load line (2) and the vertical 
+line is denoted as C1. When the operating point moves to and
+enters a region on the right side of the point C1, the gate
+drive of the main control FET QA by the drive circuit 111 is
+turned on. After a time of the circuit operation delay elapses,
+a potential at the output node N8 of the drive circuit 111 changes
+from the &quot;L&quot; level to the &quot;H&quot; level. And the main control FET
+QA is turned on again. During the operation delay time of the
+drive circuit 111, the operating point further moves to the
+right side. When the main control FET QA is turned on, the
+operating point turns its moving direction to the left, and
+starts to move.</p><p num="0071">When the potential at the output node N8 of the drive
+circuit 111 goes high in logical level, the transistor Q4 shifts
+its state to an off state. As a result, the pulling up action
+of the potential at the &quot;-&quot; input terminal of the comparator
+CMP1 by the transistor Q4 disappears. Accordingly, when the
+operating point of the main control FET QA enters a region on
+the left side of the point D, the drive circuit 111 is put in
+an off control mode, and after the circuit operation delay time,
+the main control FET QA is turned off. During the operation
+delay time of the drive circuit 111, the point D shifts to the
+left beyond the point D, and then changes its moving direction
+and starts to move to the right. By repeating the above process,
+the main control FET QA and the reference FET QB are repeatedly 
+turned on and off.</p><p num="0072">In Fig. 3, a line (3) represents a load line when the
+load is an inductive overload. Here, the inductive load means
+such a load that an inductance component of the load and wiring
+is much larger than a resistance component, and an example of
+it is a motor load. When the load is an inductive load, the
+operating line of the main control FET QA is a horizontal straight
+line containing the point B as shown in the line (3). When
+the main control FET QA shifts its state to an off state, the
+operating point of the main control FET QA moves from the point
+B to the right along the load line (3).</p><p num="0073">In the case of the inductive load, if the main control
+FET QA and the reference FET QB turn off, both the main current
+IDQA and the reference current Iref are unchanged until VDSA
+reaches to the point C2 shown in Fig. 3. The point C2 denotes
+intersection of the operating line (3) and the vertical line
+at VB-VC +0.7V. In other words IDQA is always larger than one
+thousand times Iref on the left side of the point C2 irrespective
+of pulling up the &quot;-&quot; input terminal by the FET Q4 unlike the
+resistive load. When the operating point of FETQA enters the
+region on the right side of the point C2, the output of CMP1
+turns from &quot;L&quot; level to &quot;H&quot; level. Since there is a delay time
+in the drive circuit 111, operating point of FET QA goes on 
+to the right side beyond the point C2 during the delay time.
+When FET QA and QB begin to turn on, the operating point changes
+the moving direction and starts to move to the left.</p><p num="0074">When the drain-source voltage VDS decreases and the
+operating point of the main control FET QA reaches the point
+C2, the drive circuit 111 is put in an off control mode. After
+the operation delay time of the circuit, the main control FET
+QA shifts its state to an off state. During the operation delay
+time of the drive circuit 111, the operating points further
+moves to the left beyond the point C2. When the potential at
+the output node N8 of the drive circuit 111 changes from an
+&quot;L&quot; level to an &quot;H&quot; level, the operating point changes its moving
+direction and starts to move to the right, however. Repeating
+the above process, the main control FET QA and the reference
+FET QB are repeatedly turned on and off.</p><p num="0075">IDQB = IC (Q2), and when n x IDQB &gt; IDQA, the main control
+FET QA and the reference FET QB are keep to be in an on state.
+When n x IDQB &lt; IDQA, the main control FET QA and the reference
+FET QB are turned on and off. Here, &quot;n&quot; is a ratio of the number
+of transistors of the main control FET QA to that of the reference
+FET QB, and IDQA and IDQB are the drain currents of the main
+control FET QA and the reference FET QB. That is, when the
+load current IDQA of the main control FET QA increases to be 
+larger than a current which is n times as large as the reference
+current value Iref (IC(Q2)), those FETs are repeatedly turned
+on and off. After a predetermined time elapses, the main control
+FET QA and the reference FET QB are turned off.</p><p num="0076">Figs. 4 (a) and 4 (b) are waveform diagrams showing
+variations of current and voltage of the main control FET QA
+in the power supply control device of the embodiment. Fig.
+4(a) shows a waveform of a drain current ID of the FET, and
+Fig. 4 (b) is a waveform of the drain-source VDS. A waveform
+(2) represents a variation of the drain current ID in a normal
+state. A waveform (3) indicates a variation of it in an overload
+state (including a short of a wiring between the source and
+the load). In the overload state ((3) in the figure), the main
+control FET QA is repeatedly turned on and off, and a periodic
+heating of the main control FET QA causes the overheat shut-off
+protecting function to operate.</p><p num="0077">As described above, the power supply control device and
+method of the invention succeeds in eliminating the shunt
+resistor, conventionally used, connected in series to the
+power supply path in order to detect the current, and can detect
+an overcurrent with high precision without the shut resistor,
+and represses the heat loss of the whole device. Further, the
+power supply control device and method continuously detects, 
+by the hardware circuit, an abnormal current flowing when a
+layer short, e.g., an imperfect short having some resistance,
+occurs, and as well an overcurrent caused when a perfect short
+occurs.</p><p num="0078">The on/off control of the semiconductor switch can be
+performed by only the hardware circuit which does not contain
+the MICROCOMPUTER. Accordingly, the power supply control
+device is reduced in packing space and device cost.</p><p num="0079">By the adjustment of the reference current value Iref
+of the Reference current generating device, it is possible to
+reliably detect the discrimination of the perfect short from
+the imperfect short for each type of the load (head lamps, drive
+motors or the like). Device protection against the short
+trouble is accurately performed.</p><p num="0080">A power supply control device and method, which forms
+a second embodiment of the present invention, will be described
+with reference to Fig. 5. The power supply control device of
+the embodiment is characteristically featured in that the
+Reference current generating device is constructed as a constant
+current source. Specifically, difference of the circuit
+arrangement (Fig. 1) of the power supply control device of the 
+first embodiment is that a resistor R13 is inserted between
+the resistor R11 and the collector of the transistor Q1 in the
+Reference current generating device, and a Zener diode ZD2 is
+connected between the other end of the resistor R13 and ground
+potential. In Fig. 5, a circuit section 110b enclosed with
+a dotted line indicates a circuit section to be analog integrated
+onto a chip (this section will be referred to a chip-circuitry
+section).</p><p num="0081">In the circuit arrangement, the collector current IC (Q3)
+is given by
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">IC(Q3) = {VZD2- (on-voltage of Q3)} / R11</st32:df>
+where VZD2 is a Zener voltage of the Zener diode ZD2. Accordingly,
+the collector current IC(Q3), or the reference current value
+Iref, is a constant current, which is not dependent on the power
+voltage VB.</p><p num="0082">The functions and modifications of the other elements,
+and operations of the power supply control device and method
+are substantially the same as of the first embodiment, and are
+valid in the power supply control device and method of the
+embodiment. </p><p num="0083">Modifications of the power supply control devices of the
+first and second embodiments described above will be described
+in the order of first modification and second modification,
+with reference to the accompanying drawings.</p><p num="0084">The first modification is characteristically featured
+in that a inrush current mask circuit 105 as shown in Fig. 6
+is additionally used to the circuit arrangement (Fig. 1 or 5)
+of the power supply control device of the first or second
+embodiment.</p><p num="0085">When the load 102 (e.g., headlights) is turned on, inrush
+current flows, which is several to several tens times as large
+as a normal current in amplitude. The period that the inrush
+current flows depends on the type and capacity of the load 102,
+but is about 3msec to 20msec. If the overcurrent control as
+described in the first or second embodiment is carried out during
+the surge-current flowing period, some time is taken till the
+load is settled down into a stationary state. As a result,
+the response of the load per se delays sometimes. Specifically,
+the headlights are delayed in lighting. The embodiment solves
+this problem by adding the inrush current mask circuit 105
+(corresponding to prohibiting device used in claims) to the 
+circuit arrangement of Fig. 1 or Fig. 5.</p><p num="0086">In Fig. 6, the inrush current mask circuit 105 is made
+up of FETs Q11 and Q12, a diode D11, resistors R15 to R18, and
+a capacitor C11. Terminals N6 and N9 are connected to the nodes
+N6 and N9 in the Fig.1 and the Fig. 5 circuit, respectively.
+A terminal GND is earthen.</p><p num="0087">The operation of the inrush current mask circuit 105 will
+be described. When the switch SW1 is turned on, the transistor
+Q1 is turned on. The power voltage VB is applied to the gate
+of the FET Q12 through the diode D11 and the resistor R16. The
+power voltage VB is applied to the gate of the FET Q11 through
+the diode D11 and the resistor R15.</p><p num="0088">The gate of the FET Q12 is connected to ground potential
+through the capacitor C11. The capacitor C11 is not yet charged
+immediately after the switch SW1 is turned on. In this state,
+the gate potential of the FET Q12 is insufficiently high, and
+the FET Q12 cannot shift its state to an on state. The FET
+Q11 is in an on state during the off state of the FET Q12, and
+pulls the potential at the &quot;-&quot; input terminal of the comparator
+CMP1 to a lower potential. For this reason, even if large inrush
+current flows, the output potential of the comparator CMP1 does
+not go low in logic level. And the main control FET QA does 
+not shift its state to an off state.</p><p num="0089">With time, the capacitor C11 is gradually charged through
+the resistor R16, and in due time the FET Q12 shifts its state
+to an on state. With this, the FET Q11 shifts its state to
+an off state, the masking state terminates, and finally the
+overcurrent detection control functions.</p><p num="0090">The resistor R17 is a discharge resistor for resetting
+the capacitor C11 after the switch SW1 is turned off. Its
+resistance is preferably selected so as to satisfy R16&lt;&lt;R17
+in order to eliminate adversely affect the masking time. The
+masking time is determined by a time constant of R16 x C11.
+Where the circuitry is integrated into one chip in fabrication,
+the masking time can be adjusted by appropriately adjusting
+the capacitance of the capacitor C11 attached to the chip.</p><p num="0091">A power supply control device of the second modification
+will be described with reference to Fig. 7. The power supply
+control device of the modification is characteristically
+featured in that an on/off counter circuit 107 is added to the
+circuit arrangement (Fig. 1 or Fig. 5) of the power supply control
+device of the first or second embodiment. In Fig. 7, a circuit
+section 110d enclosed with a dotted line indicates a circuit 
+section to be analog integrated onto a chip (this section will
+be referred to a chip-circuitry section).</p><p num="0092">In the first or second embodiment, when an imperfect short
+occurs, the main control FET QA is repeatedly turned on and
+off, and the resultant periodic heating of the main control
+FET QA causes the overheat shut-off function to operate.
+Accordingly, the time taken till the overheat shutting off is
+relatively long. This problem is solved in the following way
+by the modification. Specifically, the modification
+additionally uses the on/off counter circuit (number-of-times
+controller) 107 to quicken the turning off of the main control
+FET QA. The on/off counter circuit 107 turns off the main control
+FET QA when the number of on/off times reaches a predetermined
+time.</p><p num="0093">In Fig. 7, the on/off counter circuit 107 includes
+transistors Q32 to Q34, FETs Q31 and Q35, diodes D31 to D33,
+a Zener diode ZD31, resistors R31 to R38, and a capacitor C31.
+The conductivity type of the FET Q31 is opposite to that of
+the FET Q35. In Fig. 7, the FET Q31 is of the NMOS type, while
+the FET Q35 is of the PMOS type, and those FETs are arranged
+in a latch circuit.</p><p num="0094">The operation of the on/off counter circuit 107 will be 
+described. Every time that the overcurrent control mode is
+set up, and the main control FET QA is turned off (the gate
+potential is set at an &quot;L&quot; level) during the on/off control
+of the FET QA, the capacitor C31 is charged through the
+transistors Q32 and Q34 and the resistor R32. The capacitor
+C31 is charged only when the drain-source voltage VDSA goes
+high in logic level during the off control (the gate potential
+is at the &quot;L&quot; level), and is not charged when FET QA keeps to
+be in the on state or in the off state continuously. The gate
+potential of the FET Q31 is lower than a threshold value in
+the initial stage, and is in an off state. With progress of
+the charging of the capacitor C31, the gate potential increases
+and the FET Q31 is turned on. At this time, the true gate of
+the main control FET QA is connected to ground potential through
+the diode D32, to turn off (off control) the main control FET
+QA. At this time, the FET Q35 is also turned on. Accordingly,
+the latch circuit including the FETs Q31 and Q35 holds
+information to the effect that the on/off counter circuit 107
+turned off the main control FET QA.</p><p num="0095">In the power supply control device (Fig. 7) of the second
+modification, the drain of the FET Q31 is connected to the true
+gate (TG) of the main control FET QA by way of the diode D32,
+whereby the main control FET QA is directly on/off controlled.
+The modification may be further modified in the following way. 
+In a first case, a prohibiting gate (2-input AND gate) is provided
+at the output of the comparator CMP1. A drain potential of
+the FET Q31 is used for its prohibiting control signal (the
+drain potential of the FET Q31 is input to the other input of
+the two-input AND gate). In a second case, the drain of the
+FET Q31 is connected through a resistor to the &quot;+&quot; input terminal
+of the comparator CMP1. Also in those first and second cases,
+it is necessary to form a latch circuit for holding information
+that the on/off counter circuit 107 has turned off the main
+control FET QA.</p><p num="0096">In a third case, after the on/off controls are added up,
+the main control FET QA is turned off (off controlled) by the
+overheat shut-off function, viz., by using a temperature sensor
+121, a latch circuit 122 and an overheat shutting off FET QS
+(see Fig. 2). Specifically, the FET Q35 and the resistor R38
+are removed, the resistor R31 is connected to the output node
+N8 in place of the collector of the transistor Q1, and the anode
+of the diode D32 is connected to the anode of the temperature
+sensor 121 (consisting of four diodes). In this case, when
+the FET Q31 is turned on, potential at the anode of the temperature
+sensor 121 (consisting of four diodes) is pulled down to a low
+potential. Accordingly, the same conditions as in high
+temperature state are set up, and the FET QS is turned on to
+turn off (off control) the main control FET QA. </p><p num="0097">Further, in the power supply control device of this
+modification, the number of on/off control times is judged based
+on a quantity of charge stored in the capacitor C31 in the on/off
+counter circuit 107. Alternatively, the on/off counter circuit
+107 may be formed with a counter for directly counting the output
+signal of the drive circuit 111. In the alternative, when a
+count of the counter for counting the output signal of the drive
+circuit 111 reaches a predetermined value, the FET Q31 (or
+overheat shutting off FET QS) is turned on to turn off (off
+control the FET QA.</p><p num="0098">In the circuit arrangement of the power supply control
+device of each of the embodiments and their modifications, the
+main control FET QA, the reference FET QB, the overheat shutting
+off FET QS, and FETs Q11 to Q31 and Q51 to Q54 are of the n-channel
+type, and other FETs are of the p-channel type. It is evident
+that the conductivity types of those transistors may be reversed,
+as a matter of course . In this case, the circuit must be modified
+such that the gate potentials for turning on and off the
+respective switching elements are reversed in terms of the logic
+level, &quot;L&quot; level and &quot;H&quot; level. The same thing is true for
+such a modification that the NPN type of the bipolar transistor
+is changed to the PNP type, and vice versa. If required, IGBT
+(insulated gate bipolar transistor) may be used in lieu of the 
+main control FET QA and the reference FET QB.</p><p num="0099">As seen from the foregoing description, in the power
+supply control device and method of the invention, when the
+supply of electric power from the power supply to the load is
+controlled by the semiconductor switch in a switching manner,
+a reference current is generated by the Reference current
+generating device (reference current generating step). A
+reference voltage is generated based on the reference current
+by the reference voltage generating device (reference voltage
+generating step). A difference between the voltage between
+terminals of the semiconductor switch and the reference voltage
+is detected by the detector (detecting step). The
+semiconductor switch is on/off controlled in accordance with
+the detected voltage difference between the terminal-terminal
+voltage and the reference voltage by the control means (control
+step). The reference voltage generating device includes a
+second semiconductor switch controlled in accordance with the
+control signal. Further, the second semiconductor is connected
+in series to the reference current generating device to form
+a series circuit. The series circuit is connected in parallel
+to the semiconductor switch and the load. The
+terminal-terminal voltage of the second semiconductor switch
+is generated in the form of the reference voltage. The reference
+current generating device generates a reference current 
+dependent on an output voltage of the power supply, or is a
+constant current source, as in the fourth power supply control
+device. Judgement is made as to whether or not the
+terminal-terminal voltage of the semiconductor switch (or the
+current in the power supply path), which forms a part of the
+power supply path, is out of a normal state by detecting a
+difference between the terminal-terminal voltage of the
+semiconductor switch and the reference voltage generated by
+the reference voltage generating device (reference voltage
+generating step). The power supply control device and method
+of the invention does not need the shunt resistor, conventionally
+used, which is connected in series to the power supply path
+for the current detection. With this feature, the heat loss
+of the device is suppressed. An abnormal current by a layer
+short, such as an imperfect short having some short resistance,
+as well as an overcurrent by a perfect short, can continuously
+be detected by use of the hardware circuit or the program
+processing by the MICROCOMPUTER or the like. Particularly,
+when the on/off control process for the semiconductor switch
+is realized by a hardware circuit, there is no need of using
+the MICROCOMPUTER. This feature brings about the packaging
+space reduction, and considerable reduction of the device cost.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung, die umfasst:
+<claim-text><claim-text>einen ersten Halbleiterschalter (QA), der eine Zufuhr von elektrischer Leistung von einer
+Stromversorgung (VB) an eine Last (102) entsprechend einem Steuersignal (N8) steuert;</claim-text><claim-text>eine Bezugsstrom-Erzeugungseinrichtung (Q2, Q3, R11), die einen konstanten Bezugsstrom
+erzeugt;</claim-text><claim-text>eine Bezugsspannungs-Erzeugungseinrichtung (QB), die eine Bezugsspannung (SB) basierend
+auf dem Bezugsstrom erzeugt und mit dem ersten Halbleiterschalter (QA) parallel geschaltet
+ist, wobei die Spannungscharakteristik der Bezugsspannung im Wesentlichen gleich
+einer Spannung zwischen Anschlüssen des ersten Halbleiterschalters ist, wann immer der
+Laststrom einen vorbestimmten Überstromwert erreicht;</claim-text><claim-text>einen Detektor (CMP1; SA, N6), der eine Differenz zwischen der Spannung zwischen den
+Anschlüssen des ersten Halbleiterschalters und der Bezugsspannung erfasst, und</claim-text><claim-text>eine Steuereinheit (111), die den Ein/Aus-Zustand des ersten Halbleiterschalters entsprechend
+der erfassten Differenz steuert.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, wobei die Bezugsspannungs-Erzeugungseinrichtung
+(QB) einen zweiten entsprechend dem Steuersignal (N8) gesteuerten
+Halbleiterschalter enhält, wobei der zweite Halbleiterschalter (QB) mit der Bezugsstrom-Erzeugungseinrichtung
+(Q2, Q3, R11) in Reihe geschaltet ist, um eine Reihenschaltung zu
+bilden, die mit dem ersten Halbleiterschalter (QA) und der Last (102) parallel geschaltet ist,
+sodass eine Spannung (SB) zwischen Anschlüssen des zweiten Halbleiterschalters als die
+Bezugsspannung erzeugt wird.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, wobei der Bezugsstrom von einer
+Ausgangsspannung der Stromversorgung (VB) abhängt.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, wobei eine Spannungscharakteristik
+der Bezugsspannung (SB) im Wesentlichen gleich einer Spannungscharakteristik in einem
+Zustand ist, dass ein Zielstrom fließt, der über einem Maximalstrom in einem Bereich
+liegt, wo der erste Halbleiterschalter (QA) und die Last (102) normalerweise betrieben werden.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 2, wobei der erste (QA) und zweite
+Halbleiterschalter (QB) in einer Übergangsspannungs-Charakteristik der Spannung zwischen
+den Anschlüssen des ersten und zweiten Halbleiterschalters einander gleichwertig sind,
+wenn der erste und der zweite Halbleiterschalter ihren Zustand von dem Aus-Zustand in einen
+Ein-Zustand ändern.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, die des Weiteren einen Überhitzungsschutz
+(Q5) umfasst, der den ersten Halbleiterschalter (QA) abschaltet, wenn der Halbleiterschalter
+überhitzt ist.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, die des Weiteren eine Verbotseinrichtung
+umfasst, die verhindert, dass die Steuereinheit (111) den ersten Halbleiterschalter
+für eine vorbestimmte Dauer ein- und ausschaltet, nachdem der erste Halbleiterschalter eingeschaltet
+ist.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, die des Weiteren eine Häufigkeits-Steuereinheit
+(107) umfasst, die eine Zahl von Malen zählt, die die Steuereinheit den
+ersten Halbleiterschalter (QA) ein- und ausschaltet, wobei die Häufigkeits-Steuereinheit 107
+den ersten Halbleiterschalter ausschaltet, wenn die Zahl von Malen eine vorbestimmte Zahl
+von Malen erreicht.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 1, wobei der erste Halbleiterschalter
+(QA), der Bezugsspannungsgenerator (QB), der Detektor (CMP1) und die Steuereinheit
+(111) auf dem gleichen Chip gebildet sind.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 9, wobei der Bezugsstromgenerator
+(Q2, Q3, R11) außerhalb des Chips gelegen ist.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 6, wobei der erste Halbleiterschalter
+(QA), der Bezugsspannungsgenerator (QB), der Detektor (CMP1), die Steuereinheit (111)
+und der Überhitzungsschutz (QS) auf dem gleichen Chip gebildet sind.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuereinrichtung nach Anspruch 11, wobei der Bezugsstromgenerator
+(Q2, Q3, R11) außerhalb des Chips gelegen ist.</claim-text></claim><claim num="xx"><claim-text>Stromversorgungs-Steuerverfahren der Stromversorgungseinrichtung, die einen Halbleiterschalter
+(QA) enthält, der entsprechend einem Steuersignal (N8) gesteuert wird, um eine
+Zufuhr von elektrischer Leistung von einer Stromversorgung (VB) an eine Last (102) zu
+steuern, wobei das Stromversorgungs-Steuerverfahren die folgenden Schritte umfasst:
+<claim-text><claim-text>Erzeugen eines konstanten Bezugsstromes;</claim-text><claim-text>Erzeugen einer Bezugsspannung (SB) basierend auf dem Bezugsstrom, wobei die Spannungscharakteristik
+der Bezugsspannung (SB) im Wesentlichen gleich einer Spannung zwischen
+Anschlüssen des ersten Halbleiterschalters (QA) ist, wann immer der Laststrom einen
+vorbestimmten Überstromwert erreicht;</claim-text><claim-text>Erfassen einer Differenz (CMP1) zwischen der Spannung (SA) zwischen den Anschlüssen
+des Halbleiterschalters und der Bezugsspannung (SB), und</claim-text><claim-text>Steuern (111, N8) des Ein/Aus-Zustands des Halbleiterschatters entsprechend der erfassten
+Differenz.</claim-text></claim-text></claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A power supply control device comprising:
+<claim-text><claim-text>a first semiconductor switch (QA) which controls a supply
+of electric power from a power supply (VB) to a load (102) in
+accordance with a control signal (N8);</claim-text><claim-text>a reference current generating device (Q2, Q3, R11) which generates
+a constant reference current;</claim-text><claim-text>a reference voltage generating device (QB) which generates
+a reference voltage (SB) based on said reference current and
+connected in parallel to the first semiconductor switch (QA),
+wherein the voltage characteristic of the reference voltage
+is substantially equal to a voltage between terminals of
+the first semiconductor switch whenever the load current
+reaches a predetermined over current value;</claim-text><claim-text>a detector (CMP1; SA, N6) which detects a difference between the
+voltage between the terminals of said first semiconductor
+switch and said reference voltage; and</claim-text><claim-text>a controller (111) which controls on/off state of said first
+semiconductor switch in accordance with said detected
+difference.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 1,
+wherein said reference voltage generating device (QB) includes
+a second semiconductor switch controlled in accordance with
+said control signal (N8), said second semiconductor switch (QB) is
+connected in aeries to said reference current generating
+device (Q2, Q3, R11) to form a series circuit which is connected in
+parallel to said firs semiconductor switch (QA) and said load (102)
+so that a voltage (SB) between terminals of said second
+semiconductor switch is generated as said reference
+voltage.</claim-text></claim><claim num="xx"><claim-text>A power supply device according to claim 1, wherein
+said reference current depends on an output voltage of said
+power supply (VB).</claim-text></claim><claim num="xx"><claim-text>A power supply device according to claim 1, wherein a
+voltage characteristic of said reference voltage (SB) is
+substantially equal to a voltage characteristic in a state
+that a current which is in excess of a maximum current
+within a range where said first semiconductor switch (QA) and
+said load (102) are normally operated flows.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 2,
+wherein said first (QA) and second semiconductor switch (QB) are
+equivalent to each other in a transient voltage
+characteristic of said voltage between said terminals of
+said first and second semiconductor switches when each said
+first and second semiconductor switch shifts its state from
+said off state to said on state.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 1
+further comprising an overheat protector (QS) which turns off
+said first semiconductor switch (QA) when said semiconductor
+switch is overheat.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 1
+further comprising a prohibiting device which prohibits
+said controller (111) from turning on and off said first
+semiconductor switch for a predetermined period after said
+first semiconductor switch is turned on.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 1
+further comprising a number-of-times controller (107), which
+counts a number of times that said controller turns on and
+off said first semiconductor switch (QA), said number-of-times
+controller (107) turns off said first semiconductor switch when
+said number of times reaches a predetermined number of
+times.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 1,
+wherein said first semiconductor switch (QA), said reference
+voltage generator (QB), said detector (CMP1), and said controller (111) are
+formed on a same chip.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 9,
+wherein said reference current generator (Q2, Q3, R11) is located outside
+said chip.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 6,
+wherein said first semiconductor switch (QA), said reference
+voltage generator (QB), said detector (CMP1), said controller (111), and said
+overheat protector (QS) are formed on a same chip.</claim-text></claim><claim num="xx"><claim-text>A power supply control device according to claim 11,
+wherein said reference current generator (Q2, Q3, R11) is located outside
+said chip.</claim-text></claim><claim num="xx"><claim-text>A power supply control method of power supply device
+including a semiconductor switch (QA) controlled in accordance
+with a control signal (N8) to control a supply of electric power
+from a power supply (VB) to a load (102), said power supply control
+method comprising the steps of:
+<claim-text><claim-text>generating a constant reference current (Q2, Q3, R11;</claim-text><claim-text>generating a reference voltage (SB) based on said reference
+current, wherein the voltage characteristic of the
+reference voltage (SB) is substantially equal to a voltage
+between terminals of the first semiconductor switch (QA)
+whenever the load current reaches a predetermined over
+current value;</claim-text><claim-text>detecting a difference (CMP1) between the voltage (SA) between the
+terminals of said semiconductor switch and said reference
+voltage (SB); and</claim-text><claim-text>controlling (111,N8) on/off state of said semiconductor switch
+in accordance with said detected difference.</claim-text></claim-text></claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Un dispositif de commande d'alimentation comprenant :
+<claim-text><claim-text>un premier élément de commutation à semiconducteur (QA) qui
+commande la fourniture d'énergie électrique à une charge (102) à partir
+d'une source d'alimentation (VB), conformément à un signal de commande
+(N8);</claim-text><claim-text>un dispositif de génération de courant de référence (Q2, Q3,
+R11) qui génère un courant de référence constant;</claim-text><claim-text>un dispositif de génération de tension de référence (QB) qui génère
+une tension de référence (SB), sur la base du courant de référence,
+et connecté en parallèle sur le premier élément de commutation à semiconducteur
+(QA), dans lequel la caractéristique de tension de la tension
+de référence est pratiquement égale à une tension entre des bornes du
+premier élément de commutation à semiconducteur chaque fois que le
+courant de charge atteint une valeur de surintensité prédéterminée;</claim-text><claim-text>un détecteur (CMP1; SA, N6) qui détecte une différence entre la
+tension entre les bornes du premier élément de commutation à semiconducteur
+et la tension de référence; et</claim-text><claim-text>une unité de commande (111) qui commande un état passant /
+bloqué du premier élément de commutation à semiconducteur, conformément
+à la différence détectée.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+1, dans lequel le dispositif de génération de tension de référence
+(QB) comprend un second élément de commutation à semiconducteur
+commandé conformément au signal de commande (N8), ce second élément
+de commutation à semiconducteur (QB) étant connecté en série
+avec le dispositif de génération de courant de référence (Q2, Q3, R11)
+pour former un circuit série qui est connecté en parallèle sur le premier
+élément de commutation à semiconducteur (QA) et sur la charge (102), de
+façon qu'une tension (SB) entre les bornes du second élément de commutation
+à semiconducteur soit générée comme la tension de référence.</claim-text></claim><claim num="xx"><claim-text>Un dispositif d'alimentation selon la revendication 1, dans lequel
+le courant de référence dépend d'une tension de sortie de la source
+d'alimentation (VB).</claim-text></claim><claim num="xx"><claim-text>Un dispositif d'alimentation selon la revendication 1, dans lequel
+une caractéristique de tension de la tension de référence (SB) est
+pratiquement égale à une caractéristique de tension dans un état dans
+lequel il circule un courant qui dépasse un courant maximal dans une
+plage dans laquelle le premier élément de commutation à semiconducteur
+(QA) et la charge (102) fonctionnent normalement.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+2, dans lequel les premier (QA) et second (QB) éléments de commutation
+à semiconducteur sont équivalents l'un à l'autre en ce qui concerne
+une caractéristique de tension transitoire de la tension entre les bornes
+des premier et second éléments de commutation à semiconducteur, lorsque
+chacun des premier et second éléments de commutation à semiconducteur
+change d'état pour passer de l'état bloqué à l'état passant.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+1, comprenant en outre un élément de protection contre un échauffement
+excessif (QS) qui bloque le premier élément de commutation à semiconducteur
+(QA) lorsque cet élément de commutation à semiconducteur
+est surchauffé.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+1, comprenant en outre un dispositif d'interdiction qui interdit à l'unité
+de commande (111) de commuter à l'état passant et à l'état bloqué le
+premier élément de commutation à semiconducteur, pendant une durée
+prédéterminée après que le premier élément de commutation à semiconducteur
+a été commuté à l'état passant.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+1, comprenant en outre une unité de commande de nombre de fois
+(107) qui compte un nombre de fois que l'unité de commande commute le
+premier élément de commutation à semiconducteur (QA) à l'état passant
+et à l'état bloqué, et cette unité de commande de nombre de fois (107)
+bloque le premier élément de commutation à semiconducteur lorsque le
+nombre de fois atteint un nombre de fois prédéterminé.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+1, dans lequel le premier élément de commutation à semiconducteur
+(QA), le générateur de tension de référence (QB), le détecteur (CMP1) et
+l'unité de commande (111) sont formés sur une même puce.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+9, dans lequel le générateur de courant de référence (Q2, Q3, R11)
+est placé à l'extérieur de la puce.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+6, dans lequel le premier élément de commutation à semiconducteur
+(QA), le générateur de tension de référence (QB), le détecteur
+(CMP1), l'unité de commande (111) et l'élément de protection contre un
+échauffement excessif (QS) sont formés sur une même puce.</claim-text></claim><claim num="xx"><claim-text>Un dispositif de commande d'alimentation selon la revendication
+11, dans lequel le générateur de courant de référence (Q2, Q3,
+R11) est placé à l'extérieur de la puce.</claim-text></claim><claim num="xx"><claim-text>Un procédé de commande d'alimentation pour un dispositif
+d'alimentation incluant un élément de commutation à semiconducteur (QA)
+commandé conformément à un signal de commande (N8), pour commander
+la fourniture d'énergie électrique à une charge (102) à partir d'une
+source d'alimentation (VB), ce procédé de commande d'alimentation comprenant
+les étapes suivantes :
+<claim-text><claim-text>on génère un courant de référence constant (Q2, Q3, R11);</claim-text><claim-text>on génère une tension de référence (SB) sur la base du courant
+de référence, la caractéristique de tension de la tension de référence
+(SB) étant pratiquement égale à une tension entre des bornes du premier
+élément de commutation à semiconducteur (QA) chaque fois que le courant
+de charge atteint une valeur de surintensité prédéterminée;</claim-text><claim-text>on détecte une différence (CMP1) entre la tension (SA) entre les
+bornes de l'élément de commutation à semiconducteur, et la tension de
+référence (SB); et</claim-text><claim-text>on commande (111, N8) l'état passant / bloqué de l'élément de
+commutation à semiconducteur conformément à la différence détectée.</claim-text></claim-text></claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20060426"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060207</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060310"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050609"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60110475</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050609</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050601"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050504"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050504"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030129"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20021213</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030102"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20021113"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020912</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20020403"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20020403"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIC1" date="20020403"><legal-event-body><event-title>CLASSIFICATION (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>7H 02M 3/00 A, 7H 03K 17/082 B</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010808"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010808"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

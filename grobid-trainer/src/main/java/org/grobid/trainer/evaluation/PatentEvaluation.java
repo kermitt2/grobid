@@ -35,9 +35,9 @@ public class PatentEvaluation {
     public PatentEvaluation() {
         evaluationPath = AbstractTrainer.getEvalCorpusBasePath().getAbsolutePath();
         outputPath = GrobidProperties.getInstance().getTempPath().getAbsolutePath();
-        taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
-        taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
-        taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
+        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
+        //taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+        taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_CITATION);
     }
 
     /**
@@ -88,11 +88,9 @@ public class PatentEvaluation {
 
         PatentParserTrainer ppt = new PatentParserTrainer();
         //noinspection NullableProblems
-        ppt.createDataSet("test", null, evaluationPath, outputPath, 1);
+        ppt.createDataSet("test", evaluationPath, outputPath, 1);
 
         List<GenericTagger> taggers = new ArrayList<GenericTagger>();
-        taggers.add(taggerNPL);
-        taggers.add(taggerPatent);
         taggers.add(taggerAll);
 
         // note: there is no field for these models

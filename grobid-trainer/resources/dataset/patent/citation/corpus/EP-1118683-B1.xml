@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1118683-B1" country="EP" doc-number="1118683" kind="B1" date="20041020"><bibliographic-data><publication-reference fvid="23195399" ucid="EP-1118683-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1118683</doc-number><kind>B1</kind><date>20041020</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01100885-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01100885</doc-number><kind>A</kind><date>20010116</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="DE-10002381-A" status="new"><document-id format="epo" status="new"><country>DE</country><doc-number>10002381</doc-number><kind>A</kind><date>20000120</date></document-id></priority-claim><priority-claim ucid="ZA-200000232-A" status="new"><document-id format="epo" status="new"><country>ZA</country><doc-number>200000232</doc-number><kind>A</kind><date>20000120</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040305</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B01D  61/14        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01D  61/14        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01D  61/16        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B01D  61/16        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C01G  55/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C01G  55/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C22B   3/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C22B   3/22        20060101A I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B01D61/14</classification-symbol><classification-symbol scheme="EC">B01D61/16</classification-symbol><classification-symbol scheme="EC">C01G55/00</classification-symbol><classification-symbol scheme="EC">C22B11/04</classification-symbol><classification-symbol scheme="EC">C22B3/22</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verfahren und Vorrichtung für die Reinigung und/oder Behandlung von edelmetallhaltigen Suspensionen mittels Membranfiltration</invention-title><invention-title lang="EN" status="new">Membrane filter process and apparatus for the purification and/or treatment of suspensions of precious metal compounds</invention-title><invention-title lang="FR" status="new">Procédé et dispositif de filtration moléculaire pour la purification et/ou le traitement de suspensions comprenant des composés des métaux précieux</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>MEMBRAFLOW GMBH &amp; CO KGFILTERS</name><address><country>DE</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>MEMBRAFLOW GMBH &amp; CO. KGFILTERSYSTEME</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>OLAPINSKI HANS DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>BLAESE DIETER</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>FEUERPEIL HANS-PETER</name><address><country>DE</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>BLAESE, DIETER</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>FEUERPEIL, HANS-PETER</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>OLAPINSKI, HANS, DR.</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>OLAPINSKI, HANS, DR.</last-name><address><street>Steinäcker 40</street><city>73773 Aichwald</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Bläse, Dieter</last-name><address><street>Wetzgauer Strasse 63</street><city>73557 Mutlangen</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>FEUERPEIL, HANS-PETER</last-name><address><street>Erfurter Strasse 6</street><city>73529 Schwäbisch Gmünd</city><country>DE</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>MEMBRAFLOW GMBH &amp;amp; CO. KG Filtersysteme</last-name><address><street>Robert-Bosch-Strasse 99</street><city>73457 Aalen-Essingen</city><country>DE</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Sawodny, Michael-Wolfgang</last-name><address><street>Dr. Weitzel &amp;amp; Partner, Friedenstrasse 10</street><city>89522 Heidenheim</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>The invention relates to a process for the purification and/or treatment of suspensions, which include at least one or more precious metals and/or rare earths or other elements in the form of a precipitate or solid and/or also in dissolved form, which includes the following steps:   concentrating or thickening the precipitate or solid in the suspension by removal of the liquid phase by means of a membrane filter apparatus, whereby dissolved impurities and/or precious materials are discharged with filtrate; washing of the concentrated or thickened suspension by addition of a wash liquid and removal of filtrate by means of the membrane filter apparatus, whereby the concentration or thickening of the solids in the suspension does not or changes only slightly during washing and the concentration or thickening of the dissolved impurities and/or precious materials still present in the suspension are reduced to a pre-determined value; and complete drainage of the membrane filter apparatus to provide, in purified form, solid and/or purified precipitates of the precious metal(s) and /or rare earths or other elements remaining in residual suspension for further treatment and/or further application.   &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">The invention relates to a process for the purification and/or treatment of
+suspensions, which include at least one or more precious metals and/or
+rare earths or other elements in the form of a precipitate or solid and/or
+also in dissolved form, which includes the following steps:
+<ul list-style="bullet"><li>concentrating or thickening the precipitate or solid in the suspension
+by removal of the liquid phase by means of a membrane filter
+apparatus, whereby dissolved impurities and/or precious materials
+are discharged with filtrate;</li><li>washing of the concentrated or thickened suspension by addition of
+a wash liquid and removal of filtrate by means of the membrane filter
+apparatus, whereby the concentration or thickening of the solids in
+the suspension does not or changes only slightly during washing
+and the concentration or thickening of the dissolved impurities
+and/or precious materials still present in the suspension are reduced
+to a pre-determined value; and</li><li>complete drainage of the membrane filter apparatus to provide, in
+purified form, solid and/or purified precipitates of the precious
+metal(s) and /or rare earths or other elements remaining in residual
+suspension for further treatment and/or further application.</li></ul><img file="00000001.tif" id="img-EP-1118630-A2-00000001" he="66" wi="77" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading><b>FIELD OF INVENTION</b></heading><p num="0001">The invention relates to a process and an apparatus for the purification
+and/or treatment of suspensions, which contain at least one or more
+precious metals and/or rare earths or other elements in the form of a
+precipitate or sediment.</p><heading><b>BACKGROUND TO INVENTION</b></heading><p num="0002">During the manufacture of pure precious metals and/or rare earths
+and/or other elements of the Periodic System or their salts, the precious
+metal or the rare earth or the element is dissolved in a corresponding
+suitable solvent. In addition to the specific element or precious metal,
+other elements, which are similar regarding the dissolving behaviour,
+normally also dissolved and this can constitute impurities.</p><p num="0003">By adding precipitating agents specifically suited to the respective
+element or regulation of the solution equilibrium with a corresponding
+buffer solution or pH-shift, it is possible to selectively precipitate from the
+solution the desired individual elements or precious metals or rare
+earths. This results in a suspension, which contains the deposited
+precipitate or the solid as well as the materials still remaining in the
+solution. </p><p num="0004">To obtain the desired precious metal and/or element in purest form, it is
+necessary to purify the desired deposited precipitate present in the
+suspension.</p><p num="0005">According to the state of the art, the washing and purification of such
+precipitated precious metals from the suspension occur in so-called
+glove-boxes, in which the liquid phase moves through a filter medium by
+application of a vacuum, which becomes quickly covered and
+impermeable due to the extreme fine solids: To prevent this the solution
+is stirred manually. To wash about 10 kg of platinum hydroxide with
+such a process about 10 to 15 working days are needed.</p><p num="0006">A further disadvantage of such processes with glove boxes is the burden
+on the environment.
+
+From <ref typ="patent">EP-A 263 953</ref> a method for separation of Rhodium-complex-compounds
+from a aqueous solution by a membrane-separation process is known.</p><p num="0007"><ref typ="patent">EP-A-0 829 752</ref> discloses a method of manufacturing a silver halide emulsion.
+The method comprising the step of ultrafiltrating a silver halide emulsion
+containing silver halide grains and gelatin having an average molecular weight
+of 500 to 70,000, by means of an ultrafiltration unit having an ultrafiltration
+membrane, whereby the emulsion is desalted and concentrated.</p><p num="0008">From <ref typ="patent">US 5,266,203</ref> an apparatus and method for treating streams containing
+cyanide, heavy metal and precious metal values to recover those values is
+known. The method includes the following steps:
+<ul list-style="bullet"><li>providing a membrane filtration means,</li><li>contacting the waste stream to be treated with an effective amount of
+carbon dioxide to adjust the pH,</li><li>further contacting the waste stream with an effective amount of a soluble
+metal compound to react with the cyanide in the waste stream to form
+membrane rejectable cyanide compounds, and </li><li>passing the treated stream through the membrane filtration means to
+thereby separate recoverable cyanide and precious metal values from
+the treated stream and produce an effluent stream for further processing
+or discharge to the environment.</li></ul></p><p num="0009">From <ref typ="patent">JP-A-02160875</ref> it is known to wash a filter unit with washing water and to
+dry the filter unit.</p><p num="0010">Object of the invention is thus to provide a process and an apparatus by
+means of which these disadvantages of the state of the art can be prevented. Particularly,
+washing should occur in a closed-system in the process in accordance
+with the invention. With the invention least possible washing liquid is required and the
+washing of quantities in the region of for example 10 kg of platinum
+occurs in the shortest possible time, preferably in less than one working
+day.</p><heading><b>SUMMARY OF INVENTION</b></heading><p num="0011">According to the invention, a process for the purification and/or
+treatment of suspensions, which include at least one or more precious
+metals and/or rare earths or other elements in the form of a precipitate
+or solid and/or also in dissolved form, includes the following steps:
+<sl><li>1. concentrating or thickening the precipitate or solid in the
+suspension by removal of the liquid phase by means of a 
+membrane filter apparatus, whereby dissolved impurities
+and/or precious materials are discharged with filtrate;</li><li>2. washing of the concentrated or thickened suspension by
+addition of a washing liquid and removal of filtrate by means
+of the membrane filter apparatus, whereby the
+concentration or thickening of the solids in the suspension
+does not or changes only slightly during washing and the
+concentration or thickening of the dissolved impurities
+and/or precious materials still present in the suspension are
+reduced to a pre-determined value; and
+
+whereby an aqueous solution, which is adopted to the specific
+chemical action of the elements to be washed out is used as wash
+liquid and
+
+the wash liquid includes acetic acid and/or ammonium nitrate
+and/or sodium carbonate / sodium bicarbonate and/or hydrochloric
+acid and/or nitric acid and/or aqua regia and</li><li>3. complete drainage of the membrane filter apparatus to
+provide, in purified form, solid and/or purified precipitates of
+the precious metal(s) and/or rare earths or other elements
+remaining in residual suspension for further treatment
+and/or further application.</li></sl></p><p num="0012">The invention therefore proposes that the solids contained in the
+suspension or the precipitate initially are concentrated or thickened by
+removing the liquid phase of the suspension by means of a membrane
+filter apparatus, whereby the dissolved impurities and/or precious
+materials are carried out with the filtrate. By means of the concentration
+or the thickening, the concentration of the solid or precipitate is 
+increased in the suspension. After reaching the maximum possible
+reduction of the starting volume, the suspension is washed by addition
+of a washing liquid and the removal of the filtrate by means of the
+membrane filter apparatus. Thereby the dissolved impurities and/or
+precious metals or elements remaining in the solution are reduced to a 
+predetermined value. To improve the efficiency of the washing the liquid
+can also contain additives or buffer solutions.</p><p num="0013">After the washing of the suspension containing the insoluble precipitate,
+the membrane plant is completely drained. The desired product, i.e. the
+purified precipitate of the precious metal(s) and/or rare earths or other
+elements are then available in highest purified form for further
+application or further processing.</p><p num="0014">The process according to the invention is suitable, in particular, for
+recovering one or more of the following elements: gold, platinum,
+rhodium, palladium, ruthenium, iridium, osmium, cobalt, europium,
+lanthanum, germanium, gallium, cerium, tantalum, niobium, selenium,
+tellurium, cadmium, bismuth, beryllium, uranium, manganese, in highest
+purified form as precipitate or in dissolved form.</p><p num="0015">The washing liquids are appropriately chosen according to the specific
+chemical behaviour of the element to be scrubbed out.</p><p num="0016">In particular, the washing liquid may contain acetic acid and/or
+ammonium nitrate and/or sodium carbonate or sodium bicarbonate
+and/or hydrochloric acid and/or nitric acid and/or aqua regia.</p><p num="0017">In a preferred embodiment form, it is provided that the concentration of
+the impurities still dissolved in the liquid phase of the suspension after
+scrubbing, lies in the range of 50 mg per litre to 0,001 mg per litre.</p><p num="0018">The process temperature of both the concentrating and also the
+washing by means of the membrane filter apparatus lies in the range of
+5°C to 150°C, during the treatment of rhodium hydroxide preferably
+between 75°C and 85°C and during the treatment of platinum hydroxide
+preferably between 40°C and 50°C. </p><p num="0019">Preferably, the membrane filter apparatus used for the concentrating
+and washing, is operated according to a tangential flow filtration
+process, i.e. the membrane, which serves as filter body, is over flowed
+over by a continuous speed tangential to the membrane surface, so that
+deposits of materials on the membrane surface are substantially
+prevented by the tangential flushing.</p><p num="0020">Impurities, which deposit in the pores despite the flowing over, can be
+removed from the membrane surface by the introduction of a back flush
+impulse during the operation. Such a back flush impulse removes large
+impurities from the surface of the membrane by mechanical separation.</p><p num="0021">The nominal pore size of the membranes of the membrane filter
+apparatus may be in the range between 5 nm and 1,4 µm, whereby
+specially preferred are membranes with a separating size of 50 to 100
+nm.</p><p num="0022">Membranes of ceramics, polymeric materials, metal or inorganic
+materials may be used as membranes in the membrane filter plant.
+Especially preferred is the use of ceramic membranes or membranes of
+other inorganic materials due to their high chemical and physical
+stabilities.</p><p num="0023">The operating pressure in the membrane filter apparatus or its modules
+lies in the range of 0,5 to 50 bar, preferably in the range of 2 to 6 bar.</p><p num="0024">An apparatus for the
+operation of a process as set out herein, includes at least one pre-tank.
+
+characterised thereby,
+
+that the apparatus includes:
+ 
+at least a membrane filter apparatus.</p><p num="0025">In the apparatus for the operation of the process
+in that least one storage apparatus or
+pre-tank, the suspension to be treated is introduced and
+thickened. In the membrane filter apparatus the
+concentration and washing take place. A very decisive advantage
+lies therein that the filter apparatus is
+constructed in such a way, that it can be completely drained by gravity
+or positive gas pressure. This ensures that no residues remain in the
+pump sump after emptying and a product in highest purified form can be
+removed from the plant as slurry/suspension.</p><p num="0026">For impurities of the membrane filter apparatus, which cannot be
+removed by mechanical back pulse, it is advantageous if the membrane
+filter apparatus is provided with a cleaning apparatus, which makes it
+possible to introduce cleaning liquid to the membrane module(s), which
+chemically dissolves the absorbate layers deposited on the membranes.
+Chemical cleaning substances for this are, for example, acetic acid or
+hydrochloric acid or nitric acid or aqua regia or HF-acids. For example,
+HF-acids are used to dissolve polymeric silicic acid.</p><p num="0027">Concerning the different purification processes of membrane modules in
+membrane filter apparatus, reference is made to <ref typ="patent">WO 99/42203</ref>, the
+contents of which is considered to be fully incorporated in the present
+application.</p><p num="0028">In a first embodiment form, the membrane filter apparatus can consist of
+one membrane module. Alternatively, the membrane apparatus can 
+also include a number of membrane modules, which are located either
+in series or parallel. These membrane modules can either be back
+flushed together or individually.</p><p num="0029">In a further embodiment the
+membrane filter apparatus consists of several in series arranged
+membrane loops, which can be removed individually from the operation
+and/or be back flushed individually or together.</p><heading><b>BRIEF DESCRIPTION OF DRAWING</b></heading><p num="0030">The invention will now be described by way of example with reference to
+the accompanying schematic drawings.</p><p num="0031">In the drawings there is shown in:
+<dl tsize="8"><dt>Figure 1</dt><dd>A schematic illustration of an open cycle with a reservoir
+container and a membrane filter apparatus, including a
+membrane module, in accordance with the invention;</dd><dt>Figure 2</dt><dd>A modified semi-open system for batch operation including
+a pre-tank or reservoir container, a membrane filter
+apparatus with a membrane module and a membrane cycle
+in accordance with the invention; and</dd><dt>Figure 3</dt><dd>A system with pre-tank and agitator located therein as well
+as a membrane cycle in accordance with the invention.</dd></dl></p><heading><b>DETAILED DESCRIPTION OF DRAWINGS</b></heading><p num="0032">The invention will now be explained for the two materials rhodium and
+platinum by means of two examples.</p><heading>Example 1:</heading><p num="0033">Rhodium hydroxide is the starting material for a number of rhodium salt
+solutions, for example rhodium sulphate, rhodium nitrate or rhodium
+phosphate. Rhodium hydroxide is normally obtained by treating a
+solution of hexachloro-rhodate with sodium hydroxide. The resulting
+sediment or the resulting precipitate of rhodium hydroxide is
+contaminated with the reaction by-product sodium chloride. The
+reaction is as follows:
+<st32:chr xmlns:st32="http://www.matrixware.com/ns/st32/">H<sub>3</sub>RhCl<sub>6</sub> + 6NaOH ←→ Rh<sub>2</sub>O<sub>3</sub>.xH<sub>2</sub>O + 6NaCl</st32:chr></p><p num="0034">With the process in accordance with the invention impurities, particularly
+the sodium chloride can be efficiently removed from the suspension,
+which contains the precipitated rhodium hydroxide. In addition, the
+suspension containing the rhodium hydroxide precipitate is concentrated
+in accordance with the invention and being water containing ammonium
+nitrate as washing liquid the sodium chloride impurities are removed by
+means of the membrane filter technique.</p><p num="0035">In particular, the NaCl-impurities, which are present on the particles of
+the rhodium hydroxide even after the removal of the liquid phase of the
+suspension during the thickening, can be eliminated by means of the
+washing. This is decisive to obtain the desired high-purified rhodium
+salt and/or to be able to produce it later.</p><heading>Example 2:</heading><p num="0036">Platinum hydroxide is a starting material for a number of platinum salt
+solutions for example platinum nitrate. Platinum hydroxide is obtained
+by treatment of a solution of potassium or sodium hexachloroplatinate
+with potassium or sodium hydroxide and the subsequent neutralisation 
+of the solution with acetic acid. The precipate resulting from this is
+extremely fine and correspondingly difficult to wash out.</p><p num="0037">The reaction is as follows:
+<st32:chr xmlns:st32="http://www.matrixware.com/ns/st32/">K<sub>2</sub>PtCl<sub>6</sub> + 6KOH ←→ K<sub>2</sub>Pt(OH)<sub>6</sub> + 6KCl</st32:chr><st32:chr xmlns:st32="http://www.matrixware.com/ns/st32/">K<sub>2</sub>Pt(OH)<sub>6</sub> + 6KCl + 2CH<sub>3</sub>COOH ←→ PtO<sub>2.</sub>4H<sub>2</sub>O + 2KCOOCH<sub>3</sub> + 6KCl</st32:chr></p><p num="0038">In the suspension with the platinum hydroxide precipitate, both
+potassium acetate as well as potassium chloride are contained as
+impurities. By means of the process according to the invention, the
+suspension containing the platinum hydroxide precipitate can be
+concentrated by means of a membrane filter plant and the impurities
+dissolved in the liquid phase, for example potassium acetate and
+potassium chloride, can be reduced by washing with a suitable aqueous
+scrubbing liquid, which can also contain acetic acid, after the
+concentrating by means of the membrane filter plant to a predetermined
+degree.</p><p num="0039">In addition to the above describe purification techniques of suspensions
+with the help of a membrane filter apparatus, in which initially the solid
+material is concentrated in the suspension and subsequently the
+impurities are washed out, it is also possible, to use a membrane filter
+apparatus for the separation of a specific element and/or several
+elements from a suspension containing a number of elements. In such
+a case, the desired product leaves the membrane filter in the permeate
+in dissolved form, however the solid materials remain in the retentate.
+With such a process, the washing then has the object to wash out the
+desired, dissolved element or the desired dissolved elements from the
+slurry or the suspension. The solids remaining in the slurry can be 
+removed from the membrane filter apparatus or be dissolved out of the
+membrane filter apparatus by means of a suitable solvent, or after the
+dissolving and washing out of an element or several elements, the
+process can be repeated with a specific solvent suitable for other
+elements in the virtually closed system.</p><p num="0040">The following embodiment example should serve as an example for
+such an application of a membrane filter plant:</p><heading>Example 3:</heading><p num="0041">One of the first steps during the production of platinum is, for example,
+the dissolving of a metal ore in a suitable solvent. The solution contains
+then for example platinum, palladium, rhodium, ruthenium, iridium and
+osmium as well as a number of further metallic elements. To separate
+platinum from this solution, the solution is treated with sodium bromate.
+This causes that all the above-mentioned metals, with the exception of
+platinum, precipitate as a &quot;bromate mud&quot;. This bromate slurry can only
+be filtrated or purified with great difficultly and contains in its liquid part
+normally a considerable amount of platinum. By means of a membrane
+filter apparatus platinum, which lies dissolved in the liquid phase, can be
+separated from the slurry or the suspension. Therewith it is possible, to
+recover all the platinum dissolved in the suspension by means of the
+membrane filter apparatus. Furthermore, the slurry remaining in the
+membrane filter can repeatedly be treated with corresponding solvents.
+This enables, for example, the separation of the insoluble osmiums and
+rutheniums from the rest of the metals, in that the metals dissolved in
+the suitable solvents passed through the membrane filter with the
+permeat, while the insoluble osmium and ruthenium remain in the non-filtered
+residue. Aqueous solutions, which can contain sodium 
+carbonate or sodium bi-carbonate or their ammonium compounds, can
+be used as washing liquid of this bromate sediment.</p><p num="0042">Hereafter a membrane filter apparatus, which is suitable for the
+operation of the process in accordance with the invention, is described.
+The apparatus for the operation of the process includes a reservoir
+container or pre-tank 1, in which, for example, the suspension to be
+purified is introduced. The pre-tank 1 can include optionally a stirring
+device as depicted in Figure 3. From the pre-tank 1 the liquid phase is
+supplied to the membrane filter apparatus 3. The membrane filter
+apparatus 3 includes a pump 5, which transfers the liquid phase from
+the reservoir container 1 to the membrane module 7. The membrane
+module 7 is provided in the present embodiment form with ceramic
+membranes or membranes of other inorganic materials with a nominal
+pore size of for example 5 to 1 400 nm.</p><p num="0043">The membrane filter apparatus in the present case is operated
+according to the principle of tangential flow filtration. The tangential flow
+filtration is characterised by the presence of two volume streams, a
+stream Q<sub>1</sub> at speed V<sub>1</sub> of the filtrate perpendicular to the membrane
+surface, the so-called permeate speed, and a stream Q<sub>2</sub> at speed V<sub>2</sub>
+tangential to the membrane surface, the so-called cross flow speed.
+The volume stream Q<sub>1</sub> determines the filter or the permeate output and
+the volume stream Q<sub>2</sub> the cross flow volume, which substantially
+prevents the deposit of materials on the membrane surface by tangential
+flushing. With the process in accordance with the invention, a large part
+of the liquid phase of the suspension is removed as permeat during the
+concentrating step. By the continuous removal of the permeat with the
+volume stream Q<sub>1</sub> the liquid phase in the suspension is continuously
+reduced, so that the solids concentrate in the present suspension. </p><p num="0044">After the volume of the suspension has been reduced to the smallest
+possible value, washing liquid is added to wash out the dissolved
+material. To this a volume stream of wash liquid Q<sup>l</sup><sub>1</sub> is added, whereby
+the middle volume stream of the added wash liquid in an embodiment
+form corresponds exactly with the average flow rate of the permeat
+removed over the membrane filter apparatus. By continuous addition of
+renewed wash liquid Q<sup>l</sup><sub>1</sub> the concentration of dissolved materials and/or
+the impurities in the liquid phase of the concentrated suspension is
+continuously reduced to a predetermined value.</p><p num="0045">If the predetermined purification degree has been achieved, the addition
+of wash liquid is terminated and the complete membrane plant is
+completely drained by means of valve 9. Hereby it is achieved, that no
+residues remain in the membrane filter apparatus and in the storage
+container and that the product is present in highest purified form as solid
+in the discharge container, in which the total suspension/slurry is
+completely discharged by gravity and/or by blowing out with suitable gas
+under positive pressure.</p><p num="0046">In Figure 2, an alternative configuration for the operation of the process
+in accordance with the invention is illustrated. Same component parts
+as in Figure 1 are identified with the same reference numerals.</p><p num="0047">In contrast to Figure 1, the membrane filter apparatus 3 includes a
+closed-cycle 10 in which the volume stream Q<sub>2</sub> - Q<sub>3</sub> is continuously
+stirred by means of a pump 12. The cross flow volume is again the
+stream Q<sub>2</sub>. The stream Q<sub>3</sub> is returned as retentate to the reservoir
+container 1. By continuous removal of the permeat with the volume
+stream Q<sub>1</sub> the suspension is again concentrated. After the completion 
+of the concentrating step, washing liquid is added as in the process
+according to Figure 1, with the average flow rate Q<sup>l</sup><sub>1</sub>.</p><p num="0048">By addition of the wash liquid, the concentration of the materials and/or
+impurities dissolved in the suspension is continuously reduced, until a
+pre-determined value is reached, whereby the remaining dissolved
+impurities and/or materials lie preferably in the range of 50 mg per litre
+up to 0,001 mg per litre. Then the total plant is drained again via valve 9
+and the concentrated solid with the suspension/slurry is removed in
+highest purified form.</p><p num="0049">In Figure 2, the continuous circulation of the volume stream Q<sub>2</sub> - Q<sub>3</sub>
+takes place by means of the pump 12. In the arrangement in Figure 2, a
+pressure P<sub>2</sub> at the outlet of the membrane module is maintained by the
+pump 6. The pressure difference between the inlet to the membrane
+module 7 and the outlet from the membrane module is therewith ΔP = P<sub>1</sub>
+- P<sub>2</sub>.</p><p num="0050">In the system according to Figure 1, the pressure P<sub>2</sub> at the outlet is
+about 0, that means the pressure difference ΔP over the membrane
+module is P<sub>1</sub> - P<sub>2</sub>, whereby this pressure P<sub>1</sub> is created solely by the
+pump 5, which also causes the tangential cross flow of the membrane.</p><p num="0051">If the membrane apparatus illustrated in Figure 1 and Figure 2 is used
+therefore, for example to filter out platinum from a mixture, then the
+elements mentioned in embodiment example 3 except, for example, the
+platinum remaining in the solution, can be precipitated by a suitable
+precipitation agent. The liquid phase, containing the platinum to be
+recovered, is fed to the membrane filter apparatus as in the case of
+purification of a suspension. The metal to be recovered is then 
+contained in the liquid phase removed as pemeat, the solids to be
+removed remain in the retentate.</p><p num="0052">By addition of suitable solvents, the desired elements can be
+successively converted to the dissolved form out of the solids present in
+the pre-tank 1 or in the membrane cycle and be removed by means of
+the membrane filter apparatus in the permeate.</p><p num="0053">In Figure 3, a modified construction of a membrane filter apparatus for
+the operation of the above described process is illustrated. Once again,
+the apparatus includes a pre-tank 1, which includes an agitator 20 for
+stirring of the suspension introduced to the pre-tank 1. From the pre-tank
+1, the suspension contained in the reservoir container 1 is
+transferred by means of the pump 6 via conduit 24 to the membrane
+filter apparatus 3. The membrane filter apparatus 3 includes a
+membrane module 7, which is preferably provided with ceramic
+membranes or membranes of other inorganic materials. A pump 12 is
+provided for the circulation of a predetermined volume flow in the
+membrane cycle 10 and a heat exchanger 24 arranged in the
+membrane cycle, which is served by a heat transfer liquid, enables the
+removal of heat from/or the addition of heat to the product cycle. The
+retentate is furthermore added via conduit 26 to the reservoir container
+1, the permeat is removed via conduit 28. For purification of the
+membrane module 7, the apparatus is provided, in accordance with
+Figure 3, with a back flush apparatus 30. By introduction of a back flush
+impulse impurities deposited on the membrane surface can be
+mechanically removed.</p><p num="0054">When the washing procedure is completed, the total plant can be
+drained by valve 9, which is arranged in such a way, that the total plant 
+can run completely empty, so that the highly purified solid is present in
+the discharge container connected after or inserted after the valve 9.
+The addition of washing liquid, which corresponds essentially to the
+average permeate flow rate, takes place via conduit 34.</p><p num="0055">With the present invention and the present process a first possibility is
+provided to obtain precious metals or their precipitates, in particular of
+platinum, rhodium or ruthenium, in a closed-system in high purified form
+with impurities, which are less than 50 mg per litre to 0,001 mg per litre.
+The wash times can be considerably reduced and due to the treatment
+in a virtually closed-system, both the environmental influence as well as
+the danger of the leaking of precious metals or rare earths or other
+precious materials can be reduced.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren für die Reinigung und/oder Behandlung von Suspensionen, die
+mindestens ein oder mehrere Edelmetalle und/oder seltene Erden oder
+andere Elemente in Form eines Niederschlags oder eines Feststoffes
+und/oder auch in gelöster Form umfassen, welches folgende Schritte
+umfasst:
+<claim-text><claim-text>1.1 Konzentrieren oder Verdicken des Niederschlags oder Feststoffs in der
+Suspension durch Entfernen der flüssigen Phase mittels einer
+Membranfiltervorrichtung, wobei gelöste Verunreinigungen und/oder
+Edelmaterialien mit dem Filtrat ausgeschieden werden;</claim-text><claim-text>1.2 Waschen der konzentrierten oder verdickten Suspension durch Zugabe
+einer Waschflüssigkeit und Entfernen von Filtrat mittels der
+Membranfiltervorrichtung, wobei die Konzentration oder Verdickung der
+Feststoffe in der Suspension sich während dem Waschen nicht oder nur
+geringfügig ändert und die Konzentration oder Verdickung der gelösten, in
+der Suspension nach wie vor vorhandenen Verunreinigungen und/oder
+Edelmaterialien auf einen vorbestimmten Wert reduziert werden, wobei eine
+wässrige Lösung, die an die spezifische chemische Wirkung der
+auszuwaschenden Elemente angepasst ist, als Waschflüssigkeit verwendet
+wird, gekennzeichnet dadurch, dass die Waschflüssigkeit Essigsäure
+und/oder Ammoniumnitrat und/oder Natriumcarbonat/Natriumbicarbonat
+und/oder Salzsäure und/oder Salpetersäure und/oder Königswasser
+enthält, und</claim-text><claim-text>1.3 vollständiges Trockenlegen der Membranfiltervorrichtung, um den Feststoff
+und/oder die gereinigten Niederschläge des Edelmetalls oder der
+Edelmetalle und/oder der seltenen Erden oder anderer Elemente, die in der
+restlichen Suspension verbleiben, in gereinigter Form zur weiteren
+Behandlung und/oder weiteren Anwendung bereitzustellen.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, dadurch gekennzeichnet, dass
+die Edelmetalle und/oder seltenen Erden oder Elemente eines oder
+mehrere der folgenden Elemente umfassen:
+<claim-text><claim-text>Gold, Platin, Rhodium, Palladium, Ruthenium, Iridium, Osmium, Kobalt,
+Europium, Lanthan, Germanium, Gallium, Cerium, Tantal, Niobium, Selen,
+Tellur, Cadmium, Bismut, Beryllium, Uran, Mangan.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 oder 2, dadurch gekennzeichnet,
+dass die Konzentration oder Verdickung von Verunreinigungen und/oder
+wertvollen Materialien, die nach dem Waschen noch in der flüssigen Phase
+der Suspension gelöst sind, im Bereich von 50 mg pro Liter bis 0,001 mg
+Liter liegt.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 3, dadurch gekennzeichnet,
+dass das Permeat/Filtrat die wertvollen Materialien in gelöster Form enthält.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 4, dadurch gekennzeichnet,
+dass die Prozesstemperatur des Verfahrens im Bereich von 5°C bis 150°C
+liegt, vorzugsweise zwischen 75°C und 85°C während der Behandlung des
+Rhodiumniederschlags und vorzugsweise zwischen 40°C und 50°C
+während der Behandlung des Platinniederschlags.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 5, dadurch gekennzeichnet,
+dass die Membranfiltervorrichtung eine Membranschleife und einen Vortank
+enthält und dass für die Erhaltung der Prozesstemperatur mindestens ein
+Wärmetauscher verwendet wird, der entweder direkt in der
+Membranschleife oder am Einlass einer Membranschleife oder am Rücklauf
+der Membranschleife in einen Vortank angeordnet ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 6, dadurch gekennzeichnet, dass der Vortank mit
+einer Temperaturreglervorrichtung versehen ist oder die Verrohrung so
+gestaltet ist, dass sie zumindest teilweise temperaturgeregelt ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 7, dadurch gekennzeichnet,
+dass die Konzentration oder Verdickung und Waschung mittels einer
+Membranfiltervorrichtung vorgenommen wird, die nach einem
+Tangentialströmungsfilterverfahren betrieben wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 8, dadurch gekennzeichnet, dass eine Spülung
+der Membranfiltervorrichtung in bestimmten Zeitintervallen vorgenommen
+wird.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 9, dadurch gekennzeichnet,
+dass die Membranfiltervorrichtung mit Membranen vorgenommen wird, die
+eine nominale Porengröße im Bereich von 5 nm bis zu 1,4 µm aufweisen,
+wobei vorzugsweise Membranen mit einer Porengröße von 50 bis 100 nm
+verwendet werden.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 10, dadurch gekennzeichnet,
+dass die Membranfiltervorrichtung Membranen besitzt, die aus Keramik,
+Polymermaterial, Metall oder anderen anorganischen Materialien gefertigt
+sind, wobei Keramikmembranen oder Membranen anderer anorganischer
+Materialien aufgrund ihrer weitgehenden chemischen und hohen
+physikalischen Stabilität bevorzugt verwendet werden.</claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der Ansprüche 1 bis 11, dadurch gekennzeichnet,
+dass der Betriebsdruck in der Membranfiltervorrichtung im Bereich von 0,5
+bis 50 bar (0,05 - 5 MPa) liegt, vorzugsweise im Bereich von 2 bis 6 bar
+(0,2 - 0,6 MPa).</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Process for the purification and/or treatment of suspensions,
+which include at least one or more precious metals and/or rare
+earths or other elements in the form of a precipitate or solid and/or
+also in dissolved form, which includes the following steps:
+<claim-text><claim-text>1.1 concentrating or thickening the precipitate or solid in the
+suspension by removal of the liquid phase by means of a
+membrane filter apparatus, whereby dissolved impurities
+and/or precious materials are discharged with filtrate;</claim-text><claim-text>1.2 washing of the concentrated or thickened suspension by
+addition of a wash liquid and removal of filtrate by means of
+the membrane filter apparatus, whereby the concentration
+or thickening of the solids in the suspension does not or
+changes only slightly during washing and the concentration
+or thickening of the dissolved impurities and/or precious
+materials still present in the suspension are reduced to a
+pre-determined value;
+whereby an aqueous solution, which is adapted to the specific
+chemical action of the elements to be washed out, is used as
+wash liquid, and
+that the wash liquid includes acetic acid and/or ammonium nitrate
+and/or sodium carbonate/sodium bicarbonate and/or hydrochloric
+acid and/or nitric acid and/or aqua regia. and</claim-text><claim-text>1.3 complete drainage of the membrane filter apparatus to
+provide, in purified form, solid and/or purified precipitates of
+the precious metal(s) and/or rare earths or other elements
+remaining in residual suspension for further treatment
+and/or further application.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Process according to claim 1,characterised thereby,
+that the precious metals and/or rare earths or elements include
+one or more of the following elements:
+<claim-text><claim-text>gold, platinum, rhodium, palladium, ruthenium, iridium, osmium,
+cobalt, europium, lanthanum, germanium, gallium, cerium,
+tantalum, niobium, selenium, tellurium, cadmium, bismuth,
+berryllium, uranium, manganese.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 2,characterised thereby,
+that the concentration or thickening of impurities and/or valuable
+materials, still dissolved in the liquid phase of the suspension after
+washing, lies in the range of 50 mg per litre to 0,001 mg per litre.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 3,characterised thereby,
+that permeate/filtrate contains the valuable materials in dissolved
+form.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 4,characterised thereby,
+that its process temperature of the process lies in the range of
+5°C to 150°C, preferably between 75°C to 85°C during treatment
+of rhodium precipitate and preferably between 40°C to 50°C
+during treatment of platinum precipitate.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 5,characterised thereby,
+that the membrane filter apparatus includes a membrane loop and
+a pre-tank,
+that for the maintaining of its process temperature, at least one
+heat exchanger is used, which is arranged either directly in the
+membrane loop or at the inlet of a membrane loop or return of the
+membrane loop to a pre-tank.</claim-text></claim><claim num="xx"><claim-text>Process according to claim 6,characterised thereby,
+that the pre-tank is provided with a temperature regulating device
+or piping is designed to be at least partially temperature
+controlled.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 7,characterised thereby,
+that the concentrating or thickening and washing occurs by means
+of a membrane filter apparatus, which is operated according to a
+tangential flow filtration process.</claim-text></claim><claim num="xx"><claim-text>Process according to claim 8,characterised thereby,
+that a back flushing of the membrane filter apparatus takes place
+in predetermined time intervals.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 9,characterised thereby,
+that the membrane filter apparatus is operated with membranes
+having a nominal pore size in the range of between 5 nm up to 1,4
+µm, whereby preferably membranes with a pore size of 50 to 100
+nm are used.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 10,characterised thereby,
+that the membrane filter apparatus has membranes manufactured
+from ceramic, polymeric materials, metal or other inorganic
+materials, whereby ceramic membranes or membranes of other
+inorganic materials are preferably used due to their wide chemical
+and high physical stabilities.</claim-text></claim><claim num="xx"><claim-text>Process according to any one of the claims 1 to 11,characterised thereby,
+that the operating pressure in the membrane filter apparatus lies
+in the range of 0,5 to 50 bar (0,05-5 MPa), preferably in the range
+of 2 to 6 bar (0,2-0,6 MPa).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé pour la purification et le traitement de suspensions contenant au
+moins un ou plusieurs métaux précieux et/ou terres rares ou autre éléments
+sous la forme d'un précipité ou d'un solide et/ou également sous forme
+dissoute, lequel procédé comprend les étapes suivantes :
+<claim-text><claim-text>1.1 concentration ou épaississement du précipité ou du solide dans la
+suspension par élimination de la phase liquide au moyen d'un appareil à
+filtre à membrane, les impuretés et/ou les matières précieuses dissoutes
+étant rejetées avec le filtrat ;</claim-text><claim-text>1.2 lavage de la suspension concentrée ou épaissie par addition d'un liquide de
+lavage et élimination du filtrat au moyen de l'appareil à filtre à membrane, la
+concentration ou l'épaississement des solides dans la suspension ne se
+modifiant pas ou très légèrement pendant le lavage et la concentration ou
+l'épaississement des impuretés et/ou matières précieuses dissoutes encore
+présentes dans la suspension étant réduite jusqu'à une valeur
+prédéterminée, une solution aqueuse adaptée à l'action chimique
+spécifique des éléments à extraire par lavage étant utilisée comme liquide
+de lavage et le liquide de lavage contenant de l'acide acétique et/ou du
+nitrate d'ammonium et/ou du carbonate ou bicarbonate de sodium et/ou de
+l'acide chlorhydrique et/ou de l'acide nitrique et/ou de l'eau régale ;</claim-text><claim-text>1.3 vidange complète de l'appareil à filtre à membrane afin d'obtenir sous forme
+purifiée des précipités solides et/ou purifiés du ou des métaux précieux
+et/ou terres rares ou autres éléments restant dans la suspension résiduelle
+en vue de leur traitement ultérieur et/ou de leur utilisation ultérieure.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, caractérisé en ce que les métaux
+précieux et/ou terres rares ou éléments comprennent un ou plusieurs des
+éléments suivants : or, platine, rhodium, palladium, rhuténium, iridium,
+osmium, cobalt, europium, lanthane, germanium, gallium, cérium, tantale,
+niobium, sélénium, tellure, cadmium, bismuth, béryllium, uranium,
+manganèse.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 2, caractérisé en ce
+que la concentration ou l'épaississement des impuretés et/ou des matières
+précieuses encore dissoutes dans la phase liquide de la suspension après
+le lavage est comprise entre 50 mg par litre et 0,001 mg par litre.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 3, caractérisé en ce
+que le perméat ou le filtrat contient les matières précieuses sous forme
+dissoute.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 4, caractérisé en ce
+que la température de process pour le procédé est comprise entre 5°C et
+150°C, de préférence entre 75°C et 85°C pendant le traitement d'un
+précipité de rhodium et de préférence entre 40°C et 50°C pour le traitement
+d'un précipité de platine.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 5, caractérisé en ce
+que l'appareil à filtre à membrane comprend une boucle de membrane et
+un réservoir d'amont, et en ce que pour le maintien de la température de
+process, il est prévu au moins un échangeur de chaleur disposé soit
+directement dans la boucle de membrane, soit à l'entrée d'une boucle de
+membrane ou sur le retour de la boucle membrane vers un réservoir
+d'amont.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 6, caractérisé en ce que le réservoir
+d'amont est pourvu d'un dispositif de régulation de la température ou la
+tuyauterie est conçue pour être au moins partiellement régulée en
+température.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 7, caractérisé en ce
+que la concentration ou l'épaississement et le lavage sont réalisés au
+moyen d'un appareil à filtre à membrane fonctionnant selon un procédé de
+filtration tangentielle.</claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 8, caractérisé en ce qu'un rinçage par reflux
+de l'appareil à filtre à membrane est effectué à des intervalles
+prédéterminés.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 9, caractérisé en ce
+l'appareil à filtre à membrane utilise des membranes ayant une taille de
+pores nominale comprise entre 5 nm et 1,4 µm, de préférence des
+membranes ayant une taille de pores de 50 nm à 100 nm.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 10, caractérisé en
+ce que l'appareil à filtre à membrane possède des membranes faites de
+céramique, de matériaux polymères, de métal ou d'autres matériaux
+inorganiques, les membranes en céramique ou les membranes en autres
+matériaux inorganiques étant de préférence utilisées en raison de leur
+grande stabilité chimique et physique.</claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des revendications 1 à 11, caractérisé en
+ce que la pression de fonctionnement de l'appareil à filtre à membrane est
+comprise entre 0,5 et 50 bars (0,05-5 MPa), de préférence entre 2 et 6 bars
+(0,2-0,6 MPa).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="RAP2" date="20060816"><legal-event-body><event-title>PATENT OWNER REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>WESTFALIA SEPARATOR AG</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="D25" date="20060503"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE (DELETED)</event-title></legal-event-body></legal-event><legal-event country="EP" code="25" date="20060329"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050121</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26" date="20050914"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>W.C.HERAEUS GMBH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050720</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20041125"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60106498</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20041125</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20041020"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20041020"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030514"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030328</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020417"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE GB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020123"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20011129</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010725"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010725"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

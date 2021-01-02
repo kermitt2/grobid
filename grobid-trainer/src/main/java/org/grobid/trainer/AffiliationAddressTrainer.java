@@ -27,6 +27,10 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
 
     public AffiliationAddressTrainer() {
         super(GrobidModels.AFFIILIATON_ADDRESS);
+
+        /*epsilon = GrobidProperties.getEpsilon(model);
+		window = GrobidProperties.getWindow(model); 
+    	nbMaxIterations = GrobidProperties.getNbMaxIterations(model);*/
     }
 
 	/**

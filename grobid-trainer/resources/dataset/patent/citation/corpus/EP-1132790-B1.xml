@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1132790-B1" country="EP" doc-number="1132790" kind="B1" date="20030618"><bibliographic-data><publication-reference fvid="23244791" ucid="EP-1132790-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132790</doc-number><kind>B1</kind><date>20030618</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301157-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301157</doc-number><kind>A</kind><date>20010209</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000033388-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000033388</doc-number><kind>A</kind><date>20000210</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B25J   9/16        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B25J   9/16        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B25J   9/18        20060101A I20060521RMEP        </classification-ipcr><classification-ipcr status="new">B25J   9/18        20060101C I20060521RMEP        </classification-ipcr><classification-ipcr status="new">G05B   5/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G05B   5/01        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G05B  19/416       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G05B  19/416       20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B25J9/16L5</classification-symbol><classification-symbol scheme="EC">G05B19/416</classification-symbol><classification-symbol scheme="EC">G05B5/01</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Steuervorrichtung für eine Maschine</invention-title><invention-title lang="EN" status="new">Controller for machine</invention-title><invention-title lang="FR" status="new">Dispositif de commande pour une machine</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>FANUC LTD</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>FANUC LTD</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>KAWAMURA HIROYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>MATSUMOTO KANAME</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KATO TETSUAKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SHIRAHATA TORU</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KAWAMURA, HIROYUKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KATO, TETSUAKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>MATSUMOTO, KANAME</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SHIRAHATA, TORU</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KAWAMURA, HIROYUKI</last-name><address><street>7347-7, Funatsu, Kawaguchikomachi</street><city>Minamitsuru-gun, Yamanashi, 401-0301</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Matsumoto, Kaname, R.11-504, Fanuc Manshonharimomi</last-name><address><street>3517, Shibokusa, Oshino-mura</street><city>Minamitsuru-gun, Yamanashi, 401-0511</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>KATO, TETSUAKI</last-name><address><street>2-1-41, Shibusawakami</street><city>Hadano-shi, Kanagawa, 259-1326</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Shirahata, Toru, Room 8-308, Fanuc Manshonharimomi</last-name><address><street>3511-1, Shibokusa, Oshino-mura</street><city>Minamitsuru-gun, Yamanashi, 401-0511</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Fanuc Ltd</last-name><address><street>3580, Shibokusa Aza-Komanba, Oshino-mura</street><city>Minamitsuru-gun, Yamanashi 401-0597</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Silverman, Warren</last-name><address><street>Haseltine Lake &amp;amp; Co. Imperial House, 15-19 Kingsway</street><city>London WC2B 6UD</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A controller for a machine such as a robot and a machine tool having an electric motor as a driving source of the machine, capable of suppressing a natural vibration of the machine and/or an attachment attached to the machine. A frequency or a cycle of the natural vibration of an end effector of the robot as the attachment or the machine itself is determined and a coefficient of a filter for suppressing an amplitude of the natural vibration is altered in accordance with the measured frequency or cycle of the natural vibration. In the case of suppressing a natural vibration of the end effector attached to the robot, frequencies or cycles of natural vibrations of various end effectors in accordance with an operation status of the end effector are determined and stored, and the coefficient of the filter is set in accordance with the stored frequency or cycle of the natural vibration in accordance with the end effector attached to the robot and the operation status. In the case of suppressing a natural vibration of the machine, the natural frequency of the machine is always detected and the coefficient of the filter is automatically altered in accordance with the detected natural frequency, to thereby suppressing an amplitude of the natural vibration of the machine having the natural frequency varying due to variation of load and aging of the machine. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A controller for a machine such as a robot and a machine tool having an
+electric motor as a driving source of the machine, capable of suppressing a
+natural vibration of the machine and/or an attachment attached to the machine.
+A frequency or a cycle of the natural vibration of an end effector of the robot as
+the attachment or the machine itself is determined and a coefficient of a filter for
+suppressing an amplitude of the natural vibration is altered in accordance with
+the measured frequency or cycle of the natural vibration. In the case of
+suppressing a natural vibration of the end effector attached to the robot,
+frequencies or cycles of natural vibrations of various end effectors in accordance
+with an operation status of the end effector are determined and stored, and the
+coefficient of the filter is set in accordance with the stored frequency or cycle of
+the natural vibration in accordance with the end effector attached to the robot
+and the operation status. In the case of suppressing a natural vibration of the
+machine, the natural frequency of the machine is always detected and the
+coefficient of the filter is automatically altered in accordance with the detected
+natural frequency, to thereby suppressing an amplitude of the natural vibration
+of the machine having the natural frequency varying due to variation of load and
+aging of the machine.
+<img file="00000001.tif" id="img-EP-1133703-A1-00000001" he="68" wi="103" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a controller for an industrial machine
+such as a robot, a machine tool and a manufacturing machine, having an electric
+motor as a driving source of the machine, and in particular to a controller
+capable of preventing a vibration of a controlled system such as the machine, an
+attachment of the machine and the machine with the attachment.</p><p num="0002">In the controller for a robot, there have been developed various
+acceleration/deceleration control methods for obtaining an optimum
+acceleration/deceleration motion of the robot so that mechanism of the robot do.
+not vibrate. According to these methods, an acceleration/deceleration control
+suitable for the robot mechanism and capabilities of electric motors for driving
+the robot mechanism is performed to enable a high speed robot motion in
+operating the robot without an end effector attached to the robot.</p><p num="0003">In the controller for a machine tool, a band rejection filter is used for
+suppressing sympathetic vibration between the electric motor and the
+mechanism driven by the electric motor.</p><p num="0004">With the above method, there arises no problem in a case where an end
+effector attached to the robot is relatively small or a workpiece held by a hand
+as the end effector is relatively small. However, in recent years, as shown in
+FIG. 6, a robot system with a large hand 2 attached to the robot 1 for handling a
+relatively light but bulky workpiece (e.g., a press machined product such as a 
+vehicle body or door) has been increased. Such large hand and the workpiece to
+be handled with such large hand have low rigidity compared with the robot
+mechanism. Thus, the hand and the workpiece held by the hand may vibrate
+when the robot is operated with high speed although the robot mechanism is
+controlled not to vibrate. With this vibration, there arises problems that the
+hand fails to hold a workpiece at the predetermined position or the hand drops
+the workpiece in handling the workpiece. Thus, there is a case where the robot
+can not operate at the taught speed with a hand attached or the hand holding a
+workpiece although the robot itself can operate at the taught speed.</p><p num="0005">At present, the operation speed of the robot is adjusted on a trial-and-error
+basis so that the hand and the workpiece held by the hand do not vibrate in
+a trial operation of the robot, which is time consuming. Further, a
+workpiece and a peripherical device may be damaged if the hand drops the
+workpiece or collides with the peripherical device due to the vibration of the
+hand and the workpiece in the trial operation of the robot. Such trial operation
+loads an operator with a heavy and time consuming burden. </p><p num="0006"><ref type="patent">EP-A-0 685 779</ref> discloses a method of computing a drive pattern for
+suppressing vibration of an industrial robot according to the precharacterising
+part of attached claim 1, wherein vibration occurring at an
+arm part of an industrial robot is controlled by combining vibrations
+occurring at two time points for mutual interference.</p><p num="0007"><ref type="patent">US-A-4,195,265</ref> discloses a notch filter employed for eliminating any
+component of the control signals for the motion of a mechanical apparatus,
+substantially equal in frequency to the natural resonating frequencies of the
+mechanical apparatus.</p><p num="0008">The present invention provides a controller for a machine having an
+electric motor as a driving source of the machine, said controller
+comprising: natural frequency determining means for determining a
+frequency or a cycle of a natural vibration of the machine and/or an
+attachment attached to the machine as a controlled system; and motion
+command generating means for generating a motion command for the
+electric motor such that the natural vibration of the machine and/or the
+attachment is suppressed in accordance with the frequency or the cycle of
+the natural vibration determined by said natural frequency determining
+means; characterised in that: said natural frequency determining means
+comprises a frequency analyser for analysing a vibration frequency of a
+control signal for the electric motor to determine the frequency or the cycle
+of the natural vibration, and said motion command generating means has a
+filter for reducing an amplitude of the natural vibration, and automatically
+alters a coefficient of said filter in accordance with the frequency of the
+cycle of the natural vibration determined by said frequency analyser.</p><p num="0009">Preferably, the controller further comprises storing means for storing
+the frequency or the cycle of the natural vibration determined by said
+frequency analyser, and said motion command generating means generates a
+motion command for the electric motor based on the frequency of the cycle
+of the natural vibration stored in said storing means. </p><p num="0010">The frequency analyzer analyzes the control signal
+regarding a torque, a velocity or a position of the electric motor.</p><p num="0011">In the case where the controller controls a robot with an end effector
+attached thereto as the attachment, the motion command generating means has
+an acceleration/deceleration processing section for creating an
+acceleration/deceleration motion command for operating the robot in accordance
+with the frequency or the cycle of the natural vibration of the end effector such
+that the natural vibration of the end effector is suppressed.</p><p num="0012">A parameter of the acceleration/deceleration processing section is
+altered based on the frequency or cycle of the natural vibration of the end
+effector.</p><p num="0013">The acceleration/deceleration processing section may comprise first and
+second filters connected in series for performing linear acceleration/deceleration
+processing, and a filter length of the second filter is determined based on the
+frequency or the cycle of the natural vibration.</p><p num="0014">The acceleration/deceleration processing section may comprise an
+exponential function filter having a low-pass filter, and a cut-off frequency of the
+exponential function filter is determined based on the frequency or cycle of the 
+natural vibration.</p><p num="0015">The acceleration/deceleration processing section may comprise a band
+rejection filter for rejecting a predetermined band including the frequency of the
+natural vibration.</p><p num="0016">The end effector may be a hand, a gun or a torch. In the case where
+different kinds of end effectors are used, the natural frequency determining
+means stores data of frequencies or cycles of the natural vibrations of the
+different kinds of end effectors, and date of frequencies or cycles of the natural
+vibrations is selected in said data in accordance with a kind of the end effector
+attached to the robot.</p><p num="0017">In the case where a hand is used as the end effector, the natural
+frequency determining means determines the frequencies or cycles of the natural
+vibrations of the hand holding a workpiece and holding no workpiece, and the
+acceleration/deceleration processing section creates the
+acceleration/deceleration motion command such that the natural vibration of the
+hand with or without the workpiece is suppressed in accordance with holding
+status of the hand and the frequencies or the cycles of the natural vibrations
+determined by said natural frequency determining means.</p><p num="0018">In the case where the hand handles a different kind of workpiece, the
+natural frequency determining means stores data of each frequency or cycle of
+the natural vibration of the hand holding the different kind of workpiece and
+data of frequency or cycle of the natural vibration of the hand is selected in said
+data in accordance with a kind of workpiece held by the hand. Further, the
+natural frequency determining means may store data of frequencies or cycles of
+the natural vibrations of the hand without holding any workpiece and holding a
+different kind of workpiece, and data of frequency or cycle of the natural 
+vibration of the hand is selected in said data in accordance with holding status of
+the hand and a kind of workpiece held by the hand.</p><p num="0019">A degree of suppression of the natural vibration can be variably set.
+The frequency or cycle of the natural vibration may be determined by a
+measuring device or based on a torque or a velocity of the electric motor in the
+robot when an external force is applied to the end effector.</p><p num="0020">For a better understanding of the invention, and to show
+how the same may be carried into effect, reference will now be
+made, by way of example, to the accompanying drawings, in
+which:-
+<sl><li>FIG. 1 is a block diagram showing schematic configuration of a robot
+controller according to the present invention;</li><li>FIG. 2 is a flowchart of processing for obtaining filter lengths of first
+filter and second filters according to a first embodiment of the present invention;</li><li>FIG. 3 is a flowchart of acceleration/deceleration processing according
+to the first embodiment;</li><li>FIG. 4 is a flowchart of acceleration/deceleration processing according
+to a second embodiment of the present invention;</li><li>FIG. 5 is a flowchart of acceleration/deceleration processing according
+to a third embodiment of the present invention;</li><li>FIG. 6 is a perspective view of a robot with a large end effector to which
+the present invention is applied;</li><li>FIG. 7 is a schematic view showing how to measure a natural vibration
+of the end effector;</li><li>FIG. 8 is a graph of disturbance torque curve of a motor for driving a
+wrist axis when the end effector is hit by a hummer;</li><li>FIG. 9 is a flowchart of processing for determining the natural frequency 
+of the end effector based on a disturbance torque applied to the motor for
+driving the wrist axis;</li><li>FIG. 10 is continuation of the flowchart of FIG. 9;</li><li>FIG. 11 is a graph showing a velocity command (motion command) after
+the acceleration/deceleration processing;</li><li>FIG. 12 is a block diagram of a transfer function of an exponential
+function filter comprising a low-pass filter;</li><li>FIG. 13 is a block diagram of transfer function of
+acceleration/deceleration processing means comprising a band rejection filter;</li><li>FIG. 14 is a block diagram of a control system for a servomotor for
+driving a mechanism of a machine;</li><li>FIG. 15 is a flowchart of filter coefficient altering processing according
+to another embodiment of the present invention;</li><li>FIG. 16 is a graph showing a measurement result of a torque command
+when the filter coefficient altering processing is not applied, in a condition
+where a central frequency of the band rejection filter is 220 Hz and the natural
+frequency of the machine has been changed to 250 Hz; and</li><li>FIG. 17 is a graph showing a measurement result of a torque command
+when the filter coefficient altering processing is applied, in a condition where
+the central frequency of the band rejection filter is 220 Hz and the natural
+frequency of the machine has been changed to 250 Hz.</li></sl></p><p num="0021">FIG. 1 is a schematic block diagram of a principal part of a controller for
+a robot according to the present invention. A main processor 101, a memory 
+102 composed of a RAM, a ROM and a nonvolatile memory (such as an
+EEPROM), an interface 103 for a teaching operation panel 104, an interface 106
+for external devices, and a servo control section 105 are connected to a bus 107.
+To the interface 103 for a teaching operation panel is connected a teaching
+operation panel 104.</p><p num="0022">A system program for supporting basic functions of the robot and robot
+controller is stored in the ROM of the memory 102. Robot operation programs
+and their related set data which are taught in accordance with applications are
+stored in the nonvolatile memory of the memory 102. Particularly according to
+the present embodiment, a natural frequency Frq(n) associated with a schedule
+number fn for each status of an end effector (hand) is stored in the nonvolatile
+memory. The RAM of the memory 102 is used as a memory for temporary
+storage of data for various arithmetic operations performed by the processor
+101.</p><p num="0023">The servo control section 105 comprises servo controllers 105a1 to
+105an (n: sum of the number of all the axes of the robot including movable axes
+of an end effector attached to a wrist of the robot) each composed of a
+processor, a ROM, a RAM and the like. Each servo controller performs
+position/velocity loop control and current loop control of its associated
+servomotor for driving an axis. It is a so-called digital servo controller which
+performs loop controls of position, velocity and current by software. Each
+servomotor M1-Mn for driving each associated axis is drivingly controlled in
+accordance with the output of its associated servo controller 105a1-105an
+through its associated servo amplifier 105b1-105bn. Although not shown in
+FIG. 1, a position/velocity detector is attached to each servomotor M1-Mn, and
+the position and velocity of each servomotor detected by its associated 
+position/velocity detector is fed back to its associated servo controller 105a1-105an.
+Sensors provided in the robot and actuators and sensors provided in the
+peripheral devices are connected to the input/output interface 106.</p><p num="0024">The above basic structure of the robot controller is in no way different
+from that of a conventional robot controller. According to one embodiment of the
+present invention, the controller controls an acceleration/deceleration motion of
+the robot such that the end effector does not vibrate in an operation of the robot
+in accordance with a kind of the end effector attached to the robot and also an
+operation status of the end effector e.g. workpice holding or not holding status
+of the hand, and further in accordance with a kind of workpiece held by the
+hand, in comformity with an operation to be performed by a robot.</p><p num="0025">As shown in FIG. 6, in the case of handling a bulky workpiece such as
+a body or a door of a vehicle (not shown) with the large hand 2, which is
+attached to a wrist at an distal end of an arm of the robot 1 as an end effector,
+for holding the workpiece by vacuum sucking, a vibration of the large hand 2
+may be generated when the robot 1 is operated. If the vibration of the hand 2 is
+generated, the workpiece can not be hold by the vacuum sucking of the hand so
+that the robot operation has to be suspended until the vibration ceases, to lower
+the operation efficiency.</p><p num="0026">Further, in the operation of the robot 1 with the hand 2 holding the
+workpiece, if the vibration of the hand 2 or the workpiece is generated, the hand
+2 may drop the workpiece. According to the present invention, the robot
+operation is controlled taking account of frequencies or cycles of natural
+vibrations of the hand itself and the hand holding a workpiece. In the case
+where the hand handles workpieces of different kinds, a frequency or a cycle of
+a natural vibration of the hand holding a different kind of workpiece is taken into 
+consideration.</p><p num="0027">In order to achieve such control, the natural frequencies of the end
+effector itself and the end effector with a workpiece are measured and stored in
+the memory 102 of the robot controller in advance.</p><p num="0028">FIG. 7 shows an example of measurement of a natural frequency Frq of
+the hand 2 of the robot 1 as shown in FIG. 6.</p><p num="0029">First, the robot 1 is operated to have a predetermined position/posture
+suitable for measurement by means of a measuring device such as a laser
+displacement meter, and the hand 2 is hit by a hammer 4 to generate vibration.
+In this illustrated example a laser displacement meter 3 is employed as the
+measuring device. If the frequency of the vibration is changed according to
+position of hitting, the measurement is performed at a plurality of hitting
+positions and the minimum value of the measured values is determined as the
+natural frequency Frq.</p><p num="0030">Alternately, the natural frequency Frq or the cycle of the natural
+vibration may be determined based on a torque or a velocity of the motor for
+driving a wrist axis of the robot 1 without using the measuring device.</p><p num="0031">When the end effector attached to the robot wrist vibrates, a torque or a
+velocity of the motor for driving the wrist axis varies periodically with the
+vibration of the end effector. By measuring a frequency or a cycle of the
+periodical variation of the torque and the velocity of the motor, the frequency of
+the cycle of the natural vibration can be determined without any external
+measuring device.</p><p num="0032">The following description will be made on an example of determining
+the cycle of the natural vibration and thus the natural frequency using a
+disturbance estimating observer provided for the motor. </p><p num="0033">First, the end effector attached to the robot is hit by the hammer to
+vibrate the end effector. FIG. 8 shows an example of a variation pattern of the
+disturbance torque of the motor for driving the wrist axis. As shown in FIG. 8, a
+cycle T<sub>hand</sub> of the natural vibration can be determined by measuring a time period
+between adjacent peaks (local maximums) or adjacent bottoms (local
+minimums) of the disturbance torque. The motor of which the disturbance
+torque is estimated is selected in the motors for driving the wrist axes and the
+posture of the robot is determined and fixed in advance so that a direction of the
+vibration of the end effector is consistent with a rotational direction of the axis
+driven by the selected motor. Alternatively, disturbance torques of all of the
+motors for driving the wrist axes are estimated and the motor for an axis having
+the most large variation of the disturbance torque may be selected. Thus, the
+disturbance torque of the selected motor is estimated by the disturbance torque
+estimating observer provided for the selected motor, and the cycle T<sub>hand</sub> of the
+natural vibration is calculated based on the estimated disturbance torque.</p><p num="0034">Specifically, after the robot is held to have at the predetermined posture,
+the end effector is hit by a hammer and a natural frequency calculation software
+stored in the memory 102 of the robot controller is started by a signal from the
+teaching operation panel 104 or an external signal so that the main processor
+101executes a natural frequency calculation program.</p><p num="0035">The main processor 101 starts execution of the natural frequency
+calculation processing as shown in FIGS. 9 and 10 upon receiving a command
+for executing the natural frequency calculation software.</p><p num="0036">First, variables Rec and N are initialized (Step D1) and the disturbance
+torque Trq estimated by the disturbance torque estimating observer for the wrist
+axis motor is read (Step D2). Then, it is determined whether the variable Rec is 
+&quot;0&quot; or not (Step D3), and the procedure proceeds to Step D6 if the variable Rec
+is not &quot;0&quot;. If the variable Rec is &quot;0&quot; (initially Rec is set to &quot;0&quot; in Step D1), the
+read disturbance torque Trq is compared with a predetermined disturbance
+threshold Tlim (Step D4) and if the read disturbance torque Trq does not exceed
+the threshold Tlim, the procedure proceeds to Step D8 where the variable N is
+incremented by &quot;1&quot;. After waiting for elapse of a predetermined time period
+Tint (Step D9), the procedure returns to Step D2 to repeat Step D2 and the
+subsequent Steps. The disturbance threshold value Tlim defines a trigger of
+starting storage processing of history of the torque variation, and is set to a
+sufficiently low value relative to the disturbance torque due to the vibration of
+the end effector. The waiting time Tint defines a cycle of reading the
+disturbance torque and is set to an appropriately low value relative to the cycle
+of the natural vibration of the end effector.</p><p num="0037">If it is determined that the read disturbance torque Trq exceeds the
+threshold value Tlim in Step D4, the variable Rec is set to &quot;1&quot; (Step D5), and
+the read disturbance torque Trq is stored in a register R[N] (Step D6). Then, it
+is determined whether or not the variable N exceeds a maximum storage number
+Nmax (Step D7). If the variable N is determined not to exceed the maximum
+storage number Nmax, the variable N is incremented by &quot;1&quot; and after waiting
+elapse of the waiting time Tint, the procedure proceeds to Step D2 to perform
+the processing of Step D2 and the subsequent Steps. Since the variable Rec is
+set to &quot;1&quot; in Step D5, the procedure proceeds from Step D3 to Step D6 where
+the disturbance torque Trq read in the present sampling period is stored in the
+register R[N]. Then, it is determined whether or not the variable N exceeds the
+maximum storage number Nmax in Step D7. If the variable N does not exceed
+the maximum storage number Nmax, the variable N in incremented by &quot;1&quot; and 
+after waiting elapse of the waiting time Tint, the procedure returns to Step D2.
+Subsequently, the processing of Steps D6, D7, D8 and D9 is repeatedly
+executed until the variable N exceeds the maximum storage number Nmax, to
+store the history of torque variation in the register R[N].</p><p num="0038">If it is determined that the variable N exceeds the maximum storage
+number Nmax, the torque history storage processing is terminated and the
+procedure proceeds to Step D10, shown in FIG. 10. The variables M, J and K
+are set to &quot;0&quot; in Step D10 and a difference d1 between the disturbance torque
+stored at (M+1)th sampling period and the disturbance torque stored at M-th
+sampling period, and a difference d2 between the disturbance torque stored at
+(M+2)th sampling period and the disturbance torque stored at (M+1)th sampling
+period are calculated (Step D11).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">d1 = R[M+1] -R[M]</st32:df><st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">d2 = R[M+2] -R[M+1]</st32:df></p><p num="0039">Signs of the differences d1 and d2 are determined (Steps D12, D13 and
+D15), and if both of the differences d1 and d2 have positive values or negative
+values or zero, i.e., the disturbance torque is increasing or decreasing or
+unchanged, the procedure proceeds to Step D17 where the variable M is
+incremented by &quot;1&quot; and it is determined whether or not the variable M exceeds a
+maximum data number Mmax. If the variable M does not exceed the maximum
+data number Mmax, the procedure returns to Step D11 where subsequent
+differences d1 and d2 are calculated and the processing of Step D12 and the
+subsequent Steps is repeatedly executed.</p><p num="0040">If the difference d1 has a positive value and the difference d2 has a
+negative value, i.e., the variation of the disturbance torque is changed from
+increasing to decreasing (the curve of the estimated disturbance torque shown in 
+FIG. 8 is upwardly convex), the value of the variable M is stored in the register
+RN1[J] and the variable J is incremented by &quot;1&quot; (Step D14). If the difference d1
+has a negative value and the difference d2 has a positive value, i.e., the variation
+of the disturbance torque is changed from decreasing to increasing (the curve of
+the estimated disturbance torque shown in FIG. 8 is downwardly convex), the
+value of the variable M is stored in the register RN2[K] and the variable K is
+incremented by &quot;1&quot; (Step D16), and the procedure proceeds to Step D17.</p><p num="0041">Thus, the register RN1[J] (RN1[0], RN1[1], RN1[2], ... ; J=0, 1, 2, ...)
+stores the values of the variable M, which indicate sampling time when the
+estimated disturbance torque has local maximums. Similarly, the register
+RN2[K] (RN2[0], RN2[1], RN2[2], ... ; K=0, 1, 2, ...) stores the values of the
+variable M, which indicate sampling time when the estimated disturbance torque
+has local minimums.</p><p num="0042">The processing of Steps D11-D18 is repeatedly executed and when the
+variable M exceeds the maximum data number Mmax, the value of the register
+RN1[0] is subtracted from the value of the register RN1[1] to obtain T1 which
+indicates a time period between the adjacent local maximums, and the value of
+the register RN2[0] is subtracted from the value of the register RN2[1] to obtain
+T2 which indicates a time period between the adjacent local minimums (Step
+D19).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">T1 = RN1[1] -RN1[0]</st32:df><st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">T2 = RN2[1] -RN2[0]</st32:df></p><p num="0043">Then, the value of the register T1 is stored in the register To (Step D20)
+and the value of the register To is compared with the value of the resister T2
+(Step D21) and if the value of the resister T2 is smaller than the value of the
+resister T0, the value of the resister T2 is stored in the resister To (Step D22). 
+Thus, the resister To stores the larger value of the resister T1 and the resister
+T2.</p><p num="0044">The value of the resister T0 is multiplied by the sampling period (waiting
+time) Tint to obtain a time period between the adjacent local maximums or the
+adjacent local minimums (Step D23). This time period means the cycle Thand
+of the natural vibration of the end effector. The natural frequency Frq is
+calculated from thus obtained cycle Thand of the natural vibration and stored
+(Step D24). Thus, the natural frequency of the end effector which is attached to
+the robot wrist is determined based on the torque exerted on the motor for
+driving the axis of the robot wrist, and the natural frequency calculation
+processing is terminated.</p><p num="0045">In the foregoing example, the natural frequency Frq of the end effector is
+determined based on the disturbance torque estimated by the disturbance torque
+estimating observer. The natural frequency Frq may be determined based on an
+electric current of the motor instead of the estimated disturbance torque.
+
+Further, the natural frequency Frq may be determined based on a velocity of the
+motor which is detected by a velocity detector provided on the motor.</p><p num="0046">As descrived, the natural frequency Frq is determind using an external
+measuring device or based on an estimated disturbance torque, an electric
+current or a velocity of the motor for driving the wrist axis. The natural
+frequencies of the hand 2 holding a workpiece and not holding a workpiece are
+determined. In the case where a different kind of workpiece is to be handled by
+the hand 2, each natural frequency of the hand holding a different kind of
+workpiece is determined. If the measured natural frequencies have different
+values, the respective natural frequencies are stored in the robot controller to be
+associated with an operation status of the hand and the kind of workpiece. </p><p num="0047">The robot controller of the present invention controls the robot so that
+the end effector does not vibrate in operation of the robot using the determind
+and stored natural frequency (or the cycle of the natural vibration) of the end
+effector. Thus, when the robot is to be operated, the natural frequency suitable
+for the operation status of the end effector designated in the operation program
+or by an input signal is selected, and parameters for acceleration/deceleration
+processing are modified based on the selected natural frequency to generate an
+acceleration/deceleration command for performing the acceleration/deceleration
+motion.</p><p num="0048">A first embodiment in which acceleration/deceleration control means for
+generating acceleration/deceleration commands comprises two filters connected
+in series for performing linear acceleration/deceleration will be described. A
+value of a motion command X1 after the linear acceleration/deceleration
+processing is expressed as the following equation (1), where p represents a filter
+length (number of resisters), x represents a present motion command, x1, x2, ...,
+xp-1 represent motion commands of past (p-1) processing periods, which are
+distributed from a host computer at every predetermined period.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">X1 = (x + x1 + x2 +, ..., xp-1)/p</st32:df></p><p num="0049">The motion command X1 as an output of a first filter is inputted to a
+second acceleration/deceleration processing means to perform two-step linear
+acceleration/deceleration processing of the acceleration/deceleration control
+means of this first embodiment</p><p num="0050">FIG. 11 shows relationship between an input and an output of the linear
+acceleration/deceleration processing means. When the same velocity x (i.e., the
+motion command at each distribution period) is inputted for a predetermined
+time (predetermind number of distribution periods), an output X2 of the second 
+acceleration/deceleration processing filter is generated as shown in FIG. 11.</p><p num="0051">In FIG. 11, the acceleration varies and thus the jerk, i.e. second
+derivative of the velocity, is not &quot;0&quot; in sections Q1, the acceleration remains
+constant and the jerk is &quot;0&quot; in sections Q2, and the velocity remains constant
+and the acceleration and the jerk are &quot;0&quot; in a section Q3.</p><p num="0052">In the first linear acceleration/deceleration processing, since the motion
+command x of the same value is inputted at every distribution period, the output
+of the first linear acceleration/deceleration filter increases by &quot;x/p&quot; according to
+the equation (1) at the beginning of the processing, i.e., the acceleration is
+constant. After elapsing p time-periods, the sum of x, x1, x2, ..., and xp-1
+having the same value is divided by p in the equation (1) and thus the output X1
+becomes equal to the input x, i.e., the velocity is made constant. The velocity
+indicated by the output X1 of the first acceleration/deceleration filter increases
+linearly and then remains constant after elapsing the time period corresponding
+to the filter length p which represents a time constant.</p><p num="0053">The second acceleration/deceleration filter, to which the output X1 of
+the first acceleration/deceleration filter is inputted and having a filter length q,
+performs acceleration/deceleration processing in the similar manner as the first
+acceleration/deceleration filter to produce an output X2 shown in FIG. 11. An
+example of variation of the output X2 is shown in the following table 1, where
+the filter length p of the first acceleration/deceleration filter is set to &quot;8&quot; and the
+filter length q of the second acceleration/deceleration filter is set to &quot;4&quot;. <img file="00180001.tif" id="img-EP-1134802-A3-00180001" he="135" wi="159" img-format="tif" img-content="tb" orientation="unknown" inline="no" /></p><p num="0054">As shown in Table 1, the output of the first acceleration/deceleration
+filter increases at each processing period from the first period to the eighth
+period, and becomes equal to the input x after the eighth period. The output X2
+of the second acceleration/deceleration filter increases until the eleventh
+processing period. Thus, the output X2 indicates the velocity command since
+the output X2 designates a motion amount at the predetermined fixed period and
+thus the variation of the output X2 indicates the acceleration. The acceleration
+is present until the eleventh processing period and thus the velocity increases,
+and then the acceleration becomes &quot;0&quot; to output the motion command x. The
+jerk, which is variation of the acceleration, increases by x/8× 4 = x/32 at each
+processing period from the first processing period to the fourth processing 
+period. The jerk becomes &quot;0&quot; from the fifth processing period to the eighth
+processing period since the acceleration remains constant value of 4x/32 = x/8,
+and decreases by x/3 from the ninth processing period to the twelveth
+processing period.</p><p num="0055">Thus, the velocity command (motion command at every processing
+period) as shown in FIG. 11 is obtained by connecting two linear
+acceleration/deceleration filters in series. As stated above, in the
+acceleration/deceleration processing means comprising two linear
+acceleration/deceleration filters, the acceleration is determined by the filter
+length of the first liner acceleration/deceleration processing and the jerk is
+determined by the filter length of the second linear acceleration/deceleration
+processing.</p><p num="0056">The jerk Jmax is expressed in the following equation, where Frq
+represents the natural frequency, Acc represents acceleration of the robot, and
+TO represents a time period in which the acceleration increases form &quot;0&quot; to a
+predetermined value. The acceleration Acc is optimized in accordance with
+each motion and different for each motion.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Jmax= Acc/To</st32:df></p><p num="0057">The time period T which is 1/2 of the natural frequency is calculated
+according to the following equation (3).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">T = 1/(2.0 × Frq)</st32:df></p><p num="0058">So as to suppress the vibration, it is necessary for the time period T to
+meet the following condition with respect to the time period T0.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">T ≧To</st32:df></p><p num="0059">The time period T is set to To as a minimum value.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">T = T0</st32:df></p><p num="0060">The allowable maximum jerk Jmax is calculated according to the
+following equation based on the equations (2), (3) and (4).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Jmax = 2.0 × Acc × Frq</st32:df></p><p num="0061">The robot can be operated without vibration of the hand or a workpiece
+by controlling the jerk not to excess the allowable maximum jerk Jmax.</p><p num="0062">The acceleration/deceleration motion command is modified so that the
+jerk J in operation which is calculated based on the operation pattern in path
+planning fulfills the following relationship.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">J ≦ Jmax</st32:df></p><p num="0063">As described, the jerk is determined by the filter length of the second
+linear acceleration/deceleration filter of the two-step acceleration/deceleration
+processing. J is calculated according to the following equation (7) where q
+represents the filter length of the second acceleration/deceleration filter, which is
+equivalent to &quot;p&quot; in the equation (1), and Ts represents the processing period.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">J = Acc / q × Ts</st32:df></p><p num="0064">From the equations (5), (6) and (7), the relationship below is obtained.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Acc/q × Ts ≦ Jmax = 2.0 × Acc × Frq</st32:df></p><p num="0065">Thus, the second filter length q may be set to the minimum value which
+fulfills the following condition (8).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">q ≧ 1/2.0 × Frq × Ts</st32:df></p><p num="0066">In order to select an operation mode in accordance with requirements
+such as a rapid motion permitting a slight vibration and a presice operation with
+no vibration, the coefficient Fc may be set in accordance with the requirement at
+every execution of the operation program or set in the program in advance. For
+this purpose, Frq' may be used as an adjusted natural frequency which is
+obtained by multiplying the coefficient Fc by the natural frequency Frq. <st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Frq' = Frq × Fc</st32:df></p><p num="0067">With the above setting, degree of suppressing the natural vibration can
+be minutely set for each motion. In the case where the minute setting is not
+required, the coefficient Fc is fixedly set to 1.0 and may be changed when the
+minute setting is required.</p><p num="0068">Thus, the natural frequency Frq of the end effector is determined in
+accordance with an operation status of the robot (a kind of end effector, a kind
+of a workpiece to be handled, whether or not the hand holds a workpiece) as
+described, and is stored in the memory 102 with a schedule number.</p><p num="0069">When the robot operation is started, the main processor 102 starts the
+processing as shown in FIG. 2. The line number resistor L is set to &quot;1&quot; (Step
+S1) and it is determined whether the line number L exceeds the last line number
+of the operation program (Step S2). If the line number L does not exceeds the
+last line number, a motion statement at the line number L of the operation
+program is read (Step S3). Then, a schedule number fn is read and the natural
+frequency Frq[fn] associated with the schedule number fn is read (Step S4). The
+schedule number fn may be set in the operation program or set directly in the
+memory 102 so as to be renewed by an external signal.</p><p num="0070">A register N indicating an axis number is set to &quot;1&quot; (Step S6) and it is
+determined whether or not the value of the register N exceeds the number of
+robot axes (Step S7). If the value of the register N does not exceed the number
+of robot axes, the acceleration Accn of the axis indicated by the register N is
+calculated based on the motion statement read in Step S3 and information of the
+robot mechanism (link lengths of the robot arm, etc.) (Step S8). The
+acceleration Accn is compared with the minimum acceleration Acc stored in a
+register which is set to the maximum allowable value in the initial setting. If the 
+calculated acceleration Accn is smaller than the minimum acceleration Acc, the
+calculated acceleration Accn is stored in the register as the minimum
+acceleration (Step S10). Then, the register is incremented by &quot;1&quot; (Step S11). If
+the acceleration Accn is not smaller than the minimum acceleration Acc, the
+procedure proceeds from Step S9 to Step S11. In the above comparison, an
+absolute value of the calculated acceleration Accn is compared with an absolute
+value of the minimum acceleration Acc, ignoring the sign of the values.</p><p num="0071">The procedure returns from Step S11 to Step S7 and the processing from
+Step S7 to Step S11 is repeatedly executed until the value of the register N
+exceeds the number of robot axes, to obtain the minimum acceleration Acc.</p><p num="0072">When the value of the register N exceeds the number of robot axes, the
+procedure proceeds from Step S7 to Step S12 for obtaining filter lengths p and q
+of the first and second filters for the two-step acceleration/deceleration
+processing. The length p of the first filter is obtained by dividing the minimum
+acceleration Acc by the processing period Ts of the acceleration/deceleration
+processing.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">p = Acc/Ts</st32:df></p><p num="0073">The length q of the second filter is obtained based on a predetermined
+rate which is set with respect to the filter length p of the first filter in the
+conventional manner. Thus obtained filter length is represented by q'.</p><p num="0074">Then, the coefficient Fc set in accordance with a kind of motion, an
+application of an operation of the robot is read (Step S13). As mentioned, the
+coefficient Fc may be set in the operation program or stored in the memory 102.</p><p num="0075">The coefficient Fc is multiplied by the natural frequency Frq[n] to obtain
+the adjusted natural frequency Frq (Step S14). This calculation is performed
+according to the equation (9) by substituting Frg for Frq', and Frq[n] for Frq in 
+the equation.</p><p num="0076">Then, the filter length q of the second filter is determined to be the
+minimum value fulfilling the condition (8) (Step S15). The filter length q of the
+second filter obtained in Step S15 is compared with the filter length q' of the
+second filter obtained in Step S12 (Step S 16). If the filter length q' obtained in
+Step S12 is greater or longer than the filter length q obtained in Step S15, the
+filter length q' is adopted as the filter length q of the second filter for the
+acceleration/deceleration processing for the present motion (Step S17).</p><p num="0077">The first filter length p calculated in Step S12, the second filter length q
+determined by the processing of Steps S15-S17, and the motion command read
+in Step S3 are outputted to an interpolation section (Step S18), and the line
+number register L is incremented by &quot;1&quot; (Step S19), to return to Step S2.
+Subsequently, the processing of Step S2 and the subsequent Steps is repeatedly
+executed and when the line number register L exceeds the last line number of
+the operation program, the procedure of the present operation program is
+terminated.</p><p num="0078">The interpolation section performs the acceleration/deceleration
+processing before or after the interpolation processing based on the motion
+command, and the first filter length p and the second filter length q.</p><p num="0079">A flowchart of FIG. 3 shows the acceleration/deceleration processing
+after the interpolation. The main processor 101 executes the
+acceleration/deceleration processing at every predetermined period. First, the
+filter length p and q of the first and second acceleration/deceleration processing,
+and the motion command are read, and an interpolation processing is performed
+based on the read motion command in the conventional manner to obtain motion
+commands for respective axes (Step A1). The processing of Steps A2-A6 is 
+performed for acceleration/deceleration processing for each axis. The first-step
+of the acceleration/deceleration processing is performed. The present motion
+command value x distributed for the axis is added to respective values of
+registers R1-Rp-1 of the numbers smaller than &quot;p&quot; by 1 and the obtained value is
+divided by the filter length p (= the number of registers +1) to obtain an output
+X1 of the first filter (Step A2).</p><p num="0080">The values of the registers R1-Rp-1 are shifted so that the value of the
+lower register is stored in the adjacent upper register (Step A3). Specifically,
+the value of the register Rp-2 is stored in the register Rp-1, the value of the
+register Rp-3 is stored in the register Rp-2,..., the value of the register R1 is
+stored in the register R2. The present motion command x distributed for the
+axis is stored in the lowest register R1 to terminate the first filter processing.</p><p num="0081">A similar processing is performed in the second filter processing with
+the output x1 of the first filter used as an input of the second filter having the
+filter length q. The output x1 of the first filter is added to respective values of
+registers Q1-Qq-1 of the numbers smaller than &quot;q&quot; by 1 and the obtained value
+is divided by the filter length q (= the number of registers +1) to obtain an
+output X2 of the second filter (Step A4). The values of the registers Q1 -Qq-1
+are shifted so that the value of the lower register is stored in the adjacent upper
+register and the output X1 of the first filter is stored in the lowest register (Step
+A5). Specifically, the value of the register Qp-2 is stored in the register Qp-1,
+the value of the register Qp-3 is stored in the register Qp-2, ..., the value of the
+register Q1 is stored in the register Q2, and the output X1 of the first filter is
+stored in the register Q1.</p><p num="0082">Then, the output X2 of the second filter obtained in Step A4 is outputted
+to a position loop of the servo controller 105 as an acceleration/deceleration 
+motion command (Step A6).</p><p num="0083">In the foregoing embodiments, two linear acceleration/deceleration
+processing filters are connected in series to form the acceleration/deceleration
+processing means, so as to obtain an output response in the
+acceleration/deceleration motion as shown in FIG. 11. An exponential function
+filter for obtaining a similar acceleration/deceleration output response will be
+described as a second embodiment.</p><p num="0084">The exponential function filter is expressed by a transfer function as
+shown in FIG. 12. In FIG. 12, S represents the Laplace operator.</p><p num="0085">A frequency transfer function is expressed by 1/(jωt +1), where a cut-off
+frequency ω=1/T. Thus, the vibration of an end effector can be suppressed
+by setting a time constant T to be a cycle Te (=1/Frq) of the natural vibration
+Frq. A Z-conversion in sampling processing in S region of the Laplace
+transform is expressed as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Z = EXP(-Ts/δ)</st32:df>
+   where Ts represents a sampling period, δ represents a time constant.</p><p num="0086">A transfer function in Z region of the exponential function filter shown in
+FIG. 12 is expressed as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">y/x = [1-EXP(-Ts/Te)]/[Z-EXP(-Ts/Te)]</st32:df>
+   where x represents an input, y represents an output and T=δ =Te
+represents a time constant.</p><p num="0087">The state equation is expressed by the following equation (12) according
+to the above equation (11) using α = EXP(-Ts/Te)
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">y(n+1) = (1-α)×x(n)+ α ×y(n)</st32:df></p><p num="0088">In the equation (12), an initial value y(0) is set to &quot;0&quot;.
+<sl><li>n = 0: input x(0)=0; output y(1) = 0, </li><li>n = 1: input x(1); output y(2) = (1-α)×x(1)+ α ×y(1)</li><li>n = 2: input x(2); output y(3) = (1-a)×x(2)+ α × y(2)</li><li>   •</li><li>   •</li><li>   •</li><li>n = N: input x(3); output y(N+1) = (1-α)×x(N)+ α ×y(N)</li></sl></p><p num="0089">Thus, the output y(n) is obtained in the predetermined processing period
+according to the equation (12) using the input x(n-1) and the output y(n-1) in the
+immediately preceding processing period with an adjusted parameter of the time
+constant Te, so that the acceleration/deceleration processing by the exponential
+function filter is performed.</p><p num="0090">In this second embodiment where the exponential function filter is
+employed as the acceleration/deceleration filter, the main processor 101
+performs the processing of Steps S1-S5 and skips the processing of Steps S6-S12
+and S15-S17, and performs the processing of Steps S13 and S14 to obtain
+the natural frequency Frq in the flowchart of FIG. 2. Then, the procedure
+proceeds to Step S18 where the time constant T of the filter is obtained as T =
+Te = 1/Frq using the determined natural frequency Frq, and thus obtained time
+constant Te and the motion command read in Step S3 are inputted. Then, the
+register L is incremented by &quot;1&quot; (Step S19) and the procedure returns to Step
+S2.</p><p num="0091">In this embodiment, the interpolation processing shown in FIG. 4 is
+performed at every predetermined processing period Ts.</p><p num="0092">First, the time constant Te and the motion command are read to perform
+the interpolation processing in the conventional manner to obtain a motion
+command x value for distribution to each axis in the present processing period 
+Ts (Step B1). The constant α is obtained according to the equation α = EXP(-Ts/Te)
+(Step B2). Then, the operation of the equation (12) is performed using
+the motion command x of the immediately preceding period and the output y
+obtained in the immediately preceding period to obtain the output y of the
+present processing period (Step B3). The motion command x of the present
+period is stored in the register R(x) and the obtained output y is stored in the
+register R(y) (Step B4, B5), and then the motion command y subjected to the
+acceleration/deceleration processing by the exponential function filter at Step B3
+is outputted to the position loop of the servo controller 105.</p><p num="0093">As described, vibration of the end effector such as a robot hand with or
+without a workpiece can be suppressed using the exponential function filter as
+the acceleration/deceleration means by adjusting the time constant of the filter in
+accordance with a cycle of the natural vibration of the end effector.</p><p num="0094">The acceleration/deceleration processing means using a band rejection
+filter using a low-pass filter and a high-pass filter to cut off frequencies of a
+specific band will be described as a third embodiment.</p><p num="0095">FIG. 13 shows a transfer function of the band rejection filter having a
+low-pass filter and a high-pass filter to cut off frequencies of a specified band.
+First, a frequency component of the input x equal to or higher than a
+predetermined frequency Fa is cut off by the low-pass filter 10L to obtain an
+output r. Ta represents a time constant for cutting off the frequency equal to or
+higher than the predetermined frequency Fa. A frequency component of the
+output r equal to or lower than a predetermined frequency Fb is cut off by the
+high-pass filter 10H to obtain an output u, Tb represents a time constant for
+cutting off the frequency equal to or lower than the predetermined frequency Fb.
+Thus, the output u of only the frequency of the band between the predetermined 
+frequencies Fa and Fb is obtained. The output u is subtracted form the input x
+to obtain an output in which the frequency between the predetermined
+frequencies Fa and Fb is cut off, thus constituting the band rejection filter.</p><p num="0096">The state equation of the low-pass filter 10L will be described. Since
+the low-pass filter 10L is the same as the exponential function filter as described
+with respect to the second embodiment, the time constant T in the equation (11)
+is set as T = α = Ta.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">r/x = [1-EXP(-Ts/Ra)]/[Z-EXP(-Ts/Ta)]</st32:df></p><p num="0097">The state equation is expressed as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">r(n+1) = (1-α) ×x(n) + α × r(n)</st32:df>
+   where α = EXP(-Ts/Te)</p><p num="0098">The state equation of the high-pass filter 10H will be described. A
+transfer function of the high-pass filter 10H is expressed as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">u/r = 1-[1/(Tbs + 1)]</st32:df>
+   where S is Laplace operant.</p><p num="0099">In the equation (14), an intermediate variable v is set as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">v = r/(TbS + 1)</st32:df></p><p num="0100">From the equation (15), the following equation is obtained.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">v/r = 1/(TbS + 1)</st32:df></p><p num="0101">Since the equation (16) has the same form as the foregoing exponential
+function filter, a transfer function of the equation (16) in Z region is expressed as
+follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">v/r = [1-EXP(-Ts/Tb)]/[Z-EXP(-Ts/Tb)]</st32:df></p><p num="0102">In the equation (17), the following equation is obtained in the same
+manner as the equation (13) using β=EXP(-Ts/Ta).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">V(n+1)=(1-β)×r(n)+β×v(n)</st32:df></p><p num="0103">Thus, the output u(n+1) of the high-pass filter is expressed by the
+following equation according to the equation (14) using r(n+1) obtained by the
+equation (13) and v(n+1) obtained by the equation (18).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">u(n+1) = r(n+1) -v(n+1)</st32:df></p><p num="0104">The output y of the band rejection filter is obtained by subtracting the
+output u of the high-pass filter 10H from the input x, as follows;
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">y(n+1) = x(n+1)-u(n+1)</st32:df></p><p num="0105">Thus, the following equation (21) is obtained form the equations (19)
+and (20).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">y(n+1) = x(n+1) -r(n+1) + v(n+1)</st32:df></p><p num="0106">The vibration suppressing processing can be performed by obtaining the
+output y(n+1) as a command for the motor according to the equations (13), (18)
+and (21), using initial values x(0) = 0, r(0) = 0, v(0) = 0.</p><p num="0107">In this third embodiment, the main processor 101 performs the
+processing of Steps S1-S5 and skips the processing of Steps S6-S12 and S15-S17,
+and performs the processing of Steps S13 and S14 to obtain the natural
+frequency Frq in the flowchart of FIG. 2. Then, a predetermined band width H
+is added to and subtracted form the natural frequency Frq, to obtain an lower
+limit frequency Fa of the low-pass filter and an upper limit frequency Fb of the
+high-pass filter, and the time constants Ta and Tb are obtained as reciprocal
+numbers of the frequencies Fa and Fb, respectively.
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Ta = 1/Fa = 1/(Frq + H)</st32:df><st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Tb = 1/Fb = 1(Frq-H)</st32:df></p><p num="0108">Thus obtained time constants Ta and Tb and the motion command read
+in Step S3 are outputted to the interpolation section and the procedure proceeds
+to Step S2 after executing the processing of Step S19. </p><p num="0109">FIG. 5 shows processing to be performed by the interpolation processing
+section in the third embodiment at every predetermined period.</p><p num="0110">First, the time constants Ta ad Tb as parameters of the
+acceleration/deceleration processing and the motion command are read, the
+motion command is subjected to the interpolation processing in the conventional
+manner to obtain a motion command x for distribution to the axis at the present
+period is obtained (Step C1). Then, values of α and β are obtained as α =
+EXP(-Ts/Ta), β = EXP(-Ts/Tb) from the read time constants and the cycle Ts of
+the processing (Step C2). A motion command y having subjected to the
+acceleration/deceleration processing at every interpolating period is obtained by
+the processing of Step C3 and the subsequent Steps for each axis.</p><p num="0111">In Step C3, an output r of the low-pass filter of the present processing
+period is obtained according to the equation (13) using the distribution motion
+command x and the output r of the immediately preceding period stored in the
+registers R(x) and R(r), and the value of α obtained in Step C2. The
+intermediate variable v for the present processing period is obtained according
+to the equation (18) using the output r of the low-pass filter and the intermediate
+variable v of the immediately preceding period stored in the registers R(r) and
+R(v), and the value of β obtained in Step C2. The distribution motion command
+y of the present processing period, which has been subjected to the
+acceleration/deceleration processing (processing of the band rejection filter) is
+obtained according to the equation (19) using the distribution motion command
+x, the output r of the low-pass filter and the intermediate variable v of the
+immediately preceding period.</p><p num="0112">Then, the distribution motion command of the present period for each
+axis read in Step C1 is stored in the register R(x), and the output r of the low-pass 
+filter and the intermediate variable v obtained in Step C3 are stored in the
+registers R(r) and R(v) (Steps C4, C5 and C6). The motion command y after
+the acceleration/deceleration processing (by the band rejection filter) obtained in
+Step C3 is outputted to the position loop of the servo controller 105.</p><p num="0113">In the foregoing embodiments, the natural frequencies of the end
+effectors with and/or without the workpiece are stored and the parameters of the
+acceleration/deceleration processing are determined based on the stored natural
+frequencies for operating the robot not to generate the vibration. Alternatively,
+the cycles of the natural vibrations of the end effectors with and/or without the
+workpiece are stored and the parameters of the acceleration/deceleration
+processing are determined based on the stored cycles of the natural vibrations.</p><p num="0114">Further, in the foregoing embodiments, the acceleration/deceleration
+filter is arranged before the position loop of the servo controller. Alternatively,
+the acceleration/deceleration filter may be arranged after the velocity loop so
+that a torque command (current command) outputted from the velocity loop is
+subjected to the processing of the acceleration/deceleration filter and then send
+to the current loop.</p><p num="0115">The foregoing embodiments are described with respect to a controller
+for a robot for suppressing a vibration of an end effector attached to a robot.
+The present invention can be generally applied to an industrial machine such as
+a robot, a machine tool and a manufacturing machine having an electric motor as
+a driving source of the machine, so as to suppress vibration of the machine
+itself, an attachment attached to the machine and the machine with the
+attachment, as a controlled system.</p><p num="0116">Hereinafter described is another embodiment of the present invention
+having a function of suppressing the vibration of the industrial machine such as a 
+machine tool and a manufacturing machine. A filter for suppressing the
+vibration of the machine is provided to receive a torque command from the
+velocity loop, as shown in FIG. 14.</p><p num="0117">As stated, the natural frequency of the machine varies with variation of a
+load, dispersion in manufacturing of the machine, variation of environment in
+use and aging of the machine, to lower the vibration suppressing function of the
+filter. According to the present invention, coefficients of the filter is altered in
+accordance with the variation of the natural frequency to improve the vibration
+suppressing function.</p><p num="0118">FIG. 14 is a block diagram of a control system (including a psotion
+control section, a velocity control section and a current control section) of an
+electric motor for driving a movable mechanism of an industrial machine of a
+robot, a machine tool such as a machining center, a lathe, an electric discharge
+machine, a laser machine, and a manufacturing machine such as an injection
+molding machine, a press machine, a conveying machine and a winding
+machine, as a controlled system. The position control section 202 performs a
+velocity loop control based on a position command from a host computer such
+as a numerical controller (NC) and a position feedback signal from a
+position/velocity detector 201 such as a pulse coder for detecting a position and
+a velocity of a servomotor 200, to output a velocity command. The velocity
+control section 203 performs a velocity control based on a velocity command
+form the position control section 202 and a velocity feedback signal form the
+position/velocity detector 201, to output a torque command. The torque
+command is subjected to filtering processing by a filter 204 and then inputted to
+the current control section 206. The filter 204 employed in this embodiment is a
+band rejection filter as shown in FIG. 13. Coefficient (time constants Ta, Tb) of 
+the filter 204 are automatically altered in conformity with the natural frequency
+obtained by analysis by a frequency analyzer 205, to cope with the variation of
+the natural frequency.</p><p num="0119">The current control section 206 performs a current control based on the
+torque command and a current feedback signal from a current detector (not
+shown) for driving a servomotor 200 through a servo amplifier 207.</p><p num="0120">The position, velocity and current control sections perform the position-loop,
+velocity-loop and current-loop processing, respectively in the conventional
+manner except that the coefficients of the filter are altered in accordance with
+the natural frequency analyzed by the frequency analyzer 205. The processing
+of the filter 204 is performed by a processor which performs the above position-loop,
+velocity-loop and current-loop processing.</p><p num="0121">According to this embodiment, the frequency analyzer 205 is provided to
+receive a control signal regarding position, velocity or current of the servomotor
+200, and the coefficients of the filter 204 are automatically altered in accordance
+with variations of the natural frequency of the machine to suppress the vibration.</p><p num="0122">FIG. 15 shows the filter coefficient alternation processing to be
+performed by the processor in the servo control system.</p><p num="0123">First, a central frequency of the band rejection filter 204 used in the
+control system is converted to a frequency per a sampling processing period
+during which sampling processing of a control signal is performed, and set to a
+register as a frequency K[0] per the sampling processing period, on a stage of
+manufacturing the machine. The central frequency of the band rejection filter
+204 is initially set to coincide with a natural frequency of the machine at the
+manufacturing of the machine and thus the frequency K[0] indicates a frequency
+per the sampling processing period, which represents a natural frequency of the 
+machine in the manufacturing.</p><p num="0124">In an operation of the machine, the processor of the control system
+executes the processing as shown in FIG. 15 at every predetermined period to
+automatically alter the coefficients of the filter 204 in accordance with variations
+of the natural frequency of the machine.</p><p num="0125">First, frequencies K[1]-K[4) are obtained by adding &quot;1&quot;, &quot;2&quot;, &quot;3&quot; and
+&quot;4&quot;, respectively, to the frequency K[0] and stored in registers, and frequencies
+K[5]-K[8] are obtained by subtracting &quot;1&quot;, &quot;2&quot;, &quot;3&quot; and &quot;4&quot;, respectively, from
+the frequency K[0] (Step E1).</p><p num="0126">Then, a control signal is sampled Nmax times in the sampling processing
+period (Step E2). The sampling processing period &quot;TS&quot; is expressed by TS = ts
+× Nmax where &quot;ts&quot; represents a sampling period. The control signal of a torque
+command outputted from the velocity control section 203 is sampled in this
+example. However, the control signal to be sampled may be one of the velocity
+command from the positin control section or the position feedback signal, the
+torque command (current command) from the velocity control section or the
+velocity feedback signal, and a current feedback signal so as to determine the
+natural frequency.</p><p num="0127">Vibration amplitutes G[0]-G[8] of the sampled control signal at the
+frequency K[0]-K[8] are obtained through the frequency analysis well known in
+the art (Step E3). Then, vibration amplitutes G[0]-G[8] are multiplied by
+predetermined evaluation coefficients C[0]-C[8], respectively, to obtain
+evaluation vibration amplitutes G'[0]-G'[8] (Step E4). The evaluation
+coefficients C[0]-C[8] are fixed values not less than &quot;0&quot;.</p><p num="0128">G'[n] = C[n] × G[n], where &quot;n&quot; is an integer from 0 to 8</p><p num="0129">Then, the evaluation vibration amplitute G'[0] is compared with the 
+other evaluation vibration amplitutes G'[1]-G'[8] to determine whether or not
+the magnitude G'[0] is the greatest in the magnitudes G'[0]-G'[8] (Step E5). If
+the magnitude G'[0] is the greatest, the coefficients of the band rejection filter
+204 is not altered and the procedure returns to Step E1 to repeat the processing
+of Steps E1-E5.</p><p num="0130">If the magnitude G'[0] is not the greatest, the procedure proceeds to Step
+E6 to determine &quot;n&quot; by which the evaluation vibration amplitude G'[n] is the
+greatest and the determined &quot;n&quot; is set as &quot;n0&quot;. Then, it is determined which
+central frequency altering method is to be adopted (Step E7). If a first central
+frequency altering method is to be adopted, the vibration frequency K[n0] is
+determined to be a natural frequency of the machine in terms of frequency per
+sampling processing period and the vibration frequency K[0] representing the
+natural frequency of the machine is renewed to be the frequency K[n0]. Then,
+the renewed vibration frequency K[0] is converted into the frequency Frq and
+the converted frequency is set to the central frequency of the band rejection
+filter 204 (Step E8). The coefficients (time constants) Ta and Tb are obtained
+according to the following equations as described, and renewed (Step E10).
+<st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Ta = 1/(Frq+H)</st32:df><st32:df xmlns:st32="http://www.matrixware.com/ns/st32/" align="center">Tb = 1/(Frq-H)</st32:df></p><p num="0131">In the above equations the set value H defines a half of the band to be
+cut off, and thus the machine is driven by the torque command with a band 2H
+expanding around the central frequency Frq cut off.</p><p num="0132">If a second central frequency altering method is to be adopted, the
+procedure proceeds to Step E9. In Step E9, if the K[n0] is greater than the
+frequency K[0], the frequency K[0] is renewed to be the frequency K[1], i.e.,
+the frequency K[0] is incremented by &quot;1&quot;, and the renewed frequency K[0] is 
+converted into the frequency Frq to be uses as the central frequency of the band
+rejection filter. If the K[n0] is smaller than the frequency K[0], the frequency
+K[0] is renewed to be the frequency K[5], i.e., the frequency K[0] is decreased
+by &quot;1&quot;, and the renewed frequency K[0] is converted into the frequency Frq as
+the central frequency of the band rejection filter. Then, the coefficients Ta and
+Tb are obtained and renewed based on the frequency Frq (Step E10).
+
+Subsequently, the procedure returns to Step E1 to execute the processing of
+Step E1 and the subsequent Steps.</p><p num="0133">The above described is the processing of automatically altering the
+coefficients of the filter provided in the control system for suppressing the
+natural vibration of the machine.</p><p num="0134">FIGS. 16 and 17 show variation of the control signal (torque command
+Tcmd) with the above-described natural frequency altering function ON and
+OFF, respectively, in a case where the natural frequency of the machine is
+changed to 250 Hz and the central frequency of the band rejection filter is set to
+220 Hz. FIG. 17 shows variation of the control signal with the natural
+frequency automatic altering function ON according to the second central
+frequency altering method. As can be seen from comparison of FIGS. 16 and
+17, the vibration amplitude of the control signal (torque command TCMD) is
+reduced when the natural frequency automatic altering function is ON.</p><p num="0135">In this embodiment, the band rejection filter 204 is adopted as the filter
+for suppressing the vibration. Alternatively, only a low-pass filter may be
+adopted since the natural frequency of the machine is relatively high. In this
+case, the coefficient of the low-pass filter is altered in accordance with variation
+of the natural frequency of the machine in the similar manner.</p><p num="0136">Further, in this embodiment, the filter 204 is arranged before the current 
+control section 206 to receive the torque command (current command) from the
+velocity control section 203 as shown in FIG. 14. Alternatively, the filter 204
+may be arranged before the velocity control section 203 to receive a velocity
+command from the position control section 202 to reduce the amplitude of the
+natural vibration.</p><p num="0137">In general, since an attachment to the machine such as an end effector
+has a natural frequency lower than that of the machine itself, it is effective to
+arrange the filter to receive the position command for reducing the natural
+vibration of the end effector and it is effective to arrange the filter to receive the
+torque command (current command) for reducing the natural vibration of the
+machine itself.</p><p num="0138">According to the present invention, vibration of an end effector of a
+robot is suppressed to perform a robot operation effectively and safely.</p><p num="0139">Further, a motion command is generated so as to suppress the natural
+vibration of the movable part of the machine even if the natural vibration varies
+in accordance with variation of load, dispersion in manufacturing of the
+machine, environment in use and aging of the machine.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Steuereinrichtung für eine Maschine (1), die einen
+Elektromotor (200) als eine Antriebsquelle der Maschine (1)
+hat, welche Steuereinrichtung umfasst:
+<claim-text><claim-text>ein Eigenfrequenz-Bestimmungsmittel zum Bestimmen einer
+Frequenz oder eines Zyklus einer Eigenschwingung der Maschine
+(1) und/oder einer Zusatzvorrichtung (2), die an der
+Maschine (1) als ein gesteuertes System angebracht ist,</claim-text><claim-text>ein Bewegungsbefehl-Erzeugungsmittel (202-207) zum Erzeugen
+eines Bewegungsbefehls für den Elektromotor (200)
+derart, dass die Eigenschwingung der Maschine (1) und/oder.
+der Zusatzvorrichtung (2) in Übereinstimmung mit der durch
+das Eigenfrequenz-Bestimmungsmittel bestimmten Frequenz
+oder dem durch dieses bestimmten Zyklus der Eigenschwingung
+unterdrückt wird,</claim-text></claim-text>
+   wobei das Eigenfrequenz-Bestimmungsmittel einen Frequenz-Analysator
+(205) zum Analysieren einer Schwingungsfrequenz
+eines Steuersignals für den Elektromotor (200) umfasst,
+um die Frequenz oder den Zyklus der Eigenschwingung
+bestimmen zu können,
+   dadurch gekennzeichnet, dass
+   das Bewegungsbefehl-Erzeugungsmittel (202 - 207) ein
+Filter (204) zum Verringern einer Amplitude der Eigenschwingung
+hat und automatisch einen Koeffizienten des Filters
+(204) in Übereinstimmung mit der Frequenz oder dem
+Zyklus der Eigenschwingung ändert, die oder der durch den
+Frequenz-Analysator (205) bestimmt ist.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach Anspruch 1, die ferner ein
+Speichermittel (102) zum Speichern der durch den Frequenz-Analysator
+(205) bestimmten Frequenz oder des durch diesen
+bestimmten Zyklus der Eigenschwingung umfasst, wobei das
+Bewegungsbefehl-Erzeugungsmittel (202 - 207) einen Bewegungsbefehl
+für den Elektromotor (200) auf der Grundlage
+der in dem Speichermittel (102) gespeicherten Frequenz oder
+des in diesem gespeicherten Zyklus der Eigenschwingung erzeugt.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach Anspruch 1 oder 2, wobei das
+Filter (204) ein Tiefpassfilter umfasst.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach Anspruch 1 oder 2, wobei das
+Filter (204) ein Bandsperrfilter umfasst.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach einem der vorhergehenden Ansprüche,
+wobei der Frequenz-Analysator (205) das Steuersignal
+hinsichtlich eines Drehmoments des Elektromotors (200) analysiert.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach einem der Ansprüche 1 bis 4, wobei
+der Frequenz-Analysator (205) das Steuersignal hinsichtlich
+einer Geschwindigkeit des Elektromotors (200)
+analysiert.</claim-text></claim><claim num="xx"><claim-text>Steuereinrichtung nach einem der Ansprüche 1 bis 4, wobei
+der Frequenz-Analysator (205) das Steuersignal hinsichtlich
+einer Position des Elektromotors (200) analysiert.</claim-text></claim><claim num="xx"><claim-text>Maschine, die einen Roboter (1) mit einer Endausführungsvorrichtung
+(2) umfasst, die an diesem angebracht ist.
+und durch einen Elektromotor (200) angetrieben wird, welche
+Maschine eine Steuereinrichtung nach einem der vorhergehenden
+Ansprüche enthält, wobei das Bewegungsbefehl-Erzeugungsmittel
+(202 - 207) einen Beschleunigungs/Verzögerungs-Verarbeitungsabschnitt
+zum Erzeugen eines Beschleunigungs/Verzögerungs-Bewegungsbefehls
+zum Betreiben des Roboters
+(1) derart in Übereinstimmung mit der Frequenz oder
+dem Zyklus der Eigenschwingung der Endausführungsvorrichtung
+(2) hat, dass die Eigenschwingung der Endausführungs-vorrichtung
+(2) unterdrückt wird.</claim-text></claim><claim num="xx"><claim-text>Maschine nach Anspruch 8, wobei ein Parameter des Beschleunigungs/Verzögerungs-Verarbeitungsabschnitts
+auf der
+Grundlage der Frequenz oder des Zyklus der Eigenschwingung
+der Endausführungsvorrichtung (2) geändert wird.</claim-text></claim><claim num="xx"><claim-text>Maschine nach Anspruch 9, wobei der Beschleunigungs/Verzögerungs-Verarbeitungsabschnitt
+erste und zweite Filter
+umfasst, die zum Durchführen einer linearen Beschleunigungs/Verzögerungs-Verarbeitung
+in Reihe geschaltet sind,
+und eine Filterlänge des zweiten Filters auf der Grundlage
+der Frequenz oder des Zyklus.der Eigenschwingung bestimmt
+ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A controller for a machine (1) having an electric motor
+(200) as a driving source of the machine (1), said controller
+comprising:
+<claim-text><claim-text>natural frequency determining means for determining a
+frequency or a cycle of a natural vibration of the machine (1) and/or an
+attachment (2) attached to the machine (1) as a controlled system;</claim-text><claim-text>motion command generating means (202-207) for generating a
+motion command for the electric motor (200) such that the natural
+vibration of the machine (1) and/or the attachment (2) is suppressed in
+accordance with the frequency or the cycle of the natural vibration
+determined by said natural frequency determining means; and</claim-text><claim-text>said natural frequency determining means comprises a frequency
+analyser (205) for analysing a vibration frequency of a control signal
+for the electric motor (200) to determine said frequency or cycle of
+natural vibration;</claim-text></claim-text>characterised in that:
+<claim-text><claim-text>said motion command generating means (202-207)
+has a filter (204) for reducing an amplitude of the natural
+vibration, and automatically alters a coefficient of said filter (204) in
+accordance with the frequency or the cycle of the natural vibration
+determined by said frequency analyser (205).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A controller according to claim 1, further comprising
+storing means (102) for storing the frequency or the cycle of the
+natural vibration determined by said frequency analyser (205), and
+wherein said motion command generating means (202-207) generates a
+motion command for the electric motor (200) based on the frequency
+or the cycle of the natural vibration stored in said storing means (102).</claim-text></claim><claim num="xx"><claim-text>A controller according to claim 1 or 2, wherein said filter
+(204) comprises a low-pass filter.</claim-text></claim><claim num="xx"><claim-text>A controller according to claim 1 or 2, wherein said filter
+(204) comprises a band rejection filter.</claim-text></claim><claim num="xx"><claim-text>A controller according to any preceding claim, wherein
+said frequency analyzer (205) analyzes the control signal regarding a
+torque of the electric motor (200).</claim-text></claim><claim num="xx"><claim-text>A controller according to any of claims 1 to 4, wherein
+said frequency analyzer (205) analyzes the control signal regarding
+velocity of the electric motor (200).</claim-text></claim><claim num="xx"><claim-text>A controller according to any of claims 1 to 4, wherein
+said frequency analyzer (205) analyzes the control signal regarding a
+position of the electric motor (200).</claim-text></claim><claim num="xx"><claim-text>A machine which comprises a robot (1) with an end
+effector (2) attached thereto and driven by an electric motor (200),
+which machine includes a controller according to any preceding claim
+wherein said motion command generating means (202-207) has an
+acceleration/deceleration processing section for creating an
+acceleration/deceleration motion command for operating said robot (1)
+in accordance with the frequency or the cycle of the natural vibration
+of the end effector (2) such that the natural vibration of the end effector
+(2) is suppressed.</claim-text></claim><claim num="xx"><claim-text>A machine according to claim 8, wherein a parameter of
+said acceleration/deceleration processing section is altered based on the
+frequency or cycle of the natural vibration of the end effector (2).</claim-text></claim><claim num="xx"><claim-text>A machine according to claim 9, wherein said
+acceleration/deceleration processing section comprises first and second
+filters connected in series for performing linear acceleration/deceleration
+processing, and a filter length of the second filter is
+determined based on the frequency or the cycle of the natural vibration.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Dispositif de commande pour une machine (1)
+comportant un moteur électrique (200) comme source
+d'entraínement de la machine (1), ledit dispositif de
+commande comprenant :
+<claim-text><claim-text>un moyen de détermination de la fréquence naturelle
+pour déterminer une fréquence ou un cycle d'une vibration
+naturelle de la machine (1) et/ou un attachement (2) fixé
+à la machine (1) comme un système commandé ;</claim-text><claim-text>un moyen de génération de commande de mouvement
+(202-207) pour générer une commande de mouvement pour le
+moteur électrique (200) de telle sorte que la vibration
+naturelle de la machine (1) et/ou de l'attachement (2)
+est supprimée en accord avec la fréquence ou le cycle de
+la vibration naturelle déterminé par ledit moyen de
+détermination de la fréquence naturelle ; et</claim-text><claim-text>ledit moyen de détermination de la fréquence
+naturelle comprend un analyseur de fréquences (205) pour
+analyser une fréquence de vibration d'un signal de
+commande pour le moteur électrique (200) pour déterminer
+ladite fréquence ou cycle de vibration naturelle ;</claim-text></claim-text>
+   caractérisé en ce que ledit moyen de génération de.
+commande de mouvement (202-207) comporte un filtre (204)
+pour réduire une amplitude de la vibration naturelle et
+modifie automatiquement un coefficient dudit filtre (204)
+en accord avec la fréquence ou le cycle de la vibration
+naturelle déterminé par ledit analyseur de fréquence
+(205).</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon la revendication 1,
+comprenant en outre un moyen de stockage (102) pour
+stocker la fréquence ou le cycle de la vibration
+naturelle déterminé par ledit analyseur de fréquence
+(205), et où ledit moyen générateur de commande de
+mouvement (202-207) génère une commande de mouvement pour
+le moteur électrique (200) sur la base de la fréquence ou
+du cycle de la vibration naturelle stocké dans ledit
+moyen de stockage (102).</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon la revendication 1
+ou 2, où ledit filtre (204) comprend un filtre passe-bas.</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon la revendication 1
+ou 2, où ledit filtre (204) comprend un filtre coupe-bande.</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon l'une des
+revendications précédentes, où ledit analyseur de
+fréquence (205) analyse le signal de commande se
+rapportant à un couple du moteur électrique (200).</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon l'une des
+revendications 1 à 4, où ledit analyseur de fréquence
+(205) analyse le signal de commande se rapportant à la
+vitesse du moteur électrique (200).</claim-text></claim><claim num="xx"><claim-text>Dispositif de commande selon l'une des
+revendications 1 à 4, où ledit analyseur de fréquence
+(205) analyse le signal de commande concernant une
+position du moteur électrique (200).</claim-text></claim><claim num="xx"><claim-text>Machine qui comprend un robot (1) avec un
+effecteur d'extrémité (2) fixé à celui-ci et entraíné par
+un moteur électrique (200), ladite machine comprenant un
+dispositif de commande selon l'une des revendications
+précédentes, où ledit moyen générateur de commande de
+mouvement (202-207) présente une section de traitement
+d'accélération/décélération pour créer une commande de
+mouvement d'accélération/décélération pour faire
+fonctionner ledit robot (1) en accord avec la fréquence
+ou le cycle de la vibration naturelle de l'effecteur
+d'extrémité (2) de sorte que la vibration naturelle de
+l'effecteur d'extrémité (2) est supprimée.</claim-text></claim><claim num="xx"><claim-text>Machine selon la revendication 8, où un paramètre
+de ladite section de traitement d'accélération/décélération
+est modifié sur la base de la fréquence ou du
+cycle de la vibration naturelle de l'effecteur
+d'extrémité (2).</claim-text></claim><claim num="xx"><claim-text>Machine selon la revendication 9, où ladite
+section de traitement d'accélération/décélération
+comprend des premier et second filtres montés en série
+pour exécuter un traitement d'accélération/décélération
+linéaire, et une longueur de filtre du second filtre est
+déterminée sur la base de la fréquence ou du cycle de la
+vibration naturelle.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20040609"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040319</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP2" date="20040602"><legal-event-body><event-title>PATENT OWNER REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>FANUC LTD</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20030724"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60100372</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20030724</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20030618"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020605"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20020403"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020219</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020313"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020102</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

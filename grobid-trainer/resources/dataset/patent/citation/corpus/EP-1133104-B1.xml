@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1133104-B1" country="EP" doc-number="1133104" kind="B1" date="20040609"><bibliographic-data><publication-reference fvid="23244172" ucid="EP-1133104-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1133104</doc-number><kind>B1</kind><date>20040609</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301124-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301124</doc-number><kind>A</kind><date>20010208</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="GB-0005337-A" status="new"><document-id format="epo" status="new"><country>GB</country><doc-number>0005337</doc-number><kind>A</kind><date>20000307</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20031114</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G06F  13/00        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G06F  13/00        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04B   7/26        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04B   7/26        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/58        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/58        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04M   1/72        20060101C N20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04M   1/725       20060101A N20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04M   3/42        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/42        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/50        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M   3/527       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M  11/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04M  11/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04N   1/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   1/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   1/327       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   1/327       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   1/41        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   1/41        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   5/225       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04N   5/225       20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H04N 101/00        20060101ALN20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">H04L12/28W</classification-symbol><classification-symbol scheme="EC">H04L12/58</classification-symbol><classification-symbol scheme="EC">H04N1/00B4B</classification-symbol><classification-symbol scheme="EC">H04N1/327F4</classification-symbol><classification-symbol scheme="EC">H04N1/41</classification-symbol><classification-symbol scheme="EC">H04W28/06</classification-symbol><classification-symbol scheme="ICO">T04L12:58N</classification-symbol><classification-symbol scheme="ICO">T04L12:58W</classification-symbol><classification-symbol scheme="ICO">T04M1:725F</classification-symbol><classification-symbol scheme="ICO">T04N1:00C7D</classification-symbol><classification-symbol scheme="ICO">T04N101:00</classification-symbol><classification-symbol scheme="ICO">T04N201:00C10</classification-symbol><classification-symbol scheme="ICO">T04N201:327F4D</classification-symbol><classification-symbol scheme="ICO">T04W4:00</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Bildübertragung in einem Netzwerk</invention-title><invention-title lang="EN" status="new">Image transfer over mobile radio network</invention-title><invention-title lang="FR" status="new">Transfer d'images dans un réseau mobile à radio</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>HEWLETT PACKARD CO</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>HEWLETT-PACKARD COMPANY</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>L ANSON COLIN</name><address><country>GB</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>SELLEN ABIGAIL JANE</name><address><country>GB</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>L'ANSON, COLIN</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SELLEN, ABIGAIL JANE</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>L'ANSON, COLIN</last-name><address><street>16 Kynges Mill Close</street><city>Frenchay, Bristol BS16 1JL</city><country>GB</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>SELLEN, ABIGAIL JANE</last-name><address><street>Cherrydene, Garden Close Lane</street><city>Newbury RG14 6PR</city><country>GB</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Hewlett-Packard Company, A Delaware Corporation</last-name><address><street>3000 Hanover Street</street><city>Palo Alto, CA 94304</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Squibbs, Robert Francis</last-name><address><street>Hewlett-Packard Limited IP Section Building 3 Filton Road</street><city>Stoke Gifford Bristol BS34 8QZ</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>To enable low cost distribution of pictures from a mobile entity that incorporates digital camera functionality, the mobile entity (20) generates both a high resolution picture image (81) and a low resolution thumbnail (80). This thumbnail (80) is distributed via a mobile radio infrastructure to a service system (40) that then transfers the thumbnail to specified recipients (60). After viewing the thumbnail (80), each recipient (60) indicates to the service system (40) whether they wish to receive the high resolution image (81) and, if so, whether it is to be transferred immediately or at the next. The service system (40) effects transfer of the high resolution image (81) accordingly. In other embodiments, distribution of the high resolution image is effected independently of the service system. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">To enable low cost distribution of pictures from a mobile entity that incorporates digital
+camera functionality, the mobile entity (20) generates both a high resolution picture image
+(81) and a low resolution thumbnail (80). This thumbnail (80) is distributed via a mobile
+radio infrastructure to a service system (40) that then transfers the thumbnail to specified
+recipients (60). After viewing the thumbnail (80), each recipient (60) indicates to the
+service system (40) whether they wish to receive the high resolution image (81) and, if so,
+whether it is to be transferred immediately or at the next. The service system (40) effects
+transfer of the high resolution image (81) accordingly. In other embodiments, distribution
+of the high resolution image is effected independently of the service system.
+<img file="00000001.tif" id="img-EP-1133703-A1-00000001" he="77" wi="152" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading><b><u style="single">Field of the Invention</u></b></heading><p num="0001">The present invention relates to a method and service system for transferring image data
+from a mobile user, through a mobile radio infrastructure, to a recipient.</p><heading><b><u style="single">Background of the Invention</u></b></heading><p num="0002">Communication infrastructures suitable for mobile users (in particular, though not
+exclusively, cellular radio infrastructures) have now become widely adopted. Whilst the
+primary driver has been mobile telephony, the desire to implement mobile data-based
+services over these infrastructures, has led to the rapid development of data-capable bearer
+services across such infrastructures. This has opened up the possibility of many Internet-based
+services being available to mobile users.</p><p num="0003">By way of example, Figure 1 shows one form of known communication infrastructure for
+mobile users providing both telephony and data-bearer services. In this example, a mobile
+entity 20, provided with a radio subsystem 22 and a phone subsystem 23, communicates
+with the fixed infrastructure of GSM PLMN (Public Land Mobile Network) 10 to provide
+basic voice telephony services. In addition, the mobile entity 20 includes a data-handling
+subsystem 25 interworking, via data interface 24, with the radio subsystem 22 for the
+transmission and reception of data over a data-capable bearer service provided by the
+PLMN; the data-capable bearer service enables the mobile entity 20 to communicate with a
+service system 40 connected to the public Internet 39. The data handling subsystem 25
+supports an operating environment 26 in which applications run, the operating environment
+including an appropriate communications stack.</p><p num="0004">More particularly, the fixed infrastructure 10 of the GSM PLMN comprises one or more
+Base Station Subsystems (BSS) 11 and a Network and Switching Subsystem NSS 12. Each
+BSS 11 comprises a Base Station Controller (BSC) 14 controlling multiple Base
+Transceiver Stations (BTS) 13 each associated with a respective &quot;cell&quot; of the radio
+network. When active, the radio subsystem 22 of the mobile entity 20 communicates via a 
+radio link with the BTS 13 of the cell in which the mobile entity is currently located. As
+regards the NSS 12, this comprises one or more Mobile Switching Centers (MSC) 15
+together with other elements such as Visitor Location Registers 32 and Home Location
+Register 32.</p><p num="0005">When the mobile entity 20 is used to make a normal telephone call, a traffic circuit for
+carrying digitised voice is set up through the relevant BSS 11 to the NSS 12 which is then
+responsible for routing the call to the target phone (whether in the same PLMN or in
+another network).</p><p num="0006">With respect to data transmission to/from the mobile entity 20, in the present example
+three different data-capable bearer services are depicted though other possibilities exist. A
+first data-capable bearer service is available in the form of a Circuit Switched Data (CSD)
+service; in this case a full traffic circuit is used for carrying data and the MSC 32 routes the
+circuit to an InterWorking Function IWF 34 the precise nature of which depends on what is
+connected to the other side of the IWF. Thus, IWF could be configured to provide direct
+access to the public Internet 39 (that is, provide functionality similar to an IAP - Internet
+Access Provider IAP). Alternatively, the IWF could simply be a modem connecting to a
+PSTN; in this case, Internet access can be achieved by connection across the PSTN to a
+standard IAP.</p><p num="0007">A second, low bandwidth, data-capable bearer service is available through use of the Short
+Message Service that passes data carried in signalling channel slots to an SMS unit which
+can be arranged to provide connectivity to the public Internet 39.</p><p num="0008">A third data-capable bearer service is provided in the form of GPRS (General Packet Radio
+Service which enables IP (or X.25) packet data to be passed from the data handling system
+of the mobile entity 20, via the data interface 24, radio subsystem 21 and relevant BSS 11,
+to a GPRS network 17 of the PLMN 10 (and vice versa). The GPRS network 17 includes a
+SGSN (Serving GPRS Support Node) 18 interfacing BSC 14 with the network 17, and a
+GGSN (Gateway GPRS Support Node) interfacing the network 17 with an external
+network (in this example, the public Internet 39). Full details of GPRS can be found in the 
+ETSI (European Telecommunications Standards Institute) GSM 03.60 specification. Using
+GPRS, the mobile entity 20 can exchange packet data via the BSS 11 and GPRS network
+17 with entities connected to the public Internet 39.</p><p num="0009">The data connection between the PLMN 10 and the Internet 39 will generally be through a
+firewall 35 with proxy and/or gateway functionality.</p><p num="0010">Different data-capable bearer services to those described above may be provided, the
+described services being simply examples of what is possible.</p><p num="0011">In Figure 1, a service system 40 is shown connected to the Internet 40, this service system
+being accessible to the OS/application 26 running in the mobile entity by use of any of the
+data-capable bearer services described above. The data-capable bearer services could
+equally provide access to a service system that is within the domain of the PLMN operator
+or is connected to another public or private data network.</p><p num="0012">With regard to the OS/application software 26 running in the data handling subsystem 25
+of the mobile entity 20, this could, for example, be a WAP application running on top of a
+WAP stack where &quot;WAP&quot; is the Wireless Application Protocol standard. Details of WAP
+can be found, for example, in the book &quot;Official Wireless Application Protocol&quot; Wireless
+Application Protocol Forum, Ltd published 1999 Wiley Computer Publishing. Where the
+OS/application software is WAP compliant, the firewall will generally also serve as a
+WAP proxy and gateway. Of course, OS/application 26 can comprise other functionality
+(for example, an e-mail client) instead of, or additional to, the WAP functionality.</p><p num="0013">The mobile entity 20 may take many different forms. For example, it could be two separate
+units such as a mobile phone (providing elements 22-24) and a mobile PC (data-handling
+system 25) coupled by an appropriate link (wireline, infrared or even short range radio
+system such as Bluetooth). Alternatively, mobile entity 20 could be a single unit such as a
+mobile phone with WAP functionality. Of course, if only data transmission/reception is
+required (and not voice), the phone functionality 24 can be omitted; an example of this is a
+PDA with built-in GSM data-capable functionality whilst another example is a digital 
+camera (the data-handling subsystem) also with built-in GSM data-capable functionality
+enabling the upload of digital images from the camera to a storage server.</p><p num="0014">Whilst the above description has been given with reference to a PLMN based on GSM
+technology, it will be appreciated that many other cellular radio technologies exist and can
+typically provide the same type of functionality as described for the GSM PLMN 10.</p><p num="0015">The present invention relates to the situation where the mobile entity incorporates camera
+functionality - for example, by the integration of a digital camera in a cell phone or by
+operatively connecting a digital camera and cell phone. If the user, having taken a
+photograph, wishes to share it immediately with a friend by sending it over the mobile
+radio infrastructure using a data-capable bearer service, the user will be faced with a
+substantial cost due to the time needed to transmit the image data. Furthermore, a user will
+generally want to send more than one picture to more than one friend - certainly during a
+holiday - so that the transmission costs become a substantial deterrent to such activity.</p><p num="0016">One possible way of trying to handle this problem is to agree a deal with cellular operators
+to get a low tariff if the traffic is deferred for example into the middle of the night. Another
+approach is an auction system with variable tariffs. This would either require the operator
+to offer data service at variable (gently decreasing rates with decreasing demand) or for
+users to bid for the tariff they are willing to pay. With good design the operator could
+ensure their high revenue voice and priority data traffic is not impacted and new traffic id
+drawn in. However, this solution requires intervention and co-operation by each mobile
+network provider and yet may still result in unnecessary expense to the user as the recipient
+of the transmitted picture may not be interested in the picture sent.</p><p num="0017">It is an object of the present invention to provide a way of transferring image data from a
+mobile entity that permits costs to be kept down whilst offering flexibility of
+implementation, not least by minimising reliance on involvement of the PLMN operator. </p><p num="0018"><ref type="patent">EP 0 930 757 A</ref> discloses a service system to which an image transmitter can upload image
+data, the service system then providing preview images (which may have been uploaded
+with the main image data) to clients who can thereupon ask for the main image data from
+the service system.</p><p num="0019"><ref type="patent">US 5,893,037</ref> discloses a combined electronic/silver halide image capture system where
+an electronic preview image of a scene can be sent via a cellular phone to a remote location
+for assessment as to whether a silver halide photograph of the same scene should be taken.</p><heading><b><u style="single">Summary of the Invention</u></b></heading><p num="0020">According one aspect of the present invention, there is provided a method of transferring
+image data to a recipient using a service system, the method comprising the steps of:
+<sl><li>(a) providing to the service system first image data and second image data respectively
+corresponding to low and high resolution versions of an image;</li><li>(b) transferring the first image data from the service system to at least one recipient
+over a communications system to which the service system is connected,</li><li>(c) at the service system, receiving back any response sent by any of said at least one
+recipient for indicating whether that recipient wishes to receive the second image
+data corresponding to the first image data transferred in step (b); and</li><li>(d) transferring the second image data from the service system to the or each said
+recipient who has indicated they wish to receive said second image data, the timing
+of this transfer of the second image data to a said recipient being indicated in the
+response sent by that recipient in step (c);</li></sl>
+   characterised in that
+<ul list-style="bullet"><li>said first and second images data are generated at a mobile entity that includes
+camera functionality for providing said image;
+<ul list-style="bullet"><li>the first image data is initially sent, without the second image data, from the mobile
+entity via a mobile radio infrastructure to the service system for transfer to said at
+least one recipient in step (b); and</li><li>where any said response received in step (c) indicates that a said recipient wishes to
+receive the second image data immediately, the second image data is immediately 
+transferred from the mobile entity to the service system via the mobile radio
+infrastructure and then from the service system to the or each recipient who has
+requested immediate receipt, whereas if only responses for non-immediate receipt of
+the second image data are received in step (c), the second image data is transferred
+from the mobile entity to the service system by a low-tariff communication.</li></ul></li></ul></p><heading><b><u style="single">Brief Description of the Drawings</u></b></heading><p num="0021">A method and service-system, both embodying the present invention, for transferring
+image data from a mobile entity to a recipient, will now be described, by way of nonlimiting
+example, with reference to the accompanying diagrammatic drawings, in which:
+<ul list-style="bullet"><li><b>Figure 1</b> is a diagram of a known communications infrastructure usable for
+transferring voice and data to/from a mobile entity;</li><li><b>Figure 2</b> is a diagram showing the incorporation of a service system embodying the
+present invention into the Figure I arrangement;</li><li><b>Figure 3</b> is a diagram depicting the main processes that may be incorporated into
+methods embodying the present invention, different embodiments differing
+in the combination of processes employed;</li><li><b>Figure 4</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a first specific
+embodiment of the invention;</li><li><b>Figure 5</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a second specific
+embodiment of the invention;</li><li><b>Figure 6</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a third specific
+embodiment of the invention;</li><li><b>Figure 7</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a fourth specific
+embodiment of the invention; </li><li><b>Figure 8</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a fifth specific
+embodiment of the invention; and</li><li><b>Figure 9</b> is a diagram showing to a smaller scale a representation of the Figure 3
+diagram but showing only those elements used by a sixth specific
+embodiment of the invention.</li></ul></p><heading><b><u style="single">Best Mode of Carrying Out the Invention</u></b></heading><p num="0022">The embodiments of the invention to be described below all generally give effect to the
+following scenario. An individual (generically, &quot;user&quot;) take a photograph on a digital
+camera. The captured image is immediately viewable on a LCD screen of the camera by
+the user and user's companions. A low resolution version (a &quot;thumbnail&quot;) of the captured
+image is also distributed to one or more specified remote parties (herein, &quot;recipients&quot;) via a
+mobile radio connection and the mobile radio infrastructure; the recipients may, for
+example, be other users of mobile radio equipment provided with LCD viewing screens, or
+parties connected to the Internet or an e-mail network. These recipients can later be
+provided with a full (high) resolution image corresponding to the thumbnail, this high
+resolution image being provided by low cost transmission means or even simply in hard
+copy form. Provision may be made for the recipient to ask for an immediate high resolution
+copy regardless of the current tariff rate for using the mobile radio infrastructure; in this
+case, the high resolution image is transferred straight away to the requesting recipient.</p><p num="0023">The terms high resolution and low resolution as used herein are, of course relative terms.
+Thus, by way of example, if the same pixel density is assumed, the high resolution image
+may give a 10&quot; by 8&quot; printable image as compared to a 2.5&quot; by 2&quot; printable image for the
+low resolution image.</p><p num="0024">In accordance with the present invention, a service system is provided to facilitate
+implementation of the above features. The general form of one implementation of this
+service system is depicted in Figure 2 which also serves to illustrate the main data transfer
+paths. </p><p num="0025">More particularly, in the Figure 2 arrangement, a WAP client application running on the
+data handling system 25 of mobile entity 20 is operative to enable image data to be passed
+to an Internet-connected service system 40 by using a data-capable bearer service of PLMN
+10 to provide data connectivity to a WAP internet gateway 35 (see path 50). The use of
+WAP is merely by way of example and alternative mechanisms can be used, such as an e-mail
+service.</p><p num="0026">The mobile entity 20 can be implemented in a number of ways. For example, entity 20 can
+be constituted by a cellular phone and a separate digital camera which are linked by an IR,
+wire or RF link. Alternatively, the digital camera may be fully integrated into a WAP-enabled
+cell phone (as illustrated in Figure 2). Whatever the exact physical implementation
+the digital camera functionality 28 will generally also include means 29 for reviewing a
+taken photograph on a local (probably small) screen.</p><p num="0027">The service system 40, here shown as connected to the internet 39, comprises a web server
+41 providing a front end for an image-data management subsystem 45 which has a number
+of associated data stores, namely an image data store 42 for storing high and low resolution
+image data, a recipient address data store 43, and a recipient transfer request store 44. The
+subsystem 45 also has access to a tariff database 46 storing tariff data for the PLMN 10,
+and potentially interacts with the PLMN billing system 47.</p><p num="0028">Two recipients 60 are illustrated in Figure 2 (for convenience, the term &quot;recipient&quot; is used
+generally in this description to refer both to the receiving device and to the associated user,
+it being clear from the context whether the device or user - or the combination - is being
+considered). Recipient 60A is shown as a WAP-enabled mobile device accessible via
+PLMN 10 and WAP gateway 35 from the service system 40 (see dotted path 51); recipient
+60A is for example of the same general form as mobile entity 20. Recipient 60B is an
+internet-connected device, such as a network-connected PC, which can be accessed from
+the service subsystem using a standard application protocol such as HTTP, FTTP, or
+SMTP (see dotted path 52). </p><p num="0029">Operation of the Figure 2 arrangement is as follows. When a user takes a digital
+photograph with the digital camera 28 in mobile entity 20, the user can view it locally on
+the image viewer 29. The user can then choose to share it with one or more other parties,
+namely recipients 60A and B. To do this, the user specifies the intended recipients and then
+presses a send button (soft or hard implementation). This causes the mobile entity 20 to
+contact the service system 40 (over path 50) and pass it a request to send a thumbnail of
+the picture to recipients 60A and B. The request, sent using WAP/HTTP protocols will
+contain the desired destination (telephone number, network address, ... ), a thumbnail
+image 80 suitable for a small size viewer, a reference number for the full resolution image,
+and any further details of the full sized image that are useful for management (Size,
+resolution etc.)</p><p num="0030">The management subsystem 45 of service system 40 stores the recipient address details in
+store 43 and the thumbnail 80 and related data in store 42. Management subsystem 45 then
+attempts to send the thumbnail to recipients 60A and 60B using a suitable push protocol..
+In addition to the thumbnail image, the image reference number, source address (and
+telephone number if different) for the image are also sent to the recipients. The thumbnail
+can then be viewed by the users of recipient devices 60A, 60B.</p><p num="0031">The image reference number (image ID) can conveniently take the form of a hash of the
+thumbnail image, this hash being calculated by the data handling subsystem 25 of mobile
+entity 20.</p><p num="0032">If either recipient 60A or B wants a full resolution image they can ask for this by sending a
+request to the service system 40 in response to the thumbnail push, this request including
+the image ID for the image concerned. Management subsystem 45 temporarily stores such
+requests and pulls the full resolution image from mobile entity 20 either immediately at the
+prevailing tariff rate for transfers across PLMN 10 or at a later time when a reduced tariff is
+available. The required full resolution image is identified to mobile entity 20 by means of
+the corresponding image ID. Once the service subsystem has retrieved the high resolution
+image, it pushes the image to the recipients that have requested it, as indicated by the
+requests held in store 44. </p><p num="0033">Whether retrieval of the full resolution image from mobile entity 20 is done immediately or
+is deferred to a low tariff period, can be pre-determined or can be specified by the
+requesting recipients. The management subsystem 45 has knowledge of the prevailing
+tariffs from tariff database 46. Where recipient 60B, for example, requests immediate
+transfer of the full resolution image but recipient 60A only requires low-tariff transfer,
+management subsystem 45 is preferably arranged to immediately pull the full resolution
+image from mobile entity 20 and pass it to recipient 60B with the cost for the transfer over
+path 50 through PLMN 10 being billed to recipient 60B - this requires billing data to be
+passed from management subsystem 45 to the billing system 47 (and also requires that
+recipient 60B has some billing relationship with the PLMN operator). As regards recipient
+60A, although the full resolution image now resides in the service system 40, transfer to
+recipient 60A may still need to be delayed since this transfer is also through the PLMN and
+should be left to be done during a low-tariff period as requested (if recipient 60A was
+accessible by a low cost route, such as by direct internet access, then the transfer could
+have been done without delay).</p><p num="0034">Recipients, in requesting a full resolution image, can also specify other destinations to
+which the full resolution image should be sent; these destinations would typically be
+accessible at low transfer costs. Thus, recipient 60A may ask for the full resolution image
+to be sent by e-mail to his/her home e-mail account. Indeed, the recipient may specify that
+they want the full resolution image to be sent to them as a print though the ordinary mail in
+which case the service system may, or may not, be involved in transferring the full
+resolution image (the user of mobile entity 20 could do the printing and mailing or could
+contract with service system 40 to do this - in the former case, the user would need to be
+told of the recipient's request, whilst in the latter case the full resolution image would still
+need to be downloaded to the service system).</p><p num="0035">Of course, the user of mobile entity may decide that he/she wishes to send full resolution
+images to all those to whom the thumbnail has been sent without seeking a response as to
+the recipients wishes based on having seen the thumbnail. In this case, assuming that the
+user wishes to do this at low cost, the user will probably defer sending the full resolution 
+image until a cheaper transfer route is available (for example, via the PSTN) - if the user
+wishes to do the transfer themselves then it will generally be helpful to provide the service
+system with the capability of serving back to the user, upon request, the original list of
+recipients pertaining to the corresponding thumbnail (this list being held in store 43).</p><p num="0036">From the foregoing, it will be appreciated that there are a larger number of possible
+implementations. Figure 3 is presented to help in understanding the range of combinations
+possible. Figure 3 is a diagrammatic representation of the overall image transfer
+arrangement and shows the three main participating entities, namely the mobile entity 20,
+the service system 40 and the recipient 60, the manner of data transfer between these
+entities not being detailed in Figure 3 for clarity. Figure 3 also shows the division of the
+image transfer operation into three phases, namely:
+<dl tsize="11" compact="compact"><dt>Phase I -</dt><dd>the transfer of the thumbnail (low resolution image 80) from the mobile entity
+20 to the recipient 60 via the service system;</dd><dt>Phase II -</dt><dd>the transfer back of the recipients response, if any, at least to the service
+system;</dd><dt>Phase III -</dt><dd>the transfer of the full (high) resolution image from the mobile entity to the
+recipient 60 via the service system.</dd></dl></p><p num="0037">As will become clear below, in some embodiments the second and third phases are effected
+independently of the service system 40 and, indeed, the second phase may, in some case,
+be omitted entirely. Furthermore, the second and third phase may involve an intermediate
+entity 118 (shown by diagonal hatching in Figure 3) acting for the mobile entity in relation
+to receiving the recipient's response and sending out the full resolution image; thus for
+example, the intermediate element may be an internet-connected PC to which the mobile
+entity can download the full resolution images by a local link (such as a USB connection).
+Similarly, the full resolution image may be sent to an alternative recipient device 119 (also
+shown by diagonal hatching in Figurer 3) to that which received the initial thumbnail.</p><p num="0038">Generally, the individual data transfers to and from the service system can be push or pull
+data transfers (that is, initiated by the source entity or requested by the receiving entity).
+This gives rise to a substantial number of possible combinations as will be seen below. </p><heading><u style="single">Phase I - Transfer of Thumbnail</u></heading><p num="0039">Considering Figure in more detail, after the user has taken a picture, producing high
+resolution image (&quot;<img file="00120001.tif" id="img-EP-1133376-B1-00120001" he="4" wi="8" img-format="tif" img-content="ff" orientation="unknown" inline="no" />&quot;) 81, the user may decide to send the picture to recipient 60. The
+user indicates this to the mobile entity 20 (input 100), and the entity 20 then both (i)
+generates the low-resolution thumbnail image (&quot;<img file="00120002.tif" id="img-EP-1133376-B1-00120002" he="4" wi="7" img-format="tif" img-content="ff" orientation="unknown" inline="no" />&quot;) 81 together with an identifier (image
+ID) identifying the picture concerned, and (ii) asks the user to specify the intended
+recipient. The user specifies the recipients either by setting in their name and address or by
+selection from a list held either by the mobile entity itself or in store 43 of the service
+system; in this latter case, the mobile entity must first connect with the service system and
+enter into a dialogue to identify the required recipient. Once the recipient (or recipients) has
+been identified, the user tells the entity to proceed. If not already connected to the service
+system (for selecting recipients from a list held by the system), the mobile entity now
+connects to the service system and passes it the thumbnail image, the picture ID and the
+recipient data (unless the latter has already been established by dialogue with the service
+system). Arrow 82 in Figure 3 indicates the transfer of the image data and arrow 101 the
+transfer of recipient data. Rather than the user specifying the recipients, these could be predetermined
+and already know to the service system through a pre-selection process (arrow
+102). Process 90 running in data handling subsystem 25 controls the foregoing operations
+for sending the thumbnail to the service system.</p><p num="0040">Process 91 run by the image-data management subsystem 45 of service system 40 takes
+care of receiving, storing and distributing the thumbnail 80, the transfer to the recipient of
+the thumbnail image data (+ image ID) being depicted by arrow 83. A process 92 running
+in the recipient 60 receives and stores the thumbnail for display to the recipient user.</p><p num="0041">In the foregoing, the thumbnail image data has been described as being pushed from the
+mobile entity 20 to the service system 40 and then pushed again from the service system to
+the recipient 60. In fact, it is also possible to arrange for the thumbnail data to be pulled
+from the mobile entity by the service system and/or pulled from the service system by the
+recipient. Where the thumbnail is pulled from the service system, the recipients have
+preferably already been identified so that the pull operation can be effected automatically
+without user intervention. An example of where it maybe useful to pull the thumbnails to 
+the service system is where a large number of pictures have been taken and it is desired to
+transfer thumbnails of all of them to the service system during a low tariff period - the
+service system could be tasked with effecting this pull at an appropriate time. The pulled
+thumbnails can then be pushed to the specified recipients or made available for access from
+the service system by those recipients, the latter scenario corresponding to recipient pull of
+the thumbnails.</p><p num="0042">As indicated above, more than one thumbnail can be sent during a transfer operation, each
+thumbnail being identified by the corresponding image ID. This involves deferring the
+transfer decision from when an image has just been taken to some subsequent time. The
+operation of selecting the images to be sent is controlled by process 90 and can involve
+selection of all previously unsent images, the selection of a subset such as images
+generated the same day, or the individual selection of images. It is also possible to go to the
+other extreme and have the thumbnail of an image automatically sent to pre-specified
+recipient immediately a new picture is taken.</p><heading><u style="single">Phase II - Recipient's Response</u></heading><p num="0043">After receiving and viewing the thumbnail 80 of an image, the recipient 60 is preferably
+given the opportunity to indicate whether or not he/she wishes to receive a full resolution
+version of the image and, if so, whether that version is to be sent immediately or during a
+low tariff period. The recipient can also been given the opportunity to specify how and
+where they want to receive the full resolution image (for example, in print form to their
+home address, in an e-mail to their office address, etc.). The collection of the recipient's
+response (arrow 103) and its return to the service system 40 (arrow 104) is the
+responsibility of process 93. Generally the recipient's response will be pushed to the service
+rather than pulled by the latter (though this is also possible). The response will, of course,
+include the ID (or IDs) of the images(s) of interest to the recipient.</p><p num="0044">A process 94 running on the service system is responsible for receiving the recipient's
+response and collating it with responses from other recipients of the same thumbnail image
+(if any).The collated and consolidated response data is then passed either to a full-resolution
+image distribution process 97 of the service system (arrow 106) or back to the 
+mobile entity 20 (arrow 105) depending on who is to control the distribution of the full
+resolution image (as will be seen, it is also possible to involve both of the entities 20 and
+97 in this operation). Of course, even if full-image distribution is wholly under the control
+of the process 97, the response data can still be returned for information purposes to the
+mobile entity 20.</p><p num="0045">In service system 40, the transfer of response data from the service system to the mobile
+entity is under the control of process 95 (which generally concerns itself with control data
+exchange with mobile entity); process 99 in mobile entity 20 is responsible for receiving
+the response data. The response data, if provided to the mobile entity, can be pushed by
+the service system or pulled by the mobile entity (in this latter case, the response data is
+temporarily stored by the service system, for example in store 44). Rather than the response
+data being passed to the mobile entity, it may be transferred to an associated entity 118
+(this would normally only be the case where that entity is arranged to pull the response
+data).</p><heading><u style="single">Phase III - Transfer of High Resolution Image</u></heading><p num="0046">If control of the distribution of the high-resolution image data is to be effected wholly by
+process 97, then this process takes the collated recipient response data and determines
+whether immediate transfer is required to any of the recipients - if so, the process 97 pulls
+the full resolution image from the mobile entity 20 (arrow 84), temporarily puts it in store
+42, and then pushes it to the recipient concerned (arrow 85). If another recipient has also
+requested the image but as a low tariff transfer, then since the image has already been
+pulled to the service system, the process 97 can determine whether or not to immediately
+push the image to the low-tariff-requesting recipient simply on the basis of whether or not
+this would require transfer over the mobile network and, if so, whether a low tariff period
+is current. If the collated response data indicates that only low-tariff transfers have been
+requested, process 97 waits until a low tariff period before pulling the full-resolution image
+from the mobile entity and pushing it to the recipient(s).</p><p num="0047">Where control of the distribution of a requested full-resolution image lies with the mobile
+entity 20 (or its associated entity 118 to which the images have been transferred), then a 
+process 96 of the entity 20/118 oversees the distribution on the basis of the recipient data
+transferred from the service system. As already indicated above, the distribution of the full
+resolution images may or may not involve the service system; if the service system is
+involved, then process 96 pushes the full resolution image data to the service system
+(arrow 84) together with instructions about how, when and where to distribute the image
+(arrow 111). The process 96 may have modified the collated recipient requests received
+from service system in dependence on user input (arrow 80); this modification can involve
+the addition and/or deletion of transfer requests or the changing of details of a request.</p><p num="0048">Address data for transfer of the full-resolution images is either supplied from the address
+data store 43 to the process 96/97 (arrows 107, 108) or such data may be contained in the
+responses data itself or be set into process 96 by the user (arrow 110). Tariff data is
+available to the process 97 (and possibly also process 96) form the tariff database 46 or
+any other suitable source (arrow 115).</p><p num="0049">The distribution of the high-resolution images can also be effected without any recipient
+responses. For example, it could be decided that the high resolution image is to be
+distributed to all recipients of the thumbnail image.</p><p num="0050">With respect to transfer of the full-resolution image from the service system to the recipient
+60, image receipt is managed by process 98. As already indicated, the receiving entity can
+be a different entity 119 from the recipient of the thumbnail, this different entity either
+being specified in the response data or already being known to the process 96/97
+controlling full-image distribution. Process 98 can also be arranged to pull the full-resolution
+image from the service system (or from entity 118 or 20) at a time convenient
+for process 98 rather having the image pushed to it.</p><p num="0051">Where full-image distribution is effected by the service system, since distribution can be
+spread over a period of time (for example, whilst awaiting a low tariff connection to
+particular recipients), it may be helpful to provide distribution progress data back to the
+mobile entity 20 or associated entity 118 (see arrow 112), this data being either pulled
+from, or pushed by, the service system 40. </p><p num="0052">Finally, in order to empty the digital camera of image data whilst saving the latter, the
+process 97 can be arranged to upload all full-resolution images from the mobile entity 20
+during a low-tariff period and store the image data in store 42, this uploading being carried
+out regardless of whether or not a recipient has requested any of the images.</p><heading><b><u style="single">Example Embodiments</u></b></heading><p num="0053">Figures 4 to 9 illustrate six possible embodiments each making use of a different
+combination of the above-described features; Figures 4 to 9 take the form of a reduced
+version of Figure 3 but showing only those parts relevant to the embodiment concerned and
+omitting certain details for clarity.</p><p num="0054">The Figure 4 embodiment shows the simplest case in which thumbnail data is first pushed
+to the service system and then from there to the recipient(s) as specified by the mobile-entity
+user. At a later time, the user prints the full resolution images using printer 118 and
+delivers the prints by hand (or mail) to the recipients of the thumbnails. No recipient
+response data is collected in this embodiment and there is no need to use an image ID.</p><p num="0055">The Figure 5 embodiment is a more sophisticated version of the Figure 4 embodiment and
+involves the collection of recipient response data, this data being passed to the service
+system where it is temporarily stored. The mobile-entity user in due course uses PC 118 to
+retrieve the response data from the service system, this data then being used to control the
+push distribution of the high-resolution image data over the internet to requesting
+recipients (the mage data having been transferred by a local link form the mobile entity 20
+to PC 118)</p><p num="0056">A typical scenario where the embodiments of Figures 4 and 5 might be used is as follows.
+While on holiday a series of digital photographs are taken by mobile-entity user and a
+small number are selected for sending to a relative. These are marked for sending and
+thumbnails of these images are then transmitted to the service system which pushes to the
+specified relative of the user. At the destination the thumbnails are viewed either on paper
+or via a specialized viewer (own screen, via TV, ...). In the case of Figure 4 no response 
+data is collected whereas for the Figure 5 embodiment such data is sent to the service
+system. After the holiday, the photographer loads the image data either to a printer or to
+their PC and arranges for distribution to the relative either of all the images as prints (figure
+4) or selected images by electronic transfer over a low cost transfer path (Figure 5).</p><p num="0057">The Figure 6 embodiment, like that of Figure 4, involves the push of thumbnail images
+from the mobile entity 20 to the service system 40, the push of the thumbnails from the
+service system to the specified recipients 60, and no response data collection. However,
+unlike in the Figure 4 embodiment, the Figure 7 embodiment involves, for each distributed
+thumbnail, the corresponding full resolution image data being distributed automatically by
+the service system to the same list of recipients as used for the thumbnail. This distribution
+of the full-resolution image is effected during low tariff periods with the service system
+awaiting such a period before pulling the full-resolution image from the mobile entity and
+pushing it to the recipient(s).</p><p num="0058">The Figure 7 embodiment involves specified thumbnails being pulled from the mobile
+entity to the service system for pushing to a predetermined list of recipients. Again, no
+response data is collected. In due course, all the full-resolution images held in the mobile
+entity 20 are transferred to PC 118 and pushed to the service system; the recipients of the
+thumbnails can then pull the full resolution images from the service system.</p><p num="0059">In the Figure 8 embodiment, thumbnails are pushed to the service system 40 which then
+pushes them to a pre-designated list of recipients. Response data from these recipients 60 is
+then passed via the service system 40 to the mobile entity 20. The response data includes
+bids for the full-resolution images and the mobile-entity user examines these bids before
+deciding who should receive the full resolution version of each image. The user then
+initiates full-resolution image push from the mobile entity to the service system together
+with the transfer of data concerning who is to receive which image. The service system
+then pushes the full resolution images to the appropriate recipients. Such an arrangement
+could be used, for example, by free-lance photographers, the thumbnails being sent to
+newspaper offices which then bid for the full-resolution images. </p><p num="0060">The Figure 9 embodiment involves pushing thumbnails to the service system and from the
+service system to the specified recipients. Response data is passed back to the service
+system, this data including information as to whether a recipient wants the full-resolution
+image and, if so, whether it should be transferred immediately or during a low tariff period.
+The service system is responsible for pulling the full-resolution images from the mobile
+entity and distributing them in accordance with the response data by service push.</p><p num="0061">It is to be understood that the present invention is not limited to the specifics of the mobile
+entity and communication infrastructure shown in Figure 2 and the generalisations
+discussed above in relation to Figure 1 regarding these elements apply equally to the
+operational context of the service system 40. Furthermore, whilst the service system 40 is
+shown as connected to the public Internet, it could be connected to the GPRS network 17
+or to another fixed data network interfacing directly or indirectly with the network 17 or
+network 39.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Ein Verfahren zum Übertragen von Bilddaten an einen
+Empfänger unter Verwendung eines Dienstsystems, wobei
+das Verfahren folgende Schritte umfaßt:
+<claim-text><claim-text>(a) Liefern von ersten Bilddaten (80) und zweiten
+Bilddaten (81), die Hoch- bzw. Niedrigauflösungsversionen
+eines Bildes entsprechen, an das
+Dienstsystem;</claim-text><claim-text>(b) Übertragen der ersten Bilddaten (80) von dem
+Dienstsystem (40) zu zumindest einem Empfänger
+(60) über ein Kommunikationssystem (39; 10), mit
+dem das Dienstsystem verbunden ist,</claim-text><claim-text>(c) an dem Dienstsystem (40), Zurückempfangen einer
+Antwort (104), die durch einen der zumindest einen
+Empfänger (60) gesendet wurde, zum Anzeigen,
+ob dieser Empfänger die zweiten Bilddaten (81)
+empfangen möchte, die den ersten Bilddaten (80)
+entsprechen, die in Schritt (b) übertragen wurden;
+und</claim-text><claim-text>(d) Übertragen der zweiten Bilddaten (81) von dem
+Dienstsystem (40) zu dem oder jedem der Empfänger
+(60), der angezeigt hat, daß er die zweiten Bilddaten
+empfangen möchte, wobei die Zeitgebung dieser
+Übertragung der zweiten Bilddaten (81) an den
+Empfänger (60) in der Antwort angezeigt wird, die
+durch den Empfänger in Schritt (c) gesendet wird;</claim-text></claim-text>dadurch gekennzeichnet, daß<claim-text><claim-text>die ersten und zweiten Bilddaten (80, 81) an einer
+mobilen Entität (20) erzeugt werden, die eine
+Kamerafunktionalität (28) zum Liefern des Bildes
+umfaßt;</claim-text><claim-text>die ersten Bilddaten (80) anfangs ohne die zweiten
+Bilddaten (81) von der mobilen Entität (20)
+über eine mobile Funkinfrastruktur (10) an das
+Dienstsystem (40) gesendet werden, für die Übertragung
+an den zumindest einen Empfänger (60) in
+Schritt (b); und</claim-text><claim-text>wobei eine Antwort (104), die in Schritt (c) empfangen
+wurde, anzeigt, daß einer der Empfänger
+die zweiten Bilddaten (81) unmittelbar empfangen
+möchte, wobei die zweiten Bilddaten unmittelbar
+von der mobilen Entität (20) in das Dienstsystem
+(40) über die mobile Funkinfrastruktur (10) übertragen
+werden, und dann von dem Dienstsystem (40)
+an den oder jeden Empfänger (60), der einen unmittelbaren
+Empfang angefordert hat, wohingegen,
+falls nur Antworten (104) für einen nicht unmittelbaren
+Empfang der zweiten Bilddaten (81) in
+Schritt (c) empfangen werden, die zweiten Bilddaten
+von der mobilen Entität (20) durch eine Niedrigpreiskommunikation
+(10; 39) zu dem Dienstsystem
+(40) übertragen werden.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß Anspruch 1, bei dem, wenn der Empfänger
+(60) in der Antwort (104) angezeigt hat, daß
+derselbe die zweiten Bilddaten (81) unmittelbar empfangen
+möchte, das Dienstsystem (40) bewirkt, daß die
+Kosten des Übertragens der zweiten Bilddaten von der
+mobilen Entität (20) zu dem Dienstsystem über die mobile
+Funkinfrastruktur (10) dem Empfänger berechnet
+werden.</claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß Anspruch 1 oder Anspruch 2, bei
+dem die Übertragung der zweiten Bilddaten (81) von dem
+Dienstssystem (40) an einen der Empfänger (60) die
+Übertragung über die Mobilfunkinfrastruktur (10) umfaßt,
+wobei diese Übertragung während einer Niedrigtarifperiode
+der mobilen Funkinfrastruktur (10) bewirkt
+wird, außer wo der Empfänger (60) angezeigt hat, daß
+eine unmittelbare Übertragung erwünscht wird, in diesem
+Fall werden die zweiten Bilddaten (81) über die
+mobile Funkinfrastruktur (10) an den Empfänger übertragen,
+ohne Berücksichtigung des aktuell verfügbaren
+Tarifs.</claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß einem der vorhergehenden Ansprüche,
+bei dem Informationen bezüglich des Fortschritts
+der Verteilung der zweiten Bilddaten (81) an die beabsichtigten
+Empfänger (60) dieser Daten durch das
+Dienstsystem (40) verfügbar gemacht wird.</claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß einem der vorhergehenden Ansprüche,
+bei dem der zumindest eine Empfänger für die ersten
+Bilddaten (80) auf eine oder mehrere der folgenden
+Weisen bestimmt wird:
+<claim-text><claim-text>eingestellt durch den Benutzer der mobilen Entität
+(20), der die letztere verwendet;</claim-text><claim-text>ausgewählt durch den Benutzer der mobilen Entität
+von Empfängerdaten, die auf dem Dienstsystem (40)
+gespeichert sind;</claim-text><claim-text>voreingestellt in dem Dienstsystem (40).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß Anspruch 1, bei dem zumindest eine
+Antwort (104) einen Anbieterpreis für die zweiten
+Bilddaten (81) umfaßt, wobei das Dienstsystem wirksam
+ist, um die zweiten Bilddaten an den oder jeden Empfänger
+(60) zu senden, und ein offizielles Angebot zu
+machen.</claim-text></claim><claim num="xx"><claim-text>Ein Verfahren gemäß Anspruch 1, bei dem das Dienstsystem
+(40) die Antworten (104) zusammenstellt, die von
+den mehreren Empfängern empfangen werden.</claim-text></claim><claim num="xx"><claim-text>Ein Dienstsystem, das eine Einrichtung zum Ausführen
+aller der Schritte des Verfahrens gemäß einem der vorhergehenden
+Ansprüche umfaßt.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A method of transferring image data to a recipient using a service system, the method
+comprising the steps of:
+<claim-text><claim-text>(a) providing to the service system (40) first image data (80) and second image data (81)
+respectively corresponding to low and high resolution versions of an image;</claim-text><claim-text>(b) transferring the first image data (80) from the service system (40) to at least one
+recipient (60) over a communications system (39;10) to which the service system is
+connected,</claim-text><claim-text>(c) at the service system (40), receiving back any response (104) sent by any of said at
+least one recipient (60) for indicating whether that recipient wishes to receive the
+second image data (81) corresponding to the first image data (80) transferred in step
+(b); and</claim-text><claim-text>(d) transferring the second image data (81) from the service system (40) to the or each
+said recipient (60) who has indicated they wish to receive said second image data,
+the timing of this transfer of the second image data (81) to a said recipient (60) being
+indicated in the response sent by that recipient in step (c);</claim-text></claim-text>
+   characterised in that<claim-text><claim-text>said first and second images data (80,81) are generated at a mobile entity (20) that
+includes camera functionality (28) for providing said image;
+<claim-text><claim-text>the first image data (80) is initially sent, without the second image data (81), from
+the mobile entity (20) via a mobile radio infrastructure (10) to the service system
+(40) for transfer to said at least one recipient (60) in step (b); and</claim-text><claim-text>where any said response (104) received in step (c) indicates that a said recipient
+wishes to receive the second image data (81) immediately, the second image data is
+immediately transferred from the mobile entity (20) to the service system (40) via the
+mobile radio infrastructure (10) and then from the service system (40) to the or each
+recipient (60) who has requested immediate receipt, whereas if only responses (104)
+for non-immediate receipt of the second image data (81) are received in step (c), the
+second image data is transferred from the mobile entity (20) to the service system
+(40) by a low-tariff communication (10;39).</claim-text></claim-text></claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A method according to claim 1, wherein where a said recipient (60) has indicated in a
+said response (104) that they wish to receive the second image data (81) immediately, the
+service system (40) causes the cost of transferring the second image data from the mobile
+entity (20) to the service system via the mobile radio infrastructure (10) to be charged to
+the recipient.</claim-text></claim><claim num="xx"><claim-text>A method according to claim 1 or claim 2, wherein transfer of the second image data
+(81) from the service system (40) to a said recipient (60) involves transfer via the mobile
+radio infrastructure (10), this transfer being effected during a low tariff period of the
+mobile radio infrastructure (10) except where the recipient (60) has indicated that
+immediate transfer is wanted in which case the second image data (81) is transferred over
+the mobile radio infrastructure (10) to the recipient without regard to the currently
+applicable tariff..</claim-text></claim><claim num="xx"><claim-text>A method according to any one of the preceding claims, wherein information
+concerning the progress of distribution of the second image data (81) to the intended
+recipients (60) of this data is made available by the service system (40).</claim-text></claim><claim num="xx"><claim-text>A method according to any one of the preceding claims, wherein the said at least one
+recipient for said first image data (80) is determined in one or more of the following ways:
+<claim-text><claim-text>set in by the user of the mobile entity (20) using the latter;</claim-text><claim-text>selected by the user of the mobile entity from recipient data held on the service
+system (40);</claim-text><claim-text>preset in the service system (40).</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A method according to claim 1, wherein at least one said response (104) includes a bid
+price for the second image data(81 ). the service system being operative to send the second
+image data to the or each recipient (60) making an accepted bid.</claim-text></claim><claim num="xx"><claim-text>A method according to claim 1, wherein the service system (40) collates the responses
+(104) received back from multiple recipients.</claim-text></claim><claim num="xx"><claim-text>A system comprising means for carrying out all the steps of the method of any one of the preceding
+claims.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Un procédé de transfert de données d'image
+vers un récepteur en utilisant un système de service,
+le procédé comprenant les étapes consistant à:
+<claim-text><claim-text>(a) fournir au système (40) de service des
+premières données d'image (80) et des deuxièmes
+données d'image (81) qui correspondent respectivement
+à des versions à basse et à haute résolutions d'une
+image;</claim-text><claim-text>(b) transférer les premières données d'image (80)
+du système de service (40) à au moins un récepteur
+(60) par un système de communications (39; 10) auquel
+le système de service est connecté;</claim-text><claim-text>(c) recevoir en retour au système (40) de service
+toute réponse (104) envoyée par l'un quelconque unique
+au moins desdits récepteurs (60) pour indiquer si ce
+récepteur souhaite recevoir les deuxièmes données
+d'image (81) qui correspondent aux premières données
+d'image (80) transférées à l'étape (b); et</claim-text><claim-text>(d) transférer les deuxièmes données d'image (81)
+du système (40) de service vers ledit récepteur (60)</claim-text></claim-text>
+ou chacun desdits récepteurs qui a ou ont indiqué
+souhaiter recevoir lesdites deuxièmes données d'image,
+l'heure de ce transfert des deuxièmes données d'image
+(81) vers l'un desdits récepteurs (60) étant fixée
+dans la réponse envoyée par le récepteur à l'étape
+(c) ;
+   caractérisé en ce que<claim-text><claim-text>lesdites premières et deuxièmes données d'image
+(80, 81) sont engendrées par une entité mobile
+(20) qui inclut une fonctionnalité de caméra (28)
+pour fournir ladite image;</claim-text><claim-text>les premières données d'image (80) sont envoyées
+initialement à l'étape (b), sans les deuxièmes
+données d'image (81), de l'entité mobile (20) par
+l'intermédiaire d'une infrastructure de radio (10)
+pour mobiles vers le système (40) de service pour
+transfert vers ledit récepteur (60) unique au
+moins; et</claim-text><claim-text>lorsque l'une quelconque desdites réponses (104)
+reçues à l'étape (c) indique que l'un desdits
+récepteurs souhaite recevoir immédiatement les
+deuxièmes données d'image (81), les deuxièmes
+données d'image sont transférées immédiatement de
+l'entité mobile (20) au système (40) de service
+par l'intermédiaire d'une infrastructure radio
+(10) pour mobiles et ensuite du système (40) de
+service vers le récepteur (60) ou chacun des
+récepteurs qui a ou ont demandé une réception
+immédiate alors que, si seules des réponses (104)
+pour réception non immédiate des deuxièmes données
+d'image (81) sont reçues à l'étape (c), les
+deuxièmes données d'image sont transférées de
+l'entité mobile (20) vers le service (40) de
+système par une communication (10; 39) à bas
+tarif.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Un procédé selon la revendication 1, dans
+lequel, lorsque l'un desdits récepteurs (60) a indiqué
+dans l'une desdites réponses (104) qu'il souhaite
+recevoir immédiatement les deuxièmes données d'image
+(81), le système (40) de service amène le coût de
+transfert des deuxièmes données d'image de l'entité
+mobile (20) vers le système de service par
+l'intermédiaire de l'infrastructure radio (10) pour
+mobiles à être débité au récepteur.</claim-text></claim><claim num="xx"><claim-text>Un procédé selon la revendication 1 ou la
+revendication 2, dans lequel un transfert des
+deuxièmes données d'image (81) du système (40) de
+service vers un dit récepteur (60) implique un
+transfert par l'intermédiaire de l'infrastructure de
+radio (10) pour mobiles, ce transfert étant effectué
+pendant une période à bas tarif de l'infrastructure
+radio (10) pour mobiles, sauf lorsque le récepteur
+(60) a indiqué qu'un transfert immédiat est souhaité,
+au quel cas les deuxièmes données d'image (81) sont
+transférées vers le récepteur par l'intermédiaire de
+l'infrastructure radio (10) pour mobiles sans tenir
+compte du tarif actuellement applicable.</claim-text></claim><claim num="xx"><claim-text>Un procédé selon l'une quelconque des
+revendications précédentes, dans lequel le système
+(40) de service rend disponible une information
+concernant la progression de distribution des
+deuxièmes données d'image (81) vers les récepteurs
+prévus (60) de ces données.</claim-text></claim><claim num="xx"><claim-text>Un procédé selon l'une quelconque des
+revendications précédentes, dans lequel ledit
+récepteur unique au moins pour lesdites premières
+données d'image (80) est déterminé de l'une ou
+plusieurs des manières suivantes:
+<claim-text><claim-text>établi par l'utilisateur de l'entité mobile (20)
+en utilisant cette dernière;</claim-text><claim-text>sélectionné par l'utilisateur de l'entité mobile à
+partir de données de récepteurs contenues sur le
+système (40) de service;</claim-text><claim-text>préétabli dans le système (40) de service.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Un procédé selon la revendication 1, dans
+lequel au moins l'une desdites réponses (104) inclut
+un prix d'offre pour les deuxièmes données d'image
+(81), le système de service pouvant intervenir pour
+envoyer les deuxièmes données d'image au récepteur ou
+à chaque récepteur (60) qui propose une offre
+acceptée.</claim-text></claim><claim num="xx"><claim-text>Un procédé selon la revendication 1, dans
+lequel le système (40) de service collationne les
+réponses (104) reçues en retour de multiples
+récepteurs.</claim-text></claim><claim num="xx"><claim-text>Système comprenant un moyen de mise en oeuvre
+de toutes les étapes de procédé de l'une quelconque
+des revendications précédentes.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20050601"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050310</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050211"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040728"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040715"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60103679</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040715</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040609"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040609"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030709"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030423"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030310</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20030102"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20021029</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20021016"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20021016"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

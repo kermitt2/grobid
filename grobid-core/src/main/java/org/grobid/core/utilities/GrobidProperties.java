@@ -699,4 +699,28 @@ public class GrobidProperties {
     public static void setPythonVirtualEnv(String pythonVirtualEnv) {
         grobidConfig.grobid.delft.python_virtualEnv = pythonVirtualEnv;
     }
+
+    public static int getWindow(final GrobidModel model) {
+        ModelParameters parameters = modelMap.get(model.getModelName());
+        if (parameters != null)
+            return parameters.window;
+        else 
+            return 20;
+    }
+
+    public static double getEpsilon(final GrobidModel model) {
+        ModelParameters parameters = modelMap.get(model.getModelName());
+        if (parameters != null)
+            return parameters.epsilon;
+        else 
+            return 0.00001;
+    }
+
+    public static int getNbMaxIterations(final GrobidModel model) {
+        ModelParameters parameters = modelMap.get(model.getModelName());
+        if (parameters != null)
+            return parameters.nbMaxIterations;
+        else 
+            return 2000;
+    }
 }

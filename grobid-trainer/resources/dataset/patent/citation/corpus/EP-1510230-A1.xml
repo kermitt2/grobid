@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><patent-document status="new" lang="EN" ucid="EP-1510230-A1" country="EP" doc-number="1510230" kind="A1" date="20050302"><bibliographic-data><publication-reference fvid="24287964" ucid="EP-1510230-A1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1510230</doc-number><kind>A1</kind><date>20050302</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-04077727-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>04077727</doc-number><kind>A</kind><date>20000218</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-253383" status="new"><document-id format="original" status="new"><country>US</country><doc-number>253383</doc-number><date>19990219</date></document-id></priority-claim><priority-claim ucid="EP-00908735-A" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>00908735</doc-number><kind>A</kind><date>20000218</date></document-id></priority-claim><priority-claim ucid="US-25338399-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>25338399</doc-number><kind>A</kind><date>19990219</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"/><term-of-grant/><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">A61M   5/142       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">A61M   5/142       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">F04F   3/00        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">F04F   3/00        20060101CFI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">A61M5/142P10</classification-symbol><classification-symbol scheme="ICO">K61M5:142G4</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Medizinische Unterdruck-Infusionspumpe</invention-title><invention-title lang="EN" status="new">Negative pressure medical infusion pump</invention-title><invention-title lang="FR" status="new">Pompe d'infusion médicale à basse pression</invention-title><citations><patent-citations><patcit ucid="EP-0488701-A1" source="SEA" category="X" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>EP</country><doc-number>0488701</doc-number><kind>A1</kind></document-id></patcit><patcit ucid="US-4191181-A" source="SEA" category="XD" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>4191181</doc-number><kind>A</kind></document-id></patcit><patcit ucid="US-5722957-A" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>5722957</doc-number><kind>A</kind></document-id></patcit><patcit ucid="WO-1997040873-A1" source="SEA" category="A" created-by-npl="N" status="new"><document-id format="epo" status="new"><country>WO</country><doc-number>1997040873</doc-number><kind>A1</kind></document-id></patcit></patent-citations></citations><figures/></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>MEDICAL RES GROUP INC</name><address><country>US</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>MINIMED INC</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>MEDICAL RESEARCH GROUP, INC.</name><address><country/></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>MINIMED INC.</name><address><country/></address></addressbook></applicant><applicant format="original" status="new"><addressbook><last-name>Medical Research Group, Inc.</last-name><address><street>12744 San Fernando Road</street><city>Sylmar, CA 91342-3728</city><country>US</country></address></addressbook></applicant><applicant format="original" status="new"><addressbook><last-name>MiniMed Inc.</last-name><address><street>12744 San Fernando Road</street><city>Sylmar, California 91342-3728</city><country>US</country></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>VAN ANTWERP WILLIAM P</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>DY NORMAN V</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>VAN ANTWERP, WILLIAM P.</name><address><country/></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>DY, NORMAN V.</name><address><country/></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>The designation of the inventor has not yet been filed</last-name><address><country/></address></addressbook></inventor></inventors><agents><agent format="original" status="new"><addressbook><last-name>Reeve, Anna Elizabeth</last-name><address><street>Lloyd Wise, Commonwealth House, 1-19 New Oxford Street</street><city>London WC1A 1LW</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A medication infusion pump (10; 110) comprises a housing (12;112), a medication chamber (14;114) defined within the housing (12;112), a pumping mechanism for supplying (16;116) the medication from the medication chamber (14;114) to a patient, a reservoir (28;122) defined within the housing (12;112) and adapted to apply a predetermined pressure less than ambient atmospheric pressure to the medication chamber (14;114), and a gas within the reservoir (28;122). The gas has a vapor pressure less than ambient atmospheric pressure at normal human physiological temperature. The gas is selected from the group consisting of cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene, and 2-methyl-2-butene and does not have an adverse effect on ozone. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A medication infusion pump (10; 110) comprises a housing (12;112), a
+medication chamber (14;114) defined within the housing (12;112), a pumping
+mechanism for supplying (16;116) the medication from the medication
+chamber (14;114) to a patient, a reservoir (28;122) defined within the housing
+(12;112) and adapted to apply a predetermined pressure less than ambient
+atmospheric pressure to the medication chamber (14;114), and a gas within
+the reservoir (28;122). The gas has a vapor pressure less than ambient
+atmospheric pressure at normal human physiological temperature. The gas is
+selected from the group consisting of cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene,
+and 2-methyl-2-butene and does not have an adverse effect on
+ozone.
+<img file="00000001.tif" id="img-EP-1510918-A2-00000001" he="85" wi="157" img-format="tif" img-content="ad" orientation="unknown" inline="no"/></p></abstract><description lang="EN" status="new"><heading><u style="single">FIELD OF THE INVENTION</u></heading><p num="0001">The present invention relates to medication infusion pumps, more
+particularly implantable infusion pumps.</p><heading><u style="single">BACKGROUND OF THE INVENTION</u></heading><p num="0002">Medication infusion pumps that supply a medication to a patient, in
+particular implantable infusion pumps, are known. Known infusion pumps
+typically include a housing that contains a medication chamber and a
+propellant chamber, together with appropriate means for loading the selected
+medication into the medication chamber and for supplying the medication to
+the patient. One known type of infusion pump includes a reservoir containing
+a gas at a pressure below atmospheric pressure. Such infusion pumps are
+characterized as "negative pressure" pumps. Negative pressure pumps offer
+the advantage of facilitating fill of the medication chamber by acting to draw in
+the medication from a hypodermic needle or other supply source into the
+medication chamber. Such pumps also have the advantage of inhibiting
+undesirable leakage from the medication chamber.</p><p num="0003">Negative pressure infusion pumps are described, for example, in <ref type="patent">U.S.
+Patent No. 4,191,181</ref> (<ref type="patent">France Pat. Pub. No. 2,370,481</ref>, <ref type="patent">Germany Pat. Pub.
+No. 2652026</ref>, and <ref type="patent">Great Britain Pat. Pub. No. 1,554,083</ref>), to Frenetzki et al.;
+<ref type="patent">U.S. Patent No. 4,373,527</ref> (<ref type="patent">France Pat. Pub. No. 2,537,873</ref>, <ref type="patent">Germany Pat.
+Pub. No. 3247232</ref>, and <ref type="patent">Great Britain Pat. Pub. No. 2,132,090</ref>), to Fischell et
+al.; <ref type="patent">U.S. Patent No. 4,511,355</ref> (<ref type="patent">European Pat Pub. No. 75,762</ref>), to Frenetzki
+et al.; <ref type="patent">U.S. Patent No. 4,573,994</ref> (<ref type="patent">European Pat Pub. No. 95,506</ref>), to Fischell
+et al.; and <ref type="patent">U.S. Patent No. 5,514,103</ref> (<ref type="patent">European Pat Pub. No. 687,475</ref>), to
+Srisathapat et al. Each of these patent publications is hereby incorporated
+herein by reference as if set forth herein. In a typical negative pressure 
+infusion pump, a medication is drawn into the medication chamber under the
+action of a gas maintained in a flexible reservoir at negative pressure. Once
+the medication is drawn into the medication chamber, the medication is
+subsequently delivered to the patient via a separate pumping mechanism.</p><p num="0004">Modern environmental concerns mandate that gases employed in
+"negative pressure" pumps be environmentally benign. It is of particular
+concern to avoid gases that have an adverse effect on ozone.</p><p num="0005">A need exists for a negative pressure infusion pump that employs an
+environmentally acceptable gas in its gas reservoir.</p><heading><u style="single">SUMMARY OF THE PREFERRED EMBODIMENTS</u></heading><p num="0006">A first aspect of the invention provides a medication infusion pump
+comprising
+<sl><li>a) a housing,</li><li>b) a medication chamber defined within the housing,</li><li>c) means for supplying the medication from the medication
+chamber to a patient,</li><li>d) a reservoir defined within the housing and adapted to apply a
+predetermined pressure less than ambient atmospheric pressure to the
+medication chamber, and</li><li>e) a gas within the reservoir, the gas having a vapor pressure less
+than ambient atmospheric pressure at normal human physiological
+temperature, characterised in that the gas is selected from the group
+consisting of cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene, and 2-methyl-2-butene
+and does not have an adverse effect on ozone.</li></sl></p><p num="0007">Preferably, the medication infusion pump is adapted to be passively
+refilled with a medication.</p><p num="0008">Preferably, the gas comprises a non-toxic gas.</p><p num="0009">In a preferred embodiment the gas has a vapor pressure less than 14.7
+psia (101 kPa) at 37°C.</p><p num="0010">Preferably, the gas has a vapor pressure less than 10.7 psia (74 kPa)
+at 37°C.</p><p num="0011">In a preferred embodiment, the gas is selected from the group
+consisting of cyclopentane and dimethylbutane.</p><p num="0012">Preferably, the medication infusion pump comprises a plurality of gases
+within the reservoir, wherein the plurality of gases has a combined vapor
+pressure less than 14.7 psia (101 kPa) at 37°C.</p><p num="0013">Preferably, the medication chamber and the reservoir are separated by
+a barrier which is resistant to gas.</p><p num="0014">A second aspect of the invention provides a medication infusion pump
+for use in a method of supplying a medication to a patient from a medication
+infusion pump, the infusion pump including a housing, a medication chamber
+defined within the housing, a pumping mechanism for supplying the
+medication from the medication chamber to the patient, and a reservoir
+defined within the housing and adapted to apply a predetermined pressure
+less than ambient atmospheric pressure to the medication chamber, the
+method comprising the steps of
+<sl><li>(i) filling the reservoir with a gas having a vapor pressure less than
+ambient atmospheric pressure at normal human physiological
+temperature, the gas being selected from the group consisting of 
+cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene, and 2-methyl-2-butene,
+and wherein the gas does not have an adverse effect on
+ozone,</li><li>ii) drawing the medication into the medication chamber by exertion
+of the predetermined negative pressure on the medication, and</li><li>iii) dispensing the medication from the medication chamber via the
+pumping mechanism.</li></sl></p><p num="0015">Other objects, features and advantages of the present invention will
+become apparent to those skilled in the art from the following detailed
+description. It is to be understood, however, that the detailed description and
+specific examples, while indicating preferred embodiments of the present
+invention, are given by way of illustration and not limitation.</p><heading><u style="single">Brief Description of the Drawings</u></heading><p num="0016">The invention may be more readily understood by referring to the
+accompanying drawings in which
+<sl><li>Fig. 1 is a side sectional view of a negative pressure medication
+infusion pump according to the present invention that employs a flexible
+bladder as the gas reservoir, and</li><li>Fig. 2 is a schematic representation, partially cut-away, of a portion of
+an alternative embodiment of a negative pressure medication infusion pump
+according to the present invention that employs a corrugated gas reservoir.</li></sl></p><heading><u style="single">DETAILED DESCRIPTION OF THE PREFERRED EMBODIMENTS</u></heading><p num="0017">Gases are "non-toxic" for the purposes of this invention if they comply
+with the standard established in ISO 10993. Gases are also "non-toxic" for 
+the purposes of this invention if they are included in the inventory of the
+United States Toxic Substances Control Act.</p><p num="0018">A gas is considered "non-ozone depleting" for the purposes of this
+invention if (i) the gas has an Ozone Depletion Potential (ODP) less than 1.0,
+more preferably less than about 0.10 (with the ODP of CFC-11=1.0) and
+either (ii) the gas is not a Class I or Class II controlled substance as set forth
+in Volume 40 of the United States Code of Federal Regulation Part 82,
+Subpart A (40 C.F.R. Part 82, Subpart A), or (iii) the gas is subject to the
+exemption provided for under 40 C.F.R. Part 82.4(s)(1) (use in a medical
+device). Determination of the ODP of a gas is readily carried out by those
+skilled in the art.</p><p num="0019">Gases useful according to the present invention have a vapor pressure
+less than ambient atmospheric pressure at normal human physiological
+temperature (37°C). More particularly, the gas has a vapor pressure less than
+sea level atmospheric pressure (i.e. 14.7 psia (101 Pa) at 37°C. Preferably,
+the gas has a vapor pressure less than 10.7 psia (74 kPa) at 37°C. Exemplary
+gases include cyclopentane (vapor pressure 9.4 psia (65 kPa) at 37°C) and
+2,2-dimethylbutane (vapor pressure 9.6 psia (66 kPa) at 37°C). Other useful
+gases include 1,3-pentadiene (vapor pressure 12.50 psia (86 kPa) at 37°C),
+2-methyl-2-butene (vapor pressure 14.24 psia (98 kPa) at 37°C), and methyl
+iodide (vapor pressure 11.10 psia (77 kPa) at 37°C). Other branched chain
+fluoroalkanes and fluoroalkenes are also suitable for use according to the
+instant invention.</p><p num="0020">Gases having vapor pressures lower than 10.7 psia (74 kPa) at 37°C
+are particularly desirable in that infusion pumps that employ such gases can
+be effectively used even at relatively high altitudes. For example, the vapor
+pressure of 2,2-dimethylbutane, 9.4 psia (65 kPa) corresponds to an altitude
+of about 12,000 feet (3.7 kilometres) above sea level. The vapor pressure of 
+cyclopentane, 9.6 psia (66 kPa) corresponds to an altitude of about 11,500
+feet (3.5 kilometres). Thus, use of the foregoing preferred gases in
+accordance with the present invention allows the infusion pump to be
+employed in almost all major population centers and most mountain areas, as
+well as in aircraft. When implanted in a human patient, these embodiments of
+the infusion pump allow the patient to travel freely.</p><p num="0021">It is also contemplated that mixture of two or more gases are also
+useful according to the instant invention, provided that the mixture is capable
+of maintaining a pressure less than 14.7 psia (101 kPa), more preferably less
+than 10.7 psia (74 kPa).</p><p num="0022">Desirably, the gas or gas mixture maintains the reservoir at a pressure
+less than 14.7psia (101 kPa), more preferably less than 10.7psia (74kPa), at
+37°C when the medication chamber is filled and also when the medication is
+unfilled. The stability of the vapor pressure may be obtained by ensuring that
+a sufficient quantity of the fill gas material (i.e. liquid phase and gas phase
+material) is placed in the fill gas reservoir. This may be achieved by ensuring
+that some liquid phase portion of the fill gas material remains in the reservoir
+when the medication chamber is empty. It is also preferred that some of the fill
+gas remain in the gaseous state when the medication chamber is full.</p><p num="0023">Turning now to Figure 1, a schematic representation of a first
+embodiment of a medication infusion pump 10 according to the invention
+includes a housing 12 within which a medication chamber 14 is defined. A
+pumping mechanism 16 is provided for supplying a medication from
+medication chamber 14 to a patient. The pumping mechanism 16 includes a
+pump 18, control circuitry 20, battery 22 and catheter 24. Other known means
+for supplying a medication from medication chamber 14 can also be
+employed.</p><p num="0024">A medication is loaded into medication chamber 14, for example, via an 
+inlet or refill fitting 26 adapted to receive a hypodermic needle (not shown).</p><p num="0025">Reservoir 28 is defined within housing 12. In the illustrated
+embodiment, reservoir 28 is a flexible and expansible bag formed from a
+polymeric material and secured within housing 12. Alternatively, reservoir 28
+can be defined by a flexible membrane that extends across the interior of
+housing 12. The selected gas or gas mixture is supplied to reservoir 28 at the
+selected pressure by conventional means known to those skilled in the art.</p><p num="0026">A medication is loaded into medication chamber 14, for example, via an
+inlet or refill fitting 26 adapted to receive a hypodermic needle (not shown).
+Due to the negative pressure maintained in reservoir 28, the medication is
+passively drawn into the medication chamber 14, and is subsequently
+dispensed via pump 18.</p><p num="0027">In Figure 2, an alternative embodiment of a medication infusion pump
+110 according to the invention employs a reservoir defined by a flexible
+corrugated structure. Housing 112 has defined therein medication chamber
+114. Pumping mechanism 116 for supplying the medication from medication
+chamber 114 to a patient includes pump 118, control circuitry and battery (not
+shown), and catheter 120.</p><p num="0028">Reservoir 122 is defined within housing 112 and is separated from
+medication chamber 114 by flexible corrugated structure 124. Structure 124 is
+preferably formed from a corrugated metal, for example titanium. The material
+used to form structure 124 is preferably substantially impermeable to the gas
+mixture, the selected medication, and any gases dissolved in the medication.
+The selected gas or gas mixture is supplied to reservoir 122 by conventional
+means known to those skilled in the art.</p><p num="0029">While particular preferred embodiments of the present invention have
+been described above, it will be understood by those of skill in the art that 
+many modifications and variations of the teachings may be made.</p><p num="0030">In a preferred embodiment preferably a medication infusion pump
+comprises:
+<sl><li>a) a housing,</li><li>b) a medication chamber defined within the housing,</li><li>c) means for supplying the medication from the medication
+chamber to a patient,</li><li>d) a reservoir defined within the housing and adapted to apply a
+predetermined negative pressure to the medication chamber,
+and</li><li>e) a gas within the reservoir, the gas having a vapor pressure less
+than ambient atmospheric pressure at normal human
+physiological temperature.</li></sl></p><p num="0031">Preferably, the medication infusion pump is adapted to be passively
+refilled with a medication, the medication infusion pump comprising a
+reservoir that contains a gas having a vapor pressure less than ambient
+atmospheric pressure at normal human physiological temperature.</p><p num="0032">Preferably, the gas comprises a non-ozone depleting gas.</p><p num="0033">Preferably, the gas comprises a non-toxic gas.</p><p num="0034">Preferably, the gas has a vapor pressure less than 14.7 psia at 37°C.</p><p num="0035">Preferably, the gas has a vapor pressure less than 10.7 psia at 37°C.</p><p num="0036">Preferably, the gas is selected from the group consisting of
+cyclopentane, 2,2-dimethylbutane, 1 ,3-pentadiene and 2-methyl-2-butene. </p><p num="0037">Preferably, the gas is selected from the group consisting of
+cyclopentane and dimethylbutane.</p><p num="0038">Preferably, the medication infusion pump comprises a plurality of gases
+within the reservoir, wherein the plurality of gases has a combined vapor
+pressure less than 14.7 psia at 37°C.</p><p num="0039">Preferably, the medication chamber and the reservoir are separated by
+a barrier which is resistant to the gas.</p><p num="0040">In a preferred embodiment, a method of supplying a medication to a
+patient from a medication infusion pump, the infusion pump including a
+housing, a medication chamber defined within the housing, a pumping
+mechanism for supplying the medication from the medication chamber to the
+patient, and a reservoir defined within the housing and adapted to apply a
+predetermined negative pressure to a medication within the medication
+chamber, comprises the steps of
+<sl><li>(i) filling the reservoir with a gas having a vapor pressure less than
+ambient atmospheric pressure at normal human physiological temperature,</li><li>(ii) drawing the medication into the medication chamber by exertion of
+the predetermined negative pressure on the medication, and</li><li>(iii) dispensing the medication from the medication chamber via the
+pumping mechanism.</li></sl></p><p num="0041">Preferably, the gas comprises a non-ozone depleting gas.</p><p num="0042">Preferably, the gas comprises a non-toxic gas. In a preferred
+embodiment, there is included a non-toxic and non-ozone depleting gas.</p><p num="0043">Preferably, the gas has a vapor pressure less than 14.7 psia at 37°C. </p><p num="0044">Preferably, the gas has a vapor pressure less than 10.7 psia at 37°C.</p><p num="0045">Preferably, the gas is selected from the group consisting of
+cyclopentane, 2,2-dimethylbutane, I ,3-pentadiene and 2-methyl-2-butene.</p><p num="0046">Preferably, the gas is selected from the group consisting of
+cyclopentane and 2,2-dimethylbutane.</p><p num="0047">Preferably, the medication pump is implanted within the body of the
+patient.</p><p num="0048">Preferably, there is provided a medication infusion pump adapted to be
+passively refilled with a medication wherein the medication infusion pump
+includes a reservoir that contains a gas having a vapor pressure less than
+ambient atmospheric pressure at normal human physiological temperature.</p></description><claims lang="EN" status="new"><claim num="xx"><claim-text>A medication infusion pump (10; 110) comprising
+<claim-text><claim-text>a) a housing (12;112),</claim-text><claim-text>b) a medication chamber (14;114) defined within the housing
+(12;112),</claim-text><claim-text>c) means for supplying (16;116) the medication from the
+medication chamber (14;114) to a patient,</claim-text><claim-text>d) a reservoir (28;122) defined within the housing (12;112) and
+adapted to apply a predetermined pressure less than ambient
+atmospheric pressure to the medication chamber (14;114), and</claim-text><claim-text>e) a gas within the reservoir (28;122), the gas having a vapor
+pressure less than ambient atmospheric pressure at normal human
+physiological temperature, characterised in that the gas is selected
+from the group consisting of cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene,
+and 2-methyl-2-butene and does not have an adverse
+effect on ozone.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1, wherein the medication
+infusion pump is adapted to be passively refilled with a medication.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1 wherein the gas comprises a
+non-toxic gas.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1 wherein the gas has a vapor
+pressure less than 14.7 psia (101 kPa) at 37°C.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 4 wherein the gas has a vapor
+pressure less than 10.7 psia (74 kPa) at 37°C.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1 wherein the gas is selected
+from the group consisting of cyclopentane and dimethylbutane.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1 comprising a plurality of gases
+within the reservoir (28;122), wherein the plurality of gases has a
+combined vapor pressure less than 14.7 psia (101 kPa) at 37°C.</claim-text></claim><claim num="xx"><claim-text>The medication infusion pump of claim 1 wherein the medication
+chamber (14;114) and the reservoir (28;122) are separated by a barrier
+(124) which is resistant to gas.</claim-text></claim><claim num="xx"><claim-text>A medication infusion pump for use in a method of supplying a
+medication to a patient from a medication infusion pump, the infusion
+pump including a housing (12;112), a medication chamber (14;114)
+defined within the housing (12;112), a pumping mechanism (16;116)
+for supplying the medication from the medication chamber (14;114) to
+the patient, and a reservoir (28;122) defined within the housing
+(12;112) and adapted to apply a predetermined pressure less than
+ambient atmospheric pressure to the medication chamber (14;114), the
+method comprising the steps of
+<claim-text><claim-text>(i) filling the reservoir with a gas having a vapor pressure less than
+ambient atmospheric pressure at normal human physiological
+temperature, the gas being selected from the group consisting of
+cyclopentane, 2,2-dimethylbutane, 1,3-pentadiene, and 2-methyl-2-butene,
+and wherein the gas does not have an adverse effect on
+ozone,</claim-text><claim-text>ii) drawing the medication into the medication chamber by exertion
+of the predetermined negative pressure on the medication, and</claim-text><claim-text>iii) dispensing the medication from the medication chamber via the
+pumping mechanism.</claim-text></claim-text></claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="AKX" date="20051123"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20051102"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050901</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RIN1" date="20050406"><legal-event-body><event-title>INVENTOR (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>DY, NORMAN V.</event-attribute-value></event-attribute><event-attribute><event-attribute-label>inventor name </event-attribute-label><event-attribute-value>VAN ANTWERP, WILLIAM P.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AC" date="20050302"><legal-event-body><event-title>DIVISIONAL APPLICATION (ART. 76) OF:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>1152785</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050302"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSE</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

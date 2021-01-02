@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="DE" ucid="EP-1130071-B1" country="EP" doc-number="1130071" kind="B1" date="20040428"><bibliographic-data><publication-reference fvid="23211930" ucid="EP-1130071-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130071</doc-number><kind>B1</kind><date>20040428</date><lang>DE</lang></document-id></publication-reference><application-reference ucid="EP-01102759-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01102759</doc-number><kind>A</kind><date>20010208</date><lang>DE</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="DE-10008842-A" status="new"><document-id format="epo" status="new"><country>DE</country><doc-number>10008842</doc-number><kind>A</kind><date>20000225</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">C08F   2/44        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C08F   2/44        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C08F   2/46        20060101A I20060521RMUS        </classification-ipcr><classification-ipcr status="new">C08F   2/46        20060101C I20060521RMUS        </classification-ipcr><classification-ipcr status="new">C08F   2/60        20060101A I20060521RMUS        </classification-ipcr><classification-ipcr status="new">C08F   2/60        20060101C I20060521RMUS        </classification-ipcr><classification-ipcr status="new">C08F 220/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 220/18        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">C08F 265/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C08F 265/06        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C08L  33/00        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C08L  33/08        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C09J 133/04        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">C09J 133/04        20060101CLI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">C08F220/18</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Polymerblends</invention-title><invention-title lang="EN" status="new">Polymerblends</invention-title><invention-title lang="FR" status="new">Mélanges de polymères</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>TESA AG</name><address><country>DE</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>TESA AG</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>ZOELLNER STEPHAN DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>HUSEMANN MARC DR</name><address><country>DE</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>HUSEMANN, MARC, DR.</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>ZOELLNER, STEPHAN, DR.</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>HUSEMANN, MARC, DR.</last-name><address><street>Strehlowweg 48</street><city>22605 Hamburg</city><country>DE</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Zöllner, Stephan, Dr.</last-name><address><street>Osterkamp 11</street><city>22043 Hamburg</city><country>DE</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Tesa AG</last-name><address><street>Quickbornstrasse 24</street><city>20253 Hamburg</city><country>DE</country></address></addressbook></assignee></assignees></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>ES</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="DE" source="EPO" status="new"><p>Verfahren zum Erniedrigen der Fließviskosität einer Polyacrylatmasse, dadurch gekennzeichnet, daß a) einem Polyacrylat, einem Polyacrylatcopolymer, einem Polyacrylatgemisch oder einem Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren Molekulargewicht, welches größer als 500.000 g/mol ist, b) ein Polyacrylat, ein Polyacrylatcopolymer, ein Polyacrylatgemisch oder ein Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren Molekulargewicht von weniger als 500.000 g/mol zugesetzt wird, wobei die Komponente (b) funktionelle Gruppen besitzt, die sich durch UV-Bestrahlung vernetzen lassen.</p></abstract><abstract lang="DE" status="new"><p num="">Verfahren zum Erniedrigen der Fließviskosität einer Polyacrylatmasse, dadurch gekennzeichnet,
+daß
+<sl><li>a) einem Polyacrylat, einem Polyacrylatcopolymer, einem Polyacrylatgemisch oder
+einem Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren
+Molekulargewicht, welches größer als 500.000 g/mol ist,</li><li>b) ein Polyacrylat, ein Polyacrylatcopolymer, ein Polyacrylatgemisch oder ein Gemisch
+von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren Molekulargewicht
+von weniger als 500.000 g/mol zugesetzt wird,</li></sl>
+wobei die Komponente (b) funktionelle Gruppen besitzt, die sich durch UV-Bestrahlung
+vernetzen lassen.</p></abstract><description lang="DE" status="new"><p num="0001">Die Erfindung betrifft ein Verfahren zur Verringerung der Fließviskosität von Polyacrylaten 
+zur leichteren Verarbeitung im Extruder bei gleichzeitiger Verbesserung der klebtechnischen 
+Eigenschaften. </p><p num="0002">Im Bereich der Haftklebemassen besteht ein fortlaufender Bedarf für Neuentwicklungen. 
+Allgemein werden Haftklebemassen für Haftklebebänder eingesetzt, wobei das Klebeband 
+aus einem Träger und einer Haftklebemasse besteht. Der Einsatz von Klebebändem 
+ist sehr vielfältig. Ein Anwendungsfeld ist der medizinische Bereich. In Hautpflastem 
+besteht ein direkter Kontakt zwischen Haftklebemasse und der Haut des Patienten. Für 
+diese Anwendungen werden besonders hohe Anforderungen an die Haftklebemasse 
+gestellt, da Hautreizungen und allergische Reaktion zu vermeiden sind, aber vielfach bei 
+Patienten beobachtet werden. Der direkte Kontakt der Klebemasse zur Haut kann aber 
+auch genutzt werden, z.B. durch die Implementierung von Wirkstoffen in der Haftklebemasse. 
+Der Wirkstoff wird dann langsam über die Haut in den Patienten übertragen. </p><p num="0003">Ein weiterer großer Bereich sind die Anwendungen im industriellen Sektor. Beispielsweise 
+werden doppelseitige Klebebänder zur Verklebung von Zierleisten in Automobilen, 
+zur Verklebung von Elektronik-Chips oder zur Display-Verklebung in Handys genutzt. Für 
+hochwertige industrielle Anwendungen werden Polyacrylathaftklebemassen bevorzugt, 
+da diese transparent und witterungsstabil sind. Neben diesen Vorteilen müssen diese 
+aber auch hohen Anforderungen im Bereich Scherfestigkeit gerecht werden. Dies wird 
+durch Polyacrylate mit hohem Molekulargewicht und anschließender effizienter Vernetzung 
+erreicht. </p><p num="0004">Neben der fortlaufenden Optimierung der Haftklebemassen werden aber auch die Auftragsverfahren 
+für die Beschichtung der Träger optimiert. Durch den entstehenden  
+ 
+Kostendruck verdrängen die Heißschmelzbeschichtungen (Hotmeltbeschichtungen) 
+zunehmend die traditionellen Lösungsmittelbeschichtungsverfahren. </p><p num="0005">Bereits in den 70er Jahren wurden die ersten Acrylat-Schmelzhaftkleber in Patenten 
+beschrieben. In den Schriften <ref type="patent">NL 66 06 711</ref> und <ref type="patent">NL 70 09 629</ref> wird zum ersten Mal der 
+Einsatz von Polyacrylaten bzw. Poylacrylaten und Polymethacrylaten als Haftschmelzkleber 
+in Haftklebebändem beschrieben. Verarbeitet wurden zumeist relativ unpolare 
+Polyacrylate mit geringem Acrylsäureanteil und niedriger Fließviskosität. Durch eine effiziente 
+Vernetzung auf dem Träger wurde versucht, die Problematik der Herstellung von 
+hochscherfesten Klebemassen aus Acrylat-Hotmelts zu lösen. In der <ref type="patent">DE 27 43 979 A1</ref> 
+wurden z.B. Benzoinacrylate als Comonomer in den Acrylathotmelt einpolymerisiert und 
+nach der Beschichtung mit UV-Strahlung direkt auf dem Träger vernetzt. Ein ähnlicher 
+Weg zur Herstellung und Verarbeitung von Acrylathotmelts wurde in der <ref type="patent">US 5,073,611</ref> 
+dargestellt. Hier wurden Benzophenon und Acetophenon als acrylierte Photoinitiatoren in 
+die Acrylatpolymerkette eingebaut. Anschließend wurde mit UV-Strahlung vernetzt. </p><p num="0006">Eine weitere Methode zur effizienten Vernetzung der Acrylathaftkleber ist die Copolymerisation 
+von Acrylaten mit elektronendrückenden Gruppen. Diese stabilisieren während 
+der Vernetzung entstehende Radikale und erzielen somit nach der entsprechenden 
+Bestrahlung mit UV-Licht oder Elektronenstrahlen hohe Vernetzungsgrade. Beispiele 
+hierfür sind Tetrahydrofurylacrylate [<ref type="patent">EP 0 343 467 B1</ref>], tertiäre Amine enthaltende 
+Monomere [<ref type="patent">WO 96/35725</ref>] und tertiäres N-Butylacrylamid als Monomer [<ref type="patent">US 5,194,455</ref>]. </p><p num="0007">Zur Verringerung der Fließviskosität und Verbesserung der Verarbeitbarkeit von Haftschmelzklebem 
+dient ebenfalls das Polymerblending mit Blockcopolymeren. Hier werden 
+bevorzugt SIS- und SBS-Systeme (SIS: Styrol-lsopren-Styrol-Copolymere; SBS: Styrol-Butadien-Styrol-Copolymere) 
+eingesetzt. In der <ref type="patent">WO 95/19393</ref> wurde z. B. die Blendung 
+solcher Blockcopolymere mit Polyacrylaten beschrieben, einhergehend mit einer Erhöhung 
+der Klebrigkeit dieser Haftkleber. </p><p num="0008">Hingegen ist bisher noch nicht gelungen, hochmolekulare und hochpolare Acrylathotmelts 
+im Extruder ohne Molekulargewichtsabbau zu verarbeiten, um nach der Extrusionsbeschichtung 
+eine hochscherfeste Masse zu erhalten.  </p><p num="0009">Die hohe Kohäsion von Polyacrylaten, die für Klebemassen verwendet werden, kann 
+durch den hohen Anteil polarer Komponenten erklärt werden. Das durchschnittliche 
+Molekulargewicht der Klebemassen liegt bei 1.000.000 g/mol. Durch die hohe Anzahl 
+polarer Anteile ergibt sich eine hohe Fließviskosität, die die Verarbeitung im Extruder und 
+die anschließende Beschichtung eines Trägers mit diesem Polymer erschwert. Bei hohen 
+Temperaturen nimmt die Fließviskosität zwar wieder ab, bei zu hohen Temperaturen 
+kommt es jedoch zu Schädigungen des Polymers. Dieser Prozeß führt zu einer unerwünschten 
+Verschlechterung der Klebeeigenschaften des Produktes. </p><p num="0010">Aufgabe der Erfindung ist es, ein Verfahren zur Verfügung zu stellen, wonach die Fließviskosität 
+von Haftschmelzklebem bei gleichzeitiger Verbesserung des Klebeeigenschaftenprofils 
+verringert werden kann. Die Verarbeitbarkeit der Haftschmelzkleber, insbesondere 
+für den Hotmelt-Prozeß und im Extruder, soll dadurch optimiert werden. Weiterhin 
+soll es möglich sein, die Polymermischung nach der Verarbeitung zu vernetzen. </p><p num="0011">Gelöst wird die Aufgabe durch ein Verfahren, wie es im Hauptanspruch dargestellt ist. 
+Die Unteransprüche betreffen vorteilhafte Ausführungsformen dieses Verfahrens sowie 
+die Anwendung der mit diesem Verfahren verarbeiteten Polyacrylate. </p><p num="0012">Demgemäß betrifft die Erfindung ein Verfahren zum Erniedrigen der Fließviskosität einer 
+Polyacrylatmasse, in welchem 
+<sl><li>a) einem Polyacrylat, einem Polyacrylatcopolymer, einem Polyacrylatgemisch oder 
+einem Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren 
+Molekulargewicht M<sub>w</sub> welches größer als 500.000 g/mol ist, </li><li>b) ein Polyacrylat, ein Polyacrylatcopolymer, ein Polyacrylatgemisch oder ein Gemisch 
+von Polyacrylaten und Polyacrylatcopolymeren mit einem mittleren Molekulargewicht M<sub>w</sub> 
+von weniger als 500.000 g/mol zugesetzt wird, </li></sl> 
+wobei die Komponente (b) 
+einpolymerisierte Photoinitiatoren besitzt. </p><p num="0013">Besonders vorteilhaft sind für dieses Verfahren eine Komponente (a) mit einem mittleren 
+Molekulargewicht zwischen 500.000 und 4.000.000 g/mol und/oder eine Komponente (b) 
+mit einem mittleren Molekulargewicht zwischen 200.000 und 400.000 g/mol.  </p><p num="0014">Eine Weiterentwicklung liegt darin, daß in Anschluß an dieses Verfahren zunächst durch 
+ultraviolette Bestrahlung die Komponente (b) vorvemetzt wird und in einem folgenden 
+Schritt eine Vernetzung der bereits vorvemetzten Komponente (b) mit der Komponente 
+(a) erzielt wird. </p><p num="0015">Vorteilhaft ist es, wenn die Vernetzung der Komponente (b) mit der Komponente (a) 
+durch Elektronenstrahlen hervorgerufen wird. </p><p num="0016">Es bietet sich an, daß als Komponente (a) Polyacrylatcopolymere aus den folgenden 
+Monomeren 
+<sl><li>a1) Acrylsäureester und/oder Methacrylsäureester der folgenden Formel 
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">CH<sub>2</sub> = CH(R<sub>1</sub>)(COOR<sub>2</sub>),</st32:che> 
+wobei R<sub>1</sub> = H oder CH<sub>3</sub> und R<sub>2</sub> eine Alkylkette mit 1 - 20 C-Atomen ist, 
+zu 75 - 100 Gew.-%, insbesondere 86 - 90 Gew.-%, bezogen auf die Komponente 
+(a), </li><li>a2) Acrylsäure und/oder Methacrylsäure der folgenden Formel 
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">CH<sub>2</sub> = CH(R<sub>1</sub>)(COOH),</st32:che> 
+wobei R<sub>1</sub> = H oder CH<sub>3</sub>,
+ 
+zu 0 10 Gew.-%, insbesondere 4 - 6 Gew.-%, bezogen auf die Komponente (a), </li><li>a3) olefinisch ungesättigte Monomere mit funktionellen Gruppen,
+ 
+   zu 0 15 Gew.-%, insbesondere 6 - 8 Gew.-%, bezogen auf die Komponente (a), 
+zu 60 - 99 Gew.-%, bezogen auf die Gesamt-Polymermischung, eingesetzt werden. </li></sl></p><p num="0017">Sehr gut verläuft das Verfahren, wenn als Komponente (b) zumindest ein Acrylatcopolymer 
+mit einpolymerisiertem Photoinitiator zu 1 - 40 Gew.-%, bezogen auf die Gesamt-Polymermischung, 
+eingesetzt wird. </p><p num="0018">In hervorragender Weise werden als Komponente (b) Copolymere der folgenden 
+Zusammensetzung eingesetzt: 
+<sl><li>b1) Acrylsäureester und/oder Methacrylsäureester der folgenden Formel 
+<st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">CH<sub>2</sub> = CH(R<sub>1</sub>)(COOR<sub>2</sub>),</st32:che> 
+wobei R<sub>1</sub> = H oder CH<sub>3</sub> und R<sub>2</sub> eine Alkylkette mit 1 - 20 C-Atomen ist, 
+zu 70 - 99,99 Gew.-%, insbesondere zu 73 - 99,9 Gew.-%, bezogen auf die 
+Komponente (b), </li><li>b2) Acrylsäure und/oder Methacrylsäure der folgenden Formel  <st32:che xmlns:st32="http://www.matrixware.com/ns/st32/">CH<sub>2</sub> = CH(R<sub>1</sub>)(COOH),</st32:che> 
+wobei R<sub>1</sub> = H oder CH<sub>3</sub>,
+ 
+zu 0 - 10 Gew.-%, bezogen auf die Komponente (b), </li><li>b3) olefinisch ungesättigte Monomere mit funktionellen Gruppen
+ 
+zu 0 15 Gew.-%, bezogen auf die Komponente (b), </li><li>b4) durch olefinische Doppelbindungen funktionalisierter Photoinitiator
+ 
+zu 0,01 - 5 Gew.-%, insbesondere zu 0,1 - 2 Gew.-%, bezogen auf die Komponente 
+(b), </li></sl> 
+zu 1 - 40 Gew.-%, bezogen auf die Gesamt-Polymermischung. </p><p num="0019">Weiterhin wird eine besonders vorteilhafte Variante des Verfahrens durch eine Vorgehensweise 
+wiedergegeben, bei der die Polymerisation der Monomeren zum Gemisch 
+der Polyacrylate in Gegenwart der Komponente (b) stattfindet. </p><p num="0020">Das nach einem dieser Verfahren hergestellte Polyacrylat kann hervorragend als Haftklebemasse 
+verwendet werden. Als Trägermaterial, beispielsweise für Klebebänder, lassen 
+sich hierbei die dem Fachmann geläufigen und üblichen Materialien, wie Folien 
+(Polyester, PET, PE, PP, BOPP, PVC), Vliese, Gewebe und Gewebefolien sowie gegebenenfalls 
+Trennpapier verwenden. Diese Aufzählung soll nicht abschließend sein. </p><p num="0021">Die dargestellte Erfindung ist sehr gut geeignet, die beschriebenen Aufgaben zu lösen. 
+Es wird eine Polymermischung vorgestellt, deren Fließviskosität, verglichen mit derjenigen 
+der zugrunde liegenden Haftklebemasse, deutlich herabgesetzt, deren Klebeeigenschaften 
+jedoch gleichzeitig verbessert wurden, indem zwei Polyacrylat-Komponenten 
+unterschiedlichen mittleren Molekulargewichtes miteinander vermischt werden. </p><p num="0022">Das höhermolekulare Polyacrylat kann z.B. jedes Polymer sein, welches Klebeigenschaften 
+entsprechend dem <ref type="npl">Handbook of Pressure-sensitive Adhesives, p. 172, §1, 1989</ref> 
+aufweist. Mit einem mittleren Molekulargewicht von 1.000.000 g/mol weisen diese Klebemassen 
+eine hohe Viskosität auf. Für das beschriebene Verfahren eignen sich Polyacrylate 
+mit einem mittleren Molekulargewicht zwischen 500.000 und 2.000.000 g/mol 
+besonders gut.  </p><p num="0023">Verringert werden kann die Viskosität durch die Zugabe einer niederviskosen Komponente, 
+die im Verarbeitungsschritt als Gleitmittel dient, aber anschließend auf dem Träger , 
+vemetzt werden kann. Dazu lassen sich gut Acrylatcopolymere verwenden, in die ein 
+Photoinitiator einpolymerisiert ist und die daher durch Bestrahlung mit ultraviolettem Licht 
+für eine Vemetzungsreaktion aktiviert werden können. Als Photoinitiatoren können hierbei 
+dem Fachmann die hierfür einschlägig bekannten Verbindungen verwendet werden, folgende 
+Photoinitiatoren seien hier beispielhaft dargestellt, ohne sich damit beschränken 
+zu wollen: 
+<sl><li>Benzophenone, Acrylierte öder methacrylierte Benzophenone, Benzophenon-Derivate, 
+Thioxanthone, Benzilketale, α-Hydroxyalkylphenone, α-Aminoalkylphenone, Titanocene, 
+Campherchinone, Trichloromethyltriazine und Thioxanthene. </li></sl></p><p num="0024">Als entsprechend UV-aktivierbare Polymere lassen sich mit einer hohen Effizienz einige 
+kommerziell erhältliche Produkte verwenden, die als Polymerblendingkomponenten technisch 
+eingesetzt werden. Beispiele hierfür geben die acResins A 203 UV ® und A 258 UV 
+® [BASF AG]. Diese Polyacrylate haben ein Molekulargewicht von rund 300.000 g/mol 
+und sind durch einen Photoinitiator UV-vernetzbar. Durch geringe polare Anteile und ein 
+relativ niedriges Molekulargewicht besitzen diese Produkte eine relativ geringe Fließviskosität. </p><p num="0025">Im folgenden soll die Erfindung durch einige Beispiele näher erläutert werden, ohne damit 
+die Erfindung unnötig einschränken zu wollen. </p><heading><u style="single">Testmethoden</u></heading><p num="0026">Folgende Testmethoden wurden angewendet, um die klebtechnischen Eigenschaften der 
+hergestellten Haftklebemassen zu evaluieren. </p><heading><u style="single">180° Klebkrafttest (Test A)</u></heading><p num="0027">Ein 20 mm breiter Streifen einer auf Polyester als Schicht aufgetragenen Acrylat-Haftklebemasse 
+wurde auf zweimal mit Aceton und einmal mit Isopropanol gereinigten Stahlplatten 
+aufgebracht. Der Haftklebestreifen wurde zweimal mit einem 2-kg-Gewicht auf 
+das Substrat aufgedrückt. Das Klebeband wurde anschließend sofort mit 300 mm/min  
+ 
+und im 180°-Winkel vom Substrat abgezogen und die hierzu benötigte Kraft gemessen. 
+Alle Messungen wurden bei Raumtemperatur durchgeführt.
+ 
+Die Meßergebnisse sind in N/cm angegeben und sind gemittelt aus drei Messungen. </p><heading><u style="single">Scherfestigkeit (Test B)</u></heading><p num="0028">Ein 13 mm breiter Streifen des Klebebandes wurde auf eine glatte Stahloberfläche, die 
+dreimal mit Aceton und einmal mit Isopropanol gereinigt wurde, aufgebracht. Die Auftragsfläche 
+betrug 20*13 mm<sup>2</sup> (Länge*Breite). Anschließend wurde mit konstantem 
+Anpreßdruck das Klebeband viermal auf den Stahlträger gedrückt. Bei 70 °C wurde ein 
+0,5-kg-Gewicht an dem Klebeband befestigt, bei Raumtemperatur ebenfalls ein 
+1-kg-Gewicht.
+ 
+Die gemessenen Scherstandzeiten sind in Minuten angegeben und entsprechen dem 
+Mittelwert aus drei Messungen. </p><heading><u style="single">Dynamisch-Mechanische Analyse, DMA (Test C)</u></heading><p num="0029">Die Messungen wurden mit dem Gerät Dynamic Stress Rheometer von Rheometrics 
+durchgeführt. Bei 130 °C wurde der mechanische Verlustfaktor tan δ in Abhängigkeit der 
+Frequenz in einem Intervall von 0,1 bis 100 rad/s verfolgt. Es wurde mit paralleler Plattenanordnung 
+gemessen. </p><heading><u style="single">Herstellung der Proben</u></heading><heading><u style="single">Beispiel 1 (V1)</u></heading><p num="0030">Ein für radikalische Polymerisationen konventioneller 2 L-Glasreaktor wurde mit 20 g 
+Acrylsäure, 40 g Methylacrylat, 340 g 2-Ethylhexylacrylat, 133 g Benzin und 133 g Aceton 
+befüllt. Nachdem für 45 Minuten Stickstoffgas unter Rühren durch die Reaktionslösung 
+geleitet worden war, wurde der Reaktor auf 58 °C geheizt und 0,4 g 2,2'-Azobis(2-methylbutyronitril) 
+hinzugegeben. Anschließend wurde das äußere Heizbad auf 75 °C 
+erwärmt und die Reaktion konstant bei dieser Außentemperatur durchgeführt. Nach 4 
+und 6 h wurde mit jeweils 150 g Aceton/Benzin Gemisch verdünnt. Nach 36 h Reaktionszeit 
+wurde die Polymerisation abgebrochen und auf Raumtemperatur abgekühlt. 
+Anschließend wurde das Polymer auf PET-Folie mit 50 g/m<sup>2</sup> aufgetragen, mit Elektronenstrahlen 
+gehärtet und anschließend klebetechnisch mit Test A, B und C ausgetestet.  </p><heading><u style="single">Beispiel 2 (V2)</u></heading><p num="0031">Es wurde analog Beispiel 1 vorgegangen. Zur Polymerisation wurden 20 g Acrylsäure, 
+40 g Methylacrylat, 40 g N-tert.-Butylacrylsäureamid und 296 g 2-Ethylhexylacrylat eingesetzt. 
+Die Lösungsmittelmengen wurden beibehalten. </p><heading><u style="single">Beispiel 3 (V3)</u></heading><p num="0032">Es wurde analog Beispiel 1 vorgegangen. Zur Polymerisation wurden 20 g Acrylsäure, 
+4 g Maleinsäureanhydrid, 188 g n-Butylacrylat und 188 g 2-Ethylhexylacrylat eingesetzt. 
+Die Lösungsmittelmengen wurden beibehalten. </p><heading><u style="single">Beispiel 4 (V4)</u></heading><p num="0033">Es wurde analog Beispiel 1 vorgegangen. Zur Polymerisation wurden 40 g Methylacrylat, 
+28 g Hydroxyethylacrylat, 20 g N-tert.-Butylacrylsäureamid und 312 g 2-Ethylhexylacrylat 
+eingesetzt. Die Lösungsmittelmengen wurden beibehalten. </p><heading><u style="single">Beispiel 5 (B1)</u></heading><p num="0034">Ein für radikalische Polymerisationen konventioneller 2 L-Glasreaktor wurde mit 1.000 g 
+Polymermasse V1 (50 % in Aceton/Benzin), mit 88,2 g acResin A 203 UV ® [BASF AG] 
+und mit 592,4 g Toluol befüllt. Anschließend wurde auf 100 °C erhitzt und 1 h bei dieser 
+Temperatur gerührt. Das Polymer-Polymer-Blend wurde auf PET Folie mit 50 g/m<sup>2</sup> aufgetragen, 
+mit UV-Licht und Elektronenstrahlen gehärtet und letztendlich nach Test A, B 
+und C klebetechnisch ausgetestet. </p><heading><u style="single">Beispiel 6 (B2)</u></heading><p num="0035">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V2 (50 % in Aceton/Benzin), 160,7 g acResin A 203 UV ® [BASF AG] und 628,5 g Toluol 
+eingesetzt. </p><heading><u style="single">Beispiel 7 (B3)</u></heading><p num="0036">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V3 (50 % in Aceton/Benzin), 41,6 g acResin A 203 UV ® [BASF AG] und 398,9 g Toluol 
+eingesetzt.  </p><heading><u style="single">Beispiel 8 (B4)</u></heading><p num="0037">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V2 (50 % in Aceton/Benzin), 67,9 g acResin A 203 UV ® [BASF AG] und 447,6 g Toluol 
+eingesetzt. </p><heading><u style="single">Beispiel 9 (B5)</u></heading><p num="0038">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V4 (50 % in Aceton/Benzin), 19,7 g acResin A 258 UV ® [BASF AG] und 358,0 g Toluol 
+eingesetzt. </p><heading><u style="single">Beispiel 10 (B6)</u></heading><p num="0039">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V1 (50 % in Aceton/Benzin), 80,4 g C1 und 550,0 g Toluol eingesetzt. </p><heading><u style="single">Beispiel 11 (B7)</u></heading><p num="0040">Es wurde analog Beispiel 5 vorgegangen. Zum Polymer-Polymer-Blending wurden 750 g 
+V2 (50 % in Aceton/Benzin), 160,7 g C2 und 628,5 g Toluol eingesetzt. </p><heading><u style="single">Beispiel 12 (B8)</u></heading><p num="0041">Ein für radikalische Polymerisationen konventioneller 2 L-Glasreaktor wurde mit 40 g 
+Methylacrylat, 312 g 2-Ethylhexylacrylat, 28 g Hydroxyethylacrylat, 20 g N-tert.-Butylacrylsäureamid, 
+21,1 g acResin A 203 UV ® [BASF AG], 122,4 g Benzin und 122,4 g 
+Aceton befüllt. Nach 45 Minuten Durchleiten mit Stickstoffgas unter Rühren wurde der 
+Reaktor auf 58 °C hochgeheizt und 0,4 g 2,2'-Azobis(2-methylbutyronitril) hinzugegeben. 
+Anschließend wurde das äußere Heizbad auf 75 °C erwärmt und die Reaktion konstant 
+bei dieser Außentemperatur durchgeführt. Nach 4 und 6 h wurde mit jeweils 150 g Aceton/Benzin 
+Gemisch verdünnt. Nach 36 h Reaktionszeit wurde die Polymerisation 
+abgebrochen und auf Raumtemperatur abgekühlt. Anschließend wurde das Polymer-Polymer 
+auf PET-Folie mit 50 g/m<sup>2</sup> aufgetragen, mit UV und ESH gehärtet und letztendlich 
+klebetechnisch mit Test A und B ausgetestet. </p><heading><u style="single">Beispiel 13 (B9)</u></heading><p num="0042">Es wurde analog Beispiel 12 vorgegangen. Zum Polymer-Polymer-Blending wurden 20 g 
+Acrylsäure, 5 g Maleinsäureanhydrid, 188 g n-Butylacrylat, 188 g 2-Ethylhexylacrylat, 
+44,4 g acResin A 203 UV ® [BASF AG], 111,1 g Benzin und 111,1 g Aceton eingesetzt.  </p><heading><u style="single">Beispiel 14 (B10)</u></heading><p num="0043">Es wurde analog Beispiel 12 vorgegangen. Zum Polymer-Polymer-Blending wurden 20 g 
+Acrylsäure, 40 g Methylacrylat, 340 g 2-Ethylhexylacrylat, 70,6 g acResin A 203 UV ® 
+[BASF AG], 97,7 g Benzin und 97,7 g Aceton eingesetzt. </p><heading><u style="single">Beispiel 15 (C1)</u></heading><p num="0044">Ein für radikalische Polymerisationen konventioneller 2 L-Glasreaktor wurde mit 18 g 
+Acrylsäure, 40 g n-tert.-Butylacrylamid, 340 g 2-Ethylhexylacrylat und 2 g acryliertem 
+Benzophenon Ebecryl P36 ® [UCB], 16 g Isopropanol, 133 g Benzin und 133 g Aceton 
+befüllt. Nachdem für 45 Minuten Stickstoffgas unter Rühren durch die Reaktionslösung 
+geleitet worden war, wurde der Reaktor auf 58 °C geheizt und 0,4 g 2,2'-Azobis(2-methylbutyronitril) 
+hinzugegeben. Anschließend wurde das äußere Heizbad auf 75 °C 
+erwärmt und die Reaktion konstant bei dieser Außentemperatur durchgeführt. Nach 4 
+und 6 h wurde mit jeweils 150 g Aceton/Benzin Gemisch und 9 g Isopropanol verdünnt. 
+Nach 24 h Reaktionszeit wurde die Polymerisation abgebrochen und auf Raumtemperatur 
+abgekühlt.
+ 
+Die GPC-Messung (Gelchromatographie) ergab ein mittleres Molekulargewicht von 
+280.000 g/mol. </p><heading><u style="single">Beispiel 16 (C2)</u></heading><p num="0045">Ein für radikalische Polymerisationen konventioneller 2 L-Glasreaktor wurde mit 14 g 
+Acrylsäure, 160 g n-Butylacrylat, 160 g 2-Ethylhexylacrylat, 64 g Methylacrylat und 2 g 
+Benzoinacrylat, 16 g Isopropanol, 133 g Benzin und 133 g Aceton befüllt. Nachdem für 
+45 Minuten Stickstoffgas unter Rühren durch die Reaktionslösung geleitet worden war, 
+wurde der Reaktor auf 58 °C geheizt und 0,4 g 2,2'-Azobis(2-methylbutyronitril) hinzugegeben. 
+Anschließend wurde das äußere Heizbad auf 75 °C erwärmt und die Reaktion 
+konstant bei dieser Außentemperatur durchgeführt. Nach 4 und 6 h wurde mit jeweils 150 
+g Aceton/Benzin Gemisch und 9 g Isopropanol verdünnt. Nach 22 h Reaktionszeit wurde 
+die Polymerisation abgebrochen und auf Raumtemperatur abgekühlt.
+ 
+Die GPC-Messung ergab ein mittleres Molekulargewicht von 250.000 g/mol.  </p><heading><u style="single">Resultate</u></heading><p num="0046">Der erste Bestandteil dieser Erfindung umfaßt die Fließviskositätserniedrigung durch 
+Mischen (&quot;Blenden&quot;) mit einem niederviskosen Polyacrylat (acResin A 203 UV ® oder A 
+258 UV ® [BASF AG]), das durch UV-Vernetzung gehärtet werden kann. Zunächst wurden 
+verschiedene Haftklebemassen auf Polyacrylat-Basis hergestellt Die Comonomerzusammensetzung 
+dieser Polyacrylate war sehr verschieden. Ein typisches Polymer enthielt 
+70 - 94 % unpolare Monomere, wie 2-Ethylhexylacrylat (2-EHA), n-Butylacrylat (n-BuA) 
+und/oder längerkettige Alkylacrylate, 5 - 25 % polare Anteile, wie Methylacrylat 
+(MA), Acrylsäure (AS) oder Hydroxyethylacrylat (HEA) und 0 - 10 % N-tert.-Butylacrylsäureamid 
+(NTBAM). Folgende Monomerzusammensetzungen wurden in Lösung konventionell 
+radikalisch mit 2,2'-Azobis(2-methylbutyronitril) polymerisiert und als Referenz 
+für die Polymere klebtechnisch ausgeprüft (Tabelle 1): 
+<tables><table><tgroup cols="8"><tbody><row><entry align="left">Beispiel </entry><entry align="left">AS [%] </entry><entry align="left">MA [%] </entry><entry align="left">HEA [%] </entry><entry align="left">NTBAM [%] </entry><entry align="left">EHA [%] </entry><entry align="left">BuA [%] </entry><entry align="left">MSA [%] </entry></row><row><entry align="left">V1</entry><entry align="left">5</entry><entry align="left">10</entry><entry align="left">0</entry><entry align="left">0</entry><entry align="left">85</entry><entry align="left">0</entry><entry align="left">0 </entry></row><row><entry align="left">V2</entry><entry align="left">5</entry><entry align="left">10</entry><entry align="left">0</entry><entry align="left">10</entry><entry align="left">74</entry><entry align="left">0</entry><entry align="left">1 </entry></row><row><entry align="left">V3</entry><entry align="left">5</entry><entry align="left">0</entry><entry align="left">0</entry><entry align="left">0</entry><entry align="left">47</entry><entry align="left">47</entry><entry align="left">1 </entry></row><row><entry align="left">V4</entry><entry align="left">0</entry><entry align="left">10</entry><entry align="left">7</entry><entry align="left">5</entry><entry align="left">78</entry><entry align="left">0</entry><entry align="left">0 </entry></row></tbody></tgroup></table></tables></p><p num="0047">Zur klebtechnischen Ausprüfung wurden alle Klebemassen mit 50 g/m<sup>2</sup> auf Polyesterfolie 
+beschichtet und anschließend mit Elektronenstrahlen vernetzt. 
+<tables><table><tgroup cols="5"><tbody><row><entry align="center">Beispiel </entry><entry align="center">SSZ 10 N [min] (Test B) </entry><entry align="center">SSZ 5 N 70 °C [min] (Test B) </entry><entry align="center">KK-Stahl [N/cm] (Test A) </entry><entry align="center">KK-PE[N/cm] (Test A) </entry></row><row><entry align="center">V1</entry><entry align="center">10000</entry><entry align="center">8339</entry><entry align="center">4.5</entry><entry align="center">1.2 </entry></row><row><entry align="center">V2</entry><entry align="center">10000</entry><entry align="center">10000</entry><entry align="center">4.6</entry><entry align="center">1.1 </entry></row><row><entry align="center">V3</entry><entry align="center">10000</entry><entry align="center">1254</entry><entry align="center">5.2</entry><entry align="center">1.4 </entry></row><row><entry align="center">V4</entry><entry align="center">7849</entry><entry align="center">2418</entry><entry align="center">4.7</entry><entry align="center">1.2 </entry></row></tbody></tgroup></table></tables> 
+ 
+SSZ: Scherstandzeiten
+ 
+KK: Klebkraft </p><p num="0048">Die in Tabelle 2 aufgelisteten Beispiele V1 - V4 zeigen, daß alle gewählten Ausgangsmassen 
+scherfest sind. Das mittlere Molekulargewicht der Klebemassen V1 - V4 liegt bei 
+jeweils 1.000.000 g/mol. </p><p num="0049">Im folgenden wurden einige Polymere der Ausgangsverbindungen V1 - V4 mit unterschiedlichen 
+Anteilen acResin A 203 UV ® und A 258 UV ® [BASF AG] gemischt und 
+anschließend die Fließviskosität durch DMA-Messung gemessen. Für die ersten orientierenden 
+Untersuchungen wurden Polymerblends bei 100 °C in Toluol unter Rühren in 
+einem 2-L Glasreaktor hergestellt. In Tabelle 3 sind die Abmischungen aufgelistet: 
+<tables><table><tgroup cols="4"><tbody><row><entry align="center">Blends </entry><entry align="center">V [%] </entry><entry align="center">acResin A 203 UV ® [%] </entry><entry align="center">acResin A 258 UV ® [%] </entry></row><row><entry align="center">B1</entry><entry align="center">V1 85 %</entry><entry align="center">15 % </entry></row><row><entry align="center">B2</entry><entry align="center">V2 70 %</entry><entry align="center">30 % </entry></row><row><entry align="center">B3</entry><entry align="center">V3 90 %</entry><entry align="center">10 % </entry></row><row><entry align="center">B4</entry><entry align="center">V2 85 %</entry><entry align="center">15 % </entry></row><row><entry align="center">85</entry><entry align="center">V4 95 %</entry><entry align="right" /><entry align="center">5 % </entry></row></tbody></tgroup></table></tables></p><p num="0050">Anschließend wurde die Fließviskosität der Polymerblends B1 - B5 durch DMA-Messung 
+gemessen und mit den ursprünglichen Polymeren V1 - V4 verglichen. Die Fließviskosität 
+wurde durch DMA-Messung in einem Frequenzintervall von 0,1 bis 100 rad/s vermessen. 
+Dabei wurde eine Meßtemperatur von 130 °C gewählt, da im Hotmelt-Verfahren hohe 
+Temperaturen zur Beschichtung der Träger angewendet werden. Die Ergebnisse sind in 
+den Figuren 1 - 5 gezeigt. 
+<tables><table><tgroup cols="2"><tbody><row><entry align="left">Figur 1</entry><entry align="left">Fließviskosität des Biendes B1 und des Polyacrylates V1 bei 130 °C in einem Frequenzintervall zwischen 0,1 und 100 rad/s </entry></row><row><entry align="left">Figur 2</entry><entry align="left">Fließviskosität des Blendes B5 und des Polyacrylates V4 bei 130 °C in einem Frequenzintervall zwischen 0,1 und 100 rad/s  </entry></row><row><entry align="left">Figur 3</entry><entry align="left">Fließviskosität des Blendes B4 und des Polyacrylates V2 bei 130 °C in einem Frequenzintervall zwischen 0,1 und 100 rad/s </entry></row><row><entry align="left">Figur 4</entry><entry align="left">Fließviskosität des Blendes B2 und des Polyacrylates V2 bei 130 °C in einem Frequenzintervall zwischen 0,1 und 100 rad/s </entry></row><row><entry align="left">Figur 5</entry><entry align="left">Fließviskosität des Blendes B3 und des Polyacrylates V3 bei 130 °C in einem Frequenzintervall zwischen 0,1 und 100 rad/s </entry></row></tbody></tgroup></table></tables></p><p num="0051">Der Vergleich der Fließviskositäten (Abbildung 1 - 5) zeigt, daß durch das Polymerblending 
+mit acResins A 203 UV ® und A 258 UV ® [BASF AG] die Fließviskosität herabgesetzt 
+wird. Der Effekt ist für den 5%igen Zusatz gering, wird aber immer größer mit 
+Zunahme des niedermolekularen Anteils. Bei 30 % Zusatz (s. Blend 2) verringert sich die 
+Fließviskosität bei 1 rad/s nahezu um den Faktor 10. Blend 2 besitzt ebenfalls in Lösung 
+eine extrem geringe Fließviskosität. Im Aufkonzentrationsschritt und in der anschließenden 
+Beschichtung werden die Vorteile deutlich: B2 benötigt zur Aufkonzentration im 
+Extruder eine bedeutend niedrigere Heiztemperatur im Vergleich zu V2. Um den gleichen 
+Durchsatz zu erreichen, wird eine um 20 °C geringere Aufkonzentrationstemperatur 
+benötigt. Weiterhin läßt sich bei der gleichen Temperatur für den Blend B2 ein um 20 % 
+höherer Durchsatz erzielen. Der Blend wird also thermisch nicht so stark belastet und die 
+Schädigung des Polymers kann verringert werden. </p><p num="0052">Neben der Verringerung der Fließviskosität sind auch die klebtechnischen Eigenschaften 
+von Interesse. Üblicherweise verschlechtern sich diese durch die Zugabe von Weichmachem. 
+Insbesondere die Scherfestigkeit der Klebemasse nimmt deutlich ab. </p><p num="0053">Zur genaueren Prüfung wurden weitere niedermolekulare UV-vemetzende Poylacrylate 
+hergestellt. In der <ref type="patent">DE 27 43 979 A1</ref> wurde über den Einfluß von copolymerisiertem 
+Benzoinacrylat auf die UV-Vemetzung von Polyacrylaten berichtet. In Analogie hierzu 
+wurden zwei Polyacrylate mit folgender Zusammensetzung polymerisiert (Tabelle 4): 
+<tables><table><tgroup cols="8"><tbody><row><entry align="left">Beispiel </entry><entry align="left">AS [%] </entry><entry align="left">MA [%] </entry><entry align="left">NTBAM [%] </entry><entry align="left">EHA [%] </entry><entry align="left">Photoinitiator [%] </entry><entry align="left">BuA [%] </entry><entry align="left">M<sub>w</sub> [g/mol] </entry></row><row><entry align="left">C1</entry><entry align="left">4.5</entry><entry align="left">0</entry><entry align="left">10</entry><entry align="left">85</entry><entry align="center">0.5 A</entry><entry align="left">0</entry><entry align="left">280000 </entry></row><row><entry align="left">C2</entry><entry align="left">3.5</entry><entry align="left">16</entry><entry align="left">0</entry><entry align="left">40</entry><entry align="center">0.5 B</entry><entry align="left">40</entry><entry align="left">250000 </entry></row><row><entry>A = acryliertes Benzophenon Ebecryl P 36 ® [UCB]; B = acryliertes Benzoinacrylat </entry></row></tbody></tgroup></table></tables></p><p num="0054">Durch Zusatz von Isopropanol als Regler in der freien radikalischen Polymerisation wurde 
+das mittlere Molekulargewicht auf unter 300.000 glmol herabgesetzt.
+ 
+Anschließend wurden die Massen V1 und V2 mit den derart hergestelten UV-härtbaren 
+Polyacrylaten gemischt (s. Tabelle 6): 
+<tables><table><tgroup cols="4"><tbody><row><entry align="left">Blends </entry><entry align="left">V [%] </entry><entry align="left">C1 [%] </entry><entry align="left">C2 [%] </entry></row><row><entry align="left">B6</entry><entry align="left">V1 85 %</entry><entry align="left">15% </entry></row><row><entry align="left">B7</entry><entry align="left">V2 70%</entry><entry align="right" /><entry align="left">30% </entry></row></tbody></tgroup></table></tables></p><p num="0055">Anschließend wurden die Blends B1 - B7 im Hinblick auf die Klebeeigenschaften ausgetestet. 
+Zur Vernetzung wurden die Blends mit UV-Licht bestrahlt und anschließend durch 
+Bestrahlung mit Elektronenstrahlen nachgehärtet. Durch die UV-Bestrahlung werden die 
+acResins A 203 UV ® bzw. A 258 UV ® [BASF AG] oder C1 bzw. C2 aktiviert, und die 
+relativ niedermolekularen Polymere reagieren miteinander, um längerkettige Polymere zu 
+bilden. Anschließend wird der Polymerblend noch mit Elektronenstrahlen nachgehärtet. 
+Die Elektronenstrahlhärtung (ESH) erzeugt bevorzugt Radikale an den langen Polymerketten 
+und bildet ein zweites Netzwerk aus. Somit wird durch die ESH das UV-Netzwerk 
+nochmals in ein größeres Netzwerk eingebaut. Der umgekehrte Prozeß funktioniert aber 
+ebenfalls - nur mit einer schlechteren Effizienz. </p><p num="0056">Daß der Prozeß der UV-Vemetzung mit anschließender ESH sehr effektiv verläuft, zeigen 
+die Ergebnisse der klebtechnischen Ausprüfungen in Tabelle 7: 
+<tables><table><tgroup cols="5"><tbody><row><entry align="center">Blend </entry><entry align="center">SSZ 10 N RT [min] </entry><entry align="center">SSZ 5 N 70 °C [min] </entry><entry align="center">KK-Stahl [N/cm] </entry><entry align="center">KK-PE [N/cm] </entry></row><row><entry align="center">B1</entry><entry align="center">+10000</entry><entry align="center">+10000</entry><entry align="center">5.8</entry><entry align="center">1.9 </entry></row><row><entry align="center">B2</entry><entry align="center">+10000</entry><entry align="center">+10000</entry><entry align="center">6.1</entry><entry align="center">2.0 </entry></row><row><entry align="center">B3</entry><entry align="center">+10000</entry><entry align="center">2341</entry><entry align="center">6.5</entry><entry align="center">2.5 </entry></row><row><entry align="center">B4</entry><entry align="center">+10000</entry><entry align="center">+10000</entry><entry align="center">4.9</entry><entry align="center">1.5 </entry></row><row><entry align="center">B5</entry><entry align="center">+10000</entry><entry align="center">4837</entry><entry align="center">4.8</entry><entry align="center">1.1 </entry></row><row><entry align="center">B6</entry><entry align="center">+10000</entry><entry align="center">+10000</entry><entry align="center">5.6</entry><entry align="center">1.8 </entry></row><row><entry align="center">B7</entry><entry align="center">+10000</entry><entry align="center">+10000</entry><entry align="center">5.9</entry><entry align="center">2.0 </entry></row></tbody></tgroup></table></tables></p><p num="0057">Blend B1 zeigt im Vergleich zur nicht-geblendeten Basismasse ein ähnliche Scherfestigkeit. 
+In beiden Schertesten werden Scherstandzeiten größer 10.000 Minuten erreicht. 
+Beim Vergleich der Klebkräfte zeigt sich, daß durch den niedermolekularen Anteil des 
+acResins die Klebkraft auf Stahl und PE deutlich ansteigt. Somit erhält man neben der 
+Verringerung der Fließviskosität auch eine Verbesserung der Klebkräfte bei gleichbleibendem 
+Niveau in der Scherfestigkeit. Der Vergleich mit den Blends B2 - B5 zeigt einen 
+ähnlichen Trend. Blend B2 hat die gleiche Scherfestigkeit wie das Ausgangspolymer V2, 
+zeigt aber im Klebkraft-Bereich mit 6,1 N/cm auf Stahl und mit 2,0 N/cm auf PE eine 
+deutliche Verbesserung. Das gleiche gilt für die Blends B3 und B4. Blend B5 wurde 
+dagegen etwas stärker UV-vernetzt. Als Resultat blieben die Klebkräfte auf gleichem 
+Niveau, dagegen wurde aber eine Verbesserung in den Scherstandzeiten gemessen. Für 
+Blend 6 und 7 wurden ähnliche Ergebnisse wie bei Blend 1 und 2 gefunden. Offensichtlich 
+ist das Prinzip des Polymerblendings mit einer UV-vemetzenden Acrylatklebemasse 
+nicht vom UV-Photoinitiator abhängig. </p><p num="0058">Zusammenfassend wird durch die Zugabe des acResins A 203 UV oder A 258 UV (je 
+nach Menge) oder eines entsprechenden UV-vemetzbaren Acrylat-Copolymer mit einem 
+niedrigen mittleren Molekulargewicht (&lt; 500.000 g/mol) deutlich die Fließviskosität herabgesetzt 
+Durch den Grad der Härtung können die klebtechnischen Eigenschaften eingestellt 
+werden. Bei mittlerer UV-Härtung bleiben die Scherstandzeiten auf gleichem 
+Niveau, und die Klebkräfte steigen an. Dagegen wird bei starker UV-Vernetzung eine 
+verbesserte Kohäsion aufgebaut, und die Klebkräfte verbleiben auf dem gleichen Niveau. </p><p num="0059">Im zweiten Teil dieser Erfindung werden unterschiedliche Mischkonzepte für das Polymer-Polymer-Blending 
+untersucht 
+<sl><li>1) Üblicherweise werden die acResins A 258 UV oder A 203 UV in Toluol gelöst und bei 
+100 °C mit der Referenz-Acrylathaftklebemasse unter Rühren in einem Reaktor gemischt. 
+Nach etwa 1 h Rührzeit waren die Lösungen transparent und die Polymerblends wurden 
+im konventionellen Lösungsmittelaufstrichverfahren auf einen Träger aufgetragen. </li><li>2) Das zweite Konzept umfaßt das Blending durch Polymerisation in Gegenwart der 
+acResins A 203 UV oder A 258 UV. Hierfür wurde die radikalische Polymerisation mit  
+ 
+Acrylaten in Lösung in Gegenwart der acResins durchgeführt. Die regelnde Wirkung der 
+acResins ist sehr gering, so daß mit einem Gemisch aus Lösungsmittel und acResin die 
+Polymerisation durchgeführt wurde. Der Vergleich mit dem konventionellen Blending in 
+Toluol zeigte, daß für Mengen bis zu 10 % acResin die gleiche Klebeperformance 
+erreicht wurde. 
+<tables><table><tgroup cols="6"><tbody><row><entry align="left">Blends </entry><entry align="left">Zusammensetzung </entry><entry align="center">SSZ 10 N RT [min] </entry><entry align="center">SSZ 5 N 70 °C [min] </entry><entry align="center">KK-Stahl [N/cm] </entry><entry align="center">KK-PE [N/cm] </entry></row><row><entry align="left">B11</entry><entry align="left">V4 +5 % A 203 UV</entry><entry align="left">+10000</entry><entry align="left">+10000</entry><entry align="center">4.9</entry><entry align="center">1.0 </entry></row><row><entry align="left">B12</entry><entry align="left">V3 + 10% A 203 UV</entry><entry align="left">+10000</entry><entry align="left">2143</entry><entry align="center">6.3</entry><entry align="center">2.6 </entry></row><row><entry align="left">B13</entry><entry align="left">V1 + 15 % A 203 UV</entry><entry align="left">7524</entry><entry align="left">2975</entry><entry align="center">5.1</entry><entry align="center">1.6 </entry></row></tbody></tgroup></table></tables>Vergleicht man z.B. Blend 89, hergestellt durch in-situ-Polymerisation in Gegenwart von 
+10 % acResin A 203 UV ® [BASF AG] mit Blend B3, hergestellt durch Mischen in 100 °C 
+heißem Toluol, so erhält man nahezu das gleiche klebtechnische Eigenschaftsprofil. Das 
+gleiche gilt für Polymer Blend B6 im Vergleich mit B4. Dagegen verliert der Blend B13 
+gegenüber B1 deutlich an Performance. Die Scherstandzeiten werden deutlich kürzer, 
+und auch das Klebkraftniveau sinkt ab. Eine Erklärung ist sicherlich, daß zu große Mengen 
+die Molekulargewichtsverteilung des Basispolymers zu stark verändern und somit 
+auch die Eigenschaften des hergestellten Blends variieren. </li><li>3) Als letzte Alternative wurde der Inline-Prozeß untersucht, d.h. der acResin wird in 
+Schmelze in einem Extruder zur Basismasse zudosiert. Da die acResins eine relativ 
+geringe Erweichungstemperatur besitzen, können diese schon bei 70 - 80 °C zudosiert 
+werden. Um dieses Verfahren zu erproben, wurde der Blend B4 mit dieser Technologie 
+hergestellt. Die gefertigten Hotmelt-Stränge waren im Vergleich zu den in heißem Toulol 
+geblendeten Polymeren nicht ganz so homogen und transparent. Nach Beschichtung, 
+UV- und ESH-Härtung wurde wiederum eine klebtechnische Ausprüfung durchgeführt. 
+Die Ergebnisse in Tabelle 9 verdeutlichen, daß mit der Compoundierung im Extruder eine 
+etwas schlechtere Klebeperformance erreicht wurde. </li></sl><tables><table><tgroup cols="5"><tbody><row><entry align="center">Blend </entry><entry align="center">SSZ 10 N RT [min] </entry><entry align="center">SSZ 5 N 70 °C [min] </entry><entry align="center">KK-Stahl [N/cm] </entry><entry align="center">KK-PE [N/cm] </entry></row><row><entry align="center">B4</entry><entry align="center">+10000</entry><entry align="center">8363</entry><entry align="center">4.8</entry><entry align="center">1.6 </entry></row></tbody></tgroup></table></tables></p><p num="0060">Alle drei Techniken sind zur Herstellung von Polymerblends geeignet. </p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verfahren zum Erniedrigen der Fließviskosität einer Polyacrylatmasse, dadurch 
+gekennzeichnet, dass<claim-text><claim-text>a) einem Polyacrylat, einem Polyacrylatcopolymer, einem Polyacrylatgemisch oder 
+einem Gemisch aus Polyacrylaten und Polyacrylatcopolymeren mit einem mittlerem 
+Molekulargewicht Mw, welches größer als 500.000 g/mol ist, </claim-text><claim-text>b) ein Polyacrylat, ein Polyacrylatcopolymer, ein Polyacrylatgemisch oder ein 
+Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittlerem 
+Molekulargewicht Mw von weniger als 500.000 g/mol zugesetzt wird, </claim-text></claim-text> 
+wobei die Komponente (b) einpolymerisierte Photoinitiatoren besitzt. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 1, dadurch gekennzeichnet, dass 
+als Komponente (b) zumindest ein Acrylatcopolymer mit einpolymerisiertem Photoinitiator 
+zu 1 bis 40 Gew.-%, bezogen auf die Gesamt-Polymermischung, eingesetzt 
+wird. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach zumindest einem der vorangehenden Ansprüche, dadurch gekennzeichnet, 
+dass 
+die Komponente (a) ein mittleres Molekulargewicht Mw zwischen 500.000 und 
+4.000.000 g/mol und/oder die Komponente (b) ein mittleres Molekulargewicht zwischen 
+200.000 und 400.000 g/mol besitzt. </claim-text></claim><claim num="xx"><claim-text>Verfahren zur Herstellung von vernetzten Polyacrylaten, dadurch gekennzeichnet, 
+dass<claim-text><claim-text>a) einem Polyacrylat, einem Polyacrylatcopolymer, einem Polyacrylatgemisch oder 
+einem Gemisch aus Polyacrylaten und Polyacrylatcopolymeren mit einem mittlerem 
+Molekulargewicht Mw, welches größer als 500.000 g/mol ist, </claim-text><claim-text>b) ein Polyacrylat, ein Polyacrylatcopolymer, ein Polyacrylatgemisch oder ein 
+Gemisch von Polyacrylaten und Polyacrylatcopolymeren mit einem mittlerem 
+Molekulargewicht Mw von weniger als 500.000 g/mol zugesetzt wird, 
+wobei die Komponente (b) 
+einpolymerisierte Photoinitiatoren besitzt, </claim-text><claim-text>c) in der so hergestellten Mischung durch ultraviolette Bestrahlung die Komponente 
+(b) vorvemetzt wird und </claim-text><claim-text>d) in einem folgenden Schritt eine Vernetzung der bereits vorvemetzten Komponente 
+(b) mit der Komponente (a) erzielt wird. </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verfahren nach Anspruch 4, dadurch gekennzeichnet, dass 
+die Vernetzung der vorvemetzten Komponente (b) mit der Komponente (a) durch 
+Elektronenstrahlen hervorgerufen wird. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der oberen Ansprüche, dadurch gekennzeichnet, dass 
+als Komponente (a) ein Gemisch von Polyacrylaten aus den folgenden Monomeren 
+a1) Acrylsäureester und/oder Methacrylsäureester der folgenden Formel 
+CH2 = CH(R1)(COOR2), 
+   wobei R1 = H oder CH3 und R2 eine Alkylkette mit 1 - 20 C-Atomen ist, 
+zu 75 - 100 Gew.-%, bezogen auf die Komponente (a), 
+<claim-text><claim-text>a2) Acrylsäure und/oder Methacrylsäure der folgenden Formel 
+CH2 = CH(R1)(COOH), 
+wobei R1 = H oder CH3, 
+zu 0 - 10 Gew.-%, bezogen auf die Komponente (a), </claim-text><claim-text>a3) olefinisch ungesättigte Monomere mit funktionellen Gruppen, 
+zu 0 - 15 Gew.-%, bezogen auf die Komponente (a), </claim-text></claim-text> 
+zu 60 - 99 Gew.-%, bezogen auf die Gesamt-Polymermischung, eingesetzt wird. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der oberen Ansprüche, dadurch gekennzeichnet, dass 
+als Komponente (a) ein Gemisch von Polyacrylaten aus den folgenden Monomeren 
+<claim-text><claim-text>a1) Acrylsäureester und/oder Methacrylsäureester der folgenden Formel 
+CH2 = CH(R1)(COOR2), 
+wobei R1 = H oder CH3 und R2 eine Alkylkette mit 1 - 20 C-Atomen ist, 
+zu 86 - 90 Gew.-%, bezogen auf das Gemisch unter Punkt a), </claim-text><claim-text>a2) Acrylsäure und/oder Methacrylsäure der folgenden Formel 
+CH2 = CH(R1)(COOH), 
+wobei R1 = H oder CH3, 
+zu 4 - 6 Gew.-%, bezogen auf das Gemisch unter Punkt a), </claim-text><claim-text>a3) olefinisch ungesättigte Monomere mit funktionellen Gruppen, 
+zu 6 - 8 Gew.-%, bezogen auf das Gemisch unter Punkt a), </claim-text></claim-text> 
+zu 60 - 99 Gew.-%, bezogen auf die Gesamt-Polymermischung, eingesetzt wird. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der oberen Ansprüche, dadurch gekennzeichnet, dass 
+als Komponente (b) Copolymere der folgenden Zusammensetzung 
+<claim-text><claim-text>b1) Acrylsäureester und/oder Methacrylsäureester der folgenden Formel 
+CH2 = CH(R1)(COOR2), 
+wobei R1 = H oder CH3 und R2 eine Alkylkette mit 1 - 20 C-Atomen ist, 
+zu 70 - 99,99 Gew.-%, bezogen auf die Komponente (b), </claim-text><claim-text>b2) Acrylsäure und/oder Methacrylsäure der folgenden Formel 
+CH2 = CH(R1)(COOH), 
+wobei R1 = H oder CH3, 
+zu 0 - 10 Gew.-%, bezogen auf die Komponente (b), </claim-text><claim-text>b3) olefinisch ungesättigte Monomere mit funktionellen Gruppen 
+zu 0 - 15 Gew.-%, bezogen auf die Komponente (b), </claim-text><claim-text>b4) durch olefinische Doppelbindungen funktionalisierter Photoinitiator 
+zu 0,01 - 5 Gew.-%, insbesondere zu 0,1 - 2 Gew.-%, bezogen auf die Komponente 
+(b), </claim-text></claim-text> 
+zu 1 - 40 Gew.-%, bezogen auf die Gesamt-Polymermischung, eingesetzt werden. </claim-text></claim><claim num="xx"><claim-text>Verfahren nach einem der oberen Ansprüche, dadurch gekennzeichnet, daß 
+die Komponente (b4) zu 0,1 - 2 Gew.-%, bezogen auf die Komponente (b), eingesetzt 
+wird. </claim-text></claim><claim num="xx"><claim-text>Verwendung des nach einem der oberen Ansprüche hergestellten Polyacrylates als 
+Haftklebemasse. </claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Method of reducing the flow viscosity of a polyacrylate composition, characterized 
+in that, 
+<claim-text><claim-text>a) to a polyacrylate, a polyacrylate copolymer, a polyacrylate mixture or a 
+mixture of polyacrylates and polyacrylate copolymers having an average 
+molecular weight Mw of more than 500 000 g/mol </claim-text><claim-text>b) there is added a polyacrylate, a polyacrylate copolymer, a polyacrylate 
+mixture or a mixture of polyacrylates and polyacrylate copolymers having 
+an average molecular weight Mw of less than 500 000 g/mol, </claim-text></claim-text> 
+component (b) possessing copolymerized photoinitiators. </claim-text></claim><claim num="xx"><claim-text>Method according to Claim 1, characterized in that 
+as component (b) there is used at least one acrylate copolymer with 
+copolymerized photoinitiator at 1 to 40% weight, based on the overall polymer 
+blend. </claim-text></claim><claim num="xx"><claim-text>Method according to at least one of the preceding claims, characterized in that 
+component (a) has an average molecular weight Mw of between 500 000 and 
+4 000 000 g/mol and/or component (b) has an average molecular weight of 
+between 200 000 and 400 000 g/mol. </claim-text></claim><claim num="xx"><claim-text>Method of preparing crosslinked polyacrylates, characterized in that<claim-text><claim-text>a) to a polyacrylate, a polyacrylate copolymer, a polyacrylate mixture or a 
+mixture of polyacrylates and polyacrylate copolymers having an average 
+molecular weight Mw of more than 500 000 g/mol </claim-text><claim-text>b) there is added a polyacrylate, a polyacrylate copolymer, a polyacrylate 
+mixture or a mixture of polyacrylates and polyacrylate copolymers having 
+an average molecular weight Mw of less than 500 000 g/mol, 
+component (b) possessing copolymerized photoinitiators, </claim-text><claim-text>c) in the mixture thus prepared, component (b) is precrosslinked by 
+ultraviolet radiation and </claim-text><claim-text>d) in a subsequent step, the already precrosslinked component (b) is 
+crosslinked with component (a). </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Method according to Claim 4, characterized in that 
+the crosslinking of component (b) with component (a) is induced by electron 
+beams. </claim-text></claim><claim num="xx"><claim-text>Method according to one of the above claims, characterized in that 
+as component (a) there is used a mixture of polyacrylates of the following 
+monomers 
+<claim-text><claim-text>a1) acrylates and/or methacrylates of the following formula 
+CH2 = CH(R1)(COOR2), 
+where R1 = H or CH3 and R2 is an alkyl chain with 1 - 20 carbon atoms, 
+at 75 -100% by weight, based on component (a), </claim-text><claim-text>a2) acrylic acid and/or methacrylic acid of the following formula 
+CH2 = CH(R1)(COOH), 
+where R1 = H or CH3, 
+at 0 - 10% by weight, based on component (a), </claim-text><claim-text>a3) olefinically unsaturated monomers containing functional groups, 
+at 0 - 15% by weight, based on component (a), </claim-text></claim-text> 
+at 60 - 99% by weight, based on the overall polymer blend. </claim-text></claim><claim num="xx"><claim-text>Method according to one of the above claims, characterized in that 
+as component (a) there is used a mixture of polyacrylates of the following 
+monomers 
+<claim-text><claim-text>a1) acrylates and/or methacrylates of the following formula 
+CH2 = CH(R1)(COOR2), 
+where R1 = H or CH3 and R2 is an alkyl chain with 1 - 20 carbon atoms, 
+at 86 - 90% by weight, based on the mixture under item a), </claim-text><claim-text>a2) acrylic acid and/or methacrylic acid of the following formula 
+CH2 = CH(R1)(COOH), 
+where R1 = H or CH3, 
+at 4 - 6% by weight, based on the mixture under item a), </claim-text><claim-text>a3) olefinically unsaturated monomers containing functional groups, 
+at 6 - 8% by weight, based on the mixture under item a), </claim-text></claim-text>
+ 
+at 60 - 99% by weight, based on the overall polymer blend. </claim-text></claim><claim num="xx"><claim-text>Method according to one of the above claims, characterized in that 
+as component (b) there are used copolymers of the following composition 
+<claim-text><claim-text>b1) acrylates and/or methacrylates of the following formula 
+CH2 = CH(R1)(COOR2), 
+where R1 = H or CH3 and R2 is an alkyl chain with 1 - 20 carbon atoms, 
+at 70 - 99.99% by weight, especially 0.1 - 2% by weight, based on 
+component (b), </claim-text><claim-text>b2) acrylic acid and/or methacrylic acid of the following formula 
+CH2 = CH(R1)(COOH), 
+where R1 = H or CH3, 
+at 0 - 10% by weight, based on component (b), </claim-text><claim-text>b3) olefinically unsaturated monomers containing functional groups, 
+at 0 - 15% by weight, based on component (b), </claim-text><claim-text>b4) photoinitiator functionalized by olefinic double bonds, 
+at 0.01 - 5% by weight, especially 0.1 - 2% by weight, based on 
+component (b), </claim-text></claim-text> 
+at 1 - 40% by weight, based on the overall polymer blend. </claim-text></claim><claim num="xx"><claim-text>Method according to one of the above claims, characterized in that 
+component (b4) is used at 0.1 - 2% by weight, based on component (b). </claim-text></claim><claim num="xx"><claim-text>The use of the polyacrylate prepared in accordance with one of the above claims 
+as a pressure-sensitive adhesive composition. </claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Procédé pour l'abaissement de la viscosité 
+d'écoulement d'une masse de polyacrylates, caractérisé en 
+ce qu'<claim-text><claim-text>a) on ajoute à un polyacrylate, un copolymère de 
+polyacrylates, un mélange de polyacrylates ou un mélange 
+de polyacrylates et de copolymères de polyacrylates d'un 
+poids moléculaire moyen Mw supérieur à 500 000 g/mole, </claim-text><claim-text>b) un polyacrylate, un copolymère de polyacrylates, un 
+mélange de polyacrylates ou un mélange de polyacrylates 
+et de copolymères de polyacrylates d'un poids moléculaire 
+moyen Mw inférieur à 500 000 g/mole, </claim-text><claim-text>c) le composant (b) comportant des photos-initiateurs 
+polymérisés. </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 1, caractérisé 
+en ce qu'on utilise comme composant (b) au moins un 
+copolymère d'acrylates comportant un photo-initiateur 
+polymérisé, à 1 à 40% en poids, par rapport au mélange de 
+polymères total. </claim-text></claim><claim num="xx"><claim-text>Procédé selon au moins une des revendications 
+précédentes, caractérisé en ce que le composant (a) 
+possède un poids moléculaire moyen Mw entre 500 000 et 
+4 000 000 g/mole et/ou le composant (b) possède un poids 
+moléculaire moyen entre 200 000 et 400 000 g/mole. </claim-text></claim><claim num="xx"><claim-text>Procédé pour la préparation de polyacrylates 
+réticulés, caractérisé en ce qu'<claim-text><claim-text>a) on ajoute à un polyacrylate, un copolymère de 
+polyacrylates, un mélange de polyacrylates ou un mélange 
+de polyacrylates et de copolymères de polyacrylates d'un 
+poids moléculaire moyen Mw supérieur à 500 000 g/mole, </claim-text><claim-text>b) un polyacrylate, un copolymère de polyacrylates, un 
+mélange de polyacrylates ou un mélange de polyacrylates 
+et de copolymères de polyacrylates d'un poids moléculaire 
+moyen Mw inférieur à 500 000 g/mole, 
+le composant (b) comportant des photo-initiateurs 
+polymérisés, </claim-text><claim-text>c) dans le mélange ainsi préparé, le composant (b) est 
+pré-réticulé par irradiation avec une lumière 
+ 
+ultraviolette et </claim-text><claim-text>d) dans une phase suivante, se trouve réalisée une 
+réticulation du composant (b) déjà pré-réticulé avec le 
+composant (a). </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon la revendication 4, caractérisé 
+en ce que la réticulation du composant pré-réticulé (b) 
+avec le composant (a) est provoquée par irradiation avec 
+un faisceau d'électrons. </claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des 
+revendications précédentes, caractérisé en ce que l'on 
+utilise, comme composant (a) un mélange de polyacrylates 
+constitué des monomères suivants : 
+<claim-text><claim-text>a1) ester de l'acide acrylique et/ou de l'acide 
+méthacrylique répondant à la formule suivante : 
+CH2=CH(R1)(COOR2) 
+dans laquelle R1=H ou CH3 et R2 représente un groupement 
+alkyle de 1 à 20 atomes de carbone, 
+à 75-100% en poids par rapport au composant (a) </claim-text><claim-text>a2) acide acrylique et/ou acide méthacrylique répondant à 
+la formule suivante : 
+CH2=CH(R1) (COOH) 
+dans laquelle R1=H ou CH3 
+à 0-10% en poids par rapport au composant (a) </claim-text><claim-text>a3) monomères oléfiniquement insaturés comportant des 
+groupes fonctionnels, 
+à 0-15% en poids par rapport au composant (a) 
+à 60-99% en poids par rapport au mélange de polymères 
+total. </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des 
+revendications précédentes, caractérisé en ce que l'on 
+utilise, comme composant (a) un mélange de polyacrylates 
+constitué des monomères suivants : 
+<claim-text><claim-text>a1) ester de l'acide acrylique et/ou de l'acide 
+méthacrylique répondant à la formule suivante : 
+CH2=CH(R1) (COOR2) 
+dans laquelle R1=H ou CH3 et R2 représente un groupement 
+alkyle de 1 à 20 atomes de carbone, 
+à 86-90% en poids par rapport au mélange sous (a) </claim-text><claim-text>a2) acide acrylique et/ou acide méthacrylique répondant à 
+ 
+la formule suivante : 
+CH2=CH(R1) (COOH) 
+dans laquelle R1=H ou CH3 
+à 4-6% en poids par rapport au mélange sous (a) </claim-text><claim-text>a3) monomères oléfiniquement insaturés comportant des 
+groupes fonctionnels, 
+à 6-8% en poids par rapport au mélange sous (a) 
+à 60-99% en poids par rapport au mélange de polymères 
+total. </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des 
+revendications précédentes, caractérisé en ce que l'on 
+utilise, comme composant (b) des copolymères de la 
+composition suivante: 
+<claim-text><claim-text>b1) ester de l'acide acrylique et/ou de l'acide 
+méthacrylique répondant à la formule suivante : 
+CH2=CH(R1) (COOR2) 
+dans laquelle R1=H ou CH3 et R2 représente un groupement 
+alkyle de 1 à 20 atomes de carbone, 
+à 70-99,99% en poids par rapport au composant (b) </claim-text><claim-text>b2) acide acrylique et/ou acide méthacrylique répondant à 
+la formule suivante : 
+CH2=CH(R1) (COOH) 
+dans laquelle R1=H ou CH3, 
+à 0-10% en poids par rapport au composant (b) </claim-text><claim-text>b3) monomères oléfiniquement insaturés comportant des 
+groupes fonctionnels, 
+à 0-15% en poids par rapport au composant (b) </claim-text><claim-text>b4) photo-initiateur fonctionnalisé par des doubles 
+liaisons oléfiniques 
+à 0,01-5% en poids, en particulier à 0,1-2% en poids, par 
+rapport au composant (b), 
+à 1-40% en poids par rapport au mélange de polymères 
+total. </claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Procédé selon l'une quelconque des 
+revendications précédentes, caractérisé en ce que le 
+composant (b4) est utilisé à 0,1-2% en poids par rapport 
+au composant (b). </claim-text></claim><claim num="xx"><claim-text>Utilisation du polyacrylate préparé selon l'une 
+quelconque des revendications précédentes comme masse 
+ 
+adhésive de contact. </claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="R26" date="20050413"><legal-event-body><event-title>OPPOSITION FILED (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>3M INNOVATIVE PROPERTIES COMPANY3M CENTER</event-attribute-value></event-attribute><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>BASF AKTIENGESELLSCHAFT, LUDWIGSHAFEN</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040922</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050128</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26" date="20050323"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>3M INNOVATIVE PROPERTIES COMPANY3M CENTER</event-attribute-value></event-attribute><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>BASF AKTIENGESELLSCHAFT, LUDWIGSHAFEN</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040922</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050128</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050107"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="26" date="20041117"><legal-event-body><event-title>OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>opponent name </event-attribute-label><event-attribute-value>BASF AKTIENGESELLSCHAFT, LUDWIGSHAFEN</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040922</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20041116"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2218287</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP2" date="20040908"><legal-event-body><event-title>PATENT OWNER REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>TESA AG</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="GBT" date="20040714"><legal-event-body><event-title>GB: TRANSLATION OF EP PATENT FILED (GB SECTION 77(6)(A)/1977)</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20040621</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040603"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>50102093</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040603</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040428"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEESFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040428"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>NOT ENGLISH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020522"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE ES FR GB IT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20020102"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20011119</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP1" date="20011205"><legal-event-body><event-title>APPLICANT REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>TESA AG</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20011004"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20010803</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

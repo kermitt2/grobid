@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="FR" ucid="EP-1130202-B1" country="EP" doc-number="1130202" kind="B1" date="20041110"><bibliographic-data><publication-reference fvid="23211111" ucid="EP-1130202-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1130202</doc-number><kind>B1</kind><date>20041110</date><lang>FR</lang></document-id></publication-reference><application-reference ucid="EP-01400531-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01400531</doc-number><kind>A</kind><date>20010228</date><lang>FR</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="FR-0002731-A" status="new"><document-id format="epo" status="new"><country>FR</country><doc-number>0002731</doc-number><kind>A</kind><date>20000303</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20040427</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B60J   5/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B60J   5/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B60R  16/03        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B60R  16/03        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B60R  16/033       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">E05B  47/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">E05B  47/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">E05B  65/20        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">E05B  65/20        20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">E05B  65/36        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">E05B  65/36        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G01M  17/007       20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G01M  17/007       20060101CLI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">E05B65/36B</classification-symbol><classification-symbol scheme="ICO">P05B47:00E2B</classification-symbol><classification-symbol scheme="ICO">P05B47:00K3B</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Verriegelungseinrichtung für eine Kraftfahrzeugtür und Verfahren zur Funktionsprüfung eines Schlossmoduls dieser Einrichtung</invention-title><invention-title lang="EN" status="new">Lock assembly for vehicle door and proces for testing the proper functioning of a lock modul of this assembly</invention-title><invention-title lang="FR" status="new">Ensemble de verrouillage d'une porte de véhicule automobile et procédé de test du bon fonctionnement d'un module de serrure de cet ensemble</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>VALEO SECURITE HABITACLE SAS</name><address><country>FR</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>VALEO SECURITE HABITACLE S.A.S.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>GIRARD RAPHAEL</name><address><country>FR</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>GIRARD, RAPHAEL</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>GIRARD, RAPHAEL</last-name><address><street>29 rue des Chênes</street><city>53320 Loiron</city><country>FR</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>VALEO SECURITE HABITACLE S.A.S.</last-name><address><street>42, rue Le Corbusier - Europarc</street><city>94042 Créteil Cédex</city><country>FR</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Rosolen-Delarue, Katell</last-name><address><street>Valeo Securité Habitacle, Service Propriété Industrielle, 42, rue Le Corbusier - Europarc</street><city>94042 Creteil Cedex</city><country>FR</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>ES</country><country>FR</country><country>GB</country><country>IT</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>The system uses an electric locking module (14) with an electronic card (16) which acts as an interface to a battery (20), a control box (18), door handles and electronic cylinder (22,24,26) and an emergency power source (28). The emergency power source employs a super capacitance (30) to store energy and the electronic card includes a test program in a memory (34). A diode (32) prevents reverse power flow. An Independent claim is also included for the method for testing the locking system.</p></abstract><abstract lang="FR" source="EPO" status="new"><p>Cet ensemble de verrouillage d'une porte de véhicule automobile, destiné à être monté dans cette porte, comprend un module de serrure électrique (14) portant, d'une part, une carte électronique (16) formant une interface destinée à raccorder ce module de serrure (14) à des moyens principaux (18,20) d'alimentation électrique et à des moyens (22 à 26) de commande du module de serrure (14), et d'autre part, des moyens de secours (28) d'alimentation électrique du module de serrure (14) en cas de dysfonctionnement des moyens principaux (18, 20). Les moyens de secours (28) comprennent au moins un composant électronique de stockage d'énergie (30) porté par la carte (16). De préférence, le composant électronique de stockage d'énergie (30) est un supercondensateur. &lt;IMAGE&gt;</p></abstract><abstract lang="FR" status="new"><p num="">Cet ensemble de verrouillage d'une porte de véhicule automobile, destiné à
+être monté dans cette porte, comprend un module de serrure électrique (14) portant,
+d'une part, une carte électronique (16) formant une interface destinée à raccorder ce
+module de serrure (14) à des moyens principaux (18,20) d'alimentation électrique et à
+des moyens (22 à 26) de commande du module de serrure (14), et d'autre part, des
+moyens de secours (28) d'alimentation électrique du module de serrure (14) en cas de
+dysfonctionnement des moyens principaux (18, 20). Les moyens de secours (28)
+comprennent au moins un composant électronique de stockage d'énergie (30) porté par
+la carte (16). De préférence, le composant électronique de stockage d'énergie (30) est
+un supercondensateur.
+<img file="00000001.tif" id="img-EP-1130782-A2-00000001" he="101" wi="80" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="FR" status="new"><p num="0001">La présente invention concerne un ensemble de verrouillage d'une porte de
+véhicule automobile et un procédé de test du bon fonctionnement d'un module de
+serrure de cet ensemble.</p><p num="0002">On connaít déjà dans l'état de la technique, notamment d'après <ref type="patent">EP-A-0 694
+664</ref>, un ensemble de verrouillage d'une porte de véhicule automobile, destiné à être
+monté dans cette porte, du type comprenant un module de serrure électrique portant,
+d'une part, une carte électronique formant une interface destinée à raccorder ce module
+de serrure à des moyens principaux d'alimentation électrique et à des moyens de
+commande du module de serrure, et d'autre part, des moyens de secours d'alimentation
+électrique du module de serrure en cas de dysfonctionnement des moyens principaux.</p><p num="0003">Dans le document ci-dessus, les moyens de secours sont constitués par une
+batterie, telle qu'une pile, portée par le module de serrure électrique. Cette batterie,
+séparée de la carte électronique, est agencée par exemple dans un boítier du module de
+serrure. La batterie est raccordée à la carte électronique par des moyens de liaison
+électrique comprenant en général des pistes ou des fils conducteurs. Ces moyens de
+liaison sont soumis à divers risques qui limitent la fiabilité des moyens d'alimentation de
+secours, tels que des risques de court-circuit, de déconnexion, d'oxydation, de variation
+de résistance, etc.</p><p num="0004">Le document <ref type="patent">FR 2 759 108</ref> divulgue un ensemble de verrouillage d'une porte
+de véhicule comportant un moteur d'alimentation d'une serrure reliée par des connexions
+électrique à une batterie de véhicule et à un moyen de secours d'alimentation. Ce moyen
+de secours est constitué par une pile, un condensateur et un circuit électrique permettant
+de limiter la tension fournie au moteur.</p><p num="0005">Les connexions électriques entre le moteur d'alimentation et la batterie ou le
+moyen de secours sont également soumis à des risques de déconnexion, oxydation etc</p><p num="0006">Par ailleurs, l'intensité électrique fournie par les piles utilisées habituellement
+pour former les batteries de secours n'est pas suffisante pour certaines applications
+requérant une intensité pouvant atteindre voire dépasser 3 A.</p><p num="0007">Le document <ref type="patent">EP 0 533 037</ref> décrit un dispositif électrique utilisant avantageusement un supercondensateur de manière à permettre son activation avec une forte puissance électrique sur un court instant.</p><p num="0008">L'invention a pour but d'augmenter la fiabilité des moyens
+d'alimentation électrique de secours portés par le module de serrure électrique, tout en
+permettant à ces moyens de secours de délivrer une intensité relativement élevée.</p><p num="0009">A cet effet, l'invention a pour objet un ensemble de verrouillage d'une porte
+de véhicule automobile selon la revendication 1. </p><p num="0010">Suivant d'autres caractéristiques particulières de cet ensemble de verrouillage:
+<ul list-style="bullet"><li>les moyens de secours comprennent au moins deux composants
+électroniques de stockage d'énergie montés en série;</li><li>les moyens de secours comprennent au moins deux groupes de
+composants électroniques de stockage d'énergie, les composants
+électroniques d'un même groupe étant montés en série et les deux
+groupes étant montés en parallèle;</li><li>les moyens de secours comprennent au moins une paire de composants
+électroniques de stockage d'énergie montés en parallèle;</li><li>les moyens de secours comprennent au moins deux paires de
+composants électroniques de stockage d'énergie, ces paires étant
+montées en série;</li><li>le composant électronique de stockage d'énergie a une densité d'énergie
+massique comprise entre 0,4 et 10 Wh/kg;</li><li>le composant électronique de stockage d'énergie a une intensité
+maximale de charge ou décharge comprise entre 1 et 10 A pour une
+tension comprise entre 0,8 et 14 V;</li><li>la carte électronique comprend des moyens de mémorisation,
+susceptibles d'être alimentés électriquement par le composant
+électronique de stockage d'énergie, dans lesquels est programmé un
+logiciel de test du bon fonctionnement du module de serrure.</li></ul></p><p num="0011">L'invention a également pour objet un procédé de test du bon
+fonctionnement du module de serrure d'un ensemble tel que défini ci-dessus, caractérisé
+en ce que ce test est réalisé avant le raccordement électrique du module de serrure aux
+moyens principaux d'alimentation électrique et après chargement électrique du
+composant électronique de stockage d'énergie, à l'aide d'un logiciel programmé dans
+des moyens de mémorisation alimentés électriquement par le composant électronique
+de stockage d'énergie.</p><p num="0012">L'invention sera mieux comprise à la lecture de la description qui va suivre,
+donnée uniquement à titre d'exemple et faite en se référant aux dessins dans lesquels :
+<ul list-style="bullet"><li>la figure 1 est une vue schématique d'une installation électrique de
+véhicule automobile destinée au verrouillage d'une porte de ce véhicule,
+cette installation comprenant un ensemble selon l'invention;</li><li>les figures 2 à 4 sont des vues schématiques des moyens d'alimentation
+électrique de secours de l'ensemble de verrouillage représenté sur la
+figure 1, selon trois modes de réalisation respectivement;</li></ul></p><p num="0013">On a représenté sur la figure 1, une installation électrique de véhicule
+automobile, destinée au verrouillage d'une porte de ce véhicule, désignée par la
+référence générale 10.</p><p num="0014">Cette installation 10 comprend un ensemble 12 pour le verrouillage de la
+porte destiné à être monté dans cette porte.</p><p num="0015">L'ensemble 12 comprend un module de serrure électrique 14 classique
+portant une carte électronique 16 formant une interface destinée à raccorder ce module 
+de serrure 14 à des moyens principaux d'alimentation électrique et à des moyens de
+commande du module de serrure.</p><p num="0016">Les moyens principaux d'alimentation électrique comprennent un boítier
+électrique centralisé classique 18 relié électriquement à une batterie principale 20 du
+véhicule. Le cas échéant, cette batterie principale 20 peut être doublée par une batterie
+secondaire de secours (non représentée) prenant le relais de la batterie principale en
+cas de dysfonctionnement de cette dernière.</p><p num="0017">Les moyens de commande du module de serrure comprennent une poignée
+de porte extérieure 22, une poignée de porte intérieure 24 et, dans le cas par exemple
+d'une porte avant, un barillet électronique 26. Ces organes 22, 24, 26 comprennent des
+interrupteurs électriques classiques dont les états d'ouverture et/ou de condamnation et
+décondamnation de serrure sont transmis au boítier centralisé 18 et à la carte
+électronique 16.</p><p num="0018">L'ensemble 12 comprend également des moyens de secours 28 pour
+l'alimentation électrique du module de serrure 14 en cas de dysfonctionnement des
+moyens d'alimentation principaux 18, 20. Ces moyens de secours 28 comprennent au
+moins un composant électronique de stockage d'énergie, porté par la carte
+électronique 16, constitué d'un supercondensateur 30.</p><p num="0019">De préférence également, le supercondensateur 30 a une densité d'énergie
+massique comprise entre 0,4 et 10 Wh/kg et une intensité maximale de charge ou
+décharge comprise entre 1 et 10 A pour une tension comprise entre 0,8 et 14V. La
+capacité du supercondensateur 30 peut atteindre 4 à 8 F voire dépasser ces valeurs.</p><p num="0020">On notera donc que le supercondensateur 30 constitue une source d'énergie
+rechargeable et compacte.</p><p num="0021">Afin de pouvoir atteindre les tension et intensité habituelles pour la
+manoeuvre du module de serrure (par exemple 12 V et 3 A), les moyens de secours 28
+comprennent de préférence plusieurs supercondensateurs 30 montés en série ou en
+parallèle.</p><p num="0022">Ainsi, les moyens d'alimentation de secours 28 selon le premier mode de
+réalisation illustré sur les figures 1 et 2 comprennent au moins deux
+supercondensateurs 30, à savoir six supercondensateurs 30 dans le cas illustré, montés
+en série.</p><p num="0023">Les moyens d'alimentation de secours 28 selon les deux autres modes de
+réalisation visent à augmenter la fiabilité de ces moyens de secours.</p><p num="0024">Les moyens d'alimentation de secours 28 selon le deuxième mode de
+réalisation illustré sur la figure 3 comprennent au moins deux groupes de
+supercondensateurs 30. Chaque groupe comprend dans cet exemple six 
+supercondensateurs 30. Les supercondensateurs 30 d'un même groupe sont montés en
+série. Les deux groupes sont montés en parallèle. Ainsi, la défaillance du
+fonctionnement d'un supercondensateur 30 dans un premier groupe n'empêche pas le
+fonctionnement du second groupe de supercondensateurs 30.</p><p num="0025">Les moyens d'alimentation de secours 28 selon le troisième mode de
+réalisation illustré sur la figure 4 comprennent au moins une paire de
+supercondensateurs 30 montés en parallèle, à savoir, dans l'exemple illustré, six paires
+de supercondensateurs 30. De préférence, ces paires sont montées en série. Ainsi, la
+défaillance du fonctionnement d'un des supercondensateurs 30 n'empêche pas le
+fonctionnement des autres supercondensateurs 30.</p><p num="0026">Une diode 32 ou tout autre organe analogue interdit la décharge des
+supercondensateurs 30 dans les moyens d'alimentation principaux 18,20.</p><p num="0027">Les supercondensateurs 30 sont montés directement sur la carte
+électronique 16, par exemple par des techniques habituelles de soudage applicables à
+des composants classiques de type traversant (broches de connexion du composant
+traversant la carte) ou CMS (composant pour montage en surface). On évite ainsi les
+risques divers liés à l'utilisation de moyens de connexion entre la carte électronique et la
+batterie de secours selon l'état de la technique décrit dans <ref type="patent">EP-A-0 694 664</ref> (court-circuit,
+déconnexion, oxydation, variation de résistance, etc.)</p><p num="0028">Lors de l'utilisation normale du véhicule, les moyens d'alimentation de
+secours 28 ne sont pas sollicités tant que les moyens d'alimentation principaux 18,20
+fonctionnent normalement. Ces derniers maintiennent les supercondensateurs 30 en
+permanence en charge.</p><p num="0029">On notera que la durée pour charger un supercondensateur 30 est
+relativement courte à savoir quelques dixièmes de seconde à quelques dizaines de
+secondes.</p><p num="0030">Lorsque, à la suite d'un accident du véhicule ou d'un dysfonctionnement
+quelconque de l'installation 10, la batterie 20 ou le boítier 18 n'est plus en mesure de
+fournir au module de serrure 14 l'énergie qui lui est nécessaire pour l'ouverture ou la
+fermeture de la serrure, la carte électronique 16 bascule automatiquement sur les
+moyens d'alimentation de secours 28 selon un fonctionnement classique.</p><p num="0031">La carte électronique 16 peut avertir l'utilisateur de ce basculement en
+commandant un voyant d'alarme placé sur la porte ou sur le tableau de bord du véhicule
+ou encore l'envoi d'un message d'alarme s'inscrivant sur un écran d'ordinateur de bord
+du véhicule. </p><p num="0032">Les moyens d'alimentation de secours 28 à supercondensateurs peuvent
+permettre le fonctionnement du module de serrure 14 pendant plusieurs cycles
+d'ouverture ou de fermeture par exemple, dans certains cas, une dizaine de cycles.</p><p num="0033">Avantageusement, la carte électronique 16 comprend des moyens de
+mémorisation 34, susceptibles d'être alimentés électriquement par les moyens
+d'alimentation de secours 28, dans lesquels est programmé un logiciel de test du bon
+fonctionnement du module de serrure 14.</p><p num="0034">De tels moyens de mémorisation peuvent comprendre une mémoire
+classique programmable de type EEPROM (Electrically Erasable and Programmable
+Read Only Memory).</p><p num="0035">Ainsi, on peut réaliser le test de bon fonctionnement du module de serrure 14
+avant le raccordement électrique de ce module 14 aux moyens principaux d'alimentation
+électrique 18,20 et après chargement électrique des superscondensateurs. Ce
+chargement peut être réalisé en temps masqué au cours d'une opération de montage
+des différents organes logés dans la porte, avant le montage définitif de cette porte sur le
+véhicule.</p><p num="0036">Le test est réalisé automatiquement à l'aide du logiciel programmé dans la
+mémoire EEPROM alimentée électriquement par les superscondensateurs.</p><p num="0037">Parmi les avantages de l'invention, on notera que celle-ci permet
+d'augmenter la fiabilité des moyens d'alimentation électrique de secours portés par le
+module de serrure électrique, tout en permettant à ces moyens de secours de délivrer
+une intensité relativement élevée.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Verriegelungseinheit für eine Kraftfahrzeugtür, die zum Montieren in
+dieser Tür bestimmt ist, vom Typ mit einem elektrischen Schlossmodul (14), das
+einerseits eine elektronische Karte (16) trägt, die eine zum Verbinden dieses
+Schlossmoduls (14) mit Hauptstromversorgungsmitteln (18, 20) und Mitteln (22
+bis 26) zum Steuern des Schlossmoduls (14) bestimmte Schnittstelle bildet, und
+andererseits Notstromversorgungsmittel (28) zur Stromversorgung des
+Schlossmoduls (14) bei Ausfall der Hauptstromversorgungsmittel (18, 20)
+aufweist, dadurch gekennzeichnet, dass die Notstromversorgungsmittel (28)
+zumindest ein elektronisches Energiespeicherbauteil (30) enthalten, das von der
+Karte (16) getragen wird, und dass das elektronische Energiespeicherbauteil ein
+Superkondensator ist, wobei die Hauptstromversorgungsmittel (18, 20) den
+Superkondensator bei Normalbetrieb stets geladen halten.</claim-text></claim><claim num="xx"><claim-text>Einheit nach Anspruch 1, dadurch gekennzeichnet, dass die
+Notstromversorgungsmittel (28) zumindest zwei in Reihe geschaltete
+elektronische Energiespeicherbauteile (30) enthalten.</claim-text></claim><claim num="xx"><claim-text>Einheit nach einem der Ansprüche 1 und 2, dadurch gekennzeichnet, dass
+die Notstromversorgungsmittel (28) zumindest zwei Gruppen von elektronischen
+Energiespeicherbauteilen (30) enthalten, wobei die elektronischen Bauteile (30)
+einer gleichen Gruppe in Reihe geschaltet sind und die beiden Gruppen parallel
+geschaltet sind.</claim-text></claim><claim num="xx"><claim-text>Einheit nach einem der Ansprüche 1 und 2, dadurch gekennzeichnet, dass
+die Notstromversorgungsmittel (28) zumindest ein Paar von parallel geschalteten
+elektronischen Energiespeicherbauteilen (30) enthalten.</claim-text></claim><claim num="xx"><claim-text>Einheit nach Anspruch 1, dadurch gekennzeichnet, dass die
+Notstromversorgungsmittel (28) zumindest zwei Paar von elektronischen
+Energiespeicherbauteilen (30) enthalten, wobei diese Paare in Reihe geschaltet
+sind.</claim-text></claim><claim num="xx"><claim-text>Einheit nach einem der vorangehenden Ansprüche, dadurch
+gekennzeichnet, dass das elektronische Energiespeicherbauteil (30) eine
+Massenenergiedichte zwischen 0,4 und 10 Wh/kg aufweist.</claim-text></claim><claim num="xx"><claim-text>Einheit nach einem der vorangehenden Ansprüche, dadurch
+gekennzeichnet, dass das elektronische Energiespeicherbauteil (30) eine maximale
+Lade- bzw. Entladestromstärke zwischen 1 und 10 A bei einer Spannung
+zwischen 0,8 und 14 V hat.</claim-text></claim><claim num="xx"><claim-text>Einheit nach einem der vorangehenden Ansprüche, dadurch
+gekennzeichnet, dass die elektronische Karte (16) Speichermittel (34) enthält, die
+von dem elektronischen Energiespeicherbauteil (30) mit Strom versorgt werden
+können und in denen eine Software zum Prüfen der Funktionstüchtigkeit des
+Schlossmoduls (14) einprogrammiert ist.</claim-text></claim><claim num="xx"><claim-text>Verfahren zum Prüfen der Funktionstüchtigkeit des Schlossmoduls einer
+Einheit nach Anspruch 8, dadurch gekennzeichnet, dass diese Prüfung vor dem
+elektrischen Verbinden des Schlossmoduls (14) mit den
+Hauptstromversorgungsmitteln (18, 20) und nach dem elektrischen Laden des
+elektronischen Energiespeicherbauteils (30) mit Hilfe einer Software erfolgt, die
+in die Speichermittel (34) einprogrammiert ist, die von dem elektronischen
+Energiespeicherbauteil (30) mit Strom versorgt werden.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>Locking assembly for a motor vehicle door, intended to be
+mounted in this door, of the type comprising an electric lock
+module (14) carrying on the one hand an electronic card (16)
+forming an interface intended to connect this lock module (14)
+to main electrical supply means (18, 20) and to means (22 to
+26) of controlling the lock module (14), and on the other hand
+back-up electrical supply means (28) for the lock module (14)
+in the event of malfunctioning of the main means (18, 20),
+characterised in that the back-up means (28) comprise at least
+one electronic energy storage component (30) carried by the
+card (16) and in that the electronic energy storage component
+is a supercapacitor, the main electrical supply means (18, 20)
+keeping the supercapacitor permanently on charge in normal
+operation.</claim-text></claim><claim num="xx"><claim-text>Assembly according to Claim 1, characterised in that the
+back-up means (28) comprise at least two electronic energy
+storage components (30) connected in series.</claim-text></claim><claim num="xx"><claim-text>Assembly according to either one of Claims 1 to 2,
+characterised in that the back-up means (28) comprise at least
+two groups of electronic energy storage components (30), the
+electronic components (30) in one and the same group being
+connected in series and the two groups being connected in
+parallel.</claim-text></claim><claim num="xx"><claim-text>Assembly according to either one of Claims 1 to 2,
+characterised in that the back-up means (28) comprise at least
+one pair of electronic energy storage components (30) connected
+in parallel.</claim-text></claim><claim num="xx"><claim-text>Assembly according to Claim 1, characterised in that the
+back-up means (28) comprise at least two pairs of electronic
+energy storage components (30), these pairs being connected in
+series.</claim-text></claim><claim num="xx"><claim-text>Assembly according to any one of the preceding claims,
+characterised in that the electronic energy storage component
+(30) has an energy density per unit mass of between 0.4 and 10
+Wh/kg.</claim-text></claim><claim num="xx"><claim-text>Assembly according to any one of the preceding claims,
+characterised in that the electronic energy storage component
+(30) has a maximum charge or discharge current of between 1 and
+10 A for a voltage of between 0.8 and 14 V.</claim-text></claim><claim num="xx"><claim-text>Assembly according to any one of the preceding claims,
+characterised in that the electronic card (16) comprises
+storage means (34) able to be supplied electrically by the
+electronic energy storage component (30), in which there is
+stored software for testing the correct functioning of the lock
+module (14).</claim-text></claim><claim num="xx"><claim-text>Method of testing the correct functioning of the lock
+module of an assembly according to Claim 8, characterised in
+that this test is performed before the electrical connection of
+the lock module (14) to the main electrical supply means (18,
+20) and after electrical charging of the electronic energy
+storage component (30), by means of software programmed in the
+storage means (34) supplied electrically by the electronic
+energy storage component (30).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Ensemble de verrouillage d'une porte de véhicule automobile, destiné à
+être monté dans cette porte, du type comprenant un module de serrure électrique (14)
+portant, d'une part, une carte électronique (16) formant une interface destinée à
+raccorder ce module de serrure (14) à des moyens principaux (18,20) d'alimentation
+électrique et à des moyens (22 à 26) de commande du module de serrure (14), et d'autre
+part, des moyens de secours (28) d'alimentation électrique du module de serrure (14) en
+cas de dysfonctionnement des moyens principaux (18, 20), caractérisé en ce que les
+moyens de secours (28) comprennent au moins un composant électronique de stockage
+d'énergie (30) porté par la carte (16) et en ce que le composant électronique de
+stockage d'énergie est un supercondensateur, les moyens principaux (18, 20) d'alimentation électrique maintenant le supercondensateur en permanence en charge un fonctionnement normal.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon la revendication 1 , caractérisé en ce que les moyens de
+secours (28) comprennent au moins deux composants électroniques de stockage
+d'énergie (30) montés en série.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon l'une quelconque des revendications 1 à 2, caractérisé en
+ce que les moyens de secours (28) comprennent au moins deux groupes de composants
+électroniques de stockage d'énergie (30), les composants électroniques (30) d'un même
+groupe étant montés en série et les deux groupes étant montés en parallèle.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon l'une quelconque des revendications 1 à 2, caractérisé en
+ce que les moyens de secours (28) comprennent au moins une paire de composants
+électroniques de stockage d'énergie (30) montés en parallèle.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon la revendication 1, caractérisé en ce que les moyens de
+secours (28) comprennent au moins deux paires de composants électroniques de
+stockage d'énergie (30), ces paires étant montées en série.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon l'une quelconque des revendications précédentes,
+caractérisé en ce que le composant électronique de stockage d'énergie (30) a une
+densité d'énergie massique comprise entre 0,4 et 10 Wh/kg.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon l'une quelconque des revendications précédentes,
+caractérisé en ce que le composant électronique de stockage d'énergie (30) a une
+intensité maximale de charge ou décharge comprise entre 1 et 10 A pour une tension
+comprise entre 0,8 et 14 V.</claim-text></claim><claim num="xx"><claim-text>Ensemble selon l'une quelconque des revendications précédentes,
+caractérisé en ce que la carte électronique (16) comprend des moyens de
+mémorisation (34), susceptibles d'être alimentés électriquement par le composant
+électronique de stockage d'énergie (30), dans lesquels est programmé un logiciel de test
+du bon fonctionnement du module de serrure (14).</claim-text></claim><claim num="xx"><claim-text>Procédé de test du bon fonctionnement du module de serrure d'un
+ensemble selon la revendication 8, caractérisé en ce que ce test est réalisé avant le
+raccordement électrique du module de serrure (14) aux moyens principaux
+d'alimentation électrique (18, 20) et après chargement électrique du composant
+électronique de stockage d'énergie (30), à l'aide d'un logiciel programmé dans les
+moyens de mémorisation (34) alimentés électriquement par le composant électronique
+de stockage d'énergie (30).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="REG" date="20051202"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>ST</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051031</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20051102"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050811</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050516"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>ES</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG2A</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>2231398</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>T3</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="GBT" date="20050216"><legal-event-body><event-title>GB: TRANSLATION OF EP PATENT FILED (GB SECTION 77(6)(A)/1977)</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050126</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20041216"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60106993</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20041216</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20041110"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEESFRGBIT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20041110"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>NOT ENGLISH</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="RAP1" date="20031126"><legal-event-body><event-title>APPLICANT REASSIGNMENT (CORRECTION)</event-title><event-attributes><event-attribute><event-attribute-label>Owner name </event-attribute-label><event-attribute-value>VALEO SECURITE HABITACLE S.A.S.</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20020904"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020722</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020522"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE ES FR GB IT</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020515"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020305</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010905"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010905"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

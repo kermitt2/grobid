@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1120864-B1" country="EP" doc-number="1120864" kind="B1" date="20050914"><bibliographic-data><publication-reference fvid="23190908" ucid="EP-1120864-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1120864</doc-number><kind>B1</kind><date>20050914</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01101827-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01101827</doc-number><kind>A</kind><date>20010126</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000016906-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000016906</doc-number><kind>A</kind><date>20000126</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050315</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">H01R  13/629       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  13/629       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H01R  43/26        20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">H01R  43/26        20060101CFI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">H01R13/629C</classification-symbol><classification-symbol scheme="ICO">T01R23:68B4B</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Vorrichtung zum Fixieren/Lösen von auf einer Trägerplatte befindlichen Verbindern, welche Kabelverbinder tragen, die mit Hilfe von Schiebern betätigt werden</invention-title><invention-title lang="EN" status="new">Connector engaging/disengaging device having carrier plates carrying cable connectors moved by the use of sliders</invention-title><invention-title lang="FR" status="new">Dispositif pour l'engagement/désengagement de connecteurs ayant des plaques de support qui supportent des connecteurs de câbles activés par des glissières</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>NIPPON ELECTRIC CO</name><address><country>JP</country></address></addressbook></applicant><applicant format="epo" status="new"><addressbook><name>JAPAN AVIATION ELECTRON</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>NEC CORPORATION</name><address><country /></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>JAPAN AVIATION ELECTRONICS INDUSTRY, LIMITED</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>SAITO KAZUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>KAMIYAMANE SHIN</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>SAITO, KAZUKI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KAMIYAMANE, SHIN</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Kamiyamane, Shin, NEC Corporation</last-name><address><street>7-1, Shiba 5-chome, Minato-ku</street><city>Tokyo</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Saito, Kazuki, Japan Aviation Electronics Industry</last-name><address><street>Limited, 21-2, Dogenzaka 1-chome, Shibuya-ku</street><city>Tokyo</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>NEC CORPORATION</last-name><address><street>7-1, Shiba 5-chome, Minato-ku</street><city>Tokyo</city><country>JP</country></address></addressbook></assignee><assignee format="original" status="new"><addressbook><last-name>JAPAN AVIATION ELECTRONICS INDUSTRY, LIMITED</last-name><address><street>21-2, Dogenzaka 1-chome Shibuya-ku</street><city>Tokyo</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Prüfer, Lutz H., Dipl.-Phys.</last-name><address><street>PRÜFER &amp;amp; PARTNER GbR, Patentanwälte, Harthauser Strasse 25d</street><city>81545 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>NL</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A connector engaging/disengaging device comprises a plurality of carrier plates, a pair of side blocks, and a pair of sliders. Each of the carrier plates has lock springs holding cable connectors thereon, and a pair of engaging bosses engaging with the sliders. The sliders have slider grooves engaging with the bosses. Each of the side blocks supports each of said carrier plates slidable in vertical direction, and guides each of said sliders in horizontal direction, and supports a printed circuit board having mating connectors thereon. When the sliders slide in the horizontal direction, slider grooves of the sliders push up or down the carrier plates to connect or disconnect cable connectors to the mating connectors. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A connector engaging/disengaging device comprises a plurality of
+carrier plates, a pair of side blocks, and a pair of sliders. Each of the carrier
+plates has lock springs holding cable connectors thereon, and a pair of engaging
+bosses engaging with the sliders. The sliders have slider grooves engaging
+with the bosses. Each of the side blocks supports each of said carrier plates
+slidable in vertical direction, and guides each of said sliders in horizontal
+direction, and supports a printed circuit board having mating connectors thereon.
+When the sliders slide in the horizontal direction, slider grooves of the sliders
+push up or down the carrier plates to connect or disconnect cable connectors to
+the mating connectors.
+<img file="00000001.tif" id="img-EP-1121125-A1-00000001" he="100" wi="76" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading><u style="single">Background of the Invention:</u></heading><p num="0001">This invention relates to a connector engaging/disengaging device for
+engaging and disengaging a plurality of electrical connectors (which will simply
+be referred to as &quot;connectors&quot;) to and from a plurality of mating connectors and,
+in particular, to a connector engaging/disengaging device for engaging and
+disengaging a plurality of connectors connected to a plurality of cables to and
+from a plurality of mating connectors mounted on a printed circuit board for the
+purpose of data transmission between electronic components.</p><p num="0002">In existing electronic apparatus, electrical cables (which will simply be
+referred to as &quot;cables&quot;) are used for transmitting signals between electronic parts
+and connectors are used for electronic connection between the cables and the
+parts. For example, in order to electrically connecting a particular one of
+printed circuit boards with other ones of the printed circuit boards and/or
+electrical elements through cables, connectors are mounted on the particular
+circuit board, while the cables are led out from the other printed circuit boards
+and the electrical elements and mounted with cable connectors at their ends.
+The cable connectors are engaged with corresponding ones of the connectors
+mounted on the particular printed circuit board. Each of the cables often has a
+plurality of conductor lines, although it has a single conductor line. Accordingly,
+each of cable connectors has a plurality of contacts or a single contact. In a
+case, a plurality of cables are accommodated in a single cable connector having 
+a plurality of contacts. Each of the connectors mounted on the particular
+printed circuit board has a number of contacts equal to the number of contacts in
+the corresponding one of the cable connectors.</p><p num="0003">When carrying out wiring operation in a housing of an electronic
+apparatus, it is necessary to engage and connect connectors to each other.
+Since the engaging operation is usually performed by use of hands, the housing
+is required to have a relatively large space sufficient to enables the manual
+operation in the housing. This results in demand of a relatively large-size
+housing to be used.</p><p num="0004">In recent electronic apparatus, especially, computers, electronic parts
+used have been increased in number, and therefore, cables and connectors
+have also been increased in number. Further, for the demand of small-size of
+the apparatus itself and of reduction of signal transmission time, it is required
+that the housing is small-sized, parts being mounted in small mounting density,
+and cables being reduced in length. Therefore, on one hand, the wiring
+operation becomes more difficult because manual operation for engaging
+connectors to each other must be an reduced space in the housing, and, on the
+other hand, insurance of the manual operation of the wiring make it difficult to
+small size the apparatus.</p><p num="0005"><ref typ="patent">EP-A 0 901 294</ref> discloses a connector engaging/disengaging device. The
+connector engaging/disengaging device comprises a pair of parallel frames, a pair
+of frame blocks positioned at both end portions, and a plurality of partition members.
+Each connector is received in a space between the neighboring partition members.
+Each connector has a pair of projections, which project upwardly and downwardly,
+respectively. A slider has a pair of slider plates and a slider block, which supports
+corresponding ends of the slider plates. On the inner surfaces of the slider plates,
+cam grooves are formed. The slider plates are slidably mounted on the respective
+parallel frames while the cam grooves accommodate the projections of the
+connectors. When the slider is operated in a direction perpendicular to the
+connection direction in which the connectors are connected to mating connectors,
+the projections of the connector move along the cam grooves of the slider plates so
+that the connectors move forwards or backwards in the connection direction of the
+connectors, being connected to or disconnected from the mating connectors. A
+connector engaging/disengaging device claimed in claim 1 adopts a connector
+engaging/disengaging mechanism similar to <ref typ="patent">EP-A 0 901 294</ref>, the mechanism using
+a pair of slider rods which provide a similar function as the slider of <ref typ="patent">EP-A 0 901 294</ref>.</p><heading><u style="single">Summary of the invention:</u></heading><p num="0006">It is an object of this invention to provide a connector
+engaging/disengaging device which is capable of easily and rapidly
+engaging/disengaging a number of connectors accommodated in a small frame
+and a number of mating connectors mounted on a circuit board.</p><p num="0007">This object is achieved by the features of claim 1.
+Further advantageous developments are the subject-matters
+of the dependent claims.</p><p num="0008">According to this invention, there is provided a connector
+engaging/disengaging device for connecting/disconnecting between first
+electrical connectors and second electrical connectors. The device comprises:
+at least one carrier plate adapted to carry the first electrical connectors thereon  
+and having opposite end portions in a first direction, the end portions having
+engaging bosses projecting from the end portions in the first direction; a support
+member supporting the at lest one carrier plate slidable in a second direction
+perpendicular to the first direction and having slider guide grooves extending in a
+third direction perpendicular to the first and second direction, the support
+member having support portions adapted to support the second connectors so
+that the second electrical connectors face the first electrical connectors carried
+on the at least one carrier plate; and a pair of slider rods assembled in the
+support members slidable in the slider guide grooves in the third direction, the
+slider rods having slider grooves engaging the engaging bosses of the at lest
+one carrier plate so that the at least one carrier plate is moved in the second
+direction by slide of the slider rods in the third direction so as to perform
+connection and disconnection of the first electrical connectors with the second
+electrical connectors.</p><p num="0009">According to an embodiment, each of the slider groove comprises a
+first straight groove portion extending in the third direction, second straight
+groove portion extending in the third direction but offset from the first straight
+groove portion in the second direction, and an inclined groove portion
+connecting between the first straight groove portion and the second straight
+groove portion.</p><p num="0010">According to another embodiment, the first electrical connectors are
+cable connectors and the second electrical connectors are header connectors
+mounted on a printed circuit board.</p><p num="0011">According to an embodiment, the support portions of the support
+member are support flanges, the printed circuit board having a pair of flanges
+fixed at opposite sides thereof and a pair of L-shaped guide portions fixedly
+mounted on the flanges to form gaps between the flanges and foots of &quot;L&quot; of the
+L-shaped guide portions, the printed circuit board is attached to the support 
+member by the support flanges of the support members being inserted in the
+gaps.</p><p num="0012">In an embodiment, the shape of the at least one carrier plate is in a
+generally rectangular form having an upper side and a lower side in the second
+direction and opposite ends in the first direction, the carrier plate has a generally
+U-shaped locking spring at the center thereof in the first direction and generally
+L-shaped locking springs at both the ends thereof, a first stopper on the lower
+side at the center in the first direction and second stoppers on the lower side at
+both the ends thereof, the carrier plate further having generally L-shaped
+projecting portions formed at the both end portions with the bosses being fixed
+on the projecting portions, respectively.</p><p num="0013">In a preferred embodiment, the support member comprising a pair of
+side blocks, and a front plate fixed onto front surfaces of the side blocks to
+thereby joint the side blocks.</p><p num="0014">Each of the side blocks has vertical guide grooves in the second
+direction and receiving the L-shaped projecting portions slidable therein in the
+second direction, stopper plates are fixedly mounted onto the side blocks to
+prevent the L-shaped projecting portions from going out of the vertical guide
+grooves.</p><heading><u style="single">Brief Description of the Drawing:</u></heading><p num="0015"><sl><li>FIG. 1 is a perspective view of a cable connector used in a connector
+engaging/disengaging device an embodiment of this invention;</li><li>FIG. 2 is a perspective view of a carrier plate in the connector
+engaging/disengaging device according to the embodiment of this invention;</li><li>FIG. 3 is a perspective view showing a disassembled state of a carrier
+assembly in the connector engaging/disengaging device according to the
+embodiment of this invention; </li><li>FIG. 4 is a perspective view showing the carrier assembly mounted on
+at a pair of pillars with cable connector being supported on the carrier plates;</li><li>FIG. 5 is a perspective view showing the carrier assembly mounted ion
+at a pair of pillars with cable connector being supported on the carrier plates,
+together with a card having board or header connectors and a pair of sliders to
+be fitted to the carrier assembly;</li><li>FIGs. 6A-6C are side view showing three different states of the
+connector engaging/disengaging device in a connecting process of the cable
+connectors to connectors on the card;</li><li>FIGs. 7A-7C are sectional views taken along lines 7A-7A, 7B-7B, and
+7C-7C in FIGs. 6A-6C, respectively;</li><li>FIG. 8 is a side view of the card;</li><li>FIG. 9 is a front view of the card;</li><li>FIG. 10 is a sectional view taken along la ine X-X in Fig. 7B; and</li><li>FIG. 11 is a sectional view taken along a line XI-XI in FIG. 7C.</li></sl></p><heading><u style="single">Description of the Preferred Embodiment:</u></heading><p num="0016">Referring now to FIGs. 1 to 11, the description will proceed to a device
+for engaging/disengaging cable connectors with connectors on printed circuit
+board or a card according to a preferred embodiment of this invention.</p><p num="0017">Referring to FIG. 1, a cable connector 1 comprises an insulator housing
+2 having a cable introducing hole at an upper end and a fitting portion 4 at the
+opposite or lower end, and a plurality of contact elements (not shown) fixed in
+the insulator housing 2. A plurality of cables 3 are introduced in the insulator
+housing 2 and electrically and mechanically connected to the contact elements.
+The fitting end 4 is fitted and engaged with a mating connector. The insulator
+housing 2 has two locking grooves 2a at opposite side ends and two stopping
+grooves 4c in a lower end surface. In FIG. 1, the insulator housing 2 is shown
+to be formed of two similar insulators fixed to each other by screws 5. </p><p num="0018">The connector engaging/disengaging device of this invention
+comprises a carrier assembly for carrying cable connectors having carrier plates.
+Referring to FIG. 2, a carrier plate 6 is generally rectangular in the shape. The
+carrier plate 6 has a generally U-shaped locking spring (preserving portion) 6a
+on its surface at the central portion in the transverse direction thereof and fixed
+to the upper side of the rectangular, and two generally L-shaped locking springs
+(preserving portions) 6b at opposite end poetions of the rectangular, respectively,
+by bending the plate. The carrier plate 6 further has, on a lower side, a stopper
+(positioning portion) 6c at the center in the transverse direction thereof and two
+small stoppers (positioning portions) 6d at opposite end portions thereof,
+respectively, by bending the plate. The carrier plate 6 further has generally L-shaped
+projecting portions 6e which project from opposite ends of the
+rectangular. A boss (protrudent portion) 6f is press-fitted and fixed onto each of
+the L-shaped projecting portions 6e.</p><p num="0019">Referring to FIG. 3, the carrier assembly 7 comprises a plurality of the
+carrier plates 6, a pair of side blocks 8 for supporting opposite ends of carrier
+plates 6, a front plate 10 fixed to a front surface of each of the side blocks 8, and
+a pair of upper plates 12 fixed to an upper surface of each of the side blocks.
+The opposite end portion of the front plate 10 is fixed to the side blocks 8 by
+screws 9 fastened therethrough to screw holes 8a in the front surface of the side
+blocks 8. The upper plates 12 are also fixed to the side blocks 8 by means of
+screws 11 fastened therethrough to screw holes 8b on the upper surface of the
+side blocks 8.</p><p num="0020">The side blocks 8 further have a plurality of vertical guide grooves
+(preserving portions for driving) 8c formed at regular intervals in the upper half
+wall portion of each side block 8. Projecting portions 6e of carrier plates 6 are
+inserted into corresponding ones of the guide grooves 8c and vertically slidable
+in the vertical guide groove 8c. However, the projecting portions 6e are 
+prevented from falling off from the vertical grooves 8c upwardly by the upper,
+plates 12. The side blocks 8 further have horizontal guide grooves 8d formed
+outside and adjacent the vertical guide grooves 8c and extending from the front
+to the rear of the side blocks 8. The side blocks 8 further have support flange
+(support portion) 8e projecting inwardly from the lower inside portions of the side
+blocks 8 for supporting the card.</p><p num="0021">The side blocks 8 further have mounting tabs 8f on the outside thereof
+by which the carrier assembly 7 is fixedly mounted on mounting pillars 14 by
+means of screws 13 as seen in Fig. 4.</p><p num="0022">As shown in FIG. 4, cable connectors 1 are mounted on carrier plates 6
+successively. Opposite locking grooves 2a of each cable connector 1 engage
+with one side of the central locking spring 6a and the locking spring 6b,
+respectively, of each carrier plate 6. Opposite stopping grooves 4c of each
+cable connector 1 come into contact with the large stopper 6c and the small
+stopper 6d, respectively, of the carrier plate 6. Thus, the cable connector 1 is
+stably held on the carrier plate. In the state, the cable can be bent adjacent the
+cable connector 1 with an angle shown at A in the figure, as it is necessary.
+Since impedance matching is performed in the cable 3, turbulence of the
+impedance does hardly occur even if the angle portion A is formed at the cable
+3.</p><p num="0023">Referring to Fig. 5, all cable connectors 1 (ten cable connectors are
+shown) are disposed in two rows on the carrier assembly 7. In the state, a pair
+of sliders 21 are slidably fitted in the horizontal guide grooves 8d, respectively,
+and are attached to the carrier assembly 7 to connect the cable connectors 1
+with header connectors on the card 15. Thus, the connector
+engaging/disengaging device is completed.</p><p num="0024">Referring now to FIGs. 5, 8 and 9, the description will proceed to the
+card 15. The card 15 comprises a printed circuit board 16, ten header 
+connectors 17 all disposed on a surface of the printed circuit board 16, a pair of
+flanges 19 fixed on opposite side portions of the printed circuit board 16 by
+means of screws 18, and a pair of generally L-shaped guide members 20 is fixed
+to flanges 19, respectively. The ten header connectors 17 are disposed in two
+rows each having five connectors. The guide members 20 are disposed
+adjacent to two header connector rows, respectively. Thus, a gap 20a is
+formed between the flange 19 and a foot of &quot;L&quot; of the L-shaped guide member
+20.</p><p num="0025">Referring to FIGs. 6A-6C in addition to Fig. 5, the description will
+proceed to each slider 21. Each of the sliders 21 is a rectangular rod and has a
+slider groove formed in the inner side surface and extending in the lengthwise
+direction of the rod for receiving the bosses 6f of the carrier plates 6. The slider
+groove comprises a first straight groove portion 21a, an inclined groove portion
+21b, and a second straight groove portion 21c which are connected in series in
+this order. The second straight groove portion 21c is offset upwardly from the
+first straight groove portion 21a through the inclined groove portion 21b.
+Therefore, the inclined groove portion 21b goes up from the first straight groove
+portion 21a to the second straight groove portion 21c.</p><p num="0026">In the state shown in FIG. 5, when each slider 21 is inserted into the
+horizontal guide groove 8d of each side block 8 while the bosses 6e of the
+carrier plates 6 are received in the slider groove, the carrier plates 6 and
+therefore the cable connectors 1 are moved upwardly as the bosses 6f transit
+from the first straight groove portion 21a to the second straight groove portion
+21c through the inclined groove portion 21b. The state of the carrier plates 6
+are elevated is shown in FIG. 6A and FIG. 7A.</p><p num="0027">Next, the card 15 is attached to the connector engaging/disengaging
+device by inserting the support flanges 8e of the side blocks 8 into the gaps 20a
+of the card 15 until each flange 19 of the card 15 runs against each pillar 14, as 
+shown in Fig. 6B. As a result, the card 15 is mounted on the carrier assembly 7,
+and each cable connector 1 and each header connector 17 are positioned facing
+each other., as shown in FIG. 7B.</p><p num="0028">Thereafter, when the sliders 21 are synchronously drawn out and slid
+to the direction shown by an arrow in FIG. 6B, bosses 6f of the five carrier plates
+6 are pushed down successively by engaging with the inclined groove portion
+21b of each slider 21. Thereupon, the ten cable connectors 1 are successively
+brought into engagement with the ten header connectors 17. When all of
+bosses 6f engage with the first straight groove portions 21a, all of the cable
+connector 1 are brought into the completion of engagement with the all of the
+header connectors 17, as shown in FIG. 6C and FIG. 7C. The connection
+completed state is maintained even if cable connectors 1 are pulled by cables 3.
+This is because cable connectors 1 are locked to the carrier plates 6 by locking
+springs 6a and 6b while the carrier plates 6 are prevented from moving by
+engagement of the bosses 6f with the first straight groove portions 21a in the
+slider 21.</p><p num="0029">Referring to Fig. 10 which shows, in sectional views, a positional
+relation of the fitting portion 4 of the cable connector 1 and the header connector
+17 in the state shown in FIGs. 6B and 7B, the fitting portion 4a of the cable
+connector 1 comprises a housing 4a and contact elements 4b preserved in the
+housing 4a. The header connector 17 comprises an insulator housing 17a and
+contact elements 17b fixed in the housing 17a. Each of contact elements 17b
+has contact portion to be connected to each of contact elements 4b and a
+surface mounting terminal 17c which is connected onto the printed circuit board
+(16, in FIG. 6).</p><p num="0030">In transition of cable connectors 1 from the state in FIGs. 6B and 7B to
+another state in FIGs. 6C and 7C, the engaging portion 4 moves to a direction of
+an arrow shown in FIG. 10. </p><p num="0031">Referring to FIG. 11 which shows, in sectional views, a positional
+relation of the fitting portion 4 of the cable connector 1 and the header connector
+17 in the state shown in FIGs. 6C and 7C, the fitting portion 4 of the cable
+connector 1 is fit to the header connector 17. Consequently, each contact
+element 4b of the cable connector 1 comes into contact with each contact
+element 17b of the header connector 17. At this time, each contact element
+17b is elastically deformed to provide a contact pressure to the contact element
+4b.</p><p num="0032">In operation for separating each cable connector 1 from each header
+connector 17, the pair of sliders 21 are moved in a reversed direction and are
+drawn out from the carrier assembly 7. As a result, cable connectors 1 are
+moved upwardly in transition of states from FIGs. 6C and 7C to FIGs. 6A and 7A
+through FIGs. 6B and 7B.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Eine Verbindereingriffs-/Außereingriffsvorrichtung (7) zum
+Verbinden/Lösen erster elektrischer Verbinder (1) mit/von
+zweiten elektrischen Verbindern (17), die folgendes aufweist:
+<claim-text><claim-text>mindestens eine Trägerplatte (6), die dazu angepasst ist,
+die ersten elektrischen Verbinder darauf zu tragen, und die
+gegenüberliegende Endabschnitte in einer ersten Richtung besitzt,
+wobei die Endabschnitte Eingriffsvorsprünge (6f) besitzen,
+die von den ersten Endabschnitten in der ersten Richtung
+vorstehen;</claim-text><claim-text>ein Trägerbauteil (8, 10, 12), das die mindestens eine
+Trägerplatte verschiebbar in einer zweiten Richtung, die senkrecht
+zur ersten Richtung ist, lagert und Gleitführungsnuten
+(8d) besitzt, die sich in einer dritten Richtung, die senkrecht
+zu der ersten und der zweiten Richtung ist, erstrecken,
+wobei das Trägerbauteil Trägerabschnitte (8e) besitzt, die dazu
+angepasst sind, die zweiten Verbinder so zu lagern, dass
+die zweiten elektrischen Verbinder (17) den ersten elektrischen
+Verbindern (1), die auf der mindestens einen Trägerplatte
+(6) getragen werden, gegenüberliegen; und</claim-text><claim-text>ein Paar Gleitstangen (21), die verschiebbar in den
+Gleitführungsnuten (8d) in der dritten Richtung in den Trägerbauteilen
+eingebaut sind, wobei die Gleitstangen (21) Gleitnuten
+(21a) besitzen, die mit den Eingriffsvorsprüngen (6f) der
+mindestens einen Trägerplatte (6) in Eingriff stehen; wobei
+jede der Gleitnuten einen ersten geraden Nutabschnitt (21a),
+der sich in der dritten Richtung erstreckt, aufweist, einen
+zweiten geraden Nutabschnitt (21c), der sich in der dritten
+Richtung erstreckt, jedoch von dem ersten Nutabschnitt (21a)
+in der zweiten Richtung versetzt ist, und einen geneigten
+Nutabschnitt (21b), der den ersten geraden Nutabschnitt (21a)
+abschnitt (21b), der den ersten geraden Nutabschnitt (21a) und
+den zweiten geraden Nutabschnitt (21c) verbindet, so dass die
+mindestens eine Trägerplatte (6) in die zweite Richtung bewegt
+wird, indem die Gleitstangen in der dritten Richtung gleiten,
+um eine Verbindung und eine Trennung der ersten elektrischen
+Verbinder mit den zweiten elektrischen Verbindern durchzuführen.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Verbindungseingriffs-/Außereingriffsvorrichtung gemäß Anspruch
+1, wobei die ersten elektrischen Verbinder Kabelverbinder
+(1) sind, und die zweiten elektrischen Verbinder Sockelverbinder
+(17) sind, die auf einer gedruckten Schaltung
+(16) befestigbar sind.</claim-text></claim><claim num="xx"><claim-text>Verbindereingriffs-/Außereingriffsvorrichtung gemäß Anspruch
+2, wobei die Trägerabschnitte (8e) des Trägerbauteils (8, 10,
+12) Trägerflansche sind, wobei die gedruckte Schaltung ein
+Paar Flansche (19) besitzt, die an gegenüberliegenden Seiten
+hiervon befestigt sind, und ein Paar L-förmige Führungsabschnitte
+(20), die fest auf den Flanschen befestigt sind, um
+Spalte (20a) zwischen den Flanschen und Füßen des &quot;L&quot; der L-förmigen
+Führungsabschnitte zu bilden, wobei die gedruckte
+Schaltung (16) an dem Trägerbauteil befestigt ist, indem die
+Trägerflansche der Trägerbauteile in die Spalte eingesetzt
+werden.</claim-text></claim><claim num="xx"><claim-text>Verbindereingriffs-/Außereingriffsvorrichtung gemäß Anspruch
+1, wobei die Form der mindestens einen Trägerplatte (6) eine
+im allgemeinen rechteckige Form ist, die eine Oberseite und
+eine Unterseite in der zweiten Richtung und gegenüberliegende
+Enden in der ersten Richtung besitzt, wobei die Trägerplatte
+(6) eine im allgemeinen U-förmige Verriegelungsfeder (6a) in
+ihrer Mitte in der ersten Richtung besitzt, und im allgemeinen
+L-förmige Verriegelungsfedern (6b) an deren beiden Enden,
+einen ersten Stopper (6c) auf der unteren Seite in der Mitte
+in der ersten Richtung, und zweite Stopper (6d) auf der unteren
+Seite an deren beiden Enden, wobei die Trägerplatte des
+weiteren im allgemeinen L-förmige vorstehende Abschnitte (6e)
+besitzt, die an den beiden Endabschnitten mit den Vorsprüngen
+ausgebildet sind, die jeweils auf den L-förmigen vorstehenden
+Abschnitten (16e) befestigt sind.</claim-text></claim><claim num="xx"><claim-text>Verbindereingriffs-/Außereingriffsvorrichtung gemäß Anspruch
+1, wobei das Trägerbauteil (8, 10, 12) ein Paar Seitenblöcke
+(8) aufweist, und eine Vorderplatte (10), die an Vorderseiten
+der Seitenblöcke befestigt ist, um hierdurch die Seitenblöcke
+zu verbinden.</claim-text></claim><claim num="xx"><claim-text>Verbindereingriffs-/Außereingriffsvorrichtung gemäß Anspruch 5
+und 4, wobei jeder der Seitenblöcke (8) vertikale Führungsnuten
+(8c) in der zweiten Richtung besitzt und die L-förmigen
+vorstehenden Abschnitte (6e) darin verschiebbar in der zweiten
+Richtung aufnimmt, wobei die Stopperplatten (12) fest auf den
+Seitenblöcken (8) befestigt sind, um zu verhindern, dass die
+L-förmigen vorstehenden Abschnitte (6e) aus den vertikalen
+Führungsnuten (8c) herausgehen.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A connector engaging/disengaging device (7) for
+connecting/disconnecting between first electrical connectors (1) and second
+electrical connectors (17) which comprises:
+<claim-text><claim-text>at least one carrier plate (6) adapted to carry said first electrical
+connectors thereon and having opposite end portions in a first direction, said end
+portions having engaging bosses (6f) projecting from said end portions in said first
+direction;</claim-text><claim-text>a support member (8, 10, 12) supporting said at least one carrier plate slidable in
+a second direction perpendicular to said first direction and having slider guide
+grooves (8d) extending in a third direction perpendicular to said first and second
+direction, said support member having support portions (8e) adapted to support said
+second connectors so that said second electrical connectors (17) face said first
+electrical connectors (1) carried on said at least one carrier plate (6); and</claim-text><claim-text>a pair of slider rods (21) assembled in said support members slidable in
+said slider guide grooves (8d) in said third direction, said slider rods (21) having slider
+grooves (21a) engaging said engaging bosses (6f) of said at least one carrier plate (6); wherein each of said slider groove comprises a first straight groove portion (21a) extending in said third direction, second straight groove portion (21c) extending in said third direction but offset from said first straight groove portion (21a) in said second direction, and an inclined groove portion (21b) connecting between said first straight groove portion (21a) and said second straight groove portion (21c), so that
+said at least one carrier plate (6) is moved in said second direction by slide of said
+slider rods in said third direction so as to perform connection and disconnection
+of said first electrical connectors with said second electrical connectors.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A connector engaging/disengaging device as claimed in claim 1,
+wherein said first electrical connectors are cable connectors (1) and said second
+electrical connectors are header connectors (17) mountable on a printed circuit board (16).</claim-text></claim><claim num="xx"><claim-text>A connector engaging/disengaging device as claimed in claim 2,
+wherein said support portions (8e) of said support member (8, 10, 12) are support flanges, said
+printed circuit board having a pair of flanges (19) fixed at opposite sides thereof and a
+pair of L-shaped guide portions (20) fixedly mounted on said flanges to form gaps (20a)
+between said flanges and foots of &quot;L&quot; of said L-shaped guide portions, said
+printed circuit board (16) is attached to said support member by said support flanges
+of said support members being inserted in said gaps.</claim-text></claim><claim num="xx"><claim-text>A connector engaging/disengaging device as claimed in claim 1,
+wherein the shape of said at least one carrier plate (6) is in a generally rectangular
+form having an upper side and a lower side in said second direction and
+opposite ends in said first direction, said carrier plate (6) has a generally U-shaped
+locking spring (6a) at the center thereof in said first direction and generally L-shaped
+locking springs (6b) at both the ends thereof, a first stopper (6c) on the lower side at the
+center in said first direction and second stoppers (6d) on the lower side at both the
+ends thereof, said carrier plate further having generally L-shaped projecting
+portions (6e) formed at said both end portions with said bosses being fixed on said L-shaped
+projecting portions (6e), respectively.</claim-text></claim><claim num="xx"><claim-text>A connector engaging/disengaging device as claimed in claim 1,
+wherein said support member (8, 10, 12) comprises a pair of side blocks (8), and a front plate (10)
+fixed onto front surfaces of said side blocks to thereby joint said side blocks.</claim-text></claim><claim num="xx"><claim-text>A connector engaging/disengaging device as claimed in claim 5 and claim 4,
+wherein each of said side blocks (8) has vertical guide grooves (8c) in said second
+and receiving said L-shaped projecting portions (6e) slidable therein in said
+second direction, stopper plates (12) are fixedly mounted onto said side blocks (8) to
+prevent said L-shaped projecting portions (6e) from going out of said vertical guide
+grooves (8c).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Dispositif (7) d'accouplement/désaccouplement de connecteurs permettant
+l'accouplement et le désaccouplement entre des premiers connecteurs
+électriques (1) et des seconds connecteurs électriques (17), et
+qui comprend :
+<claim-text><claim-text>au moins une plaque de support (6) adaptée pour porter les premiers
+connecteurs électriques et présentant des parties terminales opposées
+dans une première direction, les parties terminales ayant des
+protubérances d'engagement (6f) faisant saillie à partir des parties
+terminales dans la première direction ;</claim-text><claim-text>un élément de support (8, 10, 12) supportant l'au moins une plaque
+de support en pouvant glisser dans une deuxième direction perpendiculaire
+à la première direction et ayant des rainures de guidage de
+glissière (8d) se prolongeant dans une troisième direction perpendiculaire
+aux première et deuxième directions, l'élément de support
+ayant des parties de support (8e) adaptées pour supporter les seconds
+connecteurs de manière à ce que les seconds connecteurs
+électriques (17) fassent face aux premiers connecteurs électriques (1)
+que porte la au moins une plaque de support (6) ; et</claim-text><claim-text>une paire de barres de glissière (21) qui sont assemblées dans les
+éléments de support et qui peuvent glisser dans les rainures de guidage
+de glissière (8d) dans la troisième direction, les barres de glissière
+(21) ayant des rainures de glissière (21a) venant en prise avec
+les protubérances d'engagement (6f) de l'au moins une plaque de
+support (6),</claim-text></claim-text>caractérisé en ce que
+chacune des rainures de glissière comprend une première partie de rainure
+droite (21a) se prolongeant dans la troisième direction, une seconde
+partie de rainure droite (21c) se prolongeant dans la troisième
+direction mais en décalage par rapport à la première partie de rainure
+droite (21a) dans la deuxième direction, et une partie de rainure inclinée
+(21b) établit la liaison entre la première partie de rainure droite
+(21a) et la seconde partie de rainure droite (21c), de telle manière que la
+plaque de support (6) se déplace dans la deuxième direction par coulissage
+des barres de glissière dans la troisième direction de manière à effectuer
+l'accouplement et le désaccouplement entre les premiers connecteurs
+électriques et les seconds connecteurs électriques.</claim-text></claim><claim num="xx"><claim-text>Dispositif d'accouplement/désaccouplement de connecteurs selon la
+revendication 1,caractérisé en ce que
+les premiers connecteurs électriques sont des connecteurs de câble (1)
+et les seconds connecteurs électriques sont des connecteurs d'embase
+(17) pouvant être montés sur une carte de circuit imprimé (16).</claim-text></claim><claim num="xx"><claim-text>Dispositif d'accouplement/désaccouplement de connecteurs selon la
+revendication 2,caractérisé en ce que
+les parties de support (8e) du élément de support (8, 10, 12) consistent
+en des rebords d'appui, la carte de circuit imprimée ayant une paire de
+rebords (19) fixés sur des côtés opposés de celle-ci et une paire de parties
+de guidage en forme de L (20) fixement montées sur les rebords en
+formant des vides (20a) entre les rebords et le pied du « L » des parties
+de guidage en forme de L, la carte de circuit imprimé (16) est rattachée
+au élément de support au moyen des rebords d'appui des éléments de
+support qui sont insérés dans les vides.</claim-text></claim><claim num="xx"><claim-text>Dispositif d'accouplement/désaccouplement de connecteurs selon la
+revendication 1,caractérisé en ce que
+la forme de la plaque de support (6) est globalement rectangulaire, son
+côté supérieur et son côté inférieur étant dirigés dans la deuxième direction
+et ses extrémités opposées se prolongeant dans la première direction,
+la plaque de support (6) possède en son centre, dans la
+première direction, un ressort de verrouillage (6a) de forme globalement
+en U et, à ses deux extrémités, des ressorts de verrouillage (6b) globalement
+en forme de L ainsi qu'une première pièce d'arrêt (6c) au centre
+du côté inférieur dans la première direction et des secondes pièces
+d'arrêt (6d) à chaque extrémité du côté inférieur, la plaque de support
+possédant en outre des parties globalement en forme de L faisant saillie
+(6e) et formées aux deux parties d'extrémité, les protubérances étant
+respectivement fixées sur les parties en forme de L faisant saillie (6e).</claim-text></claim><claim num="xx"><claim-text>Dispositif d'accouplement/désaccouplement de connecteurs selon la
+revendication 1,caractérisé en ce que
+l'élément de support (8, 10, 12) comprend une paire de blocs latéraux
+(8) et une plaque frontale (10) fixée sur les surfaces frontales des blocs
+latéraux de sorte à joindre les blocs latéraux.</claim-text></claim><claim num="xx"><claim-text>Dispositif d'accouplement/ désaccouplement de connecteurs selon
+les revendications 4 et 5,caractérisé en ce que
+chacun des blocs latéraux (8) présente des rainures de guidage verticales
+(8c) dans la deuxième direction qui reçoivent les parties en forme de
+L faisant saillie (6e) de manière à ce qu'elles y glissent dans la deuxième
+direction, les plaques d'arrêt (12) étant montées de manière fixe sur les
+blocs latéraux (8) afin d'empêcher les parties en forme de L faisant
+saillie (6e) de sortir des rainures de guidage verticales (8c).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20060823"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060615</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20060421"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20051020"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60113314</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20051020</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050914"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRNL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030102"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20021111</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020424"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>DE FR NL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020403"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020125</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010801"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRNL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010801"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

@@ -10,6 +10,7 @@ import org.grobid.core.engines.tagging.GrobidCRFEngine;
  */
 public class TrainerFactory {
     public static GenericTrainer getTrainer(GrobidModel model) {
+System.out.println(model.getModelName());        
         switch (GrobidProperties.getGrobidCRFEngine(model)) {
             case CRFPP:
                 return new CRFPPGenericTrainer();

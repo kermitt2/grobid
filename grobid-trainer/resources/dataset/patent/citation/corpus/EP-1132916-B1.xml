@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1132916-B1" country="EP" doc-number="1132916" kind="B1" date="20040519"><bibliographic-data><publication-reference fvid="23244579" ucid="EP-1132916-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1132916</doc-number><kind>B1</kind><date>20040519</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01301915-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01301915</doc-number><kind>A</kind><date>20010302</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000067210-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000067210</doc-number><kind>A</kind><date>20000307</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new" /><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G11B  23/03        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G11B  23/03        20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">G11B23/03A4</classification-symbol><classification-symbol scheme="EC">G11B23/03A6</classification-symbol><classification-symbol scheme="EC">G11B23/03A8C</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Plattenkassette</invention-title><invention-title lang="EN" status="new">Disc cartridges</invention-title><invention-title lang="FR" status="new">Cartouche à disque</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>SONY CORP</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>SONY CORPORATION</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>KIKUCHI SHUICHI</name><address><country>JP</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>IZU RIE</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KIKUCHI, SHUICHI</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>IZU, RIE</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Izu, Rie, c/o Intell. Property Dept.</last-name><address><street>Sony Corp., 6-7-35 Kitashinagawa</street><city>Shinagawa-ku, Tokyo 141</city><country>JP</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Kikuchi, Shuichi, c/o Intell. Property Dept.</last-name><address><street>Sony Corp., 6-7-35 Kitashinagawa</street><city>Shinagawa-ku, Tokyo 141</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>SONY CORPORATION</last-name><address><street>7-35 Kitashinagawa 6-chome Shinagawa-ku</street><city>Tokyo 141</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Goddard, Frances Anna</last-name><address><street>D Young &amp;amp; Co 21 New Fetter Lane</street><city>London EC4A 1DA</city><country>GB</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>DE</country><country>FR</country><country>GB</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>In order to provide a shutter open/close mechanism (26) suitable for use with a cartridge body (6) whose front end is formed in an arbitrary shape for easily identifying the correct direction of insertion in a recorder/player, a guide recess (36) to support a shutter plate (25) movably is formed on a main side of the cartridge body (6) to be oblique relative to the width of the cartridge body (6). The shutter open/close mechanism (26) includes a guide member (31) supporting the shutter plate (25) and movably engaged in the guide recess (36), an operating member (32) to move the guide member (31), a transmission member (33) connecting the guide member (31) and operating member (32) to each other to transmit an operating force from the operating member (32) to the guide member (31), and support surfaces (37) formed on the cartridge body (6) to support the operating member (32) movably. The shutter open/close mechanism (26) further includes a shutter locking mechanism (38) disposed at the lateral side of the cartridge body (6) to lock the shutter plate (25) against movement. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">In order to provide a shutter open/close mechanism (26) suitable for use with a
+cartridge body (6) whose front end is formed in an arbitrary shape for easily
+identifying the correct direction of insertion in a recorder/player, a guide recess
+(36) to support a shutter plate (25) movably is formed on a main side of the cartridge
+body (6) to be oblique relative to the width of the cartridge body (6). The shutter
+open/close mechanism (26) includes a guide member (31) supporting the shutter plate
+(25) and movably engaged in the guide recess (36), an operating member (32) to move
+the guide member (31), a transmission member (33) connecting the guide member (31)
+and operating member (32) to each other to transmit an operating force from the
+operating member (32) to the guide member (31), and support surfaces (37) formed on
+the cartridge body (6) to support the operating member (32) movably. The shutter
+open/close mechanism (26) further includes a shutter locking mechanism (38)
+disposed at the lateral side of the cartridge body (6) to lock the shutter plate (25)
+against movement.
+<img file="00000001.tif" id="img-EP-1133703-A1-00000001" he="93" wi="140" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><p num="0001">The present invention relates to a disc cartridge having therein a disc-shaped
+recording medium such as an optical disc, magneto-optical disc or the like.</p><p num="0002">As the disc-shaped recording medium, a disc cartridge having a magneto-optical
+disc for example encased therein has been proposed.</p><p num="0003">Referring now to FIG. 1, there is schematically illustrated a conventional disc
+cartridge in the form of a perspective view. In FIG. 1, the disc cartridge is generally
+indicated with a reference 201. The disc cartridge 201 includes a cartridge body 206
+consisting of a pair of upper shell 211 and lower shell 212 assembled to each other.
+These upper and lower shells 211 and 212 are made of a resin material. Each of the
+upper and lower shells 211 and 212 of the cartridge body 206 has formed therein an
+access opening 215 having a generally rectangular shape. The access openings 215
+are opposite to each other. Thus, a part of the recording area of the magneto-optical
+disc 205, extending between lead-in and lead-out areas, is exposed outside through the
+openings 215 for data read and write.</p><p num="0004">The lower shell 212 of the cartridge body 206 has formed therein adjacent or
+next to the access opening 215 a drive opening 217 through which a disc table (not 
+shown) of a disc drive mechanism which drives to rotate the magneto-optical disc 205
+comes into the cartridge body 206.</p><p num="0005">Further, the cartridge body 206 has a shutter member 220 mounted thereon as
+shown in FIG. 1. Normally, the shutter member 220 covers or closes the access
+openings 215 and drive opening 217. When the disc cartridge 201 is loaded into a
+recorder/player, the shutter member 220 will be moved and thus the access and drive
+openings 215 and 217 will be opened. The shutter member 220 consists of an upper
+shutter portion which closes and opens the access openings 215 in the upper shell 211,
+a lower shutter portion which closes and opens the access openings 215 and drive
+opening 217 in the lower shell 212, and a connection to which each of the upper and
+lower shutter portions is connected at one end thereof. Further, the cartridge body
+206 has disposed therein an elastic member (not shown) to force the upper shutter
+portion of the shutter member 220 in a direction in which the upper shutter portion
+closes the access openings 215 and drive opening 217.</p><p num="0006">When the disc cartridge 201 constructed as in the above is loaded into the
+recorder/player, the shutter member 220 is moved by a shutter open/close member of
+the recorder/player to open the access openings 215 and drive opening 217. The disc
+table of the disc drive mechanism (not shown) of the recorder/player comes into the
+disc cartridge through the drive opening 217 to rotate the magneto-optical disc 205 in
+the disc cartridge 201, while the write/read head of the recorder/player comes into the
+disc cartridge 201 through the access openings 215 to write/read information to/from 
+the magneto-optical disc 205.</p><p num="0007">In the aforementioned conventional disc cartridge 101, however, since the front
+end thereof at which the disc cartridge 201 is first inserted into and removed from the
+recorder/player is formed straight perpendicularly to the direction of insertion into the
+recorder/player and both the main sides of the cartridge body 206 are formed generally
+square, it is difficult to easily know the correct inserting direction of the disc cartridge
+201 from its appearance.</p><p num="0008">Therefore, the conventional disc cartridge 201 is likely to be inserted in the wrong
+direction into the recorder/player.</p><p num="0009">In the conventional disc cartridge 201, the shutter member 220 is moved under
+the action of only the force of the elastic member to the position where it closes the
+access openings 215 and drive opening 217. Since in the conventional disc cartridge
+201, the shutter member 220 can thus be moved easily to the open position against the
+force of the elastic member, there is a likelihood that the shutter member 220 is
+inadvertently opened.</p><p num="0010">Document <ref type="patent">US4740949</ref> discloses a disc cartridge comprising an access opening formed
+in the cartridge body, a shutter member provided movably to open and close the
+access opening and means to open/close the shutter.</p><p num="0011">The document <ref type="patent">EP 0 973 163 A2</ref> discloses a disc cartridge
+comprising an arcuate shaped front end. The shutter mechanism comprises two shutter
+members that are pivotally connected to rotate at the same time and relative to each
+other to open or close access to the disc-recording medium contained within the
+cartridge body.</p><p num="0012">One shutter member is attached to a guide member, which has an arcuate form
+corresponding to the shape of the front end and also corresponding to the shape of a
+guide groove along which the guide member travels to effect rotational movement of
+the shutter member.  </p><p num="0013">According to the present invention there is provided a disc cartridge
+comprising: a disc-shaped recording medium; a cartridge body having formed therein a
+disc compartment to house the disc-shaped recording medium; an access opening
+formed in the cartridge body and through which a part of the recording area of the
+disc-shaped recording medium, extending between lead-in and lead-out areas, is
+exposed outside for data read and write; a shutter member provided movably to open
+and close the access opening; and a shutter open/close mechanism including
+: a guide recess formed in a main side of the cartridge
+body, which guide recess is oblique in relation to a side of the cartridge body; a guide
+member supporting the shutter member, which guide member is movably engaged in
+the guide recess, movement of the guide member in the guide recess effecting
+translational movement of the shutter member along a path defined by the guide
+recess; an operating member to move the guide member; a transmission member
+linking the guide member and the operating member to each other to transmit an
+operating force from the operating member to the guide member; and support surfaces
+formed on the cartridge body to support the operating member movably; and a shutter 
+locking mechanism disposed on the lateral side of the cartridge body to inhibit the
+shutter member from moving.</p><p num="0014">In the disc cartridge constructed as in the above, since the shutter member is
+inhibited from moving by the shutter locking mechanism, it is held to close the access
+opening.</p><p num="0015">Advantageously, a guide recess formed on a main side of the cartridge body to
+be oblique relative to the width of the cartridge body allows the front end of the
+cartridge body at which the disc cartridge is first inserted into the recorder/player to be
+formed in an arbitrary shape for easier recognition of the correct direction of insertion
+in the recorder/player, so that the disc cartridge can be prevented from being inserted
+in the wrong direction into the recorder/player. Also, the shutter locking mechanism
+provided matching the cartridge body whose front end is formed in the arbitrary shape
+permits to lock and hold the shutter member in positions where it opens and closes the
+access opening.</p><p num="0016">The invention will now be described by way of example with reference to the
+accompanying drawings, throughout which like parts are referred to by like references,
+and in which:
+<sl><li>FIG. 1 is a perspective view of a conventional disc cartridge;</li><li>FIG. 2 is a perspective view of an embodiment of the disc cartridge according
+to the present invention;</li><li>FIG. 3 is a perspective bottom view of the disc cartridge in FIG. 2;</li><li>FIG. 4 is a perspective bottom view of the disc cartridge in FIG. 2, with the
+shutter plate being moved to the opened position;</li><li>FIG. 5 is an exploded perspective bottom view of the disc cartridge in FIG. 2, 
+for explanation of the shutter plate of the disc cartridge;</li><li>FIG. 6 is an exploded perspective bottom view of the disc cartridge in FIG. 2;</li><li>FIG. 7 is an axial sectional view for explanation of the shutter plate and
+concavity in which the shutter plate is moved;</li><li>FIG. 8 is a perspective view for explanation of the shutter open/close
+mechanism;</li><li>FIG. 9 is an exploded perspective view for explanation of the shutter open/close
+mechanism;</li><li>FIG. 10 is a perspective bottom view for explanation of a guide member of the
+shutter open/close mechanism;</li><li>FIG. 11 is an axial sectional view for explanation of the guide member of the
+shutter open/close mechanism;</li><li>FIG. 12 is a perspective view for explanation of an operating member of the
+shutter open/close mechanism and shutter locking mechanism;</li><li>FIG. 13 is a plan view of the operating member and shutter locking mechanism;</li><li>FIG. 14 is a front view of the operating member and shutter locking mechanism;</li><li>FIG. 15 is a side elevation of the operating member and shutter locking
+mechanism;</li><li>FIG. 16 is a perspective view for explanation of the shutter locking mechanism;</li><li>FIG. 17 is a cross section showing the locking member of the shutter locking
+mechanism on the engagement projection; </li><li>FIG. 18 is an axial sectional view showing the engagement of the locking
+member of the shutter locking mechanism with the engagement projection;</li><li>FIG. 19 is an axial sectional view for explanation of the shutter locking
+mechanism;</li><li>FIG. 20 is a perspective view for explanation of the disengagement of the
+locking member of the shutter locking mechanism from the engagement projection:</li><li>FIG. 21 is a cross section showing the abutment of the operating member of the
+recorder/player to the unlocking member of the shutter locking mechanism;</li><li>FIG. 22 is a cross section showing the disengagement of the locking member
+of the shutter locking mechanism from the engagement projection;</li><li>FIG. 23 is a plan view of the essential parts for explanation of the opening and
+closing operation of the shutter open/close mechanism;</li><li>FIG. 24 is a perspective view of an example of the disc cartridge according
+the present invention;</li><li>FIG. 25 is a perspective view of a variant of the optical disc;</li><li>FIG. 26 is a perspective view of an example of the disc cartridge according
+to the present invention; and</li><li>FIG. 27 is an exploded perspective view of the disc cartridge in FIG. 26.</li></sl></p><p num="0017">Referring now to FIGS. 2 and 3, there is schematically illustrated in the form
+of a perspective view the embodiment of the disc cartridge according to the present 
+invention. The disc cartridge is generally indicated with a reference 1. As shown, the
+disc cartridge 1 includes an optical disc 5 and a cartridge body 6 having the optical
+disc 5 rotatably encased therein.</p><p num="0018">As will seen from FIGS. 2, 3 and 4, the optical disc 5 is formed to have a disc-like
+form having a central hole 9. The optical disc 5 used herein is a CD (compact
+disc)-R (recordable) to which information can additionally be written, for example.
+It should be noted that the optical disc 5 may of course be an other optical disc such
+as a phase-change optical disc, magneto-optical disc or the like, which is a CD-RW
+(rewritable) in which information can be rewritable.</p><p num="0019">As shown in FIGS. 5 and 6, the cartridge body 6 consists of a pair of upper shell
+11 and lower shell 12, assembled to each other. The upper and lower shells 11 and 12
+are formed in the general shape of a box by injection molding of a resin such as
+polycarbonate. Note that the upper and lower shells 11 and 12 may be formed, in
+addition to polycarbonate, from a thermoplastic resin such as polystyrene, high-impact
+polystyrene, acryl styrol, acryl butyl styrol, polypropylene, denatured PPO
+(polyphenylene oxide) or the like.</p><p num="0020">As best shown in FIG. 6, the upper shell 11 and lower shell 12 has upright walls
+13 and 14 formed along the respectively circumferences thereof. The upright
+circumferential walls 13 and 14 are made to abut each other to form the
+circumferential wall of the cartridge body 6 as shown in FIG. 6.</p><p num="0021">As shown in FIG. 6, each of the upper and lower shells 11 and 12 has formed 
+in the inner side thereof a circular disc compartment 16 whose diameter is slightly
+larger than that of the optical disc 5 and in which the optical disc 5 is rotatably housed.
+The disc compartment 16 is formed, as shown in FIG. 6, by assembling circular
+upright walls 17 and 18 formed on the inner sides of the upper and lower shells 11 and
+12. The upright walls 17 and 18 are generally as high as the circumferential upright
+walls 13 and 14 of the upper and lower shells 11 and 12. Thus, the upright circular
+walls 17 and 18 isolate the disc compartment 16, in which the optical disc 5 is
+provided, from the other inner space of the cartridge body 6.</p><p num="0022">Of the upper and lower shells 11 and 12, only front ends 20, of the upright
+circumferential walls 13 and 14, at which the disc cartridge 1 is to be first inserted into
+a recorder/player are formed generally circular as shown in FIGS. 2, 3 and 6.
+Therefore, seeing the front end of the cartridge body 6 when going to load the disc
+cartridge 1 into the recorder/player, he will easily know visually and by touching in
+which direction he should insert the disc cartridge into the recorder/player. Namely,
+the user will not insert the disc cartridge 1 in any wrong direction into the
+recorder/player. Note that the front end 20 may be formed to have a polyhedral shape
+or to be a combination of a curve and plane.</p><p num="0023">Also, the lower shell 12 has formed in the main side thereof a generally
+rectangular access opening 21 through which a write/read mechanism (not shown) of
+the recorder/player is to face the optical disc 5, as shown in FIG. 6.</p><p num="0024">Further, the lower shell 12 has formed in the main side thereof a circular drive 
+opening 22 contiguous to the access opening 21 and through which a disc table (not
+shown) of a disc drive mechanism of the recorder/player is allowed to enter the
+cartridge body 6, as shown in FIG. 6.</p><p num="0025">As shown in FIG. 6, the lower shell 12 has formed near the center of the bottom
+thereof a compartment 23 defined by an annular projection 24, in which a chucking
+plate 10 is provided to clamp and hold the optical disc 5 at a center hole 9 thereof on
+the disc table of the recorder/player. The chucking plate 10 is formed from a magnetic
+metal such as stainless steel or the like to have a generally disc-like shape. It may be
+formed from iron and plated with nickel, chrome or the like or painted for rust
+prevention.</p><p num="0026">The aforementioned upper and lower shells 11 and 12 are assembled and joined
+to each other by ultrasonic welding for example. Alternatively, the upper and lower
+shells 11 and 12 may be designed so that they can be joined to each other with fixing
+screws driven, through prepared holes formed near comers of the main side, for
+example, of one of the shells, into screw holes formed in corresponding corners of the
+main side of the other shell and opposite to the prepared holes in the other shell.</p><p num="0027">Also, as shown in FIGS. 3, 4 and 5, the cartridge body 6 has provided thereon
+a shutter plate 25 provided thereon movably in directions of arrow a<sub>1</sub> and a<sub>2</sub> being
+opposite to each other widthwise of the cartridge body 6 to open and close the access
+opening 21 and drive opening 22, and a shutter open/close mechanism 26 to support
+the shutter plate 25 movably. </p><p num="0028">The shutter plate 25 is made of a metal such as aluminum and formed flat to
+have a thickness of about 0.3 mm for example as shown in FIGS. 6 and 7. Note that
+the shutter plate 25 may be made of aluminum as the base and coated with Alumite or
+painted for rust prevention and decoration. Also, the shutter plate 25 may be formed
+by punching a thin sheet of stainless steel, polycarbonate, polystyrene, high-impact
+polystyrene, acryl styrol, acryl butyl styrol or the like, and its thickness is not limited
+to 0.3 mm but may appropriately be selected depending upon the material used.</p><p num="0029">As shown in FIGS. 3, 6 and 7, the shutter plate 25 is formed slightly larger than
+the access opening 21 and drive opening 22, and it is fixed at one end thereof to the
+shutter open/close mechanism 26.</p><p num="0030">As shown in FIGS. 5, 6 and 7, the cartridge body 6 has formed in the main side
+of the lower shell 12 a generally rectangular concavity 28 in which the shutter plate 25
+is disposed movably. As shown in FIG. 7, the concavity 28 is formed to have an area
+a little larger than an area over which the shutter plate 25 is moved to open and close
+the access opening 21 and drive opening 22 and a depth slightly larger than the
+thickness of the shutter plate 25 that the shutter plate 25 will not project from the main
+side of the cartridge body 6.</p><p num="0031">As will be seen from FIGS. 6, 8 and 9, the shutter open/close mechanism 26 is
+disposed in the inner space of the cartridge body 6, outside the upright walls 17 and
+18 of the disc compartment 16. As shown, the shutter open/close mechanism 26
+includes a guide member 31 to support the shutter plate 25, an operating member 32 
+to move the guide member 31, and a transmission member 33 linking the guide
+member 31 and operating member 32 to each other to transmit an operating force from
+the operating member 32 to the guide member 31.</p><p num="0032">Also, as shown in FIGS. 6, 8 and 9. the shutter open/close mechanism 26
+includes a first pivot 34 to support the guide member 31 pivotably, a second pivot 35
+to support the operating member 32 pivotably, a guide recess 36 to support the guide
+member 31 movably, and support surfaces 37 to support the operating member 32
+movably in the directions of arrows b<sub>1</sub> and b<sub>2</sub>.</p><p num="0033">As shown in FIG. 9, the shutter open/close mechanism 26 includes a shutter
+locking mechanism 38 to inhibit the shutter plate 25 from moving by locking the
+operating member 32.</p><p num="0034">As shown in FIGS. 8 and 9, the guide member 31 is formed from a
+thermoplastic synthetic resin such as polypropylene to have the shape of a block. The
+guide member 31 has formed on one side thereof a mount surface 40 to which the
+shutter member 25 is fixed at one end thereof with fixing screws 42 driven in screw
+holes 41 formed also in the mount surface 40.</p><p num="0035">As shown in FIGS. 9 and 10, the guide member 31 has one end thereof cut to
+about a half of its thickness to have a curved face 45 corresponding to one end of the
+transmission member 33. Thus the guide member 31 has an integral connecting end
+44 to which the one end of the transmission member 33 is connected pivotably. The
+connecting end 44 has formed through it a pivot hole 46 through which the first pivot 
+34 is inserted, whereby the transmission member 33 is connected pivotably to the
+guide member 31.</p><p num="0036">The guide member 31 is movably inserted in the guide recess 36 so as not to
+project from the concavity 28 to above the main side of the cartridge body 6, as shown
+in FIG. 11.</p><p num="0037">As shown in FIGS. 9 and 12, the operating member 32 has an operating piece
+51 which is to be moved in the directions of arrows b<sub>1</sub> and b<sub>2</sub>, and a coupling 52
+formed integrally with the operating piece 51 and pivotably connected to one end of
+the transmission member 33. The operating member 32 has formed in a position
+adjacent to the operating piece 51 engagement recesses 54 in which the upper and
+lower shells 11 and 12 are engaged movably in the directions of arrows b<sub>1</sub> and b<sub>2</sub> as
+shown in FIGS. 12 and 13.</p><p num="0038">The operating piece 51 is formed as a generally rectangular flat piece. It is
+exposed outside the lateral side of the cartridge body 6 and has such a thickness that
+it will not protrude from the lateral side of the cartridge body 6. Also the operating
+piece 51 has formed on the outer surface thereof non-slip recesses 55 to prevent the
+user's finger applied on the operating piece 51 from slipping when the user operates
+the operating piece 51. The operating piece 51 has provided thereon a marking 56
+such as an arrow to indicate the moving direction of the shutter plate 25 going to be
+opened. As shown in FIGS. 12 and 13, the coupling 52 has formed through it a pivot
+hole 57 through which the second pivot 35 is pivotably inserted. </p><p num="0039">Also, as shown in FIG. 12, the operating member 32 has a shutter locking
+mechanism 38 to inhibit the shutter plate 25 from moving. The shutter locking
+mechanism 38 includes a locking portion 61 to lock the operating member 32 against
+movement, engagement projection 62 with which the locking portion 61 engages, and
+an unlocking portion 63 to free the operating member 32 from being locked by the
+locking portion 61, as shown in FIG. 12.</p><p num="0040">As shown in FIGS. 12, 13, 14 and 15, the locking portion 61 is formed integrally
+with the coupling 52 of the operating member 32 to be elastically movable, and has an
+engagement pawl 65 engaging with the engagement projection 62 of the cartridge body
+6. The engagement pawl 65 is protruded to the lateral side of the cartridge body 6.</p><p num="0041">As shown in FIGS. 16, 17 and 18, the engagement projection 62 is provided at
+the support surface 37 on the inner circumferential wall of the lateral side of the
+cartridge body 6. The engagement projection 62 is formed linear generally
+perpendicularly to the moving direction of the operating member 32.</p><p num="0042">As shown in FIGS. 12,13, 14 and 15, the unlocking portion 63 has an unlocking
+pawl 66 formed integrally with the coupling 52 of the operating member 32 to be
+elastically displaceable and in a position adjacent to the engagement pawl 65 of the
+locking portion 61. The unlocking pawl 66 is outside the cartridge body 6. As shown
+in FIGS. 12 and 13, the unlocking pawl 66 has formed on one lateral side thereof
+directed towards the front end 20 of the cartridge body 6 an operating surface 67
+having a generally circular section and which is to be pushed in the direction of arrow 
+b<sub>2</sub>.</p><p num="0043">Therefore, the locking portion 61 and unlocking portion 63 of the shutter
+locking mechanism 38 are movable along with the operating member 32 in the
+directions of arrows b<sub>1</sub> and b<sub>2</sub>.</p><p num="0044">Further, as shown in FIG. 13, the operating member 32 has formed in a position
+between the coupling 52 and operating piece 51 a generally circular cut 69 to allow the
+locking portion 61 and unlocking portion 63 to easily be moved elastically in the
+direction of arrows d<sub>1</sub> and d<sub>2</sub>. Therefore, when the operating member 32 is pushed at
+the operating surface 67 of the unlocking portion 63 in the direction of arrow b<sub>2</sub>, the
+locking portion 61 and unlocking portion 63 are easily moved elastically in the
+direction of arrow d<sub>2</sub>.</p><p num="0045">As shown in FIGS. 9 and 19, the transmission member 33 has formed integrally
+at one end thereof the first pivot 34 connected to the guide member 31 and integrally
+at the other end a pair of support projections 71 to support the coupling of the
+operating member to be pivotable. Each of the support projections 71 has formed
+through it a pivot hole 72 and the second pivot 35 is inserted through the pivot holes
+72. As shown in FIG. 19, in the transmission member 33, the second pivot 35 inserted
+through the pivot holes 72 in the support projections 71 is further inserted through the
+pivot hole 57 in the coupling 52 of the operating member 32 which is thus supported
+pivotably. Note that the second pivot 35 is made of a stainless steel for example.</p><p num="0046">As shown in FIGS. 8 and 9, the transmission member 33 has a portion thereof 
+near the coupling 44 of the guide member 31 formed generally circular convexly
+towards the upright walls 13 and 14 of the cartridge body 6 in relation to a straight line
+l<sub>0</sub> connecting the center of pivoting of the first pivot 34 and that of the second pivot
+35. Also as shown in FIGS. 8 and 9, because of the generally circular portion of the
+transmission member 33 near the coupling 44 of the guide member 31, an operating
+force applied to the transmission member 33 longitudinally of the latter when the
+shutter plate 25 is moved in the direction of arrow a<sub>1</sub> and thus the operating member
+32 is moved in the direction of arrow b<sub>1</sub> acts as a component f<sub>1</sub> divided in a direction
+parallel to the moving direction of the guide member 31. Thus, the guide member 31
+can be moved. Note that the transmission member 33 may have a longitudinal
+intermediate portion thereof formed swelling outwardly of the cartridge body 6.</p><p num="0047">Also, since the transmission member 33 has formed therein a cut 57 to prevent
+interference with a guide wall 59 (which will further be described later) of the guide
+recess 36 when the transmission member 33 is pivoted about the first or second pivot
+34 or 35, as shown in FIG. 9, it can operate positively.</p><p num="0048">As shown in FIGS. 6 and 23, the guide recess 36 is formed linear in the lower
+shell 12 obliquely relative to the width of the cartridge body 6, perpendicular to the
+direction of insertion into the recorder/player. It is formed in a position adjacent to the
+front end 20 of the lower shell 12 as shown. That is, as shown in FIG. 23, the guide
+recess 36 is formed oblique with a predetermined angle <sub>1</sub>, smaller than 90°, relative
+to a center line l<sub>1</sub> of the width of the cartridge body 6. As shown in FIG. 11, there is 
+formed integrally with and projecting from the circumference of the guide recess 36
+the guide wall 59 which is in sliding contact with the guide member 31. The guide
+member 31 is movably inserted at one lateral side thereof in the guide recess 36 and
+projects somewhat in the shutter moving concavity 28 of the lower shell 12. Also, the
+guide recess 36 has a length which is a sum of the length of the guide member 31 and
+the moving distance of the shutter plate 25, a little larger than the width of the access
+opening 21 and drive opening 22.</p><p num="0049">As shown in FIGS. 6, 12 and 16, the support surfaces 37 formed on the lateral
+sides of the upper and lower shells 11 and 12, parallel to the direction of insertion into
+the recorder/player, define between them a guide concavity 75 in which the operating
+piece 51 of the operating member 32 is disposed movably in the directions of arrows
+b<sub>1</sub> and b<sub>2</sub>. The guide concavity 75 is formed to have a depth a little larger than the
+thickness of the operating piece 51 of the operating member 32 as shown in FIGS. 12
+and 16 so that the operating piece 51 will not project from the lateral side of the
+cartridge body 6. Also, the guide concavity 75 is open at one end thereof at the front
+end 20 of the cartridge body 6 such that a shutter operating member 81 of the
+recorder/player, which will further be described later, can be introduced into the guide
+concavity 75 in the direction of arrow b<sub>2</sub> from the open end of the guide concavity 75
+at the front end 20 of the cartridge body 6.</p><p num="0050">Further, as shown in FIGS. 16, 17, 18 and 19, the guide concavity 75 has
+formed therein between the upper and lower shells 11 and 12 an engagement slit 77 
+open to near the engagement projection 62 and whose surfaces are movably engaged
+in the engagement recesses 54, respectively, of the operating member 32. The
+engagement slit 77 has a width s somewhat larger than the space between the bottoms
+of the engagement recesses 54 of the operating member 32 as shown in FIG. 19.</p><p num="0051">Further, in the operating member 32, the engagement pawl 65 of the locking
+portion 61 and unlocking pawl 66 of the unlocking portion 63 are formed to have a
+predetermined width w a little smaller than the width s of the engagement slit 77 as
+shown in FIGS. 16 and 18, so that they will not touch the surfaces of the engagement
+slit 77. Therefore, the operating member 32 can be moved positively in the directions
+of arrows b<sub>1</sub> and b<sub>2</sub> without being interfered with by the engagement pawl 65 and
+unlocking pawl 66 projected inside the engagement slit 77.</p><p num="0052">In the aforementioned shutter locking mechanism 38, the engagement pawl 65
+of the locking portion 61 is formed to project x<sub>1</sub> and engages with the engagement
+projection 62 and the unlocking pawl 66 of the unlocking portion 63 is formed to
+project x<sub>2</sub> from inside the guide slit 77 as shown in FIG. 21. The projection x<sub>2</sub> of the
+unlocking pawl 66 is larger than the projection x<sub>1</sub> of the engagement pawl 65. Thus,
+in the shutter locking mechanism 38, when the unlocking pawl 66 is pushed in by the
+shutter operating member 81 of the recorder/player, the engagement pawl 65 is
+disengaged from the engagement projection 62 as shown in FIGS. 21 and 22. That is,
+the unlocking pawl 66 can be moved over a sufficiently long distance to unlock the
+shutter. Therefore, in the shutter locking mechanism 38, as the unlocking pawl 66 is 
+moved, the engagement pawl 65 is disengaged from the engagement projection 62
+positively.</p><p num="0053">In the shutter open/close mechanism 26 constructed as in the above, the opening
+and closing of the shutter plate 25 and operation of the shutter locking mechanism 38
+will be described below with the accompanying drawings;</p><p num="0054">First, in the shutter open/close mechanism 26, when the shutter plate 25 has
+been moved to the closing position where it closes the access opening 21 and drive
+opening 22, the engagement pawl 65 of the shutter locking mechanism 38 is engaging
+with the engagement projection 62 to lock the shutter plate 25 against movement as
+shown in FIGS. 17 and 18.</p><p num="0055">In the shutter open/close mechanism 26, when the shutter plate 25 is moved in
+the direction of arrow a<sub>2</sub> to open the access opening 21 and drive opening 22, the
+operating member 32 and shutter locking mechanism 38 are operated by the shutter
+operating member 81 of the recorder/player as shown in FIGS. 20 and 21. As shown
+in FIGS. 20 and 21, the shutter operating member 81 has formed at the end thereof an
+engagement surface 82, roughed for example, engaging with the non-slip recesses 55
+on the operating piece 51 of the operating member 32. Also, the shutter operating
+member 81 has formed thereon, by cutting, an abutment surface 83 having a generally
+circular section and abutting the operating surface 67 of the unlocking pawl 66 of the
+shutter locking mechanism 38. Note that the shutter operating member 81 may be
+formed from a rubber or leaf spring capable of engaging with the operating piece 51 
+and the engagement surface 82 may be coated with rubber in this case.</p><p num="0056">In the shutter locking mechanism 38, the abutment surface 83 of the shutter
+operating member 81, having entered along the guide concavity 75 of the support
+surface 37 in the direction of arrow b<sub>2</sub>, will abut the operating surface 67 of the
+unlocking pawl 66 which in turn will be pushed into the engagement slit 77 of the
+unlocking pawl 66, as shown in FIGS. 21 and 22.</p><p num="0057">In the shutter locking mechanism 38, as the unlocking pawl 66 is pushed by the
+shutter operating member 81, the engagement pawl 65 of the locking portion 61 is
+elastically moved in the direction of arrow d<sub>2</sub> so that the engagement pawl 65 is
+disengaged from the engagement projection 62 as shown in FIGS. 21 and 22. In the
+shutter locking mechanism 38, this disengagement of the engagement pawl 65 of the
+locking portion 61 from the engagement projection 62 will allow the operating member
+32 to be movable in the direction of arrow b<sub>2</sub>.</p><p num="0058">As shown in FIG. 22, the engagement surface 82 of the shutter operating
+member 81, having further entered in the direction of arrow b<sub>2</sub>, will engage with the
+non-slip recesses 55 on the operating piece 51. As the shutter operating member 81
+is moved, the operating member 32 will be moved in the direction of arrow b<sub>2</sub>.</p><p num="0059">As the operating member 32 is moved in the direction of arrow b<sub>2</sub>, it will cause
+the end of the transmission member 33 to pivot about the second pivot 35 in the
+direction of arrow c<sub>2</sub>, as shown in FIG. 23. Since the transmission member 33 is thus
+pivoted about the second pivot 35, it is pivoted about the first pivot 34 to move the 
+guide member 31 in the direction of arrow a<sub>2</sub>. The guide member 31 is moved along
+the guide recess 36 until it abuts one end of the guide recess 36. Then the guide
+member 31 is stopped from being moved, and the shutter plate 25 is moved to a
+position where the access opening 21 and drive opening 22 are opened.</p><p num="0060">Also in the shutter open/close mechanism 26, as the shutter plate 25 is moved
+in the direction of arrow a<sub>1</sub> to close the access window 21 and drive opening 22, the
+operating member 32 is moved in the direction of arrow b<sub>1</sub>, as shown in FIG. 23.</p><p num="0061">Since the operating member 32 is thus moved in the direction of arrow b<sub>1</sub> along
+with the movement of the shutter operating member 81, it will cause the end of the
+transmission member 33 to pivot about the second pivot 35 in the direction of arrow
+c<sub>1</sub>. Also, since the transmission member 33 is thus pivoted about the second pivot 35,
+it is pivoted about the first pivot 34 to move the guide member 31 in the direction of
+arrow a<sub>1</sub>. As the guide member 31 is moved along the guide recess 36 until it abuts
+one end of the guide recess 36 and thus stopped from being moved. Thus, the shutter
+plate 25 is moved to a position where it closes the access window 21 and drive opening
+22.</p><p num="0062">The transmission member 33 is pivoted about the second pivot 35 in the
+direction of arrow c<sub>1</sub> to transmit the operating force from the operating member 32 in
+the moving direction of the guide member 31. That is, the transmission member 33
+can transmit the operating force in the moving direction of the guide member 31 since
+its end portion near the connecting end 44 of the guide member 31 is formed circular 
+convexly outwardly of the cartridge body 6 (towards the upright walls 13 and 14) in
+relation to the straight line l<sub>0</sub>.</p><p num="0063">Also, in the shutter locking mechanism 38, as the shutter operating member 81
+is moved in the direction of arrow b<sub>1</sub>, the unlocking pawl 66 of the unlocking portion
+63 is elastically moved in the direction of arrow d<sub>1</sub> and the engagement pawl 65 of the
+locking portion 61 is disengaged from the engagement projection 62 as shown in FIGS.
+21 and 22. Therefore, in the shutter locking mechanism 38, the shutter plate 25 is
+moved to the closing position where it closes the access opening 21 and drive opening
+22, it is locked against movement and held in the closing position as shown in FIG. 21.</p><p num="0064">In the disc cartridge 1 constructed as in the above, the shutter plate 25 is
+operated by the shutter open/close mechanism 26 to open and close the access opening
+21 and drive opening 22 as will be described below with reference to the
+accompanying drawings:</p><p num="0065">First, the disc cartridge 1 is set into the cartridge loader in the recorder/player
+with the access opening 21 and drive opening 22 being closed by the shutter plate 25
+as shown in FIG. 3.</p><p num="0066">When the disc cartridge 1 is set in the cartridge loader, the shutter operator (not
+shown) of the recorder/player will move the operating member 32 of the shutter
+open/close mechanism 26 in the direction of arrow b<sub>2</sub>. As shown in FIGS. 3, 4 and 23,
+as the operating member 32 in the shutter open/close mechanism 26 is thus moved in
+the direction of arrow b<sub>2</sub>, the transmission member 33 is moved longitudinally to move 
+the guide member 31 along the guide recess 36 in the direction of arrow a<sub>2</sub>. Since the
+guide member 31 is thus moved in the direction of arrow a<sub>2</sub>, the shutter plate 25 is
+moved in the direction of arrow a<sub>2</sub> to open the access opening 21 and drive opening 22.</p><p num="0067">Then, the disc table of the disc rotation drive mechanism of the recorder/player
+enters the disc cartridge 1 from the drive opening 22 to drive the optical disc 5 (this
+is not illustrated), while the optical pickup of the recorder/player enters the disc
+cartridge 1 from the access opening 21 to write and read information to and from the
+optical disc 5.</p><p num="0068">As having been described in the foregoing, the guide recess 36 formed in the
+main side of the cartridge body 6 to be oblique relative to the width of the cartridge
+body 6 in the disc cartridge 1 allows to freely shape the front end 20 of the cartridge
+body 6, at which the disc cartridge 1 is first inserted into the recorder/player. Thus,
+since it is possible to easily know the correction direction of inserting the cartridge 6
+into the recorder/player, the disc cartridge 1 cannot be inserted in any wrong direction
+into the recorder/player.</p><p num="0069">Also, in the shutter open/close mechanism 26 of the disc cartridge 1, since the
+transmission member 33 is provided as pivotably connected to the guide member 31
+and operating member 32 by means of the first and second pivots 34 and 35, the
+shutter plate 25 can be moved positively to open and close the access opening 21 and
+drive opening 22.</p><p num="0070">In this disc cartridge 1, since the shutter locking mechanism 38 securely locks, 
+against movement, the shutter plate 25 having been moved to the closing position
+where it closes the access opening 21 and drive opening 22, the shutter plate 25 can
+be prevented from being inadvertently opened, dust can be prevented from entering
+into the cartridge body 6, and also the optical disc 5 encased in the cartridge body 6
+can be prevented from being broken.</p><p num="0071">Further in this shutter locking mechanism 38, since the engagement pawl 65 of
+the locking portion 61 can be disengaged from the engagement projection 62 by the
+shutter operating member 81 of the recorder/player, so the shutter operating
+mechanism of the recorder/player can be designed more simplified. That is, the
+shutter operating mechanism of the recorder/player can be designed more easily for
+example by providing the shutter operating member at a predetermined position inside
+the cartridge holder in which the disc cartridge 1 according to the present invention is
+to be held.</p><p num="0072">Further, in the disc cartridge 1 according to the present invention, since the
+shutter open/close mechanism 26 is located outside the upright walls 17 and 18 of the
+disc compartment 16 and in the space isolated from the disc compartment 16, abrasion
+powder produced as the guide member 31, operating member 32 and transmission
+member 33 are slid repeatedly is prevented to come into the disc compartment 16,
+whereby information can be written and read to and from the optical disc 5 with a
+highly improved reliability.</p><p num="0073">Note that the front end 20 of the aforementioned disc cartridge 1 is formed 
+circular convexly in relation to the recorder/player but may of course be formed in any
+other shape as shown in FIG. 24 for example. This example of the disc cartridge
+according to the present invention, having the front end thereof formed otherwise than
+in the above, will briefly be described below with reference to FIG. 24. The same
+elements and portions in this variant shown in FIG. 24 as those in the disc cartridge
+having been described in the foregoing will be indicated with the same references for
+the convenience of illustration and will not be described any further.</p><p num="0074">As shown in FIG. 24, the other disc cartridge 2 is only different from the
+aforementioned embodiment in that the cartridge body 91 has the front end 93 thereof
+formed generally symmetrically triangular with respect to the center line l<sub>1</sub> of the width
+of the cartridge body 91. Therefore, owing to this front end shape, the user can easily
+know visually and by touching the correct direction of inserting the disc cartridge 2
+into the reorder/player.</p><p num="0075">In the aforementioned disc cartridges 1 and 2, the front ends 20 and 93 are
+formed symmetrically circular and/or polyhedral with respect to the center line l<sub>1</sub> of
+the width of the cartridge bodies 6 and 91 but the front end may be formed
+asymmetrical with respect to the center line l<sub>1</sub>.</p><p num="0076">Also, in the above disc cartridges 1 and 2, the cartridge bodies 6 and 91 have
+the compartment 23 defined by the annular projection 24, in which the chucking plate
+10 is provided to hold the optical disc 5. However, it should be noted that as shown
+in FIG. 25, there may be fixed over a center hole 96 of the optical disc 95 a chucking 
+plate 97 around which an annular projection 98 is formed.</p><p num="0077">In the disc cartridges 1 and 2, the shutter plate 25 is provided exposed outside.
+However, a shutter cover may be provided to cover the moving range of the shutter
+plate 25. This variant of the disc cartridge according to the present invention will be
+described below with reference to the accompanying drawings. Note that the same
+elements in this second variant in FIGS. 26 and 27 as those in the disc cartridges 1 and
+2 will be indicated with the same references as in the aforementioned disc cartridges
+1 and 2 and will not be described any further.</p><p num="0078">As shown in FIGS. 26 and 27, the disc cartridge is generally
+indicated with a reference 3, and includes a cartridge body 101 formed from a set of
+upper and lower shells 105 and 106. In the cartridge body 101, the upper shell 105 has
+formed thereon a concavity 108 in which the shutter plate 25 is movable, as shown in
+FIGS. 26 and 27. Further, the disc cartridge 3 includes a shutter cover 109 to cover
+the concavity 108 as shown in FIGS. 26 and 27.</p><p num="0079">The concavity 108 in which the shutter plate 25 is movable is slightly larger in
+area than the moving range of the shutter plate 25 moving over the access opening 21
+and drive opening 22 and deeper than the thickness of the shutter plate 25 so that the
+shutter plate 25 will not protrude to above the main side of the cartridge body 101.</p><p num="0080">The shutter cover 109 is formed from a resin such as polycarbonate or a metal
+such as stainless steel, aluminum or the like to be generally rectangular and flat. The
+shutter cover 109 is 0.2 to 0.5 mm thick. As shown in FIGS. 26 and 27, the shutter 
+cover 109 has an opening 111 formed in the main side thereof and in a position
+corresponding to the access opening 21 and drive opening 22. The opening 111 is
+somehow larger in area than the access and drive openings 21 and 22 and slightly
+smaller in area than the shutter plate 25.</p><p num="0081">The shutter cover 109 is attached in the concavity 108 with an adhesive tape 93
+having an adhesive layer on either side thereof or an adhesive applied on the innerside
+thereof facing the bottom of the concavity 108 along the peripheral edge thereof. The
+adhesive tape 93 has a predetermined thickness which will assure a predetermined gap
+in which the shutter plate 25 can be moved inside the concavity 108. The shutter
+cover 109 thus attached in the concavity 108 covers the moving range of the shutter
+plate 25 and guide recess 36 of the shutter open/close mechanism 26.</p><p num="0082">In the above disc cartridge 3, since the shutter cover 109 is provided as in the
+above to cover the moving range of the shutter 25, it is possible to prevent dust from
+coming into the cartridge body 101 from the clearance between the shutter plate 25
+and cartridge body 101 when the shutter plate 25 is covering the access opening 21 and
+drive opening 22. Also in the disc cartridge 3, since the guide recess 36 is covered by
+the shutter cover 109, it is possible to prevent dust from coming into the cartridge body
+101 from the guide recess 36. Therefore, in the disc cartridge 3, information can be
+written or read to or from the magneto-optical disc 5 with an improved reliability.</p><p num="0083">The aforementioned disc cartridges 1, 2 and 3 are designed such that the optical
+pickup approaches the optical disc through the access opening 21. However, it is 
+should be noted that there may be provided in a position opposite to the access
+opening 21 another access opening through which a magnetic field application head
+or the like comes in and another shutter plate to open and close the access opening.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Disk-Kassette (1)
+   mit einem plattenförmigen Aufzeichnungsmedium (5),
+   mit einem Kassettengehäuse (6), in dem ein Disk-Fach für die Aumahme des plattenförmigen
+Aufzeichnungsmediums (5) ausgebildet ist,
+   mit einer in dem Kassettengehäuse (6) ausgebildeten Zugangsöffnung (21), durch die ein
+zwischen Einlauf- und Auslaufbereich liegender Teil des Aufzeichnungsbereichs des plattenförmigen
+Aufzeichnungsmediums (5) für das Lesen und Schreiben von Daten außen frei liegt,
+   mit einem beweglich angeordneten Verschlußglied (25) zum Öffnen und Verschließen der
+Zugangsöffnung (21) und
+   mit einem Mechanismus (26) zum Öffnen/Schließen des Verschlußglieds, der aufweist:
+<claim-text><claim-text>eine Führungsnut (36), die in einer Hauptseite des Kassettengehäuses (6) ausgebildet ist,
+wobei diese Führungsnut (36) relativ zu einer Seite des Kassettengehäuses (6) schräg angeordnet
+ist,</claim-text><claim-text>ein Führungsglied (31), das das Verschlußglied (25) trägt, wobei dieses Führungsglied
+(31) beweglich in die Führungsnut eingreift und die Bewegung des Führungsglieds (31) in der
+Führungsnut (36) eine Translationsbewegung des Verschlußglieds (25) entlang eines durch die
+Führungsnut (36) bestimmten Weges bewirkt,</claim-text><claim-text>und ein Betätigungsglied (32) zum Bewegen des Führungsglieds (31),</claim-text></claim-text>
+   dadurch gekennzeichnet,
+   daß der Mechanismus (26) zum Öffnen/Schließen des Verschlußglieds ferner aufweist:
+<claim-text><claim-text>ein Übertragungsglied (33), das das Führungsglied (31) und das Betätigungsglied (32)
+miteinander verbindet, um eine Betätigungskraft von dem Betätigungsglied (32) zu dem Führungsglied
+(31) zu übertragen,</claim-text><claim-text>an dem Kassettengehäuse (6) ausgebildete Auflageflächen (37) zur beweglichen Lagerung
+des Betätigungsglieds (32) und</claim-text><claim-text>einen an der Seitenfläche des Kassettengehäuses (6) angeordneten Verschlußblockiermechanismus
+(38) zum Sperren des Verschlußglieds (25) gegen Bewegung.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 1, bei der das Übertragungsglied (33) mit dem Führungsglied
+(31) und/oder dem Betätigungsglied (32) schwenkbar verbunden ist.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 1, bei der das Kassettengehäuse (6) einen kreisbogenförmig
+und/oder polyedrisch ausgebildeten vorderen Endbereich aufweist, mit dem die Disk-Kassette
+(1) zuerst in dem Rekorder und/oder Player einzuführen ist.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 1, bei der das Betätigungsglied (32) auf einer im wesentlichen
+senkrecht zur Bewegungsrichtung des Verschlußglieds (25) verlaufenden Seite des Kassettengehäuses
+angeordnet ist.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 1, bei der das Übertragungsglied (33) bzw. das Führungsglied
+(31) in Richtungen bewegt werden, die im wesentlichen senkrecht zueinander verlaufen.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 1, bei der der Verschlußblockiermechanismus (38) ein
+einstückig mit dem Betätigungsglied (32) des Mechanismus (26) zum Öffnen/Schließen des
+Verschlußglieds ausgebildetes Blockierglied (61) zum Blockieren des Verschlußglieds (25)
+gegen Bewegung aufweist.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 6, bei der das Blockierglied (61) mit einer Innenwand der
+Seite des Kassettengehäuses (6) in Eingriff kommt.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 6, bei der der Verschlußblockiermechanismus (38) ein
+einstückig mit dem Blockierglied (61) ausgebildetes Entriegehmgsglied (63) aufweist, das elastisch
+bewegbar ist und das Blockierglied (61) elastisch bewegt, um eine Verriegelung des
+Blockierglieds (61) aufzuheben.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 6, bei der die Auflageflächen des Mechanismus (26) zum
+Öffnen/Schließen des Verschlußglieds in den Seitenflächen des Kassettengehäuses ausgebildete
+Auflagevertiefungen zur beweglichen Lagerung des Betätigungsglieds (32) aufweisen und das
+Blockierglied (61) und/oder das Entriegelungsglied (63) kleiner ausgebildet sind als die Breite
+der Auflagevertiefungen und beweglich in den Auflagevertiefungen angeordnet sind.</claim-text></claim><claim num="xx"><claim-text>Disk-Kassette (1) nach Anspruch 9, bei der das Entriegelungsglied (63) außerhalb des Kassettengehäuses
+(6) angeordnet ist.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A disc cartridge (1) comprising:
+<claim-text><claim-text>a disc-shaped recording medium (5);</claim-text><claim-text>a cartridge body (6) having formed therein a disc compartment to house the disc-shaped
+recording medium (5);</claim-text><claim-text>an access opening (21) formed in the cartridge body (6) and through which a part of
+the recording area of the disc-shaped recording medium (5), extending between lead-in
+and lead-out areas, is exposed outside for data read and write;</claim-text><claim-text>a shutter member (25) provided movably to open and close the access opening
+(21); and
+a shutter open/close mechanism (26)
+including.</claim-text><claim-text>a guide recess (36) formed in a main side of the cartridge body (6), which guide
+recess (36) is oblique in relation to a side of the cartridge body (6);</claim-text><claim-text>a guide member (31) supporting the shutter member (25), which guide member
+(31) is movably engaged in the guide recess (36), movement of the guide member (31)
+in the guide recess (36) effecting translational movement of the shutter member (25)
+along a path defined by the guide recess (36);
+an operating member (32) to move the guide member (31);</claim-text></claim-text>
+   characterised in that the shutter mechanism (26) further includes;:
+<claim-text><claim-text>a transmission member (33) linking the guide member (31) and the operating
+member (32) to each other to transmit an operating force from the operating member
+(32) to the guide member (31); and</claim-text><claim-text>support surfaces (37) formed on the cartridge body (6) to support the operating
+member (32) movably; and</claim-text><claim-text>a shutter locking mechanism (38) disposed on the lateral side of the cartridge body
+(6) to inhibit the shutter member (25) from moving.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 1, wherein the transmission member
+(33) is pivotably connected to the guide member (31) and/or operating member (32).</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 1, wherein the cartridge body (6) has a
+front end, at which the disc cartridge (1) is to be first inserted into the recorder and/or
+player, formed circular and/or polyhedral.</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 1, wherein the operating member (32) is
+disposed on a lateral side of the cartridge body (6), generally perpendicular to the
+moving direction of the shutter member (25).</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 1, wherein the transmission member
+(33) and the guide member (31) are moved in directions generally perpendicular to
+each other, respectively.</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 1, wherein the shutter locking
+mechanism (38) includes a locking member (61) formed integrally with the operating
+member (32) of the shutter open/close mechanism (38) to lock the shutter member (25)
+against movement.</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 6, wherein the locking member (61)
+engages with an inner wall of the lateral side of the cartridge body (6).</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 6, wherein the shutter locking
+mechanism (38) includes an unlocking member (63) formed integrally with the locking
+member (61) to be elastically movable and which elastically moves the locking
+member (61) to cancel a locking by the locking member (61).</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 6, wherein the support surfaces of the
+shutter open/close mechanism (38) have support recesses formed in the lateral sides of
+the cartridge body to support the operating member (32) movably and the locking
+member (61) and/or unlocking member (63) are formed smaller than the width of the
+support recesses and provided movably in the support recesses.</claim-text></claim><claim num="xx"><claim-text>A disc cartridge (1) as set forth in Claim 9, wherein the unlocking member (63)
+is provided outside of the cartridge body (6).</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Cartouche de disque (1) comportant :
+<claim-text><claim-text>un support d'enregistrement en forme de disque
+(5) ;</claim-text><claim-text>un corps de cartouche (6) ayant un compartiment
+de disque formé dedans afin de loger le support
+d'enregistrement en forme de disque (5);</claim-text><claim-text>une ouverture d'accès (21) formée dans le corps
+de cartouche (6) et à travers laquelle une partie de la
+zone d'enregistrement du support d'enregistrement en forme
+de disque (5), s'étendant entre des zones avant et arrière,
+est exposée à l'extérieur pour la lecture et l'écriture de
+données;</claim-text><claim-text>un élément d'obturateur (25) prévu de façon
+mobile afin d'ouvrir et fermer l'ouverture d'accès (21); et</claim-text><claim-text>un mécanisme d'ouverture/fermeture d'obturateur
+(26) comprenant :
+<claim-text><claim-text>un renfoncement de guidage (36) formé dans un
+côté principal du corps de cartouche (6), lequel
+renfoncement de guidage (36) est oblique par rapport au
+côté du corps de cartouche (6);</claim-text><claim-text>un élément de guidage (31) supportant l'élément
+d'obturateur (25), lequel élément de guidage (31) est
+engagé de façon mobile dans le renfoncement de guidage
+(36), le mouvement de l'élément de guidage (31) dans le
+renfoncement de guidage (36) effectuant un mouvement de
+translation de l'élément d'obturateur (25) le long d'un
+passage défini par le renfoncement de guidage (36);</claim-text><claim-text>un élément d'actionnement (32) destiné à déplacer
+l'élément de guidage (31);</claim-text></claim-text></claim-text></claim-text>
+   caractérisée en ce que le mécanisme d'obturateur
+(26) comprend en outre :
+<claim-text><claim-text>un élément de transmission (33) reliant l'élément
+de guidage (31) et l'élément d'actionnement (32) l'un à
+l'autre afin de transmettre une force d'actionnement de
+l'élément d'actionnement (32) à l'élément de guidage (31);
+et</claim-text><claim-text>des surfaces de support (37) formées sur le corps
+de cartouche (6) afin de supporter l'élément d'actionnement
+(32) de façon mobile; et</claim-text><claim-text>un mécanisme de blocage d'obturateur (38) disposé
+sur le côté latéral du corps de cartouche (6) afin
+d'empêcher l'élément d'obturateur (25) de se déplacer.</claim-text></claim-text></claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 1,
+dans laquelle l'élément de transmission (33) est relié de
+façon pivotante à l'élément de guidage (31) et/ou à
+l'élément d'actionnement (32).</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 1,
+dans laquelle le corps de cartouche (6) a une extrémité
+avant, au niveau de laquelle la cartouche de disque (1)
+doit être insérée en premier dans l'enregistreur et/ou le
+lecteur, de forme circulaire et/ou polyèdre.</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 1,
+dans laquelle l'élément d'actionnement (32) est disposé sur
+un côté latéral du corps de cartouche (6), globalement
+perpendiculaire à la direction de déplacement de l'élément
+d'obturateur (25).</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 1,
+dans laquelle l'élément de transmission (33) et l'élément
+de guidage (31) sont déplacés dans des directions
+globalement perpendiculaires l'une à l'autre,
+respectivement.</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 1,
+dans laquelle le mécanisme de blocage d'obturateur (38)
+comprend un élément de blocage (61) formé intégralement
+avec l'élément d'actionnement (32) du mécanisme
+d'ouverture/fermeture d'obturateur (38) afin de bloquer
+l'élément d'obturateur (25) à l'encontre d'un mouvement.</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 6,
+dans laquelle l'élément de blocage (61) engage une paroi
+interne du côté latéral du corps de cartouche (6).</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 6,
+dans laquelle le mécanisme de blocage d'obturateur (38)
+comprend un élément de déblocage (63) formé intégralement
+avec l'élément de blocage (61) afin d'être élastiquement
+mobile et qui déplace élastiquement l'élément de blocage
+(61) afin d'annuler un blocage par l'élément de blocage
+(61).</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 6,
+dans laquelle les surfaces de support du mécanisme
+d'ouverture/fermeture d'obturateur (38) ont des
+renfoncements de support formés dans les côtés latéraux du
+corps de cartouche afin de supporter l'élément
+d'actionnement (32) de façon mobile et l'élément de blocage
+(61) et/ou l'élément de déblocage (63) sont formés en étant
+plus petits que la largeur des renfoncements de support et
+prévus de façon mobile dans les renfoncements de support.</claim-text></claim><claim num="xx"><claim-text>Cartouche de disque (1) selon la revendication 9,
+dans laquelle l'élément de déblocage (63) est prévu à
+l'extérieur du corps de cartouche (6).</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="26N" date="20050511"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050222</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="ET" date="20050225"><legal-event-body><event-title>FR: TRANSLATION FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20040624"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60103314</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20040624</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040616"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20040519"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20040519"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17Q" date="20030528"><legal-event-body><event-title>FIRST EXAMINATION REPORT</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030411</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20030514"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>DEFRGB</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20030402"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20030128</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20020821"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A3</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20020821"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010912"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A2</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010912"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>

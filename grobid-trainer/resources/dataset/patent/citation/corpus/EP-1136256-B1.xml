@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patent-document status="new" lang="EN" ucid="EP-1136256-B1" country="EP" doc-number="1136256" kind="B1" date="20050817"><bibliographic-data><publication-reference fvid="23238219" ucid="EP-1136256-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1136256</doc-number><kind>B1</kind><date>20050817</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01106380-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01106380</doc-number><kind>A</kind><date>20010319</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="JP-2000078439-A" status="new"><document-id format="epo" status="new"><country>JP</country><doc-number>2000078439</doc-number><kind>A</kind><date>20000321</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20041111</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">B41C   1/10        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B41C   1/10        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">B41N   1/12        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">B41N   1/14        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/00        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/00        20060101CLI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/004       20060101AFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/004       20060101CFI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/11        20060101ALI20051220RMJP        </classification-ipcr><classification-ipcr status="new">G03F   7/11        20060101CLI20051220RMJP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">B41C1/10A1</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Wärmeempfindlicher lithographischer Druckplattenvorläufer</invention-title><invention-title lang="EN" status="new">Heat-sensitive lithographic printing plate precursor</invention-title><invention-title lang="FR" status="new">Précurseur de plaque d'impression lithographique sensible à la chaleur</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>FUJI PHOTO FILM CO LTD</name><address><country>JP</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>FUJI PHOTO FILM CO., LTD.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>KITA NOBUYUKI</name><address><country>JP</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>KITA, NOBUYUKI</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>Kita, Nobuyuki, Fuji Photo Film Co., Ltd.</last-name><address><street>4000, Kawashiri, Yodhida-cho</street><city>Haibara-gun, Shizuoka</city><country>JP</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>FUJI PHOTO FILM CO., LTD.</last-name><address><street>210, Nakanuma, Minami-Ashigara-shi</street><city>Kanagawa</city><country>JP</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>HOFFMANN - EITLE</last-name><address><street>Patent- und Rechtsanwälte Arabellastrasse 4</street><city>81925 München</city><country>DE</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A heat-sensitive lithographic printing plate precursor is disclosed, comprising a metal substrate having thereon 1) an ink-receptive layer, 2) a water-receptive layer comprising a colloidal particulate oxide or hydroxide of at least one element selected from the group consisting of beryllium, magnesium, aluminum, silicon, titanium, boron, germanium, tin, zirconium, iron, vanadium, antimony and transition metals, or additionally 3) a water-soluble overcoat layer, at least one layer of the ink-receptive layer, the water-receptive layer and the overcoat layer containing a compound capable of converting light into heat and the ink-receptive layer containing an epoxy resin having a softening point of 120 DEG C or more.</p></abstract><abstract lang="EN" status="new"><p num="">A heat-sensitive lithographic printing plate precursor
+is disclosed, comprising a metal substrate having thereon
+1) an ink-receptive layer, 2) a water-receptive layer
+comprising a colloidal particulate oxide or hydroxide of at
+least one element selected from the group consisting of
+beryllium, magnesium, aluminum, silicon, titanium, boron,
+germanium, tin, zirconium, iron, vanadium, antimony and
+transition metals, or additionally 3) a water-soluble
+overcoat layer, at least one layer of the ink-receptive
+layer, the water-receptive layer and the overcoat layer
+containing a compound capable of converting light into heat
+and the ink-receptive layer containing an epoxy resin
+having a softening point of 120°C or more.</p></abstract><description lang="EN" status="new"><heading><u style="single">FIELD OF THE INVENTION</u></heading><p num="0001">The present invention relates to a heat-sensitive
+lithographic printing plate precursor which can dispense
+with development. More specifically, the present invention
+relates to a lithographic printing plate precursor which
+can record an image by the exposure of scanning an infrared
+ray laser beam based on digital signals, which can be
+mounted on a printing press as it is after the image
+recording and used for printing without passing through a
+development process as in conventional techniques, and
+which is improved in the impression capacity.</p><heading><u style="single">BACKGROUND OF THE INVENTION</u></heading><p num="0002">Various methods have been proposed for the
+lithographic printing plate precursor which can be mounted
+on a printing press as it is after the exposure without
+passing through any processing and used for printing. One
+promising method is a method of exposing an printing plate
+precursor with a solid high output infrared ray laser such
+as semiconductor laser and YAG laser, generating heat on
+the exposed area by a compound capable of converting light
+into heat which converts light into heat, and causing
+decomposition and evaporation using ablation. </p><p num="0003">That is, this is a method of providing a water-receptive
+layer on a substrate having a lipophilic ink-receptive
+surface or a lipophilic ink-receptive layer, and
+removing the water-receptive layer by ablation.</p><p num="0004"><ref type="patent">WO98/40212</ref> and <ref type="patent">WO99/19143</ref> disclose a lithographic
+printing plate precursor capable of being mounted on a
+printing press without passing through development, where
+an ink-receptive layer and a water-receptive layer mainly
+comprising a colloid such as silica crosslinked by a
+crosslinking agent such as aminopropyltriethoxysilane are
+provided on a substrate. This ink-receptive layer may
+contain, as a binder polymer, polycarbonate, polyester,
+polyvinyl butyral, polyacrylate or a chemically modified
+cellulose derivative in addition to a compound capable of
+converting light into heat, and the water-receptive layer
+is improved in the impression capacity by crosslinking the
+colloid using a crosslinking agent.</p><p num="0005"><ref type="patent">WO99/19144</ref> discloses a lithographic printing plate
+precursor where a heat-insulating layer containing no
+compound capable of converting light into heat is provided,
+in place of the above-described ink-receptive layer and it
+is stated that cellulose acetate, polymethyl methacrylate,
+polystyrene, polyvinyl butyral or a polycarbonate is used
+for the heat-insulating layer. </p><p num="0006">However, according to these techniques, the impression
+capacity is as low as thousands of sheets.</p><p num="0007"><ref type="patent">EP-A-1 072 402</ref> (a document under Art. 54(3) EPC) discloses a heat-sensitive
+lithographic printing plate precursor comprising a substrate having thereon an ink-receptive
+layer and a hydrophilic layer comprising a colloidal particulate oxide or hydroxide of at least
+one element selected from the group consisting of beryllium, magnesium, aluminium, silicon,
+boron, germanium, tin, antimony and transition metals, at least one layer of the ink-receptive
+layer and the hydrophilic layer containing a compound capable of converting light into heat.</p><heading><u style="single">SUMMARY OF THE INVENTION</u></heading><p num="0008">Accordingly, the object of the present invention is to
+solve the above-described problems and provide a heat-sensitive
+lithographic printing plate precursor comprising
+a metal support, which can be mounted directly on a
+printing press after the exposure without passing through
+any processing and used for printing and which is improved
+in the impression capacity.</p><p num="0009">As a result of extensive investigations to solve those
+problems, the present inventors have found that the above-described
+objects can be attained by incorporating an epoxy
+resin having a softening point of 120°C or more into the
+ink-receptive layer.</p><p num="0010">That is, the present invention is as follows.
+<sl><li>1. A heat-sensitive lithographic printing plate
+precursor comprising a metal substrate having thereon 1) an
+ink-receptive layer and 2) a water-receptive layer
+comprising a colloidal particulate oxide or hydroxide of at
+least one element selected from the group consisting of
+beryllium, magnesium, aluminum, silicon, titanium, boron,
+germanium, tin, zirconium, iron, vanadium, antimony and
+transition metals, at least one layer of the ink-receptive
+layer and the water-receptive layer containing a compound  
+capable of converting light into heat and the ink-receptive
+layer containing an epoxy resin having a softening point of
+120°C or more (by Durance's mercury method).</li><li>2. The heat-sensitive lithographic printing plate
+precursor comprising a metal substrate having thereon 1) an
+ink-receptive layer and 2) the water-receptive layer as
+described in the above item 1, wherein 3) a water-soluble
+overcoat layer is further provided over the metal
+substrate; at least one layer of the ink-receptive layer,
+the water-receptive layer and the water-soluble overcoat
+layer contains a compound capable of converting light into
+heat and the ink-receptive layer contains an epoxy resin
+having a softening point of 120°C or more.</li></sl></p><heading><u style="single">DETAILED DESCRIPTION OF THE INVENTION</u></heading><p num="0011">The present invention is described in detail below.</p><p num="0012">The ink-receptive layer of the present invention
+contains an epoxy resin having a softening point of 120°C or
+more. The softening point is measured according to Durance's
+mercury method. Suitable examples of the epoxy resin include
+polyaddition products having a softening point of 120°C or
+more, preferably 140°C or more, such as bisphenol
+A/epichlorohydrin polyaddition product, bisphenol
+F/epichlorohydrin polyaddition product, halogenated bisphenol
+A/epichlorohydrin polyaddition product, biphenyltype
+bisphenol/epichlorohydrin polyaddition product and navolak
+resin/epichlorohydrin polyaddition product. 
+Specific examples thereof include EPIKOTE 1007 (softening
+point: 128°C, Mn: about 2,900, epoxy equivalent: 2,000),
+EPIKOTE 1009 (softening point: 144°C, Mn: about 3,750, epoxy
+equivalent: 3,000), EPIKOTE 1010 (softening point: 169°C,
+Mn: about 5,500, epoxy equivalent: 4,000), EPIKOTE 1100L
+(softening point: 149°C, epoxy equivalent: 4,000) and
+EPIKOTE YX31575 (softening point: 130°C, epoxy equivalent:
+1,200), all produced by Yuka Shell Epoxy Co., Ltd.</p><p num="0013">The epoxy resin is dissolved in an appropriate solvent,
+coated on a substrate and dried to provide an ink-receptive
+layer on the substrate. Only the epoxy resin may be used by
+dissolving it in a solvent, however, if desired, a coloring
+agent, an inorganic or organic fine particle, a coating
+surface (state) improver, a plasticizer and an adhesive aid
+may be added.</p><p num="0014">In addition, a thermal coloration- or decolorization-type
+additive may also be added for forming a print-out
+image after the exposure.</p><p num="0015">The coloring agent is an ordinary dye or pigment and
+examples thereof include Rhodamine 6G chloride, Rhodamine B
+chloride, Crystal Violet, Malachite Green Oxalate, Oxazine
+4 Perchlorate, quinizarin, 2-(α-naphthyl)-5-phenyloxazole
+and coumarin-4. Specific examples of other dyes include
+triphenyl methane-, diphenyl methane-, oxazine-, xanthene-,
+iminonaphthoquinone-, azomethine- or anthraquinone-base 
+dyes represented by Oil Yellow #101, Oil Yellow #103, Oil
+Pink #312, Oil Green BG, Oil Blue BOS, Oil Blue #603, Oil
+Black BY, Oil Black BS, Oil Black T-505 (all produced by
+Orient Kagaku Kogyo K.K.), Victoria Pure Blue, Crystal
+Violet (CI42555), Methyl Violet (CI42535), Ethyl Violet,
+Methylene Blue (CI52015), Patent Pure Blue (all produced by
+Sumitomo Mikuni Kagaku), Brilliant Blue, Methyl Green,
+Erythrisine B, Basic Fuchsine, m-Cresol Purple, Auramine,
+4-p-diethylaminophenyliminonaphthoquinone and cyano-p-diethylaminophenylacetanilide,
+and dyes described in <ref type="patent">JP-A-62-293247</ref>
+(the term &quot;JP-A&quot; as used herein means an
+&quot;unexamined published Japanese patent application&quot;) and <ref type="patent">JP-A-9-179290</ref>.</p><p num="0016">The dye is usually added, when added into the ink-receptive
+layer, in a ratio of about 0.02 to 10% by weight,
+preferably from about 0.1 to 5% by weight, based on the
+entire solid content of the receptive layer.</p><p num="0017">In addition, a fluorine-containing surfactant or a
+silicon-containing surfactant, which are a compound well-known
+as a coating surface (state) improver, may also be
+used. More specifically, a surfactant having a
+perfluoroalkyl group or a dimethylsiloxane group is useful
+for conditioning the coating surface state. </p><p num="0018">Examples of the inorganic or organic fine powder which
+can be used in the present invention include colloidal
+silica and colloidal aluminum, having a particle size of 10
+to 100 nm; inactive particles having a particle size larger
+than those colloids, such as silica particle, surface
+hydrophobitized silica particle, alumina particle and
+titanium dioxide particle; other heavy metal particles;
+clay; and talc. By adding this inorganic or organic fine
+powder into the ink-receptive layer, an effect of improving
+the adhesive property to the upper water-receptive layer
+and improving the impression capacity in printing is
+provided. In the ink-receptive layer, the ratio of the fine
+powder added is preferably 80% by weight or less, more
+preferably 40% by weight or less, based on the solid
+content of the ink-receptive layer.</p><p num="0019">If desired, a plasticizer is added to the ink-receptive
+layer of the present invention so as to impart
+flexibility to the film. Examples of the plasticizer which
+can be used include polyethylene glycol, tributyl citrate,
+diethyl phthalate, dibutyl phthalate, dihexyl phthalate,
+dioctyl phthalate, tricresyl phosphate, tributyl phosphate,
+trioctyl phosphate, tetrahydrofurfuryl oleate, and
+oligomers and polymers of acrylic acid or methacrylic acid. </p><p num="0020">Examples of the coloration- or decolorization-type
+additive which can be added to the ink-receptive layer of
+the present invention include combinations of a heat acid
+generator such as diazo compound or diphenyl iodonium salt,
+and a leuco dye (lactone form of Leuco Malachite Green,
+Leuco Crystal Violet or Crystal Violet) or a PH discoloring
+dye (for example, dyes such as Ethyl Violet and Victoria
+Pure Blue BOH). In addition, combinations of an acid
+coloring dye with an acidic binder described in <ref type="patent">EP897134</ref>
+are also effective. In this case, the bond in the
+association state of forming the dye is broken by heating
+to yield a lactone form and thereby cause the change from
+chromatic to achromatic.</p><p num="0021">These additives are each preferably added in a ratio
+of 10% by weight or less, more preferably 5% by weight or
+less, based on the solid content of the ink-receptive layer.</p><p num="0022">Examples of the solvent which can be used in coating
+the ink-receptive layer include alcohols (e.g., methanol,
+ethanol, propyl alcohol, ethylene glycol, diethylene glycol,
+propylene glycol, dipropylene glycol, ethylene glycol
+monomethyl ether, propylene glycol monomethyl ether,
+ethylene glycol monoethyl ether), ethers (e.g.,
+tetrahydrofuran, ethylene glycol dimethyl ether, propylene
+glycol dimethyl ether, tetrahydropyrane), ketones (e.g.,
+acetone, methyl ethyl ketone, acetyl acetone), esters (e.g., 
+methyl acetate, ethylene glycol monomethyl monoacetate),
+amides (e.g., formamide, N-methylformamide, pyrrolidone, N-methylpyrrolidone),
+γ-butyrolactone, methyl lactate and
+ethyl lactate. These solvents are used individually or in
+combination. The concentration of the above-described ink-receptive
+layer components (the entire solid content
+including additives) in the coating solution is preferably
+from 1 to 50% by weight.</p><p num="0023">The thickness of the ink-receptive layer of the
+present invention after coating and drying is not
+particularly limited but may be 0.1 µm or more. In the case
+of the present invention where the ink-receptive layer is
+provided on a metal plate, the ink-receptive layer has a
+function as a heat-insulating layer and therefore, the
+thickness thereof is preferably 0.5 µm or more. If the ink-receptive
+layer is too thin, the heat generated
+disadvantageously diffuses toward the metal plate and the
+sensitivity decreases. Moreover, in the case of a
+hydrophilic metal plate, the ink-receptive layer is
+required to have abrasion resistance and therefore, the
+impression capacity cannot be ensured.</p><p num="0024">The substrate on which the ink-receptive layer of the
+present invention is coated is a metal substrate having
+good dimensional stability. Preferred examples of the metal
+substrate include aluminum, zinc, copper, nickel and 
+stainless steel. Among these, aluminum substrate is more
+preferred.</p><p num="0025">The starting material aluminum plate used for the
+aluminum substrate of the present invention may be
+appropriately selected from conventionally known and
+commonly used aluminum plate materials. More specifically,
+the starting material aluminum plate is a pure aluminum
+plate or an alloy plate mainly comprising aluminum and
+containing trace foreign elements. Examples of the foreign
+elements contained in the aluminum alloy include silicon,
+iron, manganese, copper, magnesium, chromium, zinc, bismuth,
+nickel and titanium. The content of foreign elements in the
+alloy is 10% by weight or less. The aluminum plate may also
+be an aluminum plate obtained from an aluminum ingot using
+DC casting or continuous casting.</p><p num="0026">The thickness of the aluminum substrate for use in the
+present invention is from 0.05 to 0.6 mm, preferably from
+0.1 to 0.4 mm, more preferably from 0.15 to 0.3 mm.</p><p num="0027">Before coating the ink-receptive layer on an aluminum
+plate, the surface of the aluminum plate is preferably
+roughened. By the surface roughening, the surface area can
+be increased and the adhesion to the upper layer can be
+improved. </p><p num="0028">The surface roughening treatment of the aluminum plate
+is performed by various methods, for example, by a method
+of mechanically roughening the surface, a method of
+electrochemically dissolving and roughening the surface, a
+method of chemically dissolving the selected surface, or a
+combination of two or more of these methods. In the
+mechanical method, a known method such as ball polishing,
+brush polishing, blast polishing or buff polishing may be
+used. The chemical method is preferably a method of dipping
+the aluminum plate in a saturated aqueous solution
+containing an aluminum salt of mineral acid described in
+<ref type="patent">JP-A-54-31187</ref>. The electrochemical surface roughening
+method includes a method of performing the treatment by
+passing an alternating current or direct current through an
+electrolytic solution containing an acid such as
+hydrochloric acid or nitric acid. An electrolytic surface
+roughening method using a mixed acid as disclosed in <ref type="patent">JP-A-54-63902</ref>
+may also be used.</p><p num="0029">The surface roughening by the above-described method
+is preferably performed such that the center line average
+surface roughness (Ra) [defined in JIS B0601] on the
+surface of aluminum plate is from 0.3 to 1.0 µm.</p><p num="0030">After the surface roughening, the aluminum plate may
+be, if desired, subjected to an alkali etching treatment
+with an aqueous solution of potassium hydroxide or sodium 
+hydroxide, to a neutralization treatment and then to an
+anodization treatment.</p><p num="0031">The electrolyte which can be used in the anodization
+treatment of the aluminum plate includes various
+electrolytes capable of forming a porous oxide film and in
+general, sulfuric acid, phosphoric acid, oxalic acid,
+chromic acid, sulfamic acid, benzenesulfonic acid or a
+mixed acid thereof is used. The concentration of the
+electrolyte is appropriately determined depending on the
+kind of electrolyte.</p><p num="0032">The anodization treatment conditions vary depending on
+the electrolyte used and therefore, cannot be
+indiscriminately specified, however, suitable conditions
+are such that the concentration of electrolyte is from 1 to
+80% by weight based on the solution, the liquid temperature
+is from 5 to 70°C, the current density is from 5 to 60 A/dm<sup>2</sup>,
+the voltage is from 1 to 100 V, and the electrolysis time
+is from 10 seconds to 50 minutes.</p><p num="0033">Among these anodization treatments, preferred are a
+method of performing the anodization at a high current
+density in sulfuric acid described in <ref type="patent">British Patent
+1,412,768</ref> and a method of performing the anodization
+treatment using phosphoric acid as the electrolytic bath
+described in <ref type="patent">U.S. Patent 3,511,661</ref>. </p><p num="0034">In the present invention, the oxide film of the
+aluminum substrate preferably has a weight of 2.0 g/m<sup>2</sup> or
+more, more preferably from 2.0 to 6.0 g/m<sup>2</sup>, still more
+preferably from 2.0 to 4.0 g/m<sup>2</sup>.</p><p num="0035">The aluminum substrate of the present invention may be
+subjected to a sealing treatment of the anodic oxide film.
+The sealing treatment may be performed by a well-known
+method such as hot water sealing, boiling water sealing,
+steam sealing, bichromate sealing, nitrite sealing,
+ammonium acetate sealing or electrodeposition sealing.</p><p num="0036">Other than these, a sealing treatment using
+fluorozirconate described in <ref type="patent">JP-B-36-22063</ref> (the term &quot;JP-B&quot;
+as used herein means an &quot;examined Japanese patent
+publication&quot;), an aqueous solution containing a phosphate
+and an inorganic fluorocompound described in <ref type="patent">JP-A-9-244227</ref>,
+or an aqueous solution containing a sugar described in <ref type="patent">JP-A-9-134002</ref>
+may be used.</p><p num="0037">Furthermore, a sealing treatment using an aqueous
+solution containing titanium and fluorine described in <ref type="patent">JP-A-81704/2000</ref>
+and <ref type="patent">JP-A-89466/2000</ref> may be used.</p><p num="0038">In addition, the sealing treatment may be performed
+using an alkali metal silicate and in this case, a method
+described in <ref type="patent">U.S. Patent 3,181,461</ref> and the like may be used. </p><p num="0039">After the anodization and if desired, after the
+sealing treatment, the aluminum substrate for use in the
+present invention may be subjected to a surface treatment,
+for example, a dipping treatment in an aqueous solution of
+alkali silicate such as sodium silicate, a dipping
+treatment in a polymer or copolymer having polyvinyl
+phosphonic acid, polyacrylic acid or sulfonic acid on the
+side chain or in a solution containing an organic compound
+or a salt thereof having (a) an amino group and (b) a group
+selected from phosphine group, phosphone group and
+phosphoric acid group described in <ref type="patent">JP-A-11-231509</ref>, or a
+undercoating treatment with this solution.</p><p num="0040">The water-receptive layer for use in the present
+invention comprises a colloidal particulate oxide or
+hydroxide of at least one element selected from beryllium,
+magnesium, aluminum, silicon, titanium, boron, germanium,
+tin, zirconium, iron, vanadium, antimony and transition
+metals.</p><p num="0041">The colloidal particulate oxide or hydroxide of these
+elements is produced as a dispersed phase of a colloidal
+dispersion solution, namely, colloidal particles, by
+various known methods such as hydrolysis of a halide or
+alkoxy compound of the above-described element, or
+condensation of a hydroxide of the element. In the case of
+adding this to the coating solution for the water-receptive 
+layer, the colloidal particulate oxide or hydroxide of the
+element can be added in the form of a colloidal dispersion
+solution.</p><p num="0042">Among oxides or hydroxides of those elements,
+preferred is an oxide or a hydroxide of at least one
+element selected from aluminum, silicon, titanium and
+zirconium.</p><p num="0043">The colloidal particle of the oxide or hydroxide of
+the element is preferably a spherical particle having a
+colloidal particle size of 5 to 100 nm in the case of
+silica. A pearl necklace-like colloidal particle where
+spherical particles of 10 to 50 nm lie in a row to a length
+of 50 to 400 nm may also be used. Furthermore, a plumous
+particle of 100 nm x 100 nm, such as colloidal particle of
+oxide or hydroxide of aluminum, is also effective.</p><p num="0044">These colloidal dispersion solutions can also be a
+product available on the market, for example, from Nissan
+Chemical Co., Ltd.</p><p num="0045">As the dispersion medium for these colloidal particles,
+water and an organic solvent such as methanol, ethanol,
+ethylene glycol monomethyl ether and methyl ethyl ketone
+are useful. </p><p num="0046">In the water-receptive layer of the present invention,
+a hydrophilic resin or a resin having an aromatic hydroxyl
+group may be used together with the above-described
+colloidal particle. By using this resin, the water-receptive
+layer can be enhanced in the film strength, the
+impression capacity can be enhanced or the inking property
+can be improved.</p><p num="0047">The hydrophilic resin preferably has a hydrophilic
+group such as hydroxyl group, carboxyl group, hydroxyethyl
+group, hydroxypropyl group, amino group, aminoethyl group,
+aminopropyl group or carboxymethyl group.</p><p num="0048">Specific examples of the hydrophilic resin include gum
+arabic, casein, gelatin, a starch derivative, carboxymethyl
+cellulose and a sodium salt thereof, cellulose acetate,
+sodium alginate, a vinyl acetate-maleic acid copolymer, a
+styrene-maleic acid copolymer, polyacrylic acid and a salt
+thereof, polymethacrylic acid and a salt thereof, a
+homopolymer and a copolymer of hydroxyethyl methacrylate, a
+homopolymer and a copolymer of hydroxyethyl acrylate, a
+homopolymer and a copolymer of hydroxypropyl methacrylate,
+a homopolymer and a copolymer of hydroxypropyl acrylate, a
+homopolymer and a copolymer of hydroxybutyl methacrylate, a
+homopolymer and a copolymer of hydroxybutyl acrylate,
+polyethylene glycol, polypropylene oxide, polyvinyl alcohol,
+hydrolyzed polyvinyl acetate having a hydrolysis degree of 
+at least 60% by weight, preferably at least 80% by weight,
+polyvinyl formal, polyvinyl butyral, polyvinyl pyrrolidone,
+a homopolymer and a copolymer of acrylamide, a homopolymer
+and a copolymer of methacrylamide, and a homopolymer and a
+copolymer of N-methylolacrylamide.</p><p num="0049">The hydrophilic resin is particularly preferably a
+water-insoluble hydroxyl group-containing polymer and
+specific examples thereof include a homopolymer and a
+copolymer of hydroxyethyl methacrylate and a homopolymer
+and a copolymer of hydroxyethyl acrylate.</p><p num="0050">The ratio of the hydrophilic resin added is preferably
+40% by weight or less based on the solid content of the
+water-receptive layer in the case where the hydrophilic
+resin is water-soluble, and preferably 20% by weight or
+less based on the solid content of the water-receptive
+layer in the case where the hydrophilic resin is water-insoluble.</p><p num="0051">The resin having an aromatic hydroxyl group for use in
+the water-receptive layer of the present invention is
+preferably a resin which dissolves in methanol in a ratio
+of 5% by weight or more at 25°C, and examples thereof
+include alkali-soluble resins such as novolak resin, resol
+resin, polyvinyl phenol resin and ketone pyrogallol resin.</p><p num="0052">Preferred examples of the novolak resin include
+novolak resins obtained by performing an addition 
+condensation of at least one hydroxyl group-containing
+aromatic compound selected from phenol, o-cresol, m-cresol,
+p-cresol, 2,5-xylenol, 3,5-xylenol and resorcinol to at
+least one aldehyde selected from formaldehyde, acetaldehyde
+and propionaldehyde, in the presence of an acidic catalyst.
+The formaldehyde and acetaldehyde may be replaced by
+paraformaldehyde and para-aldehyde, respectively.</p><p num="0053">Among these, preferred are novolak resins which are an
+addition condensate of an aldehyde with a mixture of m-cresol
+: p-cresol : 2,5-xylenol : 3,5-xylenol : resorcinol
+in a mixing ratio by mol of 40-100 : 0-50 : 0-20 : 0-20 :
+0-20 or a mixture of phenol : m-cresol : p-cresol in a
+mixing ratio by mol of 1-100 : 0-70 : 0-60. Among those
+aldehydes, formaldehyde is preferred.</p><p num="0054">The novolak resin preferably has a weight average
+molecular weight in terms of polystyrene (hereinafter
+simply referred to as a &quot;weight average molecular weight&quot;)
+by gel permeation chromatography (hereinafter simply
+referred to as &quot;GPC&quot;), of 1,000 to 15,000, more preferably
+from 1,500 to 10,000.</p><p num="0055">Preferred examples of the resol resin include resol
+resins obtained by performing an addition condensation of
+at least one hydrocarbon selected from hydroxyl group-containing
+aromatic hydrocarbons such as phenol, m-cresol,
+o-cresol, p-cresol, 2,5-xylenol, 3,5-xylenol, resorcinol, 
+pyrogallol, bis-(4-hydroxyphenyl)methane, bisphenol A, o-ethylphenol,
+m-ethylphenol, p-ethylphenol, propylphenol, n-butylphenol,
+t-butylphenol, 1-naphthol and 2-naphthol, and
+other polynuclear aromatic hydrocarbons having two or more
+hydroxyl groups, to at least one aldehyde or ketone
+selected from aldehydes such as formaldehyde, acetaldehyde,
+propionaldehyde, benzaldehyde and furfural, and ketones
+such as acetone, methyl ethyl ketone and methyl isobutyl
+ketone, in the presence of an alkaline catalyst.</p><p num="0056">The formaldehyde and acetaldehyde may be replaced by
+paraformaldehyde and para-aldehyde, respectively. The
+weight average molecular weight of the resol resin is
+preferably from 500 to 10,000, more preferably from 1,000
+to 5,000.</p><p num="0057">Preferred examples of the polyvinyl phenol resin
+include homopolymers of a hydroxystyrene such as o-hydroxystyrene,
+m-hydroxystyrene, p-hydroxystyrene, 2-(o-hydroxyphenyl)propylene,
+2-(m-hydroxyphenyl)propylene and
+2-(p-hydroxyphenyl)propylene, and copolymers of two or more
+thereof. These hydroxystyrenes may have a substituent on
+the aromatic ring, such as a halogen (e.g., chlorine,
+bromine, iodine, fluorine) or an alkyl group having from 1
+to 4 carbon atoms. Accordingly, the polyvinyl phenols
+include a polyvinyl phenol which may have a halogen or an
+alkyl group having from 1 to 4 carbon atoms on the aromatic 
+ring.</p><p num="0058">In addition, copolymers of a hydroxystyrene such as o-hydroxystyrene,
+m-hydroxystyrene, p-hydroxystyrene, 2-(o-hydroxyphenyl)propylene,
+2-(m-hydroxyphenyl)propylene and
+2-(p-hydroxyphenyl)propylene, with a methacrylic acid, an
+acrylic acid, an alkyl methacrylate or an alkyl acrylate
+are also useful.</p><p num="0059">The polyvinyl phenol resin is usually obtained by
+polymerizing hydroxystyrenes which may have a substituent,
+individually or in combination of two or more thereof in
+the presence of a radical polymerization initiator or a
+cationic polymerization initiator. This polyvinyl phenol
+resin may be partially hydrogenated or may be a resin where
+a part of hydroxyl groups are protected by a tert-butoxy
+carbonyl group, a pyranyl group or a furanyl group. The
+weight average molecular weight of the polyvinyl phenol
+resin is preferably from 1,000 to 100,000, more preferably
+from 1,500 to 50,000.</p><p num="0060">As the ketone pyrogallol resin, acetone pyrogallol
+resin is particularly useful.</p><p num="0061">The mixing ratio of the resin having this aromatic
+hydroxyl group is 20% by weight or less, preferably 12% by
+weight or less, based on the solid content of the water-receptive
+layer. </p><p num="0062">In addition to the colloidal oxide or hydroxide of the
+above-described element and the resin having an aromatic
+hydroxyl group, the water-receptive layer of the present
+invention may contain a crosslinking agent which
+accelerates the crosslinking of colloidal oxide or
+hydroxide. Preferred examples of this crosslinking agent
+include an initial hydrolysis condensate of tetraalkoxysilane,
+a trialkoxysilylpropyl-N,N,N-trialkylammonium
+halide and an aminopropyltrialkoxysilane. The ratio added
+thereof is preferably 5% by weight or less based on the
+solid content of the water-receptive layer.</p><p num="0063">Furthermore, the water-receptive layer for use in the
+present invention may contain a crosslinking agent for the
+above-described hydrophilic resin or resin having an
+aromatic hydroxyl group in order to enhance the impression
+capacity at the time of printing. Examples of this
+crosslinking agent include formaldehyde, glyoxal,
+polyisocyanate, initial hydrolysis-condensate of
+tetraalkoxysilane, dimethylolurea and hexamethylolmelamine.</p><p num="0064">Still further, the water-receptive layer for use in
+the present invention may contain a well-known fluorine-containing
+surfactant, silicon-containing surfactant or
+polyoxyethylene-containing surfactant for the purpose of
+improving the surface state in the coating. </p><p num="0065">In the present invention, the thickness of the water-receptive
+layer coated is preferably from 0.1 to 3 µm, more
+preferably from 0.5 to 2 µm. Within this range, the
+durability of the water-receptive layer can be ensured and
+a good press life at the printing can be obtained.</p><p num="0066">In the case of using a general semiconductor laser
+available on the market, the image drawing requires an
+energy of 250 to 400 mJ/cm<sup>2</sup> for the thickness of about
+0.5 µm and an energy of 350 to 500 mJ/cm<sup>2</sup> for the thickness
+of about 1.5 µm. Accordingly, if the thickness is too large,
+a large amount of energy is necessary for peeling off the
+water-receptive layer by ablation from the ink-receptive
+layer, the exposure by a laser takes a long time, and the
+productivity in the production of printing plates decreases.</p><p num="0067">The heat-sensitive lithographic printing plate
+precursor of the present invention can have a water-soluble
+overcoat layer on the water-receptive layer. By virtue of
+this overcoat layer, the water-receptive layer can be
+protected from staining or scratching due to an ink-receptive
+substance during storage or handling of the
+printing plate. Furthermore, by incorporating a compound
+capable of converting light into heat into the overcoat
+layer, the compound capable of converting light into heat
+needs not be added to the water-receptive layer in a large
+amount, as a result, high sensitivity can be attained 
+without deteriorating the hydrophilicity or film quality of
+the water-receptive layer.</p><p num="0068">The water-soluble overcoat layer which can be used in
+the present invention, can be easily removed at the time of
+printing and contains a resin selected from water-soluble
+polymer compounds. The water-soluble polymer compound used
+here provides, after coating and drying, a coating having a
+film-forming capability and specific examples thereof
+include a polyvinyl acetate (however, having a hydrolysis
+ratio of 65% or more), a polyacrylic acid and an alkali
+metal salt or amine salt thereof, an acrylic acid copolymer
+and an alkali metal salt or amine salt thereof, a
+polymethacrylic acid and an alkali metal salt or amine salt
+thereof, a methacrylic acid copolymer and an alkali metal
+salt or amine salt thereof, a homopolymer and a copolymer
+of acrylamide, a polyhydroxyethyl acrylate, a homopolymer
+and a copolymer of vinyl pyrrolidone, a polyvinyl methyl
+ether, a vinyl methyl ether/maleic anhydride copolymer, a
+poly-2-acrylamido-2-methyl-1-propanesulfonic acid and an
+alkali metal salt or amine salt thereof, a 2-acrylamide-2-methyl-1-propanesulfonic
+acid copolymer and an alkali metal
+salt or amine salt thereof, gum arabic, a cellulose
+derivative (e.g., carboxymethyl cellulose, carboxyethyl
+cellulose, methyl cellulose) and a denatured product
+thereof, a white dextrin, a pulluran, and an enzyme-decomposed 
+etherified dextrin. These resins may be used in
+combination of two or more thereof according to the use end.</p><p num="0069">In the case where the overcoat layer is coated in the
+form of an aqueous solution, mainly a nonionic surfactant
+may be added for the purpose of ensuring the uniformity of
+coating. Specific examples of the nonionic surfactant
+include sorbitan tristearate, sorbitan monopalmitate,
+sorbitan trioleate, stearic acid monoglyceride, polyoxyethylene
+nonylphenyl ether and polyoxyethylene dodecyl
+ether.</p><p num="0070">The ratio of the nonionic surfactant occupying in the
+solid contents of the overcoat layer is preferably from
+0.05 to 5% by weight, more preferably from 1 to 3% by
+weight.</p><p num="0071">In the present invention, the thickness of the
+overcoat layer is preferably from 0.05 to 4.0 µm, more
+preferably from 0.1 to 1.0 µm. Within this range, staining
+by an ink-receptive substance or scratching can be
+satisfactorily prevented. If the thickness is too large,
+this causes adverse effects, for example, the removal of
+the overcoat layer takes a long time at the printing, the
+water-soluble resin dissolved out in a large amount affects
+the fountain solution, roller stripping is generated at the
+printing, or the ink fails in inking on the image area. </p><p num="0072">In the present invention, at least one of the ink-receptive
+layer, the water-receptive layer and the overcoat
+layer contains a compound capable of converting light into
+heat which absorbs an infrared ray and generates heat.</p><p num="0073">The compound capable of converting light into heat may
+be sufficient if it is a light absorbing substance having
+an absorption band at least in a part of 700 to 1,200 nm.</p><p num="0074">The pigment which can be used include commercially
+available pigments and infrared absorbing pigments
+described in <ref type="npl"><u style="single">Color Index (C.I.) Binran &quot;Saishin Ganryo
+Binran&quot; (Color Index (C.I.) Handbook &quot;Handbook of Newest
+Dyes&quot;)</u>, compiled by Nippon Ganryo Gijutsu Kyokai (1977)</ref>,
+<ref type="npl"><u style="single">Saishin Ganryo Oyo Gijutsu (Newest Pigment Application
+Technology),</u> CMC Shuppan (1986)</ref>, and <ref type="npl"><u style="single">Insatsu Ink Gijutsu
+(Printing Ink Technology)</u>, CMC Shuppan (1984)</ref>.</p><p num="0075">If desired, the pigment may be subjected to a known
+surface treatment before use so as to improve the
+dispersibility in the layer to which the pigment is added.
+Examples of the method for performing the surface treatment
+include a method of surface-coating a hydrophilic resin or
+a lipophilic resin, a method of adhering a surfactant, and
+a method of bonding a reactive substance (for example, a
+silica sol, alumina sol or silane coupling agent, an epoxy
+compound or an isocyanate compound) to the pigment surface. </p><p num="0076">The pigment added to the overcoat layer or water-receptive
+layer is preferably surface-coated with a
+hydrophilic resin or a silica sol so as to facilitate the
+dispersion with a water-soluble resin and not to impair the
+hydrophilicity. The particle size of the pigment is
+preferably from 0.01 to 1 µm, more preferably from 0.01 to
+0.5 µm. For dispersing the pigment, a well-known dispersion
+technique for use in the production of ink or toner can be
+used.</p><p num="0077">Among the pigments, carbon black is a particularly
+preferred.</p><p num="0078">Examples of the dye include commercially available
+dyes and well-known dyes described in publications (for
+example, <ref type="npl"><u style="single">Senryo Binran (Dye Handbook)</u>, compiled by Yuki
+Gosei Kagaku Kyokai (1960)</ref>, <ref type="npl"><u style="single">Kagaku Kogyo, &quot;Kin-Sekigai
+Kyusho Shikiso&quot; (Chemical Engineering, &quot;Near Infrared
+Absorbing Dyes&quot;</u>), pp. 45-51 (May, 1986)</ref>, and <ref type="npl"><u style="single">90-Nen Dai
+Kinosei Shikiso no Kaihatsu to Shijo Doko (Development and
+Movement on Market of Functional Dyes in 90s)</u>, Chap. 2,
+Item 2.3, CMC (1990)</ref>) and patents. More specifically,
+infrared absorbing dyes such as azo dye, metal complex salt
+azo dye, pyrazolone azo dye, anthraquinone dye,
+phthalocyanine dye, carbonium dye, quinoneimine dye,
+polymethine dye and cyanine dye are preferred. </p><p num="0079">Other examples of the dye include cyanine dyes
+described in <ref type="patent">JP-A-58-125246</ref>, <ref type="patent">JP-A-59-84356</ref> and <ref type="patent">JP-A-60-78787</ref>,
+methine dyes described in <ref type="patent">JP-A-58-173696</ref>, <ref type="patent">JP-A-58-181690</ref>
+and <ref type="patent">JP-A-58-194595</ref>, naphthoquinone dyes described in
+<ref type="patent">JP-A-58-112793</ref>, <ref type="patent">JP-A-58-224793</ref>, <ref type="patent">JP-A-59-48187</ref>, <ref type="patent">JP-A-59-73996</ref>,
+<ref type="patent">JP-A-60-52940</ref> and <ref type="patent">JP-A-60-63744</ref>, squarylium dyes
+described in <ref type="patent">JP-A-58-112792</ref>, cyanine dyes described in
+<ref type="patent">British Patent 434,875</ref>, dyes described in <ref type="patent">U.S. Patents
+4,756,993</ref>, cyanine dyes described in <ref type="patent">U.S. Patent 4,973,572</ref>,
+and dyes described in <ref type="patent">JP-A-10-268512</ref>.</p><p num="0080">Also, near infrared absorbing sensitizers described in
+<ref type="patent">U.S. Patent 5,156,938</ref> can be suitably used as the dye. In
+addition, substituted arylbenzo(thio)pyrylium salts
+described in <ref type="patent">U.S. Patent 3,881,924</ref>, trimethinethiapyrylium
+salts described in <ref type="patent">JP-A-57-142645</ref> (corresponding to <ref type="patent">U.S.
+Patent 4,327,169</ref>), pyrylium-based compounds described in
+<ref type="patent">JP-A-58-181051</ref>, <ref type="patent">JP-A-58-220143</ref>, <ref type="patent">JP-A-59-41363</ref>, <ref type="patent">JP-A-59-84248</ref>,
+<ref type="patent">JP-A-59-84249</ref>, <ref type="patent">JP-A-59-146063</ref> and <ref type="patent">JP-A-59-146061</ref>,
+cyanine dyes described in <ref type="patent">JP-A-59-216146</ref>, pentamethinethiopyrylium
+salts described in <ref type="patent">U.S. Patent 4,283,475</ref>,
+pyrylium compounds disclosed in <ref type="patent">JP-B-5-13514</ref> and <ref type="patent">JP-B-5-19702</ref>,
+and Epolite III-178, Epolite III-130 and Epolite
+III-125 produced by Epoline are preferably used. </p><p num="0081">Among these, water-soluble dyes are preferred as the
+dye added to the overcoat layer or water-receptive layer.
+Specific examples thereof are exemplified below by their
+structural formulae. <img file="00300001.tif" id="img-EP-1124285-B1-00300001" he="76" wi="154" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00300002.tif" id="img-EP-1124285-B1-00300002" he="36" wi="155" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00300003.tif" id="img-EP-1124285-B1-00300003" he="35" wi="155" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00300004.tif" id="img-EP-1124285-B1-00300004" he="81" wi="155" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00310001.tif" id="img-EP-1124285-B1-00310001" he="54" wi="140" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00310002.tif" id="img-EP-1124285-B1-00310002" he="39" wi="140" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00310003.tif" id="img-EP-1124285-B1-00310003" he="41" wi="140" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00310004.tif" id="img-EP-1124285-B1-00310004" he="101" wi="141" img-format="tif" img-content="cf" orientation="unknown" inline="no" /></p><p num="0082">In the present invention, the compound capable of
+converting light into heat for use in the ink-receptive
+layer may be the above-described infrared absorbing dye but
+is more preferably an ink-receptive dye. Specific examples
+thereof include the following cyanine dyes. <img file="00330001.tif" id="img-EP-1124285-B1-00330001" he="48" wi="164" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00330002.tif" id="img-EP-1124285-B1-00330002" he="40" wi="165" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00330003.tif" id="img-EP-1124285-B1-00330003" he="38" wi="165" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00330004.tif" id="img-EP-1124285-B1-00330004" he="49" wi="165" img-format="tif" img-content="cf" orientation="unknown" inline="no" /><img file="00330005.tif" id="img-EP-1124285-B1-00330005" he="49" wi="166" img-format="tif" img-content="cf" orientation="unknown" inline="no" /></p><p num="0083">The ratio of the compound capable of converting light
+into heat added is, in the case of adding it to the binder
+polymer of the water-receptive layer, suitably from 1 to
+70% by weight, more preferably from 2 to 50% by weight,
+based on the solid contents in the water-receptive layer.
+Within this range, good sensitivity can be obtained while
+not impairing the hydrophilicity of the water-receptive
+layer.</p><p num="0084">In the case of adding the compound capable of
+converting light into heat to the ink-receptive layer, the
+ratio added thereof is from 1 to 40% by weight, preferably
+from 2 to 20% by weight, based on the solid contents of the
+ink-receptive layer. Within this range, good sensitivity
+can be obtained while not impairing the film quality.</p><p num="0085">In the case of adding the compound capable of
+converting light into heat to the overcoat layer, the ratio
+added thereof is from 1 to 70% by weight, preferably from 2
+to 50% by weight, and more preferably from 2 to 30% by
+weight when the compound capable of converting light into
+heat is a dye, or from 20 to 50% by weight when the
+compound capable of converting light into heat is pigment,
+based on the solid content of the overcoat layer. Within
+this range, good sensitivity can be obtained while not
+impairing the uniformity of the overcoat layer or the
+strength of the film. </p><p num="0086">Also, in the case of adding the compound capable of
+converting light into heat to the overcoat layer, according
+to the amount added thereof, the amount of the compound
+capable of converting light into heat added to the water-receptive
+layer and the ink-receptive layer may be reduced
+or may be nil.</p><p num="0087">On the heat-sensitive lithographic printing plate
+precursor of the present invention, an image is formed by
+heat. More specifically, direct image recording by a
+thermal recording head or the like, scanning exposure by an
+infrared ray laser, high-intensity flash exposure by a
+xenon discharge lamp, or infrared ray lamp exposure may be
+applied. In particular, the exposure is suitably performed
+using a semiconductor laser which radiates an infrared ray
+in the wavelength range of 700 to 1,200 nm, or a solid high
+output infrared ray laser such as YAG laser.</p><p num="0088">The image-exposed printing plate precursor of the
+present invention may be mounted on a printing press
+without passing through any more processing. When the
+printing is started using ink and fountain solution, the
+water-receptive layer is removed, ink is adhered to the
+exposed ink-receptive layer portion, and thereby the
+printing proceeds. The overcoat layer is swiftly dissolved
+and removed upon contact with the fountain solution and
+scarcely affects the printing. </p><p num="0089">The lithographic printing plate precursor of the
+present invention can also be used for the on-press
+development where the printing plate precursor is fixed
+onto a printing press cylinder and exposed by a laser
+mounted on the printing press and then fountain solution
+and/or ink may be applied thereto.</p><heading><u style="single">EXAMPLES</u></heading><p num="0090">The present invention is described in greater detail
+below by referring to the Examples, however, the present
+invention should not be construed as being limited thereto.</p><heading><u style="single">EXAMPLES 1 TO 3 AND COMPARATIVE EXAMPLES 1 TO 3</u></heading><p num="0091">On an aluminum support (constructive material: JIS
+A1050, thickness: 0.24 mm, grained roughness Ra [center
+line average surface roughness: JIS B0601] : 0.45 µm, weight
+of anodic oxide film: 2.7 g/m<sup>2</sup>) subjected to graining,
+anodization and treatment with sodium silicate solution by
+a well-known method, Coating Solution A-1 for the ink-receptive
+layer shown below was coated by means of a bar in
+a coating solution amount of 12 ml/m<sup>2</sup>. Thereafter, the
+support was dried at 100°C for 1 minute to provide an ink-receptive
+layer having a dry coated amount of 0.5 g/m<sup>2</sup>. <tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution A-1 for Ink-Receptive Layer)</entry></row><row><entry align="left">Epoxy resin (see, Table 1)</entry><entry align="center">3 g</entry></row><row><entry align="left">Megafac F-177 (a fluorine-containing surfactant, produced by Dai-Nippon Ink &amp; Chemicals, Inc.)</entry><entry align="center">0.04 g</entry></row><row><entry align="left">Methyl ethyl ketone</entry><entry align="center">37 g</entry></row><row><entry align="left">Polypropylene glycol monomethyl ether</entry><entry align="center">20 g</entry></row></tbody></tgroup></table></tables></p><p num="0092">On the thus-provided ink-receptive layer, Coating
+Solution B-1 for the water-receptive layer shown below was
+coated and dried at 40°C for 3 minutes to obtain a heat-sensitive
+lithographic printing plate precursor in which
+the dry coated amount of the water-receptive layer was 1
+g/m<sup>2</sup>.
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution B-1 for Water-Receptive Layer)</entry></row><row><entry align="left">10 wt% Methanol solution of poly-2-hydroxyethyl methacrylate (weight average molecular weight: 300,000)</entry><entry align="center">1 g</entry></row><row><entry align="left">Methanol silica (produced by Nissan Chemical, a colloid comprising a methanol solution containing 30 wt% of silica particles having a particle size of 10 to 20 nm)</entry><entry align="center">3 g</entry></row><row><entry align="left">Compound capable of converting light into heat (Dye IR-11 described in the present invention)</entry><entry align="center">0.09 g</entry></row><row><entry align="left">Methyl lactate</entry><entry align="center">0.5 g</entry></row><row><entry align="left">Methanol</entry><entry align="center">15.5 g</entry></row></tbody></tgroup></table></tables></p><p num="0093">The thus-prepared lithographic printing plate
+precursor was exposed at 300 mJ/m<sup>2</sup> using Trendsetter (a
+plate setter having mounted thereon a semiconductor laser
+of 40 W at 830 nm) manufactured by Creo. The exposed
+printing plate precursor as it is but not processed any
+more was fixed to a printing press (&quot;Lithrone&quot; manufactured
+by Komori Corporation) and the printing was performed using
+a fountain solution comprising plate etching solution (EU-3,
+produced by Fuji Photo Film Co., Ltd.)/water/isopropyl
+alcohol (volume ratio: 1/99/10), and Japanese ink (GEOS-G,
+produced by Dai-Nippon Ink &amp; Chemicals, Inc.).
+<tables><table><tgroup cols="5"><tbody><row><entry namest="1" align="center" /><entry namest="2" nameend="3" align="center">Resin of Ink-Receptive Layer</entry><entry namest="4" nameend="5" align="center">Printing Results</entry></row><row><entry align="center" /><entry align="center">Name of Resin</entry><entry align="center">Softening Point (°C)</entry><entry align="center">Impression Capacity (sheets)</entry><entry align="center">Printing Stain</entry></row><row><entry align="left">Example 1</entry><entry align="center">EPIKOTE 1007</entry><entry align="center">128</entry><entry align="center">20,000</entry><entry align="center">good</entry></row><row><entry align="left">Example 2</entry><entry align="center">EPIKOTE 1009</entry><entry align="center">144</entry><entry align="center">20,000</entry><entry align="center">good</entry></row><row><entry align="left">Example 3</entry><entry align="center">EPIKOTE 1010</entry><entry align="center">169</entry><entry align="center">20,000</entry><entry align="center">good</entry></row><row><entry align="left">Comparative Example 1</entry><entry namest="2" align="center">EPIKOTE 1001</entry><entry namest="3" align="center">58</entry><entry namest="4" nameend="5" align="center">(image formation failure)</entry></row><row><entry align="left">ComparativeExample 2</entry><entry namest="2" align="center">EPIKOTE 1002</entry><entry namest="3" align="center">78</entry><entry namest="4" nameend="5" align="center">(image formation failure)</entry></row><row><entry align="left">Comparative Example 3</entry><entry align="center">polyvinyl formal</entry><entry align="center">-</entry><entry align="center">10,000</entry><entry align="center">good</entry></row></tbody></tgroup></table></tables></p><p num="0094">In Table 1, EPIKOTE is an epoxy resin produced by Yuka
+Shell Epoxy Co., Ltd. In Comparative Example 3, a polyvinyl
+formal resin (Denka Formal #200, produced by Denki Kagaku
+Kogyo K.K.) was used in place of the epoxy resin.</p><p num="0095">It is seen from these results that by the epoxy resin
+having a high softening point, high impression capacity can
+be attained.</p><heading><u style="single"><b>EXAMPLE 4</b></u></heading><p num="0096">A heat-sensitive lithographic printing plate precursor
+in which the dry coated amount of the water-receptive layer
+was 1 g/m<sup>2</sup>, was obtained by applying Coating Solution B-2
+for the water-receptive layer shown below on the same ink-receptive
+layer as in Example 2 and drying it at 40°C for 3
+minutes.
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution B-2 for Water-Receptive Layer)</entry></row><row><entry align="left">Novolak Resin (N1)</entry><entry align="center">0.05 g</entry></row><row><entry align="left">Glassca 401 (i.e., Ceramica G-401)</entry><entry align="center">4.5 g</entry></row><row><entry align="left">Methyl lactate</entry><entry align="center">0.5 g</entry></row><row><entry align="left">Methanol</entry><entry align="center">15.5 g</entry></row></tbody></tgroup></table></tables></p><p num="0097">Novolak Resin (N1) is an addition condensate of a 6/4
+(by weight) mixture of m-cresol and p-cresol with
+paraformaldehyde and has a weight average molecular weight
+of 3,500. Glassca 401 is a 20 wt% methanol colloid solution 
+comprising ZrO<sub>2</sub>-SiO<sub>2</sub> produced by Nichiban Kenkyusho.</p><p num="0098">The thus-obtained heat-sensitive lithographic printing
+plate precursor was subjected to exposure and printing in
+the same manner as in Example 1, as a result, 20,000 sheets
+of good printed matter free of any staining were obtained.</p><heading><u style="single"><b>EXAMPLE 5</b></u></heading><p num="0099">On the surface-treated aluminum support used in
+Example 1, Coating Solution A-2 for the ink-receptive layer
+shown below was coated by means of a bar in a coating
+solution amount of 12 ml/m<sup>2</sup> and then dried by heating at
+100°C for 1 minute to provide an ink-receptive layer having
+a dry coated amount of 0.5 g/m<sup>2</sup>.
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution A-2 for Ink-Receptive Layer)</entry></row><row><entry align="left">Epoxy resin (EPIKOTE 1100L, softening point: 149°C)</entry><entry align="center">3 g</entry></row><row><entry align="left">Megafac F-177</entry><entry align="center">0.04 g</entry></row><row><entry align="left">Methyl ethyl ketone</entry><entry align="center">37 g</entry></row><row><entry align="left">Polypropylene glycol monomethyl ether</entry><entry align="center">20 g</entry></row></tbody></tgroup></table></tables></p><p num="0100">On this ink-receptive layer, Coating Solution B-3 for
+the water-receptive layer shown below was coated and dried
+at 100°C for 1 minute to provide a water-receptive layer
+having a dry coated amount of 1 g/m<sup>2</sup>. <tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution B-3 for Water-Receptive Layer)</entry></row><row><entry align="left">Poly-2-hydroxyethyl methacrylate (the same as in Example 1)</entry><entry align="center">1 g</entry></row><row><entry align="left">Methanol silica (the same as in Example 1)</entry><entry align="center">3 g</entry></row><row><entry align="left">Methyl lactate</entry><entry align="center">0.5 g</entry></row><row><entry align="left">Methanol</entry><entry align="center">15.5 g</entry></row></tbody></tgroup></table></tables></p><p num="0101">On this water-receptive layer, Coating Solution OC-1
+for the overcoat layer shown below was coated and dried at
+100°C for 90 seconds to manufacture a heat-sensitive
+lithographic printing plate precursor having an overcoat
+layer of which dry coated weight was 0.5 g/m<sup>2</sup>.
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution OC-1 for Overcoat Layer)</entry></row><row><entry align="left">Polyacrylic acid (weight average molecular weight: 50,000)</entry><entry align="center">1.0 g</entry></row><row><entry align="left">Compound capable of converting light into heat (Dye IR-11 described in the present invention)</entry><entry align="center">0.2 g</entry></row><row><entry align="left">Polyoxyethylene nonylphenyl ether</entry><entry align="center">0.04 g</entry></row><row><entry align="left">Water</entry><entry align="center">19 g</entry></row></tbody></tgroup></table></tables></p><p num="0102">The thus-obtained heat-sensitive lithographic printing
+plate precursor was exposed at 350 mJ/m<sup>2</sup> using the same
+plate setter as in Example 1 and subjected to printing in
+the same printing press as in Example 1, as a results,
+20,000 sheets of good printed matters free of any staining
+were obtained. </p><heading><u style="single"><b>EXAMPLE 6</b></u></heading><p num="0103">On the surface-treated aluminum support used in
+Example 1, Coating Solution A-3 for the ink-receptive layer
+shown below was coated by means of a bar in a coating
+solution amount of 12 ml/m<sup>2</sup> and then dried by heating at
+100°C for 1 minute to provide an ink-receptive layer having
+a dry coated amount of 0.5 g/m<sup>2</sup>.
+<tables><table><tgroup cols="2"><tbody><row><entry namest="1" nameend="2">(Coating Solution A-3 for Ink-Receptive Layer)</entry></row><row><entry align="left">Epoxy resin (EPIKOTE 1009)</entry><entry align="center">3 g</entry></row><row><entry align="left">Compound capable of converting light into heat (Dye IR-24 described in the present invention)</entry><entry align="center">0.3 g</entry></row><row><entry align="left">Megafac F-177</entry><entry align="center">0.04 g</entry></row><row><entry align="left">Methyl ethyl ketone</entry><entry align="center">37 g</entry></row><row><entry align="left">Polypropylene glycol monomethyl ether</entry><entry align="center">20 g</entry></row></tbody></tgroup></table></tables></p><p num="0104">On this ink-receptive layer, the same water-receptive
+layer as in Example 1 was provided and further thereon, the
+same overcoat layer as in Example 5 was coated to obtain a
+heat-sensitive lithographic printing plate precursor.</p><p num="0105">This lithographic printing plate precursor was
+subjected to exposure and printing in the same manner as in
+Example 1, as a results, 20,000 sheets of good printed
+matters free of staining were obtained. </p><p num="0106">According to the present invention, a heat-sensitive
+lithographic printing plate precursor comprising a metal
+support is obtained, which can be mounted directly on a
+printing press without passing through any processing after
+exposure and can be used for printing and which is improved
+in the impression capacity.</p></description><claims lang="DE" status="new"><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe,
+welche ein Metallsubstrat umfasst, das darauf (1) eine
+tintenaufnahmefähige Schicht und (2) eine
+wasseraufnahmefähige Schicht umfasst, die ein
+kolloidales partikuläres Oxid oder Hydroxid von
+mindestens einem Element umfasst, das man aus der Gruppe
+bestehend aus Beryllium, Magnesium, Aluminium, Silicium,
+Bor, Germanium, Zinn, Antimon und Übergangsmetallen
+auswählt, wobei mindestens eine Schicht der
+tintenaufnahmefähigen Schicht und der
+wasseraufnahmefähigen Schicht eine Verbindung enthält,
+die in der Lage ist, Licht in Wärme umzuwandeln und die
+tintenaufnahmefähige Schicht ein Epoxyharz mit einem
+Erweichungspunkt von 120°C oder mehr enthält, wobei der
+Erweichungspunkt gemäss dem Durance-Quecksilberverfahren
+gemessen wird.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss Anspruch 1, worin das Übergangsmetall unter
+Titan, Zirkonium, Eisen oder Vanadium ausgewählt wird.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss Anspruch 1 oder 2, worin ferner (3) eine
+wasserlösliche Überzugsschicht über der
+wasseraufnahmefähigen Schicht vorgesehen ist; worin
+mindestens eine Schicht unter der tintenaufnahmefähigen
+Schicht, der wasseraufnahmefähigen Schicht und der
+wasserlöslichen Überzugsschicht eine Verbindung enthält,
+die in der Lage ist, Licht in Wärme umzuwandeln; und die
+tintenaufnahmefähige Schicht ein Epoxyharz mit einem
+Erweichungspunkt von 120°C oder mehr enthält.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss einem der Ansprüche 1 bis 3, worin das
+Metallsubstrat ein Aluminiumsubstrat mit einer Dicke von
+0,05 bis 0,6 mm ist.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss einem der Ansprüche 1 bis 3, worin die
+tintenaufnahmefähige Schicht eine Dicke von 0,1 µm oder
+mehr aufweist.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss einem der Ansprüche 1 bis 3, worin die
+wasseraufnahmefähige Schicht eine Dicke von 0,1 bis 3 µm
+aufweist.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss Anspruch 3, worin die wasserlösliche
+Überzugsschicht eine Dicke von 0,05 bis 4,0 µm aufweist.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss Anspruch 1 oder 2, worin bei der Zugabe der
+Verbindung, die in der Lage ist, Licht in Wärme
+umzuwandeln, zu der wasseraufnahmefähigen Schicht das
+Zugabeverhältnis von 1 bis 70 Gew.%, bezogen auf den
+Feststoffgehalt der wasseraufnahmefähigen Schicht,
+beträgt, und bei der Zugabe der Verbindung, die in der
+Lage ist, Licht in Wärme umzuwandeln, zu der
+tintenaufnahmefähigen Schicht, das Zugabeverhältnis von
+1 bis 40 Gew.%, bezogen auf den Feststoffgehalt der
+tintenaufnahmefähigen Schicht, beträgt.</claim-text></claim><claim num="xx"><claim-text>Wärmeempfindliche lithografische Druckplattenvorstufe
+gemäss Anspruch 3, worin die Verbindung, die in der Lage
+ist, Licht in Wärme umzuwandeln, in der Überzugsschicht
+in einem Zugabeverhältnis von 2 bis 50 Gew.%, bezogen
+auf den Feststoffgehalt der Überzugsschicht, vorliegt.</claim-text></claim></claims><claims lang="EN" status="new"><claim num="xx"><claim-text>A heat-sensitive lithographic printing plate precursor
+comprising a metal substrate having thereon 1) an ink-receptive
+layer and 2) a water-receptive layer
+comprising a colloidal particulate oxide or hydroxide
+of at least one element selected from the group
+consisting of beryllium, magnesium, aluminium, silicon,
+boron, germanium, tin, antimony and transition metals,
+at least one layer of the ink-receptive layer and the
+water-receptive layer containing a compound capable of
+converting light into heat and the ink-receptive layer
+containing an epoxy resin having a softening point of
+120°C or more, said softening point being measured
+according to Durance's mercury method.</claim-text></claim><claim num="xx"><claim-text>A heat-sensitive lithographic printing plate precursor
+as defined in claim 1, wherein the transition metal is
+selected from titanium, zirconium, iron or vanadium.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in claim 1 or 2, wherein 3) a water-soluble
+overcoat layer is further provided over the
+water-receptive layer; at least one layer of the ink-receptive
+layer, the water-receptive layer and the
+water-soluble overcoat layer contains a compound
+capable of converting light into heat; and the ink-receptive
+layer contains an epoxy resin having a
+softening point of 120°C or more.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in any of claims 1 to 3, wherein the metal
+substrate is an aluminium substrate having a thickness
+of from 0.05 to 0.6 mm.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in any of claims 1 to 3, wherein the ink-receptive
+layer has a thickness of 0,1 µm or more.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in any of claims 1 to 3, wherein the
+water-receptive layer has thickness of 0.1 µm to 3 µm.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in claim 3, wherein the water soluble
+overcoat layer has a thickness of 0.05 µm to 4.0 µm.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in claim 1 or 2, wherein when the compound
+capable of converting light into heat is added to the
+water-receptive layer, the addition ratio is from 1 to
+70 % by weight based on the solid contents of the
+water-receptive layer; and when the compound capable of
+converting light into heat is added to the ink-receptive
+layer, the addition ratio is from 1 to 40 %
+by weight based on the solid contents of the ink-receptive
+layer.</claim-text></claim><claim num="xx"><claim-text>The heat-sensitive lithographic printing plate
+precursor as in claim 3, wherein the compound capable
+converting light into heat is present in the overcoat
+layer in an addition ratio from 2 to 50 % by weight
+based on the solid contents of the overcoat layer.</claim-text></claim></claims><claims lang="FR" status="new"><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur comprenant
+un substrat métallique comportant sur celui-ci 1) une couche de réceptivité à l'encre
+et 2) une couche de réceptivité à l'eau comprenant un oxyde ou hydroxyde
+particulaire colloïdal d'au moins un élément choisi dans le groupe constitué par le
+béryllium, le magnésium, l'aluminium, le silicium, le bore, le germanium, l'étain,
+l'antimoine et les métaux de transition, au moins une couche parmi la couche de
+réceptivité à l'encre et la couche de réceptivité à l'eau contenant un composé capable
+de convertir la lumière en chaleur et la couche de réceptivité à l'encre contenant une
+résine époxyde ayant un point de ramollissement de 120°C ou plus, ledit point de
+ramollissement étant mesuré selon le procédé au mercure de Durance.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon la
+revendication 1, dans lequel le métal de transition est choisi parmi le titane, le
+zirconium, le fer ou le vanadium.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon la
+revendication 1 ou 2, dans lequel 3) une couche de recouvrement soluble dans l'eau
+est en outre fournie sur la couche de réceptivité à l'eau ; au moins une couche parmi
+la couche de réceptivité à l'encre, la couche de réceptivité à l'eau et la couche de
+recouvrement soluble dans l'eau contient un composé capable de convertir la lumière
+en chaleur ; et la couche de réceptivité à l'encre contient une résine époxyde ayant un
+point de ramollissement de 120°C ou plus.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon l'une
+quelconque des revendications 1 à 3, dans lequel le substrat métallique est un
+substrat en aluminium ayant une épaisseur de 0,05 à 0,6 mm.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon l'une
+quelconque des revendications 1 à 3, dans lequel la couche de réceptivité à l'encre a
+une épaisseur de 0,1 µm ou plus.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon l'une
+quelconque des revendications 1 à 3, dans lequel la couche de réceptivité à l'eau a
+une épaisseur de 0,1 µm à 3 µm.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon la
+revendication 3, dans lequel la couche de recouvrement soluble dans l'eau a une
+épaisseur de 0,05 µm à 4,0 µm.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon la
+revendication 1 ou 2, dans lequel, lorsque le composé capable de convertir la lumière
+en chaleur est ajouté à la couche de réceptivité à l'eau, le rapport d'addition
+représente de 1 à 70 % en poids sur la base de la teneur en solides de la couche de
+réceptivité à l'eau ; et lorsque le composé capable de convertir la lumière en chaleur
+est ajouté à la couche de réceptivité à l'encre, le rapport d'addition représente de 1 à
+40 % en poids sur la base de la teneur en solides de la couche de réceptivité à l'encre.</claim-text></claim><claim num="xx"><claim-text>Précurseur de plaque d'impression lithographique sensible à la chaleur selon la
+revendication 3, dans lequel le composé capable de convertir la lumière en chaleur
+est présent dans la couche de recouvrement dans un rapport d'addition de 2 à 50 %
+en poids sur la base de la teneur en solides de la couche de recouvrement.</claim-text></claim></claims><legal-status status="new"><legal-event country="EP" code="REG" date="20070411"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>732E</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="25" date="20070321"><legal-event-body><event-title>LAPSED IN A CONTRACTING STATE ANNOUNCED VIA POSTGRANT INFORM. FROM NAT. OFFICE TO EPO</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>AT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>BE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>DK</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>FI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LI</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>LU</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>MC</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>NL</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>PT</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>SE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>TR</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20050817</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051117</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051117</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20051117</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060117</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060320</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060331</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060331</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20061213"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>MM4A</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="EN" date="20061013"><legal-event-body><event-title>FR: TRANSLATION NOT FILED</event-title></legal-event-body></legal-event><legal-event country="EP" code="26N" date="20060726"><legal-event-body><event-title>NO OPPOSITION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20060518</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20060228"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>PL</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="NLV1" date="20060201"><legal-event-body><event-title>NL: LAPSED OR ANNULED DUE TO FAILURE TO FULFILL THE REQUIREMENTS OF ART. 29P AND 29M OF THE PATENTS ACT; NO LEGAL EFFECT FROM</event-title></legal-event-body></legal-event><legal-event country="EP" code="REF" date="20050922"><legal-event-body><event-title>CORRESPONDS TO:</event-title><event-attributes><event-attribute><event-attribute-label>Ref Document Number </event-attribute-label><event-attribute-value>60112637</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Country of Ref Document </event-attribute-label><event-attribute-value>DE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Date of Ref Document </event-attribute-label><event-attribute-value>20050922</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>P</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050921"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>IE</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050831"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>CH</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>EP</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20050817"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>B1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="REG" date="20050817"><legal-event-body><event-title>REFERENCE TO A NATIONAL CODE</event-title><event-attributes><event-attribute><event-attribute-label>Ref Country Code </event-attribute-label><event-attribute-value>GB</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Ref Legal Event Code </event-attribute-label><event-attribute-value>FG4D</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AKX" date="20020612"><legal-event-body><event-title>PAYMENT OF DESIGNATION FEES</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AT BE CH CY DE DK ES FI FR GB GR IE IT LI LU MC NL PT SE TR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="17P" date="20020502"><legal-event-body><event-title>REQUEST FOR EXAMINATION FILED</event-title><event-attributes><event-attribute><event-attribute-label>Effective Date </event-attribute-label><event-attribute-value>20020222</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AK" date="20010926"><legal-event-body><event-title>DESIGNATED CONTRACTING STATES:</event-title><event-attributes><event-attribute><event-attribute-label>Kind Code of Ref Document </event-attribute-label><event-attribute-value>A1</event-attribute-value></event-attribute><event-attribute><event-attribute-label>Designated State(s) </event-attribute-label><event-attribute-value>ATBECHCYDEDKESFIFRGBGRIEITLILUMCNLPTSETR</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event><legal-event country="EP" code="AX" date="20010926"><legal-event-body><event-title>EXTENSION OF THE EUROPEAN PATENT TO</event-title><event-attributes><event-attribute><event-attribute-label>free format text </event-attribute-label><event-attribute-value>AL;LT;LV;MK;RO;SI</event-attribute-value></event-attribute></event-attributes></legal-event-body></legal-event></legal-status></patent-document>
