@@ -62,34 +62,62 @@ public class CitationParser extends AbstractParser {
         this.parsers = parsers;
     }
 
-    public BiblioItem processing(String input, int consolidate) {
-        if (StringUtils.isBlank(input)) {
+    public BiblioItem processingString(String input, int consolidate) {
+        List<String> inputs = new ArrayList<>();
+        inputs.add(input);
+        List<BiblioItem> result = processingStringMultiple(inputs, consolidate);
+        if (result != null && result.size()>0) 
+            return result.get(0);
+        else
             return null;
-        }
-
-        // some cleaning
-        input = UnicodeUtil.normaliseText(input);
-        //input = TextUtilities.dehyphenize(input);
-        //input = input.replace("\n", " ");
-        //input = input.replaceAll("\\p{Cntrl}", " ").trim();
-
-        List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
-        BiblioItem biblioItem = processing(tokens, consolidate);
-        // store original references to enable raw output
-        biblioItem.setReference(input);
-        return biblioItem;
     }
 
-    public BiblioItem processing(List<LayoutToken> tokens, int consolidate) {
-        BiblioItem resCitation;
-        if (CollectionUtils.isEmpty(tokens)) {
+    public List<BiblioItem> processingStringMultiple(List<String> inputs, int consolidate) {
+        if (inputs == null || inputs.size() == 0)
             return null;
+        List<List<LayoutToken>> tokenList = new ArrayList<>();
+        for(String input : inputs) {
+            if (StringUtils.isBlank(input)) 
+                tokenList.add(new ArrayList<LayoutToken>());
+            else {
+                // some cleaning
+                input = UnicodeUtil.normaliseText(input);
+                List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+                tokenList.add(tokens);
+            }
         }
 
-        try {
-            List<String> citationBlocks = new ArrayList<>();
+        List<BiblioItem> results = processingLayoutTokenMultiple(tokenList, consolidate);
+        if (results != null && results.size() == inputs.size()) {
+            // store original references to enable optional raw output
+            int i = 0;
+            for (BiblioItem result : results) {
+                if (result != null)
+                    result.setReference(inputs.get(i));
+                i++;
+            }
+        }
+        return results;
+    }
 
-            //tokens = LayoutTokensUtil.dehyphenize(tokens);
+    public BiblioItem processingLayoutToken(List<LayoutToken> tokens, int consolidate) {
+        List<List<LayoutToken>> tokenList = new ArrayList<>();
+        tokenList.add(tokens);
+        List<BiblioItem> result = processingLayoutTokenMultiple(tokenList, consolidate);
+        if (result != null && result.size()>0) 
+            return result.get(0);
+        else
+            return null;
+    }
+
+    public List<BiblioItem> processingLayoutTokenMultiple(List<List<LayoutToken>> tokenList, int consolidate) {
+        if (tokenList == null || tokenList.size() == 0)
+            return null;
+        List<BiblioItem> results = new ArrayList<>();
+        StringBuilder featuredInput = new StringBuilder();
+        for (List<LayoutToken> tokens : tokenList) {
+            if (CollectionUtils.isEmpty(tokens))
+                continue;
 
             List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
             List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
@@ -100,74 +128,117 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokens);
             List<OffsetPosition> urlPositions = lexicon.tokenPositionsUrlPattern(tokens);
 
-            String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
-                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
-                collaborationsPositions, identifiersPositions, urlPositions);
+            try {
+                String featuredBlock = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
+                    abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
+                    collaborationsPositions, identifiersPositions, urlPositions);
 
-            String res = label(ress);
-            resCitation = resultExtractionLayoutTokens(res, true, tokens);
-            // post-processing (additional field parsing and cleaning)
-            if (resCitation != null) {
-                BiblioItem.cleanTitles(resCitation);
+                featuredInput.append(featuredBlock);
+                featuredInput.append("\n\n");
+            } catch (Exception e) {
+                LOGGER.error("An exception occured while adding features for processing a citation.", e);
+            }
+        }
+        
+        String allRes = null;
+        try {
+            allRes = label(featuredInput.toString());
+        } catch (Exception e) {
+            LOGGER.error("An exception occured while labeling a citation.", e);
+            throw new GrobidException(
+                    "An exception occured while labeling a citation.", e);
+        }
 
-                resCitation.setOriginalAuthors(resCitation.getAuthors());
-                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
-                if (resCitation.getPublicationDate() != null) {
-                    List<Date> dates = parsers.getDateParser().processing(resCitation
-                            .getPublicationDate());
-                    if (dates != null) {
-                        Date bestDate = null;
-                        if (dates.size() > 0) {
-                            // we take the earliest most specified date
-                            for (Date theDate : dates) {
-                                if (bestDate == null) {
-                                    bestDate = theDate;
-                                } else {
-                                    if (bestDate.compareTo(theDate) == 1) {
+        if (allRes == null || allRes.length() == 0)
+            return null;
+        String[] resBlocks = allRes.split("\n\n");
+        int i = 0;
+        for (List<LayoutToken> tokens : tokenList) {
+            if (CollectionUtils.isEmpty(tokens))
+                results.add(null);
+            else {
+                String res = resBlocks[i];
+                i++;
+                BiblioItem resCitation = resultExtractionLayoutTokens(res, true, tokens);
+            
+                // post-processing (additional field parsing and cleaning)
+                if (resCitation != null) {
+                    BiblioItem.cleanTitles(resCitation);
+
+                    resCitation.setOriginalAuthors(resCitation.getAuthors());
+                    try {
+                        resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
+                    } catch (Exception e) {
+                        LOGGER.error("An exception occured when processing author names of a citation.", e);
+                    }
+                    if (resCitation.getPublicationDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resCitation
+                                .getPublicationDate());
+                        if (dates != null) {
+                            Date bestDate = null;
+                            if (dates.size() > 0) {
+                                // we take the earliest most specified date
+                                for (Date theDate : dates) {
+                                    if (bestDate == null) {
                                         bestDate = theDate;
+                                    } else {
+                                        if (bestDate.compareTo(theDate) == 1) {
+                                            bestDate = theDate;
+                                        }
                                     }
                                 }
-                            }
-                            if (bestDate != null) {
-                                resCitation
-                                        .setNormalizedPublicationDate(bestDate);
+                                if (bestDate != null) {
+                                    resCitation.setNormalizedPublicationDate(bestDate);
+                                }
                             }
                         }
                     }
+
+                    resCitation.setPageRange(TextUtilities.cleanField(
+                            resCitation.getPageRange(), true));
+                    resCitation.setPublisher(TextUtilities.cleanField(
+                            resCitation.getPublisher(), true));
+                    resCitation.setJournal(TextUtilities.cleanField(
+                            resCitation.getJournal(), true));
+                    resCitation.postProcessPages();
+
+                    // editors (they are human persons in theory)
+                    resCitation.setOriginalEditors(resCitation.getEditors());
+                    try {
+                        resCitation.setFullEditors(parsers.getAuthorParser().processingCitation(resCitation.getEditors()));
+                    } catch (Exception e) {
+                        LOGGER.error("An exception occured when processing editor names of a citation.", e);
+                    }
                 }
 
-                resCitation.setPageRange(TextUtilities.cleanField(
-                        resCitation.getPageRange(), true));
-                resCitation.setPublisher(TextUtilities.cleanField(
-                        resCitation.getPublisher(), true));
-                resCitation.setJournal(TextUtilities.cleanField(
-                        resCitation.getJournal(), true));
-                resCitation.postProcessPages();
-
-                // editors (they are human persons in theory)
-                resCitation.setOriginalEditors(resCitation.getEditors());
-                resCitation.setFullEditors(parsers.getAuthorParser().processingCitation(resCitation.getEditors()));
-            }
-
-            //if (consolidate != 0) 
-            {
                 resCitation = consolidateCitation(resCitation, LayoutTokensUtil.toText(tokens), consolidate);
+                results.add(resCitation);
             }
-
-            return resCitation;
-        } catch (Exception e) {
-            LOGGER.error("An exception occured while running Grobid.", e);
-            throw new GrobidException(
-                    "An exception occured while running Grobid.", e);
         }
+
+        return results;
     }
 
     public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
         List<LabeledReferenceResult> segm = referenceSegmenter.extract(referenceTextBlock);
 
         List<BibDataSet> results = new ArrayList<>();
+        List<List<LayoutToken>> allRefBlocks = new ArrayList<>();
+        if (segm == null || segm.size() == 0)
+            return results;
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(ref.getTokens(), 0);
+            if (ref.getTokens() == null || ref.getTokens().size() == 0)
+                continue;
+            allRefBlocks.add(ref.getTokens());
+        }
+
+        List<BiblioItem> bibList = processingLayoutTokenMultiple(allRefBlocks, 0);
+        int i = 0;
+        for (LabeledReferenceResult ref : segm) {
+            if (ref.getTokens() == null || ref.getTokens().size() == 0)
+                continue;
+            BiblioItem bib = bibList.get(i);
+            i++;
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -205,53 +276,68 @@ public class CitationParser extends AbstractParser {
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
         if (references != null) {
+            List<String> refTexts = new ArrayList<>();
             for (LabeledReferenceResult ref : references) {
                 // paranoiac check
                 if (ref == null) 
                     continue;
 
-                BiblioItem bib = processing(ref.getReferenceText(), 0);
-                if (bib == null) 
-                    continue;
+                refTexts.add(ref.getReferenceText());
+            }
 
-                // check if we have an interesting url annotation over this bib. ref.
-                List<LayoutToken> refTokens = ref.getTokens();
-                if ((refTokens != null) && (refTokens.size() > 0)) {
-                    List<Integer> localPages = new ArrayList<Integer>();
-                    for(LayoutToken token : refTokens) {
-                        if (!localPages.contains(token.getPage())) {
-                            localPages.add(token.getPage());
-                        }
-                    }
-                    for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
-                        if (annotation.getType() != Type.URI) 
-                            continue;
-                        if (!localPages.contains(annotation.getPageNumber()))
-                            continue;
+            List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
+            if (bibList != null && bibList.size()>0) {
+                int i = 0;
+                for (LabeledReferenceResult ref : references) {
+                    // paranoiac check
+                    if (ref == null) 
+                        continue;
+
+                    //BiblioItem bib = processingString(ref.getReferenceText(), 0);
+                    BiblioItem bib = bibList.get(i);
+                    i++;
+                    if (bib == null) 
+                        continue;
+
+                    // check if we have an interesting url annotation over this bib. ref.
+                    List<LayoutToken> refTokens = ref.getTokens();
+                    if ((refTokens != null) && (refTokens.size() > 0)) {
+                        List<Integer> localPages = new ArrayList<Integer>();
                         for(LayoutToken token : refTokens) {
-                            if (annotation.cover(token)) {
-                                // annotation covers tokens, let's look at the href
-                                String uri = annotation.getDestination();
-                                // is it a DOI?
-                                Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
-                                if (doiMatcher.find()) { 
-                                    // the BiblioItem setter will take care of the prefix and doi cleaninng 
-                                    bib.setDOI(uri);
+                            if (!localPages.contains(token.getPage())) {
+                                localPages.add(token.getPage());
+                            }
+                        }
+                        for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
+                            if (annotation.getType() != Type.URI) 
+                                continue;
+                            if (!localPages.contains(annotation.getPageNumber()))
+                                continue;
+                            for(LayoutToken token : refTokens) {
+                                if (annotation.cover(token)) {
+                                    // annotation covers tokens, let's look at the href
+                                    String uri = annotation.getDestination();
+                                    // is it a DOI?
+                                    Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
+                                    if (doiMatcher.find()) { 
+                                        // the BiblioItem setter will take care of the prefix and doi cleaninng 
+                                        bib.setDOI(uri);
+                                    }
+                                    // TBD: is it something else? 
                                 }
-                                // TBD: is it something else? 
                             }
                         }
                     }
-                }
 
-                if (!bib.rejectAsReference()) {
-                    BibDataSet bds = new BibDataSet();
-                    bds.setRefSymbol(ref.getLabel());
-                    bds.setResBib(bib);
-                    bib.setReference(ref.getReferenceText());
-                    bds.setRawBib(ref.getReferenceText());
-                    bds.getResBib().setCoordinates(ref.getCoordinates());
-                    results.add(bds);
+                    if (!bib.rejectAsReference()) {
+                        BibDataSet bds = new BibDataSet();
+                        bds.setRefSymbol(ref.getLabel());
+                        bds.setResBib(bib);
+                        bib.setReference(ref.getReferenceText());
+                        bds.setRawBib(ref.getReferenceText());
+                        bds.getResBib().setCoordinates(ref.getCoordinates());
+                        results.add(bds);
+                    }
                 }
             }
         }
