@@ -1386,7 +1386,7 @@ public class TEIFormatter {
         return buffer;
     }
 
-    private boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
+    public static boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
         return (!MARKER_LABELS.contains(lastClusterLabel) && lastClusterLabel != TaggingLabels.FIGURE
                 && lastClusterLabel != TaggingLabels.TABLE) || curParagraph == null;
     }
