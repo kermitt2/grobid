@@ -1273,12 +1273,8 @@ public class Document implements Serializable {
                     BoundingBox prevBlock = BoundingBox.fromPointAndDimensions(figBlock.getPageNumber(), figBlock.getX(), figBlock.getY(), figBlock.getWidth(), figBlock.getHeight());
                     blockPtr = it.next();
                     Block b = getBlocks().get(blockPtr);
-                    if (BoundingBox.fromPointAndDimensions(b.getPageNumber(), b.getX(), b.getY(), b.getWidth(), b.getHeight()).distanceTo(prevBlock) < 15) {
-                        result.addAll(b.getTokens());
-                        figBlock = b;
-                    } else {
-                        break;
-                    }
+                    result.addAll(b.getTokens());
+                    figBlock = b;
                 }
                 break;
             } else {
