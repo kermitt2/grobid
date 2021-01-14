@@ -1936,7 +1936,7 @@ public class FullTextParser extends AbstractParser {
      * Create training data for the figures as identified by the full text model.
      * Return the pair (TEI fragment, CRF raw data).
      */
-    private Pair<String,String> processTrainingDataFigures(String rese,
+    protected Pair<String,String> processTrainingDataFigures(String rese,
     		List<LayoutToken> tokenizations, String id) {
     	StringBuilder tei = new StringBuilder();
     	StringBuilder featureVector = new StringBuilder();
@@ -1944,7 +1944,7 @@ public class FullTextParser extends AbstractParser {
     	StringTokenizer st1 = new StringTokenizer(rese, "\n");
     	boolean openFigure = false;
     	StringBuilder figureBlock = new StringBuilder();
-    	List<LayoutToken> tokenizationsFigure = new ArrayList<LayoutToken>();
+    	List<LayoutToken> tokenizationsFigure = new ArrayList<>();
     	List<LayoutToken> tokenizationsBuffer = null;
     	int p = 0; // position in tokenizations
     	int i = 0;
@@ -1954,7 +1954,7 @@ public class FullTextParser extends AbstractParser {
     		String token = s[0].trim();
 			int p0 = p;
             boolean strop = false;
-            tokenizationsBuffer = new ArrayList<LayoutToken>();
+            tokenizationsBuffer = new ArrayList<>();
             while ((!strop) && (p < tokenizations.size())) {
                 String tokOriginal = tokenizations.get(p).getText().trim();
                 if (openFigure)
@@ -2014,7 +2014,7 @@ public class FullTextParser extends AbstractParser {
     			// process the "accumulated" figure
     			Pair<String,String> trainingData = parsers.getFigureParser()
     				.createTrainingData(tokenizationsFigure, figureBlock.toString(), "Fig" + nb);
-    			tokenizationsFigure = new ArrayList<LayoutToken>();
+    			tokenizationsFigure = new ArrayList<>();
 				figureBlock = new StringBuilder();
     			if (trainingData!= null) {
 	    			if (tei.length() == 0) {
@@ -2041,6 +2041,33 @@ public class FullTextParser extends AbstractParser {
     		else
     			openFigure = false;
     	}
+
+    	// If there still an open figure
+    	if (openFigure) {
+            if (tokenizationsFigure.size() > 0) {
+                int nbToRemove = tokenizationsBuffer.size();
+                for(int q=0; q<nbToRemove; q++)
+                    tokenizationsFigure.remove(tokenizationsFigure.size()-1);
+            }
+
+            while((tokenizationsFigure.size() > 0) &&
+                (tokenizationsFigure.get(0).getText().equals("\n") ||
+                    tokenizationsFigure.get(0).getText().equals(" ")) )
+                tokenizationsFigure.remove(0);
+
+            // process the "accumulated" figure
+            Pair<String,String> trainingData = parsers.getFigureParser()
+                .createTrainingData(tokenizationsFigure, figureBlock.toString(), "Fig" + nb);
+            if (trainingData!= null) {
+                if (tei.length() == 0) {
+                    tei.append(parsers.getFigureParser().getTEIHeader(id)).append("\n\n");
+                }
+                if (trainingData.getLeft() != null)
+                    tei.append(trainingData.getLeft()).append("\n\n");
+                if (trainingData.getRight() != null)
+                    featureVector.append(trainingData.getRight()).append("\n\n");
+            }
+        }
 
     	if (tei.length() != 0) {
     		tei.append("\n    </text>\n" +
