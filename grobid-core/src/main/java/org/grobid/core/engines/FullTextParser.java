@@ -1980,20 +1980,17 @@ public class FullTextParser extends AbstractParser {
     		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
     		if (label.equals("<figure>") || ((label.equals("I-<figure>") && !openFigure))) {
     			if (!openFigure) {
-    				for(LayoutToken lTok : tokenizationsBuffer) {
-    					tokenizationsFigure.add(lTok);
-    				}
-    				openFigure = true;
+                    openFigure = true;
+                    tokenizationsFigure.addAll(tokenizationsBuffer);
     			}
     			// we remove the label in the CRF row
     			int ind = row.lastIndexOf("\t");
-    			figureBlock.append(row.substring(0, ind)).append("\n");
-    		}
-    		else if (label.equals("I-<figure>") || openFigure) {
-    			// remove last token
+    			figureBlock.append(row, 0, ind).append("\n");
+    		} else if (label.equals("I-<figure>") || openFigure) {
+    			// remove last tokens
     			if (tokenizationsFigure.size() > 0) {
     				int nbToRemove = tokenizationsBuffer.size();
-    				for(int q=0; q<nbToRemove; q++)
+    				for(int q = 0; q < nbToRemove; q++)
 		    			tokenizationsFigure.remove(tokenizationsFigure.size()-1);
 	    		}
     			// parse the recognized figure area
@@ -2032,24 +2029,16 @@ public class FullTextParser extends AbstractParser {
     				}
     				int ind = row.lastIndexOf("\t");
 	    			figureBlock.append(row.substring(0, ind)).append("\n");
-	    		}
-    			else {
+	    		} else {
 	    			openFigure = false;
 	    		}
     			nb++;
-    		}
-    		else
+    		} else
     			openFigure = false;
     	}
 
     	// If there still an open figure
     	if (openFigure) {
-            if (tokenizationsFigure.size() > 0) {
-                int nbToRemove = tokenizationsBuffer.size();
-                for(int q=0; q<nbToRemove; q++)
-                    tokenizationsFigure.remove(tokenizationsFigure.size()-1);
-            }
-
             while((tokenizationsFigure.size() > 0) &&
                 (tokenizationsFigure.get(0).getText().equals("\n") ||
                     tokenizationsFigure.get(0).getText().equals(" ")) )
