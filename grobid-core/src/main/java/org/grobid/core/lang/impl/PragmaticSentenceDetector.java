@@ -65,15 +65,22 @@ public class PragmaticSentenceDetector implements SentenceDetector {
 //System.out.println(text);
 //System.out.println(ret.toString());
 
+        List<String> retList = (List<String>) ret;
+
+        List<OffsetPosition> result = getSentenceOffsets(text, retList);
+
+        return result;
+    }
+
+    protected static List<OffsetPosition> getSentenceOffsets(String text, List<String> retList) {
         // build offset positions from the string chunks
         List<OffsetPosition> result = new ArrayList<>();
         int pos = 0;
         int previousEnd = 0;
         // indicate when the sentence as provided by the Pragmatic Segmented does not match the original string
-        // and we had to "massage" the string to identify/approximate offsets in the original string 
+        // and we had to "massage" the string to identify/approximate offsets in the original string
         boolean recovered = false;
-        List<String> retList = (List<String>) ret;
-        for(int i=0; i<retList.size(); i++) {
+        for(int i = 0; i< retList.size(); i++) {
             String chunk = retList.get(i);
             recovered = false;
             int start = text.indexOf(chunk, pos);
@@ -81,7 +88,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                 LOGGER.warn("Extracted sentence does not match orginal text - " + chunk);
 
                 // Unfortunately the pragmatic segmenter can modify the string when it gives back the array of sentences as string.
-                // it usually concerns removed white space, which then make it hard to locate exactly the offsets.  
+                // it usually concerns removed white space, which then make it hard to locate exactly the offsets.
                 // we take as first fallback the previous end of sentence and move it to the next non space character
                 // next heuristics is to use the next sentence matching to re-synchronize to the original text
 
@@ -93,11 +100,11 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                 // "The dissolved oxygen concentration in the sediment was measured in the lab with an OX-500 micro electrode (Unisense, Aarhus, Denmark) and was below detection limit (\0.01 mg l -1 )."
                 // -> ["The dissolved oxygen concentration in the sediment was measured in the lab with an OX-500 micro electrode (Unisense, Aarhus, Denmark) and was below detection limit (((((((((\\0.01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 ).01 mg l -1 )."]
                 // original full paragraph: Nonylphenol polluted sediment was collected in June 2005 from the Spanish Huerva River in Zaragoza (41°37 0 23 00 N, 0°54 0 28 00 W), which is a tributary of the Ebro River. At the moment of sampling, the river water had a temperature of 25.1°C, a redox potential of 525 mV and a pH of 7.82. The water contained 3.8 mg l -1 dissolved oxygen. The dissolved oxygen concentration in the sediment was measured in the lab with an OX-500 micro electrode (Unisense, Aarhus, Denmark) and was below detection limit (\0.01 mg l -1 ). The redox potential, temperature and pH were not determined in the sediment for practical reasons. Sediment was taken anaerobically with stainless steel cores, and transported on ice to the laboratory. Cores were opened in an anaerobic glove box with ±1% H 2 -gas and ±99% N 2 -gas to maintain anaerobic conditions, and the sediment was put in a glass jar. The glass jar was stored at 4°C in an anaerobic box that was flushed with N 2 -gas. The sediment contained a mixture of tNP isomers (20 mg kg -1 dry weight), but 4-n-NP was not present in the sediment. The chromatogram of the gas chromatography-mass spectrometry (GC-MS) of the mixture of tNP isomers present in the sediment was comparable to the chromatogram of the tNP technical mixture ordered from Merck. The individual branched isomers were not identified. The total organic carbon fraction of the sediment was 3.5% and contained mainly clay particles with a diameter size \ 32 lM.
-                // it's less frequent that white space removal, but can happen hundred of times when processing thousand PDF 
+                // it's less frequent that white space removal, but can happen hundred of times when processing thousand PDF
                 // -> note it might be related to jruby sharing of the string and encoding/escaping
 
                 if (previousEnd != pos) {
-                    // previous sentence was "recovered", which means we are unsure about its end offset 
+                    // previous sentence was "recovered", which means we are unsure about its end offset
                     start = text.indexOf(chunk, previousEnd);
                     if (start != -1) {
                         // apparently the current sentence match a bit before the end offset of the previous sentence, which mean that
@@ -108,7 +115,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                             while(newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
                                 newPreviousEnd--;
                                 if (start - newPreviousEnd > 10) {
-                                    // this is a break to avoid going too far 
+                                    // this is a break to avoid going too far
                                     newPreviousEnd = start;
                                     // but look back previous character to cover general case
                                     if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
@@ -128,7 +135,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                     while(text.charAt(start) == ' ') {
                         start++;
                         if (start - previousEnd > 10) {
-                            // this is a break to avoid going too far 
+                            // this is a break to avoid going too far
                             start = previousEnd+1;
                         }
                     }
@@ -139,7 +146,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             int end = start+chunk.length();
 
             // in case the last sentence is modified
-            if (end > text.length() && i == retList.size()-1) 
+            if (end > text.length() && i == retList.size()-1)
                 end = text.length();
 
             result.add(new OffsetPosition(start, end));
@@ -149,7 +156,6 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             else
                 previousEnd = pos;
         }
-
         return result;
     }
 }
