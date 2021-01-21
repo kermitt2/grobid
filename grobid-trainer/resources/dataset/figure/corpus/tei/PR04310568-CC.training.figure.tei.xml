@@ -1,0 +1,39 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR04310568-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>O<lb/> 7-y<lb/> M<lb/> ab<lb/> M<lb/> c<lb/> A<lb/> 40 K<lb/> 5 K<lb/> M (emu/mol)<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 0<lb/> 1000<lb/> 2000<lb/> 3000<lb/> H(kOe)<lb/> Y<lb/> 0.4<lb/> Pr<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> 20 K<lb/> M<lb/> ab<lb/> M<lb/> c<lb/> B<lb/> 40 K<lb/> 1.7 K<lb/> M (emu/Pr mol)<lb/> </content>
+<lb/> 
+            <head>Fig. </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>M vs H for the two directions of H for a Pr-123 (A)<lb/> and (Y 0.4 Pr 0.6 )123 (B) single crystals. Dotted lines show<lb/> M vs. H (in emu/mol Pr) for a (Y 0.4 Pr 0.6 )123 at T = 5 K.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 5<lb/> 10<lb/> 15<lb/> 20<lb/> A<lb/> 5 K<lb/> 10 K<lb/> Gd<lb/> 0.4<lb/> Pr<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> M<lb/> c<lb/> M<lb/> ab<lb/> 20 K<lb/> 40 K<lb/> 1.7 K<lb/> M (10 3<lb/> emu/mol)<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 0<lb/> 20<lb/> 40<lb/> B<lb/> H(kOe)<lb/> 5 K<lb/> 10 K<lb/> Gd<lb/> 0.4<lb/> Z<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> M<lb/> c<lb/> M<lb/> ab<lb/> 20 K<lb/> 40 K<lb/> 1.7 K<lb/> M (10 3<lb/> emu/Gd mol)<lb/> </content>
+<lb/> 
+            <head>Fig. </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>M vs H for the two directions of H for a<lb/> (Gd 0.4 Pr 0.6 )123 (A) and imaginary (Z 0.4 Pr 0.6 )123 (B) sin-<lb/>gle crystals. See text for details.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

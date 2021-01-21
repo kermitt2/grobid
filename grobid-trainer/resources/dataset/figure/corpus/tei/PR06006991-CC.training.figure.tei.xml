@@ -1,0 +1,85 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06006991-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>0<lb/> 200<lb/> 400<lb/> 600<lb/> 800<lb/> 1000<lb/> 0<lb/> 50<lb/> 100 150 200 250 300<lb/> Bi 2 Sr 2-x La x CuO 6<lb/> Single Crystals<lb/> ρ<lb/> ab<lb/> [<lb/> µ Ω cm ]<lb/> Temperature [K]<lb/> x=0.66<lb/> x=0.57<lb/> x=0.44<lb/> x=0.30<lb/> x=0.24<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> T<lb/> c<lb/> [ K ]<lb/> x (La content)<lb/> mid-point<lb/> zero-resistance<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>T dependence of ρ ab of the BSLCO crystals. Inset:<lb/> Tc as a function of La content x. The dashed lines are guide<lb/> to the eyes.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>1<lb/> 2<lb/> 3<lb/> 4<lb/> 5<lb/> 6<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> dρ<lb/> ab<lb/> / dT [<lb/> µ Ω cm / K ]<lb/> Temperature [K]<lb/> x =<lb/> 0.66<lb/> 0.57<lb/> 0.44<lb/> 0.30<lb/> 0.24<lb/> 0<lb/> 1<lb/> 2<lb/> 3<lb/> 1.0<lb/> 1.5<lb/> 2.0<lb/> 2.5<lb/> log (<lb/> ρ<lb/> ab<lb/> -<lb/>ρ<lb/> 0<lb/> [<lb/> µ Ω cm ] )<lb/> log ( T [K] )<lb/> n=1.14<lb/> n=1.27<lb/> n=1<lb/> n=2<lb/> x= 0.44<lb/> 0.30<lb/> 0.24<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>T dependence of the slope dρ ab /dT . The dashed<lb/> line represents a constant slope (T -linear behavior). Inset:<lb/> Plot of log(ρ ab -ρ0) vs log T for three x values to show the<lb/> power-law dependence ρ ab =ρ0 + AT n , which is represented<lb/> by dotted lines.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 1<lb/> 2<lb/> 3<lb/> 4<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> R<lb/> H<lb/> [ 10<lb/> -3<lb/> cm<lb/> 3<lb/> C<lb/> -1<lb/> ]<lb/> T [K]<lb/> Bi 2 Sr 2-x La x CuO 6<lb/> Single Crystals<lb/> (a)<lb/> x=0.66<lb/> 0.57<lb/> 0.44<lb/> 0.30<lb/> 0.24<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 8<lb/> x=0.66<lb/> x=0.57<lb/> x=0.44<lb/> x=0.30<lb/> x=0.24<lb/> 1<lb/> 2<lb/> 3<lb/> cot<lb/> θ<lb/> H<lb/> at 10 T [ 10<lb/> 2<lb/> ]<lb/> T<lb/> 2 [10<lb/> 4 K<lb/> 2 ]<lb/> (b)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>(a) T dependence of RH of the BSLCO crystals.<lb/> (b) Plot of cot θH vs T 2 (the data for x=0.30 and 0.24 are<lb/> shifted down by 50 and 100, respectively, to avoid congestion).<lb/> The solid line is a fit to the x=0.66 data.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 100<lb/> 200<lb/> 300<lb/> 0<lb/> 1<lb/> 2<lb/> 3<lb/> 4<lb/> (a) x=0.57<lb/> cot<lb/> θ<lb/> H<lb/> at 10 T<lb/> T<lb/> 1.85 [ 10<lb/> 4 K<lb/> 1.85 ]<lb/> α = 1.85<lb/> 0.5<lb/> 1<lb/> 1.5<lb/> (b) x=0.44<lb/> T<lb/> 1.70 [ 10<lb/> 4 K<lb/> 1.70 ]<lb/> α = 1.70<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> 0<lb/> 0.5<lb/> 1<lb/> (c) x=0.30<lb/> cot<lb/> θ<lb/> H<lb/> at 10 T<lb/> T<lb/> 1.65 [ 10<lb/> 4 K<lb/> 1.65 ]<lb/> α = 1.65<lb/> 0.5<lb/> 1<lb/> (d) x=0.24<lb/> T<lb/> 1.60 [ 10<lb/> 4 K<lb/> 1.60 ]<lb/> α = 1.60<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>Plots of cot θH vs T α for the data of (a) x=0.57,<lb/> (b) x=0.44, (c) x=0.30, and (d) x=0.24. The solid lines are<lb/> fits to the data.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>10<lb/> -5<lb/> 10<lb/> -4<lb/> 10<lb/> -3<lb/> 10<lb/> -2<lb/> (a) x=0.24<lb/> ∆ρ /<lb/> ρ at 10 T<lb/> Transverse<lb/> Longitudinal<lb/> (b) x=0.44<lb/> 10<lb/> -5<lb/> 10<lb/> -4<lb/> 10<lb/> -3<lb/> 10<lb/> -2<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> (c) x=0.57<lb/> ∆ρ /<lb/> ρ at 10 T<lb/> Temperature [K]<lb/> 100<lb/> 200<lb/> 300<lb/> (d) x=0.66<lb/> Temperature [K]</content>
+        </figure>
+
+
+        <figure>
+
+            <head>FIG. </head>
+ 
+            <label>5</label>
+
+            <head>. </head>
+ 
+            <figDesc>Transverse MR (solid circles) and longitudinal MR<lb/> (open circles) for (a) x=0.24, (b) x=0.44, (c) x=0.57, and (d)<lb/> x=0.66.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

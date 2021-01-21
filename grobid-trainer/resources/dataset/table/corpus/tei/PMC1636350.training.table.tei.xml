@@ -1,0 +1,79 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PMC1636350.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+		<figure type="table">
+
+            <head>Table </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>Average Q-scores in pairwise alignment tests on representative SCOP40 domain pairs<lb/> </figDesc>
+<lb/> 
+            <table>Method/Model<lb/> Testing datasets<lb/> SCOP 0-10%<lb/> SCOP 10-15%<lb/> SCOP 15-20%<lb/> SCOP 2-40%<lb/> SCOP All<lb/> (355)<lb/> (432)<lb/> (420)<lb/> (578)<lb/> (1785)<lb/> HMM_1_1_0 a<lb/> 0.146<lb/> 0.322 c<lb/> 0.568 c<lb/> 0.851 c<lb/> 0.516 c<lb/> HMM_1_1_1 a<lb/> 0.146<lb/> 0.328 c<lb/> 0.573 c<lb/> 0.855 c<lb/> 0.520 c<lb/> HMM_3_1_1 a<lb/> 0.150 c<lb/> 0.327 c<lb/> 0.574 c<lb/> 0.858 c<lb/> 0.521 c<lb/> HMM_1_3_1 a<lb/> 0.152 c<lb/> 0.334 c<lb/> 0.585 c<lb/> 0.858 c<lb/> 0.526 c<lb/> HMM_3_3_1 a<lb/> 0.151 c<lb/> 0.335 c<lb/> 0.586 c<lb/> 0.860 c<lb/> 0.527 c<lb/> HMM_1_1_0 b<lb/> 0.123<lb/> 0.295<lb/> 0.551<lb/> 0.843<lb/> 0.498<lb/> HMM_1_1_1 b<lb/> 0.132<lb/> 0.31<lb/> 0.572<lb/> 0.851<lb/> 0.511<lb/> ProbCons<lb/> 0.116<lb/> 0.294<lb/> 0.536<lb/> 0.833<lb/> 0.490<lb/> MAFFT-fftnsi<lb/> 0.087<lb/> 0.256<lb/> 0.496<lb/> 0.809<lb/> 0.457<lb/> MAFFT-einsi<lb/> 0.081<lb/> 0.248<lb/> 0.491<lb/> 0.809<lb/> 0.453<lb/> MAFFT-linsi<lb/> 0.116<lb/> 0.262<lb/> 0.495<lb/> 0.794<lb/> 0.460<lb/> MAFFT-ginsi<lb/> 0.116<lb/> 0.265<lb/> 0.496<lb/> 0.794<lb/> 0.461<lb/> MUSCLE<lb/> 0.139<lb/> 0.293<lb/> 0.507<lb/> 0.817<lb/> 0.482<lb/> ClustalW<lb/> 0.136<lb/> 0.27<lb/> 0.482<lb/> 0.809<lb/> 0.467<lb/> </table>
+<lb/> 
+            <note>Each HMM is named in the format &apos;HMM_solv_ss_u&apos;, where &apos;solv&apos; is the number of solvent accessibility categories, &apos;ss&apos; is the number of secondary structure types,<lb/> and &apos;u&apos; is 1 if unaligned regions are modeled with an additional match state. Average Q-scores of four testing datasets with different identity ranges are shown.<lb/> Q-score is the number of correctly aligned residue pairs in the test alignment divided by the total number of aligned residue pairs in the reference alignment. The<lb/> number of alignments in each testing dataset is shown in parentheses and the identity range in % is specified above the number of alignments. The best results of our<lb/> models and the best results of other programs are in bold numbers.<lb/></note>
+            <note>a<lb/> Trained on DaliLite alignments of SCOP40 domain pairs with 20-40% identity.<lb/></note>
+            <note>b<lb/> Trained on BAliBASE2.0 pairwise alignments.<lb/></note>
+            <note>c<lb/> Our model is statistically better than the best of other programs according to Wilcoxon signed-rank test (P &lt; 0.015).</note>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>Average alignment scores in tests of multiple sequence alignment programs<lb/> </figDesc>
+<lb/> 
+            <table>Methods/Models Testing datasets<lb/> SCOP 0-10% SCOP 10-15% SCOP 15-20% SCOP 20-40% SCOP<lb/> PREFAB SABmark SABmark BAliBASE3.0<lb/> (355)<lb/> (432)<lb/> (420)<lb/> (578)<lb/> All (1785) (1682)<lb/> Sup (425) Twi (209) Q/col (218)<lb/> HMM_1_1_0<lb/> 0.313<lb/> 0.514 a<lb/> 0.727 a<lb/> 0.885<lb/> 0.644 a<lb/> 0.723 a<lb/> 0.516 a<lb/> 0.193 a<lb/> 0.862/0.551<lb/> HMM_1_1_1<lb/> 0.313<lb/> 0.512 a<lb/> 0.728 a<lb/> 0.886<lb/> 0.644 a<lb/> 0.724 a<lb/> 0.512 a<lb/> 0.186 a<lb/> 0.861/0.550<lb/> HMM_3_1_1<lb/> 0.321 a<lb/> 0.514 a<lb/> 0.730 a<lb/> 0.888<lb/> 0.647 a<lb/> 0.726 a<lb/> 0.516 a<lb/> 0.186 a<lb/> 0.862/0.554<lb/> HMM_1_3_1<lb/> 0.327 a<lb/> 0.518 a<lb/> 0.732 a<lb/> 0.889 a<lb/> 0.650 a<lb/> 0.729 a<lb/> 0.519 a<lb/> 0.194 a<lb/> 0.863/0.554<lb/> HMM_3_3_1<lb/> 0.329 a<lb/> 0.520 a<lb/> 0.733 a<lb/> 0.889 a<lb/> 0.651 a<lb/> 0.731 a<lb/> 0.522 a<lb/> 0.196 a<lb/> 0.863/0.557<lb/> ProbCons<lb/> 0.291<lb/> 0.486<lb/> 0.702<lb/> 0.879<lb/> 0.625<lb/> 0.716<lb/> 0.485<lb/> 0.166<lb/> 0.862 c /0.556 b<lb/> MAFFT-fftnsi<lb/> 0.283<lb/> 0.472<lb/> 0.673<lb/> 0.865<lb/> 0.608<lb/> 0.7<lb/> 0.45<lb/> 0.147<lb/> 0.829 c /0.515 c<lb/> MAFFT-einsi<lb/> 0.293<lb/> 0.498<lb/> 0.71<lb/> 0.882<lb/> 0.631<lb/> 0.72<lb/> 0.502<lb/> 0.175<lb/> 0.866 c /0.585 b<lb/> MAFFT-linsi<lb/> 0.301<lb/> 0.5<lb/> 0.707<lb/> 0.883<lb/> 0.633<lb/> 0.722<lb/> 0.51<lb/> 0.184<lb/> 0.868 c /0.586 b<lb/> MAFFT-ginsi<lb/> 0.308<lb/> 0.497<lb/> 0.714<lb/> 0.888<lb/> 0.637<lb/> 0.715<lb/> 0.495<lb/> 0.176<lb/> 0.840 c /0.526 c<lb/> MUSCLE<lb/> 0.262<lb/> 0.453<lb/> 0.662<lb/> 0.866<lb/> 0.597<lb/> 0.68<lb/> 0.433<lb/> 0.136<lb/> 0.816 c /0.472 c<lb/> ClustalW<lb/> 0.21<lb/> 0.357<lb/> 0.566<lb/> 0.798<lb/> 0.519<lb/> 0.617<lb/> 0.39<lb/> 0.127<lb/> 0.749 c /0.373 c<lb/> </table>
+ 
+            <note>The format of the HMM names (&apos;HMM_solv_ss_u&apos;) is explained in Table1. Average Q-scores are shown for all the testing datasets. For the BAliBASE3.0 dataset,<lb/> both the Q-score (&apos;Q&apos;, first number) and column score (&apos;col&apos;, second number, fraction of entirely correct columns) are shown. The first four testing datasets are<lb/> representative SCOP40 domain pairs with added homologs. SABmark has &apos;superfamily&apos; dataset (sup) and &apos;twilight zone&apos; dataset (twi). The number of alignments in<lb/> each testing dataset is shown in parentheses and the identity range in % is specified above the number of alignments for SCOP datasets. MUMMALS implementing<lb/> different HMMs are the first five methods. All sequences pairs are subject to consistency measure in MUMMALS. The best scores of MUMMALS and the best<lb/> scores of other programs are in bold.<lb/></note>
+            <note>a<lb/> MUMMALS with this model is statistically better than the best of other programs according to Wilcoxon signed-rank test (P &lt; 0.015).<lb/></note>
+            <note>b For BAliBASE3.0 test, the difference between MUMMALS with model HMM_1_3_1 or HMM_3_3_1 and this program is not statistically significant (P &gt; 0.05)<lb/> according to Wilcoxon signed-ranks test.<lb/></note>
+            <note>c<lb/> For BAliBASE3.0 test, MUMMALS with model HMM_1_3_1 or HMM_3_3_1 is statistically better than this program (P-value less than 0.01, except for Q-scores<lb/> of ProbCons, for which P ¼ 0.017).</note>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table </head>
+ 
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>Assessment of multiple sequence alignment programs using reference-independent sequence and structural similarity scores on 1207 representative<lb/> SCOP40 domain pairs with identity &lt;20%<lb/> </figDesc>
+<lb/> 
+            <table>Method<lb/> Structural similarity<lb/> Sequence similarity<lb/> DALI Z-score<lb/> GDT-TS<lb/> TM-score<lb/> 3D-score<lb/> LBcona<lb/> LBconb<lb/> Sequence identity<lb/> Blosum62 score<lb/> HMM_1_1_0<lb/> 0.1178<lb/> 0.2510<lb/> 0.3005<lb/> 0.2499 a<lb/> 0.2181<lb/> 0.2828<lb/> 0.0953<lb/> 0.1687<lb/> HMM_1_1_1<lb/> 0.1200 a<lb/> 0.2519 a<lb/> 0.3010 a<lb/> 0.2514 a<lb/> 0.2190 a<lb/> 0.2838<lb/> 0.0955<lb/> 0.1688<lb/> HMM_3_1_1<lb/> 0.1217 a<lb/> 0.2540 a<lb/> 0.3034 a<lb/> 0.2532 a<lb/> 0.2215 a<lb/> 0.2872 a<lb/> 0.0938<lb/> 0.1665<lb/> HMM_1_3_1<lb/> 0.1226 a<lb/> 0.2564 a<lb/> 0.3061 a<lb/> 0.2557 a<lb/> 0.2230 a<lb/> 0.2892 a<lb/> 0.0944<lb/> 0.1662<lb/> HMM_3_3_1<lb/> 0.1231 a<lb/> 0.2570 a<lb/> 0.3070 a<lb/> 0.2563 a<lb/> 0.2240 a<lb/> 0.2909 a<lb/> 0.0932<lb/> 0.1651<lb/> ProbCons<lb/> 0.1003<lb/> 0.2324<lb/> 0.2767<lb/> 0.2307<lb/> 0.2060<lb/> 0.2670<lb/> 0.0983<lb/> 0.1719<lb/> MAFFT-fftnsi<lb/> 0.0982<lb/> 0.2333<lb/> 0.2814<lb/> 0.2297<lb/> 0.2004<lb/> 0.2632<lb/> 0.0917<lb/> 0.1621<lb/> MAFFT-einsi<lb/> 0.1136<lb/> 0.2425<lb/> 0.2886<lb/> 0.2410<lb/> 0.2105<lb/> 0.2763<lb/> 0.0940<lb/> 0.1666<lb/> MAFFT-linsi<lb/> 0.1135<lb/> 0.2485<lb/> 0.2982<lb/> 0.2467<lb/> 0.2143<lb/> 0.2820<lb/> 0.0923<lb/> 0.1632<lb/> MAFFT-ginsi<lb/> 0.1126<lb/> 0.2454<lb/> 0.2960<lb/> 0.2429<lb/> 0.2152<lb/> 0.2803<lb/> 0.0972<lb/> 0.1725<lb/> MUSCLE<lb/> 0.0980<lb/> 0.2297<lb/> 0.2777<lb/> 0.2266<lb/> 0.1941<lb/> 0.2535<lb/> 0.0939<lb/> 0.1686<lb/> ClustalW<lb/> 0.0723<lb/> 0.1916<lb/> 0.2318<lb/> 0.1876<lb/> 0.1551<lb/> 0.2030<lb/> 0.0733<lb/> 0.1344<lb/></table>
+            <note>The first five methods are MUMMALS implementing different HMMs. The format of the HMM names (&apos;HMM_solv_ss_u&apos;) is explained in Table 1. The best scores<lb/> of MUMMALS and the best scores of other programs (ProbCons, MAFFT with different options, MUSCLE, ClustalW) are in bold.<lb/> </note>
+<lb/> 
+            <note>a<lb/> MUMMALS with this model is statistically better than the best of other programs according to Wilcoxon signed-rank test (P &lt; 0.01).</note>
+		</figure>
+
+
+		<figure type="table">
+
+            <head>Table </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>Number of large<lb/> Q-score or TM-score differences (no less than 0.1) among the multiple sequence alignment programs on 1207 representative SCOP40 domain pairs with identity<lb/> </figDesc>
+<lb/> 
+            <table>&lt;20%<lb/> HMM_1_1_0 HMM_1_1_1 HMM_3_1_1 HMM_1_3_1 HMM_3_3_1 ProbCons MAFFT-fftnsi MAFFT-einsi MAFFT-linsi MAFFT-ginsi MUSCLE ClustalW<lb/> HMM_1_1_0<lb/> -<lb/>13/8<lb/> 41/18<lb/> 29/15<lb/> 45/24<lb/> 50/157<lb/> 105/191<lb/> 108/163<lb/> 119/127<lb/> 85/102<lb/> 92/208<lb/> 73/399<lb/> HMM_1_1_1<lb/> 14/14<lb/> -<lb/>35/16<lb/> 18/6<lb/> 38/24<lb/> 53/156<lb/> 100/189<lb/> 103/171<lb/> 109/124<lb/> 90/110<lb/> 91/209<lb/> 76/397<lb/> HMM_3_1_1<lb/> 28/45<lb/> 22/40<lb/> -<lb/>16/24<lb/> 4/5<lb/> 39/164<lb/> 86/211<lb/> 101/183<lb/> 109/135<lb/> 81/124<lb/> 82/225<lb/> 63/418<lb/> HMM_1_3_1<lb/> 19/29<lb/> 9/22<lb/> 26/20<lb/> -<lb/>25/19<lb/> 46/155<lb/> 90/202<lb/> 107/169<lb/> 110/124<lb/> 89/116<lb/> 92/214<lb/> 70/408<lb/> HMM_3_3_1<lb/> 29/57<lb/> 22/54<lb/> 6/17<lb/> 20/36<lb/> -<lb/>38/169<lb/> 85/207<lb/> 97/185<lb/> 111/138<lb/> 82/128<lb/> 82/227<lb/> 59/431<lb/> ProbCons<lb/> 187/76<lb/> 186/80<lb/> 203/67<lb/> 189/73<lb/> 201/62<lb/> -<lb/>149/133<lb/> 152/98<lb/> 172/80<lb/> 162/76<lb/> 162/169<lb/> 110/336<lb/> MAFFT-fftnsi 334/123<lb/> 334/118<lb/> 354/113<lb/> 344/115<lb/> 352/115<lb/> 242/154<lb/> -<lb/>123/98<lb/> 137/71<lb/> 153/76<lb/> 115/143<lb/> 88/342<lb/> MAFFT-einsi<lb/> 234/156<lb/> 232/152<lb/> 260/147<lb/> 247/152<lb/> 258/138<lb/> 152/186<lb/> 116/225<lb/> -<lb/>80/37<lb/> 133/96<lb/> 134/193<lb/> 93/369<lb/> MAFFT-linsi<lb/> 206/138<lb/> 204/140<lb/> 237/131<lb/> 219/143<lb/> 239/128<lb/> 133/188<lb/> 87/207<lb/> 62/82<lb/> -<lb/>85/98<lb/> 93/196<lb/> 60/387<lb/> MAFFT-ginsi<lb/> 160/124<lb/> 162/124<lb/> 192/119<lb/> 176/126<lb/> 199/117<lb/> 113/184<lb/> 109/253<lb/> 129/158<lb/> 111/132<lb/> -<lb/>90/185<lb/> 67/395<lb/> MUSCLE<lb/> 370/94<lb/> 374/94<lb/> 390/83<lb/> 384/90<lb/> 401/83<lb/> 302/138<lb/> 218/136<lb/> 309/134<lb/> 295/110<lb/> 327/106<lb/> -<lb/>75/288<lb/> ClustalW<lb/> 627/67<lb/> 628/66<lb/> 645/60<lb/> 645/65<lb/> 649/55<lb/> 559/103<lb/> 498/96<lb/> 582/91<lb/> 585/70<lb/> 600/76<lb/> 449/100<lb/> -<lb/></table>
+<lb/>
+            <note>The first five methods are MUMMALS implementing different HMMs. The format of the HMM names (&apos;HMM_solv_ss_u&apos;) is explained in Table 1.Each none-diagonal cell has two numbers separated by a slash.<lb/> The first number is the number of cases where the alignment quality score of the program listed to the left (in a row) is inferior to that of the program listed above (in a column) by 0.1 or more. The second number is<lb/> the number of cases where the score of the &apos;row&apos; program is better than that of the &apos;column&apos; program by 0.1 or more. The alignment quality scores in the lower triangle and upper triangle are<lb/> Q-scores and weighted<lb/> and normalized TM-scores, respectively. Comparisons of MUMMALS with the best model (HMM_3_3_1) with other programs are highlighted in bold.</note>
+		</figure>
+    </text>
+</tei>
+

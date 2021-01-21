@@ -1,0 +1,54 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06114350-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+
+        Figure captions<lb/>
+
+        <figure>
+<lb/>
+            <head>Fig. </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>C/T vs. T 2 of La 1.78 Sr 0.22 Cu 1-x Ni x O 4<lb/> with x=0,0.01 and 0.02 at H=0. The solid lines<lb/> are the results of the fit by Eq. (1). Inset: C/T vs.</figDesc>
+        </figure>
+
+        <figure>
+
+            <head>F i g .<lb/> <label>2</label> .<lb/></head>
+
+            <figDesc>( a )<lb/> C/T<lb/> v s .<lb/> T 2<lb/> o f<lb/> La 1.78 Sr 0.22 Cu 0.99 Ni 0.01 O 4 in magnetic fields. The<lb/> solid lines are the results of the fit by Eq. (1).<lb/> For clarity, only data in H=0, 0.2, 1, 4, and 8 T<lb/> are shown. (b) The concentration n of the spin-2<lb/> PC&apos;s from the fit.<lb/> </figDesc>
+<lb/>
+        </figure>
+
+        <figure>
+            <head>Fig. </head>
+ 
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>The components of C(T,H) of<lb/> La 1.78 Sr 0.22 Cu 0.99 Ni 0.01 O 4 .<lb/> </figDesc>
+<lb/>
+        </figure>
+        <figure>
+            <head>Fig. </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>Normalized g(H) vs. H 1/2 for three<lb/> La 1.78 Sr 0.22 Cu 1-x Ni x O 4 samples. The solid lines<lb/> are the results of the fit by Eq. (2), which<lb/> includes the impurity effects on C(T,H). Dash<lb/> lines represent g(H)µH 1/2 expected in clean<lb/> d-wave superconductors. In (a) no solid line is<lb/> presented since the fit by Eq. (2) gives a<lb/> unrealistic value of H c2 &gt;1000 T. g n =12 mJ/mol<lb/> K 2 is the normal state g of the samples [5].</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

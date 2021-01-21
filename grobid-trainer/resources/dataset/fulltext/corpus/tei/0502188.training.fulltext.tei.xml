@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<head>1. Introduction<lb/></head>
+
+			<p>Intermetallic compounds formed between rare earths (R) and transition metals (TM) have<lb/> attracted considerable attention owing to their potential for various applications <ref type="biblio">1-3</ref> .<lb/></p>
+
+		<p>Recently, there has been a vigorous activity in the development of magnetocaloric<lb/> materials, which are the active materials in magnetic refrigerators <ref type="biblio">4-7</ref> . The magnetocaloric<lb/> effect (MCE) manifests as the isothermal magnetic entropy change or as the adiabatic<lb/> temperature change of a magnetic material when exposed to a magnetic field. This effect<lb/> is an intrinsic property of the material and occurs due to the change in the degree of<lb/> alignment of the magnetic moments in the magnetic sublattice of the system under the<lb/> influence of an applied magnetic field. The concept of magnetic refrigeration, which is<lb/> based on MCE, has attracted a great deal of attention from a large group of researchers<lb/> and has triggered an intensive search for compounds with large MCE. Generally, due to<lb/> their large magnetic moments, heavy rare earth elements and their compounds are<lb/> considered the best-suited materials for achieving large MCE. After the observation 1 of a<lb/> giant MCE in Gd 5 Si 2 Ge 2 and the studies on the pseudo-binary systems <ref type="biblio">8</ref> like R 5 (Si x Ge 1-x ) <ref type="biblio">4<lb/></ref> with R= La, Lu, Nd and Dy, much interest has been focused on the compounds showing<lb/> field-induced magnetic phase transitions and/or structural transitions. But the<lb/> magnetocaloric studies in MnFeP 1-x As x system 9 has shown that large MCE is not just<lb/> restricted to the compounds with large magnetic moments but depends strongly on the<lb/> type of magnetic/structural phase transitions as well. It has already been reported that<lb/> single crystals of some RNi (R=Dy, Er) compounds undergo field-induced spin flop<lb/> process, which results in metamagnetic transitions in their magnetization-field<lb/> isotherms <ref type="biblio">10</ref> . It would be of interest to see whether such a spin-flop process is reflected in<lb/> the magnetization behavior in the polycrystalline samples as well and also its influence<lb/> on the MCE. With this view, we have carried out the magnetic and magnetocaloric<lb/> studies on the compound DyNi and the results are presented here.<lb/></p>
+
+			<head>2. Experimental details<lb/></head>
+
+			<p>The polycrystalline sample of DyNi was prepared by arc melting stoichiometric<lb/> proportions of the starting materials (of at least 99.9% purity) on a water-cooled copper<lb/> hearth under high purity argon atmosphere. The ingots were melted several times and<lb/> subsequently annealed at 600°C in evacuated quartz tube to ensure phase formation and<lb/> homogeneity. The crystal structure and the phase purity of the sample were analyzed<lb/> from the Rietveld refinement of the powder x-ray diffraction data. Magnetization<lb/> measurements, in the temperature range 4-150 K and up to a maximum field of 120 kOe,<lb/> were carried out on pieces of the annealed sample using a vibrating sample magnetometer<lb/> (VSM, Oxford instruments). Heat capacity measurements, in the temperature range 2-<lb/>200 K and in magnetic fields up to 50 kOe, were performed using a relaxation method<lb/> (PPMS, Quantum Design). While the isothermal magnetic entropy change has been<lb/> calculated independently using the magnetization isotherms as well as the heat capacity<lb/> data, the adiabatic temperature change has been estimated using the heat capacity data.<lb/></p>
+
+			<head>3. Results and discussion<lb/></head>
+
+			<p>The Rietveld analysis of the powder x-ray diffractogram of the polycrystalline sample of<lb/> DyNi showed that this compound is single phase crystallizing in the orthorhombic FeB<lb/> structure (space group Pnma, no. 62) <ref type="biblio">11-12<lb/></ref> .</p>
+
+			<p>Figure <ref type="figure">1</ref> shows the observed and refined<lb/> powder x-ray diffractogram of DyNi. The lattice parameters obtained from the refinement<lb/> are<lb/> 3±0.001 Å, b<lb/> 3±0.001 Å and c = 5.439±0.001 Å which compare well<lb/> with the reported values<lb/> 02<lb/> .<lb/> 7<lb/> =<lb/> a<lb/> 17<lb/> .<lb/> 4<lb/> =<lb/> <ref type="biblio">11</ref> . Both Dy and Ni occupy the 4c site of the unit cell. The<lb/> structure is made up of trigonal prisms with Dy at the corners and Ni at the center.<lb/></p>
+
+		<figure>Fig 1. Observed and fitted powder x-ray diffraction patterns of DyNi. The difference plot<lb/> between the experimental and calculated patterns is given at the bottom of the figure.<lb/></figure>
+
+		<p>Figure <ref type="figure">2</ref> shows the temperature dependence of the magnetization (M) of DyNi,<lb/> measured in a field of 500 Oe. It is seen that the compound is ferromagnetic with a Curie<lb/> temperature (T C ) of 59 K, which is close to the reported value <ref type="biblio">12</ref> . The inverse<lb/> susceptibility derived from the magnetization data is presented in the inset of figure <ref type="figure">2</ref>.<lb/></p>
+
+		<p>The effective magnetic moment (µ eff ) calculated from the high temperature susceptibility<lb/> is found to be 10.6µ B , which is almost equal to the free ion magnetic moment of 10.3 µ B<lb/> of the Dy 3+ ion. Figure <ref type="figure">3</ref> shows the variation of magnetization for both increasing and<lb/> decreasing magnetic fields (H) at 4 K. Interestingly, the magnetization shows a multi-<lb/>step behavior, which is a characteristic of metamagnetic transitions. It is of importance to<lb/> note that generally such sharp transitions are seen in metamagnetic systems in the single<lb/> crystalline form. To confirm the existence of these steps, we have measured the M-H at 5<lb/> K also and the plot is shown in the inset of figure <ref type="figure">3</ref>. These plots also show that the<lb/> magnetization is not saturated even at the highest field applied and the remanence is<lb/> almost negligible.<lb/></p>
+
+		<p>It has been reported <ref type="biblio">10</ref> from the magnetization studies in single crystals of DyNi that when<lb/> the applied field is along the c-axis, the magnetization is very small at lower fields, but<lb/> rises sharply above a critical field. This gives rise to a step-like behavior, accompanied by<lb/> a large hysteresis. The critical field is reported to be about 50 kOe at 4.2 K. Both the<lb/> critical field and the hysteresis decrease with increase of temperature. Neutron diffraction<lb/> studies <ref type="biblio">12</ref> carried out at 4.2 K on powder samples have shown that the magnetic structure<lb/> of DyNi is non-collinear. While the moments are ferromagnetically coupled along the a-<lb/>axis, they are antiferroimagnetically coupled along the c-axis. The non-collinear magnetic<lb/> structure of DyNi arises from the compromise between the exchange interaction and the<lb/> magnetocrystalline anisotropy caused by the crystalline electric fields. The<lb/> antiferromagnetic component is expected to undergo a spin flopping on application of a<lb/> magnetic field along the c-axis, which gives rise to a sudden increase in the<lb/> magnetization. Therefore, we feel that the multi-step behavior of the M-H plot in the<lb/> polycrystalline DyNi in the present case is also due to the spin-flop metamagnetism.<lb/> However, while the single crystal data showed a single jump, our data on polycrystalline<lb/> sample show multiple jumps. A similar behavior in the M-H isotherms has been observed<lb/> in polycrystalline samples of Ce 3 PbC, which also possesses a complex magnetic<lb/> structure <ref type="biblio">13</ref> .<lb/></p>
+
+		<p>The saturation magnetic moment obtained from the M vs. 1/H plot at 4 K is found<lb/> to be 8.8 µ B per Dy ion whereas the theoretical gJ value of Dy 3+ ion is 9.75 µ B . The lower<lb/> value in the present case may be due to the crystal field effects. Figure <ref type="figure">4</ref> shows the<lb/> magnetization as a function of applied field at different temperatures close to T C . It is<lb/> clear from figures <ref type="figure">3 and 4</ref> that the magnetization behaves like that in a simple<lb/> ferromagnet and that the remanence is quite negligible, which indicates that the<lb/> compound is magnetically soft.<lb/></p>
+
+			<figure>Fig. 2 Temperature (T) dependence of the magnetization (M) of DyNi in a field of 500<lb/> Oe. The inset shows the variation of the inverse molar susceptibility with temperature.<lb/> Fig. 3. Magnetization (M) as a function of applied field (H) (increasing and decreasing)<lb/> for DyNi at 4 K. The inset shows the M-H plot at 5 K.<lb/> Fig. 4. Magnetization-field (M-H) isotherms for DyNi at different temperatures close to<lb/> T C .<lb/></figure>
+
+		<p>The MCE in terms of the magnetic entropy change,<lb/> , has been estimated<lb/> from the magnetization isotherms, which were measured in the vicinity of T<lb/> )<lb/> ,<lb/> (<lb/> H<lb/> T<lb/> S M<lb/> ∆<lb/> ∆<lb/> C with a<lb/> temperature interval of 4 K, for a maximum field of 60 kOe for each of the isotherms.<lb/> The<lb/> values were calculated by numerically integrating the Maxwell<lb/> equation<lb/></p>
+
+				<formula>)<lb/> ,<lb/> (<lb/> H<lb/> T<lb/> S M<lb/> ∆<lb/> ∆<lb/> 6 ,<lb/> ( )<lb/> ( )<lb/> H<lb/> T<lb/> T<lb/> H<lb/> T<lb/> M<lb/> H<lb/> H<lb/> T<lb/> S<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> ∂<lb/> ∂<lb/> =<lb/> <lb/> <lb/> <lb/>  ∂<lb/> ∂<lb/> ,<lb/> ,<lb/> <lb/> <lb/></formula>
+
+				<label>(1)<lb/></label>
+
+			<p>i.e. using the approximation,<lb/></p>
+
+				<formula>(<lb/> )<lb/> (<lb/> )<lb/> ∫<lb/> −<lb/> −<lb/> =<lb/> ∆<lb/> +<lb/> +<lb/> 2<lb/> 0<lb/> 1<lb/> 1<lb/> 2<lb/> ,<lb/> )<lb/> ,<lb/> (<lb/> )<lb/> ,<lb/> (<lb/> 1<lb/> ,<lb/> H<lb/> i<lb/> i<lb/> i<lb/> i<lb/> i<lb/> av<lb/> m<lb/> dH<lb/> H<lb/> T<lb/> M<lb/> H<lb/> T<lb/> M<lb/> T<lb/> T<lb/> H<lb/> T<lb/> S<lb/></formula>
+
+				<label>(2)<lb/></label>
+
+			<p>where T av,i is the average of T i and T i+1 .<lb/></p>
+
+			<p>Figure <ref type="figure">5</ref> shows the variation of ∆<lb/> for DyNi as a function of temperature close to T<lb/> M<lb/> S<lb/> C ,<lb/> for ∆H = 20 kOe, 50 kOe and 60 kOe. As can be seen from the figure, the maximum<lb/> entropy change of about 19 JKg -1 K -1 is obtained at the transition temperature for ∆H =<lb/> 60 kOe. Moreover, the magnitude of<lb/> is considerably large over a wide temperature<lb/> range near T<lb/></p>
+
+		<!-- the stream is not in the correct order here -->
+		<figure>M<lb/> S<lb/> ∆<lb/></figure>
+
+		<p>C .<lb/></p>
+
+			<figure>Fig. 5. Variation of the isothermal magnetic entropy change ( ∆ ) as a function of<lb/> temperature (T) in DyNi for ∆H=40 kOe and 60 kOe.<lb/> M<lb/> S<lb/></figure>
+
+			<p>In order to further understand the magnetocaloric properties of DyNi in more detail, we<lb/> have carried out heat capacity (C) measurements on this compound under various applied<lb/> fields. Figure <ref type="figure">6</ref> shows the temperature variation of heat capacity in applied fields of 0, 20<lb/> kOe and 50 kOe. It is seen from this figure that the heat capacity also shows a peak close<lb/> to 59 K, which is the Curie temperature derived from the M-T data. The peak height<lb/> decreases with increase in field, and for a field of 50 kOe, practically, there is no peak in<lb/> the C-T plot. This is because the magnetic ordering starts at temperatures slightly above<lb/> T C when the applied field is large, thereby broadening the heat capacity peak.<lb/></p>
+
+			<figure>Fig. 6. Heat capacity (C) of DyNi vs. temperature (T) in applied fields of 0, 20 kOe and<lb/> 50 kOe.<lb/></figure>
+
+			<p>Using the C-H-T data, we have calculated ∆S M as well as the adiabatic temperature<lb/> change (∆T ad ) using the relations <ref type="biblio">14</ref></p>
+
+		<formula>,<lb/> /<lb/> 0<lb/> /<lb/> /<lb/> /<lb/> )<lb/> 0<lb/> ,<lb/> (<lb/> )<lb/> ,<lb/> (<lb/> )<lb/> ,<lb/> (<lb/> dT<lb/> T<lb/> T<lb/> C<lb/> H<lb/> T<lb/> C<lb/> H<lb/> T<lb/> S<lb/> T<lb/> M<lb/> ∫<lb/> −<lb/> =<lb/> ∆<lb/></formula>
+
+		<label>(3)<lb/></label>
+
+		<label>(4)<lb/></label>
+
+		<formula>]<lb/> )<lb/> (<lb/> )<lb/> (<lb/> [<lb/> )<lb/> (<lb/> I<lb/> F<lb/> H<lb/> H<lb/> H<lb/> ad<lb/> S<lb/> T<lb/> S<lb/> T<lb/> T<lb/> T<lb/> −<lb/> ≅<lb/> ∆<lb/> ∆<lb/></formula>
+
+			<figure>Fig. 7. Variation of magnetic entropy change ( ∆ ) calculated from the heat capacity<lb/> data as a function of temperature (T) for ∆H =20 kOe and 50 kOe in DyNi.<lb/> M<lb/> S<lb/> Fig. 8. Adiabatic temperature change (∆T ad ) as a function of temperature (T) for ∆H =20<lb/> kOe and 50 kOe in DyNi.<lb/></figure>
+
+		<p>Figures <ref type="figure">7 and 8</ref> show the variation of ∆S M and ∆T ad calculated using the C-H-T data. The<lb/> maximum value of ∆S M obtained from the heat capacity data is found to be about 12.5<lb/> Jkg -1 K -1 whereas the corresponding value from the magnetization isotherms is about 18<lb/> Jkg -1 K -1 for the same field change of 50 kOe. This difference may be due to the different<lb/> temperature steps (δT) used for the magnetization and heat capacity measurements.<lb/></p>
+
+			<p>Since the numerical integration depends on δT, the values of ∆S M calculated from the M-<lb/>H-T and C-H-T data are also expected to show a difference, as seen in the present case.<lb/></p>
+
+			<p>It is of interest to note that the ∆S M and ∆T ad values obtained for DyNi are comparable to<lb/> those of many potential magnetic refrigerant materials <ref type="biblio">2,3,15</ref> . Moreover, the temperature<lb/> range over which the MCE is considerable is also wide, which is essential for a practical<lb/> magnetic refrigerant. The large MCE values in DyNi can be attributed to its<lb/> metamagnetic nature mentioned earlier. It is possible that the gradual flopping of<lb/> moments towards the direction of the applied field is responsible for the reduction in<lb/> magnetic entropy, which results in MCE. Spin flop process has also been found to be<lb/> responsible for the anomalous magnetoresistance observed along the c-axis in single<lb/> crystals of DyNi <ref type="biblio">16</ref> .<lb/></p>
+
+			<head>4. Conclusions<lb/></head>
+
+			<p>In conclusion, we find that the compound DyNi, in the polycrystalline form, shows a<lb/> multi-step magnetization behavior, indicating its metamagnetic nature. Large values of<lb/> isothermal magnetic entropy change and adiabatic temperature change existing over a<lb/> wide temperature range make this system attractive from the point of view of magnetic<lb/> refrigeration applications in the temperature range 50-80 K. The fact that the compound<lb/> is magnetically soft is another advantage of this material.</p>
+
+
+	</text>
+</tei>

@@ -1,0 +1,50 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR05009672-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <figure>
+            <head>FIG. </head>
+            <label>1</label>
+            <head>. </head>
+
+            <figDesc>a) σ 1 (ν) and b) σ 2 (ν) for Y 1−x Pr x Ba 2 Cu 3 O 7 at T = 50 K, x = 0 (squares), 0.2 (circles), 0.3<lb/> <lb/>(dotted curve), 0.4 (dash-dotted curve), and 1.0 (short-dashed curve). The solid and dashed upper curves<lb/> are fits to a frequency-dependent Drude form (see text).<lb/></figDesc>
+        </figure>
+        <figure>
+            <head>FIG. </head>
+            <label>2</label>
+            <head>. </head>
+            <figDesc>a) σ 2 (T ) and b) σ 1 (T ) for the four Pr concentrations x = 0 (squares), 0.2 (circles), 0.3 (solid<lb/> triangles), 0.4 (open triangles) at 480 GHz. The dashed curves in b) show 1/ρ * . The vertical lines indicate<lb/> T ac<lb/> c . For clarity, the data for x = 0.3 in b) has been multiplied by 1.5.<lb/></figDesc>
+        </figure>
+        <figure>
+            <head>FIG. </head>
+            <label>3</label>
+            <head>.</head>
+            <figDesc>a) The dc resistivity ρ(T ) and b) the normalized dc resistivity ρ * (T ) for x= 0, 0.2, 0.3, and 0.4<lb/> (solid, dashed, dotted, and dash-dotted curves).<lb/> </figDesc>
+<lb/>
+        </figure>
+        <figure>
+            <head>FIG. </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>Normalized London penetration depth λ L (T /T ac<lb/> c ) for x = 0.0 (squares), 0.2 (circles), 0.3 (solid<lb/> triangles), 0.4 (open triangles). Also shown are curves corresponding to the predictions of BCS theory (solid<lb/> line), as well as to the functional form (5) for α = 1 (dash-dotted line), 2 (dashed line), and 4 (dotted line).<lb/> </figDesc>
+<lb/>
+        </figure>
+        <figure>
+            <head>FIG. </head>
+ 
+            <label>5</label>
+
+            <head>. </head>
+ 
+            <figDesc>Quasiparticle scattering rate 1/τ (T ) for x = 0 (squares), 0.2 (circles), and 0.4 (triangles) at<lb/> 480 GHz.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

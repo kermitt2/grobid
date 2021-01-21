@@ -1,0 +1,211 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<head>1 Introduction<lb/></head>
+
+			<p>In spite of the advance attained in the research of the high temperature su-<lb/>perconductors (HTSC), a great number of questions related to them remain<lb/> to be answered. In order to obtain a better understanding of these new ma-<lb/>terials many experiments were performed, but the different experiments were<lb/> interpreted by different theories. One of the most fundamental evidence that<lb/> these experiments showed was the interplay among critical temperature T c ,<lb/> hole content n h , and pressure P , since one of the effects of the application of<lb/> external pressure is a change in the hole content n h in the CuO 2 planes <ref type="biblio">[1]</ref>,<lb/> which results in a large change in T c . The large increase of T c by the appli-<lb/>cation of pressure <ref type="biblio">[2]</ref> has been the motivation for a vast number of works on<lb/> the study of the effects of pressure on the critical temperature T c of the high<lb/> temperature superconductors <ref type="biblio">[3-6]</ref>, not only to achieve higher T c but also to<lb/> obtain a hint for chemical substitution which originates new materials and<lb/> yields a better understanding of their physical properties.<lb/></p>
+
+			<p>Thus, in the detailed study of the dependence of the critical temperature<lb/> T c of the HTSC on the pressure P , it has been suggested that the derivate<lb/> dT c /dP may be strongly influenced by a pressure-induced alteration in the<lb/> density of hole-like charge carriers n h on the CuO 2 planes <ref type="biblio">[7]</ref>. This proposal<lb/> was also supported by experimental observations of Hall constant&apos;s pressure<lb/> dependence <ref type="biblio">[1]</ref> that confirmed the existence of a growth in n h in the CuO 2<lb/> planes when the pressure is applied <ref type="biblio">[8]</ref>. Therefore, there is a pressure induced<lb/> charge transfer (PICT) from the block layers into the CuO 2 planes, that is,<lb/> n h = n h (P ). Since one expects dT c /dP = 0 at the optimum doping, and<lb/> T c (n op ) generally increases with P , it is well accepted that the pressure also<lb/> increases T c by a different mechanism of &quot;intrinsic&quot; origin <ref type="biblio">[3,5,9]</ref>, and such<lb/> intrinsic term is a characteristic of each family of compounds. Therefore, we<lb/> can separate these two effects by considering <ref type="biblio">[3,5,9,10]</ref>:<lb/></p>
+
+				<formula>dT c<lb/> dP<lb/> =<lb/> dT i<lb/> c<lb/> dP<lb/> +<lb/> ∂T c<lb/> ∂n h<lb/> ∂n h<lb/> ∂P<lb/> .<lb/></formula>
+
+				<label>(1)<lb/></label>
+
+			<p>Here the first term, dT i<lb/> c /dP , represents the intrinsic contribution, not related<lb/> to the charge transfer induced by pressure ∂n h /∂P . Thus, the change of T c<lb/> with the hole content is given by ∂T c /∂n h .<lb/></p>
+
+			<p>In this paper we consider the intrinsic contribution as originated from a vari-<lb/>ation of the magnitude V , of the attractive potential that forms the Cooper<lb/> pairs in the superconducting phase with the applied pressure P , in such a<lb/> way that V = V (P ). Similar proposition was previously made by Angilella<lb/> et al. <ref type="biblio">[9]</ref> and de Mello et al <ref type="biblio">[3,5]</ref>. As discussed in Ref. <ref type="biblio">[3,4]</ref>, as V increases<lb/> with the applied pressure, the zero temperature superconductor gap also in-<lb/>creases. This hypothesis has been indirectly verified in the experimental study<lb/> of polycristallines samples of Hg 0.82 Re 0.18 Ba 2 Ca 2 Cu 3 O 8+δ <ref type="biblio">[11]</ref>.<lb/></p>
+
+			<head>2 The Method<lb/></head>
+
+		<p>In order to study the dynamics of the hole-type carriers in the superconducting<lb/> phase as well as the normal phase with correlations and the basic attractive in-<lb/>teraction, we consider a two dimension extended Hubbard Hamiltonian <ref type="biblio">[3,5,9]<lb/></ref></p>
+
+		<formula>H = −<lb/> ≪ij≫σ<lb/> t ij c †<lb/> iσ c jσ + U<lb/> i<lb/> n i↑ n i↓ +<lb/> &lt;ij&gt;σσ ′<lb/> V ij c †<lb/> iσ c †<lb/> jσ ′ c jσ ′ c iσ ,<lb/></formula>
+
+				<label>(2)<lb/></label>
+
+			<p>where t ij is the hopping integral between the nearest-neighbour and next-<lb/>nearest-neighbour sites i and j; U is the on-site correlated repulsion and V ij<lb/> describes the attractive interaction between nearest-neighbour sites i and j.<lb/></p>
+
+			<p>In the superconducting phase the paired states form a condensate separated<lb/> from the single-particle states by a &quot;gap&quot; (order parameter). Using a BCS-<lb/>type mean-field approximation <ref type="biblio">[12]</ref> the self-consistent gap equation, at finite<lb/> temperatures, is given by<lb/></p>
+
+				<formula>∆ k = −<lb/> k ′<lb/> V kk ′<lb/> ∆ k ′<lb/> 2E k ′<lb/> tanh<lb/> E k ′<lb/> 2k B T<lb/> ,<lb/></formula>
+
+				<label>(3)<lb/></label>
+
+			<p>with<lb/></p>
+
+				<formula>E k = ε 2<lb/> k + ∆ 2<lb/> k .<lb/></formula>
+
+				<label>(4)<lb/></label>
+
+		<p>Here, V kk ′ is the interaction potential which contains the repulsive and attrac-<lb/>tive potential, and may be written in a separable form <ref type="biblio">[9,13]<lb/></ref></p>
+
+		<formula>V kk ′ = U + 2V cos(k x a) cos(k ′<lb/> x a) + 2V cos(k y a) cos(k ′<lb/> y a),<lb/></formula>
+
+				<label>(5)<lb/></label>
+
+			<p>where it was considered a square lattice of lattice parameter a and equal<lb/> coupling constants V along both directions in the Cu-O planes, in the context<lb/> of mean field approximation.<lb/></p>
+
+		<p>A tight-binding approximation may be employed to dispersion relation in Eq. <ref type="formula">4</ref>,<lb/> which yields<lb/></p>
+
+		<formula>ε k = −2t(cos(k x a) + cos(k y a)) + 4t xy cos(k x a) cos(k y a) − µ.<lb/></formula>
+
+				<label>(6)<lb/></label>
+
+			<p>This equation has been previously considered <ref type="biblio">[3,5,9,13]</ref>, but here it was consid-<lb/>ered identical hopping integrals along both directions in the Cu-O planes for<lb/> the nearest-neighbour (t x = t y = t) and a different one for the next-nearest-<lb/>neighbour (t xy ); µ is the chemical potential.<lb/></p>
+
+		<p>Also, using the same BCS-type mean-field approximation applied to the gap<lb/> (Eq.<ref type="formula">3</ref>), we obtain the hole-content equation <ref type="biblio">[14]<lb/></ref></p>
+
+		<formula>n h (µ, T ) =<lb/> 1<lb/> 2 k<lb/> 1 −<lb/> ε k<lb/> E k<lb/> tanh<lb/> E k<lb/> 2k B T<lb/> ,<lb/></formula>
+
+				<label>(7)<lb/></label>
+
+			<p>where 0 ≤ n h ≤ 1.<lb/></p>
+
+			<p>Following the steps of Ref <ref type="biblio">[9]</ref>, one observes that the substitution of the poten-<lb/>tial (Eq.<ref type="formula">5</ref>) in the gap equation (Eq.<ref type="formula">3</ref>) leads to the appearance of a gap with<lb/> two different symmetries<lb/></p>
+
+				<formula>∆ k (µ, T ) = ∆ max (µ, T )[cos(k x a) ± cos(k y a)],<lb/></formula>
+
+				<label>(8)<lb/></label>
+
+			<p>where the plus sign is for extended − s wave and the minus sign, for d wave<lb/> symmetry. The anisotropy of the gap is one of the characteristic distinction<lb/> between the usual low temperatures superconductors and the HTSC. Many<lb/> experiments and theoretical calculations suggest that the HTSC exhibit a pair-<lb/>ing symmetry different than the usual superconductors <ref type="biblio">[15]</ref>, and in some cases<lb/> even a mixture of different symmetries must be considered <ref type="biblio">[16]</ref>. Thus, the de-<lb/>termination of the symmetry of the gap is the first step in the identification of<lb/> the pairing mechanism of the charge carriers and the subsequent development<lb/> of a microscopic theory for the HTSC.<lb/></p>
+
+		<p>To obtain the phase diagram, the gap equations are solved numerically, in the<lb/> limit T −→ T c , together and self-consistently with the density of hole carriers<lb/> n h (Eq.<ref type="formula">7</ref>). In these calculations it was considered that there were no symmetry<lb/> mixture near the critical point <ref type="biblio">[9,16]</ref>.<lb/></p>
+
+			<p>The values of the hopping integrals t and t xy used in the calculation of the<lb/> phase diagram of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series are taken from A.R.P.<lb/> E.S. measurements for the Bi2212 <ref type="biblio">[9]</ref>, since it is a HTSC with similar structure,<lb/> having two CuO 2 identical layers per unit cell <ref type="biblio">[17]</ref>, although this does not<lb/> guarantee that the real t and t xy have this values and that is why we have<lb/> tried a small variation around the A.R.P.E.S results. The chemical potential µ<lb/> is calculated self-consistently. The values of U and V are considered adjustable<lb/> parameters, in order to reproduce the T c × n h curve close to the experimental<lb/> data. Our method to derive the phase diagrams is similar to the approach<lb/> based on a change in the zero temperature gap <ref type="biblio">[18]</ref>. On Fig. <ref type="figure">1</ref> we show the<lb/> phase diagram with the theoretical curves from the numerical calculation for<lb/> the extended − s and d wave symmetries, together with the experimental data<lb/> for the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 <ref type="biblio">[19]</ref>.<lb/></p>
+
+			<figure>0.00<lb/> 0.20<lb/> 0.40<lb/> 0.60<lb/> 0.80<lb/> 1.00<lb/> n h<lb/> 40.0<lb/> 90.0<lb/> T c (K)<lb/> Phase Diagram<lb/> U = 0.052eV t = 0.05eV<lb/> ref<lb/> V = −0.0875eV t xy =0.023eV<lb/> V = −0.057eV t xy =0.0275eV<lb/> extended−s<lb/> d−wave<lb/> Fig.<lb/> 1.<lb/> Phase<lb/> diagram<lb/> showing<lb/> the<lb/> numerical<lb/> calculation<lb/> for the extended − s and d wave symmetry together with the experimental data<lb/> of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series taken from Ref. [19].<lb/> Fig. 2 illustrates the behavior of the phase diagram, for the extended − s<lb/> symmetry, when V is varied. Both symmetries exhibit a similar dependence<lb/> on the potential V .<lb/></figure>
+
+			<p>Notice that although there is a strong tendency toward a d-wave symmetry<lb/> on many experiments the HTSC, our results, with the parameters t and t xy<lb/> fixed, show that the extended −s symmetry seems to reproduce well the phase<lb/> diagram of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series in a better agreement with<lb/> the experimental points than the d wave one. This is in accordance with the<lb/> results of Schneider et al. <ref type="biblio">[13]</ref>.<lb/></p>
+
+			<figure>0.00<lb/> 0.20<lb/> 0.40<lb/> 0.60<lb/> 0.80<lb/> n h<lb/> 17.0<lb/> 67.0<lb/> 117.0<lb/> T c (K)<lb/> Phase Diagram<lb/> U = 0.052eV t = 0.05eV t xy = 0.023eV<lb/> ref<lb/> V = −0.0855eV<lb/> V = −0.0865eV<lb/> V = −0.0875ev<lb/> V = −0.0885eV<lb/> Fig. 2. Phase diagram of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series showing the effect<lb/> of a change in the magnitude V of the attractive potential.<lb/></figure>
+
+			<p>Thus, the study of the phase diagram yields the best values t=0.05eV, t xy =0.023eV,<lb/> U=0.052eV and V =-0.0875eV for the extended − s symmetry, and t=0.05eV,<lb/> t xy =0.0275eV, U=0.052eV and V =-0.057eV for the d wave symmetry, which<lb/> will be used in the next section.<lb/></p>
+
+			<head>3<lb/> The Pressure Effects<lb/></head>
+
+		<p>On Fig. <ref type="figure">2</ref> we show that T c is quite sensible with respect to a change in the<lb/> magnitude V of the attractive potential. Therefore, as it was previous men-<lb/>tioned, we suppose that the pressure induces a change in the attractive po-<lb/>tential, in such a way that V = V (P ). In the absence of informations of how<lb/> V effective behaves with respect to the pressure P , we assume a linear depen-<lb/>dence <ref type="biblio">[3,5,20]</ref>, which should be the case since the pressure causes very small<lb/> structural changes in the lattice constants <ref type="biblio">[9]</ref>. Therefore<lb/></p>
+
+		<formula>V (P ) = V + ∆V (P ).<lb/></formula>
+
+				<label>(9)<lb/></label>
+
+		<p>In the same way, for the density of carriers, we have<lb/></p>
+
+		<formula>n h (P ) = n h + ∆n h (P ).<lb/></formula>
+
+				<label>(10)<lb/></label>
+
+			<p>Here, V and n h are the P = 0 values of V (P ) and n h (P ). The pressure<lb/> dependence is defined as<lb/></p>
+
+				<formula>∆V (P ) = c 1 P,<lb/> ∆n h (P ) = c 2 P<lb/></formula>
+
+				<label>(11)<lb/></label>
+
+			<p>where c 1 = (∂V /∂P ) and c 2 = (∂n h /∂P ) are parameters usually determined<lb/> from the experimental data.<lb/></p>
+
+			<p>Our previous discussion leads to T c (n h , P ) = T c (n h (P ), V (P )). Thus, we can<lb/> estimate T c for a compound with a certain value n h , and under pressure P ,<lb/> using an expansion of T c (n h , P ) in terms of P . Consequently, we have<lb/></p>
+
+				<formula>T c (n h , P ) = T c (n h , 0) +<lb/> dT c<lb/> dP P =0<lb/> P +<lb/> 1<lb/> 2!<lb/> d 2 T c<lb/> dP 2<lb/> P =0<lb/> P 2 +<lb/> 1<lb/> 3!<lb/> d 3 T c<lb/> dP 3<lb/> P =0<lb/> P 3 + • • •,<lb/></formula>
+
+				<label>(12)<lb/></label>
+
+			<p>where<lb/></p>
+
+				<formula>d z T c<lb/> dP z = c 1<lb/> ∂<lb/> ∂V<lb/> + c 2<lb/> ∂<lb/> ∂n h<lb/> z<lb/> T c (n h (P ), V (P )).<lb/></formula>
+
+				<label>(13)<lb/></label>
+
+			<p>T c (n h , 0) is the critical temperature for P =0. The Eq. (12) can be written as<lb/></p>
+
+				<formula>T c (n h , P ) =<lb/> z<lb/> α z<lb/> P z<lb/> z!<lb/> ,<lb/></formula>
+
+				<label>(14)<lb/></label>
+
+			<p>with<lb/></p>
+
+				<formula>α z = c 1<lb/> ∂<lb/> ∂V<lb/> + c 2<lb/> ∂<lb/> ∂n h<lb/> z<lb/> T c (n h (P ), V (P )).<lb/></formula>
+
+				<label>(15)<lb/></label>
+
+			<p>One can see by considering the case z = 1 in the above equation, and com-<lb/>paring with Eq.<ref type="formula">(1)</ref>, that<lb/></p>
+
+				<formula>dT i<lb/> c<lb/> dP<lb/> =<lb/> ∂V<lb/> ∂P<lb/> ∂T c<lb/> ∂V<lb/> ,<lb/></formula>
+
+				<label>(16)<lb/></label>
+
+			<p>which clearly shows that, in our model, the intrinsic contribution is related to<lb/> the variation of the magnitude V of the attractive potential with the pressure<lb/> P . Now, the analytical expressions for the coefficients α z will be derived below<lb/> as a function of the parameters c 1 and c 2 , for the values of n h and P .<lb/></p>
+
+			<p>The first coefficient (z = 1) for the above expression is given by<lb/></p>
+
+				<formula>α 1 = c 1<lb/> ∂T c<lb/> ∂V<lb/> + c 2<lb/> ∂T c<lb/> ∂n h<lb/> .<lb/></formula>
+
+				<label>(17)<lb/></label>
+
+			<p>Restricting ourselves to small changes in V , we may approximate<lb/></p>
+
+				<formula>∂T c<lb/> ∂V<lb/> ≈<lb/> ∆T c<lb/> ∆V<lb/> ,<lb/></formula>
+
+				<label>(18)<lb/></label>
+
+			<p>where the horizontal bar denotes a &quot;mean&quot; over the values of T c obtained<lb/> direct from the phase diagram as a function of V , as it is shown in Fig. <ref type="figure">2</ref>.<lb/> This &quot;mean&quot; is realized for each value of n. To estimate ∂T c /∂n h we may<lb/> either use an experimental value, or use directly the curves of Fig. <ref type="figure">2</ref> or a<lb/> phenomenological universal parabolic curve <ref type="biblio">[19]</ref>:<lb/></p>
+
+				<formula>T c = T max<lb/> c<lb/> [1 − 4β(n op − n h ) 2 ],<lb/></formula>
+
+				<label>(19)<lb/></label>
+
+			<p>and, therefore, an analytical expression for ∂T c /∂n h is obtained. Thus, we<lb/> derive the following expression for the coefficient α 1<lb/></p>
+
+				<formula>α 1 = c 1<lb/> ∆T c<lb/> ∆V<lb/> + c 2 2(4β)T max<lb/> c<lb/> (n op − n h ),<lb/></formula>
+
+				<label>(20)<lb/></label>
+
+			<p>and α 2 , which is given by<lb/></p>
+
+				<formula>α 2 = c 1<lb/> ∂<lb/> ∂V<lb/> + c 2<lb/> ∂<lb/> ∂n h<lb/> c 1<lb/> ∂T c<lb/> ∂V<lb/> + c 2<lb/> ∂T c<lb/> ∂n h<lb/> ,<lb/></formula>
+
+				<label>(21)<lb/></label>
+
+			<p>and results in<lb/></p>
+
+				<formula>α 2 = 2(4β)<lb/> ∆T max<lb/> c<lb/> ∆V<lb/> (n op − n h )c 1 c 2 − 2(4β)T max<lb/> c<lb/> c 2<lb/> 2 ,<lb/></formula>
+
+				<label>(22)<lb/></label>
+
+			<p>where ( ∆T max<lb/> c<lb/> ∆V ) is an empirical mean derived numerically by inspection on Fig.<lb/> <ref type="figure">2</ref> at the optimum doping compound n op . Following along the same procedure,<lb/> the third coefficient becomes<lb/></p>
+
+				<formula>α 3 = −4(4β)<lb/> ∆T max<lb/> c<lb/> ∆V<lb/> c 1 c 2<lb/> 2 .<lb/></formula>
+
+				<label>(23)<lb/></label>
+
+			<p>As one can notice the coefficients α z , for z ≥ 4, are all nulls.<lb/></p>
+
+			<head>4 Comparison with experimental data<lb/></head>
+
+			<p>In order to study the effects of the pressure on the critical temperature of<lb/> any given family of compounds, we need first to calculate the constants c 1<lb/> and c 2 , which yield the coefficients α z . Thus, we can see that the constants<lb/> c 1 and c 2 are determined by how V and n h changes with the pressure (Eq<lb/> (<ref type="formula">11</ref>)). Hall effects can give directly ∂n h /∂P as in the case of Bi2212 <ref type="biblio">[8]<lb/></ref> and therefore c 2 <ref type="biblio">[4-6]</ref>. Since these measurements are not available for the<lb/> T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 , we can obtain c 1 and c 2 by comparing with the<lb/> curves of T c × P for two values of n h . In fact Wijngaarden et al. <ref type="biblio">[17]</ref> also esti-<lb/>mate the value of c 2 from their experimental data for the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x<lb/> Cu 2 O 7 .<lb/></p>
+
+			<p>Since at low pressures only the linear term comes into play, the higher order<lb/> coefficients can be ignored. Thus, α 1 becomes the slope of a linear approxi-<lb/>mation from the initial points of the T c × P curve, for a given n h compound.<lb/> Starting with n h =n op , in spite of not being strictly necessary, we determine c 1<lb/> using the estimated α 1 in Eq.<ref type="formula">(20)</ref>, as long as at n op the charge transfer term<lb/> vanishes. To determine c 2 we estimate α 1 from the T c ×P curve of an n h = n op<lb/> compound, and use again Eq.<ref type="formula">(20)</ref>. Once these two constants are determined,<lb/> the α z coefficients for any n h value can be calculated (Eq.<ref type="formula">(15)</ref>).<lb/></p>
+
+			<p>For the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 <ref type="biblio">[17,19]</ref> series we used the experimental<lb/> values for the n h = n op = 0.15 and n h =0.20 compounds to calculate c 1 and<lb/> c 2 . The estimated α 1 were 1.5K/GP a and 0.41K/GP a for n op and n h =0.20,<lb/> respectively. The phase diagram parameters ( ∆Tc<lb/> ∆V ) taken from Fig. <ref type="figure">1</ref> and 2<lb/> and used in the calculations were 2900K/eV for the extended − s wave and<lb/> 2300K/eV for the d wave symmetry for the n op compound and 2700K/eV<lb/> for the extended − s wave and 2600K/eV for the d wave symmetry for the<lb/> n h =0.20 compound. The parameters of the parabolic curve (Eq.<ref type="formula">19</ref>) used were<lb/> β = 3.5 and T max<lb/> c<lb/> =105.1K. Therefore, the resulting constants were c s<lb/> 1 = 5.17×<lb/> 10 −4 eV /GP a and c s<lb/> 2 = 6.7 × 10 −3 GP a −1 for the extended − s wave and c d<lb/> 1 =<lb/> 6.52 × 10 −4 eV /GP a and c d<lb/> 2 = 8.7 × 10 −3 GP a −1 for the d wave symmetry.<lb/></p>
+
+			<p>On Fig. <ref type="figure">3 and 4</ref> we present our results in comparison with the experimental<lb/> data. One observes that, for the optimum doping, and the compounds near<lb/> the optimum doping, we have a rather good result. For the optimum com-<lb/>pound (n h =0.15) in particular, we had the better result, for both symmetries,<lb/> with very good agreement with the experimental data <ref type="biblio">[17,19]</ref>. For n h =0.075,<lb/> 0.20 and 0.25 we can reproduce well the low temperature data and obtain a<lb/> qualitative agreement on the high pressure region.<lb/></p>
+
+			<figure>0<lb/> 5<lb/> 10<lb/> P(GPa)<lb/> 40<lb/> 60<lb/> 80<lb/> 100<lb/> 120<lb/> T c (K)<lb/> Overdoped Region<lb/> n h =0.15<lb/> n h =0.20<lb/> n h =0.25<lb/> s wave<lb/> d wave<lb/> Fig. 3. Numerical calculation for the extended − s (filled lines) and d wave (dashed<lb/> lines) symmetries, in the overdoped region, together with the pressure experimental<lb/> data of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series taken from Ref. [19].<lb/></figure>
+
+			<p>The value of the constant c 2 (= 6.7 × 10 −3 GP a −1 ), which means the rate of<lb/> charge transfer by the pressure ( ∂n h<lb/> ∂P ), for the extended−s symmetry is close to<lb/> the experimental results for the Y BCO compounds <ref type="biblio">[10]</ref>, and is smaller than<lb/> the experimental Hall coefficient value for the Bi2212 <ref type="biblio">[8]</ref>. The value estimated<lb/> experimentally by Wijngaarden et al. <ref type="biblio">[17,19]</ref> for the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2<lb/> O 7 series was ∂n h /∂P exp = 3.9 × 10 −4 GP a −1 . This discrepancy can be at-<lb/></p>
+
+		<figure>0<lb/> 5<lb/> 10<lb/> 15<lb/> 20<lb/> P(GPa)<lb/> 40<lb/> 60<lb/> 80<lb/> 100<lb/> 120<lb/> T c (K)<lb/> Underdopoed Region<lb/> n h =0.075<lb/> d wave<lb/> s wave<lb/> Fig. 4. Numerical calculation for the extended − s (filled lines) and d wave (dashed<lb/> lines) symmetries, in the underdoped region, together with the pressure experimen-<lb/>tal data of the T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 series taken from Ref. <ref type="biblio">[19]<lb/></ref></figure>
+
+		<p>tributed to the parameters ∆Tc<lb/> ∆V , which are difficult to be estimated with the<lb/> very few experimental points, what introduces some uncertainties in the cal-<lb/>culated phase diagrams. This discrepancy is also the reason why our curves is<lb/> in good agreement with the experimental data up to 10GP a, but starts to de-<lb/>viate above this value. Another evidence that our main source of error comes<lb/> from ∂n h /∂P is the fact that the optimum compound, with n h =0.15, which is<lb/> the one with ∂n h /∂P =0, is in much better agreement with the experimental<lb/> results than the others, with different n h .<lb/></p>
+
+			<head>5 Conclusions<lb/></head>
+
+			<p>In conclusion, to relate the pressure P , the density of holes n h and the attrac-<lb/>tive potential V we used in the calculation a BCS-type mean-field approach on<lb/> the bidimensional extended Hubbard Hamiltonian with the potential V as an<lb/> adjustable parameter. Our method has general application, and can therefore<lb/> be used in any compound under pressure. We showed that these calculations<lb/> can describe reasonably well the pressure effects on the critical temperature<lb/> T c for the series T l 0.5 P b 0.5 Sr 2 Ca 1−x Y x Cu 2 O 7 , for the four measured doping<lb/> values.<lb/></p>
+
+			<p>Our results for the extended − s wave symmetry give a better quantitative<lb/> agreement with the experimental data. But the d-wave calculations are also<lb/> in qualitative agreement with the experimental data, showing that the order<lb/> parameter symmetry is not decisive to study the pressure effects.<lb/> Thus, our method provides a very interesting novel explanation to the intrin-<lb/>sic term, which is related with the change in the potential V , in agreement<lb/> with a previous hypothesis that the pressure increases the zero temperature<lb/> superconducting gap <ref type="biblio">[3,4]</ref> and with some experimental results <ref type="biblio">[11]</ref>.</p>
+
+
+	</text>
+</tei>

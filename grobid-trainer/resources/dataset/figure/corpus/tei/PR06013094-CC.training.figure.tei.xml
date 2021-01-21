@@ -1,0 +1,50 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06013094-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>-3.0x10<lb/> -4<lb/> -2.0x10<lb/> -4<lb/> -1.0x10<lb/> -4<lb/> 0.0<lb/> M (emu)<lb/> (a)<lb/> 75<lb/> 80<lb/> 85<lb/> 0.0<lb/> 2.0x10<lb/> -5<lb/> 4.0x10<lb/> -5<lb/> 6.0x10<lb/> -5<lb/> dM/dT (emu/K)<lb/> T (K)<lb/> (b)<lb/></content>
+
+            <head>FIG. <label>1:<lb/></label></head>
+
+            <figDesc>(a) Field-cooled (0.5mT) magnetization of a<lb/> YBa2Cu4O8 powder sample vs. T near Tc for various applied<lb/> hydrostatic pressures (from the left to the right) 0.0 kbar,<lb/> 2.67 kbar, 4.29 kbar, 7.52 kbar, and 10.2 kbar. (b) dM/dT<lb/> vs. T for the data shown in Fig. <ref type="figure">1(a)</ref></figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>76<lb/> 78<lb/> 80<lb/> 82<lb/> -2.0x10<lb/> -4<lb/> -1.0x10<lb/> -4<lb/> 0.0<lb/> M (emu)<lb/> aT (K)<lb/> p (kbar)<lb/> a<lb/> 0kbar<lb/> 1<lb/> 2.67 kbar<lb/> 0.98<lb/> 4.29 kbar<lb/> 0.97<lb/> 7.52 kbar<lb/> 0.952<lb/> 10.20 kbar 0.936<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>2</label>
+
+            <head>:<lb/> </head>
+<lb/> 
+            <figDesc>Magnetization data rescaled according to<lb/> p=0 M (T ) = p M (aT ) [Eq.(5)].</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>p (kbar) ∆V /V<lb/> a ∆Tc/Tc ∆γ/γ Tc(K) λ −2<lb/> ab0 (µm −2 ) ∆ξco/ξc0 ∆ξ abo /ξ ab0 2∆λ abo /λ ab0<lb/> 0<lb/>
+<lb/> -<lb/>1<lb/> -<lb/>-<lb/>79.07<lb/> 34.3<lb/> -<lb/>-<lb/>-<lb/>1.2<lb/> -0.0010 0.991 0.008 -0.007 79.67<lb/> 35.9<lb/> -0.04<lb/> -0.05<lb/> -0.05<lb/> 2.67 -0.0023 0.98 0.017 -0.015 80.41<lb/> 37.5<lb/> -0.07<lb/> -0.09<lb/> -0.09<lb/> 4.29 -0.0037 0.97 0.031 -0.027 81.4<lb/> 39.2<lb/> -0.10<lb/> -0.13<lb/> -0.14<lb/> 7.52 -0.0064 0.952 0.050 -0.044 82.73<lb/> 44.1<lb/> -0.19<lb/> -0.23<lb/> -0.28<lb/> 10.2 -0.0087 0.936 0.068 -0.059 84.22<lb/> 45.0<lb/> -0.19<lb/> -0.25<lb/> -0.32<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 8<lb/> 10<lb/> 12<lb/> 0.00<lb/> 0.02<lb/> 0.04<lb/> 0.06<lb/> 0.08<lb/> -0.08<lb/> -0.06<lb/> -0.04<lb/> -0.02<lb/> 0.00<lb/> T<lb/> c<lb/> /T<lb/> c<lb/> p ( kbar)<lb/> /<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>3</label>
+
+            <head>: </head>
+ 
+            <figDesc>∆Tc/Tc (•) and ∆γ/γ ( ) vs. p for the estimates<lb/> listed in Table I. The solid line is ∆Tc/Tc = 0.0068p and the<lb/> dashed one is ∆γ/γ = −0.006p with p in kbar.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

@@ -1,0 +1,60 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06012475-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>0<lb/> 0.02<lb/> 0.04<lb/> 0.06<lb/> 0.08<lb/> 0.1<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> ρ<lb/> c<lb/> (Ωcm)<lb/> 40 K<lb/> 30 K<lb/> 20 K<lb/> 9.9 K<lb/> 4.2 K<lb/> 1.25 K<lb/> (a) La 2-x Sr x CuO 4 x=0.15<lb/> H onset<lb/> H10<lb/> H50<lb/> H80<lb/> H90<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 8<lb/> 10<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> ρ<lb/> c<lb/> (Ωcm)<lb/> H (T)<lb/> 10 K<lb/> 4.2 K<lb/> 1.55 K<lb/> 0.68 K<lb/> (b) La 2-x Sr x CuO 4 x=0.08<lb/></content>
+
+            <head>FIG. <label>1</label>.</head>
+            <figDesc>Selected traces of ρc vs H of (a) optimally-doped<lb/> LSCO (x=0.15) and (b) underdoped LSCO (x=0.08) at fixed<lb/> temperatures. The arrows in (a), explicitly labelled for the<lb/> T = 9.9 K trace, mark the onset, 10%, 50%, 80% and 90%<lb/> points of each resistive transition. Only Honset and H50 are<lb/> marked by arrows in (b).<lb/> </figDesc>
+        </figure>
+
+        <figure>
+            <content><lb/> 60<lb/> 50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> H (T)<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> (a) LSCO x=0.15<lb/> H90<lb/> H80<lb/> H50<lb/> H onset<lb/> H10<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> H (T)<lb/> 25<lb/> 20<lb/> 15<lb/> 10<lb/> 5<lb/> 0<lb/> T (K)<lb/> (b) LSCO x=0.08<lb/> H90<lb/> H80<lb/> H50<lb/> H10<lb/> H onset<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>The resistive transitions for (a) optimally-doped<lb/> LSCO (x=0.15) and (b) under-doped LSCO (x=0.08) in the<lb/> H vs T plane, characterized by Honset, H10, H50, H80, and<lb/> H90. Representative error bars are attached to the data.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 5<lb/> 10<lb/> 15<lb/> 20<lb/> 25<lb/> 30<lb/> 35<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> Resistance (Ω)<lb/> 80 K<lb/> 70 K<lb/> 60 K<lb/> 50 K<lb/> 40 K<lb/> 30 K<lb/> 20 K<lb/> 15 K<lb/> 10 K<lb/> 4.2 K<lb/> 3.0 K<lb/> (a) Bi-2212<lb/> H50<lb/> H oset<lb/> 0<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> 0.8<lb/> 1<lb/> 1.2<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> Resistance (Ω)<lb/> 35.0 K<lb/> 30.4 K<lb/> 24.8 K<lb/> 20.0 K<lb/> 14.9 K<lb/> 9.9 K<lb/> 6.9 K<lb/> 4.2 K<lb/> 2.5 K<lb/> 1.55 K<lb/> (b) LSCO x=0.17<lb/> H50<lb/> H oset<lb/> 0<lb/> 5<lb/> 10<lb/> 15<lb/> 20<lb/> 25<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> Resistance (mΩ)<lb/> H (T)<lb/> 90 K<lb/> 85 K<lb/> 80 K<lb/> 75 K<lb/> 70 K<lb/> 65 K<lb/> 60 K<lb/> 55 K<lb/> 50 K<lb/> (c) YBCO<lb/> H oset<lb/> H50<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>3</label>
+
+            <head>.<lb/> </head>
+<lb/> 
+            <figDesc>Selected traces of raw R vs H data for<lb/> three cuprates near optimal doping, (a) Bi-2212, (b) LSCO<lb/> (x=0.17), and (c) YBCO. The temperatures for the traces are<lb/> listed on the right. Honset and H50 are marked by arrows on<lb/> the traces.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>60<lb/>50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> H (T)<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> Li et al.<lb/> (b) LSCO x=0.17<lb/> 60<lb/> 50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> H (T)<lb/> 80<lb/> 70<lb/> 60<lb/> 50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> (a) Bi-2212<lb/> H90<lb/> H80<lb/> H50<lb/> H10<lb/> H onset<lb/> 60<lb/> 50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> H (T)<lb/> 90<lb/> 80<lb/> 70<lb/> 60<lb/> 50<lb/> 40<lb/> 30<lb/> 20<lb/> 10<lb/> 0<lb/> T (K)<lb/> Welp et al.<lb/> Safar et al.<lb/> (c) YBCO<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>4</label>
+
+            <head>.<lb/> </head>
+<lb/> 
+            <figDesc>The contours of the resistive transition in the<lb/> H vs T plane for three cuprates at near optimum doping:<lb/> (a) Bi-2212, (b) LSCO (x=0.17), and (c) YBCO. The thick<lb/> dashed lines in (b) and (c) are magnetically determined Hc2<lb/> lines [18,19]. The open diamonds in (c) give the vortex lattice<lb/> melting line obtained by Safar et al. [20]. Note that the panels<lb/> are arranged in order of decreasing normal-state anisotropy,<lb/> ρc/ρ ab . Representative error bars are attached to the data.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

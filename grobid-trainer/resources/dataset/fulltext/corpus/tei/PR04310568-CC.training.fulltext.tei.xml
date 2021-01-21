@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<p>GdBa 2 Cu 3 O 7−y (Gd123) has typical behav-<lb/>ior for fully doped orthorhombic RBa 2 Cu 3 O 7−y<lb/> (R=Y, rare earth) high-T c cuprates (T c ≈ 90 K,<lb/> T N ≈ 2.2 K), whereas Pr123 with T N ≈ 17 K is<lb/> the anomalous member among R123 <ref type="biblio">[1]</ref>.<lb/></p>
+
+			<p>In this work we have studied the magnetic<lb/> properties of the mixed Gd 1−x Pr x Ba 2 Cu 3 O 7−y<lb/> [(Gd-Pr)123] and (Y-Pr)123 compounds. High<lb/> quality Al-free single crystals with (0 ≤ x ≤ 1.0)<lb/> were grown in Pt crucibles by the flux method <ref type="biblio">[2]</ref>.<lb/> Atomic absorption spectroscopy has shown that<lb/> the Pt contamination does not exceed 3 10 −3 at. %.<lb/></p>
+
+			1 Corresponding author. Present address: Institute for<lb/> High Pressure Physics, Russian Academy of Sci., Troitsk,<lb/> Moscow Reg., 142092, Russia. Fax:+7-(095)-334-00-12. E-<lb/>mail: narozh@ns.hppi.troitsk.ru<lb/> 2 On leave from Int. Lab. HMFLT, Wroclaw, Poland and<lb/> Institute for Solid State Physics BAS, Sofia, Bulgaria.<lb/>
+
+			<p>Magnetization curves M c (H) (H||c) and<lb/> M ab (H) [H||(ab)] for (Y 0.4 Pr 0.6 )123 crystal are<lb/> rather similar to the obtained for pure Pr123 crys-<lb/>tals, see Fig. <ref type="figure">1</ref>. The sign of magnetic anisotropy is<lb/> different for (Gd 0.4 Pr 0.6 )123 at low H and low T<lb/> (M ab &gt; M c ), see Fig. <ref type="figure">2A</ref>. A crossover to M ab &lt; M c<lb/> can be seen in high H at T ≤ 10 K (marked by ar-<lb/>rows in the Fig. <ref type="figure">2A</ref>. To obtain the contribution to<lb/> M (H) from Gd ions the results for (Y 0.4 Pr 0.6 )123<lb/> were substracted from the corresponding curves for<lb/> (Gd 0.4 Pr 0.6 )123, see Fig. <ref type="figure">2B</ref>, where the results are<lb/> market as belonging to imaginary (Gd 0.4 Z 0.6 )123<lb/> compound with Z marking empty spaces on Gd<lb/> sites. It is clear that M ab &gt; M c for Gd-sublattice<lb/> and the value of magnetic anisotropy decreases<lb/> gradually with increase of T or H. At T ≥ 40 K<lb/> the anisotropy is close to zero as could be ex-<lb/>pected for Gd 3+ ions having only spin component<lb/></p>
+
+			<figure>O<lb/> 7-y<lb/> M<lb/> ab<lb/> M<lb/> c<lb/> A<lb/> 40 K<lb/> 5 K<lb/> M (emu/mol)<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 0<lb/> 1000<lb/> 2000<lb/> 3000<lb/> H(kOe)<lb/> Y<lb/> 0.4<lb/> Pr<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> 20 K<lb/> M<lb/> ab<lb/> M<lb/> c<lb/> B<lb/> 40 K<lb/> 1.7 K<lb/> M (emu/Pr mol)<lb/> Fig. 1. M vs H for the two directions of H for a Pr-123 (A)<lb/> and (Y 0.4 Pr 0.6 )123 (B) single crystals. Dotted lines show<lb/> M vs. H (in emu/mol Pr) for a (Y 0.4 Pr 0.6 )123 at T = 5 K.<lb/></figure>
+
+			<p>of magnetic moment. At T = 1.7 K in H = 48 kOe<lb/> the magnetization is practically isotropic, see Fig.<lb/> <ref type="figure">2B</ref>. Therefore the observed crossover of magnetic<lb/> anisotropy for (Gd 0.4 Pr 0.6 )123 is connected with<lb/> different signs of anisotropy for the Pr-and Gd-<lb/>sublattice in this compound and with the different<lb/> character of M (H) dependencies for them.<lb/></p>
+
+			<p>It was found, that the kink in magnetic sus-<lb/>ceptibility χ ab (T ) connected with AFM order-<lb/>ing of Pr disappears after field cooling (FC) in<lb/> H ab-plane, whereas the kink in χ c (T ) remains<lb/> unchanged after FC in H<lb/> c-axis. Possible ex-<lb/>planation is connected with coupling of Pr and<lb/> Cu sublattices because Pr ordering is accompa-<lb/>nied by a reordering of Cu moments below T N <ref type="biblio">[3]</ref>.<lb/> The theory of exchange-frustrated antiferromag-<lb/>nets with two spin subsystems interacting only by<lb/> the anisotropic pseudodipole interaction has been<lb/> recently proposed by S.V. Maleev <ref type="biblio">[4]</ref>.<lb/></p>
+
+			<p>It was generally accepted that Pr-123 is the only<lb/> nonsuperconducting compound in R123 row, but<lb/> recently Zou et al. <ref type="biblio">[5]</ref> reported the observation of<lb/> bulk superconductivity for Pr-123 grown by the<lb/></p>
+
+			<figure>0<lb/> 5<lb/> 10<lb/> 15<lb/> 20<lb/> A<lb/> 5 K<lb/> 10 K<lb/> Gd<lb/> 0.4<lb/> Pr<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> M<lb/> c<lb/> M<lb/> ab<lb/> 20 K<lb/> 40 K<lb/> 1.7 K<lb/> M (10 3<lb/> emu/mol)<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 0<lb/> 20<lb/> 40<lb/> B<lb/> H(kOe)<lb/> 5 K<lb/> 10 K<lb/> Gd<lb/> 0.4<lb/> Z<lb/> 0.6<lb/> Ba<lb/> 2<lb/> Cu<lb/> 3<lb/> O<lb/> 7-y<lb/> M<lb/> c<lb/> M<lb/> ab<lb/> 20 K<lb/> 40 K<lb/> 1.7 K<lb/> M (10 3<lb/> emu/Gd mol)<lb/> Fig. 2. M vs H for the two directions of H for a<lb/> (Gd 0.4 Pr 0.6 )123 (A) and imaginary (Z 0.4 Pr 0.6 )123 (B) sin-<lb/>gle crystals. See text for details.<lb/></figure>
+
+			<p>traveling-solvent floating-zone (TSZF) method.<lb/> Our analysis of Zou&apos;s data <ref type="biblio">[5]</ref> has shown <ref type="biblio">[6]</ref> that<lb/> the Curie constant C for his crystal is about two<lb/> times smaller than obtained for our Pr123 crystals<lb/> <ref type="biblio">[7]</ref> or reported by other groups <ref type="biblio">[8]</ref>. This suggests<lb/> that Pr occupies only about one half of the R sites.</p>
+
+
+	</text>
+</tei>
