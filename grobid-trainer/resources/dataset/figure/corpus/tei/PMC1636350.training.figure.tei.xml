@@ -1,0 +1,23 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PMC1636350.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>(a) Structure-based alignment and hidden state paths<lb/>
+
+                <lb/> (b) HMM_1_1_0<lb/> (d) HMM_1_3_1<lb/> (c) HMM_1_1_1<lb/> </content>
+<lb/> 
+            <head>Figure <label>1</label>. </head>
+ 
+            <figDesc>(a) An illustration of structure-based sequence alignment and hidden state paths. In Sequences 1 and 2, uppercase letters and lowercase letters represent<lb/> aligned core blocks and unaligned regions, respectively. If two corresponding unaligned regions bounded by the same two core blocks are of different length, we<lb/> split the shorter one into two pieces and introduce contiguous gaps in the middle. For both N-and C-terminal ends, the shorter unaligned region is pushed toward<lb/> the core blocks. Secondary structure (ss) types (helix, &apos;h&apos;; strand, &apos;e&apos;; coil, &apos;c&apos;) are shown for Sequence 1. The hidden state paths for three models are shown<lb/> below the amino acid sequences. (b) Model structure of HMM_1_1_0. Residue pairs in unaligned regions are modeled using the same match state (&apos;M&apos;) as those<lb/> in the aligned blocks. Insertions in the first sequence and second sequence are modeled using states &apos;X&apos; and &apos;Y&apos;, respectively. (c) Model structure of<lb/> HMM_1_1_1. Residue pairs in the unaligned regions are modeled using a different match state (&apos;U&apos;) than the match state in the core blocks (&apos;M&apos;). (d) Model<lb/> structure of HMM_1_3_1. Residue pairs in aligned core blocks are modeled using three match states (&apos;H&apos;, &apos;S&apos;, &apos;C&apos;) according to three secondary structure types<lb/> of the first sequence. In (b), (c) and (d), match states are shown as squares and insertion states are shown as diamonds. Begin state, end state, and transitions from<lb/> or to them are present in these models, but are not shown.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

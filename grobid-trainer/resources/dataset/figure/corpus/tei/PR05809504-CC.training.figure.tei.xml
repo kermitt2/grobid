@@ -1,0 +1,49 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR05809504-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <head>Figure </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>Powder X-ray diffraction patterns of the samples with the intended oxygen content<lb/> 1-y=0.90, 0.85, 0.80, 0.75 and 0.70.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>-0.015<lb/> -0.010<lb/> -0.005<lb/> 0.000<lb/> 0.005<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> 0.85<lb/> 0.80<lb/> 0.75<lb/> 0.70<lb/> Susceptibility (emu/g)<lb/> T (K)<lb/> Nominal composition:<lb/> NdFeAsO 1-y<lb/> 1-y<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 60<lb/> 3.94<lb/> 3.95<lb/> 3.96<lb/> 3.97<lb/> 0.75<lb/> 0.80<lb/> 0.85<lb/> 0.90<lb/> 0.95<lb/> 1.00<lb/> T<lb/> c (K)<lb/> a (Å)<lb/> 1-y*<lb/> NdFeAsO 1-y*<lb/> 1-y*=6.637a-25.373<lb/> Superconducting state<lb/> </content>
+<lb/> 
+            <head>Figure </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>Temperature dependence of the<lb/> magnetic susceptibility for 1-y=0.85, 0.80, 0.75<lb/> and 0.70 sample.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <head>Figure</head>
+
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>Electronic phase diagram drawn from<lb/> the a-parameters and T c for the samples<lb/> synthesized so far. The upper scale shows the<lb/> oxygen content 1-y* estimated by the neutron<lb/> diffraction analysis.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

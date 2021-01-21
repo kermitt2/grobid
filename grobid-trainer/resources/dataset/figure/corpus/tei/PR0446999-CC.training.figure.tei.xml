@@ -1,0 +1,51 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR0446999-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>0<lb/> 100<lb/> 200<lb/> 300<lb/> 0<lb/> 1<lb/> 2<lb/> 3<lb/> 4<lb/> 186<lb/> 188<lb/> 190<lb/> 192<lb/> 20.5<lb/> 21.0<lb/> 1/ χ (mol/emu)<lb/> T<lb/> SDW<lb/> B//c<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 0<lb/> 100<lb/> 200<lb/> 1/ χ (mol/emu)<lb/> B//c<lb/> B//c<lb/> B//ab<lb/> χ (emu/mol)<lb/> T(K)<lb/> µ<lb/> 0<lb/> H = 0.1 T<lb/> µ<lb/> eff<lb/> = 8.24µ<lb/> B<lb/> T<lb/> N<lb/> </content>
+<lb/> 
+            <head>Figure </head>
+ 
+            <label>1</label>
+
+            <head>.<lb/> </head>
+<lb/> 
+            <figDesc>Temperature dependence of<lb/> the magnetic susceptibility of EuFe 2 As 2<lb/> single crystals with the magnetic field of<lb/> 0.1 T perpendicular and parallel to the<lb/> crystallographic c-axis; drop at 19 K due to<lb/> AFM of Eu 2+ moments. Upper and lower<lb/> insets show Curie-Weiss behavior down to<lb/> 40 K and small change in slope at 190 K due<lb/> to SDW ordering, respectively.<lb/> </figDesc>
+
+        </figure>
+
+        <figure>
+            <content><lb/> 20<lb/> 40<lb/> 60<lb/> 80<lb/> 100<lb/> 0.0<lb/> 0.1<lb/> 0.2<lb/> 0.3<lb/> 0.4<lb/> 0.5<lb/> 26<lb/> 28<lb/> 30<lb/> 32<lb/> 34<lb/> 0.0<lb/> 0.1<lb/> 0.2<lb/> 9T<lb/> 7T<lb/> 5T<lb/> 2T<lb/> 0T<lb/> ρ/ ρ<lb/> 300K<lb/> T(K)<lb/> µ<lb/> 0<lb/> H =<lb/> 0.35<lb/> 0.45<lb/> 0.50<lb/> ρ/ ρ<lb/> 300K<lb/> T(K)<lb/> X=<lb/> </content>
+<lb/> 
+            <head>Figure </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>Temperature dependence of the<lb/> electrical resistivity of polycrystalline samples<lb/> of Eu 1−x K x Fe 2 As 2 , where x= 0.35, 0.45 and<lb/> 0.5. Inset shows the electrical resistivity for<lb/> x= 0.5 at different magnetic fields up to 9 T.<lb/> Note the robustness of the SC transition in<lb/> magnetic field.</figDesc>
+        </figure>
+
+
+        <figure>
+            <content><lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 0<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 0.2<lb/> 0.4<lb/> 0.6<lb/> 0.8<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> T(K)<lb/> x =0.50<lb/> C/T(J/mol K<lb/> 2<lb/> )<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> 0.03<lb/> 0.06<lb/> 0.09<lb/> 0.12<lb/> 0.15<lb/> δC/T (J/mol K<lb/> 2<lb/> )<lb/> T(K)<lb/> ∆C/T = 70<lb/> mJ/mol K<lb/> 2<lb/> x = 0<lb/> 0.45<lb/> 0.50<lb/> C (J/mol K)<lb/> T(K)<lb/> </content>
+<lb/>
+            <head>Figure </head>
+ 
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>Temperature dependence of the specific heat of polycrystalline samples of<lb/> Eu 1−x K x Fe 2 As 2 , where x= 0.0, 0.45 and 0.5. The lower inset displays C p /T vs T , which clearly<lb/> shows an anomaly at the SC transition. The upper inset displays the jump height at the SC<lb/> transition after subtracting a phonon contribution derived from the Sr compound.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

@@ -1,0 +1,65 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06100107-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>0<lb/> 20<lb/> 40<lb/> 0.5<lb/> 1.0<lb/> stick<lb/> 6.5GPa<lb/> 0.1MPa<lb/> 1.5GPa<lb/> 3.0GPa<lb/> 5.0GPa<lb/> 8.0GPa<lb/> ρ<lb/> c (Ω cm)<lb/> Temperature (K)<lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 8<lb/> 0.2<lb/> 0.3<lb/> 0.4<lb/> 300 K<lb/> ρ<lb/> c (Ω cm)<lb/> P (GPa)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>ρc(T ) curves measured for stick shaped LSCO<lb/> sample with x=0.1 below 55K under P up to 8 GPa. The<lb/> inset shows P dependence of ρc at 300K. The sample shape<lb/> and the configurations of the electrodes are shown.<lb/> </figDesc>
+        </figure>
+
+        <figure>
+
+            <content><lb/> 0 2 4 6 8<lb/> 85<lb/> 90<lb/> 95<lb/> T=297K<lb/> ρ<lb/> c<lb/> (mΩcm)<lb/> P (GPa)<lb/> 0<lb/> 20<lb/> 40<lb/> 60<lb/> 80<lb/> 20<lb/> 40<lb/> 60<lb/> 80<lb/> 100<lb/> plate<lb/> x=0.15<lb/> 8.0GPa<lb/> 6.5GPa<lb/> 5.0GPa<lb/> 3.0GPa<lb/> 1.5GPa<lb/> 0.8GPa<lb/> 0.1MPa<lb/> ρ<lb/> c<lb/> (mΩcm)<lb/> Temperature(K)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>ρc(T ) curves measured for the plate shaped LSCO<lb/> sample with x=0.15 under P up to 8 GPa. The inset shows P<lb/> dependence of ρc at 297K. Also shown is a schematic represen-<lb/>tation of the electrodes attached to the plate shaped crystals.<lb/> </figDesc>
+
+        </figure>
+        <figure>
+
+            <content><lb/> 0<lb/> 2<lb/> 4<lb/> 6<lb/> 8<lb/> 10<lb/> 20<lb/> 30<lb/> 40<lb/> 50<lb/> stick<lb/> plate<lb/> plate<lb/> P d<lb/> P d<lb/> La 2-x Sr x CuO 4<lb/> x=0.15<lb/> x=0.1<lb/> T<lb/> c (K)<lb/> Pressure (GPa)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>3</label>
+
+            <head>. </head>
+ 
+            <figDesc>Tc for stick and plate shaped samples against P .<lb/> Solid line is a guide to the eye. Meshed marks indicate the<lb/> structural transition pressure P d estimated from the changes<lb/> in ρc(T ) and the reported T d (P ) (Ref. 14,15).</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content><lb/> 0.4<lb/> 0.6<lb/> 0.8<lb/> 1.0<lb/> 1.2<lb/> 0<lb/> 0.5<lb/> 1.0<lb/> 1.5<lb/> x=0.15<lb/> x=0.1<lb/> La 2-x Sr x CuO 4<lb/> T<lb/> c<lb/> (P)/T<lb/> c<lb/> (0.1MPa)<lb/> ρ c (P)/ρ c (0.1MPa)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>The variation of Tc(P )/Tc(0.1MPa) in the tetrag-<lb/>onal phase plotted as a function of ρc(P )/ρc(0.1MPa) at<lb/> 297K. Circles and triangles indicate Tc for plate and stick<lb/> shaped samples, respectively. Tc for the stick LSCO with op-<lb/>timal doping (closed triangle) is obtained from Ref.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+

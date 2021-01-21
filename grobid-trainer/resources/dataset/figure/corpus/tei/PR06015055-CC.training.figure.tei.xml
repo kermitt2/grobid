@@ -1,0 +1,53 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PR06015055-CC.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+        <figure>
+
+            <content>0<lb/> 100<lb/> 200<lb/> 300<lb/> 400<lb/> 0<lb/> 100<lb/> 200<lb/> 300<lb/> ρ<lb/> ab (µΩcm)<lb/> Temperature (K)<lb/> z=0.013<lb/> z=0.006<lb/> z=0<lb/> YBa 2 (Cu 1-z Zn z ) 3 O 6.78<lb/> Single Crystals<lb/> 0.6<lb/> 0.8<lb/> 1.0<lb/> 80<lb/> 160 240<lb/> z=0<lb/> z=0.006<lb/> z=0.013<lb/> [ρ<lb/> ab<lb/> (T) -<lb/>ρ<lb/> 0 ] / aT<lb/> T (K)<lb/> T *<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>1</label>
+
+            <head>. </head>
+ 
+            <figDesc>T dependence of ρ ab for the pure and Zn-doped<lb/> samples. Inset: Plots of (ρ ab (T ) − ρ0)/aT vs T , where<lb/> ρ0=13.9, 34.6, and 63.4 µΩcm for z=0, 0.006, and 0.013, re-<lb/>spectively. The slope a (=1.05) is unchanged with z. T * is<lb/> marked by an arrow.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 1<lb/> 2<lb/> 3<lb/> 0<lb/> 50 100 150 200 250<lb/> z=0<lb/> z=0.006<lb/> z=0.013<lb/> R<lb/> H (10 -3<lb/> cm 3<lb/> / C)<lb/> Temperature (K)<lb/> YBa 2 (Cu 1-z Zn z ) 3 O 6.78<lb/> 1<lb/> 2<lb/> 3<lb/> 4<lb/> 5<lb/> 0<lb/> 100<lb/> 200<lb/> z=0<lb/> z=0.006<lb/> z=0.013<lb/> R<lb/> H<lb/> hyp<lb/> (10 -3<lb/> cm 3<lb/> / C)<lb/> T (K)<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>2</label>
+
+            <head>. </head>
+ 
+            <figDesc>T dependence of RH for pure and Zn-doped sam-<lb/>ples. Inset: Plot of R hyp<lb/> H<lb/> vs T for the three samples, see text.</figDesc>
+        </figure>
+
+
+        <figure>
+
+            <content>0<lb/> 200<lb/> 400<lb/> 0<lb/> 40<lb/> 80 120 160 200 240 280<lb/> (cot<lb/> θ<lb/> H +28.4) / T 1.85<lb/> Temperature (K)<lb/> z=0<lb/> 0<lb/> 200<lb/> 400<lb/> (cot<lb/> θ<lb/> H -8.53) / T 1.90<lb/> z=0.006<lb/> 0<lb/> 200<lb/> 400<lb/> (cot<lb/> θ<lb/> H -53.8) / T 2.0<lb/> z=0.013<lb/> T 0<lb/> </content>
+<lb/> 
+            <head>FIG. </head>
+ 
+            <label>4</label>
+
+            <head>. </head>
+ 
+            <figDesc>Plots of (cot θH − C)/T α vs T , which emphasizes<lb/> where the the deviation from the high-temperature behavior<lb/> cot θH = C + DT α (with α≃2) takes place. The deviation at<lb/> T0 is marked by arrows.</figDesc>
+        </figure>
+
+
+
+    </text>
+</tei>
+
