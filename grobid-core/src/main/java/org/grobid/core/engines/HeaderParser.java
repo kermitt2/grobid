@@ -288,7 +288,7 @@ public class HeaderParser extends AbstractParser {
                     // below using the reference strings to improve the metadata extraction, it will have to
                     // be reviewed for something safer as just a straightforward correction
                     /*if (resHeader.getReference() != null) {
-                        BiblioItem refer = parsers.getCitationParser().processing(resHeader.getReference(), 0);
+                        BiblioItem refer = parsers.getCitationParser().processingString(resHeader.getReference(), 0);
                         BiblioItem.correct(resHeader, refer);
                     }*/
                 }

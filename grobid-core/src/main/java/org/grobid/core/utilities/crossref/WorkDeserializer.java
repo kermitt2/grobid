@@ -95,6 +95,9 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 					if (authorNode.get("family") != null && !authorNode.get("family").isMissingNode()) {
 						person.setLastName(authorNode.get("family").asText());
     	   			}
+  					if (authorNode.get("ORCID") != null && !authorNode.get("ORCID").isMissingNode()) {
+						person.setORCID(authorNode.get("ORCID").asText());
+    	   			}
     	   			// for cases like JM Smith and for case normalisation
     	   			person.normalizeName();
 					biblio.addFullAuthor(person);

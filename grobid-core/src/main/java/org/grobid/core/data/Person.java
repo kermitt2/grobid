@@ -109,6 +109,12 @@ public class Person {
     }
 
     public void setORCID(String id) {
+        if (id == null)
+            return;
+        if (id.startsWith("http://orcid.org/"))
+            id = id.replace("http://orcid.org/", "");
+        else if (id.startsWith("https://orcid.org/"))
+            id = id.replace("https://orcid.org/", "");
         orcid = id;
     }
 

@@ -5,6 +5,7 @@ import opennlp.tools.sentdetect.SentenceModel;
 import opennlp.tools.util.Span;
 
 import org.grobid.core.lang.SentenceDetector;
+import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.GrobidProperties;
 
@@ -38,6 +39,11 @@ public class OpenNLPSentenceDetector implements SentenceDetector {
 
     @Override
     public List<OffsetPosition> detect(String text) {
+        return detect(text, new Language(Language.EN)); 
+    }
+
+    @Override
+    public List<OffsetPosition> detect(String text, Language lang) {
         // unfortunately OpenNLP sentence detector is not thread safe, only the model can be share 
         SentenceDetectorME detector = new SentenceDetectorME(model);
         Span spans[] = detector.sentPosDetect(text); 

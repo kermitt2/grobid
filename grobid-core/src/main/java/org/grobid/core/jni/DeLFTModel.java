@@ -131,34 +131,38 @@ public class DeLFTModel {
                 String inputLine;
                 int i = 0; // sentence index
                 int j = 0; // word index in the sentence
-                List<List<String>> result = results.get(0);
-                while ((inputLine = bufReader.readLine()) != null) {
-                    inputLine = inputLine.trim();
-                    if ((inputLine.length() == 0) && (j != 0)) {
-                        j = 0;
-                        i++;
-                        if (i == results.size())
-                            break;
-                        result = results.get(i);
-                        continue;
-                    }
+                if (results.size() > 0) {
+                    List<List<String>> result = results.get(0);
+                    while ((inputLine = bufReader.readLine()) != null) {
+                        inputLine = inputLine.trim();
+                        if ((inputLine.length() == 0) && (j != 0)) {
+                            j = 0;
+                            i++;
+                            if (i == results.size())
+                                break;
+                            result = results.get(i);
+                            continue;
+                        }
 
-                    if (inputLine.length() == 0)
-                        continue;
-                    labelledData.append(inputLine);
-                    labelledData.append(" ");
+                        if (inputLine.length() == 0) {
+                            labelledData.append("\n");
+                            continue;
+                        }
+                        labelledData.append(inputLine);
+                        labelledData.append(" ");
 
-                    if (j >= result.size()) {
-                        labelledData.append(TaggingLabels.OTHER_LABEL);
-                    } else {
-                        List<String> pair = result.get(j);
-                        // first is the token, second is the label (DeLFT format)
-                        String token = pair.get(0);
-                        String label = pair.get(1);
-                        labelledData.append(DeLFTModel.delft2grobidLabel(label));
+                        if (j >= result.size()) {
+                            labelledData.append(TaggingLabels.OTHER_LABEL);
+                        } else {
+                            List<String> pair = result.get(j);
+                            // first is the token, second is the label (DeLFT format)
+                            String token = pair.get(0);
+                            String label = pair.get(1);
+                            labelledData.append(DeLFTModel.delft2grobidLabel(label));
+                        }
+                        labelledData.append("\n");
+                        j++;
                     }
-                    labelledData.append("\n");
-                    j++;
                 }
                 
                 // cleaning
@@ -187,7 +191,8 @@ public class DeLFTModel {
         }
         // In some areas, GROBID currently expects tabs as feature separators.
         // (Same as in WapitiModel.label)
-        result = result.replaceAll(" ", "\t");
+        if (result != null)
+            result = result.replaceAll(" ", "\t");
         return result;
     }
 

@@ -111,7 +111,7 @@ If you want to this work, please refer to the present GitHub project, together w
     title = {GROBID},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
-    year = {2008--2020},
+    year = {2008--2021},
     archivePrefix = {swh},
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }

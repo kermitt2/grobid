@@ -208,7 +208,7 @@ public class FullTextParser extends AbstractParser {
                 processingReferenceSection(doc, parsers.getReferenceSegmenterParser(), 0);
 
             // consolidate the set
-            if (config.getConsolidateCitations() != 0) {
+            if (config.getConsolidateCitations() != 0 && resCitations != null) {
                 Consolidation consolidator = Consolidation.getInstance();
                 if (consolidator.getCntManager() == null)
                     consolidator.setCntManager(Engine.getCntManager());
@@ -278,7 +278,6 @@ public class FullTextParser extends AbstractParser {
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
-
 
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
@@ -1134,7 +1133,7 @@ public class FullTextParser extends AbstractParser {
 
                     for (LabeledReferenceResult ref : references) {
                         if ( (ref.getReferenceText() != null) && (ref.getReferenceText().trim().length() > 0) ) {
-                            BiblioItem bib = parsers.getCitationParser().processing(ref.getReferenceText(), 0);
+                            BiblioItem bib = parsers.getCitationParser().processingString(ref.getReferenceText(), 0);
                             String authorSequence = bib.getAuthors();
                             if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
                                 /*List<String> inputs = new ArrayList<String>();

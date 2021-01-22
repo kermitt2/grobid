@@ -141,6 +141,10 @@ public class GrobidProperties {
         return grobidHome;
     }
 
+    public static String getGrobidHome() {
+        return GROBID_HOME_PATH.getPath();
+    }
+
     /**
      * Set the grobid-home path.
      */
