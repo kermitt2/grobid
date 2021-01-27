@@ -2113,7 +2113,7 @@ public class FullTextParser extends AbstractParser {
      * Create training data for the table as identified by the full text model.
      * Return the pair (TEI fragment, CRF raw data).
      */
-    private Pair<String,String> processTrainingDataTables(String rese,
+    protected Pair<String,String> processTrainingDataTables(String rese,
     	List<LayoutToken> tokenizations, String id) {
     	StringBuilder tei = new StringBuilder();
     	StringBuilder featureVector = new StringBuilder();
@@ -2156,19 +2156,15 @@ public class FullTextParser extends AbstractParser {
     		int ll = s.length;
     		String label = s[ll-1];
     		String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-    		if (label.equals("<table>") || (label.equals("I-<table>") && !openTable) ) {
+    		if (label.equals("<table>") || ((label.equals("I-<table>") && !openTable) )) {
     			if (!openTable) {
-    				for(LayoutToken lTok : tokenizationsBuffer) {
-    					tokenizationsTable.add(lTok);
-    				}
-    				openTable = true;
-    			}
+    			    openTable = true;
+    				tokenizationsTable.addAll(tokenizationsBuffer);    				    }
     			// we remove the label in the CRF row
     			int ind = row.lastIndexOf("\t");
     			tableBlock.append(row.substring(0, ind)).append("\n");
-    		}
-    		else if (label.equals("I-<table>") || openTable) {
-    			// remove last token
+    		} else if (label.equals("I-<table>") || openTable) {
+    			// remove last tokens
     			if (tokenizationsTable.size() > 0) {
     				int nbToRemove = tokenizationsBuffer.size();
     				for(int q=0; q<nbToRemove; q++)
@@ -2191,7 +2187,7 @@ public class FullTextParser extends AbstractParser {
 
     			// process the "accumulated" table
     			Pair<String,String> trainingData = parsers.getTableParser().createTrainingData(tokenizationsTable, tableBlock.toString(), "Fig"+nb);
-    			tokenizationsTable = new ArrayList<LayoutToken>();
+    			tokenizationsTable = new ArrayList<>();
 				tableBlock = new StringBuilder();
     			if (trainingData!= null) {
 	    			if (tei.length() == 0) {
@@ -2215,6 +2211,27 @@ public class FullTextParser extends AbstractParser {
     		else
     			openTable = false;
     	}
+
+    	// If there still an open table
+    	if (openTable) {
+            while((tokenizationsTable.size() > 0) &&
+                (tokenizationsTable.get(0).getText().equals("\n") ||
+                    tokenizationsTable.get(0).getText().equals(" ")) )
+                tokenizationsTable.remove(0);
+
+            // process the "accumulated" figure
+            Pair<String,String> trainingData = parsers.getTableParser()
+                .createTrainingData(tokenizationsTable, tableBlock.toString(), "Fig" + nb);
+            if (trainingData!= null) {
+                if (tei.length() == 0) {
+                    tei.append(parsers.getTableParser().getTEIHeader(id)).append("\n\n");
+                }
+                if (trainingData.getLeft() != null)
+                    tei.append(trainingData.getLeft()).append("\n\n");
+                if (trainingData.getRight() != null)
+                    featureVector.append(trainingData.getRight()).append("\n\n");
+            }
+        }
 
     	if (tei.length() != 0) {
     		tei.append("\n    </text>\n" +
