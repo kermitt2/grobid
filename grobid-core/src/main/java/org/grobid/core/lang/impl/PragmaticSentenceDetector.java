@@ -1,39 +1,42 @@
 package org.grobid.core.lang.impl;
 
-import org.jruby.embed.PathType;
-import org.jruby.embed.ScriptingContainer;
+import com.google.common.base.Joiner;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch;
+import org.grobid.core.lang.Language;
+import org.grobid.core.lang.SentenceDetector;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.OffsetPosition;
 import org.jruby.embed.LocalContextScope;
 import org.jruby.embed.LocalVariableBehavior;
-
-import org.grobid.core.lang.SentenceDetector;
-import org.grobid.core.lang.Language;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.GrobidProperties;
-
+import org.jruby.embed.PathType;
+import org.jruby.embed.ScriptingContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.io.*;
+import java.util.stream.Collectors;
 
 /**
  * Implementation of sentence segmentation via the Pragmatic Segmenter
- * 
  */
 public class PragmaticSentenceDetector implements SentenceDetector {
-    private static final Logger LOGGER  = LoggerFactory.getLogger(PragmaticSentenceDetector.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PragmaticSentenceDetector.class);
 
     private ScriptingContainer instance = null;
 
     public PragmaticSentenceDetector() {
-        String segmenterRbFile = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
-            File.separator + "pragmatic_segmenter"+ File.separator + "segmenter.rb";
+        String segmenterRbFile = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" +
+            File.separator + "pragmatic_segmenter" + File.separator + "segmenter.rb";
         String segmenterLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation";  
         /*String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
             File.separator + "pragmatic_segmenter" + File.separator + "gem" + File.separator + "gems" +
             File.separator + "unicode-0.4.4.4-java" + File.separator + "lib";*/
-        String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
+        String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" +
             File.separator + "pragmatic_segmenter" + File.separator + "lib";
 //System.out.println(vendorLoadPath);
 
@@ -49,7 +52,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
 
     @Override
     public List<OffsetPosition> detect(String text) {
-        return detect(text, new Language(Language.EN));  
+        return detect(text, new Language(Language.EN));
     }
 
     @Override
@@ -72,6 +75,131 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         return result;
     }
 
+    public static Pair<String, Integer> findInText(String subString, String text) {
+
+        LinkedList<DiffMatchPatch.Diff> diffs = new DiffMatchPatch().diffMain(text, subString);
+        List<String> list = new ArrayList<>();
+
+        // Transform to a char based sequence
+        diffs.stream().forEach(d -> {
+            String text_chunk = d.text;
+            DiffMatchPatch.Operation operation = d.operation;
+            String op = " ";
+            if (operation.equals(DiffMatchPatch.Operation.INSERT)) {
+                op = "+";
+            } else if (operation.equals(DiffMatchPatch.Operation.DELETE)) {
+                op = "-";
+            }
+
+            for (int i = 0; i < text_chunk.toCharArray().length; i++) {
+                String sb = op + " " + text_chunk.toCharArray()[i];
+                list.add(sb);
+            }
+        });
+
+        List<String> list_cleaned = list.stream().filter(d -> d.charAt(0) != '+').collect(Collectors.toList());
+//        System.out.println(list_cleaned);
+
+        boolean inside = false;
+        List<String> output = new ArrayList<>();
+        for (int i = 0; i < list_cleaned.size(); i++) {
+            String item = list_cleaned.get(i);
+            if (item.charAt(0) == '-' && !inside) {
+                continue;
+            } else {
+                inside = true;
+                output.add(String.valueOf(text.charAt(i)));
+            }
+        }
+
+        for (int i = output.size() - 1; i > -1; i--) {
+            String item = list_cleaned.get(i);
+            if (item.charAt(0) == '-' || item.charAt(0) == '+') {
+                output.remove(i);
+            } else {
+                break;
+            }
+        }
+        String adaptedSubString = Joiner.on("").join(output);
+        int start = text.indexOf(adaptedSubString);
+
+        return Pair.of(adaptedSubString, start);
+    }
+
+
+    protected static List<OffsetPosition> getSentenceSpans(String text, List<String> retList) {
+        // build offset positions from the string chunks
+        List<OffsetPosition> result = new ArrayList<>();
+
+        int previousEnd = -1;
+        int previousStart = -1;
+
+        for (int i = 0; i < retList.size(); i++) {
+            String sentence = retList.get(i);
+            String sentenceClean = StringUtils.strip(sentence, "\n");
+
+            int start = -1;
+            int end = -1;
+
+            if (previousEnd > -1) {
+                start = text.indexOf(sentenceClean, previousEnd);
+            } else {
+                text.indexOf(sentenceClean);
+            }
+
+
+            String outputStr = "";
+            if (start == -1) {
+                if (previousEnd > -1) {
+                    start = text.replace("\n", " ").indexOf(sentenceClean, previousEnd);
+                } else {
+                    start = text.replace("\n", " ").indexOf(sentenceClean);
+                }
+
+                if (start == -1) {
+
+                    String textAdapted = text;
+
+                    if (previousEnd > -1) {
+                        textAdapted = text.substring(previousEnd);
+                        Pair<String, Integer> inText = findInText(sentenceClean, textAdapted);
+                        start = inText.getRight();
+                        outputStr = inText.getLeft();
+                        start += previousEnd;
+                    } else if (previousStart > -1) {
+                        textAdapted = text.substring(previousStart);
+                        Pair<String, Integer> inText = findInText(sentenceClean, textAdapted);
+                        start = inText.getRight();
+                        outputStr = inText.getLeft();
+                        start += previousEnd;
+                    } else {
+                        Pair<String, Integer> inText = findInText(sentenceClean, textAdapted);
+                        start = inText.getRight();
+                        outputStr = inText.getLeft();
+                    }
+                    end = start + outputStr.length();
+                    if (start == -1) {
+                        System.out.println("- The starting offset is -1. We have tried to recover it, but probably something is still wrong. Please check. ");
+                        System.out.println(outputStr + " / " + textAdapted);
+                    }
+                } else {
+                    end = start + sentenceClean.length();
+                }
+            } else {
+                end = start + sentenceClean.length();
+            }
+
+            if (start > -1) {
+                previousEnd = end;
+            }
+
+            result.add(new OffsetPosition(start, end));
+        }
+
+        return result;
+    }
+
+    @Deprecated
     protected static List<OffsetPosition> getSentenceOffsets(String text, List<String> retList) {
         // build offset positions from the string chunks
         List<OffsetPosition> result = new ArrayList<>();
@@ -80,7 +208,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         // indicate when the sentence as provided by the Pragmatic Segmented does not match the original string
         // and we had to "massage" the string to identify/approximate offsets in the original string
         boolean recovered = false;
-        for(int i = 0; i< retList.size(); i++) {
+        for (int i = 0; i < retList.size(); i++) {
             String chunk = retList.get(i);
             recovered = false;
             int start = text.indexOf(chunk, pos);
@@ -112,18 +240,18 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                         // we need to correct the previous sentence end offset given the start of the current sentence
                         if (result.size() > 0) {
                             int newPreviousEnd = start;
-                            while(newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
+                            while (newPreviousEnd >= 1 && text.charAt(newPreviousEnd - 1) == ' ') {
                                 newPreviousEnd--;
                                 if (start - newPreviousEnd > 10) {
                                     // this is a break to avoid going too far
                                     newPreviousEnd = start;
                                     // but look back previous character to cover general case
-                                    if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
+                                    if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd - 1) == ' ') {
                                         newPreviousEnd--;
                                     }
                                 }
                             }
-                            result.get(result.size()-1).end = newPreviousEnd;
+                            result.get(result.size() - 1).end = newPreviousEnd;
                         }
                     }
                 }
@@ -132,25 +260,25 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                 // we approximate the start of the non-matching sentence based on the end of the previous sentence
                 if (start == -1) {
                     start = previousEnd;
-                    while(text.charAt(start) == ' ') {
+                    while (text.charAt(start) == ' ') {
                         start++;
                         if (start - previousEnd > 10) {
                             // this is a break to avoid going too far
-                            start = previousEnd+1;
+                            start = previousEnd + 1;
                         }
                     }
                     recovered = true;
                 }
             }
 
-            int end = start+chunk.length();
+            int end = start + chunk.length();
 
             // in case the last sentence is modified
-            if (end > text.length() && i == retList.size()-1)
+            if (end > text.length() && i == retList.size() - 1)
                 end = text.length();
 
             result.add(new OffsetPosition(start, end));
-            pos = start+chunk.length();
+            pos = start + chunk.length();
             if (recovered)
                 previousEnd += 1;
             else
