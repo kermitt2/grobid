@@ -179,8 +179,8 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                     }
                     end = start + outputStr.length();
                     if (start == -1) {
-                        System.out.println("- The starting offset is -1. We have tried to recover it, but probably something is still wrong. Please check. ");
-                        System.out.println(outputStr + " / " + textAdapted);
+                        LOGGER.warn("The starting offset is -1. We have tried to recover it, but probably something is still wrong. Please check. ");
+                        LOGGER.warn(outputStr + " / " + textAdapted);
                     }
                 } else {
                     end = start + sentenceClean.length();
@@ -188,6 +188,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             } else {
                 end = start + sentenceClean.length();
             }
+            previousStart = start;
 
             if (start > -1) {
                 previousEnd = end;
@@ -199,6 +200,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         return result;
     }
 
+    //Use getSentenceSpans
     @Deprecated
     protected static List<OffsetPosition> getSentenceOffsets(String text, List<String> retList) {
         // build offset positions from the string chunks
