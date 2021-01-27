@@ -1,6 +1,6 @@
 ## Project reference
 
-If you want to this work, please simply refer to the github project:
+If you want to cite this work, please simply refer to the github project:
 
 ```
 GROBID (2008-2021) <https://github.com/kermitt2/grobid>
