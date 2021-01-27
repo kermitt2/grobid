@@ -127,7 +127,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
     }
 
 
-    protected static List<OffsetPosition> getSentenceSpans(String text, List<String> retList) {
+    protected static List<OffsetPosition> getSentenceOffsets(String text, List<String> retList) {
         // build offset positions from the string chunks
         List<OffsetPosition> result = new ArrayList<>();
 
@@ -200,9 +200,9 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         return result;
     }
 
-    //Use getSentenceSpans
+    //Use getSentenceOffsets
     @Deprecated
-    protected static List<OffsetPosition> getSentenceOffsets(String text, List<String> retList) {
+    protected static List<OffsetPosition> getSentenceOffsetsOld(String text, List<String> retList) {
         // build offset positions from the string chunks
         List<OffsetPosition> result = new ArrayList<>();
         int pos = 0;
