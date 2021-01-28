@@ -22,9 +22,6 @@ RUN apt-get update && \
 
 WORKDIR /opt/grobid-source
 
-RUN mkdir -p .gradle
-VOLUME /opt/grobid-source/.gradle
-
 # gradle
 COPY gradle/ ./gradle/
 COPY gradlew ./
@@ -59,12 +56,6 @@ RUN apt-get update && \
 WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
-
-# below to allow logs to be written in the container
-# RUN mkdir -p logs
-
-VOLUME ["/opt/grobid/grobid-home/tmp"]
-RUN chmod 777 /opt/grobid/grobid-home/tmp
 
 ENV JAVA_OPTS=-Xmx4g
 
