@@ -41,7 +41,6 @@ COPY grobid-trainer/ ./grobid-trainer/
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
 WORKDIR /opt/grobid
-RUN cp /opt/grobid-source/grobid-core/build/libs/grobid-core-*-onejar.jar ./grobid-core-onejar.jar
 RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
     mv grobid-service* grobid-service
 RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
