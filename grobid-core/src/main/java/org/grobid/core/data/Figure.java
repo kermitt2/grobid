@@ -3,6 +3,7 @@ package org.grobid.core.data;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.base.Joiner;
 
 import org.grobid.core.GrobidModels;
 import org.apache.commons.collections4.CollectionUtils;
@@ -15,6 +16,7 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.tokenization.TaggingTokenCluster;
@@ -267,15 +269,37 @@ public class Figure {
         }
 
         if (config.isGenerateTeiCoordinates("figure")) {
-            String coords;
-            if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
-                GraphicObject go = getBitmapGraphicObjects().get(0);
-                coords = go.getBoundingBox().toString();
-            } else {
-                coords = LayoutTokensUtil.getCoordsString(getLayoutTokens());
+            List<BoundingBox> theBoxes = null;
+            // non graphic elements
+            if (getLayoutTokens() != null && getLayoutTokens().size() > 0) {
+                theBoxes = BoundingBoxCalculator.calculate(getLayoutTokens());
             }
 
-            if (coords != null) {
+            // if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
+            // -> note: this was restricted to the bitmap objects only... the bounding box calculation
+            // with vector graphics might need some double check
+
+            // here we bound all figure graphics in one single box (given that we can have hundred graphics
+            // in a single figure)
+            BoundingBox theGraphicsBox = null;
+            if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+                for (GraphicObject graphicObject : graphicObjects) {
+                    if (theGraphicsBox == null) {
+                        theGraphicsBox = graphicObject.getBoundingBox();
+                    } else {
+                        theGraphicsBox = theGraphicsBox.boundBoxExcludingAnotherPage(graphicObject.getBoundingBox());
+                    }
+                }
+            } 
+
+            if (theGraphicsBox != null) {
+                if (theBoxes == null)
+                    theBoxes = new ArrayList<>();
+                theBoxes.add(theGraphicsBox);
+            }
+
+            if (theBoxes != null && theBoxes.size() > 0) {
+                String coords = Joiner.on(";").join(theBoxes);
                 XmlBuilderUtils.addCoords(figureElement, coords);
             }
         }
