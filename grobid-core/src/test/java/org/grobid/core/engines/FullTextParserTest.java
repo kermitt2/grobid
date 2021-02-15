@@ -80,7 +80,6 @@ public class FullTextParserTest {
     }
 
     @Test
-    @Ignore(value="currently failing")
     public void testShouldOutputBlockStartForBlockStartingWithLineFeed() throws Exception {
         String blockText = "\nThis is a block";
         Document doc = Document.createFromText(blockText);

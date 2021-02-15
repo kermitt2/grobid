@@ -623,6 +623,7 @@ public class FullTextParser extends AbstractParser {
 					}
 				}
 
+                boolean isFirstBlockToken = true;
 	            while (n < lastPos) {
 					if (blockIndex == dp2.getBlockPtr()) {
 						//if (n > block.getEndToken()) {
@@ -740,7 +741,7 @@ public class FullTextParser extends AbstractParser {
 	                	features.alignmentStatus = "ALIGNEDLEFT";
 	                }
 
-	                if (n == 0) {
+	                if (isFirstBlockToken) {
 	                    features.lineStatus = "LINESTART";
 	                    // be sure that previous token is closing a line, except if it's a starting line
 	                    if (previousFeatures != null) {
@@ -917,6 +918,7 @@ public class FullTextParser extends AbstractParser {
 	                mm += text.length();
 	                nn += text.length();
 	                previousFeatures = features;
+                    isFirstBlockToken = false;
             	}
                 // lowest position of the block
                 lowestPos = block.getY() + block.getHeight();
