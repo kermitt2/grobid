@@ -1,11 +1,13 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.AfterClass;
@@ -14,12 +16,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.stream.Collectors;
 
 import static org.easymock.EasyMock.*;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
@@ -41,6 +45,18 @@ public class FullTextParserTest {
     @AfterClass
     public static void tearDown() {
         GrobidFactory.reset();
+    }
+
+    @Test
+    public void testShouldOutputBlockStartForRegularBlock() throws Exception {
+        String blockText = "This is a block";
+        Document doc = Document.createFromText(blockText);
+        Block block = doc.getBlocks().get(0);
+        List<LayoutToken> layoutTokens = block.getTokens();
+        SortedSet<DocumentPiece> documentParts = target.getDocumentPartsForLayoutTokens(doc, layoutTokens);
+        Pair<String, LayoutTokenization> dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts);
+        String[] lines = dataAndTokens.getLeft().split("\n");
+        assertThat("lines[0] fields", Arrays.asList(lines[0].split("\\s")), is(hasItem("BLOCKSTART")));
     }
 
 //    @Test
