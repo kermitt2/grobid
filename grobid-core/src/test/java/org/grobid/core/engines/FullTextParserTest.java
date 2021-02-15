@@ -4,6 +4,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
+import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
@@ -13,12 +14,17 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import static org.easymock.EasyMock.*;
@@ -28,6 +34,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 public class FullTextParserTest {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParserTest.class);
 
     private FullTextParser target;
 
@@ -47,14 +55,38 @@ public class FullTextParserTest {
         GrobidFactory.reset();
     }
 
+    public DocumentPiece getWholeDocumentPiece(Document doc) {
+        return new DocumentPiece(
+            new DocumentPointer(0, 0, 0),
+            new DocumentPointer(0, doc.getTokenizations().size() - 1, doc.getTokenizations().size() - 1)
+        );
+    }
+
+    public SortedSet<DocumentPiece> getWholeDocumentParts(Document doc) {
+        return new TreeSet<DocumentPiece>(Collections.singleton(
+            getWholeDocumentPiece(doc)
+        ));
+    }
+
     @Test
     public void testShouldOutputBlockStartForRegularBlock() throws Exception {
         String blockText = "This is a block";
         Document doc = Document.createFromText(blockText);
-        Block block = doc.getBlocks().get(0);
-        List<LayoutToken> layoutTokens = block.getTokens();
-        SortedSet<DocumentPiece> documentParts = target.getDocumentPartsForLayoutTokens(doc, layoutTokens);
+        SortedSet<DocumentPiece> documentParts = getWholeDocumentParts(doc);
         Pair<String, LayoutTokenization> dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts);
+        LOGGER.debug("data debug: {}", dataAndTokens.getLeft());
+        String[] lines = dataAndTokens.getLeft().split("\n");
+        assertThat("lines[0] fields", Arrays.asList(lines[0].split("\\s")), is(hasItem("BLOCKSTART")));
+    }
+
+    @Test
+    @Ignore(value="currently failing")
+    public void testShouldOutputBlockStartForBlockStartingWithLineFeed() throws Exception {
+        String blockText = "\nThis is a block";
+        Document doc = Document.createFromText(blockText);
+        SortedSet<DocumentPiece> documentParts = getWholeDocumentParts(doc);
+        Pair<String, LayoutTokenization> dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts);
+        LOGGER.debug("data debug: {}", dataAndTokens.getLeft());
         String[] lines = dataAndTokens.getLeft().split("\n");
         assertThat("lines[0] fields", Arrays.asList(lines[0].split("\\s")), is(hasItem("BLOCKSTART")));
     }
