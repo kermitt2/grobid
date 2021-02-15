@@ -308,14 +308,10 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    /**
-     * Process a simple segment of layout tokens with the full text model.
-     * Return null if provided Layout Tokens is empty or if structuring failed. 
-     */
-    public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
-        if (CollectionUtils.isEmpty(tokens))
-            return null;
-
+    public SortedSet<DocumentPiece> getDocumentPartsForLayoutTokens(
+        Document doc,
+        List<LayoutToken> tokens
+    ) {
         SortedSet<DocumentPiece> documentParts = new TreeSet<DocumentPiece>();
         // identify continuous sequence of layout tokens in the abstract
         int posStartPiece = -1;
@@ -352,6 +348,18 @@ public class FullTextParser extends AbstractParser {
             DocumentPiece piece = new DocumentPiece(dp1, dp2);
             documentParts.add(piece);
         }
+        return documentParts;
+    }
+
+    /**
+     * Process a simple segment of layout tokens with the full text model.
+     * Return null if provided Layout Tokens is empty or if structuring failed. 
+     */
+    public Pair<String, List<LayoutToken>> processShortNew(List<LayoutToken> tokens, Document doc) {
+        if (CollectionUtils.isEmpty(tokens))
+            return null;
+
+        SortedSet<DocumentPiece> documentParts = getDocumentPartsForLayoutTokens(doc, tokens);
 
         Pair<String, LayoutTokenization> featSeg = getBodyTextFeatured(doc, documentParts);
         String res = "";
