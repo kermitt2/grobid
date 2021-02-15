@@ -83,6 +83,11 @@ public class FullTextParserTest {
     public void testShouldOutputBlockStartForBlockStartingWithLineFeed() throws Exception {
         String blockText = "\nThis is a block";
         Document doc = Document.createFromText(blockText);
+        assertThat(
+            "doc.block[0].tokens[0].text",
+            doc.getBlocks().get(0).getTokens().get(0).getText(),
+            is("\n")
+        );
         SortedSet<DocumentPiece> documentParts = getWholeDocumentParts(doc);
         Pair<String, LayoutTokenization> dataAndTokens = FullTextParser.getBodyTextFeatured(doc, documentParts);
         LOGGER.debug("data debug: {}", dataAndTokens.getLeft());
