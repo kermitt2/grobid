@@ -92,10 +92,22 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			nodes.put(currentId,currentNode);
 			if (currentParentId != -1) {
 				DocumentNode father = nodes.get(currentParentId);
+                // Correction proposed by Luc Bougé @lucbouge
+                // If father is null, then one should not access any method of father.
+                /*************************
 				if (father == null)
 					System.out.println("Warning, father not yet encountered! id is " + currentParentId);
 				currentNode.setFather(father);
 				father.addChild(currentNode);
+                *************************/
+                if (father == null)
+					System.out.println("Warning, father not yet encountered! id is " + currentParentId);
+                else {
+				    currentNode.setFather(father);
+				    father.addChild(currentNode);
+                }
+                /************************/
+                // End of correction   
 			} else {
 				// parent is the root node
 				currentNode.setFather(root);
