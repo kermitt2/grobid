@@ -47,7 +47,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:8u212-jre-slim
+FROM openjdk:11-jre-slim
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libxml2 && \
@@ -56,8 +56,6 @@ RUN apt-get update && \
 WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
-
-ENV JAVA_OPTS=-Xmx4g
 
 # Add Tini
 ENV TINI_VERSION v0.18.0
