@@ -18,12 +18,9 @@ FROM openjdk:8u212-jdk as builder
 USER root
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2
+    apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
-
-RUN mkdir -p .gradle
-VOLUME /opt/grobid-source/.gradle
 
 # gradle
 COPY gradle/ ./gradle/
@@ -40,46 +37,31 @@ COPY grobid-trainer/ ./grobid-trainer/
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
+WORKDIR /opt/grobid
+RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
+    mv grobid-service* grobid-service
+RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
+    chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+RUN rm -rf grobid-source
+
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:8u212-jre-slim
+FROM openjdk:11-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2 unzip
-
-WORKDIR /opt
-
-COPY --from=builder /opt/grobid-source/grobid-core/build/libs/grobid-core-*-onejar.jar ./grobid/grobid-core-onejar.jar
-COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip ./grobid-service.zip
-COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip ./grobid-home.zip
-
-RUN unzip -o ./grobid-service.zip -d ./grobid && \
-    mv ./grobid/grobid-service-* ./grobid/grobid-service
-
-RUN unzip ./grobid-home.zip -d ./grobid && \
-    mkdir -p /opt/grobid/grobid-home/tmp
-
-RUN rm *.zip
-
-# below to allow logs to be written in the container
-# RUN mkdir -p logs
-
-VOLUME ["/opt/grobid/grobid-home/tmp"]
+    apt-get -y --no-install-recommends install libxml2 && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/grobid
 
-ENV JAVA_OPTS=-Xmx4g
+COPY --from=builder /opt/grobid .
 
 # Add Tini
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
-
-RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
-RUN chmod 777 /opt/grobid/grobid-home/tmp
-
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 
 ARG GROBID_VERSION
