@@ -21,12 +21,9 @@ FROM openjdk:8u275-jdk as builder
 USER root
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install apt-utils libxml2 
+    apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
-
-RUN mkdir -p .gradle
-VOLUME /opt/grobid-source/.gradle
 
 # gradle
 COPY gradle/ ./gradle/
@@ -39,11 +36,15 @@ COPY settings.gradle ./
 COPY grobid-home/ ./grobid-home/
 COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
-COPY grobid-trainer/ ./grobid-trainer/
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
-WORKDIR /opt
+WORKDIR /opt/grobid
+RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
+    mv grobid-service* grobid-service
+RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
+    chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+RUN rm -rf grobid-source
 
 # -------------------
 # build runtime image
@@ -60,33 +61,25 @@ ENV LANG C.UTF-8
 RUN apt-get update && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip curl \
     openjdk-8-jre-headless ca-certificates-java \
-#    git \
     musl gfortran \
     python3 python3-pip python3-setuptools python3-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /opt
+WORKDIR /opt/grobid
 
-COPY --from=builder /opt/grobid-source/grobid-core/build/libs/grobid-core-*-onejar.jar ./grobid/grobid-core-onejar.jar
-COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip ./grobid-service.zip
-COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip ./grobid-home.zip
+COPY --from=builder /opt/grobid .
 
-RUN unzip -o ./grobid-service.zip -d ./grobid && \
-    mv ./grobid/grobid-service-* ./grobid/grobid-service
-
-RUN unzip ./grobid-home.zip -d ./grobid && \
-    mkdir -p /opt/grobid/grobid-home/tmp
-RUN rm *.zip
 RUN rm -rf /opt/grobid/grobid-home/pdf2xml/lin-32
 RUN rm -rf /opt/grobid/grobid-home/pdf2xml/mac-64
 RUN rm -rf /opt/grobid/grobid-home/pdf2xml/win-*
 RUN rm -rf /opt/grobid/grobid-home/lib/lin-32
 RUN rm -rf /opt/grobid/grobid-home/lib/win-*
 
-# below to allow logs to be written in the container
+# below to allow logs to be written in the container (not advised for production!)
 # RUN mkdir -p logs
 
+# the following might not be necessary - but should result in faster temp file write than directly in the container
 VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 RUN python3 -m pip install pip --upgrade
@@ -98,13 +91,6 @@ RUN pip3 install requests delft==0.2.6
 RUN mkdir -p /data \
     && ln -s /data /opt/grobid/data \
     && ln -s /data ./data
-
-# install DeLFT by cloning the repo - only for dev time!
-#RUN git clone https://github.com/kermitt2/delft
-#WORKDIR /opt/delft
-#RUN pip3 install -r requirements.txt
-# cleaning useless delft data
-#RUN rm -rf data/sequenceLabelling data/textClassification data/test data/models/sequenceLabelling data/models/textClassification .git
 
 # disable python warnings (and fix logging)
 ENV PYTHONWARNINGS="ignore"
@@ -119,8 +105,8 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
-RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
-RUN chmod 777 /opt/grobid/grobid-home/tmp
+#RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
+#RUN chmod 777 /opt/grobid/grobid-home/tmp
 
 # install jep (and temporarily the matching JDK)
 ENV TEMP_JDK_HOME=/tmp/jdk-${JAVA_VERSION}
