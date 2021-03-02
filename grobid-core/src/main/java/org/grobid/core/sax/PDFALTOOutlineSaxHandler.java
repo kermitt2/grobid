@@ -32,6 +32,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 	private int currentParentId = -1;
 
 	private Map<Integer,DocumentNode> nodes = null;
+	private Map<Integer, Integer> labels = new HashMap<>();
 	
 	public PDFALTOOutlineSaxHandler(Document doc) {
 		this.doc = doc;
@@ -53,11 +54,14 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			java.lang.String qName) throws SAXException {
 
 		if (qName.equals("STRING")) {
-			label = getText();
+		    currentNode.setLabel(getText());
+            currentNode.setBoundingBox(box);
 		} else if (qName.equals("ITEM")) {
-			currentNode.setLabel(label);
-			currentNode.setBoundingBox(box);
-		}
+            box = null;
+            label = null;
+		} else if (qName.equals("TOCITEMLIST")) {
+		    currentParentId = -1;
+        }
 	}
 	
 	public void startElement(String namespaceURI, String localName,
@@ -66,7 +70,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			// this is the document root
 			root = new DocumentNode();
 			nodes = new HashMap<Integer,DocumentNode>();
-		} if (qName.equals("ITEM")) {
+		} else if (qName.equals("ITEM")) {
 			currentNode = new DocumentNode();
 			// get the node id 
 			int length = atts.getLength();
@@ -78,7 +82,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 				String value = atts.getValue(i);
 
 				if ((name != null) && (value != null)) {
-					if (name.equals("id")) {
+					if (name.equalsIgnoreCase("id")) {
 						try {
 							currentId = Integer.parseInt(value);
 						} catch(Exception e) {
@@ -88,12 +92,12 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 					}
 				}
 			}
-			//currentNode.setId(currentId);
+			currentNode.setId(currentId);
 			nodes.put(currentId,currentNode);
 			if (currentParentId != -1) {
 				DocumentNode father = nodes.get(currentParentId);
                 if (father == null)
-					System.out.println("Warning, father not yet encountered! id is " + currentParentId);
+					LOGGER.warn("Father not yet encountered! id is " + currentParentId);
                 else {
 				    currentNode.setFather(father);
 				    father.addChild(currentNode);
