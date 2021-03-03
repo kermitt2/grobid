@@ -91,7 +91,7 @@ public class CrossrefClient implements Closeable {
 			request.addListener(listener);
 		synchronized(this) {
 			// we should limite the number of active threads depending on crossref api limits
-			while(((ThreadPoolExecutor)executorService).getActiveCount()>=this.max_pool_size) {
+			while(((ThreadPoolExecutor)executorService).getActiveCount()>=this.getMax_pool_size()) {
 				try {
 					TimeUnit.MICROSECONDS.sleep(1);
 				} catch (InterruptedException e) {
