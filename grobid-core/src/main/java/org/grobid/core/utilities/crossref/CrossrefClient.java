@@ -77,7 +77,7 @@ public class CrossrefClient implements Closeable {
 	public void updateLimits(int iterations, int interval) {
 		if (this.limitAuto) {
 			//printLog(null, "Updating limits... " + iterations + " / " + interval);
-			this.setLimits(iterations / 2, interval);
+			this.setLimits(iterations, interval);
 		}
 	}
 	
