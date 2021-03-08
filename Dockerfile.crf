@@ -4,7 +4,8 @@
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
 
-## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION .
+## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION -f Dockerfile.crf .
+## docker build -t grobid/grobid:GROBID_VERSION --build-arg GROBID_VERSION=GROBID_VERSION -f Dockerfile.delft .
 ## docker run -t --rm -p 8080:8070 -p 8081:8071 {image_name}
 
 # To connect to the container with a bash shell
@@ -42,6 +43,10 @@ RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-servic
     mv grobid-service* grobid-service
 RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
     chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+
+# Adjust config
+RUN sed -i '/#Docker-ignore-log-start/,/#Docker-ignore-log-end/d'  grobid-service/config/config.yaml
+
 RUN rm -rf grobid-source
 
 # -------------------

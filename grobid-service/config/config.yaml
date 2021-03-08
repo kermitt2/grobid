@@ -31,6 +31,8 @@ logging:
     - type: console
       threshold: ALL
       timeZone: UTC
+# The following line is used to remove the logger in the docker image, please don't modify it
+#Docker-ignore-log-start
     - type: file
       currentLogFilename: logs/grobid-service.log
       threshold: ALL
@@ -38,3 +40,4 @@ logging:
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
       timeZone: UTC
+#Docker-ignore-log-end
