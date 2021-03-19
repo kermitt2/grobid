@@ -36,6 +36,15 @@ COPY settings.gradle ./
 COPY grobid-home/ ./grobid-home/
 COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
+COPY grobid-trainer/ ./grobid-trainer/
+
+# cleaning unused native libraries before packaging
+RUN rm -rf grobid-home/pdf2xml/lin-32
+RUN rm -rf grobid-home/pdf2xml/mac-64
+RUN rm -rf grobid-home/pdf2xml/win-*
+RUN rm -rf grobid-home/lib/lin-32
+RUN rm -rf grobid-home/lib/win-*
+RUN rm -rf grobid-home/lib/mac-64
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
@@ -75,12 +84,6 @@ RUN rm -rf /opt/grobid/grobid-home/pdf2xml/mac-64
 RUN rm -rf /opt/grobid/grobid-home/pdf2xml/win-*
 RUN rm -rf /opt/grobid/grobid-home/lib/lin-32
 RUN rm -rf /opt/grobid/grobid-home/lib/win-*
-
-# below to allow logs to be written in the container (not advised for production!)
-# RUN mkdir -p logs
-
-# the following might not be necessary - but should result in faster temp file write than directly in the container
-VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 RUN python3 -m pip install pip --upgrade
 

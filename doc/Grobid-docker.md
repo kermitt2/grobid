@@ -50,7 +50,7 @@ The process for retrieving and running the image is as follow:
 > docker pull grobid/grobid:${latest_grobid_version}
 ```
 
-- Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
+- Run the container:
 
 ```bash
 > docker run --rm --gpus all --init grobid/grobid:${latest_grobid_version}
@@ -61,7 +61,7 @@ The image will automatically uses the GPU and CUDA version available on your hos
 To specify to use only certain GPUs (see the [nvidia container toolkit user guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#gpu-enumeration) for more details):
 
 ```bash
-> docker run --rm --gpus '"device=1,2"' --init -p 8070:8080 -p 8071:8081 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus '"device=1,2"' --init -p 8080:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
 ```
 
 You can run the image on CPU by omitting the `-gpus` parameters. 
@@ -83,7 +83,7 @@ Grobid web services are then available as described in the [service documentatio
 The simplest way to pass a modified configuration to the docker image is to mount the property file `grobid.properties` when running the image. Modify the config file `grobid/grobid-home/config/grobid.properties` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.properties` file.
