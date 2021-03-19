@@ -203,7 +203,7 @@ subprojects {
     test {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
-        //  forkEvery = 1
+        forkEvery = 1
         maxHeapSize = "1024m"
     }
 
