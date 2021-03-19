@@ -35,6 +35,14 @@ COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
+# cleaning unused native libraries before packaging
+RUN rm -rf grobid-home/pdf2xml/lin-32
+RUN rm -rf grobid-home/pdf2xml/mac-64
+RUN rm -rf grobid-home/pdf2xml/win-*
+RUN rm -rf grobid-home/lib/lin-32
+RUN rm -rf grobid-home/lib/win-*
+RUN rm -rf grobid-home/lib/mac-64
+
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
 WORKDIR /opt/grobid

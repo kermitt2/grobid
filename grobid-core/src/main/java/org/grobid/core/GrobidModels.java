@@ -15,7 +15,7 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
  * @author Patrice Lopez
  */
 public enum GrobidModels implements GrobidModel {
-    AFFIILIATON_ADDRESS("affiliation-address"),
+    AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),

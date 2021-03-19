@@ -26,7 +26,7 @@ import java.util.List;
 public class AffiliationAddressTrainer extends AbstractTrainer {
 
     public AffiliationAddressTrainer() {
-        super(GrobidModels.AFFIILIATON_ADDRESS);
+        super(GrobidModels.AFFILIATION_ADDRESS);
     }
 
 	/**
