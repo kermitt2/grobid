@@ -21,9 +21,7 @@ public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListen
 	
 	@Override
 	public void run() {
-		try {	
-			client.checkLimits();
-			
+		try {
 			CrossrefClient.printLog(request, ".. executing");
 			
 			request.addListener(this);
