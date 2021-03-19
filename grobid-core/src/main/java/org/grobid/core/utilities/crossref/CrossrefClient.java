@@ -19,7 +19,11 @@ import org.slf4j.LoggerFactory;
  * Request pool to get data from api.crossref.org without exceeding limits
  * supporting multi-thread.
  *
- * @author Vincent Kaestle, Patrice
+ * Note: the provided interval for the query rate returned by CrossRef appeared to be note reliable, 
+ * so we have to use the rate limit (X-Rate-Limit-Interval) as a global parallel query limit, without 
+ * interval consideration.  
+ * See https://github.com/kermitt2/grobid/pull/725
+ * 
  */
 public class CrossrefClient implements Closeable {
 	public static final Logger logger = LoggerFactory.getLogger(CrossrefRequestTask.class);
@@ -55,6 +59,9 @@ public class CrossrefClient implements Closeable {
      * Hidden constructor
      */
     protected CrossrefClient() {
+    	// note: by default timeout with newCachedThreadPool is set to 60s, which might be too much for crossref usage,
+    	// hanging grobid significantly, so we might want to use rather a custom instance of ThreadPoolExecutor and set 
+    	// the timeout sifferently
 		this.executorService = Executors.newCachedThreadPool(r -> {
             Thread t = Executors.defaultThreadFactory().newThread(r);
             t.setDaemon(true);
@@ -71,13 +78,14 @@ public class CrossrefClient implements Closeable {
 	
 	public void setLimits(int iterations, int interval) {
 		this.setMax_pool_size(iterations);
-		// interval is not useful here ! we should wait termination of each thread
+		// interval is not usable anymore, we need to wait termination of threads independently from any time interval
 	}
 	
 	public void updateLimits(int iterations, int interval) {
 		if (this.limitAuto) {
 			//printLog(null, "Updating limits... " + iterations + " / " + interval);
 			this.setLimits(iterations, interval);
+			// note: interval not used anymore
 		}
 	}
 	
@@ -90,10 +98,10 @@ public class CrossrefClient implements Closeable {
 		if (listener != null)
 			request.addListener(listener);
 		synchronized(this) {
-			// we should limite the number of active threads depending on crossref api limits
-			while(((ThreadPoolExecutor)executorService).getActiveCount()>=this.getMax_pool_size()) {
+			// we limit the number of active threads to the crossref api dynamic limit returned in the response header
+			while(((ThreadPoolExecutor)executorService).getActiveCount() >= this.getMax_pool_size()) {
 				try {
-					TimeUnit.MICROSECONDS.sleep(1);
+					TimeUnit.MICROSECONDS.sleep(10);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
