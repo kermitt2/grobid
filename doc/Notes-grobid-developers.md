@@ -4,9 +4,11 @@ This page contains a set of notes for the Grobid developers:
 
 ### Release
 
+**Warning:** This release documentation will have to be updated because all the Bintray services will be deprecated on May 1st 2021. We will have to use Maven as in the old times. 
+
 In order to make a new release:  
 
-+ make sure that there are no additional models in the grobid-home, usually it is better to have a second cloned project **over ssh** for the release 
++ make sure that there are no additional models in the grobid-home. Best is to have a second cloned project **over ssh** for the release 
 
 + Make the release: 
 ```
@@ -33,6 +35,12 @@ mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
     
     > ./gradlew bintrayUpload
 ```
+
++ You're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
+
++ Update the docker image(s) on DockerHub with this new version (see the [GROBID docker](Grobid-docker.md) page)
+
++ Ensure that the different GROBID modules are updated to use this new release (in case they are not using the master/developer version). 
 
 ### Unit tests of Grobid Parsers
 
