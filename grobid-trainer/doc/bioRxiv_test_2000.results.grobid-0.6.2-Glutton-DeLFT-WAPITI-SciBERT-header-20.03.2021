@@ -2,6 +2,7 @@
 * CRF for all other models
 
 Note: this is better machine than for other evals, and 1 PDF only fails because no timeout here happens - the failing PDF is a "too many blocks" case that raise an interruption with the current "robustness" settings.  
+The too many block case is biorxiv-10k-test-2000/454355v1/454355v1.pdf with 199,917 blocks, max tolerated in default settings is 100,000.
 
 PDF processing 100% │████████████████│ 2000/2000 (0:19:39 / 0:00:00) 
 
