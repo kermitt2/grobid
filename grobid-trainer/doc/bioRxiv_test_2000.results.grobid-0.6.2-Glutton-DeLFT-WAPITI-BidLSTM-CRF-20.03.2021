@@ -1,30 +1,23 @@
 * BidLSTM-CRF-FEATURES for citation model
 * CRF for all other models
 
-
 PDF processing 100% │████████████████│ 2000/2000 (0:28:28 / 0:00:00) 
 
 -------------> GROBID failed on 2 PDF
 
 2000 PDF files processed in 1721.246 seconds, 0.860623 seconds per PDF file
 
-
-
-Evaluation header  74% │█████████▋   │ 1495/2000 (0:00:50 / 0:00:16)                             warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
 Evaluation header 100% │█████████████│ 2000/2000 (0:01:06 / 0:00:00) 
 
-> :grobid-trainer:jatsEval
-Evaluation citation  75% │████████▎  │ 1505/2000 (0:11:50 / 0:03:53)                             warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
 Evaluation citation 100% │███████████│ 2000/2000 (0:15:28 / 0:00:00) 
 
-> :grobid-trainer:jatsEval
-Evaluation full text  73% │███████▎  │ 1465/2000 (0:00:24 / 0:00:08)                             warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
 Evaluation full text 100% │██████████│ 2000/2000 (0:00:32 / 0:00:00) 
+
 Evaluation metrics produced in 1027.311 seconds
-> :grobid-trainer:jatsEval
+
 ======= Header metadata ======= 
 
-Evaluation on 1999 random PDF files out of 1998 PDF (ratio 1.0).
+Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).
 
 ======= Strict Matching ======= (exact matches)
 
