@@ -19,6 +19,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 15.85 | 15.59 | 15.72 | 1911 |
@@ -35,6 +36,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 59.2 | 58.24 | 58.72 | 1911 |
@@ -51,6 +53,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 86.81 | 85.4 | 86.1 | 1911 |
@@ -67,6 +70,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 82.23 | 80.9 | 81.56 | 1911 |
@@ -102,6 +106,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 84.49 | 74.79 | 79.35 | 85778 |
@@ -121,6 +126,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 85.18 | 75.41 | 80 | 85778 |
@@ -140,6 +146,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 89.89 | 79.57 | 84.42 | 85778 |
@@ -159,6 +166,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 87.3 | 77.28 | 81.99 | 85778 |
@@ -239,6 +247,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | figure_title | 27.92 | 21.75 | 24.45 | 7058 |
@@ -256,6 +265,7 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | figure_title | 73.19 | 57 | 64.09 | 7058 |

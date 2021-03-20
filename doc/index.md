@@ -39,7 +39,7 @@
 
 * [Description](Benchmarking.md)
 * [Evaluation PubMed Central](Benchmarking-pmc.md)
-* [Evaluation bioRxiv](Benchmarking-bioRxiv.md)
+* [Evaluation bioRxiv](Benchmarking-biorxiv.md)
 
 <h3>Annotation guidelines</h3>
 

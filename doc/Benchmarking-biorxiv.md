@@ -21,6 +21,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 2.19 | 2.06 | 2.12 | 1988 |
@@ -37,6 +38,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 55.12 | 51.96 | 53.5 | 1988 |
@@ -53,6 +55,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 73.91 | 69.67 | 71.72 | 1988 |
@@ -69,6 +72,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | abstract | 70.7 | 66.65 | 68.62 | 1988 |
@@ -104,6 +108,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 86.86 | 70.58 | 77.88 | 97092 |
@@ -126,6 +131,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 88.12 | 71.61 | 79.01 | 97092 |
@@ -148,6 +154,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Levenshtein Matching (Minimum Levenshtein distance at 0.8)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 92.75 | 75.36 | 83.16 | 97092 |
@@ -170,6 +177,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | authors | 89.91 | 73.06 | 80.61 | 97092 |
@@ -253,6 +261,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Strict Matching (exact matches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | figure_title | 3.29 | 2.73 | 2.99 | 13147 |
@@ -270,6 +279,7 @@ Evaluation on 1998 random PDF files out of 1998 PDF (ratio 1.0).
 #### Soft Matching (ignoring punctuation, case and space characters mismatches)
 
 **Field-level results**
+
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
 | figure_title | 64.44 | 53.45 | 58.43 | 13147 |
