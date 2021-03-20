@@ -33,14 +33,12 @@ Note the default version is running on port `8070`, however it can be mapped on 
 ```
 
 Access the service:
-  - open the browser at the address `http://localhost:8070`
-  - the health check will be accessible at the address `http://localhost:8071`
+  - open the browser at the address `http://localhost:8080`
+  - the health check will be accessible at the address `http://localhost:8081`
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
 ##CRF and Deep Learning image
-
-**The image is not available on DockerHub yet ! Home-based internet connection not stable enough, we are working on it :) In the meantime you can rebuild the image as indicated [below](#building-the-crf-and-deep-learning-image).** 
 
 The process for retrieving and running the image is as follow:
 
@@ -48,6 +46,12 @@ The process for retrieving and running the image is as follow:
 
 ```bash
 > docker pull grobid/grobid:${latest_grobid_version}
+```
+
+Current latest version:
+
+```bash
+> docker pull grobid/grobid:0.6.2
 ```
 
 - Run the container:
@@ -73,8 +77,8 @@ Note the default version is running on port `8070`, however it can be mapped on 
 ```
 
 Access the service:
-  - open the browser at the address `http://localhost:8070`
-  - the health check will be accessible at the address `http://localhost:8071`
+  - open the browser at the address `http://localhost:8080`
+  - the health check will be accessible at the address `http://localhost:8081`
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
