@@ -105,7 +105,7 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 ## How to cite
 
-If you want to this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want to cite this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
 
 ```bibtex
 @misc{GROBID,
