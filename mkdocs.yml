@@ -30,7 +30,7 @@ pages:
   - Benchmarking:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
-    - 'Model-level evaluations': 'Benchmarking-models.md'
+    - 'bioRxiv': 'Benchmarking-biorxiv.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'
