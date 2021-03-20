@@ -10,7 +10,7 @@ More recent versions of these benchmarks with variants and **Deep Learning model
 
 Evaluation on 1998 PDF preprints out of 2000 (1 PDF parsing timeout and 1 PDF "too many blocks" interruption).
 
-Runtime for processing 2000 PDF: **1321s** (1,51 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1800 euros).
+Runtime for processing 2000 PDF: **1321s** (1,51 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1600 euros).
 
 
 

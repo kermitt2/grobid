@@ -12,7 +12,7 @@
 
 ## GROBID documentation
 
-Visit the [GROBID documentation](https://grobid.readthedocs.org) for more detailed information.
+Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detailed information.
 
 ## Summary
 

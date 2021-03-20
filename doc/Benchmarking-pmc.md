@@ -10,7 +10,7 @@ More recent versions of these benchmarks with variants and **Deep Learning model
 
 Evaluation on 1943 random PDF PMC files out of 1943 PDF from 1943 different journals (0 PDF parsing failure).
 
-Runtime for processing 1943 PDF: **836s** (2,33 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1800 euros).
+Runtime for processing 1943 PDF: **836s** (2,33 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1600 euros).
 
 ## Header metadata 
 
