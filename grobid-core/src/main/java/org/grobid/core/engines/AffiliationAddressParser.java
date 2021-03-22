@@ -23,7 +23,7 @@ public class AffiliationAddressParser extends AbstractParser {
     public Lexicon lexicon = Lexicon.getInstance();
 
     public AffiliationAddressParser() {
-        super(GrobidModels.AFFIILIATON_ADDRESS);
+        super(GrobidModels.AFFILIATION_ADDRESS);
     }
 
     public ArrayList<Affiliation> processing(String input) {

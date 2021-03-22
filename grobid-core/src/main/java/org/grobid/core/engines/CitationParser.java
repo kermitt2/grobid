@@ -62,6 +62,9 @@ public class CitationParser extends AbstractParser {
         this.parsers = parsers;
     }
 
+    /**
+     * Process one single raw reference string
+     */ 
     public BiblioItem processingString(String input, int consolidate) {
         List<String> inputs = new ArrayList<>();
         inputs.add(input);
@@ -72,6 +75,10 @@ public class CitationParser extends AbstractParser {
             return null;
     }
 
+    /**
+     * Process a list of raw reference strings by taking advantage of batch processing
+     * when a DeLFT deep learning model is used
+     */ 
     public List<BiblioItem> processingStringMultiple(List<String> inputs, int consolidate) {
         if (inputs == null || inputs.size() == 0)
             return null;
@@ -100,6 +107,9 @@ public class CitationParser extends AbstractParser {
         return results;
     }
 
+    /**
+     * Process one single raw reference string tokenized as layout objects
+     */ 
     public BiblioItem processingLayoutToken(List<LayoutToken> tokens, int consolidate) {
         List<List<LayoutToken>> tokenList = new ArrayList<>();
         tokenList.add(tokens);
@@ -110,6 +120,10 @@ public class CitationParser extends AbstractParser {
             return null;
     }
 
+    /**
+     * Process a list of raw reference string, each one tokenized as layout objects, and taking advantage 
+     * of batch processing when a DeLFT deep learning model is used
+     */ 
     public List<BiblioItem> processingLayoutTokenMultiple(List<List<LayoutToken>> tokenList, int consolidate) {
         if (tokenList == null || tokenList.size() == 0)
             return null;

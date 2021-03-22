@@ -19,7 +19,7 @@ public enum GrobidModels implements GrobidModel {
     // models are declared with a enumerated unique name associated to a **folder name** for the model
     // the folder name is where we will find the model implementation and its resources under grobid-home
 
-    AFFIILIATON_ADDRESS("affiliation-address"),
+    AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),

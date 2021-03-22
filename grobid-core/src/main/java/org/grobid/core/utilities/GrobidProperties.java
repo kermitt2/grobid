@@ -89,7 +89,9 @@ public class GrobidProperties {
      * If no one is set, then it creates one.
      */
     public static GrobidProperties getInstance(GrobidHomeFinder grobidHomeFinder) {
-        grobidHome = grobidHomeFinder.findGrobidHomeOrFail();
+        synchronized (GrobidProperties.class) {
+            grobidHome = grobidHomeFinder.findGrobidHomeOrFail();
+        }
         return getInstance();
     }
 

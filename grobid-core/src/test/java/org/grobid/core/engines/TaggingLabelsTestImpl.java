@@ -4,7 +4,9 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Test;
+import org.junit.BeforeClass;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
@@ -14,6 +16,11 @@ import static org.junit.Assert.assertThat;
  * Created by lfoppiano on 29/09/16.
  */
 public class TaggingLabelsTestImpl {
+
+    @BeforeClass
+    public static void init() {
+        GrobidProperties.getInstance();
+    }
 
     @Test
     public void testTaggingLabel_StandardLabelSection() throws Exception {

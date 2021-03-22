@@ -155,11 +155,13 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					
 					message.status = response.getStatusLine().getStatusCode();
 					
+                    // note: header field names are case insensitive
 					Header limitIntervalHeader = response.getFirstHeader("X-Rate-Limit-Interval");
 					Header limitLimitHeader = response.getFirstHeader("X-Rate-Limit-Limit");
-					if (limitIntervalHeader != null && limitLimitHeader != null)
-						message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
-					
+					if (limitIntervalHeader != null && limitLimitHeader != null) {
+					    message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
+                    }
+					    
 					if (message.status < 200 || message.status >= 300) {
 						message.errorMessage = response.getStatusLine().getReasonPhrase();
 						notifyListeners(message);

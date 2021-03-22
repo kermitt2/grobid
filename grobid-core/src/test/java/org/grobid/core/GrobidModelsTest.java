@@ -21,7 +21,7 @@ public class GrobidModelsTest {
     @Test
     public void testGrobidModelsEnum_StandardModel_affiliation() throws Exception {
 
-        GrobidModel model = GrobidModels.AFFIILIATON_ADDRESS;
+        GrobidModel model = GrobidModels.AFFILIATION_ADDRESS;
 
         assertThat(model.getFolderName(), is("affiliation-address"));
         assertThat(model.getModelName(), is("affiliation-address"));

@@ -4,7 +4,9 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Test;
+import org.junit.BeforeClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +22,14 @@ public class TaggingTokenSynchronizerTest {
     public static final String P = "<paragraph>";
     public static final String F = "<figure>";
 
+    @BeforeClass
+    public static void init() {
+        GrobidProperties.getInstance();
+    }
+
     @Test
     public void testBasic() {
-        TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(GrobidModels.FULLTEXT,
+        TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(GrobidModels.modelFor("fulltext"),
                 generateResult(p("This", P), p("Figure", F)), toks("This", " ", "Figure")
         );
 
@@ -43,7 +50,7 @@ public class TaggingTokenSynchronizerTest {
 
     @Test(expected = IllegalStateException.class)
     public void testFailure() {
-        TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(GrobidModels.FULLTEXT,
+        TaggingTokenSynchronizer synchronizer = new TaggingTokenSynchronizer(GrobidModels.modelFor("fulltext"),
                 generateResult(p("This", P), p("Figure", F)), toks("This", " ", "Fig")
         );
 
