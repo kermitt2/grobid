@@ -43,6 +43,9 @@ RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
 RUN rm -rf grobid-home/lib/mac-64
 
+# cleaning Delft models
+RUN rm -rf grobid-home/models/*-BidLSTM_CRF*
+
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
 WORKDIR /opt/grobid
