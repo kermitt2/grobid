@@ -114,7 +114,9 @@ public class GluttonRequest<T extends Object> extends Observable {
                     url += ":" + portInt;
                 }
             }
-            URIBuilder uriBuilder = new URIBuilder("http://" + url + BASE_PATH);
+            String protocol = GrobidProperties.getInstance().getGluttonType();
+
+            URIBuilder uriBuilder = new URIBuilder(protocol + "://" + url + BASE_PATH);
             
             //String path = BASE_PATH;
             //uriBuilder.setPath(path);

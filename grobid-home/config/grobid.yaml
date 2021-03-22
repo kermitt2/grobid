@@ -28,6 +28,7 @@ grobid:
     service: "crossref"
     #service: "glutton"
     glutton:
+      type: "https"
       host: "cloud.science-miner.com/glutton"
       port: 
       #host: "localhost"

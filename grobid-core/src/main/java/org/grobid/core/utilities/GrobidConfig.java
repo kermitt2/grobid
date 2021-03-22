@@ -54,6 +54,7 @@ public class GrobidConfig {
     }
 
     static class HostParameters {
+        public String type;
         public String host;
         public int port;
     }

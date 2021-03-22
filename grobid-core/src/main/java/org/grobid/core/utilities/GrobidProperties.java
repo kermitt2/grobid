@@ -90,7 +90,9 @@ public class GrobidProperties {
      */
     public static GrobidProperties getInstance(GrobidHomeFinder grobidHomeFinder) {
         synchronized (GrobidProperties.class) {
-            grobidHome = grobidHomeFinder.findGrobidHomeOrFail();
+            if (grobidHome == null) {
+                grobidHome = grobidHomeFinder.findGrobidHomeOrFail();
+            }
         }
         return getInstance();
     }
@@ -358,6 +360,14 @@ public class GrobidProperties {
             return null;
         else
             return Integer.valueOf(grobidConfig.grobid.consolidation.glutton.port);
+    }
+
+    public static String getGluttonType() {
+        if (grobidConfig.grobid.consolidation.glutton.type == null || grobidConfig.grobid.consolidation.glutton.type.trim().length() == 0) {
+            // defaulting with http protocol
+            return "http";
+        }
+        return grobidConfig.grobid.consolidation.glutton.type;
     }
 
     public static boolean useELMo(final String modelName) {
