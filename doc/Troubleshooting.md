@@ -14,7 +14,7 @@ The process ran without any crash during ~7 days at this rate (11.3M PDF process
 
  - if the server has 8-10 threads available, you can use the default settings of the docker image, otherwise you would rather need to build and start the service yourself to tune the parameters
  - keep the concurrency at the client (number of simultaneous calls) slightly higher than the available number of threads at the server side, for instance if the server has 16 threads, use a concurrency between 20 and 24 (it's the option `n` in the above mentioned clients)
- - in `grobid/grobid-home/grobid.properties`, set the property `org.grobid.max.connections` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine)
+ - in `grobid/grobid-home/grobid.yaml`, set the parameter `max_connections` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine)
  - set `modelPreload` to `true` in `grobid/grobid-service/config/config.yaml`, it will avoid some strange behavior at startup
  - in the query, consolidateHeader can be `1` or `2` if you are using the CrossRef consolidation. It significantly improves the accuracy and add useful metadata.
  - If you want to consolidate all the bibliographical references and use `consolidateCitations` as `1` or `2`, CrossRef query rate limit will avoid scale to more than 1 document per second... For scaling the bibliographical reference resolution, you will need to use a [local consolidation service](https://github.com/kermitt2/biblio-glutton). 
@@ -25,11 +25,11 @@ See [full thread](https://github.com/kermitt2/grobid/issues/443).
 ### Memory constraints and Out of Memory errors
 
 In case of running on limited memory hardware, there are various ways to deal with memory constraints in Grobid:
-- reduce the number of parallel threads on server side in grobid/grobid-home/config/grobid.properties change the property org.grobid.max.connections (default is `10`, this is the max size of the thread pool that is reported in the logs)
+- reduce the number of parallel threads on server side in grobid/grobid-home/config/grobid.yaml change the parameter `max_connections` (default is `10`, this is the max size of the thread pool that is reported in the logs)
 
 - reduce the number of parallel processing at client side: this is the parameter `n` in the grobid python client command line
 
-- reduce the maximum amount of memory dedicated to the PDF parsing by pdfalto: in `grobid/grobid-home/config/grobid.properties` change the property `grobid.3rdparty.pdf2xml.memory.limit.mbto` a lower amount (note: not too low, PDF parsing remains memory-hungry).
+- reduce the maximum amount of memory dedicated to the PDF parsing by pdfalto: in `grobid/grobid-home/config/grobid.yaml` change the parameter `memory_limit_mb` a lower amount (note: not too low, PDF parsing remains memory-hungry).
 
 
 ### Windows related issues 

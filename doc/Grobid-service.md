@@ -172,7 +172,7 @@ Response status codes:
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service.
 
-The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid property file (under `grobid-home/config/grobid.properties`). As of August 2020, available segmenters are [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect) (recommended for scientific articles after evaluation) and the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter).
+The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid configuration file (under `grobid-home/config/grobid.yaml`). As of August 2020, available segmenters are [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect) (recommended for scientific articles after evaluation) and the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter).
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
@@ -694,19 +694,20 @@ The Grobid RESTful API provides a very efficient way to use the library out of t
 
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading.
 
-Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default `10`) following the number of cores/threads available on your server:
+Setting the maximum number of parallel processing is done in the GROBID configuration file `grobid-home/config/grobid.yaml`. Adjust this number (default `10`) following the number of cores/threads available on your server:
 
-```INI
-#------------------- start: pooling -------------------
-# Maximum parallel connections allowed
-org.grobid.max.connections=10
+```yaml
+grobid:
+  # Maximum parallel connections allowed
+  max_connections: 10  
 ```
 
 The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the threads present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client:
 
-```INI
-# Maximum time wait to get a connection when the pool is full (in seconds)
-org.grobid.pool.max.wait=1
+```yaml
+grobid:
+  # maximum time wait to get a connection when the pool is full (in seconds)
+  pool_max_wait: 1
 ```
 
 When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server.
