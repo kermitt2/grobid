@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Daniel</forename>
+								 <middlename>L</middlename>.
+								 <surname>BowlingID</surname>
+								 <marker>1,2☯ *</marker>,
+							</persName>
+							<persName>
+								 <forename>Jacob</forename>
+								 <middlename>C</middlename>.
+								 <surname>DunnID</surname>
+								 <marker>2,3,4☯</marker> ,
+							</persName>
+							<persName>
+								 <forename>Jeroen</forename>
+								 <middlename>B</middlename>.
+								 <surname>Smaers</surname>
+								 <marker>5,6</marker> ,
+							</persName>
+							<persName>
+								 <forename>Maxime</forename>
+								 <surname>GarciaID</surname>
+								 <marker>2,7</marker> ,
+							</persName>
+							<persName>
+								 <forename>Asha</forename>
+								 <surname>Sato</surname>
+								 <marker>8</marker> ,
+							</persName>
+							<persName>
+								 <forename>Georg</forename>
+								 <surname>HantkeID</surname>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Stephan</forename>
+								 <surname>Handschuh</surname>
+								 <marker>10</marker> ,
+							</persName>
+							<persName>
+								 <forename>Sabine</forename>
+								 <surname>Dengg</surname>
+								 <marker>11</marker> ,
+							</persName>
+							<persName>
+								 <forename>Max</forename>
+								 <surname>KerneyID</surname>
+								 <marker>3</marker> ,
+							</persName>
+							<persName>
+								 <forename>Andrew</forename>
+								 <middlename>C</middlename>.
+								 <surname>Kitchener</surname>
+								 <marker>9</marker> ,
+							</persName>
+							<persName>
+								 <forename>Michaela</forename>
+								 <surname>GumpenbergerID</surname>
+								 <marker>11</marker> ,
+							</persName>
+							<persName>
+								 <forename>W</forename>.
+								 <middlename>Tecumseh</middlename>
+								 <surname>FitchID</surname>
+								 <marker>2 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

@@ -2,6 +2,7 @@ package org.grobid.core.utilities;
 
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.SentenceDetectorFactory;
+import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 
 import java.util.*;
@@ -76,6 +77,27 @@ public class SentenceUtilities {
     }
 
     /**
+     * Basic run for sentence identification with a specified language to be considered when segmenting, 
+     * return the offset positions of the identified sentences
+     *
+     * @param text
+     *            text to segment into sentences
+     * @param lang 
+     *            specified language to be used when segmenting text  
+     * @return list of offset positions for the identified sentence, relative to the input text
+     */
+    public List<OffsetPosition> runSentenceDetection(String text, Language lang) {
+        if (text == null)
+            return null;
+        try {
+            return sdf.getInstance().detect(text, lang);
+        } catch (Exception e) {
+            LOGGER.warn("Cannot detect sentences. ", e);
+            return null;
+        }
+    }
+
+    /**
      * Run for sentence identification with some forbidden span constraints, return the offset positions of the 
      * identified sentences without sentence boundaries within a forbidden span (typically a reference marker
      * and we don't want a sentence end/start in the middle of that).
@@ -87,7 +109,7 @@ public class SentenceUtilities {
      * @return list of offset positions for the identified sentence, relative to the input text
      */
     public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden) {
-        return runSentenceDetection(text, forbidden, null);
+        return runSentenceDetection(text, forbidden, null, null);
     }
 
     /**
@@ -103,13 +125,15 @@ public class SentenceUtilities {
      * @param textLayoutTokens
      *            list of LayoutToken objects from which the text has been created, if this list is null
      *            we consider that we have a pure textual input (e.g. text is not from a PDF)
+     * @param lang 
+     *            specified language to be used when segmenting text  
      * @return list of offset positions for the identified sentence, relative to the input text
      */
-    public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden, List<LayoutToken> textLayoutTokens) {
+    public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden, List<LayoutToken> textLayoutTokens, Language lang) {
         if (text == null)
             return null;
         try {
-            List<OffsetPosition> sentencePositions = sdf.getInstance().detect(text);
+            List<OffsetPosition> sentencePositions = sdf.getInstance().detect(text, lang);
 
             // to be sure, we sort the forbidden positions
             if (forbidden == null)

@@ -109,7 +109,9 @@ public class GrobidProperties {
      * If no one is set, then it creates one. {@inheritDoc #GrobidProperties()}
      */
     public static GrobidProperties getInstance(GrobidHomeFinder grobidHomeFinder) {
-        GROBID_HOME_PATH = grobidHomeFinder.findGrobidHomeOrFail();
+        synchronized (GrobidProperties.class) {
+            GROBID_HOME_PATH = grobidHomeFinder.findGrobidHomeOrFail();
+        }
         return getInstance();
     }
 
@@ -173,6 +175,10 @@ public class GrobidProperties {
 
     public static File getGrobidHomePath() {
         return GROBID_HOME_PATH;
+    }
+
+    public static String getGrobidHome() {
+        return GROBID_HOME_PATH.getPath();
     }
 
     /**

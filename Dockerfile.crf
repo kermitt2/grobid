@@ -18,12 +18,9 @@ FROM openjdk:8u212-jdk as builder
 USER root
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2
+    apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
-
-RUN mkdir -p .gradle
-VOLUME /opt/grobid-source/.gradle
 
 # gradle
 COPY gradle/ ./gradle/
@@ -38,70 +35,51 @@ COPY grobid-core/ ./grobid-core/
 COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
+# cleaning unused native libraries before packaging
+RUN rm -rf grobid-home/pdf2xml/lin-32
+RUN rm -rf grobid-home/pdf2xml/mac-64
+RUN rm -rf grobid-home/pdf2xml/win-*
+RUN rm -rf grobid-home/lib/lin-32
+RUN rm -rf grobid-home/lib/win-*
+RUN rm -rf grobid-home/lib/mac-64
+
+# cleaning Delft models
+RUN rm -rf grobid-home/models/*-BidLSTM_CRF*
+
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
+WORKDIR /opt/grobid
+RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
+    mv grobid-service* grobid-service
+RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
+    chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+RUN rm -rf grobid-source
 
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:8u212-jre-slim
+FROM openjdk:11-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2 unzip
-
-WORKDIR /opt
-
-COPY --from=builder /opt/grobid-source/grobid-core/build/libs/grobid-core-*-onejar.jar ./grobid/grobid-core-onejar.jar
-COPY --from=builder /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip ./grobid-service.zip
-COPY --from=builder /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip ./grobid-home.zip
-
-RUN unzip -o ./grobid-service.zip -d ./grobid && \
-    mv ./grobid/grobid-service-* ./grobid/grobid-service
-
-RUN unzip ./grobid-home.zip -d ./grobid && \
-    mkdir -p /opt/grobid/grobid-home/tmp
-
-RUN rm *.zip
-
-# below to allow logs to be written in the container
-# RUN mkdir -p logs
-
-VOLUME ["/opt/grobid/grobid-home/tmp"]
+    apt-get -y --no-install-recommends install libxml2 && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/grobid
 
-ENV JAVA_OPTS=-Xmx4g
+COPY --from=builder /opt/grobid .
 
 # Add Tini
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
-
 CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
 
 ARG GROBID_VERSION
 
 LABEL \
-    authors="Luca Foppiano <luca.foppiano@inria.fr>, Patrice Lopez <patrice.lopez@science-miner.org>" \
-    org.label-schema.name="Grobid" \
+    authors="The contributors" \
+    org.label-schema.name="GROBID" \
     org.label-schema.description="Image with GROBID service" \
     org.label-schema.url="https://github.com/kermitt2/grobid" \
     org.label-schema.version=${GROBID_VERSION}
-
-## Docker tricks:
-
-# - remove all stopped containers
-# > docker rm $(docker ps -a -q)
-
-# - remove all unused images
-# > docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
-
-# - remove all untagged images
-# > docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
-
-# - "Cannot connect to the Docker daemon. Is the docker daemon running on this host?"
-# > docker-machine restart
-
-RUN chmod -R 755 /opt/grobid/grobid-home/pdf2xml 
-RUN chmod 777 /opt/grobid/grobid-home/tmp

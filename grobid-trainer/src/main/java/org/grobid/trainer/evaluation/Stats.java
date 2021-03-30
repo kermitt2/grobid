@@ -293,7 +293,7 @@ public final class Stats {
         return Math.min(1.0, cumulated_f1 / totalValidFields);
     }
 
-    public String getOldReport() {
+    public String getTextReport() {
         computeMetrics();
 
         StringBuilder report = new StringBuilder();
@@ -346,7 +346,47 @@ public final class Stats {
             String.valueOf(supportSum)));
 
         return report.toString();
+    }
 
+    public String getMarkDownReport() {
+        computeMetrics();
+
+        StringBuilder report = new StringBuilder();
+        report.append("\n| label            |  precision |   recall  |     f1     | support |\n");
+        report.append("|---               |---         |---        |---         |---      |\n");
+
+        long supportSum = 0;
+
+        for (String label : getLabels()) {
+            if (label.equals("<other>") || label.equals("base") || label.equals("O")) {
+                continue;
+            }
+
+            LabelStat labelStat = getLabelStat(label);
+            long support = labelStat.getSupport();
+            report.append("| "+label+" | "+
+                TextUtilities.formatTwoDecimals(labelStat.getPrecision() * 100)+" | "+
+                TextUtilities.formatTwoDecimals(labelStat.getRecall() * 100)   +" | "+
+                TextUtilities.formatTwoDecimals(labelStat.getF1Score() * 100)  +" | "+
+                String.valueOf(support)+" |\n");
+            supportSum += support;
+        }
+
+        report.append("|                  |            |           |            |         |\n");
+
+        report.append("| **all fields (micro avg.)** | **"+
+            TextUtilities.formatTwoDecimals(getMicroAveragePrecision() * 100)+"** | **"+
+            TextUtilities.formatTwoDecimals(getMicroAverageRecall() * 100)+"** | **"+
+            TextUtilities.formatTwoDecimals(getMicroAverageF1() * 100)+"** | "+
+            String.valueOf(supportSum)+" |\n");
+
+        report.append("| all fields (macro avg.) | "+
+            TextUtilities.formatTwoDecimals(getMacroAveragePrecision() * 100)+" | "+
+            TextUtilities.formatTwoDecimals(getMacroAverageRecall() * 100)+" | "+
+            TextUtilities.formatTwoDecimals(getMacroAverageF1() * 100)+" | "+
+            String.valueOf(supportSum)+" |\n\n");
+
+        return report.toString();
     }
 }
 

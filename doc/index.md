@@ -39,7 +39,7 @@
 
 * [Description](Benchmarking.md)
 * [Evaluation PubMed Central](Benchmarking-pmc.md)
-* [Model-level evaluations](Benchmarking-models.md)
+* [Evaluation bioRxiv](Benchmarking-biorxiv.md)
 
 <h3>Annotation guidelines</h3>
 
@@ -59,7 +59,6 @@
 
 <h3>Developer notes</h3>
 
-* [Developers guide](Developer-guide.md)
 * [Notes for the Grobid Developers](Notes-grobid-developers.md)
 * [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)

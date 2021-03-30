@@ -6,6 +6,7 @@ import org.jruby.embed.LocalContextScope;
 import org.jruby.embed.LocalVariableBehavior;
 
 import org.grobid.core.lang.SentenceDetector;
+import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.GrobidProperties;
 
@@ -48,8 +49,17 @@ public class PragmaticSentenceDetector implements SentenceDetector {
 
     @Override
     public List<OffsetPosition> detect(String text) {
+        return detect(text, new Language(Language.EN));  
+    }
+
+    @Override
+    public List<OffsetPosition> detect(String text, Language lang) {
         instance.put("text", text);
-        String script = "ps = PragmaticSegmenter::Segmenter.new(text: text, clean: false)\nps.segment";
+        String script = null;
+        if (lang == null || "en".equals(lang.getLang()))
+            script = "ps = PragmaticSegmenter::Segmenter.new(text: text, clean: false)\nps.segment";
+        else
+            script = "ps = PragmaticSegmenter::Segmenter.new(text: text, language: '" + lang.getLang() + "', clean: false)\nps.segment";
         Object ret = instance.runScriptlet(script);
 
 //System.out.println(text);

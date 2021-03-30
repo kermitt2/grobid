@@ -4468,6 +4468,8 @@ public class BiblioItem {
                                     // should we also check the country ? affiliation?
                                     if (StringUtils.isNotBlank(auto.getMiddleName()) && (StringUtils.isBlank(aut.getMiddleName())))
                                         aut.setMiddleName(auto.getMiddleName());
+                                    if (StringUtils.isNotBlank(auto.getORCID()) && (StringUtils.isBlank(aut.getORCID())))
+                                        aut.setORCID(auto.getORCID());
                                 }
                             }
                         }

@@ -135,7 +135,7 @@ public class Table extends Figure {
                     }
 
                     if (desc != null && config.isWithSentenceSegmentation()) {
-                        formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config);
+                        formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage());
 
                         // we need a sentence segmentation of the table caption, for that we need to introduce 
                         // a <div>, then a <p>
@@ -202,7 +202,7 @@ public class Table extends Figure {
                     }
 
                     if (noteNode != null && config.isWithSentenceSegmentation()) {
-                        formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config);
+                        formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage());
 
                         // we need a sentence segmentation of the figure caption, for that we need to introduce 
                         // a <p>

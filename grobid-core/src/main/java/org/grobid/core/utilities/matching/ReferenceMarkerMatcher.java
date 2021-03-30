@@ -165,7 +165,7 @@ public class ReferenceMarkerMatcher {
     }*/
 
     // number matching for number alone or in combination with author for cases "Naze et al. [5]"
-    public static boolean isNumberedCitationReference(String t) {
+    public boolean isNumberedCitationReference(String t) {
         return NUMBERED_CITATION_PATTERN.matcher(t.trim()).matches() || 
                  ( NUMBERED_CITATION_PATTERN.matcher(t.trim()).find() && AUTHOR_NAME_PATTERN.matcher(t.trim()).find() );
     }
