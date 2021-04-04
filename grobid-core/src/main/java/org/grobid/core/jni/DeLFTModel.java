@@ -311,14 +311,14 @@ public class DeLFTModel {
                 command.add("--use-ELMo");
             }
 
-            if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1) {
+            if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName) != -1) {
                 command.add("--max-sequence-length");
-                command.add(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName));
+                command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName)));
             }
 
-            if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1) {
+            if (GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName) != -1) {
                 command.add("--batch-size");
-                command.add(GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName));
+                command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName)));
             }
 
             ProcessBuilder pb = new ProcessBuilder(command);
