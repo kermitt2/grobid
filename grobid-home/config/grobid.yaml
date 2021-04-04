@@ -83,86 +83,103 @@ grobid:
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
       # wapiti training parameters, they will be used at training time only
-      epsilon: 0.0000001
-      window: 50
-      nbMaxIterations: 2000
+      wapiti:
+        epsilon: 0.0000001
+        window: 50
+        nbMaxIterations: 2000
 
     - name: "fulltext"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
       # wapiti training parameters, they will be used at training time only
-      epsilon: 0.0001
-      window: 20
-      nbMaxIterations: 1500
+      wapiti:
+        epsilon: 0.0001
+        window: 20
+        nbMaxIterations: 1500
 
     - name: "header"
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
-      epsilon: 0.000001
-      window: 30
-      nbMaxIterations: 1500
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      # wapiti training parameters, they will be used at training time only
+      wapiti:
+        epsilon: 0.000001
+        window: 30
+        nbMaxIterations: 1500
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "reference-segmenter"
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
-      epsilon: 0.00001
-      window: 20
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      # wapiti training parameters, they will be used at training time only
+      wapiti:
+        epsilon: 0.00001
+        window: 20
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "name-header"
       engine: "wapiti"
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "name-citation"
       engine: "wapiti"
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "date"
       engine: "wapiti"
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "figure"
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
-      epsilon: 0.00001
-      window: 20
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      # wapiti training parameters, they will be used at training time only
+      wapiti:
+        epsilon: 0.00001
+        window: 20
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "table"
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
-      epsilon: 0.00001
-      window: 20
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      # wapiti training parameters, they will be used at training time only
+      wapiti:
+        epsilon: 0.00001
+        window: 20
+      delft:  
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "affiliation-address"
       engine: "wapiti"
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "citation"
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
-      epsilon: 0.00001
-      window: 50
-      nbMaxIterations: 3000
       #engine: "delft"
-      #architecture: "BidLSTM_CRF_FEATURES"
-      #architecture: "scibert"
-      #useELMo: false
+      # wapiti training parameters, they will be used at training time only
+      wapiti:
+        epsilon: 0.00001
+        window: 50
+        nbMaxIterations: 3000
+      delft:
+        architecture: "BidLSTM_CRF_FEATURES"
+        #architecture: "scibert"
+        useELMo: false
 
     - name: "patent-citation"
       engine: "wapiti"
-      epsilon: 0.0001
-      window: 20
+      delft:
+        epsilon: 0.0001
+        window: 20
 
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
