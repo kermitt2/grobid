@@ -29,13 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
 /**
  * RESTful service for the GROBID system.
  *
- * @author FloZi, Damien, Patrice
  */
-
 @Timed
 @Singleton
 @Path(GrobidPaths.PATH_GROBID)

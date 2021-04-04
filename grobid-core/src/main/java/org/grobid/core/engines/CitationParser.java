@@ -43,9 +43,6 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author Patrice Lopez
- */
 public class CitationParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 

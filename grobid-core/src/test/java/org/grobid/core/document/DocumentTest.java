@@ -16,7 +16,6 @@ import javax.xml.parsers.SAXParserFactory;
 /**
  * See https://github.com/kermitt2/grobid/pull/475
  *
- *  @author Daniel Ecer
  */
 public class DocumentTest {
 

@@ -15,7 +15,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
- * Created by zholudev on 07/04/16.
  * Testing synchronization
  */
 public class TaggingTokenSynchronizerTest {

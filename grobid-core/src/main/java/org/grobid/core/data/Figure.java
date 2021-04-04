@@ -43,7 +43,6 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 /**
  * Class for representing a figure.
  *
- * @author Patrice Lopez
  */
 public class Figure {
     protected static final Logger LOGGER = LoggerFactory.getLogger(Figure.class);

@@ -38,7 +38,6 @@ import java.io.*;
 /**
  * Glutton request
  *
- * @author Patrice
  */
 public class GluttonRequest<T extends Object> extends Observable {
 

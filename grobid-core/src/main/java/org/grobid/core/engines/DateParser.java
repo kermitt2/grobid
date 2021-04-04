@@ -13,9 +13,6 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author Patrice Lopez
- */
 public class DateParser extends AbstractParser {
 
     public DateParser() {

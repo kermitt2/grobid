@@ -9,12 +9,6 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * Date: 6/26/12
- * Time: 3:55 PM
- *
- * @author Vyacheslav Zholudev, Patrice Lopez
- */
 public class ProcessRunner extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProcessRunner.class);
 

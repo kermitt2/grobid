@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * Training application for training a target model.
  *
- * @author Patrice Lopez
  */
 public class TrainerRunner {
 

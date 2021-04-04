@@ -12,9 +12,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 29/09/16.
- */
 public class TaggingLabelsTestImpl {
 
     @BeforeClass

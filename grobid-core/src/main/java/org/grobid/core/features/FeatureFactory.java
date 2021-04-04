@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 /**
  * Class providing a toolkit for managing and creating features or string sequence tagging problems.
  *
- * @author Patrice Lopez
  */
 public class FeatureFactory {
 

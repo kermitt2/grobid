@@ -5,9 +5,6 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-/**
- * Created by lfoppiano on 11/08/16.
- */
 public class JatsTransformerTest {
     JATSTransformer target;
 

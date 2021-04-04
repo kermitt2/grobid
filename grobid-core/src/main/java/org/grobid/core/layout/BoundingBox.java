@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 /**
- * Created by zholudev on 18/08/15.
  * Represents a bounding box (e.g. for a reference marker in PDF)
  */
 public class BoundingBox {

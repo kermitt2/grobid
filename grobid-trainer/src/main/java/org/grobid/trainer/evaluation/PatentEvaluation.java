@@ -21,7 +21,6 @@ import java.util.TreeMap;
  * Evaluation of the extraction and parsing of the patent and NPL citations present in the patent
  * description.
  *
- * @author Patrice Lopez
  */
 public class PatentEvaluation {
     private String evaluationPath = null;

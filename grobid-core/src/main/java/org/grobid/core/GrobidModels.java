@@ -12,7 +12,6 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
 /**
  * This enum class acts as a registry for all Grobid models.
  *
- * @author Patrice Lopez
  */
 public enum GrobidModels implements GrobidModel {
 

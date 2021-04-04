@@ -41,7 +41,6 @@ import java.util.regex.Pattern;
  * type of evaluation is PDF+TEI files produced via Pub2TEI fir mainstream 
  * publishers.   
  *
- * @author Patrice Lopez
  */
 public class EvaluationDOIMatching {
     private static final Logger LOGGER = LoggerFactory.getLogger(EvaluationDOIMatching.class);

@@ -8,9 +8,6 @@ import org.grobid.core.utilities.Pair;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- * Created by lfoppiano on 25/11/16.
- */
 public class TaggingLabels {
 
     protected static final ConcurrentMap<Pair<GrobidModel, String>, TaggingLabel> cache = new ConcurrentHashMap<>();
@@ -382,10 +379,7 @@ public class TaggingLabels {
         register(MONOGRAPH_GLOSSARY);
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
-
-
     }
-
 
     protected TaggingLabels() {
     }

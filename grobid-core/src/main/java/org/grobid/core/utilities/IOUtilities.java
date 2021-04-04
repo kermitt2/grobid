@@ -12,8 +12,6 @@ import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 /**
  * Utilities related to file and directory management.
- * <p>
- * Created by lfoppiano on 04/08/16.
  */
 public class IOUtilities {
 

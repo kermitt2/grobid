@@ -4,13 +4,8 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 
-/**
- * User: zholudev
- * Date: 3/20/14
- */
 public class TrainerFactory {
     public static GenericTrainer getTrainer(GrobidModel model) {
-System.out.println(model.getModelName());        
         switch (GrobidProperties.getGrobidCRFEngine(model)) {
             case CRFPP:
                 return new CRFPPGenericTrainer();

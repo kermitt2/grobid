@@ -68,9 +68,6 @@ import java.util.regex.Matcher;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
-/**
- * @author Patrice Lopez
- */
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 

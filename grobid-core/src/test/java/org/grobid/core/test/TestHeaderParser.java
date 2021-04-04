@@ -12,9 +12,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-/**
- * @author Patrice Lopez
- */
 public class TestHeaderParser extends EngineTest {
 
     private String testPath = null;

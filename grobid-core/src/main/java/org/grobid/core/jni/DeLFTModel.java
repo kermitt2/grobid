@@ -19,10 +19,6 @@ import jep.JepException;
 
 import java.util.function.Consumer;
 
-/**
- * 
- * @author: Patrice
- */
 public class DeLFTModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(DeLFTModel.class);
 

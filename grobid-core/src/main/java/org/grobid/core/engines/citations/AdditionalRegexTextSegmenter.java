@@ -13,10 +13,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-/**
- * Date: 8/27/13
- */
 public class AdditionalRegexTextSegmenter {
     public static final Logger LOGGER = LoggerFactory.getLogger(AdditionalRegexTextSegmenter.class.getName());
     private final static Pattern BRACKET_NUMBER_LOOKUP_PATTERN = Pattern.compile("(?s).{0,15}\\[\\d\\] .{10,701}\\n\\[\\d+\\] .*");

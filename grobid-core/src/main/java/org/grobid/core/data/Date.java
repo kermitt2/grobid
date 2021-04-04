@@ -12,7 +12,6 @@ package org.grobid.core.data;
  * which is not the same as a comparison in term of the time flow only.
  * For comparing dates in term of strict time flow, please use java.util.Date + java.util.Calendar
  *
- * @author Patrice Lopez
  */
 public class Date implements Comparable {
     private int day = -1;

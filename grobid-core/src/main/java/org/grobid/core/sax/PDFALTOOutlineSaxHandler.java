@@ -14,7 +14,6 @@ import java.util.*;
  *  SAX parser for ALTO XML representation of the outline/bookmark present in PDF files 
  *  obtained via pdfalto. 
  * 
- *  @author Patrice Lopez
  */
 public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDFALTOOutlineSaxHandler.class);

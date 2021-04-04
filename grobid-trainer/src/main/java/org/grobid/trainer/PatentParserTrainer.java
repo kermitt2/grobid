@@ -14,10 +14,6 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.trainer.evaluation.PatentEvaluation;
 
-
-/**
- * @author Patrice Lopez
- */
 public class PatentParserTrainer extends AbstractTrainer {
 
     // the window value indicate the right and left context of text to consider for an annotation when building

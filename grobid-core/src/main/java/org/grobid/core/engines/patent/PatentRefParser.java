@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
  * they appear). Expected ouput is the patent reference in the EPO Epoque
  * format.
  *
- * @author Patrice Lopez
  */
 
 public class PatentRefParser {

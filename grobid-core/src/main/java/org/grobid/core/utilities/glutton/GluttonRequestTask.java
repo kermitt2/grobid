@@ -8,7 +8,6 @@ import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
 /**
  * Task to execute its request at the right time.
  *
- * @author Vincent Kaestle, Patrice
  */
 public class GluttonRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
     

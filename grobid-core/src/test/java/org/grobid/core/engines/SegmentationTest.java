@@ -14,9 +14,6 @@ import java.io.File;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 11/08/16.
- */
 public class SegmentationTest {
 
     Segmentation target;

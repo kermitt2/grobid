@@ -12,10 +12,6 @@ import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
-
-/**
- * @author Patrice Lopez
- */
 public class TableTrainer extends AbstractTrainer {
 
     public TableTrainer() {

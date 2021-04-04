@@ -6,7 +6,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for fulltext parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorFulltext {
     public LayoutToken token = null; // not a feature, reference value

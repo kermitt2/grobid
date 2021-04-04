@@ -37,9 +37,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * @author Zholudev, Lopez
- */
 public abstract class AbstractTrainer implements Trainer {
     protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
     public static final String OLD_MODEL_EXT = ".old";

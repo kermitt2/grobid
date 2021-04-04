@@ -9,9 +9,6 @@ import java.math.BigDecimal;
 
 import java.io.File;
 
-/**
- * @author: Patrice
- */
 public class DeLFTTrainer implements GenericTrainer {
 
     public static final String DELFT = "delft";

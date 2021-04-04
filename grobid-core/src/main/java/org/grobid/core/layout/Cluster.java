@@ -7,7 +7,6 @@ import java.util.List;
  * Class for representing cluster of document layout elements,
  * typically all blocks having the same font parameters.
  *
- * @author Patrice Lopez
  */
 public class Cluster {
     private List<Block> blocks = null;

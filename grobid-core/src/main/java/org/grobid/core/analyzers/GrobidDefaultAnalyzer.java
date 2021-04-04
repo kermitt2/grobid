@@ -29,7 +29,6 @@ import java.util.StringTokenizer;
 /**
  * Default tokenizer adequate for all Indo-European languages.
  *
- * @author Patrice Lopez
  */
 public class GrobidDefaultAnalyzer implements Analyzer {
 

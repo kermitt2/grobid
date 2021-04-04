@@ -10,7 +10,6 @@ import org.xml.sax.helpers.*;
  * element name, for instance "description" for getting the description of a
  * patent XML document.
  * 
- * @author Patrice Lopez
  */
 public class TextSaxParser extends DefaultHandler {
 

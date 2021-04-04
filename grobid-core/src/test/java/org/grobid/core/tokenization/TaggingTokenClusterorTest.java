@@ -20,9 +20,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 17/03/17.
- */
 public class TaggingTokenClusterorTest {
 
     @BeforeClass

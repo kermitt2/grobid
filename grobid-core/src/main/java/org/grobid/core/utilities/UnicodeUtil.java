@@ -3,7 +3,6 @@ package org.grobid.core.utilities;
 /**
  * Class for holding static methods for processing related to unicode.
  *
- * @author Patrice Lopez
  */
 public class UnicodeUtil {
 

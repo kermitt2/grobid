@@ -42,7 +42,6 @@ import org.xml.sax.SAXException;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.empty;
 
-
 public class BiblioItemTest {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(BiblioItemTest.class);

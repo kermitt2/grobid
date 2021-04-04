@@ -25,8 +25,6 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-
-
 /**
  * This class is responsible for finding a right grobid home
  */

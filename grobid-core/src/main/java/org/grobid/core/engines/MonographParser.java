@@ -36,7 +36,6 @@ import static org.apache.commons.lang3.StringUtils.*;
  * Monographs, here, are NOT magazine volumes, journal issues, newspapers, standalone chapters, standalone scholar articles,
  * tables of content, reference works, dictionaries, encyclopedia volumes, graphic novels.
  *
- * @author Patrice Lopez
  */
 public class MonographParser extends AbstractParser {
 	/**

@@ -15,9 +15,6 @@ import java.util.StringTokenizer;
 
 import org.apache.commons.io.FileUtils;
 
-/**
- * @author Patrice Lopez
- */
 public class SegmentationTrainer extends AbstractTrainer {
 
     public SegmentationTrainer() {

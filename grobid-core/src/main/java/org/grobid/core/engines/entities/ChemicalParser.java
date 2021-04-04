@@ -14,7 +14,6 @@ import java.util.StringTokenizer;
 /**
  * Chemical entities extraction.
  *
- * @author Patrice Lopez
  */
 public class ChemicalParser extends AbstractParser {
 

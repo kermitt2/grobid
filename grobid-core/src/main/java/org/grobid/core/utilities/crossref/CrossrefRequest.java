@@ -24,7 +24,6 @@ import java.util.Observable;
  * GET crossref request
  * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
  *
- * @author Vincent Kaestle, Patrice
  */
 public class CrossrefRequest<T extends Object> extends Observable {
 

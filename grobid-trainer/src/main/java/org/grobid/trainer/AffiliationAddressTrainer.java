@@ -18,19 +18,10 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.List;
 
-
-/**
- * @author Patrice Lopez
- * @author Vyacheslav Zholudev
- */
 public class AffiliationAddressTrainer extends AbstractTrainer {
 
     public AffiliationAddressTrainer() {
         super(GrobidModels.AFFILIATION_ADDRESS);
-
-        /*epsilon = GrobidProperties.getEpsilon(model);
-		window = GrobidProperties.getWindow(model); 
-    	nbMaxIterations = GrobidProperties.getNbMaxIterations(model);*/
     }
 
 	/**

@@ -20,10 +20,6 @@ import jep.JepException;
 
 import java.util.function.Consumer;
 
-/**
- * 
- * @author: Patrice
- */
 public class DeLFTClassifierModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(DeLFTClassifierModel.class);
 

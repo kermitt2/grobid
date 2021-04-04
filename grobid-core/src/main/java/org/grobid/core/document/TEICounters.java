@@ -1,7 +1,6 @@
 package org.grobid.core.document;
 
 /**
- * Created by zholudev on 11/01/16.
  * General debugging counters
  */
 public enum TEICounters {

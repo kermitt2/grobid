@@ -20,7 +20,6 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by zholudev on 29/01/16.
  * Workign with vector graphics
  */
 public class VectorGraphicBoxCalculator {

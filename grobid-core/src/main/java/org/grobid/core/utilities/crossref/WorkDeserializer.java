@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
  * Convert a JSON Work model - from a glutton or crossref response - to a BiblioItem 
  * (understandable by this stupid GROBID
  *
- * @author Vincent Kaestle, Patrice
  */
 public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 

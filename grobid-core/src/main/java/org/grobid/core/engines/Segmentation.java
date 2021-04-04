@@ -35,7 +35,6 @@ import static org.apache.commons.lang3.StringUtils.*;
  * page header, document body, bibliographical section, each bibliographical references in
  * the biblio section and finally the possible annexes.
  *
- * @author Patrice Lopez
  */
 public class Segmentation extends AbstractParser {
 

@@ -58,10 +58,8 @@ import java.util.StringTokenizer;
 import java.util.zip.GZIPInputStream;
 
 /**
- * Extraction of patent and NPL references from the content body of patent document with Conditional
- * Random Fields.
+ * Extraction of patent and NPL references from the content body of patent document with sequence labeling.
  *
- * @author Patrice Lopez
  */
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);

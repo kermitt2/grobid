@@ -14,10 +14,6 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.util.*;
 
-
-/**
- * @author Patrice Lopez
- */
 public class NameHeaderTrainer extends AbstractTrainer {
 
     public NameHeaderTrainer() {

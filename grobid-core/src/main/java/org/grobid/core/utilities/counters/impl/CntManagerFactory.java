@@ -1,6 +1,5 @@
 package org.grobid.core.utilities.counters.impl;
 
-
 import org.grobid.core.utilities.counters.CntManager;
 
 public class CntManagerFactory {

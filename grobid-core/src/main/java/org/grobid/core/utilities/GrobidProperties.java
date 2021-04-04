@@ -719,12 +719,12 @@ public class GrobidProperties {
     public static boolean useELMo(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warning("No configuration parameter defined for model " + modelName);
+            LOGGER.warn("No configuration parameter defined for model " + modelName);
             return false;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warning("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
             return false;
         }
         return param.delft.useELMo;
@@ -733,12 +733,12 @@ public class GrobidProperties {
     public static String getDelftArchitecture(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warning("No configuration parameter defined for model " + modelName);
+            LOGGER.warn("No configuration parameter defined for model " + modelName);
             return null;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warning("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
             return null;
         }
         return param.delft.architecture;

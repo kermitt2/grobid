@@ -37,7 +37,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Class for representing and exchanging a bibliographical item.
  *
- * @author Patrice Lopez
  */
 public class BiblioItem {
     protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);

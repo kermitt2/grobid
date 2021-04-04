@@ -13,9 +13,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by lfoppiano on 02/01/17.
- */
 public class DateParserTest {
     DateParser target;
 

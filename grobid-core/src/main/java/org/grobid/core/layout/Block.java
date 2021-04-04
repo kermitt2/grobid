@@ -6,9 +6,6 @@ import java.util.List;
 /**
  * Class for representing and exchanging a document block. A block is defined here relatively to
  * some properties in the document layout.
- *
- *
- * @author Patrice Lopez
  */
 public class Block {
     private int nbTokens = 0;

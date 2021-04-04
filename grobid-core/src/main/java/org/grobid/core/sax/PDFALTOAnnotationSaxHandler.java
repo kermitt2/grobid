@@ -21,7 +21,6 @@ import java.util.*;
  *  obtained via pdfalto. We only consider here link annotations, other type
  * of annotations (e.g. highlight) are ignored. 
  * 
- *  @author Patrice Lopez
  */
 public class PDFALTOAnnotationSaxHandler extends DefaultHandler {
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDFALTOAnnotationSaxHandler.class);

@@ -8,9 +8,7 @@ import org.grobid.core.layout.BoundingBox;
  * Class corresponding to a node of the structure of a hierarchically organized document (i.e. for a table
  * of content).
  *
- * @author Patrice Lopez
  */
-
 public class DocumentNode {
     // Gorn address for tree structure
     private String address = null;

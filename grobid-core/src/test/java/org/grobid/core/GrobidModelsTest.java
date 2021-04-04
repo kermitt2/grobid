@@ -7,9 +7,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 19/08/16.
- */
 public class GrobidModelsTest {
 
     @BeforeClass

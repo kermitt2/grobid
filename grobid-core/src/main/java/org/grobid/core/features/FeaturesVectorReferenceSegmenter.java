@@ -8,7 +8,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for header parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorReferenceSegmenter {
     // default bins for relative position, set experimentally

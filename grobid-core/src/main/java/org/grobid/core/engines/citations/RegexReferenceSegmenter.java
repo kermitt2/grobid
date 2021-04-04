@@ -14,10 +14,6 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * User: zholudev
- * Date: 2/26/14
- */
 public class RegexReferenceSegmenter implements ReferenceSegmenter {
     private static final Pattern m1 = Pattern.compile("((^|\\n)( )*\\[.+?\\])");
     private static final Pattern m2 = Pattern.compile("((^|\\n)( )*\\(.+?\\))");

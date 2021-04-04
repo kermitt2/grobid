@@ -5,7 +5,6 @@ import java.util.List;
 /**
  * Task to execute its request at the right time.
  *
- * @author Vincent Kaestle
  */
 public class CrossrefRequestTask<T extends Object> extends CrossrefRequestListener<T> implements Runnable {
 	

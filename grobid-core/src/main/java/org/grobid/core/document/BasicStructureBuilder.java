@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
 /**
  * Class for building basic structures in a document item.
  *
- * @author Patrice Lopez
  */
 public class BasicStructureBuilder {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BasicStructureBuilder.class);

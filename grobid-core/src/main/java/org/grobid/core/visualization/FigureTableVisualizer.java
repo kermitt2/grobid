@@ -31,7 +31,6 @@ import java.util.Set;
 import static org.grobid.core.utilities.PathUtil.getOneFile;
 
 /**
- * Created by zholudev on 18/01/16.
  * Visualize figures and tables
  */
 public class FigureTableVisualizer {

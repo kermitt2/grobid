@@ -7,7 +7,6 @@ import java.util.List;
  * Class for representing an annotation present in a PDF source file. Annotations are area in the PDF document 
  * associated with an action (URI for external web link, goto for internal document link).
  *
- * @author Patrice Lopez
  */
 public class PDFAnnotation {
     private String destination = null;

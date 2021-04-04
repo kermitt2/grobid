@@ -21,9 +21,6 @@ import java.util.List;
 
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
-/**
- * @author Patrice
- */
 public class TableParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(TableParser.class);
 

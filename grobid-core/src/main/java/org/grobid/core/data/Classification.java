@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Class for representing a classification.
  *
- * @author Patrice Lopez
  */
 public class Classification {
     private String classificationScheme = null;
