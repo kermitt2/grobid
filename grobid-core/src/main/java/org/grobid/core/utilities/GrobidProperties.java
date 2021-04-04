@@ -7,6 +7,8 @@ import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+import org.grobid.core.utilities.GrobidConfig.DelftModelParameters;
+import org.grobid.core.utilities.GrobidConfig.WapitiModelParameters;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.slf4j.Logger;
@@ -370,28 +372,6 @@ public class GrobidProperties {
         return grobidConfig.grobid.consolidation.glutton.type;
     }
 
-    public static boolean useELMo(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
-        if (param == null) {
-            LOGGER.error("No configuration parameter defnied for model " + modelName);
-            return false;
-        }
-        return param.useELMo;
-    }
-
-    public static String getDelftArchitecture(final String modelName) {
-        ModelParameters param = modelMap.get(modelName);
-        if (param == null) {
-            LOGGER.error("No configuration parameter defnied for model " + modelName);
-            return null;
-        }
-        return param.architecture;
-    }
-
-    public static String getDelftArchitecture(final GrobidModel model) {
-        return getDelftArchitecture(model.getModelName());
-    }   
-
     /**
      * Returns the host for a proxy connection, given in the grobid config file.
      *
@@ -714,25 +694,58 @@ public class GrobidProperties {
 
     public static int getWindow(final GrobidModel model) {
         ModelParameters parameters = modelMap.get(model.getModelName());
-        if (parameters != null)
-            return parameters.window;
+        if (parameters != null && parameters.wapiti != null)
+            return parameters.wapiti.window;
         else 
             return 20;
     }
 
     public static double getEpsilon(final GrobidModel model) {
         ModelParameters parameters = modelMap.get(model.getModelName());
-        if (parameters != null)
-            return parameters.epsilon;
+        if (parameters != null && parameters.wapiti != null)
+            return parameters.wapiti.epsilon;
         else 
             return 0.00001;
     }
 
     public static int getNbMaxIterations(final GrobidModel model) {
         ModelParameters parameters = modelMap.get(model.getModelName());
-        if (parameters != null)
-            return parameters.nbMaxIterations;
+        if (parameters != null && parameters.wapiti != null)
+            return parameters.wapiti.nbMaxIterations;
         else 
             return 2000;
     }
+
+    public static boolean useELMo(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        if (param == null) {
+            LOGGER.warning("No configuration parameter defined for model " + modelName);
+            return false;
+        }
+        DelftModelParameters delftParam = param.delft;
+        if (delftParam == null) {
+            LOGGER.warning("No configuration parameter defined for DeLFT engine for model " + modelName);
+            return false;
+        }
+        return param.delft.useELMo;
+    }
+
+    public static String getDelftArchitecture(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        if (param == null) {
+            LOGGER.warning("No configuration parameter defined for model " + modelName);
+            return null;
+        }
+        DelftModelParameters delftParam = param.delft;
+        if (delftParam == null) {
+            LOGGER.warning("No configuration parameter defined for DeLFT engine for model " + modelName);
+            return null;
+        }
+        return param.delft.architecture;
+    }
+
+    public static String getDelftArchitecture(final GrobidModel model) {
+        return getDelftArchitecture(model.getModelName());
+    }   
+
 }

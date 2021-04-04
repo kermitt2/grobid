@@ -60,19 +60,35 @@ public class GrobidConfig {
     }
     
     static class DelftParameters {
+        /**
+         * Generic parameters relative to the DeLFT engine
+         */
         public String install;
         public String python_virtualEnv;
     }
 
-    static class ModelParameters {   
-        public String name; 
-        public String engine;
-
+    static class WapitiModelParameters {
+        /**
+         * Parameters relative to a specific Wapiti model
+         */
         public double epsilon = 0.00001;
         public int window = 20;
         public int nbMaxIterations = 2000;
+    }
 
+    static class DelftModelParameters {
+        /**
+         * Parameters relative to a specific DeLFT model
+         */
         public String architecture;
         public boolean useELMo = false;
+    }
+
+    static class ModelParameters {   
+        public String name;   /* name of model */
+        public String engine; /* value wapiti or delft */ 
+
+        public WapitiModelParameters wapiti;
+        public DelftModelParameters delft;   
     }
 }
