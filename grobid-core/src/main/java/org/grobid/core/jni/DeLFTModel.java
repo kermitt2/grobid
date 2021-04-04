@@ -295,12 +295,14 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel, String architecture) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = Arrays.asList("python3", 
+            List<String> command = new ArrayList<>();
+            List<String> subcommands = Arrays.asList("python3", 
                 "grobidTagger.py", 
                 modelName,
                 "train",
                 "--input", trainingData.getAbsolutePath(),
                 "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+            command.addAll(subcommands);
             if (architecture != null) {
                 command.add("--architecture");
                 command.add(architecture);
