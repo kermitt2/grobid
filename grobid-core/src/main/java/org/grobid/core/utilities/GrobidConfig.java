@@ -78,10 +78,22 @@ public class GrobidConfig {
 
     static class DelftModelParameters {
         /**
-         * Parameters relative to a specific DeLFT model
+         * Parameters relative to a specific DeLFT model (train and runtime)
          */
         public String architecture;
         public boolean useELMo = false;
+        public String embeddings_name = "glove-840B";
+
+        public DelftModelParameterSet training;
+        public DelftModelParameterSet runtime;
+    }
+
+    static class DelftModelParameterSet {
+        /**
+         * Parameters relative to a specific DeLFT model and either trainng or runtime
+         */
+        public int max_sequence_length = -1;
+        public int batch_size = -1;
     }
 
     static class ModelParameters {   
