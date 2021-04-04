@@ -63,6 +63,15 @@ public class DeLFTModel {
 
                 jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
+
+                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.max_sequence_length="+
+                        GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName));
+
+                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.batch_size="+
+                        GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
+
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);
             }
@@ -236,13 +245,22 @@ public class DeLFTModel {
                     useELMo = "True";
                 }
 
+                String localArgs = "";
+                if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1)
+                    localArgs += ", max_sequence_length="+
+                        GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName);
+
+                if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1)
+                    localArgs += ", batch_size="+
+                        GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName);
+
                 // init model to be trained
                 if (architecture == null)
                     jep.eval("model = Sequence('"+this.modelName+
-                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+")");
                 else
                     jep.eval("model = Sequence('"+this.modelName+
-                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+ 
                         ", model_type='"+architecture+"')");
 
                 // actual training
@@ -290,6 +308,17 @@ public class DeLFTModel {
             if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
             }
+
+            // we will need a way to pass this parameters via command line 
+            /*if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1) {
+                command.add("--max_sequence_length");
+                command.add(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName));
+            }
+
+            if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1) {
+                command.add("--batch_size");
+                command.add(GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName));
+            }*/
 
             ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
