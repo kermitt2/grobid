@@ -78,12 +78,12 @@ grobid:
     # for feature-engineered CRF, use "wapiti" and possible training parameters are window, epsilon and max_epoch
     # for Deep Learning, use "delft" and select the target DL architecture (see DeLFT library), the training 
     # parameters then depends on this selected DL architecture 
-
+    
     - name: "segmentation"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.0000001
         window: 50
         nbMaxIterations: 2000
@@ -91,8 +91,8 @@ grobid:
     - name: "fulltext"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.0001
         window: 20
         nbMaxIterations: 1500
@@ -100,91 +100,103 @@ grobid:
     - name: "header"
       engine: "wapiti"
       #engine: "delft"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only  
         epsilon: 0.000001
         window: 30
         nbMaxIterations: 1500
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "reference-segmenter"
       engine: "wapiti"
       #engine: "delft"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
         window: 20
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "name-header"
       engine: "wapiti"
       #engine: "delft"
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "name-citation"
       engine: "wapiti"
       #engine: "delft"
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "date"
       engine: "wapiti"
       #engine: "delft"
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "figure"
       engine: "wapiti"
       #engine: "delft"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
         window: 20
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "table"
       engine: "wapiti"
       #engine: "delft"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
         window: 20
       delft:  
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "affiliation-address"
       engine: "wapiti"
       #engine: "delft"
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "citation"
       engine: "wapiti"
       #engine: "delft"
-      # wapiti training parameters, they will be used at training time only
       wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
         window: 50
         nbMaxIterations: 3000
       delft:
+        # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
         #architecture: "scibert"
         useELMo: false
         embeddings_name: "glove-840B"
         runtime:
+          # parameters used at runtime/prediction
           max_sequence_length: 3000
           batch_size: 20
         training:
+          # parameters used for training
           max_sequence_length: 3000  
           batch_size: 30
 
     - name: "patent-citation"
       engine: "wapiti"
-      delft:
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
         epsilon: 0.0001
         window: 20
 
