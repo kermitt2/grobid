@@ -311,16 +311,15 @@ public class DeLFTModel {
                 command.add("--use-ELMo");
             }
 
-            // we will need a way to pass this parameters via command line 
-            /*if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1) {
-                command.add("--max_sequence_length");
+            if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1) {
+                command.add("--max-sequence-length");
                 command.add(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName));
             }
 
             if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1) {
-                command.add("--batch_size");
+                command.add("--batch-size");
                 command.add(GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName));
-            }*/
+            }
 
             ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
