@@ -1,0 +1,9 @@
+#----- begin Japanese support package (2011-sep-02)
+cidToUnicode	Adobe-Japan1	/usr/local/share/xpdf/japanese/Adobe-Japan1.cidToUnicode
+unicodeMap	ISO-2022-JP	/usr/local/share/xpdf/japanese/ISO-2022-JP.unicodeMap
+unicodeMap	EUC-JP		/usr/local/share/xpdf/japanese/EUC-JP.unicodeMap
+unicodeMap	Shift-JIS	/usr/local/share/xpdf/japanese/Shift-JIS.unicodeMap
+cMapDir		Adobe-Japan1	/usr/local/share/xpdf/japanese/CMap
+toUnicodeDir			/usr/local/share/xpdf/japanese/CMap
+#fontFileCC	Adobe-Japan1	/usr/..../NotoSansCJKjp-Regular.otf
+#----- end Japanese support package
