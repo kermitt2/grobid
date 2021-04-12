@@ -57,6 +57,11 @@ public class PDFALTOOutlineSaxHandlerTest {
         assertThat(root.getChildren(), hasSize(5));
         assertThat(root.getChildren().get(0).getLabel(), is("A Identification"));
         assertThat(root.getChildren().get(0).getChildren(), is(nullValue()));
+        assertThat(root.getChildren().get(0).getBoundingBox().getPage(), is(2));
+        assertThat(root.getChildren().get(0).getBoundingBox().getX(), is(68.000));
+        assertThat(root.getChildren().get(0).getBoundingBox().getY(), is(0.000));
+        assertThat(root.getChildren().get(0).getBoundingBox().getWidth(), is(-1.0));
+        assertThat(root.getChildren().get(0).getBoundingBox().getHeight(), is(-1.0));
         assertThat(root.getChildren().get(1).getLabel(), is("B Résumé consolidé public."));
         assertThat(root.getChildren().get(1).getChildren(), hasSize(1));
         assertThat(root.getChildren().get(2).getLabel(), is("C Mémoire scientifique en français"));

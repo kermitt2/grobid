@@ -32,8 +32,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 	private int currentParentId = -1;
 
 	private Map<Integer,DocumentNode> nodes = null;
-	private Map<Integer, Integer> labels = new HashMap<>();
-	
+
 	public PDFALTOOutlineSaxHandler(Document doc) {
 		this.doc = doc;
 	}
@@ -55,8 +54,8 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 
 		if (qName.equals("STRING")) {
 		    currentNode.setLabel(getText());
-            currentNode.setBoundingBox(box);
 		} else if (qName.equals("ITEM")) {
+            currentNode.setBoundingBox(box);
             box = null;
             label = null;
 		} else if (qName.equals("TOCITEMLIST")) {
