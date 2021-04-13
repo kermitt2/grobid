@@ -55,11 +55,21 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 		if (qName.equals("STRING")) {
 		    currentNode.setLabel(getText());
 		} else if (qName.equals("ITEM")) {
-            currentNode.setBoundingBox(box);
+		    //The box could come from a nested element
+		    if (box != null) {
+                currentNode.setBoundingBox(box);
+		    }
+
             box = null;
             label = null;
 		} else if (qName.equals("TOCITEMLIST")) {
 		    currentParentId = -1;
+        } else if (qName.equals("LINK")) {
+		    // in case of nested item, we need to assign the box right away or we will lose it.
+            if (box != null) {
+                currentNode.setBoundingBox(box);
+            }
+            box = null;
         }
 	}
 	
@@ -202,14 +212,12 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			}
 
 			// create the bounding box
-			double x = left;
-			double y = right;
-			double width = -1.0;
-			double height = -1.0;
-			if (right >= left)
-				width = right - left;
-			if (bottom >= top)
-				height = bottom - top;
+            //top is y, bottom is height, left is x, right is width.
+            double y = top;
+            double height = bottom;
+            double x = left;
+            double width = right;
+
 			box = BoundingBox
 				.fromPointAndDimensions(page, x, y, width, height);
 		} 
