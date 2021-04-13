@@ -212,12 +212,14 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			}
 
 			// create the bounding box
-            //top is y, bottom is height, left is x, right is width.
-            double y = top;
-            double height = bottom;
             double x = left;
-            double width = right;
-
+			double y = right;
+			double width = -1.0;
+			double height = -1.0;
+			if (right >= left)
+				width = right - left;
+			if (bottom >= top)
+				height = bottom - top;
 			box = BoundingBox
 				.fromPointAndDimensions(page, x, y, width, height);
 		} 
