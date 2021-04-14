@@ -250,29 +250,10 @@ public class FullTextParser extends AbstractParser {
 
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
-                // further parse the caption
-                for(Figure figure : figures) {
-                    if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
-                        Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
-                        figure.setLabeledCaption(captionProcess.getLeft());
-                        figure.setCaptionLayoutTokens(captionProcess.getRight());
-                    }
-                }
+				postProcessFigureCaptions(figures, doc);
 
 				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
-                // further parse the caption
-                for(Table table : tables) {
-                    if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
-                        Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
-                        table.setLabeledCaption(captionProcess.getLeft());
-                        table.setCaptionLayoutTokens(captionProcess.getRight());
-                    }
-                    if ( CollectionUtils.isNotEmpty(table.getNoteLayoutTokens())) {
-                        Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
-                        table.setLabeledNote(noteProcess.getLeft());
-                        table.setNoteLayoutTokens(noteProcess.getRight());
-                    }
-                }
+				postProcessTableCaptions(tables, doc);
 
 				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
 			} else {
@@ -283,6 +264,9 @@ public class FullTextParser extends AbstractParser {
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultAnnex = null;
+            List<Figure> annexFigures = null;
+            List<Table> annexTables = null;
+            List<Equation> annexEquations = null;
 			List<LayoutToken> tokenizationsBody2 = null;
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no body segment is found in the
@@ -291,6 +275,14 @@ public class FullTextParser extends AbstractParser {
 				tokenizationsBody2 = featSeg.getRight().getTokenization();
 				resultAnnex = label(bodytext);
 				//System.out.println(rese);
+
+				annexFigures = processFigures(resultAnnex, tokenizationsBody2, doc);
+				postProcessFigureCaptions(annexFigures, doc);
+
+				annexTables = processTables(resultAnnex, tokenizationsBody2, doc);
+				postProcessTableCaptions(annexTables, doc);
+
+				annexEquations = processEquations(resultAnnex, tokenizationsBody2, doc);
 			}
 
             // final combination
@@ -299,6 +291,7 @@ public class FullTextParser extends AbstractParser {
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, // header
 				figures, tables, equations,
+                annexFigures, annexTables, annexEquations,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -1930,6 +1923,19 @@ public class FullTextParser extends AbstractParser {
         return results;
     }
 
+    protected void postProcessFigureCaptions(
+        List<Figure> figures,
+        Document doc
+    ) {
+        // further parse the caption
+        for(Figure figure : figures) {
+            if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
+                Pair<String, List<LayoutToken>> captionProcess = processShort(figure.getCaptionLayoutTokens(), doc);
+                figure.setLabeledCaption(captionProcess.getLeft());
+                figure.setCaptionLayoutTokens(captionProcess.getRight());
+            }
+        }
+    }
 
     /**
      * Create training data for the figures as identified by the full text model.
@@ -2103,6 +2109,24 @@ public class FullTextParser extends AbstractParser {
 		return results;
 	}
 
+    protected void postProcessTableCaptions(
+        List<Table> tables,
+        Document doc
+    ) {
+        // further parse the caption
+        for(Table table : tables) {
+            if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
+                Pair<String, List<LayoutToken>> captionProcess = processShort(table.getCaptionLayoutTokens(), doc);
+                table.setLabeledCaption(captionProcess.getLeft());
+                table.setCaptionLayoutTokens(captionProcess.getRight());
+            }
+            if ( CollectionUtils.isNotEmpty(table.getNoteLayoutTokens())) {
+                Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
+                table.setLabeledNote(noteProcess.getLeft());
+                table.setNoteLayoutTokens(noteProcess.getRight());
+            }
+        }
+    }
 
  	/**
      * Create training data for the table as identified by the full text model.
@@ -2312,6 +2336,9 @@ public class FullTextParser extends AbstractParser {
                        List<Figure> figures,
                        List<Table> tables,
                        List<Equation> equations,
+                       List<Figure> annexFigures,
+                       List<Table> annexTables,
+                       List<Equation> annexEquations,
                        GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
             return;
@@ -2348,7 +2375,10 @@ public class FullTextParser extends AbstractParser {
 			}
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
-				tokenizationsAnnex, doc, config);
+				tokenizationsAnnex,
+				annexFigures, annexTables, annexEquations,
+				doc, config
+			);
 
 			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();
