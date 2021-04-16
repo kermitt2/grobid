@@ -388,9 +388,11 @@ public class CitationParser extends AbstractParser {
     }
 
     public List<BibDataSet> processingReferenceSection(File input,
+                                                       String md5Str,
                                                        ReferenceSegmenter referenceSegmenter,
                                                        int consolidate) {
         DocumentSource documentSource = DocumentSource.fromPdf(input);
+        documentSource.setMD5(md5Str);
         return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
     }
 
