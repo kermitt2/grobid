@@ -41,6 +41,11 @@ public interface GrobidPropertyKeys {
      */
     String PROP_CROSSREF_TOKEN = "org.grobid.crossref.token";
 
+    /**
+     * For indicating that we don t try fuzzy matching when using crossref for consolidation
+     */
+    String PROP_CROSSREF_FUZZY_MATCH = "org.grobid.crossref.fuzzymatching";
+
     String PROP_PROXY_HOST = "grobid.proxy_host";
     String PROP_PROXY_PORT = "grobid.proxy_port";
 

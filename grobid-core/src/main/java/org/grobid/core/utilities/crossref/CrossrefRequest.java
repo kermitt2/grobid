@@ -82,6 +82,9 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	 * Execute request, handle response by sending to listeners a CrossrefRequestListener.Response
 	 */
 	public void execute() {
+
+		if(!GrobidProperties.useFuzzyMatchingConsolidation() && params.get("DOI") == null && params.get("doi") == null)
+			return;
 		if (params == null) {
             // this should not happen
             CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();

@@ -601,6 +601,18 @@ public class GrobidProperties {
     }
 
     /**
+     * whether to desambiguate with only when doi is extracted otherwise also with the metadata (title + author..)
+     * @return boolean false if use fuzzy matching is not wanted , true by default
+     */
+    public static boolean useFuzzyMatchingConsolidation() {
+        String rawValue = getPropertyValue(GrobidPropertyKeys.PROP_CROSSREF_FUZZY_MATCH);
+        if (rawValue != null) {
+            return !rawValue.equals("false");
+        }
+        return true;
+    }
+
+    /**
      * Sets the port for a proxy connection, given in the grobid-property file.
      *
      * @param port for connecting crossref
