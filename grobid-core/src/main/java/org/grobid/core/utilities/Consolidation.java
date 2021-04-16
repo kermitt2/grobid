@@ -129,7 +129,7 @@ public class Consolidation {
      * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
      * core metadata
      */
-    public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
+    public BiblioItem consolidate(BiblioItem bib, String rawCitation, int consolidate) throws Exception {
         final List<BiblioItem> results = new ArrayList<BiblioItem>();
 
         String theDOI = bib.getDOI();
@@ -176,57 +176,59 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } 
-        if (StringUtils.isNotBlank(rawCitation)) {
-            // call with full raw string
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
-                     StringUtils.isBlank(doi) )
-                arguments.put("query.bibliographic", rawCitation);
-            //arguments.put("query", rawCitation);
         }
-        if (StringUtils.isNotBlank(aut)) {
-            // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
-                 (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
-                arguments.put("query.author", aut);
-        }
-        if (StringUtils.isNotBlank(title)) {
-            // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
-                (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
-                arguments.put("query.title", title);
-        }
-        if (StringUtils.isNotBlank(journalTitle)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+        //use only doi for consolidation
+        if(consolidate != 3) {
+            if (StringUtils.isNotBlank(rawCitation)) {
+                // call with full raw string
                 if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("query.container-title", journalTitle);
+                    arguments = new HashMap<String, String>();
+                if ((GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
+                        StringUtils.isBlank(doi))
+                    arguments.put("query.bibliographic", rawCitation);
+                //arguments.put("query", rawCitation);
+            }
+            if (StringUtils.isNotBlank(aut)) {
+                // call based on partial metadata
+                if (arguments == null)
+                    arguments = new HashMap<String, String>();
+                if ((GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
+                        (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)))
+                    arguments.put("query.author", aut);
+            }
+            if (StringUtils.isNotBlank(title)) {
+                // call based on partial metadata
+                if (arguments == null)
+                    arguments = new HashMap<String, String>();
+                if ((GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
+                        (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)))
+                    arguments.put("query.title", title);
+            }
+            if (StringUtils.isNotBlank(journalTitle)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String, String>();
+                    arguments.put("query.container-title", journalTitle);
+                }
+            }
+            if (StringUtils.isNotBlank(volume)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String, String>();
+                    arguments.put("volume", volume);
+                }
+            }
+            if (StringUtils.isNotBlank(firstPage)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String, String>();
+                    arguments.put("firstPage", firstPage);
+                }
             }
         }
-        if (StringUtils.isNotBlank(volume)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("volume", volume);
-            }
-        }
-        if (StringUtils.isNotBlank(firstPage)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("firstPage", firstPage);
-            }
-        }
-
         if (arguments == null || arguments.size() == 0) {
             return null;
         }
