@@ -37,7 +37,7 @@ public class ConsolidationIntegrationTest {
     public void testConsolidationDOISimple() throws Exception {
         BiblioItem biblio = new BiblioItem();
         biblio.setDOI(DOIs[0]);
-        BiblioItem bib = target.consolidate(biblio, null);
+        BiblioItem bib = target.consolidate(biblio, null, 1);
         boolean found = false;
         if (bib != null)
             found = true;
