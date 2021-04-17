@@ -88,7 +88,7 @@ RUN rm -rf /opt/grobid/grobid-home/lib/win-*
 RUN python3 -m pip install pip --upgrade
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.2.6
+RUN pip3 install requests delft==0.2.7
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
