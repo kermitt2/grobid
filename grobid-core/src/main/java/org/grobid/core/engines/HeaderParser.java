@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import com.google.common.base.Splitter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
@@ -55,6 +56,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 
 /**
  * @author Patrice Lopez
@@ -115,7 +118,7 @@ public class HeaderParser extends AbstractParser {
      */
     public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
         try {
-            SortedSet<DocumentPiece> documentHeaderParts = documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
+            SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
@@ -137,7 +140,7 @@ public class HeaderParser extends AbstractParser {
                 String header = featuredHeader.getLeft();
                 List<LayoutToken> headerTokenization = featuredHeader.getRight();
                 String res = null;
-                if ((header != null) && (header.trim().length() > 0)) {
+                if (StringUtils.isNotBlank(header)) {
                     res = label(header);
                     resHeader = resultExtraction(res, headerTokenization, resHeader, doc);
                 }
@@ -179,119 +182,118 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setLanguage(lang);
                 }
 
-                if (resHeader != null) {
-                    if (resHeader.getAbstract() != null) {
-                        resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
-                        //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
-                    }
-                    BiblioItem.cleanTitles(resHeader);
-                    if (resHeader.getTitle() != null) {
-                        // String temp =
-                        // utilities.dehyphenizeHard(resHeader.getTitle());
-                        String temp = TextUtilities.dehyphenize(resHeader.getTitle());
-                        temp = temp.trim();
-                        if (temp.length() > 1) {
-                            if (temp.startsWith("1"))
-                                temp = temp.substring(1, temp.length());
-                            temp = temp.trim();
-                        }
-                        resHeader.setTitle(temp);
-                    }
-                    if (resHeader.getBookTitle() != null) {
-                        resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
-                    }
 
-                    resHeader.setOriginalAuthors(resHeader.getAuthors());
-                    resHeader.getAuthorsTokens();
-
-                    boolean fragmentedAuthors = false;
-                    boolean hasMarker = false;
-                    List<Integer> authorsBlocks = new ArrayList<Integer>();
-                    List<List<LayoutToken>> authorSegments = new ArrayList<>();
-                    if (resHeader.getAuthorsTokens() != null) {
-                        // split the list of layout tokens when token "\t" is met
-                        List<LayoutToken> currentSegment = new ArrayList<>();
-                        for(LayoutToken theToken : resHeader.getAuthorsTokens()) {
-                            if (theToken.getText() != null && theToken.getText().equals("\t")) {
-                                if (currentSegment.size() > 0)
-                                    authorSegments.add(currentSegment);
-                                currentSegment = new ArrayList<>();
-                            } else
-                                currentSegment.add(theToken);
-                        }
-                        // last segment
-                        if (currentSegment.size() > 0)
-                            authorSegments.add(currentSegment);
-
-                        if (authorSegments.size() > 1) {
-                            fragmentedAuthors = true;
-                        }
-                        for (int k = 0; k < authorSegments.size(); k++) {
-                            if (authorSegments.get(k).size() == 0)
-                                continue;
-                            List<Person> localAuthors = parsers.getAuthorParser()
-                                .processingHeaderWithLayoutTokens(authorSegments.get(k), doc.getPDFAnnotations());
-                            if (localAuthors != null) {
-                                for (Person pers : localAuthors) {
-                                    resHeader.addFullAuthor(pers);
-                                    if (pers.getMarkers() != null) {
-                                        hasMarker = true;
-                                    }
-                                    authorsBlocks.add(k);
-                                }
-                            }
-                        }
-                    }
-
-
-                    // remove invalid authors (no last name, noise, etc.)
-                    resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
-
-                    resHeader.setFullAffiliations(
-                            parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
-                    resHeader.attachEmails();
-                    boolean attached = false;
-                    if (fragmentedAuthors && !hasMarker) {
-                        if (resHeader.getFullAffiliations() != null) {
-                            if (authorSegments != null) {
-                                if (resHeader.getFullAffiliations().size() == authorSegments.size()) {
-                                    int k = 0;
-                                    List<Person> persons = resHeader.getFullAuthors();
-                                    for (Person pers : persons) {
-                                        if (k < authorsBlocks.size()) {
-                                            int indd = authorsBlocks.get(k);
-                                            if (indd < resHeader.getFullAffiliations().size()) {
-                                                pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
-                                            }
-                                        }
-                                        k++;
-                                    }
-                                    attached = true;
-                                    resHeader.setFullAffiliations(null);
-                                    resHeader.setAffiliation(null);
-                                }
-                            }
-                        }
-                    }
-                    if (!attached) {
-                        resHeader.attachAffiliations();
-                    }
-
-                    // remove duplicated authors
-                    resHeader.setFullAuthors(Person.deduplicate(resHeader.getFullAuthors()));
-
-                    if (resHeader.getEditors() != null) {
-                        // TBD: consider segments also for editors, like for authors above
-                        resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(resHeader.getEditors()));
-                    }
-
-                    // below using the reference strings to improve the metadata extraction, it will have to
-                    // be reviewed for something safer as just a straightforward correction
-                    /*if (resHeader.getReference() != null) {
-                        BiblioItem refer = parsers.getCitationParser().processingString(resHeader.getReference(), 0);
-                        BiblioItem.correct(resHeader, refer);
-                    }*/
+                if (resHeader.getAbstract() != null) {
+                    resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
+                    //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
                 }
+                BiblioItem.cleanTitles(resHeader);
+                if (resHeader.getTitle() != null) {
+                    // String temp =
+                    // utilities.dehyphenizeHard(resHeader.getTitle());
+                    String temp = TextUtilities.dehyphenize(resHeader.getTitle());
+                    temp = temp.trim();
+                    if (temp.length() > 1) {
+                        if (temp.startsWith("1"))
+                            temp = temp.substring(1, temp.length());
+                        temp = temp.trim();
+                    }
+                    resHeader.setTitle(temp);
+                }
+                if (resHeader.getBookTitle() != null) {
+                    resHeader.setBookTitle(TextUtilities.dehyphenize(resHeader.getBookTitle()));
+                }
+
+                resHeader.setOriginalAuthors(resHeader.getAuthors());
+                resHeader.getAuthorsTokens();
+
+                boolean fragmentedAuthors = false;
+                boolean hasMarker = false;
+                List<Integer> authorsBlocks = new ArrayList<Integer>();
+                List<List<LayoutToken>> authorSegments = new ArrayList<>();
+                if (resHeader.getAuthorsTokens() != null) {
+                    // split the list of layout tokens when token "\t" is met
+                    List<LayoutToken> currentSegment = new ArrayList<>();
+                    for(LayoutToken theToken : resHeader.getAuthorsTokens()) {
+                        if (theToken.getText() != null && theToken.getText().equals("\t")) {
+                            if (currentSegment.size() > 0)
+                                authorSegments.add(currentSegment);
+                            currentSegment = new ArrayList<>();
+                        } else
+                            currentSegment.add(theToken);
+                    }
+                    // last segment
+                    if (currentSegment.size() > 0)
+                        authorSegments.add(currentSegment);
+
+                    if (authorSegments.size() > 1) {
+                        fragmentedAuthors = true;
+                    }
+                    for (int k = 0; k < authorSegments.size(); k++) {
+                        if (authorSegments.get(k).size() == 0)
+                            continue;
+                        List<Person> localAuthors = parsers.getAuthorParser()
+                            .processingHeaderWithLayoutTokens(authorSegments.get(k), doc.getPDFAnnotations());
+                        if (localAuthors != null) {
+                            for (Person pers : localAuthors) {
+                                resHeader.addFullAuthor(pers);
+                                if (pers.getMarkers() != null) {
+                                    hasMarker = true;
+                                }
+                                authorsBlocks.add(k);
+                            }
+                        }
+                    }
+                }
+
+
+                // remove invalid authors (no last name, noise, etc.)
+                resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
+
+                resHeader.setFullAffiliations(
+                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                resHeader.attachEmails();
+                boolean attached = false;
+                if (fragmentedAuthors && !hasMarker) {
+                    if (resHeader.getFullAffiliations() != null) {
+                        if (resHeader.getFullAffiliations().size() == authorSegments.size()) {
+                            int k = 0;
+                            List<Person> persons = resHeader.getFullAuthors();
+                            for (Person pers : persons) {
+                                if (k < authorsBlocks.size()) {
+                                    int indd = authorsBlocks.get(k);
+                                    if (indd < resHeader.getFullAffiliations().size()) {
+                                        pers.addAffiliation(resHeader.getFullAffiliations().get(indd));
+                                    }
+                                }
+                                k++;
+                            }
+                            attached = true;
+                            resHeader.setFullAffiliations(null);
+                            resHeader.setAffiliation(null);
+                        }
+                    }
+
+                }
+                if (!attached) {
+                    resHeader.attachAffiliations();
+                }
+
+                // remove duplicated authors
+                resHeader.setFullAuthors(Person.deduplicate(resHeader.getFullAuthors()));
+
+                if (resHeader.getEditors() != null) {
+                    // TBD: consider segments also for editors, like for authors above
+                    resHeader.setFullEditors(parsers.getAuthorParser().processingHeader(resHeader.getEditors()));
+                }
+
+                // below using the reference strings to improve the metadata extraction, it will have to
+                // be reviewed for something safer as just a straightforward correction
+                /*if (resHeader.getReference() != null) {
+                    BiblioItem refer = parsers.getCitationParser().processingString(resHeader.getReference(), 0);
+                    BiblioItem.correct(resHeader, refer);
+                }*/
+
 
                 // keyword post-processing
                 if (resHeader.getKeyword() != null) {
@@ -305,10 +307,8 @@ public class HeaderParser extends AbstractParser {
 
                 // DOI pass
                 List<String> dois = doc.getDOIMatches();
-                if (dois != null) {
-                    if ((dois.size() == 1) && (resHeader != null)) {
-                        resHeader.setDOI(dois.get(0));
-                    }
+                if (isNotEmpty(dois) && dois.size() == 1) {
+                    resHeader.setDOI(dois.get(0));
                 }
 
                 resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
@@ -822,6 +822,15 @@ public class HeaderParser extends AbstractParser {
 
             String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
+
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutToken> theList = biblio.getLabeledTokens().get(clusterLabel.getLabel());
+
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
+
+            biblio.getLabeledTokens().put(clusterLabel.getLabel(), theList);
+
             if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
                 /*if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
                     biblio.setTitle(biblio.getTitle() + clusterContent);

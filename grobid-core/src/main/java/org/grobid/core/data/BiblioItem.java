@@ -51,7 +51,7 @@ public class BiblioItem {
     private List<BoundingBox> coordinates = null;
 
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
-    private Map<String, List<LayoutToken>> labeledTokens;
+    private Map<String, List<LayoutToken>> labeledTokens = new HashMap<>();
 
     private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
     private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
@@ -4556,7 +4556,7 @@ public class BiblioItem {
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))
 			return true;
-		else 
+		else
 			return false;
 	}
 
@@ -4606,7 +4606,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4624,16 +4624,26 @@ public class BiblioItem {
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
-            if (theList == null)
-                theList = new ArrayList<>();
-            for (LayoutToken token : clusterTokens)
-                theList.add(token);
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
     }
 
     public void addTitleTokens(List<LayoutToken> layoutTokens) {
         this.titleLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getTitleLayoutTokens() {
+        return titleLayoutTokens;
+    }
+
+    public List<LayoutToken> getAuthorsLayoutTokens() {
+        return authorsLayoutTokens;
+    }
+
+    public List<LayoutToken> getAbstractLayoutTokens() {
+        return abstractLayoutTokens;
     }
 
     public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
