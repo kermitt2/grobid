@@ -354,23 +354,15 @@ public class GrobidProperties {
         return pathFile.getAbsolutePath();
     }
 
-    public static String getGluttonHost() {
-        return grobidConfig.grobid.consolidation.glutton.host;
-    }
-
-    public static Integer getGluttonPort() {
-        if (grobidConfig.grobid.consolidation.glutton.port == 0)
+    public static String getGluttonUrl() {
+        if (grobidConfig.grobid.consolidation.glutton.url == null || grobidConfig.grobid.consolidation.glutton.url.trim().length() == 0) 
             return null;
         else
-            return Integer.valueOf(grobidConfig.grobid.consolidation.glutton.port);
+            return grobidConfig.grobid.consolidation.glutton.url;
     }
 
-    public static String getGluttonType() {
-        if (grobidConfig.grobid.consolidation.glutton.type == null || grobidConfig.grobid.consolidation.glutton.type.trim().length() == 0) {
-            // defaulting with http protocol
-            return "http";
-        }
-        return grobidConfig.grobid.consolidation.glutton.type;
+    public static void setGluttonUrl(final String theUrl) {
+        grobidConfig.grobid.consolidation.glutton.url = theUrl;
     }
 
     /**

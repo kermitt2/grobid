@@ -57,6 +57,7 @@ public class GrobidConfig {
         public String type;
         public String host;
         public int port;
+        public String url;
     }
     
     static class DelftParameters {
