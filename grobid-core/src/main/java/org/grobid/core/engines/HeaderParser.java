@@ -891,6 +891,8 @@ public class HeaderParser extends AbstractParser {
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
                 } else {
                     biblio.setAbstract(clusterContent);
+                    List<LayoutToken> tokens = cluster.concatTokens();
+                    biblio.collectAbstractTokens(tokens);
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
                 //if (biblio.getReference() != null) {
