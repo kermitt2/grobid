@@ -53,7 +53,7 @@ public class BiblioItem {
      * This is an internal structure not meant to be used outside. This is also modified with respect of other structures
      * For collecting layout tokens of the various bibliographical component, please refers to @See(getLayoutTokens(TaggingLabels label)
      */
-    private List<LayoutToken> authorsLayoutTokensworkingCopy = new ArrayList<>();
+    private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
 
 
     @Override
@@ -1176,13 +1176,13 @@ public class BiblioItem {
         authors = aut;
     }
 
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsLayoutTokensworkingCopy.add(lt);
+    public BiblioItem collectAuthorsToken(LayoutToken lt) {
+        authorsTokensWorkingCopy.add(lt);
         return this;
     }
 
-    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
-        this.authorsLayoutTokensworkingCopy.addAll(layoutTokens);
+    public void collectAuthorsTokens(List<LayoutToken> layoutTokens) {
+        this.authorsTokensWorkingCopy.addAll(layoutTokens);
     }
 
     public void addAuthor(String aut) {
@@ -4629,7 +4629,7 @@ public class BiblioItem {
         }
     }
 
-    public List<LayoutToken> getAuthorsWorkingCopyTokens() {
-        return authorsLayoutTokensworkingCopy;
+    public List<LayoutToken> getAuthorsTokensWorkingCopy() {
+        return authorsTokensWorkingCopy;
     }
 }

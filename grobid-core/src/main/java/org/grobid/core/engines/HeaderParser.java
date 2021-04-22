@@ -170,7 +170,7 @@ public class HeaderParser extends AbstractParser {
                 boolean hasMarker = false;
                 List<Integer> authorsBlocks = new ArrayList<>();
                 List<List<LayoutToken>> authorSegments = new ArrayList<>();
-                List<LayoutToken> authorLayoutTokens = resHeader.getAuthorsWorkingCopyTokens();
+                List<LayoutToken> authorLayoutTokens = resHeader.getAuthorsTokensWorkingCopy();
                 if (isNotEmpty(authorLayoutTokens)) {
                     // split the list of layout tokens when token "\t" is met
                     List<LayoutToken> currentSegment = new ArrayList<>();
@@ -794,15 +794,15 @@ public class HeaderParser extends AbstractParser {
                 if (biblio.getAuthors() != null) {
                     biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
                     //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
-                    biblio.addAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
+                    biblio.collectAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
 
                     List<LayoutToken> tokens = cluster.concatTokens();
-                    biblio.addAuthorsTokens(tokens);
+                    biblio.collectAuthorsTokens(tokens);
                 } else {
                     biblio.setAuthors(clusterNonDehypenizedContent);
 
                     List<LayoutToken> tokens = cluster.concatTokens();
-                    biblio.addAuthorsTokens(tokens);
+                    biblio.collectAuthorsTokens(tokens);
                 }
             } /*else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
