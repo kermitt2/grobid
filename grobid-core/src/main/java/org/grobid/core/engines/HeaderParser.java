@@ -121,7 +121,7 @@ public class HeaderParser extends AbstractParser {
                 String res = null;
                 if (StringUtils.isNotBlank(header)) {
                     res = label(header);
-                    resHeader = resultExtraction(res, headerTokenization, resHeader, doc);
+                    resHeader = resultExtraction(res, headerTokenization, resHeader);
                 }
 
                 // language identification
@@ -184,16 +184,16 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 resHeader.setOriginalAuthors(resHeader.getAuthors());
-                resHeader.getAuthorsTokens();
 
                 boolean fragmentedAuthors = false;
                 boolean hasMarker = false;
-                List<Integer> authorsBlocks = new ArrayList<Integer>();
+                List<Integer> authorsBlocks = new ArrayList<>();
                 List<List<LayoutToken>> authorSegments = new ArrayList<>();
-                if (resHeader.getAuthorsTokens() != null) {
+                List<LayoutToken> authorLayoutTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AUTHOR);
+                if (isNotEmpty(authorLayoutTokens)) {
                     // split the list of layout tokens when token "\t" is met
                     List<LayoutToken> currentSegment = new ArrayList<>();
-                    for(LayoutToken theToken : resHeader.getAuthorsTokens()) {
+                    for(LayoutToken theToken : authorLayoutTokens) {
                         if (theToken.getText() != null && theToken.getText().equals("\t")) {
                             if (currentSegment.size() > 0)
                                 authorSegments.add(currentSegment);
@@ -785,13 +785,13 @@ public class HeaderParser extends AbstractParser {
      * @param biblio        biblio item
      * @return a biblio item
      */
-    public BiblioItem resultExtraction(String result, List<LayoutToken> tokenizations, BiblioItem biblio, Document doc) {
+    public BiblioItem resultExtraction(String result, List<LayoutToken> tokenizations, BiblioItem biblio) {
 
-        TaggingLabel lastClusterLabel = null;
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, result, tokenizations);
 
-        String tokenLabel = null;
         List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        biblio.generalResultMapping(result, tokenizations);
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -807,23 +807,14 @@ public class HeaderParser extends AbstractParser {
                 else*/
                 if (biblio.getTitle() == null) {
                     biblio.setTitle(clusterContent);
-                    List<LayoutToken> tokens = getLayoutTokens(cluster);
-                    biblio.addTitleTokens(tokens);
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
                 //if (biblio.getAuthors() != null && isDifferentandNotIncludedContent(biblio.getAuthors(), clusterContent)) {
                 if (biblio.getAuthors() != null) {
                     biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
                     //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
-                    biblio.addAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
-
-                    List<LayoutToken> tokens = cluster.concatTokens();
-                    biblio.addAuthorsTokens(tokens);
                 } else {
                     biblio.setAuthors(clusterNonDehypenizedContent);
-
-                    List<LayoutToken> tokens = cluster.concatTokens();
-                    biblio.addAuthorsTokens(tokens);
                 }
             } /*else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
@@ -915,8 +906,6 @@ public class HeaderParser extends AbstractParser {
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
                 } else {
                     biblio.setAbstract(clusterContent);
-                    List<LayoutToken> tokens = getLayoutTokens(cluster);
-                    biblio.addAbstractTokens(tokens);
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
                 //if (biblio.getReference() != null) {

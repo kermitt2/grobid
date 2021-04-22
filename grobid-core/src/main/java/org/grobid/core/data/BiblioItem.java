@@ -53,10 +53,6 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
-    private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> abstractLayoutTokens = new ArrayList<>();
-
     @Override
     public String toString() {
         return "BiblioItem{" +
@@ -1175,15 +1171,6 @@ public class BiblioItem {
     // temp
     public void setAuthors(String aut) {
         authors = aut;
-    }
-
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsLayoutTokens.add(lt);
-        return this;
-    }
-
-    public List<LayoutToken> getAuthorsTokens() {
-        return authorsLayoutTokens;
     }
 
     public void addAuthor(String aut) {
@@ -4606,7 +4593,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4630,19 +4617,4 @@ public class BiblioItem {
         }
     }
 
-    public void addTitleTokens(List<LayoutToken> layoutTokens) {
-        this.titleLayoutTokens.addAll(layoutTokens);
-    }
-
-    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
-        this.authorsLayoutTokens.addAll(layoutTokens);
-    }
-
-    public void addAbstractTokens(List<LayoutToken> layoutTokens) {
-        this.abstractLayoutTokens.addAll(layoutTokens);
-    }
-
-    public List<LayoutToken> getAbstractTokens() {
-        return this.abstractLayoutTokens;
-    }
 }
