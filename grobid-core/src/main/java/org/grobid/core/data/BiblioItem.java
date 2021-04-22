@@ -50,11 +50,12 @@ public class BiblioItem {
     private Map<String, List<LayoutToken>> labeledTokens;
 
     /**
-     * This is an internal structure not meant to be used outside. This is also modified with respect of other structures
-     * For collecting layout tokens of the various bibliographical component, please refers to @See(getLayoutTokens(TaggingLabels label)
+     * The following are internal working structures not meant to be used outside. 
+     * For collecting layout tokens of the various bibliographical component, 
+     * please refers to @See(getLayoutTokens(TaggingLabels label)
      */
     private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
-
+    private List<LayoutToken> abstractTokensWorkingCopy = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -1183,6 +1184,10 @@ public class BiblioItem {
 
     public void collectAuthorsTokens(List<LayoutToken> layoutTokens) {
         this.authorsTokensWorkingCopy.addAll(layoutTokens);
+    }
+
+    public void collectAbstractTokens(List<LayoutToken> layoutTokens) {
+        this.abstractTokensWorkingCopy.addAll(layoutTokens);
     }
 
     public void addAuthor(String aut) {
@@ -4617,9 +4622,6 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            /*if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
-                break;
-            }*/
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
@@ -4631,5 +4633,9 @@ public class BiblioItem {
 
     public List<LayoutToken> getAuthorsTokensWorkingCopy() {
         return authorsTokensWorkingCopy;
+    }
+
+    public List<LayoutToken> getAbstractTokensWorkingCopy() {
+        return abstractTokensWorkingCopy;
     }
 }
