@@ -183,8 +183,7 @@ public class FullTextParser extends AbstractParser {
 
             // structure the abstract using the fulltext model
             if (isNotBlank(resHeader.getAbstract())) {
-                //List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                List<LayoutToken> abstractTokens = resHeader.getAbstractTokens();
+                List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
                     abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
                     Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);

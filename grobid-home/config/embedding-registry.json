@@ -45,7 +45,7 @@
             "format": "vec", 
             "lang": "en",
             "item": "word",
-            "url": ""
+            "url": "https://science-miner.s3-us-west-2.amazonaws.com/embeddings/GoogleNews-vectors-negative300.vec.gz"
         },
         {
             "name": "word2vec-pmc",

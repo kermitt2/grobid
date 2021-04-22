@@ -21,7 +21,6 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Cluster;
@@ -71,7 +70,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
@@ -828,7 +826,7 @@ public class Document implements Serializable {
         if (documentParts == null)
             return null;
 
-        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizationParts = new ArrayList<>();
         for (DocumentPiece docPiece : documentParts) {
             DocumentPointer dp1 = docPiece.getLeft();
             DocumentPointer dp2 = docPiece.getRight();
