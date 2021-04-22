@@ -1,40 +1,21 @@
 package org.grobid.core.utilities;
 
-import org.apache.commons.io.IOUtils;
+import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.commons.collections4.CollectionUtils;
-
-import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.sax.CrossrefUnixrefSaxParser;
-import org.grobid.core.utilities.crossref.*;
-import org.grobid.core.utilities.glutton.*;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.utilities.counters.CntManager;
-
+import org.grobid.core.utilities.crossref.CrossrefClient;
+import org.grobid.core.utilities.crossref.CrossrefRequestListener;
+import org.grobid.core.utilities.crossref.WorkDeserializer;
+import org.grobid.core.utilities.glutton.GluttonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.InputStream;
-import java.io.StringReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.List;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-
-import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
+
+import java.util.*;
 
 /**
  * Singleton class for managing the extraction of bibliographical information from pdf documents.
@@ -308,7 +289,7 @@ public class Consolidation {
 
                 @Override
                 public void onError(int status, String message, Exception exception) {
-                    LOGGER.info("Consolidation service returns error ("+status+") : "+message);
+                    LOGGER.info("Consolidation service returns error ("+status+") : "+message, exception);
                 }
             });
         } catch(Exception e) {

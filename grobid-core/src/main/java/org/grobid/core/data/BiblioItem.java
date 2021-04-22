@@ -14,15 +14,11 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.GrobidModels;
 
 import java.net.URLEncoder;
@@ -53,9 +49,12 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
-    private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> abstractLayoutTokens = new ArrayList<>();
+    /**
+     * This is an internal structure not meant to be used outside. This is also modified with respect of other structures
+     * For collecting layout tokens of the various bibliographical component, please refers to @See(getLayoutTokens(TaggingLabels label)
+     */
+    private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
+
 
     @Override
     public String toString() {
@@ -1177,13 +1176,13 @@ public class BiblioItem {
         authors = aut;
     }
 
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsLayoutTokens.add(lt);
+    public BiblioItem collectAuthorsToken(LayoutToken lt) {
+        authorsTokensWorkingCopy.add(lt);
         return this;
     }
 
-    public List<LayoutToken> getAuthorsTokens() {
-        return authorsLayoutTokens;
+    public void collectAuthorsTokens(List<LayoutToken> layoutTokens) {
+        this.authorsTokensWorkingCopy.addAll(layoutTokens);
     }
 
     public void addAuthor(String aut) {
@@ -4556,7 +4555,7 @@ public class BiblioItem {
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))
 			return true;
-		else 
+		else
 			return false;
 	}
 
@@ -4606,7 +4605,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4624,27 +4623,13 @@ public class BiblioItem {
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
-            if (theList == null)
-                theList = new ArrayList<>();
-            for (LayoutToken token : clusterTokens)
-                theList.add(token);
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
     }
 
-    public void addTitleTokens(List<LayoutToken> layoutTokens) {
-        this.titleLayoutTokens.addAll(layoutTokens);
-    }
-
-    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
-        this.authorsLayoutTokens.addAll(layoutTokens);
-    }
-
-    public void addAbstractTokens(List<LayoutToken> layoutTokens) {
-        this.abstractLayoutTokens.addAll(layoutTokens);
-    }
-
-    public List<LayoutToken> getAbstractTokens() {
-        return this.abstractLayoutTokens;
+    public List<LayoutToken> getAuthorsTokensWorkingCopy() {
+        return authorsTokensWorkingCopy;
     }
 }
