@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
+import java.util.stream.Collectors;
 
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 
@@ -101,18 +102,7 @@ public class HeaderParser extends AbstractParser {
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
             if (documentHeaderParts != null) {
-                List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
-
-                for (DocumentPiece docPiece : documentHeaderParts) {
-                    DocumentPointer dp1 = docPiece.getLeft();
-                    DocumentPointer dp2 = docPiece.getRight();
-
-                    int tokens = dp1.getTokenDocPos();
-                    int tokene = dp2.getTokenDocPos();
-                    for (int i = tokens; i < tokene; i++) {
-                        tokenizationsHeader.add(tokenizations.get(i));
-                    }
-                }
+//                List<LayoutToken> tokenizationsHeader = Document.getTokenizationParts(documentHeaderParts, tokenizations);
 
                 //String header = getSectionHeaderFeatured(doc, documentHeaderParts, true);
                 Pair<String, List<LayoutToken>> featuredHeader = getSectionHeaderFeatured(doc, documentHeaderParts);
@@ -138,20 +128,11 @@ public class HeaderParser extends AbstractParser {
                     // correct
                     SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
                     if (documentBodyParts != null) {
-                        StringBuilder contentBuffer = new StringBuilder();
-                        for (DocumentPiece docPiece : documentBodyParts) {
-                            DocumentPointer dp1 = docPiece.getLeft();
-                            DocumentPointer dp2 = docPiece.getRight();
+                        String stringSample = Document.getTokenizationParts(documentBodyParts, tokenizations)
+                            .stream().map(LayoutToken::toString)
+                            .collect(Collectors.joining(" "));
 
-                            int tokens = dp1.getTokenDocPos();
-                            int tokene = dp2.getTokenDocPos();
-                            for (int i = tokens; i < tokene; i++) {
-                                contentBuffer.append(tokenizations.get(i));
-                                contentBuffer.append(" ");
-                            }
-                        }
-                        contentSample.append(" ");
-                        contentSample.append(contentBuffer.toString());
+                        contentSample.append(stringSample);
                     }
                 }
                 Language langu = languageUtilities.runLanguageId(contentSample.toString());
@@ -189,7 +170,7 @@ public class HeaderParser extends AbstractParser {
                 boolean hasMarker = false;
                 List<Integer> authorsBlocks = new ArrayList<>();
                 List<List<LayoutToken>> authorSegments = new ArrayList<>();
-                List<LayoutToken> authorLayoutTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AUTHOR);
+                List<LayoutToken> authorLayoutTokens = resHeader.getAuthorsWorkingCopyTokens();
                 if (isNotEmpty(authorLayoutTokens)) {
                     // split the list of layout tokens when token "\t" is met
                     List<LayoutToken> currentSegment = new ArrayList<>();
@@ -512,7 +493,7 @@ public class HeaderParser extends AbstractParser {
                     if (previousNewline) {
                         newline = true;
                         previousNewline = false;
-                        if (token != null && previousFeatures != null) {
+                        if (previousFeatures != null) {
                             double previousLineStartX = lineStartX;
                             lineStartX = token.getX();
                             double characterWidth = token.width / token.getText().length();
@@ -813,8 +794,15 @@ public class HeaderParser extends AbstractParser {
                 if (biblio.getAuthors() != null) {
                     biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
                     //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
+                    biblio.addAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
+
+                    List<LayoutToken> tokens = cluster.concatTokens();
+                    biblio.addAuthorsTokens(tokens);
                 } else {
                     biblio.setAuthors(clusterNonDehypenizedContent);
+
+                    List<LayoutToken> tokens = cluster.concatTokens();
+                    biblio.addAuthorsTokens(tokens);
                 }
             } /*else if (clusterLabel.equals(TaggingLabels.HEADER_TECH)) {
                 biblio.setItem(BiblioItem.TechReport);
