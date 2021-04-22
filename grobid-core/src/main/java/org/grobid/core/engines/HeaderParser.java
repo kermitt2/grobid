@@ -1,61 +1,40 @@
 package org.grobid.core.engines;
 
-import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
-import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
-import org.grobid.core.document.DocumentPointer;
-import org.grobid.core.document.DocumentSource;
-import org.grobid.core.document.TEIFormatter;
+import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.lang.Language;
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.Block;
-import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.PDFAnnotation;
+import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
-import org.grobid.core.GrobidModels.Collection;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 
@@ -822,15 +801,6 @@ public class HeaderParser extends AbstractParser {
 
             String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
-
-            List<LayoutToken> clusterTokens = cluster.concatTokens();
-            List<LayoutToken> theList = biblio.getLabeledTokens().get(clusterLabel.getLabel());
-
-            theList = theList == null ? new ArrayList<>() : theList;
-            theList.addAll(clusterTokens);
-
-            biblio.getLabeledTokens().put(clusterLabel.getLabel(), theList);
-
             if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
                 /*if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
                     biblio.setTitle(biblio.getTitle() + clusterContent);

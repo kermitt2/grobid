@@ -51,7 +51,7 @@ public class BiblioItem {
     private List<BoundingBox> coordinates = null;
 
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
-    private Map<String, List<LayoutToken>> labeledTokens = new HashMap<>();
+    private Map<String, List<LayoutToken>> labeledTokens;
 
     private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
     private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
@@ -4606,7 +4606,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4632,18 +4632,6 @@ public class BiblioItem {
 
     public void addTitleTokens(List<LayoutToken> layoutTokens) {
         this.titleLayoutTokens.addAll(layoutTokens);
-    }
-
-    public List<LayoutToken> getTitleLayoutTokens() {
-        return titleLayoutTokens;
-    }
-
-    public List<LayoutToken> getAuthorsLayoutTokens() {
-        return authorsLayoutTokens;
-    }
-
-    public List<LayoutToken> getAbstractLayoutTokens() {
-        return abstractLayoutTokens;
     }
 
     public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
