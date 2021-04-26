@@ -293,7 +293,7 @@ public class Consolidation {
                 }
             });
         } catch(Exception e) {
-            LOGGER.info("Consolidation error - ",e);
+            LOGGER.info("Consolidation error - ", e);
         }
 
         client.finish(threadId);
