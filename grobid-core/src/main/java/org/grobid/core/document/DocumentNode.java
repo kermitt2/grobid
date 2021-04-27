@@ -12,32 +12,33 @@ import org.grobid.core.layout.BoundingBox;
  */
 
 public class DocumentNode {
+    private Integer id = null;
+
     // Gorn address for tree structure
     private String address = null;
-
     // real numbering of the section, if any
+
     private String realNumber = null;
-
     // normalized numbering of the section, if any
+
     private String normalizedNumber = null;
-
     // the string attached to this document level, e.g. section title
+
     private String label = null;
-
     // list of child document nodes
-    private List<DocumentNode> children = null;
 
+    private List<DocumentNode> children = null;
     // offset relatively to the document tokenization (so token offset, NOT character offset)
+
     public int startToken = -1;
     public int endToken = -1;
-
     // coordinates of the string attached to this document level, typically where an index link
     // action point in the document
+
     private BoundingBox boundingBox = null;
-
     // parent document node, if null it is a root node
-    private DocumentNode father = null;
 
+    private DocumentNode father = null;
     public DocumentNode() {
     }
 
@@ -128,8 +129,8 @@ public class DocumentNode {
     }
 
     public String toString(int tab) {
-        StringBuffer sb = new StringBuffer();
-        sb.append(address + " " + label + " " + startToken + " " + endToken + "\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append(id).append(" ").append(address).append(" ").append(label).append(" ").append(startToken).append(" ").append(endToken).append("\n");
 
         if (children != null) {
             for (DocumentNode node : children) {
@@ -169,6 +170,7 @@ public class DocumentNode {
         }
     }
 
+
     /*public DocumentNode nextSlibing() {
          if ( (children != null) && (children.size() > 0) ) {
              return children.get(0);
@@ -182,5 +184,12 @@ public class DocumentNode {
              }
          }
      }*/
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
 

@@ -76,13 +76,13 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         if ((
-                (qName.equals("addrLine")) |
-                        (qName.equals("settlement")) |
-                        (qName.equals("region")) |
-                        (qName.equals("postCode")) |
-                        (qName.equals("postBox")) |
-                        (qName.equals("marker")) |
-                        (qName.equals("country") |
+                (qName.equals("addrLine")) ||
+                        (qName.equals("settlement")) ||
+                        (qName.equals("region")) ||
+                        (qName.equals("postCode")) ||
+                        (qName.equals("postBox")) ||
+                        (qName.equals("marker")) ||
+                        (qName.equals("country") ||
                                 (qName.equals("orgName")))
         )) {
             String text = getText();
@@ -94,7 +94,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                 allContent.append(text);
             }
             accumulator.setLength(0);
-        } else if (qName.equals("lb") | qName.equals("pb")) {
+        } else if (qName.equals("lb") || qName.equals("pb")) {
             // we note a line break
             accumulator.append(" @newline ");
         } else if (qName.equals("affiliation")) {
@@ -146,7 +146,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                              String qName,
                              Attributes atts)
             throws SAXException {
-        if (!qName.equals("lb") & !qName.equals("pb")) {
+        if (!qName.equals("lb") && !qName.equals("pb")) {
             String text = getText();
             if (text.length() > 0) {
                 currentTag = "<other>";
@@ -194,15 +194,15 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             currentTag = null;
             accumulator.setLength(0);
             n++;
-        } else if (qName.equals("addrLine") | qName.equals("addrline")) {
+        } else if (qName.equals("addrLine") || qName.equals("addrline")) {
             currentTag = "<addrLine>";
         } else if (qName.equals("settlement")) {
             currentTag = "<settlement>";
         } else if (qName.equals("region")) {
             currentTag = "<region>";
-        } else if (qName.equals("postCode") | qName.equals("postcode")) {
+        } else if (qName.equals("postCode") || qName.equals("postcode")) {
             currentTag = "<postCode>";
-        } else if (qName.equals("postBox") | qName.equals("postbox")) {
+        } else if (qName.equals("postBox") || qName.equals("postbox")) {
             currentTag = "<postBox>";
         } else if (qName.equals("country")) {
             currentTag = "<country>";

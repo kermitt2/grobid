@@ -4,17 +4,19 @@
 
 ### Limitations
 
-As of April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtained for the following document substructures: 
+Since April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtained for the following document substructures: 
 
-* ```persName``` for a complete author name,
-* ```figure``` for figure AND table,
 * ```ref``` for bibliographical, figure, table and formula reference markers - for example (_Toto and al. 1999_), see _Fig. 1_, as shown by _formula (245)_, etc.,
 * ```biblStruct``` for a bibliographical reference,
-* ```formula``` for mathematical equations.
+* ```persName``` for a complete author name,
+* ```figure``` for figure AND table,
+* ```formula``` for mathematical equations,
+* ```head``` for section titles,
+* ```s``` for optional sentence structure (the GROBID fulltext service must be called with the `segmentSentences` parameter to provide the optional sentence-level elements). 
 
 However, there is normally no particular limitation to the type of structures which can have their coordinates in the results, the implementation is on-going, see [issue #69](https://github.com/kermitt2/grobid/issues/69), and it is expected that more or less any structures could be associated with their coordinates in the orginal PDF. 
 
-Coordinates are currently available in full text processing (returning a TEI document) and the PDF annotation services (returning JSON). 
+Coordinates are currently available in full text processing (returning a TEI document) and the PDF annotation services (returning JSON for `ref`, `figure` and `formula` only). 
 
 ### GROBID service
 
@@ -46,8 +48,7 @@ Example (under the project main directory `grobid/`):
 > java -Xmx1024m -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
 ```
 
-See the [batch mode details](http://grobid.readthedocs.io/en/latest/Grobid-batch/#processfulltext). With the batch mode, it is currenlty not possible to cherry pick up certain elements, coordinates will appear for all.
-
+See the [batch mode details](https://grobid.readthedocs.io/en/latest/Grobid-batch/#processfulltext). With the batch mode, it is currenlty not possible to cherry pick up certain elements, coordinates will appear for all. Again, we recommend to use the service for significantly better performances and more customization options. 
 
 ## Coordinate system in the PDF
 

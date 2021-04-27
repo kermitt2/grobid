@@ -21,14 +21,12 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.common.primitives.Doubles;
 import org.apache.commons.lang3.StringUtils;
 
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
 
-import static shadedwipo.org.apache.commons.lang3.ArrayUtils.isEmpty;
 
 /**
  * Some utilities methods that I don't know where to put.
@@ -525,10 +523,13 @@ public class Utilities {
 		return finalResult;
 	}
 
-	public static List<OffsetPosition> convertStringOffsetToTokenOffset(
+	/**
+	 * This version uses general LayoutToken offsets relative to the complete document.
+	 * It supposes that the stringPosition have been identified on the complete document string
+	 */
+	public static List<OffsetPosition> convertStringOffsetToTokenOffsetOld(
 		List<OffsetPosition> stringPosition, List<LayoutToken> tokens) {
 		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
-		int indexText = 0;
         int indexToken = 0;
         OffsetPosition currentPosition = null;
         LayoutToken token = null;
@@ -560,6 +561,66 @@ public class Utilities {
                     }
                 }
                 indexToken++;
+            }
+        }
+        return result;
+	}
+
+	/**
+	 * This version uses actual LayoutToken offsets relative to the tokens present in argment only.
+	 * It supposes that the stringPosition have been identified on the provided tokens only, and not 
+	 * restricted to the complete document.
+	 */
+	public static List<OffsetPosition> convertStringOffsetToTokenOffset(
+		List<OffsetPosition> stringPosition, List<LayoutToken> tokens) {
+		List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+		int indexText = 0;
+        int indexToken = 0;
+        OffsetPosition currentPosition = null;
+        LayoutToken token = null;
+        for(OffsetPosition pos : stringPosition) {
+            while(indexToken < tokens.size()) {
+
+                token = tokens.get(indexToken);
+                if (token.getText() == null) {
+                	indexToken++;
+                	continue;
+                }
+                
+                if (indexText >= pos.start) {
+                    // we have a start
+                    currentPosition = new OffsetPosition(indexToken, indexToken);
+                    // we need an end
+                    boolean found = false;
+                    while(indexToken < tokens.size()) {
+                        token = tokens.get(indexToken);
+
+                        if (token.getText() == null) {
+                        	indexToken++;
+                			continue;
+                        }
+
+                        if (indexText+token.getText().length() >= pos.end) {
+                            // we have an end
+                            currentPosition.end = indexToken;
+                            result.add(currentPosition);
+                            found = true;
+                            break;
+                        }
+                        indexToken++;
+                        indexText += token.getText().length();
+                    }
+                    if (found) {
+                        indexToken++;
+                        indexText += token.getText().length();
+                        break;
+                    } else {
+                        currentPosition.end = indexToken-1;
+                        result.add(currentPosition);
+                    }
+                }
+                indexToken++;
+                indexText += token.getText().length();
             }
         }
         return result;

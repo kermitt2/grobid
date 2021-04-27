@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="80DE375FE040B209B2D7BF64D38CB9B3CE170A41"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Hedging rule for reservoir operations:<lb/> 1. A theoretical analysis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jiing-Yun You 1 and Ximing Cai 1<lb/></docAuthor>
+	</byline>
+
+	<note type="submission">Received 31 August 2006; revised 20 September 2007; accepted 30 October 2007;</note>
+
+	published
+	<date>10 January 2008.<lb/></date>
+
+	[1]
+	<div type="abstract">Hedging rule policies for reservoir operations accept small deficits in current supply to<lb/> reduce the probability of a severe water shortage later. This paper expands a theoretical<lb/> analysis and develops a conceptual two-period model for reservoir operation with hedging<lb/> that includes uncertain future reservoir inflow explicitly. Extended analysis of the<lb/> model properties and influencing factors is presented with a general utility function,<lb/> addressing (1) the starting and ending water availability for hedging, (2) the range of<lb/> hedging that is related to water demand levels, (3) inflow uncertainty, and (4) evaporation<lb/> loss. Some intuitive knowledge on reservoir operation is proved or reconfirmed<lb/> analytically; and new knowledge is derived. This theoretical analysis provides an updated<lb/> basis for further theoretical study, and the theoretical findings can be used to improve<lb/> numerical modeling for reservoir operation.<lb/></div>
+
+	Citation:
+	<reference>You, J.-Y., and X. Cai (2008), Hedging rule for reservoir operations: 1. A theoretical analysis, Water Resour. Res., 44,<lb/> W01415, </reference>
+
+	<idno>doi:10.1029/2006WR005481</idno>.<lb/>
+
+	<byline>
+	<affiliation>1 Ven Te Chow Hydrosystems Laboratory, Department of Civil and<lb/> Environmental Engineering, University of Illinois at Urbana-Champaign,<lb/></affiliation>
+	</byline>
+
+	<address>Urbana, Illinois, USA.<lb/></address>
+
+	<note type="copyright">Copyright 2008 by the American Geophysical Union.<lb/></note>
+
+	0043-1397/08/2006WR005481 W01415<lb/>
+	<reference>WATER RESOURCES RESEARCH, VOL. 44, W01415, doi:10.1029/2006WR005481, 2008<lb/></reference>
+
+	<page>1 of 9<lb/></page>
+
+	<byline>
+	<docAuthor>X. Cai and J.-Y. You, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ven Te Chow Hydrosystems Laboratory,<lb/> Department of Civil and Environmental Engineering, University of Illinois<lb/> at Urbana-Champaign,</affiliation>
+	</byline>
+
+	<address>Urbana, IL 61801, USA.</address>
+
+	(
+	<email>xmcai@uiuc.edu</email>
+
+	)
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1751-8121_44_25_252001"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<publisher>IOP PUBLISHING<lb/> </publisher>
+
+	<title level="j">JOURNAL OF PHYSICS A: MATHEMATICAL AND THEORETICAL<lb/></title>
+	
+	<reference>J. Phys. A: Math. Theor. 44 (2011) 252001 (9pp)<lb/></reference>
+
+	<idno>doi:10.1088/1751-8113/44/25/252001<lb/></idno>
+
+	<note type="doctype">FAST TRACK COMMUNICATION<lb/></note>
+
+	<docTitle>
+	<titlePart>Exact ground state of the sine-square deformed XY<lb/> spin chain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hosho Katsura<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics, Gakushuin University,</affiliation>
+	</byline>
+
+	<address>Mejiro, Toshima-ku, Tokyo 171-8588, Japan<lb/></address>
+
+	E-mail:
+	<email>hosho.katsura@gakushuin.ac.jp<lb/></email>
+
+	<note type="submission">Received 13 April 2011, in final form 4 May 2011<lb/></note>
+
+	Published
+	<date>19 May 2011<lb/></date>
+
+	Online at
+	<ptr type="web">stacks.iop.org/JPhysA/44/252001<lb/></ptr>
+
+	Abstract<lb/>
+	<div type="abstract">We study the sine-square deformed quantum XY chain with open boundary<lb/> conditions in which the interaction strength at the position x in the chain of<lb/> length L is proportional to the function f x = sin 2 π<lb/> L x − 1<lb/> 2 . The model can<lb/> be mapped onto a free spinless fermion model with site-dependent hopping<lb/> amplitudes and on-site potentials via the Jordan-Wigner transformation.<lb/> Although the single-particle eigenstates of this system cannot be obtained<lb/> in closed form, it is shown that the many-body ground state is identical to that<lb/> of the uniform XY chain with periodic boundary conditions. This proves a<lb/> conjecture of Hikihara and Nishino (2011 Phys. Rev. B 83 060414) based on<lb/> numerical evidence.<lb/></div>
+
+	<keyword>PACS numbers: 75.10.Pq, 02.30.Ik, 05.30.−d<lb/></keyword>
+
+	1751-8113/11/252001+09$33.00
+	<note type="copyright">© 2011 IOP Publishing Ltd</note>
+
+	Printed in the UK &amp; the USA
+		</front>
+	</text>
+</tei>

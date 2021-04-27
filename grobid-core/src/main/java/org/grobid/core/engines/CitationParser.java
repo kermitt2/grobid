@@ -47,7 +47,7 @@ import java.util.regex.Pattern;
  * @author Patrice Lopez
  */
 public class CitationParser extends AbstractParser {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
@@ -62,34 +62,76 @@ public class CitationParser extends AbstractParser {
         this.parsers = parsers;
     }
 
-    public BiblioItem processing(String input, int consolidate) {
-        if (StringUtils.isBlank(input)) {
+    /**
+     * Process one single raw reference string
+     */ 
+    public BiblioItem processingString(String input, int consolidate) {
+        List<String> inputs = new ArrayList<>();
+        inputs.add(input);
+        List<BiblioItem> result = processingStringMultiple(inputs, consolidate);
+        if (result != null && result.size()>0) 
+            return result.get(0);
+        else
             return null;
-        }
-
-        // some cleaning
-        input = UnicodeUtil.normaliseText(input);
-        //input = TextUtilities.dehyphenize(input);
-        //input = input.replace("\n", " ");
-        //input = input.replaceAll("\\p{Cntrl}", " ").trim();
-
-        List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
-        BiblioItem biblioItem = processing(tokens, consolidate);
-        // store original references to enable raw output
-        biblioItem.setReference(input);
-        return biblioItem;
     }
 
-    public BiblioItem processing(List<LayoutToken> tokens, int consolidate) {
-        BiblioItem resCitation;
-        if (CollectionUtils.isEmpty(tokens)) {
+    /**
+     * Process a list of raw reference strings by taking advantage of batch processing
+     * when a DeLFT deep learning model is used
+     */ 
+    public List<BiblioItem> processingStringMultiple(List<String> inputs, int consolidate) {
+        if (inputs == null || inputs.size() == 0)
             return null;
+        List<List<LayoutToken>> tokenList = new ArrayList<>();
+        for(String input : inputs) {
+            if (StringUtils.isBlank(input)) 
+                tokenList.add(new ArrayList<LayoutToken>());
+            else {
+                // some cleaning
+                input = UnicodeUtil.normaliseText(input);
+                List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+                tokenList.add(tokens);
+            }
         }
 
-        try {
-            List<String> citationBlocks = new ArrayList<>();
+        List<BiblioItem> results = processingLayoutTokenMultiple(tokenList, consolidate);
+        if (results != null && results.size() == inputs.size()) {
+            // store original references to enable optional raw output
+            int i = 0;
+            for (BiblioItem result : results) {
+                if (result != null)
+                    result.setReference(inputs.get(i));
+                i++;
+            }
+        }
+        return results;
+    }
 
-            //tokens = LayoutTokensUtil.dehyphenize(tokens);
+    /**
+     * Process one single raw reference string tokenized as layout objects
+     */ 
+    public BiblioItem processingLayoutToken(List<LayoutToken> tokens, int consolidate) {
+        List<List<LayoutToken>> tokenList = new ArrayList<>();
+        tokenList.add(tokens);
+        List<BiblioItem> result = processingLayoutTokenMultiple(tokenList, consolidate);
+        if (result != null && result.size()>0) 
+            return result.get(0);
+        else
+            return null;
+    }
+
+    /**
+     * Process a list of raw reference string, each one tokenized as layout objects, and taking advantage 
+     * of batch processing when a DeLFT deep learning model is used
+     */ 
+    public List<BiblioItem> processingLayoutTokenMultiple(List<List<LayoutToken>> tokenList, int consolidate) {
+        if (tokenList == null || tokenList.size() == 0)
+            return null;
+        List<BiblioItem> results = new ArrayList<>();
+        StringBuilder featuredInput = new StringBuilder();
+        for (List<LayoutToken> tokens : tokenList) {
+            if (CollectionUtils.isEmpty(tokens))
+                continue;
 
             List<OffsetPosition> journalsPositions = lexicon.tokenPositionsJournalNames(tokens);
             List<OffsetPosition> abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(tokens);
@@ -100,71 +142,117 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> identifiersPositions = lexicon.tokenPositionsIdentifierPattern(tokens);
             List<OffsetPosition> urlPositions = lexicon.tokenPositionsUrlPattern(tokens);
 
-            String ress = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
-                abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
-                collaborationsPositions, identifiersPositions, urlPositions);
+            try {
+                String featuredBlock = FeaturesVectorCitation.addFeaturesCitation(tokens, null, journalsPositions, 
+                    abbrevJournalsPositions, conferencesPositions, publishersPositions, locationsPositions,
+                    collaborationsPositions, identifiersPositions, urlPositions);
 
-            String res = label(ress);
-//System.out.println(res);
-            resCitation = resultExtractionLayoutTokens(res, true, tokens);
-            // post-processing (additional field parsing and cleaning)
-            if (resCitation != null) {
-                BiblioItem.cleanTitles(resCitation);
+                featuredInput.append(featuredBlock);
+                featuredInput.append("\n\n");
+            } catch (Exception e) {
+                LOGGER.error("An exception occured while adding features for processing a citation.", e);
+            }
+        }
+        
+        String allRes = null;
+        try {
+            allRes = label(featuredInput.toString());
+        } catch (Exception e) {
+            LOGGER.error("An exception occured while labeling a citation.", e);
+            throw new GrobidException(
+                    "An exception occured while labeling a citation.", e);
+        }
 
-                resCitation.setOriginalAuthors(resCitation.getAuthors());
-                resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
-                if (resCitation.getPublicationDate() != null) {
-                    List<Date> dates = parsers.getDateParser().processing(resCitation
-                            .getPublicationDate());
-                    if (dates != null) {
-                        Date bestDate = null;
-                        if (dates.size() > 0) {
-                            // we take the earliest most specified date
-                            for (Date theDate : dates) {
-                                if (bestDate == null) {
-                                    bestDate = theDate;
-                                } else {
-                                    if (bestDate.compareTo(theDate) == 1) {
+        if (allRes == null || allRes.length() == 0)
+            return null;
+        String[] resBlocks = allRes.split("\n\n");
+        int i = 0;
+        for (List<LayoutToken> tokens : tokenList) {
+            if (CollectionUtils.isEmpty(tokens))
+                results.add(null);
+            else {
+                String res = resBlocks[i];
+                i++;
+                BiblioItem resCitation = resultExtractionLayoutTokens(res, true, tokens);
+            
+                // post-processing (additional field parsing and cleaning)
+                if (resCitation != null) {
+                    BiblioItem.cleanTitles(resCitation);
+
+                    resCitation.setOriginalAuthors(resCitation.getAuthors());
+                    try {
+                        resCitation.setFullAuthors(parsers.getAuthorParser().processingCitation(resCitation.getAuthors()));
+                    } catch (Exception e) {
+                        LOGGER.error("An exception occured when processing author names of a citation.", e);
+                    }
+                    if (resCitation.getPublicationDate() != null) {
+                        List<Date> dates = parsers.getDateParser().processing(resCitation
+                                .getPublicationDate());
+                        if (dates != null) {
+                            Date bestDate = null;
+                            if (dates.size() > 0) {
+                                // we take the earliest most specified date
+                                for (Date theDate : dates) {
+                                    if (bestDate == null) {
                                         bestDate = theDate;
+                                    } else {
+                                        if (bestDate.compareTo(theDate) == 1) {
+                                            bestDate = theDate;
+                                        }
                                     }
                                 }
-                            }
-                            if (bestDate != null) {
-                                resCitation
-                                        .setNormalizedPublicationDate(bestDate);
+                                if (bestDate != null) {
+                                    resCitation.setNormalizedPublicationDate(bestDate);
+                                }
                             }
                         }
                     }
+
+                    resCitation.setPageRange(TextUtilities.cleanField(
+                            resCitation.getPageRange(), true));
+                    resCitation.setPublisher(TextUtilities.cleanField(
+                            resCitation.getPublisher(), true));
+                    resCitation.setJournal(TextUtilities.cleanField(
+                            resCitation.getJournal(), true));
+                    resCitation.postProcessPages();
+
+                    // editors (they are human persons in theory)
+                    resCitation.setOriginalEditors(resCitation.getEditors());
+                    try {
+                        resCitation.setFullEditors(parsers.getAuthorParser().processingCitation(resCitation.getEditors()));
+                    } catch (Exception e) {
+                        LOGGER.error("An exception occured when processing editor names of a citation.", e);
+                    }
                 }
 
-                resCitation.setPageRange(TextUtilities.cleanField(
-                        resCitation.getPageRange(), true));
-                resCitation.setPublisher(TextUtilities.cleanField(
-                        resCitation.getPublisher(), true));
-                resCitation.setJournal(TextUtilities.cleanField(
-                        resCitation.getJournal(), true));
-                resCitation.postProcessPages();
-            }
-
-            //if (consolidate != 0) 
-            {
                 resCitation = consolidateCitation(resCitation, LayoutTokensUtil.toText(tokens), consolidate);
+                results.add(resCitation);
             }
-
-            return resCitation;
-        } catch (Exception e) {
-            LOGGER.error("An exception occured while running Grobid.", e);
-            throw new GrobidException(
-                    "An exception occured while running Grobid.", e);
         }
+
+        return results;
     }
 
     public List<BibDataSet> processingReferenceSection(String referenceTextBlock, ReferenceSegmenter referenceSegmenter) {
         List<LabeledReferenceResult> segm = referenceSegmenter.extract(referenceTextBlock);
 
         List<BibDataSet> results = new ArrayList<>();
+        List<List<LayoutToken>> allRefBlocks = new ArrayList<>();
+        if (segm == null || segm.size() == 0)
+            return results;
         for (LabeledReferenceResult ref : segm) {
-            BiblioItem bib = processing(ref.getTokens(), 0);
+            if (ref.getTokens() == null || ref.getTokens().size() == 0)
+                continue;
+            allRefBlocks.add(ref.getTokens());
+        }
+
+        List<BiblioItem> bibList = processingLayoutTokenMultiple(allRefBlocks, 0);
+        int i = 0;
+        for (LabeledReferenceResult ref : segm) {
+            if (ref.getTokens() == null || ref.getTokens().size() == 0)
+                continue;
+            BiblioItem bib = bibList.get(i);
+            i++;
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
                 bds.setRefSymbol(ref.getLabel());
@@ -202,53 +290,68 @@ public class CitationParser extends AbstractParser {
         // consolidation: if selected, is not done individually for each citation but 
         // in a second stage for all citations
         if (references != null) {
+            List<String> refTexts = new ArrayList<>();
             for (LabeledReferenceResult ref : references) {
                 // paranoiac check
                 if (ref == null) 
                     continue;
 
-                BiblioItem bib = processing(ref.getReferenceText(), 0);
-                if (bib == null) 
-                    continue;
+                refTexts.add(ref.getReferenceText());
+            }
 
-                // check if we have an interesting url annotation over this bib. ref.
-                List<LayoutToken> refTokens = ref.getTokens();
-                if ((refTokens != null) && (refTokens.size() > 0)) {
-                    List<Integer> localPages = new ArrayList<Integer>();
-                    for(LayoutToken token : refTokens) {
-                        if (!localPages.contains(token.getPage())) {
-                            localPages.add(token.getPage());
-                        }
-                    }
-                    for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
-                        if (annotation.getType() != Type.URI) 
-                            continue;
-                        if (!localPages.contains(annotation.getPageNumber()))
-                            continue;
+            List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
+            if (bibList != null && bibList.size()>0) {
+                int i = 0;
+                for (LabeledReferenceResult ref : references) {
+                    // paranoiac check
+                    if (ref == null) 
+                        continue;
+
+                    //BiblioItem bib = processingString(ref.getReferenceText(), 0);
+                    BiblioItem bib = bibList.get(i);
+                    i++;
+                    if (bib == null) 
+                        continue;
+
+                    // check if we have an interesting url annotation over this bib. ref.
+                    List<LayoutToken> refTokens = ref.getTokens();
+                    if ((refTokens != null) && (refTokens.size() > 0)) {
+                        List<Integer> localPages = new ArrayList<Integer>();
                         for(LayoutToken token : refTokens) {
-                            if (annotation.cover(token)) {
-                                // annotation covers tokens, let's look at the href
-                                String uri = annotation.getDestination();
-                                // is it a DOI?
-                                Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
-                                if (doiMatcher.find()) { 
-                                    // the BiblioItem setter will take care of the prefix and doi cleaninng 
-                                    bib.setDOI(uri);
+                            if (!localPages.contains(token.getPage())) {
+                                localPages.add(token.getPage());
+                            }
+                        }
+                        for(PDFAnnotation annotation : doc.getPDFAnnotations()) {
+                            if (annotation.getType() != Type.URI) 
+                                continue;
+                            if (!localPages.contains(annotation.getPageNumber()))
+                                continue;
+                            for(LayoutToken token : refTokens) {
+                                if (annotation.cover(token)) {
+                                    // annotation covers tokens, let's look at the href
+                                    String uri = annotation.getDestination();
+                                    // is it a DOI?
+                                    Matcher doiMatcher = TextUtilities.DOIPattern.matcher(uri);
+                                    if (doiMatcher.find()) { 
+                                        // the BiblioItem setter will take care of the prefix and doi cleaninng 
+                                        bib.setDOI(uri);
+                                    }
+                                    // TBD: is it something else? 
                                 }
-                                // TBD: is it something else? 
                             }
                         }
                     }
-                }
 
-                if (!bib.rejectAsReference()) {
-                    BibDataSet bds = new BibDataSet();
-                    bds.setRefSymbol(ref.getLabel());
-                    bds.setResBib(bib);
-                    bib.setReference(ref.getReferenceText());
-                    bds.setRawBib(ref.getReferenceText());
-                    bds.getResBib().setCoordinates(ref.getCoordinates());
-                    results.add(bds);
+                    if (!bib.rejectAsReference()) {
+                        BibDataSet bds = new BibDataSet();
+                        bds.setRefSymbol(ref.getLabel());
+                        bds.setResBib(bib);
+                        bib.setReference(ref.getReferenceText());
+                        bds.setRawBib(ref.getReferenceText());
+                        bds.getResBib().setCoordinates(ref.getCoordinates());
+                        results.add(bds);
+                    }
                 }
             }
         }
@@ -376,6 +479,15 @@ public class CitationParser extends AbstractParser {
                     biblio.setNote(biblio.getBookTitle());
                     biblio.setBookTitle(clusterContent);
                 }
+            } else if (clusterLabel.equals(TaggingLabels.CITATION_SERIES)) {
+                if (biblio.getSerieTitle() == null)
+                    biblio.setSerieTitle(clusterContent);
+                else if (biblio.getSerieTitle().length() >= clusterContent.length())
+                    biblio.setNote(clusterContent);
+                else {
+                    biblio.setNote(biblio.getSerieTitle());
+                    biblio.setSerieTitle(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.CITATION_PAGES)) {
                 String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
                 biblio.setPageRange(clusterNonDehypenizedContent);
@@ -490,12 +602,8 @@ public class CitationParser extends AbstractParser {
             List<OffsetPosition> identifiersPositions = null;
             List<OffsetPosition> urlPositions = null;
             for (String input : inputs) {
-                //List<String> citationBlocks = new ArrayList<String>();
                 if (input == null)
                     continue;
-                // System.out.println("Input: "+input);
-                //StringTokenizer st = new StringTokenizer(input, " \t\n"
-                //        + TextUtilities.fullPunctuations, true);
 
                 List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
                 if (tokenizations.size() == 0)
@@ -516,44 +624,52 @@ public class CitationParser extends AbstractParser {
                         collaborationsPositions, identifiersPositions, urlPositions);
                 String res = label(ress);
 
-                // extract results from the processed file
-                StringTokenizer st2 = new StringTokenizer(res, "\n");
+                
                 String lastTag = null;
-                boolean start = true;
-                // boolean tagClosed = false;
-                int q = 0;
-                boolean addSpace;
                 String lastTag0;
                 String currentTag0 = null;
-                while (st2.hasMoreTokens()) {
-                    String line = st2.nextToken();
-                    addSpace = false;
-                    if ((line.trim().length() == 0)) {
-                        // new author
-                        buffer.append("/t<bibl>\n");
-                        continue;
-                    } else {
-                        String theTok = tokenizations.get(q).getText();
-                        while (theTok.equals(" ")) {
-                            addSpace = true;
-                            q++;
-                            theTok = tokenizations.get(q).getText();
-                        }
-                        q++;
-                    }
+                boolean start = true;
+                String s1 = null;
+                String s2 = null;
+                int p = 0;
 
-                    StringTokenizer st3 = new StringTokenizer(line, "\t");
-                    int ll = st3.countTokens();
+                // extract results from the processed file
+                StringTokenizer st = new StringTokenizer(res, "\n");
+                while (st.hasMoreTokens()) {
+                    boolean addSpace = false;
+                    String tok = st.nextToken().trim();
+
+                    if (tok.length() == 0) {
+                        // new citation
+                        //buffer.append("/t<bibl>\n");
+                        start = true;
+                        continue;
+                    }
+                    StringTokenizer stt = new StringTokenizer(tok, "\t");
                     int i = 0;
-                    String s1 = null;
-                    String s2 = null;
-                    while (st3.hasMoreTokens()) {
-                        String s = st3.nextToken().trim();
+
+                    boolean newLine = false;
+                    int ll = stt.countTokens();
+                    while (stt.hasMoreTokens()) {
+                        String s = stt.nextToken().trim();
                         if (i == 0) {
-                            s2 = TextUtilities.HTMLEncode(s); // string
+                            s2 = TextUtilities.HTMLEncode(s);
+                            //s2 = s;
+
+                            boolean strop = false;
+                            while ((!strop) && (p < tokenizations.size())) {
+                                String tokOriginal = tokenizations.get(p).t();
+                                if (tokOriginal.equals(" ")
+                                        || tokOriginal.equals("\u00A0")) {
+                                    addSpace = true;
+                                } else if (tokOriginal.equals(s)) {
+                                    strop = true;
+                                }
+                                p++;
+                            }
                         } else if (i == ll - 1) {
-                            s1 = s; // label
-                        }
+                            s1 = s;
+                        } 
                         i++;
                     }
 
@@ -570,7 +686,6 @@ public class CitationParser extends AbstractParser {
                             lastTag0 = lastTag;
                         }
                     }
-                    // currentTag0 = null;
                     if (s1 != null) {
                         if (s1.startsWith("I-")) {
                             currentTag0 = s1.substring(2, s1.length());
@@ -583,154 +698,104 @@ public class CitationParser extends AbstractParser {
                     if ((lastTag0 != null) && (currentTag0 != null))
                         testClosingTag(buffer, currentTag0, lastTag0);
 
-                    String output = writeField(s1, lastTag0, s2, "<title>",
-                            "<title level=\"a\">", addSpace, 0);
-                    if (output != null) {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    } else {
-                        output = writeField(s1, lastTag0, s2, "<other>", "",
-                                addSpace, 0);
+                    String output = writeField(s1, lastTag0, s2, "<title>", "<title level=\"a\">", addSpace, 0);
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<other>", "", addSpace, 0);
                     }
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<author>",
-                                "<author>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<author>", "<author>", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<journal>",
-                                "<title level=\"j\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<journal>", "<title level=\"j\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<date>",
-                                "<date>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<series>", "<title level=\"s\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<booktitle>",
-                                "<title level=\"m\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<booktitle>", "<title level=\"m\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<volume>",
-                                "<biblScope unit=\"volume\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<date>", "<date>", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<publisher>",
-                                "<publisher>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<volume>", "<biblScope unit=\"volume\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<location>",
-                                "<pubPlace>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<publisher>", "<publisher>", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<editor>",
-                                "<editor>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<location>", "<pubPlace>", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<pages>",
-                                "<biblScope unit=\"page\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<editor>", "<editor>", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<tech>",
-                                "<note type=\"report\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<pages>", "<biblScope unit=\"page\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<issue>",
-                                "<biblScope unit=\"issue\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                        output = writeField(s1, lastTag0, s2, "<tech>", "<note type=\"report\">", addSpace, 0);
+                    } 
                     if (output == null) {
-                        String localTag = "<idno>";
+                        output = writeField(s1, lastTag0, s2, "<issue>", "<biblScope unit=\"issue\">", addSpace, 0);
+                    } 
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<web>", "<ptr type=\"web\">", addSpace, 0);
+                    } 
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<note>", "<note>", addSpace, 0);
+                    } 
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<institution>", "<orgName>", addSpace, 0);
+                    } 
+                    if (output == null) {
+                        output = writeField(s1, lastTag0, s2, "<collaboration>", "<orgName type=\"collaboration\">", addSpace, 0);
+                    } 
+                    if (output == null) {
+                        String localTag = null;
                         String cleanS2 = StringUtils.normalizeSpace(s2);
                         cleanS2 = cleanS2.replace(" ", "");
-                        Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(cleanS2);
-                        if (arxivMatcher.find())
-                            localTag = "<idno type=\"arXiv\">";
-                        else {
-                            Matcher doiMatcher = TextUtilities.DOIPattern.matcher(cleanS2);
-                            if (doiMatcher.find())
-                                localTag = "<idno type=\"DOI\">";
+
+                        Matcher doiMatcher = TextUtilities.DOIPattern.matcher(cleanS2);
+                        if (doiMatcher.find())
+                            localTag = "<idno type=\"DOI\">";
+
+                        if (localTag == null) {
+                            Matcher arxivMatcher = TextUtilities.arXivPattern.matcher(cleanS2);
+                            if (arxivMatcher.find())
+                                localTag = "<idno type=\"arXiv\">";
                         }
+                        
+                        if (localTag == null) {
+                            Matcher pmidMatcher = TextUtilities.pmidPattern.matcher(cleanS2);
+                            if (pmidMatcher.find()) 
+                                localTag = "<idno type=\"PMID\">";
+                        }
+
+                        if (localTag == null) {
+                            Matcher pmcidMatcher = TextUtilities.pmcidPattern.matcher(cleanS2);
+                            if (pmcidMatcher.find()) 
+                                localTag = "<idno type=\"PMC\">";
+                        }
+
+                        if (localTag == null) {
+                            if (cleanS2.toLowerCase().indexOf("issn") != -1) {
+                                localTag = "<idno type=\"ISSN\">";
+                            }
+                        }
+
+                        if (localTag == null) {
+                            if (cleanS2.toLowerCase().indexOf("isbn") != -1) {
+                                localTag = "<idno type=\"ISBN\">";
+                            }
+                        }
+
+                        // TODO: PII
+
+                        if (localTag == null)
+                            localTag = "<idno>";
+
                         output = writeField(s1, lastTag0, s2, "<pubnum>", localTag, addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
-                    if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<web>",
-                                "<ptr type=\"web\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
-                    if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<note>",
-                                "<note>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
-                    if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<institution>",
-                                "<orgName>", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
-                    if (output == null) {
-                        output = writeField(s1, lastTag0, s2, "<collaboration>",
-                                "<orgName type=\"collaboration\">", addSpace, 0);
-                    } else {
-                        buffer.append(output);
-                        lastTag = s1;
-                        continue;
-                    }
+                    } 
                     if (output != null) {
                         buffer.append(output);
                         lastTag = s1;
@@ -750,10 +815,9 @@ public class CitationParser extends AbstractParser {
                     buffer.append("</bibl>\n");
                 }
             }
+            
         } catch (Exception e) {
-            // e.printStackTrace();
-            throw new GrobidException(
-                    "An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occured while running Grobid.", e);
         }
         return buffer;
     }
@@ -769,14 +833,33 @@ public class CitationParser extends AbstractParser {
                     result = s2;
             } else {
                 result = "";
-                for (int i = 0; i < nbIndent; i++) {
+                /*for (int i = 0; i < nbIndent; i++) {
                     result += "\t";
-                }
+                }*/
                 if (addSpace) {
                     result += " " + outField + s2;
                 } else {
                     result += outField + s2;
                 }
+            }
+        }
+        return result;
+    }
+
+    private boolean writeField2(StringBuilder buffer, String s1, String lastTag0, String s2, String field, String outField, boolean addSpace) {
+        boolean result = false;
+        if ((s1.equals(field)) || (s1.equals("I-" + field))) {
+            result = true;
+            if (s1.equals(lastTag0) || (s1).equals("I-" + lastTag0)) {
+                if (addSpace)
+                    buffer.append(" ").append(s2);
+                else
+                    buffer.append(s2);
+            } else {
+                if (addSpace)
+                    buffer.append(" ").append(outField).append(s2);
+                else
+                    buffer.append(outField).append(s2);
             }
         }
         return result;

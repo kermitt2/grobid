@@ -14,15 +14,11 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.GrobidModels;
 
 import java.net.URLEncoder;
@@ -53,10 +49,20 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
+    /**
+     * The following are internal working structures not meant to be used outside. 
+     * For collecting layout tokens of the various bibliographical component, 
+     * please refers to @See(getLayoutTokens(TaggingLabels label)
+     */
+    private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
+    private List<LayoutToken> abstractTokensWorkingCopy = new ArrayList<>();
+
     @Override
     public String toString() {
         return "BiblioItem{" +
                 "submission_date='" + submission_date + '\'' +
+                ", download_date='" + download_date + '\'' +
+                ", server_date='" + server_date + '\'' +
                 ", languageUtilities=" + languageUtilities +
                 ", item=" + item +
                 ", parentItem=" + parentItem +
@@ -139,6 +145,9 @@ public class BiblioItem {
                 ", s_year='" + s_year + '\'' +
                 ", s_month='" + s_month + '\'' +
                 ", s_day='" + s_day + '\'' +
+                ", d_year='" + d_year + '\'' +
+                ", d_month='" + d_month + '\'' +
+                ", d_day='" + d_day + '\'' +
                 ", a_year='" + a_year + '\'' +
                 ", a_month='" + a_month + '\'' +
                 ", a_day='" + a_day + '\'' +
@@ -155,7 +164,7 @@ public class BiblioItem {
                 ", fullAffiliations=" + fullAffiliations +
                 ", reference='" + reference + '\'' +
                 ", copyright='" + copyright + '\'' +
-                ", grant='" + grant + '\'' +
+                ", funding='" + funding + '\'' +
                 ", affiliationAddressBlock='" + affiliationAddressBlock + '\'' +
                 ", articleTitle='" + articleTitle + '\'' +
                 ", beginPage=" + beginPage +
@@ -167,15 +176,19 @@ public class BiblioItem {
                 ", postProcessEditors=" + postProcessEditors +
                 ", crossrefError=" + crossrefError +
                 ", normalized_submission_date=" + normalized_submission_date +
+                ", normalized_download_date=" + normalized_download_date +
                 ", originalAffiliation='" + originalAffiliation + '\'' +
                 ", originalAbstract='" + originalAbstract + '\'' +
                 ", originalTitle='" + originalTitle + '\'' +
                 ", originalAuthors='" + originalAuthors + '\'' +
+                ", originalEditors='" + originalEditors + '\'' +
                 ", originalAddress='" + originalAddress + '\'' +
                 ", originalNote='" + originalNote + '\'' +
                 ", originalKeyword='" + originalKeyword + '\'' +
                 ", originalVolumeBlock='" + originalVolumeBlock + '\'' +
                 ", originalJournal='" + originalJournal + '\'' +
+                ", workingGroup='" + workingGroup + '\'' +
+                ", documentType='" + documentType + '\'' +
                 '}';
     }
 
@@ -241,10 +254,11 @@ public class BiblioItem {
     private String istexId = null;
     private String abstract_ = null;
     private String collaboration = null;
+    private String documentType = null;
 
     // for convenience GROBIDesque
     private String authors = null;
-    private List<LayoutToken> authorsTokens = new ArrayList<>();
+    //private List<LayoutToken> authorsTokens = new ArrayList<>();
     private String firstAuthorSurname = null;
     private String location = null;
     private String bookTitle = null;
@@ -297,6 +311,11 @@ public class BiblioItem {
     private String a_month = null;
     private String a_day = null;
 
+    // date of download 
+    private String d_year = null;
+    private String d_month = null;
+    private String d_day = null;
+
     // advanced grobid recognitions
     private List<String> authorList;
     private List<String> editorList;
@@ -313,7 +332,7 @@ public class BiblioItem {
 
     private String reference = null;
     private String copyright = null;
-    private String grant = null;
+    private String funding = null;
 
     //public List<String> affiliationAddressBlock = null; 
     public String affiliationAddressBlock = null;
@@ -329,17 +348,25 @@ public class BiblioItem {
     private boolean crossrefError = true;
     private String submission_date = null;
     private Date normalized_submission_date = null;
+    private String download_date = null;
+    private Date normalized_download_date = null;
+    private String server_date = null;
+    private Date normalized_server_date = null;
 
     // for OCR post-corrections
     private String originalAffiliation = null;
     private String originalAbstract = null;
     private String originalTitle = null;
     private String originalAuthors = null;
+    private String originalEditors = null;
     private String originalAddress = null;
     private String originalNote = null;
     private String originalKeyword = null;
     private String originalVolumeBlock = null;
     private String originalJournal = null;
+
+    private String workingGroup = null;
+    private String rawMeeting = null;
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -717,6 +744,18 @@ public class BiblioItem {
         return a_day;
     }
 
+    public String getD_Year() {
+        return d_year;
+    }
+
+    public String getD_Month() {
+        return d_month;
+    }
+
+    public String getD_Day() {
+        return d_day;
+    }
+
     public String getDedication() {
         return dedication;
     }
@@ -737,6 +776,22 @@ public class BiblioItem {
         return normalized_submission_date;
     }
 
+    public String getDownloadDate() {
+        return download_date;
+    }
+
+    public Date getNormalizedDownloadDate() {
+        return normalized_download_date;
+    }
+
+    public String getServerDate() {
+        return server_date;
+    }
+
+    public Date getNormalizedServerDate() {
+        return normalized_server_date;
+    }
+
     public String getOriginalAffiliation() {
         return originalAffiliation;
     }
@@ -747,6 +802,10 @@ public class BiblioItem {
 
     public String getOriginalAuthors() {
         return originalAuthors;
+    }
+
+    public String getOriginalEditors() {
+        return originalEditors;
     }
 
     public String getOriginalTitle() {
@@ -793,8 +852,16 @@ public class BiblioItem {
         return copyright;
     }
 
-    public String getGrant() {
-        return grant;
+    public String getFunding() {
+        return funding;
+    }
+
+    public String getWorkingGroup() {
+        return workingGroup;
+    }
+
+    public String getDocumentType() {
+        return documentType;
     }
 
     public void setISBN13(String isbn) {
@@ -937,29 +1004,50 @@ public class BiblioItem {
         }
     }
 
-    public String cleanDOI(String doi) {
-        doi = StringUtils.normalizeSpace(doi);
-        doi = doi.replace(" ", "");
-        if (doi.startsWith("http://dx.doi.org/") || 
-            doi.startsWith("https://dx.doi.org/") || 
-            doi.startsWith("http://doi.org/") || 
-            doi.startsWith("https://doi.org/")) {
-            doi = doi.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
-        }
-        doi = doi.replace("//", "/");
-        if (doi.toLowerCase().startsWith("doi:") || doi.toLowerCase().startsWith("doi/")) {
-            doi = doi.substring(4);
-        }
-        
-        // pretty common wrong extraction pattern: 
-        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
-        // 367-74.DOI:10.1080/14034940210165064
-        // (pages concatenated to the DOI) - easy/safe to fix
-        int ind = doi.toLowerCase().indexOf("doi:10.");
-        if (ind != -1)
-            doi = doi.substring(ind+4);
+    private static String cleanDOI(String bibl) {
+        if (bibl != null) {
+            bibl = StringUtils.normalizeSpace(bibl);
+            bibl = bibl.replace(" ", "");
 
-        return doi;
+            if (bibl.startsWith("http://dx.doi.org/") || 
+                bibl.startsWith("https://dx.doi.org/") || 
+                bibl.startsWith("http://doi.org/") || 
+                bibl.startsWith("https://doi.org/")) {
+                bibl = bibl.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
+            }
+
+            //bibl = bibl.replace("//", "/");
+            if (bibl.toLowerCase().startsWith("doi:") || bibl.toLowerCase().startsWith("doi/")) {
+                bibl = bibl.substring(4);
+            } 
+            if (bibl.toLowerCase().startsWith("doi")) {
+                bibl = bibl.substring(3);
+            }
+            // pretty common wrong extraction pattern: 
+            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+            // 367-74.DOI:10.1080/14034940210165064
+            // (pages concatenated to the DOI) - easy/safe to fix
+            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
+                int ind = bibl.indexOf("DOI:10.");
+                if (ind == -1) 
+                    ind = bibl.indexOf("doi:10.");
+                bibl = bibl.substring(ind+4);
+            }
+
+            // for DOI coming from PDF links, we have some prefix cleaning to make 
+            if (bibl.startsWith("file://") || bibl.startsWith("https://") || bibl.startsWith("http://")) {
+                int ind = bibl.indexOf("/10.");
+                if (ind != -1)
+                    bibl = bibl.substring(ind+1);
+            }
+            
+            bibl = bibl.trim();
+            int ind = bibl.indexOf("http://");
+            if (ind != -1 && ind > 10) {
+                bibl = bibl.substring(0,ind);
+            }
+        }
+        return bibl;
     }
 
     public void setArXivId(String id) {
@@ -1076,18 +1164,30 @@ public class BiblioItem {
         }
     }
 
+    public void setWorkingGroup(String wg) {
+        this.workingGroup = wg;
+    }
+
+    public void setDocumentType(String doctype) {
+        this.documentType = doctype;
+    }
+
     // temp
     public void setAuthors(String aut) {
         authors = aut;
     }
 
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsTokens.add(lt);
+    public BiblioItem collectAuthorsToken(LayoutToken lt) {
+        authorsTokensWorkingCopy.add(lt);
         return this;
     }
 
-    public List<LayoutToken> getAuthorsTokens() {
-        return authorsTokens;
+    public void collectAuthorsTokens(List<LayoutToken> layoutTokens) {
+        this.authorsTokensWorkingCopy.addAll(layoutTokens);
+    }
+
+    public void collectAbstractTokens(List<LayoutToken> layoutTokens) {
+        this.abstractTokensWorkingCopy.addAll(layoutTokens);
     }
 
     public void addAuthor(String aut) {
@@ -1301,6 +1401,18 @@ public class BiblioItem {
         s_day = d;
     }
 
+    public void setD_Year(String d) {
+        d_year = d;
+    }
+
+    public void setD_Month(String d) {
+        d_month = d;
+    }
+
+    public void setD_Day(String d) {
+        d_day = d;
+    }
+
     public void setDedication(String d) {
         dedication = StringUtils.normalizeSpace(d);
     }
@@ -1321,6 +1433,22 @@ public class BiblioItem {
         normalized_submission_date = d;
     }
 
+    public void setDownloadDate(String d) {
+        download_date = StringUtils.normalizeSpace(d);
+    }
+
+    public void setNormalizedDownloadDate(Date d) {
+        normalized_download_date = d;
+    }
+
+    public void setServerDate(String d) {
+        server_date = StringUtils.normalizeSpace(d);
+    }
+
+    public void setNormalizedServerDate(Date d) {
+        normalized_server_date = d;
+    }
+
     public void setOriginalAffiliation(String original) {
         originalAffiliation = original;
     }
@@ -1331,6 +1459,10 @@ public class BiblioItem {
 
     public void setOriginalAuthors(String original) {
         originalAuthors = original;
+    }
+
+    public void setOriginalEditors(String original) {
+        originalEditors = original;
     }
 
     public void setOriginalTitle(String original) {
@@ -1365,13 +1497,21 @@ public class BiblioItem {
         copyright = StringUtils.normalizeSpace(cop);
     }
 
-    public void setGrant(String gra) {
-        grant = StringUtils.normalizeSpace(gra);
+    public void setFunding(String gra) {
+        funding = StringUtils.normalizeSpace(gra);
+    }
+
+    public String getMeeting() {
+        return rawMeeting;
+    }
+
+    public void setMeeting(String meet) {
+        this.rawMeeting = meet;
     }
 
     /**
      * General string cleaining for SQL strings. This method might depend on the chosen
-     * relation database.
+     * relational database.
      */
     public static String cleanSQLString(String str) {
         if (str == null)
@@ -1472,6 +1612,10 @@ public class BiblioItem {
         day = null;
         submission_date = null;
         normalized_submission_date = null;
+        download_date = null;
+        normalized_download_date = null;
+        server_date = null;
+        normalized_server_date = null;
 
         beginPage = -1;
         endPage = -1;
@@ -1484,7 +1628,10 @@ public class BiblioItem {
         fullAffiliations = null;
         reference = null;
         copyright = null;
-        grant = null;
+        funding = null;
+
+        workingGroup = null;
+        documentType = null;
     }
 
     /**
@@ -1647,7 +1794,7 @@ public class BiblioItem {
     }
 
     /**
-     * Some little cleaning of the keyword field.
+     * Some little cleaning of the keyword field (likely unnecessary with latest header model).
      */
     public static String cleanKeywords(String string) {
         if (string == null)
@@ -1678,8 +1825,8 @@ public class BiblioItem {
     /**
      * Keyword field segmentation.
      * 
-     * TBD: create a dedicated model to analyse the keyword field, segmenting them and 
-     * identifying the possible scheme
+     * TBD: create a dedicated model to analyse the keyword field, segmenting them properly and 
+     * identifying the possible schemes
      */
     public static List<Keyword> segmentKeywords(String string) {
         if (string == null)
@@ -1689,10 +1836,9 @@ public class BiblioItem {
 		String type = null;
         if (string.startsWith("Categories and Subject Descriptors")) {
             type = "subject-headers";
-			 string = string.replace("Categories and Subject Descriptors", "").trim();
+			string = string.replace("Categories and Subject Descriptors", "").trim();
         } 
-		else if (string.startsWith("PACS Numbers") || 
-				   string.startsWith("PACS") ) {
+		else if (string.startsWith("PACS Numbers") || string.startsWith("PACS") ) {
             type = "pacs";
             string = string.replace("PACS Numbers", "").replace("PACS", "").trim();
 			if (string.startsWith(":")) {
@@ -1704,10 +1850,8 @@ public class BiblioItem {
 		}
 		
 		List<Keyword> result = new ArrayList<Keyword>();
-		
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "Á", "\n", ",");
-		
+		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1814,6 +1958,11 @@ public class BiblioItem {
             // booktitle
             if ((journal == null) && (book_type == null) && (bookTitle != null)) {
                 bibtex.add("  booktitle = {" + bookTitle + "}");
+            }
+
+            // booktitle
+            if ((journal == null) && (serieTitle != null)) {
+                bibtex.add("  series = {" + serieTitle + "}");
             }
 
             // publisher
@@ -1936,8 +2085,33 @@ public class BiblioItem {
                 setPubnum(null);
             }
         } 
+        // ISSN
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(ISSN)) {
+            if (pubnum.toLowerCase().indexOf("issn") != -1) {
+                pubnum = pubnum.replace("issn", "");
+                pubnum = pubnum.replace("ISSN", "");
+                pubnum = TextUtilities.cleanField(pubnum, true);
+                setISSN(pubnum);
+                setPubnum(null);
+            }
+        }
+
+        // ISBN
+        if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(ISBN13)) {
+            if (pubnum.toLowerCase().indexOf("isbn") != -1) {
+                pubnum = pubnum.replace("isbn", "");
+                pubnum = pubnum.replace("ISBN", "");
+                pubnum = TextUtilities.cleanField(pubnum, true);
+                if (pubnum.length() == 10)
+                    setISBN10(pubnum);
+                else 
+                    setISBN13(pubnum);
+                setPubnum(null);
+            }
+        }
 
         // TODO: PII
+
     }
 
     /**
@@ -2004,12 +2178,9 @@ public class BiblioItem {
                 }
             }
 
-            if ((bookTitle == null) && (journal == null)) {
-                for (int i = 0; i < indent + 1; i++) {
-                    tei.append("\t");
-                }
-                tei.append("<monogr>\n");
-            } else if ((bookTitle != null) && (journal == null) && (title == null) && (articleTitle == null)) {
+            boolean openAnalytic = false;
+            if ( ((bookTitle == null) && (journal == null) && (serieTitle == null)) || 
+                ((bookTitle != null) && (title == null) && (articleTitle == null) && (journal == null) && (serieTitle == null)) ) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2019,15 +2190,16 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<analytic>\n");
+                openAnalytic = true;
             }
 
             // title
-            for (int i = 0; i < indent + 2; i++) {
-                tei.append("\t");
-            }
             if (title != null) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<title");
-                if ((bookTitle == null) && (journal == null)) {
+                if ((bookTitle == null) && (journal == null) && (serieTitle == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
                 } else
                     tei.append(" level=\"a\" type=\"main\"");
@@ -2044,6 +2216,9 @@ public class BiblioItem {
                 }
             }
 			else if (bookTitle == null) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
                 tei.append("<title/>\n");
 			}
             boolean hasEnglishTitle = false;
@@ -2146,8 +2321,7 @@ public class BiblioItem {
                 tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(web)).append("\" />\n");
             }
 
-            if ((!StringUtils.isEmpty(bookTitle) && ((title != null) || (articleTitle != null))) || 
-                !StringUtils.isEmpty(journal)) {
+            if (openAnalytic) {
                 for (int i = 0; i < indent + 1; i++) {
                     tei.append("\t");
                 }
@@ -2169,7 +2343,37 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                if (!StringUtils.isEmpty(editors)) {
+                // in case the book is part of an indicated series
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
+                }
+
+                if (fullEditors != null && fullEditors.size()>0) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("<editor>\n");
+                    for(Person editor : fullEditors) {
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        String localString = editor.toTEI(false);
+                        localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        tei.append(localString).append("\n");
+                    }
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
+                    tei.append("</editor>\n");
+                } else if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -2369,23 +2573,32 @@ public class BiblioItem {
 	                }
                     tei.append("</imprint>\n");
                 }
-            } else if (!StringUtils.isEmpty(journal)) {
+            } else if (!StringUtils.isEmpty(journal) || !StringUtils.isEmpty(serieTitle)) {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                tei.append("<title level=\"j\"");
-				if (generateIDs) {
-					String divID = KeyGen.getKey().substring(0,7);
-					tei.append(" xml:id=\"_" + divID + "\"");
-				}	
-				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
+                if (!StringUtils.isEmpty(journal)) {
+                    tei.append("<title level=\"j\"");
+    				if (generateIDs) {
+    					String divID = KeyGen.getKey().substring(0,7);
+    					tei.append(" xml:id=\"_" + divID + "\"");
+    				}	
+    				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
-                if (!StringUtils.isEmpty(getJournalAbbrev())) {
-                    for (int i = 0; i < indent + 2; i++) {
-                        tei.append("\t");
+                    if (!StringUtils.isEmpty(getJournalAbbrev())) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<title level=\"j\" type=\"abbrev\">"
+                                + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
                     }
-                    tei.append("<title level=\"j\" type=\"abbrev\">"
-                            + TextUtilities.HTMLEncode(getJournalAbbrev()) + "</title>\n");
+                } else if (!StringUtils.isEmpty(serieTitle)) {
+                    tei.append("<title level=\"s\"");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0,7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }   
+                    tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
                 if (!StringUtils.isEmpty(editors)) {
@@ -2429,11 +2642,14 @@ public class BiblioItem {
                     }
                 }
 
-                for (int i = 0; i < indent + 2; i++) {
+                /*for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
-                }
+                }*/
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
 					tei.append("<imprint>\n");
                     if (volumeBlock != null) {
                         for (int i = 0; i < indent + 3; i++) {
@@ -2554,6 +2770,9 @@ public class BiblioItem {
                     tei.append("</imprint>\n");
                 }
 				else {
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
 					tei.append("<imprint/>\n");
 				}
             } else {
@@ -2744,6 +2963,12 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<date type=\"submission\">" + TextUtilities.HTMLEncode(getSubmissionDate()) + "</date>\n");
+            }
+            if (getDownloadDate() != null) {
+                for (int i = 0; i < indent + 1; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<date type=\"download\">" + TextUtilities.HTMLEncode(getDownloadDate()) + "</date>\n");
             }
 
             if (dedication != null) {
@@ -3300,20 +3525,9 @@ public class BiblioItem {
 
             // authors
             if (authors != null) {
-                StringTokenizer st = new StringTokenizer(authors, ";");
-                if (st.countTokens() > 0) {
-                    if (st.hasMoreTokens()) { // we take just the first author
-                        String author = st.nextToken();
-                        if (author != null)
-                            author = author.trim();
-                        int ind = author.lastIndexOf(" ");
-                        if (ind != -1) {
-                            openurl += "&rft.aulast=" + URLEncoder.encode(author.substring(ind + 1), "UTF-8")
-                                    + "&rft.auinit="
-                                    + URLEncoder.encode(author.substring(0, ind), "UTF-8");
-                        } else
-                            openurl += "&rft.au=" + URLEncoder.encode(author, "UTF-8");
-                    }
+                String localAuthor = getFirstAuthorSurname();
+                if (localAuthor != null) {
+                    openurl += "&rft.aulast=" + URLEncoder.encode(localAuthor, "UTF-8");
                 }
             }
 
@@ -3395,27 +3609,44 @@ public class BiblioItem {
     }
 
     /**
-     * Attach existing recognized emails to authors
+     * Attach existing recognized emails to authors (default) or editors
      */
     public void attachEmails() {
+        attachEmails(fullAuthors);
+    }
+
+    public void attachEmails(List<Person> folks) {
         // do we have an email field recognized? 
         if (email == null)
             return;
         // we check if we have several emails in the field
         email = email.trim();
-        email = email.replace(" and ", ";");
+        email = email.replace(" and ", "\t");
         ArrayList<String> emailles = new ArrayList<String>();
-        StringTokenizer st0 = new StringTokenizer(email, ";");
+        StringTokenizer st0 = new StringTokenizer(email, "\t");
         while (st0.hasMoreTokens()) {
             emailles.add(st0.nextToken().trim());
         }
 
-
         List<String> sanitizedEmails = emailSanitizer.splitAndClean(emailles);
 
         if (sanitizedEmails != null) {
-            authorEmailAssigner.assign(fullAuthors, sanitizedEmails);
+            authorEmailAssigner.assign(folks, sanitizedEmails);
         }
+    }
+
+    /**
+     * Attach existing recognized emails to authors
+     */
+    public void attachAuthorEmails() {
+        attachEmails(fullAuthors);
+    }
+
+    /**
+     * Attach existing recognized emails to editors
+     */
+    public void attachEditorEmails() {
+        attachEmails(fullEditors);
     }
 
     /**
@@ -3685,10 +3916,17 @@ public class BiblioItem {
                         tei.append(">\n");
 
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append(author.toTEI(withCoordinates)).append("\n");
+                    
+                    String localString = author.toTEI(withCoordinates);
+                    localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    tei.append(localString).append("\n");
                     if (author.getEmail() != null) {
                         TextUtilities.appendN(tei, '\t', nbTag + 1);
                         tei.append("<email>" + TextUtilities.HTMLEncode(author.getEmail()) + "</email>\n");
+                    }
+                    if (author.getORCID() != null) {
+                        TextUtilities.appendN(tei, '\t', nbTag + 1);
+                        tei.append("<idno type=\"ORCID\">" + TextUtilities.HTMLEncode(author.getORCID()) + "</idno>\n");
                     }
 
                     if (author.getAffiliations() != null) {
@@ -3904,35 +4142,78 @@ public class BiblioItem {
         tei.append("</affiliation>\n");
     }
 
-    private static volatile Pattern page = Pattern.compile("(\\d+)");
+    private static volatile String possiblePreFixPageNumber = "[A-Ze]?";
+    private static volatile String possiblePostFixPageNumber = "[A-Z]?";
+    private static volatile Pattern page = Pattern.compile("("+possiblePreFixPageNumber+"\\d+"+possiblePostFixPageNumber+")");
+    private static volatile Pattern pageDigits = Pattern.compile("\\d+");
 
     /**
-     * Correct fields of the first biblio item based on the second one and the reference string.
+     * Try to normalize the page range, which can be expressed in abbreviated forms and with letter prefix.
      */
     public void postProcessPages() {
         if (pageRange != null) {
             Matcher matcher = page.matcher(pageRange);
             if (matcher.find()) {
+
+                // below for the string form of the page numbers
                 String firstPage = null;
                 String lastPage = null;
+
+                // alphaPrefix or alphaPostfix are for storing possible alphabetical prefix or postfix to page number, 
+                // e.g. "L" in Smith, G. P., Mazzotta, P., Okabe, N., et al. 2016, MNRAS, 456, L74  
+                // or "D" in  "Am J Cardiol. 1999, 83:143D-150D. 10.1016/S0002-9149(98)01016-9"
+                String alphaPrefixStart = null;
+                String alphaPrefixEnd = null;
+                String alphaPostfixStart = null;
+                String alphaPostfixEnd = null;
+
+                // below for the integer form of the page numbers (part in case alphaPrefix is not null)
+                int beginPage = -1;
+                int endPage = -1;
+
                 if (matcher.groupCount() > 0) {
                     firstPage = matcher.group(0);
                 }
+
                 if (firstPage != null) {
                     try {
                         beginPage = Integer.parseInt(firstPage);
                     } catch (Exception e) {
                         beginPage = -1;
                     }
-					if (beginPage != -1)
+					if (beginPage != -1) {
 						pageRange = "" + beginPage;
-					else
-						pageRange = firstPage;
+                    } else {
+                        pageRange = firstPage;
+
+                        // try to get the numerical part of the page number, useful for later
+                        Matcher matcher2 = pageDigits.matcher(firstPage);
+                        if (matcher2.find()) {
+                            try {
+                                beginPage = Integer.parseInt(matcher2.group());
+                                if (firstPage.length() > 0) {
+                                    alphaPrefixStart = firstPage.substring(0,1);
+                                    // is it really alphabetical character?
+                                    if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixStart)) {
+                                        alphaPrefixStart = null;
+                                        // look at postfix
+                                        alphaPostfixStart = firstPage.substring(firstPage.length()-1,firstPage.length());
+                                        if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixStart)) {
+                                            alphaPostfixStart = null;
+                                        }
+                                    }
+                                }
+                            } catch (Exception e) {
+                                beginPage = -1;
+                            }
+                        }
+                    }
 
                     if (matcher.find()) {
                         if (matcher.groupCount() > 0) {
                             lastPage = matcher.group(0);
                         }
+
                         if (lastPage != null) {
                             try {
                                 endPage = Integer.parseInt(lastPage);
@@ -3940,18 +4221,95 @@ public class BiblioItem {
                                 endPage = -1;
                             }
 							
-							if ( (endPage != -1) && (endPage < beginPage) && (endPage < 50) ) {
-								endPage = beginPage + endPage;
-								pageRange += "--" + endPage;
-							}
-							else 
-								pageRange += "--" + lastPage;
+                            if (endPage == -1) {
+                                // try to get the numerical part of the page number, to be used for later
+                                Matcher matcher2 = pageDigits.matcher(lastPage);
+                                if (matcher2.find()) {
+                                    try {
+                                        endPage = Integer.parseInt(matcher2.group());
+                                        if (lastPage.length() > 0) {
+                                            alphaPrefixEnd = lastPage.substring(0,1);
+                                            // is it really alphabetical character?
+                                            if (!Pattern.matches(possiblePreFixPageNumber, alphaPrefixEnd)) {
+                                                alphaPrefixEnd = null;
+                                                // look at postfix
+                                                alphaPostfixEnd = lastPage.substring(lastPage.length()-1,lastPage.length());
+                                                if (!Pattern.matches(possiblePostFixPageNumber, alphaPostfixEnd)) {
+                                                    alphaPostfixEnd = null;
+                                                }
+                                            }
+                                        }
+                                    } catch (Exception e) {
+                                        endPage = -1;
+                                    }
+                                }
+                            }
+
+							if ( (endPage != -1) && (endPage < beginPage)) {
+                                // there are two possibilities: 
+                                // - the substitution, e.g. 433–8 -> 433--438, for example American Medical Association citation style
+                                // - the addition, e.g. 433–8 -> 433--441
+                                // unfortunately, it depends on the citation style
+
+                                // we try to guess/refine the re-composition of pages
+
+                                if (endPage >= 50) {
+                                    // we assume no journal articles have more than 49 pages and is expressed as addition, 
+                                    // so it's a substitution
+                                    int upperBound = firstPage.length() - lastPage.length();
+                                    if (upperBound<firstPage.length() && upperBound > 0)
+                                        lastPage = firstPage.substring(0, upperBound) + lastPage;
+                                    pageRange += "--" + lastPage;
+                                } else {
+                                    if (endPage < 10) {
+                                        // case 1 digit for endPage
+
+                                        // last digit of begin page
+                                        int lastDigitBeginPage = beginPage % 10;
+
+                                        // if digit of lastPage lower than last digit of beginPage, it's an addition for sure
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    } else if (endPage < 50) {
+                                        // case 2 digit for endPage, we apply a similar heuristics
+                                        int lastDigitBeginPage = beginPage % 100;
+                                        if (endPage < lastDigitBeginPage)
+                                            endPage = beginPage + endPage;
+                                        else {
+                                            // otherwise defaulting to substitution
+                                            endPage = beginPage - lastDigitBeginPage + endPage;
+                                        }
+                                    }
+
+                                    // we assume there is no article of more than 99 pages expressed in this abbreviated way 
+                                    // (which are for journal articles only, so short animals)
+
+                                    if (alphaPrefixEnd != null) 
+                                        pageRange += "--" + alphaPrefixEnd + endPage;
+                                    else if (alphaPostfixEnd != null) 
+                                        pageRange += "--" + endPage + alphaPostfixEnd;
+                                    else
+                                        pageRange += "--" + endPage;
+                                }
+							} else if ((endPage != -1)) {
+                                if (alphaPrefixEnd != null) 
+                                    pageRange += "--" + alphaPrefixEnd + endPage;
+                                else if (alphaPostfixEnd != null) 
+                                    pageRange += "--" + endPage + alphaPostfixEnd;
+                                else
+                                    pageRange += "--" + lastPage;
+                            } else {
+                                pageRange += "--" + lastPage;
+                            }
                         }
                     }
                 }
             }
         }
-
     }
 
     /**
@@ -4024,6 +4382,8 @@ public class BiblioItem {
             bib.setPublicationDate(bibo.getPublicationDate());
         if (bibo.getSubmissionDate() != null)
             bib.setSubmissionDate(bibo.getSubmissionDate());
+        if (bibo.getDownloadDate() != null)
+            bib.setDownloadDate(bibo.getDownloadDate());
         if (bibo.getYear() != null)
             bib.setYear(bibo.getYear());
         if (bibo.getNormalizedPublicationDate() != null)
@@ -4050,6 +4410,14 @@ public class BiblioItem {
             bib.setS_Month(bibo.getS_Month());
         if (bibo.getS_Day() != null)
             bib.setS_Day(bibo.getS_Day());
+
+        if (bibo.getD_Year() != null)
+            bib.setD_Year(bibo.getD_Year());
+        if (bibo.getD_Month() != null)
+            bib.setD_Month(bibo.getD_Month());
+        if (bibo.getD_Day() != null)
+            bib.setD_Day(bibo.getD_Day());
+
         if (bibo.getLocation() != null)
             bib.setLocation(bibo.getLocation());
         if (bibo.getPublisher() != null)
@@ -4081,22 +4449,32 @@ public class BiblioItem {
 
         // authors present in fullAuthors list should be in the existing resources 
         // at least the corresponding author
-        if (bibo.getFullAuthors() != null) {
-            if ( (bib.getFullAuthors() == null) || (bib.getFullAuthors().size() == 0) )
+        if (!CollectionUtils.isEmpty(bibo.getFullAuthors())) {
+            if (CollectionUtils.isEmpty(bib.getFullAuthors()))
                 bib.setFullAuthors(bibo.getFullAuthors());
             else if (bibo.getFullAuthors().size() == 1) {
-                // we have the corresponding author	
+                // we have the corresponding author 
                 // check if the author exists in the obtained list
                 Person auto = (Person) bibo.getFullAuthors().get(0);
                 List<Person> auts = bib.getFullAuthors();
                 if (auts != null) {
                     for (Person aut : auts) {
-                        if (aut.getLastName() != null) {
-                            if (aut.getLastName().equals(auto.getLastName())) {
-                                aut.setCorresp(true);
-                                if (StringUtils.isNotBlank(auto.getEmail())) 
-                                    aut.setEmail(auto.getEmail());
-                                // should we also check the country ? affiliation?
+                        if (StringUtils.isNotBlank(aut.getLastName()) && StringUtils.isNotBlank(auto.getLastName())) {
+                            if (aut.getLastName().toLowerCase().equals(auto.getLastName().toLowerCase())) {
+                                if (StringUtils.isBlank(aut.getFirstName()) ||
+                                   (auto.getFirstName() != null && 
+                                    aut.getFirstName().length() <= auto.getFirstName().length() && 
+                                         auto.getFirstName().toLowerCase().startsWith(aut.getFirstName().toLowerCase()))) {
+                                    aut.setFirstName(auto.getFirstName());
+                                    aut.setCorresp(true);
+                                    if (StringUtils.isNotBlank(auto.getEmail())) 
+                                        aut.setEmail(auto.getEmail());
+                                    // should we also check the country ? affiliation?
+                                    if (StringUtils.isNotBlank(auto.getMiddleName()) && (StringUtils.isBlank(aut.getMiddleName())))
+                                        aut.setMiddleName(auto.getMiddleName());
+                                    if (StringUtils.isNotBlank(auto.getORCID()) && (StringUtils.isBlank(aut.getORCID())))
+                                        aut.setORCID(auto.getORCID());
+                                }
                             }
                         }
                     }
@@ -4108,31 +4486,54 @@ public class BiblioItem {
                 for (Person aut : bibo.getFullAuthors()) {
                     // try to find the author in the first item (we know it's not empty)
                     for (Person aut2 : bib.getFullAuthors()) {
+
+
                         if (StringUtils.isNotBlank(aut2.getLastName())) {
-                            if (StringUtils.isNotBlank(aut.getLastName()) && aut.getLastName().equals(aut2.getLastName())) {
-                                // check also first name if present - at least for the initial
-                                if ( StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName()) ) {
-                                    // we have a match (full first name)
-                                    if (StringUtils.isBlank(aut.getMiddleName()))
-                                        aut.setMiddleName(aut2.getMiddleName());
-                                    if (StringUtils.isBlank(aut.getTitle()))
-                                        aut.setTitle(aut2.getTitle());
-                                    if (StringUtils.isBlank(aut.getSuffix()))
-                                        aut.setSuffix(aut2.getSuffix());
-                                    break;
-                                } else if ( StringUtils.isNotBlank(aut.getFirstName()) && 
-                                    StringUtils.isNotBlank(aut2.getFirstName()) &&
-                                    (aut.getFirstName().length() == 1) && 
-                                    (aut.getFirstName().equals(aut2.getFirstName().substring(0,1))) ) {
-                                    // we have a match (initial)
-                                    aut.setFirstName(aut2.getFirstName());
-                                    if (StringUtils.isBlank(aut.getMiddleName()))
-                                        aut.setMiddleName(aut2.getMiddleName());
-                                    if (StringUtils.isBlank(aut.getTitle()))
-                                        aut.setTitle(aut2.getTitle());
-                                    if (StringUtils.isBlank(aut.getSuffix()))
-                                        aut.setSuffix(aut2.getSuffix());
-                                    break;
+                            String aut2_lastname = aut2.getLastName().toLowerCase();
+
+                            if (StringUtils.isNotBlank(aut.getLastName())) {
+                                String aut_lastname = aut.getLastName().toLowerCase();
+
+                                if (aut_lastname.equals(aut2_lastname)) {
+                                    // check also first name if present - at least for the initial
+                                    if ( StringUtils.isBlank(aut2.getFirstName()) || 
+                                         (StringUtils.isNotBlank(aut2.getFirstName()) && StringUtils.isNotBlank(aut.getFirstName())) ) {
+                                        // we have no first name or a match (full first name)
+
+                                        if ( StringUtils.isBlank(aut2.getFirstName()) 
+                                            || 
+                                             aut.getFirstName().equals(aut2.getFirstName())
+                                            ||
+                                             ( aut.getFirstName().length() == 1 && 
+                                               aut.getFirstName().equals(aut2.getFirstName().substring(0,1)) ) 
+                                            ) {
+                                            // we have a match (full or initial)
+                                            if (StringUtils.isNotBlank(aut2.getFirstName()) &&
+                                                aut2.getFirstName().length() > aut.getFirstName().length())
+                                                aut.setFirstName(aut2.getFirstName());
+                                            if (StringUtils.isBlank(aut.getMiddleName()))
+                                                aut.setMiddleName(aut2.getMiddleName());
+                                            if (StringUtils.isBlank(aut.getTitle()))
+                                                aut.setTitle(aut2.getTitle());
+                                            if (StringUtils.isBlank(aut.getSuffix()))
+                                                aut.setSuffix(aut2.getSuffix());
+                                            if (StringUtils.isBlank(aut.getORCID()))
+                                                aut.setORCID(aut2.getORCID());
+                                            if (StringUtils.isBlank(aut.getEmail()))
+                                                aut.setEmail(aut2.getEmail());
+                                            if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
+                                                aut.setAffiliations(aut2.getAffiliations());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationBlocks())) 
+                                                aut.setAffiliationBlocks(aut2.getAffiliationBlocks());
+                                            if (!CollectionUtils.isEmpty(aut2.getAffiliationMarkers())) 
+                                                aut.setAffiliationMarkers(aut2.getAffiliationMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getMarkers())) 
+                                                aut.setMarkers(aut2.getMarkers());
+                                            if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
+                                                aut.setLayoutTokens(aut2.getLayoutTokens());
+                                            break;
+                                        } 
+                                    }  
                                 }
                             }
                         }
@@ -4141,7 +4542,6 @@ public class BiblioItem {
                 bib.setFullAuthors(bibo.getFullAuthors());
             }
         }
-        //System.out.println("result: \n" + bib.toTEI(0));
     }
 
 	/**
@@ -4160,7 +4560,7 @@ public class BiblioItem {
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))
 			return true;
-		else 
+		else
 			return false;
 	}
 
@@ -4210,7 +4610,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4222,17 +4622,20 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
-                break;
-            }
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
-            if (theList == null)
-                theList = new ArrayList<>();
-            for (LayoutToken token : clusterTokens)
-                theList.add(token);
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
+    }
+
+    public List<LayoutToken> getAuthorsTokensWorkingCopy() {
+        return authorsTokensWorkingCopy;
+    }
+
+    public List<LayoutToken> getAbstractTokensWorkingCopy() {
+        return abstractTokensWorkingCopy;
     }
 }

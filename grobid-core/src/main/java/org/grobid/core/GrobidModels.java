@@ -15,7 +15,7 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
  * @author Patrice Lopez
  */
 public enum GrobidModels implements GrobidModel {
-    AFFIILIATON_ADDRESS("affiliation-address"),
+    AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
@@ -49,6 +49,24 @@ public enum GrobidModels implements GrobidModel {
 
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
+
+    // Collections are dedicated models variant, but using the same base parser.
+    // This is used in particular for scientific or technical documents like standards (SDO) 
+    // which have a particular overall zoning and/or header, while the rest of the content 
+    // is similar to other general technical and scientific document
+    public enum Collection {
+        IETF("sdo/ietf");
+
+        public final String label;
+ 
+        private Collection(String label) {
+            this.label = label;
+        }
+
+        public String getLabel() {
+            return label;
+        }
+    };
 
     /**
      * Absolute path to the model.

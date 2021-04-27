@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="55000124-orginal"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Vascular Endothelial Growth Factor Inhibits Mitogen-Induced Vascular<lb/> Smooth Muscle Cell Proliferation 1,2<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Amir H. Dorafshar, M.D.,* Niren Angle, M.D.,* ,3 Michael Bryer-Ash, M.D., † , ‡ Danshan Huang, M.D., † , ‡<lb/> Michael M. Farooq, M.D.,* Hugh A. Gelabert, M.D.,* and Julie A. Freischlag, M.D. ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>*Division of Vascular Surgery</affiliation>
+	</byline>  
+
+	and 
+
+	<byline>
+	<affiliation>†Division of Endocrinology, Diabetes and Hypertension, UCLA Gonda (Goldschmied) Diabetes Center,<lb/> David Geffen School of Medicine at UCLA, </affiliation>
+	</byline> 
+
+	<address>Los Angeles, CA;</address>
+
+	and 
+
+	<byline>
+	<affiliation>‡Research Service, West Los Angeles Veterans Administration<lb/> Medical Center,</affiliation>
+	</byline>
+
+	<address>Los Angeles, CA<lb/></address>
+
+	<note type="submission">Submitted for publication December 11, 2002<lb/></note>
+
+	<div type="abstract">Introduction. Delivery of vascular endothelial<lb/> growth factor (VEGF) protein or gene transfer has<lb/> been shown to accelerate re-endothelialization and at-<lb/>tenuate neointimal hyperplasia in various arterial in-<lb/>jury models, including balloon injury, stent implanta-<lb/>tion, and vein grafts. In addition to stimulating re-<lb/>endothelialization, we hypothesize that VEGF has<lb/> further vascular protective functions to prevent neo-<lb/>intimal hyperplasia by directly inhibiting mitogen-<lb/>induced proliferation of vascular smooth muscle cells<lb/> (VSMCs) via the mitogen-activated protein kinase<lb/> pathway.<lb/> Materials and methods. Human aortic VSMCs were<lb/> seeded and serum starved for 24 h. The cells were then<lb/> stimulated with a mitogen, recombinant human plate-<lb/>let derived growth factor at 20 ng/mL together with 0,<lb/> 10, 20, 30, 40, 50 ng/mL recombinant human VEGF. A<lb/> proliferation assay was used to quantitate bromode-<lb/>oxyuridine uptake into newly synthesized DNA. West-<lb/>ern immunoassay was used to quantify extracellular<lb/> signal-regulated kinase (ERK) 2 protein and phos-<lb/>phorylation of retinoblastoma and ERK 1/2 protein.<lb/> Results. VEGF inhibited bromodeoxyuridine incor-<lb/>poration into mitogen-induced VSMC in a dose-<lb/>dependent manner, reaching statistical significance at<lb/> concentrations of 30 (P &lt; 0.05), 40 (P &lt; 0.05), and 50<lb/> ng/mL (P &lt; 0.01). Densitometry of western immuno-<lb/>blots revealed an inhibition of phosphorylation of ret-<lb/>inoblastoma at VEGF concentrations of 40 and 50<lb/> ng/mL and ERK 1/2 phosphorylation at concentrations<lb/> of 30, 40 and 50 ng/mL.<lb/> Conclusion. In addition to stimulating re-<lb/>endothelialization, VEGF appears to have a vascular<lb/> protective function by directly inhibiting VSMC pro-<lb/>liferation. This effect occurs in the absence of endo-<lb/>thelial cells and via the mitogen-activated protein ki-<lb/>nase pathway. VEGF may serve as an important<lb/> modulator of mitogen-induced VSMC proliferation af-<lb/>ter vascular injury.</div>
+
+	<note type="copyright">© 2003 Elsevier Inc. All rights reserved.<lb/></note>
+
+	Key Words:
+	<keyword>vascular endothelial growth factor; hu-<lb/>man aortic smooth muscle; neointimal hyperplasia.<lb/></keyword>
+
+	1 Presented at the 
+	<meeting>36th Annual Meeting of the Association of<lb/> Academic Surgery, November 10, 2002, Boston, MA.<lb/></meeting>
+
+	<note type="funding">2 This work was supported in part by a Merit Review Award from<lb/> the Veterans&apos; Administration Research Service (MBA) and by fund-<lb/>ing from the Gonda Family Endowment. MBA received partial sup-<lb/>port from the Gonda Family Endowment.<lb/> </note>
+
+	3 To whom correspondence and reprint requests should be ad-<lb/> dressed at 
+
+	<byline>
+	<affiliation>UCSD Section of Vascular Surgery,</affiliation>
+	</byline>
+
+	<address>200 West Arbor Drive,<lb/> San Diego, CA 92103-8403.</address>
+
+	E-mail:
+	<email>nangle@ucsd.edu.<lb/></email>
+
+	<reference>Journal of Surgical Research 114, 179 -186 (2003)<lb/></reference>
+
+	<idno>doi:10.1016/S0022-4804(03)00254-3</idno>
+
+	<page>179<lb/></page> 
+
+	0022-4804/03 $35.00<lb/>
+	
+	<note type="copyright">© 2003 Elsevier Inc. All rights reserved.</note>
+
+		</front>
+	</text>
+</tei>

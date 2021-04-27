@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="sdarticle01"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>A hierarchical model for the relationships between general and specific<lb/> vulnerability factors and symptom levels of generalized anxiety disorder<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Colin van der Heiden a,b, *, Kim Melchior a,b , Peter Muris b , S. Bouwmeester b , Arjan E.R. Bos c ,<lb/> Henk T. van der Molen b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Outpatient Treatment Center PsyQ,</affiliation>
+	</byline>
+
+	<address>Rotterdam, The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>b Institute of Psychology, Erasmus University Rotterdam,</affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<byline>
+	<affiliation>c Faculty of Psychology and Neuroscience, Maastricht University,</affiliation>
+	</byline>
+
+	<address>The Netherlands<lb/></address>
+
+	<reference>Journal of Anxiety Disorders 24 (2010) 284-289<lb/></reference>
+
+	A R T I C L E I N F O<lb/>
+
+	Article history:<lb/>
+	<note type="submission">Received 10 July 2009<lb/> Received in revised form 11 December 2009<lb/> Accepted 11 December 2009<lb/></note>
+
+	Keywords:<lb/>
+	<keyword>Generalized anxiety disorder<lb/> Hierarchical model<lb/> Neuroticism<lb/> Metacognitions<lb/> Intolerance of uncertainty Worry<lb/></keyword>
+
+	A B S T R A C T<lb/>
+	<div type="abstract">The present study examined a hierarchical model for the relationships between general and specific<lb/> vulnerability factors and symptom manifestations of generalized anxiety disorder (GAD). A clinical<lb/> sample of patients with GAD (N = 137) completed a set of self-report questionnaires for measuring<lb/> neuroticism, extraversion, intolerance of uncertainty, metacognitive beliefs, and symptoms of<lb/> generalized anxiety (i.e., worry) and depression. A bootstrapping analysis yielded support for a model<lb/> in which the relation between the general vulnerability factor of neuroticism and symptoms of GAD<lb/> were mediated by the specific vulnerability factors of intolerance of uncertainty and negative<lb/> metacognitions. Implications for the classification and treatment of GAD are discussed.<lb/></div>
+
+	<note type="copyright">ß 2009 Elsevier Ltd. All rights reserved.<lb/></note>
+
+	* Corresponding author at:
+	<byline>
+	<affiliation>PsyQ,</affiliation>
+	</byline> 
+
+	<address>Van Vollenhovenstraat 3 (2nd floor), 3016 BE<lb/> Rotterdam, The Netherlands.</address>
+
+	Tel.: <phone>+31 88 0013991</phone>; fax: +31 88 0013999.<lb/> E-mail address:
+	<email>c.vanderheiden@psyq.nl</email>
+	(C. van der Heiden).<lb/> 
+
+	Contents lists available at ScienceDirect<lb/>
+	
+	<title level="j">Journal of Anxiety Disorders<lb/></title>
+
+	0887-6185/$ -see front matter
+	<note type="copyright">ß 2009 Elsevier Ltd. All rights reserved.<lb/></note>
+
+	<idno>doi:10.1016/j.janxdis.2009.12.005</idno>
+
+		</front>
+	</text>
+</tei>

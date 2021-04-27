@@ -170,7 +170,7 @@ public class Engine implements Closeable {
         if (reference != null) {
             reference = reference.replaceAll("\\\\", "");
         }
-        return parsers.getCitationParser().processing(reference, consolidate);
+        return parsers.getCitationParser().processingString(reference, consolidate);
     }
 
     /**
@@ -188,7 +188,7 @@ public class Engine implements Closeable {
         if (references == null || references.size() == 0)
             return finalResults;
         for (String reference : references) {
-            BiblioItem bib = parsers.getCitationParser().processing(reference, 0);
+            BiblioItem bib = parsers.getCitationParser().processingString(reference, 0);
             //if ((bib != null) && !bib.rejectAsReference()) 
             {
                 BibDataSet bds = new BibDataSet();
@@ -382,41 +382,7 @@ public class Engine implements Closeable {
         if (result == null) {
             result = new BiblioItem();
         }
-
-        Pair<String, Document> resultTEI;
-        if (GrobidProperties.isHeaderUseHeuristics()) {
-            resultTEI = parsers.getHeaderParser().processing2(inputFile, result, config);
-        } else {
-            resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
-        }
-        Document doc = resultTEI.getRight();
-        return resultTEI.getLeft();
-    }
-
-    /**
-     * Use the segmentation model to identify the header section of a PDF file, then apply a parsing model for the
-     * header based on CRF
-     *
-     * @param inputFile   the path of the PDF file to be processed
-     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
-     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
-     *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
-     * @return the TEI representation of the extracted bibliographical information
-     */
-    public String segmentAndProcessHeader(File inputFile, int consolidate, BiblioItem result) {
-        // normally the BiblioItem reference must not be null, but if it is the
-        // case, we still continue
-        // with a new instance, so that the resulting TEI string is still
-        // delivered
-        if (result == null) {
-            result = new BiblioItem();
-        }
-
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(inputFile, result,
-                GrobidAnalysisConfig.builder().consolidateHeader(consolidate).build());
-        Document doc = resultTEI.getRight();
-        //close();
+        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
         return resultTEI.getLeft();
     }
 
@@ -461,6 +427,7 @@ public class Engine implements Closeable {
      * @param id           : an optional ID to be used in the TEI file, -1 if not used
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
+        System.out.println(inputFile.getPath());
         Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id);
     }
 

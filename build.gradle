@@ -8,9 +8,9 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.6.0'
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
@@ -116,6 +116,8 @@ subprojects {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -201,7 +203,7 @@ subprojects {
     test {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
-        //  forkEvery = 1
+        forkEvery = 1
         maxHeapSize = "1024m"
     }
 
@@ -243,7 +245,9 @@ project("grobid-core") {
 
         implementation "joda-time:joda-time:2.9.9"
         implementation "org.apache.lucene:lucene-analyzers-common:4.5.1"
-        implementation 'black.ninia:jep:3.9.0'
+        implementation 'black.ninia:jep:3.9.1'
+        implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
+        implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
 
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
     }
@@ -255,6 +259,8 @@ project("grobid-core") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+
+//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -273,7 +279,7 @@ project("grobid-core") {
             }
         }
 
-        configurations = [project.configurations.shadedLib]
+        configurations = [project.configurations.shadedLib, project.configurations.runtimeClasspath]
         relocate 'org.apache.lucene', 'org.grobid.shaded.org.apache.lucene'
     }
 
@@ -296,6 +302,7 @@ project("grobid-home") {
         from('.') {
             include("config/*")
             include("language-detection/**")
+            include("sentence-segmentation/**")
             include("lib/**")
             include("pdf2xml/**")
             include("models/**")
@@ -324,7 +331,10 @@ project(":grobid-service") {
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-//    tasks.distZip.enabled = false
+    tasks.distZip.enabled = true
+    tasks.distTar.enabled = false
+    tasks.shadowDistZip.enabled = false
+    tasks.shadowDistTar.enabled = false
 
     dependencies {
         implementation project(':grobid-core')
@@ -348,6 +358,8 @@ project(":grobid-service") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -386,6 +398,13 @@ project(":grobid-trainer") {
         }
         implementation project(':grobid-core')
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+        implementation "me.tongfei:progressbar:0.9.0"
+    }
+
+    configurations {
+        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
+        //all*.exclude group: 'log4j', module: "log4j"
     }
 
     jar {
@@ -395,6 +414,8 @@ project(":grobid-trainer") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -404,6 +425,8 @@ project(":grobid-trainer") {
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
         }
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -441,18 +464,19 @@ project(":grobid-trainer") {
     }
 
     // run like this:
-    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet
-    // ./gradlew PubMedCentralEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew jatsEval -Pp2t=/path/to/goldenSet
+    // ./gradlew jatsEval -Pp2t=/path/to/goldenSet -Prun=1 -PfileRatio=0.1
+    // ./gradlew teiEval -Pp2t=/path/to/goldenSet
     // ./gradlew PrepareDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
     // ./gradlew EvaluateDOIMatching -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 
-    task(PubMedCentralEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(jatsEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
     }
 
-    task(Pub2TeiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
+    task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')

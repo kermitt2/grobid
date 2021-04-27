@@ -21,7 +21,6 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Cluster;
@@ -32,7 +31,6 @@ import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.layout.Page;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
 import org.grobid.core.sax.*;
-
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.ElementCounter;
 import org.grobid.core.utilities.LayoutTokensUtil;
@@ -41,15 +39,28 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CodingErrorAction;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -59,7 +70,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
@@ -86,17 +96,7 @@ public class Document implements Serializable {
     protected transient List<Cluster> clusters = null;
     protected transient List<Block> blocks = null;
 
-    // not used anymore
-    protected List<Integer> blockHeaders = null;
-    protected List<Integer> blockFooters = null;
-    protected List<Integer> blockSectionTitles = null;
-    protected List<Integer> acknowledgementBlocks = null;
     protected List<Integer> blockDocumentHeaders = null;
-    protected transient SortedSet<DocumentPiece> blockReferences = null;
-    protected List<Integer> blockTables = null;
-    protected List<Integer> blockFigures = null;
-    protected List<Integer> blockHeadTables = null;
-    protected List<Integer> blockHeadFigures = null;
 
     protected transient FeatureFactory featureFactory = null;
 
@@ -162,9 +162,12 @@ public class Document implements Serializable {
     // map of sequence of LayoutTokens for the fulltext model labels
     //Map<String, List<LayoutTokenization>> labeledTokenSequences = null;
 
+    protected double byteSize = 0; 
+
     public Document(DocumentSource documentSource) {
         this.documentSource = documentSource;
         setPathXML(documentSource.getXmlFile());
+        this.byteSize = documentSource.getByteSize();
     }
 
     protected Document() {
@@ -174,6 +177,14 @@ public class Document implements Serializable {
     public static Document createFromText(String text) {
         Document doc = new Document();
         doc.fromText(text);
+        if (text != null) {
+            try {
+                final byte[] utf8Bytes = text.getBytes("UTF-8");
+                doc.byteSize = utf8Bytes.length;
+            } catch(Exception e) {
+                LOGGER.warn("Could not set the original text document size in bytes for UTF-8 encoding");
+            }
+        }
         return doc;
     }
 
@@ -254,57 +265,6 @@ public class Document implements Serializable {
         return this.analyzer;
     }
 
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsHeader() {
-        List<LayoutToken> tokenizationsHeader = new ArrayList<LayoutToken>();
-        for (Integer blocknum : blockDocumentHeaders) {
-            Block blo = blocks.get(blocknum);
-            /*int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsHeader.add(tokenizations.get(i));
-            }*/
-            List<LayoutToken> tokens = blo.getTokens();
-            if ((tokens == null) || (tokens.size() == 0)) {
-                continue;
-            } else {
-                for (LayoutToken token : tokens) {
-                    tokenizationsHeader.add(token);
-                }
-            }
-        }
-
-        return tokenizationsHeader;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsFulltext() {
-        List<LayoutToken> tokenizationsFulltext = new ArrayList<LayoutToken>();
-        for (Block blo : blocks) {
-            int tokens = blo.getStartToken();
-            int tokene = blo.getEndToken();
-            for (int i = tokens; i < tokene; i++) {
-                tokenizationsFulltext.add(tokenizations.get(i));
-            }
-        }
-
-        return tokenizationsFulltext;
-    }
-
-    // to be removed
-    @Deprecated
-    public List<LayoutToken> getTokenizationsReferences() {
-        List<LayoutToken> tokenizationsReferences = new ArrayList<LayoutToken>();
-
-        for (DocumentPiece dp : blockReferences) {
-            tokenizationsReferences.addAll(tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos()));
-        }
-
-        return tokenizationsReferences;
-    }
-
     public List<LayoutToken> fromText(final String text) {
         List<String> toks = null;
         try {
@@ -333,6 +293,25 @@ public class Document implements Serializable {
 
         images = new ArrayList<>();
         return tokenizations;
+    }
+
+    /**
+    * See https://github.com/kermitt2/grobid/pull/475
+    * Ignore invalid unicode characters
+    *
+    *  @author Daniel Ecer
+    */
+    protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler) 
+        throws SAXException, IOException {
+        CharsetDecoder utf8Decoder = Charset.forName("UTF-8").newDecoder();
+        utf8Decoder.onMalformedInput(CodingErrorAction.IGNORE);
+        utf8Decoder.onUnmappableCharacter(CodingErrorAction.IGNORE);
+        saxParser.parse(new InputSource(new InputStreamReader(in, utf8Decoder)), handler);
+    }
+
+    protected static void parseInputStream(InputStream in, SAXParserFactory saxParserFactory, DefaultHandler handler) 
+        throws SAXException, IOException, ParserConfigurationException {
+        parseInputStream(in, saxParserFactory.newSAXParser(), handler);
     }
 
     /**
@@ -372,8 +351,7 @@ public class Document implements Serializable {
             // in = new XMLFilterFileInputStream(file); // -> to filter invalid XML characters
 
             // get a new instance of parser
-            SAXParser p = spf.newSAXParser();
-            p.parse(in, parser);
+            parseInputStream(in, spf, parser);
             tokenizations = parser.getTokenization();
             if (in != null) {
                 try {
@@ -586,7 +564,6 @@ public class Document implements Serializable {
             toGlue.add(new Pair<>(start, end + 1));
         }
 
-
         if (toGlue.isEmpty()) {
             return null;
         }
@@ -603,7 +580,6 @@ public class Document implements Serializable {
 
         }
 
-
         validGraphicObjectPredicate = new Predicate<GraphicObject>() {
             @Override
             public boolean apply(GraphicObject graphicObject) {
@@ -614,7 +590,6 @@ public class Document implements Serializable {
 
 
     }
-
 
     protected static int getCoordItem(ElementCounter<Integer> cnt, boolean getMin) {
         List<Map.Entry<Integer, Integer>> counts = cnt.getSortedCounts();
@@ -637,576 +612,6 @@ public class Document implements Serializable {
             }
         }
         return res;
-    }
-
-
-    /**
-     * Add features in the header section
-     * <p/>
-     * -> should be moved to the header parser class!
-     */
-    public String getHeaderFeatured(boolean getHeader,
-                                    boolean withRotation) {
-        if (getHeader) {
-            String theHeader = getHeader();
-            if ((theHeader == null) || (theHeader.trim().length() <= 1)) {
-                theHeader = getHeaderLastHope();
-            }
-//System.out.println(theHeader);
-        }
-        featureFactory = FeatureFactory.getInstance();
-        StringBuilder header = new StringBuilder();
-        String currentFont = null;
-        int currentFontSize = -1;
-
-        // vector for features
-        FeaturesVectorHeader features;
-        boolean endblock;
-        for (Integer blocknum : blockDocumentHeaders) {
-            Block block = blocks.get(blocknum);
-            boolean newline;
-            boolean previousNewline = false;
-            endblock = false;
-            List<LayoutToken> tokens = block.getTokens();
-            if (tokens == null)
-                continue;
-            int n = 0;
-            while (n < tokens.size()) {
-                LayoutToken token = tokens.get(n);
-                features = new FeaturesVectorHeader();
-                features.token = token;
-                String text = token.getText();
-                if (text == null) {
-                    n++;
-                    continue;
-                }
-                //text = text.replace(" ", "").replace("\t", "").replace("\u00A0", "");
-                text = text.replace(" ", "");
-                if (text.length() == 0) {
-                    n++;
-                    continue;
-                }
-
-                //if (text.equals("\n") || text.equals("\r")) {
-                if (text.equals("\n")) {
-                    newline = true;
-                    previousNewline = true;
-                    n++;
-                    continue;
-                } else
-                    newline = false;
-
-                if (previousNewline) {
-                    newline = true;
-                    previousNewline = false;
-                }
-
-                // final sanitisation and filtering
-                text = text.replaceAll("[ \n]", "");
-                if (TextUtilities.filterLine(text)) {
-                    n++;
-                    continue;
-                }
-
-                features.string = text;
-
-                if (newline)
-                    features.lineStatus = "LINESTART";
-                Matcher m0 = featureFactory.isPunct.matcher(text);
-                if (m0.find()) {
-                    features.punctType = "PUNCT";
-                }
-                if (text.equals("(") || text.equals("[")) {
-                    features.punctType = "OPENBRACKET";
-
-                } else if (text.equals(")") || text.equals("]")) {
-                    features.punctType = "ENDBRACKET";
-
-                } else if (text.equals(".")) {
-                    features.punctType = "DOT";
-
-                } else if (text.equals(",")) {
-                    features.punctType = "COMMA";
-
-                } else if (text.equals("-")) {
-                    features.punctType = "HYPHEN";
-
-                } else if (text.equals("\"") || text.equals("\'") || text.equals("`")) {
-                    features.punctType = "QUOTE";
-                }
-
-                if (n == 0) {
-                    features.lineStatus = "LINESTART";
-                    features.blockStatus = "BLOCKSTART";
-                } else if (n == tokens.size() - 1) {
-                    features.lineStatus = "LINEEND";
-                    previousNewline = true;
-                    features.blockStatus = "BLOCKEND";
-                    endblock = true;
-                } else {
-                    // look ahead...
-                    boolean endline = false;
-
-                    int ii = 1;
-                    boolean endloop = false;
-                    while ((n + ii < tokens.size()) && (!endloop)) {
-                        LayoutToken tok = tokens.get(n + ii);
-                        if (tok != null) {
-                            String toto = tok.getText();
-                            if (toto != null) {
-                                if (toto.equals("\n")) {
-                                    endline = true;
-                                    endloop = true;
-                                } else {
-                                    if ((toto.trim().length() != 0)
-                                            && (!text.equals("\u00A0"))
-                                            && (!(toto.contains("@IMAGE")))
-                                            && (!(toto.contains("@PAGE")))
-                                            && (!text.contains(".pbm"))
-                                            && (!text.contains(".ppm"))
-                                            && (!text.contains(".svg"))
-                                            && (!text.contains(".png"))
-                                            && (!text.contains(".jpg"))) {
-                                        endloop = true;
-                                    }
-                                }
-                            }
-                        }
-
-                        if (n + ii == tokens.size() - 1) {
-                            endblock = true;
-                            endline = true;
-                        }
-
-                        ii++;
-                    }
-
-                    if ((!endline) && !(newline)) {
-                        features.lineStatus = "LINEIN";
-                    } else if (!newline) {
-                        features.lineStatus = "LINEEND";
-                        previousNewline = true;
-                    }
-
-                    if ((!endblock) && (features.blockStatus == null))
-                        features.blockStatus = "BLOCKIN";
-                    else if (features.blockStatus == null)
-                        features.blockStatus = "BLOCKEND";
-
-                }
-
-                if (text.length() == 1) {
-                    features.singleChar = true;
-                }
-
-                if (Character.isUpperCase(text.charAt(0))) {
-                    features.capitalisation = "INITCAP";
-                }
-
-                if (featureFactory.test_all_capital(text)) {
-                    features.capitalisation = "ALLCAP";
-                }
-
-                if (featureFactory.test_digit(text)) {
-                    features.digit = "CONTAINSDIGITS";
-                }
-
-                if (featureFactory.test_common(text)) {
-                    features.commonName = true;
-                }
-
-                if (featureFactory.test_names(text)) {
-                    features.properName = true;
-                }
-
-                if (featureFactory.test_month(text)) {
-                    features.month = true;
-                }
-
-                if (text.contains("-")) {
-                    features.containDash = true;
-                }
-
-                Matcher m = featureFactory.isDigit.matcher(text);
-                if (m.find()) {
-                    features.digit = "ALLDIGIT";
-                }
-
-                Matcher m2 = featureFactory.year.matcher(text);
-                if (m2.find()) {
-                    features.year = true;
-                }
-
-                Matcher m3 = featureFactory.email.matcher(text);
-                if (m3.find()) {
-                    features.email = true;
-                }
-
-                Matcher m4 = featureFactory.http.matcher(text);
-                if (m4.find()) {
-                    features.http = true;
-                }
-
-                if (currentFont == null) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else if (!currentFont.equals(token.getFont())) {
-                    currentFont = token.getFont();
-                    features.fontStatus = "NEWFONT";
-                } else
-                    features.fontStatus = "SAMEFONT";
-
-                int newFontSize = (int) token.getFontSize();
-                if (currentFontSize == -1) {
-                    currentFontSize = newFontSize;
-                    features.fontSize = "HIGHERFONT";
-                } else if (currentFontSize == newFontSize) {
-                    features.fontSize = "SAMEFONTSIZE";
-                } else if (currentFontSize < newFontSize) {
-                    features.fontSize = "HIGHERFONT";
-                    currentFontSize = newFontSize;
-                } else if (currentFontSize > newFontSize) {
-                    features.fontSize = "LOWERFONT";
-                    currentFontSize = newFontSize;
-                }
-
-                if (token.getBold())
-                    features.bold = true;
-
-                if (token.getItalic())
-                    features.italic = true;
-
-                if (token.getRotation())
-                    features.rotation = true;
-
-                // CENTERED
-                // LEFTAJUSTED
-
-                if (features.capitalisation == null)
-                    features.capitalisation = "NOCAPS";
-
-                if (features.digit == null)
-                    features.digit = "NODIGIT";
-
-                if (features.punctType == null)
-                    features.punctType = "NOPUNCT";
-
-                header.append(features.printVector(withRotation));
-
-                n++;
-            }
-        }
-
-        return header.toString();
-    }
-
-    // default bins for relative position
-    protected static final int nbBins = 12;
-
-    /**
-     * heuristics to get the header section...
-     * -> it is now covered by the CRF segmentation model
-     */
-    public String getHeader() {
-        //if (firstPass)
-        //BasicStructureBuilder.firstPass(this);
-
-        // try first to find the introduction in a safe way
-        String tmpRes = getHeaderByIntroduction();
-        if (tmpRes != null) {
-            if (tmpRes.trim().length() > 0) {
-                return tmpRes;
-            }
-        }
-
-        // we apply a heuristics based on the size of first blocks
-        String res = null;
-        beginBody = -1;
-        StringBuilder accumulated = new StringBuilder();
-        int i = 0;
-        int nbLarge = 0;
-        boolean abstractCandidate = false;
-        for (Block block : blocks) {
-            String localText = block.getText();
-            if ((localText == null) || (localText.startsWith("@"))) {
-                accumulated.append("\n");
-                continue;
-            }
-            localText = localText.trim();
-            localText = localText.replace("  ", " ");
-
-            Matcher ma0 = BasicStructureBuilder.abstract_.matcher(localText);
-            if ((block.getNbTokens() > 60) || (ma0.find())) {
-                if (!abstractCandidate) {
-                    // first large block, it should be the abstract
-                    abstractCandidate = true;
-                } else if (beginBody == -1) {
-                    // second large block, it should be the first paragraph of
-                    // the body
-                    beginBody = i;
-                    for (int j = 0; j <= i + 1; j++) {
-                        Integer inte = j;
-                        if (blockDocumentHeaders == null)
-                            blockDocumentHeaders = new ArrayList<Integer>();
-                        if (!blockDocumentHeaders.contains(inte))
-                            blockDocumentHeaders.add(inte);
-                    }
-                    res = accumulated.toString();
-                    nbLarge = 1;
-                } else if (block.getNbTokens() > 60) {
-                    nbLarge++;
-                    if (nbLarge > 5) {
-                        return res;
-                    }
-                }
-            } else {
-                Matcher m = BasicStructureBuilder.introduction
-                        .matcher(localText);
-                if (abstractCandidate) {
-                    if (m.find()) {
-                        // we clearly found the begining of the body
-                        beginBody = i;
-                        for (int j = 0; j <= i; j++) {
-                            Integer inte = j;
-                            if (blockDocumentHeaders == null)
-                                blockDocumentHeaders = new ArrayList<Integer>();
-                            if (!blockDocumentHeaders.contains(inte)) {
-                                blockDocumentHeaders.add(inte);
-                            }
-                        }
-                        return accumulated.toString();
-                    } else if (beginBody != -1) {
-                        if (localText.startsWith("(1|I|A)\\.\\s")) {
-                            beginBody = i;
-                            for (int j = 0; j <= i; j++) {
-                                Integer inte = j;
-                                if (blockDocumentHeaders == null)
-                                    blockDocumentHeaders = new ArrayList<Integer>();
-                                if (!blockDocumentHeaders.contains(inte))
-                                    blockDocumentHeaders.add(inte);
-                            }
-                            return accumulated.toString();
-                        }
-                    }
-                } else {
-                    if (m.find()) {
-                        // we clearly found the begining of the body with the
-                        // introduction section
-                        beginBody = i;
-                        for (int j = 0; j <= i; j++) {
-                            Integer inte = j;
-                            if (blockDocumentHeaders == null)
-                                blockDocumentHeaders = new ArrayList<Integer>();
-                            if (!blockDocumentHeaders.contains(inte))
-                                blockDocumentHeaders.add(inte);
-                        }
-                        res = accumulated.toString();
-                    }
-                }
-            }
-
-            if ((i > 6) && (i > (blocks.size() * 0.6))) {
-                if (beginBody != -1) {
-                    return res;
-                } else
-                    return null;
-            }
-
-            accumulated.append(localText).append("\n");
-            i++;
-        }
-
-        return res;
-    }
-
-    /**
-     * We return the first page as header estimation... better than nothing when
-     * nothing is not acceptable.
-     * <p/>
-     * -> now covered by the CRF segmentation model
-     */
-    public String getHeaderLastHope() {
-        String res;
-        StringBuilder accumulated = new StringBuilder();
-        int i = 0;
-        if ((pages == null) || (pages.size() == 0)) {
-            return null;
-        }
-        for (Page page : pages) {
-            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0))
-                continue;
-            for (Block block : page.getBlocks()) {
-                String localText = block.getText();
-                if ((localText == null) || (localText.startsWith("@"))) {
-                    accumulated.append("\n");
-                    continue;
-                }
-                localText = localText.trim();
-                localText = localText.replace("  ", " ");
-                accumulated.append(localText);
-                Integer inte = Integer.valueOf(i);
-                if (blockDocumentHeaders == null)
-                    blockDocumentHeaders = new ArrayList<Integer>();
-                if (!blockDocumentHeaders.contains(inte))
-                    blockDocumentHeaders.add(inte);
-                i++;
-            }
-            beginBody = i;
-            break;
-        }
-
-        return accumulated.toString();
-    }
-
-    /**
-     * We try to match the introduction section in a safe way, and consider if
-     * minimum requirements are met the blocks before this position as header.
-     * <p/>
-     * -> now covered by the CRF segmentation model
-     */
-    public String getHeaderByIntroduction() {
-        String res;
-        StringBuilder accumulated = new StringBuilder();
-        int i = 0;
-        for (Block block : blocks) {
-            String localText = block.getText();
-            if ((localText == null) || (localText.startsWith("@"))) {
-                accumulated.append("\n");
-                continue;
-            }
-            localText = localText.trim();
-
-            Matcher m = BasicStructureBuilder.introductionStrict
-                    .matcher(localText);
-            if (m.find()) {
-                accumulated.append(localText);
-                beginBody = i;
-                for (int j = 0; j < i + 1; j++) {
-                    Integer inte = j;
-                    if (blockDocumentHeaders == null)
-                        blockDocumentHeaders = new ArrayList<Integer>();
-                    if (!blockDocumentHeaders.contains(inte))
-                        blockDocumentHeaders.add(inte);
-                }
-                res = accumulated.toString();
-
-                return res;
-            }
-
-            accumulated.append(localText);
-            i++;
-        }
-
-        return null;
-    }
-
-    /**
-     * Return the text content of the body of the document. getHeader() and getReferences() must
-     * have been called before.
-     * <p/>
-     * -> this should be removed at some point... it is only used now as default solution to determine
-     * the language of an article with the language identifier
-     */
-    public String getBody() {
-        StringBuilder accumulated = new StringBuilder();
-
-        if (blockFooters == null)
-            blockFooters = new ArrayList<Integer>();
-
-        if (blockHeaders == null)
-            blockHeaders = new ArrayList<Integer>();
-
-        // Wiley specific pre-treatment
-        // it looks very ad-hoc but actually it is
-        int i = 0;
-        boolean wiley = false;
-        for (Block block : blocks) {
-            Integer ii = i;
-
-            if (blockDocumentHeaders.contains(ii)) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = localText.replace("  ", " ");
-                    // we check if we have a Wiley publication - there is always
-                    // the DOI around
-                    // in a single block
-
-                    if (localText.startsWith("DOI: 10.1002")) {
-                        wiley = true;
-                    }
-                }
-            }
-
-            if ((!blockFooters.contains(ii))
-                    && (!blockDocumentHeaders.contains(ii))
-                    & (!blockHeaders.contains(ii)) && wiley) {
-                String localText = block.getText();
-
-                if (localText != null) {
-                    localText = localText.trim();
-                    localText = localText.replace("  ", " ");
-
-                    // the keyword block needs to join the header section
-                    if (localText.startsWith("Keywords: ")) {
-                        // the block before the keyword block is part of the
-                        // abstract and needs to be
-                        // move up in the header section
-                        blockDocumentHeaders.add(i - 1);
-                        blockDocumentHeaders.add(ii);
-
-                        break;
-                    }
-                }
-            }
-            i++;
-        }
-
-        i = 0;
-        for (Block block : blocks) {
-            Integer ii = i;
-            // if ( (i >= beginBody) && (i < beginReferences) ) {
-
-            if (blockFooters == null) {
-                blockFooters = new ArrayList<Integer>();
-            }
-            if (blockDocumentHeaders == null) {
-                blockDocumentHeaders = new ArrayList<Integer>();
-            }
-            if (blockHeaders == null) {
-                blockHeaders = new ArrayList<Integer>();
-            }
-            if (blockReferences == null) {
-                blockReferences = new TreeSet<DocumentPiece>();
-            }
-
-            if ((!blockFooters.contains(ii))
-                    && (!blockDocumentHeaders.contains(ii))
-                    && (!blockHeaders.contains(ii))
-                    && (!blockReferences.contains(ii))) {
-                String localText = block.getText();
-                if (localText != null) {
-                    localText = localText.trim();
-                    /*if (localText.startsWith("@BULLET")) {
-                        localText = localText.replace("@BULLET", " • ");
-                    }*/
-                    if (localText.startsWith("@IMAGE")) {
-                        localText = "";
-                    }
-
-                    if (localText.length() > 0) {
-                        if (featureFactory == null) {
-                            featureFactory = FeatureFactory.getInstance();
-                            // featureFactory = new FeatureFactory();
-                        }
-                        localText = TextUtilities.dehyphenize(localText);
-                        accumulated.append(localText).append("\n");
-                    }
-                }
-            }
-            i++;
-        }
-        return accumulated.toString();
     }
 
     /**
@@ -1304,44 +709,8 @@ public class Document implements Serializable {
         return clusters;
     }
 
-    public void setBlockHeaders(List<Integer> blockHeaders) {
-        this.blockHeaders = blockHeaders;
-    }
-
-    public void setBlockFooters(List<Integer> blockFooters) {
-        this.blockFooters = blockFooters;
-    }
-
-    public void setBlockSectionTitles(List<Integer> blockSectionTitles) {
-        this.blockSectionTitles = blockSectionTitles;
-    }
-
-    public void setAcknowledgementBlocks(List<Integer> acknowledgementBlocks) {
-        this.acknowledgementBlocks = acknowledgementBlocks;
-    }
-
     public void setBlockDocumentHeaders(List<Integer> blockDocumentHeaders) {
         this.blockDocumentHeaders = blockDocumentHeaders;
-    }
-
-    public void setBlockReferences(SortedSet<DocumentPiece> blockReferences) {
-        this.blockReferences = blockReferences;
-    }
-
-    public void setBlockTables(List<Integer> blockTables) {
-        this.blockTables = blockTables;
-    }
-
-    public void setBlockFigures(List<Integer> blockFigures) {
-        this.blockFigures = blockFigures;
-    }
-
-    public void setBlockHeadTables(List<Integer> blockHeadTables) {
-        this.blockHeadTables = blockHeadTables;
-    }
-
-    public void setBlockHeadFigures(List<Integer> blockHeadFigures) {
-        this.blockHeadFigures = blockHeadFigures;
     }
 
     public void setClusters(List<Cluster> clusters) {
@@ -1408,7 +777,7 @@ public class Document implements Serializable {
         this.labeledBlocks = labeledBlocks;
     }
 
-    //helper
+    // helper
     public List<LayoutToken> getDocumentPieceTokenization(DocumentPiece dp) {
         return tokenizations.subList(dp.getLeft().getTokenDocPos(), dp.getRight().getTokenDocPos() + 1);
     }
@@ -1458,7 +827,7 @@ public class Document implements Serializable {
         if (documentParts == null)
             return null;
 
-        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizationParts = new ArrayList<>();
         for (DocumentPiece docPiece : documentParts) {
             DocumentPointer dp1 = docPiece.getLeft();
             DocumentPointer dp2 = docPiece.getRight();
@@ -1570,6 +939,7 @@ public class Document implements Serializable {
                     f.setLayoutTokens(realCaptionTokens);
                     f.setTextArea(BoundingBoxCalculator.calculate(realCaptionTokens));
                     f.setCaption(new StringBuilder(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(realCaptionTokens))));
+                    f.setCaptionLayoutTokens(realCaptionTokens);
                     pageFigures.add(f);
                 }
             }
@@ -1715,7 +1085,6 @@ public class Document implements Serializable {
             }
 
         }
-
 
         // special case, when we didn't detect figures, but there is a nice figure on this page
         int maxPage = pages.size();
@@ -2194,4 +1563,11 @@ public class Document implements Serializable {
         }
     }*/
 
+    public double getByteSize() {
+        return byteSize;
+    }
+
+    public void setByteSize(double size) {
+        byteSize = size;
+    }
 }

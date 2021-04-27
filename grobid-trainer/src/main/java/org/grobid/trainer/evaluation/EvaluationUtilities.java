@@ -188,7 +188,11 @@ public class EvaluationUtilities {
     }
 
     public static String computeMetrics(Stats stats) {
-        return stats.getOldReport();
+        return stats.getTextReport();
+    }
+
+    public static String computeMetricsMD(Stats stats) {
+        return stats.getMarkDownReport();
     }
 
 }

@@ -8,7 +8,7 @@ For convenience, the structuring of the dates (training files `*.date.tei.xml`) 
 
 ## Analysis
 
-Each date is enclosed in a `<date>` element. Day, month and year are identified respectively with `<day>`, `<month>` and `<year>` elements. Additional text/characters that do not belong to one of these specific elements (punctuations, etc.) can be left untagged under the `<date>` elements.
+Each date is enclosed in a `<date>` element. Day, month and year are identified respectively with `<day>`, `<month>` and `<year>` elements. Additional text/characters that do not belong to one of these specific elements (punctuations, etc.) must be left untagged under the `<date>` elements.
 
 For example:
 

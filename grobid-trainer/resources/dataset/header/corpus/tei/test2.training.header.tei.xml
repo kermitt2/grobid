@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="test2"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">ARTICLE OPEN<lb/></note>
+	<docTitle>
+	<titlePart>Menstrual cycle associated changes in hormone-related gene<lb/> expression in oestrogen receptor positive breast cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ben P. Haynes 1 * , Ophira Ginsburg 2 , Qiong Gao 3 , Elizabeth Folkerd 1 , Maria Afentakis 1 , Richard Buus 1,3 , Le Hong Quang 4 ,<lb/> Pham Thi Han 5 , Pham Hong Khoa 4 , Nguyen Van Dinh 4 , Ta Van To 5 , Mark Clemons 6 , Chris Holcombe 7 , Caroline Osborne 8 ,<lb/> Abigail Evans 9 , Anthony Skene 10 , Mark Sibbering 11 , Clare Rogers 12 , Siobhan Laws 13 , Lubna Noor 14 , Ian E. Smith 15 and<lb/> Mitch Dowsett 1,3<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">The major changes in hormone levels that occur through the menstrual cycle have been postulated to affect the expression of<lb/> hormone-regulated and proliferation-associated genes (PAGs) in premenopausal ER+ breast cancer. Whilst previous studies have<lb/> demonstrated differences in gene expression, here, we investigated if there are within patient changes in the expression of<lb/> oestrogen-and progesterone-regulated genes (ERGs and PRGs) and PAGs in ER+ breast cancer during the menstrual cycle. Samples<lb/> from 96 patients in two independent prospective studies of the effect of menstrual cycle on ER+ breast cancer were used. Plasma<lb/> hormone measurements were used to assign tumours to one of three pre-defined menstrual cycle windows: W1 (days 27-35 and<lb/> 1-6; low oestradiol and low progesterone), W2 (days 7-16; high oestradiol and low progesterone) and W3 (days 17-26;<lb/> intermediate oestradiol and high progesterone). RNA expression of 50 genes, including 27 ERGs, 11 putative PRGs and seven PAGs<lb/> was measured. The AvERG (geomean of PGR, GREB1, TFF1 and PDZK1) was used as a composite measure of ERG expression and<lb/> showed significant changes between the three windows of the menstrual cycle increasing over 2.2-fold between W1 and W2 and<lb/> decreasing between W2 and W3 and between W3 and W1. Proliferation gene expression also varied significantly, following the<lb/> same pattern of changes as ERG expression, but the changes were of lower magnitude (1.4-fold increase between W1 and W2).<lb/> Significant changes in the expression of eight individual ERGs, including GREB1, PGR and TFF1, and two PAGs were observed<lb/> between W1 and either W2 or W3 with all genes showing higher levels in W2 or W3 (1.3-2.4-fold; FDR 0.016-0.05). The AvProg, a<lb/> composite measure of PRG expression, increased significantly (1.5-fold) in W3 compared to W1 or W2 but no significant changes<lb/> were observed for individual PRGs. In conclusion, we observed significant changes in ERG, PRG and PAG expression in ER+ breast<lb/> tumours during the menstrual cycle that may affect the assessment and interpretation of prominent biomarkers (e.g. PgR) and<lb/> commonly used multigene prognostic signatures in premenopausal ER+ breast cancer.<lb/></div>
+
+	<reference>npj Breast Cancer (2019) 5:42 ; </reference>
+
+	<idno>https://doi.org/10.1038/s41523-019-0138-2</idno>
+
+	<byline>
+	<affiliation>1<lb/> The Ralph Lauren Centre for Breast Cancer Research, Royal Marsden Hospital,</affiliation>
+	</byline>
+
+	<address>Fulham Road, London, UK.</address>
+
+	<byline>
+	<affiliation>2 Perlmutter Cancer Center and the Department of Population Health,<lb/></affiliation>
+	</byline>
+
+	<address>NYU Langone Health, New York, USA.</address>
+
+	<byline>
+	<affiliation>3 The Breast Cancer Now Toby Robins Research Centre, The Institute of Cancer Research,</affiliation>
+	</byline>
+
+	<address>Fulham Road, London, UK.</address>
+
+	<byline>
+	<affiliation>4 Department of Breast<lb/> Surgery, National Cancer Hospital,</affiliation>
+	</byline>
+
+	<address>Hanoi, Vietnam.</address>
+
+	<byline>
+	<affiliation>5 Department of Pathology, National Cancer Hospital,</affiliation>
+	</byline>
+
+	<address>Hanoi, Vietnam.</address>
+
+	<byline>
+	<affiliation>6 Department of Medicine, Division of Medical Oncology,<lb/> The Ottawa Hospital and University of Ottawa,</affiliation>
+	</byline>
+
+	<address>Ottawa, Canada.</address>
+
+	<byline>
+	<affiliation>7 Royal Liverpool University Hospital,</affiliation>
+	</byline>
+
+	<address>Prescott Street, Liverpool, UK.</address>
+
+	<byline>
+	<affiliation>8 Yeovil District Hospital,</affiliation>
+	</byline>
+
+	<address>Yeovil, Somerset, UK.</address>
+
+	<byline>
+	<affiliation>9<lb/> Poole Hospital,</affiliation>
+	</byline>
+
+	<address>Longfleet Road, Poole, Dorset, UK.</address>
+
+	<byline>
+	<affiliation>10 Royal Bournemouth Hospital,</affiliation>
+	</byline>
+
+	<address>Castle Lane East, Bournemouth, Dorset, UK.</address>
+
+	<byline>
+	<affiliation>11 Royal Derby Hospital,</affiliation>
+	</byline>
+
+	<address>Uttoxeter Road, Derby, UK.</address>
+
+	<byline>
+	<affiliation>12<lb/> Doncaster Royal Infirmary,</affiliation>
+	</byline>
+
+	<address>Armthorpe Road, Doncaster, South Yorkshire, UK.</address>
+
+	<byline>
+	<affiliation>13 Royal Hampshire County Hospital,</affiliation>
+	</byline>
+
+	<address>Winchester, Hampshire, UK.</address>
+
+	<byline>
+	<affiliation>14 University Hospital North Tees,<lb/></affiliation>
+	</byline>
+
+	<address>Hardwick Road, Stockton-on-Tees, UK.</address>
+
+	<byline>
+	<affiliation>15 The Breast Unit, Department of Medicine, Royal Marsden Hospital,</affiliation>
+	</byline>
+
+	<address>Fulham Road, London, UK.</address>
+
+	*email:
+	<email>ben.haynes@icr.ac.uk<lb/></email>
+
+	www.nature.com/npjbcancer<lb/> Published in partnership with the Breast Cancer Research Foundation<lb/> 1234567890():,;<lb/>
+	<note type="submission">Received: 18 June 2019; Accepted: 24 October 2019;<lb/></note>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> © The Author(s) 2019</note>
+
+		</front>
+	</text>
+</tei>

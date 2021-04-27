@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="596C15619B19B1060D72D8E431E6F65E73E6CB99"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>nature immunology VOLUME 11 NUMBER 11 NOVEMBER 2010<lb/></reference>
+
+	<page>1 0 3 9<lb/></page>
+
+	<byline>
+	<affiliation>1 Medical Research Council Human Immunology Unit, Nuffield Department of Medicine, Medical Research Council Weatherall Institute of Molecular Medicine,<lb/> University of Oxford,</affiliation>
+	</byline>
+
+	<address>Oxford, UK.</address>
+
+	<byline>
+	<affiliation>2 Nuffield Department of Clinical Laboratory Sciences, John Radcliffe Hospital, University of Oxford,</affiliation>
+	</byline>
+
+	<address>Oxford, UK.</address>
+
+	<byline>
+	<affiliation>3 Department of<lb/> Cellular Pathology, John Radcliffe Hospital, University of Oxford,</affiliation>
+	</byline>
+
+	<address>Oxford, UK.</address>
+
+	<byline>
+	<affiliation>4 Department of Medical Oncology, Oxford Cancer and Haematology Centre, Churchill<lb/> Hospital, University of Oxford,</affiliation>
+	</byline>
+
+	<address>Oxford, UK.</address>
+
+	Correspondence should be addressed to V.C. (
+	<email>vincenzo.cerundolo@imm.ox.ac.uk</email>
+	).<lb/>
+	<note type="submission">Received 25 June; accepted 8 September;</note>
+
+	published online
+	<date>3 October 2010</date>
+
+	;
+	<idno>doi:10.1038/ni.1942<lb/></idno>
+
+	<docTitle>
+	<titlePart>Invariant NKT cells modulate the suppressive activity<lb/> of IL-10-secreting neutrophils differentiated with<lb/> serum amyloid A<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Carmela De Santo 1 , Ramon Arscott 1 , Sarah Booth 1 , Ioannis Karydis 1 , Margaret Jones 2 , Ruth Asher 3 ,<lb/> Mariolina Salio 1 , Mark Middleton 4 &amp; Vincenzo Cerundolo 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Neutrophils are the main effector cells during inflammation, but they can also control excessive inflammatory responses by<lb/> secreting anti-inflammatory cytokines. However, the mechanisms that modulate their plasticity remain unclear. We now show<lb/> that systemic serum amyloid A 1 (SAA-1) controls the plasticity of neutrophil differentiation. SAA-1 not only induced anti-<lb/>inflammatory interleukin 10 (IL-10)-secreting neutrophils but also promoted the interaction of invariant natural killer T cells<lb/> (i NKT cells) with those neutrophils, a process that limited their suppressive activity by diminishing the production of IL-10<lb/> and enhancing the production of IL-12. Because SAA-1-producing melanomas promoted differentiation of IL-10-secreting<lb/> neutrophils, harnessing i NKT cells could be useful therapeutically by decreasing the frequency of immunosuppressive<lb/> neutrophils and restoring tumor-specific immune responses.<lb/></div>
+
+	<note type="copyright">© 2010 Nature America, Inc. All rights reserved.</note>
+
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1471-2407-8-288"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<publisher>BioMed Central<lb/></publisher>
+
+	<page>Page 1 of 15<lb/></page>
+
+	(page number not for citation purposes)<lb/> 
+
+	<title level="j">BMC Cancer<lb/> </title>
+
+	<note type="doctype">Open Access<lb/></note> 
+
+	<note type="doctype">Research article<lb/></note>
+
+	<docTitle>
+	<titlePart>High-resolution array CGH clarifies events occurring on 8p in carcinogenesis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Susanna L Cooke 1,2 , Jessica CM Pole 1 , Suet-Feung Chin 2 , Ian O Ellis 3 ,<lb/> Carlos Caldas 2 and Paul AW Edwards* 1<lb/></docAuthor>
+	</byline>
+
+	Address:
+	<byline>
+	<affiliation>1 Department of Pathology and Hutchison/MRC Research Centre, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK,</address>
+
+	<byline>
+	<affiliation>2 CRUK Cambridge Research<lb/> Institute and Department of Oncology, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK and</address>
+
+	<byline>
+	<affiliation>3 Department of Histopathology, Nottingham City Hospital<lb/> NHS Trust and University of Nottingham,</affiliation>
+	</byline>
+
+	<address>Nottingham, UK<lb/></address>
+
+	Email: Susanna L Cooke -
+	<email>susanna.cooke@cancer.org.uk</email>; 
+
+	Jessica CM Pole -
+	<email>jp339@mole.bio.cam.ac.uk</email>; 
+
+	Suet-Feung Chin -
+	<email>Suet-<lb/>Feung.Chin@cancer.org.uk</email>; 
+
+	Ian O Ellis -
+	<email>ian.ellis@nottingham.ac.uk</email>; 
+
+	Carlos Caldas -
+	<email>Carlos.Caldas@cancer.org.uk</email>;<lb/> 
+
+	Paul AW Edwards* -
+	<email>pawe1@cam.ac.uk<lb/></email>
+
+	* Corresponding author 
+
+	Abstract<lb/>
+	<div type="abstract">Background: Rearrangement of the short arm of chromosome 8 (8p) is very common in epithelial<lb/> cancers such as breast cancer. Usually there is an unbalanced translocation breakpoint in 8p12 (29.7<lb/> Mb -38.5 Mb) with loss of distal 8p, sometimes with proximal amplification of 8p11-12.<lb/> Rearrangements in 8p11-12 have been investigated using high-resolution array CGH, but the first<lb/> 30 Mb of 8p are less well characterised, although this region contains several proposed tumour<lb/> suppressor genes.<lb/> Methods: We analysed the whole of 8p by array CGH at tiling-path BAC resolution in 32 breast<lb/> and six pancreatic cancer cell lines. Regions of recurrent rearrangement distal to 8p12 were further<lb/> characterised, using regional fosmid arrays. FISH, and quantitative RT-PCR on over 60 breast<lb/> tumours validated the existence of similar events in primary material.<lb/> Results: We confirmed that 8p is usually lost up to at least 30 Mb, but a few lines showed focal<lb/> loss or copy number steps within this region. Three regions showed rearrangements common to<lb/> at least two cases: two regions of recurrent loss and one region of amplification. Loss within 8p23.3<lb/> (0 Mb -2.2 Mb) was found in six cell lines. Of the genes always affected, ARHGEF10 showed a point<lb/> mutation of the remaining normal copies in the DU4475 cell line. Deletions within 12.7 Mb -19.1<lb/> Mb in 8p22, in two cases, affected TUSC3. A novel amplicon was found within 8p21.3 (19.1 Mb -<lb/>23.4 Mb) in two lines and one of 98 tumours.<lb/> Conclusion: The pattern of rearrangements seen on 8p may be a consequence of the high density<lb/> of potential targets on this chromosome arm, and ARHGEF10 may be a new candidate tumour<lb/> suppressor gene.<lb/></div>
+
+	Published:
+	<date>7 October 2008<lb/></date>
+
+	<reference>BMC Cancer 2008, 8:288</reference>
+
+	<idno>doi:10.1186/1471-2407-8-288<lb/></idno>
+
+	<note type="submission">Received: 4 June 2008<lb/> Accepted: 7 October 2008<lb/></note>
+
+	This article is available from:
+	<ptr type="web">http://www.biomedcentral.com/1471-2407/8/288<lb/></ptr>
+
+	<note type="copyright">© 2008 Cooke et al; licensee BioMed Central Ltd.<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0),<lb/> which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<reference>BMC Cancer 2008, 8:288<lb/></reference>
+
+	<ptr type="web">http://www.biomedcentral.com/1471-2407/8/288</ptr>
+
+		</front>
+	</text>
+</tei>

@@ -7,17 +7,19 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidPropertyException;
 import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.grobid.core.main.GrobidHomeFinder;
+import org.grobid.core.utilities.Consolidation.GrobidConsolidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Enumeration;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * This class loads contains all names of grobid-properties and provide methods
@@ -107,7 +109,9 @@ public class GrobidProperties {
      * If no one is set, then it creates one. {@inheritDoc #GrobidProperties()}
      */
     public static GrobidProperties getInstance(GrobidHomeFinder grobidHomeFinder) {
-        GROBID_HOME_PATH = grobidHomeFinder.findGrobidHomeOrFail();
+        synchronized (GrobidProperties.class) {
+            GROBID_HOME_PATH = grobidHomeFinder.findGrobidHomeOrFail();
+        }
         return getInstance();
     }
 
@@ -171,6 +175,10 @@ public class GrobidProperties {
 
     public static File getGrobidHomePath() {
         return GROBID_HOME_PATH;
+    }
+
+    public static String getGrobidHome() {
+        return GROBID_HOME_PATH.getPath();
     }
 
     /**
@@ -240,18 +248,21 @@ public class GrobidProperties {
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
-     * null, return the default value.
+     * Return the value corresponding to the property key. If the properties are not initialised, it returns null
      *
      * @param pkey the property key
      * @return the value of the property.
      */
     protected static String getPropertyValue(final String pkey) {
-        return getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props != null) {
+            return props.getProperty(pkey);
+        }
+        return null;
     }
 
     /**
-     * Return the value corresponding to the property key. If this value is
+     * Return the value corresponding to the property key. If this value or the properties has not been loaded, is
      * null, return the default value.
      *
      * @param pkey        the property key
@@ -259,7 +270,11 @@ public class GrobidProperties {
      * @return the value of the property, pDefaultVal else.
      */
     protected static String getPropertyValue(final String pkey, final String pDefaultVal) {
-        String prop = getProps().getProperty(pkey);
+        Properties props = getProps();
+        if (props == null) {
+            return pDefaultVal;
+        }
+        String prop = props.getProperty(pkey);
         return StringUtils.isNotBlank(prop) ? prop.trim() : pDefaultVal;
     }
 
@@ -298,10 +313,10 @@ public class GrobidProperties {
         try {
             getProps().load(new FileInputStream(getGrobidPropertiesPath()));
         } catch (IOException exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid.properties at location'" + GROBID_PROPERTY_PATH.getAbsolutePath()
+            throw new GrobidPropertyException("Cannot open file of grobid.properties at location '" + GROBID_PROPERTY_PATH.getAbsolutePath()
                 + "'", exp);
         } catch (Exception exp) {
-            throw new GrobidPropertyException("Cannot open file of grobid properties" + getGrobidPropertiesPath().getAbsolutePath(), exp);
+            throw new GrobidPropertyException("Cannot open file of grobid properties " + getGrobidPropertiesPath().getAbsolutePath(), exp);
         }
 
         getProps().putAll(getEnvironmentVariableOverrides(System.getenv()));
@@ -312,7 +327,24 @@ public class GrobidProperties {
         loadCrfEngine();
     }
 
-    private static void loadCrfEngine() {
+    /** Return the distinct values of all the engines that are needed */
+    public static Set<GrobidCRFEngine> getDistinctModels() {
+        final Set<GrobidCRFEngine> modelSpecificEngines = new HashSet<>(getModelSpecificEngines());
+        modelSpecificEngines.add(getGrobidCRFEngine());
+
+        return modelSpecificEngines;
+    }
+
+    /** Return the distinct values of all the engines specified in the individual model configuration in the property file **/
+    public static Set<GrobidCRFEngine> getModelSpecificEngines() {
+        return getProps().keySet().stream()
+            .filter(k -> ((String) k).startsWith(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + '.'))
+            .map(k -> GrobidCRFEngine.get(StringUtils.lowerCase(getPropertyValue((String) k))))
+            .distinct()
+            .collect(Collectors.toSet());
+    }
+
+    protected static void loadCrfEngine() {
         grobidCRFEngine = GrobidCRFEngine.get(getPropertyValue(GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE,
             GrobidCRFEngine.WAPITI.name()));
     }
@@ -341,7 +373,7 @@ public class GrobidProperties {
 
     protected static Map<String, String> getEnvironmentVariableOverrides(Map<String, String> environmentVariablesMap) {
         Map<String, String> properties = new EnvironmentVariableProperties(
-            environmentVariablesMap, "GROBID__"
+            environmentVariablesMap, "(GROBID__|ORG__GROBID__).+"
         ).getProperties();
         LOGGER.info("environment variables overrides: {}", properties);
         return properties;
@@ -425,12 +457,6 @@ public class GrobidProperties {
         return new File(getPropertyValue(GrobidPropertyKeys.PROP_NATIVE_LIB_PATH));
     }
 
-    public static boolean isHeaderUseHeuristics() {
-        return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_HEADER_USE_HEURISTICS, "true")
-        );
-    }
-
     /**
      * Returns the installation path of DeLFT if set, null otherwise. It is required for using
      * a Deep Learning sequence labelling engine.
@@ -449,12 +475,6 @@ public class GrobidProperties {
             pathFile = new File(rawPath);
         }
         return pathFile.getAbsolutePath();
-    }
-
-    public static boolean isDeLFTRedirectOutput() {
-        return Utilities.stringToBoolean(
-            getPropertyValue(GrobidPropertyKeys.PROP_GROBID_DELFT_REDIRECT_OUTPUT)
-        );
     }
 
     public static String getGluttonHost() {
@@ -478,6 +498,14 @@ public class GrobidProperties {
         else if (rawValue.equals("false"))
             return false;
         return false;
+    }
+
+    public static String getDelftArchitecture() {
+        return getPropertyValue(GrobidPropertyKeys.PROP_DELFT_ARCHITECTURE);
+    }
+
+    public static void setDelftArchitecture(final String theArchitecture) {
+        setPropertyValue(GrobidPropertyKeys.PROP_DELFT_ARCHITECTURE, theArchitecture);
     }
 
     /**
@@ -624,19 +652,9 @@ public class GrobidProperties {
         setPropertyValue(GrobidPropertyKeys.PROP_NB_THREADS, nbThreads);
     }
 
-    /**
-     * Returns if a language id shall be used, given in the grobid-property
-     * file.
-     *
-     * @return true if a language id shall be used
-     */
-    public static Boolean isUseLanguageId() {
-        return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID));
-    }
-
     public static String getLanguageDetectorFactory() {
         String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_LANG_DETECTOR_FACTORY);
-        if (isUseLanguageId() && (StringUtils.isBlank(factoryClassName))) {
+        if (StringUtils.isBlank(factoryClassName)) {
             throw new GrobidPropertyException("Language detection is enabled but a factory class name is not provided");
         }
         return factoryClassName;
@@ -647,29 +665,16 @@ public class GrobidProperties {
      *
      * @param useLanguageId true, if a language id shall be used
      */
-    public static void setUseLanguageId(final String useLanguageId) {
+    /*public static void setUseLanguageId(final String useLanguageId) {
         setPropertyValue(GrobidPropertyKeys.PROP_USE_LANG_ID, useLanguageId);
-    }
+    }*/
 
-    /**
-     * Returns if resources like firstnames, lastnames and countries are
-     * supposed to be read from grobid-home folder, given in the grobid-property
-     * file.
-     *
-     * @return true if a language id shall be used
-     */
-    public static Boolean isResourcesInHome() {
-        return Utilities.stringToBoolean(getPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, "true"));
-    }
-
-    /**
-     * Sets if resources like firstnames, lastnames and countries are supposed
-     * to be read from grobid-home folder, given in the grobid-property file.
-     *
-     * @param resourceInHome true, if a language id shall be used
-     */
-    public static void setResourcesInHome(final String resourceInHome) {
-        setPropertyValue(GrobidPropertyKeys.PROP_RESOURCE_INHOME, resourceInHome);
+    public static String getSentenceDetectorFactory() {
+        String factoryClassName = getPropertyValue(GrobidPropertyKeys.PROP_SENTENCE_DETECTOR_FACTORY);
+        if (StringUtils.isBlank(factoryClassName)) {
+            throw new GrobidPropertyException("Sentence detection is enabled but a factory class name is not provided");
+        }
+        return factoryClassName;
     }
 
     /**
@@ -699,15 +704,36 @@ public class GrobidProperties {
         return pathToPdfToXml;
     }
 
+    private static String getModelPropertySuffix(final String modelName) {
+        return modelName.replaceAll("-", "_");
+    }
+
+    private static String getGrobidCRFEngineName(final String modelName) {
+        String defaultEngineName = GrobidProperties.getGrobidCRFEngine().name();
+        return getPropertyValue(
+            GrobidPropertyKeys.PROP_GROBID_CRF_ENGINE + "." + getModelPropertySuffix(modelName),
+            defaultEngineName
+        );
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
+        String engineName = getGrobidCRFEngineName(modelName);
+        if (grobidCRFEngine.name().equals(engineName)) {
+            return grobidCRFEngine;
+        }
+        return GrobidCRFEngine.get(engineName);
+    }
+
+    public static GrobidCRFEngine getGrobidCRFEngine(final GrobidModel model) {
+        return getGrobidCRFEngine(model.getModelName());
+    }
+
     public static GrobidCRFEngine getGrobidCRFEngine() {
         return grobidCRFEngine;
     }
 
     public static File getModelPath(final GrobidModel model) {
-        String extension = grobidCRFEngine.getExt();
-        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.DELFT &&
-            (model.getModelName().equals("fulltext") || model.getModelName().equals("segmentation")))
-            extension = "wapiti";
+        String extension = getGrobidCRFEngine(model).getExt();
         return new File(get_GROBID_HOME_PATH(), FOLDER_NAME_MODELS + File.separator
             + model.getFolderName() + File.separator
             + FILE_NAME_MODEL + "." + extension);

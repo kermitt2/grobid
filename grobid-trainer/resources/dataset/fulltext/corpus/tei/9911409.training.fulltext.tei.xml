@@ -20,7 +20,7 @@
 
 			<p>The remaining 101 observations of spiral galaxies given<lb/> here do not form a complete sample in any sense. However,<lb/> they are necessary to define a complete data set. When<lb/> combined with data published in Papers I and II (both of<lb/> which were devoted to observations of spiral galaxies), IV<lb/> of this series and B97 (which contains mainly measure-<lb/>ments of spiral galaxies in Virgo), the NIR survey pre-<lb/>sented in this series of papers represents a complete, op-<lb/>tically selected sample of galaxies, which will be analyzed<lb/> in future papers.<lb/></p>
 
-			<p>The first 9 columns of <ref type="table">Table 1</ref> give the optical param-<lb/>eters of the 558 galaxies studied in the present work as<lb/> follows:<lb/></p>
+			<p>The first 9 columns of Table <ref type="table">1</ref> give the optical param-<lb/>eters of the 558 galaxies studied in the present work as<lb/> follows:<lb/></p>
 
 			<p>Column 1: CGCG <ref type="biblio">(Zwicky et al. 1961-68)</ref> or VCC<lb/> <ref type="biblio">(Binggeli et al. 1985)</ref> denomination.<lb/></p> 
 
@@ -38,7 +38,7 @@
 
 			<head>3. Observations<lb/></head> 
 
-			<p>The observations reported in this paper were acquired<lb/> with the 1.5 m, f/20 TIRGO telescope from March 13<lb/> to April 13, 1997, when 32 nights were allocated to the<lb/> present project. Only 22/32 nights were useful, 16 of which<lb/> were entirely or partly photometric. The seeing ranged<lb/> from 1.5 to 3.5 arcsec (FWHM) with a mean of 2.4 arc-<lb/>sec, as shown in <ref type="figure">Fig. 1</ref>. These seeing conditions are mostly<lb/> due to the large pixels (∼ 1 arcsec) of ARNICA at TIRGO,<lb/> and as such represent a necessary disadvantage, because<lb/> they also provide the large field-of-view (4.1×4.1 arcmin 2 )<lb/> fundamental for our observations.<lb/></p> 
+			<p>The observations reported in this paper were acquired<lb/> with the 1.5 m, f/20 TIRGO telescope from March 13<lb/> to April 13, 1997, when 32 nights were allocated to the<lb/> present project. Only 22/32 nights were useful, 16 of which<lb/> were entirely or partly photometric. The seeing ranged<lb/> from 1.5 to 3.5 arcsec (FWHM) with a mean of 2.4 arc-<lb/>sec, as shown in Fig. <ref type="figure">1</ref>. These seeing conditions are mostly<lb/> due to the large pixels (∼ 1 arcsec) of ARNICA at TIRGO,<lb/> and as such represent a necessary disadvantage, because<lb/> they also provide the large field-of-view (4.1×4.1 arcmin 2 )<lb/> fundamental for our observations.<lb/></p>
 
 			<figure>Fig. 1. The seeing distribution.<lb/></figure> 
 
@@ -48,7 +48,7 @@
 
 			<p>On-chip integration times were set to 6 seconds to<lb/> avoid saturation but to ensure background-limited perfor-<lb/>mance. Total integration times on-source were typically<lb/> 400 s and ranged from 150 to 950 s.<lb/></p> 
 
-			<p><ref type="table">Table 1</ref> gives the parameters relevant to the NIR ob-<lb/>servations as follows:<lb/></p> 
+			<p>Table <ref type="table">1</ref> gives the parameters relevant to the NIR ob-<lb/>servations as follows:<lb/></p>
 
 			<p>Column 10: number of frames N f combined to form the<lb/> final image (depending on the adopted mosaic).<lb/></p> 
 
@@ -62,7 +62,7 @@
 
 			<p>Observations of the standard stars HD 84800 (H = 7.53<lb/> mag) and HD 129653 (H = 6.92 mag) from <ref type="biblio">Elias et al.<lb/> (1982)</ref> were taken hourly throughout the nights for cali-<lb/>bration purposes. The calibration stars were observed with<lb/> a third pointing sequence (mosaic type &quot; C &quot; ) which con-<lb/>sisted of five positions, starting with the star near the cen-<lb/>ter of the array, followed by positioning the star in each of<lb/> the four quadrants of the array. The telescope was defo-<lb/>cussed to avoid saturation. During the photometric nights<lb/> (i.e. those of march 20, 21, 25, 27, 29, 31 and of April<lb/> 1, 2, 6, 7 and 13) the typical uncertainty in the nightly<lb/> calibration is 0.05 mag. Those nights were mostly used to<lb/> observe galaxies with unknown H band photometry.<lb/></p> 
 
-			<p>In the remaining non-photometric or marginally pho-<lb/>tometric nights we did not rely on the photometric calibra-<lb/>tion; instead we conservatively observed only those galax-<lb/>ies with aperture photometry available from the literature.<lb/> For these galaxies the calibration was derived from the<lb/> &quot; virtual aperture photometry &quot; (see Section 4.1 below).<lb/> Several (108) galaxies were observed in more than one<lb/> night (see Columns 14-17 in <ref type="table">Table 1</ref>). This was done ei-<lb/>ther to check the photometric consistency, because some<lb/> observations were taken in non-photometric conditions,<lb/> or, if the objects were fainter than average, to obtain a<lb/> longer integration. For these objects we obtained an aver-<lb/>age frame by combining the various sets of observations,<lb/> and using the zero point from the frame(s) taken under<lb/> photometric conditions.<lb/></p>
+			<p>In the remaining non-photometric or marginally pho-<lb/>tometric nights we did not rely on the photometric calibra-<lb/>tion; instead we conservatively observed only those galax-<lb/>ies with aperture photometry available from the literature.<lb/> For these galaxies the calibration was derived from the<lb/> &quot; virtual aperture photometry &quot; (see Section 4.1 below).<lb/> Several (108) galaxies were observed in more than one<lb/> night (see Columns 14-17 in Table <ref type="table">1</ref>). This was done ei-<lb/>ther to check the photometric consistency, because some<lb/> observations were taken in non-photometric conditions,<lb/> or, if the objects were fainter than average, to obtain a<lb/> longer integration. For these objects we obtained an aver-<lb/>age frame by combining the various sets of observations,<lb/> and using the zero point from the frame(s) taken under<lb/> photometric conditions.<lb/></p>
 
 			<head>3.2. Data reduction procedures<lb/></head>
 
@@ -74,7 +74,7 @@
 
 			<p>tracted from each of the target observations. Such a pro-<lb/>cedure accounts for temporal variations in the sky level<lb/> which are on the order of 5% during a pointing sequence,<lb/> but introduces an additive offset which is subsequently re-<lb/>moved (see below). The sky-subtracted target frames are<lb/> then divided by the FF frame. Each of these corrected<lb/> frames was then analyzed for low-spatial-frequency gra-<lb/>dients, and if necessary, fitted with a two-dimensional 3<lb/> degree polynomial which was then subtracted. (We care-<lb/>fully checked that this procedure did not produce artificial<lb/> features which could disturb the photometry of the target<lb/> objects). If this process was not effective in removing the<lb/> spatial gradients, the corresponding frames were rejected<lb/> from further analysis. Finally, the corrected frames were<lb/> registered using field stars and combined with a median fil-<lb/>ter which allows bad pixel removal. Foreground stars were<lb/> eliminated by manual &quot; editing &quot; of the target frames. All<lb/> image reduction and analysis was performed in the IRAF<lb/> environment and relied on the STSDAS package. 4<lb/></p> 
 
-			<p>We have assessed the quality of the final images both<lb/> on small spatial scales, and over the entire array. All of<lb/> the images are truly background limited, as the noise<lb/> we measure is the same as that which we would theo-<lb/>retically expect from the statistical fluctuations in the<lb/> sky background, according to <ref type="biblio">Hunt &amp; Mannucci (1998)</ref><lb/> (see <ref type="figure">Fig. 2</ref>). The typical pixel to pixel fluctuations are<lb/> ∼ 21mag arcsec −2 , i.e. 0.05-0.06% of the sky.<lb/></p> 
+			<p>We have assessed the quality of the final images both<lb/> on small spatial scales, and over the entire array. All of<lb/> the images are truly background limited, as the noise<lb/> we measure is the same as that which we would theo-<lb/>retically expect from the statistical fluctuations in the<lb/> sky background, according to <ref type="biblio">Hunt &amp; Mannucci (1998)</ref><lb/> (see Fig. <ref type="figure">2</ref>). The typical pixel to pixel fluctuations are<lb/> ∼ 21mag arcsec −2 , i.e. 0.05-0.06% of the sky.<lb/></p>
 
 			<figure>Fig. 2. The distribution of the sky rms as a function of integra-<lb/>tion time. The solid line is the prediction by Hunt &amp; Mannucci<lb/> (1998).<lb/></figure> 
 
@@ -92,7 +92,7 @@
 
 			<p>Column 4: integrated H magnitude within the aperture.<lb/></p> 
 
-			<p>The photometry of 159 galaxies observed under pho-<lb/>tometric conditions has been checked against 187 pub-<lb/>lished aperture photometry measurements (see <ref type="biblio">Gezari et<lb/> al. 1993</ref>). The comparison of our &quot; virtual aperture &quot; mea-<lb/>surements with the reference photometry, taken through<lb/> apertures consistent with ours, is given in <ref type="figure">Fig. 3</ref>. On the<lb/> average we find:<lb/></p> 
+			<p>The photometry of 159 galaxies observed under pho-<lb/>tometric conditions has been checked against 187 pub-<lb/>lished aperture photometry measurements (see <ref type="biblio">Gezari et<lb/> al. 1993</ref>). The comparison of our &quot; virtual aperture &quot; mea-<lb/>surements with the reference photometry, taken through<lb/> apertures consistent with ours, is given in Fig. <ref type="figure">3</ref>. On the<lb/> average we find:<lb/></p>
 
 			<formula>H this work − H literature = -0.026 ± 0.095 mag.<lb/></formula> 
 
@@ -106,7 +106,7 @@
 
 			<p>Our NIR observations available so far (including those<lb/> given in Papers I, II and IV and in B97) were also analyzed<lb/> using a more sophisticated approach than the one adopted<lb/> here: 1) the surface brightness profiles were derived from<lb/> azimuthally averaged elliptical isophotes with center, ellip-<lb/>ticity and position angle taken as free parameters. 2) the<lb/> surface brightness profiles were decomposed into combina-<lb/>tions of exponential and de Vaucouleurs laws (or double<lb/> exponential profiles) using a fitting algorithm. We pre-<lb/>fer to postpone the discussion of these profile decomposi-<lb/>tions to a forthcoming paper (Paper V of this series; some<lb/> details of the decomposition procedures can be found in<lb/> <ref type="biblio">Scodeggio et al. 1998</ref>). However we wish to anticipate here<lb/> a few results which depend on the fitting algorithms only<lb/> as a tool necessary to extrapolate the measured photome-<lb/>try to infinity: i.e. to obtain total magnitudes, concentra-<lb/>tion indexes and also to derive isophotal radii at a given<lb/> limiting surface brightness (20.5 mag arcsec −2 in this case)<lb/> when the observations do not reach such a limit.<lb/></p> 
 
-			<p><ref type="table">Table 1</ref> gives the H band measured parameters of the ob-<lb/>served galaxies, as follows:<lb/></p> 
+			<p>Table <ref type="table">1</ref> gives the H band measured parameters of the ob-<lb/>served galaxies, as follows:<lb/></p>
 
 			<p>Column 18: H B25 magnitude obtained extrapolating the<lb/> present photometric measurements to the optical diame-<lb/>ter along circular apertures as in <ref type="biblio">Gavazzi &amp; Boselli (1996)</ref>.<lb/></p> 
 
@@ -124,27 +124,27 @@
 
 			<head>5.1. Radii r H (20.5)<lb/></head> 
 
-			<p>The isophotal radii in this work are derived at the 20.5<lb/> mag arcsec −2 H-band isophote, which represents a rather<lb/> bright level, even for H-band measurements. For example<lb/> in Paper I and II we were able to measure similar quanti-<lb/>ties one mag arcsec −2 fainter, i.e. up to 21.5 mag arcsec −2 .<lb/> This is not due to lower signal-to-noise of the present data<lb/> compared with the past data, but rather to the different<lb/> method adopted for deriving the light profiles. In the pre-<lb/>vious papers the radial surface brightness profiles were de-<lb/>rived by azimuthally integrating the counts in concentric<lb/> elliptical coronae of fixed center and ellipticity up to indef-<lb/>inite radii. Here, instead, the center and ellipticity are kept<lb/> as free parameters and the fitting is halted when the mean<lb/> surface brightness within a given elliptical corona equals<lb/> the corresponding rms. fluctuation. The drawback is that<lb/> the new fitting routine halts at higher surface brightnesses<lb/> than before. The lowest surface brightness reached in each<lb/> image is given in <ref type="figure">Fig. 4</ref> as a function of the integration<lb/> time.<lb/></p> 
+			<p>The isophotal radii in this work are derived at the 20.5<lb/> mag arcsec −2 H-band isophote, which represents a rather<lb/> bright level, even for H-band measurements. For example<lb/> in Paper I and II we were able to measure similar quanti-<lb/>ties one mag arcsec −2 fainter, i.e. up to 21.5 mag arcsec −2 .<lb/> This is not due to lower signal-to-noise of the present data<lb/> compared with the past data, but rather to the different<lb/> method adopted for deriving the light profiles. In the pre-<lb/>vious papers the radial surface brightness profiles were de-<lb/>rived by azimuthally integrating the counts in concentric<lb/> elliptical coronae of fixed center and ellipticity up to indef-<lb/>inite radii. Here, instead, the center and ellipticity are kept<lb/> as free parameters and the fitting is halted when the mean<lb/> surface brightness within a given elliptical corona equals<lb/> the corresponding rms. fluctuation. The drawback is that<lb/> the new fitting routine halts at higher surface brightnesses<lb/> than before. The lowest surface brightness reached in each<lb/> image is given in Fig. <ref type="figure">4</ref> as a function of the integration<lb/> time.<lb/></p>
 
 			<figure>Fig. 4. The distribution of the lowest surface brightness<lb/> reached in the outer light profiles, as a function of the exposure<lb/> time.<lb/></figure> 
 
-			<p>The comparison between the isophotal B band<lb/> r B (25.0) = (a/2) 25 (B) radii <ref type="biblio">(Gavazzi &amp; Boselli 1996)</ref><lb/> and the infrared r H (20.5) isophotal radii determined in<lb/> this work is shown in <ref type="figure">Fig. 5</ref>. Apart from the curva-<lb/>ture apparent at small radii, the data are consistent with<lb/> r H (20.5) = 0.7 r B (25.0) between these two arbitrary<lb/> isophotal levels.<lb/></p> 
+			<p>The comparison between the isophotal B band<lb/> r B (25.0) = (a/2) 25 (B) radii <ref type="biblio">(Gavazzi &amp; Boselli 1996)</ref><lb/> and the infrared r H (20.5) isophotal radii determined in<lb/> this work is shown in Fig. <ref type="figure">5</ref>. Apart from the curva-<lb/>ture apparent at small radii, the data are consistent with<lb/> r H (20.5) = 0.7 r B (25.0) between these two arbitrary<lb/> isophotal levels.<lb/></p>
 
 			<p>This indicates that at the adopted isophotal level, the<lb/> H observations cover a substantial fraction of the light,<lb/> and are not restricted to the bulge. The relationship be-<lb/>tween optical and H-band isophotal radii is consistent with<lb/> that expected from our limiting H surface brightness of<lb/> 20.5 mag arcsec −2 and with the B–H color of the outer<lb/> portion of normal galaxies.<lb/></p> 
 
-			<p>The curvature seen in <ref type="figure">Fig. 5</ref> is only marginally an arte-<lb/>fact of the seeing: the effect is reduced slightly by removing<lb/> the objects observed in the worse seeing conditions. The<lb/> deviation from linearity is not due to an overestimate of<lb/> the H band radii, rather it reflects an underestimate of the<lb/> B band diameter of small (≤ 10 arcsec) early-type galax-<lb/>ies which are intrinsically red (see Paper V for a more<lb/> comprehensive discussion on this issue).<lb/></p> 
+			<p>The curvature seen in Fig. <ref type="figure">5</ref> is only marginally an arte-<lb/>fact of the seeing: the effect is reduced slightly by removing<lb/> the objects observed in the worse seeing conditions. The<lb/> deviation from linearity is not due to an overestimate of<lb/> the H band radii, rather it reflects an underestimate of the<lb/> B band diameter of small (≤ 10 arcsec) early-type galax-<lb/>ies which are intrinsically red (see Paper V for a more<lb/> comprehensive discussion on this issue).<lb/></p>
 
 			<figure>Fig. 5. The relation between the apparent major isophotal ra-<lb/>dius rH(20.5) as determined in the infrared (this work) and<lb/> in the optical rB(25.0). E+S0 are plotted as open circles,<lb/> S+Irr as filled circles. The solid line represents the relation<lb/> rH(20.5) = 0.7 rB(25.0).<lb/></figure> 
 
 			<head>5.2. Magnitudes (H T , H B25 )<lb/></head> 
 
-			<p>H B25 magnitudes listed in Column 18 of <ref type="table">Table 1</ref> are ob-<lb/>tained by extrapolating the circular aperture measure-<lb/>ments to the optical r B (25.0) radius (as in <ref type="biblio">Gavazzi &amp;<lb/> Boselli 1996</ref>). H T mag instead are obtained by extrapo-<lb/>lating to infinity the magnitude integrated along elliptical<lb/> isophotes using combinations of exponential and de Vau-<lb/>couleurs laws. As expected, H T are brighter than H B25 by<lb/> 0.10 ± 0.2 mag on average.<lb/></p> 
+			<p>H B25 magnitudes listed in Column 18 of Table <ref type="table">1</ref> are ob-<lb/>tained by extrapolating the circular aperture measure-<lb/>ments to the optical r B (25.0) radius (as in <ref type="biblio">Gavazzi &amp;<lb/> Boselli 1996</ref>). H T mag instead are obtained by extrapo-<lb/>lating to infinity the magnitude integrated along elliptical<lb/> isophotes using combinations of exponential and de Vau-<lb/>couleurs laws. As expected, H T are brighter than H B25 by<lb/> 0.10 ± 0.2 mag on average.<lb/></p>
 
 			<head>5.3. Concentration index (C 31 )<lb/></head> 
 
 			<p>The concentration index C 31 is a measure of the shape<lb/> of light profiles in galaxies, independent of a bulge–disk<lb/> decomposition. Values larger than C 31 &gt; 2.8 indicate the<lb/> presence of substantial bulges.<lb/></p> 
 
-			<p>We confirm the presence in our sample of a general<lb/> correlation between C 31 and the H band (H T or H B25 )<lb/> luminosity (computed from the redshift distance). We find<lb/> that C 31 generally increases toward higher absolute mag-<lb/>nitudes (<ref type="figure">Fig. 6</ref>). High C 31 are found only among high lu-<lb/>minosity systems, but the converse is not true: there are<lb/> several high luminosity systems (namely late–type giant<lb/> spirals) with no or little bulge (C 31 ∼ 3).<lb/></p>
+			<p>We confirm the presence in our sample of a general<lb/> correlation between C 31 and the H band (H T or H B25 )<lb/> luminosity (computed from the redshift distance). We find<lb/> that C 31 generally increases toward higher absolute mag-<lb/>nitudes (Fig. <ref type="figure">6</ref>). High C 31 are found only among high lu-<lb/>minosity systems, but the converse is not true: there are<lb/> several high luminosity systems (namely late–type giant<lb/> spirals) with no or little bulge (C 31 ∼ 3).<lb/></p>
 
 			<head>6. Summary<lb/></head> 
 

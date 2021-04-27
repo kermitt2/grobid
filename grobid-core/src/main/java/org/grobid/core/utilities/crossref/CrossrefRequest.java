@@ -43,7 +43,7 @@ public class CrossrefRequest<T extends Object> extends Observable {
 	//public String id;
 
 	/**
-	 * Query parameters, cannot be null, ex: ?query.title=[title]&query.author=[author]
+	 * Query parameters, cannot be null, ex: ?query.bibliographic=[title]&query.author=[author]
 	 * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
 	 */
 	public Map<String, String> params;
@@ -104,12 +104,12 @@ public class CrossrefRequest<T extends Object> extends Observable {
 			URIBuilder uriBuilder = new URIBuilder(BASE_URL);
 			
 			String path = model;
-			/*if (id != null && !id.isEmpty())
-				path += "/"+id;
-			
-			uriBuilder.setPath(path);*/
 
-			//if (params != null)
+			if (params.get("query.title") != null) {
+            	params.put("query.bibliographic", params.get("query.title"));
+            	params.remove("query.title");
+            }
+
 			if (params.get("DOI") != null || params.get("doi") != null) {
                 String doi = params.get("DOI");
                 if (doi == null)
@@ -123,29 +123,27 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					if (!cursor.getKey().equals("doi") && !cursor.getKey().equals("DOI") && 
 						!cursor.getKey().equals("firstPage") && !cursor.getKey().equals("volume"))
 						uriBuilder.setParameter(cursor.getKey(), cursor.getValue());
-            }
-			
+            }            
+
 			// "mailto" parameter to be used in the crossref query and in User-Agent 
      		//  header, as recommended by CrossRef REST API documentation, e.g. &mailto=GroovyBib@example.org
             if (GrobidProperties.getCrossrefMailto() != null) {
 	            uriBuilder.setParameter("mailto", GrobidProperties.getCrossrefMailto());
 	        }
 
-            //System.out.println(uriBuilder.toString());
-
             // set recommended User-Agent header
             HttpGet httpget = new HttpGet(uriBuilder.build());
             if (GrobidProperties.getCrossrefMailto() != null) {
             	httpget.setHeader("User-Agent", 
-            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
+            		"GROBID/0.6.1 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
 			} else {
 				httpget.setHeader("User-Agent", 
-            		"GROBID/0.5.5 (https://github.com/kermitt2/grobid)");
+            		"GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
 			}
             
 			// set the authorization token for the Metadata Plus service if available
 			if (GrobidProperties.getCrossrefToken() != null) {
-            	httpget.setHeader("Authorization", 
+            	httpget.setHeader("Crossref-Plus-API-Token", 
             		"Bearer " + GrobidProperties.getCrossrefToken());
 			}
 
@@ -158,11 +156,13 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					
 					message.status = response.getStatusLine().getStatusCode();
 					
+                    // note: header field names are case insensitive
 					Header limitIntervalHeader = response.getFirstHeader("X-Rate-Limit-Interval");
 					Header limitLimitHeader = response.getFirstHeader("X-Rate-Limit-Limit");
-					if (limitIntervalHeader != null && limitLimitHeader != null)
-						message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
-					
+					if (limitIntervalHeader != null && limitLimitHeader != null) {
+					    message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
+                    }
+					    
 					if (message.status < 200 || message.status >= 300) {
 						message.errorMessage = response.getStatusLine().getReasonPhrase();
 						notifyListeners(message);

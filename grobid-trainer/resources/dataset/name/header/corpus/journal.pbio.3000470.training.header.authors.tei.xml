@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Christine</forename>
+                                <middlename>M</middlename>.
+                                <surname>Tait</surname>
+                                <marker>1☯¤a</marker> ,
+							</persName>
+                            <persName>
+								 <surname>Kavitha</surname>
+                                <forename>Chinnaiya</forename>
+                                <marker>1☯</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Elizabeth</forename>
+                                <surname>Manning</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Mariyam</forename>
+                                <surname>Murtaza</surname>
+                                <marker>1¤b</marker> ,
+							</persName>
+                            <persName>
+								 <forename>John-Paul</forename>
+                                <surname>AshtonID</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Nicholas</forename>
+                                <surname>FurleyID</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Chris</forename>
+                                <middlename>J</middlename>.
+                                <surname>Hill</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>C</forename>.
+                                <middlename>Henrique</middlename>
+                                <surname>AlvesID</surname>
+                                <marker>2¤c</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Jan</forename>
+                                <surname>WijnholdsID</surname>
+                                <marker>2</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Kai</forename>
+                                <middlename>S</middlename>.
+                                <surname>Erdmann</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Andrew</forename>
+                                <surname>FurleyID</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Penny</forename>
+                                <surname>RashbassID</surname>
+                                <marker>1</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Raman</forename>
+                                <middlename>M</middlename>.
+                                <surname>DasID</surname>
+                                <marker>4¤d</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Kate</forename>
+                                <middlename>G</middlename>.
+                                <surname>StoreyID</surname>
+                                <marker>4</marker> ,
+							</persName>
+                            <persName>
+								 <forename>Marysia</forename>
+                                <surname>PlaczekID</surname>
+                                <marker>1 *</marker>
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

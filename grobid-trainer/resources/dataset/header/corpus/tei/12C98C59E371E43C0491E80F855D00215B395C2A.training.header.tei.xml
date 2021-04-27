@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="12C98C59E371E43C0491E80F855D00215B395C2A"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>10-minute consultation Vertigo<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J Kanagalingam, D Hajioff, S Bennett<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">A 60 year old woman reports sudden dizziness when<lb/> she arises from bed. She feels nauseous and had been<lb/> vomiting. She recently had a severe cold. Her vomiting<lb/> has settled, but she is dizzy on turning her head to the<lb/> right. She is frightened to leave her house.<lb/> </div>
+
+	<byline>
+	<affiliation>Hospital, </affiliation>
+	</byline> 
+
+	<address>London<lb/> W6 8RF<lb/></address>
+
+	<byline>
+	<docAuthor>J Kanagalingam<lb/></docAuthor>
+	</byline> 
+
+	specialist registrar in<lb/> otolaryngology<lb/> 
+
+	<byline>
+	<docAuthor>D Hajioff<lb/></docAuthor>
+	</byline>
+
+	specialist registrar in otolaryngology<lb/> Prospect Medical<lb/> Practice, Norwich<lb/> 
+
+	<byline>
+	<docAuthor>S Bennett<lb/></docAuthor>
+	</byline>
+
+	personal medical<lb/> service general practitioner<lb/> 
+
+	Correspondence to:<lb/> 
+
+	<byline>
+	<docAuthor>J Kanagalingam<lb/> </docAuthor>
+	</byline> 
+
+	<email>jeevekana@<lb/> hotmail.com<lb/> </email>
+
+	The series is edited<lb/> by general<lb/> practitioners 
+	<editor>Ann<lb/> McPherson and<lb/> Deborah Waller<lb/> </editor>
+
+	(<email>ann.mcpherson@<lb/> dphpc.ox.ac.uk</email>) 
+
+	<page>523<lb/></page>
+
+	<reference>BMJ VOLUME 330 5 MARCH 2005</reference> 
+
+	bmj.com
+		</front>
+	</text>
+</tei>

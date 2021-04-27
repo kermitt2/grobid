@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="107._10.1.1.42.5938"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Gap-De nable Counting Classes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Stephen A. Fenner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> University of Southern Maine<lb/></affiliation>
+	</byline>
+
+	<address>96 Falmouth Street<lb/> Portland, Maine 04103<lb/></address>
+
+	<byline>
+	<docAuthor>Lance J. Fortnow y<lb/> Stuart A. Kurtz<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> University of Chicago<lb/></affiliation>
+	</byline>
+
+	<address>1100 East Fifty-eighth Street<lb/> Chicago, Illinois 60637<lb/> </address>
+
+	<date>July 12, 1992<lb/></date>
+
+	<note type="funding">Work done while the rst author was a graduate student at the University of Chicago Computer Science Depart-<lb/>ment, supported in part by a University of Chicago Fellowship.<lb/> y Supported by NSF Grant CCR-9009936 1<lb/></note>
+
+	Running Head: Gap-De nable Counting Classes<lb/> 
+	Send proofs to:<lb/>
+	<byline>
+	<docAuthor>Stephen Fenner<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Computer Science Department<lb/> University of Southern Maine<lb/></affiliation>
+	</byline>
+
+	<address>96 Falmouth Street<lb/> Portland, Maine 04103 2</address>
+
+	Abstract<lb/>
+	<div type="abstract">The function class #P lacks an important closure property: it is not closed under subtraction.<lb/> To remedy this problem, we introduce the function class GapP as a natural alternative to #P.<lb/> GapP is the closure of #P under subtraction, and has all the other useful closure properties<lb/> of #P as well. We show that most previously studied counting classes, including PP, C = P,<lb/> and Mod k P, are \gap-de nable,&quot; i.e., de nable using the values of GapP functions alone. We<lb/> show that there is a smallest gap-de nable class, SPP, which is still large enough to contain<lb/> Few. We also show that SPP consists of exactly those languages low for GapP, and thus SPP<lb/> languages are low for any gap-de nable class. These results unify and improve earlier disparate<lb/> results of Cai &amp; Hemachandra 7] and K obler, Sch oning, Toda, &amp; Tor an 15]. We show further<lb/> that any countable collection of languages is contained in a unique minimumgap-de nable class,<lb/> which implies that the gap-de nable classes form a lattice under inclusion. Subtraction seems<lb/> necessary for this result, since nothing similar is known for the #P-de nable classes.</div>
+
+		</front>
+	</text>
+</tei>

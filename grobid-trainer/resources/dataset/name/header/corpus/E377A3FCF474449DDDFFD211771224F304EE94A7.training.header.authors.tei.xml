@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>
+							<persName>
+								 <forename>Ursula</forename>
+								 <surname>Guidry</surname>,
+								 <roleName>M.D</roleName>.,
+								<marker>*</marker>
+							</persName>
+							<persName>
+								 <forename>Peter</forename>
+								 <surname>McLaren Black</surname>,
+								 <roleName>M.D</roleName>.,
+								 <roleName>Ph.D</roleName>.,
+								 <marker>†</marker> and
+							</persName>
+							<persName>
+								 <forename>Samuel</forename>
+								 <middlename>Z</middlename>.
+								 <surname>Goldhaber</surname>,
+								 <roleName>M.D</roleName>.
+								 <marker>*</marker>
+							</persName>
+							<persName>
+								 <roleName>Dr</roleName>.
+								 <forename>Samuel</forename>
+								 <middlename>Z</middlename>.
+								 <surname>Goldhaber</surname>,
+								 <roleName>M.D</roleName>.,
+							</persName>
+						</author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

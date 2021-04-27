@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="478F00B0956DDB5A36B45F1A1153E0186AEAC57A"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<title level="j">EUROPHYSICS LETTERS<lb/></title>
+
+	<date>15 October 1997<lb/></date>
+
+	<reference>Europhys. Lett., 40 (2), pp. 141-146 (1997)<lb/></reference>
+
+	<docTitle>
+	<titlePart>Dissipative particle dynamics with energy conservation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>J. Bonet Avalos and A. D. Mackie<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departament d&apos;Enginyeria Química, ETSEQ, Universitat Rovira i Virgili<lb/> Carretera de Salou s/n,</affiliation>
+	</byline>
+
+	<address>43006 Tarragona, Spain<lb/></address>
+
+	(
+	<note type="submission">received 23 April 1997; accepted in final form 4 September 1997</note>
+
+	)<lb/>
+	
+	<keyword>PACS. 47.11+j -Computational methods in fluid dynamics.<lb/> PACS. 05.70Ln -Nonequilibrium thermodynamics, irreversible processes.<lb/> PACS. 02.70Ns -Molecular dynamics and particle methods.<lb/></keyword>
+
+	Abstract. -
+	<div type="abstract">The stochastic differential equations for a model of dissipative particle dynamics<lb/> with both total energy and total momentum conservation in the particle-particle interactions<lb/> are presented. The corresponding Fokker-Planck equation for the evolution of the probability<lb/> distribution for the system is deduced together with the corresponding fluctuation-dissipation<lb/> theorems ensuring that the ab initio chosen equilibrium probability distribution for the relevant<lb/> variables is a stationary solution. When energy conservation is included, the system can sustain<lb/> temperature gradients and heat flow can be modeled.<lb/></div>
+
+	<note type="copyright">c Les Editions de Physique</note>
+
+		</front>
+	</text>
+</tei>

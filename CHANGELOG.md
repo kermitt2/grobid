@@ -4,6 +4,77 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### Added
+
+### Changed
+
+### Fixed
+
+
+## [0.6.2] – 2020-03-20
+
+### Added
+
++ Docker image covering both Deep Learning and CRF models, with GPU detection and preloading of embeddings
++ For Deep Learning models, labeling is now done by batch: application of the citation DL model is 4 times faster for BidLSTM-CRF (with or without features) and 6 times faster for SciBERT
++ More tests for sentence segmentation
++ Add orcid of persons when available from the PDF or via consolidation (i.e. if in CrossRef metadata) 
++ Add BidLSTM-CRF-FEATURES header model (with feature channel)
++ Add bioRxiv end-to-end evaluation
++ Bounding boxes for optional section titles coordinates
+
+### Changed
+
++ Reduce the size of docker images 
++ Improve end-to-end evaluation: multithreaded processing of PDF, progress bar, output the evaluation report in markdown format
++ Update of several models covering CRF, BidLSTM-CRF and BidLSTM-CRF-FEATURES, mainly improving citation and author recognitions
++ OpenNLP is the default optional sentence segmenter (similar result as Pragmatic Segmenter for scholar documents after benchmarking, but 30 times faster)
++ Refine sentence segmentation to exploit layout information and predicted reference callouts
++ Update jep version to 3.9.1
+
+### Fixed
+
++ Ignore invalid utf-8 sequences
++ Update CrossRef multithreaded calls to avoid using the unreliable time interval returned by the CrossRef REST API service, update usage of `Crossref-Plus-API-Token` and update the deprecated crossref field `query.title`
++ Missing last table or figure when generating training data for the fulltext model
++ Fix an error related to the feature value for the reference callout for the fulltext model
++ Review/correct DeLFT configuration documentation, with a step-by-step configuration documentation
++ Other minor fixes
+
+## [0.6.1] – 2020-08-12
+
+### Added
+
++ Support of line number (typically in preprints)
++ End-to-end evaluation and benchmark for preprints using the bioRxiv 10k dataset 
++ Check whether PDF annotation is orcid and add orcid to author in the TEI result
++ Configuration for making sequence labeling engine (CRF Wapiti or Deep Learning) specific to models
++ Add a developers guide and a FAQ section in the documentation
++ Visualization of formulas on PDF layout in the demo console
++ Feature for subscript/superscript style in fulltext model
+
+### Changed
+
++ New significantly improved header model: with new features, new training data (600 new annotated examples, old training data is entirely removed), new labels and updated data structures in line with the other models
++ Update of the segmentation models with more training data
++ Removal of heuristics related to the header
++ Update to gradle 6.5.1 to support JDK 13 and 14
++ TEI schemas 
++ Windows is not supported in this release
+
+### Fixed
+
++ Preserve affiliations after consolidation of the authors 
++ Environment variable config override for all properties 
++ Unfrequent duplication of the abstract in the TEI result
++ Incorrect merging of affiliations
++ Noisy parentheses in the bibliographical reference markers
++ In the console demo, fix the output filename wrongly taken from the input form when the text form is used
++ Synchronisation of the language detection singleton initialisation in case of multithread environment
++ Other minor fixes
+
 ## [0.6.0] – 2020-04-24
 
 ### Added
@@ -190,7 +261,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.5.6...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/kermitt2/grobid/compare/0.5.3...0.5.4

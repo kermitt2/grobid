@@ -26,18 +26,20 @@ pages:
     - 'Adding a consolidation service': 'Consolidation.md'
     - 'Training the GROBID models': 'Training-the-models-of-Grobid.md'
     - 'End-to-end evaluation': 'End-to-end-evaluation.md'
+    - 'Frequently asked Questions': 'Frequently-asked-questions.md'
   - Benchmarking:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
-    - 'Model-level evaluations': 'Benchmarking-models.md'
+    - 'bioRxiv': 'Benchmarking-biorxiv.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'
     - 'Fulltext model': 'training/fulltext.md'
+    - 'Header model': 'training/header.md'
     - 'Bibliographical references': 'training/Bibliographical-references.md'
     - 'Affiliation-address model': 'training/affiliation-address.md'
     - 'Date model': 'training/date.md'
   - Developer notes:
-    - 'Developer Guide': 'Developer-guide.md'
+    - 'Notes for the Grobid Developers': 'Notes-grobid-developers.md'
     - 'Deep Learning models': 'Deep-Learning-models.md'
     - 'Recompiling CRF libraries': 'Recompiling-and-integrating-CRF-libraries.md'

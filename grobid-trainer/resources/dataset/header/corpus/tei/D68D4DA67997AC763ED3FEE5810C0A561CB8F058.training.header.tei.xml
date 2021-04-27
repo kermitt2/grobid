@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="D68D4DA67997AC763ED3FEE5810C0A561CB8F058"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Appl. Magn. Reson. 4, 203--211 (1993)<lb/></reference>
+
+	<title level="j">Applled<lb/> Magnetic Resonance<lb/></title>
+
+	<note type="copyright">9 Springer-Verlag 1993<lb/></note>
+
+	Printed in Austria<lb/> 
+
+	<docTitle>
+	<titlePart>27A1 Double-Rotation NMR Study of<lb/> Al2SiO 5 Polymorph Minerals<lb/></titlePart>
+	</docTitle>
+	
+	<byline>
+	<docAuthor>Z. Xu and B.L. Sherriff<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Departrnent of Geological Sciences, University of Manitoba,</affiliation>
+	</byline>
+
+	<address>Winnipeg, Manitoba, Canada<lb/></address>
+
+	<note type="submission">Received January 18, 1992; revised March 15, 1992<lb/></note>
+
+	Abstraet. 
+	<div type="abstract">27A1 double-rotation (DOR) NMR spectra of the alumino-silicate polymorph mine-<lb/>rals, kyanite, sillimanite and andalusite, show separately resolved peaks, relating to the crystal-<lb/>lographically non-equivalent sites. The isotropic chemical shifts ate calculated from the ob-<lb/>served peak positions and they correlate closely with those found previously by simulations of<lb/> MAS NMR spectra. The intensities of the four non-equivalent sites in kyanite are found to<lb/> have an exponential relationship with their corresponding quadrupolar coupling constants<lb/> (co).<lb/></div>
+
+	Author&apos;s address:
+	<byline>
+	<docAuthor>Dr. Barbara L. Sherriff,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Geological Sciences, University of<lb/> Manitoba,</affiliation>
+	</byline>
+
+	<address>Winnipeg, Manitoba, R3T 2N2 Canada</address>
+
+		</front>
+	</text>
+</tei>

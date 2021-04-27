@@ -165,7 +165,7 @@ public class ReferenceMarkerMatcher {
     }*/
 
     // number matching for number alone or in combination with author for cases "Naze et al. [5]"
-    public static boolean isNumberedCitationReference(String t) {
+    public boolean isNumberedCitationReference(String t) {
         return NUMBERED_CITATION_PATTERN.matcher(t.trim()).matches() || 
                  ( NUMBERED_CITATION_PATTERN.matcher(t.trim()).find() && AUTHOR_NAME_PATTERN.matcher(t.trim()).find() );
     }
@@ -386,7 +386,8 @@ public class ReferenceMarkerMatcher {
     private List<BibDataSet> postFilterMatches(String c, List<BibDataSet> matches) {
         if (c.toLowerCase().contains("et al") || c.toLowerCase().contains(" and ")) {
             String[] sp = c.trim().split(" ");
-            final String author = sp[0].toLowerCase();
+            //callouts often include parentheses as seen in https://grobid.readthedocs.io/en/latest/training/fulltext/
+            final String author = sp[0].replaceAll("[\\(\\[]", "").toLowerCase();
 
             ArrayList<BibDataSet> bibDataSets = Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
                 @Override

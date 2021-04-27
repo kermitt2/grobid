@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0BF3694C6C27914A97DF9411ABF805DB76CA7929"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Expression of proteinases and in¯ammatory<lb/> cytokines in subchondral bone regions in the<lb/> destructive joint of rheumatoid arthritis<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Kaneko, T. Tomita, T. Nakase, Y. Ohsawa 1 , H. Seki,<lb/> E. Takeuchi, H. Takano, K. Shi, K. Takahi, E. Kominami 2 ,<lb/> Y. Uchiyama 1 , H. Yoshikawa and T. Ochi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Orthopaedic Surgery and 1 Department of Cell Biology and<lb/> Anatomy I, Osaka University Medical School,</affiliation>
+	</byline>
+
+	<address>Osaka</address>
+
+	and
+
+	<byline>
+	<affiliation>2 Department of<lb/> Biochemistry, Juntendo University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Tokyo, Japan</address>
+
+	Abstract<lb/>
+	<div type="abstract">Objective. We previously described abnormalities in the bone marrow of patients with<lb/> rheumatoid arthritis (RA), but were able to shed little light on the pathogenic roles of<lb/> in¯ammatory cytokines and proteinases in joint destruction in the subchondral region in RA.<lb/> This is the ®rst report to describe the co-localization of cytokines and proteinases in this area.<lb/> Methods. Decalci®ed paraf®n-embedded sections from 10 patients with RA and ®ve patients<lb/> with osteoarthritis (OA) were examined for the immunolocalization of cathepsins B, K and L<lb/> and the localization of messenger RNAs for interleukin 1b (IL-1b), tumour necrosis factor<lb/> a (TNF-a) and matrix metalloproteinase 9 (MMP-9). The cells were double-stained with<lb/> anti-CD68 or anti-prolyl 4-hydroxylase (PH) antibody.<lb/> Results. An immunohistochemical study con®rmed the expression of cathepsins B and L by<lb/> CD68-positive mononuclear cells at the sites of signi®cant cartilage and bone erosion from the<lb/> subchondral region in all RA specimens. Osteoclast-like cells showed intense staining for<lb/> cathepsin K and MMP-9. Osteoblast-like cells strongly expressed MMP-9. Analysis of serial<lb/> sections revealed that expression of the IL-1b and TNF-a genes occurred near that of the<lb/> cathepsins and MMP-9 in the subchondral region.<lb/> Conclusion. We conclude that in¯ammatory cytokines and tissue-damaging proteinases play<lb/> important roles in joint destruction in the subchondral region in RA.<lb/></div>
+
+	KEY WORDS: 
+	<keyword>Rheumatoid arthritis, Cathepsins, Matrix metalloproteinase 9 (MMP-9),<lb/> Inflammatory cytokines, Joint destruction, Immunohistochemistry, In situ hybridization.<lb/> </keyword>
+
+	Correspondence to: 
+	<byline>
+	<docAuthor>T. Ochi, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Orthopaedic Surgery,<lb/> Osaka University Medical School,</affiliation>
+	</byline> 
+
+	<address>2-2 Yamadaoka, Suita, Osaka<lb/> 565-0871, Japan.<lb/></address>
+
+	<note type="submission">Submitted 13 September 1999; revised version accepted 18 September<lb/> 2000.<lb/></note>
+
+	<reference>Rheumatology 2001;40:247±255<lb/></reference> 
+
+	<note type="copyright">ß 2001 British Society for Rheumatology</note> 
+
+	<page>247</page>
+
+		</front>
+	</text>
+</tei>

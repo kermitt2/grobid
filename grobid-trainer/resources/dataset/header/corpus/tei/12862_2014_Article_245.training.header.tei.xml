@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="12862_2014_Article_245"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">R E S E A R C H A R T I C L E<lb/></note> 
+
+	<note type="doctype">Open Access<lb/></note> 
+	
+	<docTitle>
+	<titlePart>Hybridisation and diversification in the adaptive<lb/> radiation of clownfishes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Glenn Litsios 1,2 and Nicolas Salamin 1,2*</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">Background: The importance of hybridisation during species diversification has long been debated among<lb/> evolutionary biologists. It is increasingly recognised that hybridisation events occurred during the evolutionary<lb/> history of numerous species, especially during the early stages of adaptive radiation. We study the effect of<lb/> hybridisation on diversification in the clownfishes, a clade of coral reef fish that diversified through an adaptive<lb/> radiation process. While two species of clownfish are likely to have been described from hybrid specimens, the<lb/> occurrence and effect of hybridisation on the clade diversification is yet unknown.<lb/> Results: We generate sequences of three mitochondrial genes to complete an existing dataset of nuclear<lb/> sequences and document cytonuclear discordance at a node, which shows a drastic increase of diversification rate.<lb/> Then, using a tree-based jack-knife method, we identify clownfish species likely stemming from hybridisation events.<lb/> Finally, we use molecular cloning and identify the putative parental species of four clownfish specimens that display<lb/> the morphological characteristics of hybrids.<lb/> Conclusions: Our results show that consistently with the syngameon hypothesis, hybridisation events are linked<lb/> with a burst of diversification in the clownfishes. Moreover, several recently diverged clownfish lineages likely<lb/> originated through hybridisation, which indicates that diversification, catalysed by hybridisation events, may still be<lb/> happening.<lb/></div>
+
+	Keywords:
+	<keyword>Syngameon, Speciation, Diversification, Cytonuclear discordance, Anemonefish<lb/></keyword>
+
+	* Correspondence:
+	<email>nicolas.salamin@unil.ch</email>
+
+	<byline>
+	<affiliation>1<lb/> Department of Ecology and Evolution, Biophore, University of Lausanne,<lb/></affiliation>
+	</byline>
+
+	<address>1015 Lausanne, Switzerland</address>
+
+	<byline>
+	<affiliation>2<lb/> Swiss Institute of Bioinformatics, Génopode, Quartier Sorge,</affiliation>
+	</byline>
+
+	<address>1015 Lausanne, Switzerland<lb/></address>
+
+	<note type="copyright">© 2014 Litsios and Salamin; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the<lb/> Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use,<lb/> distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public<lb/> Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this<lb/> article, unless otherwise stated.<lb/></note>
+
+	<reference>Litsios and Salamin BMC Evolutionary Biology 2014, 14:245<lb/></reference> 
+
+	<ptr type="web">http://www.biomedcentral.com/1471-2148/14/245</ptr>
+
+		</front>
+	</text>
+</tei>

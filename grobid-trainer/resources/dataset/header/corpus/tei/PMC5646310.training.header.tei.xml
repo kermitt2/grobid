@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC5646310"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">Case Report<lb/></note>
+
+	<docTitle>
+	<titlePart>The Traumatic Tube: Bleeding Rectal Ulcer Caused by<lb/> Flexi-Seal Device<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Abhinav Tiwari, 1 Himani Sharma, 1 Khola Qamar, 2 Yaseen Alastal, 2<lb/> Thomas Sodeman, 2 and Ali Nawras 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Internal Medicine, University of Toledo Medical Center,</affiliation>
+	</byline>
+
+	<address>Toledo, OH, USA</address>
+
+	<byline>
+	<affiliation>2<lb/> Department of Gastroenterology, University of Toledo Medical Center,</affiliation>
+	</byline>
+
+	<address>Toledo, OH, USA<lb/></address>
+
+	Correspondence should be addressed to Abhinav Tiwari;
+	<email>Abhinav.tiwari@utoledo.edu<lb/></email>
+
+	<note type="submission">Received 5 July 2017; Accepted 6 September 2017;</note>
+
+	Published
+	<date>4 October 2017<lb/></date>
+
+	Academic Editor:
+	<editor>Hideto Kawaratani<lb/></editor>
+
+	<note type="copyright">Copyright © 2017 Abhinav Tiwari et al. This is an open access article distributed under the Creative Commons Attribution License,<lb/> which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<div type="abstract">Diarrhea and fecal incontinence are common in critically ill patients and present a challenging problem in patient management.<lb/> The Flexi-Seal5 Fecal Management System is a device to divert the stools away from the patient, thus improving the care to patients<lb/> with fecal incontinence. There have been only few case reports describing the complications with the use of this device. Here, we<lb/> present a case of a 77-year-old woman who was admitted due to massive hematochezia while on anticoagulation. She was found to<lb/> have a large rectal ulcer caused by the Flexi-Seal device, used during the last hospital stay for fecal incontinence. Flexi-Seal device<lb/> can be effective for the management of incontinence; however, caution should be exercised during handling and pressure from the<lb/> retention balloon should be relieved periodically.<lb/></div>
+
+	<reference>Hindawi<lb/> Case Reports in Gastrointestinal Medicine<lb/> Volume 2017, Article ID 5278971, 4 pages<lb/></reference>
+
+	<idno>https://doi.org/10.1155/2017/5278971</idno>
+
+		</front>
+	</text>
+</tei>

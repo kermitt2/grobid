@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * User: zholudev
- * Date: 11/24/11
- * Time: 11:10 AM
+ * Implementation of a language detector factory with Cybozu language identifier
  */
 public class CybozuLanguageDetectorFactory implements LanguageDetectorFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(CybozuLanguageDetectorFactory.class);

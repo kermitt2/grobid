@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="submission_363"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>COHERENCE PROPERTIES OF QUANTUM DOT RESONANCE<lb/> FLUORESCENCE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Clemens Matthiesen 1 , Peter Humphreys 1 , Nick Vamivakas 1 , M. Atatüre 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Cavendish Laboratory, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>JJ Thomson Ave, Cambridge CB30HE, UK</address>
+
+		</front>
+	</text>
+</tei>

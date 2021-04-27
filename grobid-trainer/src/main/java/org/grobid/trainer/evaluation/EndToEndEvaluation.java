@@ -7,11 +7,18 @@ import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.trainer.evaluation.utilities.NamespaceContextMap;
 import org.grobid.trainer.evaluation.utilities.FieldSpecification;
-	
+
 import java.io.*;
 import java.util.*;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import org.apache.commons.io.FileUtils;
 
@@ -26,11 +33,14 @@ import javax.xml.xpath.XPathConstants;
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
 
+import me.tongfei.progressbar.*;
+
+//import org.apache.log4j.xml.DOMConfigurator;
+
 /**
  * Evaluation against native XML documents. This is an end-to-end evaluation involving
- * complete document processing, and therefore a complete set of CRF models.
+ * complete document processing, and therefore a complete set of sequence labelling models.
  *
- * @author Patrice Lopez
  */
 public class EndToEndEvaluation {
     private static String xmlInputPath = null;
@@ -61,6 +71,53 @@ public class EndToEndEvaluation {
 		
 	// the type of evaluation XML data - NLM or TEI (obtained via Pub2TEI)
 	private String inputType = null;
+
+	private class GrobidEndToEndTask implements Callable<Boolean> { 
+        private File pdfFile;
+
+        public GrobidEndToEndTask(File pdfFile) { 
+            this.pdfFile = pdfFile;
+        }
+
+        @Override
+        public Boolean call() { 
+        	boolean success = true;
+        	Engine engine = null;
+            try {
+            	engine = Engine.getEngine(true);
+				GrobidAnalysisConfig config =
+                    GrobidAnalysisConfig.builder()
+                            .consolidateHeader(1)
+                            .consolidateCitations(0)
+                            .withPreprocessImages(true)
+//                            .withSentenceSegmentation(true)
+                            .build();
+				String tei = engine.fullTextToTEI(this.pdfFile, config);
+				// write the result in the same directory
+				File resultTEI = new File(pdfFile.getParent() + File.separator
+					+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
+				FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
+
+            } catch (NoSuchElementException nseExp) {
+            	System.out.println("Could not get an engine from the pool within configured time.");
+            	System.out.println("Could not process: " + this.pdfFile.getPath());
+        	} catch(IOException e) {
+                System.out.println("DeLFT model labelling failed for file " + this.pdfFile.getPath());
+                e.printStackTrace();
+            } catch (Exception e) {
+				System.out.println("Error when processing: " + this.pdfFile.getPath());
+				e.printStackTrace();
+				success = false;
+			} finally {
+            	if (engine != null) {
+                	GrobidPoolingFactory.returnEngine(engine);
+            	}
+        	}
+
+            return new Boolean(success);
+        } 
+    } 
+
 
 	public EndToEndEvaluation(String path, String inType) {
 		this.xmlInputPath = path;	
@@ -95,10 +152,12 @@ public class EndToEndEvaluation {
 			headerLabels, fulltextLabels, citationsLabels);
 	}
 	
-	public String evaluationGrobid(boolean forceRun) throws Exception {
+	public String evaluationGrobid(boolean forceRun, StringBuilder reportMD) throws Exception {
 		if (xmlInputPath == null) {
 			throw new GrobidResourceException("Path to evaluation (gold) XML data is not correctly set");
 		}
+		
+		// text report for console
 		StringBuilder report = new StringBuilder();
 		
 		if (forceRun) {
@@ -107,7 +166,8 @@ public class EndToEndEvaluation {
             // we process all tei files in the output directory
             File[] refFiles = input.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-					if (dir.isDirectory())
+                	File localDir = new File(dir.getAbsolutePath() + File.separator + name);
+					if (localDir.isDirectory())
 						return true;
 					else
 						return false;
@@ -122,7 +182,17 @@ public class EndToEndEvaluation {
 			int n = 0;
 			long start = System.currentTimeMillis();
 			int fails = 0;
+
+			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
+			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+
+			if (refFiles.length > 0) {
+				// this will preload the models, so that the model loading messages don't mess with the progress bar
+				engine = Engine.getEngine(true);
+			}
+
             for (File dir : refFiles) {
+
 				// get the PDF file in the directory
 	            File[] refFiles2 = dir.listFiles(new FilenameFilter() {
 	                public boolean accept(File dir, String name) {
@@ -140,78 +210,98 @@ public class EndToEndEvaluation {
 				}
 
 	            final File pdfFile = refFiles2[0];
-				
-				// run Grobid full text and write the TEI result in the directory
-				try {
-					System.out.println(n + " - " + pdfFile.getPath());
-					GrobidAnalysisConfig config =
-                        GrobidAnalysisConfig.builder()
-                                .consolidateHeader(1)
-                                .consolidateCitations(0)
-                                .withPreprocessImages(true)
-                                .build();
-					String tei = engine.fullTextToTEI(pdfFile, config);
-					// write the result in the same directory
-					File resultTEI = new File(dir.getPath() + File.separator
-						+ pdfFile.getName().replace(".pdf", ".fulltext.tei.xml"));
-					FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
-				} 
-				catch (Exception e) {
-					System.out.println("Error when processing: " + pdfFile.getPath());
-					e.printStackTrace();
-					fails++;
-				}
+				Future<Boolean> future = executor.submit(new GrobidEndToEndTask(pdfFile));
+	            results.add(future);
 				n++;
 			}
+			
+			//executor.awaitTermination(5, TimeUnit.SECONDS);
 
-			System.out.println("GROBID failed on " + fails + " PDF");
+			System.out.println("\n");
+			try (ProgressBar pb = new ProgressBar("PDF processing", refFiles.length)) {
+				for(Future<Boolean> result : results) { 
+					try {
+						Boolean success = result.get();
+						if (!success)
+							fails++;
+						pb.step();
+					} catch (InterruptedException e) {
+	                	e.printStackTrace();
+	            	} catch (ExecutionException e) {
+	                	e.printStackTrace();
+	            	}
+				}
+			}
+
+			executor.shutdown();
+
+			System.out.println("\n-------------> GROBID failed on " + fails + " PDF\n");
 			double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
 
 			System.out.println(n + " PDF files processed in " + 
-				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file.");
+				 processTime + " seconds, " + ((double)processTime)/n + " seconds per PDF file\n");
 		}
 		
 		// evaluation of the run
 		long start = System.currentTimeMillis();
 
 		report.append("\n======= Header metadata ======= \n");
-		report.append(evaluationRun(this.GROBID, this.HEADER));
+		reportMD.append("\n## Header metadata \n");
+		report.append(evaluationRun(this.GROBID, this.HEADER, reportMD));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		report.append(evaluationRun(this.GROBID, this.CITATION));
+		reportMD.append("\n## Citation metadata \n");
+		report.append(evaluationRun(this.GROBID, this.CITATION, reportMD));
 		
 		report.append("\n======= Fulltext structures ======= \n");
-		report.append(evaluationRun(this.GROBID, this.FULLTEXT));
+		reportMD.append("\n## Fulltext structures \n\n");
+		reportMD.append("Fulltext structure contents are complicated to capture from JATS NLM files. They are often normalized and different from the actual PDF content and are can be inconsistent from one document to another. The scores of the following metrics are thus not very meaningful in absolute term, in particular for the strict matching (textual content of the srtructure can be very long). As relative values for comparing different models, they seem however useful.\n\n");
+		report.append(evaluationRun(this.GROBID, this.FULLTEXT, reportMD));
 		
 		System.out.println("Evaluation metrics produced in " + 
 				(System.currentTimeMillis() - start) / (1000.00) + " seconds");
+		reportMD.append("Evaluation metrics produced in " + 
+				(System.currentTimeMillis() - start) / (1000.00) + " seconds\n");
 
 		return report.toString();
 	}
 	
-	public String evaluationPDFX() throws Exception {
+	public String evaluationPDFX(boolean forceRun, StringBuilder reportMD) throws Exception {
 		if (xmlInputPath == null) {
 			throw new GrobidResourceException("Path to PubMedCentral is not correctly set");
 		}
+
+		// text report for console
 		StringBuilder report = new StringBuilder();
+
+		if (forceRun) {
+			// we run here PDFX online call on the PDF files...
+			// TBD
+			// ...
+		}
 		
 		// evaluation of the run
 		report.append("\n======= Header metadata ======= \n");
-		report.append(evaluationRun(this.PDFX, this.HEADER));
+		reportMD.append("\n## Header metadata \n\n");
+		report.append(evaluationRun(this.PDFX, this.HEADER, reportMD));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		report.append(evaluationRun(this.PDFX, this.CITATION));
+		reportMD.append("\n## Citation metadata \n\n");
+		report.append(evaluationRun(this.PDFX, this.CITATION, reportMD));
 		
 		report.append("\n======= Fulltext structures ======= \n");
-		report.append(evaluationRun(this.PDFX, this.FULLTEXT));
+		reportMD.append("\n## Fulltext structures \n\n");
+		report.append(evaluationRun(this.PDFX, this.FULLTEXT, reportMD));
 				
 		return report.toString();
 	}
 	
-	public String evaluationCermine(boolean forceRun) throws Exception {
+	public String evaluationCermine(boolean forceRun, StringBuilder reportMD) throws Exception {
 		if (xmlInputPath == null) {
 			throw new GrobidResourceException("Path to PubMedCentral is not correctly set");
 		}
+
+		// text report for console
 		StringBuilder report = new StringBuilder();
 		
 		if (forceRun) {
@@ -222,24 +312,29 @@ public class EndToEndEvaluation {
 		
 		// evaluation of the run
 		report.append("\n======= Header metadata ======= \n");
-		report.append(evaluationRun(this.CERMINE, this.HEADER));
+		reportMD.append("\n## Header metadata \n\n");
+		report.append(evaluationRun(this.CERMINE, this.HEADER, reportMD));
 		
 		report.append("\n======= Citation metadata ======= \n");
-		report.append(evaluationRun(this.CERMINE, this.CITATION));
+		reportMD.append("\n## Citation metadata \n\n");
+		report.append(evaluationRun(this.CERMINE, this.CITATION, reportMD));
 		
 		report.append("\n======= Fulltext structures ======= \n");
-		report.append(evaluationRun(this.CERMINE, this.FULLTEXT));
+		reportMD.append("\n## Fulltext structures \n\n");
+		report.append(evaluationRun(this.CERMINE, this.FULLTEXT, reportMD));
 				
 		return report.toString();
 	}
 	
-	private String evaluationRun(int runType, int sectionType) {
+	private String evaluationRun(int runType, int sectionType, StringBuilder reportMD) {
 		if ( (runType != this.GROBID) && (runType != this.PDFX) && (runType != this.CERMINE) ) {
 			throw new GrobidException("The run type is not valid for evaluation: " + runType);
 		}
 		if ( (sectionType != this.HEADER) && (sectionType != this.CITATION) && (sectionType != this.FULLTEXT) ) {
 			throw new GrobidException("The section type is not valid for evaluation: " + sectionType);
 		}
+
+		// text report for console
 		StringBuilder report = new StringBuilder();
 		
 		// we introduce four string-matching comparisons variants for different levels of 
@@ -294,12 +389,39 @@ public class EndToEndEvaluation {
 		int match3 = 0;
 		int match4 = 0;
 		
-        File input = new File(xmlInputPath);
+		String profile = "JATS";
+		if (xmlInputPath.indexOf("PMC") != -1) {
+			// for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
+			profile =  "PMC";
+			
+			citationsLabels.remove("doi");
+			citationsLabels.remove("pmid");
+			citationsLabels.remove("pmcid");
+
+			List<FieldSpecification> toRemove = new ArrayList<>();
+			if (citationsFields != null && citationsFields.size() > 0) {
+				for(FieldSpecification citationsField : citationsFields) {
+					if (citationsField.fieldName.equals("doi") || 
+						citationsField.fieldName.equals("pmid") || 
+						citationsField.fieldName.equals("pmcid"))
+					toRemove.add(citationsField);
+				}
+			}
+			if (toRemove.size() > 0) {
+				for(FieldSpecification citationsField : toRemove) {
+					citationsFields.remove(citationsField);
+				}
+			}
+		}
+
+        File input = new File(xmlInputPath);      
         // we process all tei files in the output directory
         File[] refFiles = input.listFiles(new FilenameFilter() {
             public boolean accept(File dir, String name) {
-				if (dir.isDirectory())
+            	File localDir = new File(dir.getAbsolutePath() + File.separator + name);
+				if (localDir.isDirectory()) {
 					return true;
+				}
 				else
 					return false;
             }
@@ -314,7 +436,24 @@ public class EndToEndEvaluation {
         SAXParserFactory spf = SAXParserFactory.newInstance();
 		Random rand = new Random();
 		int nbFile = 0;
+
+		String typeEval = "";
+		if (sectionType == this.HEADER)
+			typeEval = "header";
+		if (sectionType == this.FULLTEXT)
+			typeEval = "full text";
+		if (sectionType == this.CITATION)
+			typeEval = "citation";
+
+		System.out.println("\n");
+		try (ProgressBar pb = new ProgressBar("Evaluation "+typeEval, refFiles.length)) {
+
         for (File dir : refFiles) {
+        	pb.step();
+
+        	if (!dir.isDirectory())
+        		continue;
+
 			// file ratio filtering
 			double random = rand.nextDouble();
 			if (random > fileRatio) {
@@ -413,7 +552,7 @@ public class EndToEndEvaluation {
 							evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGold = nodeList.getLength();
 						totalExpectedInstances += nbCitationsGold;
-//System.out.println("found " + nbCitationsGold + " citations in reference gold file.");
+
 						List<Map<String,List<String>>> goldCitations = 
 							new ArrayList<Map<String,List<String>>>();
 
@@ -464,13 +603,16 @@ public class EndToEndEvaluation {
 									List<String> goldResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											goldResults.add(content);
+										}
 									}
 									
 									if (goldResults.size() > 0) {
 										fieldsValues.put(fieldName, goldResults);
-//System.out.println("gold / " + fieldName + " / " + goldResults.toString());
 										if (!fieldName.equals("id")) {
 	                                        strictStats.incrementExpected(fieldName);
 	                                        softStats.incrementExpected(fieldName);
@@ -560,7 +702,6 @@ public class EndToEndEvaluation {
  * - third rule: matching of "soft" inTitle (title of Journal or Conference), volume and first page
  * - forth rule: matching of first author last name and title, or inTitle if title is empty  
  */	
-							
 							String signature1 = null;								
 							if ( (goldTitleSoft.length()>0) && (goldDate.length()>0) ) {
 								signature1 = goldTitleSoft + goldDate;
@@ -586,35 +727,21 @@ public class EndToEndEvaluation {
 									signature4 = goldAuthorSoft + goldTitleSoft;
 								else
 									signature4 = goldAuthorSoft + goldInTitleSoft;
-								//signature4 = signature4.replaceAll("[^\\x00-\\x7F]", "");
 							}		
 							
-							//signature = signature.replaceAll("[^\\x00-\\x7F]", "");
+							goldCitationSignaturesLevel1.add(signature1);
+							goldCitationSignaturesLevel2.add(signature2);
+							goldCitationSignaturesLevel3.add(signature3);
+							goldCitationSignaturesLevel4.add(signature4);
+							goldCitations.add(fieldsValues);
 							
-							//if (signature.trim().length() > 0) 
-							{
-								goldCitationSignaturesLevel1.add(signature1);
-								goldCitationSignaturesLevel2.add(signature2);
-								goldCitationSignaturesLevel3.add(signature3);
-								goldCitationSignaturesLevel4.add(signature4);
-								goldCitations.add(fieldsValues);
-							}
 						}
-/*for(String sign : goldCitationSignaturesLevel1)
-	System.out.println("gold 1:\t" + sign);
-for(String sign : goldCitationSignaturesLevel2)
-	System.out.println("gold 2:\t" + sign);
-for(String sign : goldCitationSignaturesLevel3)
-	System.out.println("gold 3:\t" + sign);
-for(String sign : goldCitationSignaturesLevel4)
-	System.out.println("gold 4:\t" + sign);*/
 						
 						// get the Grobid citations
 						path = base.grobidPath.get(0);
 						nodeList = (NodeList) xp.compile(path).
 							evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGrobid = nodeList.getLength();
-//System.out.println("found " + nbCitationsGrobid + " citations in Grobid TEI file.");
 						totalObservedInstances += nbCitationsGrobid;
 						List<Map<String,List<String>>> grobidCitations = 
 							new ArrayList<Map<String,List<String>>>();
@@ -634,11 +761,16 @@ for(String sign : goldCitationSignaturesLevel4)
 									List<String> grobidResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
-										if ((content != null) && (content.trim().length() > 0))
+										if ((content != null) && (content.trim().length() > 0)) {
+											if (fieldName.equals("doi") || fieldName.equals("pmid") || fieldName.equals("pmcid")) {
+												content = identifierNormalization(content);
+											}
 											grobidResults.add(content);
+										}
 									}
-									if (grobidResults.size() > 0)
+									if (grobidResults.size() > 0) {
 										fieldsValues.put(fieldName, grobidResults);
+									}
 								}
 								p++;
 							}
@@ -713,6 +845,27 @@ for(String sign : goldCitationSignaturesLevel4)
 								grobidId = idResults.get(0);
 							grobidId = basicNormalization(grobidId);
 
+							// DOI
+							List<String> doiResults = grobidCitation.get("doi");
+							String grobidDOI = "";
+							if ((doiResults != null) && (doiResults.size() > 0))
+								grobidDOI = doiResults.get(0);
+							grobidDOI = identifierNormalization(grobidDOI);
+
+							// PMID
+							List<String> pmidResults = grobidCitation.get("pmid");
+							String grobidPMID = "";
+							if ((pmidResults != null) && (pmidResults.size() > 0))
+								grobidPMID = pmidResults.get(0);
+							grobidPMID = identifierNormalization(grobidPMID);
+
+							// PMCID
+							List<String> pmcidResults = grobidCitation.get("pmcid");
+							String grobidPMCID = "";
+							if ((pmcidResults != null) && (pmcidResults.size() > 0))
+								grobidPMCID = pmcidResults.get(0);
+							grobidPMCID = identifierNormalization(grobidPMCID);
+
 							String grobidSignature1 = null;								
 							if ( (grobidTitleSoft.length()>0) && (grobidDate.length()>0) ) {
 								grobidSignature1 = grobidTitleSoft + grobidDate;
@@ -742,10 +895,6 @@ for(String sign : goldCitationSignaturesLevel4)
 								//grobidSignature4 = grobidSignature4.replaceAll("[^\\x00-\\x7F]", "");
 							}
 
-/*System.out.println("grobid 1:\t" + grobidSignature1);
-System.out.println("grobid 2:\t" + grobidSignature2);
-System.out.println("grobid 3:\t" + grobidSignature3);
-System.out.println("grobid 4:\t" + grobidSignature4);*/
 							int indexGold = -1;
 							// try to match an expected citation with the signature
 							if ( ((grobidSignature1 != null) && (grobidSignature1.length() > 0)) || 
@@ -755,28 +904,24 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							{		
 								if ((grobidSignature1 != null) && 
 									 goldCitationSignaturesLevel1.contains(grobidSignature1)) {
-//System.out.println("match 1 !\t" + grobidSignature1);								
 									// we have a citation-level match and we can evaluate the fields
 									indexGold = goldCitationSignaturesLevel1.indexOf(grobidSignature1);
 									match1++;
 								}
 								else if ((grobidSignature2 != null) && 
 									goldCitationSignaturesLevel2.contains(grobidSignature2)) {
-//System.out.println("match 2 !\t" + grobidSignature2);								
 									// we have a citation-level match and we can evaluate the fields
 									indexGold = goldCitationSignaturesLevel2.indexOf(grobidSignature2);
 									match2++;
 								}
 								else if ((grobidSignature3 != null) && 
 									goldCitationSignaturesLevel3.contains(grobidSignature3)) {
-//System.out.println("match 3 !\t" + grobidSignature3);								
 									// we have a citation-level match and we can evaluate the fields
 									indexGold = goldCitationSignaturesLevel3.indexOf(grobidSignature3);
 									match3++;
 								}	
 								else if ((grobidSignature4 != null) && 
 									goldCitationSignaturesLevel4.contains(grobidSignature4)) {
-//System.out.println("match 4 !\t" + grobidSignature4);								
 									// we have a citation-level match and we can evaluate the fields
 									indexGold = goldCitationSignaturesLevel4.indexOf(grobidSignature4);
 									match4++;
@@ -784,8 +929,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							
 								if (indexGold != -1) {
 									// we have aligned an extracted citation with an expected ones
-
-
 									boolean allGoodStrict = true;
 									boolean allGoodSoft = true;
 									boolean allGoodLevenshtein = true;
@@ -797,7 +940,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldCitationSignaturesLevel4.remove(indexGold);
 									goldCitations.remove(indexGold);
 
-//System.out.println("Match ids (index gold: " + indexGold + "): " + goldCitation.get("id").get(0) + " / " + grobidId);
 									idMap.put(goldCitation.get("id").get(0), grobidId);
 									reverseIdMap.put(grobidId, goldCitation.get("id").get(0));									
 
@@ -810,11 +952,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 										}
 									
 										List<String> grobidResults = grobidCitation.get(label);
-										//if (grobidResults == null) {
-										//	p++;
-										//	continue;
-										//}
-
 										String grobidResult = "";
 										if (grobidResults != null) {
 											for(String res : grobidResults) {
@@ -831,8 +968,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 											}
 										}
 										goldResult = basicNormalization(goldResult);									
-//System.out.println(label + ": strict grobid\t-> " + grobidResult);
-//System.out.println(label + ": strict gold\t-> " + goldResult);
+
 										// strict
 										if ((goldResult.length()>0) && (goldResult.equals(grobidResult))) {
                                             strictStats.incrementObserved(label);
@@ -869,8 +1005,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 												allGoodSoft = false;
 											}
 										}
-//System.out.println(label + ": soft grobid\t-> " + grobidResultSoft);
-//System.out.println(label + ": soft gold\t-> " + goldResultSoft);										
+										
 										// Levenshtein
 										double pct = 0.0;
 										if ((goldResultSoft.length() > 0) && goldResult.equals(grobidResult))
@@ -956,8 +1091,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 											p++;
 											continue;
 										}
-//for(String grobidResult : grobidResults)
-//System.out.println(label + " / " + grobidResult);
+
 										strictStats.incrementFalsePositive(label);
 										softStats.incrementFalsePositive(label);
 										levenshteinStats.incrementFalsePositive(label);
@@ -969,6 +1103,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 						}
 
+						// reference context matching
 						if ( (sectionType == this.CITATION) && (runType == this.GROBID) ) {
 							// list of identifiers present in the bibliographical references
 							List<String> refBibRefIds = new ArrayList<String>();
@@ -1014,7 +1149,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							// gold
 							nodeList = (NodeList) xp.compile(subpath).
 								evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
-							//System.out.println(subpath + ": " + nodeList.getLength() + " nodes");
 							nbgoldResults = nodeList.getLength();
 							for (int i = 0; i < nodeList.getLength(); i++) {
 								String localIds = nodeList.item(i).getNodeValue();
@@ -1062,7 +1196,6 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							for (Map.Entry<String, Integer> entry : grobidCalloutRefIds.entrySet()) {
 								int nbGrobidId = entry.getValue();
 							    int nbRefId = 0;
-//System.out.println("grobid id: " + entry.getKey() + " (" + nbGrobidId + ")" + " / " + reverseIdMap.get(entry.getKey()));
 							    if ((refCalloutRefIds != null) && (reverseIdMap.get(entry.getKey()) != null)) {
 							    	if (refCalloutRefIds.get(reverseIdMap.get(entry.getKey())) != null) {
 								    	nbRefId = refCalloutRefIds.get(reverseIdMap.get(entry.getKey()));
@@ -1080,7 +1213,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 							}
 							totalCorrectObservedCitations += nbCorrect;
 							totalWrongObservedCitations += nbWrong;
-						}
+						}	
+
+						// cleaning
+						strictStats.removeLabel("id");
+        				softStats.removeLabel("id");
+        				levenshteinStats.removeLabel("id");;
+        				ratcliffObershelpStats.removeLabel("id");
+
 					} else if (sectionType == this.HEADER) {
 						// HEADER structures 
 						int p = 0;
@@ -1149,7 +1289,7 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									if (goldResult.toLowerCase().startsWith("abstract") || goldResult.toLowerCase().startsWith("summary")) {
 										goldResult = goldResult.replaceAll("(?i)^(abstract)|(summary)(\\n)?( )?", "");
 									}
-								}							
+								}	
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
 								goldResults = new ArrayList<String>();
 								goldResults.add(goldResult);
@@ -1161,20 +1301,28 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 								String grobidResult = "";
 								if (g < grobidResults.size())
 									grobidResult = grobidResults.get(g);
+
+								if (goldResult.trim().length() == 0 && grobidResult.trim().length() == 0) {
+									g++;
+									continue;
+								}
+
 								// nb expected results
-								if (goldResult.length() > 0) {
+								if (goldResult.trim().length() > 0) {
                                     strictStats.incrementExpected(fieldName);
                                     softStats.incrementExpected(fieldName);
                                     levenshteinStats.incrementExpected(fieldName);
                                     ratcliffObershelpStats.incrementExpected(fieldName);
 								}
-//System.out.println("gold:   " + goldResult);
-//System.out.println("grobid: " + grobidResult);		
+	
 								// strict
-								if ((goldResult.length() > 0) && goldResult.equals(grobidResult)) {
+								if ((goldResult.trim().length() > 0) && goldResult.equals(grobidResult)) {
                                     strictStats.incrementObserved(fieldName);
 								}
 								else {
+/*System.out.println("gold:  " + fieldName);
+System.out.println("gold:   " + goldResult);
+System.out.println("grobid: " + grobidResult);*/	
 									if (grobidResult.length() > 0) {
                                         strictStats.incrementFalsePositive(fieldName);
 										allGoodStrict = false;
@@ -1192,12 +1340,17 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 									goldResultSoft = removeFullPunct(goldResult);
 									grobidResultSoft = removeFullPunct(grobidResult);
 								}
-//System.out.println("gold:   " + goldResultSoft);
-//System.out.println("grobid: " + grobidResultSoft);								
-								if ((goldResult.length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
+								
+								if ((goldResult.trim().length() > 0) && goldResultSoft.equals(grobidResultSoft)) {
                                     softStats.incrementObserved(fieldName);
 								}
 								else {
+//System.out.println("\n" + teiFile.getPath());
+//System.out.println("gold:" + fieldName);								
+//System.out.println("gold:   " + goldResultSoft);
+//System.out.println("grobid: " + grobidResultSoft);
+//System.out.println("gold:" + goldResult);
+//System.out.println("grobid:" + grobidResult);
 									if (grobidResultSoft.length() > 0) {
                                         softStats.incrementFalsePositive(fieldName);
 										allGoodSoft = false;
@@ -1484,55 +1637,74 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 					} 
 				}
 				else if (runType == this.PDFX) {
-
+					// TBD
 				}
 				else if (runType == this.CERMINE) {
-
+					// TBD
 				}
 			}
 			catch(Exception e) {
 				e.printStackTrace();
 			}
 			nbFile++;
-			//System.out.println("\n");
+		}
 		}
 		
 		report.append("\nEvaluation on " + nbFile + " random PDF files out of " + 
 			(refFiles.length-2) + " PDF (ratio " + fileRatio + ").\n");
+		reportMD.append("\nEvaluation on " + nbFile + " random PDF files out of " + 
+			(refFiles.length-2) + " PDF (ratio " + fileRatio + ").\n");
 		
 		report.append("\n======= Strict Matching ======= (exact matches)\n");
+		reportMD.append("\n#### Strict Matching (exact matches)\n");
 		report.append("\n===== Field-level results =====\n");
+		reportMD.append("\n**Field-level results**\n");
 		report.append(EvaluationUtilities.computeMetrics(strictStats));
+		reportMD.append(EvaluationUtilities.computeMetricsMD(strictStats));
 
 		report.append("\n\n======== Soft Matching ======== (ignoring punctuation, " + 
 			"case and space characters mismatches)\n");
+		reportMD.append("\n\n#### Soft Matching (ignoring punctuation, case and space characters mismatches)\n");
 		report.append("\n===== Field-level results =====\n");
+		reportMD.append("\n**Field-level results**\n");
 		report.append(EvaluationUtilities.computeMetrics(softStats));
-		
+		reportMD.append(EvaluationUtilities.computeMetricsMD(softStats));
 
 		if (sectionType != this.FULLTEXT) {
 			report.append("\n\n==== Levenshtein Matching ===== (Minimum Levenshtein distance at " + 
 				this.minLevenshteinDistance + ")\n");
+			reportMD.append("\n\n#### Levenshtein Matching (Minimum Levenshtein distance at " +
+				this.minLevenshteinDistance+")\n");
 			report.append("\n===== Field-level results =====\n");
+			reportMD.append("\n**Field-level results**\n");
 			report.append(EvaluationUtilities.computeMetrics(levenshteinStats));
+			reportMD.append(EvaluationUtilities.computeMetricsMD(levenshteinStats));
 
 			report.append("\n\n= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at " +
 				minRatcliffObershelpSimilarity + ")\n");
+			reportMD.append("\n\n#### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at " +
+				minRatcliffObershelpSimilarity + ")\n");
 			report.append("\n===== Field-level results =====\n");
+			reportMD.append("\n**Field-level results**\n");
 			report.append(EvaluationUtilities.computeMetrics(ratcliffObershelpStats));
+			reportMD.append(EvaluationUtilities.computeMetricsMD(ratcliffObershelpStats));
 		}
 
 		if (sectionType == this.CITATION) {
 			report.append("\n===== Instance-level results =====\n\n");
-			report.append("Total expected instances: \t\t").append(totalExpectedInstances).append("\n");
-			report.append("Total extracted instances: \t\t").append(totalObservedInstances).append("\n");
-			report.append("Total correct instances: \t\t").append(totalCorrectInstancesStrict)
+			reportMD.append("\n#### Instance-level results\n\n");
+
+			StringBuilder localReport = new StringBuilder();
+
+			localReport.append("Total expected instances: \t\t").append(totalExpectedInstances).append("\n");
+			localReport.append("Total extracted instances: \t\t").append(totalObservedInstances).append("\n");
+			localReport.append("Total correct instances: \t\t").append(totalCorrectInstancesStrict)
 				.append(" (strict) \n");
-			report.append("Total correct instances: \t\t").append(totalCorrectInstancesSoft)
+			localReport.append("Total correct instances: \t\t").append(totalCorrectInstancesSoft)
 				.append(" (soft) \n");
-			report.append("Total correct instances: \t\t").append(totalCorrectInstancesLevenshtein)
+			localReport.append("Total correct instances: \t\t").append(totalCorrectInstancesLevenshtein)
 				.append(" (Levenshtein) \n");
-			report.append("Total correct instances: \t\t").append(totalCorrectInstancesRatcliffObershelp)
+			localReport.append("Total correct instances: \t\t").append(totalCorrectInstancesRatcliffObershelp)
 				.append(" (RatcliffObershelp) \n");
 			
 			double precisionStrict = (double) totalCorrectInstancesStrict / (totalObservedInstances);
@@ -1540,14 +1712,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			double precisionLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalObservedInstances);
 			double precisionRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
 				(totalObservedInstances);
-			report.append("\nInstance-level precision:\t")
+			localReport.append("\nInstance-level precision:\t")
 				.append(TextUtilities.formatTwoDecimals(precisionStrict * 100)).append(" (strict) \n");
-			report.append("Instance-level precision:\t")
+			localReport.append("Instance-level precision:\t")
 				.append(TextUtilities.formatTwoDecimals(precisionSoft * 100)).append(" (soft) \n");
-			report.append("Instance-level precision:\t")
+			localReport.append("Instance-level precision:\t")
 				.append(TextUtilities.formatTwoDecimals(precisionLevenshtein * 100))
 				.append(" (Levenshtein) \n");
-			report.append("Instance-level precision:\t")
+			localReport.append("Instance-level precision:\t")
 				.append(TextUtilities.formatTwoDecimals(precisionRatcliffObershelp * 100))
 				.append(" (RatcliffObershelp) \n");
 			
@@ -1556,14 +1728,14 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 			double recallLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalExpectedInstances);
 			double recallRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
 				(totalExpectedInstances);
-			report.append("\nInstance-level recall:\t")
+			localReport.append("\nInstance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(recallStrict * 100)).append("\t(strict) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(recallSoft * 100)).append("\t(soft) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(recallLevenshtein * 100))
 				.append("\t(Levenshtein) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(recallRatcliffObershelp* 100))
 				.append("\t(RatcliffObershelp) \n");
 			
@@ -1573,76 +1745,91 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 				(precisionLevenshtein + recallLevenshtein);
 			double f0RatcliffObershelp = (2 * precisionRatcliffObershelp * recallRatcliffObershelp) / 
 				(precisionRatcliffObershelp + recallRatcliffObershelp);
-			report.append("\nInstance-level f-score:\t")
+			localReport.append("\nInstance-level f-score:\t")
 				.append(TextUtilities.formatTwoDecimals(f0Strict * 100)).append(" (strict) \n");
-			report.append("Instance-level f-score:\t")
+			localReport.append("Instance-level f-score:\t")
 				.append(TextUtilities.formatTwoDecimals(f0Soft * 100)).append(" (soft) \n");
-			report.append("Instance-level f-score:\t")
+			localReport.append("Instance-level f-score:\t")
 				.append(TextUtilities.formatTwoDecimals(f0Levenshtein * 100)).append(" (Levenshtein) \n");
-			report.append("Instance-level f-score:\t")
+			localReport.append("Instance-level f-score:\t")
 				.append(TextUtilities.formatTwoDecimals(f0RatcliffObershelp * 100)).append(" (RatcliffObershelp) \n");
 			
-			report.append("\nMatching 1 :\t").append(match1 + "\n");
-			report.append("\nMatching 2 :\t").append(match2 + "\n");
-			report.append("\nMatching 3 :\t").append(match3 + "\n");
-			report.append("\nMatching 4 :\t").append(match4 + "\n");
-			report.append("\nTotal matches :\t").append((match1 + match2 + match3 + match4) + "\n");
+			localReport.append("\nMatching 1 :\t").append(match1 + "\n");
+			localReport.append("\nMatching 2 :\t").append(match2 + "\n");
+			localReport.append("\nMatching 3 :\t").append(match3 + "\n");
+			localReport.append("\nMatching 4 :\t").append(match4 + "\n");
+			localReport.append("\nTotal matches :\t").append((match1 + match2 + match3 + match4) + "\n");
+
+			report.append(localReport.toString());
+			reportMD.append("```\n"+localReport.toString()+"```\n\n");
 
 			report.append("\n======= Citation context resolution ======= \n");
+			reportMD.append("\n#### Citation context resolution\n");
 
-			report.append("\nTotal expected references: \t ").append(totalExpectedReferences)
+			localReport = new StringBuilder();
+
+			localReport.append("\nTotal expected references: \t ").append(totalExpectedReferences)
 				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalExpectedReferences / nbFile)).append(" references per article");
-			report.append("\nTotal predicted references: \t ").append(totalObservedReferences)
+			localReport.append("\nTotal predicted references: \t ").append(totalObservedReferences)
 				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalObservedReferences / nbFile)).append(" references per article");
 
 			//report.append("\nTotal observed references (instance): \t ").append(totalObservedInstances);
 			//report.append("\nTotal correct observed references: \t ").append(totalCorrectInstancesRatcliffObershelp);
 
-			report.append("\n\nTotal expected citation contexts: \t ").append(totalExpectedCitations)
+			localReport.append("\n\nTotal expected citation contexts: \t ").append(totalExpectedCitations)
 				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalExpectedCitations / nbFile)).append(" citation contexts per article");
-			report.append("\nTotal predicted citation contexts: \t ").append(totalObservedCitations)
+			localReport.append("\nTotal predicted citation contexts: \t ").append(totalObservedCitations)
 				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalObservedCitations / nbFile)).append(" citation contexts per article");
-			report.append("\n\nTotal correct predicted citation contexts: \t ").append(totalCorrectObservedCitations)
+			localReport.append("\n\nTotal correct predicted citation contexts: \t ").append(totalCorrectObservedCitations)
 				.append(" - ").append(TextUtilities.formatTwoDecimals((double) totalCorrectObservedCitations / nbFile)).append(" citation contexts per article");
 
-			report.append("\nTotal wrong predicted citation contexts: \t ").append(totalWrongObservedCitations).append(" (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)");
+			localReport.append("\nTotal wrong predicted citation contexts: \t ").append(totalWrongObservedCitations).append(" (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)");
 
 			double precisionCitationContext = (double) totalCorrectObservedCitations / totalObservedCitations;
 			double recallCitationContext = (double) totalCorrectObservedCitations / totalExpectedCitations;
 			double fscoreCitationContext = (2 * precisionCitationContext * recallCitationContext) / (precisionCitationContext + recallCitationContext);;
 
-			report.append("\n\nPrecision citation contexts: \t ").append(TextUtilities.formatTwoDecimals(precisionCitationContext * 100));
-			report.append("\nRecall citation contexts: \t ").append(TextUtilities.formatTwoDecimals(recallCitationContext * 100));
-			report.append("\nfscore citation contexts: \t ").append(TextUtilities.formatTwoDecimals(fscoreCitationContext * 100));
-			report.append("\n");
+			localReport.append("\n\nPrecision citation contexts: \t ").append(TextUtilities.formatTwoDecimals(precisionCitationContext * 100));
+			localReport.append("\nRecall citation contexts: \t ").append(TextUtilities.formatTwoDecimals(recallCitationContext * 100));
+			localReport.append("\nfscore citation contexts: \t ").append(TextUtilities.formatTwoDecimals(fscoreCitationContext * 100));
+			localReport.append("\n");
 
+			report.append(localReport.toString());
+			reportMD.append("```\n"+localReport.toString()+"```\n\n");
 		}
 		else if (sectionType == this.HEADER) {
 			report.append("\n===== Instance-level results =====\n\n");
-			report.append("Total expected instances: \t").append(totalExpectedInstances).append("\n");
-			report.append("Total correct instances: \t").append(totalCorrectInstancesStrict)
+			reportMD.append("\n#### Instance-level results\n\n");
+
+			StringBuilder localReport = new StringBuilder();
+
+			localReport.append("Total expected instances: \t").append(totalExpectedInstances).append("\n");
+			localReport.append("Total correct instances: \t").append(totalCorrectInstancesStrict)
 				.append(" (strict) \n");
-			report.append("Total correct instances: \t").append(totalCorrectInstancesSoft)
+			localReport.append("Total correct instances: \t").append(totalCorrectInstancesSoft)
 				.append(" (soft) \n");
-			report.append("Total correct instances: \t").append(totalCorrectInstancesLevenshtein)
+			localReport.append("Total correct instances: \t").append(totalCorrectInstancesLevenshtein)
 				.append(" (Levenshtein) \n");
-			report.append("Total correct instances: \t").append(totalCorrectInstancesRatcliffObershelp)
+			localReport.append("Total correct instances: \t").append(totalCorrectInstancesRatcliffObershelp)
 				.append(" (ObservedRatcliffObershelp) \n");
 			double accuracyStrict = (double) totalCorrectInstancesStrict / (totalExpectedInstances);
 			double accuracySoft = (double) totalCorrectInstancesSoft / (totalExpectedInstances);
 			double accuracyLevenshtein = (double) totalCorrectInstancesLevenshtein / (totalExpectedInstances);
 			double accuracyRatcliffObershelp = (double) totalCorrectInstancesRatcliffObershelp / 
 				(totalExpectedInstances);
-			report.append("\nInstance-level recall:\t")
+			localReport.append("\nInstance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(accuracyStrict * 100)).append("\t(strict) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(accuracySoft * 100)).append("\t(soft) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(accuracyLevenshtein * 100))
 				.append("\t(Levenshtein) \n");
-			report.append("Instance-level recall:\t")
+			localReport.append("Instance-level recall:\t")
 				.append(TextUtilities.formatTwoDecimals(accuracyRatcliffObershelp * 100))
 				.append("\t(RatcliffObershelp) \n");
+
+			report.append(localReport.toString());
+			reportMD.append("```\n"+localReport.toString()+"```\n\n");
 		} 
 
 		return report.toString();
@@ -1651,8 +1838,32 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
 	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
-		string = string.replaceAll("\t", " ");
+		string = string.replace("\t", " ");
 		string = string.replaceAll(" ( )*", " ");
+		string = string.replace("&apos;", "'");
+		return string.trim().toLowerCase();
+	}
+
+	private static String identifierNormalization(String string) {
+		string = basicNormalization(string);
+		if (string.startsWith("pmcpmc")) {
+			string = string.replace("pmcpmc", "");
+		}
+		string = string.replace("pmc", "");
+		if (string.startsWith("doi")) {
+			string = string.replace("doi", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
+		if (string.startsWith("pmid")) {
+			string = string.replace("pmid", "").trim();
+			if (string.startsWith(":")) {
+				string = string.substring(1,string.length());
+				string = string.trim();
+			}
+		}
 		return string.trim().toLowerCase();
 	}
 	
@@ -1695,6 +1906,9 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
+    	//DOMConfigurator is called to force logger to use the xml configuration file
+        //DOMConfigurator.configure("src/main/resources/log4j.xml");
+
 		if ( (args.length >4) || (args.length == 0) ) {
 			System.err.println("usage: command [path to the (gold) evaluation XML dataset] Run[0|1] fileRatio[0.0-1.0]");
 			return;
@@ -1758,9 +1972,19 @@ System.out.println("grobid 4:\t" + grobidSignature4);*/
         try {
             EndToEndEvaluation eval = new EndToEndEvaluation(xmlInputPath, inputType);
 			eval.fileRatio = fileRatio;
-			String report = eval.evaluationGrobid(runGrobidVal);
+
+			// markdown report
+			StringBuilder reportMD = new StringBuilder();
+			
+			String report = eval.evaluationGrobid(runGrobidVal, reportMD);
+			
 			System.out.println(report);
 			System.out.println(Engine.getCntManager());
+
+			// write markdown report
+			File fileMarkDown = new File("report.md");
+			FileUtils.writeStringToFile(fileMarkDown, reportMD.toString(), "UTF-8");
+			System.out.println("\nEvaluation report in markdown format saved under " + fileMarkDown.getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
         }

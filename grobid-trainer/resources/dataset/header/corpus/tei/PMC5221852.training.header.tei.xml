@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="PMC5221852"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<note type="doctype">Editorial<lb/></note>
+
+	<reference>Gut and Liver, Vol. 11, No. 1, January 2017, pp. 3-4<lb/></reference>
+
+	<note type="copyright">This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/by-nc/4.0)<lb/> which permits unrestricted non-commercial use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	Correspondence to:
+	<byline>
+	<docAuthor>Chang Soo Eun<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine, Hanyang University Guri Hospital,</affiliation>
+	</byline>
+
+	<address>153 Gyeongchun-ro, Guri 11923, Korea<lb/></address>
+
+	Tel: <phone>+82-31-560-2228</phone>, Fax: +82-31-555-2998, E-mail:
+	<email>cseun@hanyang.ac.kr<lb/></email>
+
+	<idno>pISSN 1976-2283</idno> 
+	<idno>eISSN 2005-1212</idno> 
+
+	<idno>https://doi.org/10.5009/gnl16574<lb/></idno>
+
+	<docTitle>
+	<titlePart>Is the Therapeutic Drug Monitoring of Anti-TNF Agents Necessary in Korean<lb/> Inflammatory Bowel Disease Patients?<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Chang Soo Eun<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Internal Medicine, Hanyang University Guri Hospital,</affiliation>
+	</byline>
+
+	<address>Guri, Korea<lb/></address>
+
+	<reference>See &quot;Clinical Use of Measuring Trough Levels and Antibodies against Infliximab in Patients with Pediatric Inflammatory<lb/> Bowel Disease&quot; by So Yoon Choi, et al. on page 55, Vol. 11. No. 1, 2017</reference>
+
+		</front>
+	</text>
+</tei>

@@ -9,7 +9,9 @@
 	<docTitle>
 	<titlePart>Silicon Nanotechnologies and Emerging Non-Silicon Nanoelectronics<lb/> </titlePart>
 	</docTitle>
-			<note type="articleType">(Plenary Talk)<lb/></note>
+
+	(<note type="doctype">Plenary Talk</note>)<lb/>
+	
 	<byline>
 	<docAuthor>Robert Chau<lb/></docAuthor>
 	</byline>
@@ -18,9 +20,11 @@
 	<affiliation>Components Research, Technology and Manufacturing Group, Intel Corporation<lb/></affiliation>
 	</byline>
 
-	<email>Email: robert.s.chau@intel.com<lb/></email>
+	Email: 
+	<email>robert.s.chau@intel.com<lb/></email>
 
-	<div type="abstract">Abstract<lb/> This presentation will summarize some of the most<lb/> recent Si innovations made for advanced CMOS<lb/> transistors in the nanotechnology era. Through these<lb/> Si nanotechnologies, it is expected that CMOS scaling<lb/> and performance trends will extend and continue well<lb/> into the next decade. Additionally, there has been<lb/> much interest generated recently in the research of<lb/> non-silicon materials and nanoelectronic devices and<lb/> their integration onto the existing Si platforms for<lb/> future high-speed and low-power applications. The<lb/> challenges and opportunities of these emerging<lb/> non-Si nanotechnologies will also be discussed in this<lb/> presentation.<lb/> </div>
+	Abstract<lb/> 
+	<div type="abstract">This presentation will summarize some of the most<lb/> recent Si innovations made for advanced CMOS<lb/> transistors in the nanotechnology era. Through these<lb/> Si nanotechnologies, it is expected that CMOS scaling<lb/> and performance trends will extend and continue well<lb/> into the next decade. Additionally, there has been<lb/> much interest generated recently in the research of<lb/> non-silicon materials and nanoelectronic devices and<lb/> their integration onto the existing Si platforms for<lb/> future high-speed and low-power applications. The<lb/> challenges and opportunities of these emerging<lb/> non-Si nanotechnologies will also be discussed in this<lb/> presentation.<lb/> </div>
 
 		</front>
 	</text>

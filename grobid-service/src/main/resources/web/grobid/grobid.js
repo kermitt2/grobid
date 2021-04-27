@@ -13,6 +13,8 @@ var grobid = (function($) {
 
 	var block = 0;
 
+    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head'];
+
 	function defineBaseURL(ext) {
 		var baseUrl = null;
 		if ( $(location).attr('href').indexOf("index.html") != -1) {
@@ -231,6 +233,25 @@ var grobid = (function($) {
 	});
 
 	function ShowRequest1(formData, jqForm, options) {
+        var addCoordinates = false;
+        for(var formd in formData) {
+            console.log(formData[formd])
+            if (formData[formd].name == 'teiCoordinates') {
+                addCoordinates = true;
+            }
+        }
+        if (addCoordinates) {
+            for (var i in elementCoords) {
+                var additionalFormData = {
+                    "name": "teiCoordinates",
+                    "value": "ref",
+                    "type": "checkbox",
+                    "required": false
+                }
+                additionalFormData["value"] = elementCoords[i]
+                formData.push(additionalFormData)
+            }
+        }
 	    $('#requestResult').html('<font color="grey">Requesting server...</font>');
 	    return true;
 	}
@@ -1092,6 +1113,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			$('#includeRawAffiliationsBlock').show();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processHeaderDocument');
 		}
 		else if (selected == 'processFulltextDocument') {
@@ -1100,6 +1123,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').show();
 			$('#includeRawAffiliationsBlock').show();
 			$('#includeRawCitationsBlock').show();
+            $('#segmentSentencesBlock').show();
+            $('#teiCoordinatesBlock').show();
 			setBaseUrl('processFulltextDocument');
 		}
 		else if (selected == 'processDate') {
@@ -1108,6 +1133,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processDate');
 		}
 		else if (selected == 'processHeaderNames') {
@@ -1116,6 +1143,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processHeaderNames');
 		}
 		else if (selected == 'processCitationNames') {
@@ -1124,6 +1153,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processCitationNames');
 		}
 		else if (selected == 'processReferences') {
@@ -1132,6 +1163,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').show();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').show();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processReferences');
 		}
 		else if (selected == 'processAffiliations') {
@@ -1140,6 +1173,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processAffiliations');
 		}
 		else if (selected == 'processCitation') {
@@ -1148,6 +1183,8 @@ var grobid = (function($) {
 			$('#consolidateBlock2').show();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').hide();
+            $('#teiCoordinatesBlock').hide();
 			setBaseUrl('processCitation');
 		}
 		/*else if (selected == 'processCitationPatentTEI') {
@@ -1241,14 +1278,14 @@ var grobid = (function($) {
 
 	function download(){
         var name ="export";
-		if ((document.getElementById("input").files[0].type == 'application/pdf') ||
-            (document.getElementById("input").files[0].name.endsWith(".pdf")) ||
-            (document.getElementById("input").files[0].name.endsWith(".PDF"))) {
+		if (document.getElementById("input")
+            && document.getElementById("input").files.length > 0
+                && document.getElementById("input").files[0].name) {
              name = document.getElementById("input").files[0].name;
         }
+
 		var fileName = name + ".tei.xml";
 	    var a = document.createElement("a");
-
 
 	    var file = new Blob([teiToDownload], {type: 'application/xml'});
 	    var fileURL = URL.createObjectURL(file);
@@ -1281,9 +1318,9 @@ var grobid = (function($) {
 
 	function downloadPatent() {
         var name = "export";
-        if ((document.getElementById("input3").files[0].type == 'application/pdf') ||
-            (document.getElementById("input3").files[0].name.endsWith(".pdf")) ||
-            (document.getElementById("input3").files[0].name.endsWith(".PDF"))) {
+        if (document.getElementById("input3")
+            && document.getElementById("input3").files.length > 0
+            && document.getElementById("input3").files[0].name) {
             name = document.getElementById("input3").files[0].name;
         }
         var fileName = name + ".tei.xml";

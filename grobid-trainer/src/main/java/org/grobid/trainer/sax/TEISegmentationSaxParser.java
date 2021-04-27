@@ -131,10 +131,15 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				currentTag = "<cover>";
 				//upperTag = currentTag;
 				//upperQname = "titlePage";
-            } else if (qName.equals("other") || qName.equals("toc")) {
-                // for the moment the table of content mark-up is ignored
+            } else if (qName.equals("other")) {
                 //currentTags.push("<other>");
 				currentTag = "<other>";
+            } else if (qName.equals("toc")) {
+                // normally valid table of content mark-up should be <div type="toc>", not tag <toc> 
+                //currentTags.push("<other>");
+                currentTag = "<toc>";
+                upperTag = currentTag;
+                upperQname = "div";
             } else if (qName.equals("note")) {
                 int length = atts.getLength();
 
@@ -153,10 +158,10 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                             } else if (value.equals("margin")) {
                                 currentTag = "<marginnote>";
                             } else {
-                                logger.error("Invalid attribute value for element div: " + name + "=" + value);
+                                logger.error("Invalid attribute value for element note: " + name + "=" + value);
                             }
                         } else {
-                            logger.error("Invalid attribute name for element div: " + name);
+                            logger.error("Invalid attribute name for element note: " + name);
                         }
                     }
                 }
@@ -177,10 +182,15 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								upperTag = currentTag;
 								upperQname = "div";
                             }
-                            else if (value.equals("acknowledgement")) {
+                            else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
+                                || value.equals("acknowledgments")) {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
 								upperQname = "div";
+                            } else if (value.equals("toc")) {
+                                currentTag = "<toc>";
+                                upperTag = currentTag;
+                                upperQname = "div";
                             } else {
                                 logger.error("Invalid attribute value for element div: " + name + "=" + value);
                             }
@@ -220,6 +230,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
                 ) {
             String text = getText();
             text = text.replace("\n", " ");
+            text = text.replace("\r", " ");
             text = text.replace("  ", " ");
 			boolean begin = true;
 //System.out.println(text);	
@@ -233,7 +244,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 				String line = tokens[p].trim();
 				if (line.length() == 0) 
                     continue;
-                if (line.equals("\n"))
+                if (line.equals("\n") || line.equals("\r"))
 					continue;
 				if (line.indexOf("+PAGE+") != -1) {
                     // page break should be a distinct feature
@@ -242,7 +253,8 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 					page = true;
                 } 
 				
-				StringTokenizer st = new StringTokenizer(line, " \t");
+				//StringTokenizer st = new StringTokenizer(line, " \t");
+                StringTokenizer st = new StringTokenizer(line, " \t\f\u00A0");
 				if (!st.hasMoreTokens()) 
 					continue;
 				String tok = st.nextToken();

@@ -141,6 +141,7 @@ public class GrobidRestProcessFiles {
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
+                                          final boolean segmentSentences,
                                           final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
 
@@ -174,6 +175,7 @@ public class GrobidRestProcessFiles {
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .generateTeiCoordinates(teiCoordinates)
+                    .withSentenceSegmentation(segmentSentences)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);
@@ -230,7 +232,8 @@ public class GrobidRestProcessFiles {
                                                           final boolean includeRawCitations,
                                                           final int startPage,
                                                           final int endPage,
-                                                          final boolean generateIDs) throws Exception {
+                                                          final boolean generateIDs,
+                                                          final boolean segmentSentences) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -266,6 +269,7 @@ public class GrobidRestProcessFiles {
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
                     .pdfAssetPath(new File(assetPath))
+                    .withSentenceSegmentation(segmentSentences)
                     .build();
 
             retVal = engine.fullTextToTEI(originFile, config);
@@ -673,7 +677,6 @@ public class GrobidRestProcessFiles {
                 .generateTeiCoordinates(elementWithCoords)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
-                .generateTeiCoordinates(elementWithCoords)
                 .build();
 
             DocumentSource documentSource = DocumentSource.fromPdf(originFile);

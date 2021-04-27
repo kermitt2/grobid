@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="L091217001-CC"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:cond-mat/0408426v1 [cond-mat.supr-con]</idno>
+
+	<date>19 Aug 2004<lb/></date>
+
+	<reference>CHINESE JOURNAL OF PHYSICS<lb/> VOL. unknown, NO. unknown unknown<lb/></reference>
+
+	<docTitle>
+	<titlePart>Unconventional superconductivity in Na x CoO 2 • yH 2 O<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hiroya Sakurai 1 , Kazunori Takada 2 , Takayoshi Sasaki 2 , and Eiji<lb/> Takayama-Muromachi 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Superconducting Materials Center, National Institute for Materials Science<lb/> (SMC/NIMS),</affiliation>
+	</byline>
+
+	<address>1-1 Namiki, Tsukuba, Ibaraki 305-0044, Japan.<lb/></address>
+
+	<byline>
+	<affiliation>2 Advanced Materials Laboratory, National Institute for Materials Science (AML/NIMS),<lb/></affiliation>
+	</byline>
+
+	<address>1-1 Namiki, Tsukuba, Ibaraki 305-0044, Japan</address>
+	/ 
+	<byline>
+	<affiliation>CREST, Japan Science and Technology<lb/> Agency (JST).<lb/></affiliation>
+	</byline>
+
+	(
+	>Received unknown
+	)<lb/>
+
+	<div type="abstract">We synthesized powder samples of Na x CoO 2 • yH 2 O changing the volume of the<lb/> water in the hydration process, then investigated their superconducting properties,. It<lb/> was proved that the volume of water is one of key parameters to obtain a single phase of<lb/> Na x CoO 2 • yH 2 O with good superconducting properties. The transition temperature,<lb/> T c , of the sample changed gradually while it was stored in the atmosphere of 70%<lb/> humidity. Superconducting behavior under high magnetic field was very sensitive to<lb/> T c . H c2 of a high quality sample with high T c seemed very high.<lb/></div>
+
+	<keyword>PACS. 70.70.-b -Superconducting Materials.</keyword>
+
+	<page>1<lb/></page>
+	
+	<note type="copyright">c 2000 THE PHYSICAL SOCIETY<lb/> OF THE REPUBLIC OF CHINA</note>
+
+		</front>
+	</text>
+</tei>

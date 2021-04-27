@@ -725,8 +725,13 @@ public class ReferenceExtractor implements Closeable {
 
             if (articles != null) {
                 int k = 0;
+                List<BiblioItem> bibResults = parsers.getCitationParser().processingStringMultiple(referencesNPL, consolidate);
                 for (String ref : referencesNPL) {
-                    BiblioItem result = parsers.getCitationParser().processing(ref, consolidate);
+                    BiblioItem result = bibResults.get(k);
+                    if (result == null) {
+                        k++;
+                        continue;
+                    }
                     BibDataSet bds = new BibDataSet();
                     result.setReference(ref);
                     bds.setResBib(result);
@@ -1243,8 +1248,13 @@ public class ReferenceExtractor implements Closeable {
 
             if (articles != null) {
                 int k = 0;
+                List<BiblioItem> bibResults = parsers.getCitationParser().processingStringMultiple(referencesNPL, consolidate);
                 for (String ref : referencesNPL) {
-                    BiblioItem result = parsers.getCitationParser().processing(ref, consolidate);
+                    BiblioItem result = bibResults.get(k);
+                    if (result == null) {
+                        k++;
+                        continue;
+                    }
                     BibDataSet bds = new BibDataSet();
                     result.setReference(ref);
                     bds.setResBib(result);

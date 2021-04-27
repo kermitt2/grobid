@@ -48,15 +48,6 @@ public class TestHeaderParser extends EngineTest {
                 is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
         assertNotNull(resHeader.getFullAuthors());
 
-        //System.out.println(tei);
-
-        pdfPath = testPath + File.separator + "1060._fulltext3.pdf";
-        resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, 0, resHeader);
-
-        assertNotNull(resHeader);
-        //System.out.println(tei);
-
         pdfPath = testPath + File.separator + "ZFN-A-054-0304-0272.pdf";
         resHeader = new BiblioItem();
         tei = engine.processHeader(pdfPath, 0, resHeader);
@@ -80,7 +71,7 @@ public class TestHeaderParser extends EngineTest {
 
     }
 
-    @Test
+    /*@Test
     public void testSegmentationHeader() throws Exception {
         getTestResourcePath();
 
@@ -94,5 +85,5 @@ public class TestHeaderParser extends EngineTest {
         assertThat(resHeader.getKeyword(),
                 is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
         assertNotNull(resHeader.getFullAuthors());
-    }
+    }*/
 }

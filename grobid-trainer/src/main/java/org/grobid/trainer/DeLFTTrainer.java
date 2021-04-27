@@ -4,6 +4,7 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.jni.DeLFTModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.trainer.SegmentationTrainer;
+import org.grobid.core.utilities.GrobidProperties;
 import java.math.BigDecimal;
 
 import java.io.File;
@@ -17,7 +18,7 @@ public class DeLFTTrainer implements GenericTrainer {
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
-        DeLFTModel.train(model.getModelName(), trainingData, outputModel);
+        DeLFTModel.train(model.getModelName(), trainingData, outputModel, GrobidProperties.getDelftArchitecture());
     }
 
     @Override

@@ -15,12 +15,15 @@ import org.grobid.core.layout.BoundingBox;
 import java.io.IOException;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by zholudev on 15/01/16.
  * Utilities for annotating PDF
  */
 public class AnnotationUtil {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(AnnotationUtil.class);
 
     public static BoundingBox getBoundingBoxForPdf(PDDocument document, String coords) {
         String[] split = coords.split(",");
@@ -28,7 +31,21 @@ public class AnnotationUtil {
         Long pageNum = Long.valueOf(split[0], 10) - 1;
         PDPage page = (PDPage) document.getDocumentCatalog().getPages().get(pageNum.intValue());
 
-        PDRectangle mediaBox = page.getMediaBox() != null ? page.getMediaBox() : page.getArtBox();
+        PDRectangle mediaBox = page.getCropBox();
+        if (mediaBox == null) {
+            mediaBox = page.getMediaBox();
+            // this will look for the main media box of the page up in the PDF element hierarchy
+            if (mediaBox == null) {
+                // last hope
+                mediaBox = page.getArtBox();
+                if (mediaBox == null) {
+                    // we tried our best given PDFBox
+                    LOGGER.warn("Media box for page " + pageNum.intValue() + " not found.");
+                    return null;
+                }
+            }
+        }
+        
         if (mediaBox == null) {
             System.out.println("Null mediabox for page: " + (pageNum + 1));
             return null;
@@ -60,11 +77,12 @@ public class AnnotationUtil {
         if (coords == null) {
             return;
         }
-        System.out.println("Annotating for coordinates: " + coords);
+        //System.out.println("Annotating for coordinates: " + coords);
 
         BoundingBox box = getBoundingBoxForPdf(document, coords);
         if (box == null) {
-            System.out.println("Null bounding box for coords: " + coords);
+            //System.out.println("Null bounding box for coords: " + coords);
+            // nothing to do
             return;
         }
 

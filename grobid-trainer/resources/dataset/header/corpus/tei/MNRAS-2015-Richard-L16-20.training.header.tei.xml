@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="MNRAS-2015-Richard-L16-20"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>MUSE observations of the lensing cluster SMACSJ2031.8-4036: new<lb/> constraints on the mass distribution in the cluster core<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Johan Richard, 1‹ Vera Patricio, 1 Johany Martinez, 1 Roland Bacon, 1<lb/> Benjamin Clément, 1 Peter Weilbacher, 2 Kurt Soto, 3 Lutz Wisotzki, 2 Joël Vernet, 4<lb/> Roser Pello, 5 Joop Schaye, 6 Monica Turner 6 and Thomas Martinsson 6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 CRAL, Observatoire de Lyon, Université Lyon 1,</affiliation>
+	</byline>
+
+	<address>9 Avenue Ch. André, F-69561 Saint Genis Laval Cedex, France<lb/></address>
+
+	<byline>
+	<affiliation>2 AIP, Leibniz-Institut für Astrophysik Potsdam (AIP) </affiliation>
+	</byline>
+
+	<address>An der Sternwarte 16, D-14482 Potsdam, Germany<lb/></address>
+
+	<byline>
+	<affiliation>3 ETH Zurich, Institute of Astronomy,</affiliation>
+	</byline>
+
+	<address>HIT J 12.3, Wolfgang-Pauli-Str. 27, CH-8093 Zurich, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>4 European Southern Observatory,</affiliation>
+	</byline>
+
+	<address>Karl-Schwarzschild Str. 2, D-85748 Garching bei Muenchen, Germany<lb/></address>
+
+	<byline>
+	<affiliation>5 Institut de Recherche en Astrophysique et Planetologie, Observatoire Midi-Pyrénées,</affiliation>
+	</byline>
+
+	<address>14 Avenue Edouard Belin, F-31400 Toulouse, France<lb/></address>
+
+	<byline>
+	<affiliation>6 Leiden Observatory, Leiden University,</affiliation>
+	</byline>
+
+	<address>PO Box 9513, NL-2300 RA Leiden, the Netherlands<lb/></address>
+
+	<note type="submission">Accepted 2014 September 8. Received 2014 September 7; in original form 2014 August 15</note>
+
+	ABSTRACT<lb/>
+	<div type="abstract">We present new observations of the lensing cluster SMACSJ2031.8-4036 obtained with the<lb/> Multi Unit Spectroscopic Explorer (MUSE) integral field spectrograph as part of its commis-<lb/>sioning on the Very Large Telescope. By providing medium-resolution spectroscopy over the<lb/> full 4750-9350 Å domain and a 1 × 1 arcmin 2 field of view, MUSE is ideally suited for iden-<lb/>tifying lensed galaxies in the cluster core, in particular multiple-imaged systems. We perform<lb/> a redshift analysis of all sources in the data cube and identify a total of 12 systems ranging<lb/> from z = 1.46 to 6.4, with all images of each system confirmed by a spectroscopic redshift.<lb/> This allows us to accurately constrain the cluster mass profile in this region. We foresee that<lb/> future MUSE observations of cluster cores should help us discover very faint Lyman α emitters<lb/> thanks to the strong magnification and the high sensitivity of this instrument.<lb/></div>
+
+	Key words:
+	<keyword>galaxies: clusters: individual: SMACSJ2031.8-4036.<lb/></keyword>
+
+	E-mail:
+	<email>johan.richard@univ-lyon1.fr<lb/></email>
+
+	<note type="copyright">C 2014 The Authors<lb/> Published by Oxford University Press on behalf of the Royal Astronomical Society<lb/></note>
+
+	at UCBL scd lyon1 sciences on November 7, 2014<lb/> http://mnrasl.oxfordjournals.org/<lb/> Downloaded from
+		</front>
+	</text>
+</tei>
