@@ -1004,50 +1004,47 @@ public class BiblioItem {
         }
     }
 
-    private static String cleanDOI(String bibl) {
-        if (bibl != null) {
-            bibl = StringUtils.normalizeSpace(bibl);
-            bibl = bibl.replace(" ", "");
-
-            if (bibl.startsWith("http://dx.doi.org/") || 
-                bibl.startsWith("https://dx.doi.org/") || 
-                bibl.startsWith("http://doi.org/") || 
-                bibl.startsWith("https://doi.org/")) {
-                bibl = bibl.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
-            }
-
-            //bibl = bibl.replace("//", "/");
-            if (bibl.toLowerCase().startsWith("doi:") || bibl.toLowerCase().startsWith("doi/")) {
-                bibl = bibl.substring(4);
-            } 
-            if (bibl.toLowerCase().startsWith("doi")) {
-                bibl = bibl.substring(3);
-            }
-            // pretty common wrong extraction pattern: 
-            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
-            // 367-74.DOI:10.1080/14034940210165064
-            // (pages concatenated to the DOI) - easy/safe to fix
-            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
-                int ind = bibl.indexOf("DOI:10.");
-                if (ind == -1) 
-                    ind = bibl.indexOf("doi:10.");
-                bibl = bibl.substring(ind+4);
-            }
-
-            // for DOI coming from PDF links, we have some prefix cleaning to make 
-            if (bibl.startsWith("file://") || bibl.startsWith("https://") || bibl.startsWith("http://")) {
-                int ind = bibl.indexOf("/10.");
-                if (ind != -1)
-                    bibl = bibl.substring(ind+1);
-            }
-            
-            bibl = bibl.trim();
-            int ind = bibl.indexOf("http://");
-            if (ind != -1 && ind > 10) {
-                bibl = bibl.substring(0,ind);
-            }
+    public static String cleanDOI(String doi) {
+        if (doi == null) {
+            return doi;
         }
-        return bibl;
+
+        doi = StringUtils.normalizeSpace(doi);
+        doi = doi.replace(" ", "");
+        doi = doi.replaceAll("https?\\://(dx\\.)?doi\\.org/", "");
+
+        //bibl = bibl.replace("//", "/");
+        if (doi.toLowerCase().startsWith("doi:") || doi.toLowerCase().startsWith("doi/")) {
+            doi = doi.substring(4);
+        }
+        if (doi.toLowerCase().startsWith("doi")) {
+            doi = doi.substring(3);
+        }
+        // pretty common wrong extraction pattern:
+        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+        // 367-74.DOI:10.1080/14034940210165064
+        // (pages concatenated to the DOI) - easy/safe to fix
+        if (StringUtils.containsIgnoreCase(doi, "doi:10.")) {
+            doi = doi.substring(StringUtils.indexOfIgnoreCase(doi, "doi:10.")+4);
+        }
+
+        // for DOI coming from PDF links, we have some prefix cleaning to make
+        if (doi.startsWith("file://") || doi.startsWith("https://") || doi.startsWith("http://")) {
+            int ind = doi.indexOf("/10.");
+            if (ind != -1)
+                doi = doi.substring(ind+1);
+        }
+
+        doi = doi.trim();
+        int ind = doi.indexOf("http://");
+        if (ind > 10) {
+            doi = doi.substring(0, ind);
+        }
+
+        doi = doi.replaceAll("[\\p{M}]", "");
+        doi = doi.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+
+        return doi;
     }
 
     public void setArXivId(String id) {
@@ -4313,16 +4310,16 @@ public class BiblioItem {
     }
 
     /**
-     * Correct/add only the DOI of the first biblio item based on the second one 
+     * Correct/add identifiers of the first biblio item based on the second one
      */
-    public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
-        bib.setDOI(bibo.getDOI());
+    public static void injectIdentifiers(BiblioItem destination, BiblioItem source) {
+        destination.setDOI(source.getDOI());
         // optionally associated strong identifiers are also injected
-        bib.setPMID(bibo.getPMID());
-        bib.setPMCID(bibo.getPMCID());
-        bib.setPII(bibo.getPII());
-        bib.setIstexId(bibo.getIstexId());
-        bib.setArk(bibo.getArk());
+        destination.setPMID(source.getPMID());
+        destination.setPMCID(source.getPMCID());
+        destination.setPII(source.getPII());
+        destination.setIstexId(source.getIstexId());
+        destination.setArk(source.getArk());
     }
 
     /**

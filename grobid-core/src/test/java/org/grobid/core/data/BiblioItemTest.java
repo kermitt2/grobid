@@ -1,22 +1,20 @@
 package org.grobid.core.data;
 
 import org.grobid.core.main.LibraryLoader;
+import org.hamcrest.Matchers;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.*;
 
 import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -31,7 +29,6 @@ import javax.xml.xpath.XPathFactory;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -83,7 +80,7 @@ public class BiblioItemTest {
     }
 
     @Test
-    public void shouldGnerateRawAffiliationTextIfEnabled() throws Exception {
+    public void shouldGenerateRawAffiliationTextIfEnabled() throws Exception {
         GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
         Affiliation aff = new Affiliation();
         aff.setRawAffiliationString("raw affiliation 1");
@@ -133,7 +130,7 @@ public class BiblioItemTest {
     }
 
     @Test
-    public void shouldGnerateRawAffiliationTextForFailAffiliationsIfEnabled() throws Exception {
+    public void shouldGenerateRawAffiliationTextForFailAffiliationsIfEnabled() throws Exception {
         GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
         Affiliation aff = new Affiliation();
         aff.setRawAffiliationString("raw affiliation 1");
@@ -151,7 +148,7 @@ public class BiblioItemTest {
     }
 
     @Test
-    public void shouldNotGnerateRawAffiliationTextIfNotEnabled() throws Exception {
+    public void shouldNotGenerateRawAffiliationTextIfNotEnabled() throws Exception {
         GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(false).build();
         Affiliation aff = new Affiliation();
         aff.setRawAffiliationString("raw affiliation 1");
@@ -172,7 +169,24 @@ public class BiblioItemTest {
     }
 
     @Test
-    public void injectDOI() {
+    public void injectIdentifiers() {
+        BiblioItem item1 = new BiblioItem();
+        item1.setDOI("10.1233/23232/3232");
+        item1.setPMID("pmid");
+        item1.setPMCID("bao");
+        item1.setPII("miao");
+        item1.setIstexId("zao");
+        item1.setArk("Noah!");
+
+        BiblioItem item2 = new BiblioItem();
+        BiblioItem.injectIdentifiers(item2, item1);
+
+        assertThat(item2.getDOI(), is("10.1233/23232/3232"));
+        assertThat(item2.getPMID(), is("pmid"));
+        assertThat(item2.getPMCID(), is("bao"));
+        assertThat(item2.getPII(), is("miao"));
+        assertThat(item2.getIstexId(), is("zao"));
+        assertThat(item2.getArk(), is("Noah!"));
     }
 
     @Test
@@ -298,6 +312,68 @@ public class BiblioItemTest {
         assertThat(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(0).getAffiliations().get(0).getAffiliationString()));
         //assertThat(biblio1.getFullAuthors().get(1).getFirstName(), is(biblio2.getFullAuthors().get(0).getFirstName()));
         assertThat(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString(), is(biblio1.getFullAuthors().get(1).getAffiliations().get(0).getAffiliationString()));
+    }
+
+    @Test
+    public void testCleanDOIxPrefix1_shouldRemovePrefix() throws Exception {
+
+        String doi = "doi:10.1063/1.1905789";
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
+    }
+
+    @Test
+    public void testCleanDOIPrefix2_shouldRemovePrefix() throws Exception {
+
+        String doi = "doi/10.1063/1.1905789";
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
+    }
+
+    @Test
+    public void testCleanDOI_cleanCommonExtractionPatterns() throws Exception {
+        String doi = "43-61.DOI:10.1093/jpepsy/14.1.436/7";
+        String cleanedDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanedDoi, is("10.1093/jpepsy/14.1.436/7"));
+    }
+
+    @Test
+    public void testCleanDOI_removeURL_http() throws Exception {
+
+        String doi = "http://doi.org/10.1063/1.1905789";
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
+    }
+
+    @Test
+    public void testCleanDOI_removeURL_https() throws Exception {
+
+        String doi = "https://doi.org/10.1063/1.1905789";
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
+    }
+
+    @Test
+    public void testCleanDOI_removeURL_file() throws Exception {
+
+        String doi = "file://doi.org/10.1063/1.1905789";
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
+    }
+
+    @Test
+    public void testCleanDOI_diactric() throws Exception {
+        String doi = "10.1063/1.1905789͔";
+
+        String cleanDoi = BiblioItem.cleanDOI(doi);
+
+        assertThat(cleanDoi, Matchers.is("10.1063/1.1905789"));
     }
 
     private Person createPerson(String firstName, String secondName) {
