@@ -38,10 +38,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CitationParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
@@ -373,7 +371,7 @@ public class CitationParser extends AbstractParser {
                         if (consolidate == 1)
                             BiblioItem.correct(resCitation, bibo);
                         else if (consolidate == 2)
-                            BiblioItem.injectDOI(resCitation, bibo);
+                            BiblioItem.injectIdentifiers(resCitation, bibo);
                     }
                 }
             }
@@ -564,7 +562,7 @@ public class CitationParser extends AbstractParser {
                 if (consolidate == 1)
                     BiblioItem.correct(resCitation, bibo);
                 else if (consolidate == 2)
-                    BiblioItem.injectDOI(resCitation, bibo);
+                    BiblioItem.injectIdentifiers(resCitation, bibo);
             }
         } catch (Exception e) {
             LOGGER.error("An exception occurred while running bibliographical data consolidation.", e);

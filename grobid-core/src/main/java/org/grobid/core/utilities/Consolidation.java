@@ -17,6 +17,8 @@ import scala.Option;
 
 import java.util.*;
 
+import static org.grobid.core.data.BiblioItem.cleanDOI;
+
 /**
  * Singleton class for managing the extraction of bibliographical information from pdf documents.
  * When consolidation operations are realized, be sure to call the close() method
@@ -83,9 +85,9 @@ public class Consolidation {
     private Consolidation() {
         if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON)
             client = GluttonClient.getInstance();
-        else 
+        else
             client = CrossrefClient.getInstance();
-        workDeserializer = new WorkDeserializer();   
+        workDeserializer = new WorkDeserializer();
     }
 
     public void setCntManager(CntManager cntManager) {
@@ -114,7 +116,7 @@ public class Consolidation {
 
         String theDOI = bib.getDOI();
         if (StringUtils.isNotBlank(theDOI)) {
-            theDOI = cleanDoi(theDOI);
+            theDOI = cleanDOI(theDOI);
         }
         final String doi = theDOI;
         String aut = bib.getFirstAuthorSurname();
@@ -146,7 +148,7 @@ public class Consolidation {
         if (journalTitle != null) {
             journalTitle = TextUtilities.removeAccents(journalTitle);
         }*/
-        if (cntManager != null) 
+        if (cntManager != null)
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
         long threadId = Thread.currentThread().getId();
@@ -156,12 +158,12 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } 
+        }
         if (StringUtils.isNotBlank(rawCitation)) {
             // call with full raw string
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                      StringUtils.isBlank(doi) )
                 arguments.put("query.bibliographic", rawCitation);
             //arguments.put("query", rawCitation);
@@ -170,7 +172,7 @@ public class Consolidation {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                  (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                 arguments.put("query.author", aut);
         }
@@ -178,7 +180,7 @@ public class Consolidation {
             // call based on partial metadata
             if (arguments == null)
                 arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                 (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                 arguments.put("query.title", title);
         }
@@ -212,7 +214,7 @@ public class Consolidation {
         }
 
         if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
-            if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) && 
+            if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) &&
                  (StringUtils.isBlank(aut) || StringUtils.isBlank(title)) ) {
                 // there's not enough information for a crossref request, which might always return a result
                 return null;
@@ -243,7 +245,7 @@ public class Consolidation {
             }
 
             client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
-                
+
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
                     if ((res != null) && (res.size() > 0) ) {
@@ -260,18 +262,18 @@ public class Consolidation {
 
                               For all the other case of matching with CrossRef, we require a post-validation. 
                             */
-                            if ( 
-                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) && 
+                            if (
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) &&
                                     !doiQuery
                                 )
                                 ||
-                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) && 
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) &&
                                     StringUtils.isNotBlank(oneRes.getDOI()) &&
                                     doi.equals(oneRes.getDOI())
                                 )
                                 ||
-                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) && 
-                                  (doiQuery) ) 
+                                ( (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) &&
+                                  (doiQuery) )
                                 ||
                                 postValidation(bib, oneRes)) {
                                 results.add(oneRes);
@@ -283,7 +285,7 @@ public class Consolidation {
                                 break;
                             }
                         }
-                    } 
+                    }
                 }
 
                 @Override
@@ -292,8 +294,8 @@ public class Consolidation {
                 }
             });
         } catch(Exception e) {
-            LOGGER.info("Consolidation error - " + ExceptionUtils.getStackTrace(e));
-        } 
+            LOGGER.info("Consolidation error - ", e);
+        }
 
         client.finish(threadId);
         if (results.size() == 0)
@@ -306,7 +308,7 @@ public class Consolidation {
     /**
      * Try tp consolidate a list of bibliographical objects in one operation with consolidation services
      */
-    public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {   
+    public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {
         if (CollectionUtils.isEmpty(biblios))
             return null;
         final Map<Integer,BiblioItem> results = new HashMap<Integer,BiblioItem>();
@@ -320,18 +322,18 @@ public class Consolidation {
         for(BibDataSet bibDataSet : biblios) {
             final BiblioItem theBiblio = bibDataSet.getResBib();
 
-            if (cntManager != null) 
+            if (cntManager != null)
                 cntManager.i(ConsolidationCounters.TOTAL_BIB_REF);
 
             // first we get the exploitable metadata
             String doi = theBiblio.getDOI();
             if (StringUtils.isNotBlank(doi)) {
-                doi = cleanDoi(doi);
+                doi = BiblioItem.cleanDOI(doi);
             }
             String aut = theBiblio.getFirstAuthorSurname();
             String title = theBiblio.getTitle();
             String journalTitle = theBiblio.getJournal();
-           
+
             // and the row string
             String rawCitation = bibDataSet.getRawBib();
 
@@ -368,12 +370,12 @@ public class Consolidation {
                 // call based on the identified DOI
                 arguments = new HashMap<String,String>();
                 arguments.put("doi", doi);
-            } 
+            }
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                      StringUtils.isBlank(doi) )
                     arguments.put("query.bibliographic", rawCitation);
             }
@@ -381,7 +383,7 @@ public class Consolidation {
                 // call based on partial metadata
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                      (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                     arguments.put("query.title", title);
             }
@@ -389,7 +391,7 @@ public class Consolidation {
                 // call based on partial metadata
                 if (arguments == null)
                     arguments = new HashMap<String,String>();
-                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) || 
+                if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
                      (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
                     arguments.put("query.author", aut);
             }
@@ -417,14 +419,14 @@ public class Consolidation {
                     arguments.put("firstPage", firstPage);
                 }
             }
-            
+
             if (arguments == null || arguments.size() == 0) {
                 n++;
                 continue;
             }
 
             if (GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.CROSSREF) {
-                if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) && 
+                if (StringUtils.isBlank(doi) && StringUtils.isBlank(rawCitation) &&
                      (StringUtils.isBlank(aut) || StringUtils.isBlank(title)) ) {
                     // there's not enough information for a crossref request, which might always return a result
                     n++;
@@ -456,7 +458,7 @@ public class Consolidation {
                 }
 
                 client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(n) {
-                    
+
                     @Override
                     public void onSuccess(List<BiblioItem> res) {
                         if ((res != null) && (res.size() > 0) ) {
@@ -474,7 +476,7 @@ public class Consolidation {
                                     break;
                                 }
                             }
-                        } 
+                        }
                     }
 
                     @Override
@@ -483,8 +485,8 @@ public class Consolidation {
                     }
                 });
             } catch(Exception e) {
-                LOGGER.info("Consolidation error - " + ExceptionUtils.getStackTrace(e));
-            } 
+                LOGGER.info("Consolidation error - ", e);
+            }
             n++;
         }
         client.finish(threadId);
@@ -609,27 +611,10 @@ public class Consolidation {
     }*/
 
     /**
-     * This is a DOI cleaning specifically adapted to CrossRef call
-     */
-    private static String cleanDoi(String doi) {
-        doi = doi.replace("\"", "");
-        doi = doi.replace("\n", "");
-        if (doi.startsWith("doi:") || doi.startsWith("DOI:") || 
-            doi.startsWith("doi/") || doi.startsWith("DOI/") ) {
-            doi.substring(4, doi.length());
-            doi = doi.trim();
-        }
-
-        doi = doi.replace(" ", "");
-        return doi;
-    }
-
-
-    /**
-     * The new public CrossRef API is a search API, and thus returns 
-     * many false positives. It is necessary to validate return results 
-     * against the (incomplete) source bibliographic item to block 
-     * inconsistent results.  
+     * The new public CrossRef API is a search API, and thus returns
+     * many false positives. It is necessary to validate return results
+     * against the (incomplete) source bibliographic item to block
+     * inconsistent results.
      */
     private boolean postValidation(BiblioItem source, BiblioItem result) {
         boolean valid = true;
@@ -641,7 +626,7 @@ public class Consolidation {
                 return false;
         }*/
 
-        if (!StringUtils.isBlank(source.getFirstAuthorSurname()) && 
+        if (!StringUtils.isBlank(source.getFirstAuthorSurname()) &&
             !StringUtils.isBlank(result.getFirstAuthorSurname())) {
 //System.out.println(source.getFirstAuthorSurname() + " / " + result.getFirstAuthorSurname() + " = " + 
 //    ratcliffObershelpDistance(source.getFirstAuthorSurname(), result.getFirstAuthorSurname(), false)); 
@@ -669,12 +654,12 @@ public class Consolidation {
         if (string1.equals(string2))
             similarity = 1.0;
         if ( (string1.length() > 0) && (string2.length() > 0) ) {
-            Option<Object> similarityObject = 
+            Option<Object> similarityObject =
                 RatcliffObershelpMetric.compare(string1, string2);
             if ( (similarityObject != null) && (similarityObject.get() != null) )
                  similarity = (Double)similarityObject.get();
         }
-    
+
         return similarity.doubleValue();
     }
 

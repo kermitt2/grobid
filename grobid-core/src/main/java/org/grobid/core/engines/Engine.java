@@ -1,7 +1,5 @@
 package org.grobid.core.engines;
 
-import com.google.common.io.Files;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import org.grobid.core.data.Affiliation;
@@ -14,14 +12,10 @@ import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.exceptions.GrobidResourceException;
-import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.core.lang.Language;
 import org.grobid.core.utilities.Consolidation;
-import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
@@ -204,7 +198,7 @@ public class Engine implements Closeable {
                         if (consolidate == 1)
                             BiblioItem.correct(resCitation, bibo);
                         else if (consolidate == 2)
-                            BiblioItem.injectDOI(resCitation, bibo);
+                            BiblioItem.injectIdentifiers(resCitation, bibo);
                     }
                     finalResults.add(resCitation);
                 }
