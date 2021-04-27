@@ -1394,7 +1394,7 @@ public class HeaderParser extends AbstractParser {
                 if (consolidate == 1)
                     BiblioItem.correct(resHeader, bib);
                 else if (consolidate == 2)
-                    BiblioItem.injectDOI(resHeader, bib);
+                    BiblioItem.injectIdentifiers(resHeader, bib);
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running bibliographical data consolidation.", e);

@@ -17,6 +17,8 @@ import scala.Option;
 
 import java.util.*;
 
+import static org.grobid.core.data.BiblioItem.cleanDOI;
+
 /**
  * Singleton class for managing the extraction of bibliographical information from pdf documents.
  * When consolidation operations are realized, be sure to call the close() method
@@ -115,7 +117,7 @@ public class Consolidation {
 
         String theDOI = bib.getDOI();
         if (StringUtils.isNotBlank(theDOI)) {
-            theDOI = cleanDoi(theDOI);
+            theDOI = cleanDOI(theDOI);
         }
         final String doi = theDOI;
         String aut = bib.getFirstAuthorSurname();
@@ -327,7 +329,7 @@ public class Consolidation {
             // first we get the exploitable metadata
             String doi = theBiblio.getDOI();
             if (StringUtils.isNotBlank(doi)) {
-                doi = cleanDoi(doi);
+                doi = BiblioItem.cleanDOI(doi);
             }
             String aut = theBiblio.getFirstAuthorSurname();
             String title = theBiblio.getTitle();
@@ -608,24 +610,6 @@ public class Consolidation {
         else
             return false;
     }*/
-
-    /**
-     * This is a DOI cleaning specifically adapted to CrossRef call
-     */
-    protected static String cleanDoi(String doi) {
-        doi = doi.replace("\"", "");
-        doi = doi.replace("\n", "");
-        if (StringUtils.lowerCase(doi).startsWith("doi:") || StringUtils.lowerCase(doi).startsWith("doi/")) {
-            doi = doi.substring(4);
-            doi = doi.trim();
-        }
-        doi = doi.replaceAll("[\\p{M}]", "");
-        doi = doi.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
-
-        doi = doi.replace(" ", "");
-        return doi;
-    }
-
 
     /**
      * The new public CrossRef API is a search API, and thus returns
