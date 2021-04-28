@@ -37,7 +37,7 @@ public class TestCitationsVisualizer {
     public void testJSONAnnotationStructure() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         File inputTmpFile = getInputDocument("/test/test_Grobid_1_05452615.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
 
         String refURL = "http://example.com/xyz";
         List<String> refURLs = Arrays.asList(refURL);
@@ -91,7 +91,7 @@ public class TestCitationsVisualizer {
     public void testJSONAnnotationEscaping() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         File inputTmpFile = getInputDocument("/test/test_Grobid_1_05452615.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
 
         // check that this embedded backslash is escaped properly
         String refURL = "http://example.com/xyz?a=ab\\c123";
