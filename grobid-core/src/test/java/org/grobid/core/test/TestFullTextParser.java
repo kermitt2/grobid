@@ -46,7 +46,7 @@ public class TestFullTextParser extends EngineTest {
     public void testFullTextParser_1() throws Exception {
         File inputTmpFile = getInputDocument("/test/Wang-paperAVE2008.pdf");
 
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
@@ -64,35 +64,35 @@ public class TestFullTextParser extends EngineTest {
     public void testFullTextParser_2() throws Exception {
         File inputTmpFile = getInputDocument("/test/two_pages.pdf");
 
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
     @Test
     public void testFullTextParser_3() throws Exception {
         File inputTmpFile = getInputDocument("/test/MullenJSSv18i03.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
     @Test
     public void testFullTextParser_4() throws Exception {
         File inputTmpFile = getInputDocument("/test/1001._0908.0054.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
     @Test
     public void testFullTextParser_5() throws Exception {
         File inputTmpFile = getInputDocument("/test/submission_161.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 
     @Test
     public void testFullTextParser_6() throws Exception {
         File inputTmpFile = getInputDocument("/test/submission_363.pdf");
-        Document tei = engine.fullTextToTEIDoc(inputTmpFile, null, GrobidAnalysisConfig.defaultInstance());
+        Document tei = engine.fullTextToTEIDoc(inputTmpFile, GrobidAnalysisConfig.defaultInstance());
         assertTei(tei);
     }
 

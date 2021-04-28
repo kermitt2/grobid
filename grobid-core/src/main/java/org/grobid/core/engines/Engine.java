@@ -524,6 +524,11 @@ public class Engine implements Closeable {
         return resultDoc;
     }
 
+    public Document fullTextToTEIDoc(File inputFile,
+                                     GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(inputFile, null, config);
+    }
+
     public Document fullTextToTEIDoc(DocumentSource documentSource,
                                      GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
