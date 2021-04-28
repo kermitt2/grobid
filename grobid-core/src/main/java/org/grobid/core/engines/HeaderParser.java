@@ -78,10 +78,11 @@ public class HeaderParser extends AbstractParser {
     /**
      * Processing with application of the segmentation model
      */
-    public Pair<String, Document> processing(File input, BiblioItem resHeader, GrobidAnalysisConfig config) {
+    public Pair<String, Document> processing(File input, String md5Str, BiblioItem resHeader, GrobidAnalysisConfig config) {
         DocumentSource documentSource = null;
         try {
             documentSource = DocumentSource.fromPdf(input, config.getStartPage(), config.getEndPage());
+            documentSource.setMD5(md5Str);
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
 
             String tei = processingHeaderSection(config, doc, resHeader, true);

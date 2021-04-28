@@ -686,7 +686,7 @@ public class EngineTest {
 //        System.out.println(resHeader.getAbstract());
 //
         Document d =
-                engine.fullTextToTEIDoc(input, GrobidAnalysisConfig.defaultInstance());
+                engine.fullTextToTEIDoc(input, null, GrobidAnalysisConfig.defaultInstance());
 
         d.getBlocks();
         System.out.println(d.getTei());
@@ -699,7 +699,7 @@ public class EngineTest {
     public void testEmailPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
-        engine.getParsers().getHeaderParser().processing(new File("/Work/temp/1.pdf"), resHeader, GrobidAnalysisConfig.defaultInstance());
+        engine.getParsers().getHeaderParser().processing(new File("/Work/temp/1.pdf"), null, resHeader, GrobidAnalysisConfig.defaultInstance());
         System.out.println(resHeader);
 //        System.out.println(engine.fullTextToTEI("/tmp/2.pdf", false, false));
 

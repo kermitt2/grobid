@@ -250,7 +250,23 @@ public class Engine implements Closeable {
      */
     public List<BibDataSet> processReferences(File inputFile, int consolidate) {
         return parsers.getCitationParser()
-			.processingReferenceSection(inputFile, parsers.getReferenceSegmenterParser(), consolidate);
+            .processingReferenceSection(inputFile, null, parsers.getReferenceSegmenterParser(), consolidate);
+    }
+
+    /**
+     * Apply a parsing model to the reference block of a PDF file based on CRF
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @return the list of parsed references as bibliographical objects enriched
+     *         with citation contexts
+     */
+    public List<BibDataSet> processReferences(File inputFile, String md5Str, int consolidate) {
+        return parsers.getCitationParser()
+			.processingReferenceSection(inputFile, md5Str, parsers.getReferenceSegmenterParser(), consolidate);
     }
 
     /**
@@ -351,7 +367,36 @@ public class Engine implements Closeable {
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
             .build();
-        return processHeader(inputFile, config, result);
+        return processHeader(inputFile, null, config, result);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * first three pages of the PDF
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the processed file
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param result      bib result
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeader(
+        String inputFile,
+        String md5Str,
+        int consolidate,
+        boolean includeRawAffiliations,
+        BiblioItem result
+    ) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .startPage(0)
+            .endPage(2)
+            .consolidateHeader(consolidate)
+            .includeRawAffiliations(includeRawAffiliations)
+            .build();
+        return processHeader(inputFile, md5Str, config, result);
     }
 
     /**
@@ -359,16 +404,23 @@ public class Engine implements Closeable {
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
+     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @param result      bib result
      *
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
     public String processHeader(String inputFile, int consolidate, BiblioItem result) {
-        return processHeader(inputFile, GrobidAnalysisConfig.defaultInstance(), result);
+        return processHeader(inputFile, null, GrobidAnalysisConfig.defaultInstance(), result);
     }
 
     public String processHeader(String inputFile, GrobidAnalysisConfig config, BiblioItem result) {
+        return processHeader(inputFile, null, config, result);
+    }
+
+    public String processHeader(String inputFile, String md5Str, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still
@@ -376,7 +428,7 @@ public class Engine implements Closeable {
         if (result == null) {
             result = new BiblioItem();
         }
-        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(new File(inputFile), result, config);
+        Pair<String, Document> resultTEI = parsers.getHeaderParser().processing(new File(inputFile), md5Str, result, config);
         return resultTEI.getLeft();
     }
 
@@ -438,16 +490,35 @@ public class Engine implements Closeable {
      */
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, config).getTei();
+        return fullTextToTEIDoc(inputFile, null, config).getTei();
+    }
+
+    /**
+     *
+     * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
+     * Parse and convert the current article into TEI, this method performs the
+     * whole parsing and conversion process. If onlyHeader is true, than only
+     * the tei header data will be created.
+     *
+     * @param inputFile            - absolute path to the pdf to be processed
+     * @param md5Str               - MD5 digest of the PDF file to be processed
+     * @param config               - Grobid config
+     * @return the resulting structured document as a TEI string.
+     */
+    public String fullTextToTEI(File inputFile,
+                                String md5Str,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(inputFile, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
+                                     String md5Str,
                                      GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, config);
+        resultDoc = fullTextParser.processing(inputFile, md5Str, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
 			+ (System.currentTimeMillis() - time) + "ms");
         return resultDoc;

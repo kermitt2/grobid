@@ -1570,4 +1570,11 @@ public class Document implements Serializable {
     public void setByteSize(double size) {
         byteSize = size;
     }
+
+    public String getMD5() {
+        if (documentSource != null)
+            return documentSource.getMD5();
+        else
+            return null;
+    }
 }
