@@ -19,10 +19,10 @@ public class PragmaticSentenceDetectorTest {
     }
 
     @Test
-    public void testGetSentenceSpans() {
+    public void testGetSentenceOffsets() {
         String original_text = "This is the original text.   Some spaces are going to be removed.";
         List<String> sentences = Arrays.asList("This is the original text.", "Some spaces are going to be removed.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(2));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -32,10 +32,10 @@ public class PragmaticSentenceDetectorTest {
     }
 
     @Test
-    public void testGetSentenceSpanMismatchFirstSentence() {
+    public void testGetSentenceOffsetsMismatchFirstSentence() {
         String original_text = "This is the   original text.   Some spaces are going to be removed.";
         List<String> sentences = Arrays.asList("This is the original text.", "Some spaces are going to be removed.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(2));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -48,10 +48,10 @@ public class PragmaticSentenceDetectorTest {
 
 
     @Test
-    public void testGetSentenceSpanMismatchSecondSentence() {
+    public void testGetSentenceOffsetsMismatchSecondSentence() {
         String original_text = "This is the original text.   Some spaces are    going to be removed.";
         List<String> sentences = Arrays.asList("This is the original text.", "Some spaces are going to be removed.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(2));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -63,10 +63,10 @@ public class PragmaticSentenceDetectorTest {
     }
 
     @Test
-    public void testGetSentenceSpanMismatchSecondSentence_sameSentence() {
+    public void testGetSentenceOffsetsMismatchSecondSentence_sameSentence() {
         String original_text = "This is the original text.   This is the    original text.";
         List<String> sentences = Arrays.asList("This is the original text.", "This is the    original text.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(2));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -78,10 +78,10 @@ public class PragmaticSentenceDetectorTest {
     }
 
     @Test
-    public void testGetSentenceSpanMismatchAllSentences() {
+    public void testGetSentenceOffsetsMismatchAllSentences() {
         String original_text = "This is the    original text.   Some spaces are    going to be removed.";
         List<String> sentences = Arrays.asList("This is the original text.", "Some spaces are going to be removed.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(2));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -93,10 +93,10 @@ public class PragmaticSentenceDetectorTest {
     }
 
     @Test
-    public void testGetSentenceSpanMismatch_realCase() {
+    public void testGetSentenceOffsetsMismatch_realCase() {
         String original_text = "Figure 5 shows the time evolution of the volumeaveraged rms density fluctuations (normalized to the mean  density) in our thermal balance runs. Most of these runs show two stages of evolution -the first being a turbulent steady state and the second reflecting thermal instability that leads to multiphase condensation. The first stage occurs after an eddy turnover time scale for most of our runs. It depends on the amplitude of forcing, and thus on the parameter f turb (the fraction of turbulent heating). The second stage of evolution has much higher density fluctuations ( δρ rms / ρ ≥ 1). In this stage, the gas separates into hot and cold phases due to thermal instability. The multiphase gas formation time scale (t mp ) is very different for different parameter choices.";
         List<String> sentences = Arrays.asList("Figure 5 shows the time evolution of the volumeaveraged rms density fluctuations (normalized to the mean density) in our thermal balance runs.");
-        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceSpans(original_text, sentences);
+        List<OffsetPosition> sentence_spans = PragmaticSentenceDetector.getSentenceOffsets(original_text, sentences);
 
         assertThat(sentence_spans, hasSize(1));
         assertThat(sentence_spans.get(0).start, is(0));
@@ -135,5 +135,51 @@ public class PragmaticSentenceDetectorTest {
 
         assertThat(inText.getRight(), is(0));
         assertThat(inText.getLeft(), is("In two species of toads and in Salamandra, which are among the most terrestrial of lissamphibians, SF were developed more prominently (i.e. the fibres were thicker and covered greater area of the section) than in species spending more time in water, such as the fire-bellied toads (compare Fig. 4b, c, g with a)."));
+    }
+
+    @Test
+    public void testGetSentenceOffsets_realcase_2() throws Exception {
+
+        String originalText = "With the success of large-scale pre-training and multilingual modeling in Natural Language Processing (NLP), recent years have seen a proliferation of large, web-mined text datasets covering hundreds of languages. However, to date there has been no systematic analysis of the quality of these publicly available datasets, or whether the datasets actually contain content in the languages they claim to represent. In this work, we manually audit the quality of 205 languagespecific corpora released with five major public datasets (CCAligned, ParaCrawl, WikiMatrix, OSCAR, mC4), and audit the correctness of language codes in a sixth (JW300). We find that lower-resource corpora have systematic issues: at least 15 corpora are completely erroneous, and a significant fraction contains less than 50% sentences of acceptable quality. Similarly, we find 82 corpora that are mislabeled or use nonstandard/ambiguous language codes. We demonstrate that these issues are easy to detect even for non-speakers of the languages in question, and supplement the human judgements with automatic analyses. Inspired by our analysis, we recommend techniques to evaluate and improve multilingual corpora and discuss the risks that come with low-quality data releases.";
+
+        List<String> sentences = Arrays.asList(
+            "With the success of large-scale pre-training and multilingual modeling in Natural Language Processing (NLP), recent years have seen a proliferation of large, web-mined text datasets covering hundreds of languages.",
+            "However, to date there has been no systematic analysis of the quality of these publicly available datasets, or whether the datasets actually contain content in the languages they claim to represent.",
+            "In this work, we manually audit the quality of 205 languagespecific corpora released with five major public datasets (CCAligned, ParaCrawl, WikiMatrix, OSCAR, mC4), and audit the correctness of language codes in a sixth (JW300).",
+            "We find that lower-resource corpora have systematic issues: at least 15 corpora are completely erroneous, and a significant fraction contains less than 50% sentences of acceptable quality.",
+            "Similarly, we find 82 corpora that are mislabeled or use nonstandard/ambiguous language codes.",
+            "We demonstrate that these issues are easy to detect even for non-speakers of the languages in question, and supplement the human judgements with automatic analyses.",
+            "Inspired by our analysis, we recommend techniques to evaluate and improve multilingual corpora and discuss the risks that come with low-quality data releases."
+        );
+        List<OffsetPosition> sentenceSpans = PragmaticSentenceDetector.getSentenceOffsets(originalText, sentences);
+
+        assertThat(sentenceSpans, hasSize(7));
+        for (int i = 0; i < sentenceSpans.size(); i++) {
+            assertThat(originalText.substring(sentenceSpans.get(i).start, sentenceSpans.get(i).end), is(sentences.get(i)));
+        }
+
+    }
+
+    @Test
+    public void testGetSentenceOffsets_realcase_3() throws Exception {
+
+        String originalText = "CCAligned ) is a 119language 1 parallel dataset built off 68 snapshots of Common Crawl. Documents are aligned if they are in the same language according to FastText LangID (Joulin et al., 2016(Joulin et al., , 2017, and have the same URL but for a differing language code. These alignments are refined with cross-lingual LASER embeddings (Artetxe and Schwenk, 2019). For sentence-level data, they split on newlines and align with LASER, but perform no further filtering. Human annotators evaluated the quality of document alignments for six languages (de, zh, ar, ro, et, my) selected for their different scripts and amount of retrieved documents, reporting precision of over 90%. The quality of the extracted parallel sentences is evaluated in a machine translation (MT) task on six European (da, cr, sl, sk, lt, et) languages of the TED corpus (Qi et al., 2018)   (Qi et al., 2018); WMT-5: cs, de, fi, lv, ro. POS/DEP-5: part-of-speech labeling and dependency parsing for bg, ca, da, fi, id.";
+
+        List<String> sentences = Arrays.asList(
+            "CCAligned ) is a 119language 1 parallel dataset built off 68 snapshots of Common Crawl.",
+            "Documents are aligned if they are in the same language according to FastText LangID (Joulin et al., 2016(Joulin et al., , 2017, and have the same URL but for a differing language code.",
+            "These alignments are refined with cross-lingual LASER embeddings (Artetxe and Schwenk, 2019).",
+            "For sentence-level data, they split on newlines and align with LASER, but perform no further filtering.",
+            "Human annotators evaluated the quality of document alignments for six languages (de, zh, ar, ro, et, my) selected for their different scripts and amount of retrieved documents, reporting precision of over 90%.",
+            "The quality of the extracted parallel sentences is evaluated in a machine translation (MT) task on six European (da, cr, sl, sk, lt, et) languages of the TED corpus (Qi et al., 2018)   (Qi et al., 2018); WMT-5: cs, de, fi, lv, ro.",
+            "POS/DEP-5: part-of-speech labeling and dependency parsing for bg, ca, da, fi, id."
+        );
+        List<OffsetPosition> sentenceSpans = PragmaticSentenceDetector.getSentenceOffsets(originalText, sentences);
+
+        assertThat(sentenceSpans, hasSize(7));
+        for (int i = 0; i < sentenceSpans.size(); i++) {
+            assertThat(originalText.substring(sentenceSpans.get(i).start, sentenceSpans.get(i).end), is(sentences.get(i)));
+        }
+
     }
 }

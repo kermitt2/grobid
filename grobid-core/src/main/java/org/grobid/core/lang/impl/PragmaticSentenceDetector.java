@@ -144,7 +144,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             if (previousEnd > -1) {
                 start = text.indexOf(sentenceClean, previousEnd);
             } else {
-                text.indexOf(sentenceClean);
+                start = text.indexOf(sentenceClean);
             }
 
 

@@ -14,7 +14,7 @@ public interface SentenceDetector {
      * @return a list of offset positions indicating start and end character 
      *         position of the recognized sentence in the text
      */
-    public List<OffsetPosition> detect(String text);
+    List<OffsetPosition> detect(String text);
 
 
     /**
@@ -24,5 +24,5 @@ public interface SentenceDetector {
      * @return a list of offset positions indicating start and end character 
      *         position of the recognized sentence in the text
      */
-    public List<OffsetPosition> detect(String text, Language lang);
+    List<OffsetPosition> detect(String text, Language lang);
 }
