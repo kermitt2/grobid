@@ -172,7 +172,7 @@ public class HeaderParser extends AbstractParser {
                 if (isNotEmpty(authorLayoutTokens)) {
                     // split the list of layout tokens when token "\t" is met
                     List<LayoutToken> currentSegment = new ArrayList<>();
-                    for (LayoutToken theToken : authorLayoutTokens) {
+                    for(LayoutToken theToken : authorLayoutTokens) {
                         if (theToken.getText() != null && theToken.getText().equals("\t")) {
                             if (currentSegment.size() > 0)
                                 authorSegments.add(currentSegment);
@@ -209,7 +209,7 @@ public class HeaderParser extends AbstractParser {
                 resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
 
                 resHeader.setFullAffiliations(
-                    parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                 resHeader.attachEmails();
                 boolean attached = false;
                 if (fragmentedAuthors && !hasMarker) {
@@ -330,7 +330,7 @@ public class HeaderParser extends AbstractParser {
      * Return the header section with features to be processed by the sequence labelling model
      */
     public Pair<String, List<LayoutToken>> getSectionHeaderFeatured(Document doc,
-                                                                    SortedSet<DocumentPiece> documentHeaderParts) {
+                                           SortedSet<DocumentPiece> documentHeaderParts) {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
         StringBuilder header = new StringBuilder();
         String currentFont = null;
@@ -371,7 +371,7 @@ public class HeaderParser extends AbstractParser {
                     continue;
                 }
 
-                for (LayoutToken token : tokens) {
+                for(LayoutToken token : tokens) {
                     if (token.getFontSize() > largestFontSize) {
                         largestFontSize = token.getFontSize();
                     }
@@ -426,15 +426,15 @@ public class HeaderParser extends AbstractParser {
 
                 // character density of the block
                 double density = 0.0;
-                if ((block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
-                    (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
-                    (!block.getText().contains("@IMAGE")))
-                    density = (double) block.getText().length() / (block.getHeight() * block.getWidth());
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
+                     (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
+                     (!block.getText().contains("@IMAGE")) )
+                    density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
                 String[] lines = localText.split("[\\n\\r]");
                 // set the max length of the lines in the block, in number of characters
                 int maxLineLength = 0;
-                for (int p = 0; p < lines.length; p++) {
+                for(int p=0; p<lines.length; p++) {
                     if (lines[p].length() > maxLineLength)
                         maxLineLength = lines[p].length();
                 }
@@ -496,13 +496,13 @@ public class HeaderParser extends AbstractParser {
                                 // Indentation if line start is > 1 character width to the right of previous line start
                                 if (lineStartX - previousLineStartX > characterWidth)
                                     indented = true;
-                                    // Indentation ends if line start is > 1 character width to the left of previous line start
+                                // Indentation ends if line start is > 1 character width to the left of previous line start
                                 else if (previousLineStartX - lineStartX > characterWidth)
                                     indented = false;
                                 // Otherwise indentation is unchanged
                             }
                         }
-                    } else {
+                    } else{
                         newline = false;
                     }
                     // centered ?
@@ -548,7 +548,7 @@ public class HeaderParser extends AbstractParser {
                         // beginning of block
                         features.lineStatus = "LINESTART";
                         features.blockStatus = "BLOCKSTART";
-                    } else if ((n == tokens.size() - 1) || (n + 1 > dp2.getTokenDocPos() - block.getStartToken())) {
+                    } else if ((n == tokens.size() - 1) || (n+1 > dp2.getTokenDocPos() - block.getStartToken())) {
                         // end of block
                         features.lineStatus = "LINEEND";
                         previousNewline = true;
@@ -570,14 +570,14 @@ public class HeaderParser extends AbstractParser {
                                         endloop = true;
                                     } else {
                                         if ((toto.trim().length() != 0)
-                                            && (!text.equals("\u00A0"))
-                                            && (!(toto.contains("@IMAGE")))
-                                            && (!(toto.contains("@PAGE")))
-                                            && (!text.contains(".pbm"))
-                                            && (!text.contains(".ppm"))
-                                            && (!text.contains(".png"))
-                                            && (!text.contains(".svg"))
-                                            && (!text.contains(".jpg"))) {
+                                                && (!text.equals("\u00A0"))
+                                                && (!(toto.contains("@IMAGE")))
+                                                && (!(toto.contains("@PAGE")))
+                                                && (!text.contains(".pbm"))
+                                                && (!text.contains(".ppm"))
+                                                && (!text.contains(".png"))
+                                                && (!text.contains(".svg"))
+                                                && (!text.contains(".jpg"))) {
                                             endloop = true;
                                         }
                                     }
@@ -607,7 +607,8 @@ public class HeaderParser extends AbstractParser {
 
                     if (indented) {
                         features.alignmentStatus = "LINEINDENT";
-                    } else {
+                    }
+                    else {
                         features.alignmentStatus = "ALIGNEDLEFT";
                     }
 
@@ -651,7 +652,7 @@ public class HeaderParser extends AbstractParser {
 
                     // check token offsets for email and http address, or known location
                     if (locationPositions != null) {
-                        for (OffsetPosition thePosition : locationPositions) {
+                        for(OffsetPosition thePosition : locationPositions) {
                             if (n >= thePosition.start && n <= thePosition.end) {
                                 features.locationName = true;
                                 break;
@@ -659,7 +660,7 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
                     if (emailPositions != null) {
-                        for (OffsetPosition thePosition : emailPositions) {
+                        for(OffsetPosition thePosition : emailPositions) {
                             if (n >= thePosition.start && n <= thePosition.end) {
                                 features.email = true;
                                 break;
@@ -667,7 +668,7 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
                     if (urlPositions != null) {
-                        for (OffsetPosition thePosition : urlPositions) {
+                        for(OffsetPosition thePosition : urlPositions) {
                             if (n >= thePosition.start && n <= thePosition.end) {
                                 features.http = true;
                                 break;
@@ -727,7 +728,7 @@ public class HeaderParser extends AbstractParser {
 
                     if (density != -1.0) {
                         features.characterDensity = featureFactory
-                            .linearScaling(density - doc.getMinCharacterDensity(), doc.getMaxCharacterDensity() - doc.getMinCharacterDensity(), NBBINS_DENSITY);
+                            .linearScaling(density-doc.getMinCharacterDensity(), doc.getMaxCharacterDensity()-doc.getMinCharacterDensity(), NBBINS_DENSITY);
 //System.out.println((density-doc.getMinCharacterDensity()) + " " + (doc.getMaxCharacterDensity()-doc.getMinCharacterDensity()) + " " + NBBINS_DENSITY + " " + features.characterDensity);             
                     }
 
@@ -812,7 +813,8 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setLocation(clusterContent);
 
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
+            }*/
+            else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
 
                 if (biblio.getMeeting() != null) {
                     biblio.setMeeting(biblio.getMeeting() + ", " + clusterContent);
@@ -1047,7 +1049,7 @@ public class HeaderParser extends AbstractParser {
         existingContentSimplified = existingContentSimplified.replace("-", "").trim();
         if (newContentSimplified.equals(existingContentSimplified) ||
             existingContentSimplified.indexOf(newContentSimplified) != -1
-        )
+            )
             return false;
         else
             return true;
@@ -1105,7 +1107,7 @@ public class HeaderParser extends AbstractParser {
                     while ((!strop) && (p < tokenizations.size())) {
                         String tokOriginal = tokenizations.get(p).t();
                         if (tokOriginal.equals(" ")
-                            || tokOriginal.equals("\u00A0")) {
+                                || tokOriginal.equals("\u00A0")) {
                             addSpace = true;
                         } else if (tokOriginal.equals(s)) {
                             strop = true;
