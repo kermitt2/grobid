@@ -92,7 +92,7 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * Header processing after application of the segmentation model
+     * Header processing after application of the segmentation model 
      */
     public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
         try {
@@ -299,9 +299,9 @@ public class HeaderParser extends AbstractParser {
                     TEIFormatter teiFormatter = new TEIFormatter(doc, null);
                     StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
                     tei.append("\t</text>\n");
-                    tei.append("</TEI>\n");
+                    tei.append("</TEI>\n");                
                     return tei.toString();
-                } else
+                } else 
                     return null;
             }
         } catch (Exception e) {
@@ -310,6 +310,9 @@ public class HeaderParser extends AbstractParser {
         return null;
     }
 
+    /**
+     * Return the date, normalised using the DateParser
+     */
     private Optional<Date> getNormalizedDate(String rawDate) {
         if (rawDate != null) {
             List<Date> dates = parsers.getDateParser().processing(rawDate);
@@ -339,7 +342,7 @@ public class HeaderParser extends AbstractParser {
         // vector for features
         FeaturesVectorHeader features;
         FeaturesVectorHeader previousFeatures = null;
-
+        
         double lineStartX = Double.NaN;
         boolean indented = false;
         boolean centered = false;
@@ -426,8 +429,8 @@ public class HeaderParser extends AbstractParser {
 
                 // character density of the block
                 double density = 0.0;
-                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) &&
-                     (block.getText() != null) && (!block.getText().contains("@PAGE")) &&
+                if ( (block.getHeight() != 0.0) && (block.getWidth() != 0.0) && 
+                     (block.getText() != null) && (!block.getText().contains("@PAGE")) && 
                      (!block.getText().contains("@IMAGE")) )
                     density = (double)block.getText().length() / (block.getHeight() * block.getWidth());
 
@@ -435,7 +438,7 @@ public class HeaderParser extends AbstractParser {
                 // set the max length of the lines in the block, in number of characters
                 int maxLineLength = 0;
                 for(int p=0; p<lines.length; p++) {
-                    if (lines[p].length() > maxLineLength)
+                    if (lines[p].length() > maxLineLength) 
                         maxLineLength = lines[p].length();
                 }
 
@@ -483,7 +486,7 @@ public class HeaderParser extends AbstractParser {
                         newline = false;
                         n++;
                         continue;
-                    }
+                    } 
 
                     if (previousNewline) {
                         newline = true;
@@ -520,7 +523,7 @@ public class HeaderParser extends AbstractParser {
 
                     if (newline)
                         features.lineStatus = "LINESTART";
-
+                    
                     Matcher m0 = featureFactory.isPunct.matcher(text);
                     if (m0.find()) {
                         features.punctType = "PUNCT";
@@ -653,26 +656,26 @@ public class HeaderParser extends AbstractParser {
                     // check token offsets for email and http address, or known location
                     if (locationPositions != null) {
                         for(OffsetPosition thePosition : locationPositions) {
-                            if (n >= thePosition.start && n <= thePosition.end) {
+                            if (n >= thePosition.start && n <= thePosition.end) {    
                                 features.locationName = true;
                                 break;
-                            }
+                            } 
                         }
                     }
                     if (emailPositions != null) {
                         for(OffsetPosition thePosition : emailPositions) {
-                            if (n >= thePosition.start && n <= thePosition.end) {
+                            if (n >= thePosition.start && n <= thePosition.end) {   
                                 features.email = true;
                                 break;
-                            }
+                            } 
                         }
                     }
                     if (urlPositions != null) {
                         for(OffsetPosition thePosition : urlPositions) {
-                            if (n >= thePosition.start && n <= thePosition.end) {
+                            if (n >= thePosition.start && n <= thePosition.end) {     
                                 features.http = true;
                                 break;
-                            }
+                            } 
                         }
                     }
 
@@ -703,7 +706,7 @@ public class HeaderParser extends AbstractParser {
                         features.largestFont = true;
                     if (token.getFontSize() == smallestFontSize)
                         features.smallestFont = true;
-                    if (token.getFontSize() > averageFontSize)
+                    if (token.getFontSize() > averageFontSize) 
                         features.largerThanAverageFont = true;
 
                     if (token.getBold())
@@ -747,14 +750,14 @@ public class HeaderParser extends AbstractParser {
                 }
             }
 
-
+            
         }
 
         return Pair.of(header.toString(), headerTokenizations);
     }
 
     /**
-     * Extract results from a labelled header.
+     * Extract results from a labelled header. 
      *
      * @param result        result
      * @param tokenizations list of tokens
@@ -813,7 +816,7 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setLocation(clusterContent);
 
-            }*/
+            }*/ 
             else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
 
                 if (biblio.getMeeting() != null) {
@@ -830,7 +833,7 @@ public class HeaderParser extends AbstractParser {
 
                 /*if (biblio.getPublicationDate() != null && isDifferentandNotIncludedContent(biblio.getPublicationDate(), clusterContent)) 
                     biblio.setPublicationDate(biblio.getPublicationDate() + " " + clusterContent);
-                else*/
+                else*/ 
                 // for checking if the date is a server date, we simply look at the string
                 /*if (biblio.getServerDate() == null) {
                     if (clusterContent.toLowerCase().indexOf("server") != -1) {
@@ -864,8 +867,8 @@ public class HeaderParser extends AbstractParser {
             }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
                 /*if (biblio.getPageRange() != null) {
                     biblio.setPageRange(biblio.getPageRange() + clusterContent);
-                }*/
-                if (biblio.getPageRange() == null)
+                }*/ 
+                if (biblio.getPageRange() == null) 
                     biblio.setPageRange(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
                 if (biblio.getEditors() != null) {
@@ -992,7 +995,7 @@ public class HeaderParser extends AbstractParser {
                 /*if (biblio.getPublisher() != null && isDifferentandNotIncludedContent(biblio.getPublisher(), clusterContent)) {
                     biblio.setPublisher(biblio.getPublisher() + " " + clusterContent);
                 }*/
-                if (biblio.getPublisher() == null)
+                if (biblio.getPublisher() == null)  
                     biblio.setPublisher(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_JOURNAL)) {
                 /*if (biblio.getJournal() != null && isDifferentandNotIncludedContent(biblio.getJournal(), clusterContent)) {
@@ -1009,7 +1012,7 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * In the context of field extraction, check if a newly extracted content is not redundant
+     * In the context of field extraction, check if a newly extracted content is not redundant 
      * with the already extracted content
      */
     private boolean isDifferentContent(String existingContent, String newContent) {
@@ -1030,8 +1033,8 @@ public class HeaderParser extends AbstractParser {
     }
 
     /**
-     * In the context of field extraction, this variant of the previous method check if a newly
-     * extracted content is not redundant globally and as any substring combination with the already
+     * In the context of field extraction, this variant of the previous method check if a newly 
+     * extracted content is not redundant globally and as any substring combination with the already 
      * extracted content
      */
     private boolean isDifferentandNotIncludedContent(String existingContent, String newContent) {
@@ -1047,7 +1050,7 @@ public class HeaderParser extends AbstractParser {
         String existingContentSimplified = existingContent.toLowerCase();
         existingContentSimplified = existingContentSimplified.replace(" ", "").trim();
         existingContentSimplified = existingContentSimplified.replace("-", "").trim();
-        if (newContentSimplified.equals(existingContentSimplified) ||
+        if (newContentSimplified.equals(existingContentSimplified) || 
             existingContentSimplified.indexOf(newContentSimplified) != -1
             )
             return false;
