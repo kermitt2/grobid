@@ -149,6 +149,14 @@ public class GrobidProperties {
     }
 
     /**
+     * For back compatibility
+     */
+    @Deprecated
+    public static File get_GROBID_HOME_PATH() {
+        return grobidHome;
+    }
+
+    /**
      * Set the grobid-home path.
      */
     public static void setGrobidHome(final String pGROBID_HOME_PATH) {
