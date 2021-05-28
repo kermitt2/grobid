@@ -98,11 +98,21 @@ public class FullTextParser extends AbstractParser {
         tmpPath = GrobidProperties.getTempPath();
     }
 
+    public Document processing(File inputPdf,
+                               GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        return processing(documentSource, config);
+    }
+
 	public Document processing(File inputPdf,
+                               String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
 				config.getPdfAssetPath() != null, true, false);
+        documentSource.setMD5(md5Str);
 		return processing(documentSource, config);
 	}
 

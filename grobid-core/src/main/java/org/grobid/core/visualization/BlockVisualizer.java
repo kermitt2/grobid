@@ -34,7 +34,7 @@ import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
  */
 public class BlockVisualizer {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         try {
             File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
 
@@ -49,13 +49,11 @@ public class BlockVisualizer {
                     .pdfAssetPath(new File("/tmp/x"))
                     .build();
 
-//            File tempFile = File.createTempFile("temp", ".xml", new File("/tmp"));
             DocumentSource documentSource = DocumentSource.fromPdf(input);
 
             Document teiDoc = engine.fullTextToTEIDoc(input, config);
 
             PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, false, true);
-//            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
 
             if (out != null) {
                 out.save(outPdf);
@@ -70,7 +68,7 @@ public class BlockVisualizer {
             System.exit(1);
         }
 
-    }
+    }*/
 
     public static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc,
                                             boolean visualizeBlocks,

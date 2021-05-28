@@ -631,6 +631,10 @@ public class TEIFormatter {
             tei.append("\t\t\t\t\t</monogr>\n");
         }
 
+        if (!StringUtils.isEmpty(doc.getMD5())) {
+            tei.append("\t\t\t\t\t<idno type=\"MD5\">" + doc.getMD5() + "</idno>\n");
+        }
+
         if (!StringUtils.isEmpty(biblio.getDOI())) {
             String theDOI = TextUtilities.HTMLEncode(biblio.getDOI());
             if (theDOI.endsWith(".xml")) {

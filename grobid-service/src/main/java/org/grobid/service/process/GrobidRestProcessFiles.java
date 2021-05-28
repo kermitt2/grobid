@@ -34,6 +34,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import javax.xml.bind.DatatypeConverter;
 
 /**
  * Web services consuming a file
@@ -74,16 +77,24 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
             } 
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
             // starts conversion process
             retVal = engine.processHeader(
                 originFile.getAbsolutePath(),
+                md5Str,
                 consolidate,
                 includeRawAffiliations,
                 null
@@ -157,12 +168,18 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
             // starts conversion process
             GrobidAnalysisConfig config =
@@ -178,7 +195,7 @@ public class GrobidRestProcessFiles {
                     .withSentenceSegmentation(segmentSentences)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, config);
+            retVal = engine.fullTextToTEI(originFile, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
@@ -248,7 +265,11 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
@@ -257,6 +278,8 @@ public class GrobidRestProcessFiles {
 
             // set the path for the asset files
             assetPath = GrobidProperties.getTempPath().getPath() + File.separator + KeyGen.getKey();
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
             // starts conversion process
             GrobidAnalysisConfig config =
@@ -272,7 +295,7 @@ public class GrobidRestProcessFiles {
                     .withSentenceSegmentation(segmentSentences)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, config);
+            retVal = engine.fullTextToTEI(originFile, md5Str, config);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -497,15 +520,21 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
 
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
             // starts conversion process
-            List<BibDataSet> bibDataSetList = engine.processReferences(originFile, consolidate);
+            List<BibDataSet> bibDataSetList = engine.processReferences(originFile, md5Str, consolidate);
 
             if (bibDataSetList.isEmpty()) {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -662,12 +691,18 @@ public class GrobidRestProcessFiles {
                     "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
             }
 
-            originFile = IOUtilities.writeInputFile(inputStream);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
             if (originFile == null) {
                 LOGGER.error("The input file cannot be written.");
                 throw new GrobidServiceException(
                     "The input file cannot be written.", Status.INTERNAL_SERVER_ERROR);
             } 
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
             List<String> elementWithCoords = new ArrayList<>();
             elementWithCoords.add("ref");
@@ -680,7 +715,7 @@ public class GrobidRestProcessFiles {
                 .build();
 
             DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-            Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+            Document teiDoc = engine.fullTextToTEIDoc(originFile, md5Str, config);
             String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
 
             if (json != null) {
@@ -688,7 +723,6 @@ public class GrobidRestProcessFiles {
                     .ok()
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                     .entity(json)
-
                     .build();
             } else {
                 response = Response.status(Status.NO_CONTENT).build();

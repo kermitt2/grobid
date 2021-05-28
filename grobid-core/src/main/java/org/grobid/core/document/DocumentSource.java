@@ -33,6 +33,8 @@ public class DocumentSource {
     private File xmlFile;
     boolean cleanupXml = false;
 
+    private String md5Str = null;
+
     private DocumentSource() {
     }
 
@@ -387,6 +389,14 @@ public class DocumentSource {
         if (pdfFile != null)
             return pdfFile.length();
         return 0;
+    }
+
+    public String getMD5() {
+        return this.md5Str;
+    }
+
+    public void setMD5(String md5Str) {
+        this.md5Str = md5Str;
     }
 
 }
