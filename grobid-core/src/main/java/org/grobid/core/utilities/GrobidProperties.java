@@ -267,6 +267,15 @@ public class GrobidProperties {
     }
 
     /**
+     * Add a model with its parameter object in the model map
+     */
+    public static void addModel(ModelParameters modelParameter) {
+        if (modelMap == null) 
+            modelMap = new TreeMap<>();
+        modelMap.put(modelParameter.name, modelParameter);
+    }
+
+    /**
      * Create indicated tmp path if it does not exist
      */ 
     private void initializeTmpPath() {
