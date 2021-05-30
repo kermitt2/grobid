@@ -1,12 +1,12 @@
 grobid:
   # NOTE: change these values to absolute paths when running on production
-  grobidHome: "grobid-home"
+  grobidHome: ${GROBID__GROBID_HOME:- "grobid-home"}
   
   # how to load the models, 
   # false -> models are loaded when needed (default), avoiding putting in memory useless models
   # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
   # used will take some memory
-  modelPreload: false
+  modelPreload: ${GROBID__MODEL_PRELOAD:- false}
 
   # CORS configuration
   corsAllowedOrigins: "*"
