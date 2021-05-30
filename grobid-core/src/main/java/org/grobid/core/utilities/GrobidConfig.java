@@ -10,7 +10,7 @@ public class GrobidConfig {
 
     public GrobidParameters grobid;
 
-    static class GrobidParameters {
+    public static class GrobidParameters {
         public String grobidHome = "grobid-home";
         public String temp = "./tmp";
         public String nativelibrary = "./lib";
@@ -30,37 +30,37 @@ public class GrobidConfig {
         public List<ModelParameters> models;
     }
 
-    static class PdfParameters {
+    public static class PdfParameters {
         public PdfAltoParameters pdfalto;
         public int blocks_max = 100000;
         public int tokens_max = 1000000;
     }
 
-    static class PdfAltoParameters {
+    public static class PdfAltoParameters {
         public String path;
         public int memory_limit_mb = 6096;
         public int timeout_sec = 60;
     }
 
-    static class ConsolidationParameters {
+    public static class ConsolidationParameters {
         public String service;
         public HostParameters glutton;
         public CrossrefParameters crossref;
     }
 
-    static class CrossrefParameters {
+    public static class CrossrefParameters {
         public String mailto;
         public String token;
     }
 
-    static class HostParameters {
+    public static class HostParameters {
         public String type;
         public String host;
         public int port;
         public String url;
     }
     
-    static class DelftParameters {
+    public static class DelftParameters {
         /**
          * Generic parameters relative to the DeLFT engine
          */
@@ -68,7 +68,7 @@ public class GrobidConfig {
         public String python_virtualEnv;
     }
 
-    static class WapitiModelParameters {
+    public static class WapitiModelParameters {
         /**
          * Parameters relative to a specific Wapiti model
          */
@@ -77,7 +77,7 @@ public class GrobidConfig {
         public int nbMaxIterations = 2000;
     }
 
-    static class DelftModelParameters {
+    public static class DelftModelParameters {
         /**
          * Parameters relative to a specific DeLFT model (train and runtime)
          */
@@ -89,15 +89,15 @@ public class GrobidConfig {
         public DelftModelParameterSet runtime;
     }
 
-    static class DelftModelParameterSet {
+    public static class DelftModelParameterSet {
         /**
-         * Parameters relative to a specific DeLFT model and either trainng or runtime
+         * Parameters relative to a specific DeLFT model and either training or runtime
          */
         public int max_sequence_length = -1;
         public int batch_size = -1;
     }
 
-    static class ModelParameters {   
+    public static class ModelParameters {   
         public String name;   /* name of model */
         public String engine; /* value wapiti or delft */ 
 
