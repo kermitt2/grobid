@@ -38,7 +38,7 @@ public class LibraryLoader {
             LOGGER.info("Loading external native sequence labelling library");
             LOGGER.debug(getLibraryFolder());
 
-            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getDistinctModels();
+            Set<GrobidCRFEngine> distinctModels = GrobidProperties.getInstance().getDistinctModels();
             for(GrobidCRFEngine distinctModel : distinctModels) {
                 if (distinctModel != GrobidCRFEngine.CRFPP &&
                     distinctModel != GrobidCRFEngine.WAPITI &&

@@ -288,11 +288,13 @@ public class GrobidProperties {
     }
 
     /** 
-     * Return the distinct values of all the engines that are specified in the the config file 
+     * Return the distinct values of all the engines that are specified in the the model map
      */
     public static Set<GrobidCRFEngine> getDistinctModels() {
         Set<GrobidCRFEngine> distinctModels = new HashSet<>();
-        for(ModelParameters modelParameter : grobidConfig.grobid.models) {
+        for (Map.Entry<String, ModelParameters> entry : modelMap.entrySet()) {
+            ModelParameters modelParameter = entry.getValue();
+
             if (modelParameter.engine == null) {
                 // it should not happen normally
                 continue;
