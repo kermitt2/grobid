@@ -1,5 +1,7 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.StringUtils;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Date;
 import org.grobid.core.exceptions.GrobidException;
@@ -14,6 +16,8 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+
 /**
  * @author Patrice Lopez
  */
@@ -21,6 +25,10 @@ public class DateParser extends AbstractParser {
 
     public DateParser() {
         super(GrobidModels.DATE);
+    }
+
+    DateParser(GrobidModel model) {
+        super(model);
     }
 
     /**
@@ -62,8 +70,8 @@ public class DateParser extends AbstractParser {
                     if (date.isNotNull()) {
                         if (dates == null)
                             dates = new ArrayList<Date>();
-                        normalize(date);
-                        dates.add(date);
+                        Date normalisedDate = normalize(date);
+                        dates.add(normalisedDate);
                     }
                     date = new Date();
                     continue;
@@ -92,8 +100,8 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                normalize(date);
-                                dates.add(date);
+                                Date normalisedDate = normalize(date);
+                                dates.add(normalisedDate);
                             }
 
                             date = new Date();
@@ -119,8 +127,8 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                normalize(date);
-                                dates.add(date);
+                                Date normalizedDate = normalize(date);
+                                dates.add(normalizedDate);
                             }
 
                             date = new Date();
@@ -146,8 +154,8 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                normalize(date);
-                                dates.add(date);
+                                Date normalizedDate = normalize(date);
+                                dates.add(normalizedDate);
                             }
 
                             date = new Date();
@@ -171,9 +179,9 @@ public class DateParser extends AbstractParser {
             }
             if (date.isNotNull()) {
                 if (dates == null)
-                    dates = new ArrayList<Date>();
-                normalize(date);
-                dates.add(date);
+                    dates = new ArrayList<>();
+                Date normalizedDate = normalize(date);
+                dates.add(normalizedDate);
             }
 
         } catch (Exception e) {
@@ -210,9 +218,11 @@ public class DateParser extends AbstractParser {
 
     public static final Pattern[] months = {jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};
 
-    public void normalize(Date date) {
+    public Date normalize(Date date) {
+        Date normalizedDate = new Date();
+        
         // normalize day
-        if (date.getDayString() != null) {
+        if (isNotBlank(date.getDayString())) {
             StringBuilder dayStringBis = new StringBuilder();
             String dayString = date.getDayString().trim();
             for (int n = 0; n < dayString.length(); n++) {
@@ -223,27 +233,27 @@ public class DateParser extends AbstractParser {
             }
             try {
                 int day = Integer.parseInt(dayStringBis.toString());
-                date.setDay(day);
+                normalizedDate.setDay(day);
             } catch (Exception e) {
                 //e.printStackTrace();
             }
         }
 
         //normalize month
-        if (date.getMonthString() != null) {
+        if (isNotBlank(date.getMonthString())) {
             String month = date.getMonthString().trim();
             int n = 0;
             while (n < 12) {
                 Matcher ma = months[n].matcher(month);
                 if (ma.find()) {
-                    date.setMonth(n + 1);
+                    normalizedDate.setMonth(n + 1);
                     break;
                 }
                 n++;
             }
         }
 
-        if (date.getYearString() != null) {
+        if (StringUtils.isNotBlank(date.getYearString())) {
             StringBuilder yearStringBis = new StringBuilder();
             String yearString = date.getYearString().trim();
             for (int n = 0; n < yearString.length(); n++) {
@@ -259,7 +269,7 @@ public class DateParser extends AbstractParser {
                 } else if ((year >= 0) && (year < 20)) {
                     year = year + 2000;
                 }
-                date.setYear(year);
+                normalizedDate.setYear(year);
             } catch (Exception e) {
                 //e.printStackTrace();
             }
@@ -290,16 +300,61 @@ public class DateParser extends AbstractParser {
 
                 if (dayPart != -1 && monthPart != -1) {
                     if (dayPart > 0 && dayPart < 32 && monthPart > 0 && monthPart < 13) {
-                        date.setDay(dayPart);
-                        date.setDayString(theDayString);
-                        date.setMonth(monthPart);
-                        date.setMonthString(theMonthString);
-                        date.setYear(yearPart);
+                        normalizedDate.setDay(dayPart);
+                        normalizedDate.setDayString(theDayString);
+                        normalizedDate.setMonth(monthPart);
+                        normalizedDate.setMonthString(theMonthString);
+                        normalizedDate.setYear(yearPart);
                     }
                 }
             }
         }
+        
+        Date validatedDate = postValidate(normalizedDate);
+        
+        return validatedDate;
+            
     }
+
+    /**
+     * Simple and loose date validation, checking: 
+     *  - the year has not more than 4 digits
+     *  - the month and day has not more than 2 digits 
+     *  
+     *  Assuming that incomplete dates of any form and nature can pass by here, only the information that are "out of bounds" will be reverted.
+     *  
+     * @return the date where invalid information are removed or reverted
+     */
+    private static Date postValidate(Date originalDate) {
+        Date validatedDate = new Date();
+        
+        if (originalDate.getDay() > -1) {
+            if (String.valueOf(originalDate.getDay()).length() < 5) {
+                validatedDate.setDay(originalDate.getDay());
+                validatedDate.setDayString(String.valueOf(validatedDate.getDay()));
+
+            }
+        }
+
+        if (originalDate.getMonth() > -1) {
+            if (String.valueOf(originalDate.getMonth()).length() < 5) {
+                validatedDate.setMonth(originalDate.getMonth());
+                validatedDate.setMonthString(String.valueOf(validatedDate.getMonth()));
+            }
+        }
+        
+        if (originalDate.getYear() > -1) {
+            if (String.valueOf(originalDate.getYear()).length() < 5) {
+                validatedDate.setYear(originalDate.getYear());
+                validatedDate.setYearString(String.valueOf(validatedDate.getYear()));
+            }
+        }
+        
+        
+        
+        return validatedDate;
+    }
+    
 
 
     /**
