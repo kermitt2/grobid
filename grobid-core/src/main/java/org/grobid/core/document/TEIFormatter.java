@@ -105,6 +105,37 @@ public class TEIFormatter {
         return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, config);
     }
 
+    public static String toISOString(Date date) {
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+
+        String when = "";
+        if (year != -1) {
+            if (year <= 9)
+                when += "000" + year;
+            else if (year <= 99)
+                when += "00" + year;
+            else if (year <= 999)
+                when += "0" + year;
+            else
+                when += year;
+            if (month != -1) {
+                if (month <= 9)
+                    when += "-0" + month;
+                else
+                    when += "-" + month;
+                if (day != -1) {
+                    if (day <= 9)
+                        when += "-0" + day;
+                    else
+                        when += "-" + day;
+                }
+            }
+        }
+        return when;
+    }
+
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,

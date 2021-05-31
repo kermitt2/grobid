@@ -35,6 +35,7 @@ import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
+import static org.grobid.core.document.TEIFormatter.toISOString;
 
 /**
  * @author Patrice Lopez
@@ -273,24 +274,40 @@ public class HeaderParser extends AbstractParser {
 
                 // normalization of dates
                 if (resHeader != null) {
-                    Optional<Date> normalisedPublicationDate = getNormalizedDate(resHeader.getPublicationDate());
-                    if (normalisedPublicationDate.isPresent() && resHeader.getNormalizedPublicationDate() == null) {
-                        resHeader.setNormalizedPublicationDate(normalisedPublicationDate.get());
+                    if (resHeader.getNormalizedPublicationDate() == null) {
+                        Optional<Date> normalisedPublicationDate = getNormalizedDate(resHeader.getPublicationDate());
+                        if (normalisedPublicationDate.isPresent()) {
+                            resHeader.setNormalizedPublicationDate(normalisedPublicationDate.get());
+                        }
+                    } else {
+                        resHeader.setPublicationDate(toISOString(resHeader.getNormalizedPublicationDate()));
                     }
 
-                    Optional<Date> normalizedSubmissionDate = getNormalizedDate(resHeader.getSubmissionDate());
-                    if (normalizedSubmissionDate.isPresent() && resHeader.getNormalizedPublicationDate() == null) {
-                        resHeader.setNormalizedSubmissionDate(normalizedSubmissionDate.get());
+                    if (resHeader.getNormalizedSubmissionDate() == null) {
+                        Optional<Date> normalizedSubmissionDate = getNormalizedDate(resHeader.getSubmissionDate());
+                        if(normalizedSubmissionDate.isPresent()) {
+                            resHeader.setNormalizedSubmissionDate(normalizedSubmissionDate.get());
+                        }
+                    } else {
+                        resHeader.setSubmissionDate(toISOString(resHeader.getNormalizedSubmissionDate()));
                     }
 
-                    Optional<Date> normalizedDownloadDate = getNormalizedDate(resHeader.getDownloadDate());
-                    if (normalizedDownloadDate.isPresent() && resHeader.getNormalizedPublicationDate() == null) {
-                        resHeader.setNormalizedDownloadDate(normalizedDownloadDate.get());
+                    if (resHeader.getNormalizedDownloadDate() == null) {
+                        Optional<Date> normalizedDownloadDate = getNormalizedDate(resHeader.getDownloadDate());
+                        if (normalizedDownloadDate.isPresent()) {
+                            resHeader.setNormalizedDownloadDate(normalizedDownloadDate.get());
+                        }
+                    }else {
+                        resHeader.setDownloadDate(toISOString(resHeader.getNormalizedDownloadDate()));
                     }                    
                     
-                    Optional<Date> normalizedServerDate = getNormalizedDate(resHeader.getServerDate());
-                    if (normalizedServerDate.isPresent() && resHeader.getNormalizedPublicationDate() == null) {
-                        resHeader.setNormalizedServerDate(normalizedServerDate.get());
+                    if (resHeader.getNormalizedServerDate() == null) {
+                        Optional<Date> normalizedServerDate = getNormalizedDate(resHeader.getServerDate());
+                        if(normalizedServerDate.isPresent()) {
+                            resHeader.setNormalizedServerDate(normalizedServerDate.get());
+                        }
+                    } else {
+                        resHeader.setServerDate(toISOString(resHeader.getNormalizedServerDate()));
                     }
                 }
 
