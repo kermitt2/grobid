@@ -1067,8 +1067,8 @@ public class HeaderParser extends AbstractParser {
         String existingContentSimplified = existingContent.toLowerCase();
         existingContentSimplified = existingContentSimplified.replace(" ", "").trim();
         existingContentSimplified = existingContentSimplified.replace("-", "").trim();
-        if (newContentSimplified.equals(existingContentSimplified) || 
-            existingContentSimplified.indexOf(newContentSimplified) != -1
+        if (newContentSimplified.equals(existingContentSimplified) ||
+            existingContentSimplified.contains(newContentSimplified)
             )
             return false;
         else

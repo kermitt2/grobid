@@ -4,10 +4,11 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Date;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorDate;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -82,10 +83,10 @@ public class DateParser extends AbstractParser {
                     i++;
                 }
 
-                if (s1.equals("<year>") || s1.equals("I-<year>")) {
+                if ("<year>".equals(s1) || "I-<year>".equals(s1)) {
                     if (date.getYearString() != null) {
                         if ((s1.equals("I-<year>")) ||
-                                (!s1.equals(lastTag) && !lastTag.equals("I-<year>"))
+                                (!s1.equals(lastTag) && !"I-<year>".equals(lastTag))
                                 ) {
                             // new date
                             if (date.isNotNull()) {
@@ -109,10 +110,10 @@ public class DateParser extends AbstractParser {
                     } else {
                         date.setYearString(s2);
                     }
-                } else if (s1.equals("<month>") || s1.equals("I-<month>")) {
+                } else if ("<month>".equals(s1) || "I-<month>".equals(s1)) {
                     if (date.getMonthString() != null) {
                         if ((s1.equals("I-<month>")) ||
-                                (!s1.equals(lastTag) && !lastTag.equals("I-<month>"))
+                                (!s1.equals(lastTag) && !"I-<month>".equals(lastTag))
                                 ) {
                             // new date
                             if (date.isNotNull()) {
@@ -136,10 +137,10 @@ public class DateParser extends AbstractParser {
                     } else {
                         date.setMonthString(s2);
                     }
-                } else if (s1.equals("<day>") || s1.equals("I-<day>")) {
+                } else if ("<day>".equals(s1) || "I-<day>".equals(s1)) {
                     if (date.getDayString() != null) {
                         if ((s1.equals("I-<day>")) ||
-                                (!s1.equals(lastTag) && !lastTag.equals("I-<day>"))
+                                (!s1.equals(lastTag) && !"I-<day>".equals(lastTag))
                                 ) {
                             // new date
                             if (date.isNotNull()) {
@@ -212,16 +213,16 @@ public class DateParser extends AbstractParser {
     public void normalize(Date date) {
         // normalize day
         if (date.getDayString() != null) {
-            String dayStringBis = "";
+            StringBuilder dayStringBis = new StringBuilder();
             String dayString = date.getDayString().trim();
             for (int n = 0; n < dayString.length(); n++) {
                 char c = dayString.charAt(n);
                 if (Character.isDigit(c)) {
-                    dayStringBis += c;
+                    dayStringBis.append(c);
                 }
             }
             try {
-                int day = Integer.parseInt(dayStringBis);
+                int day = Integer.parseInt(dayStringBis.toString());
                 date.setDay(day);
             } catch (Exception e) {
                 //e.printStackTrace();
@@ -243,16 +244,16 @@ public class DateParser extends AbstractParser {
         }
 
         if (date.getYearString() != null) {
-            String yearStringBis = "";
+            StringBuilder yearStringBis = new StringBuilder();
             String yearString = date.getYearString().trim();
             for (int n = 0; n < yearString.length(); n++) {
                 char c = yearString.charAt(n);
                 if (Character.isDigit(c)) {
-                    yearStringBis += c;
+                    yearStringBis.append(c);
                 }
             }
             try {
-                int year = Integer.parseInt(yearStringBis);
+                int year = Integer.parseInt(yearStringBis.toString());
                 if ((year >= 20) && (year < 100)) {
                     year = year + 1900;
                 } else if ((year >= 0) && (year < 20)) {
@@ -267,7 +268,7 @@ public class DateParser extends AbstractParser {
         // if we don't have day and month, but a year with 8 digits, we might have a YYYYMMDD pattern
         if (date.getDay() == -1 && date.getMonth() == -1 && date.getYear() != -1 && date.getYear() > 19000000 && date.getYear() < 20251231) {
             int yearPart = date.getYear() / 10000;
-            if (yearPart > 1900 && yearPart < 2025) {
+            if (yearPart > 1900 && yearPart < Calendar.getInstance().getWeekYear() + 2) {
                 String yearString = ""+date.getYear();
                 String theMonthString = yearString.substring(4,6);
                 String theDayString = yearString.substring(6,8);
