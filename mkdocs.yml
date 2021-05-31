@@ -19,6 +19,7 @@ pages:
     - 'GROBID service': 'Grobid-service.md'
     - 'GROBID batch mode': 'Grobid-batch.md'
     - 'GROBID with containers': 'Grobid-docker.md'
+    - 'Configuration of GROBID': 'Configuration.md'
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
     - 'Java library': 'Grobid-java-library.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'

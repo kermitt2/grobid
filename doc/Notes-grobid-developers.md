@@ -42,6 +42,69 @@ mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
 
 + Ensure that the different GROBID modules are updated to use this new release (in case they are not using the master/developer version). 
 
+### Configuration of GROBID module models
+
+Let's say we want to introduce a new model in a Grobid module called `newModel`. The new model configuration can be expressed as the normal Grobid model in a yaml config file:
+
+```yaml
+model:
+  name: "newModel"
+  #engine: "wapiti"
+  engine: "delft"
+  wapiti:
+    # wapiti training parameters, they will be used at training time only
+    epsilon: 0.00001
+    window: 30
+    nbMaxIterations: 1500
+  delft:
+    # deep learning parameters
+    architecture: "BidLSTM_CRF"
+    #architecture: "scibert"
+    useELMo: false
+    embeddings_name: "glove-840B"
+```
+
+In the module configuration class, we refer to the existing Grobid config class, for instance in a class `NewModuleConfiguration`:
+
+```java
+package org.grobid.core.utilities;
+
+import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+
+public class NewModuleConfiguration {
+
+   /* other config parameter here */ 
+
+   public ModelParameters getModel() {
+        return model;
+    }
+
+    public void getModel(ModelParameters model) {
+        this.model = model;
+    }
+}
+
+```
+
+For initializing the new model, we simply do the following:
+
+```java
+        NewModuleConfiguration newModuleConfiguration = null;
+        try {
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            newModuleConfiguration = mapper.readValue(new File("resources/config/config.yml"), NewModuleConfiguration.class);
+        } catch(Exception e) {
+            LOGGER.error("The config file does not appear valid, see resources/config/config.yml", e);
+        }
+
+        if (newModuleConfiguration != null && newModuleConfiguration.getModel() != null)
+            GrobidProperties.getInstance().addModel(newModuleConfiguration.getModel());
+        LibraryLoader.load();
+```
+
+The appropriate libraries will be loaded dynamically based on the configuration of the normal Grobid models and this new model. 
+
+
 ### Unit tests of Grobid Parsers
 
 Sometimes you want to test methods of a grobid parser, without having to instantiate and load the wapiti model.

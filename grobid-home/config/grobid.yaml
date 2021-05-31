@@ -52,8 +52,8 @@ grobid:
   languageDetectorFactory: "org.grobid.core.lang.impl.CybozuLanguageDetectorFactory"
 
   # the actual implementation for optional sentence segmentation to be used (PragmaticSegmenter or OpenNLP)
-  sentenceDetectorFactory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
-  #sentenceDetectorFactory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"
+  #sentenceDetectorFactory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
+  sentenceDetectorFactory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"
   
   # parallel processing security - change with care according to your CPU/GPU capacities
   # maximum parallel connections allowed
