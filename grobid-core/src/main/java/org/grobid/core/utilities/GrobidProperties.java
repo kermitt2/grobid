@@ -247,7 +247,8 @@ public class GrobidProperties {
             throw new GrobidPropertyException("Cannot open GROBID config yaml file " + getGrobidConfigPath().getAbsolutePath(), exp);
         }
 
-        //getProps().putAll(getEnvironmentVariableOverrides(System.getenv()));
+        //Map<String, String> configParametersViaEnvironment = getEnvironmentVariableOverrides(System.getenv());
+        //this.setEnvironmentConfigParameter(configParametersViaEnvironment);
 
         initializeTmpPath();
         // TBD: tmp to be created
@@ -476,11 +477,11 @@ public class GrobidProperties {
     }
 
     public static Integer getPdfaltoMemoryLimitMb() {
-        return grobidConfig.grobid.pdf.pdfalto.memory_limit_mb;
+        return grobidConfig.grobid.pdf.pdfalto.memoryLimitMb;
     }
 
     public static Integer getPdfaltoTimeoutMs() {
-        return grobidConfig.grobid.pdf.pdfalto.timeout_sec * 1000;
+        return grobidConfig.grobid.pdf.pdfalto.timeoutSec * 1000;
     }
 
     /**
@@ -489,7 +490,7 @@ public class GrobidProperties {
      * @return number of threads
      */
     public static Integer getNBThreads() {
-        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.nb_threads);
+        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.nbThreads);
         if (nbThreadsConfig.intValue() == 0) {
             return Integer.valueOf(Runtime.getRuntime().availableProcessors());
         }
@@ -498,12 +499,12 @@ public class GrobidProperties {
 
     // PDF with more blocks will be skipped
     public static Integer getPdfBlocksMax() {
-        return grobidConfig.grobid.pdf.blocks_max;
+        return grobidConfig.grobid.pdf.blocksMax;
     }
 
     // PDF with more tokens will be skipped
     public static Integer getPdfTokensMax() {
-        return grobidConfig.grobid.pdf.tokens_max;
+        return grobidConfig.grobid.pdf.tokensMax;
     }
 
     /**
@@ -512,11 +513,11 @@ public class GrobidProperties {
      * @param nbThreads umber of threads
      */
     public static void setNBThreads(int nbThreads) {
-        grobidConfig.grobid.nb_threads = nbThreads;
+        grobidConfig.grobid.nbThreads = nbThreads;
     }
 
     public static String getLanguageDetectorFactory() {
-        String factoryClassName = grobidConfig.grobid.language_detector_factory;
+        String factoryClassName = grobidConfig.grobid.languageDetectorFactory;
         if (StringUtils.isBlank(factoryClassName)) {
             throw new GrobidPropertyException("Language detection is enabled but a factory class name is not provided");
         }
@@ -533,7 +534,7 @@ public class GrobidProperties {
     }*/
 
     public static String getSentenceDetectorFactory() {
-        String factoryClassName = grobidConfig.grobid.sentence_detector_factory;
+        String factoryClassName = grobidConfig.grobid.sentenceDetectorFactory;
         if (StringUtils.isBlank(factoryClassName)) {
             throw new GrobidPropertyException("Sentence detection is enabled but a factory class name is not provided");
         }
@@ -647,7 +648,7 @@ public class GrobidProperties {
      * @return the number of connections
      */
     public static int getMaxPoolConnections() {
-        return grobidConfig.grobid.max_connections;
+        return grobidConfig.grobid.maxConnections;
     }
 
     /**
@@ -656,7 +657,7 @@ public class GrobidProperties {
      * @return time to wait in milliseconds.
      */
     public static int getPoolMaxWait() {
-        return grobidConfig.grobid.pool_max_wait * 1000;
+        return grobidConfig.grobid.poolMaxWait * 1000;
     }
 
     /**
@@ -697,11 +698,11 @@ public class GrobidProperties {
     }
 
     public static String getPythonVirtualEnv() {
-        return grobidConfig.grobid.delft.python_virtualEnv;
+        return grobidConfig.grobid.delft.pythonVirtualEnv;
     }
 
     public static void setPythonVirtualEnv(String pythonVirtualEnv) {
-        grobidConfig.grobid.delft.python_virtualEnv = pythonVirtualEnv;
+        grobidConfig.grobid.delft.pythonVirtualEnv = pythonVirtualEnv;
     }
 
     public static int getWindow(final GrobidModel model) {
@@ -866,4 +867,8 @@ public class GrobidProperties {
         return getDelftArchitecture(model.getModelName());
     }   
 
+    /*protected static Map<String, String> getEnvironmentVariableOverrides(Map<String, String> environmentVariablesMap) {
+        EnvironmentVariableProperties envParameters = new EnvironmentVariableProperties(environmentVariablesMap, "(grobid__).+");
+        return envParameters.getConfigParameters();
+    }*/
 }

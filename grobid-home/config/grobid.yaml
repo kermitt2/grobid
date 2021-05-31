@@ -15,12 +15,12 @@ grobid:
       # path relative to the grobid-home path (e.g. grobid-home/pdfalto), you don't want to change this normally
       path: "pdfalto"
       # security for PDF parsing
-      memory_limit_mb: 6096
-      timeout_sec: 60
+      memoryLimitMb: 6096
+      timeoutSec: 60
 
     # security relative to the PDF parsing result
-    blocks_max: 100000
-    tokens_max: 1000000
+    blocksMax: 100000
+    tokensMax: 1000000
 
   consolidation:
     # define the bibliographical data consolidation service to be used, either "crossref" for CrossRef REST API or 
@@ -49,30 +49,30 @@ grobid:
   corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"
 
   # the actual implementation for language recognition to be used
-  language_detector_factory: "org.grobid.core.lang.impl.CybozuLanguageDetectorFactory"
+  languageDetectorFactory: "org.grobid.core.lang.impl.CybozuLanguageDetectorFactory"
 
-  # the actual implementation for optional sentence segmentation to be used (Pragmatic_Segmenter or OpenNLP)
-  sentence_detector_factory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
-  #sentence_detector_factory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"
+  # the actual implementation for optional sentence segmentation to be used (PragmaticSegmenter or OpenNLP)
+  sentenceDetectorFactory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
+  #sentenceDetectorFactory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"
   
   # parallel processing security - change with care according to your CPU/GPU capacities
   # maximum parallel connections allowed
-  max_connections: 10  
+  maxConnections: 10  
   # maximum time wait to get a connection when the pool is full (in seconds)
-  pool_max_wait: 1
+  poolMaxWait: 1
 
   # number of threads for training the wapiti models (0 to use all available processors)
-  nb_threads: 0
+  nbThreads: 0
 
   delft:
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
     # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
     install: "../delft"
-    python_virtualEnv:
+    pythonVirtualEnv:
 
   models:
     # we configure here how each sequence labeling model should be implemented
-    # for feature-engineered CRF, use "wapiti" and possible training parameters are window, epsilon and max_epoch
+    # for feature-engineered CRF, use "wapiti" and possible training parameters are window, epsilon and nbMaxIterations
     # for Deep Learning, use "delft" and select the target DL architecture (see DeLFT library), the training 
     # parameters then depends on this selected DL architecture 
     

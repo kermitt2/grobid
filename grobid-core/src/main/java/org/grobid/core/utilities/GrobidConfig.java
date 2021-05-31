@@ -19,12 +19,12 @@ public class GrobidConfig {
         public ConsolidationParameters consolidation;
         public HostParameters proxy;
 
-        public String language_detector_factory;
-        public String sentence_detector_factory;
+        public String languageDetectorFactory;
+        public String sentenceDetectorFactory;
   
-        public int max_connections = 10;  
-        public int pool_max_wait = 1;
-        public int nb_threads = 0;
+        public int maxConnections = 10;  
+        public int poolMaxWait = 1;
+        public int nbThreads = 0;
 
         public DelftParameters delft; 
         public List<ModelParameters> models;
@@ -32,14 +32,14 @@ public class GrobidConfig {
 
     public static class PdfParameters {
         public PdfAltoParameters pdfalto;
-        public int blocks_max = 100000;
-        public int tokens_max = 1000000;
+        public int blocksMax = 100000;
+        public int tokensMax = 1000000;
     }
 
     public static class PdfAltoParameters {
         public String path;
-        public int memory_limit_mb = 6096;
-        public int timeout_sec = 60;
+        public int memoryLimitMb = 6096;
+        public int timeoutSec = 60;
     }
 
     public static class ConsolidationParameters {
@@ -65,7 +65,7 @@ public class GrobidConfig {
          * Generic parameters relative to the DeLFT engine
          */
         public String install;
-        public String python_virtualEnv;
+        public String pythonVirtualEnv;
     }
 
     public static class WapitiModelParameters {
