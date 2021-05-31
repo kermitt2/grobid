@@ -266,9 +266,10 @@ public class DateParser extends AbstractParser {
         }
 
         // if we don't have day and month, but a year with 8 digits, we might have a YYYYMMDD pattern
-        if (date.getDay() == -1 && date.getMonth() == -1 && date.getYear() != -1 && date.getYear() > 19000000 && date.getYear() < 20251231) {
+        int maxYear = Calendar.getInstance().getWeekYear() + 4;
+        if (date.getDay() == -1 && date.getMonth() == -1 && date.getYear() != -1 && date.getYear() > 19000000 && date.getYear() < maxYear * 10000+1231) {
             int yearPart = date.getYear() / 10000;
-            if (yearPart > 1900 && yearPart < Calendar.getInstance().getWeekYear() + 2) {
+            if (yearPart > 1900 && yearPart < maxYear) {
                 String yearString = ""+date.getYear();
                 String theMonthString = yearString.substring(4,6);
                 String theDayString = yearString.substring(6,8);
