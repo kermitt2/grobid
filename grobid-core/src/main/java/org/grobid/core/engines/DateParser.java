@@ -219,6 +219,11 @@ public class DateParser extends AbstractParser {
     public static final Pattern[] months = {jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};
 
     public Date normalize(Date date) {
+        return normalize(date, false);
+    }
+    
+    
+    public Date normalize(Date date, boolean validate) {
         Date normalizedDate = new Date();
         
         // normalize day
@@ -313,10 +318,11 @@ public class DateParser extends AbstractParser {
             }
         }
         
-        Date validatedDate = postValidate(normalizedDate);
-        
-        return validatedDate;
-            
+        if(validate) {
+            return postValidate(normalizedDate);
+        } else {
+            return normalizedDate;
+        }         
     }
 
     /**
