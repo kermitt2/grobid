@@ -328,7 +328,7 @@ public class DateParser extends AbstractParser {
      *  
      * @return the date where invalid information are removed or reverted
      */
-    private static Date postValidate(Date originalDate) {
+    public static Date postValidate(Date originalDate) {
         Date validatedDate = new Date();
         
         if (originalDate.getDay() > -1) {
