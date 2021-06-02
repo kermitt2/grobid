@@ -225,6 +225,7 @@ public class DateParser extends AbstractParser {
         if (isNotBlank(date.getDayString())) {
             StringBuilder dayStringBis = new StringBuilder();
             String dayString = date.getDayString().trim();
+            normalizedDate.setDayString(dayString);
             for (int n = 0; n < dayString.length(); n++) {
                 char c = dayString.charAt(n);
                 if (Character.isDigit(c)) {
@@ -242,6 +243,7 @@ public class DateParser extends AbstractParser {
         //normalize month
         if (isNotBlank(date.getMonthString())) {
             String month = date.getMonthString().trim();
+            normalizedDate.setMonthString(month);
             int n = 0;
             while (n < 12) {
                 Matcher ma = months[n].matcher(month);
@@ -256,6 +258,7 @@ public class DateParser extends AbstractParser {
         if (StringUtils.isNotBlank(date.getYearString())) {
             StringBuilder yearStringBis = new StringBuilder();
             String yearString = date.getYearString().trim();
+            normalizedDate.setYearString(yearString);
             for (int n = 0; n < yearString.length(); n++) {
                 char c = yearString.charAt(n);
                 if (Character.isDigit(c)) {
@@ -329,28 +332,25 @@ public class DateParser extends AbstractParser {
         Date validatedDate = new Date();
         
         if (originalDate.getDay() > -1) {
-            if (String.valueOf(originalDate.getDay()).length() < 5) {
+            if (String.valueOf(originalDate.getDay()).length() < 3) {
                 validatedDate.setDay(originalDate.getDay());
-                validatedDate.setDayString(String.valueOf(validatedDate.getDay()));
-
+                validatedDate.setDayString(originalDate.getDayString());
             }
         }
 
         if (originalDate.getMonth() > -1) {
-            if (String.valueOf(originalDate.getMonth()).length() < 5) {
+            if (String.valueOf(originalDate.getMonth()).length() < 3) {
                 validatedDate.setMonth(originalDate.getMonth());
-                validatedDate.setMonthString(String.valueOf(validatedDate.getMonth()));
+                validatedDate.setMonthString(originalDate.getMonthString());
             }
         }
         
         if (originalDate.getYear() > -1) {
             if (String.valueOf(originalDate.getYear()).length() < 5) {
                 validatedDate.setYear(originalDate.getYear());
-                validatedDate.setYearString(String.valueOf(validatedDate.getYear()));
+                validatedDate.setYearString(originalDate.getYearString());
             }
         }
-        
-        
         
         return validatedDate;
     }
