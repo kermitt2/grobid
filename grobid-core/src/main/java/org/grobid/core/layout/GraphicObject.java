@@ -55,7 +55,7 @@ public class GraphicObject {
         if (ind != -1) {
             int ind2 = filePath.substring(0, ind-1).lastIndexOf("/");
             if (ind2 != -1)
-                return filePath.substring(ind2, filePath.length());
+                return filePath.substring(ind2+1, filePath.length());
         }
 
         return new File(filePath).getName();
