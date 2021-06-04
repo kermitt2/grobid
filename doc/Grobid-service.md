@@ -23,9 +23,9 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.1.zip
-mv grobid-service-0.6.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.2.zip
+mv grobid-service-0.6.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.2.zip
 ./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
 ```
 

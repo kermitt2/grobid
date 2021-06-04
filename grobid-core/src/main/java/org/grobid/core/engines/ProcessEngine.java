@@ -577,7 +577,7 @@ public class ProcessEngine implements Closeable {
                             .generateTeiCoordinates(elementWithCoords)
                             .build();
 
-                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, config);
+                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, null, config);
                     document = PDDocument.load(currPDF);
                     //If no pages, skip the document
                     if (document.getNumberOfPages() > 0) {

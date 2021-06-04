@@ -8,17 +8,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 
-+ Option to get sentence segmented text in extracted structures (choice between the Pragmatic Segmenter, integrated via JRuby, and OpenNLP sentence detector)
-+ Option to get PDF coordinates for `<s>` structures
-
 ### Changed
-
-+ Update of TEI XML schema to allow `<s>` structurs in the result
 
 ### Fixed
 
-+ Structuration of abstract is back
-+ Deprecated CrossRef `query.title` field for the CrossRef consolidation service
+
+## [0.6.2] – 2020-03-20
+
+### Added
+
++ Docker image covering both Deep Learning and CRF models, with GPU detection and preloading of embeddings
++ For Deep Learning models, labeling is now done by batch: application of the citation DL model is 4 times faster for BidLSTM-CRF (with or without features) and 6 times faster for SciBERT
++ More tests for sentence segmentation
++ Add orcid of persons when available from the PDF or via consolidation (i.e. if in CrossRef metadata) 
++ Add BidLSTM-CRF-FEATURES header model (with feature channel)
++ Add bioRxiv end-to-end evaluation
++ Bounding boxes for optional section titles coordinates
+
+### Changed
+
++ Reduce the size of docker images 
++ Improve end-to-end evaluation: multithreaded processing of PDF, progress bar, output the evaluation report in markdown format
++ Update of several models covering CRF, BidLSTM-CRF and BidLSTM-CRF-FEATURES, mainly improving citation and author recognitions
++ OpenNLP is the default optional sentence segmenter (similar result as Pragmatic Segmenter for scholar documents after benchmarking, but 30 times faster)
++ Refine sentence segmentation to exploit layout information and predicted reference callouts
++ Update jep version to 3.9.1
+
+### Fixed
+
++ Ignore invalid utf-8 sequences
++ Update CrossRef multithreaded calls to avoid using the unreliable time interval returned by the CrossRef REST API service, update usage of `Crossref-Plus-API-Token` and update the deprecated crossref field `query.title`
++ Missing last table or figure when generating training data for the fulltext model
++ Fix an error related to the feature value for the reference callout for the fulltext model
++ Review/correct DeLFT configuration documentation, with a step-by-step configuration documentation
++ Other minor fixes
 
 ## [0.6.1] – 2020-08-12
 

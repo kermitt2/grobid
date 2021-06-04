@@ -2,23 +2,27 @@
 
 ## Integration with DeLFT
 
-Since version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with ELMo, and BERT fine-tuned architectures with CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
+Since version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with additional feature channel (for layout features), with ELMo, and BERT fine-tuned architectures with CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
 
 These architectures have been tested on Linux 64bit and macOS.   
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see [here](https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink), and it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
-There are no neural model for the segmentation and the fulltext models, because the input sequences for these models are far too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for these tasks or to use alternative DL architectures (with sliding window, etc.).
+There are no neural model for the segmentation and the fulltext models, because the input sequences for these models are too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for these tasks or to use alternative DL architectures (with sliding window, etc.).
 
 Low level models not using layout features (author name, dates, affiliations...) perform better than CRF. When layout features are involved, neural models with an additional feature channel should be preferred (e.g. `BidLSTM_CRF_FEATURES` in DeLFT), or they will perform significantly worse than Wapiti CRF.
 
-See some evaluation under [model benchmarking](Benchmarking-models.md) and `grobid-trainer/docs`.
+See some evaluations under `grobid-trainer/docs`.
 
-Current neural models are at least 3 to 100 time slower than CRF, depending on the architecture: we do not use NN batch processing for the moment. It is not clear how to use batch processing with a model cascading approach, but we are working on it.
+Current neural models can be up to 100 time slower than CRF, depending on the architecture. However when sequences can be processed in batch (e.g. for the citation model), overall runtime remains good with clear accuracy gain. This is where the possibility to mix CRF and Deep Learning models for different structuring tasks is very useful, as it permits to adjust the balance between possible accuracy and scalability in a fine-grained manner. 
 
 ### Getting started with Deep Learning
 
-Using Deep Learning model in GROBID is not straightforward at the present time, due to the required availability of various native libraries and to the Python dynamic linking and packaging mess, which leads to some strict version and system dependencies. Interfacing natively to a particular Python virtual environment (which is "sesssion-based") is challenging. We are exploring different approach to facilitate this and get a "out-of-the-out" working system in a near future - which will be likely a docker image. In the meantime, here are the step-by-step instructions to get a working Deep Learning GROBID.
+Using Deep Learning model in GROBID with a normal installation/build is not straightforward at the present time, due to the required availability of various native libraries and to the Python dynamic linking and packaging mess, which leads to force some strict version and system dependencies. Interfacing natively to a particular Python virtual environment (which is "sesssion-based") is challenging. We are exploring different approach to facilitate this and get a "out-of-the-out" working system. 
+
+The most simple solution is to use the ["full" GROBID docker image](Grobid-docker.md), which allows to use Deep Learning models without further installation and which provides automatic GPU support. 
+
+However if you need a "local" library installation and build, here are the step-by-step instructions to get a working Deep Learning GROBID.
 
 #### Classic python and Virtualenv
 
@@ -128,7 +132,7 @@ INFO  [2020-10-30 23:04:07,756] org.grobid.core.jni.DeLFTModel: Loading DeLFT mo
 INFO  [2020-10-30 23:04:07,758] org.grobid.core.jni.JEPThreadPool: Creating JEP instance for thread 44
 ```
 
-It is then possible to [benchmark end-to-end](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, note that, currently, due to the limited amount of training data, Deep Learning models perform significantly better than CRF only for two models (`citation` and `affiliation-address`), so there is likely no practical interest to use Deep Learning for the other models - see the [model-level evaluations](https://grobid.readthedocs.io/en/latest/Benchmarking-models/). This will of course certainly change in the future! 
+It is then possible to [benchmark end-to-end](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) the selected Deep Learning models as any usual GROBID benchmarking exercise. In practice the CRF models should be mixed with Deep Learning models to keep the process reasonably fast and memory-hungry. In addition, note that, currently, due to the limited amount of training data, Deep Learning models perform significantly better than CRF only for two models (`citation` and `affiliation-address`), so there is likely no practical interest to use Deep Learning for the other models. This will of course certainly change in the future! 
 
 
 #### Anaconda 

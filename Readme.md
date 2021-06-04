@@ -4,13 +4,15 @@
 [![Build Status](https://travis-ci.org/kermitt2/grobid.svg?branch=master)](https://travis-ci.org/kermitt2/grobid)
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
-[![Docker Status](https://images.microbadger.com/badges/version/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Latest Docker HUB image")
+[![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
+[![Demo cloud.science-miner.com/grobid](https://img.shields.io/website-up-down-green-red/https/cloud.science-miner.com/grobid.svg)](http://cloud.science-miner.com/grobid)
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
+[![Docker Hub](https://img.shields.io/docker/pulls/grobid/grobid.svg)](https://hub.docker.com/r/grobid/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
 ## GROBID documentation
 
-Visit the [GROBID documentation](https://grobid.readthedocs.org) for more detailed information.
+Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detailed information.
 
 ## Summary
 
@@ -46,7 +48,7 @@ For more information on how the tool works, on its key features and [benchmarkin
 
 ## Demo
 
-For testing purposes, a public GROBID demo server is available at the following address: [https://grobid.science-miner.com](https://grobid.science-miner.com)
+For testing purposes, a public GROBID demo server is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
 
 The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
@@ -104,7 +106,7 @@ ej-technologies provided us a free open-source license for its Java Profiler. Cl
 
 ## How to cite
 
-If you want to this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
+If you want to cite this work, please refer to the present GitHub project, together with the [Software Heritage](https://www.softwareheritage.org/) project-level permanent identifier. For example, with BibTeX:
 
 ```bibtex
 @misc{GROBID,
