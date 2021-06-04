@@ -673,74 +673,6 @@ var grobid = (function($) {
 		var page_height = 0.0;
 		var page_width = 0.0;
 
-		var refBibs = json.refBibs;
-		var mapRefBibs = {};
-		if (refBibs) {
-			for(var n in refBibs) {
-				var annotation = refBibs[n];
-				var theId = annotation.id;
-				var theUrl = annotation.url;
-				var pos = annotation.pos;
-				if (pos)
-					mapRefBibs[theId] = annotation;
-				//for (var m in pos) {
-				pos.forEach(function(thePos, m) {
-					//var thePos = pos[m];
-					// get page information for the annotation
-					var pageNumber = thePos.p;
-					if (pageInfo[pageNumber-1]) {
-						page_height = pageInfo[pageNumber-1].page_height;
-						page_width = pageInfo[pageNumber-1].page_width;
-					}
-					annotateBib(true, theId, thePos, theUrl, page_height, page_width, null);
-				});
-			}
-		}
-
-		// we need the above mapRefBibs structure to be created to perform the ref. markers analysis
-		var refMarkers = json.refMarkers;
-		if (refMarkers) {
-			//for(var n in refMarkers) {
-			refMarkers.forEach(function(annotation, n) {
-				//var annotation = refMarkers[n];
-				var theId = annotation.id;
-				//if (!theId)
-                //    return;
-				// we take the first and last positions
-				var targetBib = mapRefBibs[theId];
-				if (targetBib) {
-					var theBibPos = {};
-					var pos = targetBib.pos;
-					if (pos.length == 1) 
-						theBibPos = pos[0];
-					else {
-						//if (pos && (pos.length > 0)) {
-						var theFirstPos = pos[0];
-						var theLastPos = pos[pos.length-1];
-						theBibPos.p = theFirstPos.p;
-						theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
-						theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-						theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
-						theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
-					}
-					var pageNumber = theBibPos.p;
-					if (pageInfo[pageNumber-1]) {
-						page_height = pageInfo[pageNumber-1].page_height;
-						page_width = pageInfo[pageNumber-1].page_width;
-					}
-					annotateBib(false, theId, annotation, null, page_height, page_width, theBibPos);
-					//}
-				} else {
-					var pageNumber = annotation.p;
-					if (pageInfo[pageNumber-1]) {
-						page_height = pageInfo[pageNumber-1].page_height;
-						page_width = pageInfo[pageNumber-1].page_width;
-					}
-					annotateBib(false, theId, annotation, null, page_height, page_width, null);
-				}
-			});
-		}
-
         // formulas
         var formulas = json.formulas;
         var mapFormulas = {};
@@ -807,6 +739,204 @@ var grobid = (function($) {
 				}
 			});
 		}
+
+        // figures
+        var figures = json.figures;
+        var mapFigures = {};
+        if (figures) {
+            for(var n in figures) {
+                var annotation = figures[n];
+                var theId = annotation.id;
+                var pos = annotation.pos;
+                if (pos)
+                    mapFigures[theId] = annotation;
+                pos.forEach(function(thePos, m) {
+                    // get page information for the annotation
+                    var pageNumber = thePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateFigure(true, theId, thePos, null, page_height, page_width, null);
+                });
+            }
+        }
+
+        var figureMarkers = json.figureMarkers;
+        if (figureMarkers) {
+            figureMarkers.forEach(function(annotation, n) {
+                var theId = annotation.id;
+                //if (!theId)
+                //    return;
+                // we take the first and last positions
+                var targetFigure = null;
+                if (theId)
+                    targetFigure = mapFigures[theId];
+                if (targetFigure) {
+                    var theFigurePos = {};
+                    var pos = targetFigure.pos;
+                    if (pos.length == 1) 
+                        theFigurePos = pos[0]
+                    else {
+                        //if (pos && (pos.length > 0)) {
+                        var theFirstPos = pos[0];
+                        var theLastPos = pos[pos.length-1];
+                        theFigurePos.p = theFirstPos.p;
+                        theFigurePos.w = Math.max(theFirstPos.w, theLastPos.w);
+                        theFigurePos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+                        theFigurePos.x = Math.min(theFirstPos.x, theLastPos.x);
+                        theFigurePos.y = Math.min(theFirstPos.y, theLastPos.y);
+                    }
+                    var pageNumber = theFigurePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateFigure(false, theId, annotation, null, page_height, page_width, theFigurePos);
+                    //}
+                } else {
+                    var pageNumber = annotation.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateFigure(false, theId, annotation, null, page_height, page_width, null);
+                }
+            });
+        }
+
+        // tables
+        var tables = json.tables;
+        var mapTables = {};
+        if (tables) {
+            for(var n in tables) {
+                var annotation = tables[n];
+                var theId = annotation.id;
+                var pos = annotation.pos;
+                if (pos)
+                    mapTables[theId] = annotation;
+                pos.forEach(function(thePos, m) {
+                    // get page information for the annotation
+                    var pageNumber = thePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateTable(true, theId, thePos, null, page_height, page_width, null);
+                });
+            }
+        }
+
+        var tableMarkers = json.tableMarkers;
+        if (tableMarkers) {
+            tableMarkers.forEach(function(annotation, n) {
+                var theId = annotation.id;
+                //if (!theId)
+                //    return;
+                // we take the first and last positions
+                var targetTable = null;
+                if (theId)
+                    targetTable = mapTables[theId];
+                if (targetTable) {
+                    var theTablePos = {};
+                    var pos = targetTable.pos;
+                    if (pos.length == 1) 
+                        theTablePos = pos[0]
+                    else {
+                        //if (pos && (pos.length > 0)) {
+                        var theFirstPos = pos[0];
+                        var theLastPos = pos[pos.length-1];
+                        theTablePos.p = theFirstPos.p;
+                        theTablePos.w = Math.max(theFirstPos.w, theLastPos.w);
+                        theTablePos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+                        theTablePos.x = Math.min(theFirstPos.x, theLastPos.x);
+                        theTablePos.y = Math.min(theFirstPos.y, theLastPos.y);
+                    }
+                    var pageNumber = theTablePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateTable(false, theId, annotation, null, page_height, page_width, theTablePos);
+                    //}
+                } else {
+                    var pageNumber = annotation.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateTable(false, theId, annotation, null, page_height, page_width, null);
+                }
+            });
+        }
+
+        var refBibs = json.refBibs;
+        var mapRefBibs = {};
+        if (refBibs) {
+            for(var n in refBibs) {
+                var annotation = refBibs[n];
+                var theId = annotation.id;
+                var theUrl = annotation.url;
+                var pos = annotation.pos;
+                if (pos)
+                    mapRefBibs[theId] = annotation;
+                //for (var m in pos) {
+                pos.forEach(function(thePos, m) {
+                    //var thePos = pos[m];
+                    // get page information for the annotation
+                    var pageNumber = thePos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateBib(true, theId, thePos, theUrl, page_height, page_width, null);
+                });
+            }
+        }
+
+        // we need the above mapRefBibs structure to be created to perform the ref. markers analysis
+        var refMarkers = json.refMarkers;
+        if (refMarkers) {
+            //for(var n in refMarkers) {
+            refMarkers.forEach(function(annotation, n) {
+                //var annotation = refMarkers[n];
+                var theId = annotation.id;
+                //if (!theId)
+                //    return;
+                // we take the first and last positions
+                var targetBib = mapRefBibs[theId];
+                if (targetBib) {
+                    var theBibPos = {};
+                    var pos = targetBib.pos;
+                    if (pos.length == 1) 
+                        theBibPos = pos[0];
+                    else {
+                        //if (pos && (pos.length > 0)) {
+                        var theFirstPos = pos[0];
+                        var theLastPos = pos[pos.length-1];
+                        theBibPos.p = theFirstPos.p;
+                        theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
+                        theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
+                        theBibPos.x = Math.min(theFirstPos.x, theLastPos.x);
+                        theBibPos.y = Math.min(theFirstPos.y, theLastPos.y);
+                    }
+                    var pageNumber = theBibPos.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateBib(false, theId, annotation, null, page_height, page_width, theBibPos);
+                    //}
+                } else {
+                    var pageNumber = annotation.p;
+                    if (pageInfo[pageNumber-1]) {
+                        page_height = pageInfo[pageNumber-1].page_height;
+                        page_width = pageInfo[pageNumber-1].page_width;
+                    }
+                    annotateBib(false, theId, annotation, null, page_height, page_width, null);
+                }
+            });
+        }
 	}
 
 	function annotateBib(bib, theId, thePos, url, page_height, page_width, theBibPos) {
@@ -947,6 +1077,141 @@ var grobid = (function($) {
         }
         pageDiv.append(element);
     }
+
+    function annotateFigure(figure, theId, thePos, url, page_height, page_width, theFigurePos) {
+        var page = thePos.p;
+        var pageDiv = $('#page-'+page);
+        var canvas = pageDiv.children('canvas').eq(0);;
+
+        var canvasHeight = canvas.height();
+        var canvasWidth = canvas.width();
+        var scale_x = canvasHeight / page_height;
+        var scale_y = canvasWidth / page_width;
+
+        var x = thePos.x * scale_x;
+        var y = thePos.y * scale_y;
+        var width = thePos.w * scale_x;
+        var height = thePos.h * scale_y;
+
+//console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
+//console.log('location: ' + canvasHeight + " " + canvasWidth);
+//console.log('location: ' + page_height + " " + page_width);
+        //make clickable the area
+        var element = document.createElement("a");
+        var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
+
+        if (figure) {
+            // this is a figure
+            // we draw a line
+            element.setAttribute("style", attributes + "border:1px; border-style:dotted; border-color: blue;");
+            element.setAttribute("title", "figure");
+            element.setAttribute("id", theId);
+        } else {
+            // this is a figure reference marker    
+            // we draw a box (blue if associated to an id, gray otherwise)
+            if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
+                // the link here goes to the referenced figure
+                element.onclick = function() {
+                    goToByScroll(theId);
+                };
+            } else
+                 element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
+            // we need the area where the actual target figure is
+            if (theFigurePos) {
+                element.setAttribute("data-toggle", "popover");
+                element.setAttribute("data-placement", "top");
+                element.setAttribute("data-content", "content");
+                element.setAttribute("data-trigger", "hover");
+                var newWidth = theFigurePos.w * scale_x;
+                var newHeight = theFigurePos.h * scale_y;
+                var newImg = getImagePortion(theFigurePos.p, newWidth, newHeight, theFigurePos.x * scale_x, theFigurePos.y * scale_y);
+                $(element).popover({
+                    content:  function () {
+                        return '<img src=\"'+ newImg + '\" style=\"width:100%\" />';
+                        //return '<img src=\"'+ newImg + '\" />';
+                    },
+                    html: true,
+                    container: 'body'
+                    //width: newWidth + 'px',
+                    //height: newHeight + 'px'
+//                  container: canvas,
+                    //width: '600px',
+                    //height: '100px'
+                });
+            }
+        }
+        pageDiv.append(element);
+    }
+
+    function annotateTable(table, theId, thePos, url, page_height, page_width, theTablePos) {
+        var page = thePos.p;
+        var pageDiv = $('#page-'+page);
+        var canvas = pageDiv.children('canvas').eq(0);;
+
+        var canvasHeight = canvas.height();
+        var canvasWidth = canvas.width();
+        var scale_x = canvasHeight / page_height;
+        var scale_y = canvasWidth / page_width;
+
+        var x = thePos.x * scale_x;
+        var y = thePos.y * scale_y;
+        var width = thePos.w * scale_x;
+        var height = thePos.h * scale_y;
+
+//console.log('annotate: ' + page + " " + x + " " + y + " " + width + " " + height);
+//console.log('location: ' + canvasHeight + " " + canvasWidth);
+//console.log('location: ' + page_height + " " + page_width);
+        //make clickable the area
+        var element = document.createElement("a");
+        var attributes = "display:block; width:"+width+"px; height:"+height+"px; position:absolute; top:"+y+"px; left:"+x+"px;";
+
+        if (table) {
+            // this is a table
+            // we draw a line
+            element.setAttribute("style", attributes + "border:1px; border-style:dotted; border-color: blue;");
+            element.setAttribute("title", "table");
+            element.setAttribute("id", theId);
+        } else {
+            // this is a table reference marker    
+            // we draw a box (blue if associated to an id, gray otherwise)
+            if (theId) {
+                element.setAttribute("style", attributes + "border:1px solid; border-color: blue;");
+                // the link here goes to the referenced table
+                element.onclick = function() {
+                    goToByScroll(theId);
+                };
+            } else
+                 element.setAttribute("style", attributes + "border:1px solid; border-color: gray;");
+
+            // we need the area where the actual target table is
+            if (theTablePos) {
+                element.setAttribute("data-toggle", "popover");
+                element.setAttribute("data-placement", "top");
+                element.setAttribute("data-content", "content");
+                element.setAttribute("data-trigger", "hover");
+                var newWidth = theTablePos.w * scale_x;
+                var newHeight = theTablePos.h * scale_y;
+                var newImg = getImagePortion(theTablePos.p, newWidth, newHeight, theTablePos.x * scale_x, theTablePos.y * scale_y);
+                $(element).popover({
+                    content:  function () {
+                        return '<img src=\"'+ newImg + '\" style=\"width:100%\" />';
+                        //return '<img src=\"'+ newImg + '\" />';
+                    },
+                    html: true,
+                    container: 'body'
+                    //width: newWidth + 'px',
+                    //height: newHeight + 'px'
+//                  container: canvas,
+                    //width: '600px',
+                    //height: '100px'
+                });
+            }
+        }
+        pageDiv.append(element);
+    }
+
 
 	/* jquery-based movement to an anchor, without modifying the displayed url and a bit smoother */
 	function goToByScroll(id) {

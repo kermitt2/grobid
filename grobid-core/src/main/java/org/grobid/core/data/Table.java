@@ -396,4 +396,8 @@ public class Table extends Figure {
 	public boolean isGoodTable() {
 		return goodTable;
 	}
+
+    public String getTeiId() {
+        return "tab_" + this.id;
+    }
 }

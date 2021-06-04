@@ -83,6 +83,7 @@ public class DocumentSource {
                 GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
 
         pdfToXml.append(" -noImageInline -fullFontName -noLineNumbers");
+        //pdfToXml.append(" -fullFontName -noLineNumbers");
 
         if (!withImage) {
             pdfToXml.append(" -noImage ");
@@ -150,7 +151,6 @@ public class DocumentSource {
                             GrobidProperties.getPdfToXMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
                 }
                 LOGGER.debug("Executing command: " + cmd);
-
                 tmpPathXML = processPdfToXmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
             }
 
@@ -229,6 +229,7 @@ public class DocumentSource {
      */
     private File processPdfToXmlServerMode(File pdfPath, File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
+System.out.println(cmd.toString());
         Integer exitCode = org.grobid.core.process.ProcessPdfToXml.process(cmd);
 
         if (exitCode == null) {

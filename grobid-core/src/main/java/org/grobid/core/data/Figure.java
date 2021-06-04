@@ -16,6 +16,7 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.layout.VectorGraphicBoxCalculator;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
@@ -253,10 +254,71 @@ public class Figure {
     }
 
     /**
-     * Simple block coordinates. TBD: generate bounding box.
+     * Simple block coordinates
      */
-    public String getCoordinates() {
+    public String getCoordinatesString() {
         return String.format("%d,%.2f,%.2f,%.2f,%.2f", page, x, y, width, height);
+    }
+
+    /**
+     * Proper bounding boxes
+     */
+    public List<BoundingBox> getCoordinates() {
+        /*if (layoutTokens == null || layoutTokens.size() == 0) 
+            return null;
+        else {
+            BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
+            List<BoundingBox> result = new ArrayList<BoundingBox>();
+            result.add(oneBox);
+            return result;
+        }*/
+
+        List<BoundingBox> theBoxes = null;
+        // non graphic elements
+        if (getLayoutTokens() != null && getLayoutTokens().size() > 0) {
+            //theBoxes = BoundingBoxCalculator.calculate(getLayoutTokens());
+            BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
+            List<BoundingBox> result = new ArrayList<BoundingBox>();
+            theBoxes = new ArrayList<>();
+            theBoxes.add(oneBox);
+        }
+
+        // if (getBitmapGraphicObjects() != null && !getBitmapGraphicObjects().isEmpty()) {
+        // -> note: this was restricted to the bitmap objects only... the bounding box calculation
+        // with vector graphics might need some double check
+
+        // here we bound all figure graphics in one single box (given that we can have hundred graphics
+        // in a single figure)
+        BoundingBox theGraphicsBox = null;
+        if ((graphicObjects != null) && (graphicObjects.size() > 0)) {
+            for (GraphicObject graphicObject : graphicObjects) {
+                if (theGraphicsBox == null) {
+                    theGraphicsBox = graphicObject.getBoundingBox();
+                } else {
+                    theGraphicsBox = theGraphicsBox.boundBoxExcludingAnotherPage(graphicObject.getBoundingBox());
+                }
+            }
+        } 
+
+        if (theGraphicsBox != null) {
+            if (theBoxes == null)
+                theBoxes = new ArrayList<>();
+            theBoxes.add(theGraphicsBox);
+        }
+
+        List<BoundingBox> result = new ArrayList<BoundingBox>();
+        if (theBoxes != null && theBoxes.size() > 0) {
+            BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
+            List<BoundingBox> mergedBox = VectorGraphicBoxCalculator.mergeBoxes(theBoxes);
+            result.addAll(mergedBox);
+            return result;
+        }
+
+        return result;
+    }
+
+    public String getTeiId() {
+        return "fig_" + this.id;
     }
 
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter) {

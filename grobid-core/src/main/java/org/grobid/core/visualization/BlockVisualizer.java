@@ -29,68 +29,7 @@ import java.util.List;
 
 import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
 
-/**
- * Created by zholudev on 15/01/16.
- * Visualizing blocks
- */
 public class BlockVisualizer {
-
-    public static void main(String[] args) {
-        try {
-//            File input = new File("/Work/temp/context/coords/2.pdf");
-//            File input = new File("/Work/temp/figureExtraction/vector/5.pdf");
-//            File input = new File("/Work/temp/figureExtraction/6.pdf");
-//            File input = new File("/Work/temp/context/1000k/AS_97568985976833_1400273667294.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/3.pdf");
-//            File input = new File("/Users/zholudev/Downloads/pone.0005635.pdf");
-//            File input = new File("/Work/temp/figureExtraction/newtest/1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/TIA_2011_Partie8.pdf");
-
-            //small vector things in text
-
-//            File input = new File("/Users/zholudev/Downloads/AS-355068814610434@1461666410721_content_1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS-347805261549578@1459934645097_content_1.pdf");
-            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
-
-//
-//
-//
-// File input = new File("/Users/zholudev/Downloads/journal.pone.0146695.pdf");
-
-            final PDDocument document = PDDocument.load(input);
-            File outPdf = new File("/tmp/test.pdf");
-
-            GrobidProperties.set_GROBID_HOME_PATH("grobid-home");
-            GrobidProperties.setGrobidPropertiesPath("grobid-home/config/grobid.properties");
-            LibraryLoader.load();
-            final Engine engine = GrobidFactory.getInstance().getEngine();
-            GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-                    .pdfAssetPath(new File("/tmp/x"))
-                    .build();
-
-//            File tempFile = File.createTempFile("temp", ".xml", new File("/tmp"));
-            DocumentSource documentSource = DocumentSource.fromPdf(input);
-
-
-            Document teiDoc = engine.fullTextToTEIDoc(input, config);
-
-            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), teiDoc, false, false, true);
-//            PDDocument out = annotateBlocks(document, documentSource.getXmlFile(), null);
-
-            if (out != null) {
-                out.save(outPdf);
-                if (Desktop.isDesktopSupported()) {
-                    Desktop.getDesktop().open(outPdf);
-                }
-            }
-            System.out.println(Engine.getCntManager());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-
-    }
 
     public static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc,
                                             boolean visualizeBlocks,
@@ -165,7 +104,6 @@ public class BlockVisualizer {
                 }
             }
         }
-
         return document;
     }
 

@@ -679,16 +679,15 @@ public class GrobidRestProcessFiles {
                 .includeRawCitations(includeRawCitations)
                 .build();
 
-            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
+            //DocumentSource documentSource = DocumentSource.fromPdf(originFile);
             Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
-            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
+            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null, true);
 
             if (json != null) {
                 response = Response
                     .ok()
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                     .entity(json)
-
                     .build();
             } else {
                 response = Response.status(Status.NO_CONTENT).build();
@@ -839,7 +838,7 @@ public class GrobidRestProcessFiles {
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
                 teiDoc, true, true, true, false, false);
-        }
+        } 
         return out;
     }
 
