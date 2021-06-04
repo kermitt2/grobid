@@ -441,11 +441,6 @@ public class Document implements Serializable {
             imagesPerPage.put(go.getPage(), go);
         }
 
-        for(GraphicObject image : images) {
-            System.out.println(image.toString());
-        }
-        System.out.println("-------------------------");
-
         HashSet<Integer> keys = new HashSet<>(imagesPerPage.keySet());
         for (Integer pageNum : keys) {
 
@@ -931,10 +926,6 @@ public class Document implements Serializable {
 
     public void assignGraphicObjectsToFigures() {
         Multimap<Integer, Figure> figureMap = HashMultimap.create();
-
-        for(GraphicObject image : images) {
-            System.out.println(image.toString());
-        }
 
         for (Figure f : figures) {
             figureMap.put(f.getPage(), f);

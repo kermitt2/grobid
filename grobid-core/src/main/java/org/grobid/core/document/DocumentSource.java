@@ -230,7 +230,6 @@ public class DocumentSource {
      */
     private File processPdfToXmlServerMode(File pdfPath, File tmpPathXML, List<String> cmd) {
         LOGGER.debug("Executing: " + cmd.toString());
-System.out.println(cmd.toString());
         Integer exitCode = org.grobid.core.process.ProcessPdfToXml.process(cmd);
 
         if (exitCode == null) {
