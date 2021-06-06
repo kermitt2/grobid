@@ -399,13 +399,16 @@ project(":grobid-trainer") {
         implementation project(':grobid-core')
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         implementation "me.tongfei:progressbar:0.9.0"
+        implementation 'org.slf4j:slf4j-log4j12:1.7.25'
+        implementation 'org.slf4j:slf4j-api:1.7.25'
+        implementation 'org.slf4j:slf4j-jdk14:1.7.25'
     }
 
-    configurations {
+    /*configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        //all*.exclude group: 'log4j', module: "log4j"
-    }
+        all*.exclude group: 'log4j', module: "log4j"
+    }*/
 
     jar {
         from {
