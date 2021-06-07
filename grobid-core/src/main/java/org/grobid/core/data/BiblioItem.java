@@ -1878,7 +1878,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id the BibTeX ke to use.
+     * @param id the BibTeX key to use.
      */
     public String toBibTeX(String id) {
         return toBibTeX(id, new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(false).build());
@@ -1887,7 +1887,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id                  the BibTeX ke to use
+     * @param id the BibTeX key to use
      */
     public String toBibTeX(String id, GrobidAnalysisConfig config) {
         String type;
