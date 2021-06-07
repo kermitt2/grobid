@@ -83,7 +83,7 @@ public class DocumentSource {
         pdfToXml.append(
                 GrobidProperties.isContextExecutionServer() ? File.separator + "pdfalto_server" : File.separator + "pdfalto");
 
-        pdfToXml.append(" -noImageInline -fullFontName -noLineNumbers");
+        pdfToXml.append(" -fullFontName -noLineNumbers");
 
         if (!withImage) {
             pdfToXml.append(" -noImage ");
@@ -151,7 +151,6 @@ public class DocumentSource {
                             GrobidProperties.getPdfToXMLMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
                 }
                 LOGGER.debug("Executing command: " + cmd);
-
                 tmpPathXML = processPdfToXmlThreadMode(timeout, pdfPath, tmpPathXML, cmd);
             }
 

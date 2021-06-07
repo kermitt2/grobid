@@ -714,9 +714,8 @@ public class GrobidRestProcessFiles {
                 .includeRawCitations(includeRawCitations)
                 .build();
 
-            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-            Document teiDoc = engine.fullTextToTEIDoc(originFile, md5Str, config);
-            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
+            Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null, true);
 
             if (json != null) {
                 response = Response
@@ -873,7 +872,7 @@ public class GrobidRestProcessFiles {
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
                 teiDoc, true, true, true, false, false);
-        }
+        } 
         return out;
     }
 

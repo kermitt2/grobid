@@ -948,7 +948,6 @@ public class Document implements Serializable {
                 continue;
             }
 
-
             List<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
             // filtering those images that for some reason are outside of main area
@@ -971,8 +970,6 @@ public class Document implements Serializable {
                 return true;
             }).collect(Collectors.toList());
 
-
-
             List<GraphicObject> graphicObjects = new ArrayList<>();
 
             l:
@@ -986,7 +983,6 @@ public class Document implements Serializable {
             }
 
             graphicObjects.addAll(vectorBoxGraphicObjects);
-
 
             // easy case when we don't have any vector boxes -- easier to correlation figure captions with bitmap images
             if (vectorBoxGraphicObjects.isEmpty()) {
@@ -1093,8 +1089,8 @@ public class Document implements Serializable {
 
                 ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
-                List<GraphicObject> vectorBoxGraphicObjects = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
-
+                List<GraphicObject> vectorBoxGraphicObjects = 
+                    Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
                 List<GraphicObject> graphicObjects = new ArrayList<>();
 
@@ -1117,7 +1113,6 @@ public class Document implements Serializable {
                 }
 
                 graphicObjects.addAll(vectorBoxGraphicObjects);
-
 
                 if (graphicObjects.size() == it.size()) {
                     for (GraphicObject o : graphicObjects) {
@@ -1152,7 +1147,6 @@ public class Document implements Serializable {
             Engine.getCntManager().i(FigureCounters.SKIPPED_BIG_STANDALONE_FIGURES);
             return true;
         }
-
 
         return false;
     }
