@@ -38,6 +38,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SortedSet;
+import java.util.Collections;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -311,8 +312,9 @@ public class Figure {
             BoundingBox oneBox = BoundingBoxCalculator.calculateOneBox(layoutTokens, true);
             List<BoundingBox> mergedBox = VectorGraphicBoxCalculator.mergeBoxes(theBoxes);
             result.addAll(mergedBox);
-            return result;
         }
+
+        Collections.sort(result);
 
         return result;
     }

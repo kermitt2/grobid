@@ -138,14 +138,9 @@ public class FigureTableVisualizer {
     ) throws IOException, XPathException {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
-        if (singleFile) {
-            //System.out.println(tei);
-        }
         XQueryProcessor pr = new XQueryProcessor(tei);
         SequenceIterator it = pr.getSequenceIterator(q);
         Item item;
-
-//        System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, ));
 
         // visualizing TEI image coords
         if (visualizeTeiFigures) {
@@ -176,11 +171,6 @@ public class FigureTableVisualizer {
                     if (f == null) {
                         continue;
                     }
-
-//                    if (blacklistedPages.contains(f.getPage())) {
-//                        System.out.println("Page " + f.getPage() + " of " + inputPdf + " contains vector graphics");
-//                        continue;
-//                    }
 
                     i++;
                     List<GraphicObject> boxedGo = f.getBoxedGraphicObjects();
@@ -229,7 +219,7 @@ public class FigureTableVisualizer {
                 for (Table t : teiDoc.getTables()) {
                     hasSomeTables = true;
                     if (!t.isGoodTable()) {
-                        System.out.println("Skipping bad table on page: " + t.getTextArea().get(0).getPage());
+                        //System.out.println("Skipping bad table on page: " + t.getTextArea().get(0).getPage());
                         Engine.getCntManager().i("TABLES_TEST", "BAD_TABLES");
 
                         continue;

@@ -766,8 +766,6 @@ var grobid = (function($) {
         if (figureMarkers) {
             figureMarkers.forEach(function(annotation, n) {
                 var theId = annotation.id;
-                //if (!theId)
-                //    return;
                 // we take the first and last positions
                 var targetFigure = null;
                 if (theId)
@@ -776,16 +774,43 @@ var grobid = (function($) {
                     var theFigurePos = {};
                     var pos = targetFigure.pos;
                     if (pos.length == 1) 
-                        theFigurePos = pos[0]
+                        theFigurePos = pos[0];
                     else {
-                        //if (pos && (pos.length > 0)) {
+                        // for figure we have to scan all the component positions, because graphic objects are not sorted
                         var theFirstPos = pos[0];
-                        var theLastPos = pos[pos.length-1];
                         theFigurePos.p = theFirstPos.p;
-                        theFigurePos.w = Math.max(theFirstPos.w, theLastPos.w);
-                        theFigurePos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
-                        theFigurePos.x = Math.min(theFirstPos.x, theLastPos.x);
-                        theFigurePos.y = Math.min(theFirstPos.y, theLastPos.y);
+                        theFigurePos.x = theFirstPos.x;
+                        theFigurePos.y = theFirstPos.y;
+                        theFigurePos.h = theFirstPos.h;
+                        theFigurePos.w = theFirstPos.w;
+
+                        for (thePosIndex in pos) {
+                            if (thePosIndex == 0)
+                                continue
+                            thePos = pos[thePosIndex]
+                            if (thePos.x < theFigurePos.x) {
+                                theFigurePos.w = theFigurePos.w + (theFigurePos.x - thePos.x);
+                                theFigurePos.x = thePos.x;
+                            }
+                            if (thePos.y < theFigurePos.y) {
+                                theFigurePos.h = theFigurePos.h + (theFigurePos.y - thePos.y);
+                                theFigurePos.y = thePos.y;
+                            }
+
+                            var maxFigureX = theFigurePos.x + theFigurePos.w;
+                            var maxFigureY = theFigurePos.y + theFigurePos.h;
+
+                            var maxPosX = thePos.x + thePos.w;
+                            var maxPosY = thePos.y + thePos.h;
+
+                            if (maxPosX > maxFigureX) {
+                                theFigurePos.w = maxPosX - theFigurePos.x;
+                            }
+
+                            if (maxPosY > maxFigureY) {
+                                theFigurePos.h = maxPosY - theFigurePos.y;
+                            }
+                        }
                     }
                     var pageNumber = theFigurePos.p;
                     if (pageInfo[pageNumber-1]) {
@@ -793,7 +818,6 @@ var grobid = (function($) {
                         page_width = pageInfo[pageNumber-1].page_width;
                     }
                     annotateFigure(false, theId, annotation, null, page_height, page_width, theFigurePos);
-                    //}
                 } else {
                     var pageNumber = annotation.p;
                     if (pageInfo[pageNumber-1]) {
