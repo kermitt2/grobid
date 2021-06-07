@@ -404,11 +404,11 @@ project(":grobid-trainer") {
         implementation 'org.slf4j:slf4j-jdk14:1.7.25'
     }
 
-    /*configurations {
+    configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        all*.exclude group: 'log4j', module: "log4j"
-    }*/
+        //all*.exclude group: 'log4j', module: "log4j"
+    }
 
     jar {
         from {
