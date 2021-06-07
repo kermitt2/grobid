@@ -33,6 +33,7 @@ import static org.grobid.core.utilities.PathUtil.getOneFile;
 /**
  * Visualize figures and tables
  */
+
 public class FigureTableVisualizer {
 
     public static final boolean VISUALIZE_VECTOR_BOXES = true;
@@ -43,140 +44,8 @@ public class FigureTableVisualizer {
     private static boolean annotatedFigure;
     static boolean singleFile = true;
 
-
-    public static void main(String[] args) {
-        try {
-//            File input = new File("/Users/zholudev/Downloads/AS1032852770693301401636537960_content_1.pdf");
-
-
-//            File input = new File("/Work/temp/context/coords/1.pdf");
-
-//            File input = new File("/private/tmp/archives/153/560/AS_506916453314560_1497869708427/AS_506916453314560_1497869708427_276070153_viz.pdf");
-//            File input = new File("/Users/zholudev/Work/temp/AS_103916838588419_1401787113782/AS_103916838588419_1401787113782_1737175_viz.pdf");
-//            File input = new File("/Users/zholudev/Downloads/AS5478209999831041507622112282_content_1.pdf");
-//            File input = new File("/Users/zholudev/Work/workspace/pdf-analysis/pdf-analysis/pdf-analysis-core/src/evaluation/resources/figures/testSets/testSetBasic/01/1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/Job-description-APPTA-PostDocFellow-eng (1).pdf");
-            File input = new File("/Users/zholudev/Downloads/Dkt. 1-1 - Complaint - Exhibit A.pdf");
-//            File input = new File("/Work/temp/figureExtraction/2.pdf");
-
-
-
-
-//            File input = new File("/Work/temp/figureExtraction/newtest/2.pdf"); // here some images are not extracted
-//            File input = new File("/Work/temp/figureExtraction/5.pdf");
-//            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
-
-//            File input = new File("/Users/zholudev/Downloads/AS-134079286616064@1408978401811_content_1.pdf");
-//            File input = new File("/Users/zholudev/Work/temp/figureExtraction/1.pdf");
-
-//
-//
-// File input = new File("/Users/zholudev/Downloads/AS1670507774730271416839417556_content_1.pdf");
-// File input = new File("/Users/zholudev/Downloads/AS-322050973995010@1453794344041_content_1.pdf"); //separate blocks for 1 caption
-//            File input = new File("/Users/zholudev/Downloads/AS-327630265044992@1455124550118_content_1.pdf");
-//            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf"); //double caption attached
-
-//            File input = new File("/Work/temp/images/pdf_image_extraction_results/Synaptotagmin 11 interacts with components of the RNA-induced (2)/Synaptotagmin 11 interacts with components of the RNA-induced (2).pdf");
-
-
-
-//            File input = new File("/Users/zholudev/Downloads/AS-102952320634884@1401557154467_content_1.pdf");
-
-//            File input = new File("/Users/zholudev/Downloads/AS-328608011833344@1455357663088_content_1.pdf");
-
-
-//            File input = new File("/Users/zholudev/Downloads/fail.pdf");
-
-            // TABLES
-//            File input = new File("/Users/zholudev/Downloads/AS-301642189688834@1448928510544_content_1.pdf");
-//            File input = new File("/Users/zholudev/Downloads/710973.pdf"); //big fancy tables
-//            File input = new File("/Users/zholudev/Downloads/AS-345110018576384@1459292048595_content_1.pdf"); // lots of stuff annotatted
-//            File input = new File("/Users/zholudev/Downloads/AS-351355282706432@1460781035600_content_1.pdf"); // 5 tables
-//            File input = new File("/Users/zholudev/Downloads/ICCCI 2014 - SciRecSys (1).pdf"); //
-
-//            File input = new File("//Work/temp/context/1000k/AS_97456738013192_1400246905951.pdf"); // some captions take too much
-//            File input = new File("//Work/temp/context/1000k/AS_97469140570124_1400249863029.pdf"); // some incorrect distribution between captions and content
-//            File input = new File("//Work/temp/context/1000k/AS_97469983625226_1400250064243.pdf"); // one table takes too much
-//            File input = new File("//Work/temp/context/1000k/AS_97492947439622_1400255538259.pdf"); //
-
-
-            //-------------
-
-                    //new chunk
-            // AS_101470770827287_1401203928712.pdf - weird table caption
-
-
-
-            // END - TABLES
-//
-//
-// File input = new File("/Users/zholudev/Downloads/AS-334144056905730@1456677559953_content_1.pdf");
-//
-//
-//            File input = new File("/Work/temp/figureExtraction/1.pdf");
-
-
-//            File input = new File("/Work/temp/context/1000k/AS_101478173773832_1401205691162.pdf");
-//            File input = new File("/Work/temp/context/1000k/AS_103455624531988_1401677151824.pdf");
-
-//            File input = new File("/Users/zholudev/Downloads/1603.02478v1.pdf");
-
-            // VECTOR
-//            File input = new File("/Work/temp/figureExtraction/vector/6.pdf");
-
-//            File input = new File("//Users/zholudev/Downloads/AS-324757835190273@1454439709828_content_1.pdf"); // // glued images
-//            File input = new File("//Users/zholudev/Downloads/AS-104148838125570@1401842426392_content_1.pdf"); // 3 column
-
-//
-
-//            File input = new File("//Work/temp/context/1000k/AS_103486037430289_1401684402827.pdf"); //
-
-            processPdfFile(input, null);
-
-            // "AS_97204878446614_1400186857444.pdf" //annotated twice
-            //AS_103608674684939_1401713641754.pdf - vector graphics
-
-            //AS_101475778826244_1401205119181.pdf - weird annotations -- FIXED
-            // AS_101489636806656_1401208423051.pdf - cut too much -- // if intersects normal blocks then skip // FIXED
-            // AS_101479885049868_1401206099913.pdf - figure should be annotated on page 8 // FIXED
-            // AS_101482636513286_1401206754652.pdf - cut should be done from a different side //
-            // AS_101483391488007_1401206934646.pdf - half of the figure is annotated
-            // AS_101483399876615_1401206936959.pdf - one figure consisting of two bitmaps
-            // AS_101488558870530_1401208166373.pdf - bitmap image is not assigned // FIXED
-            // AS_103443628822540_1401674291617.pdf - duplicate figure captions and smaller vector boxes
-
-            // AS_101478173773832_1401205691162.pdf - two captions match one figure
-            // AS_103436670472202_1401672632695.pdf interesting vector graphics
-            // AS_199986580070402_1424691924638.pdf  different captions
-            // AS_97502904717322_1400257912690.pdf - not annotated figure on page 5 and 8
-            // AS_97568985976833_1400273667294.pdf - too big cut // FIXED
-            // AS_98989504466949_1400612345795.pdf - wrong vector image cut
-
-//            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Volumes/teams/common/Niall/habibi_pdfs"), "pdf");
-//            List<Path> allPaths = PathUtil.getAllPaths(Paths.get("/Work/temp/context/1000k"), "pdf");
-//
-//            singleFile = false;
-//            System.out.println("Processing " + allPaths.size());
-//            for (Path p : allPaths) {
-//                try {
-//                    processPdfFile(p.toFile(), new File("/Work/temp/tableExtraction/out1000k_2"));
-//                } catch (Exception e) {
-//                    Engine.getCntManager().i("EXCEPTIONS", e.getClass().getSimpleName());
-//                    e.printStackTrace();
-//                }
-//            }
-//
-
-            System.out.println(Engine.getCntManager());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-
-    }
-
     private static Set<Integer> getVectorGraphicPages(File pdfaltoDirectory) throws XPathException, IOException {
+
         //TODO: temp
 
         if (true) {
@@ -273,14 +142,9 @@ public class FigureTableVisualizer {
     ) throws IOException, XPathException {
         String q = XQueryProcessor.getQueryFromResources("figure-table-coords.xq");
         String tei = teiDoc.getTei();
-        if (singleFile) {
-            //System.out.println(tei);
-        }
         XQueryProcessor pr = new XQueryProcessor(tei);
         SequenceIterator it = pr.getSequenceIterator(q);
         Item item;
-
-//        System.out.println(new TaggingTokenClusteror(GrobidModels.FULLTEXT, ));
 
         // visualizing TEI image coords
         if (visualizeTeiFigures) {
@@ -311,11 +175,6 @@ public class FigureTableVisualizer {
                     if (f == null) {
                         continue;
                     }
-
-//                    if (blacklistedPages.contains(f.getPage())) {
-//                        System.out.println("Page " + f.getPage() + " of " + inputPdf + " contains vector graphics");
-//                        continue;
-//                    }
 
                     i++;
                     List<GraphicObject> boxedGo = f.getBoxedGraphicObjects();
@@ -364,7 +223,7 @@ public class FigureTableVisualizer {
                 for (Table t : teiDoc.getTables()) {
                     hasSomeTables = true;
                     if (!t.isGoodTable()) {
-                        System.out.println("Skipping bad table on page: " + t.getTextArea().get(0).getPage());
+                        //System.out.println("Skipping bad table on page: " + t.getTextArea().get(0).getPage());
                         Engine.getCntManager().i("TABLES_TEST", "BAD_TABLES");
 
                         continue;

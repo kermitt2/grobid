@@ -172,7 +172,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			localTok.setPage(currentPage);
 			addToken(localTok);*/
 			doc.addPage(page);
-		} else if (qName.equals("IMAGE")) {
+		} /*else if (qName.equals("IMAGE")) {
 			// this is normally the bitmap graphics
 			if (block != null) {
 				blabla.append("\n");
@@ -203,14 +203,14 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			block.setNbTokens(nbTokens);
 			images.get(imagePos).setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, currentX, currentY, currentWidth, currentHeight));
 			block.setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, currentX, currentY, currentWidth, currentHeight));
-			/*if (block.getX() == 0.0)
-				block.setX(currentX);
-			if (block.getY() == 0.0)
-				block.setY(currentY);
-			if (block.getWidth() == 0.0)
-				block.setWidth(currentWidth);
-			if (block.getHeight() == 0.0)
-				block.setHeight(currentHeight);*/
+			//if (block.getX() == 0.0)
+			//	block.setX(currentX);
+			//if (block.getY() == 0.0)
+			//	block.setY(currentY);
+			//if (block.getWidth() == 0.0)
+			//	block.setWidth(currentWidth);
+			//if (block.getHeight() == 0.0)
+			//	block.setHeight(currentHeight);
 			addBlock(block);
 			//doc.addBlock(block);
 			//page.addBlock(block);
@@ -218,7 +218,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			nbTokens = 0;
 			//block = new Block();
 			//block.setPage(currentPage);
-		}
+		}*/
 		/*
 		 * else if (qName.equals("VECTORIALIMAGES")) { if (block != null) {
 		 * blabla.append("\n"); block.setText(blabla.toString());
@@ -248,7 +248,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			nbTokens = 0;
 			block = null;
 		} else if (qName.equals("Illustration")) {
-			// this is normally the vector graphics
+			// this is normally the bitmap images and vector graphics
 			// such vector graphics are appliedto the whole page, so there is no x,y coordinates available
 			// in the xml - to get them we will need to parse the .vec files
 			if (block != null) {
@@ -262,8 +262,8 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			block = new Block();
 			//block.setPage(currentPage);
 			blabla = new StringBuffer();
-			blabla.append("@IMAGE " + images.get(images.size()-1).getFilePath() + "\n");
 			int imagePos = images.size()-1;
+			blabla.append("@IMAGE " + imagePos + "\n");
 			if (doc.getBlocks() != null)
 				images.get(imagePos).setBlockNumber(doc.getBlocks().size());
 			else
@@ -398,7 +398,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		} else if (qName.equals("Illustration")) {
 			int length = atts.getLength();
 			GraphicObject image = new GraphicObject();
-            int page;
             double x = 0, y = 0, width = 0, height = 0;
 			// Process each attribute
 			for (int i = 0; i < length; i++) {
@@ -444,11 +443,18 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 	                        	LOGGER.warn("Invalid HEIGHT value: " + value);
 	                        }
                             break;
+                        case "TYPE":
+                        	if (value.equals("svg")) {
+								image.setType(GraphicObjectType.VECTOR);
+							} else {
+								image.setType(GraphicObjectType.BITMAP);
+							}
+							break;
 					}
 				}
 			}
 			image.setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, x, y, width, height));
-			//image.setPage(currentPage);
+			image.setPage(currentPage);
 			images.add(image);
 		} else if (qName.equals("TextLine")) {
 			int length = atts.getLength();

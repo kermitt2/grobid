@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 /**
- * Represents a bounding box (e.g. for a reference marker in PDF)
+ * Represents a bounding box to identify area in the original PDF
  */
-public class BoundingBox {
+public class BoundingBox implements Comparable {
     private static final Logger LOGGER = LoggerFactory.getLogger(BoundingBox.class);
     private int page;
     private double x, y, width, height;
@@ -145,7 +145,6 @@ public class BoundingBox {
         return 0;
     }
 
-
     public double area() {
         return width * height;
     }
@@ -257,6 +256,27 @@ public class BoundingBox {
         if (Double.compare(that.getY(), getY()) != 0) return false;
         if (Double.compare(that.getWidth(), getWidth()) != 0) return false;
         return Double.compare(that.getHeight(), getHeight()) == 0;
+    }
+
+    @Override
+    public int compareTo(Object otherBox) {
+        if (this.equals(otherBox)) 
+            return 0;
+
+        if (!(otherBox instanceof BoundingBox)) 
+            return -1;
+
+        BoundingBox that = (BoundingBox) otherBox;
+
+        // the rest of position comparison is using the barycenter of the boxes
+        double thisCenterX = x + (width/2);
+        double thisCenterY = y + (height/2);
+        double otherCenterX = that.x + (that.width/2);
+        double otherCenterY = that.y+ (that.height/2);
+        if (Double.compare(thisCenterY, otherCenterY) == 0)
+            return Double.compare(thisCenterX, otherCenterX);
+        else 
+            return Double.compare(thisCenterY, otherCenterY);
     }
 
     @Override

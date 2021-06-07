@@ -352,7 +352,7 @@ public class Segmentation extends AbstractParser {
                     for(GraphicObject localImage : localImages) {
                         if (localImage.getType() == GraphicObjectType.BITMAP)
                             graphicBitmap = true;
-                        if (localImage.getType() == GraphicObjectType.VECTOR)
+                        if (localImage.getType() == GraphicObjectType.VECTOR || localImage.getType() == GraphicObjectType.VECTOR_BOX)
                             graphicVector = true;
                     }
                 }

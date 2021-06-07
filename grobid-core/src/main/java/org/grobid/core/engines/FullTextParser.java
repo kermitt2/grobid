@@ -597,9 +597,9 @@ public class FullTextParser extends AbstractParser {
                 if (localImages != null) {
                 	for(GraphicObject localImage : localImages) {
                 		if (localImage.getType() == GraphicObjectType.BITMAP)
-                			graphicVector = true;
-                		if (localImage.getType() == GraphicObjectType.VECTOR)
                 			graphicBitmap = true;
+                		if (localImage.getType() == GraphicObjectType.VECTOR || localImage.getType() == GraphicObjectType.VECTOR_BOX)
+                			graphicVector = true;
                 	}
                 }
 

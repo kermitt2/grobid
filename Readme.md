@@ -48,7 +48,7 @@ For more information on how the tool works, on its key features and [benchmarkin
 
 ## Demo
 
-For testing purposes, a public GROBID demo server is available at the following address: [https://grobid.science-miner.com](https://grobid.science-miner.com)
+For testing purposes, a public GROBID demo server is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
 
 The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 

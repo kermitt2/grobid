@@ -30,16 +30,7 @@ public class VectorGraphicBoxCalculator {
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
-
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
-
-        //for (Block b : document.getBlocks()) {
-//            if (visualizeBlocks) {
-//                AnnotationUtil.annotatePage(document, b.getPageNumber() + "," + b.getX() + "," + b.getY() +
-//                        "," + b.getWidth() + "," + b.getHeight(), 0);
-//                blockMultimap.put(b.getPageNumber(), b);
-//            }
-        //}
 
         for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
             BoundingBox mainPageArea = document.getPage(pageNum).getMainArea();
@@ -70,9 +61,7 @@ public class VectorGraphicBoxCalculator {
                     boxes.add(e);
                 }
 
-
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
-
                 for (int i = 0; i < remainingBoxes.size(); i++) {
                     Collection<Block> col = blockMultimap.get(pageNum);
                     for (Block bl : col) {
@@ -88,7 +77,6 @@ public class VectorGraphicBoxCalculator {
                 }
 
                 remainingBoxes = mergeBoxes(remainingBoxes);
-
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
                         result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
@@ -99,7 +87,6 @@ public class VectorGraphicBoxCalculator {
         }
         return result;
     }
-
 
     public static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
         boolean allMerged = false;
