@@ -70,8 +70,8 @@ public class DateParser extends AbstractParser {
                     if (date.isNotNull()) {
                         if (dates == null)
                             dates = new ArrayList<>();
-                        Date normalisedDate = normalize(date, true);
-                        dates.add(normalisedDate);
+                        Date normalizedDate = normalize(date, true);
+                        dates.add(normalizedDate);
                     }
                     date = new Date();
                     continue;
@@ -100,8 +100,8 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                Date normalisedDate = normalize(date, true);
-                                dates.add(normalisedDate);
+                                Date normalizedDate = normalize(date, true);
+                                dates.add(normalizedDate);
                             }
 
                             date = new Date();
