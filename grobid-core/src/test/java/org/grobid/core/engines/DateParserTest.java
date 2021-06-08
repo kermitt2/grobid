@@ -22,7 +22,7 @@ public class DateParserTest {
     public void testPostValidation_invalidYear_onlyString_shouldSetNull() {
         Date inputDate = new Date();
         inputDate.setYearString("10360 10370");
-        Date outputDate = DateParser.postValidate(inputDate);
+        Date outputDate = DateParser.cleaning(inputDate);
 
         assertThat(outputDate.getYearString(), is(nullValue()));
     }
@@ -31,7 +31,7 @@ public class DateParserTest {
     public void testPostValidation_invalidYear2_onlyString_shouldSetNull() {
         Date inputDate = new Date();
         inputDate.setYearString("10360 10370 10380 10390 10400");
-        Date outputDate = DateParser.postValidate(inputDate);
+        Date outputDate = DateParser.cleaning(inputDate);
 
         assertThat(outputDate.getYearString(), is(nullValue()));
     }
@@ -41,7 +41,7 @@ public class DateParserTest {
         Date inputDate = new Date();
         inputDate.setYear(1036010370);
         inputDate.setYearString("10360 10370");
-        Date outputDate = DateParser.postValidate(inputDate);
+        Date outputDate = DateParser.cleaning(inputDate);
 
         assertThat(outputDate.getYearString(), is(nullValue()));
         assertThat(outputDate.getYear(), is(-1));
@@ -52,7 +52,7 @@ public class DateParserTest {
         Date inputDate = new Date();
         inputDate.setMonth(1234);
         inputDate.setMonthString("1234");
-        Date outputDate = DateParser.postValidate(inputDate);
+        Date outputDate = DateParser.cleaning(inputDate);
 
         assertThat(outputDate.getMonthString(), is(nullValue()));
         assertThat(outputDate.getMonth(), is(-1));
@@ -63,7 +63,7 @@ public class DateParserTest {
         Date inputDate = new Date();
         inputDate.setDay(12345);
         inputDate.setDayString("12345");
-        Date outputDate = DateParser.postValidate(inputDate);
+        Date outputDate = DateParser.cleaning(inputDate);
 
         assertThat(outputDate.getDayString(), is(nullValue()));
         assertThat(outputDate.getDay(), is(-1));
@@ -73,7 +73,7 @@ public class DateParserTest {
     public void testNormalize_yearContainsWholeDate_shouldReconstructCorrectly() {
         Date inputDate = new Date();
         inputDate.setYear(20021212);
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
         
         assertThat(outputDate.getMonth(), is(12));
         assertThat(outputDate.getDay(), is(12));
@@ -84,7 +84,7 @@ public class DateParserTest {
     public void testNormalize_dayContainsWholeDate_shouldReturnEmptyDate() {
         Date inputDate = new Date();
         inputDate.setDay(20021212);
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(-1));
         assertThat(outputDate.getDay(), is(-1));
@@ -95,7 +95,7 @@ public class DateParserTest {
     public void testNormalize_monthContainsWholeDate_shouldReturnEmptyDate() {
         Date inputDate = new Date();
         inputDate.setMonth(20021212);
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(-1));
         assertThat(outputDate.getDay(), is(-1));
@@ -106,7 +106,7 @@ public class DateParserTest {
     public void testNormalize_yearOnly_validValue_shouldParseYearCorrectly() {
         Date inputDate = new Date();
         inputDate.setYearString("2002");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(-1));
         assertThat(outputDate.getDay(), is(-1));
@@ -120,7 +120,7 @@ public class DateParserTest {
         inputDate.setDayString("12");
         inputDate.setMonthString("12");
         inputDate.setYearString("2222222012");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getDay(), is(12));
         assertThat(outputDate.getDayString(), is("12"));
@@ -134,7 +134,7 @@ public class DateParserTest {
     public void testNormalize_monthOnly_validValue_shouldParseMonthCorrectly() {
         Date inputDate = new Date();
         inputDate.setMonthString("12");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(12));
         assertThat(outputDate.getDay(), is(-1));
@@ -148,7 +148,7 @@ public class DateParserTest {
         inputDate.setDayString("12");
         inputDate.setMonthString("1222222222");
         inputDate.setYearString("2012");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(-1));
         assertThat(outputDate.getMonthString(), is(nullValue()));
@@ -162,7 +162,7 @@ public class DateParserTest {
     public void testNormalize_dayOnly_validValue_shouldParseDayCorrectly() {
         Date inputDate = new Date();
         inputDate.setDayString("12");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getMonth(), is(-1));
         assertThat(outputDate.getDay(), is(12));
@@ -176,7 +176,7 @@ public class DateParserTest {
         inputDate.setDayString("1221");
         inputDate.setMonthString("12");
         inputDate.setYearString("2012");
-        Date outputDate = target.normalize(inputDate, true);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
         assertThat(outputDate.getDay(), is(-1));
         assertThat(outputDate.getDayString(), is(nullValue()));

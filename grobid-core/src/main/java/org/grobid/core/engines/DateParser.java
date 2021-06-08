@@ -70,7 +70,7 @@ public class DateParser extends AbstractParser {
                     if (date.isNotNull()) {
                         if (dates == null)
                             dates = new ArrayList<>();
-                        Date normalizedDate = normalize(date, true);
+                        Date normalizedDate = normalizeAndClean(date);
                         dates.add(normalizedDate);
                     }
                     date = new Date();
@@ -100,7 +100,7 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                Date normalizedDate = normalize(date, true);
+                                Date normalizedDate = normalizeAndClean(date);
                                 dates.add(normalizedDate);
                             }
 
@@ -127,7 +127,7 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                Date normalizedDate = normalize(date, true);
+                                Date normalizedDate = normalizeAndClean(date);
                                 dates.add(normalizedDate);
                             }
 
@@ -154,7 +154,7 @@ public class DateParser extends AbstractParser {
                             if (date.isNotNull()) {
                                 if (dates == null)
                                     dates = new ArrayList<Date>();
-                                Date normalizedDate = normalize(date, true);
+                                Date normalizedDate = normalizeAndClean(date);
                                 dates.add(normalizedDate);
                             }
 
@@ -180,13 +180,12 @@ public class DateParser extends AbstractParser {
             if (date.isNotNull()) {
                 if (dates == null)
                     dates = new ArrayList<>();
-                Date normalizedDate = normalize(date, true);
+                Date normalizedDate = normalizeAndClean(date);
                 dates.add(normalizedDate);
             }
 
         } catch (Exception e) {
-//			e.printStackTrace();
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception on " + this.getClass().getName() + " occured while running Grobid.", e);
         }
         return dates;
     }
@@ -218,12 +217,11 @@ public class DateParser extends AbstractParser {
 
     public static final Pattern[] months = {jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec};
 
-    public Date normalize(Date date) {
-        return normalize(date, false);
+    public Date normalizeAndClean(Date date) {
+        return cleaning(normalize(date));
     }
     
-    
-    public Date normalize(Date date, boolean validate) {
+    public Date normalize(Date date) {
         Date normalizedDate = new Date();
         
         // normalize day
@@ -318,11 +316,7 @@ public class DateParser extends AbstractParser {
             }
         }
         
-        if(validate) {
-            return postValidate(normalizedDate);
-        } else {
-            return normalizedDate;
-        }         
+        return normalizedDate;
     }
 
     /**
@@ -334,7 +328,7 @@ public class DateParser extends AbstractParser {
      *  
      * @return the date where invalid information are removed or reverted
      */
-    public static Date postValidate(Date originalDate) {
+    public static Date cleaning(Date originalDate) {
         Date validatedDate = new Date();
         
         if (originalDate.getDay() > -1) {
