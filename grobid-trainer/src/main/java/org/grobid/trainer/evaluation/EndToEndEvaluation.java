@@ -185,7 +185,7 @@ public class EndToEndEvaluation {
 
             int maxNumThreads = GrobidProperties.getInstance().getNBThreads();
 
-            if (maxNumThreads > GrobidProperties.getInstance().getMaxPoolConnections()) {
+            if (maxNumThreads >= GrobidProperties.getInstance().getMaxPoolConnections()) {
                 int newNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
                 System.out.println("Grobid nbThreads > maxPoolConnections. Lowering to " + newNumThreads);
                 maxNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
