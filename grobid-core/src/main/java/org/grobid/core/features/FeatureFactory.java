@@ -191,7 +191,7 @@ public class FeatureFactory {
     /**
      * Test for the current string contains at least one digit
      */
-    public static boolean test_digit(String tok) {
+    public boolean test_digit(String tok) {
         if (tok == null)
             return false;
         if (tok.length() == 0)

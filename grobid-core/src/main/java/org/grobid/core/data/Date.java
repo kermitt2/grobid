@@ -132,16 +132,13 @@ public class Date implements Comparable {
     }
 
     public boolean isNotNull() {
-        if ((rawDate == null) &
-                (dayString == null) &
-                (monthString == null) &
-                (yearString == null) &
-                (day == -1) &
-                (month == -1) &
-                (year == -1))
-            return false;
-        else
-            return true;
+        return (rawDate != null) ||
+            (dayString != null) ||
+            (monthString != null) ||
+            (yearString != null) ||
+            (day != -1) ||
+            (month != -1) ||
+            (year != -1);
     }
 
     public boolean isAmbiguous() {

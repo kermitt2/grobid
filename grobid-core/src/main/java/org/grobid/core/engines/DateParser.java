@@ -1,12 +1,19 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Date;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
@@ -15,6 +22,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
@@ -30,162 +38,180 @@ public class DateParser extends AbstractParser {
     DateParser(GrobidModel model) {
         super(model);
     }
-
+    
     /**
-     * Processing of authors in header
-     */
+     * Deprecated, @Use process(String input)
+     **/
+    @Deprecated
     public List<Date> processing(String input) {
-        if (input == null)
+        return process(input);
+    }
+    
+    public List<Date> process(String input) {
+        List<String> dateBlocks = new ArrayList<>();
+        // force English language for the tokenization only
+        List<String> tokenizations = analyzer.tokenize(input, new Language("en", 1.0));
+        if (CollectionUtils.isEmpty(tokenizations)) {
             return null;
+        }
 
-        List<Date> dates = null;
+        for(String tok : tokenizations) {
+            if (!" ".equals(tok) && !"\n".equals(tok)) {
+                // para final sanitisation
+                tok = tok.replaceAll("[ \n]", "");
+                dateBlocks.add(tok + " <date>");
+            }
+        }
+        
+        return processCommon(dateBlocks);
+    }
 
-        List<String> dateBlocks = new ArrayList<String>();
+    public List<Date> process(List<LayoutToken> input) {
+        List<String> dateBlocks = new ArrayList<>();
+        for(LayoutToken tok : input) {
+            if (!" ".equals(tok.getText()) && !"\n".equals(tok.getText())) {
+                // para final sanitisation
+                String normalizedText = tok.getText().replaceAll("[ \n]", "");
+                dateBlocks.add(normalizedText + " <date>");
+            } 
+        }
+
+        return processCommon(dateBlocks);
+    }
+    
+    protected List<Date> processCommon(List<String> input) {
+        if (CollectionUtils.isEmpty(input))
+            return null;
+        
         try {
-            // force English language for the tokenization only
-			List<String> tokenizations = analyzer.tokenize(input, new Language("en", 1.0));
-			if (tokenizations.size() == 0) 
-                return null;
-			for(String tok : tokenizations) {
-                if (!tok.equals(" ") && !tok.equals("\n")) {
-                    // parano final sanitisation
-                    tok = tok.replaceAll("[ \n]", "");
-                    dateBlocks.add(tok + " <date>");
-                }
-            }
+            String features = FeaturesVectorDate.addFeaturesDate(input);
+            String res = label(features);
 
-            String headerDate = FeaturesVectorDate.addFeaturesDate(dateBlocks);
-            String res = label(headerDate);
+            List<LayoutToken> tokenization = input.stream()
+                .map(token -> new LayoutToken(token.split(" ")[0]))
+                .collect(Collectors.toList());
+            
             // extract results from the processed file
-
-            //System.out.print(res.toString());
-            StringTokenizer st2 = new StringTokenizer(res, "\n");
-            String lastTag = null;
-            org.grobid.core.data.Date date = new Date();
-            int lineCount = 0;
-            String currentMarker = null;
-            while (st2.hasMoreTokens()) {
-                String line = st2.nextToken();
-                if ((line.trim().length() == 0)) {
-                    if (date.isNotNull()) {
-                        if (dates == null)
-                            dates = new ArrayList<>();
-                        Date normalizedDate = normalizeAndClean(date);
-                        dates.add(normalizedDate);
-                    }
-                    date = new Date();
-                    continue;
-                }
-                StringTokenizer st3 = new StringTokenizer(line, "\t ");
-                int ll = st3.countTokens();
-                int i = 0;
-                String s1 = null;
-                String s2 = null;
-                while (st3.hasMoreTokens()) {
-                    String s = st3.nextToken().trim();
-                    if (i == 0) {
-                        s2 = s; // string
-                    } else if (i == ll - 1) {
-                        s1 = s; // label
-                    }
-                    i++;
-                }
-
-                if ("<year>".equals(s1) || "I-<year>".equals(s1)) {
-                    if (date.getYearString() != null) {
-                        if ((s1.equals("I-<year>")) ||
-                                (!s1.equals(lastTag) && !"I-<year>".equals(lastTag))
-                                ) {
-                            // new date
-                            if (date.isNotNull()) {
-                                if (dates == null)
-                                    dates = new ArrayList<Date>();
-                                Date normalizedDate = normalizeAndClean(date);
-                                dates.add(normalizedDate);
-                            }
-
-                            date = new Date();
-                            date.setYearString(s2);
-                        } else {
-                            if (date.getYearString().length() == 0)
-                                date.setYearString(s2);
-                            else if ((date.getYearString().charAt(date.getYearString().length() - 1) == '-')
-                                    | (date.getYearString().charAt(date.getYearString().length() - 1) == '\''))
-                                date.setYearString(date.getYearString() + s2);
-                            else
-                                date.setYearString(date.getYearString() + " " + s2);
-                        }
-                    } else {
-                        date.setYearString(s2);
-                    }
-                } else if ("<month>".equals(s1) || "I-<month>".equals(s1)) {
-                    if (date.getMonthString() != null) {
-                        if ((s1.equals("I-<month>")) ||
-                                (!s1.equals(lastTag) && !"I-<month>".equals(lastTag))
-                                ) {
-                            // new date
-                            if (date.isNotNull()) {
-                                if (dates == null)
-                                    dates = new ArrayList<Date>();
-                                Date normalizedDate = normalizeAndClean(date);
-                                dates.add(normalizedDate);
-                            }
-
-                            date = new Date();
-                            date.setMonthString(s2);
-                        } else {
-                            if (date.getMonthString().length() == 0)
-                                date.setMonthString(s2);
-                            else if ((date.getMonthString().charAt(date.getMonthString().length() - 1) == '-')
-                                    | (date.getMonthString().charAt(date.getMonthString().length() - 1) == '\''))
-                                date.setMonthString(date.getMonthString() + s2);
-                            else
-                                date.setMonthString(date.getMonthString() + " " + s2);
-                        }
-                    } else {
-                        date.setMonthString(s2);
-                    }
-                } else if ("<day>".equals(s1) || "I-<day>".equals(s1)) {
-                    if (date.getDayString() != null) {
-                        if ((s1.equals("I-<day>")) ||
-                                (!s1.equals(lastTag) && !"I-<day>".equals(lastTag))
-                                ) {
-                            // new date
-                            if (date.isNotNull()) {
-                                if (dates == null)
-                                    dates = new ArrayList<Date>();
-                                Date normalizedDate = normalizeAndClean(date);
-                                dates.add(normalizedDate);
-                            }
-
-                            date = new Date();
-                            date.setDayString(s2);
-                        } else {
-                            if (date.getDayString().length() == 0)
-                                date.setDayString(s2);
-                            else if ((date.getDayString().charAt(date.getDayString().length() - 1) == '-')
-                                    | (date.getDayString().charAt(date.getDayString().length() - 1) == '\''))
-                                date.setDayString(date.getDayString() + s2);
-                            else
-                                date.setDayString(date.getDayString() + " " + s2);
-                        }
-                    } else {
-                        date.setDayString(s2);
-                    }
-                }
-
-                lastTag = s1;
-                lineCount++;
-            }
-            if (date.isNotNull()) {
-                if (dates == null)
-                    dates = new ArrayList<>();
-                Date normalizedDate = normalizeAndClean(date);
-                dates.add(normalizedDate);
-            }
-
+            return resultExtraction(res, tokenization);
         } catch (Exception e) {
             throw new GrobidException("An exception on " + this.getClass().getName() + " occured while running Grobid.", e);
+        }
+    }
+    
+    public List<Date> resultExtractionOld(String result) {
+        
+        List<Date> dates = null;
+        
+        StringTokenizer st2 = new StringTokenizer(result, "\n");
+        String lastTag = null;
+        org.grobid.core.data.Date date = new Date();
+        int lineCount = 0;
+        String currentMarker = null;
+        while (st2.hasMoreTokens()) {
+            String line = st2.nextToken();
+            if ((line.trim().length() == 0)) {
+                if (date.isNotNull()) {
+                    if (dates == null)
+                        dates = new ArrayList<>();
+                    Date normalizedDate = normalizeAndClean(date);
+                    dates.add(normalizedDate);
+                }
+                date = new Date();
+                continue;
+            }
+            StringTokenizer st3 = new StringTokenizer(line, "\t ");
+            int ll = st3.countTokens();
+            int i = 0;
+            String s1 = null;
+            String s2 = null;
+            while (st3.hasMoreTokens()) {
+                String s = st3.nextToken().trim();
+                if (i == 0) {
+                    s2 = s; // string
+                } else if (i == ll - 1) {
+                    s1 = s; // label
+                }
+                i++;
+            }
+
+            if ("<year>".equals(s1) || "I-<year>".equals(s1)) {
+                
+            } else if ("<month>".equals(s1) || "I-<month>".equals(s1)) {
+                
+            } else if ("<day>".equals(s1) || "I-<day>".equals(s1)) {
+                
+            }
+
+            lastTag = s1;
+            lineCount++;
+        }
+        if (date.isNotNull()) {
+            if (dates == null)
+                dates = new ArrayList<>();
+            Date normalizedDate = normalizeAndClean(date);
+            dates.add(normalizedDate);
+        }
+        
+        return dates; 
+    }
+
+    public List<Date> resultExtraction(String result, List<LayoutToken> tokenizations) {
+
+        List<Date> dates = new ArrayList<>();
+        Date date = new Date();
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.DATE, result, tokenizations);
+
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            Engine.getCntManager().i(clusterLabel);
+            
+            String clusterText = LayoutTokensUtil.toText(cluster.concatTokens());
+            if (clusterLabel.equals(TaggingLabels.DATE_YEAR)) {
+                if (isNotBlank(date.getYearString())) {
+                        if (date.isNotNull()) {
+                            Date normalizedDate = normalizeAndClean(date);
+                            dates.add(normalizedDate);
+                            date = new Date();
+                        }
+                        date.setYearString(clusterText);
+
+                } else {
+                    date.setYearString(clusterText);
+                }
+            } else if (clusterLabel.equals(TaggingLabels.DATE_DAY)) {
+                if (isNotBlank(date.getDayString())) {
+                        if (date.isNotNull()) {
+                            Date normalizedDate = normalizeAndClean(date);
+                            dates.add(normalizedDate);
+                            date = new Date();
+                        }
+                        date.setDayString(clusterText);
+                } else {
+                    date.setDayString(clusterText);
+                }
+               
+            } else if (clusterLabel.equals(TaggingLabels.DATE_MONTH)) {
+                if (isNotBlank(date.getMonthString())) {
+                        if (date.isNotNull()) {
+                            Date normalizedDate = normalizeAndClean(date);
+                            dates.add(normalizedDate);
+                            date = new Date();
+                        }
+                        date.setMonthString(clusterText);
+                } else {
+                    date.setMonthString(clusterText);
+                }
+            } 
+        }
+
+        if (date.isNotNull()) {
+            Date normalizedDate = normalizeAndClean(date);
+            dates.add(normalizedDate);
         }
         return dates;
     }

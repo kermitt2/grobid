@@ -1,20 +1,39 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.Date;
+import org.grobid.core.features.FeaturesVectorDate;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.utilities.GrobidTestUtils;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.easymock.PowerMock;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Lexicon.class)
 public class DateParserTest {
 
     private DateParser target;
-
+    
     @Before
     public void setUp() throws Exception {
+        PowerMock.mockStatic(Lexicon.class);
         target = new DateParser(GrobidModels.DUMMY);
     }
 
@@ -68,13 +87,13 @@ public class DateParserTest {
         assertThat(outputDate.getDayString(), is(nullValue()));
         assertThat(outputDate.getDay(), is(-1));
     }
-    
+
     @Test
     public void testNormalize_yearContainsWholeDate_shouldReconstructCorrectly() {
         Date inputDate = new Date();
         inputDate.setYear(20021212);
         Date outputDate = target.normalizeAndClean(inputDate);
-        
+
         assertThat(outputDate.getMonth(), is(12));
         assertThat(outputDate.getDay(), is(12));
         assertThat(outputDate.getYear(), is(2002));
@@ -184,5 +203,69 @@ public class DateParserTest {
         assertThat(outputDate.getMonthString(), is("12"));
         assertThat(outputDate.getYear(), is(2012));
         assertThat(outputDate.getYearString(), is("2012"));
+    }
+
+    @Test
+    public void testResultExtraction_StandardDate_shouldWork() throws Exception {
+        String input = "1983-1-1";
+        
+        List<LayoutToken> inputAsLayoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<String> features = generateFeatures(inputAsLayoutTokens);
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        List<Triple<String, Integer, Integer>> labels = Arrays.asList(
+            Triple.of("<year>", 0, 1),
+            Triple.of("<month>", 2, 3),
+            Triple.of("<day>", 4, 5)
+        );
+        
+        String result = GrobidTestUtils.getWapitiResult(features, labels);
+
+        List<Date> dates = target.resultExtraction(result, inputAsLayoutTokens);
+        
+        assertThat(dates, hasSize(1));
+        assertThat(dates.get(0).getYearString(), is("1983"));
+        assertThat(dates.get(0).getMonthString(), is("1"));
+        assertThat(dates.get(0).getDayString(), is("1"));
+    }
+
+    @Test
+    public void testResultExtraction_DoubleDate_shouldWork() throws Exception {
+        String input = "1983-1-1 1982-1-2";
+
+        List<LayoutToken> inputAsLayoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<String> features = generateFeatures(inputAsLayoutTokens);
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        List<Triple<String, Integer, Integer>> labels = Arrays.asList(
+            Triple.of("<year>", 0, 1),
+            Triple.of("<month>", 2, 3),
+            Triple.of("<day>", 4, 5),
+            Triple.of("<year>", 5, 6),
+            Triple.of("<month>", 7, 8),
+            Triple.of("<day>", 9, 10)
+        );
+
+        String result = GrobidTestUtils.getWapitiResult(features, labels);
+
+        List<Date> dates = target.resultExtraction(result, inputAsLayoutTokens);
+
+        assertThat(dates, hasSize(2));
+        assertThat(dates.get(0).getYearString(), is("1983"));
+        assertThat(dates.get(0).getMonthString(), is("1"));
+        assertThat(dates.get(0).getDayString(), is("1"));
+
+        assertThat(dates.get(1).getYearString(), is("1982"));
+        assertThat(dates.get(1).getMonthString(), is("1"));
+        assertThat(dates.get(1).getDayString(), is("2"));
+    }
+
+
+    private List<String> generateFeatures(List<LayoutToken> layoutTokens) throws Exception {
+        List<String> tokensAsStrings = layoutTokens.stream()
+            .map(layoutToken -> layoutToken.getText() + " " + "<date>")
+            .collect(Collectors.toList());
+        String features = FeaturesVectorDate.addFeaturesDate(tokensAsStrings);
+        return Arrays.asList(features.split("\n"));
     }
 }
