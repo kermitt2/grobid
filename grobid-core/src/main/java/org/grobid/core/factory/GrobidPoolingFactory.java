@@ -116,7 +116,6 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 
 	@Override
 	public void destroyObject(Engine engine) throws Exception {
-        engine.close();
 	}
 
 
