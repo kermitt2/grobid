@@ -114,7 +114,7 @@ public class EndToEndEvaluation {
             	}
         	}
 
-            return new Boolean(success);
+            return success;
         } 
     } 
 
@@ -183,8 +183,16 @@ public class EndToEndEvaluation {
 			long start = System.currentTimeMillis();
 			int fails = 0;
 
-			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
-			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+            int maxNumThreads = GrobidProperties.getInstance().getNBThreads();
+
+            if (maxNumThreads > GrobidProperties.getInstance().getMaxPoolConnections()) {
+                int newNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
+                System.out.println("Grobid nbThreads > maxPoolConnections. Lowering to " + newNumThreads);
+                maxNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
+            }
+
+			ExecutorService executor = Executors.newFixedThreadPool(maxNumThreads);
+			List<Future<Boolean>> results = new ArrayList<>();
 
 			if (refFiles.length > 0) {
 				// this will preload the models, so that the model loading messages don't mess with the progress bar
@@ -225,12 +233,10 @@ public class EndToEndEvaluation {
 						if (!success)
 							fails++;
 						pb.step();
-					} catch (InterruptedException e) {
-	                	e.printStackTrace();
-	            	} catch (ExecutionException e) {
+					} catch (InterruptedException | ExecutionException e) {
 	                	e.printStackTrace();
 	            	}
-				}
+                }
 			}
 
 			executor.shutdown();
