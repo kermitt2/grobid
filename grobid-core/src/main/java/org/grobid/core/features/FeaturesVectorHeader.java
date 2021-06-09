@@ -11,7 +11,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for header parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorHeader {
     public LayoutToken token = null; // not a feature, reference value

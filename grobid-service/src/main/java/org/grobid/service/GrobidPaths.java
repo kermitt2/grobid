@@ -2,7 +2,6 @@ package org.grobid.service;
 
 /**
  * This interface only contains the path extensions for accessing the grobid service.
- * @author Florian, Damien, Patrice
  *
  */
 public interface GrobidPaths {

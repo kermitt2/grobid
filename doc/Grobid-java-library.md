@@ -92,11 +92,11 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 	    // If the location is customised: 
 	    GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));		
 	    
-	    //The GrobidProperties needs to be instantiate using the correct grobidHomeFinder or it will use the default 
+	    //The grobid yaml config file needs to be instantiate using the correct grobidHomeFinder or it will use the default 
 	    //locations
 		GrobidProperties.getInstance(grobidHomeFinder);
 
-		System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+		System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
 		Engine engine = GrobidFactory.getInstance().createEngine();
 
@@ -127,10 +127,10 @@ Copy the Grobid jar library under `grobid-example/lib`:
 > cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_example>/grobid-example/lib
 ```
 
-The paths to __grobid-home__ must be changed in the project property file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+The paths to __grobid-home__ might need to be changed in the project config file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
 		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.properties
+		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.yaml
 
 Then you can test the toy project:
 ```bash

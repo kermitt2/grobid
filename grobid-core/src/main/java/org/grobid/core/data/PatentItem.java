@@ -6,7 +6,6 @@ import org.grobid.core.layout.BoundingBox;
 /**
  * Class for managing patent bibliographical references.
  *
- * @author Patrice Lopez
  */
 public class PatentItem implements Comparable<PatentItem> {
     // attribute

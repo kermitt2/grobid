@@ -16,7 +16,6 @@ import org.grobid.core.exceptions.GrobidException;
  *  This SAX parser mirror the input XML document, and add as extra annotation identified reference to 
  *  patent and NPL. The possible tags within the chunk are removed to avoid hierarchical invalid documents.
  * 
- *  @author Patrice Lopez
  */
 public class PatentAnnotationSaxParser extends DefaultHandler {
 

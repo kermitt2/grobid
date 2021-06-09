@@ -30,6 +30,10 @@ import java.util.Set;
 
 import static org.grobid.core.utilities.PathUtil.getOneFile;
 
+/**
+ * Visualize figures and tables
+ */
+
 public class FigureTableVisualizer {
 
     public static final boolean VISUALIZE_VECTOR_BOXES = true;
@@ -40,13 +44,14 @@ public class FigureTableVisualizer {
     private static boolean annotatedFigure;
     static boolean singleFile = true;
 
-    private static Set<Integer> getVectorGraphicPages(File pdf2xmlDirectory) throws XPathException, IOException {
+    private static Set<Integer> getVectorGraphicPages(File pdfaltoDirectory) throws XPathException, IOException {
+
         //TODO: temp
 
         if (true) {
             return new HashSet<>();
         }
-        XQueryProcessor xq = new XQueryProcessor(getOneFile(pdf2xmlDirectory, ".xml"));
+        XQueryProcessor xq = new XQueryProcessor(getOneFile(pdfaltoDirectory, ".xml"));
         String query = XQueryProcessor.getQueryFromResources("self-contained-images.xq");
 
         SequenceIterator it = xq.getSequenceIterator(query);
@@ -81,19 +86,18 @@ public class FigureTableVisualizer {
                 .withProcessVectorGraphics(true)
                 .build();
 
-
         DocumentSource documentSource = DocumentSource.fromPdf(input, -1, -1, true, false, false);
 
-        File pdf2xmlDirectory = new File(contentDir, "pdf2xml");
-        pdf2xmlDirectory.mkdirs();
+        File pdfaltoDirectory = new File(contentDir, "pdfalto");
+        pdfaltoDirectory.mkdirs();
         FileUtils.copyFileToDirectory(input, contentDir);
-        File copiedFile = new File(pdf2xmlDirectory, "input.xml");
+        File copiedFile = new File(pdfaltoDirectory, "input.xml");
         FileUtils.copyFile(documentSource.getXmlFile(), copiedFile);
-        FileUtils.copyDirectory(new File(documentSource.getXmlFile().getAbsolutePath() + "_data"), new File(pdf2xmlDirectory, documentSource.getXmlFile().getName() + "_data"));
+        FileUtils.copyDirectory(new File(documentSource.getXmlFile().getAbsolutePath() + "_data"), new File(pdfaltoDirectory, documentSource.getXmlFile().getName() + "_data"));
 
         System.out.println(documentSource.getXmlFile());
 
-        blacklistedPages = getVectorGraphicPages(pdf2xmlDirectory);
+        blacklistedPages = getVectorGraphicPages(pdfaltoDirectory);
 
         Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
 
@@ -121,8 +125,8 @@ public class FigureTableVisualizer {
     }
 
     private static Engine setupEngine() {
-        GrobidProperties.set_GROBID_HOME_PATH("grobid-home");
-        GrobidProperties.setGrobidPropertiesPath("grobid-home/config/grobid.properties");
+        GrobidProperties.setGrobidHome("grobid-home");
+        GrobidProperties.setGrobidConfigPath("grobid-home/config/grobid.yaml");
         LibraryLoader.load();
         return GrobidFactory.getInstance().getEngine();
     }
@@ -131,7 +135,7 @@ public class FigureTableVisualizer {
             PDDocument document,
             File xmlFile, Document teiDoc,
             boolean visualizeTeiFigures,
-            boolean visualizePdf2xmlImages,
+            boolean visualizePdfaltoImages,
             boolean visualizeGraphicObjects,
             boolean visualizeTables,
             boolean visualizeVectorBoxes
@@ -152,8 +156,8 @@ public class FigureTableVisualizer {
             }
         }
 
-        //VISUALIZING "IMAGE" elements from pdf2xml
-        if (visualizePdf2xmlImages) {
+        //VISUALIZING "IMAGE" elements from pdfalto
+        if (visualizePdfaltoImages) {
             q = XQueryProcessor.getQueryFromResources("figure-coords-pdfalto.xq");
 
             pr = new XQueryProcessor(xmlFile);

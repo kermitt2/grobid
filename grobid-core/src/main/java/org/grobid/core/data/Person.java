@@ -18,7 +18,6 @@ import java.util.TreeMap;
 /**
  * Class for representing and exchanging person information, e.g. author or editor.
  *
- * @author Patrice Lopez
  */
 public class Person {
     private String firstName = null;

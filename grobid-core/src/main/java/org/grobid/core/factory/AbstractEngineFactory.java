@@ -7,6 +7,10 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
 
+import java.util.Collections;
+import java.util.Set;
+import org.apache.commons.collections4.CollectionUtils;
+
 /**
  * 
  * Abstract factory to get engine instance.
@@ -75,7 +79,8 @@ public class AbstractEngineFactory {
 	@Deprecated
 	public static void fullInit() {
 		init();
-        if (GrobidProperties.getGrobidCRFEngine() == GrobidCRFEngine.CRFPP) {
+		Set<GrobidCRFEngine> distinctModels = GrobidProperties.getDistinctModels();
+		if (CollectionUtils.containsAny(distinctModels, Collections.singletonList(GrobidCRFEngine.CRFPP))) {  
 		    ModelMap.initModels();
         } 
 		//Lexicon.getInstance();

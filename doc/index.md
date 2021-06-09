@@ -19,6 +19,8 @@
 
 * [Use GROBID with containers (Docker)](Grobid-docker.md)
 
+* [Configuration of GROBID](Configuration.md)
+
 * [Troubleshooting and known issues](Troubleshooting.md)
 
 * [Use Grobid library in third party Java applications](Grobid-java-library.md)

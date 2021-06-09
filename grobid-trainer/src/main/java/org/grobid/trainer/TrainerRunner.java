@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * Training application for training a target model.
  *
- * @author Patrice Lopez
  */
 public class TrainerRunner {
 
@@ -121,7 +120,7 @@ public class TrainerRunner {
             trainer = new NameCitationTrainer();
         } else if (model.equals("name-header")) {
             trainer = new NameHeaderTrainer();
-        } else if (model.equals("patent")) {
+        } else if (model.equals("patent-citation")) {
             trainer = new PatentParserTrainer();
         } else if (model.equals("segmentation")) {
             trainer = new SegmentationTrainer();

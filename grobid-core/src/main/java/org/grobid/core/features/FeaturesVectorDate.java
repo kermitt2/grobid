@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 /**
  * Class for features used for parsing date chunk.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorDate {
     public String string = null; // lexical feature

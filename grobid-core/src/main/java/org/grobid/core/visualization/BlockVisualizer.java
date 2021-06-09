@@ -29,6 +29,10 @@ import java.util.List;
 
 import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
 
+/**
+ * Visualizing blocks
+ */
+
 public class BlockVisualizer {
 
     public static PDDocument annotateBlocks(PDDocument document, File xmlFile, Document teiDoc,

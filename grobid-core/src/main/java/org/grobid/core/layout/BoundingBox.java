@@ -145,7 +145,6 @@ public class BoundingBox implements Comparable {
         return 0;
     }
 
-
     public double area() {
         return width * height;
     }

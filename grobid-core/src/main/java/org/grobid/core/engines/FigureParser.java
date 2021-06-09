@@ -19,9 +19,6 @@ import java.util.List;
 
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
-/**
- * @author Patrice
- */
 class FigureParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FigureParser.class);
 

@@ -29,7 +29,7 @@ import java.util.List;
 
 public final class GrobidServiceApplication extends Application<GrobidServiceConfiguration> {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidServiceApplication.class);
-    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-service/config/config.yaml", "config/config.yaml"};
+    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-home/config/grobid.yaml"};
     private static final String RESOURCES = "/api";
 
 
@@ -88,7 +88,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     // ========== static ==========
     public static void main(String... args) throws Exception {
         if (ArrayUtils.getLength(args) < 2) {
-            LOGGER.warn("Expected 2 arguments: [0]-server, [1]-<path to config.yaml>");
+            //LOGGER.warn("Expected 2 argument: [0]-server, [1]-<path to config yaml file>");
 
             String foundConf = null;
             for (String p : DEFAULT_CONF_LOCATIONS) {

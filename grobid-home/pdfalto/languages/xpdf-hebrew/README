@@ -1,0 +1,34 @@
+Xpdf: Hebrew support package
+============================
+
+Xpdf project: http://www.foolabs.com/xpdf/
+2011-aug-15
+
+If this package includes CMap files, they contain their own copyright
+notices and distribution conditions.  All other files in the package
+are Copyright 2002 Glyph & Cog, LLC, and are licensed under the GNU
+General Public License (GPL), version 2 or 3.
+
+This package provides support files needed to use the Xpdf tools with
+Hebrew PDF files.
+
+Contents:
+- ISO-8859-8 encoding
+- Windows-1255 encoding
+
+Place all of these files in a directory, typically:
+
+    Unix - /usr/local/share/xpdf/hebrew
+    Win32 - C:\Program Files\xpdf\hebrew
+
+Add the contents of the "add-to-xpdfrc" file to your system-wide
+xpdfrc config file, which is typically:
+
+    Unix - /usr/local/etc/xpdfrc
+    Win32 - C:\Program Files\xpdf\xpdfrc
+
+Alternatively, on Unix systems you can add these lines to your
+personal xpdfrc file in $HOME/.xpdfrc.
+
+Make sure to edit the added lines to use the actual directory where
+the files were installed.

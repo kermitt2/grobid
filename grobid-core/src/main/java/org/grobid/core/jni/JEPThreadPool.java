@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
  * must be reused for all method calls to that JEP instance. For ensuring this,
  * we pool the Jep instances in a singleton class.
  */
-
 public class JEPThreadPool {
     private static final Logger LOGGER = LoggerFactory.getLogger(JEPThreadPool.class);
 

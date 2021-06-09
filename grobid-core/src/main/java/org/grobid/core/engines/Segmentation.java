@@ -35,7 +35,6 @@ import static org.apache.commons.lang3.StringUtils.*;
  * page header, document body, bibliographical section, each bibliographical references in
  * the biblio section and finally the possible annexes.
  *
- * @author Patrice Lopez
  */
 public class Segmentation extends AbstractParser {
 
@@ -105,10 +104,10 @@ public class Segmentation extends AbstractParser {
         } finally {
             // keep it clean when leaving...
             /*if (config.getPdfAssetPath() == null) {
-                // remove the pdf2xml tmp file
+                // remove the pdfalto tmp file
                 DocumentSource.close(documentSource, false, true, true);
             } else*/ {
-                // remove the pdf2xml tmp files, including the sub-directories
+                // remove the pdfalto tmp files, including the sub-directories
                 DocumentSource.close(documentSource, true, true, true);
             }
         }
@@ -158,7 +157,7 @@ public class Segmentation extends AbstractParser {
                 if (files != null) {
                     int nbFiles = 0;
                     for (final File currFile : files) {
-                        if (nbFiles > DocumentSource.PDFTOXML_FILES_AMOUNT_LIMIT)
+                        if (nbFiles > DocumentSource.PDFALTO_FILES_AMOUNT_LIMIT)
                             break;
 
                         String toLowerCaseName = currFile.getName().toLowerCase();

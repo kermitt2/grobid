@@ -50,11 +50,9 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
-
 /**
  * Class for generating a TEI representation of a document.
  *
- * @author Patrice Lopez
  */
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
@@ -132,7 +130,6 @@ public class TEIFormatter {
         } 
 
         // by default there is no schema association
-
         if (schemaDeclaration != SchemaDeclaration.XSD) {
             tei.append("<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
         }

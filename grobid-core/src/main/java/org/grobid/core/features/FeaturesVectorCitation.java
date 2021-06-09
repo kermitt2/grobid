@@ -13,7 +13,6 @@ import java.util.regex.Matcher;
 /**
  * Class for features used for header parsing.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorCitation {
     // default bins for relative position, set experimentally

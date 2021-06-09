@@ -601,7 +601,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
                             if (currentRotation) {
                                 // if the text is rotated, it appears that the font size is multiplied
-                                // by 2? we should have a look at pdf2xml for this
+                                // by 2? we should have a look at pdf2xml/pdfalto for this
                                 textStyle.setFontSize(textStyle.getFontSize() / 2);
                             }
 

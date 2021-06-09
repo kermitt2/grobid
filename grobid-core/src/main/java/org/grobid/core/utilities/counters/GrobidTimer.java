@@ -16,7 +16,6 @@ import java.util.Map;
  * System.out.println("The elapsed time between Time1 and Time2 is "+timer.getElapsedTime("Time1","Time2"));
  * </code>
  * 
- * @author Damien
  * 
  */
 public class GrobidTimer {

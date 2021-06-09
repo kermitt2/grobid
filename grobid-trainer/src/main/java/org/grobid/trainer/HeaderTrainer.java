@@ -12,19 +12,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-
-/**
- * @author Patrice Lopez
- */
 public class HeaderTrainer extends AbstractTrainer{
 
     public HeaderTrainer() {
         super(GrobidModels.HEADER);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.000001;
-        window = 30;
-        nbMaxIterations = 1500;
     }
 
 

@@ -55,37 +55,43 @@ python3 grobidTagger.py citation tag
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for all GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
 
-<span>3.</span> Configure your GROBID properties file. 
+<span>3.</span> Configure your GROBID config file. 
 
-Indicate the path to the DeLFT install in the GROBID properties file `grobid.properties` (`grobid-home/config/grobid.properties`), 
+Indicate the path to the DeLFT install in the GROBID config file `grobid.yaml` (`grobid-home/config/grobid.yaml`), 
 
-```properties
-grobid.delft.install=../delft
+```yaml
+  delft:
+    install: "../delft"
 ```
 
-Indicate the GROBID model that should use a Deep Learning implementation in the same properties file, for instance if you wish to use a Deep Learning model for the citation model (it provides 1-2 additional points to the f-score for bibliographical reference recognition) use:
+Indicate the GROBID model that should use a Deep Learning implementation in the same config file, for instance if you wish to use a Deep Learning model for the citation model (it provides 1-2 additional points to the f-score for bibliographical reference recognition) use:
 
-```properties
-grobid.crf.engine.citation=delft
+```yaml
+  models:
+    - name: "citation"
+      engine: "delft"
+      architecture: "BidLSTM_CRF_FEATURES"
 ```
 
-The default Deep Learning architecture will be `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Gloves embeddings). If you wish to use another architecture, you need to specify it in the same properties file, for instance:
+The default Deep Learning architecture is `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Gloves embeddings). However for GROBID, an architecture also exploiting features (in particular layout features, which are not captured at all by the pretrained language models) gives the best result and the prefered choise is `BidLSTM_CRF_FEATURES`. If you wish to use another architecture, you need to specify it in the same config file, for instance for `scibert`, which is a base BERT-CRF fine-tuned model:
 
-```properties
-grobid.delft.architecture=scibert
+```yaml
+  models:
+    - name: "citation"
+      engine: "delft"
+      architecture: "scibert"
 ```
 
-However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` models is shipped with GROBID, given the huge size of transformer models (1.3GB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under the specific model subdirectory `grobid-home/models/**model**/`. 
+However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` and `BidLSTM_CRF_FEATURES` models are shipped with GROBID, given the huge size of BERT transformer models (1.3GB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under the specific model subdirectory `grobid-home/models/**model**/`. 
 
+If you are using a Python environment for the DeLFT installation, you can set the environment path in the config file as well:
 
-If you are using a Python environment for the DeLFT installation, you can set the environment path in the properties file as well:
-
-```properties
-grobid.delft.python.virtualEnv=/where/my/damned/python/virtualenv/is/
+```yaml
+  delft:
+    python_virtualEnv: /where/my/damned/python/virtualenv/is/
 ```
 
-Normally by setting the Python environment path in the properties file, you will not need to launch GROBID in the same activated environment. 
-
+Normally by setting the Python environment path in the config file, you will not need to launch GROBID in the same activated environment. 
 
 <span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`):
 
@@ -123,7 +129,7 @@ To run the grobid service, under `grobid/`:
 ./gradlew run
 ```
 
-In case you have installed DeLFT with virtualenv and you have not indicated the virtual environment in the GROBID properties file, you should start GROBID after having activated the virtualenv. 
+In case you have installed DeLFT with `virtualenv` and you have not indicated the virtual environment in the GROBID config file, you should start GROBID after having activated the `virtualenv`. 
 
 When running the GROBID service on a first input, you should see in the logs that the expected Deep Learning models are loaded and the JEP threads are activated:
 
@@ -153,38 +159,22 @@ conda activate grobidDelft
 
 **NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
 
-Follow the steps described above, having the conda environment activated. Do not indicate a virtualEnv path in the GROBID properties file and launch the GROBID service with the conda environment activated. For conda too, it is preferable to install JEP globally as indicated. 
+Follow the steps described above, having the conda environment activated. Do not indicate a virtualEnv path in the GROBID config file and launch the GROBID service with the conda environment activated. For conda too, it is preferable to install JEP globally as indicated. 
 
 ## Configuration
 
-GROBID allows running models in mixed mode, i.e. to use DeLFT Deep Learning architectures for certain models, and Wapiti CRF for others. It is advised to select the preferred engine for each individual models in the GROBID properties file. 
+GROBID allows running models in mixed mode, i.e. to use DeLFT Deep Learning architectures for certain models, and Wapiti CRF for others. It is advised to select the preferred engine for each individual models in the GROBID config file. 
 
-For example, selecting Wapiti CRF as main engine: 
+By default, all the models are set to use Wapiti CRF as sequence labeling implementation. Each model has its own configuration block, where it is possible to select a particular model implementation, with its own parameters. 
 
-```properties
-grobid.crf.engine=crf
+The following models (citation) will run with DeLFT `BidLSTM-BidLSTM_CRF_FEATURES` by adding: 
+
+```yaml
+  models:
+    - name: "citation"
+      engine: "delft"
+      architecture: "BidLSTM_CRF_FEATURES"
 ```
-
-By default, all the models will then use Wapiti CRF as sequence labeling implementation. The following models (citation) will run with DeLFT `BidLSTM-CRF` by adding: 
-
-```properties
-grobid.crf.engine.citation=delft
-grobid.delft.architecture=BidLSTM_CRF
-```
-
-In contrast, selecting now DeLFT as main default engine: 
-
-```properties
-grobid.crf.engine=delft
-```
-
-The following models (segmentation, fulltext and reference-segmenter) will run with Wapiti CRF by adding: 
-
-```properties
-grobid.crf.engine.segmentation=wapiti
-grobid.crf.engine.fulltext=wapiti
-grobid.crf.engine.reference_segmenter=wapiti
-```  
 
 **NOTE**: use the underscore for models whose name contains hyphens.
 

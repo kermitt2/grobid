@@ -23,7 +23,6 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 /**
  * Class for fast matching of word sequences over text stream.
  *
- * @author Patrice Lopez
  */
 public final class FastMatcher {
     private Map terms = null;

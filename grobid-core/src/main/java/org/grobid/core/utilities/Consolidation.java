@@ -24,7 +24,6 @@ import static org.grobid.core.data.BiblioItem.cleanDOI;
  * When consolidation operations are realized, be sure to call the close() method
  * to ensure that all Executors are terminated.
  *
- * @author Patrice Lopez
  */
 public class Consolidation {
     private static final Logger LOGGER = LoggerFactory.getLogger(Consolidation.class);

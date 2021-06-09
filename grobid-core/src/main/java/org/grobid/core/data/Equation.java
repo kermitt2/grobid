@@ -20,7 +20,6 @@ import java.util.SortedSet;
 /**
  * Class for representing an equation.
  *
- * @author Patrice Lopez
  */
 public class Equation {
 	protected StringBuilder content = null;

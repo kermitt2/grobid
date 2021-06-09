@@ -5,9 +5,7 @@ import org.grobid.core.data.ChemicalEntity;
 /**
  * Chemical name-to-structure processing based on external Open Source libraries.
  *
- * @author Patrice Lopez
  */
-
 public class NameToStructureResolver {
 
 

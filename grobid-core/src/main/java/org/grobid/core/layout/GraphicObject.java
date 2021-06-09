@@ -5,7 +5,6 @@ import java.io.File;
 /**
  * Class for representing graphical objects occurring within a document.
  *
- * @author Patrice Lopez
  */
 public class GraphicObject {
     private String filePath = null;

@@ -32,9 +32,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 
-/**
- * @author Patrice Lopez
- */
 public class AuthorParser {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
     private final GenericTagger namesHeaderParser;

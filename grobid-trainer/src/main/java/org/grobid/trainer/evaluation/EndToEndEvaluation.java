@@ -131,7 +131,7 @@ public class EndToEndEvaluation {
 
 		try {
 			GrobidProperties.getInstance();
-			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+			System.out.println(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
 			engine = GrobidFactory.getInstance().createEngine();
 		}
@@ -183,7 +183,9 @@ public class EndToEndEvaluation {
 			long start = System.currentTimeMillis();
 			int fails = 0;
 
-			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getNBThreads());
+System.out.println(GrobidProperties.getInstance().getMaxConcurrency());
+
+			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getMaxConcurrency()-1);
 			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
 
 			if (refFiles.length > 0) {

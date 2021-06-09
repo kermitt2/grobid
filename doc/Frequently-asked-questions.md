@@ -17,14 +17,13 @@ The exact server configuration will depend on the service you want to call. We p
 
 - keep the concurrency at the client (number of simultaneous calls) slightly higher than the available number of threads at the server side, for instance if the server has 16 threads, use a concurrency between 20 and 24 (it's the option `n` in the above mentioned clients, in my case I used 24)
 
-- in `grobid/grobid-home/grobid.properties` set the property `org.grobid.max.connections` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine, in my case I used 20)
+- in `grobid/grobid-home/config/grobid.yaml` set the parameter `concurrency` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine, in my case I used 20)
 
 - set `modelPreload` to `true`in `grobid/grobid-service/config/config.yaml`, it will avoid some strange behavior at launch 
 
-- in the query, `consolidateHeader` can be `1`  or `2` if you are using the CrossRef consolidation. It significantly improves the accuracy and add useful metadata
+- in the query, `consolidateHeader` can be `1`  or `2` if you are using the biblio-glutton or CrossRef consolidation. It significantly improves the accuracy and add useful metadata.
 
 - If you want to consolidate all the bibliographical references and use `consolidateCitations` as `1` or `2`, CrossRef query rate limit will avoid scale to more than 1 document per second... For scaling the bibliographical reference resolution, you will need to use a local consolidation service, [biblio-glutton](https://github.com/kermitt2/biblio-glutton). The overall capacity will depend on the biblio-glutton service then, and the number of elasticsearch nodes you can exploit. From experience, it is difficult to go beyond 300K PDF per day when using consolidation for every extracted bibliographical references. 
-
 
 ## I would also like to extract images from PDFs
 

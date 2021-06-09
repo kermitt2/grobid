@@ -13,7 +13,6 @@ import org.grobid.core.utilities.Utilities;
 /**
  * The entrance point for starting grobid from command line and perform batch processing
  * 
- * @author Florian, Damien, Patrice
  */
 public class GrobidMain {
 

@@ -82,27 +82,19 @@ Access the service:
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-##Configure using the normal config property file
+##Configure using the normal yaml config file
 
-The simplest way to pass a modified configuration to the docker image is to mount the property file `grobid.properties` when running the image. Modify the config file `grobid/grobid-home/config/grobid.properties` according to your requirements on the host machine and mount it when running the image as follow: 
+The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.0-SNAPSHOT
+docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.0-SNAPSHOT
 ```
 
-You need to use an absolute path to specify your modified `grobid.properties` file.
+You need to use an absolute path to specify your modified `grobid.yaml` file.
 
 ##Configuration using Environment Variables
 
-Properties from the `grobid-home/config/grobid.properties` can be overridden using environment variables. Given a property key, the corresponding environment variable is the property key converted to upper case and the dot (`.`) replaced by two underscores `__`. (Property keys must be all lower case)
-
-e.g. to configure `grobid.nb_threads` use `GROBID__NB_THREADS`.
-
-```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 \
-    --env GROBID__NB_THREADS=10 \
-    lfoppiano/grobid:${latest_grobid_version}
-```
+This usage is currently not supported anymore, due to the number and the complexity of configuration parameters. Use the yaml configuration file to set production parameter to a docker image. 
 
 ##Troubleshooting
 
@@ -235,13 +227,13 @@ In order to run the container of the newly created image, for example for the de
 > docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 grobid/grobid:0.7.0-SNAPSHOT
 ```
 
-In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.properties` file. Modify the config file `grobid/grobid-home/config/grobid.properties` accordingly on the host machine and mount it when running the image as follow: 
+In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.0-SNAPSHOT
+docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.0-SNAPSHOT
 ```
 
-You need to use an absolute path to specify your modified `grobid.properties` file.
+You need to use an absolute path to specify your modified `grobid.yaml` file.
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
 

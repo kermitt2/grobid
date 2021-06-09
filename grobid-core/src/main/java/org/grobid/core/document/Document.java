@@ -76,7 +76,6 @@ import java.util.stream.Collectors;
 /**
  * Class for representing, processing and exchanging a document item.
  *
- * @author Patrice Lopez
  */
 
 public class Document implements Serializable {

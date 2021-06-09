@@ -7,10 +7,6 @@ import org.grobid.core.jni.DeLFTModel;
 
 import java.io.IOException;
 
-/**
- * 
- * @author: Patrice
- */
 public class DeLFTTagger implements GenericTagger {
 
     private final DeLFTModel delftModel;

@@ -29,13 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
 /**
  * RESTful service for the GROBID system.
  *
- * @author FloZi, Damien, Patrice
  */
-
 @Timed
 @Singleton
 @Path(GrobidPaths.PATH_GROBID)
@@ -67,12 +64,12 @@ public class GrobidRestService implements GrobidPaths {
 
     @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration) {
-        GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
-        if (configuration.getGrobid().getGrobidProperties() != null) {
+        GrobidProperties.setGrobidHome(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
+        /*if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
-        }
+        }*/
         GrobidProperties.getInstance();
         GrobidProperties.setContextExecutionServer(true);
         LOGGER.info("Initiating Servlet GrobidRestService");
