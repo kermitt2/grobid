@@ -1498,12 +1498,14 @@ var grobid = (function($) {
 		}
 		else if (selected == 'referenceAnnotations') {
 			createInputFile2(selected);
-			$('#consolidateBlock').show();
+			$('#consolidateBlockPDFRef').show();
+            $('#consolidateBlockPDFFig').show();
 			setBaseUrl('referenceAnnotations');
 		}
 		else if (selected == 'annotatePDF') {
 			createInputFile2(selected);
-			$('#consolidateBlock').show();
+			$('#consolidateBlockPDFRef').show();
+            $('#consolidateBlockPDFFig').hide();
 			setBaseUrl('annotatePDF');
 		}
 		else if (selected == 'citationPatentAnnotations') {

@@ -52,6 +52,7 @@ public class GrobidRestService implements GrobidPaths {
     public static final String CONSOLIDATE_HEADER = "consolidateHeader";
     public static final String INCLUDE_RAW_AFFILIATIONS = "includeRawAffiliations";
     public static final String INCLUDE_RAW_CITATIONS = "includeRawCitations";
+    public static final String INCLUDE_FIGURES_TABLES = "includeFiguresTables";
 
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
@@ -679,11 +680,13 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_CITATIONS) String consolidateCitations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) throws Exception {
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations,
+        @DefaultValue("0") @FormDataParam(INCLUDE_FIGURES_TABLES) String includeFiguresTables) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw);
+        boolean includeFig = validateIncludeRawParam(includeFiguresTables);
+        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw, includeFig);
     }
     
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
