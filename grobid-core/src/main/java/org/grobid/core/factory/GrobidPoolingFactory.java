@@ -11,12 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class GrobidPoolingFactory extends AbstractEngineFactory implements
-		PoolableObjectFactory {
+		PoolableObjectFactory<Engine> {
 
 	/**
 	 * A pool which contains objects of type Engine for the conversion.
 	 */
-	private static volatile GenericObjectPool grobidEnginePool = null;
+	private static volatile GenericObjectPool<Engine> grobidEnginePool = null;
 	private static volatile Boolean grobidEnginePoolControl = false;
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidPoolingFactory.class);
@@ -37,13 +37,13 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	 * 
 	 * @return GenericObjectPool
 	 */
-	protected static GenericObjectPool newPoolInstance() {
+	protected static GenericObjectPool<Engine> newPoolInstance() {
 		if (grobidEnginePool == null) {
 			// initialize grobidEnginePool
 			LOGGER.debug("synchronized newPoolInstance");
 			synchronized (grobidEnginePoolControl) {
 				if (grobidEnginePool == null) {
-					grobidEnginePool = new GenericObjectPool(GrobidPoolingFactory.newInstance());
+					grobidEnginePool = new GenericObjectPool<>(GrobidPoolingFactory.newInstance());
 					//grobidEnginePool.setFactory(GrobidPoolingFactory.newInstance());
 					grobidEnginePool
 							.setWhenExhaustedAction(GenericObjectPool.WHEN_EXHAUSTED_BLOCK);
@@ -72,7 +72,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 		}
 		Engine engine = null;
 		try {
-			engine = (Engine) grobidEnginePool.borrowObject();
+			engine = grobidEnginePool.borrowObject();
 		} catch (NoSuchElementException nseExp) {
 			throw new NoSuchElementException();
 		} catch (Exception exp) {
@@ -92,7 +92,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 		try {
 			//engine.close();
 			if (grobidEnginePool == null) 
-				System.out.println("grobidEnginePool is null !");
+				LOGGER.error("grobidEnginePool is null !");
 			grobidEnginePool.returnObject(engine);
 		} catch (Exception exp) {
 			throw new GrobidException(
@@ -109,41 +109,28 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	protected static GrobidPoolingFactory newInstance() {
 		return new GrobidPoolingFactory();
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
+	
 	@Override
-	public void activateObject(Object arg0) throws Exception {
+	public void activateObject(Engine arg0) throws Exception {
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
-	public void destroyObject(Object arg0) throws Exception {
+	public void destroyObject(Engine engine) throws Exception {
+        engine.close();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+
 	@Override
-	public Object makeObject() throws Exception {
+	public Engine makeObject() throws Exception {
 		return (createEngine(this.preload));
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
+	
 	@Override
-	public void passivateObject(Object arg0) throws Exception {
+	public void passivateObject(Engine arg0) throws Exception {
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
+	
 	@Override
-	public boolean validateObject(Object arg0) {
+	public boolean validateObject(Engine arg0) {
 		return false;
 	}
 
