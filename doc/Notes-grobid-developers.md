@@ -4,43 +4,62 @@ This page contains a set of notes for the Grobid developers:
 
 ### Release
 
-**Warning:** This release documentation will have to be updated because all the Bintray services will be deprecated on May 1st 2021. We will have to use Maven as in the old times. 
+We use JitPack to publish the Grobid libraries. 
 
 In order to make a new release:  
 
-+ make sure that there are no additional models in the grobid-home. Best is to have a second cloned project **over ssh** for the release 
++ tag the project branch to be releases, for instance a version `0.7.0`: 
 
-+ Make the release: 
 ```
-    > ./gradlew release
-```
-
-Note that the release via the gradle wrapper can only work when no prompt for the password is required by git, so in practice it means it is necessary to push over ssh. 
-
-+ Add the bintray credentials in are in the file `~/.gradle/gradle.properties`, like: 
-
-```  
-bintrayUser=username
-bintrayApiKey=the api key 
-mavenRepoReleasesUrl=https://dl.bintray.com/rookies/releases
-mavenRepoSnapshotsUrl=https://dl.bintray.com/rookies/snapshots
+> git tag 0.7.0
+> git push origin 0.7.0
 ```
 
-+ Fetch back the tag and upload the artifacts: 
- 
++ create a github release: the easiest is to use the GitHub web interface
+
++ trigger the build with JitPack: https://jitpack.io/#kermitt2/grobid
+
++ you're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
+
++ update the usage information, e.g. for Gradlew project: 
+
 ```
-    > git checkout [releasetag]
-    
-    > ./gradlew clean build install
-    
-    > ./gradlew bintrayUpload
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
 ```
 
-+ You're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
+```
+dependencies {
+    implementation 'com.github.kermitt2:grobid:0.7.0'
+}
+```
+
+for maven projects:
+
+```
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+```
+
+```
+    <dependency>
+        <groupId>com.github.kermitt2</groupId>
+        <artifactId>grobid</artifactId>
+        <version>0.7.0</version>
+    </dependency>
+```
 
 + Update the docker image(s) on DockerHub with this new version (see the [GROBID docker](Grobid-docker.md) page)
 
-+ Ensure that the different GROBID modules are updated to use this new release (in case they are not using the master/developer version). 
++ Ensure that the different GROBID modules are updated to use this new release as indicated above. 
 
 ### Configuration of GROBID module models
 
