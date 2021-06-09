@@ -76,22 +76,22 @@ public class GrobidPropertiesTest {
     }
 
     @Test
-    public void testsetgetNBThreads() {
+    public void testsetgetWapitiNbThreads() {
         int value = 1;
-        GrobidProperties.setNBThreads(value);
+        GrobidProperties.setWapitiNbThreads(value);
         assertEquals("The parameter has not the value expected", value,
-                GrobidProperties.getNBThreads().intValue());
+                GrobidProperties.getWapitiNbThreads().intValue());
     }
 
     @Test
     public void testgetNBThreadsShouldReturnAvailableProcessorsIfZero() {
         int value = 0;
-        GrobidProperties.setNBThreads(value);
+        GrobidProperties.setWapitiNbThreads(value);
         assertEquals("The parameter has not the value expected",
                 String.valueOf(Runtime.getRuntime().availableProcessors()),
-                GrobidProperties.getNBThreads());
+                GrobidProperties.getWapitiNbThreads());
         assertTrue("The parameter is not greater than zero",
-            GrobidProperties.getNBThreads().intValue() > 0);
+            GrobidProperties.getWapitiNbThreads().intValue() > 0);
     }
 
     @Test
