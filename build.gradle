@@ -6,10 +6,9 @@ buildscript {
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
-        maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
+//        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
 //        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
@@ -18,7 +17,9 @@ buildscript {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 //apply plugin: 'net.researchgate.release'
