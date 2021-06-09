@@ -2,15 +2,16 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        jcenter()
+//        jcenter()
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
@@ -20,7 +21,7 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'net.researchgate.release'
+//apply plugin: 'net.researchgate.release'
 apply plugin: 'jacoco'
 
 jacoco {
@@ -43,7 +44,7 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
-    apply plugin: 'com.jfrog.bintray'
+ //   apply plugin: 'com.jfrog.bintray'
 
     publishing {
         publications {
@@ -63,10 +64,11 @@ subprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
+//        jcenter()
         maven {
             url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
+        maven { url "https://jitpack.io" }
     }
 
     configurations {
@@ -177,6 +179,7 @@ subprojects {
 //        }
 //    }
 
+    /*
     bintray {
         dryRun = false // Whether to run this as dry-run, without deploying
         publish = true // If version should be auto published after an upload
@@ -201,6 +204,7 @@ subprojects {
             }
         }
     }
+    */
 
     test {
         testLogging.showStandardStreams = true
@@ -209,7 +213,7 @@ subprojects {
         maxHeapSize = "1024m"
     }
 
-    rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
+    //rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
 /** SUBPROJECTS **/
