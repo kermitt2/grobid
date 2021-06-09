@@ -19,7 +19,7 @@
 
 * [Use GROBID with containers (Docker)](Grobid-docker.md)
 
-* [Configuration of GROBID](Configuration.md)
+* [GROBID configuration](Configuration.md)
 
 * [Troubleshooting and known issues](Troubleshooting.md)
 
