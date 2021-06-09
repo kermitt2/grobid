@@ -15,9 +15,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
@@ -33,8 +35,11 @@ public class TableParser extends AbstractParser {
 
     /**
      * The processing here is called from the full text parser in cascade.
+     * Normally we should find only one table in the sequence to be labelled. 
+     * But for robustness and recovering error from the higher level, we allow
+     * sub-segmenting several tables that appears one after the other.   
      */
-    public Table processing(List<LayoutToken> tokenizationTable, String featureVector) {
+    public List<Table> processing(List<LayoutToken> tokenizationTable, String featureVector) {
         String res;
         try {
             res = label(featureVector);
@@ -49,12 +54,15 @@ public class TableParser extends AbstractParser {
         return getExtractionResult(tokenizationTable, res);
     }
 
-    private Table getExtractionResult(List<LayoutToken> tokenizations, String result) {
+    private List<Table> getExtractionResult(List<LayoutToken> tokenizations, String result) {
+        List<Table> tables = new ArrayList<>();
+      
+        // first table
         Table table = new Table();
-        table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(tokenizations, true)));
-
+        
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.TABLE, result, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
+        TaggingLabel previousLabel = null;
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
@@ -70,29 +78,51 @@ public class TableParser extends AbstractParser {
                 table.appendCaption(clusterContent);
                 table.appendCaptionLayoutTokens(tokens);
                 table.getFullDescriptionTokens().addAll(tokens);
+                table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_HEAD)) {
+                // if we already have a header (it could be via label) and we are not continuing some header/label
+                // we consider the non-connected header field as the introduction of a new table
+                // TBD: this work fine for header located before the table content, but not sure otherwise
+                if (!StringUtils.isEmpty(table.getHeader()) &&
+                    previousLabel != null && 
+                    (previousLabel.equals(TBL_CONTENT) || previousLabel.equals(TBL_NOTE) || previousLabel.equals(TBL_DESC) )) {
+                    // we already have a table header, this means that we have a distinct table starting now
+                    tables.add(table);
+                    table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(table.getLayoutTokens(), true)));
+                    table = new Table();
+                }
                 table.appendHeader(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
+                table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_LABEL)) {
                 //label should also go to head
                 table.appendHeader(" " + clusterContent + " ");
                 table.appendLabel(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
+                table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_NOTE)) {
                 table.appendNote(clusterContent);
                 table.getFullDescriptionTokens().addAll(tokens);
                 table.addAllNoteLayoutTokens(tokens);
+                table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_OTHER)) {
+                table.addLayoutTokens(tokens);
             } else if (clusterLabel.equals(TBL_CONTENT)) {
                 table.appendContent(clusterContent);
                 table.getContentTokens().addAll(tokens);
+                table.addLayoutTokens(tokens);
             } else {
                 LOGGER.warn("Unexpected table model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
+            previousLabel = clusterLabel;
         }     
 
-        return table;
+        // last table
+        table.setTextArea(Collections.singletonList(BoundingBoxCalculator.calculateOneBox(table.getLayoutTokens(), true)));
+        tables.add(table);
+
+        return tables;
     }
 
     /**
