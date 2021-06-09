@@ -184,11 +184,12 @@ public class EndToEndEvaluation {
 			int fails = 0;
 
             int maxNumThreads = GrobidProperties.getInstance().getNBThreads();
-
-            if (maxNumThreads >= GrobidProperties.getInstance().getMaxPoolConnections()) {
-                int newNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
-                System.out.println("Grobid nbThreads > maxPoolConnections. Lowering to " + newNumThreads);
-                maxNumThreads = GrobidProperties.getInstance().getMaxPoolConnections() -1;
+            int maxPoolConnections = GrobidProperties.getInstance().getMaxPoolConnections();
+            
+            if (maxNumThreads >= maxPoolConnections) {
+                int newNumThreads = maxPoolConnections - 1;
+                System.out.println("Grobid nbThreads ("+maxNumThreads+") >= maxPoolConnections ("+maxPoolConnections+"). Lowering to " + newNumThreads);
+                maxNumThreads = maxPoolConnections - 1;
             }
 
 			ExecutorService executor = Executors.newFixedThreadPool(maxNumThreads);
