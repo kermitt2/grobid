@@ -11,7 +11,7 @@ The exact server hardware configuration depends on the service you want to call.
 
 Following are the configuration used to process with `processFulltextDocument` around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client during one week on a 16 CPU machine (16 threads, 32GB RAM, no SDD). The process ran without any crash during ~7 days at this rate (11.3M PDF processed) using two 16-CPU servers.
 
-- if the server has 8-10 threads available, you can use the default settings, otherwise modify the `max_connections` parameter in the configuration to match your available number of threads. In `grobid/grobid-home/grobid.yaml`, set the parameter `max_connections` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine)
+- if the server has 8-10 threads available, you can use the default settings, otherwise modify the `concurrency` parameter in the configuration to match your available number of threads. In `grobid/grobid-home/grobid.yaml`, set the parameter `concurrency` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine)
  
 - keep the concurrency at the client (number of simultaneous calls) slightly higher than the available number of threads at the server side, for instance if the server has 16 threads, use a concurrency between 20 and 24 (it's the option `n` in the above mentioned clients)
 
@@ -27,7 +27,7 @@ See [full thread](https://github.com/kermitt2/grobid/issues/443).
 
 In case of running on limited memory hardware, there are various ways to deal with memory constraints in Grobid:
 
-- reduce the number of parallel threads on server side in grobid/grobid-home/config/grobid.yaml change the parameter `max_connections` (default is `10`, this is the max size of the thread pool that is reported in the logs)
+- reduce the number of parallel threads on server side in grobid/grobid-home/config/grobid.yaml change the parameter `concurrency` (default is `10`, this is the max size of the thread pool that is reported in the logs)
 
 - reduce the number of parallel processing at client side: this is the parameter `n` in the grobid python client command line
 

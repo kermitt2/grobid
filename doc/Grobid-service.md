@@ -61,12 +61,13 @@ For preloading all the models, set the following config parameter to `true`:
 
 ```yaml
 grobid:
-  # how to load the models,
-  # false -> models are loaded when needed (default), avoiding puting in memory models which are not used
-  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
-  # used will take some memory
+  # for **service only**: how to load the models, 
+  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
+  #          the service at first call
+  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
+  #         used will take some memory, but server is immediatly warm and ready
   modelPreload: false
-```
+```  
 
 ## CORS (Cross-Origin Resource Share)
 
@@ -74,9 +75,10 @@ By default, Grobid allows API access from any origin.
 The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `config/config.yml`:
 
 ```yaml
-corsAllowedOrigins: "grobid.com"
-corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
-corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
+grobid:
+  corsAllowedOrigins: "grobid.com"
+  corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
+  corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
 ```
 
 ## Clients for GROBID Web Services
@@ -700,16 +702,19 @@ Setting the maximum number of parallel processing is done in the GROBID configur
 
 ```yaml
 grobid:
-  # Maximum parallel connections allowed
-  max_connections: 10  
+  # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
+  # for a production server running only GROBID, set the value slightly above the available number of threads of the server
+  # to get best performance and security
+  concurrency: 10 
 ```
 
 The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the threads present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client:
 
 ```yaml
 grobid:
-  # maximum time wait to get a connection when the pool is full (in seconds)
-  pool_max_wait: 1
+  # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
+  # to get an engine (in seconds) - normally never change it
+  poolMaxWait: 1
 ```
 
 When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server.

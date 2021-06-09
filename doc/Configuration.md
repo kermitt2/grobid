@@ -98,13 +98,15 @@ There is currently only one possible language recognition implementation possibl
 
 ### Service configuration
 
-The number of threads to be used by the GROBID service can be set with the `maxConnections` parameter. GROBID manages a pool of threads of the indicated size to ensure service stability and availability over time. If all the threads are used, some request will be put in a queue and wait `poolMaxWait` seconds before trying to be assigned to a thread again. If the queue reaches a certain limit depending on `maxConnections`, then `503` response will be send back to the client indicating to wait a bit before sending again the request. If you need more explanation on this mechanism, see [here](https://grobid.readthedocs.io/en/latest/Grobid-service/) and the [GROBID clients](https://grobid.readthedocs.io/en/latest/Grobid-service/#clients-for-grobid-web-services) implementations. 
+The maximum number of threads to be used by the GROBID service can be set with the `concurrency` parameter. GROBID manages a pool of threads of the indicated size to ensure service stability and availability over time. If all the threads are used, some request will be put in a queue and wait `poolMaxWait` seconds before trying to be assigned to a thread again. If the queue reaches a certain limit depending on `concurrency`, then `503` response will be send back to the client indicating to wait a bit before sending again the request. If you need more explanation on this mechanism, see [here](https://grobid.readthedocs.io/en/latest/Grobid-service/) and the [GROBID clients](https://grobid.readthedocs.io/en/latest/Grobid-service/#clients-for-grobid-web-services) implementations. 
 
 ```yaml
-  # parallel processing security - change with care according to your CPU/GPU capacities
-  # maximum parallel connections allowed
-  maxConnections: 10  
-  # maximum time wait to get a connection when the pool is full (in seconds)
+  # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
+  # for a production server running only GROBID, set the value slightly above the available number of threads of the server
+  # to get best performance and security
+  concurrency: 10  
+  # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
+  # to get an engine (in seconds) - normally never change it
   poolMaxWait: 1
 ```
 
@@ -133,18 +135,21 @@ server:
     registerDefaultExceptionMappers: false
 ```
 
-### Training parallelism with Wapiti
+### Wapiti global parameters
 
-The following parameter applies only when training with CRF Wapiti. 
+Under `wapiti`, we find the generic parameters of the Wapiti engine, currently only one is present. The following parameter applies only when training with CRF Wapiti, it indicates how many threads to be used when training a Wapiti model.
+
 
 ```yaml
-  # number of threads for training the wapiti models (0 to use all available processors)
-  nbThreads: 0
+  wapiti:
+    # Wapiti global parameters
+    # number of threads for training the wapiti models (0 to use all available processors)
+    nbThreads: 0
 ```
 
-### Configuring the models
+### DeLFT global parameters
 
-For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft). Use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
+Under `delft`, we find the generic parameters of the DeLFT engine. For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft). Use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
 
 ```yaml
   delft:
@@ -153,6 +158,8 @@ For using Deep Learning models, you will need an installation of the python libr
     install: "../delft"
     pythonVirtualEnv:
 ```
+
+### Configuring the models
 
 Each model has its own configuration indicating:
 
