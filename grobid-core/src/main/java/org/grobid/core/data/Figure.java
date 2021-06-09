@@ -528,6 +528,12 @@ public class Figure {
         this.layoutTokens = layoutTokens;
     }
 
+    public void addLayoutTokens(List<LayoutToken> layoutTokens) {
+        if (this.layoutTokens == null) 
+            this.layoutTokens = new ArrayList<>();
+        this.layoutTokens.addAll(layoutTokens);
+    }
+
     public void setBlockPtrs(SortedSet<Integer> blockPtrs) {
         this.blockPtrs = blockPtrs;
     }

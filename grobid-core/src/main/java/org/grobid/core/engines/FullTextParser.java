@@ -261,7 +261,7 @@ public class FullTextParser extends AbstractParser {
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
                 }
-
+                
 				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Table table : tables) {
@@ -2075,29 +2075,34 @@ public class FullTextParser extends AbstractParser {
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
-			Table result = parsers.getTableParser().processing(
+			List<Table> localResults = parsers.getTableParser().processing(
 					tokenizationTable,
 					cluster.getFeatureBlock()
 			);
 
-			SortedSet<Integer> blockPtrs = new TreeSet<>();
-			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
-					blockPtrs.add(lt.getBlockPtr());
-				}
-			}
-			result.setBlockPtrs(blockPtrs);
-			result.setLayoutTokens(tokenizationTable);
+            for (Table result : localResults) {
+                List<LayoutToken> localTokenizationTable = result.getLayoutTokens();
+                //result.setLayoutTokens(tokenizationTable);
 
-			// the first token could be a space from previous page
-			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
-					result.setPage(lt.getPage());
-					break;
-				}
-			}
-			results.add(result);
-			result.setId("" + (results.size() - 1));
+                // block setting: we restrict to the tokenization of this particulart table
+                SortedSet<Integer> blockPtrs = new TreeSet<>();
+                for (LayoutToken lt : localTokenizationTable) {
+                    if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
+                        blockPtrs.add(lt.getBlockPtr());
+                    }
+                }
+                result.setBlockPtrs(blockPtrs);
+
+    			// page setting: the first token could be a space from previous page
+    			for (LayoutToken lt : localTokenizationTable) {
+    				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
+    					result.setPage(lt.getPage());
+    					break;
+    				}
+    			}
+    			results.add(result);
+    			result.setId("" + (results.size() - 1));
+            }
 		}
 
 		doc.setTables(results);
