@@ -25,8 +25,8 @@ grobid:
   consolidation:
     # define the bibliographical data consolidation service to be used, either "crossref" for CrossRef REST API or 
     # "glutton" for https://github.com/kermitt2/biblio-glutton
-    service: "crossref"
-    #service: "glutton"
+    #service: "crossref"
+    service: "glutton"
     glutton:
       url: "https://cloud.science-miner.com/glutton"
       #url: "http://localhost:8080" 
@@ -55,20 +55,25 @@ grobid:
   #sentenceDetectorFactory: "org.grobid.core.lang.impl.PragmaticSentenceDetectorFactory"
   sentenceDetectorFactory: "org.grobid.core.lang.impl.OpenNLPSentenceDetectorFactory"
   
-  # parallel processing security - change with care according to your CPU/GPU capacities
-  # maximum parallel connections allowed
-  maxConnections: 10  
-  # maximum time wait to get a connection when the pool is full (in seconds)
+  # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
+  # for a production server running only GROBID, set the value slightly above the available number of threads of the server
+  # to get best performance and security
+  concurrency: 10
+  # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
+  # to get an engine (in seconds) - normally never change it
   poolMaxWait: 1
 
-  # number of threads for training the wapiti models (0 to use all available processors)
-  nbThreads: 0
-
   delft:
+    # DeLFT global parameters
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
     # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
     install: "../delft"
     pythonVirtualEnv:
+
+  wapiti:
+    # Wapiti global parameters
+    # number of threads for training the wapiti models (0 to use all available processors)
+    nbThreads: 0
 
   models:
     # we configure here how each sequence labeling model should be implemented

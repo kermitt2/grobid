@@ -484,13 +484,21 @@ public class GrobidProperties {
         return grobidConfig.grobid.pdf.pdfalto.timeoutSec * 1000;
     }
 
+    /*public static Integer getNBThreads() {
+        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.wapiti.nbThreads);
+        if (nbThreadsConfig.intValue() == 0) {
+            return Integer.valueOf(Runtime.getRuntime().availableProcessors());
+        }
+        return nbThreadsConfig;
+    }*/
+
     /**
-     * Returns the number of threads to be used when training, given in the grobid config file.
+     * Returns the number of threads to be used when training with CRF Wapiti, given in the grobid config file.
      *
      * @return number of threads
      */
-    public static Integer getNBThreads() {
-        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.nbThreads);
+    public static Integer getWapitiNbThreads() {
+        Integer nbThreadsConfig = Integer.valueOf(grobidConfig.grobid.wapiti.nbThreads);
         if (nbThreadsConfig.intValue() == 0) {
             return Integer.valueOf(Runtime.getRuntime().availableProcessors());
         }
@@ -508,12 +516,15 @@ public class GrobidProperties {
     }
 
     /**
-     * Sets the number of threads, given in the grobid-property file.
+     * Sets the number of threads for training a Wapiti model, given in the grobid config file.
      *
      * @param nbThreads umber of threads
      */
-    public static void setNBThreads(int nbThreads) {
-        grobidConfig.grobid.nbThreads = nbThreads;
+    /*public static void setNBThreads(int nbThreads) {
+        grobidConfig.grobid.wapiti.nbThreads = nbThreads;
+    }*/
+    public static void setWapitiNbThreads(int nbThreads) {
+        grobidConfig.grobid.wapiti.nbThreads = nbThreads;
     }
 
     public static String getLanguageDetectorFactory() {
@@ -647,8 +658,8 @@ public class GrobidProperties {
      *
      * @return the number of connections
      */
-    public static int getMaxPoolConnections() {
-        return grobidConfig.grobid.maxConnections;
+    public static int getMaxConcurrency() {
+        return grobidConfig.grobid.concurrency;
     }
 
     /**

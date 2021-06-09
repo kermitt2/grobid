@@ -96,7 +96,7 @@ public abstract class AbstractTrainer implements Trainer {
         }
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
         // if we are here, that means that training succeeded
         // rename model for CRF sequence labellers (not with DeLFT deep learning models)
         if (GrobidProperties.getGrobidCRFEngine(this.model) != GrobidCRFEngine.DELFT)
@@ -156,7 +156,7 @@ public abstract class AbstractTrainer implements Trainer {
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
 
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
@@ -220,7 +220,7 @@ public abstract class AbstractTrainer implements Trainer {
             tempFilePaths.add(fold.getRight());
 
             sb.append("Training input data: " + fold.getLeft()).append("\n");
-            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
+            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
             sb.append("Evaluation input data: " + fold.getRight()).append("\n");
 
             //TODO: find a better solution!!

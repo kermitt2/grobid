@@ -22,11 +22,11 @@ public class GrobidConfig {
         public String languageDetectorFactory;
         public String sentenceDetectorFactory;
   
-        public int maxConnections = 10;  
+        public int concurrency = 10;  
         public int poolMaxWait = 1;
-        public int nbThreads = 0;
-
+        
         public DelftParameters delft; 
+        public WapitiParameters wapiti; 
         public List<ModelParameters> models;
     }
 
@@ -66,6 +66,13 @@ public class GrobidConfig {
          */
         public String install;
         public String pythonVirtualEnv;
+    }
+
+    public static class WapitiParameters {
+        /**
+         * Generic parameters relative to the Wapiti engine
+         */
+        public int nbThreads = 0;
     }
 
     public static class WapitiModelParameters {

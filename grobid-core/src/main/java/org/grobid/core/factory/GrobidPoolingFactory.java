@@ -48,7 +48,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 					grobidEnginePool
 							.setWhenExhaustedAction(GenericObjectPool.WHEN_EXHAUSTED_BLOCK);
 					grobidEnginePool.setMaxWait(GrobidProperties.getPoolMaxWait());
-					grobidEnginePool.setMaxActive(GrobidProperties.getMaxPoolConnections());
+					grobidEnginePool.setMaxActive(GrobidProperties.getMaxConcurrency());
 					grobidEnginePool.setTestWhileIdle(false);
 					grobidEnginePool.setLifo(false);
 					grobidEnginePool.setTimeBetweenEvictionRunsMillis(2000);
