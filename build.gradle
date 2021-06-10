@@ -311,10 +311,11 @@ project("grobid-home") {
             include("language-detection/**")
             include("sentence-segmentation/**")
             include("lib/**")
-            include("pdf2xml/**")
+            include("pdfalto/**")
             include("models/**")
             include("lexicon/**")
             include("schemas/**")
+            include("scripts/**")
             exclude("models/**/*.old")
         }
         into("grobid-home")
