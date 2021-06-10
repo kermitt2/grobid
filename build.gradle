@@ -19,7 +19,7 @@ buildscript {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "https://jitpack.io" }
+//    maven { url "https://jitpack.io" }
 }
 
 //apply plugin: 'net.researchgate.release'
@@ -69,13 +69,13 @@ subprojects {
         maven {
             url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
-        maven { url "https://jitpack.io" }
+//        maven { url "https://jitpack.io" }
     }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         //all*.exclude group: 'log4j', module: "log4j"
-//        implementation.setCanBeResolved(true)
+        implementation.setCanBeResolved(true)
     }
 
     ext {
@@ -225,6 +225,7 @@ project("grobid-core") {
 
     configurations {
         shadedLib
+        implementation.setCanBeResolved(true)
     }
 
     dependencies {
@@ -311,10 +312,11 @@ project("grobid-home") {
             include("language-detection/**")
             include("sentence-segmentation/**")
             include("lib/**")
-            include("pdf2xml/**")
+            include("pdfalto/**")
             include("models/**")
             include("lexicon/**")
             include("schemas/**")
+            include("scripts/**")
             exclude("models/**/*.old")
         }
         into("grobid-home")
@@ -345,6 +347,7 @@ project(":grobid-service") {
 
     dependencies {
         implementation project(':grobid-core')
+
         implementation "io.dropwizard:dropwizard-core:1.3.23"
         implementation "io.dropwizard:dropwizard-assets:1.3.23"
         implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
@@ -393,7 +396,15 @@ project(":grobid-trainer") {
     apply plugin: 'com.github.johnrengelman.shadow'
     apply plugin: 'jacoco'
 
+    configurations {
+        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
+        //all*.exclude group: 'log4j', module: "log4j"
+    }
+
     dependencies {
+        implementation project(':grobid-core')
+
         implementation(group: 'xml-apis', name: 'xml-apis') {
             // otherwise xml-apis 2.0.1 will come from XOM and will result in
             // java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
@@ -402,18 +413,12 @@ project(":grobid-trainer") {
                 strictly '1.4.01'
             }
         }
-        implementation project(':grobid-core')
+        
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         implementation "me.tongfei:progressbar:0.9.0"
         implementation 'org.slf4j:slf4j-log4j12:1.7.25'
         implementation 'org.slf4j:slf4j-api:1.7.25'
         implementation 'org.slf4j:slf4j-jdk14:1.7.25'
-    }
-
-    configurations {
-        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
-        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        //all*.exclude group: 'log4j', module: "log4j"
     }
 
     jar {
