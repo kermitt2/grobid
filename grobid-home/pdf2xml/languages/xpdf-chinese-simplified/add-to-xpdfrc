@@ -1,9 +1,0 @@
-#----- begin Chinese Simplified support package (2011-sep-02)
-cidToUnicode	Adobe-GB1	/usr/local/share/xpdf/chinese-simplified/Adobe-GB1.cidToUnicode
-unicodeMap	ISO-2022-CN	/usr/local/share/xpdf/chinese-simplified/ISO-2022-CN.unicodeMap
-unicodeMap	EUC-CN		/usr/local/share/xpdf/chinese-simplified/EUC-CN.unicodeMap
-unicodeMap	GBK		/usr/local/share/xpdf/chinese-simplified/GBK.unicodeMap
-cMapDir		Adobe-GB1	/usr/local/share/xpdf/chinese-simplified/CMap
-toUnicodeDir			/usr/local/share/xpdf/chinese-simplified/CMap
-#fontFileCC	Adobe-GB1	/usr/..../NotoSansCJKsc-Regular.otf
-#----- end Chinese Simplified support package
