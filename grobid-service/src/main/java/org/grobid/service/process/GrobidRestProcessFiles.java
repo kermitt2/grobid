@@ -711,6 +711,7 @@ public class GrobidRestProcessFiles {
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
                 .GrobidAnalysisConfigBuilder()
                 .generateTeiCoordinates(elementWithCoords)
+                .consolidateHeader(consolidateHeader)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
                 .build();
