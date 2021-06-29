@@ -17,13 +17,14 @@ var grobid = (function($) {
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;
-		if ( $(location).attr('href').indexOf("index.html") != -1) {
-            baseUrl = $(location).attr('href').replace("index.html", "api/" + ext);
-        } else {
-			baseUrl = $(location).attr('href') + "api/" + ext;
-		}
-		console.log("BaseURL: " + baseUrl);
-		return baseUrl;
+        var localBase = $(location).attr('href');
+		if ( localBase.indexOf("index.html") != -1) {
+            localBase = localBase.replace("index.html", "");
+        } 
+        if (localBase.endsWith("#")) {
+            localBase = localBase.substring(0,localBase.length-1);
+        } 
+		return localBase + "api/" + ext;
 	}
 
 	function setBaseUrl(ext) {
@@ -235,7 +236,6 @@ var grobid = (function($) {
 	function ShowRequest1(formData, jqForm, options) {
         var addCoordinates = false;
         for(var formd in formData) {
-            console.log(formData[formd])
             if (formData[formd].name == 'teiCoordinates') {
                 addCoordinates = true;
             }
