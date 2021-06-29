@@ -26,7 +26,7 @@ cd grobid-installation
 unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.2.zip
 mv grobid-service-0.6.2 grobid-service
 unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.2.zip
-./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
+./grobid-service/bin/grobid-service
 ```
 
 The directory `grobid-installation` should have the following structure:
@@ -51,7 +51,7 @@ In addition, [Prometheus](https://prometheus.io/) format export metrics are avai
 
 ## Configure the server
 
-If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
+If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
@@ -72,7 +72,7 @@ grobid:
 ## CORS (Cross-Origin Resource Share)
 
 By default, Grobid allows API access from any origin.
-The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `config/config.yml`:
+The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `grobid-home/config/grobid.yaml`:
 
 ```yaml
 grobid:
