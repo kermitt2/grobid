@@ -19,7 +19,7 @@ The exact server configuration will depend on the service you want to call. We p
 
 - in `grobid/grobid-home/config/grobid.yaml` set the parameter `concurrency` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine, in my case I used 20)
 
-- set `modelPreload` to `true`in `grobid/grobid-service/config/config.yaml`, it will avoid some strange behavior at launch 
+- set `modelPreload` to `true`in `grobid/grobid-home/config/grobid.yaml`, it will avoid some strange behavior at launch 
 
 - in the query, `consolidateHeader` can be `1`  or `2` if you are using the biblio-glutton or CrossRef consolidation. It significantly improves the accuracy and add useful metadata.
 

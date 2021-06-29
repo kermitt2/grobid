@@ -15,7 +15,7 @@ Following are the configuration used to process with `processFulltextDocument` a
  
 - keep the concurrency at the client (number of simultaneous calls) slightly higher than the available number of threads at the server side, for instance if the server has 16 threads, use a concurrency between 20 and 24 (it's the option `n` in the above mentioned clients)
 
-- set `modelPreload` to `true` in `grobid/grobid-service/config/config.yaml`, it will avoid some strange behavior at startup
+- set `modelPreload` to `true` in `grobid/grobid-home/config/grobid.yaml`, it will avoid some strange behavior at startup
 
 - in the query, consolidateHeader can be `1` or `2` if you are using the consolidation. It significantly improves the accuracy and add useful metadata.
 
