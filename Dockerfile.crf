@@ -62,7 +62,7 @@ RUN rm -rf grobid-source
 FROM openjdk:11-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2 && \
+    apt-get -y --no-install-recommends install libxml2 libfontconfig && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/grobid
