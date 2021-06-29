@@ -132,7 +132,7 @@ COPY --from=builder /opt/grobid-source/grobid-home/config/embedding-registry.jso
 RUN python3 preload_embeddings.py
 RUN ln -s /opt/grobid /opt/delft
 
-CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+CMD ["./grobid-service/bin/grobid-service"]
 
 ARG GROBID_VERSION
 
