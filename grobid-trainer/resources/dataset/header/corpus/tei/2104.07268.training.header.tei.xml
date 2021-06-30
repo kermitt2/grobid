@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2104.07268v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	
+	<docTitle>
+	<titlePart>WEAKLY SUPERVISED VIDEO ANOMALY DETECTION VIA CENTER-GUIDED<lb/> DISCRIMINATIVE LEARNING<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Boyang Wan, Yuming Fang, Xue Xia, Jiajie Mei<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>School of Information Technology, Jiangxi University of Finance and Economics,</affiliation>
+	</byline>
+
+	<address>Nanchang, China</address>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Anomaly detection in surveillance videos is a challenging<lb/> task due to the diversity of anomalous video content and du-<lb/>ration. In this paper, we consider video anomaly detection as<lb/> a regression problem with respect to anomaly scores of video<lb/> clips under weak supervision. Hence, we propose an anomaly<lb/> detection framework, called Anomaly Regression Net (AR-<lb/>Net), which only requires video-level labels in training stage.<lb/> Further, to learn discriminative features for anomaly detec-<lb/>tion, we design a dynamic multiple-instance learning loss and<lb/> a center loss for the proposed AR-Net. The former is used<lb/> to enlarge the inter-class distance between anomalous and<lb/> normal instances, while the latter is proposed to reduce the<lb/> intra-class distance of normal instances. Comprehensive ex-<lb/>periments are performed on a challenging benchmark: Shang-<lb/>haiTech. Our method yields a new state-of-the-art result for<lb/> video anomaly detection on ShanghaiTech dataset.<lb/></div>
+
+	Index Terms-
+	<keyword>Anomaly detection, weak supervision,<lb/> multiple-instance learning, center loss<lb/></keyword>
+
+	978-1-7281-1331-9/20/$31.00 
+
+	<note type="copyright">©2020 IEEE<lb/></note>
+
+	<idno>arXiv:2104.07268v1 [cs.CV]</idno>
+
+	<date>15 Apr 2021</date>
+
+		</front>
+	</text>
+</tei>
