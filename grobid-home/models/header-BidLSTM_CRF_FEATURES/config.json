@@ -2,7 +2,7 @@
     "model_name": "header-BidLSTM_CRF_FEATURES",
     "model_type": "BidLSTM_CRF_FEATURES",
     "embeddings_name": "glove-840B",
-    "char_vocab_size": 306,
+    "char_vocab_size": 309,
     "case_vocab_size": 8,
     "char_embedding_size": 25,
     "num_char_lstm_units": 25,
@@ -145,6 +145,5 @@
             "0": 253
         }
     },
-    "require_features": true,
     "max_feature_size": 22
 }
