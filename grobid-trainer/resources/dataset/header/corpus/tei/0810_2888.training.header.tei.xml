@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0810_2888"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0810.2888v1 [hep-ex]</idno>
+
+	<date>16 Oct 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>CKM-UT Angles: Mixing and CP violation at the B Factories<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>G. Finocchiaro a ,</docAuthor>
+	</byline>
+
+	on behalf of 
+
+	<note type="group">the BABAR and Belle Collaborations.<lb/></note>
+
+	<byline>
+	<affiliation>a Laboratori Nazionali di Frascati dell&apos;INFN<lb/></affiliation>
+	</byline>
+
+	<address>Via Enrico Fermi 40,<lb/> P.O. Box 00044, Frascati, Rome, Italy<lb/></address>
+
+	<div type="abstract">We review the experimental status of the angles of the Unitarity Triangle of the CKM matrix, as measured by<lb/> the BABAR and Belle experiments.</div>
+
+		</front>
+	</text>
+</tei>

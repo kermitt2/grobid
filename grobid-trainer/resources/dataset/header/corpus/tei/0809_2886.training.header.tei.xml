@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0809_2886"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0809.2886v3 [hep-ex]</idno>
+
+	<date>4 Nov 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>CP parameters of the B systems from Tevatron<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. Burdin a</docAuthor>
+	</byline> 
+
+	on behalf of 
+
+	<note type="group">CDF and DØ collaborations<lb/></note>
+	
+	<byline>
+	<affiliation>a University of Liverpool<lb/></affiliation>
+	</byline>
+
+	<div type="abstract">Recent results on CP parameters of the B systems obtained by the CDF and DØ collaborations using the data<lb/> samples collected at the Tevatron Collider in the period 2002 -2007 were presented at the QCD 2008 conference<lb/> (Montpellier, France). These results include measurements of the mixing phase φ<lb/> J/ψφ s<lb/> , decay width difference<lb/> ∆Γs, and CP violation parameters in the Bs and Bu decays.</div>
+
+		</front>
+	</text>
+</tei>

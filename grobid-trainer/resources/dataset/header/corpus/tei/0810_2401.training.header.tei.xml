@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0810_2401"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0810.2401v1 [hep-ex]</idno>
+
+	<date>14 Oct 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>Radiative and Leptonic B-meson Decays from the B-factories<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John Walsh a ,</docAuthor>
+	</byline>
+
+	on behalf of 
+
+	<note type="group">the BABAR and Belle Collaborations<lb/></note>
+
+	<byline>
+	<affiliation>a Istituto Nazionale di Fisica Nucleare<lb/></affiliation>
+	</byline>
+
+	<address>Largo Pontecorvo, 3<lb/> Pisa, Italy<lb/></address>
+
+	<div type="abstract">Radiative and leptonic decays of B-mesons represent an excellent laboratory for the search for New Physics. I<lb/> present here recent results on radiative and leptonic decays from the Belle and BABAR collaborations.</div>
+
+		</front>
+	</text>
+</tei>
