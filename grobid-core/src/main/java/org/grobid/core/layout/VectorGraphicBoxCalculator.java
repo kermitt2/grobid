@@ -19,13 +19,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Workign with vector graphics
  */
 public class VectorGraphicBoxCalculator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(VectorGraphicBoxCalculator.class);
 
     public static final int MINIMUM_VECTOR_BOX_AREA = 3000;
-    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 10 * 1024 * 1024;
+    public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 100 * 1024 * 1024;
 
     public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
 
@@ -39,8 +43,10 @@ public class VectorGraphicBoxCalculator {
             File vecFile = new File(document.getDocumentSource().getXmlFile().getAbsolutePath() + "_data", "image-" + pageNum + ".svg");
             if (vecFile.exists()) {
                 if (vecFile.length() > VEC_GRAPHICS_FILE_SIZE_LIMIT) {
-                    throw new GrobidException("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
+                    LOGGER.error("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
+                    continue;
                 }
+
                 XQueryProcessor pr = new XQueryProcessor(vecFile);
 
                 SequenceIterator it = pr.getSequenceIterator(q);
