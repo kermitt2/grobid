@@ -257,7 +257,8 @@ public class HeaderParser extends AbstractParser {
                 if (resHeader.getKeyword() != null) {
                     String keywords = TextUtilities.dehyphenize(resHeader.getKeyword());
                     keywords = BiblioItem.cleanKeywords(keywords);
-                    resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    //resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    resHeader.setKeyword(keywords);
                     List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
                     if ((keywordsSegmented != null) && (keywordsSegmented.size() > 0))
                         resHeader.setKeywords(keywordsSegmented);
