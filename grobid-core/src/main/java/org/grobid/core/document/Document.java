@@ -131,6 +131,7 @@ public class Document implements Serializable {
     protected transient Metadata metadata = null;
 
     protected transient Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
+    protected transient Multimap<Integer, Block> blocksPerPage = HashMultimap.create();
 
     // some statistics regarding the document - useful for generating the features
     protected double maxCharacterDensity = 0.0;
@@ -220,6 +221,14 @@ public class Document implements Serializable {
 
     public Metadata getMetadata() {
         return metadata;
+    }
+
+    public Multimap<Integer, Block> getBlocksPerPage() {
+        return blocksPerPage;
+    }
+
+    public Multimap<Integer, GraphicObject> getImagesPerPage() {
+        return imagesPerPage;
     }
 
     /**
@@ -721,6 +730,10 @@ public class Document implements Serializable {
         if (pages == null)
             pages = new ArrayList<Page>();
         pages.add(page);
+        if (page.getBlocks() != null) {
+            for(Block localBlock : page.getBlocks())
+                blocksPerPage.put(pages.size()-1,localBlock);
+        }
     }
 
     public void setBibDataSets(List<BibDataSet> bibDataSets) {
