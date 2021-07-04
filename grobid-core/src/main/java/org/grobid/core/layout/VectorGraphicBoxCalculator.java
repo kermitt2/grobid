@@ -188,10 +188,10 @@ System.out.println("nb remainingBoxes: " + remainingBoxes.size());
                 }
 
                 remainingBoxes = mergeBoxes(remainingBoxes);
+                /*remainingBoxes = glueBoxes(remainingBoxes, 10.0);
                 remainingBoxes = glueBoxes(remainingBoxes, 10.0);
                 remainingBoxes = glueBoxes(remainingBoxes, 10.0);
-                remainingBoxes = glueBoxes(remainingBoxes, 10.0);
-                remainingBoxes = mergeBoxes(remainingBoxes);
+                remainingBoxes = mergeBoxes(remainingBoxes);*/
 
 System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                 for (BoundingBox b : remainingBoxes) {
