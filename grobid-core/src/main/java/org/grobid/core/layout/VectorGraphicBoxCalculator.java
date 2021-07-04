@@ -112,7 +112,7 @@ public class VectorGraphicBoxCalculator {
 
     public static Multimap<Integer, GraphicObject> calculate(org.grobid.core.document.Document document) throws IOException {
 
-        Multimap<Integer, Block> blockMultimap = HashMultimap.create();
+        Multimap<Integer, Block> blockMultimap = document.getBlocksPerPage();
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
 
         // init BATIK stuff
@@ -149,14 +149,16 @@ System.out.println(pageNum + ": " + vecFile.getPath());
                     SVGElement item = (SVGElement) nodeList.item(i);
                     SVGLocatable locatable = (SVGLocatable)item;
                     SVGRect rect = locatable.getBBox();
-
+                    if (rect == null) 
+                        continue;
+                    
                     String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
                     
 System.out.println(coords);
 
                     BoundingBox e = BoundingBox.fromString(coords);
                     if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
-System.out.println("filter box, area: " + e.area());                        
+System.out.println("filter this box, area: " + e.area());                        
                         continue;
                     }
                     boxes.add(e);
@@ -164,21 +166,33 @@ System.out.println("filter box, area: " + e.area());
 System.out.println("nb boxes: " + boxes.size());
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 System.out.println("nb remainingBoxes: " + remainingBoxes.size());
+
+                // bound intersecting or very close blocks with text, this is typically to cover
+                // the case where the text is outside the svg
                 for (int i = 0; i < remainingBoxes.size(); i++) {
                     Collection<Block> col = blockMultimap.get(pageNum);
                     for (Block bl : col) {
-//                    if (!bl.getPage().getMainArea().contains(b)) {
-//                        continue;
-//                    }
+//                      if (!bl.getPage().getMainArea().contains(b)) {
+//                          continue;
+//                      }
 
                         BoundingBox b = BoundingBox.fromPointAndDimensions(pageNum, bl.getX(), bl.getY(), bl.getWidth(), bl.getHeight());
                         if (remainingBoxes.get(i).intersect(b)) {
                             remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
                         }
+
+                        /*if (remainingBoxes.get(i).distanceTo(b) < 10) {
+                            remainingBoxes.set(i, remainingBoxes.get(i).boundBox(b));
+                        }*/
                     }
                 }
 
                 remainingBoxes = mergeBoxes(remainingBoxes);
+                remainingBoxes = glueBoxes(remainingBoxes, 10.0);
+                remainingBoxes = glueBoxes(remainingBoxes, 10.0);
+                remainingBoxes = glueBoxes(remainingBoxes, 10.0);
+                remainingBoxes = mergeBoxes(remainingBoxes);
+
 System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
@@ -195,6 +209,9 @@ System.out.println("too small: " + b.toString());
         return result;
     }
 
+    /**
+     * Merge bounding boxes in case of intersection
+     */
     public static List<BoundingBox> mergeBoxes(List<BoundingBox> boxes) {
         boolean allMerged = false;
         while (!allMerged) {
@@ -206,6 +223,44 @@ System.out.println("too small: " + b.toString());
                     BoundingBox b = boxes.get(j);
                     if (b != null) {
                         if (a.intersect(b)) {
+                            allMerged = false;
+                            a = a.boundBox(b);
+                            boxes.set(i, a);
+                            boxes.set(j, null);
+                        }
+                    }
+                }
+            }
+        }
+
+        return Lists.newArrayList(Iterables.filter(boxes, new Predicate<BoundingBox>() {
+            @Override
+            public boolean apply(BoundingBox boundingBox) {
+                if (boundingBox == null) {
+                    return false;
+                }
+                /*if (boundingBox.getHeight() < 5 || boundingBox.getWidth() < 5) {
+                    return false;
+                }*/
+                return true;
+            }
+        }));
+    }
+
+    /**
+     * Merge bounding boxes in case of close proximity defined by a max proximity distance
+     */
+    public static List<BoundingBox> glueBoxes(List<BoundingBox> boxes, double maxProximityDistance) {
+        boolean allMerged = false;
+        while (!allMerged) {
+            allMerged = true;
+            for (int i = 0; i < boxes.size(); i++) {
+                BoundingBox a = boxes.get(i);
+                if (a == null) continue;
+                for (int j = i + 1; j < boxes.size(); j++) {
+                    BoundingBox b = boxes.get(j);
+                    if (b != null) {
+                        if (a.distanceTo(b) < maxProximityDistance) {
                             allMerged = false;
                             a = a.boundBox(b);
                             boxes.set(i, a);
