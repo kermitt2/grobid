@@ -115,6 +115,8 @@ subprojects {
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
         //implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.1"
+
+        implementation group: 'org.apache.xmlgraphics', name: 'batik-all', version: '1.14', ext: 'pom'
     }
 
     task sourceJar(type: Jar) {
