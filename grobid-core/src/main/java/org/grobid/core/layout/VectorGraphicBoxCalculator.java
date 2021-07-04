@@ -6,10 +6,10 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
-import net.sf.saxon.om.Item;
-import net.sf.saxon.om.SequenceIterator;
-import net.sf.saxon.trans.XPathException;
-import org.grobid.core.document.Document;
+//import net.sf.saxon.om.Item;
+//import net.sf.saxon.om.SequenceIterator;
+//import net.sf.saxon.trans.XPathException;
+//import org.grobid.core.document.Document;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.XQueryProcessor;
 
@@ -19,12 +19,23 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.apache.batik.*;
 import org.apache.batik.dom.*;
-import org.apache.batik.bridge.*;
+import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
+import org.apache.batik.util.XMLResourceDescriptor;
+import org.apache.batik.bridge.BridgeContext;
+import org.apache.batik.bridge.GVTBuilder;
+import org.apache.batik.bridge.UserAgent;
+import org.apache.batik.bridge.UserAgentAdapter;
+import org.apache.batik.gvt.GraphicsNode;
+import org.apache.batik.anim.dom.SVGDOMImplementation;
+import org.apache.batik.anim.dom.SVGOMDocument;
+import org.apache.batik.bridge.BridgeContext;
+import org.apache.batik.bridge.DocumentLoader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.svg.*;
+import org.w3c.dom.NodeList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +49,7 @@ public class VectorGraphicBoxCalculator {
     public static final int MINIMUM_VECTOR_BOX_AREA = 3000;
     public static final int VEC_GRAPHICS_FILE_SIZE_LIMIT = 100 * 1024 * 1024;
 
-    public static Multimap<Integer, GraphicObject> calculate_old(Document document) throws IOException, XPathException {
+    /*public static Multimap<Integer, GraphicObject> calculate_old(org.grobid.core.document.Document document) throws IOException, XPathException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
@@ -97,20 +108,19 @@ public class VectorGraphicBoxCalculator {
             }
         }
         return result;
-    }
+    }*/
 
-    public static Multimap<Integer, GraphicObject> calculate(Document document) throws IOException, XPathException {
+    public static Multimap<Integer, GraphicObject> calculate(org.grobid.core.document.Document document) throws IOException {
 
         Multimap<Integer, Block> blockMultimap = HashMultimap.create();
         Multimap<Integer, GraphicObject> result = LinkedHashMultimap.create();
 
         // init BATIK stuff
-        SAXSVGDocumentFactory docFactory = new SAXSVGDocumentFactory( XMLResourceDescriptor.getXMLParserClassName() );
-        UserAgent ua = new UserAgentAdapater();
-                DocumentLoader loader = new DocumentLoader(ua);
-                BridgeContext ctx = new BridgeContext(ua, loader);
-                ctx.setDynamicState(BridgeContext.DYNAMIC);;
-
+        SAXSVGDocumentFactory docFactory = new SAXSVGDocumentFactory(XMLResourceDescriptor.getXMLParserClassName());
+        UserAgent ua = new UserAgentAdapter();
+        DocumentLoader loader = new DocumentLoader(ua);
+        BridgeContext ctx = new BridgeContext(ua, loader);
+        ctx.setDynamicState(BridgeContext.DYNAMIC);
 
         for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
             BoundingBox mainPageArea = document.getPage(pageNum).getMainArea();
@@ -125,28 +135,25 @@ public class VectorGraphicBoxCalculator {
 System.out.println(pageNum + ": " + vecFile.getPath());
                 //XQueryProcessor pr = new XQueryProcessor(vecFile);
 
-                
-                SVGDocument doc = docFactory.createSVGDocument(ecFile.getPath());
+                SVGDocument doc = docFactory.createSVGDocument(vecFile.getPath());
+                //Document doc = f.createDocument(uri)
 
                 //SequenceIterator it = pr.getSequenceIterator(q);
                 GVTBuilder builder = new GVTBuilder();
-                GraphicNode rootGN = builder.build(ctx, doc);
+                GraphicsNode rootGN = builder.build(ctx, doc);
 
-
-
-
-
-                Item item;
+                NodeList nodeList = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "g");
                 List<BoundingBox> boxes = new ArrayList<>();
 
-                while ((item = it.next()) != null) {
-                    String c = item.getStringValue();
-                    // TODO: figure out why such string are returned at all (AS:602281691082754@1520606553791)
-System.out.println(c);
-                    if (c.equals(",,,")) {
-                        continue;
-                    }
-                    String coords = pageNum + "," + c;
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    SVGElement item = (SVGElement) nodeList.item(i);
+                    SVGLocatable locatable = (SVGLocatable)item;
+                    SVGRect rect = locatable.getBBox();
+
+                    String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
+                    
+System.out.println(coords);
+
                     BoundingBox e = BoundingBox.fromString(coords);
                     if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
 System.out.println("filter box, area: " + e.area());                        
@@ -172,10 +179,15 @@ System.out.println("nb remainingBoxes: " + remainingBoxes.size());
                 }
 
                 remainingBoxes = mergeBoxes(remainingBoxes);
+System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
                         result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+System.out.println("kept: " + b.toString());                       
+                    } else {
+System.out.println("too small: " + b.toString());                          
                     }
+
                 }
 
             }
