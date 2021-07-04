@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0801_3623"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0801.3623v1 [hep-ex]</idno>
+
+	<date>23 Jan 2008<lb/></date>
+
+	<docTitle>
+	<titlePart> Erratum to Measurement of σ(p p → Z)•Br(Z → τ τ ) at<lb/> √<lb/> s =1.96 TeV, published in<lb/> Phys. Rev. D 71, 072004 (2005)<lb/></titlePart>
+	</docTitle>
+
+	(Dated:
+	<date>August 15, 2019</date>
+
+	)<lb/>
+	<keyword>PACS numbers: 13.38.Dg,13.85.Qk,14.70.Hp</keyword>
+
+		</front>
+	</text>
+</tei>

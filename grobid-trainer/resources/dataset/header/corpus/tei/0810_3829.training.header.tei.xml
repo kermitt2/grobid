@@ -1,0 +1,317 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0810_3829"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0808.2445v3 [hep-ex]</idno>
+
+	<date>23 Aug 2010<lb/></date>
+
+	<docTitle>
+	<titlePart>Observation of an enhancement in e + e − → Υ(1S)π + π − , Υ(2S)π + π − , and Υ(3S)π + π −<lb/> production near<lb/> √<lb/> s = 10.89 GeV<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>K.-F. Chen, 27 W.-S. Hou, 27 I. Adachi, 8 H. Aihara, 44 T. Aushev, 18, 13 A. M. Bakich, 40 V. Balagura, 13 A. Bay, 18<lb/> K. Belous, 12 V. Bhardwaj, 34 M. Bischofberger, 24 A. Bondar, 1, 32 A. Bozek, 28 M. Bračko, 20, 14 J. Brodzicka,<lb/> T. E. Browder, 7 M.-C. Chang, 3 P. Chang, 27 Y. Chao, 27 A. Chen, 25 P. Chen, 27 B. G. Cheon, 6 C.-C. Chiang, 27<lb/> R. Chistov, 13 I.-S. Cho, 48 Y. Choi, 39 J. Dalseno, 21, 41 A. Drutskoy, 2 S. Eidelman, 1, 32 D. Epifanov, 1, 32<lb/> N. Gabyshev, 1, 32 P. Goldenzweig, 2 H. Ha, 16 B.-Y. Han, 16 K. Hayasaka, 23 H. Hayashii, 24 M. Hazumi, 8<lb/> Y. Hoshi, 43 Y. B. Hsiung, 27 H. J. Hyun, 17 T. Iijima, 23 K. Inami, 23 R. Itoh, 8 M. Iwabuchi, 48 Y. Iwasaki, 8<lb/> T. Julius, 22 D. H. Kah, 17 J. H. Kang, 48 N. Katayama, 8 C. Kiesling, 21 H. O. Kim, 17 Y. I. Kim, 17 Y. J. Kim,<lb/> K. Kinoshita, 2 B. R. Ko, 16 S. Korpar, 20, 14 P. Križan, 19, 14 P. Krokovny, 8 Y.-J. Kwon, 48 S.-H. Kyeong, 48<lb/> J. S. Lange, 4 S.-H. Lee, 16 J. Li, 7 C. Liu, 37 Y. Liu, 23 D. Liventsev, 13 R. Louvot, 18 J. MacNaughton, 8<lb/> A. Matyja, 28 S. McOnie, 40 K. Miyabayashi, 24 H. Miyata, 30 Y. Miyazaki, 23 R. Mizuk, 13 Y. Nagasaka, 9<lb/> E. Nakano, 33 M. Nakao, 8 S. Nishida, 8 K. Nishimura, 7 O. Nitoh, 46 T. Nozaki, 8 S. Ogawa, 42 T. Ohshima, 23<lb/> S. Okuno, 15 G. Pakhlova, 13 H. Park, 17 H. K. Park, 17 R. Pestotnik, 14 M. Petrič, 14 L. E. Piilonen, 47 S. Ryu,<lb/> H. Sahoo, 7 K. Sakai, 30 Y. Sakai, 8 O. Schneider, 18 C. Schwanda, 11 A. J. Schwartz, 2 R. Seidl, 35 K. Senyo, 23<lb/> M. Shapkin, 12 C. P. Shen, 7 J.-G. Shiu, 27 B. Shwartz, 1, 32 P. Smerkol, 14 A. Sokolov, 12 E. Solovieva, 13<lb/> S. Stanič, 31 M. Starič, 14 K. Sumisawa, 8 T. Sumiyoshi, 45 S. Suzuki, 36 Y. Teramoto, 33 K. Trabelsi, 8<lb/> S. Uehara, 8 T. Uglov, 13 Y. Unno, 6 S. Uno, 8 Y. Ushiroda, 8 G. Varner, 7 K. E. Varvell, 40 K. Vervink, 18<lb/> C. H. Wang, 26 M.-Z. Wang, 27 P. Wang, 10 Y. Watanabe, 15 R. Wedd, 22 J. Wicht, 8 E. Won, 16 B. D. Yabsley,<lb/> Y. Yamashita, 29 C. Z. Yuan, 10 Z. P. Zhang, 37 V. Zhulanov, 1, 32 A. Zupanc, 14 and O. Zyukova 1, 32<lb/></docAuthor>
+	</byline>
+
+	(<note type="group">The Belle Collaboration</note>)<lb/>
+
+	<byline>
+	<affiliation>1 Budker Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Novosibirsk<lb/></address>
+
+	<byline>
+	<affiliation>2 University of Cincinnati,</affiliation>
+	</byline>
+
+	<address>Cincinnati, Ohio 45221<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Physics, Fu Jen Catholic University,</affiliation>
+	</byline>
+
+	<address>Taipei<lb/></address>
+
+	<byline>
+	<affiliation>4 Justus-Liebig-Universität Gießen,</affiliation>
+	</byline>
+
+	<address>Gießen<lb/></address>
+
+	<byline>
+	<affiliation>5 The Graduate University for Advanced Studies,</affiliation>
+	</byline>
+
+	<address>Hayama<lb/></address>
+
+	<byline>
+	<affiliation>6 Hanyang University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>7 University of Hawaii,</affiliation>
+	</byline>
+
+	<address>Honolulu, Hawaii 96822<lb/></address>
+
+	<byline>
+	<affiliation>8 High Energy Accelerator Research Organization (KEK),</affiliation>
+	</byline>
+
+	<address>Tsukuba<lb/></address>
+
+	<byline>
+	<affiliation>9 Hiroshima Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Hiroshima<lb/></address>
+
+	<byline>
+	<affiliation>10 Institute of High Energy Physics, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing<lb/></address>
+
+	<byline>
+	<affiliation>11 Institute of High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Vienna<lb/></address>
+
+	<byline>
+	<affiliation>12 Institute of High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Protvino<lb/></address>
+
+	<byline>
+	<affiliation>13 Institute for Theoretical and Experimental Physics,</affiliation>
+	</byline>
+
+	<address>Moscow<lb/></address>
+
+	<byline>
+	<affiliation>14 J. Stefan Institute,</affiliation>
+	</byline>
+
+	<address>Ljubljana<lb/></address>
+
+	<byline>
+	<affiliation>15 Kanagawa University,</affiliation>
+	</byline>
+
+	<address>Yokohama<lb/></address>
+
+	<byline>
+	<affiliation>16 Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>17 Kyungpook National University,</affiliation>
+	</byline>
+
+	<address>Taegu<lb/></address>
+
+	<byline>
+	<affiliation>18 École Polytechnique Fédérale de Lausanne (EPFL),</affiliation>
+	</byline>
+
+	<address>Lausanne<lb/></address>
+
+	<byline>
+	<affiliation>19 Faculty of Mathematics and Physics, University of Ljubljana,</affiliation>
+	</byline>
+
+	<address>Ljubljana<lb/></address>
+
+	<byline>
+	<affiliation>20 University of Maribor,</affiliation>
+	</byline>
+
+	<address>Maribor<lb/></address>
+
+	<byline>
+	<affiliation>21 Max-Planck-Institut für Physik,</affiliation>
+	</byline>
+
+	<address>München<lb/></address>
+
+	<byline>
+	<affiliation>22 University of Melbourne, School of Physics,</affiliation>
+	</byline>
+
+	<address>Victoria 3010<lb/></address>
+
+	<byline>
+	<affiliation>23 Nagoya University,</affiliation>
+	</byline>
+
+	<address>Nagoya<lb/></address>
+
+	<byline>
+	<affiliation>24 Nara Women&apos;s University,</affiliation>
+	</byline>
+
+	<address>Nara<lb/></address>
+
+	<byline>
+	<affiliation>25 National Central University,</affiliation>
+	</byline>
+
+	<address>Chung-li<lb/></address>
+
+	<byline>
+	<affiliation>26 National United University,</affiliation>
+	</byline>
+
+	<address>Miao Li<lb/></address>
+
+	<byline>
+	<affiliation>27 Department of Physics, National Taiwan University,</affiliation>
+	</byline>
+
+	<address>Taipei<lb/></address>
+
+	<byline>
+	<affiliation>28 H. Niewodniczanski Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Krakow<lb/></address>
+
+	<byline>
+	<affiliation>29 Nippon Dental University,</affiliation>
+	</byline>
+
+	<address>Niigata<lb/></address>
+
+	<byline>
+	<affiliation>30 Niigata University,</affiliation>
+	</byline>
+
+	<address>Niigata<lb/></address>
+
+	<byline>
+	<affiliation>31 University of Nova Gorica,</affiliation>
+	</byline>
+
+	<address>Nova Gorica<lb/></address>
+
+	<byline>
+	<affiliation>32 Novosibirsk State University,</affiliation>
+	</byline>
+
+	<address>Novosibirsk<lb/></address>
+
+	<byline>
+	<affiliation>33 Osaka City University,</affiliation>
+	</byline>
+
+	<address>Osaka<lb/></address>
+
+	<byline>
+	<affiliation>34 Panjab University,</affiliation>
+	</byline>
+
+	<address>Chandigarh<lb/></address>
+
+	<byline>
+	<affiliation>35 RIKEN BNL Research Center,</affiliation>
+	</byline>
+
+	<address>Upton, New York 11973<lb/></address>
+
+	<byline>
+	<affiliation>36 Saga University,</affiliation>
+	</byline>
+
+	<address>Saga 2<lb/></address>
+
+	<byline>
+	<affiliation>37 University of Science and Technology of China,</affiliation>
+	</byline>
+
+	<address>Hefei<lb/></address>
+
+	<byline>
+	<affiliation>38 Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>39 Sungkyunkwan University,</affiliation>
+	</byline>
+
+	<address>Suwon<lb/></address>
+
+	<byline>
+	<affiliation>40 School of Physics, University of Sydney,</affiliation>
+	</byline>
+
+	<address>NSW 2006<lb/></address>
+
+	<byline>
+	<affiliation>41 Excellence Cluster Universe, Technische Universität München,</affiliation>
+	</byline>
+
+	<address>Garching<lb/></address>
+
+	<byline>
+	<affiliation>42 Toho University,</affiliation>
+	</byline>
+
+	<address>Funabashi<lb/></address>
+
+	<byline>
+	<affiliation>43 Tohoku Gakuin University,</affiliation>
+	</byline>
+
+	<address>Tagajo<lb/></address>
+
+	<byline>
+	<affiliation>44 Department of Physics, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>45 Tokyo Metropolitan University,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>46 Tokyo University of Agriculture and Technology,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>47 IPNAS, Virginia Polytechnic Institute and State University,</affiliation>
+	</byline>
+
+	<address>Blacksburg, Virginia 24061<lb/></address>
+
+	<byline>
+	<affiliation>48 Yonsei University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<div type="abstract">We measure the production cross sections for e + e − → Υ(1S)π + π − , Υ(2S)π + π − , and Υ(3S)π + π −<lb/> as a function of<lb/> √<lb/> s between 10.83 GeV and 11.02 GeV. The data consists of 8.1 fb −1 collected with<lb/> the Belle detector at the KEKB e + e − collider. We observe enhanced production in all three final<lb/> states that does not agree well with the conventional Υ(10860) lineshape. A fit using a Breit-<lb/>Wigner resonance shape yields a peak mass of 10888.4 +2.7<lb/> −2.6 (stat) ± 1.2(syst) MeV/c 2 and a width<lb/> of 30.7 +8.3<lb/> −7.0 (stat) ± 3.1(syst) MeV/c 2 .<lb/></div>
+
+	<keyword>PACS numbers: 13.25.Gv, 14.40.Pq</keyword>
+
+		</front>
+	</text>
+</tei>
