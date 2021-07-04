@@ -43,6 +43,8 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
+import org.grobid.core.engines.citations.CalloutAnalyzer;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,6 +59,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
@@ -67,13 +70,7 @@ import static org.apache.commons.lang3.StringUtils.*;
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
-    //private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
-
-    //	private String tmpPathName = null;
-//    private Document doc = null;
     protected File tmpPath = null;
-//    private String pathXML = null;
-//	private BiblioItem resHeader = null;
 
 	// default bins for relative position
 	private static final int NBBINS_POSITION = 12;
@@ -89,9 +86,6 @@ public class FullTextParser extends AbstractParser {
 
     protected EngineParsers parsers;
 
-    /**
-     * TODO some documentation...
-     */
     public FullTextParser(EngineParsers parsers) {
         super(GrobidModels.FULLTEXT);
         this.parsers = parsers;
@@ -296,12 +290,16 @@ public class FullTextParser extends AbstractParser {
 				//System.out.println(rese);
 			}
 
+            // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
+            // callout in superscript is by error labeled as a numerical reference callout)
+            List<MarkerType> markerTypes = postProcessCallout(resultBody, layoutTokenization);
+
             // final combination
             toTEI(doc, // document
 				resultBody, resultAnnex, // labeled data for body and annex
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, // header
-				figures, tables, equations,
+				figures, tables, equations, markerTypes,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -2308,6 +2306,125 @@ public class FullTextParser extends AbstractParser {
 	}
 
     /**
+     * Ensure consistent use of callouts in the entire document body  
+     */
+    private List<MarkerType> postProcessCallout(String result, LayoutTokenization layoutTokenization) {
+        List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations);
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        MarkerType majorityReferenceMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityFigureMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityTableMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityEquationarkerType = MarkerType.UNKNOWN;
+
+        Map<MarkerType,Integer> referenceMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> figureMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> tableMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> equationMarkerTypeCounts = new HashMap<>();
+
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (TEIFormatter.MARKER_LABELS.contains(clusterLabel)) {
+                List<LayoutToken> refTokens = cluster.concatTokens();
+                refTokens = LayoutTokensUtil.dehyphenize(refTokens);
+
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (referenceMarkerTypeCounts.get(localMarkerType) == null)
+                        referenceMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        referenceMarkerTypeCounts.put(localMarkerType, referenceMarkerTypeCounts.get(localMarkerType)+1);
+                } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (figureMarkerTypeCounts.get(localMarkerType) == null)
+                        figureMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        figureMarkerTypeCounts.put(localMarkerType, figureMarkerTypeCounts.get(localMarkerType)+1);
+                } else if (clusterLabel.equals(TaggingLabels.TABLE_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (tableMarkerTypeCounts.get(localMarkerType) == null)
+                        tableMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        tableMarkerTypeCounts.put(localMarkerType, tableMarkerTypeCounts.get(localMarkerType)+1);
+                } else if (clusterLabel.equals(TaggingLabels.EQUATION_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (equationMarkerTypeCounts.get(localMarkerType) == null)
+                        equationMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);             
+                } 
+            }
+        }
+
+        majorityReferenceMarkerType = getBestType(referenceMarkerTypeCounts);
+        majorityFigureMarkerType = getBestType(figureMarkerTypeCounts);
+        majorityTableMarkerType = getBestType(tableMarkerTypeCounts);
+        majorityEquationarkerType = getBestType(equationMarkerTypeCounts);
+
+        /*String[] resultLines = result.split("\n");
+        StringBuilder updatedResult = new StringBuilder();
+        String previousPlainLabel = null;
+        for(int i=0; i<resultLines.length; i++) {
+            String line = resultLines[i];
+            if (line.trim().length() == 0) {
+                updatedResult.append(line).append("\n");
+                continue;
+            }
+            String label = null;
+            int ind = line.lastIndexOf("\t");
+            if (ind != -1)
+                label = line.substring(ind);
+            else
+                label = line.substring(line.lastIndexOf(" "));
+            TaggingLabel localLabel = TaggingLabels.labelFor(GrobidModels.FULLTEXT, label);
+            
+            if (TEIFormatter.MARKER_LABELS.contains(localLabel)) {
+
+                if (localLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    
+                } else if (localLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    
+                } else if (localLabel.equals(TaggingLabels.TABLE_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    
+                } else if (localLabel.equals(TaggingLabels.EQUATION_MARKER)) {
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                                
+                } 
+            }
+            updatedResult.append(line).append("\n");
+            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
+            if (previousPlainLabel == null || !plainLabel.equals(previousPlainLabel)) {
+                previousPlainLabel = plainLabel;
+            }
+        }*/
+
+        return Arrays.asList(majorityReferenceMarkerType, majorityFigureMarkerType, majorityTableMarkerType, majorityEquationarkerType);
+        //return updatedResult.toString();
+    }
+
+    private static MarkerType getBestType(Map<MarkerType,Integer> markerTypeCount) {
+        MarkerType bestType = MarkerType.UNKNOWN;
+        int maxCount = 0;
+        for(Map.Entry<MarkerType,Integer> entry : markerTypeCount.entrySet()) {
+            if (bestType == null || entry.getValue() > maxCount) {
+                bestType = entry.getKey();
+                maxCount = entry.getValue();
+            }
+        }
+        return bestType;
+    }
+
+    /**
      * Create the TEI representation for a document based on the parsed header, references
      * and body sections.
      */
@@ -2320,6 +2437,7 @@ public class FullTextParser extends AbstractParser {
                        List<Figure> figures,
                        List<Table> tables,
                        List<Equation> equations,
+                       List<MarkerType> markerTypes,
                        GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
             return;
@@ -2328,12 +2446,12 @@ public class FullTextParser extends AbstractParser {
         TEIFormatter teiFormatter = new TEIFormatter(doc, this);
         StringBuilder tei;
         try {
-            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, config);
+            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, config);
 
 			//System.out.println(rese);
             //int mode = config.getFulltextProcessingMode();
 			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-					layoutTokenization, figures, tables, equations, doc, config);
+					layoutTokenization, figures, tables, equations, markerTypes, doc, config);
 
 			tei.append("\t\t<back>\n");
 
@@ -2356,7 +2474,7 @@ public class FullTextParser extends AbstractParser {
 			}
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
-				tokenizationsAnnex, doc, config);
+				tokenizationsAnnex, markerTypes, doc, config);
 
 			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();

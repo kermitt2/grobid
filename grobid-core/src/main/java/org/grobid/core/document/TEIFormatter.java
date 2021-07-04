@@ -35,6 +35,7 @@ import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,14 +100,16 @@ public class TEIFormatter {
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
+                                     List<MarkerType> markerTypes,
                                      GrobidAnalysisConfig config) {
-        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, config);
+        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, config);
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
+                                     List<MarkerType> markerTypes,
                                      GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -829,6 +832,7 @@ public class TEIFormatter {
                                             null, 
                                             null, 
                                             null, 
+                                            markerTypes,
                                             doc,
                                             config); // no figure, no table, no equation
                 } catch(Exception e) {
@@ -944,6 +948,7 @@ public class TEIFormatter {
                                    List<Figure> figures,
                                    List<Table> tables,
                                    List<Equation> equations,
+                                   List<MarkerType> markerTypes,
                                    Document doc,
                                    GrobidAnalysisConfig config) throws Exception {
         if ((result == null) || (layoutTokenization == null) || (layoutTokenization.getTokenization() == null)) {
@@ -952,10 +957,10 @@ public class TEIFormatter {
         }
         buffer.append("\t\t<body>\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true, 
-                layoutTokenization, figures, tables, equations, doc, config);
+                layoutTokenization, figures, tables, equations, markerTypes, doc, config);
 
         // notes are still in the body
-        buffer = toTEINote(buffer, doc, config);
+        buffer = toTEINote(buffer, doc, markerTypes, config);
 
         buffer.append("\t\t</body>\n");
 
@@ -964,15 +969,16 @@ public class TEIFormatter {
 
     private StringBuilder toTEINote(StringBuilder tei,
                                     Document doc,
+                                    List<MarkerType> markerTypes,
                                     GrobidAnalysisConfig config) throws Exception {
         // write the notes
         SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
         if (documentNoteParts != null) {
-            tei = toTEINote("foot", documentNoteParts, tei, doc, config);
+            tei = toTEINote("foot", documentNoteParts, tei, markerTypes, doc, config);
         }
         documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
         if (documentNoteParts != null) {
-            tei = toTEINote("margin", documentNoteParts, tei, doc, config);
+            tei = toTEINote("margin", documentNoteParts, tei, markerTypes, doc, config);
         }
         return tei;
     }
@@ -980,6 +986,7 @@ public class TEIFormatter {
     private StringBuilder toTEINote(String noteType,
                                     SortedSet<DocumentPiece> documentNoteParts,
                                     StringBuilder tei,
+                                    List<MarkerType> markerTypes,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
         List<String> allNotes = new ArrayList<>();
@@ -1110,7 +1117,7 @@ public class TEIFormatter {
         StringBuilder buffer2 = new StringBuilder();
 
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, doc, config);
+                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, null, doc, config);
         String acknowResult = buffer2.toString();
         String[] acknowResultLines = acknowResult.split("\n");
         boolean extraDiv = false;
@@ -1132,6 +1139,7 @@ public class TEIFormatter {
                                     BiblioItem biblio,
                                     List<BibDataSet> bds,
                                     List<LayoutToken> tokenizations,
+                                    List<MarkerType> markerTypes,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
         if ((result == null) || (tokenizations == null)) {
@@ -1140,7 +1148,7 @@ public class TEIFormatter {
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true,
-                new LayoutTokenization(tokenizations), null, null, null, doc, config);
+                new LayoutTokenization(tokenizations), null, null, null, markerTypes, doc, config);
         buffer.append("\t\t\t</div>\n");
 
         return buffer;
@@ -1155,6 +1163,7 @@ public class TEIFormatter {
                                          List<Figure> figures,
                                          List<Table> tables,
                                          List<Equation> equations,
+                                         List<MarkerType> markerTypes,
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
         TaggingLabel lastClusterLabel = null;
