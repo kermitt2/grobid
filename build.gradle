@@ -85,7 +85,7 @@ subprojects {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
-                //artifact jar 
+                //artifact jar
             }
         }
         repositories {
@@ -164,6 +164,8 @@ subprojects {
         implementation "com.fasterxml.jackson.core:jackson-databind:2.14.3"
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.14.3"
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
+
+        implementation group: 'org.apache.xmlgraphics', name: 'batik-all', version: '1.14', ext: 'pom'
     }
 
     tasks.register('sourceJar', Jar) {
