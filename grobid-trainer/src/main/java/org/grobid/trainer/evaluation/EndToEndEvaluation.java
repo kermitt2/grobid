@@ -183,8 +183,6 @@ public class EndToEndEvaluation {
 			long start = System.currentTimeMillis();
 			int fails = 0;
 
-System.out.println(GrobidProperties.getInstance().getMaxConcurrency());
-
 			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getMaxConcurrency()-1);
 			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
 
@@ -1984,7 +1982,7 @@ System.out.println("grobid: " + grobidResult);*/
 			System.out.println(Engine.getCntManager());
 
 			// write markdown report
-			File fileMarkDown = new File("report.md");
+			File fileMarkDown = new File(GrobidProperties.getInstance().getTempPath().getPath() + File.separator + "report.md");
 			FileUtils.writeStringToFile(fileMarkDown, reportMD.toString(), "UTF-8");
 			System.out.println("\nEvaluation report in markdown format saved under " + fileMarkDown.getAbsolutePath());
         } catch (Exception e) {
