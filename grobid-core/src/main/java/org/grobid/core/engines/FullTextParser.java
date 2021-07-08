@@ -2309,6 +2309,9 @@ public class FullTextParser extends AbstractParser {
      * Ensure consistent use of callouts in the entire document body  
      */
     private List<MarkerType> postProcessCallout(String result, LayoutTokenization layoutTokenization) {
+        if (layoutTokenization == null)
+            return null;
+
         List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations);
@@ -2334,9 +2337,15 @@ public class FullTextParser extends AbstractParser {
             if (TEIFormatter.MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 refTokens = LayoutTokensUtil.dehyphenize(refTokens);
+                String refText = LayoutTokensUtil.toText(refTokens);
+                refText = refText.replace("\n", "");
+                refText = refText.replace(" ", "");
+                if (refText.trim().length() == 0)
+                    continue;
 
                 if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    //System.out.println(LayoutTokensUtil.toText(refTokens) + " -> " + localMarkerType);
                     if (referenceMarkerTypeCounts.get(localMarkerType) == null)
                         referenceMarkerTypeCounts.put(localMarkerType, 1);
                     else
@@ -2368,48 +2377,12 @@ public class FullTextParser extends AbstractParser {
         majorityTableMarkerType = getBestType(tableMarkerTypeCounts);
         majorityEquationarkerType = getBestType(equationMarkerTypeCounts);
 
-        /*String[] resultLines = result.split("\n");
-        StringBuilder updatedResult = new StringBuilder();
-        String previousPlainLabel = null;
-        for(int i=0; i<resultLines.length; i++) {
-            String line = resultLines[i];
-            if (line.trim().length() == 0) {
-                updatedResult.append(line).append("\n");
-                continue;
-            }
-            String label = null;
-            int ind = line.lastIndexOf("\t");
-            if (ind != -1)
-                label = line.substring(ind);
-            else
-                label = line.substring(line.lastIndexOf(" "));
-            TaggingLabel localLabel = TaggingLabels.labelFor(GrobidModels.FULLTEXT, label);
-            
-            if (TEIFormatter.MARKER_LABELS.contains(localLabel)) {
-
-                if (localLabel.equals(TaggingLabels.CITATION_MARKER)) {
-                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
-                    
-                } else if (localLabel.equals(TaggingLabels.FIGURE_MARKER)) {
-                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
-                    
-                } else if (localLabel.equals(TaggingLabels.TABLE_MARKER)) {
-                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
-                    
-                } else if (localLabel.equals(TaggingLabels.EQUATION_MARKER)) {
-                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
-                                
-                } 
-            }
-            updatedResult.append(line).append("\n");
-            String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-            if (previousPlainLabel == null || !plainLabel.equals(previousPlainLabel)) {
-                previousPlainLabel = plainLabel;
-            }
-        }*/
+/*System.out.println("majorityReferenceMarkerType: " + majorityReferenceMarkerType);
+System.out.println("majorityFigureMarkerType: " + majorityFigureMarkerType);
+System.out.println("majorityTableMarkerType: " + majorityTableMarkerType);
+System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
         return Arrays.asList(majorityReferenceMarkerType, majorityFigureMarkerType, majorityTableMarkerType, majorityEquationarkerType);
-        //return updatedResult.toString();
     }
 
     private static MarkerType getBestType(Map<MarkerType,Integer> markerTypeCount) {

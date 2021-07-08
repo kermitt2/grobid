@@ -24,9 +24,9 @@ public class CalloutAnalyzer {
 
     // simple patterns just to capture the majority callout style
     private final static Pattern BRACKET_TEXT_PATTERN = Pattern.compile("\\[(.)+\\]");
-    private final static Pattern BRACKET_NUMBER_PATTERN = Pattern.compile("\\[((\\d+[a-f]?)|[,-;])+\\]");
+    private final static Pattern BRACKET_NUMBER_PATTERN = Pattern.compile("\\[((\\d+[a-f]?)|[,-;•])+\\]");
     private final static Pattern PARENTHESIS_TEXT_PATTERN = Pattern.compile("\\((.)+\\)");
-    private final static Pattern PARENTHESIS_NUMBER_PATTERN = Pattern.compile("\\(((\\d+[a-f]?)|[,-;])+\\)");
+    private final static Pattern PARENTHESIS_NUMBER_PATTERN = Pattern.compile("\\(((\\d+[a-f]?)|[,-;•])+\\)");
     private final static Pattern NUMBER_PATTERN = Pattern.compile("(\\d+)[a-f]?");
     private final static Pattern ROMAN_PATTERN = Pattern.compile("(IX|IV|V?I{0,3})");
 
@@ -42,6 +42,8 @@ public class CalloutAnalyzer {
         boolean isSuperScript = true;
 
         for(LayoutToken token : callout) {
+            if (token.getText().trim().length() == 0)
+                continue;
             if (!token.isSuperscript()) {
                 isSuperScript = false;
                 break;

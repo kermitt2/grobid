@@ -1298,11 +1298,15 @@ public class TEIFormatter {
                 parent.appendChild(new Text(" "));
 
                 List<Node> refNodes;
+                MarkerType citationMarkerType = null;
+                if (markerTypes != null && markerTypes.size()>0) {
+                    citationMarkerType = markerTypes.get(0);
+                }
                 if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                     refNodes = markReferencesTEILuceneBased(refTokens,
                             doc.getReferenceMarkerMatcher(),
                             config.isGenerateTeiCoordinates("ref"), 
-                            keepUnsolvedCallout);
+                            keepUnsolvedCallout, citationMarkerType);
 
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
@@ -1651,17 +1655,54 @@ System.out.println(theSentences.toString());
                                                    ReferenceMarkerMatcher markerMatcher, 
                                                    boolean generateCoordinates,
                                                    boolean keepUnsolvedCallout) throws EntityMatcherException {
+        return markReferencesTEILuceneBased(refTokens, markerMatcher, generateCoordinates, keepUnsolvedCallout, null);
+    }
+
+    public List<Node> markReferencesTEILuceneBased(List<LayoutToken> refTokens,
+                                                   ReferenceMarkerMatcher markerMatcher, 
+                                                   boolean generateCoordinates,
+                                                   boolean keepUnsolvedCallout,
+                                                   MarkerType citationMarkerType) throws EntityMatcherException {
         // safety tests
         if ( (refTokens == null) || (refTokens.size() == 0) ) 
             return null;
         String text = LayoutTokensUtil.toText(refTokens);
         if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref") || markerMatcher == null)
             return Collections.<Node>singletonList(new Text(text));
-        
+
         boolean spaceEnd = false;
         text = text.replace("\n", " ");
         if (text.endsWith(" "))
             spaceEnd = true;
+
+        // check constraints on global marker type, we need to discard reference markers that do not follow the
+        // reference marker pattern of the document
+        if (citationMarkerType != null) {
+            // do we have superscript numbers in the ref tokens?
+            boolean hasSuperScriptNumber = false;
+            for(LayoutToken refToken : refTokens) {
+                if (refToken.isSuperscript()) {
+                    hasSuperScriptNumber = true;
+                    break;
+                }                    
+            }
+
+            if (citationMarkerType == MarkerType.SUPERSCRIPT_NUMBER) {
+                // we need to check that the reference tokens have some superscript numbers
+                if (!hasSuperScriptNumber) {
+                    return Collections.<Node>singletonList(new Text(text));
+                }
+            } else {
+                // if the reference tokens has some superscript numbers, it is a callout for a different type of object
+                // (e.g. a foot note)
+                if (hasSuperScriptNumber) {
+                    return Collections.<Node>singletonList(new Text(text));
+                }
+            }
+
+            // TBD: check other constraints and consistency issues
+        }
+
         //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
