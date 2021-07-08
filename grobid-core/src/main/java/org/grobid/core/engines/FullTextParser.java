@@ -292,7 +292,10 @@ public class FullTextParser extends AbstractParser {
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
             // callout in superscript is by error labeled as a numerical reference callout)
-            List<MarkerType> markerTypes = postProcessCallout(resultBody, layoutTokenization);
+            List<MarkerType> markerTypes = null;
+
+            if (resultBody != null) 
+                markerTypes = postProcessCallout(resultBody, layoutTokenization);
 
             // final combination
             toTEI(doc, // document
@@ -2328,6 +2331,11 @@ public class FullTextParser extends AbstractParser {
         Map<MarkerType,Integer> tableMarkerTypeCounts = new HashMap<>();
         Map<MarkerType,Integer> equationMarkerTypeCounts = new HashMap<>();
 
+        List<String> referenceMarkerSeen = new ArrayList<>();
+        List<String> figureMarkerSeen = new ArrayList<>();
+        List<String> tableMarkerSeen = new ArrayList<>();
+        List<String> equationMarkerSeen = new ArrayList<>();
+
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -2344,30 +2352,58 @@ public class FullTextParser extends AbstractParser {
                     continue;
 
                 if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    if (referenceMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     //System.out.println(LayoutTokensUtil.toText(refTokens) + " -> " + localMarkerType);
                     if (referenceMarkerTypeCounts.get(localMarkerType) == null)
                         referenceMarkerTypeCounts.put(localMarkerType, 1);
                     else
                         referenceMarkerTypeCounts.put(localMarkerType, referenceMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!referenceMarkerSeen.contains(refText))
+                        referenceMarkerSeen.add(refText);
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    if (figureMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }                    
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (figureMarkerTypeCounts.get(localMarkerType) == null)
                         figureMarkerTypeCounts.put(localMarkerType, 1);
                     else
                         figureMarkerTypeCounts.put(localMarkerType, figureMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!figureMarkerSeen.contains(refText))
+                        figureMarkerSeen.add(refText);
                 } else if (clusterLabel.equals(TaggingLabels.TABLE_MARKER)) {
+                    if (tableMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }  
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (tableMarkerTypeCounts.get(localMarkerType) == null)
                         tableMarkerTypeCounts.put(localMarkerType, 1);
                     else
                         tableMarkerTypeCounts.put(localMarkerType, tableMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!tableMarkerSeen.contains(refText))
+                        tableMarkerSeen.add(refText);
                 } else if (clusterLabel.equals(TaggingLabels.EQUATION_MARKER)) {
+                    if (equationMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }  
                     MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
                     if (equationMarkerTypeCounts.get(localMarkerType) == null)
                         equationMarkerTypeCounts.put(localMarkerType, 1);
                     else
-                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);             
+                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);  
+
+                    if (!equationMarkerSeen.contains(refText))
+                        equationMarkerSeen.add(refText);               
                 } 
             }
         }
@@ -2389,7 +2425,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         MarkerType bestType = MarkerType.UNKNOWN;
         int maxCount = 0;
         for(Map.Entry<MarkerType,Integer> entry : markerTypeCount.entrySet()) {
-            if (bestType == null || entry.getValue() > maxCount) {
+            if (entry.getValue() > maxCount) {
                 bestType = entry.getKey();
                 maxCount = entry.getValue();
             }
