@@ -2,11 +2,11 @@
 
 GROBID is a machine learning library for extracting, parsing and re-structuring raw documents in particular PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. The goal of GROBID is to facilitate text mining, information extraction and semantic analysis of scientific publications by transforming them into machine-friendly, structured, and predictable representations. 
 
-In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negociations with publishers. PDF remains today the most important format under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
+In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negociations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
 
 <figure>
-  <img src="img/ingestion.png" alt="The GROBID ingestion scenario">
-  <figcaption><b>Fig.1</b> - Ingesting scientific documents with GROBID<</figcaption>
+  <img src="img/ingestion.png" alt="The GROBID ingestion scenario"/>
+  <figcaption><b>Fig.1</b> - Ingesting scientific documents with GROBID</figcaption>
 </figure>
 
 To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
@@ -51,7 +51,7 @@ GROBID models maintains a synchronization between the labeling process and the l
 
 ![PDF annotation service](img/Screenshot5.png)
 
-##Training data: Qualität statt Quantität 
+##Training data: _Qualität statt Quantität_
 
 GROBID does not use vast amount of training data derived from existing publisher XML documents, like CERMINE _(Tkaczyk et al., 2015)_ or ScienceParse 1 &amp; 2, but small, high quality sets of manually labeled training data. The data to be labeled are directly generated from PDF (not from publisher XML) and continuously extended with error cases. Although we also experimented with the large-set approaches and auto-generated training data at scale, we still currently remain with the small/high quality approach, the reasons being the following ones: 
 
@@ -83,9 +83,9 @@ However, if the priority is accuracy, we also make possible custom settings to m
 
 (Tkaczyk et al., 2015) Dominika  Tkaczyk,  Paweł  Szostek,  Mateusz  Fedoryszak,  Piotr  Jan  Dendek,  and  Łukasz  Bolikowski. 2015. Cermine: automatic extraction of structured metadata from scientific literature. International Journal on Document Analysis and Recognition (IJDAR), 18(4):317-335
 
-[Science Parse](https://github.com/allenai/science-parse)
+[Science Parse](https://github.com/allenai/science-parse), https://github.com/allenai/science-parse
 
-[Science Parse v2](https://github.com/allenai/spv2)
+[Science Parse v2](https://github.com/allenai/spv2), https://github.com/allenai/spv2
 
 (Shen et al., 2021) Zejiang Shen, Kyle Lo, Lucy Lu Wang, Bailey Kuehl, Daniel S. Weld, Doug Downey. 2021. [Incorporating Visual Layout Structures for Scientific Text Classification](https://arxiv.org/pdf/2106.00676.pdf). arXiv:2106.00676
 
