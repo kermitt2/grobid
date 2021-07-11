@@ -2,14 +2,12 @@
 
 GROBID is a machine learning library for extracting, parsing and re-structuring raw documents in particular PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. The goal of GROBID is to facilitate text mining, information extraction and semantic analysis of scientific publications by transforming them into machine-friendly, structured, and predictable representations. 
 
-In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negociations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
+In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negotiations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
 
-<p align = "center">
 ![Ingesting scientific documents with GROBID](img/ingestion.png)
-</p>
 
 <p align = "center">
-<b>Fig.1</b> - Ingesting scientific documents with GROBID
+<b>Fig. 1</b> - Ingesting scientific documents with GROBID
 </p>
 
 To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
@@ -18,13 +16,17 @@ The rest of this page gives an overview of main GROBID design principles. Skip i
 
 ##Document parsing as a cascade of sequence labeling models
 
-GROBID uses a cascade of sequence labeling models to parse a document. This modular approach makes possible to adapt the training data, the features, the text representations and the models to the different hierarchical structures of the document. Invidual models maintain each a small amount of labels (which is easier to manage and train), but, in combination, the full cascade provides very detailed end-result structures. The final models produce 55 different "leaf" labels, while other document analysis layout systems support significantly less label categories (up to 22 for GROTOAP2 dataset and CERMINE, _Tkaczyk et al., 2014_, the maximum to our knowledge after GROBID).
+GROBID uses a cascade of sequence labeling models to parse a document. This modular approach makes possible to adapt the training data, the features, the text representations and the models to the different hierarchical structures of the document. Individual models maintain each a small amount of labels (which is easier to manage and train), but, in combination, the full cascade provides very detailed end-result structures. The final models produce 55 different "leaf" labels, while other document analysis layout systems support significantly less label categories (up to 22 for GROTOAP2 dataset and CERMINE, _Tkaczyk et al., 2014_, the maximum to our knowledge after GROBID).
 
 In GROBID, sequence labeling is defined in an abstract manner and its concrete implementation can be selected among different standard ML architectures, including a fast linear chain CRF and a variety of state-of-the-art Deep Learning (DL) models. Sequence labeling models are limited to the labeling of a linear sequence of tokens, therefore they associate a one-dimension structure to a stream of tokens. One way to create additional levels of nested structures is to cascade several sequence labeling models, the output of a first model being piped to one or several models. This is the approach taken by GROBID.
 
 __Fig. 2__ shows the current model cascade. Each model typically uses its own combination of sequence labeling algorithm, features, and possibly a different tokenizer. The model architecture and parameters depend on the labels to be used, on the amount of available training data, on the runtime, memory and accuracy constraints, etc. This approach finally helps to mitigate class imbalanced problems, for instance a majority class like "paragraph" will not impact a rare class from a non-body area (e.g. a field appearing only one time in a header) by keeping the imbalanced classes in separated models. 
 
 ![The GROBID cascade of sequence labeling models](img/cascade.png)
+
+<p align = "center">
+<b>Fig. 2</b> - The GROBID cascade of sequence labeling models
+</p>
 
 The _segmentation model_ for instance is used to detect the main areas of a document, e.g. the title page, the header, the body, the head and foot notes, the bibliographical sections, etc. This particular model works by labeling each line and heavily rely on layout features. Working at line level is significantly faster than a token-level model, which is good for a model applied to the entire content of the document. The areas introduced by this model correspond to large zones, which are never interrupting a line. 
 
@@ -38,7 +40,7 @@ Cascading models offers thus the flexibility to tune each model and associated s
 
 ##Layout tokens, not text
 
-The different GROBID models do not work on text, but on **Layout Tokens** to exploit various visual/layout information avalable for every tokens. Layout information provide at the same time more criteria of decision for the recognition of structures and more robustness to layout variations. 
+The different GROBID models do not work on text, but on **Layout Tokens** to exploit various visual/layout information available for every tokens. Layout information provide at the same time more criteria of decision for the recognition of structures and more robustness to layout variations. 
 
 GROBID Layout Token is a structure containing the Unicode text token but also the associated available rich text information (font size and name, style attributes - bold, italic, superscript/subscript) and the location in the PDF expressed by bounding boxes. Layout Tokens are grouped following visual criteria (lines, blocks, columns) as a first result of the PDF layout analysis, and then further semantically grouped through the Machine Learning process, following the labeled fields. In addition, these layout information are used to create additional layout features like indentation, relative spacing indicators, relative page vertical and horizontal positions, character density or bitmap/vector graphics relative position information. In most GROBID models, these layout features are set at every layout tokens. 
 
@@ -48,17 +50,26 @@ Layout information are used to instantiate layout features, which can be exploit
 
 Dedicated joint Deep Learning models able to exploit these additional layout features have been developed in [DeLFT](https://github.com/kermitt2/delft) to complement CRF models. 
 
-![PDF annotation service](img/Screenshot4.png)
+![PDF annotation service with Figure pop-up](img/Screenshot4.png)
 
-GROBID models maintains a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labelling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new interactions.
+<p align = "center">
+<b>Fig. 3</b> - Visualization of a cited figure in context
+</p>
 
-![PDF annotation service](img/Screenshot5.png)
+
+GROBID models maintains a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labeling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new interactions. __Fig. 3 and 4__ presents two examples of visualization of extracted objects thanks to GROBID coordinates associated to structures. 
+
+![PDF annotation service with Equation pop-up](img/Screenshot5.png)
+
+<p align = "center">
+<b>Fig. 4</b> - Visualization of a cited equation in context
+</p>
 
 ##Training data: _Qualität statt Quantität_
 
 GROBID does not use vast amount of training data derived from existing publisher XML documents, like CERMINE _(Tkaczyk et al., 2015)_ or ScienceParse 1 &amp; 2, but small, high quality sets of manually labeled training data. The data to be labeled are directly generated from PDF (not from publisher XML) and continuously extended with error cases. Although we also experimented with the large-set approaches and auto-generated training data at scale, we still currently remain with the small/high quality approach, the reasons being the following ones: 
 
-- Exploiting publisher XML suppose to be able to align the clean XML content with the noisy PDF content. This is complicated to realize in practice at full document scale, because publisher fulltext XML do not follow the actual PDF object stream, some XML elements are encoded very differently from what can be extracted from the PDF (e.g. equations, chemical formula, tables, section titles, references, ...), present only in XML (sometimes keywords in PMC JATS are not in the PDF) or present only in the PDF (cover page, copyrights/editorial statements, head notes). In addition, some spurious template presentation tokens in the PDF are normally absent from the XML because considered as noise - what they are, they do not carry any useful semantic information, they are just for presentation. These PDF scoria are however very useful to help the recognition of structures as they can indicate field boundaries. A super large dataset from publisher XML/PDF tends to be closer to the XML than the actual PDF content, because either (i) only PDF very close to the corresponding XML are succesfully aligned and kept or (ii) only "easy" document layout segments/pages are kept.
+- Exploiting publisher XML suppose to be able to align the clean XML content with the noisy PDF content. This is complicated to realize in practice at full document scale, because publisher fulltext XML do not follow the actual PDF object stream, some XML elements are encoded very differently from what can be extracted from the PDF (e.g. equations, chemical formula, tables, section titles, references, ...), present only in XML (sometimes keywords in PMC JATS are not in the PDF) or present only in the PDF (cover page, copyrights/editorial statements, head notes). In addition, some spurious template presentation tokens in the PDF are normally absent from the XML because considered as noise - what they are, they do not carry any useful semantic information, they are just for presentation. These PDF scoria are however very useful to help the recognition of structures as they can indicate field boundaries. A super large dataset from publisher XML/PDF tends to be closer to the XML than the actual PDF content, because either (i) only PDF very close to the corresponding XML are successfully aligned and kept or (ii) only "easy" document layout segments/pages are kept.
 
 - With a large amount of training data, the addition of a few new examples has often no generalization impact, because the new examples are diluted in the vast amount of training. It is then in practice impossible to further improve the model with additional training data and to recover errors. On the other hand, with a small training dataset, the addition of a few error cases can correct the model and it is possible to quickly iterate and improve the model continuously in an active learning manner. 
 
@@ -72,7 +83,7 @@ In practice, the size of GROBID training data is smaller than the ones of CERMIN
 
 As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations are done in separate and stable holdout sets from publishers, which follow more realistic distributions of document variations. Our publisher evaluation sets however present the same lack of diversity drawback as discussed above with training data, but at least we do not train and evaluate with the same domains and sources of publications as most similar works. 
 
-For the moment, we are also not relying on transformer approaches incorporating layout information, like LayoutML _(Xu et al., 2020)_, LayoutLMv2 _(Xu et al., 2021)_, SelfDoc or VILA _(Shen et al., 2021)_, which require considerable GPU capacities, long inference runtime, and do not show at this time convincing accuracies as compared to the current GROBID cheap approach (reported accuracy at token level are often lower than GROBID accuracy at field level, while using less labels). However, these approaches are very promising. In GROBID, it is possible to run BERT and SciBERT baseline fine-tuned models, ignoring available layout features. We think the system is thus more or less ready to experiment with fine-tuning such extended transformer models - or rather few-shot learning given the size of our annotated example set - when/if they can surpass some of the current models (and when we will have saved enough money to buy a V100 GPU). 
+For the moment, we are also not relying on transformer approaches incorporating layout information, like LayoutML _(Xu et al., 2020)_, LayoutLMv2 _(Xu et al., 2021)_, SelfDoc or VILA _(Shen et al., 2021)_, which require considerable GPU capacities, long inference runtime, and do not show at this time convincing accuracy scores as compared to the current GROBID cheap approach (reported accuracy at token level are often lower than GROBID accuracy at field level, while using less labels). However, these approaches are very promising. In GROBID, it is possible to run BERT and SciBERT baseline fine-tuned models, ignoring available layout features. We think the system is thus more or less ready to experiment with fine-tuning such extended transformer models - or rather few-shot learning given the size of our annotated example set - when/if they can surpass some of the current models (and when we will have saved enough money to buy a V100 GPU). 
 
 ##Balancing accuracy and scalability
 
@@ -82,16 +93,16 @@ However, if the priority is accuracy, we also make possible custom settings to m
 
 ##References
 
-(Tkaczyk et al., 2014) Dominika  Tkaczyk,  Pawel  Szostek,  and  Lukasz  Bolikowski. 2014.  Grotoap2 - the methodology of creating a large ground truth dataset of scientific articles. D-Lib Magazine, 20(11/12)
+_(Tkaczyk et al., 2014)_ Dominika  Tkaczyk,  Pawel  Szostek,  and  Lukasz  Bolikowski. 2014.  Grotoap2 - the methodology of creating a large ground truth dataset of scientific articles. D-Lib Magazine, 20(11/12)
 
-(Tkaczyk et al., 2015) Dominika  Tkaczyk,  Paweł  Szostek,  Mateusz  Fedoryszak,  Piotr  Jan  Dendek,  and  Łukasz  Bolikowski. 2015. Cermine: automatic extraction of structured metadata from scientific literature. International Journal on Document Analysis and Recognition (IJDAR), 18(4):317-335
+_(Tkaczyk et al., 2015)_ Dominika  Tkaczyk,  Paweł  Szostek,  Mateusz  Fedoryszak,  Piotr  Jan  Dendek,  and  Łukasz  Bolikowski. 2015. Cermine: automatic extraction of structured metadata from scientific literature. International Journal on Document Analysis and Recognition (IJDAR), 18(4):317-335
 
 [Science Parse](https://github.com/allenai/science-parse), https://github.com/allenai/science-parse
 
 [Science Parse v2](https://github.com/allenai/spv2), https://github.com/allenai/spv2
 
-(Shen et al., 2021) Zejiang Shen, Kyle Lo, Lucy Lu Wang, Bailey Kuehl, Daniel S. Weld, Doug Downey. 2021. [Incorporating Visual Layout Structures for Scientific Text Classification](https://arxiv.org/pdf/2106.00676.pdf). arXiv:2106.00676
+_(Shen et al., 2021)_ Zejiang Shen, Kyle Lo, Lucy Lu Wang, Bailey Kuehl, Daniel S. Weld, Doug Downey. 2021. [Incorporating Visual Layout Structures for Scientific Text Classification](https://arxiv.org/pdf/2106.00676.pdf). arXiv:2106.00676
 
-(Xu et al., 2020) Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou. [LayoutLM: Pre-training of Text and Layout for Document Image Understanding](https://arxiv.org/pdf/1912.13318.pdf). KDD 2020
+_(Xu et al., 2020)_ Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou. [LayoutLM: Pre-training of Text and Layout for Document Image Understanding](https://arxiv.org/pdf/1912.13318.pdf). KDD 2020
 
-(Xu et al., 2021) Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei Florencio, Cha Zhang, Wanxiang Che, Min Zhang, Lidong Zhou. 2021. [LayoutLMv2: Multi-modal Pre-training for Visually-Rich Document Understanding](https://arxiv.org/pdf/2012.14740.pdf). arXiv:2012.14740 
+_(Xu et al., 2021)_ Yang Xu, Yiheng Xu, Tengchao Lv, Lei Cui, Furu Wei, Guoxin Wang, Yijuan Lu, Dinei Florencio, Cha Zhang, Wanxiang Che, Min Zhang, Lidong Zhou. 2021. [LayoutLMv2: Multi-modal Pre-training for Visually-Rich Document Understanding](https://arxiv.org/pdf/2012.14740.pdf). arXiv:2012.14740 
