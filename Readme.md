@@ -73,13 +73,13 @@ Finally, the following python utilities can be used to create structured full te
 
 Visit the [documentation page describing the system](https://grobid.readthedocs.io/en/latest/Principles/). To summarize, the key design principles of GROBID are:
 
-- GROBID uses a cascade of sequence labeling models to parse a document. 
+- GROBID uses a [cascade of sequence labeling models](https://grobid.readthedocs.io/en/latest/Principles/#document-parsing-as-a-cascade-of-sequence-labeling-models) to parse a document. 
 
-- The different models do not work on text, but on **Layout Tokens** to exploit various visual/layout information avalable for every tokens.
+- The different models [do not work on text, but on **Layout Tokens**](https://grobid.readthedocs.io/en/latest/Principles/#layout-tokens-not-text) to exploit various visual/layout information avalable for every tokens.
 
-- GROBID does not use training data derived from existing publisher XML documents, but small, high quality sets of manually labeled training data. 
+- GROBID does not use training data derived from existing publisher XML documents, but [small, high quality sets](https://grobid.readthedocs.io/en/latest/Principles/#training-data-qualitat-statt-quantitat) of manually labeled training data. 
 
-- Technical choices are driven by the ability to process PDF quickly, with commodity hardware and with good parallelization and scalabilty capacities.
+- Technical choices and [default settings](https://grobid.readthedocs.io/en/latest/Principles/#balancing-accuracy-and-scalability) are driven by the ability to process PDF quickly, with commodity hardware and with good parallelization and scalabilty capacities.
 
 Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/) are available [GROBID documentation](https://grobid.readthedocs.org) and continuously updated.
 
