@@ -4,10 +4,13 @@ GROBID is a machine learning library for extracting, parsing and re-structuring 
 
 In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negociations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
 
-<figure>
-  <img src="img/ingestion.png" alt="The GROBID ingestion scenario"/>
-  <figcaption><b>Fig.1</b> - Ingesting scientific documents with GROBID</figcaption>
-</figure>
+<p align = "center">
+![Ingesting scientific documents with GROBID](img/ingestion.png)
+</p>
+
+<p align = "center">
+<b>Fig.1</b> - Ingesting scientific documents with GROBID
+</p>
 
 To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
 
@@ -19,7 +22,7 @@ GROBID uses a cascade of sequence labeling models to parse a document. This modu
 
 In GROBID, sequence labeling is defined in an abstract manner and its concrete implementation can be selected among different standard ML architectures, including a fast linear chain CRF and a variety of state-of-the-art Deep Learning (DL) models. Sequence labeling models are limited to the labeling of a linear sequence of tokens, therefore they associate a one-dimension structure to a stream of tokens. One way to create additional levels of nested structures is to cascade several sequence labeling models, the output of a first model being piped to one or several models. This is the approach taken by GROBID.
 
-The figure below shows the current model cascade. Each model typically uses its own combination of sequence labeling algorithm, features, and possibly a different tokenizer. The model architecture and parameters depend on the labels to be used, on the amount of available training data, on the runtime, memory and accuracy constraints, etc. This approach finally helps to mitigate class imbalanced problems, for instance a majority class like "paragraph" will not impact a rare class from a non-body area (e.g. a field appearing only one time in a header) by keeping the imbalanced classes in separated models. 
+__Fig. 2__ shows the current model cascade. Each model typically uses its own combination of sequence labeling algorithm, features, and possibly a different tokenizer. The model architecture and parameters depend on the labels to be used, on the amount of available training data, on the runtime, memory and accuracy constraints, etc. This approach finally helps to mitigate class imbalanced problems, for instance a majority class like "paragraph" will not impact a rare class from a non-body area (e.g. a field appearing only one time in a header) by keeping the imbalanced classes in separated models. 
 
 ![The GROBID cascade of sequence labeling models](img/cascade.png)
 
@@ -45,9 +48,9 @@ Layout information are used to instantiate layout features, which can be exploit
 
 Dedicated joint Deep Learning models able to exploit these additional layout features have been developed in [DeLFT](https://github.com/kermitt2/delft) to complement CRF models. 
 
-GROBID models maintains a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labelling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new interactions.
-
 ![PDF annotation service](img/Screenshot4.png)
+
+GROBID models maintains a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labelling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new interactions.
 
 ![PDF annotation service](img/Screenshot5.png)
 
@@ -65,7 +68,7 @@ GROBID does not use vast amount of training data derived from existing publisher
 
 - A lower amount of training data can keep models smaller (e.g. with CRF), faster to train and thus easier for setting hyperparameters.
 
-In practice, the size of GROBID training data is smaller than the ones of CERMINE _(Tkaczyk et al., 2015)_ by a factor 30 to 100, and smaller than ScienceParse 2 by a factor 2500 to 10000, but GROBID provides comparable or better accuracy scores. To help to ensure high quality training data, we develop detailed annotation guidelines to remove as much as possible disagreements/inconsistencies regarding the annotation decision. The training data is reviewed regularly. We do not use double blind annotation with reconciliation and do not compute Inter Annotator Agreement (as we should), because the average size of the annotation team is under 2 :)
+In practice, the size of GROBID training data is smaller than the ones of CERMINE _(Tkaczyk et al., 2015)_ by a factor 30 to 100, and smaller than ScienceParse 2 by a factor 2500 to 10000, but GROBID provides comparable or better accuracy scores. To help to ensure high quality training data, we develop detailed [annotation guidelines](training/General-principles/) to remove as much as possible disagreements/inconsistencies regarding the annotation decision. The training data is reviewed regularly. We do not use double blind annotation with reconciliation and do not compute Inter Annotator Agreement (as we should), because the average size of the annotation team is under 2 :)
 
 As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations are done in separate and stable holdout sets from publishers, which follow more realistic distributions of document variations. Our publisher evaluation sets however present the same lack of diversity drawback as discussed above with training data, but at least we do not train and evaluate with the same domains and sources of publications as most similar works. 
 
