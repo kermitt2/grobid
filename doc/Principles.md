@@ -5,8 +5,11 @@ GROBID is a machine learning library for extracting, parsing and re-structuring 
 In large scale scientific document ingestion tasks, the large majority of available documents are only available in PDF (in particular decades of back files before year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negociations with publishers. PDF remains today the most important format under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale. 
 
 ![The GROBID ingestion scenario](img/ingestion.png)
+<p align = "center">
+<b>Fig.1 - Ingesting scientific documents with GROBID</b>
+</p>
 
-To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications. 
+To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
 
 The rest of this page gives an overview of main GROBID design principles. Skip it if you are not interested in the technical details. Functionalities are described in the [User Manual](https://grobid.readthedocs.io/en/latest/).
 
