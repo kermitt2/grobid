@@ -18,12 +18,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 + New YAML configuration: all the settings are in one single yaml file, each model can be fully configured independently
-+ Improvement of the segmentation and header models (for header, +1 F1-score for PMC evaluation, +4 F1-score for bioRxiv), some improvements for structures of body and citations 
++ Improvement of the segmentation and header models (for header, +1 F1-score for PMC evaluation, +4 F1-score for bioRxiv), improvements for body and citations 
 + Add figure and table pop-up visualization on PDF in the console demo
 + Add PDF MD5 digest in the TEI results (service only)
 + Language support packages and xpdfrc file for pdfalto (support of CJK and exotic fonts)
 + Prometheus metrics 
-+ BidLSTM-CRF-FEATURES implementation available for all models
++ BidLSTM-CRF-FEATURES implementation available for more models
 + Addition of a "How GROBID works" page in the documentation
 
 ### Changed
