@@ -82,17 +82,17 @@ For layout/zoning identification:
 
 - [DocBank](https://github.com/doc-analysis/DocBank)
 
-## Other similar open source tools
+## Similar open source tools
 
 - [parsCit](https://github.com/knmnyn/ParsCit)
+
+- [Neural-ParsCit](https://github.com/WING-NUS/Neural-ParsCit)
 
 - [CERMINE](https://github.com/CeON/CERMINE)
 
 - [Science Parse](https://github.com/allenai/science-parse) 
 
 - [science Parse v2](https://github.com/allenai/spv2) 
-
-- [Metatagger](https://github.com/iesl/rexa1-metatagger)
 
 - [BILBO](https://github.com/OpenEdition/bilbo)
 
@@ -104,3 +104,6 @@ For layout/zoning identification:
 
 - [VILA](https://github.com/allenai/VILA)
 
+## Other
+
+Created in the context of [PdfPig](https://github.com/UglyToad/PdfPig), the following page is a great collection of resources on Document Layout Analysis: [https://github.com/BobLd/DocumentLayoutAnalysis](https://github.com/BobLd/DocumentLayoutAnalysis/)
