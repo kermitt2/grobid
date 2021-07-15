@@ -209,7 +209,7 @@ In order to build an image supporting GPU, you need:
 
 Without these two requirements, the image will always default to CPU, even if GPU are available on the host machine running the image. 
 
-For building a CRF-only image, the dockerfile to be used is `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
+For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf` (see previous section). For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
 > docker build -t grobid/grobid:0.7.0 --build-arg GROBID_VERSION=0.7.0 --file Dockerfile.delft .
