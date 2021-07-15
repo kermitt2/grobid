@@ -224,13 +224,13 @@ docker build -t grobid/grobid:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SN
 In order to run the container of the newly created image, for example for the development version `0.7.1-SNAPSHOT`, using all GPU available:
 
 ```bash
-> docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 grobid/grobid:0.7.1-SNAPSHOT
+> docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.1-SNAPSHOT
 ```
 
 In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.1-SNAPSHOT
+docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.1-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
