@@ -33,8 +33,8 @@ Here an example of grobid-core dependency:
     </dependency>
 ```
  
-If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.7.0` by the valid `<current version>`):
+If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to this snapshot Grobid jar file, 
+for instance as follow (if necessary replace `0.7.1-SNAPSHOT` by the valid `<current version>`):
 
 ```xml
 	<dependency>
