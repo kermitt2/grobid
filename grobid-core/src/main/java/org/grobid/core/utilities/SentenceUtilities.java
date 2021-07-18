@@ -200,7 +200,7 @@ public class SentenceUtilities {
                 if (token.getText() == null || token.getText().length() == 0) 
                     continue;
 
-                if (this.toSkipToken(token.getText()))
+                if (toSkipToken(token.getText()))
                     continue;
 
                 int newPos = sentenceChunk.indexOf(token.getText(), pos);
@@ -226,12 +226,12 @@ public class SentenceUtilities {
                         if (finalSentencePositions.get(currentSentenceIndex).end + nextToken.getText().length() + buffer >= text.length())
                             break;
 
-                        if (this.toSkipTokenNoHyphen(nextToken.getText())) {
+                        if (toSkipTokenNoHyphen(nextToken.getText())) {
                             buffer += nextToken.getText().length();
                             continue;
                         }
 
-                        if (this.isValidSuperScriptNumericalReferenceMarker(nextToken)) {
+                        if (isValidSuperScriptNumericalReferenceMarker(nextToken)) {
                             pushedEnd += buffer + nextToken.getText().length();
                             buffer = 0;
                         } else 
