@@ -9,7 +9,6 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.GrobidTestUtils;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
@@ -30,6 +29,8 @@ import static org.junit.Assert.assertThat;
 public class DateParserTest {
 
     private DateParser target;
+    
+    
     
     @Before
     public void setUp() throws Exception {
