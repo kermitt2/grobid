@@ -12,7 +12,6 @@ import org.grobid.core.layout.LayoutToken;
 /**
  * Class for features used for parsing a block corresponding to affiliation and address.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorAffiliationAddress {
     public String string = null; // lexical feature

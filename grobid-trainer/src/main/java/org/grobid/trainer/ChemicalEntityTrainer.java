@@ -12,10 +12,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * @author Patrice Lopez
- */
 public class ChemicalEntityTrainer extends AbstractTrainer {
 
     public ChemicalEntityTrainer() {

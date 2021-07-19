@@ -678,7 +678,8 @@ public class GrobidRestProcessFiles {
     public Response processPDFReferenceAnnotation(final InputStream inputStream,
                                                   final int consolidateHeader,
                                                   final int consolidateCitations,
-                                                  final boolean includeRawCitations) throws Exception {
+                                                  final boolean includeRawCitations,
+                                                  final boolean includeFiguresTables) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         File originFile = null;
@@ -710,13 +711,13 @@ public class GrobidRestProcessFiles {
             GrobidAnalysisConfig config = new GrobidAnalysisConfig
                 .GrobidAnalysisConfigBuilder()
                 .generateTeiCoordinates(elementWithCoords)
+                .consolidateHeader(consolidateHeader)
                 .consolidateCitations(consolidateCitations)
                 .includeRawCitations(includeRawCitations)
                 .build();
 
-            DocumentSource documentSource = DocumentSource.fromPdf(originFile);
-            Document teiDoc = engine.fullTextToTEIDoc(originFile, md5Str, config);
-            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null);
+            Document teiDoc = engine.fullTextToTEIDoc(originFile, config);
+            String json = CitationsVisualizer.getJsonAnnotations(teiDoc, null, includeFiguresTables);
 
             if (json != null) {
                 response = Response
@@ -873,7 +874,7 @@ public class GrobidRestProcessFiles {
         } else if (type == GrobidRestUtils.Annotation.FIGURE) {
             out = FigureTableVisualizer.annotateFigureAndTables(document, documentSource.getXmlFile(),
                 teiDoc, true, true, true, false, false);
-        }
+        } 
         return out;
     }
 

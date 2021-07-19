@@ -8,10 +8,6 @@ import org.grobid.core.exceptions.GrobidExceptionStatus;
 
 import java.io.File;
 
-/**
- * User: zholudev
- * Date: 3/17/14
- */
 public class WapitiWrapper {
     public static String label(SWIGTYPE_p_mdl_t model, String data) {
         if (data.trim().isEmpty()) {

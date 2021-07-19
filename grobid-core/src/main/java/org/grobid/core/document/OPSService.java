@@ -23,7 +23,7 @@ import org.grobid.core.sax.TextSaxParser;
  *  batch SOAP envelope.
  *
  */
- 
+
  public class OPSService {
 	
 	public OPSService() {}

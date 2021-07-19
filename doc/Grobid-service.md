@@ -23,10 +23,10 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.2.zip
-mv grobid-service-0.6.2 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.2.zip
-./grobid-service/bin/grobid-service server grobid-service/config/config.yaml
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.0.zip
+mv grobid-service-0.7.0 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.0.zip
+./grobid-service/bin/grobid-service
 ```
 
 The directory `grobid-installation` should have the following structure:
@@ -47,9 +47,11 @@ You can check whether the service is up and running by opening the following URL
 The service provides also an admin console, reachable at <http://yourhost:8071> where some additional checks like ping, metrics, hearthbeat are available.
 We recommend, in particular to have a look at the metrics (using the [Metric library](https://metrics.dropwizard.io/3.1.0/getting-started/)) which are providing the rate of execution as well as the throughput of each entry point.
 
+In addition, [Prometheus](https://prometheus.io/) format export metrics are available at <http://yourhost:8071/metrics/prometheus>.  
+
 ## Configure the server
 
-If required, modify the file under `grobid/grobid-service/config/config.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
+If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
@@ -59,22 +61,24 @@ For preloading all the models, set the following config parameter to `true`:
 
 ```yaml
 grobid:
-  # how to load the models,
-  # false -> models are loaded when needed (default), avoiding puting in memory models which are not used
-  # true -> all the models are loaded into memory at the server statup, slow the start of the services and models not  
-  # used will take some memory
+  # for **service only**: how to load the models, 
+  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
+  #          the service at first call
+  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
+  #         used will take some memory, but server is immediatly warm and ready
   modelPreload: false
-```
+```  
 
 ## CORS (Cross-Origin Resource Share)
 
 By default, Grobid allows API access from any origin.
-The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `config/config.yml`:
+The configuration can be modified, for example to restrict origin, methods and header of access, through the YAML configuration file `grobid-home/config/grobid.yaml`:
 
 ```yaml
-corsAllowedOrigins: "grobid.com"
-corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
-corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
+grobid:
+  corsAllowedOrigins: "grobid.com"
+  corsAllowedMethods: "OPTIONS,GET,PUT,POST,DELETE,HEAD"
+  corsAllowedHeaders: "X-Requested-With,Content-Type,Accept,Origin"  
 ```
 
 ## Clients for GROBID Web Services
@@ -172,7 +176,7 @@ Response status codes:
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service.
 
-The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid property file (under `grobid-home/config/grobid.properties`). As of August 2020, available segmenters are [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect) (recommended for scientific articles after evaluation) and the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter).
+The optional sentence segmentation in the TEI XML result is based on the algorithm selected in the Grobid configuration file (under `grobid-home/config/grobid.yaml`). As of August 2020, available segmenters are [OpenNLP sentence detector](https://opennlp.apache.org/docs/1.5.3/manual/opennlp.html#tools.sentdetect) (recommended for scientific articles after evaluation) and the [Pragmatic_Segmenter](https://github.com/diasks2/pragmatic_segmenter).
 
 You can test this service with the **cURL** command lines, for instance fulltext extraction (header, body and citations) from a PDF file in the current directory:
 
@@ -480,6 +484,9 @@ For information about how the coordinates are provided, see [Coordinates of stru
 |---        |---                    |---                 |---                     |---            |---            |
 | POST	| multipart/form-data | application/json  	| input | required	| PDF file to be processed, returned coordinates will reference this PDF |
 |           |                       |                    | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                    | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+|           |                       |                    | `includeFiguresTables` | optional      | `includeFiguresTables` is a boolean value `0` (default, do not include figure and table objects and reference annotations) or `1` (include these annotations). |
+
 
 Response status codes:
 
@@ -694,19 +701,23 @@ The Grobid RESTful API provides a very efficient way to use the library out of t
 
 As Grobid is thread-safe and manages a pool of parser instances, it is advised to use several threads to call the REST service for scaling the processing to large collections of documents. This improves considerably the performance of the services for PDF processing because documents can be processed while other are uploading.
 
-Setting the maximum number of parallel processing is done in the property file under `grobid-home/config/grobid.properties`. Adjust this number (default `10`) following the number of cores/threads available on your server:
+Setting the maximum number of parallel processing is done in the GROBID configuration file `grobid-home/config/grobid.yaml`. Adjust this number (default `10`) following the number of cores/threads available on your server:
 
-```INI
-#------------------- start: pooling -------------------
-# Maximum parallel connections allowed
-org.grobid.max.connections=10
+```yaml
+grobid:
+  # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
+  # for a production server running only GROBID, set the value slightly above the available number of threads of the server
+  # to get best performance and security
+  concurrency: 10 
 ```
 
 The threads in GROBID service are managed as a pool. When processing a document, the service will request a thread from this pool, and release it to the pool after completion of the request. If all the threads present in the pool are used, it is possible to set the maximum amount of time (in seconds) the request for a thread will wait before considering that no thread will be available and return a http code `503` to the client:
 
-```INI
-# Maximum time wait to get a connection when the pool is full (in seconds)
-org.grobid.pool.max.wait=1
+```yaml
+grobid:
+  # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
+  # to get an engine (in seconds) - normally never change it
+  poolMaxWait: 1
 ```
 
 When scaling the service, we think that it is better to maintain this value low (e.g. 1 second) to avoid putting too many open requests on the server.

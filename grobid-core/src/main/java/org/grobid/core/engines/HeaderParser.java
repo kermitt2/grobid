@@ -37,9 +37,6 @@ import java.util.stream.Collectors;
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 import static org.grobid.core.document.TEIFormatter.toISOString;
 
-/**
- * @author Patrice Lopez
- */
 public class HeaderParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(HeaderParser.class);
 
@@ -258,7 +255,8 @@ public class HeaderParser extends AbstractParser {
                 if (resHeader.getKeyword() != null) {
                     String keywords = TextUtilities.dehyphenize(resHeader.getKeyword());
                     keywords = BiblioItem.cleanKeywords(keywords);
-                    resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    //resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    resHeader.setKeyword(keywords);
                     List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
                     if ((keywordsSegmented != null) && (keywordsSegmented.size() > 0))
                         resHeader.setKeywords(keywordsSegmented);

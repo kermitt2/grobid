@@ -7,7 +7,6 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 
 /**
- * Created by zholudev on 11/01/16.
  * Representing label that can be tagged
  */
 public class TaggingLabelImpl implements TaggingLabel {

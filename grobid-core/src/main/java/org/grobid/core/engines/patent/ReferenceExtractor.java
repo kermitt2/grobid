@@ -58,22 +58,17 @@ import java.util.StringTokenizer;
 import java.util.zip.GZIPInputStream;
 
 /**
- * Extraction of patent and NPL references from the content body of patent document with Conditional
- * Random Fields.
+ * Extraction of patent and NPL references from the content body of patent document with sequence labeling.
  *
- * @author Patrice Lopez
  */
 public class ReferenceExtractor implements Closeable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceExtractor.class);
 
-    //private GenericTagger taggerPatent = null;
-    //private GenericTagger taggerNPL = null;
     private GenericTagger taggerAll = null;
     private PatentRefParser patentParser = null;
     private Consolidation consolidator = null;
 
     private String tmpPath = null;
-//    private String pathXML = null;
 
     public boolean debug = false;
 
@@ -95,7 +90,6 @@ public class ReferenceExtractor implements Closeable {
         path = dirName;
     }
 
-
     public ReferenceExtractor() {
         this(new EngineParsers());
     }
@@ -103,9 +97,7 @@ public class ReferenceExtractor implements Closeable {
     // constructors
     public ReferenceExtractor(EngineParsers parsers) {
         this.parsers = parsers;
-        //taggerNPL = TaggerFactory.getTagger(GrobidModels.PATENT_NPL);
-    	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_ALL);
-    	//taggerPatent = TaggerFactory.getTagger(GrobidModels.PATENT_PATENT);
+    	taggerAll = TaggerFactory.getTagger(GrobidModels.PATENT_CITATION);
 		analyzer = GrobidAnalyzer.getInstance();
     }
 
@@ -271,7 +263,6 @@ public class ReferenceExtractor implements Closeable {
             if (doc.getBlocks() == null) {
                 throw new GrobidException("PDF parsing resulted in empty content");
             }
-            //List<LayoutToken> tokenizations= doc.getTokenizations();
             if ( (tokenizations != null) && (tokenizations.size() > 0) ) {
                 return annotateAllReferences(doc, tokenizations,
                         filterDuplicate,
@@ -291,7 +282,7 @@ public class ReferenceExtractor implements Closeable {
     }
 
     /**
-     * Extract all reference from a simple piece of text.
+     * Extract all reference from a simple piece of text and return results in an XML document.
      */
     public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
@@ -560,6 +551,7 @@ public class ReferenceExtractor implements Closeable {
 					label = label.substring(0,segProb);
 				}
 
+                // TBD: use TaggingTokenClusteror and TaggingLabel as for the other parsers
                 if (actual != null) {
                     if (label.endsWith("<refPatent>")) {
                         if (reference == null) {
@@ -789,7 +781,7 @@ public class ReferenceExtractor implements Closeable {
     }
 
     /**
-     * Annotate all reference from a list of layout tokens.
+     * Annotate all reference from a list of layout tokens and return annotation results in a JSON document.
      */
     public String annotateAllReferences(Document doc,
 										List<LayoutToken> tokenizations,
@@ -1322,36 +1314,6 @@ public class ReferenceExtractor implements Closeable {
         return resultJson.toString();
     }
 
-
-    /*private String taggerRun(ArrayList<String> ress, Tagger tagger) throws Exception {
-        // clear internal context
-        tagger.clear();
-
-        // add context
-        for (String piece : ress) {
-            tagger.add(piece);
-            tagger.add("\n");
-        }
-
-        // parse and change internal stated as 'parsed'
-        if (!tagger.parse()) {
-            // throw an exception
-            throw new Exception("CRF++ parsing failed.");
-        }
-		
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < tagger.size(); i++) {
-            for (int j = 0; j < tagger.xsize(); j++) {
-                res.append(tagger.x(i, j)).append("\t");
-            }
-			//res.append(tagger.y2(i));
-            res.append(tagger.y2(i)).append("/").append(tagger.prob(i));
-            res.append("\n");
-        }
-		//System.out.println(res.toString());
-        return res.toString();
-    }*/
-
     /**
      * Get the TEI XML string corresponding to the recognized citation section
      */
@@ -1678,8 +1640,6 @@ public class ReferenceExtractor implements Closeable {
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-
-
     }
 
     /**
@@ -1698,7 +1658,6 @@ public class ReferenceExtractor implements Closeable {
             else
                 return true;
         } catch (Exception e) {
-//			e.printStackTrace(); 
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
     }
@@ -1795,10 +1754,6 @@ public class ReferenceExtractor implements Closeable {
     @Override
     public void close() throws IOException {
     	taggerAll.close();
-        //taggerNPL.close();
-        //taggerPatent.close();
         taggerAll = null;
-        //taggerNPL = null;
-        //taggerPatent = null;
     }
 }

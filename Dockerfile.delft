@@ -2,14 +2,14 @@
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
 
-## usage example with version 0.6.2-SNAPSHOT:
-## docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.delft .
+## usage example with version 0.7.1-SNAPSHOT:
+## docker build -t grobid/grobid:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SNAPSHOT --file Dockerfile.delft .
 
 ## no GPU:
-## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.1-SNAPSHOT
 
 ## allocate all available GPUs (only Linux with proper nvidia driver installed on host machine):
-## docker run --rm --gpus all --init -p 8070:8070 -p 8071:8071 -v /home/lopez/obid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+## docker run --rm --gpus all --init -p 8070:8070 -p 8071:8071 -v /home/lopez/obid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.1-SNAPSHOT
 
 # -------------------
 # build builder image
@@ -39,9 +39,10 @@ COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
 # cleaning unused native libraries before packaging
-RUN rm -rf grobid-home/pdf2xml/lin-32
-RUN rm -rf grobid-home/pdf2xml/mac-64
-RUN rm -rf grobid-home/pdf2xml/win-*
+RUN rm -rf grobid-home/pdf2xml
+RUN rm -rf grobid-home/pdfalto/lin-32
+RUN rm -rf grobid-home/pdfalto/mac-64
+RUN rm -rf grobid-home/pdfalto/win-*
 RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
 RUN rm -rf grobid-home/lib/mac-64
@@ -52,7 +53,7 @@ WORKDIR /opt/grobid
 RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
     mv grobid-service* grobid-service
 RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
-    chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+    chmod -R 755 /opt/grobid/grobid-home/pdfalto
 RUN rm -rf grobid-source
 
 # -------------------
@@ -68,7 +69,7 @@ ENV LANG C.UTF-8
 
 # install JRE 8, python and other dependencies
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip curl \
+    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
     openjdk-8-jre-headless ca-certificates-java \
     musl gfortran \
     python3 python3-pip python3-setuptools python3-dev \
@@ -79,16 +80,10 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-RUN rm -rf /opt/grobid/grobid-home/pdf2xml/lin-32
-RUN rm -rf /opt/grobid/grobid-home/pdf2xml/mac-64
-RUN rm -rf /opt/grobid/grobid-home/pdf2xml/win-*
-RUN rm -rf /opt/grobid/grobid-home/lib/lin-32
-RUN rm -rf /opt/grobid/grobid-home/lib/win-*
-
 RUN python3 -m pip install pip --upgrade
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.2.7
+RUN pip3 install requests delft==0.2.8
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
@@ -137,7 +132,7 @@ COPY --from=builder /opt/grobid-source/grobid-home/config/embedding-registry.jso
 RUN python3 preload_embeddings.py
 RUN ln -s /opt/grobid /opt/delft
 
-CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+CMD ["./grobid-service/bin/grobid-service"]
 
 ARG GROBID_VERSION
 

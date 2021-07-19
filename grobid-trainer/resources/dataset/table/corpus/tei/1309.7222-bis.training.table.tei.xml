@@ -1,0 +1,147 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_1309.7222.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+        <figure type="table">
+                  <head>Table <label>1</label>: </head>
+       
+                  <figDesc>Example of indexes table -Significant risks and their associated indicators.<lb/> </figDesc>
+
+                  <table>Significant risks<lb/> Associated composite indicators<lb/> Stock (level)<lb/> 70% CAC40 / 30% EUROSTOXX50<lb/> Risk-free rate (level) Euro swap curve (averaged level evolution)<lb/> Spread (sovereign)<lb/> Weighted average of thspread by issuing country.<lb/> Weights : % market value in the asset portfolio<lb/> Spread (corporate)<lb/> iTraxx Europe Generic 10Y Corporate<lb/> Volatility (stock)<lb/> VCAC Index<lb/> Illiquidity premium<lb/> Illiquidity premium (see QIS5 formula [7])</table>
+
+
+
+
+                  <head>Table <label>2</label>: </head>
+       
+                  <figDesc>Selected risks and associated indicators.<lb/> </figDesc>
+       
+                  <table>Selected risks<lb/> Composite indicators<lb/> Stock (level)<lb/> 100% EUROSTOXX50<lb/> Risk-free rate (level) Euro swap curve (averaged level evolution)<lb/> Spread (sovereign)<lb/> Average spread French bonds rate vs. Euro swap rate<lb/> Spread (corporate)<lb/> iTraxx Europe Generic 10Y Corporate</table>
+
+
+
+
+                  <head>Table <label>3</label>: </head>
+       
+                  <figDesc>Market marginal SCR as at 31/12/2012.<lb/> </figDesc>
+
+                  <table>Market SCR<lb/> Value as at 31/12/2012<lb/> IR SCR<lb/> 968<lb/> Stock SCR<lb/> 3930<lb/> Real Estate SCR<lb/> 943<lb/> Spread SCR<lb/> 2658<lb/> Liquidity SCR<lb/> 3928<lb/> Concentration SCR<lb/> 661<lb/> Currency SCR<lb/> 127<lb/> ...<lb/> ...</table>
+
+
+
+
+                  <head>Table <label>4</label>: </head>
+       
+                  <figDesc>Relative deviations proxies vs. full-calculation NAV (check on the five first<lb/> validation steps).<lb/> </figDesc>
+       
+                  <table>Validation scenarios<lb/> 1<lb/> 2<lb/> 3<lb/> 4<lb/> 5<lb/> Central NAV<lb/> -0.07%<lb/> 1.65%<lb/> 1.56%<lb/> 1.05%<lb/> 0.29%<lb/> IR shocked NAV<lb/> -0.18%<lb/> 1.67%<lb/> 1.14%<lb/> 0.44% -0.83%<lb/> &quot;Global&quot; Stock shocked NAV<lb/> 0.24%<lb/> 1.93%<lb/> 1.56%<lb/> 1.15%<lb/> 0.28%<lb/> &quot;Other&quot; Stock shocked NAV<lb/> 0.19%<lb/> 1.95%<lb/> 1.78%<lb/> 1.31%<lb/> 0.27%<lb/> Spread shocked NAV<lb/> 0.01%<lb/> 2.29%<lb/> 2.15%<lb/> 1.06%<lb/> 0.18%<lb/> Illiquidity shocked NAV<lb/> -5.35% -3.27% -2.43% -3.03% -2.39%</table>
+
+
+
+
+                  <head>Table <label>5</label>: </head>
+       
+                  <figDesc>Breusch-Pagan tests -LSMC datas.<lb/> </figDesc>
+       
+                  <table>LSMC methodology<lb/> 1 risk factor 2 risk factor 3 risk factor 4 risk factor<lb/> Breusch-Pagan statistic<lb/> 25.0<lb/> 41.6<lb/> 50.7<lb/> 76.0<lb/> Breusch-Pagan p-value<lb/> 5.8e-07<lb/> 7.3e-08<lb/> 2.2e-06<lb/> 4.5e-06</table>
+
+
+
+
+                  <head>Table <label>6</label>: </head>
+       
+                  <figDesc>LSMC covariance matrix eigenvalues -1 risk factor (stock).<lb/> </figDesc>
+       
+                  <table>1 risk factor<lb/> λ 1<lb/> λ 2<lb/> LSMC<lb/> 5.21e+15 2.69e+14<lb/> CF<lb/> 5.80e+15 2.66e+14</table>
+  
+
+
+
+                  <head>Table <label>7</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -1 risk factor (stock).<lb/> </figDesc>
+ 
+                  <table>1 risk factor<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 38 956<lb/> 11 044<lb/> intervals (max = 50 000 scenarios)<lb/> (77.9%) (22.1%)</table>
+
+
+
+
+                  <head>Table <label>8</label>: </head>
+       
+                  <figDesc>LSMC covariance matrix eigenvalues -2 risk factors (stock, interest rates).<lb/> </figDesc>
+       
+                  <table>2 risk factors<lb/> λ 1<lb/> λ 2<lb/> λ 3<lb/> λ 4<lb/> λ 5<lb/> λ 6<lb/> LSMC<lb/> 3.64e+18 6.02e+16 2.27e+16 4.77e+15 1.88e+15 2.08e+14<lb/> CF<lb/> 3.64e+15 6.87e+14 2.18e+16 5.00e+15 1.87e+15 1.98e+14</table>
+
+
+
+
+
+                  <head>Table <label>9</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -2 risk factors (stock, interest rates).<lb/> </figDesc>
+ 
+                  <table>2 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 22 228<lb/> 27 772<lb/> intervals (max = 50 000 scenarios)<lb/> (44.5%) (55.5%)</table>
+
+
+
+
+                  <head>Table <label>10</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -3 risk factors (stock, IR, corpo-<lb/>rate spread).<lb/> </figDesc>
+       
+                  <table>3 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 45 398<lb/> 4 602<lb/> intervals (max = 50 000 scenarios)<lb/> (90.8%)<lb/> (9.2%)</table>
+
+
+
+
+                  <head>Table <label>11</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -4 risk factors (stock, IR, corpo-<lb/>rate spread, sovereign spread).<lb/> </figDesc>
+       
+                  <table>4 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 42 044<lb/> 7 956<lb/> intervals (max = 50 000 scenarios)<lb/> (84.1%) (15.9%)</table>
+
+
+
+
+                  <head>Table <label>12</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -1 risk factor (stock).<lb/> </figDesc>
+       
+                  <table>1 risk factor<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 22 664<lb/> 27 336<lb/> intervals (max = 50 000 scenarios)<lb/> (45.3%) (54.7%)</table>
+
+
+
+
+
+                  <head>Table <label>13</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -2 risk factors (stock, interest<lb/> rates).<lb/> </figDesc>
+       
+                  <table>2 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 10 656<lb/> 39 344<lb/> intervals (max = 50 000 scenarios)<lb/> (21.3%) (78.7%)</table>
+
+
+
+
+
+                  <head>Table <label>14</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -3 risk factors (stock, IR, corpo-<lb/>rate spread).<lb/> </figDesc>
+       
+                  <table>3 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 18 803<lb/> 31 197<lb/> intervals (max = 50 000 scenarios)<lb/> (37.6%) (62.4%)</table>
+
+
+
+
+
+                  <head>Table <label>15</label>: </head>
+       
+                  <figDesc>Asymptotic confidence intervals lengths -4 risk factors (stock, IR, corpo-<lb/>rate spread, sovereign spread.<lb/> </figDesc>
+
+                  <table>4 risk factors<lb/> LSMC<lb/> CF<lb/> Number of smaller asymptotic confidence<lb/> 17 513<lb/> 32 487<lb/> intervals (max = 50 000 scenarios)<lb/> (35.0%) (65.0%)</table>
+        </figure>
+
+    </text>
+</tei>
+

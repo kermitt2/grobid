@@ -1,0 +1,46 @@
+Xpdf: Chinese Traditional support package
+=========================================
+
+Xpdf project: http://www.foolabs.com/xpdf/
+2020-dec-22
+
+If this package includes CMap files, they contain their own copyright
+notices and distribution conditions.  All other files in the package
+are Copyright 2002-2004 Glyph & Cog, LLC, and are licensed under the
+GNU General Public License (GPL), version 2 or 3.
+
+This package provides support files needed to use the Xpdf tools with
+Chinese (Traditional) PDF files.
+
+Contents:
+- Adobe-CNS1 character collection support
+- Big5 encoding
+- Big5ascii encoding (same as Big5, but includes 7-bit ASCII)
+
+Place all of these files in a directory, typically:
+
+    Unix - /usr/local/share/xpdf/chinese-traditional
+    Win32 - C:\Program Files\xpdf\chinese-traditional
+
+Add the contents of the "add-to-xpdfrc" file to your system-wide
+xpdfrc config file, which is typically:
+
+    Unix - /usr/local/etc/xpdfrc
+    Win32 - C:\Program Files\xpdf\xpdfrc
+
+Alternatively, on Unix systems you can add these lines to your
+personal xpdfrc file in $HOME/.xpdfrc.
+
+Make sure to edit the added lines to use the actual directory where
+the files were installed.
+
+To display PDF files that refer to non-embedded Chinese fonts, you
+will need to install a Chinese font.  Free TrueType/OpenType fonts are
+available:
+
+    http://ftp.gnu.org/gnu/non-gnu/chinese-fonts-truetype/bkai00mp.ttf.gz
+    http://ftp.gnu.org/gnu/non-gnu/chinese-fonts-truetype/bsmi00lp.ttf.gz
+    https://www.google.com/get/noto/
+
+After installing a Chinese font, add an appropriate "fontFileCC" line
+to your xpdfrc file (see the sample in "add-to-xpdfrc").

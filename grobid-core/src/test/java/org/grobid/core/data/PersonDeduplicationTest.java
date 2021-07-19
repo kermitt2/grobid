@@ -11,9 +11,6 @@ import static org.junit.Assert.assertEquals;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.IsNull.notNullValue;
 
-/**
- * author: Patrice
- */
 public class PersonDeduplicationTest {
     Person target;
 

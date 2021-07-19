@@ -39,10 +39,28 @@ public class DataSetContextExtractor {
             throw new RuntimeException(e);
         }
         IOUtils.closeQuietly(is);
+
+        is = DataSetContextExtractor.class.getResourceAsStream("/xq/get-figure-context-from-tei.xq");
+        try {
+            CONTEXT_EXTRACTION_FIGURE_XQ = IOUtils.toString(is, UTF_8);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        IOUtils.closeQuietly(is);
+
+        is = DataSetContextExtractor.class.getResourceAsStream("/xq/get-table-context-from-tei.xq");
+        try {
+            CONTEXT_EXTRACTION_TABLE_XQ = IOUtils.toString(is, UTF_8);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        IOUtils.closeQuietly(is);
     }
 
     private static final String CONTEXT_EXTRACTION_BIB_XQ;
     private static final String CONTEXT_EXTRACTION_FORMULA_XQ;
+    private static final String CONTEXT_EXTRACTION_FIGURE_XQ;
+    private static final String CONTEXT_EXTRACTION_TABLE_XQ;
 
     static <K extends Comparable<? super K>, V> ListMultimap<K, V> multimap() {
         return MultimapBuilder.treeKeys().linkedListValues().build();
@@ -122,6 +140,60 @@ public class DataSetContextExtractor {
             pcc.setTeiId(formulaTeiId);
 
             contexts.put(formulaTeiId, pcc);
+        }
+        return contexts;
+    }
+
+    public static Multimap<String, DataSetContext> getFigureReferences(String tei) throws XPathException, IOException {
+        XQueryProcessor xQueryProcessor = new XQueryProcessor(tei);
+
+        SequenceIterator it = xQueryProcessor.getSequenceIterator(CONTEXT_EXTRACTION_FIGURE_XQ);
+
+        Item item;
+        Multimap<String, DataSetContext> contexts = multimap();
+
+        while ((item = it.next()) != null) {
+            String val = item.getStringValue();
+            String figureTeiId = it.next().getStringValue();
+            String sectionName = it.next().getStringValue();
+            double pos = Double.parseDouble(it.next().getStringValue());
+            String coords = it.next().getStringValue();
+
+            DataSetContext pcc = new DataSetContext();
+            String context = cutContextSimple(val);
+
+            pcc.setContext(extractContextSentence(context));
+            pcc.setDocumentCoords(coords);
+            pcc.setTeiId(figureTeiId);
+
+            contexts.put(figureTeiId, pcc);
+        }
+        return contexts;
+    }
+
+    public static Multimap<String, DataSetContext> getTableReferences(String tei) throws XPathException, IOException {
+        XQueryProcessor xQueryProcessor = new XQueryProcessor(tei);
+
+        SequenceIterator it = xQueryProcessor.getSequenceIterator(CONTEXT_EXTRACTION_TABLE_XQ);
+
+        Item item;
+        Multimap<String, DataSetContext> contexts = multimap();
+
+        while ((item = it.next()) != null) {
+            String val = item.getStringValue();
+            String tableTeiId = it.next().getStringValue();
+            String sectionName = it.next().getStringValue();
+            double pos = Double.parseDouble(it.next().getStringValue());
+            String coords = it.next().getStringValue();
+
+            DataSetContext pcc = new DataSetContext();
+            String context = cutContextSimple(val);
+
+            pcc.setContext(extractContextSentence(context));
+            pcc.setDocumentCoords(coords);
+            pcc.setTeiId(tableTeiId);
+
+            contexts.put(tableTeiId, pcc);
         }
         return contexts;
     }

@@ -26,9 +26,6 @@ import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
-/**
- * @author Patrice Lopez
- */
 public class DateParser extends AbstractParser {
 
     public DateParser() {

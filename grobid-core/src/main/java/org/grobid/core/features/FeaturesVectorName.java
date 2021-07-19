@@ -16,7 +16,6 @@ import java.util.regex.Matcher;
 /**
  * Class for features used for parsing sequence of names.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorName {
     public String string = null; // lexical feature

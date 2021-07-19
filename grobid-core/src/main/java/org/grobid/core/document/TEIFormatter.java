@@ -50,11 +50,9 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
-
 /**
  * Class for generating a TEI representation of a document.
  *
- * @author Patrice Lopez
  */
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
@@ -163,7 +161,6 @@ public class TEIFormatter {
         } 
 
         // by default there is no schema association
-
         if (schemaDeclaration != SchemaDeclaration.XSD) {
             tei.append("<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
         }
@@ -1690,7 +1687,7 @@ System.out.println(theSentences.toString());
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase();
+        String textLow = text.toLowerCase().trim();
         String bestFigure = null;
 
         if (figures != null) {
@@ -1698,9 +1695,23 @@ System.out.println(theSentences.toString());
                 if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(figure.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                            (textLow.equals(label.toLowerCase()))) {
                         bestFigure = figure.getId();
                         break;
+                    }
+                }
+            }
+            if (bestFigure == null) {
+                // second pass with relaxed figure marker matching
+                for(int i=figures.size()-1; i>=0; i--) {
+                    Figure figure = figures.get(i);
+                    if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
+                        String label = TextUtilities.cleanField(figure.getLabel(), false);
+                        if ((label.length() > 0) &&
+                                (textLow.contains(label.toLowerCase()))) {
+                            bestFigure = figure.getId();
+                            break;
+                        }
                     }
                 }
             }
@@ -1743,22 +1754,31 @@ System.out.println(theSentences.toString());
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase();
+        String textLow = text.toLowerCase().trim();
         String bestTable = null;
         if (tables != null) {
             for (Table table : tables) {
-                /*if ((table.getId() != null) &&
-                        (table.getId().length() > 0) &&
-                        (textLow.contains(table.getId().toLowerCase()))) {
-                    bestTable = table.getId();
-                    break;
-                }*/
                 if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(table.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                            (textLow.equals(label.toLowerCase()))) {
                         bestTable = table.getId();
                         break;
+                    }
+                }
+            }
+
+            if (bestTable == null) {
+                // second pass with relaxed table marker matching
+                for(int i=tables.size()-1; i>=0; i--) {
+                    Table table = tables.get(i);
+                    if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
+                        String label = TextUtilities.cleanField(table.getLabel(), false);
+                        if ((label.length() > 0) &&
+                                (textLow.contains(label.toLowerCase()))) {
+                            bestTable = table.getId();
+                            break;
+                        }
                     }
                 }
             }

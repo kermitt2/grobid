@@ -15,10 +15,6 @@ import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
-/**
- * User: zholudev
- * Date: 4/14/14
- */
 public class ReferenceSegmenterTrainer extends AbstractTrainer {
     public static final Logger LOGGER = LoggerFactory.getLogger(ReferenceSegmenterTrainer.class);
 

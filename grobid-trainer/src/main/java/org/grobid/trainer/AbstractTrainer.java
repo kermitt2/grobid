@@ -37,9 +37,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-/**
- * @author Zholudev, Lopez
- */
 public abstract class AbstractTrainer implements Trainer {
     protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractTrainer.class);
     public static final String OLD_MODEL_EXT = ".old";
@@ -85,14 +82,11 @@ public abstract class AbstractTrainer implements Trainer {
     public void train() {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
-        if (epsilon != 0.0)
-            trainer.setEpsilon(epsilon);
-        if (window != 0)
-            trainer.setWindow(window);
-        if (nbMaxIterations != 0)
-            trainer.setNbMaxIterations(nbMaxIterations);
+        trainer.setEpsilon(GrobidProperties.getEpsilon(model));
+        trainer.setWindow(GrobidProperties.getWindow(model));
+        trainer.setNbMaxIterations(GrobidProperties.getNbMaxIterations(model));
 
         File dirModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath()).getParentFile();
         if (!dirModelPath.exists()) {
@@ -102,10 +96,10 @@ public abstract class AbstractTrainer implements Trainer {
         }
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
         // if we are here, that means that training succeeded
         // rename model for CRF sequence labellers (not with DeLFT deep learning models)
-        if (GrobidProperties.getGrobidCRFEngine() != GrobidCRFEngine.DELFT)
+        if (GrobidProperties.getGrobidCRFEngine(this.model) != GrobidCRFEngine.DELFT)
             renameModels(oldModelPath, tempModelPath);
     }
 
@@ -143,7 +137,7 @@ public abstract class AbstractTrainer implements Trainer {
     public String splitTrainEvaluate(Double split) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
@@ -162,7 +156,7 @@ public abstract class AbstractTrainer implements Trainer {
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
 
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
@@ -179,7 +173,7 @@ public abstract class AbstractTrainer implements Trainer {
     public String nFoldEvaluate(int numFolds, boolean includeRawResults) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         String randomString = randomStringGenerator.generate(10);
 
@@ -226,7 +220,7 @@ public abstract class AbstractTrainer implements Trainer {
             tempFilePaths.add(fold.getRight());
 
             sb.append("Training input data: " + fold.getLeft()).append("\n");
-            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getNBThreads(), model);
+            trainer.train(getTemplatePath(), new File(fold.getLeft()), tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
             sb.append("Evaluation input data: " + fold.getRight()).append("\n");
 
             //TODO: find a better solution!!
@@ -518,7 +512,7 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     protected static File getFilePath2Resources() {
-        File theFile = new File(GrobidProperties.get_GROBID_HOME_PATH().getAbsoluteFile() + File.separator + ".." + File.separator
+        File theFile = new File(GrobidProperties.getGrobidHome().getAbsoluteFile() + File.separator + ".." + File.separator
             + "grobid-trainer" + File.separator + "resources");
         if (!theFile.exists()) {
             theFile = new File("resources");

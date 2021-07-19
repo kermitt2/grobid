@@ -15,17 +15,10 @@ import java.util.StringTokenizer;
 
 import org.apache.commons.io.FileUtils;
 
-/**
- * @author Patrice Lopez
- */
 public class MonographTrainer extends AbstractTrainer {
 
     public MonographTrainer() {
         super(GrobidModels.MONOGRAPH);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.0001;
-        window = 20;
     }
 
     @Override

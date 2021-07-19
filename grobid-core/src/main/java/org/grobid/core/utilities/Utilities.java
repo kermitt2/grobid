@@ -27,11 +27,9 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.layout.LayoutToken;
 
-
 /**
  * Some utilities methods that I don't know where to put.
  *
- * @author Patrice Lopez
  */
 public class Utilities {
 

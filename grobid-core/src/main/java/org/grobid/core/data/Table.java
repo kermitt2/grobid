@@ -38,7 +38,6 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 /**
  * Class for representing a table.
  *
- * @author Patrice Lopez
  */
 public class Table extends Figure {
 	private List<LayoutToken> contentTokens = new ArrayList<>();
@@ -396,4 +395,8 @@ public class Table extends Figure {
 	public boolean isGoodTable() {
 		return goodTable;
 	}
+
+    public String getTeiId() {
+        return "tab_" + this.id;
+    }
 }

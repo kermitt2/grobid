@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
  * SAX parser initially made for XML CLEF IP data (collection, training and topics).
  * But it works also fine for parsing ST.36 stuff as the formats are similar.
  *
- * @author Patrice Lopez
  */
 public class MarecSaxParser extends DefaultHandler {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MarecSaxParser.class);

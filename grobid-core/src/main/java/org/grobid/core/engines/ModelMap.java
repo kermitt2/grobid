@@ -13,9 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class that creates a tagger from a given model or reuse it if it already
- * exists.
- * 
+ * Class that creates a tagger from a given model or reuse it if it already exists.
  * 
  */
 @Deprecated
@@ -24,8 +22,7 @@ public class ModelMap {
 	/**
 	 * The logger.
 	 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ModelMap.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ModelMap.class);
 
 	/**
 	 * Map that contains all the models loaded in memory.

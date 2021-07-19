@@ -8,9 +8,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Class for using language guessers (singleton).
- *
- * @author Patrice Lopez
- * @author Vyacheslav Zholudev
  */
 public class LanguageUtilities {
 	public static final Logger LOGGER = LoggerFactory

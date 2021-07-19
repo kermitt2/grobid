@@ -33,7 +33,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Class for representing and exchanging a bibliographical item.
  *
- * @author Patrice Lopez
  */
 public class BiblioItem {
     protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);
@@ -1848,7 +1847,7 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
+		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1878,7 +1877,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id the BibTeX ke to use.
+     * @param id the BibTeX key to use.
      */
     public String toBibTeX(String id) {
         return toBibTeX(id, new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(false).build());
@@ -1887,7 +1886,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id                  the BibTeX ke to use
+     * @param id the BibTeX key to use
      */
     public String toBibTeX(String id, GrobidAnalysisConfig config) {
         String type;

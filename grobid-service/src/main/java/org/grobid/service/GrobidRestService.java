@@ -29,13 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
 /**
  * RESTful service for the GROBID system.
  *
- * @author FloZi, Damien, Patrice
  */
-
 @Timed
 @Singleton
 @Path(GrobidPaths.PATH_GROBID)
@@ -55,6 +52,7 @@ public class GrobidRestService implements GrobidPaths {
     public static final String CONSOLIDATE_HEADER = "consolidateHeader";
     public static final String INCLUDE_RAW_AFFILIATIONS = "includeRawAffiliations";
     public static final String INCLUDE_RAW_CITATIONS = "includeRawCitations";
+    public static final String INCLUDE_FIGURES_TABLES = "includeFiguresTables";
 
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
@@ -67,12 +65,12 @@ public class GrobidRestService implements GrobidPaths {
 
     @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration) {
-        GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
-        if (configuration.getGrobid().getGrobidProperties() != null) {
+        GrobidProperties.setGrobidHome(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
+        /*if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
-        }
+        }*/
         GrobidProperties.getInstance();
         GrobidProperties.setContextExecutionServer(true);
         LOGGER.info("Initiating Servlet GrobidRestService");
@@ -682,11 +680,13 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_CITATIONS) String consolidateCitations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) throws Exception {
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations,
+        @DefaultValue("0") @FormDataParam(INCLUDE_FIGURES_TABLES) String includeFiguresTables) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw);
+        boolean includeFig = validateIncludeRawParam(includeFiguresTables);
+        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw, includeFig);
     }
     
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)

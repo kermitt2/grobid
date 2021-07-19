@@ -16,9 +16,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Client to the Glutton bibliographical service
  *
- * @author Patrice
  */
-//public class GluttonClient implements Closeable {
 public class GluttonClient extends CrossrefClient {
     public static final Logger LOGGER = LoggerFactory.getLogger(GluttonClient.class);
     

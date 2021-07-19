@@ -38,7 +38,6 @@ import java.io.*;
 /**
  * Glutton request
  *
- * @author Patrice
  */
 public class GluttonRequest<T extends Object> extends Observable {
 
@@ -103,21 +102,12 @@ public class GluttonRequest<T extends Object> extends Observable {
         }
 
         try {
-            String url = GrobidProperties.getInstance().getGluttonHost();
+            String url = GrobidProperties.getInstance().getGluttonUrl();
             if (url == null) {
                 throw new Exception("Invalid url for glutton service");
             }
-            Integer port = GrobidProperties.getInstance().getGluttonPort();
-            if (port != null) {
-                int portInt = port.intValue();
-                if (portInt != 0) {
-                    url += ":" + portInt;
-                }
-            }
-            URIBuilder uriBuilder = new URIBuilder("http://" + url + BASE_PATH);
             
-            //String path = BASE_PATH;
-            //uriBuilder.setPath(path);
+            URIBuilder uriBuilder = new URIBuilder(url + BASE_PATH);
 
             // check if we have a strong identifier directly supported by Glutton: DOI, PMID, PMCID
             // more probably in the future

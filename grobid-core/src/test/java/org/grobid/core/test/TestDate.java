@@ -16,9 +16,6 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-/**
- * @author Patrice Lopez
- */
 public class TestDate extends EngineTest {
 
     @BeforeClass

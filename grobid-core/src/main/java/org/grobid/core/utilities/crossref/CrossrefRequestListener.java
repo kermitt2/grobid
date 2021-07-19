@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * Listener to catch response from a CrossrefRequest.
  *
- * @author Vincent Kaestle
  */
 public class CrossrefRequestListener<T extends Object> {
 	

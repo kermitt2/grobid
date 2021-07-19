@@ -8,7 +8,6 @@ import java.util.List;
  * Once built, it is possible to iterate through the string tokens only ignoring the layout information or
  * through the layout token objects.
  *
- * @author Patrice Lopez
  */
 public class LayoutTokenization {
 //	private List<LayoutToken> layoutTokenization = null;
