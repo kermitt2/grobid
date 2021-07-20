@@ -16,11 +16,17 @@ env:
 #after_failure:
 #- ./gradlew clean check --debug --info --stacktrace
 
-script:
-  - ./gradlew build --stacktrace --info --no-daemon
+jobs:
+  include:
+    - stage: "Build"
+      script:
+        - ./gradlew build --stacktrace --info --no-daemon
+      after_success:
+      - ./gradlew codeCoverageReport coveralls --no-daemon
+    - stage: "Docker Build"
+      script:
+        - docker build .
 
-after_success:
-- ./gradlew codeCoverageReport coveralls --no-daemon
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
