@@ -28,8 +28,8 @@ grobid:
     #service: "crossref"
     service: "glutton"
     glutton:
-      url: "https://cloud.science-miner.com/glutton"
-      #url: "http://localhost:8080" 
+      #url: "https://cloud.science-miner.com/glutton"
+      url: "http://localhost:8080" 
     crossref:
       mailto: 
       # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g. 

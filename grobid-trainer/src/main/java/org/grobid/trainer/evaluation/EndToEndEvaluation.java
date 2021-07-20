@@ -940,139 +940,142 @@ public class EndToEndEvaluation {
 									goldCitationSignaturesLevel4.remove(indexGold);
 									goldCitations.remove(indexGold);
 
-									idMap.put(goldCitation.get("id").get(0), grobidId);
-									reverseIdMap.put(grobidId, goldCitation.get("id").get(0));									
+									if (goldCitation.get("id") != null && goldCitation.get("id").size() > 0) {
 
-									int p = 0;
-									for(FieldSpecification field : fields) {
-										String label = field.fieldName;
-										if (label.equals("base") || label.equals("id")) {
-											//p++;
-											continue;
-										}
-									
-										List<String> grobidResults = grobidCitation.get(label);
-										String grobidResult = "";
-										if (grobidResults != null) {
-											for(String res : grobidResults) {
-												grobidResult += " " + res;
-											}
-										}
-										grobidResult = basicNormalization(grobidResult);
-										
-										List<String> goldResults = goldCitation.get(label);
-										String goldResult = "";
-										if (goldResults != null) {
-											for(String res : goldResults) {
-												goldResult += " " + res;
-											}
-										}
-										goldResult = basicNormalization(goldResult);									
+										idMap.put(goldCitation.get("id").get(0), grobidId);
+										reverseIdMap.put(grobidId, goldCitation.get("id").get(0));									
 
-										// strict
-										if ((goldResult.length()>0) && (goldResult.equals(grobidResult))) {
-                                            strictStats.incrementObserved(label);
-										}
-										else {
-											if ( (grobidResult.length() > 0) ) {
-                                                strictStats.incrementFalsePositive(label);
-												allGoodStrict = false;
+										int p = 0;
+										for(FieldSpecification field : fields) {
+											String label = field.fieldName;
+											if (label.equals("base") || label.equals("id")) {
+												//p++;
+												continue;
 											}
-											else if (goldResult.length()>0) {
-                                                strictStats.incrementFalseNegative(label);
-												allGoodStrict = false;
-											}
-										}
-								
-										// soft
-										String goldResultSoft = goldResult;
-										String grobidResultSoft = grobidResult;
-										if (field.isTextual) {
-											goldResultSoft = removeFullPunct(goldResult);
-											grobidResultSoft = removeFullPunct(grobidResult);
-										}
-										if ((goldResultSoft.length() > 0) && 
-											(goldResultSoft.equals(grobidResultSoft)) ) {
-                                            softStats.incrementObserved(label);
-										}
-										else {
-											if (grobidResultSoft.length() > 0) {
-                                                softStats.incrementFalsePositive(label);
-												allGoodSoft = false;
-											}
-											else if (goldResultSoft.length() > 0) {
-                                                softStats.incrementFalseNegative(label);
-												allGoodSoft = false;
-											}
-										}
 										
-										// Levenshtein
-										double pct = 0.0;
-										if ((goldResultSoft.length() > 0) && goldResult.equals(grobidResult))
-											pct = 1.0;
-										if (field.isTextual) {
-											int distance = 
-												TextUtilities.getLevenshteinDistance(goldResult, grobidResult);
-											// Levenshtein distance is an integer value, not a percentage... however
-											// articles usually introduced it as a percentage... so we report it
-											// following the straightforward formula:
-											int bigger = Math.max(goldResult.length(), grobidResult.length());
-											pct = (double)(bigger - distance) / bigger;
-										}
-										if ((goldResultSoft.length() > 0) && (pct >= minLevenshteinDistance)) {
-                                            levenshteinStats.incrementObserved(label);
-										}
-										else {
-											if (grobidResultSoft.length() > 0) {
-                                                levenshteinStats.incrementFalsePositive(label);
-												allGoodLevenshtein = false;
+											List<String> grobidResults = grobidCitation.get(label);
+											String grobidResult = "";
+											if (grobidResults != null) {
+												for(String res : grobidResults) {
+													grobidResult += " " + res;
+												}
 											}
-											else if (goldResultSoft.length() > 0) {
-                                                levenshteinStats.incrementFalseNegative(label);
-												allGoodLevenshtein = false;
+											grobidResult = basicNormalization(grobidResult);
+											
+											List<String> goldResults = goldCitation.get(label);
+											String goldResult = "";
+											if (goldResults != null) {
+												for(String res : goldResults) {
+													goldResult += " " + res;
+												}
 											}
-										}
-						
-										// RatcliffObershelp
-										Double similarity = 0.0;
-										if ((goldResultSoft.length() > 0) && goldResult.equals(grobidResult))
-											similarity = 1.0;
-										if (field.isTextual) {
-											if ( (goldResult.length() > 0) && (grobidResult.length() > 0) ) {
-												Option<Object> similarityObject = 
-													RatcliffObershelpMetric.compare(goldResult, grobidResult);
-												if ( (similarityObject != null) && (similarityObject.get() != null) )
-													 similarity = (Double)similarityObject.get();
+											goldResult = basicNormalization(goldResult);									
+
+											// strict
+											if ((goldResult.length()>0) && (goldResult.equals(grobidResult))) {
+	                                            strictStats.incrementObserved(label);
 											}
-										}
-										if ((goldResultSoft.length() > 0) && 
-											(similarity >= minRatcliffObershelpSimilarity)) {
-                                            ratcliffObershelpStats.incrementObserved(label);
-										}
-										else {
-											if (grobidResultSoft.length() > 0) {
-                                                ratcliffObershelpStats.incrementFalsePositive(label);
-												allGoodRatcliffObershelp = false;
+											else {
+												if ( (grobidResult.length() > 0) ) {
+	                                                strictStats.incrementFalsePositive(label);
+													allGoodStrict = false;
+												}
+												else if (goldResult.length()>0) {
+	                                                strictStats.incrementFalseNegative(label);
+													allGoodStrict = false;
+												}
 											}
-											else if (goldResultSoft.length() > 0) {
-                                                ratcliffObershelpStats.incrementFalseNegative(label);
-												allGoodRatcliffObershelp = false;
-											}
-										}
 									
-										p++;
-									}
-									if (allGoodStrict) {
-										totalCorrectInstancesStrict++;
-									}
-									if (allGoodSoft) {
-										totalCorrectInstancesSoft++;
-									}
-									if (allGoodLevenshtein) {
-										totalCorrectInstancesLevenshtein++;
-									}
-									if (allGoodRatcliffObershelp) {
-										totalCorrectInstancesRatcliffObershelp++;
+											// soft
+											String goldResultSoft = goldResult;
+											String grobidResultSoft = grobidResult;
+											if (field.isTextual) {
+												goldResultSoft = removeFullPunct(goldResult);
+												grobidResultSoft = removeFullPunct(grobidResult);
+											}
+											if ((goldResultSoft.length() > 0) && 
+												(goldResultSoft.equals(grobidResultSoft)) ) {
+	                                            softStats.incrementObserved(label);
+											}
+											else {
+												if (grobidResultSoft.length() > 0) {
+	                                                softStats.incrementFalsePositive(label);
+													allGoodSoft = false;
+												}
+												else if (goldResultSoft.length() > 0) {
+	                                                softStats.incrementFalseNegative(label);
+													allGoodSoft = false;
+												}
+											}
+											
+											// Levenshtein
+											double pct = 0.0;
+											if ((goldResultSoft.length() > 0) && goldResult.equals(grobidResult))
+												pct = 1.0;
+											if (field.isTextual) {
+												int distance = 
+													TextUtilities.getLevenshteinDistance(goldResult, grobidResult);
+												// Levenshtein distance is an integer value, not a percentage... however
+												// articles usually introduced it as a percentage... so we report it
+												// following the straightforward formula:
+												int bigger = Math.max(goldResult.length(), grobidResult.length());
+												pct = (double)(bigger - distance) / bigger;
+											}
+											if ((goldResultSoft.length() > 0) && (pct >= minLevenshteinDistance)) {
+	                                            levenshteinStats.incrementObserved(label);
+											}
+											else {
+												if (grobidResultSoft.length() > 0) {
+	                                                levenshteinStats.incrementFalsePositive(label);
+													allGoodLevenshtein = false;
+												}
+												else if (goldResultSoft.length() > 0) {
+	                                                levenshteinStats.incrementFalseNegative(label);
+													allGoodLevenshtein = false;
+												}
+											}
+							
+											// RatcliffObershelp
+											Double similarity = 0.0;
+											if ((goldResultSoft.length() > 0) && goldResult.equals(grobidResult))
+												similarity = 1.0;
+											if (field.isTextual) {
+												if ( (goldResult.length() > 0) && (grobidResult.length() > 0) ) {
+													Option<Object> similarityObject = 
+														RatcliffObershelpMetric.compare(goldResult, grobidResult);
+													if ( (similarityObject != null) && (similarityObject.get() != null) )
+														 similarity = (Double)similarityObject.get();
+												}
+											}
+											if ((goldResultSoft.length() > 0) && 
+												(similarity >= minRatcliffObershelpSimilarity)) {
+	                                            ratcliffObershelpStats.incrementObserved(label);
+											}
+											else {
+												if (grobidResultSoft.length() > 0) {
+	                                                ratcliffObershelpStats.incrementFalsePositive(label);
+													allGoodRatcliffObershelp = false;
+												}
+												else if (goldResultSoft.length() > 0) {
+	                                                ratcliffObershelpStats.incrementFalseNegative(label);
+													allGoodRatcliffObershelp = false;
+												}
+											}
+										
+											p++;
+										}
+										if (allGoodStrict) {
+											totalCorrectInstancesStrict++;
+										}
+										if (allGoodSoft) {
+											totalCorrectInstancesSoft++;
+										}
+										if (allGoodLevenshtein) {
+											totalCorrectInstancesLevenshtein++;
+										}
+										if (allGoodRatcliffObershelp) {
+											totalCorrectInstancesRatcliffObershelp++;
+										}
 									}
 								}
 								else {

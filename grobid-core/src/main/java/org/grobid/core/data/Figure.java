@@ -25,6 +25,7 @@ import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -322,7 +323,7 @@ public class Figure {
         return "fig_" + this.id;
     }
 
-    public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter) {
+    public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
         if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption) && CollectionUtils.isEmpty(graphicObjects)) {
             return null;
         }
@@ -391,6 +392,11 @@ public class Figure {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 
+                MarkerType citationMarkerType = null;
+                if (markerTypes != null && markerTypes.size()>0) {
+                    citationMarkerType = markerTypes.get(0);
+                }
+
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
                         continue;
@@ -405,7 +411,8 @@ public class Figure {
                                     cluster.concatTokens(),
                                     doc.getReferenceMarkerMatcher(),
                                     config.isGenerateTeiCoordinates("ref"), 
-                                    false);
+                                    false,
+                                    citationMarkerType);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
                                     desc.appendChild(n);
