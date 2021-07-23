@@ -346,6 +346,7 @@ project(":grobid-service") {
 
     dependencies {
         implementation project(':grobid-core')
+        implementation project(':grobid-trainer')
         implementation "io.dropwizard:dropwizard-core:1.3.23"
         implementation "io.dropwizard:dropwizard-assets:1.3.23"
         implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
