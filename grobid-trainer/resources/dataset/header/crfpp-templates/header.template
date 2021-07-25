@@ -120,15 +120,10 @@ UG0:%x[-1,28]
 UG1:%x[0,28]
 UG2:%x[1,28]
 
-# smallest font size
+# superscript
 UH0:%x[-1,29]
 UH1:%x[0,29]
 UH2:%x[1,29]
-
-# larger than average font size
-UI0:%x[-1,30]
-UI1:%x[0,30]
-UI2:%x[1,30]
 
 # Output
 B

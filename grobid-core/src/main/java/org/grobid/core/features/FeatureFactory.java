@@ -360,7 +360,7 @@ public class FeatureFactory {
      * remaining text in lowercase
      */
     public String getPattern(String text) {
-        String pattern = text.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+        String pattern = text.replaceAll("[^a-zA-Z 0-9]", "").toLowerCase();
         pattern = pattern.replaceAll("[0-9]", "X");
         return pattern;
     }
