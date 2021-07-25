@@ -7,6 +7,8 @@ import org.grobid.core.data.Date;
 import org.grobid.core.features.FeaturesVectorDate;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.utilities.GrobidConfig;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.GrobidTestUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,11 +32,12 @@ public class DateParserTest {
 
     private DateParser target;
     
-    
-    
     @Before
     public void setUp() throws Exception {
         PowerMock.mockStatic(Lexicon.class);
+        GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
+        modelParameters.name = "bao";
+        GrobidProperties.addModel(modelParameters);
         target = new DateParser(GrobidModels.DUMMY);
     }
 
