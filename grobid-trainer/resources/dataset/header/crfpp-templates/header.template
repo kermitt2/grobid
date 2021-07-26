@@ -120,10 +120,5 @@ UG0:%x[-1,28]
 UG1:%x[0,28]
 UG2:%x[1,28]
 
-# superscript
-UH0:%x[-1,29]
-UH1:%x[0,29]
-UH2:%x[1,29]
-
 # Output
 B

@@ -189,18 +189,18 @@ public class FeaturesVectorHeader {
         else
             res.append(" 0");*/
 
-        if (superscript)
+        /*if (superscript)
             res.append(" 1");
         else
-            res.append(" 0");
+            res.append(" 0");*/
 
         // 30 features written at this point
 
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
-        else
-            res.append(" 0\n");
+        /*else
+            res.append(" 0\n");*/
 
         return res.toString();
     }
