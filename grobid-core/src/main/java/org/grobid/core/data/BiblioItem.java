@@ -1975,7 +1975,10 @@ public class BiblioItem {
 
             // dates
             if (normalized_publication_date != null) {
-                bibtex.add("  date = {" + normalized_publication_date.toISO() + "}");
+                String isoDate = normalized_publication_date.toISO();
+                if (isoDate != null) {
+                    bibtex.add("  date = {" + normalized_publication_date.toISO() + "}");
+                }
             }
 
             // address
