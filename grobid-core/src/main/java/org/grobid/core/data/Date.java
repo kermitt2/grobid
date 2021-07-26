@@ -214,4 +214,19 @@ public class Date implements Comparable {
         return theDate;
     }
 
+    public String toISO() {
+        if (year == -1) {
+            return null;
+        }
+        String theDate = String.valueOf(year);
+        if (month == -1) {
+            return theDate;
+        }
+        theDate += "-" + String.valueOf(month);
+        if (day != -1) {
+            theDate += "-" + String.valueOf(day);
+        }
+        return theDate;
+    }
+
 }

@@ -1973,9 +1973,9 @@ public class BiblioItem {
             }
             // fullEditors has to be used instead
 
-            // year
-            if (publication_date != null) {
-                bibtex.add("  year = {" + publication_date + "}");
+            // dates
+            if (normalized_publication_date != null) {
+                bibtex.add("  date = {" + normalized_publication_date.toISO() + "}");
             }
 
             // address
