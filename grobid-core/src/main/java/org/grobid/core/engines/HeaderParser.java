@@ -358,6 +358,7 @@ public class HeaderParser extends AbstractParser {
         List<LayoutToken> headerTokenizations = new ArrayList<LayoutToken>();
 
         // find the largest, smallest and average size font on the header section
+        // note: only  largest font size information is used currently
         double largestFontSize = 0.0;
         double smallestFontSize = 100000.0;
         double averageFontSize;
@@ -376,6 +377,12 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 for(LayoutToken token : tokens) {
+                    /*if (" ".equals(token.getText()) || "\n".equals(token.getText())) {
+                        // blank separators has font size 0.0, 
+                        // unicode normalization reduce to these 2 characters all the variants 
+                        continue;
+                    }*/
+
                     if (token.getFontSize() > largestFontSize) {
                         largestFontSize = token.getFontSize();
                     }
@@ -709,6 +716,10 @@ public class HeaderParser extends AbstractParser {
                         features.smallestFont = true;
                     if (token.getFontSize() > averageFontSize) 
                         features.largerThanAverageFont = true;
+
+                    // not used
+                    /*if (token.isSuperscript()) 
+                        features.superscript = true;*/
 
                     if (token.getBold())
                         features.bold = true;

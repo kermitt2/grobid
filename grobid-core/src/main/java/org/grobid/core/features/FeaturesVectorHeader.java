@@ -50,6 +50,7 @@ public class FeaturesVectorHeader {
     public boolean largestFont = false;
     public boolean smallestFont = false;
     public boolean largerThanAverageFont = false;
+    //public boolean superscript = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -188,13 +189,20 @@ public class FeaturesVectorHeader {
         else
             res.append(" 0");
 
-        // 31 features written at this point
+        /*if (superscript)
+            res.append(" 1");
+        else
+            res.append(" 0");*/
+
+        // 30 features written at this point
 
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
         else
-            res.append(" 0\n");
+            res.append("\n");
+        /*else
+            res.append(" 0\n");*/
 
         return res.toString();
     }
