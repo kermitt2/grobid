@@ -48,9 +48,9 @@ public class FeaturesVectorHeader {
     // font size related
     public String fontSize = null; // one of HIGHERFONT, SAMEFONTSIZE, LOWERFONT
     public boolean largestFont = false;
-    //public boolean smallestFont = false;
-    //public boolean largerThanAverageFont = false;
-    public boolean superscript = false;
+    public boolean smallestFont = false;
+    public boolean largerThanAverageFont = false;
+    //public boolean superscript = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -179,7 +179,7 @@ public class FeaturesVectorHeader {
         else
             res.append(" 0");
 
-        /*if (smallestFont)
+        if (smallestFont)
             res.append(" 1");
         else
             res.append(" 0");
@@ -187,7 +187,7 @@ public class FeaturesVectorHeader {
         if (largerThanAverageFont)
             res.append(" 1");
         else
-            res.append(" 0");*/
+            res.append(" 0");
 
         /*if (superscript)
             res.append(" 1");
@@ -199,6 +199,8 @@ public class FeaturesVectorHeader {
         // label - for training data (1)
         if (label != null)
             res.append(" " + label + "\n");
+        else
+            res.append("\n");
         /*else
             res.append(" 0\n");*/
 

@@ -712,15 +712,14 @@ public class HeaderParser extends AbstractParser {
 
                     if (token.getFontSize() == largestFontSize)
                         features.largestFont = true;
-
-                    // not used
-                    /*if (token.getFontSize() == smallestFontSize)
+                    if (token.getFontSize() == smallestFontSize)
                         features.smallestFont = true;
                     if (token.getFontSize() > averageFontSize) 
-                        features.largerThanAverageFont = true;*/
+                        features.largerThanAverageFont = true;
 
-                    if (token.isSuperscript()) 
-                        features.superscript = true;
+                    // not used
+                    /*if (token.isSuperscript()) 
+                        features.superscript = true;*/
 
                     if (token.getBold())
                         features.bold = true;

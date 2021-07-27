@@ -356,12 +356,12 @@ public class FeatureFactory {
     }
 
     /**
-     * Transform a text in a text pattern where punctuations are ignored, number shadowed and
+     * Transform a text in a text pattern where punctuations are ignored and
      * remaining text in lowercase
      */
     public String getPattern(String text) {
-        String pattern = text.replaceAll("[^a-zA-Z 0-9]", "").toLowerCase();
-        pattern = pattern.replaceAll("[0-9]", "X");
+        String pattern = text.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        //pattern = pattern.replaceAll("[0-9]", "X");
         return pattern;
     }
 }
