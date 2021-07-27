@@ -2,14 +2,14 @@
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
 
-## usage example with version 0.6.2-SNAPSHOT:
-## docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.delft .
+## usage example with version 0.7.1-SNAPSHOT:
+## docker build -t grobid/grobid:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SNAPSHOT --file Dockerfile.delft .
 
 ## no GPU:
-## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+## docker run -t --rm --init -p 8070:8070 -p 8071:8071 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.1-SNAPSHOT
 
 ## allocate all available GPUs (only Linux with proper nvidia driver installed on host machine):
-## docker run --rm --gpus all --init -p 8070:8070 -p 8071:8071 -v /home/lopez/obid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+## docker run --rm --gpus all --init -p 8070:8070 -p 8071:8071 -v /home/lopez/obid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.7.1-SNAPSHOT
 
 # -------------------
 # build builder image

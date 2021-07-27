@@ -105,6 +105,37 @@ public class TEIFormatter {
         return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, config);
     }
 
+    public static String toISOString(Date date) {
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+
+        String when = "";
+        if (year != -1) {
+            if (year <= 9)
+                when += "000" + year;
+            else if (year <= 99)
+                when += "00" + year;
+            else if (year <= 999)
+                when += "0" + year;
+            else
+                when += year;
+            if (month != -1) {
+                if (month <= 9)
+                    when += "-0" + month;
+                else
+                    when += "-" + month;
+                if (day != -1) {
+                    if (day <= 9)
+                        when += "-0" + day;
+                    else
+                        when += "-" + day;
+                }
+            }
+        }
+        return when;
+    }
+
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,
@@ -188,36 +219,15 @@ public class TEIFormatter {
 
             if (biblio.getNormalizedPublicationDate() != null) {
                 Date date = biblio.getNormalizedPublicationDate();
-                int year = date.getYear();
-                int month = date.getMonth();
-                int day = date.getDay();
 
-                String when = "";
-                if (year != -1) {
-                    if (year <= 9)
-                        when += "000" + year;
-                    else if (year <= 99)
-                        when += "00" + year;
-                    else if (year <= 999)
-                        when += "0" + year;
-                    else
-                        when += year;
-                    if (month != -1) {
-                        if (month <= 9)
-                            when += "-0" + month;
-                        else
-                            when += "-" + month;
-                        if (day != -1) {
-                            if (day <= 9)
-                                when += "-0" + day;
-                            else
-                                when += "-" + day;
-                        }
-                    }
+                String when = toISOString(date);
+                if (StringUtils.isNotBlank(when)) {
                     tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                    tei.append(when + "\">");
-                } else
+                    tei.append(when).append("\">");
+                } else {
                     tei.append("\t\t\t\t<date>");
+                }
+                
                 if (biblio.getPublicationDate() != null) {
                     tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate()));
                 } else {
@@ -516,32 +526,9 @@ public class TEIFormatter {
 
                 if (biblio.getNormalizedPublicationDate() != null) {
                     Date date = biblio.getNormalizedPublicationDate();
-                    int year = date.getYear();
-                    int month = date.getMonth();
-                    int day = date.getDay();
 
-                    String when = "";
-                    if (year != -1) {
-                        if (year <= 9)
-                            when += "000" + year;
-                        else if (year <= 99)
-                            when += "00" + year;
-                        else if (year <= 999)
-                            when += "0" + year;
-                        else
-                            when += year;
-                        if (month != -1) {
-                            if (month <= 9)
-                                when += "-0" + month;
-                            else
-                                when += "-" + month;
-                            if (day != -1) {
-                                if (day <= 9)
-                                    when += "-0" + day;
-                                else
-                                    when += "-" + day;
-                            }
-                        }
+                    String when = toISOString(date);
+                    if (StringUtils.isNotBlank(when)) {
                         if (biblio.getPublicationDate() != null) {
                             tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
                             tei.append(when + "\">");

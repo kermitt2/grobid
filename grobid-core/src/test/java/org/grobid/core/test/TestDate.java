@@ -86,7 +86,7 @@ public class TestDate extends EngineTest {
 
         assertThat(date.getDayString(), is("19"));
         assertThat(date.getMonthString(), is("November"));
-        assertThat(date.getYearString(), is("1 999"));
+        assertThat(date.getYearString(), is("1999"));
 
         assertThat(date.getDay(), is(19));
         assertThat(date.getMonth(), is(11));

@@ -5,6 +5,8 @@
 
 * [Introduction](Introduction.md)
 
+* [How GROBID works](Principles.md)
+
 * [References](References.md)
 
 * [License](License.md)
