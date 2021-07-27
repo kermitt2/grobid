@@ -312,7 +312,7 @@ public class HeaderParser extends AbstractParser {
                 // we don't need to serialize if we process the full text (it would be done 2 times)
                 if (serialize) {
                     TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, config);
                     tei.append("\t</text>\n");
                     tei.append("</TEI>\n");                
                     return tei.toString();
