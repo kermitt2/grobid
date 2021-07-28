@@ -1,0 +1,9 @@
+# YAML 1.2
+---
+cff-version: "1.1.0"
+license: "Apache 2.0"
+repository-code: "https://github.com/kermitt2/grobid"
+title: GROBID
+date-released: 2008-2021
+identifiers: swh:1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c
+...
