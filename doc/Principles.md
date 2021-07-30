@@ -81,9 +81,23 @@ GROBID does not use a vast amount of training data derived from existing publish
 
 In practice, the size of GROBID training data is smaller than the ones of CERMINE _(Tkaczyk et al., 2015)_ by a factor 30 to 100, and smaller than ScienceParse 2 by a factor 2500 to 10000. Still GROBID provides comparable or better accuracy scores. To help to ensure high-quality training data, we develop detailed [annotation guidelines](training/General-principles/) to remove as much as possible disagreements/inconsistencies regarding the annotation decision. The training data is reviewed regularly. We do not use double-blind annotation with reconciliation and do not compute Inter Annotator Agreement (as we should), because the average size of the annotation team is under 2 :)
 
-As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations are done in separate and stable holdout sets from publishers, which follow more realistic distributions of document variations. However, our publisher evaluation sets present the same lack of diversity drawback as discussed above with training data, but at least we do not train and evaluate with the same domains and sources of publications as most similar works.
+#### Evaluation
 
-For the moment, we are also not relying on transformer approaches incorporating layout information, like LayoutML _(Xu et al., 2020)_, LayoutLMv2 _(Xu et al., 2021)_, SelfDoc or VILA _(Shen et al., 2021)_, which require considerable GPU capacities, long inference runtime, and do not show at this time convincing accuracy scores as compared to the current GROBID cheap approach (reported accuracy at token level are often lower than GROBID accuracy at field level, while using less labels). However, these approaches are very promising. In GROBID, it is possible to run BERT and SciBERT baseline fine-tuned models, ignoring available layout features. We think the system is thus more or less ready to experiment with fine-tuning such extended transformer models - or rather few-shot learning given the size of our annotated example set - when/if they can surpass some of the current models (and when we will have saved enough money to buy a V100 GPU). 
+As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separate and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
+
+Our evaluation approach, however, raises two main issues: 
+
+- our publisher evaluation sets present currently the same lack of diversity drawback as discussed above with training data, because the evaluation sets are all coming from life science or preprints. At least, as compared to most of the similar works, we do not train and evaluate at the same time with the same domains and sources of publications, because we maintain a strong diversity in the training data. 
+
+- although much better adapted to tackle the gap between the n-fold validation and real performance, the usage of stable holdout sets (usually favored by ML practitioners) can lead too lower reliability over time due to successive re-uses of the holdout data for guiding design improvements (as we validate addition of training data and features based on holdout set performance). 
+
+For addressing these two issues, we plan to regularly add new holdout sets from various sources over time, trying to exploit new XML publications available under appropriate license. 
+
+#### Transformer approaches incorporating layout information
+
+For the moment, we are also not relying on transformer approaches incorporating layout information, like LayoutML _(Xu et al., 2020)_, LayoutLMv2 _(Xu et al., 2021)_, SelfDoc or VILA _(Shen et al., 2021)_, which require considerable GPU capacities, long inference runtime, and do not show at this time convincing accuracy scores as compared to the current GROBID cheap approach (reported accuracy at token level are often lower than GROBID accuracy at field level, while using less labels). 
+
+However, these approaches are very promising. In GROBID, it is possible to run BERT and SciBERT baseline fine-tuned models, ignoring available layout features. We think the system is thus more or less ready to experiment with fine-tuning such extended transformer models - or rather few-shot learning given the size of our annotated example set - when/if they can surpass some of the current models (and when we will have saved enough money to buy a V100 GPU). 
 
 ##Balancing accuracy and scalability
 
