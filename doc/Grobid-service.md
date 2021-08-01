@@ -121,7 +121,7 @@ The consolidation parameters (`consolidateHeader` and `consolidateCitations`) in
 
 #### /api/processHeaderDocument
 
-Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
+Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
 `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only).
 
@@ -131,6 +131,7 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
 
 Response status codes:
 
@@ -148,6 +149,12 @@ You can test this service with the **cURL** command lines, for instance header e
 
 ```console
 curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+```
+
+If you want a simpler result in the BibTeX format:
+
+```console
+curl -v -H "Accept: application/x-bibtex" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 #### /api/processFulltextDocument
