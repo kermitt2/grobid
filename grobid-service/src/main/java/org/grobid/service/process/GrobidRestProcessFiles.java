@@ -109,7 +109,7 @@ public class GrobidRestProcessFiles {
             } else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
                 response = Response.status(Response.Status.OK)
                     .entity(result.toBibTeX("-1"))
-                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
                     .build();
             } else {
                 response = Response.status(Response.Status.OK)
