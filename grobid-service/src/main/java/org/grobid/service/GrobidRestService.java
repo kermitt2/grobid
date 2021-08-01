@@ -152,14 +152,15 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processHeaderDocument_post(
+    public Response processHeaderDocumentReturnXml_post(
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessHeaderDocument(
             inputStream, consol,
-            validateIncludeRawParam(includeRawAffiliations)
+            validateIncludeRawParam(includeRawAffiliations),
+            ExpectedResponseType.XML
         );
     }
 
@@ -167,11 +168,38 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @PUT
-    public Response processStatelessHeaderDocument(
+    public Response processStatelessHeaderDocumentReturnXml(
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
-        return processHeaderDocument_post(inputStream, consolidate, includeRawAffiliations);
+        return processHeaderDocumentReturnXml_post(inputStream, consolidate, includeRawAffiliations);
+    }
+
+    @Path(PATH_HEADER)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @POST
+    public Response processHeaderDocumentReturnBibTeX_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        int consol = validateConsolidationParam(consolidate);
+        return restProcessFiles.processStatelessHeaderDocument(
+            inputStream, consol,
+            validateIncludeRawParam(includeRawAffiliations),
+            ExpectedResponseType.BIBTEX
+        );
+    }
+
+    @Path(PATH_HEADER)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @PUT
+    public Response processStatelessHeaderDocumentReturnBibTeX(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        return processHeaderDocumentReturnBibTeX_post(inputStream, consolidate, includeRawAffiliations);
     }
 
     @Path(PATH_FULL_TEXT)

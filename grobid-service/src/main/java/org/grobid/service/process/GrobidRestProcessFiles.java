@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -62,7 +63,8 @@ public class GrobidRestProcessFiles {
     public Response processStatelessHeaderDocument(
         final InputStream inputStream,
         final int consolidate,
-        final boolean includeRawAffiliations
+        final boolean includeRawAffiliations,
+        ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
@@ -91,17 +93,24 @@ public class GrobidRestProcessFiles {
 
             String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
+            BiblioItem result = new BiblioItem();
+
             // starts conversion process
             retVal = engine.processHeader(
                 originFile.getAbsolutePath(),
                 md5Str,
                 consolidate,
                 includeRawAffiliations,
-                null
+                result
             );
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
+            } else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+                response = Response.status(Response.Status.OK)
+                    .entity(result.toBibTeX("-1"))
+                    .header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+                    .build();
             } else {
                 response = Response.status(Response.Status.OK)
                     .entity(retVal)
