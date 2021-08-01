@@ -1975,9 +1975,9 @@ public class BiblioItem {
 
             // dates
             if (normalized_publication_date != null) {
-                String isoDate = normalized_publication_date.toISO();
+                String isoDate = TEIFormatter.toISOString(normalized_publication_date);
                 if (isoDate != null) {
-                    bibtex.add("  date = {" + normalized_publication_date.toISO() + "}");
+                    bibtex.add("  date = {" + isoDate + "}");
                 }
             }
 
