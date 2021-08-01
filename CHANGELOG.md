@@ -4,16 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
-
-### Added
-
-### Changed
-
-### Fixed
-
-
-## [0.7.0] – 2020-07-17
+## [0.7.0] – 2021-07-17
 
 ### Added
 
@@ -39,7 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + Add missing pdfalto Graphics information when `-noImage` is used, fix graphics data path in TEI
 + Fix the tendency to merge tables when they are in close proximity
 
-## [0.6.2] – 2020-03-20
+## [0.6.2] – 2021-03-20
 
 ### Added
 
@@ -287,7 +278,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/kermitt2/grobid/compare/0.6.2...0.7.0
+[0.6.2]: https://github.com/kermitt2/grobid/compare/0.6.1...0.6.2
+[0.6.1]: https://github.com/kermitt2/grobid/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5

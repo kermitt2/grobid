@@ -90,40 +90,37 @@ public class FeaturesVectorDate {
     /**
      * Add feature for date parsing.
      */
-    static public String addFeaturesDate(List<String> lines) throws Exception {
+    public static String addFeaturesDate(List<String> lines) throws Exception {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         String line;
-        StringBuilder header = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         boolean newline = true;
         boolean newBlock = true;
         String currentFont = null;
         int currentFontSize = -1;
-        int n = 0;
 
         boolean endblock = false;
         String previousTag = null;
         String previousText = null;
         FeaturesVectorDate features = null;
-        while (n < lines.size()) {
+        for (int n = 0; n < lines.size(); n++) {
             boolean outputLineStatus = false;
             boolean outputBlockStatus = false;
 
             line = lines.get(n);
 
             if (line == null) {
-                header.append(" \n");
+                stringBuilder.append(" \n");
                 newBlock = true;
                 newline = true;
-                n++;
                 continue;
             }
             line = line.trim();
             if (line.length() == 0) {
-                header.append("\n \n");
+                stringBuilder.append("\n \n");
                 newBlock = true;
                 newline = true;
-                n++;
                 continue;
             }
 
@@ -132,7 +129,6 @@ public class FeaturesVectorDate {
                     newBlock = true;
                 }
                 newline = true;
-                n++;
                 continue;
             }
 
@@ -151,13 +147,13 @@ public class FeaturesVectorDate {
                 filter = true;
             } else if (text.startsWith("@IMAGE")) {
                 filter = true;
-            } else if (text.indexOf(".pbm") != -1) {
+            } else if (text.contains(".pbm")) {
                 filter = true;
-            } else if (text.indexOf(".svg") != -1) {
+            } else if (text.contains(".svg")) {
                 filter = true;
-            } else if (text.indexOf(".jpg") != -1) {
+            } else if (text.contains(".jpg")) {
                 filter = true;
-            } else if (text.indexOf(".png") != -1) {
+            } else if (text.contains(".png")) {
                 filter = true;
             }
 
@@ -207,7 +203,7 @@ public class FeaturesVectorDate {
                 boolean endline = false;
                 int i = 1;
                 boolean endloop = false;
-                while ((lines.size() > n + i) & (!endloop)) {
+                while ((lines.size() > n + i) && (!endloop)) {
                     String newLine = lines.get(n + i);
 
                     if (newLine != null) {
@@ -229,7 +225,7 @@ public class FeaturesVectorDate {
                         }
                     }
 
-                    if ((endline) & (!outputLineStatus)) {
+                    if (endline && !outputLineStatus) {
                         features.lineStatus = "LINEEND";
                         outputLineStatus = true;
                     }
@@ -285,14 +281,13 @@ public class FeaturesVectorDate {
 
             features.label = tag;
 
-            header.append(features.printVector());
+            stringBuilder.append(features.printVector());
 
             previousTag = tag;
             previousText = text;
-            n++;
         }
 
-        return header.toString();
+        return stringBuilder.toString();
     }
 
 }
