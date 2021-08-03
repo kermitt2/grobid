@@ -126,6 +126,7 @@ public class FeaturesVectorAffiliationAddress {
         if (locationPlaces.size() == 0) {
             throw new GrobidException("At least one list of gazetter matches positions is empty.");
         }
+//System.out.println(lines);
         StringBuffer result = new StringBuffer();
         List<String> block = null;
         boolean isPlace = false;
@@ -177,7 +178,7 @@ public class FeaturesVectorAffiliationAddress {
                 }
             }
 
-            if (line.trim().equals("@newline")) {
+            if (line.trim().contains("@newline")) {
                 lineStatus = "LINESTART";
                 continue;
             }
@@ -192,13 +193,15 @@ public class FeaturesVectorAffiliationAddress {
                 mm = 0;
             } else {
                 // look ahead for line status update
-                if ((i + 1) < lines.size()) {
-                    String nextLine = lines.get(i + 1);
-                    if ((nextLine.trim().length() == 0) || (nextLine.trim().equals("@newline"))) {
+                if (!lineStatus.equals("LINESTART")) {
+                    if ((i + 1) < lines.size()) {
+                        String nextLine = lines.get(i + 1);
+                        if ((nextLine.trim().length() == 0) || (nextLine.trim().contains("@newline"))) {
+                            lineStatus = "LINEEND";
+                        }
+                    } else if ((i + 1) == lines.size()) {
                         lineStatus = "LINEEND";
                     }
-                } else if ((i + 1) == lines.size()) {
-                    lineStatus = "LINEEND";
                 }
 
                 FeaturesVectorAffiliationAddress vector = addFeaturesAffiliationAddress(line, lineStatus, isPlace);
@@ -206,11 +209,14 @@ public class FeaturesVectorAffiliationAddress {
 
                 if (lineStatus.equals("LINESTART")) {
                     lineStatus = "LINEIN";
+                } else if (lineStatus.equals("LINEEND")) {
+                    lineStatus = "LINESTART";
                 }
+
             }
             mm++;
         }
-
+//System.out.println(result.toString());
         return result.toString();
     }
 

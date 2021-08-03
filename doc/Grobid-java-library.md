@@ -14,14 +14,12 @@ GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies
 You need to add the following snippet in your pom.xml in order to configure it:
 
 ```xml
-    <repository>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-        <id>bintray-rookies-maven</id>
-        <name>bintray</name>
-        <url>https://dl.bintray.com/rookies/maven</url>
-    </repository>               
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>         
 ```
   
 
@@ -29,22 +27,22 @@ In this way you after configuring such repository the dependencies will be autom
 Here an example of grobid-core dependency: 
 ```xml
 	<dependency>
-	    <groupId>org.grobid</groupId>
-	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.2</version>
-	</dependency>
+        <groupId>com.github.kermitt2</groupId>
+        <artifactId>grobid</artifactId>
+        <version>0.7.0</version>
+    </dependency>
 ```
  
-If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to the Grobid jar file, 
-for instance as follow (if necessary replace `0.6.2` by the valid `<current version>`):
+If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to this snapshot Grobid jar file, 
+for instance as follow (if necessary replace `0.7.1-SNAPSHOT` by the valid `<current version>`):
 
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.6.2</version>
+	    <version>0.7.1-SNAPSHOT</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.6.2.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.7.1-SNAPSHOT.jar</systemPath>
 	</dependency>
 ```
 
@@ -54,16 +52,14 @@ Add the following snippet in your gradle.build file:
 
 ```groovy
     repositories { 
-        maven { 
-            url "https://dl.bintray.com/rookies/maven" 
-        } 
+        maven { url "https://jitpack.io" }
     }
 ```
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.6.2'
-    compile 'org.grobid:grobid-trainer:0.6.2'
+    compile 'org.grobid:grobid-core:0.7.0'
+    compile 'org.grobid:grobid-trainer:0.7.0'
 ```
 
 
@@ -116,21 +112,9 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 
 In the following archive, you can find a __maven__ toy example project integrating Grobid in a third party Java project using maven: [grobid-example](https://github.com/kermitt2/grobid-example). 
 
-Create the grobid-core jar library, under the main project directory `grobid/`:
-```bash
-> ./gradlew clean install 
-```
-
-Copy the Grobid jar library under `grobid-example/lib`:
-
-```bash
-> cp grobid-core/build/libs/grobid-core-<current version>.jar <path_to_grobid_example>/grobid-example/lib
-```
-
-The paths to __grobid-home__ might need to be changed in the project config file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
+You need a local `grobid-home` installation to run GROBID (the resources are not embedded in the jar due to various reasons, in particular JNI and safety). The paths to __grobid-home__ might need to be changed in the project config file:  `grobid-example/grobid-example.properties` according to your installation, for instance: 
 
 		grobid_example.pGrobidHome=/Users/lopez/grobid/grobid-home
-		grobid_example.pGrobidProperties=/Users/lopez/grobid/grobid-home/config/grobid.yaml
 
 Then you can test the toy project:
 ```bash

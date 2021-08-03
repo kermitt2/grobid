@@ -23,9 +23,9 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.6.2.zip
-mv grobid-service-0.6.2 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.6.2.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.0.zip
+mv grobid-service-0.7.0 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.0.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -121,7 +121,7 @@ The consolidation parameters (`consolidateHeader` and `consolidateCitations`) in
 
 #### /api/processHeaderDocument
 
-Extract the header of the input PDF document, normalize it and convert it into a TEI XML format.
+Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
 `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only).
 
@@ -131,6 +131,7 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
 
 Response status codes:
 
@@ -148,6 +149,12 @@ You can test this service with the **cURL** command lines, for instance header e
 
 ```console
 curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+```
+
+If you want a simpler result in the BibTeX format:
+
+```console
+curl -v -H "Accept: application/x-bibtex" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 #### /api/processFulltextDocument
@@ -694,6 +701,98 @@ Response status codes:
 |         503          |     The service is not available, which usually means that all the threads are currently used                       |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the capacities of the server and the size of the input document, we suggest 5-10 seconds for the `citationPatentAnnotations` service.
+
+
+### Training web API
+
+The following web services can be used to launch the training of a particular model (`/api/modelTraining`), monitor traing advancement (`/api/trainingResult`) and retrive a model (`/api/model`).
+
+#### /api/modelTraining
+
+Launch a training for a given model. The service return back a training token (as a string) to be used to follow the advancement of the training and eventually get back the associated evaluation. 
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| POST | application/x-www-form-urlencoded |  application/json |   model      |   required    | name of the model to train  |
+|           |                     |                      | architecture | optional | name of the architecture to use for training the model, possible values are `CRF` (default), `BiLSTM-CRF`, `BiLSMT-CRF-ELMo` |
+|           |                     |                      | type | optional | type of training, `full`, `holdout`, `split`, `nfold`, default is `split` |
+|           |                     |                      | ratio | optional | only considered for `split` training mode, give the ratio (number bewteen 0 and 1) of training and evaluation data when splitting the annotated data, default is `0.9` |
+|           |                     |                      | n | optional | only considered for `nfold` training mode, give the number of folds to be used, default is `10` |
+
+The `type` of training indicates which training and evaluation mode should be used:
+- `full`: the whole available training data is used for training a model
+- `holdout`: train and use a fixed evaluation set for evaluation, present on the server under `grobid-trainer/resources/dataset/[model]/evaluation/` where `model` is the model indicate by the service parameters `model`
+- `split` (default): randomly split the available annotated data into a training and an evaluation set, following the provided ratio (default is 90% for training, 10% for evaluation)
+- `nfold`: n-fold cross-evaluation based on the available annotated data (default is 10-fold)
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         400          |     Wrong request, missing or invalid model name, invalid optional parameter, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+
+
+You can test this service with the **cURL** command lines, for instance starting the training of the CRF date model and producing an evaluation based on an holdout set:
+```bash
+curl -v -X POST -d "model=date" -d "type=holdout" localhost:8070/api/modelTraining
+```
+
+#### /api/trainingResult
+
+Given a training token delivered by the service `modelTraining`, this service gives the possibility of following the advancement of the training and eventually get back the associated evaluation. Depending on the state of the training, the service will returns:
+
+- if the training is ongoing, an indication of advancement as a string
+- it the training is completed, evaluation statistics dependeing on the selected type of training
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| POST |  application/x-www-form-urlencoded |     application/json |   token      |   required    | training token as received by the `modelTraining` service  |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         400          |     Wrong request, missing or invalid training token, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+
+Example for a training associated to the token `Fq2WYPw5M6`:
+```bash
+curl -v -X POST -d "token=Fq2WYPw5M6" localhost:8070/api/trainingResult
+```
+
+#### /api/model
+
+Get a model in the form of an archive (`.zip`), given a model name. 
+
+|   method  |  request type       | response type        |  parameters  | requirement   |   description             |
+|---        |---                  |---                   |---           |---            |---                        |
+| GET/POST |  application/x-www-form-urlencoded |     application/zip |   model      |   required    | name of the model to download  |
+|           |                     |                      | architecture | optional | name of the architecture for the model to be downloaded, possible values are c |
+
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         400          |     Wrong request, missing or invalid model name, invalid architecture name, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+
+
+You can test this service with the **cURL** command lines, for instance retrieving the zipped CRF date model binaries with a POST query:
+```bash
+curl -v -X POST -d "model=date" "architecture=crf" localhost:8070/api/model > model.zip
+```
+
+or with a GET query:
+
+```bash
+curl -v -X GET localhost:8070/api/model?model=date > model.zip
+```
 
 ## Parallel mode
 

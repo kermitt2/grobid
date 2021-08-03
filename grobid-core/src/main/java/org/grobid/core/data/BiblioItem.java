@@ -1922,12 +1922,19 @@ public class BiblioItem {
                     fullAuthors.stream()
                                .filter(person -> person != null)
                                .forEachOrdered(person -> {
-                                   String author = person.getLastName();
+                                   String author = "";
+                                   if (person.getLastName() != null) {
+                                       author = person.getLastName();
+                                   }
                                    if (person.getFirstName() != null) {
-                                       author += ", ";
+                                       if (author.length() > 0) {
+                                           author += ", ";
+                                       }
                                        author += person.getFirstName();
                                    }
-                                   authors.add(author);
+                                   if (author.length() > 0 ) {
+                                       authors.add(author);
+                                   }
                                });
                 } else if (this.authors != null) {
                     StringTokenizer st = new StringTokenizer(this.authors, ";");
@@ -1973,9 +1980,12 @@ public class BiblioItem {
             }
             // fullEditors has to be used instead
 
-            // year
-            if (publication_date != null) {
-                bibtex.add("  year = {" + publication_date + "}");
+            // dates
+            if (normalized_publication_date != null) {
+                String isoDate = TEIFormatter.toISOString(normalized_publication_date);
+                if (isoDate != null) {
+                    bibtex.add("  date = {" + isoDate + "}");
+                }
             }
 
             // address
