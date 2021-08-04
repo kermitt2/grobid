@@ -30,18 +30,13 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
+import static org.grobid.core.document.TEIFormatter.toISOString;
 
-/**
- * @author Patrice Lopez
- */
 public class HeaderParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(HeaderParser.class);
 
@@ -260,7 +255,8 @@ public class HeaderParser extends AbstractParser {
                 if (resHeader.getKeyword() != null) {
                     String keywords = TextUtilities.dehyphenize(resHeader.getKeyword());
                     keywords = BiblioItem.cleanKeywords(keywords);
-                    resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    //resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
+                    resHeader.setKeyword(keywords);
                     List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
                     if ((keywordsSegmented != null) && (keywordsSegmented.size() > 0))
                         resHeader.setKeywords(keywordsSegmented);
@@ -276,49 +272,47 @@ public class HeaderParser extends AbstractParser {
 
                 // normalization of dates
                 if (resHeader != null) {
-                    if (resHeader.getPublicationDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resHeader.getPublicationDate());
-                        // most basic heuristic, we take the first date - to be
-                        // revised...
-                        if (dates != null) {
-                            if (dates.size() > 0) {
-                                resHeader.setNormalizedPublicationDate(dates.get(0));
-                            }
+                    if (resHeader.getNormalizedPublicationDate() == null) {
+                        Optional<Date> normalisedPublicationDate = getNormalizedDate(resHeader.getPublicationDate());
+                        if (normalisedPublicationDate.isPresent()) {
+                            resHeader.setNormalizedPublicationDate(normalisedPublicationDate.get());
                         }
+                    } else {
+                        resHeader.setPublicationDate(toISOString(resHeader.getNormalizedPublicationDate()));
                     }
 
-                    if (resHeader.getSubmissionDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resHeader.getSubmissionDate());
-                        if (dates != null) {
-                            if (dates.size() > 0) {
-                                resHeader.setNormalizedSubmissionDate(dates.get(0));
-                            }
+                    if (resHeader.getNormalizedSubmissionDate() == null) {
+                        Optional<Date> normalizedSubmissionDate = getNormalizedDate(resHeader.getSubmissionDate());
+                        if(normalizedSubmissionDate.isPresent()) {
+                            resHeader.setNormalizedSubmissionDate(normalizedSubmissionDate.get());
                         }
+                    } else {
+                        resHeader.setSubmissionDate(toISOString(resHeader.getNormalizedSubmissionDate()));
                     }
 
-                    if (resHeader.getDownloadDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resHeader.getDownloadDate());
-                        if (dates != null) {
-                            if (dates.size() > 0) {
-                                resHeader.setNormalizedDownloadDate(dates.get(0));
-                            }
+                    if (resHeader.getNormalizedDownloadDate() == null) {
+                        Optional<Date> normalizedDownloadDate = getNormalizedDate(resHeader.getDownloadDate());
+                        if (normalizedDownloadDate.isPresent()) {
+                            resHeader.setNormalizedDownloadDate(normalizedDownloadDate.get());
                         }
-                    }
-
-                    if (resHeader.getServerDate() != null) {
-                        List<Date> dates = parsers.getDateParser().processing(resHeader.getServerDate());
-                        if (dates != null) {
-                            if (dates.size() > 0) {
-                                resHeader.setNormalizedServerDate(dates.get(0));
-                            }
+                    }else {
+                        resHeader.setDownloadDate(toISOString(resHeader.getNormalizedDownloadDate()));
+                    }                    
+                    
+                    if (resHeader.getNormalizedServerDate() == null) {
+                        Optional<Date> normalizedServerDate = getNormalizedDate(resHeader.getServerDate());
+                        if(normalizedServerDate.isPresent()) {
+                            resHeader.setNormalizedServerDate(normalizedServerDate.get());
                         }
+                    } else {
+                        resHeader.setServerDate(toISOString(resHeader.getNormalizedServerDate()));
                     }
                 }
 
                 // we don't need to serialize if we process the full text (it would be done 2 times)
                 if (serialize) {
                     TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, config);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, config);
                     tei.append("\t</text>\n");
                     tei.append("</TEI>\n");                
                     return tei.toString();
@@ -329,6 +323,24 @@ public class HeaderParser extends AbstractParser {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
         return null;
+    }
+
+    /**
+     * Return the date, normalised using the DateParser
+     */
+    private Optional<Date> getNormalizedDate(String rawDate) {
+        if (rawDate != null) {
+            List<Date> dates = parsers.getDateParser().processing(rawDate);
+            // TODO: most basic heuristic, we take the first date
+            // LF: perhaps we could validate that the dates have are formatted decently
+            if (isNotEmpty(dates)) {
+                return Optional.of(dates.get(0));
+            } else {
+                return Optional.empty();
+            }
+        } else {
+            return Optional.empty();
+        }
     }
 
 
@@ -360,6 +372,7 @@ public class HeaderParser extends AbstractParser {
         List<LayoutToken> headerTokenizations = new ArrayList<LayoutToken>();
 
         // find the largest, smallest and average size font on the header section
+        // note: only  largest font size information is used currently
         double largestFontSize = 0.0;
         double smallestFontSize = 100000.0;
         double averageFontSize;
@@ -378,6 +391,12 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 for(LayoutToken token : tokens) {
+                    /*if (" ".equals(token.getText()) || "\n".equals(token.getText())) {
+                        // blank separators has font size 0.0, 
+                        // unicode normalization reduce to these 2 characters all the variants 
+                        continue;
+                    }*/
+
                     if (token.getFontSize() > largestFontSize) {
                         largestFontSize = token.getFontSize();
                     }
@@ -711,6 +730,10 @@ public class HeaderParser extends AbstractParser {
                         features.smallestFont = true;
                     if (token.getFontSize() > averageFontSize) 
                         features.largerThanAverageFont = true;
+
+                    // not used
+                    /*if (token.isSuperscript()) 
+                        features.superscript = true;*/
 
                     if (token.getBold())
                         features.bold = true;
@@ -1053,8 +1076,8 @@ public class HeaderParser extends AbstractParser {
         String existingContentSimplified = existingContent.toLowerCase();
         existingContentSimplified = existingContentSimplified.replace(" ", "").trim();
         existingContentSimplified = existingContentSimplified.replace("-", "").trim();
-        if (newContentSimplified.equals(existingContentSimplified) || 
-            existingContentSimplified.indexOf(newContentSimplified) != -1
+        if (newContentSimplified.equals(existingContentSimplified) ||
+            existingContentSimplified.contains(newContentSimplified)
             )
             return false;
         else

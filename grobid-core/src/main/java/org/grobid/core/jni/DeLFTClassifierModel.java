@@ -20,10 +20,6 @@ import jep.JepException;
 
 import java.util.function.Consumer;
 
-/**
- * 
- * @author: Patrice
- */
 public class DeLFTClassifierModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(DeLFTClassifierModel.class);
 
@@ -185,7 +181,7 @@ public class DeLFTClassifierModel {
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo()) {
+                if (GrobidProperties.getInstance().useELMo(this.modelName)) {
                     useELMo = "True";
                 }
 
@@ -231,7 +227,7 @@ public class DeLFTClassifierModel {
                 "train",
                 "--input", trainingData.getAbsolutePath(),
                 "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
-            if (GrobidProperties.getInstance().useELMo()) {
+            if (GrobidProperties.getInstance().useELMo(modelName)) {
                 command.add("--use-ELMo");
             }
 

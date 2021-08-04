@@ -12,7 +12,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by zholudev on 12/01/16.
  * Cluster tokens by label
  */
 public class TaggingTokenClusteror {

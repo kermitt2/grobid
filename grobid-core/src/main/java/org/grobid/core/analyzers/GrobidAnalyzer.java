@@ -20,7 +20,6 @@ import org.slf4j.LoggerFactory;
  * The language might be preliminary set by the language recognizer or manually if it is already 
  * known by the context of usage of the text. 
  *
- * @author Patrice Lopez
  */
 public class GrobidAnalyzer implements Analyzer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(GrobidAnalyzer.class);

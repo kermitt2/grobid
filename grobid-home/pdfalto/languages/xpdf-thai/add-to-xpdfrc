@@ -1,0 +1,4 @@
+#----- begin Thai support package (2011-aug-15)
+nameToUnicode			/usr/local/share/xpdf/thai/Thai.nameToUnicode
+unicodeMap	TIS-620		/usr/local/share/xpdf/thai/TIS-620.unicodeMap
+#----- end Thai support package

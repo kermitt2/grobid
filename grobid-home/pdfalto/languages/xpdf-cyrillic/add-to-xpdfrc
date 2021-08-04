@@ -1,0 +1,4 @@
+#----- begin Cyrillic support package (2011-aug-15)
+nameToUnicode			/usr/local/share/xpdf/cyrillic/Bulgarian.nameToUnicode
+unicodeMap	KOI8-R		/usr/local/share/xpdf/cyrillic/KOI8-R.unicodeMap
+#----- end Cyrillic support package

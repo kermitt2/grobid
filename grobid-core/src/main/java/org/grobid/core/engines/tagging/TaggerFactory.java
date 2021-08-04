@@ -25,11 +25,11 @@ public class TaggerFactory {
     private TaggerFactory() {}
 
     public static synchronized GenericTagger getTagger(GrobidModel model) {
-        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model), GrobidProperties.getDelftArchitecture());
+        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model), GrobidProperties.getDelftArchitecture(model));
     }
 
     public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine) {
-        return getTagger(model, engine, GrobidProperties.getDelftArchitecture());
+        return getTagger(model, engine, GrobidProperties.getDelftArchitecture(model));
     }
 
     public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine, String architecture) {
@@ -51,11 +51,11 @@ public class TaggerFactory {
                         t = new DeLFTTagger(model, architecture);
                         break;
                     default:
-                        throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
+                        throw new IllegalStateException("Unsupported Grobid sequence labelling engine: " + engine.getExt());
                 }
                 cache.put(model, t);
             } else {
-                throw new IllegalStateException("Unsupported or null Grobid sequence labelling engine: " + GrobidProperties.getGrobidCRFEngine());
+                throw new IllegalStateException("Unsupported or null Grobid sequence labelling engine: " + engine.getExt());
             }
         }
         return t;

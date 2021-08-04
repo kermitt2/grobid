@@ -14,9 +14,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * User: zholudev
- */
 public class PathUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(PathUtil.class);
 

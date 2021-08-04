@@ -3,7 +3,6 @@ package org.grobid.core.utilities;
 /**
  * Class for holding static methods for processing related to unicode.
  *
- * @author Patrice Lopez
  */
 public class UnicodeUtil {
 
@@ -147,6 +146,10 @@ public class UnicodeUtil {
      * will be replace by the punctuation space character U+2008
      * so that the token can be used to generate a robust feature vector
      * legible as Wapiti input.
+     *
+     * TO DO: replace the replaceAll with precomplied regex, because it appears that
+     * GROBID spends around 4% of its time here doing these replaceAll for a full 
+     * PDF processing
      *
      * @param text to be normalised
      * @return normalised string, legible for Wapiti feature generation

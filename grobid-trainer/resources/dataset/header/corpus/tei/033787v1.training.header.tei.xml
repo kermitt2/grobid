@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="033787v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	Title: 
+
+	<docTitle>
+	<titlePart>Across-cohort QC analyses of genome-wide association study summary statistics from complex traits<lb/></titlePart>
+	</docTitle>
+	
+	 Authors:
+	<byline>
+	<docAuthor>Guo-Bo Chen 1 , Sang Hong Lee 1,2 , Matthew R Robinson 1 , Maciej Trzaskowski 1 , Zhi-Xiang Zhu 3 ,<lb/> Thomas W Winkler 4 , Felix R Day 5 , Damien C Croteau-Chonka 6,7 , Andrew R Wood 8 , Adam E Locke 9 ,<lb/> Zoltán Kutalik 10-12 , Ruth J F Loos 13-15 , Timothy M Frayling 8 , Joel N Hirschhorn 16-19 , Jian Yang 1,21 , Naomi R<lb/> Wray 1 , The Genetic Investigation of Anthropometric Traits (GIANT) Consortium 20 , Peter M Visscher 1,21<lb/></docAuthor>
+	</byline>
+
+	Affiliations:<lb/>
+	<byline>
+	<affiliation>1 Queensland Brain Institute, The University of Queensland,</affiliation>
+	</byline>
+
+	<address>Brisbane, Queensland, Australia<lb/></address>
+
+	<byline>
+	<affiliation>2 School of Environmental and Rural Science, The University of New England,</affiliation>
+	</byline>
+
+	<address>Armidale, New South<lb/> Walsh, Australia<lb/></address>
+
+	<byline>
+	<affiliation>3 SPLUS Game,</affiliation>
+	</byline>
+
+	<address>Guangzhou, Guangdong, China<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Genetic Epidemiology, Institute of Epidemiology and Preventive Medicine, University of<lb/> Regensburg,</affiliation>
+	</byline>
+
+	<address>Regensburg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>5 Medical Research Council (MRC) Epidemiology Unit, Institute of Metabolic Science, Addenbrooke&apos;s<lb/> Hospital,</affiliation>
+	</byline>
+
+	<address>Cambridge, UK<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Genetics, University of North Carolina,</affiliation>
+	</byline>
+
+	<address>Chapel Hill, North Carolina, USA<lb/></address>
+
+	<byline>
+	<affiliation>7 Channing Division of Network Medicine, Department of Medicine, Brigham and Women&apos;s Hospital and<lb/> Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts, USA<lb/></address>
+
+	<byline>
+	<affiliation>8 Genetics of Complex Traits, University of Exeter Medical School, University of Exeter,</affiliation>
+	</byline>
+
+	<address>Exeter, UK<lb/></address>
+
+	<byline>
+	<affiliation>9 Department of Biostatistics and Center for Statistical Genetics, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor,<lb/> Michigan, USA<lb/></address>
+
+	<byline>
+	<affiliation>10 Department of Medical Genetics, University of Lausanne,</affiliation>
+	</byline>
+
+	<address>Lausanne, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>11 Institute of Social and Preventive Medicine (IUMSP), Centre Hospitalier Universitaire Vaudois (CHUV),<lb/></affiliation>
+	</byline>
+
+	<address>Lausanne, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>12 Swiss Institute of Bioinformatics,</affiliation>
+	</byline>
+
+	<address>Lausanne, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>13 The Charles Bronfman Institute for Personalized Medicine, Icahn School of Medicine at Mount Sinai,<lb/></affiliation>
+	</byline>
+
+	<address>New York, New York, USA<lb/></address>
+
+	<byline>
+	<affiliation>14 The Mindich Child Health and Development Institute, Icahn School of Medicine at Mount Sinai,</affiliation>
+	</byline>
+
+	<address>New<lb/> York, New York, USA<lb/></address>
+
+	<byline>
+	<affiliation>15 The Genetics of Obesity and Related Metabolic Traits Program, Icahn School of Medicine at Mount Sinai,<lb/></affiliation>
+	</byline>
+
+	<address>New York, New York, USA<lb/></address>
+
+	<byline>
+	<affiliation>16 Department of Genetics, Harvard Medical School,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts, USA<lb/></address>
+
+	<byline>
+	<affiliation>17 Program in Medical and Population Genetics, Broad Institute of MIT and Harvard, Cambridge,<lb/></affiliation>
+	</byline>
+
+	<address>Massachusetts, USA<lb/></address>
+
+	<byline>
+	<affiliation>18 Center for Basic and Translational Obesity Research, Boston Children&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts, USA<lb/></address>
+
+	<byline>
+	<affiliation>19 Division of Endocrinology, Boston Children&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts, USA<lb/></address>
+
+	20 A full list of members is available in the Supplementary Note<lb/>
+	<byline>
+	<affiliation>21 The University of Queensland Diamantina Institute, Translation Research Institute,</affiliation>
+	</byline>
+
+	<address>Brisbane, Queensland, Australia<lb/></address>
+
+	Correspondence should be addressed to<lb/> GBC (
+	<email>chen.guobo@foxmail.com</email>
+
+	) or PMV (
+	<email>peter.visscher@uq.edu.au</email>
+
+	)<lb/> Running title: Four metrics for GWAMA<lb/> Keywords:
+	<keyword>meta-analysis, overlapping samples, meta-PCA, Fst, PPSR, GIANT, Metabochip</keyword>
+
+	2 Abstract<lb/>
+	<div type="abstract">Genome-wide association studies (GWASs) have been successful in discovering replicable SNP-trait<lb/> associations for many quantitative traits and common diseases in humans. Typically the effect sizes of SNP<lb/> alleles are very small and this has led to large genome-wide association meta-analyses (GWAMA) to<lb/> maximize statistical power. A trend towards ever-larger GWAMA is likely to continue, yet dealing with<lb/> summary statistics from hundreds of cohorts increases logistical and quality control problems, including<lb/> unknown sample overlap, and these can lead to both false positive and false negative findings. In this study<lb/> we propose a new set of metrics and visualization tools for GWAMA, using summary statistics from cohort-<lb/>level GWASs. We proposed a pair of methods in examining the concordance between demographic<lb/> information and summary statistics. In method I, we use the population genetics ‫ܨ‬ ௦௧ statistic to verify the<lb/> genetic origin of each cohort and their geographic location, and demonstrate using GWAMA data from the<lb/> GIANT Consortium that geographic locations of cohorts can be recovered and outlier cohorts can be<lb/> detected. In method II, we conduct principal component analysis based on reported allele frequencies, and is<lb/> able to recover the ancestral information for each cohort. In addition, we propose a new statistic that uses the<lb/> reported allelic effect sizes and their standard errors to identify significant sample overlap or heterogeneity<lb/> between pairs of cohorts. Finally, to quantify unknown sample overlap across all pairs of cohorts we propose<lb/> a method that uses randomly generated genetic predictors that does not require the sharing of individual-<lb/>level genotype data and does not breach individual privacy.</div>
+
+		</front>
+	</text>
+</tei>

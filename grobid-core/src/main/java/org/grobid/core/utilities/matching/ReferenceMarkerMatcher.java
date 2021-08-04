@@ -25,7 +25,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by zholudev on 18/12/15.
  * Matching reference markers to extracted citations
  */
 public class ReferenceMarkerMatcher {

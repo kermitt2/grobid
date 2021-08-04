@@ -16,8 +16,6 @@ import org.apache.commons.io.IOUtils;
 
 /**
  * Utilities related to file and directory management.
- * <p>
- * Created by lfoppiano on 04/08/16.
  */
 public class IOUtilities {
 

@@ -36,9 +36,10 @@ COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 
 # cleaning unused native libraries before packaging
-RUN rm -rf grobid-home/pdf2xml/lin-32
-RUN rm -rf grobid-home/pdf2xml/mac-64
-RUN rm -rf grobid-home/pdf2xml/win-*
+RUN rm -rf grobid-home/pdf2xml
+RUN rm -rf grobid-home/pdfalto/lin-32
+RUN rm -rf grobid-home/pdfalto/mac-64
+RUN rm -rf grobid-home/pdfalto/win-*
 RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
 RUN rm -rf grobid-home/lib/mac-64
@@ -52,7 +53,7 @@ WORKDIR /opt/grobid
 RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
     mv grobid-service* grobid-service
 RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
-    chmod -R 755 /opt/grobid/grobid-home/pdf2xml
+    chmod -R 755 /opt/grobid/grobid-home/pdfalto
 RUN rm -rf grobid-source
 
 # -------------------
@@ -61,7 +62,7 @@ RUN rm -rf grobid-source
 FROM openjdk:11-jre-slim
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install libxml2 && \
+    apt-get -y --no-install-recommends install libxml2 libfontconfig && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/grobid
@@ -73,7 +74,7 @@ ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
-CMD ["./grobid-service/bin/grobid-service", "server", "grobid-service/config/config.yaml"]
+CMD ["./grobid-service/bin/grobid-service"]
 
 ARG GROBID_VERSION
 

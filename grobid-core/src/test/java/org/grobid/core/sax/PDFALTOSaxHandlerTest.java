@@ -21,9 +21,6 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by lfoppiano on 21/07/16.
- */
 public class PDFALTOSaxHandlerTest {
     SAXParserFactory spf = SAXParserFactory.newInstance();
 

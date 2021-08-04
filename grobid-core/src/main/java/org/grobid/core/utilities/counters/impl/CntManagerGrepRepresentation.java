@@ -9,13 +9,6 @@ import java.util.Date;
 import java.util.Map;
 import java.util.TimeZone;
 
-/**
- * Date: 7/3/12
- * Time: 10:32 AM
- *
- * @author Vyacheslav Zholudev
- */
-
 public class CntManagerGrepRepresentation implements CntManagerRepresentation {
     public static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
     static {

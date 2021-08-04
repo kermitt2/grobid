@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="904862v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Cell-type specific effects of genetic variation on chromatin accessibility during<lb/> human neuronal differentiation<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Dan Liang 1,2 , Angela L. Elwell 1,2 , Nil Aygün 1,2 , Michael J. Lafferty 1,2 , Oleh Krupa 1,2 , Kerry E. Cheek 1,2 ,<lb/> Kenan P. Courtney 1,2 , Marianna Yusupova 3,4,5 , Melanie E. Garrett 6 , Allison Ashley-Koch 6,7 , Gregory E.<lb/> Crawford 8,9 , Michael I. Love 1,10 , Luis de la Torre-Ubieta 3,4,5,11 , Daniel H. Geschwind 3,4,5,11 , Jason L.<lb/> Stein 1,2,12<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1) Department of Genetics, University of North Carolina at Chapel Hill,</affiliation>
+	</byline>
+
+	<address>Chapel Hill, NC 27599, USA<lb/></address>
+
+	<byline>
+	<affiliation>2) UNC Neuroscience Center University of North Carolina at Chapel Hill,</affiliation>
+	</byline>
+
+	<address>Chapel Hill, NC 27599, USA<lb/></address>
+
+	<byline>
+	<affiliation>3) Neurogenetics Program, Department of Neurology, David Geffen School of Medicine University of<lb/> California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, Los Angeles, CA 90095, USA<lb/></address>
+
+	<byline>
+	<affiliation>4) Center for Autism Research and Treatment, Semel Institute, David Geffen School of Medicine<lb/> University of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, Los Angeles, CA 90095, USA<lb/></address>
+
+	<byline>
+	<affiliation>5) Department of Human Genetics, David Geffen School of Medicine University of California,</affiliation>
+	</byline>
+
+	<address>Los<lb/> Angeles, Los Angeles, CA 90095, USA<lb/></address>
+
+	<byline>
+	<affiliation>6) Duke Molecular Physiology Institute, Duke University,</affiliation>
+	</byline>
+
+	<address>Durham, NC 27701, USA<lb/></address>
+
+	<byline>
+	<affiliation>7) Department of Medicine, Duke University,</affiliation>
+	</byline>
+
+	<address>Durham, NC 27708, USA<lb/></address>
+
+	<byline>
+	<affiliation>8) Center for Genomic and Computational Biology, Duke University,</affiliation>
+	</byline>
+
+	<address>Durham, NC 27708, USA<lb/></address>
+
+	<byline>
+	<affiliation>9) Department of Pediatrics, Division of Medical Genetics, Duke University,</affiliation>
+	</byline>
+
+	<address>Durham, NC 27708, USA<lb/></address>
+
+	<byline>
+	<affiliation>10) Department of Biostatistics, University of North Carolina at Chapel Hill,</affiliation>
+	</byline>
+
+	<address>Chapel Hill, NC 27599, USA<lb/></address>
+
+	<byline>
+	<affiliation>11) Department of Psychiatry and Biobehavioral Sciences, Semel Institute, David Geffen School of<lb/> Medicine University of California,</affiliation>
+	</byline>
+
+	<address>Los Angeles, Los Angeles, CA 90095, USA<lb/> 12</address>
+
+	) Lead Contact:
+	<email>jason_stein@med.unc.edu</email>
+
+	Summary<lb/>
+	<div type="abstract">Common genetic risk for neuropsychiatric disorders is enriched in regulatory elements active<lb/> during cortical neurogenesis. However, the mechanisms mediating the effects of genetic<lb/> variants on gene regulation are poorly understood. To determine the functional impact of<lb/> common genetic variation on the non-coding genome longitudinally during human cortical<lb/> development, we performed a chromatin accessibility quantitative trait loci (caQTL) analysis in<lb/> neural progenitor cells and their differentiated neuronal progeny from 92 donors. We identified<lb/> 8,111 caQTLs in progenitors and 3,676 caQTLs in neurons, with highly temporal, cell-type<lb/> specific effects. A subset (~20%) of caQTLs were also associated with changes in gene<lb/> expression. Motif-disrupting alleles of transcriptional activators generally led to decreases in<lb/> chromatin accessibility, whereas motif-disrupting alleles of repressors led to increases in<lb/> chromatin accessibility. By integrating cell-type specific caQTLs and brain-relevant<lb/> genome-wide association data, we were able to fine-map loci and identify regulatory<lb/> mechanisms underlying non-coding neuropsychiatric disorder risk variants.<lb/></div> 
+
+	Keywords 
+	<keyword>chromatin accessibility QTL, gene regulation, human neuronal differentiation,<lb/> neuropsychiatric disorders, GWAS, fine-mapping</keyword> 
+
+	<div type="abstract">Highlights<lb/> • Genetic variation alters chromatin architecture during human cortical development<lb/> • Genetic effects on chromatin accessibility are highly cell-type specific<lb/> • Alleles disrupting TF motifs generally decrease accessibility, except for repressors<lb/> • caQTLs facilitate fine-mapping and inference of regulatory mechanisms of GWAS loci</div>
+
+		</front>
+	</text>
+</tei>

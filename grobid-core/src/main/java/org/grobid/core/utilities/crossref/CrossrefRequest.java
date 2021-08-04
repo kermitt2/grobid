@@ -24,7 +24,6 @@ import java.util.Observable;
  * GET crossref request
  * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
  *
- * @author Vincent Kaestle, Patrice
  */
 public class CrossrefRequest<T extends Object> extends Observable {
 
@@ -133,18 +132,17 @@ public class CrossrefRequest<T extends Object> extends Observable {
 
             // set recommended User-Agent header
             HttpGet httpget = new HttpGet(uriBuilder.build());
+
             if (GrobidProperties.getCrossrefMailto() != null) {
             	httpget.setHeader("User-Agent", 
             		"GROBID/0.6.1 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
 			} else {
-				httpget.setHeader("User-Agent", 
-            		"GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
+				httpget.setHeader("User-Agent", "GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
 			}
             
 			// set the authorization token for the Metadata Plus service if available
 			if (GrobidProperties.getCrossrefToken() != null) {
-            	httpget.setHeader("Crossref-Plus-API-Token", 
-            		"Bearer " + GrobidProperties.getCrossrefToken());
+            	httpget.setHeader("Crossref-Plus-API-Token", "Bearer " + GrobidProperties.getCrossrefToken());
 			}
 
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="034769v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Title<lb/> 
+	<docTitle>
+	<titlePart>BrowseVCF: a web-based application and workflow to quickly prioritise disease-causative variants in VCF<lb/> files.</titlePart>
+	</docTitle> 
+
+	Authors<lb/>
+	<byline>
+	<docAuthor>Silvia Salatino 1,* , Varun Ramraj 1 , Stefano Lise 1,2 .<lb/></docAuthor>
+	</byline>
+
+	Author information<lb/>
+	<byline>
+	<affiliation>1 The Wellcome Trust Centre for Human Genetics,</affiliation>
+	</byline>
+
+	<address>Roosvelt Drive, Oxford OX3 7BN, UK<lb/></address>
+
+	<byline>
+	<affiliation>2 Current address: The Institute of Cancer Research,</affiliation>
+	</byline>
+
+	<address>15 Cotswold Road, Sutton, Surrey SM2 5NG, UK<lb/></address>
+
+	* Corresponding author Abstract<lb/>
+	<div type="abstract">As sequencing cost continues to decrease with fast advancing Next Generation Sequencing (NGS)<lb/> technologies, variant discovery is becoming a more affordable and popular analysis method among research<lb/> laboratories. Following variant calling and annotation, accurate variant filtering is a crucial step to extract<lb/> meaningful biological information from sequencing data and to investigate disease etiology. However, the<lb/> standard variant call file format (VCF) used to store this valuable information is not easy to handle without<lb/> bioinformatics skills, thus preventing investigators from directly analysing their data. Here, we present<lb/> BrowseVCF, an easy-to-use stand-alone software that enables researchers to browse, query and filter millions<lb/> of variants in a few seconds. Top features include the possibility to store intermediate search results, to query<lb/> user-defined gene lists, to group samples for family or tumour/normal studies, to download a report of the filters<lb/> applied, and to export the filtered variants in spreadsheet format. Additionally, BrowseVCF is suitable for any<lb/> DNA variant analysis (exome, whole-genome and targeted sequencing), can be used also for non-diploid<lb/> genomes, and is able to discriminate between Single Nucleotide Polymorphisms (SNPs), Insertions/Deletions<lb/> (InDels), and Multiple Nucleotide Polymorphisms (MNPs). Thanks to its portable implementation, BrowseVCF<lb/> can be used either on personal computers or as part of automated analysis pipelines. The software can be<lb/> initialised with a few clicks on any operating system without any special administrative or installation<lb/> permissions, and is freely available for download from https://github.com/BSGOxford/BrowseVCF.</div>
+
+	Keywords<lb/>
+	<keyword>VCF; variant filtering; variant analysis; exome sequencing; whole-genome sequencing; prioritisation.</keyword>
+
+		</front>
+	</text>
+</tei>

@@ -6,9 +6,6 @@ import org.grobid.core.engines.tagging.GenericTagger;
 
 import java.io.File;
 
-/**
- * @author Patrice Lopez
- */
 public interface Trainer {
 
     int createCRFPPData(File corpusPath, File outputFile);

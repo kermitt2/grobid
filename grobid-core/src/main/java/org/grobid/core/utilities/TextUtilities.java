@@ -19,7 +19,6 @@ import java.util.regex.Pattern;
 /**
  * Class for holding static methods for text processing.
  *
- * @author Patrice Lopez
  */
 public class TextUtilities {
 

@@ -9,10 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * Usage of CRF++ in GROBID is deprecated.
- * 
- * User: zholudev
- * Date: 3/20/14
+ * Note: Usage of CRF++ in GROBID is deprecated.
  *
  * @deprecated use WapitiTrainer or DelftTrainer (requires http://github.com/kermitt2/delft)
  */

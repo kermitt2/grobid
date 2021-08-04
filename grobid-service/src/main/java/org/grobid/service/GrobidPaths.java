@@ -2,7 +2,6 @@ package org.grobid.service;
 
 /**
  * This interface only contains the path extensions for accessing the grobid service.
- * @author Florian, Damien, Patrice
  *
  */
 public interface GrobidPaths {
@@ -140,4 +139,20 @@ public interface GrobidPaths {
 	 * path extension for getting version
 	 */
 	String PATH_GET_VERSION = "version";
+
+	/**
+	 * path to retrieve a model 
+	 */
+	String PATH_MODEL = "model";	
+
+	/**
+	 * path for launching the training of a model
+	 */
+	String PATH_MODEL_TRAINING = "modelTraining";		
+
+	/**
+	 * path for getting the advancement of the training of a model or 
+	 * the evaluation metrics of the new model if the training is completed
+	 */
+	String PATH_TRAINING_RESULT = "trainingResult";		
 }

@@ -16,9 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-/**
- * @author Patrice Lopez
- */
 public class AffiliationAddressParser extends AbstractParser {
     public Lexicon lexicon = Lexicon.getInstance();
 
@@ -36,13 +33,9 @@ public class AffiliationAddressParser extends AbstractParser {
             input = input.trim();
 
             input = TextUtilities.dehyphenize(input);
-            //StringTokenizer st = new StringTokenizer(input, " \n\t" + TextUtilities.fullPunctuations, true);
-            //List<String> tokenizations = new ArrayList<String>();
+
 			// TBD: pass the language object to the tokenizer 
 			List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
-            //while (st.hasMoreTokens()) {
-            //    String tok = st.nextToken();
-			//int p = 0;
 
             List<String> affiliationBlocks = getAffiliationBlocks(tokenizations);
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
@@ -61,20 +54,15 @@ public class AffiliationAddressParser extends AbstractParser {
     protected static List<String> getAffiliationBlocks(List<LayoutToken> tokenizations) {
         ArrayList<String> affiliationBlocks = new ArrayList<String>();
         for(LayoutToken tok : tokenizations) {
-            if (tok.getText().length() == 0) continue;
+            if (tok.getText().length() == 0) 
+                continue;
 
-            // is this necessary?
-            if (tok.getText().equals("\n")) {
-                //tokenizations.set(p, new LayoutToken(" "));
-                tok.setText(" ");
-            } 
             if (!tok.getText().equals(" ")) {
                 if (tok.getText().equals("\n")) {
                     affiliationBlocks.add("@newline");
                 } else
                     affiliationBlocks.add(tok + " <affiliation>");
             }
-            //p++;
         }
         return affiliationBlocks;
     }
@@ -103,14 +91,11 @@ public class AffiliationAddressParser extends AbstractParser {
                                           List<String> affiliationBlocks,
                                           List<LayoutToken> subTokenizations) {
         StringTokenizer st = new StringTokenizer(result, "\n");
-//System.out.println(result);
         String lastLabel = null;
         int p = 0;
         List<LayoutToken> tokenizationsBuffer = null;
-        boolean open = false;
         while (st.hasMoreTokens() && (p < tokenizations.size())) {
             String line = st.nextToken();
-//System.out.println(line);
             if (line.trim().length() == 0) {
                 affiliationBlocks.add("\n");
                 lastLabel = null;
@@ -121,24 +106,24 @@ public class AffiliationAddressParser extends AbstractParser {
                     delimiter = " "; 
                 String[] s = line.split(delimiter);
                 String s0 = s[0].trim();
+                boolean isEndLine = false;
+                if (line.contains("LINEEND")) {
+                    isEndLine = true;
+                }
+
                 int p0 = p;
                 boolean strop = false;
                 tokenizationsBuffer = new ArrayList<LayoutToken>();
                 String tokOriginal = null;
-//System.out.println("s0 = " + s0);
                 while ((!strop) && (p < tokenizations.size())) {
                     tokOriginal = tokenizations.get(p).getText().trim();
-                    if (open) {
-                        if (tokOriginal.equals("\n")) {
-                            affiliationBlocks.add("@newline");
-                        }
-                    }
                     tokenizationsBuffer.add(tokenizations.get(p));
                     if (tokOriginal.equals(s0)) {
                         strop = true;
                     }
                     p++;
                 }
+
                 if (p == tokenizations.size()) {
                     // either we are at the end of the header, or we might have 
                     // a problematic token in tokenization for some reasons
@@ -147,19 +132,19 @@ public class AffiliationAddressParser extends AbstractParser {
                         p = p0;
                         continue;
                     }
-                }
-//System.out.println("tokOriginal = " + tokOriginal);
+                }                
+
                 int ll = s.length;
                 String label = s[ll-1];
-                //String plainLabel = GenericTaggerUtils.getPlainLabel(label);
-//System.out.println(label);
                 if ((tokOriginal != null) && ( ((label.indexOf("affiliation") != -1) || (label.indexOf("address") != -1)) )) {
                     affiliationBlocks.add(tokOriginal + " " + label);
                     // add the content of tokenizationsBuffer
                     for(LayoutToken tokk : tokenizationsBuffer) {
                         subTokenizations.add(tokk);
                     }
-                    open = true;
+                    if (tokenizationsBuffer.size() > 0 && isEndLine) {
+                        affiliationBlocks.add("@newline");
+                    }
                 }
                 else if (lastLabel != null) {
                     affiliationBlocks.add("\n");

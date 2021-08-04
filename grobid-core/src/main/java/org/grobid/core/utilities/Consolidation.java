@@ -17,6 +17,7 @@ import scala.Option;
 
 import java.util.*;
 
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 import static org.grobid.core.data.BiblioItem.cleanDOI;
 
 /**
@@ -24,7 +25,6 @@ import static org.grobid.core.data.BiblioItem.cleanDOI;
  * When consolidation operations are realized, be sure to call the close() method
  * to ensure that all Executors are terminated.
  *
- * @author Patrice Lopez
  */
 public class Consolidation {
     private static final Logger LOGGER = LoggerFactory.getLogger(Consolidation.class);
@@ -113,7 +113,7 @@ public class Consolidation {
      * core metadata
      */
     public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
-        final List<BiblioItem> results = new ArrayList<BiblioItem>();
+        final List<BiblioItem> results = new ArrayList<>();
 
         String theDOI = bib.getDOI();
         if (StringUtils.isNotBlank(theDOI)) {
@@ -245,7 +245,7 @@ public class Consolidation {
                 doiQuery = false;
             }
 
-            client.<BiblioItem>pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
+            client.pushRequest("works", arguments, workDeserializer, threadId, new CrossrefRequestListener<BiblioItem>(0) {
 
                 @Override
                 public void onSuccess(List<BiblioItem> res) {
@@ -652,16 +652,19 @@ public class Consolidation {
             string1 = string1.toLowerCase();
             string2 = string2.toLowerCase();
         }
-        if (string1.equals(string2))
+        if (string1.equals(string2)) {
             similarity = 1.0;
-        if ( (string1.length() > 0) && (string2.length() > 0) ) {
+        }
+        
+        if ( isNotEmpty(string1) && isNotEmpty(string2) ) {
             Option<Object> similarityObject =
                 RatcliffObershelpMetric.compare(string1, string2);
-            if ( (similarityObject != null) && (similarityObject.get() != null) )
-                 similarity = (Double)similarityObject.get();
+            if (similarityObject.isDefined()) {
+                similarity = (Double) similarityObject.get();
+            }
         }
 
-        return similarity.doubleValue();
+        return similarity;
     }
 
 }

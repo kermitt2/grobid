@@ -1,6 +1,5 @@
 package org.grobid.core.utilities.counters.impl;
 
-
 import org.grobid.core.utilities.counters.Counter;
 
 import java.util.concurrent.atomic.AtomicLong;

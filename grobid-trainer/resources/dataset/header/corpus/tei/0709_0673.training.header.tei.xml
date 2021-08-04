@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0709_0673"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0709.0673v1 [hep-ex]</idno>
+
+	<date>5 Sep 2007<lb/></date>
+
+	<docTitle>
+	<titlePart>Excited Fermions at H1<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>E. Sauvan 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>CPPM, IN2P3-CNRS et Université de la Méditerranée, 163 Av. de Luminy<lb/></affiliation>
+	</byline>
+
+	<address>F-13288 Marseille, France<lb/></address>
+
+	E-mail:
+	<email>sauvan@cppm.in2p3.fr<lb/></email>
+
+	Abstract.
+	<div type="abstract">We present a search for excited neutrinos and electrons using all data collected<lb/> by the H1 experiment at HERA at a center-of-mass energy of 320 GeV with an integrated<lb/> luminosity of up to 435 pb −1 . No evidence for excited neutrino or electron production is<lb/> found. Mass dependent exclusion limits are determined for the ratio of the coupling to the<lb/> compositeness scale, f /Λ. These limits greatly extend the excluded region to higher masses<lb/> than has been possible in previous searches.</div>
+
+		</front>
+	</text>
+</tei>

@@ -26,12 +26,6 @@ import java.util.List;
 
 import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
-/**
- * Perform the batch processing for the different engine methods.
- *
- * @author Damien, Patrice
- */
-
 public class ProcessEngine implements Closeable {
 
     /**

@@ -27,7 +27,6 @@ import java.util.regex.Pattern;
 /**
  * Class for building basic structures in a document item.
  *
- * @author Patrice Lopez
  */
 public class BasicStructureBuilder {
 	private static final Logger LOGGER = LoggerFactory.getLogger(BasicStructureBuilder.class);
@@ -240,14 +239,6 @@ public class BasicStructureBuilder {
 
         SortedSetMultimap<String, DocumentPiece> labeledBlocks = TreeMultimap.create();
         doc.setLabeledBlocks(labeledBlocks);
-
-		/*try {
-        	FileUtils.writeStringToFile(new File("/tmp/x1.txt"), labeledResult);
-			FileUtils.writeStringToFile(new File("/tmp/x2.txt"), documentTokens.toString());
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}*/
 
         List<Block> docBlocks = doc.getBlocks();
 		int indexLine = 0;		

@@ -35,6 +35,7 @@ import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,11 +51,9 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
-
 /**
  * Class for generating a TEI representation of a document.
  *
- * @author Patrice Lopez
  */
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
@@ -101,14 +100,47 @@ public class TEIFormatter {
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
+                                     List<MarkerType> markerTypes,
                                      GrobidAnalysisConfig config) {
-        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, config);
+        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, config);
+    }
+
+    public static String toISOString(Date date) {
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+
+        String when = "";
+        if (year != -1) {
+            if (year <= 9)
+                when += "000" + year;
+            else if (year <= 99)
+                when += "00" + year;
+            else if (year <= 999)
+                when += "0" + year;
+            else
+                when += year;
+            if (month != -1) {
+                if (month <= 9)
+                    when += "-0" + month;
+                else
+                    when += "-" + month;
+                if (day != -1) {
+                    if (day <= 9)
+                        when += "-0" + day;
+                    else
+                        when += "-" + day;
+                }
+            }
+        }
+        return when;
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
+                                     List<MarkerType> markerTypes,
                                      GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -132,7 +164,6 @@ public class TEIFormatter {
         } 
 
         // by default there is no schema association
-
         if (schemaDeclaration != SchemaDeclaration.XSD) {
             tei.append("<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\">\n");
         }
@@ -188,36 +219,15 @@ public class TEIFormatter {
 
             if (biblio.getNormalizedPublicationDate() != null) {
                 Date date = biblio.getNormalizedPublicationDate();
-                int year = date.getYear();
-                int month = date.getMonth();
-                int day = date.getDay();
 
-                String when = "";
-                if (year != -1) {
-                    if (year <= 9)
-                        when += "000" + year;
-                    else if (year <= 99)
-                        when += "00" + year;
-                    else if (year <= 999)
-                        when += "0" + year;
-                    else
-                        when += year;
-                    if (month != -1) {
-                        if (month <= 9)
-                            when += "-0" + month;
-                        else
-                            when += "-" + month;
-                        if (day != -1) {
-                            if (day <= 9)
-                                when += "-0" + day;
-                            else
-                                when += "-" + day;
-                        }
-                    }
+                String when = toISOString(date);
+                if (StringUtils.isNotBlank(when)) {
                     tei.append("\t\t\t\t<date type=\"published\" when=\"");
-                    tei.append(when + "\">");
-                } else
+                    tei.append(when).append("\">");
+                } else {
                     tei.append("\t\t\t\t<date>");
+                }
+                
                 if (biblio.getPublicationDate() != null) {
                     tei.append(TextUtilities.HTMLEncode(biblio.getPublicationDate()));
                 } else {
@@ -516,32 +526,9 @@ public class TEIFormatter {
 
                 if (biblio.getNormalizedPublicationDate() != null) {
                     Date date = biblio.getNormalizedPublicationDate();
-                    int year = date.getYear();
-                    int month = date.getMonth();
-                    int day = date.getDay();
 
-                    String when = "";
-                    if (year != -1) {
-                        if (year <= 9)
-                            when += "000" + year;
-                        else if (year <= 99)
-                            when += "00" + year;
-                        else if (year <= 999)
-                            when += "0" + year;
-                        else
-                            when += year;
-                        if (month != -1) {
-                            if (month <= 9)
-                                when += "-0" + month;
-                            else
-                                when += "-" + month;
-                            if (day != -1) {
-                                if (day <= 9)
-                                    when += "-0" + day;
-                                else
-                                    when += "-" + day;
-                            }
-                        }
+                    String when = toISOString(date);
+                    if (StringUtils.isNotBlank(when)) {
                         if (biblio.getPublicationDate() != null) {
                             tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
                             tei.append(when + "\">");
@@ -832,6 +819,7 @@ public class TEIFormatter {
                                             null, 
                                             null, 
                                             null, 
+                                            markerTypes,
                                             doc,
                                             config); // no figure, no table, no equation
                 } catch(Exception e) {
@@ -947,6 +935,7 @@ public class TEIFormatter {
                                    List<Figure> figures,
                                    List<Table> tables,
                                    List<Equation> equations,
+                                   List<MarkerType> markerTypes,
                                    Document doc,
                                    GrobidAnalysisConfig config) throws Exception {
         if ((result == null) || (layoutTokenization == null) || (layoutTokenization.getTokenization() == null)) {
@@ -955,10 +944,10 @@ public class TEIFormatter {
         }
         buffer.append("\t\t<body>\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true, 
-                layoutTokenization, figures, tables, equations, doc, config);
+                layoutTokenization, figures, tables, equations, markerTypes, doc, config);
 
         // notes are still in the body
-        buffer = toTEINote(buffer, doc, config);
+        buffer = toTEINote(buffer, doc, markerTypes, config);
 
         buffer.append("\t\t</body>\n");
 
@@ -967,15 +956,16 @@ public class TEIFormatter {
 
     private StringBuilder toTEINote(StringBuilder tei,
                                     Document doc,
+                                    List<MarkerType> markerTypes,
                                     GrobidAnalysisConfig config) throws Exception {
         // write the notes
         SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
         if (documentNoteParts != null) {
-            tei = toTEINote("foot", documentNoteParts, tei, doc, config);
+            tei = toTEINote("foot", documentNoteParts, tei, markerTypes, doc, config);
         }
         documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
         if (documentNoteParts != null) {
-            tei = toTEINote("margin", documentNoteParts, tei, doc, config);
+            tei = toTEINote("margin", documentNoteParts, tei, markerTypes, doc, config);
         }
         return tei;
     }
@@ -983,6 +973,7 @@ public class TEIFormatter {
     private StringBuilder toTEINote(String noteType,
                                     SortedSet<DocumentPiece> documentNoteParts,
                                     StringBuilder tei,
+                                    List<MarkerType> markerTypes,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
         List<String> allNotes = new ArrayList<>();
@@ -1113,7 +1104,7 @@ public class TEIFormatter {
         StringBuilder buffer2 = new StringBuilder();
 
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, doc, config);
+                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, null, doc, config);
         String acknowResult = buffer2.toString();
         String[] acknowResultLines = acknowResult.split("\n");
         boolean extraDiv = false;
@@ -1135,6 +1126,7 @@ public class TEIFormatter {
                                     BiblioItem biblio,
                                     List<BibDataSet> bds,
                                     List<LayoutToken> tokenizations,
+                                    List<MarkerType> markerTypes,
                                     Document doc,
                                     GrobidAnalysisConfig config) throws Exception {
         if ((result == null) || (tokenizations == null)) {
@@ -1143,7 +1135,7 @@ public class TEIFormatter {
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true,
-                new LayoutTokenization(tokenizations), null, null, null, doc, config);
+                new LayoutTokenization(tokenizations), null, null, null, markerTypes, doc, config);
         buffer.append("\t\t\t</div>\n");
 
         return buffer;
@@ -1158,6 +1150,7 @@ public class TEIFormatter {
                                          List<Figure> figures,
                                          List<Table> tables,
                                          List<Equation> equations,
+                                         List<MarkerType> markerTypes,
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
         TaggingLabel lastClusterLabel = null;
@@ -1292,11 +1285,15 @@ public class TEIFormatter {
                 parent.appendChild(new Text(" "));
 
                 List<Node> refNodes;
+                MarkerType citationMarkerType = null;
+                if (markerTypes != null && markerTypes.size()>0) {
+                    citationMarkerType = markerTypes.get(0);
+                }
                 if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                     refNodes = markReferencesTEILuceneBased(refTokens,
                             doc.getReferenceMarkerMatcher(),
                             config.isGenerateTeiCoordinates("ref"), 
-                            keepUnsolvedCallout);
+                            keepUnsolvedCallout, citationMarkerType);
 
                 } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
                     refNodes = markReferencesFigureTEI(chunkRefString, refTokens, figures,
@@ -1372,7 +1369,7 @@ public class TEIFormatter {
 
         if (figures != null) {
             for (Figure figure : figures) {
-                String figSeg = figure.toTEI(config, doc, this);
+                String figSeg = figure.toTEI(config, doc, this, markerTypes);
                 if (figSeg != null) {
                     buffer.append(figSeg).append("\n");
                 }
@@ -1380,7 +1377,7 @@ public class TEIFormatter {
         }
         if (tables != null) {
             for (Table table : tables) {
-                String tabSeg = table.toTEI(config, doc, this);
+                String tabSeg = table.toTEI(config, doc, this, markerTypes);
                 if (tabSeg != null) {
                     buffer.append(tabSeg).append("\n");
                 }
@@ -1645,17 +1642,54 @@ System.out.println(theSentences.toString());
                                                    ReferenceMarkerMatcher markerMatcher, 
                                                    boolean generateCoordinates,
                                                    boolean keepUnsolvedCallout) throws EntityMatcherException {
+        return markReferencesTEILuceneBased(refTokens, markerMatcher, generateCoordinates, keepUnsolvedCallout, null);
+    }
+
+    public List<Node> markReferencesTEILuceneBased(List<LayoutToken> refTokens,
+                                                   ReferenceMarkerMatcher markerMatcher, 
+                                                   boolean generateCoordinates,
+                                                   boolean keepUnsolvedCallout,
+                                                   MarkerType citationMarkerType) throws EntityMatcherException {
         // safety tests
         if ( (refTokens == null) || (refTokens.size() == 0) ) 
             return null;
         String text = LayoutTokensUtil.toText(refTokens);
         if (text == null || text.trim().length() == 0 || text.endsWith("</ref>") || text.startsWith("<ref") || markerMatcher == null)
             return Collections.<Node>singletonList(new Text(text));
-        
+
         boolean spaceEnd = false;
         text = text.replace("\n", " ");
         if (text.endsWith(" "))
             spaceEnd = true;
+
+        // check constraints on global marker type, we need to discard reference markers that do not follow the
+        // reference marker pattern of the document
+        if (citationMarkerType != null) {
+            // do we have superscript numbers in the ref tokens?
+            boolean hasSuperScriptNumber = false;
+            for(LayoutToken refToken : refTokens) {
+                if (refToken.isSuperscript()) {
+                    hasSuperScriptNumber = true;
+                    break;
+                }                    
+            }
+
+            if (citationMarkerType == MarkerType.SUPERSCRIPT_NUMBER) {
+                // we need to check that the reference tokens have some superscript numbers
+                if (!hasSuperScriptNumber) {
+                    return Collections.<Node>singletonList(new Text(text));
+                }
+            } else {
+                // if the reference tokens has some superscript numbers, it is a callout for a different type of object
+                // (e.g. a foot note)
+                if (hasSuperScriptNumber) {
+                    return Collections.<Node>singletonList(new Text(text));
+                }
+            }
+
+            // TBD: check other constraints and consistency issues
+        }
+
         //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
@@ -1703,7 +1737,7 @@ System.out.println(theSentences.toString());
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase();
+        String textLow = text.toLowerCase().trim();
         String bestFigure = null;
 
         if (figures != null) {
@@ -1711,9 +1745,23 @@ System.out.println(theSentences.toString());
                 if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(figure.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                            (textLow.equals(label.toLowerCase()))) {
                         bestFigure = figure.getId();
                         break;
+                    }
+                }
+            }
+            if (bestFigure == null) {
+                // second pass with relaxed figure marker matching
+                for(int i=figures.size()-1; i>=0; i--) {
+                    Figure figure = figures.get(i);
+                    if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
+                        String label = TextUtilities.cleanField(figure.getLabel(), false);
+                        if ((label.length() > 0) &&
+                                (textLow.contains(label.toLowerCase()))) {
+                            bestFigure = figure.getId();
+                            break;
+                        }
                     }
                 }
             }
@@ -1756,22 +1804,31 @@ System.out.println(theSentences.toString());
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase();
+        String textLow = text.toLowerCase().trim();
         String bestTable = null;
         if (tables != null) {
             for (Table table : tables) {
-                /*if ((table.getId() != null) &&
-                        (table.getId().length() > 0) &&
-                        (textLow.contains(table.getId().toLowerCase()))) {
-                    bestTable = table.getId();
-                    break;
-                }*/
                 if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(table.getLabel(), false);
                     if ((label.length() > 0) &&
-                            (textLow.contains(label.toLowerCase()))) {
+                            (textLow.equals(label.toLowerCase()))) {
                         bestTable = table.getId();
                         break;
+                    }
+                }
+            }
+
+            if (bestTable == null) {
+                // second pass with relaxed table marker matching
+                for(int i=tables.size()-1; i>=0; i--) {
+                    Table table = tables.get(i);
+                    if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
+                        String label = TextUtilities.cleanField(table.getLabel(), false);
+                        if ((label.length() > 0) &&
+                                (textLow.contains(label.toLowerCase()))) {
+                            bestTable = table.getId();
+                            break;
+                        }
                     }
                 }
             }

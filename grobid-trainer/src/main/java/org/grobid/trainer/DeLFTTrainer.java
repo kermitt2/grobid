@@ -9,16 +9,13 @@ import java.math.BigDecimal;
 
 import java.io.File;
 
-/**
- * @author: Patrice
- */
 public class DeLFTTrainer implements GenericTrainer {
 
     public static final String DELFT = "delft";
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
-        DeLFTModel.train(model.getModelName(), trainingData, outputModel, GrobidProperties.getDelftArchitecture());
+        DeLFTModel.train(model.getModelName(), trainingData, outputModel, GrobidProperties.getDelftArchitecture(model));
     }
 
     @Override

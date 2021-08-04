@@ -13,10 +13,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
-/**
- * User: zholudev
- * Date: 4/2/14
- */
 public class GenericTaggerUtils {
 
     // Deprecated, please use the constants from TaggingLabels

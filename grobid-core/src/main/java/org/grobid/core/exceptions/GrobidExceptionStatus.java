@@ -1,9 +1,5 @@
 package org.grobid.core.exceptions;
 
-/**
- * User: zholudev
- * Date: 1/19/15
- */
 public enum GrobidExceptionStatus {
     BAD_INPUT_DATA,
     TAGGING_ERROR,
@@ -11,7 +7,7 @@ public enum GrobidExceptionStatus {
     TIMEOUT,
     TOO_MANY_BLOCKS,
     NO_BLOCKS,
-    PDFTOXML_CONVERSION_FAILURE,
+    PDFALTO_CONVERSION_FAILURE,
     TOO_MANY_TOKENS,
     GENERAL
 }

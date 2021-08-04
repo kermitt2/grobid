@@ -1,0 +1,30 @@
+<tei>
+    <teiHeader>
+        <fileDesc xml:id="_PatternV12014.pdf"/>
+    </teiHeader>
+    <text xml:lang="en">
+
+
+		<figure type="table">
+
+            <table>Dataset<lb/> Motions<lb/> Total number of ac-<lb/>tions<lb/> Experimental<lb/> protocol<lb/> MSR-action 3D<lb/> [28]<lb/> RGB + depth (320*240) + 20<lb/> joints: high arm wave, horizontal<lb/> arm wave, hammer, hand catch,<lb/> forward punch, high throw, draw<lb/> X, draw tick, draw circle, hand<lb/> clap, two hand wave, side-<lb/>boxing, bend, forward kick, side<lb/> kick, jogging, tennis swing, ten-<lb/>nis serve, golf swing, pick up and<lb/> throw<lb/> 10 subjects | 20 ac-<lb/>tions | 3 try ) To-<lb/>tal of 520 actions<lb/> 50% Learn-<lb/>ing / 50%<lb/> Testing<lb/> UT-kinect [35]<lb/> RGB + depth (320*240) + 20<lb/> joints: walk, sit down, stand up,<lb/> pick up, carry, throw, push, pull,<lb/> wave and clap hands<lb/> 10 subject | 10 ac-<lb/>tions | 2 try ) To-<lb/>tal of 200 actions<lb/> leave-one-<lb/>out<lb/> cross-<lb/>validation<lb/> UCF-kinect [41] 15 joints: balance, climb up,<lb/> climb ladder, duck, hop, vault,<lb/> leap, run, kick, punch, twist left,<lb/> twist right , step forward, step<lb/> back, step left, step right<lb/> 16 subjects | 16 ac-<lb/>tions | 5 try ) To-<lb/>tal of 1280 actions<lb/> 70% Learn-<lb/>ing / 30%<lb/> Testing<lb/> </table>
+ 
+            <head>Table <label>1</label>: </head>
+ 
+            <figDesc>Overview of the datasets used in the experiments.</figDesc>
+		</figure>
+
+
+		<figure type="table">
+
+            <table>Actions<lb/> per class<lb/> Training dataset % Accuracy %<lb/> 5<lb/> 37.17<lb/> 73.36<lb/> 6<lb/> 44.23<lb/> 77.64<lb/> 7<lb/> 51.13<lb/> 83.10<lb/> 8<lb/> 58.36<lb/> 84.79<lb/> 9<lb/> 65.54<lb/> 88.51<lb/> 10<lb/> 72.49<lb/> 89.18<lb/> 11<lb/> 79.95<lb/> 87.83<lb/> 12<lb/> 86.24<lb/> 88.85<lb/> 13<lb/> 91.07<lb/> 90.20<lb/> 14<lb/> 95.91<lb/> 90.54<lb/> 15<lb/> 100<lb/> 91.21</table>
+
+            <head>Table <label>3</label>: </head>
+ 
+            <figDesc>Recognition accuracy, obtained by our approach using LTBSVM on MSR-Action<lb/> 3D dataset, with di↵erent size of training dataset.</figDesc>
+		</figure>
+
+
+    </text>
+</tei>
+

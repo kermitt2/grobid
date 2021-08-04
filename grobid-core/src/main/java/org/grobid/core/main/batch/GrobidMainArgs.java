@@ -3,8 +3,6 @@ package org.grobid.core.main.batch;
 /**
  * Class containing args of the batch {@link GrobidMain}.
  * 
- * @author Damien, Patrice
- * 
  */
 public class GrobidMainArgs {
 
