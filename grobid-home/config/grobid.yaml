@@ -2,7 +2,7 @@
 
 grobid:
   # where all the Grobid resources are stored (models, lexicon, native libraries, etc.), normally no need to change
-  grobidHome: "grobid-home"
+  grobidHome: ${GROBID__GROBID_HOME:- "grobid-home"}
 
   # path relative to the grobid-home path (e.g. grobid-home/tmp)
   temp: "tmp"
@@ -211,7 +211,7 @@ grobid:
   #          the service at first call
   # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
   #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  modelPreload: ${GROBID__MODEL_PRELOAD:- false}
 
 server:
     type: custom
