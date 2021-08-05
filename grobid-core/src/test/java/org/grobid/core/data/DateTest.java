@@ -14,7 +14,7 @@ public class DateTest {
     Date other;
 
     @Test
-    public void testDateMerging1() {
+    public void testDateMerging_yearVsYearMonth_shouldReturnYearMonth() {
         // "2010" "2010-10" -> "2010-10"
 
         target = new Date();
@@ -31,7 +31,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDateMerging2() {
+    public void testDateMerging_yearVsYearMonthDay_shouldReturnYearMonthDay() {
         // "2010" "2010-10-27" -> "2010-10-27"
 
         target = new Date();
@@ -50,7 +50,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDateMerging3() {
+    public void testDateMerging_yearMonthVsYearMonthDay_shouldReturnYearMonthDay() {
         // "2010-10" "2010-10-27" -> "2010-10-27"
 
         target = new Date();
@@ -70,7 +70,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDateMerging32() {
+    public void testDateMerging_YearMonthDayVsYearMonth_shouldReturnYearMonthDay() {
         // "2010-10-27" "2010-10" -> "2010-10-27"
 
         target = new Date();
@@ -90,7 +90,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDateMerging4() {
+    public void testDateMerging_differentDates_yearMonth_shouldReturnOriginal() {
         // "2011-10" "2010-10-27" -> "2011-10"
 
         target = new Date();
@@ -109,7 +109,7 @@ public class DateTest {
     }    
 
     @Test
-    public void testDateMerging5() {
+    public void testDateMerging_differentDates_year_shouldReturnOriginal() {
         // "2010" "2016-10-27" -> "2010"
 
         target = new Date();
@@ -126,7 +126,7 @@ public class DateTest {
     }
 
     @Test
-    public void testDateMerging6() {
+    public void testDateMerging_differentDates_onlyYear_shouldReturnOriginal() {
         // "2011" "2010" -> 2011
 
         target = new Date();
