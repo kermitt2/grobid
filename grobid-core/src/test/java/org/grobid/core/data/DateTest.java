@@ -139,5 +139,41 @@ public class DateTest {
 
         assertThat(merged.getYear(), is(2011));
     }
+    
+    @Test 
+    public void testToISOString_onlyYear() {
+        Date date = new Date();
+        date.setYear(2016);
+        date.setMonth(10);
+        date.setDay(27);
 
+        assertThat(Date.toISOString(date), is("2016-10-27"));
+    }
+
+    @Test
+    public void testToISOString_onlyYear_WithoutPrefix() {
+        Date date = new Date();
+        date.setYear(16);
+        date.setMonth(10);
+        date.setDay(27);
+
+        assertThat(Date.toISOString(date), is("0016-10-27"));
+    }
+
+    @Test
+    public void testToISOString_completeDate_missingMonth() {
+        Date date = new Date();
+        date.setYear(2016);
+        date.setDay(27);
+
+        assertThat(Date.toISOString(date), is("2016"));
+    }
+
+    @Test
+    public void testToISOString_onlyDay() {
+        Date date = new Date();
+        date.setDay(27);
+
+        assertThat(Date.toISOString(date), is(""));
+    }
 }
