@@ -1,5 +1,6 @@
 package org.grobid.core.data;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
@@ -123,6 +124,25 @@ public class DateTest {
         Date merged = Date.merge(target, other);
 
         assertThat(merged.getYear(), is(2010));
+    }
+
+    @Test
+    @Ignore("To be enabled after and if the logic is modified ")
+    public void testDateMerging_differentDates_missingYearFromTarget() {
+        // "" "2016-10-27" -> ""  ??
+
+        target = new Date();
+
+        other = new Date();
+        other.setYear(2016);
+        other.setMonth(10);
+        other.setDay(27);
+
+        Date merged = Date.merge(target, other);
+
+        assertThat(merged.getYear(), is(2016));
+        assertThat(merged.getMonth(), is(10));
+        assertThat(merged.getDay(), is(27));
     }
 
     @Test
