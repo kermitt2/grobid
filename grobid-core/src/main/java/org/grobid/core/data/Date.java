@@ -23,8 +23,17 @@ public class Date implements Comparable {
     private String yearString = null;
 
     public Date() {
-
     }
+
+    public Date(Date fromDate) {
+        this.day = fromDate.day;
+        this.month = fromDate.month;
+        this.year = fromDate.year;
+        this.rawDate = fromDate.rawDate;
+        this.dayString = fromDate.dayString;
+        this.monthString = fromDate.monthString;
+        this.yearString = fromDate.yearString;
+    }   
 
     public int getDay() {
         return day;
@@ -180,7 +189,8 @@ public class Date implements Comparable {
     }
 
     /**
-     * Merge into a given date the date information from a second date. 
+     * Return a new date instance by merging the date information from a first date with
+     * the date information from a second date. 
      * The merging follows the year, month, day sequence. If the years
      * for instance clash, the merging is stopped. 
      *
@@ -194,29 +204,22 @@ public class Date implements Comparable {
      * "2011" "2010" -> 2011
      */
     public static Date merge(Date date1, Date date2) {
-        if (date1.getYear() == -1 && date2.getYear() != -1){
-            return date2;
-        } 
-        
-        if (date2.getYear() == -1 && date1.getYear() != -1) {
-            return date1;
+        if (date1.getYear() == -1) {
+            return new Date(date2);
         }
         
-        if (date1.getYear() != date2.getYear()) {
-            return date1;
-        } else if (date1.getMonth() == -1 && date2.getMonth() != -1) {
-            date1.setMonth(date2.getMonth());
-            date1.setMonthString(date2.getMonthString());
-        } else if (date1.getMonth() != -1 && date2.getMonth() != -1) {
-            if (date1.getMonth() != date2.getMonth()) {
-                return date1;
+        if (date1.getYear() == date2.getYear()) {
+            if (date1.getMonth() == -1 && date2.getMonth() != -1) {
+                return new Date(date2);
+            } 
+            if (date1.getMonth() == date2.getMonth()) {
+                if (date1.getDay() == -1 && date2.getDay() != -1) {
+                    return new Date(date2);
+                }
             }
         }
-        if (date1.getDay() == -1 && date2.getDay() != -1) {
-            date1.setDay(date2.getDay());
-            date1.setDayString(date2.getDayString());
-        }
-        return date1;
+
+        return new Date(date1);
     }
 
     public String toString() {
