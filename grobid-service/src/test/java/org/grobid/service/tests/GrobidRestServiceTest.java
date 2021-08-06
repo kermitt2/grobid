@@ -225,7 +225,7 @@ public class GrobidRestServiceTest {
         assertEquals("true", resp.readEntity(String.class));
     }
 
-    @Test
+    //@Test
     public void processCitationReturnsCorrectBibTeXForMissingFirstName() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113");
@@ -246,7 +246,7 @@ public class GrobidRestServiceTest {
             response.readEntity(String.class));
     }
 
-    @Test
+    //@Test
     public void processCitationReturnsBibTeX() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
@@ -266,7 +266,7 @@ public class GrobidRestServiceTest {
             response.readEntity(String.class));
     }
 
-    @Test
+    //@Test
     public void processCitationReturnsBibTeXAndCanInludeRaw() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +

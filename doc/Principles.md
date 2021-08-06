@@ -12,7 +12,7 @@ In large scale scientific document ingestion tasks, the large majority of docume
 
 To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
 
-The rest of this page gives an overview of the main GROBID design principles. Skip it if you are not interested in the technical details. Functionalities are described in the [User Manual](https://grobid.readthedocs.io/en/latest/).
+The rest of this page gives an overview of the main GROBID design principles. Skip it if you are not interested in the technical details. Functionalities are described in the [User Manual](https://grobid.readthedocs.io/en/latest/). Recent benchmarking are available [here](https://grobid.readthedocs.io/en/latest/Benchmarking/).
 
 ##Document parsing as a cascade of sequence labeling models
 
@@ -57,7 +57,7 @@ Dedicated joint Deep Learning models able to exploit these additional layout fea
 </p>
 
 
-GROBID models maintains a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labeling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new interactions. __Fig. 3 and 4__ presents two examples of visualization of extracted objects thanks to GROBID coordinates associated to structures. 
+GROBID models maintain a synchronization between the labeling process and the layout token bounding boxes. It means that as the labeled fields are built via sequence labeling, the bounding boxes of the created structures are also build. Operations on 2D bounding boxes are well known and straight-forward to apply to Layout elements. By synchronizing the bounding boxes with the sequence labeling, we can render any structured results on their original PDF source. More generally, applied to any PDF processing, extracted structures and annotations can include bounding boxes giving precise location in the original document layout. Text mining is then not limited to populating a database, it allows user-friendly visualizations of semantically enriched documents and new user interactions. __Fig. 3 and 4__ presents two examples of visualization of extracted objects thanks to GROBID coordinates associated to structures. 
 
 ![PDF annotation service with Equation pop-up](img/Screenshot5.png)
 
@@ -87,7 +87,7 @@ As the training data is crafted for accuracy and coverage, it is strongly biased
 
 Our evaluation approach, however, raises two main issues: 
 
-- our publisher evaluation sets present currently the same lack of diversity drawback as discussed above with training data, because the evaluation sets are all coming from life science or preprints. At least, as compared to most of the similar works, we do not train and evaluate at the same time with the same domains and sources of publications, because we maintain a strong diversity in the training data. 
+- our publisher evaluation sets present currently the same lack of diversity drawback as discussed above with publisher XML-based training data, because the evaluation sets are all coming from life science or preprints. At least, as compared to most of the similar works, we do not train and evaluate at the same time with the same domains and sources of publications, because we maintain a strong diversity in the training data. 
 
 - although much better adapted to tackle the gap between the n-fold validation and real performance, the usage of stable holdout sets (usually favored by ML practitioners) can lead too lower reliability over time due to successive re-uses of the holdout data for guiding design improvements (as we validate addition of training data and features based on holdout set performance). 
 
