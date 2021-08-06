@@ -127,9 +127,8 @@ public class DateTest {
     }
 
     @Test
-    @Ignore("To be enabled after and if the logic is modified ")
     public void testDateMerging_differentDates_missingYearFromTarget() {
-        // "" "2016-10-27" -> ""  ??
+        // "" "2016-10-27" -> "2016-10-27"  
 
         target = new Date();
 

@@ -194,21 +194,27 @@ public class Date implements Comparable {
      * "2011" "2010" -> 2011
      */
     public static Date merge(Date date1, Date date2) {
-        if (date1.getYear() != -1 && date2.getYear() != -1) {
-            if (date1.getYear() != date2.getYear()) {
+        if (date1.getYear() == -1 && date2.getYear() != -1){
+            return date2;
+        } 
+        
+        if (date2.getYear() == -1 && date1.getYear() != -1) {
+            return date1;
+        }
+        
+        if (date1.getYear() != date2.getYear()) {
+            return date1;
+        } else if (date1.getMonth() == -1 && date2.getMonth() != -1) {
+            date1.setMonth(date2.getMonth());
+            date1.setMonthString(date2.getMonthString());
+        } else if (date1.getMonth() != -1 && date2.getMonth() != -1) {
+            if (date1.getMonth() != date2.getMonth()) {
                 return date1;
-            } else if (date1.getMonth() == -1 && date2.getMonth() != -1) {
-                date1.setMonth(date2.getMonth());
-                date1.setMonthString(date2.getMonthString());
-            } else if (date1.getMonth() != -1 && date2.getMonth() != -1) {
-                if (date1.getMonth() != date2.getMonth()) {
-                    return date1;
-                }
             }
-            if (date1.getDay() == -1 && date2.getDay() != -1) {
-                date1.setDay(date2.getDay());
-                date1.setDayString(date2.getDayString());
-            } 
+        }
+        if (date1.getDay() == -1 && date2.getDay() != -1) {
+            date1.setDay(date2.getDay());
+            date1.setDayString(date2.getDayString());
         }
         return date1;
     }
