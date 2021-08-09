@@ -44,8 +44,8 @@ public class FeaturesVectorFigureSegmenter {
     // relative position from the graphic box, discretized and relative to the window size
     public int relativePositionFromGraphicBox = -1;
 
-    // indicate extension direction, up (true) or down (false)
-    public boolean extensionDirectionUp = false;
+    // indicate if the token is in the identified graphic box or not
+    public boolean inGraphicBox = false;
 
     public String printVector() {
         if (string == null) return null;
@@ -144,11 +144,11 @@ public class FeaturesVectorFigureSegmenter {
         // relativePositionFromGraphicBox, discretised (1)
         res.append(" " + relativePositionFromGraphicBox);
 
-        // direction of extension (1)
-        if (extensionDirectionUp)
-            res.append(" UP");
+        // in graphic box or not (1)
+        if (inGraphicBox)
+            res.append(" 1");
         else
-            res.append(" DOWN");
+            res.append(" 0");
 
         // 28 features written at this point
 
