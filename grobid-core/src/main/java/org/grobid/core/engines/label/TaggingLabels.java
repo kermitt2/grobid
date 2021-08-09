@@ -247,6 +247,11 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_GLOSSARY = new TaggingLabelImpl(GrobidModels.MONOGRAPH, GLOSSARY_LABEL);
     public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
+
+    public static final TaggingLabel FIGURE_SEGMENTER_UP_FIGURE = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_UP, FIGURE_LABEL);
+    public static final TaggingLabel FIGURE_SEGMENTER_UP_OTHER = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_UP, OTHER_LABEL);
+    public static final TaggingLabel FIGURE_SEGMENTER_DOWN_FIGURE = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_DOWN, FIGURE_LABEL);
+    public static final TaggingLabel FIGURE_SEGMENTER_DOWN_OTHER = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_DOWN, OTHER_LABEL);
     
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -379,6 +384,12 @@ public class TaggingLabels {
         register(MONOGRAPH_GLOSSARY);
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
+
+        // figure segmenters
+        register(FIGURE_SEGMENTER_UP_FIGURE);
+        register(FIGURE_SEGMENTER_UP_OTHER);
+        register(FIGURE_SEGMENTER_DOWN_FIGURE);
+        register(FIGURE_SEGMENTER_DOWN_OTHER);
     }
 
     protected TaggingLabels() {

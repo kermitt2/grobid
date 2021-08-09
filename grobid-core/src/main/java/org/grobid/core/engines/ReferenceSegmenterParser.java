@@ -86,7 +86,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			res = label(featureVector);
 		}
 		catch(Exception e) {
-			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+			throw new GrobidException("Sequence labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;
@@ -183,7 +183,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			res = label(featureVector);
 		}
 		catch(Exception e) {
-			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+			throw new GrobidException("Sequence labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;

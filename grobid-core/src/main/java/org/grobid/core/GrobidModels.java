@@ -48,7 +48,8 @@ public enum GrobidModels implements GrobidModel {
     ASTRO("astro"),
     SOFTWARE("software"),
     DATASEER("dataseer"),
-    FIGURE_SEGMENTER("figure-segmenter"),
+    FIGURE_SEGMENTER_UP("figure-segmenter-up"),
+    FIGURE_SEGMENTER_DOWN("figure-segmenter-down"),
     DUMMY("none");
 
     //I cannot declare it before
