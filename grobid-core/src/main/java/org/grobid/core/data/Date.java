@@ -9,11 +9,10 @@ package org.grobid.core.data;
  * 19.10.2010 < 20.10.2010
  * 1999 < 10.2000
  * 10.1999 < 2000
- * which is not the same as a comparison in term of the time flow only.
- * For comparing dates in term of strict time flow, please use java.util.Date + java.util.Calendar
- *
+ * which is not the same as a comparison based only on time flow.
+ * For comparing dates by strict time flow, please use java.util.Date + java.util.Calendar
  */
-public class Date implements Comparable {
+public class Date implements Comparable<Date> {
     private int day = -1;
     private int month = -1;
     private int year = -1;
@@ -138,11 +137,7 @@ public class Date implements Comparable {
 
         return EQUAL;
     }
-
-    public int compareTo(Object another) {
-        return compareTo(((Date) another));
-    }
-
+    
     public boolean isNotNull() {
         return (rawDate != null) ||
             (dayString != null) ||
