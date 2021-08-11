@@ -7,13 +7,13 @@ For the following guidelines, it is expected that training data has been generat
 The following TEI elements are used by the segmentation model:
 
 * `<titlePage>` for the cover page
-* `<front>` for the document header, including first page and footer 
+* `<front>` for the document header, including first page and first footer 
 * `<note place="headnote">` for the page header
 * `<note place="footnote">` for the page footer and numbered footnotes
 * `<body>` for the document body
 * `<listBibl>` for the bibliographical section
 * `<page>` to indicate page numbers
-* `<div type="annex">` for annexes, including author contributions
+* `<div type="annex">` for annexes
 * `<div type="acknowledgment">` for acknowledgments
 * `<div type="toc">` for table of content
 
@@ -113,7 +113,7 @@ Figures and table, including captions, appearing after the references but relate
 
 ### Author contributions
 
-Author contributions belongs to the annexes 
+If the Author contributions are appearing outside the front page, they are to be annotated as annex, else they belong to the `<front>`.  
 
 ### Hidden characters
 
