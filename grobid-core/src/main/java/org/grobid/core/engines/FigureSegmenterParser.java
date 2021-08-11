@@ -38,6 +38,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * A model for segmenting the figure areas. The model is applied after the Segmentation model and
@@ -78,7 +80,8 @@ public class FigureSegmenterParser {
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
         // for each figure anchor, we generate sequence to be labeled with features
-        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors);
+        boolean up = false;
+        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors, up);
         
         List<String> contents = featureObject.getLeft();
         List<LayoutTokenization> theTokenizations = featureObject.getRight();
@@ -87,8 +90,6 @@ public class FigureSegmenterParser {
         if (contents != null && contents.size() > 0) {
             String labelledResults;
             try {
-                boolean up = false;
-                
                 GenericTagger tagger = up ? figureSegmenterParserUp : figureSegmenterParserDown;
                 labelledResults = tagger.label(contents);
             } catch(Exception e) {
@@ -109,7 +110,7 @@ public class FigureSegmenterParser {
      * Addition of the features at layout token level for the areas before and after the figure anchors.
      *
      */
-    private Pair<List<String>,List<LayoutTokenization>> getAreasFeatured(Document doc, List<GraphicObject> figureAnchors) {
+    private Pair<List<String>,List<LayoutTokenization>> getAreasFeatured(Document doc, List<GraphicObject> figureAnchors, boolean up) {
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
@@ -133,7 +134,10 @@ public class FigureSegmenterParser {
             int startPos = startGraphicPos;
             int endPos = endGraphicPos;
 
-            // start down and determine the end position in the down direction
+            // position of the blocks in the page where the GraphicObject is located
+            Map<Integer,Block> blockIndexMap = new HashMap<>();
+            Page currentPage = null;
+
             for (Page page : doc.getPages()) {
                 if (page.getNumber() == figureAnchor.getPage()) {
                     if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) {
@@ -153,44 +157,69 @@ public class FigureSegmenterParser {
                             firstPageBlock = true;
                         }
                         List<LayoutToken> tokens = block.getTokens();
-                        if (tokens == null && lastPageBlock) {
-                            break;
-                        }
-                        if (tokens == null) {
+                        if (tokens == null || tokens.size() == 0) {
                             continue;
                         }
 
-
+                        blockIndexMap.put(tokens.get(0).getOffset(), block);
                     }
-
+                    currentPage = page;
                     break;
                 }
             }
 
+            if (currentPage == null || blockIndexMap.size() == 0) {
+                // we can't process this malformed graphic object (it should not happen ;)
+                continue;
+            }
 
-            for(int i=startPos; i<=endPos; i++) {
-                FeaturesVectorFigureSegmenter features = new FeaturesVectorFigureSegmenter();
-
-                LayoutToken token = tokenizations.get(i);
-                localTokenization.add(token);
-                String localText = token.getText();
-
-                if (localText == null) {
-                    continue;
+            if (up) {
+                // go up and determine the start position in the upper direction
+                Block currentBlock = blockIndexMap.get(startPos);
+                int pos = currentPage.getBlocks().indexOf(currentBlock);
+                for(int j=1; j<=EXTENSION_SIZE; j++) {
+                    if (pos-j < 0)
+                        break; 
+                    List<LayoutToken> localTokens = currentPage.getBlocks().get(pos-j).getTokens();
+                    if (localTokens == null || localTokens.size() == 0)
+                        continue;
+                    startPos = currentPage.getBlocks().get(pos-j).getTokens().get(0).getOffset();
                 }
 
-                localText = localText.replaceAll("[ \n]", "");
-                if(localText.length() == 0 || TextUtilities.filterLine(localText)) {
-                    continue;
+                for(int i=endPos; i>=startPos; i--) {
+                    localTokenization.add(tokenizations.get(i));
+                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap);
+                    if (features != null) {
+                        if (i >= startGraphicPos && i <= endGraphicPos)
+                            features.inGraphicBox = true;
+                        content.append(features.printVector());
+                    }
+                }
+            } else {
+                // go down and determine the end position in the down direction
+                Block currentBlock = blockIndexMap.get(endPos+1);
+                // if currentBlock here is null, we are already at the end of the page
+                if (currentBlock != null) {
+                    int pos = currentPage.getBlocks().indexOf(currentBlock);
+                    for(int j=0; j<EXTENSION_SIZE; j++) {
+                        if (pos+j >= currentPage.getBlocks().size())
+                            break; 
+                        List<LayoutToken> localTokens = currentPage.getBlocks().get(pos+j).getTokens();
+                        if (localTokens == null || localTokens.size() == 0)
+                            continue;
+                        endPos = currentPage.getBlocks().get(pos+j).getTokens().get(0).getOffset();
+                    }
                 }
 
-                features.token = token;
-                features.string = localText;
-
-                if (i >= startGraphicPos && i <= endGraphicPos)
-                    features.inGraphicBox = true;
-                
-                content.append(features.printVector());
+                for(int i=startPos; i<=endPos; i++) {
+                    localTokenization.add(tokenizations.get(i));
+                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap);
+                    if (features != null) {
+                        if (i >= startGraphicPos && i <= endGraphicPos)
+                            features.inGraphicBox = true;
+                        content.append(features.printVector());
+                    }
+                }
             }
 
             LayoutTokenization tokenizationsFigure = new LayoutTokenization(localTokenization);
@@ -202,6 +231,25 @@ public class FigureSegmenterParser {
         return Pair.of(results, tokenizationsFigures);
     }
 
+    private FeaturesVectorFigureSegmenter createFeatureVector(List<LayoutToken> tokenizations, int i, Map<Integer,Block> blockIndexMap) {
+        LayoutToken token = tokenizations.get(i);
+        String localText = token.getText();
+
+        if (localText == null) {
+            return null;
+        }
+
+        localText = localText.replaceAll("[ \n]", "");
+        if(localText.length() == 0 || TextUtilities.filterLine(localText)) {
+            return null;
+        }
+
+        FeaturesVectorFigureSegmenter features = new FeaturesVectorFigureSegmenter();
+        features.token = token;
+        features.string = localText;
+
+        return features;
+    }
     
     /** 
      * Create training data based on an input Document (segmented by the segmentation model) and 
@@ -217,8 +265,11 @@ public class FigureSegmenterParser {
         // figure anchors are based on VectorGraphicBoxCalculator, which aggregate bitmap and SVG elements
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
+        // we cover first the extension down the graphic object
+        boolean up = false;
+
         // for each figure anchor, we generate sequence to be labeled with features
-        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors);
+        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors, up);
 
         List<String> featureVectors = featureObject.getLeft();
         List<LayoutTokenization> layoutTokenizations = featureObject.getRight();
@@ -228,9 +279,6 @@ public class FigureSegmenterParser {
         if (featureVectors == null) {
             return null;
         }
-
-        // we cover first the extension down the graphic object
-        boolean up = false;
 
         StringBuilder sb = new StringBuilder();
         sb.append("<tei xml:space=\"preserve\">\n" +
