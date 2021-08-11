@@ -7,13 +7,13 @@ For the following guidelines, it is expected that training data has been generat
 The following TEI elements are used by the segmentation model:
 
 * `<titlePage>` for the cover page
-* `<front>` for the document header
+* `<front>` for the document header, including first page and footer 
 * `<note place="headnote">` for the page header
 * `<note place="footnote">` for the page footer and numbered footnotes
 * `<body>` for the document body
 * `<listBibl>` for the bibliographical section
 * `<page>` to indicate page numbers
-* `<div type="annex">` for annexes
+* `<div type="annex">` for annexes, including author contributions
 * `<div type="acknowledgment">` for acknowledgments
 * `<div type="toc">` for table of content
 
@@ -31,7 +31,11 @@ The following sections provide detailed information and examples on how to handl
 
 A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the `<titlePage>` element. 
 
-The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general, we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
+The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. 
+All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). 
+Furthermore, the footer, including the first page number should go in there.  
+In general, we expect as part of the header of the document to find all the bibliographical information for the article.  
+This should be followed in order to ensure homogeneity across the training data.
 
 There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
 
@@ -106,6 +110,10 @@ The following example shows a case where we have an acknowledgment (in the red f
 Figures and tables belong to the main body structure: they are not to be specifically encoded at the segmentation level.
 
 Figures and table, including captions, appearing after the references but related to the body (e.g. list of figures in preprints), should be under `<body>`. If a figure or table appears inside an annex of an article, it should remain inside the `<div type="annex">` element. If a figure or table appears in an abstract (which is rare but might happen), this item should remain within the `<front>` element.
+
+### Author contributions
+
+Author contributions belongs to the annexes 
 
 ### Hidden characters
 
