@@ -582,7 +582,7 @@ public class GrobidProperties {
     private static String getGrobidCRFEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.error("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
         }
         return param.engine;
@@ -743,12 +743,12 @@ public class GrobidProperties {
     public static boolean useELMo(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return false;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return false;
         }
         return param.delft.useELMo;
@@ -757,12 +757,12 @@ public class GrobidProperties {
     public static String getDelftArchitecture(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return null;
         }
         return param.delft.architecture;
@@ -771,12 +771,12 @@ public class GrobidProperties {
     public static String getDelftEmbeddingsName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return null;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return null;
         }
         return param.delft.embeddings_name;
@@ -788,17 +788,17 @@ public class GrobidProperties {
     public static int getDelftTrainingMaxSequenceLength(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
         DelftModelParameterSet delftParamSet = param.delft.training;
         if (delftParamSet == null) {
-            LOGGER.warn("No training configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No training configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
 
@@ -811,17 +811,17 @@ public class GrobidProperties {
     public static int getDelftRuntimeMaxSequenceLength(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
         DelftModelParameterSet delftParamSet = param.delft.runtime;
         if (delftParamSet == null) {
-            LOGGER.warn("No runtime configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No runtime configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
 
@@ -834,17 +834,17 @@ public class GrobidProperties {
     public static int getDelftTrainingBatchSize(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
         DelftModelParameterSet delftParamSet = param.delft.training;
         if (delftParamSet == null) {
-            LOGGER.warn("No training configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No training configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
 
@@ -857,17 +857,17 @@ public class GrobidProperties {
     public static int getDelftRuntimeBatchSize(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.warn("No configuration parameter defined for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
             return -1;
         }
         DelftModelParameters delftParam = param.delft;
         if (delftParam == null) {
-            LOGGER.warn("No configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
         DelftModelParameterSet delftParamSet = param.delft.runtime;
         if (delftParamSet == null) {
-            LOGGER.warn("No runtime configuration parameter defined for DeLFT engine for model " + modelName);
+            LOGGER.debug("No runtime configuration parameter defined for DeLFT engine for model " + modelName);
             return -1;
         }
 
