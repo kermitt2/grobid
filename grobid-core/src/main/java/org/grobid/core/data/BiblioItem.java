@@ -1990,9 +1990,17 @@ public class BiblioItem {
                 if (isoDate != null) {
                     bibtex.add("  date = {" + isoDate + "}");
                 }
-            }
-            if (publication_date != null) {
-                bibtex.add("  year = {" + publication_date + "}");
+                if (normalized_publication_date.getYear() >= 0) {
+                    bibtex.add("  year = {" + normalized_publication_date.getYear() + "}");
+                }
+                if (normalized_publication_date.getMonth() >= 0) {
+                    bibtex.add("  month = {" + normalized_publication_date.getMonth() + "}");
+                }
+                if (normalized_publication_date.getMonth() >= 0) {
+                    bibtex.add("  day = {" + normalized_publication_date.getDay() + "}");
+                }
+            } else if (publication_date != null) {
+                bibtex.add("  date = {" + publication_date + "}");
             }
 
             // address
