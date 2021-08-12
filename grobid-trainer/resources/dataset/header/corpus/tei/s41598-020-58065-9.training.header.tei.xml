@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="s41598-020-58065-9"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+
+	1<lb/>
+			<!-- Not sure about the reference here, shouldn't the doi also be part of it? -->
+	<reference>Scientific RepoRtS |<lb/> (2020) 10:1592 |</reference>
+
+	<idno>https://doi.org/10.1038/s41598-020-58065-9<lb/></idno>
+
+	www.nature.com/scientificreports<lb/>
+	<docTitle>
+	<titlePart>from LaH 10 to room-temperature superconductors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Kostrzewa 1 , K. M. Szczęśniak 2 , A. p. Durajski 3* &amp; R. Szczęśniak 1,3<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">thermodynamic parameters of the LaH 10 superconductor were an object of our interest. LaH 10 is<lb/> characterised by the highest experimentally observed value of the critical temperature: =<lb/> T 215<lb/> C a<lb/> K<lb/> (p a = 150 GPa) and<lb/> =<lb/> T 260<lb/> C b<lb/> K (p b = 190 GPa). It belongs to the group of superconductors with a strong<lb/> electron-phonon coupling (λ a ~ 2.2 and λ b ~ 2.8). We calculated the thermodynamic parameters of this<lb/> superconductor and found that the values of the order parameter, the thermodynamic critical field, and<lb/> the specific heat differ significantly from the values predicted by the conventional BCS theory. Due to<lb/> the specific structure of the Eliashberg function for the hydrogenated compounds, the qualitative<lb/> analysis suggests that the superconductors of the La δ X 1−δ H 10 -type (LaXH-type) structure, where<lb/> X ∈ {Sc, Y}, would exhibit significantly higher critical temperature than T C obtained for LaH 10 . in the case<lb/> of LaScH we came to the following assessments: ∈<lb/> T<lb/> 220 267 ,<lb/> C a<lb/> K and ∈<lb/> T<lb/> 263 294 ,<lb/> C b<lb/> K, while the<lb/> results for LaYH were: ∈<lb/> T<lb/> 218 247 ,<lb/> C a<lb/> K and ∈<lb/> T<lb/> 261 274 ,<lb/> C b<lb/> K.<lb/></div>
+
+	<byline>
+	<affiliation>1 Institute of Physics, Jan Długosz University in Częstochowa,</affiliation>
+	</byline>
+
+	<address>Ave. Armii Krajowej 13/15, 42-200, Częstochowa,<lb/> Poland.</address>
+
+	<byline>
+	<affiliation>2 Faculty of Chemistry, University of Warsaw,</affiliation>
+	</byline>
+
+	<address>Pasteura 1, 02-093, Warsaw, Poland.</address>
+
+	<byline>
+	<affiliation>3 Institute of Physics,<lb/> Częstochowa University of Technology,</affiliation>
+	</byline>
+
+	<address>Ave. Armii Krajowej 19, 42-200, Częstochowa, Poland.</address>
+
+	*email:
+	<email>adurajski@<lb/> wip.pcz.pl</email>
+
+	open<lb/>
+	<note type="submission">Received: 5 August 2019; Accepted: 8 January 2020;<lb/></note>
+
+	 Published: xx xx xxxx<lb/>
+
+    <!-- Not sure about this doc type-->
+	<note type="docType">Open Access</note>
+
+	<note type="copyright">This article is licensed under a Creative Commons Attribution 4.0 International<lb/> License, which permits use, sharing, adaptation, distribution and reproduction in any medium or<lb/> format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Cre-<lb/>ative Commons license, and indicate if changes were made. The images or other third party material in this<lb/> article are included in the article&apos;s Creative Commons license, unless indicated otherwise in a credit line to the<lb/> material. If material is not included in the article&apos;s Creative Commons license and your intended use is not per-<lb/>mitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the<lb/> copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.<lb/> © The Author(s) 2020</note>
+
+		</front>
+	</text>
+</tei>
