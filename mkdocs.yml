@@ -12,6 +12,7 @@ pages:
   - Home: 'index.md'
   - About:
     - 'Introduction': 'Introduction.md'
+    - 'How GROBID works': 'Principles.md'
     - 'References': 'References.md'
     - 'Licence': 'License.md'
   - User manual:
@@ -19,6 +20,7 @@ pages:
     - 'GROBID service': 'Grobid-service.md'
     - 'GROBID batch mode': 'Grobid-batch.md'
     - 'GROBID with containers': 'Grobid-docker.md'
+    - 'GROBID configuration': 'Configuration.md'
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
     - 'Java library': 'Grobid-java-library.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'
@@ -30,7 +32,7 @@ pages:
   - Benchmarking:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
-    - 'Model-level evaluations': 'Benchmarking-models.md'
+    - 'bioRxiv': 'Benchmarking-biorxiv.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'

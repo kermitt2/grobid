@@ -4,21 +4,61 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [0.7.0] – 2021-07-17
 
 ### Added
 
-+ Option to get sentence segmented text in extracted structures (choice between the Pragmatic Segmenter, integrated via JRuby, and OpenNLP sentence detector)
-+ Option to get PDF coordinates for `<s>` structures
++ New YAML configuration: all the settings are in one single yaml file, each model can be fully configured independently
++ Improvement of the segmentation and header models (for header, +1 F1-score for PMC evaluation, +4 F1-score for bioRxiv), improvements for body and citations 
++ Add figure and table pop-up visualization on PDF in the console demo
++ Add PDF MD5 digest in the TEI results (service only)
++ Language support packages and xpdfrc file for pdfalto (support of CJK and exotic fonts)
++ Prometheus metrics 
++ BidLSTM-CRF-FEATURES implementation available for more models
++ Addition of a "How GROBID works" page in the documentation
 
 ### Changed
 
-+ Update of TEI XML schema to allow `<s>` structurs in the result
++ JitPack release (RIP jcenter)
++ Improved DOI cleaning 
++ Speed improvement (around +10%), by factorizing some layout token manipulation
++ Update CrossRef requests implementation to align to the current usage of CrossRef's `X-Rate-Limit-Limit` response parameter
 
 ### Fixed
 
-+ Structuration of abstract is back
-+ Deprecated CrossRef `query.title` field for the CrossRef consolidation service
++ Fix base url in demo console
++ Add missing pdfalto Graphics information when `-noImage` is used, fix graphics data path in TEI
++ Fix the tendency to merge tables when they are in close proximity
+
+## [0.6.2] – 2021-03-20
+
+### Added
+
++ Docker image covering both Deep Learning and CRF models, with GPU detection and preloading of embeddings
++ For Deep Learning models, labeling is now done by batch: application of the citation DL model is 4 times faster for BidLSTM-CRF (with or without features) and 6 times faster for SciBERT
++ More tests for sentence segmentation
++ Add orcid of persons when available from the PDF or via consolidation (i.e. if in CrossRef metadata) 
++ Add BidLSTM-CRF-FEATURES header model (with feature channel)
++ Add bioRxiv end-to-end evaluation
++ Bounding boxes for optional section titles coordinates
+
+### Changed
+
++ Reduce the size of docker images 
++ Improve end-to-end evaluation: multithreaded processing of PDF, progress bar, output the evaluation report in markdown format
++ Update of several models covering CRF, BidLSTM-CRF and BidLSTM-CRF-FEATURES, mainly improving citation and author recognitions
++ OpenNLP is the default optional sentence segmenter (similar result as Pragmatic Segmenter for scholar documents after benchmarking, but 30 times faster)
++ Refine sentence segmentation to exploit layout information and predicted reference callouts
++ Update jep version to 3.9.1
+
+### Fixed
+
++ Ignore invalid utf-8 sequences
++ Update CrossRef multithreaded calls to avoid using the unreliable time interval returned by the CrossRef REST API service, update usage of `Crossref-Plus-API-Token` and update the deprecated crossref field `query.title`
++ Missing last table or figure when generating training data for the fulltext model
++ Fix an error related to the feature value for the reference callout for the fulltext model
++ Review/correct DeLFT configuration documentation, with a step-by-step configuration documentation
++ Other minor fixes
 
 ## [0.6.1] – 2020-08-12
 
@@ -238,7 +278,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 + More robust synchronization of CRF sequence with PDF areas, resulting in improved bounding box calculations for locating annotations in the PDF documents.
 + Improved general robustness thanks to better token alignments.
 
-[Unreleased]: https://github.com/kermitt2/grobid/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/kermitt2/grobid/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/kermitt2/grobid/compare/0.6.2...0.7.0
+[0.6.2]: https://github.com/kermitt2/grobid/compare/0.6.1...0.6.2
+[0.6.1]: https://github.com/kermitt2/grobid/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/kermitt2/grobid/compare/0.5.6...0.6.0
 [0.5.6]: https://github.com/kermitt2/grobid/compare/0.5.5...0.5.6
 [0.5.5]: https://github.com/kermitt2/grobid/compare/0.5.4...0.5.5

@@ -5,6 +5,8 @@
 
 * [Introduction](Introduction.md)
 
+* [How GROBID works](Principles.md)
+
 * [References](References.md)
 
 * [License](License.md)
@@ -18,6 +20,8 @@
 * [Use GROBID in batch mode](Grobid-batch.md)
 
 * [Use GROBID with containers (Docker)](Grobid-docker.md)
+
+* [GROBID configuration](Configuration.md)
 
 * [Troubleshooting and known issues](Troubleshooting.md)
 
@@ -39,7 +43,7 @@
 
 * [Description](Benchmarking.md)
 * [Evaluation PubMed Central](Benchmarking-pmc.md)
-* [Model-level evaluations](Benchmarking-models.md)
+* [Evaluation bioRxiv](Benchmarking-biorxiv.md)
 
 <h3>Annotation guidelines</h3>
 

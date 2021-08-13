@@ -3,6 +3,7 @@
 /build
 
 **/build
+!**/pdf.js/build
 **/target
 
 target
@@ -15,7 +16,6 @@ Thumbs.db
 .idea
 #.gradle
 #gradle
-**/build
 */out/
 *.iml
 *.log
@@ -55,7 +55,6 @@ grobid-smecta
 grobid-example
 grobid-test-ant
 grobid-software
-software-mentions
 grobid-books
 grobid-smecta
 grobid-keyterm

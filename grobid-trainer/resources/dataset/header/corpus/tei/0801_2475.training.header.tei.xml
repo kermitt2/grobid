@@ -1,0 +1,293 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0801_2475"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0801.2475v1 [hep-ex]</idno>
+
+	<date>16 Jan 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>Search for lepton-flavor-violating τ → ℓV 0 decays at Belle<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<affiliation>1 Budker Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Novosibirsk, Russia<lb/></address>
+
+	<byline>
+	<affiliation>2 Chiba University,</affiliation>
+	</byline>
+
+	<address>Chiba, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 University of Cincinnati,</affiliation>
+	</byline>
+
+	<address>Cincinnati, OH, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 The Graduate University for Advanced Studies,</affiliation>
+	</byline>
+
+	<address>Hayama, Japan<lb/></address>
+
+	<byline>
+	<affiliation>5 Hanyang University,</affiliation>
+	</byline>
+
+	<address>Seoul, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>6 University of Hawaii,</affiliation>
+	</byline>
+
+	<address>Honolulu, HI, USA<lb/></address>
+
+	<byline>
+	<affiliation>7 High Energy Accelerator Research Organization (KEK),</affiliation>
+	</byline>
+
+	<address>Tsukuba, Japan<lb/></address>
+
+	<byline>
+	<affiliation>8 Institute of High Energy Physics, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing, PR China<lb/></address>
+
+	<byline>
+	<affiliation>9 Institute for High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Protvino, Russia<lb/></address>
+
+	<byline>
+	<affiliation>10 Institute of High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Vienna, Austria<lb/></address>
+
+	<byline>
+	<affiliation>11 Institute for Theoretical and Experimental Physics,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<affiliation>12 J. Stefan Institute,</affiliation>
+	</byline>
+
+	<address>Ljubljana, Slovenia<lb/></address>
+
+	<byline>
+	<affiliation>13 Kanagawa University,</affiliation>
+	</byline>
+
+	<address>Yokohama, Japan<lb/></address>
+
+	<byline>
+	<affiliation>14 Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>15 Kyungpook National University,</affiliation>
+	</byline>
+
+	<address>Taegu, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>16 École Polytechnique Fédérale de Lausanne, EPFL,</affiliation>
+	</byline>
+
+	<address>Lausanne, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>17 Faculty of Mathematics and Physics, University of Ljubljana,</affiliation>
+	</byline>
+
+	<address>Ljubljana, Slovenia<lb/></address>
+
+	<byline>
+	<affiliation>18 University of Maribor,</affiliation>
+	</byline>
+
+	<address>Maribor, Slovenia<lb/></address>
+
+	<byline>
+	<affiliation>19 University of Melbourne,</affiliation>
+	</byline>
+
+	<address>Victoria, Australia<lb/></address>
+
+	<byline>
+	<affiliation>20 Nagoya University,</affiliation>
+	</byline>
+
+	<address>Nagoya, Japan<lb/></address>
+
+	<byline>
+	<affiliation>21 Nara Women&apos;s University,</affiliation>
+	</byline>
+
+	<address>Nara, Japan<lb/></address>
+
+	<byline>
+	<affiliation>22 National Central University,</affiliation>
+	</byline>
+
+	<address>Chung-li, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>23 National United University,</affiliation>
+	</byline>
+
+	<address>Miao Li, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>24 Department of Physics, National Taiwan University,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>25 H. Niewodniczanski Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Krakow, Poland<lb/></address>
+
+	<byline>
+	<affiliation>26 Nippon Dental University,</affiliation>
+	</byline>
+
+	<address>Niigata, Japan<lb/></address>
+
+	<byline>
+	<affiliation>27 Niigata University,</affiliation>
+	</byline>
+
+	<address>Niigata, Japan<lb/></address>
+
+	<byline>
+	<affiliation>28 University of Nova Gorica,</affiliation>
+	</byline>
+
+	<address>Nova Gorica, Slovenia<lb/></address>
+
+	<byline>
+	<affiliation>29 Osaka City University,</affiliation>
+	</byline>
+
+	<address>Osaka, Japan<lb/></address>
+
+	<byline>
+	<affiliation>30 Osaka University,</affiliation>
+	</byline>
+
+	<address>Osaka, Japan<lb/></address>
+
+	<byline>
+	<affiliation>31 Panjab University,</affiliation>
+	</byline>
+
+	<address>Chandigarh, India<lb/></address>
+
+	<byline>
+	<affiliation>32 Saga University,</affiliation>
+	</byline>
+
+	<address>Saga, Japan<lb/></address>
+
+	<byline>
+	<affiliation>33 University of Science and Technology of China,</affiliation>
+	</byline>
+
+	<address>Hefei, PR China<lb/></address>
+
+	<byline>
+	<affiliation>34 Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>35 Sungkyunkwan University,</affiliation>
+	</byline>
+
+	<address>Suwon, South Korea<lb/></address>
+
+	<byline>
+	<affiliation>36 University of Sydney,</affiliation>
+	</byline>
+
+	<address>Sydney, NSW, Australia 2<lb/></address>
+
+	<byline>
+	<affiliation>37 Tata Institute of Fundamental Research,</affiliation>
+	</byline>
+
+	<address>Mumbai, India<lb/></address>
+
+	<byline>
+	<affiliation>38 Toho University,</affiliation>
+	</byline>
+
+	<address>Funabashi, Japan<lb/></address>
+
+	<byline>
+	<affiliation>39 Tohoku Gakuin University,</affiliation>
+	</byline>
+
+	<address>Tagajo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>40 Tohoku University,</affiliation>
+	</byline>
+
+	<address>Sendai, Japan<lb/></address>
+
+	<byline>
+	<affiliation>41 Department of Physics, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Tokyo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>42 Tokyo Metropolitan University,</affiliation>
+	</byline>
+
+	<address>Tokyo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>43 Tokyo University of Agriculture and Technology,</affiliation>
+	</byline>
+
+	<address>Tokyo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>44 Virginia Polytechnic Institute and State University,</affiliation>
+	</byline>
+
+	<address>Blacksburg, VA, USA<lb/></address>
+
+	<byline>
+	<affiliation>45 Yonsei University,</affiliation>
+	</byline>
+
+	<address>Seoul, South Korea<lb/></address>
+
+	<div type="abstract">We have searched for neutrinoless τ lepton decays into ℓ and V 0 , where ℓ stands for an electron or<lb/> muon, and V 0 for a vector meson (φ, ω, K * 0 , K * 0 or ρ 0 ), using 543 fb −1 of data collected with the<lb/> Belle detector at the KEKB asymmetric-energy e + e − collider. No excess of signal events over the<lb/> expected background has been observed, and we set upper limits on the branching fractions in the<lb/> range (5.9 − 18) × 10 −8 at the 90% confidence level. These upper limits include the first results for<lb/> the ℓω mode as well as new limits that are significantly more restrictive than our previous results<lb/> for the ℓφ, ℓK * 0 , ℓ K * 0 and ℓρ 0 modes.<lb/></div>
+
+	<keyword>PACS numbers: 11.30.Fs, 13.35.Dx, 14.60.Fg</keyword>
+
+		</front>
+	</text>
+</tei>

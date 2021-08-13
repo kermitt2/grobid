@@ -14,6 +14,7 @@ import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.process.GrobidRestProcessFiles;
 import org.grobid.service.process.GrobidRestProcessGeneric;
 import org.grobid.service.process.GrobidRestProcessString;
+import org.grobid.service.process.GrobidRestProcessTraining;
 import org.grobid.service.util.BibTexMediaType;
 import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
@@ -29,13 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
 /**
  * RESTful service for the GROBID system.
  *
- * @author FloZi, Damien, Patrice
  */
-
 @Timed
 @Singleton
 @Path(GrobidPaths.PATH_GROBID)
@@ -55,6 +53,7 @@ public class GrobidRestService implements GrobidPaths {
     public static final String CONSOLIDATE_HEADER = "consolidateHeader";
     public static final String INCLUDE_RAW_AFFILIATIONS = "includeRawAffiliations";
     public static final String INCLUDE_RAW_CITATIONS = "includeRawCitations";
+    public static final String INCLUDE_FIGURES_TABLES = "includeFiguresTables";
 
     @Inject
     private GrobidRestProcessFiles restProcessFiles;
@@ -66,13 +65,16 @@ public class GrobidRestService implements GrobidPaths {
     private GrobidRestProcessString restProcessString;
 
     @Inject
+    private GrobidRestProcessTraining restProcessTraining;
+
+    @Inject
     public GrobidRestService(GrobidServiceConfiguration configuration) {
-        GrobidProperties.set_GROBID_HOME_PATH(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
-        if (configuration.getGrobid().getGrobidProperties() != null) {
+        GrobidProperties.setGrobidHome(new File(configuration.getGrobid().getGrobidHome()).getAbsolutePath());
+        /*if (configuration.getGrobid().getGrobidProperties() != null) {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidProperties()).getAbsolutePath());
         } else {
             GrobidProperties.setGrobidPropertiesPath(new File(configuration.getGrobid().getGrobidHome(), "/config/grobid.properties").getAbsolutePath());
-        }
+        }*/
         GrobidProperties.getInstance();
         GrobidProperties.setContextExecutionServer(true);
         LOGGER.info("Initiating Servlet GrobidRestService");
@@ -150,14 +152,15 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processHeaderDocument_post(
+    public Response processHeaderDocumentReturnXml_post(
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
         int consol = validateConsolidationParam(consolidate);
         return restProcessFiles.processStatelessHeaderDocument(
             inputStream, consol,
-            validateIncludeRawParam(includeRawAffiliations)
+            validateIncludeRawParam(includeRawAffiliations),
+            ExpectedResponseType.XML
         );
     }
 
@@ -165,11 +168,38 @@ public class GrobidRestService implements GrobidPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @PUT
-    public Response processStatelessHeaderDocument(
+    public Response processStatelessHeaderDocumentReturnXml(
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
         @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
-        return processHeaderDocument_post(inputStream, consolidate, includeRawAffiliations);
+        return processHeaderDocumentReturnXml_post(inputStream, consolidate, includeRawAffiliations);
+    }
+
+    @Path(PATH_HEADER)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @POST
+    public Response processHeaderDocumentReturnBibTeX_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        int consol = validateConsolidationParam(consolidate);
+        return restProcessFiles.processStatelessHeaderDocument(
+            inputStream, consol,
+            validateIncludeRawParam(includeRawAffiliations),
+            ExpectedResponseType.BIBTEX
+        );
+    }
+
+    @Path(PATH_HEADER)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @PUT
+    public Response processStatelessHeaderDocumentReturnBibTeX(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidate,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        return processHeaderDocumentReturnBibTeX_post(inputStream, consolidate, includeRawAffiliations);
     }
 
     @Path(PATH_FULL_TEXT)
@@ -682,11 +712,13 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam(INPUT) InputStream inputStream,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
         @DefaultValue("0") @FormDataParam(CONSOLIDATE_CITATIONS) String consolidateCitations,
-        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) throws Exception {
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_CITATIONS) String includeRawCitations,
+        @DefaultValue("0") @FormDataParam(INCLUDE_FIGURES_TABLES) String includeFiguresTables) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw);
+        boolean includeFig = validateIncludeRawParam(includeFiguresTables);
+        return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw, includeFig);
     }
     
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
@@ -712,5 +744,46 @@ public class GrobidRestService implements GrobidPaths {
 
     public void setRestProcessString(GrobidRestProcessString restProcessString) {
         this.restProcessString = restProcessString;
+    }
+
+
+    // API for training
+
+    @Path(PATH_MODEL_TRAINING)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces("application/json")
+    @POST
+    public Response trainModel(@FormParam("model") String model,
+                               @DefaultValue("crf") @FormParam("architecture") String architecture,
+                               @DefaultValue("split") @FormParam("type") String type, 
+                               @DefaultValue("0.9") @FormParam("ratio") double ratio, 
+                               @DefaultValue("10") @FormParam("n") int n) {
+        return restProcessTraining.trainModel(model, architecture, type, ratio, n);
+    }
+
+    @Path(PATH_TRAINING_RESULT)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces("application/json")
+    @POST
+    public Response resultTraining(@FormParam("token") String token) {
+        return restProcessTraining.resultTraining(token);
+    }
+
+    @Path(PATH_MODEL)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces("application/zip")
+    @GET
+    public Response getModel(@QueryParam("model") String model,
+                             @QueryParam("architecture") String architecture) {
+        return restProcessTraining.getModel(model, architecture);
+    }
+
+    @Path(PATH_MODEL)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces("application/zip")
+    @POST
+    public Response getModel_post(@FormParam("model") String model,
+                                  @FormParam("architecture") String architecture) {
+        return restProcessTraining.getModel(model, architecture);
     }
 }

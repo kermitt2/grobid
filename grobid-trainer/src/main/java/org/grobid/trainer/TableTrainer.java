@@ -12,18 +12,10 @@ import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
-
-/**
- * @author Patrice Lopez
- */
 public class TableTrainer extends AbstractTrainer {
 
     public TableTrainer() {
         super(GrobidModels.TABLE);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.00001;
-        window = 20;
     }
 
     @Override
@@ -129,8 +121,7 @@ public class TableTrainer extends AbstractTrainer {
                 // we open the featured file
                 File theRawFile = new File(sourceRawPathLabel + File.separator + name.replace(".tei.xml", ""));
                 if (!theRawFile.exists()) {
-                    System.out.println("Raw file " + theRawFile +
-                            " does not exist. Please have a look!");
+                    System.out.println("Raw file " + theRawFile + " does not exist. Please have a look!");
                     continue;
                 }
 
@@ -220,8 +211,8 @@ public class TableTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        System.out.println(AbstractTrainer.runNFoldEvaluation(new TableTrainer(), 2));
-//        System.out.println(AbstractTrainer.runEvaluation(new TableTrainer()));
+        AbstractTrainer.runTraining(new TableTrainer());
+        System.out.println(AbstractTrainer.runEvaluation(new TableTrainer()));
         System.exit(0);
     }
 }

@@ -352,7 +352,7 @@ public final class Stats {
         computeMetrics();
 
         StringBuilder report = new StringBuilder();
-        report.append("| label            |  precision |   recall  |     f1     | support |\n");
+        report.append("\n| label            |  precision |   recall  |     f1     | support |\n");
         report.append("|---               |---         |---        |---         |---      |\n");
 
         long supportSum = 0;

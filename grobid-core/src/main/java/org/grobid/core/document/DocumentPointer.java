@@ -4,8 +4,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 
 /**
- * User: zholudev
- * Date: 4/1/14
  * Class representing a pointer within a PDF document, basically a block index and then a token index within a block (not global token index)
  */
 public class DocumentPointer implements Comparable<DocumentPointer>{

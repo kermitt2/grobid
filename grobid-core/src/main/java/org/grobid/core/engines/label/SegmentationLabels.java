@@ -2,10 +2,6 @@ package org.grobid.core.engines.label;
 
 import org.grobid.core.GrobidModels;
 
-/**
- * @author Slava
- * Date: 4/3/14
- */
 public class SegmentationLabels extends TaggingLabels{
     /**
      * cover page <cover>,

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="d-65-00148"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">research papers<lb/></note>
+
+	<page>148</page>
+
+	<idno>doi:10.1107/S090744490804362X<lb/></idno>
+
+	<reference>Acta Cryst. (2009). D65, 148-155<lb/> Acta Crystallographica Section D<lb/> Biological Crystallography<lb/></reference>
+
+	<idno>ISSN 0907-4449<lb/></idno>
+
+	<docTitle>
+	<titlePart>Structure validation in chemical crystallography<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Anthony L. Spek<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Utrecht University, Bijvoet Center for<lb/> Biomolecular Research,</affiliation>
+	</byline>
+
+	<address>Padualaan 8,<lb/> 3584 CH Utrecht, The Netherlands<lb/></address>
+
+	Correspondence e-mail:
+	<email>a.l.spek@uu.nl<lb/></email>
+
+	<div type="abstract">Automated structure validation was introduced in chemical<lb/> crystallography about 12 years ago as a tool to assist<lb/> practitioners with the exponential growth in crystal structure<lb/> analyses. Validation has since evolved into an easy-to-use<lb/> checkCIF/PLATON web-based IUCr service. The result of a<lb/> crystal structure determination has to be supplied as a CIF-<lb/>formatted computer-readable file. The checking software tests<lb/> the data in the CIF for completeness, quality and consistency.<lb/> In addition, the reported structure is checked for incomplete<lb/> analysis, errors in the analysis and relevant issues to be<lb/> verified. A validation report is generated in the form of a list of<lb/> ALERTS on the issues to be corrected, checked or<lb/> commented on. Structure validation has largely eliminated<lb/> obvious problems with structure reports published in IUCr<lb/> journals, such as refinement in a space group of too low<lb/> symmetry. This paper reports on the current status of structure<lb/> validation and possible future extensions.<lb/></div>
+
+	<note type="submission">Received 28 July 2008<lb/> Accepted 22 December 2008<lb/> </note>
+
+	research papers<lb/>
+	Acta Cryst. (2009). D65, 148-155<lb/>
+	Spek Structure validation 149<lb/> 
+	research papers<lb/>
+	Acta Cryst. (2009). D65, 148-155<lb/> 
+	Spek Structure validation 155
+
+		</front>
+	</text>
+</tei>

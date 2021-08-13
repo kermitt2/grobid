@@ -6,7 +6,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for features used for high level segmentation of document.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorSegmentation {
     public LayoutToken token = null; // not a feature, reference value

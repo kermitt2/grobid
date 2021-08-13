@@ -8,7 +8,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for representing a keyword extracted from a publication.
  *
- * @author Patrice Lopez
  */
 public class Keyword {
     private String keyword = null;

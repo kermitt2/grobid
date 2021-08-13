@@ -38,14 +38,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-/**
- * @author Patrice Lopez
- */
 public class CitationParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 
@@ -62,6 +57,9 @@ public class CitationParser extends AbstractParser {
         this.parsers = parsers;
     }
 
+    /**
+     * Process one single raw reference string
+     */ 
     public BiblioItem processingString(String input, int consolidate) {
         List<String> inputs = new ArrayList<>();
         inputs.add(input);
@@ -72,6 +70,10 @@ public class CitationParser extends AbstractParser {
             return null;
     }
 
+    /**
+     * Process a list of raw reference strings by taking advantage of batch processing
+     * when a DeLFT deep learning model is used
+     */ 
     public List<BiblioItem> processingStringMultiple(List<String> inputs, int consolidate) {
         if (inputs == null || inputs.size() == 0)
             return null;
@@ -100,6 +102,9 @@ public class CitationParser extends AbstractParser {
         return results;
     }
 
+    /**
+     * Process one single raw reference string tokenized as layout objects
+     */ 
     public BiblioItem processingLayoutToken(List<LayoutToken> tokens, int consolidate) {
         List<List<LayoutToken>> tokenList = new ArrayList<>();
         tokenList.add(tokens);
@@ -110,6 +115,10 @@ public class CitationParser extends AbstractParser {
             return null;
     }
 
+    /**
+     * Process a list of raw reference string, each one tokenized as layout objects, and taking advantage 
+     * of batch processing when a DeLFT deep learning model is used
+     */ 
     public List<BiblioItem> processingLayoutTokenMultiple(List<List<LayoutToken>> tokenList, int consolidate) {
         if (tokenList == null || tokenList.size() == 0)
             return null;
@@ -362,7 +371,7 @@ public class CitationParser extends AbstractParser {
                         if (consolidate == 1)
                             BiblioItem.correct(resCitation, bibo);
                         else if (consolidate == 2)
-                            BiblioItem.injectDOI(resCitation, bibo);
+                            BiblioItem.injectIdentifiers(resCitation, bibo);
                     }
                 }
             }
@@ -377,6 +386,15 @@ public class CitationParser extends AbstractParser {
                                                        ReferenceSegmenter referenceSegmenter,
                                                        int consolidate) {
         DocumentSource documentSource = DocumentSource.fromPdf(input);
+        return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
+    }
+
+    public List<BibDataSet> processingReferenceSection(File input,
+                                                       String md5Str,
+                                                       ReferenceSegmenter referenceSegmenter,
+                                                       int consolidate) {
+        DocumentSource documentSource = DocumentSource.fromPdf(input);
+        documentSource.setMD5(md5Str);
         return processingReferenceSection(documentSource, referenceSegmenter, consolidate);
     }
 
@@ -553,7 +571,7 @@ public class CitationParser extends AbstractParser {
                 if (consolidate == 1)
                     BiblioItem.correct(resCitation, bibo);
                 else if (consolidate == 2)
-                    BiblioItem.injectDOI(resCitation, bibo);
+                    BiblioItem.injectIdentifiers(resCitation, bibo);
             }
         } catch (Exception e) {
             LOGGER.error("An exception occurred while running bibliographical data consolidation.", e);

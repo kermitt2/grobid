@@ -41,7 +41,6 @@ import java.util.regex.Pattern;
  * type of evaluation is PDF+TEI files produced via Pub2TEI fir mainstream 
  * publishers.   
  *
- * @author Patrice Lopez
  */
 public class EvaluationDOIMatching {
     private static final Logger LOGGER = LoggerFactory.getLogger(EvaluationDOIMatching.class);
@@ -81,7 +80,7 @@ public class EvaluationDOIMatching {
 
         try {
             GrobidProperties.getInstance();
-            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
             engine = GrobidFactory.getInstance().createEngine();
         }

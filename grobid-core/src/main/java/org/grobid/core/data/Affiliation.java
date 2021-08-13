@@ -9,7 +9,6 @@ import java.util.List;
 /**
  * Class for representing and exchanging affiliation information.
  *
- * @author Patrice Lopez
  */
 public class Affiliation {
 

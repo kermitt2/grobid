@@ -33,14 +33,12 @@ Note the default version is running on port `8070`, however it can be mapped on 
 ```
 
 Access the service:
-  - open the browser at the address `http://localhost:8070`
-  - the health check will be accessible at the address `http://localhost:8071`
+  - open the browser at the address `http://localhost:8080`
+  - the health check will be accessible at the address `http://localhost:8081`
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
 ##CRF and Deep Learning image
-
-**The image is not available on DockerHub yet ! Home-based internet connection not stable enough, we are working on it :) In the meantime you can rebuild the image as indicated [below](#building-the-crf-and-deep-learning-image).** 
 
 The process for retrieving and running the image is as follow:
 
@@ -50,7 +48,13 @@ The process for retrieving and running the image is as follow:
 > docker pull grobid/grobid:${latest_grobid_version}
 ```
 
-- Run the container (note the new version running on 8070, however it will be mapped on the 8080 of your host):
+Current latest version:
+
+```bash
+> docker pull grobid/grobid:0.7.0
+```
+
+- Run the container:
 
 ```bash
 > docker run --rm --gpus all --init grobid/grobid:${latest_grobid_version}
@@ -61,7 +65,7 @@ The image will automatically uses the GPU and CUDA version available on your hos
 To specify to use only certain GPUs (see the [nvidia container toolkit user guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#gpu-enumeration) for more details):
 
 ```bash
-> docker run --rm --gpus '"device=1,2"' --init -p 8070:8080 -p 8071:8081 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus '"device=1,2"' --init -p 8080:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
 ```
 
 You can run the image on CPU by omitting the `-gpus` parameters. 
@@ -73,32 +77,24 @@ Note the default version is running on port `8070`, however it can be mapped on 
 ```
 
 Access the service:
-  - open the browser at the address `http://localhost:8070`
-  - the health check will be accessible at the address `http://localhost:8071`
+  - open the browser at the address `http://localhost:8080`
+  - the health check will be accessible at the address `http://localhost:8081`
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-##Configure using the normal config property file
+##Configure using the normal yaml config file
 
-The simplest way to pass a modified configuration to the docker image is to mount the property file `grobid.properties` when running the image. Modify the config file `grobid/grobid-home/config/grobid.properties` according to your requirements on the host machine and mount it when running the image as follow: 
+The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.1-SNAPSHOT
 ```
 
-You need to use an absolute path to specify your modified `grobid.properties` file.
+You need to use an absolute path to specify your modified `grobid.yaml` file.
 
 ##Configuration using Environment Variables
 
-Properties from the `grobid-home/config/grobid.properties` can be overridden using environment variables. Given a property key, the corresponding environment variable is the property key converted to upper case and the dot (`.`) replaced by two underscores `__`. (Property keys must be all lower case)
-
-e.g. to configure `grobid.nb_threads` use `GROBID__NB_THREADS`.
-
-```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 \
-    --env GROBID__NB_THREADS=10 \
-    lfoppiano/grobid:${latest_grobid_version}
-```
+This usage is currently not supported anymore, due to the number and the complexity of configuration parameters. Use the yaml configuration file to set production parameter to a docker image. 
 
 ##Troubleshooting
 
@@ -176,19 +172,19 @@ However if you are interested in using the master version of Grobid in container
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.6.1 --build-arg GROBID_VERSION=0.6.1 --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.7.0 --build-arg GROBID_VERSION=0.7.0 --file Dockerfile.crf .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-> docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SNAPSHOT --file Dockerfile.crf .
 ```
 
-In order to run the container of the newly created image, for example for version `0.6.1`:
+In order to run the container of the newly created image, for example for version `0.7.0`:
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.6.1
+> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.0
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
@@ -213,31 +209,31 @@ In order to build an image supporting GPU, you need:
 
 Without these two requirements, the image will always default to CPU, even if GPU are available on the host machine running the image. 
 
-For building a CRF-only image, the dockerfile to be used is `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
+For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf` (see previous section). For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.6.1 --build-arg GROBID_VERSION=0.6.1 --file Dockerfile.delft .
+> docker build -t grobid/grobid:0.7.0 --build-arg GROBID_VERSION=0.7.0 --file Dockerfile.delft .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-docker build -t grobid/grobid:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.delft .
+docker build -t grobid/grobid:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SNAPSHOT --file Dockerfile.delft .
 ```
 
-In order to run the container of the newly created image, for example for the development version `0.6.2-SNAPSHOT`, using all GPU available:
+In order to run the container of the newly created image, for example for the development version `0.7.1-SNAPSHOT`, using all GPU available:
 
 ```bash
-> docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 grobid/grobid:0.6.2-SNAPSHOT
+> docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.1-SNAPSHOT
 ```
 
-In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.properties` file. Modify the config file `grobid/grobid-home/config/grobid.properties` accordingly on the host machine and mount it when running the image as follow: 
+In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8070:8080 -p 8071:8081 -v /home/lopez/grobid/grobid-home/config/grobid.properties:/opt/grobid/grobid-home/config/grobid.properties:ro  grobid/grobid:0.6.2-SNAPSHOT
+docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.1-SNAPSHOT
 ```
 
-You need to use an absolute path to specify your modified `grobid.properties` file.
+You need to use an absolute path to specify your modified `grobid.yaml` file.
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
 

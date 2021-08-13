@@ -11,7 +11,6 @@ import org.grobid.core.utilities.GrobidProperties;
 /**
  * Test class with 100 requests (works/doi)
  *
- * @author Vincent Kaestle
  */
 public class Test {
 

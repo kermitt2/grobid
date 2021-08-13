@@ -18,10 +18,6 @@ import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.List;
 
-/**
- * Created by zholudev on 12/01/16.
- * XML Builder utils
- */
 public class XmlBuilderUtils {
     public static final String TEI_NS = "http://www.tei-c.org/ns/1.0";
     public static final Function<Element, String> TO_XML_FUNCTION = new Function<Element, String>() {

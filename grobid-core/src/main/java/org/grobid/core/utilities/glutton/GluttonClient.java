@@ -1,24 +1,14 @@
 package org.grobid.core.utilities.glutton;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.Future;
-import java.util.concurrent.ExecutionException;
 
-import org.apache.commons.lang3.concurrent.TimedSemaphore;
 import org.apache.http.client.ClientProtocolException;
-import org.grobid.core.utilities.crossref.CrossrefRequestListener.Response;
 import org.grobid.core.utilities.crossref.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +16,9 @@ import org.slf4j.LoggerFactory;
 /**
  * Client to the Glutton bibliographical service
  *
- * @author Patrice
  */
-//public class GluttonClient implements Closeable {
 public class GluttonClient extends CrossrefClient {
-    public static final Logger logger = LoggerFactory.getLogger(GluttonClient.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(GluttonClient.class);
     
     private static volatile GluttonClient instance;
 
@@ -54,7 +42,7 @@ public class GluttonClient extends CrossrefClient {
      * Creates a new instance.
      */
     private static synchronized void getNewInstance() {
-        logger.debug("Get new instance of GluttonClient");
+        LOGGER.debug("Get new instance of GluttonClient");
         instance = new GluttonClient();
     }
 
@@ -72,7 +60,7 @@ public class GluttonClient extends CrossrefClient {
         this.futures = new HashMap<>();*/
         int nThreads = Runtime.getRuntime().availableProcessors();
         //int nThreads = (int) Math.ceil((double)Runtime.getRuntime().availableProcessors() / 2);
-        System.out.println("nThreads: " + nThreads);
+        LOGGER.info("nThreads: " + nThreads);
         this.executorService = Executors.newFixedThreadPool(nThreads*2);
         //setLimits(20, 1000); // default calls per second
     }
@@ -104,7 +92,7 @@ public class GluttonClient extends CrossrefClient {
     }*/
 
     public static void printLog(GluttonRequest<?> request, String message) {
-        logger.info((request != null ? request+": " : "")+message);
+        LOGGER.info((request != null ? request+": " : "")+message);
         //System.out.println((request != null ? request+": " : "")+message);
     }
 

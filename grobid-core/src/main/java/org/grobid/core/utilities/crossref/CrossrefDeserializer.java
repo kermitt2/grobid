@@ -24,7 +24,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
  * Normalize results to a list of java objects even if only one result is given.
  * As example: WorkDeserializer.
  *
- * @author Vincent Kaestle, Patrice
  */
 public abstract class CrossrefDeserializer<T extends Object> extends JsonDeserializer<List<T>> {
 	

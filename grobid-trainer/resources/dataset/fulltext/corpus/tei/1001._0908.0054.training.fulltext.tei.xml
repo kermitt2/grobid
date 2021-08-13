@@ -35,11 +35,11 @@
 
 			<p>and Ψ is related to the perturbation of the bosons temperature<lb/></p>
 
-			<formula>Ψ(x i , q, n<lb/> j , τ) = −<lb/> ∂ ln f 0<lb/> ∂ ln q<lb/> (q)<lb/> δ T B<lb/> T B<lb/> (x i , q, n<lb/> j , τ).<lb/> (<label>4</label>)<lb/></formula>
+			<formula>Ψ(x i , q, n j , τ) = −<lb/> ∂ ln f 0<lb/> ∂ ln q<lb/> (q)<lb/> δ T B<lb/> T B<lb/> (x i , q, n j , τ).<lb/> (<label>4</label>)<lb/></formula>
 
 			<p>The evolution of the ULBDM is described by the collision-<lb/>less Boltzmann (or Vlasov) equation, which in Fourier space<lb/> reads<lb/></p>
 
-			<formula>Ψ − i<lb/> q<lb/> ε Ψ = −<lb/> ( k ·<lb/> ) ˙<lb/> ψ + i<lb/> ε q<lb/> ( k ·<lb/> )φ ∂ ln f 0<lb/> ∂ ln q<lb/> . (<label>5</label>)<lb/></formula>
+			<formula>Ψ − i<lb/> q<lb/> ε<lb/> Ψ = − ( k • n) ψ + i<lb/> ε<lb/> q<lb/> ( k • n)φ<lb/> ∂ ln f 0<lb/> ∂ ln q<lb/> .<lb/> (<label>5</label>)<lb/></formula>
 
 			<p>This equation gives the response of the phase-space distribu-<lb/>tion function to the metric perturbations.<lb/></p>
 

@@ -12,18 +12,10 @@ import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
-
-/**
- * @author Patrice Lopez
- */
 public class FigureTrainer extends AbstractTrainer {
 
     public FigureTrainer() {
         super(GrobidModels.FIGURE);
-
-        // adjusting CRF training parameters for this model (only with Wapiti)
-        epsilon = 0.00001;
-        window = 20;
     }
 
     @Override

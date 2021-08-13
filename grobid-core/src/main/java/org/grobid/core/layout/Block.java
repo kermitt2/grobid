@@ -6,9 +6,6 @@ import java.util.List;
 /**
  * Class for representing and exchanging a document block. A block is defined here relatively to
  * some properties in the document layout.
- *
- *
- * @author Patrice Lopez
  */
 public class Block {
     private int nbTokens = 0;
@@ -61,7 +58,7 @@ public class Block {
     }
 
     public void setText(String t) {
-        text = t;
+        //text = t;
     }
 
     public void setNbTokens(int t) {
@@ -73,17 +70,19 @@ public class Block {
     }
 
     public String getText() {
-        if (text.trim().startsWith("@"))
+        if (text != null && text.trim().startsWith("@"))
             return text.trim();
-        else if (tokens == null) {
+        else if (tokens == null)
             return null;
-        }
+        else if (text != null)
+            return text;
         else {
             StringBuilder localText = new StringBuilder();
             for(LayoutToken token : tokens) {
                 localText.append(token.getText());
             }
-            return localText.toString();
+            text = localText.toString();
+            return text;
         }
     }
 

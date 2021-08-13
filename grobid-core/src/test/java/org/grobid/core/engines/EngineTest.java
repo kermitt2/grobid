@@ -695,7 +695,7 @@ public class EngineTest {
 
     }
 
-    @Test
+    /*@Test
     public void testEmailPDF() throws Exception {
         Engine engine = GrobidFactory.getInstance().getEngine();
         BiblioItem resHeader = new BiblioItem();
@@ -703,7 +703,7 @@ public class EngineTest {
         System.out.println(resHeader);
 //        System.out.println(engine.fullTextToTEI("/tmp/2.pdf", false, false));
 
-    }
+    }*/
 
 
     /*@Test

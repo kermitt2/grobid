@@ -10,10 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
-/**
- * User: zholudev
- * Date: 10/7/14
- */
 public class CybozuLanguageDetector implements LanguageDetector {
     private static final Logger LOGGER  = LoggerFactory.getLogger(CybozuLanguageDetector.class);
     @Override

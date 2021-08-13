@@ -1,287 +1,275 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.lang3.tuple.Triple;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.Date;
-import org.grobid.core.factory.AbstractEngineFactory;
-import org.junit.*;
+import org.grobid.core.features.FeaturesVectorDate;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.utilities.GrobidConfig;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.GrobidTestUtils;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.easymock.PowerMock;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 02/01/17.
- */
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Lexicon.class)
 public class DateParserTest {
-    DateParser target;
 
-    @BeforeClass
-    public static void setInitialContext() throws Exception {
-//        MockContext.setInitialContext();
-        AbstractEngineFactory.init();
-    }
-
-    @AfterClass
-    public static void destroyInitialContext() throws Exception {
-//        MockContext.destroyInitialContext();
-    }
-
+    private DateParser target;
+    
     @Before
     public void setUp() throws Exception {
-        target = new DateParser();
+        PowerMock.mockStatic(Lexicon.class);
+        GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
+        modelParameters.name = "bao";
+        GrobidProperties.addModel(modelParameters);
+        target = new DateParser(GrobidModels.DUMMY);
     }
 
     @Test
-    public void processing_englishStandardDate_shouldWork() throws Exception {
-        List<Date> output = target.processing("19 January 1983");
-        assertThat(output, hasSize(1));
-        final Date date = output.get(0);
-        assertThat(date.getDay(), is(19));
-        assertThat(date.getMonth(), is(1));
-        assertThat(date.getYear(), is(1983));
+    public void testPostValidation_invalidYear_onlyString_shouldSetNull() {
+        Date inputDate = new Date();
+        inputDate.setYearString("10360 10370");
+        Date outputDate = DateParser.cleaning(inputDate);
 
-
-        assertThat(date.getDayString(), is("19"));
-        assertThat(date.getMonthString(), is("January"));
-        assertThat(date.getYearString(), is("1983"));
+        assertThat(outputDate.getYearString(), is(nullValue()));
     }
 
     @Test
-    public void processing_englishStandardDate1_shouldWork() throws Exception {
-        List<Date> output = target.processing("19. January 19 83");
-        assertThat(output, hasSize(1));
-        final Date date = output.get(0);
-        assertThat(date.getDay(), is(19));
-        assertThat(date.getMonth(), is(1));
-        assertThat(date.getYear(), is(1983));
+    public void testPostValidation_invalidYear2_onlyString_shouldSetNull() {
+        Date inputDate = new Date();
+        inputDate.setYearString("10360 10370 10380 10390 10400");
+        Date outputDate = DateParser.cleaning(inputDate);
 
-        assertThat(date.getDayString(), is("19"));
-        assertThat(date.getMonthString(), is("January"));
-        assertThat(date.getYearString(), is("19 83"));
+        assertThat(outputDate.getYearString(), is(nullValue()));
     }
 
     @Test
-    public void processing_englishStandardDate2_shouldWork() throws Exception {
+    public void testPostValidation_invalidYear_bothStringAndInt_shouldSetNull() {
+        Date inputDate = new Date();
+        inputDate.setYear(1036010370);
+        inputDate.setYearString("10360 10370");
+        Date outputDate = DateParser.cleaning(inputDate);
 
-        List<Date> output = target.processing("1918-1939");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(-1));
-        assertThat(date1.getMonth(), is(-1));
-        assertThat(date1.getYear(), is(1918));
-
-        assertThat(date1.getDayString(), nullValue());
-        assertThat(date1.getMonthString(), nullValue());
-        assertThat(date1.getYearString(), is("1918"));
-
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(-1));
-        assertThat(date2.getMonth(), is(-1));
-        assertThat(date2.getYear(), is(1939));
-
-        assertThat(date2.getDayString(), nullValue());
-        assertThat(date2.getMonthString(), nullValue());
-        assertThat(date2.getYearString(), is("1939"));
+        assertThat(outputDate.getYearString(), is(nullValue()));
+        assertThat(outputDate.getYear(), is(-1));
     }
 
     @Test
-    public void processing_englishStandardDate3_shouldWork() throws Exception {
+    public void testPostValidation_invalidMonth_bothStringAndInt_shouldSetNull() {
+        Date inputDate = new Date();
+        inputDate.setMonth(1234);
+        inputDate.setMonthString("1234");
+        Date outputDate = DateParser.cleaning(inputDate);
 
-        List<Date> output = target.processing("16.06.1942-28.04.1943");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(16));
-        assertThat(date1.getMonth(), is(6));
-        assertThat(date1.getYear(), is(1942));
-
-        assertThat(date1.getDayString(), is("16"));
-        assertThat(date1.getMonthString(), is("06"));
-        assertThat(date1.getYearString(), is("1942"));
-
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(28));
-        assertThat(date2.getMonth(), is(4));
-        assertThat(date2.getYear(), is(1943));
-
-        assertThat(date2.getDayString(), is("28"));
-        assertThat(date2.getMonthString(), is("04"));
-        assertThat(date2.getYearString(), is("1943"));
-    }
-
-    @Ignore("Need more training data, perhaps")
-    @Test
-    public void processing_englishStandardDate4_shouldWork() throws Exception {
-
-        List<Date> output = target.processing("4.01.1943-21.10.1943");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(4));
-        assertThat(date1.getMonth(), is(1));
-        assertThat(date1.getYear(), is(1943));
-
-        assertThat(date1.getDayString(), is("4"));
-        assertThat(date1.getMonthString(), is("1"));
-        assertThat(date1.getYearString(), is("1943"));
-
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(21));
-        assertThat(date2.getMonth(), is(10));
-        assertThat(date2.getYear(), is(1943));
-
-        assertThat(date2.getDayString(), is("21"));
-        assertThat(date2.getMonthString(), is("04"));
-        assertThat(date2.getYearString(), is("1943"));
+        assertThat(outputDate.getMonthString(), is(nullValue()));
+        assertThat(outputDate.getMonth(), is(-1));
     }
 
     @Test
-    public void processing_englishStandardDate5_shouldWork() throws Exception {
+    public void testPostValidation_invalidDay_bothStringAndInt_shouldSetNull() {
+        Date inputDate = new Date();
+        inputDate.setDay(12345);
+        inputDate.setDayString("12345");
+        Date outputDate = DateParser.cleaning(inputDate);
 
-        List<Date> output = target.processing("12.03.1942-10.1943");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(12));
-        assertThat(date1.getMonth(), is(3));
-        assertThat(date1.getYear(), is(1942));
-
-        assertThat(date1.getDayString(), is("12"));
-        assertThat(date1.getMonthString(), is("03"));
-        assertThat(date1.getYearString(), is("1942"));
-
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(-1));
-        assertThat(date2.getMonth(), is(10));
-        assertThat(date2.getYear(), is(1943));
-
-        assertThat(date2.getDayString(), nullValue());
-        assertThat(date2.getMonthString(), is("10"));
-        assertThat(date2.getYearString(), is("1943"));
-    }
-
-    @Ignore("Need more training data, perhaps")
-    @Test
-    public void processing_englishStandardDate6_shouldWork() throws Exception {
-
-        List<Date> output = target.processing("1941-45");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(-1));
-        assertThat(date1.getMonth(), is(-1));
-        assertThat(date1.getYear(), is(1941));
-
-        assertThat(date1.getDayString(), nullValue());
-        assertThat(date1.getMonthString(), nullValue());
-        assertThat(date1.getYearString(), is("1941"));
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(-1));
-        assertThat(date2.getMonth(), is(-1));
-        assertThat(date2.getYear(), is(45));
-
-        assertThat(date2.getDayString(), nullValue());
-        assertThat(date2.getMonthString(), nullValue());
-        assertThat(date2.getYearString(), is("45"));
+        assertThat(outputDate.getDayString(), is(nullValue()));
+        assertThat(outputDate.getDay(), is(-1));
     }
 
     @Test
-    public void processing_englishStandardDate7_shouldWork() throws Exception {
+    public void testNormalize_yearContainsWholeDate_shouldReconstructCorrectly() {
+        Date inputDate = new Date();
+        inputDate.setYear(20021212);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
-        List<Date> output = target.processing("2015-10-21");
-        assertThat(output, hasSize(1));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(21));
-        assertThat(date1.getMonth(), is(10));
-        assertThat(date1.getYear(), is(2015));
-
-        assertThat(date1.getDayString(), is("" + date1.getDay()));
-        assertThat(date1.getMonthString(), is("" + date1.getMonth()));
-        assertThat(date1.getYearString(), is("" + date1.getYear()));
-
+        assertThat(outputDate.getMonth(), is(12));
+        assertThat(outputDate.getDay(), is(12));
+        assertThat(outputDate.getYear(), is(2002));
     }
 
     @Test
-    public void processing_englishStandardDate9_shouldWork() throws Exception {
+    public void testNormalize_dayContainsWholeDate_shouldReturnEmptyDate() {
+        Date inputDate = new Date();
+        inputDate.setDay(20021212);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
-        List<Date> output = target.processing("2015-10-21 10-12-2016");
-        assertThat(output, hasSize(2));
-        final Date date1 = output.get(0);
-        assertThat(date1.getDay(), is(21));
-        assertThat(date1.getMonth(), is(10));
-        assertThat(date1.getYear(), is(2015));
-
-        assertThat(date1.getDayString(), is("" + date1.getDay()));
-        assertThat(date1.getMonthString(), is("" + date1.getMonth()));
-        assertThat(date1.getYearString(), is("" + date1.getYear()));
-
-        final Date date2 = output.get(1);
-        assertThat(date2.getDay(), is(10));
-        assertThat(date2.getMonth(), is(12));
-        assertThat(date2.getYear(), is(2016));
-
-        assertThat(date2.getDayString(), is("" + date2.getDay()));
-        assertThat(date2.getMonthString(), is("" + date2.getMonth()));
-        assertThat(date2.getYearString(), is("" + date2.getYear()));
+        assertThat(outputDate.getMonth(), is(-1));
+        assertThat(outputDate.getDay(), is(-1));
+        assertThat(outputDate.getYear(), is(-1));
     }
 
     @Test
-    public void testTrainingExtraction_simpleDate1() throws Exception {
-        List<String> input = Arrays.asList("December 1943");
+    public void testNormalize_monthContainsWholeDate_shouldReturnEmptyDate() {
+        Date inputDate = new Date();
+        inputDate.setMonth(20021212);
+        Date outputDate = target.normalizeAndClean(inputDate);
 
-        StringBuilder sb = target.trainingExtraction(input);
-        String output = sb.toString();
-
-        assertThat(output, is("\t<date><month>December</month> <year>1943</year></date>\n"));
-
+        assertThat(outputDate.getMonth(), is(-1));
+        assertThat(outputDate.getDay(), is(-1));
+        assertThat(outputDate.getYear(), is(-1));
     }
 
     @Test
-    public void testTrainingExtraction_simpleDate2() throws Exception {
-        List<String> input = Arrays.asList("15 March 1942");
+    public void testNormalize_yearOnly_validValue_shouldParseYearCorrectly() {
+        Date inputDate = new Date();
+        inputDate.setYearString("2002");
+        Date outputDate = target.normalizeAndClean(inputDate);
 
-        StringBuilder sb = target.trainingExtraction(input);
-        String output = sb.toString();
-
-        assertThat(output, is("\t<date><day>15</day> <month>March</month> <year>1942</year></date>\n"));
+        assertThat(outputDate.getMonth(), is(-1));
+        assertThat(outputDate.getDay(), is(-1));
+        assertThat(outputDate.getYear(), is(2002));
+        assertThat(outputDate.getYearString(), is("2002"));
     }
 
     @Test
-    public void testTrainingExtraction_simpleDate3() throws Exception {
-        List<String> input = Arrays.asList("1943-1944");
+    public void testNormalize_wholeDate_invalidYearValue_shouldRemoveValue() {
+        Date inputDate = new Date();
+        inputDate.setDayString("12");
+        inputDate.setMonthString("12");
+        inputDate.setYearString("2222222012");
+        Date outputDate = target.normalizeAndClean(inputDate);
 
-        StringBuilder sb = target.trainingExtraction(input);
-        String output = sb.toString();
-
-        assertThat(output, is("\t<date><year>1943</year>-</date>\n\t<date><year>1944</year></date>\n"));
+        assertThat(outputDate.getDay(), is(12));
+        assertThat(outputDate.getDayString(), is("12"));
+        assertThat(outputDate.getMonth(), is(12));
+        assertThat(outputDate.getMonthString(), is("12"));
+        assertThat(outputDate.getYear(), is(-1));
+        assertThat(outputDate.getYearString(), is(nullValue()));
     }
 
     @Test
-    public void testTrainingExtraction_emptyInput() throws Exception {
-        assertThat(target.trainingExtraction(null), nullValue());
+    public void testNormalize_monthOnly_validValue_shouldParseMonthCorrectly() {
+        Date inputDate = new Date();
+        inputDate.setMonthString("12");
+        Date outputDate = target.normalizeAndClean(inputDate);
+
+        assertThat(outputDate.getMonth(), is(12));
+        assertThat(outputDate.getDay(), is(-1));
+        assertThat(outputDate.getYear(), is(-1));
+        assertThat(outputDate.getMonthString(), is("12"));
     }
 
     @Test
-    public void testMayAndMarchOverlap() throws Exception {
-        DateParser dateParser = new DateParser();
-        {
-            List<Date> dates = dateParser.processing("May 2003");
-            assertEquals(1, dates.size());
-            Date date = dates.get(0);
-            assertEquals(2003, date.getYear());
-            assertEquals(5, date.getMonth());
-        }
-        {
-            List<Date> dates = dateParser.processing("Mar 2003");
-            assertEquals(1, dates.size());
-            Date date = dates.get(0);
-            assertEquals(2003, date.getYear());
-            assertEquals(3, date.getMonth());
-        }
+    public void testNormalize_wholeDate_invalidMonthValue_shouldRemoveValue() {
+        Date inputDate = new Date();
+        inputDate.setDayString("12");
+        inputDate.setMonthString("1222222222");
+        inputDate.setYearString("2012");
+        Date outputDate = target.normalizeAndClean(inputDate);
+
+        assertThat(outputDate.getMonth(), is(-1));
+        assertThat(outputDate.getMonthString(), is(nullValue()));
+        assertThat(outputDate.getDay(), is(12));
+        assertThat(outputDate.getDayString(), is("12"));
+        assertThat(outputDate.getYear(), is(2012));
+        assertThat(outputDate.getYearString(), is("2012"));
+    }
+
+    @Test
+    public void testNormalize_dayOnly_validValue_shouldParseDayCorrectly() {
+        Date inputDate = new Date();
+        inputDate.setDayString("12");
+        Date outputDate = target.normalizeAndClean(inputDate);
+
+        assertThat(outputDate.getMonth(), is(-1));
+        assertThat(outputDate.getDay(), is(12));
+        assertThat(outputDate.getYear(), is(-1));
+        assertThat(outputDate.getDayString(), is("12"));
+    }
+
+    @Test
+    public void testNormalize_wholeDate_invalidDayValue_shouldRemoveValue() {
+        Date inputDate = new Date();
+        inputDate.setDayString("1221");
+        inputDate.setMonthString("12");
+        inputDate.setYearString("2012");
+        Date outputDate = target.normalizeAndClean(inputDate);
+
+        assertThat(outputDate.getDay(), is(-1));
+        assertThat(outputDate.getDayString(), is(nullValue()));
+        assertThat(outputDate.getMonth(), is(12));
+        assertThat(outputDate.getMonthString(), is("12"));
+        assertThat(outputDate.getYear(), is(2012));
+        assertThat(outputDate.getYearString(), is("2012"));
+    }
+
+    @Test
+    public void testResultExtraction_StandardDate_shouldWork() throws Exception {
+        String input = "1983-1-1";
+        
+        List<LayoutToken> inputAsLayoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<String> features = generateFeatures(inputAsLayoutTokens);
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        List<Triple<String, Integer, Integer>> labels = Arrays.asList(
+            Triple.of("<year>", 0, 1),
+            Triple.of("<month>", 2, 3),
+            Triple.of("<day>", 4, 5)
+        );
+        
+        String result = GrobidTestUtils.getWapitiResult(features, labels);
+
+        List<Date> dates = target.resultExtraction(result, inputAsLayoutTokens);
+        
+        assertThat(dates, hasSize(1));
+        assertThat(dates.get(0).getYearString(), is("1983"));
+        assertThat(dates.get(0).getMonthString(), is("1"));
+        assertThat(dates.get(0).getDayString(), is("1"));
+    }
+
+    @Test
+    public void testResultExtraction_DoubleDate_shouldWork() throws Exception {
+        String input = "1983-1-1 1982-1-2";
+
+        List<LayoutToken> inputAsLayoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<String> features = generateFeatures(inputAsLayoutTokens);
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        List<Triple<String, Integer, Integer>> labels = Arrays.asList(
+            Triple.of("<year>", 0, 1),
+            Triple.of("<month>", 2, 3),
+            Triple.of("<day>", 4, 5),
+            Triple.of("<year>", 5, 6),
+            Triple.of("<month>", 7, 8),
+            Triple.of("<day>", 9, 10)
+        );
+
+        String result = GrobidTestUtils.getWapitiResult(features, labels);
+
+        List<Date> dates = target.resultExtraction(result, inputAsLayoutTokens);
+
+        assertThat(dates, hasSize(2));
+        assertThat(dates.get(0).getYearString(), is("1983"));
+        assertThat(dates.get(0).getMonthString(), is("1"));
+        assertThat(dates.get(0).getDayString(), is("1"));
+
+        assertThat(dates.get(1).getYearString(), is("1982"));
+        assertThat(dates.get(1).getMonthString(), is("1"));
+        assertThat(dates.get(1).getDayString(), is("2"));
+    }
+
+
+    private List<String> generateFeatures(List<LayoutToken> layoutTokens) throws Exception {
+        List<String> tokensAsStrings = layoutTokens.stream()
+            .map(layoutToken -> layoutToken.getText() + " " + "<date>")
+            .collect(Collectors.toList());
+        String features = FeaturesVectorDate.addFeaturesDate(tokensAsStrings);
+        return Arrays.asList(features.split("\n"));
     }
 }

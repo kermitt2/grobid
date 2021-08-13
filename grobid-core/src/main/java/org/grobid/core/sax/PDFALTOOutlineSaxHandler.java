@@ -11,10 +11,9 @@ import org.xml.sax.helpers.*;
 import java.util.*;
 
 /**
- *  SAX parser for XML representation of the outline/bookmark present in PDF files 
- *  obtained via xpdf pdf2xml. 
+ *  SAX parser for ALTO XML representation of the outline/bookmark present in PDF files 
+ *  obtained via pdfalto. 
  * 
- *  @author Patrice Lopez
  */
 public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDFALTOOutlineSaxHandler.class);
@@ -32,7 +31,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 	private int currentParentId = -1;
 
 	private Map<Integer,DocumentNode> nodes = null;
-	
+
 	public PDFALTOOutlineSaxHandler(Document doc) {
 		this.doc = doc;
 	}
@@ -53,11 +52,24 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			java.lang.String qName) throws SAXException {
 
 		if (qName.equals("STRING")) {
-			label = getText();
+		    currentNode.setLabel(getText());
 		} else if (qName.equals("ITEM")) {
-			currentNode.setLabel(label);
-			currentNode.setBoundingBox(box);
-		}
+		    //The box could come from a nested element
+		    if (box != null) {
+                currentNode.setBoundingBox(box);
+		    }
+
+            box = null;
+            label = null;
+		} else if (qName.equals("TOCITEMLIST")) {
+		    currentParentId = -1;
+        } else if (qName.equals("LINK")) {
+		    // in case of nested item, we need to assign the box right away or we will lose it.
+            if (box != null) {
+                currentNode.setBoundingBox(box);
+            }
+            box = null;
+        }
 	}
 	
 	public void startElement(String namespaceURI, String localName,
@@ -66,7 +78,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			// this is the document root
 			root = new DocumentNode();
 			nodes = new HashMap<Integer,DocumentNode>();
-		} if (qName.equals("ITEM")) {
+		} else if (qName.equals("ITEM")) {
 			currentNode = new DocumentNode();
 			// get the node id 
 			int length = atts.getLength();
@@ -78,7 +90,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 				String value = atts.getValue(i);
 
 				if ((name != null) && (value != null)) {
-					if (name.equals("id")) {
+					if (name.equalsIgnoreCase("id")) {
 						try {
 							currentId = Integer.parseInt(value);
 						} catch(Exception e) {
@@ -88,14 +100,16 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 					}
 				}
 			}
-			//currentNode.setId(currentId);
+			currentNode.setId(currentId);
 			nodes.put(currentId,currentNode);
 			if (currentParentId != -1) {
 				DocumentNode father = nodes.get(currentParentId);
-				if (father == null)
-					System.out.println("Warning, father not yet encountered! id is " + currentParentId);
-				currentNode.setFather(father);
-				father.addChild(currentNode);
+                if (father == null)
+					LOGGER.warn("Father not yet encountered! id is " + currentParentId);
+                else {
+				    currentNode.setFather(father);
+				    father.addChild(currentNode);
+                }
 			} else {
 				// parent is the root node
 				currentNode.setFather(root);
@@ -197,7 +211,7 @@ public class PDFALTOOutlineSaxHandler extends DefaultHandler {
 			}
 
 			// create the bounding box
-			double x = left;
+            double x = left;
 			double y = right;
 			double width = -1.0;
 			double height = -1.0;

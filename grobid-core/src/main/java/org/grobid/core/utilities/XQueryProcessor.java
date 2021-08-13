@@ -23,13 +23,11 @@ import java.util.Properties;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * Created by zholudev on 15/04/15.
  * Running XQuery queries
  */
 public class XQueryProcessor {
     private final StaticQueryContext sqc;
     private final DynamicQueryContext dqc;
-
 
     public static String getQueryFromResources(String name) throws IOException {
         return IOUtils.toString(XQueryProcessor.class.getResourceAsStream("/xq/" + name),UTF_8);
@@ -51,7 +49,6 @@ public class XQueryProcessor {
         DocumentInfo DI = sqc.buildDocument(SAXs);
         dqc.setContextItem(DI);
     }
-
 
     public SequenceIterator getSequenceIterator(String query) throws XPathException {
         Properties props = new Properties();
