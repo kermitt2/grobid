@@ -130,6 +130,9 @@ public class SentenceUtilities {
      * @return list of offset positions for the identified sentence, relative to the input text
      */
     public List<OffsetPosition> runSentenceDetection(String text, List<OffsetPosition> forbidden, List<LayoutToken> textLayoutTokens, Language lang) {
+        
+        //String text2 = LayoutTokensUtil.toText(textLayoutTokens);
+        
         if (text == null)
             return null;
         try {
@@ -143,24 +146,24 @@ public class SentenceUtilities {
             // cancel sentence boundaries within the forbidden spans
             List<OffsetPosition> finalSentencePositions = new ArrayList<>();
             int forbiddenIndex = 0;
-            for(int j=0; j < sentencePositions.size(); j++) {
-                OffsetPosition position = sentencePositions.get(j);
+            for(int sentencePositionId=0; sentencePositionId < sentencePositions.size(); sentencePositionId++) {
+                OffsetPosition sentencePosition = sentencePositions.get(sentencePositionId);
                 for(int i=forbiddenIndex; i < forbidden.size(); i++) {
                     OffsetPosition forbiddenPos = forbidden.get(i);
-                    if (forbiddenPos.end < position.end) 
+                    if (forbiddenPos.end < sentencePosition.end) 
                         continue;
-                    if (forbiddenPos.start > position.end) 
+                    if (forbiddenPos.start > sentencePosition.end) 
                         break;
-                    while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
-                        if (j+1 < sentencePositions.size()) {
-                            position.end = sentencePositions.get(j+1).end;
-                            j++;
+                    while ( (forbiddenPos.start < sentencePosition.end && sentencePosition.end < forbiddenPos.end) ) {
+                        if (sentencePositionId+1 < sentencePositions.size()) {
+                            sentencePosition.end = sentencePositions.get(sentencePositionId+1).end;
+                            sentencePositionId++;
                             forbiddenIndex = i;
                         } else
                             break;
                     }
                 }
-                finalSentencePositions.add(position);
+                finalSentencePositions.add(sentencePosition);
             }
 
             // as a heuristics for all implementations, because they clearly all fail for this case, we 
