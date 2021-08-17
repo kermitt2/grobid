@@ -23,7 +23,13 @@ The process for retrieving and running the image is as follow:
 - Run the container:
 
 ```bash
-> docker run -t --rm --init lfoppiano/grobid:${latest_grobid_version}
+> docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
+```
+
+Latest verion:
+
+```bash
+> docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:0.7.0
 ```
 
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
@@ -57,7 +63,7 @@ Current latest version:
 - Run the container:
 
 ```bash
-> docker run --rm --gpus all --init grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus all --init -p 8070:8070 grobid/grobid:${latest_grobid_version}
 ```
 
 The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used.  
@@ -65,7 +71,7 @@ The image will automatically uses the GPU and CUDA version available on your hos
 To specify to use only certain GPUs (see the [nvidia container toolkit user guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#gpu-enumeration) for more details):
 
 ```bash
-> docker run --rm --gpus '"device=1,2"' --init -p 8080:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus '"device=1,2"' --init -p 8070:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
 ```
 
 You can run the image on CPU by omitting the `-gpus` parameters. 
@@ -73,7 +79,7 @@ You can run the image on CPU by omitting the `-gpus` parameters.
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
 
 ```bash
-> docker run -t --rm --gpus all --init -p 8080:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
+> docker run -t --rm --gpus all --init -p 8080:8070 grobid/grobid:${latest_grobid_version}
 ```
 
 Access the service:
