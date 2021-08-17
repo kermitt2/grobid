@@ -2000,7 +2000,7 @@ public class BiblioItem {
                     bibtex.add("  day = {" + normalized_publication_date.getDay() + "}");
                 }
             } else if (publication_date != null) {
-                bibtex.add("  date = {" + publication_date + "}");
+                bibtex.add("  year = {" + publication_date + "}");
             }
 
             // address
