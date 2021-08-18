@@ -35,7 +35,7 @@ import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
 import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
-import static org.grobid.core.document.TEIFormatter.toISOString;
+import static org.grobid.core.data.Date.toISOString;
 
 public class HeaderParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(HeaderParser.class);
@@ -268,8 +268,6 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setDOI(dois.get(0));
                 }
 
-                resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
-
                 // normalization of dates
                 if (resHeader != null) {
                     if (resHeader.getNormalizedPublicationDate() == null) {
@@ -308,6 +306,8 @@ public class HeaderParser extends AbstractParser {
                         resHeader.setServerDate(toISOString(resHeader.getNormalizedServerDate()));
                     }
                 }
+
+                resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
 
                 // we don't need to serialize if we process the full text (it would be done 2 times)
                 if (serialize) {
@@ -1402,17 +1402,6 @@ public class HeaderParser extends AbstractParser {
             consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager);
-            /*List<BiblioItem> bibis = new ArrayList<BiblioItem>();
-            boolean valid = consolidator.consolidate(resHeader, bibis);
-            if ((valid) && (bibis.size() > 0)) {
-                BiblioItem bibo = bibis.get(0);
-                if (bibo != null) {
-                    if (consolidate == 1)
-                        BiblioItem.correct(resHeader, bibo);
-                    else if (consolidate == 2)
-                        BiblioItem.injectDOI(resHeader, bibo);
-                }
-            }*/
             BiblioItem bib = consolidator.consolidate(resHeader, null);
             if (bib != null) {
                 if (consolidate == 1)
