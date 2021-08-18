@@ -225,7 +225,7 @@ public class GrobidRestServiceTest {
         assertEquals("true", resp.readEntity(String.class));
     }
 
-    //@Test
+    @Test
     public void processCitationReturnsCorrectBibTeXForMissingFirstName() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Graff, Expert. Opin. Ther. Targets (2002) 6(1): 103-113");
@@ -246,7 +246,7 @@ public class GrobidRestServiceTest {
             response.readEntity(String.class));
     }
 
-    //@Test
+    @Test
     public void processCitationReturnsBibTeX() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
@@ -260,13 +260,14 @@ public class GrobidRestServiceTest {
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
                 "  date = {2014},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom}\n" +
                 "}\n",
             response.readEntity(String.class));
     }
 
-    //@Test
+    @Test
     public void processCitationReturnsBibTeXAndCanInludeRaw() {
         Form form = new Form();
         form.param(GrobidRestService.CITATION, "Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
@@ -281,7 +282,8 @@ public class GrobidRestServiceTest {
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
                 "  date = {2014},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom},\n" +
                 "  raw = {Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
                 "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.}\n" +
