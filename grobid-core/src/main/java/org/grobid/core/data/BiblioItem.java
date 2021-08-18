@@ -906,6 +906,10 @@ public class BiblioItem {
         this.normalized_publication_date = theDate;
     }
 
+    public void mergeNormalizedPublicationDate(Date theDate) {
+        this.normalized_publication_date = Date.merge(this.normalized_publication_date , theDate);
+    }
+
     public void setEditors(String theEditors) {
         this.editors = StringUtils.normalizeSpace(theEditors);
     }
@@ -1982,10 +1986,23 @@ public class BiblioItem {
 
             // dates
             if (normalized_publication_date != null) {
-                String isoDate = TEIFormatter.toISOString(normalized_publication_date);
+                String isoDate = Date.toISOString(normalized_publication_date);
                 if (isoDate != null) {
                     bibtex.add("  date = {" + isoDate + "}");
                 }
+                if (normalized_publication_date.getYear() >= 0) {
+                    bibtex.add("  year = {" + normalized_publication_date.getYear() + "}");
+                
+                    if (normalized_publication_date.getMonth() >= 0) {
+                        bibtex.add("  month = {" + normalized_publication_date.getMonth() + "}");
+                    
+                        if (normalized_publication_date.getDay() >= 0) {
+                            bibtex.add("  day = {" + normalized_publication_date.getDay() + "}");
+                        }
+                    }
+                }
+            } else if (publication_date != null) {
+                bibtex.add("  year = {" + publication_date + "}");
             }
 
             // address
@@ -2475,40 +2492,22 @@ public class BiblioItem {
                 }
 
                 if (normalized_publication_date != null) {
-                    if ((normalized_publication_date.getDay() != -1) ||
-                            (normalized_publication_date.getMonth() != -1) ||
-                            (normalized_publication_date.getYear() != -1)) {
-                        int year = normalized_publication_date.getYear();
-                        int month = normalized_publication_date.getMonth();
-                        int day = normalized_publication_date.getDay();
-						
-						if (year != -1) {
-			                String when = "";
-							if (year <= 9) 
-								when += "000" + year;
-							else if (year <= 99) 
-								when += "00" + year;
-							else if (year <= 999)
-								when += "0" + year;
-							else
-								when += year;
-			                if (month != -1) {
-								if (month <= 9) 
-									when += "-0" + month;
-								else 
-			 					   	when += "-" + month;
-			                    if (day != -1) {
-									if (day <= 9)
-										when += "-0" + day;
-									else
-										when += "-" + day;
-			                    }
-			                }
+                    if (normalized_publication_date.getYear() != -1) {
+                        String when = Date.toISOString(normalized_publication_date);
+                        if (when != null) {
 	                        for (int i = 0; i < indent + 3; i++) {
 	                            tei.append("\t");
 	                        }
 	                        tei.append("<date type=\"published\" when=\"");
-	                        tei.append(when + "\" />\n");
+	                        tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
 						}
                     } else if (this.getYear() != null) {
 						String when = "";
@@ -2537,7 +2536,15 @@ public class BiblioItem {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+                        tei.append(when + "\"");
+
+                        if (publication_date != null && publication_date.length() > 0) {
+                            tei.append(">");
+                            tei.append(TextUtilities.HTMLEncode(publication_date) );
+                            tei.append("</date>\n");
+                        } else {
+                            tei.append(" />\n");
+                        }
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -2688,40 +2695,22 @@ public class BiblioItem {
 
                     // date
                     if (normalized_publication_date != null) {
-                        if ((normalized_publication_date.getDay() != -1) ||
-                                (normalized_publication_date.getMonth() != -1) ||
-                                (normalized_publication_date.getYear() != -1)) {
-                            int year = normalized_publication_date.getYear();
-                            int month = normalized_publication_date.getMonth();
-                            int day = normalized_publication_date.getDay();
-							
-							if (year != -1) {
-				                String when = "";
-								if (year <= 9) 
-									when += "000" + year;
-								else if (year <= 99) 
-									when += "00" + year;
-								else if (year <= 999)
-									when += "0" + year;
-								else
-									when += year;
-				                if (month != -1) {
-									if (month <= 9) 
-										when += "-0" + month;
-									else 
-				 					   	when += "-" + month;
-				                    if (day != -1) {
-										if (day <= 9)
-											when += "-0" + day;
-										else
-											when += "-" + day;
-				                    }
-				                }
+                        if (normalized_publication_date.getYear() != -1) {
+                            String when = Date.toISOString(normalized_publication_date);
+                            if (when != null) {
 	                            for (int i = 0; i < indent + 3; i++) {
 	                                tei.append("\t");
 	                            }
 	                            tei.append("<date type=\"published\" when=\"");
-	                            tei.append(when + "\" />\n");
+                                tei.append(when + "\"");
+
+                                if (publication_date != null && publication_date.length() > 0) {
+                                    tei.append(">");
+                                    tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                    tei.append("</date>\n");
+                                } else {
+                                    tei.append(" />\n");
+                                }
 							}
                         } else if (this.getYear() != null) {
 							String when = "";
@@ -2750,7 +2739,15 @@ public class BiblioItem {
                                 tei.append("\t");
                             }
                             tei.append("<date type=\"published\" when=\"");
-                            tei.append(when + "\" />\n");
+                            tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
                         } else {
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
@@ -2819,40 +2816,22 @@ public class BiblioItem {
 				}
                 // date
                 if (normalized_publication_date != null) {
-                    if ((normalized_publication_date.getDay() != -1) |
-                            (normalized_publication_date.getMonth() != -1) |
-                            (normalized_publication_date.getYear() != -1)) {
-                        int year = normalized_publication_date.getYear();
-                        int month = normalized_publication_date.getMonth();
-                        int day = normalized_publication_date.getDay();
-
-						if (year != -1) {
-			                String when = "";
-							if (year <= 9) 
-								when += "000" + year;
-							else if (year <= 99) 
-								when += "00" + year;
-							else if (year <= 999)
-								when += "0" + year;
-							else
-								when += year;
-			                if (month != -1) {
-								if (month <= 9) 
-									when += "-0" + month;
-								else 
-			 					   	when += "-" + month;
-			                    if (day != -1) {
-									if (day <= 9)
-										when += "-0" + day;
-									else
-										when += "-" + day;
-			                    }
-			                }
+                    if (normalized_publication_date.getYear() != -1) {
+                        String when = Date.toISOString(normalized_publication_date);
+                        if (when != null) {                        
 	                        for (int i = 0; i < indent + 3; i++) {
 	                            tei.append("\t");
 	                        }
 	                        tei.append("<date type=\"published\" when=\"");
-	                        tei.append(when + "\" />\n");
+	                        tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
 						}
                     } else if (this.getYear() != null) {
 						String when = "";
@@ -2881,7 +2860,15 @@ public class BiblioItem {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+                        tei.append(when + "\"");
+
+                        if (publication_date != null && publication_date.length() > 0) {
+                            tei.append(">");
+                            tei.append(TextUtilities.HTMLEncode(publication_date) );
+                            tei.append("</date>\n");
+                        } else {
+                            tei.append(" />\n");
+                        }
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -4390,10 +4377,17 @@ public class BiblioItem {
             bib.setSubmissionDate(bibo.getSubmissionDate());
         if (bibo.getDownloadDate() != null)
             bib.setDownloadDate(bibo.getDownloadDate());
-        if (bibo.getYear() != null)
+       
+        if (bibo.getNormalizedPublicationDate() != null) {
+            if (bib.getNormalizedPublicationDate() != null) {
+                bib.mergeNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
+            }
+            else {
+                bib.setNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
+            }
+        }
+         if (bibo.getYear() != null)
             bib.setYear(bibo.getYear());
-        if (bibo.getNormalizedPublicationDate() != null)
-            bib.setNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
         if (bibo.getMonth() != null)
             bib.setMonth(bibo.getMonth());
         if (bibo.getDay() != null)
