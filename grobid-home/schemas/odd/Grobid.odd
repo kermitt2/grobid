@@ -36,17 +36,26 @@
                 <moduleRef key="linking" except=""/>
                 <moduleRef key="figures" except=""/>
                 <moduleRef key="transcr" except="addSpan am damage damageSpan delSpan ex fw handNotes handShift line listTranspose metamark mod path redo restore retrace secl sourceDoc space subst substJoin supplied surfaceGrp surplus transpose undo zone"/>
-                <elementSpec module="figures" ident="formula" mode="change">
+                
+                <!-- formula can contains raw text or graphics, and formula can appear under div, because often completely outside a paragraph -->
+                <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="formula" mode="change" ns="http://www.tei-c.org/ns/1.0">
                     <content>
                         <rng:zeroOrMore>
                             <rng:choice>
                                 <rng:text/>
                                 <rng:ref name="model.graphicLike"/>
                                 <rng:ref name="model.hiLike"/>
+                                <rng:ref name="label"/>
                                 <!--rng:ref name="mathml.math"/-->
                             </rng:choice>
                         </rng:zeroOrMore>
                     </content>
+                    <classes mode="replace">
+                        <memberOf key="model.graphicLike"/>
+                        <memberOf key="model.pLike" mode="add"/>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.notated"/>
+                    </classes>
                 </elementSpec>
 
                 <!-- required to avoid Sanity Checker warnings -->
@@ -159,6 +168,25 @@
                     </content>
                 </elementSpec>
 
+                <!-- allow optional idno directly under biblStruct -->
+                <elementSpec ident="biblStruct" module="core" mode="change">
+                    <content>
+                        <sequence>
+                            <elementRef key="analytic" minOccurs="0" maxOccurs="unbounded"/>
+                        <sequence minOccurs="1" maxOccurs="unbounded">
+                            <elementRef key="monogr"/>
+                            <elementRef key="series" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                            <classRef key="model.noteLike"/>
+                            <classRef key="model.ptrLike"/>
+                            <elementRef key="relatedItem"/>
+                            <elementRef key="citedRange"/>
+                            <elementRef key="idno"/>
+                        </alternate></sequence>
+                    </content>
+                </elementSpec>
+
                 <!-- allow text in table, because Grobid does not include yet a model for 
                      structuring table -->
                 <!-- elementSpec ident="table" mode="change" module="figures"><content><rng:optional><rng:ref name="model.resourceLike"/></rng:optional><rng:optional><rng:text/></rng:optional></content></elementSpec-->
@@ -170,6 +198,7 @@
                             <rng:ref name="model.resourceLike"/>
                         </rng:optional>
                         <rng:optional>
+                            <rng:ref name="facsimile"/>
                             <rng:ref name="text"/>
                         </rng:optional>
                     </content>
@@ -206,8 +235,6 @@
                 <elementSpec ident="age" mode="delete" module="namesdates"/>
                 <elementSpec ident="alt" mode="delete" module="linking"/>
                 <elementSpec ident="altGrp" mode="delete" module="linking"/>
-                <!--elementSpec ident="appInfo" mode="delete" module="header"/-->
-                <elementSpec ident="application" mode="delete" module="header"/>
                 <elementSpec ident="argument" mode="delete" module="textstructure"/>
                 <elementSpec ident="authority" mode="delete" module="header"/>
                 <elementSpec ident="biblFull" mode="delete" module="header"/>
@@ -235,7 +262,6 @@
                 <elementSpec ident="dateline" mode="delete" module="textstructure"/>
                 <elementSpec ident="death" mode="delete" module="namesdates"/>
                 <elementSpec ident="del" mode="delete" module="core"/>
-                <!--elementSpec ident="desc" mode="delete" module="core"/-->
                 <elementSpec ident="distinct" mode="delete" module="core"/>
                 <elementSpec ident="distributor" mode="delete" module="header"/>
                 <elementSpec ident="district" mode="delete" module="namesdates"/>
@@ -255,7 +281,6 @@
                 <elementSpec ident="editorialDecl" mode="delete" module="header"/>
                 <elementSpec ident="education" mode="delete" module="namesdates"/>
                 <elementSpec ident="emph" mode="delete" module="core"/>
-                <!--elementSpec ident="encodingDesc" mode="delete" module="header"/-->
                 <elementSpec ident="epigraph" mode="delete" module="textstructure"/>
                 <elementSpec ident="event" mode="delete" module="namesdates"/>
                 <elementSpec ident="expan" mode="delete" module="core"/>
