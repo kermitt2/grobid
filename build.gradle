@@ -2,16 +2,14 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-//        jcenter()
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
     }
     dependencies {
 //        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
-        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
-//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
+        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
+        classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
 }
@@ -94,8 +92,8 @@ subprojects {
 
         testImplementation "junit:junit:4.12"
         testImplementation "org.easymock:easymock:3.4"
-        testCompile "org.powermock:powermock-api-easymock:2.0.7"
-        testCompile "org.powermock:powermock-module-junit4:2.0.7"
+        testImplementation "org.powermock:powermock-api-easymock:2.0.7"
+        testImplementation "org.powermock:powermock-module-junit4:2.0.7"
         testImplementation "xmlunit:xmlunit:1.6"
         testImplementation "org.hamcrest:hamcrest-all:1.3"
 
@@ -121,8 +119,6 @@ subprojects {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
-
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -261,13 +257,11 @@ project("grobid-core") {
 
     jar {
         from {
-//            project.configurations.implementation.collect {
             project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
-
-//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -280,7 +274,6 @@ project("grobid-core") {
         from sourceSets.main.output
 
         from {
-//            project.configurations.implementation.collect {
             project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
@@ -551,7 +544,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "6.5.1"
+    gradleVersion "7.1.1"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
