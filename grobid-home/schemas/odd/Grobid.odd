@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<?xml-model href="tei_odds.rnc" type="application/relax-ng-compact-syntax"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -28,17 +26,41 @@
             <schemaSpec ident="Grobid" docLang="en" prefix="tei_" xml:lang="en">
                 <!--moduleRef
                     url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/-->
-                <moduleRef key="core" except=""/>
+                <moduleRef key="core"
+                    except="abbr add addName binaryObject cb choice cit citedRange corr del distinct divGen emph expan
+                    foreign gap gb gloss headItem headLabel index l lb lg measure measureGrp media mentioned milestone num orig pb q
+                    quote reg relatedItem resp respStmt rs said sic soCalled sp speaker stage teiCorpus textLang time unclear"/>
                 <moduleRef key="tei" except=""/>
-                <moduleRef key="header" except=""/>
-                <moduleRef key="textstructure" except=""/>
-                <moduleRef key="namesdates" except=""/>
-                <moduleRef key="linking" except=""/>
-                <moduleRef key="figures" except=""/>
-                <moduleRef key="transcr" except="addSpan am damage damageSpan delSpan ex fw handNotes handShift line listTranspose metamark mod path redo restore retrace secl sourceDoc space subst substJoin supplied surfaceGrp surplus transpose undo zone"/>
-                
+                <moduleRef key="header"
+                    except="authority biblFull cRefPattern calendar calendarDesc catDesc catRef category change classDecl correction
+                    creation distributor editorialDecl extent funder geoDecl handNote hyphenation interpretation langUsage language listChange listPrefixDef
+                    namespace normalization prefixDef principal projectDesc punctuation quotation refState refsDecl rendition revisionDesc samplingDecl
+                    scriptNote segmentation sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy typeNote"/>
+                <moduleRef key="textstructure"
+                    except="argument byline closer dateline div1 div2 div3 div4 div5 div6 div7
+                    docAuthor docDate docEdition docImprint docTitle epigraph floatingText group imprimatur opener postscript
+                    salute signed titlePage titlePart titlePart trailer"/>
+                <moduleRef key="namesdates"
+                    except="age birth bloc climate death district education event faith floruit genName geo geogFeat
+                    geogName langKnowledge langKnown listEvent listNym listOrg listPerson listPlace listRelation location nameLink nationality
+                    nym occupation offset person personGrp place placeName population relation residence sex socecStatus terrain trait"/>
+                <moduleRef key="linking" except="ab alt altGrp join joinGrp linkGrp seg state timeline"/>
+                <moduleRef key="figures" except="notatedMusic"/>
+                <moduleRef key="transcr"
+                    except="addSpan am damage damageSpan delSpan ex fw handNotes handShift line listTranspose metamark mod path redo restore retrace secl sourceDoc space subst substJoin supplied surfaceGrp surplus transpose undo zone"/>
+                <!-- only s from the analysis module, in case we want the final result with sentence segmentation -->
+                <!-- used to be except="c cl interp interpGrp m pc phr span spanGrp w" -->
+                <moduleRef key="analysis" include="s"/>
+
                 <!-- formula can contains raw text or graphics, and formula can appear under div, because often completely outside a paragraph -->
-                <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="formula" mode="change" ns="http://www.tei-c.org/ns/1.0">
+                <elementSpec module="figures" ident="formula" mode="change"
+                    ns="http://www.tei-c.org/ns/1.0">
+                    <classes mode="replace">
+                        <memberOf key="model.graphicLike"/>
+                        <memberOf key="model.pLike" mode="add"/>
+                        <memberOf key="att.global"/>
+                        <memberOf key="att.notated"/>
+                    </classes>
                     <content>
                         <rng:zeroOrMore>
                             <rng:choice>
@@ -50,19 +72,7 @@
                             </rng:choice>
                         </rng:zeroOrMore>
                     </content>
-                    <classes mode="replace">
-                        <memberOf key="model.graphicLike"/>
-                        <memberOf key="model.pLike" mode="add"/>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.notated"/>
-                    </classes>
                 </elementSpec>
-
-                <!-- required to avoid Sanity Checker warnings -->
-                <elementSpec ident="handNote" mode="delete" module="header"/>
-                <elementSpec ident="typeNote" mode="delete" module="header"/>
-                <elementSpec ident="scriptNote" mode="delete" module="header"/>
-                <!-- sanity checker still fails tho, as it cannot find element mathml.math -->
 
                 <elementSpec ident="monogr" mode="change" module="core">
                     <content>
@@ -148,23 +158,17 @@
                         <memberOf key="att.naming"/>
                     </classes>
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:text/>
-                                <rng:ref name="ref"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                            <textNode/>
+                            <elementRef key="ref"/>
+                        </alternate>
                     </content>
                 </elementSpec>
 
                 <!-- allow empty listBibl -->
                 <elementSpec ident="listBibl" mode="change" module="core">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:ref name="model.biblLike"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <classRef key="model.biblLike" minOccurs="0" maxOccurs="unbounded"/>
                     </content>
                 </elementSpec>
 
@@ -173,17 +177,18 @@
                     <content>
                         <sequence>
                             <elementRef key="analytic" minOccurs="0" maxOccurs="unbounded"/>
-                        <sequence minOccurs="1" maxOccurs="unbounded">
-                            <elementRef key="monogr"/>
-                            <elementRef key="series" minOccurs="0" maxOccurs="unbounded"/>
+                            <sequence minOccurs="1" maxOccurs="unbounded">
+                                <elementRef key="monogr"/>
+                                <elementRef key="series" minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                            <alternate minOccurs="0" maxOccurs="unbounded">
+                                <classRef key="model.noteLike"/>
+                                <classRef key="model.ptrLike"/>
+                                <elementRef key="relatedItem"/>
+                                <elementRef key="citedRange"/>
+                                <elementRef key="idno"/>
+                            </alternate>
                         </sequence>
-                        <alternate minOccurs="0" maxOccurs="unbounded">
-                            <classRef key="model.noteLike"/>
-                            <classRef key="model.ptrLike"/>
-                            <elementRef key="relatedItem"/>
-                            <elementRef key="citedRange"/>
-                            <elementRef key="idno"/>
-                        </alternate></sequence>
                     </content>
                 </elementSpec>
 
@@ -193,21 +198,28 @@
                 <!-- allow <text> under <TEI> to be optional -->
                 <elementSpec ident="TEI" mode="change" module="textstructure">
                     <content>
-                        <rng:ref name="teiHeader"/>
-                        <rng:optional>
-                            <rng:ref name="model.resourceLike"/>
-                        </rng:optional>
-                        <rng:optional>
-                            <rng:ref name="facsimile"/>
-                            <rng:ref name="text"/>
-                        </rng:optional>
+                        <sequence>
+                            <elementRef key="teiHeader"/>
+                            <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
                     </content>
                 </elementSpec>
+
+                <!-- Opening up the datatype of @version on <application> -->
+                <elementSpec ident="application" module="header" mode="change">
+                    <attList>
+                        <attDef ident="version" usage="req" mode="change">
+                            <datatype>
+                                <dataRef name="token" restriction="[0-9a-zA-Z\.\-_]+"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </elementSpec>
+
                 <classSpec ident="att.global" type="atts" mode="change" module="tei">
                     <attList>
                         <attDef ident="coords" mode="change">
                             <desc>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</desc>
-                            <desc>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y coordinates in the PDF page in millimeters (as a convention from the top left point of the page), height and width of the bounding box in millimeters. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</desc>
                         </attDef>
                     </attList>
                 </classSpec>
@@ -215,189 +227,26 @@
                 <!-- we modify figDesc so that it can contain generic structural divisions -->
                 <elementSpec ident="figDesc" module="figures" mode="change">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:text/>
-                                <rng:ref name="model.limitedPhrase"/>
-                                <rng:ref name="model.inter"/>
-                                <rng:ref name="model.divLike"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                            <textNode/>
+                            <classRef key="model.limitedPhrase"/>
+                            <classRef key="model.inter"/>
+                            <classRef key="model.divLike"/>
+                        </alternate>
                     </content>
-
                 </elementSpec>
 
-                <!-- removing elements not used in Grobid results -->
-                <elementSpec ident="ab" mode="delete" module="linking"/>
-                <elementSpec ident="abbr" mode="delete" module="core"/>
-                <elementSpec ident="add" mode="delete" module="core"/>
-                <elementSpec ident="addName" mode="delete" module="core"/>
-                <elementSpec ident="age" mode="delete" module="namesdates"/>
-                <elementSpec ident="alt" mode="delete" module="linking"/>
-                <elementSpec ident="altGrp" mode="delete" module="linking"/>
-                <elementSpec ident="argument" mode="delete" module="textstructure"/>
-                <elementSpec ident="authority" mode="delete" module="header"/>
-                <elementSpec ident="biblFull" mode="delete" module="header"/>
-                <elementSpec ident="binaryObject" mode="delete" module="core"/>
-                <elementSpec ident="birth" mode="delete" module="namesdates"/>
-                <elementSpec ident="bloc" mode="delete" module="namesdates"/>
-                <elementSpec ident="byline" mode="delete" module="textstructure"/>
-                <elementSpec ident="cRefPattern" mode="delete" module="header"/>
-                <elementSpec ident="calendar" mode="delete" module="header"/>
-                <elementSpec ident="calendarDesc" mode="delete" module="header"/>
-                <elementSpec ident="catDesc" mode="delete" module="header"/>
-                <elementSpec ident="catRef" mode="delete" module="header"/>
-                <elementSpec ident="category" mode="delete" module="header"/>
-                <elementSpec ident="cb" mode="delete" module="core"/>
-                <elementSpec ident="change" mode="delete" module="header"/>
-                <elementSpec ident="choice" mode="delete" module="core"/>
-                <elementSpec ident="cit" mode="delete" module="core"/>
-                <elementSpec ident="citedRange" mode="delete" module="core"/>
-                <elementSpec ident="classDecl" mode="delete" module="header"/>
-                <elementSpec ident="climate" mode="delete" module="namesdates"/>
-                <elementSpec ident="closer" mode="delete" module="textstructure"/>
-                <elementSpec ident="corr" mode="delete" module="core"/>
-                <elementSpec ident="correction" mode="delete" module="header"/>
-                <elementSpec ident="creation" mode="delete" module="header"/>
-                <elementSpec ident="dateline" mode="delete" module="textstructure"/>
-                <elementSpec ident="death" mode="delete" module="namesdates"/>
-                <elementSpec ident="del" mode="delete" module="core"/>
-                <elementSpec ident="distinct" mode="delete" module="core"/>
-                <elementSpec ident="distributor" mode="delete" module="header"/>
-                <elementSpec ident="district" mode="delete" module="namesdates"/>
-                <elementSpec ident="div1" mode="delete" module="textstructure"/>
-                <elementSpec ident="div2" mode="delete" module="textstructure"/>
-                <elementSpec ident="div3" mode="delete" module="textstructure"/>
-                <elementSpec ident="div4" mode="delete" module="textstructure"/>
-                <elementSpec ident="div5" mode="delete" module="textstructure"/>
-                <elementSpec ident="div6" mode="delete" module="textstructure"/>
-                <elementSpec ident="div7" mode="delete" module="textstructure"/>
-                <elementSpec ident="divGen" mode="delete" module="core"/>
-                <elementSpec ident="docAuthor" mode="delete" module="textstructure"/>
-                <elementSpec ident="docDate" mode="delete" module="textstructure"/>
-                <elementSpec ident="docEdition" mode="delete" module="textstructure"/>
-                <elementSpec ident="docImprint" mode="delete" module="textstructure"/>
-                <elementSpec ident="docTitle" mode="delete" module="textstructure"/>
-                <elementSpec ident="editorialDecl" mode="delete" module="header"/>
-                <elementSpec ident="education" mode="delete" module="namesdates"/>
-                <elementSpec ident="emph" mode="delete" module="core"/>
-                <elementSpec ident="epigraph" mode="delete" module="textstructure"/>
-                <elementSpec ident="event" mode="delete" module="namesdates"/>
-                <elementSpec ident="expan" mode="delete" module="core"/>
-                <elementSpec ident="extent" mode="delete" module="header"/>
-                <elementSpec ident="faith" mode="delete" module="namesdates"/>
-                <elementSpec ident="floatingText" mode="delete" module="textstructure"/>
-                <elementSpec ident="floruit" mode="delete" module="namesdates"/>
-                <elementSpec ident="foreign" mode="delete" module="core"/>
-                <elementSpec ident="funder" mode="delete" module="header"/>
-                <elementSpec ident="gap" mode="delete" module="core"/>
-                <elementSpec ident="gb" mode="delete" module="core"/>
-                <elementSpec ident="genName" mode="delete" module="namesdates"/>
-                <elementSpec ident="geo" mode="delete" module="namesdates"/>
-                <elementSpec ident="geoDecl" mode="delete" module="header"/>
-                <elementSpec ident="geogFeat" mode="delete" module="namesdates"/>
-                <elementSpec ident="geogName" mode="delete" module="namesdates"/>
-                <elementSpec ident="gloss" mode="delete" module="core"/>
-                <elementSpec ident="group" mode="delete" module="textstructure"/>
-                <elementSpec ident="headItem" mode="delete" module="core"/>
-                <elementSpec ident="headLabel" mode="delete" module="core"/>
-                <elementSpec ident="hyphenation" mode="delete" module="header"/>
-                <elementSpec ident="imprimatur" mode="delete" module="textstructure"/>
-                <elementSpec ident="index" mode="delete" module="core"/>
-                <elementSpec ident="interpretation" mode="delete" module="header"/>
-                <elementSpec ident="join" mode="delete" module="linking"/>
-                <elementSpec ident="joinGrp" mode="delete" module="linking"/>
-                <elementSpec ident="l" mode="delete" module="core"/>
-                <elementSpec ident="langKnowledge" mode="delete" module="namesdates"/>
-                <elementSpec ident="langKnown" mode="delete" module="namesdates"/>
-                <elementSpec ident="langUsage" mode="delete" module="header"/>
-                <elementSpec ident="language" mode="delete" module="header"/>
-                <elementSpec ident="lb" mode="delete" module="core"/>
-                <elementSpec ident="lg" mode="delete" module="core"/>
-                <elementSpec ident="linkGrp" mode="delete" module="linking"/>
-                <elementSpec ident="listChange" mode="delete" module="header"/>
-                <elementSpec ident="listEvent" mode="delete" module="namesdates"/>
-                <elementSpec ident="listNym" mode="delete" module="namesdates"/>
-                <elementSpec ident="listOrg" mode="delete" module="namesdates"/>
-                <elementSpec ident="listPerson" mode="delete" module="namesdates"/>
-                <elementSpec ident="listPlace" mode="delete" module="namesdates"/>
-                <elementSpec ident="listPrefixDef" mode="delete" module="header"/>
-                <elementSpec ident="listRelation" mode="delete" module="namesdates"/>
-                <elementSpec ident="location" mode="delete" module="namesdates"/>
-                <elementSpec ident="measure" mode="delete" module="core"/>
-                <elementSpec ident="measureGrp" mode="delete" module="core"/>
-                <elementSpec ident="media" mode="delete" module="core"/>
-                <elementSpec ident="mentioned" mode="delete" module="core"/>
-                <elementSpec ident="milestone" mode="delete" module="core"/>
-                <elementSpec ident="nameLink" mode="delete" module="namesdates"/>
-                <elementSpec ident="namespace" mode="delete" module="header"/>
-                <elementSpec ident="nationality" mode="delete" module="namesdates"/>
-                <elementSpec ident="normalization" mode="delete" module="header"/>
-                <elementSpec ident="notatedMusic" mode="delete" module="figures"/>
-                <elementSpec ident="num" mode="delete" module="core"/>
-                <elementSpec ident="nym" mode="delete" module="namesdates"/>
-                <elementSpec ident="occupation" mode="delete" module="namesdates"/>
-                <elementSpec ident="opener" mode="delete" module="textstructure"/>
-                <elementSpec ident="offset" mode="delete" module="namesdates"/>
-                <elementSpec ident="orig" mode="delete" module="core"/>
-                <elementSpec ident="pb" mode="delete" module="core"/>
-                <elementSpec ident="person" mode="delete" module="namesdates"/>
-                <elementSpec ident="personGrp" mode="delete" module="namesdates"/>
-                <elementSpec ident="place" mode="delete" module="namesdates"/>
-                <elementSpec ident="placeName" mode="delete" module="namesdates"/>
-                <elementSpec ident="population" mode="delete" module="namesdates"/>
-                <elementSpec ident="postscript" mode="delete" module="textstructure"/>
-                <elementSpec ident="prefixDef" mode="delete" module="header"/>
-                <elementSpec ident="principal" mode="delete" module="header"/>
-                <elementSpec ident="projectDesc" mode="delete" module="header"/>
-                <elementSpec ident="punctuation" mode="delete" module="header"/>
-                <elementSpec ident="q" mode="delete" module="core"/>
-                <elementSpec ident="quotation" mode="delete" module="header"/>
-                <elementSpec ident="quote" mode="delete" module="core"/>
-                <elementSpec ident="refState" mode="delete" module="header"/>
-                <elementSpec ident="refsDecl" mode="delete" module="header"/>
-                <elementSpec ident="reg" mode="delete" module="core"/>
-                <elementSpec ident="relatedItem" mode="delete" module="core"/>
-                <elementSpec ident="relation" mode="delete" module="namesdates"/>
-                <elementSpec ident="rendition" mode="delete" module="header"/>
-                <elementSpec ident="residence" mode="delete" module="namesdates"/>
-                <elementSpec ident="resp" mode="delete" module="core"/>
-                <elementSpec ident="respStmt" mode="delete" module="core"/>
-                <elementSpec ident="revisionDesc" mode="delete" module="header"/>
-                <elementSpec ident="rs" mode="delete" module="core"/>
-                <elementSpec ident="said" mode="delete" module="core"/>
-                <elementSpec ident="salute" mode="delete" module="textstructure"/>
-                <elementSpec ident="samplingDecl" mode="delete" module="header"/>
-                <elementSpec ident="seg" mode="delete" module="linking"/>
-                <elementSpec ident="segmentation" mode="delete" module="header"/>
-                <elementSpec ident="sex" mode="delete" module="namesdates"/>
-                <elementSpec ident="sic" mode="delete" module="core"/>
-                <elementSpec ident="signed" mode="delete" module="textstructure"/>
-                <elementSpec ident="soCalled" mode="delete" module="core"/>
-                <elementSpec ident="socecStatus" mode="delete" module="namesdates"/>
-                <elementSpec ident="sp" mode="delete" module="core"/>
-                <elementSpec ident="speaker" mode="delete" module="core"/>
-                <elementSpec ident="sponsor" mode="delete" module="header"/>
-                <elementSpec ident="stage" mode="delete" module="core"/>
-                <elementSpec ident="state" mode="delete" module="namesdates"/>
-                <elementSpec ident="stdVals" mode="delete" module="header"/>
-                <elementSpec ident="styleDefDecl" mode="delete" module="header"/>
-                <elementSpec ident="tagUsage" mode="delete" module="header"/>
-                <elementSpec ident="tagsDecl" mode="delete" module="header"/>
-                <elementSpec ident="taxonomy" mode="delete" module="header"/>
-                <elementSpec ident="teiCorpus" mode="delete" module="core"/>
-                <elementSpec ident="terrain" mode="delete" module="namesdates"/>
-                <elementSpec ident="textLang" mode="delete" module="core"/>
-                <elementSpec ident="time" mode="delete" module="core"/>
-                <elementSpec ident="timeline" mode="delete" module="linking"/>
-                <elementSpec ident="titlePage" mode="delete" module="textstructure"/>
-                <elementSpec ident="titlePart" mode="delete" module="textstructure"/>
-                <elementSpec ident="trailer" mode="delete" module="textstructure"/>
-                <elementSpec ident="trait" mode="delete" module="namesdates"/>
-                <elementSpec ident="unclear" mode="delete" module="core"/>
-                <!-- only s from the analysis module, in case we want the final result with sentence segmentation -->
-                <moduleRef key="analysis" except="c cl interp interpGrp m pc phr span spanGrp w"/>
-
+                <!-- Changing the W3C @when into an ISO compatible one... -->
+                <classSpec module="tei" type="atts" ident="att.datable.w3c" mode="change">
+                    <attList>
+                        <attDef ident="when" usage="opt" mode="change">
+                            <datatype>
+                                <!--<dataRef key="teidata.temporal.w3c"/>-->
+                                <dataRef key="teidata.temporal.iso"/>
+                            </datatype>
+                        </attDef>
+                    </attList>
+                </classSpec>
             </schemaSpec>
         </body>
     </text>

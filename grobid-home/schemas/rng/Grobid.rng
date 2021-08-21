@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2021-08-19T15:16:03Z. .
+Schema generated from ODD source 2021-08-21T05:34:16Z. .
 TEI Edition: Version 4.2.2. Last updated on
 	9th April 2021, revision 609a109b1
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.2.2/
@@ -330,6 +330,9 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
                <data type="gMonthDay"/>
                <data type="time"/>
                <data type="dateTime"/>
+               <data type="token">
+                  <param name="pattern">[0-9.,DHMPRSTWYZ/:+\-]+</param>
+               </data>
             </choice>
          </attribute>
       </optional>
@@ -762,7 +765,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
    <define name="tei_att.global.attribute.coords">
       <optional>
          <attribute name="coords">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y coordinates in the PDF page in millimeters (as a convention from the top left point of the page), height and width of the bounding box in millimeters. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</a:documentation>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</a:documentation>
             <text/>
          </attribute>
       </optional>
@@ -1891,6 +1894,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="tei_affiliation"/>
          <ref name="tei_persona"/>
          <ref name="tei_persPronouns"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.personLike">
@@ -1962,29 +1966,41 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    <define name="tei_model.placeStateLike">
       <choice>
          <ref name="tei_model.placeNamePart"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.placeStateLike_alternation">
       <choice>
          <ref name="tei_model.placeNamePart_alternation"/>
+         <ref name="tei_state"/>
       </choice>
    </define>
    <define name="tei_model.placeStateLike_sequence">
       <ref name="tei_model.placeNamePart_sequence"/>
+      <ref name="tei_state"/>
    </define>
    <define name="tei_model.placeStateLike_sequenceOptional">
       <optional>
          <ref name="tei_model.placeNamePart_sequenceOptional"/>
+      </optional>
+      <optional>
+         <ref name="tei_state"/>
       </optional>
    </define>
    <define name="tei_model.placeStateLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="tei_model.placeNamePart_sequenceOptionalRepeatable"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_state"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.placeStateLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="tei_model.placeNamePart_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_state"/>
       </oneOrMore>
    </define>
    <define name="tei_model.orgPart">
@@ -2389,6 +2405,15 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="tei_correspDesc"/>
       </choice>
    </define>
+   <define name="tei_model.standOffPart">
+      <choice>
+         <ref name="tei_model.global.meta"/>
+         <ref name="tei_model.biblLike"/>
+         <ref name="tei_model.listLike"/>
+         <ref name="tei_model.annotationLike"/>
+         <ref name="tei_listAnnotation"/>
+      </choice>
+   </define>
    <define name="tei_att.citeStructurePart.attributes">
       <ref name="tei_att.citeStructurePart.attribute.use"/>
    </define>
@@ -2432,6 +2457,13 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <ref name="tei_noteGrp"/>
          <ref name="tei_correspAction"/>
          <ref name="tei_correspContext"/>
+      </choice>
+   </define>
+   <define name="tei_model.resource">
+      <choice>
+         <ref name="tei_text"/>
+         <ref name="tei_standOff"/>
+         <ref name="tei_facsimile"/>
       </choice>
    </define>
    <define name="tei_model.objectLike">
@@ -3682,22 +3714,16 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
       <element name="application">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides information about an application which has acted upon the document. [2.3.11. The Application Information Element]</a:documentation>
          <group>
-      
             <oneOrMore>
                <ref name="tei_model.labelLike"/>
             </oneOrMore>
-      
             <choice>
-        
                <zeroOrMore>
                   <ref name="tei_model.ptrLike"/>
                </zeroOrMore>
-        
-        
                <zeroOrMore>
                   <ref name="tei_model.pLike"/>
                </zeroOrMore>
-        
             </choice>
          </group>
          <ref name="tei_att.global.attributes"/>
@@ -3710,7 +3736,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
          <attribute name="version">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a version number for the application, independent of its identifier or display name.</a:documentation>
             <data type="token">
-               <param name="pattern">[\d]+[a-z]*[\d]*(\.[\d]+[a-z]*[\d]*){0,3}</param>
+               <param name="pattern">[0-9a-zA-Z\.\-_]+</param>
             </data>
          </attribute>
          <empty/>
@@ -3877,11 +3903,12 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
    <define name="tei_TEI">
       <element name="TEI">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resource class. Multiple <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> elements may be combined within a <code xmlns="http://www.w3.org/1999/xhtml">&lt;TEI&gt;</code> (or <code xmlns="http://www.w3.org/1999/xhtml">&lt;teiCorpus&gt;</code>) element. [4. Default Text Structure 15.1. Varieties of Composite Text]</a:documentation>
-         <ref name="tei_teiHeader"/>
-         <optional>
-            <ref name="tei_facsimile"/>
-            <ref name="tei_text"/>
-         </optional>
+         <group>
+            <ref name="tei_teiHeader"/>
+            <zeroOrMore>
+               <ref name="tei_model.resource"/>
+            </zeroOrMore>
+         </group>
          <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                  xmlns="http://www.tei-c.org/ns/1.0"
                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -4445,6 +4472,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       <choice>
          <ref name="tei_surname"/>
          <ref name="tei_forename"/>
+         <ref name="tei_addName"/>
          <ref name="tei_roleName"/>
          <ref name="tei_persPronouns"/>
       </choice>
@@ -4453,6 +4481,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       <choice>
          <ref name="tei_surname"/>
          <ref name="tei_forename"/>
+         <ref name="tei_addName"/>
          <ref name="tei_roleName"/>
          <ref name="tei_persPronouns"/>
       </choice>
@@ -4460,6 +4489,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
    <define name="tei_model.persNamePart_sequence">
       <ref name="tei_surname"/>
       <ref name="tei_forename"/>
+      <ref name="tei_addName"/>
       <ref name="tei_roleName"/>
       <ref name="tei_persPronouns"/>
    </define>
@@ -4469,6 +4499,9 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       </optional>
       <optional>
          <ref name="tei_forename"/>
+      </optional>
+      <optional>
+         <ref name="tei_addName"/>
       </optional>
       <optional>
          <ref name="tei_roleName"/>
@@ -4485,6 +4518,9 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <ref name="tei_forename"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="tei_addName"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="tei_roleName"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -4497,6 +4533,9 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_forename"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_addName"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_roleName"/>
@@ -4649,6 +4688,16 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
    <define name="tei_forename">
       <element name="forename">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(forename) contains a forename, given or baptismal name. [13.2.1. Personal Names]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.personal.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_addName">
+      <element name="addName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(additional name) contains an additional name component, such as a nickname, epithet, or alias, or any other descriptive phrase used within a personal name. [13.2.1. Personal Names]</a:documentation>
          <ref name="tei_macro.phraseSeq"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.personal.attributes"/>
@@ -4862,6 +4911,47 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
                </list>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_state">
+      <element name="state">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(state) contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range. [13.3.1. Basic Principles 13.3.2.1. Personal Characteristics]</a:documentation>
+         <group>
+      
+            <choice>
+               <oneOrMore>
+                  <ref name="tei_state"/>
+               </oneOrMore>
+               <group>
+                  <zeroOrMore>
+                     <ref name="tei_model.headLike"/>
+                  </zeroOrMore>
+                  <oneOrMore>
+                     <ref name="tei_model.pLike"/>
+                  </oneOrMore>
+                  <zeroOrMore>
+                     <choice>
+                        <ref name="tei_model.noteLike"/>
+                        <ref name="tei_model.biblLike"/>
+                     </choice>
+                  </zeroOrMore>
+               </group>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="tei_model.labelLike"/>
+                     <ref name="tei_model.noteLike"/>
+                     <ref name="tei_model.biblLike"/>
+                  </choice>
+               </zeroOrMore>
+            </choice>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
+         <ref name="tei_att.editLike.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.naming.attributes"/>
+         <ref name="tei_att.dimensions.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5090,6 +5180,31 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <empty/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_standOff">
+      <element name="standOff">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Functions as a container element for linked data, contextual information, and stand-off annotations embedded in a TEI document. [16.10. The standOff Container]</a:documentation>
+         <oneOrMore>
+            <ref name="tei_model.standOffPart"/>
+         </oneOrMore>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="Grobid-standOff-nested_standOff_should_be_typed-constraint-assert-12">
+            <rule context="tei:standOff">
+               <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           test="@type or not(ancestor::tei:standOff)">This
+      <sch:name/> element must have a @type attribute, since it is
+      nested inside a <sch:name/>
+               </sch:assert>
+            </rule>
+         </pattern>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.declaring.attributes"/>
          <empty/>
       </element>
    </define>

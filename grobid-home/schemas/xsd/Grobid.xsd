@@ -3,7 +3,7 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2021-08-19T14:45:51Z. .
+    Schema generated from ODD source 2021-08-21T05:34:25Z. .
     TEI Edition: Version 4.2.2. Last updated on
     	9th April 2021, revision 609a109b1
     TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.2.2/
@@ -337,7 +337,13 @@ Sample values include: 1] all; 2] most; 3] range</xs:documentation>
         <xs:documentation>supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-        <xs:union memberTypes="xs:date xs:gYear xs:gMonth xs:gDay xs:gYearMonth xs:gMonthDay xs:time xs:dateTime"/>
+        <xs:union memberTypes="xs:date xs:gYear xs:gMonth xs:gDay xs:gYearMonth xs:gMonthDay xs:time xs:dateTime">
+          <xs:simpleType>
+            <xs:restriction base="xs:token">
+              <xs:pattern value="[0-9.,DHMPRSTWYZ/:+\-]+"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:union>
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
@@ -791,7 +797,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
   <xs:attributeGroup name="tei_att.global.attribute.coords">
     <xs:attribute name="coords">
       <xs:annotation>
-        <xs:documentation>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y coordinates in the PDF page in millimeters (as a convention from the top left point of the page), height and width of the bounding box in millimeters. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</xs:documentation>
+        <xs:documentation>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
@@ -2005,6 +2011,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <xs:element ref="tei:affiliation"/>
       <xs:element ref="tei:persona"/>
       <xs:element ref="tei:persPronouns"/>
+      <xs:element ref="tei:state"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.personLike">
@@ -2063,33 +2070,39 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.placeStateLike">
-    <xs:sequence>
+    <xs:choice>
       <xs:group ref="tei:tei_model.placeNamePart"/>
-    </xs:sequence>
+      <xs:element ref="tei:state"/>
+    </xs:choice>
   </xs:group>
   <xs:group name="tei_model.placeStateLike_alternation">
-    <xs:sequence>
+    <xs:choice>
       <xs:group ref="tei:tei_model.placeNamePart_alternation"/>
-    </xs:sequence>
+      <xs:element ref="tei:state"/>
+    </xs:choice>
   </xs:group>
   <xs:group name="tei_model.placeStateLike_sequence">
     <xs:sequence>
       <xs:group ref="tei:tei_model.placeNamePart_sequence"/>
+      <xs:element ref="tei:state"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.placeStateLike_sequenceOptional">
     <xs:sequence>
       <xs:group minOccurs="0" ref="tei:tei_model.placeNamePart_sequenceOptional"/>
+      <xs:element minOccurs="0" ref="tei:state"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.placeStateLike_sequenceOptionalRepeatable">
     <xs:sequence>
       <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.placeNamePart_sequenceOptionalRepeatable"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:state"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.placeStateLike_sequenceRepeatable">
     <xs:sequence>
       <xs:group maxOccurs="unbounded" ref="tei:tei_model.placeNamePart_sequenceRepeatable"/>
+      <xs:element maxOccurs="unbounded" ref="tei:state"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.publicationStmtPart.agency">
@@ -2360,6 +2373,15 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <xs:element ref="tei:correspDesc"/>
     </xs:choice>
   </xs:group>
+  <xs:group name="tei_model.standOffPart">
+    <xs:choice>
+      <xs:group ref="tei:tei_model.global.meta"/>
+      <xs:group ref="tei:tei_model.biblLike"/>
+      <xs:group ref="tei:tei_model.listLike"/>
+      <xs:group ref="tei:tei_model.annotationLike"/>
+      <xs:element ref="tei:listAnnotation"/>
+    </xs:choice>
+  </xs:group>
   <xs:attributeGroup name="tei_att.citeStructurePart.attributes">
     <xs:attributeGroup ref="tei:tei_att.citeStructurePart.attribute.use"/>
   </xs:attributeGroup>
@@ -2395,6 +2417,13 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <xs:element ref="tei:noteGrp"/>
       <xs:element ref="tei:correspAction"/>
       <xs:element ref="tei:correspContext"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="tei_model.resource">
+    <xs:choice>
+      <xs:element ref="tei:text"/>
+      <xs:element ref="tei:standOff"/>
+      <xs:element ref="tei:facsimile"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.objectLike">
@@ -3593,7 +3622,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:token">
-            <xs:pattern value="[\d]+[a-z]*[\d]*(\.[\d]+[a-z]*[\d]*){0,3}"/>
+            <xs:pattern value="[0-9a-zA-Z\.\-_]+"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
@@ -3774,10 +3803,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="tei:teiHeader"/>
-        <xs:sequence minOccurs="0">
-          <xs:element ref="tei:facsimile"/>
-          <xs:element ref="tei:text"/>
-        </xs:sequence>
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.resource"/>
       </xs:sequence>
       <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
@@ -4084,6 +4110,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:choice>
       <xs:element ref="tei:surname"/>
       <xs:element ref="tei:forename"/>
+      <xs:element ref="tei:addName"/>
       <xs:element ref="tei:roleName"/>
       <xs:element ref="tei:persPronouns"/>
     </xs:choice>
@@ -4092,6 +4119,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:choice>
       <xs:element ref="tei:surname"/>
       <xs:element ref="tei:forename"/>
+      <xs:element ref="tei:addName"/>
       <xs:element ref="tei:roleName"/>
       <xs:element ref="tei:persPronouns"/>
     </xs:choice>
@@ -4100,6 +4128,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:sequence>
       <xs:element ref="tei:surname"/>
       <xs:element ref="tei:forename"/>
+      <xs:element ref="tei:addName"/>
       <xs:element ref="tei:roleName"/>
       <xs:element ref="tei:persPronouns"/>
     </xs:sequence>
@@ -4108,6 +4137,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:sequence>
       <xs:element minOccurs="0" ref="tei:surname"/>
       <xs:element minOccurs="0" ref="tei:forename"/>
+      <xs:element minOccurs="0" ref="tei:addName"/>
       <xs:element minOccurs="0" ref="tei:roleName"/>
       <xs:element minOccurs="0" ref="tei:persPronouns"/>
     </xs:sequence>
@@ -4116,6 +4146,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:surname"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:forename"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:addName"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:roleName"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:persPronouns"/>
     </xs:sequence>
@@ -4124,6 +4155,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
     <xs:sequence>
       <xs:element maxOccurs="unbounded" ref="tei:surname"/>
       <xs:element maxOccurs="unbounded" ref="tei:forename"/>
+      <xs:element maxOccurs="unbounded" ref="tei:addName"/>
       <xs:element maxOccurs="unbounded" ref="tei:roleName"/>
       <xs:element maxOccurs="unbounded" ref="tei:persPronouns"/>
     </xs:sequence>
@@ -4264,6 +4296,20 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
   <xs:element name="forename">
     <xs:annotation>
       <xs:documentation>(forename) contains a forename, given or baptismal name. [13.2.1. Personal Names]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tei:tei_macro.phraseSeq">
+          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.personal.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addName">
+    <xs:annotation>
+      <xs:documentation>(additional name) contains an additional name component, such as a nickname, epithet, or alias, or any other descriptive phrase used within a personal name. [13.2.1. Personal Names]</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:complexContent>
@@ -4550,6 +4596,35 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</xs:do
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+  <xs:element name="state">
+    <xs:annotation>
+      <xs:documentation>(state) contains a description of some status or quality attributed to a person, place, or organization often at some specific time or for a specific date range. [13.3.1. Basic Principles 13.3.2.1. Personal Characteristics]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice>
+        <xs:element maxOccurs="unbounded" ref="tei:state"/>
+        <xs:sequence>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+          <xs:group maxOccurs="unbounded" ref="tei:tei_model.pLike"/>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="tei:tei_model.noteLike"/>
+            <xs:group ref="tei:tei_model.biblLike"/>
+          </xs:choice>
+        </xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="tei:tei_model.labelLike"/>
+          <xs:group ref="tei:tei_model.noteLike"/>
+          <xs:group ref="tei:tei_model.biblLike"/>
+        </xs:choice>
+      </xs:choice>
+      <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.editLike.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.naming.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.dimensions.attributes"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="objectName">
     <xs:annotation>
       <xs:documentation>(name of an object) contains a proper noun or noun phrase used to refer to an object. [13.2.4. Object Names]</xs:documentation>
@@ -4735,6 +4810,17 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</xs:do
     <xs:complexType>
       <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="standOff">
+    <xs:annotation>
+      <xs:documentation>Functions as a container element for linked data, contextual information, and stand-off annotations embedded in a TEI document. [16.10. The standOff Container]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group maxOccurs="unbounded" ref="tei:tei_model.standOffPart"/>
+      <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="listAnnotation">
