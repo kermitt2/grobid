@@ -566,6 +566,36 @@ public class GrobidRestService implements GrobidPaths {
         return processCitationReturnBibTeX_post(citation, consolidate, includeRawCitations);
     }
 
+    @Path(PATH_CITATION_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processCitationListReturnXml_post(
+        @FormParam(CITATION) List<String> citations,
+        @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
+        @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateCitations(validateConsolidationParam(consolidate))
+            .includeRawCitations(validateIncludeRawParam(includeRawCitations))
+            .build();
+        return restProcessString.processCitationList(citations, config, ExpectedResponseType.XML);
+    }
+
+    @Path(PATH_CITATION_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @POST
+    public Response processCitationListReturnBibTeX_post(
+        @FormParam(CITATION) List<String> citations,
+        @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
+        @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateCitations(validateConsolidationParam(consolidate))
+            .includeRawCitations(validateIncludeRawParam(includeRawCitations))
+            .build();
+        return restProcessString.processCitationList(citations, config, ExpectedResponseType.BIBTEX);
+    } 
+
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
      */

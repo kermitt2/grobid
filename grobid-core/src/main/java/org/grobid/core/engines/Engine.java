@@ -161,38 +161,40 @@ public class Engine implements Closeable {
      * @return the list of recognized bibliographical objects
      */
     public List<BiblioItem> processRawReferences(List<String> references, int consolidate) throws Exception {
-        List<BibDataSet> results = new ArrayList<BibDataSet>();
         List<BiblioItem> finalResults = new ArrayList<BiblioItem>();
         if (references == null || references.size() == 0)
             return finalResults;
-        for (String reference : references) {
-            BiblioItem bib = parsers.getCitationParser().processingString(reference, 0);
-            //if ((bib != null) && !bib.rejectAsReference()) 
-            {
-                BibDataSet bds = new BibDataSet();
-                bds.setResBib(bib);
-                bds.setRawBib(reference);
-                results.add(bds);
-            }
-        }
-        
+
+        List<BiblioItem> results = parsers.getCitationParser().processingStringMultiple(references, 0);
         if (results.size() == 0)
             return finalResults;
+
         // consolidation in a second stage to take advantage of parallel calls
-        if (consolidate != 0) {
+        if (consolidate == 0) {
+            return results;
+        } else { 
+            // prepare for set consolidation
+            List<BibDataSet> bibDataSetResults = new ArrayList<BibDataSet>();
+            for (BiblioItem bib : results) {
+                BibDataSet bds = new BibDataSet();
+                bds.setResBib(bib);
+                bds.setRawBib(bib.getReference());
+                bibDataSetResults.add(bds);
+            }
+
             Consolidation consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager); 
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
-                resConsolidation = consolidator.consolidate(results);
+                resConsolidation = consolidator.consolidate(bibDataSetResults);
             } catch(Exception e) {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
             } 
             if (resConsolidation != null) {
-                for(int i=0; i<results.size(); i++) {
-                    BiblioItem resCitation = results.get(i).getResBib();
+                for(int i=0; i<bibDataSetResults.size(); i++) {
+                    BiblioItem resCitation = bibDataSetResults.get(i).getResBib();
                     BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
                     if (bibo != null) {
                         if (consolidate == 1)
