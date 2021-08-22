@@ -1370,6 +1370,8 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
+        if (text == null || text.length() == 0)
+            return;
 
         // identify ref nodes, ref spans and ref positions
         Map<Integer,Node> mapRefNodes = new HashMap<>();
@@ -1449,12 +1451,21 @@ public class TEIFormatter {
                 segmentedParagraphTokens.add(currentSentenceTokens);
             }
 
-/*if (segmentedParagraphTokens.size() != theSentences.size()) {
+if (segmentedParagraphTokens.size() != theSentences.size()) {
 System.out.println("ERROR, segmentedParagraphTokens size:" + segmentedParagraphTokens.size() + " vs theSentences size: " + theSentences.size());
 System.out.println(text);
 System.out.println(theSentences.toString());
-}*/
-
+int k = 0;
+for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
+    if (k < theSentences.size())
+        System.out.println(k + " sentence segmented text-only: " + text.substring(theSentences.get(k).start, theSentences.get(k).end));
+    else 
+        System.out.println("no text-only sentence at index " + k);
+    System.out.print(k + " layout token segmented sentence: ");
+    System.out.println(segmentedParagraphToken);
+    k++;
+}
+}
         }
 
         // update the xml paragraph element
