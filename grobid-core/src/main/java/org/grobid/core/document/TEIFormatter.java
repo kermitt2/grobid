@@ -1433,8 +1433,10 @@ public class TEIFormatter {
                     if (currentSentenceTokens.size() > 0) {
                         segmentedParagraphTokens.add(currentSentenceTokens);
                         currentSentenceIndex++;
-                        if (currentSentenceIndex >= theSentences.size())
+                        if (currentSentenceIndex >= theSentences.size()) {
+                            currentSentenceTokens = new ArrayList<>();
                             break;
+                        }
                         sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
                     }
                     currentSentenceTokens = new ArrayList<>();
@@ -1451,7 +1453,7 @@ public class TEIFormatter {
                 segmentedParagraphTokens.add(currentSentenceTokens);
             }
 
-if (segmentedParagraphTokens.size() != theSentences.size()) {
+/*if (segmentedParagraphTokens.size() != theSentences.size()) {
 System.out.println("ERROR, segmentedParagraphTokens size:" + segmentedParagraphTokens.size() + " vs theSentences size: " + theSentences.size());
 System.out.println(text);
 System.out.println(theSentences.toString());
@@ -1465,7 +1467,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     System.out.println(segmentedParagraphToken);
     k++;
 }
-}
+}*/
         }
 
         // update the xml paragraph element
