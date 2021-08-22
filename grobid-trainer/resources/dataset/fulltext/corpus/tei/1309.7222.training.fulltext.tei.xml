@@ -193,20 +193,20 @@
 
 			<p>The real evolution, from S(0), (P(0, m)) m∈ 1;M to S(t), (P(t, m)) m∈ 1;M can<lb/> eventually be seen as a risk factors couple,<lb/></p>
 
-				<formula>ε = s ε = ln<lb/> S(t)<lb/> S(0)<lb/> , ZC ε = −<lb/> 1<lb/> M<lb/> M<lb/> ∑<lb/> m=0<lb/> ln<lb/> 1<lb/> m<lb/> P(t, m)<lb/> P(0, m)<lb/> ,<lb/></formula>
+				<formula>ε = s ε = ln<lb/> S(t)<lb/> S(0)<lb/> , ZC ε = -<lb/> 1<lb/> M<lb/> M<lb/> ∑<lb/> m=0<lb/> ln<lb/> 1<lb/> m<lb/> P(t, m)<lb/> P(0, m)<lb/> ,<lb/></formula>
 
 			<p>denoting by s ε (respectively ZC ε) the stock (resp. zero-coupon) risk factor.<lb/> This evolution of the economic conditions, translated into a risk factors tuple, is<lb/> called economic transition in the following sections of this paper and can easily be<lb/> extended to a greater number of risks. The risk factor will be used in our algorithm<lb/> to replicate the instant shocks &quot; 0 → 0 + &quot; equivalent to the real transitions &quot; 0 → t &quot; .<lb/> Moreover, the notion of economic transition will be used to designate either an instant<lb/> shock or a real evolution of the economic situation between 0 and t &gt; 0. In this latter<lb/> case we will talk about real or realized economic transition.<lb/></p>
 
 			<head>3.2.3 Probable space of economic transitions for a given α% threshold<lb/></head>
 
-			<p>Let us consider, for example, a 3-months monitoring period (with a full calibrations<lb/> of the monitoring tool at the start and at the end of the period). It is possible to a<lb/> priori assess a probable space of the probable quarterly economic transitions, under<lb/> the historic probability P and for a given threshold α%. One simply has to study a<lb/> deep enough historical data summary of the quarterly evolutions of the indexes and<lb/> to assess the interval between the 1−α%<lb/> 2<lb/> and the 1+α%<lb/> 2<lb/> historical quantiles of the risk<lb/> factors extracted from the historical data set.<lb/></p> 
+			<p>Let us consider, for example, a 3-months monitoring period (with a full calibrations<lb/> of the monitoring tool at the start and at the end of the period). It is possible to a<lb/> priori assess a probable space of the probable quarterly economic transitions, under<lb/> the historic probability P and for a given threshold α%. One simply has to study a<lb/> deep enough historical data summary of the quarterly evolutions of the indexes and<lb/> to assess the interval between the 1-α%<lb/> 2<lb/> and the 1+α%<lb/> 2<lb/> historical quantiles of the risk<lb/> factors extracted from the historical data set.<lb/></p> 
 			<p>For example, for the stock risk factor s ε, knowing the historical summary<lb/> S i<lb/> 4<lb/> i∈0,4T +1<lb/> one can extract the risk factor&apos;s historical data set<lb/> </p>
 
 				<formula>s ε i<lb/> 4<lb/> = ln<lb/> S i+1<lb/> 4<lb/> S i<lb/> 4<lb/> i∈ 0,4T<lb/></formula>
 
 			<p>and ob-<lb/>tain the probable space of economic transitions for a given α% threshold,<lb/></p>
 
-				<formula>q 1−α%<lb/> 2<lb/> s ε i<lb/> 4 i∈ 0;4T<lb/> ; q 1+α%<lb/> 2<lb/> s ε i<lb/> 4 i∈ 0;4T<lb/> .<lb/></formula>
+				<formula>q 1-α%<lb/> 2<lb/> s ε i<lb/> 4 i∈ 0;4T<lb/> ; q 1+α%<lb/> 2<lb/> s ε i<lb/> 4 i∈ 0;4T<lb/> .<lb/></formula>
 
 			<p>In a more general framework, consider economic transitions represented by J-<lb/>tuples of risk factors ε =<lb/> 1 ε, ..., J ε<lb/> of which one can get an historical summary<lb/></p>
 
@@ -214,7 +214,7 @@
 
 			<p>The following probable interval of the economic transitions with<lb/> a α% threshold can be used,<lb/></p>
 
-				<formula>E α = 1 ε, ..., 1 ε ∈ ∏ J<lb/> j=1 q 1−α%<lb/> 2<lb/> j ε i<lb/> 4 i∈ 0;T<lb/> ; q 1+α%<lb/> 2<lb/> j ε i<lb/> 4 i∈ 0;T<lb/> .<lb/></formula>
+				<formula>E α = 1 ε, ..., 1 ε ∈ ∏ J<lb/> j=1 q 1-α%<lb/> 2<lb/> j ε i<lb/> 4 i∈ 0;T<lb/> ; q 1+α%<lb/> 2<lb/> j ε i<lb/> 4 i∈ 0;T<lb/> .<lb/></formula>
 
 			<p>Note that such a space does not take correlations into account. Indeed each risk<lb/> factor&apos;s interval is defined independently from the others. In particular, such a space is<lb/> prudent: contains more than α% of the historically probable economic evolutions.<lb/></p>
 
@@ -228,7 +228,7 @@
 
 			<p>Notation and preliminary definitions. To build the NAV proxy<lb/>0 +<lb/>(ε) function, our ap-<lb/>proach is inspired from the Curve Fitting (CF) and Least Squares Monte Carlo (LSMC)<lb/> polynomial proxies approaches proposed in Vedani and Devineau <ref type="biblio">[32]</ref>. It is possible<lb/> to present a generalized implementation plan for these kinds of approaches. They both<lb/> aim at approximating the NAV using a polynomial function whose monomials are sim-<lb/>ple and crossed powers of the elements in ε =<lb/> 1 ε, ..., J ε<lb/> .<lb/></p> 
 
-			<p>Let us introduce the following notation. Let Q be a risk-neutral measure condi-<lb/>tioned by the real-world financial information known at date 0 + , F 0 + the filtration that<lb/> characterizes the real-world economic information contained within an economic tran-<lb/>sition between dates 0 and 0 + . Let R u be the profit realized between u − 1 and u ≥ 1,<lb/> and δ u the discount factor at date u ≥ 1 . Let H be the liability run-off horizon.<lb/></p> 
+			<p>Let us introduce the following notation. Let Q be a risk-neutral measure condi-<lb/>tioned by the real-world financial information known at date 0 + , F 0 + the filtration that<lb/> characterizes the real-world economic information contained within an economic tran-<lb/>sition between dates 0 and 0 + . Let R u be the profit realized between u - 1 and u ≥ 1,<lb/> and δ u the discount factor at date u ≥ 1 . Let H be the liability run-off horizon.<lb/></p> 
 
 			<p>The gist of the method is described here below.<lb/></p> 
 
@@ -270,7 +270,7 @@
 
 			<p>with, for all n ∈ 1; N,</p> 
 
-				<formula>x n =<lb/> 1, 1 x n , ..., K x n<lb/> , for all k ∈ (|1; K|), k x n = ∏ J<lb/> j=1<lb/> j ε n α j<lb/> and U = Y − Xβ .<lb/></formula>
+				<formula>x n =<lb/> 1, 1 x n , ..., K x n<lb/> , for all k ∈ (|1; K|), k x n = ∏ J<lb/> j=1<lb/> j ε n α j<lb/> and U = Y - Xβ .<lb/></formula>
 
 			<p>In this regression, the conditional expectation of NAV 0 + (ε n ) given the σ -field gen-<lb/>erated by the regressors matrix X is simply seen as a linear combination of the regres-<lb/>sors. For more insight about multiple regression models the reader may consult Saporta<lb/> <ref type="biblio">[30]</ref>.<lb/></p>
 
@@ -280,7 +280,7 @@
 
 			<p>Under the assumption that X X is invertible (with Z the transposition of a given<lb/> vector or matrix Z), the estimated vector of the parameters is,<lb/></p>
 
-				<formula>β = (X X) −1 X Y.<lb/></formula>
+				<formula>β = (X X) -1 X Y.<lb/></formula>
 
 			<p>Moreover, for a given economic transition ¯<lb/> ε and its associated set of optimal regres-<lb/>sors ¯<lb/> x, ¯<lb/> x. ˆ<lb/> β is an unbiased and consistent estimator of </p>
 
@@ -386,9 +386,9 @@
 
 			<item>• the &quot;initial&quot; position is ε j<lb/> init = 0,<lb/></item>
 
-			<item>• the &quot;worst case&quot; situation 10 is ε j<lb/> w.c. = q 1−α%<lb/> 2<lb/> ε i<lb/> 4 i∈ 0;T<lb/> or q 1+α%<lb/> 2<lb/> ε i<lb/> 4 i∈ 0;T<lb/> ,<lb/> depending on the direction of the worst case for each risk,<lb/></item>
+			<item>• the &quot;worst case&quot; situation 10 is ε j<lb/> w.c. = q 1-α%<lb/> 2<lb/> ε i<lb/> 4 i∈ 0;T<lb/> or q 1+α%<lb/> 2<lb/> ε i<lb/> 4 i∈ 0;T<lb/> ,<lb/> depending on the direction of the worst case for each risk,<lb/></item>
 
-			<item>• the k th (k ∈ 1; 9 ) out of sample scenario is ε j<lb/> nb. k = k<lb/> 10 ε j<lb/> w.c. + 10−k<lb/> 10 ε j<lb/> init .<lb/></item>
+			<item>• the k th (k ∈ 1; 9 ) out of sample scenario is ε j<lb/> nb. k = k<lb/> 10 ε j<lb/> w.c. + 10-k<lb/> 10 ε j<lb/> init .<lb/></item>
 
 			<p>Below are shown the relative deviations, between the proxies outcomes and the<lb/> corresponding out of sample fully-calculated scenarios, obtained on the first five val-<lb/>idation scenarios. As one can see, the relative deviations are always close to 0 apart<lb/> from the illiquidity shocked NAV proxy. In practice this proxy is the most complex to<lb/> calibrate due to the high volatility of the illiquidity shocked NAV . To avoid this issue,<lb/> the user can add more calibration scenarios or select more potential regressors when<lb/> implementing the stepwise methodology. In our study we have chosen to validate our<lb/> proxy, staying critical on the underlying approximate marginal SCR illiquidity.<lb/></p> 
 
@@ -406,7 +406,7 @@
 
 			<p>The Tax adjustments approximation leads to the greatest issue. Indeed we need<lb/> to know the approximate Value of In-Force (V IF) at the monitoring date. We obtain<lb/> the approximate V IF as the approximate central NAV<lb/> NAV<lb/> central proxy<lb/> minus a fixed<lb/> amount calculated as the sum of the tier-one own funds (tier one OF) and of the sub-<lb/>ordinated debt (SD) minus the financial management fees (FMF), as at the calibration<lb/> date. Let t be the monitoring date and 0 be the proxies&apos; calibration date (t &gt; 0),<lb/></p>
 
-				<formula>V IF t ≈ NAV central proxy<lb/> t<lb/> − (tier one OF 0 + SD 0 − FMF 0 ).<lb/></formula>
+				<formula>V IF t ≈ NAV central proxy<lb/> t<lb/> - (tier one OF 0 + SD 0 - FMF 0 ).<lb/></formula>
 
 			<p>Assuming a frozen corporation tax rate of 34.43% (French corporation tax rate),<lb/> the approximated level of deferred tax liability<lb/> DT L is obtained as,<lb/></p>
 
@@ -418,11 +418,11 @@
 
 			<p>Knowing the approximate values<lb/> BSCR t and<lb/> Ad j t , and the initial value SCRop 0 ,<lb/> one can obtain the approximate overall SCR (simply denoted by<lb/> SCR) at the monitoring<lb/> date as,<lb/></p>
 
-				<formula>SCR t =<lb/> BSCR t + SCRop 0 −<lb/> Ad j t .<lb/></formula>
+				<formula>SCR t =<lb/> BSCR t + SCRop 0 -<lb/> Ad j t .<lb/></formula>
 
 			<p>Eventually, in order to obtain the SR approximation we obtain the approximate<lb/> eligible own funds<lb/> OF as, OF t = (tier one OF 0</p>
 
-				<formula>+ SD 0 − FMF 0 ) +<lb/> V IF t × (1 − 34.43%).<lb/></formula>
+				<formula>+ SD 0 - FMF 0 ) +<lb/> V IF t × (1 - 34.43%).<lb/></formula>
 
 			<p>Eventually, the approximate SR at the monitoring date is,<lb/> </p>
 
@@ -510,7 +510,7 @@
 
 			<p>Through Subsection 5.1, we intend to describe a general polynomial proxy framework,<lb/> calibrated at a given date t (t ≥ 1 as in Vedani and Devineau <ref type="biblio">[32]</ref> for example, but also<lb/> t = 0 + which is the case in the framework developed and implemented in Sections 3<lb/> and 4). We will then discriminate two distinct regressions (LSMC and CF) that can be<lb/> apprehended in a probabilistic or a statistic framework.<lb/></p>
 
-			<p>In a probabilistic framework, we note NAV t the Net Asset Value at date t, NPV t the<lb/> Net present Value of margins variable seen at date t and<lb/> NAV t the estimated variable<lb/> considered in the CF regression. These variables are P ⊗ Q t -measurable, denoting by<lb/> P ⊗ Q t the probability measure as introduced in Section 4 of Vedani and Devineau <ref type="biblio">[32]</ref>.<lb/> The indexation by P ⊗ Q t will be omitted for the sake of simplicity. Finally, we note<lb/> F RW<lb/> t<lb/> the filtration that characterizes the real-world economic information contained<lb/> between 0 and t, R u the profit realized between dates u − 1 and u ≥ 1, and δ u the<lb/> discount factor at date u.<lb/></p>
+			<p>In a probabilistic framework, we note NAV t the Net Asset Value at date t, NPV t the<lb/> Net present Value of margins variable seen at date t and<lb/> NAV t the estimated variable<lb/> considered in the CF regression. These variables are P ⊗ Q t -measurable, denoting by<lb/> P ⊗ Q t the probability measure as introduced in Section 4 of Vedani and Devineau <ref type="biblio">[32]</ref>.<lb/> The indexation by P ⊗ Q t will be omitted for the sake of simplicity. Finally, we note<lb/> F RW<lb/> t<lb/> the filtration that characterizes the real-world economic information contained<lb/> between 0 and t, R u the profit realized between dates u - 1 and u ≥ 1, and δ u the<lb/> discount factor at date u.<lb/></p>
 
 			<p>We have,<lb/></p> 
 
@@ -526,7 +526,7 @@
 
 			<p>Denoting by x t the chosen regressors random vector (intercept included), 1 β (resp.<lb/> 2 β ) the true value of the CF (resp. LSMC) regression parameters, and 1 u t (resp. 2 u t )<lb/> the residual of the CF (resp. LSMC) regression, both considered regressions can be<lb/> written as follow.<lb/></p>
 
-			<formula>(regression 1 −CF)<lb/> NAV t = x t<lb/> 1 β + 1 u t<lb/> under the assumption E<lb/> NAV t |x t<lb/> = x t<lb/> 1 β<lb/> (regression 2 − LSMC) NPV t = x t<lb/> 2 β + 2 u t under the assumption E [NPV t |x t ] = x t<lb/> 2 β<lb/></formula>
+			<formula>(regression 1 -CF)<lb/> NAV t = x t<lb/> 1 β + 1 u t<lb/> under the assumption E<lb/> NAV t |x t<lb/> = x t<lb/> 1 β<lb/> (regression 2 - LSMC) NPV t = x t<lb/> 2 β + 2 u t under the assumption E [NPV t |x t ] = x t<lb/> 2 β<lb/></formula>
 
 			<p>Note that this probabilist framework is the one chosen in Monfort <ref type="biblio">[25]</ref>.<lb/></p> 
 
@@ -536,7 +536,7 @@
 
 			<p>In a statistical matrix framework we have,<lb/></p>
 
-				<formula>(regression 1 −CF) 1 Y t = 1 X t<lb/> 1 β + 1 U t<lb/> under the assumption E<lb/> 1 Y t | 1 X t<lb/> = 1 X t<lb/> 1 β<lb/> (regression 2 − LSMC) 2 Y t = 2 X t<lb/> 2 β + 2 U t under the assumption E<lb/> 2 Y t | 2 X t<lb/> = 2 X t<lb/> 2 β<lb/> </formula>
+				<formula>(regression 1 -CF) 1 Y t = 1 X t<lb/> 1 β + 1 U t<lb/> under the assumption E<lb/> 1 Y t | 1 X t<lb/> = 1 X t<lb/> 1 β<lb/> (regression 2 - LSMC) 2 Y t = 2 X t<lb/> 2 β + 2 U t under the assumption E<lb/> 2 Y t | 2 X t<lb/> = 2 X t<lb/> 2 β<lb/> </formula>
 
 			<p>Denoting,<lb/></p> 
 
@@ -556,7 +556,7 @@
 
 			<p>Under these assumptions, the OLS parameters estimators are respectively,<lb/></p>
 
-				<formula>1 ˆ<lb/> β =<lb/> 1 X 1 X<lb/> −1 1 X 1 Y<lb/> and 2 ˆ<lb/> β =<lb/> 2 X 2 X<lb/> −1 2 X 2 Y<lb/></formula>
+				<formula>1 ˆ<lb/> β =<lb/> 1 X 1 X<lb/> -1 1 X 1 Y<lb/> and 2 ˆ<lb/> β =<lb/> 2 X 2 X<lb/> -1 2 X 2 Y<lb/></formula>
 
 			<p>These two estimators are consistent and unbiased.<lb/></p>
 
@@ -576,29 +576,29 @@
 
 			<p>H 2 can be operationally tested using an homoskedasticity test such as the Breusch<lb/> and Pagan <ref type="biblio">[3]</ref>, the White <ref type="biblio">[34]</ref> or the Goldfeld - Quandt <ref type="biblio">[14]</ref> test. This assumption<lb/> makes the Gauss - Markov theorem applicable (see Plackett <ref type="biblio">[29]</ref>) and the OLS esti-<lb/>mators are the Best Linear Unbiased Estimators (BLUE). This means that considering<lb/> the same calibration samples it is impossible to find less volatile estimators than the<lb/> OLS ones. Under this assumption it is also easy to assess the estimators&apos; covariance<lb/> matrices, conditionally to the explicative variables,<lb/></p>
 
-				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> −1 1 X V<lb/> 1 Y | 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> −1 ,<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> −1 1 X V<lb/> 1 U| 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> −1 ,<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> = 1 σ 2 1 X 1 X<lb/> −1 .<lb/> </formula>
+				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> -1 1 X V<lb/> 1 Y | 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> -1 ,<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> -1 1 X V<lb/> 1 U| 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> -1 ,<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> = 1 σ 2 1 X 1 X<lb/> -1 .<lb/> </formula>
 
 			<p>And, similarly,</p> 
 
-				<formula>V<lb/> 2 ˆ<lb/> β | 2 X<lb/> = 2 σ 2 2 X 2 X<lb/> −1 .<lb/></formula>
+				<formula>V<lb/> 2 ˆ<lb/> β | 2 X<lb/> = 2 σ 2 2 X 2 X<lb/> -1 .<lb/></formula>
 
 			<p>Moreover, we can express consistent and unbiased estimators of 1 σ 2 and 2 σ 2 . Let<lb/> K + 1 be the dimention of x, these estimators are respectively,<lb/></p>
 
-				<formula>1 ˆ<lb/> σ 2 =<lb/> 1<lb/> 1 N−K−1 ∑<lb/> 1 N<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 and 2 ˆ<lb/> σ 2 =<lb/> 2<lb/> 2 N−K−1 ∑<lb/> 2 N<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 ,<lb/></formula>
+				<formula>1 ˆ<lb/> σ 2 =<lb/> 1<lb/> 1 N-K-1 ∑<lb/> 1 N<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 and 2 ˆ<lb/> σ 2 =<lb/> 2<lb/> 2 N-K-1 ∑<lb/> 2 N<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 ,<lb/></formula>
 
-			<p>with 1 ˆ<lb/> u n =<lb/> NAV<lb/> n − 1 x n1ˆβn1ˆ n1ˆβ and 2 ˆ<lb/> u n = NPV n − 2 x n2ˆβn2ˆ n2ˆβ , the empirical residuals of regres-<lb/>sions 1 and 2.<lb/></p>
+			<p>with 1 ˆ<lb/> u n =<lb/> NAV<lb/> n - 1 x n1ˆβn1ˆ n1ˆβ and 2 ˆ<lb/> u n = NPV n - 2 x n2ˆβn2ˆ n2ˆβ , the empirical residuals of regres-<lb/>sions 1 and 2.<lb/></p>
 
 			<p>We therefore get two unbiased estimators of the previously given conditional co-<lb/>variance matrices,<lb/></p>
 
-				<formula>ˆ<lb/> V<lb/> 1 β | 1 X<lb/> = 1 ˆ<lb/> σ 2 1 X 1 X<lb/> −1 andˆVandˆ andˆV<lb/> 2 β | 2 X<lb/> = 2 ˆ<lb/> σ 2 2 X 2 X<lb/> −1 .<lb/></formula>
+				<formula>ˆ<lb/> V<lb/> 1 β | 1 X<lb/> = 1 ˆ<lb/> σ 2 1 X 1 X<lb/> -1 andˆVandˆ andˆV<lb/> 2 β | 2 X<lb/> = 2 ˆ<lb/> σ 2 2 X 2 X<lb/> -1 .<lb/></formula>
 
 			<p>Eventually we have the two following convergences in distribution,<lb/></p>
 
-				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> − 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> and V<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
+				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> - 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> and V<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
 
 			<p>Moreover, using the previously given estimators and adding simple assumptions on<lb/> the first moments of the regressors (generally verified in practice), we have,<lb/></p>
 
-				<formula>ˆ<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> − 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
+				<formula>ˆ<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> - 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
 
 			<head>5.2.2 Comparison between the estimators covariance matrices without the ho-<lb/>moskedasticity assumption<lb/></head>
 
@@ -606,11 +606,11 @@
 
 			<p>Moreover, in this new framework we do not have a simple form for the estimators&apos;<lb/> covariance matrices any more,<lb/></p>
 
-				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> −1 1 X V<lb/> 1 U| 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> −1<lb/> andV<lb/> 2 ˆ<lb/> β | 2 X<lb/> =<lb/> 2 X 2 X<lb/> −1 2 X V<lb/> 2 U| 2 X<lb/> 2 X<lb/> 2 X 1 X<lb/> −1 .<lb/></formula>
+				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> -1 1 X V<lb/> 1 U| 1 X<lb/> 1 X<lb/> 1 X 1 X<lb/> -1<lb/> andV<lb/> 2 ˆ<lb/> β | 2 X<lb/> =<lb/> 2 X 2 X<lb/> -1 2 X V<lb/> 2 U| 2 X<lb/> 2 X<lb/> 2 X 1 X<lb/> -1 .<lb/></formula>
 
 			<p>However, we still have the two following convergences in distribution,<lb/></p>
 
-				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> and V<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
+				<formula>V<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> and V<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
 
 			<p>White <ref type="biblio">[34]</ref> proposes the use of a biased estimator of the residuals variance, in<lb/> the case of independent calibration samples. In our case, it aims at resorting to the<lb/> following estimators,<lb/></p>
 
@@ -618,11 +618,11 @@
 
 			<p>Note that other less biased estimators are proposed in MacKinnon and White <ref type="biblio">[24]</ref>.<lb/> These adapted estimators are less used in practice and will not be considered in this<lb/> paper. This new data enables one to assess two biased but consistent estimators of the<lb/> covariance matrices of the OLS estimators,<lb/></p>
 
-				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> −1<lb/> 1 N<lb/> ∑<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 1 x n 1 x n<lb/> 1 X 1 X<lb/> −1<lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> =<lb/> 2 X 2 X<lb/> −1<lb/> 2 N<lb/> ∑<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 2 x n 2 x n<lb/> 2 X 2 X<lb/> −1<lb/></formula>
+				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> =<lb/> 1 X 1 X<lb/> -1<lb/> 1 N<lb/> ∑<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 1 x n 1 x n<lb/> 1 X 1 X<lb/> -1<lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> =<lb/> 2 X 2 X<lb/> -1<lb/> 2 N<lb/> ∑<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 2 x n 2 x n<lb/> 2 X 2 X<lb/> -1<lb/></formula>
 
 			<p>Moreover, under simple assumptions concerning the first moments of the regressors<lb/> (generally verified in practice), these estimators enables one to obtain the following<lb/> convergences in distribution,<lb/></p>
 
-				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
+				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
 
 			<p>To conclude on the heteroskedastic framework, it is important to note that these<lb/> variance-covariance matrices estimators are biased and sometimes very volatile. The<lb/> heteroskedastic framework is more general and robust than the homoskedastic frame-<lb/>work. It is generally more adapted to our proxy methodologies.<lb/></p>
 
@@ -634,15 +634,15 @@
 
 			<p>If H 2 is assumed, an asymptotic confidence interval for the approximate NAV can be<lb/> obtained, using the following convergences in law,<lb/></p>
 
-				<formula>ˆ<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> − 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
+				<formula>ˆ<lb/> V<lb/> 1 ˆ<lb/> β | 1 X<lb/> - 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> .<lb/></formula>
 
 			<p>For the CF regression, the α% (with α% close to 1) asymptotic confidence interval<lb/> obtained from this formula, for ¯<lb/> x, a given regressors&apos; outcome, is,<lb/></p>
 
-				<formula>1 IC<lb/> 1 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 1 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> 1 ˆ<lb/> σ 2<lb/> ¯<lb/> x ( 1 X 1 X) −1 ¯<lb/> x<lb/> ,<lb/></formula>
+				<formula>1 IC<lb/> 1 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 1 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> 1 ˆ<lb/> σ 2<lb/> ¯<lb/> x ( 1 X 1 X) -1 ¯<lb/> x<lb/> ,<lb/></formula>
 
 			<p>and for the LSMC,<lb/></p> 
 
-				<formula>2 IC<lb/> 2 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 2 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> 2 ˆ<lb/> σ 2<lb/> ¯<lb/> x ( 2 X 2 X) −1 ¯<lb/> x<lb/> ,<lb/> </formula>
+				<formula>2 IC<lb/> 2 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 2 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> 2 ˆ<lb/> σ 2<lb/> ¯<lb/> x ( 2 X 2 X) -1 ¯<lb/> x<lb/> ,<lb/> </formula>
 
 			<p>denoting by q +α%<lb/> 2<lb/> the 1+α%<lb/> 2<lb/> quantile of a standard Gaussian distribution.<lb/></p>
 
@@ -650,15 +650,15 @@
 
 			<p>Without the homoskedasticity assumption it is also possible to build asymptotic con-<lb/>fidence intervals, based on Whites estimator <ref type="biblio">[34]</ref> properties. Indeed, this estimator<lb/> enables one to assess the following convergence in law,<lb/></p>
 
-				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> − 1<lb/> 2<lb/> 2 ˆ<lb/> β − β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
+				<formula>ˆ<lb/> V W hite<lb/> 1 ˆ<lb/> β | 1 X<lb/> 1<lb/> 2<lb/> 1 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/> andˆVandˆ andˆV W hite<lb/> 2 ˆ<lb/> β | 2 X<lb/> - 1<lb/> 2<lb/> 2 ˆ<lb/> β - β<lb/> d<lb/> N<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> <lb/> 0<lb/> . . .<lb/> 0<lb/> <lb/> <lb/>  , I K+1<lb/> <lb/> <lb/> <lb/></formula>
 
 			<p>For the CF regression, the α% (with α% close to 1) asymptotic confidence interval<lb/> obtained from this formula, for ¯<lb/> x, a given regressors&apos; outcome, is,<lb/></p>
 
-				<formula>1 IC<lb/> 1 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 1 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> ¯<lb/> x ( 1 X 1 X) −1<lb/> ∑<lb/> 1 N<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 1 x n 1 x n<lb/> ( 1 X 1 X) −1 ¯<lb/> x<lb/> ,<lb/> </formula>
+				<formula>1 IC<lb/> 1 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 1 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> ¯<lb/> x ( 1 X 1 X) -1<lb/> ∑<lb/> 1 N<lb/> n=1<lb/> 1 ˆ<lb/> u n 2 1 x n 1 x n<lb/> ( 1 X 1 X) -1 ¯<lb/> x<lb/> ,<lb/> </formula>
 
 			<p>and for the LSMC,<lb/></p> 
 
-				<formula>2 IC<lb/> 2 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 2 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> ¯<lb/> x ( 2 X 2 X) −1<lb/> ∑<lb/> 2 N<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 2 x n 2 x n<lb/> ( 2 X 2 X) −1 ¯<lb/> x<lb/> .<lb/></formula>
+				<formula>2 IC<lb/> 2 N<lb/> α% ( ¯<lb/> xβ ) =<lb/> ¯<lb/> x 2 ˆ<lb/> β ±q 1+α%<lb/> 2<lb/> ¯<lb/> x ( 2 X 2 X) -1<lb/> ∑<lb/> 2 N<lb/> n=1<lb/> 2 ˆ<lb/> u n 2 2 x n 2 x n<lb/> ( 2 X 2 X) -1 ¯<lb/> x<lb/> .<lb/></formula>
 
 			<p>Consider now a set of N independent outcomes following the same distribution as x,<lb/> ¯<lb/> x i<lb/> i∈1;N<lb/>. It is possible to calculate the lengths of the asymptotic confidence intervals<lb/> built for both CF and LSMC, and to compare these values to assess which estimator is<lb/> more efficient in practice (this will be used to see what happens when the number of<lb/> risk factors increases).<lb/></p> 
 

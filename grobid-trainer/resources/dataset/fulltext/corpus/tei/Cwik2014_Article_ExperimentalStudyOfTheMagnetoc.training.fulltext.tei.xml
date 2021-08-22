@@ -22,7 +22,7 @@
 
 			<p>According to the metamagnetic behaviour plays a critical<lb/> role in determining the order of a magnetic transition which<lb/> influences directly the magnitude of magnetocaloric effect.<lb/> In order to confirm that present series showed first-order<lb/> transitions, it has used the Inoue-Shimizu s-d model <ref type="biblio">[14]</ref>,<lb/> which has been widely used to discuss behavior of several<lb/> types of magnetocaloric materials. In this model, a Landau<lb/> expansion of magnetic free energy up to the sixth power of<lb/> total magnetization M is used :<lb/></p>
 
-				<formula>F =<lb/> 1<lb/> 2<lb/> a (T) M 2 +<lb/> 1<lb/> 4<lb/> b (T) M 4 +<lb/> 1<lb/> 6<lb/> c (T) M 6 + .... − µ 0 MH (<label>1</label>)<lb/></formula>
+				<formula>F =<lb/> 1<lb/> 2<lb/> a (T) M 2 +<lb/> 1<lb/> 4<lb/> b (T) M 4 +<lb/> 1<lb/> 6<lb/> c (T) M 6 + .... - µ 0 MH (<label>1</label>)<lb/></formula>
 
 			<p>The Landau coefficients are accessible through the equation<lb/> of state linking M and the magnetic field :<lb/></p>
 
@@ -48,7 +48,7 @@
 
 			<p>The electronic and phonon contributions to the specific heat<lb/> can be calculated by expression<lb/></p>
 
-				<formula>C el+ph (T) = γT + 9NR<lb/> T<lb/> D<lb/> 3 D /T<lb/> 0<lb/> x 4 e x<lb/> (e x − 1) 2 dx,<lb/> (<label>4</label>)<lb/></formula>
+				<formula>C el+ph (T) = γT + 9NR<lb/> T<lb/> D<lb/> 3 D /T<lb/> 0<lb/> x 4 e x<lb/> (e x - 1) 2 dx,<lb/> (<label>4</label>)<lb/></formula>
 
 			<p>where the first term represents the electronic heat capac-<lb/>ity and the second term corresponds to the phonon Debye<lb/> contribution; γ is the Sommerfeld coefficient, D is the<lb/> Debye temperature, N = 3 is the number of atoms per<lb/> formula unit; R is the universal gas constant; and x ≡<lb/> ω/k B T.<lb/></p>
 
@@ -58,7 +58,7 @@
 
 			<p>The adiabatic temperature change T ad caused by the<lb/> magnetic field change, ie. magnetocaloric effect, can be<lb/> obtained as :<lb/></p>
 
-				<formula>T ad = −<lb/> T<lb/> C H<lb/> S H<lb/> (<label>5</label>)<lb/></formula>
+				<formula>T ad = -<lb/> T<lb/> C H<lb/> S H<lb/> (<label>5</label>)<lb/></formula>
 
 			<figure>Fig. 5 Total specific heat<lb/> capacity C tot (T) of<lb/> Dy 0.7 Er 0.3 Co 2 measured in zero<lb/> magnetic field The calculated<lb/> sum of electronic and phonon<lb/> contributions C el+ph as well as<lb/> estimated magnetic contribution<lb/> C mag . The inset shows C P (T)<lb/> curve measured in zero and 0.5-,<lb/> 1-and 1.5-T magnetic fields for<lb/> Dy 0.7 Er 0.3 Co 2<lb/> Fig. 6 The maximum value of<lb/> T ad vs. T for R 1-x R x Co 2<lb/> compounds<lb/></figure>
 
