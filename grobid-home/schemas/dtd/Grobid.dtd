@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2021-08-21T05:34:32Z. .
+DTD generated from ODD source 2021-08-23T08:29:44Z. .
 TEI Edition: Version 4.2.2. Last updated on
 	9th April 2021, revision 609a109b1
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.2.2/
@@ -1098,7 +1098,7 @@ version %teidata.version;  #IMPLIED >
  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
  >
 <!--doc:contains a summary or formal abstract prefixed to an existing source document by the encoder. [2.4.4. Abstracts] -->
-<!ELEMENT abstract (#PCDATA|%model.pLike;|%model.listLike;|%model.divLike;)*>
+<!ELEMENT abstract (%model.pLike;|%model.listLike;|%model.divLike;)*>
 <!ATTLIST abstract xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST abstract
  %tei_att.global.attributes; >
@@ -1387,9 +1387,10 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.personal.attributes;
  %tei_att.typed.attributes; >
 <!--doc:(formula) contains a mathematical or other formula. [14.2. Formulæ and Mathematical Expressions] -->
-<!ELEMENT formula (#PCDATA|%model.graphicLike;|%model.hiLike;|label)*>
+<!ELEMENT formula (#PCDATA|label|%model.graphicLike;|%model.hiLike;|mathml.math)*>
 <!ATTLIST formula xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST formula
+ %tei_att.typed.attributes;
  %tei_att.global.attributes;
  %tei_att.notated.attributes; >
 <!--doc:(front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title Pages 4. Default Text Structure] -->
@@ -1430,7 +1431,7 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.typed.attribute.subtype;
 type %teidata.enumerated;  #IMPLIED >
 <!--doc:groups information relating to the publication or distribution of a bibliographic item. [3.12.2.4. Imprint, Size of a Document, and Reprint Information] -->
-<!ELEMENT imprint (biblScope|date|pubPlace|publisher)*>
+<!ELEMENT imprint (((classCode|catRef)*,((%model.imprintPart;|%model.dateLike;)*,(respStmt)*,(%model.global;)*)*))>
 <!ATTLIST imprint xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST imprint
  %tei_att.global.attributes; >
@@ -1441,7 +1442,7 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.sortable.attributes; >
 <!--doc:(keywords) contains a list of keywords or phrases identifying the topic or nature of a text. [2.4.3. The Text Classification] -->
-<!ELEMENT keywords ((#PCDATA|term)*,(list)?)>
+<!ELEMENT keywords (#PCDATA|term|list)*>
 <!ATTLIST keywords xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST keywords
  %tei_att.global.attributes;
@@ -1508,7 +1509,7 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.datable.attributes;
  %tei_att.canonical.attributes; >
 <!--doc:(monographic level) contains bibliographic elements describing an item (e.g. a book or journal) published as an independent item (i.e. as a separate physical object). [3.12.2.1. Analytic, Monographic, and Series Levels] -->
-<!ELEMENT monogr (imprint|author|editor|meeting|title|%model.ptrLike;|idno|availability|%model.noteLike;|edition|biblScope)*>
+<!ELEMENT monogr (%model.respLike;|imprint|authority|%model.noteLike;|biblScope|extent|edition|availability|textLang|idno|%model.ptrLike;|title)*>
 <!ATTLIST monogr xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST monogr
  %tei_att.global.attributes; >

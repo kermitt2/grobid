@@ -22,7 +22,8 @@
             <divGen type="toc"/>
         </front>
         <body>
-            <p>Schema for structured documents resulting from the automatic extraction and restructuring realized by Grobid.</p>
+            <p>Schema for structured documents resulting from the automatic extraction and restructuring realized by
+                Grobid.</p>
             <schemaSpec ident="Grobid" docLang="en" prefix="tei_" xml:lang="en">
                 <!--moduleRef
                     url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/-->
@@ -52,68 +53,85 @@
                 <!-- used to be except="c cl interp interpGrp m pc phr span spanGrp w" -->
                 <moduleRef key="analysis" include="s"/>
 
+                <!-- Inclusion of the MathML schema -->
+                <moduleRef url="https://www.tei-c.org/release/xml/tei/Exemplars/mathml2-main.rng"/>
+
                 <!-- formula can contains raw text or graphics, and formula can appear under div, because often completely outside a paragraph -->
-                <elementSpec module="figures" ident="formula" mode="change"
-                    ns="http://www.tei-c.org/ns/1.0">
-                    <classes mode="replace">
-                        <memberOf key="model.graphicLike"/>
+                <elementSpec ident="formula" mode="change">
+                    <classes mode="change">
+                        <memberOf key="att.typed" mode="add"/>
                         <memberOf key="model.pLike" mode="add"/>
-                        <memberOf key="att.global"/>
-                        <memberOf key="att.notated"/>
                     </classes>
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:text/>
-                                <rng:ref name="model.graphicLike"/>
-                                <rng:ref name="model.hiLike"/>
-                                <rng:ref name="label"/>
-                                <!--rng:ref name="mathml.math"/-->
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                            <textNode/>
+                            <elementRef key="label"/>
+                            <classRef key="model.graphicLike"/>
+                            <classRef key="model.hiLike"/>
+                            <elementRef key="mathml.math"/>
+                        </alternate>
                     </content>
+                    <exemplum>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <formula notation="mathml">
+                                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mi>E</mi>
+                                    <mo>=</mo>
+                                    <mi>m</mi>
+                                    <msup>
+                                        <mrow>
+                                            <mi>c</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </msup>
+                                </math>
+                            </formula>
+                        </egXML>
+                    </exemplum>
                 </elementSpec>
 
-                <elementSpec ident="monogr" mode="change" module="core">
+                <elementSpec ident="monogr" mode="change">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:ref name="imprint"/>
-                                <rng:ref name="author"/>
-                                <rng:ref name="editor"/>
-                                <rng:ref name="meeting"/>
-                                <rng:ref name="respStmt"/>
-                                <rng:ref name="title"/>
-                                <rng:ref name="model.ptrLike"/>
-                                <rng:ref name="idno"/>
-                                <rng:ref name="textLang"/>
-                                <rng:ref name="authority"/>
-                                <rng:ref name="availability"/>
-                                <rng:ref name="model.noteLike"/>
-                                <rng:ref name="edition"/>
-                                <rng:ref name="sponsor"/>
-                                <rng:ref name="funder"/>
-                                <rng:ref name="extent"/>
-                                <rng:ref name="biblScope"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                            <classRef key="model.respLike"/>
+                            <elementRef key="imprint"/>
+                            <elementRef key="authority"/>
+                            <classRef key="model.noteLike"/>
+                            <elementRef key="biblScope"/>
+                            <elementRef key="extent"/>
+                            <elementRef key="edition"/>
+                            <elementRef key="availability"/>
+                            <elementRef key="textLang"/>
+                            <elementRef key="idno"/>
+                            <classRef key="model.ptrLike"/>
+                            <elementRef key="title"/>
+                        </alternate>
                     </content>
                 </elementSpec>
 
                 <!-- allow empty imprint -->
                 <elementSpec ident="imprint" mode="change" module="core">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:ref name="model.Incl"/>
-                                <rng:ref name="biblScope"/>
-                                <rng:ref name="date"/>
-                                <rng:ref name="distributor"/>
-                                <rng:ref name="pubPlace"/>
-                                <rng:ref name="publisher"/>
-                                <rng:ref name="time"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <sequence>
+                            <alternate minOccurs="0"
+                                maxOccurs="unbounded">
+                                <elementRef key="classCode"/>
+                                <elementRef key="catRef"/>
+                            </alternate>
+                            <sequence minOccurs="0"
+                                maxOccurs="unbounded">
+                                <alternate minOccurs="0" maxOccurs="unbounded">
+                                    <classRef key="model.imprintPart"/>
+                                    <classRef key="model.dateLike"/>
+                                </alternate>
+                                <elementRef key="respStmt" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                                <classRef key="model.global"
+                                    minOccurs="0" maxOccurs="unbounded"/>
+                            </sequence>
+                        </sequence>
                     </content>
                 </elementSpec>
 
@@ -121,29 +139,24 @@
                 <!-- structured abstract is an obvious need, see https://github.com/TEIC/TEI/issues/548 -->
                 <elementSpec ident="abstract" mode="change" module="header">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:text/>
-                                <rng:ref name="model.pLike"/>
-                                <rng:ref name="model.listLike"/>
-                                <rng:ref name="model.divLike"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
+                        <alternate minOccurs="0"
+                            maxOccurs="unbounded">
+                            <classRef key="model.pLike"/>
+                            <classRef key="model.listLike"/>
+                            <classRef key="model.divLike"/>
+                        </alternate>
                     </content>
                 </elementSpec>
 
                 <!-- accept text under keywords, in case Grobid cannot segment a keyword field -->
-                <elementSpec ident="keywords" mode="change" module="header">
+                <elementSpec ident="keywords" mode="change">
                     <content>
-                        <rng:zeroOrMore>
-                            <rng:choice>
-                                <rng:text/>
-                                <rng:ref name="term"/>
-                            </rng:choice>
-                        </rng:zeroOrMore>
-                        <rng:optional>
-                            <rng:ref name="list"/>
-                        </rng:optional>
+                        <alternate minOccurs="0">
+                            <textNode/>
+                            <elementRef key="term" minOccurs="1"
+                                maxOccurs="unbounded"/>
+                            <elementRef key="list"/>
+                        </alternate>
                     </content>
                 </elementSpec>
 
@@ -219,7 +232,11 @@
                 <classSpec ident="att.global" type="atts" mode="change" module="tei">
                     <attList>
                         <attDef ident="coords" mode="change">
-                            <desc>Coordinates of the logical element in the original PDF document. The logical element is described as a list of bounding boxes, each one being defined by a page number, X and Y pixel coordinates in the PDF page (as a convention from the top left point of the page), height and width of the bounding box. Each bounding box is separated by a semi-colon (;) and each coordinate elements by a coma (,).</desc>
+                            <desc>Coordinates of the logical element in the original PDF document. The logical element
+                                is described as a list of bounding boxes, each one being defined by a page number, X and
+                                Y pixel coordinates in the PDF page (as a convention from the top left point of the
+                                page), height and width of the bounding box. Each bounding box is separated by a
+                                semi-colon (;) and each coordinate elements by a coma (,).</desc>
                         </attDef>
                     </attList>
                 </classSpec>
