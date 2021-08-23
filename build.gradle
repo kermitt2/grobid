@@ -337,8 +337,8 @@ project(":grobid-service") {
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
 
-//    distZip { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
-//    distTar { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
+    distZip { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
+    distTar { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
 
     dependencies {
         implementation project(':grobid-core')
