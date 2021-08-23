@@ -38,7 +38,7 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      - run: ./gradlew clean assemble
+      - run: ./gradlew clean assemble --info --stacktrace
 
       # run tests!
       - run: ./gradlew test jacocoTestReport coveralls --no-daemon
