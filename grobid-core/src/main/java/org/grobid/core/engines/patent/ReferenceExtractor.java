@@ -471,9 +471,11 @@ public class ReferenceExtractor implements Closeable {
                 patentBlocks.add(featureVector.printVector());
                 posit++;
             }
-			
+
+            patentBlocks.add("\n");
+
             String theResult = null;
-            theResult = taggerAll.label(String.join("\n", patentBlocks));
+            theResult = taggerAll.label(patentBlocks);
             //System.out.println(theResult);
 
             StringTokenizer stt = new StringTokenizer(theResult, "\n");
