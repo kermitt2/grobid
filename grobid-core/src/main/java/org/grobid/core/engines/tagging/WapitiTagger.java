@@ -1,10 +1,12 @@
 package org.grobid.core.engines.tagging;
 
+import jdk.internal.joptsimple.internal.Strings;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.jni.WapitiModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class WapitiTagger implements GenericTagger {
@@ -17,11 +19,11 @@ public class WapitiTagger implements GenericTagger {
 
     @Override
     public String label(Iterable<String> data) {
-        final List<String> labelled = new ArrayList<>();
+        List<String> labelled = new ArrayList<>();
         data.forEach( d -> {
             labelled.add(label(d));   
         });
-        return String.join("\n", labelled);
+        return Strings.join(labelled, "\n\n");
     }
 
     @Override
