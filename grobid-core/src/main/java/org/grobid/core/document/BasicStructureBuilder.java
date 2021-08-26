@@ -422,10 +422,12 @@ public class BasicStructureBuilder {
 
     static public Document figureResultSegmentation(Document doc, 
                                                     List<GraphicObject> figureAnchors, 
-                                                    String labelledResults, 
-                                                    List<LayoutTokenization> theTokenizations) {
+                                                    String labelledResultsUp, 
+                                                    List<LayoutTokenization> theTokenizationsUp,
+                                                    String labelledResultsDown, 
+                                                    List<LayoutTokenization> theTokenizationsDown) {
         
-
+        
         return doc;
     }
 

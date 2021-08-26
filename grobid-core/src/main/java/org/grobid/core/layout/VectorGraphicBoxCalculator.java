@@ -132,7 +132,7 @@ public class VectorGraphicBoxCalculator {
                     LOGGER.error("The vector file " + vecFile + " is too large to be processed, size: " + vecFile.length());
                     continue;
                 }
-System.out.println(pageNum + ": " + vecFile.getPath());
+//System.out.println(pageNum + ": " + vecFile.getPath());
                 //XQueryProcessor pr = new XQueryProcessor(vecFile);
 
                 SVGDocument doc = docFactory.createSVGDocument(vecFile.getPath());
@@ -154,18 +154,18 @@ System.out.println(pageNum + ": " + vecFile.getPath());
                     
                     String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
                     
-System.out.println(coords);
+//System.out.println(coords);
 
                     BoundingBox e = BoundingBox.fromString(coords);
                     if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
-System.out.println("filter this box, area: " + e.area());                        
+//System.out.println("filter this box, area: " + e.area());                        
                         continue;
                     }
                     boxes.add(e);
                 }
-System.out.println("nb boxes: " + boxes.size());
+//System.out.println("nb boxes: " + boxes.size());
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
-System.out.println("nb remainingBoxes: " + remainingBoxes.size());
+//System.out.println("nb remainingBoxes: " + remainingBoxes.size());
 
                 // bound intersecting or very close blocks with text, this is typically to cover
                 // the case where the text is outside the svg
