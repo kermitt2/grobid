@@ -332,6 +332,12 @@ public class ReferenceMarkerMatcher {
                 }
             } else if (matchCount > 1) {
                 List<List<LayoutToken>> yearSplit = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, false);
+                List<List<LayoutToken>> yearSplitWithLeftOver = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, true);
+                // do we have a leftover to be added?
+                List<LayoutToken> leftover = null;
+                if (yearSplit.size() < yearSplitWithLeftOver.size()) {
+                    leftover = yearSplitWithLeftOver.get(yearSplitWithLeftOver.size()-1);
+                }
                 if (yearSplit.isEmpty()) {
                     result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(splitTokens)), splitTokens));
                 } else {
@@ -352,12 +358,26 @@ public class ReferenceMarkerMatcher {
 
                         for (int i = 1; i < yearSplit.size(); i++) {
                             List<LayoutToken> toksI = yearSplit.get(i);
-                            result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)), toksI.subList(toksI.size() - 1, toksI.size())));
+                            if (i == yearSplit.size()-1 && leftover != null) {
+                                List<LayoutToken> lastSegmentTokens = toksI.subList(toksI.size() - 1, toksI.size());
+                                lastSegmentTokens.addAll(leftover);
+                                result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)) + LayoutTokensUtil.toText(leftover), 
+                                    lastSegmentTokens));
+                            } else {
+                                result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)), 
+                                    toksI.subList(toksI.size() - 1, toksI.size())));
+                            }
                         }
                     } else {
                         // case when two authors still appear
-                        for (List<LayoutToken> item : yearSplit) {
-                            result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(item)), item));
+                        for(int k=0; k<yearSplit.size(); k++) {
+                            List<LayoutToken> item = yearSplit.get(k);
+                            if (k == yearSplit.size()-1 && leftover != null) {
+                                List<LayoutToken> lastSegmentTokens = item;
+                                lastSegmentTokens.addAll(leftover);
+                                result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(lastSegmentTokens)), lastSegmentTokens));
+                            } else
+                                result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(item)), item));
                         }
                     }
                 }

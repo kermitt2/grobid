@@ -31,7 +31,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: gradle dependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
@@ -39,4 +39,17 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradle test
+      - run: ./gradlew test jacocoTestReport coveralls --no-daemon
+
+      - store_test_results:
+          path: build/reports/jacoco/test/jacocoTestReport.xml
+      - store_test_results:
+          path: build/reports/tests/test
+      - store_artifacts:
+          path: build/reports/jacoco/test/jacocoTestReport.xml
+      - store_artifacts:
+          path: build/reports/tests/test
+      - store_artifacts:
+          path: build/reports/jacoco/test/html/index.html
+      - store_artifacts:
+          path: build/reports/tests/test/index.html

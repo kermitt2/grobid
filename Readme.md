@@ -57,7 +57,7 @@ _Warning_: Some quota and query limitation apply to the demo server! Please be c
 
 For facilitating the usage GROBID service at scale, we provide clients written in Python, Java, node.js using the [web services](https://grobid.readthedocs.io/en/latest/Grobid-service/) for parallel batch processing:
 
-- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a>
+- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a> (the most complete one in term of supported services and options)
 - <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
