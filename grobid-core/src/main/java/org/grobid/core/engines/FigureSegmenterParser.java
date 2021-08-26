@@ -29,8 +29,11 @@ import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Triple;
 import org.grobid.core.utilities.LayoutTokensUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -69,9 +72,14 @@ public class FigureSegmenterParser {
     private final GenericTagger figureSegmenterParserUp;
     private final GenericTagger figureSegmenterParserDown;
     
+    // direction of the labeling from the graphic object
+    public enum Direction {
+        UP, DOWN 
+    }
+
     public FigureSegmenterParser() {
-        figureSegmenterParserUp = TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_UP);
-        figureSegmenterParserDown = TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_DOWN);
+        figureSegmenterParserUp = null;//TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_UP);
+        figureSegmenterParserDown = null;//TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_DOWN);
     }
 
     public Document extract(Document doc) {
@@ -80,25 +88,40 @@ public class FigureSegmenterParser {
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
         // for each figure anchor, we generate sequence to be labeled with features
-        boolean up = false;
-        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors, up);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectUp = this.getAreasFeatured(doc, figureAnchors, Direction.UP);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectDown = this.getAreasFeatured(doc, figureAnchors, Direction.DOWN);
         
-        List<String> contents = featureObject.getLeft();
-        List<LayoutTokenization> theTokenizations = featureObject.getRight();
+        List<String> contentsUp = featureObjectUp.getLeft();
+        List<String> contentsDown = featureObjectDown.getLeft();
+        List<LayoutTokenization> theTokenizationsUp = featureObjectUp.getRight();
+        List<LayoutTokenization> theTokenizationsDown = featureObjectDown.getRight();
 
         // we label the sequences to extend or not the figure anchor
-        if (contents != null && contents.size() > 0) {
-            String labelledResults;
+        String labelledResultsUp = null;
+        if (contentsUp != null && contentsUp.size() > 0) {
             try {
-                GenericTagger tagger = up ? figureSegmenterParserUp : figureSegmenterParserDown;
-                labelledResults = tagger.label(contents);
+                GenericTagger tagger = figureSegmenterParserUp;
+                labelledResultsUp = tagger.label(contentsUp);
             } catch(Exception e) {
-                throw new GrobidException("Sequence labeling in figure-segmenter fails.", e);
+                throw new GrobidException("Sequence labeling upper direction in figure-segmenter fails.", e);
             }
-
-            // validate and set the figure areas in the Document object
-            doc = BasicStructureBuilder.figureResultSegmentation(doc, figureAnchors, labelledResults, theTokenizations);
         }
+
+        String labelledResultsDown = null;
+        if (contentsDown != null && contentsDown.size() > 0) {
+            try {
+                GenericTagger tagger = figureSegmenterParserDown;
+                labelledResultsDown = tagger.label(contentsDown);
+            } catch(Exception e) {
+                throw new GrobidException("Sequence labeling down in figure-segmenter fails.", e);
+            }
+        }
+
+        // validate and set the figure areas in the Document object
+        doc = BasicStructureBuilder.figureResultSegmentation(doc, figureAnchors, 
+                                                             labelledResultsUp, theTokenizationsUp, 
+                                                             labelledResultsDown, theTokenizationsDown);
+        
         return doc;
     }
 
@@ -110,7 +133,7 @@ public class FigureSegmenterParser {
      * Addition of the features at layout token level for the areas before and after the figure anchors.
      *
      */
-    private Pair<List<String>,List<LayoutTokenization>> getAreasFeatured(Document doc, List<GraphicObject> figureAnchors, boolean up) {
+    private Pair<List<String>,List<LayoutTokenization>> getAreasFeatured(Document doc, List<GraphicObject> figureAnchors, Direction direction) {
         List<Block> blocks = doc.getBlocks();
         if ((blocks == null) || blocks.size() == 0) {
             return null;
@@ -133,6 +156,13 @@ public class FigureSegmenterParser {
 
             int startPos = startGraphicPos;
             int endPos = endGraphicPos;
+
+            System.out.println("figureAnchor: " + figureAnchor.getPage() + " / " + startPos + " / " + endPos);
+
+            if (startPos == -1)
+                continue;
+            if (endPos == -1)
+                endPos = startPos;
 
             // position of the blocks in the page where the GraphicObject is located
             Map<Integer,Block> blockIndexMap = new HashMap<>();
@@ -173,7 +203,7 @@ public class FigureSegmenterParser {
                 continue;
             }
 
-            if (up) {
+            if (direction == Direction.UP) {
                 // go up and determine the start position in the upper direction
                 Block currentBlock = blockIndexMap.get(startPos);
                 int pos = currentPage.getBlocks().indexOf(currentBlock);
@@ -188,7 +218,7 @@ public class FigureSegmenterParser {
 
                 for(int i=endPos; i>=startPos; i--) {
                     localTokenization.add(tokenizations.get(i));
-                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap);
+                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap, direction);
                     if (features != null) {
                         if (i >= startGraphicPos && i <= endGraphicPos)
                             features.inGraphicBox = true;
@@ -213,7 +243,7 @@ public class FigureSegmenterParser {
 
                 for(int i=startPos; i<=endPos; i++) {
                     localTokenization.add(tokenizations.get(i));
-                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap);
+                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap, direction);
                     if (features != null) {
                         if (i >= startGraphicPos && i <= endGraphicPos)
                             features.inGraphicBox = true;
@@ -231,7 +261,10 @@ public class FigureSegmenterParser {
         return Pair.of(results, tokenizationsFigures);
     }
 
-    private FeaturesVectorFigureSegmenter createFeatureVector(List<LayoutToken> tokenizations, int i, Map<Integer,Block> blockIndexMap) {
+    private FeaturesVectorFigureSegmenter createFeatureVector(List<LayoutToken> tokenizations, 
+                                                            int i, 
+                                                            Map<Integer,Block> blockIndexMap,
+                                                            Direction direction) {
         LayoutToken token = tokenizations.get(i);
         String localText = token.getText();
 
@@ -248,6 +281,53 @@ public class FigureSegmenterParser {
         features.token = token;
         features.string = localText;
 
+        // block status
+        if (blockIndexMap.get(i) != null) {
+            features.blockStatus = "BLOCKSTART";
+        } else {
+            int nextIndex = i+1;
+            while(nextIndex < tokenizations.size() && 
+                (tokenizations.get(nextIndex).getText() == null) || (tokenizations.get(nextIndex).getText().trim().length() == 0)) {
+                nextIndex++;
+            }
+            if (blockIndexMap.get(nextIndex) != null) {
+                features.blockStatus = "BLOCKEND";
+            } else {
+                features.blockStatus = "BLOCKIN";
+            }
+        }
+
+        // line status
+        // default
+        features.lineStatus = "LINEIN";
+        if (features.blockStatus.equals("BLOCKEND"))
+            features.lineStatus = "LINEEND";
+        else if (features.blockStatus.equals("BLOCKSTART"))
+            features.lineStatus = "LINESTART";
+        else {
+            // look forward
+            int nextIndex = i+1;
+            while(nextIndex < tokenizations.size() && 
+                (tokenizations.get(nextIndex).getText() == null) || (tokenizations.get(nextIndex).getText().equals(" "))) {
+                nextIndex++;
+            }
+            if (tokenizations.get(nextIndex).getText().equals("\n")) {
+                features.lineStatus = "LINEEND";
+            } 
+            // look backward
+            int previousIndex = i-1;
+            while(previousIndex > 0 && 
+                (tokenizations.get(previousIndex).getText() == null) || (tokenizations.get(previousIndex).getText().equals(" "))) {
+                previousIndex--;
+            }
+            if (tokenizations.get(previousIndex).getText().equals("\n")) {
+                features.lineStatus = "LINESTART";
+            } 
+        }
+
+
+
+
         return features;
     }
     
@@ -256,7 +336,7 @@ public class FigureSegmenterParser {
      * the current FigureSegmenter model. The result is a pair of TEI training data string and 
      * raw feature data. 
      */
-    public Pair<String,String> createTrainingData(Document doc, String id) {
+    public Pair<Pair<String,String>,Pair<String,String>> createTraining(Document doc, String id) {
         // the figure are not segmented by the segmentation model (it's the purpose of this parser),
         // but normally pre-located in the BODY and ANNEX segments
 
@@ -265,54 +345,71 @@ public class FigureSegmenterParser {
         // figure anchors are based on VectorGraphicBoxCalculator, which aggregate bitmap and SVG elements
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
-        // we cover first the extension down the graphic object
-        boolean up = false;
-
         // for each figure anchor, we generate sequence to be labeled with features
-        Pair<List<String>,List<LayoutTokenization>> featureObject = this.getAreasFeatured(doc, figureAnchors, up);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectUp = this.getAreasFeatured(doc, figureAnchors, Direction.UP);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectDown = this.getAreasFeatured(doc, figureAnchors, Direction.DOWN);
 
-        List<String> featureVectors = featureObject.getLeft();
-        List<LayoutTokenization> layoutTokenizations = featureObject.getRight();
+        List<String> featureVectorsUp = featureObjectUp.getLeft();
+        List<LayoutTokenization> layoutTokenizationsUp = featureObjectUp.getRight();
 
-        // if featureVectors is null, it usually means that no figure segment is found in the
+        List<String> featureVectorsDown = featureObjectDown.getLeft();
+        List<LayoutTokenization> layoutTokenizationsDown = featureObjectDown.getRight();
+
+        // if the feature vectors are null, it usually means that no figure segment is found in the
         // document segmentation and there is no training data to generate for this document
-        if (featureVectors == null) {
+        if (featureVectorsUp == null && featureVectorsDown == null) {
             return null;
         }
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("<tei xml:space=\"preserve\">\n" +
+        StringBuilder sbUp = new StringBuilder();
+        StringBuilder sbDown = new StringBuilder();
+        String header = "<tei xml:space=\"preserve\">\n" +
                     "    <teiHeader>\n" +
                     "        <fileDesc xml:id=\"_" + id + "\"/>\n" +
                     "    </teiHeader>\n" +
                     "    <text xml:lang=\"en\">\n" +
-                    "        <body>\n");
-        StringBuilder allFeatureVector = new StringBuilder();
+                    "        <body>\n";
+        sbUp.append(header);
+        sbDown.append(header);
 
-        for(int i=0; i<featureVectors.size(); i++) {
+        StringBuilder allFeatureVectorUp = new StringBuilder();
+        StringBuilder allFeatureVectorDown = new StringBuilder();
+
+        for(int i=0; i<featureVectorsUp.size(); i++) {
             
-            sb.append("\n<div>\n");
+            sbUp.append("\n<div>\n");
 
-            String featureVector = featureVectors.get(i);
-            LayoutTokenization layoutTokenization = layoutTokenizations.get(i);
-            List<LayoutToken> localTokenizations = layoutTokenization.getTokenization();
+            String featureVectorUp = featureVectorsUp.get(i);
+            LayoutTokenization layoutTokenizationUp = layoutTokenizationsUp.get(i);
+            List<LayoutToken> localTokenizationsUp = layoutTokenizationUp.getTokenization();
 
-            allFeatureVector.append(featureVector);
+            allFeatureVectorUp.append(featureVectorUp);
 
-            String res;        
+            String featureVectorDown = featureVectorsDown.get(i);
+            LayoutTokenization layoutTokenizationDown = layoutTokenizationsDown.get(i);
+            List<LayoutToken> localTokenizationsDown = layoutTokenizationDown.getTokenization();
+
+            allFeatureVectorDown.append(featureVectorDown);
+
+            String resUp = null;
+            String resDown = null;
             try {
-                GenericTagger tagger = up ? figureSegmenterParserUp : figureSegmenterParserDown;
-                res = tagger.label(featureVector);
+                GenericTagger tagger = figureSegmenterParserUp;
+                //resDown = tagger.label(featureVectorDown);
+
+                tagger = figureSegmenterParserDown;
+                //resUp = tagger.label(featureVectorUp);
             }
             catch(Exception e) {
                 throw new GrobidException("Sequence labeling in figure-segmenter fails.", e);
             }
-            if (res == null) {
+            if (resUp == null) {
                 // we still output just the text, to be labelled manually
-                sb.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizations)));
+                // TBD: note reverse order ?
+                sbUp.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsUp)));
             } else {
                 // output text with <figure> label
-                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE_SEGMENTER_DOWN, res, localTokenizations);
+                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE_SEGMENTER_DOWN, resUp, localTokenizationsUp);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
@@ -323,24 +420,64 @@ public class FigureSegmenterParser {
                     List<LayoutToken> localTokens = cluster.concatTokens();
             
                     if (clusterLabel.equals(TaggingLabels.FIGURE)) {
-                        sb.append("    <figure>");
+                        sbUp.append("    <figure>");
                         String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens));
                         localContent = localContent.replace("\n", "<lb/> ");
-                        sb.append(localContent);
-                        sb.append("</figure>\n");
+                        sbUp.append(localContent);
+                        sbUp.append("</figure>\n");
                     } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
-                        sb.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens)));
+                        sbUp.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens)));
+                    }
+                }
+            }
+
+            sbUp.append("</div>\n\n");
+            sbDown.append("\n<div>\n");
+
+            if (resDown == null) {
+                // we still output just the text, to be labelled manually
+                sbDown.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsDown)));
+            } else {
+                // output text with <figure> label
+                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE_SEGMENTER_DOWN, resDown, localTokenizationsDown);
+                List<TaggingTokenCluster> clusters = clusteror.cluster();
+                for (TaggingTokenCluster cluster : clusters) {
+                    if (cluster == null) {
+                        continue;
+                    }
+                    TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                    Engine.getCntManager().i(clusterLabel);
+                    List<LayoutToken> localTokens = cluster.concatTokens();
+            
+                    if (clusterLabel.equals(TaggingLabels.FIGURE)) {
+                        sbDown.append("    <figure>");
+                        String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens));
+                        localContent = localContent.replace("\n", "<lb/> ");
+                        sbDown.append(localContent);
+                        sbDown.append("</figure>\n");
+                    } else if (clusterLabel.equals(TaggingLabels.OTHER)) {
+                        sbDown.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokens)));
                     }
                 }
             }
             
-            sb.append("</div>\n");
+            sbDown.append("</div>\n\n");
         }
 
-        sb.append("\n        </body>\n" +
-                    "    </text>\n" +
-                    "</tei>\n");
+        String closer = "\n        </body>\n" +
+                        "    </text>\n" +
+                        "</tei>\n";
 
-        return Pair.of(sb.toString(), allFeatureVector.toString());
+        sbUp.append(closer);
+        sbDown.append(closer);
+
+        return Pair.of(
+            Pair.of(sbUp.toString(), allFeatureVectorUp.toString()), 
+            Pair.of(sbDown.toString(), allFeatureVectorDown.toString())
+        );
+    }
+
+    public void close() throws IOException {
+        // no resource to close
     }
 }
