@@ -47,6 +47,8 @@ public class FeaturesVectorFigureSegmenter {
     // indicate if the token is in the identified graphic box or not
     public boolean inGraphicBox = false;
 
+    public String segmentationLabel = "OTHER"; // the label assigned to the token by the upstream segmentation model
+
     public String printVector() {
         if (string == null) return null;
         if (string.length() == 0) return null;
@@ -150,7 +152,9 @@ public class FeaturesVectorFigureSegmenter {
         else
             res.append(" 0");
 
-        // 28 features written at this point
+        res.append(" "+segmentationLabel);
+
+        // 29 features written at this point
 
         // label - for training data (1)
         if (label != null)
