@@ -21,6 +21,8 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.layout.GraphicObject;
+import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenSynchronizer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
@@ -30,6 +32,8 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Triple;
 import org.grobid.core.utilities.LayoutTokensUtil;
 
+import com.google.common.collect.Multimap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,12 +41,15 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.regex.Matcher;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Comparator; 
 
 /**
  * A model for segmenting the figure areas. The model is applied after the Segmentation model and
@@ -67,7 +74,7 @@ public class FigureSegmenterParser {
     private static final int LINESCALE = 10;
 
     // extension from graphic object to be considered, in number of blocks
-    private static int EXTENSION_SIZE = 5;
+    private static int EXTENSION_SIZE = 4;
 
     private final GenericTagger figureSegmenterParserUp;
     private final GenericTagger figureSegmenterParserDown;
@@ -126,7 +133,25 @@ public class FigureSegmenterParser {
     }
 
     private List<GraphicObject> initFigureAnchors(Document doc) {
-        return doc.getImages();
+        // update images list
+        List<GraphicObject> figureAnchors = new ArrayList<>();
+
+        Multimap<Integer, GraphicObject> imagesPerPage = doc.getImagesPerPage() ;
+
+        // to be sorted
+        HashSet<Integer> theKeys = new HashSet<>(imagesPerPage.keySet());
+        List<Integer> keys = new ArrayList<Integer>(theKeys);
+        Collections.sort(keys);
+        for (Integer pageNum : keys) {
+            Collection<GraphicObject> elements = imagesPerPage.get(pageNum);
+            if (elements != null) {
+                for(GraphicObject element : elements) {
+                    figureAnchors.add(element);
+                }
+            }
+        }
+
+        return figureAnchors;
     }
 
     /**
@@ -148,106 +173,143 @@ public class FigureSegmenterParser {
             StringBuilder content = new StringBuilder();
             List<LayoutToken> localTokenization = new ArrayList<>();
 
-            int startGraphicPos = figureAnchor.getStartPosition();
-            int endGraphicPos = figureAnchor.getEndPosition();
-
-            // end of extension is 1) page start/end 2) EXTENSION_SIZE reached
-            // 3) non body or annex segments (should we add footnotes?)
-
-            int startPos = startGraphicPos;
-            int endPos = endGraphicPos;
-
-            System.out.println("figureAnchor: " + figureAnchor.getPage() + " / " + startPos + " / " + endPos);
-
-            if (startPos == -1)
-                continue;
-            if (endPos == -1)
-                endPos = startPos;
-
             // position of the blocks in the page where the GraphicObject is located
-            Map<Integer,Block> blockIndexMap = new HashMap<>();
+            List<Block> pageBlocks = null;
             Page currentPage = null;
 
             for (Page page : doc.getPages()) {
                 if (page.getNumber() == figureAnchor.getPage()) {
-                    if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) {
-                        // note: this should not happen
-                        LOGGER.warn("Graphic object is located on on an empty page on page " + page.getNumber());
-                        break;
-                    }
-
-                    for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
-                        Block block = page.getBlocks().get(blockIndex);
-                        boolean lastPageBlock = false;
-                        if (blockIndex == page.getBlocks().size()-1) {        
-                            lastPageBlock = true;
-                        }
-                        boolean firstPageBlock = false;
-                        if (blockIndex == 0) {
-                            firstPageBlock = true;
-                        }
-                        List<LayoutToken> tokens = block.getTokens();
-                        if (tokens == null || tokens.size() == 0) {
-                            continue;
-                        }
-
-                        blockIndexMap.put(tokens.get(0).getOffset(), block);
-                    }
                     currentPage = page;
+                    pageBlocks = page.getBlocks();
                     break;
                 }
             }
 
-            if (currentPage == null || blockIndexMap.size() == 0) {
+            if (currentPage == null || pageBlocks == null || pageBlocks.size() == 0) {
                 // we can't process this malformed graphic object (it should not happen ;)
+                // TBD: maybe it's still possible to have a vector graphics alone in a page without any blocks
                 continue;
             }
 
-            if (direction == Direction.UP) {
-                // go up and determine the start position in the upper direction
-                Block currentBlock = blockIndexMap.get(startPos);
-                int pos = currentPage.getBlocks().indexOf(currentBlock);
-                for(int j=1; j<=EXTENSION_SIZE; j++) {
-                    if (pos-j < 0)
-                        break; 
-                    List<LayoutToken> localTokens = currentPage.getBlocks().get(pos-j).getTokens();
-                    if (localTokens == null || localTokens.size() == 0)
-                        continue;
-                    startPos = currentPage.getBlocks().get(pos-j).getTokens().get(0).getOffset();
-                }
+            int startGraphicPos = figureAnchor.getStartPosition();
+            int endGraphicPos = figureAnchor.getEndPosition();
 
-                for(int i=endPos; i>=startPos; i--) {
-                    localTokenization.add(tokenizations.get(i));
-                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap, direction);
-                    if (features != null) {
-                        if (i >= startGraphicPos && i <= endGraphicPos)
-                            features.inGraphicBox = true;
-                        content.append(features.printVector());
+            List<Block> blocksDown = new ArrayList<>();
+            List<Block> blocksUp = new ArrayList<>();
+
+            // we find the closest block before and after the graphic element and extend in both directions
+            // end of extension is 1) page start/end 2) EXTENSION_SIZE reached
+            // to be considered: 3) non body or annex segments ?
+
+            //if (figureAnchor.getType() == GraphicObjectType.BITMAP) 
+            
+                // simple reorder of blocks following reading order
+                //pageBlocks = readingReorder(pageBlocks);
+
+            BoundingBox graphicBox = figureAnchor.getBoundingBox();
+System.out.println("\n\ngraphicBox: " + graphicBox.toString());    
+
+            if (direction == Direction.UP) {
+                Block closestBlockUp = getClosestUp(pageBlocks, graphicBox);
+
+                if (closestBlockUp != null) {
+                    blocksUp.add(closestBlockUp);
+                } else {
+                    // look on the immediate left
+                    closestBlockUp = getImmediateBlockLeft(pageBlocks, graphicBox);
+                    if (closestBlockUp != null) {
+                        blocksUp.add(closestBlockUp);
+                    }
+                }
+                
+                // extend blocksUp and blocksDown
+                if (closestBlockUp != null) {
+                    List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
+                    workPageBlocks.remove(closestBlockUp);
+                    Block nextClosestBlockUp = closestBlockUp;
+                    while (workPageBlocks.size() > 0 && nextClosestBlockUp != null && blocksUp.size() < EXTENSION_SIZE) {
+                        nextClosestBlockUp = getClosestUp(workPageBlocks, nextClosestBlockUp.getBoundingBox());
+                        if (nextClosestBlockUp != null) {
+                            blocksUp.add(0, nextClosestBlockUp);
+                            workPageBlocks.remove(nextClosestBlockUp);
+                        }
                     }
                 }
             } else {
-                // go down and determine the end position in the down direction
-                Block currentBlock = blockIndexMap.get(endPos+1);
-                // if currentBlock here is null, we are already at the end of the page
-                if (currentBlock != null) {
-                    int pos = currentPage.getBlocks().indexOf(currentBlock);
-                    for(int j=0; j<EXTENSION_SIZE; j++) {
-                        if (pos+j >= currentPage.getBlocks().size())
-                            break; 
-                        List<LayoutToken> localTokens = currentPage.getBlocks().get(pos+j).getTokens();
-                        if (localTokens == null || localTokens.size() == 0)
-                            continue;
-                        endPos = currentPage.getBlocks().get(pos+j).getTokens().get(0).getOffset();
+                Block closestBlockDown = getClosestDown(pageBlocks, graphicBox);;
+
+                if (closestBlockDown != null) {
+                    blocksDown.add(closestBlockDown);
+                } else {
+                    //look on the immediate right
+                    closestBlockDown = getImmediateBlockRight(pageBlocks, graphicBox);
+                    if (closestBlockDown != null) {
+                        blocksDown.add(closestBlockDown);
                     }
                 }
 
-                for(int i=startPos; i<=endPos; i++) {
-                    localTokenization.add(tokenizations.get(i));
-                    FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, blockIndexMap, direction);
-                    if (features != null) {
-                        if (i >= startGraphicPos && i <= endGraphicPos)
+                if (closestBlockDown != null) {
+                    List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
+                    workPageBlocks.remove(closestBlockDown);
+                    Block nextClosestBlockDown = closestBlockDown;
+                    while (workPageBlocks.size() > 0 && nextClosestBlockDown != null && blocksDown.size() < EXTENSION_SIZE) {
+                        nextClosestBlockDown = getClosestDown(workPageBlocks, nextClosestBlockDown.getBoundingBox());
+                        if (nextClosestBlockDown != null) {
+                            blocksDown.add(nextClosestBlockDown);
+                            workPageBlocks.remove(nextClosestBlockDown);
+                        }
+                    }
+                }
+            }
+            
+
+            if (direction == Direction.UP) {
+                // follow up selected blocks
+                if (blocksUp.size() > 0) {
+                    for(Block block : blocksUp) {
+                        for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
+                            localTokenization.add(tokenizations.get(i));
+                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+                            if (features != null) {
+                                content.append(features.printVector());
+                            }
+                        }
+                    }
+                }
+
+                if (startGraphicPos != endGraphicPos) {
+                    for(int i=startGraphicPos; i<=endGraphicPos; i++) {
+                        localTokenization.add(tokenizations.get(i));
+                        FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+                        if (features != null) {
                             features.inGraphicBox = true;
-                        content.append(features.printVector());
+                            content.append(features.printVector());
+                        }
+                    }
+                } 
+                
+            } else {
+                // follow down selected blocks
+                if (startGraphicPos != endGraphicPos) {
+                    for(int i=startGraphicPos; i<=endGraphicPos; i++) {
+                        localTokenization.add(tokenizations.get(i));
+                        FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+                        if (features != null) {
+                            features.inGraphicBox = true;
+                            content.append(features.printVector());
+                        }
+                    }
+                } 
+
+                if (blocksDown.size() > 0) {
+                    for(Block block : blocksDown) {
+                        for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
+                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+                            localTokenization.add(tokenizations.get(i));
+                            if (features != null) {
+                                content.append(features.printVector());
+                            }
+                        }
                     }
                 }
             }
@@ -261,10 +323,296 @@ public class FigureSegmenterParser {
         return Pair.of(results, tokenizationsFigures);
     }
 
+    /**
+     * Return the block containing the indicated layout token position. 
+     * If no block covers the position, return -1
+     */
+    private int getBlock(List<Block> blocks, int thePos) {
+        if (blocks == null || blocks.size() == 0)
+            return -1;
+        for(int i=0; i < blocks.size(); i++) {
+            Block block = blocks.get(i);
+            if (thePos > block.getEndToken())
+                continue;
+            if (thePos < block.getStartToken())
+                break;
+            if (thePos>=block.getStartToken() && thePos<=block.getEndToken())
+                return i;
+        }
+        return -1;
+    }
+
+    private Block getClosestUp(List<Block> pageBlocks, BoundingBox graphicBox) {
+        if (graphicBox == null)
+            return null;
+
+        Block closestBlockUp = null;
+        double closestBlockUpSpace = 100000.0;
+
+        for (Block block : pageBlocks) {
+            List<LayoutToken> localTokens = block.getTokens();
+            if (localTokens == null || localTokens.size() == 0) 
+                continue;
+
+            BoundingBox blockBox = block.getBoundingBox();
+            if (blockBox == null) {
+                blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
+                block.setBoundingBox(blockBox);
+            }
+            
+            if (blockBox == null) {
+                //System.out.println("blockBox is null!");
+                //System.out.println(localTokens);
+                continue;
+            }
+
+            //System.out.println("blockBox: " + blockBox.toString());
+
+            if (blockBox.getY() < graphicBox.getY()) {
+                // check column
+                if (
+                    (blockBox.getX() < graphicBox.getX() && graphicBox.getX() < blockBox.getX()+blockBox.getWidth()) ||
+                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth()) 
+                    ) {
+                    double localClosestBlockUpSpace = graphicBox.getY() - (blockBox.getY()+blockBox.getHeight());
+                    if (localClosestBlockUpSpace < 0)
+                        continue;
+                    // block candidate up
+                    if (localClosestBlockUpSpace < closestBlockUpSpace) {
+                        closestBlockUp = block;
+                        closestBlockUpSpace = localClosestBlockUpSpace;
+                    }
+                }
+            }
+        }
+
+if (closestBlockUp != null)
+    System.out.println("Best block up: " + closestBlockUp.toString() + " / " + closestBlockUpSpace);
+
+        return closestBlockUp;
+    }
+
+    private Block getClosestDown(List<Block> pageBlocks, BoundingBox graphicBox) {
+        if (graphicBox == null)
+            return null;
+
+        Block closestBlockDown = null;
+        double closestBlockDownSpace = 100000.0;
+
+        for (Block block : pageBlocks) {
+            List<LayoutToken> localTokens = block.getTokens();
+            if (localTokens == null || localTokens.size() == 0) 
+                continue;
+
+            BoundingBox blockBox = block.getBoundingBox();
+            if (blockBox == null) {
+                blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
+                block.setBoundingBox(blockBox);
+            }
+            
+            if (blockBox == null) {
+                //System.out.println("blockBox is null!");
+                //System.out.println(localTokens);
+                continue;
+            }
+            
+            //System.out.println("blockBox: " + blockBox.toString());
+
+            if (blockBox.getY() > graphicBox.getY()) {
+                // check column
+                if (
+                    (blockBox.getX() < graphicBox.getX() && graphicBox.getX() < blockBox.getX()+blockBox.getWidth()) ||
+                    (blockBox.getX() > graphicBox.getX() && blockBox.getX() < graphicBox.getX()+graphicBox.getWidth()) 
+                    ) {
+
+                    double localClosestBlockDownSpace = blockBox.getY() - (graphicBox.getY()+graphicBox.getHeight());
+                    if (localClosestBlockDownSpace < 0)
+                        continue;
+
+//System.out.println("Candidate block: " + blockBox.toString() + " / " + localClosestBlockDownSpace);
+                    // block candidate down
+                    if (localClosestBlockDownSpace < closestBlockDownSpace) {
+                        closestBlockDown = block;
+                        closestBlockDownSpace = localClosestBlockDownSpace;
+                    }
+                }
+            }    
+        }
+
+if (closestBlockDown != null)
+    System.out.println("Best block down: " + closestBlockDown.toString() + " / " + closestBlockDownSpace);
+
+        return closestBlockDown;
+    }
+
+    private Block getImmediateBlockRight(List<Block> pageBlocks, BoundingBox graphicBox) {
+        if (graphicBox == null)
+            return null;
+
+System.out.println("graphicBox (right): " + graphicBox.toString());
+
+        Block closestBlockRight = null;
+        double closestBlockRightSpace = 100000.0;
+
+        for (Block block : pageBlocks) {
+            List<LayoutToken> localTokens = block.getTokens();
+            if (localTokens == null || localTokens.size() == 0) 
+                continue;
+
+            BoundingBox blockBox = block.getBoundingBox();
+            if (blockBox == null) {
+                blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
+                block.setBoundingBox(blockBox);
+            }
+            
+            if (blockBox == null) {
+                //System.out.println("blockBox is null!");
+                //System.out.println(localTokens);
+                continue;
+            }
+
+System.out.println("blockBox (right): " + blockBox.toString());
+
+            if (blockBox.getX() >= graphicBox.getX() + graphicBox.getWidth()) {
+                if (
+                    (blockBox.getY() < graphicBox.getY() && graphicBox.getY() < blockBox.getY()+blockBox.getHeight()) ||
+                    (blockBox.getY() > graphicBox.getY() && blockBox.getY() < graphicBox.getY()+graphicBox.getHeight()) ||
+                    (blockBox.getY() > graphicBox.getY() && blockBox.getY()+blockBox.getHeight() < graphicBox.getY() + graphicBox.getHeight())
+                    ) {
+                    double localClosestBlockRightSpace = blockBox.getX() - (graphicBox.getX()+graphicBox.getWidth());
+System.out.println("Candidate block (right): " + blockBox.toString() + " / " + localClosestBlockRightSpace);
+                    if (localClosestBlockRightSpace < closestBlockRightSpace) {
+                        closestBlockRight = block;
+                        closestBlockRightSpace = localClosestBlockRightSpace;
+                    }
+                }
+            }
+        }
+
+if (closestBlockRight != null)
+    System.out.println("Best block right: " + closestBlockRight.toString() + " / " + closestBlockRightSpace);
+
+        return closestBlockRight;
+    }
+
+    private Block getImmediateBlockLeft(List<Block> pageBlocks, BoundingBox graphicBox) {
+        if (graphicBox == null)
+            return null;
+
+        Block closestBlockLeft = null;
+        double closestBlockLeftSpace = 100000.0;
+
+        for (Block block : pageBlocks) {
+            List<LayoutToken> localTokens = block.getTokens();
+            if (localTokens == null || localTokens.size() == 0) 
+                continue;
+
+            BoundingBox blockBox = block.getBoundingBox();
+            if (blockBox == null) {
+                blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
+                block.setBoundingBox(blockBox);
+            }
+            
+            if (blockBox == null) {
+                //System.out.println("blockBox is null!");
+                //System.out.println(localTokens);
+                continue;
+            }
+
+            if (blockBox.getX() >= graphicBox.getX() + graphicBox.getWidth()) {
+                if (
+                    (blockBox.getY() < graphicBox.getY() && graphicBox.getY() < blockBox.getY()+blockBox.getHeight()) ||
+                    (blockBox.getY() > graphicBox.getY() && blockBox.getY() < graphicBox.getY()+graphicBox.getHeight()) 
+                    ) {
+                    double localClosestBlockLeftSpace = blockBox.getX() - (graphicBox.getX()+graphicBox.getWidth());
+                    if (localClosestBlockLeftSpace < closestBlockLeftSpace) {
+                        closestBlockLeft = block;
+                        closestBlockLeftSpace = localClosestBlockLeftSpace;
+                    }
+                }
+            }
+        }
+
+        return closestBlockLeft;
+
+    }
+
+
+    /**
+     * A simple re-ordering of local blocks in reading order. This is simple to 
+     * handle expansions from graphic objects, so accuracy is not necessary.
+     *
+     * => not used !
+     */
+    private List<Block> readingReorder(List<Block> blocks) {
+        // first remove all empty blocks, because we can't order them
+        List<Block> newBlocks = new ArrayList<>();
+        for(Block block : blocks) {
+            if (block.getTokens() != null && block.getTokens().size() > 0)
+                newBlocks.add(block);
+        }
+        blocks = newBlocks;
+
+        Collections.sort(blocks, new Comparator<Block>() {
+            @Override
+            public int compare(Block b1, Block b2) {
+                List<LayoutToken> localTokens1 = b1.getTokens();
+                List<LayoutToken> localTokens2 = b2.getTokens();
+
+                BoundingBox blockBox1 = null;
+                BoundingBox blockBox2 = null;
+
+                if (localTokens1 != null && localTokens1.size() > 0) {
+                    blockBox1 = BoundingBoxCalculator.calculateOneBox(localTokens1, true);
+                }
+
+                if (localTokens2 != null && localTokens2.size() > 0) {
+                    blockBox2 = BoundingBoxCalculator.calculateOneBox(localTokens2, true);
+                }
+
+                if (blockBox1 == null) {
+                    // this should not happen :)
+                    // defaulting
+                    return 1;
+                }
+
+                if (blockBox2 == null) {
+                    // this should not happen :)
+                    // defaulting
+                    return -1;
+                }
+
+                if (blockBox1.getY() < blockBox2.getY()) {
+                    if (blockBox1.getX() < blockBox2.getX()+blockBox2.getWidth()) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                } else if (blockBox2.getY() < blockBox1.getY())  {
+                    if (blockBox2.getX() < blockBox2.getX()+blockBox2.getWidth()) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if (blockBox1.getX()+blockBox1.getWidth() < blockBox2.getX()) {
+                        return 1;
+                    } else if (blockBox1.getX() > blockBox2.getX()+blockBox2.getWidth()) {
+                        return -1;
+                    } else 
+                        return 0;
+                }       
+            }
+        });
+        return blocks;
+    }
+
     private FeaturesVectorFigureSegmenter createFeatureVector(List<LayoutToken> tokenizations, 
                                                             int i, 
-                                                            Map<Integer,Block> blockIndexMap,
+                                                            List<Block> pageBlocks,
                                                             Direction direction) {
+        FeatureFactory featureFactory = FeatureFactory.getInstance();
+
         LayoutToken token = tokenizations.get(i);
         String localText = token.getText();
 
@@ -282,19 +630,19 @@ public class FigureSegmenterParser {
         features.string = localText;
 
         // block status
-        if (blockIndexMap.get(i) != null) {
-            features.blockStatus = "BLOCKSTART";
-        } else {
-            int nextIndex = i+1;
-            while(nextIndex < tokenizations.size() && 
-                (tokenizations.get(nextIndex).getText() == null) || (tokenizations.get(nextIndex).getText().trim().length() == 0)) {
-                nextIndex++;
-            }
-            if (blockIndexMap.get(nextIndex) != null) {
+        int blockIndex = this.getBlock(pageBlocks, i);
+        if (blockIndex != -1) {
+            Block localBlock = pageBlocks.get(blockIndex);
+            if (localBlock.getStartToken() == i) {
+                features.blockStatus = "BLOCKSTART";
+            } else if (localBlock.getEndToken() == i) {
                 features.blockStatus = "BLOCKEND";
             } else {
                 features.blockStatus = "BLOCKIN";
             }
+        } else {
+            // it should not happen, but defaulting as new block
+            features.blockStatus = "BLOCKSTART";
         }
 
         // line status
@@ -325,8 +673,80 @@ public class FigureSegmenterParser {
             } 
         }
 
+        if (featureFactory.test_digit(localText)) {
+            features.digit = "CONTAINSDIGITS";
+        }
 
+        Matcher m = featureFactory.isDigit.matcher(localText);
+        if (m.find()) {
+            features.digit = "ALLDIGIT";
+        }
 
+        if (localText.length() == 1) {
+            features.singleChar = true;
+        }
+
+        if (Character.isUpperCase(localText.charAt(0))) {
+            features.capitalisation = "INITCAP";
+        }
+
+        if (featureFactory.test_all_capital(localText)) {
+            features.capitalisation = "ALLCAP";
+        }
+
+        // look backward
+        int previousIndex = i-1;
+        while(previousIndex > 0 && 
+            (tokenizations.get(previousIndex).getText() == null) || (tokenizations.get(previousIndex).getText().equals(" "))) {
+            previousIndex--;
+        }
+        String currentFont = tokenizations.get(previousIndex).getFont();
+        double currentFontSize = tokenizations.get(previousIndex).getFontSize();
+
+        if (currentFont == null) {
+            currentFont = token.getFont();
+            features.fontStatus = "NEWFONT";
+        } else if (!currentFont.equals(token.getFont())) {
+            currentFont = token.getFont();
+            features.fontStatus = "NEWFONT";
+        } else
+            features.fontStatus = "SAMEFONT";
+
+        int newFontSize = (int) token.getFontSize();
+        if (currentFontSize == -1) {
+            currentFontSize = newFontSize;
+            features.fontSize = "HIGHERFONT";
+        } else if (currentFontSize == newFontSize) {
+            features.fontSize = "SAMEFONTSIZE";
+        } else if (currentFontSize < newFontSize) {
+            features.fontSize = "HIGHERFONT";
+            currentFontSize = newFontSize;
+        } else if (currentFontSize > newFontSize) {
+            features.fontSize = "LOWERFONT";
+            currentFontSize = newFontSize;
+        }
+
+        if (token.getBold())
+            features.bold = true;
+
+        if (token.getItalic())
+            features.italic = true;
+
+        if (features.capitalisation == null)
+            features.capitalisation = "NOCAPS";
+
+        if (features.digit == null)
+            features.digit = "NODIGIT";
+
+        if (features.punctType == null)
+            features.punctType = "NOPUNCT";
+
+        List<TaggingLabel> theUpstreamLabels = token.getLabels();
+        if (theUpstreamLabels != null) {
+            for(TaggingLabel taggingLabel : theUpstreamLabels) {
+System.out.println(taggingLabel);
+            }
+        }
 
         return features;
     }
@@ -377,7 +797,7 @@ public class FigureSegmenterParser {
 
         for(int i=0; i<featureVectorsUp.size(); i++) {
             
-            sbUp.append("\n<div>\n");
+            sbUp.append("\n<div><p>");
 
             String featureVectorUp = featureVectorsUp.get(i);
             LayoutTokenization layoutTokenizationUp = layoutTokenizationsUp.get(i);
@@ -406,8 +826,11 @@ public class FigureSegmenterParser {
             if (resUp == null) {
                 // we still output just the text, to be labelled manually
                 // TBD: note reverse order ?
-                sbUp.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsUp)));
+                String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsUp));
+                localContent = localContent.replace("\n", "<lb/>\n");
+                sbUp.append(localContent);
             } else {
+
                 // output text with <figure> label
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE_SEGMENTER_DOWN, resUp, localTokenizationsUp);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
@@ -431,12 +854,14 @@ public class FigureSegmenterParser {
                 }
             }
 
-            sbUp.append("</div>\n\n");
-            sbDown.append("\n<div>\n");
+            sbUp.append("</p></div>\n\n");
+            sbDown.append("\n<div><p>");
 
             if (resDown == null) {
                 // we still output just the text, to be labelled manually
-                sbDown.append(TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsDown)));
+                String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsDown));
+                localContent = localContent.replace("\n", "<lb/>\n");
+                sbDown.append(localContent);
             } else {
                 // output text with <figure> label
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FIGURE_SEGMENTER_DOWN, resDown, localTokenizationsDown);
@@ -461,7 +886,7 @@ public class FigureSegmenterParser {
                 }
             }
             
-            sbDown.append("</div>\n\n");
+            sbDown.append("</p></div>\n\n");
         }
 
         String closer = "\n        </body>\n" +

@@ -136,15 +136,37 @@ public class VectorGraphicBoxCalculator {
                 //XQueryProcessor pr = new XQueryProcessor(vecFile);
 
                 SVGDocument doc = docFactory.createSVGDocument(vecFile.getPath());
-                //Document doc = f.createDocument(uri)
 
-                //SequenceIterator it = pr.getSequenceIterator(q);
                 GVTBuilder builder = new GVTBuilder();
                 GraphicsNode rootGN = builder.build(ctx, doc);
 
                 NodeList nodeList = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "g");
+
+                if (nodeList.getLength() == 0) {
+System.out.println("page " + pageNum + ": SVG document empty, skipping..."); 
+                    continue;                    
+                }
+
                 List<BoundingBox> boxes = new ArrayList<>();
 
+                // TBD: try to get simply the crop box instead of recomputing all the SVG area (because it can take ages!)
+
+                // check if all groups are white cache, then we skip theis SVG document
+                boolean isDummyCache = true;
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    SVGElement item = (SVGElement) nodeList.item(i);
+                    if (!isDummyCacheSVG(item)) {
+                        isDummyCache = false;
+                        break;
+                    }
+                }
+
+                if (isDummyCache) {
+System.out.println("page " + pageNum + ": SVG document only white cache, skipping...");                   
+                    continue;
+                }
+
+                // iterate through the group <g> element of the SVG document
                 for (int i = 0; i < nodeList.getLength(); i++) {
                     SVGElement item = (SVGElement) nodeList.item(i);
                     SVGLocatable locatable = (SVGLocatable)item;
@@ -154,21 +176,41 @@ public class VectorGraphicBoxCalculator {
                     
                     String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
                     
-//System.out.println(coords);
+System.out.println(coords);
 
                     BoundingBox e = BoundingBox.fromString(coords);
-                    if (!mainPageArea.contains(e) || e.area() / mainPageArea.area() > 0.7) {
-//System.out.println("filter this box, area: " + e.area());                        
+                    // ill formed boxes, beyond main area and based on area
+                    if (!mainPageArea.contains(e) || e.area() == 0 || e.area() / mainPageArea.area() > 0.7) {
+System.out.println("filter this box, area: " + e.area());                        
                         continue;
                     }
+
+System.out.println("keeping this box, area: " + e.area());  
                     boxes.add(e);
                 }
 //System.out.println("nb boxes: " + boxes.size());
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 //System.out.println("nb remainingBoxes: " + remainingBoxes.size());
 
+                boxes = new ArrayList<>();
+                for(BoundingBox box : remainingBoxes) {
+                    // isolated vertical and horizontal lines: note they should be kept for segmenting, but not as graphic objects
+                    if (box.getHeight() < 1) {
+System.out.println("filter this box, height: " + box.getHeight());                        
+                        continue;                        
+                    }
+                    if (box.getWidth() < 1) {
+System.out.println("filter this box, width: " + box.getWidth());
+                        continue;                        
+                    }
+
+                    boxes.add(box);
+                }
+
+                remainingBoxes = boxes;
+
                 // bound intersecting or very close blocks with text, this is typically to cover
-                // the case where the text is outside the svg
+                // the case where the text is inside or touching the svg
                 for (int i = 0; i < remainingBoxes.size(); i++) {
                     Collection<Block> col = blockMultimap.get(pageNum);
                     for (Block bl : col) {
@@ -194,19 +236,101 @@ public class VectorGraphicBoxCalculator {
                 remainingBoxes = mergeBoxes(remainingBoxes);*/
 
 System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
+                int layoutTokenPageStartIndex = -1;
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
-                        result.put(pageNum, new GraphicObject(b, GraphicObjectType.VECTOR_BOX));
+                        GraphicObject theGraphicObject = new GraphicObject(b, GraphicObjectType.VECTOR_BOX);
+                        
+                        int startPos = -1;
+                        int endPos = -1;
+
+                        if (layoutTokenPageStartIndex == -1) {
+                            for(int l=0; l < document.getTokenizations().size(); l++) {
+                                LayoutToken token = document.getTokenizations().get(l);
+                                if (token.getPage() != pageNum)
+                                    continue;
+                                else {
+                                    layoutTokenPageStartIndex = l;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (layoutTokenPageStartIndex == -1) {
+                            // no token on the page where the graphic object belongs     
+                            continue;
+                        }
+
+                        // we add the LayoutToken included in this Graphic Object bounding box:
+                        for (int k = layoutTokenPageStartIndex; k<document.getTokenizations().size(); k++) {
+                            LayoutToken theToken = document.getTokenizations().get(k);
+                            if (theToken.getPage() > pageNum)
+                                break;
+                            if (b.intersect(BoundingBox.fromLayoutToken(theToken))) {
+                                theGraphicObject.addLayoutToken(theToken);
+                                if (startPos == -1 || k < startPos)
+                                    startPos = k;
+                                if (k > endPos)
+                                    endPos = k;
+                            }
+                        }
+
+                        theGraphicObject.setStartPosition(startPos);
+                        theGraphicObject.setEndPosition(endPos);
+
+                        result.put(pageNum, theGraphicObject);
+
+                        // TBD: if necessary - add SVG and bitmap file paths to the aggregated Graphic Object
+
 System.out.println("kept: " + b.toString());                       
                     } else {
 System.out.println("too small: " + b.toString());                          
                     }
 
                 }
-
             }
         }
+
+        for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
+            Collection<GraphicObject> elements = result.get(pageNum);
+            if (elements != null)
+                System.out.println("   -> page " + pageNum + ": " + elements.size());
+        }
+
         return result;
+    }
+
+    public static boolean isDummyCacheSVG(SVGElement item) {
+        /**
+         * segmented SVG with only groups corresponding to white filling cache can be skipped
+         * because they are simply visual white cache area for aethetics and not actual 
+         * graphics
+         * The style of such groups is typically
+         *   style="fill: #FFFFFF;fill-opacity: 1;"
+         *
+         */
+        String styleValue = item.getAttribute("style");
+//System.out.println(styleValue);
+        if (styleValue != null) {
+            String[] attributeValues = styleValue.split(";");
+            if (attributeValues.length > 0) {
+                for(int i=0; i<attributeValues.length; i++) {
+                    String attributeValue = attributeValues[i];
+//System.out.println(attributeValue);
+                    int ind = attributeValue.indexOf(":");
+                    if (ind != -1) {
+                        String attr = attributeValue.substring(0,ind).trim().toLowerCase();
+                        String val = attributeValue.substring(ind+1, attributeValue.length()).trim().toLowerCase();
+//System.out.println(attr + " / " + val);
+                        if (attr.equals("fill") && (val.equals("#ffffff") || val.equals("#fff") || val.equals("white"))) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     /**

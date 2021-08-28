@@ -49,6 +49,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
     private HashMap<String, TextStyle> textStyles = new HashMap<String, TextStyle>();
     private boolean currentRotation = false;
 
+	private StringBuffer blabla = null;
 	private List<LayoutToken> tokenizations = null;
 
 	private Document doc = null;
@@ -62,6 +63,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
 	public PDFALTOSaxHandler(Document d, List<GraphicObject> im) {
 		doc = d;
+		blabla = new StringBuffer();
 		images = im;
 		tokenizations = new ArrayList<>();
 	}
@@ -94,7 +96,9 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		if (block == null)
 			LOGGER.info("addBlock called with null block object");
 
-		if (!block.isNull() && (block.getStartToken() != block.getEndToken())) {
+		if (!block.isNull() &&
+			(block.getStartToken() != block.getEndToken() || (block.getText() != null && block.getText().length()>0))
+		   ) {
 			block.setPage(page);
 			doc.addBlock(block);
 			page.addBlock(block);
@@ -126,11 +130,14 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			String qName) throws SAXException {
 
 		if (qName.equals("TextLine")) {
+			blabla.append("\n");
 			LayoutToken token = new LayoutToken();
 			token.setText("\n");
 			token.setPage(currentPage);
 			nbTokens++;
 			accumulator.setLength(0);
+//			tokenizations.add("\n");
+//			tokenizations.add(token);
 			addToken(token);
 		} else if (qName.equals("Description")) {
 			accumulator.setLength(0);
@@ -141,17 +148,98 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			// page marker are useful to detect headers (same first line(s)
 			// appearing on each page)
 			if (block != null) {
+				blabla.append("\n");
 				LayoutToken localTok = new LayoutToken("\n");
 				localTok.setPage(currentPage);
 				addToken(localTok);
+				block.setText(blabla.toString());
+				block.setNbTokens(nbTokens);
+				block.setEndToken(tokenizations.size()-1);
 				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
 			}
+			/*Block block0 = new Block();
+			block0.setText("@PAGE\n");
+			block0.setNbTokens(0);
+			//block0.setY(currentY);
+			addBlock(block0);*/
+			//block = new Block();
+			//block.setPage(currentPage);
+			//blabla = new StringBuffer();
 			nbTokens = 0;
+			/*LayoutToken localTok = new LayoutToken("\n");
+			localTok.setPage(currentPage);
+			addToken(localTok);*/
 			doc.addPage(page);
-		} else if (qName.equals("TextBlock")) {
+		} /*else if (qName.equals("IMAGE")) {
+			// this is normally the bitmap graphics
+			if (block != null) {
+				blabla.append("\n");
+				block.setText(blabla.toString());
+				block.setNbTokens(nbTokens);
+				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
+			}
+			block = new Block();
+			//block.setPage(currentPage);
+			blabla = new StringBuffer();
+			if (images.size() > 0) {
+				blabla.append("@IMAGE " + images.get(images.size()-1).getFilePath() + "\n");
+			}
+			int imagePos = images.size()-1;
+			if (doc.getBlocks() != null)
+				images.get(imagePos).setBlockNumber(doc.getBlocks().size());
+			else
+				images.get(imagePos).setBlockNumber(0);
+			int startPos = 0;
+			if (tokenizations.size() > 0)
+				startPos = tokenizations.size()-1;
+			int endPos = startPos;
+			images.get(imagePos).setStartPosition(startPos);
+			images.get(imagePos).setEndPosition(endPos);
+			block.setText(blabla.toString());
+			block.setNbTokens(nbTokens);
+			images.get(imagePos).setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, currentX, currentY, currentWidth, currentHeight));
+			block.setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, currentX, currentY, currentWidth, currentHeight));
+			//if (block.getX() == 0.0)
+			//	block.setX(currentX);
+			//if (block.getY() == 0.0)
+			//	block.setY(currentY);
+			//if (block.getWidth() == 0.0)
+			//	block.setWidth(currentWidth);
+			//if (block.getHeight() == 0.0)
+			//	block.setHeight(currentHeight);
+			addBlock(block);
+			//doc.addBlock(block);
+			//page.addBlock(block);
+			blabla = new StringBuffer();
+			nbTokens = 0;
+			//block = new Block();
+			//block.setPage(currentPage);
+		}*/
+		/*
+		 * else if (qName.equals("VECTORIALIMAGES")) { if (block != null) {
+		 * blabla.append("\n"); block.setText(blabla.toString());
+		 * block.setNbTokens(nbTokens); doc.addBlock(block); } block = new
+		 * Block(); block.setPage(currentPage); blabla = new StringBuffer();
+		 * blabla.append("@IMAGE " + "vectorial \n");
+		 * block.setText(blabla.toString()); block.setNbTokens(nbTokens); if
+		 * (block.getX() == 0.0) block.setX(currentX); if (block.getY() == 0.0)
+		 * block.setY(currentY); if (block.getWidth() == 0.0)
+		 * block.setWidth(currentWidth); if (block.getHeight() == 0.0)
+		 * block.setHeight(currentHeight); doc.addBlock(block); blabla = new
+		 * StringBuffer(); nbTokens = 0; block = new Block();
+		 * block.setPage(currentPage); }
+		 */
+		else if (qName.equals("TextBlock")) {
+			blabla.append("\n");
 			LayoutToken localTok = new LayoutToken("\n");
 			localTok.setPage(currentPage);
 			addToken(localTok);
+			block.setText(blabla.toString());
+			block.setEndToken(tokenizations.size()-1);
 
 			//PL
 			//block.setWidth(currentX - block.getX() + currentWidth);
@@ -162,30 +250,50 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			block = null;
 		} else if (qName.equals("Illustration")) {
 			// this is normally the bitmap images and vector graphics
-			// such vector graphics are applied to the whole page, so there is no x,y coordinates available
-			// in the xml - to get them we will need to parse the .vec files
+			// such vector graphics are applied to the whole page, so there is no reliable x,y coordinates available
+			// in the xml - to get them we will parse the .vec files
 			if (block != null) {
+				blabla.append("\n");
+				block.setText(blabla.toString());
+				block.setEndToken(tokenizations.size()-1);
+				block.setNbTokens(nbTokens);
 				addBlock(block);
+				//doc.addBlock(block);
+				//page.addBlock(block);
 			}
-			//block = new Block();
-			//block.setStartToken(tokenizations.size());
+			block = new Block();
+			//block.setPage(currentPage);
+			blabla = new StringBuffer();
 			int imagePos = images.size()-1;
-			/*if (doc.getBlocks() != null)
+			blabla.append("@IMAGE " + imagePos + "\n");
+			if (doc.getBlocks() != null)
 				images.get(imagePos).setBlockNumber(doc.getBlocks().size());
 			else
-				images.get(imagePos).setBlockNumber(0);*/
-			/*int startPos = 0;
-			if (tokenizations.size() > 0) {
-				startPos = tokenizations.size();
-				//startPos = tokenizations.size()-1;
-			}
-			int endPos = startPos;*/
-			images.get(imagePos).setStartPosition(tokenizations.size());
-			images.get(imagePos).setEndPosition(tokenizations.size());
-			images.get(imagePos).setPage(currentPage);
-			//addBlock(block);
+				images.get(imagePos).setBlockNumber(0);
+			int endPos = 0;
+			if (tokenizations.size() > 0)
+				endPos = tokenizations.size()-1;
+			//images.get(imagePos).setStartPosition(startPos);
+			images.get(imagePos).setEndPosition(endPos);
+			//images.get(imagePos).setPage(currentPage);
+			block.setText(blabla.toString());
+			block.setNbTokens(0);
+			block.setStartToken(tokenizations.size()-1);
+			block.setEndToken(tokenizations.size()-1);
+			addBlock(block);
+			//doc.addBlock(block);
+			//page.addBlock(block);
+			blabla = new StringBuffer();
 			nbTokens = 0;
+			//block = new Block();
+			//block.setPage(currentPage);
 		}
+
+		/*
+		 * else if (qName.equals("DOCUMENT")) {
+		 * System.out.println(blabla.toString()); }
+		 */
+
 	}
 
 	public void endDocument(){
@@ -284,6 +392,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
             }
         } else if (qName.equals("TextBlock")) {
 			block = new Block();
+			blabla = new StringBuffer();
 			nbTokens = 0;
 			block.setStartToken(tokenizations.size());
 		} else if (qName.equals("Illustration")) {
@@ -339,6 +448,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 								image.setType(GraphicObjectType.VECTOR);
 							} else {
 								image.setType(GraphicObjectType.BITMAP);
+								image.setStartPosition(tokenizations.size()-1);
 							}
 							break;
 					}
@@ -483,8 +593,12 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 
                             LayoutToken token = new LayoutToken();
                             token.setPage(currentPage);
-                            token.setText(tok);
-                            addToken(token);
+
+                                // blabla.append(" ");
+                                blabla.append(tok);
+                                token.setText(tok);
+
+                                addToken(token);
 
                             if (currentRotation) {
                                 // if the text is rotated, it appears that the font size is multiplied
@@ -559,6 +673,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         LayoutToken localTok = new LayoutToken(" ");
                         localTok.setPage(currentPage);
                         addToken(localTok);
+                        blabla.append(" ");
                     }
                 }
             }
@@ -577,6 +692,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                 if (isNotBlank(name) && isNotBlank(value)) {
                     if (name.equals("ID")) {
                         fontId = value;
+                        blabla.append(" ");
                     } else if (name.equals("FONTFAMILY")) {
                         /*if (StringUtils.containsIgnoreCase(value, "bold") || StringUtils.endsWithIgnoreCase(value, "_bd")) {
                             textStyle.setBold(true);
@@ -587,6 +703,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         }*/
 
                         textStyle.setFontName(value);
+                        blabla.append(" ");
                     } else if (name.equals("FONTSIZE")) {
                         double fontSize = 0.0;
                     	try {
@@ -595,6 +712,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                         	LOGGER.warn("Invalid FONTSIZE value: " + value);
                         }
                         textStyle.setFontSize(fontSize);
+                        blabla.append(" ");
                     } else if (name.equals("FONTSTYLE")) {
                         // font properties, we are interested by subscript or superscript
                         if (StringUtils.containsIgnoreCase(value, "subscript")) {
@@ -613,6 +731,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
                             textStyle.setItalic(true);
                         }
 
+                        blabla.append(" ");
                     } else if (name.equals("FONTCOLOR")) {
                         textStyle.setFontColor(value);
                     }
@@ -630,6 +749,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 //                        } else {
 //                            textStyle.setProportional(false);
 //                        }
+//                        blabla.append(" ");
 //                    }
 //
 //                    else if (name.equals("rotation")) {
