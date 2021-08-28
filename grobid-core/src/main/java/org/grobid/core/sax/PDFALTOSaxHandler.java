@@ -96,7 +96,9 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 		if (block == null)
 			LOGGER.info("addBlock called with null block object");
 
-		if (!block.isNull() && (block.getStartToken() != block.getEndToken())) {
+		if (!block.isNull() && 
+			(block.getStartToken() != block.getEndToken() || (block.getText() != null && block.getText().length()>0))
+		   ) {
 			block.setPage(page);
 			doc.addBlock(block);
 			page.addBlock(block);
@@ -155,6 +157,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 				addToken(localTok);
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
+				block.setEndToken(tokenizations.size()-1);
 				addBlock(block);
 				//doc.addBlock(block);
 				//page.addBlock(block);
@@ -239,6 +242,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			localTok.setPage(currentPage);
 			addToken(localTok);
 			block.setText(blabla.toString());
+			block.setEndToken(tokenizations.size()-1);
 
 			//PL
 			//block.setWidth(currentX - block.getX() + currentWidth);
@@ -249,11 +253,12 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			block = null;
 		} else if (qName.equals("Illustration")) {
 			// this is normally the bitmap images and vector graphics
-			// such vector graphics are appliedto the whole page, so there is no x,y coordinates available
-			// in the xml - to get them we will need to parse the .vec files
+			// such vector graphics are applied to the whole page, so there is no reliable x,y coordinates available
+			// in the xml - to get them we will parse the .vec files
 			if (block != null) {
 				blabla.append("\n");
 				block.setText(blabla.toString());
+				block.setEndToken(tokenizations.size()-1);
 				block.setNbTokens(nbTokens);
 				addBlock(block);
 				//doc.addBlock(block);
@@ -268,15 +273,16 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 				images.get(imagePos).setBlockNumber(doc.getBlocks().size());
 			else
 				images.get(imagePos).setBlockNumber(0);
-			int startPos = 0;
+			int endPos = 0;
 			if (tokenizations.size() > 0)
-				startPos = tokenizations.size()-1;
-			int endPos = startPos;
-			images.get(imagePos).setStartPosition(startPos);
+				endPos = tokenizations.size()-1;
+			//images.get(imagePos).setStartPosition(startPos);
 			images.get(imagePos).setEndPosition(endPos);
-			images.get(imagePos).setPage(currentPage);
+			//images.get(imagePos).setPage(currentPage);
 			block.setText(blabla.toString());
-			block.setNbTokens(nbTokens);
+			block.setNbTokens(0);
+			block.setStartToken(tokenizations.size()-1);
+			block.setEndToken(tokenizations.size()-1);
 			addBlock(block);
 			//doc.addBlock(block);
 			//page.addBlock(block);
@@ -448,6 +454,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 								image.setType(GraphicObjectType.VECTOR);
 							} else {
 								image.setType(GraphicObjectType.BITMAP);
+								image.setStartPosition(tokenizations.size()-1);
 							}
 							break;
 					}

@@ -67,125 +67,6 @@ public class BasicStructureBuilder {
     private static Pattern endNum = Pattern.compile("\\s(\\d)+$");
 
     /**
-     * Filter out line numbering possibly present in the document. This can be frequent for
-     * document in a review/submission format and degrades strongly the machine learning
-     * extraction results. 
-	 *
-	 * -> Not used !
-     *
-     * @param doc a document
-     * @return if found numbering
-     */
-    /*public boolean filterLineNumber(Document doc) {
-        // we first test if we have a line numbering by checking if we have an increasing integer
-        // at the begin or the end of each block
-        boolean numberBeginLine = false;
-        boolean numberEndLine = false;
-
-        boolean foundNumbering = false;
-
-        int currentNumber = -1;
-        int lastNumber = -1;
-        int i = 0;
-        for (Block block : doc.getBlocks()) {
-//            Integer ii = i;
-
-            String localText = block.getText();
-            List<LayoutToken> tokens = block.getTokens();
-
-            if ((localText != null) && (tokens != null)) {
-                if (tokens.size() > 0) {
-                    // we get the first and last token iof the block
-                    //String tok1 = tokens.get(0).getText();
-                    //String tok2 = tokens.get(tokens.size()).getText();
-                    localText = localText.trim();
-
-                    Matcher ma1 = startNum.matcher(localText);
-                    Matcher ma2 = endNum.matcher(localText);
-
-                    if (ma1.find()) {
-                        String groupStr = ma1.group(0);
-                        try {
-                            currentNumber = Integer.parseInt(groupStr);
-                            numberBeginLine = true;
-                        } catch (NumberFormatException e) {
-                            currentNumber = -1;
-                        }
-                    } else if (ma2.find()) {
-                        String groupStr = ma2.group(0);
-                        try {
-                            currentNumber = Integer.parseInt(groupStr);
-                            numberEndLine = true;
-                        } catch (NumberFormatException e) {
-                            currentNumber = -1;
-                        }
-                    }
-
-                    if (lastNumber != -1) {
-                        if (currentNumber == lastNumber + 1) {
-                            foundNumbering = true;
-                            break;
-                        }
-                    } else
-                        lastNumber = currentNumber;
-                }
-            }
-            i++;
-
-            if (i > 5) {
-                break;
-            }
-        }
-
-        i = 0;
-        if (foundNumbering) {
-            // we have a line numbering, so we filter them
-            int counter = 1; // we start at 1, if the actual start is 0,
-            // it will remain (as it is negligeable)
-
-            for (Block block : doc.getBlocks()) {
-
-                String localText = block.getText();
-                List<LayoutToken> tokens = block.getTokens();
-
-                if ((localText != null) && (tokens.size() > 0)) {
-
-                    if (numberEndLine) {
-                        Matcher ma2 = endNum.matcher(localText);
-
-                        if (ma2.find()) {
-                            String groupStr = ma2.group(0);
-                            if (groupStr.trim().equals("" + counter)) {
-                                localText = localText.substring(0, localText.length() - groupStr.length());
-                                block.setText(localText);
-                                tokens.remove(tokens.size() - 1);
-                                counter++;
-                            }
-                        }
-
-                    } else if (numberBeginLine) {
-                        Matcher ma1 = endNum.matcher(localText);
-
-                        if (ma1.find()) {
-                            String groupStr = ma1.group(0);
-                            if (groupStr.trim().equals("" + counter)) {
-                                localText = localText.substring(groupStr.length(), localText.length() - 1);
-                                block.setText(localText);
-                                tokens.remove(0);
-                                counter++;
-                            }
-                        }
-
-                    }
-                }
-                i++;
-            }
-        }
-
-        return foundNumbering;
-    }*/
-
-    /**
      * Cluster the blocks following the font, style and size aspects
      *
 	 * -> not used at this stage, but could be an interesting feature in the full text model in the future 
@@ -427,7 +308,7 @@ public class BasicStructureBuilder {
                                                     String labelledResultsDown, 
                                                     List<LayoutTokenization> theTokenizationsDown) {
         
-        
+
         return doc;
     }
 
