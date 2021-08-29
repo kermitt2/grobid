@@ -140,54 +140,88 @@ public class VectorGraphicBoxCalculator {
                 GVTBuilder builder = new GVTBuilder();
                 GraphicsNode rootGN = builder.build(ctx, doc);
 
-                NodeList nodeList = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "g");
-
-                if (nodeList.getLength() == 0) {
-System.out.println("page " + pageNum + ": SVG document empty, skipping..."); 
-                    continue;                    
-                }
-
                 List<BoundingBox> boxes = new ArrayList<>();
 
-                // TBD: try to get simply the crop box instead of recomputing all the SVG area (because it can take ages!)
+                // !!!!!!
+                // TBD: try to get simply the clip box instead of recomputing all the SVG area (because it can take ages in rare cases!)
+                // note: getBBox on the clipBox is producing nothing because no rendering of clipBox of course, we need to find another
+                // way to get the BB of clipPath
+                // !!!!!!
 
-                // check if all groups are white cache, then we skip theis SVG document
-                boolean isDummyCache = true;
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    SVGElement item = (SVGElement) nodeList.item(i);
-                    if (!isDummyCacheSVG(item)) {
-                        isDummyCache = false;
-                        break;
+                /*NodeList nodeList = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "clipPath");
+//System.out.println("ClipBox: we have " + nodeList.getLength() + " clipPath elements");
+                if (nodeList.getLength() != 0) {
+                    // iterate through the group <g> element of the SVG document
+                    for (int i = 0; i < nodeList.getLength(); i++) {
+                        SVGElement item = (SVGElement) nodeList.item(i);
+                        SVGLocatable locatable = (SVGLocatable)item;
+                        SVGRect rect = locatable.getBBox();
+                        if (rect == null) {
+//System.out.println("ClipBox: getBBox is null");                              
+                            continue;
+                        }
+
+                        String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
+//System.out.println("ClipBox: " + coords);                          
+                        BoundingBox e = BoundingBox.fromString(coords);
+                        // ill formed boxes, beyond main area and based on area
+                        if (!mainPageArea.contains(e) || e.area() == 0 || e.area() / mainPageArea.area() > 0.7) {
+//System.out.println("ClipBox: filter this box, area: " + e.area());                        
+                            continue;
+                        }
+
+//System.out.println("ClipBox: keeping this box, area: " + e.area());  
+                        boxes.add(e);
                     }
-                }
+                }*/
 
-                if (isDummyCache) {
+                // we examine the <g> elements
+                if (boxes.size() == 0) {
+                    NodeList nodeList = doc.getElementsByTagNameNS("http://www.w3.org/2000/svg", "g");
+
+                    if (nodeList.getLength() == 0) {
+                        continue;                    
+                    }
+
+                    // check if all groups are white cache, then we skip theis SVG document
+                    boolean isDummyCache = true;
+                    for (int i = 0; i < nodeList.getLength(); i++) {
+                        SVGElement item = (SVGElement) nodeList.item(i);
+                        if (!isDummyCacheSVG(item)) {
+                            isDummyCache = false;
+                            break;
+                        }
+                    }
+
+                    if (isDummyCache) {
 System.out.println("page " + pageNum + ": SVG document only white cache, skipping...");                   
-                    continue;
-                }
-
-                // iterate through the group <g> element of the SVG document
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    SVGElement item = (SVGElement) nodeList.item(i);
-                    SVGLocatable locatable = (SVGLocatable)item;
-                    SVGRect rect = locatable.getBBox();
-                    if (rect == null) 
-                        continue;
-                    
-                    String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
-                    
-System.out.println(coords);
-
-                    BoundingBox e = BoundingBox.fromString(coords);
-                    // ill formed boxes, beyond main area and based on area
-                    if (!mainPageArea.contains(e) || e.area() == 0 || e.area() / mainPageArea.area() > 0.7) {
-System.out.println("filter this box, area: " + e.area());                        
                         continue;
                     }
 
-System.out.println("keeping this box, area: " + e.area());  
-                    boxes.add(e);
+                    // iterate through the group <g> element of the SVG document
+                    for (int i = 0; i < nodeList.getLength(); i++) {
+                        SVGElement item = (SVGElement) nodeList.item(i);
+                        SVGLocatable locatable = (SVGLocatable)item;
+                        SVGRect rect = locatable.getBBox();
+                        if (rect == null) 
+                            continue;
+                        
+                        String coords = pageNum + "," + rect.getX() + "," + rect.getY() + "," + rect.getWidth() + "," + rect.getHeight();
+                        
+//System.out.println(coords);
+
+                        BoundingBox e = BoundingBox.fromString(coords);
+                        // ill formed boxes, beyond main area and based on area
+                        if (!mainPageArea.contains(e) || e.area() == 0 || e.area() / mainPageArea.area() > 0.7) {
+//System.out.println("filter this box, area: " + e.area());                        
+                            continue;
+                        }
+
+//System.out.println("keeping this box, area: " + e.area());  
+                        boxes.add(e);
+                    }
                 }
+
 //System.out.println("nb boxes: " + boxes.size());
                 List<BoundingBox> remainingBoxes = mergeBoxes(boxes);
 //System.out.println("nb remainingBoxes: " + remainingBoxes.size());
@@ -196,11 +230,11 @@ System.out.println("keeping this box, area: " + e.area());
                 for(BoundingBox box : remainingBoxes) {
                     // isolated vertical and horizontal lines: note they should be kept for segmenting, but not as graphic objects
                     if (box.getHeight() < 1) {
-System.out.println("filter this box, height: " + box.getHeight());                        
+//System.out.println("filter this box, height: " + box.getHeight());                        
                         continue;                        
                     }
                     if (box.getWidth() < 1) {
-System.out.println("filter this box, width: " + box.getWidth());
+//System.out.println("filter this box, width: " + box.getWidth());
                         continue;                        
                     }
 
@@ -260,7 +294,7 @@ System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                             // no token on the page where the graphic object belongs     
                             continue;
                         }
-
+//System.out.println("svg graphic object: " + b.toString());
                         // we add the LayoutToken included in this Graphic Object bounding box:
                         for (int k = layoutTokenPageStartIndex; k<document.getTokenizations().size(); k++) {
                             LayoutToken theToken = document.getTokenizations().get(k);
@@ -268,6 +302,7 @@ System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                                 break;
                             if (b.intersect(BoundingBox.fromLayoutToken(theToken))) {
                                 theGraphicObject.addLayoutToken(theToken);
+//System.out.println("add layout token: " + theToken.getText() + " / " + BoundingBox.fromLayoutToken(theToken).toString());
                                 if (startPos == -1 || k < startPos)
                                     startPos = k;
                                 if (k > endPos)
@@ -282,20 +317,19 @@ System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
 
                         // TBD: if necessary - add SVG and bitmap file paths to the aggregated Graphic Object
 
-System.out.println("kept: " + b.toString());                       
+//System.out.println("kept: " + b.toString());                       
                     } else {
-System.out.println("too small: " + b.toString());                          
+//System.out.println("too small: " + b.toString());                          
                     }
-
                 }
             }
         }
 
-        for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
-            Collection<GraphicObject> elements = result.get(pageNum);
-            if (elements != null)
-                System.out.println("   -> page " + pageNum + ": " + elements.size());
-        }
+for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
+    Collection<GraphicObject> elements = result.get(pageNum);
+    if (elements != null)
+        System.out.println("   -> page " + pageNum + ": " + elements.size());
+}
 
         return result;
     }
