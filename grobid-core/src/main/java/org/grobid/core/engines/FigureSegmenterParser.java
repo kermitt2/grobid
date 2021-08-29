@@ -193,9 +193,7 @@ public class FigureSegmenterParser {
 
             int startGraphicPos = figureAnchor.getStartPosition();
             int endGraphicPos = figureAnchor.getEndPosition();
-
-            List<Block> blocksDown = new ArrayList<>();
-            List<Block> blocksUp = new ArrayList<>();
+            
 
             // we find the closest block before and after the graphic element and extend in both directions
             // end of extension is 1) page start/end 2) EXTENSION_SIZE reached
@@ -207,9 +205,17 @@ public class FigureSegmenterParser {
                 //pageBlocks = readingReorder(pageBlocks);
 
             BoundingBox graphicBox = figureAnchor.getBoundingBox();
-System.out.println("\n\ngraphicBox: " + graphicBox.toString());    
+System.out.println("\n\ngraphicBox: " + graphicBox.toString() + ", startGraphicPos: " + startGraphicPos + ", endGraphicPos: " + endGraphicPos);    
+if (startGraphicPos != -1 && endGraphicPos != -1) {
+for(int i=startGraphicPos; i<=endGraphicPos; i++) {
+    System.out.print(tokenizations.get(i));
+}
+System.out.println("");
+System.out.println("------------------------------------");
+}
 
             if (direction == Direction.UP) {
+                List<Block> blocksUp = new ArrayList<>();
                 Block closestBlockUp = getClosestUp(pageBlocks, graphicBox);
 
                 if (closestBlockUp != null) {
@@ -222,7 +228,7 @@ System.out.println("\n\ngraphicBox: " + graphicBox.toString());
                     }
                 }
                 
-                // extend blocksUp and blocksDown
+                // extend blocksUp 
                 if (closestBlockUp != null) {
                     List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
                     workPageBlocks.remove(closestBlockUp);
@@ -235,36 +241,8 @@ System.out.println("\n\ngraphicBox: " + graphicBox.toString());
                         }
                     }
                 }
-            } else {
-                Block closestBlockDown = getClosestDown(pageBlocks, graphicBox);;
 
-                if (closestBlockDown != null) {
-                    blocksDown.add(closestBlockDown);
-                } else {
-                    //look on the immediate right
-                    closestBlockDown = getImmediateBlockRight(pageBlocks, graphicBox);
-                    if (closestBlockDown != null) {
-                        blocksDown.add(closestBlockDown);
-                    }
-                }
-
-                if (closestBlockDown != null) {
-                    List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
-                    workPageBlocks.remove(closestBlockDown);
-                    Block nextClosestBlockDown = closestBlockDown;
-                    while (workPageBlocks.size() > 0 && nextClosestBlockDown != null && blocksDown.size() < EXTENSION_SIZE) {
-                        nextClosestBlockDown = getClosestDown(workPageBlocks, nextClosestBlockDown.getBoundingBox());
-                        if (nextClosestBlockDown != null) {
-                            blocksDown.add(nextClosestBlockDown);
-                            workPageBlocks.remove(nextClosestBlockDown);
-                        }
-                    }
-                }
-            }
-            
-
-            if (direction == Direction.UP) {
-                // follow up selected blocks
+                // follow selected blocks up until the graphic object
                 if (blocksUp.size() > 0) {
                     for(Block block : blocksUp) {
                         for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
@@ -277,6 +255,55 @@ System.out.println("\n\ngraphicBox: " + graphicBox.toString());
                     }
                 }
 
+                // we arrive at the possible graphic object layout token content
+                if (startGraphicPos != endGraphicPos) {
+                    for(int i=startGraphicPos; i<=endGraphicPos; i++) {
+                        localTokenization.add(tokenizations.get(i));
+                        FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
+                        if (features != null) {
+                            features.inGraphicBox = true;
+                            content.append(features.printVector());
+                        }
+                    }
+                } 
+                if (startGraphicPos == -1 && closestBlockUp != null) {
+                    startGraphicPos = closestBlockUp.getEndToken();
+                    figureAnchor.setStartPosition(startGraphicPos);
+
+                }
+                if (endGraphicPos == -1 ) {
+                    figureAnchor.setEndPosition(startGraphicPos);
+                }
+                
+            } else {
+                List<Block> blocksDown = new ArrayList<>();
+                Block closestBlockDown = getClosestDown(pageBlocks, graphicBox);;
+
+                if (closestBlockDown != null) {
+                    blocksDown.add(closestBlockDown);
+                } else {
+                    //look on the immediate right
+                    closestBlockDown = getImmediateBlockRight(pageBlocks, graphicBox);
+                    if (closestBlockDown != null) {
+                        blocksDown.add(closestBlockDown);
+                    }
+                }
+
+                // extend blocksDown
+                if (closestBlockDown != null) {
+                    List<Block> workPageBlocks = new ArrayList<>(pageBlocks);
+                    workPageBlocks.remove(closestBlockDown);
+                    Block nextClosestBlockDown = closestBlockDown;
+                    while (workPageBlocks.size() > 0 && nextClosestBlockDown != null && blocksDown.size() < EXTENSION_SIZE) {
+                        nextClosestBlockDown = getClosestDown(workPageBlocks, nextClosestBlockDown.getBoundingBox());
+                        if (nextClosestBlockDown != null) {
+                            blocksDown.add(nextClosestBlockDown);
+                            workPageBlocks.remove(nextClosestBlockDown);
+                        }
+                    }
+                }
+                
+                // we start at the possible graphic object layout token content
                 if (startGraphicPos != endGraphicPos) {
                     for(int i=startGraphicPos; i<=endGraphicPos; i++) {
                         localTokenization.add(tokenizations.get(i));
@@ -288,30 +315,26 @@ System.out.println("\n\ngraphicBox: " + graphicBox.toString());
                     }
                 } 
                 
-            } else {
-                // follow down selected blocks
-                if (startGraphicPos != endGraphicPos) {
-                    for(int i=startGraphicPos; i<=endGraphicPos; i++) {
-                        localTokenization.add(tokenizations.get(i));
-                        FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
-                        if (features != null) {
-                            features.inGraphicBox = true;
-                            content.append(features.printVector());
-                        }
-                    }
-                } 
+                if (endGraphicPos == -1 && closestBlockDown != null) {
+                    endGraphicPos = closestBlockDown.getStartToken();
+                    figureAnchor.setEndPosition(endGraphicPos);
+                }
+                if (startGraphicPos == -1) {
+                    figureAnchor.setStartPosition(endGraphicPos);
+                }
 
+                // follow selected blocks down from the graphic object
                 if (blocksDown.size() > 0) {
                     for(Block block : blocksDown) {
                         for(int i=block.getStartToken(); i<=block.getEndToken(); i++) {
-                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
                             localTokenization.add(tokenizations.get(i));
+                            FeaturesVectorFigureSegmenter features = this.createFeatureVector(tokenizations, i, pageBlocks, direction);
                             if (features != null) {
                                 content.append(features.printVector());
                             }
                         }
                     }
-                }
+                }   
             }
 
             LayoutTokenization tokenizationsFigure = new LayoutTokenization(localTokenization);
@@ -361,8 +384,6 @@ System.out.println("\n\ngraphicBox: " + graphicBox.toString());
             }
             
             if (blockBox == null) {
-                //System.out.println("blockBox is null!");
-                //System.out.println(localTokens);
                 continue;
             }
 
@@ -411,8 +432,6 @@ if (closestBlockUp != null)
             }
             
             if (blockBox == null) {
-                //System.out.println("blockBox is null!");
-                //System.out.println(localTokens);
                 continue;
             }
             
@@ -449,7 +468,7 @@ if (closestBlockDown != null)
         if (graphicBox == null)
             return null;
 
-System.out.println("graphicBox (right): " + graphicBox.toString());
+        //System.out.println("graphicBox (right): " + graphicBox.toString());
 
         Block closestBlockRight = null;
         double closestBlockRightSpace = 100000.0;
@@ -466,12 +485,10 @@ System.out.println("graphicBox (right): " + graphicBox.toString());
             }
             
             if (blockBox == null) {
-                //System.out.println("blockBox is null!");
-                //System.out.println(localTokens);
                 continue;
             }
 
-System.out.println("blockBox (right): " + blockBox.toString());
+            //System.out.println("blockBox (right): " + blockBox.toString());
 
             if (blockBox.getX() >= graphicBox.getX() + graphicBox.getWidth()) {
                 if (
@@ -480,7 +497,7 @@ System.out.println("blockBox (right): " + blockBox.toString());
                     (blockBox.getY() > graphicBox.getY() && blockBox.getY()+blockBox.getHeight() < graphicBox.getY() + graphicBox.getHeight())
                     ) {
                     double localClosestBlockRightSpace = blockBox.getX() - (graphicBox.getX()+graphicBox.getWidth());
-System.out.println("Candidate block (right): " + blockBox.toString() + " / " + localClosestBlockRightSpace);
+//System.out.println("Candidate block (right): " + blockBox.toString() + " / " + localClosestBlockRightSpace);
                     if (localClosestBlockRightSpace < closestBlockRightSpace) {
                         closestBlockRight = block;
                         closestBlockRightSpace = localClosestBlockRightSpace;
@@ -514,17 +531,17 @@ if (closestBlockRight != null)
             }
             
             if (blockBox == null) {
-                //System.out.println("blockBox is null!");
-                //System.out.println(localTokens);
                 continue;
             }
 
-            if (blockBox.getX() >= graphicBox.getX() + graphicBox.getWidth()) {
+            if (blockBox.getX() <= graphicBox.getX() + graphicBox.getWidth()) {
                 if (
                     (blockBox.getY() < graphicBox.getY() && graphicBox.getY() < blockBox.getY()+blockBox.getHeight()) ||
-                    (blockBox.getY() > graphicBox.getY() && blockBox.getY() < graphicBox.getY()+graphicBox.getHeight()) 
+                    (blockBox.getY() > graphicBox.getY() && blockBox.getY() < graphicBox.getY()+graphicBox.getHeight() ||
+                    (blockBox.getY() > graphicBox.getY() && blockBox.getY()+blockBox.getHeight() < graphicBox.getY() + graphicBox.getHeight())
+                        ) 
                     ) {
-                    double localClosestBlockLeftSpace = blockBox.getX() - (graphicBox.getX()+graphicBox.getWidth());
+                    double localClosestBlockLeftSpace = (graphicBox.getX()+graphicBox.getWidth()) - blockBox.getX();
                     if (localClosestBlockLeftSpace < closestBlockLeftSpace) {
                         closestBlockLeft = block;
                         closestBlockLeftSpace = localClosestBlockLeftSpace;
@@ -825,7 +842,6 @@ System.out.println(taggingLabel);
             }
             if (resUp == null) {
                 // we still output just the text, to be labelled manually
-                // TBD: note reverse order ?
                 String localContent = TextUtilities.HTMLEncode(LayoutTokensUtil.toText(localTokenizationsUp));
                 localContent = localContent.replace("\n", "<lb/>\n");
                 sbUp.append(localContent);

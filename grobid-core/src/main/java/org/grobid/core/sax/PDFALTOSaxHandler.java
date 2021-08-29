@@ -97,7 +97,9 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			LOGGER.info("addBlock called with null block object");
 
 		if (!block.isNull() && 
-			(block.getStartToken() != block.getEndToken() || (block.getText() != null && block.getText().length()>0))
+			(block.getStartToken() != block.getEndToken() || 
+				//(block.getText() != null && block.getText().trim().length()>0 && !block.getText().equals("\n")))
+				(block.getText() != null && block.getText().trim().length()>0))
 		   ) {
 			block.setPage(page);
 			doc.addBlock(block);
@@ -157,7 +159,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 				addToken(localTok);
 				block.setText(blabla.toString());
 				block.setNbTokens(nbTokens);
-				block.setEndToken(tokenizations.size()-1);
+				//block.setEndToken(tokenizations.size()-1);
 				addBlock(block);
 				//doc.addBlock(block);
 				//page.addBlock(block);
@@ -454,7 +456,6 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 								image.setType(GraphicObjectType.VECTOR);
 							} else {
 								image.setType(GraphicObjectType.BITMAP);
-								image.setStartPosition(tokenizations.size()-1);
 							}
 							break;
 					}
@@ -462,6 +463,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			}
 			image.setBoundingBox(BoundingBox.fromPointAndDimensions(currentPage, x, y, width, height));
 			image.setPage(currentPage);
+			image.setStartPosition(tokenizations.size()-1);
 			images.add(image);
 		} else if (qName.equals("TextLine")) {
 			int length = atts.getLength();

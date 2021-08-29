@@ -421,15 +421,26 @@ public class Document implements Serializable {
             }
         }
 
+        // ensure that block attributes are complete
         if (getBlocks() == null) {
             throw new GrobidException("PDF parsing resulted in empty content", GrobidExceptionStatus.NO_BLOCKS);
         } else {
             for(Block block : getBlocks()) {
-                if (block.getTokens() != null) {
+                List<LayoutToken> localTokens = block.getTokens();
+
+                if (localTokens != null) {
                     block.setNbTokens(block.getTokens().size());
                 }
-            }
 
+                if (localTokens == null || localTokens.size() == 0) 
+                    continue;
+
+                BoundingBox blockBox = block.getBoundingBox();
+                if (blockBox == null) {
+                    blockBox = BoundingBoxCalculator.calculateOneBox(localTokens, true);
+                    block.setBoundingBox(blockBox);
+                }
+            }
         }
 
         // calculating main area
