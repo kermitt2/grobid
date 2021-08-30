@@ -1049,7 +1049,7 @@ public class FullTextParser extends AbstractParser {
                 GrobidAnalysisConfig.defaultInstance());
 
             // FIGURE SEGMENTER MODELS - returns Pair training file, feature files for model up and down
-            Pair<Pair<String,String>,Pair<String,String>> resultPair = parsers.getFigureSegmenterParser().createTraining(doc, ""+id);
+            /*Pair<Pair<String,String>,Pair<String,String>> resultPair = parsers.getFigureSegmenterParser().createTraining(doc, ""+id);
             if (resultPair != null) {
                 if (resultPair.getLeft() != null) {
                     // training TEI file, segmenter direction ip
@@ -1082,7 +1082,7 @@ public class FullTextParser extends AbstractParser {
                     writerFigureSegmenter.write("\n");
                     writerFigureSegmenter.close();
                 }
-            }
+            }*/
 
             // REFERENCE SEGMENTER MODEL
             String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);

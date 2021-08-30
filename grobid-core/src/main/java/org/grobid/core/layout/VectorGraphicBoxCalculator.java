@@ -194,7 +194,7 @@ public class VectorGraphicBoxCalculator {
                     }
 
                     if (isDummyCache) {
-System.out.println("page " + pageNum + ": SVG document only white cache, skipping...");                   
+//System.out.println("page " + pageNum + ": SVG document only white cache, skipping...");                   
                         continue;
                     }
 
@@ -269,7 +269,7 @@ System.out.println("page " + pageNum + ": SVG document only white cache, skippin
                 remainingBoxes = glueBoxes(remainingBoxes, 10.0);
                 remainingBoxes = mergeBoxes(remainingBoxes);*/
 
-System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
+//System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
                 int layoutTokenPageStartIndex = -1;
                 for (BoundingBox b : remainingBoxes) {
                     if (b.area() > MINIMUM_VECTOR_BOX_AREA) {
@@ -325,11 +325,11 @@ System.out.println("nb remainingBoxes after merge: " + remainingBoxes.size());
             }
         }
 
-for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
+/*for (int pageNum = 1; pageNum <= document.getPages().size(); pageNum++) {
     Collection<GraphicObject> elements = result.get(pageNum);
     if (elements != null)
         System.out.println("   -> page " + pageNum + ": " + elements.size());
-}
+}*/
 
         return result;
     }

@@ -457,10 +457,10 @@ public class Document implements Serializable {
             }
             images = newImages;
 
-System.out.println("!!!!!!!!!!  number of bitmap image objects: " + images.size());
+/*System.out.println("!!!!!!!!!!  number of bitmap image objects: " + images.size());
 for(GraphicObject image : images) {
 System.out.println(image.toString());
-}
+}*/
 
             try {
                 for (GraphicObject o : VectorGraphicBoxCalculator.calculate(this).values()) {
@@ -470,13 +470,13 @@ System.out.println(image.toString());
                 throw new GrobidException("Cannot process vector graphics: " + file, e, GrobidExceptionStatus.PARSING_ERROR);
             }
         }
-System.out.println("!!!!!!!!!!  number of bitmap & vector image objects: " + images.size());
+//System.out.println("!!!!!!!!!!  number of bitmap & vector image objects: " + images.size());
         
         // cache images per page
         for (GraphicObject go : images) {
             // filtering out small figures that are likely to be logos and stuff
             if (go.getType() == GraphicObjectType.BITMAP && !isValidBitmapGraphicObject(go)) {
-System.out.println("       ----> Invalid bitmap object: " + go.toString());
+//System.out.println("       ----> Invalid bitmap object: " + go.toString());
                 continue;
             }
 
@@ -507,7 +507,7 @@ System.out.println("       ----> Invalid bitmap object: " + go.toString());
                 for (GraphicObject element : elements) {
                     images.add(element);
                 }
-                System.out.println("   -> page " + pageNum + ": " + elements.size());
+                //System.out.println("   -> page " + pageNum + ": " + elements.size());
             }
         }
 
