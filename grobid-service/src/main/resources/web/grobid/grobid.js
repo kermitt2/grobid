@@ -937,7 +937,18 @@ var grobid = (function($) {
                     else {
                         //if (pos && (pos.length > 0)) {
                         var theFirstPos = pos[0];
+                        // we can't visualize over two pages, so we take as theLastPos the last coordinate position on the page of theFirstPos
+                        
                         var theLastPos = pos[pos.length-1];
+                        if (theLastPos.p != theFirstPos.p) {
+                            var k = 2;
+                            while (pos.length-k>0) {
+                                theLastPos = pos[pos.length-k];
+                                if (theLastPos.p == theFirstPos.p) 
+                                    break;
+                                k++;
+                            }
+                        }
                         theBibPos.p = theFirstPos.p;
                         theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
                         theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);
