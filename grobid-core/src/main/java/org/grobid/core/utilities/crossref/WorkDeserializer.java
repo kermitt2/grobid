@@ -212,7 +212,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 						}
 						
 						if (day != null) {
-							date.setDayString(month);
+							date.setDayString(day);
 							int dayInt = -1;
 							try {
 								dayInt = Integer.parseInt(day);
