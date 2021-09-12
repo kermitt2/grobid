@@ -195,7 +195,7 @@ public class EvaluationDOIMatching {
                 List<BiblioItem> biblios = engine.processRawReferences(rawRefs, 2);
 
                 // inject other metadata
-                for(int i=0; i<rawRefs.size(); i++) {
+                /*for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);
 
                     String atitle = atitles.get(i);
@@ -209,7 +209,7 @@ public class EvaluationDOIMatching {
                     biblio.setVolume(volume);
                     //biblio.setFirstPage(firstPage);
                     biblio.setFirstAuthorSurname(author);
-                }
+                }*/
 
                 for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);
