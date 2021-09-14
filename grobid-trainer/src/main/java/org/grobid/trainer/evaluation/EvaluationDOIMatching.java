@@ -267,7 +267,6 @@ public class EvaluationDOIMatching {
 
         //report.append("\n======= BIBLIO GLUTTON ======= \n");
 
-        
         //System.out.println("Evaluation metrics produced in " + 
         //       (System.currentTimeMillis() - start) / (1000.00) + " seconds");
 
