@@ -4320,6 +4320,9 @@ public class BiblioItem {
 
     /**
      * Correct fields of the first biblio item based on the second one and the reference string
+     * 
+     * @param bib extracted from document
+     * @param bibo fetched from metadata provider (biblioglutton, crossref..)
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         //System.out.println("correct: \n" + bib.toTEI(0));
@@ -4472,8 +4475,8 @@ public class BiblioItem {
                                     // should we also check the country ? affiliation?
                                     if (StringUtils.isNotBlank(auto.getMiddleName()) && (StringUtils.isBlank(aut.getMiddleName())))
                                         aut.setMiddleName(auto.getMiddleName());
-                                    if (StringUtils.isNotBlank(auto.getORCID()) && (StringUtils.isBlank(aut.getORCID())))
-                                        aut.setORCID(auto.getORCID());
+                                    // crossref is considered more reliable than PDF annotations
+                                    aut.setORCID(auto.getORCID());
                                 }
                             }
                         }
@@ -4517,8 +4520,6 @@ public class BiblioItem {
                                                 aut.setTitle(aut2.getTitle());
                                             if (StringUtils.isBlank(aut.getSuffix()))
                                                 aut.setSuffix(aut2.getSuffix());
-                                            if (StringUtils.isBlank(aut.getORCID()))
-                                                aut.setORCID(aut2.getORCID());
                                             if (StringUtils.isBlank(aut.getEmail()))
                                                 aut.setEmail(aut2.getEmail());
                                             if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
@@ -4531,6 +4532,7 @@ public class BiblioItem {
                                                 aut.setMarkers(aut2.getMarkers());
                                             if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
                                                 aut.setLayoutTokens(aut2.getLayoutTokens());
+                                            // crossref is considered more reliable than PDF annotations, so ORCIDs are not overwritten
                                             break;
                                         } 
                                     }  
