@@ -61,7 +61,7 @@ RUN rm -rf grobid-source
 # -------------------
 
 # use NVIDIA Container Toolkit to automatically recognize possible GPU drivers on the host machine
-FROM nvidia/cuda:10.1-base
+FROM tensorflow/tensorflow:1.15.5-gpu
 CMD nvidia-smi
 
 # setting locale is likely useless but to be sure

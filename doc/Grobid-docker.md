@@ -1,4 +1,4 @@
-#GROBID and Docker containers
+# GROBID and Docker containers
 
 Docker is an open-source project that automates the deployment of applications inside software containers. The documentation on how to install it and start using it can be found [here](https://docs.docker.com/engine/understanding-docker/).
 
@@ -10,7 +10,7 @@ GROBID can be instantiated and run using Docker. For convenience, we provide two
 
 We assume in the following that docker is installed and working on your system. Note that the default memory available for your container might need to be increased for using all the available GROBID services, in particular on `macos`, see the Troubleshooting section below.
 
-##CRF-only image
+## CRF-only image
 
 The process for retrieving and running the image is as follow:
 
@@ -44,7 +44,7 @@ Access the service:
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-##CRF and Deep Learning image
+## CRF and Deep Learning image
 
 The process for retrieving and running the image is as follow:
 
@@ -57,7 +57,7 @@ The process for retrieving and running the image is as follow:
 Current latest version:
 
 ```bash
-> docker pull grobid/grobid:0.7.0
+> docker pull grobid/grobid:0.7.1-SNAPSHOT
 ```
 
 - Run the container:
@@ -88,7 +88,7 @@ Access the service:
 
 Grobid web services are then available as described in the [service documentation](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-##Configure using the normal yaml config file
+## Configure using the normal yaml config file
 
 The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
@@ -98,13 +98,13 @@ docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobi
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
 
-##Configuration using Environment Variables
+## Configuration using Environment Variables
 
 This usage is currently not supported anymore, due to the number and the complexity of configuration parameters. Use the yaml configuration file to set production parameter to a docker image. 
 
-##Troubleshooting
+## Troubleshooting
 
-###Out of memory or container being killed while processing
+### Out of memory or container being killed while processing
 
 This is usually be due to insufficient memory allocated to the docker machine. Depending on the intended usage, we recommend to allocate 4GB of RAM to structure entirely all the PDF content (`/api/processFulltextDocument`), otherwise 2GB are sufficient to extract only header information, and 3GB for citations. In case of more intensive usage and batch parallel processing, allocating 6 or 8GB is recommended.
 
@@ -164,16 +164,16 @@ You should see something like:
 
 See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos` with command lines.
 
-###pdfalto zombie processes
+### pdfalto zombie processes
 
 When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling up the machine. The docker solution is to use `--init` as parameter when running the image. The solution shipped with the current Dockerfile, using [tini](https://github.com/krallin/tini) provides the correct init process to cleanup killed processes, but do not forget the `-init` parameter :)
 
-##Building an image
+## Building an image
 
 The following part is normally for development purposes. You can use the official stable docker images from the docker HUB as described above.
 However if you are interested in using the master version of Grobid in container, or a customized branch/fork, building a new image is the way to go.
 
-###Building the CRF-only image
+### Building the CRF-only image
 
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
@@ -205,15 +205,13 @@ The container name is given by the command:
 > docker container ls
 ```
 
-###Building the CRF and Deep Learning image
+### Building the CRF and Deep Learning image
 
 In order to build an image supporting GPU, you need:
 
-- first to have the nvidia driver and CUDA properly installed on the machine you are using to build the image - this can be check by the usual `nvidia-smi` command,
+- to have the nvidia driver and CUDA properly installed on the machine you are using to build the image - this can be check by the usual `nvidia-smi` command
 
-- second to install the [nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) and restart docker.
-
-Without these two requirements, the image will always default to CPU, even if GPU are available on the host machine running the image. 
+Without theis requirement, the image will default to CPU, even if GPU are available on the host machine running the image. 
 
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf` (see previous section). For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
