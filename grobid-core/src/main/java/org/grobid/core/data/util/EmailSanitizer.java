@@ -13,10 +13,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * User: zholudev
- * Date: 10/8/14
- */
 public class EmailSanitizer {
     private static final Pattern DASHES_PATTERN = Pattern.compile("(%E2%80%90|%e2%80%90)");
 

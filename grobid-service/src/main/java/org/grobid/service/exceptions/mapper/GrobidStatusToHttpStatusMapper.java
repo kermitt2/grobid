@@ -19,7 +19,7 @@ public class GrobidStatusToHttpStatusMapper {
                 return Response.Status.CONFLICT;
             case NO_BLOCKS:
                 return Response.Status.BAD_REQUEST;
-            case PDFTOXML_CONVERSION_FAILURE:
+            case PDFALTO_CONVERSION_FAILURE:
                 return Response.Status.INTERNAL_SERVER_ERROR;
             case TOO_MANY_TOKENS:
                 return Response.Status.CONFLICT;

@@ -1,11 +1,15 @@
 package org.grobid.core.utilities;
 
+import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.DateParser;
 import org.grobid.core.lang.SentenceDetector;
 import org.grobid.core.lang.SentenceDetectorFactory;
+import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.main.LibraryLoader;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.powermock.api.easymock.PowerMock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -30,11 +34,14 @@ public class SentenceUtilitiesTest {
     SentenceDetectorFactory sentenceDetectorFactoryMock;
     SentenceDetector sentenceDetectorMock;
     SentenceUtilities target;
+
     @Before
     public void setUp() {
-        LibraryLoader.load();
         GrobidProperties.getInstance();
-
+        GrobidConfig.ModelParameters modelParameters = new GrobidConfig.ModelParameters();
+        modelParameters.name = "bao";
+        GrobidProperties.addModel(modelParameters);
+        
         sentenceDetectorFactoryMock = createMock(SentenceDetectorFactory.class);
         sentenceDetectorMock = createMock(SentenceDetector.class);
         target = SentenceUtilities.getInstance();

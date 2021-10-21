@@ -9,6 +9,8 @@ import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.prometheus.client.dropwizard.DropwizardExports;
+import io.prometheus.client.exporter.MetricsServlet;
 import org.apache.commons.lang3.ArrayUtils;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.grobid.service.GrobidServiceConfiguration;
@@ -18,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
+import javax.servlet.ServletRegistration;
 import java.io.File;
 import java.util.Arrays;
 import java.util.EnumSet;
@@ -26,7 +29,7 @@ import java.util.List;
 
 public final class GrobidServiceApplication extends Application<GrobidServiceConfiguration> {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidServiceApplication.class);
-    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-service/config/config.yaml", "config/config.yaml"};
+    private static final String[] DEFAULT_CONF_LOCATIONS = {"grobid-home/config/grobid.yaml"};
     private static final String RESOURCES = "/api";
 
 
@@ -55,6 +58,9 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     @Override
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
         LOGGER.info("Service config={}", configuration);
+        new DropwizardExports(environment.metrics()).register();
+        ServletRegistration.Dynamic registration = environment.admin().addServlet("Prometheus", new MetricsServlet());
+        registration.addMapping("/metrics/prometheus");
         environment.jersey().setUrlPattern(RESOURCES + "/*");
 
         String allowedOrigins = configuration.getGrobid().getCorsAllowedOrigins();
@@ -82,7 +88,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     // ========== static ==========
     public static void main(String... args) throws Exception {
         if (ArrayUtils.getLength(args) < 2) {
-            LOGGER.warn("Expected 2 arguments: [0]-server, [1]-<path to config.yaml>");
+            //LOGGER.warn("Expected 2 argument: [0]-server, [1]-<path to config yaml file>");
 
             String foundConf = null;
             for (String p : DEFAULT_CONF_LOCATIONS) {

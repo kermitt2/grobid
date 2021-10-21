@@ -3,9 +3,6 @@ package org.grobid.core.test;
 import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Ignore;
 
-/**
- *  @author Patrice Lopez
- */
 @Ignore
 public class TestEbookParser extends EngineTest {
 	private String newTrainingPath = null;

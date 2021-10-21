@@ -5,7 +5,6 @@ import java.io.File;
 /**
  * Class for representing graphical objects occurring within a document.
  *
- * @author Patrice Lopez
  */
 public class GraphicObject {
     private String filePath = null;
@@ -55,9 +54,9 @@ public class GraphicObject {
         if (ind != -1) {
             int ind2 = filePath.substring(0, ind-1).lastIndexOf("/");
             if (ind2 != -1)
-                return filePath.substring(0, ind2);
+                return filePath.substring(ind2+1, filePath.length());
         }
-//        return filePath;
+
         return new File(filePath).getName();
     }
 

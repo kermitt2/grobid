@@ -2,25 +2,25 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        jcenter()
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
     }
     dependencies {
-        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
-        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.10.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:6.0.0'
+//        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
+        classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
+        classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
     }
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
-apply plugin: 'net.researchgate.release'
+//apply plugin: 'net.researchgate.release'
 apply plugin: 'jacoco'
 
 jacoco {
@@ -43,7 +43,7 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
-    apply plugin: 'com.jfrog.bintray'
+ //   apply plugin: 'com.jfrog.bintray'
 
     publishing {
         publications {
@@ -63,10 +63,11 @@ subprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
+//        jcenter()
         maven {
             url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
+        maven { url "https://jitpack.io" }
     }
 
     configurations {
@@ -102,22 +103,22 @@ subprojects {
         implementation "commons-io:commons-io:2.5"
         implementation "org.apache.commons:commons-lang3:3.6"
         implementation "org.apache.commons:commons-collections4:4.1"
+        implementation 'org.apache.commons:commons-text:1.8'
         implementation "commons-dbutils:commons-dbutils:1.7"
         implementation "com.google.guava:guava:28.2-jre"
         implementation "org.apache.httpcomponents:httpclient:4.5.3"
 
-        implementation 'org.apache.commons:commons-text:1.8'
         implementation "com.fasterxml.jackson.core:jackson-core:2.10.1"
         implementation "com.fasterxml.jackson.core:jackson-databind:2.10.1"
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
+        //implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
+        implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.1"
     }
 
     task sourceJar(type: Jar) {
         description = 'A jar that contains source code'
         archiveClassifier = 'sources'
         from project.sourceSets.main.java
-
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     artifacts {
@@ -175,6 +176,7 @@ subprojects {
 //        }
 //    }
 
+    /*
     bintray {
         dryRun = false // Whether to run this as dry-run, without deploying
         publish = true // If version should be auto published after an upload
@@ -199,6 +201,7 @@ subprojects {
             }
         }
     }
+    */
 
     test {
         testLogging.showStandardStreams = true
@@ -207,7 +210,7 @@ subprojects {
         maxHeapSize = "1024m"
     }
 
-    rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
+    //rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
 /** SUBPROJECTS **/
@@ -254,13 +257,11 @@ project("grobid-core") {
 
     jar {
         from {
-//            project.configurations.implementation.collect {
             project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
-
-//        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     shadowJar {
@@ -273,7 +274,6 @@ project("grobid-core") {
         from sourceSets.main.output
 
         from {
-//            project.configurations.implementation.collect {
             project.configurations.runtimeClasspath.collect {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
@@ -304,10 +304,11 @@ project("grobid-home") {
             include("language-detection/**")
             include("sentence-segmentation/**")
             include("lib/**")
-            include("pdf2xml/**")
+            include("pdfalto/**")
             include("models/**")
             include("lexicon/**")
             include("schemas/**")
+            include("scripts/**")
             exclude("models/**/*.old")
         }
         into("grobid-home")
@@ -336,8 +337,12 @@ project(":grobid-service") {
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
 
+    distZip { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
+    distTar { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
+
     dependencies {
         implementation project(':grobid-core')
+        implementation project(':grobid-trainer')
         implementation "io.dropwizard:dropwizard-core:1.3.23"
         implementation "io.dropwizard:dropwizard-assets:1.3.23"
         implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
@@ -347,6 +352,8 @@ project(":grobid-service") {
         implementation "io.dropwizard:dropwizard-auth:1.3.23"
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"
+        implementation "io.prometheus:simpleclient_dropwizard:0.11.0"
+        implementation "io.prometheus:simpleclient_servlet:0.11.0"
 
         testImplementation "io.dropwizard:dropwizard-testing:1.3.17"
     }
@@ -372,10 +379,7 @@ project(":grobid-service") {
                 from(new File(rootProject.rootDir, "grobid-service/README.md")) {
                     into "doc"
                 }
-                from(new File(rootProject.rootDir, "grobid-service/config/config.yaml")) {
-                    into "config"
-                }
-                //from(new File(rootProject.rootDir, "grobid-service/config/grobid_service.properties")) {
+                //from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
                 //    into "config"
                 //}
             }
@@ -399,6 +403,9 @@ project(":grobid-trainer") {
         implementation project(':grobid-core')
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         implementation "me.tongfei:progressbar:0.9.0"
+        implementation 'org.slf4j:slf4j-log4j12:1.7.25'
+        implementation 'org.slf4j:slf4j-api:1.7.25'
+        implementation 'org.slf4j:slf4j-jdk14:1.7.25'
     }
 
     configurations {
@@ -540,7 +547,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "6.5.1"
+    gradleVersion "7.1.1"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })

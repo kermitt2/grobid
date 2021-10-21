@@ -8,7 +8,9 @@ import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Test;
+import org.junit.BeforeClass;
 
 import java.io.InputStream;
 import java.util.List;
@@ -18,10 +20,13 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 17/03/17.
- */
 public class TaggingTokenClusterorTest {
+
+    @BeforeClass
+    public static void init() {
+        GrobidProperties.getInstance();
+    }
+
     @Test
     public void testExclusion_notPresent_shouldReturnTrue() throws Exception {
         final TaggingTokenClusteror.LabelTypeExcludePredicate labelTypeExcludePredicate =

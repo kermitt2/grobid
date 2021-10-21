@@ -10,9 +10,7 @@ import java.util.StringTokenizer;
 /**
  * Abstract analyzer for tokenizing/filtering text.
  *
- * @author Patrice Lopez
  */
-
 public interface Analyzer {
 
 	List<String> tokenize(String text);

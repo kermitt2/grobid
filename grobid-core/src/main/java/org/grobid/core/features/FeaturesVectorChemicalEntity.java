@@ -9,7 +9,6 @@ import java.util.regex.Matcher;
  * Class for features used for chemical entity identification in raw texts such as scientific articles
  * and patent descriptions.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorChemicalEntity {
     // default bins for relative position, set experimentally

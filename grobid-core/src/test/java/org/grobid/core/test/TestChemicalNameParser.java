@@ -9,9 +9,6 @@ import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.exceptions.GrobidException;
 import org.junit.Ignore;
 
-/**
- *  @author Patrice Lopez
- */
 @Ignore
 public class TestChemicalNameParser extends EngineTest{
 

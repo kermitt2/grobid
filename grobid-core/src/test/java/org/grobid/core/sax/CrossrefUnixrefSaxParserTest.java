@@ -13,9 +13,6 @@ import java.io.InputStream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by lfoppiano on 19/05/2017.
- */
 public class CrossrefUnixrefSaxParserTest {
 
     SAXParserFactory spf = SAXParserFactory.newInstance();

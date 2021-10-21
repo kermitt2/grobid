@@ -9,12 +9,10 @@ package org.grobid.core.data;
  * 19.10.2010 < 20.10.2010
  * 1999 < 10.2000
  * 10.1999 < 2000
- * which is not the same as a comparison in term of the time flow only.
- * For comparing dates in term of strict time flow, please use java.util.Date + java.util.Calendar
- *
- * @author Patrice Lopez
+ * which is not the same as a comparison based only on time flow.
+ * For comparing dates by strict time flow, please use java.util.Date + java.util.Calendar
  */
-public class Date implements Comparable {
+public class Date implements Comparable<Date> {
     private int day = -1;
     private int month = -1;
     private int year = -1;
@@ -22,6 +20,19 @@ public class Date implements Comparable {
     private String dayString = null;
     private String monthString = null;
     private String yearString = null;
+
+    public Date() {
+    }
+
+    public Date(Date fromDate) {
+        this.day = fromDate.day;
+        this.month = fromDate.month;
+        this.year = fromDate.year;
+        this.rawDate = fromDate.rawDate;
+        this.dayString = fromDate.dayString;
+        this.monthString = fromDate.monthString;
+        this.yearString = fromDate.yearString;
+    }   
 
     public int getDay() {
         return day;
@@ -126,26 +137,84 @@ public class Date implements Comparable {
 
         return EQUAL;
     }
-
-    public int compareTo(Object another) {
-        return compareTo(((Date) another));
-    }
-
+    
     public boolean isNotNull() {
-        if ((rawDate == null) &
-                (dayString == null) &
-                (monthString == null) &
-                (yearString == null) &
-                (day == -1) &
-                (month == -1) &
-                (year == -1))
-            return false;
-        else
-            return true;
+        return (rawDate != null) ||
+            (dayString != null) ||
+            (monthString != null) ||
+            (yearString != null) ||
+            (day != -1) ||
+            (month != -1) ||
+            (year != -1);
     }
 
     public boolean isAmbiguous() {
         return false;
+    }
+
+    public static String toISOString(Date date) {
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+
+        String when = "";
+        if (year != -1) {
+            if (year <= 9)
+                when += "000" + year;
+            else if (year <= 99)
+                when += "00" + year;
+            else if (year <= 999)
+                when += "0" + year;
+            else
+                when += year;
+            if (month != -1) {
+                if (month <= 9)
+                    when += "-0" + month;
+                else
+                    when += "-" + month;
+                if (day != -1) {
+                    if (day <= 9)
+                        when += "-0" + day;
+                    else
+                        when += "-" + day;
+                }
+            }
+        }
+        return when;
+    }
+
+    /**
+     * Return a new date instance by merging the date information from a first date with
+     * the date information from a second date. 
+     * The merging follows the year, month, day sequence. If the years
+     * for instance clash, the merging is stopped. 
+     *
+     * Examples of merging: 
+     * "2010" "2010-10" -> "2010-10"
+     * "2010" "2010-10-27" -> "2010-10-27"
+     * "2010-10" "2010-10-27" -> "2010-10-27"
+     * "2010-10-27" "2010-10" -> "2010-10-27"
+     * "2011-10" "2010-10-27" -> "2011-10"
+     * "2010" "2016-10-27" -> "2010"
+     * "2011" "2010" -> 2011
+     */
+    public static Date merge(Date date1, Date date2) {
+        if (date1.getYear() == -1) {
+            return new Date(date2);
+        }
+        
+        if (date1.getYear() == date2.getYear()) {
+            if (date1.getMonth() == -1 && date2.getMonth() != -1) {
+                return new Date(date2);
+            } 
+            if (date1.getMonth() == date2.getMonth()) {
+                if (date1.getDay() == -1 && date2.getDay() != -1) {
+                    return new Date(date2);
+                }
+            }
+        }
+
+        return new Date(date1);
     }
 
     public String toString() {

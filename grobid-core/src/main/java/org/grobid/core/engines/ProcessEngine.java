@@ -26,12 +26,6 @@ import java.util.List;
 
 import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
-/**
- * Perform the batch processing for the different engine methods.
- *
- * @author Damien, Patrice
- */
-
 public class ProcessEngine implements Closeable {
 
     /**
@@ -577,7 +571,7 @@ public class ProcessEngine implements Closeable {
                             .generateTeiCoordinates(elementWithCoords)
                             .build();
 
-                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, config);
+                    Document teiDoc = getEngine().fullTextToTEIDoc(currPDF, null, config);
                     document = PDDocument.load(currPDF);
                     //If no pages, skip the document
                     if (document.getNumberOfPages() > 0) {

@@ -7,10 +7,6 @@ import org.grobid.core.jni.WapitiModel;
 
 import java.io.IOException;
 
-/**
- * User: zholudev
- * Date: 3/20/14
- */
 public class WapitiTagger implements GenericTagger {
 
     private final WapitiModel wapitiModel;

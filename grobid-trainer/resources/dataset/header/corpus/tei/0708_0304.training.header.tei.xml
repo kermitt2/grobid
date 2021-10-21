@@ -1,0 +1,311 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0708_0304"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0708.0304v3 [hep-ex]</idno>
+
+	<date>17 Dec 2007<lb/></date>
+
+	<docTitle>
+	<titlePart>Improved measurement of time-dependent CP violation in B 0 → J/ψ π 0 decays<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>S. E. Lee, 35 K. Miyabayashi, 22 H. Aihara, 42 T. Aushev, 17, 12 T. Aziz, 38 A. M. Bakich, 37 V. Balagura, 12<lb/> E. Barberio, 20 A. Bay, 17 K. Belous, 11 V. Bhardwaj, 32 U. Bitenc, 13 S. Blyth, 24 A. Bondar, 1 A. Bozek, 26<lb/> M. Bračko, 19, 13 T. E. Browder, 7 P. Chang, 25 A. Chen, 23 K.-F. Chen, 25 B. G. Cheon, 6 R. Chistov, 12 I.-S. Cho, 47<lb/> S.-K. Choi, 5 Y. Choi, 36 J. Dalseno, 20 M. Dash, 46 S. Eidelman, 1 D. Epifanov, 1 N. Gabyshev, 1 H. Ha, 15 J. Haba, 8<lb/> K. Hara, 21 T. Hara, 31 H. Hayashii, 22 M. Hazumi, 8 D. Heffernan, 31 T. Higuchi, 8 Y. Hoshi, 40 W.-S. Hou, 25<lb/> H. J. Hyun, 16 T. Iijima, 21 K. Inami, 21 A. Ishikawa, 33 H. Ishino, 43 R. Itoh, 8 M. Iwasaki, 42 D. H. Kah, 16<lb/> J. H. Kang, 47 S. U. Kataoka, 22 H. Kawai, 2 T. Kawasaki, 28 H. J. Kim, 16 S. K. Kim, 35 Y. J. Kim, 4 K. Kinoshita, 3<lb/> S. Korpar, 19, 13 P. Križan, 18, 13 R. Kumar, 32 C. C. Kuo, 23 A. Kuzmin, 1 Y.-J. Kwon, 47 J. S. Lee, 36<lb/> M. J. Lee, 35 T. Lesiak, 26 S.-W. Lin, 25 Y. Liu, 4 D. Liventsev, 12 S. McOnie, 37 T. Medvedeva, 12 W. Mitaroff, 10<lb/> H. Miyata, 28 R. Mizuk, 12 T. Mori, 21 E. Nakano, 30 M. Nakao, 8 H. Nakazawa, 23 Z. Natkaniec, 26 S. Nishida, 8<lb/> O. Nitoh, 45 S. Noguchi, 22 T. Nozaki, 8 S. Ogawa, 39 T. Ohshima, 21 S. Okuno, 14 S. L. Olsen, 7, 9 H. Ozaki, 8<lb/> P. Pakhlov, 12 G. Pakhlova, 12 H. Park, 16 K. S. Park, 36 R. Pestotnik, 13 L. E. Piilonen, 46 H. Sahoo, 7 Y. Sakai, 8<lb/> O. Schneider, 17 A. J. Schwartz, 3 A. Sekiya, 22 K. Senyo, 21 M. Shapkin, 11 C. P. Shen, 9 H. Shibuya, 39<lb/> S. Shinomiya, 31 J.-G. Shiu, 25 B. Shwartz, 1 J. B. Singh, 32 A. Sokolov, 11 A. Somov, 3 S. Stanič, 29 M. Starič, 13<lb/> K. Sumisawa, 8 T. Sumiyoshi, 44 S. Suzuki, 33 O. Tajima, 8 F. Takasaki, 8 K. Tamai, 8 M. Tanaka, 8 G. N. Taylor, 20<lb/> Y. Teramoto, 30 I. Tikhomirov, 12 K. Trabelsi, 8 S. Uehara, 8 K. Ueno, 25 T. Uglov, 12 Y. Unno, 6 S. Uno, 8<lb/> P. Urquijo, 20 Y. Ushiroda, 8 Y. Usov, 1 G. Varner, 7 K. E. Varvell, 37 S. Villa, 17 C. C. Wang, 25 C. H. Wang, 24<lb/> P. Wang, 9 X. L. Wang, 9 Y. Watanabe, 14 E. Won, 15 A. Yamaguchi, 41 Y. Yamashita, 27 M. Yamauchi, 8<lb/> C. Z. Yuan, 9 Y. Yusa, 46 C. C. Zhang, 9 Z. P. Zhang, 34 V. Zhilich, 1 V. Zhulanov, 1 and A. Zupanc 13<lb/></docAuthor>
+	</byline>
+
+	(<note type="group">The Belle Collaboration</note>)<lb/>
+
+	<byline>
+	<affiliation>1 Budker Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Novosibirsk<lb/></address>
+
+	<byline>
+	<affiliation>2 Chiba University,</affiliation>
+	</byline>
+
+	<address>Chiba<lb/></address>
+
+	<byline>
+	<affiliation>3 University of Cincinnati,</affiliation>
+	</byline>
+
+	<address>Cincinnati, Ohio 45221<lb/></address>
+
+	<byline>
+	<affiliation>4 The Graduate University for Advanced Studies,</affiliation>
+	</byline>
+
+	<address>Hayama<lb/></address>
+
+	<byline>
+	<affiliation>5 Gyeongsang National University,</affiliation>
+	</byline>
+
+	<address>Chinju<lb/></address>
+
+	<byline>
+	<affiliation>6 Hanyang University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>7 University of Hawaii,</affiliation>
+	</byline>
+
+	<address>Honolulu, Hawaii 96822<lb/></address>
+
+	<byline>
+	<affiliation>8 High Energy Accelerator Research Organization (KEK),</affiliation>
+	</byline>
+
+	<address>Tsukuba<lb/></address>
+
+	<byline>
+	<affiliation>9 Institute of High Energy Physics, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing<lb/></address>
+
+	<byline>
+	<affiliation>10 Institute of High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Vienna<lb/></address>
+
+	<byline>
+	<affiliation>11 Institute of High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Protvino<lb/></address>
+
+	<byline>
+	<affiliation>12 Institute for Theoretical and Experimental Physics,</affiliation>
+	</byline>
+
+	<address>Moscow<lb/></address>
+
+	<byline>
+	<affiliation>13 J. Stefan Institute,</affiliation>
+	</byline>
+
+	<address>Ljubljana<lb/></address>
+
+	<byline>
+	<affiliation>14 Kanagawa University,</affiliation>
+	</byline>
+
+	<address>Yokohama<lb/></address>
+
+	<byline>
+	<affiliation>15 Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>16 Kyungpook National University,</affiliation>
+	</byline>
+
+	<address>Taegu<lb/></address>
+
+	<byline>
+	<affiliation>17 Ecole Polytécnique Fédérale Lausanne, EPFL,</affiliation>
+	</byline>
+
+	<address>Lausanne<lb/></address>
+
+	<byline>
+	<affiliation>18 University of Ljubljana,</affiliation>
+	</byline>
+
+	<address>Ljubljana<lb/></address>
+
+	<byline>
+	<affiliation>19 University of Maribor,</affiliation>
+	</byline>
+
+	<address>Maribor<lb/></address>
+
+	<byline>
+	<affiliation>20 University of Melbourne, School of Physics,</affiliation>
+	</byline>
+
+	<address>Victoria 3010<lb/></address>
+
+	<byline>
+	<affiliation>21 Nagoya University,</affiliation>
+	</byline>
+
+	<address>Nagoya<lb/></address>
+
+	<byline>
+	<affiliation>22 Nara Women&apos;s University,</affiliation>
+	</byline>
+
+	<address>Nara<lb/></address>
+
+	<byline>
+	<affiliation>23 National Central University,</affiliation>
+	</byline>
+
+	<address>Chung-li<lb/></address>
+
+	<byline>
+	<affiliation>24 National United University,</affiliation>
+	</byline>
+
+	<address>Miao Li<lb/></address>
+
+	<byline>
+	<affiliation>25 Department of Physics, National Taiwan University,</affiliation>
+	</byline>
+
+	<address>Taipei<lb/></address>
+
+	<byline>
+	<affiliation>26 H. Niewodniczanski Institute of Nuclear Physics,</affiliation>
+	</byline>
+
+	<address>Krakow<lb/></address>
+
+	<byline>
+	<affiliation>27 Nippon Dental University,</affiliation>
+	</byline>
+
+	<address>Niigata<lb/></address>
+
+	<byline>
+	<affiliation>28 Niigata University,</affiliation>
+	</byline>
+
+	<address>Niigata<lb/></address>
+
+	<byline>
+	<affiliation>29 University of Nova Gorica,</affiliation>
+	</byline>
+
+	<address>Nova Gorica<lb/></address>
+
+	<byline>
+	<affiliation>30 Osaka City University,</affiliation>
+	</byline>
+
+	<address>Osaka<lb/></address>
+
+	<byline>
+	<affiliation>31 Osaka University,</affiliation>
+	</byline>
+
+	<address>Osaka<lb/></address>
+
+	<byline>
+	<affiliation>32 Panjab University,</affiliation>
+	</byline>
+
+	<address>Chandigarh 2<lb/></address>
+
+	<byline>
+	<affiliation>33 Saga University,</affiliation>
+	</byline>
+
+	<address>Saga<lb/></address>
+
+	<byline>
+	<affiliation>34 University of Science and Technology of China,</affiliation>
+	</byline>
+
+	<address>Hefei<lb/></address>
+
+	<byline>
+	<affiliation>35 Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<byline>
+	<affiliation>36 Sungkyunkwan University,</affiliation>
+	</byline>
+
+	<address>Suwon<lb/></address>
+
+	<byline>
+	<affiliation>37 University of Sydney,</affiliation>
+	</byline>
+
+	<address>Sydney, New South Wales<lb/></address>
+
+	<byline>
+	<affiliation>38 Tata Institute of Fundamental Research,</affiliation>
+	</byline>
+
+	<address>Mumbai<lb/></address>
+
+	<byline>
+	<affiliation>39 Toho University,</affiliation>
+	</byline>
+
+	<address>Funabashi<lb/></address>
+
+	<byline>
+	<affiliation>40 Tohoku Gakuin University,</affiliation>
+	</byline>
+
+	<address>Tagajo<lb/></address>
+
+	<byline>
+	<affiliation>41 Tohoku University,</affiliation>
+	</byline>
+
+	<address>Sendai<lb/></address>
+
+	<byline>
+	<affiliation>42 Department of Physics, University of Tokyo,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>43 Tokyo Institute of Technology,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>44 Tokyo Metropolitan University,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>45 Tokyo University of Agriculture and Technology,</affiliation>
+	</byline>
+
+	<address>Tokyo<lb/></address>
+
+	<byline>
+	<affiliation>46 Virginia Polytechnic Institute and State University,</affiliation>
+	</byline>
+
+	<address>Blacksburg, Virginia 24061<lb/></address>
+
+	<byline>
+	<affiliation>47 Yonsei University,</affiliation>
+	</byline>
+
+	<address>Seoul<lb/></address>
+
+	<div type="abstract">We report improved measurements of time-dependent CP violation parameters for B 0 (B<lb/> 0 ) →<lb/> J/ψ π 0 decay. This analysis is based on 535 million BB pairs accumulated at the Υ(4S) resonance<lb/> with the Belle detector at the KEKB asymmetric-energy e + e − collider. From the distribution of<lb/> proper time intervals between the two B decays, we obtain the following CP violation parameters<lb/> S J/ψ π 0 = −0.65 ± 0.21(stat) ± 0.05(syst) and<lb/> A J/ψ π 0 = +0.08 ± 0.16(stat) ± 0.05(syst),<lb/> which are consistent with Standard Model expectations.<lb/></div>
+
+	<keyword>PACS numbers: 12.15.Hh, 13.25.Hw</keyword>
+
+		</front>
+	</text>
+</tei>

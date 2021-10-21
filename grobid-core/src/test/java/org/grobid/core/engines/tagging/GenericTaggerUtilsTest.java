@@ -5,9 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-/**
- * Created by lfoppiano on 28/11/16.
- */
 public class GenericTaggerUtilsTest {
 
     @Test

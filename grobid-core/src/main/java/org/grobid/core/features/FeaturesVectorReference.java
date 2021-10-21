@@ -9,7 +9,6 @@ import java.util.regex.Matcher;
  * Class for features used for reference identification in raw texts such as patent descriptions.
  * It covers references to scholar works and to patent publications.
  *
- * @author Patrice Lopez
  */
 public class FeaturesVectorReference {
     // default bins for relative position, set experimentally

@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * Class for representing authority lists for bibliographies.
  *
- * @author Patrice Lopez
  */
 public class BiblioSet {
     private List<String> authors = null;

@@ -14,15 +14,11 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.Pair;
 import org.grobid.core.GrobidModels;
 
 import java.net.URLEncoder;
@@ -37,7 +33,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Class for representing and exchanging a bibliographical item.
  *
- * @author Patrice Lopez
  */
 public class BiblioItem {
     protected static final Logger LOGGER = LoggerFactory.getLogger(BiblioItem.class);
@@ -53,9 +48,13 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
-    private List<LayoutToken> titleLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> authorsLayoutTokens = new ArrayList<>();
-    private List<LayoutToken> abstractLayoutTokens = new ArrayList<>();
+    /**
+     * The following are internal working structures not meant to be used outside. 
+     * For collecting layout tokens of the various bibliographical component, 
+     * please refers to @See(getLayoutTokens(TaggingLabels label)
+     */
+    private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
+    private List<LayoutToken> abstractTokensWorkingCopy = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -907,6 +906,10 @@ public class BiblioItem {
         this.normalized_publication_date = theDate;
     }
 
+    public void mergeNormalizedPublicationDate(Date theDate) {
+        this.normalized_publication_date = Date.merge(this.normalized_publication_date , theDate);
+    }
+
     public void setEditors(String theEditors) {
         this.editors = StringUtils.normalizeSpace(theEditors);
     }
@@ -1004,50 +1007,47 @@ public class BiblioItem {
         }
     }
 
-    private static String cleanDOI(String bibl) {
-        if (bibl != null) {
-            bibl = StringUtils.normalizeSpace(bibl);
-            bibl = bibl.replace(" ", "");
-
-            if (bibl.startsWith("http://dx.doi.org/") || 
-                bibl.startsWith("https://dx.doi.org/") || 
-                bibl.startsWith("http://doi.org/") || 
-                bibl.startsWith("https://doi.org/")) {
-                bibl = bibl.replaceAll("http(s)?\\://(dx\\.)?doi\\.org/", "");
-            }
-
-            //bibl = bibl.replace("//", "/");
-            if (bibl.toLowerCase().startsWith("doi:") || bibl.toLowerCase().startsWith("doi/")) {
-                bibl = bibl.substring(4);
-            } 
-            if (bibl.toLowerCase().startsWith("doi")) {
-                bibl = bibl.substring(3);
-            }
-            // pretty common wrong extraction pattern: 
-            // 43-61.DOI:10.1093/jpepsy/14.1.436/7
-            // 367-74.DOI:10.1080/14034940210165064
-            // (pages concatenated to the DOI) - easy/safe to fix
-            if ( (bibl.indexOf("DOI:10.") != -1) || (bibl.indexOf("doi:10.") != -1) ) {
-                int ind = bibl.indexOf("DOI:10.");
-                if (ind == -1) 
-                    ind = bibl.indexOf("doi:10.");
-                bibl = bibl.substring(ind+4);
-            }
-
-            // for DOI coming from PDF links, we have some prefix cleaning to make 
-            if (bibl.startsWith("file://") || bibl.startsWith("https://") || bibl.startsWith("http://")) {
-                int ind = bibl.indexOf("/10.");
-                if (ind != -1)
-                    bibl = bibl.substring(ind+1);
-            }
-            
-            bibl = bibl.trim();
-            int ind = bibl.indexOf("http://");
-            if (ind != -1 && ind > 10) {
-                bibl = bibl.substring(0,ind);
-            }
+    public static String cleanDOI(String doi) {
+        if (doi == null) {
+            return doi;
         }
-        return bibl;
+
+        doi = StringUtils.normalizeSpace(doi);
+        doi = doi.replace(" ", "");
+        doi = doi.replaceAll("https?\\://(dx\\.)?doi\\.org/", "");
+
+        //bibl = bibl.replace("//", "/");
+        if (doi.toLowerCase().startsWith("doi:") || doi.toLowerCase().startsWith("doi/")) {
+            doi = doi.substring(4);
+        }
+        if (doi.toLowerCase().startsWith("doi")) {
+            doi = doi.substring(3);
+        }
+        // pretty common wrong extraction pattern:
+        // 43-61.DOI:10.1093/jpepsy/14.1.436/7
+        // 367-74.DOI:10.1080/14034940210165064
+        // (pages concatenated to the DOI) - easy/safe to fix
+        if (StringUtils.containsIgnoreCase(doi, "doi:10.")) {
+            doi = doi.substring(StringUtils.indexOfIgnoreCase(doi, "doi:10.")+4);
+        }
+
+        // for DOI coming from PDF links, we have some prefix cleaning to make
+        if (doi.startsWith("file://") || doi.startsWith("https://") || doi.startsWith("http://")) {
+            int ind = doi.indexOf("/10.");
+            if (ind != -1)
+                doi = doi.substring(ind+1);
+        }
+
+        doi = doi.trim();
+        int ind = doi.indexOf("http://");
+        if (ind > 10) {
+            doi = doi.substring(0, ind);
+        }
+
+        doi = doi.replaceAll("[\\p{M}]", "");
+        doi = doi.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+
+        return doi;
     }
 
     public void setArXivId(String id) {
@@ -1177,13 +1177,17 @@ public class BiblioItem {
         authors = aut;
     }
 
-    public BiblioItem addAuthorsToken(LayoutToken lt) {
-        authorsLayoutTokens.add(lt);
+    public BiblioItem collectAuthorsToken(LayoutToken lt) {
+        authorsTokensWorkingCopy.add(lt);
         return this;
     }
 
-    public List<LayoutToken> getAuthorsTokens() {
-        return authorsLayoutTokens;
+    public void collectAuthorsTokens(List<LayoutToken> layoutTokens) {
+        this.authorsTokensWorkingCopy.addAll(layoutTokens);
+    }
+
+    public void collectAbstractTokens(List<LayoutToken> layoutTokens) {
+        this.abstractTokensWorkingCopy.addAll(layoutTokens);
     }
 
     public void addAuthor(String aut) {
@@ -1847,7 +1851,7 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/");
+		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1877,7 +1881,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id the BibTeX ke to use.
+     * @param id the BibTeX key to use.
      */
     public String toBibTeX(String id) {
         return toBibTeX(id, new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().includeRawCitations(false).build());
@@ -1886,7 +1890,7 @@ public class BiblioItem {
     /**
      * Export to BibTeX format
      *
-     * @param id                  the BibTeX ke to use
+     * @param id the BibTeX key to use
      */
     public String toBibTeX(String id, GrobidAnalysisConfig config) {
         String type;
@@ -1922,12 +1926,19 @@ public class BiblioItem {
                     fullAuthors.stream()
                                .filter(person -> person != null)
                                .forEachOrdered(person -> {
-                                   String author = person.getLastName();
+                                   String author = "";
+                                   if (person.getLastName() != null) {
+                                       author = person.getLastName();
+                                   }
                                    if (person.getFirstName() != null) {
-                                       author += ", ";
+                                       if (author.length() > 0) {
+                                           author += ", ";
+                                       }
                                        author += person.getFirstName();
                                    }
-                                   authors.add(author);
+                                   if (author.length() > 0 ) {
+                                       authors.add(author);
+                                   }
                                });
                 } else if (this.authors != null) {
                     StringTokenizer st = new StringTokenizer(this.authors, ";");
@@ -1973,8 +1984,24 @@ public class BiblioItem {
             }
             // fullEditors has to be used instead
 
-            // year
-            if (publication_date != null) {
+            // dates
+            if (normalized_publication_date != null) {
+                String isoDate = Date.toISOString(normalized_publication_date);
+                if (isoDate != null) {
+                    bibtex.add("  date = {" + isoDate + "}");
+                }
+                if (normalized_publication_date.getYear() >= 0) {
+                    bibtex.add("  year = {" + normalized_publication_date.getYear() + "}");
+                
+                    if (normalized_publication_date.getMonth() >= 0) {
+                        bibtex.add("  month = {" + normalized_publication_date.getMonth() + "}");
+                    
+                        if (normalized_publication_date.getDay() >= 0) {
+                            bibtex.add("  day = {" + normalized_publication_date.getDay() + "}");
+                        }
+                    }
+                }
+            } else if (publication_date != null) {
                 bibtex.add("  year = {" + publication_date + "}");
             }
 
@@ -2465,40 +2492,22 @@ public class BiblioItem {
                 }
 
                 if (normalized_publication_date != null) {
-                    if ((normalized_publication_date.getDay() != -1) ||
-                            (normalized_publication_date.getMonth() != -1) ||
-                            (normalized_publication_date.getYear() != -1)) {
-                        int year = normalized_publication_date.getYear();
-                        int month = normalized_publication_date.getMonth();
-                        int day = normalized_publication_date.getDay();
-						
-						if (year != -1) {
-			                String when = "";
-							if (year <= 9) 
-								when += "000" + year;
-							else if (year <= 99) 
-								when += "00" + year;
-							else if (year <= 999)
-								when += "0" + year;
-							else
-								when += year;
-			                if (month != -1) {
-								if (month <= 9) 
-									when += "-0" + month;
-								else 
-			 					   	when += "-" + month;
-			                    if (day != -1) {
-									if (day <= 9)
-										when += "-0" + day;
-									else
-										when += "-" + day;
-			                    }
-			                }
+                    if (normalized_publication_date.getYear() != -1) {
+                        String when = Date.toISOString(normalized_publication_date);
+                        if (when != null) {
 	                        for (int i = 0; i < indent + 3; i++) {
 	                            tei.append("\t");
 	                        }
 	                        tei.append("<date type=\"published\" when=\"");
-	                        tei.append(when + "\" />\n");
+	                        tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
 						}
                     } else if (this.getYear() != null) {
 						String when = "";
@@ -2527,7 +2536,15 @@ public class BiblioItem {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+                        tei.append(when + "\"");
+
+                        if (publication_date != null && publication_date.length() > 0) {
+                            tei.append(">");
+                            tei.append(TextUtilities.HTMLEncode(publication_date) );
+                            tei.append("</date>\n");
+                        } else {
+                            tei.append(" />\n");
+                        }
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -2678,40 +2695,22 @@ public class BiblioItem {
 
                     // date
                     if (normalized_publication_date != null) {
-                        if ((normalized_publication_date.getDay() != -1) ||
-                                (normalized_publication_date.getMonth() != -1) ||
-                                (normalized_publication_date.getYear() != -1)) {
-                            int year = normalized_publication_date.getYear();
-                            int month = normalized_publication_date.getMonth();
-                            int day = normalized_publication_date.getDay();
-							
-							if (year != -1) {
-				                String when = "";
-								if (year <= 9) 
-									when += "000" + year;
-								else if (year <= 99) 
-									when += "00" + year;
-								else if (year <= 999)
-									when += "0" + year;
-								else
-									when += year;
-				                if (month != -1) {
-									if (month <= 9) 
-										when += "-0" + month;
-									else 
-				 					   	when += "-" + month;
-				                    if (day != -1) {
-										if (day <= 9)
-											when += "-0" + day;
-										else
-											when += "-" + day;
-				                    }
-				                }
+                        if (normalized_publication_date.getYear() != -1) {
+                            String when = Date.toISOString(normalized_publication_date);
+                            if (when != null) {
 	                            for (int i = 0; i < indent + 3; i++) {
 	                                tei.append("\t");
 	                            }
 	                            tei.append("<date type=\"published\" when=\"");
-	                            tei.append(when + "\" />\n");
+                                tei.append(when + "\"");
+
+                                if (publication_date != null && publication_date.length() > 0) {
+                                    tei.append(">");
+                                    tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                    tei.append("</date>\n");
+                                } else {
+                                    tei.append(" />\n");
+                                }
 							}
                         } else if (this.getYear() != null) {
 							String when = "";
@@ -2740,7 +2739,15 @@ public class BiblioItem {
                                 tei.append("\t");
                             }
                             tei.append("<date type=\"published\" when=\"");
-                            tei.append(when + "\" />\n");
+                            tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
                         } else {
                             for (int i = 0; i < indent + 3; i++) {
                                 tei.append("\t");
@@ -2809,40 +2816,22 @@ public class BiblioItem {
 				}
                 // date
                 if (normalized_publication_date != null) {
-                    if ((normalized_publication_date.getDay() != -1) |
-                            (normalized_publication_date.getMonth() != -1) |
-                            (normalized_publication_date.getYear() != -1)) {
-                        int year = normalized_publication_date.getYear();
-                        int month = normalized_publication_date.getMonth();
-                        int day = normalized_publication_date.getDay();
-
-						if (year != -1) {
-			                String when = "";
-							if (year <= 9) 
-								when += "000" + year;
-							else if (year <= 99) 
-								when += "00" + year;
-							else if (year <= 999)
-								when += "0" + year;
-							else
-								when += year;
-			                if (month != -1) {
-								if (month <= 9) 
-									when += "-0" + month;
-								else 
-			 					   	when += "-" + month;
-			                    if (day != -1) {
-									if (day <= 9)
-										when += "-0" + day;
-									else
-										when += "-" + day;
-			                    }
-			                }
+                    if (normalized_publication_date.getYear() != -1) {
+                        String when = Date.toISOString(normalized_publication_date);
+                        if (when != null) {                        
 	                        for (int i = 0; i < indent + 3; i++) {
 	                            tei.append("\t");
 	                        }
 	                        tei.append("<date type=\"published\" when=\"");
-	                        tei.append(when + "\" />\n");
+	                        tei.append(when + "\"");
+
+                            if (publication_date != null && publication_date.length() > 0) {
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(publication_date) );
+                                tei.append("</date>\n");
+                            } else {
+                                tei.append(" />\n");
+                            }
 						}
                     } else if (this.getYear() != null) {
 						String when = "";
@@ -2871,7 +2860,15 @@ public class BiblioItem {
                             tei.append("\t");
                         }
                         tei.append("<date type=\"published\" when=\"");
-                        tei.append(when + "\" />\n");
+                        tei.append(when + "\"");
+
+                        if (publication_date != null && publication_date.length() > 0) {
+                            tei.append(">");
+                            tei.append(TextUtilities.HTMLEncode(publication_date) );
+                            tei.append("</date>\n");
+                        } else {
+                            tei.append(" />\n");
+                        }
                     } else {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
@@ -4309,16 +4306,16 @@ public class BiblioItem {
     }
 
     /**
-     * Correct/add only the DOI of the first biblio item based on the second one 
+     * Correct/add identifiers of the first biblio item based on the second one
      */
-    public static void injectDOI(BiblioItem bib, BiblioItem bibo) {
-        bib.setDOI(bibo.getDOI());
+    public static void injectIdentifiers(BiblioItem destination, BiblioItem source) {
+        destination.setDOI(source.getDOI());
         // optionally associated strong identifiers are also injected
-        bib.setPMID(bibo.getPMID());
-        bib.setPMCID(bibo.getPMCID());
-        bib.setPII(bibo.getPII());
-        bib.setIstexId(bibo.getIstexId());
-        bib.setArk(bibo.getArk());
+        destination.setPMID(source.getPMID());
+        destination.setPMCID(source.getPMCID());
+        destination.setPII(source.getPII());
+        destination.setIstexId(source.getIstexId());
+        destination.setArk(source.getArk());
     }
 
     /**
@@ -4380,10 +4377,17 @@ public class BiblioItem {
             bib.setSubmissionDate(bibo.getSubmissionDate());
         if (bibo.getDownloadDate() != null)
             bib.setDownloadDate(bibo.getDownloadDate());
-        if (bibo.getYear() != null)
+       
+        if (bibo.getNormalizedPublicationDate() != null) {
+            if (bib.getNormalizedPublicationDate() != null) {
+                bib.mergeNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
+            }
+            else {
+                bib.setNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
+            }
+        }
+         if (bibo.getYear() != null)
             bib.setYear(bibo.getYear());
-        if (bibo.getNormalizedPublicationDate() != null)
-            bib.setNormalizedPublicationDate(bibo.getNormalizedPublicationDate());
         if (bibo.getMonth() != null)
             bib.setMonth(bibo.getMonth());
         if (bibo.getDay() != null)
@@ -4556,7 +4560,7 @@ public class BiblioItem {
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))
 			return true;
-		else 
+		else
 			return false;
 	}
 
@@ -4606,7 +4610,7 @@ public class BiblioItem {
         labeledTokens.put(headerLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(Document doc, String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
@@ -4618,33 +4622,20 @@ public class BiblioItem {
             }
 
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
-            /*if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
-                break;
-            }*/
             List<LayoutToken> clusterTokens = cluster.concatTokens();
             List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
 
-            if (theList == null)
-                theList = new ArrayList<>();
-            for (LayoutToken token : clusterTokens)
-                theList.add(token);
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
         }
     }
 
-    public void addTitleTokens(List<LayoutToken> layoutTokens) {
-        this.titleLayoutTokens.addAll(layoutTokens);
+    public List<LayoutToken> getAuthorsTokensWorkingCopy() {
+        return authorsTokensWorkingCopy;
     }
 
-    public void addAuthorsTokens(List<LayoutToken> layoutTokens) {
-        this.authorsLayoutTokens.addAll(layoutTokens);
-    }
-
-    public void addAbstractTokens(List<LayoutToken> layoutTokens) {
-        this.abstractLayoutTokens.addAll(layoutTokens);
-    }
-
-    public List<LayoutToken> getAbstractTokens() {
-        return this.abstractLayoutTokens;
+    public List<LayoutToken> getAbstractTokensWorkingCopy() {
+        return abstractTokensWorkingCopy;
     }
 }

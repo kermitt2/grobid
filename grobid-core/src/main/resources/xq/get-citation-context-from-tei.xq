@@ -33,10 +33,3 @@ return
         if (not($coords)) then "" else $coords
 )
 
-
-
-
-
-
-
-

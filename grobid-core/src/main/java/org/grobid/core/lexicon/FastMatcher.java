@@ -23,7 +23,6 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 /**
  * Class for fast matching of word sequences over text stream.
  *
- * @author Patrice Lopez
  */
 public final class FastMatcher {
     private Map terms = null;
@@ -140,9 +139,7 @@ public final class FastMatcher {
         if (terms == null) {
             terms = new HashMap();
         }
-        //Map t = terms;
         int nbTerms = 0;
-        //String token = null;
         while ((line = bufReader.readLine()) != null) {
             if (line.length() == 0) continue;
             line = UnicodeUtil.normaliseText(line);
@@ -182,11 +179,8 @@ public final class FastMatcher {
         if (isBlank(term))
             return 0;
         Map t = terms;
-        //StringTokenizer st = new StringTokenizer(term, " \n\t" + TextUtilities.fullPunctuations, false);
-        //while (st.hasMoreTokens()) {
         List<String> tokens = analyzer.tokenize(term, new Language("en", 1.0));
         for(String token : tokens) {
-            //token = st.nextToken();
             if (token.length() == 0) {
                 continue;
             }
@@ -256,10 +250,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos++;
-                continue;
-            }*/
 
             if (!caseSensitive) 
                 token = token.toLowerCase();
@@ -488,11 +478,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            //ignore tags
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos += token.length();
-                continue;
-            }*/
             if (!caseSensitive) 
                 token = token.toLowerCase();
 
@@ -597,11 +582,6 @@ public final class FastMatcher {
                 currentPos++;
                 continue;
             }
-            //ignore tags
-            /*if ((token.charAt(0) == '<') && (token.charAt(token.length() - 1) == '>')) {
-                currentPos++;
-                continue;
-            }*/
             String tokenString = token.getText();
             if (!caseSensitive)
                 tokenString = tokenString.toLowerCase();

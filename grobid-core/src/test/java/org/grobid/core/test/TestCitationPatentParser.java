@@ -19,9 +19,6 @@ import org.junit.AfterClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-/**
- *  @author Patrice Lopez
- */
 //@Ignore
 public class TestCitationPatentParser extends EngineTest {
 	private String newTrainingPath = null;

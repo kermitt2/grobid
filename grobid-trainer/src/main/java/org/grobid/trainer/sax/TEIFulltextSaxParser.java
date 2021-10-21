@@ -68,7 +68,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 			}
         }
 
-        if (qName.equals("figure")) {
+        if (qName.equals("figure") || qName.equals("table")) {
             figureBlock = false;
 			tableBlock = false;
         }
@@ -177,6 +177,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
             else if (qName.equals("table")) {
                 currentTags.push("<table>");
 				currentTag = "<table>";
+                tableBlock = true;
+                figureBlock = false;
             } 
 			else if (qName.equals("item")) {
                 currentTags.push("<paragraph>");
@@ -186,6 +188,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
             } 
 			else if (qName.equals("figure")) {
 	            figureBlock = true;
+                tableBlock = false;
 	            int length = atts.getLength();
 
 	            // Process each attribute

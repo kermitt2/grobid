@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2104.05243v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>On Unifying Misinformation Detection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Nayeon Lee § * Belinda Z. Li ‡ † Sinong Wang †<lb/> Pascale Fung § Hao Ma † Wen-tau Yih † Madian Khabsa †<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>§ Hong Kong University of Science and Technology<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>† Facebook AI<lb/></affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>‡ MIT CSAIL<lb/></affiliation>
+	</byline>
+
+	<email>nyleeaa@connect.ust.hk</email>
+
+	,
+	<email>mkhabsa@fb.com</email>
+
+	Abstract<lb/>
+	<div type="abstract">In this paper, we introduce UNIFIEDM2, a<lb/> general-purpose misinformation model that<lb/> jointly models multiple domains of misinfor-<lb/>mation with a single, unified setup. The<lb/> model is trained to handle four tasks: detect-<lb/>ing news bias, clickbait, fake news and ver-<lb/>ifying rumors. By grouping these tasks to-<lb/>gether, UNIFIEDM2 learns a richer represen-<lb/>tation of misinformation, which leads to state-<lb/>of-the-art or comparable performance across<lb/> all tasks. Furthermore, we demonstrate that<lb/> UNIFIEDM2&apos;s learned representation is help-<lb/>ful for few-shot learning of unseen misinfor-<lb/>mation tasks/datasets and model&apos;s generaliz-<lb/>ability to unseen events.<lb/></div>
+
+	* Work partially done while interning at Facebook AI.<lb/> † Work partially done while working at Facebook AI.<lb/>
+
+	<idno>arXiv:2104.05243v1 [cs.AI]</idno>
+
+	<date>12 Apr 2021</date>
+
+		</front>
+	</text>
+</tei>

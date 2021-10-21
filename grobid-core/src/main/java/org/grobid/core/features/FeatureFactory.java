@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 /**
  * Class providing a toolkit for managing and creating features or string sequence tagging problems.
  *
- * @author Patrice Lopez
  */
 public class FeatureFactory {
 
@@ -191,7 +190,7 @@ public class FeatureFactory {
     /**
      * Test for the current string contains at least one digit
      */
-    public static boolean test_digit(String tok) {
+    public boolean test_digit(String tok) {
         if (tok == null)
             return false;
         if (tok.length() == 0)
@@ -357,12 +356,12 @@ public class FeatureFactory {
     }
 
     /**
-     * Transform a text in a text pattern where punctuations are ignored, number shadowed and
+     * Transform a text in a text pattern where punctuations are ignored and
      * remaining text in lowercase
      */
     public String getPattern(String text) {
-        String pattern = text.replaceAll("[^a-zA-Z ]", "").toLowerCase();
-        pattern = pattern.replaceAll("[0-9]", "X");
+        String pattern = text.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        //pattern = pattern.replaceAll("[0-9]", "X");
         return pattern;
     }
 }

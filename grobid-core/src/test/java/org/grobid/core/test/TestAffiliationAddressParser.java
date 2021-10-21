@@ -13,9 +13,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- *  @author Patrice Lopez
- */
 public class TestAffiliationAddressParser extends EngineTest{
 	
 	@Before

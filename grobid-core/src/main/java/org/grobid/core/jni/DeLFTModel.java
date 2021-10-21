@@ -19,10 +19,6 @@ import jep.JepException;
 
 import java.util.function.Consumer;
 
-/**
- * 
- * @author: Patrice
- */
 public class DeLFTModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(DeLFTModel.class);
 
@@ -62,11 +58,20 @@ public class DeLFTModel {
                 if (architecture != null)
                     fullModelName += "-" + this.architecture;
 
-                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1)
+                if (GrobidProperties.getInstance().useELMo(this.modelName) && modelName.toLowerCase().indexOf("bert") == -1)
                     fullModelName += "-with_ELMo";
 
                 jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
+
+                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.max_sequence_length="+
+                        GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName));
+
+                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.batch_size="+
+                        GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
+
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);
             }
@@ -236,17 +241,26 @@ public class DeLFTModel {
                 jep.eval("print(len(x_valid), 'validation sequences')");
 
                 String useELMo = "False";
-                if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
+                if (GrobidProperties.getInstance().useELMo(this.modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                     useELMo = "True";
                 }
+
+                String localArgs = "";
+                if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1)
+                    localArgs += ", max_sequence_length="+
+                        GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName);
+
+                if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1)
+                    localArgs += ", batch_size="+
+                        GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName);
 
                 // init model to be trained
                 if (architecture == null)
                     jep.eval("model = Sequence('"+this.modelName+
-                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+")");
                 else
                     jep.eval("model = Sequence('"+this.modelName+
-                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+ 
                         ", model_type='"+architecture+"')");
 
                 // actual training
@@ -281,18 +295,30 @@ public class DeLFTModel {
     public static void train(String modelName, File trainingData, File outputModel, String architecture) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
-            List<String> command = Arrays.asList("python3", 
+            List<String> command = new ArrayList<>();
+            List<String> subcommands = Arrays.asList("python3", 
                 "grobidTagger.py", 
                 modelName,
                 "train",
                 "--input", trainingData.getAbsolutePath(),
                 "--output", GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+            command.addAll(subcommands);
             if (architecture != null) {
                 command.add("--architecture");
                 command.add(architecture);
             }
-            if (GrobidProperties.getInstance().useELMo() && modelName.toLowerCase().indexOf("bert") == -1) {
+            if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
+            }
+
+            if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName) != -1) {
+                command.add("--max-sequence-length");
+                command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName)));
+            }
+
+            if (GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName) != -1) {
+                command.add("--batch-size");
+                command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName)));
             }
 
             ProcessBuilder pb = new ProcessBuilder(command);

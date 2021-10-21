@@ -36,7 +36,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Class for managing all the lexical resources.
  *
- * @author Patrice Lopez
  */
 public class Lexicon {
 	private static final Logger LOGGER = LoggerFactory.getLogger(Lexicon.class);

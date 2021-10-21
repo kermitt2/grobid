@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0709_2396"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0709.2396v1 [hep-ex]</idno>
+
+	<date>14 Sep 2007<lb/></date>
+
+	January 13, 2019 22:59<lb/> 
+
+	<meeting>WSPC -Proceedings</meeting> 
+
+	Trim Size: 9in x 6in jlab
+
+	<page>1<lb/></page> 
+
+	SLAC-PUB-12820<lb/> 
+
+	<docTitle>
+	<titlePart>e + e − Annihilations into Quasi-two-body Final States<lb/> at 10.58 GeV<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kai Yi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Stanford Linear Accelerator Center<lb/></affiliation>
+	</byline>
+
+	<address>Menlo Park, California 94025, USA<lb/></address>
+
+	* E-mail:
+	<email>yik@slac.stanford.edu<lb/></email>
+
+	<div type="abstract">We report the first observation of e + e − annihilations into hadronic states of<lb/> positive C-parity, ρ 0 ρ 0 and φρ 0 . The angular distributions support two-virtual-<lb/>photon annihilation production. We also report the observations of e + e − → φη<lb/> and a preliminary result on e + e − → ρ + ρ − .<lb/></div>
+
+	Keywords:
+	<keyword>Exclusive; High momentum; C parity; Helicity amplitude.</keyword>
+
+		</front>
+	</text>
+</tei>

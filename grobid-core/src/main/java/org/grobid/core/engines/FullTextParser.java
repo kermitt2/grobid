@@ -14,8 +14,6 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
 import org.grobid.core.data.Equation;
-import org.grobid.core.data.Metadata;
-import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -45,6 +43,8 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Consolidation;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
+import org.grobid.core.engines.citations.CalloutAnalyzer;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +55,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,19 +67,10 @@ import java.util.regex.Matcher;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
-/**
- * @author Patrice Lopez
- */
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
 
-    //private LanguageUtilities languageUtilities = LanguageUtilities.getInstance();
-
-    //	private String tmpPathName = null;
-//    private Document doc = null;
     protected File tmpPath = null;
-//    private String pathXML = null;
-//	private BiblioItem resHeader = null;
 
 	// default bins for relative position
 	private static final int NBBINS_POSITION = 12;
@@ -96,20 +86,27 @@ public class FullTextParser extends AbstractParser {
 
     protected EngineParsers parsers;
 
-    /**
-     * TODO some documentation...
-     */
     public FullTextParser(EngineParsers parsers) {
         super(GrobidModels.FULLTEXT);
         this.parsers = parsers;
         tmpPath = GrobidProperties.getTempPath();
     }
 
+    public Document processing(File inputPdf,
+                               GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        return processing(documentSource, config);
+    }
+
 	public Document processing(File inputPdf,
+                               String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
 				config.getPdfAssetPath() != null, true, false);
+        documentSource.setMD5(md5Str);
 		return processing(documentSource, config);
 	}
 
@@ -187,7 +184,7 @@ public class FullTextParser extends AbstractParser {
             // structure the abstract using the fulltext model
             if (isNotBlank(resHeader.getAbstract())) {
                 //List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
-                List<LayoutToken> abstractTokens = resHeader.getAbstractTokens();
+                List<LayoutToken> abstractTokens = resHeader.getAbstractTokensWorkingCopy();
                 if (CollectionUtils.isNotEmpty(abstractTokens)) {
                     abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
                     Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
@@ -221,7 +218,7 @@ public class FullTextParser extends AbstractParser {
                             if (config.getConsolidateCitations() == 1)
                                 BiblioItem.correct(resCitation, bibo);
                             else if (config.getConsolidateCitations() == 2)
-                                BiblioItem.injectDOI(resCitation, bibo);
+                                BiblioItem.injectIdentifiers(resCitation, bibo);
                         }
                     }
                 } catch(Exception e) {
@@ -258,7 +255,7 @@ public class FullTextParser extends AbstractParser {
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
                 }
-
+                
 				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Table table : tables) {
@@ -293,12 +290,19 @@ public class FullTextParser extends AbstractParser {
 				//System.out.println(rese);
 			}
 
+            // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
+            // callout in superscript is by error labeled as a numerical reference callout)
+            List<MarkerType> markerTypes = null;
+
+            if (resultBody != null) 
+                markerTypes = postProcessCallout(resultBody, layoutTokenization);
+
             // final combination
             toTEI(doc, // document
 				resultBody, resultAnnex, // labeled data for body and annex
 				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
 				resHeader, // header
-				figures, tables, equations,
+				figures, tables, equations, markerTypes,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -594,9 +598,9 @@ public class FullTextParser extends AbstractParser {
                 if (localImages != null) {
                 	for(GraphicObject localImage : localImages) {
                 		if (localImage.getType() == GraphicObjectType.BITMAP)
-                			graphicVector = true;
-                		if (localImage.getType() == GraphicObjectType.VECTOR)
                 			graphicBitmap = true;
+                		if (localImage.getType() == GraphicObjectType.VECTOR || localImage.getType() == GraphicObjectType.VECTOR_BOX)
+                			graphicVector = true;
                 	}
                 }
 
@@ -2072,29 +2076,34 @@ public class FullTextParser extends AbstractParser {
 		for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.TABLE))) {
 			List<LayoutToken> tokenizationTable = cluster.concatTokens();
-			Table result = parsers.getTableParser().processing(
+			List<Table> localResults = parsers.getTableParser().processing(
 					tokenizationTable,
 					cluster.getFeatureBlock()
 			);
 
-			SortedSet<Integer> blockPtrs = new TreeSet<>();
-			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
-					blockPtrs.add(lt.getBlockPtr());
-				}
-			}
-			result.setBlockPtrs(blockPtrs);
-			result.setLayoutTokens(tokenizationTable);
+            for (Table result : localResults) {
+                List<LayoutToken> localTokenizationTable = result.getLayoutTokens();
+                //result.setLayoutTokens(tokenizationTable);
 
-			// the first token could be a space from previous page
-			for (LayoutToken lt : tokenizationTable) {
-				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
-					result.setPage(lt.getPage());
-					break;
-				}
-			}
-			results.add(result);
-			result.setId("" + (results.size() - 1));
+                // block setting: we restrict to the tokenization of this particulart table
+                SortedSet<Integer> blockPtrs = new TreeSet<>();
+                for (LayoutToken lt : localTokenizationTable) {
+                    if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
+                        blockPtrs.add(lt.getBlockPtr());
+                    }
+                }
+                result.setBlockPtrs(blockPtrs);
+
+    			// page setting: the first token could be a space from previous page
+    			for (LayoutToken lt : localTokenizationTable) {
+    				if (!LayoutTokensUtil.spaceyToken(lt.t()) && !LayoutTokensUtil.newLineToken(lt.t())) {
+    					result.setPage(lt.getPage());
+    					break;
+    				}
+    			}
+    			results.add(result);
+    			result.setId("" + (results.size() - 1));
+            }
 		}
 
 		doc.setTables(results);
@@ -2300,6 +2309,131 @@ public class FullTextParser extends AbstractParser {
 	}
 
     /**
+     * Ensure consistent use of callouts in the entire document body  
+     */
+    private List<MarkerType> postProcessCallout(String result, LayoutTokenization layoutTokenization) {
+        if (layoutTokenization == null)
+            return null;
+
+        List<LayoutToken> tokenizations = layoutTokenization.getTokenization();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, result, tokenizations);
+        String tokenLabel = null;
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+        MarkerType majorityReferenceMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityFigureMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityTableMarkerType = MarkerType.UNKNOWN;
+        MarkerType majorityEquationarkerType = MarkerType.UNKNOWN;
+
+        Map<MarkerType,Integer> referenceMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> figureMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> tableMarkerTypeCounts = new HashMap<>();
+        Map<MarkerType,Integer> equationMarkerTypeCounts = new HashMap<>();
+
+        List<String> referenceMarkerSeen = new ArrayList<>();
+        List<String> figureMarkerSeen = new ArrayList<>();
+        List<String> tableMarkerSeen = new ArrayList<>();
+        List<String> equationMarkerSeen = new ArrayList<>();
+
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            if (TEIFormatter.MARKER_LABELS.contains(clusterLabel)) {
+                List<LayoutToken> refTokens = cluster.concatTokens();
+                refTokens = LayoutTokensUtil.dehyphenize(refTokens);
+                String refText = LayoutTokensUtil.toText(refTokens);
+                refText = refText.replace("\n", "");
+                refText = refText.replace(" ", "");
+                if (refText.trim().length() == 0)
+                    continue;
+
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    if (referenceMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    //System.out.println(LayoutTokensUtil.toText(refTokens) + " -> " + localMarkerType);
+                    if (referenceMarkerTypeCounts.get(localMarkerType) == null)
+                        referenceMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        referenceMarkerTypeCounts.put(localMarkerType, referenceMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!referenceMarkerSeen.contains(refText))
+                        referenceMarkerSeen.add(refText);
+                } else if (clusterLabel.equals(TaggingLabels.FIGURE_MARKER)) {
+                    if (figureMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }                    
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (figureMarkerTypeCounts.get(localMarkerType) == null)
+                        figureMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        figureMarkerTypeCounts.put(localMarkerType, figureMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!figureMarkerSeen.contains(refText))
+                        figureMarkerSeen.add(refText);
+                } else if (clusterLabel.equals(TaggingLabels.TABLE_MARKER)) {
+                    if (tableMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }  
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (tableMarkerTypeCounts.get(localMarkerType) == null)
+                        tableMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        tableMarkerTypeCounts.put(localMarkerType, tableMarkerTypeCounts.get(localMarkerType)+1);
+
+                    if (!tableMarkerSeen.contains(refText))
+                        tableMarkerSeen.add(refText);
+                } else if (clusterLabel.equals(TaggingLabels.EQUATION_MARKER)) {
+                    if (equationMarkerSeen.contains(refText)) {
+                        // already seen reference marker sequence, we skip it
+                        continue;
+                    }  
+                    MarkerType localMarkerType = CalloutAnalyzer.getCalloutType(refTokens);
+                    if (equationMarkerTypeCounts.get(localMarkerType) == null)
+                        equationMarkerTypeCounts.put(localMarkerType, 1);
+                    else
+                        equationMarkerTypeCounts.put(localMarkerType, equationMarkerTypeCounts.get(localMarkerType)+1);  
+
+                    if (!equationMarkerSeen.contains(refText))
+                        equationMarkerSeen.add(refText);               
+                } 
+            }
+        }
+
+        majorityReferenceMarkerType = getBestType(referenceMarkerTypeCounts);
+        majorityFigureMarkerType = getBestType(figureMarkerTypeCounts);
+        majorityTableMarkerType = getBestType(tableMarkerTypeCounts);
+        majorityEquationarkerType = getBestType(equationMarkerTypeCounts);
+
+/*System.out.println("majorityReferenceMarkerType: " + majorityReferenceMarkerType);
+System.out.println("majorityFigureMarkerType: " + majorityFigureMarkerType);
+System.out.println("majorityTableMarkerType: " + majorityTableMarkerType);
+System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
+
+        return Arrays.asList(majorityReferenceMarkerType, majorityFigureMarkerType, majorityTableMarkerType, majorityEquationarkerType);
+    }
+
+    private static MarkerType getBestType(Map<MarkerType,Integer> markerTypeCount) {
+        MarkerType bestType = MarkerType.UNKNOWN;
+        int maxCount = 0;
+        for(Map.Entry<MarkerType,Integer> entry : markerTypeCount.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                bestType = entry.getKey();
+                maxCount = entry.getValue();
+            }
+        }
+        return bestType;
+    }
+
+    /**
      * Create the TEI representation for a document based on the parsed header, references
      * and body sections.
      */
@@ -2312,6 +2446,7 @@ public class FullTextParser extends AbstractParser {
                        List<Figure> figures,
                        List<Table> tables,
                        List<Equation> equations,
+                       List<MarkerType> markerTypes,
                        GrobidAnalysisConfig config) {
         if (doc.getBlocks() == null) {
             return;
@@ -2320,12 +2455,12 @@ public class FullTextParser extends AbstractParser {
         TEIFormatter teiFormatter = new TEIFormatter(doc, this);
         StringBuilder tei;
         try {
-            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, config);
+            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, config);
 
 			//System.out.println(rese);
             //int mode = config.getFulltextProcessingMode();
 			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-					layoutTokenization, figures, tables, equations, doc, config);
+					layoutTokenization, figures, tables, equations, markerTypes, doc, config);
 
 			tei.append("\t\t<back>\n");
 
@@ -2348,7 +2483,7 @@ public class FullTextParser extends AbstractParser {
 			}
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
-				tokenizationsAnnex, doc, config);
+				tokenizationsAnnex, markerTypes, doc, config);
 
 			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
             doc.calculateTeiIdToBibDataSets();

@@ -11,9 +11,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-/**
- * @author Damien, Patrice
- */
 @Singleton
 public class GrobidRestProcessGeneric {
 

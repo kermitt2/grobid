@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="021626v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	Title<lb/> 
+	<docTitle>
+	<titlePart>TransRate: reference free quality assessment of de-novo transcriptome assemblies Authors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Richard Smith-Unna 1 , Chris Boursnell 1 , Rob Patro 2 , Julian M Hibberd 1 , and Steven Kelly 3*</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Affiliations<lb/> 1) Department of Plant Sciences, University of Cambridge,</affiliation>
+	</byline>
+
+	<address>Downing Street, CB2 3EA, UK<lb/></address>
+
+	<byline>
+	<affiliation>2) Department of Computer Science, Stony Brook University,</affiliation>
+	</byline>
+
+	<address>Stony Brook, NY 11794-4400, USA<lb/></address>
+
+	<byline>
+	<affiliation>3) Department of Plant Sciences, University of Oxford,</affiliation>
+	</byline>
+
+	<address>South Parks Road, OX1 3RB, UK<lb/></address>
+
+	Corresponding Author<lb/> * email:
+	<email>steven.kelly@plants.ox.ac.uk</email>
+
+	, phone: 0044 (0) 1865 275123 
+	Abstract<lb/>
+	<div type="abstract">TransRate is a tool for reference-free quality assessment of de novo transcriptome assemblies.<lb/> Using only sequenced reads as the input, TransRate measures the quality of individual contigs<lb/> and whole assemblies, enabling assembly optimization and comparison. TransRate can<lb/> accurately evaluate assemblies of conserved and novel RNA molecules of any kind in any<lb/> species. We show that it is more accurate than comparable methods and demonstrate its use<lb/> on a variety of data.</div>
+
+		</front>
+	</text>
+</tei>

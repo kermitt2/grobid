@@ -30,6 +30,7 @@ def preload(embeddings_name, input_path=None):
         print("Error: embedding name", embeddings_name, "is not registered in", path)
 
     if input_path is None:
+        embeddings_path = None
         # download if url is available
         if description is not None and "url" in description and len(description["url"])>0:
             url = description["url"]
@@ -45,8 +46,13 @@ def preload(embeddings_name, input_path=None):
             embeddings_path = download_file(url, download_path)
             if embeddings_path != None and os.path.isfile(embeddings_path):
                 print("Download sucessful:", embeddings_path)
+        else:
+            print("Embeddings resource is not specified in the embeddings registry:", embeddings_name)
     else:
         embeddings_path = input_path
+
+    if embeddings_path == None:
+        print("Fail to retrive embedding file for", embeddings_name)
 
     embedding_file = open_embedding_file(embeddings_path)
     if embedding_file is None:

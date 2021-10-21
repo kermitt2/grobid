@@ -2,8 +2,10 @@ package org.grobid.core.engines.tagging;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+import org.grobid.core.utilities.GrobidProperties;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.BeforeClass;
 
 import java.util.Arrays;
 
@@ -12,6 +14,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class DummyTaggerTest {
     GenericTagger target;
+
+    @BeforeClass
+    public static void init() {
+        GrobidProperties.getInstance();
+    }
 
     @Before
     public void setUp() throws Exception {

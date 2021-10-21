@@ -34,10 +34,6 @@ import java.util.regex.Matcher;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-/**
- * @author Slava, Patrice
- * Date: 4/14/14
- */
 public class ReferenceSegmenterParser extends AbstractParser implements ReferenceSegmenter{
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceSegmenterParser.class);
 
