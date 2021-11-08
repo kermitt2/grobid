@@ -166,7 +166,7 @@ public class Engine implements Closeable {
             return finalResults;
 
         List<BiblioItem> results = parsers.getCitationParser().processingStringMultiple(references, 0);
-        if (results.size() == 0)
+        if (results == null || results.size() == 0)
             return finalResults;
 
         // consolidation in a second stage to take advantage of parallel calls
