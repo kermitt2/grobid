@@ -317,6 +317,11 @@ public class GrobidRestProcessString {
 
 			if (biblioItems == null || biblioItems.size() == 0) {
 				response = Response.status(Status.NO_CONTENT).build();
+			} else if (biblioItems.size() != citations.size()) {
+				LOGGER.error("Not all citation strings parsed");
+			    response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			} else if (biblioItems.size() == 0) {
+				response = Response.status(Status.NO_CONTENT).build();
 			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
 				StringBuilder responseContent = new StringBuilder();
 				int n = 0;
