@@ -351,6 +351,45 @@ public class GrobidRestServiceTest {
             "\n", response.readEntity(String.class));
     }
 
+    @Test
+    public void processCitationEmptyString() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, " ");
+        form.param(GrobidRestService.INCLUDE_RAW_CITATIONS, "1");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        // just checking that HTTP status is 204 (empty)
+        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
+    }
+
+    @Test
+    public void processCitationWhitespaceString() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "\t  \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0");
+        form.param(GrobidRestService.INCLUDE_RAW_CITATIONS, "1");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION)
+                                       .request()
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        // just checking that HTTP status is 204 (empty)
+        assertEquals(Response.Status.NO_CONTENT.getStatusCode(), response.getStatus());
+    }
+
+    @Test
+    public void processCitationListWhitespaceString() {
+        Form form = new Form();
+        form.param(GrobidRestService.CITATION, "");
+        form.param(GrobidRestService.CITATION, "   ");
+        form.param(GrobidRestService.CITATION, "\t");
+        form.param(GrobidRestService.CITATION, "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0");
+        form.param(GrobidRestService.INCLUDE_RAW_CITATIONS, "1");
+        Response response = getClient().target(baseUrl()).path(GrobidPaths.PATH_CITATION_LIST)
+                                       .request()
+                                       .post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        // just checking that HTTP status is 200 (success)
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+    }
+
     private String getStrResponse(File pdf, String method) {
         assertTrue("Cannot run the test, because the sample file '" + pdf + "' does not exists.", pdf.exists());
 
