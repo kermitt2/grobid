@@ -344,6 +344,10 @@ public class GrobidRestProcessString {
                     "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
 				int n = 0;
 				for(BiblioItem biblioItem : biblioItems) {
+					if (biblioItem == null) {
+						// insert an empty BiblioItem in reponse
+						biblioItem = new BiblioItem();
+					}
 					responseContent.append(biblioItem.toTEI(n, config));
 					responseContent.append("\n");
 					n++;
