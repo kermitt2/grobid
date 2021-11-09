@@ -189,6 +189,42 @@ public class BiblioItemTest {
     }
 
     @Test
+    public void shouldEscapeIdentifiers() throws Exception {
+        BiblioItem item1 = new BiblioItem();
+        item1.setJournal("Dummy Journal Title");
+        item1.setDOI("10.1233/23232&3232");
+        item1.setPMID("pmid & 123");
+        item1.setArk("Noah & !");
+        item1.setISSN("0974&9756");
+
+        GrobidAnalysisConfig config = configBuilder.build();
+        String tei = item1.toTEI(0, 2, config);
+        LOGGER.debug("tei: {}", tei);
+        Document doc = parseXml(tei);
+        assertThat(
+            "DOI",
+            getXpathStrings(doc, "//idno[@type=\"DOI\"]/text()"),
+            is(Arrays.asList("10.1233/23232&3232"))
+        );
+        assertThat(
+            "ISSN",
+            getXpathStrings(doc, "//idno[@type=\"ISSN\"]/text()"),
+            is(Arrays.asList("0974&9756"))
+        );
+        assertThat(
+            "PMID",
+            getXpathStrings(doc, "//idno[@type=\"PMID\"]/text()"),
+            is(Arrays.asList("pmid&123"))
+        );
+        assertThat(
+            "Ark",
+            getXpathStrings(doc, "//idno[@type=\"ark\"]/text()"),
+            is(Arrays.asList("Noah & !"))
+        );
+
+    }
+
+    @Test
     public void correct_empty_shouldNotFail() {
         BiblioItem.correct(new BiblioItem(), new BiblioItem());
     }
