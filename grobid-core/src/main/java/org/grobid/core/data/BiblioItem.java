@@ -2438,10 +2438,10 @@ public class BiblioItem {
                             if ((location != null) || (town != null) || (country != null)) {
                                 tei.append("<address>");
                                 if (town != null) {
-                                    tei.append("<settlement>" + town + "</settlement>");
+                                    tei.append("<settlement>" + TextUtilities.HTMLEncode(town) + "</settlement>");
                                 }
                                 if (country != null) {
-                                    tei.append("<country>" + country + "</country>");
+                                    tei.append("<country>" + TextUtilities.HTMLEncode(country) + "</country>");
                                 }
                                 if ((location != null) && (town == null) && (country == null)) {
                                     tei.append("<addrLine>" + TextUtilities.HTMLEncode(location) + "</addrLine>");
@@ -2643,7 +2643,7 @@ public class BiblioItem {
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<idno type=\"ISSN\">" + getISSN() + "</idno>\n");
+                    tei.append("<idno type=\"ISSN\">" + TextUtilities.HTMLEncode(getISSN()) + "</idno>\n");
                 }
 
                 if (!StringUtils.isEmpty(getISSNe())) {
@@ -2651,7 +2651,7 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 2; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<idno type=\"ISSNe\">" + getISSNe() + "</idno>\n");
+                        tei.append("<idno type=\"ISSNe\">" + TextUtilities.HTMLEncode(getISSNe()) + "</idno>\n");
                     }
                 }
 
@@ -3002,7 +3002,7 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 2; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<item>" + subject + "</item>\n");
+                        tei.append("<item>" + TextUtilities.HTMLEncode(subject) + "</item>\n");
                     }
                     tei.append("</list></keywords>\n");
                 }
@@ -3019,7 +3019,7 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 1; i++) {
                             tei.append("\t");
                         }
-                        tei.append("<keywords type=\"subject-headers\">" + keywords1 + "</keywords>\n");
+                        tei.append("<keywords type=\"subject-headers\">" + TextUtilities.HTMLEncode(keywords1) + "</keywords>\n");
                         for (int i = 0; i < indent + 1; i++) {
                             tei.append("\t");
                         }
@@ -3042,12 +3042,12 @@ public class BiblioItem {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<idno type=\"HALid\">" + uri + "</idno>\n");
+                    tei.append("<idno type=\"HALid\">" + TextUtilities.HTMLEncode(uri) + "</idno>\n");
                 } else {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<idno>" + uri + "</idno>\n");
+                    tei.append("<idno>" + TextUtilities.HTMLEncode(uri) + "</idno>\n");
                 }
             }
 
@@ -3056,7 +3056,7 @@ public class BiblioItem {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
-                    tei.append("<idno type=\"HALFile\">" + url + "</idno>\n");
+                    tei.append("<idno type=\"HALFile\">" + TextUtilities.HTMLEncode(url) + "</idno>\n");
                 }
             }
 
