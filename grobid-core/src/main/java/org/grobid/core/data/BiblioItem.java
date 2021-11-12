@@ -4022,7 +4022,7 @@ public class BiblioItem {
             LOGGER.debug("marker: {}", aff.getMarker());
             if (StringUtils.isNotEmpty(aff.getMarker())) {
                 tei.append("<label>");
-                tei.append(aff.getMarker());
+                tei.append(TextUtilities.HTMLEncode(aff.getMarker()));
                 tei.append("</label> ");
             }
             tei.append(encodedRawAffiliationString);
