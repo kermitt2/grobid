@@ -59,7 +59,7 @@ public class Keyword {
         if (keyword == null) {
             return null;
         }
-        String res = "<term>" + keyword + "</term>";
+        String res = "<term>" + TextUtilities.HTMLEncode(keyword) + "</term>";
         return res;
     }
 
