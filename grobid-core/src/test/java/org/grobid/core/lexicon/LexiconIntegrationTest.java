@@ -346,6 +346,18 @@ public class LexiconIntegrationTest {
     }
 
     @Test
+    public void testInArXivPatternLayoutToken3() {
+        String piece = "K.R. Dienes, C. Kolda and J. March-Russell, hep-ph/9610479.";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(piece);
+        String text = LayoutTokensUtil.toText(tokens);
+        List<OffsetPosition> positions = target.tokenPositionsArXivPattern(tokens, text);
+
+        assertThat(positions, hasSize(1));
+        assertThat(positions.get(0).start, is(22));
+        assertThat(positions.get(0).end, is(27));
+    }
+
+    @Test
     public void testInIdentifierPatternLayoutToken() {
         String piece = "ATLAS collaboration, Measurements of the Nuclear Modification Factor for Jets in Pb+Pb Collisionsat √ "+
         "sNN = 2 . 76TeVwith the ATLAS Detector, Phys. Rev. Lett. 114(2015) 072302 [ arXiv: 1411.2357][INSPIRE] .";
