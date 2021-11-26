@@ -2,6 +2,7 @@ package org.grobid.core.data;
 
 import java.util.List;
 import org.grobid.core.layout.BoundingBox;
+import org.grobid.core.utilities.TextUtilities;
 
 /**
  * Class for managing patent bibliographical references.
@@ -316,17 +317,17 @@ public class PatentItem implements Comparable<PatentItem> {
 		else {
 			biblStruct.append("national");
 		}
-		biblStruct.append("\">"+authority+"</orgName></authority>");
-		biblStruct.append("<idno type=\"docNumber\" subtype=\"epodoc\">"+number_epodoc+"</idno>");
-		biblStruct.append("<idno type=\"docNumber\" subtype=\"original\">"+number_wysiwyg+"</idno>");
+		biblStruct.append("\">"+TextUtilities.HTMLEncode(authority)+"</orgName></authority>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"epodoc\">"+TextUtilities.HTMLEncode(number_epodoc)+"</idno>");
+		biblStruct.append("<idno type=\"docNumber\" subtype=\"original\">"+TextUtilities.HTMLEncode(number_wysiwyg)+"</idno>");
 		
 		if ((kindCode != null) || (date != null)) {
 			biblStruct.append("<imprint>");
 			if (kindCode != null) {
-				biblStruct.append("<classCode scheme=\"kindCode\">"+kindCode+"</classCode>");
+				biblStruct.append("<classCode scheme=\"kindCode\">"+TextUtilities.HTMLEncode(kindCode)+"</classCode>");
 			}
 			if (date != null) {
-				biblStruct.append("<date>"+date+"</date>");
+				biblStruct.append("<date>"+TextUtilities.HTMLEncode(date)+"</date>");
 			}
 			biblStruct.append("</imprint>");
 		}

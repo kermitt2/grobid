@@ -1,5 +1,7 @@
 package org.grobid.core.data;
 
+import org.grobid.core.utilities.TextUtilities;
+
 /**
  * Class for representing a date.
  * We use our own representation of dates for having a comparable which prioritize the most fully specified
@@ -258,7 +260,7 @@ public class Date implements Comparable<Date> {
         }
 
 		if (rawDate != null) {
-        	theDate += "\">"+rawDate+"</date>";
+        	theDate += "\">"+TextUtilities.HTMLEncode(rawDate)+"</date>";
 		}
 		else {
 			theDate += "\" />";
