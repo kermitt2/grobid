@@ -24,10 +24,12 @@ public class CalloutAnalyzer {
 
     // simple patterns just to capture the majority callout style
     private final static Pattern BRACKET_TEXT_PATTERN = Pattern.compile("\\[(.)+\\]");
-    private final static Pattern BRACKET_NUMBER_PATTERN = Pattern.compile("\\[((\\d+[a-f]?)|[,-;•])+\\]");
+    //private final static Pattern BRACKET_NUMBER_PATTERN = Pattern.compile("\\[((\\d{0,4}[a-f]?)|[,-;•])+\\]");
+    private final static Pattern BRACKET_NUMBER_PATTERN = Pattern.compile("\\[(?>[0-9]{1,4}[a-f]?[\\-;•,]?((and)|&|(et))?)+\\]");
     private final static Pattern PARENTHESIS_TEXT_PATTERN = Pattern.compile("\\((.)+\\)");
-    private final static Pattern PARENTHESIS_NUMBER_PATTERN = Pattern.compile("\\(((\\d+[a-f]?)|[,-;•])+\\)");
-    private final static Pattern NUMBER_PATTERN = Pattern.compile("(\\d+)[a-f]?");
+    //private final static Pattern PARENTHESIS_NUMBER_PATTERN = Pattern.compile("\\(((\\d+[a-f]?)|[,-;•])+\\)");
+    private final static Pattern PARENTHESIS_NUMBER_PATTERN = Pattern.compile("\\((?>[0-9]{1,4}[a-f]?[\\-;•,]?((and)|&|(et))?)+\\)");
+    private final static Pattern NUMBER_PATTERN = Pattern.compile("(?>\\d+)[a-f]?");
     private final static Pattern ROMAN_PATTERN = Pattern.compile("(IX|IV|V?I{0,3})");
 
     public static MarkerType getCalloutType(List<LayoutToken> callout) {
