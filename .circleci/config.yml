@@ -50,6 +50,6 @@ jobs:
       - store_artifacts:
           path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
       - store_artifacts:
-          path: build/reports/jacoco/codeCoverageReport/html/index.html
-      - store_artifacts:
-          path: build/reports/tests/codeCoverageReport/index.html
+          path: build/reports/jacoco/codeCoverageReport/html
+      - store_test_results:
+          path: build/reports/tests/codeCoverageReport/html
