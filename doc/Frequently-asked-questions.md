@@ -42,7 +42,7 @@ A simpler option, if you are only interested in raw text and images, is to use d
 
 We think there is no issue. First because GROBID calls the pdfalto binary as external command line - so there is similar to chaintools/scripts (which can be Apache/MIT) with external command line calls (calling most of the time also GPL stuff on Linux). More precisely:
 
-- GROBID and pdfalto are two different programs in the sense of FSF: 
+- GROBID and pdfalto are two different programs in the sense of FSF, see last paragraph [here](https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation): 
 
 ```text
 By contrast, pipes, sockets and command-line arguments are communication mechanisms normally 
@@ -52,8 +52,7 @@ normally are separate programs.
 
 Linking libraries, for instance with a JNI, would have required a LGPL, but here we don't link libraries, share address space, and so on. 
 
-- pdfalto can be aggregated in the same "grobid" distribution, see 
-https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation
+- pdfalto can be aggregated in the same "grobid" distribution, see GPL faq [Mere Aggregation](https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation)
 
 ```text
 The GPL permits you to create and distribute an aggregate, even when the licenses of the 
@@ -74,4 +73,4 @@ internal data structures, that too could be a basis to consider the two parts as
 combined into a larger program.
 ```
 
-pdfalto produces ALTO files, this is a standard, and pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files. So this restriction does not apply. 
+pdfalto produces ALTO files, which is a standard format. pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files, and could support ALTO files produced by other tools. So this restriction does not apply. 
