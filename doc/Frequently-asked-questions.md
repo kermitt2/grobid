@@ -68,6 +68,10 @@ Finally as the two source codes are shipped in different repo with clear licensi
 
 The only possible restriction would be:
 
->  But if the semantics of the communication are intimate enough, exchanging complex internal data structures, that too could be a basis to consider the two parts as combined into a larger program.
+```test
+But if the semantics of the communication are intimate enough, exchanging complex 
+internal data structures, that too could be a basis to consider the two parts as 
+combined into a larger program.
+```
 
-pdfalto produces ALTO files, this is a standard, and pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files. 
+pdfalto produces ALTO files, this is a standard, and pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files. So this restriction does not apply. 
