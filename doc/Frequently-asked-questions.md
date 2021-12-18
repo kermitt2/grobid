@@ -36,3 +36,33 @@ java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.7.1-SNAPSHOT-onejar.jar -g
 There is a web service doing the same, returning everything in a big zip file, `processFulltextAssetDocument`, still usable but deprecated.
 
 A simpler option, if you are only interested in raw text and images, is to use directly [pdfalto](https://github.com/kermitt2/pdfalto).
+
+
+## pdfalto is GPL, it is used by and shipped with GROBID which is Apache 2, is it okay in term of licensing?
+
+We think there is no issue. First because GROBID calls the pdfalto binary as external command line - so there is similar to chaintools/scripts (which can be Apache/MIT) with external command line calls (calling most of the time also GPL stuff on Linux). More precisely:
+
+- GROBID and pdfalto are two different programs in the sense of FSF: 
+
+```
+By contrast, pipes, sockets and command-line arguments are communication mechanisms normally used between two separate programs. So when they are used for communication, the modules normally are separate programs. 
+```
+
+Linking libraries, for instance with a JNI, would have required a LGPL, but here we don't link libraries, share address space, and so on. 
+
+- pdfalto can be aggregated in the same "grobid" distribution, see 
+https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation
+
+```
+The GPL permits you to create and distribute an aggregate, even when the licenses of the other software are nonfree or GPL-incompatible. The only condition is that you cannot release the aggregate under a license that prohibits users from exercising rights that each program's individual license would grant them.
+```
+
+For convenience it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
+
+Finally as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
+
+The only possible restriction would be:
+
+>  But if the semantics of the communication are intimate enough, exchanging complex internal data structures, that too could be a basis to consider the two parts as combined into a larger program.
+
+pdfalto produces ALTO files, this is a standard, and pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files. 
