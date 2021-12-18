@@ -68,7 +68,7 @@ Finally as the two source codes are shipped in different repo with clear licensi
 
 The only possible restriction would be:
 
-```test
+```text
 But if the semantics of the communication are intimate enough, exchanging complex 
 internal data structures, that too could be a basis to consider the two parts as 
 combined into a larger program.
