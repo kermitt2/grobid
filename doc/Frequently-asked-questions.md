@@ -44,8 +44,10 @@ We think there is no issue. First because GROBID calls the pdfalto binary as ext
 
 - GROBID and pdfalto are two different programs in the sense of FSF: 
 
-```
-By contrast, pipes, sockets and command-line arguments are communication mechanisms normally used between two separate programs. So when they are used for communication, the modules normally are separate programs. 
+```text
+By contrast, pipes, sockets and command-line arguments are communication mechanisms normally 
+used between two separate programs. So when they are used for communication, the modules 
+normally are separate programs. 
 ```
 
 Linking libraries, for instance with a JNI, would have required a LGPL, but here we don't link libraries, share address space, and so on. 
@@ -53,8 +55,11 @@ Linking libraries, for instance with a JNI, would have required a LGPL, but here
 - pdfalto can be aggregated in the same "grobid" distribution, see 
 https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation
 
-```
-The GPL permits you to create and distribute an aggregate, even when the licenses of the other software are nonfree or GPL-incompatible. The only condition is that you cannot release the aggregate under a license that prohibits users from exercising rights that each program's individual license would grant them.
+```text
+The GPL permits you to create and distribute an aggregate, even when the licenses of the 
+other software are nonfree or GPL-incompatible. The only condition is that you cannot 
+release the aggregate under a license that prohibits users from exercising rights that 
+each program's individual license would grant them.
 ```
 
 For convenience it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
