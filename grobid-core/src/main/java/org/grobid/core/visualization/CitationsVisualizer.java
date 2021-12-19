@@ -87,7 +87,7 @@ public class CitationsVisualizer {
                 if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/abs/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }
@@ -339,7 +339,7 @@ public class CitationsVisualizer {
                 } else if (!StringUtils.isEmpty(biblio.getDOI())) {
                     theUrl = "https://dx.doi.org/" + biblio.getDOI();
                 } else if (!StringUtils.isEmpty(biblio.getArXivId())) {
-                    theUrl = "https://arxiv.org/" + biblio.getArXivId();
+                    theUrl = "https://arxiv.org/abs/" + biblio.getArXivId();
                 } else if (!StringUtils.isEmpty(biblio.getWeb())) {
                     theUrl = biblio.getWeb();
                 }

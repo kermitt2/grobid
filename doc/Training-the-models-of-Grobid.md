@@ -70,7 +70,7 @@ Train (generate a new model):
 ```
 The training files considered are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus`
 
-The training of the models can be controlled using different parameters. The `nb_thread` parameter in the configuration file `grobid-home/config/grobid.yaml` can be increased to speed up the training. Similarly, modifying the stopping criteria can help speed up the training. Please refer [this comment](https://github.com/kermitt2/grobid/issues/336#issuecomment-412516422) to know more.
+The training of the models can be controlled using different parameters. The `nbThreads` parameter in the configuration file `grobid-home/config/grobid.yaml` can be increased to speed up the training. Similarly, modifying the stopping criteria can help speed up the training. Please refer [this comment](https://github.com/kermitt2/grobid/issues/336#issuecomment-412516422) to know more.
 
 Evaluate:
 ```bash

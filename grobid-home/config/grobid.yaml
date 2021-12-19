@@ -124,7 +124,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "name-header"
       engine: "wapiti"
@@ -156,7 +156,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "table"
       engine: "wapiti"
@@ -167,7 +167,7 @@ grobid:
         window: 20
       delft:  
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "affiliation-address"
       engine: "wapiti"

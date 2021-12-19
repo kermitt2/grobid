@@ -181,7 +181,7 @@ public class TEIFormatter {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
                 } else {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><p>" +
-                            defaultPublicationStatement + "</p></availability>");
+                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
                 }
                 tei.append("\n");
             }
@@ -408,10 +408,10 @@ public class TEIFormatter {
                                 (biblio.getCountry() != null)) {
                             tei.append(" <address>");
                             if (biblio.getTown() != null) {
-                                tei.append("<settlement>" + biblio.getTown() + "</settlement>");
+                                tei.append("<settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                             }
                             if (biblio.getCountry() != null) {
-                                tei.append("<country>" + biblio.getCountry() + "</country>");
+                                tei.append("<country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                             }
                             if ((biblio.getLocation() != null) && (biblio.getTown() == null) &&
                                     (biblio.getCountry() == null)) {
@@ -432,10 +432,10 @@ public class TEIFormatter {
                 tei.append("\t\t\t\t\t\t<meeting>");
                 tei.append(" <address>");
                 if (biblio.getTown() != null) {
-                    tei.append(" <settlement>" + biblio.getTown() + "</settlement>");
+                    tei.append(" <settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                 }
                 if (biblio.getCountry() != null) {
-                    tei.append(" <country>" + biblio.getCountry() + "</country>");
+                    tei.append(" <country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                 }
                 if ((biblio.getLocation() != null) && (biblio.getTown() == null)
                         && (biblio.getCountry() == null)) {
@@ -599,7 +599,7 @@ public class TEIFormatter {
             if (theDOI.endsWith(".xml")) {
                 theDOI = theDOI.replace(".xml", "");
             }
-            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");
+            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
         }
 
         if (!StringUtils.isEmpty(biblio.getArXivId())) {

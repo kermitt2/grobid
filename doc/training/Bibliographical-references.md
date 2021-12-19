@@ -14,21 +14,21 @@ Note that this mark-up for training data for bibliographical references follows 
 The complete bibliographical reference is enclosed in a `<bibl>` element. One `<bibl>` structure must match with exactly one bibliographical reference.
 Then the following tags are used for structuring the bibliographical references:
 
-* `<author>` for the complete sequence of authors
+* `<author>` for the complete sequence of authors. One tag pair can enclose multiple author names. Authors should be human names; for projects, organizations, collaborations, or companies, see the alternatives below.
 
-* `<orgname type="collaboration">` a collaboration is a project-based grouping of authors from different affiliations limited in time. Some examples: In high energy particules the [ATLAS](https://atlas.cern/), [CMS](http://cms.web.cern.ch/content/cms-collaboration) and [DELPHI](http://delphiwww.cern.ch/) collaborations (the current world record holder for number of authorship [arXiv:1503.07589](http://arxiv.org/abs/1503.07589) combines the two CERN collaborations ATLAS and CMS), or the [LUNA](https://luna.lngs.infn.it/) collaboration in astrophysics. The particularity of collaborations is to be used both as _authorship_ and _affiliation_ component.
+* `<orgName type="collaboration">` a collaboration is a project-based grouping of authors from different affiliations limited in time. Some examples: In high energy particules the [ATLAS](https://atlas.cern/), [CMS](http://cms.web.cern.ch/content/cms-collaboration) and [DELPHI](http://delphiwww.cern.ch/) collaborations (the current world record holder for number of authorship [arXiv:1503.07589](http://arxiv.org/abs/1503.07589) combines the two CERN collaborations ATLAS and CMS), or the [LUNA](https://luna.lngs.infn.it/) collaboration in astrophysics. The particularity of collaborations is to be used both as _authorship_ and _affiliation_ component.
 
-* `<title level="a">` for article title and chapter title. Here "a" stands for analytics (a part of a monograph)
+* `<title level="a">` for article title or chapter title (but not thesis, see below). Here "a" stands for analytics (a part of a monograph)
 
 * `<title level="j">` for journal title
 
 * `<title level="s">` for series title (e.g. "Lecture Notes in Computer Science")
 
-* `<title level="m">` for non journal bibliographical item holding the cited article, e.g. _conference proceedings_ title. Note if a book is cited, the title of the book is annotated with `<title level="m">`. If a thesis is cited, the title of the thesis is annotated with `<title level="m">`, and the type of thesis as `<note type="report">`. Here `m` stands for monograph.
+* `<title level="m">` for non journal bibliographical item holding the cited article, e.g. _conference proceedings_ title. Note if a book is cited, the title of the book is annotated with `<title level="m">`. If a thesis is cited, the title of the thesis is annotated with `<title level="m">`, and the type of thesis as `<note type="report">`. If a webpage is cited with just the page title, the title is `<title level="m">`. If a webpage is cited as part of a website, the name of the website itself is annotated with `<title level="m">`, and the page title as `<title level="a">`. Here `m` stands for monograph.
 
 * `<date>` the date sequence (excluding parenthesis, etc.)
 
-* `<biblScope unit="page">` the full range of pages of the article 
+* `<biblScope unit="page">` the full range of pages of the article. `unit="page"` is prefered over the legacy `unit="pp"`.
 
 * `<biblScope unit="volume">` the value of the volume (e.g. `vol. <biblScope unit="volume">7</biblScope>,`)
 
@@ -36,15 +36,15 @@ Then the following tags are used for structuring the bibliographical references:
 
 * `<orgName>` the institution for theses or technical reports
 
-* `<publisher>` the name of the publisher
+* `<publisher>` the name of the publisher. Also used instead of `<author>` for things like web pages or reports created by a business, for example "Google Inc". If "Wikipedia" is placed in the author position, use `<publisher>` instead of `<author>`.
 
 * `<pubPlace>` publication place, or location of the "publishing" institution
 
-* `<editor>` for all the sequence of editors
+* `<editor>` for a sequence of editors (single tag pair can enclose one or more editor names)
 
-* `<ptr type="web">` for web URL
+* `<ptr type="web">` for web URL. Do not include prefixes like `URL:` or suffixes like a period or `Accessed:`.
 
-* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="DOI">...</idno>`, for report identifiers `<idno type="report">...</idno>` is used 
+* `<idno>` for the document-specific identifier, in particular DOI and arXiv identifiers, optionally the type of identifier can be given by the attribute `@type`, for instance, `<idno type="DOI">...</idno>`, `<idno type="arXiv">..</idno>` (`type="arxiv"` is also allowed). All components of the identifier should be enclosed in the tag, including prefixes like `DOI=` and "arxiv:`, or suffixes like `[cs.LG]`. For report identifiers `<idno type="report">...</idno>` is used 
 
 * `<note type="report">` in the case of technical report at large, encode the indication of the kind of report, this includes "technical report" from an institution, but also the kind of thesis ("Ph.D. thesis", "M.Sc. thesis", etc.)
 
@@ -64,7 +64,27 @@ Example: _Biostatistics (2008), 9(2), pp. 234–248_
 		<bibl>
 			<title level="j">Biostatistics</title> (<date>2008</date>), 
 			<biblScope type="vol">9</biblScope>(<biblScope type="issue">2</biblScope>), 
-			pp. <biblScope type="pp">234–248</biblScope>
+			pp. <biblScope type="page">234–248</biblScope>
+    	</bibl>
+	</listBibl>
+
+</tei>
+
+```
+
+Example: _Microsoft. 2019. Azure REST API Specifications. https://github.com/Azure/azurerest-api-specs Last accessed 2019-11-22._
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" 
+	  xmlns:xlink="http://www.w3.org/1999/xlink" 
+	  xmlns:mml="http://www.w3.org/1998/Math/MathML">
+
+	<listBibl>
+		<bibl>
+            <publisher>Microsoft</publisher>. <date>2019</date>.
+            <title level="m">Azure REST API Specifications</title>.
+            <ptr type="web">https://github.com/Azure/azurerest-api-specs</ptr> Last accessed <date>2019-11-22</date>.
     	</bibl>
 	</listBibl>
 

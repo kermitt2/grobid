@@ -1861,29 +1861,29 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<equation_label>")) {
                 buffer.append("</label>\n\n");
             } else if (lastTag0.equals("<table>")) {
-                buffer.append("</table>\n\n");
+                buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<figure>")) {
                 buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<item>")) {
                 buffer.append("</item>\n\n");
-            } /*else if (lastTag0.equals("<label>")) {
-                buffer.append("</label>\n\n");
-            } 
-			else if (lastTag0.equals("<content>")) {
-                buffer.append("</content>\n\n");
-            } */
-			else if (lastTag0.equals("<citation_marker>")) {
+            } else if (lastTag0.equals("<citation_marker>") || 
+                lastTag0.equals("<figure_marker>") || 
+                lastTag0.equals("<table_marker>") || 
+                lastTag0.equals("<equation_marker>")) {
                 buffer.append("</ref>");
 
-            } else if (lastTag0.equals("<figure_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<table_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<equation_marker>")) {
-                buffer.append("</ref>");
+                // Make sure that paragraph is closed when markers are at the end of it
+                if (!currentTag0.equals("<paragraph>") && 
+                    (!currentTag0.equals("<citation_marker>") || 
+                     !currentTag0.equals("<figure_marker>") || 
+                     !currentTag0.equals("<table_marker>") || 
+                     !currentTag0.equals("<equation_marker>")
+                     )
+                    ) {
+                    buffer.append("</p>\n\n");
+                }
             } else {
                 res = false;
-
             }
 
         }
