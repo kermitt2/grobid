@@ -81,7 +81,7 @@ If you are using a Python environment for the DeLFT installation, you can set th
     python_virtualEnv: /where/my/damned/python/virtualenv/is/
 ```
 
-Normally by setting the Python environment path in the config file, you will not need to launch GROBID in the same activated environment. 
+Normally by setting the Python environment path in the config file (e.g. `pythonVirtualEnv: "../delft/env"`), you will not need to launch GROBID in the same activated environment. 
 
 <span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`):
 

@@ -68,7 +68,7 @@ grobid:
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
     # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
     install: "../delft"
-    pythonVirtualEnv:
+    pythonVirtualEnv: "../delft/env"
 
   wapiti:
     # Wapiti global parameters
@@ -177,8 +177,8 @@ grobid:
         architecture: "BidLSTM_CRF_FEATURES"
 
     - name: "citation"
-      engine: "wapiti"
-      #engine: "delft"
+      #engine: "wapiti"
+      engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
@@ -186,7 +186,7 @@ grobid:
         nbMaxIterations: 3000
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
         #architecture: "scibert"
         useELMo: false
         embeddings_name: "glove-840B"

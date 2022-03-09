@@ -156,7 +156,7 @@ Under `delft`, we find the generic parameters of the DeLFT engine. For using Dee
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
     # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
     install: "../delft"
-    pythonVirtualEnv:
+    pythonVirtualEnv: ../delft/env"
 ```
 
 ### Configuring the models
