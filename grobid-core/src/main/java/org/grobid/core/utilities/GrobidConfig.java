@@ -91,6 +91,7 @@ public class GrobidConfig {
         public String architecture;
         public boolean useELMo = false;
         public String embeddings_name = "glove-840B";
+        public String transformer;
 
         public DelftModelParameterSet training;
         public DelftModelParameterSet runtime;
@@ -109,6 +110,6 @@ public class GrobidConfig {
         public String engine; /* value wapiti or delft */ 
 
         public WapitiModelParameters wapiti;
-        public DelftModelParameters delft;   
+        public DelftModelParameters delft;
     }
 }
