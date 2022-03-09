@@ -12,6 +12,9 @@ public final class Language {
     public static final String FR = "fr";
     public static final String IT = "it";
     public static final String ES = "es";
+    public static final String JA = "ja";
+    public static final String AR = "ar";
+    public static final String ZH = "zh";
 
     private String lang;
     private double conf;
