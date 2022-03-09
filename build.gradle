@@ -248,7 +248,7 @@ project("grobid-core") {
 
         implementation "joda-time:joda-time:2.9.9"
         implementation "org.apache.lucene:lucene-analyzers-common:4.5.1"
-        implementation 'black.ninia:jep:3.9.1'
+        implementation 'black.ninia:jep:4.0.2'
         implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
         implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
 
