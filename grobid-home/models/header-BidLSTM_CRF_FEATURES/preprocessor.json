@@ -1,9 +1,11 @@
 {
-    "use_char_feature": true,
     "padding": true,
     "return_lengths": true,
+    "return_word_embeddings": true,
     "return_casing": false,
     "return_features": true,
+    "return_chars": true,
+    "return_bert_embeddings": false,
     "vocab_char": {
         "<PAD>": 0,
         "<UNK>": 1,
@@ -507,5 +509,45 @@
                 "0": 253
             }
         }
+    },
+    "indice_tag": {
+        "0": "<PAD>",
+        "1": "B-<abstract>",
+        "2": "B-<address>",
+        "3": "B-<affiliation>",
+        "4": "B-<author>",
+        "5": "B-<copyright>",
+        "6": "B-<date>",
+        "7": "B-<doctype>",
+        "8": "B-<editor>",
+        "9": "B-<email>",
+        "10": "B-<funding>",
+        "11": "B-<group>",
+        "12": "B-<keyword>",
+        "13": "B-<meeting>",
+        "14": "B-<pubnum>",
+        "15": "B-<reference>",
+        "16": "B-<submission>",
+        "17": "B-<title>",
+        "18": "B-<web>",
+        "19": "I-<abstract>",
+        "20": "I-<address>",
+        "21": "I-<affiliation>",
+        "22": "I-<author>",
+        "23": "I-<copyright>",
+        "24": "I-<date>",
+        "25": "I-<doctype>",
+        "26": "I-<editor>",
+        "27": "I-<email>",
+        "28": "I-<funding>",
+        "29": "I-<group>",
+        "30": "I-<keyword>",
+        "31": "I-<meeting>",
+        "32": "I-<pubnum>",
+        "33": "I-<reference>",
+        "34": "I-<submission>",
+        "35": "I-<title>",
+        "36": "I-<web>",
+        "37": "O"
     }
 }

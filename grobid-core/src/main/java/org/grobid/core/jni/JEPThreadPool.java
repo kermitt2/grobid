@@ -72,8 +72,6 @@ public class JEPThreadPool {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
-        //config.setRedirectOutputStreams(GrobidProperties.isDeLFTRedirectOutput());
-        //config.setRedirectOutputStreams(true);
         config.redirectStdout(System.out);
         config.redirectStdErr(System.err);
         if (sitePackagesPath != null) {
@@ -86,8 +84,6 @@ public class JEPThreadPool {
     private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
         // import packages
         jep.eval("import os");
-        //jep.eval("import numpy as np");
-        //jep.eval("import keras.backend as K");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
         jep.eval("import delft.sequenceLabelling");
@@ -106,7 +102,6 @@ public class JEPThreadPool {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            //jep = new Jep(config);
             jep = new SubInterpreter(config);
             this.initializeJepInstance(jep, delftPath);
             success = true;

@@ -73,7 +73,6 @@ public class JEPThreadPoolClassifier {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
-        //config.setRedirectOutputStreams(true);
         config.redirectStdout(System.out);
         config.redirectStdErr(System.err);
         if (sitePackagesPath != null) {
@@ -86,8 +85,6 @@ public class JEPThreadPoolClassifier {
     private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
         // import packages
         jep.eval("import os");
-        //jep.eval("import numpy as np");
-        //jep.eval("import keras.backend as K");
         jep.eval("import json");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
@@ -108,7 +105,6 @@ public class JEPThreadPoolClassifier {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            //jep = new Jep(config);
             jep = new SubInterpreter(config);
             this.initializeJepInstance(jep, delftPath);
             success = true;
