@@ -96,81 +96,8 @@
             "cache-training": true,
             "lang": "fr",
             "url": "https://traces1.inria.fr/oscar/files/models/cc/fr.zip"
-        },
-        {
-            "name": "flair-forward-en-news",
-            "path_weights": "/media/lopez/T5/embeddings/flair-lm-news-english-forward-v0.2rc.pt",
-            "path-cache": "data/models/FLAIR/",
-            "cache-training": false,
-            "lang": "en"
-        },
-        {
-            "name": "flair-backward-en-news",
-            "path_weights": "/media/lopez/T5/embeddings/flair-lm-news-english-backward-v0.2rc.pt",
-            "path-cache": "data/models/FLAIR/",
-            "cache-training": false,
-            "lang": "en"
-        },
-        {
-            "name": "flair-forward-en-mix",
-            "path_weights": "/media/lopez/T5/embeddings/flair-lm-mix-english-forward-v0.2rc.pt",
-            "path-cache": "data/models/FLAIR/",
-            "cache-training": false,
-            "lang": "en"
-        },
-        {
-            "name": "flair-backward-en-mix",
-            "path_weights": "/media/lopez/T5/embeddings/flair-lm-mix-english-backward-v0.2rc.pt",
-            "path-cache": "data/models/FLAIR/",
-            "cache-training": false,
-            "lang": "en"
         }
     ],
     "transformers": [
-        {
-            "name": "bert-base-en",
-            "path-config": "/media/lopez/T5/embeddings/cased_L-12_H-768_A-12/bert_config.json",
-            "path-weights": "/media/lopez/T5/embeddings/cased_L-12_H-768_A-12/bert_model.ckpt",
-            "path-vocab": "/media/lopez/T5/embeddings/cased_L-12_H-768_A-12/vocab.txt",
-            "path-cache": "/media/lopez/T5/cache/bert/",
-            "cache-training": true,
-            "lang": "en"
-        },
-        {
-            "name": "bert-large-en",
-            "path-config": "/media/lopez/T5/embeddings/wwm_cased_L-24_H-1024_A-16/bert_config.json",
-            "path-weights": "/media/lopez/T5/embeddings/wwm_cased_L-24_H-1024_A-16/bert_model.ckpt",
-            "path-vocab": "/media/lopez/T5/embeddings/wwm_cased_L-24_H-1024_A-16/vocab.txt",
-            "path-cache": "/media/lopez/T5/cache/bert/",
-            "cache-training": true,
-            "lang": "en"
-        },
-        {
-            "name": "bert-base-multi",
-            "path-config": "/media/lopez/T5/embeddings/multi_cased_L-12_H-768_A-12/bert_config.json",
-            "path-weights": "/media/lopez/T5/embeddings/multi_cased_L-12_H-768_A-12/bert_model.ckpt",
-            "path-vocab": "/media/lopez/T5/embeddings/multi_cased_L-12_H-768_A-12/vocab.txt",
-            "path-cache": "/media/lopez/T5/cache/bert/",
-            "cache-training": true,
-            "lang": "multi"
-        },
-        {
-            "name": "scibert",
-            "path-config": "/media/lopez/T5/embeddings/scibert_scivocab_cased/bert_config.json",
-            "path-weights": "/media/lopez/T5/embeddings/scibert_scivocab_cased/bert_model.ckpt",
-            "path-vocab": "/media/lopez/T5/embeddings/scibert_scivocab_cased/vocab.txt",
-            "path-cache": "/media/lopez/T5/cache/scibert/",
-            "cache-training": true,
-            "lang": "en"
-        },
-        {
-            "name": "biobert",
-            "path-config": "/media/lopez/T5/embeddings/biobert_v1.1_pubmed/bert_config.json",
-            "path-weights": "/media/lopez/T5/embeddings/biobert_v1.1_pubmed/model.ckpt-1000000",
-            "path-vocab": "/media/lopez/T5/embeddings/biobert_v1.1_pubmed/vocab.txt",
-            "path-cache": "/media/lopez/T5/cache/biobert/",
-            "cache-training": true,
-            "lang": "en"
-        }
     ]
 }
