@@ -12,6 +12,7 @@ import jep.Jep;
 import jep.JepConfig;
 import jep.JepException;
 import jep.SubInterpreter;
+import jep.SharedInterpreter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -102,7 +103,13 @@ public class JEPThreadPool {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new SubInterpreter(config);
+            //jep = new SubInterpreter(config);
+            try {
+                SharedInterpreter.setConfig(config);
+            } catch(Exception e) {
+                LOGGER.info("JEP interpreter already initialized");
+            }
+            jep = new SharedInterpreter();
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;

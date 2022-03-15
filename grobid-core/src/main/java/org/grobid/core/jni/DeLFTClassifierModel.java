@@ -28,12 +28,12 @@ public class DeLFTClassifierModel {
     private String architecture;
 
     public DeLFTClassifierModel(String model, String architecture) {
-        this.modelName = model.replace("-", "_");
+        this.modelName = model;
         this.architecture = architecture;
         try {
-            File modelDir = new File("resources/models/");
-            LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + modelDir.getAbsolutePath() + "...");
-            JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, modelDir, this.architecture));
+            //File modelDir = new File("resources/models/");
+            LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + GrobidProperties.getInstance().getModelPath() + "...");
+            JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), this.architecture));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
         }
@@ -55,7 +55,7 @@ public class DeLFTClassifierModel {
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
             try { 
                 System.out.println("init classifier...");
-                jep.eval(this.modelName+" = Classifier('" + this.modelName.replace("_", "-") + "', 'model_type=" + this.architecture + "')");
+                jep.eval(this.modelName+" = Classifier('" + this.modelName + "_" + this.architecture + "', 'architecture=" + this.architecture + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
                 throw new GrobidException("DeLFT classifier model initialization failed. ", e);
@@ -78,6 +78,8 @@ public class DeLFTClassifierModel {
         ) throws JepException, IOException {
             try {
                 jep.set(name, values);
+                // convert PyJList to normal python list (necessary for Hugging Face transformer tokenizer input)
+                jep.eval("input = list(input)");
             } catch(JepException e) {
                 // we have normally the Java List as a PyJList in python, which should
                 // be equivalent to a normal python list 
@@ -106,7 +108,6 @@ public class DeLFTClassifierModel {
 
                 // load and classify, input here is an array of texts to classify
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
-                //jep.eval("print('the input', input)");
                 jep.eval("jsondict = "+this.modelName+".predict(input, 'json', use_main_thread_only=True)");
                 //jep.eval("print(json.dumps(jsondict, sort_keys=False, indent=4, ensure_ascii=False))");
                 Object objectResult = jep.getValue("json.dumps(jsondict, sort_keys=True, indent=4, ensure_ascii=False)");
@@ -135,6 +136,7 @@ public class DeLFTClassifierModel {
     public String classify(List<String> data) {
         String result = null;
         try {
+            System.out.println(data);
             result = JEPThreadPoolClassifier.getInstance().call(new ClassificationTask(this.modelName, data));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " classification interrupted", e);

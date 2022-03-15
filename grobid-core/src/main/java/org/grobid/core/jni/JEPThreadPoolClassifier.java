@@ -12,6 +12,7 @@ import jep.Jep;
 import jep.JepConfig;
 import jep.JepException;
 import jep.SubInterpreter;
+import jep.SharedInterpreter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,12 +89,11 @@ public class JEPThreadPoolClassifier {
         jep.eval("import json");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
-        jep.eval("from delft.utilities.Utilities import split_data_and_labels");
+        //jep.eval("from delft.utilities.Utilities import split_data_and_labels");
         jep.eval("import delft.textClassification");
         jep.eval("from delft.textClassification import Classifier");
-        jep.eval("from delft.textClassification.reader import load_dataseer_corpus_csv");
-        jep.eval("from delft.textClassification.reader import vectorize as vectorizer");
-        jep.eval("from delft.textClassification.models import modelTypes");
+        //jep.eval("from delft.textClassification.reader import load_dataseer_corpus_csv");
+        //jep.eval("from delft.textClassification.reader import vectorize as vectorizer");
     }
 
     private Jep createJEPInstance() {
@@ -105,7 +105,13 @@ public class JEPThreadPoolClassifier {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new SubInterpreter(config);
+            //jep = new SubInterpreter(config);
+            try {
+                SharedInterpreter.setConfig(config);
+            } catch(Exception e) {
+                LOGGER.info("JEP interpreter already initialized");
+            }
+            jep = new SharedInterpreter();
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;
