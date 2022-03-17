@@ -136,7 +136,6 @@ public class DeLFTClassifierModel {
     public String classify(List<String> data) {
         String result = null;
         try {
-            System.out.println(data);
             result = JEPThreadPoolClassifier.getInstance().call(new ClassificationTask(this.modelName, data));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " classification interrupted", e);
