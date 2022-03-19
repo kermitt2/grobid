@@ -156,7 +156,6 @@ public class JEPThreadPoolClassifier {
     }
 
     public void run(Runnable task) throws InterruptedException {
-        System.out.println("running thread: " + Thread.currentThread().getId());
         Future future = executor.submit(task);
         // wait until done (in ms)
         while (!future.isDone()) {

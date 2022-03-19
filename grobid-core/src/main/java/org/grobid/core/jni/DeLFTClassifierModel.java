@@ -58,6 +58,15 @@ public class DeLFTClassifierModel {
                 String model_variable = this.modelName.replace("-", "_");
                 jep.eval(model_variable+" = Classifier('" + this.modelName + "_" + this.architecture + "')");
                 jep.eval(model_variable+".load(dir_path='"+this.modelPath.getAbsolutePath()+"')");
+
+                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.max_sequence_length="+
+                        GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName));
+
+                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1)
+                    jep.eval(this.modelName+".config.batch_size="+
+                        GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
+
             } catch(JepException e) {
                 throw new GrobidException("DeLFT classifier model initialization failed. ", e);
             }
@@ -80,7 +89,7 @@ public class DeLFTClassifierModel {
             try {
                 jep.set(name, values);
                 // convert PyJList to normal python list (necessary for Hugging Face transformer tokenizer input)
-                jep.eval("input = list(input)");
+                jep.eval(name + " = list("+name+")");
             } catch(JepException e) {
                 // we have normally the Java List as a PyJList in python, which should
                 // be equivalent to a normal python list 
@@ -120,7 +129,6 @@ public class DeLFTClassifierModel {
                 // cleaning
                 jep.eval("del jsondict");
                 jep.eval("del input");
-                //jep.eval("K.clear_session()");
             } catch(JepException e) {
                 LOGGER.error("DeLFT model classification via JEP failed", e);
             } catch(IOException e) {
@@ -178,6 +186,7 @@ public class DeLFTClassifierModel {
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
             try {
                 // load data
+                // to be reviewed for classification
                 jep.eval("x_all, y_all, f_all = load_data_and_labels_crf_file('" + this.trainPath.getAbsolutePath() + "')");
                 jep.eval("x_train, x_valid, y_train, y_valid = train_test_split(x_all, y_all, test_size=0.1)");
                 jep.eval("print(len(x_train), 'train sequences')");
