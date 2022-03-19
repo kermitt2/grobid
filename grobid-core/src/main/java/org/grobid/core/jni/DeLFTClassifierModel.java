@@ -31,8 +31,7 @@ public class DeLFTClassifierModel {
         this.modelName = model;
         this.architecture = architecture;
         try {
-            //File modelDir = new File("resources/models/");
-            LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + GrobidProperties.getInstance().getModelPath() + "...");
+            LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + GrobidProperties.getInstance().getModelPath());
             JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), this.architecture));
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
@@ -55,8 +54,10 @@ public class DeLFTClassifierModel {
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
             try { 
                 System.out.println("init classifier...");
-                jep.eval(this.modelName+" = Classifier('" + this.modelName + "_" + this.architecture + "', 'architecture=" + this.architecture + "')");
-                jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
+                // as dash characters are forbidden in python variable name...
+                String model_variable = this.modelName.replace("-", "_");
+                jep.eval(model_variable+" = Classifier('" + this.modelName + "_" + this.architecture + "')");
+                jep.eval(model_variable+".load(dir_path='"+this.modelPath.getAbsolutePath()+"')");
             } catch(JepException e) {
                 throw new GrobidException("DeLFT classifier model initialization failed. ", e);
             }
@@ -108,7 +109,8 @@ public class DeLFTClassifierModel {
 
                 // load and classify, input here is an array of texts to classify
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
-                jep.eval("jsondict = "+this.modelName+".predict(input, 'json', use_main_thread_only=True)");
+                String model_variable = this.modelName.replace("-", "_");
+                jep.eval("jsondict = "+model_variable+".predict(input, 'json', use_main_thread_only=True)");
                 //jep.eval("print(json.dumps(jsondict, sort_keys=False, indent=4, ensure_ascii=False))");
                 Object objectResult = jep.getValue("json.dumps(jsondict, sort_keys=True, indent=4, ensure_ascii=False)");
 
@@ -271,7 +273,8 @@ public class DeLFTClassifierModel {
         public void run() { 
             Jep jep = JEPThreadPoolClassifier.getInstance().getJEPInstance(); 
             try { 
-                jep.eval("del "+this.modelName);
+                String model_variable = this.modelName.replace("-", "_");
+                jep.eval("del "+model_variable);
             } catch(JepException e) {
                 LOGGER.error("Closing DeLFT classification model failed", e);
             } 
