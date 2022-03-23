@@ -1515,7 +1515,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             if (pos+posInSentence <= theSentences.get(i).end) {
-                sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
+                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+                local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
+                sentenceElement.appendChild(local_text_chunk);
                 curParagraph.appendChild(sentenceElement);
             }
         }
@@ -1532,8 +1534,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
         }
 
-    }
-
+    }   
 
     /**
      * Return the graphic objects in a given interval position in the document.
