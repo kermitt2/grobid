@@ -15,6 +15,7 @@ pwd
 git clone --branch v4.0.2 https://github.com/ninia/jep
 cd jep
 echo "building jep library..."
+#sudo -E python3 setup.py build install
 python3 setup.py build install
 echo "build sucessful"
 
