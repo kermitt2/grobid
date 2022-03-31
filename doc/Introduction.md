@@ -79,6 +79,7 @@ Many thanks to:
 * Oliver Kopp (JabRef research)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
+* The JEP team for their great JVM CPython embedding solution
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
 * and the other contributors: Jakob Fix, Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...

@@ -15,7 +15,6 @@
 # build builder image
 # -------------------
 
-#FROM openjdk:8u212-jdk as builder
 FROM openjdk:8u275-jdk as builder
 
 USER root
@@ -61,8 +60,8 @@ RUN rm -rf grobid-source
 # -------------------
 
 # use NVIDIA Container Toolkit to automatically recognize possible GPU drivers on the host machine
-FROM tensorflow/tensorflow:1.15.5-gpu
-CMD nvidia-smi
+FROM tensorflow/tensorflow:2.7.0-gpu
+#CMD nvidia-smi
 
 # setting locale is likely useless but to be sure
 ENV LANG C.UTF-8
@@ -83,7 +82,7 @@ COPY --from=builder /opt/grobid .
 RUN python3 -m pip install pip --upgrade
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.2.8
+RUN pip3 install requests delft==0.3.0
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
@@ -117,20 +116,23 @@ RUN curl --fail --show-error --location -q ${JDK_URL} -o /tmp/openjdk.tar.gz \
         --directory "${TEMP_JDK_HOME}" \
         --strip-components 1 \
         --no-same-owner \
-    && JAVA_HOME=${TEMP_JDK_HOME} pip3 install jep==3.9.1 \
+    && JAVA_HOME=${TEMP_JDK_HOME} pip3 install jep==4.0.2 \
     && rm -f /tmp/openjdk.tar.gz \
     && rm -rf "${TEMP_JDK_HOME}"
-ENV LD_LIBRARY_PATH=/usr/local/lib/python3.6/dist-packages/jep:${LD_LIBRARY_PATH}
+ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:${LD_LIBRARY_PATH}
 # remove libjep.so because we are providng our own version in the virtual env
-RUN rm /opt/grobid/grobid-home/lib/lin-64/libjep.so
+RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
 
 # preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
 # to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected
 
 COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
-COPY --from=builder /opt/grobid-source/grobid-home/config/embedding-registry.json .
-RUN python3 preload_embeddings.py
+COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
+RUN python3 preload_embeddings.py --registry ./resources-registry.json
 RUN ln -s /opt/grobid /opt/delft
+
+RUN mkdir delft
+RUN cp ./resources-registry.json delft/
 
 CMD ["./grobid-service/bin/grobid-service"]
 

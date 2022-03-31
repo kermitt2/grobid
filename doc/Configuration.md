@@ -156,7 +156,7 @@ Under `delft`, we find the generic parameters of the DeLFT engine. For using Dee
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
     # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
     install: "../delft"
-    pythonVirtualEnv:
+    pythonVirtualEnv: ../delft/env"
 ```
 
 ### Configuring the models
@@ -165,13 +165,13 @@ Each model has its own configuration indicating:
 
 - which "engine" to be used, with values `wapiti` for featured-based CRF or `delft` for Deep Learning models. 
 
-- for Deep Learning models, which neural architecture to be used, with choices normally among `BidLSTM_CRF`, `BidLSTM_CRF_FEATURES`, `bert-base-en` and `scibert`. The corresponding model/architecture combination need to be available under `grobid-home/models/`. If it is not the case, you will need to train the model with this particular architecture. 
+- for Deep Learning models, which neural architecture to be used, with choices normally among `BidLSTM_CRF`, `BidLSTM_CRF_FEATURES`, `BERT`, `BERT-CRF`, `BERT_CRF_FEATURES`. The corresponding model/architecture combination need to be available under `grobid-home/models/`. If it is not the case, you will need to train the model with this particular architecture. 
 
 Wapiti CRF training uses three parameters: `window`, `epsilon` and `nbMaxIterations` related to stopping criteria. 
 
 DeLFT models use traditional Deep Learning parameters, with the possibility to override default parameters with two specific parameter subgroups `training` (parameters to be used during training) and `runtime` (parameters to be used when doing inference). With this distinction it is possible for instance to train with parameters adapted to a given GPU and doing inference with a smaller GPU. 
 
-For instance, the citation model is configured below to use a `BidLSTM_CRF_FEATURES` architecture with `glove-840B` embeddings and with the indicated architecture-specific parameters:
+For instance, the citation model is configured below to use a `BidLSTM_CRF_FEATURES` architecture with the indicated architecture-specific parameters:
 
 ```yml
   models:
@@ -186,7 +186,6 @@ For instance, the citation model is configured below to use a `BidLSTM_CRF_FEATU
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
         useELMo: false
-        embeddings_name: "glove-840B"
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
@@ -196,6 +195,8 @@ For instance, the citation model is configured below to use a `BidLSTM_CRF_FEATU
           max_sequence_length: 3000  
           batch_size: 30
 ```
+
+A Deep Learning model comes with predefined `word embeddings` (e.g. `glove-840B` or `word2vec`) or `transformer` pre-trained model name (e.g. `bert-base-cased`, `allenai/scibert_scivocab_cased` - reusing Hugging Face transformers Hub model names). They are part of the trained DL model and will be loaded online the first time if now available in the local DeLFT install. 
 
 ### Logging
 

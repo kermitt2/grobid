@@ -1537,8 +1537,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
         }
 
-    }
-
+    }   
 
     /**
      * Return the graphic objects in a given interval position in the document.
