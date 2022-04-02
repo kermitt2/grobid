@@ -14,6 +14,7 @@ cd grobid-home/tmp
 pwd
 git clone --branch v4.0.2 https://github.com/ninia/jep
 cd jep
+git checkout v4.0.2
 echo "building jep library..."
 #sudo -E python3 setup.py build install
 python3 setup.py build install
