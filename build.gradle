@@ -107,6 +107,7 @@ subprojects {
         implementation "commons-dbutils:commons-dbutils:1.7"
         implementation "com.google.guava:guava:28.2-jre"
         implementation "org.apache.httpcomponents:httpclient:4.5.3"
+        implementation "black.ninia:jep:4.0.2"
 
         implementation "com.fasterxml.jackson.core:jackson-core:2.10.1"
         implementation "com.fasterxml.jackson.core:jackson-databind:2.10.1"
@@ -248,7 +249,7 @@ project("grobid-core") {
 
         implementation "joda-time:joda-time:2.9.9"
         implementation "org.apache.lucene:lucene-analyzers-common:4.5.1"
-        implementation 'black.ninia:jep:3.9.1'
+        implementation 'black.ninia:jep:4.0.2'
         implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
         implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
 

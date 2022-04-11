@@ -1,19 +1,13 @@
 {
-    "case_vocab_size": 8,
-    "features_lstm_units": 4,
-    "use_ELMo": false,
-    "dropout": 0.5,
-    "fold_number": 1,
     "model_name": "name-header-BidLSTM_CRF_FEATURES",
-    "use_char_feature": true,
-    "num_char_lstm_units": 25,
-    "word_embedding_size": 300,
-    "max_feature_size": 10,
-    "features_vocabulary_size": 12,
+    "architecture": "BidLSTM_CRF_FEATURES",
+    "embeddings_name": "glove-840B",
     "char_vocab_size": 172,
-    "recurrent_dropout": 0.5,
-    "case_embedding_size": 5,
-    "num_word_lstm_units": 100,
+    "case_vocab_size": 8,
+    "char_embedding_size": 25,
+    "num_char_lstm_units": 25,
+    "max_char_length": 30,
+    "features_vocabulary_size": 12,
     "features_indices": [
         9,
         10,
@@ -26,25 +20,21 @@
         17,
         18
     ],
+    "features_embedding_size": 4,
+    "features_lstm_units": 4,
+    "max_sequence_length": 3000,
+    "word_embedding_size": 300,
+    "num_word_lstm_units": 100,
+    "case_embedding_size": 5,
+    "dropout": 0.5,
+    "recurrent_dropout": 0.5,
+    "use_crf": true,
+    "use_chain_crf": false,
+    "fold_number": 1,
+    "batch_size": 20,
+    "transformer_name": null,
+    "use_ELMo": false,
     "features_map_to_index": {
-        "16": {
-            "1": 86,
-            "0": 85
-        },
-        "17": {
-            "1": 98,
-            "0": 97
-        },
-        "18": {
-            "QUOTE": 116,
-            "OPENBRACKET": 114,
-            "DOT": 110,
-            "HYPHEN": 112,
-            "NOPUNCT": 113,
-            "ENDBRACKET": 111,
-            "PUNCT": 115,
-            "COMMA": 109
-        },
         "9": {
             "LINEEND": 1,
             "LINEIN": 2,
@@ -61,29 +51,38 @@
             "NODIGIT": 27
         },
         "12": {
-            "1": 38,
-            "0": 37
+            "0": 37,
+            "1": 38
         },
         "13": {
-            "1": 50,
-            "0": 49
+            "0": 49,
+            "1": 50
         },
         "14": {
-            "1": 62,
-            "0": 61
+            "0": 61,
+            "1": 62
         },
         "15": {
-            "1": 74,
-            "0": 73
+            "0": 73,
+            "1": 74
+        },
+        "16": {
+            "0": 85,
+            "1": 86
+        },
+        "17": {
+            "0": 97,
+            "1": 98
+        },
+        "18": {
+            "COMMA": 109,
+            "DOT": 110,
+            "ENDBRACKET": 111,
+            "HYPHEN": 112,
+            "NOPUNCT": 113,
+            "OPENBRACKET": 114,
+            "PUNCT": 115,
+            "QUOTE": 116
         }
-    },
-    "char_embedding_size": 25,
-    "batch_size": 20,
-    "max_char_length": 30,
-    "embeddings_name": "glove-840B",
-    "use_crf": true,
-    "model_type": "BidLSTM_CRF_FEATURES",
-    "features_embedding_size": 4,
-    "use_BERT": false,
-    "max_sequence_length": 3000
+    }
 }
