@@ -194,8 +194,8 @@ public class EvaluationDOIMatching {
             try {
                 List<BiblioItem> biblios = engine.processRawReferences(rawRefs, 2);
 
-                // inject other metadata
-                for(int i=0; i<rawRefs.size(); i++) {
+                // inject other metadata - note: useless
+                /*for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);
 
                     String atitle = atitles.get(i);
@@ -209,7 +209,7 @@ public class EvaluationDOIMatching {
                     biblio.setVolume(volume);
                     //biblio.setFirstPage(firstPage);
                     biblio.setFirstAuthorSurname(author);
-                }
+                }*/
 
                 for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);
@@ -239,8 +239,11 @@ public class EvaluationDOIMatching {
 
         double processTime = ((double)System.currentTimeMillis() - start) / 1000.0;
 
+        double rate = ((double)processTime)/nbRef;
         System.out.println("\n\n" + nbRef + " bibliographical references processed in " + 
-             processTime + " seconds, " + ((double)processTime)/nbRef + " seconds per bibliographical reference.");
+             processTime + " seconds, " + 
+             TextUtilities.formatFourDecimals(rate) + 
+            " seconds per bibliographical reference.");
         System.out.println("Found " + nbDOIFound + " DOI");
 
         // evaluation of the run
@@ -253,17 +256,17 @@ public class EvaluationDOIMatching {
             report.append("CROSSREF");
         report.append(" API ======= \n");
         double precision = ((double)nbDOICorrect / nbDOIFound);
-        report.append("\nprecision:\t" + precision);
+        report.append("\nprecision:\t");
+        report.append(TextUtilities.formatTwoDecimals(precision * 100));
         double recall = ((double)nbDOICorrect / nbRef);
-        report.append("\nrecall:\t" + recall);
+        report.append("\nrecall:\t\t").append(TextUtilities.formatTwoDecimals(recall * 100));
         double f1 = 0.0;
         if (precision + recall != 0.0)
            f1 = (2 * precision * recall) / (precision + recall);
-        report.append("\nf-score:\t" + f1 + "\n");
+        report.append("\nF1-score:\t").append(TextUtilities.formatTwoDecimals(f1 * 100)).append("\n");
 
         //report.append("\n======= BIBLIO GLUTTON ======= \n");
 
-        
         //System.out.println("Evaluation metrics produced in " + 
         //       (System.currentTimeMillis() - start) / (1000.00) + " seconds");
 

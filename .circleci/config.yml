@@ -44,14 +44,14 @@ jobs:
       - run: ./gradlew test jacocoTestReport coveralls --no-daemon
 
       - store_test_results:
-          path: build/reports/jacoco/test/jacocoTestReport.xml
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
       - store_test_results:
-          path: build/reports/tests/test
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
       - store_artifacts:
-          path: build/reports/jacoco/test/jacocoTestReport.xml
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
       - store_artifacts:
-          path: build/reports/tests/test
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
       - store_artifacts:
-          path: build/reports/jacoco/test/html/index.html
-      - store_artifacts:
-          path: build/reports/tests/test/index.html
+          path: build/reports/jacoco/codeCoverageReport/html
+      - store_test_results:
+          path: build/reports/tests/codeCoverageReport/html
