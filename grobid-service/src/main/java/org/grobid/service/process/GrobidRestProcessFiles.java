@@ -150,6 +150,7 @@ public class GrobidRestProcessFiles {
      *                             PDF, -1 for the last page (default)
      * @param generateIDs          if true, generate random attribute id on the textual elements of
      *                             the resulting TEI
+     * @param segmentSentences     if true, return results with segmented sentences
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
@@ -248,6 +249,7 @@ public class GrobidRestProcessFiles {
      *                             PDF, -1 for the last page (default)
      * @param generateIDs          if true, generate random attribute id on the textual elements of
      *                             the resulting TEI
+     * @param segmentSentences     if true, return results with segmented sentences
      * @return a response object mainly contain the TEI representation of the
      * full text
      */
@@ -259,7 +261,8 @@ public class GrobidRestProcessFiles {
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs,
-                                                          final boolean segmentSentences) throws Exception {
+                                                          final boolean segmentSentences,
+                                                          final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
         Response response = null;
         String retVal = null;
@@ -300,6 +303,7 @@ public class GrobidRestProcessFiles {
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
+                    .generateTeiCoordinates(teiCoordinates)
                     .pdfAssetPath(new File(assetPath))
                     .withSentenceSegmentation(segmentSentences)
                     .build();
