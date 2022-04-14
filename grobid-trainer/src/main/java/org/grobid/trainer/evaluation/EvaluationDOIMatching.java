@@ -190,26 +190,9 @@ public class EvaluationDOIMatching {
 
                 nbRef++;
             } 
-            // run Grobid reference parser on this raw string, todo: call by batch of n citations
+            // run Grobid reference parser on this raw strings
             try {
                 List<BiblioItem> biblios = engine.processRawReferences(rawRefs, 2);
-
-                // inject other metadata - note: useless
-                /*for(int i=0; i<rawRefs.size(); i++) {
-                    BiblioItem biblio = biblios.get(i);
-
-                    String atitle = atitles.get(i);
-                    String jtitle = jtitles.get(i);
-                    String volume = volumes.get(i);
-                    String firstPage = firstPages.get(i);
-                    String author = firstAuthors.get(i);
-
-                    biblio.setTitle(atitle);
-                    biblio.setJournal(jtitle);
-                    biblio.setVolume(volume);
-                    //biblio.setFirstPage(firstPage);
-                    biblio.setFirstAuthorSurname(author);
-                }*/
 
                 for(int i=0; i<rawRefs.size(); i++) {
                     BiblioItem biblio = biblios.get(i);

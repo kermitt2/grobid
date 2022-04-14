@@ -147,15 +147,6 @@ public class Consolidation {
         if (year == null)
             year = bib.getYear();
 
-        /*if (aut != null) {
-            aut = TextUtilities.removeAccents(aut);
-        }
-        if (title != null) {
-            title = TextUtilities.removeAccents(title);
-        }
-        if (journalTitle != null) {
-            journalTitle = TextUtilities.removeAccents(journalTitle);
-        }*/
         if (cntManager != null)
             cntManager.i(ConsolidationCounters.CONSOLIDATION);
 
@@ -166,63 +157,63 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        }
-        if (StringUtils.isNotBlank(rawCitation)) {
-            // call with full raw string
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
-                     StringUtils.isBlank(doi) )
-                arguments.put("query.bibliographic", rawCitation);
-            //arguments.put("query", rawCitation);
-        }
-        if (StringUtils.isNotBlank(aut)) {
-            // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
-                 (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
-                arguments.put("query.author", aut);
-        }
-        if (StringUtils.isNotBlank(title)) {
-            // call based on partial metadata
-            if (arguments == null)
-                arguments = new HashMap<String,String>();
-            if ( (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) ||
-                (StringUtils.isBlank(rawCitation) && StringUtils.isBlank(doi)) )
-                arguments.put("query.title", title);
-        }
-        if (StringUtils.isNotBlank(journalTitle)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("query.container-title", journalTitle);
+        } else {
+            if (StringUtils.isNotBlank(rawCitation)) {
+                // call with full raw string            
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("query.bibliographic", rawCitation);
+                }
             }
-        }
-        if (StringUtils.isNotBlank(volume)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("volume", volume);
+            if (StringUtils.isNotBlank(aut)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("query.author", aut);
+                }
             }
-        }
-        if (StringUtils.isNotBlank(firstPage)) {
-            // call based on partial metadata
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("firstPage", firstPage);
+            if (StringUtils.isNotBlank(title)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("query.title", title);
+                }
             }
-        }
-        if (StringUtils.isNotBlank(year)) {
-            // publication year metadata, CrossRef has no year query field, they are supported by the query.bibliographic 
-            // field and filter
-            if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
-                if (arguments == null)
-                    arguments = new HashMap<String,String>();
-                arguments.put("year", year);
+            if (StringUtils.isNotBlank(journalTitle)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("query.container-title", journalTitle);
+                }
+            }
+            if (StringUtils.isNotBlank(volume)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("volume", volume);
+                }
+            }
+            if (StringUtils.isNotBlank(firstPage)) {
+                // call based on partial metadata
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("firstPage", firstPage);
+                }
+            }
+            if (StringUtils.isNotBlank(year)) {
+                // publication year metadata, CrossRef has no year query field, they are supported by the query.bibliographic 
+                // field and filter
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
+                    if (arguments == null)
+                        arguments = new HashMap<String,String>();
+                    arguments.put("year", year);
+                }
             }
         }
 
