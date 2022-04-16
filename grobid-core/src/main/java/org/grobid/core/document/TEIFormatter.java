@@ -1676,7 +1676,6 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             // TBD: check other constraints and consistency issues
         }
 
-        //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
         if (matchResults != null) {

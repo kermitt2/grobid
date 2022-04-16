@@ -270,17 +270,15 @@ public class ReferenceMarkerMatcher {
     private List<MatchResult> matchAuthorCitation(String text, List<LayoutToken> refTokens) throws EntityMatcherException {
         List<Pair<String, List<LayoutToken>>> split = splitAuthors(refTokens);
         List<MatchResult> results = new ArrayList<>();
-        for (Pair<String, List<LayoutToken>> si : split) {
 
+        for (Pair<String, List<LayoutToken>> si : split) {
             String c = si.a;
             List<LayoutToken> splitItem = si.b;
 
             List<BibDataSet> matches = authorMatcher.match(c);
             if (matches.size() == 1) {
                 cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
-//                System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
-
-//                System.out.println("-----------");
+                //System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
                 results.add(new MatchResult(c, splitItem, matches.get(0)));
             } else {
                 if (matches.size() != 0) {
@@ -292,23 +290,23 @@ public class ReferenceMarkerMatcher {
                         cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS_AFTER_POST_FILTERING);
                     } else {
                         cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
+                        results.add(new MatchResult(c, splitItem, null));
                         if (filtered.size() == 0) {
                             cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
                             cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES_AFTER_POST_FILTERING);
-//                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
+                            //LOGGER.info("SEVERAL MATCHED REF CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             /*for (BibDataSet bds : matches) {
                                 LOGGER.info("+++++");
                                 LOGGER.info("  " + bds.getRawBib());
                             }*/
-//                            LOGGER.info("===============");
                         }
                     }
                 } else {
                     results.add(new MatchResult(c, splitItem, null));
                     cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES);
-//                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
-//                    LOGGER.info("++++++++++++");
+                    //LOGGER.info("NO MATCHED REF CANDIDATES: " + text + "\n" + c);
+                    //LOGGER.info("++++++++++++");
                 }
             }
         }
