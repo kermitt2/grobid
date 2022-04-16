@@ -110,6 +110,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
