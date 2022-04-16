@@ -82,7 +82,7 @@ COPY --from=builder /opt/grobid .
 RUN python3 -m pip install pip --upgrade
 
 # install DeLFT via pypi
-RUN pip3 install requests delft==0.3.0
+RUN pip3 install requests delft==0.3.1
 # link the data directory to /data
 # the current working directory will most likely be /opt/grobid
 RUN mkdir -p /data \
