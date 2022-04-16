@@ -6,13 +6,12 @@ PDF processing 100% │████████████████│ 1943/
 
 Evaluation header 100% │█████████████│ 1943/1943 (0:00:47 / 0:00:00) 
 
-> :grobid-trainer:jatsEval
 Evaluation citation 100% │███████████│ 1943/1943 (0:12:36 / 0:00:00) 
 
-
 Evaluation full text 100% │██████████│ 1943/1943 (0:00:24 / 0:00:00) 
+
 Evaluation metrics produced in 829.299 seconds
-> :grobid-trainer:jatsEval
+
 ======= Header metadata ======= 
 
 Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
@@ -95,7 +94,7 @@ Instance-level recall:  64.49   (RatcliffObershelp)
 
 ======= Citation metadata ======= 
 
-Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
+Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
 
 ======= Strict Matching ======= (exact matches)
 
@@ -223,7 +222,7 @@ fscore citation contexts:        75.6
 
 ======= Fulltext structures ======= 
 
-Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
+Evaluation on 1943 random PDF files out of 1943 PDF (ratio 1.0).
 
 ======= Strict Matching ======= (exact matches)
 
