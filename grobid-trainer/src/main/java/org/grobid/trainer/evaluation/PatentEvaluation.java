@@ -358,7 +358,7 @@ public class PatentEvaluation {
     }
 
     /**
-     * Evaluation of the extraction against the gold corpus for patent reference resolution.
+     * Evaluation of the extraction against the gold corpus for patent reference resolution (non XML format, realized in 2010).
      * Use in particular for a comparison with Ddoc and ACE.
      * @param path file path
      */

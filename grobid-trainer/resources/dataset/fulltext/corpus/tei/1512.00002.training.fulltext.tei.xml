@@ -54,17 +54,17 @@
 
 			<p>In <ref type="biblio">[2]</ref>, a discussion about the relation between the FoV and<lb/> the SNR was made for MAGIC-II telescope. A deeper<lb/> discussion needs to be made regarding the concepts of SNR,<lb/> FoV and their relation with the optical resolution of the CTA<lb/> telescopes. The optical resolution is characterized by the Point<lb/> Spread Function (PSF), which determines the spatial<lb/> distribution of the radiation received from a point source at<lb/> infinity, i.e., the radiation coming from a space probe received<lb/> at the focal plane of the telescope. The FoV θFOV is the angular<lb/> spread in the object plane projected on the image plane of the<lb/> telescope. It is also a function of the detector size (in this work,<lb/> a circular shape is assumed), given by eq. (<ref type="formula">1</ref>).<lb/></p> 
 
-			<formula>θFOV = 2arctan(d/2f)<lb/> (1)<lb/> </formula>
+			<formula>θFOV = 2arctan(d/2f)<lb/> (<label>1</label>)<lb/> </formula>
 
 			<p>d being the diameter of the detector, and f the focal length of<lb/> the telescope. The multi-pixel camera (made up by up to 2500<lb/> photomultiplier tubes in the case of LST) designed for CTA<lb/> telescopes should be replaced by a simpler system based on a<lb/> single photodetector, with an important reduction in the<lb/> detector size, and therefore in the FOV.<lb/></p>
 
 			<p>Cherenkov telescopes operate during dark nights only.<lb/> However, FSOC telescopes must support also daylight<lb/> operation. In this case, the sunlight, which is the main source of<lb/> background radiation due to the scattering caused by<lb/> atmospheric gases (Rayleigh) and particles (Mie), reaches the<lb/> detector as a noisy signal, hence with a decrease in the SNR. In<lb/> this work, a worst case for each link scenario will be studied,<lb/> and this spurious light will lead to a detected noise power N S.<lb/> According to eq. (<ref type="formula">2</ref>), this power depends on the sky radiance<lb/> L(λ,θ,ϕ) (which in turn depends on wavelength λ, zenith angle<lb/> θ, and the angle ϕ between the telescope, the target and the<lb/> Sun), the receiver&apos;s aperture area Ar, the two-dimensional FoV<lb/> angle ΩFOV, and the spectral bandwidth of the signal ∆λ.<lb/></p> 
 
-			<formula>NS = L(λ,θ,φ)•Ar•ΩFOV•Δλ<lb/> (2)<lb/></formula>
+			<formula>NS = L(λ,θ,φ)•Ar•ΩFOV•Δλ<lb/> (<label>2</label>)<lb/></formula>
 
 			<p>In terms of two-dimensional space (one-dimensional<lb/> angle), eq. (<ref type="formula">2</ref>) can be translated to eq. (<ref type="formula">3</ref>), with Dr being the<lb/> aperture diameter of the telescope.<lb/> </p>
 
-			<formula>NS = L(λ,θ,φ)•(π/4•Dr• θFOV) 2 •Δλ<lb/> (3)<lb/></formula>
+			<formula>NS = L(λ,θ,φ)•(π/4•Dr• θFOV) 2 •Δλ<lb/> (<label>3</label>)<lb/></formula>
 
 			<p>The parameter that allows more control in this kind of link<lb/> design (using an already-built telescope) is the detector area d,<lb/> which has a strong relation with the optical resolution of the<lb/> telescope. If d is bigger than the PSF, then too much noise will<lb/> reach the detector, decaying the SNR. If d is smaller than the<lb/> PSF, then many signal photons will be lost, which must be<lb/> avoided in links as strongly limited by the received signal<lb/> power as deep-space ones. Therefore, the detector size d will<lb/> determine the performance of the link, and ideally it should<lb/> match the size of the PSF, which in turn should be as small as<lb/> possible to minimize the FoV, thus the background noise,<lb/> maximizing the SNR.<lb/></p>
 
@@ -106,17 +106,17 @@
 
 			<p>Night operation is also affected by background noise. In a<lb/> link with another planet, its albedo is the highest contribution.<lb/> For example, background noise power from Mars is computed<lb/> with eq. (<ref type="formula">2</ref>) but using Mars irradiance IM (in W/cm 2 •µm)<lb/> instead of the radiance L due to the fact that Mars will be<lb/> always included in the receiver&apos;s FoV. Eq. (<ref type="formula">4</ref>) was used to<lb/> compute IM <ref type="biblio">[26]</ref>.<lb/></p>
 
-			<formula>IM =AM •(IS/dM-S 2 )•(RM/dM-T) 2<lb/> (4)<lb/></formula>
+			<formula>IM =AM •(IS/dM-S 2 )•(RM/dM-T) 2<lb/> (<label>4</label>)<lb/></formula>
 
 			<p>where AM is the 25% Mars albedo, IS = 28.7 mW/(cm 2 •µm) is<lb/> the solar irradiance at 1 astronomical unit for 1500 nm, dM-S is<lb/> the 1.52366 astronomical units Mars-Sun distance, RM is the<lb/> 3390 km Mars radius, and dM-T is 68.6•10 6 km, Mars-Earth<lb/> distance in Mars opposition scenario, which is the case during<lb/> nighttime. The background power NM by Mars albedo is then<lb/> calculated with the eq. (<ref type="formula">5</ref>), resulting in 445 pW for LST, 120<lb/> pW for MST-DC and 7 pW for SST-DC.<lb/> </p>
 
-			<formula>NM =IM •π (D/2) 2 •Δλ<lb/> (5)<lb/></formula>
+			<formula>NM =IM •π (D/2) 2 •Δλ<lb/> (<label>5</label>)<lb/></formula>
 
 			<head>F. Link budgets<lb/></head>
 
 			<p>The link budget equation <ref type="biblio">[21]</ref> applied to a downlink as the<lb/> one simulated here is given by eq. (<ref type="formula">6</ref>), being Pr (dBm) the<lb/> power at the receiver, Pt (dBm) the average transmitted power,<lb/> Gt (dB) the transmitter gain, Lt (dB) the internal transmitter<lb/> losses, Ltp (dB) the transmitter pointing losses, Lfs (dB) the<lb/> free-space propagation losses, Latm (dB) the losses by<lb/> atmospheric propagation, Gr (dB) the receiver gain, Lr (dB) the<lb/> internal losses of the receiver and Lrp (dB) the receiver pointing<lb/> losses.<lb/></p>
 
-			<formula>Pr = Pt + Gt -Lt -Ltp -Lfs -Latm + Gr -Lr -Lrp<lb/> (6)<lb/></formula>
+			<formula>Pr = Pt + Gt -Lt -Ltp -Lfs -Latm + Gr -Lr -Lrp<lb/> (<label>6</label>)<lb/></formula>
 
 			<figure>Fig. 8. Sky radiance as a function of zenith angle for different SZA angles at<lb/> λ=1550 nm limited to observation zenith angle of 70º and SEP of 5º.<lb/></figure> 
 

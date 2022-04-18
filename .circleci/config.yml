@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/openjdk:11-jdk
+      - image: cimg/openjdk:11.0
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,12 +31,27 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: gradle dependencies
+      - run: ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
+      - run: ./gradlew clean assemble --info --stacktrace
+
       # run tests!
-      - run: gradle test
+      - run: ./gradlew test jacocoTestReport coveralls --no-daemon
+
+      - store_test_results:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
+      - store_test_results:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/html
+      - store_test_results:
+          path: build/reports/tests/codeCoverageReport/html

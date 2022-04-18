@@ -280,6 +280,14 @@ var grobid = (function($) {
         return true;
     }
 
+    function AjaxError21(message) {
+        if (!message)
+            message ="";
+        $('#infoResult2').html("<font color='red'>Error encountered while requesting the server.<br/>"+message+"</font>");
+        responseJson = null;
+        return true;
+    }
+
 	function AjaxError3(jqXHR, textStatus, errorThrown) {
 		$('#requestResult3').html("<font color='red'>Error encountered while requesting the server.<br/>"+jqXHR.responseText+"</font>");
 		responseJson = null;
@@ -353,110 +361,113 @@ var grobid = (function($) {
             // display the local PDF
             if ((document.getElementById("input2").files[0].type == 'application/pdf') ||
                 (document.getElementById("input2").files[0].name.endsWith(".pdf")) ||
-                (document.getElementById("input2").files[0].name.endsWith(".PDF")))
+                (document.getElementById("input2").files[0].name.endsWith(".PDF"))) {
                 var reader = new FileReader();
-            reader.onloadend = function () {
-                // to avoid cross origin issue
-                //PDFJS.disableWorker = true;
-                var pdfAsArray = new Uint8Array(reader.result);
-                // Use PDFJS to render a pdfDocument from pdf array
-                PDFJS.getDocument(pdfAsArray).then(function (pdf) {
-                    // Get div#container and cache it for later use
-                    var container = document.getElementById("requestResult2");
-                    // enable hyperlinks within PDF files.
-                    //var pdfLinkService = new PDFJS.PDFLinkService();
-                    //pdfLinkService.setDocument(pdf, null);
+                reader.onloadend = function () {
+                    // to avoid cross origin issue
+                    //PDFJS.disableWorker = true;
+                    var pdfAsArray = new Uint8Array(reader.result);
+                    // Use PDFJS to render a pdfDocument from pdf array
+                    PDFJS.getDocument(pdfAsArray).then(function (pdf) {
+                        // Get div#container and cache it for later use
+                        var container = document.getElementById("requestResult2");
+                        // enable hyperlinks within PDF files.
+                        //var pdfLinkService = new PDFJS.PDFLinkService();
+                        //pdfLinkService.setDocument(pdf, null);
 
-                    $('#requestResult2').html('');
-                    nbPages = pdf.numPages;
+                        $('#requestResult2').html('');
+                        nbPages = pdf.numPages;
 
-                    // Loop from 1 to total_number_of_pages in PDF document
-                    for (var i = 1; i <= nbPages; i++) {
+                        // Loop from 1 to total_number_of_pages in PDF document
+                        for (var i = 1; i <= nbPages; i++) {
 
-                        // Get desired page
-                        pdf.getPage(i).then(function (page) {
+                            // Get desired page
+                            pdf.getPage(i).then(function (page) {
 
-                            var div0 = document.createElement("div");
-                            div0.setAttribute("style", "text-align: center; margin-top: 1cm;");
-                            var pageInfo = document.createElement("p");
-                            var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (nbPages));
-                            pageInfo.appendChild(t);
-                            div0.appendChild(pageInfo);
-                            container.appendChild(div0);
+                                var div0 = document.createElement("div");
+                                div0.setAttribute("style", "text-align: center; margin-top: 1cm;");
+                                var pageInfo = document.createElement("p");
+                                var t = document.createTextNode("page " + (page.pageIndex + 1) + "/" + (nbPages));
+                                pageInfo.appendChild(t);
+                                div0.appendChild(pageInfo);
+                                container.appendChild(div0);
 
-                            var scale = 1.5;
-                            var viewport = page.getViewport(scale);
-                            var div = document.createElement("div");
+                                var scale = 1.5;
+                                var viewport = page.getViewport(scale);
+                                var div = document.createElement("div");
 
-                            // Set id attribute with page-#{pdf_page_number} format
-                            div.setAttribute("id", "page-" + (page.pageIndex + 1));
+                                // Set id attribute with page-#{pdf_page_number} format
+                                div.setAttribute("id", "page-" + (page.pageIndex + 1));
 
-                            // This will keep positions of child elements as per our needs, and add a light border
-                            div.setAttribute("style", "position: relative; border-style: solid; border-width: 1px; border-color: gray;");
+                                // This will keep positions of child elements as per our needs, and add a light border
+                                div.setAttribute("style", "position: relative; border-style: solid; border-width: 1px; border-color: gray;");
 
-                            // Append div within div#container
-                            container.appendChild(div);
+                                // Append div within div#container
+                                container.appendChild(div);
 
-                            // Create a new Canvas element
-                            var canvas = document.createElement("canvas");
+                                // Create a new Canvas element
+                                var canvas = document.createElement("canvas");
 
-                            // Append Canvas within div#page-#{pdf_page_number}
-                            div.appendChild(canvas);
+                                // Append Canvas within div#page-#{pdf_page_number}
+                                div.appendChild(canvas);
 
-                            var context = canvas.getContext('2d');
-                            canvas.height = viewport.height;
-                            canvas.width = viewport.width;
+                                var context = canvas.getContext('2d');
+                                canvas.height = viewport.height;
+                                canvas.width = viewport.width;
 
-                            var renderContext = {
-                                canvasContext: context,
-                                viewport: viewport
-                            };
+                                var renderContext = {
+                                    canvasContext: context,
+                                    viewport: viewport
+                                };
 
-                            // Render PDF page
-                            page.render(renderContext).then(function () {
-                                // Get text-fragments
-                                return page.getTextContent();
-                            })
-                                .then(function (textContent) {
-                                    // Create div which will hold text-fragments
-                                    var textLayerDiv = document.createElement("div");
+                                // Render PDF page
+                                page.render(renderContext).then(function () {
+                                    // Get text-fragments
+                                    return page.getTextContent();
+                                })
+                                    .then(function (textContent) {
+                                        // Create div which will hold text-fragments
+                                        var textLayerDiv = document.createElement("div");
 
-                                    // Set it's class to textLayer which have required CSS styles
-                                    textLayerDiv.setAttribute("class", "textLayer");
+                                        // Set it's class to textLayer which have required CSS styles
+                                        textLayerDiv.setAttribute("class", "textLayer");
 
-                                    // Append newly created div in `div#page-#{pdf_page_number}`
-                                    div.appendChild(textLayerDiv);
+                                        // Append newly created div in `div#page-#{pdf_page_number}`
+                                        div.appendChild(textLayerDiv);
 
-                                    // Create new instance of TextLayerBuilder class
-                                    var textLayer = new TextLayerBuilder({
-                                        textLayerDiv: textLayerDiv,
-                                        pageIndex: page.pageIndex,
-                                        viewport: viewport
+                                        // Create new instance of TextLayerBuilder class
+                                        var textLayer = new TextLayerBuilder({
+                                            textLayerDiv: textLayerDiv,
+                                            pageIndex: page.pageIndex,
+                                            viewport: viewport
+                                        });
+
+                                        // Set text-fragments
+                                        textLayer.setTextContent(textContent);
+
+                                        // Render text-fragments
+                                        textLayer.render();
                                     });
-
-                                    // Set text-fragments
-                                    textLayer.setTextContent(textContent);
-
-                                    // Render text-fragments
-                                    textLayer.render();
-                                });
-                        });
-                    }
-                });
-            }
-            reader.readAsArrayBuffer(document.getElementById("input2").files[0]);
-
-            xhr.onreadystatechange = function (e) {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var response = e.target.response;
-                    //var response = JSON.parse(xhr.responseText);
-                    //console.log(response);
-                    setupAnnotations(response);
-                } else if (xhr.status != 200) {
-                    AjaxError2("Response " + xhr.status + ": ");
+                            });
+                        }
+                    });
                 }
-            };
-            xhr.send(formData);
+                reader.readAsArrayBuffer(document.getElementById("input2").files[0]);
+
+                xhr.onreadystatechange = function (e) {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = e.target.response;
+                        //var response = JSON.parse(xhr.responseText);
+                        //console.log(response);
+                        setupAnnotations(response);
+                    } else if (xhr.status != 200) {
+                        AjaxError2("Response " + xhr.status + ": ");
+                    }
+                };
+                xhr.send(formData);
+            } else {
+                AjaxError21("This does not look like a PDF");
+            }
         }
     }
 
@@ -937,7 +948,18 @@ var grobid = (function($) {
                     else {
                         //if (pos && (pos.length > 0)) {
                         var theFirstPos = pos[0];
+                        // we can't visualize over two pages, so we take as theLastPos the last coordinate position on the page of theFirstPos
+                        
                         var theLastPos = pos[pos.length-1];
+                        if (theLastPos.p != theFirstPos.p) {
+                            var k = 2;
+                            while (pos.length-k>0) {
+                                theLastPos = pos[pos.length-k];
+                                if (theLastPos.p == theFirstPos.p) 
+                                    break;
+                                k++;
+                            }
+                        }
                         theBibPos.p = theFirstPos.p;
                         theBibPos.w = Math.max(theFirstPos.w, theLastPos.w);
                         theBibPos.h = Math.max(Math.abs(theLastPos.y - theFirstPos.y), theFirstPos.h) + Math.max(theFirstPos.h, theLastPos.h);

@@ -100,14 +100,14 @@ public class PythonEnvironmentConfig {
             .stream()
             .map(path -> FilenameUtils.getName(path.getFileName().toString())
                 .replace("libpython", "").replace("python", ""))
-            .filter(version -> version.contains("3.5") || version.contains("3.6") || version.contains("3.7"))
+            .filter(version -> version.contains("3.7") || version.contains("3.8") || version.contains("3.9"))
             .distinct()
             .sorted()
             .collect(Collectors.toList());
 
         if (CollectionUtils.isEmpty(pythonVersions)) {
             throw new GrobidException(
-                "Cannot find a suitable version (3.5, 3.6 or 3.7) of python in your virtual environment: " +
+                "Cannot find a suitable version (3.7, 3.8 or 3.9) of python in your virtual environment: " +
                     virtualEnv
             );
         }

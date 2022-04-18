@@ -101,6 +101,11 @@ public interface GrobidPaths {
 	String PATH_CITATION = "processCitation";
 
 	/**
+	 * path extension for processing a list of isolated citations.
+	 */
+	String PATH_CITATION_LIST = "processCitationList";
+
+	/**
 	 * path extension for processing all the references in a PDF file.
 	 */
 	String PATH_REFERENCES = "processReferences";

@@ -249,15 +249,15 @@ public class GrobidRestProcessString {
 	}
 
 	/**
-	 * Parse a raw sequence of affiliations and return the corresponding
-	 * normalized affiliations with address.
+	 * Parse a raw reference string and return the corresponding
+	 * structured reference affiliations in the requested format.
 	 * 
 	 * @param citation
-	 *			string of the raw sequence of affiliation+address
+	 *			string of the raw reference
 	 * @param expectedResponseType
-	 *            states which media type the caller expected
-	 * @return a response object containing the structured xml representation of
-	 *         the affiliation
+	 *            states which media type the caller expected (xml tei or bibtex)
+	 * @return a response object containing the structured representation of
+	 *         the reference
 	 */
 	public Response processCitation(String citation, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
 		LOGGER.debug(methodLogIn());
@@ -278,6 +278,74 @@ public class GrobidRestProcessString {
 			} else {
 				response = Response.status(Status.OK)
                             .entity(biblioItem.toTEI(-1, config))
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of reference strings and return the corresponding
+	 * normalized bilbiographical objects in the same order and in the reuqested format
+	 * 
+	 * @param citation
+	 *			list of strings of the raw sequence of reference strings
+	 * @param expectedResponseType
+	 *            states which media type the caller expected (xml tei or bibtex)
+	 * @return a response object containing the structured representation of
+	 *         the references
+	 */
+	public Response processCitationList(List<String> citations, GrobidAnalysisConfig config, ExpectedResponseType expectedResponseType) {
+		LOGGER.debug(methodLogIn());
+		Response response;
+		Engine engine = null;
+		try {
+			engine = Engine.getEngine(true);
+			List<BiblioItem> biblioItems = engine.processRawReferences(citations, config.getConsolidateCitations());		
+
+			if (biblioItems == null || biblioItems.size() == 0) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else if (expectedResponseType == ExpectedResponseType.BIBTEX) {
+				StringBuilder responseContent = new StringBuilder();
+				int n = 0;
+				for(BiblioItem biblioItem : biblioItems) {
+					responseContent.append(biblioItem.toBibTeX(""+n, config));
+					responseContent.append("\n");
+					n++;
+				}
+				response = Response.status(Status.OK)
+							.entity(responseContent.toString())
+							.header(HttpHeaders.CONTENT_TYPE, BibTexMediaType.MEDIA_TYPE + "; charset=UTF-8")
+							.build();
+			} else {
+				StringBuilder responseContent = new StringBuilder();
+				// add some TEI envelop
+				responseContent.append("<TEI xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                    "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                    "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+                responseContent.append("\t<teiHeader/>\n\t<text>\n\t\t<front/>\n\t\t" +
+                    "<body/>\n\t\t<back>\n\t\t\t<div>\n\t\t\t\t<listBibl>\n");
+				int n = 0;
+				for(BiblioItem biblioItem : biblioItems) {
+					responseContent.append(biblioItem.toTEI(n, config));
+					responseContent.append("\n");
+					n++;
+				}
+				responseContent.append("\t\t\t\t</listBibl>\n\t\t\t</div>\n\t\t</back>\n\t</text>\n</TEI>\n");
+				response = Response.status(Status.OK)
+                            .entity(responseContent.toString())
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
                             .build();
 			}

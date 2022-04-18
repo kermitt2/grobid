@@ -4,6 +4,8 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -88,16 +90,24 @@ public class CrossrefRequest<T extends Object> extends Observable {
             notifyListeners(message);
             return;
         }
-		CloseableHttpClient httpclient = null;
-		if (GrobidProperties.getProxyHost() != null) {
-			HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
-			DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
-			httpclient = HttpClients.custom()
-		  		.setRoutePlanner(routePlanner)
-		  		.build();
-		} else {
-			httpclient = HttpClients.createDefault();	
-		}
+
+        CloseableHttpClient httpclient = null;
+        RequestConfig requestConfig = RequestConfig.custom()
+                                .setCookieSpec(CookieSpecs.STANDARD)
+                                .build();
+        if (GrobidProperties.getProxyHost() != null) {
+            HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
+            DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
+
+            httpclient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .setRoutePlanner(routePlanner)     
+                .build();
+        } else {
+            httpclient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .build();
+        }
 
 		try {
 			URIBuilder uriBuilder = new URIBuilder(BASE_URL);

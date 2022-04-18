@@ -43,7 +43,7 @@ GROBID can be considered as production ready. Deployments in production includes
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 
-GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification. The tool can run with feature engineered CRF (default), Deep Learning architectures (with or without layout feature channels) or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto).
+GROBID uses optionnally Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification, via [JEP](https://github.com/ninia/jep). GROBID can run with feature engineered CRF (default), Deep Learning architectures (with or without layout feature channels) or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto).
 
 ## Demo
 
@@ -57,7 +57,7 @@ _Warning_: Some quota and query limitation apply to the demo server! Please be c
 
 For facilitating the usage GROBID service at scale, we provide clients written in Python, Java, node.js using the [web services](https://grobid.readthedocs.io/en/latest/Grobid-service/) for parallel batch processing:
 
-- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a>
+- <a href="https://github.com/kermitt2/grobid-client-python" target="_blank">Python GROBID client</a> (the most complete one in term of supported services and options)
 - <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 

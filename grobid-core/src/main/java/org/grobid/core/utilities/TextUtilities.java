@@ -71,8 +71,10 @@ public class TextUtilities {
 
     // a regular expression for identifying url pattern in text
     // TODO: maybe find a better regex (better == more robust, not more "standard")
-    static public final Pattern urlPattern = Pattern
+    static public final Pattern urlPattern0 = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
+    static public final Pattern urlPattern = Pattern
+        .compile("(?i)(https?|ftp)\\s?:\\s?\\/\\/\\s?[-A-Z0-9+&@#\\/%?=~_()|!:.;]*[-A-Z0-9+&@#\\/%=~_()]");
 
     // a regular expression for identifying email pattern in text
     // TODO: maybe find a better regex (better == more robust, not more "standard")

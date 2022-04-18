@@ -23,9 +23,9 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.0.zip
-mv grobid-service-0.7.0 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.0.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.1.zip
+mv grobid-service-0.7.1 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.1.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -476,6 +476,31 @@ Results in
   number = {1}
 }
 ```
+
+#### /api/processCitationList
+
+Parse a lis of raw bibliographical reference strings and return the corresponding normalized bibliographical references in TEI XML or [BibTeX] format.
+
+|  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
+|---        |---                    |---                |---                     |---            |---            |
+| POST      | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
+|           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
+
+Use `Accept: application/x-bibtex` to retrieve BibTeX instead of TEI.
+
+Response status codes:
+
+|     HTTP Status code |   reason                                               |
+|---                   |---                                                     |
+|         200          |     Successful operation.                              |
+|         204          |     Process was completed, but no content could be extracted and structured |
+|         400          |     Wrong request, missing parameters, missing header  |
+|         500          |     Indicate an internal service error, further described by a provided message           |
+|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+
+A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 1 second for the `processCitationList` service.
+
 
 ### PDF annotation services
 

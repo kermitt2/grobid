@@ -4,7 +4,6 @@ import org.chasen.crfpp.Tagger;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BiblioSet;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -1312,34 +1311,6 @@ public class ReferenceExtractor implements Closeable {
 		resultJson.append("}");
 
         return resultJson.toString();
-    }
-
-    /**
-     * Get the TEI XML string corresponding to the recognized citation section
-     */
-    public String references2TEI2() {
-        String result = "<tei>\n";
-
-        BiblioSet bs = new BiblioSet();
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            if (path != null) {
-                bit.buildBiblioSet(bs, path);
-            }
-        }
-
-        result += bs.toTEI();
-
-        result += "<listbibl>\n";
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            result += "\n" + bit.toTEI2(bs);
-        }
-        result += "\n</listbibl>\n</tei>\n";
-
-        return result;
     }
 
     /**

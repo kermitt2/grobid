@@ -5,7 +5,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BiblioSet;
 import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
@@ -161,38 +160,40 @@ public class Engine implements Closeable {
      * @return the list of recognized bibliographical objects
      */
     public List<BiblioItem> processRawReferences(List<String> references, int consolidate) throws Exception {
-        List<BibDataSet> results = new ArrayList<BibDataSet>();
         List<BiblioItem> finalResults = new ArrayList<BiblioItem>();
         if (references == null || references.size() == 0)
             return finalResults;
-        for (String reference : references) {
-            BiblioItem bib = parsers.getCitationParser().processingString(reference, 0);
-            //if ((bib != null) && !bib.rejectAsReference()) 
-            {
-                BibDataSet bds = new BibDataSet();
-                bds.setResBib(bib);
-                bds.setRawBib(reference);
-                results.add(bds);
-            }
-        }
-        
+
+        List<BiblioItem> results = parsers.getCitationParser().processingStringMultiple(references, 0);
         if (results.size() == 0)
             return finalResults;
+
         // consolidation in a second stage to take advantage of parallel calls
-        if (consolidate != 0) {
+        if (consolidate == 0) {
+            return results;
+        } else { 
+            // prepare for set consolidation
+            List<BibDataSet> bibDataSetResults = new ArrayList<BibDataSet>();
+            for (BiblioItem bib : results) {
+                BibDataSet bds = new BibDataSet();
+                bds.setResBib(bib);
+                bds.setRawBib(bib.getReference());
+                bibDataSetResults.add(bds);
+            }
+
             Consolidation consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager); 
             Map<Integer,BiblioItem> resConsolidation = null;
             try {
-                resConsolidation = consolidator.consolidate(results);
+                resConsolidation = consolidator.consolidate(bibDataSetResults);
             } catch(Exception e) {
                 throw new GrobidException(
                 "An exception occured while running consolidation on bibliographical references.", e);
             } 
             if (resConsolidation != null) {
-                for(int i=0; i<results.size(); i++) {
-                    BiblioItem resCitation = results.get(i).getResBib();
+                for(int i=0; i<bibDataSetResults.size(); i++) {
+                    BiblioItem resCitation = bibDataSetResults.get(i).getResBib();
                     BiblioItem bibo = resConsolidation.get(Integer.valueOf(i));
                     if (bibo != null) {
                         if (consolidate == 1)
@@ -692,32 +693,6 @@ public class Engine implements Closeable {
      */
     public static String header2BibTeX(BiblioItem resHeader) {
         return resHeader.toBibTeX();
-    }
-
-    /**
-     * Get the TEI XML string corresponding to the recognized citation section
-     */
-    public static String references2TEI2(String path, List<BibDataSet> resBib) {
-        StringBuilder result = new StringBuilder();
-        result.append("<tei>\n");
-
-        BiblioSet bs = new BiblioSet();
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            bit.buildBiblioSet(bs, path);
-        }
-
-        result.append(bs.toTEI());
-        result.append("<listbibl>\n");
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            result.append("\n").append(bit.toTEI2(bs));
-        }
-        result.append("\n</listbibl>\n</tei>\n");
-
-        return result.toString();
     }
 
     /**

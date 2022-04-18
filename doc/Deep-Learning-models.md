@@ -2,19 +2,19 @@
 
 ## Integration with DeLFT
 
-Since version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with additional feature channel (for layout features), with ELMo, and BERT fine-tuned architectures with CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
+Since version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with additional feature channel (for layout features), with ELMo, and transformer-based fine-tuned architectures with or without CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
 
 These architectures have been tested on Linux 64bit and macOS.   
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see [here](https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink), and it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
-There are no neural model for the segmentation and the fulltext models, because the input sequences for these models are too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for these tasks or to use alternative DL architectures (with sliding window, etc.).
+There are currently no neural model for the segmentation and the fulltext models, because the input sequences for these models are too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for these tasks or to use alternative DL architectures (with sliding window, etc.).
 
-Low level models not using layout features (author name, dates, affiliations...) perform better than CRF. When layout features are involved, neural models with an additional feature channel should be preferred (e.g. `BidLSTM_CRF_FEATURES` in DeLFT), or they will perform significantly worse than Wapiti CRF.
+Low-level models not using layout features (author name, dates, affiliations...) perform usually better than CRF and does not require a feature channel. When layout features are involved, neural models with an additional feature channel should be preferred (e.g. `BidLSTM_CRF_FEATURES` in DeLFT) to those without feature channel.
 
 See some evaluations under `grobid-trainer/docs`.
 
-Current neural models can be up to 100 time slower than CRF, depending on the architecture. However when sequences can be processed in batch (e.g. for the citation model), overall runtime remains good with clear accuracy gain. This is where the possibility to mix CRF and Deep Learning models for different structuring tasks is very useful, as it permits to adjust the balance between possible accuracy and scalability in a fine-grained manner. 
+Current neural models can be up to 50 time slower than CRF, depending on the architecture and available CPU/GPU. However when sequences can be processed in batch (e.g. for the citation model), overall runtime remains good with clear accuracy gain. This is where the possibility to mix CRF and Deep Learning models for different structuring tasks is very useful, as it permits to adjust the balance between possible accuracy and scalability in a fine-grained manner, using a reasonable amount of memory. 
 
 ### Getting started with Deep Learning
 
@@ -31,20 +31,7 @@ However if you need a "local" library installation and build, here are the step-
 You __must__ use a Java version under or equals to Java 11. At the present time, JVM 1.12 to 1.17 will fail to load the native JEP library (due to additional security constraints).
 
 <span>1.</span> install [DeLFT](https://github.com/kermitt2/delft), see instructions [here](https://github.com/kermitt2/delft#install).
-
-In case you have no GPU and you use CPU, you should set in the DeLFT's `requirements.txt` file:
-
-```
-tensorflow==1.12.0
-```
-
-instead of:
-
-```
-tensorflow_gpu==1.12.0
-```
-
-(although in principle `tensorflow_gpu` should fall back to CPU when no GPU is available, it creates some problems in practice, in particular looking for  installed CUDA libraries even if there's no GPU on the system).
+DeLFT version `0.3.1` has been tested successfully with Python 3.7 and 3.8. For GPU support, CUDA >-11.0 must be installed. 
 
 <span>2.</span> Test your DeLFT installation for GROBID models: 
 
@@ -53,7 +40,7 @@ cd deflt/
 python3 grobidTagger.py citation tag 
 ```
 
-If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for all GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
+If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
 
 <span>3.</span> Configure your GROBID config file. 
 
@@ -73,16 +60,19 @@ Indicate the GROBID model that should use a Deep Learning implementation in the 
       architecture: "BidLSTM_CRF_FEATURES"
 ```
 
-The default Deep Learning architecture is `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Gloves embeddings). However for GROBID, an architecture also exploiting features (in particular layout features, which are not captured at all by the pretrained language models) gives the best result and the prefered choise is `BidLSTM_CRF_FEATURES`. If you wish to use another architecture, you need to specify it in the same config file, for instance for `scibert`, which is a base BERT-CRF fine-tuned model:
+The default Deep Learning architecture is `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Glove embeddings). However for GROBID, an architecture also exploiting features (in particular layout features, which are not captured at all by the pretrained language models) gives usually better results and the prefered choise is `BidLSTM_CRF_FEATURES`. If you wish to use another architecture, you need to specify it in the same config file. 
+
+For instance to use a model integrating a fine-tuned transformer, you can select a `BERT_CRF` fine-tuned model (basically the transformer layers with CRF as final activation layer) and indicate in the field `transformer` the name of the transformer model in the [Hugging Face transformers Hub](https://huggingface.co/models) to be use to instanciate the transformer layer, typically [allenai/scibert_scivocab_cased](https://huggingface.co/allenai/scibert_scivocab_cased) for `SciBERT` in the case of scientific articles:
 
 ```yaml
   models:
     - name: "citation"
       engine: "delft"
-      architecture: "scibert"
+      architecture: "BERT_CRF"
+      transformer: "allenai/scibert_scivocab_cased"
 ```
 
-However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` and `BidLSTM_CRF_FEATURES` models are shipped with GROBID, given the huge size of BERT transformer models (1.3GB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under the specific model subdirectory `grobid-home/models/**model**/`. 
+However, it will work only if the model is available under `grobid-home/models/`, currently only the `BidLSTM_CRF` and `BidLSTM_CRF_FEATURES` models are shipped with GROBID, given the size of BERT transformer models (400MB). To use a different architecture, you will thus need to train the new architecture model first with DeLFT and copy all the model files under the specific model subdirectory `grobid-home/models/**model**/`. 
 
 If you are using a Python environment for the DeLFT installation, you can set the environment path in the config file as well:
 
@@ -91,35 +81,17 @@ If you are using a Python environment for the DeLFT installation, you can set th
     python_virtualEnv: /where/my/damned/python/virtualenv/is/
 ```
 
-Normally by setting the Python environment path in the config file, you will not need to launch GROBID in the same activated environment. 
+Normally by setting the Python environment path in the config file (e.g. `pythonVirtualEnv: "../delft/env"`), you will not need to launch GROBID in the same activated environment. 
 
-<span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`):
+<span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`). 
 
-```shell
-git clone https://github.com/ninia/jep
-cd jep
-sudo -E python3 setup.py build install
-```
-
-the `sudo -E` should ensure that JEP is installed globally and that the right JVM version is used (`-E` indicates to preserve the environment variables, in particular the `JAVA_HOME`). Installing JEP gloablly is the only safe way we found to be sure that JEP will work correctly in the JVM.
-
-(here we are unfortunately touching the limit of the messy Python package management system, an install of JEP in a virtualenv should isolate the library depending on the pip/python version, but the JVM might not be able to found and linked these local/isolated libraries, even when the JVM is launched in the virtual env. A global install of JEP should however always work. pip in a virtual env still uses global python libraries when installed, but when pip uses user-level local libraries (e.g. libraries installed under `~/.local/lib/python3.5/site-packages/`) in the virtual env, we did not find a reliable way to make JEP working in the JVM.)
-
-Copy the built JEP library to the `grobid-home/lib/` area - for instance on a Linux 64 machine with Python 3.5:
+We provide an installation script for Linux under `grobid-home/scripts`. This script should be launched from grobid root directory (`grobid/`), e.g.:
 
 ```shell
-lopez@work:~/jep$ cp build/lib.linux-x86_64-3.5/jep/jep.cpython-35m-x86_64-linux-gnu.so ~/grobid/grobid-home/lib/lin-64/libjep.so
+./grobid-home/scripts/install_jep_lib.sh 
 ```
 
-This will ensure that the GROBID native JEP library matches the JEP version of the system/environment (i.e. same OS and the same python version) and the JEP jar version (GROBID contains a default `libjep.so` for python3.6 and JEP `3.9.1`, it will not work with other version of python and other version of JEP).
-
-Also note that the installed version of JEP must be the same as given in `grobid/build.gradle`. The python version used in the system or environment must match the native JEP library. At the time this documentation is written, we are using JEP version `3.9.1`:
-
-```
-implementation 'black.ninia:jep:3.9.1'
-```
-
-So if another version of JEP is installed globally on the system, you should update the GROBID `build.gradle` to match this version.
+This script will install the right version of the native JEP library according to the local architecture and python version.
 
 <span>5.</span> Run GROBID, this is the "*but on my machine it works*" moment: 
 
@@ -159,7 +131,7 @@ conda activate grobidDelft
 
 **NOTE**: make sure you are using the pip inside the environment (sometimes conda uses the root pip and mess up with your system): `which pip` should return a path within your environment. The conda creation command should already ensure that.  
 
-Follow the steps described above, having the conda environment activated. Do not indicate a virtualEnv path in the GROBID config file and launch the GROBID service with the conda environment activated. For conda too, it is preferable to install JEP globally as indicated. 
+Follow the steps described above, having the conda environment activated. Do not indicate a virtualEnv path in the GROBID config file and launch the GROBID service with the conda environment activated. For conda too, it is preferable to install JEP globally as indicated above. 
 
 ## Configuration
 
@@ -176,12 +148,11 @@ The following models (citation) will run with DeLFT `BidLSTM-BidLSTM_CRF_FEATURE
       architecture: "BidLSTM_CRF_FEATURES"
 ```
 
-**NOTE**: use the underscore for models whose name contains hyphens.
-
+**NOTE**: model names normally all use underscore and no hyphen. If not the case, replace hyphen by underscore. 
 
 ## Troubleshooting
 
-1. If there is a dependency problem when JEP starts usually the virtual machine is crashing. 
+1. If there is a dependency problem when JEP starts, usually the JVM stops. 
 We are still discovering this part, please feel free to submit issues should you incur in these problems. 
 See discussion [here](https://github.com/kermitt2/grobid/pull/454)
 

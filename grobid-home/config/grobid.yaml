@@ -25,8 +25,8 @@ grobid:
   consolidation:
     # define the bibliographical data consolidation service to be used, either "crossref" for CrossRef REST API or 
     # "glutton" for https://github.com/kermitt2/biblio-glutton
-    #service: "crossref"
-    service: "glutton"
+    service: "crossref"
+    #service: "glutton"
     glutton:
       url: "https://cloud.science-miner.com/glutton"
       #url: "http://localhost:8080" 
@@ -110,6 +110,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
@@ -124,7 +125,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "name-header"
       engine: "wapiti"
@@ -156,7 +157,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "table"
       engine: "wapiti"
@@ -167,7 +168,7 @@ grobid:
         window: 20
       delft:  
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
 
     - name: "affiliation-address"
       engine: "wapiti"
@@ -186,10 +187,9 @@ grobid:
         nbMaxIterations: 3000
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_CRF"
         #architecture: "scibert"
         useELMo: false
-        embeddings_name: "glove-840B"
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000

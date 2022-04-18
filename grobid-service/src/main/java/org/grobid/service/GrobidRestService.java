@@ -321,11 +321,12 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("start") int startPage,
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
-        @FormDataParam("segmentSentences") String segmentSentences) throws Exception {
+        @FormDataParam("segmentSentences") String segmentSentences,
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
             inputStream, consolidateHeader, consolidateCitations,
             includeRawAffiliations, includeRawCitations,
-            startPage, endPage, generateIDs, segmentSentences
+            startPage, endPage, generateIDs, segmentSentences, coordinates
         );
     }
 
@@ -342,11 +343,12 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("start") int startPage,
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
-        @FormDataParam("segmentSentences") String segmentSentences) throws Exception {
+        @FormDataParam("segmentSentences") String segmentSentences,
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
             inputStream, consolidateHeader, consolidateCitations,
             includeRawAffiliations, includeRawCitations,
-            startPage, endPage, generateIDs, segmentSentences
+            startPage, endPage, generateIDs, segmentSentences, coordinates
         );
     }
 
@@ -358,19 +360,21 @@ public class GrobidRestService implements GrobidPaths {
                                                          int startPage,
                                                          int endPage,
                                                          String generateIDs,
-                                                         String segmentSentences) throws Exception {
+                                                         String segmentSentences,
+                                                         List<FormDataBodyPart> coordinates) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
-
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
+
+        List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processStatelessFulltextAssetDocument(
             inputStream, consolHeader, consolCitations,
             validateIncludeRawParam(includeRawAffiliations),
             includeRaw,
-            startPage, endPage, generate, segment
+            startPage, endPage, generate, segment, teiCoordinates
         );
     }
 
@@ -565,6 +569,36 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
         return processCitationReturnBibTeX_post(citation, consolidate, includeRawCitations);
     }
+
+    @Path(PATH_CITATION_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processCitationListReturnXml_post(
+        @FormParam(CITATION) List<String> citations,
+        @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
+        @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateCitations(validateConsolidationParam(consolidate))
+            .includeRawCitations(validateIncludeRawParam(includeRawCitations))
+            .build();
+        return restProcessString.processCitationList(citations, config, ExpectedResponseType.XML);
+    }
+
+    @Path(PATH_CITATION_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(BibTexMediaType.MEDIA_TYPE)
+    @POST
+    public Response processCitationListReturnBibTeX_post(
+        @FormParam(CITATION) List<String> citations,
+        @DefaultValue("0") @FormParam(CONSOLIDATE_CITATIONS) String consolidate,
+        @DefaultValue("0") @FormParam(INCLUDE_RAW_CITATIONS) String includeRawCitations) {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateCitations(validateConsolidationParam(consolidate))
+            .includeRawCitations(validateIncludeRawParam(includeRawCitations))
+            .build();
+        return restProcessString.processCitationList(citations, config, ExpectedResponseType.BIBTEX);
+    } 
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)

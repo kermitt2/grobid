@@ -105,37 +105,6 @@ public class TEIFormatter {
         return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, config);
     }
 
-    public static String toISOString(Date date) {
-        int year = date.getYear();
-        int month = date.getMonth();
-        int day = date.getDay();
-
-        String when = "";
-        if (year != -1) {
-            if (year <= 9)
-                when += "000" + year;
-            else if (year <= 99)
-                when += "00" + year;
-            else if (year <= 999)
-                when += "0" + year;
-            else
-                when += year;
-            if (month != -1) {
-                if (month <= 9)
-                    when += "-0" + month;
-                else
-                    when += "-" + month;
-                if (day != -1) {
-                    if (day <= 9)
-                        when += "-0" + day;
-                    else
-                        when += "-" + day;
-                }
-            }
-        }
-        return when;
-    }
-
     public StringBuilder toTEIHeader(BiblioItem biblio,
                                      SchemaDeclaration schemaDeclaration,
                                      String defaultPublicationStatement,
@@ -212,7 +181,7 @@ public class TEIFormatter {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
                 } else {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><p>" +
-                            defaultPublicationStatement + "</p></availability>");
+                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
                 }
                 tei.append("\n");
             }
@@ -220,7 +189,7 @@ public class TEIFormatter {
             if (biblio.getNormalizedPublicationDate() != null) {
                 Date date = biblio.getNormalizedPublicationDate();
 
-                String when = toISOString(date);
+                String when = Date.toISOString(date);
                 if (StringUtils.isNotBlank(when)) {
                     tei.append("\t\t\t\t<date type=\"published\" when=\"");
                     tei.append(when).append("\">");
@@ -439,10 +408,10 @@ public class TEIFormatter {
                                 (biblio.getCountry() != null)) {
                             tei.append(" <address>");
                             if (biblio.getTown() != null) {
-                                tei.append("<settlement>" + biblio.getTown() + "</settlement>");
+                                tei.append("<settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                             }
                             if (biblio.getCountry() != null) {
-                                tei.append("<country>" + biblio.getCountry() + "</country>");
+                                tei.append("<country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                             }
                             if ((biblio.getLocation() != null) && (biblio.getTown() == null) &&
                                     (biblio.getCountry() == null)) {
@@ -463,10 +432,10 @@ public class TEIFormatter {
                 tei.append("\t\t\t\t\t\t<meeting>");
                 tei.append(" <address>");
                 if (biblio.getTown() != null) {
-                    tei.append(" <settlement>" + biblio.getTown() + "</settlement>");
+                    tei.append(" <settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                 }
                 if (biblio.getCountry() != null) {
-                    tei.append(" <country>" + biblio.getCountry() + "</country>");
+                    tei.append(" <country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                 }
                 if ((biblio.getLocation() != null) && (biblio.getTown() == null)
                         && (biblio.getCountry() == null)) {
@@ -527,7 +496,7 @@ public class TEIFormatter {
                 if (biblio.getNormalizedPublicationDate() != null) {
                     Date date = biblio.getNormalizedPublicationDate();
 
-                    String when = toISOString(date);
+                    String when = Date.toISOString(date);
                     if (StringUtils.isNotBlank(when)) {
                         if (biblio.getPublicationDate() != null) {
                             tei.append("\t\t\t\t\t\t\t<date type=\"published\" when=\"");
@@ -630,7 +599,7 @@ public class TEIFormatter {
             if (theDOI.endsWith(".xml")) {
                 theDOI = theDOI.replace(".xml", "");
             }
-            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");
+            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
         }
 
         if (!StringUtils.isEmpty(biblio.getArXivId())) {
@@ -1401,6 +1370,8 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
+        if (text == null || text.length() == 0)
+            return;
 
         // identify ref nodes, ref spans and ref positions
         Map<Integer,Node> mapRefNodes = new HashMap<>();
@@ -1462,8 +1433,10 @@ public class TEIFormatter {
                     if (currentSentenceTokens.size() > 0) {
                         segmentedParagraphTokens.add(currentSentenceTokens);
                         currentSentenceIndex++;
-                        if (currentSentenceIndex >= theSentences.size())
+                        if (currentSentenceIndex >= theSentences.size()) {
+                            currentSentenceTokens = new ArrayList<>();
                             break;
+                        }
                         sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
                     }
                     currentSentenceTokens = new ArrayList<>();
@@ -1484,8 +1457,17 @@ public class TEIFormatter {
 System.out.println("ERROR, segmentedParagraphTokens size:" + segmentedParagraphTokens.size() + " vs theSentences size: " + theSentences.size());
 System.out.println(text);
 System.out.println(theSentences.toString());
+int k = 0;
+for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
+    if (k < theSentences.size())
+        System.out.println(k + " sentence segmented text-only: " + text.substring(theSentences.get(k).start, theSentences.get(k).end));
+    else 
+        System.out.println("no text-only sentence at index " + k);
+    System.out.print(k + " layout token segmented sentence: ");
+    System.out.println(segmentedParagraphToken);
+    k++;
+}
 }*/
-
         }
 
         // update the xml paragraph element
@@ -1519,9 +1501,12 @@ System.out.println(theSentences.toString());
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
-                    Node valueNode = mapRefNodes.get(refPos);
-                    if (pos+posInSentence < refPos)
-                        sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
+                    Node valueNode = mapRefNodes.get(new Integer(refPos));
+                    if (pos+posInSentence < refPos) {
+                        String local_text_chunk = text.substring(pos+posInSentence, refPos);
+                        local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
+                        sentenceElement.appendChild(local_text_chunk);
+                    }
                     valueNode.detach();
                     sentenceElement.appendChild(valueNode);
                     refIndex = j;
@@ -1533,7 +1518,9 @@ System.out.println(theSentences.toString());
             }
 
             if (pos+posInSentence <= theSentences.get(i).end) {
-                sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
+                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+                local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
+                sentenceElement.appendChild(local_text_chunk);
                 curParagraph.appendChild(sentenceElement);
             }
         }
@@ -1550,8 +1537,7 @@ System.out.println(theSentences.toString());
             }
         }
 
-    }
-
+    }   
 
     /**
      * Return the graphic objects in a given interval position in the document.
@@ -1690,7 +1676,6 @@ System.out.println(theSentences.toString());
             // TBD: check other constraints and consistency issues
         }
 
-        //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
         if (matchResults != null) {

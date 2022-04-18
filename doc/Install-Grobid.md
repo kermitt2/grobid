@@ -6,17 +6,17 @@ GROBID requires a JVM installed on your machine, supported version is **JVM 8**.
 
 ###Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.7.0``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.7.1``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.7.0.zip
-> unzip 0.7.0.zip
+> wget https://github.com/kermitt2/grobid/archive/0.7.1.zip
+> unzip 0.7.1.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ###Current development version
 
-The current development version is ```0.7.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.7.2-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
