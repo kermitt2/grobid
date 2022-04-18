@@ -1,6 +1,6 @@
 {
     "model_name": "affiliation-address-BidLSTM_CRF_FEATURES",
-    "model_type": "BidLSTM_CRF_FEATURES",
+    "architecture": "BidLSTM_CRF_FEATURES",
     "embeddings_name": "glove-840B",
     "char_vocab_size": 152,
     "case_vocab_size": 8,
@@ -22,18 +22,18 @@
     ],
     "features_embedding_size": 4,
     "features_lstm_units": 4,
-    "max_sequence_length": 3000,
+    "max_sequence_length": 600,
     "word_embedding_size": 300,
     "num_word_lstm_units": 100,
     "case_embedding_size": 5,
     "dropout": 0.5,
     "recurrent_dropout": 0.5,
-    "use_char_feature": true,
     "use_crf": true,
+    "use_chain_crf": false,
     "fold_number": 1,
     "batch_size": 20,
+    "transformer_name": null,
     "use_ELMo": false,
-    "use_BERT": false,
     "features_map_to_index": {
         "9": {
             "LINEEND": 1,
@@ -83,6 +83,5 @@
             "PUNCT": 115,
             "QUOTE": 116
         }
-    },
-    "max_feature_size": 10
+    }
 }

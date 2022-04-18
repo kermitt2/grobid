@@ -237,6 +237,7 @@ public class GrobidRestServiceTest {
         assertEquals("@article{-1,\n" +
                 "  author = {Graff},\n" +
                 "  journal = {Expert. Opin. Ther. Targets},\n" +
+                "  date = {2002},\n" +
                 "  year = {2002},\n" +
                 "  pages = {103--113},\n" +
                 "  volume = {6},\n" +
@@ -258,7 +259,9 @@ public class GrobidRestServiceTest {
         assertEquals("@inproceedings{-1,\n" +
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  date = {2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom}\n" +
                 "}\n",
             response.readEntity(String.class));
@@ -278,7 +281,9 @@ public class GrobidRestServiceTest {
         assertEquals("@inproceedings{-1,\n" +
                 "  author = {Kolb, S and Wirtz, G},\n" +
                 "  booktitle = {Towards Application Portability in Platform as a Service Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE)},\n" +
-                "  year = {April 7 - 10, 2014},\n" +
+                "  date = {2014},\n" +
+                "  year = {2014},\n" +
+//                "  year = {April 7 - 10, 2014},\n" +
                 "  address = {Oxford, United Kingdom},\n" +
                 "  raw = {Kolb, S., Wirtz G.: Towards Application Portability in Platform as a Service\n" +
                 "Proceedings of the 8th IEEE International Symposium on Service-Oriented System Engineering (SOSE), Oxford, United Kingdom, April 7 - 10, 2014.}\n" +

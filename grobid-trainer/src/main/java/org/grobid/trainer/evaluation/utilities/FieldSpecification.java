@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Specification of field XML paths in different result documents for evaluation.
  *
- * @author Patrice Lopez
  */
 public class FieldSpecification {
 

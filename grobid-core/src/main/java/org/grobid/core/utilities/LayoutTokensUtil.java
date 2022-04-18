@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- * Created by zholudev on 18/12/15.
  * Dealing with layout tokens
  */
 public class LayoutTokensUtil {

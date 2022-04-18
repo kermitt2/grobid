@@ -22,6 +22,7 @@ import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,6 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 /**
  * Class for representing a table.
  *
- * @author Patrice Lopez
  */
 public class Table extends Figure {
 	private List<LayoutToken> contentTokens = new ArrayList<>();
@@ -63,7 +63,7 @@ public class Table extends Figure {
     }
 
 	@Override
-    public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter) {
+    public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
 		if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption)) {
 			return null;
 		}
@@ -112,6 +112,11 @@ public class Table extends Figure {
                         continue;
                     }
 
+                    MarkerType citationMarkerType = null;
+                    if (markerTypes != null && markerTypes.size()>0) {
+                        citationMarkerType = markerTypes.get(0);
+                    }
+
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
@@ -121,7 +126,8 @@ public class Table extends Figure {
                                     cluster.concatTokens(),
                                     doc.getReferenceMarkerMatcher(),
                                     config.isGenerateTeiCoordinates("ref"), 
-                                    false);
+                                    false,
+                                    citationMarkerType);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
                                     desc.appendChild(n);
@@ -179,6 +185,11 @@ public class Table extends Figure {
                         continue;
                     }
 
+                    MarkerType citationMarkerType = null;
+                    if (markerTypes != null && markerTypes.size()>0) {
+                        citationMarkerType = markerTypes.get(0);
+                    }
+
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
@@ -188,7 +199,8 @@ public class Table extends Figure {
                                     cluster.concatTokens(),
                                     doc.getReferenceMarkerMatcher(),
                                     config.isGenerateTeiCoordinates("ref"), 
-                                    false);
+                                    false,
+                                    citationMarkerType);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
                                     noteNode.appendChild(n);
@@ -396,4 +408,8 @@ public class Table extends Figure {
 	public boolean isGoodTable() {
 		return goodTable;
 	}
+
+    public String getTeiId() {
+        return "tab_" + this.id;
+    }
 }

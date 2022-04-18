@@ -3,9 +3,7 @@ package org.grobid.core.factory;
 import org.grobid.core.engines.Engine;
 
 /**
- * 
  * Factory to get engine instances.
- * 
  */
 public class GrobidFactory extends AbstractEngineFactory {
 

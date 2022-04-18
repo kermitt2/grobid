@@ -3,8 +3,7 @@ package org.grobid.core.engines.tagging;
 import java.util.Arrays;
 
 /**
- * User: zholudev
- * Date: 3/31/14
+ * Sequence labeling engine in GROBID 
  */
 public enum GrobidCRFEngine {
     WAPITI("wapiti"),
@@ -24,7 +23,7 @@ public enum GrobidCRFEngine {
 
     public static GrobidCRFEngine get(String name) {
         if (name == null) {
-            throw new IllegalArgumentException("Name of a Grobid CRF engine must not be null");
+            throw new IllegalArgumentException("Name of a Grobid sequence labeling engine must not be null");
         }
 
         String n = name.toLowerCase();
@@ -33,7 +32,7 @@ public enum GrobidCRFEngine {
                 return e;
             }
         }
-        throw new IllegalArgumentException("No Grobid CRF engine with name '" + name +
+        throw new IllegalArgumentException("No Grobid sequence labeling engine with name '" + name +
                 "', possible values are: " + Arrays.toString(values()));
     }
 

@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
  * Convert a JSON Work model - from a glutton or crossref response - to a BiblioItem 
  * (understandable by this stupid GROBID
  *
- * @author Vincent Kaestle, Patrice
  */
 public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 
@@ -213,7 +212,7 @@ public class WorkDeserializer extends CrossrefDeserializer<BiblioItem> {
 						}
 						
 						if (day != null) {
-							date.setDayString(month);
+							date.setDayString(day);
 							int dayInt = -1;
 							try {
 								dayInt = Integer.parseInt(day);

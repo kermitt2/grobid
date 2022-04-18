@@ -11,6 +11,8 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import jep.Jep;
 import jep.JepConfig;
 import jep.JepException;
+import jep.SubInterpreter;
+import jep.SharedInterpreter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +23,6 @@ import org.slf4j.LoggerFactory;
  * must be reused for all method calls to that JEP instance. For ensuring this,
  * we pool the Jep instances in a singleton class.
  */
-
 public class JEPThreadPool {
     private static final Logger LOGGER = LoggerFactory.getLogger(JEPThreadPool.class);
 
@@ -72,8 +73,8 @@ public class JEPThreadPool {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
-        //config.setRedirectOutputStreams(GrobidProperties.isDeLFTRedirectOutput());
-        config.setRedirectOutputStreams(true);
+        config.redirectStdout(System.out);
+        config.redirectStdErr(System.err);
         if (sitePackagesPath != null) {
             config.addIncludePaths(sitePackagesPath.toString());
         }
@@ -84,8 +85,6 @@ public class JEPThreadPool {
     private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
         // import packages
         jep.eval("import os");
-        jep.eval("import numpy as np");
-        jep.eval("import keras.backend as K");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
         jep.eval("import delft.sequenceLabelling");
@@ -104,7 +103,13 @@ public class JEPThreadPool {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new Jep(config);
+            //jep = new SubInterpreter(config);
+            try {
+                SharedInterpreter.setConfig(config);
+            } catch(Exception e) {
+                LOGGER.info("JEP interpreter already initialized");
+            }
+            jep = new SharedInterpreter();
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;

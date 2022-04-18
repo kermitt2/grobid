@@ -8,7 +8,6 @@ import org.grobid.core.utilities.TextUtilities;
 /**
  * Class for representing a keyword extracted from a publication.
  *
- * @author Patrice Lopez
  */
 public class Keyword {
     private String keyword = null;
@@ -60,7 +59,7 @@ public class Keyword {
         if (keyword == null) {
             return null;
         }
-        String res = "<term>" + keyword + "</term>";
+        String res = "<term>" + TextUtilities.HTMLEncode(keyword) + "</term>";
         return res;
     }
 

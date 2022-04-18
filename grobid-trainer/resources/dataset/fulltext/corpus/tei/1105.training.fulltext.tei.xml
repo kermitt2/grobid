@@ -48,7 +48,7 @@
 
 			<p>Exponentiation mixes. Our protocol will benefit from the exponentiation mix<lb/> construct from <ref type="biblio">[19]</ref>. Here a list of Public Keys pk i of the voters are put through<lb/> a sequence of exponentiation mixes: the i-th mix server MS i takes the batch of<lb/> outputs from the previous server, raises each term to a secret common power<lb/> s i , subjects the resulting terms to a secret shuffle π i and outputs the result to<lb/> MS i+1 . The first server takes the original list of PKs. The net effect is a list:<lb/> </p>
 
-			<formula>(g x ρ(i) ·s ) i∈[n] ,<lb/> </formula>
+			<formula>(g x ρ(i) •s ) i∈[n] ,<lb/> </formula>
 
 			<p>where:<lb/></p> 
 
@@ -170,7 +170,7 @@
 
 			<p>The voter, or more precisely her device, can compute an alternative g ri term<lb/> that will decrypt to an alternative, valid tracker of her choice. Suppose that she<lb/> wants her commitment to decrypt to the tracker value m * := g n * , she inputs<lb/> this to her device along with the commitment value β i and the device computes<lb/> the fake α term α :<lb/></p>
 
-			<formula>α =<lb/> β i<lb/> m *<lb/> x −1<lb/></formula>
+			<formula>α =<lb/> β i<lb/> m *<lb/> x -1<lb/></formula>
 
 			<p>On the other hand it is intractable to anyone not knowing the trapdoor, i.e.<lb/> x i , to perform such a computation, see Appendix B for a proof. Note also that<lb/> for the privacy of the tracking numbers we don&apos;t really need to encrypt the g ri<lb/> terms, the trackers are still protected by the encryption under the voter&apos;s PK.<lb/> However, it is still important to send these terms to the voter over a private<lb/> channel to ensure that they are deniable.<lb/></p>
 
@@ -364,7 +364,7 @@
 
 			<p>The major drawback is than some voters now have lost their ability to check<lb/> their cast vote in the tally. These might protest and even reveal their tracker<lb/> number which they obtain in the Selene construction, and which will be one<lb/> of the removed trackers. However, they cannot prove that this was really their<lb/> tracker. This is important because the coercer can ask the coerced voter what<lb/> her tracker number is, but she can then simply choose a random number from<lb/> M different from all the published trackers. The main danger is if the coerced<lb/> voter by chance then chooses the actual tracker of the coercer (in case he really<lb/> also have one of the missing trackers). However, this probability is<lb/> </p>
 
-			<formula>2<lb/> L<lb/> ·<lb/> 1<lb/> |M | − 2c<lb/> </formula>
+			<formula>2<lb/> L<lb/> ·<lb/> 1<lb/> |M | - 2c<lb/> </formula>
 
 			<p>if we removed 2c trackers and in the case that L votes were cast for the coercer&apos;s<lb/> candidate. This is not negligible, but can be controlled and kept very low by<lb/> adjusting the size of M and the security parameter.<lb/></p>
 

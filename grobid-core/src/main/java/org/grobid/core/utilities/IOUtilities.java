@@ -1,19 +1,21 @@
 package org.grobid.core.utilities;
 
-import org.apache.commons.io.IOUtils;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Date;
 
 import static org.apache.commons.lang3.StringUtils.isEmpty;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.io.IOUtils;
 
 /**
  * Utilities related to file and directory management.
- * <p>
- * Created by lfoppiano on 04/08/16.
  */
 public class IOUtilities {
 
@@ -132,13 +134,26 @@ public class IOUtilities {
     }
 
     /**
-     * Delete the temporary file.
+     * From JDK 1.7, creates a new system temporary file and returns the file
+     */
+    public static File newSystemTempFile(String extension) {
+        try {
+            Path newFile = Files.createTempFile("grobid", extension);
+            return newFile.toFile();
+        } catch (IOException e) {
+            throw new GrobidResourceException(
+                "Could not create temprorary file, with extension '" +  extension + "' under path tmp system path.", e);
+        }
+    }
+
+    /**
+     * Delete a temporary file
      */
     public static void removeTempFile(final File file) {
         
         try {
             // sanity cleaning
-            Utilities.deleteOldies(GrobidProperties.getTempPath(), 300);
+            deleteOldies(GrobidProperties.getTempPath(), 300);
             LOGGER.debug("Removing " + file.getAbsolutePath());
             file.delete();
         } catch (Exception exp) {
@@ -147,7 +162,22 @@ public class IOUtilities {
     }
 
     /**
-     * Delete temporary directory.
+     * Delete a system temporary file
+     */
+    public static void removeSystemTempFile(final File file) {
+        
+        try {
+            // sanity cleaning
+            deleteSystemOldies(300);
+            LOGGER.debug("Removing " + file.getAbsolutePath());
+            file.delete();
+        } catch (Exception exp) {
+            LOGGER.error("Error while deleting the temporary file: ", exp);
+        }
+    }
+
+    /**
+     * Delete temporary directory
      */
     public static void removeTempDirectory(final String path) {
         
@@ -161,4 +191,54 @@ public class IOUtilities {
             LOGGER.error("Error while deleting the temporary directory: ", exp);
         }
     }
+
+    /**
+     * Deletes all files and subdirectories under dir if they are older than a given
+     * amount of seconds. Returns true if all deletions were successful. If a deletion
+     * fails, the method stops attempting to delete and returns false.
+     */
+    public static boolean deleteOldies(File dir, int maxLifeInSeconds) {
+        return deleteOldies(dir, maxLifeInSeconds, "", true);
+    }
+
+    public static boolean deleteOldies(File dir, int maxLifeInSeconds, String prefix, boolean root) {
+        Date currentDate = new Date();
+        long currentDateMillisec = currentDate.getTime();
+        boolean empty = true;
+        boolean success = true;
+        long threasholdMillisec =  currentDateMillisec - (maxLifeInSeconds*1000);
+        if (dir.isDirectory() && (StringUtils.isEmpty(prefix) || dir.getName().startsWith(prefix))) {
+            File[] children = dir.listFiles();
+            for (int i = 0; i < children.length; i++) {
+                if ((StringUtils.isEmpty(prefix) || children[i].getName().startsWith(prefix))) {
+                    long millisec = children[i].lastModified();
+                    if (millisec < threasholdMillisec) {
+                        success = deleteOldies(children[i], maxLifeInSeconds, prefix, false);
+                        if (!success) 
+                            return false;
+                    }
+                    else
+                        empty = false;
+                }
+            }
+        }
+        // if the dir is a file or if the directory is empty and it is no the root dir, we delete it
+        if (!root && (empty || (!dir.isDirectory()))) {
+            if (StringUtils.isEmpty(prefix) || dir.getName().startsWith(prefix))
+                success = dir.delete();
+        }
+        return success;
+    }
+
+    /**
+     * Deletes all files and subdirectories under the system temporary folder if they are older than 
+     * a given amount of seconds. Returns true if all deletions were successful. If a deletion
+     * fails, the method stops attempting to delete and returns false.
+     * The grobid system temporary files and folders are all identified with a grobid prefix.
+     */
+    public static boolean deleteSystemOldies(int maxLifeInSeconds) {
+        String defaultBaseDir = System.getProperty("java.io.tmpdir");
+        return deleteOldies(new File(defaultBaseDir), maxLifeInSeconds, "grobid", true);
+    }
+
 }

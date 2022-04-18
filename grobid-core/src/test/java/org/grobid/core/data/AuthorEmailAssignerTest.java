@@ -7,10 +7,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * User: zholudev
- * Date: 10/8/14
- */
 public class AuthorEmailAssignerTest {
 
     @Test

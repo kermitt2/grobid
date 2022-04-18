@@ -2,32 +2,11 @@
 
 2000 PDF files processed in 1136.623 seconds, 0.5683115 seconds per PDF file
 
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-2000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-500.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/392563v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-1000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-100.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/biorxiv-10k-test-2000.zip
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-2000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-500.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/392563v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-1000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-100.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/biorxiv-10k-test-2000.zip
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-2000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-500.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/392563v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-1000.tsv
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/file-list-cc-by-10k-test-semi-balanced-100.tsv
-warning: no Grobid TEI file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/454355v1
-warning: no evaluation (gold) XML data file found under /mnt/data/biblio/bioRxiv/biorxiv-10k-test-2000/biorxiv-10k-test-2000.zip
 Evaluation metrics produced in 878.429 seconds
 
 ======= Header metadata ======= 
 
-Evaluation on 1998 random PDF files out of 2003 PDF (ratio 1.0).
+Evaluation on 1998 random PDF files out of 2000 PDF (ratio 1.0).
 
 ======= Strict Matching ======= (exact matches)
 

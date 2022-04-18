@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<teiHeader xml:lang="en"> <fileDesc> <sourceDesc> <biblStruct> <analytic>
+
+<!-- https://gist.github.com/bnewbold/b437e363e6a0429719c65c751babe84d -->
+<!-- <author><forename>A</forename>. <lastname>Cau</lastname>, <forename>R</forename>. <lastname>Kuiper</lastname>, and <forename>W.-P</forename>. <lastname>de Roever</lastname> .</author> -->
+
+<author><lastname>Castillo</lastname>, <forename>R</forename>. <middlename>E</middlename>., <lastname>Castro</lastname>, <forename>P</forename>. <middlename>J</middlename>. <middlename>M</middlename>., <lastname>Cayabyab</lastname>, <forename>G</forename>. <middlename>T</middlename>., and <lastname>Rachel Aton</lastname>, <forename>M</forename>.</author>
+<author><lastname>Lilford</lastname> <forename>R</forename>, <lastname>Hughes</lastname> <forename>E</forename>, <lastname>Vandekerckhove</lastname> <forename>P</forename></author>
+<author><forename>Ben</forename> <lastname>Taskar</lastname> <forename>Pieter</forename> <lastname>Abbeel</lastname> and <forename>Daphne</forename> <lastname>Koller</lastname></author>
+<author><forename>Meng</forename> <lastname>Qu</lastname> and <forename>Jian</forename> <lastname>Tang</lastname></author>
+<author><forename>Bishan</forename> <lastname>Yang</lastname> <forename>Scott</forename> <forename>Wen-tau</forename> <lastname>Yih</lastname> <forename>Xiaodong</forename> <lastname>He</lastname> <forename>Jianfeng</forename> <lastname>Gao</lastname> and <forename>Li</forename> <lastname>Deng</lastname></author>
+<author><forename>Günter</forename> <lastname>Klambauer</lastname> <forename>Thomas</forename> <lastname>Unterthiner</lastname> <forename>Andreas</forename> <lastname>Mayr</lastname> and <forename>Sepp</forename> <lastname>Hochreiter</lastname></author>
+<author><forename>Byung-Hak</forename> <lastname>Kim</lastname> <forename>Ethan</forename> <lastname>Vizitei</lastname> and <forename>Varun</forename> <lastname>Ganapathi</lastname></author>
+<author><forename>Sercan</forename> <middlename>O</middlename>. <lastname>Arik</lastname> and <forename>Tomas</forename> <lastname>Pfister</lastname></author>
+<author><forename>Mohammad</forename> <lastname>Al Hasan</lastname>, <forename>Vineet</forename> <lastname>Chaoji</lastname>, <forename>Saeed</forename> <lastname>Salem</lastname>, and <forename>Mohammed</forename> <lastname>Zaki</lastname></author>
+<author><forename>Johan</forename> <middlename>J</middlename> <lastname>Vossensteyn</lastname> <forename>Andrea</forename> <lastname>Kottmann</lastname> <forename>Benjamin</forename> <middlename>WA</middlename> <lastname>Jongbloed</lastname> <forename>Franciscus</forename> <lastname>Kaiser</lastname> <forename>Leon</forename> <lastname>Cremonini</lastname> <forename>Bjorn</forename> <lastname>Stensaker</lastname> <forename>Elisabeth</forename> <lastname>Hovdhaugen</lastname> and <forename>Sabine</forename> <lastname>Wollscheid</lastname></author>
+<author><forename>Xue Bin</forename> <lastname>Peng</lastname>, <forename>Marcin</forename> <lastname>Andrychowicz</lastname>, <forename>Wojciech</forename> <lastname>Zaremba</lastname>, and <forename>Pieter</forename> <lastname>Abbeel</lastname></author>
+
+</analytic> </biblStruct> </sourceDesc> </fileDesc> </teiHeader>
+</TEI>

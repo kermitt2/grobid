@@ -7,7 +7,6 @@ import org.grobid.core.layout.LayoutToken;
 import java.util.List;
 
 /**
- * Created by zholudev on 11/01/16.
  * Representing labeled tokens and stuff
  */
 public class LabeledTokensContainer {

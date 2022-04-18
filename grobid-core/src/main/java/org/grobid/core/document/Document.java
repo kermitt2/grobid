@@ -21,7 +21,6 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidExceptionStatus;
 import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.features.FeaturesVectorHeader;
 import org.grobid.core.layout.Block;
 import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.Cluster;
@@ -71,14 +70,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
 
 /**
  * Class for representing, processing and exchanging a document item.
  *
- * @author Patrice Lopez
  */
 
 public class Document implements Serializable {
@@ -829,7 +826,7 @@ public class Document implements Serializable {
         if (documentParts == null)
             return null;
 
-        List<LayoutToken> tokenizationParts = new ArrayList<LayoutToken>();
+        List<LayoutToken> tokenizationParts = new ArrayList<>();
         for (DocumentPiece docPiece : documentParts) {
             DocumentPointer dp1 = docPiece.getLeft();
             DocumentPointer dp2 = docPiece.getRight();
@@ -950,7 +947,6 @@ public class Document implements Serializable {
                 continue;
             }
 
-
             List<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
             // filtering those images that for some reason are outside of main area
@@ -973,8 +969,6 @@ public class Document implements Serializable {
                 return true;
             }).collect(Collectors.toList());
 
-
-
             List<GraphicObject> graphicObjects = new ArrayList<>();
 
             l:
@@ -988,7 +982,6 @@ public class Document implements Serializable {
             }
 
             graphicObjects.addAll(vectorBoxGraphicObjects);
-
 
             // easy case when we don't have any vector boxes -- easier to correlation figure captions with bitmap images
             if (vectorBoxGraphicObjects.isEmpty()) {
@@ -1095,8 +1088,8 @@ public class Document implements Serializable {
 
                 ArrayList<GraphicObject> it = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.GRAPHIC_OBJECT_PREDICATE));
 
-                List<GraphicObject> vectorBoxGraphicObjects = Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
-
+                List<GraphicObject> vectorBoxGraphicObjects = 
+                    Lists.newArrayList(Iterables.filter(imagesPerPage.get(pageNum), Figure.VECTOR_BOX_GRAPHIC_OBJECT_PREDICATE));
 
                 List<GraphicObject> graphicObjects = new ArrayList<>();
 
@@ -1119,7 +1112,6 @@ public class Document implements Serializable {
                 }
 
                 graphicObjects.addAll(vectorBoxGraphicObjects);
-
 
                 if (graphicObjects.size() == it.size()) {
                     for (GraphicObject o : graphicObjects) {
@@ -1154,7 +1146,6 @@ public class Document implements Serializable {
             Engine.getCntManager().i(FigureCounters.SKIPPED_BIG_STANDALONE_FIGURES);
             return true;
         }
-
 
         return false;
     }
@@ -1571,5 +1562,12 @@ public class Document implements Serializable {
 
     public void setByteSize(double size) {
         byteSize = size;
+    }
+
+    public String getMD5() {
+        if (documentSource != null)
+            return documentSource.getMD5();
+        else
+            return null;
     }
 }

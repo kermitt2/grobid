@@ -6,8 +6,7 @@ import java.util.List;
 import org.grobid.core.analyzers.Analyzer;
 
 /**
- * Created by zholudev on 25/08/15.
- * A class representing configuration values needed in the analysis chain
+ * A class representing the runtime configuration values needed in the analysis chain
  * TODO: clean up the docs
  * consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
  *                             web services for improving header information

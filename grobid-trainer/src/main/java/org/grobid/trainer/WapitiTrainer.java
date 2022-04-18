@@ -8,10 +8,6 @@ import java.math.BigDecimal;
 
 import java.io.File;
 
-/**
- * User: zholudev
- * Date: 3/20/14
- */
 public class WapitiTrainer implements GenericTrainer {
 
     public static final String WAPITI = "wapiti";

@@ -18,10 +18,6 @@ import java.io.OutputStream;
 import java.io.StringReader;
 import java.util.List;
 
-/**
- * Created by zholudev on 12/01/16.
- * XML Builder utils
- */
 public class XmlBuilderUtils {
     public static final String TEI_NS = "http://www.tei-c.org/ns/1.0";
     public static final Function<Element, String> TO_XML_FUNCTION = new Function<Element, String>() {
@@ -103,5 +99,24 @@ public class XmlBuilderUtils {
         Element e = fromString("<div><a>Test</a></div>");
         System.out.println(toXml(e));
 
+    }
+
+    public static String stripNonValidXMLCharacters(String in) {
+        StringBuffer out = new StringBuffer(); // Used to hold the output.
+        char current; // Used to reference the current character.
+
+        if (in == null || ("".equals(in))) 
+            return ""; 
+        for (int i = 0; i < in.length(); i++) {
+            current = in.charAt(i); 
+            if ((current == 0x9) ||
+                (current == 0xA) ||
+                (current == 0xD) ||
+                ((current >= 0x20) && (current <= 0xD7FF)) ||
+                ((current >= 0xE000) && (current <= 0xFFFD)) ||
+                ((current >= 0x10000) && (current <= 0x10FFFF)))
+                out.append(current);
+        }
+        return out.toString();
     }
 }

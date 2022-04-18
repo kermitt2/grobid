@@ -208,10 +208,12 @@ The label of a formula is usually a number, but can be any symbols. It is tagged
   R<lb/>
   R<lb/>
   diag(0, 2, −1, −1),<lb/>
-	<label>(10)</label>
+	(<label>10</label>)
   <lb/>
 </formula>
 ```
+
+Note that `<label>` is tagged inside the formula. `<label>` tags the identifier only and excludes the possible parenthesis and brackets markers surrounding the identifier.
 
 ### List items
 

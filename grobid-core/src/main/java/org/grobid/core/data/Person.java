@@ -18,7 +18,6 @@ import java.util.TreeMap;
 /**
  * Class for representing and exchanging person information, e.g. author or editor.
  *
- * @author Patrice Lopez
  */
 public class Person {
     private String firstName = null;
@@ -527,7 +526,7 @@ public class Person {
         
         // other weird stuff: <forename type="first">G. Arjen</forename><surname>de Groot</surname>
 
-        // also note that language specific case practice are usually not rexpected
+        // also note that language specific case practice are usually not expected
         // e.g. H Von Allmen, J De  
     }
 

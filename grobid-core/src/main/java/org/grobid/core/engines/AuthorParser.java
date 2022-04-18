@@ -31,14 +31,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- * @author Patrice Lopez
- */
 public class AuthorParser {
 	private static Logger LOGGER = LoggerFactory.getLogger(AuthorParser.class);
     private final GenericTagger namesHeaderParser;
     private final GenericTagger namesCitationParser;
+
+    private static final Pattern ET_AL_REGEX_PATTERN = Pattern.compile("et\\.? al\\.?.*$");
 	
     public AuthorParser() {
         namesHeaderParser = TaggerFactory.getTagger(GrobidModels.NAMES_HEADER);
@@ -53,7 +53,7 @@ public class AuthorParser {
             return null;
         }
 
-        input = input.trim().replaceAll("et\\.? al\\.?.*$", " ");
+        input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
         // for language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
@@ -75,7 +75,7 @@ public class AuthorParser {
             return null;
         }
 
-        input = input.trim().replaceAll("et\\.? al\\.?.*$", " ");
+        input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
         // for language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));

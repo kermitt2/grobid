@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0808_3784"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<idno>arXiv:0808.3784v1 [hep-ex]</idno>
+
+	<date>27 Aug 2008<lb/></date>
+
+	<docTitle>
+	<titlePart>Heavy Flavour Physics at CDF<lb/></titlePart>
+	</docTitle> 
+
+	<byline>
+	<docAuthor>Gavril Giurgiu</docAuthor>
+	</byline> 
+
+	on behalf of the
+
+	<note type="group">CDF collaboration<lb/></note> 
+
+	<byline>
+	<affiliation>Phyiscs and Astronomy Department, The Johns Hopkins University<lb/></affiliation>
+	</byline>
+
+	<address>3400 N. Charles Street, Baltimore, MD 21218, U.S.A.<lb/></address>
+
+	<div type="abstract">The CDF detector at Fermilab has accumulated more that 3 fb −1 of data which enables unprecedented studies<lb/> of heavy flavor hadron properties. We present recent CDF measurements of mass and lifetime of the Bc meson<lb/> as well as lifetime, mixing and CP violation properties of Bs mesons.</div>
+
+		</front>
+	</text>
+</tei>

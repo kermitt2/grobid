@@ -25,7 +25,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by zholudev on 18/12/15.
  * Matching reference markers to extracted citations
  */
 public class ReferenceMarkerMatcher {
@@ -271,17 +270,15 @@ public class ReferenceMarkerMatcher {
     private List<MatchResult> matchAuthorCitation(String text, List<LayoutToken> refTokens) throws EntityMatcherException {
         List<Pair<String, List<LayoutToken>>> split = splitAuthors(refTokens);
         List<MatchResult> results = new ArrayList<>();
-        for (Pair<String, List<LayoutToken>> si : split) {
 
+        for (Pair<String, List<LayoutToken>> si : split) {
             String c = si.a;
             List<LayoutToken> splitItem = si.b;
 
             List<BibDataSet> matches = authorMatcher.match(c);
             if (matches.size() == 1) {
                 cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
-//                System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
-
-//                System.out.println("-----------");
+                //System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
                 results.add(new MatchResult(c, splitItem, matches.get(0)));
             } else {
                 if (matches.size() != 0) {
@@ -293,23 +290,23 @@ public class ReferenceMarkerMatcher {
                         cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS_AFTER_POST_FILTERING);
                     } else {
                         cntManager.i(ReferenceMarkerMatcherCounters.UNMATCHED_REF_MARKERS);
+                        results.add(new MatchResult(c, splitItem, null));
                         if (filtered.size() == 0) {
                             cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES_AFTER_POST_FILTERING);
                         } else {
                             cntManager.i(ReferenceMarkerMatcherCounters.MANY_CANDIDATES_AFTER_POST_FILTERING);
-//                            LOGGER.info("MANY CANDIDATES: " + text + "\n-----\n" + c + "\n");
+                            //LOGGER.info("SEVERAL MATCHED REF CANDIDATES: " + text + "\n-----\n" + c + "\n");
                             /*for (BibDataSet bds : matches) {
                                 LOGGER.info("+++++");
                                 LOGGER.info("  " + bds.getRawBib());
                             }*/
-//                            LOGGER.info("===============");
                         }
                     }
                 } else {
                     results.add(new MatchResult(c, splitItem, null));
                     cntManager.i(ReferenceMarkerMatcherCounters.NO_CANDIDATES);
-//                    LOGGER.info("NO CANDIDATES: " + text + "\n" + c);
-//                    LOGGER.info("++++++++++++");
+                    //LOGGER.info("NO MATCHED REF CANDIDATES: " + text + "\n" + c);
+                    //LOGGER.info("++++++++++++");
                 }
             }
         }
@@ -333,6 +330,12 @@ public class ReferenceMarkerMatcher {
                 }
             } else if (matchCount > 1) {
                 List<List<LayoutToken>> yearSplit = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, false);
+                List<List<LayoutToken>> yearSplitWithLeftOver = LayoutTokensUtil.split(splitTokens, YEAR_PATTERN, true, true);
+                // do we have a leftover to be added?
+                List<LayoutToken> leftover = null;
+                if (yearSplit.size() < yearSplitWithLeftOver.size()) {
+                    leftover = yearSplitWithLeftOver.get(yearSplitWithLeftOver.size()-1);
+                }
                 if (yearSplit.isEmpty()) {
                     result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(splitTokens)), splitTokens));
                 } else {
@@ -353,12 +356,26 @@ public class ReferenceMarkerMatcher {
 
                         for (int i = 1; i < yearSplit.size(); i++) {
                             List<LayoutToken> toksI = yearSplit.get(i);
-                            result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)), toksI.subList(toksI.size() - 1, toksI.size())));
+                            if (i == yearSplit.size()-1 && leftover != null) {
+                                List<LayoutToken> lastSegmentTokens = toksI.subList(toksI.size() - 1, toksI.size());
+                                lastSegmentTokens.addAll(leftover);
+                                result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)) + LayoutTokensUtil.toText(leftover), 
+                                    lastSegmentTokens));
+                            } else {
+                                result.add(new Pair<>(authorName + " " + LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(toksI)), 
+                                    toksI.subList(toksI.size() - 1, toksI.size())));
+                            }
                         }
                     } else {
                         // case when two authors still appear
-                        for (List<LayoutToken> item : yearSplit) {
-                            result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(item)), item));
+                        for(int k=0; k<yearSplit.size(); k++) {
+                            List<LayoutToken> item = yearSplit.get(k);
+                            if (k == yearSplit.size()-1 && leftover != null) {
+                                List<LayoutToken> lastSegmentTokens = item;
+                                lastSegmentTokens.addAll(leftover);
+                                result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(lastSegmentTokens)), lastSegmentTokens));
+                            } else
+                                result.add(new Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(item)), item));
                         }
                     }
                 }

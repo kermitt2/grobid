@@ -4,6 +4,8 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.CookieSpecs;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -24,7 +26,6 @@ import java.util.Observable;
  * GET crossref request
  * @see <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API Documentation</a>
  *
- * @author Vincent Kaestle, Patrice
  */
 public class CrossrefRequest<T extends Object> extends Observable {
 
@@ -89,16 +90,24 @@ public class CrossrefRequest<T extends Object> extends Observable {
             notifyListeners(message);
             return;
         }
-		CloseableHttpClient httpclient = null;
-		if (GrobidProperties.getProxyHost() != null) {
-			HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
-			DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
-			httpclient = HttpClients.custom()
-		  		.setRoutePlanner(routePlanner)
-		  		.build();
-		} else {
-			httpclient = HttpClients.createDefault();	
-		}
+
+        CloseableHttpClient httpclient = null;
+        RequestConfig requestConfig = RequestConfig.custom()
+                                .setCookieSpec(CookieSpecs.STANDARD)
+                                .build();
+        if (GrobidProperties.getProxyHost() != null) {
+            HttpHost proxy = new HttpHost(GrobidProperties.getProxyHost(), GrobidProperties.getProxyPort());
+            DefaultProxyRoutePlanner routePlanner = new DefaultProxyRoutePlanner(proxy);
+
+            httpclient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .setRoutePlanner(routePlanner)     
+                .build();
+        } else {
+            httpclient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .build();
+        }
 
 		try {
 			URIBuilder uriBuilder = new URIBuilder(BASE_URL);
@@ -133,18 +142,17 @@ public class CrossrefRequest<T extends Object> extends Observable {
 
             // set recommended User-Agent header
             HttpGet httpget = new HttpGet(uriBuilder.build());
+
             if (GrobidProperties.getCrossrefMailto() != null) {
             	httpget.setHeader("User-Agent", 
             		"GROBID/0.6.1 (https://github.com/kermitt2/grobid; mailto:" + GrobidProperties.getCrossrefMailto() + ")");
 			} else {
-				httpget.setHeader("User-Agent", 
-            		"GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
+				httpget.setHeader("User-Agent", "GROBID/0.6.1 (https://github.com/kermitt2/grobid)");
 			}
             
 			// set the authorization token for the Metadata Plus service if available
 			if (GrobidProperties.getCrossrefToken() != null) {
-            	httpget.setHeader("Crossref-Plus-API-Token", 
-            		"Bearer " + GrobidProperties.getCrossrefToken());
+            	httpget.setHeader("Crossref-Plus-API-Token", "Bearer " + GrobidProperties.getCrossrefToken());
 			}
 
             ResponseHandler<Void> responseHandler = new ResponseHandler<Void>() {
@@ -156,11 +164,13 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					
 					message.status = response.getStatusLine().getStatusCode();
 					
+                    // note: header field names are case insensitive
 					Header limitIntervalHeader = response.getFirstHeader("X-Rate-Limit-Interval");
 					Header limitLimitHeader = response.getFirstHeader("X-Rate-Limit-Limit");
-					if (limitIntervalHeader != null && limitLimitHeader != null)
-						message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
-					
+					if (limitIntervalHeader != null && limitLimitHeader != null) {
+					    message.setTimeLimit(limitIntervalHeader.getValue(), limitLimitHeader.getValue());
+                    }
+					    
 					if (message.status < 200 || message.status >= 300) {
 						message.errorMessage = response.getStatusLine().getReasonPhrase();
 						notifyListeners(message);

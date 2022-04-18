@@ -12,9 +12,6 @@ import static org.hamcrest.core.IsNull.notNullValue;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
-/**
- *  @author Patrice Lopez
- */
 public class TEIFormatterTest {
 
     @BeforeClass

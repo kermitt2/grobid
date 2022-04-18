@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="2104.04191v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	<lb/>
+
+	Presented as a 
+	
+	<meeting>RobustML workshop paper at ICLR 2021<lb/></meeting>
+
+	<docTitle>
+	<titlePart>SI-SCORE: AN IMAGE DATASET FOR FINE-GRAINED<lb/> ANALYSIS OF ROBUSTNESS TO OBJECT LOCATION,<lb/> ROTATION AND SIZE<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jessica Yung, Rob Romijnders, Alexander Kolesnikov, Lucas Beyer, Josip Djolonga,<lb/> Neil Houlsby, Sylvain Gelly, Mario Lucic, Xiaohua Zhai *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Google Research, Brain Team</affiliation>
+	</byline>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Before deploying machine learning models it is critical to assess their robustness.<lb/> In the context of deep neural networks for image understanding, changing the ob-<lb/>ject location, rotation and size may affect the predictions in non-trivial ways. In<lb/> this work we perform a fine-grained analysis of robustness with respect to these<lb/> factors of variation using SI-SCORE, a synthetic dataset. In particular, we investi-<lb/>gate ResNets, Vision Transformers and CLIP, and identify interesting qualitative<lb/> differences between these.<lb/></div>
+
+	* Please send correspondence to
+	<email>j.yung357@gmail.com</email>
+
+	.<lb/>
+	<note type="copyright">1 The synthetic dataset and code used to generate the dataset are available on GitHub and CVF at<lb/> https://github.com/google-research/si-score.<lb/></note>
+
+	<idno>arXiv:2104.04191v1 [cs.CV]</idno>
+
+	<date>9 Apr 2021</date>
+
+		</front>
+	</text>
+</tei>

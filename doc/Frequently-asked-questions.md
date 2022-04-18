@@ -17,21 +17,60 @@ The exact server configuration will depend on the service you want to call. We p
 
 - keep the concurrency at the client (number of simultaneous calls) slightly higher than the available number of threads at the server side, for instance if the server has 16 threads, use a concurrency between 20 and 24 (it's the option `n` in the above mentioned clients, in my case I used 24)
 
-- in `grobid/grobid-home/grobid.properties` set the property `org.grobid.max.connections` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine, in my case I used 20)
+- in `grobid/grobid-home/config/grobid.yaml` set the parameter `concurrency` to your number of available thread at server side or slightly higher (e.g. 16 to 20 for a 16 threads-machine, in my case I used 20)
 
-- set `modelPreload` to `true`in `grobid/grobid-service/config/config.yaml`, it will avoid some strange behavior at launch 
+- set `modelPreload` to `true`in `grobid/grobid-home/config/grobid.yaml`, it will avoid some strange behavior at launch 
 
-- in the query, `consolidateHeader` can be `1`  or `2` if you are using the CrossRef consolidation. It significantly improves the accuracy and add useful metadata
+- in the query, `consolidateHeader` can be `1`  or `2` if you are using the biblio-glutton or CrossRef consolidation. It significantly improves the accuracy and add useful metadata.
 
 - If you want to consolidate all the bibliographical references and use `consolidateCitations` as `1` or `2`, CrossRef query rate limit will avoid scale to more than 1 document per second... For scaling the bibliographical reference resolution, you will need to use a local consolidation service, [biblio-glutton](https://github.com/kermitt2/biblio-glutton). The overall capacity will depend on the biblio-glutton service then, and the number of elasticsearch nodes you can exploit. From experience, it is difficult to go beyond 300K PDF per day when using consolidation for every extracted bibliographical references. 
-
 
 ## I would also like to extract images from PDFs
 
 You will get the embedded images converted into `.png` by using the normal batch command. For instance:
 
-> java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.6.0-SNAPSHOT-onejar.jar -gH grobid-home -dIn ~/test/in0/ -dOut ~/test/out0 -exe processFullText 
+```console
+java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.7.1-SNAPSHOT-onejar.jar -gH grobid-home -dIn ~/test/in/ -dOut ~/test/out -exe processFullText 
+```
 
 There is a web service doing the same, returning everything in a big zip file, `processFulltextAssetDocument`, still usable but deprecated.
 
 A simpler option, if you are only interested in raw text and images, is to use directly [pdfalto](https://github.com/kermitt2/pdfalto).
+
+
+## pdfalto is GPL, it is used by and shipped with GROBID which is Apache 2, is it okay in term of licensing?
+
+We think there is no issue. First because GROBID calls the pdfalto binary as external command line - so there is similar to chaintools/scripts (which can be Apache/MIT) with external command line calls (calling most of the time also GPL stuff on Linux). More precisely:
+
+- GROBID and pdfalto are two different programs in the sense of FSF, see last paragraph [here](https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation): 
+
+```text
+By contrast, pipes, sockets and command-line arguments are communication mechanisms normally 
+used between two separate programs. So when they are used for communication, the modules 
+normally are separate programs. 
+```
+
+Linking libraries, for instance with a JNI, would have required a LGPL, but here we don't link libraries, share address space, and so on. 
+
+- pdfalto can be aggregated in the same "grobid" distribution, see GPL faq [Mere Aggregation](https://www.gnu.org/licenses/gpl-faq.en.html#MereAggregation)
+
+```text
+The GPL permits you to create and distribute an aggregate, even when the licenses of the 
+other software are nonfree or GPL-incompatible. The only condition is that you cannot 
+release the aggregate under a license that prohibits users from exercising rights that 
+each program's individual license would grant them.
+```
+
+For convenience it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
+
+Finally as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
+
+The only possible restriction would be:
+
+```text
+But if the semantics of the communication are intimate enough, exchanging complex 
+internal data structures, that too could be a basis to consider the two parts as 
+combined into a larger program.
+```
+
+pdfalto produces ALTO files, which is a standard format. pdfalto can be used for many other purposes than GROBID. In return GROBID itself can support other inputs, like text or the old pdf2xml files, and could support ALTO files produced by other tools. So this restriction does not apply. 

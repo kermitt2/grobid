@@ -14,7 +14,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by zholudev on 11/01/16.
  * Synchronize tagging result and layout tokens
  */
 public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer>, Iterable<LabeledTokensContainer> {

@@ -10,10 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-/**
- * User: zholudev
- * Date: 3/17/14
- */
 public class WapitiModel {
     public static final Logger LOGGER = LoggerFactory.getLogger(WapitiModel.class);
 

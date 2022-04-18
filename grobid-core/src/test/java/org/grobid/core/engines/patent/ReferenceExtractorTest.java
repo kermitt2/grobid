@@ -190,7 +190,10 @@ public class ReferenceExtractorTest {
 	
 	@Test
 	public void krProcessing() {
-		String text_kr = "미국의 애플사의 미국 출원 2012/012710.";
+		String text_kr = "미국의 애플사의 미국 출원 2012/012710." + "따라서, 전기화학적 센서들의 제조, 특히 혈액 또는 간질액과 같은 신체 마커들(포도당, 프룩토사민, " + 
+		"하에마토크릿 등)의측정을 위한 전기화학적 센서들을 제조하기 위해 개선된 프로세스가 필요하다. 또한, 합리적인 가격으로 센서 스트립들을제조하기 " + 
+		"위한 고속의 예측가능하고 재생가능한 방법에 대한 필요성이 있다. 또한, 각각의 완료된 스트립이 재생가능한 방법으로 체액의 분석 대상물들을 " + 
+		"신뢰성있고 예측가능하며 정밀하게 측정하는데 사용될 수 있는 매우 작은 특성들을 갖는센서 스트립들을 고속의 예측가능하고 반복가능한 방법으로 제조할 필요가 있다.";
 		System.out.println(text_kr);
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<PatentItem>();

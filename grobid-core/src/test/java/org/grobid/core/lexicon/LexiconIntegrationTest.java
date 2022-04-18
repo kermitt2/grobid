@@ -15,9 +15,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * @author Patrice Lopez
- */
 public class LexiconIntegrationTest {
     private Lexicon target = null;
 

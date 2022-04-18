@@ -1,7 +1,6 @@
 package org.grobid.core.document;
 
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.GrobidPropertyKeys;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,7 +16,6 @@ import javax.xml.parsers.SAXParserFactory;
 /**
  * See https://github.com/kermitt2/grobid/pull/475
  *
- *  @author Daniel Ecer
  */
 public class DocumentTest {
 

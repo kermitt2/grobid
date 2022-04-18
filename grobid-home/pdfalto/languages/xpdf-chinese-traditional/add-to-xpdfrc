@@ -1,0 +1,8 @@
+#----- begin Chinese Traditional support package (2011-sep-02)
+cidToUnicode	Adobe-CNS1	/usr/local/share/xpdf/chinese-traditional/Adobe-CNS1.cidToUnicode
+unicodeMap	Big5		/usr/local/share/xpdf/chinese-traditional/Big5.unicodeMap
+unicodeMap	Big5ascii	/usr/local/share/xpdf/chinese-traditional/Big5ascii.unicodeMap
+cMapDir		Adobe-CNS1	/usr/local/share/xpdf/chinese-traditional/CMap
+toUnicodeDir			/usr/local/share/xpdf/chinese-traditional/CMap
+#fontFileCC	Adobe-CNS1	/usr/..../NotoSansCJKtc-Regular.otf"
+#----- end Chinese Traditional support package

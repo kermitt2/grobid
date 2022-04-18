@@ -1,17 +1,22 @@
 package org.grobid.core.utilities;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Class for holding static methods for processing related to unicode.
  *
- * @author Patrice Lopez
  */
 public class UnicodeUtil {
+
+    private static final Pattern DASH_PATTERN = Pattern.compile("\\p{Pd}");
+    private static final Pattern NORMALISE_REGEX_PATTERN = Pattern.compile("[ \n]");
 
 	// As java \s doesn’t support the Unicode white space property (\s matches
 	// [ \t\n\x0B\f\r]), here are the 26 code points of the "official" stable
 	// p{White_Space} unicode property
 	public static String whitespace_chars = "["
-										+ "\\u0009" // CHARACTER TABULATION, \t
+										+ "\\u0009"  // CHARACTER TABULATION, \t
 			                        	+ "\\u000A"  // LINE FEED (LF), \n -> new line
 			                        	+ "\\u000B"  // LINE TABULATION, \v -> new line
 			                        	+ "\\u000C"  // FORM FEED (FF) -> break page
@@ -38,11 +43,11 @@ public class UnicodeUtil {
 				                        + "\\u205F"  // MEDIUM MATHEMATICAL SPACE
 				                        + "\\u3000"  // IDEOGRAPHIC SPACE
 				                        + "]";
-
+    
 	// a more restrictive selection of horizontal white space characters than the
 	// Unicode p{White_Space} property (which includes new line and vertical spaces)
 	public static String my_whitespace_chars = "["
-										+ "\\u0009"   // CHARACTER TABULATION, \t
+										+ "\\u0009"  // CHARACTER TABULATION, \t
 			                        	+ "\\u0020"  // SPACE
 				                        + "\\u00A0"  // NO-BREAK SPACE
 				                        + "\\u1680"  // OGHAM SPACE MARK
@@ -64,6 +69,7 @@ public class UnicodeUtil {
 				                        + "\\u205F"  // MEDIUM MATHEMATICAL SPACE
 				                        + "\\u3000"  // IDEOGRAPHIC SPACE
 				                        + "]";
+    private static final Pattern MY_WHITESPACE_PATTERN = Pattern.compile(my_whitespace_chars);
 
     // all the horizontal low lines
     public static String horizontal_low_lines_chars = "["
@@ -78,6 +84,8 @@ public class UnicodeUtil {
 			    								  + "\\uFE33" // Presentation Form For Vertical Low Line
 			    								  + "\\uFE34" // Presentation Form For Vertical Wavy Low Line
 			    								  + "]";
+    private static final Pattern HORIZONTAL_LOW_LINES_CHARS_PATTERN = Pattern.compile(horizontal_low_lines_chars);
+
     // all the vertical lines
     public static String vertical_lines_chars = "["
     										+ "\\u007C" 	// vertical line
@@ -86,6 +94,7 @@ public class UnicodeUtil {
 			    							+ "\\u2223" 	// Divides
 			    							+ "\\u2758"  	// Light Vertical Bar
 			    							+ "]";
+    private static final Pattern VERTICAL_LINES_CHARS_PATTERN = Pattern.compile(vertical_lines_chars);
 
     // all new lines / "vertical" white spaces
     public static String new_line_chars = "["
@@ -97,6 +106,7 @@ public class UnicodeUtil {
     									 + "\\u2029"  // PARAGRAPH SEPARATOR, \p{Zp}
     									 + "\\u2028"  // LINE SEPARATOR, \p{Zl}
     									 + "]";
+    private static final Pattern NEW_LINE_CHARS_PATTERN = Pattern.compile(new_line_chars);
 
     // all bullets
     public static String bullet_chars = "["
@@ -116,6 +126,7 @@ public class UnicodeUtil {
 										+ "\\u2B24"  // black large circle
                                         + "\\u00B7"  // middle dot
 										+ "]";
+    private static final Pattern BULLET_CHARS_PATTERN = Pattern.compile(bullet_chars);
 
     // opening parenthesis
     public static String open_parenthesis = "["
@@ -127,6 +138,7 @@ public class UnicodeUtil {
                                             + "\\u276A" // medium flattened left parenthesis ornament
                                             + "\\u27EC" // mathematical left white tortoise shell bracket, called bracket but totally looks like parenthesis
                                             + "]";
+    private static final Pattern OPEN_PARENTHESIS_PATTERN = Pattern.compile(open_parenthesis);
 
     // closing parenthesis
     public static String close_parenthesis = "["
@@ -138,6 +150,7 @@ public class UnicodeUtil {
                                             + "\\u276B" // medium flattened right parenthesis ornament
                                             + "\\u27ED" // mathematical right white tortoise shell bracket, called bracket but totally looks like parenthesis
                                             + "]";
+    private static final Pattern CLOSE_PARENTHESIS_PATTERN = Pattern.compile(close_parenthesis);
 
 	/**
      * Normalise the space, EOL and punctuation unicode characters.
@@ -159,29 +172,29 @@ public class UnicodeUtil {
         // for Unicode character properties supported by Java
 
         // normalise all horizontal space separator characters 
-        text = text.replaceAll(my_whitespace_chars, " ");
+        text = MY_WHITESPACE_PATTERN.matcher(text).replaceAll(" ");
 
         // normalise all EOL - special handling of "\r\n" as one single newline
-        text = text.replace("\r\n", "\n").replaceAll(new_line_chars, "\n");
+        text = text.replace("\r\n", "\n");
+        text = NEW_LINE_CHARS_PATTERN.matcher(text).replaceAll("\n");
 
         // normalize dash via the unicode dash punctuation property
-        // note: we don't add the "hyphen bullet" character \\u2043 because it's actually a bullet
-        text = text.replaceAll("\\p{Pd}", "-");
+        text = DASH_PATTERN.matcher(text).replaceAll("-");
 
         // normalize horizontal low lines
-        text = text.replaceAll(horizontal_low_lines_chars, "_");
+        text = HORIZONTAL_LOW_LINES_CHARS_PATTERN.matcher(text).replaceAll("_");
 
         // normalize vertical lines
-        text = text.replaceAll(vertical_lines_chars, "|");
+        text = VERTICAL_LINES_CHARS_PATTERN.matcher(text).replaceAll("|");
 
         // bullet normalisation
-        text = text.replaceAll(bullet_chars, "•");
+        text = BULLET_CHARS_PATTERN.matcher(text).replaceAll("•");
 
         // opening parenthesis normalisation
-        text = text.replaceAll(open_parenthesis, "(");
+        text = OPEN_PARENTHESIS_PATTERN.matcher(text).replaceAll("(");
 
         // closing parenthesis normalisation
-        text = text.replaceAll(close_parenthesis, ")");
+        text = CLOSE_PARENTHESIS_PATTERN.matcher(text).replaceAll(")");
 
         // remove all control charcaters?
         //text = text.replaceAll("\\p{Cntrl}", " ");
@@ -197,6 +210,6 @@ public class UnicodeUtil {
      */
     public static String normaliseTextAndRemoveSpaces(String text) {
         // parano sanitising
-        return normaliseText(text).replaceAll("[ \n]", "");
+        return NORMALISE_REGEX_PATTERN.matcher(normaliseText(text)).replaceAll("");
     }
 }

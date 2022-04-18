@@ -19,9 +19,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by zholudev on 15/01/16.
  * Utilities for annotating PDF
  */
+
 public class AnnotationUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(AnnotationUtil.class);
 

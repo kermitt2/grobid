@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 /**
  * Class for additional information for patent document.
  *
- * @author Patrice Lopez
  */
 public class PatentDocument extends Document {
 

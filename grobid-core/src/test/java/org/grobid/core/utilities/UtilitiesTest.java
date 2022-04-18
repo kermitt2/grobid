@@ -61,13 +61,6 @@ public class UtilitiesTest {
 	}
 
 	@Test
-	public void testwriteInFileANDreadFile() throws IOException {
-		File file = File.createTempFile("temp", "test");
-		IOUtilities.writeInFile(file.getAbsolutePath(), getString());
-		assertEquals("Not expected value", getString(), IOUtilities.readFile(file.getAbsolutePath()));
-	}
-
-	@Test
 	public void testMergePositions1() throws IOException {
 		List<OffsetPosition> position1 = new ArrayList<OffsetPosition>();
 		List<OffsetPosition> position2 = new ArrayList<OffsetPosition>();
@@ -118,10 +111,5 @@ public class UtilitiesTest {
 		assertEquals(positions.get(0).end, 6);
 		assertEquals(positions.get(1).start, 7);		
 		assertEquals(positions.get(1).end, 10);
-	}
-
-
-	private static String getString() {
-		return "1 \" ' A \n \t \r test\n\\n \n M";
 	}
 }

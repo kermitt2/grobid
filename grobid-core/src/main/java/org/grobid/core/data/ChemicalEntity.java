@@ -5,7 +5,6 @@ import org.grobid.core.utilities.OffsetPosition;
 /**
  * Class for managing chemical entities.
  *
- * @author Patrice Lopez
  */
 public class ChemicalEntity {
     // attribute

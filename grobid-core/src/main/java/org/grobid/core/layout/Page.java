@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Class for representing a page.
  *
- * @author Patrice Lopez
  */
 public class Page {
     private List<Block> blocks = null;

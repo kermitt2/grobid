@@ -8,11 +8,9 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import org.grobid.core.data.Metadata;
 
-
 /**
  * SAX parser for the metadata of PDF files obtained via xpdf pdfalto.
  *
- * @author Achraf
  */
 public class PDFMetadataSaxHandler extends DefaultHandler {
 	public static final Logger LOGGER = LoggerFactory.getLogger(PDFMetadataSaxHandler.class);

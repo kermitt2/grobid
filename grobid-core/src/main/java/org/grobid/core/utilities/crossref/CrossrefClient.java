@@ -7,14 +7,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.Future;
-import java.util.concurrent.ExecutionException;
+import java.util.concurrent.*;
 
 import org.apache.commons.lang3.concurrent.TimedSemaphore;
 import org.apache.http.client.ClientProtocolException;
@@ -26,17 +19,21 @@ import org.slf4j.LoggerFactory;
  * Request pool to get data from api.crossref.org without exceeding limits
  * supporting multi-thread.
  *
- * @author Vincent Kaestle, Patrice
+ * Note: the provided interval for the query rate returned by CrossRef appeared to be note reliable, 
+ * so we have to use the rate limit (X-Rate-Limit-Interval) as a global parallel query limit, without 
+ * interval consideration.  
+ * See https://github.com/kermitt2/grobid/pull/725
+ * 
  */
 public class CrossrefClient implements Closeable {
-	public static final Logger logger = LoggerFactory.getLogger(CrossrefRequestTask.class);
+	public static final Logger logger = LoggerFactory.getLogger(CrossrefClient.class);
 	
 	protected static volatile CrossrefClient instance;
 
 	protected volatile ExecutorService executorService;
-		
+
+	protected int max_pool_size = 1;
 	protected static boolean limitAuto = true;
-	protected volatile TimedSemaphore timedSemaphore;
 
 	// this list is used to maintain a list of Futures that were submitted,
 	// that we can use to check if the requests are completed
@@ -62,12 +59,14 @@ public class CrossrefClient implements Closeable {
      * Hidden constructor
      */
     protected CrossrefClient() {
+    	// note: by default timeout with newCachedThreadPool is set to 60s, which might be too much for crossref usage,
+    	// hanging grobid significantly, so we might want to use rather a custom instance of ThreadPoolExecutor and set 
+    	// the timeout sifferently
 		this.executorService = Executors.newCachedThreadPool(r -> {
             Thread t = Executors.defaultThreadFactory().newThread(r);
             t.setDaemon(true);
             return t;
         });
-		this.timedSemaphore = null;
 		this.futures = new HashMap<>();
 		setLimits(1, 1000);
 	}
@@ -78,35 +77,15 @@ public class CrossrefClient implements Closeable {
 	}
 	
 	public void setLimits(int iterations, int interval) {
-		if ((this.timedSemaphore == null)
-			|| (this.timedSemaphore.getLimit() != iterations)
-			|| (this.timedSemaphore.getPeriod() != interval)) {
-			// custom executor to prevent stopping JVM from exiting
-			this.timedSemaphore = new TimedSemaphore(new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
-				@Override
-				public Thread newThread(Runnable r) {
-					Thread t = Executors.defaultThreadFactory().newThread(r);
-					t.setDaemon(true);
-					return t;
-				}
-			}), interval, TimeUnit.MILLISECONDS, iterations);
-		}
+		this.setMax_pool_size(iterations);
+		// interval is not usable anymore, we need to wait termination of threads independently from any time interval
 	}
 	
 	public void updateLimits(int iterations, int interval) {
 		if (this.limitAuto) {
 			//printLog(null, "Updating limits... " + iterations + " / " + interval);
-			this.setLimits(iterations / 2, interval);
-		}
-	}
-	
-	public synchronized void checkLimits() throws InterruptedException {
-		if (this.limitAuto) {
-			synchronized(this.timedSemaphore) {
-				printLog(null, "timedSemaphore acquire... current total: " + this.timedSemaphore.getAcquireCount() + 
-					", still available: " + this.timedSemaphore.getAvailablePermits() );
-				this.timedSemaphore.acquire();
-			}
+			this.setLimits(iterations, interval);
+			// note: interval not used anymore
 		}
 	}
 	
@@ -119,12 +98,23 @@ public class CrossrefClient implements Closeable {
 		if (listener != null)
 			request.addListener(listener);
 		synchronized(this) {
+			// we limit the number of active threads to the crossref api dynamic limit returned in the response header
+			while(((ThreadPoolExecutor)executorService).getActiveCount() >= this.getMax_pool_size()) {
+				try {
+					TimeUnit.MICROSECONDS.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 			Future<?> f = executorService.submit(new CrossrefRequestTask<T>(this, request));
 			List<Future<?>> localFutures = this.futures.get(new Long(threadId));
 			if (localFutures == null)
 				localFutures = new ArrayList<Future<?>>();
 			localFutures.add(f);
-			this.futures.put(new Long(threadId), localFutures);
+			this.futures.put(threadId, localFutures);
+			logger.debug("add request to thread " + threadId +
+					"active threads count is now " + ((ThreadPoolExecutor) executorService).getActiveCount()
+			);
 //System.out.println("add request to thread " + threadId + " / current total for the thread: " +  localFutures.size());			
 		}
 	}
@@ -170,9 +160,16 @@ public class CrossrefClient implements Closeable {
 		}
 	}
 
+	public int getMax_pool_size() {
+		return max_pool_size;
+	}
+
+	public void setMax_pool_size(int max_pool_size) {
+		this.max_pool_size = max_pool_size;
+	}
 
 	@Override
 	public void close() throws IOException {
-		timedSemaphore.shutdown();
+		executorService.shutdown();
 	}
 }
