@@ -91,7 +91,10 @@ subprojects {
         repositories {
             maven {
                 name = "OSSRH"
-                setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2")
+                // for releases
+                //setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2")
+                // for snapshots
+                setUrl('https://oss.sonatype.org/content/repositories/snapshots/')
                 credentials {
                     username = project.hasProperty('ossrhUsername') ? ossrhUsername : "Unknown user"
                     password = project.hasProperty('ossrhPassword') ? ossrhPassword : "Unknown password"
