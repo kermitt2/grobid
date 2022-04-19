@@ -4,20 +4,21 @@ This page contains a set of notes for the Grobid developers:
 
 ### Release
 
-We use JitPack to publish the Grobid libraries. 
+With the end of JCenter, the fact that the repo is too large for JitPack and that we are technically not ready to move back to the bureaucratic Maven Central yet, we currently publish the Grobid library artefacts ourselves... with the Grobid DIY repository :) 
+The idea anyway is that people will use Grobid with the Docker image, the service and usually not via the Java library artefacts. If the use the Java library, they will likely simply rebuild from the repo, because in this scenario they will likely want to massage the tool and they need a local `grobid-home`. 
 
 In order to make a new release:  
 
-+ tag the project branch to be releases, for instance a version `0.7.0`: 
++ tag the project branch to be releases, for instance a version `0.7.1`: 
 
 ```
-> git tag 0.7.0
-> git push origin 0.7.0
+> git tag 0.7.1
+> git push origin 0.7.1
 ```
 
 + create a github release: the easiest is to use the GitHub web interface
 
-+ trigger the build with JitPack: https://jitpack.io/#kermitt2/grobid
++ do something to publish the Java artefacts... currrently just uploading them on AWS S3 
 
 + you're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
 
@@ -27,33 +28,34 @@ In order to make a new release:
     allprojects {
         repositories {
             ...
-            maven { url 'https://jitpack.io' }
+            maven { url 'https://grobid.s3.eu-west-1.amazonaws.com/repo/' }
         }
     }
 ```
 
 ```
 dependencies {
-    implementation 'com.github.kermitt2:grobid:0.7.0'
+    implementation 'org.grobid:grobid-core:0.7.1'
 }
 ```
 
 for maven projects:
 
-```
+```xml
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>grobid</id>
+            <name>GROBID DIY repo</name>
+            <url>https://grobid.s3.eu-west-1.amazonaws.com/repo/</url>
         </repository>
-    </repositories>
+    </repositories> 
 ```
 
-```
+```xml
     <dependency>
-        <groupId>com.github.kermitt2</groupId>
-        <artifactId>grobid</artifactId>
-        <version>0.7.0</version>
+        <groupId>org.grobid</groupId>
+        <artifactId>grobid-core</artifactId>
+        <version>0.7.1</version>
     </dependency>
 ```
 
