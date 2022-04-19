@@ -7,7 +7,6 @@ buildscript {
         }
     }
     dependencies {
-//        classpath group: 'net.researchgate', name: 'gradle-release', version: '2.8.1'
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
@@ -20,7 +19,6 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-//apply plugin: 'net.researchgate.release'
 apply plugin: 'jacoco'
 
 jacoco {
@@ -43,9 +41,13 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
- //   apply plugin: 'com.jfrog.bintray'
 
-    publishing {
+    java {
+//        withJavadocJar()
+        withSourcesJar()
+    }
+
+    /*publishing {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
@@ -54,6 +56,56 @@ subprojects {
         repositories {
             mavenLocal()
         }
+    }*/
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from(components["java"])
+
+                pom {
+                    name.set("GROBID")
+                    description.set("A machine learning software for extracting information from scholarly documents")
+                    url.set("https://github.com/kermitt2/grobid")
+                    licenses {
+                        license {
+                            name.set("Apache 2")
+                            url.set("https://www.apache.org/licenses/LICENSE-2.0 ")
+                        }
+                    }
+                    developers {
+                        developer {
+                            id.set("kermitt2")
+                            name.set("Patrice Lopez")
+                            email.set("patrice.lopez@science-miner.com")
+                        }
+                    }
+                    scm {
+                        connection.set("scm:git:git://github.com/kermitt2/grobid.git")
+                        developerConnection.set("scm:git:ssh://github.com/kermitt2/grobid.git")
+                        url.set("https://github.com/kermitt2/grobid/")
+                    }
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "OSSRH"
+                setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2")
+                credentials {
+                    username = project.hasProperty('ossrhUsername') ? ossrhUsername : "Unknown user"
+                    password = project.hasProperty('ossrhPassword') ? ossrhPassword : "Unknown password"
+                }
+            }
+        }
+    }
+
+
+    // for signing the artefacts with a GPG key
+    apply plugin: 'signing'
+    
+    signing {
+        sign configurations.archives
     }
 
     task install(dependsOn: publishToMavenLocal)
@@ -63,7 +115,6 @@ subprojects {
 
     repositories {
         mavenCentral()
-//        jcenter()
         maven {
             url new File(rootProject.rootDir, "grobid-core/localLibs")
         }
@@ -123,35 +174,11 @@ subprojects {
     }
 
     artifacts {
-        archives sourceJar
         archives jar
+        archives sourceJar
+//        archives javadocJar
     }
 
-
-    /*
-    // removing - this currently breaks the release 
-    task gitRev(type: Exec) {
-        commandLine 'git', 'rev-parse', '--short', 'HEAD'
-        standardOutput = new ByteArrayOutputStream()
-        ext.hash = {
-            standardOutput.toString()
-        }
-    }
-
-    // allows to upload non-snapshot versions that are tight to git revision (substitutes the version if it's a snapshot one)
-    // usage "gradle uploadArchives -PversionWithGitRev"
-    task changeVersionIfNeeded(dependsOn: gitRev) {
-        doLast {
-            def suffix = '-SNAPSHOT'
-            if (project.hasProperty('versionWithGitRev') && project.version.endsWith(suffix)) {
-                println project.version
-                project.version = project.version.substring(0, project.version.length() - suffix.length()) + "-" + tasks.gitRev.hash()
-                println "Version to be uploaded: " + project.version
-            }
-        }
-    }*/
-
-    //compileJava.dependsOn(changeVersionIfNeeded)
 
 //    uploadArchives {
 //        // if you want to enable uploading to some maven repo, add those properties to ~/.gradle/gradle.properties, e.g.:
@@ -177,33 +204,6 @@ subprojects {
 //        }
 //    }
 
-    /*
-    bintray {
-        dryRun = false // Whether to run this as dry-run, without deploying
-        publish = true // If version should be auto published after an upload
-
-        // read from ~/.gradle/gradle.properties. Set those up before releasing
-        user = project.hasProperty('bintrayUser') ? bintrayUser : ''
-        key = project.hasProperty('bintrayApiKey') ? bintrayApiKey : ''
-        configurations = ['archives']
-        pkg {
-            name = 'grobid'
-            repo = 'maven'
-            userOrg = 'rookies'
-            licenses = ['Apache-2.0']
-            vcsUrl = 'https://github.com/kermitt2/grobid'
-            issueTrackerUrl = 'https://github.com/kermitt2/grobid/issues'
-            githubRepo = 'kermitt2/grobid'
-
-            version {
-                name = rootProject.version
-                vcsTag = rootProject.version
-                released = new Date()
-            }
-        }
-    }
-    */
-
     test {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
@@ -211,7 +211,6 @@ subprojects {
         maxHeapSize = "1024m"
     }
 
-    //rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
 }
 
 /** SUBPROJECTS **/
