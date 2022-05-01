@@ -1781,7 +1781,7 @@ public class BiblioItem {
     public static void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
             String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
-            if (localTitle.endsWith(" y")) {
+            if (localTitle != null && localTitle.endsWith(" y")) {
                 // some markers at the end of the title are extracted from the pdf as " y" at the end of the title
                 // e.g. <title level="a" type="main">Computations in finite-dimensional Lie algebras y</title>
                 localTitle = localTitle.substring(0, localTitle.length() - 2);
