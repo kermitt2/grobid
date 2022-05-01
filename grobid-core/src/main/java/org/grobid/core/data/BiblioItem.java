@@ -2114,7 +2114,8 @@ public class BiblioItem {
                 pubnum = pubnum.replace("issn", "");
                 pubnum = pubnum.replace("ISSN", "");
                 pubnum = TextUtilities.cleanField(pubnum, true);
-                setISSN(pubnum);
+                if (pubnum != null)
+                    setISSN(pubnum);
                 setPubnum(null);
             }
         }
@@ -2125,9 +2126,9 @@ public class BiblioItem {
                 pubnum = pubnum.replace("isbn", "");
                 pubnum = pubnum.replace("ISBN", "");
                 pubnum = TextUtilities.cleanField(pubnum, true);
-                if (pubnum.length() == 10)
+                if (pubnum != null && pubnum.length() == 10)
                     setISBN10(pubnum);
-                else 
+                else if (pubnum != null && pubnum.length() == 13)
                     setISBN13(pubnum);
                 setPubnum(null);
             }
