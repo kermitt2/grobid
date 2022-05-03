@@ -305,7 +305,7 @@ public class Affiliation {
             List<String> newDepartments = new ArrayList<String>();
             for (String department : departments) {
                 String dep = TextUtilities.cleanField(department, true);
-                if (dep.length() > 2) {
+                if (dep != null && dep.length() > 2) {
                     newDepartments.add(dep);
                 }
             }
@@ -316,7 +316,7 @@ public class Affiliation {
             List<String> newInstitutions = new ArrayList<String>();
             for (String institution : institutions) {
                 String inst = TextUtilities.cleanField(institution, true);
-                if (inst.length() > 1) {
+                if (inst != null && inst.length() > 1) {
                     newInstitutions.add(inst);
                 }
             }
@@ -327,7 +327,7 @@ public class Affiliation {
             List<String> newLaboratories = new ArrayList<String>();
             for (String laboratorie : laboratories) {
                 String inst = TextUtilities.cleanField(laboratorie, true);
-                if (inst.length() > 2) {
+                if (inst != null && inst.length() > 2) {
                     newLaboratories.add(inst);
                 }
             }
@@ -336,51 +336,52 @@ public class Affiliation {
 
         if (country != null) {
             country = TextUtilities.cleanField(country, true);
-			if (country.endsWith(")")) {
+			if (country != null && country.endsWith(")")) {
 				// for some reason the ) at the end of this field is not removed
 				country = country.substring(0,country.length()-1);
 			}
-            if (country.length() < 2)
+            if (country != null && country.length() < 2)
                 country = null;
         }
         if (postCode != null) {
             postCode = TextUtilities.cleanField(postCode, true);
-            if (postCode.length() < 2)
+            if (postCode != null && postCode.length() < 2)
                 postCode = null;
         }
         if (postBox != null) {
             postBox = TextUtilities.cleanField(postBox, true);
-            if (postBox.length() < 2)
+            if (postBox != null && postBox.length() < 2)
                 postBox = null;
         }
         if (region != null) {
             region = TextUtilities.cleanField(region, true);
-            if (region.length() < 2)
+            if (region != null && region.length() < 2)
                 region = null;
         }
         if (settlement != null) {
             settlement = TextUtilities.cleanField(settlement, true);
-            if (settlement.length() < 2)
+            if (settlement != null && settlement.length() < 2)
                 settlement = null;
         }
         if (addrLine != null) {
             addrLine = TextUtilities.cleanField(addrLine, true);
-            if (addrLine.length() < 2)
+            if (addrLine != null && addrLine.length() < 2)
                 addrLine = null;
         }
         if (addressString != null) {
             addressString = TextUtilities.cleanField(addressString, true);
-            if (addressString.length() < 2)
+            if (addressString != null && addressString.length() < 2)
                 addressString = null;
         }
         if (affiliationString != null) {
             affiliationString = TextUtilities.cleanField(affiliationString, true);
-            if (affiliationString.length() < 2)
+            if (affiliationString != null && affiliationString.length() < 2)
                 affiliationString = null;
         }
         if (marker != null) {
             marker = TextUtilities.cleanField(marker, true);
-			marker = marker.replace(" ", "");
+            if (marker != null)
+    			marker = marker.replace(" ", "");
         }
     }
 
