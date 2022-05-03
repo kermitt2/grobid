@@ -6,7 +6,7 @@ import org.grobid.core.exceptions.GrobidException;
  * Language recognition result
  */
 public final class Language {
-    //common language constants
+    //common language constants (TBD use an external ISO_639-1 reference lib.)
     public static final String EN = "en";
     public static final String DE = "de";
     public static final String FR = "fr";
@@ -15,6 +15,12 @@ public final class Language {
     public static final String JA = "ja";
     public static final String AR = "ar";
     public static final String ZH = "zh";
+    public static final String RU = "ru";
+    public static final String PT = "pt";
+    public static final String UK = "uk";
+    public static final String LN = "nl";
+    public static final String PL = "pl";
+    public static final String SV = "sv";
 
     private String lang;
     private double conf;
