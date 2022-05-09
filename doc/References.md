@@ -3,7 +3,7 @@
 If you want to cite this work, please simply refer to the github project:
 
 ```
-GROBID (2008-2021) <https://github.com/kermitt2/grobid>
+GROBID (2008-2022) <https://github.com/kermitt2/grobid>
 ```
 
 Please do not include a particular person name to emphasize the project and the tool ! 
@@ -23,16 +23,6 @@ Here's a BibTeX entry using the [Software Heritage](https://www.softwareheritage
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
 ```
-
-## Presentations on Grobid
-
-The following presentations are reminders that old machine learning stuff is not like good wine. Please use this project repository for up-to-date information. 
-
-[GROBID in 30 slides](grobid-04-2015.pdf) (2015).
-
-[GROBID in 20 slides](GROBID.pdf) (2012).
-
-P. Lopez. Automatic Extraction and Resolution of Bibliographical References in Patent Documents. First Information Retrieval Facility Conference (IRFC), Vienna, May 2010. LNCS 6107, pp. 120-135. Springer, Heidelberg, 2010.
 
 ## Evaluation and usages
 

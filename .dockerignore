@@ -77,4 +77,5 @@ grobid-home/models/superconductors*
 grobid-home/models/values
 grobid-home/models/dataseer
 grobid-home/models/*-bert*/
+grobid-home/models/*-BERT*/
 grobid-home/models/*scibert*/

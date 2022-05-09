@@ -187,7 +187,7 @@ grobid:
         nbMaxIterations: 3000
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF"
+        architecture: "BidLSTM_CRF_FEATURES"
         #architecture: "scibert"
         useELMo: false
         runtime:

@@ -2,7 +2,7 @@
 
 ## General
 
-This is the end-to-end benchmarking result for GROBID version **0.7.0** against the `bioRxiv` test set (`biorxiv-10k-test-2000`), see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
+This is the end-to-end benchmarking result for GROBID version **0.7.1** against the `bioRxiv` test set (`biorxiv-10k-test-2000`), see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 The following end-to-end results are using:
 - **BidLSTM-CRF-FEATURES** as sequence labeling for the citation model
@@ -12,13 +12,9 @@ Header extractions are consolidated by default with [biblio-glutton](https://git
 
 Other versions of these benchmarks with variants and **Deep Learning models** (e.g. newer master snapshots) are available [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc). Note that Deep Learning models might provide higher accuracy, but at the cost of slower runtime and more expensive CPU/GPU resources. 
 
-Evaluation on 1999 PDF preprints out of 2000 (1 PDF "too many blocks" interruption).
+Evaluation on 1999 PDF preprints out of 2000 (1 PDF parsing "too many blocks" failure).
 
 Runtime for processing 2000 PDF: **1169s** (1,71 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1600 euros) and with a GeForce GTX 1050 Ti GPU.
-
-
-
-
 
 
 ## Header metadata 
@@ -118,20 +114,20 @@ Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).
 
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
-| authors | 86.96 | 78.5 | 82.51 | 97138 |
-| date | 91.29 | 83.13 | 87.02 | 97585 |
-| doi | 73.56 | 81.36 | 77.26 | 16893 |
-| first_author | 93.62 | 84.46 | 88.8 | 97138 |
-| inTitle | 81.49 | 77.11 | 79.24 | 96384 |
-| issue | 93.5 | 85.42 | 89.28 | 30282 |
-| page | 96.17 | 78.64 | 86.53 | 88558 |
-| pmcid | 63.92 | 65.43 | 64.67 | 807 |
-| pmid | 66.93 | 75.63 | 71.02 | 2093 |
-| title | 84.44 | 80.86 | 82.61 | 92423 |
-| volume | 95.31 | 92.65 | 93.96 | 87671 |
+| authors | 86.88 | 78.41 | 82.43 | 97138 |
+| date | 91.28 | 83.07 | 86.98 | 97585 |
+| doi | 72.95 | 80.77 | 76.66 | 16893 |
+| first_author | 93.57 | 84.4 | 88.75 | 97138 |
+| inTitle | 81.95 | 77.43 | 79.63 | 96384 |
+| issue | 93.99 | 83.23 | 88.29 | 30282 |
+| page | 96.32 | 78.67 | 86.6 | 88558 |
+| pmcid | 63.67 | 64.06 | 63.87 | 807 |
+| pmid | 67.66 | 75.06 | 71.17 | 2093 |
+| title | 84.46 | 80.78 | 82.58 | 92423 |
+| volume | 95.55 | 92.71 | 94.11 | 87671 |
 |                  |            |           |            |         |
-| **all fields (micro avg.)** | **89.25** | **82.19** | **85.57** | 706972 |
-| all fields (macro avg.) | 84.29 | 80.29 | 82.08 | 706972 |
+| **all fields (micro avg.)** | **89.35** | **82.09** | **85.57** | 706972 |
+| all fields (macro avg.) | 84.39 | 79.87 | 81.91 | 706972 |
 
 
 
@@ -141,20 +137,20 @@ Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).
 
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
-| authors | 88.22 | 79.64 | 83.71 | 97138 |
-| date | 91.29 | 83.13 | 87.02 | 97585 |
-| doi | 78.18 | 86.47 | 82.12 | 16893 |
-| first_author | 94.09 | 84.88 | 89.25 | 97138 |
-| inTitle | 90.95 | 86.07 | 88.45 | 96384 |
-| issue | 93.5 | 85.42 | 89.28 | 30282 |
-| page | 96.17 | 78.64 | 86.53 | 88558 |
-| pmcid | 74.21 | 75.96 | 75.08 | 807 |
-| pmid | 71.29 | 80.55 | 75.64 | 2093 |
-| title | 92.58 | 88.67 | 90.58 | 92423 |
-| volume | 95.31 | 92.65 | 93.96 | 87671 |
+| authors | 88.14 | 79.55 | 83.63 | 97138 |
+| date | 91.28 | 83.07 | 86.98 | 97585 |
+| doi | 77.52 | 85.83 | 81.47 | 16893 |
+| first_author | 94.04 | 84.82 | 89.19 | 97138 |
+| inTitle | 91.45 | 86.4 | 88.85 | 96384 |
+| issue | 93.99 | 83.23 | 88.29 | 30282 |
+| page | 96.32 | 78.67 | 86.6 | 88558 |
+| pmcid | 74.14 | 74.6 | 74.37 | 807 |
+| pmid | 72.05 | 79.93 | 75.79 | 2093 |
+| title | 92.68 | 88.64 | 90.61 | 92423 |
+| volume | 95.55 | 92.71 | 94.11 | 87671 |
 |                  |            |           |            |         |
-| **all fields (micro avg.)** | **92.07** | **84.8** | **88.29** | 706972 |
-| all fields (macro avg.) | 87.8 | 83.83 | 85.6 | 706972 |
+| **all fields (micro avg.)** | **92.19** | **84.71** | **88.29** | 706972 |
+| all fields (macro avg.) | 87.92 | 83.41 | 85.44 | 706972 |
 
 
 
@@ -164,21 +160,20 @@ Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).
 
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
-| authors | 92.89 | 83.85 | 88.14 | 97138 |
-| date | 91.29 | 83.13 | 87.02 | 97585 |
-| doi | 79.56 | 88 | 83.56 | 16893 |
-| first_author | 94.23 | 85.01 | 89.38 | 97138 |
-| inTitle | 91.89 | 86.96 | 89.36 | 96384 |
-| issue | 93.5 | 85.42 | 89.28 | 30282 |
-| page | 96.17 | 78.64 | 86.53 | 88558 |
-| pmcid | 74.21 | 75.96 | 75.08 | 807 |
-| pmid | 71.33 | 80.6 | 75.68 | 2093 |
-| title | 95.12 | 91.1 | 93.07 | 92423 |
-| volume | 95.31 | 92.65 | 93.96 | 87671 |
+| authors | 92.86 | 83.81 | 88.1 | 97138 |
+| date | 91.28 | 83.07 | 86.98 | 97585 |
+| doi | 79.95 | 88.52 | 84.02 | 16893 |
+| first_author | 94.18 | 84.95 | 89.33 | 97138 |
+| inTitle | 92.41 | 87.31 | 89.79 | 96384 |
+| issue | 93.99 | 83.23 | 88.29 | 30282 |
+| page | 96.32 | 78.67 | 86.6 | 88558 |
+| pmcid | 74.14 | 74.6 | 74.37 | 807 |
+| pmid | 72.09 | 79.98 | 75.83 | 2093 |
+| title | 95.32 | 91.17 | 93.2 | 92423 |
+| volume | 95.55 | 92.71 | 94.11 | 87671 |
 |                  |            |           |            |         |
-| **all fields (micro avg.)** | **93.24** | **85.87** | **89.4** | 706972 |
-| all fields (macro avg.) | 88.68 | 84.67 | 86.46 | 706972 |
-
+| **all fields (micro avg.)** | **93.41** | **85.83** | **89.46** | 706972 |
+| all fields (macro avg.) | 88.92 | 84.37 | 86.42 | 706972 |
 
 
 #### Ratcliff/Obershelp Matching (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -187,56 +182,56 @@ Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).
 
 | label            |  precision |   recall  |     f1     | support |
 |---               |---         |---        |---         |---      |
-| authors | 90.07 | 81.3 | 85.46 | 97138 |
-| date | 91.29 | 83.13 | 87.02 | 97585 |
-| doi | 78.76 | 87.12 | 82.73 | 16893 |
-| first_author | 93.67 | 84.5 | 88.85 | 97138 |
-| inTitle | 89.67 | 84.86 | 87.2 | 96384 |
-| issue | 93.5 | 85.42 | 89.28 | 30282 |
-| page | 96.17 | 78.64 | 86.53 | 88558 |
-| pmcid | 63.92 | 65.43 | 64.67 | 807 |
-| pmid | 66.93 | 75.63 | 71.02 | 2093 |
-| title | 94.47 | 90.47 | 92.43 | 92423 |
-| volume | 95.31 | 92.65 | 93.96 | 87671 |
+| authors | 89.99 | 81.22 | 85.38 | 97138 |
+| date | 91.28 | 83.07 | 86.98 | 97585 |
+| doi | 79.15 | 87.64 | 83.18 | 16893 |
+| first_author | 93.62 | 84.44 | 88.79 | 97138 |
+| inTitle | 90.13 | 85.16 | 87.58 | 96384 |
+| issue | 93.99 | 83.23 | 88.29 | 30282 |
+| page | 96.32 | 78.67 | 86.6 | 88558 |
+| pmcid | 63.67 | 64.06 | 63.87 | 807 |
+| pmid | 67.66 | 75.06 | 71.17 | 2093 |
+| title | 94.6 | 90.48 | 92.49 | 92423 |
+| volume | 95.55 | 92.71 | 94.11 | 87671 |
 |                  |            |           |            |         |
-| **all fields (micro avg.)** | **92.33** | **85.03** | **88.53** | 706972 |
-| all fields (macro avg.) | 86.71 | 82.65 | 84.47 | 706972 |
+| **all fields (micro avg.)** | **92.48** | **84.97** | **88.57** | 706972 |
+| all fields (macro avg.) | 86.91 | 82.34 | 84.4 | 706972 |
 
 
 #### Instance-level results
 
 ```
 Total expected instances:       98753
-Total extracted instances:      103493
-Total correct instances:        41730 (strict) 
-Total correct instances:        52390 (soft) 
-Total correct instances:        56168 (Levenshtein) 
-Total correct instances:        53136 (RatcliffObershelp) 
+Total extracted instances:      103537
+Total correct instances:        41366 (strict) 
+Total correct instances:        51943 (soft) 
+Total correct instances:        55911 (Levenshtein) 
+Total correct instances:        52865 (RatcliffObershelp) 
 
-Instance-level precision:   40.32 (strict) 
-Instance-level precision:   50.62 (soft) 
-Instance-level precision:   54.27 (Levenshtein) 
-Instance-level precision:   51.34 (RatcliffObershelp) 
+Instance-level precision:   39.95 (strict) 
+Instance-level precision:   50.17 (soft) 
+Instance-level precision:   54 (Levenshtein) 
+Instance-level precision:   51.06 (RatcliffObershelp) 
 
-Instance-level recall:  42.26   (strict) 
-Instance-level recall:  53.05   (soft) 
-Instance-level recall:  56.88   (Levenshtein) 
-Instance-level recall:  53.81   (RatcliffObershelp) 
+Instance-level recall:  41.89   (strict) 
+Instance-level recall:  52.6    (soft) 
+Instance-level recall:  56.62   (Levenshtein) 
+Instance-level recall:  53.53   (RatcliffObershelp) 
 
-Instance-level f-score: 41.27 (strict) 
-Instance-level f-score: 51.81 (soft) 
-Instance-level f-score: 55.54 (Levenshtein) 
-Instance-level f-score: 52.55 (RatcliffObershelp) 
+Instance-level f-score: 40.9 (strict) 
+Instance-level f-score: 51.35 (soft) 
+Instance-level f-score: 55.28 (Levenshtein) 
+Instance-level f-score: 52.27 (RatcliffObershelp) 
 
-Matching 1 :    75788
+Matching 1 :    75743
 
-Matching 2 :    4102
+Matching 2 :    4069
 
-Matching 3 :    5930
+Matching 3 :    6070
 
-Matching 4 :    2284
+Matching 4 :    2250
 
-Total matches : 88104
+Total matches : 88132
 ```
 
 
@@ -244,19 +239,18 @@ Total matches : 88104
 ```
 
 Total expected references:   98751 - 49.4 references per article
-Total predicted references:      103493 - 51.77 references per article
+Total predicted references:      103537 - 51.79 references per article
 
 Total expected citation contexts:    142796 - 71.43 citation contexts per article
-Total predicted citation contexts:   133883 - 66.97 citation contexts per article
+Total predicted citation contexts:   133903 - 66.98 citation contexts per article
 
-Total correct predicted citation contexts:   110808 - 55.43 citation contexts per article
-Total wrong predicted citation contexts:     23075 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+Total correct predicted citation contexts:   110798 - 55.43 citation contexts per article
+Total wrong predicted citation contexts:     23105 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
 
-Precision citation contexts:     82.76
-Recall citation contexts:    77.6
-fscore citation contexts:    80.1
+Precision citation contexts:     82.74
+Recall citation contexts:    77.59
+fscore citation contexts:    80.09
 ```
-
 
 ## Fulltext structures 
 
