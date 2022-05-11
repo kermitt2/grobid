@@ -297,7 +297,7 @@ public class DeLFTModel {
             LOGGER.info("Train DeLFT model " + modelName + "...");
             List<String> command = new ArrayList<>();
             List<String> subcommands = Arrays.asList("python3", 
-                "grobidTagger.py", 
+                "delft/applications/grobidTagger.py", 
                 modelName,
                 "train",
                 "--input", trainingData.getAbsolutePath(),
