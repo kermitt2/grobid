@@ -5,7 +5,7 @@ This page contains a set of notes for the Grobid developers:
 ### Release
 
 With the end of JCenter, the fact that the repo is too large for JitPack and that we are technically not ready to move back to the bureaucratic Maven Central yet, we currently publish the Grobid library artefacts ourselves... with the Grobid DIY repository :) 
-The idea anyway is that people will use Grobid with the Docker image, the service and usually not via the Java library artefacts. If the use the Java library, they will likely simply rebuild from the repo, because in this scenario they will likely want to massage the tool and they need a local `grobid-home`. 
+The idea anyway is that people will use Grobid with the Docker image, the service and usually not via the Java library artefacts. If they use the Java library, they will likely simply rebuild from the repo, because in this scenario they will likely want to massage the tool and they need a local `grobid-home`. 
 
 In order to make a new release:  
 

@@ -15,11 +15,11 @@
 
 * [Install GROBID](Install-Grobid.md)
 
+* [Use GROBID with containers (Docker)](Grobid-docker.md)
+
 * [Use GROBID as a service](Grobid-service.md)
 
 * [Use GROBID in batch mode](Grobid-batch.md)
-
-* [Use GROBID with containers (Docker)](Grobid-docker.md)
 
 * [GROBID configuration](Configuration.md)
 
