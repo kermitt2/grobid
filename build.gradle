@@ -325,7 +325,10 @@ project(":grobid-service") {
     apply plugin: 'com.github.johnrengelman.shadow'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
-    tasks.run.workingDir = rootProject.rootDir
+    tasks.run {
+        workingDir = rootProject.rootDir
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:${file("../grobid-home/lib/lin-64/jep").absolutePath}:${file("../grobid-home/lib/lin-64").absolutePath}"
+    }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
@@ -482,6 +485,7 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:${file("../grobid-home/lib/lin-64/jep").absolutePath}:${file("../grobid-home/lib/lin-64").absolutePath}"
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -489,6 +493,7 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
         jvmArgs '-Xmx3072m'
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:${file("../grobid-home/lib/lin-64/jep").absolutePath}:${file("../grobid-home/lib/lin-64").absolutePath}"
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -496,6 +501,7 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
         jvmArgs '-Xmx3072m'
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:${file("../grobid-home/lib/lin-64/jep").absolutePath}:${file("../grobid-home/lib/lin-64").absolutePath}"
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -503,6 +509,7 @@ project(":grobid-trainer") {
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
         jvmArgs '-Xmx3072m'
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:${file("../grobid-home/lib/lin-64/jep").absolutePath}:${file("../grobid-home/lib/lin-64").absolutePath}"
     }
 }
 

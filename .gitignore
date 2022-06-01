@@ -63,6 +63,7 @@ grobid-home/models/ner
 grobid-home/models/nerfr
 grobid-home/models/nersense
 grobid-home/models/astro
+grobid-home/models/datasets
 
 grobid-home/models/lexical-entry/*
 grobid-home/models/*lexical-entry*
