@@ -389,7 +389,25 @@ project(":grobid-service") {
             }
         }
     }
+
+    task("run-server", dependsOn: 'classes', type: JavaExec, group: 'application') {
+        main = 'org.grobid.service.main.GrobidServiceApplication'
+        classpath = sourceSets.main.runtimeClasspath
+        workingDir = ".."
+        args 'server', 'grobid-home/config/grobid.yaml'
+        jvmArgs '-Xmx3072m'
+//        conda_env_path = "$System.env.CONDA_PREFIX"
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" +
+            "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
+            "${file("../grobid-home/lib/lin-64").absolutePath}:" +
+            "${file("../grobid-home/lib/mac-64").absolutePath}:" +
+            "${System.env.CONDA_PREFIX}/lib:" +
+            "${System.env.CONDA_PREFIX}/lib/python3.8/site-packages/jep"
+    }
 }
+
+// /Users/lfoppiano/opt/anaconda3/envs/jep/lib/python3.8/site-packages/jep
+// /Users/lfoppiano/opt/anaconda3/envs/jep/lib
 
 project(":grobid-trainer") {
     apply plugin: 'com.github.johnrengelman.shadow'

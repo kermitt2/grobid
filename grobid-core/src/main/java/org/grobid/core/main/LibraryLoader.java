@@ -149,6 +149,7 @@ public class LibraryLoader {
                 // loading here will not help)
                 try {
                     //addLibraryPath(libraryFolder.getAbsolutePath() + File.separator + DELFT_NATIVE_LIB_NAME);
+//                    System.out.println(System.getProperty("java.library.path"));
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
@@ -166,7 +167,7 @@ public class LibraryLoader {
 
                         if (SystemUtils.IS_OS_MAC) {
 //                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
-                            System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion() + "m");
+                            System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion());
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
