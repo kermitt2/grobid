@@ -64,13 +64,15 @@ public class DeLFTModel {
                 jep.eval(this.modelName+" = Sequence('" + fullModelName + "')");
                 jep.eval(this.modelName+".load(dir_path='"+modelPath.getAbsolutePath()+"')");
 
-                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1)
-                    jep.eval(this.modelName+".config.max_sequence_length="+
+                if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName) != -1) {
+                    jep.eval(this.modelName+".model_config.max_sequence_length="+
                         GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(this.modelName));
+                }
 
-                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1)
-                    jep.eval(this.modelName+".config.batch_size="+
+                if (GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName) != -1) {
+                    jep.eval(this.modelName+".model_config.batch_size="+
                         GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
+                }
 
             } catch(JepException e) {
                 throw new GrobidException("DeLFT model initialization failed. ", e);

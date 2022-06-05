@@ -20,13 +20,19 @@ The process for retrieving and running the image is as follow:
 > docker pull lfoppiano/grobid:${latest_grobid_version}
 ```
 
+Latest version:
+
+```bash
+> docker pull lfoppiano/grobid:0.7.1
+```
+
 - Run the container:
 
 ```bash
 > docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
 ```
 
-Latest verion:
+Latest version:
 
 ```bash
 > docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:0.7.1
@@ -56,8 +62,9 @@ The process for retrieving and running the image is as follow:
 
 Current latest version:
 
+
 ```bash
-> docker pull grobid/grobid:0.7.2-SNAPSHOT
+> docker pull grobid/grobid:0.7.1
 ```
 
 - Run the container:
