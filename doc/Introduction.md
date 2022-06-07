@@ -67,8 +67,8 @@ Many thanks to:
 
 * Vyacheslav Zholudev (Sum&Substance, formerly at ResearchGate)
 * Achraf Azhar (CCSD)
-* Laurent Romary (Inria)
 * Daniel Ecer (eLife)
+* Laurent Romary (Inria)
 * Vitalii Bezsheiko (PKP)
 * Bryan Newbold (Internet Archive)
 * Christopher Boumenot (Microsoft) in particular for the Windows support
@@ -82,4 +82,4 @@ Many thanks to:
 * The JEP team for their great JVM CPython embedding solution
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors: Jakob Fix, Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
+* and the other contributors: @elonzh, Jakob Fix, Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
