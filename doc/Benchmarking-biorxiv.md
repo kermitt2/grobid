@@ -16,7 +16,6 @@ Evaluation on 1999 PDF preprints out of 2000 (1 PDF parsing "too many blocks" fa
 
 Runtime for processing 2000 PDF: **1169s** (1,71 PDF per second) on Ubuntu 16.04, 4 CPU i7-4790K (8 threads), 16GB RAM (workstation bought in 2015 for 1600 euros) and with a GeForce GTX 1050 Ti GPU.
 
-
 ## Header metadata 
 
 Evaluation on 1999 random PDF files out of 2000 PDF (ratio 1.0).

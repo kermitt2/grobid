@@ -23,9 +23,9 @@ GROBID is a machine learning library for extracting, parsing and re-structuring 
 The following functionalities are available:
 
 - __Header extraction and parsing__ from article in PDF format. The extraction here covers the usual bibliographical information (e.g. title, abstract, authors, affiliations, keywords, etc.).
-- __References extraction and parsing__ from articles in PDF format, around .87 F1-score against on an independent PubMed Central set of 1943 PDF containing 90,125 references, and around .89 on a similar bioRxiv set. All the usual publication metadata are covered (including DOI, PMID, etc.).
+- __References extraction and parsing__ from articles in PDF format, around .87 F1-score against on an independent PubMed Central set of 1943 PDF containing 90,125 references, and around .89 on a similar bioRxiv set of 2000 PDF (using the Deep Learning models). All the usual publication metadata are covered (including DOI, PMID, etc.).
 - __Citation contexts recognition and resolution__ of the full bibliographical references of the article. The accuracy of citation contexts resolution is above .78 f-score (which corresponds to both the correct identification of the citation callout and its correct association with a full bibliographical reference).
-- Parsing of __references in isolation__ (above .90 F1-score at instance-level, .95 F1-score at field level).
+- Parsing of __references in isolation__ (above .90 F1-score at instance-level, .95 F1-score at field level, using the Deep Learning model).
 - __Parsing of names__ (e.g. person title, forenames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
 - __Parsing of affiliation and address__ blocks.
 - __Parsing of dates__, ISO normalized day, month, year.
