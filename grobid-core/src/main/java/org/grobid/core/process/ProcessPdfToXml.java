@@ -4,7 +4,7 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -23,7 +23,19 @@ public class ProcessPdfToXml {
         String message = "error message cannot be retrieved";
         try {
             builder = new ProcessBuilder(cmd);
+            builder.redirectErrorStream(true);  
             process = builder.start();
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));  
+            String output = null;  
+            String previousOutput = null;
+            while (null != (output = br.readLine())) {  
+                // writing the pdfalto stderr in the GROBID logs as warning
+                if (!output.equals(previousOutput)) {
+                    LOGGER.warn("pdfalto stderr: " + output);
+                    previousOutput = output;
+                }
+            } 
             exit = process.waitFor();
             message = IOUtils.toString(process.getErrorStream(), UTF_8);
 
