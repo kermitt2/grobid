@@ -29,19 +29,19 @@ Latest version:
 - Run the container:
 
 ```bash
-> docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
+> docker run -t --rm -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
 ```
 
 Latest version:
 
 ```bash
-> docker run -t --rm --init -p 8070:8070 lfoppiano/grobid:0.7.1
+> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.1
 ```
 
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 lfoppiano/grobid:${latest_grobid_version}
+> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:${latest_grobid_version}
 ```
 
 Access the service:
@@ -70,7 +70,7 @@ Current latest version:
 - Run the container:
 
 ```bash
-> docker run --rm --gpus all --init -p 8070:8070 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus all -p 8070:8070 grobid/grobid:${latest_grobid_version}
 ```
 
 The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used.  
@@ -78,7 +78,7 @@ The image will automatically uses the GPU and CUDA version available on your hos
 To specify to use only certain GPUs (see the [nvidia container toolkit user guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#gpu-enumeration) for more details):
 
 ```bash
-> docker run --rm --gpus '"device=1,2"' --init -p 8070:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus '"device=1,2"' -p 8070:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
 ```
 
 You can run the image on CPU by omitting the `-gpus` parameters. 
@@ -86,7 +86,7 @@ You can run the image on CPU by omitting the `-gpus` parameters.
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
 
 ```bash
-> docker run -t --rm --gpus all --init -p 8080:8070 grobid/grobid:${latest_grobid_version}
+> docker run -t --rm --gpus all -p 8080:8070 grobid/grobid:${latest_grobid_version}
 ```
 
 Access the service:
@@ -100,7 +100,7 @@ Grobid web services are then available as described in the [service documentatio
 The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
+docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
@@ -171,10 +171,6 @@ You should see something like:
 
 See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos` with command lines.
 
-### pdfalto zombie processes
-
-When running docker without an init process, the pdfalto processes will be hang as zombie eventually filling up the machine. The docker solution is to use `--init` as parameter when running the image. The solution shipped with the current Dockerfile, using [tini](https://github.com/krallin/tini) provides the correct init process to cleanup killed processes, but do not forget the `-init` parameter :)
-
 ## Building an image
 
 The following part is normally for development purposes. You can use the official stable docker images from the docker HUB as described above.
@@ -197,7 +193,7 @@ Similarly, if you want to create a docker image from the current master, develop
 In order to run the container of the newly created image, for example for version `0.7.1`:
 
 ```bash
-> docker run -t --rm --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.1
+> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.1
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
@@ -235,13 +231,13 @@ docker build -t grobid/grobid:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SN
 In order to run the container of the newly created image, for example for the development version `0.7.2-SNAPSHOT`, using all GPU available:
 
 ```bash
-> docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2-SNAPSHOT
+> docker run --rm --gpus all -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2-SNAPSHOT
 ```
 
 In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all --init -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
+docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
