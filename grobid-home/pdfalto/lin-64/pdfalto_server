@@ -8,6 +8,26 @@ interval=1
 delay=0
 
 command=${0:0:${#0}-7}
+args=("$@")
+pdfalto_params=()
+
+for ((n=0; n<="$#";n++)); do
+   echo ${args[n]}
+   case ${args[n]} in
+         --timeout) 
+	      timeout=${args[n+1]}
+              ((n++))
+              ;;
+         *)
+              pdfalto_params+=" ${args[n+1]}"
+              ;;
+   esac
+
+#  [[ ${args[n]} == '--timeout' ]] && echo "${args[n+1]}"
+done
+
+echo timeout $timeout
+echo pdfalto commands: $command $pdfalto_params
 
 # kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
 (
@@ -26,4 +46,4 @@ command=${0:0:${#0}-7}
     kill -s SIGKILL $$
 ) 2> /dev/null &
 
-exec $command $@
+exec $command $pdfalto_params
