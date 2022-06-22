@@ -480,6 +480,10 @@ public class GrobidProperties {
         return grobidConfig.grobid.pdf.pdfalto.memoryLimitMb;
     }
 
+    public static Integer getPdfaltoTimeoutS() {
+        return grobidConfig.grobid.pdf.pdfalto.timeoutSec;
+    }
+
     public static Integer getPdfaltoTimeoutMs() {
         return grobidConfig.grobid.pdf.pdfalto.timeoutSec * 1000;
     }

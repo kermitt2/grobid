@@ -12,18 +12,15 @@ args=("$@")
 pdfalto_params=()
 
 for ((n=0; n<="$#";n++)); do
-   echo ${args[n]}
    case ${args[n]} in
          --timeout)
 	      timeout=${args[n+1]}
               ((n++))
               ;;
          *)
-              pdfalto_params+=" ${args[n+1]}"
+              pdfalto_params+=" ${args[n]}"
               ;;
    esac
-
-#  [[ ${args[n]} == '--timeout' ]] && echo "${args[n+1]}"
 done
 
 # kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
