@@ -14,12 +14,12 @@ pdfalto_params=()
 for ((n=0; n<="$#";n++)); do
    case ${args[n]} in
          --timeout)
-	      timeout=${args[n+1]}
-              ((n++))
-              ;;
+	        timeout=${args[n+1]}
+            ((n++))
+            ;;
          *)
-              pdfalto_params+=" ${args[n]}"
-              ;;
+            pdfalto_params+=" ${args[n]}"
+            ;;
    esac
 done
 
@@ -40,4 +40,4 @@ done
     kill -s SIGKILL $$
 ) 2> /dev/null &
 
-exec $command $@
+exec $command $pdfalto_params
