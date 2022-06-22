@@ -144,6 +144,8 @@ public class DocumentSource {
             cmd.add(pdfPath.getAbsolutePath());
             cmd.add(tmpPathXML.getAbsolutePath());
             if (GrobidProperties.isContextExecutionServer()) {
+                cmd.add("--timeout");
+                cmd.add(String.valueOf(GrobidProperties.getPdfaltoTimeoutMs()));
                 tmpPathXML = processPdfaltoServerMode(pdfPath, tmpPathXML, cmd);
             } else {
                 if (!SystemUtils.IS_OS_WINDOWS) {
