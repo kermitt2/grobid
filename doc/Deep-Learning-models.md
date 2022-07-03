@@ -37,7 +37,7 @@ DeLFT version `0.3.1` has been tested successfully with Python 3.7 and 3.8. For 
 
 ```shell
 cd deflt/
-python3 grobidTagger.py citation tag 
+python3 grobidTagger.py delft/applications/citation tag 
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
