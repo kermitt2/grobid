@@ -4,8 +4,8 @@ grobid:
   # where all the Grobid resources are stored (models, lexicon, native libraries, etc.), normally no need to change
   grobidHome: "grobid-home"
 
-  # path relative to the grobid-home path (e.g. grobid-home/tmp)
-  temp: "tmp"
+  # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
+  temp: "/tmp"
   
   # normally nothing to change here, path relative to the grobid-home path (e.g. grobid-home/lib)
   nativelibrary: "lib"
