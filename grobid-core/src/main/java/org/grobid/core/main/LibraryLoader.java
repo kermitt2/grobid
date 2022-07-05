@@ -155,15 +155,15 @@ public class LibraryLoader {
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("No python environment configured");
                     } else {
-                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
-                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
+//                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
+//                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
+//                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
                             /*if (Files.exists(path)) {
                                 addLibraryPath(path.toString());
                             } else {
                                 LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
                             }*/
-                        }
+//                        }
 
                         if (SystemUtils.IS_OS_MAC) {
 //                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
