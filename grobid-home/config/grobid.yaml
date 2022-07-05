@@ -5,7 +5,7 @@ grobid:
   grobidHome: "grobid-home"
 
   # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
-  temp: "/tmp"
+  temp: "tmp"
   
   # normally nothing to change here, path relative to the grobid-home path (e.g. grobid-home/lib)
   nativelibrary: "lib"
