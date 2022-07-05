@@ -337,8 +337,13 @@ public class GrobidProperties {
     public static File getTempPath() {
         if (grobidConfig.grobid.temp == null)
             return new File(System.getProperty("java.io.tmpdir"));
-        else 
-            return new File(grobidHome.getPath(), grobidConfig.grobid.temp);
+        else {
+            if (!new File(grobidConfig.grobid.temp).isAbsolute()) {
+                return new File(grobidHome.getPath(), grobidConfig.grobid.temp);
+            } else {
+                return new File(grobidConfig.grobid.temp);
+            }
+        }
     }
 
     public static void setNativeLibraryPath(final String nativeLibPath) {
