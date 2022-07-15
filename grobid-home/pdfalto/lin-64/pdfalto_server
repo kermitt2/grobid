@@ -23,8 +23,8 @@ for ((n=0; n<="$#";n++)); do
    esac
 done
 
-echo timeout $timeout
-echo pdfalto commands: $command $pdfalto_params
+#echo timeout $timeout
+#echo pdfalto commands: $command $pdfalto_params
 
 # kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
 (
