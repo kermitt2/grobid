@@ -155,7 +155,33 @@ public class TEIFormatter {
         }
 
         if (biblio.getTitle() != null) {
-            tei.append(TextUtilities.HTMLEncode(biblio.getTitle()));
+            List<LayoutToken> layoutTokens = biblio.getLayoutTokens(TaggingLabels.HEADER_TITLE);
+
+            String text = LayoutTokensUtil.toText(layoutTokens).replace("\n", " ");
+
+            List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(layoutTokens);
+
+            if (CollectionUtils.isNotEmpty(stylesList)) {
+                int lastPosition = 0;
+                for (Triple<String, String, OffsetPosition> style : stylesList) {
+                    OffsetPosition offsetStyle = style.getRight();
+                    String subString = text.substring(lastPosition, offsetStyle.start);
+                    String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
+                    String suffixSpace = StringUtils.endsWith(subString, " ") ? " " : "";
+                    tei.append(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")) + suffixSpace);
+                    tei.append("<hi rend=\"").append(style.getLeft()).append("\"").append(">")
+                        .append(StringUtils.normalizeSpace(text.substring(offsetStyle.start, offsetStyle.end).replace("\n", " ")))
+                        .append("</hi>");
+                    lastPosition = offsetStyle.end;
+                }
+                String subString = text.substring(lastPosition);
+                String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
+                tei.append(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")));
+
+            } else {
+                String title = biblio.getTitle();
+                tei.append(TextUtilities.HTMLEncode(title));
+            }
         }
 
         tei.append("</title>\n\t\t\t</titleStmt>\n");
