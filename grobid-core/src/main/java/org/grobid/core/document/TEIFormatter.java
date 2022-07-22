@@ -1171,7 +1171,7 @@ public class TEIFormatter {
                 if (CollectionUtils.isNotEmpty(stylesList)) {
                     applyStyleList(head, text, stylesList);
                 } else {
-                    head.appendChild(text);
+                    head.appendChild(StringUtils.normalizeSpace(text.replace("\n", "")));
                 }
 
                 if (config.isGenerateTeiIds()) {
@@ -1222,7 +1222,7 @@ public class TEIFormatter {
                 if (CollectionUtils.isNotEmpty(stylesList)) {
                     applyStyleList(itemNode, text, stylesList);
                 } else {
-                    itemNode.appendChild(text);
+                    itemNode.appendChild(StringUtils.normalizeSpace(text));
                 }
 
                 if (!MARKER_LABELS.contains(lastClusterLabel) && (lastClusterLabel != TaggingLabels.ITEM)) {
@@ -1260,10 +1260,10 @@ public class TEIFormatter {
 
                 List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
 
-                if (CollectionUtils.isEmpty(stylesList)) {
-
-                } else {
+                if (CollectionUtils.isNotEmpty(stylesList)) {
                     applyStyleList(curParagraph, text, stylesList);
+                } else {
+                    curParagraph.appendChild(StringUtils.normalizeSpace(text));
                 }
                 curParagraphTokens.addAll(cluster.concatTokens());
             } else if (MARKER_LABELS.contains(clusterLabel)) {
@@ -1389,16 +1389,16 @@ public class TEIFormatter {
             String subString = paragraphText.substring(lastPosition, offsetStyle.start);
             String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
             String suffixSpace = StringUtils.endsWith(subString, " ") ? " " : "";
-            paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString) + suffixSpace);
+            paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")) + suffixSpace);
             Element rend = teiElement("hi");
             rend.addAttribute(new Attribute("rend", style.getLeft()));
-            rend.appendChild(StringUtils.normalizeSpace(paragraphText.substring(offsetStyle.start, offsetStyle.end)));
+            rend.appendChild(StringUtils.normalizeSpace(paragraphText.substring(offsetStyle.start, offsetStyle.end).replace("\n", " ")));
             lastPosition = offsetStyle.end;
             paragraphElem.appendChild(rend);
         }
         String subString = paragraphText.substring(lastPosition);
         String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
-        paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString));
+        paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")));
 
         return paragraphElem;
     }
