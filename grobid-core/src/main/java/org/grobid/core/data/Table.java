@@ -1,5 +1,7 @@
 package org.grobid.core.data;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.data.table.Cell;
@@ -15,6 +17,7 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.engines.counters.TableRejectionCounters;
 import org.grobid.core.tokenization.TaggingTokenCluster;
@@ -32,6 +35,8 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 
+import static org.grobid.core.document.TEIFormatter.applyStyleList;
+import static org.grobid.core.document.TEIFormatter.extractStylesList;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
@@ -119,7 +124,9 @@ public class Table extends Figure {
 
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
-                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                    List<LayoutToken> dehyphenized = LayoutTokensUtil.dehyphenize(cluster.concatTokens());
+                    String text = LayoutTokensUtil.toText(dehyphenized).replace("\n", " ");
+
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                         try {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
@@ -137,7 +144,13 @@ public class Table extends Figure {
                             LOGGER.warn("Problem when serializing TEI fragment for table caption", e);
                         }
                     } else {
-                        desc.appendChild(textNode(clusterContent));
+                        List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
+
+                        if (CollectionUtils.isNotEmpty(stylesList)) {
+                            applyStyleList(desc, text, stylesList);
+                        } else {
+                            desc.appendChild(StringUtils.normalizeSpace(text));
+                        }
                     }
 
                     if (desc != null && config.isWithSentenceSegmentation()) {

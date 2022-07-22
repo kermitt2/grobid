@@ -5,6 +5,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.base.Joiner;
 
+import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -17,12 +18,9 @@ import org.grobid.core.layout.GraphicObject;
 import org.grobid.core.layout.GraphicObjectType;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.VectorGraphicBoxCalculator;
-import org.grobid.core.utilities.BoundingBoxCalculator;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
@@ -41,6 +39,8 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.Collections;
 
+import static org.grobid.core.document.TEIFormatter.applyStyleList;
+import static org.grobid.core.document.TEIFormatter.extractStylesList;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
@@ -388,7 +388,7 @@ public class Figure {
 
             // if the segment has been parsed with the full text model we further extract the clusters
             // to get the bibliographical references
-            if ( (labeledCaption != null) && (labeledCaption.length() > 0) ) {
+            if (StringUtils.isNotEmpty(labeledCaption))  {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledCaption, captionLayoutTokens);
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 
@@ -404,7 +404,9 @@ public class Figure {
 
                     TaggingLabel clusterLabel = cluster.getTaggingLabel();
                     //String clusterContent = LayoutTokensUtil.normalizeText(cluster.concatTokens());
-                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                    List<LayoutToken> dehyphenized = LayoutTokensUtil.dehyphenize(cluster.concatTokens());
+                    String text = LayoutTokensUtil.toText(dehyphenized).replace("\n", " ");
+
                     if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
                         try {
                             List<Node> refNodes = formatter.markReferencesTEILuceneBased(
@@ -422,7 +424,13 @@ public class Figure {
                             LOGGER.warn("Problem when serializing TEI fragment for figure caption", e);
                         }
                     } else {
-                        desc.appendChild(textNode(clusterContent));
+                        List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
+
+                        if (CollectionUtils.isNotEmpty(stylesList)) {
+                            applyStyleList(desc, text, stylesList);
+                        } else {
+                            desc.appendChild(StringUtils.normalizeSpace(text));
+                        }
                     }
                 }
             } else {

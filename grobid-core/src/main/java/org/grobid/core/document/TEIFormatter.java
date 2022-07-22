@@ -1377,7 +1377,7 @@ public class TEIFormatter {
         return buffer;
     }
 
-    private Element applyStyleList(Element paragraphElem, String paragraphText, List<Triple<String, String, OffsetPosition>> stylesList) {
+    public static Element applyStyleList(Element paragraphElem, String paragraphText, List<Triple<String, String, OffsetPosition>> stylesList) {
 //        if (CollectionUtils.isEmpty(stylesList)) {
 //            paragraphElem.appendChild(StringUtils.normalizeSpace(paragraphText));
 //            return paragraphElem;
@@ -1515,7 +1515,6 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     k++;
 }
 }*/
-        }
 
         // update the xml paragraph element
         int currenChildIndex = 0;
@@ -1634,7 +1633,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         return segmentedParagraphTokens;
     }
 
-    protected List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList) {
+    public static List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList) {
         List<Triple<String, String, OffsetPosition>> styleList = new ArrayList<>();
         String previousStyleName = "";
         StringBuilder temporaryText = new StringBuilder();
