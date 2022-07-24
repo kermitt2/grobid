@@ -1486,7 +1486,7 @@ public class TEIFormatter {
         pos = 0;
         
         if (config.isGenerateTeiCoordinates("s")) {
-            
+
             int currentSentenceIndex = 0;
 //System.out.println(text);            
 //System.out.println("theSentences.size(): " + theSentences.size());
@@ -1494,7 +1494,7 @@ public class TEIFormatter {
 
             for(int i=0; i<curParagraphTokens.size(); i++) {
                 LayoutToken token = curParagraphTokens.get(i);
-                if (token.getText() == null || token.getText().length() == 0) 
+                if (token.getText() == null || token.getText().length() == 0)
                     continue;
                 int newPos = sentenceChunk.indexOf(token.getText(), pos);
                 if ((newPos != -1) || SentenceUtilities.toSkipToken(token.getText())) {
@@ -1516,7 +1516,7 @@ public class TEIFormatter {
                     currentSentenceTokens.add(token);
                     pos = 0;
                 }
-                
+
                 if (currentSentenceIndex >= theSentences.size())
                     break;
             }
@@ -1541,7 +1541,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     k++;
 }
 }*/
-
+        }
         // update the xml paragraph element
         int currenChildIndex = 0;
         pos = 0;
@@ -1564,12 +1564,12 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     }
                 }
             }
-            
+
             int sentenceLength = theSentences.get(i).end - pos;
             // check if we have a ref between pos and pos+sentenceLength
             for(int j=refIndex; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j).intValue();
-                if (refPos < pos+posInSentence) 
+                if (refPos < pos+posInSentence)
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
