@@ -1215,7 +1215,7 @@ public class TEIFormatter {
                     clusterLabel.equals(TaggingLabels.EQUATION_LABEL)) {
                 // get starting position of the cluster
                 int start = -1;
-                if ( CollectionUtils.isEmpty(cluster.concatTokens()) ) {
+                if ( CollectionUtils.isNotEmpty(cluster.concatTokens()) ) {
                     start = cluster.concatTokens().get(0).getOffset();
                 }
                 // get the corresponding equation
