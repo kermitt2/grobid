@@ -57,6 +57,10 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 @SuppressWarnings("StringConcatenationInsideStringBuilderAppend")
 public class TEIFormatter {
     private static final Logger LOGGER = LoggerFactory.getLogger(TEIFormatter.class);
+    public static final String TEI_STYLE_ITALIC_NAME = "italic";
+    public static String TEI_STYLE_BOLD_NAME = "bold";
+    public static String TEI_STYLE_SUPERSCRIPT_NAME = "superscript";
+    public static String TEI_STYLE_SUBSCRIPT_NAME = "subscript";
 
     private Document doc = null;
     private FullTextParser fullTextParser = null;
@@ -1221,7 +1225,7 @@ public class TEIFormatter {
                 // get the corresponding equation
                 if (start != -1) {
                     Equation theEquation = null;
-                    if (equations != null) {
+                    if (CollectionUtils.isNotEmpty(equations)) {
                         for(int i=0; i<equations.size(); i++) {
                             if (i < equationIndex) 
                                 continue;
@@ -1660,6 +1664,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     }
 
     public static List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList) {
+        return extractStylesList(tokenList, new ArrayList<>());
+    }
+    public static List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList, List<String> ignoreStyles) {
         List<Triple<String, String, OffsetPosition>> styleList = new ArrayList<>();
         String previousStyleName = "";
         StringBuilder temporaryText = new StringBuilder();
@@ -1672,18 +1679,18 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             int endOffset = temporaryText.toString().length();
 
             StringBuilder styleName = new StringBuilder();
-            if (token.isBold()) {
-                styleName.append("bold").append(" ");
+            if (token.isBold() && !ignoreStyles.contains(TEI_STYLE_BOLD_NAME)) {
+                styleName.append(TEI_STYLE_BOLD_NAME).append(" ");
             }
 
-            if (token.isItalic()) {
-                styleName.append("italic").append(" ");
+            if (token.isItalic() && !ignoreStyles.contains(TEI_STYLE_ITALIC_NAME)) {
+                styleName.append(TEI_STYLE_ITALIC_NAME).append(" ");
             }
 
-            if(token.isSuperscript()) {
-                styleName.append("superscript");
-            } else if(token.isSubscript()) {
-                styleName.append("subscript");
+            if(token.isSuperscript() && !ignoreStyles.contains(TEI_STYLE_SUPERSCRIPT_NAME)) {
+                styleName.append(TEI_STYLE_SUPERSCRIPT_NAME);
+            } else if(token.isSubscript() && !ignoreStyles.contains(TEI_STYLE_SUBSCRIPT_NAME)) {
+                styleName.append(TEI_STYLE_SUBSCRIPT_NAME);
             }
 
             String styleNameTrimmed = StringUtils.trim(styleName.toString());

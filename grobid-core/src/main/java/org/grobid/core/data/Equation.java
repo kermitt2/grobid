@@ -2,7 +2,9 @@ package org.grobid.core.data;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -10,12 +12,16 @@ import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.TextUtilities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
+
+import static org.grobid.core.document.TEIFormatter.*;
 
 /**
  * Class for representing an equation.
@@ -56,9 +62,15 @@ public class Equation {
 			XmlBuilderUtils.addCoords(formulaElement, LayoutTokensUtil.getCoordsStringForOneBox(getLayoutTokens()));
 		}
 
-		formulaElement.appendChild(LayoutTokensUtil.normalizeText(content.toString()).trim());
+        List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(getContentTokens(), Arrays.asList(TEI_STYLE_BOLD_NAME, TEI_STYLE_ITALIC_NAME))   ;
 
-		if ( (label != null) && (label.length()>0) ) {
+        if (CollectionUtils.isNotEmpty(stylesList)) {
+            applyStyleList(formulaElement, getContent(), stylesList);
+        } else {
+            formulaElement.appendChild(LayoutTokensUtil.normalizeText(content.toString()).trim());
+        }
+
+		if ( StringUtils.isNotEmpty(label) ) {
 			Element labelEl = XmlBuilderUtils.teiElement("label",
     	    		LayoutTokensUtil.normalizeText(label.toString()));
 			formulaElement.appendChild(labelEl);
@@ -78,6 +90,16 @@ public class Equation {
 	public List<LayoutToken> getContentTokens() {
 		return contentTokens;
 	}
+
+    public void addContentTokens(List<LayoutToken> tokens) {
+        if (tokens == null)
+            return;
+
+        if (contentTokens == null)
+            contentTokens = new ArrayList<>();
+
+        contentTokens.addAll(tokens);
+    }
 
 	public List<LayoutToken> getLabelTokens() {
 		return labelTokens;
@@ -181,9 +203,9 @@ public class Equation {
     	if (tokens == null)
     		return;
     	if (layoutTokens == null)
-    		layoutTokens = new ArrayList<LayoutToken>();
-    	for(LayoutToken token : tokens)
-	    	layoutTokens.add(token);
+    		layoutTokens = new ArrayList<>();
+
+        layoutTokens.addAll(tokens);
     }
 
     public List<BoundingBox> getCoordinates() {

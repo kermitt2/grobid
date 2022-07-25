@@ -13,8 +13,10 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
+import static org.grobid.core.document.TEIFormatter.TEI_STYLE_BOLD_NAME;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
@@ -62,7 +64,7 @@ public class TEIFormatterTest {
     }
 
     @Test
-    public void testExtractStylesList_1_shouldWork() throws Exception {
+    public void testExtractStylesList_single_shouldWork() throws Exception {
         String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
         List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
@@ -70,7 +72,7 @@ public class TEIFormatterTest {
         currentParagraphTokens.get(26).setSubscript(true);
         currentParagraphTokens.get(30).setSubscript(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = new TEIFormatter(null, null).extractStylesList(currentParagraphTokens);
+        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
 
         assertThat(pairs, hasSize(2));
         assertThat(pairs.get(0).getLeft(), is("subscript"));
@@ -82,8 +84,56 @@ public class TEIFormatterTest {
         assertThat(pairs.get(1).getMiddle(), is("14"));
         assertThat(pairs.get(1).getRight().start, is(84));
         assertThat(pairs.get(1).getRight().end, is(86));
+    }
 
+    @Test
+    public void testExtractStylesList_combined_shouldWork() throws Exception {
+        String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
+        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
+        currentParagraphTokens.get(26).setSubscript(true);
+        currentParagraphTokens.get(26).setBold(true);
+        currentParagraphTokens.get(26).setItalic(true);
+        currentParagraphTokens.get(30).setSubscript(true);
+
+        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
+
+        assertThat(pairs, hasSize(2));
+        assertThat(pairs.get(0).getLeft(), is("bold italic subscript"));
+        assertThat(pairs.get(0).getMiddle(), is("2"));
+        assertThat(pairs.get(0).getRight().start, is(79));
+        assertThat(pairs.get(0).getRight().end, is(80));
+
+        assertThat(pairs.get(1).getLeft(), is("subscript"));
+        assertThat(pairs.get(1).getMiddle(), is("14"));
+        assertThat(pairs.get(1).getRight().start, is(84));
+        assertThat(pairs.get(1).getRight().end, is(86));
+    }
+
+    @Test
+    public void testExtractStylesList_ignoreBold_shouldWork() throws Exception {
+        String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
+        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        currentParagraphTokens.get(26).setSubscript(true);
+        currentParagraphTokens.get(26).setBold(true);
+        currentParagraphTokens.get(26).setItalic(true);
+        currentParagraphTokens.get(30).setSubscript(true);
+
+        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens, Arrays.asList(TEI_STYLE_BOLD_NAME));
+
+        assertThat(pairs, hasSize(2));
+        assertThat(pairs.get(0).getLeft(), is("italic subscript"));
+        assertThat(pairs.get(0).getMiddle(), is("2"));
+        assertThat(pairs.get(0).getRight().start, is(79));
+        assertThat(pairs.get(0).getRight().end, is(80));
+
+        assertThat(pairs.get(1).getLeft(), is("subscript"));
+        assertThat(pairs.get(1).getMiddle(), is("14"));
+        assertThat(pairs.get(1).getRight().start, is(84));
+        assertThat(pairs.get(1).getRight().end, is(86));
     }
 
     @Test
