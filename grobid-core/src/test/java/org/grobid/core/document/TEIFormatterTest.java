@@ -1,6 +1,7 @@
 package org.grobid.core.document;
 
 import nu.xom.Element;
+import nu.xom.Node;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.analyzers.GrobidAnalyzer;
@@ -16,6 +17,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static org.grobid.core.document.TEIFormatter.TEI_STYLE_BOLD_NAME;
 import static org.hamcrest.CoreMatchers.is;
@@ -90,6 +92,28 @@ public class TEIFormatterTest {
 
         assertThat(currentParagraph.toXML(),
             is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s>One sentence <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+    @Test
+    public void testIdentifyRefNotes() throws Exception {
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+        currentParagraph.appendChild("One sentence");
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Foppiano et al.)"));
+        currentParagraph.appendChild(". ");
+        currentParagraph.appendChild("Second sentence");
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        currentParagraph.appendChild(".");
+
+        Map<Integer, Pair<Node, String>> integerPairMap = new TEIFormatter(null, null).identifyNestedNodes(currentParagraph);
+
+        assertThat(integerPairMap.keySet(), hasSize(2));
+        assertThat(integerPairMap.keySet().stream().toArray()[1], is(13));
+        assertThat(integerPairMap.get(13).getRight(), is("(Foppiano et al.)"));
+
+        assertThat(integerPairMap.keySet().stream().toArray()[0], is(48));
+        assertThat(integerPairMap.get(48).getRight(), is("(Lopez et al.)"));
     }
 
     @Test

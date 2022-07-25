@@ -45,6 +45,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -1457,29 +1458,14 @@ public class TEIFormatter {
         if (StringUtils.isEmpty(text))
             return;
 
-        // identify ref nodes, ref spans and ref positions
-        Map<Integer,Node> mapRefNodes = new HashMap<>();
-        List<Integer> refPositions = new ArrayList<>();
-        List<OffsetPosition> forbiddenPositions = new ArrayList<>();
-        int pos = 0;
-        for(int i=0; i<curParagraph.getChildCount(); i++) {
-            Node theNode = curParagraph.getChild(i);
-            if (theNode instanceof Text) {
-                String chunk = theNode.getValue();
-                pos += chunk.length();
-            } else if (theNode instanceof Element) {
-                // for readability in another conditional
-                if (((Element) theNode).getLocalName().equals("ref")) {
-                    // map character offset of the node
-                    mapRefNodes.put(new Integer(pos), theNode);
-                    refPositions.add(new Integer(pos));
+        Map<Integer, Pair<Node, String>> mapRefNodes = identifyNestedNodes(curParagraph);
 
-                    String chunk = theNode.getValue();
-                    forbiddenPositions.add(new OffsetPosition(pos, pos+chunk.length()));
-                    pos += chunk.length();                    
-                }
-            }
-        }
+        List<OffsetPosition> forbiddenPositions = mapRefNodes.entrySet()
+            .stream()
+            .map(entry -> new OffsetPosition(entry.getKey(), entry.getValue().getRight().length() + entry.getKey()))
+            .collect(Collectors.toList());
+
+        List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
 
         List<OffsetPosition> sentencesOffsetPosition =
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
@@ -1513,7 +1499,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
 
         // update the xml paragraph element
         int currenChildIndex = 0;
-        pos = 0;
+        int pos = 0;
         int posInSentence = 0;
         int refIndex = 0;
         for(int i=0; i<sentencesOffsetPosition.size(); i++) {
@@ -1522,7 +1508,6 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             Element sentenceElement = teiElement("s");
 
             List<LayoutToken> currentSentenceTokens = segmentedParagraphTokens.get(i);
-//            List<Triple<String, String, OffsetPosition>> styleList = extractStylesList(currentSentenceTokens);
 
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1531,22 +1516,21 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             if (config.isGenerateTeiCoordinates("s")) {
                 if (segmentedParagraphTokens.size()>=i+1) {
                     currentSentenceTokens = segmentedParagraphTokens.get(i);
-                    String coords = LayoutTokensUtil.getCoordsString(currentSentenceTokens);
-                    if (coords != null) {
-                        sentenceElement.addAttribute(new Attribute("coords", coords));
-                    }
+                    sentenceElement.addAttribute(new Attribute("coords", LayoutTokensUtil.getCoordsString(currentSentenceTokens)));
                 }
             }
+
+            List<Triple<String, String, OffsetPosition>> styleList = extractStylesList(currentSentenceTokens);
 
             int sentenceLength = sentencesOffsetPosition.get(i).end - pos;
             // check if we have a ref between pos and pos+sentenceLength
             for(int j=refIndex; j<refPositions.size(); j++) {
-                int refPos = refPositions.get(j).intValue();
+                int refPos = refPositions.get(j);
                 if (refPos < pos+posInSentence)
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
-                    Node valueNode = mapRefNodes.get(new Integer(refPos));
+                    Node valueNode = mapRefNodes.get(refPos).getLeft();
                     if (pos+posInSentence < refPos) {
                         String localTextChunk = text.substring(pos+posInSentence, refPos);
                         localTextChunk = XmlBuilderUtils.stripNonValidXMLCharacters(localTextChunk);
@@ -1582,6 +1566,36 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
         }
 
+    }
+
+    protected Map<Integer, Pair<Node, String>> identifyNestedNodes(Element curParagraph) {
+        // identify ref nodes, ref spans and ref positions
+        Map<Integer,Pair<Node, String>> mapRefNodes = new HashMap<>();
+
+        int pos = 0;
+        for(int i = 0; i< curParagraph.getChildCount(); i++) {
+            Node theNode = curParagraph.getChild(i);
+            if (theNode instanceof Text) {
+                String chunk = theNode.getValue();
+                pos += chunk.length();
+            } else if (theNode instanceof Element) {
+                // for readability in another conditional
+                if (((Element) theNode).getLocalName().equals("ref")) {
+                    String chunk = theNode.getValue();
+                    // map character offset of the node and the chunk text
+                    mapRefNodes.put(pos, Pair.of(theNode, chunk));
+
+                    pos += chunk.length();
+                } else if (((Element) theNode).getLocalName().equals("hi")) {
+                    String chunk = theNode.getValue();
+                    mapRefNodes.put(pos, Pair.of(theNode, chunk));
+
+                    pos += chunk.length();
+                }
+            }
+        }
+
+        return mapRefNodes;
     }
 
     private List<List<LayoutToken>> segmentLayoutTokenLists(List<LayoutToken> curParagraphTokens, String text, List<OffsetPosition> sentencesOffsetPosition) {
