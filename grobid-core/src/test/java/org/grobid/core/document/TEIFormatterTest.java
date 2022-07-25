@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static org.grobid.core.document.TEIFormatter.TEI_STYLE_BOLD_NAME;
+import static org.grobid.core.document.TEIFormatter.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
@@ -67,7 +67,7 @@ public class TEIFormatterTest {
     }
 
     @Test
-    public void testSegmentIntoSentences_Bold_ShouldWork() throws Exception {
+    public void testSegmentIntoSentences_NoStyle_ShouldWork() throws Exception {
         String text = "One sentence (Foppiano et al.). Second sentence (Lopez et al.). ";
 
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
@@ -85,13 +85,62 @@ public class TEIFormatterTest {
         currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
         currentParagraph.appendChild(".");
 
-        System.out.println(currentParagraph.toXML());
-
         new TEIFormatter(null, null)
             .segmentIntoSentences(currentParagraph, currentParagraphTokens, config, "en");
 
         assertThat(currentParagraph.toXML(),
             is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s>One sentence <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+
+    @Test
+    public void testSegmentIntoSentences_Style_ShouldWork() throws Exception {
+        String text1_0 = "One sentence ";
+        String text1_1 = ". ";
+        String text2_0 = "Second sentence ";
+        String text2_1 = ".";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = new ArrayList<>();
+        List<LayoutToken> currentParagraphTokens1_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_0);
+        tokens.addAll(currentParagraphTokens1_0);
+        List<LayoutToken> currentParagraphTokens1_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_1);
+        tokens.addAll(currentParagraphTokens1_1);
+        List<LayoutToken> currentParagraphTokens2_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text2_0);
+        tokens.addAll(currentParagraphTokens2_0);
+        List<LayoutToken> currentParagraphTokens2_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text2_1);
+        tokens.addAll(currentParagraphTokens2_1);
+
+        currentParagraphTokens1_0.get(0).setBold(true);
+        currentParagraphTokens1_0.get(2).setBold(true);
+        currentParagraphTokens1_0.get(2).setItalic(true);
+
+        List<Triple<String, String, OffsetPosition>> styles1_0 = extractStylesList(currentParagraphTokens1_0);
+        List<Triple<String, String, OffsetPosition>> styles1_1 = extractStylesList(currentParagraphTokens1_1);
+        List<Triple<String, String, OffsetPosition>> styles2_0 = extractStylesList(currentParagraphTokens2_0);
+        List<Triple<String, String, OffsetPosition>> styles2_1 = extractStylesList(currentParagraphTokens2_1);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text1_0, styles1_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Foppiano et al.)"));
+        applyStyleList(currentParagraph, text1_1, styles1_1);
+        currentParagraph.appendChild(" ");
+        applyStyleList(currentParagraph, text2_0, styles2_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        applyStyleList(currentParagraph, text2_1, styles2_1);
+
+        //Assuming these are injected correctly
+
+        new TEIFormatter(null, null).segmentIntoSentences(currentParagraph, tokens, config, "en");
+
+        assertThat(currentParagraph.toXML(),
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"bold italic\">sentence</hi>  <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
     }
 
     @Test
