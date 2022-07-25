@@ -1522,6 +1522,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             Element sentenceElement = teiElement("s");
 
             List<LayoutToken> currentSentenceTokens = segmentedParagraphTokens.get(i);
+//            List<Triple<String, String, OffsetPosition>> styleList = extractStylesList(currentSentenceTokens);
 
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
@@ -1547,9 +1548,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
                     Node valueNode = mapRefNodes.get(new Integer(refPos));
                     if (pos+posInSentence < refPos) {
-                        String local_text_chunk = text.substring(pos+posInSentence, refPos);
-                        local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
-                        sentenceElement.appendChild(local_text_chunk);
+                        String localTextChunk = text.substring(pos+posInSentence, refPos);
+                        localTextChunk = XmlBuilderUtils.stripNonValidXMLCharacters(localTextChunk);
+                        sentenceElement.appendChild(localTextChunk);
                     }
                     valueNode.detach();
                     sentenceElement.appendChild(valueNode);
@@ -1562,9 +1563,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             if (pos + posInSentence <= sentencesOffsetPosition.get(i).end) {
-                String local_text_chunk = text.substring(pos + posInSentence, sentencesOffsetPosition.get(i).end);
-                local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
-                sentenceElement.appendChild(local_text_chunk);
+                String localTextChunk = text.substring(pos + posInSentence, sentencesOffsetPosition.get(i).end);
+                localTextChunk = XmlBuilderUtils.stripNonValidXMLCharacters(localTextChunk);
+                sentenceElement.appendChild(localTextChunk);
                 curParagraph.appendChild(sentenceElement);
             }
         }
