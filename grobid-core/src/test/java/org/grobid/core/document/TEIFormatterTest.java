@@ -65,6 +65,34 @@ public class TEIFormatterTest {
     }
 
     @Test
+    public void testSegmentIntoSentences_Bold_ShouldWork() throws Exception {
+        String text = "One sentence (Foppiano et al.). Second sentence (Lopez et al.). ";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        currentParagraphTokens.get(0).setBold(true);
+        currentParagraphTokens.get(2).setBold(true);
+        currentParagraphTokens.get(2).setItalic(true);
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+        currentParagraph.appendChild("One sentence");
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Foppiano et al.)"));
+        currentParagraph.appendChild(". ");
+        currentParagraph.appendChild("Second sentence");
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        currentParagraph.appendChild(".");
+
+        System.out.println(currentParagraph.toXML());
+
+        new TEIFormatter(null, null)
+            .segmentIntoSentences(currentParagraph, currentParagraphTokens, config, "en");
+
+        assertThat(currentParagraph.toXML(),
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s>One sentence <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+    @Test
     public void testExtractStylesList_single_shouldWork() throws Exception {
         String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
