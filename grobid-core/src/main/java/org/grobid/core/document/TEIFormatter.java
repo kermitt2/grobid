@@ -1407,6 +1407,10 @@ public class TEIFormatter {
         return buffer;
     }
 
+    /**
+     * Apply the styles as described in the stylesList.
+     * This method modifies the input paragraphElem.
+     */
     public static Element applyStyleList(Element paragraphElem, String text, List<Triple<String, String, OffsetPosition>> stylesList) {
 //        if (CollectionUtils.isEmpty(stylesList)) {
 //            paragraphElem.appendChild(StringUtils.normalizeSpace(paragraphText));
@@ -1669,6 +1673,12 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     public static List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList) {
         return extractStylesList(tokenList, new ArrayList<>());
     }
+
+
+    /**
+     * Extracts the stiles from the list of token. The additional parameter can ignore certain styles
+     * (e.g. to restrict only superscript/subscript when decorating formulas)
+     */
     public static List<Triple<String, String, OffsetPosition>> extractStylesList(List<LayoutToken> tokenList, List<String> ignoreStyles) {
         List<Triple<String, String, OffsetPosition>> styleList = new ArrayList<>();
         String previousStyleName = "";
