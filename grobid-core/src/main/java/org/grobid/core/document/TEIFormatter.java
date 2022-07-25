@@ -1407,7 +1407,7 @@ public class TEIFormatter {
         return buffer;
     }
 
-    public static Element applyStyleList(Element paragraphElem, String paragraphText, List<Triple<String, String, OffsetPosition>> stylesList) {
+    public static Element applyStyleList(Element paragraphElem, String text, List<Triple<String, String, OffsetPosition>> stylesList) {
 //        if (CollectionUtils.isEmpty(stylesList)) {
 //            paragraphElem.appendChild(StringUtils.normalizeSpace(paragraphText));
 //            return paragraphElem;
@@ -1416,17 +1416,20 @@ public class TEIFormatter {
         int lastPosition = 0;
         for (Triple<String, String, OffsetPosition> style : stylesList) {
             OffsetPosition offsetStyle = style.getRight();
-            String subString = paragraphText.substring(lastPosition, offsetStyle.start);
+            String subString = text.substring(lastPosition, offsetStyle.start);
             String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
-            String suffixSpace = StringUtils.endsWith(subString, " ") ? " " : "";
+            String suffixSpace = "";
+            if (subString.length() > 1) {
+                suffixSpace = StringUtils.endsWith(subString, " ") ? " " : "";
+            }
             paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")) + suffixSpace);
             Element rend = teiElement("hi");
             rend.addAttribute(new Attribute("rend", style.getLeft()));
-            rend.appendChild(StringUtils.normalizeSpace(paragraphText.substring(offsetStyle.start, offsetStyle.end).replace("\n", " ")));
+            rend.appendChild(StringUtils.normalizeSpace(text.substring(offsetStyle.start, offsetStyle.end).replace("\n", " ")));
             lastPosition = offsetStyle.end;
             paragraphElem.appendChild(rend);
         }
-        String subString = paragraphText.substring(lastPosition);
+        String subString = text.substring(lastPosition);
         String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
         paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")));
 

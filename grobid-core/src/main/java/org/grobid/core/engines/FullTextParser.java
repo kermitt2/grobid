@@ -2272,6 +2272,8 @@ public class FullTextParser extends AbstractParser {
 			}
 
 			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
+            //LF: I removed the normalisation to keep the content in sync with contentTokens.
+            //      The normalisation "StringUtils.normaliseSpaces()" is called anyway when building the XML
 			String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
 
 			if (currentResult == null)

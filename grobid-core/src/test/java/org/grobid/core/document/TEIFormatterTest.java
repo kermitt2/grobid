@@ -13,6 +13,7 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class TEIFormatterTest {
         String text = "One sentence. Second sentence.";
 
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
         Element currentParagraph = XmlBuilderUtils.teiElement("p");
         currentParagraph.appendChild(text);
 
@@ -49,7 +50,7 @@ public class TEIFormatterTest {
         String text = "One sentence. Second sentence.";
 
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
         currentParagraphTokens.get(0).setBold(true);
         currentParagraphTokens.get(2).setBold(true);
         currentParagraphTokens.get(2).setItalic(true);
@@ -67,7 +68,7 @@ public class TEIFormatterTest {
     public void testExtractStylesList_single_shouldWork() throws Exception {
         String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
         currentParagraphTokens.get(26).setSubscript(true);
         currentParagraphTokens.get(30).setSubscript(true);
@@ -87,10 +88,41 @@ public class TEIFormatterTest {
     }
 
     @Test
+    public void applyStyleList_simpleStyles_shouldWork() throws Exception {
+        String text = "This is bold and italic.";
+        List<Triple<String, String, OffsetPosition>> styles = new ArrayList<>();
+        styles.add(Triple.of("bold", "bold", new OffsetPosition(8, 12)));
+        styles.add(Triple.of("italic", "italic", new OffsetPosition(17, 23)));
+        Element rootElement = XmlBuilderUtils.teiElement("p");
+        TEIFormatter.applyStyleList(rootElement, text, styles);
+
+        assertThat(rootElement.toXML(), is("<p xmlns=\"http://www.tei-c.org/ns/1.0\">This is " +
+            "<hi rend=\"bold\">bold</hi> and <hi rend=\"italic\">italic</hi>.</p>"));
+    }
+
+    @Test
+    public void applyStyleList_complexStyles_shouldWork() throws Exception {
+        String text = "This is bold and italic.";
+        List<Triple<String, String, OffsetPosition>> styles = new ArrayList<>();
+        styles.add(Triple.of("subscript", "is", new OffsetPosition(5, 7)));
+        styles.add(Triple.of("bold subscript", "bold", new OffsetPosition(8, 12)));
+        styles.add(Triple.of("italic superscript", "and", new OffsetPosition(13, 16)));
+        styles.add(Triple.of("italic", "italic", new OffsetPosition(17, 23)));
+        Element rootElement = XmlBuilderUtils.teiElement("p");
+        TEIFormatter.applyStyleList(rootElement, text, styles);
+
+        assertThat(rootElement.toXML(), is("<p xmlns=\"http://www.tei-c.org/ns/1.0\">This " +
+            "<hi rend=\"subscript\">is</hi> " +
+            "<hi rend=\"bold subscript\">bold</hi> " +
+            "<hi rend=\"italic superscript\">and</hi> " +
+            "<hi rend=\"italic\">italic</hi>.</p>"));
+    }
+
+    @Test
     public void testExtractStylesList_combined_shouldWork() throws Exception {
         String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
         currentParagraphTokens.get(26).setSubscript(true);
         currentParagraphTokens.get(26).setBold(true);
@@ -115,7 +147,7 @@ public class TEIFormatterTest {
     public void testExtractStylesList_ignoreBold_shouldWork() throws Exception {
         String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
         currentParagraphTokens.get(26).setSubscript(true);
         currentParagraphTokens.get(26).setBold(true);
@@ -140,7 +172,7 @@ public class TEIFormatterTest {
     public void testGetSectionNumber_simple_ShouldWork() throws Exception {
         String text = "3 Supercon 2";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
         currentParagraphTokens.get(4).setSubscript(true);
         Pair<List<LayoutToken>, String> sectionNumber = new TEIFormatter(null, null)
@@ -155,7 +187,7 @@ public class TEIFormatterTest {
     public void testGetSectionNumber_doubleSpace_ShouldWork() throws Exception {
         String text = "3   Supercon 2";
         GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
-        List< LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
         currentParagraphTokens.get(6).setSubscript(true);
         Pair<List<LayoutToken>, String> sectionNumber = new TEIFormatter(null, null)
