@@ -1454,7 +1454,7 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
-        if (text == null || text.length() == 0)
+        if (StringUtils.isEmpty(text))
             return;
 
         // identify ref nodes, ref spans and ref positions
@@ -1481,7 +1481,7 @@ public class TEIFormatter {
             }
         }
 
-        List<OffsetPosition> theSentences = 
+        List<OffsetPosition> sentencesOffsetPosition =
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
     
         /*if (theSentences.size() == 0) {
@@ -1492,50 +1492,7 @@ public class TEIFormatter {
         }*/
 
         // segment the list of layout tokens according to the sentence segmentation if the coordinates are needed
-        List<List<LayoutToken>> segmentedParagraphTokens = new ArrayList<>();
-        List<LayoutToken> currentSentenceTokens = new ArrayList<>();
-        pos = 0;
-        
-        if (config.isGenerateTeiCoordinates("s")) {
-
-            int currentSentenceIndex = 0;
-//System.out.println(text);            
-//System.out.println("theSentences.size(): " + theSentences.size());
-            String sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
-
-            for(int i=0; i<curParagraphTokens.size(); i++) {
-                LayoutToken token = curParagraphTokens.get(i);
-                if (token.getText() == null || token.getText().length() == 0)
-                    continue;
-                int newPos = sentenceChunk.indexOf(token.getText(), pos);
-                if ((newPos != -1) || SentenceUtilities.toSkipToken(token.getText())) {
-                    // just move on
-                    currentSentenceTokens.add(token);
-                    if (newPos != -1 && !SentenceUtilities.toSkipToken(token.getText()))
-                        pos = newPos;
-                } else {
-                    if (currentSentenceTokens.size() > 0) {
-                        segmentedParagraphTokens.add(currentSentenceTokens);
-                        currentSentenceIndex++;
-                        if (currentSentenceIndex >= theSentences.size()) {
-                            currentSentenceTokens = new ArrayList<>();
-                            break;
-                        }
-                        sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
-                    }
-                    currentSentenceTokens = new ArrayList<>();
-                    currentSentenceTokens.add(token);
-                    pos = 0;
-                }
-
-                if (currentSentenceIndex >= theSentences.size())
-                    break;
-            }
-            // last sentence
-            if (currentSentenceTokens.size() > 0) {
-                // check sentence index too ?
-                segmentedParagraphTokens.add(currentSentenceTokens);
-            }
+        List<List<LayoutToken>> segmentedParagraphTokens = segmentLayoutTokenLists(curParagraphTokens, text, sentencesOffsetPosition);
 
 /*if (segmentedParagraphTokens.size() != theSentences.size()) {
 System.out.println("ERROR, segmentedParagraphTokens size:" + segmentedParagraphTokens.size() + " vs theSentences size: " + theSentences.size());
@@ -1552,16 +1509,20 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     k++;
 }
 }*/
-        }
+
+
         // update the xml paragraph element
         int currenChildIndex = 0;
         pos = 0;
         int posInSentence = 0;
         int refIndex = 0;
-        for(int i=0; i<theSentences.size(); i++) {
-            pos = theSentences.get(i).start;
+        for(int i=0; i<sentencesOffsetPosition.size(); i++) {
+            pos = sentencesOffsetPosition.get(i).start;
             posInSentence = 0;
             Element sentenceElement = teiElement("s");
+
+            List<LayoutToken> currentSentenceTokens = segmentedParagraphTokens.get(i);
+
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
                 addXmlId(sentenceElement, "_" + sID);
@@ -1576,7 +1537,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
 
-            int sentenceLength = theSentences.get(i).end - pos;
+            int sentenceLength = sentencesOffsetPosition.get(i).end - pos;
             // check if we have a ref between pos and pos+sentenceLength
             for(int j=refIndex; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j).intValue();
@@ -1600,8 +1561,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
 
-            if (pos+posInSentence <= theSentences.get(i).end) {
-                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+            if (pos + posInSentence <= sentencesOffsetPosition.get(i).end) {
+                String local_text_chunk = text.substring(pos + posInSentence, sentencesOffsetPosition.get(i).end);
                 local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
                 sentenceElement.appendChild(local_text_chunk);
                 curParagraph.appendChild(sentenceElement);
