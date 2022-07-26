@@ -1667,6 +1667,13 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             temporaryText.append(token.getText());
             int endOffset = temporaryText.toString().length();
 
+            if (token.getText().equals(" ")) {
+                if (value.length() > 0) {
+                    value.append(token.getText());
+                }
+                continue;
+            }
+
             StringBuilder styleName = new StringBuilder();
             if (token.isBold() && !ignoreStyles.contains(TEI_STYLE_BOLD_NAME)) {
                 styleName.append(TEI_STYLE_BOLD_NAME).append(" ");
@@ -1692,7 +1699,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             if (styleNameTrimmed.equals(previousStyleName)) {
-                Iterables.getLast(styleList).getRight().end = endOffset;
+                Triple<String, String, OffsetPosition> last = Iterables.getLast(styleList);
+                styleList.set(styleList.size()-1, Triple.of(last.getLeft(), value.toString(), new OffsetPosition(last.getRight().start, endOffset)));
             } else {
                 styleList.add(Triple.of(styleNameTrimmed, value.toString(), new OffsetPosition(startOffset, endOffset)));
             }

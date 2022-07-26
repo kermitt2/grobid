@@ -144,6 +144,58 @@ public class TEIFormatterTest {
     }
 
     @Test
+    public void testSegmentIntoSentences_StyleBetweenTwoSentences_ShouldWork() throws Exception {
+        String text1_0 = "One sentence";
+        String text1_1 = ". ";
+        String text2_0 = "Second sentence";
+        String text2_1 = ".";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = new ArrayList<>();
+        List<LayoutToken> currentParagraphTokens1_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_0);
+        tokens.addAll(currentParagraphTokens1_0);
+        List<LayoutToken> currentParagraphTokens1_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_1);
+        tokens.addAll(currentParagraphTokens1_1);
+        List<LayoutToken> currentParagraphTokens2_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text2_0);
+        tokens.addAll(currentParagraphTokens2_0);
+        List<LayoutToken> currentParagraphTokens2_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text2_1);
+        tokens.addAll(currentParagraphTokens2_1);
+
+        currentParagraphTokens1_0.get(0).setBold(true); //One
+        currentParagraphTokens1_0.get(2).setItalic(true); //sentence
+        currentParagraphTokens1_1.get(0).setItalic(true); //.
+        currentParagraphTokens2_0.get(0).setItalic(true); //Second
+        currentParagraphTokens2_0.get(2).setItalic(true); //sentence
+
+        List<Triple<String, String, OffsetPosition>> styles1_0 = extractStylesList(currentParagraphTokens1_0);
+        List<Triple<String, String, OffsetPosition>> styles1_1 = extractStylesList(currentParagraphTokens1_1);
+        List<Triple<String, String, OffsetPosition>> styles2_0 = extractStylesList(currentParagraphTokens2_0);
+        List<Triple<String, String, OffsetPosition>> styles2_1 = extractStylesList(currentParagraphTokens2_1);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text1_0, styles1_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Foppiano et al.)"));
+        applyStyleList(currentParagraph, text1_1, styles1_1);
+        currentParagraph.appendChild(" ");
+        applyStyleList(currentParagraph, text2_0, styles2_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        applyStyleList(currentParagraph, text2_1, styles2_1);
+
+        //Assuming these are injected correctly
+
+        new TEIFormatter(null, null).segmentIntoSentences(currentParagraph, tokens, config, "en");
+
+        assertThat(currentParagraph.toXML(),
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"italic\">sentence</hi> <ref>(Foppiano et al.)</ref><hi rend=\"italic\">.</hi></s><s><hi rend=\"italic\">Second sentence</hi> <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+    @Test
     public void testIdentifyRefNotes() throws Exception {
         Element currentParagraph = XmlBuilderUtils.teiElement("p");
         currentParagraph.appendChild("One sentence");
@@ -242,6 +294,26 @@ public class TEIFormatterTest {
         assertThat(pairs.get(1).getMiddle(), is("14"));
         assertThat(pairs.get(1).getRight().start, is(84));
         assertThat(pairs.get(1).getRight().end, is(86));
+    }
+
+    @Test
+    public void testExtractStylesList_continuousTokens_shouldWork() throws Exception {
+        String text = "The room temperature magnetic hysteresis loop for melt-spun ribbons of pure Nd 2 Fe 14 B is shown in Figure ";
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder().build();
+        List<LayoutToken> currentParagraphTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        currentParagraphTokens.get(24).setBold(true);
+        currentParagraphTokens.get(26).setBold(true);
+        currentParagraphTokens.get(28).setBold(true);
+        currentParagraphTokens.get(30).setBold(true);
+
+        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
+
+        assertThat(pairs, hasSize(1));
+        assertThat(pairs.get(0).getLeft(), is("bold"));
+        assertThat(pairs.get(0).getMiddle(), is("Nd 2 Fe 14"));
+        assertThat(pairs.get(0).getRight().start, is(76));
+        assertThat(pairs.get(0).getRight().end, is(86));
     }
 
     @Test
