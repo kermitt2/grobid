@@ -7,10 +7,12 @@ import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.SentenceUtilities;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,8 +20,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.grobid.core.document.TEIFormatter.*;
+import static org.hamcrest.CoreMatchers.any;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
@@ -193,6 +197,188 @@ public class TEIFormatterTest {
 
         assertThat(currentParagraph.toXML(),
             is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"italic\">sentence</hi> <ref>(Foppiano et al.)</ref><hi rend=\"italic\">.</hi></s><s><hi rend=\"italic\">Second sentence</hi> <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+    @Test
+    public void testSegmentIntoSentences_StyleBetweenTwoSentences_oneRef_ShouldWork() throws Exception {
+        String text1_0 = "One sentence. Second sentence";
+        String text1_1 = ".";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = new ArrayList<>();
+        List<LayoutToken> currentParagraphTokens1_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_0);
+        tokens.addAll(currentParagraphTokens1_0);
+        List<LayoutToken> currentParagraphTokens1_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_1);
+        tokens.addAll(currentParagraphTokens1_1);
+
+        currentParagraphTokens1_0.get(0).setBold(true); //One
+        currentParagraphTokens1_0.get(2).setItalic(true); //sentence
+        currentParagraphTokens1_0.get(3).setItalic(true); //.
+        currentParagraphTokens1_0.get(5).setItalic(true); //Second
+
+        List<Triple<String, String, OffsetPosition>> styles1_0 = extractStylesList(currentParagraphTokens1_0);
+        List<Triple<String, String, OffsetPosition>> styles1_1 = extractStylesList(currentParagraphTokens1_1);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text1_0, styles1_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        applyStyleList(currentParagraph, text1_1, styles1_1);
+
+        new TEIFormatter(null, null).segmentIntoSentences(currentParagraph, tokens, config, "en");
+
+        assertThat(currentParagraph.toXML(),
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"italic\">sentence.</hi></s><s><hi rend=\"italic\">Second</hi> sentence <ref>(Lopez et al.)</ref>.</s></p>"));
+    }
+
+    @Test
+    public void testSegmentIntoSentences_StyleBetweenTwoSentencesWithoutRefs_ShouldWork() throws Exception {
+        String text = "One sentence. Second sentence.";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        tokens.get(0).setBold(true); //One
+        tokens.get(2).setItalic(true); //sentence
+        tokens.get(3).setItalic(true); //.
+        tokens.get(5).setItalic(true); //Second
+//        currentParagraphTokens.get(7).setItalic(true); //sentence
+
+        List<Triple<String, String, OffsetPosition>> styles = extractStylesList(tokens);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text, styles);
+
+        //Assuming these are injected correctly
+        new TEIFormatter(null, null).segmentIntoSentences(currentParagraph, tokens, config, "en");
+
+        assertThat(currentParagraph.toXML(),
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"italic\">sentence.</hi></s><s><hi rend=\"italic\">Second</hi> sentence.</s></p>"));
+    }
+
+    @Test
+    public void testSplitMapNodesOverSentenceSplits_shouldAdjustNodes() {
+        TEIFormatter teiFormatter = new TEIFormatter(null, null);
+
+        String text1_0 = "One sentence. Second sentence";
+        String text1_1 = ".";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = new ArrayList<>();
+        List<LayoutToken> currentParagraphTokens1_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_0);
+        tokens.addAll(currentParagraphTokens1_0);
+        List<LayoutToken> currentParagraphTokens1_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_1);
+        tokens.addAll(currentParagraphTokens1_1);
+
+        currentParagraphTokens1_0.get(0).setBold(true); //One
+        currentParagraphTokens1_0.get(2).setItalic(true); //sentence
+        currentParagraphTokens1_0.get(3).setItalic(true); //.
+        currentParagraphTokens1_0.get(5).setItalic(true); //Second
+
+        List<Triple<String, String, OffsetPosition>> styles1_0 = extractStylesList(currentParagraphTokens1_0);
+        List<Triple<String, String, OffsetPosition>> styles1_1 = extractStylesList(currentParagraphTokens1_1);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text1_0, styles1_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        applyStyleList(currentParagraph, text1_1, styles1_1);
+
+        String text = currentParagraph.getValue();
+
+        Map<Integer, Pair<Node, String>> nestedNodes = teiFormatter.identifyNestedNodes(currentParagraph);
+        List<OffsetPosition> forbiddenPositions = nestedNodes.entrySet()
+            .stream()
+            .filter(entry -> ((Element) entry.getValue().getLeft()).getLocalName().equals("ref"))
+            .map(entry -> new OffsetPosition(entry.getKey(), entry.getValue().getRight().length() + entry.getKey()))
+            .collect(Collectors.toList());
+
+        List<OffsetPosition> sentencesOffsetPosition =
+            SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, tokens, new Language("en"));
+
+        Map<Integer, Pair<Node, String>> adjustedNestedNodes = teiFormatter.splitMapNodesOverSentenceSplits(nestedNodes, text, sentencesOffsetPosition);
+
+        assertThat(adjustedNestedNodes.size(), is(4));
+
+        assertThat(new ArrayList<>(adjustedNestedNodes.keySet()), is(Arrays.asList(0, 4, 14, 30)));
+
+        assertThat(adjustedNestedNodes.get(0).getRight(), is("One"));
+        assertThat(adjustedNestedNodes.get(4).getRight(), is("sentence."));
+        assertThat(adjustedNestedNodes.get(14).getRight(), is("Second"));
+        assertThat(adjustedNestedNodes.get(30).getRight(), is("(Lopez et al.)"));
+    }
+
+    @Test
+    public void testSplitMapNodesOverThreeSentenceSplits_shouldAdjustNodes() {
+        TEIFormatter teiFormatter = new TEIFormatter(null, null);
+
+        String text1_0 = "One sentence. Second sentence. Third sentence";
+        String text1_1 = ".";
+
+        GrobidAnalysisConfig config = GrobidAnalysisConfig.builder()
+            .withSentenceSegmentation(true)
+            .build();
+
+        List<LayoutToken> tokens = new ArrayList<>();
+        List<LayoutToken> currentParagraphTokens1_0 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_0);
+        tokens.addAll(currentParagraphTokens1_0);
+        List<LayoutToken> currentParagraphTokens1_1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text1_1);
+        tokens.addAll(currentParagraphTokens1_1);
+
+        currentParagraphTokens1_0.get(0).setBold(true); //One
+        currentParagraphTokens1_0.get(2).setItalic(true); //sentence
+        currentParagraphTokens1_0.get(3).setItalic(true); //.
+        currentParagraphTokens1_0.get(5).setItalic(true); //Second
+        currentParagraphTokens1_0.get(7).setItalic(true); //sentence
+        currentParagraphTokens1_0.get(8).setItalic(true); //.
+        currentParagraphTokens1_0.get(10).setItalic(true); //Third
+//        currentParagraphTokens1_0.get(12).setItalic(true); //sentence
+
+        List<Triple<String, String, OffsetPosition>> styles1_0 = extractStylesList(currentParagraphTokens1_0);
+        List<Triple<String, String, OffsetPosition>> styles1_1 = extractStylesList(currentParagraphTokens1_1);
+
+        Element currentParagraph = XmlBuilderUtils.teiElement("p");
+
+        applyStyleList(currentParagraph, text1_0, styles1_0);
+        currentParagraph.appendChild(" ");
+        currentParagraph.appendChild(XmlBuilderUtils.teiElement("ref", "(Lopez et al.)"));
+        applyStyleList(currentParagraph, text1_1, styles1_1);
+
+        String text = currentParagraph.getValue();
+
+        Map<Integer, Pair<Node, String>> nestedNodes = teiFormatter.identifyNestedNodes(currentParagraph);
+        List<OffsetPosition> forbiddenPositions = nestedNodes.entrySet()
+            .stream()
+            .filter(entry -> ((Element) entry.getValue().getLeft()).getLocalName().equals("ref"))
+            .map(entry -> new OffsetPosition(entry.getKey(), entry.getValue().getRight().length() + entry.getKey()))
+            .collect(Collectors.toList());
+
+        List<OffsetPosition> sentencesOffsetPosition =
+            SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, tokens, new Language("en"));
+
+        Map<Integer, Pair<Node, String>> adjustedNestedNodes = teiFormatter.splitMapNodesOverSentenceSplits(nestedNodes, text, sentencesOffsetPosition);
+
+        assertThat(adjustedNestedNodes.size(), is(5));
+
+        assertThat(new ArrayList<>(adjustedNestedNodes.keySet()), is(Arrays.asList(0, 4, 14, 31, 46)));
+
+        assertThat(adjustedNestedNodes.get(0).getRight(), is("One"));
+        assertThat(adjustedNestedNodes.get(4).getRight(), is("sentence."));
+        assertThat(adjustedNestedNodes.get(14).getRight(), is("Second sentence."));
+        assertThat(adjustedNestedNodes.get(31).getRight(), is("Third"));
+        assertThat(adjustedNestedNodes.get(46).getRight(), is("(Lopez et al.)"));
     }
 
     @Test

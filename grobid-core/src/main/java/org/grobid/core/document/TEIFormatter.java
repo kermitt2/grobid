@@ -1462,14 +1462,17 @@ public class TEIFormatter {
 
         List<OffsetPosition> forbiddenPositions = mapRefNodes.entrySet()
             .stream()
+            .filter(entry -> ((Element) entry.getValue().getLeft()).getLocalName().equals("ref"))
             .map(entry -> new OffsetPosition(entry.getKey(), entry.getValue().getRight().length() + entry.getKey()))
             .collect(Collectors.toList());
 
-        List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
-
         List<OffsetPosition> sentencesOffsetPosition =
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
-    
+
+        mapRefNodes = splitMapNodesOverSentenceSplits(mapRefNodes, text, sentencesOffsetPosition);
+
+        List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
+
         /*if (theSentences.size() == 0) {
             // this should normally not happen, but it happens (depending on sentence splitter, usually the text 
             // is just a punctuation)
@@ -1507,20 +1510,16 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             posInSentence = 0;
             Element sentenceElement = teiElement("s");
 
-            List<LayoutToken> currentSentenceTokens = segmentedParagraphTokens.get(i);
-
             if (config.isGenerateTeiIds()) {
                 String sID = KeyGen.getKey().substring(0, 7);
                 addXmlId(sentenceElement, "_" + sID);
             }
             if (config.isGenerateTeiCoordinates("s")) {
                 if (segmentedParagraphTokens.size()>=i+1) {
-                    currentSentenceTokens = segmentedParagraphTokens.get(i);
+                    List<LayoutToken> currentSentenceTokens = segmentedParagraphTokens.get(i);
                     sentenceElement.addAttribute(new Attribute("coords", LayoutTokensUtil.getCoordsString(currentSentenceTokens)));
                 }
             }
-
-            List<Triple<String, String, OffsetPosition>> styleList = extractStylesList(currentSentenceTokens);
 
             int sentenceLength = sentencesOffsetPosition.get(i).end - pos;
             // check if we have a ref between pos and pos+sentenceLength
@@ -1565,12 +1564,121 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
         }
+    }
 
+    /**
+     * Adjust the nodes that could be over a sentence split.
+     * We know that refs cannot be split over sentences, so we can ignore them happily
+     **/
+    protected Map<Integer, Pair<Node, String>> splitMapNodesOverSentenceSplits(Map<Integer, Pair<Node, String>> mapRefNodes, String text, List<OffsetPosition> sentencesOffsetPosition) {
+        Map<Integer, Pair<Node, String>> adjustedMap = new TreeMap<>();
+
+        StringBuilder textAccumulator = new StringBuilder();
+        List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
+
+        int currentNodeIdx = 0;
+        for(int i=0; i<sentencesOffsetPosition.size(); i++) {
+            OffsetPosition offsetPosition = sentencesOffsetPosition.get(i);
+            int posInSentence = 0;
+            int sentenceOffsetStart = offsetPosition.start;
+            int sentenceOffsetEnd = offsetPosition.end;
+            StringBuilder sentenceAccumulator = new StringBuilder();
+
+            for(int j=currentNodeIdx; j<refPositions.size(); j++) {
+                int refPos = refPositions.get(j);
+                Node currentNode = mapRefNodes.get(refPos).getLeft();
+                if (((Element) currentNode).getLocalName().equals("ref")) {
+                    adjustedMap.put(refPos, mapRefNodes.get(refPos));
+                    textAccumulator.append(mapRefNodes.get(refPos).getRight());
+                    sentenceAccumulator.append(mapRefNodes.get(refPos).getRight());
+                    continue;
+                }
+                int currentNodeLength = currentNode.getValue().length();
+
+                //The ref position is falling between sentence start and end
+                if (refPos >= sentenceOffsetStart+posInSentence && refPos < sentenceOffsetEnd) {
+
+                    //adding what's before the refPos to the accumulator
+                    if (refPos > sentenceOffsetStart + posInSentence) {
+                        textAccumulator.append(text, sentenceOffsetStart + posInSentence, refPos);
+                        sentenceAccumulator.append(text, sentenceOffsetStart + posInSentence, refPos);
+                    }
+
+                    //the node finishes before sentence ends - all good here :-)
+                    if (sentenceOffsetStart + posInSentence + currentNodeLength < sentenceOffsetEnd) {
+                        adjustedMap.put(refPos, mapRefNodes.get(refPos));
+                        textAccumulator.append(mapRefNodes.get(refPos).getRight());
+                        sentenceAccumulator.append(mapRefNodes.get(refPos).getRight());
+                        posInSentence = refPos + currentNodeLength - sentenceOffsetStart;
+                        continue;
+                    } else {
+                        //The node exceed the sentence, we are in trouble! Cut it!
+                        int splitElementSize = sentenceOffsetEnd - refPos;
+
+                        String substringPrefix = currentNode.getValue().substring(0, splitElementSize);
+                        Element newElementPrefix = generateNewElement((Element) currentNode, substringPrefix);
+                        adjustedMap.put(refPos, Pair.of(newElementPrefix, substringPrefix));
+                        textAccumulator.append(substringPrefix);
+                        posInSentence = refPos + newElementPrefix.getValue().length() - sentenceOffsetStart;
+                        currentNodeIdx = j;
+                        break;
+                    }
+                } else if (refPos > sentenceOffsetEnd) {
+                    // add to accumulator the rest of the sentence and moving on to the next sentence
+                    textAccumulator.append(text, sentenceOffsetStart + posInSentence, sentenceOffsetEnd);
+                    sentenceAccumulator.append(text, sentenceOffsetStart + posInSentence, sentenceOffsetEnd);
+                    break;
+                } else if (refPos < sentenceOffsetStart && textAccumulator.length() > refPos
+                    && textAccumulator.length() < refPos + currentNodeLength) {
+                    //The node is between this sentence and the previous one - trouble again dude
+
+                    String exceeded = textAccumulator.substring(0, refPos) + mapRefNodes.get(refPos).getLeft().getValue();
+
+                    if (exceeded.length() > sentenceOffsetEnd) {
+                        String previousNodeSuffix = exceeded.substring(sentenceOffsetStart, sentenceOffsetEnd);
+                        Element newElementSuffix = generateNewElement((Element) currentNode, previousNodeSuffix);
+                        adjustedMap.put(sentenceOffsetStart, Pair.of(newElementSuffix, previousNodeSuffix));
+                        if (textAccumulator.length() < sentenceOffsetStart) {
+                            textAccumulator.append(exceeded, textAccumulator.length(), sentenceOffsetStart);
+                        }
+                        textAccumulator.append(previousNodeSuffix);
+
+                        posInSentence = sentenceOffsetStart + previousNodeSuffix.length();
+                        currentNodeIdx = j;
+                        break;
+                    } else {
+                        String previousNodeSuffix = exceeded.substring(sentenceOffsetStart);
+                        Element newElementSuffix = generateNewElement((Element) currentNode, previousNodeSuffix);
+                        adjustedMap.put(sentenceOffsetStart, Pair.of(newElementSuffix, previousNodeSuffix));
+                        if (textAccumulator.length() < sentenceOffsetStart) {
+                            textAccumulator.append(exceeded, textAccumulator.length(), sentenceOffsetStart);
+                        }
+                        textAccumulator.append(previousNodeSuffix);
+                        posInSentence = sentenceOffsetStart + previousNodeSuffix.length();
+                    }
+                }
+            }
+
+            if (sentenceOffsetStart + posInSentence <= sentenceOffsetEnd) {
+                textAccumulator.append(text, sentenceOffsetStart + posInSentence, sentencesOffsetPosition.get(i).end);
+            }
+        }
+
+        return adjustedMap;
+    }
+
+    private Element generateNewElement(Element currentNode, String value) {
+        Element newElement = teiElement(currentNode.getLocalName(), value);
+        for (int i=0; i < currentNode.getAttributeCount(); i++) {
+            Attribute a = new Attribute(currentNode.getAttribute(i));
+            newElement.addAttribute(a);
+        }
+        return newElement;
     }
 
     protected Map<Integer, Pair<Node, String>> identifyNestedNodes(Element curParagraph) {
         // identify ref nodes, ref spans and ref positions
-        Map<Integer,Pair<Node, String>> mapRefNodes = new HashMap<>();
+        Map<Integer,Pair<Node, String>> mapNodes = new HashMap<>();
 
         int pos = 0;
         for(int i = 0; i< curParagraph.getChildCount(); i++) {
@@ -1583,19 +1691,19 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 if (((Element) theNode).getLocalName().equals("ref")) {
                     String chunk = theNode.getValue();
                     // map character offset of the node and the chunk text
-                    mapRefNodes.put(pos, Pair.of(theNode, chunk));
+                    mapNodes.put(pos, Pair.of(theNode, chunk));
 
                     pos += chunk.length();
                 } else if (((Element) theNode).getLocalName().equals("hi")) {
                     String chunk = theNode.getValue();
-                    mapRefNodes.put(pos, Pair.of(theNode, chunk));
+                    mapNodes.put(pos, Pair.of(theNode, chunk));
 
                     pos += chunk.length();
                 }
             }
         }
 
-        return mapRefNodes;
+        return mapNodes;
     }
 
     private List<List<LayoutToken>> segmentLayoutTokenLists(List<LayoutToken> curParagraphTokens, String text, List<OffsetPosition> sentencesOffsetPosition) {
