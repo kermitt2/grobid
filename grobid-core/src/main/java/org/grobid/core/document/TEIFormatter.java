@@ -1458,9 +1458,9 @@ public class TEIFormatter {
         if (StringUtils.isEmpty(text))
             return;
 
-        Map<Integer, Pair<Node, String>> mapRefNodes = identifyNestedNodes(curParagraph);
+        Map<Integer, Pair<Node, String>> rawMapRefNodes = identifyNestedNodes(curParagraph);
 
-        List<OffsetPosition> forbiddenPositions = mapRefNodes.entrySet()
+        List<OffsetPosition> forbiddenPositions = rawMapRefNodes.entrySet()
             .stream()
             .filter(entry -> ((Element) entry.getValue().getLeft()).getLocalName().equals("ref"))
             .map(entry -> new OffsetPosition(entry.getKey(), entry.getValue().getRight().length() + entry.getKey()))
@@ -1469,7 +1469,7 @@ public class TEIFormatter {
         List<OffsetPosition> sentencesOffsetPosition =
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
 
-        mapRefNodes = splitMapNodesOverSentenceSplits(mapRefNodes, text, sentencesOffsetPosition);
+        Map<Integer, Pair<Node, String>> mapRefNodes = splitMapNodesOverSentenceSplits(rawMapRefNodes, text, sentencesOffsetPosition);
 
         List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
 
@@ -1582,18 +1582,25 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             int posInSentence = 0;
             int sentenceOffsetStart = offsetPosition.start;
             int sentenceOffsetEnd = offsetPosition.end;
-            StringBuilder sentenceAccumulator = new StringBuilder();
 
             for(int j=currentNodeIdx; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j);
                 Node currentNode = mapRefNodes.get(refPos).getLeft();
+                int currentNodeLength = currentNode.getValue().length();
+
                 if (((Element) currentNode).getLocalName().equals("ref")) {
+                    if (refPos > sentenceOffsetEnd) {
+                        currentNodeIdx = j;
+                        break;
+                    }
                     adjustedMap.put(refPos, mapRefNodes.get(refPos));
+                    if (textAccumulator.length() < refPos) {
+                        textAccumulator.append(text, textAccumulator.length(), refPos);
+                    }
                     textAccumulator.append(mapRefNodes.get(refPos).getRight());
-                    sentenceAccumulator.append(mapRefNodes.get(refPos).getRight());
+                    posInSentence = refPos + currentNodeLength - sentenceOffsetStart;
                     continue;
                 }
-                int currentNodeLength = currentNode.getValue().length();
 
                 //The ref position is falling between sentence start and end
                 if (refPos >= sentenceOffsetStart+posInSentence && refPos < sentenceOffsetEnd) {
@@ -1601,16 +1608,14 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     //adding what's before the refPos to the accumulator
                     if (refPos > sentenceOffsetStart + posInSentence) {
                         textAccumulator.append(text, sentenceOffsetStart + posInSentence, refPos);
-                        sentenceAccumulator.append(text, sentenceOffsetStart + posInSentence, refPos);
+                        posInSentence = refPos - sentenceOffsetStart;
                     }
 
                     //the node finishes before sentence ends - all good here :-)
                     if (sentenceOffsetStart + posInSentence + currentNodeLength < sentenceOffsetEnd) {
                         adjustedMap.put(refPos, mapRefNodes.get(refPos));
                         textAccumulator.append(mapRefNodes.get(refPos).getRight());
-                        sentenceAccumulator.append(mapRefNodes.get(refPos).getRight());
                         posInSentence = refPos + currentNodeLength - sentenceOffsetStart;
-                        continue;
                     } else {
                         //The node exceed the sentence, we are in trouble! Cut it!
                         int splitElementSize = sentenceOffsetEnd - refPos;
@@ -1621,12 +1626,14 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                         textAccumulator.append(substringPrefix);
                         posInSentence = refPos + newElementPrefix.getValue().length() - sentenceOffsetStart;
                         currentNodeIdx = j;
-                        break;
+//                        break;
                     }
                 } else if (refPos > sentenceOffsetEnd) {
                     // add to accumulator the rest of the sentence and moving on to the next sentence
-                    textAccumulator.append(text, sentenceOffsetStart + posInSentence, sentenceOffsetEnd);
-                    sentenceAccumulator.append(text, sentenceOffsetStart + posInSentence, sentenceOffsetEnd);
+                    String textChunk = text.substring(sentenceOffsetStart + posInSentence, sentenceOffsetEnd);
+                    textAccumulator.append(textChunk);
+                    posInSentence += textChunk.length();
+                    currentNodeIdx = j;
                     break;
                 } else if (refPos < sentenceOffsetStart && textAccumulator.length() > refPos
                     && textAccumulator.length() < refPos + currentNodeLength) {
@@ -1659,7 +1666,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
 
-            if (sentenceOffsetStart + posInSentence <= sentenceOffsetEnd) {
+            if (sentenceOffsetStart + posInSentence < sentenceOffsetEnd) {
                 textAccumulator.append(text, sentenceOffsetStart + posInSentence, sentencesOffsetPosition.get(i).end);
             }
         }
@@ -1775,7 +1782,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             temporaryText.append(token.getText());
             int endOffset = temporaryText.toString().length();
 
-            if (token.getText().equals(" ")) {
+            if (token.getText().equals(" ") || token.getText().equals("\n")) {
                 if (value.length() > 0) {
                     value.append(token.getText());
                 }
