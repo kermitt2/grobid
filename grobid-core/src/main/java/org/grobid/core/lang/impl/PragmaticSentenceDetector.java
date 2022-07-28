@@ -3,11 +3,11 @@ package org.grobid.core.lang.impl;
 import com.google.common.base.Joiner;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lang.SentenceDetector;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.matching.DiffMatchPatch;
 import org.jruby.embed.LocalContextScope;
 import org.jruby.embed.LocalVariableBehavior;
 import org.jruby.embed.PathType;
@@ -77,7 +77,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
 
     public static Pair<String, Integer> findInText(String subString, String text) {
 
-        LinkedList<DiffMatchPatch.Diff> diffs = new DiffMatchPatch().diffMain(text, subString);
+        LinkedList<DiffMatchPatch.Diff> diffs = new DiffMatchPatch().diff_main(text, subString);
         List<String> list = new ArrayList<>();
 
         // Transform to a char based sequence
