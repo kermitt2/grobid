@@ -1626,7 +1626,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                         textAccumulator.append(substringPrefix);
                         posInSentence = refPos + newElementPrefix.getValue().length() - sentenceOffsetStart;
                         currentNodeIdx = j;
-//                        break;
+                        break;
                     }
                 } else if (refPos > sentenceOffsetEnd) {
                     // add to accumulator the rest of the sentence and moving on to the next sentence
@@ -1650,10 +1650,11 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                         }
                         textAccumulator.append(previousNodeSuffix);
 
-                        posInSentence = sentenceOffsetStart + previousNodeSuffix.length();
+                        posInSentence = textAccumulator.length() - sentenceOffsetStart;
                         currentNodeIdx = j;
                         break;
                     } else {
+                        //The item is within this sentence. Cool stuff.
                         String previousNodeSuffix = exceeded.substring(sentenceOffsetStart);
                         Element newElementSuffix = generateNewElement((Element) currentNode, previousNodeSuffix);
                         adjustedMap.put(sentenceOffsetStart, Pair.of(newElementSuffix, previousNodeSuffix));
@@ -1661,7 +1662,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                             textAccumulator.append(exceeded, textAccumulator.length(), sentenceOffsetStart);
                         }
                         textAccumulator.append(previousNodeSuffix);
-                        posInSentence = sentenceOffsetStart + previousNodeSuffix.length();
+                        posInSentence = textAccumulator.length() - sentenceOffsetStart;
                     }
                 }
             }
