@@ -20,7 +20,7 @@ The GROBID home is the path where all the runtime GROBID resources are located (
 By default temporary files are currently written under `grobid-home/tmp`:
 
 ```yml
-  # path relative to the grobid-home path (e.g. grobid-home/tmp)
+  # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
   temp: "tmp"
 ```
 

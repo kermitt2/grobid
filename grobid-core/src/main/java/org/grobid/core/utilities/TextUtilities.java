@@ -22,10 +22,10 @@ import java.util.regex.Pattern;
  */
 public class TextUtilities {
 
-    public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$#@]*\u2666\u2665\u2663\u2660\u00A0";
-    public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660";
-    public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
+    public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0。、，・";
+    public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$#@]*\u2666\u2665\u2663\u2660\u00A0。、，・";
+    public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660。、，・";
+    public static String delimiters = "\n\r\t\f\u00A0\u200C" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";
@@ -74,7 +74,7 @@ public class TextUtilities {
     static public final Pattern urlPattern0 = Pattern
         .compile("(?i)(https?|ftp)\\s?:\\s?//\\s?[-A-Z0-9+&@#/%?=~_()|!:,.;]*[-A-Z0-9+&@#/%=~_()|]");
     static public final Pattern urlPattern = Pattern
-        .compile("(?i)(https?|ftp)\\s?:\\s?\\/\\/\\s?[-A-Z0-9+&@#\\/%?=~_()|!:.;]*[-A-Z0-9+&@#\\/%=~_()]");
+        .compile("(?i)(https?|ftp)\\s{0,2}:\\s{0,2}\\/\\/\\s{0,2}[-A-Z0-9+&@#\\/%?=~_()|!:.;]*[-A-Z0-9+&@#\\/%=~_()]");
 
     // a regular expression for identifying email pattern in text
     // TODO: maybe find a better regex (better == more robust, not more "standard")

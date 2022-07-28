@@ -31,13 +31,13 @@ However if you need a "local" library installation and build, here are the step-
 You __must__ use a Java version under or equals to Java 11. At the present time, JVM 1.12 to 1.17 will fail to load the native JEP library (due to additional security constraints).
 
 <span>1.</span> install [DeLFT](https://github.com/kermitt2/delft), see instructions [here](https://github.com/kermitt2/delft#install).
-DeLFT version `0.3.1` has been tested successfully with Python 3.7 and 3.8. For GPU support, CUDA >-11.0 must be installed. 
+DeLFT version `0.3.1` has been tested successfully with Python 3.7 and 3.8. For GPU support, CUDA >=11.2 must be installed. 
 
 <span>2.</span> Test your DeLFT installation for GROBID models: 
 
 ```shell
 cd deflt/
-python3 grobidTagger.py citation tag 
+python3 grobidTagger.py delft/applications/citation tag  --architecture BidLSTM_CRF
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 

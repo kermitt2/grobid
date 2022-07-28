@@ -1729,7 +1729,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             for (Figure figure : figures) {
                 if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(figure.getLabel(), false);
-                    if ((label.length() > 0) &&
+                    if (label != null && (label.length() > 0) &&
                             (textLow.equals(label.toLowerCase()))) {
                         bestFigure = figure.getId();
                         break;
@@ -1742,7 +1742,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     Figure figure = figures.get(i);
                     if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(figure.getLabel(), false);
-                        if ((label.length() > 0) &&
+                        if (label != null && (label.length() > 0) &&
                                 (textLow.contains(label.toLowerCase()))) {
                             bestFigure = figure.getId();
                             break;
@@ -1795,7 +1795,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             for (Table table : tables) {
                 if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(table.getLabel(), false);
-                    if ((label.length() > 0) &&
+                    if (label != null && (label.length() > 0) &&
                             (textLow.equals(label.toLowerCase()))) {
                         bestTable = table.getId();
                         break;
@@ -1809,7 +1809,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     Table table = tables.get(i);
                     if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(table.getLabel(), false);
-                        if ((label.length() > 0) &&
+                        if (label != null && (label.length() > 0) &&
                                 (textLow.contains(label.toLowerCase()))) {
                             bestTable = table.getId();
                             break;

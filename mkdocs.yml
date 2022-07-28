@@ -17,9 +17,9 @@ pages:
     - 'Licence': 'License.md'
   - User manual:
     - 'Install GROBID': 'Install-Grobid.md'
+    - 'GROBID with containers': 'Grobid-docker.md'
     - 'GROBID service': 'Grobid-service.md'
     - 'GROBID batch mode': 'Grobid-batch.md'
-    - 'GROBID with containers': 'Grobid-docker.md'
     - 'GROBID configuration': 'Configuration.md'
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
     - 'Java library': 'Grobid-java-library.md'

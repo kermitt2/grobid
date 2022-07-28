@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import org.apache.lucene.analysis.standard.ClassicAnalyzer;
 import org.apache.lucene.util.Version;
 import org.grobid.core.data.BibDataSet;
+import org.grobid.core.data.BiblioItem;;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
@@ -278,7 +279,7 @@ public class ReferenceMarkerMatcher {
             List<BibDataSet> matches = authorMatcher.match(c);
             if (matches.size() == 1) {
                 cntManager.i(ReferenceMarkerMatcherCounters.MATCHED_REF_MARKERS);
-                //System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
+//System.out.println("MATCHED: " + text + "\n" + c + "\n" + matches.get(0).getRawBib());
                 results.add(new MatchResult(c, splitItem, matches.get(0)));
             } else {
                 if (matches.size() != 0) {
@@ -405,11 +406,30 @@ public class ReferenceMarkerMatcher {
             String[] sp = c.trim().split(" ");
             //callouts often include parentheses as seen in https://grobid.readthedocs.io/en/latest/training/fulltext/
             final String author = sp[0].replaceAll("[\\(\\[]", "").toLowerCase();
-
             ArrayList<BibDataSet> bibDataSets = Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
                 @Override
                 public boolean apply(BibDataSet bibDataSet) {
+                    // first author last name formatted raw bib
                     return bibDataSet.getRawBib().trim().toLowerCase().startsWith(author);
+                }
+            }));
+
+            if (bibDataSets.size() == 1) {
+                return bibDataSets;
+            }
+
+            bibDataSets = Lists.newArrayList(Iterables.filter(matches, new Predicate<BibDataSet>() {
+                @Override
+                public boolean apply(BibDataSet bibDataSet) {
+                    BiblioItem resBib = bibDataSet.getResBib();
+                    if (resBib == null)
+                        return false;
+                    String firstAuthorLastName = resBib.getFirstAuthorSurname();
+                    if (firstAuthorLastName == null)
+                        return false;
+                    firstAuthorLastName = firstAuthorLastName.toLowerCase();
+                    // first author forename last name formatted raw bib
+                    return firstAuthorLastName.equals(author);
                 }
             }));
 
