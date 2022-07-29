@@ -23,15 +23,16 @@ import java.util.stream.Collectors;
 
 /**
  * Implementation of sentence segmentation via the Pragmatic Segmenter
+ *
  */
 public class PragmaticSentenceDetector implements SentenceDetector {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PragmaticSentenceDetector.class);
+    private static final Logger LOGGER  = LoggerFactory.getLogger(PragmaticSentenceDetector.class);
 
     private ScriptingContainer instance = null;
 
     public PragmaticSentenceDetector() {
         String segmenterRbFile = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" +
-            File.separator + "pragmatic_segmenter" + File.separator + "segmenter.rb";
+            File.separator + "pragmatic_segmenter"+ File.separator + "segmenter.rb";
         String segmenterLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation";  
         /*String unicodeLoadPath = GrobidProperties.getGrobidHomePath() + File.separator + "sentence-segmentation" + 
             File.separator + "pragmatic_segmenter" + File.separator + "gem" + File.separator + "gems" +
@@ -210,7 +211,7 @@ public class PragmaticSentenceDetector implements SentenceDetector {
         // indicate when the sentence as provided by the Pragmatic Segmented does not match the original string
         // and we had to "massage" the string to identify/approximate offsets in the original string
         boolean recovered = false;
-        for (int i = 0; i < retList.size(); i++) {
+        for(int i=0; i<retList.size(); i++) {
             String chunk = retList.get(i);
             recovered = false;
             int start = text.indexOf(chunk, pos);
@@ -242,18 +243,18 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                         // we need to correct the previous sentence end offset given the start of the current sentence
                         if (result.size() > 0) {
                             int newPreviousEnd = start;
-                            while (newPreviousEnd >= 1 && text.charAt(newPreviousEnd - 1) == ' ') {
+                            while(newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
                                 newPreviousEnd--;
                                 if (start - newPreviousEnd > 10) {
                                     // this is a break to avoid going too far
                                     newPreviousEnd = start;
                                     // but look back previous character to cover general case
-                                    if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd - 1) == ' ') {
+                                    if (newPreviousEnd >= 1 && text.charAt(newPreviousEnd-1) == ' ') {
                                         newPreviousEnd--;
                                     }
                                 }
                             }
-                            result.get(result.size() - 1).end = newPreviousEnd;
+                            result.get(result.size()-1).end = newPreviousEnd;
                         }
                     }
                 }
@@ -262,30 +263,31 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                 // we approximate the start of the non-matching sentence based on the end of the previous sentence
                 if (start == -1) {
                     start = previousEnd;
-                    while (text.charAt(start) == ' ') {
+                    while(text.charAt(start) == ' ') {
                         start++;
                         if (start - previousEnd > 10) {
                             // this is a break to avoid going too far
-                            start = previousEnd + 1;
+                            start = previousEnd+1;
                         }
                     }
                     recovered = true;
                 }
             }
 
-            int end = start + chunk.length();
+            int end = start+chunk.length();
 
             // in case the last sentence is modified
-            if (end > text.length() && i == retList.size() - 1)
+            if (end > text.length() && i == retList.size()-1)
                 end = text.length();
 
             result.add(new OffsetPosition(start, end));
-            pos = start + chunk.length();
+            pos = start+chunk.length();
             if (recovered)
                 previousEnd += 1;
             else
                 previousEnd = pos;
         }
+
         return result;
     }
 }
