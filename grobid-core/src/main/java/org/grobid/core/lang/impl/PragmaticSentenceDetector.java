@@ -143,7 +143,9 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             int end = -1;
 
             if (previousEnd > -1) {
-                start = text.indexOf(sentenceClean, previousEnd);
+                String subString = StringUtils.substring(text, previousEnd, previousEnd + 2 * sentenceClean.length());
+                int relativeIndexOf = subString.indexOf(sentenceClean);
+                start = relativeIndexOf > -1 ? relativeIndexOf + previousEnd : relativeIndexOf;
             } else {
                 start = text.indexOf(sentenceClean);
             }
@@ -152,7 +154,9 @@ public class PragmaticSentenceDetector implements SentenceDetector {
             String outputStr = "";
             if (start == -1) {
                 if (previousEnd > -1) {
-                    start = text.replace("\n", " ").indexOf(sentenceClean, previousEnd);
+                    String subString = StringUtils.substring(text, previousEnd, previousEnd + 2 * sentenceClean.length());
+                    int relativeIndexOf = subString.replace("\n", " ").indexOf(sentenceClean);
+                    start = relativeIndexOf > 1 ? relativeIndexOf + previousEnd : relativeIndexOf;
                 } else {
                     start = text.replace("\n", " ").indexOf(sentenceClean);
                 }
@@ -162,13 +166,13 @@ public class PragmaticSentenceDetector implements SentenceDetector {
                     String textAdapted = text;
 
                     if (previousEnd > -1) {
-                        textAdapted = text.substring(previousEnd);
+                        textAdapted = StringUtils.substring(text, previousEnd, previousEnd + 2 * sentenceClean.length());
                         Pair<String, Integer> inText = findInText(sentenceClean, textAdapted);
                         start = inText.getRight();
                         outputStr = inText.getLeft();
                         start += previousEnd;
                     } else if (previousStart > -1) {
-                        textAdapted = text.substring(previousStart);
+                        textAdapted = StringUtils.substring(text, previousStart, previousStart + 2 * sentenceClean.length());
                         Pair<String, Integer> inText = findInText(sentenceClean, textAdapted);
                         start = inText.getRight();
                         outputStr = inText.getLeft();
