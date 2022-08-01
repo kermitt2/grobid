@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+import static org.grobid.core.engines.label.TaggingLabels.DATA_AVAILABILITY_LABEL;
+
 /**
  * SAX parser for the TEI format header data encoded for training. Normally all training data for the header model 
  * should be in this unique format (which replaces for instance the CORA format). Segmentation of tokens must be 
@@ -126,7 +128,9 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         } else if (value.equals("paragraph")) {
                             currentTag = "<other>";
                         }*/
-                        else 
+                        else if (value.equals("data_availability")) {
+                            currentTag = DATA_AVAILABILITY_LABEL;
+                        } else
                             currentTag = "<other>";
                     }
                 }
