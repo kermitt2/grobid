@@ -23,6 +23,7 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
+import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -193,7 +194,7 @@ public class FullTextParser extends AbstractParser {
                         String labeledAbstract = abstractProcessed.getLeft();
                         labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
-                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
+                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), HeaderLabels.HEADER_ABSTRACT);
                     }
                 }
             }

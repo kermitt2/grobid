@@ -10,6 +10,7 @@ import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
@@ -806,19 +807,19 @@ public class HeaderParser extends AbstractParser {
 
             String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
-            if (clusterLabel.equals(TaggingLabels.HEADER_TITLE)) {
+            if (clusterLabel.equals(HeaderLabels.HEADER_TITLE)) {
                 /*if (biblio.getTitle() != null && isDifferentContent(biblio.getTitle(), clusterContent))
                     biblio.setTitle(biblio.getTitle() + clusterContent);
                 else*/
                 if (biblio.getTitle() == null) {
                     biblio.setTitle(clusterContent);
                 }
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_AUTHOR)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_AUTHOR)) {
                 //if (biblio.getAuthors() != null && isDifferentandNotIncludedContent(biblio.getAuthors(), clusterContent)) {
                 if (biblio.getAuthors() != null) {
                     biblio.setAuthors(biblio.getAuthors() + "\t" + clusterNonDehypenizedContent);
                     //biblio.addAuthorsToken(new LayoutToken("\n", TaggingLabels.HEADER_AUTHOR));
-                    biblio.collectAuthorsToken(new LayoutToken("\t", TaggingLabels.HEADER_AUTHOR));
+                    biblio.collectAuthorsToken(new LayoutToken("\t", HeaderLabels.HEADER_AUTHOR));
 
                     List<LayoutToken> tokens = cluster.concatTokens();
                     biblio.collectAuthorsTokens(tokens);
@@ -843,14 +844,14 @@ public class HeaderParser extends AbstractParser {
                     biblio.setLocation(clusterContent);
 
             }*/ 
-            else if (clusterLabel.equals(TaggingLabels.HEADER_MEETING)) {
+            else if (clusterLabel.equals(HeaderLabels.HEADER_MEETING)) {
 
                 if (biblio.getMeeting() != null) {
                     biblio.setMeeting(biblio.getMeeting() + ", " + clusterContent);
                 } else
                     biblio.setMeeting(clusterContent);
 
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_DATE)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_DATE)) {
                 // it appears that the same date is quite often repeated,
                 // we should check, before adding a new date segment, if it is
                 // not already present
@@ -890,13 +891,13 @@ public class HeaderParser extends AbstractParser {
                     biblio.setDownloadDate(biblio.getDownloadDate() + " " + clusterNonDehypenizedContent);
                 } else
                     biblio.setDownloadDate(clusterNonDehypenizedContent);
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_PAGE)) {
+            }*/ else if (clusterLabel.equals(HeaderLabels.HEADER_PAGE)) {
                 /*if (biblio.getPageRange() != null) {
                     biblio.setPageRange(biblio.getPageRange() + clusterContent);
                 }*/ 
                 if (biblio.getPageRange() == null) 
                     biblio.setPageRange(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_EDITOR)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_EDITOR)) {
                 if (biblio.getEditors() != null) {
                     biblio.setEditors(biblio.getEditors() + "\n" + clusterNonDehypenizedContent);
                 } else
@@ -906,12 +907,12 @@ public class HeaderParser extends AbstractParser {
                     biblio.setInstitution(biblio.getInstitution() + clusterContent);
                 } else
                     biblio.setInstitution(clusterContent);
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_NOTE)) {
+            }*/ else if (clusterLabel.equals(HeaderLabels.HEADER_NOTE)) {
                 if (biblio.getNote() != null) {
                     biblio.setNote(biblio.getNote() + " " + clusterContent);
                 } else
                     biblio.setNote(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_ABSTRACT)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_ABSTRACT)) {
                 if (biblio.getAbstract() != null) {
                     // this will need to be reviewed with more training data, for the moment
                     // avoid concatenation for abstracts as it brings more noise than correct pieces
@@ -921,39 +922,39 @@ public class HeaderParser extends AbstractParser {
                     List<LayoutToken> tokens = cluster.concatTokens();
                     biblio.collectAbstractTokens(tokens);
                 }
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_REFERENCE)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_REFERENCE)) {
                 //if (biblio.getReference() != null) {
                 if (biblio.getReference() != null && biblio.getReference().length() < clusterNonDehypenizedContent.length()) {
                     biblio.setReference(clusterNonDehypenizedContent);
                 } else
                     biblio.setReference(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_FUNDING)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_FUNDING)) {
                 if (biblio.getFunding() != null) {
                     biblio.setFunding(biblio.getFunding() + " \n " + clusterContent);
                 } else
                     biblio.setFunding(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_COPYRIGHT)) {
                 if (biblio.getCopyright() != null) {
                     biblio.setCopyright(biblio.getCopyright() + " " + clusterContent);
                 } else
                     biblio.setCopyright(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_AFFILIATION)) {
                 // affiliation **makers** should be marked SINGLECHAR LINESTART
                 if (biblio.getAffiliation() != null) {
                     biblio.setAffiliation(biblio.getAffiliation() + " ; " + clusterContent);
                 } else
                     biblio.setAffiliation(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_ADDRESS)) {
                 if (biblio.getAddress() != null) {
                     biblio.setAddress(biblio.getAddress() + " " + clusterContent);
                 } else
                     biblio.setAddress(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_EMAIL)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_EMAIL)) {
                 if (biblio.getEmail() != null) {
                     biblio.setEmail(biblio.getEmail() + "\t" + clusterNonDehypenizedContent);
                 } else
                     biblio.setEmail(clusterNonDehypenizedContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBNUM)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_PUBNUM)) {
                 if (biblio.getPubnum() != null && isDifferentandNotIncludedContent(biblio.getPubnum(), clusterContent)) {
                     String currentPubnum = biblio.getPubnum();
                     biblio.setPubnum(clusterContent);
@@ -963,12 +964,12 @@ public class HeaderParser extends AbstractParser {
                     biblio.setPubnum(clusterContent);
                     biblio.checkIdentifier();
                 }
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_KEYWORD)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_KEYWORD)) {
                 if (biblio.getKeyword() != null) {
                     biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
                     biblio.setPhone(biblio.getPhone() + clusterNonDehypenizedContent);
                 } else
@@ -978,7 +979,7 @@ public class HeaderParser extends AbstractParser {
                     biblio.setDegree(biblio.getDegree() + clusterContent);
                 } else
                     biblio.setDegree(clusterContent);
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_WEB)) {
+            }*/ else if (clusterLabel.equals(HeaderLabels.HEADER_WEB)) {
                 if (biblio.getWeb() != null) {
                     biblio.setWeb(biblio.getWeb() + clusterNonDehypenizedContent);
                 } else
@@ -988,7 +989,7 @@ public class HeaderParser extends AbstractParser {
                     biblio.setDedication(biblio.getDedication() + clusterContent);
                 } else
                     biblio.setDedication(clusterContent);
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_SUBMISSION)) {
+            }*/ else if (clusterLabel.equals(HeaderLabels.HEADER_SUBMISSION)) {
                 if (biblio.getSubmission() != null) {
                     biblio.setSubmission(biblio.getSubmission() + " " + clusterContent);
                 } else
@@ -1006,24 +1007,24 @@ public class HeaderParser extends AbstractParser {
                     biblio.setVersion(biblio.getVersion() + clusterNonDehypenizedContent);
                 } else 
                     biblio.setVersion(clusterNonDehypenizedContent);
-            }*/ else if (clusterLabel.equals(TaggingLabels.HEADER_DOCTYPE)) {
+            }*/ else if (clusterLabel.equals(HeaderLabels.HEADER_DOCTYPE)) {
                 if (biblio.getDocumentType() != null && isDifferentContent(biblio.getDocumentType(), clusterContent)) {
                     biblio.setDocumentType(biblio.getDocumentType() + " \n " + clusterContent);
                 } else
                     biblio.setDocumentType(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_WORKINGGROUP)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_WORKINGGROUP)) {
                 /*if (biblio.getWorkingGroup() != null && isDifferentandNotIncludedContent(biblio.getWorkingGroup(), clusterContent)) {
                     biblio.setWorkingGroup(biblio.getWorkingGroup() + " " + clusterContent);
                 }*/
                 if (biblio.getWorkingGroup() == null)
                     biblio.setWorkingGroup(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_PUBLISHER)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_PUBLISHER)) {
                 /*if (biblio.getPublisher() != null && isDifferentandNotIncludedContent(biblio.getPublisher(), clusterContent)) {
                     biblio.setPublisher(biblio.getPublisher() + " " + clusterContent);
                 }*/
                 if (biblio.getPublisher() == null)  
                     biblio.setPublisher(clusterContent);
-            } else if (clusterLabel.equals(TaggingLabels.HEADER_JOURNAL)) {
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_JOURNAL)) {
                 /*if (biblio.getJournal() != null && isDifferentandNotIncludedContent(biblio.getJournal(), clusterContent)) {
                     biblio.setJournal(biblio.getJournal() + " " + clusterContent);
                 }*/

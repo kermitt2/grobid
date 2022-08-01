@@ -16,6 +16,7 @@ import org.grobid.core.data.Date;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
+import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
@@ -784,7 +785,7 @@ public class TEIFormatter {
                                             biblio,
                                             bds,
                                             false,
-                                            new LayoutTokenization(biblio.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT)),
+                                            new LayoutTokenization(biblio.getLayoutTokens(HeaderLabels.HEADER_ABSTRACT)),
                                             null, 
                                             null, 
                                             null, 
