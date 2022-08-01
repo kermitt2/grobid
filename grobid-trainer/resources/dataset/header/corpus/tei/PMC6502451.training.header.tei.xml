@@ -86,7 +86,9 @@
 	<date>May 6, 2019<lb/></date>
 
 	Copyright:
-	<note type="copyright">© 2019 Francikowski et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/> Data Availability Statement: All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
+	<note type="copyright">© 2019 Francikowski et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+    <note type="data_availability">Data Availability Statement: All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
 
 	Funding: The authors
 	<note type="funding">received no specific funding<lb/> for this work.<lb/></note>
