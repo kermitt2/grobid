@@ -15,7 +15,7 @@ The following TEI elements are used by the segmentation model:
 * `<page>` to indicate page numbers
 * `<div type="annex">` for annexes
 * `<div type="acknowledgment">` for acknowledgments
-* `<div type="data_availability">` for data and code availability statements
+* `<div type="data_availability">` for data and code availability statements (when not in the header)
 * `<div type="toc">` for table of content
 
 It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
@@ -73,11 +73,12 @@ The following screen shot shows an example where an article starts mid-page, the
 #### Additional information 
 
 Additional information which are delegated to the header model, should be annotated as `<front>`:
-* author contribution
-* data availability statement, when they are discussed in the header (e.g. as part of the abstract or in the frontpage)
-* funding information 
-* copyright information (in the first page, often at the end of the last page)
-* competing interests
+
+* Author contribution
+* Data availability statement **only when appearing in the first page**
+* Funding information 
+* Copyright information (in the first page, often at the end of the last page)
+* Competing interests
 
 These sub sections could appear in any part of the document, usually either in the first or the last page (before/after the references).
 
