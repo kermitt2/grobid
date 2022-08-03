@@ -70,12 +70,14 @@ The following screen shot shows an example where an article starts mid-page, the
 
 ![article starting mid-page - 0C4013368F5546BB832B7A76F2A36EF9C4AAB6EF](img/preceding-article-on-first-page.png)
 
-There are other information which are delegated to the header model, and should be annotated as `<front>`:
- - author contribution
- - data availability statement, when they are discussed in the header (e.g. as part of the abstract or in the frontpage)
- - funding information 
- - copyright information (in the first page, often at the end of the last page)
- - competing interests
+#### Additional information 
+
+Additional information which are delegated to the header model, should be annotated as `<front>`:
+* author contribution
+* data availability statement, when they are discussed in the header (e.g. as part of the abstract or in the frontpage)
+* funding information 
+* copyright information (in the first page, often at the end of the last page)
+* competing interests
 
 These sub sections could appear in any part of the document, usually either in the first or the last page (before/after the references).
 
