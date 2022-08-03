@@ -15,6 +15,7 @@ The following TEI elements are used by the segmentation model:
 * `<page>` to indicate page numbers
 * `<div type="annex">` for annexes
 * `<div type="acknowledgment">` for acknowledgments
+* `<div type="data_availability">` for data and code availability statements
 * `<div type="toc">` for table of content
 
 It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
@@ -68,6 +69,15 @@ survival <lb/></front>
 The following screen shot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
 
 ![article starting mid-page - 0C4013368F5546BB832B7A76F2A36EF9C4AAB6EF](img/preceding-article-on-first-page.png)
+
+There are other information which are delegated to the header model, and should be annotated as `<front>`:
+ - author contribution
+ - data availability statement, when they are discussed in the header (e.g. as part of the abstract or in the frontpage)
+ - funding information 
+ - copyright information (in the first page, often at the end of the last page)
+ - competing interests
+
+These sub sections could appear in any part of the document, usually either in the first or the last page (before/after the references).
 
 ### Following document pages (body)
 
