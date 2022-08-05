@@ -1,5 +1,6 @@
 package org.grobid.trainer.evaluation;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.*;
 import org.grobid.core.engines.Engine;
@@ -23,7 +24,10 @@ import java.util.concurrent.Future;
 import org.apache.commons.io.FileUtils;
 
 import org.w3c.dom.*;
+
+import javax.xml.namespace.QName;
 import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
@@ -141,12 +145,12 @@ public class EndToEndEvaluation {
 		
 		// initialize the field specifications and label list
 		headerFields = new ArrayList<>();
-		fulltextFields = new ArrayList<FieldSpecification>();	
-		citationsFields = new ArrayList<FieldSpecification>();
+		fulltextFields = new ArrayList<>();
+		citationsFields = new ArrayList<>();
 		
-		headerLabels = new ArrayList<String>();
-		fulltextLabels = new ArrayList<String>();
-		citationsLabels = new ArrayList<String>();
+		headerLabels = new ArrayList<>();
+		fulltextLabels = new ArrayList<>();
+		citationsLabels = new ArrayList<>();
 		
 		FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields, 
 			headerLabels, fulltextLabels, citationsLabels);
@@ -225,9 +229,7 @@ public class EndToEndEvaluation {
 						if (!success)
 							fails++;
 						pb.step();
-					} catch (InterruptedException e) {
-	                	e.printStackTrace();
-	            	} catch (ExecutionException e) {
+					} catch (InterruptedException | ExecutionException e) {
 	                	e.printStackTrace();
 	            	}
 				}
@@ -544,9 +546,9 @@ public class EndToEndEvaluation {
 
 						String path = null;
 						if (inputType.equals("nlm"))
-							path = base.nlmPath.get(0);
+							path = base.nlmPath.get(0).getLeft();
 						else 
-							path = base.grobidPath.get(0);
+							path = base.grobidPath.get(0).getLeft();
 
 						NodeList nodeList = (NodeList) xp.compile(path).
 							evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
@@ -586,7 +588,7 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								List<String> subpaths = null;
+								List<Pair<String, QName>> subpaths = null;
 								if (inputType.equals("nlm")) {
 									subpaths = field.nlmPath;
 								} else if (inputType.equals("tei")) {
@@ -596,9 +598,9 @@ public class EndToEndEvaluation {
 								if (subpaths == null)
 									continue;
 
-								for(String subpath : subpaths) {
-									NodeList nodeList2 = (NodeList) xp.compile(subpath).
-										evaluate(node, XPathConstants.NODESET);
+								for(Pair<String, QName> subpath : subpaths) {
+									NodeList nodeList2 = (NodeList) xp.compile(subpath.getLeft()).
+										evaluate(node, subpath.getRight());
 									
 									List<String> goldResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
@@ -738,9 +740,10 @@ public class EndToEndEvaluation {
 						}
 						
 						// get the Grobid citations
-						path = base.grobidPath.get(0);
+						path = base.grobidPath.get(0).getLeft();
+						QName nodeType = base.grobidPath.get(0).getRight();
 						nodeList = (NodeList) xp.compile(path).
-							evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
+							evaluate(tei.getDocumentElement(), nodeType);
 						int nbCitationsGrobid = nodeList.getLength();
 						totalObservedInstances += nbCitationsGrobid;
 						List<Map<String,List<String>>> grobidCitations = 
@@ -755,9 +758,9 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								for(String subpath : field.grobidPath) {
-									NodeList nodeList2 = (NodeList) xp.compile(subpath).
-										evaluate(node, XPathConstants.NODESET);
+								for(Pair<String, QName> subpath : field.grobidPath) {
+									NodeList nodeList2 = (NodeList) xp.compile(subpath.getLeft()).
+										evaluate(node, subpath.getRight());
 									List<String> grobidResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
@@ -1234,11 +1237,11 @@ public class EndToEndEvaluation {
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
 						
-							List<String> grobidResults = new ArrayList<String>();
+							List<String> grobidResults = new ArrayList<>();
 							int nbGrobidResults = 0;
-							for(String path : field.grobidPath) {
-								NodeList nodeList = (NodeList) xp.compile(path).
-									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
+							for(Pair<String, QName> path : field.grobidPath) {
+								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).
+									evaluate(tei.getDocumentElement(), path.getRight());
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
 								    grobidResults.add((nodeList.item(i).getNodeValue().replaceAll(" +", " ")));
@@ -1259,7 +1262,7 @@ public class EndToEndEvaluation {
 						
 							List<String> goldResults = new ArrayList<String>();
 							int nbGoldResults = 0;
-							List<String> subpaths = null;
+							List<Pair<String, QName>> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
@@ -1269,9 +1272,9 @@ public class EndToEndEvaluation {
 							if (subpaths == null)
 								continue;
 
-							for(String path : subpaths) {
-								NodeList nodeList = (NodeList) xp.compile(path).
-									evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
+							for(Pair<String, QName> path : subpaths) {
+								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).
+									evaluate(gold.getDocumentElement(), path.getRight());
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbGoldResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
@@ -1442,17 +1445,8 @@ System.out.println("grobid: " + grobidResult);*/
 						boolean allGoodRatcliffObershelp = true;
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
-						
-							List<String> grobidResults = new ArrayList<String>();
-							int nbGrobidResults = 0;
-							for(String path : field.grobidPath) {
-								NodeList nodeList = (NodeList) xp.compile(path).
-									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
-								nbGrobidResults = nodeList.getLength();
-								for (int i = 0; i < nodeList.getLength(); i++) {
-								    grobidResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
-								}
-							}						
+
+                            List<String> grobidResults = extractFromXPath(tei, field.grobidPath, xp, field);
 
 							/*boolean first = true;
 							System.out.print("\n"+fieldName+" - ");
@@ -1466,24 +1460,25 @@ System.out.println("grobid: " + grobidResult);*/
 							}
 							System.out.println("");*/
 							
-							List<String> goldResults = new ArrayList<String>();
-							int nbgoldResults = 0;
-							List<String> subpaths = null;
+//							List<String> goldResults = new ArrayList<>();
+//							int nbgoldResults = 0;
+							List<Pair<String, QName>> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
 								subpaths = field.grobidPath;
 							}
+
+                            List<String> goldResults = extractFromXPath(gold, subpaths, xp, field);
 							
-							for(String path : subpaths) {
-								NodeList nodeList = (NodeList) xp.compile(path).
-									evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
-								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
-								nbgoldResults = nodeList.getLength();
-								for (int i = 0; i < nodeList.getLength(); i++) {
-									goldResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
-								}
-							}
+//							for(Pair<String, QName> path : subpaths) {
+//								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).evaluate(gold.getDocumentElement(), path.getRight());
+//								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
+//								nbgoldResults = nodeList.getLength();
+//								for (int i = 0; i < nodeList.getLength(); i++) {
+//									goldResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
+//								}
+//							}
 
 							/*first = true;
 							System.out.print("goldResults:\t");
@@ -1837,8 +1832,26 @@ System.out.println("grobid: " + grobidResult);*/
 
 		return report.toString();
 	}
-	
-	private static String basicNormalization(String string) {
+
+    private static List<String> extractFromXPath(Document xmlDocument, List<Pair<String, QName>> extractionPaths, XPath xPath, FieldSpecification field) throws XPathExpressionException {
+        List<String> results = new ArrayList<>();
+        for(Pair<String, QName> path : extractionPaths) {
+            if (path.getRight() == XPathConstants.NODESET) {
+                NodeList nodeList = (NodeList) xPath.compile(path.getLeft()).evaluate(xmlDocument.getDocumentElement(), path.getRight());
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    results.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(),  field.fieldName));
+                }
+            } else if (path.getRight() == XPathConstants.STRING) {
+                String string = (String) xPath.compile(path.getLeft()).evaluate(xmlDocument, path.getRight());
+                results.add(basicNormalizationFullText(string, field.fieldName));
+            } else {
+                throw new UnsupportedOperationException("Extraction from XPath works only with STRING or NODESET. Used: " + path.getRight().toString());
+            }
+        }
+        return results;
+    }
+
+    private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
