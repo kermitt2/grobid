@@ -3,6 +3,7 @@ package org.grobid.core.engines;
 import com.google.common.collect.Iterables;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
@@ -2466,22 +2467,22 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 			tei.append("\t\t<back>\n");
 
 			// acknowledgement is in the back
-			SortedSet<DocumentPiece> documentAcknowledgementParts =
-				doc.getDocumentPart(SegmentationLabels.ACKNOWLEDGEMENT);
-			Pair<String, LayoutTokenization> featSeg =
-				getBodyTextFeatured(doc, documentAcknowledgementParts);
-			List<LayoutToken> tokenizationsAcknowledgement;
-			if (featSeg != null) {
-				// if featSeg is null, it usually means that no body segment is found in the
-				// document segmentation
-				String acknowledgementText = featSeg.getLeft();
-				tokenizationsAcknowledgement = featSeg.getRight().getTokenization();
-				String reseAcknowledgement = null;
-				if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
-					reseAcknowledgement = label(acknowledgementText);
-				tei = teiFormatter.toTEIAcknowledgement(tei, reseAcknowledgement,
-					tokenizationsAcknowledgement, resCitations, config);
-			}
+            tei.append(getSectionAsTEI("acknowledgement", "\t\t\t",doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config));
+
+            // data availability statements
+            StringBuilder dataAvailability = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getDataAvailability())) {
+                dataAvailability = getSectionAsTEI("data_availability", "\t\t\t", doc, HeaderLabels.HEADER_DATA_AVAILABILITY,
+                    teiFormatter, resCitations, config);
+            } else {
+                dataAvailability = getSectionAsTEI("data_availability", "\t\t\t", doc, SegmentationLabels.DATA_AVAILABILITY,
+                    teiFormatter, resCitations, config);
+            }
+
+            if (dataAvailability.length() > 0) {
+                tei.append(dataAvailability.toString());
+            }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
 				tokenizationsAnnex, markerTypes, doc, config);
@@ -2505,6 +2506,30 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 //				)
 //		);
 	}
+
+    private StringBuilder getSectionAsTEI(String xmlType,
+                                          String indentation,
+                                          Document doc,
+                                          TaggingLabel taggingLabel,
+                                          TEIFormatter teiFormatter,
+                                          List<BibDataSet> resCitations,
+                                          GrobidAnalysisConfig config) throws Exception {
+        StringBuilder output = new StringBuilder();
+        SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
+        Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
+        if (sectionTokenisation != null) {
+            // if featSeg is null, it usually means that no body segment is found in the
+            // document segmentation
+            String text = sectionTokenisation.getLeft();
+            List<LayoutToken> tokens = sectionTokenisation.getRight().getTokenization();
+            String resultLabelling = null;
+            if (StringUtils.isNotBlank(text) ) {
+                resultLabelling = label(text);
+            }
+            output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
+        }
+        return output;
+    }
 
 	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER,
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);

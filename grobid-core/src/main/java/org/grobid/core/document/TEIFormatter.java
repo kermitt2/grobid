@@ -2,7 +2,6 @@ package org.grobid.core.document;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.StringUtils;
 
 import nu.xom.Attribute;
@@ -19,7 +18,6 @@ import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
@@ -33,7 +31,6 @@ import org.grobid.core.layout.Page;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
-import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
@@ -46,7 +43,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.*;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -1088,6 +1084,38 @@ public class TEIFormatter {
         buffer.append("\t\t\t</div>\n\n");
 
         return buffer;
+    }
+
+    public StringBuilder processTEIDivSection(String xmlType,
+                                              String indentation,
+                                              String text,
+                                              List<LayoutToken> tokens,
+                                              List<BibDataSet> biblioData,
+                                              GrobidAnalysisConfig config) throws Exception {
+        StringBuilder outputTei = new StringBuilder();
+
+        if ((StringUtils.isBlank(text)) || (tokens == null)) {
+            return outputTei;
+        }
+
+        outputTei.append("\n").append(indentation).append("<div type=\"").append(xmlType).append("\">\n");
+        StringBuilder contentBuffer = new StringBuilder();
+
+        contentBuffer = toTEITextPiece(contentBuffer, text, null, biblioData, false,
+            new LayoutTokenization(tokens), null, null, null, null, doc, config);
+        String result = contentBuffer.toString();
+        String[] resultAsArray = result.split("\n");
+        boolean extraDiv = false;
+        if (resultAsArray.length != 0) {
+            for (int i = 0; i < resultAsArray.length; i++) {
+                if (resultAsArray[i].trim().length() == 0)
+                    continue;
+                outputTei.append(TextUtilities.dehyphenize(resultAsArray[i])).append("\n");
+            }
+        }
+        outputTei.append(indentation).append("</div>\n\n");
+
+        return outputTei;
     }
 
 

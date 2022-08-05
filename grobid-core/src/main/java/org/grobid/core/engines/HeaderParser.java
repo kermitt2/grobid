@@ -969,6 +969,14 @@ public class HeaderParser extends AbstractParser {
                     biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
+            } else if (clusterLabel.equals(HeaderLabels.HEADER_DATA_AVAILABILITY)) {
+                if (StringUtils.isNotBlank(biblio.getDataAvailability())) {
+                    biblio.setDataAvailability(biblio.getDataAvailability() + " \n " + clusterContent);
+                    biblio.collectDataAvailabilityTokens(cluster.concatTokens());
+                } else{
+                    biblio.setDataAvailability(clusterContent);
+                    biblio.collectDataAvailabilityTokens(cluster.concatTokens());
+                }
             } else if (clusterLabel.equals(HeaderLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
                     biblio.setPhone(biblio.getPhone() + clusterNonDehypenizedContent);
