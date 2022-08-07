@@ -14,7 +14,7 @@
 
 			<page>2 <lb/></page>
 
-			<note place="footnote">Scientific Data | <lb/>(2022) 9:435 | https://doi.org/10.1038/s41597-022-01551-8 <lb/></front>
+			<note place="footnote">Scientific Data | <lb/>(2022) 9:435 | https://doi.org/10.1038/s41597-022-01551-8 <lb/></note>
 			
 			<note place="headnote">www.nature.com/scientificdata <lb/>www.nature.com/scientificdata/ <lb/></note>
 
@@ -24,7 +24,7 @@
 
 			<note place="footnote">Scientific Data | <lb/> (2022) 9:435 | https://doi.org/10.1038/s41597-022-01551-8 <lb/></note>
 			
-			<note place="headnote">www.nature.com/scientificdata <lb/>www.nature.com/scientificdata/ <lb/></footnote>
+			<note place="headnote">www.nature.com/scientificdata <lb/>www.nature.com/scientificdata/ <lb/></note>
 
 			<body>cloud by using the &quot;filter by confidence&quot; tool and by manually removing anomalous floating points caused by the <lb/>presence of the volcanic plume; and (6) generation of DSMs and orthomosaics. We set the processing param-<lb/>eters in Agisoft Metashape ® to &quot;high&quot; for photo alignment accuracy and &quot;high&quot; quality and &quot;aggressive&quot; depth <lb/>filtering for dense point cloud generation. For the details of the photogrammetric survey data and elaboration <lb/>refer to Table 1. <lb/>We generated a 0.2 m/pixel DSM (Fig. 2) and a 0.1 m/pixel orthophotomosaic, covering an area of about 17 <lb/>km 2 . Unlike a digital elevation model (DEM), the DSM represents the elevation of the highest object within the <lb/>bounds of a cell. Vegetation, buildings, and other objects have not been removed from the data. <lb/>The dataset was processed and analysed in the REGCAN95/UTM zone 28 N [EPSG:4083] Coordinate <lb/>System. The transformation from ellipsoidal to orthometric heights has been performed using the Geoid model <lb/>EGM08-REDNAP (https://datos-geodesia.ign.es/geoide/). <lb/>Elevation change detection. Elevation change detection (Fig. 3) was obtained by differencing our surveys <lb/>and a pre-event 2m-pixel DTM acquired in 2015 for the Spanish PNOA-LiDAR project 25 . The assumption is that <lb/>between the acquisition of the pre-event DTM (2015) and the beginning of the volcanic activity (19 September <lb/>2021), no significant height variation took place in the study area, so that elevation differences obtained in our <lb/>analysis are mainly linked to the volcanic eruption. To subtract the post-and pre-event surveys, we resampled <lb/>our DSM to 2 m/pixel resolution (same resolution as the 2015 DTM). Considering the vertical Root Mean Square <lb/>Fig. 1 Map identifying the location of each image acquired during the survey (grey dots) and the ground <lb/>control points used to establish survey control (orange dots). Extent of the lava field (in red) as of 2021-12-18 -<lb/>[EMSR546] -from Copernicus Emergency Management Service (© 2021 European Union 28 ). The inset at the <lb/>top right of the figure shows the location of La Palma island and the survey area. <lb/>Number of images <lb/>Camera stations <lb/>Flying altitude <lb/>(m a.g.l.) <lb/>Ground resolution <lb/>(cm/pixel) <lb/>Tie points <lb/>Projections <lb/>10,437 <lb/>9,970 <lb/>187 <lb/>4.46 <lb/>2,751,497 <lb/>17,509,917 <lb/>Reprojection error <lb/>(pixel) <lb/>Dense cloud points <lb/>DSM resolution <lb/>(cm/pixel) <lb/>Point density (pts/m 2 ) DSM area (km 2 ) <lb/>0.642 <lb/>2,746,820,588 <lb/>8.91 <lb/>126 <lb/>17.16 <lb/>Table 1. Details of the photogrammetric survey data and elaboration. <lb/></body>
 
