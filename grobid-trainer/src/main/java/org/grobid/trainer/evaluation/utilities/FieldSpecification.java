@@ -403,15 +403,23 @@ public class FieldSpecification {
         dataAvailabilityFulltextField.isTextual = true;
         dataAvailabilityFulltextField.grobidPath
 //            .add(Pair.of("//div[@type=\"data_availability\"]//text()", XPathConstants.NODESET));
-            .add(Pair.of("normalize-space(.//div[@type=\"data_availability\"])", XPathConstants.STRING));
+            .add(Pair.of("//div[@type=\"data_availability\"]//text()", XPathConstants.NODESET));
+
+        //translate(x, "...", "...") is the ugly version of lower-case(.) which is not supported here apparently (only xpath 2.0)
+
+        String xpathTitle = "contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"accessibility statement\") " +
+            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability statement\") " +
+//            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"data availability\") " +
+//            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"software availability\") " +
+            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"data\")) " +
+            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"code\")) " +
+            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"software\")) " +
+            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"code availability\")";
+
         dataAvailabilityFulltextField.nlmPath
-            .add(Pair.of("normalize-space(.//article/body/sec[title[contains(.,\"accessibility statement\") " +
-                "or contains(.,\"availability statement\") or contains(.,\"Data availability\") " +
-                "or contains(.,\"Code availability\")]])", XPathConstants.STRING));
+            .add(Pair.of("normalize-space(.//article/body/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
         dataAvailabilityFulltextField.nlmPath
-            .add(Pair.of("normalize-space(.//article/back/sec[title[contains(.,\"accessibility statement\") " +
-                    "or contains(.,\"availability statement\") or contains(.,\"Data availability\") " +
-                "or contains(.,\"Code availability\")]])", XPathConstants.STRING));
+            .add(Pair.of("normalize-space(.//article/back/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
 
         fulltextFields.add(dataAvailabilityFulltextField);
         fulltextLabels.add("data_availability");

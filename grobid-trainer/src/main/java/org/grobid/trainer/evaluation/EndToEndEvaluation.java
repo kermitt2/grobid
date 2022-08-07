@@ -20,6 +20,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 
@@ -434,8 +435,6 @@ public class EndToEndEvaluation {
             return report.toString();
         }
 
-        // get a factory for SAX parsers
-        SAXParserFactory spf = SAXParserFactory.newInstance();
 		Random rand = new Random();
 		int nbFile = 0;
 
@@ -1490,11 +1489,19 @@ System.out.println("grobid: " + grobidResult);*/
 								System.out.print(res);
 							}
 							System.out.println("");*/
-							
+
+                            // Workaround to avoid having two different lists with the same content.
+                            // Probably to be extended to other fields if does not cause
+                            if (fieldName.equals("data_availability")) {
+                                List<String> grobidResults2 = new ArrayList<>();
+                                grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
+                                grobidResults = grobidResults2;
+                            }
+
 							// we compare the two result sets
 							
 							// prepare first the grobidResult set for soft match
-							List<String> grobidSoftResults = new ArrayList<String>();
+                            List<String> grobidSoftResults = new ArrayList<>();
 							for(String res : grobidResults)
 								grobidSoftResults.add(removeFullPunct(res));
 							
@@ -1848,6 +1855,9 @@ System.out.println("grobid: " + grobidResult);*/
                 throw new UnsupportedOperationException("Extraction from XPath works only with STRING or NODESET. Used: " + path.getRight().toString());
             }
         }
+
+        // We should remove the empty values
+        results.removeAll(Arrays.asList("", null));
         return results;
     }
 
