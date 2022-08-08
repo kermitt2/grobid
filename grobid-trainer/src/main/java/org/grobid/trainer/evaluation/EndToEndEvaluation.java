@@ -1,5 +1,6 @@
 package org.grobid.trainer.evaluation;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.*;
@@ -1492,7 +1493,7 @@ System.out.println("grobid: " + grobidResult);*/
 
                             // Workaround to avoid having two different lists with the same content.
                             // Probably to be extended to other fields if does not cause
-                            if (fieldName.equals("data_availability")) {
+                            if (CollectionUtils.isNotEmpty(grobidResults) && fieldName.equals("data_availability")) {
                                 List<String> grobidResults2 = new ArrayList<>();
                                 grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
                                 grobidResults = grobidResults2;
