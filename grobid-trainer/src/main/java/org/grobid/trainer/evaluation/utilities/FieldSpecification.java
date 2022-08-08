@@ -418,10 +418,10 @@ public class FieldSpecification {
 
         dataAvailabilityFulltextField.nlmPath
 //            .add(Pair.of("normalize-space(.//article/body/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
-            .add(Pair.of("normalize-space(.//article/body/sec[@sec-type=\"data_availability\"])", XPathConstants.STRING));
+            .add(Pair.of("normalize-space(.//article/body/sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
         dataAvailabilityFulltextField.nlmPath
 //            .add(Pair.of("normalize-space(.//article/back/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
-            .add(Pair.of("normalize-space(.//article/back/sec[@sec-type=\"data_availability\"])", XPathConstants.STRING));
+            .add(Pair.of("normalize-space(.//article/back/sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
 
         fulltextFields.add(dataAvailabilityFulltextField);
         fulltextLabels.add("data_availability");
