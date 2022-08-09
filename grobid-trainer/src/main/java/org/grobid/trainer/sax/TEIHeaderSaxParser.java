@@ -128,7 +128,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         } else if (value.equals("paragraph")) {
                             currentTag = "<other>";
                         }*/
-                        else if (value.equals("data_availability")) {
+                        else if (value.equals("availability")) {
                             currentTag = DATA_AVAILABILITY_LABEL;
                         } else
                             currentTag = "<other>";

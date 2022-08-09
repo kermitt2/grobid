@@ -426,7 +426,7 @@ public class FieldSpecification {
             .add(Pair.of("normalize-space(.//article/back//sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
 
         fulltextFields.add(dataAvailabilityFulltextField);
-        fulltextLabels.add("data_availability");
+        fulltextLabels.add("availability");
 	}
 
 	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";

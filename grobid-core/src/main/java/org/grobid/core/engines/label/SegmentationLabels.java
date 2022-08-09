@@ -14,7 +14,7 @@ public class SegmentationLabels extends TaggingLabels{
      * page number <page>,
      * annexes <annex>,
 	 * acknowledgement <acknowledgement>,
-	 * data_availability <data_availability>,
+	 * data_availability <availability>,
      * other <other>,
 	 * toc <toc> -> not yet used because not yet training data for this
      */

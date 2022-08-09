@@ -34,7 +34,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		page number (<page>): page,
 		? each bibliographical references in the biblio section (<ref>): bibl 
 		annexes (<annex>): div type="annex" (optionally under back)
-		data availability (<data_availability>): div type="data_availability"
+		data availability (<availability>): div type="availability"
 		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
  	*/
 
@@ -184,7 +184,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
-                            } else if(value.equals("data_availability")) {
+                            } else if(value.equals("availability")) {
                                 currentTag = DATA_AVAILABILITY_LABEL;
                                 upperTag = currentTag;
                                 upperQname = "div";
