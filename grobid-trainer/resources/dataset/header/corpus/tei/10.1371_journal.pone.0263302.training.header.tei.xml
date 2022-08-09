@@ -73,8 +73,10 @@
 	PLOS ONE<lb/>
 	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0263302 January 28, 2022<lb/></reference>
 
-			<!-- check the <page> tag I'm not sure it's correct or it shouild include also the / 24 -->
-	<page>1</page> / 24<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<page>1 / 24<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
@@ -86,8 +88,10 @@
 	<editor>Primo Proietti</editor>,
 
 	<byline>
-	<affiliation>Universita degli Studi di<lb/> Perugia, ITALY<lb/></affiliation>
+	<affiliation>Universita degli Studi di<lb/> Perugia, </affiliation>
 	</byline>
+
+	<address>ITALY<lb/></address>
 
 	<note type="submission">Received: July 27, 2021<lb/> Accepted: January 16, 2022<lb/></note>
 
@@ -95,16 +99,17 @@
 	<date>January 28, 2022<lb/></date>
 
 	Peer Review History: PLOS recognizes the<lb/> benefits of transparency in the peer review<lb/> process; therefore, we enable the publication of<lb/> all of the content of peer review and author<lb/> responses alongside final, published articles. The<lb/> editorial history of this article is available here:<lb/>
+
 	<idno>https://doi.org/10.1371/journal.pone.0263302<lb/></idno>
 
 	Copyright:
 	<note type="copyright">© 2022 Bellè et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
 
-	<div type="data_availability">Data Availability Statement: All relevant data<lb/> available from Zenodo: DOI 10.5281/zenodo.<lb/>	5769577.<lb/></div>
+	Data Availability Statement: 
+	<note type="availability">All relevant data<lb/> available from Zenodo: DOI 10.5281/zenodo.<lb/>	5769577.<lb/></note>
 
-			PLOS ONE<lb/> Tailor-made biochar systems for tropical agro-ecosystems<lb/> PLOS ONE | https: //doi.org/10.1371/journal.pone.0263302 January 28, 2022<lb/> <page>2</page> / 24<lb/>
-
-	<div type="funding">Funding: This work was supported by the Swiss<lb/> National Science Foundation (https://www.snf.ch/<lb/> en) grant number 200021_178768 awarded to SA.<lb/> The funders had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></div>
+	Funding: 
+	<note type="funding">This work was supported by the Swiss<lb/> National Science Foundation (https://www.snf.ch/<lb/> en) grant number 200021_178768 awarded to SA.<lb/> The funders had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
 
 	Competing interests: The authors have declared<lb/> that no competing interests exist.<lb/> PLOS ONE
 		</front>

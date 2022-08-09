@@ -20,10 +20,10 @@
 	<affiliation>1 Department of Molecular Biosciences &amp; Bioengineering, University of Hawaii at Manoa,</affiliation>
 	</byline>
 
-	<address>Honolulu, Hawaii</address>,<lb/>
+	<address>Honolulu, Hawaii,<lb/> United States of America,</address>
 
 	<byline>
-	<affiliation>United States of America, 2 Department of Human Nutrition, Food, and Animal Science, University of Hawaii<lb/> at Manoa</affiliation>,
+	<affiliation>2 Department of Human Nutrition, Food, and Animal Science, University of Hawaii<lb/> at Manoa</affiliation>,
 	</byline>
 
 	<address>Honolulu, Hawaii, United States of America<lb/></address>
@@ -36,7 +36,10 @@
 
 	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0244956 January 5, 2021<lb/></reference>
 
-	<page>1</page> / 19<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<page>1 / 19<lb/></page> 
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
@@ -61,16 +64,14 @@
 	Copyright:
 	<note type="copyright">© 2021 Diaz et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note> 
 	
-	<div type="data_availability">Data Availability Statement: All raw data<lb/> underlying results are included as Supplemental<lb/> Information.<lb/></div>
+	Data Availability Statement: 
+	<note type="availability">All raw data<lb/> underlying results are included as Supplemental<lb/> Information.<lb/></note>
 
-	<note type="funding">Funding: The work described in the manuscript<lb/> was funded by USDA-NIFA (Food Safety Priority<lb/> Area, Award number 2014-67005-21702), which<lb/> included partial funding of the stipends / salaries of<lb/> each of the authors (Lena Diaz, Yong Li, and<lb/> myself Daniel M. Jenkins). The funders had no role<lb/> in study design, data collection and analysis,<lb/></note>
+	Funding: 
+	<note type="funding">The work described in the manuscript<lb/> was funded by USDA-NIFA (Food Safety Priority<lb/> Area, Award number 2014-67005-21702), which<lb/> included partial funding of the stipends / salaries of<lb/> each of the authors (Lena Diaz, Yong Li, and<lb/> myself Daniel M. Jenkins). The funders had no role<lb/> in study design, data collection and analysis,<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/> </note>
 
-	PLOS ONE<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/> Competing interests: I have read the journal&apos;s<lb/> policy and the authors of this manuscript have the<lb/> following competing interests: PCT Application No.<lb/>PCT/US19/41833, Filed, July 15, 2019 Title: &quot;Point-<lb/>of-Care Electroflotation of Dispersed, Low<lb/>
+	Competing interests: I have read the journal&apos;s<lb/> policy and the authors of this manuscript have the<lb/> following competing interests: PCT Application No.<lb/>PCT/US19/41833, Filed, July 15, 2019 Title: &quot;Point-<lb/>of-Care Electroflotation of Dispersed, Low<lb/> Tolerance Pathogens&quot;. This does not alter our<lb/> adherence to PLOS ONE policies on sharing data<lb/> and materials, as articulated at http://journals.plos.<lb/> org/plosone/s/competing-interests), nor does it<lb/> impose any restrictions on our sharing of data or<lb/> other materials.<lb/> LAMP assay design<lb/>
 
-	Tolerance Pathogens&quot;. This does not alter our<lb/> adherence to PLOS ONE policies on sharing data<lb/> and materials, as articulated at http://journals.plos.<lb/> org/plosone/s/competing-interests), nor does it<lb/> impose any restrictions on our sharing of data or<lb/> other materials.<lb/> LAMP assay design<lb/>
-	<div type="abstract">For detection of E. coli, we chose to use LAMP, a popular isothermal amplification chemistry<lb/> that may be especially attractive for use in portable diagnostic systems [30, 31]. To target E. coli<lb/></div>
-
-	PLOS ONE<lb/> PLOS ONE
 		</front>
 	</text>
 </tei>

@@ -42,7 +42,10 @@
 
 	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210333 January 7, 2019<lb/></reference>
 
-	1 / 27<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<page>1 / 27<lb/></page> 
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
@@ -67,9 +70,11 @@
 	Copyright:
 	<note type="copyright">© 2019 Rocca et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note> 
 	
-	<div type="data_availability">Data Availability Statement: All the data and code<lb/> are publicly available on the Open Science<lb/> Framework at osf.io/gnh5s.<lb/></div>
+	Data Availability Statement: 
+	<note type="availability">All the data and code<lb/> are publicly available on the Open Science<lb/> Framework at osf.io/gnh5s.<lb/></note>
 
-	<note type="funding">Funding: RR is funded by the DCOMM project<lb/> (Deictic Communication -www.dcomm.eu). This<lb/> project has received funding from the European<lb/> Union&apos;s Horizon 2020 research and innovation<lb/> programme under the Marie Sklodowska-Curie<lb/> Actions grant agreement No 676063. The funders<lb/> had no role in study design, data collection and<lb/> analysis, decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
+	Funding: 
+	<note type="funding">RR is funded by the DCOMM project<lb/> (Deictic Communication -www.dcomm.eu). This<lb/> project has received funding from the European<lb/> Union&apos;s Horizon 2020 research and innovation<lb/> programme under the Marie Sklodowska-Curie<lb/> Actions grant agreement No 676063. The funders<lb/> had no role in study design, data collection and<lb/> analysis, decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
 
 	Competing interests: The authors have declared<lb/> that no competing interests exist.
 		</front>

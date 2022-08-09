@@ -24,7 +24,9 @@
 
 	<keyword>AMS 2000 Subject Classifications: Primary: 62G08; Secondary: 62G05<lb/></keyword>
 
-	* The paper is supported by the RFFI-Grant 09-01-00172-a.<lb/>
+	* 
+	<note type="funding">The paper is supported by the RFFI-Grant 09-01-00172-a.<lb/></note>
+
 	<byline>
 	<affiliation>† Department of Applied Mathematics and Cybernetics, Tomsk State University,</affiliation>
 	</byline>
@@ -49,7 +51,7 @@
 	e-mail:
 	<email>Serge.Pergamenchtchikov@univ-rouen.fr<lb/></email>
 
-	hal-00417600, version 1 -
+	<idno>hal-00417600, version 1</idno> -
 	<date>16 Sep 2009<lb/></date>
 
 		</front>

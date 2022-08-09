@@ -37,7 +37,7 @@
 	; 
 	<ptr type="web">http://www:ics:uci:edu/ eppstein</ptr>. 
 
-	Research partially supported by NSF grant CCR-9258355 and<lb/> by matching funds from Xerox Corporation.<lb/>
+	<note type="funding">Research partially supported by NSF grant CCR-9258355 and<lb/> by matching funds from Xerox Corporation.<lb/></note>
 
 	<byline>
 	<affiliation>z Center for Geometric Computing, Department of Computer Science, Duke University,</affiliation>
