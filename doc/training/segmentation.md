@@ -15,7 +15,7 @@ The following TEI elements are used by the segmentation model:
 * `<page>` to indicate page numbers
 * `<div type="annex">` for annexes
 * `<div type="acknowledgment">` for acknowledgments
-* `<div type="data_availability">` for data and code availability statements (when not placed in the header)
+* `<div type="availability">` for data and code availability statements (when not placed in the header)
 * `<div type="toc">` for table of content
 
 It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
@@ -66,13 +66,18 @@ survival <lb/></front>
 
 > Note: In general, whether the `<lb/>` (line break) element is inside or outside the `<front>` or other elements is of no importance. However as indicated [here](General-principles/#correcting-pre-annotated-files), the <lb/> element should not be removed and should follow the stream of text. 
 
-The following screen shot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
+The following screenshot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
 
 ![article starting mid-page - 0C4013368F5546BB832B7A76F2A36EF9C4AAB6EF](img/preceding-article-on-first-page.png)
 
-#### Additional information 
+### Additional information (annex) 
 
-Additional information are usually annotated as `<div type="annex">`. 
+Additional and supporting information, which are not part of the body, should be annotated as `<div type="annex">`.
+
+> Note: Different blocks of texts should be segmented in separated `<div type="annex">` to provide an idea of segmentation within the annex. 
+
+However, some blocks should be annotated depending on the position in the paper. 
+
 If they **appear inside the article header**, they should be annotated as `<front>`:  
 
 * Author contributions
