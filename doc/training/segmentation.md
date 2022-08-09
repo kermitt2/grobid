@@ -32,7 +32,8 @@ The following sections provide detailed information and examples on how to handl
 
 A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the `<titlePage>` element. 
 
-The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general, we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
+The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. 
+All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general, we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
 
 There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
 
@@ -70,6 +71,12 @@ The following screenshot shows an example where an article starts mid-page, the 
 
 ![article starting mid-page - 0C4013368F5546BB832B7A76F2A36EF9C4AAB6EF](img/preceding-article-on-first-page.png)
 
+The `<front>` should contains items that are not at the beginning of the document, such as: 
+
+* Copyright information / Open Access licence and statement
+* Correspondence information for data availability
+* Submission information, when was the document received, approved and published
+
 ### Additional information (annex) 
 
 Additional and supporting information, which are not part of the body, should be annotated as `<div type="annex">`.
@@ -83,7 +90,7 @@ If they **appear inside the article header**, they should be annotated as `<fron
 * Author contributions
 * Ethics and competing interests
 * Funding (if they don't appear in the acknowledgement)
-* Data availability statement
+* Data / code availability statement
 * Any other not specified in this section
 
 Specifically, **Copyright and licence information** should be always annotated as `<front>`. 
