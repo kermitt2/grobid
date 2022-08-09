@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <citations>
-	<bibl><title level="j">Scientific RepoRtS</title> | (<date>2020</date>) <biblScope unit="volume">10</biblScope>:<biblScope unit="page">1592</biblScope> |</bibl>
+	<bibl><title level="j">Scientific RepoRtS</title> | (<date>2020</date>) <biblScope unit="volume">10</biblScope>:<biblScope unit="page">1592</biblScope> | <idno type="DOI">https://doi.org/10.1038/s41598-020-58065-9</idno><lb/> <ptr type="web">www.nature.com/scientificreports</ptr><lb/></bibl>
 </citations>
