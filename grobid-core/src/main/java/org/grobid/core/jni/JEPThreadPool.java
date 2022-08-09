@@ -119,6 +119,9 @@ public class JEPThreadPool {
         } catch(GrobidResourceException e) {
             LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
             throw new RuntimeException("DeLFT installation path invalid, JEP initialization failed", e);
+        } catch (UnsatisfiedLinkError e) {
+            LOGGER.error("The JEP or DeLFT environment is not correctly installed. ", e);
+            throw new RuntimeException("Python/DeLFT/Jep environment not correctly installed. ", e);
         } finally {
             if (!success && (jep != null)) {
                 try {
