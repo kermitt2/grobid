@@ -123,11 +123,16 @@ public class JEPThreadPool {
             LOGGER.error("The JEP or DeLFT environment is not correctly installed. ", e);
             throw new RuntimeException("Python/DeLFT/Jep environment not correctly installed. ", e);
         } finally {
-            if (!success && (jep != null)) {
-                try {
-                    jep.close();
-                } catch (JepException e) {
-                    LOGGER.error("failed to close JEP instance", e);
+            if (!success) {
+                if (jep != null) {
+                    try {
+                        jep.close();
+                    } catch (JepException e) {
+                        LOGGER.error("failed to close JEP instance", e);
+                    }
+                } else {
+                    LOGGER.error("JEP initialisation failed somewhere.");
+                    throw new RuntimeException("General failure in JEP. ");
                 }
             }
         }
