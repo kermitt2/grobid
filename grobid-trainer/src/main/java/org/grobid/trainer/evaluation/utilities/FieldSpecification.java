@@ -403,7 +403,7 @@ public class FieldSpecification {
         dataAvailabilityFulltextField.isTextual = true;
         dataAvailabilityFulltextField.grobidPath
 //            .add(Pair.of("//div[@type=\"data_availability\"]//text()", XPathConstants.NODESET));
-            .add(Pair.of("//div[@type=\"data-availability\"]//text()", XPathConstants.NODESET));
+            .add(Pair.of("//div[@type=\"availability\"]//text()", XPathConstants.NODESET));
 
         //translate(x, "...", "...") is the ugly version of lower-case(.) which is not supported here apparently (only xpath 2.0)
 

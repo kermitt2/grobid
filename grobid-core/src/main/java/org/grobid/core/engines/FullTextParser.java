@@ -2473,10 +2473,10 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             // data availability statements
             StringBuilder dataAvailability = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getDataAvailability())) {
-                dataAvailability = getSectionAsTEI("data-availability", "\t\t\t", doc, HeaderLabels.HEADER_DATA_AVAILABILITY,
+                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, HeaderLabels.HEADER_DATA_AVAILABILITY,
                     teiFormatter, resCitations, config);
             } else {
-                dataAvailability = getSectionAsTEI("data-availability", "\t\t\t", doc, SegmentationLabels.DATA_AVAILABILITY,
+                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, SegmentationLabels.DATA_AVAILABILITY,
                     teiFormatter, resCitations, config);
             }
 
