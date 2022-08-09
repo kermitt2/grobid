@@ -6,14 +6,10 @@
 	<text xml:lang="en">
 		<front>
 
+	<page>1<lb/></page>
+ 
+	<reference>Scientific RepoRtS |<lb/> (2020) 10:1592 | https://doi.org/10.1038/s41598-020-58065-9<lb/> www.nature.com/scientificreports<lb/></reference>
 
-	1<lb/>
-			<!-- Not sure about the reference here, shouldn't the doi also be part of it? -->
-	<reference>Scientific RepoRtS |<lb/> (2020) 10:1592 |</reference>
-
-	<idno>https://doi.org/10.1038/s41598-020-58065-9<lb/></idno>
-
-	www.nature.com/scientificreports<lb/>
 	<docTitle>
 	<titlePart>from LaH 10 to room-temperature superconductors<lb/></titlePart>
 	</docTitle>
@@ -48,10 +44,11 @@
 	open<lb/>
 	<note type="submission">Received: 5 August 2019; Accepted: 8 January 2020;<lb/></note>
 
-	 Published: xx xx xxxx<lb/>
+	Published: xx xx xxxx<lb/>
 
-    <!-- Not sure about this doc type-->
-	<note type="docType">Open Access</note>
+	Additional information <lb/>Correspondence and requests for materials should be addressed to A.P.D. <lb/>Reprints and permissions information is available at www.nature.com/reprints. <lb/>Publisher&apos;s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and <lb/>institutional affiliations. 
+
+	<note type="doctype">Open Access</note>
 
 	<note type="copyright">This article is licensed under a Creative Commons Attribution 4.0 International<lb/> License, which permits use, sharing, adaptation, distribution and reproduction in any medium or<lb/> format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Cre-<lb/>ative Commons license, and indicate if changes were made. The images or other third party material in this<lb/> article are included in the article&apos;s Creative Commons license, unless indicated otherwise in a credit line to the<lb/> material. If material is not included in the article&apos;s Creative Commons license and your intended use is not per-<lb/>mitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the<lb/> copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.<lb/> © The Author(s) 2020</note>
 
