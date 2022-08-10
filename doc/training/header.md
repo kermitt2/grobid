@@ -10,27 +10,27 @@ For identifying the exact pieces of information to be part of the "header" segme
 
 The following TEI elements are used by the header model:
 
-* `<titlePart>` for the document title
-* `<docAuthor>`  for the author list, including callout markers 
-* `<affiliation>` for the authors affiliation information, including callout markers 
-* `<address>` identifies the address elements of the affiliations 
-* `<note type="doctype">` for indication on the document type
-* `<div type="abstract">` for the document abstract
-* `<keyword>` identifies the list of keywords, subject terms or classifications for the document
-* `<reference>` identifies the reference information (how to cite) for the document that can appear in the document itself 
-* `<email>` for the email of author or editor
-* `<editor>` for the person name information of the document editors
-* `<note type="submission">` identifies the submission/acceptance information about the document
-* `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) 
-* `<note type="funding">` identifies funding statements (grants, awards, etc.) 
-* `<note type="availability">` identifies data and code availability statements      
-* `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.)
-* `<phone>` for phone number
-* `<page>` for identifying a page number present in the header parts (this is the first page of the document)
-* `<note type="group">` to identify a group name (typically a working group or a collaboration)
-* `<title level="j">` to identify the name of the journal where the article is published
-* `<meeting>` to identify the meeting information associated to the publication, if relevant
-* `<publisher>` for identifying mention of the publisher appearing in isolation
+* `<titlePart>` for the document title ([notes](#title))
+* `<docAuthor>`  for the author list, including callout markers ([notes](#authors)) 
+* `<affiliation>` for the authors affiliation information, including callout markers ([notes](#affiliation-and-address))
+* `<address>` identifies the address elements of the affiliations ([notes](#affiliation-and-address))
+* `<note type="doctype">` for indication on the document type ([notes](#document-types))
+* `<div type="abstract">` for the document abstract ([notes](#abstract))
+* `<keyword>` identifies the list of keywords, subject terms or classifications for the document ([notes](#keywords))
+* `<reference>` identifies the reference information (how to cite) for the document that can appear in the document itself ([notes](#reference)) 
+* `<email>` for the email of author or editor ([notes](#emails))
+* `<editor>` for the person name information of the document editors ([notes](#editors))
+* `<note type="submission">` identifies the submission/acceptance information about the document ([notes](#submission-and-peer-review-information))
+* `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) ([notes](#copyrights))
+* `<note type="funding">` identifies funding statements (grants, awards, etc.) ([notes](#funding-statements))
+* `<note type="availability">` identifies data and code availability statements  ([notes](#availability-statements))    
+* `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.) ([notes](#strong-identifiers))
+* `<phone>` for phone number ([notes](#phone-number))
+* `<page>` for identifying a page number present in the header parts (this is the first page of the document) ([notes](#page-number))
+* `<note type="group">` to identify a group name (typically a working group or a collaboration) ([notes](#group-name))
+* `<title level="j">` to identify the name of the journal where the article is published ([notes](#journal-titles))
+* `<meeting>` to identify the meeting information associated to the publication, if relevant ([notes](#meeting-information))
+* `<publisher>` for identifying mention of the publisher appearing in isolation ([notes](#publisher))
 
 Note that the mark-up follows approximatively the [TEI](http://www.tei-c.org) when used for inline encoding. 
 
