@@ -10,7 +10,6 @@ public class HeaderLabels extends TaggingLabels{
     public final static String DATESUB_LABEL = "<date-submission>";
     public final static String PAGE_LABEL = "<page>";
     public final static String EDITOR_LABEL = "<editor>";
-    public final static String FUNDING_LABEL = "<funding>";
     public final static String COPYRIGHT_LABEL = "<copyright>";
     public final static String AFFILIATION_LABEL = "<affiliation>";
     public final static String ADDRESS_LABEL = "<address>";
@@ -108,6 +107,7 @@ public class HeaderLabels extends TaggingLabels{
         register(HEADER_PUBLISHER);
         register(HEADER_JOURNAL);
         register(HEADER_PAGE);
+        register(HEADER_DATA_AVAILABILITY);
     }
 
 }

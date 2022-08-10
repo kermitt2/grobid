@@ -2,6 +2,8 @@ package org.grobid.core.engines.label;
 
 import org.grobid.core.GrobidModels;
 
+import static org.grobid.core.engines.label.HeaderLabels.FUNDING_LABEL;
+
 public class SegmentationLabels extends TaggingLabels{
     /**
      * cover page <cover>,
@@ -15,6 +17,7 @@ public class SegmentationLabels extends TaggingLabels{
      * annexes <annex>,
 	 * acknowledgement <acknowledgement>,
 	 * data_availability <availability>,
+	 * funding <funding>,
      * other <other>,
 	 * toc <toc> -> not yet used because not yet training data for this
      */
@@ -47,6 +50,7 @@ public class SegmentationLabels extends TaggingLabels{
     public static final TaggingLabel ACKNOWLEDGEMENT = new TaggingLabelImpl(GrobidModels.SEGMENTATION, ACKNOWLEDGEMENT_LABEL);
 
     public static final TaggingLabel DATA_AVAILABILITY = new TaggingLabelImpl(GrobidModels.SEGMENTATION, DATA_AVAILABILITY_LABEL);
+    public static final TaggingLabel FUNDING = new TaggingLabelImpl(GrobidModels.SEGMENTATION, FUNDING_LABEL);
     public static final TaggingLabel TOC = new TaggingLabelImpl(GrobidModels.SEGMENTATION, TOC_LABEL);
 
     static {
@@ -61,6 +65,7 @@ public class SegmentationLabels extends TaggingLabels{
         register(REFERENCES);
         register(ACKNOWLEDGEMENT);
         register(DATA_AVAILABILITY);
+        register(FUNDING);
         register(TOC);
     }
 
