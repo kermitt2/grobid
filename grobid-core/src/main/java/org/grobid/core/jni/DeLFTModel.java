@@ -75,6 +75,7 @@ public class DeLFTModel {
                 }
 
             } catch(JepException e) {
+                LOGGER.error("DeLFT model initialization failed. ", e);
                 throw new GrobidException("DeLFT model initialization failed. ", e);
             }
         } 
