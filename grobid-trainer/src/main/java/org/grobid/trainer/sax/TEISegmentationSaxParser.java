@@ -4,6 +4,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -184,7 +185,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
-                            } else if(value.equals("availability")) {
+                            } else if(Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
                                 currentTag = DATA_AVAILABILITY_LABEL;
                                 upperTag = currentTag;
                                 upperQname = "div";

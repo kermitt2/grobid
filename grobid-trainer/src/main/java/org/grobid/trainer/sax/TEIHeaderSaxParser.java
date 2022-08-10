@@ -172,7 +172,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<other>";
                         }*/ else if (value.equals("group")) {
                             currentTag = "<group>";
-                        } else if (value.equals("availability")) {
+                        } else if (Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
                             currentTag = DATA_AVAILABILITY_LABEL;
                         } else
                             currentTag = "<other>";
