@@ -55,13 +55,17 @@ It is common that abstract is introduced by a prefix `Abstract` or `Summary`, th
 
 ```xml
     Abstract<lb/>
-    <div type="abstract">Subdivision surfaces provide a curved surface representation that is useful in a number of applications, in-<lb/>cluding modeling surfaces of arbitrary topological type [5] , fitting scattered data [6] , and geometric compression<lb/> and automatic level-of-detail generation using wavelets [8] . Subdivision 
+    <div type="abstract">Subdivision surfaces provide a curved surface representation that 
+        is useful in a number of applications, in-<lb/>cluding modeling surfaces of 
+        arbitrary topological type [5] , fitting scattered data [6] , and geometric 
+        compression<lb/> and automatic level-of-detail generation using wavelets [8]... 
 ```
 
 ```xml
     Title: 
     <docTitle>
-    <titlePart>PMIPv6 Integrated with MIH for Flow Mobility Management: a Real Testbed with<lb/> Simultaneous Multi-Access in Heterogeneous Mobile Networks<lb/></titlePart>
+        <titlePart>PMIPv6 Integrated with MIH for Flow Mobility Management: a Real Testbed 
+        with<lb/> Simultaneous Multi-Access in Heterogeneous Mobile Networks<lb/></titlePart>
     </docTitle>
 
     Authors:<lb/>
@@ -73,7 +77,9 @@ It is common that abstract is introduced by a prefix `Abstract` or `Summary`, th
 
 ```xml
     Availability and implementation<lb/> 
-    <note type="availability">The implementation of UniqTag is available at<lb/> https://github.com/sjackman/uniqtag<lb/> Supplementary data and code to reproduce it is available at<lb/> https://github.com/sjackman/uniqtag-paper<lb/> </note>
+    <note type="availability">The implementation of UniqTag is available at<lb/> 
+    https://github.com/sjackman/uniqtag<lb/> Supplementary data and code to reproduce it is 
+    available at<lb/> https://github.com/sjackman/uniqtag-paper<lb/> </note>
 ```
 
 
@@ -107,7 +113,7 @@ In the case of an article written in non-english language having an additional E
 
 All mentions of the authors are labelled, including possible repetition of the authors in the correspondence section. The author information might be more detailed in the correspondence part and it will be then part of the job of Grobid to identify repeated authors and to "merge" them. 
 
-```
+```xml
 CORRESPONDENCE<lb/> Address correspondence to
     <byline>
     <docAuthor>Andrea Z. LaCroix, PhD,</docAuthor>
@@ -118,12 +124,12 @@ As illustrated above, titles like "Ph.D.", "MD", "Dr.", etc. must be **included*
 
 The only exception is when indication of authors are given around an email or a phone number. In this case we consider that the occurence of an author name (including abbreviated names) is purely for practical reasons and should be ignored. 
 
-```
+```xml
 Email: Calum J Maclean* -
      <email>calum.maclean@ucl.ac.uk</email>; 
 ```   
 
-```
+```xml
     *Corresponding author. Emails:
     <email>cmoser@g.harvard.edu</email>
      (C.J.M.);
@@ -163,7 +169,7 @@ Similarly as authors, all the mentions of an affiliation are labelled, including
 
 Address are labelled with their own tag `<address>`. 
 
-```
+```xml
     <byline>
         <affiliation>2 Institut für Angewandte Physik, Heinrich-Heine-Universität<lb/></affiliation>
     </byline>
@@ -177,7 +183,7 @@ Address are labelled with their own tag `<address>`.
 Indication of document types are labelled. These indications depend on the editor, document source, etc. We consider as _document type_ the nature of the document (article, review, editorial, etc.), but also some specific aspects that can be highlighted in the presentation format, for instance indication of an "Open Access" publication expressed independently form the copyrights to characterize the document.
 
 ```xml
-    Annals of General Hospital Psychiatry<lb/>
+    <title level="j">Annals of General Hospital Psychiatry<lb/></title>
 
     <note type="doctype">Open Access<lb/></note>
 
@@ -428,6 +434,7 @@ It happens that data and/or code availability statements are part of the header.
 
 ```xml
 Data Availability Statement: 
-   94:  <note type="availability">Data are available<lb/> from Figshare at https://figshare.com/s/<lb/> 6c396e16f3991d7eaa00 and under the DOI: 10.<lb/> 6084/m9.figshare.5917225.<lb/></note>
+    <note type="availability">Data are available<lb/> from Figshare at https://figshare.com/s/<lb/> 6c396e16f3991d7eaa00 
+    and under the DOI: 10.<lb/> 6084/m9.figshare.5917225.<lb/></note>
 ```
 
