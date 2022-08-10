@@ -282,7 +282,7 @@ Some affiliation/address information related to the editor can follow, they are 
 
 ### Submission and peer review information
 
-The `<<note type="submission">` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
+The `<note type="submission">` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
 
 ```xml
     <note type="submission">Received September 14, 2009; Revised September 29, 2009; Accepted September 30, 2009</note>
