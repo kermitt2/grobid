@@ -128,9 +128,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         } else if (value.equals("paragraph")) {
                             currentTag = "<other>";
                         }*/
-                        else if (value.equals("availability")) {
-                            currentTag = DATA_AVAILABILITY_LABEL;
-                        } else
+                        else
                             currentTag = "<other>";
                     }
                 }
@@ -174,6 +172,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                             currentTag = "<other>";
                         }*/ else if (value.equals("group")) {
                             currentTag = "<group>";
+                        } else if (value.equals("availability")) {
+                            currentTag = DATA_AVAILABILITY_LABEL;
                         } else
                             currentTag = "<other>";
                     }

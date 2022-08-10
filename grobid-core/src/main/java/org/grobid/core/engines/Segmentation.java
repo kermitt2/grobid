@@ -39,7 +39,7 @@ import static org.apache.commons.lang3.StringUtils.*;
 public class Segmentation extends AbstractParser {
 
 	/*
-        10 labels for this model:
+        11 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -50,6 +50,8 @@ public class Segmentation extends AbstractParser {
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
+		   	data_availability <availability>,
+		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
