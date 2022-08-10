@@ -33,9 +33,9 @@ The following sections provide detailed information and examples on how to handl
 
 #### Cover page
 
-An optional cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the `<titlePage>` element. The cover page is considered as an addition to a standalone well-formed article. The content of a cover page is usually redundant with the bibliographical information found in the article header. A cover page correspond usually to the content of the first entire page. 
+An optional cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and need to be entirely identified by the `<titlePage>` element. The cover page is considered as an addition to a standalone well-formed article. The content of a cover page is usually redundant with the bibliographical information found in the article header. A cover page correspond usually to the content of the first entire page. 
 
-#### Header (<front>)
+#### Header (front)
 
 The header section typically contains bibliographical information, such as document's title, author(s) possibly with affiliations, abstract, keywords, container journal title, etc. The header usually covers everything until the start of the article body (e.g. until reaching the introduction of the article). While a cover page is optional, an article should normally always include a header, even limited to the title. 
 
