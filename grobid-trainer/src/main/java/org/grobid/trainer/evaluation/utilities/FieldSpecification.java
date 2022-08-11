@@ -402,9 +402,10 @@ public class FieldSpecification {
         dataAvailabilityFulltextField.fieldName = "data_availability";
         dataAvailabilityFulltextField.isTextual = true;
         dataAvailabilityFulltextField.grobidPath
-//            .add(Pair.of("//div[@type=\"data_availability\"]//text()", XPathConstants.NODESET));
+            //            .add(Pair.of("//div[@type=\"data_availability\"]//text()", XPathConstants.NODESET));
+            .add(Pair.of("//node[@type=\"availability\"]//text()", XPathConstants.NODESET));
+        dataAvailabilityFulltextField.grobidPath
             .add(Pair.of("//div[@type=\"availability\"]//text()", XPathConstants.NODESET));
-
         //translate(x, "...", "...") is the ugly version of lower-case(.) which is not supported here apparently (only xpath 2.0)
 
 /*
@@ -420,10 +421,12 @@ public class FieldSpecification {
 
         dataAvailabilityFulltextField.nlmPath
 //            .add(Pair.of("normalize-space(.//article/body/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
-            .add(Pair.of("normalize-space(.//article/body//sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
-        dataAvailabilityFulltextField.nlmPath
+            .add(Pair.of("normalize-space(.//sec[@sec-type=\"availability\"])", XPathConstants.STRING));
+//        dataAvailabilityFulltextField.nlmPath
 //            .add(Pair.of("normalize-space(.//article/back/sec[title[" + xpathTitle + "]])", XPathConstants.STRING));
-            .add(Pair.of("normalize-space(.//article/back//sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
+//            .add(Pair.of("normalize-space(.//article/back//sec[@sec-type=\"data-availability\"])", XPathConstants.STRING));
+        dataAvailabilityFulltextField.nlmPath
+            .add(Pair.of("normalize-space(.//p[@content-type=\"availability\"])", XPathConstants.STRING));
 
         fulltextFields.add(dataAvailabilityFulltextField);
         fulltextLabels.add("availability");
