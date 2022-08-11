@@ -27,7 +27,7 @@ public class TaggingLabels {
 
     //Grobid specific labels
 
-    public final static String DATA_AVAILABILITY_LABEL = "<data_availability>";
+    public final static String DATA_AVAILABILITY_LABEL = "<availability>";
     public final static String FUNDING_LABEL = "<funding>";
 
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
