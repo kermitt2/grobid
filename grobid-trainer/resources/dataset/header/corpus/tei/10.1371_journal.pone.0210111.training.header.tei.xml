@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210111"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Agreement between a single-item measure of<lb/> anxiety and depression and the Hospital<lb/> Anxiety and Depression Scale: A cross-<lb/>sectional study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Heidi Turon ID<lb/> 1,2,3 *, Mariko Carey ID<lb/> 1,2,3<lb/> , Allison Boyes 1,2,3 , Bree Hobden 1,2,3 ,<lb/> Sophie Dilworth 1,2,3 , Rob Sanson-Fisher 1,2,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Health Behaviour Research Collaborative, University of Newcastle,</affiliation>
+	</byline>
+
+	<address>Callaghan, New South Wales,<lb/> Australia,</address>
+
+	<byline>
+	<affiliation>2 Priority Research Centre for Health Behaviour, University of Newcastle,</affiliation>
+	</byline>
+
+	<address>Callaghan, New South<lb/> Wales, Australia,</address>
+
+	<byline>
+	<affiliation>3 Hunter Medical Research Institute,</affiliation>
+	</byline>
+
+	<address>New Lambton Heights, New South Wales, Australia<lb/></address>
+
+	*
+	<email>heidi.turon@newcastle.edu.au</email>
+
+	Abstract<lb/>
+	<div type="abstract">Anxiety and depression can be heightened among individuals living with chronic diseases.<lb/> Identifying these individuals is necessary for ensuring they are provided with adequate support.<lb/> Traditional tools such as clinical interviews or symptom checklists are not always feasible to<lb/> implement in practice. Robust single-item questions may be a useful alternative. This study<lb/> aimed to measure agreement, sensitivity, specificity, positive predictive value and negative pre-<lb/>dictive value of a single-item question about anxiety and depression compared to the widely<lb/> used Hospital Anxiety and Depression Scale (HADS). A cross-sectional survey of 2,811 people<lb/> with cancer attending 19 treatment centres in Australia. Patients were approached in the wait-<lb/>ing room prior to an outpatient clinic appointment and invited to complete a pen and paper sur-<lb/>vey. Participants completed the HADS as well as 2 single-items asking if they have felt anxious<lb/> or depressed in the last week. The single-items for anxiety and depression each demonstrated<lb/> moderate levels of sensitivity (0.78 for anxiety; 0.63 for depression) and specificity (0.75 for<lb/> anxiety; 0.84 for depression) against the relevant HADS subscale. Positive predictive values<lb/> were moderate (0.53 for anxiety and 0.52 for depression) while negative predictive values were<lb/> high for both single-item questions (0.90 for anxiety and 0.89 for depression). The single-item<lb/> measures of anxiety and depression may be useful to rule out individuals who do not require<lb/> further psychological assessment or intervention for anxiety and depression. Further research<lb/> is needed to explore whether these findings generalise to other chronic diseases.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210111 January 4, 2019<lb/></reference>
+
+	<page>1 / 12<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Turon H, Carey M, Boyes A, Hobden B,<lb/> Dilworth S, Sanson-Fisher R (2019) Agreement<lb/> between a single-item measure of anxiety and<lb/> depression and the Hospital Anxiety and<lb/> Depression Scale: A cross-sectional study. PLoS<lb/> ONE 14(1): e0210111.</reference>
+
+	<idno>https://doi.org/10.1371/<lb/> journal.pone.0210111<lb/></idno>
+
+	Editor:
+	<editor>Andrea Evers,</editor>
+
+	<byline>
+	<affiliation>Leiden University,</affiliation>
+	</byline>
+
+	<address>NETHERLANDS<lb/></address>
+
+	<note type="submission">Received: August 14, 2018<lb/> Accepted: December 16, 2018<lb/></note>
+
+	Published:
+	<date>January 4, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Turon et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">There are ethical<lb/> restrictions on publicly sharing the data which are<lb/> imposed by the University of Newcastle Human<lb/> Research Ethics Committee (H-2011-0312; H-<lb/>2010-1324). The data presented in this manuscript<lb/> is from a dataset which involved collection of<lb/> sensitive data including information on disease<lb/> variables related to cancer and mental health.<lb/> Participants provided informed consent on the<lb/> understanding that their data would 1) be kept<lb/> private and confidential; 2) would be stored<lb/> securely on a University of Newcastle server and<lb/> only accessed by authorised members of the<lb/> research team; 3) be reported in de-identified<lb/> aggregate format. Requests for access to a<lb/> deidentified copy of the data can, however, be sent<lb/> to the University of Newcastle Human Research<lb/> Ethics Committee (email: human<lb/>ethics@newcastle.edu.au) for their consideration.<lb/></note>
+
+	Funding:
+	<note type="funding">This research was supported by a<lb/> National Health &amp; Medical Research Council<lb/> (NHMRC) (https://www.nhmrc.gov.au/) Project<lb/> Grant (ID 1010536), a Strategic Research<lb/> Partnership Grant (CSR 11-02) from Cancer<lb/> Council NSW to the Newcastle Cancer Control<lb/> Collaborative (New-3C) (https://www.<lb/> cancercouncil.com.au/) (https://www.cancer.nsw.<lb/> gov.au/), and infrastructure funding from the<lb/> Hunter Medical Research Institute (HMRI) (https://<lb/> hmri.org.au/). MC is supported by a NHMRC<lb/> Translating Research Into Practice fellowship<lb/> (APP1073031), AB is supported by a NHMRC Early<lb/> Career Fellowship (APP1073317) and a Cancer<lb/> Institute New South Wales Early Career Fellowship<lb/> (13/ECF/1-37). The funders had no role in study<lb/> design, data collection and analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>
