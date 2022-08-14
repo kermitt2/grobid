@@ -50,7 +50,10 @@
 	<editor>Christophe Leroyer</editor>
 
 	,
-	<address>Universite de Bretagne<lb/> Occidentale, FRANCE<lb/></address>
+	<byline>
+		<affiliation>Universite de Bretagne<lb/> Occidentale,</affiliation>
+	</byline>
+	<address>FRANCE<lb/></address>
 
 	<note type="submission">Received: May 9, 2018<lb/> Accepted: December 18, 2018<lb/></note>
 
