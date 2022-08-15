@@ -6,7 +6,9 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-	<note type="doctype">S O F T W A R E<lb/> Open Access<lb/></note>
+	<note type="doctype">S O F T W A R E<lb/></note>
+
+	<note type="doctype">Open Access<lb/></note>
 
 	<docTitle>
 	<titlePart>Simulate_PCR for amplicon prediction and<lb/> annotation from multiplex, degenerate primers<lb/> and probes<lb/></titlePart>
@@ -33,11 +35,10 @@
 
 	<note type="copyright">© 2014 Gardner and Slezak; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the<lb/> Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use,<lb/> distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public<lb/> Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this<lb/> article, unless otherwise stated.<lb/></note>
 
-	<reference>Gardner and Slezak BMC Bioinformatics 2014, 15:237<lb/></reference>
+	<reference>Gardner and Slezak BMC Bioinformatics 2014, 15:237<lb/> http://www.biomedcentral.com/1471-2105/15/237<lb/></reference>
 
-	<ptr type="web">http://www.biomedcentral.com/1471-2105/15/237<lb/></ptr>
+	<ptr type="web"></ptr>
 
-	<!-- Not sure it's under funding or maybe acknowledgement-->
 	Auspices<lb/>
 	<note type="funding">This work performed under the auspices of the U.S. Department of Energy<lb/> by Lawrence Livermore National Laboratory under Contract DE-AC52-<lb/>07NA27344.<lb/></note>
 

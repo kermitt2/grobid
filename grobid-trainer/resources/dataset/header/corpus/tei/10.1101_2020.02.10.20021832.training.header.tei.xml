@@ -106,7 +106,10 @@
 	;<lb/>
 	<idno>https://doi.org/10.1101/2020.02.10.20021832<lb/></idno>
 
-	doi:<lb/> medRxiv preprint<lb/> NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+	doi:<lb/> medRxiv 
+	<note type="doctype">preprint<lb/></note> 
+
+	NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
 
 	<page>2<lb/></page>
 
@@ -115,18 +118,16 @@
 	; E-mail:
 	<email>13608388377@163.com<lb/></email>
 
-
 	# Suxin Wan, Qingjie Yi and Shibing Fan contributed equally to this article.<lb/>
 
-
 	Running title: Lymphocyte subsets and cytokines in peripheral blood of NCIP patients<lb/> .<lb/>
+
 	<note type="copyright">CC-BY-NC 4.0 International license<lb/> It is made available under a<lb/> perpetuity.<lb/> is the author/funder, who has granted medRxiv a license to display the preprint in<lb/> (which was not certified by peer review) preprint<lb/> The copyright holder for this<lb/> this version posted February 12, 2020.<lb/></note>
 
 	;<lb/>
 	<idno>https://doi.org/10.1101/2020.02.10.20021832<lb/></idno>
 
-	doi:<lb/>
-	<title level="j">medRxiv</title>
+	doi:<lb/> medRxiv
 	<note type="doctype">preprint</note>
 
 	3 Abstract<lb/>

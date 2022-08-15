@@ -29,14 +29,31 @@
 	<address>Mobile, AL, United States of America,</address>
 
 	<byline>
-	<affiliation>3 Mississippi State University Coastal<lb/> Research and Extension Center, Biloxi, MS, United States of America, 4 Mississippi-Alabama Sea Grant<lb/> Consortium, Ocean Springs, MS, United States of America, 5 National Marine Fisheries Service, Southeast<lb/> Fisheries Science Center, Miami, FL, United States of America, 6 Northern Gulf Coastal Program, US Fish<lb/> and Wildlife Service, Grand Bay Coastal Resources Center,</affiliation>
+	<affiliation>3 Mississippi State University Coastal<lb/> Research and Extension Center, </affiliation>
+	</byline>
+
+	<address>Biloxi, MS, United States of America, </address>
+
+	<byline>
+	<affiliation>4 Mississippi-Alabama Sea Grant<lb/> Consortium, </affiliation>
+	</byline>
+
+	<address>Ocean Springs, MS, United States of America, </address>
+
+	<byline>
+	<affiliation>5 National Marine Fisheries Service, Southeast<lb/> Fisheries Science Center, </affiliation>
+	</byline>
+
+	<address>Miami, FL, United States of America, </address>
+
+	<byline>
+	<affiliation>6 Northern Gulf Coastal Program, US Fish<lb/> and Wildlife Service, Grand Bay Coastal Resources Center,</affiliation>
 	</byline>
 
 	<address>Moss Point, MS, United States of America<lb/></address>
 
-	¤ Current address:
 	<byline>
-	<affiliation>Queens College, City University of New York,</affiliation>
+	<affiliation>¤ Current address: Queens College, City University of New York,</affiliation>
 	</byline>
 
 	<address>Queens, NY, United States of America<lb/></address>
@@ -55,9 +72,7 @@
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
-	<reference>Macy A, Sharma S, Sparks E, Goff J, Heck<lb/> KL, Johnson MW, et al. (2019) Tropicalization of<lb/> the barrier islands of the northern Gulf of Mexico: A<lb/> comparison of herbivory and decomposition rates<lb/> between smooth cordgrass (Spartina alterniflora)<lb/> and black mangrove (Avicennia germinans). PLoS<lb/> ONE 14(1): e0210144.</reference>
-
-	<idno>https://doi.org/10.1371/<lb/> journal.pone.0210144<lb/></idno>
+	<reference>Macy A, Sharma S, Sparks E, Goff J, Heck<lb/> KL, Johnson MW, et al. (2019) Tropicalization of<lb/> the barrier islands of the northern Gulf of Mexico: A<lb/> comparison of herbivory and decomposition rates<lb/> between smooth cordgrass (Spartina alterniflora)<lb/> and black mangrove (Avicennia germinans). PLoS<lb/> ONE 14(1): e0210144. https://doi.org/10.1371/<lb/> journal.pone.0210144<lb/></reference>
 
 	Editor:
 	<editor>Suzannah Rutherford,</editor>

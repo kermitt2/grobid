@@ -6,7 +6,9 @@
 	<text xml:lang="en">
 		<front>
 <lb/>
-	<note type="doctype">R E S E A R C H A R T I C L E<lb/> Open Access<lb/></note>
+	<note type="doctype">R E S E A R C H A R T I C L E<lb/></note>
+
+	<note type="doctype">Open Access<lb/></note>
 
 	<docTitle>
 	<titlePart>Escherichia coli YmdB regulates biofilm formation<lb/> independently of its role as an RNase III modulator<lb/></titlePart>
@@ -42,9 +44,7 @@
 
 	<note type="copyright">© 2013 Kim et al.; licensee BioMed Central Ltd. This is an open access article distributed under the terms of the Creative<lb/> Commons Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original work is properly cited.<lb/></note>
 
-	<reference>Kim et al. BMC Microbiology 2013, 13:266<lb/></reference>
-
-	<ptr type="web">http://www.biomedcentral.com/1471-2180/13/266<lb/></ptr>
+	<reference>Kim et al. BMC Microbiology 2013, 13:266<lb/> http://www.biomedcentral.com/1471-2180/13/266<lb/></reference>
 
 	Author details
 	<byline>

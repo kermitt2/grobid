@@ -53,10 +53,10 @@
 	<address>Bondy,<lb/> France,</address>
 
 	<byline>
-	<affiliation>7 De ´partement de Ge ´osciences, Laboratoire de Ge ´ologie, CNRS -E ´cole Normale Supe ´rieure, PSL<lb/> University</affiliation>,
+	<affiliation>7 De ´partement de Ge ´osciences, Laboratoire de Ge ´ologie, CNRS -E ´cole Normale Supe ´rieure, PSL<lb/> University Institut Pierre Simon Laplace, </affiliation>,
 	</byline>
 
-	<address>Institut Pierre Simon Laplace, Paris, France</address>,
+	<address>Paris, France</address>,
 
 	<byline>
 	<affiliation>8 CEREEP-Ecotron Ile De France, ENS, CNRS, PSL<lb/> University</affiliation>,
@@ -81,10 +81,10 @@
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
-	<reference>Bellè S-L, Riotte J, Backhaus N, Sekhar<lb/> M, Jouquet P, Abiven S (2022) Tailor-made<lb/> biochar systems: Interdisciplinary evaluations of<lb/> ecosystem services and farmer livelihoods in<lb/> tropical agro-ecosystems. PLoS ONE 17(1):<lb/> e0263302.</reference>
+	<reference>Bellè S-L, Riotte J, Backhaus N, Sekhar<lb/> M, Jouquet P, Abiven S (2022) Tailor-made<lb/> biochar systems: Interdisciplinary evaluations of<lb/> ecosystem services and farmer livelihoods in<lb/> tropical agro-ecosystems. PLoS ONE 17(1):<lb/> </reference>
 
-	<idno>https://doi.org/10.1371/journal.<lb/> pone.0263302<lb/></idno>
-
+	<idno>e0263302. https://doi.org/10.1371/journal.<lb/> pone.0263302<lb/></idno>
+	
 	Editor:
 	<editor>Primo Proietti</editor>,
 
@@ -112,7 +112,9 @@
 	Funding: 
 	<note type="funding">This work was supported by the Swiss<lb/> National Science Foundation (https://www.snf.ch/<lb/> en) grant number 200021_178768 awarded to SA.<lb/> The funders had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
 
-	Competing interests: The authors have declared<lb/> that no competing interests exist.<lb/> PLOS ONE
+	Competing interests: The authors have declared<lb/> that no competing interests exist.<lb/> 
+
+	<title level="j">PLOS ONE</title>
 		</front>
 	</text>
 </tei>

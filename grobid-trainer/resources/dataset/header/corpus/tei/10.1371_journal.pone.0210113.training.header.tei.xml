@@ -13,14 +13,8 @@
 	</docTitle>
 
 	<byline>
-	<docAuthor>Jason A. Gilliland ID<lb/> 1,2,3,4,5,6,7 *, Tayyab I. Shah 1,2 , Andrew Clark 1,2 , Shannon Sibbald 3,</docAuthor>
+	<docAuthor>Jason A. Gilliland ID<lb/> 1,2,3,4,5,6,7 *, Tayyab I. Shah 1,2 , Andrew Clark 1,2 , Shannon Sibbald 3,8 ,<lb/> Jamie A. Seabrook 2,4,5,6,7,9<lb/></docAuthor>
 	</byline>
-
-	<byline>
-	<affiliation>8 ,<lb/></affiliation>
-	</byline>
-
-	<address>Jamie A. Seabrook 2,4,5,6,7,9<lb/></address>
 
 	<byline>
 	<affiliation>1 Department of Geography, Western University,</affiliation>
@@ -87,6 +81,7 @@
 	<page>1 / 13<lb/></page>
 
 	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
 	<note type="doctype">OPEN ACCESS<lb/></note>
 
 	Citation:
@@ -114,7 +109,8 @@
 	Data Availability Statement:
 	<note type="availability">Census geography <lb/>and population data are available from the StatCan <lb/>website: http://www12.statcan.gc.ca/census-<lb/>recensement/2016/geo/index-eng.cfm http:// <lb/>www12.statcan.gc.ca/census-recensement/2016/ <lb/>dp-pd/dt-td/index-eng.cfm Information about <lb/>family physicians is available from the CPSO <lb/>(College of Physicians and Surgeons of Ontario)&apos;s <lb/>website: https://www.cpso.on.ca/Public-<lb/>Information-Services/Find-a-Doctor <lb/></note>
 
-	<note type="funding">Funding: Funding for the study was provided to the<lb/> Human Environments Analysis Laboratory at<lb/> Western University (PI: Gilliland) by the West Elgin<lb/> Community Health Centre on behalf of the South<lb/> West Local Health Integration Network.<lb/></note>
+	Funding: 
+	<note type="funding">Funding for the study was provided to the<lb/> Human Environments Analysis Laboratory at<lb/> Western University (PI: Gilliland) by the West Elgin<lb/> Community Health Centre on behalf of the South<lb/> West Local Health Integration Network.<lb/></note>
 
 	Competing interests: The authors have declared<lb/> that no competing interests exist.
 		</front>

@@ -24,11 +24,8 @@
 
 	<address>Germany<lb/></address>
 
-	<!-- should we leave them as authors? -->
 	Reviewed by:<lb/>
-	<byline>
-	<docAuthor>Christian Günster,<lb/></docAuthor>
-	</byline>
+	<editor>Christian Günster,<lb/></editor>
 
 	<byline>
 	<affiliation>AOK Research Institute,</affiliation>
@@ -44,11 +41,8 @@
 	<email>lorenz.kapsner@uk-erlangen.de<lb/></email>
 
 	Specialty section:<lb/>
-	<note type="submission">This article was submitted to<lb/> Infectious Diseases -Surveillance,<lb/></note>
-
-	Prevention and Treatment,<lb/> a section of the journal<lb/>
-
-			<title level="j">Frontiers in Public Health<lb/></title>
+	<note type="submission">This article was submitted to<lb/> Infectious Diseases -Surveillance,<lb/> Prevention and Treatment,<lb/> a section of the journal<lb/> Frontiers in Public Health<lb/></note>
+	
 	<note type="submission">Received: 12 August 2020<lb/> Accepted: 11 December 2020<lb/></note>
 
 	Published:

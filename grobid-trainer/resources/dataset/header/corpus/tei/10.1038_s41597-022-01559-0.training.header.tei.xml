@@ -7,11 +7,8 @@
 		<front>
 
 	<page>1<lb/></page>
-	<reference>Scientific Data |<lb/> (2022) 9:451 |</reference>
 
-	<idno>https://doi.org/10.1038/s41597-022-01559-0<lb/></idno>
-
-	<ptr type="web">www.nature.com/scientificdata<lb/></ptr>
+	<reference>Scientific Data |<lb/> (2022) 9:451 | https://doi.org/10.1038/s41597-022-01559-0<lb/> www.nature.com/scientificdata<lb/></reference>
 
 	<docTitle>
 	<titlePart>the role of plant functional groups<lb/> mediating climate impacts on<lb/> carbon and biodiversity of alpine grasslands<lb/></titlePart>
@@ -72,10 +69,10 @@
 	<address>Oslo, norway.</address>
 
 	<byline>
-	<affiliation>9 Aix Marseille Univ, Avignon Univ,<lb/></affiliation>
+	<affiliation>9 Aix Marseille Univ, Avignon Univ,<lb/> cnRS, iRD, iMBe, </affiliation>
 	</byline>
 
-	<address>cnRS, iRD, iMBe, Marseille, france.</address>
+	<address>Marseille, france.</address>
 
 	<byline>
 	<affiliation>10 Simon fraser University,</affiliation>

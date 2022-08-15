@@ -7,11 +7,9 @@
 		<front>
 
 	<page>1<lb/></page>
-	<reference>Scientific Data |<lb/> (2022) 9:452 |</reference>
 
-	<idno>https://doi.org/10.1038/s41597-022-01497-x<lb/></idno>
-
-	<ptr type="web">www.nature.com/scientificdata<lb/></ptr>
+	<reference>Scientific Data |<lb/> (2022) 9:452 | https://doi.org/10.1038/s41597-022-01497-x<lb/> 
+	www.nature.com/scientificdata<lb/></reference>
 
 	<docTitle>
 	<titlePart>Datasets of fingertip forces while<lb/> grasping a handle with unsteady<lb/> thumb platform<lb/></titlePart>
@@ -38,7 +36,7 @@
 	<note type="submission">Received: 7 March 2022; Accepted: 28 June 2022;<lb/></note>
 
 	Published: xx xx xxxx<lb/>
-	<note type="doctype">Additional information<lb/></note>
+	Additional information<lb/>
 
 	Correspondence and requests for materials should be addressed to V.S.<lb/>
 	Reprints and permissions information is available at www.nature.com/reprints.<lb/> Publisher&apos;s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and<lb/> institutional affiliations.<lb/>
