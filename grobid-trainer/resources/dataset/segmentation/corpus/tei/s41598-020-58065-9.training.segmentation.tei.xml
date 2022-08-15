@@ -64,7 +64,6 @@
 
 			<div type="acknowledgement">Acknowledgements <lb/>A.P. Durajski acknowledges the financial support from the Polish National Science Centre (NCN) under Grant <lb/>No. 2016/23/D/ST3/02109. <lb/></div>
 
-			<!-- not sure this is in the <front> -->
 			<div type="annex">Author contributions <lb/>R. Szczęśniak wrote the part of the code for numerical calculations and participated in writing the manuscript. M. <lb/>Kostrzewa, K. Szczęśniak, and A. Durajski designed and carried out the calculations, collected data and drafted <lb/>the final version of the manuscript. All authors reviewed the manuscript. <lb/></div>
 
             <div type="annex">competing interests <lb/>The authors declare no competing interests. <lb/></div>
