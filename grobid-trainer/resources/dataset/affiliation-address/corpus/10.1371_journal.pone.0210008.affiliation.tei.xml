@@ -34,7 +34,7 @@
 							<address>
 								<settlement>Little Rock</settlement>,
 								<region>AR</region>,
-							<lb/>
+								<lb/>
 								<country>United States of America</country>
 							</address>
 						</affiliation>
@@ -50,7 +50,7 @@
 						</affiliation>
 						<affiliation>
 							<marker>5</marker>
-							<orgName type="department">Winthrop P. Rockefeller<lb/> Cancer Institute</orgName>,
+							<orgName type="institution">Winthrop P. Rockefeller<lb/> Cancer Institute</orgName>,
 							<orgName type="institution">University of Arkansas for Medical Sciences</orgName>,
 							<address>
 								<settlement>Little Rock</settlement>,
@@ -78,13 +78,15 @@
 								<settlement>Little Rock</settlement>,
 								<region>AR</region>,
 								<country>United States of America</country>
-							<lb/>
+								<lb/>
 							</address>
+						</affiliation>
+						<affiliation>
 							<orgName type="institution">Max Delbruck Centrum fur<lb/> Molekulare Medizin</orgName>,
 							<address>
 								<settlement>Berlin Buch</settlement>
 								<country>GERMANY</country>
-							<lb/>
+								<lb/>
 							</address>
 						</affiliation>
 

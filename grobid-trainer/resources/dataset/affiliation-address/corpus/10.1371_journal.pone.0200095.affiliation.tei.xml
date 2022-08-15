@@ -15,7 +15,7 @@
 							<orgName type="institution">University of the Philippines Los Baños</orgName>,
 							<address>
 								<settlement>College</settlement>,
-							<lb/>
+								<lb/>
 								<settlement>Laguna</settlement>,
 								<country>Philippines</country>,
 							</address>
@@ -62,11 +62,15 @@
 							<address>
 								<settlement>Jeongeup</settlement>,
 								<country>South Korea</country>
-							<lb/>
+								<lb/>
 							</address>
+						</affiliation>
+						<affiliation>
 							<orgName type="institution">University of Pretoria</orgName>,
 							<lb/>
-							<orgName type="institution">SOUTH AFRICA</orgName>
+							<address>
+								<country>SOUTH AFRICA</country>
+							</address>
 						</affiliation>
 
 						</author>
