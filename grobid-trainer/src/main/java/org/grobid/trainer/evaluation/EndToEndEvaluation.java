@@ -28,13 +28,9 @@ import org.apache.commons.io.FileUtils;
 import org.w3c.dom.*;
 
 import javax.xml.namespace.QName;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.*;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
-
-import javax.xml.xpath.XPathConstants;
 
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
@@ -153,10 +149,14 @@ public class EndToEndEvaluation {
 		headerLabels = new ArrayList<>();
 		fulltextLabels = new ArrayList<>();
 		citationsLabels = new ArrayList<>();
-		
-		FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields, 
-			headerLabels, fulltextLabels, citationsLabels);
-	}
+
+        try {
+            FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields,
+                headerLabels, fulltextLabels, citationsLabels);
+        } catch (XPathExpressionException e) {
+            throw new RuntimeException("Invalid XPaths for evaluation. ", e);
+        }
+    }
 	
 	public String evaluationGrobid(boolean forceRun, StringBuilder reportMD) throws Exception {
 		if (xmlInputPath == null) {
@@ -530,27 +530,27 @@ public class EndToEndEvaluation {
 
 					XPathFactory xpf = XPathFactory.newInstance();
 					XPath xp = xpf.newXPath();
-					HashMap map = new HashMap();
+//					Map<String, String> map = new HashMap();
 					// explicit indication of the default namespace
-				  	map.put("tei", "http://www.tei-c.org/ns/1.0");
+//				  	map.put("tei", "http://www.tei-c.org/ns/1.0");
 
-					Map<String, String> mappings = new HashMap<String, String>();
+					Map<String, String> mappings = new HashMap<>();
 					mappings.put("tei", "http://www.tei-c.org/ns/1.0");
 				  	xp.setNamespaceContext(new NamespaceContextMap(mappings));
 					
-					if (sectionType == this.CITATION) {
+					if (sectionType == CITATION) {
 						// we start by identifying each expected citation
 						// the first FieldSpecification object for the citation is the base path for
 						// each citation structure in the corresponding XML
 						FieldSpecification base = fields.get(0);
 
-						String path = null;
+						XPathExpression path = null;
 						if (inputType.equals("nlm"))
 							path = base.nlmPath.get(0).getLeft();
 						else 
 							path = base.grobidPath.get(0).getLeft();
 
-						NodeList nodeList = (NodeList) xp.compile(path).
+						NodeList nodeList = (NodeList) path.
 							evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGold = nodeList.getLength();
 						totalExpectedInstances += nbCitationsGold;
@@ -588,7 +588,7 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								List<Pair<String, QName>> subpaths = null;
+								List<Pair<XPathExpression, QName>> subpaths = null;
 								if (inputType.equals("nlm")) {
 									subpaths = field.nlmPath;
 								} else if (inputType.equals("tei")) {
@@ -598,8 +598,8 @@ public class EndToEndEvaluation {
 								if (subpaths == null)
 									continue;
 
-								for(Pair<String, QName> subpath : subpaths) {
-									NodeList nodeList2 = (NodeList) xp.compile(subpath.getLeft()).
+								for(Pair<XPathExpression, QName> subpath : subpaths) {
+									NodeList nodeList2 = (NodeList) subpath.getLeft().
 										evaluate(node, subpath.getRight());
 									
 									List<String> goldResults = new ArrayList<String>();
@@ -704,7 +704,7 @@ public class EndToEndEvaluation {
  * - third rule: matching of "soft" inTitle (title of Journal or Conference), volume and first page
  * - forth rule: matching of first author last name and title, or inTitle if title is empty  
  */	
-							String signature1 = null;								
+							String signature1 = null;
 							if ( (goldTitleSoft.length()>0) && (goldDate.length()>0) ) {
 								signature1 = goldTitleSoft + goldDate;
 								//signature1 = signature1.replaceAll("[^\\x00-\\x7F]", "");
@@ -742,7 +742,7 @@ public class EndToEndEvaluation {
 						// get the Grobid citations
 						path = base.grobidPath.get(0).getLeft();
 						QName nodeType = base.grobidPath.get(0).getRight();
-						nodeList = (NodeList) xp.compile(path).
+						nodeList = (NodeList) path.
 							evaluate(tei.getDocumentElement(), nodeType);
 						int nbCitationsGrobid = nodeList.getLength();
 						totalObservedInstances += nbCitationsGrobid;
@@ -758,8 +758,8 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								for(Pair<String, QName> subpath : field.grobidPath) {
-									NodeList nodeList2 = (NodeList) xp.compile(subpath.getLeft()).
+								for(Pair<XPathExpression, QName> subpath : field.grobidPath) {
+									NodeList nodeList2 = (NodeList) subpath.getLeft().
 										evaluate(node, subpath.getRight());
 									List<String> grobidResults = new ArrayList<String>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
@@ -1239,8 +1239,8 @@ public class EndToEndEvaluation {
 						
 							List<String> grobidResults = new ArrayList<>();
 							int nbGrobidResults = 0;
-							for(Pair<String, QName> path : field.grobidPath) {
-								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).
+							for(Pair<XPathExpression, QName> path : field.grobidPath) {
+								NodeList nodeList = (NodeList) path.getLeft().
 									evaluate(tei.getDocumentElement(), path.getRight());
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
@@ -1262,7 +1262,7 @@ public class EndToEndEvaluation {
 						
 							List<String> goldResults = new ArrayList<String>();
 							int nbGoldResults = 0;
-							List<Pair<String, QName>> subpaths = null;
+							List<Pair<XPathExpression, QName>> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
@@ -1272,8 +1272,8 @@ public class EndToEndEvaluation {
 							if (subpaths == null)
 								continue;
 
-							for(Pair<String, QName> path : subpaths) {
-								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).
+							for(Pair<XPathExpression, QName> path : subpaths) {
+								NodeList nodeList = (NodeList) path.getLeft().
 									evaluate(gold.getDocumentElement(), path.getRight());
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbGoldResults = nodeList.getLength();
@@ -1462,7 +1462,7 @@ System.out.println("grobid: " + grobidResult);*/
 							
 //							List<String> goldResults = new ArrayList<>();
 //							int nbgoldResults = 0;
-							List<Pair<String, QName>> subpaths = null;
+							List<Pair<XPathExpression, QName>> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
@@ -1841,16 +1841,16 @@ System.out.println("grobid: " + grobidResult);*/
 		return report.toString();
 	}
 
-    private static List<String> extractFromXPath(Document xmlDocument, List<Pair<String, QName>> extractionPaths, XPath xPath, FieldSpecification field) throws XPathExpressionException {
+    private static List<String> extractFromXPath(Document xmlDocument, List<Pair<XPathExpression, QName>> extractionPaths, XPath xPath, FieldSpecification field) throws XPathExpressionException {
         List<String> results = new ArrayList<>();
-        for(Pair<String, QName> path : extractionPaths) {
+        for(Pair<XPathExpression, QName> path : extractionPaths) {
             if (path.getRight() == XPathConstants.NODESET) {
-                NodeList nodeList = (NodeList) xPath.compile(path.getLeft()).evaluate(xmlDocument.getDocumentElement(), path.getRight());
+                NodeList nodeList = (NodeList) path.getLeft().evaluate(xmlDocument.getDocumentElement(), path.getRight());
                 for (int i = 0; i < nodeList.getLength(); i++) {
                     results.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(),  field.fieldName));
                 }
             } else if (path.getRight() == XPathConstants.STRING) {
-                String string = (String) xPath.compile(path.getLeft()).evaluate(xmlDocument, path.getRight());
+                String string = (String) path.getLeft().evaluate(xmlDocument, path.getRight());
                 results.add(basicNormalizationFullText(string, field.fieldName));
             } else {
                 throw new UnsupportedOperationException("Extraction from XPath works only with STRING or NODESET. Used: " + path.getRight().toString());
