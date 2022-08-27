@@ -1,7 +1,9 @@
 package org.grobid.core.document;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,6 +12,7 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 
+import org.checkerframework.common.value.qual.IntRange;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
@@ -18,21 +21,15 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.engines.counters.ReferenceMarkerMatcherCounters;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
+import org.grobid.core.layout.*;
 import org.grobid.core.utilities.SentenceUtilities;
-import org.grobid.core.layout.BoundingBox;
-import org.grobid.core.layout.GraphicObject;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.LayoutTokenization;
-import org.grobid.core.layout.Page;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.*;
-import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
@@ -45,7 +42,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -787,7 +785,8 @@ public class TEIFormatter {
                                             new LayoutTokenization(biblio.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT)),
                                             null, 
                                             null, 
-                                            null, 
+                                            null,
+                                            null,
                                             markerTypes,
                                             doc,
                                             config); // no figure, no table, no equation
@@ -912,15 +911,174 @@ public class TEIFormatter {
             return buffer;
         }
         buffer.append("\t\t<body>\n");
-        buffer = toTEITextPiece(buffer, result, biblio, bds, true, 
-                layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+
+        List<Footnote> footnotes = getTeiNotes(doc);
+
+        buffer = toTEITextPiece(buffer, result, biblio, bds, true,
+                layoutTokenization, figures, tables, equations, footnotes, markerTypes, doc, config);
 
         // notes are still in the body
-        buffer = toTEINote(buffer, doc, markerTypes, config);
+//        buffer = toTEINote(buffer, doc, markerTypes, config);
+
+        buffer = attachTEINote("foot", footnotes, buffer, doc, config);
+
+
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
+        if (documentNoteParts != null) {
+            buffer = toTEINote("margin", documentNoteParts, buffer, markerTypes, doc, config);
+        }
 
         buffer.append("\t\t</body>\n");
 
         return buffer;
+    }
+
+    private StringBuilder attachTEINote(String noteType, List<Footnote> teiNotes, StringBuilder tei, Document doc, GrobidAnalysisConfig config) {
+
+        for (Footnote note : teiNotes) {
+            int currentNumber = note.getNumber();
+            Element desc = XmlBuilderUtils.teiElement("note");
+            desc.addAttribute(new Attribute("place", noteType));
+            if (currentNumber != -1) {
+                desc.addAttribute(new Attribute("n", "" + currentNumber));
+            }
+            if (config.isGenerateTeiIds()) {
+                String divID = KeyGen.getKey().substring(0, 7);
+                addXmlId(desc, "_" + divID);
+            }
+
+            // for labelling bibliographical references in footnotes
+            List<LayoutToken> noteTokens = note.getTokens();
+
+            org.apache.commons.lang3.tuple.Pair<String, List<LayoutToken>> noteProcess =
+                fullTextParser.processShort(noteTokens, doc);
+            String labeledNote = noteProcess.getLeft();
+            List<LayoutToken> noteLayoutTokens = noteProcess.getRight();
+
+            if ( (labeledNote != null) && (labeledNote.length() > 0) ) {
+                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
+                List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+                for (TaggingTokenCluster cluster : clusters) {
+                    if (cluster == null) {
+                        continue;
+                    }
+
+                    TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                    if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                        try {
+                            List<Node> refNodes = this.markReferencesTEILuceneBased(
+                                cluster.concatTokens(),
+                                doc.getReferenceMarkerMatcher(),
+                                config.isGenerateTeiCoordinates("ref"),
+                                false);
+                            if (refNodes != null) {
+                                for (Node n : refNodes) {
+                                    desc.appendChild(n);
+                                }
+                            }
+                        } catch(Exception e) {
+                            LOGGER.warn("Problem when serializing TEI fragment for figure caption", e);
+                        }
+                    } else {
+                        desc.appendChild(textNode(clusterContent));
+                    }
+                }
+            } else {
+                desc.appendChild(LayoutTokensUtil.normalizeText(note.getText().trim()));
+            }
+
+            tei.append("\t\t\t");
+            tei.append(desc.toXML());
+            tei.append("\n");
+        }
+
+        return tei;
+    }
+
+    private List<Footnote> getTeiNotes(Document doc) {
+
+        List<Footnote> footnotes = new ArrayList<>();
+
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
+        if (documentNoteParts == null) {
+            return footnotes;
+        }
+
+        List<String> allNotes = new ArrayList<>();
+
+        for (DocumentPiece docPiece : documentNoteParts) {
+            List<LayoutToken> noteTokens = doc.getDocumentPieceTokenization(docPiece);
+            if (CollectionUtils.isEmpty(noteTokens)) {
+                continue;
+            }
+
+            String footText = doc.getDocumentPieceText(docPiece);
+            footText = TextUtilities.dehyphenize(footText);
+            footText = footText.replace("\n", " ");
+            footText = footText.replace("  ", " ").trim();
+            if (footText.length() < 6)
+                continue;
+            if (allNotes.contains(footText)) {
+                // basically we have here the "recurrent" headnote/footnote for each page,
+                // no need to add them several times (in the future we could even use them
+                // differently combined with the header)
+                continue;
+            }
+
+            allNotes.add(footText);
+
+            // Find the page this is into
+//            List<Block> pageBlocks = doc.getBlocks().get(docPiece.getLeft().getBlockPtr()).getPage().getBlocks();
+//            Block toBlock = doc.getBlocks().get(docPiece.getRight().getBlockPtr()).getPage().getBlocks().get();
+
+            Page page = doc.getPage(noteTokens.get(0).getPage());
+            int offsetStartPage = page.getBlocks().get(0).tokens.get(0).getOffset();
+
+            Footnote footNote = makeFootNote(noteTokens, footText);
+            footNote.setOffsetStartInPage(offsetStartPage);
+            footnotes.add(footNote);
+        }
+
+        return footnotes;
+    }
+
+    private Footnote makeFootNote(List<LayoutToken> noteTokens, String footText) {
+        // pattern is <note n="1" place="foot" xml:id="no1">
+        Matcher ma = startNum.matcher(footText);
+        int currentNumber = -1;
+        if (ma.find()) {
+            String groupStr = ma.group(1);
+            footText = ma.group(2);
+            try {
+                currentNumber = Integer.parseInt(groupStr);
+                // remove this number from the layout tokens of the note
+                if (currentNumber != -1) {
+                    String toConsume =  groupStr;
+                    int start = 0;
+                    for(LayoutToken token : noteTokens) {
+                        if ( (token.getText() == null) || (token.getText().length() == 0) )
+                            continue;
+                        if (toConsume.startsWith(token.getText())) {
+                            start++;
+                            toConsume = toConsume.substring(token.getText().length());
+                        } else
+                            break;
+
+                        if (toConsume.length() == 0)
+                            break;
+                    }
+                    if (start != 0)
+                        noteTokens = noteTokens.subList(start, noteTokens.size());
+
+                }
+            } catch (NumberFormatException e) {
+                currentNumber = -1;
+            }
+        }
+
+        return new Footnote(currentNumber, noteTokens, footText);
     }
 
     private StringBuilder toTEINote(StringBuilder tei,
@@ -1060,6 +1218,48 @@ public class TEIFormatter {
         return tei;
     }
 
+    private void labelBibliographicalReferencesInFootnotes(Document doc, GrobidAnalysisConfig config, String footText, List<LayoutToken> noteTokens, Element desc) {
+        // for labelling bibliographical references in footnotes
+        Pair<String, List<LayoutToken>> noteProcess =
+            fullTextParser.processShort(noteTokens, doc);
+        String labeledNote = noteProcess.getLeft();
+        List<LayoutToken> noteLayoutTokens = noteProcess.getRight();
+
+        if ( (labeledNote != null) && (labeledNote.length() > 0) ) {
+            TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FULLTEXT, labeledNote, noteLayoutTokens);
+            List<TaggingTokenCluster> clusters = clusteror.cluster();
+
+            for (TaggingTokenCluster cluster : clusters) {
+                if (cluster == null) {
+                    continue;
+                }
+
+                TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                if (clusterLabel.equals(TaggingLabels.CITATION_MARKER)) {
+                    try {
+                        List<Node> refNodes = this.markReferencesTEILuceneBased(
+                                cluster.concatTokens(),
+                                doc.getReferenceMarkerMatcher(),
+                                config.isGenerateTeiCoordinates("ref"),
+                                false);
+                        if (refNodes != null) {
+                            for (Node n : refNodes) {
+                                desc.appendChild(n);
+                            }
+                        }
+                    } catch(Exception e) {
+                        LOGGER.warn("Problem when serializing TEI fragment for figure caption", e);
+                    }
+                } else {
+                    desc.appendChild(textNode(clusterContent));
+                }
+            }
+        } else {
+            desc.appendChild(LayoutTokensUtil.normalizeText(footText.trim()));
+        }
+    }
+
     public StringBuilder toTEIAcknowledgement(StringBuilder buffer,
                                               String reseAcknowledgement,
                                               List<LayoutToken> tokenizationsAcknowledgement,
@@ -1073,7 +1273,8 @@ public class TEIFormatter {
         StringBuilder buffer2 = new StringBuilder();
 
         buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, null, doc, config);
+                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null,
+            null, null,  doc, config);
         String acknowResult = buffer2.toString();
         String[] acknowResultLines = acknowResult.split("\n");
         boolean extraDiv = false;
@@ -1104,7 +1305,8 @@ public class TEIFormatter {
 
         buffer.append("\t\t\t<div type=\"annex\">\n");
         buffer = toTEITextPiece(buffer, result, biblio, bds, true,
-                new LayoutTokenization(tokenizations), null, null, null, markerTypes, doc, config);
+                new LayoutTokenization(tokenizations), null, null, null, null,
+                markerTypes, doc, config);
         buffer.append("\t\t\t</div>\n");
 
         return buffer;
@@ -1119,6 +1321,7 @@ public class TEIFormatter {
                                          List<Figure> figures,
                                          List<Table> tables,
                                          List<Equation> equations,
+                                         List<Footnote> footnotes,
                                          List<MarkerType> markerTypes,
                                          Document doc,
                                          GrobidAnalysisConfig config) throws Exception {
@@ -1230,21 +1433,118 @@ public class TEIFormatter {
                 }
                 curDiv.appendChild(note);
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
-                String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
-                if (isNewParagraph(lastClusterLabel, curParagraph)) {
-                    if (curParagraph != null && config.isWithSentenceSegmentation()) {
-                        segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+                int clusterPage = Iterables.getLast(cluster.concatTokens()).getPage();
+
+                if (footnotes == null) {
+                    String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                    if (isNewParagraph(lastClusterLabel, curParagraph)) {
+                        if (curParagraph != null && config.isWithSentenceSegmentation()) {
+                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+                        }
+                        curParagraph = teiElement("p");
+                        if (config.isGenerateTeiIds()) {
+                            String divID = KeyGen.getKey().substring(0, 7);
+                            addXmlId(curParagraph, "_" + divID);
+                        }
+                        curDiv.appendChild(curParagraph);
+                        curParagraphTokens = new ArrayList<>();
                     }
-                    curParagraph = teiElement("p");
-                    if (config.isGenerateTeiIds()) {
-                        String divID = KeyGen.getKey().substring(0, 7);
-                        addXmlId(curParagraph, "_" + divID);
+                    curParagraph.appendChild(clusterContent);
+                    curParagraphTokens.addAll(cluster.concatTokens());
+                } else {
+                    if (isNewParagraph(lastClusterLabel, curParagraph)) {
+                        if (curParagraph != null && config.isWithSentenceSegmentation()) {
+                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+                        }
+                        curParagraph = teiElement("p");
+                        if (config.isGenerateTeiIds()) {
+                            String divID = KeyGen.getKey().substring(0, 7);
+                            addXmlId(curParagraph, "_" + divID);
+                        }
+                        curDiv.appendChild(curParagraph);
+                        curParagraphTokens = new ArrayList<>();
                     }
-                    curDiv.appendChild(curParagraph);
-                    curParagraphTokens = new ArrayList<>();
+
+                    List<Footnote> candidateFootnoteAreas =
+                        footnotes.stream()
+                            .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
+                            .collect(Collectors.toList());
+
+                    if (candidateFootnoteAreas.size() > 0) {
+                        for (Footnote candidate : candidateFootnoteAreas) {
+                            Optional<LayoutToken> matching = cluster.concatTokens()
+                                .stream()
+                                .filter(t -> t.getText().equals("" + candidate.getNumber()))
+                                .findFirst();
+
+                            if (matching.isPresent()) {
+                                int idx = cluster.concatTokens().indexOf(matching.get());
+                                // check that it's a super/subscript. Sometimes the flag is not set correctly so
+                                // we need to check the size / height - AT the moment seems not feasible
+                                /*if (!cluster.concatTokens().get(idx).isSuperscript()) {
+                                    int size = cluster.concatTokens().size();
+                                    int lowBound = idx - 3;
+                                    int highBound = idx + 3;
+
+                                    if (lowBound < 0) {
+                                        highBound = highBound - lowBound;
+                                        lowBound = 0;
+                                    }
+
+                                    if (highBound >= size) {
+                                        highBound = size -1;
+                                    }
+
+                                    List<LayoutToken> surrounding = IntStream
+                                        .range(lowBound, highBound)
+                                        .filter(i -> i != idx
+                                            && !cluster.concatTokens().get(i).isItalic()
+                                            && !cluster.concatTokens().get(i).isBold()
+                                            && StringUtils.isNotBlank(cluster.concatTokens().get(i).getText()))
+                                        .mapToObj(i -> cluster.concatTokens().get(i))
+                                        .collect(Collectors.toList());
+
+                                    System.out.println(surrounding);
+                                }*/
+
+                                candidate.setIgnored(true);
+                                List<LayoutToken> before = cluster.concatTokens().subList(0, idx);
+                                String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
+
+                                curParagraph.appendChild(clusterContentBefore);
+                                curParagraphTokens.addAll(before);
+
+                                Element ref = teiElement("ref");
+                                ref.addAttribute(new Attribute("type", "foot"));
+
+                                if (config.isGenerateTeiCoordinates("ref") ) {
+                                    String coords = LayoutTokensUtil.getCoordsString(Arrays.asList(matching.get()));
+                                    if (coords != null) {
+                                        ref.addAttribute(new Attribute("coords", coords));
+                                    }
+                                }
+
+                                ref.appendChild(matching.get().getText());
+                                ref.addAttribute(new Attribute("target", "#b" + candidate.getNumber()));
+                                curParagraph.appendChild(ref);
+
+                                List<LayoutToken> after = cluster.concatTokens().subList(idx + 1, cluster.concatTokens().size() - 1);
+                                String clusterContentAfter = LayoutTokensUtil.normalizeDehyphenizeText(after);
+
+                                if (CollectionUtils.isNotEmpty(after) && after.get(0).getText().equals(" ")) {
+                                    curParagraph.appendChild(new Text(" "));
+                                }
+
+                                curParagraph.appendChild(clusterContentAfter);
+                                curParagraphTokens.addAll(after);
+                            }
+                        }
+                    } else {
+                        String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
+                        curParagraph.appendChild(clusterContent);
+                        curParagraphTokens.addAll(cluster.concatTokens());
+                    }
                 }
-                curParagraph.appendChild(clusterContent);
-                curParagraphTokens.addAll(cluster.concatTokens());
             } else if (MARKER_LABELS.contains(clusterLabel)) {
                 List<LayoutToken> refTokens = cluster.concatTokens();
                 refTokens = LayoutTokensUtil.dehyphenize(refTokens);
