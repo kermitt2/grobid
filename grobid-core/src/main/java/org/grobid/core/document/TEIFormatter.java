@@ -1525,7 +1525,7 @@ public class TEIFormatter {
                                 }
 
                                 ref.appendChild(matching.get().getText());
-                                ref.addAttribute(new Attribute("target", "#b" + candidate.getNumber()));
+                                ref.addAttribute(new Attribute("target", "#" + candidate.getNumber()));
                                 curParagraph.appendChild(ref);
 
                                 List<LayoutToken> after = cluster.concatTokens().subList(idx + 1, cluster.concatTokens().size() - 1);
