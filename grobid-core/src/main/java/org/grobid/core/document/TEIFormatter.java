@@ -1029,15 +1029,7 @@ public class TEIFormatter {
 
             allNotes.add(footText);
 
-            // Find the page this is into
-//            List<Block> pageBlocks = doc.getBlocks().get(docPiece.getLeft().getBlockPtr()).getPage().getBlocks();
-//            Block toBlock = doc.getBlocks().get(docPiece.getRight().getBlockPtr()).getPage().getBlocks().get();
-
-            Page page = doc.getPage(noteTokens.get(0).getPage());
-            int offsetStartPage = page.getBlocks().get(0).tokens.get(0).getOffset();
-
             Footnote footNote = makeFootNote(noteTokens, footText);
-            footNote.setOffsetStartInPage(offsetStartPage);
             footnotes.add(footNote);
         }
 
