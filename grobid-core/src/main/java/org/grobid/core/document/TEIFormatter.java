@@ -1465,49 +1465,22 @@ public class TEIFormatter {
                         curParagraphTokens = new ArrayList<>();
                     }
 
-                    List<Footnote> candidateFootnoteAreas =
+                    List<Footnote> footnotesSamePage =
                         footnotes.stream()
                             .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
                             .collect(Collectors.toList());
 
-                    if (candidateFootnoteAreas.size() > 0) {
-                        for (Footnote candidate : candidateFootnoteAreas) {
+                    if (footnotesSamePage.size() > 0) {
+                        for (Footnote footnote : footnotesSamePage) {
                             Optional<LayoutToken> matching = cluster.concatTokens()
                                 .stream()
-                                .filter(t -> t.getText().equals("" + candidate.getNumber()))
+                                .filter(t -> t.getText().equals("" + footnote.getNumber()) && t.isSuperscript())
                                 .findFirst();
 
                             if (matching.isPresent()) {
                                 int idx = cluster.concatTokens().indexOf(matching.get());
-                                // check that it's a super/subscript. Sometimes the flag is not set correctly so
-                                // we need to check the size / height - AT the moment seems not feasible
-                                /*if (!cluster.concatTokens().get(idx).isSuperscript()) {
-                                    int size = cluster.concatTokens().size();
-                                    int lowBound = idx - 3;
-                                    int highBound = idx + 3;
 
-                                    if (lowBound < 0) {
-                                        highBound = highBound - lowBound;
-                                        lowBound = 0;
-                                    }
-
-                                    if (highBound >= size) {
-                                        highBound = size -1;
-                                    }
-
-                                    List<LayoutToken> surrounding = IntStream
-                                        .range(lowBound, highBound)
-                                        .filter(i -> i != idx
-                                            && !cluster.concatTokens().get(i).isItalic()
-                                            && !cluster.concatTokens().get(i).isBold()
-                                            && StringUtils.isNotBlank(cluster.concatTokens().get(i).getText()))
-                                        .mapToObj(i -> cluster.concatTokens().get(i))
-                                        .collect(Collectors.toList());
-
-                                    System.out.println(surrounding);
-                                }*/
-
-                                candidate.setIgnored(true);
+                                footnote.setIgnored(true);
                                 List<LayoutToken> before = cluster.concatTokens().subList(0, idx);
                                 String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
 
@@ -1518,14 +1491,14 @@ public class TEIFormatter {
                                 ref.addAttribute(new Attribute("type", "foot"));
 
                                 if (config.isGenerateTeiCoordinates("ref") ) {
-                                    String coords = LayoutTokensUtil.getCoordsString(Arrays.asList(matching.get()));
+                                    String coords =  LayoutTokensUtil.getCoordsString(Arrays.asList(matching.get()));
                                     if (coords != null) {
                                         ref.addAttribute(new Attribute("coords", coords));
                                     }
                                 }
 
                                 ref.appendChild(matching.get().getText());
-                                ref.addAttribute(new Attribute("target", "#" + candidate.getNumber()));
+                                ref.addAttribute(new Attribute("target", "#" + footnote.getNumber()));
                                 curParagraph.appendChild(ref);
 
                                 List<LayoutToken> after = cluster.concatTokens().subList(idx + 1, cluster.concatTokens().size() - 1);
