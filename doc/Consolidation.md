@@ -44,13 +44,11 @@ This service presents several advantages as compared to the CrossRef service. bi
 
 Unfortunately, you need to install the service yourself, including loading and indexing the bibliographical resources, as documented [here](https://github.com/kermitt2/biblio-glutton#building-the-bibliographical-data-look-up-and-matching-databases). Note that a [docker container](https://github.com/kermitt2/biblio-glutton#running-with-docker) is available. 
 
-After installing biblio-glutton, you need to select the glutton matching service in the `grobid-home/config/grobid.yaml` file, with its host and port, for instance:
+After installing biblio-glutton, you need to select the glutton matching service in the `grobid-home/config/grobid.yaml` file, with its url, for instance:
 
 ```yaml
 consolidation:
     service: "glutton"
     glutton:
-      type: "http"
-      host: "localhost"
-      port: 8080
+      url: "http://localhost:8080" 
 ```
