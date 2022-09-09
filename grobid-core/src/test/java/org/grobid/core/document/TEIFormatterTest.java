@@ -8,11 +8,9 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
 public class TEIFormatterTest {
@@ -34,5 +32,7 @@ public class TEIFormatterTest {
         assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is(" This is a footnote"));
         assertThat(footnote.getNumber(), is(1));
     }
+
+
 
 }

@@ -997,7 +997,7 @@ public class TEIFormatter {
         return tei;
     }
 
-    private List<Footnote> getTeiNotes(Document doc) {
+    protected List<Footnote> getTeiNotes(Document doc) {
 
         List<Footnote> footnotes = new ArrayList<>();
 
