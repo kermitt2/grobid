@@ -1036,7 +1036,7 @@ public class TEIFormatter {
         return footnotes;
     }
 
-    private Footnote makeFootNote(List<LayoutToken> noteTokens, String footText) {
+    protected Footnote makeFootNote(List<LayoutToken> noteTokens, String footText) {
         // pattern is <note n="1" place="foot" xml:id="no1">
         Matcher ma = startNum.matcher(footText);
         int currentNumber = -1;
@@ -1050,8 +1050,9 @@ public class TEIFormatter {
                     String toConsume =  groupStr;
                     int start = 0;
                     for(LayoutToken token : noteTokens) {
-                        if ( (token.getText() == null) || (token.getText().length() == 0) )
+                        if (StringUtils.isEmpty(token.getText())) {
                             continue;
+                        }
                         if (toConsume.startsWith(token.getText())) {
                             start++;
                             toConsume = toConsume.substring(token.getText().length());
