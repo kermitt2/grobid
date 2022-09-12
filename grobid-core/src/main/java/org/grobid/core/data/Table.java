@@ -33,11 +33,9 @@ import java.util.List;
 import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Node;
-import nu.xom.Text;
 
 import static org.grobid.core.document.TEIFormatter.applyStyleList;
 import static org.grobid.core.document.TEIFormatter.extractStylesList;
-import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
 import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 

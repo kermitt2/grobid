@@ -1424,7 +1424,7 @@ public class TEIFormatter {
             String subString = text.substring(lastPosition, offsetStyle.start);
             String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
             String suffixSpace = "";
-            if (subString.length() > 1) {
+            if (subString.length() > prefixSpace.length()) {
                 suffixSpace = StringUtils.endsWith(subString, " ") ? " " : "";
             }
             paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")) + suffixSpace);
@@ -1435,7 +1435,11 @@ public class TEIFormatter {
             paragraphElem.appendChild(rend);
         }
         String subString = text.substring(lastPosition);
-        String prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
+        String subStringNormalized = StringUtils.normalizeSpace(subString);
+        String prefixSpace = "";
+        if (subStringNormalized.length() > 0) {
+            prefixSpace = StringUtils.startsWith(subString, " ") ? " " : "";
+        }
         paragraphElem.appendChild(prefixSpace + StringUtils.normalizeSpace(subString.replace("\n", " ")));
 
         return paragraphElem;
@@ -1819,10 +1823,12 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 styleList.set(styleList.size()-1, Triple.of(last.getLeft(), value.toString(), new OffsetPosition(last.getRight().start, endOffset)));
             } else {
                 styleList.add(Triple.of(styleNameTrimmed, value.toString(), new OffsetPosition(startOffset, endOffset)));
+//                value = new StringBuilder();
             }
 
             previousStyleName = styleNameTrimmed;
         }
+//        List<Triple<String, String, OffsetPosition>> postProcessedStyleList = styleList.stream().map(s -> Triple.of(s.getLeft(), s.getMiddle().substring(s.getRight().start, s.getRight().end), s.getRight())).collect(Collectors.toList());
 
         return styleList;
     }

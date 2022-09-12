@@ -14,6 +14,7 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.SentenceUtilities;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -23,7 +24,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.grobid.core.document.TEIFormatter.*;
-import static org.hamcrest.CoreMatchers.any;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
@@ -144,7 +144,7 @@ public class TEIFormatterTest {
         new TEIFormatter(null, null).segmentIntoSentences(currentParagraph, tokens, config, "en");
 
         assertThat(currentParagraph.toXML(),
-            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"bold italic\">sentence</hi>  <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
+            is("<p xmlns=\"http://www.tei-c.org/ns/1.0\"><s><hi rend=\"bold\">One</hi> <hi rend=\"bold italic\">sentence</hi> <ref>(Foppiano et al.)</ref>.</s><s>Second sentence <ref>(Lopez et al.)</ref>.</s></p>"));
     }
 
     @Test
@@ -525,6 +525,32 @@ public class TEIFormatterTest {
         assertThat(pairs.get(1).getMiddle(), is("14"));
         assertThat(pairs.get(1).getRight().start, is(84));
         assertThat(pairs.get(1).getRight().end, is(86));
+    }
+
+    @Ignore("The middle is actually not used")
+    public void testExtractStylesList_checkProducedText_ShouldWork() throws Exception {
+        String text = "I. Introduction  1.1. Généralités et rappels  ";
+        List<LayoutToken> textTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        textTokens.get(0).setBold(true);
+        textTokens.get(1).setBold(true);
+        textTokens.get(3).setBold(true);
+
+        textTokens.get(6).setItalic(true);
+        textTokens.get(7).setItalic(true);
+        textTokens.get(8).setItalic(true);
+        textTokens.get(9).setItalic(true);
+        textTokens.get(11).setItalic(true);
+        textTokens.get(13).setItalic(true);
+        textTokens.get(15).setItalic(true);
+
+        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(textTokens);
+
+        assertThat(pairs, hasSize(2));
+        assertThat(pairs.get(0).getLeft(), is("bold"));
+        assertThat(pairs.get(0).getMiddle(), is("I. Introduction"));
+        assertThat(pairs.get(1).getLeft(), is("italic"));
+        assertThat(pairs.get(1).getMiddle(), is("1.1. Généralités et rappels"));
     }
 
     @Test
