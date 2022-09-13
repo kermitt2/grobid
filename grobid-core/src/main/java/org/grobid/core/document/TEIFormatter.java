@@ -1581,12 +1581,17 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         List<Integer> refPositions = mapRefNodes.keySet().stream().sorted().collect(Collectors.toList());
 
         int currentNodeIdx = 0;
+        int previousSentenceOffsetStart = 0;
+        int previousPosInSentence = 0;
         for(int i=0; i<sentencesOffsetPosition.size(); i++) {
             OffsetPosition offsetPosition = sentencesOffsetPosition.get(i);
             int posInSentence = 0;
             int sentenceOffsetStart = offsetPosition.start;
             int sentenceOffsetEnd = offsetPosition.end;
 
+            if (previousSentenceOffsetStart + previousPosInSentence < sentenceOffsetStart) {
+                textAccumulator.append(text, previousSentenceOffsetStart + previousPosInSentence, sentenceOffsetStart);
+            }
             for(int j=currentNodeIdx; j<refPositions.size(); j++) {
                 int refPos = refPositions.get(j);
                 Node currentNode = mapRefNodes.get(refPos).getLeft();
@@ -1639,7 +1644,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     posInSentence += textChunk.length();
                     currentNodeIdx = j;
                     break;
-                } else if (refPos < sentenceOffsetStart && textAccumulator.length() > refPos
+                } else if (refPos < sentenceOffsetStart
+                    && textAccumulator.length() > refPos
                     && textAccumulator.length() < refPos + currentNodeLength) {
                     //The node is between this sentence and the previous one - trouble again dude
 
@@ -1670,6 +1676,8 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     }
                 }
             }
+            previousSentenceOffsetStart = sentenceOffsetStart;
+            previousPosInSentence = posInSentence;
 
             if (sentenceOffsetStart + posInSentence < sentenceOffsetEnd) {
                 textAccumulator.append(text, sentenceOffsetStart + posInSentence, sentencesOffsetPosition.get(i).end);
