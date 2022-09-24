@@ -8,7 +8,7 @@ import java.util.List;
 
 import static com.google.common.collect.Iterables.getLast;
 
-public class Footnote {
+public class Note {
 
     public enum NoteType {
         FOOT,
@@ -29,11 +29,11 @@ public class Footnote {
 
     private NoteType noteType;
 
-    public Footnote() {
+    public Note() {
         this.identifier = KeyGen.getKey().substring(0, 7);
     }
 
-    public Footnote(String label, List<LayoutToken> tokens, String text, NoteType noteType) {
+    public Note(String label, List<LayoutToken> tokens, String text, NoteType noteType) {
         this.identifier = KeyGen.getKey().substring(0, 7);
         this.label = label;
         this.tokens = tokens;
@@ -41,7 +41,7 @@ public class Footnote {
         this.noteType = noteType;
     }
 
-    public Footnote(String label, List<LayoutToken> tokens, String text, int offsetStartInPage, NoteType noteType) {
+    public Note(String label, List<LayoutToken> tokens, String text, int offsetStartInPage, NoteType noteType) {
         this.identifier = KeyGen.getKey().substring(0, 7);
         this.label = label;
         this.tokens = tokens;
@@ -50,7 +50,7 @@ public class Footnote {
         this.noteType = noteType;
     }
 
-    public Footnote(String label, List<LayoutToken> tokens, NoteType noteType) {
+    public Note(String label, List<LayoutToken> tokens, NoteType noteType) {
         this.identifier = KeyGen.getKey().substring(0, 7);
         this.label = label;
         this.tokens = tokens;
