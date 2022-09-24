@@ -2,6 +2,7 @@ package org.grobid.core.data;
 
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
+import org.grobid.core.utilities.*;
 
 import java.util.List;
 
@@ -9,7 +10,14 @@ import static com.google.common.collect.Iterables.getLast;
 
 public class Footnote {
 
-    private int number;
+    public enum NoteType {
+        FOOT,
+        MARGIN
+    };
+
+    private String identifier;
+
+    private String label;
 
     private List<LayoutToken> tokens;
 
@@ -19,25 +27,42 @@ public class Footnote {
 
     private boolean ignored = false;
 
+    private NoteType noteType;
+
     public Footnote() {
+        this.identifier = KeyGen.getKey().substring(0, 7);
     }
 
-    public Footnote(int number, List<LayoutToken> tokens, String text) {
-        this.number = number;
+    public Footnote(String label, List<LayoutToken> tokens, String text, NoteType noteType) {
+        this.identifier = KeyGen.getKey().substring(0, 7);
+        this.label = label;
         this.tokens = tokens;
         this.text = text;
+        this.noteType = noteType;
     }
 
-    public Footnote(int number, List<LayoutToken> tokens, String text, int offsetStartInPage) {
-        this.number = number;
+    public Footnote(String label, List<LayoutToken> tokens, String text, int offsetStartInPage, NoteType noteType) {
+        this.identifier = KeyGen.getKey().substring(0, 7);
+        this.label = label;
         this.tokens = tokens;
         this.text = text;
         this.offsetStartInPage = offsetStartInPage;
+        this.noteType = noteType;
     }
 
-    public Footnote(int number, List<LayoutToken> tokens) {
-        this.number = number;
+    public Footnote(String label, List<LayoutToken> tokens, NoteType noteType) {
+        this.identifier = KeyGen.getKey().substring(0, 7);
+        this.label = label;
         this.tokens = tokens;
+        this.noteType = noteType;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public int getOffsetStartInPage() {
@@ -68,12 +93,12 @@ public class Footnote {
         this.tokens = tokens;
     }
 
-    public int getNumber() {
-        return number;
+    public String getLabel() {
+        return this.label;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public int getOffsetEndInPage() {
@@ -86,5 +111,21 @@ public class Footnote {
 
     public void setIgnored(boolean ignored) {
         this.ignored = ignored;
+    }
+
+    public NoteType getNoteType() {
+        return this.noteType;
+    }
+
+    public void setNoteType(NoteType noteType) {
+        this.noteType = noteType;
+    }
+
+    public String getNoteTypeName() {
+        if (this.noteType == NoteType.FOOT) {
+            return "foot";
+        } else {
+            return "margin";
+        }
     }
 }
