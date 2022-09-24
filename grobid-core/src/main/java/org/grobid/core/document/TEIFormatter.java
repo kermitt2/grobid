@@ -910,11 +910,7 @@ public class TEIFormatter {
         }
         buffer.append("\t\t<body>\n");
 
-        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
-        List<Note> notes = getTeiNotes(doc, documentNoteParts, Note.NoteType.FOOT);
-
-        documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
-        notes.addAll(getTeiNotes(doc, documentNoteParts, Note.NoteType.MARGIN));
+        List<Note> notes = getTeiNotes(doc);
 
         buffer = toTEITextPiece(buffer, result, biblio, bds, true,
                 layoutTokenization, figures, tables, equations, notes, markerTypes, doc, config);
@@ -925,6 +921,20 @@ public class TEIFormatter {
         buffer.append("\t\t</body>\n");
 
         return buffer;
+    }
+
+    protected List<Note> getTeiNotes(Document doc) {
+        // There are two types of structured notes currently supported, foot notes and margin notes.
+        // We consider that head notes are always only presentation matter and are never references
+        // in a text body. 
+
+        SortedSet<DocumentPiece> documentNoteParts = doc.getDocumentPart(SegmentationLabels.FOOTNOTE);
+        List<Note> notes = getTeiNotes(doc, documentNoteParts, Note.NoteType.FOOT);
+
+        documentNoteParts = doc.getDocumentPart(SegmentationLabels.MARGINNOTE);
+        notes.addAll(getTeiNotes(doc, documentNoteParts, Note.NoteType.MARGIN));
+
+        return notes;
     }
 
     protected List<Note> getTeiNotes(Document doc, SortedSet<DocumentPiece> documentNoteParts, Note.NoteType noteType) {
