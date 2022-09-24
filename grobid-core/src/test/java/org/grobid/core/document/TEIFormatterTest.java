@@ -26,7 +26,10 @@ public class TEIFormatterTest {
         String text = "1 This is a footnote";
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
 
-        Note footnote = new TEIFormatter(null, null).makeNote(tokens, text, Note.NoteType.FOOT);
+        List<Note> footnotes = new TEIFormatter(null, null).makeNotes(tokens, text, Note.NoteType.FOOT);
+        assertThat(footnotes.size(), is(1));
+
+        Note footnote = footnotes.get(0);
 
         assertThat(footnote.getText(), is(" This is a footnote"));
         assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is(" This is a footnote"));

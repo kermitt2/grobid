@@ -32,7 +32,7 @@ public class TEIFormatterIntegrationTest {
         List<Note> teiNotes = new TEIFormatter(null, null).getTeiNotes(doc);
 
         assertThat(teiNotes, hasSize(1));
-        assertThat(teiNotes.get(0).getText(), is(" http://wikipedia.org"));
+        assertThat(teiNotes.get(0).getText(), is(" http://wikipedia.org  "));
         assertThat(teiNotes.get(0).getLabel(), is("1"));
         assertThat(teiNotes.get(0).getPageNumber(), is(1));
     }
