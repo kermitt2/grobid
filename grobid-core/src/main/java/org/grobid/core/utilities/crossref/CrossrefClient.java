@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  * 
  */
 public class CrossrefClient implements Closeable {
-	public static final Logger logger = LoggerFactory.getLogger(CrossrefRequestTask.class);
+	public static final Logger logger = LoggerFactory.getLogger(CrossrefClient.class);
 	
 	protected static volatile CrossrefClient instance;
 

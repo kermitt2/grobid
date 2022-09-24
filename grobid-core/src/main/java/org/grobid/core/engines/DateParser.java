@@ -28,6 +28,8 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 public class DateParser extends AbstractParser {
 
+    private static final Pattern NEWLINE_REGEX_PATTERN = Pattern.compile("[ \n]");
+
     public DateParser() {
         super(GrobidModels.DATE);
     }
@@ -55,7 +57,7 @@ public class DateParser extends AbstractParser {
         for(String tok : tokenizations) {
             if (!" ".equals(tok) && !"\n".equals(tok)) {
                 // para final sanitisation
-                tok = tok.replaceAll("[ \n]", "");
+                tok = NEWLINE_REGEX_PATTERN.matcher(tok).replaceAll( "");
                 dateBlocks.add(tok + " <date>");
             }
         }

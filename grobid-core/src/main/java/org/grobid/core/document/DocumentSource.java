@@ -144,9 +144,11 @@ public class DocumentSource {
             cmd.add(pdfPath.getAbsolutePath());
             cmd.add(tmpPathXML.getAbsolutePath());
             if (GrobidProperties.isContextExecutionServer()) {
+                cmd.add("--timeout");
+                cmd.add(String.valueOf(GrobidProperties.getPdfaltoTimeoutS()));
                 tmpPathXML = processPdfaltoServerMode(pdfPath, tmpPathXML, cmd);
             } else {
-                if (!SystemUtils.IS_OS_WINDOWS) {
+                if (!SystemUtils.IS_OS_WINDOWS && !SystemUtils.IS_OS_MAC) {
                     cmd = Arrays.asList("bash", "-c", "ulimit -Sv " +
                             GrobidProperties.getPdfaltoMemoryLimitMb() * 1024 + " && " + pdftoxml0 + " '" + pdfPath + "' " + tmpPathXML);
                 }

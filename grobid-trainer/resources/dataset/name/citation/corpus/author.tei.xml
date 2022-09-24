@@ -23,7 +23,7 @@ Durfee</lastname>, <forename>E</forename>. <middlename>H</middlename>., &amp; <l
 		<author><forename>D</forename>. <lastname>Ourston</lastname> and <forename>R</forename>. <middlename>J</middlename>. <lastname>Mooney</lastname>.</author>
 		<author><forename>E</forename>. <lastname>Styer</lastname>,</author>
 		<author><lastname>Pearl</lastname>, <forename>J</forename>.</author>
-		<author><forename>Larry</forename> <middlename>D</middlename>. <lastname>Wittie</lastname>, <forename>Gudjun</forename> <lastname>Hermannsson</lastname>, and <forename>Ai</forename> <middlename>Li</middlename>.</author>
+		<author><forename>Larry</forename> <middlename>D</middlename>. <lastname>Wittie</lastname>, <forename>Gudjun</forename> <lastname>Hermannsson</lastname>, and <forename>Ai</forename> <lastname>Li</lastname>.</author>
 		<author><lastname>Bylander</lastname>, <forename>T</forename>.</author>
 		<author><forename>T</forename>. <lastname>Fahringer</lastname>, <forename>R</forename>. <lastname>Blasko</lastname>, and <forename>H</forename>. <lastname>Zima</lastname>.</author>
 		<author><forename>A</forename>. <middlename>D</middlename>. <lastname>Kallis</lastname> and <forename>D</forename>. <lastname>Klappholz</lastname>,</author>
@@ -36,7 +36,7 @@ Durfee</lastname>, <forename>E</forename>. <middlename>H</middlename>., &amp; <l
 		<author><lastname>Johnson</lastname>, et al.,</author>
 		<author><lastname>Calci</lastname>.</author>
 		<author><lastname>Holler</lastname>, et al.,</author>
-		<author><lastname>Smith</lastname>, B. et al.,</author>
+		<author><lastname>Smith</lastname>, <forename>B</forename>. et al.,</author>
 		<author><lastname>Elliot</lastname>, et al.,</author>
 		<author><lastname>von Dullemen</lastname>, et al.,</author>
 		<author><lastname>Grau</lastname>, et al.,</author>
@@ -63,7 +63,7 @@ Durfee</lastname>, <forename>E</forename>. <middlename>H</middlename>., &amp; <l
 		<author><lastname>Bar-Haim</lastname>, <forename>R</forename>., <lastname>Dagan</lastname>, <forename>I</forename>., <lastname>Dolan</lastname>, <forename>B</forename>., <lastname>Ferro</lastname>, <forename>L</forename>., <lastname>Giampiccolo</lastname>, <forename>D</forename>., <lastname>Magnini</lastname>, <forename>B</forename>. and <lastname>Szpektor</lastname>.</author>
 		<author><forename>Jenny</forename> <middlename>Rose</middlename> <lastname>Finkel</lastname>, <forename>Trond</forename> <lastname>Grenager</lastname>, and <forename>Christopher</forename> <lastname>Manning</lastname>. </author>
 		<author><forename>C.-Y.</forename> <lastname>Lu</lastname> et al.</author>
-		<author><forename>K</forename>. <middlename>C</middlename>. <lastname>Je</lastname>, In-Chul <lastname>Shin</lastname>, <forename>J</forename>. <lastname>Kim</lastname>, and <forename>K</forename>. <lastname>Kyhm</lastname>,</author>
+		<author><forename>K</forename>. <middlename>C</middlename>. <lastname>Je</lastname>, <forename>In-Chul</forename> <lastname>Shin</lastname>, <forename>J</forename>. <lastname>Kim</lastname>, and <forename>K</forename>. <lastname>Kyhm</lastname>,</author>
 		<author><lastname>Gupta</lastname>, <forename>J</forename>.<middlename>A</middlename>., <lastname>Knobel</lastname>, <forename>R</forename>., <lastname>Samarth</lastname>, <forename>N</forename>. &amp; <lastname>Awschalom</lastname>, <forename>D</forename>.<middlename>D</middlename>.</author>
 		<author><lastname>Hanson</lastname>, <forename>R</forename>. &amp; <lastname>Awschalom</lastname>, <forename>D</forename>.<middlename>D</middlename>.,</author>
 		<author><lastname>Michetti</lastname>, <forename>P</forename>. &amp; <lastname>La Rocca</lastname>, <forename>G</forename>. <middlename>C</middlename>..</author>

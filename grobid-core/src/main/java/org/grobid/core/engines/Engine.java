@@ -5,7 +5,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.BiblioSet;
 import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
@@ -694,32 +693,6 @@ public class Engine implements Closeable {
      */
     public static String header2BibTeX(BiblioItem resHeader) {
         return resHeader.toBibTeX();
-    }
-
-    /**
-     * Get the TEI XML string corresponding to the recognized citation section
-     */
-    public static String references2TEI2(String path, List<BibDataSet> resBib) {
-        StringBuilder result = new StringBuilder();
-        result.append("<tei>\n");
-
-        BiblioSet bs = new BiblioSet();
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            bit.buildBiblioSet(bs, path);
-        }
-
-        result.append(bs.toTEI());
-        result.append("<listbibl>\n");
-
-        for (BibDataSet bib : resBib) {
-            BiblioItem bit = bib.getResBib();
-            result.append("\n").append(bit.toTEI2(bs));
-        }
-        result.append("\n</listbibl>\n</tei>\n");
-
-        return result.toString();
     }
 
     /**

@@ -129,6 +129,34 @@ public class BiblioItemTest {
     }
 
     @Test
+    public void shouldIncludeEscapedMarkerInRawAffiliationText() throws Exception {
+        GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
+        Affiliation aff = new Affiliation();
+        aff.setMarker("&");
+        aff.setRawAffiliationString("raw affiliation 1");
+        aff.setFailAffiliation(false);
+        Person author = new Person();
+        author.setLastName("Smith");
+        author.setAffiliations(Arrays.asList(aff));
+        BiblioItem biblioItem = new BiblioItem();
+        biblioItem.setFullAuthors(Arrays.asList(author));
+        biblioItem.setFullAffiliations(Arrays.asList(aff));
+        String tei = biblioItem.toTEI(0, 2, config);
+        LOGGER.debug("tei: {}", tei);
+        Document doc = parseXml(tei);
+        assertThat(
+            "raw_affiliation label",
+            getXpathStrings(doc, "//note[@type=\"raw_affiliation\"]/label/text()"),
+            is(Arrays.asList("&"))
+        );
+        assertThat(
+            "raw_affiliation",
+            getXpathStrings(doc, "//note[@type=\"raw_affiliation\"]/text()"),
+            is(Arrays.asList(" raw affiliation 1"))
+        );
+    }
+
+    @Test
     public void shouldGenerateRawAffiliationTextForFailAffiliationsIfEnabled() throws Exception {
         GrobidAnalysisConfig config = configBuilder.includeRawAffiliations(true).build();
         Affiliation aff = new Affiliation();
@@ -186,6 +214,42 @@ public class BiblioItemTest {
         assertThat(item2.getPII(), is("miao"));
         assertThat(item2.getIstexId(), is("zao"));
         assertThat(item2.getArk(), is("Noah!"));
+    }
+
+    @Test
+    public void shouldEscapeIdentifiers() throws Exception {
+        BiblioItem item1 = new BiblioItem();
+        item1.setJournal("Dummy Journal Title");
+        item1.setDOI("10.1233/23232&3232");
+        item1.setPMID("pmid & 123");
+        item1.setArk("Noah & !");
+        item1.setISSN("0974&9756");
+
+        GrobidAnalysisConfig config = configBuilder.build();
+        String tei = item1.toTEI(0, 2, config);
+        LOGGER.debug("tei: {}", tei);
+        Document doc = parseXml(tei);
+        assertThat(
+            "DOI",
+            getXpathStrings(doc, "//idno[@type=\"DOI\"]/text()"),
+            is(Arrays.asList("10.1233/23232&3232"))
+        );
+        assertThat(
+            "ISSN",
+            getXpathStrings(doc, "//idno[@type=\"ISSN\"]/text()"),
+            is(Arrays.asList("0974&9756"))
+        );
+        assertThat(
+            "PMID",
+            getXpathStrings(doc, "//idno[@type=\"PMID\"]/text()"),
+            is(Arrays.asList("pmid&123"))
+        );
+        assertThat(
+            "Ark",
+            getXpathStrings(doc, "//idno[@type=\"ark\"]/text()"),
+            is(Arrays.asList("Noah & !"))
+        );
+
     }
 
     @Test

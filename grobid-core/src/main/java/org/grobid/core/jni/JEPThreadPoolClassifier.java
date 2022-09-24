@@ -11,6 +11,8 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import jep.Jep;
 import jep.JepConfig;
 import jep.JepException;
+import jep.SubInterpreter;
+import jep.SharedInterpreter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,7 +74,8 @@ public class JEPThreadPoolClassifier {
     private JepConfig getJepConfig(File delftPath, Path sitePackagesPath) {
         JepConfig config = new JepConfig();
         config.addIncludePaths(delftPath.getAbsolutePath());
-        config.setRedirectOutputStreams(true);
+        config.redirectStdout(System.out);
+        config.redirectStdErr(System.err);
         if (sitePackagesPath != null) {
             config.addIncludePaths(sitePackagesPath.toString());
         }
@@ -83,17 +86,14 @@ public class JEPThreadPoolClassifier {
     private void initializeJepInstance(Jep jep, File delftPath) throws JepException {
         // import packages
         jep.eval("import os");
-        jep.eval("import numpy as np");
-        jep.eval("import keras.backend as K");
         jep.eval("import json");
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
-        jep.eval("from delft.utilities.Utilities import split_data_and_labels");
+        //jep.eval("from delft.utilities.Utilities import split_data_and_labels");
         jep.eval("import delft.textClassification");
         jep.eval("from delft.textClassification import Classifier");
-        jep.eval("from delft.textClassification.reader import load_dataseer_corpus_csv");
-        jep.eval("from delft.textClassification.reader import vectorize as vectorizer");
-        jep.eval("from delft.textClassification.models import modelTypes");
+        //jep.eval("from delft.textClassification.reader import load_dataseer_corpus_csv");
+        //jep.eval("from delft.textClassification.reader import vectorize as vectorizer");
     }
 
     private Jep createJEPInstance() {
@@ -105,7 +105,13 @@ public class JEPThreadPoolClassifier {
                 delftPath,
                 PythonEnvironmentConfig.getInstance().getSitePackagesPath()
             );
-            jep = new Jep(config);
+            //jep = new SubInterpreter(config);
+            try {
+                SharedInterpreter.setConfig(config);
+            } catch(Exception e) {
+                LOGGER.info("JEP interpreter already initialized");
+            }
+            jep = new SharedInterpreter();
             this.initializeJepInstance(jep, delftPath);
             success = true;
             return jep;
@@ -150,7 +156,6 @@ public class JEPThreadPoolClassifier {
     }
 
     public void run(Runnable task) throws InterruptedException {
-        System.out.println("running thread: " + Thread.currentThread().getId());
         Future future = executor.submit(task);
         // wait until done (in ms)
         while (!future.isDone()) {

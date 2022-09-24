@@ -181,7 +181,7 @@ public class TEIFormatter {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
                 } else {
                     tei.append("\t\t\t\t<availability status=\"unknown\"><p>" +
-                            defaultPublicationStatement + "</p></availability>");
+                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
                 }
                 tei.append("\n");
             }
@@ -408,10 +408,10 @@ public class TEIFormatter {
                                 (biblio.getCountry() != null)) {
                             tei.append(" <address>");
                             if (biblio.getTown() != null) {
-                                tei.append("<settlement>" + biblio.getTown() + "</settlement>");
+                                tei.append("<settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                             }
                             if (biblio.getCountry() != null) {
-                                tei.append("<country>" + biblio.getCountry() + "</country>");
+                                tei.append("<country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                             }
                             if ((biblio.getLocation() != null) && (biblio.getTown() == null) &&
                                     (biblio.getCountry() == null)) {
@@ -432,10 +432,10 @@ public class TEIFormatter {
                 tei.append("\t\t\t\t\t\t<meeting>");
                 tei.append(" <address>");
                 if (biblio.getTown() != null) {
-                    tei.append(" <settlement>" + biblio.getTown() + "</settlement>");
+                    tei.append(" <settlement>" + TextUtilities.HTMLEncode(biblio.getTown()) + "</settlement>");
                 }
                 if (biblio.getCountry() != null) {
-                    tei.append(" <country>" + biblio.getCountry() + "</country>");
+                    tei.append(" <country>" + TextUtilities.HTMLEncode(biblio.getCountry()) + "</country>");
                 }
                 if ((biblio.getLocation() != null) && (biblio.getTown() == null)
                         && (biblio.getCountry() == null)) {
@@ -599,7 +599,7 @@ public class TEIFormatter {
             if (theDOI.endsWith(".xml")) {
                 theDOI = theDOI.replace(".xml", "");
             }
-            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + theDOI + "</idno>\n");
+            tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
         }
 
         if (!StringUtils.isEmpty(biblio.getArXivId())) {
@@ -1502,8 +1502,11 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
                     Node valueNode = mapRefNodes.get(new Integer(refPos));
-                    if (pos+posInSentence < refPos)
-                        sentenceElement.appendChild(text.substring(pos+posInSentence, refPos));
+                    if (pos+posInSentence < refPos) {
+                        String local_text_chunk = text.substring(pos+posInSentence, refPos);
+                        local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
+                        sentenceElement.appendChild(local_text_chunk);
+                    }
                     valueNode.detach();
                     sentenceElement.appendChild(valueNode);
                     refIndex = j;
@@ -1515,7 +1518,9 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
 
             if (pos+posInSentence <= theSentences.get(i).end) {
-                sentenceElement.appendChild(text.substring(pos+posInSentence, theSentences.get(i).end));
+                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+                local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
+                sentenceElement.appendChild(local_text_chunk);
                 curParagraph.appendChild(sentenceElement);
             }
         }
@@ -1532,8 +1537,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             }
         }
 
-    }
-
+    }   
 
     /**
      * Return the graphic objects in a given interval position in the document.
@@ -1672,7 +1676,6 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             // TBD: check other constraints and consistency issues
         }
 
-        //System.out.println("callout text: " + text);
         List<Node> nodes = new ArrayList<>();
         List<ReferenceMarkerMatcher.MatchResult> matchResults = markerMatcher.match(refTokens);
         if (matchResults != null) {
@@ -1726,7 +1729,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             for (Figure figure : figures) {
                 if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(figure.getLabel(), false);
-                    if ((label.length() > 0) &&
+                    if (label != null && (label.length() > 0) &&
                             (textLow.equals(label.toLowerCase()))) {
                         bestFigure = figure.getId();
                         break;
@@ -1739,7 +1742,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     Figure figure = figures.get(i);
                     if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(figure.getLabel(), false);
-                        if ((label.length() > 0) &&
+                        if (label != null && (label.length() > 0) &&
                                 (textLow.contains(label.toLowerCase()))) {
                             bestFigure = figure.getId();
                             break;
@@ -1792,7 +1795,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
             for (Table table : tables) {
                 if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                     String label = TextUtilities.cleanField(table.getLabel(), false);
-                    if ((label.length() > 0) &&
+                    if (label != null && (label.length() > 0) &&
                             (textLow.equals(label.toLowerCase()))) {
                         bestTable = table.getId();
                         break;
@@ -1806,7 +1809,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     Table table = tables.get(i);
                     if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(table.getLabel(), false);
-                        if ((label.length() > 0) &&
+                        if (label != null && (label.length() > 0) &&
                                 (textLow.contains(label.toLowerCase()))) {
                             bestTable = table.getId();
                             break;

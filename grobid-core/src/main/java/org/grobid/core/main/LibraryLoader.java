@@ -109,6 +109,13 @@ public class LibraryLoader {
                             File libstdcppFileNew = new File(libstdcppPath + ".new");
                             libstdcppFile.renameTo(libstdcppFileNew);
                         }
+
+                        String libgccPath = libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1";
+                        File libgccFile = new File(libgccPath);
+                        if (libgccFile.exists()) {
+                            File libgccFileNew = new File(libgccPath + ".new");
+                            libgccFile.renameTo(libgccFileNew);
+                        }
                     }
                     try {
                         System.load(wapitiLibFiles[0].getAbsolutePath());
@@ -121,6 +128,14 @@ public class LibraryLoader {
                                 File libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
                                 libstdcppFileNew.renameTo(libstdcppFile);
                             }
+
+                            // restore libgcc
+                            String libgccPathNew = libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1.new";
+                            File libgccFileNew = new File(libgccPathNew);
+                            if (libgccFileNew.exists()) {
+                                File libgccFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libgcc_s.so.1");
+                                libgccFileNew.renameTo(libgccFile);
+                            }
                         }
                     }
                 }
@@ -132,7 +147,7 @@ public class LibraryLoader {
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
-                    addLibraryPath(libraryFolder.getAbsolutePath());
+                    addLibraryPath(libraryFolder.getAbsolutePath() + File.separator + DELFT_NATIVE_LIB_NAME);
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
