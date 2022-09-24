@@ -1424,51 +1424,7 @@ public class TEIFormatter {
                         pos = matchingPosition.end; 
                     }
 
-
-                    /*for (Note note : notesSamePage) {
-                        Optional<LayoutToken> matching = cluster.concatTokens()
-                            .stream()
-                            .filter(t -> t.getText().equals(note.getLabel()) && t.isSuperscript())
-                            .findFirst();
-
-                        if (matching.isPresent()) {
-                            int idx = cluster.concatTokens().indexOf(matching.get());
-
-                            note.setIgnored(true);
-                            List<LayoutToken> before = cluster.concatTokens().subList(0, idx);
-                            String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
-
-                            curParagraph.appendChild(clusterContentBefore);
-                            curParagraphTokens.addAll(before);
-
-                            Element ref = teiElement("ref");
-                            ref.addAttribute(new Attribute("type", "foot"));
-
-                            if (config.isGenerateTeiCoordinates("ref") ) {
-                                String coords =  LayoutTokensUtil.getCoordsString(Arrays.asList(matching.get()));
-                                if (coords != null) {
-                                    ref.addAttribute(new Attribute("coords", coords));
-                                }
-                            }
-
-                            ref.appendChild(matching.get().getText());
-                            ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
-                            curParagraph.appendChild(ref);
-
-                            List<LayoutToken> after = cluster.concatTokens().subList(idx + 1, cluster.concatTokens().size() - 1);
-                            String clusterContentAfter = LayoutTokensUtil.normalizeDehyphenizeText(after);
-
-                            if (CollectionUtils.isNotEmpty(after) && after.get(0).getText().equals(" ")) {
-                                curParagraph.appendChild(new Text(" "));
-                            }
-
-                            curParagraph.appendChild(clusterContentAfter);
-                            curParagraphTokens.addAll(after);
-                        } 
-                    }*/
-
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
-
                     List<LayoutToken> remaining = clusterTokens.subList(pos, clusterTokens.size());
                     String remainingClusterContent = LayoutTokensUtil.normalizeDehyphenizeText(remaining);
 
@@ -1510,12 +1466,63 @@ public class TEIFormatter {
                 } else {
                     throw new IllegalStateException("Unsupported marker type: " + clusterLabel);
                 }
-
+                
                 if (refNodes != null) {
-                    for (Node n : refNodes) {
-                        parent.appendChild(n);
+                    boolean footNoteCallout = false;
+
+                    if (refNodes.size() == 1 && (refNodes.get(0) instanceof Text)) {
+                        // filtered out superscript reference marker (based on the defined citationMarkerType) might 
+                        // be foot note callout - se we need in this particular case to try to match existing notes
+                        // similarly as within paragraph
+                        if (citationMarkerType != MarkerType.SUPERSCRIPT_NUMBER) {
+                            // is refTokens superscript?
+                            if (refTokens.size()>0 && refTokens.get(0).isSuperscript()) {
+                                // check note callout matching
+                                int clusterPage = Iterables.getLast(refTokens).getPage();
+                                List<Note> notesSamePage = null;
+                                if (notes != null && notes.size() > 0) {
+                                    notesSamePage = notes.stream()
+                                                .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
+                                                .collect(Collectors.toList());
+                                }
+
+                                if (notesSamePage != null) {
+                                    for (Note note : notesSamePage) {
+                                        if (chunkRefString.trim().equals(note.getLabel())) {
+                                            footNoteCallout = true;
+                                            note.setIgnored(true);
+                                                   
+                                            Element ref = teiElement("ref");
+                                            ref.addAttribute(new Attribute("type", "foot"));
+
+                                            if (config.isGenerateTeiCoordinates("ref") ) {
+                                                String coords =  LayoutTokensUtil.getCoordsString(refTokens);
+                                                if (coords != null) {
+                                                    ref.addAttribute(new Attribute("coords", coords));
+                                                }
+                                            }
+                                            ref.appendChild(chunkRefString.trim());
+                                            ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
+
+                                            parent.appendChild(ref);
+
+                                            if (chunkRefString.endsWith(" ")) {
+                                                parent.appendChild(new Text(" "));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
                     }
+
+                    if (!footNoteCallout) {
+                        for (Node n : refNodes) {
+                            parent.appendChild(n);
+                        }
+                    } 
                 }
+                
                 if (curParagraph != null)
                     curParagraphTokens.addAll(cluster.concatTokens());
             } else if (clusterLabel.equals(TaggingLabels.FIGURE) || clusterLabel.equals(TaggingLabels.TABLE)) {
