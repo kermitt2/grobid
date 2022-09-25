@@ -179,13 +179,15 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                     if (name != null) {
                         if (name.equals("type")) {
-                            // Note: funding and data availability annexes not fully annotated in the training corpus
-                            // when it will be the case, we can add specific label for this 
-                            if (value.equals("annex") || value.equals("funding")) {
+                            if (value.equals("annex")) {
 								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
-                            } else if(Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
+                            } else if (value.equals("funding")) {
+                                currentTag = "<funding>";
+                                upperTag = currentTag;
+                                upperQname = "div";
+                            } else if (Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
                                 currentTag = AVAILABILITY_LABEL;
                                 upperTag = currentTag;
                                 upperQname = "div";

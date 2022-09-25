@@ -1287,6 +1287,9 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<group>", "<note type=\"group\">", addSpace);
             }
             if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<availability>", "<note type=\"availability\">", addSpace);
+            }
+            if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<other>", "", addSpace);
             }
 
@@ -1371,6 +1374,8 @@ public class HeaderParser extends AbstractParser {
             } else if (lastTag0.equals("<date-download>")) {
                 buffer.append("</date>\n");
             } else if (lastTag0.equals("<group>")) {
+                buffer.append("</note>\n");
+            } else if (lastTag0.equals("<availability>")) {
                 buffer.append("</note>\n");
             }
         }
