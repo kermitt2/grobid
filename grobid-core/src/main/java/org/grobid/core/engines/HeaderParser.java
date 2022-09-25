@@ -969,10 +969,10 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setKeyword(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AVAILABILITY)) {
-                if (StringUtils.isNotBlank(biblio.getDataAvailability())) {
-                    biblio.setDataAvailability(biblio.getDataAvailability() + " \n " + clusterContent);
+                if (StringUtils.isNotBlank(biblio.getAvailabilityStmt())) {
+                    biblio.setAvailabilityStmt(biblio.getAvailabilityStmt() + " \n " + clusterContent);
                 } else{
-                    biblio.setDataAvailability(clusterContent);
+                    biblio.setAvailabilityStmt(clusterContent);
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {

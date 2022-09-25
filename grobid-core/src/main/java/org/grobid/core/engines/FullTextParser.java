@@ -2471,7 +2471,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();
-            if (StringUtils.isNotBlank(resHeader.getDataAvailability())) {
+            if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {
                 List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
                 Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
                 if (headerAvailabilityProcessed != null) {
