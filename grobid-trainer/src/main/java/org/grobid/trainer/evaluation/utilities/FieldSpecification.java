@@ -401,7 +401,7 @@ public class FieldSpecification {
 
 
         FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
-        dataAvailabilityFulltextField.fieldName = "availability";
+        dataAvailabilityFulltextField.fieldName = "availabilityStmt";
         dataAvailabilityFulltextField.isTextual = true;
 //        dataAvailabilityFulltextField.grobidPath
 //            .add(Pair.of(xPath.compile("//note[@type=\"availability\"]//text()"), XPathConstants.NODESET));
@@ -422,7 +422,7 @@ public class FieldSpecification {
             .add(Pair.of(xPath.compile("normalize-space(.//p[@content-type=\"availability\"])"), XPathConstants.STRING));
 
         fulltextFields.add(dataAvailabilityFulltextField);
-        fulltextLabels.add("availability");
+        fulltextLabels.add("availabilityStmt");
 	}
 
 	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
