@@ -2469,18 +2469,34 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             tei.append(getSectionAsTEI("acknowledgement", "\t\t\t",doc, SegmentationLabels.ACKNOWLEDGEMENT,
                 teiFormatter, resCitations, config));
 
-            // data availability statements
-            StringBuilder dataAvailability = new StringBuilder();
+            // availability statements in header
+            StringBuilder availabilityStmt = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getDataAvailability())) {
-                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, TaggingLabels.HEADER_AVAILABILITY,
-                    teiFormatter, resCitations, config);
-            } else {
-                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, SegmentationLabels.AVAILABILITY,
-                    teiFormatter, resCitations, config);
+                List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
+                Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
+                if (headerAvailabilityProcessed != null) {
+                    availabilityStmt = teiFormatter.processTEIDivSection("availability", 
+                        "\t\t\t", 
+                        headerAvailabilityProcessed.getLeft(), 
+                        headerAvailabilityProcessed.getRight(), 
+                        resCitations, 
+                        config);
+                }
+                if (availabilityStmt.length() > 0) {
+                    tei.append(availabilityStmt.toString());
+                }
             }
 
-            if (dataAvailability.length() > 0) {
-                tei.append(dataAvailability.toString());
+            // availability statements in non-header part
+            availabilityStmt = getSectionAsTEI("availability", 
+                "\t\t\t", 
+                doc, 
+                SegmentationLabels.AVAILABILITY, 
+                teiFormatter, 
+                resCitations, 
+                config);
+            if (availabilityStmt.length() > 0) {
+                tei.append(availabilityStmt.toString());
             }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
@@ -2515,17 +2531,20 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                                           GrobidAnalysisConfig config) throws Exception {
         StringBuilder output = new StringBuilder();
         SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
-        Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
-        if (sectionTokenisation != null) {
-            // if featSeg is null, it usually means that no body segment is found in the
-            // document segmentation
-            String text = sectionTokenisation.getLeft();
-            List<LayoutToken> tokens = sectionTokenisation.getRight().getTokenization();
-            String resultLabelling = null;
-            if (StringUtils.isNotBlank(text) ) {
-                resultLabelling = label(text);
+
+        if (sectionPart != null && sectionPart.size() > 0) {
+            Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
+            if (sectionTokenisation != null) {
+                // if featSeg is null, it usually means that no body segment is found in the
+                // document segmentation
+                String text = sectionTokenisation.getLeft();
+                List<LayoutToken> tokens = sectionTokenisation.getRight().getTokenization();
+                String resultLabelling = null;
+                if (StringUtils.isNotBlank(text) ) {
+                    resultLabelling = label(text);
+                }
+                output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
             }
-            output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
         }
         return output;
     }

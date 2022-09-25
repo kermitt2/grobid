@@ -1056,35 +1056,6 @@ public class TEIFormatter {
         return tei;
     }
 
-    public StringBuilder toTEIAcknowledgement(StringBuilder buffer,
-                                              String reseAcknowledgement,
-                                              List<LayoutToken> tokenizationsAcknowledgement,
-                                              List<BibDataSet> bds,
-                                              GrobidAnalysisConfig config) throws Exception {
-        if ((reseAcknowledgement == null) || (tokenizationsAcknowledgement == null)) {
-            return buffer;
-        }
-
-        buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
-        StringBuilder buffer2 = new StringBuilder();
-
-        buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null, null, doc, config);
-        String acknowResult = buffer2.toString();
-        String[] acknowResultLines = acknowResult.split("\n");
-        boolean extraDiv = false;
-        if (acknowResultLines.length != 0) {
-            for (int i = 0; i < acknowResultLines.length; i++) {
-                if (acknowResultLines[i].trim().length() == 0)
-                    continue;
-                buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
-            }
-        }
-        buffer.append("\t\t\t</div>\n\n");
-
-        return buffer;
-    }
-
     public StringBuilder processTEIDivSection(String xmlType,
                                               String indentation,
                                               String text,
@@ -1116,7 +1087,6 @@ public class TEIFormatter {
 
         return outputTei;
     }
-
 
     public StringBuilder toTEIAnnex(StringBuilder buffer,
                                     String result,
