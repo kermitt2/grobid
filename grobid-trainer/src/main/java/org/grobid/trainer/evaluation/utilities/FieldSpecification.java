@@ -404,7 +404,6 @@ public class FieldSpecification {
         dataAvailabilityFulltextField.fieldName = "data_availability";
         dataAvailabilityFulltextField.isTextual = true;
         dataAvailabilityFulltextField.grobidPath
-            //            .add(Pair.of(xPath.compile("//div[@type=\"data_availability\"]//text()"), XPathConstants.NODESET));
             .add(Pair.of(xPath.compile("//node[@type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.grobidPath
             .add(Pair.of(xPath.compile("//div[@type=\"availability\"]//text()"), XPathConstants.NODESET));

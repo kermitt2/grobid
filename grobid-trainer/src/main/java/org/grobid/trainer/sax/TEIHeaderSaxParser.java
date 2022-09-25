@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-import static org.grobid.core.engines.label.TaggingLabels.DATA_AVAILABILITY_LABEL;
+import static org.grobid.core.engines.label.TaggingLabels.AVAILABILITY_LABEL;
 
 /**
  * SAX parser for the TEI format header data encoded for training. Normally all training data for the header model 
@@ -173,7 +173,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
                         }*/ else if (value.equals("group")) {
                             currentTag = "<group>";
                         } else if (Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
-                            currentTag = DATA_AVAILABILITY_LABEL;
+                            currentTag = AVAILABILITY_LABEL;
                         } else
                             currentTag = "<other>";
                     }

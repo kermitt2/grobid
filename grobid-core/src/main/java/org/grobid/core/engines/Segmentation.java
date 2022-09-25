@@ -50,7 +50,7 @@ public class Segmentation extends AbstractParser {
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
-		   	data_availability <availability>,
+		   	availability <availability>,
 		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this

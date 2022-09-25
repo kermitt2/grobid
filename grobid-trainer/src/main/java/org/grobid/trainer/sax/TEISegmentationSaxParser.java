@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.grobid.core.engines.label.TaggingLabels.DATA_AVAILABILITY_LABEL;
+import static org.grobid.core.engines.label.TaggingLabels.AVAILABILITY_LABEL;
 
 /**
  * SAX parser for the TEI format for the training data for the segmentation model.
@@ -186,7 +186,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 								upperTag = currentTag;
 								upperQname = "div";
                             } else if(Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
-                                currentTag = DATA_AVAILABILITY_LABEL;
+                                currentTag = AVAILABILITY_LABEL;
                                 upperTag = currentTag;
                                 upperQname = "div";
                             } else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")

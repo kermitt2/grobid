@@ -24,7 +24,6 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.counters.CitationParserCounters;
-import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -195,7 +194,7 @@ public class FullTextParser extends AbstractParser {
                         String labeledAbstract = abstractProcessed.getLeft();
                         labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
-                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), HeaderLabels.HEADER_ABSTRACT);
+                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
                 }
             }
@@ -2473,10 +2472,10 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             // data availability statements
             StringBuilder dataAvailability = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getDataAvailability())) {
-                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, HeaderLabels.HEADER_DATA_AVAILABILITY,
+                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, TaggingLabels.HEADER_AVAILABILITY,
                     teiFormatter, resCitations, config);
             } else {
-                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, SegmentationLabels.DATA_AVAILABILITY,
+                dataAvailability = getSectionAsTEI("availability", "\t\t\t", doc, SegmentationLabels.AVAILABILITY,
                     teiFormatter, resCitations, config);
             }
 
