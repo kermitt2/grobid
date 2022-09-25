@@ -126,6 +126,15 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 3000
+          batch_size: 1
+        training:
+          # parameters used for trainikng
+          max_sequence_length: 2000
+          batch_size: 10
 
     - name: "name-header"
       engine: "wapiti"
