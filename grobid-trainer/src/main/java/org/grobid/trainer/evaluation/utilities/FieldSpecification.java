@@ -407,18 +407,6 @@ public class FieldSpecification {
             .add(Pair.of(xPath.compile("//node[@type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.grobidPath
             .add(Pair.of(xPath.compile("//div[@type=\"availability\"]//text()"), XPathConstants.NODESET));
-        //translate(x, "...", "...") is the ugly version of lower-case(.) which is not supported here apparently (only xpath 2.0)
-
-/*
-        String xpathTitle = "contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"accessibility statement\") " +
-            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability statement\") " +
-/            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"data availability\") " +
-//            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"software availability\") " +
-            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"data\")) " +
-            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"code\")) " +
-            "or (contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"availability\") and contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"software\")) " +
-            "or contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),\"code availability\")";
-*/
 
         dataAvailabilityFulltextField.nlmPath
 //            .add(Pair.of(xPath.compile("normalize-space(.//article/body/sec[title[" + xpathTitle + "]])"), XPathConstants.STRING));
