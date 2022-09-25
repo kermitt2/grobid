@@ -971,10 +971,8 @@ public class HeaderParser extends AbstractParser {
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AVAILABILITY)) {
                 if (StringUtils.isNotBlank(biblio.getDataAvailability())) {
                     biblio.setDataAvailability(biblio.getDataAvailability() + " \n " + clusterContent);
-                    biblio.collectDataAvailabilityTokens(cluster.concatTokens());
                 } else{
                     biblio.setDataAvailability(clusterContent);
-                    biblio.collectDataAvailabilityTokens(cluster.concatTokens());
                 }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
