@@ -1474,7 +1474,7 @@ public class TEIFormatter {
                         // filtered out superscript reference marker (based on the defined citationMarkerType) might 
                         // be foot note callout - se we need in this particular case to try to match existing notes
                         // similarly as within paragraph
-                        if (citationMarkerType != MarkerType.SUPERSCRIPT_NUMBER) {
+                        if (citationMarkerType == null || citationMarkerType != MarkerType.SUPERSCRIPT_NUMBER) {
                             // is refTokens superscript?
                             if (refTokens.size()>0 && refTokens.get(0).isSuperscript()) {
                                 // check note callout matching
