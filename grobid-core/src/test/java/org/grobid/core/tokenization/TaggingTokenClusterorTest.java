@@ -3,7 +3,6 @@ package org.grobid.core.tokenization;
 import org.apache.commons.io.IOUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.engines.label.HeaderLabels;
 import org.grobid.core.engines.label.TaggingLabelImpl;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.lang.Language;
@@ -31,7 +30,7 @@ public class TaggingTokenClusterorTest {
     @Test
     public void testExclusion_notPresent_shouldReturnTrue() throws Exception {
         final TaggingTokenClusteror.LabelTypeExcludePredicate labelTypeExcludePredicate =
-            new TaggingTokenClusteror.LabelTypeExcludePredicate(TaggingLabels.EQUATION, HeaderLabels.HEADER_KEYWORD);
+            new TaggingTokenClusteror.LabelTypeExcludePredicate(TaggingLabels.EQUATION, TaggingLabels.HEADER_KEYWORD);
 
         assertThat(labelTypeExcludePredicate.apply(new TaggingTokenCluster(TaggingLabels.FIGURE)),
             is(true));
@@ -50,7 +49,7 @@ public class TaggingTokenClusterorTest {
     @Test
     public void testInclusion_notPresent_shouldReturnFalse() throws Exception {
         final TaggingTokenClusteror.LabelTypePredicate labelTypePredicate =
-            new TaggingTokenClusteror.LabelTypePredicate(HeaderLabels.HEADER_KEYWORD);
+            new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.HEADER_KEYWORD);
 
         assertThat(labelTypePredicate.apply(new TaggingTokenCluster(TaggingLabels.FIGURE)),
             is(false));
