@@ -401,10 +401,10 @@ public class FieldSpecification {
 
 
         FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
-        dataAvailabilityFulltextField.fieldName = "data_availability";
+        dataAvailabilityFulltextField.fieldName = "availability";
         dataAvailabilityFulltextField.isTextual = true;
-        dataAvailabilityFulltextField.grobidPath
-            .add(Pair.of(xPath.compile("//node[@type=\"availability\"]//text()"), XPathConstants.NODESET));
+//        dataAvailabilityFulltextField.grobidPath
+//            .add(Pair.of(xPath.compile("//note[@type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.grobidPath
             .add(Pair.of(xPath.compile("//div[@type=\"availability\"]//text()"), XPathConstants.NODESET));
 
