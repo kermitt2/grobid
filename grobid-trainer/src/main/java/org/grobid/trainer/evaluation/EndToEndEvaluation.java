@@ -1,7 +1,5 @@
 package org.grobid.trainer.evaluation;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.*;
 import org.grobid.core.engines.Engine;
@@ -15,7 +13,6 @@ import org.grobid.trainer.evaluation.utilities.FieldSpecification;
 
 import java.io.*;
 import java.util.*;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -24,13 +21,15 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.collections4.CollectionUtils;
 
 import org.w3c.dom.*;
-
-import javax.xml.namespace.QName;
-import javax.xml.xpath.*;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathFactory;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
+
+import javax.xml.xpath.XPathConstants;
 
 import com.rockymadden.stringmetric.similarity.RatcliffObershelpMetric;
 import scala.Option;
@@ -143,20 +142,16 @@ public class EndToEndEvaluation {
 		
 		// initialize the field specifications and label list
 		headerFields = new ArrayList<>();
-		fulltextFields = new ArrayList<>();
+		fulltextFields = new ArrayList<>();	
 		citationsFields = new ArrayList<>();
 		
 		headerLabels = new ArrayList<>();
 		fulltextLabels = new ArrayList<>();
 		citationsLabels = new ArrayList<>();
-
-        try {
-            FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields,
-                headerLabels, fulltextLabels, citationsLabels);
-        } catch (XPathExpressionException e) {
-            throw new RuntimeException("Invalid XPaths for evaluation. ", e);
-        }
-    }
+		
+		FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields, 
+			headerLabels, fulltextLabels, citationsLabels);
+	}
 	
 	public String evaluationGrobid(boolean forceRun, StringBuilder reportMD) throws Exception {
 		if (xmlInputPath == null) {
@@ -190,7 +185,7 @@ public class EndToEndEvaluation {
 			int fails = 0;
 
 			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getMaxConcurrency()-1);
-			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+			List<Future<Boolean>> results = new ArrayList<>();
 
 			if (refFiles.length > 0) {
 				// this will preload the models, so that the model loading messages don't mess with the progress bar
@@ -231,7 +226,9 @@ public class EndToEndEvaluation {
 						if (!success)
 							fails++;
 						pb.step();
-					} catch (InterruptedException | ExecutionException e) {
+					} catch (InterruptedException e) {
+	                	e.printStackTrace();
+	            	} catch (ExecutionException e) {
 	                	e.printStackTrace();
 	            	}
 				}
@@ -436,6 +433,8 @@ public class EndToEndEvaluation {
             return report.toString();
         }
 
+        // get a factory for SAX parsers
+        SAXParserFactory spf = SAXParserFactory.newInstance();
 		Random rand = new Random();
 		int nbFile = 0;
 
@@ -530,27 +529,27 @@ public class EndToEndEvaluation {
 
 					XPathFactory xpf = XPathFactory.newInstance();
 					XPath xp = xpf.newXPath();
-//					Map<String, String> map = new HashMap();
+					HashMap map = new HashMap();
 					// explicit indication of the default namespace
-//				  	map.put("tei", "http://www.tei-c.org/ns/1.0");
+				  	map.put("tei", "http://www.tei-c.org/ns/1.0");
 
 					Map<String, String> mappings = new HashMap<>();
 					mappings.put("tei", "http://www.tei-c.org/ns/1.0");
 				  	xp.setNamespaceContext(new NamespaceContextMap(mappings));
 					
-					if (sectionType == CITATION) {
+					if (sectionType == this.CITATION) {
 						// we start by identifying each expected citation
 						// the first FieldSpecification object for the citation is the base path for
 						// each citation structure in the corresponding XML
 						FieldSpecification base = fields.get(0);
 
-						XPathExpression path = null;
+						String path = null;
 						if (inputType.equals("nlm"))
-							path = base.nlmPath.get(0).getLeft();
+							path = base.nlmPath.get(0);
 						else 
-							path = base.grobidPath.get(0).getLeft();
+							path = base.grobidPath.get(0);
 
-						NodeList nodeList = (NodeList) path.
+						NodeList nodeList = (NodeList) xp.compile(path).
 							evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGold = nodeList.getLength();
 						totalExpectedInstances += nbCitationsGold;
@@ -560,26 +559,26 @@ public class EndToEndEvaluation {
 
 						// "signature" of the citations for this file
 						// level 1 signature: titre + date 
-						List<String> goldCitationSignaturesLevel1 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel1 = new ArrayList<>();
 						
 						// level 2 signature: all authors names + date
-						List<String> goldCitationSignaturesLevel2 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel2 = new ArrayList<>();
 						
 						// level 3 signature: journal + volume + page
-						List<String> goldCitationSignaturesLevel3 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel3 = new ArrayList<>();
 						
 						// level 4 signature:  "fuzzy titre" + date + at least one of auteurs or first page
-						List<String> goldCitationSignaturesLevel4 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel4 = new ArrayList<>();
 						
 						// map between citation id from gold and from grobid (if matching between the two citations)
-						Map<String, String> idMap = new HashMap<String, String>();
-						Map<String, String> reverseIdMap = new HashMap<String, String>();
-						List<String> goldIds = new ArrayList<String>();
+						Map<String, String> idMap = new HashMap<>();
+						Map<String, String> reverseIdMap = new HashMap<>();
+						List<String> goldIds = new ArrayList<>();
 
 						for (int i = 0; i < nodeList.getLength(); i++) {
 							// sometimes we just have the raw citation bellow this, so we will have to further
 							// test if we have something structured 							
-							Map<String,List<String>> fieldsValues = new HashMap<String,List<String>>();
+							Map<String,List<String>> fieldsValues = new HashMap<>();
 							Node node = nodeList.item(i);
 							int p = 0;
 							for(FieldSpecification field : fields) {
@@ -588,7 +587,7 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								List<Pair<XPathExpression, QName>> subpaths = null;
+								List<String> subpaths = null;
 								if (inputType.equals("nlm")) {
 									subpaths = field.nlmPath;
 								} else if (inputType.equals("tei")) {
@@ -598,11 +597,11 @@ public class EndToEndEvaluation {
 								if (subpaths == null)
 									continue;
 
-								for(Pair<XPathExpression, QName> subpath : subpaths) {
-									NodeList nodeList2 = (NodeList) subpath.getLeft().
-										evaluate(node, subpath.getRight());
+								for(String subpath : subpaths) {
+									NodeList nodeList2 = (NodeList) xp.compile(subpath).
+										evaluate(node, XPathConstants.NODESET);
 									
-									List<String> goldResults = new ArrayList<String>();
+									List<String> goldResults = new ArrayList<>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
 										if ((content != null) && (content.trim().length() > 0)) {
@@ -704,7 +703,7 @@ public class EndToEndEvaluation {
  * - third rule: matching of "soft" inTitle (title of Journal or Conference), volume and first page
  * - forth rule: matching of first author last name and title, or inTitle if title is empty  
  */	
-							String signature1 = null;
+							String signature1 = null;								
 							if ( (goldTitleSoft.length()>0) && (goldDate.length()>0) ) {
 								signature1 = goldTitleSoft + goldDate;
 								//signature1 = signature1.replaceAll("[^\\x00-\\x7F]", "");
@@ -740,10 +739,9 @@ public class EndToEndEvaluation {
 						}
 						
 						// get the Grobid citations
-						path = base.grobidPath.get(0).getLeft();
-						QName nodeType = base.grobidPath.get(0).getRight();
-						nodeList = (NodeList) path.
-							evaluate(tei.getDocumentElement(), nodeType);
+						path = base.grobidPath.get(0);
+						nodeList = (NodeList) xp.compile(path).
+							evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGrobid = nodeList.getLength();
 						totalObservedInstances += nbCitationsGrobid;
 						List<Map<String,List<String>>> grobidCitations = 
@@ -758,10 +756,10 @@ public class EndToEndEvaluation {
 									//p++;
 									continue;
 								}
-								for(Pair<XPathExpression, QName> subpath : field.grobidPath) {
-									NodeList nodeList2 = (NodeList) subpath.getLeft().
-										evaluate(node, subpath.getRight());
-									List<String> grobidResults = new ArrayList<String>();
+								for(String subpath : field.grobidPath) {
+									NodeList nodeList2 = (NodeList) xp.compile(subpath).
+										evaluate(node, XPathConstants.NODESET);
+									List<String> grobidResults = new ArrayList<>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
 										if ((content != null) && (content.trim().length() > 0)) {
@@ -1112,8 +1110,8 @@ public class EndToEndEvaluation {
 						// reference context matching
 						if ( (sectionType == this.CITATION) && (runType == this.GROBID) ) {
 							// list of identifiers present in the bibliographical references
-							List<String> refBibRefIds = new ArrayList<String>();
-							List<String> grobidBibRefIds = new ArrayList<String>();
+							List<String> refBibRefIds = new ArrayList<>();
+							List<String> grobidBibRefIds = new ArrayList<>();
 
 							String subpath = null;
 							if (inputType.equals("nlm")) {
@@ -1143,8 +1141,8 @@ public class EndToEndEvaluation {
 							totalObservedReferences += grobidBibRefIds.size();
 
 							// Map associating the identifiers present in the reference callout with their number of occurences
-							Map<String, Integer> refCalloutRefIds = new HashMap<String, Integer>();
-							Map<String, Integer> grobidCalloutRefIds = new HashMap<String, Integer>();
+							Map<String, Integer> refCalloutRefIds = new HashMap<>();
+							Map<String, Integer> grobidCalloutRefIds = new HashMap<>();
 
 							if (inputType.equals("nlm")) {
 								subpath = FieldSpecification.nlmCitationContextId;
@@ -1239,9 +1237,9 @@ public class EndToEndEvaluation {
 						
 							List<String> grobidResults = new ArrayList<>();
 							int nbGrobidResults = 0;
-							for(Pair<XPathExpression, QName> path : field.grobidPath) {
-								NodeList nodeList = (NodeList) path.getLeft().
-									evaluate(tei.getDocumentElement(), path.getRight());
+							for(String path : field.grobidPath) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
 								    grobidResults.add((nodeList.item(i).getNodeValue().replaceAll(" +", " ")));
@@ -1255,14 +1253,14 @@ public class EndToEndEvaluation {
 								// basic normalisation
 								grobidResult = basicNormalization(grobidResult);
 								//System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
-								grobidResults = new ArrayList<String>();
+								grobidResults = new ArrayList<>();
 								grobidResults.add(grobidResult);
 								nbGrobidResults = 1;
 							}
 						
-							List<String> goldResults = new ArrayList<String>();
+							List<String> goldResults = new ArrayList<>();
 							int nbGoldResults = 0;
-							List<Pair<XPathExpression, QName>> subpaths = null;
+							List<String> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
@@ -1272,9 +1270,9 @@ public class EndToEndEvaluation {
 							if (subpaths == null)
 								continue;
 
-							for(Pair<XPathExpression, QName> path : subpaths) {
-								NodeList nodeList = (NodeList) path.getLeft().
-									evaluate(gold.getDocumentElement(), path.getRight());
+							for(String path : subpaths) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbGoldResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
@@ -1297,7 +1295,7 @@ public class EndToEndEvaluation {
 									}
 								}	
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
-								goldResults = new ArrayList<String>();
+								goldResults = new ArrayList<>();
 								goldResults.add(goldResult);
 								nbGoldResults = 1;
 							}
@@ -1445,8 +1443,19 @@ System.out.println("grobid: " + grobidResult);*/
 						boolean allGoodRatcliffObershelp = true;
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
-
-                            List<String> grobidResults = extractFromXPath(tei, field.grobidPath, xp, field);
+						
+							List<String> grobidResults = new ArrayList<>();
+							int nbGrobidResults = 0;
+							for(String path : field.grobidPath) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
+								nbGrobidResults = nodeList.getLength();
+								for (int i = 0; i < nodeList.getLength(); i++) {
+									String normalizedString = basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName);
+									if (normalizedString != null && normalizedString.length()>0)
+								    	grobidResults.add(normalizedString);
+								}
+							}						
 
 							/*boolean first = true;
 							System.out.print("\n"+fieldName+" - ");
@@ -1460,25 +1469,26 @@ System.out.println("grobid: " + grobidResult);*/
 							}
 							System.out.println("");*/
 							
-//							List<String> goldResults = new ArrayList<>();
-//							int nbgoldResults = 0;
-							List<Pair<XPathExpression, QName>> subpaths = null;
+							List<String> goldResults = new ArrayList<>();
+							int nbgoldResults = 0;
+							List<String> subpaths = null;
 							if (inputType.equals("nlm")) {
 								subpaths = field.nlmPath;
 							} else if (inputType.equals("tei")) {
 								subpaths = field.grobidPath;
 							}
-
-                            List<String> goldResults = extractFromXPath(gold, subpaths, xp, field);
 							
-//							for(Pair<String, QName> path : subpaths) {
-//								NodeList nodeList = (NodeList) xp.compile(path.getLeft()).evaluate(gold.getDocumentElement(), path.getRight());
-//								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
-//								nbgoldResults = nodeList.getLength();
-//								for (int i = 0; i < nodeList.getLength(); i++) {
-//									goldResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
-//								}
-//							}
+							for(String path : subpaths) {
+								NodeList nodeList = (NodeList) xp.compile(path).
+									evaluate(gold.getDocumentElement(), XPathConstants.NODESET);
+								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
+								nbgoldResults = nodeList.getLength();
+								for (int i = 0; i < nodeList.getLength(); i++) {
+									String normalizedString = basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName);
+									if (normalizedString != null && normalizedString.length()>0)
+										goldResults.add(normalizedString);
+								}
+							}
 
 							/*first = true;
 							System.out.print("goldResults:\t");
@@ -1490,19 +1500,41 @@ System.out.println("grobid: " + grobidResult);*/
 								System.out.print(res);
 							}
 							System.out.println("");*/
-
-                            // Workaround to avoid having two different lists with the same content.
+							
+							// Workaround to avoid having two different lists with the same content
                             // Probably to be extended to other fields if does not cause
-                            if (CollectionUtils.isNotEmpty(grobidResults) && fieldName.equals("availability_stmt")) {
-                                List<String> grobidResults2 = new ArrayList<>();
-                                grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
-                                grobidResults = grobidResults2;
-                            }
+                            if (fieldName.equals("availability_stmt")) {
+	                            if (CollectionUtils.isNotEmpty(grobidResults)) {
+	                                List<String> grobidResults2 = new ArrayList<>();
+	                                grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
+	                                grobidResults = grobidResults2;
+	                            }
+	                            if (CollectionUtils.isNotEmpty(goldResults)) {
+	                                List<String> goldResults2 = new ArrayList<>();
+	                                goldResults2.add(goldResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
+	                                goldResults = goldResults2;
+	                            }
+	                        }
 
 							// we compare the two result sets
+
+							/*if (fieldName.equals("availability_stmt")) {
+								if (goldResults.size() > 0) {
+									System.out.print("\n---- GOLD ----");
+									for (String goldResult : goldResults) {
+										System.out.print("\n." + goldResult);
+									}
+								}
+								if (grobidResults.size() > 0) {
+									System.out.print("\n---- GROBID ----");
+									for (String grobidResult : grobidResults) {
+										System.out.print("\n." + grobidResult);
+									}
+								}
+							}*/
 							
 							// prepare first the grobidResult set for soft match
-                            List<String> grobidSoftResults = new ArrayList<>();
+							List<String> grobidSoftResults = new ArrayList<>();
 							for(String res : grobidResults)
 								grobidSoftResults.add(removeFullPunct(res));
 							
@@ -1840,29 +1872,8 @@ System.out.println("grobid: " + grobidResult);*/
 
 		return report.toString();
 	}
-
-    private static List<String> extractFromXPath(Document xmlDocument, List<Pair<XPathExpression, QName>> extractionPaths, XPath xPath, FieldSpecification field) throws XPathExpressionException {
-        List<String> results = new ArrayList<>();
-        for(Pair<XPathExpression, QName> path : extractionPaths) {
-            if (path.getRight() == XPathConstants.NODESET) {
-                NodeList nodeList = (NodeList) path.getLeft().evaluate(xmlDocument.getDocumentElement(), path.getRight());
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    results.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(),  field.fieldName));
-                }
-            } else if (path.getRight() == XPathConstants.STRING) {
-                String string = (String) path.getLeft().evaluate(xmlDocument, path.getRight());
-                results.add(basicNormalizationFullText(string, field.fieldName));
-            } else {
-                throw new UnsupportedOperationException("Extraction from XPath works only with STRING or NODESET. Used: " + path.getRight().toString());
-            }
-        }
-
-        // We should remove the empty values
-        results.removeAll(Arrays.asList("", null));
-        return results;
-    }
-
-    private static String basicNormalization(String string) {
+	
+	private static String basicNormalization(String string) {
 		string = string.trim();
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
@@ -1899,7 +1910,7 @@ System.out.println("grobid: " + grobidResult);*/
 		string = UnicodeUtil.normaliseText(string);
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
-		string = string.replaceAll("_", " ");
+		string = string.replace("_", " ");
 		string = string.replace("\u00A0", " ");
 		if (fieldName.equals("reference_figure")) {
 			string = string.replace("figure", "").replace("Figure", "").replace("fig.", "").replace("Fig.", "").replace("fig", "").replace("Fig", "");
