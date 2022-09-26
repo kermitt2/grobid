@@ -1522,13 +1522,13 @@ System.out.println("grobid: " + grobidResult);*/
 								if (goldResults.size() > 0) {
 									System.out.print("\n---- GOLD ----");
 									for (String goldResult : goldResults) {
-										System.out.print("\n." + goldResult);
+										System.out.print("\n" + goldResult);
 									}
 								}
 								if (grobidResults.size() > 0) {
 									System.out.print("\n---- GROBID ----");
 									for (String grobidResult : grobidResults) {
-										System.out.print("\n." + grobidResult);
+										System.out.print("\n" + grobidResult);
 									}
 								}
 							}*/
