@@ -1493,7 +1493,7 @@ System.out.println("grobid: " + grobidResult);*/
 
                             // Workaround to avoid having two different lists with the same content.
                             // Probably to be extended to other fields if does not cause
-                            if (CollectionUtils.isNotEmpty(grobidResults) && fieldName.equals("availabilityStmt")) {
+                            if (CollectionUtils.isNotEmpty(grobidResults) && fieldName.equals("availability_stmt")) {
                                 List<String> grobidResults2 = new ArrayList<>();
                                 grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
                                 grobidResults = grobidResults2;

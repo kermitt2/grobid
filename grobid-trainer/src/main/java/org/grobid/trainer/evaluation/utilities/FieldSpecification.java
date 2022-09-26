@@ -295,10 +295,10 @@ public class FieldSpecification {
 		FieldSpecification sectionTitleField = new FieldSpecification();
 		sectionTitleField.fieldName = "section_title";
 		sectionTitleField.isTextual = true;
-
-        //LF: added //text() at the end instead of /text() so that possible child nodes are also included in the xpath
-		sectionTitleField.grobidPath.add(Pair.of(xPath.compile("//text/body/div/head//text()"), XPathConstants.NODESET));
-		sectionTitleField.nlmPath.add(Pair.of(xPath.compile("//body//sec/title//text()"), XPathConstants.NODESET));
+		sectionTitleField.grobidPath.
+			add(Pair.of(xPath.compile("//text/body/div/head/text()"), XPathConstants.NODESET));
+		sectionTitleField.nlmPath.
+			add(Pair.of(xPath.compile("//body//sec/title/text()"), XPathConstants.NODESET));
 		fulltextFields.add(sectionTitleField);
 		fulltextLabels.add("section_title");
 
@@ -388,41 +388,23 @@ public class FieldSpecification {
 		//labels.add("figure_marker");
 		//labels.add("table_marker");
 
-
-        // Other XPATHs:
-            // text()
-        // - //article/body/sec/sec[title[contains(.,\"availability\")]]//text()
-        // - //article/back/sec/sec[title[contains(.,\"availability\")]]//text()
-            // string()
-        // - string(.//article/body/sec/sec[title[contains(.,\"availability\")]]
-
-        // - normalize-space(.//article/body/sec/sec[title[contains(.,"availability")]]
-        // - normalize-space(.//article/back/sec/sec[title[contains(.,"availability")]]
-
-
-        FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
-        dataAvailabilityFulltextField.fieldName = "availabilityStmt";
+		FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
+        dataAvailabilityFulltextField.fieldName = "availability_stmt";
         dataAvailabilityFulltextField.isTextual = true;
-//        dataAvailabilityFulltextField.grobidPath
-//            .add(Pair.of(xPath.compile("//note[@type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.grobidPath
             .add(Pair.of(xPath.compile("//div[@type=\"availability\"]//text()"), XPathConstants.NODESET));
-
         dataAvailabilityFulltextField.nlmPath
-//            .add(Pair.of(xPath.compile("normalize-space(.//article/body/sec[title[" + xpathTitle + "]])"), XPathConstants.STRING));
-            .add(Pair.of(xPath.compile("normalize-space(.//sec[@sec-type=\"availability\"])"), XPathConstants.STRING));
+            .add(Pair.of(xPath.compile("//sec[@sec-type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.nlmPath
-            .add(Pair.of(xPath.compile("normalize-space(.//p[@content-type=\"availability\"])"), XPathConstants.STRING));
+            .add(Pair.of(xPath.compile("//p[@content-type=\"availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.nlmPath
-            .add(Pair.of(xPath.compile("normalize-space(.//sec[@specific-use=\"availability\"])"), XPathConstants.STRING));
+            .add(Pair.of(xPath.compile("//sec[@specific-use=\"availability\"]//text()"), XPathConstants.NODESET));
 //        dataAvailabilityFulltextField.nlmPath
-//            .add(Pair.of(xPath.compile("normalize-space(.//article/back/sec[title[" + xpathTitle + "]])"), XPathConstants.STRING));
-//            .add(Pair.of(xPath.compile("normalize-space(.//article/back//sec[@sec-type=\"data-availability\"])"), XPathConstants.STRING));
+//            .add(Pair.of(xPath.compile("//article/back//sec[@sec-type=\"data-availability\"]//text()"), XPathConstants.NODESET));
         dataAvailabilityFulltextField.nlmPath
-            .add(Pair.of(xPath.compile("normalize-space(.//p[@content-type=\"availability\"])"), XPathConstants.STRING));
-
+            .add(Pair.of(xPath.compile("//p[@content-type=\"availability\"]//text()"), XPathConstants.NODESET));
         fulltextFields.add(dataAvailabilityFulltextField);
-        fulltextLabels.add("availabilityStmt");
+        fulltextLabels.add("availability_stmt");
 	}
 
 	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
