@@ -1520,7 +1520,7 @@ System.out.println("grobid: " + grobidResult);*/
 
 							/*if (fieldName.equals("availability_stmt")) {
 								if (goldResults.size() > 0) {
-									System.out.print("\n---- GOLD ----");
+									System.out.print("\n\n---- GOLD ----");
 									for (String goldResult : goldResults) {
 										System.out.print("\n" + goldResult);
 									}
