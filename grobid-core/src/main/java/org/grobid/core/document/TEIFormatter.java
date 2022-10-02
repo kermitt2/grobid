@@ -1077,11 +1077,7 @@ public class TEIFormatter {
                 desc.addAttribute(new Attribute("n", note.getLabel()));
             }
 
-            if (note.getLabel() != null) {
-                addXmlId(desc, note.getNoteTypeName()+ "_" + note.getLabel());
-            } else {
-                addXmlId(desc, note.getNoteTypeName()+ "_" + note.getIdentifier());
-            }
+            addXmlId(desc, note.getIdentifier());
 
             // for labelling bibliographical references in notes 
             List<LayoutToken> noteTokens = note.getTokens();
@@ -1429,7 +1425,7 @@ public class TEIFormatter {
                         }
 
                         ref.appendChild(matching.getLeft());
-                        ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
+                        ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
                         curParagraph.appendChild(ref);
 
                         pos = matchingPosition.end; 
@@ -1513,7 +1509,7 @@ public class TEIFormatter {
                                                 }
                                             }
                                             ref.appendChild(chunkRefString.trim());
-                                            ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
+                                            ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
 
                                             parent.appendChild(ref);
 
