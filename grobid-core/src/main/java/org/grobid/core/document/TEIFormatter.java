@@ -969,14 +969,14 @@ public class TEIFormatter {
 
             allNotes.add(footText);
 
-            List<Note> localNotes = makeNotes(noteTokens, footText, noteType);
+            List<Note> localNotes = makeNotes(noteTokens, footText, noteType, notes.size());
             notes.addAll(localNotes);
         }
 
         return notes;
     }
 
-    protected List<Note> makeNotes(List<LayoutToken> noteTokens, String footText, Note.NoteType noteType) {
+    protected List<Note> makeNotes(List<LayoutToken> noteTokens, String footText, Note.NoteType noteType, int startIndex) {
         
         List<Note> notes = new ArrayList<>();
 
@@ -1049,11 +1049,16 @@ public class TEIFormatter {
 
                 // process the concatenated note
                 if (nextNoteTokens.size() >0 && nextFootText.length()>0) {
-                    List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType);
+                    List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType, notes.size());
                     if (nextNotes != null && nextNotes.size()>0)
                         notes.addAll(nextNotes);
                 }
             }
+        }
+
+        for(int noteIndex=0; noteIndex<notes.size(); noteIndex++) {
+            Note oneNote = notes.get(noteIndex);
+            oneNote.setIdentifier(oneNote.getNoteTypeName() + "_" + (noteIndex+startIndex));
         }
 
         return notes;
