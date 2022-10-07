@@ -3,6 +3,7 @@ package org.grobid.core.document;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.StringUtils;
@@ -42,6 +43,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
@@ -967,14 +969,14 @@ public class TEIFormatter {
 
             allNotes.add(footText);
 
-            List<Note> localNotes = makeNotes(noteTokens, footText, noteType);
+            List<Note> localNotes = makeNotes(noteTokens, footText, noteType, notes.size());
             notes.addAll(localNotes);
         }
 
         return notes;
     }
 
-    protected List<Note> makeNotes(List<LayoutToken> noteTokens, String footText, Note.NoteType noteType) {
+    protected List<Note> makeNotes(List<LayoutToken> noteTokens, String footText, Note.NoteType noteType, int startIndex) {
         
         List<Note> notes = new ArrayList<>();
 
@@ -1047,11 +1049,16 @@ public class TEIFormatter {
 
                 // process the concatenated note
                 if (nextNoteTokens.size() >0 && nextFootText.length()>0) {
-                    List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType);
+                    List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType, notes.size());
                     if (nextNotes != null && nextNotes.size()>0)
                         notes.addAll(nextNotes);
                 }
             }
+        }
+
+        for(int noteIndex=0; noteIndex<notes.size(); noteIndex++) {
+            Note oneNote = notes.get(noteIndex);
+            oneNote.setIdentifier(oneNote.getNoteTypeName() + "_" + (noteIndex+startIndex));
         }
 
         return notes;
@@ -1075,11 +1082,7 @@ public class TEIFormatter {
                 desc.addAttribute(new Attribute("n", note.getLabel()));
             }
 
-            if (note.getLabel() != null) {
-                addXmlId(desc, note.getNoteTypeName()+ "_" + note.getLabel());
-            } else {
-                addXmlId(desc, note.getNoteTypeName()+ "_" + note.getIdentifier());
-            }
+            addXmlId(desc, note.getIdentifier());
 
             // for labelling bibliographical references in notes 
             List<LayoutToken> noteTokens = note.getTokens();
@@ -1138,36 +1141,45 @@ public class TEIFormatter {
         return tei;
     }
 
-    public StringBuilder toTEIAcknowledgement(StringBuilder buffer,
-                                              String reseAcknowledgement,
-                                              List<LayoutToken> tokenizationsAcknowledgement,
-                                              List<BibDataSet> bds,
+    public StringBuilder processTEIDivSection(String xmlType,
+                                              String indentation,
+                                              String text,
+                                              List<LayoutToken> tokens,
+                                              List<BibDataSet> biblioData,
                                               GrobidAnalysisConfig config) throws Exception {
-        if ((reseAcknowledgement == null) || (tokenizationsAcknowledgement == null)) {
-            return buffer;
+        StringBuilder outputTei = new StringBuilder();
+
+        if ((StringUtils.isBlank(text)) || (tokens == null)) {
+            return outputTei;
         }
 
-        buffer.append("\n\t\t\t<div type=\"acknowledgement\">\n");
-        StringBuilder buffer2 = new StringBuilder();
+        outputTei.append("\n").append(indentation).append("<div type=\"").append(xmlType).append("\">\n");
+        StringBuilder contentBuffer = new StringBuilder();
 
-        buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
+        contentBuffer = toTEITextPiece(contentBuffer, text, null, biblioData, false,
+                new LayoutTokenization(tokens), null, null, null, 
+            null, null, doc, config);
+        String result = contentBuffer.toString();
+        String[] resultAsArray = result.split("\n");
+
+        /*buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
                 new LayoutTokenization(tokenizationsAcknowledgement), null, null, null,
             null, null,  doc, config);
         String acknowResult = buffer2.toString();
-        String[] acknowResultLines = acknowResult.split("\n");
+        String[] acknowResultLines = acknowResult.split("\n");*/
+
         boolean extraDiv = false;
-        if (acknowResultLines.length != 0) {
-            for (int i = 0; i < acknowResultLines.length; i++) {
-                if (acknowResultLines[i].trim().length() == 0)
+        if (resultAsArray.length != 0) {
+            for (int i = 0; i < resultAsArray.length; i++) {
+                if (resultAsArray[i].trim().length() == 0)
                     continue;
-                buffer.append(TextUtilities.dehyphenize(acknowResultLines[i]) + "\n");
+                outputTei.append(TextUtilities.dehyphenize(resultAsArray[i])).append("\n");
             }
         }
-        buffer.append("\t\t\t</div>\n\n");
+        outputTei.append(indentation).append("</div>\n\n");
 
-        return buffer;
+        return outputTei;
     }
-
 
     public StringBuilder toTEIAnnex(StringBuilder buffer,
                                     String result,
@@ -1418,7 +1430,7 @@ public class TEIFormatter {
                         }
 
                         ref.appendChild(matching.getLeft());
-                        ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
+                        ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
                         curParagraph.appendChild(ref);
 
                         pos = matchingPosition.end; 
@@ -1502,7 +1514,7 @@ public class TEIFormatter {
                                                 }
                                             }
                                             ref.appendChild(chunkRefString.trim());
-                                            ref.addAttribute(new Attribute("target", "#" + note.getNoteTypeName()+"_"+ note.getLabel()));
+                                            ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
 
                                             parent.appendChild(ref);
 

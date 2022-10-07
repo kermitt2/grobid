@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210163"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Did relaxing clinical trial regulation enhance<lb/> the stock of scientific knowledge in India? Not necessarily<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Bastian Rake ID 1<lb/> *, Carolin Haeussler ID 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Business, Maynooth University,</affiliation>
+	</byline>
+
+	<address>Maynooth, Co Kildare, Ireland,</address>
+
+	<byline>
+	<affiliation>2 Chair of Organisation,<lb/> Technology Management and Entrepreneurship, University of Passau,</affiliation>
+	</byline>
+
+	<address>Passau, Germany<lb/></address>
+
+	*
+	<email>bastian.rake@mu.ie</email>
+
+	Abstract<lb/>
+	<div type="abstract">The increasing amount of clinical research conducted outside the &quot;traditional&quot; countries<lb/> raises questions about the benefits of hosting offshored clinical research. The extent to<lb/> which trials contribute to the scientific knowledge base and, in particular, whether there are<lb/> differences between different types of trials remain open questions. By examining a change<lb/> in clinical trial regulations in India, a country often viewed as a first-choice offshoring loca-<lb/>tion, we study how the relaxation of clinical trial regulations affects the number and the type<lb/> of clinical trials as well as the domestic scientific knowledge base. Based on trial data from<lb/> ClinicalTrials.gov and data on associated publication activities, our empirical analysis sug-<lb/>gests that, despite an initial increase in the number of clinical trials, relaxing clinical trial reg-<lb/>ulations has a limited impact on the domestic scientific knowledge base. More specifically,<lb/> the number of Indian researchers involved in the production of trial-related scientific knowl-<lb/>edge remains modest. Furthermore, the potential to learn from the additional trials appears<lb/> to be limited: the influx of phase 3 trials-mainly sponsored by Western-pharmaceutical<lb/> firms-is accompanied by a lower likelihood that the trial results will be used in Indian<lb/> researchers&apos; subsequent research activities when compared to phase 3 trials with preceding<lb/> phase 2 trials, as was required before the regulatory change. Overall, our results contradict<lb/> expectations that relaxing the regulatory requirements for conducting late-stage clinical tri-<lb/>als is an appropriate means of supporting the development of the domestic scientific knowl-<lb/>edge base.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210163 January 3, 2019<lb/></reference>
+
+	<page>1 / 15<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Rake B, Haeussler C (2019) Did relaxing<lb/> clinical trial regulation enhance the stock of<lb/> scientific knowledge in India? Not necessarily.<lb/> PLoS ONE 14(1): e0210163.</reference>
+
+	<idno>https://doi.org/<lb/> 10.1371/journal.pone.0210163<lb/></idno>
+
+	Editor:
+	<editor>Joel Lexchin,</editor>
+
+	<byline>
+	<affiliation>York University,</affiliation>
+	</byline>
+
+	<address>CANADA<lb/></address>
+
+	<note type="submission">Received: April 13, 2018<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>January 3, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Rake, Haeussler. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<div type="abstract">Data on clinical trials<lb/> conducted in India obtained from ClinicalTrials.gov<lb/> is made available in the corresponding Supporting<lb/> Information file. Other authors can also access this<lb/> information through ClinicalTrials.gov. We obtained<lb/> publication data from the Scopus database which<lb/> is a proprietary database (www.scopus.com).<lb/> Researchers interested in replicating our study can<lb/> access data on trial-related publications following<lb/> the search procedure described in the paper.<lb/> Researchers do not need special privileges to<lb/> access the Scopus database, however, a<lb/> subscription may be required. The authors did not<lb/> have special access privileges to the data.<lb/></div>
+
+	Funding:
+	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

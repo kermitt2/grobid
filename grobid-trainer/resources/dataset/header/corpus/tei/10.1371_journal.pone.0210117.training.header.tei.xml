@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210117"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Group flow: A scoping review of definitions,<lb/> theoretical approaches, measures and findings<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Fabian Pels ID *, Jens Kleinert, Florian Mennigen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Health &amp; Social Psychology, Institute of Psychology, German Sport University,</affiliation>
+	</byline>
+
+	<address>Cologne, North<lb/> Rhine Westfalia, Germany<lb/></address>
+
+	*
+	<email>f.pels@dshs-koeln.de</email>
+
+	Abstract<lb/>
+	<div type="abstract">The purpose of this article is to provide a scoping review of the current literature on group<lb/> flow. Based on the PRISMA-guidelines for systematic reviews, 26 publications were<lb/> identified that met the inclusion criteria. Publication analyses comprised an individual con-<lb/>sideration of each publication and a systematic, integrative synthesis of all publications.<lb/> Analyses identified heterogeneous group flow definitions across publications, supporting<lb/> the need for an integrative definition. Further heterogeneity existed in the theoretical<lb/> approaches and measures used, highlighting the need for a comprehensive theory and<lb/> a measurement standard. Components (e.g., synchronization), antecedents (e.g., trust),<lb/> and outcomes (e.g., well-being) of group flow were identified in publications that presented<lb/> empirical studies, some of which that showed similarities between characteristics of group<lb/> flow and individual flow and others that showed aspects unique to group flow. Overall, this<lb/> scoping review reveals the need for a systematic research program on group flow.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210117 December 31, 2018<lb/></reference>
+
+	<page>1 / 28<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Pels F, Kleinert J, Mennigen F (2018)<lb/> Group flow: A scoping review of definitions,<lb/> theoretical approaches, measures and findings.<lb/> PLoS ONE 13(12): e0210117.</reference>
+
+	<idno>https://doi.org/<lb/> 10.1371/journal.pone.0210117<lb/></idno>
+
+	Editor:
+	<editor>Eleonora Brivio,</editor>
+
+	<byline>
+	<affiliation>Università Cattolica del<lb/> Sacro Cuore,</affiliation>
+	</byline>
+
+	<address>ITALY<lb/></address>
+
+	<note type="submission">Received: September 11, 2018<lb/> Accepted: December 17, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Pels et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">The data underlying <lb/>the results presented in the study are available <lb/>from the respective papers which are reviewed in <lb/>our manuscript. <lb/></note>
+
+	Funding:
+	<note type="funding">The author(s) received no specific<lb/> funding for this work.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

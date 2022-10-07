@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210039"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Acceptability and utility of, and preference for<lb/> wearable activity trackers amongst non-<lb/>metropolitan cancer survivors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Sarah J. Hardcastle ID<lb/> 1,2<lb/> *, Maddison Galliott 1 , Brigid M. Lynch 3 , Nga H. Nguyen 3 , Paul<lb/> A. CohenID 2,4 , Ganendra Raj Mohan 5 , Niloufer J. Johansen 5 , Christobel Saunders 2,5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 School of Psychology, Curtin University,</affiliation>
+	</byline>
+
+	<address>Perth, WA, Australia,</address>
+
+	<byline>
+	<affiliation>2 School of Medicine, University of Western<lb/> Australia,</affiliation>
+	</byline>
+
+	<address>Crawley, WA, Australia,</address>
+
+	<byline>
+	<affiliation>3 Cancer Council Victoria,</affiliation>
+	</byline> 
+
+	<address>Melbourne, VIC, Australia,</address>
+
+	<byline>
+	<affiliation>4 St John of God<lb/> Hospital,</affiliation>
+	</byline>
+
+	<address>Subiaco, WA, Australia,</address>
+
+	<byline>
+	<affiliation>5 Hollywood Private Hospital,</affiliation>
+	</byline>
+
+	<address>Nedlands, WA, Australia<lb/></address>
+
+	*
+	<email>sarah.hardcastle@curtin.edu.au</email>
+
+	Abstract 
+	<div type="abstract">Purpose<lb/> The study purpose was to investigate the acceptability and utility of, and preference for,<lb/> wearable activity trackers (WATs) amongst cancer survivors living in regional and remote<lb/> areas of Western Australia. Methods<lb/> Twenty participants were recruited (Mean age = 63 years, SD = 13) to test two to three track-<lb/>ers from five available models (Fitbit Alta, Garmin Vivofit 2, Garmin Vivosmart, Polar loop 2<lb/> and Polar A300). Participants wore each device for two weeks, followed by a one-week<lb/> washout period between devices. Interviews were conducted with participants to explore<lb/> user perceptions and experiences. Interview transcripts were analysed using thematic<lb/> analysis. Results<lb/> Four main themes emerged: (i) Consciousness raising; (ii) Prompts and Feedback; (iii)<lb/> Accuracy and registry of activities; and, (iv) WAT preferences and features. Conclusions<lb/> WATs were acceptable and useful to cancer survivors. WATs increased self-awareness of<lb/> physical activity, provided real time feedback in relation to step goals, and reinforced prog-<lb/>ress and efforts towards goals. The aesthetics of the WATs were deemed crucial in deter-<lb/>mining preference and likelihood of use.<lb/> Implications for cancer survivors<lb/> Future interventions may do well to have two different WATs available for participants to<lb/> choose from, according to activity preferences, aesthetic preferences, and display size.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210039 December 31, 2018<lb/></reference>
+
+	<page>1 / 13<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Hardcastle SJ, Galliott M, Lynch BM,<lb/> Nguyen NH, Cohen PA, Mohan GR, et al. (2018)<lb/> Acceptability and utility of, and preference for<lb/> wearable activity trackers amongst non-<lb/>metropolitan cancer survivors. PLoS ONE 13(12):<lb/> e0210039.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210039<lb/></idno>
+
+	Editor:
+	<editor>Barbara Schouten,</editor>
+
+	<byline>
+	<affiliation>Universiteit van<lb/> Amsterdam,</affiliation>
+	</byline>
+
+	<address>NETHERLANDS<lb/></address>
+
+	<note type="submission">Received: October 15, 2018<lb/> Accepted: December 14, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Hardcastle et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement: 
+	<note type="availability">Data cannot be<lb/> shared publicly to protect patient and clinician<lb/> anonymity. Data are available from the St John of<lb/> God Human Research Ethics Committee (contact<lb/> via ethics@sjog.org.au) for researchers who meet<lb/> the criteria for access to confidential data.<lb/></note>
+
+	Funding:
+	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

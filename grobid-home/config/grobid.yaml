@@ -16,17 +16,17 @@ grobid:
       path: "pdfalto"
       # security for PDF parsing
       memoryLimitMb: 6096
-      timeoutSec: 60
+      timeoutSec: 120
 
     # security relative to the PDF parsing result
-    blocksMax: 100000
+    blocksMax: 200000
     tokensMax: 1000000
 
   consolidation:
     # define the bibliographical data consolidation service to be used, either "crossref" for CrossRef REST API or 
     # "glutton" for https://github.com/kermitt2/biblio-glutton
-    service: "crossref"
-    #service: "glutton"
+    #service: "crossref"
+    service: "glutton"
     glutton:
       url: "https://cloud.science-miner.com/glutton"
       #url: "http://localhost:8080" 

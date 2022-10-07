@@ -968,6 +968,12 @@ public class HeaderParser extends AbstractParser {
                     biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AVAILABILITY)) {
+                if (StringUtils.isNotBlank(biblio.getAvailabilityStmt())) {
+                    biblio.setAvailabilityStmt(biblio.getAvailabilityStmt() + " \n " + clusterContent);
+                } else{
+                    biblio.setAvailabilityStmt(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
                     biblio.setPhone(biblio.getPhone() + clusterNonDehypenizedContent);
@@ -1281,6 +1287,9 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<group>", "<note type=\"group\">", addSpace);
             }
             if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<availability>", "<note type=\"availability\">", addSpace);
+            }
+            if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<other>", "", addSpace);
             }
 
@@ -1365,6 +1374,8 @@ public class HeaderParser extends AbstractParser {
             } else if (lastTag0.equals("<date-download>")) {
                 buffer.append("</date>\n");
             } else if (lastTag0.equals("<group>")) {
+                buffer.append("</note>\n");
+            } else if (lastTag0.equals("<availability>")) {
                 buffer.append("</note>\n");
             }
         }

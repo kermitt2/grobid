@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210008"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Development of ACE2 autoantibodies after<lb/> SARS-CoV-2 infection<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>John M. ArthurID 1,2☯ *, J. Craig Forrest 3,4,5☯ , Karl W. Boehme 3,4,5☯ , Joshua L. Kennedy 4,6 ,<lb/> Shana Owens 3 , Christian Herzog 1 , Juan Liu 7 , Terry O. HarvilleID 1,7☯<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Medicine, University of Arkansas for Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of<lb/> America,</address>
+
+	<byline>
+	<affiliation>2 Central Arkansas Veterans Healthcare System,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of America,<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Microbiology and Immunology, University of Arkansas for Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR,<lb/> United States of America,</address>
+
+	<byline>
+	<affiliation>4 Center for Microbial Pathogenesis and Host Inflammatory Responses, University<lb/> of Arkansas for Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of America,</address>
+
+	<byline>
+	<affiliation> 5 Winthrop P. Rockefeller<lb/> Cancer Institute, University of Arkansas for Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of America,<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Pediatrics, University of Arkansas for Medical Sciences,</affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of<lb/> America,</address>
+
+	<byline>
+	<affiliation>7 Department of Pathology and Laboratory Services, University of Arkansas for Medical Sciences,<lb/></affiliation>
+	</byline>
+
+	<address>Little Rock, AR, United States of America<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> *
+	<email>jmarthur@uams.edu</email>
+
+	Abstract
+	<div type="abstract">Background<lb/> Activation of the immune system is implicated in the Post-Acute Sequelae after SARS-CoV-<lb/>2 infection (PASC) but the mechanisms remain unknown. Angiotensin-converting enzyme 2<lb/> (ACE2) cleaves angiotensin II (Ang II) resulting in decreased activation of the AT1 receptor<lb/> and decreased immune system activation. We hypothesized that autoantibodies against<lb/> ACE2 may develop after SARS-CoV-2 infection, as anti-idiotypic antibodies to anti-spike<lb/> protein antibodies.<lb/> Methods and findings<lb/> We tested plasma or serum for ACE2 antibodies in 67 patients with known SARS-CoV-2<lb/> infection and 13 with no history of infection. None of the 13 patients without history of SARS-<lb/>CoV-2 infection and 1 of the 20 outpatients that had a positive PCR test for SARS-CoV-2<lb/> had levels of ACE2 antibodies above the cutoff threshold. In contrast, 26/32 (81%) in the<lb/> convalescent group and 14/15 (93%) of patients acutely hospitalized had detectable ACE2<lb/> antibodies. Plasma from patients with antibodies against ACE2 had less soluble ACE2 activ-<lb/>ity in plasma but similar amounts of ACE2 protein compared to patients without ACE2 anti-<lb/>bodies. We measured the capacity of the samples to inhibit ACE2 enzyme activity. Addition<lb/> of plasma from patients with ACE2 antibodies led to decreased activity of an exogenous<lb/> preparation of ACE2 compared to patients that did not have antibodies. Conclusions<lb/> Many patients with a history of SARS-CoV-2 infection have antibodies specific for ACE2.<lb/> Patients with ACE2 antibodies have lower activity of soluble ACE2 in plasma. Plasma from<lb/></div>
+
+	<title level="j">PLOS ONE<lb/></title>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0257016 September 3, 2021<lb/></reference>
+
+	<page>1 / 14<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Arthur JM, Forrest JC, Boehme KW,<lb/> Kennedy JL, Owens S, Herzog C, et al. (2021)<lb/> Development of ACE2 autoantibodies after SARS-<lb/>CoV-2 infection. PLoS ONE 16(9): e0257016.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0257016<lb/></idno>
+
+	Editor:
+	<editor>Michael Bader,</editor>
+	<byline>
+		<affiliation>Max Delbruck Centrum fur<lb/> Molekulare Medizin </affiliation>
+	</byline>
+
+	<address>Berlin Buch, GERMANY<lb/></address>
+
+	<note type="submission">Received: May 5, 2021<lb/> Accepted: August 20, 2021<lb/></note>
+
+	Published:
+	<date>September 3, 2021<lb/></date>
+
+	Copyright:
+	<note type="copyright">This is an open access article, free of all<lb/> copyright, and may be freely reproduced,<lb/> distributed, transmitted, modified, built upon, or<lb/> otherwise used by anyone for any lawful purpose.<lb/> The work is made available under the Creative<lb/> Commons CC0 public domain dedication.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All relevant data are <lb/>in the manuscript and Supporting Information file. <lb/></note>
+
+	Funding:
+	<note type="funding">JMA UL1 TR003107 National Center for<lb/> Advancing Translational Sciences of the National<lb/> Institutes of Health JMA KL2 TR003108 National<lb/> Center for Advancing Translational Sciences of the<lb/> National Institutes of Health KWB TL1 TR003109<lb/> National Center for Advancing Translational<lb/> Sciences of the National Institutes of Health JCF,<lb/>KWB, JLK P20 GM103625 National Institute of<lb/> General Medical Sciences of the National Institutes<lb/> of Health AWD00054193 University of Arkansas<lb/></note>
+
+	<div type="abstract">these patients also inhibits exogenous ACE2 activity. These findings are consistent with the<lb/> hypothesis that ACE2 antibodies develop after SARS-CoV-2 infection and decrease ACE2<lb/> activity. This could lead to an increase in the abundance of Ang II, which causes a proinflam-<lb/>matory state that triggers symptoms of PASC.<lb/> for Medical Sciences The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></div>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

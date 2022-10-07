@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1038_s41746-018-0018-4"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">BRIEF COMMUNICATION OPEN<lb/></note>
+
+	<docTitle>
+	<titlePart>Digital biomarkers of cognitive function<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Paul Dagum 1<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">To identify digital biomarkers associated with cognitive function, we analyzed human-computer interaction from 7 days of<lb/> smartphone use in 27 subjects (ages 18-34) who received a gold standard neuropsychological assessment. For several<lb/> neuropsychological constructs (working memory, memory, executive function, language, and intelligence), we found a family of<lb/> digital biomarkers that predicted test scores with high correlations (p &lt; 10 −4 ). These preliminary results suggest that passive<lb/> measures from smartphone use could be a continuous ecological surrogate for laboratory-based neuropsychological assessment.<lb/></div>
+
+	<reference>npj Digital Medicine (2018) 1:10 ;</reference>
+
+	<idno>doi:10.1038/s41746-018-0018-4<lb/></idno>
+
+	<note type="submission">Received: 5 October 2017 Revised: 3 February 2018 Accepted: 7 February 2018</note>
+
+	<byline>
+	<affiliation>1<lb/> Mindstrong Health,</affiliation>
+	</byline>
+
+	<address>248 Homer Street, Palo Alto, CA 94301, USA<lb/></address>
+
+	Correspondence:
+	<byline>
+	<docAuthor>Paul Dagum</docAuthor>
+	</byline>
+
+	(
+	<email>paul@mindstronghealth.com</email>
+
+	)<lb/> www.nature.com/npjdigitalmed<lb/> Published in partnership with the Scripps Translational Science Institute<lb/>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons<lb/> Attribution 4.0 International License, which permits use, sharing,<lb/> adaptation, distribution and reproduction in any medium or format, as long as you give<lb/> appropriate credit to the original author(s) and the source, provide a link to the Creative<lb/> Commons license, and indicate if changes were made. The images or other third party<lb/> material in this article are included in the article&apos;s Creative Commons license, unless<lb/> indicated otherwise in a credit line to the material. If material is not included in the<lb/> article&apos;s Creative Commons license and your intended use is not permitted by statutory<lb/> regulation or exceeds the permitted use, you will need to obtain permission directly<lb/> from the copyright holder. To view a copy of this license, visit http://creativecommons.<lb/> org/licenses/by/4.0/.<lb/> © The Author(s) 2018<lb/></note>
+
+	<docTitle>
+	<titlePart>Digital biomarkers of cognitive function<lb/> P Dagum</titlePart>
+	</docTitle>
+
+		</front>
+	</text>
+</tei>

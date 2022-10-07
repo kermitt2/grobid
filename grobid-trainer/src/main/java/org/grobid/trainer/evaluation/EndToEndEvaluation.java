@@ -13,14 +13,15 @@ import org.grobid.trainer.evaluation.utilities.FieldSpecification;
 
 import java.io.*;
 import java.util.*;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.collections4.CollectionUtils;
 
 import org.w3c.dom.*;
 import javax.xml.xpath.XPath;
@@ -141,12 +142,12 @@ public class EndToEndEvaluation {
 		
 		// initialize the field specifications and label list
 		headerFields = new ArrayList<>();
-		fulltextFields = new ArrayList<FieldSpecification>();	
-		citationsFields = new ArrayList<FieldSpecification>();
+		fulltextFields = new ArrayList<>();	
+		citationsFields = new ArrayList<>();
 		
-		headerLabels = new ArrayList<String>();
-		fulltextLabels = new ArrayList<String>();
-		citationsLabels = new ArrayList<String>();
+		headerLabels = new ArrayList<>();
+		fulltextLabels = new ArrayList<>();
+		citationsLabels = new ArrayList<>();
 		
 		FieldSpecification.setUpFields(headerFields, fulltextFields, citationsFields, 
 			headerLabels, fulltextLabels, citationsLabels);
@@ -184,7 +185,7 @@ public class EndToEndEvaluation {
 			int fails = 0;
 
 			ExecutorService executor = Executors.newFixedThreadPool(GrobidProperties.getInstance().getMaxConcurrency()-1);
-			List<Future<Boolean>> results = new ArrayList<Future<Boolean>>();
+			List<Future<Boolean>> results = new ArrayList<>();
 
 			if (refFiles.length > 0) {
 				// this will preload the models, so that the model loading messages don't mess with the progress bar
@@ -532,7 +533,7 @@ public class EndToEndEvaluation {
 					// explicit indication of the default namespace
 				  	map.put("tei", "http://www.tei-c.org/ns/1.0");
 
-					Map<String, String> mappings = new HashMap<String, String>();
+					Map<String, String> mappings = new HashMap<>();
 					mappings.put("tei", "http://www.tei-c.org/ns/1.0");
 				  	xp.setNamespaceContext(new NamespaceContextMap(mappings));
 					
@@ -558,26 +559,26 @@ public class EndToEndEvaluation {
 
 						// "signature" of the citations for this file
 						// level 1 signature: titre + date 
-						List<String> goldCitationSignaturesLevel1 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel1 = new ArrayList<>();
 						
 						// level 2 signature: all authors names + date
-						List<String> goldCitationSignaturesLevel2 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel2 = new ArrayList<>();
 						
 						// level 3 signature: journal + volume + page
-						List<String> goldCitationSignaturesLevel3 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel3 = new ArrayList<>();
 						
 						// level 4 signature:  "fuzzy titre" + date + at least one of auteurs or first page
-						List<String> goldCitationSignaturesLevel4 = new ArrayList<String>();
+						List<String> goldCitationSignaturesLevel4 = new ArrayList<>();
 						
 						// map between citation id from gold and from grobid (if matching between the two citations)
-						Map<String, String> idMap = new HashMap<String, String>();
-						Map<String, String> reverseIdMap = new HashMap<String, String>();
-						List<String> goldIds = new ArrayList<String>();
+						Map<String, String> idMap = new HashMap<>();
+						Map<String, String> reverseIdMap = new HashMap<>();
+						List<String> goldIds = new ArrayList<>();
 
 						for (int i = 0; i < nodeList.getLength(); i++) {
 							// sometimes we just have the raw citation bellow this, so we will have to further
 							// test if we have something structured 							
-							Map<String,List<String>> fieldsValues = new HashMap<String,List<String>>();
+							Map<String,List<String>> fieldsValues = new HashMap<>();
 							Node node = nodeList.item(i);
 							int p = 0;
 							for(FieldSpecification field : fields) {
@@ -600,7 +601,7 @@ public class EndToEndEvaluation {
 									NodeList nodeList2 = (NodeList) xp.compile(subpath).
 										evaluate(node, XPathConstants.NODESET);
 									
-									List<String> goldResults = new ArrayList<String>();
+									List<String> goldResults = new ArrayList<>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
 										if ((content != null) && (content.trim().length() > 0)) {
@@ -758,7 +759,7 @@ public class EndToEndEvaluation {
 								for(String subpath : field.grobidPath) {
 									NodeList nodeList2 = (NodeList) xp.compile(subpath).
 										evaluate(node, XPathConstants.NODESET);
-									List<String> grobidResults = new ArrayList<String>();
+									List<String> grobidResults = new ArrayList<>();
 									for (int j = 0; j < nodeList2.getLength(); j++) {
 										String content = nodeList2.item(j).getNodeValue();
 										if ((content != null) && (content.trim().length() > 0)) {
@@ -1109,8 +1110,8 @@ public class EndToEndEvaluation {
 						// reference context matching
 						if ( (sectionType == this.CITATION) && (runType == this.GROBID) ) {
 							// list of identifiers present in the bibliographical references
-							List<String> refBibRefIds = new ArrayList<String>();
-							List<String> grobidBibRefIds = new ArrayList<String>();
+							List<String> refBibRefIds = new ArrayList<>();
+							List<String> grobidBibRefIds = new ArrayList<>();
 
 							String subpath = null;
 							if (inputType.equals("nlm")) {
@@ -1140,8 +1141,8 @@ public class EndToEndEvaluation {
 							totalObservedReferences += grobidBibRefIds.size();
 
 							// Map associating the identifiers present in the reference callout with their number of occurences
-							Map<String, Integer> refCalloutRefIds = new HashMap<String, Integer>();
-							Map<String, Integer> grobidCalloutRefIds = new HashMap<String, Integer>();
+							Map<String, Integer> refCalloutRefIds = new HashMap<>();
+							Map<String, Integer> grobidCalloutRefIds = new HashMap<>();
 
 							if (inputType.equals("nlm")) {
 								subpath = FieldSpecification.nlmCitationContextId;
@@ -1234,7 +1235,7 @@ public class EndToEndEvaluation {
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
 						
-							List<String> grobidResults = new ArrayList<String>();
+							List<String> grobidResults = new ArrayList<>();
 							int nbGrobidResults = 0;
 							for(String path : field.grobidPath) {
 								NodeList nodeList = (NodeList) xp.compile(path).
@@ -1252,12 +1253,12 @@ public class EndToEndEvaluation {
 								// basic normalisation
 								grobidResult = basicNormalization(grobidResult);
 								//System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
-								grobidResults = new ArrayList<String>();
+								grobidResults = new ArrayList<>();
 								grobidResults.add(grobidResult);
 								nbGrobidResults = 1;
 							}
 						
-							List<String> goldResults = new ArrayList<String>();
+							List<String> goldResults = new ArrayList<>();
 							int nbGoldResults = 0;
 							List<String> subpaths = null;
 							if (inputType.equals("nlm")) {
@@ -1294,7 +1295,7 @@ public class EndToEndEvaluation {
 									}
 								}	
 								//System.out.println("gold:  " + fieldName + ":\t" + goldResult);
-								goldResults = new ArrayList<String>();
+								goldResults = new ArrayList<>();
 								goldResults.add(goldResult);
 								nbGoldResults = 1;
 							}
@@ -1443,14 +1444,16 @@ System.out.println("grobid: " + grobidResult);*/
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
 						
-							List<String> grobidResults = new ArrayList<String>();
+							List<String> grobidResults = new ArrayList<>();
 							int nbGrobidResults = 0;
 							for(String path : field.grobidPath) {
 								NodeList nodeList = (NodeList) xp.compile(path).
 									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-								    grobidResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
+									String normalizedString = basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName);
+									if (normalizedString != null && normalizedString.length()>0)
+								    	grobidResults.add(normalizedString);
 								}
 							}						
 
@@ -1466,7 +1469,7 @@ System.out.println("grobid: " + grobidResult);*/
 							}
 							System.out.println("");*/
 							
-							List<String> goldResults = new ArrayList<String>();
+							List<String> goldResults = new ArrayList<>();
 							int nbgoldResults = 0;
 							List<String> subpaths = null;
 							if (inputType.equals("nlm")) {
@@ -1481,7 +1484,9 @@ System.out.println("grobid: " + grobidResult);*/
 								//System.out.println(path + ": " + nodeList.getLength() + " nodes");
 								nbgoldResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
-									goldResults.add(basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName));
+									String normalizedString = basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName);
+									if (normalizedString != null && normalizedString.length()>0)
+										goldResults.add(normalizedString);
 								}
 							}
 
@@ -1496,10 +1501,40 @@ System.out.println("grobid: " + grobidResult);*/
 							}
 							System.out.println("");*/
 							
+							// Workaround to avoid having two different lists with the same content
+                            // Probably to be extended to other fields if does not cause
+                            if (fieldName.equals("availability_stmt")) {
+	                            if (CollectionUtils.isNotEmpty(grobidResults)) {
+	                                List<String> grobidResults2 = new ArrayList<>();
+	                                grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
+	                                grobidResults = grobidResults2;
+	                            }
+	                            if (CollectionUtils.isNotEmpty(goldResults)) {
+	                                List<String> goldResults2 = new ArrayList<>();
+	                                goldResults2.add(goldResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
+	                                goldResults = goldResults2;
+	                            }
+	                        }
+
 							// we compare the two result sets
+
+							/*if (fieldName.equals("availability_stmt")) {
+								if (goldResults.size() > 0) {
+									System.out.print("\n\n---- GOLD ----");
+									for (String goldResult : goldResults) {
+										System.out.print("\n" + goldResult);
+									}
+								}
+								if (grobidResults.size() > 0) {
+									System.out.print("\n---- GROBID ----");
+									for (String grobidResult : grobidResults) {
+										System.out.print("\n" + grobidResult);
+									}
+								}
+							}*/
 							
 							// prepare first the grobidResult set for soft match
-							List<String> grobidSoftResults = new ArrayList<String>();
+							List<String> grobidSoftResults = new ArrayList<>();
 							for(String res : grobidResults)
 								grobidSoftResults.add(removeFullPunct(res));
 							
@@ -1875,7 +1910,7 @@ System.out.println("grobid: " + grobidResult);*/
 		string = UnicodeUtil.normaliseText(string);
 		string = string.replace("\n", " ");
 		string = string.replace("\t", " ");
-		string = string.replaceAll("_", " ");
+		string = string.replace("_", " ");
 		string = string.replace("\u00A0", " ");
 		if (fieldName.equals("reference_figure")) {
 			string = string.replace("figure", "").replace("Figure", "").replace("fig.", "").replace("Fig.", "").replace("fig", "").replace("Fig", "");

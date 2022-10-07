@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<orgName type="department">Institute of Physics</orgName>,
+							<orgName type="institution">Jan Długosz University in Częstochowa</orgName>,
+							<address>
+								<addrLine>Ave. Armii Krajowej 13/15</addrLine>,
+								<postCode>42-200</postCode>,
+								<settlement>Częstochowa</settlement>,
+							<lb/>
+								<country>Poland</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Faculty of Chemistry</orgName>,
+							<orgName type="institution">University of Warsaw</orgName>,
+							<address>
+								<addrLine>Pasteura 1</addrLine>,
+								<postCode>02-093</postCode>,
+								<settlement>Warsaw</settlement>,
+								<country>Poland</country>.
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Institute of Physics</orgName>,
+							<lb/>
+							<orgName type="institution">Częstochowa University of Technology</orgName>,
+							<address>
+								<addrLine>Ave. Armii Krajowej 19</addrLine>,
+								<postCode>42-200</postCode>,
+								<settlement>Częstochowa</settlement>,
+								<country>Poland</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

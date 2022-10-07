@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1101_2020.02.10.20021832"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+
+	Title page<lb/>
+	<docTitle>
+	<titlePart>Characteristics of lymphocyte subsets and cytokines in peripheral blood of 123 hospitalized<lb/> patients with 2019 novel coronavirus pneumonia (NCP)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Suxin Wan, M.D. 1,2, # , Qingjie Yi, M.D. 1, 3, # , Shibing Fan, Ph.D 1, 4, # , Jinglong Lv, M.D. 1,5, * ,<lb/> Xianxiang Zhang, M.D. 1,6 , Lian Guo, M.D. 1,6 , Chunhui Lang, Ph.D 1,7 , Qing Xiao, M.D. 8 , Kaihu<lb/> Xiao, M.D. 1,9 , Zhengjun Yi, Ph.D 10 , Mao Qiang, M.S. 11 , Jianglin Xiang, M.S. 1, 12 , Bangshuo Zhang,<lb/> M.D. 1, 5 , Yongping Chen, M.S. 1, 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Chongqing University Three Gorges Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>2 Pharmaceutical Department of Chongqing Three Gorges Central Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>3 Quality control Department of Chongqing Three Gorges Central Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>4 Neurosurgery of Chongqing Three Gorges Central Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Hematology, Chongqing Three Gorges Central Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Endocrinology, Chongqing Three Gorges Central Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>7 Research and Foreign Affairs Department of Chongqing Three Gorges Central Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>8 Department of Hematology, the First Affiliated Hospital of Chongqing Medical University,<lb/></affiliation>
+	</byline>
+
+	<address>Chongqing 404016, China；<lb/></address>
+
+	<byline>
+	<affiliation>9 Department of Cardiology, Chongqing Three Gorges Center Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100, China；<lb/></address>
+
+	<byline>
+	<affiliation>10 School of mathematics and statistics, Chongqing University,</affiliation>
+	</byline>
+
+	<address>Chongqing 401331, China；<lb/></address>
+
+	<byline>
+	<affiliation>11 Basic College of Qingdao University,</affiliation>
+	</byline>
+
+	<address>Qingdao, Shandong 266071, China;<lb/></address>
+
+	<byline>
+	<affiliation>12 Department of Infectious Diseases, Chongqing Three Gorges Center Hospital,</affiliation>
+	</byline>
+
+	<address>Chongqing 404100,<lb/> China.<lb/></address>
+
+	*Corresponding Author:
+	<byline>
+	<docAuthor>Jinglong Lv,</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Hematology, Chongqing Three Gorges<lb/> Central Hospital,</affiliation>
+	</byline>
+
+	<address>No. 165, Xincheng Road, Wanzhou District, Chongqing 404100, China.<lb/></address>
+
+	.<lb/>
+	<note type="copyright">CC-BY-NC 4.0 International license<lb/> It is made available under a<lb/> perpetuity.<lb/> is the author/funder, who has granted medRxiv a license to display the preprint in<lb/> (which was not certified by peer review) preprint<lb/> The copyright holder for this<lb/> this version posted February 12, 2020.<lb/></note>
+
+	;<lb/>
+	<idno>https://doi.org/10.1101/2020.02.10.20021832<lb/></idno>
+
+	doi:<lb/> medRxiv 
+	<note type="doctype">preprint<lb/></note> 
+
+	NOTE: This preprint reports new research that has not been certified by peer review and should not be used to guide clinical practice.
+
+	<page>2<lb/></page>
+
+	Tel:
+	<phone>+86 023-58103232</phone>
+	; E-mail:
+	<email>13608388377@163.com<lb/></email>
+
+	# Suxin Wan, Qingjie Yi and Shibing Fan contributed equally to this article.<lb/>
+
+	Running title: Lymphocyte subsets and cytokines in peripheral blood of NCIP patients<lb/> .<lb/>
+
+	<note type="copyright">CC-BY-NC 4.0 International license<lb/> It is made available under a<lb/> perpetuity.<lb/> is the author/funder, who has granted medRxiv a license to display the preprint in<lb/> (which was not certified by peer review) preprint<lb/> The copyright holder for this<lb/> this version posted February 12, 2020.<lb/></note>
+
+	;<lb/>
+	<idno>https://doi.org/10.1101/2020.02.10.20021832<lb/></idno>
+
+	doi:<lb/> medRxiv
+	<note type="doctype">preprint</note>
+
+	3 Abstract<lb/>
+	<div type="abstract">Background: To explore the cellular immunity and cytokines status of NCP patients and to predict<lb/> the correlation between the cellular immunity levels, cytokines and the severity of patients.<lb/> Methods: 123 NCP patients were divided into mild and severe groups. Peripheral blood was<lb/> collected, lymphocyte subsets and cytokines were detected. Correlation analysis was performed on<lb/> the lymphocyte subsets and cytokines, and the differences between the indexes of the two groups<lb/> were analyzed.<lb/> Results: 102 mild and 21 severe patients were included. Lymphocyte subsets were reduced in two<lb/> groups. The proportion of CD8 + T reduction in the mild and severe group was 28.43% and 61.9%,<lb/> respectively; The proportion of B cell reduction was 25.49% and 28.57%; The proportion of NK<lb/> cell reduction was 34.31% and 47.62%; The detection value of IL-6 was 0 in 55.88% of the mild<lb/> group, mild group has a significantly lower proportion of patients with IL-6 higher than normal than<lb/> severe group; There was no significant linear correlation between the lymphocyte subsets and<lb/> cytokines, while significant differences were noticed between the two groups in CD4 + T, CD8 + T,<lb/> IL-6 and IL-10.<lb/> Conclusions: Low levels of CD4+T and CD8+T are common in severe NCP. IL-6 and IL-10 levels<lb/> were higher in severe patients. T cell subsets and cytokines can be used as one of the basis for<lb/> predicting the transition from mild to severe. Large number of samples are still needed to confirm<lb/> the &quot;warning value&quot; of CD4 + T, CD8 + T IL-6 and IL-10.<lb/></div>
+
+	Key words:
+	<keyword>2019 novel coronavirus; lymphocyte subsets; cytokines; mild; severe .</keyword>
+
+		</front>
+	</text>
+</tei>

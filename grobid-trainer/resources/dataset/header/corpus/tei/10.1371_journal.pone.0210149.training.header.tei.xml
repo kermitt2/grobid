@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210149"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Educational attainment predicts negative<lb/> perceptions women have of their own climate<lb/> change knowledge<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kathryn R. Selm ID 1☯<lb/> *, M. Nils Peterson 2☯ , George R. Hess 3 ‡ , Scott M. Beck 4 , Melissa<lb/> R. McHale 4 ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Natural Resources Program, Department of Forestry &amp; Environmental Resources, North Carolina State<lb/> University,</affiliation>
+	</byline>
+
+	<address>Raleigh, North Carolina, United States of America,</address>
+
+	<byline>
+	<affiliation>2 Fisheries, Wildlife, and Conservation Biology<lb/> Program, Forestry and Environmental Resources, North Carolina State University,</affiliation>
+	</byline>
+
+	<address>Raleigh, NC, United<lb/> States of America,</address>
+
+	<byline>
+	<affiliation>3 Department of Forestry &amp; Environmental Resources, North Carolina State University,<lb/></affiliation>
+	</byline>
+
+	<address>Raleigh, North Carolina, United States of America,</address>
+
+	<byline>
+	<affiliation>4 Natural Resources Ecology Lab, Department of<lb/> Ecosystem Science &amp; Sustainability, Colorado State University,</affiliation>
+	</byline>
+
+	<address>Fort Collins, CO, United States of America<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> ‡ These authors also contributed equally to this work.<lb/> *
+	<email>krselm@ncsu.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">Education may encourage personal and collective responses to climate change, but climate<lb/> education has proven surprisingly difficult and complex. Self-perception of knowledge and<lb/> intelligence represent one factor that may impact willingness to learn about climate change.<lb/> We explored this possibility with a case study in Raleigh, North Carolina in 2015 (n = 200).<lb/> Our goal was to test how gender and ethnicity influenced perceptions people had of their<lb/> own climate change knowledge. Survey respondents were asked how strongly they agreed<lb/> with the statement &quot;I feel knowledgeable about climate change&quot; (1 = strongly disagree, and<lb/> 5 = strongly agree). Our survey instrument also included demographic questions about<lb/> race, age, income, gender, and education, as well as respondent&apos;s experience with natural<lb/> disasters and drought. We observed an interaction between education and gender where<lb/> women&apos;s self-perceived knowledge was higher than men among people with low levels of<lb/> educational attainment, but was higher for men than women among people with high levels<lb/> of educational attainment. In addition, minority respondents self-reported lower perceived<lb/> climate change knowledge than white respondents, regardless of educational attainment.<lb/> This study enhances our understanding of the gender gap in self-perceptions of climate<lb/> knowledge by suggesting it is contingent on educational attainment. This could be the result<lb/> of stereotype-threat experienced by women and minorities, and exacerbated by educational<lb/> systems. Because people who question their knowledge are often more able to learn, partic-<lb/>ularly in ideologically charged contexts, highly educated women and minorities may be<lb/> more successful learning about climate change than white men.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210149 January 4, 2019<lb/></reference>
+
+	<page>1 / 10<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Selm KR, Peterson MN, Hess GR, Beck<lb/> SM, McHale MR (2019) Educational attainment<lb/> predicts negative perceptions women have of their<lb/> own climate change knowledge. PLoS ONE 14(1):<lb/> e0210149.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210149<lb/></idno>
+
+	Editor:
+	<editor>Karyn Morrissey,</editor>
+
+	<byline>
+	<affiliation>University of Essex,<lb/></affiliation>
+	</byline>
+
+	<address>UNITED KINGDOM<lb/></address>
+
+	<note type="submission">Received: February 4, 2018<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>January 4, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Selm et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
+
+	Funding:
+	<note type="funding">We thank the National Science<lb/> Foundation, and the US Environmental Protection<lb/> Agency through a supplemental award (GRH), for<lb/> their support of this research through the Triangle,<lb/> NC, Urban Long Term Research Area-Exploratory<lb/> award (BCS-0948229). The funders had no role in<lb/> study design, data collection, and analysis,<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

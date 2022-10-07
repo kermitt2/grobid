@@ -367,6 +367,9 @@ public class BiblioItem {
     private String workingGroup = null;
     private String rawMeeting = null;
 
+    // Availability statement
+    private String availabilityStmt = null;
+
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
             "In Proceeding of", "in Proceeding of", "in Proceeding", "In Proceeding", "Proceedings",
@@ -4276,5 +4279,13 @@ public class BiblioItem {
 
     public List<LayoutToken> getAbstractTokensWorkingCopy() {
         return abstractTokensWorkingCopy;
+    }
+
+    public String getAvailabilityStmt() {
+        return availabilityStmt;
+    }
+
+    public void setAvailabilityStmt(String availabilityStmt) {
+        this.availabilityStmt = availabilityStmt;
     }
 }

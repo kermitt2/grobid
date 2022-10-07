@@ -60,9 +60,9 @@
 
 			<body>and RStudio for quantification of fluorescent responses. We used a custom-written R script to <lb/>identify neurons via responses to high potassium in each experiment. Responses to individual <lb/>agonists were determined manually for all neurons. Each agonist was evaluated using cultures <lb/>from at least 3 mice, and most agonist-genotype combinations have &gt;1000 neurons analyzed <lb/>(minimum 659, maximum 2333). Coverslips with extensive motion or other artifacts were <lb/>excluded from analysis. <lb/>Statistics <lb/>All statistical analysis was performed in Graphpad Prism. Where applicable for multiple test <lb/>corrections, all False-Discovery Rates determined with Benjamini-Hochberg Method (BHM); <lb/>thresholds set at (FDR) ≤ 0.05. For all figures, asterisks indicate p &lt; 0.05 (*), p &lt; 0.01 (**), p &lt; <lb/>0.001 (***), or p &lt; 0.0001 (****). For calcium imaging, binomial response counts were analyzed <lb/>using two-sided Chi-square tests. In all experiments, independent samples were measured. <lb/></body>
 
-			<div type="annex">Data availability <lb/>The data sets generated and analyzed in the current study will be deposited at NCBI GEO upon <lb/>publication and linked to this manuscript. <lb/></div>
+			<div type="availability">Data availability <lb/>The data sets generated and analyzed in the current study will be deposited at NCBI GEO upon <lb/>publication and linked to this manuscript. <lb/></div>
 
-			<div type="annex">Code availability <lb/>All custom-written code in R and MATLAB for calcium imaging analysis will be made available <lb/>on GitHub upon publication at https://github.com/martharcb/Fluo4_R.git . <lb/></div>
+			<div type="availability">Code availability <lb/>All custom-written code in R and MATLAB for calcium imaging analysis will be made available <lb/>on GitHub upon publication at https://github.com/martharcb/Fluo4_R.git . <lb/></div>
 
 			<div type="acknowledgement">Acknowledgements <lb/>We would like to thank Dr. Aubin Moutal for assistance with adult DRG cultures and calcium <lb/>imaging. This work was supported by the University of Arizona (Technology and Research <lb/>Incentive Fund) and R01 NS105680 to M.R.C.B. <lb/></div>
 

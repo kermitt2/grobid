@@ -4,32 +4,33 @@
 
 For the following guidelines, it is expected that training data has been generated as explained [here](../Training-the-models-of-Grobid/#generation-of-training-data).
 
-In Grobid, the document "header" corresponds to the metadata information sections about the document. This is typically all the information at the beginning of the article (often called the "front", title, authors, publication information, affiliations, abstrac, keywords, correspondence information, submission information, etc.), but not only. Some of these elements can be located in the footnotes of the first page (e.g. affiliation of the authors), or at the end of the article (full list of authors, detailed affiliation and contact, how to cite). 
+In Grobid, the document "header" corresponds to the bibliographical/metadata information sections about the document. This is typically all the information at the beginning of the article (often called the "front", title, authors, publication information, affiliations, abstrac, keywords, correspondence information, submission information, etc.), before the start of the document body (e.g. typically before the introduction section), but not only. Some of these elements can be located in the footnotes of the first page (e.g. affiliation of the authors), or at the end of the article (full list of authors, detailed affiliation and contact, how to cite, copyrights/licence and Open Access information). 
 
 For identifying the exact pieces of information to be part of the "header" segments, see the [annotation guidelines of the segmentation model](segmentation.md). 
 
 The following TEI elements are used by the header model:
 
-* `<titlePart>` for the document title
-* `<docAuthor>`  for the author list, including callout markers 
-* `<affiliation>` for the authors affiliation information, including callout markers 
-* `<address>` identifies the address elements of the affiliations 
-* `<note type="doctype">` for indication on the document type
-* `<div type="abstract">` for the document abstract
-* `<keyword>` identifies the list of keywords, subject terms or classifications for the document
-* `<reference>` identifies the reference information (how to cite) for the document that can appear in the document itself 
-* `<email>` for the email of author or editor
-* `<editor>` for the person name information of the document editors
-* `<note type="submission">` identifies the submission/acceptance information about the document
-* `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) 
-* `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.)
-* `<phone>` for phone number
-* `<page>` for identifying a page number present in the header parts
-* `<note type="group">` to identify a group name (typically a working group or a collaboration)
-* `<title level="j">` to identify the name of the journal where the article is published
-* `<meeting>` to identify the meeting information associated to the publication, if relevant
-* `<publisher>` for identifying mention of the publisher appearing in isolation
-* `<note type="funding">` for the funding statement
+* `<titlePart>` for the document title ([notes](#title))
+* `<docAuthor>`  for the author list, including callout markers ([notes](#authors)) 
+* `<affiliation>` for the authors affiliation information, including callout markers ([notes](#affiliation-and-address))
+* `<address>` identifies the address elements of the affiliations ([notes](#affiliation-and-address))
+* `<note type="doctype">` for indication on the document type ([notes](#document-types))
+* `<div type="abstract">` for the document abstract ([notes](#abstract))
+* `<keyword>` identifies the list of keywords, subject terms or classifications for the document ([notes](#keywords))
+* `<reference>` identifies the reference information (how to cite) for the document that can appear in the document itself ([notes](#reference)) 
+* `<email>` for the email of author or editor ([notes](#emails))
+* `<editor>` for the person name information of the document editors ([notes](#editors))
+* `<note type="submission">` identifies the submission/acceptance information about the document ([notes](#submission-and-peer-review-information))
+* `<note type="copyright">` identifies copyrights statements (copyrights holder, waiver like CC licenses, etc.) ([notes](#copyrights))
+* `<note type="funding">` identifies funding statements (grants, awards, etc.) ([notes](#funding-statements))
+* `<note type="availability">` identifies data and code availability statements  ([notes](#availability-statements))    
+* `<idno>` for the strong identifiers of the document (DOI, arXiv identifier, PII, etc.) ([notes](#strong-identifiers))
+* `<phone>` for phone number ([notes](#phone-number))
+* `<page>` for identifying a page number present in the header parts (this is the first page of the document) ([notes](#page-number))
+* `<note type="group">` to identify a group name (typically a working group or a collaboration) ([notes](#group-name))
+* `<title level="j">` to identify the name of the journal where the article is published ([notes](#journal-titles))
+* `<meeting>` to identify the meeting information associated to the publication, if relevant ([notes](#meeting-information))
+* `<publisher>` for identifying mention of the publisher appearing in isolation ([notes](#publisher))
 
 Note that the mark-up follows approximatively the [TEI](http://www.tei-c.org) when used for inline encoding. 
 
@@ -46,6 +47,41 @@ The following sections provide detailed information and examples on how to handl
 Spaces and new line in the XNL annotated files are not significant and will be all considered by the XML parser as default separator. So it is possible to add and remove freely space charcaters and new lines to improve the readability of the annotated document without any impacts. 
 
 Similarly, line break tags `<lb/>` are present in the generated XML training data, but they will be considered as a default separator by the XML parser. They are indicated to help the annotator to identify a piece of text in the original PDF if necessary. Actual line breaks are identified in the PDF and added by aligning the XML TEI with the feature file generated in parallel which contains all the PDF layout information. 
+
+
+### Exclude the name of fields if it appears
+
+It is common that abstract is introduced by a prefix `Abstract` or `Summary`, that authors are prefixed with `Authors:` or keywords by `Keywords:`. As a general principle for header annotation, all the prefix names of fields should be excluded from the annotation element and remain outside mark-ups (we only encode the "useful" content): 
+
+```xml
+    Abstract<lb/>
+    <div type="abstract">Subdivision surfaces provide a curved surface representation that 
+        is useful in a number of applications, in-<lb/>cluding modeling surfaces of 
+        arbitrary topological type [5] , fitting scattered data [6] , and geometric 
+        compression<lb/> and automatic level-of-detail generation using wavelets [8]... 
+```
+
+```xml
+    Title: 
+    <docTitle>
+        <titlePart>PMIPv6 Integrated with MIH for Flow Mobility Management: a Real Testbed 
+        with<lb/> Simultaneous Multi-Access in Heterogeneous Mobile Networks<lb/></titlePart>
+    </docTitle>
+
+    Authors:<lb/>
+    • 
+    <byline>
+    <docAuthor>Hugo Alves</docAuthor>
+    </byline>
+```
+
+```xml
+    Availability and implementation<lb/> 
+    <note type="availability">The implementation of UniqTag is available at<lb/> 
+    https://github.com/sjackman/uniqtag<lb/> Supplementary data and code to reproduce it is 
+    available at<lb/> https://github.com/sjackman/uniqtag-paper<lb/> </note>
+```
+
 
 ### Title
 
@@ -77,7 +113,7 @@ In the case of an article written in non-english language having an additional E
 
 All mentions of the authors are labelled, including possible repetition of the authors in the correspondence section. The author information might be more detailed in the correspondence part and it will be then part of the job of Grobid to identify repeated authors and to "merge" them. 
 
-```
+```xml
 CORRESPONDENCE<lb/> Address correspondence to
     <byline>
     <docAuthor>Andrea Z. LaCroix, PhD,</docAuthor>
@@ -88,12 +124,12 @@ As illustrated above, titles like "Ph.D.", "MD", "Dr.", etc. must be **included*
 
 The only exception is when indication of authors are given around an email or a phone number. In this case we consider that the occurence of an author name (including abbreviated names) is purely for practical reasons and should be ignored. 
 
-```
+```xml
 Email: Calum J Maclean* -
      <email>calum.maclean@ucl.ac.uk</email>; 
 ```   
 
-```
+```xml
     *Corresponding author. Emails:
     <email>cmoser@g.harvard.edu</email>
      (C.J.M.);
@@ -119,14 +155,21 @@ Full job names like "Dean of...", "Research associate at..." should be excluded 
     head of clinical trials department<lb/> 
 ```
 
+It is important to keep markers **inside** the labelled author fields (e.g. index numbers, symbols like `*`), because they are used to associate the right affiliations to the authors.
+
+```xml
+    <byline>
+    <docAuthor>Susanna L Cooke 1,2 , Jessica CM Pole 1 , Suet-Feung Chin 2 , Ian O Ellis 3 ,<lb/> Carlos Caldas 2 and Paul AW Edwards* 1<lb/></docAuthor>
+    </byline>
+```
 
 ### Affiliation and address
 
-Similarly as authors, all the mentions of an affiliation are labelled, including in the correspondence parts. Grobid will have to merge appropriately redundant affiliations. It's important to keep markers inside the labelled fields, because they are used to associate the right affiliations to the authors.
+Similarly as authors, all the mentions of an affiliation are labelled, including in the correspondence parts. Grobid will have to merge appropriately redundant affiliations. It is important to keep markers **inside** the labelled fields, because they are used to associate the right affiliations to the authors.
 
 Address are labelled with their own tag `<address>`. 
 
-```
+```xml
     <byline>
         <affiliation>2 Institut für Angewandte Physik, Heinrich-Heine-Universität<lb/></affiliation>
     </byline>
@@ -140,7 +183,7 @@ Address are labelled with their own tag `<address>`.
 Indication of document types are labelled. These indications depend on the editor, document source, etc. We consider as _document type_ the nature of the document (article, review, editorial, etc.), but also some specific aspects that can be highlighted in the presentation format, for instance indication of an "Open Access" publication expressed independently form the copyrights to characterize the document.
 
 ```xml
-    Annals of General Hospital Psychiatry<lb/>
+    <title level="j">Annals of General Hospital Psychiatry<lb/></title>
 
     <note type="doctype">Open Access<lb/></note>
 
@@ -152,7 +195,6 @@ Indication of document types are labelled. These indications depend on the edito
             sodium valproate<lb/></titlePart>
     </docTitle>
 ```
-
 
 ### Abstract
 
@@ -236,14 +278,17 @@ The name of the editor are tagged similarly as author names. Titles like "Prof."
     <editor>Luigi Ferrucci, MD, PhD</editor>
 ```
 
+Some affiliation/address information related to the editor can follow, they are encoded with the normal affiliation and address mark-ups.
+
 ### Submission and peer review information
 
-The `<<note type="submission">` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
+The `<note type="submission">` tag is used to identify, in a raw manner, the submission and peer review information present in the header parts. The date information given in this field are not further labelled. 
 
 ```xml
     <note type="submission">Received September 14, 2009; Revised September 29, 2009; Accepted September 30, 2009</note>
 ```
 
+Be careful not to include publication date information under this block, the publication date needs to be encoded with a specific `<date>` element. 
 
 ### Copyrights
 
@@ -278,7 +323,13 @@ The identifier name is kept with the identifier value so that Grobid can classif
 ```xml
 <idno>ISSN 1356-1294<lb/></idno>
 ```
+In the case of DOI, the identifier might look like a URL, but should be encoded with `<idno>`:
 
+```xml
+<idno>http://dx.doi.org/10.1097/MD.0000000000028156<lb/></idno>
+```    
+
+There is no need to specify the type of strong identifier (it will be inferred by pattern matching).
 
 ### Phone number
 
@@ -294,8 +345,11 @@ We label phone number, including international prefix symbols, but not fax numbe
 
 ### Page number
 
-If a page number appears in the header part, it is identified with the `<page>` tag. The page number must stand in isolation, not part of a reference information (it will then be labelled as part of the reference under a `<reference>` tag).
+If a page number appears in the header part, it is identified with the `<page>` tag. The page number must stand in isolation, not part of a reference information (it will then be labelled as part of the reference under a `<reference>` tag). If a total page number is associated with the page number, it is also encoded: 
 
+```xml
+<page>1 / 13<lb/></page>
+```
 
 ### Group name
 
@@ -319,6 +373,7 @@ In case the name of the journal appears alone in the header part, not part of a 
     <date>1 October 1997<lb/></date>
 ```
 
+If the journal title appears as part of a reference (e.g. "how to cite"), it is then part of the `<reference>` element.
 
 ### Meeting information
 
@@ -365,9 +420,21 @@ Note that this tag must only be used when no other tag can be applied. In partic
 Some indication about the funding of the research work presented in a paper sometimes appear within the header. We mark the whole raw statement under `<note type="funding">` tag. The statement can include related disclosure information: 
 
 ```xml
+    Funding: 
     <note type="funding">This work is supported in part by ARPA and Philips Labs under contract DASG60-92-0055 to Department<lb/> 
     of Computer Science, University of Maryland, and by National Science Foundation Grant No. NCR 89-04590. The<lb/> 
     views, opinions, and/or ndings contained in this report are those of the author(s) and should not be interpreted as<lb/> 
     representing the o cial policies, either expressed or implied, of the Advanced Research Projects Agency, PL, NSF,<lb/> 
     or the U.S. Government. Computer facilities were provided in part by NSF grant CCR-8811954.</note> 
 ```
+
+### Availability statements
+
+It happens that data and/or code availability statements are part of the header. Such a statement is marked with a `<note type="availability">` element.
+
+```xml
+Data Availability Statement: 
+    <note type="availability">Data are available<lb/> from Figshare at https://figshare.com/s/<lb/> 6c396e16f3991d7eaa00 
+    and under the DOI: 10.<lb/> 6084/m9.figshare.5917225.<lb/></note>
+```
+

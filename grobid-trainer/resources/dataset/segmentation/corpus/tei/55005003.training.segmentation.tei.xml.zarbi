@@ -56,7 +56,11 @@
 			
 			<page>Page 8 of 10 <lb/></page>
 
-			transposon insertion could disrupt the function of a <lb/>gene of interest or a previously uncharacterized gene. <lb/>Altogether, the zTrap database and our transgenic zeb-<lb/>rafish resources should facilitate studies on genomics, <lb/>developmental biology and neurobiology. <lb/> Availability and requirements <lb/> The zTrap database is publicly accessible at http:// <lb/>kawakami.lab.nig.ac.jp/ztrap/. Browsers recommended <lb/>are: Firefox 2 or later; Internet Explorer 6 or later; <lb/>Safari 2 or later. The copy and use of the content <lb/>(text, graphics, images and other materials) are per-<lb/>mitted with prior agreement from the corresponding <lb/>author. <lb/> Additional material <lb/> Additional file 1: zTrap database navigation. A figure that shows how <lb/>to jump to the contents from  &quot; Find image &quot; page. <lb/> 
+			transposon insertion could disrupt the function of a <lb/>gene of interest or a previously uncharacterized gene. <lb/>Altogether, the zTrap database and our transgenic zeb-<lb/>rafish resources should facilitate studies on genomics, <lb/>developmental biology and neurobiology. <lb/></body>
+
+			<div type="availability">Availability and requirements <lb/> The zTrap database is publicly accessible at http:// <lb/>kawakami.lab.nig.ac.jp/ztrap/. Browsers recommended <lb/>are: Firefox 2 or later; Internet Explorer 6 or later; <lb/>Safari 2 or later. The copy and use of the content <lb/>(text, graphics, images and other materials) are per-<lb/>mitted with prior agreement from the corresponding <lb/>author. <lb/> Additional material <lb/></div> 
+
+			<div type="annex">Additional file 1: zTrap database navigation. A figure that shows how <lb/>to jump to the contents from  &quot; Find image &quot; page. <lb/> </div>
 			
 		</body>
 		

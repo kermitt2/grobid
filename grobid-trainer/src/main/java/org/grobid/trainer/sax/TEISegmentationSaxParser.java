@@ -1,17 +1,18 @@
 package org.grobid.trainer.sax;
 
-import org.grobid.core.utilities.TextUtilities;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.grobid.core.engines.label.TaggingLabels.AVAILABILITY_LABEL;
 
 /**
  * SAX parser for the TEI format for the training data for the segmentation model.
@@ -23,7 +24,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TEISegmentationSaxParser extends DefaultHandler {
 
-  	/* TEI -> label mapping (9 labels for this model) 
+  	/* TEI -> label mapping (10 labels for this model)
  		cover page (<cover>): titlePage (optionally under front), 
 		document header (<header>): front, 
 		page footer (<footnote>): note type footnote, 
@@ -34,6 +35,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 		page number (<page>): page,
 		? each bibliographical references in the biblio section (<ref>): bibl 
 		annexes (<annex>): div type="annex" (optionally under back)
+		data availability (<availability>): div type="availability"
 		acknowledgement (<acknowledgement>): div type="acknowledgement" (optionally under back)
  	*/
 
@@ -82,7 +84,7 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 			qName.equals("front") || 
 			qName.equals("div") ||
             qName.equals("toc") || 
-            qName.equals("other") || 
+            qName.equals("other") ||
 			qName.equals("listBibl")) {
 			currentTag = null;
 			upperTag = null;
@@ -177,14 +179,19 @@ public class TEISegmentationSaxParser extends DefaultHandler {
 
                     if (name != null) {
                         if (name.equals("type")) {
-                            // Note: funding and data availability annexes not fully annotated in the training corpus
-                            // when it will be the case, we can add specific label for this 
-                            if (value.equals("annex") || value.equals("funding") || value.equals("data_availability")) {
+                            if (value.equals("annex")) {
 								currentTag = "<annex>";
 								upperTag = currentTag;
 								upperQname = "div";
-                            }
-                            else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
+                            } else if (value.equals("funding")) {
+                                currentTag = "<funding>";
+                                upperTag = currentTag;
+                                upperQname = "div";
+                            } else if (Arrays.asList("availability", "data_availability", "data-availability").contains(value)) {
+                                currentTag = AVAILABILITY_LABEL;
+                                upperTag = currentTag;
+                                upperQname = "div";
+                            } else if (value.equals("acknowledgement") || value.equals("acknowledgements") || value.equals("acknowledgment")
                                 || value.equals("acknowledgments")) {
 								currentTag = "<acknowledgement>";
 								upperTag = currentTag;
