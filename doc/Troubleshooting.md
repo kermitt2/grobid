@@ -42,6 +42,8 @@ Windows, unfortunately, is currently not anymore supported, due to lack of exper
 
 Before opening a new issue which might be related to Windows, please check that it is not redundant [here](https://github.com/kermitt2/grobid/issues?q=is%3Aissue+is%3Aopen+label%3AWindows-specific)
 
+**Windows Subsystem for Linux (WSL) mode**: Please be aware that users have reported issues using the WSL mode in Windows to run Grobid. More details [here](https://github.com/kermitt2/grobid/issues/954).   
+
 **NOTE**: If you are a developer using Windows and you like to help, please let us know. 
 
 ### Invalid model format
