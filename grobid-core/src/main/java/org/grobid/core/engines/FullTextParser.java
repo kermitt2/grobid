@@ -2475,7 +2475,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
                 Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
                 if (headerAvailabilityProcessed != null) {
-                    availabilityStmt = teiFormatter.processTEIDivSection("availability", 
+                    availabilityStmt = teiFormatter.processTEIDivSection("availability",
                         "\t\t\t", 
                         headerAvailabilityProcessed.getLeft(), 
                         headerAvailabilityProcessed.getRight(), 
@@ -2488,7 +2488,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             }
 
             // availability statements in non-header part
-            availabilityStmt = getSectionAsTEI("availability", 
+            availabilityStmt = getSectionAsTEI("availability",
                 "\t\t\t", 
                 doc, 
                 SegmentationLabels.AVAILABILITY, 
@@ -2497,6 +2497,37 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 config);
             if (availabilityStmt.length() > 0) {
                 tei.append(availabilityStmt.toString());
+            }
+
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    tei.append(fundingStmt.toString());
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                resCitations,
+                config);
+
+            if (fundingStmt.length() > 0) {
+                tei.append(fundingStmt);
             }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
