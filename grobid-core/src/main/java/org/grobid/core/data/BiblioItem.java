@@ -1854,7 +1854,8 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
+		List<String> separators = Arrays.asList(";","■", "•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
+        List<String> separatorsSecondary = Arrays.asList("•", "■");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1863,9 +1864,24 @@ public class BiblioItem {
 					if (res.startsWith(":")) {
 			            res = res.substring(1);
 			        }
-					res = res.replace("\n", " ").replace("  ", " ");
-					Keyword keyw = new Keyword(res, type);
-					result.add(keyw);
+                    boolean noSecondary = true;
+					res = res.replace("\n", " ").replaceAll("( )+", " ");
+                    for(String separatorSecondary : separatorsSecondary) {
+                        StringTokenizer st2 = new StringTokenizer(res, separatorSecondary);
+                        if (st2.countTokens() > 1) {
+                            while (st2.hasMoreTokens()) {
+                                String res2 = st2.nextToken().trim();
+                                res2 = res2.replace("\n", " ").replaceAll("( )+", " ");
+                                Keyword keyw = new Keyword(res2, type);
+                                result.add(keyw);
+                            }
+                            noSecondary = false;
+                        }
+                    }
+                    if (noSecondary) {
+    					Keyword keyw = new Keyword(res, type);
+	       				result.add(keyw);
+                    }
 	            }
 				break;
 	        }
