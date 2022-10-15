@@ -418,6 +418,51 @@ public class FullTextParser extends AbstractParser {
                 layoutTokenization = layouts.getTokenization();
             if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
                 res = label(featuredText);
+
+                // post-process the labeling to address https://github.com/kermitt2/grobid/issues/956
+                //
+                // this is specific to processShort() and a very rare case:
+                // When the sequence starts with a figure or a table, this is considered as invalid
+                // for a short text (as we expect text right at the beginning) so we re-write here
+                // the labels to be interpreted as paragraph (as fallback).
+                
+                // NOTE: this is a temporary hack to be removed when figure and table will be removed from 
+                // the full text model
+
+                if (!StringUtils.isEmpty(res) && 
+                    (res.indexOf(TaggingLabels.FIGURE.getLabel()) != -1 || res.indexOf(TaggingLabels.TABLE.getLabel()) != -1)) {
+                    // we have some figure/table around, check if there are some at the beginning of the sequence
+                    String[] resPieces = res.split("\n");
+                    StringBuilder newRes = new StringBuilder();
+                    boolean inPrefix = true;
+                    for(int i=0; i<resPieces.length; i++) {
+                        String resPiece = resPieces[i];
+                        if (i==0 && 
+                            (resPiece.endsWith(TaggingLabels.FIGURE.getLabel()) || resPiece.endsWith(TaggingLabels.TABLE.getLabel()))
+                           ) {
+                            // we need to post-process the result
+                            resPiece= resPiece.replace(TaggingLabels.FIGURE.getLabel(), TaggingLabels.PARAGRAPH.getLabel())
+                                    .replace(TaggingLabels.TABLE.getLabel(), TaggingLabels.PARAGRAPH.getLabel());
+                            newRes.append(resPiece).append("\n");
+                        } else if (i==0) {
+                            // no table or figure at the beginning, nothing need to be done
+                            newRes.append(res);
+                            break;
+                        } else {
+                            // we are post-processing, but we change just the start of the sequence
+                            if (inPrefix &&
+                                resPiece.endsWith(TaggingLabels.FIGURE.getLabel()) || resPiece.endsWith(TaggingLabels.TABLE.getLabel())) {
+                                resPiece = resPiece.replace(TaggingLabels.FIGURE.getLabel(), TaggingLabels.PARAGRAPH.getLabel())
+                                        .replace(TaggingLabels.TABLE.getLabel(), TaggingLabels.PARAGRAPH.getLabel());
+                            } else {
+                                inPrefix = false;
+                            }
+
+                            newRes.append(resPiece).append("\n");
+                        }
+                    }
+                    res = newRes.toString();
+                }
             }
         }
 
@@ -2525,7 +2570,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 teiFormatter,
                 resCitations,
                 config);
-
             if (fundingStmt.length() > 0) {
                 tei.append(fundingStmt);
             }
