@@ -1322,20 +1322,7 @@ public class TEIFormatter {
                     addXmlId(note, "_" + divID);
                 }
                 curDiv.appendChild(note);
-            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)
-                || clusterLabel.equals(TaggingLabels.FIGURE)
-                || clusterLabel.equals(TaggingLabels.TABLE)) {
-
-                if (clusterLabel.equals(TaggingLabels.FIGURE)
-                    || clusterLabel.equals(TaggingLabels.TABLE)) {
-                    //figureBlock = true;
-                    if (curParagraph != null) {
-                        curParagraph.appendChild(new Text(" "));
-                        lastClusterLabel = cluster.getTaggingLabel();
-                        continue;
-                    }
-                }
-
+            } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 List<LayoutToken> clusterTokens = cluster.concatTokens();
                 int clusterPage = Iterables.getLast(clusterTokens).getPage();
 
@@ -1550,6 +1537,10 @@ public class TEIFormatter {
                 
                 if (curParagraph != null)
                     curParagraphTokens.addAll(cluster.concatTokens());
+            } else if (clusterLabel.equals(TaggingLabels.FIGURE) || clusterLabel.equals(TaggingLabels.TABLE)) {
+                //figureBlock = true;
+                if (curParagraph != null)
+                    curParagraph.appendChild(new Text(" "));
             }
 
             lastClusterLabel = cluster.getTaggingLabel();
