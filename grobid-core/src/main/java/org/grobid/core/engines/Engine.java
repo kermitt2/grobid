@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Class for managing the extraction of bibliographical information from PDF
@@ -977,6 +978,87 @@ public class Engine implements Closeable {
         String abstr = doc.getResHeader().getAbstract();
         abstr = abstr.replace("@BULLET", " • ");
         return abstr;
+    }
+
+    /**
+     * Process all the .txt in a given directory to generate pre-labeld training data for
+     * the citation model. Input file expects one raw reference string per line.
+     *
+     * @param directoryPath - the path to the directory containing .txt to be processed.
+     * @param resultPath    - the path to the directory where the results as XML training files
+     *                        shall be written.
+     **/
+    public int batchCreateTrainingCitation(String directoryPath, String resultPath) {
+        try {
+            File path = new File(directoryPath);
+            // we process all pdf files in the directory
+            File[] refFiles = path.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    System.out.println(name);
+                    return name.endsWith(".txt");
+                }
+            });
+
+            if (refFiles == null)
+                return 0;
+
+            System.out.println(refFiles.length + " files to be processed.");
+
+            int n = 0;
+            for (final File txtFile : refFiles) {
+                try {
+                    // read file line by line, assuming one reference string per line
+                    List<String> allInput = new ArrayList<>();
+
+                    BufferedReader reader;
+                    try {
+                        reader = new BufferedReader(new FileReader(txtFile));
+                        String line = reader.readLine();
+                        while (line != null) {
+                            allInput.add(line.trim());
+                            line = reader.readLine();
+                        }
+                        reader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    // process the training generation
+                    StringBuilder bufferReference = parsers.getCitationParser().trainingExtraction(allInput);
+
+                    // write the XML training file
+                    if (bufferReference != null) {
+                        bufferReference.append("\n");
+
+                        Writer writerReference = new OutputStreamWriter(new FileOutputStream(new File(resultPath +
+                                File.separator +
+                                txtFile.getName().replace(".txt", ".training.references.tei.xml")), false), StandardCharsets.UTF_8);
+
+                        writerReference.write("<?xml version=\"1.0\" ?>\n<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
+                                                "xmlns:xlink=\"http://www.w3.org/1999/xlink\" " +
+                                                "\n xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n");
+
+                        writerReference.write("\t<teiHeader>\n\t\t<fileDesc xml:id=\"_" + n +
+                            "\"/>\n\t</teiHeader>\n\t<text>\n\t\t<front/>\n\t\t<body/>\n\t\t<back>\n");
+                        
+                        writerReference.write("<listBibl>\n");
+
+                        writerReference.write(bufferReference.toString());
+
+                        writerReference.write("\t\t</listBibl>\n\t</back>\n\t</text>\n</TEI>\n");
+                        writerReference.close();
+                    }
+                } catch (final Exception exp) {
+                    LOGGER.error("An error occured while processing the following pdf: "
+                        + txtFile.getPath(), exp);
+                }
+                n++;
+            }
+
+            return refFiles.length;
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occured while running Grobid batch.", exp);
+        }
     }
 
     /**
