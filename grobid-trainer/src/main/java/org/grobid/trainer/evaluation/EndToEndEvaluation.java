@@ -398,19 +398,36 @@ public class EndToEndEvaluation {
 			citationsLabels.remove("doi");
 			citationsLabels.remove("pmid");
 			citationsLabels.remove("pmcid");
-
+			
 			List<FieldSpecification> toRemove = new ArrayList<>();
 			if (citationsFields != null && citationsFields.size() > 0) {
 				for(FieldSpecification citationsField : citationsFields) {
 					if (citationsField.fieldName.equals("doi") || 
 						citationsField.fieldName.equals("pmid") || 
 						citationsField.fieldName.equals("pmcid"))
-					toRemove.add(citationsField);
+						toRemove.add(citationsField);
 				}
 			}
 			if (toRemove.size() > 0) {
 				for(FieldSpecification citationsField : toRemove) {
 					citationsFields.remove(citationsField);
+				}
+			}
+
+			fulltextLabels.remove("availability_stmt");
+
+			toRemove = new ArrayList<>();
+			if (fulltextFields != null && fulltextFields.size() > 0) {
+				for(FieldSpecification fulltextField : fulltextFields) {
+					if (fulltextField.fieldName.equals("availability_stmt")) {
+						// remove availability statements from PMC (not covered and it would make metrics not comparable over time)
+						toRemove.add(fulltextField);
+					}
+				}
+			}
+			if (toRemove.size() > 0) {
+				for(FieldSpecification fulltextField : toRemove) {
+					fulltextFields.remove(fulltextField);
 				}
 			}
 		}
