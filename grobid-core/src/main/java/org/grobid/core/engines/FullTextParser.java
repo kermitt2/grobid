@@ -2618,7 +2618,8 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (StringUtils.isNotBlank(text) ) {
                     resultLabelling = label(text);
                 }
-                output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
+                String postProcessedText = postProcessLabeledAbstract(resultLabelling);
+                output = teiFormatter.processTEIDivSection(xmlType, indentation, postProcessedText, tokens, resCitations, config);
             }
         }
         return output;
