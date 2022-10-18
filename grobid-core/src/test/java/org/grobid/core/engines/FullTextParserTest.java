@@ -3,10 +3,7 @@ package org.grobid.core.engines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.document.Document;
-import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.layout.Block;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.GrobidProperties;
@@ -18,10 +15,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.SortedSet;
 import java.util.stream.Collectors;
 
-import static org.easymock.EasyMock.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
@@ -198,92 +193,71 @@ public class FullTextParserTest {
 
     }
 
-//    @Test
-//    public void testProcess2() throws Exception {
-//        String text = "(a) shows the temperature variation of the 31 P-\n" +
-//            "NMR spectrum for x ¼ 0:25, which was obtained by \n" +
-//            "sweeping magnetic fields. A single sharp spectrum was \n" +
-//            "observed above T N , but no anomaly was detected in the NMR spectrum at the structural transition T S determined by \n" +
-//            "xx . Below T N , a broad NMR spectrum with a Gaussian \n" +
-//            "shape develops gradually and coexists with a sharp peak at \n" +
-//            "around T on \n" +
-//            "c $ 30 K. We measured 1=T 1 at the sharp and \n" +
-//            "broad peaks shown by the solid black and dashed red arrows, \n" +
-//            "respectively. ";
-//
-//        Document documentMock = createMock(Document.class);
-//        List<LayoutToken> layoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
-//
-//        target.processShort2(layoutTokens, documentMock);
-//
-//    }
+    @Test
+    public void testPostProcessLabeledAbstract_shouldTransformTableLabelInParagraphLabel() {
+        String resultWithTables = "This\tthis\tT\tTh\tThi\tThis\ts\tis\this\tThis\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tHIGHERFONT\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t0\t10\t0\tNUMBER\t0\t0\tI-<table>\n" +
+            "study\tstudy\ts\tst\tstu\tstud\ty\tdy\tudy\ttudy\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t0\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "was\twas\tw\twa\twas\twas\ts\tas\twas\twas\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t0\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "supported\tsupported\ts\tsu\tsup\tsupp\td\ted\tted\trted\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t0\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "by\tby\tb\tby\tby\tby\ty\tby\tby\tby\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t0\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t1\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "South\tsouth\tS\tSo\tSou\tSout\th\tth\tuth\touth\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t1\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Asian\tasian\tA\tAs\tAsi\tAsia\tn\tan\tian\tsian\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t1\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Clinical\tclinical\tC\tCl\tCli\tClin\tl\tal\tcal\tical\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t1\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Toxicology\ttoxicology\tT\tTo\tTox\tToxi\ty\tgy\togy\tlogy\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t1\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Research\tresearch\tR\tRe\tRes\tRese\th\tch\trch\tarch\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t2\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Collaboration\tcollaboration\tC\tCo\tCol\tColl\tn\ton\tion\ttion\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t2\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tCOMMA\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "which\twhich\tw\twh\twhi\twhic\th\tch\tich\thich\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "is\tis\ti\tis\tis\tis\ts\tis\tis\tis\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "funded\tfunded\tf\tfu\tfun\tfund\td\ted\tded\tnded\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "by\tby\tb\tby\tby\tby\ty\tby\tby\tby\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t3\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Wellcome\twellcome\tW\tWe\tWel\tWell\te\tme\tome\tcome\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t4\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Trust\ttrust\tT\tTr\tTru\tTrus\tt\tst\tust\trust\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t4\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "/\t/\t/\t/\t/\t/\t/\t/\t/\t/\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t4\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "National\tnational\tN\tNa\tNat\tNati\tl\tal\tnal\tonal\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t4\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Health\thealth\tH\tHe\tHea\tHeal\th\tth\tlth\talth\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t5\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t5\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Medical\tmedical\tM\tMe\tMed\tMedi\tl\tal\tcal\tical\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t5\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Research\tresearch\tR\tRe\tRes\tRese\th\tch\trch\tarch\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t5\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Council\tcouncil\tC\tCo\tCou\tCoun\tl\til\tcil\tncil\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t6\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "International\tinternational\tI\tIn\tInt\tInte\tl\tal\tnal\tonal\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t6\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Collaborative\tcollaborative\tC\tCo\tCol\tColl\te\tve\tive\ttive\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t6\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Research\tresearch\tR\tRe\tRes\tRese\th\tch\trch\tarch\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t7\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "Grant\tgrant\tG\tGr\tGra\tGran\tt\tnt\tant\trant\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t7\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "GR071669MA\tgr071669ma\tG\tGR\tGR0\tGR07\tA\tMA\t9MA\t69MA\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tCONTAINSDIGITS\t0\tNOPUNCT\t8\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "funding\tfunding\tf\tfu\tfun\tfund\tg\tng\ting\tding\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "bodies\tbodies\tb\tbo\tbod\tbodi\ts\tes\ties\tdies\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "had\thad\th\tha\thad\thad\td\tad\thad\thad\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "no\tno\tn\tno\tno\tno\to\tno\tno\tno\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "role\trole\tr\tro\trol\trole\te\tle\tole\trole\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "analyzing\tanalyzing\ta\tan\tana\tanal\tg\tng\ting\tzing\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "or\tor\to\tor\tor\tor\tr\tor\tor\tor\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t10\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "interpreting\tinterpreting\ti\tin\tint\tinte\tg\tng\ting\tting\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t10\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t10\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "data\tdata\td\tda\tdat\tdata\ta\tta\tata\tdata\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t10\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "or\tor\to\tor\tor\tor\tr\tor\tor\tor\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t11\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "writing\twriting\tw\twr\twri\twrit\tg\tng\ting\tting\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t11\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t11\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            "article\tarticle\ta\tar\tart\tarti\te\tle\tcle\ticle\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t11\t10\t0\tNUMBER\t0\t0\t<table>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t11\t10\t0\tNUMBER\t0\t0\t<table>";
+        String postprocessed = FullTextParser.postProcessFullTextLabeledText(resultWithTables);
 
-    /*@Test
-    public void testGetDocumentPieces1() throws Exception {
-        Document documentMock = createMock(Document.class);
+        assertThat(Arrays.stream(StringUtils.split(postprocessed, "\n"))
+            .filter(l -> l.endsWith("<table>"))
+            .count(), is(0L));
 
-        List<LayoutToken> sentence1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken("This is a sentence");
+        assertThat(Arrays.stream(StringUtils.split(postprocessed, "\n"))
+            .filter(l -> l.endsWith("<paragraph>"))
+            .count(), is (Arrays.stream(StringUtils.split(resultWithTables, "\n"))
+            .filter(l -> l.endsWith("<table>"))
+            .count()));
 
-        List<LayoutToken> sentence2 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken("This is another sentence, somewhere else.");
+    }
 
-        // Faking block pointers
-        sentence1.get(0).setBlockPtr(0);
-        sentence1.get(6).setBlockPtr(1);
-
-        sentence2.get(0).setBlockPtr(2);
-        sentence2.get(12).setBlockPtr(3);
-
-        // First sentence blocks
-        Block fakeBlock1_1 = new Block();
-        fakeBlock1_1.setStartToken(12345);
-        Block fakeBlock1_2 = new Block();
-        fakeBlock1_2.setStartToken(12347);
-
-        // Second sentence blocks
-        Block fakeBlock2_1 = new Block();
-        fakeBlock2_1.setStartToken(25000);
-        Block fakeBlock2_2 = new Block();
-        fakeBlock2_2.setStartToken(25088);
-
-        List<Block> blocks = new ArrayList<>();
-        blocks.add(fakeBlock1_1);
-        blocks.add(fakeBlock1_2);
-        blocks.add(fakeBlock2_1);
-        blocks.add(fakeBlock2_2);
-
-
-        //Moving this sentence somewhere else
-//        sentence1.stream().peek(l -> l.setOffset(l.getOffset() + 12345));
-//        sentence2.stream().peek(l -> l.setOffset(l.getOffset() + 25000));
-
-        List<LayoutToken> sentence1Far = sentence1.stream().peek(l -> l.setOffset(l.getOffset() + 12345)).collect(Collectors.toList());
-        List<LayoutToken> sentence2Far = sentence2.stream().peek(l -> l.setOffset(l.getOffset() + 25000)).collect(Collectors.toList());
-
-        List<LayoutToken> layoutTokens = new ArrayList<>();
-        layoutTokens.addAll(sentence1Far);
-        layoutTokens.addAll(sentence2Far);
-
-        expect(documentMock.getBlocks()).andReturn(blocks).anyTimes();
-        expect(documentMock.getTokenizations()).andReturn(layoutTokens).anyTimes();
-
-
-        replay(documentMock);
-        SortedSet<DocumentPiece> documentPieces = target.collectPiecesFromLayoutTokens(layoutTokens, documentMock);
-        verify(documentMock);
-
-        List<DocumentPiece> documentPieces1 = new ArrayList<>(documentPieces);
-
-        assertThat(documentPieces1, hasSize(2));
-
-        assertThat(documentPieces1.get(0).getLeft().getBlockPtr(), is(0));
-        assertThat(documentPieces1.get(0).getLeft().getTokenDocPos(), is(12345));
-        assertThat(documentPieces1.get(0).getRight().getBlockPtr(), is(1));
-        assertThat(documentPieces1.get(0).getRight().getTokenDocPos(), is(12347));
-
-        assertThat(documentPieces1.get(1).getLeft().getBlockPtr(), is(2));
-        assertThat(documentPieces1.get(1).getLeft().getTokenDocPos(), is(25000));
-        assertThat(documentPieces1.get(1).getRight().getBlockPtr(), is(3));
-        assertThat(documentPieces1.get(1).getRight().getTokenDocPos(), is(25088));
-    }*/
 
 }

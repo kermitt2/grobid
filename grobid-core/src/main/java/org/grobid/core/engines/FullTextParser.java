@@ -192,7 +192,7 @@ public class FullTextParser extends AbstractParser {
                     if (abstractProcessed != null) {
                         // neutralize figure and table annotations (will be considered as paragraphs)
                         String labeledAbstract = abstractProcessed.getLeft();
-                        labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
+                        labeledAbstract = postProcessFullTextLabeledText(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
                         resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
@@ -469,12 +469,16 @@ public class FullTextParser extends AbstractParser {
         return Pair.of(res, layoutTokenization);
     }
 
-    static protected String postProcessLabeledAbstract(String labeledAbstract) {
-        if (labeledAbstract == null)
+    /**
+     * Post-process text labeled by the fulltext model on chunks that are known to be text (no table, or figure)
+     * It converts table and figure labels to paragraph.
+     */
+    protected static String postProcessFullTextLabeledText(String fulltextLabeledText) {
+        if (fulltextLabeledText == null)
             return null;
         StringBuilder result = new StringBuilder();
 
-        String[] lines = labeledAbstract.split("\n");
+        String[] lines = fulltextLabeledText.split("\n");
         String previousLabel = null;
         for(int i=0; i<lines.length; i++) {
             String line = lines[i];
@@ -2511,8 +2515,12 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 			tei.append("\t\t<back>\n");
 
 			// acknowledgement is in the back
-            tei.append(getSectionAsTEI("acknowledgement", "\t\t\t",doc, SegmentationLabels.ACKNOWLEDGEMENT,
-                teiFormatter, resCitations, config));
+            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config);
+
+            if (acknowledgmentStmt.length() > 0) {
+                tei.append(acknowledgmentStmt);
+            }
 
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();
@@ -2618,7 +2626,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (StringUtils.isNotBlank(text) ) {
                     resultLabelling = label(text);
                 }
-                String postProcessedText = postProcessLabeledAbstract(resultLabelling);
+                String postProcessedText = postProcessFullTextLabeledText(resultLabelling);
                 output = teiFormatter.processTEIDivSection(xmlType, indentation, postProcessedText, tokens, resCitations, config);
             }
         }
