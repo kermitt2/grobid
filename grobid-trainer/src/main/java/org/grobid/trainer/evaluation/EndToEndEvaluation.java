@@ -326,6 +326,35 @@ public class EndToEndEvaluation {
 				
 		return report.toString();
 	}
+
+    /**
+     * This method removes the fields from the evaluation specifications and labels
+     * NOTE: This modifies the fieldSpecification and labelSpecification lists
+     *
+     * @param listFieldNamesToRemove list of fields names to be removed
+     * @param fieldSpecification field specification list where the fields needs to be removed
+     * @param labelsSpecification field specification labels list where the fields needs to be removed
+     */
+    protected static void removeFieldsFromEvaluation(List<String> listFieldNamesToRemove, List<FieldSpecification> fieldSpecification, List<String> labelsSpecification) {
+
+        for (String fieldNameToRemove : listFieldNamesToRemove) {
+            List<FieldSpecification> toRemove = new ArrayList<>();
+            if (CollectionUtils.isNotEmpty(fieldSpecification)) {
+                for (FieldSpecification field : fieldSpecification) {
+                    if (listFieldNamesToRemove.contains(field.fieldName)) {
+                        toRemove.add(field);
+                    }
+                }
+            }
+
+            if (toRemove.size() > 0) {
+                labelsSpecification.remove(fieldNameToRemove);
+                for (FieldSpecification fulltextField : toRemove) {
+                    fieldSpecification.remove(fulltextField);
+                }
+            }
+        }
+    }
 	
 	private String evaluationRun(int runType, int sectionType, StringBuilder reportMD) {
 		if ( (runType != this.GROBID) && (runType != this.PDFX) && (runType != this.CERMINE) ) {
@@ -389,48 +418,17 @@ public class EndToEndEvaluation {
 		int match2 = 0;
 		int match3 = 0;
 		int match4 = 0;
-		
-		String profile = "JATS";
-		if (xmlInputPath.indexOf("PMC") != -1) {
-			// for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
-			profile =  "PMC";
-			
-			citationsLabels.remove("doi");
-			citationsLabels.remove("pmid");
-			citationsLabels.remove("pmcid");
-			
-			List<FieldSpecification> toRemove = new ArrayList<>();
-			if (citationsFields != null && citationsFields.size() > 0) {
-				for(FieldSpecification citationsField : citationsFields) {
-					if (citationsField.fieldName.equals("doi") || 
-						citationsField.fieldName.equals("pmid") || 
-						citationsField.fieldName.equals("pmcid"))
-						toRemove.add(citationsField);
-				}
-			}
-			if (toRemove.size() > 0) {
-				for(FieldSpecification citationsField : toRemove) {
-					citationsFields.remove(citationsField);
-				}
-			}
 
-			fulltextLabels.remove("availability_stmt");
+        String profile = "JATS";
+        if (xmlInputPath.indexOf("PMC") != -1) {
+            // for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
+            profile =  "PMC";
 
-			toRemove = new ArrayList<>();
-			if (fulltextFields != null && fulltextFields.size() > 0) {
-				for(FieldSpecification fulltextField : fulltextFields) {
-					if (fulltextField.fieldName.equals("availability_stmt")) {
-						// remove availability statements from PMC (not covered and it would make metrics not comparable over time)
-						toRemove.add(fulltextField);
-					}
-				}
-			}
-			if (toRemove.size() > 0) {
-				for(FieldSpecification fulltextField : toRemove) {
-					fulltextFields.remove(fulltextField);
-				}
-			}
-		}
+            removeFieldsFromEvaluation(Arrays.asList("doi", "pmid", "pmcid"), citationsFields, citationsLabels);
+
+            // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
+            removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt"), fulltextFields, fulltextLabels);
+        }
 
         File input = new File(xmlInputPath);      
         // we process all tei files in the output directory
