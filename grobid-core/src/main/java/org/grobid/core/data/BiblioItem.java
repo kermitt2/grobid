@@ -2097,6 +2097,12 @@ public class BiblioItem {
             if (doiMatcher.find()) { 
                 setDOI(pubnum);
                 setPubnum(null);
+            } else {
+                doiMatcher = TextUtilities.DOIPattern.matcher(pubnum.replace(" ", ""));
+                if (doiMatcher.find()) { 
+                    setDOI(pubnum);
+                    setPubnum(null);
+                }
             }
         } 
         // arXiv id (this covers old and new versions)
