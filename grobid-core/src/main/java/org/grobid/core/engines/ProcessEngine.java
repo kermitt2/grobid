@@ -421,6 +421,19 @@ public class ProcessEngine implements Closeable {
     }
 
     /**
+     * Generate training data from raw reference strings.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingCitation(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingCitation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
      * Process a patent encoded in TEI using pGbdArgs parameters.
      *
      * @param pGbdArgs The parameters.

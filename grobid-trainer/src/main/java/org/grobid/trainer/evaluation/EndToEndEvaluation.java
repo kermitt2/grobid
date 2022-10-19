@@ -398,19 +398,36 @@ public class EndToEndEvaluation {
 			citationsLabels.remove("doi");
 			citationsLabels.remove("pmid");
 			citationsLabels.remove("pmcid");
-
+			
 			List<FieldSpecification> toRemove = new ArrayList<>();
 			if (citationsFields != null && citationsFields.size() > 0) {
 				for(FieldSpecification citationsField : citationsFields) {
 					if (citationsField.fieldName.equals("doi") || 
 						citationsField.fieldName.equals("pmid") || 
 						citationsField.fieldName.equals("pmcid"))
-					toRemove.add(citationsField);
+						toRemove.add(citationsField);
 				}
 			}
 			if (toRemove.size() > 0) {
 				for(FieldSpecification citationsField : toRemove) {
 					citationsFields.remove(citationsField);
+				}
+			}
+
+			fulltextLabels.remove("availability_stmt");
+
+			toRemove = new ArrayList<>();
+			if (fulltextFields != null && fulltextFields.size() > 0) {
+				for(FieldSpecification fulltextField : fulltextFields) {
+					if (fulltextField.fieldName.equals("availability_stmt")) {
+						// remove availability statements from PMC (not covered and it would make metrics not comparable over time)
+						toRemove.add(fulltextField);
+					}
+				}
+			}
+			if (toRemove.size() > 0) {
+				for(FieldSpecification fulltextField : toRemove) {
+					fulltextFields.remove(fulltextField);
 				}
 			}
 		}
@@ -737,12 +754,16 @@ public class EndToEndEvaluation {
 							goldCitations.add(fieldsValues);
 							
 						}
-						
+
 						// get the Grobid citations
 						path = base.grobidPath.get(0);
 						nodeList = (NodeList) xp.compile(path).
 							evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 						int nbCitationsGrobid = nodeList.getLength();
+
+//if (nbCitationsGold != nbCitationsGrobid)
+//System.out.println(dir.getPath() + " references: " + nbCitationsGold + " (expected) / " + nbCitationsGrobid + " (grobid)");
+
 						totalObservedInstances += nbCitationsGrobid;
 						List<Map<String,List<String>>> grobidCitations = 
 							new ArrayList<Map<String,List<String>>>();
@@ -1134,7 +1155,6 @@ public class EndToEndEvaluation {
 							nodeList = (NodeList) xp.compile(FieldSpecification.grobidBibReferenceId).
 								evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 							//System.out.println(FieldSpecification.grobidBibReferenceId + ": " + nodeList.getLength() + " nodes");
-							int nbGrobidResults = nodeList.getLength();
 							for (int i = 0; i < nodeList.getLength(); i++) {
 							    grobidBibRefIds.add(nodeList.item(i).getNodeValue());
 							}
@@ -1179,7 +1199,6 @@ public class EndToEndEvaluation {
 							nodeList = (NodeList) xp.compile(FieldSpecification.grobidCitationContextId).
 								evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
 							//System.out.println(FieldSpecification.grobidCitationContextId + ": " + nodeList.getLength() + " nodes");
-							nbGrobidResults = nodeList.getLength();
 							for (int i = 0; i < nodeList.getLength(); i++) {
 								String localId = nodeList.item(i).getNodeValue();
 								localId = localId.replace("#", "");
@@ -1236,11 +1255,9 @@ public class EndToEndEvaluation {
 							String fieldName = field.fieldName;
 						
 							List<String> grobidResults = new ArrayList<>();
-							int nbGrobidResults = 0;
 							for(String path : field.grobidPath) {
 								NodeList nodeList = (NodeList) xp.compile(path).
 									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
-								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
 								    grobidResults.add((nodeList.item(i).getNodeValue().replaceAll(" +", " ")));
 								}
@@ -1255,9 +1272,17 @@ public class EndToEndEvaluation {
 								//System.out.println("Grobid: " + fieldName + ":\t" + grobidResult);
 								grobidResults = new ArrayList<>();
 								grobidResults.add(grobidResult);
-								nbGrobidResults = 1;
 							}
-						
+
+/*if (fieldName.equals("title") && (grobidResults.size() == 0 || grobidResults.get(0).length() == 0))  
+System.out.println(dir.getPath() + " no GROBID title");
+
+if (fieldName.equals("authors") && (grobidResults.size() == 0 || grobidResults.get(0).length() == 0)) 
+System.out.println(dir.getPath() + " no authors");
+
+if (fieldName.equals("abstract") && (grobidResults.size() == 0 || grobidResults.get(0).length() == 0)) 
+System.out.println(dir.getPath() + " no abstract");
+*/
 							List<String> goldResults = new ArrayList<>();
 							int nbGoldResults = 0;
 							List<String> subpaths = null;
@@ -1445,11 +1470,9 @@ System.out.println("grobid: " + grobidResult);*/
 							String fieldName = field.fieldName;
 						
 							List<String> grobidResults = new ArrayList<>();
-							int nbGrobidResults = 0;
 							for(String path : field.grobidPath) {
 								NodeList nodeList = (NodeList) xp.compile(path).
 									evaluate(tei.getDocumentElement(), XPathConstants.NODESET);
-								nbGrobidResults = nodeList.getLength();
 								for (int i = 0; i < nodeList.getLength(); i++) {
 									String normalizedString = basicNormalizationFullText(nodeList.item(i).getNodeValue(), fieldName);
 									if (normalizedString != null && normalizedString.length()>0)

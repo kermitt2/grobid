@@ -1854,7 +1854,8 @@ public class BiblioItem {
 		
 		List<Keyword> result = new ArrayList<Keyword>();
 		// the list of possible keyword separators
-		List<String> separators = Arrays.asList(";","•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
+		List<String> separators = Arrays.asList(";","■", "•", "ㆍ", "Á", "\n", ",", ".", ":", "/", "|");
+        List<String> separatorsSecondary = Arrays.asList("•", "■");
 		for(String separator : separators) {
 	        StringTokenizer st = new StringTokenizer(string, separator);
 	        if (st.countTokens() > 2) {
@@ -1863,9 +1864,24 @@ public class BiblioItem {
 					if (res.startsWith(":")) {
 			            res = res.substring(1);
 			        }
-					res = res.replace("\n", " ").replace("  ", " ");
-					Keyword keyw = new Keyword(res, type);
-					result.add(keyw);
+                    boolean noSecondary = true;
+					res = res.replace("\n", " ").replaceAll("( )+", " ");
+                    for(String separatorSecondary : separatorsSecondary) {
+                        StringTokenizer st2 = new StringTokenizer(res, separatorSecondary);
+                        if (st2.countTokens() > 1) {
+                            while (st2.hasMoreTokens()) {
+                                String res2 = st2.nextToken().trim();
+                                res2 = res2.replace("\n", " ").replaceAll("( )+", " ");
+                                Keyword keyw = new Keyword(res2, type);
+                                result.add(keyw);
+                            }
+                            noSecondary = false;
+                        }
+                    }
+                    if (noSecondary) {
+    					Keyword keyw = new Keyword(res, type);
+	       				result.add(keyw);
+                    }
 	            }
 				break;
 	        }
@@ -3962,6 +3978,9 @@ public class BiblioItem {
 
     /**
      * Correct fields of the first biblio item based on the second one and the reference string
+     * 
+     * @param bib extracted from document
+     * @param bibo fetched from metadata provider (biblioglutton, crossref..)
      */
     public static void correct(BiblioItem bib, BiblioItem bibo) {
         //System.out.println("correct: \n" + bib.toTEI(0));
@@ -4114,8 +4133,8 @@ public class BiblioItem {
                                     // should we also check the country ? affiliation?
                                     if (StringUtils.isNotBlank(auto.getMiddleName()) && (StringUtils.isBlank(aut.getMiddleName())))
                                         aut.setMiddleName(auto.getMiddleName());
-                                    if (StringUtils.isNotBlank(auto.getORCID()) && (StringUtils.isBlank(aut.getORCID())))
-                                        aut.setORCID(auto.getORCID());
+                                    // crossref is considered more reliable than PDF annotations
+                                    aut.setORCID(auto.getORCID());
                                 }
                             }
                         }
@@ -4159,8 +4178,6 @@ public class BiblioItem {
                                                 aut.setTitle(aut2.getTitle());
                                             if (StringUtils.isBlank(aut.getSuffix()))
                                                 aut.setSuffix(aut2.getSuffix());
-                                            if (StringUtils.isBlank(aut.getORCID()))
-                                                aut.setORCID(aut2.getORCID());
                                             if (StringUtils.isBlank(aut.getEmail()))
                                                 aut.setEmail(aut2.getEmail());
                                             if(!CollectionUtils.isEmpty(aut2.getAffiliations()))
@@ -4173,6 +4190,7 @@ public class BiblioItem {
                                                 aut.setMarkers(aut2.getMarkers());
                                             if (!CollectionUtils.isEmpty(aut2.getLayoutTokens())) 
                                                 aut.setLayoutTokens(aut2.getLayoutTokens());
+                                            // crossref is considered more reliable than PDF annotations, so ORCIDs are not overwritten
                                             break;
                                         } 
                                     }  
