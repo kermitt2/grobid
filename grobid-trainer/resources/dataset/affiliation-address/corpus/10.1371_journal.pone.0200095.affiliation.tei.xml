@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>1</marker>
+							<!-- not sure  https://mnh.uplb.edu.ph/collections/microbial-culture -->
+							<orgName type="laboratory">Microbial Culture Collection</orgName>,
+							<orgName type="institution">Museum of Natural History</orgName>,
+							<orgName type="institution">University of the Philippines Los Baños</orgName>,
+							<address>
+								<settlement>College</settlement>,
+								<lb/>
+								<settlement>Laguna</settlement>,
+								<country>Philippines</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>2</marker>
+							<orgName type="department">Microbiology Division</orgName>,
+							<orgName type="department">Institute of Biological Sciences</orgName>,
+							<orgName type="department">College of Arts and Sciences</orgName>,
+							<lb/>
+							<orgName type="institution">University of the Philippines Los Baños</orgName>,
+							<address>
+								<settlement>College</settlement>,
+								<settlement>Laguna</settlement>,
+								<country>Philippines</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>3</marker>
+							<orgName type="department">Plant Breeding, Genetics and<lb/> Biotechnology Division</orgName>,
+							<orgName type="institution">International Rice Research Institute</orgName>,
+							<address>
+								<settlement>Los Baños</settlement>,
+								<settlement>Laguna</settlement>,
+								<country>Philippines,</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>4</marker>
+							<orgName type="laboratory">Microbiological Research and Services Laboratory</orgName>,
+							<orgName type="institution">Natural Sciences Research Institute</orgName>,
+							<orgName type="institution">University of the<lb/> Philippines Diliman</orgName>,
+							<address>
+								<settlement>Quezon City</settlement>,
+								<country>Philippines</country>,
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>5</marker>
+							<orgName type="laboratory">Korean Collection for Type Cultures</orgName>,
+							<orgName type="department">Biological Resource<lb/> Center</orgName>,
+							<orgName type="institution">Korea Research Institute of Bioscience and Biotechnology</orgName>,
+							<address>
+								<settlement>Jeongeup</settlement>,
+								<country>South Korea</country>
+								<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<orgName type="institution">University of Pretoria</orgName>,
+							<lb/>
+							<address>
+								<country>SOUTH AFRICA</country>
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

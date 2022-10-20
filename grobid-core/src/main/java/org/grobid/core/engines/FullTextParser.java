@@ -3,6 +3,7 @@ package org.grobid.core.engines;
 import com.google.common.collect.Iterables;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
@@ -1861,29 +1862,29 @@ public class FullTextParser extends AbstractParser {
             } else if (lastTag0.equals("<equation_label>")) {
                 buffer.append("</label>\n\n");
             } else if (lastTag0.equals("<table>")) {
-                buffer.append("</table>\n\n");
+                buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<figure>")) {
                 buffer.append("</figure>\n\n");
             } else if (lastTag0.equals("<item>")) {
                 buffer.append("</item>\n\n");
-            } /*else if (lastTag0.equals("<label>")) {
-                buffer.append("</label>\n\n");
-            } 
-			else if (lastTag0.equals("<content>")) {
-                buffer.append("</content>\n\n");
-            } */
-			else if (lastTag0.equals("<citation_marker>")) {
+            } else if (lastTag0.equals("<citation_marker>") || 
+                lastTag0.equals("<figure_marker>") || 
+                lastTag0.equals("<table_marker>") || 
+                lastTag0.equals("<equation_marker>")) {
                 buffer.append("</ref>");
 
-            } else if (lastTag0.equals("<figure_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<table_marker>")) {
-                buffer.append("</ref>");
-            } else if (lastTag0.equals("<equation_marker>")) {
-                buffer.append("</ref>");
+                // Make sure that paragraph is closed when markers are at the end of it
+                if (!currentTag0.equals("<paragraph>") && 
+                    (!currentTag0.equals("<citation_marker>") || 
+                     !currentTag0.equals("<figure_marker>") || 
+                     !currentTag0.equals("<table_marker>") || 
+                     !currentTag0.equals("<equation_marker>")
+                     )
+                    ) {
+                    buffer.append("</p>\n\n");
+                }
             } else {
                 res = false;
-
             }
 
         }
@@ -2465,22 +2466,38 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 			tei.append("\t\t<back>\n");
 
 			// acknowledgement is in the back
-			SortedSet<DocumentPiece> documentAcknowledgementParts =
-				doc.getDocumentPart(SegmentationLabels.ACKNOWLEDGEMENT);
-			Pair<String, LayoutTokenization> featSeg =
-				getBodyTextFeatured(doc, documentAcknowledgementParts);
-			List<LayoutToken> tokenizationsAcknowledgement;
-			if (featSeg != null) {
-				// if featSeg is null, it usually means that no body segment is found in the
-				// document segmentation
-				String acknowledgementText = featSeg.getLeft();
-				tokenizationsAcknowledgement = featSeg.getRight().getTokenization();
-				String reseAcknowledgement = null;
-				if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
-					reseAcknowledgement = label(acknowledgementText);
-				tei = teiFormatter.toTEIAcknowledgement(tei, reseAcknowledgement,
-					tokenizationsAcknowledgement, resCitations, config);
-			}
+            tei.append(getSectionAsTEI("acknowledgement", "\t\t\t",doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config));
+
+            // availability statements in header
+            StringBuilder availabilityStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {
+                List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
+                Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
+                if (headerAvailabilityProcessed != null) {
+                    availabilityStmt = teiFormatter.processTEIDivSection("availability", 
+                        "\t\t\t", 
+                        headerAvailabilityProcessed.getLeft(), 
+                        headerAvailabilityProcessed.getRight(), 
+                        resCitations, 
+                        config);
+                }
+                if (availabilityStmt.length() > 0) {
+                    tei.append(availabilityStmt.toString());
+                }
+            }
+
+            // availability statements in non-header part
+            availabilityStmt = getSectionAsTEI("availability", 
+                "\t\t\t", 
+                doc, 
+                SegmentationLabels.AVAILABILITY, 
+                teiFormatter, 
+                resCitations, 
+                config);
+            if (availabilityStmt.length() > 0) {
+                tei.append(availabilityStmt.toString());
+            }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
 				tokenizationsAnnex, markerTypes, doc, config);
@@ -2504,6 +2521,33 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 //				)
 //		);
 	}
+
+    private StringBuilder getSectionAsTEI(String xmlType,
+                                          String indentation,
+                                          Document doc,
+                                          TaggingLabel taggingLabel,
+                                          TEIFormatter teiFormatter,
+                                          List<BibDataSet> resCitations,
+                                          GrobidAnalysisConfig config) throws Exception {
+        StringBuilder output = new StringBuilder();
+        SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
+
+        if (sectionPart != null && sectionPart.size() > 0) {
+            Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
+            if (sectionTokenisation != null) {
+                // if featSeg is null, it usually means that no body segment is found in the
+                // document segmentation
+                String text = sectionTokenisation.getLeft();
+                List<LayoutToken> tokens = sectionTokenisation.getRight().getTokenization();
+                String resultLabelling = null;
+                if (StringUtils.isNotBlank(text) ) {
+                    resultLabelling = label(text);
+                }
+                output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
+            }
+        }
+        return output;
+    }
 
 	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER,
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);

@@ -176,13 +176,15 @@
 
 			<page>45 <lb/></page>
 
-			<div type="acknowledgement">Acknowledgments <lb/>We thank the High-Throughput Genomics Group at the Wellcome Centre for <lb/>Human Genetics (funded by Wellcome Trust grant 203141/Z/16/Z) for the <lb/>generation of sequencing data. We also thank Dr. Benjamin Bishop and Prof. <lb/>Christian Siebold in the Division of Structural Biology (Wellcome Centre for Human <lb/>Genetics, Oxford) for their help with the purification of recombinant mouse <lb/>ZCWPW1 (size exclusion) towards antibody production. Funding: This work was <lb/>supported by a Wellcome Trust Investigator Award to S.R.M. (098387/Z/12/Z &amp; <lb/>212284/Z/18/Z) and Wellcome Trust PhD Studentship to D.W. (109109/Z/15/Z). <lb/>Graphical abstract was created with BioRender.com. <lb/></div>
+			<div type="acknowledgement">Acknowledgments <lb/>We thank the High-Throughput Genomics Group at the Wellcome Centre for <lb/>Human Genetics (funded by Wellcome Trust grant 203141/Z/16/Z) for the <lb/>generation of sequencing data. We also thank Dr. Benjamin Bishop and Prof. <lb/>Christian Siebold in the Division of Structural Biology (Wellcome Centre for Human <lb/>Genetics, Oxford) for their help with the purification of recombinant mouse <lb/>ZCWPW1 (size exclusion) towards antibody production.</div> 
+
+			<div type="funding">Funding: This work was <lb/>supported by a Wellcome Trust Investigator Award to S.R.M. (098387/Z/12/Z &amp; <lb/>212284/Z/18/Z) and Wellcome Trust PhD Studentship to D.W. (109109/Z/15/Z). <lb/>Graphical abstract was created with BioRender.com. <lb/></div>
 
 			<div type="annex">Author contributions <lb/>S.R.M. designed the study; E.B carried out cloning, cell culture experiments, bred <lb/>the mice and collected fertility measures; D.M. performed immunostaining of <lb/>spermatocytes and FISH for protein expression and synapsis analysis; E.B <lb/>performed ZCWPW1 ChIP-seq in human cells and G.Z. performed DMC1 ChIP-<lb/>seq in mouse testis; E.B, D.W, D.M, A.G.H (DMC1 ChIP-seq) and S.R.M analysed <lb/>the data; E.B, D.W and S.R.M prepared the manuscript. <lb/></div>
 
 			<div type="annex">Competing interests <lb/>The authors declare no competing interests. <lb/></div>
 
-			<div type="annex">Materials &amp; Correspondence <lb/>Code is available at ww.github.com/MyersGroup/Zcwpw1. Other requests should <lb/>be addressed to S.R.M. <lb/></div>
+			<div type="availability">Materials &amp; Correspondence <lb/>Code is available at ww.github.com/MyersGroup/Zcwpw1. Other requests should <lb/>be addressed to S.R.M. <lb/></div>
 
 			<page>46 <lb/></page>
 

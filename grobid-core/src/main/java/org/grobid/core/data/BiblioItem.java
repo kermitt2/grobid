@@ -367,6 +367,9 @@ public class BiblioItem {
     private String workingGroup = null;
     private String rawMeeting = null;
 
+    // Availability statement
+    private String availabilityStmt = null;
+
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
             "In Proceeding of", "in Proceeding of", "in Proceeding", "In Proceeding", "Proceedings",
@@ -1781,7 +1784,7 @@ public class BiblioItem {
     public static void cleanTitles(BiblioItem bibl) {
         if (bibl.getTitle() != null) {
             String localTitle = TextUtilities.cleanField(bibl.getTitle(), false);
-            if (localTitle.endsWith(" y")) {
+            if (localTitle != null && localTitle.endsWith(" y")) {
                 // some markers at the end of the title are extracted from the pdf as " y" at the end of the title
                 // e.g. <title level="a" type="main">Computations in finite-dimensional Lie algebras y</title>
                 localTitle = localTitle.substring(0, localTitle.length() - 2);
@@ -2114,7 +2117,8 @@ public class BiblioItem {
                 pubnum = pubnum.replace("issn", "");
                 pubnum = pubnum.replace("ISSN", "");
                 pubnum = TextUtilities.cleanField(pubnum, true);
-                setISSN(pubnum);
+                if (pubnum != null)
+                    setISSN(pubnum);
                 setPubnum(null);
             }
         }
@@ -2125,9 +2129,9 @@ public class BiblioItem {
                 pubnum = pubnum.replace("isbn", "");
                 pubnum = pubnum.replace("ISBN", "");
                 pubnum = TextUtilities.cleanField(pubnum, true);
-                if (pubnum.length() == 10)
+                if (pubnum != null && pubnum.length() == 10)
                     setISBN10(pubnum);
-                else 
+                else if (pubnum != null && pubnum.length() == 13)
                     setISBN13(pubnum);
                 setPubnum(null);
             }
@@ -4275,5 +4279,13 @@ public class BiblioItem {
 
     public List<LayoutToken> getAbstractTokensWorkingCopy() {
         return abstractTokensWorkingCopy;
+    }
+
+    public String getAvailabilityStmt() {
+        return availabilityStmt;
+    }
+
+    public void setAvailabilityStmt(String availabilityStmt) {
+        this.availabilityStmt = availabilityStmt;
     }
 }

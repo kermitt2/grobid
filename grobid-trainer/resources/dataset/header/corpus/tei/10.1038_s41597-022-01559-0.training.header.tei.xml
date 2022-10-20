@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1038_s41597-022-01559-0"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+
+	<reference>Scientific Data |<lb/> (2022) 9:451 | https://doi.org/10.1038/s41597-022-01559-0<lb/> www.nature.com/scientificdata<lb/></reference>
+
+	<docTitle>
+	<titlePart>the role of plant functional groups<lb/> mediating climate impacts on<lb/> carbon and biodiversity of alpine grasslands<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Vigdis Vandvik 1,2 ✉ , Inge H. J. Althuizen 1,2,3 , Francesca Jaroszynska 1,4 , Linn C. Krüger 1 ,<lb/> Hanna Lee 2,3,5 , Deborah E. Goldberg 6 , Kari Klanderud 7 , Siri L. Olsen 7,8 , Richard J. Telford 1,2 ,<lb/> Silje A. H. Östman 1 , Sara Busca 1 , Ingrid J. Dahle 1 , Dagmar D. Egelkraut 1,2 , Sonya R. Geange 1,2 ,<lb/> Ragnhild Gya 1,2 , Josh S. Lynn 1,2 , Eric Meineri 1,9 , Sherry Young 10 &amp; Aud H. Halbritter 1,2<lb/></docAuthor>
+	</byline>
+
+	<div type="abstract">Plant removal experiments allow assessment of the role of biotic interactions among species or<lb/> functional groups in community assembly and ecosystem functioning. When replicated along climate<lb/> gradients, they can assess changes in interactions among species or functional groups with climate.<lb/> Across twelve sites in the Vestland Climate Grid (VCG) spanning 4 °C in growing season temperature<lb/> and 2000 mm in mean annual precipitation across boreal and alpine regions of Western Norway, we<lb/> conducted a fully factorial plant functional group removal experiment (graminoids, forbs, bryophytes).<lb/> Over six years, we recorded biomass removed, soil microclimate, plant community composition<lb/> and structure, seedling recruitment, ecosystem carbon fluxes, and reflectance in 384 experimental<lb/> and control plots. The dataset consists of 5,412 biomass records, 360 species-level biomass records,<lb/> 1,084,970 soil temperature records, 4,771 soil moisture records, 17,181 plant records covering 206<lb/> taxa, 16,656 seedling records, 3,696 ecosystem carbon flux measurements, and 1,244 reflectance<lb/> measurements. The data can be combined with longer-term climate data and plant population,<lb/> community, ecosystem, and functional trait data collected within the VCG.<lb/></div>
+
+	<byline>
+	<affiliation>1 Department of Biological Sciences, University of Bergen,</affiliation>
+	</byline>
+
+	<address>Bergen, norway.</address>
+
+	<byline>
+	<affiliation>2 Bjerknes centre for climate Research,<lb/> University of Bergen,</affiliation>
+	</byline>
+
+	<address>Bergen, norway.</address>
+
+	<byline>
+	<affiliation>3 norwegian Research centre, Bjerknes centre for climate Research,</affiliation>
+	</byline>
+
+	<address>Bergen,<lb/> norway.</address>
+
+	<byline>
+	<affiliation>4 Office Français de la Biodiversité,</affiliation>
+	</byline>
+
+	<address>Pérols, France.</address>
+
+	<byline>
+	<affiliation>5 Department of Biology, norwegian University of Science<lb/> and technology,</affiliation>
+	</byline>
+
+	<address>trondheim, norway.</address>
+
+	<byline>
+	<affiliation>6 Department of ecology and evolutionary Biology, University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann<lb/> Arbor, Mi, USA.</address>
+
+	<byline>
+	<affiliation>7 faculty of environmental Sciences and natural Resource Management, norwegian University of Life<lb/> Sciences,</affiliation>
+	</byline>
+
+	<address>Ås, norway.</address>
+
+	<byline>
+	<affiliation>8 norwegian institute for nature Research,</affiliation>
+	</byline>
+
+	<address>Oslo, norway.</address>
+
+	<byline>
+	<affiliation>9 Aix Marseille Univ, Avignon Univ,<lb/> cnRS, iRD, iMBe, </affiliation>
+	</byline>
+
+	<address>Marseille, france.</address>
+
+	<byline>
+	<affiliation>10 Simon fraser University,</affiliation>
+	</byline>
+
+	<address>Vancouver, canada.</address>
+
+	✉ e-mail:
+	<email>vigdis.vandvik@uib.no<lb/></email>
+
+	<note type="doctype">DATA DESCRI TOR<lb/></note>
+
+	<note type="doctype">O EN<lb/></note>
+
+	<note type="submission">Received: 21 December 2021; Accepted: 12 July 2022;<lb/></note>
+
+	Published: xx xx xxxx<lb/> additional information<lb/> Correspondence and requests for materials should be addressed to V.V.<lb/>
+
+	Reprints and permissions information is available at www.nature.com/reprints.<lb/> Publisher&apos;s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and<lb/> institutional affiliations.<lb/>
+
+	<note type="copyright">Open Access This article is licensed under a Creative Commons Attribution 4.0 International<lb/> License, which permits use, sharing, adaptation, distribution and reproduction in any medium or<lb/> format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Cre-<lb/>ative Commons license, and indicate if changes were made. The images or other third party material in this<lb/> article are included in the article&apos;s Creative Commons license, unless indicated otherwise in a credit line to the<lb/> material. If material is not included in the article&apos;s Creative Commons license and your intended use is not per-<lb/>mitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the<lb/> copyright holder. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.<lb/> © The Author(s) 2022</note>
+
+		</front>
+	</text>
+</tei>

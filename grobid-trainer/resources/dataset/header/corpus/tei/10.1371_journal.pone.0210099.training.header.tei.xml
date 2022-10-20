@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210099"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Comparison of two column agglutination tests<lb/> for red blood cell antibody testing<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jonas Sawierucha 1 , Marion Posset 1 , Viola Ha ¨hnel 1 , Christian L. Johnson 1 , James<lb/> A. HutchinsonID 2 , Norbert AhrensID 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Institute for Clinical Chemistry and Laboratory Medicine, Transfusion Medicine, University Hospital<lb/> Regensburg,</affiliation>
+	</byline>
+
+	<address>Regensburg, Germany,</address>
+
+	<byline>
+	<affiliation>2 Department of Surgery, University Hospital Regensburg,<lb/></affiliation>
+	</byline>
+
+	<address>Regensburg, Germany<lb/></address>
+
+	*
+	<email>norbert.ahrens@ukr.de</email>
+
+	Abstract
+	<div type="abstract">Background<lb/> Several sensitive methods are available for red blood cell (RBC) antibody screening.<lb/> Among these, gel and glass card systems have demonstrated comparably good perfor-<lb/>mance in retrospective studies and are widely used in routine patient diagnostics, but their<lb/> performance in prospective studies has not been sufficiently characterised.<lb/> Patients and methods<lb/> Gel card (Bio-Rad DiaMed) and glass bead-based (Ortho Clinical Diagnostics) column<lb/> agglutination technologies were used to screen for antibodies prospectively (group A) and<lb/> for antibody identification in stored and fresh samples known to contain RBC antibodies ret-<lb/>rospectively (group B). Untreated reagent RBCs and either papain-treated (Bio-Rad) or<lb/> ficin-treated panel C cells (Ortho) were used for antibody identification. Results<lb/> RBC-reactive antibodies were detected in 22 of 1000 group A samples, three of which<lb/> tested positive only by gel card agglutination, and four only by glass bead agglutination<lb/> (including one false positive each). Group B comprised 202 sera with known antibodies: 33<lb/> of these samples contained 36 antibodies detected only by gel card agglutination, whereas<lb/> 9 samples contained antibodies detectable only by glass bead-based agglutination. Dis-<lb/>crepancies mostly involved weak antibodies reactive by enzyme only. Two sera contained<lb/> antibody mixtures that neither system detected completely. Of note, in antibody differentia-<lb/>tion batches one and two, anti-Lu a was reactive in 7 of 7 and 1 of 8 samples, respectively. Conclusion<lb/> Both column agglutination tests for red cell antibodies had equal sensitivity and specificity<lb/> with unstored samples. In stored samples, weak and enzyme-only antibodies were more fre-<lb/>quently detected with the gel card system.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210099 December 31, 2018<lb/></reference>
+
+	<page>1 / 9<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Sawierucha J, Posset M, Ha ¨hnel V,<lb/> Johnson CL, Hutchinson JA, Ahrens N (2018)<lb/> Comparison of two column agglutination tests for<lb/> red blood cell antibody testing. PLoS ONE 13(12):<lb/> e0210099.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210099<lb/></idno>
+
+	Editor:
+	<editor>Jeffrey Chalmers,</editor>
+
+	<byline>
+	<affiliation>The Ohio State University,<lb/></affiliation>
+	</byline>
+
+	<address>UNITED STATES<lb/></address>
+
+	<note type="submission">Received: August 8, 2018<lb/> Accepted: December 16, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Sawierucha et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">Data are available at <lb/>protocols.io under this address: dx.doi.org/10. <lb/>17504/protocols.io.vdxe27n. <lb/></note>
+
+	Funding:
+	<note type="funding">The authors received funding from Bio-<lb/>Rad/DiaMed for blood sample testing (JS, MP, NA)<lb/> and from Ortho Clinical Diagnostics for speaking<lb/> engagements (NA). The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></note>
+
+	Competing interests: This work was supported by<lb/> Bio-Rad DiaMed. This does not alter the adherence<lb/> to all PLOS ONE policies on sharing data and<lb/> materials.<lb/>
+
+		</front>
+	</text>
+</tei>

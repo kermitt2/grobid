@@ -1,50 +1,51 @@
-The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. 
-As an alternative, the present page explains how to embed Grobid directly in your Java application. 
+The [RESTful API](Grobid-service.md) provides a simple and efficient way to use and deploy GROBID. For this, the Docker image is the simplest way to use and deploy Grobid. 
 
-After [building the project](Install-Grobid.md), two core jar files are created: grobid-core-`<current version>`.onejar.jar 
-and grobid-core-`<current version>`.jar
-	
-A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
-The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
+As an alternative, the present page explains how to embed Grobid directly in your Java application. The user will need a local `grobid-home` which contains all the models, resources, etc. in addition to the Grobid Java libraries. The `grobid-home` must be downloaded from the Github release of Grobid matching the version of the used Grobid Java library. 
+
+The first option is to use Grobid Java artefacts available online. A complete working **maven** project example of usage of GROBID Java API can be found here: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). 
+This example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTex format.  
+
+The second option is of course to build yourself Grobid and to use the generated artefacts deployed locally. After [building the project](Install-Grobid.md), two core jar files are created under `grobid-core/build/libs`: grobid-core-`<current version>`.onejar.jar (with all the dependencies in the package) and grobid-core-`<current version>`.jar 
 
 ## Using maven
 
-GROBID releases are uploaded on the [grobid bintray](https://bintray.com/rookies/maven/grobid) repository. 
+The Java artefacts of the latest GROBID release (0.7.1) are uploaded on a DIY repository. 
 
-You need to add the following snippet in your pom.xml in order to configure it:
+You need to add the following snippet in your `pom.xml` in order to configure it:
 
 ```xml
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>grobid</id>
+            <name>GROBID DIY repo</name>
+            <url>https://grobid.s3.eu-west-1.amazonaws.com/repo/</url>
         </repository>
     </repositories>         
 ```
-  
 
-In this way you after configuring such repository the dependencies will be automatically managed.
-Here an example of grobid-core dependency: 
+Here an example of `grobid-core` dependency: 
+
 ```xml
 	<dependency>
-        <groupId>com.github.kermitt2</groupId>
-        <artifactId>grobid</artifactId>
-        <version>0.7.0</version>
+        <groupId>org.grobid</groupId>
+        <artifactId>grobid-core</artifactId>
+        <version>0.7.1</version>
     </dependency>
 ```
- 
-If you want to work on a SNAPSHOT development version, you need to include in your pom file the path to this snapshot Grobid jar file, 
-for instance as follow (if necessary replace `0.7.1-SNAPSHOT` by the valid `<current version>`):
+
+If you want to work on a SNAPSHOT development version, you need to download and build the current master yourself, and include in your pom file the path to the local snapshot Grobid jar file, for instance as follow (if necessary replace `0.7.2-SNAPSHOT` by the valid `<current version>`):
 
 ```xml
 	<dependency>
 	    <groupId>org.grobid</groupId>
 	    <artifactId>grobid-core</artifactId>
-	    <version>0.7.1-SNAPSHOT</version>
+	    <version>0.7.2-SNAPSHOT</version>
 	    <scope>system</scope>
-	    <systemPath>${project.basedir}/lib/grobid-core-0.7.1-SNAPSHOT.jar</systemPath>
+	    <systemPath>${project.basedir}/lib/grobid-core-0.7.2-SNAPSHOT.jar</systemPath>
 	</dependency>
 ```
+
+In any cases, you need a local `grobid-home` corresponding to the version of the library. This `grobid-home` must be downloaded from the release available on the Grobid GitHub repo.
 
 ## Using gradle
 
@@ -52,16 +53,15 @@ Add the following snippet in your gradle.build file:
 
 ```groovy
     repositories { 
-        maven { url "https://jitpack.io" }
+        maven { url "https://grobid.s3.eu-west-1.amazonaws.com/repo/" }
     }
 ```
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.7.0'
-    compile 'org.grobid:grobid-trainer:0.7.0'
+    compile 'org.grobid:grobid-core:0.7.1'
+    compile 'org.grobid:grobid-trainer:0.7.1'
 ```
-
 
 ## API call
 
@@ -105,8 +105,6 @@ When using Grobid, you have to initiate a context with the path to the Grobid re
 		e.printStackTrace();
 	} 
 ```
-
-
 
 ## maven Skeleton project example
 

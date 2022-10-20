@@ -75,10 +75,10 @@
 	<editor>Mathias Wernet,</editor>
 
 	<byline>
-	<affiliation>Freie Universitat Berlin<lb/></affiliation>
+	<affiliation>Freie Universitat Berlin<lb/> Fachbereich Biologie Chemie Pharmazie,</affiliation>
 	</byline>
 
-	<address>Fachbereich Biologie Chemie Pharmazie, GERMANY<lb/></address>
+	<address>GERMANY<lb/></address>
 
 	<note type="submission">Received: July 29, 2018<lb/> Accepted: April 17, 2019<lb/></note>
 
@@ -86,10 +86,13 @@
 	<date>May 6, 2019<lb/></date>
 
 	Copyright:
-	<note type="copyright">© 2019 Francikowski et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/> Data Availability Statement: All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
+	<note type="copyright">© 2019 Francikowski et al. This is an<lb/> open access article distributed under the terms of<lb/> the Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
 
-	Funding: The authors
-	<note type="funding">received no specific funding<lb/> for this work.<lb/></note>
+	Data Availability Statement: 
+    <note type="availability">All relevant data are<lb/> within the paper and its Supporting Information<lb/> files.<lb/></note>
+
+	Funding: 
+	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
 
 	Competing interests: The authors have declared<lb/> that no competing interests exist.
 		</front>

@@ -27,6 +27,9 @@ public class TaggingLabels {
 
     //Grobid specific labels
 
+    public final static String AVAILABILITY_LABEL = "<availability>";
+    public final static String FUNDING_LABEL = "<funding>";
+
     public static final String CITATION_MARKER_LABEL = "<citation_marker>";
     public static final String TABLE_MARKER_LABEL = "<table_marker>";
     public static final String FIGURE_MARKER_LABEL = "<figure_marker>";
@@ -59,7 +62,6 @@ public class TaggingLabels {
     public final static String INSTITUTION_LABEL = "<institution>";
     public final static String NOTE_LABEL = "<note>";
     public final static String REFERENCE_LABEL = "<reference>";
-    public final static String FUNDING_LABEL = "<funding>";
     public final static String COPYRIGHT_LABEL = "<copyright>";
     public final static String AFFILIATION_LABEL = "<affiliation>";
     public final static String ADDRESS_LABEL = "<address>";
@@ -176,6 +178,7 @@ public class TaggingLabels {
     public static final TaggingLabel HEADER_MEETING = new TaggingLabelImpl(GrobidModels.HEADER, MEETING_LABEL);
     public static final TaggingLabel HEADER_PUBLISHER = new TaggingLabelImpl(GrobidModels.HEADER, PUBLISHER_LABEL);
     public static final TaggingLabel HEADER_JOURNAL = new TaggingLabelImpl(GrobidModels.HEADER, JOURNAL_LABEL);
+    public static final TaggingLabel HEADER_AVAILABILITY = new TaggingLabelImpl(GrobidModels.HEADER, AVAILABILITY_LABEL);
 
     public static final TaggingLabel DATE_YEAR = new TaggingLabelImpl(GrobidModels.DATE, DATE_YEAR_LABEL);
     public static final TaggingLabel DATE_MONTH = new TaggingLabelImpl(GrobidModels.DATE, DATE_MONTH_LABEL);
@@ -302,6 +305,7 @@ public class TaggingLabels {
         register(HEADER_PUBLISHER);
         register(HEADER_JOURNAL);
         register(HEADER_PAGE);
+        register(HEADER_AVAILABILITY);
 
         //date
         register(DATE_YEAR);

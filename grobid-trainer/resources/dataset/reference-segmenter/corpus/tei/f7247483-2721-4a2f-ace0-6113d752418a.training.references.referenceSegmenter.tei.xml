@@ -1,0 +1,58 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+
+        <bibl>Adiwardana, D., Luong, M.-T., So, D., Hall, J., Fiedel, N.,<lb/> Thoppilan, R., Yang, Z., Kulshreshtha, A., Nemade, G.,<lb/> Lu, Y., and Le, Q. V. Towards a human-like open-domain<lb/> chatbot. ArXiv, abs/2001.09977, 2020.<lb/> </bibl>
+        <bibl>Bender, E. M., Gebru, T., McMillan-Major, A., and<lb/> Shmitchell, S. On the dangers of stochastic parrots:<lb/> Can language models be too big? . In Conference on<lb/> Fairness, Accountability, and Transparency (FAccT &apos;21).<lb/>  ACM, New York, NY, USA, 2021.<lb/> </bibl>
+        <bibl>Bhardwaj, R., Majumder, N., and Poria, S. Investigating<lb/> gender bias in bert. ArXiv, abs/2009.05021, 2020.<lb/> </bibl>
+        <bibl>Bhatia, V., Rawat, P., Kumar, A., and Shah, R. End-to-end<lb/> resume parsing and finding candidates for a job descrip-<lb/>tion using bert. ArXiv, abs/1910.03089, 2019.<lb/> </bibl>
+        <bibl>Blodgett, S. L., Barocas, S., Daum&apos;e, H., and Wallach, H.<lb/> Language (technology) is power: A critical survey of<lb/> &quot;bias&quot; in nlp. In ACL, 2020.<lb/> </bibl>
+        <bibl>Bolukbasi, T., Chang, K.-W., Zou, J. Y., Saligrama, V., and<lb/> Kalai, A. Man is to computer programmer as woman is<lb/> to homemaker? debiasing word embeddings. In NeurIPS,<lb/> 2016.<lb/> </bibl>
+        <bibl>Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,<lb/> J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G.,<lb/> Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G.,<lb/> Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu,<lb/> J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M.,<lb/> Gray, S., Chess, B., Clark, J., Berner, C., McCandlish,<lb/> S., Radford, A., Sutskever, I., and Amodei, D. Language<lb/> models are few-shot learners, 2020.<lb/> </bibl>
+        <bibl>Budzianowski, P. and Vulic, I. Hello, it&apos;s GPT-2 -how<lb/> can I help you? towards the use of pretrained lan-<lb/>guage models for task-oriented dialogue systems. CoRR,<lb/> abs/1907.05774, 2019.<lb/> </bibl>
+        <bibl>Caliskan, A., Bryson, J., and Narayanan, A. Semantics<lb/> derived automatically from language corpora contain<lb/> human-like biases. Science, 356:183 -186, 2017.<lb/> </bibl>
+        <bibl>Crenshaw, K. Demarginalizing the intersection of race<lb/> and sex: A black feminist critique of antidiscrimination<lb/> doctrine, feminist theory and antiracist politics. 1989.<lb/> </bibl>
+        <bibl>Diaz, M., Johnson, I., Lazar, A., Piper, A., and Gergle, D.<lb/> Addressing age-related bias in sentiment analysis. Pro-<lb/>ceedings of the 2018 CHI Conference on Human Factors<lb/> in Computing Systems, 2018.<lb/> </bibl>
+        <bibl>Dinan, E., Fan, A., Williams, A., Urbanek, J., Kiela, D.,<lb/> and Weston, J. Queens are powerful too: Mitigating gen-<lb/>der bias in dialogue generation. ArXiv, abs/1911.03842,<lb/> 2020.<lb/> </bibl>
+        <bibl>Ethayarajh, K. How contextual are contextualized word<lb/> representations? comparing the geometry of bert, elmo,<lb/> and GPT-2 embeddings. CoRR, abs/1909.00512, 2019.<lb/> </bibl>
+        <bibl>Fedus, W., Zoph, B., and Shazeer, N. Switch transform-<lb/>ers: Scaling to trillion parameter models with simple and<lb/> efficient sparsity, 2021.<lb/> </bibl>
+        <bibl>Foulds, J. and Pan, S. An intersectional definition of fair-<lb/>ness. 2020 IEEE 36th International Conference on Data<lb/> Engineering (ICDE), pp. 1918-1921, 2020.<lb/> </bibl>
+        <bibl>Gonen, H. and Goldberg, Y. Lipstick on a pig: Debiasing<lb/> methods cover up systematic gender biases in word em-<lb/>beddings but do not remove them. ArXiv, abs/1903.03862,<lb/> 2019.<lb/> </bibl>
+        <bibl>He, P., Liu, X., Gao, J., and Chen, W. Deberta: Decoding-<lb/>enhanced bert with disentangled attention. ArXiv,<lb/> abs/2006.03654, 2020.<lb/> </bibl> 
+        <bibl>Institute for Genealogical Studies.<lb/> US: Reli-<lb/>gious Records-Part 2, 2020.<lb/> URL https:<lb/> //www.genealogicalstudies.com/eng/<lb/> courses.asp?courseID=209.<lb/> </bibl>
+        <bibl>Kennedy, C. J., Bacon, G., Sahn, A., and von Vacano, C.<lb/> Constructing interval variables via faceted rasch mea-<lb/>surement and multitask deep learning: a hate speech<lb/> application. ArXiv, abs/2009.10277, 2020.<lb/> </bibl>
+        <bibl>Kiritchenko, S. and Mohammad, S. M. Examining gender<lb/> and race bias in two hundred sentiment analysis systems.<lb/> In *SEM@NAACL-HLT, 2018.<lb/> </bibl>
+        <bibl>Kurita, K., Vyas, N., Pareek, A., Black, A., and Tsvetkov, Y.<lb/> Measuring bias in contextualized word representations.<lb/> ArXiv, abs/1906.07337, 2019.<lb/> </bibl>
+        <bibl>Li, C., Fisher, E. M., Thomas, R., Pittard, S., Hertzberg,<lb/> V., and Choi, J. D. Competence-level prediction and<lb/> resume and job description matching using context-aware<lb/> transformer models. ArXiv, abs/2011.02998, 2020.<lb/> </bibl>
+        <bibl>Liu, H., Dacon, J., Fan, W., Liu, H., Liu, Z., and Tang,<lb/> J. Does gender matter? towards fairness in dialogue<lb/> systems. In COLING, 2020.<lb/> </bibl>
+        <bibl>Manning, C. D., Surdeanu, M., Bauer, J., Finkel, J. R.,<lb/> Bethard, S., and McClosky, D. The stanford corenlp<lb/> natural language processing toolkit. In ACL (System<lb/> Demonstrations), pp. 55-60. The Association for Com-<lb/>puter Linguistics, 2014. ISBN 978-1-941643-00-6.<lb/> </bibl>
+        <bibl>Pew Research.<lb/> Religious Landscape Study,<lb/> 2020.<lb/> URL<lb/> https://www.pewforum.<lb/> org/religious-landscape-study/<lb/> religious-tradition/buddhist/.<lb/> </bibl>
+        <bibl>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and<lb/> Sutskever, I. Language models are unsupervised multitask<lb/> learners. 2019.<lb/> </bibl>
+        <bibl>Sheng, E., Chang, K.-W., Natarajan, P., and Peng, N. The<lb/> woman worked as a babysitter: On biases in language<lb/> generation. ArXiv, abs/1909.01326, 2019.<lb/> </bibl>
+        <bibl>Stanovsky, G., Smith, N. A., and Zettlemoyer, L. Eval-<lb/>uating gender bias in machine translation. ArXiv,<lb/> abs/1906.00591, 2019.<lb/> </bibl>
+        <bibl>Tan, Y. and Celis, L. Assessing social and intersectional bi-<lb/>ases in contextualized word representations. In NeurIPS,<lb/> 2019.<lb/> </bibl>
+        <bibl>Tatman, R. Gender and dialect bias in youtube&apos;s automatic<lb/> captions. In EthNLP@EACL, 2017.<lb/> </bibl>
+        <bibl>US Labor Bureau of Statistics. Employed peons by de-<lb/>tailed occupation, sex, race, and Hispanic or Latino eth-<lb/>nicity, 2019. URL https://www.bls.gov/cps/<lb/> cpsaat11.htm.<lb/> </bibl>
+        <bibl>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,<lb/> L., Gomez, A. N., Kaiser, L., and Polosukhin, I. Attention<lb/> is all you need. In NeurIPS, 2017.<lb/> </bibl>
+        <bibl>Wang, A., Singh, A., Michael, J., Hill, F., Levy, O., and<lb/> Bowman, S. R. Glue: A multi-task benchmark and anal-<lb/>ysis platform for natural language understanding. In<lb/> BlackboxNLP@EMNLP, 2018.<lb/> </bibl>
+        <bibl>Wang, A., Pruksachatkun, Y., Nangia, N., Singh, A.,<lb/> Michael, J., Hill, F., Levy, O., and Bowman, S. R. Super-<lb/>glue: A stickier benchmark for general-purpose language<lb/> understanding systems. In NeurIPS, 2019.<lb/> </bibl>
+        <bibl>Wick, M. L., Silverstein, K., Tristan, J., Pocock, A. C., and<lb/> Johnson, M. Detecting and exorcising statistical demons<lb/> from language models with anti-models of negative data.<lb/> ArXiv, abs/2010.11855, 2020.<lb/> </bibl>
+        <bibl>Yang, Z., Dai, Z., Yang, Y., Carbonell, J., Salakhutdinov, R.,<lb/> and Le, Q. V. Xlnet: Generalized autoregressive pretrain-<lb/>ing for language understanding. In NeurIPS, 2019.<lb/> </bibl>
+        <bibl>Zhao, J., Zhou, Y., Li, Z., Wang, W., and Chang, K.-W.<lb/> Learning gender-neutral word embeddings. In EMNLP,<lb/> 2018.<lb/> </bibl>
+        <bibl>Zhao, J., Wang, T., Yatskar, M., Cotterell, R., Ordonez, V.,<lb/> and Chang, K.-W. Gender bias in contextualized word<lb/> embeddings. ArXiv, abs/1904.03310, 2019.<lb/> </bibl>
+        
+        References<lb/> 
+        <bibl>Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S. On the dangers of stochastic parrots: Can language<lb/> models be too big? In Conference on Fairness, Accountability, and Transparency (FAccT &apos;21). ACM, New York, NY,<lb/> USA, 2021.<lb/> </bibl>
+        <bibl>Carlini, N. Privacy Considerations in Large Language Models, 2020. URL https://ai.googleblog.com/2020/<lb/> 12/privacy-considerations-in-large.html/.<lb/> </bibl>
+        <bibl>Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I. Language models are unsupervised multitask<lb/> learners. 2019.<lb/> </bibl>
+        <bibl>Yang, Z., Dai, Z., Yang, Y., Carbonell, J., Salakhutdinov, R., and Le, Q. V. Xlnet: Generalized autoregressive pretraining for<lb/> language understanding. In NeurIPS, 2019.</bibl>
+
+        </listBibl>
+    </text>
+</tei>
+

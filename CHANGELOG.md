@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.7.1] – 2022-04-16
+
+### Added
+
++ Web services for training models (#778)
++ Some additional training data for bibliographical references from arXiv
++ Add a web service to process a list of reference strings, see https://grobid.readthedocs.io/en/processcitationlist/Grobid-service/#apiprocesscitationlist
++ Extended processHeaderDocument to get result in bibTeX
+
+### Changed
+
++ Update to DeLFT version to 0.3.1 and TensorFlow 2.7, with many improvements, see https://github.com/kermitt2/delft/releases/tag/v0.3.0
++ Update of Deep Learning models
++ Update of JEP and add install script
++ Update to new biblio-glutton version 0.2, for improved and faster bibliographical reference matching
++ circleci to replace Travis
++ Update of processFulltextAssetDocument service to use the same parameters as processFulltextDocument
++ Pre-compile regex if not already done
++ Review features for header model
+
+### Fixed
+
++ Improved date normalization (#760)
++ Fix possible issue with coordinates related to reference markers (#908) and sentence (#811)
++ Fix path to bitmap/vector graphics (#836)
++ Fix possible catastrophic regex backtracking (#867)
++ Other minor fixes
+
 ## [0.7.0] – 2021-07-17
 
 ### Added

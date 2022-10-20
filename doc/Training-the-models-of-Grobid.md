@@ -20,7 +20,7 @@ Grobid uses different sequence labelling models depending on the labeling task t
 
 * segmentation
 
-* reference-segmentation
+* reference-segmenter
 
 * fulltext
 

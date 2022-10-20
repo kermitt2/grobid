@@ -4,7 +4,7 @@ grobid:
   # where all the Grobid resources are stored (models, lexicon, native libraries, etc.), normally no need to change
   grobidHome: "grobid-home"
 
-  # path relative to the grobid-home path (e.g. grobid-home/tmp)
+  # path relative to the grobid-home path (e.g. tmp for grobid-home/tmp) or absolute path (/tmp)
   temp: "tmp"
   
   # normally nothing to change here, path relative to the grobid-home path (e.g. grobid-home/lib)
@@ -16,10 +16,10 @@ grobid:
       path: "pdfalto"
       # security for PDF parsing
       memoryLimitMb: 6096
-      timeoutSec: 60
+      timeoutSec: 120
 
     # security relative to the PDF parsing result
-    blocksMax: 100000
+    blocksMax: 200000
     tokensMax: 1000000
 
   consolidation:
@@ -110,6 +110,7 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
@@ -124,7 +125,16 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF"
+        architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 3000
+          batch_size: 1
+        training:
+          # parameters used for trainikng
+          max_sequence_length: 2000
+          batch_size: 10
 
     - name: "name-header"
       engine: "wapiti"
@@ -189,7 +199,6 @@ grobid:
         architecture: "BidLSTM_CRF_FEATURES"
         #architecture: "scibert"
         useELMo: false
-        embeddings_name: "glove-840B"
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000

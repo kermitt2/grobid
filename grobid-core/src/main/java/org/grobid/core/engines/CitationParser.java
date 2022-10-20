@@ -149,6 +149,9 @@ public class CitationParser extends AbstractParser {
             }
         }
         
+        if (featuredInput.toString().length() == 0) 
+            return null;
+
         String allRes = null;
         try {
             allRes = label(featuredInput.toString());

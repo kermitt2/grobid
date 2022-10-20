@@ -39,7 +39,7 @@ import static org.apache.commons.lang3.StringUtils.*;
 public class Segmentation extends AbstractParser {
 
 	/*
-        10 labels for this model:
+        13 labels for this model:
 	 		cover page <cover>, 
 			document header <header>, 
 			page footer <footnote>, 
@@ -50,6 +50,8 @@ public class Segmentation extends AbstractParser {
 			page number <page>,
 			annexes <annex>,
 		    acknowledgement <acknowledgement>,
+		   	availability <availability>,
+		   	funding <funding>,
             other <other>,
 		    toc <toc> -> not yet used because not yet training data for this
 	*/
@@ -769,7 +771,7 @@ public class Segmentation extends AbstractParser {
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
                         PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
-                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"" + id +
+                writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"f" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
                 writer.write(fulltext);
@@ -949,6 +951,12 @@ public class Segmentation extends AbstractParser {
                 if (!output) {
                     output = writeField(buffer, line, s1, lastTag0, s2, "<acknowledgement>", "<div type=\"acknowledgement\">", addSpace, 3);
                 }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<availability>", "<div type=\"availability\">", addSpace, 3);
+                }
+                if (!output) {
+                    output = writeField(buffer, line, s1, lastTag0, s2, "<funding>", "<div type=\"funding\">", addSpace, 3);
+                }
                 lastTag = s1;
 
                 if (!st.hasMoreTokens()) {
@@ -1122,6 +1130,12 @@ public class Segmentation extends AbstractParser {
                 buffer.append("</div>\n\n");
                 res = true;
             } else if (lastTag0.equals("<acknowledgement>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<availability>")) {
+                buffer.append("</div>\n\n");
+                res = true;
+            } else if (lastTag0.equals("<funding>")) {
                 buffer.append("</div>\n\n");
                 res = true;
             } else if (lastTag0.equals("<other>")) {

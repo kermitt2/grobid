@@ -403,6 +403,20 @@ public class FieldSpecification {
 		//labels.add("citation_marker");
 		//labels.add("figure_marker");
 		//labels.add("table_marker");
+
+		FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
+        dataAvailabilityFulltextField.fieldName = "availability_stmt";
+        dataAvailabilityFulltextField.isTextual = true;
+        dataAvailabilityFulltextField.grobidPath
+            .add("//div[@type=\"availability\"]//text()");
+        dataAvailabilityFulltextField.nlmPath
+            .add("//sec[@sec-type=\"availability\"]//text()");
+        dataAvailabilityFulltextField.nlmPath
+            .add("//p[@content-type=\"availability\"]//text()");
+        dataAvailabilityFulltextField.nlmPath
+            .add("//sec[@specific-use=\"availability\"]//text()");
+        fulltextFields.add(dataAvailabilityFulltextField);
+        fulltextLabels.add("availability_stmt");
 	}
 
 	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
