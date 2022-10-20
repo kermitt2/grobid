@@ -83,7 +83,7 @@ In practice, the size of GROBID training data is smaller than the ones of CERMIN
 
 ## Evaluation
 
-As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separated and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
+As the training data is crafted for accuracy and coverage, training data is strongly biased by undersampling non-edge cases. Or to rephrase it maybe more clearly: the less "informative" training examples, which are the most common ones, are less represented in our training data. Because of this bias, our manually labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separated and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
 
 See the current evaluations with [PubMed Central holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-pmc/) (1,943 documents, 90,125 bibliographical references in 139,835 citation contexts) and [bioarXiv holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-biorxiv/) (2,000 documents, 98,753 bibliographical references in 142,796 citation contexts). 
 

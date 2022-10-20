@@ -192,7 +192,7 @@ public class FullTextParser extends AbstractParser {
                     if (abstractProcessed != null) {
                         // neutralize figure and table annotations (will be considered as paragraphs)
                         String labeledAbstract = abstractProcessed.getLeft();
-                        labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
+                        labeledAbstract = postProcessFullTextLabeledText(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
                         resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
@@ -418,18 +418,23 @@ public class FullTextParser extends AbstractParser {
                 layoutTokenization = layouts.getTokenization();
             if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
                 res = label(featuredText);
+                res = postProcessFullTextLabeledText(res);
             }
         }
 
         return Pair.of(res, layoutTokenization);
     }
 
-    static protected String postProcessLabeledAbstract(String labeledAbstract) {
-        if (labeledAbstract == null)
+    /**
+     * Post-process text labeled by the fulltext model on chunks that are known to be text (no table, or figure)
+     * It converts table and figure labels to paragraph labels.
+     */
+    protected static String postProcessFullTextLabeledText(String fulltextLabeledText) {
+        if (fulltextLabeledText == null)
             return null;
         StringBuilder result = new StringBuilder();
 
-        String[] lines = labeledAbstract.split("\n");
+        String[] lines = fulltextLabeledText.split("\n");
         String previousLabel = null;
         for(int i=0; i<lines.length; i++) {
             String line = lines[i];
@@ -2466,8 +2471,12 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 			tei.append("\t\t<back>\n");
 
 			// acknowledgement is in the back
-            tei.append(getSectionAsTEI("acknowledgement", "\t\t\t",doc, SegmentationLabels.ACKNOWLEDGEMENT,
-                teiFormatter, resCitations, config));
+            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config);
+
+            if (acknowledgmentStmt.length() > 0) {
+                tei.append(acknowledgmentStmt);
+            }
 
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();
@@ -2475,7 +2484,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
                 Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
                 if (headerAvailabilityProcessed != null) {
-                    availabilityStmt = teiFormatter.processTEIDivSection("availability", 
+                    availabilityStmt = teiFormatter.processTEIDivSection("availability",
                         "\t\t\t", 
                         headerAvailabilityProcessed.getLeft(), 
                         headerAvailabilityProcessed.getRight(), 
@@ -2488,7 +2497,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             }
 
             // availability statements in non-header part
-            availabilityStmt = getSectionAsTEI("availability", 
+            availabilityStmt = getSectionAsTEI("availability",
                 "\t\t\t", 
                 doc, 
                 SegmentationLabels.AVAILABILITY, 
@@ -2497,6 +2506,36 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 config);
             if (availabilityStmt.length() > 0) {
                 tei.append(availabilityStmt.toString());
+            }
+
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    tei.append(fundingStmt.toString());
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                resCitations,
+                config);
+            if (fundingStmt.length() > 0) {
+                tei.append(fundingStmt);
             }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
@@ -2542,6 +2581,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 String resultLabelling = null;
                 if (StringUtils.isNotBlank(text) ) {
                     resultLabelling = label(text);
+                    resultLabelling = postProcessFullTextLabeledText(resultLabelling);
                 }
                 output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
             }

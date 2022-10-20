@@ -417,6 +417,20 @@ public class FieldSpecification {
             .add("//sec[@specific-use=\"availability\"]//text()");
         fulltextFields.add(dataAvailabilityFulltextField);
         fulltextLabels.add("availability_stmt");
+
+        FieldSpecification fundingFulltextField = new FieldSpecification();
+        fundingFulltextField.fieldName = "funding_stmt";
+        fundingFulltextField.isTextual = true;
+        fundingFulltextField.grobidPath
+            .add("//div[@type=\"funding\"]//text()");
+        fundingFulltextField.nlmPath
+            .add("//sec[@sec-type=\"funding\"]//text()");
+        fundingFulltextField.nlmPath
+            .add("//p[@content-type=\"funding\"]//text()");
+        fundingFulltextField.nlmPath
+            .add("//sec[@specific-use=\"funding\"]//text()");
+        fulltextFields.add(fundingFulltextField);
+        fulltextLabels.add("funding_stmt");
 	}
 
 	public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
