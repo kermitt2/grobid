@@ -11,6 +11,7 @@ import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorReferenceSegmenter;
@@ -19,7 +20,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenSynchronizer;
 import org.grobid.core.utilities.BoundingBoxCalculator;
-//import org.grobid.core.utilities.Pair;
+import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Triple;
 import org.slf4j.Logger;
@@ -34,7 +35,7 @@ import java.util.regex.Matcher;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-public class ReferenceSegmenterParser extends AbstractParser implements ReferenceSegmenter{
+public class ReferenceSegmenterParser extends AbstractParser implements ReferenceSegmenter {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReferenceSegmenterParser.class);
 
     // projection scale for line length
@@ -83,10 +84,106 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 		String featureVector = featSeg.getLeft();
 		tokenizationsReferences = featSeg.getRight();
 		try {
-			res = label(featureVector);
+			
+			// to support long sequence in case of RNN usage we segment in pieces of less than the 
+			// max_sequence_length and quite significantly overlapping 
+			// this does not apply to CRF which can process "infinite" input sequence
+			// this is relevant to the reference segmenter RNN model, which is position-free in its 
+			// application, but could not be generalized to other RNN or transformer model long inputs
+			if (GrobidProperties.getGrobidCRFEngine(GrobidModels.REFERENCE_SEGMENTER) == GrobidCRFEngine.DELFT) {
+				String[] featureVectorLines = featureVector.split("\n");
+
+//System.out.println("total input lines: " + featureVectorLines.length + " - " + tokenizationsReferences.size() + " tokens");
+
+				int originalMaxSequence = 2000;
+				if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(GrobidModels.REFERENCE_SEGMENTER.getModelName()) != -1) {
+					originalMaxSequence = GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(GrobidModels.REFERENCE_SEGMENTER.getModelName());
+				}
+
+				if (featureVectorLines.length < originalMaxSequence || originalMaxSequence < 600) {
+					// if the input is lower than max sequence length, not need to segment
+					// if the max sequence length is too small, e.g. transformer, we won't be able to manage 
+					// overlaps adapted to references
+					res = label(featureVector);
+				} else {
+					// we adjust max sequence value to take into account 500 token lines overlap
+					int maxSequence = Math.max(500, originalMaxSequence - 1000);
+
+//System.out.println("maxSequence adjusted to: " + maxSequence);
+
+					List<List<String>> featureVectorPieces = new ArrayList<>();
+					// segment the input vectors in overlapping sequences, according to the model max_sequence_length parameter
+					for(int i=0; (i*maxSequence) < featureVectorLines.length; i++) {
+						int lowerBound = i*maxSequence;
+						// overlapping: this localRes has 500 extra lines after the normal end
+						int upperBound = Math.min( ((i+1)*maxSequence)+500, featureVectorLines.length );
+						if (featureVectorLines.length - lowerBound < originalMaxSequence)
+							upperBound = featureVectorLines.length;
+						
+//System.out.println("lowerBound: " + lowerBound + " - upperBound: " + upperBound);
+						List<String> featureVectorPiece = new ArrayList<>();
+						for(int j=lowerBound; j<upperBound; j++)
+							featureVectorPiece.add(featureVectorLines[j]);
+						featureVectorPieces.add(featureVectorPiece);
+
+						if (upperBound == featureVectorLines.length)
+							break;
+					}
+
+/*System.out.println("featureVectorPieces.size(): " + featureVectorPieces.size());
+for(List<String> featureVectorPiece : featureVectorPieces) {
+System.out.println(featureVectorPiece.size());
+}*/
+					// label every pieces in batch
+					List<String> allRes = new ArrayList<>();
+					List<String> allVectors = new ArrayList<>();
+					for(List<String> featureVectorPiece : featureVectorPieces) {
+						StringBuilder localFeatureVector = new StringBuilder();
+						for(int j=0; j<featureVectorPiece.size(); j++) {
+							localFeatureVector.append(featureVectorPiece.get(j)).append("\n");
+						}
+						allVectors.add(localFeatureVector.toString());
+					}
+					
+					// parallel labeling of the input segments
+					String fullRes = label(allVectors);
+
+					// segment this result to get back the input chunk alignment (with extra 500 overlaping lines) 
+					String[] fullResLines = fullRes.split("\n");
+					int pos = 0;
+					for(List<String> featureVectorPiece : featureVectorPieces) {
+						StringBuilder localRes = new StringBuilder();
+						int localSize = featureVectorPiece.size();
+						for(int i=pos; i<pos+localSize; i++) {
+							localRes.append(fullResLines[i]).append("\n");
+						}
+						allRes.add(localRes.toString());
+						pos += localSize;
+					}
+					
+					// combine results and reconnect smoothly overlaps 
+					StringBuilder resBuilder = new StringBuilder();
+					for(int i=0; i<allRes.size(); i++) {
+						String localRes = allRes.get(i);
+
+						if (i == 0) {
+							resBuilder.append(localRes);
+						} else {
+							String[] localResLines = localRes.split("\n");
+							List<String> selectedlocalResLines = new ArrayList<>();
+							for(int j= 500; j<localResLines.length; j++)
+								selectedlocalResLines.add(localResLines[j]);
+							for(String localResLine : selectedlocalResLines)
+								resBuilder.append(localResLine).append("\n");
+						}
+					}
+					res = resBuilder.toString();
+				}
+			} else
+				res = label(featureVector);
 		}
 		catch(Exception e) {
-			throw new GrobidException("CRF labeling in ReferenceSegmenter fails.", e);
+			throw new GrobidException("Labeling in ReferenceSegmenter fails.", e);
 		}
 		if (res == null) {
 			return null;
@@ -424,19 +521,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 
 		StringBuilder citations = new StringBuilder();
         boolean newline;
-//        String currentFont = null;
-//        int currentFontSize = -1;
         int n; // overall token number
-
-		//int currentJournalPositions = 0;
-        //int currentAbbrevJournalPositions = 0;
-        //int currentConferencePositions = 0;
-        //int currentPublisherPositions = 0;
-        //boolean isJournalToken;
-        //boolean isAbbrevJournalToken;
-        //boolean isConferenceToken;
-        //boolean isPublisherToken;
-        //boolean skipTest;
 
 		FeaturesVectorReferenceSegmenter features;
 		FeaturesVectorReferenceSegmenter previousFeatures = null;

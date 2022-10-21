@@ -130,7 +130,7 @@ grobid:
         runtime:
           # parameters used at runtime/prediction
           max_sequence_length: 3000
-          batch_size: 1
+          batch_size: 5
         training:
           # parameters used for trainikng
           max_sequence_length: 2000
