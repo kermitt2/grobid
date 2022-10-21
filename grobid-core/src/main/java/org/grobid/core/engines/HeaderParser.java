@@ -1405,7 +1405,7 @@ public class HeaderParser extends AbstractParser {
      */
     public BiblioItem consolidateHeader(BiblioItem resHeader, int consolidate) {
         if (consolidate == 0) {
-            // not consolidation
+            // no consolidation
             return resHeader;
         }
         Consolidation consolidator = null;
