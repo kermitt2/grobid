@@ -1405,7 +1405,7 @@ public class HeaderParser extends AbstractParser {
      */
     public BiblioItem consolidateHeader(BiblioItem resHeader, int consolidate) {
         if (consolidate == 0) {
-            // not consolidation
+            // no consolidation
             return resHeader;
         }
         Consolidation consolidator = null;
@@ -1413,9 +1413,9 @@ public class HeaderParser extends AbstractParser {
             consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager);
-            BiblioItem bib = consolidator.consolidate(resHeader, null);
+            BiblioItem bib = consolidator.consolidate(resHeader, null, consolidate);
             if (bib != null) {
-                if (consolidate == 1)
+                if (consolidate == 1 || consolidate == 3)
                     BiblioItem.correct(resHeader, bib);
                 else if (consolidate == 2)
                     BiblioItem.injectIdentifiers(resHeader, bib);
