@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="069179v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	Title:
+	<docTitle>
+	<titlePart>iELVis: An open source MATLAB toolbox for localizing and visualizing<lb/> human intracranial electrode data<lb/></titlePart>
+	</docTitle>
+
+	Authors:<lb/>
+	<byline>
+	<docAuthor>Groppe, David M. (1,2), Bickel, Stephan (3,4), Dykstra, Andrew R. (5), Wang,<lb/> Xiuyuan (6,7), Mégevand, Pierre (2,8), Mercier, Manuel R. (3,9,10), Lado, Fred<lb/> A. (3,10), Mehta, Ashesh D. (2)*, Honey, Christopher J. (1)*<lb/></docAuthor>
+	</byline>
+
+	*=equal senior authorship<lb/>
+
+	<byline>
+	<affiliation>1. Department of Psychology, University of Toronto,</affiliation>
+	</byline>
+
+	<address>Toronto, ON M5S SG3,<lb/> Canada<lb/></address>
+
+	<byline>
+	<affiliation>2. Department of Neurosurgery, Hofstra Northwell School of Medicine, and<lb/> Feinstein Institute for Medical Research,</affiliation>
+	</byline>
+
+	<address>Manhasset, NY 11030, USA<lb/></address>
+
+	<byline>
+	<affiliation>3. Department of Neurology, Montefiore Medical Center,</affiliation>
+	</byline>
+
+	<address>Bronx, NY 10467, USA<lb/></address>
+
+	<byline>
+	<affiliation>4. Department of Neurology, Stanford University,</affiliation>
+	</byline>
+
+	<address>Stanford, CA 94305, USA<lb/></address>
+
+	<byline>
+	<affiliation>5. Department of Neurology, Ruprecht-Karls-Universität Heidelberg,</affiliation>
+	</byline>
+
+	<address>69120<lb/> Heidelberg, Germany<lb/></address>
+
+	<byline>
+	<affiliation>6. Department of Neurology, New York University School of Medicine,</affiliation>
+	</byline>
+
+	<address>New<lb/> York, NY 10016, USA<lb/></address>
+
+	<byline>
+	<affiliation>7. Department of Radiology, New York University School of Medicine,</affiliation>
+	</byline>
+
+	<address>New<lb/> York, NY 10016, USA<lb/></address>
+
+	<byline>
+	<affiliation>8. Division of Neurology, Department of Clinical Neuroscience, Hôpitaux<lb/> Universitaires de Genève,</affiliation>
+	</byline>
+
+	<address>1211 Geneva, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>9. Centre de Recherche Cerveau et Cognition (CerCo), CNRS, UMR5549,<lb/></affiliation>
+	</byline>
+
+	<address>Pavillon Baudot CHU Purpan, BP 25202, 31052 Toulouse Cedex, France;<lb/></address>
+
+	<byline>
+	<affiliation>Université Paul Sabatier,</affiliation>
+	</byline>
+
+	<address>Toulouse, France<lb/></address>
+
+	<byline>
+	<affiliation>10. Department of Neuroscience, Albert Einstein College of Medicine,</affiliation>
+	</byline>
+
+	<address>Bronx, NY<lb/> 10461, USA</address>
+
+	ABSTRACT<lb/>
+	<div type="abstract">Background<lb/> Intracranial electrical recordings (iEEG) and brain stimulation (iEBS) are<lb/> invaluable human neuroscience methodologies. However, much of the value of<lb/> such data is unrealized as many labs lack tools for precisely localizing electrodes<lb/> relative to anatomy and to other functional measures. To remedy this, we have<lb/> developed a MATLAB toolbox for intracranial electrode localization and<lb/> visualization, iELVis.<lb/> New Method<lb/> The iELVis pipeline extends existing tools (BioImage Suite, FSL, and FreeSurfer)<lb/> for localizing electrode locations in CT or MR scans. Once electrode locations<lb/> are identified in postimplant neuroimaging, iELVis implements methods for<lb/> correcting electrode locations for postimplant brain shift with millimeter-scale<lb/> accuracy. iELVis then supports interactive visualization on 3D surfaces or in 2D<lb/> slices alongside functional neuroimaging data. iELVis also localizes electrodes<lb/> relative to FreeSurfer-based atlases and can combine data across subjects via<lb/> the FreeSurfer average brain.<lb/> Results<lb/> It takes 30-60 minutes of user time and 12-24 hours of computer time to localize<lb/> and visualize electrodes from one brain. We demonstrate iELVis&apos;s co-registered<lb/> visualization functionality by overlaying concordant results from three methods<lb/> for mapping primary hand somatosensory cortex (iEEG, iEBS, and fMRI).<lb/> Comparison with Existing Methods<lb/> iELVis standardizes existing approaches within a common pipeline, while<lb/> advancing and combining the state of the art techniques in (i) brain-shift<lb/> correction, (ii) atlas functionality, and (iii) multimodal visualization for human<lb/> intracranial data.<lb/> Conclusions<lb/> iELVis promises to speed and enhance the robustness of intracranial electrode<lb/> research. The software and extensive tutorial materials are freely available as<lb/> part of the EpiSurg software project: https://github.com/episurg/episurg</div>
+
+		</front>
+	</text>
+</tei>
