@@ -253,7 +253,12 @@ public class CitationParser extends AbstractParser {
             i++;
             if ((bib != null) && !bib.rejectAsReference()) {
                 BibDataSet bds = new BibDataSet();
-                bds.setRefSymbol(ref.getLabel());
+                String localLabel = ref.getLabel();
+                if (localLabel != null && localLabel.length()>0) {
+                    // cleaning the label for matching
+                    localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,.", ")}]>,.:");
+                }
+                bds.setRefSymbol(localLabel);
                 bib.setReference(ref.getReferenceText());
                 bds.setResBib(bib);
                 bds.setRawBib(ref.getReferenceText());
@@ -343,7 +348,12 @@ public class CitationParser extends AbstractParser {
 
                     if (!bib.rejectAsReference()) {
                         BibDataSet bds = new BibDataSet();
-                        bds.setRefSymbol(ref.getLabel());
+                        String localLabel = ref.getLabel();
+                        if (localLabel != null && localLabel.length()>0) {
+                            // cleaning the label for matching
+                            localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,.", ")}]>,.:");
+                        }
+                        bds.setRefSymbol(localLabel);
                         bds.setResBib(bib);
                         bib.setReference(ref.getReferenceText());
                         bds.setRawBib(ref.getReferenceText());

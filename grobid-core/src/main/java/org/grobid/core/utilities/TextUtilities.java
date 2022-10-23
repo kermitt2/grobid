@@ -1314,4 +1314,15 @@ public class TextUtilities {
         }
         return true;
     }
+
+    /**
+     * Remove indicated leading and trailing characters from a string 
+     **/
+
+    public static String removeLeadingAndTrailingChars(String text, String leadingChars, String trailingChars) {
+        text = StringUtils.stripStart(text, leadingChars);
+        text = StringUtils.stripEnd(text, trailingChars);
+        return text;
+    }
+
 }
