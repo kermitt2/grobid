@@ -3,8 +3,10 @@
         <fileDesc xml:id="_D_-1"/>
     </teiHeader>
     <text xml:lang="en">
-References 		
+        		
         <listBibl>
+            References 
+            
             <bibl>Aljoscha Burchardt, Katrin Erk, Anette Frank, Andrea Kowalski, Sebastian Padó, and Manfred Pinkal. 2006. The SALSA corpus: a German corpus resource for lexical semantics. In Proceedings of the 5th Interna- tional Conference on Language Resources and Evalu- ation (LREC-2006), Genoa, Italy.</bibl>
             <bibl>Rong-En Fan, Kai-Wei Chang, Cho-Jui Hsieh, Xiang-Rui Wang, and Chih-Jen Lin. 2008. LIBLINEAR: A li- brary for large linear classification. Journal of Ma- chine Learning Research, 9:1871–1874.</bibl>
             <bibl>Daniel Gildea and Daniel Jurafsky. 2002. Automatic la- beling of semantic roles. Computational Linguistics, 28(3):245–288.</bibl>
