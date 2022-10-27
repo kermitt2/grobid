@@ -122,8 +122,8 @@ public class JEPThreadPoolClassifier {
             LOGGER.error("DeLFT installation path invalid, JEP initialization failed", e);
             throw new RuntimeException("DeLFT installation path invalid, JEP initialization failed", e);
         } catch (UnsatisfiedLinkError e) {
-            LOGGER.error("The JEP or DeLFT environment is not correctly installed. ", e);
-            throw new RuntimeException("Python/DeLFT/JEP environment not correctly installed. ", e);
+            LOGGER.error("JEP environment not correctly installed or has incompatible binaries, JEP initialization failed", e);
+            throw new RuntimeException("JEP environment not correctly installed or has incompatible binaries, JEP initialization failed", e);
         } finally {
             if (!success) {
                 if (jep != null) {
@@ -133,8 +133,8 @@ public class JEPThreadPoolClassifier {
                         LOGGER.error("Failed to close JEP instance", e);
                     }
                 } else {
-                    LOGGER.error("JEP initialisation failed somewhere.");
-                    throw new RuntimeException("General failure in JEP. ");
+                    LOGGER.error("JEP initialisation failed");
+                    throw new RuntimeException("JEP initialisation failed");
                 }
             }
         }
@@ -164,7 +164,7 @@ public class JEPThreadPoolClassifier {
     }
 
     public void run(Runnable task) throws InterruptedException {
-        LOGGER.info("running thread: " + Thread.currentThread().getId());
+        LOGGER.debug("running thread: " + Thread.currentThread().getId());
         Future future = executor.submit(task);
         // wait until done (in ms)
         while (!future.isDone()) {
