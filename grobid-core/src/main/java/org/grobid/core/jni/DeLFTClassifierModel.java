@@ -33,7 +33,7 @@ public class DeLFTClassifierModel {
         try {
             LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + GrobidProperties.getInstance().getModelPath());
             JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), this.architecture));
-        } catch(InterruptedException e) {
+        } catch(InterruptedException | RuntimeException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
         }
     }
@@ -68,6 +68,7 @@ public class DeLFTClassifierModel {
                         GrobidProperties.getInstance().getDelftRuntimeBatchSize(this.modelName));
 
             } catch(JepException e) {
+                LOGGER.error("DeLFT classifier model initialization failed. ", e);
                 throw new GrobidException("DeLFT classifier model initialization failed. ", e);
             }
         } 
