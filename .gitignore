@@ -15,6 +15,7 @@ Thumbs.db
 *.log
 *.log.*
 *.old
+*.back
 tei-alt
 raw-alt
 tei-new
