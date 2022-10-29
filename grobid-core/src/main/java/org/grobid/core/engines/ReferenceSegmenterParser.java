@@ -10,6 +10,7 @@ import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
 import org.grobid.core.engines.citations.ReferenceSegmenter;
 import org.grobid.core.engines.label.SegmentationLabels;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.exceptions.GrobidException;
@@ -109,7 +110,7 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 					// we adjust max sequence value to take into account 500 token lines overlap
 					int maxSequence = Math.max(500, originalMaxSequence - 1000);
 
-//System.out.println("maxSequence adjusted to: " + maxSequence);
+//System.out.println("originalMaxSequence: " + originalMaxSequence + " / maxSequence adjusted to: " + maxSequence);
 
 					List<List<String>> featureVectorPieces = new ArrayList<>();
 					// segment the input vectors in overlapping sequences, according to the model max_sequence_length parameter
@@ -163,19 +164,65 @@ System.out.println(featureVectorPiece.size());
 					
 					// combine results and reconnect smoothly overlaps 
 					StringBuilder resBuilder = new StringBuilder();
+					int previousTransitionPos = 0;
 					for(int i=0; i<allRes.size(); i++) {
 						String localRes = allRes.get(i);
+						String[] localResLines = localRes.split("\n");
+//System.out.println("localResLines.length: " + localResLines.length);
+						int transitionPos = localResLines.length;
+						if (i != allRes.size()-1) {
+							// in the trailing redundant part (500 last lines), we identify the line index 
+							// of the last "closing" label, this is the point where we will reconnect the 
+							// labeled segments to avoid breaking a labeled field
+							
+							for(int k=localResLines.length-1; k>=0; k--) {
+								if (localResLines.length-k == 500) {
+									// this is the max overlap, we don't go beyond! 
+									transitionPos = k;
+									break;
+								}
 
-						if (i == 0) {
-							resBuilder.append(localRes);
-						} else {
-							String[] localResLines = localRes.split("\n");
-							List<String> selectedlocalResLines = new ArrayList<>();
-							for(int j= 500; j<localResLines.length; j++)
+								String line = localResLines[k];
+								if (line.endsWith(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<label>") || 
+									line.endsWith(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<reference>")) {
+									// we can stop the line before this one
+									transitionPos = k;
+									break;
+								}
+							}
+						} 
+						// else: we are at the last chunk, so we take the content until the very end
+
+//System.out.println("previousTransitionPos: " + previousTransitionPos);
+//System.out.println("transitionPos: " + transitionPos + "\n");
+
+						List<String> selectedlocalResLines = new ArrayList<>();
+						for(int j= previousTransitionPos; j<transitionPos; j++) {
+							if (j == previousTransitionPos && previousTransitionPos != 0) {
+								// we want to be sure to have a starting label
+								String localLine = localResLines[j];
+								if (localLine.indexOf(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX) == -1) {
+									localLine = localLine.replace("<label>", TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<label>");
+									localLine = localLine.replace("<reference>", TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<reference>");
+								}
+								selectedlocalResLines.add(localLine);
+							} else if (j == previousTransitionPos && previousTransitionPos == 0 && i != 0) {
+								// previousTransitionPos is 0 and we are not at the first segment: we had a non overlapping
+								// transition, we might want to avoid a starting label at this point 
+								String localLine = localResLines[j];
+								if (localLine.indexOf(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX) != -1) {
+									localLine = localLine.replace(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<label>", "<label>");
+									localLine = localLine.replace(TaggingLabels.GROBID_START_ENTITY_LABEL_PREFIX+"<reference>", "<reference>");
+								}
+								selectedlocalResLines.add(localLine);
+							} else {
 								selectedlocalResLines.add(localResLines[j]);
-							for(String localResLine : selectedlocalResLines)
-								resBuilder.append(localResLine).append("\n");
+							}
 						}
+						for(String localResLine : selectedlocalResLines)
+							resBuilder.append(localResLine).append("\n");
+						
+						previousTransitionPos = transitionPos-maxSequence;
 					}
 					res = resBuilder.toString();
 				}
