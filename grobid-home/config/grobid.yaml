@@ -128,12 +128,12 @@ grobid:
         architecture: "BidLSTM_CRF_FEATURES"
         useELMo: false
         runtime:
-          # parameters used at runtime/prediction
+          # parameters used at runtime/prediction (for this model, use same max_sequence_length as training)
           max_sequence_length: 3000
-          batch_size: 5
+          batch_size: 2
         training:
-          # parameters used for trainikng
-          max_sequence_length: 2000
+          # parameters used for training
+          max_sequence_length: 3000
           batch_size: 10
 
     - name: "name-header"
