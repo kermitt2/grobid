@@ -62,6 +62,7 @@ public class CitationParser extends AbstractParser {
      */ 
     public BiblioItem processingString(String input, int consolidate) {
         List<String> inputs = new ArrayList<>();
+        input = TextUtilities.removeLeadingAndTrailingChars(input, "[({.,])}: \n"," \n");
         inputs.add(input);
         List<BiblioItem> result = processingStringMultiple(inputs, consolidate);
         if (result != null && result.size()>0) 
@@ -84,6 +85,7 @@ public class CitationParser extends AbstractParser {
             else {
                 // some cleaning
                 input = UnicodeUtil.normaliseText(input);
+                input = TextUtilities.removeLeadingAndTrailingChars(input, "[({.,])}: \n"," \n");
                 List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
                 tokenList.add(tokens);
             }
@@ -94,8 +96,11 @@ public class CitationParser extends AbstractParser {
             // store original references to enable optional raw output
             int i = 0;
             for (BiblioItem result : results) {
-                if (result != null)
-                    result.setReference(inputs.get(i));
+                if (result != null) {
+                    String localInput = inputs.get(i);
+                    localInput = TextUtilities.removeLeadingAndTrailingChars(localInput, "[({.,])}: \n"," \n");
+                    result.setReference(localInput);
+                }
                 i++;
             }
         }
@@ -241,7 +246,9 @@ public class CitationParser extends AbstractParser {
         for (LabeledReferenceResult ref : segm) {
             if (ref.getTokens() == null || ref.getTokens().size() == 0)
                 continue;
-            allRefBlocks.add(ref.getTokens());
+            List<LayoutToken> localTokens = ref.getTokens();
+            localTokens = TextUtilities.removeLeadingAndTrailingCharsLayoutTokens(localTokens, "[({.,])}: \n"," \n");
+            allRefBlocks.add(localTokens);
         }
 
         List<BiblioItem> bibList = processingLayoutTokenMultiple(allRefBlocks, 0);
@@ -256,12 +263,15 @@ public class CitationParser extends AbstractParser {
                 String localLabel = ref.getLabel();
                 if (localLabel != null && localLabel.length()>0) {
                     // cleaning the label for matching
-                    localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,.", ")}]>,.:");
+                    localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,. \n", ")}]>,.: \n");
                 }
+
+                String localRef = ref.getReferenceText();
+                localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
                 bds.setRefSymbol(localLabel);
-                bib.setReference(ref.getReferenceText());
+                bib.setReference(localRef);
                 bds.setResBib(bib);
-                bds.setRawBib(ref.getReferenceText());
+                bds.setRawBib(localRef);
                 bds.getResBib().setCoordinates(ref.getCoordinates());
                 results.add(bds);
             }
@@ -299,7 +309,9 @@ public class CitationParser extends AbstractParser {
                 if (ref == null) 
                     continue;
 
-                refTexts.add(ref.getReferenceText());
+                String localRef = ref.getReferenceText();
+                localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
+                refTexts.add(localRef);
             }
 
             List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
@@ -351,12 +363,16 @@ public class CitationParser extends AbstractParser {
                         String localLabel = ref.getLabel();
                         if (localLabel != null && localLabel.length()>0) {
                             // cleaning the label for matching
-                            localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,.", ")}]>,.:");
+                            localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,. \n", ")}]>,.: \n");
                         }
+
+                        String localRef = ref.getReferenceText();
+                        localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
+
                         bds.setRefSymbol(localLabel);
                         bds.setResBib(bib);
-                        bib.setReference(ref.getReferenceText());
-                        bds.setRawBib(ref.getReferenceText());
+                        bib.setReference(localRef);
+                        bds.setRawBib(localRef);
                         bds.getResBib().setCoordinates(ref.getCoordinates());
                         results.add(bds);
                     }

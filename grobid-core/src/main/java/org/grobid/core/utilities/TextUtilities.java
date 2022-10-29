@@ -1318,11 +1318,52 @@ public class TextUtilities {
     /**
      * Remove indicated leading and trailing characters from a string 
      **/
-
     public static String removeLeadingAndTrailingChars(String text, String leadingChars, String trailingChars) {
         text = StringUtils.stripStart(text, leadingChars);
         text = StringUtils.stripEnd(text, trailingChars);
         return text;
     }
+
+    /**
+     * Remove indicated leading and trailing characters from a string represented as a list of LayoutToken.
+     * Indicated leading and trailing characters must be matching exactly the layout token text content. 
+     **/
+    public static List<LayoutToken> removeLeadingAndTrailingCharsLayoutTokens(List<LayoutToken> tokens, String leadingChars, String trailingChars) {
+        if (tokens == null)
+            return tokens;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int start = 0;
+        for(int i=0; i<tokens.size(); i++) {
+            LayoutToken token = tokens.get(i);
+            if (token.getText() == null || token.getText().length() == 0) {
+                start++;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (leadingChars.contains(token.getText())) {
+                start++;
+            } else
+                break;
+        }
+
+        int end = tokens.size();
+        for(int i=end; i>0; i--) {
+            LayoutToken token = tokens.get(i-1);
+            if (token.getText() == null || token.getText().length() == 0) {
+                end--;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (trailingChars.contains(token.getText())) {
+                end--;
+            } else
+                break;
+        }
+
+        return tokens.subList(start, end);
+    }
+
 
 }
