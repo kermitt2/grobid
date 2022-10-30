@@ -26,7 +26,7 @@ The process for retrieving and running the image is as follow:
 Current latest version:
 
 ```bash
-> docker pull grobid/grobid:0.7.1
+> docker pull grobid/grobid:0.7.2
 ```
 
 - Run the container:
@@ -113,7 +113,7 @@ Grobid web services are then available as described in the [service documentatio
 The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
+docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.3-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
@@ -200,25 +200,25 @@ Without this requirement, the image might default to CPU, even if GPU are availa
 For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.1 --build-arg GROBID_VERSION=0.7.1 --file Dockerfile.delft .
+> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.delft .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-docker build -t grobid/grobid:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.delft .
+docker build -t grobid/grobid:0.7.3-SNAPSHOT --build-arg GROBID_VERSION=0.7.3-SNAPSHOT --file Dockerfile.delft .
 ```
 
-In order to run the container of the newly created image, for example for the development version `0.7.2-SNAPSHOT`, using all GPU available:
+In order to run the container of the newly created image, for example for the development version `0.7.3-SNAPSHOT`, using all GPU available:
 
 ```bash
-> docker run --rm --gpus all -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2-SNAPSHOT
+> docker run --rm --gpus all -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.3-SNAPSHOT
 ```
 
 In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.2-SNAPSHOT
+docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.3-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
@@ -240,19 +240,19 @@ The container name is given by the command:
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.1 --build-arg GROBID_VERSION=0.7.1 --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.crf .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-> docker build -t grobid/grobid:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.7.3-SNAPSHOT --build-arg GROBID_VERSION=0.7.3-SNAPSHOT --file Dockerfile.crf .
 ```
 
-In order to run the container of the newly created image, for example for version `0.7.1`:
+In order to run the container of the newly created image, for example for version `0.7.2`:
 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.1
+> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
