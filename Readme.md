@@ -6,8 +6,8 @@
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
 [![Demo cloud.science-miner.com/grobid](https://img.shields.io/website-up-down-green-red/https/cloud.science-miner.com/grobid.svg)](http://cloud.science-miner.com/grobid)
-[![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![Docker Hub](https://img.shields.io/docker/pulls/grobid/grobid.svg)](https://hub.docker.com/r/grobid/grobid/ "Docker Pulls")
+[![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
 
 ## GROBID documentation
@@ -44,7 +44,7 @@ GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We can
 
 GROBID uses Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification, via [JEP](https://github.com/ninia/jep). GROBID can run Deep Learning architectures (with or without layout feature channels) or with feature engineered CRF (default), or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto). 
 
-Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accomodate "out of the box" hardware. You need to select the Deep Learning models to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). 
+Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accomodate "out of the box" hardware. You need to [select the Deep Learning models](https://grobid.readthedocs.io/en/latest/Deep-Learning-models/#recommended-deep-learning-models) to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). 
 
 ## Demo
 
