@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="092122v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Updated reference genome sequence and annotation of Mycobacterium bovis<lb/> AF2122/97<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kerri M. Malone a<lb/> , Damien Farrell a<lb/> , Tod P. Stuber b<lb/> , Olga T. Schubert<lb/> c*<lb/> , Ruedi Aebersold c<lb/> , Suelee Robbe-Austerman b<lb/> and Stephen V. Gordon<lb/> a,e,f,g#</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a<lb/> School of Veterinary Medicine, University College Dublin, </affiliation>
+	</byline> 
+
+	<address>Ireland;</address>
+
+	<byline>
+	<affiliation>b<lb/> Diagnostic Bacteriology Laboratory, National Veterinary Services Laboratories,<lb/></affiliation>
+	</byline>
+
+	<address>Ames, Iowa, USA;</address>
+
+	<byline>
+	<affiliation>c<lb/> Department of Biology, Institute of Molecular Systems Biology,</affiliation>
+	</byline>
+
+	<address>ETH Zurich, CH-8093,<lb/> Switzerland;</address>
+
+	<byline>
+	<affiliation>e<lb/> School of Medicine, University College Dublin,</affiliation>
+	</byline>
+
+	<address>Ireland; </address>
+
+	<byline>
+	<affiliation>f<lb/> School of Biomolecular and Biomedical Science, University College Dublin,</affiliation> 
+	</byline>
+
+	<address>Ireland;</address> 
+
+	<byline>
+	<affiliation>g<lb/> UCD Conway Institute of Biomolecular and Biomedical Research, University College<lb/>Dublin, </affiliation>
+	</byline>
+
+	<address>Ireland<lb/></address>
+
+	*Present address:
+	<byline>
+	<affiliation>Department of Human Genetics, University of California,</affiliation>
+	</byline>
+
+	<address>Los<lb/> Angeles, USA<lb/></address>
+
+	Running title<lb/> Mycobacterium bovis AF2122/97: an update #<lb/> Address correspondence to
+	<byline>
+	<docAuthor>Stephen V. Gordon,</docAuthor>
+	</byline>
+
+	<email>stephen.gordon@ucd.ie</email>
+
+	Keywords<lb/>
+	<keyword>Mycobacterium bovis, AF2122/97, bovine tuberculosis, reference genome, re-<lb/>sequencing, re-annotation.</keyword>
+
+	Abstract <lb/>
+	<div type="abstract">We report an update to the reference genome of the bovine tuberculosis bacillus <lb/>Mycobacterium bovis AF2122/97 generated using an integrative multi-&apos;omics <lb/>approach. <lb/>Updates <lb/>include <lb/>42 <lb/>new <lb/>CDS, <lb/>14 <lb/>modified <lb/>annotations, <lb/>26 <lb/>SNP <lb/>corrections, and disclosure that the RD900 locus, previously described as absent <lb/>from the genome, is in fact present. <lb/></div>
+
+		</front>
+	</text>
+</tei>

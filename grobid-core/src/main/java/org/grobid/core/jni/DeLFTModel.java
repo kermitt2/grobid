@@ -32,7 +32,7 @@ public class DeLFTModel {
         try {
             LOGGER.info("Loading DeLFT model for " + model.getModelName() + " with architecture " + architecture + "...");            
             JEPThreadPool.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), architecture));
-        } catch(InterruptedException e) {
+        } catch(InterruptedException | RuntimeException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
         }
     }
@@ -75,6 +75,7 @@ public class DeLFTModel {
                 }
 
             } catch(JepException e) {
+                LOGGER.error("DeLFT model initialization failed. ", e);
                 throw new GrobidException("DeLFT model initialization failed. ", e);
             }
         } 

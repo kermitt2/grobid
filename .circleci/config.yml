@@ -18,7 +18,7 @@ jobs:
 
     environment:
       # Customize the JVM maximum heap limit
-      JVM_OPTS: -Xmx3200m
+      JVM_OPTS: -Xmx4096m
       TERM: dumb
 
     steps:
@@ -38,7 +38,7 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      - run: ./gradlew clean assemble --info --stacktrace
+      - run: ./gradlew clean assemble --info --stacktrace --no-daemon
 
       # run tests!
       - run: ./gradlew test jacocoTestReport coveralls --no-daemon

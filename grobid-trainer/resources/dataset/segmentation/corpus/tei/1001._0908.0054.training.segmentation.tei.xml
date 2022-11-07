@@ -122,9 +122,9 @@
 			
 			<div type="acknowledgement">Acknowledgements<lb/>
 
-			We would like to thank Luis Arturo Ureña López, Ab-<lb/>del Pérez Lorenzana, Omar Miranda Romagnoli, Ricardo<lb/> López Fernández and Roy Maartens for useful discussions.<lb/> This work was partially supported by CONACyT México,<lb/> under grants 49865-F, 216536/219673 and by grant number<lb/> I0101/131/07 C-234/07, Instituto Avanzado de Cosmologia<lb/> (IAC) collaboration.<lb/>
+                We would like to thank Luis Arturo Ureña López, Ab-<lb/>del Pérez Lorenzana, Omar Miranda Romagnoli, Ricardo<lb/> López Fernández and Roy Maartens for useful discussions.<lb/> This work was partially supported by CONACyT México,<lb/> under grants 49865-F, 216536/219673 and by grant number<lb/> I0101/131/07 C-234/07, Instituto Avanzado de Cosmologia<lb/> (IAC) collaboration.<lb/></div>
 
-			All the analysis was done using the public code CMBFAST<lb/> [19]. And all the calculated curves were compared to the ob-<lb/>serbations of the WMAP satellite on its last five years. Avail-<lb/>able at http://lambda.gsfc.nasa.gov/product/map/current.<lb/></div>
+			<div type="availability">All the analysis was done using the public code CMBFAST<lb/> [19]. And all the calculated curves were compared to the ob-<lb/>serbations of the WMAP satellite on its last five years. Avail-<lb/>able at http://lambda.gsfc.nasa.gov/product/map/current.<lb/></div>
 
 				
 			<listBibl>				

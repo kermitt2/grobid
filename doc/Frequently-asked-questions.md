@@ -30,7 +30,7 @@ The exact server configuration will depend on the service you want to call. We p
 You will get the embedded images converted into `.png` by using the normal batch command. For instance:
 
 ```console
-java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.7.1-SNAPSHOT-onejar.jar -gH grobid-home -dIn ~/test/in/ -dOut ~/test/out -exe processFullText 
+java -Xmx4G -jar grobid-core/build/libs/grobid-core-0.7.2-onejar.jar -gH grobid-home -dIn ~/test/in/ -dOut ~/test/out -exe processFullText 
 ```
 
 There is a web service doing the same, returning everything in a big zip file, `processFulltextAssetDocument`, still usable but deprecated.

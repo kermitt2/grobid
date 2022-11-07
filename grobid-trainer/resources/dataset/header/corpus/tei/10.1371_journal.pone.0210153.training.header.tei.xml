@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210153"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Maintenance of body weight is an important<lb/> determinant for the risk of ischemic stroke: A<lb/> nationwide population-based cohort study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jung-Hwan Cho 1 ‡ , Eun-Jung Rhee 1 ‡ , Se Eun Park 1 , Hyemi Kwon 1 , Jin-Hyung Jung ID 2<lb/> ,<lb/> Kyung-Do Han 2 , Yong-Gyu Park 2 , Soon-Jib Yoo 3 , Yang-Hyun Kim 4☯ *, Won-<lb/>Young LeeID 1☯ *,</docAuthor>
+	</byline>
+
+	<note type="group">Taskforce Team of the Obesity Fact Sheet of the Korean Society for the<lb/> Study of Obesity ¶<lb/></note>
+
+	<byline>
+	<affiliation>1 Division of Endocrinology and Metabolism, Department of Internal Medicine, Kangbuk Samsung Hospital,<lb/></affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea,</address>
+
+	<byline>
+	<affiliation>2 Department of Medical Statistics, Catholic University College of Medicine,</affiliation>
+	</byline>
+
+	<address>Seoul,<lb/> Republic of Korea,</address>
+
+	<byline>
+	<affiliation>3 Division of Endocrinology and Metabolism, Department of Internal Medicine,</affiliation>
+	</byline>
+
+	<address>Bucheon<lb/></address>
+
+	<byline>
+	<affiliation>St. Mary&apos;s Hospital, College of Medicine, The Catholic University of Korea,</affiliation>
+	</byline>
+
+	<address>Bucheon, Republic of Korea,<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Family Medicine, Korea University Hospital, College of Medicine, Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul,<lb/> Republic of Korea<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> ‡ JHC and EJR contributed equally to this work as first authors.<lb/> ¶ The complete membership of the group can be found in the Acknowledgments.<lb/> *
+	<email>drlwy@hanmail.net</email>
+
+	(WYL);
+	<email>mrchir@naver.com</email>
+
+	(YHK) Abstract
+	<div type="abstract">Background<lb/> Overweight is known as a risk factor for ischemic stroke. However, the effect of weight<lb/> change on the development of ischemic stroke remains controversial. We investigated the<lb/> relationship between weight change and the risk of ischemic stroke using a nationwide pop-<lb/>ulation-based cohort. Methods<lb/> Our study enrolled 11,084,683 participants (Mean age 49.7±13.5 years, range 20-114<lb/> years) in the Korean National Health Screening Program from 2009 to 2012. Weight change<lb/> was calculated using the difference between the baseline weight and the weight at health<lb/> screening four years prior to the baseline. The occurrence of newly-diagnosed ischemic<lb/> stroke was observed until the end of 2015. We categorized the study population according<lb/> to weight change and performed multivariable analysis to compare the risk. Results<lb/> Ischemic stroke was newly diagnosed in 113,591 subjects. The crude incidence rates of<lb/> ischemic stroke per 1000 person-years according to the change in body weight were 3.059,<lb/> 1.906, and 1.491 in the &lt;-5%, ±5%, and �+5% groups, respectively. After adjusting all vari-<lb/>ables, the hazard ratio (HR) of ischemic stroke was higher in subjects who underwent weight<lb/> loss (HR 1.152) or weight gain (HR 1.087) than in those who maintained their weight. When<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210153 January 3, 2019<lb/></reference>
+
+	<page>1 / 13<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Cho J-H, Rhee E-J, Park SE, Kwon H,<lb/> Jung J-H, Han K-D, et al. (2019) Maintenance of<lb/> body weight is an important determinant for the<lb/> risk of ischemic stroke: A nationwide population-<lb/>based cohort study. PLoS ONE 14(1): e0210153.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210153<lb/></idno>
+
+	Editor:
+	<editor>Sabine Rohrmann,</editor>
+
+	<byline>
+	<affiliation>University of Zurich,</affiliation>
+	</byline>
+
+	<address>SWITZERLAND<lb/></address>
+
+	<note type="submission">Received: February 15, 2018<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>January 3, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Cho et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">The data underlying <lb/>our study are third party data. Data are available <lb/>from the NHIS Institutional Data Access/Ethics <lb/>Committee for researchers who meet the criteria <lb/>for access to confidential data. For information on <lb/>request data from the NHIS Institutional Data <lb/>Access/Ethics Committee, please see: https://nhiss. <lb/>nhis.or.kr/bd/ab/bdaba032eng.do. <lb/></note>
+
+	Funding:
+	<note type="funding">This research was supported by a grant<lb/> from the Korea Health Technology R&amp;D Project<lb/> through the Korea Health Industry Development<lb/></note>
+
+	<div type="abstract">analyzed by eight groups of 5% intervals, the risk showed a U-shaped curve with those who<lb/> maintained their weight showing the lowest risk. Conclusions<lb/> The risk of ischemic stroke was gradually increased in those who lost or gained more than<lb/> 5% of their weight over four years, after adjusting for confounders. We should be aware of<lb/> the increased risk of ischemic stroke in people who undergo weight change and should iden-<lb/>tify and manage the cause of weight change.<lb/> Institute (KHIDI), funded by the Ministry of Health<lb/> &amp; Welfare, Republic of Korea (grant number:<lb/> HC16C2285) to SJY. The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></div>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

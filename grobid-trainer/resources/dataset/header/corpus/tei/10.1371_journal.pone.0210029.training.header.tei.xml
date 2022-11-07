@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210029"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>The taxonomy of an Australian nodavirus<lb/> isolated from mosquitoes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>David WarrilowID 1 *, Bixing Huang 1 , Natalee D. Newton 2 , Jessica J. Harrison 2 , Karyn<lb/> N. Johnson 3 , Weng Kong Chow 4 , Roy A. Hall 2 , Jody Hobson-Peters 2 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Public Health Virology Laboratory, Queensland Health Forensic and Scientific Services,</affiliation>
+	</byline>
+
+	<address>Archerfield,<lb/> Queensland,</address>
+
+	<byline>
+	<affiliation>2 Australian Infectious Diseases Research Centre, School of Chemistry and Molecular<lb/> Biosciences, The University of Queensland,</affiliation>
+	</byline>
+
+	<address>St Lucia, Queensland, Australia,</address>
+
+	<byline>
+	<affiliation>3 School of Biological<lb/> Sciences, The University of Queensland,</affiliation>
+	</byline>
+
+	<address>St Lucia, Queensland, Australia,</address>
+
+	<byline>
+	<affiliation>4 Australian Defence Force<lb/> Malaria and Infectious Disease Institute,</affiliation>
+	</byline>
+
+	<address>Queensland, Australia<lb/></address>
+
+	*
+	<email>David.Warrilow@health.qld.gov.au</email>
+
+	(DW);
+	<email>j.peters2@uq.edu.au</email>
+
+	(JHP) Abstract<lb/>
+	<div type="abstract">We describe a virus isolated from Culex annulirostris mosquitoes in Australia. Phylogenetic<lb/> analysis of its RNA-dependent RNA polymerase sequence and that of other related viruses<lb/> revealed 6 clades, two of which corresponded wholly or partly with existing genera in the<lb/> family Nodaviridae. There was greater genetic diversity within the family than previously rec-<lb/>ognized prompting us to suggest that additional genera should be considered within the<lb/> family.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210029 December 31, 2018<lb/></reference>
+
+	<page>1 / 9<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Warrilow D, Huang B, Newton ND,<lb/> Harrison JJ, Johnson KN, Chow WK, et al. (2018)<lb/> The taxonomy of an Australian nodavirus isolated<lb/> from mosquitoes. PLoS ONE 13(12): e0210029.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210029<lb/></idno>
+
+	Editor:
+	<editor>Naomi Forrester,</editor>
+
+	<byline>
+	<affiliation>Keele University Faculty of<lb/> Natural Sciences, </affiliation>
+	</byline>
+
+	<address>UNITED KINGDOM<lb/></address>
+
+	<note type="submission">Received: August 27, 2018<lb/> Accepted: December 14, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Warrilow et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">The raw sequence <lb/>data has been deposited in the NCBI Sequence <lb/>Read Archive (SRA accession: PRJNA507903 and <lb/>BioSample accession: SAMN10516339). <lb/></note>
+
+	<note type="funding">Funding: This project was funded by the Australian<lb/> Research Council (https://www.arc.gov.au/) grant<lb/> number DP120103994 awarded to RAH. JJH and<lb/> NDN are supported by Australian Postgraduate<lb/> Awards. The funders had no role in study design,<lb/> data collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

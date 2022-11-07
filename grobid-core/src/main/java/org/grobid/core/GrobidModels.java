@@ -131,7 +131,9 @@ public enum GrobidModels implements GrobidModel {
             @Override
             public String getModelPath() {
                 File path = GrobidProperties.getModelPath(this);
-                if (path == null || !path.exists()) {
+                if (path == null) {
+                    LOGGER.warn("The file path to the " + name + " model is invalid, path is null");
+                } else if (!path.exists()) {
                     LOGGER.warn("The file path to the " + name + " model is invalid: " + path.getAbsolutePath());
                 }
                 if (path == null)

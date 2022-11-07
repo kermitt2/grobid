@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210174"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Resilience, stress and injuries in the context of<lb/> the Brazilian elite rhythmic gymnastics<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Renan CodonhatoID 1 *, Victor RubioID 2 , Paulo Ma ´rcio Pereira Oliveira 3 , Camila<lb/> Ferezin Resende 4 , Bruna Akawana Martins Rosa 4 , Constanza Pujals 5 , Lenamar Fiorese 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Physical Education Department, Universidade Estadual de Maringa ´,</affiliation>
+	</byline>
+
+	<address>Maringa ´, Parana ´, Brazil,<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Biological and Health Psychology, Universidad Auto ´noma de Madrid,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain,<lb/></address>
+
+	<byline>
+	<affiliation>3 Physical Therapy Department, Universidade Federal do Sergipe,</affiliation>
+	</byline>
+
+	<address>Lagarto, Sergipe, Brazil,</address>
+
+	<byline>
+	<affiliation>4 Brazilian<lb/> Gymnastics Confederation (CBG),</affiliation>
+	</byline>
+
+	<address>Aracaju ´, Sergipe, Brazil,</address>
+
+	<byline>
+	<affiliation>5 Psychology Department, Centro Universita ´rio<lb/> Inga ´(UNINGA ´),</affiliation>
+	</byline>
+
+	<address>Maringa ´, Parana ´, Brazil<lb/></address>
+
+	*
+	<email>gperenan@gmail.com</email>
+
+	Abstract<lb/>
+	<div type="abstract">The study had the goal to study the relationship between resilience, stress and injuries in<lb/> the sport context. Eight female athletes, part of the Rhythmic Gymnastics Brazilian Team<lb/> along the Olympic Cycle 2015-2016 participated in the study, with a mean age of 20.4±2.5<lb/> years. The following instruments were used: RESTQ-76 Sport, CD-RISC 10, documental<lb/> analysis of physical therapy records, and structured questionnaire. Data was analyzed by<lb/> descriptive statistics (frequency, mean and standard deviation); Repeated Measured<lb/> ANOVA with Bonferroni&apos;s post-hoc, Student&apos;s &quot;t&quot; test, Friedman test, Pearson Correlation<lb/> Coefficient, Cohen&apos;s d, and inductive thematic analysis. We found relatively stable levels of<lb/> stress and recovery across the season; total recovery levels were higher than stress at all<lb/> four measured timepoints (p&lt;0.05); All athletes had at least one injury, with a total of 14 inju-<lb/>ries; No significant correlations were found between the quantitative scores of resilience,<lb/> stress and recovery; Training and the sport&apos;s scoring system were the most relevant per-<lb/>ceived stressors; athletes presented meta-cognition and a non-positive evaluation (neutral)<lb/> of stressors; Social support was considered the main psychological factor for the resilience<lb/> process; such process resulted in improved control and interpretation of emotions; Our<lb/> hypothesized model proposes that, in the relationship between stress and injuries, resil-<lb/>ience acts by optimizing the injury recovery process. It was concluded that resilience plays a<lb/> role in the process of injury rehabilitation and stress control in elite rhythmic gymnastics&apos;<lb/> athletes.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210174 December 31, 2018<lb/></reference>
+
+	<page>1 / 16<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Codonhato R, Rubio V, Oliveira PMP,<lb/> Resende CF, Rosa BAM, Pujals C, et al. (2018)<lb/> Resilience, stress and injuries in the context of the<lb/> Brazilian elite rhythmic gymnastics. PLoS ONE 13<lb/> (12): e0210174.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210174<lb/></idno>
+
+	Editor:
+	<editor>Elena Bergamini,</editor>
+
+	<byline>
+	<affiliation>University of Rome,</affiliation>
+	</byline>
+
+	<address>ITALY<lb/></address>
+
+	<note type="submission">Received: June 6, 2018<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Codonhato et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All files are available <lb/>from the DANS database (https://doi.org/10.17026/ <lb/>dans-xb8-bqfk). <lb/></note>
+
+	Funding:
+	<note type="funding">Renan Codonhato was a master&apos;s student<lb/> awarded with a scholarship from CAPES-Brazil<lb/> (Coordenac ¸ão de Aperfeic ¸oamento de Pessoal de<lb/> Nı ´vel Superior). Victor Rubio and Lenamar Fiorese<lb/> received funding from Santander Bank-Spain for a<lb/> project to study sport injuries (code 00391462).<lb/> The funders had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
+
+	Competing interests: Our study has received<lb/> funding from the commercial source Santander<lb/> Bank -Spain, and this does not alter our<lb/> adherence to PLOS ONE policies on sharing data<lb/> and materials.
+		</front>
+	</text>
+</tei>

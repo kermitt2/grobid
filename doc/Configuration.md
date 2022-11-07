@@ -149,7 +149,7 @@ Under `wapiti`, we find the generic parameters of the Wapiti engine, currently o
 
 ### DeLFT global parameters
 
-Under `delft`, we find the generic parameters of the DeLFT engine. For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft). Use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
+Under `delft`, we find the generic parameters of the DeLFT engine. For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft) or to use the Docker image. For a local build, use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
 
 ```yml
   delft:
@@ -163,7 +163,7 @@ Under `delft`, we find the generic parameters of the DeLFT engine. For using Dee
 
 Each model has its own configuration indicating:
 
-- which "engine" to be used, with values `wapiti` for featured-based CRF or `delft` for Deep Learning models. 
+- which "engine" to be used, with values `wapiti` for feature-based CRF or `delft` for Deep Learning models. 
 
 - for Deep Learning models, which neural architecture to be used, with choices normally among `BidLSTM_CRF`, `BidLSTM_CRF_FEATURES`, `BERT`, `BERT-CRF`, `BERT_CRF_FEATURES`. The corresponding model/architecture combination need to be available under `grobid-home/models/`. If it is not the case, you will need to train the model with this particular architecture. 
 

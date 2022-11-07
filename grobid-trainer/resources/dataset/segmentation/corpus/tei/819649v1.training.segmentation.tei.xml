@@ -66,7 +66,7 @@
 
 			<div type="annex">Abbreviations <lb/>AUROC: Area under the receiver operating characteristic curve <lb/>CaRE: CRISPRa responsive element (as identified in 9 ) <lb/>CRISPR: clustered regularly interspaced short palindromic repeats <lb/>FDR: false discovery rate <lb/>MAUDE: mean alterations using discrete expression <lb/>SD: standard deviation <lb/>TSS: transcription start site <lb/></div>
 
-			<div type="annex">Availability of data and software <lb/>All data analyzed during this study are included in the supplementary information of <lb/>Simeonov et al. (Supplementary Table 1) 9 . MAUDE is available as an R package on <lb/>GitHub (https://github.com/Carldeboer/MAUDE). <lb/></div>
+			<div type="availability">Availability of data and software <lb/>All data analyzed during this study are included in the supplementary information of <lb/>Simeonov et al. (Supplementary Table 1) 9 . MAUDE is available as an R package on <lb/>GitHub (https://github.com/Carldeboer/MAUDE). <lb/></div>
 
 			<div type="annex">Authors&apos; contributions <lb/>CGD conceived of and implemented the algorithms with help from JPR. CGD drafted the <lb/>manuscript, with input from JPR, AR, and NH. All authors read and approved the final <lb/>manuscript. <lb/></div>
 

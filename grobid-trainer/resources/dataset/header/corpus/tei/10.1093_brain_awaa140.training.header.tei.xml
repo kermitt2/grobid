@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1093_brain_awaa140"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Slow blood-to-brain transport underlies<lb/> enduring barrier dysfunction in American<lb/> football players<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ronel Veksler, 1 Udi Vazana, 1 Yonatan Serlin, 1,2 Ofer Prager, 1 Jonathan Ofer, 1<lb/> Nofar Shemen, 1 Andrew M. Fisher, 3 Olga Minaeva, 3 Ning Hua, 3 Rotem Saar-Ashkenazy, 1,4<lb/> Itay Benou, 5 Tammy Riklin-Raviv, 5 Ellen Parker, 6 Griffin Mumby, 6 Lyna Kamintsky, 6<lb/> Steven Beyea, 7 Chris V. Bowen, 7 Ilan Shelef, 8 Eoin O&apos;Keeffe, 9 Matthew Campbell, 9<lb/> Daniela Kaufer, 10 Lee E. Goldstein 3 and Alon Friedman 1,6<lb/></docAuthor>
+	</byline>
+
+	See Ware et al. ( doi:10.1093/brain/awaa166) for a scientific commentary on this article.<lb/>
+
+	<div type="abstract">Repetitive mild traumatic brain injury in American football players has garnered increasing public attention following reports of<lb/> chronic traumatic encephalopathy, a progressive tauopathy. While the mechanisms underlying repetitive mild traumatic brain injury-<lb/>induced neurodegeneration are unknown and antemortem diagnostic tests are not available, neuropathology studies suggest a patho-<lb/>genic role for microvascular injury, specifically blood-brain barrier dysfunction. Thus, our main objective was to demonstrate the ef-<lb/>fectiveness of a modified dynamic contrast-enhanced MRI approach we have developed to detect impairments in brain microvascular<lb/> function. To this end, we scanned 42 adult male amateur American football players and a control group comprising 27 athletes prac-<lb/>ticing a non-contact sport and 26 non-athletes. MRI scans were also performed in 51 patients with brain pathologies involving the<lb/> blood-brain barrier, namely malignant brain tumours, ischaemic stroke and haemorrhagic traumatic contusion. Based on data from<lb/> prolonged scans, we generated maps that visualized the permeability value for each brain voxel. Our permeability maps revealed an<lb/> increase in slow blood-to-brain transport in a subset of amateur American football players, but not in sex-and age-matched controls.<lb/> The increase in permeability was region specific (white matter, midbrain peduncles, red nucleus, temporal cortex) and correlated with<lb/> changes in white matter, which were confirmed by diffusion tensor imaging. Additionally, increased permeability persisted for months,<lb/> as seen in players who were scanned both on-and off-season. Examination of patients with brain pathologies revealed that slow<lb/> tracer accumulation characterizes areas surrounding the core of injury, which frequently shows fast blood-to-brain transport. Next,<lb/> we verified our method in two rodent models: rats and mice subjected to repeated mild closed-head impact injury, and rats with vas-<lb/>cular injury inflicted by photothrombosis. In both models, slow blood-to-brain transport was observed, which correlated with neuro-<lb/>pathological changes. Lastly, computational simulations and direct imaging of the transport of Evans blue-albumin complex in brains<lb/> of rats subjected to recurrent seizures or focal cerebrovascular injury suggest that increased cellular transport underlies the observed<lb/> slow blood-to-brain transport. Taken together, our findings suggest dynamic contrast-enhanced-MRI can be used to diagnose specific<lb/> microvascular pathology after traumatic brain injury and other brain pathologies.<lb/></div>
+
+	<byline>
+	<affiliation>1 Departments of Physiology and Cell Biology, Brain and Cognitive Sciences, The Zlotowski Center for Neuroscience, Ben-Gurion<lb/> University of the Negev,</affiliation>
+	</byline>
+
+	<address>Beer-Sheva, Israel<lb/></address>
+
+	<byline>
+	<affiliation>2 Neurology Residency Training Program, McGill University,</affiliation>
+	</byline>
+
+	<address>Montreal, QC, Canada<lb/></address>
+
+	<byline>
+	<affiliation>3 Molecular Aging and Development Laboratory, Boston University School of Medicine, College of Engineering, Alzheimer&apos;s Disease<lb/> and CTE Center, and Photonics Center, Boston University,</affiliation>
+	</byline>
+
+	<address>Boston, MA, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Psychology and the School of Social-work, Ashkelon Academic College, Israel<lb/> 5 Department of Electrical Engineering, Ben-Gurion University of the Negev,</affiliation>
+	</byline>
+
+	<address>Beer-Sheva, Israel<lb/></address>
+
+	<note type="submission">Received July 25, 2019. Revised February 27, 2020. Accepted March 11, 2020.</note>
+
+	Advance access publication
+	<date>May 28, 2020<lb/></date>
+
+	<note type="copyright">V C The Author(s) (2020). Published by Oxford University Press on behalf of the Guarantors of Brain.<lb/> This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (http://creativecommons.org/licenses/by-nc/4.0/), which<lb/> permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact<lb/> journals.permissions@oup.com<lb/></note>
+
+	<idno>doi:10.1093/brain/awaa140<lb/></idno>
+
+	<reference>BRAIN 2020: 143; 1826-1842 | 1826<lb/></reference>
+
+	Downloaded from
+	<ptr type="web">https://academic.oup.com/brain/article/143/6/1826/5848368</ptr>
+	by guest on 02 August 2022<lb/>
+
+	<byline>
+	<affiliation>6 Department of Medical Neuroscience, Dalhousie University, Faculty of Medicine,</affiliation>
+	</byline>
+
+	<address>Halifax, NS, Canada<lb/></address>
+
+	<byline>
+	<affiliation>7 Biomedical Translational Imaging Centre (BIOTIC), IWK Health Centre and QEII Health Sciences Center, Dalhousie University,<lb/></affiliation>
+	</byline>
+
+	<address>Halifax, NS, Canada<lb/></address>
+
+	<byline>
+	<affiliation>8 Department of Medical Imaging, Soroka University Medical Center,</affiliation>
+	</byline>
+
+	<address>Beer-Sheva, Israel<lb/></address>
+
+	<byline>
+	<affiliation>9 Smurfit Institute of Genetics, Trinity College Dublin,</affiliation>
+	</byline>
+
+	<address>Dublin, Ireland<lb/></address>
+
+	<byline>
+	<affiliation>10 Department of Integrative Biology and the Helen Wills Neuroscience Institute, University of California,</affiliation>
+	</byline>
+
+	<address>Berkeley, CA, USA<lb/></address>
+
+	Correspondence to:
+	<byline>
+	<docAuthor>Dr Alon Friedman<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ben-Gurion University of the Negev,</affiliation>
+	</byline>
+
+	<address>P.O.B. 653 Beer-Sheva, 8410501 Israel<lb/></address>
+
+	E-mail:
+	<email>alonf@bgu.ac.il<lb/></email>
+
+	Keywords:
+	<keyword>blood-brain barrier; repetitive mild traumatic brain injury; dynamic contrast-enhanced magnetic resonance imaging;<lb/> American football; transcellular transport<lb/></keyword>
+
+	Abbreviations: BBBD = blood-brain barrier dysfunction; CTE = chronic traumatic encephalopathy; DCE = dynamic contrast-<lb/>enhanced; DTI = diffusion tensor imaging; FFDE = fibre-flux diffusion density; IFOF = inferior fronto-occipital fasciculus; NPI =<lb/> normalized permeability index; rmTBI = repetitive mild TBI; TBI = traumatic brain injury
+		</front>
+	</text>
+</tei>

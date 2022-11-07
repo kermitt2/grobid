@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210113"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>A geospatial approach to understanding<lb/> inequalities in accessibility to primary care<lb/> among vulnerable populations<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jason A. Gilliland ID<lb/> 1,2,3,4,5,6,7 *, Tayyab I. Shah 1,2 , Andrew Clark 1,2 , Shannon Sibbald 3,8 ,<lb/> Jamie A. Seabrook 2,4,5,6,7,9<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Geography, Western University,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>2 Human Environments Analysis<lb/> Laboratory, Western University,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>3 School of Health Studies, Schulich School of<lb/> Medicine and Dentistry, Western University,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>4 Department of Paediatrics, Western<lb/> University,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>5 Department of Epidemiology and Biostatistics, Western University,<lb/></affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>6 Children&apos;s Health Research Institute,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>7 Lawson Health<lb/> Research Institute,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada,</address>
+
+	<byline>
+	<affiliation>8 Department of Family Medicine, Western University,</affiliation>
+	</byline>
+
+	<address>London,<lb/> ON, Canada,</address>
+
+	<byline>
+	<affiliation>9 School of Food and Nutritional Sciences, Brescia University College,</affiliation>
+	</byline>
+
+	<address>London, ON, Canada<lb/></address>
+
+	*
+	<email>jgillila@uwo.ca</email>
+
+	Abstract<lb/>
+	<div type="abstract">Many Canadians experience unequal access to primary care services, despite living in a<lb/> country with a universal health care system. Health inequalities affect all Canadians but<lb/> have a much stronger impact on the health of vulnerable populations. Health inequalities<lb/> are preventable differences in the health status or distribution of health resources as experi-<lb/>enced by vulnerable populations. A geospatial approach was applied to examine how<lb/> closely the distribution of primary care providers (PCPs) in London, Ontario meet the needs<lb/> of vulnerable populations, including people with low income status, seniors, lone parents,<lb/> and linguistic minorities. Using enhanced two step floating catchment area (E2SFCA)<lb/> method, an index of geographic access scores for all PCPs and PCPs speaking French,<lb/> Arabic, and Spanish were separately developed at the dissemination area (DA) level. To<lb/> analyze how PCPs are distributed, comparative analyses were performed in association<lb/> with specific vulnerable groups. Geographical accessibility to all PCPs, and PCPs who<lb/> speak specific minority languages vary considerably across the city of London. Access<lb/> scores for French-and Arabic-speaking PCPs are found comparatively high (mean = 2.85<lb/> and 1.01 respectively) as compared to Spanish-speaking PCPs (mean = 0.47). Additionally,<lb/> many areas with high proportions of vulnerable populations experience low accessibility.<lb/> Despite its exploratory nature, this study offers insight into intra-urban distributions of geo-<lb/>graphical accessibility to primary care resources for vulnerable groups. These findings can<lb/> facilitate health researchers and policymakers in the development of recommendations to<lb/> increase levels of accessibility of specific population groups in underserved areas.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210113 January 7, 2019<lb/></reference>
+
+	<page>1 / 13<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Gilliland JA, Shah TI, Clark A, Sibbald S,<lb/> Seabrook JA (2019) A geospatial approach to<lb/> understanding inequalities in accessibility to<lb/> primary care among vulnerable populations. PLoS<lb/> ONE 14(1): e0210113.</reference>
+
+	<idno>https://doi.org/10.1371/<lb/> journal.pone.0210113<lb/></idno>
+
+	Editor:
+	<editor>Adam Todd,</editor>
+
+	<byline>
+	<affiliation>Newcastle University,</affiliation>
+	</byline>
+
+	<address>UNITED KINGDOM<lb/></address>
+
+	<note type="submission">Received: August 17, 2018<lb/> Accepted: December 16, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Gilliland et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">Census geography <lb/>and population data are available from the StatCan <lb/>website: http://www12.statcan.gc.ca/census-<lb/>recensement/2016/geo/index-eng.cfm http:// <lb/>www12.statcan.gc.ca/census-recensement/2016/ <lb/>dp-pd/dt-td/index-eng.cfm Information about <lb/>family physicians is available from the CPSO <lb/>(College of Physicians and Surgeons of Ontario)&apos;s <lb/>website: https://www.cpso.on.ca/Public-<lb/>Information-Services/Find-a-Doctor <lb/></note>
+
+	Funding: 
+	<note type="funding">Funding for the study was provided to the<lb/> Human Environments Analysis Laboratory at<lb/> Western University (PI: Gilliland) by the West Elgin<lb/> Community Health Centre on behalf of the South<lb/> West Local Health Integration Network.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

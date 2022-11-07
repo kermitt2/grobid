@@ -16,10 +16,10 @@ grobid:
       path: "pdfalto"
       # security for PDF parsing
       memoryLimitMb: 6096
-      timeoutSec: 60
+      timeoutSec: 120
 
     # security relative to the PDF parsing result
-    blocksMax: 100000
+    blocksMax: 200000
     tokensMax: 1000000
 
   consolidation:
@@ -128,12 +128,12 @@ grobid:
         architecture: "BidLSTM_CRF_FEATURES"
         useELMo: false
         runtime:
-          # parameters used at runtime/prediction
+          # parameters used at runtime/prediction (for this model, use same max_sequence_length as training)
           max_sequence_length: 3000
-          batch_size: 1
+          batch_size: 2
         training:
-          # parameters used for trainikng
-          max_sequence_length: 2000
+          # parameters used for training
+          max_sequence_length: 3000
           batch_size: 10
 
     - name: "name-header"

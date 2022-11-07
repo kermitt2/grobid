@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210094"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Identification of transthyretin as a novel<lb/> interacting partner for the δ subunit of GABA A receptors<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Li Zhou ID 1<lb/> *, Xin Tang 1 , Xinyi Li 2 , Yuting Bai 1 , Joel N. Buxbaum 2 , Gong Chen 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+		<affiliation>1 Department of Biology, Huck Institutes of Life Sciences, The Pennsylvania State University,</affiliation>
+	</byline>
+
+	<address>University<lb/> Park, PA, United States of America,</address>
+
+	<byline>
+		<affiliation>2 Department of Molecular and Experimental Medicine, The Scripps<lb/> Research Institute,</affiliation>
+	</byline>
+
+	<address>La Jolla, CA, United States of America<lb/></address>
+
+	*
+	<email>li.zhou.sci@gmail.com</email>
+
+	(LZ);
+	<email>gongchen@psu.edu</email>
+
+	(GC) Abstract<lb/>
+	<div type="abstract">GABA A receptors (GABA A -Rs) play critical roles in brain development and synchronization of<lb/> neural network activity. While synaptic GABA A -Rs can exert rapid inhibition, the extrasynaptic<lb/> GABA A -Rs can tonically inhibit neuronal activity due to constant activation by ambient GABA.<lb/> The δ subunit-containing GABA A -Rs are expressed abundantly in the cerebellum, hippocam-<lb/>pus and thalamus to mediate the major tonic inhibition in the brain. While electrophysiological<lb/> and pharmacological properties of the δ-GABA A -Rs have been well characterized, the molec-<lb/>ular interacting partners of the δ-GABA A -Rs are not clearly defined. Here, using a yeast two-<lb/>hybrid screening assay, we identified transthyretin (TTR) as a novel regulatory molecule for<lb/> the δ-GABA A -Rs. Knockdown of TTR in cultured cerebellar granule neurons significantly<lb/> decreased the δ receptor expression; whereas overexpressing TTR in cortical neurons<lb/> increased the δ receptor expression. Electrophysiological analysis confirmed that knockdown<lb/> or overexpression of TTR in cultured neurons resulted in a corresponding decrease or<lb/> increase of tonic currents. Furthermore, in vivo analysis of TTR-/-mice revealed a significant<lb/> decrease of the surface expression of the δ-GABA A -Rs in cerebellar granule neurons.<lb/> Together, our studies identified TTR as a novel regulator of the δ-GABA A -Rs.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210094 January 7, 2019<lb/></reference>
+
+	<page>1 / 17<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Zhou L, Tang X, Li X, Bai Y, Buxbaum JN,<lb/> Chen G (2019) Identification of transthyretin as a<lb/> novel interacting partner for the δ subunit of GABA A<lb/> receptors. PLoS ONE 14(1): e0210094.</reference>
+
+	<idno>https://doi.<lb/> org/10.1371/journal.pone.0210094<lb/></idno>
+
+	Editor:
+	<editor>Alexander G. Obukhov,</editor>
+
+	<byline>
+	<affiliation>Indiana University<lb/> School of Medicine,</affiliation>
+	</byline>
+
+	<address>UNITED STATES<lb/></address>
+
+	<note type="submission">Received: June 14, 2018<lb/> Accepted: December 17, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Zhou et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All relevant data are <lb/>included in our paper. <lb/></note>
+
+	Funding:
+	<note type="funding">This work was supported by grants from<lb/> National Institutes of Health (MH083911 and<lb/> AG045656) and an Endowment Fund from<lb/> Pennsylvania State University to G.C.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>
