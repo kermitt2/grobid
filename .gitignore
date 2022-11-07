@@ -79,6 +79,7 @@ grobid-home/models/dataseer*
 grobid-home/models/datasets*
 grobid-home/models/*-bert*/
 grobid-home/models/*scibert*/
+grobid-home/models/context_*
 
 Dockerfile.dataseer
 Dockerfile.software
