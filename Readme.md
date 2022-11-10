@@ -50,7 +50,7 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 ### Try in Play With Docker
 
-<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
+<a target="_blank" href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
   <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
 </a>
 
