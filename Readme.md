@@ -50,19 +50,20 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 ### Try in Play With Docker
 
-<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kurdi-dev/grobid/master/compose.yml">
+<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
   <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
 </a>
 
-Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080.
+Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. 
 
 ### Demo server
 
-For testing purposes, a public GROBID demo server is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
+For testing purposes, a public GROBID demo server is also available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
 
-The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+This demo runs only with CRF models. The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
-_Warning_: This demo runs only CRF models. Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
+_Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
+For any serious works, you will need to deploy and use your own Grobid server, see the [GROBID and Docker containers documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for doing that easily and activate some Deep Learning models. 
 
 ## Clients
 
