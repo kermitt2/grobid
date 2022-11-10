@@ -50,11 +50,11 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 ### Try in Play With Docker
 
-<a target="_blank" href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
+<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
   <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
 </a>
 
-Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. 
+Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. Note that there is an additional 60s needed when processing a PDF for the first time for the loading of the models on the "cold" container.
 
 ### Demo server
 
