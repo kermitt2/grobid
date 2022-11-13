@@ -183,11 +183,25 @@ public class Block {
     }
 
     public int getStartToken() {
-        return startToken;
+        if (startToken == -1) {
+            if (tokens == null || tokens.size() == 0) {
+                return -1;
+            } else {
+                return tokens.get(0).getOffset();
+            }   
+        } else 
+            return startToken;
     }
 
     public int getEndToken() {
-        return endToken;
+        if (endToken == -1) {
+            if (tokens == null || tokens.size() == 0) {
+                return -1;
+            } else {
+                return tokens.get(tokens.size()-1).getOffset();
+            }   
+        } else 
+            return endToken;
     }
 
     public void setStartToken(int start) {
