@@ -87,7 +87,8 @@ public class Block {
     }
 
     public int getNbTokens() {
-        return nbTokens;
+        return tokens.size();
+        //return nbTokens;
     }
 
     public void setFont(String f) {

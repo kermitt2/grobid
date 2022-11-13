@@ -260,6 +260,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 				//page.addBlock(block);
 			}
 			block = new Block();
+			block.setStartToken(tokenizations.size());
 			//block.setPage(currentPage);
 			blabla = new StringBuffer();
 			int imagePos = images.size()-1;
@@ -393,6 +394,7 @@ public class PDFALTOSaxHandler extends DefaultHandler {
 			block = new Block();
 			blabla = new StringBuffer();
 			nbTokens = 0;
+			block.setStartToken(tokenizations.size());
 			//block.setPage(currentPage);
 			// blabla.append("\n@block\n");
 		} else if (qName.equals("Illustration")) {
