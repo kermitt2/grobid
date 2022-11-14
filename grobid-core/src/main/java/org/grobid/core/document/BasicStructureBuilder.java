@@ -119,7 +119,8 @@ public class BasicStructureBuilder {
 		//DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
 		// the default first block might not contain tokens but only bitmap - in this case we move
 		// to the first block containing some LayoutToken objects
-        while (docBlocks.get(blockIndex).getTokens() == null
+        while (docBlocks.get(blockIndex).getTokens() == null ||
+            docBlocks.get(blockIndex).getNbTokens() == 0
                 //TODO: make things right
 //                || docBlocks.get(blockIndex).getStartToken() == -1
                 ) {

@@ -282,7 +282,7 @@ public class Document implements Serializable {
 
         Page p = new Page(1);
         b.setPage(p);
-        b.setText(text);
+        //b.setText(text);
         pages = new ArrayList<>();
         pages.add(p);
         blocks.add(b);
