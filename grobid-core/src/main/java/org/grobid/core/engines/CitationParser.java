@@ -7,6 +7,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
@@ -40,12 +41,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CitationParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
+
+    private static final Pattern THREE_EM_PATTERN_ALL = Pattern.compile("^((\\-\\s?\\-\\s?\\-\\s?)[,.]\\s?)+.*$");
+    private static final Pattern THREE_EM_PATTERN = Pattern.compile("(\\-\\s?\\-\\s?\\-\\s?[,.]\\s?)");
 
     public CitationParser(EngineParsers parsers, CntManager cntManager) {
         super(GrobidModels.CITATION, cntManager);
@@ -315,6 +320,7 @@ public class CitationParser extends AbstractParser {
             }
 
             List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
+            BiblioItem previousBib = null;
             if (bibList != null && bibList.size()>0) {
                 int i = 0;
                 for (LabeledReferenceResult ref : references) {
@@ -324,9 +330,29 @@ public class CitationParser extends AbstractParser {
 
                     //BiblioItem bib = processingString(ref.getReferenceText(), 0);
                     BiblioItem bib = bibList.get(i);
+                    String localRef = refTexts.get(i);
                     i++;
-                    if (bib == null) 
+                    if (bib == null) {
                         continue;
+                    }
+
+                    // check the case of 3em dash to "replace" previous author slot(s), this is relevant
+                    // to the Chicago reference style
+                    // 3em dash are normalized by normal dash
+                    if (localRef.startsWith("-") && i > 0 && previousBib != null) {
+                        // the above conditional is to limit the regex pattern application 
+                        Matcher matcher = THREE_EM_PATTERN.matcher(localRef);
+                        int authorRank = 0;
+                        while (matcher.find()) {
+                            // inject previous author
+                            List<Person> previousAuthors = previousBib.getFullAuthors();
+                            Person authorToInject = previousAuthors.get(authorRank);
+                            List<Person> currentAuthors = bib.getFullAuthors();
+                            currentAuthors.add(authorRank, authorToInject);
+                            bib.setFullAuthors(currentAuthors);
+                            authorRank++;
+                        }
+                    }
 
                     // check if we have an interesting url annotation over this bib. ref.
                     List<LayoutToken> refTokens = ref.getTokens();
@@ -366,8 +392,8 @@ public class CitationParser extends AbstractParser {
                             localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,. \n", ")}]>,.: \n");
                         }
 
-                        String localRef = ref.getReferenceText();
-                        localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
+                        //localRef = ref.getReferenceText();
+                        //localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
 
                         bds.setRefSymbol(localLabel);
                         bds.setResBib(bib);
@@ -375,6 +401,8 @@ public class CitationParser extends AbstractParser {
                         bds.setRawBib(localRef);
                         bds.getResBib().setCoordinates(ref.getCoordinates());
                         results.add(bds);
+
+                        previousBib = bib;
                     }
                 }
             }
