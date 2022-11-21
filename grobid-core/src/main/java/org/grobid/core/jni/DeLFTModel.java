@@ -257,6 +257,11 @@ public class DeLFTModel {
                     localArgs += ", batch_size="+
                         GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName);
 
+                if (GrobidProperties.getInstance().getDelftTranformer(modelName) != null) {
+                    localArgs += ", transformer="+
+                        GrobidProperties.getInstance().getDelftTranformer(modelName);
+                }
+
                 // init model to be trained
                 if (architecture == null)
                     jep.eval("model = Sequence('"+this.modelName+
@@ -309,6 +314,10 @@ public class DeLFTModel {
             if (architecture != null) {
                 command.add("--architecture");
                 command.add(architecture);
+            }
+            if (GrobidProperties.getInstance().getDelftTranformer(modelName) != null) {
+                command.add("--transformer");
+                command.add(GrobidProperties.getInstance().getDelftTranformer(modelName));
             }
             if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
