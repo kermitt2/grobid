@@ -128,7 +128,8 @@ public class GrobidRestProcessTraining {
                         for (final File currFile : files) {
                             if (currFile.getName().toLowerCase().endsWith(".hdf5")
                                 || currFile.getName().toLowerCase().endsWith(".json") 
-                                || currFile.getName().toLowerCase().endsWith(".pkl")) {
+                                || currFile.getName().toLowerCase().endsWith(".pkl")
+                                || currFile.getName().toLowerCase().endsWith(".txt")) {
                                 try {
                                     ZipEntry ze = new ZipEntry(currFile.getName());
                                     out.putNextEntry(ze);
@@ -309,14 +310,14 @@ public class GrobidRestProcessTraining {
                 switch (this.type.toLowerCase()) {
                     // possible values are `full`, `holdout`, `split`, `nfold`
                     case "full":
-                        AbstractTrainer.runTraining(this.trainer);
+                        AbstractTrainer.runTraining(this.trainer, false);
                         break;
                     case "holdout":
                         AbstractTrainer.runTraining(this.trainer);
                         results = AbstractTrainer.runEvaluation(this.trainer);
                         break;
                     case "split":
-                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio);
+                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio, false);
                         break;
                     case "nfold":
                         if (n == 0) {

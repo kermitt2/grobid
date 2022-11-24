@@ -209,11 +209,11 @@ public class DeLFTModel {
      * usually hangs... Possibly issues with IO threads at the level of JEP (output not consumed because
      * of \r and no end of line?). 
      */
-    public static void trainJNI(String modelName, File trainingData, File outputModel, String architecture) {
+    public static void trainJNI(String modelName, File trainingData, File outputModel, String architecture, boolean incremental) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
             JEPThreadPool.getInstance().run(
-                new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath(), architecture));
+                new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath(), architecture, incremental));
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT model " + modelName + " task failed", e);
         }
@@ -224,13 +224,15 @@ public class DeLFTModel {
         private File trainPath;
         private File modelPath;
         private String architecture;
+        private boolean incremental;
 
-        public TrainTask(String modelName, File trainPath, File modelPath, String architecture) { 
+        public TrainTask(String modelName, File trainPath, File modelPath, String architecture, boolean incremental) { 
             //System.out.println("train thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.trainPath = trainPath;
             this.modelPath = modelPath;
             this.architecture = architecture;
+            this.incremental = incremental;
         } 
           
         @Override
@@ -273,7 +275,18 @@ public class DeLFTModel {
 
                 // actual training
                 //start_time = time.time()
-                jep.eval("model.train(x_train, y_train, x_valid, y_valid)");
+                if (incremental) {
+                    // if incremental training, we need to load the existing model
+                    if (this.modelPath != null && 
+                        this.modelPath.exists() &&
+                        !this.modelPath.isDirectory()) {
+                        jep.eval("model.train(x_train, y_train, x_valid, y_valid, incremental=True)");
+                    } else {
+                        throw new GrobidException("the path to the model to be used for starting incremental training is invalid: " +
+                            this.modelPath.getAbsolutePath());
+                    }
+                } else
+                    jep.eval("model.train(x_train, y_train, x_valid, y_valid)");
                 //runtime = round(time.time() - start_time, 3)
                 //print("training runtime: %s seconds " % (runtime))
 
@@ -292,6 +305,8 @@ public class DeLFTModel {
                 jep.eval("del model");
             } catch(JepException e) {
                 LOGGER.error("DeLFT model training via JEP failed", e);
+            } catch(GrobidException e) {
+                LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
             } 
         } 
     } 
@@ -300,7 +315,7 @@ public class DeLFTModel {
      *  Train with an external process rather than with JNI, this approach appears to be more stable for the
      *  training process (JNI approach hangs after a while) and does not raise any runtime/integration issues. 
      */
-    public static void train(String modelName, File trainingData, File outputModel, String architecture) {
+    public static void train(String modelName, File trainingData, File outputModel, String architecture, boolean incremental) {
         try {
             LOGGER.info("Train DeLFT model " + modelName + "...");
             List<String> command = new ArrayList<>();
@@ -322,15 +337,28 @@ public class DeLFTModel {
             if (GrobidProperties.getInstance().useELMo(modelName) && modelName.toLowerCase().indexOf("bert") == -1) {
                 command.add("--use-ELMo");
             }
-
             if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName) != -1) {
                 command.add("--max-sequence-length");
                 command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(modelName)));
             }
-
             if (GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName) != -1) {
                 command.add("--batch-size");
                 command.add(String.valueOf(GrobidProperties.getInstance().getDelftTrainingBatchSize(modelName)));
+            }
+            if (incremental) {
+                command.add("--incremental");
+
+                // if incremental training, we need to load the existing model
+                File modelPath = GrobidProperties.getInstance().getModelPath();
+                if (modelPath != null && 
+                    modelPath.exists() &&
+                    !modelPath.isDirectory()) {
+                    command.add("--input-model");
+                    command.add(GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+                } else {
+                    throw new GrobidException("the path to the model to be used for starting incremental training is invalid: " +
+                        GrobidProperties.getInstance().getModelPath().getAbsolutePath());
+                }
             }
 
             ProcessBuilder pb = new ProcessBuilder(command);
@@ -349,7 +377,9 @@ public class DeLFTModel {
             LOGGER.error("IO error when training DeLFT model " + modelName, e);
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT model " + modelName + " task failed", e);
-        }
+        } catch(GrobidException e) {
+            LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
+        } 
     }
 
     public synchronized void close() {

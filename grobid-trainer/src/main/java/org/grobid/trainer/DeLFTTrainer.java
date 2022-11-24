@@ -14,8 +14,8 @@ public class DeLFTTrainer implements GenericTrainer {
     public static final String DELFT = "delft";
 
     @Override
-    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
-        DeLFTModel.train(model.getModelName(), trainingData, outputModel, GrobidProperties.getDelftArchitecture(model));
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
+        DeLFTModel.train(model.getModelName(), trainingData, outputModel, GrobidProperties.getDelftArchitecture(model), incremental);
     }
 
     @Override

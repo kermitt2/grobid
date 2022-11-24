@@ -18,7 +18,7 @@ public class WapitiTrainer implements GenericTrainer {
     protected int nbMaxIterations = 2000; // by default maximum of training iterations
 
     @Override
-    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
 		System.out.println("\tepsilon: " + epsilon);
 		System.out.println("\twindow: " + window);
         System.out.println("\tnb max iterations: " + nbMaxIterations);
