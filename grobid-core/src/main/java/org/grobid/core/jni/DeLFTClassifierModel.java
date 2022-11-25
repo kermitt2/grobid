@@ -164,7 +164,8 @@ public class DeLFTClassifierModel {
     public static void trainJNI(String modelName, File trainingData, File outputModel) {
         try {
             LOGGER.info("Train DeLFT classification model " + modelName + "...");
-            JEPThreadPoolClassifier.getInstance().run(new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath()));
+            JEPThreadPoolClassifier.getInstance().run(
+                new TrainTask(modelName, trainingData, GrobidProperties.getInstance().getModelPath()));
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT classification model " + modelName + " task failed", e);
         }
@@ -174,13 +175,18 @@ public class DeLFTClassifierModel {
         private String modelName;
         private File trainPath;
         private File modelPath;
+        private String architecture;
+        private boolean incremental;
 
         public TrainTask(String modelName, File trainPath, File modelPath) { 
+        //public TrainTask(String modelName, File trainPath, File modelPath, String architecture, boolean incremental) { 
             //System.out.println("train thread: " + Thread.currentThread().getId());
             this.modelName = modelName;
             this.trainPath = trainPath;
             this.modelPath = modelPath;
-        } 
+            this.architecture = null;
+            this.incremental = false;
+        }
           
         @Override
         public void run() { 
@@ -198,15 +204,44 @@ public class DeLFTClassifierModel {
                     useELMo = "True";
                 }
 
+                String localArgs = "";
+                if (GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName) != -1)
+                    localArgs += ", maxlen="+
+                        GrobidProperties.getInstance().getDelftTrainingMaxSequenceLength(this.modelName);
+
+                if (GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName) != -1)
+                    localArgs += ", batch_size="+
+                        GrobidProperties.getInstance().getDelftTrainingBatchSize(this.modelName);
+
+                if (GrobidProperties.getInstance().getDelftTranformer(modelName) != null) {
+                    localArgs += ", transformer="+
+                        GrobidProperties.getInstance().getDelftTranformer(modelName);
+                }
+
                 // init model to be trained
-                jep.eval("model = Classifier('"+this.modelName+
-                    "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+")");
+                if (this.architecture == null) {
+                    jep.eval("model = Classifier('"+this.modelName+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+")");
+                } else {
+                    jep.eval("model = Classifier('"+this.modelName+
+                        "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+
+                        ", architecture='"+architecture+"')");
+                }
 
                 // actual training
-                //start_time = time.time()
-                jep.eval("model.train(x_train, y_train, x_valid, y_valid)");
-                //runtime = round(time.time() - start_time, 3)
-                //print("training runtime: %s seconds " % (runtime))
+                if (incremental) {
+                    // if incremental training, we need to load the existing model
+                    if (this.modelPath != null && 
+                        this.modelPath.exists() &&
+                        !this.modelPath.isDirectory()) {
+                        jep.eval("model.load('" + this.modelPath.getAbsolutePath() + "')");
+                        jep.eval("model.train(x_train, y_train, x_valid, y_valid, incremental=True)");
+                    } else {
+                        throw new GrobidException("the path to the model to be used for starting incremental training is invalid: " +
+                            this.modelPath.getAbsolutePath());
+                    }
+                } else
+                    jep.eval("model.train(x_train, y_train, x_valid, y_valid)");
 
                 // saving the model
                 System.out.println(this.modelPath.getAbsolutePath());
@@ -223,6 +258,8 @@ public class DeLFTClassifierModel {
                 jep.eval("del model");
             } catch(JepException e) {
                 LOGGER.error("DeLFT classification model training via JEP failed", e);
+            } catch(GrobidException e) {
+                LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
             } 
         } 
     }
@@ -260,7 +297,9 @@ public class DeLFTClassifierModel {
             LOGGER.error("IO error when training DeLFT classification model " + modelName, e);
         } catch(InterruptedException e) {
             LOGGER.error("Train DeLFT classification model " + modelName + " task failed", e);
-        }
+        } catch(GrobidException e) {
+            LOGGER.error("GROBID call to DeLFT training via JEP failed", e);
+        } 
     }
 
     public synchronized void close() {

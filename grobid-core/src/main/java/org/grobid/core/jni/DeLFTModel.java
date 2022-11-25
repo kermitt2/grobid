@@ -271,7 +271,7 @@ public class DeLFTModel {
                 else
                     jep.eval("model = Sequence('"+this.modelName+
                         "', max_epoch=100, recurrent_dropout=0.50, embeddings_name='glove-840B', use_ELMo="+useELMo+localArgs+ 
-                        ", model_type='"+architecture+"')");
+                        ", architecture='"+architecture+"')");
 
                 // actual training
                 //start_time = time.time()
@@ -280,6 +280,7 @@ public class DeLFTModel {
                     if (this.modelPath != null && 
                         this.modelPath.exists() &&
                         !this.modelPath.isDirectory()) {
+                        jep.eval("model.load('" + this.modelPath.getAbsolutePath() + "')");
                         jep.eval("model.train(x_train, y_train, x_valid, y_valid, incremental=True)");
                     } else {
                         throw new GrobidException("the path to the model to be used for starting incremental training is invalid: " +
