@@ -128,7 +128,8 @@ public class GrobidRestProcessTraining {
                         for (final File currFile : files) {
                             if (currFile.getName().toLowerCase().endsWith(".hdf5")
                                 || currFile.getName().toLowerCase().endsWith(".json") 
-                                || currFile.getName().toLowerCase().endsWith(".pkl")) {
+                                || currFile.getName().toLowerCase().endsWith(".pkl")
+                                || currFile.getName().toLowerCase().endsWith(".txt")) {
                                 try {
                                     ZipEntry ze = new ZipEntry(currFile.getName());
                                     out.putNextEntry(ze);
@@ -180,7 +181,7 @@ public class GrobidRestProcessTraining {
      *
      * @return a response object containing the token corresponding to the launched training
      */ 
-    public Response trainModel(String model, String architecture, String type, double ratio, int n) {
+    public Response trainModel(String model, String architecture, String type, double ratio, int n, boolean incremental) {
         Response response = null;
         
         try {
@@ -204,7 +205,7 @@ public class GrobidRestProcessTraining {
             }
 
             ExecutorService executorService = Executors.newFixedThreadPool(1);
-            TrainTask trainTask = new TrainTask(trainer, type, token, ratio, n);
+            TrainTask trainTask = new TrainTask(trainer, type, token, ratio, n, incremental);
             FileUtils.writeStringToFile(new File(tokenPath + "/status"), "ongoing", "UTF-8");
             executorService.submit(trainTask);
 
@@ -286,13 +287,15 @@ public class GrobidRestProcessTraining {
         private String token;
         private int n = 10;
         private double ratio = 1.0;
+        private boolean incremental = false;
 
-        public TrainTask(AbstractTrainer trainer, String type, String token, double ratio, int n) { 
+        public TrainTask(AbstractTrainer trainer, String type, String token, double ratio, int n, boolean incremental) { 
             this.trainer = trainer;
             this.type = type;
             this.token = token;
             this.ratio = ratio;
             this.n = n;
+            this.incremental = incremental;
         }
           
         @Override
@@ -309,14 +312,14 @@ public class GrobidRestProcessTraining {
                 switch (this.type.toLowerCase()) {
                     // possible values are `full`, `holdout`, `split`, `nfold`
                     case "full":
-                        AbstractTrainer.runTraining(this.trainer);
+                        AbstractTrainer.runTraining(this.trainer, this.incremental);
                         break;
                     case "holdout":
-                        AbstractTrainer.runTraining(this.trainer);
+                        AbstractTrainer.runTraining(this.trainer, this.incremental);
                         results = AbstractTrainer.runEvaluation(this.trainer);
                         break;
                     case "split":
-                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio);
+                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio, this.incremental);
                         break;
                     case "nfold":
                         if (n == 0) {
