@@ -79,6 +79,11 @@ public abstract class AbstractTrainer implements Trainer {
     }
 
     @Override
+    public void train() {
+        train(false);
+    }
+
+    @Override
     public void train(boolean incremental) {
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath);
@@ -131,6 +136,11 @@ public abstract class AbstractTrainer implements Trainer {
     public String evaluate(GenericTagger tagger, boolean includeRawResults) {
         createCRFPPData(getEvalCorpusPath(), evalDataPath);
         return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), tagger).toString(includeRawResults);
+    }
+
+    @Override
+    public String splitTrainEvaluate(Double split) {
+        return splitTrainEvaluate(split, false);
     }
 
     @Override
@@ -579,6 +589,10 @@ public abstract class AbstractTrainer implements Trainer {
 
     public static String runEvaluation(final Trainer trainer) {
         return trainer.evaluate(false);
+    }
+
+    public static String runSplitTrainingEvaluation(final Trainer trainer, Double split) {
+        return runSplitTrainingEvaluation(trainer, split, false);
     }
 
     public static String runSplitTrainingEvaluation(final Trainer trainer, Double split, boolean incremental) {

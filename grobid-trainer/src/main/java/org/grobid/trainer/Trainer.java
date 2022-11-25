@@ -12,6 +12,8 @@ public interface Trainer {
 
 	int createCRFPPData(File corpusPath, File outputTrainingFile, File outputEvalFile, double splitRatio);
 
+    void train();
+
     void train(boolean incremental);
 
     String evaluate();
@@ -19,6 +21,8 @@ public interface Trainer {
     String evaluate(boolean includeRawResults);
 
     String evaluate(GenericTagger tagger, boolean includeRawResults);
+
+    String splitTrainEvaluate(Double split);
 
 	String splitTrainEvaluate(Double split, boolean incremental);
 

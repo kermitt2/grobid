@@ -5,6 +5,7 @@ import org.grobid.core.GrobidModels;
 import java.io.File;
 
 public interface GenericTrainer {
+    void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model);
     void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental);
     String getName();
 	public void setEpsilon(double epsilon);

@@ -9,6 +9,11 @@ import java.io.File;
  */
 public class DummyTrainer implements GenericTrainer {
     @Override
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
+
+    }
+
+    @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
 
     }
