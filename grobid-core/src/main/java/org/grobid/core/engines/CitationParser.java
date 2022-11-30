@@ -55,7 +55,7 @@ public class CitationParser extends AbstractParser {
     // Observed practices also include usage of one single 3em dash or 3-times repeated 3em dash for one 
     // author slot replacement (3-times repeated 3em dash is more common).
     // Usage of 3em dash remains not very common.
-    // This all looks idiotic in digital ages, but this is coming from the old printing industry. At least, 
+    // This all looks idiotic in digital age, but this is coming from the old printing industry. At least, 
     // it is disappearing now in the latest style versions, like Chicago style. 
     // In Grobid currently 3em dash (like all dash unicode family members) are normalized to a standard single 
     // dash as family representative.
@@ -360,8 +360,13 @@ public class CitationParser extends AbstractParser {
                         while (matcher.find()) {
                             // inject previous author
                             List<Person> previousAuthors = previousBib.getFullAuthors();
+                            if (previousAuthors == null || previousAuthors.size() <= authorRank)
+                                continue;
                             Person authorToInject = previousAuthors.get(authorRank);
                             List<Person> currentAuthors = bib.getFullAuthors();
+                            if (currentAuthors == null) {
+                                currentAuthors = new ArrayList<Person>();
+                            }
                             currentAuthors.add(authorRank, authorToInject);
                             bib.setFullAuthors(currentAuthors);
                             authorRank++;
