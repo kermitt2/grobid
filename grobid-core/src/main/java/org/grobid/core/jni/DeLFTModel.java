@@ -279,7 +279,7 @@ public class DeLFTModel {
                     // if incremental training, we need to load the existing model
                     if (this.modelPath != null && 
                         this.modelPath.exists() &&
-                        !this.modelPath.isDirectory()) {
+                        this.modelPath.isDirectory()) {
                         jep.eval("model.load('" + this.modelPath.getAbsolutePath() + "')");
                         jep.eval("model.train(x_train, y_train, x_valid, y_valid, incremental=True)");
                     } else {
@@ -353,7 +353,7 @@ public class DeLFTModel {
                 File modelPath = GrobidProperties.getInstance().getModelPath();
                 if (modelPath != null && 
                     modelPath.exists() &&
-                    !modelPath.isDirectory()) {
+                    modelPath.isDirectory()) {
                     command.add("--input-model");
                     command.add(GrobidProperties.getInstance().getModelPath().getAbsolutePath());
                 } else {
@@ -361,7 +361,6 @@ public class DeLFTModel {
                         GrobidProperties.getInstance().getModelPath().getAbsolutePath());
                 }
             }
-
             ProcessBuilder pb = new ProcessBuilder(command);
             File delftPath = new File(GrobidProperties.getInstance().getDeLFTFilePath());
             pb.directory(delftPath);
