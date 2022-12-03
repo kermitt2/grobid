@@ -72,7 +72,7 @@ public class CrossrefClient implements Closeable {
 	}
 
 	public static void printLog(CrossrefRequest<?> request, String message) {
-		logger.info((request != null ? request+": " : "")+message);
+		logger.debug((request != null ? request+": " : "")+message);
 		//System.out.println((request != null ? request+": " : "")+message);
 	}
 	
