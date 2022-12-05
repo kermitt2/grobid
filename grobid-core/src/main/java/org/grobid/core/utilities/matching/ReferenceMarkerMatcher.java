@@ -245,7 +245,7 @@ public class ReferenceMarkerMatcher {
                         }
                     }
                 } catch (Exception e) {
-                    LOGGER.warn("Cannot parse citation reference range: " + s);
+                    LOGGER.debug("Cannot parse citation reference range: " + s);
                 }
 
             }

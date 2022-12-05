@@ -13,6 +13,7 @@ Evaluation citation 100% │███████████│ 1943/1943 (0:13
 Evaluation full text 100% │██████████│ 1943/1943 (0:00:26 / 0:00:00) 
 Evaluation metrics produced in 874.772 seconds
 > :grobid-trainer:jatsEval
+
 ======= Header metadata ======= 
 
 Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
@@ -23,14 +24,14 @@ Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
 
 label                accuracy     precision    recall       f1           support
 
-abstract             82.47        16.69        16.38        16.53        1911   
-authors              98.61        93.55        93.46        93.51        1941   
-first_author         99.29        96.75        96.65        96.7         1941   
-keywords             93.69        61.6         59.86        60.71        1380   
-title                97.15        86.84        86.57        86.7         1943   
+abstract             82.47        16.74        16.43        16.58        1911   
+authors              98.67        93.81        93.71        93.76        1941   
+first_author         99.31        96.85        96.75        96.8         1941   
+keywords             93.88        62.39        60.94        61.66        1380   
+title                97.17        86.89        86.67        86.78        1943   
 
-all (micro avg.)     94.24        72.1         71.42        71.76        9116   
-all (macro avg.)     94.24        71.09        70.58        70.83        9116   
+all (micro avg.)     94.3         72.3         71.7         72           9116   
+all (macro avg.)     94.3         71.34        70.9         71.12        9116   
 
 
 ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
@@ -39,14 +40,14 @@ all (macro avg.)     94.24        71.09        70.58        70.83        9116
 
 label                accuracy     precision    recall       f1           support
 
-abstract             91.93        62.83        61.64        62.23        1911   
-authors              98.74        94.17        94.08        94.12        1941   
-first_author         99.32        96.91        96.81        96.86        1941   
-keywords             94.93        70.02        68.04        69.02        1380   
-title                98.62        93.8         93.52        93.66        1943   
+abstract             91.98        63.11        61.96        62.53        1911   
+authors              98.8         94.43        94.33        94.38        1941   
+first_author         99.34        97.01        96.91        96.96        1941   
+keywords             95.12        70.85        69.2         70.01        1380   
+title                98.64        93.86        93.62        93.74        1943   
 
-all (micro avg.)     96.71        84.59        83.8         84.19        9116   
-all (macro avg.)     96.71        83.55        82.82        83.18        9116   
+all (micro avg.)     96.78        84.85        84.14        84.49        9116   
+all (macro avg.)     96.78        83.85        83.2         83.52        9116   
 
 
 ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
@@ -55,14 +56,14 @@ all (macro avg.)     96.71        83.55        82.82        83.18        9116
 
 label                accuracy     precision    recall       f1           support
 
-abstract             97.39        89.44        87.76        88.59        1911   
-authors              99.23        96.49        96.39        96.44        1941   
-first_author         99.39        97.22        97.11        97.16        1941   
-keywords             96.76        82.55        80.22        81.37        1380   
-title                99.58        98.35        98.04        98.2         1943   
+abstract             97.4         89.5         87.86        88.67        1911   
+authors              99.3         96.8         96.7         96.75        1941   
+first_author         99.41        97.32        97.22        97.27        1941   
+keywords             96.94        83.16        81.23        82.18        1380   
+title                99.63        98.5         98.25        98.38        1943   
 
-all (micro avg.)     98.47        93.51        92.64        93.07        9116   
-all (macro avg.)     98.47        92.81        91.91        92.35        9116   
+all (micro avg.)     98.53        93.73        92.95        93.34        9116   
+all (macro avg.)     98.53        93.06        92.25        92.65        9116   
 
 
 = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
@@ -71,27 +72,27 @@ all (macro avg.)     98.47        92.81        91.91        92.35        9116
 
 label                accuracy     precision    recall       f1           support
 
-abstract             96.6         85.6         83.99        84.79        1911   
-authors              99.03        95.51        95.41        95.46        1941   
-first_author         99.29        96.75        96.65        96.7         1941   
-keywords             95.95        77.03        74.86        75.93        1380   
-title                99.32        97.11        96.81        96.96        1943   
+abstract             96.58        85.5         83.94        84.71        1911   
+authors              99.08        95.77        95.67        95.72        1941   
+first_author         99.31        96.85        96.75        96.8         1941   
+keywords             96.06        77.23        75.43        76.32        1380   
+title                99.34        97.16        96.91        97.04        1943   
 
-all (micro avg.)     98.04        91.32        90.47        90.89        9116   
-all (macro avg.)     98.04        90.4         89.54        89.97        9116   
+all (micro avg.)     98.08        91.4         90.64        91.02        9116   
+all (macro avg.)     98.08        90.5         89.74        90.12        9116 
 
 ===== Instance-level results =====
 
 Total expected instances:       1943
-Total correct instances:        215 (strict) 
-Total correct instances:        883 (soft) 
-Total correct instances:        1392 (Levenshtein) 
-Total correct instances:        1260 (ObservedRatcliffObershelp) 
+Total correct instances:        220 (strict) 
+Total correct instances:        888 (soft) 
+Total correct instances:        1413 (Levenshtein) 
+Total correct instances:        1273 (ObservedRatcliffObershelp) 
 
-Instance-level recall:  11.07   (strict) 
-Instance-level recall:  45.45   (soft) 
-Instance-level recall:  71.64   (Levenshtein) 
-Instance-level recall:  64.85   (RatcliffObershelp) 
+Instance-level recall:  11.32   (strict) 
+Instance-level recall:  45.7    (soft) 
+Instance-level recall:  72.72   (Levenshtein) 
+Instance-level recall:  65.52   (RatcliffObershelp)
 
 ======= Citation metadata ======= 
 
