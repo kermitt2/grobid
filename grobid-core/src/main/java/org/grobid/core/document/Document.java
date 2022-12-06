@@ -427,11 +427,6 @@ public class Document implements Serializable {
         } else {
             for(Block block : getBlocks()) {
                 List<LayoutToken> localTokens = block.getTokens();
-
-                if (localTokens != null) {
-                    block.setNbTokens(block.getTokens().size());
-                }
-
                 if (localTokens == null || localTokens.size() == 0) 
                     continue;
 
