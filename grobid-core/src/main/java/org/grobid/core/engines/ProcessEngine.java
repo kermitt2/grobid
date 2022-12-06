@@ -223,7 +223,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for date. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
     }
 
     /**
@@ -239,8 +238,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for processAuthorHeader. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
-        LOGGER.info(result.get(0).toTEI(false));
-
     }
 
     /**
@@ -256,7 +253,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for authorsCitation. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
-        LOGGER.info(result.get(0).toTEI(false));
     }
 
     /**
@@ -272,7 +268,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for affiliations. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
     }
 
     /**
@@ -285,7 +280,6 @@ public class ProcessEngine implements Closeable {
         inferOutputPath(pGbdArgs);
         final BiblioItem result = getEngine().processRawReference(pGbdArgs.getInput(), 0);
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.toTEI(-1));
-        LOGGER.info(result.toTEI(-1));
     }
 
     /**

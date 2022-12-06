@@ -60,7 +60,7 @@ public class GluttonClient extends CrossrefClient {
         this.futures = new HashMap<>();*/
         int nThreads = Runtime.getRuntime().availableProcessors();
         //int nThreads = (int) Math.ceil((double)Runtime.getRuntime().availableProcessors() / 2);
-        LOGGER.info("nThreads: " + nThreads);
+        LOGGER.debug("nThreads: " + nThreads);
         this.executorService = Executors.newFixedThreadPool(nThreads*2);
         //setLimits(20, 1000); // default calls per second
     }
@@ -92,7 +92,7 @@ public class GluttonClient extends CrossrefClient {
     }*/
 
     public static void printLog(GluttonRequest<?> request, String message) {
-        LOGGER.info((request != null ? request+": " : "")+message);
+        LOGGER.debug((request != null ? request+": " : "")+message);
         //System.out.println((request != null ? request+": " : "")+message);
     }
 

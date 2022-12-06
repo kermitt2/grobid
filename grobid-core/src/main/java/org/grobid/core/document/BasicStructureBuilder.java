@@ -36,32 +36,18 @@ public class BasicStructureBuilder {
 
 	// note: these regular expressions will disappear as a new CRF model is now covering 
 	// the overall document segmentation
-    static public Pattern introduction =
+    /*static public Pattern introduction =
             Pattern.compile("^\\b*(Introduction?|Einleitung|INTRODUCTION|Acknowledge?ments?|Acknowledge?ment?|Background?|Content?|Contents?|Motivations?|1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
     static public Pattern introductionStrict =
             Pattern.compile("^\\b*(1\\.\\sPROBLEMS?|1\\.(\\n)?\\sIntroduction?|1\\.(\\n)?\\sContent?|1\\.\\sINTRODUCTION|I\\.(\\s)+Introduction|1\\.\\sProblems?|I\\.\\sEinleitung?|1\\.\\sEinleitung?|1\\sEinleitung?|1\\sIntroduction?)",
                     Pattern.CASE_INSENSITIVE);
     static public Pattern abstract_ = Pattern.compile("^\\b*\\.?(abstract?|résumé?|summary?|zusammenfassung?)",
-            Pattern.CASE_INSENSITIVE);
-    /*static public Pattern keywords = Pattern.compile("^\\b*\\.?(keyword?|key\\s*word?|mots\\s*clefs?)",
-            Pattern.CASE_INSENSITIVE);*/
-    /*static public Pattern references =
-            Pattern.compile("^\\b*(References?|REFERENCES?|Bibliography|BIBLIOGRAPHY|" +
-                    "References?\\s+and\\s+Notes?|References?\\s+Cited|REFERENCE?\\s+CITED|REFERENCES?\\s+AND\\s+NOTES?|Références|Literatur|" +
-                    "LITERATURA|Literatur|Referências|BIBLIOGRAFIA|Literaturverzeichnis|Referencias|LITERATURE CITED|References and Notes)", Pattern.CASE_INSENSITIVE);*/
-    /*static public Pattern header = Pattern.compile("^((\\d\\d?)|([A-Z](I|V|X)*))(\\.(\\d)*)*\\s(\\D+)");*/
-    //    static public Pattern header2 = Pattern.compile("^\\d\\s\\D+");
-    /*static public Pattern figure = Pattern.compile("(figure\\s|fig\\.|sch?ma)", Pattern.CASE_INSENSITIVE);
-    static public Pattern table = Pattern.compile("^(T|t)able\\s|tab|tableau", Pattern.CASE_INSENSITIVE);
-    static public Pattern equation = Pattern.compile("^(E|e)quation\\s");
-    private static Pattern acknowledgement = Pattern.compile("(acknowledge?ments?|acknowledge?ment?)",
             Pattern.CASE_INSENSITIVE);*/
     static public Pattern headerNumbering1 = Pattern.compile("^(\\d+)\\.?\\s");
     static public Pattern headerNumbering2 = Pattern.compile("^((\\d+)\\.)+(\\d+)\\s");
     static public Pattern headerNumbering3 = Pattern.compile("^((\\d+)\\.)+\\s");
     static public Pattern headerNumbering4 = Pattern.compile("^([A-Z](I|V|X)*(\\.(\\d)*)*\\s)");
-//    static public Pattern enumeratedList = Pattern.compile("^|\\s(\\d+)\\.?\\s");
 
     private static Pattern startNum = Pattern.compile("^(\\d)+\\s");
     private static Pattern endNum = Pattern.compile("\\s(\\d)+$");
@@ -114,8 +100,7 @@ public class BasicStructureBuilder {
             cluster.addBlock2(b);
             doc.getClusters().add(cluster);
         }
-
-    }	
+    }
 
     static public Document generalResultSegmentation(Document doc, String labeledResult, List<LayoutToken> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
@@ -136,7 +121,8 @@ public class BasicStructureBuilder {
 		//DocumentPointer pointerA = DocumentPointer.START_DOCUMENT_POINTER;
 		// the default first block might not contain tokens but only bitmap - in this case we move
 		// to the first block containing some LayoutToken objects
-        while (docBlocks.get(blockIndex).getTokens() == null
+        while (docBlocks.get(blockIndex).getTokens() == null ||
+            docBlocks.get(blockIndex).getNbTokens() == 0
                 //TODO: make things right
 //                || docBlocks.get(blockIndex).getStartToken() == -1
                 ) {

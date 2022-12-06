@@ -67,21 +67,22 @@ Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano
 
 Many thanks to:
 
-* Vyacheslav Zholudev (Sum&Substance, formerly at ResearchGate)
-* Achraf Azhar (CCSD)
+* Vyacheslav Zholudev (Sumsub, formerly at ResearchGate)
+* Achraf Azhar (CCSD CNRS)
 * Daniel Ecer (eLife)
 * Laurent Romary (Inria)
 * Vitalii Bezsheiko (PKP)
 * Bryan Newbold (Internet Archive)
-* Christopher Boumenot (Microsoft) in particular for the Windows support
+* Christopher Boumenot (Microsoft) in particular for the (former) Windows support
 * CERN contributors Andreas la Roi and Micha Moskovic
 * Florian Zipser (Humboldt University) who developed the first historical version of the REST API in 2011
 * the other contributors from ResearchGate: Michael Häusler, Kyryl Bilokurov, Artem Oboturov
-* Damien Ridereau (Infotel)
+* Damien Ridereau (U IRIS, formely at Infotel)
 * Oliver Kopp (JabRef research)
 * Bruno Pouliquen (WIPO) for the custom analyzers for Eastern languages
 * Thomas Lavergne, Olivier Cappé and François Yvon for Wapiti
 * The JEP team for their great JVM CPython embedding solution
 * Taku Kudo for CRF++ (not used anymore, but all the same, thanks!)
 * Hervé Déjean and his colleagues from Xerox Research Centre Europe, for xml2pdf
-* and the other contributors: @elonzh, Jakob Fix, Tanti Kristanti, Bryan Newbold, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...
+* Walid R. Rashed (@kurdi-dev) for the Play with Docker settings
+* and the other contributors: @elonzh, Jakob Fix, Tanti Kristanti, Benedikt Tutzer, Dmitry Katsubo, Phil Gooch, Romain Loth, Maud Medves, Chris Mattmann, Sujen Shah, Joseph Boyd, Guillaume Muller, ...

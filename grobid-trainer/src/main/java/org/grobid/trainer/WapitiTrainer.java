@@ -19,15 +19,30 @@ public class WapitiTrainer implements GenericTrainer {
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
+        train(template, trainingData, outputModel, numThreads, model, false);
+    }
+
+    @Override
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
 		System.out.println("\tepsilon: " + epsilon);
 		System.out.println("\twindow: " + window);
         System.out.println("\tnb max iterations: " + nbMaxIterations);
 		System.out.println("\tnb threads: " + numThreads);
+
+        String incrementalBlock = "";
+        if (incremental) {
+            String inputModelPath = outputModel.getAbsolutePath();
+            if (inputModelPath.endsWith(".new"))
+                inputModelPath = inputModelPath.substring(0, inputModelPath.length()-4);
+            System.out.println("\tincremental training from: " + inputModelPath);
+            incrementalBlock += " -m " + inputModelPath;
+        }
+
         WapitiModel.train(template, trainingData, outputModel, "--nthread " + numThreads +
 //       		" --algo sgd-l1" +
 			" -e " + BigDecimal.valueOf(epsilon).toPlainString() +
 			" -w " + window +
-			" -i " + nbMaxIterations
+			" -i " + nbMaxIterations + incrementalBlock
         );
     }
 

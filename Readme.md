@@ -48,11 +48,22 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 ## Demo
 
-For testing purposes, a public GROBID demo server is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
+### Try in Play With Docker
 
-The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
+  <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
+</a>
 
-_Warning_: This demo runs only CRF models. Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
+Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. Note that there is an additional 60s needed when processing a PDF for the first time for the loading of the models on the "cold" container.
+
+### Demo server
+
+For testing purposes, a public GROBID demo server is also available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
+
+This demo runs only with CRF models. The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+
+_Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
+For any serious works, you will need to deploy and use your own Grobid server, see the [GROBID and Docker containers documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for doing that easily and activate some Deep Learning models. 
 
 ## Clients
 
@@ -88,11 +99,12 @@ Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Bench
 
 A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponery:
 
-- [software-mention](https://github.com/Impactstory/software-mentions): recognition of software mentions and attributes in scientific literature
+- [software-mention](https://github.com/Impactstory/software-mentions): recognition of software mentions and associated attributes in scientific literature
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
-- [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interative layout. 
-- [dataseer-ml](https://github.com/dataseer/dataseer-ml): identification of sections and sentences introducing a dataset in a scientific article, and classification of the type of this dataset.  
+- [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interative layout
+- [datastet](https://github.com/kermitt2/datastet): identification of named and implicit datasets and associated attributes in scientific articles
+- [dataseer-ml](https://github.com/dataseer/dataseer-ml): identification of sections and sentences introducing datasets in a scientific article, and classification of the type of these datasets
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 - [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a bio-entity tagger using BioNLP/NLPBA 2004 dataset

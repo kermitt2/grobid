@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  grobid:
+    image: lfoppiano/grobid:0.7.2
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:8070"
+      - "8081:8071"

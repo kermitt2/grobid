@@ -32,7 +32,7 @@ Current latest version:
 - Run the container:
 
 ```bash
-> docker run --rm --gpus all -p 8070:8070 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus all -p 8070:8070 grobid/grobid:0.7.2
 ```
 
 The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used.  
@@ -80,7 +80,7 @@ The process for retrieving and running the image is as follow:
 Latest version:
 
 ```bash
-> docker pull lfoppiano/grobid:0.7.1
+> docker pull lfoppiano/grobid:0.7.2
 ```
 
 - Run the container:
@@ -92,7 +92,7 @@ Latest version:
 Latest version:
 
 ```bash
-> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.1
+> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
 
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:

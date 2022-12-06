@@ -94,9 +94,9 @@ public class GraphicObject {
         this.endPosition = endPosition;
     }
 
-    public int getBlockNumber() {
+    /*public int getBlockNumber() {
         return blockNumber;
-    }
+    }*/
 
     public void setBlockNumber(int blockNumber) {
         this.blockNumber = blockNumber;
