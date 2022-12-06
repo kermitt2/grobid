@@ -41,7 +41,7 @@ jobs:
       - run: ./gradlew clean assemble --info --stacktrace --no-daemon
 
       # run tests!
-      - run: ./gradlew test jacocoTestReport coveralls --no-daemon
+      - run: ./gradlew test jacocoTestReport coveralls --no-daemon --stacktrace --info
 
       - store_test_results:
           path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
