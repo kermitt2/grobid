@@ -171,6 +171,9 @@ public class TEIFormatter {
                 tei.append("<p>Copyright ");
                 //if (biblio.getPublicationDate() != null)
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
+                if(biblio.getCopyright() != null){
+                    tei.append("<p>" + biblio.getCopyright() + "</p>\n");
+                }
                 tei.append("\t\t\t\t</availability>\n");
             } else {
                 // a dummy publicationStmt is still necessary according to TEI
