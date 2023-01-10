@@ -1963,137 +1963,251 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
     }
 
 
-    public List<Node> markReferencesFigureTEI(String text, 
-                                            List<LayoutToken> refTokens,
+    public List<Node> markReferencesFigureTEI(String refText, 
+                                            List<LayoutToken> allRefTokens,
                                             List<Figure> figures,
                                             boolean generateCoordinates) {
-        if (text == null || text.trim().isEmpty()) {
+        if (refText == null || 
+            refText.trim().isEmpty()) {
             return null;
         }
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase().trim();
-        String bestFigure = null;
+        if (refText.trim().length() == 1 && TextUtilities.fullPunctuations.contains(refText.trim())) {
+            // the reference text marker is a punctuation
+            nodes.add(new Text(refText));
+            return nodes;
+        }
 
-        if (figures != null) {
-            for (Figure figure : figures) {
-                if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
-                    String label = TextUtilities.cleanField(figure.getLabel(), false);
-                    if (label != null && (label.length() > 0) &&
-                            (textLow.equals(label.toLowerCase()))) {
-                        bestFigure = figure.getId();
-                        break;
-                    }
-                }
+        List<org.grobid.core.utilities.Pair<String, List<LayoutToken>>> labels = null;
+
+        List<List<LayoutToken>> allYs = LayoutTokensUtil.split(allRefTokens, ReferenceMarkerMatcher.AND_WORD_PATTERN, true);
+        if (allYs.size() > 1) {
+            labels = new ArrayList<>();
+            for (List<LayoutToken> ys : allYs) {
+                labels.add(new org.grobid.core.utilities.Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(ys)), ys));
             }
-            if (bestFigure == null) {
-                // second pass with relaxed figure marker matching
-                for(int i=figures.size()-1; i>=0; i--) {
-                    Figure figure = figures.get(i);
+        } else {
+            // possibly expand range of reference numbers (like for numeriacval bibliographical markers)
+            labels = ReferenceMarkerMatcher.getNumberedLabels(allRefTokens, false);
+        }
+
+        if (labels == null || labels.size() <= 1) {
+            org.grobid.core.utilities.Pair<String, List<LayoutToken>> localLabel = 
+                new org.grobid.core.utilities.Pair(refText, allRefTokens);
+            labels = new ArrayList<>();
+            labels.add(localLabel);
+        }
+
+        for (org.grobid.core.utilities.Pair<String, List<LayoutToken>> theLabel : labels) {
+            String text = theLabel.a;
+            List<LayoutToken> refTokens = theLabel.b;
+
+            String textLow = text.toLowerCase().trim();
+            String bestFigure = null;
+
+            if (figures != null) {
+                for (Figure figure : figures) {
                     if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(figure.getLabel(), false);
                         if (label != null && (label.length() > 0) &&
-                                (textLow.contains(label.toLowerCase()))) {
+                                (textLow.equals(label.toLowerCase()))) {
                             bestFigure = figure.getId();
                             break;
                         }
                     }
                 }
+                if (bestFigure == null) {
+                    // second pass with relaxed figure marker matching
+                    for(int i=figures.size()-1; i>=0; i--) {
+                        Figure figure = figures.get(i);
+                        if ((figure.getLabel() != null) && (figure.getLabel().length() > 0)) {
+                            String label = TextUtilities.cleanField(figure.getLabel(), false);
+                            if (label != null && (label.length() > 0) &&
+                                    (textLow.contains(label.toLowerCase()))) {
+                                bestFigure = figure.getId();
+                                break;
+                            }
+                        }
+                    }
+                }
             }
+
+            boolean spaceEnd = false;
+            text = text.replace("\n", " ");
+            if (text.endsWith(" "))
+                spaceEnd = true;
+            text = text.trim();
+
+            String andWordString = null;
+            if (text.endsWith("and") || text.endsWith("&")) {
+                // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk                
+                if (text.endsWith("and")) {
+                    text = text.substring(0, text.length()-3);
+                    andWordString = "and";
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                else if (text.endsWith("&")) {
+                    text = text.substring(0, text.length()-1);
+                    andWordString = "&";
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                if (text.endsWith(" ")) {
+                    andWordString = " " + andWordString;
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                text = text.trim();
+            }
+
+            String coords = null;
+            if (generateCoordinates && refTokens != null) {
+                coords = LayoutTokensUtil.getCoordsString(refTokens);
+            }
+
+            Element ref = teiElement("ref");
+            ref.addAttribute(new Attribute("type", "figure"));
+
+            if (coords != null) {
+                ref.addAttribute(new Attribute("coords", coords));
+            }
+            ref.appendChild(text);
+
+            if (bestFigure != null) {
+                ref.addAttribute(new Attribute("target", "#fig_" + bestFigure));
+            }
+            nodes.add(ref);
+
+            if (andWordString != null) {
+                nodes.add(new Text(andWordString));
+            }
+
+            if (spaceEnd)
+                nodes.add(new Text(" "));
         }
-
-        boolean spaceEnd = false;
-        text = text.replace("\n", " ");
-        if (text.endsWith(" "))
-            spaceEnd = true;
-        text = text.trim();
-
-        String coords = null;
-        if (generateCoordinates && refTokens != null) {
-            coords = LayoutTokensUtil.getCoordsString(refTokens);
-        }
-
-        Element ref = teiElement("ref");
-        ref.addAttribute(new Attribute("type", "figure"));
-
-        if (coords != null) {
-            ref.addAttribute(new Attribute("coords", coords));
-        }
-        ref.appendChild(text);
-
-        if (bestFigure != null) {
-            ref.addAttribute(new Attribute("target", "#fig_" + bestFigure));
-        }
-        nodes.add(ref);
-        if (spaceEnd)
-            nodes.add(new Text(" "));
         return nodes;
     }
 
-    public List<Node> markReferencesTableTEI(String text, List<LayoutToken> refTokens,
+    public List<Node> markReferencesTableTEI(String refText, List<LayoutToken> allRefTokens,
                                              List<Table> tables,
                                              boolean generateCoordinates) {
-        if (text == null || text.trim().isEmpty()) {
+        if (refText == null || 
+            refText.trim().isEmpty()) {
             return null;
         }
 
         List<Node> nodes = new ArrayList<>();
 
-        String textLow = text.toLowerCase().trim();
-        String bestTable = null;
-        if (tables != null) {
-            for (Table table : tables) {
-                if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
-                    String label = TextUtilities.cleanField(table.getLabel(), false);
-                    if (label != null && (label.length() > 0) &&
-                            (textLow.equals(label.toLowerCase()))) {
-                        bestTable = table.getId();
-                        break;
-                    }
-                }
-            }
+        if (refText.trim().length() == 1 && TextUtilities.fullPunctuations.contains(refText.trim())) {
+            // the reference text marker is a punctuation
+            nodes.add(new Text(refText));
+            return nodes;
+        }
 
-            if (bestTable == null) {
-                // second pass with relaxed table marker matching
-                for(int i=tables.size()-1; i>=0; i--) {
-                    Table table = tables.get(i);
+        List<org.grobid.core.utilities.Pair<String, List<LayoutToken>>> labels = null;
+
+        List<List<LayoutToken>> allYs = LayoutTokensUtil.split(allRefTokens, ReferenceMarkerMatcher.AND_WORD_PATTERN, true);
+        if (allYs.size() > 1) {
+            labels = new ArrayList<>();
+            for (List<LayoutToken> ys : allYs) {
+                labels.add(new org.grobid.core.utilities.Pair<>(LayoutTokensUtil.toText(LayoutTokensUtil.dehyphenize(ys)), ys));
+            }
+        } else {
+            // possibly expand range of reference numbers (like for numeriacval bibliographical markers)
+            labels = ReferenceMarkerMatcher.getNumberedLabels(allRefTokens, false);
+        }
+
+        if (labels == null || labels.size() <= 1) {
+            org.grobid.core.utilities.Pair<String, List<LayoutToken>> localLabel = 
+                new org.grobid.core.utilities.Pair(refText, allRefTokens);
+            labels = new ArrayList<>();
+            labels.add(localLabel);
+        }
+
+        for (org.grobid.core.utilities.Pair<String, List<LayoutToken>> theLabel : labels) {
+            String text = theLabel.a;
+            List<LayoutToken> refTokens = theLabel.b;
+
+            String textLow = text.toLowerCase().trim();
+            String bestTable = null;
+            if (tables != null) {
+                for (Table table : tables) {
                     if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
                         String label = TextUtilities.cleanField(table.getLabel(), false);
                         if (label != null && (label.length() > 0) &&
-                                (textLow.contains(label.toLowerCase()))) {
+                                (textLow.equals(label.toLowerCase()))) {
                             bestTable = table.getId();
                             break;
                         }
                     }
                 }
+
+                if (bestTable == null) {
+                    // second pass with relaxed table marker matching
+                    for(int i=tables.size()-1; i>=0; i--) {
+                        Table table = tables.get(i);
+                        if ((table.getLabel() != null) && (table.getLabel().length() > 0)) {
+                            String label = TextUtilities.cleanField(table.getLabel(), false);
+                            if (label != null && (label.length() > 0) &&
+                                    (textLow.contains(label.toLowerCase()))) {
+                                bestTable = table.getId();
+                                break;
+                            }
+                        }
+                    }
+                }
             }
-        }
 
-        boolean spaceEnd = false;
-        text = text.replace("\n", " ");
-        if (text.endsWith(" "))
-            spaceEnd = true;
-        text = text.trim();
+            boolean spaceEnd = false;
+            text = text.replace("\n", " ");
+            if (text.endsWith(" "))
+                spaceEnd = true;
+            text = text.trim();
 
-        String coords = null;
-        if (generateCoordinates && refTokens != null) {
-            coords = LayoutTokensUtil.getCoordsString(refTokens);
-        }
+            String andWordString = null;
+            if (text.endsWith("and") || text.endsWith("&")) {
+                // the AND_WORD_PATTERN case, we want to exclude the AND word from the tagged chunk                
+                if (text.endsWith("and")) {
+                    text = text.substring(0, text.length()-3);
+                    andWordString = "and";
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                else if (text.endsWith("&")) {
+                    text = text.substring(0, text.length()-1);
+                    andWordString = "&";
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                if (text.endsWith(" ")) {
+                    andWordString = " " + andWordString;
+                    refTokens = refTokens.subList(0,refTokens.size()-1);
+                }
+                text = text.trim();
+            }
 
-        Element ref = teiElement("ref");
-        ref.addAttribute(new Attribute("type", "table"));
+            String coords = null;
+            if (generateCoordinates && refTokens != null) {
+                coords = LayoutTokensUtil.getCoordsString(refTokens);
+            }
 
-        if (coords != null) {
-            ref.addAttribute(new Attribute("coords", coords));
+            Element ref = teiElement("ref");
+            ref.addAttribute(new Attribute("type", "table"));
+
+            if (coords != null) {
+                ref.addAttribute(new Attribute("coords", coords));
+            }
+            ref.appendChild(text);
+            if (bestTable != null) {
+                ref.addAttribute(new Attribute("target", "#tab_" + bestTable));
+            }
+            nodes.add(ref);
+
+            if (andWordString != null) {
+                nodes.add(new Text(andWordString));
+            }
+            
+            if (spaceEnd)
+                nodes.add(new Text(" "));
         }
-        ref.appendChild(text);
-        if (bestTable != null) {
-            ref.addAttribute(new Attribute("target", "#tab_" + bestTable));
-        }
-        nodes.add(ref);
-        if (spaceEnd)
-            nodes.add(new Text(" "));
         return nodes;
     }
 
