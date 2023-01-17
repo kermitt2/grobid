@@ -30,7 +30,7 @@ For current GROBID version 0.7.2, we recommend considering the usage of the foll
 
 Other Deep Learning models do not show better accuracy than old-school CRF according to our benchmarkings, so we do not recommend using them in general at this stage. However, some of them tend to be more portable and can be more reliable than CRF for document layouts and scientific domains far from what is available in the training data.
 
-Finally, the models `segmentation` (overall first-pass segmentation of a document in general zones) and `fulltext` (structuring the content body of a document) are currently only based on CRF, due to the long input sequences to be processed. 
+Finally, the model `fulltext` (structuring the content body of a document) is currently only based on CRF, due to the long input sequences to be processed. 
 
 ### Getting started with Deep Learning
 

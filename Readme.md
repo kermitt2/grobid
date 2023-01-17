@@ -139,7 +139,7 @@ If you want to cite this work, please refer to the present GitHub project, toget
     title = {GROBID},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
-    year = {2008--2022},
+    year = {2008--2023},
     archivePrefix = {swh},
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }
