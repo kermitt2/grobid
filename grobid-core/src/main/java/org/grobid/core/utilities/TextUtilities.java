@@ -58,8 +58,12 @@ public class TextUtilities {
 
     // a regular expression for arXiv identifiers
     // see https://arxiv.org/help/arxiv_identifier and https://arxiv.org/help/arxiv_identifier_for_services
+    // three pattern types are allowed, here are examples of each
+    //   "new style" with prefix: 'arXiv:0706.0002v3', 'arxiv: 0706.0002'
+    //   "old style" with prefix: 'arXiv : hep-th/9901001v2', 'arxiv:hep-th/ 9901001'
+    //   "old style" without prefix (strict): 'hep-th/9901001v2', 'math/9901001'
     static public final Pattern arXivPattern = Pattern
-        .compile("(arXiv\\s?(\\.org)?\\s?\\:\\s?\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(arXiv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]*\\s?/\\s?\\d{7}(v\\d+)?)");
+        .compile("(ar[xX]iv\\s?(\\.org)?\\s?\\:\\s??\\d{4}\\s?\\.\\s?\\d{4,5}(v\\d+)?)|(ar[xX]iv\\s?(\\.org)?\\s?\\:\\s?[ a-zA-Z\\-\\.]{3,16}\\s?/\\s?\\d{7}(v\\d+)?)|([^a-zA-Z](math|hep|astro|cond|gr|nucl|quat|stat|physics|cs|nlim|q\\-bio|q\\-fin)[a-zA-Z\\-\\.]*/\\d{7}(v\\d+)?)");
 
     // regular expression for PubMed identifiers, last group gives the PMID digits
     static public final Pattern pmidPattern = Pattern.compile("((PMID)|(Pub(\\s)?Med(\\s)?(ID)?))(\\s)?(\\:)?(\\s)*(\\d{1,8})");
