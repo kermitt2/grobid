@@ -415,6 +415,9 @@ public class FieldSpecification {
             .add("//p[@content-type=\"availability\"]//text()");
         dataAvailabilityFulltextField.nlmPath
             .add("//sec[@specific-use=\"availability\"]//text()");
+        // the following for PLOS support
+        dataAvailabilityFulltextField.nlmPath
+            .add("//custom-meta[@id=\"data-availability\"]/meta-value//text()");
         fulltextFields.add(dataAvailabilityFulltextField);
         fulltextLabels.add("availability_stmt");
 
@@ -429,6 +432,9 @@ public class FieldSpecification {
             .add("//p[@content-type=\"funding\"]//text()");
         fundingFulltextField.nlmPath
             .add("//sec[@specific-use=\"funding\"]//text()");
+		// the following for PLOS support
+        fundingFulltextField.nlmPath
+            .add("//funding-statement//text()");
         fulltextFields.add(fundingFulltextField);
         fulltextLabels.add("funding_stmt");
 	}
