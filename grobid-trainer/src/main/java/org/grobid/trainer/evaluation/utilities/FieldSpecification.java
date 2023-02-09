@@ -345,6 +345,9 @@ public class FieldSpecification {
 			add("//figure[not(@type)]/head/text()");
 		figureTitleField.nlmPath.
 			add("//fig/label/text()");
+		// eLife JATS support
+		figureTitleField.nlmPath.
+			add("//fig/caption/title/text()");
 		fulltextFields.add(figureTitleField);
 		fulltextLabels.add("figure_title");
 		
@@ -375,6 +378,9 @@ public class FieldSpecification {
 			add("//figure[@type=\"table\"]/head/text()");
 		tableTitleField.nlmPath.
 			add("//table-wrap/label/text()");
+		// eLife JATS support
+		tableTitleField.nlmPath.
+			add("//table-wrap/caption/title/text()");
 		fulltextFields.add(tableTitleField);
 		fulltextLabels.add("table_title");
 	
@@ -415,7 +421,10 @@ public class FieldSpecification {
             .add("//p[@content-type=\"availability\"]//text()");
         dataAvailabilityFulltextField.nlmPath
             .add("//sec[@specific-use=\"availability\"]//text()");
-        // the following for PLOS support
+        // for eLife JATS support
+        dataAvailabilityFulltextField.nlmPath
+            .add("//sec[@sec-type=\"data-availability\"]//text()");
+        // the following for PLOS JATS support
         dataAvailabilityFulltextField.nlmPath
             .add("//custom-meta[@id=\"data-availability\"]/meta-value//text()");
         fulltextFields.add(dataAvailabilityFulltextField);
@@ -432,6 +441,7 @@ public class FieldSpecification {
             .add("//p[@content-type=\"funding\"]//text()");
         fundingFulltextField.nlmPath
             .add("//sec[@specific-use=\"funding\"]//text()");
+        // for eLife JATS support
 		// the following for PLOS support
         fundingFulltextField.nlmPath
             .add("//funding-statement//text()");
