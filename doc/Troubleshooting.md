@@ -36,7 +36,7 @@ In case of running on limited memory hardware, there are various ways to deal wi
 
 ### Windows related issues 
 
-Grobid is developed and tested on Linux. macOS is also supported, although some components might behave slighly different due to the natural incompatibility of Apple with the rest of the world and the availability on some proprietary fonts on this platform.   
+Grobid is developed and tested on Linux. macOS is also supported, although some components might behave slightly different due to the natural incompatibility of Apple with the rest of the world and the availability on some proprietary fonts on this platform.   
  
 Windows, unfortunately, is currently not anymore supported, due to lack of experience and time constraints. We recommend Windows users to use the [Grobid Docker image](https://hub.docker.com/r/lfoppiano/grobid/) (documented [here](Grobid-docker.md)) and call the system via API using one of the various [grobid clients](Grobid-service.md#Clients-for-GROBID-Web-Services).
 
