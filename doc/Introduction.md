@@ -57,7 +57,7 @@ The key aspects of GROBID are the following ones:
 
 By default, the GROBID extraction and parsing algorithms use a [fork](https://github.com/kermitt2/wapiti) of [Wapiti CRF library](http://wapiti.limsi.fr). As alternative, it is possible to perform the sequence labelling with [DeLFT](https://github.com/kermitt2/delft) deep learning models (typically BidLSTM-CRF with or without ELMo, or BERT-CRF, with additional feature channels) instead of Wapiti CRF models, using a native integration via [JEP](https://github.com/ninia/jep). The native libraries, in particular TensorFlow, are transparently integrated as JNI with dynamic call based on the current OS. Deep Learning models should be used when accuracy is the main priority, they often involve reduced scalability. See the related [benchmarking](End-to-end-evaluation.md). 
 
-GROBID should run properly "out of the box" on Linux (32 and 64 bits) and macOS. 
+GROBID should run properly "out of the box" on Linux (32 and 64 bits) and macOS (Intel and ARM). 
 
 ## Credits
 
