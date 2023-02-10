@@ -16,7 +16,7 @@ Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detaile
 
 ## Summary
 
-GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data.
+GROBID (or Grobid, but not GroBid nor GroBiD) means **G**ene**R**ation **O**f **BI**bliographic **D**ata.
 
 GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as a side project since the beginning and is expected to continue as such.
 
@@ -28,13 +28,13 @@ The following functionalities are available:
 - __Full text extraction and structuring__ from PDF articles, including a model for the overall document segmentation and models for the structuring of the text body (paragraph, section titles, reference and footnote callouts, figures, tables, etc.). 
 - __PDF coordinates__ for extracted information, allowing to create "augmented" interactive PDF based on bounding boxes of the identified structures.
 - Parsing of __references in isolation__ (above .90 F1-score at instance-level, .95 F1-score at field level, using the Deep Learning model).
-- __Parsing of names__ (e.g. person title, forenames, middlename, etc.), in particular author names in header, and author names in references (two distinct models).
+- __Parsing of names__ (e.g. person title, forenames, middle name, etc.), in particular author names in header, and author names in references (two distinct models).
 - __Parsing of affiliation and address__ blocks.
 - __Parsing of dates__, ISO normalized day, month, year.
 - __Consolidation/resolution of the extracted bibliographical references__ using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). In both cases, DOI resolution performance is higher than 0.95 F1-score from PDF extraction.
 - __Extraction and parsing of patent and non-patent references in patent__ publications.
 
-In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middlenames, affiliation types, detailed address, journal, volume, issue, pages, doi, pmid, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure captions, etc.).
+In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middle names, affiliation types, detailed address, journal, volume, issue, pages, DOI, PMID, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure captions, etc.).
 
 GROBID includes a comprehensive web service API, batch processing, a JAVA API, Docker images, a generic evaluation framework (precision, recall, etc., n-fold cross-evaluation) and the semi-automatic generation of training data.
 
@@ -44,7 +44,7 @@ GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We can
 
 GROBID uses Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification, via [JEP](https://github.com/ninia/jep). GROBID can run Deep Learning architectures (with or without layout feature channels) or with feature engineered CRF (default), or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto). 
 
-Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accomodate "out of the box" hardware. You need to [select the Deep Learning models](https://grobid.readthedocs.io/en/latest/Deep-Learning-models/#recommended-deep-learning-models) to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). 
+Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accommodate "out of the box" hardware. You need to [select the Deep Learning models](https://grobid.readthedocs.io/en/latest/Deep-Learning-models/#recommended-deep-learning-models) to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). 
 
 ## Demo
 
@@ -73,13 +73,13 @@ For facilitating the usage GROBID service at scale, we provide clients written i
 - <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be prefered. 
+All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be preferred. 
 
-We have been able recently to run the complete fulltext processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on one 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without interruption).
+We have been able recently to run the complete full-text processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on one 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without interruption).
 
 In addition, a Java example project is available to illustrate how to use GROBID as a Java library: [https://github.com/kermitt2/grobid-example](https://github.com/kermitt2/grobid-example). The example project is using GROBID Java API for extracting header metadata and citations from a PDF and output the results in BibTeX format.  
 
-Finally, the following python utilities can be used to create structured full text corpora of scientific articles. The tool simply takes a list of strong identifiers like DOI or PMID, performing the identification of online Open Access PDF, full text harvesting, metadata agreegation and Grobid processing in one workflow at scale: [article-dataset-builder](https://github.com/kermitt2/article-dataset-builder)
+Finally, the following python utilities can be used to create structured full text corpora of scientific articles. The tool simply takes a list of strong identifiers like DOI or PMID, performing the identification of online Open Access PDF, full text harvesting, metadata aggregation and Grobid processing in one workflow at scale: [article-dataset-builder](https://github.com/kermitt2/article-dataset-builder)
 
 ## How GROBID works 
 
@@ -87,23 +87,23 @@ Visit the [documentation page describing the system](https://grobid.readthedocs.
 
 - GROBID uses a [cascade of sequence labeling models](https://grobid.readthedocs.io/en/latest/Principles/#document-parsing-as-a-cascade-of-sequence-labeling-models) to parse a document. 
 
-- The different models [do not work on text, but on **Layout Tokens**](https://grobid.readthedocs.io/en/latest/Principles/#layout-tokens-not-text) to exploit various visual/layout information avalable for every tokens.
+- The different models [do not work on text, but on **Layout Tokens**](https://grobid.readthedocs.io/en/latest/Principles/#layout-tokens-not-text) to exploit various visual/layout information available for every tokens.
 
 - GROBID does not use training data derived from existing publisher XML documents, but [small, high quality sets](https://grobid.readthedocs.io/en/latest/Principles/#training-data-qualitat-statt-quantitat) of manually labeled training data. 
 
-- Technical choices and [default settings](https://grobid.readthedocs.io/en/latest/Principles/#balancing-accuracy-and-scalability) are driven by the ability to process PDF quickly, with commodity hardware and with good parallelization and scalabilty capacities.
+- Technical choices and [default settings](https://grobid.readthedocs.io/en/latest/Principles/#balancing-accuracy-and-scalability) are driven by the ability to process PDF quickly, with commodity hardware and with good parallelization and scalability capacities.
 
 Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/) are available [GROBID documentation](https://grobid.readthedocs.org) and continuously updated.
 
 ## GROBID Modules
 
-A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponery:
+A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponry:
 
 - [software-mention](https://github.com/ourresearch/software-mentions): recognition of software mentions and associated attributes in scientific literature
 - [datastet](https://github.com/kermitt2/datastet): identification of named and implicit research datasets and associated attributes in scientific articles
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
-- [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interative layout
+- [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interactive layout
 - [dataseer-ml](https://github.com/dataseer/dataseer-ml): identification of sections and sentences introducing datasets in a scientific article, and classification of the type of these datasets
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 - [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
