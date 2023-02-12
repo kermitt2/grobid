@@ -9,11 +9,11 @@
 		<body/>
 		<back>
 <listBibl>
-	<bibl><author>Binggeli B., Sandage A., Tammann G</author>., <date>1985</date>, <title level="j">AJ</title>, <biblScope unit="volume">90</biblScope>, <biblScope unit="page">1681</biblScope></bibl>
-	<bibl><author>Binggeli B., Popescu C., Tammann G</author>., <date>1993</date>, <title level="j">A&amp;AS</title>, <biblScope unit="volume">98</biblScope>, <biblScope unit="page">275</biblScope></bibl>
-	<bibl><author>Boselli A., Gavazzi G</author>., <date>1994</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">283</biblScope>, <biblScope unit="page">12</biblScope></bibl>
-	<bibl><author>Boselli A., Tuffs R., Gavazzi G., Hippelein H., Pierini D</author>., <date>1997</date>, <title level="j">A&amp;AS</title>,<biblScope unit="volume">121</biblScope> ,<biblScope unit="page">507</biblScope> ( <biblScope unit="issue">B97</biblScope>)</bibl>
-	<bibl><author>Boselli A., Gavazzi G., Franzetti P., Pierini D., Scodeggio M</author>., <date>1999</date>,<title level="j">A&amp;AS</title> ( <biblScope unit="issue">thisissue</biblScope> )( <note>PaperIV</note> )</bibl>
+	<bibl><author>Binggeli B., Sandage A., Tammann G.</author>, <date>1985</date>, <title level="j">AJ</title>, <biblScope unit="volume">90</biblScope>, <biblScope unit="page">1681</biblScope></bibl>
+	<bibl><author>Binggeli B., Popescu C., Tammann G.</author>, <date>1993</date>, <title level="j">A&amp;AS</title>, <biblScope unit="volume">98</biblScope>, <biblScope unit="page">275</biblScope></bibl>
+	<bibl><author>Boselli A., Gavazzi G.</author>, <date>1994</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">283</biblScope>, <biblScope unit="page">12</biblScope></bibl>
+	<bibl><author>Boselli A., Tuffs R., Gavazzi G., Hippelein H., Pierini D,</author>, <date>1997</date>, <title level="j">A&amp;AS</title>,<biblScope unit="volume">121</biblScope> ,<biblScope unit="page">507</biblScope> ( <biblScope unit="issue">B97</biblScope>)</bibl>
+	<bibl><author>Boselli A., Gavazzi G., Franzetti P., Pierini D., Scodeggio M.</author>, <date>1999</date>,<title level="j">A&amp;AS</title> ( <biblScope unit="issue">thisissue</biblScope> )( <note>PaperIV</note> )</bibl>
 	<bibl><author>de JongR . ,vander Kruit P .</author>.,<date>1994</date>, <title level="j">A&amp;AS</title>, <biblScope unit="volume">106</biblScope>, <biblScope unit="page">451</biblScope></bibl>
 	<bibl><author>de Vaucouleurs G.</author>, <date>1977</date>, in &quot; <title level="m">Evolution of Galaxies and Stellar Populations</title>&quot; , eds .<editor>R .Larson &amp; B .Tinsley</editor> ( <pubPlace>NewHaven</pubPlace> :<orgName>Yale UniversityObservatory</orgName> ) ,<biblScope unit="page">43</biblScope></bibl>
 	<bibl><author>Elias J., Frogel J., Matthews K., Neugebauer G.</author>, <date>1982</date>, <title level="j">AJ</title>, <biblScope unit="volume">87</biblScope>, <biblScope unit="page">1029</biblScope></bibl>
@@ -27,10 +27,10 @@
 	<bibl><author>Hunt L., Lisi F., Testi L., Baffa C., Borelli S., Maiolino R., MoriondoG .,Stanga R .</author>,<date>1996</date> ,<title level="j">A&amp;AS</title> ,<biblScope unit="volume">115</biblScope> ,<biblScope unit="page">181</biblScope></bibl>
 	<bibl><author>Hunt L. &amp; Mannucci F.</author>, <date>1998</date>, <note type="report">Arcetri Technical Report</note> <idno>N. 2/98</idno></bibl>
 	<bibl><author>Landini M., Natta A., Salinari P., Oliva E., Moorwood A.</author>, <date>1984</date>,<title level="j">A&amp;A</title> ,<biblScope unit="volume">134</biblScope> ,<biblScope unit="page">284</biblScope></bibl>
-	<bibl><author>Lisi F., Baffa C., Hunt L</author>. <date>1993</date>, <title level="s">SPIE</title>, <biblScope unit="volume">1495</biblScope>, <biblScope unit="page">594</biblScope></bibl>
+	<bibl><author>Lisi F., Baffa C., Hunt L.</author> <date>1993</date>, <title level="s">SPIE</title>, <biblScope unit="volume">1495</biblScope>, <biblScope unit="page">594</biblScope></bibl>
 	<bibl><author>Lisi F., Baffa C., Bilotti V., et al.</author>, <date>1996</date>, <title level="j">PASP</title>, <biblScope unit="volume">108</biblScope>, <biblScope unit="page">364</biblScope></bibl>
-	<bibl><author>Scodeggio M., Giovanelli R., Haynes M</author>., <date>1998</date>, <title level="j">AJ</title>, <biblScope unit="volume">116</biblScope>, <biblScope unit="page">2728</biblScope></bibl>
-	<bibl><author>Wainscoat R., Cowie L</author>., <date>1992</date>, <title level="j">AJ</title>, <biblScope unit="volume">103</biblScope>, <biblScope unit="page">332</biblScope></bibl>
+	<bibl><author>Scodeggio M., Giovanelli R., Haynes M.</author>, <date>1998</date>, <title level="j">AJ</title>, <biblScope unit="volume">116</biblScope>, <biblScope unit="page">2728</biblScope></bibl>
+	<bibl><author>Wainscoat R., Cowie L.</author>, <date>1992</date>, <title level="j">AJ</title>, <biblScope unit="volume">103</biblScope>, <biblScope unit="page">332</biblScope></bibl>
 	<bibl><author>Zwicky F., Herzog E., Karpowicz M., Kowal C., Wild P.</author>, <date>1961-1968</date>,&quot; <title level="m">Catalogue of Galaxies and Clusters of Galaxies</title> &quot; ,  <biblScope unit="volume">6</biblScope> vol .,<pubPlace>Pasadena, C. I.T</pubPlace>.</bibl>
 
 		</listBibl>
