@@ -44,7 +44,7 @@ GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We can
 
 GROBID uses Deep Learning models relying on the [DeLFT](https://github.com/kermitt2/delft) library, a task-agnostic Deep Learning framework for sequence labelling and text classification, via [JEP](https://github.com/ninia/jep). GROBID can run Deep Learning architectures (with or without layout feature channels) or with feature engineered CRF (default), or any mixtures of CRF and DL to balance scalability and accuracy. These models use joint text and visual/layout information provided by [pdfalto](https://github.com/kermitt2/pdfalto). 
 
-Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accommodate "out of the box" hardware. You need to [select the Deep Learning models](https://grobid.readthedocs.io/en/latest/Deep-Learning-models/#recommended-deep-learning-models) to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). 
+Note that by default the Deep Learning models are not used, only CRF are selected in the configuration to accommodate "out of the box" hardware. You need to [select the Deep Learning models](https://grobid.readthedocs.io/en/latest/Deep-Learning-models/#recommended-deep-learning-models) to be used in the GROBID configuration file, according to your need and hardware capacities (in particular GPU availability and runtime requirements). **Some GROBID Deep Learning models perform significantly better than default CRF**, in particular for bibliographical reference parsing, so it is recommended to consider selecting them to use this tool appropriately. 
 
 ## Demo
 

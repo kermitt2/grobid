@@ -59,7 +59,7 @@ Grobid web services are then available as described in the [service documentatio
 
 By default, this image runs Deep Learning models for:
 
-- bibliographical parsing (adding 1-2 points in term of score for bibliographical reference parsing and 2-3 points in term of citation context identifications, as compared to CRF-only image)
+- bibliographical parsing (adding 2-4 points in term of F1-score for bibliographical reference parsing and 2-5 points in term of citation context identifications, as compared to CRF-only image)
 
 - affiliation-address parsing
 
