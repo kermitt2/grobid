@@ -908,6 +908,8 @@ public class CitationParser extends AbstractParser {
                 buffer.append("");
             } else if (lastTag0.equals("<title>")) {
                 buffer.append("</title>");
+            } else if (lastTag0.equals("<series>")) {
+                buffer.append("</title>");
             } else if (lastTag0.equals("<author>")) {
                 buffer.append("</author>");
             } else if (lastTag0.equals("<tech>")) {
