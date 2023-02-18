@@ -24,6 +24,10 @@ var grobid = (function($) {
         if (localBase.endsWith("#")) {
             localBase = localBase.substring(0,localBase.length-1);
         } 
+        if (localBase.indexOf("?") != -1) {
+            // remove possible uri parameters
+            localBase = localBase.substring(0,localBase.indexOf("?"));
+        } 
 		return localBase + "api/" + ext;
 	}
 
