@@ -48,22 +48,26 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 ## Demo
 
+### Demo server
+
+For testing purposes, two public GROBID demo servers are available thanks to HuggingFace, hosted as [spaces](https://huggingface.co/kermitt2).
+
+A GROBID demo server with a combination of Deep Learning models and CRF models is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid) or at [https://huggingface.co/spaces/kermitt2/grobid](https://huggingface.co/spaces/kermitt2/grobid). This demo runs however on CPU only. If you have GPU for your own server deployment, it will be significantly faster. 
+
+A faster demo with CRF only is available at [https://cloud.science-miner.com/grobid-crf](https://cloud.science-miner.com/grobid-crf) or [https://huggingface.co/spaces/kermitt2/grobid-crf](https://huggingface.co/spaces/kermitt2/grobid-crf). However, accuracy is lower.
+
+The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
+
+_Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
+For any serious works, you will need to deploy and use your own Grobid server, see the [GROBID and Docker containers documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for doing that easily and activate some Deep Learning models. 
+
 ### Try in Play With Docker
 
 <a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/kermitt2/grobid/master/compose.yml">
   <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
 </a>
 
-Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. Note that there is an additional 60s needed when processing a PDF for the first time for the loading of the models on the "cold" container.
-
-### Demo server
-
-For testing purposes, a public GROBID demo server is also available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid)
-
-This demo runs only with CRF models. The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
-
-_Warning_: Some quota and query limitation apply to the demo server! Please be courteous and do not overload the demo server. 
-For any serious works, you will need to deploy and use your own Grobid server, see the [GROBID and Docker containers documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for doing that easily and activate some Deep Learning models. 
+Wait for 30 seconds for Grobid container to be created before opening a browser tab on port 8080. This demo container runs only with CRF models. Note that there is an additional 60s needed when processing a PDF for the first time for the loading of the models on the "cold" container. Then this Grobid container is available just for you during 4 hours. 
 
 ## Clients
 
