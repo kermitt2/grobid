@@ -52,9 +52,9 @@ Note that by default the Deep Learning models are not used, only CRF are selecte
 
 For testing purposes, two public GROBID demo servers are available thanks to HuggingFace, hosted as [spaces](https://huggingface.co/kermitt2).
 
-A GROBID demo server with a combination of Deep Learning models and CRF models is available at the following address: [https://cloud.science-miner.com/grobid](https://cloud.science-miner.com/grobid) or at [https://huggingface.co/spaces/kermitt2/grobid](https://huggingface.co/spaces/kermitt2/grobid). This demo runs however on CPU only. If you have GPU for your own server deployment, it will be significantly faster. 
+A GROBID demo server with a combination of Deep Learning models and CRF models is available at the following address: [https://kermitt2-grobid.hf.space/](https://kermitt2-grobid.hf.space/) or at [https://huggingface.co/spaces/kermitt2/grobid](https://huggingface.co/spaces/kermitt2/grobid). This demo runs however on CPU only. If you have GPU for your own server deployment, it will be significantly faster. 
 
-A faster demo with CRF only is available at [https://cloud.science-miner.com/grobid-crf](https://cloud.science-miner.com/grobid-crf) or [https://huggingface.co/spaces/kermitt2/grobid-crf](https://huggingface.co/spaces/kermitt2/grobid-crf). However, accuracy is lower.
+A faster demo with CRF only is available at [https://kermitt2-grobid-crf.hf.space/](https://kermitt2-grobid-crf.hf.space/) or [https://huggingface.co/spaces/kermitt2/grobid-crf](https://huggingface.co/spaces/kermitt2/grobid-crf). However, accuracy is lower.
 
 The Web services are documented [here](https://grobid.readthedocs.io/en/latest/Grobid-service/).
 
