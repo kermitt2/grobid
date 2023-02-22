@@ -48,7 +48,7 @@
 <!---  author  title  journal  volume  date  issue  missmatch -->
 <bibl xml:id="_CCTHCV_2020_v20n1_378_006" lang="kr"><author>길혜빈, 안숭범</author>, '<title level="a">&lt;Come back home&gt; 뮤직비디오에 나타난 '집'의 의미와 성격-서태지와 아이들, 방탄소년단 작품에 대한 세대론적 접근</title>,' <title level="j">한국콘텐츠학회논문지</title>, 제<biblScope unit="volume">19</biblScope>권, 제<biblScope unit="issue">5</biblScope>호, pp.<biblScope unit="page">24-34</biblScope>, <date>2019</date>.</bibl>
 <!---  journal  doi  missmatch -->
-<bibl xml:id="_BOJGB2_2020_v16n6_71_002" lang="kr"><author>노보혜, 박성연, 지연경</author> (<date>2011</date>). <title level="a">사회경제적 지위, 어머니의 학습관여 및 양육행동과 아동의 자기결정 동기 간의 관계</title>. <title level="j">아동학회지</title>, <biblScope unit="volume">32</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">83-97</biblScope>. <idno type="DOI">doi:10.5723/kjcs.2011.32.4.83</idno>.</bibl>
+<bibl xml:id="_BOJGB2_2020_v16n6_71_002" lang="kr"><author>노보혜, 박성연, 지연경</author> (<date>2011</date>). <title level="a">사회경제적 지위, 어머니의 학습관여 및 양육행동과 아동의 자기결정 동기 간의 관계</title>. <title level="j">아동학회지</title>, <biblScope unit="volume">32</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">83-97</biblScope>. doi:<idno type="DOI">10.5723/kjcs.2011.32.4.83</idno>.</bibl>
 <!---  author  title  journal  volume  issue  missmatch -->
 <bibl xml:id="_CCTHCV_2020_v20n5_585_004" lang="kr"><author>최승묵</author>, '<title level="a">동태적 변이할당분석을 이용한 동북아 지역 국가들의 관광 성장 특성 분석</title>,' <title level="j">관광연구논총</title>, 제<biblScope unit="volume">28</biblScope>집, 제<biblScope unit="issue">4</biblScope>호, pp.<biblScope unit="page">109-129</biblScope>, <date>2016</date>.</bibl>
 <!---  journal  missmatch -->
@@ -150,7 +150,7 @@
 <!---  journal  missmatch -->
 <bibl xml:id="_KHGOB1_2020_v13n3_330_022" lang="kr"><author>이진석</author>(<date>2019</date>). <title level="a">사회과 교육에서 데이터 시각화를 통한 데이터 리터러시 함양: 2015 교육과정 중, 고등학교사회 교과서 내용 분석을 중심으로</title>. <title level="j">교사교육연구</title>, <biblScope unit="volume">58</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">501-512</biblScope>.</bibl>
 <!---  journal  doi  missmatch -->
-<bibl xml:id="_BOJGB2_2020_v16n2_25_024" lang="kr"><author>전지형</author> (<date>2015</date>). <title level="a">유아교사 인사관리에 대한 원장과 교사의 이야기</title>. <title level="j">유아교육연구</title>, <biblScope unit="volume">35</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">397-419</biblScope>. <idno type="DOI">doi:10.18023/kjece.2015.35.6.019</idno>.</bibl>
+<bibl xml:id="_BOJGB2_2020_v16n2_25_024" lang="kr"><author>전지형</author> (<date>2015</date>). <title level="a">유아교사 인사관리에 대한 원장과 교사의 이야기</title>. <title level="j">유아교육연구</title>, <biblScope unit="volume">35</biblScope>(<biblScope unit="issue">6</biblScope>), <biblScope unit="page">397-419</biblScope>. doi:<idno type="DOI">10.18023/kjece.2015.35.6.019</idno>.</bibl>
 <!---  author  title  volume  issue  missmatch -->
 <bibl xml:id="_CCTHCV_2020_v20n5_359_012" lang="kr"><author>강현주</author>, '<title level="a">치위생과 학생의 감성지능 및 자아탄력성과 임상실습 스트레스와의 관련성</title>,' <title level="j">한국치위생학회</title>, 제<biblScope unit="volume">16</biblScope>권, 제<biblScope unit="issue">4</biblScope>호, pp,<biblScope unit="page">625-634</biblScope>, <date>2016</date>.</bibl>
 <!---  journal  volume  missmatch -->
@@ -172,7 +172,7 @@
 <!---  journal  missmatch -->
 <bibl xml:id="_BOJGB2_2020_v16n2_89_020" lang="kr"><author>양정임</author> (<date>2017b</date>). <title level="a">플립러닝 기반 학습이 대학생 영어성취도에 미치는 영향</title>. <title level="j">인문과학논문집</title>, <biblScope unit="volume">54</biblScope>, <biblScope unit="page">85-97</biblScope>.</bibl>
 <!---  journal  doi  missmatch -->
-<bibl xml:id="_BOJGB2_2020_v16n6_203_033" lang="kr"><author>이수진, 김상옥</author> (<date>2019</date>). <title level="a">유아교사의 성인애착과 직무환경 및 직무만족의 관계에서 행복감의 매개효과</title>. <title level="j">한국보육학회지</title>, <biblScope unit="volume">19</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">171-188</biblScope>. <idno type="DOI">doi:10.21213/kjcec.2019.19.4.171</idno>.</bibl>
+<bibl xml:id="_BOJGB2_2020_v16n6_203_033" lang="kr"><author>이수진, 김상옥</author> (<date>2019</date>). <title level="a">유아교사의 성인애착과 직무환경 및 직무만족의 관계에서 행복감의 매개효과</title>. <title level="j">한국보육학회지</title>, <biblScope unit="volume">19</biblScope>(<biblScope unit="issue">4</biblScope>), <biblScope unit="page">171-188</biblScope>. doi:<idno type="DOI">10.21213/kjcec.2019.19.4.171</idno>.</bibl>
 <!---  volume  date  issue  missmatch -->
 <bibl xml:id="_CCTHCV_2020_v20n1_31_013" lang="kr"><author>손동진, 김혜경</author>, '<title level="a">소셜 인플루언서를 활용한 디지털 마케팅 전략 연구: 올레드 TV 글로벌 디지털 캠페인 사례를 중심으로</title>,' <title level="j">광고 PR 실학연구</title>, 제<biblScope unit="volume">10</biblScope>권, 제<biblScope unit="issue">2</biblScope>호, pp.<biblScope unit="page">64-95</biblScope>, <date>2017</date>.</bibl>
 <!---  volume  issue  missmatch -->

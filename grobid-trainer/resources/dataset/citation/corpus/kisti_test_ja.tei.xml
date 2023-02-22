@@ -58,11 +58,11 @@
 <!---  title  journal  missmatch -->
 <bibl xml:id="_HJHGC7_2021_v22n6_17_001" lang="ja"><author>北鄕繁 &amp; 鈴木輝之</author> (<date>1973</date>),<title level="a">鈴木輝之砂と粘土の混合土の土質工學的性 質に關する實驗的硏究</title>,<title level="j">北海道大學工學部硏究報告</title> Vol. <biblScope unit="volume">68</biblScope>,No. <biblScope unit="issue">2</biblScope>,pp. <biblScope unit="page">243~251</biblScope> (In Japanese).</bibl>
 <!---  author  title  journal  doi  missmatch -->
-<bibl xml:id="_NCJDBX_2020_v27n4_159_024" lang="ja"><author>島義史</author>. (<date>2009</date>). <title level="a">イチゴ作新規参入者の成長プロセス</title>. <title level="j">農業経営研究</title>, <biblScope unit="volume">47</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">1-10</biblScope>. <idno type="DOI">DOI:10.11300/fmsj.47.3_1</idno>.</bibl>
+<bibl xml:id="_NCJDBX_2020_v27n4_159_024" lang="ja"><author>島義史</author>. (<date>2009</date>). <title level="a">イチゴ作新規参入者の成長プロセス</title>. <title level="j">農業経営研究</title>, <biblScope unit="volume">47</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">1-10</biblScope>. DOI:<idno type="DOI">10.11300/fmsj.47.3_1</idno>.</bibl>
 <!---  title  journal  missmatch -->
 <bibl xml:id="_NCJDBX_2020_v27n4_159_025" lang="ja"><author>土田志郎</author>. (<date>1996</date>). <title level="a">第9章水田作経営の経営管理と意思決定, 水田作経営の発展と経営管理</title>. <title level="j">総合農業研究叢書</title>, <biblScope unit="volume">28</biblScope>, <biblScope unit="page">173-185</biblScope>.</bibl>
 <!---  author  journal  doi  missmatch -->
-<bibl xml:id="_BBROBV_2021_v32n2_101_018" lang="ja"><author>谷本達哉, 兼松芳之</author> (<date>2013</date>). <title level="a">レファレンス事例データベースの協同構築事業におけるデータ登録 の現状と問題点</title>. <title level="j">図書館情報メディア研究</title>, <biblScope unit="volume">11</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">11-21</biblScope>. info:<idno type="DOI">doi/10.15068/00000270</idno>.</bibl>
+<bibl xml:id="_BBROBV_2021_v32n2_101_018" lang="ja"><author>谷本達哉, 兼松芳之</author> (<date>2013</date>). <title level="a">レファレンス事例データベースの協同構築事業におけるデータ登録 の現状と問題点</title>. <title level="j">図書館情報メディア研究</title>, <biblScope unit="volume">11</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">11-21</biblScope>. info:doi/<idno type="DOI">10.15068/00000270</idno>.</bibl>
 <!---  title  volume  page  issue  missmatch -->
 <bibl xml:id="_PSGOBG_2020_v1n1_29_010" lang="ja"><author>小井川広志</author>, <date>2008</date>, '<title level="a">グローバル.バリュー.チェーン(GVC)分析の展望:世界システム,アップグレード, ガバナンスの概念をめぐって</title>', <title level="j">経済学研究</title>, 第<biblScope unit="volume">58</biblScope>巻, 第<biblScope unit="issue">3</biblScope>号, <biblScope unit="page">99-114</biblScope>頁.</bibl>
 <!---  title  journal  volume  page  issue  publisher  missmatch -->
