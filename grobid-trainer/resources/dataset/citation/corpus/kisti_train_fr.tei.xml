@@ -77,6 +77,32 @@
 <bibl xml:id="_SMBHBD_2016_v46n4_420_013" lang="fr"><author>Palibin, J. W</author>. <date>1906</date>. <title level="a">Quelques especes nouvelles de la flore chinoise</title>. <title level="j">Bulletin de l'Herbier Boissier, Serie 2</title> <biblScope unit="volume">6</biblScope>: <biblScope unit="page">18-22</biblScope>.</bibl>
 <!---  title  journal  missmatch -->
 <bibl xml:id="_JGSTB5_2016_v21n6_22_030" lang="fr"><author>Turc, L.</author>, <date>1961</date>, <title level="a">Evaluation des besoins en eau d'irrigation, evapotranspiration potentielle, formule climatique simlifee et mise a jour</title> (<note>In French; original unseen</note>): <title level="j">Annales Agronomiques</title>, <biblScope unit="volume">12</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">13-49</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_E1BGBB_2017_v33n3_317_003" lang="fr"><author>A. Hurwitz</author>, <title level="a">Sur un theoreme de M. Hadamard</title>, <title level="j">C. R. Acad. Sci. Paris Ser. I Math</title>. <biblScope unit="volume">128</biblScope> (<date>1899</date>), <biblScope unit="page">350-353</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_GHOHBG_2017_v22n4_172_003" lang="fr"><author>Bologa, A.S., N. Bodeanu, A. Petran, A. Tiganus and Y. Zaitsev</author>, <date>1995</date>. <title level="a">Major modifications of the Black Sea benthic and planktonic biota in the last three decades</title>. <title level="j">Bulletin de l'Intstitut Oceanographique</title>, <pubPlace>Monaco</pubPlace>, <biblScope unit="volume">15</biblScope>: <biblScope unit="page">85-10</biblScope>.</bibl>
+<!---  page  issue  missmatch -->
+<bibl xml:id="_E1MEAX_2017_v31n5_2559_042" lang="fr"><author>J. C. Leuliet. J. F. Mangonnat and M. Lalande</author>, <title level="a">Etude de la perte de charge dans des echangeurs de chaleur a plaques traitant des produits non-Newtoniens</title>, <title level="j">Revue Generale de Thermique</title>, <biblScope unit="volume">26</biblScope> (<biblScope unit="issue">308-309</biblScope>) (<date>1987</date>) <biblScope unit="page">445-450</biblScope> (<note>in French</note>).</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_JOKHB9_2017_v10n4_509_056" lang="fr"><author>Pic M</author>. <date>1927</date>. <title level="a">Notes diverse, description et diagnoses (Suit.)</title>. <title level="j">L'Echange, Revue Linneene</title> <biblScope unit="volume">43</biblScope> (<biblScope unit="issue">429</biblScope>):<biblScope unit="page">9-11</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_JOKHB9_2017_v10n4_539_017" lang="fr"><author>Pace R</author>. <date>2009a</date>. <title level="a">Aleocharinae du Gabon recoltees par Dr. H. Coiffait (Coleoptera, Staphylinidae). [Aleocharinae of Gabon collected by Dr. H. Coiffait (Coleoptera: Staphylinidae).]</title>. <title level="j">Bulletin de l'Institut Royal des Sciences Naturelles de Belgique, Entomologie</title> <biblScope unit="volume">79</biblScope>:<biblScope unit="page">89-131</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_HGSPB1_2018_v31n2_220_007" lang="fr"><author>Fremy E</author>. <date>1842</date>. <title level="a">Memoire sur les produits de la saponification de l'huile de palme</title>. <title level="j">J Pharmacie et de Chimie</title> <biblScope unit="volume">XII</biblScope>:<biblScope unit="page">757</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_MSMHBQ_2018_v54n4_477_002" lang="fr"><author>Beijerinck MW</author>. <date>1901</date>. <title level="a">Sur les ferments lactiques de l'industrie</title>. <title level="j">Arch. Ne'er. Sci. Exactes Natur. (Section 2)</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">212-243</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HGSMBT_2018_v36n3_308_003" lang="fr"><author>Ardre F</author>. <date>1970</date>. <title level="a">Contribution a l'etude des algues marines du Portugal. I. La flore</title>. <title level="j">Port. Acta Biol. B</title> <biblScope unit="volume">10</biblScope>:<biblScope unit="page">137-555</biblScope>.</bibl>
+<!---  journal  volume  page  missmatch -->
+<bibl xml:id="_GJMJBK_2018_v22n5_13_006" lang="fr"><author>Boussinesq J.V.</author>(<date>1879</date>), '<title level="a">Complements a une Etude sur la Theorie de l'Equilibre et du Mouvement des Solides Elastiques dont Certaines Dimensions sont Tres Petites par Rapport a l'Autre</title>,'<title level="j">Journal de Mathematiques</title>, T. <biblScope unit="volume">5</biblScope>, <pubPlace>Paris</pubPlace>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JOKHB9_2018_v11n1_87_036" lang="fr"><author>Ghesquiere J</author>. <date>1946</date>. <title level="a">Contribution a l'etude de microhymenopteres du Congo Belge. X. Nouvelles denominations pour quelques genres de Chalcidoidea et Mymaroidea. XI. Encore les gn. Chalcis, Smiera, et Brachymeria Hym. Chalcidoidea</title>. <title level="j">Revue de Zoologie et de Botanique Africaines</title> <biblScope unit="volume">39</biblScope>:<biblScope unit="page">370</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_MHONBU_2018_s52_133_017" lang="fr"><author>Formaggio, Dino</author>, '<title level="a">Mikel Dufrenne, la Nature et le sens du poetique</title>', in <title level="j">Revue d'esthetique</title>, N, <biblScope unit="volume">21</biblScope>, <date>1992</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_SRGHBV_2020_v36n4_259_006" lang="fr"><author>Dumant MJ</author>. <date>1979</date>. [<title level="a">Implantation de taillis de peupliers echelonnes au cours de la saison froide</title>]. <title level="j">Ann Rech Sylvic</title> Tome (<biblScope unit="volume">1</biblScope>): <biblScope unit="page">253-263</biblScope>. <note>French</note>.</bibl>
+<!---  journal  issue  missmatch -->
+<bibl xml:id="_DBSHBB_2020_v57n4_873_001" lang="fr"><author>H. Akbar-Zadeh</author>, <title level="a">Sur les espaces de Finsler a courbures sectionnelles constantes</title>, <title level="j">Acad. Roy. Belg. Bull. Cl. Sci. (5)</title> <biblScope unit="volume">74</biblScope> (<date>1988</date>), no. <biblScope unit="issue">10</biblScope>, <biblScope unit="page">281-322</biblScope>.</bibl>
             </listBibl>
         </back>
     </text>

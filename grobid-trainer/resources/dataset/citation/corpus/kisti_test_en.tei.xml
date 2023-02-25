@@ -177,7 +177,10 @@
 <bibl xml:id="_HBOGB3_2020_v53n4_168_009" lang="en"><author>Stahl M, Mariette C, Haustermans K, Cervantes A, Arnold D;</author> <orgName type="collaboration">ESMO Guidelines Working Group</orgName>. <title level="a">Oesophageal cancer: ESMO clinical practice guidelines for diagnosis, treatment and follow-up</title>. <title level="j">Ann Oncol</title> <date>2013</date>;<biblScope unit="volume">24</biblScope> <biblScope unit="issue">Suppl 6</biblScope>:<biblScope unit="page">vi51-6</biblScope>.</bibl>
 <!---  journal  missmatch -->
 <bibl xml:id="_JGGJBAA_2020_v24n2_419_001" lang="en"><author>H. W. Chun, M. K. Han, and J. H. Jang</author>, '<title level="a">Application trends in virtual reality</title>,' <date>2017</date> <title level="j">Electronics and Telecommunications Trends</title>.</bibl>
-
+<!---  title  journal  volume  page  missmatch -->
+<bibl xml:id="_KHSBBC_2020_v35n1_203_060" lang="en"><author>Cynthia M. Hayward</author>, <title level="a">Remote Sensing: Terestrial Laws for Celestial Activities</title>, <biblScope unit="volume">8</biblScope> <title level="j">B.U. Int'l L.J</title>. <biblScope unit="page">157</biblScope>(<date>1990</date>).</bibl>
+<!---  title  journal  volume  date  missmatch -->
+<bibl xml:id="_KHSBBC_2020_v35n1_203_050" lang="en"><author>Joanne Irene Gabrynowicz</author>, <title level="a">The Promise and Problems of the Land Remote Sensing Policy Act of 1992</title>, <biblScope unit="volume">9</biblScope> <title level="j">Space Pol'y</title> <biblScope unit="page">319</biblScope>(<date>1993</date>).</bibl>
             </listBibl>
         </back>
     </text>

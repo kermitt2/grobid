@@ -96,6 +96,34 @@
 <bibl xml:id="_E1TAAE_2014_v18n2_193_030" lang="de"><author>Rellich F</author> (<date>1930</date>). <title level="a">Ein Satz uber mittlere Konvergenz, Gottingen Nachr</title>., <title level="j">Acta Math</title>. <biblScope unit="volume">141</biblScope>, pp. <biblScope unit="page">165-186</biblScope>.</bibl>
 <!---  page  issue  missmatch -->
 <bibl xml:id="_E1TAAE_2014_v18n2_193_008" lang="de"><author>Cantor G</author> (<date>1883</date>) <title level="a">Uber unendliche lineare Punktmannigfaltigkiet</title>, <title level="j">Math. Annalen</title> <biblScope unit="volume">21</biblScope>, <biblScope unit="issue">51-58</biblScope>, pp. <biblScope unit="page">545-591</biblScope>.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_GHOHDS_2018_v53n1_133_008" lang="de"><author>Hasselmann, K, Barnett TP, Bouws E, Carlson H, Cartwright DE, Enke K, Ewing JA, Gienapp H, Hasselmann DE, Kruseman P, Meerburg A, Muller P, Olbers DJ, Richter K, Sell W, Walden H</author> (<date>1973</date>) <title level="a">Measurements of wind-wave growth and swell decay during the Joint North Sea Wave Project (JONSWAP)</title>. <title level="j">Erganzungsheft zur Deutschen Hydrographischen Zeitschrift Reihe A</title> <biblScope unit="volume">8</biblScope>(<biblScope unit="issue">12</biblScope>), <biblScope unit="page">95</biblScope> p.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_SMBHBD_2019_v49n1_28_064" lang="de"><author>Sojak, J</author>. <date>2004</date>. <title level="a">Potentilla L. (Rosaceae) and related genera in the former USSR (identification key, checklist and figures) Notes on Potentilla XVI. Botanische Jahrbucher fur Systematik</title>, <title level="j">Pflanzengeschichte und Pflanzengeographie</title> <biblScope unit="volume">125</biblScope>: <biblScope unit="page">253-340</biblScope>.</bibl>
+<!---  title  journal  publisher  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_3_031" lang="de"><author>Ulrich Becker</author>, '<title level="a">Verfassungsrechtliche Vorgaben fur die Krankenversicherung der Rentner - zur Bedeutung des Gleichheitssatzes bei der Bemessung von Sozialversicherungsbeitragen</title>', <title level="j">Neue Zeitschrift fur Sozialrecht</title> (<date>2001</date>).</bibl>
+<!---  title  journal  publisher  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_3_034" lang="de"><author>Stefan Huster</author>, '<title level="a">Die Beitragsbemessung in der gesetzlichen Krankenversicherung</title>', <title level="j">Juristen Zeitung</title>(<date>2002</date>).</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n3_47_032" lang="de"><author>Ulsenheimer</author>, <title level="a">Fehlentwicklungen in der Medizin: Verrechtlichung und Okonomisierung</title>, <title level="j">MedR</title>(<date>2015</date>) <biblScope unit="volume">33</biblScope>, <biblScope unit="page">757</biblScope>.</bibl>
+<!---  orgName  missmatch -->
+<bibl xml:id="_SMTMSH_2019_v8n2_80_007" lang="de"><author>Schumann, W. O.</author>, '<title level="a">Uber die strahlungslosen Eigenschwingungen einer leitenden Kugel, die von einer Luftschicht und einer Ionospharenhulle umgeben ist</title>,' <title level="j">Zeitschrift fur Naturforschung A.</title>, <biblScope unit="volume">7</biblScope>(<biblScope unit="issue">2</biblScope>), Aus dem <orgName>Elektrophysikalischen Institut der Technischen Hochschule Munchen</orgName>, pp. <biblScope unit="page">149-154</biblScope>, <date>1952</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_GJMGCK_2019_v5n4_171_015" lang="de"><author>Cheon, Hyun-Soon</author>, <title level="a">Vom knstlich gezeugten zum geklonten menschen-Zur Identitt von knstlich erschaffenen menschen in Phantastikund science-Fiction- Literatur-</title>, <title level="j">Franz Kafka</title>, No. <biblScope unit="issue">36</biblScope>, pp. <biblScope unit="page">99-122</biblScope>, <date>2016</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_OMHHBZ_2019_v24n3_114_015" lang="de"><author>W. Zeuch</author>, <title level="a">Neue Verfahren zur Messung des Einspritzgesetzes und Einspritz-Regelmassigkeit von Diesel-Einspritz-pumpen</title>, <title level="j">MZT</title>, Jahr. <biblScope unit="volume">22</biblScope> Heft <biblScope unit="issue">9</biblScope>, <date>1961</date>.</bibl>
+<!---  volume  page  missmatch -->
+<bibl xml:id="_ORBHBM_2019_v20n2_111_027" lang="de"><author>Weilbrock</author>, '<title level="a">Datenschutzrechtliche Aspekte des Aufbaus von Biobanken fur Forschungszwecke</title>'. <title level="j">MedR</title> <date>2003</date>, <biblScope unit="page">77</biblScope>.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_ORBHBM_2020_v21n1_3_027" lang="de"><author>Deutsch</author>, '<title level="a">Schutzbereich und Beweislast der arztlichen Aufklarungspflicht</title>', <title level="j">NJW</title> <date>1984</date>, <biblScope unit="page">1802</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_DBSHBB_2020_v57n4_845_022" lang="de"><author>H. Weyl</author>, <title level="a">Uber die Gleichverteilung von Zahlen mod. Eins</title>, <title level="j">Math. Ann.</title> <biblScope unit="volume">77</biblScope> (<date>1916</date>), no. <biblScope unit="issue">3</biblScope>, <biblScope unit="page">313-352</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_OOGCBV_2020_v59n1_65_017" lang="de"><author>Forel, A.</author>, <date>1912</date>. <title level="a">H. Sauter's Formosa-Ausbeute. Formicidae (Hym.)</title>. <title level="j">Entomol. Mitt</title>. <biblScope unit="volume">1</biblScope>, <biblScope unit="page">45-61</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_KJKHB9_2020_v75n3_401_010" lang="de"><author>Bredt, R.</author> (<date>1896</date>), '<title level="a">Kritische Bemerkungen zur Drehungselastizitat</title>. <title level="j">Z Vereines Deutscher Ingenieure</title>', Band, <biblScope unit="volume">40</biblScope>(<biblScope unit="issue">28</biblScope>), <biblScope unit="page">785-790</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_JORHBK_2020_v35n4_325_018" lang="de"><author>Kolkwitz, R. &amp; Krieger, W</author>. <date>1936</date>. <title level="a">Zur Okologie der Pflanzenwelt, insbesondere der Algen, des Vulkans Pangerango in West-Java. I. Allgemeines (von R. Kolkwitz). II. Die Algenflora des Pangerango (von W. Krieger)</title>. <title level="j">Ber. Deutsch. Bot. Ges.</title> <biblScope unit="volume">54</biblScope>:<biblScope unit="page">65-91</biblScope>.</bibl>
 
             </listBibl>
         </back>
