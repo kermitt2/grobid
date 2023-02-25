@@ -26,7 +26,7 @@
 <!---  journal  missmatch -->
 <bibl xml:id="_OOGSB2_2020_v56n3_230_012" lang="fr"><author>Massau J</author>. <date>1900</date>. <title level="a">Memoire sur l'Integration graphique des Equations aux derivees partielles</title>. <title level="j">Annales de l'Association des ingenieurs sortis des ecoles speciales de gand</title>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">159</biblScope>. (<note>in French</note>).</bibl>
 <!---  volume  issue  missmatch -->
-<bibl xml:id="_TNTNC6_2020_v22n4_35_002" lang="fr"><orgName>AFTES</orgName> (<date>2004</date>) - <title level="a">GT32-1 recommendations: Prise en compte des risques geotechniques dans les DCE</title>. <title level="j">Revue Tunnels &amp; OS</title>, no. <biblScope unit="volume">185</biblScope>, pp. <biblScope unit="page">316-327</biblScope>.</bibl>
+<bibl xml:id="_TNTNC6_2020_v22n4_35_002" lang="fr"><publisher>AFTES</publisher> (<date>2004</date>) - <title level="a">GT32-1 recommendations: Prise en compte des risques geotechniques dans les DCE</title>. <title level="j">Revue Tunnels &amp; OS</title>, no. <biblScope unit="volume">185</biblScope>, pp. <biblScope unit="page">316-327</biblScope>.</bibl>
 
             </listBibl>
         </back>
