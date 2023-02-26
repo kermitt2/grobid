@@ -87,6 +87,7 @@ public class CitationParser extends AbstractParser {
                 input = UnicodeUtil.normaliseText(input);
                 input = TextUtilities.removeLeadingAndTrailingChars(input, "[({.,])}: \n"," \n");
                 List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+                tokens = analyzer.retokenizeSubdigitsFromLayoutToken(tokens);
                 tokenList.add(tokens);
             }
         }
@@ -129,6 +130,13 @@ public class CitationParser extends AbstractParser {
             return null;
         List<BiblioItem> results = new ArrayList<>();
         StringBuilder featuredInput = new StringBuilder();
+
+        int p = 0;
+        for(List<LayoutToken> tokens : tokenList) {
+            tokenList.set(p, analyzer.retokenizeSubdigitsFromLayoutToken(tokens));
+            p++;
+        }
+
         for (List<LayoutToken> tokens : tokenList) {
             if (CollectionUtils.isEmpty(tokens))
                 continue;
@@ -639,6 +647,8 @@ public class CitationParser extends AbstractParser {
                     continue;
 
                 List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(input);
+                tokenizations = analyzer.retokenizeSubdigitsFromLayoutToken(tokenizations);
+
                 if (tokenizations.size() == 0)
                     return null;
 
