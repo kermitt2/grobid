@@ -1,6 +1,8 @@
 package org.grobid.core.analyzers;
 
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lang.Language;
+import org.grobid.core.utilities.UnicodeUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,6 +45,51 @@ public class GrobidAnalyzerTest {
     @Test
     public void testTokenizeWithLayoutToken_emptyText() {
         assertThat(target.tokenizeWithLayoutToken(""), hasSize(0));
+    }
+
+    @Test
+    public void testTokenize_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        input = UnicodeUtil.normaliseText(input);
+        System.out.println("--> testTokenize_Korean: " + input);
+        List<String> tokens = target.tokenize(input, new Language("kr"));
+        System.out.println(tokens.toString());
+        assertThat(tokens, hasSize(32));
+    }
+
+    @Test
+    public void testTokenizeWithLayoutToken_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("kr"));
+        System.out.println("testTokenizeWithLayoutToken_Korean:" + tokens.size());
+        tokens = target.tokenizeWithLayoutToken(input, new Language("kr"));
+        System.out.println("testTokenizeWithLayoutToken_Korean:" + tokens.size());
+        tokens = target.tokenizeWithLayoutToken(input, new Language("kr"));
+        System.out.println("testTokenizeWithLayoutToken_Korean:" + tokens.size());
+        assertThat(tokens, hasSize(32));
+    }
+
+    @Test
+    public void testRetokenizeSubdigits_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        List<String> tokens = target.tokenize(input, new Language("kr"));
+        assertThat(target.retokenizeSubdigits(tokens), hasSize(35));
+    }
+
+    @Test
+    public void testRetokenizeSubdigitsWithLayoutToken_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        List<String> tokens = target.tokenize(input, new Language("kr"));
+        assertThat(target.retokenizeSubdigitsWithLayoutToken(tokens), hasSize(35));
+    }
+
+    @Test
+    public void testRetokenizeSubdigitsFromLayoutToken_Korean() {
+        String input = "최지수. 윤석민 (2019), 가짜뉴스 거버넌스: 정부규제, 자율규제, 공동규제 모형에 대한 비교를 중심으로, 사이버커뮤니케이션학보, 제36권 제1호, 127-180쪽.";
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("kr"));
+        System.out.println("testRetokenizeSubdigitsFromLayoutToken_Korean:" + tokens.size());
+
+        assertThat(target.retokenizeSubdigitsFromLayoutToken(tokens), hasSize(35));
     }
 
 }
