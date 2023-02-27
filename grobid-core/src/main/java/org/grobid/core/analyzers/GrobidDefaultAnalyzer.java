@@ -183,8 +183,6 @@ public class GrobidDefaultAnalyzer implements Analyzer {
      *
      */
     public List<LayoutToken> retokenizeSubdigitsFromLayoutToken(List<LayoutToken> tokens) {
-
-System.out.println("retokenizeSubdigitsFromLayoutToken");
         List<LayoutToken> result = new ArrayList<>();
         for(LayoutToken token : tokens) {
             // we split "letter" characters and digits

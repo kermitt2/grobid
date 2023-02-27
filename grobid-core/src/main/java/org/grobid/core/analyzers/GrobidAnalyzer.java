@@ -33,10 +33,11 @@ public class GrobidAnalyzer implements Analyzer {
     public static GrobidAnalyzer getInstance() {
         if (instance == null) {
             //double check idiom
-            // synchronized (instanceController) {
-                if (instance == null)
+            synchronized (GrobidAnalyzer.class) {
+                if (instance == null) {
 					getNewInstance();
-            // }
+                }
+            }
         }
         return instance;
     }
@@ -54,7 +55,7 @@ public class GrobidAnalyzer implements Analyzer {
      */
     private GrobidAnalyzer() {
     	try {
-	    	krAnalyzer = ReTokenizerFactory.create("ko_g");
+		    krAnalyzer = ReTokenizerFactory.create("ko_g");
 	    } catch(Exception e) {
 			LOGGER.error("Invalid kr tokenizer", e);
 		}
