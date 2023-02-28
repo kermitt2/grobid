@@ -75,4 +75,62 @@ public class GrobidAnalyzerTest {
         tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
         assertThat(tokens, hasSize(36));
     }
+
+    @Test
+    public void testTokenize_Japanese() {
+        String input = "오다쇼고(小田省吾), 京城尊都の 由來こ 基の 城壁に就て</title>, 朝鮮 제197호, 1931";
+        input = UnicodeUtil.normaliseText(input);
+        List<String> tokensStr = target.tokenize(input, new Language("jp"));
+        assertThat(tokensStr, hasSize(23));
+
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        assertThat(tokens, hasSize(23));
+
+        tokensStr = target.tokenize(input, new Language("jp"));
+        tokensStr = target.retokenizeSubdigits(tokensStr);
+        assertThat(tokensStr, hasSize(25));
+
+        tokensStr = target.tokenize(input, new Language("jp"));
+        tokens = target.retokenizeSubdigitsWithLayoutToken(tokensStr);
+        assertThat(tokens, hasSize(25));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("jp"));
+        tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(25));
+    }
+
+    @Test
+    public void testTokenize_Chinese() {
+        String input = "郭宏奇. 中藥辨証治療灼口綜合征臨床觀察. 疾病監測与控制雜誌2009;8:484-5.";
+        input = UnicodeUtil.normaliseText(input);
+        List<String> tokensStr = target.tokenize(input, new Language("zh"));
+        assertThat(tokensStr, hasSize(35));
+
+        List<LayoutToken> tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        assertThat(tokens, hasSize(35));
+
+        tokensStr = target.tokenize(input, new Language("zh"));
+        tokensStr = target.retokenizeSubdigits(tokensStr);
+        assertThat(tokensStr, hasSize(35));
+
+        tokensStr = target.tokenize(input, new Language("zh"));
+        tokens = target.retokenizeSubdigitsWithLayoutToken(tokensStr);
+        assertThat(tokens, hasSize(35));
+
+        tokens = target.tokenizeWithLayoutToken(input, new Language("zh"));
+        tokens = target.retokenizeSubdigitsFromLayoutToken(tokens);
+        assertThat(tokens, hasSize(35));
+    }
 }
