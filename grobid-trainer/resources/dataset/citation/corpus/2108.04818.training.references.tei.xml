@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+		<listBibl>
+	<bibl><author>Woon Sau Leung, Gabriel Wong, and Woon K. Wong</author>. <date>2019</date>. <title level="a">Social-Media Sentiment, Portfolio Complexity, and Stock Returns</title>. Available at SSRN: <ptr type="web">https://ssrn.com/abstract=3492722</ptr> or <ptr type="web">http://dx.doi.org/10.2139/ssrn.3492722</ptr> (<date>2019</date>).</bibl>
+	<bibl><publisher>VentureBeat</publisher>. <date>2012</date>. <title level="m">Twitter reaches 500M users, 140M in the U.S.</title> <ptr type="web">https://venturebeat. com/2012/07/30/twitter-reaches-500-million-users-140-million-in-the-u-s/</ptr> (ac-cessed <date>May 24, 2020</date>).</bibl>
+		</listBibl>
+	</back>
+	</text>
+</TEI>
