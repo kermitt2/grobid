@@ -1,0 +1,75 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Arkin, P. A., 1982: The relationship between the interannual vari-<lb/>ability in the 200 mb tropical wind field and the Southern<lb/> Oscillation. Mon. Wea. Rev., 110, 1393-1401.<lb/> </bibl>
+        <bibl>Binter, R., S. Jewson, and S. Khare, 2006: Statistical modelling of<lb/> the relationship between main development region sea sur-<lb/>face temperature and Atlantic Basin hurricane numbers.<lb/> RMS Internal Rep. E04a, 19 pp.<lb/> </bibl>
+        <bibl>Bove, M. C., J. B. Elsner, C. W. Landsea, X. Niu, and J. J.<lb/> O&apos;Brien, 1998: Effect of El Nin ˜o on U.S. landfalling hurri-<lb/>canes, revisited. Bull. Amer. Meteor. Soc., 79, 2477-2482.<lb/> </bibl>
+        <bibl>Buishand, T. A., and A. M. G. Klein Tank, 1996: Regression<lb/> model for generating time series of daily precipitation<lb/> amounts for climate change impact studies. Stochastic Envi-<lb/>ron. Res. Risk Assess., 10, 87-106.<lb/> </bibl>
+        <bibl>Camargo, S. J., K. A. Emanuel, and A. H. Sobel, 2007a: Use of a<lb/> genesis potential index to diagnose ENSO effects on tropical<lb/> cyclone genesis. J. Climate, 20, 4819-4834.<lb/></bibl> 
+        <bibl>--, A. W. Robertson, S. J. Gaffney, P. Smyth, and M. Ghil,<lb/> 2007b: Cluster analysis of typhoon tracks. Part I: General<lb/> properties. J. Climate, 20, 3635-3653.<lb/> </bibl>
+        <bibl>--, --, --, --, and --, 2007c: Cluster analysis of ty-<lb/>phoon tracks. Part II: Large-scale circulation and ENSO. J.<lb/> Climate, 20, 3654-3676.<lb/> </bibl>
+        <bibl>Chang, E. K. M., and Y. Guo, 2007: Is the number of North<lb/> Atlantic tropical cyclones significantly underestimated prior<lb/> to the availability of satellite observations? Geophys. Res.<lb/> Lett., 34, L14801, doi:10.1029/2007GL030169.<lb/> </bibl>
+        <bibl>Chauvin, F., J.-F. Royer, and M. De ´que ´, 2006: Response of hur-<lb/>ricane-type vortices to global warming as simulated by AR-<lb/>PEGE-Climat at high resolution. Climate Dyn., 27, 377-399.<lb/> </bibl>
+        <bibl>Chu, P.-S., 2004: ENSO and tropical cyclone activity. Hurricanes<lb/> and Typhoons: Past, Present, and Potential, R. J. Murnane<lb/> and K.-B. Liu, Eds., Columbia University Press, 297-332.<lb/> </bibl>
+        <bibl>Coles, S., 2001: An Introduction to Statistical Modelling of Extreme<lb/> Values. Springer, 208 pp.<lb/> </bibl>
+        <bibl>Curriero F. C., K. S. Heiner, J. M. Samet, and S. L. Zeger, 2002:<lb/> Temperature and mortality in 11 cities of the eastern United<lb/> States. Amer. J. Epidemiol., 155, 80-87.<lb/> </bibl>
+        <bibl>Deser, C., and J. M. Wallace, 1990: Large-scale atmospheric cir-<lb/>culation features of warm and cold episodes in the tropical<lb/> Pacific. J. Climate, 3, 1254-1281.<lb/> </bibl>
+        <bibl>Donnelly, J. P., and J. D. Woodruff, 2007: Intense hurricane ac-<lb/>tivity over the past 5,000 years controlled by El Nin ˜o and the<lb/> West African monsoon. Nature, 447, 465-468.<lb/> </bibl>
+        <bibl>Elsner, J. B., and C. P. Schmertmann, 1993: Improving extended-<lb/>range seasonal predictions of intense Atlantic hurricane ac-<lb/>tivity. Wea. Forecasting, 8, 345-351.<lb/> </bibl>
+        <bibl>--, and T. H. Jagger, 2004: A hierarchical Bayesian approach to<lb/> seasonal hurricane modeling. J. Climate, 17, 2813-2827.<lb/></bibl> 
+        <bibl>--, and --, 2006: Prediction models for annual U.S. hurricane<lb/> counts. J. Climate, 19, 2935-2952.<lb/> </bibl>
+        <bibl>--, K. B. Liu, and B. Kocher, 2000: Spatial variations in major<lb/> U.S. hurricane activity: Statistics and a physical mechanism.<lb/> J. Climate, 13, 2293-2305.<lb/></bibl> 
+        <bibl>--, B. H. Bossak, and X.-F. Niu, 2001: Secular changes to the<lb/> ENSO-U.S. hurricane relationship. Geophys. Res. Lett., 28,<lb/> 4123-4126.<lb/> </bibl>
+        <bibl>Emanuel, K., 2005: Increasing destructiveness of tropical cyclones<lb/> over the past 30 years. Nature, 436, 686-688.<lb/></bibl> 
+        <bibl>--, 2006: Climate and tropical cyclone activity: A new model<lb/> downscaling approach. J. Climate, 19, 4797-4802.<lb/></bibl> 
+        <bibl>--, 2007: Environmental factors affecting tropical cyclone<lb/> power dissipation. J. Climate, 20, 5497-5509.<lb/></bibl>
+        <bibl>--, S. Ravela, E. Vivant, and C. Risi, 2006: A statistical-<lb/>deterministic approach to hurricane risk assessment. Bull.<lb/> Amer. Meteor. Soc., 87, 299-314.<lb/> </bibl>
+        <bibl>Enfield, D. B., A. M. Mestas-Nunez, and P. J. Trimble, 2001: The<lb/> Atlantic Multidecadal Oscillation and its relationship to rain-<lb/>fall and river flows in the continental U.S. Geophys. Res.<lb/> Lett., 28, 2077-2080.<lb/> </bibl>
+        <bibl>Friederichs, P., and A. Hense, 2008: A probabilistic forecast ap-<lb/>proach for daily precipitation totals. Wea. Forecasting, 23,<lb/> 659-673.<lb/> </bibl>
+        <bibl>Gneiting, T., and A. E. Raftery, 2007: Strictly proper scoring<lb/> rules, prediction and estimation. J. Amer. Stat. Assoc., 102,<lb/> 359-378.<lb/> </bibl>
+        <bibl>Goldenberg, S. B., C. W. Landsea, A. M. Mestas-Nun ˜ez, and<lb/> W. M. Gray, 2001: The recent increase in Atlantic hurricane<lb/> activity: Causes and implications. Science, 293, 474-479.<lb/> </bibl>
+        <bibl>Gray, W. M., 1984: Atlantic seasonal hurricane frequency. Part I:<lb/> El Nin ˜o and 30 mb quasi-biennial oscillation influences. Mon.<lb/> Wea. Rev., 112, 1649-1668.<lb/> </bibl>
+        <bibl>--, C. W. Landsea, P. W. Mielke Jr., and K. J. Berry, 1994:<lb/> Predicting Atlantic basin seasonal tropical cyclone activity by<lb/> 1 June. Wea. Forecasting, 9, 103-115.<lb/> </bibl>
+        <bibl>Hallegatte, S., 2006: A cost-benefit analysis of the flood protection<lb/> system of New Orleans. Regulatory Analysis 06-02, AEI-<lb/>Brookings Joint Center, 25 pp.<lb/></bibl>
+        <bibl>--, 2007: The use of synthetic hurricane tracks in risk analysis<lb/> and climate change damage assessment. J. Appl. Meteor. Cli-<lb/>matol., 46, 1956-1966.<lb/> </bibl>
+        <bibl>Hastie, T. J., and R. J. Tibshirani, 1990: Generalized Additive<lb/> Models. Monographs on Statistics and Applied Probability,<lb/> Vol. 43, Chapman &amp; Hall/CRC, 335 pp.<lb/> </bibl>
+        <bibl>Jagger, T. H., and J. B. Elsner, 2006: Climatology models for ex-<lb/>treme hurricane winds near the United States. J. Climate, 19,<lb/> 3220-3236.<lb/></bibl> 
+        <bibl>--, --, and X. Niu, 2001: A dynamic probability model of<lb/> hurricane winds in coastal counties of the United States. J.<lb/> Appl. Meteor., 40, 853-863.<lb/> </bibl>
+        <bibl>--, --, and M. A. Saunders, 2008: Forecasting U.S. hurricane<lb/> losses. Climate Extremes and Society, Cambridge University<lb/> Press, 189-208.<lb/> </bibl>
+        <bibl>Jones, P. D., T. Jo ´nsson, and D. Wheeler, 1997: Extension to the<lb/> North Atlantic Oscillation using early instrumental pressure<lb/> observations from Gibraltar and southwest Iceland. Int. J.<lb/> Climatol., 17, 1433-1450.<lb/> </bibl>
+        <bibl>Knutson, T. K., and R. E. Tuleya, 2004: Impact of CO 2 -induced<lb/> warming on simulated hurricane intensity and precipitation:<lb/> Sensitivity to the choice of climate model and convective<lb/> parameterization. J. Climate, 17, 3477-3495.<lb/> </bibl>
+        <bibl>Landsea, C. W., 2005: Meteorology: Hurricanes and global warm-<lb/>ing. Nature, 438, E11-E13.<lb/> </bibl>
+        <bibl>--, 2007: Counting Atlantic tropical cyclones back to 1900. Eos,<lb/> Trans. Amer. Geophys. Union, 88, 197.<lb/></bibl>
+        <bibl>--, R. A. Pielke Jr., A. M. Mestas-Nun ˜ez, and J. A. Knaff, 1999:<lb/> Atlantic basin hurricanes: Indices of climatic changes. Cli-<lb/>matic Change, 42, 89-129.<lb/> </bibl>
+        <bibl>Lau, K. M., and J. M. Kim, 2007: How nature foiled the 2006 hurricane<lb/> forecasts. Eos, Trans. Amer. Geophys. Union, 88, 105-107.<lb/> </bibl>
+        <bibl>Mann, M. E., T. A. Sabbatelli, and U. Neu, 2007: Evidence for a<lb/> modest undercount bias in early historical Atlantic tropical<lb/> cyclone counts. Geophys. Res. Lett., 34, L22707, doi:10.1029/<lb/> 2007GL031781.<lb/> </bibl>
+        <bibl>McDonnell, K. A., 2004: A Poisson regression model approach to<lb/> predicting tropical cyclogenesis in the Australian/southwest<lb/> Pacific Ocean region using the SOI and saturated equivalent<lb/> potential temperature gradient as predictors. Geophys. Res.<lb/> Lett., 31, L20110, doi:10.1029/2004GL020843.<lb/> </bibl>
+        <bibl>Murnane, R. J., and Coauthors, 2000: Model estimates hurricane<lb/> wind speed probabilities. Eos, Trans. Amer. Geophys. Union,<lb/> 81, 433-438.<lb/> </bibl>
+        <bibl>Nelder, J. A., and R. W. Wedderburn, 1972: Generalized linear<lb/> models. J. Roy. Stat. Soc. Ser. A, 135, 370-384.<lb/> </bibl>
+        <bibl>Nyberg, J., B. A. Malmgren, A. Winter, M. R. Jury, K. H. Kil-<lb/>bourne, and T. M. Quinn, 2007: Low Atlantic hurricane ac-<lb/>tivity in the 1970s and 1980s compared to the past 270 years.<lb/> Nature, 447, 698-702.<lb/> </bibl>
+        <bibl>Pielke, R. A., Jr., 2005: Are there trends in hurricane destruction?<lb/> Nature, 438, E11, doi:10.1038/nature04426.<lb/></bibl> 
+        <bibl>--, and C. W. Landsea, 1999: La Nin ˜a, El Nin ˜o, and Atlantic<lb/> hurricane damages in the United States. Bull. Amer. Meteor.<lb/> Soc., 80, 2027-2033.<lb/> </bibl>
+        <bibl>--, J. Gratz, C. W. Landsea, D. Collins, M. A. Saunders, and R.<lb/> Muslin, 2008: Normalized hurricane damage in the United<lb/> States: 1900-2005. Nat. Hazards Rev., 9, 29-42.<lb/> </bibl>
+        <bibl>R Development Core Team, 2005: R: A language and environ-<lb/>ment for statistical computing. R Foundation for Statistical<lb/> Computing, Vienna, Austria, 1578 pp. [Available online at<lb/> http://cran.r-project.org/doc/manuals/refman.pdf.]<lb/> </bibl>
+        <bibl>Ropelewski, C. F., and P. D. Jones, 1987: An extension of the<lb/> Tahiti-Darwin Southern Oscillation index. Mon. Wea. Rev.,<lb/> 115, 2161-2165.<lb/> </bibl>
+        <bibl>Smith, R. L., 1985: Maximum likelihood estimation in a class of<lb/> nonregular cases. Biometrika, 82, 644-649.<lb/> </bibl>
+        <bibl>--, 2003: Statistics of extremes, with applications in environ-<lb/>ment, insurance and finance. Extreme Values in Finance,<lb/> Telecommunications and the Environment, B. Finkenstadt<lb/> and H. Rootzen, Eds., Chapman and Hall/CRC Press,<lb/> 1-78.<lb/> </bibl>
+        <bibl>Solomon, S., D. Qin, M. Manning, Z. Chen, M. Marquis, K. B.<lb/> Averyt, M. Tignor, and H. L. Miller, Eds., 2007: Climate<lb/> Change 2007: The Physical Science Basis. Cambridge Univer-<lb/>sity Press, 996 pp.<lb/> </bibl>
+        <bibl>Suji, M., A. Noda, and N. Sato, 2002: Influence of the global warm-<lb/>ing on tropical cyclone climatology: An experiment with the<lb/> JMA global model. J. Meteor. Soc. Japan, 80, 249-272.<lb/> </bibl>
+        <bibl>Webster, P. J., G. J. Holland, J. A. Curry, and H. R. Chang, 2005:<lb/> Changes in tropical cyclone number, duration and intensity in<lb/> a warming environment. Science, 309, 1844-1846.<lb/> </bibl>
+        <bibl>Wedderburn, R. W. M., 1974: Quasi-likelihood functions, gener-<lb/>alized linear models and the Gauss-Newton method. Bi-<lb/>ometrika, 61, 439-447.<lb/> </bibl>
+        <bibl>Yee, T. W., cited 2006: A user&apos;s guide to the VGAM package.<lb/> [Available online at http://www.stat.auckland.ac.nz/;yee/<lb/> VGAM.]<lb/> </bibl>
+        <bibl>--, and N. D. Mitchell, 1991: Generalized additive models in<lb/> plant ecology. J. Veg. Sci., 2, 587-602.<lb/> </bibl>
+        <bibl>--, and C. J. Wild, 1996: Vector generalized additive models. J.<lb/> Roy. Stat. Soc. Ser. B, 58, 481-493.<lb/> </bibl>
+        <bibl>--, and T. J. Hastie, 2003: Reduced-rank vector generalized lin-<lb/>ear models. Stat. Model., 3, 15-41.<lb/> </bibl>
+        <bibl>--, and A. G. Stephenson, 2007: Vector generalized linear and<lb/> additive extreme value models. Extremes, 10, 1-19.</bibl>
+    
+        </listBibl>
+    </text>
+</tei>
+
