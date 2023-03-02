@@ -19,6 +19,7 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.GrobidModels;
 
 import java.net.URLEncoder;
@@ -3496,8 +3497,6 @@ public class BiblioItem {
             withCoordinates = config.getGenerateTeiCoordinates().contains("persName");
         }
 
-        // uncomment below when collaboration will be concretely added to headers
-        /*
         if ( (collaboration != null) && 
             ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
@@ -3509,14 +3508,13 @@ public class BiblioItem {
                 List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
                 if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
-               }
+                }
             }
             tei.append(">").append(TextUtilities.HTMLEncode(collaboration)).append("</orgName>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag);
             tei.append("</author>").append("\n");
             return tei.toString();
         }
-        */
 
         List<Person> auts = fullAuthors;
 
@@ -4221,7 +4219,7 @@ public class BiblioItem {
 				(ISSN == null) && (ISBN13 == null)  && (ISBN10 == null))
 			titleSet = false;
 		boolean authorSet = true;
-		if (fullAuthors == null) 
+		if (fullAuthors == null && collaboration == null) 
 			authorSet = false;
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))
