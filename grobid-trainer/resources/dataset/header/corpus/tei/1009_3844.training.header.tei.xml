@@ -1,0 +1,192 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1009_3844"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<byline>
+	<affiliation>Institut für Physik, Universität Mainz,</affiliation>
+	</byline>
+
+	<address>D-55099 Mainz, Germany</address>
+
+	18<lb/>
+	<byline>
+	<docAuthor>A. Dabrowski 3 , T. Fonseca Martin 3 , M. Velasco<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Department of Physics and Astronomy, Northwestern Uniwersity,</affiliation>
+	</byline>
+
+	<address>Evanston, IL 60208-3112,<lb/> U.S.A.</address>
+
+	1<lb/>
+	<byline>
+	<docAuthor>P. Cenci, P. Lubrano, M. Pepe<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Perugia,</affiliation>
+	</byline>
+
+	<address>I-06100 Perugia, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>G. Anzivino, E. Imbergamo, G. Lamanna 15 , A. Michetti, A. Nappi, M.C. Petrucci,<lb/> M. Piccini, M. Valdata<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica dell&apos;Università and INFN Sezione di Perugia,</affiliation>
+	</byline>
+
+	<address>I-06100 Perugia, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>C. Cerri, R. Fantechi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Pisa,</affiliation>
+	</byline>
+
+	<address>I-56100 Pisa, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>F. Costantini, L. Fiorini 19 , S. Giudici, G. Pierazzini, M. Sozzi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica, Università degli Studi di Pisa and INFN Sezione di Pisa,</affiliation>
+	</byline>
+
+	<address>I-56100 Pisa, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>I. Mannelli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Scuola Normale Superiore and INFN Sezione di Pisa,</affiliation>
+	</byline>
+
+	<address>I-56100 Pisa, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>C. Cheshkov, J.B. Cheze, M. De Beer, P. Debu, G. Gouge, G. Marel, E. Mazzucato,<lb/> B. Peyaud, B. Vallage<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>DSM/DAPNIA -CEA Saclay,</affiliation>
+	</byline>
+
+	<address>F-91191 Gif-sur-Yvette, France<lb/></address>
+
+	<byline>
+	<docAuthor>M. Holder, A. Maier 3 , M. Ziolkowski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Fachbereich Physik, Universität Siegen,</affiliation>
+	</byline>
+
+	<address>D-57068 Siegen, Germany 20<lb/></address>
+
+	<byline>
+	<docAuthor>C. Biino, N. Cartiglia, F. Marchetto, N. Pastrone<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>INFN Sezione di Torino,</affiliation>
+	</byline>
+
+	<address>I-10125 Torino, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>M. Clemencic 3 , S. Goy Lopez 3 , E. Menichetti<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Dipartimento di Fisica Sperimentale dell&apos;Università and INFN Sezione di Torino,<lb/></affiliation>
+	</byline>
+
+	<address>I-10125 Torino, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>W. Wislicki</docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Soltan Institute for Nuclear Studies, Laboratory for High Energy Physics,<lb/></affiliation>
+	</byline>
+
+	<address>PL-00-681 Warsaw, Poland</address>
+
+	21<lb/>
+	<byline>
+	<docAuthor>H. Dibon, M. Jeitler, M. Markytan, G. Neuhofer, L. Widhalm<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Österreichische Akademie der Wissenschaften, Institut für Hochenergiephysik,</affiliation>
+	</byline>
+
+	<address>A-1050 Wien,<lb/> Austria 22<lb/></address>
+
+	Accepted by Phys. Lett. B Abstract<lb/>
+	<div type="abstract">The decay asymmetries of the weak radiative Hyperon decays Ξ 0 → Λγ and Ξ 0 →<lb/> Σ 0 γ have been measured with high precision using data of the NA48/1 experiment<lb/> at CERN. From about 52 000 Ξ 0 → Λγ and 15 000 Ξ 0 → Σ 0 γ decays, we obtain<lb/> for the decay asymmetries α Ξ 0 →Λγ = −0.704 ± 0.019 stat ± 0.064 syst and α Ξ 0 →Σ 0 γ =<lb/> −0.729 ± 0.030 stat ± 0.076 syst , respectively. These results are in good agreement with<lb/> previous experiments, but more precise.<lb/></div>
+
+	* Corresponding Authors. Email:
+	<email>Matthias.Behler@uni-mainz.de, Rainer.Wanke@uni-mainz.de<lb/></email>
+
+	1 Present address:
+	<byline>
+	<affiliation>Rutherford Appleton Laboratory,</affiliation>
+	</byline>
+
+	<address>Chilton, Didcot, Oxon, OX11 0QX, U.K.<lb/></address>
+
+	2 Present address:
+	<byline>
+	<affiliation>University of Birmingham,</affiliation>
+	</byline>
+
+	<address>Edgbaston, Birmingham, B15 2TT, U.K.<lb/></address>
+
+	3 Present address:
+	<byline>
+	<affiliation>CERN,</affiliation>
+	</byline>
+
+	<address>CH-1211 Genève 23, Switzerland.<lb/></address>
+
+	<byline>
+	<affiliation>4 Funded by the U.K. Particle Physics and Astronomy Research Council.<lb/></affiliation>
+	</byline>
+
+	5 Present address:
+	<byline>
+	<affiliation>Dipartimento di Fisica Sperimentale dell&apos;Università and INFN Sezione di Torino,<lb/></affiliation>
+	</byline>
+
+	<address>I-10125 Torino, Italy.<lb/></address>
+
+	6 Present address:
+	<byline>
+	<affiliation>Istituto di Cosmogeofisica del CNR di Torino,</affiliation>
+	</byline>
+
+	<address>I-10133 Torino, Italy.<lb/></address>
+
+	7 Present address:
+	<byline>
+	<affiliation>Dipartimento di Fisica, Università degli Studi di Pisa and INFN Sezione di Pisa,<lb/></affiliation>
+	</byline>
+
+	<address>I-56100 Pisa, Italy.</address>
+
+		</front>
+	</text>
+</tei>
