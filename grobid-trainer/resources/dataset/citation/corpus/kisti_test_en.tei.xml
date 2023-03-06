@@ -181,6 +181,17 @@
 <bibl xml:id="_KHSBBC_2020_v35n1_203_060" lang="en"><author>Cynthia M. Hayward</author>, <title level="a">Remote Sensing: Terestrial Laws for Celestial Activities</title>, <biblScope unit="volume">8</biblScope> <title level="j">B.U. Int'l L.J</title>. <biblScope unit="page">157</biblScope>(<date>1990</date>).</bibl>
 <!---  title  journal  volume  date  missmatch -->
 <bibl xml:id="_KHSBBC_2020_v35n1_203_050" lang="en"><author>Joanne Irene Gabrynowicz</author>, <title level="a">The Promise and Problems of the Land Remote Sensing Policy Act of 1992</title>, <biblScope unit="volume">9</biblScope> <title level="j">Space Pol'y</title> <biblScope unit="page">319</biblScope>(<date>1993</date>).</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n1_173_036" lang="en"><author>B. Obrist, C. Pfeiffer, and R. Henley</author>, '<title level="a">Multi‐ Layered Social Resilience: A New Approach in Mitigation Research</title>,' <title level="j">Progress in Development Studies</title>, Vol.<biblScope unit="volume">10</biblScope>, No.<biblScope unit="issue">4</biblScope>, pp.<biblScope unit="page">283-293</biblScope>, <date>2010</date>.</bibl>
+<!---  author  missmatch -->
+<bibl xml:id="_GHGSBL_2020_v20n1_113_074" lang="en"><author>Lovbrand, E., Bech, S., Chilvers, J., Forsyth, T., Hedren, J., Hulme, M., (...) Vasileiadou, E</author>. (<date>2015</date>), '<title level="a">Who Speaks For the Future of Earth? How Critical Social Science Can Extend the Conversation on the Anthropocene</title>', <title level="j">Global Environmental Change</title>, Vol. <biblScope unit="volume">32</biblScope>, pp. <biblScope unit="page">211-218</biblScope>.</bibl>
+<bibl xml:id="_GCOSBX_2020_v43n2_79_017" lang="en"><author>Jeong HS, Bae IK, Shin JH, Jung HJ, Kim SH, Lee JY, Oh SH, Kim HR, Chang CL, Kho WG, Lee JN</author>. <date>2011</date>. <title level="a">Prevalence of plasmid-mediated quinolone resistance and its association with extended-spectrum beta-lactamase and AmpC beta-lactamase in Enterobacteriaceae</title> <title level="j">Korean J Lab Med</title> <biblScope unit="volume">31</biblScope>: <biblScope unit="page">257-264</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_TPTPPP_2020_v8n3_215_020" lang="en"><author>Budiansky, B. and Sanders, J.L</author>. (<date>1963</date>), '<title level="a">On the best first order linear shell theory</title>, <title level="j">progress in applied mechanics</title>', <publisher>MacMillan, Inc</publisher>., <pubPlace>Greenwich, Conn</pubPlace>., <biblScope unit="volume">192</biblScope>, <biblScope unit="page">129-140</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_OGCSBN_2020_v36n6_1_1323_005" lang="en"><author>Jin, K. W. and S. B. Seo</author>, <date>2011</date>. <title level="a">In Orbit Radiometric Calibration Tests of COMS MI Infrared Channels</title>, <title level="j">Korean Journal of Remote Sensing</title>, <biblScope unit="volume">27</biblScope>(<biblScope unit="issue">3</biblScope>): <biblScope unit="page">369-377</biblScope> (<note>in Korean with English abstract</note>).</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_GOHHBH_2020_v39n4_246_002" lang="en"><author>M. Aharon and M. Elad</author>, '<title level="a">Image denoising via sparse and redundant representations over learned dictinaries</title>,' <title level="j">Proc. IEEE Trans. on Image Process</title>. <biblScope unit="volume">15</biblScope>, <biblScope unit="page">3736-3745</biblScope> (<date>2006</date>).</bibl>
             </listBibl>
         </back>
     </text>
