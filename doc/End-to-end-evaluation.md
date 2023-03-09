@@ -4,21 +4,35 @@ Individual models can be evaluated as explained in [Training the different model
 
 For an end-to-end evaluation, covering the whole extraction process from the parsing of PDF to the end result of the cascading of several sequence labelling models, GROBID includes two possible evaluation progresses:
 
-* against a set of JATS-encoded (NLM) articles, such as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc) or [bioRxiv](https://www.biorxiv.org). For its publications, PubMed Central aprovides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. bioRxiv is used in Grobid to evaluate more precisely performance on preprint articles. 
+* against JATS-encoded (NLM) articles, such as [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc), [bioRxiv](https://www.biorxiv.org), [PLOS](https://plos.org/ ) or [eLife](https://elifesciences.org/ ). For example, PubMed Central provides both PDF and fulltext XML files in the [NLM](http://www.ncbi.nlm.nih.gov/pmc/pmcdoc/tagging-guidelines/article/style.html) format. Keeping in mind some limits described bellow, it is possible to estimate the ability of Grobid to extract and normalize the content of the PDF documents for matching the quality of the NLM file. bioRxiv is used in Grobid to evaluate more precisely performance on preprint articles. 
 
 * against TEI documents produced by [Pub2TEI](https://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
-## Getting PubMedCentral gold-standard data 
+## Datasets
 
-We are currently evaluating GROBID using the `PMC_sample_1943` dataset compiled by Alexandru Constantin. The dataset is available at this [url](https://grobid.s3.amazonaws.com/PMC_sample_1943.zip) (around 1.5GB in size). The sample dataset contains 1943 articles from 1943 different journals corresponding to the latest publications from a 2011 snapshot. 
+The corpus used for the end-to-end evaluation of Grobid are all available in a single place on Zenodo: https://zenodo.org/record/7708580. Some of these datasets have been further annotated to make the evaluation of certain sub-structures possible (in particular code and data availability sections & funding sections).
+
+These resources are originally published under CC-BY license. Our additional annotations are similarly under CC-BY. We thank NIH, bioRxiv, PLOS and eLife for making these resources Open Access and reusable. 
+
+### PubMedCentral gold-standard data 
+
+Since ages, we are evaluating GROBID using the `PMC_sample_1943` dataset compiled by Alexandru Constantin. The dataset is available at this [url](https://zenodo.org/record/7708580) (around 1.5GB in size). The sample dataset contains 1943 articles from 1943 different journals corresponding to the latest publications from a 2011 snapshot. 
 
 Any similar PubMed Central set of articles could normally be used, as long they follow the same directory structure: one directory per article containing at least the corresponding PDF file and the reference NLM file. 
 
 We suppose in the following that the archive is decompressed under `PATH_TO_PMC/PMC_sample_1943/`.
 
-## Getting bioRxiv gold-standard data 
+### The bioRxiv gold-standard data 
 
-For evaluation on preprint articles, we are using the balanced bioRxiv 10k dataset compiled with care and published by Daniel Ecer ([eLife](https://elifesciences.org)), available on [Zenodo](https://zenodo.org/record/3873702). More precisely we publish benchmarks using the [test set](https://zenodo.org/record/3873702/files/biorxiv-10k-test-2000.zip?download=1) of 2000 articles. The zip archive is similar in structure to the above PMC sample 1943 dataset and further documented below. 
+For evaluation on preprint articles, we are using the balanced bioRxiv 10k dataset originally compiled with care and published by Daniel Ecer ([eLife](https://elifesciences.org)), available on [Zenodo](https://zenodo.org/record/7708580). More precisely we publish benchmarks using the test subset of 2000 articles. The zip archive is similar in structure to the above PMC sample 1943 dataset and further documented below. 
+
+### The PLOS 1000 dataset
+
+This is a set of 1000 PLOS articles, called `PLOS_1000` and available on [Zenodo](https://zenodo.org/record/7708580), randomly selected from the full [PLOS Open Access collection](https://allof.plos.org/allofplos.zip). Again, for each article, the published PDF is available with the corresponding publisher JATS XML file, around 1.3GB total size.
+
+### eLife 984 dataset
+
+The `eLife_984` dataset is a set of 984 articles from eLife, available on [Zenodo](https://zenodo.org/record/7708580), randomly selected from their [open collection available on GitHub](https://github.com/elifesciences/elife-article-xml). Every articles come with the published PDF, the publisher JATS XML file and the eLife public HTML file (as bonus, not used), all in their latest version, around 4.5G total.
 
 ## Getting publisher gold-standard data 
 

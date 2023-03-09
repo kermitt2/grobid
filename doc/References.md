@@ -59,11 +59,7 @@ For archeological purposes, the following first paper has been the main motivati
 
 ## Datasets
 
-For end-to-end evaluation:
-
-- [PMC_sample_1943](https://grobid.s3.amazonaws.com/PMC_sample_1943.zip)
-
-- [bioRxiv 10k](https://zenodo.org/record/3873702)
+For end-to-end evaluation, we are making available corpus of PDF/XML pairs at https://zenodo.org/record/7708580, including the original `PMC_sample_1943` dataset and a version of [bioRxiv 10k](https://zenodo.org/record/3873702) with additional annotations relevant for Grobid. 
 
 For layout/zoning identification:
 
