@@ -123,17 +123,16 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_ChainCRF_FEATURES"
-        #architecture: "BERT_FEATURES"
         #transformer: "allenai/scibert_scivocab_cased"
         useELMo: false
         runtime:
           # parameters used at runtime/prediction
-          #max_sequence_length: 512
+          #max_sequence_length: 510
           max_sequence_length: 3000
           batch_size: 1
         training:
           # parameters used for training
-          #max_sequence_length: 512
+          #max_sequence_length: 510
           #batch_size: 6
           max_sequence_length: 3000
           batch_size: 9
@@ -147,7 +146,7 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_ChainCRF_FEATURES"
         useELMo: false
         runtime:
           # parameters used at runtime/prediction (for this model, use same max_sequence_length as training)
@@ -224,12 +223,12 @@ grobid:
         useELMo: false
         runtime:
           # parameters used at runtime/prediction
-          max_sequence_length: 3000
-          batch_size: 20
+          max_sequence_length: 500
+          batch_size: 30
         training:
           # parameters used for training
-          max_sequence_length: 3000  
-          batch_size: 30
+          max_sequence_length: 500  
+          batch_size: 50
 
     - name: "patent-citation"
       engine: "wapiti"
