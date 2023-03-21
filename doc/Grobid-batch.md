@@ -60,6 +60,8 @@ WARNING: the expected extension of the PDF files to be processed is .pdf
 
 * -teiCoordinates: output a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present
 
+* -addElementId: add xml:id attribute automatically to the XML elements in the resulting TEI XML, by default no xml:id are added
+
 * -segmentSentences: add sentence segmentation level structures for paragraphs in the TEI XML result, by default no sentence segmentation is done 
 
 Example:
