@@ -69,34 +69,22 @@ JATS/NLM is a very loose XML format, in the sense that there are multiple ways t
 
 ## Running and evaluating 
 
-### PubMed Central
+### JATS encoded corpus, e.g. PubMed Central, bioRxiv, PLOS, eLife
 
 Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
 ```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=1
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_JATS_DATASET/DATASET -Prun=1
 ```
+
+Replace the absolute path and directory dataset name by the selected dataset for end-to-end evaluation, for example `PMC_sample_1943`, `biorxiv-10k-test-2000`, `PLOS_1000` or `eLife_984` (see above for downloading these datasets). 
+
 The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
 ```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_JATS_DATASET/DATASET -Prun=0
 ```
 It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the PubMedCentral files, use:
 ```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_PMC/PMC_sample_1943 -Prun=0 -PfileRatio=0.1
-```
-
-### bioRxiv
-
-Under ```grobid/```, the following command line is used to run and evaluate Grobid on the dataset:
-```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=1
-```
-The parameters `run` indicates if GROBID has to be executed on all the PDF of the data set. The resulting TEI file will be added in each article subdirectory. If you only want to run the evaluation without re-executing Grobid on the PDF, set the parameter to 0:
-```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=0
-```
-It is also possible to set a ratio of evaluation data to be used expressed as a number between 0 and 1 introduced by the parameter `fileRatio`. For instance, if you want to evaluate Grobid against only 10% of the bioRxiv files, use:
-```bash
-> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_BIORXIV_10K/biorxiv-10k-test-2000 -Prun=0 -PfileRatio=0.1
+> ./gradlew jatsEval -Pp2t=ABS_PATH_TO_JATS_DATASET/DATASET -Prun=0 -PfileRatio=0.1
 ```
 
 ### Pub2TEI-based
