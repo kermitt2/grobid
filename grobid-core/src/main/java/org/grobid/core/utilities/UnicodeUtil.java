@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  */
 public class UnicodeUtil {
 
-    private static final Pattern DASH_PATTERN = Pattern.compile("\\p{Pd}");
+    private static final Pattern DASH_PATTERN = Pattern.compile("[\\p{Pd}\\u2212]");
     private static final Pattern NORMALISE_REGEX_PATTERN = Pattern.compile("[ \n]");
 
 	// As java \s doesn’t support the Unicode white space property (\s matches
