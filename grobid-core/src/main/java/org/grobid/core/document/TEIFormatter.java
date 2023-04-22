@@ -1084,6 +1084,14 @@ public class TEIFormatter {
 
             addXmlId(desc, note.getIdentifier());
 
+            // this is a paragraph element for storing text content of the note, which is 
+            // better practice than just putting the text under the <note> element
+            Element pNote = XmlBuilderUtils.teiElement("p");
+            if (config.isGenerateTeiIds()) {
+                String pID = KeyGen.getKey().substring(0, 7);
+                addXmlId(pNote, "_" + pID);
+            }
+
             // for labelling bibliographical references in notes 
             List<LayoutToken> noteTokens = note.getTokens();
 
@@ -1112,14 +1120,14 @@ public class TEIFormatter {
                                     false);
                             if (refNodes != null) {
                                 for (Node n : refNodes) {
-                                    desc.appendChild(n);
+                                    pNote.appendChild(n);
                                 }
                             }
                         } catch(Exception e) {
                             LOGGER.warn("Problem when serializing TEI fragment for figure caption", e);
                         }
                     } else {
-                        desc.appendChild(textNode(clusterContent));
+                        pNote.appendChild(textNode(clusterContent));
                     }
                 }
             } else {
@@ -1130,8 +1138,15 @@ public class TEIFormatter {
                 } else {
                     noteText = noteText.trim();
                 }
-                desc.appendChild(LayoutTokensUtil.normalizeText(noteText));
+                pNote.appendChild(LayoutTokensUtil.normalizeText(noteText));
             }
+
+
+            if (config.isWithSentenceSegmentation()) {
+                segmentIntoSentences(pNote, noteTokens, config, doc.getLanguage());
+            }
+
+            desc.appendChild(pNote);
 
             tei.append("\t\t\t");
             tei.append(desc.toXML());
