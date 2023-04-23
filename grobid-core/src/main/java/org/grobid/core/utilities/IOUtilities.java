@@ -209,16 +209,18 @@ public class IOUtilities {
         long threasholdMillisec =  currentDateMillisec - (maxLifeInSeconds*1000);
         if (dir.isDirectory() && (StringUtils.isEmpty(prefix) || dir.getName().startsWith(prefix))) {
             File[] children = dir.listFiles();
-            for (int i = 0; i < children.length; i++) {
-                if ((StringUtils.isEmpty(prefix) || children[i].getName().startsWith(prefix))) {
-                    long millisec = children[i].lastModified();
-                    if (millisec < threasholdMillisec) {
-                        success = deleteOldies(children[i], maxLifeInSeconds, prefix, false);
-                        if (!success) 
-                            return false;
+            if (children != null) {
+                for (int i = 0; i < children.length; i++) {
+                    if ((StringUtils.isEmpty(prefix) || children[i].getName().startsWith(prefix))) {
+                        long millisec = children[i].lastModified();
+                        if (millisec < threasholdMillisec) {
+                            success = deleteOldies(children[i], maxLifeInSeconds, prefix, false);
+                            if (!success) 
+                                return false;
+                        }
+                        else
+                            empty = false;
                     }
-                    else
-                        empty = false;
                 }
             }
         }

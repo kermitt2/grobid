@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210025"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Waxy allele diversification in foxtail millet<lb/> (Setaria italica) landraces of Taiwan<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shu-meng Kuo 1 , Yu-ru Chen 2 , Song-yu Yin 1 , Qing-xiong Ba 1 , Yuan-ching Tsai 3 , Warren H.<lb/> J. Kuo 1 , Yann-rong LinID 1 *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Agronomy, National Taiwan University,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan,</address>
+
+	<byline>
+	<affiliation>2 Crop Science Division, Taiwan<lb/> Agricultural Research Institute,</affiliation>
+	</byline>
+
+	<address>Taichung, Taiwan,</address>
+
+	<byline>
+	<affiliation>3 Department of Agronomy, National Chiayi University,<lb/></affiliation>
+	</byline>
+
+	<address>Chiayi, Taiwan<lb/></address>
+
+	*
+	<email>ylin@ntu.edu.tw</email>
+
+	Abstract<lb/>
+	<div type="abstract">Foxtail millet (Setaria italica (L.) P. Beauv.), the second most cultivated millet species, is<lb/> well adapted to diverse environments and remains an important cereal food and forage crop<lb/> in arid and semiarid regions worldwide. A symbolic crop for indigenous Austronesian peo-<lb/>ples, foxtail millet has been cultivated in Taiwan for more than 5,000 years, and landraces<lb/> reflect diversifying selection for various food applications. A total of 124 accessions col-<lb/>lected within Taiwan were assessed for Wx genotypes. Four identified Wx alleles, I, III, IV,<lb/> and IX were caused by insertion of various transposable elements (TEs) and resulted in<lb/> endosperm with non-waxy, low amylose content (AC), and waxy, respectively. A total of<lb/> 16.9%, 4.0%, 49.2%, and 29.8% of accessions were classified as type I, III, IV, and IX,<lb/> respectively; approximately half of the accessions belonged to the waxy type, indicating that<lb/> glutinous grains were favored for making traditional food and wine. The TE insertion affected<lb/> splicing efficiency rather than accuracy, leading to significantly reduced expression of wx in<lb/> types III, IV, and IX, although their transcripts were the same as wild-type, type I. Conse-<lb/>quently, the granule-bound starch synthase I (GBSSI) contents of the three mutated geno-<lb/>types were relatively low, leading to waxy or low AC endosperm, and the Wx genotypes<lb/> could explain 78% of variance in AC. The geographic distribution of Wx genotypes are asso-<lb/>ciated with culinary preferences and migration routes of Taiwanese indigenous peoples-in<lb/> particular, the genotype of landraces collected from Orchid Island was distinct from those<lb/> from Taiwan Island. This information on the major gene regulating starch biosynthesis in<lb/> foxtail millet endosperm can be applied to breeding programs for grain quality, and contrib-<lb/>utes to knowledge of Austronesian cultures.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210025 December 31, 2018<lb/></reference>
+
+	<page>1 / 18<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Kuo S-m, Chen Y-r, Yin S-y, Ba Q-x, Tsai<lb/> Y-c, Kuo WHJ, et al. (2018) Waxy allele<lb/> diversification in foxtail millet (Setaria italica)<lb/> landraces of Taiwan. PLoS ONE 13(12): e0210025.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210025<lb/></idno>
+
+	Editor:
+	<editor>Manoj Prasad,</editor>
+
+	<byline>
+	<affiliation>National Institute of Plant<lb/> Genome Research,</affiliation>
+	</byline>
+
+	<address>INDIA<lb/></address>
+
+	<note type="submission">Received: July 17, 2018<lb/> Accepted: December 14, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Kuo et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All relevant data are<lb/> in the paper and its Supporting Information files.<lb/></note>
+
+	Funding:
+	<note type="funding">This work was funded by the Ministry of<lb/> Science and Technology (MOST 104-2313-B-002<lb/> -014 -MY3) of Taiwan (https://www.most.gov.tw/)<lb/> to YL. The funder had no role in study design, data<lb/> collection and analysis, decision to publish, or<lb/> preparation of the manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

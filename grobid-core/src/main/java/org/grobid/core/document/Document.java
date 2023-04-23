@@ -282,7 +282,7 @@ public class Document implements Serializable {
 
         Page p = new Page(1);
         b.setPage(p);
-        b.setText(text);
+        //b.setText(text);
         pages = new ArrayList<>();
         pages.add(p);
         blocks.add(b);
@@ -1127,7 +1127,7 @@ public class Document implements Serializable {
 
                         figures.add(f);
                         Engine.getCntManager().i("FigureCounters", "STANDALONE_FIGURES");
-                        LOGGER.info("Standalone figure on page: " + pageNum);
+                        LOGGER.debug("Standalone figure on page: " + pageNum);
 
                     }
                 }

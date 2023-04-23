@@ -1,0 +1,66 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Anderson MJ, Young ED (2004) Isoflurane/N2O anesthesia sup-<lb/>presses narrowband but not wideband inhibition in dorsal cochlear<lb/> nucleus. Hear Res 188:29 -41. CrossRef<lb/></bibl> 
+        <bibl>Antkowiak B (2001) How do general anaesthetics work? Naturwis-<lb/>senschaften 88:201-213. Medline<lb/> Bolhuis JJ, Okanoya K, Scharff C (2010) Twitter evolution: converg-<lb/>ing mechanisms in birdsong and human speech. Nat Rev Neurosci<lb/> 11:747-759. CrossRef Medline<lb/></bibl> 
+        <bibl>Bremen P, Poganiatz I, Campenhausen M, Wagner H (2007) Sensi-<lb/>tivity to interaural time difference and representation of azimuth in<lb/> central nucleus of inferior colliculus in the barn owl. J Comp<lb/> Physiol A 193:99 -112. CrossRef Medline<lb/></bibl> 
+        <bibl>Burger RE, Lorenz FW (1960) Artificial respiration in birds by unidi-<lb/>rectional air flow. Poultry Sci 39:236 -237. CrossRef<lb/> </bibl>
+        <bibl>Burns P (2014) Isoflurane &amp; sevoflurane: mechanics &amp; effects. Clin<lb/> Brief 23-26. Available at https://www.cliniciansbrief.com/article/<lb/> isoflurane-sevoflurane-mechanics-effects<lb/> </bibl>
+        <bibl>Campagna JA, Miller KW, Forman SA (2003) Mechanisms of actions<lb/> of inhaled anesthetics. N Engl J Med 348:2110 -2124. CrossRef<lb/> Medline<lb/></bibl>
+        <bibl>Cederholm JM, Froud KE, Wong AC, Ko M, Ryan AF, Housley GD<lb/> (2012) Differential actions of isoflurane and ketamine-based an-<lb/>aesthetics on cochlear function in the mouse. Hear Res 292:71-<lb/>79. CrossRef Medline<lb/></bibl> 
+        <bibl>Cheung SW, Nagarajan SS, Bedenbaugh PH, Schreiner CE, Wang X,<lb/> Wong A (2001) Auditory cortical neuron response differences un-<lb/>der isoflurane versus pentobarbital anesthesia. Hear Res 156:115-<lb/>127. CrossRef<lb/> </bibl>
+        <bibl>Cohen YE, Knudsen EI (1995) Binaural tuning of auditory units in the<lb/> forebrain archistriatal gaze fields of the barn owl: local organization<lb/> but no space map. J Neurosci 15:5152-5168. Medline<lb/></bibl> 
+        <bibl>Desmarchelier M, Rondenay Y, Fitzgerald G, Lair S (2007) Monitoring<lb/> of the ventilatory status of anesthetized birds of prey by using<lb/> end-tidal carbon dioxide measured with a microstream capnom-<lb/>eter. J Zoo Wildl Med 38:1-6. CrossRef Medline<lb/></bibl> 
+        <bibl>Dodd F, Capranica RR (1992) A comparison of anesthetic agents and<lb/> their effects on the response properties of the peripheral auditory<lb/> system. Hear Res 62:173-180. CrossRef<lb/> </bibl>
+        <bibl>Drexl M, Henke J, Kössl M (2004) Isoflurane increases amplitude and<lb/> incidence of evoked and spontaneous otoacoustic emissions.<lb/> Hear Res 194:135-142. CrossRef Medline<lb/></bibl> 
+        <bibl>Eatock RA, Lysakowski A (2006) Mammalian vestibular hair cells. In:<lb/> Vertebrate hair cells (Eatock RA, Fay RR, Popper AN, eds), pp<lb/> 348 -442. New York: Springer.<lb/></bibl> 
+        <bibl>Ferber-Viart C, Preckel MP, Dubreuil C, Banssillon V, Duclaux R<lb/> (1998) Effect of anesthesia on transient evoked otoacoustic emis-<lb/>sions in humans: a comparison between propofol and isoflurane.<lb/> Hear Res 121:53-61. Medline<lb/></bibl> 
+        <bibl>Flaherty D (2009) Anaesthetic drugs. In: Anaesthesia for veterinary<lb/> nurses (Welsh L, ed), pp 121-161. Chichester, UK: Wiley-<lb/>Blackwell.<lb/> </bibl>
+        <bibl>Glowatzki E, Grant L, Fuchs P (2008) Hair cell afferent synapses. Curr<lb/> Opin Neurobiol 18:389 -395. CrossRef Medline<lb/></bibl> 
+        <bibl>Gungor G, Bozkurt-Sutas P, Gedik O, Atas A, Babazade R, Yilmaz M<lb/> (2015) Effects of sevoflurane and desflurane on otoacoustic emis-<lb/>sions in humans. Eur Arch Otorhinolaryngol 272:2193-2199.<lb/> CrossRef Medline<lb/></bibl> 
+        <bibl>Gunkel C, Lafortune M (2005) Current techniques in avian anesthe-<lb/>sia. Semin Avian Exotic Pet Med 14:263-276. CrossRef<lb/></bibl> 
+        <bibl>Ishizawa Y (2007) Mechanisms of anesthetic actions and the brain. J<lb/> Anesth 21:187-199. CrossRef Medline<lb/></bibl> 
+        <bibl>Jaensch S, Cullen L, Raidal SR (2001a) Normobaric hyperoxic stress<lb/> in budgerigars: enzymic antioxidants and lipid peroxidation. Comp<lb/> Biochem Physiol C Toxicol Pharmacol 128:173-180. CrossRef<lb/></bibl> 
+        <bibl>Jaensch S, Cullen L, Morton L, Raidal SR (2001b) Normobaric hy-<lb/>peroxic stress in budgerigars: non-enzymic antioxidants. Comp<lb/> Biochem Physiol C Toxicol Pharmacol 128:181-187. CrossRef<lb/> </bibl>
+        <bibl>Katz E, Elgoyhen AB, Fuchs PA (2011) Cholinergic inhibition of hair<lb/> cells. In: Auditory and vestibular efferents (Ryugo D, Fay RR,<lb/> Popper AN, eds), pp 103-133. New York: Springer.<lb/> </bibl>
+        <bibl>Keegan RD (2005) Inhalant anesthetics: the basics. In: Recent ad-<lb/>vances in veterinary anesthesia and analgesia: companion animals<lb/> (Gleed RD, Ludders JW, eds). Ithaca, NY: International Veterinary<lb/> Information Service.<lb/> </bibl>
+        <bibl>Keller CH, Takahashi TT (2005) Localization and identification of<lb/> concurrent sounds in the owl&apos;s auditory space map. J Neurosci<lb/> 25:10446 -10461. CrossRef Medline<lb/></bibl> 
+        <bibl>Kettembeil S, Manley GA, Siegl E (1995) Distortion-product otoa-<lb/>coustic emissions and their anaesthesia sensitivity in the European<lb/> Starling and the chicken. Hear Res 86:47-62. Medline<lb/></bibl> 
+        <bibl>Köppl C (1997) Frequency tuning and spontaneous activity in the<lb/> auditory nerve and cochlear nucleus magnocellularis of the barn<lb/> owl, Tyto alba. J Neurophysiol 77:364 -377. CrossRef<lb/></bibl> 
+        <bibl>Köppl C (2011) Evolution of the octavolateral efferent system. In:<lb/> Auditory and vestibular efferents (Ryugo D, Fay RR, Popper AN,<lb/> eds), pp 217-259. New York: Springer.<lb/> </bibl>
+        <bibl>Köppl C, Gleich O (2007) Evoked cochlear potentials in the barn owl.<lb/> J Comp Physiol A Neuroethol Sens Neural Behav Physiol 193:601-<lb/>612. CrossRef<lb/> </bibl>
+        <bibl>Köppl C, Nickel R (2007) Prolonged maturation of cochlear function<lb/> in the barn owl after hatching. J Comp Physiol A Neuroethol Sens<lb/> Neural Behav Physiol 193:613-624. CrossRef<lb/></bibl> 
+        <bibl>Köppl C, Futterer E, Nieder B, Sistermann R, Wagner H (2005)<lb/> Embryonic and posthatching development of the barn owl (Tyto<lb/> alba): reference data for age determination. Dev Dyn 233:1248 -<lb/>1260. CrossRef Medline<lb/></bibl> 
+        <bibl>Korbel R (1998) Vergleichende Untersuchungen zur Inhalationsanäs-<lb/>thesie mit Isofluran (Forene) und Sevofluran (SEVOrane) bei<lb/> Haustauben (Columba livia Gmel., 1789, var. domestica) und Vor-<lb/>stellung eines Referenz-Narkoseprotokolls für Vögel. Tierärztliche<lb/> Praxis 26:211-223.<lb/> </bibl>
+        <bibl>Larsen ON, Christensen-Dalsgaard J, Jensen KK (2016) Role of<lb/> intracranial cavities in avian directional hearing. Biol Cybern 110:<lb/> 319 -331. CrossRef Medline<lb/></bibl> 
+        <bibl>Lierz M, Korbel R (2012) Anesthesia and analgesia in birds. J Exotic<lb/> Pet Med 21:44 -58. CrossRef<lb/></bibl> 
+        <bibl>Lukasik VM, Gillies RJ (2003) Animal anaesthesia for in vivo magnetic<lb/> resonance. NMR Biomed 16:459 -467. CrossRef Medline<lb/></bibl> 
+        <bibl>Michelson NJ, Kozai TDY (2018) Isoflurane and ketamine differen-<lb/>tially influence spontaneous and evoked laminar electrophysiology<lb/> in mouse V1. J Neurophyiol. Advance online publication. Retrieved<lb/> October 27, 2018. doi:10.1152/jn.00299.2018.<lb/> </bibl>
+        <bibl>Noda T, Takahashi H (2015) Anesthetic effects of isoflurane on the<lb/> tonotopic map and neuronal population activity in the rat auditory<lb/> cortex. Eur J Neurosci 42:2298 -2311. CrossRef Medline<lb/></bibl> 
+        <bibl>O&apos;Keeffe NJ, Healy TEJ (1999) The role of new anesthetic agents.<lb/> Pharmacol Ther 84:233-248. Medline<lb/> </bibl>
+        <bibl>Powell FL (2015) Respiration. In: Sturkie&apos;s avian physiology, Vol6<lb/> (Scanes CG, ed), pp 301-336. Amsterdam: Elsevier.<lb/> </bibl>
+        <bibl>Preckel B, Bolten J (2005) Pharmacology of modern volatile anaes-<lb/>thetics. Best Pract Res Clin Anaesthesiol 19:331-348. Medline<lb/></bibl> 
+        <bibl>Raftery A (2013) Avian anaesthesia. In Pract 35:272-278. CrossRef<lb/></bibl> 
+        <bibl>Ropposch T, Walch C, Avian A, Mausser G, Spary M (2014) Effects<lb/> of the depth of anesthesia on distortion product otoacoustic emis-<lb/>sions. Eur Arch Otorhinolaryngol 271:2897-2904. CrossRef Med-<lb/>line<lb/></bibl> 
+        <bibl>Rudolph U, Antkowiak B (2004) Molecular and neuronal substrates<lb/> for general anaesthetics. Nat Rev Neurosci 5:709 -720. CrossRef<lb/> Medline<lb/></bibl> 
+        <bibl>Ruebhausen MR, Brozoski TJ, Bauer CA (2012) A comparison of the<lb/> effects of isoflurane and ketamine anesthesia on auditory brains-<lb/>tem response (ABR) thresholds in rats. Hear Res 287:25-29.<lb/> CrossRef Medline<lb/></bibl> 
+        <bibl>Ruel J, Wang J, Rebillard G, Eybalin M, Lloyd R, Pujol R, Puel JL<lb/> (2007) Physiology, pharmacology and plasticity at the inner hair<lb/> cell synaptic complex. Hear Res 227:19 -27. CrossRef Medline<lb/></bibl> 
+        <bibl>Schwartzkopff J, Brémond JC (1963) Méthode de dérivation des<lb/> potentiels cochléaires chez lЈoiseau. J Physiol Paris 55:495-518.<lb/> </bibl>
+        <bibl>Shawyer CR (1998) The barn owl. Chelmsford, UK: Arlequin.<lb/> </bibl>
+        <bibl>Sloan T, Sloan H, Rogers J (2010) Nitrous oxide and isoflurane are<lb/> synergistic with respect to amplitude and latency effects on sen-<lb/>sory evoked potentials. J Clin Monit Comput 24:113-123. Cross-<lb/>Ref Medline<lb/> </bibl>
+        <bibl>Smith DI, Mills JH (1989) Anesthesia effects: auditory brain-stem<lb/> response. Electroencephal Clin Neurophysiol 72:422-428. Medline<lb/></bibl> 
+        <bibl>Smith PH, Spirou GA (2002) From the cochlea to the cortex and<lb/> back. In: Integrative functions in the mammalian auditory pathway<lb/> (Oertel D, Fay RR, Popper AN, eds), pp 6 -71. New York: Springer<lb/> Verlag.<lb/> </bibl>
+        <bibl>Sonner JM, Antognini JF, Dutton RC, Flood P, Gray AT, Harris RA,<lb/> Homanics GE, Kendig J, Orser B, Raines DE, Trudell J, Vissel B,<lb/> Eger EI (2003) Inhaled anesthetics and immobility: mechanisms,<lb/> mysteries, and minimum alveolar anesthetic concentration. Anesth<lb/> Analg 97:718 -740. Medline<lb/></bibl> 
+        <bibl>Stronks HC, Aarts MCJ, Klis SFL (2010) Effects of isoflurane on<lb/> auditory evoked potentials in the cochlea and brainstem of guinea<lb/> pigs. Hear Res 260:20 -29. CrossRef Medline<lb/></bibl> 
+        <bibl>Vahle-Hinz C, Detsch O (2002) What can in vivo electrophysiology in<lb/> animal models tell us about mechanisms of anaesthesia? Br J<lb/> Anaesth 89:123-142. Medline<lb/> </bibl>
+        <bibl>Varner J, Clifton KR, Broderson R, Wyatt RD (2004) Lack of efficacy<lb/> of injectable ketamine with xylazine or diazepam for anesthesia in<lb/> chickens. Lab Anim 33:36 -39. CrossRef Medline<lb/></bibl> 
+        <bibl>Windels F (2006) Neuronal activity: from in vitro preparation to be-<lb/>having animals. Mol Neurobiol 34:1-25. Medline</bibl>
+        </listBibl>
+    </text>
+</tei>
+

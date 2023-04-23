@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210024"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	
+	<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Incidence and contributing factors of glucose<lb/> intolerance in Saudi postpartum women: Sub-<lb/>group analysis from RAHMA study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Hayfaa Wahabi 1 , Amel Fayed ID<lb/> 2,3<lb/> *, Safaa M. S. Tunkar 4 , Hanadi Bakhsh 2 , Ali M. Al-<lb/>Hazmi 4,5 , Samia Esmaeil 1 , Amna R. Siddiqui 4,6<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Chair of Evidence-Based Healthcare and Knowledge Translation, College of Medicine, King Saud<lb/> University,</affiliation>
+	</byline>
+
+	<address>Riyadh, Saudi Arabia,</address>
+
+	<byline>
+	<affiliation>2 Clinical Department, College of Medicine, Princess Nourah Bint<lb/> Abdulrahman University,</affiliation>
+	</byline>
+
+	<address>Riyadh, Saudi Arabia,</address>
+
+	<byline>
+	<affiliation>3 Department of Biostatistics, High Institute of Public Health,<lb/> Alexandria University,</affiliation>
+	</byline>
+
+	<address>Alexandria, Egypt,</address>
+
+	<byline>
+	<affiliation>4 Department of Family and Community Medicine, College of<lb/> Medicine, King Saud University,</affiliation>
+	</byline>
+
+	<address>Riyadh, Saudi Arabia,</address>
+
+	<byline>
+	<affiliation>5 Prince Sattam Bin Abdul Aziz Research Chair for<lb/> Epidemiology and Public Health, College of Medicine, King Saud University,</affiliation>
+	</byline>
+
+	<address>Riyadh, Saudi Arabia,<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Community Health Sciences, Aga Khan University,</affiliation>
+	</byline>
+
+	<address>Karachi, Pakistan<lb/></address>
+
+	*
+	<email>fayedam_200@hotmail.com</email>
+
+	Abstract
+	<div type="abstract">Objectives<lb/>The objectives of this study were to determine incidence and risk factors of glucose intoler-<lb/>ance one year after delivery in a sub-cohort of Riyadh Mother and Baby Cohort Study<lb/> (RAHMA) study. Methods<lb/> This is a follow-up study of a sub-cohort from RAHMA study from King Khalid University<lb/> Hospital (KKUH). All women from RAHMA database who completed one year since delivery<lb/> at KKUH were contacted by phone to participate in the study. Previously collected data from<lb/> RAHMA registry for each participant were linked to this study data. Clinical data measured<lb/> for each participant included current weight and height to calculate the BMI and waist cir-<lb/>cumference. Blood tests done for each participant were fasting blood glucose (FPG) and<lb/> HbA1c. Based on the blood tests results, participants were classified into three groups; dia-<lb/>betic, pre-diabetic and normal. The incidence of diabetes and prediabetes was calculated<lb/> for the whole cohort. Clinical, biochemical, and sociodemographic predictors of glucose<lb/> intolerance were compared between the three groups. Risk factors with P-value less than<lb/> 0.05 were tested in multivariate regression model with bootstrapping to calculate the relative<lb/> risk (RR) and its 95% Bias corrected Confidence Interval (C.I.) Results<lb/> From the sub-cohort, 407 women fulfilled the inclusion criteria and agreed to participate in<lb/> the study. From the study participants; 250 (61.4%) women were normoglycemic, 142<lb/> (35%) women had prediabetes and 15 (3.6%) women were diabetic. Following multivariable<lb/> regression analysis only history of gestational diabetes mellitus (GDM), (RR 1.74, 95% CI<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210024 January 7, 2019<lb/></reference>
+
+	<page>1 / 13<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Wahabi H, Fayed A, Tunkar SMS, Bakhsh<lb/> H, Al-Hazmi AM, Esmaeil S, et al. (2019) Incidence<lb/> and contributing factors of glucose intolerance in<lb/> Saudi postpartum women: Sub-group analysis<lb/> from RAHMA study. PLoS ONE 14(1): e0210024.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210024<lb/></idno>
+
+	Editor:
+	<editor>Rhonda D. Szczesniak,</editor>
+
+	<byline>
+	<affiliation>Cincinnati Children&apos;s<lb/> Hospital Medical Center,</affiliation>
+	</byline>
+
+	<address>UNITED STATES<lb/></address>
+
+	<note type="submission">Received: July 18, 2018<lb/> Accepted: December 14, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Wahabi et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">Most of the data <lb/>needed is included in the published article. <lb/>However, more data are available from the King <lb/>Saud University Ethics Committee for researchers <lb/>who meet the criteria for access to confidential <lb/>data. The ethics committee contact details for data <lb/>requests are: irb@ksu.edu.sa. This contact point is <lb/>completely independent of all researchers. <lb/></note>
+
+	Funding:
+	<note type="funding">This study is funded by The Deanship of<lb/> Scientific Research at Princess Nourah Bint<lb/> Abdulrahman University (Grant number 225-X-38).<lb/></note>
+
+	<div type="abstract">(1.06 to 2.84), P = 0.01), obesity (RR 1.69, 95% CI (1.01-3.11), P = 0.04) and diastolic<lb/> blood pressure, (RR 1.04, 95% CI (1.01-1.09), P = 0.03) remained as predictors of postpar-<lb/>tum glucose intolerance. Conclusion<lb/> The incidence of postpartum glucose intolerance (diabetes and prediabetes) is very high in<lb/> Saudi women. Both GDM and obesity are strong predictors of glucose intolerance.<lb/> The funders had no role in study design, data<lb/> collection, data analysis, decision to publish or<lb/> preparation of the manuscript.<lb/></div>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

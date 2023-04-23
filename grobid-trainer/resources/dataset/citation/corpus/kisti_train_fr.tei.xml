@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  missmatch -->
+<bibl xml:id="_E1WEAQ_2003_v4n2_99_006" lang="fr"><author>Tauguy, J. M., Dhatt, G., Frenette, M., and Monadier, P</author>. (<date>1989</date>). '<title level="a">Modelisation of solid bed-load transport with the finite element method</title>.' <title level="j">La Houille Blanche</title>, <pubPlace>Paris, France</pubPlace>, Vol. <biblScope unit="volume">3-4</biblScope>, pp. <biblScope unit="page">263-267</biblScope> (<note>in French</note>).</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_KHGGB3_2003_v12n9_987_009" lang="ja"><author>岡本眞一, 鹽澤淸茂</author>, <date>1977</date>, <title level="a">交叉點附近の一酸化炭素を對象とした大氣汚染 モデルに關する研究</title>, <title level="j">大氣汚染研究</title>, <biblScope unit="volume">12</biblScope>, <biblScope unit="page">189-206</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_HBOGB3_2005_v38n2s247_91_001" lang="fr"><author>Metras H</author>. <title level="a">Note preliminare sur la greffe totale du poumon chez le chien</title>. <title level="j">CR Acad Sci</title> (<pubPlace>Paris</pubPlace>) <date>1950</date>;<biblScope unit="volume">231</biblScope>:<biblScope unit="page">1176-7</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_DBSHCJ_2008_v23n2_201_009" lang="fr"><author>L. Schwartz</author> <title level="a">Sur l'impossibilite de la multiplication des distributions</title>, <title level="j">C. R. Acad. Sci.</title> <pubPlace>Paris</pubPlace> <biblScope unit="volume">239</biblScope> (<date>1954</date>), <biblScope unit="page">847-848</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DMBRBT_2009_v25n3_301_004" lang="fr"><author>Dragesco, J.</author>, <date>1970</date>. <title level="a">Cilis libres du Cameroun</title>. <title level="j">Num. Ann. Fac. Sci. Univ. fed. Cameroun)</title>, (<note>Numero hors-Serie</note>: <biblScope unit="page">1-141</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_DMJGDA_2009_v51n1_1_004" lang="it"><author>Bonferroni, C</author>. <date>1936</date>. <title level="a">Teoria statistica delle classi e calcolo delle probabilit?</title> <title level="j">Pubblicazioni del R Istituto Superiore di Scienze Economiche e Commerciali di Firenze</title> <biblScope unit="volume">8</biblScope>:<biblScope unit="page">3-62</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_JORHBK_2010_v25n1_17_005" lang="fr"><author>De Casabianca, M. L.</author> <date>1989</date>. <title level="a">Degradation of Ulva (Ulva rotundata, Prevost Lagoon, France)</title>. <title level="j">C. R. Acad. Sci.</title> <pubPlace>Paris</pubPlace> <biblScope unit="volume">308</biblScope>:<biblScope unit="page">155-160</biblScope>.</bibl>
+<!---  journal  orgName  missmatch -->
+<bibl xml:id="_GCGHDE_2011_v24n5_809_021" lang="fr"><author>Sklar, A.</author> (<date>1959</date>). <title level="a">Fonctions de repartition a n dimensions et leurs marges</title>, <title level="j">l'Institut de Statistique de L'Universite de Paris</title>, <biblScope unit="volume">8</biblScope>, <biblScope unit="page">229-231</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_GPRHBAA_2013_v29n4_381_013" lang="fr"><author>Rochebrune, A.T. de</author>. (<date>1884</date>) <title level="a">Etude monographique sur la famille des Loligopsidae</title>. <title level="j">Bulletin de la Societe Philomathique de Paris, (series 7)</title> <biblScope unit="volume">8</biblScope>: <biblScope unit="page">7-28</biblScope>.</bibl>
+<!---  title  page  issue  missmatch -->
+<bibl xml:id="_DHGCFS_2014_v16n4_193_028" lang="fr"><author>Westphal. N</author>. (<date>2006</date>) '<title level="a">La place du temple dans un modele de ville protestante : les propositions de Jaques Perret dans son traite Des fortifications et artifices (1601)</title>', <title level="j">Bulletin de la Societe de l'Histoire du Protestantisme en France</title>, No. <biblScope unit="issue">152</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_TMHHC2_2014_v34n3_813_001" lang="fr"><author>Boussinesq, J</author>. (<date>1877</date>). '<title level="a">Essai sur la theorie des eaux courantes</title>.' <title level="j">Memoires presentes par divers savants a l'Academie des Sciences</title>, Vol. <biblScope unit="volume">23</biblScope>, No. <biblScope unit="issue">1</biblScope>, pp. <biblScope unit="page">1-680</biblScope>.</bibl>
+<!---  title  journal  publisher  missmatch -->
+<bibl xml:id="_E1MCA9_2014_v32n5_6_827_013" lang="fr"><author>A. Kauffman</author>, <title level="m">Introduction a la Theorie des Sous-emsembles Flous</title>, <publisher>Masson et Cie</publisher>, Vol.<biblScope unit="volume">1</biblScope>, <date>1973</date>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_DMBRBT_2014_v30n4_327_001" lang="fr"><author>Aubert JF</author>, <date>1964</date>. <title level="a">Les Ichneumonides du rivage mediterraneen francais (Hym.). 7e serie: Ichneumoninae, Cryptinae, Ophioninae et Mesochorinae de l'Herault et des Bouches-du-Rhone</title>. <title level="j">Bulletin de la Societe Entomologique de France</title>, <biblScope unit="volume">69</biblScope>: <biblScope unit="page">144-164</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_DMBRBT_2014_v30n4_319_017" lang="fr"><author>Nobili G</author>, <date>1905</date>. <title level="a">Decapodes nouveaux des Cotes d'Arabie et du Golfe Persique (diagnoses preliminaires)</title>. <title level="j">Bulletin du Museum National d'Histoire Naturelle</title>, <pubPlace>Paris</pubPlace>, <biblScope unit="volume">11</biblScope>:<biblScope unit="page">158-164</biblScope>.</bibl>
+<!---  journal  volume  issue  pubPlace  missmatch -->
+<bibl xml:id="_OOGCBV_2014_v53n1_51_011" lang="fr"><author>De Maesener, J., D'Herde, C.J</author>., <date>1963</date>. <title level="a">Methodes utilisEes pour l'etude de anguillules libres du sol</title>. <title level="j">Revue Agricultural</title>, <pubPlace>Bruxelle</pubPlace>, <biblScope unit="volume">16</biblScope>, <biblScope unit="page">441-447</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2014_v14n1_266_006" lang="fr"><author>Catherine Meyor</author>, '<title level="a">Le sens et la valeur de l'approche phenomenologique</title>,' <title level="j">Recherches Qualtatives</title>, <note>Hors Serie</note>, No.<biblScope unit="volume">4</biblScope>, p.<biblScope unit="page">114</biblScope>, <date>2007</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1MCA9_2015_v33n1_2_157_013" lang="fr"><author>H. Idrissi, O. Lefebvre and C. Michelot</author>, <title level="a">A primal-dual algorithm for a constrained Fermat-Weber problem involving mixed norms</title>, <title level="j">Revue francaise d'automatique, d'informatique et de recherche operationnelle. Recherche Operationnelle</title>, <biblScope unit="volume">22</biblScope> (<date>1988</date>), <biblScope unit="page">313-330</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_DMBRBT_2015_v31n2_67_006" lang="fr"><author>Constantineanu MI</author>, <date>1954</date>. [<title level="a">Contributions a la faune ichneumonologique de la Republique Populaire Roumaine, la sous-famille des Ichneumoninae des environs des localites: Moldovita-Frestrau et Vama, region de Suceava</title>.] <title level="j">Academia Republicii Populare Romine Filiala Iasi. Studii si Cercetari Stiintifice</title>, <biblScope unit="volume">5</biblScope>:<biblScope unit="page">377-435</biblScope> (<note>in Rumanian with French summary</note>).</bibl>
+<!---  title  journal  volume  pubPlace  missmatch -->
+<bibl xml:id="_DMBRBT_2015_v31n2_86_019" lang="fr"><author>Milne Edwards H, Haime J</author>, <date>1850</date>. <title level="a">Recherches sur les polypiers. Quatrieme memoire. Monographie des astreides (1). Suite. Quatrieme section. Astreens agglomeres. Astreinae aggregatae.</title>, <title level="j">Annales des Sciences Naturelles, Serie 3 Zoologie</title>, <biblScope unit="volume">12</biblScope>:<biblScope unit="page">95-197</biblScope> (<note>in French</note>).</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_DMBRBT_2015_v31n2_107_015" lang="fr"><author>Milne Edwards H</author>, <date>1836</date>. <title level="a">Observations zoologiques sur les Pagures et description d'un nouveau genre de la tribu des Paguriens</title>. <title level="j">Annales des Sciences Naturelle Zoologie</title>, <pubPlace>Paris</pubPlace>, <biblScope unit="volume">6</biblScope>:<biblScope unit="page">257-288</biblScope>.</bibl>
+<!---  volume  page  missmatch -->
+<bibl xml:id="_JOHGB2_2015_v48n6_501_022" lang="fr"><author>Maury, R</author>. (<date>1971</date>) <title level="a">Application de la spectrometrie infrarouge a l'etude des bois fossilises dans les formations volcaniques</title>. <title level="j">Bulletin de la Societe Geologique de France</title>, v.<biblScope unit="volume">5-6</biblScope>, p.<biblScope unit="page">532-538</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_NOGGB5_2015_v40n4_373_108" lang="fr"><author>Payen, A</author>. <date>1838</date>. <title level="a">Memoire sur la composition du tissu propre des plantes et du ligneux</title>. <title level="j">Comptes rendus de l'Academie des Sciences</title> <biblScope unit="volume">7</biblScope>:<biblScope unit="page">1052-1056</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_GCSHBA_2015_v32n3_52_007" lang="fr"><author>G. Lippmann</author>, '<title level="a">Epreuves reversibles donnant la sensation du relief</title>,' <title level="j">J. Phys.</title> (<pubPlace>Paris</pubPlace>) vol. <biblScope unit="volume">7</biblScope>, pp. <biblScope unit="page">821-825</biblScope>, <date>1908</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HROSBE_2015_v41n2_102_021" lang="fr"><author>Bourdouxhe M, Gratton L</author>. <title level="a">Transfert et utilisation des resultats en milieu de travail : le cas de la recherche sur les eboueurs au Quebec</title>, <title level="j">Perspectives interdisciplinaires sur le travail et la sante</title>. <date>2003</date>; <biblScope unit="volume">5</biblScope>(<biblScope unit="issue">1</biblScope>): <biblScope unit="page">315-321</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HGCDCF_2015_v18n2_139_003" lang="fr"><author>A. Prud' Homme</author> (<date>1970</date>) <title level="a">La voie</title>, <title level="j">Rev. Generale Chemins Fer</title>, pp. <biblScope unit="page">56-72</biblScope>.</bibl>
+<!---  title  journal  pubPlace  missmatch -->
+<bibl xml:id="_JOKHB9_2015_v8n4_298_006" lang="fr"><author>Lesne P</author>. <date>1902</date>. <title level="a">Synopsis des Bostrychides palearctiques</title>. <title level="j">L'Abeille, Journal d'Entomologie</title>, <pubPlace>Paris</pubPlace> <biblScope unit="volume">30</biblScope>:<biblScope unit="page">105-136</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_JOKHB9_2015_v8n4_287_027" lang="fr"><author>Lesse H de</author>. <date>1952</date>. <title level="a">Note sur les genres Precis Hb. et Junonia Hb. (Lep. Nymphalidae)</title>. <title level="j">Bulletin de la Societe Entomologique du Nord de la France</title> <biblScope unit="volume">57</biblScope>:<biblScope unit="page">74-77</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_JSRCB3_2015_v20n2_73_008" lang="fr"><date>1954</date>, <author>Werle, H</author>., '<title level="a">Quelques resultats experimentaux sur les ailes en fleche, aux faibles vitesses, obtenus en tunnel hydrodynamique</title>,' <title level="j">La Recherche Aeronautique</title>, (<biblScope unit="volume">41</biblScope>)<biblScope unit="page">15-21</biblScope>.</bibl>
+<!---  author  date  missmatch -->
+<bibl xml:id="_JSRCB3_2015_v20n4_7_001" lang="fr"><date>1933</date>, <author>Ranque, M.G.</author>, '<title level="a">Experiences sur la detente giratoire avec simultanes d'um echappement d'air chaud et d'un enchappement d'air froid</title>,' <title level="j">J. Phys. Radium</title>, Vol.<biblScope unit="volume">7</biblScope>, No.<biblScope unit="issue">4</biblScope>, pp.<biblScope unit="page">112-114</biblScope>.</bibl>
+<!---  journal  orgName  missmatch -->
+<bibl xml:id="_DJGHBY_2016_v27n3_689_017" lang="fr"><author>Sklar, A.</author> (<date>1959</date>). <title level="a">Fonctions de repartition an dimensions et leurs marges</title>. <title level="j">Publications de L'Institute de Statistique de L'Universite de Paris</title>, <biblScope unit="volume">8</biblScope>, <biblScope unit="page">229-231</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_SMBHBD_2016_v46n2_163_022" lang="fr"><author>Markgraf, F.</author> <date>1930</date>. <title level="a">Diagnoses de Gnetum nouveaux d'Indo-Chine</title>. <title level="j">Bulletin du Museum National d'Histoire Naturelle Ser. 2</title>, <biblScope unit="volume">1</biblScope>: <biblScope unit="page">686-687</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_SMBHBD_2016_v46n2_187_008" lang="fr"><author>Briquet, J</author>. <date>1916</date>. <title level="a">Etudes carpologiques sur les genres de Composees Anthemis, Ormenis et Santolina suivies de quelques conclusions anatomiques et physiologiques d'interet general</title>. <title level="j">Annuaire du Conservatoire et du Jardin Botaniques de Geneve</title> <biblScope unit="volume">18-19</biblScope> (<biblScope unit="issue">IX</biblScope>): <biblScope unit="page">257-313</biblScope>.</bibl>
+<!---  doi  missmatch -->
+<bibl xml:id="_SMBHBD_2016_v46n2_129_048" lang="fr"><author>Danton, P., C. Perrier and G. Martinez de Reyes</author>. <date>2006</date>. <title level="a">Nouveau catalogue de la flore vasculaire de l'archipel Juan Fernandez (Chili) Nuevo catalogo de la flora vascular del Archipielago Juan Fernandez (Chile)</title>. <title level="j">Acta Botanica Gallica</title>, <biblScope unit="volume">153</biblScope>: <biblScope unit="issue">4</biblScope>, <biblScope unit="page">399-587</biblScope>, DOI: <idno type="DOI">10.1080/12538078.2006.10515559</idno>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_SMBHBD_2016_v46n4_420_013" lang="fr"><author>Palibin, J. W</author>. <date>1906</date>. <title level="a">Quelques especes nouvelles de la flore chinoise</title>. <title level="j">Bulletin de l'Herbier Boissier, Serie 2</title> <biblScope unit="volume">6</biblScope>: <biblScope unit="page">18-22</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JGSTB5_2016_v21n6_22_030" lang="fr"><author>Turc, L.</author>, <date>1961</date>, <title level="a">Evaluation des besoins en eau d'irrigation, evapotranspiration potentielle, formule climatique simlifee et mise a jour</title> (<note>In French; original unseen</note>): <title level="j">Annales Agronomiques</title>, <biblScope unit="volume">12</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">13-49</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_E1BGBB_2017_v33n3_317_003" lang="fr"><author>A. Hurwitz</author>, <title level="a">Sur un theoreme de M. Hadamard</title>, <title level="j">C. R. Acad. Sci. Paris Ser. I Math</title>. <biblScope unit="volume">128</biblScope> (<date>1899</date>), <biblScope unit="page">350-353</biblScope>.</bibl>
+<!---  journal  pubPlace  missmatch -->
+<bibl xml:id="_GHOHBG_2017_v22n4_172_003" lang="fr"><author>Bologa, A.S., N. Bodeanu, A. Petran, A. Tiganus and Y. Zaitsev</author>, <date>1995</date>. <title level="a">Major modifications of the Black Sea benthic and planktonic biota in the last three decades</title>. <title level="j">Bulletin de l'Intstitut Oceanographique</title>, <pubPlace>Monaco</pubPlace>, <biblScope unit="volume">15</biblScope>: <biblScope unit="page">85-10</biblScope>.</bibl>
+<!---  page  issue  missmatch -->
+<bibl xml:id="_E1MEAX_2017_v31n5_2559_042" lang="fr"><author>J. C. Leuliet. J. F. Mangonnat and M. Lalande</author>, <title level="a">Etude de la perte de charge dans des echangeurs de chaleur a plaques traitant des produits non-Newtoniens</title>, <title level="j">Revue Generale de Thermique</title>, <biblScope unit="volume">26</biblScope> (<biblScope unit="issue">308-309</biblScope>) (<date>1987</date>) <biblScope unit="page">445-450</biblScope> (<note>in French</note>).</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_JOKHB9_2017_v10n4_509_056" lang="fr"><author>Pic M</author>. <date>1927</date>. <title level="a">Notes diverse, description et diagnoses (Suit.)</title>. <title level="j">L'Echange, Revue Linneene</title> <biblScope unit="volume">43</biblScope> (<biblScope unit="issue">429</biblScope>):<biblScope unit="page">9-11</biblScope>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_JOKHB9_2017_v10n4_539_017" lang="fr"><author>Pace R</author>. <date>2009a</date>. <title level="a">Aleocharinae du Gabon recoltees par Dr. H. Coiffait (Coleoptera, Staphylinidae). [Aleocharinae of Gabon collected by Dr. H. Coiffait (Coleoptera: Staphylinidae).]</title>. <title level="j">Bulletin de l'Institut Royal des Sciences Naturelles de Belgique, Entomologie</title> <biblScope unit="volume">79</biblScope>:<biblScope unit="page">89-131</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_HGSPB1_2018_v31n2_220_007" lang="fr"><author>Fremy E</author>. <date>1842</date>. <title level="a">Memoire sur les produits de la saponification de l'huile de palme</title>. <title level="j">J Pharmacie et de Chimie</title> <biblScope unit="volume">XII</biblScope>:<biblScope unit="page">757</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_MSMHBQ_2018_v54n4_477_002" lang="fr"><author>Beijerinck MW</author>. <date>1901</date>. <title level="a">Sur les ferments lactiques de l'industrie</title>. <title level="j">Arch. Ne'er. Sci. Exactes Natur. (Section 2)</title> <biblScope unit="volume">6</biblScope>, <biblScope unit="page">212-243</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HGSMBT_2018_v36n3_308_003" lang="fr"><author>Ardre F</author>. <date>1970</date>. <title level="a">Contribution a l'etude des algues marines du Portugal. I. La flore</title>. <title level="j">Port. Acta Biol. B</title> <biblScope unit="volume">10</biblScope>:<biblScope unit="page">137-555</biblScope>.</bibl>
+<!---  journal  volume  page  missmatch -->
+<bibl xml:id="_GJMJBK_2018_v22n5_13_006" lang="fr"><author>Boussinesq J.V.</author>(<date>1879</date>), '<title level="a">Complements a une Etude sur la Theorie de l'Equilibre et du Mouvement des Solides Elastiques dont Certaines Dimensions sont Tres Petites par Rapport a l'Autre</title>,'<title level="j">Journal de Mathematiques</title>, T. <biblScope unit="volume">5</biblScope>, <pubPlace>Paris</pubPlace>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JOKHB9_2018_v11n1_87_036" lang="fr"><author>Ghesquiere J</author>. <date>1946</date>. <title level="a">Contribution a l'etude de microhymenopteres du Congo Belge. X. Nouvelles denominations pour quelques genres de Chalcidoidea et Mymaroidea. XI. Encore les gn. Chalcis, Smiera, et Brachymeria Hym. Chalcidoidea</title>. <title level="j">Revue de Zoologie et de Botanique Africaines</title> <biblScope unit="volume">39</biblScope>:<biblScope unit="page">370</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_MHONBU_2018_s52_133_017" lang="fr"><author>Formaggio, Dino</author>, '<title level="a">Mikel Dufrenne, la Nature et le sens du poetique</title>', in <title level="j">Revue d'esthetique</title>, N, <biblScope unit="volume">21</biblScope>, <date>1992</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_SRGHBV_2020_v36n4_259_006" lang="fr"><author>Dumant MJ</author>. <date>1979</date>. [<title level="a">Implantation de taillis de peupliers echelonnes au cours de la saison froide</title>]. <title level="j">Ann Rech Sylvic</title> Tome (<biblScope unit="volume">1</biblScope>): <biblScope unit="page">253-263</biblScope>. <note>French</note>.</bibl>
+<!---  journal  issue  missmatch -->
+<bibl xml:id="_DBSHBB_2020_v57n4_873_001" lang="fr"><author>H. Akbar-Zadeh</author>, <title level="a">Sur les espaces de Finsler a courbures sectionnelles constantes</title>, <title level="j">Acad. Roy. Belg. Bull. Cl. Sci. (5)</title> <biblScope unit="volume">74</biblScope> (<date>1988</date>), no. <biblScope unit="issue">10</biblScope>, <biblScope unit="page">281-322</biblScope>.</bibl>
+            </listBibl>
+        </back>
+    </text>
+</TEI>

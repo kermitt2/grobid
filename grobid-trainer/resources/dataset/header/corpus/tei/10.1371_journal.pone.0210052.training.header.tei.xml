@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210052"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Hybrid control algorithm for flexible needle<lb/> steering: Demonstration in phantom and<lb/> human cadaver<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Navid Shahriari ID<lb/> 1,2<lb/> *, Janniko R. Georgiadis 3 , Matthijs Oudkerk 1 , Sarthak Misra 1,2,4<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Groningen, University Medical Center Groningen, Center for Medical Imaging-North East<lb/> Netherlands,</affiliation>
+	</byline>
+
+	<address>Groningen, The Netherlands,</address>
+
+	<byline>
+	<affiliation>2 Surgical Robotics Laboratory, Department of Biomechanical<lb/> Engineering, University of Twente,</affiliation>
+	</byline>
+
+	<address>Enschede, The Netherlands,</address>
+
+	<byline>
+	<affiliation>3 Department of Neuroscience, University of<lb/> Groningen, University Medical Center Groningen,</affiliation>
+	</byline>
+
+	<address>Groningen, The Netherlands,</address>
+
+	<byline>
+	<affiliation>4 Department of Biomedical<lb/> Engineering, University of Groningen, University Medical Centre Groningen,</affiliation>
+	</byline>
+
+	<address>Groningen, The Netherlands<lb/></address>
+
+	*
+	<email>n.shahriari@utwente.nl</email>
+
+	Abstract<lb/>
+	<div type="abstract">Needles are commonly used in the clinic for percutaneous procedures. The outcome of<lb/> such procedures heavily depends on accurate placement of the needle. There are two<lb/> main challenges to achieve high accuracy: First, aligning the needle with the targeted lesion,<lb/> and second, compensating for the deflection of the needle in the tissue. In order to address<lb/> these challenges, scientists have developed several robotic setups for needle steering.<lb/> However, the subject is still under research and reliable implementations which can be used<lb/> in clinical practice are not yet available. In this paper, we have taken some steps in order to<lb/> bring needle steering closer to practice. A new hybrid control algorithm is developed, which<lb/> enables us to control a flexible needle by combing base-manipulation and beveled-tip steer-<lb/>ing methods. A pre-operative path planner is developed which considers the clinical require-<lb/>ments. The proposed method is tested in the lung of a fresh-frozen human cadaver. The<lb/> work-flow of the experiments are similar to the current clinical practice. Three experimental<lb/> cases are used to evaluate the proposed steering algorithm. Experimental Case I shows<lb/> that using the proposed steering algorithm controllability of the needle is increased. In Case<lb/> II and Case III, the needle is steered in a gelatin phantom and a human cadaver, respec-<lb/>tively. The targeting accuracy of 1.35±0.49mm in gelatin phantom and 1.97±0.89mm in<lb/> cadave is achieved. A feasibility study is performed, in which a fine needle aspiration (FNA)<lb/> needle is steered in the lungs of a human cadaver under computed tomography guidance.<lb/> The targeting error for the feasibility study is 2.89±0.22mm. The results suggest that such a<lb/> robotic system can be beneficial for clinical use and the patient receives less x-ray radiation.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210052 December 31, 2018<lb/></reference>
+
+	<page>1 / 15<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Shahriari N, Georgiadis JR, Oudkerk M,<lb/> Misra S (2018) Hybrid control algorithm for flexible<lb/> needle steering: Demonstration in phantom and<lb/> human cadaver. PLoS ONE 13(12): e0210052.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210052<lb/></idno>
+
+	Editor:
+	<editor>Giada Gerboni,</editor>
+
+	<byline>
+	<affiliation>Stanford University,</affiliation>
+	</byline>
+
+	<address>UNITED STATES<lb/></address>
+
+	<note type="submission">Received: August 24, 2017<lb/> Accepted: December 17, 2018<lb/></note>
+
+	Published:
+	<date>December 31, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 Shahriari et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All relevant data are <lb/>within the paper files. <lb/></note>
+
+	Funding:
+	<note type="funding">Samenwerkingsverband Noord-<lb/>Nederland (SNN) Program (Project RICIBION-<lb/>Robotic Interventions using CT-Images for<lb/> Biopsies of Lung Nodules) to MO, European<lb/> Research Council (ERC), The European Unions<lb/> Horizon 2020 Research and Innovation program<lb/> (Project ROBOTAR: Robot-Assisted Flexible Needle<lb/> Steering for Targeted Delivery of Magnetic Agents)<lb/> 638428 to SM, and University Medical Center<lb/> Groningen (UMCG). The funders had no role in<lb/> study design, data collection and analysis, decision<lb/> to publish, or preparation of the manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

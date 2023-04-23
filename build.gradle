@@ -426,8 +426,8 @@ project(":grobid-trainer") {
     }
 
     configurations {
-        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
-        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
+        //all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
+        //all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
         //all*.exclude group: 'log4j', module: "log4j"
     }
 

@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.7.2] – 2022-10-29
+
+### Added
+
++ Explicit identification of data/code availability statements (#951) and funding statements (#959), including when they are located in the header
++ Link footnote and their "callout" marker in full text (#944)
++ Option to consolidate header only with DOI if a DOI is extracted (#742)
++ "Window" application of RNN model for reference-segmenter to cover long bibliographical sections
++ Add dynamic timeout on pdfalto_server (#926) 
++ A modest Python script to help to find "interesting" error cases in a repo of JATS/PDF pairs, grobid-home/scripts/select_error_cases.py
+
+### Changed
+
++ Update to DeLFT version 0.3.2
++ Some more training data (authors in reference, segmentation, citation, reference-segmenter) (including #961, #864)
++ Update of some models, RNN with feature channels and CRF (segmentation, header, reference-segmenter, citation)
++ Review guidelines for segmentation model
++ Better URL matching, using in particular PDF URL annotation in account
+
+### Fixed
+
++ Fix unexpected figure and table labeling in short texts
++ When matching an ORCID to an author, prioritize Crossref info over extracted ORCID from the PDF (#838)
++ Annotation errors for acknowledgement and other minor stuff
++ Fix for Python library loading for Mac
++ Update docker file to support new CUDA key
++ Do not dehyphenize text in superscript or subscript
++ Allow absolute temporary paths
++ Fix redirected stderr from pdfalto not "gobbled" by the java ProcessBuilder call (#923)
++ Other minor fixes
+
 ## [0.7.1] – 2022-04-16
 
 ### Added

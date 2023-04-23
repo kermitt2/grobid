@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210157"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Canine endometrial and vaginal microbiomes<lb/> reveal distinct and complex ecosystems<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>C. C. LymanID 1☯ *, G. R. Holyoak 1☯ , K. Meinkoth 1☯ , X. Wieneke 2 , K. A. Chillemi 1 ,<lb/> U. DeSilvaID 2☯<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Veterinary Clinical Sciences, Center for Veterinary Health Sciences, Oklahoma State<lb/> University,</affiliation>
+	</byline>
+
+	<address>Stillwater, Oklahoma, United States of America,</address>
+
+	<byline>
+	<affiliation>2 Department of Animal Science, Oklahoma<lb/> State University,</affiliation>
+	</byline>
+
+	<address>Stillwater, Oklahoma, United States Of America<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> *
+	<email>candace.lyman@okstate.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">The objective of this study was to characterize the normal microbiome of healthy canine<lb/> vagina and endometrium and to determine the effect of the stage of estrous, on the resident<lb/> microbiome. Cranial vaginal swabs and uterine biopsy samples were collected from twenty-<lb/>five bitches in five different stages of estrous at elective ovariohysterectomy (OVH). Over 4<lb/> million reads of the V4 region of 16S rDNA gene were obtained and used for further analy-<lb/>ses. A total of 317 genera belonging to 24 known phyla were identified. The endometrium<lb/> was higher in bacterial diversity while the vagina was higher in richness. Proteobacteria,<lb/> Bacteroidetes and Firmicutes were the most abundant phyla observed across all samples.<lb/> Hydrotalea, Ralstonia, and Fusobacterium accounted for nearly 60% of the OTUs identified<lb/> in the vagina while organisms identified in the endometrium were more evenly distributed.<lb/> Pseudomonas, Staphylococcus, and Corynebacterium were the prominent genera in the<lb/> endometrium. The microbiome of the endometrium was distinctly different from that of the<lb/> vagina. There was large animal-to-animal variation. Other than the vaginal microbiome of<lb/> bitches in estrus (i.e. in heat), there were no distinct clustering of the organisms based on<lb/> the stage of estrous. These findings establish the presence of a resident microbiome of the<lb/> endometrium throughout all stages of estrous cycle.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210157 January 7, 2019<lb/></reference>
+
+	<page>1 / 17<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Lyman CC, Holyoak GR, Meinkoth K,<lb/> Wieneke X, Chillemi KA, DeSilva U (2019) Canine<lb/> endometrial and vaginal microbiomes reveal<lb/> distinct and complex ecosystems. PLoS ONE 14<lb/> (1): e0210157.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210157<lb/></idno>
+
+	Editor:
+	<editor>Claire Wade,</editor>
+
+	<byline>
+	<affiliation>University of Sydney Faculty of<lb/> Veterinary Science,</affiliation>
+	</byline>
+
+	<address>AUSTRALIA<lb/></address>
+
+	<note type="submission">Received: March 7, 2018<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Lyman et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+	
+	Data Availability Statement:
+	<note type="availability">Data are available at <lb/>NCBI Sequence Read Archive (https://www.ncbi. <lb/>nlm.nih.gov/sra) under SRP115220. <lb/></note>
+
+	Funding:
+	<note type="funding">This study was supported by the Center<lb/> for Veterinary Health Sciences, Oklahoma State<lb/> University, to CCL; and Oklahoma Agricultural<lb/> Experiment Station, to UD. The funders had no role<lb/> in study design, data collection and analysis,<lb/> decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

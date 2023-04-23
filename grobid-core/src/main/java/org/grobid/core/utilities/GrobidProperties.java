@@ -337,8 +337,13 @@ public class GrobidProperties {
     public static File getTempPath() {
         if (grobidConfig.grobid.temp == null)
             return new File(System.getProperty("java.io.tmpdir"));
-        else 
-            return new File(grobidHome.getPath(), grobidConfig.grobid.temp);
+        else {
+            if (!new File(grobidConfig.grobid.temp).isAbsolute()) {
+                return new File(grobidHome.getPath(), grobidConfig.grobid.temp);
+            } else {
+                return new File(grobidConfig.grobid.temp);
+            }
+        }
     }
 
     public static void setNativeLibraryPath(final String nativeLibPath) {
@@ -478,6 +483,10 @@ public class GrobidProperties {
 
     public static Integer getPdfaltoMemoryLimitMb() {
         return grobidConfig.grobid.pdf.pdfalto.memoryLimitMb;
+    }
+
+    public static Integer getPdfaltoTimeoutS() {
+        return grobidConfig.grobid.pdf.pdfalto.timeoutSec;
     }
 
     public static Integer getPdfaltoTimeoutMs() {
@@ -780,6 +789,20 @@ public class GrobidProperties {
             return null;
         }
         return param.delft.embeddings_name;
+    }
+
+    public static String getDelftTranformer(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        if (param == null) {
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
+            return null;
+        }
+        DelftModelParameters delftParam = param.delft;
+        if (delftParam == null) {
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
+            return null;
+        }
+        return param.delft.transformer;
     }
 
     /**

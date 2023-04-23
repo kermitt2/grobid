@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="131425v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+
+	<docTitle>
+	<titlePart>Germ cell connectivity enhances cell death in response to DNA damage in Drosophila testis.<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Kevin L. Lu 1,2,3 , Yukiko M. Yamashita 1,2,4,5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Life Sciences Institute,</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>2 Cellular and Molecular Biology Program,</affiliation>
+	</byline>
+
+	<byline>
+	<affiliation>3 Medical Scientist Training<lb/> Program,</affiliation>
+	</byline>
+
+	<byline>	
+	<affiliation>4 Department of Cell and Developmental Biology,</affiliation> 
+	</byline>
+
+	<byline>	
+	<affiliation>5 Howard Hughes Medical Institute,<lb/> University of Michigan,</affiliation>
+	</byline>
+
+	<address>Ann Arbor, MI 48109</address>
+
+	Abstract<lb/>
+	<div type="abstract">Two broadly known characteristics of germ cells in many organisms are their development as a<lb/> &apos;cyst&apos; of interconnected cells and their high sensitivity to DNA damage. Here we provide<lb/> evidence that these characteristics are linked, and that interconnectivity is a mechanism that<lb/> confers to the Drosophila testis a high sensitivity to DNA damage. We show that all germ cells<lb/> within a cyst die simultaneously even when only a subset of them exhibit detectable DNA<lb/> damage. Compromising connectivity results in cysts in which only a subset of germ cells die<lb/> upon DNA damage, lowering overall germ cell death. Our data indicate that a death-promoting<lb/> signal is shared through the intercellular connections of germ cells. Taken together, we propose<lb/> that intercellular connectivity is a mechanism that uniquely increases the sensitivity of the<lb/> germline to DNA damage, thereby protecting the integrity of gamete genomes that are passed on<lb/> to the next generation.</div>
+
+		</front>
+	</text>
+</tei>

@@ -214,10 +214,12 @@ public class Table extends Figure {
                     }
 
                     if (noteNode != null && config.isWithSentenceSegmentation()) {
+                        // we need a sentence segmentation of the figure caption
                         formatter.segmentIntoSentences(noteNode, this.noteLayoutTokens, config, doc.getLanguage());
+                    }
 
-                        // we need a sentence segmentation of the figure caption, for that we need to introduce 
-                        // a <p>
+                    // enclose note content in a <p> element 
+                    if (noteNode != null) {
                         noteNode.setLocalName("p");
 
                         Element tabNote = XmlBuilderUtils.teiElement("note");                
@@ -228,6 +230,15 @@ public class Table extends Figure {
                 }
             } else {
                 noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()).trim());
+            }
+
+            String coords = null;
+            if (config.isGenerateTeiCoordinates("note")) {
+                coords = LayoutTokensUtil.getCoordsString(noteLayoutTokens);
+            }
+
+            if (coords != null) {
+                noteNode.addAttribute(new Attribute("coords", coords));
             }
         }
 

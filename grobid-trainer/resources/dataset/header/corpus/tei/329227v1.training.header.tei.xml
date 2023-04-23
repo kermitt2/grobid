@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="329227v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page> 
+
+	Title (20 words, currently 11)<lb/> 
+	<docTitle>
+	<titlePart>MicroRNA-196a is regulated by ER and is a prognostic biomarker in ER+ Breast Cancer<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Michael J.G. Milevskiy 1,2 # , Udai Gujral 1 , Carolina Del Lama Marques 1 , Andrew Stone 3 ,<lb/> Korinne Northwood 1,4 , Lez J. Burke 1 , Julia M.W. Gee 5 , Kenneth Nephew 6 , Susan Clark 3 ,<lb/> Melissa A. Brown 1 .<lb/></docAuthor>
+	</byline>
+
+	*shared first<lb/> # Corresponding author<lb/>
+	<byline>
+	<affiliation>1. School of Chemistry and Molecular Biosciences, University of Queensland,</affiliation>
+	</byline>
+
+	<address>St Lucia,<lb/> Queensland, Australia.<lb/></address>
+
+	<byline>
+	<affiliation>2. Present Address: ACRF Stem Cells and Cancer, The Walter and Eliza Hall Institute of<lb/> Medical Research,</affiliation>
+	</byline>
+
+	<address>Parkville, Victoria Australia<lb/></address>
+
+	<byline>
+	<affiliation>3. Epigenetics Research Laboratory, Division of Genomics and Epigenetics, Garvan Institute<lb/> of Medical Research,</affiliation>
+	</byline>
+
+	<address>Sydney, NSW<lb/></address>
+
+	<byline>
+	<affiliation>4. The University of Queensland, UQ Centre for Clinical Research,</affiliation>
+	</byline>
+
+	<address>Herston, Australia<lb/></address>
+
+	<byline>
+	<affiliation>5. School of Pharmacy &amp; Pharmaceutical Sciences, Cardiff University,</affiliation>
+	</byline>
+
+	<address>Cardiff, UK,<lb/></address>
+
+	<byline>
+	<affiliation>6. Indiana University, School of Medicine,</affiliation>
+	</byline>
+
+	<address>Bloomington, IN, USA<lb/></address>
+
+	# Correspondence should be addressed to 
+
+	<byline>
+	<docAuthor>MJG Milevskiy, </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ACRF Stem Cells and Cancer,<lb/>The Walter and Eliza Hall, Institute of Medical Research, </affiliation>
+	</byline>
+	
+	<address>1G Royal Parade, Parkville,<lb/> Victoria, 3052,<lb/></address>
+
+	E-mail:
+	<email>milevskiy.m@wehi.edu.au<lb/></email>
+
+	Telephone #: 
+	<phone>+61 3 9345 2546<lb/></phone>
+
+	Full-length papers should be no more than 5,000 words, reduced appropriately to allow for up<lb/> to six figures or tables, and should be supported by key references.<lb/>
+
+	Abstract (193 words)<lb/>
+	<div type="abstract">MicroRNAs are potent post-transcriptional regulators involved in all hallmarks of cancer.<lb/> Mir-196a is transcribed from two loci and has been implicated in a wide range of<lb/> developmental and pathogenic processes, with targets including Hox, Fox, Cdk inhibitors and<lb/> annexins. Genetic variants and altered expression of miR196a are associated with risk and<lb/> progression of multiple cancers including breast cancer, however little is known about the<lb/> regulation of the genes encoding this miRNA, nor the impact of variants therein. Here we<lb/> demonstrate that MIR196A displays complex and dynamic expression patterns, in part<lb/> controlled by long range transcriptional regulation between promoter and enhancer elements<lb/> bound by ERα. Expression of this miRNA is significantly increased in models of hormone<lb/> receptor positive disease resistance. The expression of MIR196A also proves to be a robust<lb/> prognostic factor for patients with advanced and post-menopausal ER+ disease. This work<lb/> sheds light on the normal and abnormal regulation of MIR196A and provides a novel<lb/> stratification method for therapeutically resistant breast cancer.<lb/></div>
+
+		</front>
+	</text>
+</tei>

@@ -137,4 +137,46 @@ public class LayoutTokensUtilTest {
         assertThat(Iterables.getLast(result).getText(), is("!"));
 
     }
+
+    @Test
+    public void testMaterialNameWithHypenInFormula_shouldNotDehypenise() throws Exception {
+
+        String text = "based \n" +
+            "(Nd 1-x Ce x ) 2 Fe 14-y Co y B nanostructured magnets";
+
+        List<LayoutToken> layoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        layoutTokens.stream().forEach(layoutToken -> layoutToken.setOffset(layoutToken.getOffset() + 1000));
+        layoutTokens.get(4).setY(406.746);
+        layoutTokens.get(4).setX(55.754000000000005);
+
+        layoutTokens.get(6).setSubscript(true);
+        layoutTokens.get(6).setY(410.506);
+        layoutTokens.get(6).setX(65.2255);
+
+
+        layoutTokens.get(7).setSubscript(true);
+        layoutTokens.get(7).setY(410.506);
+        layoutTokens.get(7).setX(67.66675);
+
+        layoutTokens.get(8).setSubscript(true);
+        layoutTokens.get(8).setY(410.538);
+        layoutTokens.get(8).setX(70.108);
+
+        layoutTokens.get(10).setY(406.76);
+        layoutTokens.get(10).setX(73.3461);
+
+        layoutTokens.get(12).setSubscript(true);
+
+        layoutTokens.get(21).setSubscript(true);
+
+        List<LayoutToken> result = LayoutTokensUtil.dehyphenize(layoutTokens);
+
+        assertThat(result.get(7).getText(), is("-"));
+
+        System.out.println(result);
+    }
+
+
+
 }

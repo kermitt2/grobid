@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210333"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>This shoe, that tiger: Semantic properties<lb/> reflecting manual affordances of the referent<lb/> modulate demonstrative use<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Roberta Rocca ID<lb/> 1,2<lb/> *, Kristian Tyle ´n1,2 , Mikkel Wallentin 1,2,3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Linguistics, Cognitive Science and Semiotics, Aarhus University,</affiliation>
+	</byline>
+
+	<address>Aarhus, Denmark,<lb/></address>
+
+	<byline>
+	<affiliation>2 Interacting Minds Centre, Aarhus University,</affiliation>
+	</byline>
+
+	<address>Aarhus, Denmark,</address>
+
+	<byline>
+	<affiliation>3 Center of Functionally Integrative<lb/> Neuroscience, Aarhus University Hospital,</affiliation>
+	</byline>
+
+	<address>Aarhus, Denmark<lb/></address>
+
+	*
+	<email>roberta.rocca@cc.au.dk</email>
+
+	Abstract<lb/>
+	<div type="abstract">Demonstrative reference is central to human communication. But what influences our<lb/> choice of demonstrative forms such as &quot;this&quot; and &quot;that&quot; in discourse? Previous literature has<lb/> mapped the use of such &quot;proximal&quot; and &quot;distal&quot; demonstratives onto spatial properties of ref-<lb/>erents, such as their distance from the speaker. We investigated whether object semantics,<lb/> and specifically functional properties of referents, also influence speakers&apos; choices of either<lb/> demonstrative form. Over two experiments, we presented English, Danish and Italian<lb/> speakers with words denoting animate and inanimate objects, differing in size and harmful-<lb/>ness, and asked them to match them with a proximal or a distal demonstrative. Objects that<lb/> offer more affordances for manipulation (smaller and harmless) elicited significantly more<lb/> proximal demonstratives. These effects were stronger for inanimate referents, in line with<lb/> the predictions of sensory-functional views on object semantics. These results suggest<lb/> that demonstrative use may be partly grounded on manual affordances, and hints at the<lb/> possibility of using demonstratives as a proxy to investigate the organization of semantic<lb/> knowledge.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210333 January 7, 2019<lb/></reference>
+
+	<page>1 / 27<lb/></page> 
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Rocca R, Tyle ´n K, Wallentin M (2019)<lb/> This shoe, that tiger: Semantic properties reflecting<lb/> manual affordances of the referent modulate<lb/> demonstrative use. PLoS ONE 14(1): e0210333.<lb/></reference>
+
+	<idno>https://doi.org/10.1371/journal.pone.0210333<lb/></idno>
+
+	Editor:
+	<editor>Søren Wichmann,</editor>
+
+	<byline>
+	<affiliation>Leiden University,</affiliation>
+	</byline>
+
+	<address>NETHERLANDS<lb/></address>
+
+	<note type="submission">Received: July 11, 2018<lb/> Accepted: December 20, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Rocca et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note> 
+	
+	Data Availability Statement: 
+	<note type="availability">All the data and code<lb/> are publicly available on the Open Science<lb/> Framework at osf.io/gnh5s.<lb/></note>
+
+	Funding: 
+	<note type="funding">RR is funded by the DCOMM project<lb/> (Deictic Communication -www.dcomm.eu). This<lb/> project has received funding from the European<lb/> Union&apos;s Horizon 2020 research and innovation<lb/> programme under the Marie Sklodowska-Curie<lb/> Actions grant agreement No 676063. The funders<lb/> had no role in study design, data collection and<lb/> analysis, decision to publish, or preparation of the<lb/> manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

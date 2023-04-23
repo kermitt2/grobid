@@ -30,6 +30,11 @@ public class CRFPPGenericTrainer implements GenericTrainer {
 
     @Override
     public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model) {
+        train(template, trainingData, outputModel, numThreads, model, false);
+    }
+
+    @Override
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
         crfppTrainer.train(template.getAbsolutePath(), trainingData.getAbsolutePath(), outputModel.getAbsolutePath(), numThreads);
         if (!crfppTrainer.what().isEmpty()) {
             LOGGER.warn("CRF++ Trainer warnings:\n" + crfppTrainer.what());

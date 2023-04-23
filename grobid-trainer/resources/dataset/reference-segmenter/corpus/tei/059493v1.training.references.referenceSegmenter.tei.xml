@@ -1,0 +1,55 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+<bibl>Bair, W., Zohary, E., Newsome, W.. Correlated firing in macaque<lb/> visual area MT: Time scales and relationship to behavior. Journal<lb/> of Neuroscience 2001;21(5):1676-1697.<lb/> </bibl>
+<bibl>Bandyopadhyay, S., Shamma, S., Kanold, P.. Dichotomy of func-<lb/>tional organization in the mouse auditory cortex. Nature Neuro-<lb/>science 2010;13(3):361-368.<lb/> </bibl>
+<bibl>Barlow,<lb/> H..<lb/> Redundancy reduction revisited.<lb/> Network<lb/> 2001;12(3):241-253.<lb/> </bibl>
+<bibl>Bartho, P., Hirase, H., Monconduit, L., Zugaro, M., Harris, K.,<lb/> Buzsáki, G.. Characterization of neocortical principal cells and<lb/> interneurons by network interactions and extracellular features.<lb/> Journal of Neurophysiology 2004;92(1):600-608.<lb/> </bibl>
+<bibl>Bizley, J., Nodal, F., Nelken, I., King, A.. Functional organization<lb/> of ferret auditory cortex. Cerebral Cortex 2005;15(10):1637-1653.<lb/> </bibl>
+<bibl>Buzsáki, G., Anastassiou, C., Koch, C.. The origin of extracel-<lb/>lular fields and currents -EEG, ECoG, LFP and spikes. Nature<lb/> Neuroscience 2012;13(6):407-420.<lb/> </bibl>
+<bibl>Carrasco, A., Lomber, S.. Evidence for hierarchical processing in<lb/> cat auditory cortex: Nonreciprocal influence of primary auditory<lb/> cortex on the posterior auditory field. Journal of Neuroscience<lb/> 2009;29(45):14323-14333.<lb/> </bibl>
+<bibl>Chechik, G., Anderson, M., Bar-Yosef, O., Young, E., Tishby, N.,<lb/> Nelken, I.. Reduction of information redundancy in the ascending<lb/> auditory pathway. Neuron 2006;51(3):359-368.<lb/> </bibl>
+<bibl>Christophe, E., Doerflinger, N., Lavery, D., Molna, Z., Charpak,<lb/> S., Audinat, E.. Two populations of layer V pyramidal cells of<lb/> the mouse neocortex: Development and sensitivity to anesthetics.<lb/> Journal of Neurophysiology 2005;94(5):3357-3367.<lb/> </bibl>
+<bibl>Cohen, M., Kohn, A.. Measuring and interpreting neuronal corre-<lb/>lations. Nature Neuroscience 2011;14(7):811-819.<lb/> </bibl>
+<bibl>Delgado-Ruz, I., Schultz, S.. Localising and classifying neurons from<lb/> high density MEA recordings. Journal of Neuroscience Methods<lb/> 2014;233:115-128.<lb/> </bibl>
+<bibl>DeWeese, M., Wehr, M., Zador, A.. Binary spiking in auditory<lb/> cortex. Journal of Neuroscience 2003;23(21):7940 -7949.<lb/> </bibl>
+<bibl>Eggermont, J., Munguia, R., Pienkowski, M., Shaw, G.. Com-<lb/>parison of LFP-based and spike-based spectro-temporal receptive<lb/> fields and cross-correlation in cat primary auditory cortex. PLOS<lb/> One 2011;6(5):1-16.<lb/> </bibl>
+<bibl>Fujisawa, S., Amarasingham, A., Harrison, M., Buzsáki, G..<lb/> Behavior-dependent short-term assembly dynamics in the medial<lb/> prefrontal cortex. Nature Neuroscience 2008;11(7):823-833.<lb/> </bibl>
+<bibl>Guo, W., Chambers, A., Darrow, K., Hancock, K., Shinn-<lb/>Cunningham, B., Polley, D.. Robustness of cortical topography<lb/> across fields, laminae, anesthetic states, and neurophysiological<lb/> signal types. The Journal of Neuroscience 2012;32(27):9159 -9172.<lb/> </bibl>
+<bibl>Hackett, T., Rinaldi, T., O&apos;Brien, B., Hensch, T., Polley, D..<lb/>  Linking topography to tonotopy in the mouse auditory thalamo-<lb/>cortical circuit. Journal of Neuroscience 2011;31(8):2983-2995.<lb/> </bibl>
+<bibl>Hromádka, T., DeWeese, M., Zador, A.. Sparse representation<lb/> of sounds in the unanesthetized auditory cortex. PLOS Biology<lb/> 2008;6(1):124-137.<lb/> </bibl>
+<bibl>Ince, R., Panzeri, S., Kayser, C.. Neural codes formed by small and<lb/> temporally precise populations in auditory cortex. The Journal of<lb/> Neuroscience 2013;33(46):18277-18287.<lb/> </bibl>
+<bibl>Ince, R., Petersen, R., Swan, D., Panzeri, S.. Python for infor-<lb/>mation theoretic analysis of neural data. Frontiers in Neuroinfor-<lb/>matics 2009;3(4):1-15.<lb/> </bibl>
+<bibl>Kadir, S., Godman, D., Harris, K.. High-dimensional cluster<lb/> analysis with the masked EM algorithm. Neural Computation<lb/> 2014;26(11):2379-2394.<lb/> </bibl>
+<bibl>Kaschube, M., Schnabel, M., Löwel, S., Coppola, D., White, L.,<lb/> Wolf, F.. Universality in the evolution of orientation columns in<lb/> the visual cortex. Science 2010;19(330):1113-1116.<lb/> </bibl>
+<bibl>Katona, G., Szalay, G., Maák, P., Kaszás, A., Veress, M., Hillier,<lb/> D., Chiovini, B., Vizi, E., Roska, B., Rózsa, B.. Fast two-photon<lb/> in vivo imaging with three-dimensional random-access scanning in<lb/> large tissue volumes. Nature Methods 2012;9(2):201-208.<lb/> </bibl>
+<bibl>Kohn, A., Smith, M.. Stimulus dependence of neuronal correlation<lb/> in primary visual cortex of the macaque. The Journal of Neuro-<lb/>science 2005;25(14):3661-3673.<lb/> </bibl>
+<bibl>Krieger, P., Kuner, T., Sakmann, B.. Synaptic connections be-<lb/>tween layer 5B pyramidal neurons in mouse somatosensory cortex<lb/> are independent of apical dendrite bundling. The Journal of Neu-<lb/>roscience 2007;27(43):11473-11482.<lb/> </bibl>
+<bibl>Levy, R., Reyes, A.. Spatial profile of excitatory and inhibitory<lb/> synaptic connectivity in mouse primary auditory cortex. Journal<lb/> of Neuroscience 2012;32(16):5609 -5619.<lb/> </bibl>
+<bibl>Liu, R., Schreiner, C.. Auditory cortical detection and discrimi-<lb/>nation correlates with communicative significance. PLOS Biology<lb/> 2007;5(7):1426-1439.<lb/> </bibl>
+<bibl>Maruoka, H., Kubota, K., Kurokawa, R., Tsuruno, S., Hosoya, T..<lb/>  Periodic organization of a major subtype of pyramidal neurons in<lb/> neocortical layer V. Journal of Neuroscience 2011;31(50):18522-<lb/>18542.<lb/> </bibl>
+<bibl>Meinecke, D., Peters, A.. GABA immunoreactive neurons in rat<lb/> visual cortex. Journal of Comparative Neurology 1987;261(3):388-<lb/>404.<lb/> </bibl>
+<bibl>Montani, F., Kohn, A., Smith, M.A., Schultz, S.R.. The role of<lb/> correlations in direction and contrast coding in the primary visual<lb/> cortex. Journal of Neuroscience 2007;27(9):2338-2348.<lb/> </bibl>
+<bibl>Moshitch, D., Las, L., Ulanovsky, N., Bar-Yosef, O., Nelken,<lb/> I.. Responses of neurons in primary auditory cortex (A1) to pure<lb/> tones in the halothane-anesthetized cat. Journal of Neurophysiol-<lb/>ogy 2006;95(6):3756-3769.<lb/> </bibl>
+<bibl>Narayanan, N., Kimchi, E., Laubach, M.. Redundancy and synergy<lb/> of neuronal ensembles in motor cortex. Journal of Neuroscience<lb/> 2005;25(17):4207-4216.<lb/> </bibl>
+<bibl>Nemenman, I., Shafee, F., Bialek, W.. Entropy and inference,<lb/> revisited. In: Advances in Neural Information Processing Systems.<lb/> 2001. p. 471-478.<lb/> </bibl>
+<bibl>Ohki, K., Chung, S., Ch&apos;ng, Y., Kara, P., Reid, R.. Functional<lb/> imaging with cellular resolution reveals precise micro-architecture<lb/> in visual cortex. Nature 2005;433(7026):597-603.<lb/> </bibl>
+<bibl>Panzeri, S., Schultz, S.R., Treves, A., Rolls, E.T.. Correla-<lb/>tions and the encoding of information in the nervous system. Pro-<lb/>ceedings of the Royal Society of London B: Biological Sciences<lb/> 1999;266(1423):1001-1012.<lb/> </bibl>
+<bibl>Peyrache, A., Dehghania, N., Eskandar, E., Madsene, J., Ander-<lb/>son, W., Donoghueg, J., Hochbergg, R., Halgrenk, E., Cashg,<lb/> S., Destexhe, A.. Spatiotemporal dynamics of neocortical excita-<lb/>tion and inhibition during human sleep. PNAS 2012;109(5):1731-<lb/>1736.<lb/> </bibl>
+<bibl>Rothschild, G., Nelken, I., Mizrahi, A.. Functional organization<lb/> and population dynamics in the mouse primary auditory cortex.<lb/> Nature Neuroscience 2010;13(3):353-360.<lb/> </bibl>
+<bibl>Sakata, S., Harris, K.. Laminar structure of spontaneous and<lb/> sensory-evoked population activity laminar structure of sponta-<lb/>neous and sensory-evoked population activity in auditory cortex.<lb/> Neuron 2009;64:404-418.<lb/> </bibl>
+<bibl>Schultz, S.R., Kitamura, K., Post-Uiterweer, A., Krupic, J.,<lb/> Häusser,<lb/> M..<lb/>  Spatial pattern coding of sensory informa-<lb/>tion by climbing fiber-evoked calcium signals in networks of<lb/> neighboring cerebellar purkinje cells. Journal of Neuroscience<lb/> 2009;29(25):8005-8015.<lb/> </bibl>
+<bibl>Smith, M., Kohn, A.. Spatial and temporal scales of neuronal<lb/> correlation in primary visual cortex. The Journal of Neuroscience<lb/> 2008;28(48):12591-12603.<lb/> </bibl>
+<bibl>Song, S., Sjöström, P., Reigl, M., Nelson, S., Chklovskii, D..<lb/> Highly nonrandom features of synaptic connectivity in local cor-<lb/>tical circuits. PLOS Biology 2005;3(10).<lb/> </bibl>
+<bibl>Thomson, A., Lamy, C.. Functional maps of neocortical local<lb/> circuitry. Frontiers in Neuroscience 2007;1(1):19-42.<lb/> </bibl>
+<bibl>Willott, J., Parham, K., Hunter, K.. Response properties of inferior<lb/> colliculus neurons in young and very old CBA/J mice. Hearing<lb/> Research 1988;37(1):1-14.<lb/> </bibl>
+<bibl>Xu, X., Roby, K., Callaway, E.. Immunochemical characteri-<lb/>zation of inhibitory mouse cortical neurons: three chemically dis-<lb/>tinct classes of inhibitory cells. Journal of Comparative Neurology<lb/> 2010;518(3):389-404.<lb/> </bibl>
+<bibl>Yoshimura, Y., Callaway, E.. Fine-scale specificity of cortical net-<lb/>works depends on inhibitory cell type and connectivity. Nature<lb/> Neuroscience 2005;8(11):1552-1559.<lb/> </bibl>
+<bibl>Yoshimura,<lb/> Y., Dantzker,<lb/> J., Callaway,<lb/> E..<lb/> Excitatory<lb/> cortical neurons form fine-scale functional networks. Nature<lb/> 2005;433(7028):868-873.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210367"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Mediation of the association of smoking and<lb/> microvascular complications by glycemic<lb/> control in type 1 diabetes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Barbara H. Braffett ID<lb/> 1,2<lb/> *, Madeline Murguia Rice 1,2 , Heather A. Young 1 , John M. Lachin 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Epidemiology &amp; Biostatistics, George Washington University,</affiliation>
+	</byline>
+
+	<address>Washington, D. C., United<lb/> States of America,</address>
+
+	<byline>
+	<affiliation>2 The Biostatistics Center, George Washington University,</affiliation>
+	</byline>
+
+	<address>Rockville, Maryland, United<lb/> States of America<lb/></address>
+
+	*
+	<email>braffett@bsc.gwu.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">Studies have demonstrated the adverse effects of smoking on the risk of microvascular<lb/> complications; however, few have also examined the potential mediating effects of glycemic<lb/> control. Using data from the Diabetes Control and Complications Trial (DCCT 1983-1993),<lb/> we describe the acute and long-term risks of smoking on glycemic control and microvascular<lb/> complications in a well-characterized cohort of participants with type 1 diabetes. The DCCT<lb/> recorded self-reported smoking behaviors, glycemic exposure based on HbA1c, and compli-<lb/>cations status. Generalized linear mixed models were used to assess whether time-depen-<lb/>dent measurements of smoking predict HbA1c levels. Cox proportional hazard models were<lb/> used to assess time-dependent smoking exposures as predictors of retinopathy and<lb/> nephropathy. During a mean of 6.5 years of follow-up, current smokers had consistently<lb/> higher HbA1c values and were at a higher risk of retinopathy and nephropathy compared<lb/> with former and never smokers. These risk differences were attenuated after adjusting for<lb/> HbA1c suggesting that the negative association of smoking on glycemic control is partially<lb/> responsible for the adverse association of smoking on the risk of complications in type 1 dia-<lb/>betes. These findings support the potential for a beneficial effect of smoking cessation on<lb/> complications in type 1 diabetes.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210367 January 7, 2019<lb/></reference>
+
+	<page>1 / 14<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Braffett BH, Rice MM, Young HA, Lachin<lb/> JM (2019) Mediation of the association of smoking<lb/> and microvascular complications by glycemic<lb/> control in type 1 diabetes. PLoS ONE 14(1):<lb/> e0210367.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0210367<lb/></idno>
+
+	Editor:
+	<editor>Antonio Palazo ´n-Bru,</editor>
+	
+	<byline>
+	<affiliation>Universidad Miguel<lb/> Hernandez de Elche,</affiliation>
+	</byline>
+
+	<address>SPAIN<lb/></address>
+
+	<note type="submission">Received: August 29, 2018<lb/> Accepted: December 20, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Braffett et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All data files are <lb/>available from the NIDDK Repository database <lb/>(https://repository.niddk.nih.gov/studies/edic/? <lb/>query=dcct). <lb/></note>
+
+	Funding:
+	<note type="funding">The authors received no specific funding<lb/> for this work.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

@@ -1,0 +1,675 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1707_07274"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Letters B 778 (2018) 263-291<lb/></reference>
+
+	Contents lists available at ScienceDirect<lb/> 
+
+	<title level="j">Physics Letters B<lb/> </title>
+	
+	www.elsevier.com/locate/physletb<lb/>
+
+	<docTitle>
+	<titlePart>Search for the pair production of third-generation squarks with<lb/> two-body decays to a bottom or charm quark and a neutralino in<lb/> proton-proton collisions at<lb/> √<lb/> s = 13 TeV<lb/></titlePart>
+	</docTitle>.
+
+	<note type="group">The CMS Collaboration<lb/></note>
+
+	<byline>
+	<affiliation>CERN,</affiliation>
+	</byline>
+
+	<address>Switzerland<lb/></address>
+
+	a r t i c l e i n f o<lb/> a b s t r a c t<lb/> Article history:<lb/>
+	<note type="submission">Received 23 July 2017<lb/> Received in revised form 22 November 2017<lb/> Accepted 8 January 2018<lb/></note>
+
+	Available online
+	<date>13 January 2018<lb/></date>
+
+	Editor:
+	<byline>
+	<docAuthor>M. Doser<lb/></docAuthor>
+	</byline>
+
+	Keywords:<lb/>
+	<keyword>CMS<lb/> Physics Supersymmetry<lb/></keyword>
+
+	<div type="abstract">Results are presented from a search for the pair production of third-generation squarks in proton-proton<lb/> collision events with two-body decays to bottom or charm quarks and a neutralino, which produces a<lb/> significant imbalance in the transverse momentum. The search is performed using a sample of proton-<lb/>proton collision data at<lb/> √<lb/> s = 13 TeV recorded by the CMS experiment at the LHC, corresponding to an<lb/> integrated luminosity of 35.9 fb −1 . No statistically significant excess of events is observed beyond the<lb/> expected contribution from standard model processes. Exclusion limits are set in the context of simplified<lb/> models of bottom or top squark pair production. Models with bottom squark masses up to 1220 GeV are<lb/> excluded at 95% confidence level for light neutralinos, and models with top squark masses of 510 GeV<lb/> are excluded assuming that the mass splitting between the top squark and the neutralino is small.<lb/></div>
+
+	<note type="copyright">© 2018 The Author. Published by Elsevier B.V. This is an open access article under the CC BY license<lb/> (http://creativecommons.org/licenses/by/4.0/). Funded by SCOAP 3 .<lb/></note>
+
+	<byline>
+	<affiliation>Department of Physics, University of Helsinki,</affiliation>
+	</byline>
+
+	<address>Helsinki, Finland<lb/></address>
+
+	<byline>
+	<docAuthor>J. Härkönen, T. Järvinen, V. Karimäki, R. Kinnunen, T. Lampén, K. Lassila-Perini, S. Lehti, T. Lindén,<lb/> P. Luukka, E. Tuominen, J. Tuominiemi, E. Tuovinen<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Helsinki Institute of Physics,</affiliation>
+	</byline>
+
+	<address>Helsinki, Finland<lb/></address>
+
+	<byline>
+	<docAuthor>J. Talvitie, T. Tuuva<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Lappeenranta University of Technology,</affiliation>
+	</byline>
+
+	<address>Lappeenranta, Finland<lb/></address>
+
+	<byline>
+	<docAuthor>M. Besancon, F. Couderc, M. Dejardin, D. Denegri, J.L. Faure, F. Ferri, S. Ganjour, S. Ghosh, A. Givernaud,<lb/> P. Gras, G. Hamel de Monchenault, P. Jarry, I. Kucher, E. Locci, M. Machet, J. Malcles, G. Negro, J. Rander,<lb/> A. Rosowsky, M.Ö. Sahin, M. Titov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>IRFU, CEA, Université Paris-Saclay,</affiliation>
+	</byline>
+
+	<address>Gif-sur-Yvette, France<lb/></address>
+
+	<byline>
+	<docAuthor>M. Csanad, N. Filipovic, G. Pasztor<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>MTA-ELTE Lendület CMS Particle and Nuclear Physics Group, Eötvös Loránd University,</affiliation>
+	</byline>
+
+	<address>Budapest, Hungary<lb/></address>
+
+	<byline>
+	<docAuthor>G. Bencze, C. Hajdu, D. Horvath 20 , Á. Hunyadi, F. Sikler, V. Veszpremi, G. Vesztergombi 21 , A.J. Zsigmond<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Wigner Research Centre for Physics,</affiliation>
+	</byline>
+
+	<address>Budapest, Hungary<lb/></address>
+
+	<byline>
+	<docAuthor>N. Beni, S. Czellar, J. Karancsi 22 , A. Makovec, J. Molnar, Z. Szillasi<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Nuclear Research ATOMKI,</affiliation>
+	</byline>
+
+	<address>Debrecen, Hungary<lb/></address>
+
+	<byline>
+	<docAuthor>M. Bartók 21 , P. Raics, Z.L. Trocsanyi, B. Ujvari<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Physics, University of Debrecen,</affiliation>
+	</byline>
+
+	<address>Debrecen, Hungary<lb/></address>
+
+	<byline>
+	<docAuthor>S. Choudhury, J.R. Komaragiri<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Indian Institute of Science (IISc),</affiliation>
+	</byline>
+
+	<address>Bangalore, India<lb/></address>
+
+	<byline>
+	<docAuthor>S. Bahinipati 23 , S. Bhowmik, P. Mal, K. Mandal, A. Nayak 24 , D.K. Sahoo 23 , N. Sahoo, S.K. Swain<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Institute of Science Education and Research,</affiliation>
+	</byline>
+
+	<address>Bhubaneswar, India<lb/></address>
+
+	<byline>
+	<docAuthor>S. Bansal, S.B. Beri, V. Bhatnagar, U. Bhawandeep, R. Chawla, N. Dhingra, A.K. Kalsi, A. Kaur, M. Kaur,<lb/> R. Kumar, P. Kumari, A. Mehta, J.B. Singh, G. Walia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Panjab University,</affiliation>
+	</byline>
+
+	<address>Chandigarh, India<lb/></address>
+
+	<byline>
+	<docAuthor>Ashok Kumar, Aashaq Shah, A. Bhardwaj, S. Chauhan, B.C. Choudhary, R.B. Garg, S. Keshri, A. Kumar,<lb/> S. Malhotra, M. Naimuddin, K. Ranjan, R. Sharma, V. Sharma<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Delhi,</affiliation>
+	</byline>
+
+	<address>Delhi, India<lb/></address>
+
+	<byline>
+	<docAuthor>R. Bhardwaj, R. Bhattacharya, S. Bhattacharya, S. Dey, S. Dutt, S. Dutta, S. Ghosh, N. Majumdar, A. Modak,<lb/> K. Mondal, S. Mukhopadhyay, S. Nandan, A. Purohit, A. Roy, D. Roy, S. Roy Chowdhury, S. Sarkar,<lb/> M. Sharan, S. Thakur<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Saha Institute of Nuclear Physics, HBNI,</affiliation>
+	</byline>
+
+	<address>Kolkata, India<lb/></address>
+
+	<byline>
+	<docAuthor>P.K. Behera<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Indian Institute of Technology Madras,</affiliation>
+	</byline>
+
+	<address>Madras, India<lb/></address>
+
+	<byline>
+	<docAuthor>R. Chudasama, D. Dutta, V. Jha, V. Kumar, A.K. Mohanty 16 , P.K. Netrakanti, L.M. Pant, P. Shukla, A. Topkar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Bhabha Atomic Research Centre,</affiliation>
+	</byline>
+
+	<address>Mumbai, India<lb/></address>
+
+	<byline>
+	<docAuthor>T. Aziz, S. Dugad, B. Mahakud, S. Mitra, G.B. Mohanty, B. Parida, N. Sur, B. Sutar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tata Institute of Fundamental Research-A,</affiliation>
+	</byline>
+
+	<address>Mumbai, India<lb/></address>
+
+	<byline>
+	<docAuthor>S. Banerjee, S. Bhattacharya, S. Chatterjee, P. Das, M. Guchait, Sa. Jain, S. Kumar, M. Maity 25 ,<lb/> G. Majumder, K. Mazumdar, T. Sarkar 25 , N. Wickramage 26<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tata Institute of Fundamental Research-B,</affiliation>
+	</byline>
+
+	<address>Mumbai, India<lb/></address>
+
+	<byline>
+	<docAuthor>S. Chauhan, S. Dube, V. Hegde, A. Kapoor, K. Kothekar, S. Pandey, A. Rane, S. Sharma<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Indian Institute of Science Education and Research (IISER),</affiliation>
+	</byline>
+
+	<address>Pune, India<lb/></address>
+
+	<byline>
+	<docAuthor>S. Chenarani 27 , E. Eskandari Tadavani, S.M. Etesami 27 , M. Khakzad, M. Mohammadi Najafabadi,<lb/> M. Naseri, S. Paktinat Mehdiabadi 28 , F. Rezaei Hosseinabadi, B. Safarzadeh 29 , M. Zeinali<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Research in Fundamental Sciences (IPM),</affiliation>
+	</byline>
+
+	<address>Tehran, Iran<lb/></address>
+
+	<reference>The CMS Collaboration / Physics Letters B 778 (2018) 263-291<lb/></reference>
+
+	<byline>
+	<docAuthor>A. Braghieri a , F. Fallavollita a,b , A. Magnani a,b , P. Montagna a,b , S.P. Ratti a,b , V. Re a , M. Ressegotti,<lb/> C. Riccardi a,b , P. Salvini a , I. Vai a,b , P. Vitulo a,b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Pavia,</affiliation>
+	</byline>
+
+	<address>Pavia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Università di Pavia,</affiliation>
+	</byline>
+
+	<address>Pavia, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>L. Alunni Solestizi a,b , M. Biasini a,b , G.M. Bilei a , C. Cecchi a,b , D. Ciangottini a,b , L. Fanò a,b , P. Lariccia a,b ,<lb/> R. Leonardi a,b , E. Manoni a , G. Mantovani a,b , V. Mariani a,b , M. Menichelli a , A. Rossi a,b , A. Santocchia a,b ,<lb/> D. Spiga a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Perugia,</affiliation>
+	</byline>
+
+	<address>Perugia, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Università di Perugia,</affiliation>
+	</byline>
+
+	<address>Perugia, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>K. Androsov a , P. Azzurri a,16 , G. Bagliesi a , J. Bernardini a , T. Boccali a , L. Borrello, R. Castaldi a ,<lb/> M.A. Ciocci a,b , R. Dell&apos;Orso a , G. Fedi a , L. Giannini a,c , A. Giassi a , M.T. Grippo a,30 , F. Ligabue a,c ,<lb/> T. Lomtadze a , E. Manca a,c , G. Mandorli a,c , L. Martini a,b , A. Messineo a,b , F. Palla a , A. Rizzi a,b ,<lb/> A. Savoy-Navarro a,32 , P. Spagnolo a , R. Tenchini a , G. Tonelli a,b , A. Venturi a , P.G. Verdini a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Pisa,</affiliation>
+	</byline>
+
+	<address>Pisa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Università di Pisa,</affiliation>
+	</byline>
+
+	<address>Pisa, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c Scuola Normale Superiore di Pisa,</affiliation>
+	</byline>
+
+	<address>Pisa, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>L. Barone a,b , F. Cavallari a , M. Cipriani a,b , D. Del Re a,b,16 , M. Diemoz a , S. Gelli a,b , E. Longo a,b ,<lb/> F. Margaroli a,b , B. Marzocchi a,b , P. Meridiani a , G. Organtini a,b , R. Paramatti a,b , F. Preiato a,b ,<lb/> S. Rahatlou a,b , C. Rovelli a , F. Santanastasio a,b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Roma,</affiliation>
+	</byline>
+
+	<address>Rome, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Sapienza Università di Roma,</affiliation>
+	</byline>
+
+	<address>Rome, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>N. Amapane a,b , R. Arcidiacono a,c , S. Argiro a,b , M. Arneodo a,c , N. Bartosik a , R. Bellan a,b , C. Biino a ,<lb/> N. Cartiglia a , F. Cenna a,b , M. Costa a,b , R. Covarelli a,b , A. Degano a,b , N. Demaria a , B. Kiani a,b ,<lb/> C. Mariotti a , S. Maselli a , E. Migliore a,b , V. Monaco a,b , E. Monteil a,b , M. Monteno a , M.M. Obertino a,b ,<lb/> L. Pacher a,b , N. Pastrone a , M. Pelliccioni a , G.L. Pinna Angioni a,b , F. Ravera a,b , A. Romero a,b , M. Ruspa a,c ,<lb/> R. Sacchi a,b , K. Shchelina a,b , V. Sola a , A. Solano a,b , A. Staiano a , P. Traczyk a,b<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Torino,</affiliation>
+	</byline>
+
+	<address>Torino, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Università di Torino,</affiliation>
+	</byline>
+
+	<address>Torino, Italy<lb/></address>
+
+	<byline>
+	<affiliation>c Università del Piemonte Orientale,</affiliation>
+	</byline>
+
+	<address>Novara, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>S. Belforte a , M. Casarsa a , F. Cossutti a , G. Della Ricca a,b , A. Zanetti a<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a INFN Sezione di Trieste,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy<lb/></address>
+
+	<byline>
+	<affiliation>b Università di Trieste,</affiliation>
+	</byline>
+
+	<address>Trieste, Italy<lb/></address>
+
+	<byline>
+	<docAuthor>D.H. Kim, G.N. Kim, M.S. Kim, J. Lee, S. Lee, S.W. Lee, C.S. Moon, Y.D. Oh, S. Sekmen, D.C. Son, Y.C. Yang<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Kyungpook National University,</affiliation>
+	</byline>
+
+	<address>Daegu, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>A. Lee<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chonbuk National University,</affiliation>
+	</byline>
+
+	<address>Jeonju, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>H. Kim, D.H. Moon, G. Oh<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Chonnam National University, Institute for Universe and Elementary Particles,</affiliation>
+	</byline>
+
+	<address>Kwangju, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>J.A. Brochero Cifuentes, J. Goh, T.J. Kim<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Hanyang University,</affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>S. Cho, S. Choi, Y. Go, D. Gyun, S. Ha, B. Hong, Y. Jo, Y. Kim, K. Lee, K.S. Lee, S. Lee, J. Lim, S.K. Park, Y. Roh<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Korea University,</affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>J. Almond, J. Kim, J.S. Kim, H. Lee, K. Lee, K. Nam, S.B. Oh, B.C. Radburn-Smith, S.h. Seo, U.K. Yang,<lb/> H.D. Yoo, G.B. Yu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Seoul National University,</affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>M. Choi, H. Kim, J.H. Kim, J.S.H. Lee, I.C. Park, G. Ryu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Seoul,</affiliation>
+	</byline>
+
+	<address>Seoul, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>Y. Choi, C. Hwang, J. Lee, I. Yu<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Sungkyunkwan University,</affiliation>
+	</byline>
+
+	<address>Suwon, Republic of Korea<lb/></address>
+
+	<byline>
+	<docAuthor>V. Dudenas, A. Juodagalvis, J. Vaitkus<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Vilnius University,</affiliation>
+	</byline>
+
+	<address>Vilnius, Lithuania<lb/></address>
+
+	<byline>
+	<docAuthor>I. Ahmed, Z.A. Ibrahim, M.A.B. Md Ali 33 , F. Mohamad Idris 34 , W.A.T. Wan Abdullah, M.N. Yusli,<lb/> Z. Zolkapli<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Centre for Particle Physics, Universiti Malaya,</affiliation>
+	</byline>
+
+	<address>Kuala Lumpur, Malaysia<lb/></address>
+
+	<byline>
+	<docAuthor>H. Castilla-Valdez, E. De La Cruz-Burelo, I. Heredia-De La Cruz 35 , R. Lopez-Fernandez, J. Mejia Guisao,<lb/> A. Sanchez-Hernandez<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centro de Investigacion y de Estudios Avanzados del IPN,</affiliation>
+	</byline>
+
+	<address>Mexico City, Mexico<lb/></address>
+
+	<byline>
+	<docAuthor>S. Carrillo Moreno, C. Oropeza Barrera, F. Vazquez Valencia<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidad Iberoamericana,</affiliation>
+	</byline>
+
+	<address>Mexico City, Mexico<lb/></address>
+
+	<byline>
+	<docAuthor>I. Pedraza, H.A. Salazar Ibarguen, C. Uribe Estrada<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Benemerita Universidad Autonoma de Puebla,</affiliation>
+	</byline>
+
+	<address>Puebla, Mexico<lb/></address>
+
+	<byline>
+	<docAuthor>A. Morelos Pineda<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidad Autónoma de San Luis Potosí,</affiliation>
+	</byline>
+
+	<address>San Luis Potosí, Mexico<lb/></address>
+
+	<byline>
+	<docAuthor>D. Krofcheck<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Auckland,</affiliation>
+	</byline>
+
+	<address>Auckland, New Zealand<lb/></address>
+
+	<byline>
+	<docAuthor>P.H. Butler<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Canterbury,</affiliation>
+	</byline>
+
+	<address>Christchurch, New Zealand<lb/></address>
+
+	<byline>
+	<docAuthor>A. Ahmad, M. Ahmad, Q. Hassan, H.R. Hoorani, A. Saddique, M.A. Shah, M. Shoaib, M. Waqas<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Centre for Physics, Quaid-I-Azam University,</affiliation>
+	</byline>
+
+	<address>Islamabad, Pakistan<lb/></address>
+
+	<byline>
+	<docAuthor>H. Bialkowska, M. Bluj, B. Boimska, T. Frueboes, M. Górski, M. Kazana, K. Nawrocki,<lb/> K. Romanowska-Rybinska, M. Szleper, P. Zalewski<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Centre for Nuclear Research,</affiliation>
+	</byline>
+
+	<address>Swierk, Poland<lb/></address>
+
+	<byline>
+	<docAuthor>K. Bunkowski, A. Byszuk 36 , K. Doroba, A. Kalinowski, M. Konecki, J. Krolikowski, M. Misiura,<lb/> M. Olszewski, A. Pyskir, M. Walczak<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute of Experimental Physics, Faculty of Physics, University of Warsaw,</affiliation>
+	</byline>
+
+	<address>Warsaw, Poland<lb/></address>
+
+	<byline>
+	<docAuthor>P. Bargassa, C. Beirão Da Cruz E Silva, B. Calpas, A. Di Francesco, P. Faccioli, M. Gallinaro, J. Hollar,<lb/> N. Leonardo, L. Lloret Iglesias, M.V. Nemallapudi, J. Seixas, O. Toldaiev, D. Vadruccio, J. Varela<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Laboratório de Instrumentação e Física Experimental de Partículas,</affiliation>
+	</byline>
+
+	<address>Lisboa, Portugal<lb/></address>
+
+	<byline>
+	<docAuthor>A. Malakhov, V. Matveev 37,38 , V. Palichik, V. Perelygin, S. Shmatov, S. Shulha, N. Skatchkov, V. Smirnov,<lb/> N. Voytishin, A. Zarubin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Joint Institute for Nuclear Research,</affiliation>
+	</byline>
+
+	<address>Dubna, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>Y. Ivanov, V. Kim 39 , E. Kuznetsova 40 , P. Levchenko, V. Murzin, V. Oreshkin, I. Smirnov, V. Sulimov,<lb/> L. Uvarov, S. Vavilov, A. Vorobyev<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Petersburg Nuclear Physics Institute,</affiliation>
+	</byline>
+
+	<address>Gatchina (St. Petersburg), Russia<lb/></address>
+
+	<byline>
+	<docAuthor>Yu. Andreev, A. Dermenev, S. Gninenko, N. Golubev, A. Karneyeu, M. Kirsanov, N. Krasnikov,<lb/> A. Pashenkov, D. Tlisov, A. Toropin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Nuclear Research,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>V. Epshteyn, V. Gavrilov, N. Lychkovskaya, V. Popov, I. Pozdnyakov, G. Safronov, A. Spiridonov,<lb/> A. Stepennov, M. Toms, E. Vlasov, A. Zhokin<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Institute for Theoretical and Experimental Physics,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>T. Aushev, A. Bylinkin 38<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Moscow Institute of Physics and Technology,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>R. Chistov 41 , M. Danilov 41 , P. Parygin, D. Philippov, S. Polikarpov, E. Tarkovskii<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>National Research Nuclear University &apos;Moscow Engineering Physics Institute&apos; (MEPhI),</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>V. Andreev, M. Azarkin 38 , I. Dremin 38 , M. Kirakosyan 38 , A. Terkulov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>P.N. Lebedev Physical Institute,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>A. Baskakov, A. Belyaev, E. Boos, M. Dubinin 42 , L. Dudko, A. Ershov, A. Gribushin, V. Klyukhin,<lb/> O. Kodolova, I. Lokhtin, I. Miagkov, S. Obraztsov, S. Petrushanko, V. Savrin, A. Snigirev<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Skobeltsyn Institute of Nuclear Physics, Lomonosov Moscow State University,</affiliation>
+	</byline>
+
+	<address>Moscow, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>V. Blinov 43 , Y. Skovpen 43 , D. Shtol 43<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Novosibirsk State University (NSU),</affiliation>
+	</byline>
+
+	<address>Novosibirsk, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>I. Azhgirey, I. Bayshev, S. Bitioukov, D. Elumakhov, V. Kachanov, A. Kalinin, D. Konstantinov,<lb/> V. Krychkine, V. Petrov, R. Ryutin, A. Sobol, S. Troshin, N. Tyurin, A. Uzunian, A. Volkov<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>State Research Center of Russian Federation, Institute for High Energy Physics,</affiliation>
+	</byline>
+
+	<address>Protvino, Russia<lb/></address>
+
+	<byline>
+	<docAuthor>P. Adzic 44 , P. Cirkovic, D. Devetak, M. Dordevic, J. Milosevic, V. Rekovic<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of Belgrade, Faculty of Physics and Vinca Institute of Nuclear Sciences,</affiliation>
+	</byline>
+
+	<address>Belgrade, Serbia<lb/></address>
+
+	<byline>
+	<docAuthor>J. Alcaraz Maestre, M. Barrio Luna, M. Cerrada, N. Colino, B. De La Cruz, A. Delgado Peris,<lb/> A. Escalante Del Valle, C. Fernandez Bedoya, J.P. Fernández Ramos, J. Flix, M.C. Fouz, P. Garcia-Abia,<lb/> O. Gonzalez Lopez, S. Goy Lopez, J.M. Hernandez, M.I. Josa, A. Pérez-Calero Yzquierdo, J. Puerta Pelayo,<lb/> A. Quintario Olmeda, I. Redondo, L. Romero, M.S. Soares, A. Álvarez Fernández<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Centro de Investigaciones Energéticas Medioambientales y Tecnológicas (CIEMAT),</affiliation>
+	</byline>
+
+	<address>Madrid, Spain<lb/></address>
+
+	<byline>
+	<docAuthor>J.F. de Trocóniz, M. Missiroli, D. Moran<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Universidad Autónoma de Madrid,</affiliation>
+	</byline>
+
+	<address>Madrid, Spain</address>
+
+		</front>
+	</text>
+</tei>

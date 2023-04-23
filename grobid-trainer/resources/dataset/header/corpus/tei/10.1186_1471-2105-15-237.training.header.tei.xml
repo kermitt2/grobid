@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1186_1471-2105-15-237"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">S O F T W A R E<lb/></note>
+
+	<note type="doctype">Open Access<lb/></note>
+
+	<docTitle>
+	<titlePart>Simulate_PCR for amplicon prediction and<lb/> annotation from multiplex, degenerate primers<lb/> and probes<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Shea N Gardner * and Tom Slezak</docAuthor>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">Background: Pairing up primers to amplify desired targets and avoid undesired cross reactions can be a<lb/> combinatorial challenge. Effective prediction of specificity and inclusivity from multiplexed primers and TaqMan®/<lb/> Luminex® probes is a critical step in PCR design.<lb/> Results: Code is described to identify all primer and probe combinations from a list of unpaired, unordered<lb/> candidates that should produce a product. It predicts and extracts all amplicon sequences in a large sequence<lb/> database from a list of primers and probes, allowing degenerate bases and user-specified levels of primer-target<lb/> mismatch tolerance. Amplicons hit by TaqMan®/Luminex® probes are indicated, and products may be annotated<lb/> with gene information from NCBI. Fragment length distributions are calculated to predict electrophoretic gel<lb/> banding patterns.<lb/> Conclusions: Simulate_PCR is the only freely available software that can be run from the command line for high<lb/> throughput applications which can calculate all products from large lists of primers and probes compared to a<lb/> large sequence database such as nt. It requires no prior knowledge of how primers should be paired. Degenerate<lb/> bases are allowed and entire amplicon sequences are extracted and annotated with gene information. Examples<lb/> are provided for sets of TaqMan®/Luminex® PCR signatures predicted to amplify all HIV-1 genomes, all Coronaviridae<lb/> genomes, and a group of antibiotic resistance genes. The software is a command line perl script freely available as<lb/> open source.<lb/></div>
+
+	Keywords:
+	<keyword>PCR target prediction software, HIV 1, Coronaviridae, Multiplex PCR, Amplicon prediction, Degenerate<lb/> PCR, Consensus PCR<lb/></keyword>
+
+	* Correspondence:
+	<email>gardner26@llnl.gov<lb/></email>
+
+	<byline>
+	<affiliation>Computations/Global Security, Lawrence Livermore National Laboratory<lb/> (LLNL),</affiliation>
+	</byline>
+
+	<address>Livermore, CA 94550, USA<lb/></address>
+
+	<note type="copyright">© 2014 Gardner and Slezak; licensee BioMed Central Ltd. This is an Open Access article distributed under the terms of the<lb/> Creative Commons Attribution License (http://creativecommons.org/licenses/by/2.0), which permits unrestricted use,<lb/> distribution, and reproduction in any medium, provided the original work is properly credited. The Creative Commons Public<lb/> Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this<lb/> article, unless otherwise stated.<lb/></note>
+
+	<reference>Gardner and Slezak BMC Bioinformatics 2014, 15:237<lb/> http://www.biomedcentral.com/1471-2105/15/237<lb/></reference>
+
+	<ptr type="web"></ptr>
+
+	Auspices<lb/>
+	<note type="funding">This work performed under the auspices of the U.S. Department of Energy<lb/> by Lawrence Livermore National Laboratory under Contract DE-AC52-<lb/>07NA27344.<lb/></note>
+
+	<note type="submission">Received: 17 October 2013 Accepted: 24 June 2014<lb/></note>
+
+	Published:
+	<date>9 July 2014<lb/></date>
+
+	<idno>doi:10.1186/1471-2105-15-237<lb/></idno>
+
+	Cite this article as:
+	<reference>Gardner and Slezak: Simulate_PCR for amplicon<lb/> prediction and annotation from multiplex, degenerate primers and<lb/> probes. BMC Bioinformatics 2014 15:237.</reference>
+
+		</front>
+	</text>
+</tei>

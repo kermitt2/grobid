@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210144"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Tropicalization of the barrier islands of the<lb/> northern Gulf of Mexico: A comparison of<lb/> herbivory and decomposition rates between<lb/> smooth cordgrass (Spartina alterniflora) and<lb/> black mangrove (Avicennia germinans)<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Aaron Macy ID<lb/> 1,2 *, Shailesh Sharma 1,2¤ , Eric Sparks 3,4 , Josh Goff 1 , Kenneth L. Heck 1,2 ,<lb/> Matthew W. Johnson 5 , Patric Harper 6 , Just Cebrian 1,2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Dauphin Island Sea Lab,</affiliation>
+	</byline>
+
+	<address>Dauphin Island, AL, United States of America,</address>
+
+	<byline>
+	<affiliation>2 University of South Alabama,<lb/> Marine Science Department,</affiliation>
+	</byline>
+
+	<address>Mobile, AL, United States of America,</address>
+
+	<byline>
+	<affiliation>3 Mississippi State University Coastal<lb/> Research and Extension Center, </affiliation>
+	</byline>
+
+	<address>Biloxi, MS, United States of America, </address>
+
+	<byline>
+	<affiliation>4 Mississippi-Alabama Sea Grant<lb/> Consortium, </affiliation>
+	</byline>
+
+	<address>Ocean Springs, MS, United States of America, </address>
+
+	<byline>
+	<affiliation>5 National Marine Fisheries Service, Southeast<lb/> Fisheries Science Center, </affiliation>
+	</byline>
+
+	<address>Miami, FL, United States of America, </address>
+
+	<byline>
+	<affiliation>6 Northern Gulf Coastal Program, US Fish<lb/> and Wildlife Service, Grand Bay Coastal Resources Center,</affiliation>
+	</byline>
+
+	<address>Moss Point, MS, United States of America<lb/></address>
+
+	<byline>
+	<affiliation>¤ Current address: Queens College, City University of New York,</affiliation>
+	</byline>
+
+	<address>Queens, NY, United States of America<lb/></address>
+
+	*
+	<email>amacy@disl.org</email>
+
+	Abstract<lb/>
+	<div type="abstract">The expansion of black mangrove Avicennia germinans into historically smooth cordgrass<lb/> Spartina alterniflora-dominated marshes with warming temperatures heralds the migration<lb/> of the marsh-mangrove ecotone northward in the northern Gulf of Mexico. With this shift,<lb/> A. germinans is expected to outcompete S. alterniflora where it is able to establish, offering<lb/> another prevalent food source to first order consumers. In this study, we find A. germinans<lb/> leaves to be preferable to chewing herbivores, but simultaneously, chewing herbivores<lb/> cause more damage to S. alterniflora leaves. Despite higher nitrogen content, A. germinans<lb/> leaves decomposed slower than S. alterniflora leaves, perhaps due to other leaf constitu-<lb/>ents or a different microbial community. Other studies have found the opposite in decompo-<lb/>sition rates of the two species&apos; leaf tissue. This study provides insights into basic trophic<lb/> process, herbivory and decomposition, at the initial stages of black mangrove colonization<lb/> into S. alterniflora salt marsh.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210144 January 7, 2019<lb/></reference>
+
+	<page>1 / 13<lb/></page>
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Macy A, Sharma S, Sparks E, Goff J, Heck<lb/> KL, Johnson MW, et al. (2019) Tropicalization of<lb/> the barrier islands of the northern Gulf of Mexico: A<lb/> comparison of herbivory and decomposition rates<lb/> between smooth cordgrass (Spartina alterniflora)<lb/> and black mangrove (Avicennia germinans). PLoS<lb/> ONE 14(1): e0210144.</reference>
+
+	<idno>https://doi.org/10.1371/<lb/> journal.pone.0210144<lb/></idno>
+
+	Editor:
+	<editor>Suzannah Rutherford,</editor>
+
+	<byline>
+	<affiliation>Fred Hutchinson<lb/> Cancer Research Center,</affiliation>
+	</byline>
+
+	<address>UNITED STATES<lb/></address>
+
+	<note type="submission">Received: October 23, 2017<lb/> Accepted: December 18, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">This is an open access article, free of all<lb/> copyright, and may be freely reproduced,<lb/> distributed, transmitted, modified, built upon, or<lb/> otherwise used by anyone for any lawful purpose.<lb/> The work is made available under the Creative<lb/> Commons CC0 public domain dedication.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">All files are available<lb/> from the SEANOE database (accession number:<lb/> 51515; DOI: 10.17882/51515; URL: http://doi.org/<lb/> 10 .17882/51515).<lb/></note>
+
+	Funding:
+	<note type="funding">This project was funded by the United<lb/> States Fish and Wildlife Service, grant<lb/> #F11AC01390 to JC and KLH. Support was also<lb/> provided by the U.S. Department of Commerce&apos;s<lb/> National Oceanic and Atmospheric Administration<lb/> under NOAA award NA14OAR4170098 and the<lb/> Mississippi-Alabama Sea Grant Consortium. The<lb/> funders had no role in study design, data collection<lb/> and analysis, decision to publish, or preparation of<lb/> the manuscript.<lb/></note>
+
+	Competing interests: Just Cebrian as an editor for<lb/> PLOS ONE and Patric Harper as an employee for<lb/> the Fish &amp; Wildlife Service in the Competing<lb/> Interests section. We confirm that this does not<lb/> alter our adherence to PLOS ONE policies on<lb/> sharing data and materials.
+		</front>
+	</text>
+</tei>

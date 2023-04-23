@@ -23,9 +23,9 @@ You could also build and install the service as a standalone service (let's supp
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.1.zip
-mv grobid-service-0.7.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.2.zip
+mv grobid-service-0.7.2 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.2.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -128,7 +128,7 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |  method   |  request type         |  response type       |  parameters         |  requirement  |  description  |
 |---        |---                    |---                   |---                  |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 
 Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
@@ -164,12 +164,14 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |  method   |  request type         |  response type       |  parameters            |  requirement  |  description  |
 |---        |---                    |---                   |---                     |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted). |
 |           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 |           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
+|           |                       |                      | `start`       | optional      | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)  |
+|           |                       |                      | `end`       | optional      | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `-1`, end with the last page of the PDF)  |
 
 Response status codes:
 
@@ -213,6 +215,12 @@ Example with requested additional sentence segmentation of the paragraph with bo
 
 ```console
 curl -v --form input=@./0thefile.pdf  --form segmentSentences=1 --form teiCoordinates=s localhost:8070/api/processFulltextDocument
+```
+
+Example for processing a given PDF from page 3 (included) to the last page (page 1 and 2 will be ignored, by convention the index of the first page of a PDF is `1`):
+
+```console
+curl -v --form input=@./thefile.pdf --form start=3 localhost:8070/api/processFulltextDocument
 ```
 
 #### /api/processReferences
@@ -412,7 +420,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
+| POST, PUT | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -483,7 +491,7 @@ Parse a lis of raw bibliographical reference strings and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST      | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
+| POST      | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -743,6 +751,7 @@ Launch a training for a given model. The service return back a training token (a
 |           |                     |                      | type | optional | type of training, `full`, `holdout`, `split`, `nfold`, default is `split` |
 |           |                     |                      | ratio | optional | only considered for `split` training mode, give the ratio (number bewteen 0 and 1) of training and evaluation data when splitting the annotated data, default is `0.9` |
 |           |                     |                      | n | optional | only considered for `nfold` training mode, give the number of folds to be used, default is `10` |
+|           |                     |                      | `incremental` | optional | boolean indicating if the training should be incremental (`1`) starting from the existing model, or not (default, `0`) |
 
 The `type` of training indicates which training and evaluation mode should be used:
 - `full`: the whole available training data is used for training a model

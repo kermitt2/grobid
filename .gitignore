@@ -15,6 +15,7 @@ Thumbs.db
 *.log
 *.log.*
 *.old
+*.back
 tei-alt
 raw-alt
 tei-new
@@ -54,6 +55,7 @@ grobid-software
 software-mentions
 grobid-keyterm
 dataseer-ml
+datastet
 grobid-test-ant
 grobid-home/models/quantities
 grobid-home/models/dictionaries-lexical-entries
@@ -75,8 +77,11 @@ grobid-home/models/software*
 grobid-home/models/superconductors*
 grobid-home/models/values
 grobid-home/models/dataseer*
+grobid-home/models/datasets*
 grobid-home/models/*-bert*/
 grobid-home/models/*scibert*/
+grobid-home/models/context_*
 
 Dockerfile.dataseer
 Dockerfile.software
+Dockerfile.datastet

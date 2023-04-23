@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0210360"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Characteristics and associated factors of<lb/> acute kidney injury among adult dengue<lb/> patients: A retrospective single-center study<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Ajib Diptyanusa 1,2☯ , Weerapong Phumratanaprapin ID 1☯<lb/> *, Benjaluck Phonrat 1☯ ,<lb/> Kittiyod Poovorawan 1 ‡ , Borimas Hanboonkunupakarn 1 ‡ , Natthida Sriboonvorakul 1 ‡ ,<lb/> Usa Thisyakorn 1 ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Clinical Tropical Medicine, Faculty of Tropical Medicine, Mahidol University,</affiliation>
+	</byline>
+
+	<address>Bangkok,<lb/> Thailand,</address>
+
+	<byline>
+	<affiliation>2 Department of Parasitology, Faculty of Medicine, Public Health and Nursing, Universitas Gadjah<lb/> Mada,</affiliation>
+	</byline>
+
+	<address>Yogyakarta, Indonesia<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> ‡ These authors also contributed equally to this work.<lb/> 
+
+	*
+	<email>weerapong.phu@mahidol.ac.th</email> (WP) 
+
+	Abstract<lb/>
+	<div type="abstract">Severe dengue cases have been increasingly reported in Thailand, and the under-reporting<lb/> of acute kidney injury (AKI) in cases of dengue viral infection has become an obstacle in<lb/> obtaining an accurate description of the true nature and epidemiology of AKI. Because AKI<lb/> may lead to patient morbidity and mortality, an early diagnosis is important in preventing its<lb/> onset in dengue patients. This study aimed to determine the prevalence, clinical and labora-<lb/>tory characteristics, and associated factors of AKI among adult dengue patients. This retro-<lb/>spective study reviewed admission data from the medical records of adult dengue patients<lb/> admitted to the Bangkok Hospital for Tropical Diseases between January 2012 and Novem-<lb/>ber 2017 and stratified these patients into AKI and non-AKI groups using the Kidney Dis-<lb/>ease Improving Global Outcomes criteria (KDIGO). A total of 1,484 patients were included<lb/> in the study, with 71 categorized into the AKI group. The prevalence of AKI was 4.8%. In the<lb/> AKI group, the predominant age range was 18-40 years (71.8%), with a female to male<lb/> ratio of 1:2.7. These patients showed significantly (P &lt; 0.05) higher proportions of altered<lb/> consciousness, dyspnea, low mean arterial blood pressure, high-grade fever, major bleed-<lb/>ing, severe thrombocytopenia, hypoalbuminemia, severe transaminitis, coagulopathy, met-<lb/>abolic acidosis, rhabdomyolysis, proteinuria, hematuria, and pyuria. Our study established<lb/> that older age, male sex, diabetes mellitus, obesity, severe dengue, and coexisting bacterial<lb/> infection were significant associated factors for AKI in dengue by multivariate analysis. A<lb/> total of 10 (14.1%) patients with AKI received dialysis, among which 9 (12.7%) patients from<lb/> the AKI group died. Our findings suggest that an awareness of AKI, its early diagnosis, and<lb/> evaluation of clinical and laboratory characteristics of dengue patients will help clinicians to<lb/> initiate appropriate therapy for dengue-associated AKI.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0210360 January 7, 2019<lb/></reference>
+
+	<page>1 / 15<lb/></page> 
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+	
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>Diptyanusa A, Phumratanaprapin W,<lb/> Phonrat B, Poovorawan K, Hanboonkunupakarn B,<lb/> Sriboonvorakul N, et al. (2019) Characteristics and<lb/> associated factors of acute kidney injury among<lb/> adult dengue patients: A retrospective single-center<lb/> study. PLoS ONE 14(1): e0210360.</reference>
+
+	<idno>https://doi.org/<lb/> 10.1371/journal.pone.0210360<lb/></idno>
+
+	Editor:
+	<editor>Emmanuel A. Burdmann,</editor>
+
+	<byline>
+	<affiliation>University of Sao<lb/> Paulo Medical School,</affiliation>
+	</byline>
+
+	<address>BRAZIL<lb/></address>
+
+	<note type="submission">Received: August 5, 2018<lb/> Accepted: December 20, 2018<lb/></note>
+
+	Published:
+	<date>January 7, 2019<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2019 Diptyanusa et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement: 
+	<note type="availability">All relevant data are<lb/> within the manuscript.<lb/></note>
+
+	Funding: 
+	<note type="funding">The study was supported by a grant from<lb/> the Faculty of Tropical Medicine, Mahidol<lb/> University. The funders had no role in study<lb/> design, data collection and analysis, decision to<lb/> publish, or preparation of the manuscript.<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

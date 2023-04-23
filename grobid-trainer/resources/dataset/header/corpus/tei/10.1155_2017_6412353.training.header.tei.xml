@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1155_2017_6412353"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+	<lb/>
+	<note type="doctype">Research Article<lb/></note>
+
+	<docTitle>
+	<titlePart>Vaccinomics Approach for Designing Potential<lb/> Peptide Vaccine by Targeting Shigella spp. Serine<lb/> Protease Autotransporter Subfamily Protein SigA<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Arafat Rahman Oany, 1 Tahmina Pervin, 2 Mamun Mia, 1 Motaher Hossain, 3<lb/> Mohammad Shahnaij, 4 Shahin Mahmud, 1 and K. M. Kaderi Kibria 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Biotechnology and Genetic Engineering, Faculty of Life Science, Mawlana Bhashani Science and Technology<lb/> University,</affiliation>
+	</byline>
+
+	<address>Tangail, Bangladesh<lb/></address>
+
+	<byline>
+	<affiliation>2 Biotechnology and Genetic Engineering Discipline, Life Science School, Khulna University,</affiliation>
+	</byline>
+
+	<address>Khulna, Bangladesh<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Biochemistry and Molecular Biology, University of Dhaka,</affiliation>
+	</byline>
+
+	<address>Dhaka, Bangladesh<lb/></address>
+
+	<byline>
+	<affiliation>4 Enteric and Food Microbiology Laboratory, International Centre for Diarrhoeal Disease Research Bangladesh (icddr,b),<lb/></affiliation>
+	</byline>
+
+	<address>Dhaka, Bangladesh<lb/></address>
+
+	Correspondence should be addressed to 
+	<byline>
+	<docAuthor>K. M. Kaderi Kibria;</docAuthor>
+	</byline>
+
+	<email>km_kibria@yahoo.com<lb/></email>
+
+	<note type="submission">Received 18 March 2017; Revised 28 June 2017; Accepted 24 July 2017;</note>
+
+	Published
+	<date>7 September 2017<lb/></date>
+
+	Academic Editor:
+	<editor>Pedro A. Reche<lb/></editor>
+
+	<note type="copyright">Copyright © 2017 Arafat Rahman Oany et al. This is an open access article distributed under the Creative Commons Attribution<lb/> License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.<lb/></note>
+
+	<div type="abstract">Shigellosis, a bacillary dysentery, is closely associated with diarrhoea in human and causes infection of 165 million people<lb/> worldwide per year. Casein-degrading serine protease autotransporter of enterobacteriaceae (SPATE) subfamily protein SigA, an<lb/> outer membrane protein, exerts both cytopathic and enterotoxic effects especially cytopathic to human epithelial cell type-2<lb/> (HEp-2) and is shown to be highly immunogenic. In the present study, we have tried to impose the vaccinomics approach for<lb/> designing a common peptide vaccine candidate against the immunogenic SigA of Shigella spp. At first, 44 SigA proteins from<lb/> different variants of S. flexneri, S. dysenteriae, S. boydii, and S. sonnei were assessed to find the most antigenic protein. We<lb/> retrieved 12 peptides based on the highest score for human leukocyte antigen (HLA) supertypes analysed by NetCTL. Initially,<lb/> these peptides were assessed for the affinity with MHC class I and class II alleles, and four potential core epitopes<lb/> VTARAGLGY, FHTVTVNTL, HTTWTLTGY, and IELAGTLTL were selected. From these, FHTVTVNTL and IELAGTLTL<lb/> peptides were shown to have 100% conservancy. Finally, IELAGTLTL was shown to have the highest population coverage<lb/> (83.86%) among the whole world population. In vivo study of the proposed epitope might contribute to the development of<lb/> functional and unique widespread vaccine, which might be an operative alleyway to thwart dysentery from the world.<lb/></div>
+
+	<reference>Hindawi<lb/> Journal of Immunology Research<lb/> Volume 2017, Article ID 6412353, 14 pages<lb/> https://doi.org/10.1155/2017/6412353<lb/></reference>
+
+	<title level="j">Journal of Immunology Research</title>
+	
+		</front>
+	</text>
+</tei>
