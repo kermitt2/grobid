@@ -38,7 +38,7 @@ In a complete PDF processing, GROBID manages 55 final labels used to build relat
 
 GROBID includes a comprehensive web service API, batch processing, a JAVA API, Docker images, a generic evaluation framework (precision, recall, etc., n-fold cross-evaluation) and the semi-automatic generation of training data.
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, Internet Archive Scholar, HAL Research Archive, INIST-CNRS, CERN (Invenio), scite.ai, Academia.edu and many more. The tool is designed for speed and high scalability in order to address the full scientific literature corpus.
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, Semantic Scholar, HAL Research Archive, scite.ai, Academia.edu, Internet Archive Scholar, INIST-CNRS, CERN (Invenio), and many more. The tool is designed for speed and high scalability in order to address the full scientific literature corpus.
 
 GROBID should run properly "out of the box" on Linux (64 bits) and macOS. We cannot ensure currently support for Windows as we did before (help welcome!).
 

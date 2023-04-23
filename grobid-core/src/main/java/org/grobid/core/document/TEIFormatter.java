@@ -84,7 +84,7 @@ public class TEIFormatter {
             Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
     private static Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])");
 
-    private static Pattern startNum = Pattern.compile("^(\\d+)\\.?(.*)");
+    private static Pattern startNum = Pattern.compile("^(\\d+\\.?\\s)(.*)");
 
     private static final String SCHEMA_XSD_LOCATION = "https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd";
     private static final String SCHEMA_DTD_LOCATION = "https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/dtd/Grobid.dtd";
@@ -970,23 +970,33 @@ public class TEIFormatter {
             allNotes.add(footText);
 
             List<Note> localNotes = makeNotes(noteTokens, footText, noteType, notes.size());
-            notes.addAll(localNotes);
+            if (localNotes != null)
+                notes.addAll(localNotes);
         }
 
         return notes;
     }
 
     protected List<Note> makeNotes(List<LayoutToken> noteTokens, String footText, Note.NoteType noteType, int startIndex) {
-        
+        if (footText == null)
+            return null;
+
         List<Note> notes = new ArrayList<>();
 
         Matcher ma = startNum.matcher(footText);
         int currentNumber = -1;
+        // this string represents the possible characters after a note number (usually nothing or a dot)
+        String sugarText = null;
         if (ma.find()) {
             String groupStr = ma.group(1);
             footText = ma.group(2);
             try {
-                currentNumber = Integer.parseInt(groupStr);
+                if (groupStr.indexOf(".") != -1)
+                    sugarText = ".";
+                String groupStrNormalized = groupStr.replace(".", "");
+                groupStrNormalized = groupStrNormalized.trim();
+                currentNumber = Integer.parseInt(groupStrNormalized);
+
                 // remove this number from the layout tokens of the note
                 if (currentNumber != -1) {
                     String toConsume =  groupStr;
@@ -1025,6 +1035,9 @@ public class TEIFormatter {
         // segmentation model using more foot notes training data)
         if (currentNumber != -1) {
             String nextLabel = " " + (currentNumber+1);
+            // suger characters after note number must be consistent with the previous ones to avoid false match
+            if (sugarText != null)
+                nextLabel += sugarText;
 
             int ind = footText.indexOf(nextLabel);
             if (ind != -1) {
