@@ -84,7 +84,7 @@ public class TEIFormatter {
             Pattern.compile("(\\[|\\()((\\d)+(\\w)?(\\-\\d+\\w?)?,\\s?)+(\\d+\\w?)(\\-\\d+\\w?)?(\\)|\\])");
     private static Pattern numberRefCompact2 = Pattern.compile("(\\[|\\()(\\d+)(-|‒|–|—|―|\u2013)(\\d+)(\\)|\\])");
 
-    private static Pattern startNum = Pattern.compile("^(\\d+)(.*)");
+    private static Pattern startNum = Pattern.compile("^(\\d+)\\.?(.*)");
 
     private static final String SCHEMA_XSD_LOCATION = "https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd";
     private static final String SCHEMA_DTD_LOCATION = "https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/dtd/Grobid.dtd";
@@ -1094,6 +1094,15 @@ public class TEIFormatter {
 
             // for labelling bibliographical references in notes 
             List<LayoutToken> noteTokens = note.getTokens();
+
+            String coords = null;
+            if (config.isGenerateTeiCoordinates("note")) {
+                coords = LayoutTokensUtil.getCoordsString(noteTokens);
+            }
+
+            if (coords != null) {
+                desc.addAttribute(new Attribute("coords", coords));
+            }
 
             org.apache.commons.lang3.tuple.Pair<String, List<LayoutToken>> noteProcess = 
                 fullTextParser.processShort(noteTokens, doc);

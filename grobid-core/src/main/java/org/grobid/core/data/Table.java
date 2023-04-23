@@ -231,6 +231,15 @@ public class Table extends Figure {
             } else {
                 noteNode = XmlBuilderUtils.teiElement("note", LayoutTokensUtil.normalizeText(note.toString()).trim());
             }
+
+            String coords = null;
+            if (config.isGenerateTeiCoordinates("note")) {
+                coords = LayoutTokensUtil.getCoordsString(noteLayoutTokens);
+            }
+
+            if (coords != null) {
+                noteNode.addAttribute(new Attribute("coords", coords));
+            }
         }
 
 		tableElement.appendChild(headEl);
