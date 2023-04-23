@@ -31,8 +31,8 @@ public class TEIFormatterTest {
 
         Note footnote = footnotes.get(0);
 
-        assertThat(footnote.getText(), is(" This is a footnote"));
-        assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is(" This is a footnote"));
+        assertThat(footnote.getText(), is("This is a footnote"));
+        assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is("This is a footnote"));
         assertThat(footnote.getLabel(), is("1"));
     }
 
