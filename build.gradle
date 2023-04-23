@@ -220,7 +220,7 @@ subprojects {
             throw new RuntimeException("Unsupported platform!")
         }
 
-        workingDir = rootProject.rootDir
+        //workingDir = rootProject.rootDir
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
