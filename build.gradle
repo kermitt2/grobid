@@ -218,8 +218,13 @@ subprojects {
                 libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
             }
         } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-            libraries = "${file("./grobid-home/lib/lin-64/jep").absolutePath}:" +
-                "${file("./grobid-home/lib/lin-64").absolutePath}:"
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+                libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
+                    "${file("../grobid-home/lib/lin-64").absolutePath}:"
+            } else {
+                libraries = "${file("./grobid-home/lib/lin-64/jep").absolutePath}:" +
+                    "${file("./grobid-home/lib/lin-64").absolutePath}:"
+            }
         } else  {
             throw new RuntimeException("Unsupported platform!")
         }
