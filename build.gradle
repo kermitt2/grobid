@@ -225,8 +225,10 @@ subprojects {
         }
 
         //workingDir = rootProject.rootDir
-        jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
-            "--add-opens", "java.base/java.io=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
+                "--add-opens", "java.base/java.io=ALL-UNNAMED"
+        }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -362,7 +364,9 @@ project(":grobid-service") {
             throw new RuntimeException("Unsupported platform!")
         }
         
-        jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        }
         workingDir = rootProject.rootDir
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
@@ -517,6 +521,8 @@ project(":grobid-trainer") {
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
             main = mainClassName
             classpath = sourceSets.main.runtimeClasspath
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
             systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
         }
     }
@@ -536,7 +542,8 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -544,7 +551,8 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -552,7 +560,8 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
-        jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -560,7 +569,8 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
-        jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 }
