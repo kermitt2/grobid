@@ -227,7 +227,7 @@ subprojects {
         //workingDir = rootProject.rootDir
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
-                "--add-opens", "java.base/java.io=ALL-UNNAMED"
+            "--add-opens", "java.base/java.io=ALL-UNNAMED"
         }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
@@ -542,8 +542,11 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -551,8 +554,11 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -560,8 +566,11 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
-        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
@@ -569,8 +578,11 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
-        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 }
