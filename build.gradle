@@ -208,7 +208,7 @@ subprojects {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
-        maxHeapSize = "1024m"
+        maxHeapSize = "1024m"        
 
         def libraries = ""
         if (Os.isFamily(Os.FAMILY_MAC)) {
@@ -217,19 +217,15 @@ subprojects {
             } else {
                 libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
             }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
-                libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
-                    "${file("../grobid-home/lib/lin-64").absolutePath}:"
-            } else {
-                libraries = "${file("./grobid-home/lib/lin-64/jep").absolutePath}:" +
-                    "${file("./grobid-home/lib/lin-64").absolutePath}:"
-            }
-        } else  {
+        } else if (Os.isFamily(Os.FAMILY_UNIX)) {            
+            def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
+            libraries = jepDir
+            jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
+            libraries += ":"+jepDir
+        } else {
             throw new RuntimeException("Unsupported platform!")
         }
 
-        //workingDir = rootProject.rootDir
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
             "--add-opens", "java.base/java.io=ALL-UNNAMED"
