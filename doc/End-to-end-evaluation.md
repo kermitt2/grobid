@@ -8,6 +8,8 @@ For an end-to-end evaluation, covering the whole extraction process from the par
 
 * against TEI documents produced by [Pub2TEI](https://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
+For actual benchmarks, see the [Benchmarking page](Benchmarking.md). We describe below the datasets and how to run the benchmarks.  
+
 ## Datasets
 
 The corpus used for the end-to-end evaluation of Grobid are all available in a single place on Zenodo: https://zenodo.org/record/7708580. Some of these datasets have been further annotated to make the evaluation of certain sub-structures possible (in particular code and data availability sections & funding sections).
