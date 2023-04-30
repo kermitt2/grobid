@@ -44,8 +44,8 @@
 * [Description](Benchmarking.md)
 * [Evaluation PubMed Central](Benchmarking-pmc.md)
 * [Evaluation bioRxiv](Benchmarking-biorxiv.md)
-* [Evaluation PubMed Central](Benchmarking-plos.md)
-* [Evaluation bioRxiv](Benchmarking-elife.md)
+* [Evaluation PLOS](Benchmarking-plos.md)
+* [Evaluation eLife](Benchmarking-elife.md)
 
 <h3>Annotation guidelines</h3>
 

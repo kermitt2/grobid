@@ -5,10 +5,15 @@
 This is the end-to-end benchmarking result for GROBID version **0.7.3** against the `bioRxiv` test set (`biorxiv-10k-test-2000`), see the [End-to-end evaluation](End-to-end-evaluation.md) page for explanations and for reproducing this evaluation. 
 
 The following end-to-end results are using:
+
 - **BidLSTM_ChainCRF_FEATURES** as sequence labeling for the header model
+
 - **BidLSTM_ChainCRF_FEATURES** as sequence labeling for the reference-segmenter model
+
 - **BidLSTM-CRF-FEATURES** as sequence labeling for the citation model
+
 - **BidLSTM_CRF_FEATURES** as sequence labeling for the affiliation-address model
+
 - **CRF Wapiti** as sequence labelling engine for all other models.  
 
 Header extractions are consolidated by default with [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service (the results with CrossRef REST API as consolidation service should be similar but much slower). 
