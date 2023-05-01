@@ -17,7 +17,7 @@ public class GrobidPoolingFactory extends AbstractEngineFactory implements
 	 * A pool which contains objects of type Engine for the conversion.
 	 */
 	private static volatile GenericObjectPool<Engine> grobidEnginePool = null;
-	private static volatile Boolean grobidEnginePoolControl = false;
+	private static volatile Object grobidEnginePoolControl = new Object();
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(GrobidPoolingFactory.class);
 

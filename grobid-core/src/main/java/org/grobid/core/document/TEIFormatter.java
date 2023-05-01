@@ -1677,8 +1677,8 @@ public class TEIFormatter {
                 // for readability in another conditional
                 if (((Element) theNode).getLocalName().equals("ref")) {
                     // map character offset of the node
-                    mapRefNodes.put(new Integer(pos), theNode);
-                    refPositions.add(new Integer(pos));
+                    mapRefNodes.put(Integer.valueOf(pos), theNode);
+                    refPositions.add(Integer.valueOf(pos));
 
                     String chunk = theNode.getValue();
                     forbiddenPositions.add(new OffsetPosition(pos, pos+chunk.length()));
@@ -1789,7 +1789,7 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                     continue;
 
                 if (refPos >= pos+posInSentence && refPos <= pos+sentenceLength) {
-                    Node valueNode = mapRefNodes.get(new Integer(refPos));
+                    Node valueNode = mapRefNodes.get(Integer.valueOf(refPos));
                     if (pos+posInSentence < refPos) {
                         String local_text_chunk = text.substring(pos+posInSentence, refPos);
                         local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
