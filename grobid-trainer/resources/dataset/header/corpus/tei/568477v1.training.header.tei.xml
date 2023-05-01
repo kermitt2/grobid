@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="568477v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+	
+	Title: 
+	<docTitle>
+	<titlePart>Global assessment of Mycobacterium avium subspecies hominissuis genetic<lb/> requirement for growth and virulence.<lb/></titlePart>
+	</docTitle>
+
+	Short title: MAH genetic requirement for growth and virulence.<lb/>
+	
+	<byline>
+	<docAuthor>Marte S. Dragset 1,2,3 ¶* , Thomas R. Ioerger 4 ¶ , Maja Loevenich 1 , Markus Haug 1,5 ,<lb/> Niruja Sivakumar 1 , Anne Marstad 1 , Pere Joan Cardona 2 , Geir Klinkenberg 6 , Eric J.<lb/> Rubin 3 , Magnus Steigedal 1,3 , Trude H. Flo 1<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Centre of Molecular Inflammation Research and Department of Clinical and<lb/> Molecular Medicine, Norwegian University of Science and Technology,</affiliation>
+	</byline>
+
+	<address>Trondheim,<lb/> Norway.<lb/></address>
+
+	<byline>
+	<affiliation>2 Tuberculosis Research Unit, Germans Trias i Pujol Research Institute,</affiliation>
+	</byline>
+
+	<address>Badalona,<lb/> Barcelona, Spain.<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Immunology and Infectious Diseases, Harvard T.H. Chan School of<lb/> Public Health,</affiliation>
+	</byline>
+
+	<address>Boston, Massachusetts, USA.<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Computer Science and Engineering, Texas A&amp;M University,</affiliation>
+	</byline>
+
+	<address>College<lb/> Station, Texas, USA.<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Infection, St. Olavs University Hospital,</affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Biotechnology and Nanomedicine, SINTEF Materials and Chemistry,<lb/></affiliation>
+	</byline>
+
+	<address>Trondheim, Norway.<lb/></address>
+
+	* Corresponding author<lb/> E-mail:
+	<email>marte.dragset@ntnu.no</email>
+
+	(MSD)<lb/> ¶ These authors contributed equally to this work. Abstract<lb/>
+	<div type="abstract">Nontuberculous mycobacterial infections caused by the opportunistic pathogen<lb/> Mycobacterium avium subsp. hominissuis (MAH) are currently receiving renewed<lb/> attention due to increased incidence combined with difficult treatment. Insights into<lb/> the disease-causing mechanisms of this species have been hampered by difficulties in<lb/> genetic manipulation of the bacteria. Here, we identified and sequenced a highly<lb/> transformable, virulent MAH clinical isolate susceptible to high-density transposon<lb/> mutagenesis, facilitating global gene disruption and subsequent investigation of MAH<lb/> gene function. By transposon insertion sequencing (TnSeq) of this strain, we defined<lb/> the MAH genome-wide genetic requirement for virulence and in vitro growth, and<lb/> organized ~3500 identified transposon mutants for hypothesis-driven research. The<lb/> majority (71 %) of the genes we identified as essential for MAH in vitro had a<lb/> growth-essential mutual ortholog in the related and highly virulent M. tuberculosis<lb/> (Mtb). However, passaging our library through a mouse model of infection revealed a<lb/> substantial number (54% of total hits) of novel virulence genes. Strikingly, &gt; 97 % of<lb/> the MAH virulence genes had a mutual ortholog in Mtb. Two of the three virulence<lb/> genes specific to MAH (i.e. no Mtb mutual orthologs) were PPE proteins, a family of<lb/> proteins unique to mycobacteria and highly associated with virulence. Finally, we<lb/> validated novel genes as required for successful MAH infection; one encoding a<lb/> probable MFS transporter and another a hypothetical protein located in immediate<lb/> vicinity of six other identified virulence genes. In summary, we provide new,<lb/> fundamental insights into the underlying genetic requirement of MAH for growth and<lb/> host infection.</div>
+
+		</front>
+	</text>
+</tei>

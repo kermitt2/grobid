@@ -1,0 +1,43 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Abel, A. B., &quot;An Exploration of the Effects of Pessimism and Doubt on Asset Returns,&quot;<lb/> Journal of Economic Dynamics and Control 26 (2002), 1075-92.<lb/> </bibl>
+        <bibl>Beck, G., and V. Wieland, &quot;Learning and Control in a Changing Environment,&quot; Journal<lb/> of Economic Dynamics and Control 26 (2002), 1359-77.<lb/> </bibl>
+        <bibl>Blume, L. E., and D. Easley, &quot;What Has the Rational Learning Literature Taught Us?&quot;<lb/> in A. Kirman and M. Salmon, eds., Learning and Rationality in Economics (Oxford:<lb/> Basil-Blackwell, 1995), 12-39.<lb/> </bibl>
+        <bibl>Cecchetti, S. G., R S. Lam, and N. C. Mark, &quot;Asset Pricing with Distorted Beliefs: Are<lb/> Equity Returns Too Good to Be True?&quot; American Economic Review 90 (2000), 787<lb/> 805.<lb/> </bibl>
+        <bibl>Cochrane, J. H., and L. P. Hansen, &quot;Asset Pricing Explorations for Macroeconomics,&quot;<lb/> NBER Macroeconomics Annual 1 (1992), 115-64.<lb/> </bibl>
+        <bibl>Cogley, T., and T. J. Sargent, &quot;The Market Price of Risk and the Equity Premium: A<lb/> Legacy of the Great Depression?&quot; Mimeo, New York University, 2005.<lb/> </bibl>
+        <bibl>-, R. Colacito, and T. J. Sargent, &quot;Benefits of Monetary Policy Experimentation in<lb/> the Days of Samuelson and Solow and Lucas,&quot; Journal of Money Credit and Banking<lb/> 39 (2007), 67-99.<lb/> </bibl>
+        <bibl>-, ??, L. P. Hansen, and T. J. Sargent, &quot;Robustness and U.S. Monetary Policy Exper<lb/> imentation,&quot; Mimeo, New York University, 2005.<lb/> </bibl>
+        <bibl>Easley, D., and N. M. Kiefer, &quot;Controlling a Stochastic Process with Unknown Parame<lb/> ters,&quot; Econometrica 56 (1988), 1045-64.<lb/> </bibl>
+        <bibl>El-Gamal, M. A., and R. K. Sundaram, &quot;Bayesian Economists ... Bayesian Agents,&quot;<lb/> Journal of Economic Dynamics and Control 17 (1993), 355-83.<lb/> </bibl>
+        <bibl>Evans, G. W., and S. Honkapohja, Learning and Expectations in Macroeconomics (Prince<lb/> ton: Princeton University Press, 2001).<lb/> </bibl>
+        <bibl>Feller, W, An Introduction to Probability Theory and Its Applications, Vol. 1,3rd edition<lb/> (New York: Wiley and Sons, 1968).<lb/> </bibl>
+        <bibl>Gelman, A., J. B. Carlin, H. S. Stern, and D. B. Rubin, Bayesian Data Analysis (London:<lb/> Chapman and Hall, 2000).<lb/> </bibl>
+        <bibl>Geweke, J., &quot;A Note on Some Limitations of CRRA Utility,&quot; Economic Letters 71 (2001),<lb/> 341-45.<lb/> This content downloaded from<lb/> 38.66.77.2 on Wed, 14 Dec 2022 14:05:08 UTC<lb/> All use subject to https://about.jstor.org/terms<lb/> </bibl>
+        <bibl>GuiDOLiN, M., and A. TiMMERMAN, &quot;Properties of Equilibr<lb/> native Learning Schemes,&quot; Journal of Economic Dynam<lb/> 3503-44.<lb/> </bibl>
+        <bibl>Hall, R. J., &quot;Stochastic Implications of the Life Cycle-Permanent Income Hypothesis:<lb/> Theory and Evidence,&quot; Journal of Political Economy 86 (1978), 971-88.<lb/> </bibl>
+        <bibl>Hansen, L. P., and R. Jagannathan, &quot;Implications of Security Market Data for Models of<lb/> Dynamic Economies,&quot; Journal of Political Economy 99 (1991), 225-62.<lb/> </bibl>
+        <bibl>-, and-, &quot;Assessing Specification Errors in Stochastic Discount Factor Models,&quot;<lb/> Journal of Finance 52 (1997), 557-90.<lb/> </bibl>
+        <bibl>Judd, K., Numerical Methods in Economics (Cambridge: MIT Press, 1998).<lb/> </bibl>
+        <bibl>Kiefer, N. M., and Y. Nyarko, &quot;Optimal Control of an Unknown Linear Process with<lb/> Learning,&quot; International Economic Review 30 (1989), 571-86.<lb/> </bibl>
+        <bibl>-, and-, &quot;Savage-Bayesian Models of Economics,&quot; in A. Kirman and M. Salmon,<lb/> eds., Learning and Rationality in Economics (Oxford: Basil-Blackwell, 1995), 40-62.<lb/> </bibl>
+        <bibl>Kocherlakota, N. R., &quot;The Equity Premium: It&apos;s Still a Puzzle,&quot; Journal of Economic<lb/> Literature 34 (1996), 42-71.<lb/> </bibl>
+        <bibl>Kreps, D., &quot;Anticipated Utility and Dynamic Choice,&quot; in D.P. Jacobs, E. Kalai, and M.<lb/> Kamien, eds., Frontiers of Research in Economic Theory, (Cambridge: Cambridge<lb/> University Press, 1998), 242-74.<lb/> </bibl>
+        <bibl>Marimon, R., &quot;Learning from Learning in Economics,&quot; in D. Kreps and K.F. Wallis, eds.,<lb/> Advances in Economic Theory, (Cambridge: Cambridge University Press, 1996), 278<lb/> 315.<lb/> </bibl>
+        <bibl>Mehra, R., and E. C. Prescott, &quot;The Equity Premium: A Puzzle,&quot; Journal of Monetary<lb/> Economics 15 (1985), 145-61.<lb/> </bibl>
+        <bibl>Prescott, E. C, &quot;The Multi-Period Control Problem Under Uncertainty,&quot; Econometrica<lb/> 40 (1972), 1043-58.<lb/> </bibl>
+        <bibl>Sargent, T. J., Bounded Rationality in Macroeconomics, (Oxford: Clarendon Press, 1993).<lb/></bibl> 
+        <bibl>-, The Conquest of American Inflation (Princeton: Princeton University Press, 1999).<lb/></bibl> 
+        <bibl>Weitzman, M., &quot;Risk, Uncertainty, and Asset Pricing Puzzles,&quot; Mimeo, Harvard University,<lb/> 2005.<lb/> </bibl>
+        <bibl>Wieland, V., &quot;Monetary Policy, Parameter Uncertainty, and Optimal Learning,&quot; Journal<lb/> of Monetary Economics 46 (2000a), 199-228.<lb/> </bibl>
+        <bibl>-, &quot;Learning by Doing and the Value of Optimal Experimentation,&quot; Journal of Eco<lb/> nomic Dynamics and Control 24 (2000b), 501-34.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

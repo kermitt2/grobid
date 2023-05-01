@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="080671v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page>
+
+	<docTitle>
+	<titlePart>Extracellular peptidases in subsurface sediments of the White Oak River estuary, NC,<lb/> suggest microbial community adaptation to oxidize degraded organic matter<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Andrew D. Steen 1,* , Richard T. Kevorkian 2 , Jordan T. Bird 2 , Nina Dombrowski 3 ,<lb/> Brett J. Baker 3 , Shane M. Hagen 1,6 , Katherine H. Mulligan 1,4,7 , Jenna M. Schmidt 1 ,<lb/> Austen T. Webber 1,8 , Marc J. Alperin 5<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Department of Earth and Planetary Sciences, University of Tennessee,</affiliation>
+	</byline>
+
+	<address>Knoxville,<lb/> Tennessee, USA<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Microbiology, University of Tennessee,</affiliation>
+	</byline>
+
+	<address>Knoxville, Tennessee, USA<lb/></address>
+
+	<byline>
+	<affiliation>3 Department of Marine Science, University of Texas-Austin, Marine Science Institute,<lb/></affiliation>
+	</byline>
+
+	<address>Port Aransas, Texas, USA<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Biology, University of North Carolina at Chapel Hill,</affiliation>
+	</byline>
+
+	<address>Knoxville,<lb/> Tennessee, USA<lb/></address>
+
+	<byline>
+	<affiliation>5 Department of Marine Sciences, University of North Carolina at Chapel Hill,</affiliation>
+	</byline>
+
+	<address>USA<lb/></address>
+
+	6 Present address:
+	<byline>
+	<affiliation>College of Medicine, University of Tennessee Health Science Center,<lb/></affiliation>
+	</byline>
+
+	<address>Memphis, Tennessee, USA<lb/></address>
+
+	7 Present address:
+	<byline>
+	<affiliation>Brody School of Medicine, East Carolina University,</affiliation>
+	</byline>
+
+	<address>Greenville, North<lb/> Carolina, USA<lb/></address>
+
+	8 Present address:
+	<byline>
+	<affiliation>Department of Biological Sciences, Louisiana State University,</affiliation>
+	</byline>
+
+	<address>Baton<lb/> Rouge, Louisiana, USA<lb/></address>
+
+	* Corresponding:
+	<email>asteen1@utk.edu</email>
+
+	Abstract<lb/>
+	<div type="abstract">Microbial communities inhabiting subsurface sediments contain abundant heterotrophs,<lb/> which oxidize organic matter to obtain carbon and energy. Subsurface sediments contain<lb/> very low concentrations of canonically bioavailable compounds, and it is not clear what<lb/> fraction of sedimentary organic matter the community metabolizes. To gain a more<lb/> mechanistic understanding of subsurface heterotrophy, we studied both the genetic<lb/> potential encoded within metagenomes for extracellular peptidase production, and<lb/> experimentally assayed the potential activities of a wide range of extracellular peptidases<lb/> in sediments of the White Oak River estuary, NC. Deeply sequenced metagenomes<lb/> revealed genes coding for at least 15 classes of extracellular peptidases. We observed<lb/> enzyme-catalyzed hydrolysis of 11 different peptidase substrates in subsurface sediments.<lb/> Potential activities (V max ) of extracellular peptidases decreased downcore, but cell-<lb/>specific V max was relatively constant and similar to values observed in seawater<lb/> phytoplankton blooms. Decreases in half-saturation constants and relative increases in<lb/> activities of D-phenylalanyl aminopeptidase and ornithyl aminopeptidase with depth<lb/> indicate a community of heterotrophs that is adapted to access degraded organic matter.<lb/> These results suggest a subsurface heterotrophic community that converts degraded<lb/> organic matter into a bioavailable form, rather than a surface-adapted community relying<lb/> on ever-decreasing concentrations of more labile organic matter.</div>
+
+		</front>
+	</text>
+</tei>

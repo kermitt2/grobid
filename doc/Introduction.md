@@ -7,7 +7,7 @@
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
-[![Demo cloud.science-miner.com/grobid](https://img.shields.io/website-up-down-green-red/https/cloud.science-miner.com/grobid.svg)](http://cloud.science-miner.com/grobid)
+[![Demo grobid.science-miner.com](https://img.shields.io/website-up-down-green-red/https/grobid.science-miner.com.svg)](http://grobid.science-miner.com)
 [![Docker Hub](https://img.shields.io/docker/pulls/grobid/grobid.svg)](https://hub.docker.com/r/grobid/grobid/ "Docker Pulls")
 [![Docker Hub](https://img.shields.io/docker/pulls/lfoppiano/grobid.svg)](https://hub.docker.com/r/lfoppiano/grobid/ "Docker Pulls")
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/grobid)
@@ -57,7 +57,7 @@ The key aspects of GROBID are the following ones:
 
 By default, the GROBID extraction and parsing algorithms use a [fork](https://github.com/kermitt2/wapiti) of [Wapiti CRF library](http://wapiti.limsi.fr). As alternative, it is possible to perform the sequence labelling with [DeLFT](https://github.com/kermitt2/delft) deep learning models (typically BidLSTM-CRF with or without ELMo, or BERT-CRF, with additional feature channels) instead of Wapiti CRF models, using a native integration via [JEP](https://github.com/ninia/jep). The native libraries, in particular TensorFlow, are transparently integrated as JNI with dynamic call based on the current OS. Deep Learning models should be used when accuracy is the main priority, they often involve reduced scalability. See the related [benchmarking](End-to-end-evaluation.md). 
 
-GROBID should run properly "out of the box" on Linux (32 and 64 bits) and macOS. 
+GROBID should run properly "out of the box" on Linux (32 and 64 bits) and macOS (Intel and ARM). 
 
 ## Credits
 

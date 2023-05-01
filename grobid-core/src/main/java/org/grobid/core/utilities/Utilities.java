@@ -287,8 +287,13 @@ public class Utilities {
 	public static String getOsNameAndArch() {
 		String osPart = System.getProperty("os.name").replace(" ", "")
 				.toLowerCase().substring(0, 3);
+        if (StringUtils.equals(osPart, "mac")) {
+            if (StringUtils.equals(System.getProperty("os.arch"), "aarch64")){
+                osPart = osPart+"_arm";
+            }
+        }
 		String archPart = System.getProperty("sun.arch.data.model");
-		return String.format("%s-%s", osPart, archPart);
+        return String.format("%s-%s", osPart, archPart);
 	}
 
 	/**

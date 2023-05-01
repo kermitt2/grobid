@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text xml:lang="en">
+			<body>Report <lb/>A 54-year-old woman visited our emergency department <lb/>because of repeated vomiting for one day. Physical exami-<lb/>nation and blood analysis revealed subtle tenderness of <lb/>the right upper abdomen and mild elevation of white <lb/>blood cell count and C-reactive protein level. She under-<lb/>went pre-and post-contrast abdomino-pelvic computed <lb/>tomography (CT). A small gallstone was detected, and <lb/>slight edema of the gallbladder was suspected. She was <lb/>admitted with the suspicion of mild cholecystitis. <lb/>On the morning after the admission, she reported <lb/>headache and collapsed. Brain CT revealed a large suba-<lb/>rachnoid hematoma with hydrocephalus (Figure 1). <lb/>Considering the distribution of the hematoma and the <lb/>existence of hydrocephalus, repeated aneurysm rupture <lb/>was suspected. The abdomino-pelvic CT data were re-<lb/>assessed, and increased density of the cerebrospinal fluid <lb/>(CSF) (more than that of the spinal cord) was noted in the <lb/>spinal canal (Figure 2). We suspected that the first rup-<lb/>ture occurred before the admission. Her family confirmed <lb/>that she experienced relatively severe headache three days <lb/>prior to admission. <lb/></body>
+
+			<body>Comment <lb/>The symptoms of non-traumatic subarachnoid hemorrhage <lb/>(SAH) are usually sudden and include severe headache. If <lb/>brain CT is performed within 24 hours of onset, SAH can <lb/>be diagnosed in over 90% of cases. However, with time, <lb/>SAH becomes more difficult to detect on CT because of <lb/>CSF clearance [1]. When the initial rupture is not severe <lb/>and the headache is mild, the onset is usually overlooked, <lb/>and the patient visits the hospital for other vague symp-<lb/>toms or visits the emergency room only after a second rup-<lb/>ture. In this setting, if previous body CT data are available <lb/>that show SAH within the spinal canal, the findings may <lb/>help speculating the onset of aneurysm rupture. <lb/>Conversely, if SAH is incidentally found within the <lb/>spinal canal, the most frequent cause is traumatic medical <lb/>procedures, such as lumbar puncture and surgery, and it is <lb/>followed by intracranial SAH. In patients without a history <lb/>of recent lumbar puncture or surgery, SAH in the spinal <lb/>canal may be the first finding of intracranial SAH. <lb/></body>
+
+			<div type="annex">Competing Interests <lb/>The authors have no competing interests to declare. <lb/></div>
+
+			<listBibl>Reference <lb/>1. Ross, JS. Subarachnoid hemorrhage. In: Ross, JS and <lb/>Moore, KR (eds.), Diagnostic Imaging Spine, 2nd ed. <lb/>2010; 3: 36-39. Salt Lake City: Amirsys. <lb/>Wakabayashi, Y and Takahashi, G. Subarachnoid Hemorrhage on Abdominal <lb/>Computed Tomography. Journal of the Belgian Society of Radiology. <lb/>2019; 103(1): 14, 1-2. DOI: https://doi.org/10.5334/jbsr.1680 <lb/>* Kohseichuo General Hospital, JP <lb/></listBibl>
+
+			<note place="footnote"> † Toho University Ohashi Medical center, JP <lb/>Corresponding author: Yukari Wakabayashi <lb/>(wakabayashiipod@gmail.com) <lb/></note>
+
+			<front>IMAGES IN CLINICAL RADIOLOGY <lb/>Subarachnoid Hemorrhage on Abdominal Computed <lb/>Tomography <lb/>Yukari Wakabayashi * and Goshi Takahashi † <lb/>Keywords: Subarachnoid hemorrhage; Abdominal computed tomography; Spinal canal <lb/></front>
+
+			<body>Figure 1. <lb/>Figure 2. <lb/></body>
+
+			<note place="headnote">Wakabayashi and Takahashi: Subarachnoid Hemorrhage on Abdominal Computed Tomography <lb/>Art. 14, page 2 of 2 <lb/></note>
+
+			<front>How to cite this article: Wakabayashi, Y and Takahashi, G. Subarachnoid Hemorrhage on Abdominal Computed Tomography. <lb/>Journal of the Belgian Society of Radiology. 2019; 103(1): 14, 1-2. DOI: https://doi.org/10.5334/jbsr.1680 <lb/>Submitted: 18 October 2018 <lb/>Accepted: 27 November 2018 <lb/>Published: 30 January 2019 <lb/>Copyright: © 2019 The Author(s). This is an open-access article distributed under the terms of the Creative Commons <lb/>Attribution 4.0 International License (CC-BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, <lb/>provided the original author and source are credited. See http://creativecommons.org/licenses/by/4.0/. <lb/>OPEN ACCESS <lb/>Journal of the Belgian Society of Radiology is a peer-reviewed open access journal <lb/>published by Ubiquity Press. </front>
+
+	</text>
+</tei>

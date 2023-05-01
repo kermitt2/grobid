@@ -4,7 +4,7 @@
 
 Since GROBID version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with additional feature channel (for layout features), with ELMo, and transformer-based fine-tuned architectures with or without CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
 
-These architectures have been tested on Linux 64bit and macOS.
+These architectures have been tested on Linux 64bit and macOS 64bit. The support to the macOS ARM is in progress.
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see [here](https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink). Additionally, it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
@@ -18,19 +18,19 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 ## Recommended Deep Learning models
 
-By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. 
+By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
 For current GROBID version 0.7.2, we recommend considering the usage of the following Deep Learning models: 
 
-- `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF. With a GPU, there is normally no runtime impact by selecting this model. 
+- `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. 
 
 - `affiliation-address` model: for parsing affiliation and address blocks, `BidLSTM_CRF_FEATURES` architecture provides better accuracy than CRF at the cost of a minor runtime impact. 
 
-- `reference-segmenter` model: this model segments a bibliographical reference section into individual references, `BidLSTM_CRF_FEATURES` architecture provides better accuracy than CRF (even on very very very long reference sections), but at the cost of a global runtime 2 to 3 times slower. 
+- `reference-segmenter` model: this model segments a bibliographical reference section into individual references, `BidLSTM_CRF_FEATURES` architecture can provide slightly better accuracy than CRF (even on very very very long reference sections), but at the cost of a global runtime 2 to 3 times slower. 
 
 Other Deep Learning models do not show better accuracy than old-school CRF according to our benchmarkings, so we do not recommend using them in general at this stage. However, some of them tend to be more portable and can be more reliable than CRF for document layouts and scientific domains far from what is available in the training data.
 
-Finally, the models `segmentation` (overall first-pass segmentation of a document in general zones) and `fulltext` (structuring the content body of a document) are currently only based on CRF, due to the long input sequences to be processed. 
+Finally, the model `fulltext` (structuring the content body of a document) is currently only based on CRF, due to the long input sequences to be processed. 
 
 ### Getting started with Deep Learning
 

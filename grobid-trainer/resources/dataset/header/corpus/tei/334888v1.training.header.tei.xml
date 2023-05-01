@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="334888v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page> 
+
+	Full title:<lb/> 
+
+	<docTitle>
+	<titlePart>Comparative evaluation of the Geenius TM HIV 1/2 Confirmatory Assay and the HIV-1 and HIV-<lb/>2 Western blots in the Japanese population<lb/></titlePart>
+	</docTitle>
+
+	Short title:<lb/> Comparison between the Geenius HIV 1/2 Confirmatory Assay and the HIV-1 and HIV-2<lb/> Western blots<lb/>
+	
+	<byline>
+	<docAuthor>Makiko Kondo 1 , Koji Sudo 2 , Takako Sano 1 , Takuya Kawahata 3 , Ichiro Itoda 4 , Shinya Iwamuro 5 ,<lb/> Yukihiro Yoshimura 6 , Natsuo Tachikawa 6 , Yoko Kojima 3 , Haruyo Mori 3 , Hiroshi Fujiwara 7 ,<lb/> Naoki Hasegawa 7 , Shingo Kato 2*<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Division of Microbiology, Kanagawa Prefectural Institute of Public Health,</affiliation>
+	</byline>
+
+	<address>Chigasaki,<lb/> Kanagawa, Japan<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Microbiology and Immunology, Keio University School of Medicine,</affiliation>
+	</byline>
+
+	<address>Shinjuku-<lb/>ku, Tokyo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>3 Virology Section, Division of Microbiology, Osaka Institute of Public Health,</affiliation>
+	</byline>
+
+	<address>Osaka, Osaka, Japan<lb/></address>
+
+	<byline>
+	<affiliation>4 Shirakaba Clinic,</affiliation>
+	</byline>
+
+	<address>Shinjuku-ku, Tokyo, Japan<lb/></address>
+
+	<byline>
+	<affiliation>5 Atsugi City Hospital,</affiliation>
+	</byline>
+
+	<address>Atsugi, Kanagawa, Japan<lb/></address>
+
+	<byline>
+	<affiliation>6 Department of Infectious Diseases, Yokohama Municipal Citizen&apos;s Hospital,</affiliation>
+	</byline>
+
+	<address>Yokohama,<lb/> Kanagawa, Japan<lb/></address>
+
+	<byline>
+	<affiliation>7 Center for Infectious Diseases and Infection Control, Keio University Hospital,</affiliation>
+	</byline>
+
+	<address>Shinjuku-ku,<lb/> Tokyo, Japan<lb/></address>
+
+	* Corresponding author<lb/> E-mail:
+	<email>skato@a3.keio.jp</email>
+
+	(SK) 2 Abstract<lb/>
+	<div type="abstract">Accurate diagnosis of earlier HIV infection is essential for treatment and prevention.<lb/> Currently, confirmation tests of HIV infection in Japan are performed using Western blot (WB),<lb/> but WB has several limitations including low sensitivity and cross-reactivity between HIV-1 and<lb/> HIV-2 antibodies. To address these problems, a new HIV testing algorithm and a more reliable<lb/> confirmation and HIV-1/2 differentiation assay are required. The Bio-Rad Geenius TM HIV-1/2<lb/> Confirmatory Assay (Geenius) has recently been approved and recommended for use in the<lb/> revised guidelines for diagnosis of HIV infection by the Center for Disease Control and<lb/> Prevention (USA). We made comprehensive comparison of the performance of Geenius and the<lb/> Bio-Rad NEW LAV BLOT 1 and 2 (NLB 1 and 2) which are WB kits for HIV-1 and HIV-2,<lb/> respectively, to examine if Geenius is a suitable alternative to these WB assays which are now<lb/> being used in HIV testing in Japan. A total of 166 HIV-1 positive samples (146 from patients<lb/> with established HIV-1 infection and 20 from patients with acute infection), five HIV-1<lb/> seroconversion panels containing 21 samples and 30 HIV-2 positive samples were used. In<lb/> addition, a total of 140 HIV negative samples containing 10 false-positives on screening tests<lb/> were examined. The sensitivity of Geenius and NLB 1 for HIV-1 positive samples was 99.3%<lb/> and 98.6%, respectively. Geenius provided more positive results in the samples from acute<lb/> infections and detected positivity 0 to 32 days earlier in seroconversion panels than NLB 1. NLB<lb/> 2 gave positive results in 12.3% of HIV-1 positive samples. The sensitivity of both Geenius and<lb/> NLB 2 for HIV-2 positive samples was 100%. The specificity of Geenius, NLB 1 and NLB 2<lb/> was 98.5%, 81.5% and 90.0%, respectively. Geenius is an attractive alternative to WB for<lb/> confirmation and differentiation of HIV-1 and HIV-2 infections. The adaptation of Geenius to<lb/> the HIV testing algorithm may be advantageous for rapid diagnosis and the reduction of testing<lb/> costs.</div>
+
+		</front>
+	</text>
+</tei>

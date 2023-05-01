@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+
+						<author>-, <forename>R</forename>. <surname>Colacito</surname>, and <forename>T</forename>. <middlename>J</middlename>. <surname>Sargent</surname></author>
+
+						<author>-, ??, <forename>L</forename>. <middlename>P</middlename>. <surname>Hansen</surname>, and <forename>T</forename>. <middlename>J</middlename>. <surname>Sargent</surname></author>
+
+						<author>-, and-</author>
+
+						<author>-</author>
+
+						<author><surname>GuiDOLiN</surname>, <forename>M</forename>., and <forename>A</forename>. <surname>TiMMERMAN</surname></author>
+
+						<author><surname>Kiefer</surname>, <forename>N</forename>. <middlename>M</middlename>., and <forename>Y</forename>. <surname>Nyarko</surname></author>
+
+						<author><surname>Prescott</surname>, <forename>E</forename>. <middlename>C</middlename></author>
+
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</TEI>

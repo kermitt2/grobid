@@ -1127,7 +1127,7 @@ public class Document implements Serializable {
 
                         figures.add(f);
                         Engine.getCntManager().i("FigureCounters", "STANDALONE_FIGURES");
-                        LOGGER.info("Standalone figure on page: " + pageNum);
+                        LOGGER.debug("Standalone figure on page: " + pageNum);
 
                     }
                 }

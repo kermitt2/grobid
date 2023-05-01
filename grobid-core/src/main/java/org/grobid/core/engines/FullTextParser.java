@@ -625,7 +625,7 @@ public class FullTextParser extends AbstractParser {
 				if (blockIndex == dp2.getBlockPtr()) {
 					lastPos = dp2.getTokenBlockPos()+1;
 					if (lastPos > tokens.size()) {
-						LOGGER.error("DocumentPointer for block " + blockIndex + " points to " +
+						LOGGER.warn("DocumentPointer for block " + blockIndex + " points to " +
 							dp2.getTokenBlockPos() + " token, but block token size is " +
 							tokens.size());
 						lastPos = tokens.size();

@@ -420,7 +420,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
+| POST, PUT | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -491,7 +491,7 @@ Parse a lis of raw bibliographical reference strings and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST      | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
+| POST      | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -751,6 +751,7 @@ Launch a training for a given model. The service return back a training token (a
 |           |                     |                      | type | optional | type of training, `full`, `holdout`, `split`, `nfold`, default is `split` |
 |           |                     |                      | ratio | optional | only considered for `split` training mode, give the ratio (number bewteen 0 and 1) of training and evaluation data when splitting the annotated data, default is `0.9` |
 |           |                     |                      | n | optional | only considered for `nfold` training mode, give the number of folds to be used, default is `10` |
+|           |                     |                      | `incremental` | optional | boolean indicating if the training should be incremental (`1`) starting from the existing model, or not (default, `0`) |
 
 The `type` of training indicates which training and evaluation mode should be used:
 - `full`: the whole available training data is used for training a model

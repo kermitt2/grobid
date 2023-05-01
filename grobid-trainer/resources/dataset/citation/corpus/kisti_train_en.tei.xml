@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n10_1114_005" lang="en"><author>Jenkins, H. E., Kurfess, T. R. and Ludwick, S. J.</author>, <date>1997</date>, '<title level="a">Determination of a Dynamic Grinding Model</title>,' <title level="j">Trans of ASME, J. of Dyn. Sys. Measurement &amp; Control</title>, Vol. <biblScope unit="volume">119</biblScope>, No. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">289-293</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n10_1114_001" lang="en"><author>Chen, X., Rowe, W. B., Allanson, D. R. and Mills, B.</author>, <date>1999</date>, '<title level="a">A Grinding Power Model for Selection of Dressing and Grinding Conditions</title>,' <title level="j">Trans. of the ASME, J. of Manu. Sci. and Eng</title>., Vol. <biblScope unit="volume">121</biblScope>, pp. <biblScope unit="page">632-637</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n10_1131_009" lang="en"><author>Lefebvre, A. H.</author>, <date>1992</date>, '<title level="a">Twin-Fluid Atomization : Factors Influencing Mean Drop Size</title>,' <title level="j">Atomization and sprays</title>, pp. <biblScope unit="page">101-119</biblScope>.</bibl>
+<!---  title  date  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n11_1187_011" lang="en"><author>Sohn I.S. and Bae,D.H.</author>, <date>1999c</date> '<title level="a">Fatigue Strength Evaluation of IN-Plane Bending Type Single Spot Welded Lap Joint by Strain Energy Density</title>' <title level="j">Journal of KSME-A</title>, Vol.<biblScope unit="volume">23</biblScope>, No.<biblScope unit="issue">9</biblScope>, pp.<biblScope unit="page">1435-1441</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n11_1257_005" lang="en"><author>Ro,K.D. and Tsutahara,M.</author>, <date>1997</date>, '<title level="a">Numerical Analysis of Unsteady Flow in the Weis-Fogh Mechanism by the 3D Discrete Bortex Method with GRAPE3A</title>', <title level="j">Transaction of the ASME,Journal of Fluids Engineering</title>, Vol.<biblScope unit="volume">119</biblScope>, pp.<biblScope unit="page">96-102</biblScope>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n11_1225_018" lang="en"><author>Tomei,P.</author>, <date>1991</date>, '<title level="a">A Simple PD Controller for Robots with Elastic Joints</title>,' <title level="j">IEEE J. of Roborics and Automation</title>, Vol.<biblScope unit="volume">RA-3</biblScope>, No.<biblScope unit="issue">4</biblScope>, pp.<biblScope unit="page">291-300</biblScope>.</bibl>
+<!---  journal  publisher  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n11_1276_003" lang="en"><author>Clift R., GracemJ.R. and Weber,M.E.</author>, <date>1978</date>, '<title level="a">Bubbles, Drops and Particles</title>', <publisher>Academic Press</publisher>, pp.<biblScope unit="page">97-135</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n12_1337_021" lang="en"><author>Park, K.H.;Han, H.S. and Park, T.W.</author>, <date>1996</date>, <title level="j">Journal of the Korean Society of Precision Engineering</title>, <title level="a">A Study on Tolernce Design of Mechanisms Using the Taguchi Method</title>, Vol. <biblScope unit="volume">13</biblScope>, No. <biblScope unit="issue">6</biblScope>, pp. <biblScope unit="page">66-77</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n12_1337_010" lang="en"><author>Han, J</author>. <date>1998</date>, <title level="a">Feature Recognition: the State of the Art</title>, <title level="j">Transactions of the Society of CAD/CAM Engineers</title>, Vol. <biblScope unit="volume">3</biblScope>, No. <biblScope unit="issue">1</biblScope>, pp. <biblScope unit="page">68-85</biblScope>.</bibl>
+<!---  issn  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n2_177_008" lang="en"><author>Frenk, A., Henchoz, N., and Kurz, W.</author>, <date>1993</date>, '<title level="a">Laser Cladding of a Cobalt-Based Alloy, Processing Parameters and Microstructure</title>,' <title level="j">Zeitschrift Fur Metallkunde</title> <biblScope unit="volume">84</biblScope>, (<biblScope unit="issue">12</biblScope>), <biblScope unit="page">886-892</biblScope>. <idno type="issn">ISSN: 0044-3093</idno>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n3_358_017" lang="en"><author>Sparrow, E. M. and Gregg, J. L.</author>, <date>1960</date>, '<title level="a">Mass Transfer, Flow and Heat Transfer about a Rotating Disk</title>,' <title level="j">Transactions ASME, J. Heat Transfer</title>, Vol. <biblScope unit="volume">82</biblScope>, pp. <biblScope unit="page">294-302</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n3_283_009" lang="en"><author>Mercer, S. and Holowenko, A. R.</author>, <date>1958</date>, '<title level="a">Dynamic Characteristics of Cam Forms Calculated by the Digital Computer</title>,' <title level="j">Transaction of ASME</title>, <date>November</date>, pp. <biblScope unit="page">1695-1705</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n3_338_002" lang="en"><author>Choi, H., Vanderby, R.</author>, <date>1999</date>, '<title level="a">Comparison of Biomechanical Human Neck Models: Muscle Forces and Spinal Loads at C4/5 Level</title>,' <title level="j">J. Appl. Biomech</title>. Vol. <biblScope unit="volume">15-2</biblScope>, pp. <biblScope unit="page">120-138</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n3_350_010" lang="en"><author>Sparrow, E. M., Lloyd, J. R. and Hixon, C. W.</author>, <date>1966</date>, '<title level="a">Experiments on Turbulent Heat Transfer in an Asymmetrically Heated Rectangular Duct</title>,' <title level="j">Trans. of the ASME, J. Heat Transfer</title>, Vol. <biblScope unit="volume">88</biblScope>, pp. <biblScope unit="page">170-174</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n4_426_012" lang="en"><author>Takeno, T. and Sato, K.</author>, <date>1979</date>, '<title level="a">An Excess Enthalpy Flame Theory</title>,' <title level="j">Combustion Science and Technology</title>, pp. <biblScope unit="page">73-84</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n4_433_010" lang="en"><author>Tamura, M., Tai, H., Kasahara, M., Hasegawa, T. and Tanaka, R.</author>, <date>1997</date>, '<title level="a">Optical Measurements of Turbulent Diffusion Flame Formed in Highly Pre-Heated Air Flow</title>,' <title level="j">Combust. Science and Technology</title> (<note>in Japanese</note>), Vol. <biblScope unit="volume">4</biblScope>, pp. <biblScope unit="page">261-274</biblScope>.</bibl>
+<!---  volume  page  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n4_456_002" lang="en"><author>Chen, S.</author>, <date>1987</date>, '<title level="a">A Loss Model for the Transonic Flow Low-Pressure Steam Turbine Blades</title>,' <title level="j">Institute of Mech. Engrs.</title> <biblScope unit="volume">C269</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_E1MEAX_2000_v14n5_477_011" lang="en"><author>Vikhagen. E. and Lokberg O. J.</author>, <date>1990</date>, '<title level="a">Detection of Defects in Composite Materials by Television Holography and Image Processing</title>,' <title level="j">Mater. Eval.</title>, No. <biblScope unit="volume">48</biblScope>, pp. <biblScope unit="page">244-248</biblScope>.</bibl>
+            </listBibl>
+        </back>
+    </text>
+</TEI>

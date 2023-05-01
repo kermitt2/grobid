@@ -1,0 +1,17 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Bracco, Laetitia, L&apos;Hôte, Anne, Jeangirard, Eric, and Torny, Didier. 2022. &quot;Extending the Open<lb/> Monitoring of Open Science: A New Framework for the French Open Science Monitor (BSO).&quot;<lb/> https://hal.archives-ouvertes.fr/hal-03651518.<lb/> </bibl>
+        <bibl>Du, Caifan, Johanna Cohoon, Patrice Lopez, and James Howison. 2021a. &quot;Softcite Dataset: A Dataset<lb/> of Software Mentions in Biomedical and Economic Research Publications.&quot; Journal of the Association<lb/> for Information Science and Technology 72 (7): 870-84. https://doi.org/10.1002/asi.24454.<lb/></bibl> 
+        <bibl>---. 2021b. &quot;Softcite Dataset: A Dataset of Software Mentions in Biomedical and Economic Research<lb/> Publications.&quot; Journal of the Association for Information Science and Technology 72 (7): 870-84.<lb/> https://doi.org/10.1002/asi.24454.<lb/> </bibl>
+        <bibl>MESRI. 2018. &quot;National Plan for Open Science.&quot; https://cache.media.enseignementsup-recherche.gouv<lb/> .fr/file/Recherche/50/1/SO_A4_2018_EN_01_leger_982501.pdf.<lb/></bibl> 
+        <bibl>---. 2021. &quot;2nd National Plan for Open Science.&quot; https://cache.media.enseignementsup-<lb/>recherche.gouv.fr/file/science_ouverte/20/9/MEN_brochure_PNSO_web_1415209.pdf.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
