@@ -148,25 +148,12 @@ public class LibraryLoader {
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
-                    //addLibraryPath(libraryFolder.getAbsolutePath() + File.separator + DELFT_NATIVE_LIB_NAME);
-//                    System.out.println(System.getProperty("java.library.path"));
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("No python environment configured");
                     } else {
-//                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-//                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
-//                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
-                            /*if (Files.exists(path)) {
-                                addLibraryPath(path.toString());
-                            } else {
-                                LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
-                            }*/
-//                        }
-
                         if (SystemUtils.IS_OS_MAC) {
-//                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
                             System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion());
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
