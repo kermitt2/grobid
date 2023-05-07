@@ -388,7 +388,7 @@ project(":grobid-service") {
                 "${envLibs}/python${pythonVersion}/site-packages/jep"
         }
         
-        println(javaLibraryPath)
+        println("Running with the java.library.path: ${javaLibraryPath}")
         systemProperty "java.library.path", javaLibraryPath
 
     }
