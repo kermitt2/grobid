@@ -360,7 +360,7 @@ project(":grobid-service") {
             }
         } else if (Os.isFamily(Os.FAMILY_UNIX)) {
             libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
-                "${file("../grobid-home/lib/lin-64").absolutePath}:"
+                "${file("../grobid-home/lib/lin-64").absolutePath}"
         } else  {
             throw new RuntimeException("Unsupported platform!")
         }
@@ -383,7 +383,7 @@ project(":grobid-service") {
             def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
             
             javaLibraryPath = "${System.getProperty('java.library.path')}:" +
-                libraries + ":" +
+                libraries +
                 "${envLibs}:" +
                 "${envLibs}/python${pythonVersion}/site-packages/jep"
         }
