@@ -2393,11 +2393,11 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                // in case the book is part of an indicated series
-                for (int i = 0; i < indent + 2; i++) {
-                    tei.append("\t");
-                }
                 if (!StringUtils.isEmpty(serieTitle)) {
+                    // in case the book is part of an indicated series
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
                     tei.append("<title level=\"s\"");
                     if (generateIDs) {
                         String divID = KeyGen.getKey().substring(0,7);
