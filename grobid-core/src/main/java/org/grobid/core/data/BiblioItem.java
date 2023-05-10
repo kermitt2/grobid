@@ -2641,7 +2641,24 @@ public class BiblioItem {
                     tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
-                if (!StringUtils.isEmpty(editors)) {
+                if (fullEditors != null && fullEditors.size()>0) {
+                    for(Person editor : fullEditors) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<editor>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        String localString = editor.toTEI(false);
+                        localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        tei.append(localString).append("\n");
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("</editor>\n");
+                    }
+                } else if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -2794,6 +2811,14 @@ public class BiblioItem {
                         }
                         tei.append("<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>\n");
                     }
+
+                    if (location != null && location.length()>0) {
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
+                    }
+
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
