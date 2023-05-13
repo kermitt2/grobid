@@ -1,6 +1,6 @@
 ## Docker GROBID image
 
-## Docker GROBID image using CRF models only
+## Docker GROBID image using CRF models only - NOTE: you SHOULD use preferably the Deep Learning image
 
 ## See https://grobid.readthedocs.io/en/latest/Grobid-docker/
 
@@ -13,7 +13,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM openjdk:8u212-jdk as builder
+FROM openjdk:17-jdk-slim as builder
 
 USER root
 
@@ -47,6 +47,8 @@ RUN rm -rf grobid-home/lib/mac-64
 # cleaning Delft models
 RUN rm -rf grobid-home/models/*-BidLSTM_CRF*
 
+ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep"
+
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
 WORKDIR /opt/grobid
@@ -59,7 +61,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM openjdk:11-jre-slim
+FROM openjdk:17-slim
 
 RUN apt-get update && \
     apt-get -y --no-install-recommends install libxml2 libfontconfig && \
@@ -69,11 +71,8 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-# Add Tini
-ENV TINI_VERSION v0.18.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-ENTRYPOINT ["/tini", "-s", "--"]
+ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED"
+
 CMD ["./grobid-service/bin/grobid-service"]
 
 ARG GROBID_VERSION
