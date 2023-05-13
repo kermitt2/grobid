@@ -2,7 +2,7 @@
 
 ## Getting GROBID
 
-GROBID requires a JVM installed on your machine, supported version is **JVM 8**. Most recent JVM version (up to JVM 11) will work correctly. CRF models will also work with JVM up to 14, but using the Deep Learning with JVM beyond 11 will lead to issues. 
+GROBID requires a JVM installed on your machine, we tested the tool successfully up version **JVM 17**. Other recent JVM versions should work correctly. 
 
 ### Latest stable release
 

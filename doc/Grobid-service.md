@@ -12,7 +12,7 @@ The following command will start the server on the default port __8070__:
 ./gradlew run
 ```
 
-(the Gradle process will hang at 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
+(the Gradle process will hang at something like 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
 
 ## Install and run the service as standalone application
 

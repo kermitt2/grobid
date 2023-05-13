@@ -46,7 +46,7 @@ However if you need a "local" library installation and build, prepare a lot of c
 
 <span>0.</span> Install GROBID as indicated [here](https://grobid.readthedocs.io/en/latest/Install-Grobid/).
 
-You __must__ use a Java version under or equals to Java 11. At the present time, JVM 1.12 to 1.17 will fail to load the native JEP library (due to additional security constraints).
+The following was tested with Java version up to 17.
 
 <span>1.</span> install [DeLFT](https://github.com/kermitt2/delft), see instructions [here](https://github.com/kermitt2/delft#install).
 DeLFT version `0.3.2` has been tested successfully with Python 3.7 and 3.8. For GPU support, CUDA >=11.2 must be installed. 
