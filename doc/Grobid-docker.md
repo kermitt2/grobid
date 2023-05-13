@@ -26,13 +26,13 @@ The process for retrieving and running the image is as follow:
 Current latest version:
 
 ```bash
-> docker pull grobid/grobid:0.7.2
+> docker pull grobid/grobid:0.7.3
 ```
 
 - Run the container:
 
 ```bash
-> docker run --rm --gpus all -p 8070:8070 grobid/grobid:0.7.2
+> docker run --rm --gpus all -p 8070:8070 grobid/grobid:0.7.3
 ```
 
 The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used.  
@@ -80,7 +80,7 @@ The process for retrieving and running the image is as follow:
 Latest version:
 
 ```bash
-> docker pull lfoppiano/grobid:0.7.2
+> docker pull lfoppiano/grobid:0.7.3
 ```
 
 - Run the container:
@@ -92,7 +92,7 @@ Latest version:
 Latest version:
 
 ```bash
-> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.3
 ```
 
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
@@ -200,7 +200,7 @@ Without this requirement, the image might default to CPU, even if GPU are availa
 For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.delft .
+> docker build -t grobid/grobid:0.7.3 --build-arg GROBID_VERSION=0.7.3 --file Dockerfile.delft .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
@@ -240,7 +240,7 @@ The container name is given by the command:
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.7.3 --build-arg GROBID_VERSION=0.7.3 --file Dockerfile.crf .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
@@ -249,10 +249,10 @@ Similarly, if you want to create a docker image from the current master, develop
 > docker build -t grobid/grobid:0.7.3-SNAPSHOT --build-arg GROBID_VERSION=0.7.3-SNAPSHOT --file Dockerfile.crf .
 ```
 
-In order to run the container of the newly created image, for example for version `0.7.2`:
+In order to run the container of the newly created image, for example for version `0.7.3`:
 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2
+> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.3
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
