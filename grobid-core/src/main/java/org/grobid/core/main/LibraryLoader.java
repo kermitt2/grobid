@@ -34,6 +34,7 @@ public class LibraryLoader {
     private static boolean loaded = false;
 
     public static void load() {
+
         if (!loaded) {
             LOGGER.info("Loading external native sequence labelling library");
             LOGGER.debug(getLibraryFolder());
@@ -147,24 +148,12 @@ public class LibraryLoader {
                 // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
                 // loading here will not help)
                 try {
-                    addLibraryPath(libraryFolder.getAbsolutePath() + File.separator + DELFT_NATIVE_LIB_NAME);
 
                     PythonEnvironmentConfig pythonEnvironmentConfig = PythonEnvironmentConfig.getInstance();
                     if (pythonEnvironmentConfig.isEmpty()) {
                         LOGGER.info("No python environment configured");
                     } else {
-                        LOGGER.info("Configuring python environment: " + pythonEnvironmentConfig.getVirtualEnv());
-                        LOGGER.info("Adding library paths " + Arrays.toString(pythonEnvironmentConfig.getNativeLibPaths()));
-                        for (Path path : pythonEnvironmentConfig.getNativeLibPaths()) {
-                            if (Files.exists(path)) {
-                                addLibraryPath(path.toString());
-                            } else {
-                                LOGGER.warn(path.toString() + " does not exists. Skipping it. ");
-                            }
-                        }
-
                         if (SystemUtils.IS_OS_MAC) {
-//                            System.setProperty("java.library.path", System.getProperty("java.library.path") + ":" + libraryFolder.getAbsolutePath());
                             System.loadLibrary("python" + pythonEnvironmentConfig.getPythonVersion());
                             System.loadLibrary(DELFT_NATIVE_LIB_NAME);
                         } else if (SystemUtils.IS_OS_LINUX) {
@@ -184,6 +173,7 @@ public class LibraryLoader {
         }
     }
 
+    @Deprecated
     public static void addLibraryPath(String pathToAdd) throws Exception {
         Field usrPathsField = ClassLoader.class.getDeclaredField("usr_paths");
         usrPathsField.setAccessible(true);

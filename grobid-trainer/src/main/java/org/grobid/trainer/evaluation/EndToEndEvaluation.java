@@ -115,7 +115,7 @@ public class EndToEndEvaluation {
             	}
         	}
 
-            return new Boolean(success);
+            return Boolean.valueOf(success);
         } 
     } 
 
@@ -1191,10 +1191,10 @@ public class EndToEndEvaluation {
 										String localId = theIds[j];
 										localId = localId.replace("#", "");
 										if (refCalloutRefIds.get(localId) == null)
-											refCalloutRefIds.put(localId, new Integer(1));
+											refCalloutRefIds.put(localId,Integer.valueOf(1));
 										else {
 											int val = refCalloutRefIds.get(localId).intValue();
-											refCalloutRefIds.put(localId, new Integer(val+1));
+											refCalloutRefIds.put(localId, Integer.valueOf(val+1));
 										}
 										totalExpectedCitations++;
 									}
@@ -1210,10 +1210,10 @@ public class EndToEndEvaluation {
 								localId = localId.replace("#", "");
 								if ( (localId != null) && (localId.length()>0) ) {
 									if (grobidCalloutRefIds.get(localId) == null)
-										grobidCalloutRefIds.put(localId, new Integer(1));
+										grobidCalloutRefIds.put(localId, Integer.valueOf(1));
 									else {
 										int val = grobidCalloutRefIds.get(localId).intValue();
-										grobidCalloutRefIds.put(localId, new Integer(val+1));
+										grobidCalloutRefIds.put(localId, Integer.valueOf(val+1));
 									}
 									totalObservedCitations++;
 								}

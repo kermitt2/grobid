@@ -58,8 +58,8 @@ subprojects {
 
     task install(dependsOn: publishToMavenLocal)
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    //sourceCompatibility = 1.8
+    //targetCompatibility = 1.8
 
     repositories {
         mavenCentral()
@@ -208,7 +208,29 @@ subprojects {
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
-        maxHeapSize = "1024m"
+        maxHeapSize = "1024m"        
+
+        def libraries = ""
+        if (Os.isFamily(Os.FAMILY_MAC)) {
+            if (Os.OS_ARCH.equals("aarch64")) {
+                libraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
+            } else {
+                libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
+            }
+        } else if (Os.isFamily(Os.FAMILY_UNIX)) {            
+            def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
+            libraries = jepDir
+            jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
+            libraries += ":"+jepDir
+        } else {
+            throw new RuntimeException("Unsupported platform!")
+        }
+
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
+            "--add-opens", "java.base/java.io=ALL-UNNAMED"
+        }
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
     //rootProject.afterReleaseBuild.dependsOn subprojects.bintrayUpload
@@ -319,13 +341,48 @@ project("grobid-home") {
     }
 }
 
+import org.apache.tools.ant.taskdefs.condition.Os
+
 project(":grobid-service") {
     apply plugin: 'application'
     apply plugin: 'jacoco'
     apply plugin: 'com.github.johnrengelman.shadow'
 
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
-    tasks.run.workingDir = rootProject.rootDir
+
+    tasks.run {
+        def libraries = ""
+        if (Os.isFamily(Os.FAMILY_MAC)) {
+            if (Os.OS_ARCH.equals("aarch64")) {
+                libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"
+            } else {
+                libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
+            }
+        } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+            libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
+                "${file("../grobid-home/lib/lin-64").absolutePath}:"
+        } else  {
+            throw new RuntimeException("Unsupported platform!")
+        }
+        
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        }
+        workingDir = rootProject.rootDir
+        def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
+//        if (System.env.CONDA_PREFIX) {
+//            def condaEnv = "${System.env.CONDA_PREFIX}/lib"
+//            def pythonDirectory = file(condaEnv).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
+//            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
+//
+//            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
+//                libraries + ":" +
+//                "${System.env.CONDA_PREFIX}/lib:" +
+//                "${System.env.CONDA_PREFIX}/lib/python${pythonVersion}/site-packages/jep"
+//        }
+        systemProperty "java.library.path", javaLibraryPath
+
+    }
 
     configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
@@ -459,10 +516,27 @@ project(":grobid-trainer") {
         "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
     ]
 
+    def libraries = ""
+    if (Os.isFamily(Os.FAMILY_MAC)) {
+        if (Os.OS_ARCH.equals("aarch64")) {
+            libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"    
+        } else {
+            libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
+        }
+    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+        libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
+            "${file("../grobid-home/lib/lin-64").absolutePath}:"
+    } else  {
+        throw new RuntimeException("Unsupported platform!")
+    }
+    
     trainerTasks.each { taskName, mainClassName ->
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
             main = mainClassName
             classpath = sourceSets.main.runtimeClasspath
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+            systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
         }
     }
 
@@ -481,28 +555,48 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        jvmArgs '-Xmx3072m'
+        if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
-        jvmArgs '-Xmx3072m'
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
-        jvmArgs '-Xmx3072m'
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
-        jvmArgs '-Xmx3072m'
+        if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
+            jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+        } else {
+            jvmArgs '-Xmx3072m'
+        }
+        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
 }
 
@@ -548,7 +642,7 @@ tasks.coveralls {
 }
 
 wrapper {
-    gradleVersion "7.1.1"
+    gradleVersion "7.2"
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })

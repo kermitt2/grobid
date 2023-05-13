@@ -564,7 +564,7 @@ public class ReferenceExtractor implements Closeable {
                                     referencesPatent.add(reference);
                                     offsets_patent.add(currentOffset);
 
-									probPatent.add(new Double(currentProb));
+									probPatent.add(Double.valueOf(currentProb));
 
                                     currentPatent = true;
 		                            reference = separator + actual;
@@ -579,7 +579,7 @@ public class ReferenceExtractor implements Closeable {
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
 
                                 currentPatent = true;
 	                            reference = separator + actual;
@@ -597,7 +597,7 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
 
                                 currentPatent = false;
 	                            reference = separator + actual;
@@ -607,7 +607,7 @@ public class ReferenceExtractor implements Closeable {
                                 if (label.equals("I-<refNPL>")) {
                                     referencesNPL.add(reference);
                                     offsets_NPL.add(currentOffset);
-									probNPL.add(new Double(currentProb));
+									probNPL.add(Double.valueOf(currentProb));
 
                                     currentPatent = false;
 		                            reference = separator + actual;
@@ -626,11 +626,11 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
                             }
                             currentPatent = false;
                         }
@@ -1078,7 +1078,7 @@ public class ReferenceExtractor implements Closeable {
                                     referencesPatent.add(reference);
                                     offsets_patent.add(currentOffset);
 
-									probPatent.add(new Double(currentProb));
+									probPatent.add(Double.valueOf(currentProb));
 
                                     currentPatent = true;
 		                            reference = separator + actual;
@@ -1093,7 +1093,7 @@ public class ReferenceExtractor implements Closeable {
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
 
                                 currentPatent = true;
 	                            reference = separator + actual;
@@ -1111,7 +1111,7 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
 
                                 currentPatent = false;
 	                            reference = separator + actual;
@@ -1121,7 +1121,7 @@ public class ReferenceExtractor implements Closeable {
                                 if (label.equals("I-<refNPL>")) {
                                     referencesNPL.add(reference);
                                     offsets_NPL.add(currentOffset);
-									probNPL.add(new Double(currentProb));
+									probNPL.add(Double.valueOf(currentProb));
 
                                     currentPatent = false;
 		                            reference = separator + actual;
@@ -1140,11 +1140,11 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
                             }
                             currentPatent = false;
                         }
