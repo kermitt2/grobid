@@ -59,8 +59,8 @@ Add the following snippet in your gradle.build file:
 
 and add the Grobid dependency as well: 
 ```
-    compile 'org.grobid:grobid-core:0.7.3'
-    compile 'org.grobid:grobid-trainer:0.7.3'
+    implement 'org.grobid:grobid-core:0.7.3'
+    implement 'org.grobid:grobid-trainer:0.7.3'
 ```
 
 ## API call
