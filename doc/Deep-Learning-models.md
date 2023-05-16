@@ -69,7 +69,7 @@ Indicate the path to the DeLFT install in the GROBID config file `grobid.yaml` (
     install: "../delft"
 ```
 
-Indicate the GROBID model that should use a Deep Learning implementation in the same config file, for instance if you wish to use a Deep Learning model for the citation model (it provides 1-2 additional points to the f-score for bibliographical reference recognition) use:
+Indicate the GROBID model that should use a Deep Learning implementation in the same config file, for instance if you wish to use a Deep Learning model for the citation model (it provides 2-3 additional points to the F1-score for bibliographical reference recognition) use:
 
 ```yaml
   models:
