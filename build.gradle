@@ -583,8 +583,9 @@ tasks.register("codeCoverageReport", JacocoReport) {
 /** COVERALLS **/
 coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
-    jacocoReportPath = "build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
+    jacocoReportPath = "build/reports/jacoco/test/jacocoTestReport.xml"
 }
+
 
 tasks.coveralls {
     dependsOn codeCoverageReport

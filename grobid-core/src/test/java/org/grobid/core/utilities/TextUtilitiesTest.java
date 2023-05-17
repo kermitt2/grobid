@@ -16,7 +16,7 @@ import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
-@Ignore
+
 public class TextUtilitiesTest extends EngineTest {
 
     @Test
