@@ -1321,13 +1321,13 @@ public class TEIFormatter {
                     dehyphenized = numb.getLeft();
                     text = LayoutTokensUtil.toText(dehyphenized);
                 }
-                List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
+//                List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
 
-                if (CollectionUtils.isNotEmpty(stylesList)) {
-                    applyStyleList(head, text, stylesList);
-                } else {
+//                if (CollectionUtils.isNotEmpty(stylesList)) {
+//                    applyStyleList(head, text, stylesList);
+//                } else {
                     head.appendChild(StringUtils.normalizeSpace(text.replace("\n", "")));
-                }
+//                }
 
                 if (config.isGenerateTeiIds()) {
                     String divID = KeyGen.getKey().substring(0, 7);
