@@ -1,0 +1,57 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: cimg/openjdk:11.0
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      JVM_OPTS: -Xmx8192m
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: ./gradlew dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - run: ./gradlew clean assemble --info --stacktrace --no-daemon
+
+      # run tests!
+      - run: ./gradlew test jacocoTestReport coveralls --no-daemon
+
+      - store_test_results:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
+      - store_test_results:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/codeCoverageReport.csv
+      - store_artifacts:
+          path: build/reports/jacoco/codeCoverageReport/html
+      - store_test_results:
+          path: build/reports/tests/codeCoverageReport/html
