@@ -28,3 +28,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           format: jacoco
+          file: build/reports/jacoco/test/jacocoTestReport.xml
