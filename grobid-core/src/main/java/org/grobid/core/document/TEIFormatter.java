@@ -1398,7 +1398,8 @@ public class TEIFormatter {
                 curDiv.appendChild(note);
             } else if (clusterLabel.equals(TaggingLabels.PARAGRAPH)) {
                 List<LayoutToken> clusterTokens = cluster.concatTokens();
-                int clusterPage = Iterables.getLast(clusterTokens).getPage();
+                List<LayoutToken> dehyphenized = LayoutTokensUtil.dehyphenize(clusterTokens);
+                int clusterPage = Iterables.getLast(dehyphenized).getPage();
 
                 List<Note> notesSamePage = null;
                 if (notes != null && notes.size() > 0) {
@@ -1408,7 +1409,7 @@ public class TEIFormatter {
                 }
 
                 if (notesSamePage == null) {
-                    List<LayoutToken> dehyphenized = LayoutTokensUtil.dehyphenize(clusterTokens);
+                    
                     String text = LayoutTokensUtil.toText(dehyphenized).replace("\n", " ");
 
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
@@ -1460,13 +1461,13 @@ public class TEIFormatter {
                     List<Pair<String,OffsetPosition>> matchedLabelPosition = new ArrayList<>();
 
                     for (Note note : notesSamePage) {
-                        Optional<LayoutToken> matching = clusterTokens
+                        Optional<LayoutToken> matching = dehyphenized
                             .stream()
                             .filter(t -> t.getText().equals(note.getLabel()) && t.isSuperscript())
                             .findFirst();
 
                         if (matching.isPresent()) {
-                            int idx = clusterTokens.indexOf(matching.get());
+                            int idx = dehyphenized.indexOf(matching.get());
                             note.setIgnored(true);
                             OffsetPosition matchingPosition = new OffsetPosition();
                             matchingPosition.start = idx;
@@ -1490,8 +1491,8 @@ public class TEIFormatter {
                         Note note = labels2Notes.get(matching.getLeft());
                         OffsetPosition matchingPosition = matching.getRight();
 
-                        List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
-                        String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
+                        List<LayoutToken> before = dehyphenized.subList(pos, matchingPosition.start);
+                        String clusterContentBefore = LayoutTokensUtil.toText(before);
 
                         if (CollectionUtils.isNotEmpty(before) && before.get(0).getText().equals(" ")) {
                             curParagraph.appendChild(new Text(" "));
@@ -1506,7 +1507,7 @@ public class TEIFormatter {
                         }
                         curParagraphTokens.addAll(cluster.concatTokens());
 
-                        List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
+                        List<LayoutToken> calloutTokens = dehyphenized.subList(matchingPosition.start, matchingPosition.end);
 
                         Element ref = teiElement("ref");
                         ref.addAttribute(new Attribute("type", "foot"));
@@ -1526,8 +1527,8 @@ public class TEIFormatter {
                     }
 
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
-                    List<LayoutToken> remaining = clusterTokens.subList(pos, clusterTokens.size());
-                    String remainingClusterContent = LayoutTokensUtil.normalizeDehyphenizeText(remaining);
+                    List<LayoutToken> remaining = dehyphenized.subList(pos, dehyphenized.size());
+                    String remainingClusterContent = LayoutTokensUtil.toText(remaining);
 
                     if (CollectionUtils.isNotEmpty(remaining) && remaining.get(0).getText().equals(" ")) {
                         curParagraph.appendChild(new Text(" "));
