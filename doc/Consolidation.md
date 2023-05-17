@@ -4,7 +4,7 @@ In GROBID, we call __consolidation__ the usage of an external bibliographical se
 
 Consolidation has two main interests:
 
-* The consolidation service improves very significantly the retrieval of header information (+.12 to .13 in f-score, e.g. from 74.59 f-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 88.89 f-score, using biblio-glutton and GROBID version `0.5.6` for the PMC 1943 dataset, see the [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)). 
+* The consolidation service improves very significantly the retrieval of header information (+.12 to .13 in F1-score, e.g. from 74.59 F1-score in average for all fields with Ratcliff/Obershelp similarity at 0.95, to 88.89 F1-score, using biblio-glutton and GROBID version `0.5.6` for the PMC 1943 dataset, see more recent [benchmarking documentation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and [reports](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc)). 
 
 * The consolidation service matches the extracted bibliographical references with known publications, and complement the parsed bibliographical references with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
 
@@ -44,13 +44,11 @@ This service presents several advantages as compared to the CrossRef service. bi
 
 Unfortunately, you need to install the service yourself, including loading and indexing the bibliographical resources, as documented [here](https://github.com/kermitt2/biblio-glutton#building-the-bibliographical-data-look-up-and-matching-databases). Note that a [docker container](https://github.com/kermitt2/biblio-glutton#running-with-docker) is available. 
 
-After installing biblio-glutton, you need to select the glutton matching service in the `grobid-home/config/grobid.yaml` file, with its host and port, for instance:
+After installing biblio-glutton, you need to select the glutton matching service in the `grobid-home/config/grobid.yaml` file, with its url, for instance:
 
 ```yaml
 consolidation:
     service: "glutton"
     glutton:
-      type: "http"
-      host: "localhost"
-      port: 8080
+      url: "http://localhost:8080" 
 ```

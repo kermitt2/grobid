@@ -55,7 +55,7 @@ public class AuthorParser {
 
         input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
         return processing(tokens, null, false);
     }
@@ -77,7 +77,7 @@ public class AuthorParser {
 
         input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
         return processing(tokens, null, true);
     }

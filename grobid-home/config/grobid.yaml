@@ -16,10 +16,10 @@ grobid:
       path: "pdfalto"
       # security for PDF parsing
       memoryLimitMb: 6096
-      timeoutSec: 60
+      timeoutSec: 120
 
     # security relative to the PDF parsing result
-    blocksMax: 100000
+    blocksMax: 200000
     tokensMax: 1000000
 
   consolidation:
@@ -84,11 +84,24 @@ grobid:
     - name: "segmentation"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
+      #engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.0000001
         window: 50
         nbMaxIterations: 2000
+      delft:
+        # deep learning parameters
+        architecture: "BidLSTM_CRF_FEATURES"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 3000
+          batch_size: 1
+        training:
+          # parameters used for training
+          max_sequence_length: 3000
+          batch_size: 10
 
     - name: "fulltext"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
@@ -109,12 +122,20 @@ grobid:
         nbMaxIterations: 1500
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_ChainCRF_FEATURES"
+        #transformer: "allenai/scibert_scivocab_cased"
         useELMo: false
         runtime:
           # parameters used at runtime/prediction
+          #max_sequence_length: 510
           max_sequence_length: 3000
           batch_size: 1
+        training:
+          # parameters used for training
+          #max_sequence_length: 510
+          #batch_size: 6
+          max_sequence_length: 3000
+          batch_size: 9
 
     - name: "reference-segmenter"
       engine: "wapiti"
@@ -125,7 +146,16 @@ grobid:
         window: 20
       delft:
         # deep learning parameters
-        architecture: "BidLSTM_CRF_FEATURES"
+        architecture: "BidLSTM_ChainCRF_FEATURES"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction (for this model, use same max_sequence_length as training)
+          max_sequence_length: 3000
+          batch_size: 2
+        training:
+          # parameters used for training
+          max_sequence_length: 3000
+          batch_size: 10
 
     - name: "name-header"
       engine: "wapiti"
@@ -188,16 +218,17 @@ grobid:
       delft:
         # deep learning parameters
         architecture: "BidLSTM_CRF_FEATURES"
-        #architecture: "scibert"
+        #architecture: "BERT_CRF"
+        #transformer: "michiyasunaga/LinkBERT-base"
         useELMo: false
         runtime:
           # parameters used at runtime/prediction
-          max_sequence_length: 3000
-          batch_size: 20
+          max_sequence_length: 500
+          batch_size: 30
         training:
           # parameters used for training
-          max_sequence_length: 3000  
-          batch_size: 30
+          max_sequence_length: 500  
+          batch_size: 50
 
     - name: "patent-citation"
       engine: "wapiti"
@@ -224,12 +255,13 @@ server:
     registerDefaultExceptionMappers: false
 
 logging:
-  level: INFO
   loggers:
     org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
+    org.glassfish.jersey.internal: "OFF"
   appenders:
     - type: console
-      threshold: ALL
+      level: INFO
+      threshold: WARN
       timeZone: UTC
     - type: file
       currentLogFilename: logs/grobid-service.log

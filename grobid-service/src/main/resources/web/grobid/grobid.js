@@ -13,7 +13,7 @@ var grobid = (function($) {
 
 	var block = 0;
 
-    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head'];
+    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note'];
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;
@@ -23,6 +23,10 @@ var grobid = (function($) {
         } 
         if (localBase.endsWith("#")) {
             localBase = localBase.substring(0,localBase.length-1);
+        } 
+        if (localBase.indexOf("?") != -1) {
+            // remove possible uri parameters
+            localBase = localBase.substring(0,localBase.indexOf("?"));
         } 
 		return localBase + "api/" + ext;
 	}

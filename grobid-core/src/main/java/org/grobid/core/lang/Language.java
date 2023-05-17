@@ -21,6 +21,7 @@ public final class Language {
     public static final String LN = "nl";
     public static final String PL = "pl";
     public static final String SV = "sv";
+    public static final String KR = "kr";
 
     private String lang;
     private double conf;

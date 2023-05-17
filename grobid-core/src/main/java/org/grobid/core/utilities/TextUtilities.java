@@ -25,7 +25,7 @@ public class TextUtilities {
     public static final String punctuations = " •*,:;?.!)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0。、，・";
     public static final String fullPunctuations = "(（[ •*,:;?.!/)）-−–‐«»„\"“”‘’'`$#@]*\u2666\u2665\u2663\u2660\u00A0。、，・";
     public static final String restrictedPunctuations = ",:;?.!/-–«»„\"“”‘’'`*\u2666\u2665\u2663\u2660。、，・";
-    public static String delimiters = "\n\r\t\f\u00A0" + fullPunctuations;
+    public static String delimiters = "\n\r\t\f\u00A0\u200C" + fullPunctuations;
 
     public static final String OR = "|";
     public static final String NEW_LINE = "\n";
@@ -1314,4 +1314,56 @@ public class TextUtilities {
         }
         return true;
     }
+
+    /**
+     * Remove indicated leading and trailing characters from a string 
+     **/
+    public static String removeLeadingAndTrailingChars(String text, String leadingChars, String trailingChars) {
+        text = StringUtils.stripStart(text, leadingChars);
+        text = StringUtils.stripEnd(text, trailingChars);
+        return text;
+    }
+
+    /**
+     * Remove indicated leading and trailing characters from a string represented as a list of LayoutToken.
+     * Indicated leading and trailing characters must be matching exactly the layout token text content. 
+     **/
+    public static List<LayoutToken> removeLeadingAndTrailingCharsLayoutTokens(List<LayoutToken> tokens, String leadingChars, String trailingChars) {
+        if (tokens == null)
+            return tokens;
+        if (tokens.size() == 0)
+            return tokens;
+
+        int start = 0;
+        for(int i=0; i<tokens.size(); i++) {
+            LayoutToken token = tokens.get(i);
+            if (token.getText() == null || token.getText().length() == 0) {
+                start++;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (leadingChars.contains(token.getText())) {
+                start++;
+            } else
+                break;
+        }
+
+        int end = tokens.size();
+        for(int i=end; i>0; i--) {
+            LayoutToken token = tokens.get(i-1);
+            if (token.getText() == null || token.getText().length() == 0) {
+                end--;
+                continue;
+            } else if (token.getText().length() > 1) {
+                break;
+            } else if (trailingChars.contains(token.getText())) {
+                end--;
+            } else
+                break;
+        }
+
+        return tokens.subList(start, end);
+    }
+
+
 }

@@ -148,7 +148,7 @@ public final class LabelStat {
     }
 
     public boolean hasChanged() {
-        Boolean oldValue = new Boolean(hasChanged);
+        boolean oldValue = hasChanged;
         hasChanged = false;
         return oldValue;
     }

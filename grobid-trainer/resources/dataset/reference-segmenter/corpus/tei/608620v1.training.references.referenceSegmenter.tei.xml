@@ -1,0 +1,110 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Agcaoglu O, Miller R, Mayer AR, Hugdahl K, Calhoun VD. 2014. Lateralization of<lb/> resting state networks and relationship to age and gender. Neuroimage<lb/> </bibl>
+        <bibl>Arnold Anteraper S, Guell X, D&apos;Mello A, Joshi N, Whitfield-Gabrieli S, Joshi G. 2018.<lb/> Disrupted Cerebro-cerebellar Intrinsic Functional Connectivity in Young Adults with<lb/> High-functioning Autism Spectrum Disorder: A Data-driven, Whole-brain, High<lb/> Temporal Resolution fMRI Study. Brain Connect.<lb/> </bibl>
+        <bibl>Ashburner J, Friston KJ. 2005. Unified segmentation. Neuroimage. 26(3):839-51<lb/> </bibl>
+        <bibl>Barch DM, Burgess GC, Harms MP, Petersen SE, Schlaggar BL, et al. 2013. Function<lb/> in the human connectome: Task-fMRI and individual differences in behavior.<lb/> Neuroimage<lb/> </bibl>
+        <bibl>Behzadi Y, Restom K, Liau J, Liu TT. 2007. A component based noise correction<lb/> method (CompCor) for BOLD and perfusion based fMRI. Neuroimage. 37(1):90-<lb/>101<lb/> </bibl>
+        <bibl>Bernard JA, Peltier SJ, Benson BL, Wiggins JL, Jaeggi SM, et al. 2014. Dissociable<lb/> functional networks of the human dentate nucleus. Cereb. Cortex<lb/> </bibl>
+        <bibl>Brady RO, Gonsalvez I, Lee I, Öngür D, Seidman LJ, et al. 2019. Cerebellar-Prefrontal<lb/> Network Connectivity and Negative Symptoms in Schizophrenia. Am J Psychiatry<lb/> </bibl>
+        <bibl>Buckner RL, Andrews-Hanna JR, Schacter DL. 2008. The brain&apos;s default network:<lb/> Anatomy, function, and relevance to disease<lb/> </bibl>
+        <bibl>Buckner RL, Krienen FM, Castellanos A, Diaz JC, Yeo BTT. 2011. The organization of<lb/> the human cerebellum estimated by intrinsic functional connectivity. J.<lb/> Neurophysiol. 106(5):2322-45<lb/> </bibl>
+        <bibl>Cavada C, Goldman-Rakic PS. 1989a. Posterior parietal cortex in rhesus monkey: I.<lb/> Parcellation of areas based on distinctive limbic and sensory corticocortical<lb/> connections. J. Comp. Neurol. 287(4):393-421<lb/> </bibl>
+        <bibl>Cavada C, Goldman-Rakic PS. 1989b. Posterior parietal cortex in rhesus monkey: II.<lb/> Evidence for segregated corticocortical networks linking sensory and limbic areas<lb/> with the frontal lobe. J. Comp. Neurol. 287(4):422-45<lb/> </bibl>
+        <bibl>Chapman CE, Spidalieri G, Lamarre Y. 1986. Activity of dentate neurons during arm<lb/> movements triggered by visual, auditory, and somesthetic stimuli in the monkey. J.<lb/> Neurophysiol.<lb/> </bibl>
+        <bibl>Chen AC, Oathes DJ, Chang C, Bradley T, Zhou Z-W, et al. 2013. Causal interactions<lb/> between fronto-parietal central executive and default-mode networks in humans.<lb/> Proc. Natl. Acad. Sci.<lb/> </bibl>
+        <bibl>Choi EY, Yeo BTT, Buckner RL, Buckner RL. 2012. The organization of the human<lb/> striatum estimated by intrinsic functional connectivity. J Neurophysiol<lb/> </bibl>
+        <bibl>Coifman RR, Lafon S, Lee AB, Maggioni M, Nadler B, et al. 2005. Geometric diffusions<lb/> as a tool for harmonic analysis and structure definition of data: Multiscale methods.<lb/> Proc. Natl. Acad. Sci. 102(21):7432-37<lb/> </bibl>
+        <bibl>Corbetta M, Shulman GL. 2002. Control of goal-directed and stimulus-driven attention in<lb/> the brain. Nat. Rev. Neurosci.<lb/> </bibl>
+        <bibl>D&apos;Mello AM, Stoodley CJ. 2015. Cerebro-cerebellar circuits in autism spectrum disorder.<lb/> Front. Neurosci.<lb/> </bibl>
+        <bibl>Darby R, Joutsa J, Fox M. 2018. Network localization of heterogeneous neuroimaging<lb/> findings. Brain. 142(1):70-79<lb/> </bibl>
+        <bibl>De Zeeuw CI, Hoogenraad CC, Koekkoek SKE, Ruigrok TJH, Galjart N, Simpson JI.<lb/> 1998. Microcircuitry and function of the inferior olive<lb/> </bibl>
+        <bibl>Deen B, Pitskel NB, Pelphrey KA. 2011. Three systems of insular functional connectivity<lb/> identified with cluster analysis. Cereb. Cortex<lb/> </bibl>
+        <bibl>Demirtas-Tatlidede A, Freitas C, Cromer JR, Safar L, Ongur D, et al. 2010. Safety and<lb/> proof of principle study of cerebellar vermal theta burst stimulation in refractory<lb/> schizophrenia. Schizophr. Res.<lb/> </bibl>
+        <bibl>Di Lorenzo F, Martorana A, Ponzo V, Bonnì S, D&apos;Angelo E, et al. 2013. Cerebellar theta<lb/> burst stimulation modulates short latency afferent inhibition in Alzheimer&apos;s disease<lb/> patients. Front. Aging Neurosci.<lb/> </bibl>
+        <bibl>Diedrichsen J, Maderwald S, Küper M, Thürling M, Rabe K, et al. 2011. Imaging the<lb/> deep cerebellar nuclei: A probabilistic atlas and normalization procedure.<lb/> Neuroimage<lb/> </bibl>
+        <bibl>Dietrichs E. 1981. The cerebellar corticonuclear and nucleocortical projections in the cat<lb/> as studied with anterograde and retrograde transport of horseradish peroxidase -<lb/>IV. The paraflocculus. Exp. Brain Res.<lb/> </bibl>
+        <bibl>Dum RP, Strick PL. 2003. An unfolded map of the cerebellar dentate nucleus and its<lb/> projections to the cerebral cortex. J. Neurophysiol.<lb/> </bibl>
+        <bibl>Eklund A, Nichols TE, Knutsson H. 2016. Cluster failure: Why fMRI inferences for<lb/> spatial extent have inflated false-positive rates. Proc. Natl. Acad. Sci.<lb/> 113(28):7900-7905<lb/> </bibl>
+        <bibl>Esterman M, Thai M, Okabe H, DeGutis J, Saad E, et al. 2017. Network-targeted<lb/> cerebellar transcranial magnetic stimulation improves attentional control.<lb/> Neuroimage<lb/> </bibl>
+        <bibl>Folloni D, Verhagen L, Mars RB, Fouragnan E, Constans C, et al. 2019. Manipulation of<lb/> Subcortical and Deep Cortical Activity in the Primate Brain Using Transcranial<lb/> Focused Ultrasound Stimulation. Neuron<lb/> </bibl>
+        <bibl>Fox MD, Corbetta M, Snyder AZ, Vincent JL, Raichle ME. 2006. Spontaneous neuronal<lb/> activity distinguishes human dorsal and ventral attention systems. Proc. Natl. Acad.<lb/> Sci.<lb/> </bibl>
+        <bibl>Fox MD, Snyder AZ, Vincent JL, Corbetta M, Van Essen DC, Raichle ME. 2005. The<lb/> human brain is intrinsically organized into dynamic, anticorrelated functional<lb/> networks. Proc. Natl. Acad. Sci. 102(27):9673-78<lb/> </bibl>
+        <bibl>Garg S, Sinha VK, Tikka SK, Mishra P, Goyal N. 2016. The efficacy of cerebellar vermal<lb/> deep high frequency (theta range) repetitive transcranial magnetic stimulation<lb/> (rTMS) in schizophrenia: A randomized rater blind-sham controlled study.<lb/> Psychiatry Res.<lb/> </bibl>
+        <bibl>Goulden N, Khusnulina A, Davis NJ, Bracewell RM, Bokde AL, et al. 2014. The salience<lb/> network is responsible for switching between the default mode network and the<lb/> central executive network: Replication from DCM. Neuroimage<lb/> </bibl>
+        <bibl>Greicius MD, Krasnow B, Reiss AL, Menon V. 2003. Functional connectivity in the<lb/> resting brain: A network analysis of the default mode hypothesis. Proc. Natl. Acad.<lb/> Sci.<lb/> </bibl>
+        <bibl>Grossman N, Bono D, Dedic N, Kodandaramaiah SB, Rudenko A, et al. 2017.<lb/> Noninvasive Deep Brain Stimulation via Temporally Interfering Electric Fields. Cell<lb/> </bibl>
+        <bibl>Guell X, Gabrieli JDE, Schmahmann JD. 2018a. Triple representation of language,<lb/> working memory, social and emotion processing in the cerebellum: convergent<lb/> evidence from task and seed-based resting-state fMRI analyses in a single large<lb/> cohort. Neuroimage. 172:<lb/> </bibl>
+        <bibl>Guell X, Hoche F, Schmahmann JD. 2015. Metalinguistic Deficits in Patients with<lb/> Cerebellar Dysfunction: Empirical Support for the Dysmetria of Thought Theory.<lb/> Cerebellum. 14(1):50-58<lb/> </bibl>
+        <bibl>Guell X, Schmahmann J, Gabrieli J, Ghosh S. 2018b. Functional gradients of the<lb/> cerebellum. Elife. 7:e36652<lb/> </bibl>
+        <bibl>Guo CC, Tan R, Hodges JR, Hu X, Sami S, Hornberger M. 2016. Network-selective<lb/> vulnerability of the human cerebellum to Alzheimer&apos;s disease and frontotemporal<lb/> dementia. Brain. 139(5):1527-38<lb/> </bibl>
+        <bibl>Haines DE, Dietrichs E. 2011. The cerebellum -structure and connections. Handb. Clin.<lb/> Neurol.<lb/> </bibl>
+        <bibl>Hastie, Trevor, Tibshirani, Robert, Friedman J. 2009. The Elements of Statistical<lb/> Learning The Elements of Statistical LearningData Mining, Inference, and<lb/> Prediction, Second Edition<lb/> </bibl>
+        <bibl>Hayden BY, Smith D V., Platt ML. 2009. Electrophysiological correlates of default-mode<lb/> processing in macaque posterior cingulate cortex. Proc. Natl. Acad. Sci.<lb/> </bibl>
+        <bibl>Hoche F, Guell X, Sherman JC, Vangel MG, Schmahmann JD. 2016. Cerebellar<lb/> Contribution to Social Cognition. Cerebellum. 15(6):732-43<lb/> </bibl>
+        <bibl>Hoche F, Guell X, Vangel M, Sherman J, Schmahmann J. 2018. The cerebellar<lb/> cognitive affective/Schmahmann syndrome scale. Brain. 141(1):248-70<lb/> </bibl>
+        <bibl>Holmes G, Stewart G. 1908. One the connection of the inferior olives with the<lb/> cerebellum in man. Brain. 31(1):125-37<lb/> </bibl>
+        <bibl>Hwang K, Bertolero MA, Liu WB, D&apos;Esposito M. 2017. The Human Thalamus Is an<lb/> Integrative Hub for Functional Brain Networks. J. Neurosci. 37(23):5594-5607<lb/> </bibl>
+        <bibl>Ilg W, Christensen A, Mueller OM, Goericke SL, Giese MA, Timmann D. 2013. Effects<lb/> of cerebellar lesions on working memory interacting with motor tasks of different<lb/> complexities. J. Neurophysiol.<lb/> </bibl>
+        <bibl>Jacobs HIL, Hopkins DA, Mayrhofer HC, Bruner E, Van Leeuwen FW, et al. 2018. The<lb/> cerebellum in Alzheimer&apos;s disease: Evaluating its role in cognitive decline. Brain<lb/> </bibl>
+        <bibl>Keil B, Blau JN, Biber S, Hoecht P, Tountcheva V, et al. 2013. A 64-channel 3T array<lb/> coil for accelerated brain MRI. Magn. Reson. Med.<lb/> </bibl>
+        <bibl>Kelly RM, Strick PL. 2003. Cerebellar loops with motor cortex and prefrontal cortex of a<lb/> nonhuman primate. J. Neurosci. 23(23):8432-44<lb/> </bibl>
+        <bibl>Küper M, Dimitrova A, Thürling M, Maderwald S, Roths J, et al. 2011. Evidence for a<lb/> motor and a non-motor domain in the human dentate nucleus -An fMRI study.<lb/> Neuroimage<lb/> </bibl>
+        <bibl>Küper M, Thürling M, Stefanescu R, Maderwald S, Roths J, et al. 2012. Evidence for a<lb/> motor somatotopy in the cerebellar dentate nucleus-An fMRI study in humans.<lb/> Hum. Brain Mapp.<lb/> </bibl>
+        <bibl>Küper M, Wünnemann MJS, Thürling M, Stefanescu RM, Maderwald S, et al. 2014.<lb/> Activation of the cerebellar cortex and the dentate nucleus in a prism adaptation<lb/> fMRI study. Hum. Brain Mapp.<lb/> </bibl>
+        <bibl>Lee W, Kim HC, Jung Y, Chung YA, Song IU, et al. 2016. Transcranial focused<lb/> ultrasound stimulation of human primary visual cortex. Sci. Rep.<lb/> </bibl>
+        <bibl>Lee W, Kim H, Jung Y, Song IU, Chung YA, Yoo SS. 2015. Image-guided transcranial<lb/> focused ultrasound stimulates human primary somatosensory cortex. Sci. Rep.<lb/> </bibl>
+        <bibl>Leiner HC, Leiner AL, Dow RS. 1991. The human cerebro-cerebellar system: its<lb/> computing, cognitive, and language skills. Behav. Brain Res.<lb/> </bibl>
+        <bibl>Marek S, Hwang K, Foran W, Hallquist MN, Luna B. 2015. The Contribution of Network<lb/> Organization and Integration to the Development of Cognitive Control. PLoS Biol.<lb/> </bibl>
+        <bibl>Margulies DS, Ghosh SS, Goulas A, Falkiewicz M, Huntenburg JM, et al. 2016.<lb/> Situating the default-mode network along a principal gradient of macroscale cortical<lb/> organization. Proc. Natl. Acad. Sci. 113(44):12574-79<lb/> </bibl>
+        <bibl>Matano S. 2001. Brief communication: Proportions of the ventral half of the cerebellar<lb/> dentate nucleus in humans and great apes. Am. J. Phys. Anthropol.<lb/> </bibl>
+        <bibl>Mesulam M -Marsel, Mufson EJ. 1982. Insula of the old world monkey. III: Efferent<lb/> cortical output and comments on function. J. Comp. Neurol.<lb/> </bibl>
+        <bibl>Mesulam MM. 1998. From sensation to cognition. Brain. 121(6):1013-52<lb/> </bibl>
+        <bibl>Moberget T, Doan NT, Alnaes D, Kaufmann T, Córdova-Palomera A, et al. 2018.<lb/> Cerebellar volume and cerebellocerebral structural covariance in schizophrenia: A<lb/> multisite mega-analysis of 983 patients and 1349 healthy controls. Mol. Psychiatry<lb/> </bibl>
+        <bibl>Mufson EJ, Mesulam M -Marsel. 1982. Insula of the old world monkey. II: Afferent<lb/> cortical input and comments on the claustrum. J. Comp. Neurol.<lb/> </bibl>
+        <bibl>Olivito G, Clausi S, Laghi F, Tedesco AM, Baiocco R, et al. 2017. Resting-State<lb/> Functional Connectivity Changes Between Dentate Nucleus and Cortical Social<lb/> Brain Regions in Autism Spectrum Disorders. Cerebellum. 16(2):283-92<lb/> </bibl>
+        <bibl>Palaniyappan L, Liddle PF. 2012. Does the salience network play a cardinal role in<lb/> psychosis? An emerging hypothesis of insular dysfunction<lb/> </bibl>
+        <bibl>Pandya D, Yeterian E. 1985. Architecture and Connections of Cortical Association<lb/> Areas. In Association and Auditory Cortices. Cerebral Cortex, Vol 4., eds. A Peters,<lb/> E Jones, pp. 3-61. Boston, MA: Springer<lb/> </bibl>
+        <bibl>Pedregosa F, Varoquaux G. 2011. Scikit-Learn: Machine Learning in Python, Vol. 12<lb/> </bibl>
+        <bibl>Price CJ. 2012. A review and synthesis of the first 20years of PET and fMRI studies of<lb/> heard speech, spoken language and reading<lb/> </bibl>
+        <bibl>Schmahmann J, Guell X, Stoodley C, Halko M. 2019. The Theory and Neuroscience of<lb/> Cerebellar Cognition. Annu Rev Neurosci<lb/> Schmahmann JD. 1996. From movement to thought: Anatomic substrates of the<lb/> cerebellar contribution to cognitive processing. Hum. Brain Mapp. 4(3):174-98<lb/> </bibl>
+        <bibl>Schmahmann JD, Ko R, MacMore J. 2004a. The human basis pontis: Motor syndromes<lb/> and topographic organization. Brain<lb/> </bibl>
+        <bibl>Schmahmann JD, MacMore J, Vangel M. 2009. Cerebellar stroke without motor deficit:<lb/> clinical evidence for motor and non-motor domains within the human cerebellum.<lb/> Neuroscience. 162(3):852-61<lb/> </bibl>
+        <bibl>Schmahmann JD, Pandya DN. 1992. Course of the fiber pathways to pons from<lb/> parasensory association areas in the rhesus monkey. J. Comp. Neurol.<lb/> </bibl>
+        <bibl>Schmahmann JD, Pandya DN. 1993. Prelunate, occipitotemporal, and parahippocampal<lb/> projections to the basis pontis in rhesus monkey. J.Comp Neurol. 337(0021-9967<lb/> (Print)):94-112<lb/> </bibl>
+        <bibl>Schmahmann JD, Pandya DN. 1995. Prefrontal cortex projections to the basilar pons in<lb/> rhesus monkey: implications for the cerebellar contribution to higher function.<lb/> Neurosci. Lett. 199(3):175-78<lb/> </bibl>
+        <bibl>Schmahmann JD, Pandya DN. 1997. Anatomic organization of the basilar pontine<lb/> projections from prefrontal cortices in rhesus monkey. J. Neurosci. 17(1):438-58<lb/> </bibl>
+        <bibl>Schmahmann JD, Rosene DL, Pandya DN. 2004b. Motor projections to the basis pontis<lb/> in rhesus monkey. J. Comp. Neurol.<lb/> </bibl>
+        <bibl>Schmahmann JD, Sherman JC. 1998. The cerebellar cognitive affective syndrome.<lb/> Brain. 121(4):561-79<lb/> </bibl>
+        <bibl>Seeley WW, Menon V, Schatzberg AF, Keller J, Glover GH, et al. 2007. Dissociable<lb/> Intrinsic Connectivity Networks for Salience Processing and Executive Control. J.<lb/> Neurosci.<lb/> </bibl>
+        <bibl>Selemon LD, Goldman-Rakic PS. 1988. Common cortical and subcortical targets of the<lb/> dorsolateral prefrontal and posterior parietal cortices in the rhesus monkey:<lb/> evidence for a distributed neural network subserving spatially guided behavior. J.<lb/> Neurosci. 8(11):4049-68<lb/> </bibl>
+        <bibl>Setsompop K, Gagoski BA, Polimeni JR, Witzel T, Wedeen VJ, Wald LL. 2012. Blipped-<lb/>controlled aliasing in parallel imaging for simultaneous multislice echo planar<lb/> imaging with reduced g-factor penalty. Magn. Reson. Med. 67(5):1210-24<lb/> </bibl>
+        <bibl>Smyth G. 1941. THE SIGNIFICANCE OF LESIONS IN THE DENTATE NUCLEI<lb/> APPARENTLY CONSECUTIVE TO DISEASE OF THE FRONTAL LOBES. Brain.<lb/> 64(1):63-72<lb/> </bibl>
+        <bibl>Sridharan D, Levitin DJ, Menon V. 2008. A critical role for the right fronto-insular cortex<lb/> in switching between central-executive and default-mode networks. Proc. Natl.<lb/> Acad. Sci.<lb/> </bibl>
+        <bibl>Steele CJ, Anwander A, Bazin PL, Trampel R, Schaefer A, et al. 2017. Human<lb/> cerebellar sub-millimeter diffusion imaging reveals the motor and non-motor<lb/> topography of the dentate nucleus. Cereb. Cortex<lb/> </bibl>
+        <bibl>Stephani C, Fernandez-Baca Vaca G, MacIunas R, Koubeissi M, Lüders HO. 2011.<lb/> Functional neuroanatomy of the insular lobe. Brain Struct. Funct.<lb/> </bibl>
+        <bibl>Stoodley CJ, D&apos;Mello AM, Ellegood J, Jakkamsetti V, Liu P, et al. 2017. Altered<lb/> cerebellar connectivity in autism and cerebellar-mediated rescue of autism-related<lb/> behaviors in mice. Nat. Neurosci. 20(12):1744-51<lb/> </bibl>
+        <bibl>Stoodley CJ, MacMore JP, Makris N, Sherman JC, Schmahmann JD. 2016. Location of<lb/> lesion determines motor vs. cognitive consequences in patients with cerebellar<lb/> stroke. NeuroImage Clin. 12:765-75<lb/> </bibl>
+        <bibl>Tellmann S, Bludau S, Eickhoff S, Mohlberg H, Minnerop M, Amunts K. 2015.<lb/> Cytoarchitectonic mapping of the human brain cerebellar nuclei in stereotaxic<lb/> space and delineation of their co-activation patterns. Front. Neuroanat.<lb/> </bibl>
+        <bibl>Thürling M, Küper M, Stefanescu R, Maderwald S, Gizewski ER, et al. 2011. Activation<lb/> of the dentate nucleus in a verb generation task: A 7T MRI study. Neuroimage<lb/> </bibl>
+        <bibl>Tikka SK, Garg S, Sinha VK, Nizamie SH, Goyal N. 2015. Resting state dense array<lb/> gamma oscillatory activity as a response marker for cerebellar-repetitive<lb/> Transcranial Magnetic Stimulation (rTMS) in schizophrenia. J. ECT<lb/> </bibl>
+        <bibl>Uddin LQ. 2015. Salience processing and insular cortical function and dysfunction<lb/> </bibl>
+        <bibl>van Es D, van der Zwaag T, Knapen T. 2018. Retinotopic maps of visual space in the<lb/> human cerebellum. bioRxiv<lb/> </bibl>
+        <bibl>van Kan PL, Houk JC, Gibson AR. 1993. Output organization of intermediate<lb/> cerebellum of the monkey. J. Neurophysiol.<lb/> </bibl>
+        <bibl>Verhagen L, Gallea C, Folloni D, Constans C, Jensen D, et al. 2019. Offline impact of<lb/> transcranial focused ultrasound on cortical activation in primates. Elife<lb/> </bibl>
+        <bibl>Voogd J, Shinoda Y, Ruigrok TJH, Sugihara I. 2013. Cerebellar nuclei and the inferior<lb/> olivary nuclei: Organization and connections. In Handbook of the Cerebellum and<lb/> Cerebellar Disorders<lb/> </bibl>
+        <bibl>Whitfield-Gabrieli S, Ford J. 2012. Default Mode Network Activity and Connectivity in<lb/> Psychopathology. Annu. Rev. Clin. Psychol. 8:49-76<lb/> </bibl>
+        <bibl>Whitfield-Gabrieli S, Nieto-Castanon A. 2012. Conn : A Functional Connectivity Toolbox<lb/> for Correlated and Anticorrelated Brain Networks. Brain Connect. 2(3):125-41<lb/> </bibl>
+        <bibl>Xiong G, Nagao S. 2002. The lobulus petrosus of the paraflocculus relays cortical visual<lb/> inputs to the posterior interposed and lateral cerebellar nuclei: An anterograde and<lb/> retrograde tracing study in the monkey. Exp. Brain Res.<lb/> </bibl>
+        <bibl>Yeo B, Krienen FM, Sepulcre J, Sabuncu MR, Lashkari D, et al. 2011. The organization<lb/> of the human cerebral cortex estimated by intrinsic functional connectivity. J.<lb/> Neurophysiol. 106(3):1125-65<lb/> </bibl>
+        <bibl>Zhou Y, Friston KJ, Zeidman P, Chen J, Li S, Razi A. 2018. The Hierarchical<lb/> Organization of the Default, Dorsal Attention and Salience Networks in Adolescents<lb/> and Young Adults. Cereb. Cortex</bibl>
+        </listBibl>
+    </text>
+</tei>
+

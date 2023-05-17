@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  orgName  missmatch -->
+<bibl xml:id="_TRMDBW_2020_v8_79_003" lang="zn"><author>刘春</author>, <title level="a">舞蹈新媒体初探</title>, <title level="j">北京舞蹈学院学报</title>, <date>2005</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_OSDJBQ_2021_v23n1_71_024" lang="zn"><author>赵波</author>. (<date>2015</date>). <title level="a">宋元袍服研究</title>. <title level="j">服饰导刊</title>, <biblScope unit="page">27-35</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_SSGOBY_2020_v51n3_49_049" lang="zn"><author>吉田 清弘/ 野村 剛司</author> (<date>2012</date>), '<title level="a">未払賃金立替払制度 実務ハンドブック</title>', <title level="j">金融財政事情</title> <biblScope unit="issue">1949</biblScope>号, p. <biblScope unit="page">101</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n1_383_001" lang="zn"><author>居其宏</author>, '<title level="a">近年中国原创音乐剧的回顾与前瞻</title>,' <title level="j">艺术广角</title>, 제<biblScope unit="volume">4</biblScope>권, 제<biblScope unit="issue">1</biblScope>호, pp.<biblScope unit="page">4-8</biblScope>, <date>2000</date>.</bibl>
+<!---  author  title  journal  date  missmatch -->
+<bibl xml:id="_HNGHBF_2020_v41n5_838_004" lang="zn"><author>郭宏奇</author>. <title level="a">中藥辨証治療灼口綜合征臨床觀察</title>. <title level="j">疾病監測与控制雜誌</title><date>2009</date>;<biblScope unit="volume">8</biblScope>:<biblScope unit="page">484-5</biblScope>.</bibl>
+<!---  author  title  volume  missmatch -->
+<bibl xml:id="_KCOSB1_2020_v29n2_75_035" lang="zn"><author>陳遵嬀</author>, <title level="a">二十八宿的演變</title>, <title level="j">中國天文學史</title>, 권<biblScope unit="volume">2</biblScope>, <date>1985</date>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_260_041" lang="zn"><author>周向永.趙俊偉.李亞氷</author>, <date>1996</date>, <title level="a">辽宁开原 境内的高句丽城址</title>, <title level="j">北方文物</title> <biblScope unit="volume">1</biblScope>期.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_260_042" lang="zn"><author>李龙彬</author>, <date>2008</date>, <title level="a">铁岭境内高句丽山城的几个问题</title>, <title level="j">东北史地</title> <biblScope unit="volume">4</biblScope>期.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_260_044" lang="zn"><author>赵晓刚</author>, <date>2013</date>, <title level="a">沈阳营盘山山城和董楼子山城考古调查</title>, <title level="j">东北史地</title> <biblScope unit="volume">2</biblScope>期.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_260_045" lang="zn"><author>陈大为</author>, <date>1995</date>, <title level="a">辽宁高句丽山城再探</title>, <title level="j">北方文物</title> <biblScope unit="volume">3</biblScope>期.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_015" lang="zn"><author>劉彤杜菁</author>, '<title level="a">外國仲裁機構在中國仲裁的相關問題探討</title>', <title level="j">北京仲裁</title>, 第<biblScope unit="volume">100</biblScope>輯, <date>2017</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_017" lang="zn"><author>劉曉紅, 馮碩</author>, '<title level="a">制度型開放背景下境外仲裁機構內地仲裁的改革因應</title>', <title level="j">法學評論</title>, 總第<biblScope unit="issue">221</biblScope>期, <date>2020</date>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_028" lang="zn"><author>朱江</author>, '<title level="a">法律關係涉外性判斷的新視閾</title>', <title level="j">河南財經定法大學學報</title>, 總第<biblScope unit="issue">159</biblScope>期, <date>2017</date>.</bibl>
+<!---  volume  page  date  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_029" lang="zn"><author>陳穎婷</author>, '<title level="a">境外仲裁機構可在臨港設立業務機構</title>', <title level="j">上海法治報</title>, <date>2020年 1月 3日</date>.</bibl>
+<!---  volume  page  date  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_030" lang="zn"><author>祝越</author>, '<title level="a">境外仲裁機構可在新片區設業務機構</title>', <title level="j">文滙報</title>, <date>2020年 5月 22日</date>.</bibl>
+<!---  journal  page  date  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_033" lang="zn"><author>胡幸陽</author>, '<title level="a">境外仲裁機構落戶臨港可穫獎勵</title>', <title level="j">解放日報</title>, <date>2020年</date> 5月 22日.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_GJJHBI_2020_v30n4_31_019" lang="zn"><author>牟笛</author>, '<title level="a">上海建設面向全球的亞太仲裁中心的挑戰与出路</title>', <title level="j">上海法學硏究</title>, 第<biblScope unit="volume">17</biblScope>卷, <date>2019</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n3_143_003" lang="zn"><author>马达, 郑甲苏</author>, <title level="a">The Environment Characteristic Protection In Historic Block</title>, <title level="j">城市更新</title>[J], p.<biblScope unit="page">95</biblScope>, <date>2015</date>.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_GODHBK_2020_v11n2_81_088" lang="zn"><author>趙宜萱.徐雲飛</author> (<date>2016</date>), '<title level="a">新生代員工與非新生代員工的幸福感差異研究—基於工作特征與員工幸福感模型的比較</title>', <title level="j">管理世界</title>, <biblScope unit="volume">6</biblScope>: <biblScope unit="page">178-179</biblScope>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_004" lang="zn"><author>郭春華. 劉小冬. 餘盤滿</author>(<date>2012</date>). <title level="a">廣東四大古典名園植物調查分析</title>. <title level="j">安徽農 業科學</title>. <biblScope unit="volume">40</biblScope>卷 <biblScope unit="issue">21</biblScope>期.: <biblScope unit="page">10964-10967</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_005" lang="zn"><author>鄧颖芝</author>(<date>2010</date>). <title level="a">東莞道生園主人-張嘉謨</title>. <title level="j">嶺南文史</title>. <biblScope unit="issue">3</biblScope>月号: <biblScope unit="page">58-60</biblScope>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_008" lang="zn"><author>李涛</author>(<date>2009</date>). <title level="a">江南園林與嶺南園林的淵源</title>. <title level="j">南方建築</title>. 第<biblScope unit="volume">3</biblScope>期.: <biblScope unit="page">33-35</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_010" lang="zn"><author>鄧颖芝</author>(<date>2006</date>). <title level="a">東莞可園主人-張敬修</title>. <title level="j">嶺南文史</title>. <biblScope unit="issue">4</biblScope>月号.: <biblScope unit="page">32-34</biblScope>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_013" lang="zn"><author>鄧其生</author>(<date>1982</date>). <title level="a">東莞可園</title>. <title level="j">建築歷史與理論</title>. 第<biblScope unit="volume">3</biblScope>期.: <biblScope unit="page">164-175</biblScope>.</bibl>
+<!---  title  journal  volume  orgName  missmatch -->
+<bibl xml:id="_HJOHBR_2021_v39n1_1_006" lang="zn"><author>夏昌世. 莫伯治</author>(<date>1963</date>). <title level="a">漫談嶺南園林</title>. <title level="j">建築學報</title>. <orgName>中國建築學會</orgName>. 第<biblScope unit="volume">3</biblScope>期: <biblScope unit="page">11-14</biblScope>.</bibl>
+<!---  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n5_877_025" lang="zn"><author>倪锋</author>, '<title level="a">地震灾后临时过渡安置房规划建设国内外比较研究</title>,' <title level="j">以汶川地震灾后板房为例.城市发展研究</title>, <biblScope unit="volume">23</biblScope>卷 第<biblScope unit="issue">1</biblScope>期, pp.<biblScope unit="page">83-90</biblScope>, <date>2016</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_013" lang="zn"><author>安玲, 張國泰, 楊建宇, 李惠民</author>. <title level="a">張子和補法學術思想概述</title>. <title level="j">內蒙古中醫藥</title>. <date>2001</date>. <biblScope unit="volume">5</biblScope>. <ptr type="web">https://doi.org/10.16040/j.cnki.cn15-1101.2001.05.020</ptr>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_015" lang="zn"><author>楊濤, 吳斌龍, 王家倩</author>. <title level="a">張子和論補法</title>. <title level="j">河南中醫藥學刊</title>. <date>2002</date>. <biblScope unit="volume">17</biblScope>(<biblScope unit="issue">1</biblScope>). <ptr type="web">https://doi.org/10.16368/j.issn.1674-8999.2002.01.016</ptr>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_016" lang="zn"><author>易杰, 王秀穎</author>. <title level="a">張子和論補法</title>. <title level="j">遼寧中醫學院 學報</title>. <date>2000</date>. <biblScope unit="volume">2</biblScope>(<biblScope unit="issue">1</biblScope>). <ptr type="web">https://doi.org/10.13194/j.jlunivtcm.2000.01.44.yij.028</ptr>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_018" lang="zn"><author>張仁崗</author>. <title level="a">張子和補法特點淺析</title>. <title level="j">甘肅中醫</title>. <date>2002</date>. <biblScope unit="volume">15</biblScope>(<biblScope unit="issue">2</biblScope>).</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_45_011" lang="zn"><author>杜慶山</author>. <title level="a">中藥蒼朮炮制方法及理論研究進展</title>.. <date>2012</date>. <biblScope unit="volume">9</biblScope>(<biblScope unit="issue">7</biblScope>). pp.<biblScope unit="page">439-441</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_009" lang="zn"><author>李建香</author>. <title level="a">張從正補法思想淺談</title>. <title level="j">光明中醫</title>. <date>2009</date>. <biblScope unit="volume">24</biblScope>(<biblScope unit="issue">8</biblScope>).</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2021_v34n2_225_011" lang="zn"><author>孫洪生, 李永民</author>. <title level="a">子和補意推原</title>. <title level="j">張家口醫學院學報</title>. <date>2003</date>. <biblScope unit="volume">20</biblScope>(<biblScope unit="issue">6</biblScope>).</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_OSHSB8_2020_v33n2_105_015" lang="zn"><author>王麗</author>. <title level="a">醫方類聚引瘡科通玄論槪況</title>. <title level="j">中国中医药 现代远程教育</title>. <date>2012</date>;<biblScope unit="volume">10</biblScope>(<biblScope unit="issue">24</biblScope>):<biblScope unit="page">92-93</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_OSHSB8_2020_v33n2_105_016" lang="zn"><author>劉時覺, 陳克平, 劉尙平</author>. <title level="a">續易簡方脉論和王氏易 簡方續考</title>. <title level="j">中華醫史雜誌</title>. <date>2000</date>;<biblScope unit="volume">30</biblScope>(<biblScope unit="issue">4</biblScope>):<biblScope unit="page">197-199</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_OSHSB8_2020_v33n2_105_018" lang="zn"><author>孫齊, 李晨</author>. <title level="a">醫方類聚引修真秘訣研究</title>. <title level="j">山東中 醫藥大學學報</title>. <date>2014</date>;<biblScope unit="volume">2</biblScope>:<biblScope unit="page">147-149</biblScope>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n6_138_080" lang="zn"><author>但鸣啸, 巫卓雯</author>, '<title level="a">淘宝直播营销应用与策略研究</title>,' <title level="j">中国市场</title>, 제<biblScope unit="volume">29</biblScope>권, <date>2018</date>.</bibl>
+<!---  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n6_138_081" lang="zn"><author>高舒</author>, '<title level="a">楚门背后:全民直播时代下的素人直播研究--基于网络互动理论的视角</title>,' <title level="j">新媒体研究</title>, 第<biblScope unit="volume">15</biblScope>期, pp.<biblScope unit="page">79-80</biblScope>, <date>2017</date>.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_003" lang="zn"><author>张建肖</author>, <date>2009</date>, '<title level="a">安树伟,国内外生态补偿研究综述</title>', <title level="j">西安石油大学学报 (社会科学版)</title>, 第<biblScope unit="page">23</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_005" lang="zn"><author>曹明德</author>, <date>2004</date>, '<title level="a">对建立我国生态补偿制度的思考</title>', <title level="j">法学</title>, 第<biblScope unit="page">41</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_006" lang="zn"><author>许芬, 时保国</author>,<date>2010</date>,'<title level="a">生态补偿-观点综述与理性选择</title>', <title level="j">开发研究</title>, 第<biblScope unit="page">105</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_008" lang="zn"><author>李文华, 刘某承</author>, <date>2010</date>, '<title level="a">关于中国生态补偿机制建设的几点思考</title>', <title level="j">资源科学</title>, 第<biblScope unit="page">791-795</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_009" lang="zn"><author>陈学斌</author> <date>2010</date>, '<title level="a">我国生态补偿机制进展与建议</title>', <title level="j">宏观经济管理</title>,第, 第<biblScope unit="page">30-32</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_010" lang="zn"><author>郑海霞</author>, <date>2010</date>, '<title level="a">关于流域生态补偿机制与模式研究</title>', <title level="j">云南师范大学学报(哲学社会科学版)</title>, 第<biblScope unit="page">56</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_011" lang="zn"><author>辽宁省财政厅课题组</author>, <date>2008</date>, '<title level="a">关于完善我国生态补偿体系的思考</title>', <title level="j">地方财政研究</title>, 第<biblScope unit="page">42</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_012" lang="zn"><author>董全亮, 汪燕</author>, <date>2018</date>, '<title level="a">云南洱海流域生态补偿研究</title>', <title level="j">辽宁行政学院学报</title>, 第<biblScope unit="page">92-96</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_014" lang="zn"><author>杨小柳</author>, <date>2008</date>, '<title level="a">参与式流域环境治理-以大理洱海流域为例</title>', <title level="j">广西民族大学学报(哲学社会科学版)</title>, 第<biblScope unit="page">65</biblScope>页.</bibl>
+<!---  title  journal  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_016" lang="zn"><author>任俊霖, 彭梓倩, 伍新木, 潘雪</author>, <date>2020</date>, '<title level="a">中国生态补偿研究最新进展与前沿分析</title>' <title level="j">林业经济</title> , 第<biblScope unit="page">19-29</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_017" lang="zn"><author>李文华, 刘某承</author>, <date>2010</date>, '<title level="a">关于中国生态补偿机制建设的几点思考</title>', <title level="j">资源科学</title>, 第<biblScope unit="page">792-793</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_018" lang="zn"><author>陈学斌</author>, <date>2010</date>, '<title level="a">我国生态补偿机制进展与建议</title>', <title level="j">宏观经济管理</title>, 第<biblScope unit="page">32</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_019" lang="zn"><author>马寅</author>, <date>2010</date>, '<title level="a">对我国生态补偿机制存在问题的探讨及对策研究</title>', <title level="j">东方企业文化</title>, 第<biblScope unit="page">265</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_020" lang="zn"><author>方东, 许建华, 徐实</author>, <date>2001</date>, '<title level="a">生态工程治理玄武湖水污染效果的监测与评价</title>', <title level="j">环境监测管理与技术</title>, 第<biblScope unit="page">36</biblScope>页.</bibl>
+<!---  page  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_51_021" lang="zn"><author>张海峰, 白永平</author>, <date>2008</date>, '<title level="a">青海省产业结构变化及其生态环境效应</title>', <title level="j">经济地理</title>, 第<biblScope unit="page">748</biblScope>页.</bibl>
+<!---  title  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n4_147_017" lang="zn"><author>閻曉宇</author>. <title level="a">從'物化之常'到'夭'</title>. <title level="j">中國中醫基礎醫學雜志</title>. <date>2001</date>. <biblScope unit="volume">6</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n4_57_011" lang="zn"><author>林鎭錫</author>. <title level="a">迎隨補瀉 硏究</title>. <title level="j">大韓原典醫史學會誌</title>. <biblScope unit="volume">12</biblScope>(<biblScope unit="issue">2</biblScope>). <date>1999</date>.</bibl>
+<!---  title  journal  date  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n4_83_037" lang="zn"><author>翟雙慶</author>. <title level="a">從脈法看傷寒雜病論與難經的學術關係. 國醫論壇. 1987. 제2기. 38. 郭文娟. 論難經獨取寸口脈法的學術內涵</title>. <title level="j">時珍國醫國藥</title>. <date>2012</date>. <biblScope unit="volume">23</biblScope>(<biblScope unit="issue">7</biblScope>). <ptr type="web">https://doi.org/10.3969/j.issn.1008-0805.2012.07.119</ptr>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n4_83_043" lang="zn"><author>馬勝, 扈培增, 姜建國</author>. <title level="a">淺談司內揣外辨證觀</title>. <title level="j">河南中醫</title>. <date>2015</date>. <biblScope unit="volume">35</biblScope>(<biblScope unit="issue">4</biblScope>). <ptr type="web">https://doi.org/10.16367/j.issn.1003-5028.2015.04.0285</ptr>.</bibl>
+<!---  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n1_75_049" lang="zn"><author>蔡海芬</author>, '<title level="a">俄漢道歉語對比研究</title>,' <title level="j">現代交際</title>, No.<biblScope unit="issue">2</biblScope>, pp.<biblScope unit="page">105-106</biblScope>, <date>2019</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_E1GMBY_2020_v8n3_334_008" lang="zn"><author>辛宏, 李佳颖, 庾芝霞, 赵微, 贺婧慧, 张卓, 刘娟</author>. <title level="a">医学生BMI 与体质测试指标相关性[J]</title>.<title level="j">中国公共卫生</title>,<date>2017</date>,<biblScope unit="volume">33</biblScope>(<biblScope unit="issue">12</biblScope>):<biblScope unit="page">1764-1766</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n1_1_004" lang="zn"><author>李今庸</author>. <title level="a">史記 倉公火齊湯考</title>. <title level="j">中醫文獻雜誌</title>. <date>2012</date>. 第<biblScope unit="issue">2</biblScope>期.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_HNGHBF_2020_v41n3_424_012" lang="zn"><author>薛伯寿, 姚魁武, 薛燕星</author>. <title level="a">'清肺排毒汤' 快速有效治疗新型冠状病毒肺炎的中医理论分析</title>. <title level="j">中医杂志</title> <date>2020</date>;<biblScope unit="volume">61</biblScope>(<biblScope unit="issue">6</biblScope>):<biblScope unit="page">461-2</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

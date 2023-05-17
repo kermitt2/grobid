@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_455_025" lang="de"><author>Song, W. and N. Wilbert</author>. <date>1989</date>. <title level="a">Taxonomische Untersuchungen an Aufwuchsciliaten (Protozoa, Ciliophora) im Poppelsdorfer Weiher, Bonn</title>. <title level="j">Lauterbornia Heft</title> <biblScope unit="volume">3</biblScope>:<biblScope unit="page">2-221</biblScope> (<note>in German</note>).</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_480_001" lang="de"><author>Becker, K.H., W. Noodt and G. Schriever</author>. <date>1979</date>. <title level="a">Eidonomie und Taxonomie abyssaler Harpacticoidea (Crustacea, Copepoda) Teil 2. Paramesochridae, Cylindropsyllidae und Cletodidae</title>. <title level="j">Meteor Forschungsergebnisse, Reihe D -Biologie</title> <biblScope unit="volume">31</biblScope>:<biblScope unit="page">1-37</biblScope>.</bibl>
+<!---  title  journal  publisher  pubPlace  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_427_019" lang="de"><author>Kahl, A</author>. <date>1931</date>. <title level="a">Urtiere oder Protozoa I: Wimpertiere oder Ciliata (Infusoria) 2. Holotricha ausser den im 1. Teil behandelten Prostomata</title>. In: <editor>F. Dahl</editor>(ed.), <title level="j">Die Tierwelt Deutschlands und der angrenzenden Meeresteile</title>. <publisher>Gustav Fischer Verlag</publisher>, <pubPlace>Jena</pubPlace>, T. <biblScope unit="volume">21</biblScope>:<biblScope unit="page">181-398</biblScope>.</bibl>
+<!---  issue  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_427_011" lang="de"><author>Foissner, W., H. Berger and H. Kohmann</author>. <date>1992</date>. <title level="a">Taxonomische und okologische revision der ciliaten des saprobiensystems - Band II: Peritrichia, Heterotrichida, Odontostomatida</title>. <title level="j">Informationsberichte des Bayer Landesamtes fur Wasserwirtschaft</title> <biblScope unit="volume">5</biblScope>/<biblScope unit="issue">92</biblScope>:<biblScope unit="page">394-399</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

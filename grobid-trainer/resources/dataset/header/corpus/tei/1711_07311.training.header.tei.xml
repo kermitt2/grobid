@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1711_07311"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	This content was downloaded from IP address 176.134.87.221 on 16/10/2020 at 22:51<lb/>
+	<reference>Chinese Physics C Vol. 42, No. 4 (2018) 043002<lb/></reference>
+
+	<docTitle>
+	<titlePart>Derived Born cross sections of e + e − annihilation into open charm<lb/> mesons from CLEO-c measurements *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Xiang-Kun Dong(<lb/> ) 1;1) Liang-Liang Wang(<lb/> ) 2;2) Chang-Zheng Yuan(<lb/> ) 2,1;3<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 University of Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100049, China<lb/></address>
+
+	<byline>
+	<affiliation>2 Institute of High Energy Physics, Chinese Academy of Sciences,</affiliation>
+	</byline>
+
+	<address>Beijing 100049, China<lb/></address>
+
+	Abstract:
+	<div type="abstract">The exclusive Born cross sections of the production of D 0 , D + and D +<lb/> s mesons in e + e − annihilation at<lb/> 13 energy points between 3.970 and 4.260 GeV are obtained by applying corrections for initial state radiation and<lb/> vacuum polarization to the observed cross sections measured by the CLEO-c experiment. Both the statistical and<lb/> the systematic uncertainties for the obtained Born cross sections are estimated.<lb/></div>
+
+	Keywords:
+	<keyword>electron-positron annihilation, charm production, Born cross section, radiative correction<lb/></keyword>
+
+	<reference>PACS: 13.66.Bc, 13.25.Gv, 14.40.Rt<lb/></reference>
+
+	<idno>DOI: 10.1088/1674-1137/42/4/043002<lb/></idno>
+
+	<note type="submission">Received 20 November 2017, Revised 1 February 2018,</note>
+
+	Published online
+	<date>20 March 2018<lb/></date>
+
+	*
+	<note type="funding">Supported in part by National Natural Science Foundation of China (NSFC) (11235011, 11475187, 11521505, U1632106), the Ministry<lb/> of Science and Technology of China (2015CB856701), Key Research Program of Frontier Sciences, CAS, (QYZDJ-SSW-SLH011) and the<lb/> CAS Center for Excellence in Particle Physics (CCEPP)<lb/></note>
+
+	1) E-mail:
+	<email>dongxiangkun14@mails.ucas.edu.cn<lb/></email>
+
+	2) E-mail:
+	<email>llwang@ihep.ac.cn<lb/></email>
+
+	3) E-mail:
+	<email>yuancz@ihep.ac.cn<lb/></email>
+
+	<note type="copyright">Content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence. Any further<lb/> distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. Article funded<lb/> by SCOAP 3 and published under licence by Chinese Physical Society and the Institute of High Energy Physics of the Chinese Academy<lb/> of Sciences and the Institute of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd</note>
+
+		</front>
+	</text>
+</tei>

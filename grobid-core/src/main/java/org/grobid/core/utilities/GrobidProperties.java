@@ -791,6 +791,20 @@ public class GrobidProperties {
         return param.delft.embeddings_name;
     }
 
+    public static String getDelftTranformer(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        if (param == null) {
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
+            return null;
+        }
+        DelftModelParameters delftParam = param.delft;
+        if (delftParam == null) {
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
+            return null;
+        }
+        return param.delft.transformer;
+    }
+
     /**
     *  Return -1 if not set in the configuration and the default DeLFT value will be used in this case.
     */

@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.3389_fpubh.2020.594117"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">ORIGINAL RESEARCH<lb/></note>
+
+	published:
+	<date>13 January 2021<lb/></date>
+
+	<idno>doi: 10.3389/fpubh.2020.594117<lb/></idno>
+
+	<reference>Frontiers in Public Health | www.frontiersin.org<lb/> 1<lb/> January 2021 | Volume 8 | Article 594117<lb/></reference>
+
+	Edited by:<lb/>
+	<editor>Achim Berthele,<lb/></editor>
+
+	<byline>
+	<affiliation>Technical University of<lb/> Munich,</affiliation>
+	</byline>
+
+	<address>Germany<lb/></address>
+
+	Reviewed by:<lb/>
+	<editor>Christian Günster,<lb/></editor>
+
+	<byline>
+	<affiliation>AOK Research Institute,</affiliation>
+	</byline>
+
+	<address>Germany<lb/> Petra Knaup,<lb/> Heidelberg University, Germany<lb/></address>
+
+	*Correspondence:<lb/>
+	<byline>
+	<docAuthor>Lorenz A. Kapsner<lb/></docAuthor>
+	</byline>
+
+	<email>lorenz.kapsner@uk-erlangen.de<lb/></email>
+
+	Specialty section:<lb/>
+	<note type="submission">This article was submitted to<lb/> Infectious Diseases -Surveillance,<lb/> Prevention and Treatment,<lb/> a section of the journal<lb/> Frontiers in Public Health<lb/></note>
+	
+	<note type="submission">Received: 12 August 2020<lb/> Accepted: 11 December 2020<lb/></note>
+
+	Published:
+	<date>13 January 2021<lb/></date>
+
+	Citation:<lb/>
+	<reference>Kapsner LA, Kampf MO, Seuchter SA,<lb/> Gruendner J, Gulden C, Mate S,<lb/> Mang JM, Schüttler C,<lb/> Deppenwiese N, Krause L, Zöller D,<lb/> Balig J, Fuchs T, Fischer P,<lb/> Haverkamp C, Holderried M, Mayer G,<lb/> Stenzhorn H, Stolnicu A, Storck M,<lb/> Storf H, Zohner J, Kohlbacher O,<lb/> Strzelczyk A, Schüttler J, Acker T,<lb/> Boeker M, Kaisers UX, Kestler HA and<lb/> Prokosch H-U (2021) Reduced Rate<lb/> of Inpatient Hospital Admissions in 18<lb/> German University Hospitals During<lb/> the COVID-19 Lockdown.<lb/> Front. Public Health 8:594117.<lb/></reference>
+
+	<idno>doi: 10.3389/fpubh.2020.594117<lb/></idno>
+
+	<docTitle>
+	<titlePart>Reduced Rate of Inpatient Hospital<lb/> Admissions in 18 German University<lb/> Hospitals During the COVID-19 Lockdown<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Lorenz A. Kapsner 1,2 *, Marvin O. Kampf 1 , Susanne A. Seuchter 1 , Julian Gruendner 3 ,<lb/> Christian Gulden 3 , Sebastian Mate 1 , Jonathan M. Mang 1 , Christina Schüttler 3 ,<lb/> Noemi Deppenwiese 3 , Linda Krause 4 , Daniela Zöller 5 , Julien Balig 6 , Timo Fuchs 7 ,<lb/> Patrick Fischer 8 , Christian Haverkamp 9 , Martin Holderried 10 , Gerhard Mayer 6 ,<lb/> Holger Stenzhorn 11,12 , Ana Stolnicu 6 , Michael Storck 13 , Holger Storf 14 , Jochen Zohner 8 ,<lb/> Oliver Kohlbacher 12,15,16,17 , Adam Strzelczyk 18 , Jürgen Schüttler 19 , Till Acker 20 ,<lb/> Martin Boeker 5 , Udo X. Kaisers 21 , Hans A. Kestler 6 and<lb/> Hans-Ulrich Prokosch 3</docAuthor>
+	</byline>
+
+	on behalf of our MII-Research Group<lb/>
+	<byline>
+	<affiliation>1 Medical Center for Information and Communication Technology, Universitätsklinikum Erlangen,</affiliation>
+	</byline>
+
+	<address>Erlangen, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Radiology, Universitätsklinikum Erlangen, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU),<lb/></affiliation>
+	</byline>
+
+	<address>Erlangen, Germany,</address>
+
+	<byline>
+	<affiliation>3 Chair of Medical Informatics, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU),<lb/></affiliation>
+	</byline>
+
+	<address>Erlangen, Germany,</address>
+
+	<byline>
+	<affiliation>4 Institute of Medical Biometry and Epidemiology, University Medical Center Hamburg-Eppendorf,<lb/></affiliation>
+	</byline>
+
+	<address>Hamburg, Germany,</address>
+
+	<byline>
+	<affiliation>5 Institute of Medical Biometry and Statistics, Medical Faculty and Medical Center, University of Freiburg,<lb/></affiliation>
+	</byline>
+
+	<address>Freiburg, Germany,</address>
+
+	<byline>
+	<affiliation>6 Institute of Medical Systems Biology, Ulm University,</affiliation>
+	</byline>
+
+	<address>Ulm, Germany,</address>
+
+	<byline>
+	<affiliation>7 Department of Nuclear Medicine,<lb/> University Hospital Regensburg,</affiliation>
+	</byline>
+
+	<address>Regensburg, Germany,</address>
+
+	<byline>
+	<affiliation>8 Institute of Medical Informatics, Faculty of Medicine,<lb/> Justus-Liebig-University,</affiliation>
+	</byline>
+
+	<address>Gießen, Germany,</address>
+
+	<byline>
+	<affiliation>9 Institute of Digitalisation in Medicine, Medical Faculty and Medical Center,<lb/> University of Freiburg,</affiliation>
+	</byline>
+
+	<address>Freiburg, Germany,</address>
+
+	<byline>
+	<affiliation>10 Department of Medical Development and Quality Management, University<lb/> Hospital Tübingen,</affiliation>
+	</byline>
+
+	<address>Tübingen, Germany,</address>
+
+	<byline>
+	<affiliation>11 Saarland University Medical Center, Institute for Medical Biometry, Epidemiology<lb/> and Medical Informatics,</affiliation>
+	</byline>
+
+	<address>Homburg, Germany,</address>
+
+	<byline>
+	<affiliation>12 Institute for Translational Bioinformatics, University Hospital Tübingen,<lb/></affiliation>
+	</byline>
+
+	<address>Tübingen, Germany,</address>
+
+	<byline>
+	<affiliation>13 Institute of Medical Informatics, University of Münster,</affiliation>
+	</byline>
+
+	<address>Münster, Germany,</address>
+
+	<byline>
+	<affiliation>14 Medical Informatics<lb/> Group, Universitätsklinikum Frankfurt,</affiliation>
+	</byline>
+
+	<address>Frankfurt, Germany,</address>
+
+	<byline>
+	<affiliation>15 Applied Bioinformatics, Department of Computer Science,<lb/> University of Tübingen,</affiliation>
+	</byline>
+
+	<address>Tübingen, Germany,</address>
+
+	<byline>
+	<affiliation>16 Institute for Bioinformatics and Medical Informatics, University of Tübingen,<lb/></affiliation>
+	</byline>
+
+	<address>Tübingen, Germany,</address>
+
+	<byline>
+	<affiliation>17 Biomolecular Interactions, Max Planck Institute for Developmental Biology,</affiliation>
+	</byline>
+
+	<address>Tübingen, Germany,<lb/></address>
+
+	<byline>
+	<affiliation>18 Epilepsy Center Frankfurt Rhine-Main, Center of Neurology and Neurosurgery, Goethe University Frankfurt,</affiliation>
+	</byline>
+
+	<address>Frankfurt,<lb/> Germany,</address>
+
+	<byline>
+	<affiliation>19 Department of Anesthesiology, University Hospital Erlangen,</affiliation>
+	</byline>
+
+	<address>Erlangen, Germany,</address>
+
+	<byline>
+	<affiliation>20 Institute of Neuropathology,<lb/> Justus-Liebig-University,</affiliation>
+	</byline>
+
+	<address>Gießen, Germany,</address>
+
+	<byline>
+	<affiliation>21 Ulm University Medical Center,</affiliation>
+	</byline>
+
+	<address>Ulm, Germany<lb/></address>
+
+	<div type="abstract">The COVID-19 pandemic has caused strains on health systems worldwide disrupting<lb/> routine hospital services for all non-COVID patients. Within this retrospective<lb/> study, we analyzed inpatient hospital admissions across 18 German university<lb/> hospitals during the 2020 lockdown period compared to 2018. Patients admitted<lb/> to hospital between January 1 and May 31, 2020 and the corresponding periods<lb/> in 2018 and 2019 were included in this study. Data derived from electronic<lb/> health records were collected and analyzed using the data integration center<lb/> infrastructure implemented in the university hospitals that are part of the four<lb/> consortia funded by the German Medical Informatics Initiative. Admissions were<lb/> grouped and counted by ICD 10 chapters and specific reasons for treatment at each<lb/> site. Pooled aggregated data were centrally analyzed with descriptive statistics to<lb/> compare absolute and relative differences between time periods of different years.<lb/> Kapsner et al.<lb/> Hospital Admissions During COVID-19 Lockdown<lb/> The results illustrate how care process adoptions depended on the COVID-19<lb/> epidemiological situation and the criticality of the disease. Overall inpatient hospital<lb/> admissions decreased by 35% in weeks 1 to 4 and by 30.3% in weeks 5 to 8 after<lb/> the lockdown announcement compared to 2018. Even hospital admissions for critical<lb/> care conditions such as malignant cancer treatments were reduced. We also noted a<lb/> high reduction of emergency admissions such as myocardial infarction (38.7%), whereas<lb/> the reduction in stroke admissions was smaller (19.6%). In contrast, we observed<lb/> a considerable reduction in admissions for non-critical clinical situations, such as<lb/> hysterectomies for benign tumors (78.8%) and hip replacements due to arthrosis (82.4%).<lb/> In summary, our study shows that the university hospital admission rates in Germany<lb/> were substantially reduced following the national COVID-19 lockdown. These included<lb/> critical care or emergency conditions in which deferral is expected to impair clinical<lb/> outcomes. Future studies are needed to delineate how appropriate medical care of<lb/> critically ill patients can be maintained during a pandemic.<lb/></div>
+
+	Keywords:
+	<keyword>COVID-19, pandemic, healthcare systems, inpatient hospital admissions, Germany, medical<lb/> informatics initiative, lockdown, university hospitals<lb/></keyword>
+
+	Copyright
+	<note type="copyright">© 2021 Kapsner, Kampf, Seuchter, Gruendner, Gulden, Mate, Mang,<lb/> Schüttler, Deppenwiese, Krause, Zöller, Balig, Fuchs, Fischer, Haverkamp,<lb/> Holderried, Mayer, Stenzhorn, Stolnicu, Storck, Storf, Zohner, Kohlbacher,<lb/> Strzelczyk, Schüttler, Acker, Boeker, Kaisers, Kestler and Prokosch. This is an<lb/> open-access article distributed under the terms of the Creative Commons Attribution<lb/> License (CC BY). The use, distribution or reproduction in other forums is permitted,<lb/> provided the original author(s) and the copyright owner(s) are credited and that the<lb/> original publication in this journal is cited, in accordance with accepted academic<lb/> practice. No use, distribution or reproduction is permitted which does not comply<lb/> with these terms.</note>
+
+		</front>
+	</text>
+</tei>

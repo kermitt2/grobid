@@ -112,7 +112,7 @@ public class Consolidation {
      * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
      * core metadata
      */
-    public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
+    public BiblioItem consolidate(BiblioItem bib, String rawCitation, int consolidateMode) throws Exception {
         final List<BiblioItem> results = new ArrayList<>();
 
         String theDOI = bib.getDOI();
@@ -157,7 +157,7 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } else {
+        } else if (consolidateMode != 3) {
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string            
                 if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
@@ -216,7 +216,6 @@ public class Consolidation {
                 }
             }
         }
-
         if (arguments == null || arguments.size() == 0) {
             return null;
         }

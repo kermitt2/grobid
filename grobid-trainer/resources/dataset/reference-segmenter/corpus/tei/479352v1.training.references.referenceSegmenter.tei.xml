@@ -1,0 +1,41 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label>. Wilson WR, Laird N, Kavesh DA. Electronystagmographic findings in idiopathic sudden<lb/> hearing loss. Am J Otolaryngol. 1982; 3(4):279-285. PMID: 6983308<lb/> </bibl>
+        <bibl><label>2</label>. Nosrati-Zarenoe R, Arlinger S, Hultcrantz E. Idiopathic sudden sensorineural hearing loss:<lb/> results drawn from the Swedish national database. Acta Otolaryngol. 2007; 127(11):1168-<lb/>1175. https://doi.org/10.1080/00016480701242477 PMID: 17851927<lb/> </bibl>
+        <bibl><label>3</label>. Nakashima T, Yanagita N. Outcome of sudden deafness with and without vertigo.<lb/> Laryngoscope. 1993; 103(10):1145-1149. https://doi.org/10.1288/00005537-199310000-<lb/>00012 PMID: 8412452<lb/> </bibl>
+        <bibl><label>4</label>. Shaia FT, Sheehy JL. Sudden sensori-neural hearing impairment: a report of 1,220 cases.<lb/> 
+        Laryngoscope. 1976; 86(3):389-398. https://doi.org/10.1288/00005537-197603000-<lb/>00008 PMID: 1256213<lb/> </bibl>
+        <bibl><label>5</label>. Mattox DE, Simmons FB. Natural history of sudden sensorineural hearing loss. Ann<lb/> Otol Rhinol Laryngol. 1977; 86(4 Pt 1):463-480.<lb/> https://doi.org/10.1177/000348947708600406 PMID: 889223<lb/> </bibl>
+        <bibl><label>6</label>. Korres S, Stamatiou GA, Gkoritsa E, Riga M, Xenelis J. Prognosis of patients with<lb/> idiopathic sudden hearing loss: role of vestibular assessment. J Laryngol Otol. 2011;<lb/> 125(3):251-257. https://doi.org/10.1017/s0022215110002082 PMID: 21054906<lb/> </bibl>
+        <bibl><label>7</label>. Yu H, Li H. Vestibular Dysfunctions in Sudden Sensorineural Hearing Loss: A<lb/> Systematic Review and Meta-analysis. Front Neurol. 2018; 9:45.<lb/> https://doi.org/10.3389/fneur.2018.00045 PMID: 29459846<lb/> </bibl>
+        <bibl><label>8</label>. Colebatch JG, Rosengren SM, Welgampola MS. Vestibular-evoked myogenic potentials.<lb/> Handb Clin Neurol. 2016; 137:133-155. https://doi.org/10.1016/b978-0-444-63437-<lb/>5.00010-8 PMID: 27638068<lb/> </bibl>
+        <bibl><label>9</label>. Shepard NT, Jacobson GP. The caloric irrigation test. Handb Clin Neurol. 2016; 137:119-<lb/>131. https://doi.org/10.1016/b978-0-444-63437-5.00009-1 PMID: 27638067<lb/> </bibl>
+        <bibl><label>10</label>. Pelosi S, Schuster D, Jacobson GP, Carlson ML, Haynes DS, Bennett ML, et al. Clinical<lb/> characteristics associated with isolated unilateral utricular dysfunction. Am J Otolaryngol.<lb/> 2013; 34(5):490-495. https://doi.org/10.1016/j.amjoto.2013.04.008 PMID: 23759133<lb/> </bibl>
+        <bibl><label>11</label>. Kantner C, Gürkov R. Characteristics and clinical applications of ocular vestibular evoked<lb/> myogenic<lb/> potentials.<lb/> Hear<lb/> Res.<lb/> 2012;<lb/> 294(1-2):55-63.<lb/> https://doi.org/10.1016/j.heares.2012.10.008 PMID: 23123220<lb/> </bibl>
+        <bibl><label>12</label>. Iwasaki S, Takai Y, Ozeki H, Ito K, Karino S, Murofushi T. Extent of lesions in idiopathic<lb/> sudden hearing loss with vertigo: study using click and galvanic vestibular evoked<lb/> myogenic potentials. Arch Otolaryngol Head Neck Surg. 2005; 131(10):857-862.<lb/> https://doi.org/10.1001/archotol.131.10.857 PMID: 16230586<lb/> </bibl>
+        <bibl><label>13</label>. Park HM, Jung SW, Rhee CK. Vestibular diagnosis as prognostic indicator in sudden<lb/> hearing loss with vertigo. Acta Otolaryngol Suppl. 2001; 545:80-83. PMID: 11677749<lb/> </bibl>
+        <bibl><label>14</label>. Laurikainen E, Aantaa E, Kallinen J. Electronystagmographic findings and recovery of<lb/> cochlear and vestibular function in patients suffering from sudden deafness with a special<lb/> reference to the effect of anticoagulation. Audiology. 1989; 28(5):262-267. PMID:<lb/> 2803113<lb/> </bibl>
+        <bibl><label>15</label>. Niu X, Zhang Y, Zhang Q, Xu X, Han P, Cheng Y, et al. The relationship between hearing<lb/> loss and vestibular dysfunction in patients with sudden sensorineural hearing loss. Acta<lb/> Otolaryngol. 2016; 136(3):225-231. https://doi.org/10.3109/00016489.2015.1110750<lb/> PMID: 26587580<lb/> </bibl>
+        <bibl><label>16</label>. Siegel LG. The treatment of idiopathic sudden sensorineural hearing loss. Otolaryngol<lb/> Clin North Am. 1975; 8(2):467-473. PMID: 1153209<lb/> </bibl>
+        <bibl><label>17</label>. Schmäl F, Lübben B, Weiberg K, Stoll W. The minimal ice water caloric test compared<lb/> with established vestibular caloric test procedures. J Vestib Res. 2005; 15(4):215-224.<lb/> PMID: 16286703<lb/> </bibl>
+        <bibl><label>18</label>. Murofushi T, Matsuzaki M, Wu CH. Short tone burst-evoked myogenic potentials on the<lb/> sternocleidomastoid muscle: are these potentials also of vestibular origin? Arch<lb/> Otolaryngol Head Neck Surg. 1999; 125(6):660-664. PMID: 10367923<lb/> </bibl>
+        <bibl><label>19</label>. Chihara Y, Iwasaki S, Ushio M, Murofushi T. Vestibular-evoked extraocular potentials<lb/> by air-conducted sound: another clinical test for vestibular function. Clin Neurophysiol.<lb/> 2007; 118(12):2745-2751. https://doi.org/10.1016/j.clinph.2007.08.005 PMID:<lb/> 17905655<lb/> </bibl>
+        <bibl><label>20</label>. Rasmussen H. Sudden deafness. Acta Otolaryngol. 1949; 37(1):65-70.<lb/> </bibl>
+        <bibl><label>21</label>. Kim JS, Lopez I, DiPatre PL, Liu F, Ishiyama A, Baloh RW. Internal auditory artery<lb/> infarction: clinicopathologic correlation. Neurology. 1999; 52(1):40-4. PMID: 9921846<lb/> </bibl>
+        <bibl><label>22</label>. Amarenco P, Rosengart A, DeWitt LD, Pessin MS, Caplan LR. Anterior inferior<lb/> cerebellar artery territory infarcts. Mechanisms and clinical features. Arch Neurol. 1993;<lb/> 50(2):154-161. PMID: 8431134<lb/> </bibl>
+        <bibl><label>23</label>. Hinojosa R, Kohut RI. Clinical diagnosis of anterior inferior cerebellar artery thrombosis.<lb/> Autopsy and temporal bone histopathologic study. Ann Otol Rhinol Laryngol. 1990; 99(4<lb/> Pt 1):261-272. https://doi.org/10.1177/000348949009900403 PMID: 2327695<lb/> </bibl>
+        <bibl><label>24</label>. Konishi T, Butler RA, Fernandez C. Effect of Anoxia on Cochlear Potentials. J Acoust<lb/> Soc Am. 1961; 33(3):349-356.<lb/> </bibl>
+        <bibl><label>25</label>. Perlman HB, Kimura R, Fernandez C. Experiments on temporary obstruction of the<lb/> internal<lb/> auditory<lb/> artery.<lb/> Laryngoscope.<lb/> 1959;<lb/> 69(6):591-613.<lb/> https://doi.org/10.1288/00005537-195906000-00001 PMID: 13673604<lb/> </bibl>
+        <bibl><label>26</label>. Mazzoni A. Internal auditory canal arterial relations at the porus acusticus. Ann Otol<lb/> Rhinol Laryngol. 1969; 78(4):797-814. https://doi.org/10.1177/000348946907800413<lb/> PMID: 5799404<lb/> </bibl>
+        <bibl><label>27</label>. Mazzoni A. The vascular anatomy of the vestibular labyrinth in man. Acta Otolaryngol<lb/> Suppl. 1990; 472:1-83. PMID: 2239254<lb/> </bibl>
+        <bibl><label>28</label>. Mazzoni A. Internal auditory artery supply to the petrous bone. Ann Otol Rhinol Laryngol.<lb/> 1972; 81(1):13-21. https://doi.org/10.1177/000348947208100103 PMID: 5009813</bibl>
+        </listBibl>
+    </text>
+</tei>
+

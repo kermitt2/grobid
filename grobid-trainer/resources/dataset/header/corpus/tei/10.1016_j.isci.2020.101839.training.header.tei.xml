@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1016_j.isci.2020.101839"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	ll<lb/>
+	<note type="doctype">OPEN ACCESS</note>
+
+	<title level="j">iScience</title>
+
+	<note type="doctype">Article<lb/></note>
+
+	<docTitle>
+	<titlePart>SARS-CoV-2 Receptors and Entry Genes<lb/> Are Expressed in the Human Olfactory<lb/> Neuroepithelium and Brain<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Leon Fodoulian, 1,2,6 Joe ¨l Tuberosa, 1,6 Daniel Rossier, 1,6 Madlaina Boillat, 1,6 Chenda Kan, 1 Ve ´ronique Pauli, 1<lb/> Kristof Egervari, 3,4 Johannes A. Lobrinus, 3 Basile N. Landis, 5 Alan Carleton, 2, * and Ivan Rodriguez 1,7, *</docAuthor>
+	</byline>
+
+	SUMMARY<lb/>
+	<div type="abstract">Reports indicate an association between COVID-19 and anosmia, as well as the<lb/> presence of SARS-CoV-2 virions in the olfactory bulb. To test whether the olfac-<lb/>tory neuroepithelium may represent a target of the virus, we generated RNA-<lb/>seq libraries from human olfactory neuroepithelia, in which we found substantial<lb/> expression of the genes coding for the virus receptor angiotensin-converting<lb/> enzyme-2 (ACE2) and for the virus internalization enhancer TMPRSS2. We<lb/> analyzed a human olfactory single-cell RNA-seq dataset and determined that sus-<lb/>tentacular cells, which maintain the integrity of olfactory sensory neurons, ex-<lb/>press ACE2 and TMPRSS2. ACE2 protein was highly expressed in a subset of<lb/> sustentacular cells in human and mouse olfactory tissues. Finally, we found<lb/> ACE2 transcripts in specific brain cell types, both in mice and humans. Sustentac-<lb/>ular cells thus represent a potential entry door for SARS-CoV-2 in a neuronal sen-<lb/>sory system that is in direct connection with the brain.<lb/></div>
+
+	<byline>
+	<affiliation>1 Department of Genetics and<lb/> Evolution, Faculty of<lb/> Sciences, University of<lb/> Geneva,</affiliation>
+	</byline>
+
+	<address>quai<lb/> Ernest-Ansermet 30, 1211<lb/> Geneva, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>2 Department of Basic<lb/> Neurosciences, Faculty of<lb/> Medicine, University of<lb/> Geneva,</affiliation>
+	</byline>
+
+	<address>1 rue Michel-Servet,<lb/> 1211 Geneva, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>3 Service of Clinical Pathology,<lb/> Department of Genetic<lb/> Medicine, Geneva University<lb/> Hospitals,</affiliation>
+	</byline>
+
+	<address>Geneva, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Pathology<lb/> and Immunology, Faculty of<lb/> Medicine, University of<lb/> Geneva,</affiliation>
+	</byline>
+
+	<address>1 rue Michel-Servet,<lb/> 1211 Geneva, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>5 Rhinology-Olfactology Unit,<lb/> Department of<lb/> Otorhinolaryngology, Head<lb/> and Neck Surgery, Geneva<lb/> University Hospitals,</affiliation>
+	</byline>
+
+	<address>Geneva, Switzerland<lb/></address>
+
+	6 These authors contributed equally<lb/> 7 Lead Contact<lb/> *Correspondence:<lb/>
+	<email>alan.carleton@unige.ch<lb/></email>
+
+	(A.C.),<lb/>
+	<email>ivan.rodriguez@unige.ch<lb/></email>
+
+	(I.R.)<lb/>
+	<idno>https://doi.org/10.1016/j.isci.<lb/> 2020.101839<lb/></idno>
+
+	<reference>iScience 23, 101839, December 18, 2020</reference>
+
+	<note type="copyright">ª 2020 The Author(s).<lb/> This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).</note>
+
+	<page>1<lb/></page>
+	<note type="submission">Received: August 7, 2020<lb/> Revised: September 25, 2020<lb/> Accepted: November 18, 2020<lb/></note>
+
+	Published:
+	<date>December 18, 2020</date>
+
+		</front>
+	</text>
+</tei>

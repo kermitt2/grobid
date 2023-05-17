@@ -1,0 +1,21 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References:<lb/> 
+        <bibl><label>1</label>. Esteban et al., MRIQC: Advancing the automatic prediction of image quality in MRI from unseen sites, Plos ONE e0184661, 2017.<lb/> doi: 10.1371/journal.pone.0184661 ; </bibl>
+
+        <bibl><label>2</label>. Kurtzer et al., Singularity: scientific containers for mobility of compute, Plos ONE e0177459, 2017.<lb/> doi: 10.1371/journal.pone.0177459 ; </bibl>
+
+        <bibl><label>3</label>. Gorgolewski et al., OpenNeuro -a free online platform for sharing and analysis of neuroimaging data, OHBM, p1677,<lb/> Vancouver, BC, Canada, 2017. </bibl>
+
+        <bibl><label>4</label>. https://github.com/poldracklab/mriqc/blob/master/notebooks/MRIQC%20Web%20API.ipynb ; </bibl>
+
+        <bibl><label>5</label>. Shehzad Z et al. The<lb/> Preprocessed Connectomes Project Quality Assessment Protocol-a resource for measuring the quality of MRI data. In: Front. Neurosci. Conf.<lb/> Neuroinformatics. Cairns, Australia; 2015.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

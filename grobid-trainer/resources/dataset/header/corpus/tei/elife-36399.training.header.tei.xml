@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="elife-36399"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">META-RESEARCH<lb/></note>
+
+	<docTitle>
+	<titlePart>Gender inequalities among<lb/> authors who contributed equally<lb/> </titlePart>
+	</docTitle>
+
+	Abstract 
+	<div type="abstract">We analyzed 2898 scientific papers published between 1995 and 2017 in which two or more authors<lb/> shared the first author position. For papers in which the first and second authors made equal contributions, mixed-<lb/>gender combinations were most frequent, followed by male-male and then female-female author combinations.<lb/> For mixed-gender combinations, more male authors were in the first position, although the disparity decreased<lb/> over time. For papers in which three or more authors made equal contributions, there were more male authors<lb/> than female authors in the first position and more all-male than all-female author combinations. The gender<lb/> inequalities observed among authors who made equal contributions are not consistent with random or<lb/> alphabetical ordering of authors. These results raise concerns about female authors not receiving proper credit for<lb/> publications and suggest a need for journals to request clarity on the method used to decide author order among<lb/> those who contributed equally.<lb/></div>
+
+	<idno>DOI: https://doi.org/10.7554/eLife.36399.001<lb/></idno>
+
+	<byline>
+	<docAuthor>NICHOLE A BRODERICK † * AND ARTURO CASADEVALL † *<lb/></docAuthor>
+	</byline>
+
+	*For correspondence:
+	<email>nichole.<lb/> broderick@uconn.edu</email>
+
+	(NAB);<lb/>
+	<email>acasade1@jhu.edu</email>
+
+	(AC)<lb/> † These authors contributed<lb/> equally to this work; author order<lb/> was determined both<lb/> alphabetically and in order of<lb/> increasing seniority.<lb/> 
+	Competing interests: The<lb/> authors declare that no<lb/> competing interests exist.<lb/> Funding: See page 10<lb/> 
+
+	Reviewing editor:
+	<editor>Peter A<lb/> Rodgers</editor>, 
+	eLife, United Kingdom<lb/>
+
+	<note type="copyright">Copyright Broderick and<lb/> Casadevall. This article is<lb/> distributed under the terms of<lb/> the Creative Commons<lb/> Attribution License, which<lb/> permits unrestricted use and<lb/> redistribution provided that the<lb/> original author and source are<lb/> credited.<lb/></note>
+
+	<reference>Broderick and Casadevall. eLife 2019;8:e36399.</reference>
+
+	<idno>DOI: https://doi.org/10.7554/eLife.36399<lb/></idno>
+
+	<page>1 of 11<lb/></page> 
+
+	FEATURE ARTICLE<lb/> Feature article<lb/> Meta-Research Gender inequalities among authors who contributed equally<lb/>
+
+	<byline>
+	<docAuthor>Nichole A Broderick</docAuthor>
+	</byline>
+
+	is in the
+	<byline>
+	<affiliation>Department of Molecular<lb/> &amp; Cell Biology, University of Connecticut,</affiliation>
+	</byline>
+
+	<address>Storrs,<lb/> United States<lb/></address>
+
+	<email>nichole.broderick@uconn.edu<lb/></email>
+
+	<idno>http://orcid.org/0000-0002-6830-9456<lb/></idno>
+
+	<byline>
+	<docAuthor>Arturo Casadevall</docAuthor>
+	</byline>
+
+	is in the
+	<byline>
+	<affiliation>Department of Molecular<lb/> Microbiology and Immunology, Johns Hopkins School<lb/> of Public Health,</affiliation>
+	</byline>
+
+	<address>Baltimore, United States<lb/></address>
+
+	<email>acasade1@jhu.edu<lb/></email>
+
+	<idno>http://orcid.org/0000-0002-9402-9167<lb/></idno>
+
+	Author contributions:
+	<keyword>Nichole A Broderick, Arturo<lb/> Casadevall, Conceptualization, Data curation, Formal<lb/> analysis, Investigation, Methodology, Writing-original<lb/> draft, Writing-review and editing<lb/></keyword>
+
+	Competing interests: The authors declare that no<lb/> competing interests exist.<lb/>
+	<note type="submission">Received 05 March 2018<lb/> Accepted 09 January 2019<lb/></note>
+
+	Published
+	<date>30 January 2019</date>
+
+		</front>
+	</text>
+</tei>

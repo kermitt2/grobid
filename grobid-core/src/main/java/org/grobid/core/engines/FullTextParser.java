@@ -3,6 +3,7 @@ package org.grobid.core.engines;
 import com.google.common.collect.Iterables;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.io.FileUtils;
 
@@ -191,7 +192,7 @@ public class FullTextParser extends AbstractParser {
                     if (abstractProcessed != null) {
                         // neutralize figure and table annotations (will be considered as paragraphs)
                         String labeledAbstract = abstractProcessed.getLeft();
-                        labeledAbstract = postProcessLabeledAbstract(labeledAbstract);
+                        labeledAbstract = postProcessFullTextLabeledText(labeledAbstract);
                         resHeader.setLabeledAbstract(labeledAbstract);
                         resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
                     }
@@ -417,18 +418,23 @@ public class FullTextParser extends AbstractParser {
                 layoutTokenization = layouts.getTokenization();
             if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
                 res = label(featuredText);
+                res = postProcessFullTextLabeledText(res);
             }
         }
 
         return Pair.of(res, layoutTokenization);
     }
 
-    static protected String postProcessLabeledAbstract(String labeledAbstract) {
-        if (labeledAbstract == null)
+    /**
+     * Post-process text labeled by the fulltext model on chunks that are known to be text (no table, or figure)
+     * It converts table and figure labels to paragraph labels.
+     */
+    protected static String postProcessFullTextLabeledText(String fulltextLabeledText) {
+        if (fulltextLabeledText == null)
             return null;
         StringBuilder result = new StringBuilder();
 
-        String[] lines = labeledAbstract.split("\n");
+        String[] lines = fulltextLabeledText.split("\n");
         String previousLabel = null;
         for(int i=0; i<lines.length; i++) {
             String line = lines[i];
@@ -619,7 +625,7 @@ public class FullTextParser extends AbstractParser {
 				if (blockIndex == dp2.getBlockPtr()) {
 					lastPos = dp2.getTokenBlockPos()+1;
 					if (lastPos > tokens.size()) {
-						LOGGER.error("DocumentPointer for block " + blockIndex + " points to " +
+						LOGGER.warn("DocumentPointer for block " + blockIndex + " points to " +
 							dp2.getTokenBlockPos() + " token, but block token size is " +
 							tokens.size());
 						lastPos = tokens.size();
@@ -2468,22 +2474,72 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 			tei.append("\t\t<back>\n");
 
 			// acknowledgement is in the back
-			SortedSet<DocumentPiece> documentAcknowledgementParts =
-				doc.getDocumentPart(SegmentationLabels.ACKNOWLEDGEMENT);
-			Pair<String, LayoutTokenization> featSeg =
-				getBodyTextFeatured(doc, documentAcknowledgementParts);
-			List<LayoutToken> tokenizationsAcknowledgement;
-			if (featSeg != null) {
-				// if featSeg is null, it usually means that no body segment is found in the
-				// document segmentation
-				String acknowledgementText = featSeg.getLeft();
-				tokenizationsAcknowledgement = featSeg.getRight().getTokenization();
-				String reseAcknowledgement = null;
-				if ( (acknowledgementText != null) && (acknowledgementText.length() >0) )
-					reseAcknowledgement = label(acknowledgementText);
-				tei = teiFormatter.toTEIAcknowledgement(tei, reseAcknowledgement,
-					tokenizationsAcknowledgement, resCitations, config);
-			}
+            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config);
+
+            if (acknowledgmentStmt.length() > 0) {
+                tei.append(acknowledgmentStmt);
+            }
+
+            // availability statements in header
+            StringBuilder availabilityStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {
+                List<LayoutToken> headerAvailabilityStatementTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_AVAILABILITY);
+                Pair<String, List<LayoutToken>> headerAvailabilityProcessed = processShort(headerAvailabilityStatementTokens, doc);
+                if (headerAvailabilityProcessed != null) {
+                    availabilityStmt = teiFormatter.processTEIDivSection("availability",
+                        "\t\t\t", 
+                        headerAvailabilityProcessed.getLeft(), 
+                        headerAvailabilityProcessed.getRight(), 
+                        resCitations, 
+                        config);
+                }
+                if (availabilityStmt.length() > 0) {
+                    tei.append(availabilityStmt.toString());
+                }
+            }
+
+            // availability statements in non-header part
+            availabilityStmt = getSectionAsTEI("availability",
+                "\t\t\t", 
+                doc, 
+                SegmentationLabels.AVAILABILITY, 
+                teiFormatter, 
+                resCitations, 
+                config);
+            if (availabilityStmt.length() > 0) {
+                tei.append(availabilityStmt.toString());
+            }
+
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    tei.append(fundingStmt.toString());
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                resCitations,
+                config);
+            if (fundingStmt.length() > 0) {
+                tei.append(fundingStmt);
+            }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
 				tokenizationsAnnex, markerTypes, doc, config);
@@ -2507,6 +2563,34 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 //				)
 //		);
 	}
+
+    private StringBuilder getSectionAsTEI(String xmlType,
+                                          String indentation,
+                                          Document doc,
+                                          TaggingLabel taggingLabel,
+                                          TEIFormatter teiFormatter,
+                                          List<BibDataSet> resCitations,
+                                          GrobidAnalysisConfig config) throws Exception {
+        StringBuilder output = new StringBuilder();
+        SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
+
+        if (sectionPart != null && sectionPart.size() > 0) {
+            Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
+            if (sectionTokenisation != null) {
+                // if featSeg is null, it usually means that no body segment is found in the
+                // document segmentation
+                String text = sectionTokenisation.getLeft();
+                List<LayoutToken> tokens = sectionTokenisation.getRight().getTokenization();
+                String resultLabelling = null;
+                if (StringUtils.isNotBlank(text) ) {
+                    resultLabelling = label(text);
+                    resultLabelling = postProcessFullTextLabeledText(resultLabelling);
+                }
+                output = teiFormatter.processTEIDivSection(xmlType, indentation, resultLabelling, tokens, resCitations, config);
+            }
+        }
+        return output;
+    }
 
 	private static List<TaggingLabel> inlineFullTextLabels = Arrays.asList(TaggingLabels.CITATION_MARKER, TaggingLabels.TABLE_MARKER,
                                 TaggingLabels.FIGURE_MARKER, TaggingLabels.EQUATION_LABEL);

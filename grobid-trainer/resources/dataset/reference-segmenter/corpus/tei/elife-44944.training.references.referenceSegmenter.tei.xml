@@ -1,0 +1,40 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl>Davis S, Wang J, Zhu M, Stahmer K, Lakshminarayan<lb/> R, Ghassemian M, Jiang Y, Miller EA, Ferro-Novick S.<lb/> 2016. Sec24 phosphorylation regulates<lb/> autophagosome abundance during nutrient<lb/> deprivation. eLife 5:e21167. DOI: https://doi.org/10.<lb/> 7554/eLife.21167, PMID: 27855785<lb/></bibl> 
+        
+        <bibl>Ge L, Zhang M, Schekman R. 2014.<lb/> Phosphatidylinositol 3-kinase and COPII generate LC3<lb/> lipidation vesicles from the ER-Golgi intermediate<lb/> compartment. eLife 3:e04135. DOI: https://doi.org/10.<lb/> 7554/eLife.04135, PMID: 25432021<lb/> </bibl>
+
+        <bibl>Ge L, Wilz L, Schekman R. 2015. Biogenesis of<lb/> autophagosomal precursors for LC3 lipidation from the<lb/> ER-Golgi intermediate compartment. Autophagy 11:<lb/> 2372-2374. DOI: https://doi.org/10.1080/15548627.<lb/> 2015.1105422, PMID: 26565421<lb/> </bibl>
+
+        <bibl>Ge L, Zhang M, Kenny SJ, Liu D, Maeda M, Saito K,<lb/> Mathur A, Xu K, Schekman R. 2017. Remodeling of ER-<lb/>exit sites initiates a membrane supply pathway for<lb/> autophagosome biogenesis. EMBO Reports 18:1586-<lb/>1603. DOI: https://doi.org/10.15252/embr.201744559,<lb/> PMID: 28754694<lb/> </bibl>
+
+        <bibl>Gomez-Navarro N, Miller E. 2016. Protein sorting at<lb/> the ER-Golgi interface. The Journal of Cell Biology<lb/> 215:769-778. DOI: https://doi.org/10.1083/jcb.<lb/> 201610031, PMID: 27903609<lb/> </bibl>
+        
+        <bibl>Jeong YT, Simoneschi D, Keegan S, Melville D, Adler<lb/> NS, Saraf A, Florens L, Washburn MP, Cavasotto CN,<lb/> Fenyo ¨D, Cuervo AM, Rossi M, Pagano M. 2018. The<lb/> ULK1-FBXW5-SEC23B nexus controls autophagy. eLife<lb/> 7:e42253. DOI: https://doi.org/10.7554/eLife.42253,<lb/> PMID: 30596474<lb/> </bibl>
+        
+        <bibl>Joo JH, Wang B, Frankel E, Ge L, Xu L, Iyengar R, Li-<lb/>Harms X, Wright C, Shaw TI, Lindsten T, Green DR,<lb/> Peng J, Hendershot LM, Kilic F, Sze JY, Audhya A,<lb/> Kundu M. 2016. The noncanonical role of ULK/ATG1 in<lb/> ER-to-Golgi trafficking is essential for cellular<lb/> homeostasis. Molecular Cell 62:982. DOI: https://doi.<lb/> org/10.1016/j.molcel.2016.05.030, PMID: 27315557<lb/> </bibl> 
+
+        <bibl>Mizushima N, Yoshimori T, Ohsumi Y. 2011. The role<lb/> of Atg proteins in autophagosome formation. Annual<lb/> Review of Cell and Developmental Biology 27:107-<lb/>132. DOI: https://doi.org/10.1146/annurev-cellbio-<lb/>092910-154005, PMID: 21801009<lb/> </bibl>
+
+        <bibl>Rao Y, Perna MG, Hofmann B, Beier V, Wollert T.<lb/> 2016. The Atg1-kinase complex tethers Atg9-vesicles<lb/> to initiate autophagy. Nature Communications 7:<lb/> 10338. DOI: https://doi.org/10.1038/ncomms10338,<lb/> PMID: 26753620<lb/> </bibl>
+
+        <bibl>Tan D, Cai Y, Wang J, Zhang J, Menon S, Chou HT,<lb/> Ferro-Novick S, Reinisch KM, Walz T. 2013. The EM<lb/> structure of the TRAPPIII complex leads to the<lb/> identification of a requirement for COPII vesicles on<lb/> the macroautophagy pathway. PNAS 110:19432-<lb/>19437. DOI: https://doi.org/10.1073/pnas.<lb/> 1316356110, PMID: 24218626<lb/> </bibl>
+
+        <bibl>van Leeuwen W, van der Krift F, Rabouille C. 2018.<lb/> Modulation of the secretory pathway by amino-acid<lb/> starvation. The Journal of Cell Biology 217:2261-2271.<lb/> DOI: https://doi.org/10.1083/jcb.201802003, PMID: 2<lb/> 9669743<lb/> </bibl>
+
+        <bibl>Wang J, Menon S, Yamasaki A, Chou HT, Walz T,<lb/> Jiang Y, Ferro-Novick S. 2013. Ypt1 recruits the Atg1<lb/> kinase to the preautophagosomal structure. PNAS<lb/> 110:9800-9805. DOI: https://doi.org/10.1073/pnas.<lb/> 1302337110, PMID: 23716696<lb/> </bibl>
+        
+        <bibl>Wang J, Davis S, Menon S, Zhang J, Ding J, Cervantes<lb/> S, Miller E, Jiang Y, Ferro-Novick S. 2015. Ypt1/Rab1<lb/> regulates Hrr25/CK1d kinase activity in ER-Golgi traffic<lb/> and macroautophagy. The Journal of Cell Biology 210:<lb/> 273-285. DOI: https://doi.org/10.1083/jcb.201408075,<lb/> PMID: 26195667<lb/> </bibl>
+
+        <bibl>Zacharogianni M, Aguilera-Gomez A, Veenendaal T,<lb/> Smout J, Rabouille C. 2014. A stress assembly that<lb/> confers cell viability by preserving ERES components<lb/> during amino-acid starvation. eLife 3:04132.<lb/> DOI: https://doi.org/10.7554/eLife.04132</bibl>
+        
+        </listBibl>
+    </text>
+</tei>
+

@@ -1,0 +1,73 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> B. Aharmim et al. (SNO), Phys. Rev. C 72, 055502<lb/> (2005).<lb/> </bibl>
+        <bibl><label>[2]</label> J. Hosaka et al. (Super-Kamkiokande), Phys. Rev. D 73,<lb/> 112001 (2006).<lb/> </bibl>
+        <bibl><label>[3]</label> T. Araki et al. (KamLAND), Phys. Rev. Lett. 94, 081801<lb/> (2005).<lb/> </bibl>
+        <bibl><label>[4]</label> Y. Ashie et al. (Super-Kamiokande), Phys. Rev. D 71,<lb/> 112005 (2005).<lb/> </bibl>
+        <bibl><label>[5]</label> M. Ambrosio et al. (MACRO), Eur. Phys. J. C 36, 323<lb/> (2004).<lb/> </bibl>
+        <bibl><label>[6]</label> W. W. M. Allison et al. (Soudan-2), Phys. Rev. D 72,<lb/> 052005 (2005).<lb/> </bibl>
+        <bibl><label>[7]</label> D. G. Michael et al. (MINOS), Phys. Rev. Lett. 97, 191801<lb/> (2006).<lb/> </bibl>
+        <bibl><label>[8]</label> M. H. Ahn et al. (K2K), Phys. Rev. D 74, 072003 (2006).<lb/> </bibl>
+        <bibl><label>[9]</label> Z. Maki, M. Nakagawa, and S. Sakata, Prog. Theor. Phys.<lb/> 28, 870 (1962).<lb/> </bibl>
+        <bibl><label>[10]</label> B. Pontecorvo, Sov. Phys. JETP 26, 984 (1968).<lb/> </bibl>
+        <bibl><label>[11]</label> Y. Ashie et al. (Super-Kamiokande), Phys. Rev. Lett. 93,<lb/> 101801 (2004).<lb/> </bibl>
+        <bibl><label>[12]</label> H. Nunokawa, S. J. Parke, and R. Zukanovich Funchal,<lb/> Phys. Rev. D 72, 013009 (2005).<lb/> </bibl>
+        <bibl><label>[13]</label> K. Anderson et al., Technical Report, Fermi National<lb/> Accelerator Laboratory, 2002.<lb/> </bibl>
+        <bibl><label>[14]</label> S. E. Kopp, arXiv:physics/0508001.<lb/> </bibl>
+        <bibl><label>[15]</label> P. Adamson et al. (MINOS), arXiv:0708.1495.<lb/> </bibl>
+        <bibl><label>[16]</label> M. Bishai et al., (unpublished).<lb/> </bibl>
+        <bibl><label>[17]</label> A. G. Abramov et al., Nucl. Instrum. Methods Phys. Res.,<lb/> Sect. A 485, 209 (2002).<lb/> </bibl>
+        <bibl><label>[18]</label> G. I. Budker, in Proceedings of the International<lb/> Conference on Accelerators (Dubna, USSR, 1963),<lb/> pp. 282 -283.<lb/> </bibl>
+        <bibl><label>[19]</label> D. G. Baratov et al., Zh. Tekh. Fiz. 47, 1014 (1977) [Sov.<lb/> Phys. Tech. Phys. 22(5), 605 (1977)].<lb/> </bibl>
+        <bibl><label>[20]</label> R. Zwaska et al., Nucl. Instrum. Methods Phys. Res., Sect.<lb/> A 568, 548 (2006).<lb/> </bibl>
+        <bibl><label>[21]</label> M. Kostin et al., Report No. FERMILAB-TM-2353-AD,<lb/> 2002.<lb/> </bibl>
+        <bibl><label>[22]</label> S. Kopp et al., Report No. FERMILAB-CONF-05-092,<lb/> 2005.<lb/> </bibl>
+        <bibl><label>[23]</label> S. Kopp et al., Nucl. Instrum. Methods Phys. Res., Sect. A<lb/> 568, 503 (2006); Fermilab-Pub-06-007, 2006.<lb/> </bibl>
+        <bibl><label>[24]</label> V. Bocean, 9th International Workshop on Accelerator<lb/> Alignment (IWAA 06), Menlo Park, California, 2006.<lb/> </bibl>
+        <bibl><label>[25]</label> A. Ferrari, P. R. Sala, A. Fasso, and J. Ranft, CERN-2005-<lb/>010, 2005.<lb/> </bibl>
+        <bibl><label>[26]</label> R. Brun et al., CERN Program Library Long Writeup<lb/> W5013, 1994.<lb/> </bibl>
+        <bibl><label>[27]</label> D. G. Michael et al. (unpublished).<lb/> </bibl>
+        <bibl><label>[28]</label> P. Adamson et al., Nucl. Instrum. Methods Phys. Res.,<lb/> Sect. A 492, 325 (2002).<lb/> </bibl>
+        <bibl><label>[29]</label> A. Belias et al., IEEE Trans. Nucl. Sci. 51, 451 (2004).<lb/> </bibl>
+        <bibl><label>[30]</label> J. Oliver, N. Felt, G. Feldman, A. Lebedev, and R. Lee,<lb/> IEEE Trans. Nucl. Sci. 51, 2193 (2004).<lb/> </bibl>
+        <bibl><label>[31]</label> T. Cuntiff et al., IEEE Trans. Nucl. Sci. 53, 1347 (2006).<lb/> </bibl>
+        <bibl><label>[32]</label> P. Ballester, Astron. Astrophys. 286, 1011 (1994).<lb/> </bibl>
+        <bibl><label>[33]</label> D. E. Groom, N. V. Mokhov, and S. I. Striganov, At. Data<lb/> Nucl. Data Tables 78, 183 (2001).<lb/> </bibl>
+        <bibl><label>[34]</label> H. Gallagher, Nucl. Phys. B, Proc. Suppl. 112, 188 (2002).<lb/> </bibl>
+        <bibl><label>[35]</label> D. Rein and L. M. Sehgal, Ann. Phys. (N.Y.) 133, 79<lb/> (1981).<lb/> </bibl>
+        <bibl><label>[36]</label> A. Bodek and U. K. Yang, in 5th International Workshop<lb/> on Neutrino Factories and Superbeams, edited by A. Para,<lb/> AIP Conf. Proc. No. 721 (AIP, New York, 2004), p. 358.<lb/> </bibl>
+        <bibl><label>[37]</label> Z. Koba, H. B. Nielsen, and P. Olesen, Nucl. Phys. B40,<lb/> 317 (1972).<lb/> </bibl>
+        <bibl><label>[38]</label> R. D. Ransome, Nucl. Phys. B, Proc. Suppl. 139, 208<lb/> (2005).<lb/> </bibl>
+        <bibl><label>[39]</label> R. Merenyi et al., Phys. Rev. D 45, 743 (1992).<lb/> </bibl>
+        <bibl><label>[40]</label> Durham Database Group, http://durpdg.dur.ac.uk/<lb/> HEPDATA/REAC.<lb/> </bibl>
+        <bibl><label>[41]</label> M. Kordosky, Nucl. Phys. B, Proc. Suppl. 159, 223 (2006).<lb/> </bibl>
+        <bibl><label>[42]</label> M. A. Kordosky, Ph.D. thesis, University of Texas, 2004.<lb/> </bibl>
+        <bibl><label>[43]</label> P. L. Vahle, Ph.D. thesis, University of Texas, 2004.<lb/> </bibl>
+        <bibl><label>[44]</label> J. J. Hartnell, Ph.D. thesis, University of Oxford, 2005.<lb/> </bibl>
+        <bibl><label>[45]</label> A. Cabrera, Ph.D. thesis, University of Oxford 2004.<lb/> </bibl>
+        <bibl><label>[46]</label> C. Zeitnitz and T. A. Gabriel, Nucl. Instrum. Methods<lb/> Phys. Res., Sect. A 349, 106 (1994).<lb/> </bibl>
+        <bibl><label>[47]</label> P. Adamson et al., Nucl. Instrum. Methods Phys. Res.,<lb/> Sect. A 556, 119 (2006).<lb/> </bibl>
+        <bibl><label>[48]</label> L. A. Ahrens et al., Phys. Rev. D 34, 75 (1986).<lb/> </bibl>
+        <bibl><label>[49]</label> R. C. Allen et al., Phys. Rev. D 47, 11 (1993).<lb/> </bibl>
+        <bibl><label>[50]</label> P. Astier et al. (NOMAD), Nucl. Instrum. Methods Phys.<lb/> Res., Sect. A 515, 800 (2003).<lb/> </bibl>
+        <bibl><label>[51]</label> K. S. McFarland et al. (NuTeV), arXiv:hep-ex/9806013.<lb/> </bibl>
+        <bibl><label>[52]</label> G. P. Zeller et al. (NuTeV), Phys. Rev. Lett. 88, 091802<lb/> (2002).<lb/> </bibl>
+        <bibl><label>[53]</label> M. Bonesini, A. Marchionni, F. Pietropaolo, and T.<lb/> Tabarelli de Fatis, Eur. Phys. J. C 20, 13 (2001).<lb/> </bibl>
+        <bibl><label>[54]</label> N. V. Mokhov et al., arXiv:nucl-th/9812038.<lb/> </bibl>
+        <bibl><label>[55]</label> A. J. Malensek, Report No. FERMILAB-FN-0341, 1981.<lb/> </bibl>
+        <bibl><label>[56]</label> C. L. Wang, Phys. Rev. D 10, 3876 (1974).<lb/> </bibl>
+        <bibl><label>[57]</label> G. Cocconi, L. Koester, and D. Perkins, LBL Report<lb/> No. UCRL 10022, 1961.<lb/> </bibl>
+        <bibl><label>[58]</label> M. Szleper and A. Para, arXiv:hep-ex/0110001.<lb/> </bibl>
+        <bibl><label>[59]</label> S. E. Kopp, Phys. Rep. 439, 101 (2007).<lb/> </bibl>
+        <bibl><label>[60]</label> W.-M. Yao et al., J. Phys. G 33, 1 (2006).<lb/> </bibl>
+        <bibl><label>[61]</label> G. J. Feldman and R. D. Cousins, Phys. Rev. D 57, 3873<lb/> (1998).<lb/> </bibl>
+        <bibl><label>[62]</label> M. Apollonio et al., Eur. Phys. J. C 27, 331 (2003).<lb/> </bibl>
+        <bibl><label>[63]</label> P. Adamson et al. (MINOS), Phys. Rev. D 76, 072005<lb/> (2007).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

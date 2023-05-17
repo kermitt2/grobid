@@ -46,9 +46,9 @@
 
 			<div type="annex">Reporting summary <lb/>Further information on research design is available in the Nature Research <lb/>Reporting Summary linked to this article. <lb/></div>
 
-			<div type="annex">DATA AVAILABILITY <lb/>The I-SPY 1, METABRIC, and TCGA datasets are publicly available as described in <lb/>&quot;Methods&quot; above. I-SPY 1 datasets were accessed from the NCBI Gene Expression <lb/>Omnibus (GEO) repository: https://identifiers.org/geo:GSE22226. TCGA gene expres-<lb/>sion data were accessed from the cBioPortal for CancerGenomics: https://identifiers. <lb/>org/cbioportal:brca_tcga_pub2015. METABRIC gene expression data were accessed <lb/>from the European Genome-phenome Archive (EGA): https://identifiers.org/ega. <lb/>dataset:EGAD00010000210 and https://identifiers.org/ega.dataset:EGAD00010000211. <lb/>The data generated and analyzed during this study are described in the following <lb/>metadata record: https://doi.org/10.6084/m9.figshare.10275182. 32 <lb/></div>
+			<div type="availability">DATA AVAILABILITY <lb/>The I-SPY 1, METABRIC, and TCGA datasets are publicly available as described in <lb/>&quot;Methods&quot; above. I-SPY 1 datasets were accessed from the NCBI Gene Expression <lb/>Omnibus (GEO) repository: https://identifiers.org/geo:GSE22226. TCGA gene expres-<lb/>sion data were accessed from the cBioPortal for CancerGenomics: https://identifiers. <lb/>org/cbioportal:brca_tcga_pub2015. METABRIC gene expression data were accessed <lb/>from the European Genome-phenome Archive (EGA): https://identifiers.org/ega. <lb/>dataset:EGAD00010000210 and https://identifiers.org/ega.dataset:EGAD00010000211. <lb/>The data generated and analyzed during this study are described in the following <lb/>metadata record: https://doi.org/10.6084/m9.figshare.10275182. 32 <lb/></div>
 
-			<div type="annex">CODE AVAILABILITY <lb/>Analysis is performed using R v3.4.2; 33 and code is available upon request. <lb/></div>
+			<div type="availability">CODE AVAILABILITY <lb/>Analysis is performed using R v3.4.2; 33 and code is available upon request. <lb/></div>
 
 			<front>Received: 27 June 2019; Accepted: 22 November 2019; <lb/></front>
 

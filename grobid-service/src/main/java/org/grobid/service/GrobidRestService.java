@@ -286,14 +286,14 @@ public class GrobidRestService implements GrobidPaths {
 
     private boolean validateGenerateIdParam(String generateIDs) {
         boolean generate = false;
-        if ((generateIDs != null) && (generateIDs.equals("1"))) {
+        if ((generateIDs != null) && (generateIDs.equals("1") || generateIDs.equals("true"))) {
             generate = true;
         }
         return generate;
     }
 
     private boolean validateIncludeRawParam(String includeRaw) {
-        return ((includeRaw != null) && (includeRaw.equals("1")));
+        return ((includeRaw != null) && (includeRaw.equals("1") || includeRaw.equals("true")));
     }
 
     private int validateConsolidationParam(String consolidate) {
@@ -791,8 +791,10 @@ public class GrobidRestService implements GrobidPaths {
                                @DefaultValue("crf") @FormParam("architecture") String architecture,
                                @DefaultValue("split") @FormParam("type") String type, 
                                @DefaultValue("0.9") @FormParam("ratio") double ratio, 
-                               @DefaultValue("10") @FormParam("n") int n) {
-        return restProcessTraining.trainModel(model, architecture, type, ratio, n);
+                               @DefaultValue("10") @FormParam("n") int n,
+                               @DefaultValue("0") @FormParam("incremental") String incremental) {
+        boolean incrementalVal = validateIncludeRawParam(incremental);
+        return restProcessTraining.trainModel(model, architecture, type, ratio, n, incrementalVal);
     }
 
     @Path(PATH_TRAINING_RESULT)

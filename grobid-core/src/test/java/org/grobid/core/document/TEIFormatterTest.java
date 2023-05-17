@@ -5,6 +5,7 @@ import nu.xom.Node;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.Note;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.lang.Language;
@@ -34,6 +35,24 @@ public class TEIFormatterTest {
     public static void setInitialContext() throws Exception {
         GrobidProperties.getInstance();
     }
+
+    @Test
+    public void testMakeFootNote() throws Exception {
+
+        String text = "1 This is a footnote";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+
+        List<Note> footnotes = new TEIFormatter(null, null).makeNotes(tokens, text, Note.NoteType.FOOT, 0);
+        assertThat(footnotes.size(), is(1));
+
+        Note footnote = footnotes.get(0);
+
+        assertThat(footnote.getText(), is("This is a footnote"));
+        assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is("This is a footnote"));
+        assertThat(footnote.getLabel(), is("1"));
+    }
+
+
 
     @Test
     public void testSegmentIntoSentences_simpleText_ShouldSplitIntoSentencesAndAddSTag() throws Exception {
@@ -412,7 +431,7 @@ public class TEIFormatterTest {
         currentParagraphTokens.get(26).setSubscript(true);
         currentParagraphTokens.get(30).setSubscript(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
+        List<Triple<String, String, OffsetPosition>> pairs = extractStylesList(currentParagraphTokens);
 
         assertThat(pairs, hasSize(2));
         assertThat(pairs.get(0).getLeft(), is("subscript"));
@@ -468,7 +487,7 @@ public class TEIFormatterTest {
         currentParagraphTokens.get(26).setItalic(true);
         currentParagraphTokens.get(30).setSubscript(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
+        List<Triple<String, String, OffsetPosition>> pairs = extractStylesList(currentParagraphTokens);
 
         assertThat(pairs, hasSize(2));
         assertThat(pairs.get(0).getLeft(), is("bold italic subscript"));
@@ -493,7 +512,7 @@ public class TEIFormatterTest {
         currentParagraphTokens.get(28).setBold(true);
         currentParagraphTokens.get(30).setBold(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens);
+        List<Triple<String, String, OffsetPosition>> pairs = extractStylesList(currentParagraphTokens);
 
         assertThat(pairs, hasSize(1));
         assertThat(pairs.get(0).getLeft(), is("bold"));
@@ -513,7 +532,7 @@ public class TEIFormatterTest {
         currentParagraphTokens.get(26).setItalic(true);
         currentParagraphTokens.get(30).setSubscript(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(currentParagraphTokens, Arrays.asList(TEI_STYLE_BOLD_NAME));
+        List<Triple<String, String, OffsetPosition>> pairs = extractStylesList(currentParagraphTokens, Arrays.asList(TEI_STYLE_BOLD_NAME));
 
         assertThat(pairs, hasSize(2));
         assertThat(pairs.get(0).getLeft(), is("italic subscript"));
@@ -544,7 +563,7 @@ public class TEIFormatterTest {
         textTokens.get(13).setItalic(true);
         textTokens.get(15).setItalic(true);
 
-        List<Triple<String, String, OffsetPosition>> pairs = TEIFormatter.extractStylesList(textTokens);
+        List<Triple<String, String, OffsetPosition>> pairs = extractStylesList(textTokens);
 
         assertThat(pairs, hasSize(2));
         assertThat(pairs.get(0).getLeft(), is("bold"));

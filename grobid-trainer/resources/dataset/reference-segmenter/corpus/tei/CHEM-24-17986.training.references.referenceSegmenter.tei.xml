@@ -1,0 +1,96 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+                
+        <bibl><label>[1] a)</label> R. Sakamoto, K. Takada, T. Pal, H. Maeda, T. Kambe, H. Nishihara,<lb/> Chem. Commun. 2017, 53,5 781 -5801;</bibl>
+        <bibl><label>b )</label>D.R odríguez-San-Miguel, P.<lb/> Amo-Ochoa, F. Zamora, Chem.C ommun. 2016, 52,4 113-4127;</bibl>
+        <bibl><label>c )</label>M.<lb/> Zhao,Q .L u, Q. Ma, H. Zhang, Small Methods 2017, 1,1 600030;</bibl>
+        <bibl><label>d )</label>R.S a-<lb/>kamoto, K. Ta kada, X. Sun, T. Pal, T. Ts ukamoto, E. J. H. Phua, A. Rapakou-<lb/>siou, K. Hoshiko, H. Nishihara, Coord. Chem. Rev. 2016, 320,1 18 -128;<lb/> </bibl>
+        <bibl><label>e)</label> D. J. Ashworth, J. A. Foster, J. Mater. Chem. A 2018, 6,1 6292-16307.<lb/> </bibl>
+
+        <bibl><label>[2] a)</label> C. Martí-Gastaldo,J .E.W arren, K. C. Stylianou, N. L. O. Flack, M. J. Ros-<lb/>seinsky, Angew.C hem. Int. Ed. 2012, 51,1 1044 -11048; Angew.C hem.<lb/> 2012, 124,1 1206-11210;</bibl>
+        <bibl><label>b )</label>Y .P eng, Y. Li, Y. Ban, H. Jin, W. Jiao, X. Liu,<lb/> W. Yang, Science 2014, 346,1 356 -1359;</bibl>
+        <bibl><label>c )</label>T .R odenas, I. Luz, G. Prieto,<lb/> B. Seoane, H. Miro, A. Corma,F .K apteijn, F. X. LlabrØsiXamena, J.<lb/> Gascon, Nat. Mater. 2015, 14,48-55.<lb/> </bibl>
+
+        <bibl><label>[3] a)</label> Z.-Q. Li, L.-G.Q iu, W. Wang,T .X u, Y. Wu, X. Jiang, Inorg. Chem.<lb/> Commun. 2008, 11,1 375 -1377;</bibl>
+        <bibl><label>b )</label>P .Z.L i, Y. Maeda, Q. Xu, Chem.<lb/> Commun. 2011, 47,8 436 -8438;</bibl>
+        <bibl><label>c )</label>Y .P .Y uan, W. Wang, L. G. Qiu, F. M.<lb/> Peng, X. Jiang, A. J. Xie, Y. H. Shen, X. Y. Tian,L .D.Z hang, Mater. Chem.<lb/> Phys. 2011, 131,3 58 -361;</bibl>
+        <bibl><label>d )</label>T .A raki, A. Kondo, K. Maeda, Chem.<lb/> Commun. 2013, 49,5 52 -554;</bibl>
+        <bibl><label>e )</label>M.G.C ampbell, D. Sheberla, S. F. Liu,<lb/> T. M. Swager,M .D inca, Angew.C hem. Int. Ed. 2015, 54,4 349 -4352;<lb/> Angew.C hem. 2015, 127,4 423 -4426;</bibl>
+        <bibl><label>f )</label>H.-Q. Zhao,G .-H. Qiu, Z. Liang,<lb/> M.-M. Li, B. Sun, L. Qin, S.-P.Y ang,W .-H. Chen, J.-X.C hen, Anal. Chim.<lb/> Acta 2016, 922,5 5-63.<lb/> </bibl>
+
+        <bibl><label>[4] a)</label> Q. Liu, Z. X. Low,Y .F eng, S. Leong, Z. X. Zhong, J. F. Yao, K. Hapgood,<lb/> H. T. Wang, Microporous MesoporousM ater. 2014, 194,1 -7;</bibl>
+        <bibl><label>b )</label>Q.L u,<lb/> M. T. Zhao, J. Z. Chen,B .C hen,C .T an, X. Zhang,Y .H uang, J. Yang, F.<lb/> Cao, Y. Yu,J .P ing, Z. Zhang, X.-J.W u, H. Zhang, Small 2016, 12,4 669 -<lb/>Chem. Eur.J.2018, 24,17986 -17996<lb/></bibl>
+        
+        www.chemeurj.org<lb/> 2018 The Authors. Published by Wiley-VCH Verlag GmbH &amp;Co. KGaA, Weinheim<lb/> 4674;
+        
+        <bibl><label>c )</label>Z.P .S un, L. Hui, W. S. Ran, Y. Lu, D. Z. Jia, New J. Chem. 2016,<lb/> 40,1 100 -1103.<lb/> </bibl>
+
+        <bibl><label>[5] a)</label> X. Sun,K .-H. Wu, R. Sakamoto, T. Kusamoto, H. Maeda, H. Nishihara,<lb/> Chem. Lett. 2017, 46,1 072 -1075;</bibl>
+        <bibl><label>b )</label>R.S akamoto, T. Yagi, K. Hoshiko, S.<lb/> Kusaka,R .M atsuoka, H. Maeda,Z .L iu, Q. Liu, W.-Y.W ong, H. Nishihara,<lb/> Angew.C hem. Int. Ed. 2017, 56,3 526 -3530; Angew.C hem. 2017, 129,<lb/> 3580 -3584;</bibl>
+        <bibl><label>c )</label>J.Y ang, Z. Ma, W. Gao, M. Wei, Chem. Eur.J .2017, 23,<lb/> 631 -636;</bibl>
+        <bibl><label>d )</label>N.L ahiri, N. Lotfizadeh,R .T suchikawa, V. V. Deshpande, J.<lb/> Louie, J. Am. Chem.S oc. 2017, 139,1 9-22;</bibl>
+        <bibl><label>e )</label>L.C ao, Z. Lin, W. Shi, Z.<lb/> Wang, C. Zhang, X. Hu, C. Wang, W. Lin, J. Am. Chem. Soc. 2017, 139,<lb/> 7020 -7029.<lb/> </bibl>
+
+        <bibl><label>[6] a)</label> L. Cao, Z. Lin, F. Peng, W. Wang,R .H uang, C. Wang, J. Yan, J. Liang, Z.<lb/> Zhang, T. Zhang, L. Long, J. Sun,W .L in, Angew.C hem. Int. Ed. 2016, 55,<lb/> 14952 -14957;  Angew.C hem. 2016, 128,1 5176 -15181;</bibl>
+        <bibl><label>b )</label>Y .W ang,M .<lb/> Zhao, J. Ping, B. Chen,X .Cao, Y. Huang,C .T an, Q. Ma, S. Wu, Y. Yu,Q .<lb/> Lu, J. Chen,W .Z hao, Y. Ying,H .Z hang, Adv.M ater. 2016, 28,4 149 -<lb/>4155;</bibl>
+        <bibl><label>c )</label>Y .D ing, Y. P. Chen, X. Zhang,L .C hen,Z .D ong, H. L. Jiang, H.<lb/> Xu, H. C. Zhou, J. Am. Chem. Soc. 2017, 139,9 136 -9139;</bibl>
+        <bibl><label>d )</label>L.Z hao, B.<lb/> Dong, S. Li, L. Zhou,L .L ai, Z. Wang, S. Zhao, M. Han, K. Gao,M .L u, X.<lb/> Xie, B. Chen,Z .L iu, X. Wang, H. Zhang, H. Li, J. Liu, H. Zhang, X. Huang,<lb/> W. Huang, ACS Nano 2017, 11,5 800 -5807;</bibl>
+        <bibl><label>e )</label>Y .-N. Li,S .W ang, Y. Zhou,<lb/> X.-J. Bai, G.-S. Song, X.-Y.Z hao, T. -Q. Wang,X .Q i, X.-M. Zhang, Y. Fu,<lb/> Langmuir 2017, 33,1 060 -1065;</bibl>
+        <bibl><label>f )</label>W.S hi, L. Cao, H. Zhang, X. Zhou,B .<lb/> An, Z. Lin, R. Dai, J. Li, C. Wang,C .L in, Angew.C hem.I nt. Ed. 2017, 56,<lb/> 9704 -9709; Angew.Chem. 2017, 129,9836 -9841.<lb/> </bibl>
+
+        <bibl><label>[7]</label> F. Bonaccorso, A. Bartolotta, J. N. Coleman,C .B ackes, Adv. Mater. 2016,<lb/> 28,6136 -6166.<lb/> </bibl>
+        
+        <bibl><label>[8] a)</label> M. Yi,Z .S hen, J. Mater. Chem. A 2015, 3,1 1700 -11715;</bibl>
+        <bibl><label>b )</label>J.N.C ole-<lb/>man, M. Lotya, A. O&apos;Neill,S .D.B ergin, P. J. King, U. Khan, K. Young, A.<lb/> Gaucher,S .D e, R. J. Smith, I. V. Shvets, S. K. Arora, G. Stanton, H.-Y.K im,<lb/> K. Lee, G. T. Kim, G. S. Duesberg,T .H allam, J. J. Boland,J .J.W ang, J. F.<lb/> Donegan, J. C. Grunlan, G. Moriarty,A .S hmeliov,R .J.N icholls, J. M. Per-<lb/>kins, E. M. Grieveson,K.Theuwissen, D. W. McComb,P .D.Nellist, V. Nico-<lb/>losi, Science 2011, 331,5 68 -571;</bibl>
+        <bibl><label>c )</label>C.B ackes,T .M.H iggins, A. Kelly,C .<lb/> Boland,A .H arvey,D .H anlon, J. N. Coleman, Chem. Mater. 2017, 29,<lb/> 243 -255;</bibl>
+        <bibl><label>d )</label>V.N icolosi, M. Chhowalla, M. G. Kanatzidis, M. S. Strano,<lb/> J. N. Coleman, Science 2013, 340,1 226419;</bibl>
+        <bibl><label>e )</label>H.T ao, Y. Zhang, Y. Gao, Z.<lb/> Sun, C. Yan, J. Texter, Phys. Chem. Chem. Phys. 2017, 19,921 -960.<lb/> </bibl>
+        
+        <bibl><label>[9] a)</label> A. Gallego,C .H ermosa,O .C astillo, I. Berlanga,C .J.G omez-Garcia, E.<lb/> Mateo-Marti, J. I. Martinez,F .F lores, C. Gomez-Navarro, J. Gomez-Her-<lb/>rero, S. Delgado, F. Zamora, Adv. Mater. 2013, 25,2 141 -2146;</bibl>
+        <bibl><label>b )</label>B.<lb/> Garai, A. Mallick,A .D as, R. Mukherjee, R. Banerjee, Chem. Eur.J .2017,<lb/> 23,7361 -7366.<lb/> </bibl>
+
+        <bibl><label>[10]</label> M. J. Cliffe, E. Castillo-Martinez,Y .W u, J. Lee, A. C. Forse, F. C. N. Firth,<lb/> P. Z. Moghadam, D. Fairen-Jimenez, M. W. Gaultois,J .A.H ill,O .V .M ag-<lb/>dysyuk,B .S later,A .L.G oodwin, C. P. Grey, J. Am. Chem.S oc. 2017, 139,<lb/> 5397 -5404.<lb/> </bibl>
+        
+        <bibl><label>[11]</label> X. Wang, C. Chi, K. Zhang, Y. Qian, K. M. Gupta, Z. Kang,J .J iang, D.<lb/> Zhao, Nat. Commun. 2017, 8,14460.<lb/> </bibl>
+        
+        <bibl><label>[12] a)</label> W.-J. Song, Talanta 2017, 170,7 4-80;</bibl>
+        <bibl><label>b )</label>H.-S. Wang, J. Li, J.-Y.L i, K.<lb/> Wang, Y. Ding, X.-H. Xia, NPG Asia Mater. 2017, 9,e354.<lb/> </bibl>
+        
+        <bibl><label>[13]</label> a) P. Amo-Ochoa, L. Welte, R. Gonzalez-Prieto,P .J.S anz Miguel, C. J.<lb/> Gomez-Garcia, E. Mateo-Marti, S. Delgado, J. Gomez-Herrero, F. Zamora,<lb/> Chem. Commun. 2010, 46,3 262 -3264;</bibl> 
+        <bibl><label>b)</label> J.-C. Ta n, P. J. Saines, E. G. Bi-<lb/>thell, A. K. Cheetham, Acs Nano 2012, 6,6 15 -621;</bibl>
+        <bibl><label>c )</label>A.K ondo, C. C.<lb/> Tiew,F .M origuchi, K. Maeda, Dalton Trans. 2013, 42,1 5267 -15270;<lb/> </bibl>
+        <bibl><label>d)</label> P. J. Beldon,S .T ominaka, P. Singh, T. S. Dasgupta, E. G. Bithell, A. K.<lb/> Cheetham, Chem.C ommun. 2014, 50,3 955 -3957;</bibl>
+        <bibl><label>e )</label>C.H ermosa, B. R.<lb/> Horrocks, J. I. Martinez, F. Liscio, J. Gomez-Herrero,F .Z amora, Chem. Sci.<lb/> 2015, 6,2 553 -2558;</bibl>
+        <bibl><label>f )</label>H.X u, J. Gao, X. Qian, J. Wang, H. He, Y. Cui, Y.<lb/> Yang, Z. Wang, G. Qian, J. Mater.C hem. A 2016, 4,10900-10905;</bibl>
+        <bibl><label>g)</label>J.A.<lb/> Foster, S. Henke, A. Schneemann, R. A. Fischer, A. K. Cheetham, Chem.<lb/> Commun. 2016, 52,10474 -10477.<lb/> </bibl>
+        
+        <bibl><label>[14]</label> S. C. Junggeburth, L. Diehl, S. Werner,V .D uppel, W. Sigle,B .V .L otsch, J.<lb/> Am. Chem. Soc. 2013, 135,6 157 -6164.<lb/> </bibl>
+        <bibl><label>[15]</label> P. Chandrasekhar,A .M ukhopadhyay, G. Savitha, J. N. Moorthy, J. Mater.<lb/> Chem. A 2017, 5,5402 -5412.<lb/> </bibl>
+        <bibl><label>[16]</label> K. K. Ta nabe, C. A. Allen, S. M. Cohen, Angew.C hem. Int. Ed. 2010, 49,<lb/> 9730 -9733; Angew.Chem. 2010, 122,9 924 -9927.<lb/> </bibl>
+        <bibl><label>[17]</label> T. Y. Wu, N. Guo, C. Y. Te h, J. X. W. Hay,2 013 ed.,S pringer,D ordrecht,<lb/> 2013,p p. 5-11.<lb/> </bibl>
+        <bibl><label>[18]</label> J. R. Loader,University of Sheffield (Sheffield), 2013.<lb/> </bibl>
+        <bibl><label>[19]</label> A. D. Becke, J. Chem. Phys. 1993, 98,5648 -5652.<lb/> </bibl>
+        <bibl><label>[20]</label> C. Backes, B. M. Szydłowska, A. Harvey,S .Y uan, V. Vega-Mayoral, B. R.<lb/> Davies, P. -l. Zhao, D. Hanlon,E .J.G.S antos, M. I. Katsnelson, W. J. Blau,<lb/> C. Gadermaier, J. N. Coleman, ACS Nano 2016, 10,1589 -1601.<lb/> </bibl>
+        <bibl><label>[21]</label> M. Lotya, A. Rakovich, J. F. Donegan, J. N. Coleman, Nanotechnology<lb/> 2013, 24,265703.<lb/> </bibl>
+        
+        <bibl><label>[22] a)</label> A. Liscio,K .K ouroupis-Agalou,X .D.B etriu, A. Kovtun, E. Treossi, N. M.<lb/> Pugno, G. De Luca,L .G iorgini, V. Palermo, 2D Mater. 2017, 4,0 25017;<lb/></bibl> 
+        <bibl><label>b)</label> A. Mukhopadhyay,V .K.M aka, G. Savitha, J. N. Moorthy, Chem. 2018,<lb/> 4,1059 -1079.<lb/> </bibl>
+        
+        <bibl><label>[23] a)</label> S. Henke, R. A. Fischer, J. Am. Chem. Soc. 2011, 133,2 064 -2067;</bibl>
+        <bibl><label>b )</label>S.<lb/> Henke, A. Schneemann, A. Wutscher,R .A.F ischer, J. Am. Chem. Soc.<lb/> 2012, 134,9464 -9474.<lb/> </bibl>
+        
+        <bibl><label>[24]</label> Gaussian 09, Revision D.01, M. J. Frisch,G .W .T rucks, H. B. Schlegel,<lb/> M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, G. A. Petersson, H.<lb/> Nakatsuji, X. Li, M. Caricato, A. Marenich,J .B loino, B. G. Janesko, R.<lb/> Gomperts, B. Mennucci, H. P. Hratchian, J. V. Ortiz, A. F. Izmaylov,J .L.<lb/> Sonnenberg, D. Williams-Young, F. Ding,F .L ipparini, F. Egidi,J .G oings,<lb/> B. Peng, A. Petrone, T. Henderson,D .R anasinghe, V. G. Zakrzewski,J .<lb/> Gao, N. Rega, G. Zheng, W. Liang, M. Hada, M. Ehara, K. To yota, R.<lb/> Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, H.<lb/> Nakai, T. Vreven, K. Throssell, J. A. Montgomery,Jr. ,J .E.P eralta, F.<lb/> Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, K. N. Kudin, V. N. Staroverov,<lb/> T. Keith, R. Kobayashi, J. Normand, K. Raghavachari, A. Rendell, J. C.<lb/> Burant, S. S. Iyengar,J .T omasi,M .C ossi, J. M. Millam, M. Klene, C.<lb/> Adamo, R. Cammi, J. W. Ochterski, R. L. Martin,K .M orokuma,O .F arkas,<lb/> J. B. Foresman, D. J. Fox, Gaussian, Inc.,W allingford, CT, 2016.<lb/> </bibl>
+        
+        <bibl><label>[25] a)</label> R. Krishnan, J. S. Binkley,R .S eeger, J. A. Pople, J. Chem. Phys. 1980,<lb/> 72,6 50 -654;</bibl>
+        <bibl><label>b )</label>A.D.M cLean, G. S. Chandler, J. Chem. Phys. 1980, 72,<lb/> 5639 -5648;c )U.H.-u. D. Andrae, M. Dolg, H. Stoll, H. Preuss, Theor.<lb/> Chim.A cta 1990, 77,123 -141.<lb/> </bibl>
+
+        <bibl><label>[26]</label> P. Smart, C. A. Mason, J. R. Loader,A .J.H.M.M eijer,A .J.F lorence, K.<lb/> Shankland, A. J. Fletcher,S .P .T hompson,M .B runelli, A. H. Hill, L. Bram-<lb/>mer, Chem.Eur.J.2013, 19,3552 -3557.<lb/> </bibl>
+
+        </listBibl>
+    </text>
+</tei>
+

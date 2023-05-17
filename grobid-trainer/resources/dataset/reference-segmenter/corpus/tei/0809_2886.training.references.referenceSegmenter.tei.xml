@@ -1,0 +1,38 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>1</label>. I. Dunietz, et al., Phys. Rev. D 63, 114015<lb/> (2001).<lb/> </bibl>
+        <bibl><label>2</label>. A. Lenz and U. Nierste, JHEP 0706:072<lb/> (2007).<lb/> </bibl>
+        <bibl><label>3</label>. A. Lenz, Nucl. Phys. Proc. Suppl. 177-178 :<lb/> 81-86 (2008).<lb/> </bibl>
+        <bibl><label>4</label>. V. M. Abazov, et al., FERMILAB-PUB-<lb/>08/033-E; arXiv: 0802.2255 [hep-ex], submit-<lb/>ted to PRL.<lb/> </bibl>
+        <bibl><label>5</label>. E. Barberio, et al., arXiv:0808.1297 [hep-ex].<lb/> </bibl>
+        <bibl><label>6</label>. T. Aaltonen, et al., Phys. Rev. Lett. 100,<lb/> 121803 (2008).<lb/> </bibl>
+        <bibl><label>7</label>. A. S. Dighe, et al., Eur. Phys. J. C 6, 647<lb/> (1999).<lb/> </bibl>
+        <bibl><label>8</label>. The CDF Collaboration, CDF note 9458.<lb/> </bibl>
+        <bibl><label>9</label>. M. Gronau, J. L. Rosner, arXiv: 0808.3761<lb/> [hep-ph].<lb/> </bibl>
+        <bibl><label>10</label>. The DØ Collaboration, DØ note 5651.<lb/> </bibl>
+        <bibl><label>11</label>. The CDF Collaboration, CDF note 9015.<lb/> </bibl>
+        <bibl><label>12</label>. V. M. Abazov, et al., Phys. Rev. D 76, 057101<lb/> (2007).<lb/> </bibl>
+        <bibl><label>13</label>. V. M. Abazov, et al., Phys. Rev. Lett. 98,<lb/> 151801 (2007).<lb/> </bibl>
+        <bibl><label>14</label>. The DØ Collaboration, DØ note 5730.<lb/> </bibl>
+        <bibl><label>15</label>. V. M. Abazov, et al., Phys. Rev. D 74, 092001<lb/> (2006).<lb/> </bibl>
+        <bibl><label>16</label>. The CDF Collaboration, CDF note 8579.<lb/> </bibl>
+        <bibl><label>17</label>. C.-W. Chiang, arXiv:0808.1336 [hep-ph].<lb/> </bibl>
+        <bibl><label>18</label>. R. Fleischer, Eur. Phys. J. C 52, 267 (2007).<lb/> </bibl>
+        <bibl><label>19</label>. C.-W. Chiang, et al., Phys. Lett. B664: 169-<lb/>173 (2008).<lb/> </bibl>
+        <bibl><label>20</label>. V. M. Abazov, et al., Phys. Rev. Lett. 100,<lb/> 211802 (2008).<lb/> </bibl>
+        <bibl><label>21</label>. W.-S. Hou, et al., arXiv: hep-ph/0605080.<lb/> </bibl>
+        <bibl><label>22</label>. The CDF Collaboration, CDF note 9109.<lb/> </bibl>
+        <bibl><label>23</label>. M. Gronau and D. London, Phys. Lett. B 253,<lb/> 483 (1991).<lb/> </bibl>
+        <bibl><label>24</label>. M. Gronau and D. Wyler, Phys. Lett. B 265,<lb/> 172 (1991).<lb/> </bibl>
+        <bibl><label>25</label>. B. Aubert, et al., Phys. Rev. D 77, 111102<lb/> (2008).<lb/> </bibl>
+        <bibl><label>26</label>. K. Abe, et al., Phys. Rev. D 73, 051106<lb/> (2006).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

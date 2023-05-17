@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="1410_3964"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Physics Letters B 740 (2015) 1-7<lb/></reference>
+
+	Contents lists available at ScienceDirect<lb/> 
+
+	<title level="j">Physics Letters B<lb/></title> 
+
+	www.elsevier.com/locate/physletb<lb/> 
+
+	<docTitle>
+	<titlePart>First determination of the CP content of D → π + π − π 0<lb/> and D → K + K − π 0<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>M. Nayak a , J. Libby a, * , S. Malde b , C. Thomas b , G. Wilkinson b,c , R.A. Briere d , P. Naik e ,<lb/> T. Gershon f , G. Bonvicini g<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>a Indian Institute of Technology Madras,</affiliation>
+	</byline>
+
+	<address>Chennai 600036, India<lb/></address>
+
+	<byline>
+	<affiliation>b University of Oxford,</affiliation>
+	</byline>
+
+	<address>Denys Wilkinson Building, Keble Road, OX1 3RH, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>c European Organisation for Nuclear Research (CERN),</affiliation>
+	</byline>
+
+	<address>CH-1211, Geneva 23, Switzerland<lb/></address>
+
+	<byline>
+	<affiliation>d Carnegie Mellon University,</affiliation>
+	</byline>
+
+	<address>Pittsburgh, PA 15213, USA<lb/></address>
+
+	<byline>
+	<affiliation>e University of Bristol,</affiliation>
+	</byline>
+
+	<address>Bristol, BS8 1TL, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>f University of Warwick,</affiliation>
+	</byline>
+
+	<address>Coventry, CV4 7AL, United Kingdom<lb/></address>
+
+	<byline>
+	<affiliation>g Wayne State University,</affiliation>
+	</byline>
+
+	<address>Detroit, MI 48202, USA<lb/></address>
+
+	a r t i c l e i n f o<lb/> a b s t r a c t<lb/> Article history:<lb/>
+	<note type="submission">Received 15 October 2014<lb/> Received in revised form 12 November 2014<lb/> Accepted 13 November 2014<lb/></note>
+
+	Available online
+	<date>18 November 2014<lb/></date>
+
+	Editor:
+	<byline>
+	<docAuthor>L. Rolandi<lb/></docAuthor>
+	</byline>
+
+	Keywords:<lb/>
+	<keyword>Charm decay<lb/> Quantum correlations<lb/> CP violation<lb/></keyword>
+
+	<div type="abstract">Quantum-correlated ψ(3770) → D D decays collected by the CLEO-c experiment are used to perform first<lb/> measurements of F + , the fractional CP-even content of the self-conjugate decays D → π + π − π 0 and<lb/> D → K + K − π 0 . Values of 0.968 ± 0.017 ± 0.006 and 0.731 ± 0.058 ± 0.021 are obtained for π + π − π 0<lb/> and K + K − π 0 , respectively. It is demonstrated how modes of this sort can be cleanly included in<lb/> measurements of the unitarity triangle angle γ using B ∓ → D K ∓ decays. The high CP-even content<lb/> of D → π + π − π 0 , in particular, makes this a promising mode for improving the precision on γ .<lb/></div>
+
+	<note type="copyright">© 2014 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license<lb/> (http://creativecommons.org/licenses/by/3.0/). Funded by SCOAP 3 .<lb/></note>
+
+	<idno>http://dx.doi.org/10.1016/j.physletb.2014.11.022<lb/></idno>
+
+	0370-2693/
+	<note type="copyright">© 2014 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/3.0/). Funded by<lb/> SCOAP 3 .</note>
+
+		</front>
+	</text>
+</tei>

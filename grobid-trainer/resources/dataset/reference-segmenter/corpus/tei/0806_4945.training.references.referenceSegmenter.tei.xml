@@ -1,0 +1,39 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> G. Amelino-Camelia et al., AIP Conf. Proc. 758, 30<lb/> (2005), gr-qc/0501053; </bibl>
+        <bibl>R. Bluhm, Lec. Notes Phys. 702,<lb/> 191 (2006), hep-ph/0506054.<lb/> </bibl>
+        <bibl><label>[2]</label> D. Colladay and V. A. Kostelecký, Phys. Rev. D 55, 6760<lb/> (1997); </bibl>
+        <bibl>D. Colladay and V. A. Kostelecký, Phys. Rev. D<lb/> 58, 116002 (1998); </bibl>
+        <bibl>V. A. Kostelecký, Phys. Rev. D 69,<lb/> 105009 (2004).<lb/> </bibl>
+        <bibl><label>[3]</label> V. A. Kostelecký and M. Mewes, Phys. Rev. D 69,<lb/> 0160005 (2004).<lb/> </bibl>
+        <bibl><label>[4]</label> S. Reinhardt et al., Nature Physics 3, 861 (2007); </bibl>
+        <bibl>H.<lb/> Mueller et al., Phys. Rev. Lett., 99, 050401 (2007); </bibl>
+        <bibl>V.<lb/> W. Hughes et al., Phys. Rev. Lett., 87, 111804 (2001); </bibl>
+        <bibl>Y.<lb/> B. Hsiung et al., Nucl. Phys. Proc. Suppl, 86, 312 (2000);<lb/> </bibl>
+        <bibl>J. Link et al., Phys. Lett. B, 556, 7, (2003); </bibl>
+        <bibl>B. Aubert<lb/> et al., Phys. Rev. D, 70, 012007 (2004); </bibl>
+        <bibl>J.B.R. Battat<lb/> et al., Phys. Rev. Lett., 99, 241103 (2007); </bibl>
+        <bibl>P. Wolf et<lb/> al., Phys. Rev. Lett., 96, 060801 (2006); </bibl>
+        <bibl>H. Demelt et<lb/> al., Phys. Rev. Lett, 83, 4694 (1999); </bibl>
+        <bibl>B. Heckel et al.,<lb/> Phys. Rev. Lett., 97, 021603 (2006); </bibl>
+        <bibl>M.D. Messier, in<lb/> Proceedings of the Third Meeting on CPT and Lorentz<lb/> Symmetry, edited by V.A. Kostelecký (World Scientific,<lb/> 2005), p.84.<lb/> </bibl>
+        <bibl><label>[5]</label> V. A. Kostelecký and M. Mewes, Phys. Rev. D 70, 076002<lb/> (2004).<lb/> </bibl>
+        <bibl><label>[6]</label> P. Adamson et al., Phys. Rev. D 77, 072002 (2008).<lb/> </bibl>
+        <bibl><label>[7]</label> L. B. Auerbach et al., Phys. Rev. D 72, 076004 (2005).<lb/> </bibl>
+        <bibl><label>[8]</label> D. G. Michael et al., Phys. Rev. Lett. 97, 191801 (2006).<lb/> </bibl>
+        <bibl><label>[9]</label> O. W. Greenberg, Phys. Rev. Lett. 89, 231602 (2002).<lb/> </bibl>
+        <bibl><label>[10]</label> H. Nunokawa, S. J. Parke, and R. Zukanovich Funchal,<lb/> Phys. Rev. D 72, 013009 (2005), hep-ph/0503283.<lb/> </bibl>
+        <bibl><label>[11]</label> D. G. Michael et al. (2008), arXiv:0805.3170 [physics.ins-<lb/>det].<lb/> </bibl>
+        <bibl><label>[12]</label> N. Tagg et al., Nucl. Instrum. Meth. A539, 668 (2005),<lb/> physics/0408055.<lb/> </bibl>
+        <bibl><label>[13]</label> P. Adamson et al. (2008), in preparation.<lb/> </bibl>
+        <bibl><label>[14]</label> P. Adamson et al., Phys. Rev. D 76, 072005 (2007).<lb/> </bibl>
+        <bibl><label>[15]</label> W. H. Press, B. Flannery, S. Teukolsky, and W. Vet-<lb/>terling, Numerical Recipes in C (Cambridge University<lb/> Press, 1999).<lb/> </bibl>
+        <bibl><label>[16]</label> B. J. Rebel and S. L. Mufson, in Proceedings of the Fourth<lb/> Meeting on CPT and Lorentz Symmetry, edited by V. A.<lb/> Kostelecký (World Scientific, 2008), arXiv:0802.3785<lb/> [hep-ph].</bibl>
+        </listBibl>
+    </text>
+</tei>
+

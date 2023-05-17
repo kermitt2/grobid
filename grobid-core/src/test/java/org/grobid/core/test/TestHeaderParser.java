@@ -35,9 +35,10 @@ public class TestHeaderParser extends EngineTest {
         getTestResourcePath();
 
         String pdfPath = testPath + File.separator + "Wang-paperAVE2008.pdf";
+        File pdfFile = new File(pdfPath);
         BiblioItem resHeader = new BiblioItem();
 
-        String tei = engine.processHeader(pdfPath, 0, resHeader);
+        String tei = engine.processHeader(pdfFile.getAbsolutePath(), 0, resHeader);
 
         assertNotNull(resHeader);
         assertThat(resHeader.getTitle(), is("Information Synthesis for Answer Validation"));

@@ -1,0 +1,43 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1]</label> Belle Collaboration, N. Gabyshev et al., Phys. Rev.<lb/> Lett. 90, 121802 (2003).<lb/> </bibl>
+        <bibl><label>[2]</label> Belle Collaboration, M.-Z. Wang et al., Phys. Rev.<lb/> Lett. 90, 201802 (2003).<lb/> </bibl>
+        <bibl><label>[3]</label> Belle Collaboration, K. Abe et al., Phys. Rev. Lett. 88,<lb/> 181803 (2002).<lb/> </bibl>
+        <bibl><label>[4]</label> Belle Collaboration, N. Gabyshev et al., Phys. Rev. D<lb/> 66, 091102 (2002).<lb/> </bibl>
+        <bibl><label>[5]</label> Belle Collaboration, K. Abe et al, Phys. Rev. Lett. 89,<lb/> 151802 (2002).<lb/> </bibl>
+        <bibl><label>[6]</label> CLEO Collaboration, S. A. Dytman et al., Phys. Rev. D<lb/> 66, 091101 (2002).<lb/> </bibl>
+        <bibl><label>[7]</label> CLEO Collaboration, S. Anderson et al., Phys. Rev.<lb/> Lett. 86, 2732 (2001).<lb/> </bibl>
+        <bibl><label>[8]</label> Belle Collaboration, M.-Z. Wang et al., Phys. Rev.<lb/> Lett. 92, 131801 (2004).<lb/> </bibl>
+        <bibl><label>[9]</label> Belle Collaboration, K. S. Park, H. Kichimi et al., Phys.<lb/> Rev. D 75, 011101 (2007).<lb/> </bibl>
+        <bibl><label>[10]</label> Belle Collaboration, M.-Z. Wang, Y.-J. Lee et al., Belle<lb/> preprint 2007-19, arXiv: 0704.2672[hep-ex].<lb/> </bibl>
+        <bibl><label>[11]</label> C.-K. Chua, W.-S. Hou, S.-Y. Tsai, Phys. Rev. D 65,<lb/> 034003 (2002).<lb/> </bibl>
+        <bibl><label>[12]</label> C.-K. Chua, W.-S. Hou, S.-Y. Tsai, Phys. Lett. B 528,<lb/> 233 (2002).<lb/> </bibl>
+        <bibl><label>[13]</label> J. L. Rosner, Phys. Rev. D 68, 014004 (2003).<lb/> </bibl>
+        <bibl><label>[14]</label> B. Kerbikov, A. Stavinsky and V. Fedotov, Phys. Rev. C<lb/> 69, 055205 (2004).<lb/> </bibl>
+        <bibl><label>[15]</label> J. Haidenbauer, Ulf-G. Meissner and A. Sibirtsev, Phys.<lb/> Rev. D 74, 017501 (2006).<lb/> </bibl>
+        <bibl><label>[16]</label> D. R. Entem and F. Fernandez, Phys. Rev. D 75, 014004<lb/> (2007).<lb/> </bibl>
+        <bibl><label>[17]</label> H. Kichimi, Nucl. Phys. B Proc. Suppl. 142, 197 (2005).<lb/> </bibl>
+        <bibl><label>[18]</label> W.-S. Hou, A. Soni, Phys. Rev. Lett. 86, 4247 (2001).<lb/> </bibl>
+        <bibl><label>[19]</label> BABAR Collaboration, B. Aubert et al., Phys. Rev. D<lb/> 72, 051101 (2005).<lb/> </bibl>
+        <bibl><label>[20]</label> Belle Collaboration, M.-Z. Wang et al., Phys. Lett. B<lb/> 617, 141 (2005).<lb/> </bibl>
+        <bibl><label>[21]</label> S. Kurokawa and E. Kikutani, Nucl. Instr. Methods Phys.<lb/> Res., Sect. A 499, 1 (2003), and other papers included<lb/> in this volume.<lb/> </bibl>
+        <bibl><label>[22]</label> Belle Collaboration, A. Abashian et al., Nucl. Instr.<lb/> Methods Phys. Res., Sect. A 479, 117 (2002).<lb/> </bibl>
+        <bibl><label>[23]</label> Z. Natkaniec et al. (Belle SVD2 Group), Nucl. Instr. and<lb/> Meth. A 560, 1 (2006).<lb/> </bibl>
+        <bibl><label>[24]</label> R. Brun et al., GEANT 3.21, CERN DD/EE/84-1, 1984.<lb/> </bibl>
+        <bibl><label>[25]</label> Charged kaons are required to satisfy L(K)/(L(K) +<lb/> L(π)) &gt; 0.6. Charged pions are required to satisfy<lb/> L(π)/(L(K)+L(π)) &gt; 0.1. Protons are required to satisfy<lb/> L(p)/(L(K) + L(p)) &gt; 0.6 and L(p)/(L(π) + L(p)) &gt; 0.6.<lb/> Here L(K/π/p) is the particle identification likelihood for<lb/> the K/π/p hypotheses. The above requirements have ef-<lb/>ficiencies of more than 95% for pions, kaons and protons,<lb/> respectively, from B 0 → D +<lb/> s Λp decays. The probability<lb/> for each particle species to be misidentified as one of the<lb/> other two is less than 5%.<lb/> </bibl>
+        <bibl><label>[26]</label> W.-M. Yao et al., (Particle Data Group) J. Phys. G 33,<lb/> 1 (2006).<lb/> </bibl>
+        <bibl><label>[27]</label> G. C. Fox and S. Wolfram Phys. Rev. Lett. 41, 1581<lb/> (1978).<lb/> </bibl>
+        <bibl><label>[28]</label> Belle Collaboration, S. L. Zang et al., Phys. Rev. D 69,<lb/> 017101 (2004).<lb/> </bibl>
+        <bibl><label>[29]</label> Belle Collaboration, N. Gabyshev et al., Phys. Rev.<lb/> Lett. 97, 202003 (2006).<lb/> </bibl>
+        <bibl><label>[30]</label> ARGUS Collaboration, H. Albrecht et al., Phys. Lett. B<lb/> 241, 278 (1990).<lb/> </bibl>
+        <bibl><label>[31]</label> The B-sideband is defined as a region of M bc &gt;<lb/> 5.2 GeV/c 2 and −0.08 GeV/c 2 &lt; ∆M &lt; 0.12 GeV/c 2 ex-<lb/>cluding the B-signal region.<lb/> </bibl>
+        <bibl><label>[32]</label> Protons are required to satisfy inverted likelihood ratio<lb/> requirement L(p)/(L(K) + L(p)) &lt; 0.6.<lb/> </bibl>
+        <bibl><label>[33]</label> BABAR Collaboration, B. Aubert et al., Phys. Rev. D<lb/> 74, 051101 (2006).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

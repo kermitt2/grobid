@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="380550v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<page>1<lb/></page> 
+	Full title: 
+
+	<docTitle>
+	<titlePart>How do citizens perceive farm animal welfare conditions in Brazil?<lb/></titlePart>
+	</docTitle> 
+
+	Short title: Citizens&apos; perceptions about animal welfare<lb/>
+	
+	<byline>
+	<docAuthor>Ricardo Guimarães de Queiroz 1 ¶ , Carla Heloisa de Faria Domingues 1 ¶ , Maria Eugênia Andrighetto<lb/> Canozzi 2 ¶ , Rodrigo Garófallo Garcia 1&amp; , Clandio Favarini Ruviaro 1&amp; , Júlio Otávio Jardim Barcellos 2&amp; ,<lb/> João Augusto Rossi Borges 1 ¶ *<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Federal University of Grande Dourados,</affiliation>
+	</byline>
+
+	<address>Dourados, Mato Grosso do Sul, Brazil<lb/></address>
+
+	<byline>
+	<affiliation>2 Centro de Estudos e Pesquisas em Agronegócios, Federal University of Rio Grande do Sul,</affiliation>
+	</byline>
+
+	<address>Porto<lb/> Alegre, Rio Grande do Sul, Brazil<lb/></address>
+
+	* Corresponding author<lb/> E-mail:
+	<email>joaoborges@ufgd.edu.br</email>
+
+	(JARB)<lb/> ¶ These authors contributed equally to this work.<lb/> &amp; These authors also contributed equally to this work. Abstract<lb/>
+	
+	<div type="abstract">The aim of this study is to understand the perceptions of Brazilian citizens about the actual conditions<lb/> of farm animal welfare in the poultry, beef, and dairy supply chains. To reach this aim, an online<lb/> survey was conducted. The analysis was based on descriptive statistics and three logistic regressions<lb/> models. Results of descriptive statistics showed that citizens in Brazil had mostly negative perceptions<lb/> about the actual conditions of animal welfare in the poultry, beef, and dairy supply chains. Results of<lb/> the logistic regression models showed that in the poultry and dairy supply chains, citizens with<lb/> background in agricultural/veterinary sciences, and citizens who reported a higher level of knowledge<lb/> about these supply chains, were more likely to perceive as bad the actual conditions of farm animal<lb/> welfare. In the poultry supply chain, citizens who reported previous contact with poultry farms were<lb/> also more likely to perceive as bad the actual condition of farm animal welfare. In addition, the<lb/> perception that farmers are mainly focused on the economic aspect of farming and less on animal<lb/> welfare, the perception that animals do not have a good quality of life while housed on farms, and the<lb/> perception that animals are not adequately transported and slaughtered, negatively impact on<lb/> perceptions about the actual conditions of farm animal welfare in the three supply chains. We<lb/> concluded that a protocol aimed to improve citizens&apos; perceptions about the actual conditions of farm<lb/> animal welfare should focus in all phases of the supply chains.</div>
+
+		</front>
+	</text>
+</tei>

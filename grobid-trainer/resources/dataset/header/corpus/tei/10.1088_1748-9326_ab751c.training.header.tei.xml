@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1088_1748-9326_ab751c"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<reference>Environ. Res. Lett. 15 (2020) 034047<lb/></reference>
+
+	<idno>https://doi.org/10.1088/1748-9326/ab751c</idno>
+
+	<note type="doctype">LETTER<lb/></note>
+
+	<docTitle>
+	<titlePart>Evaluation of sea salt aerosols in climate systems: global climate<lb/> modeling and observation-based analyses *<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Yi-Chun Chen 1,5 , Jui-Lin F Li 2 , Wei-Liang Lee 1 , David J Diner 2 , Michael J Garay 2 , Jonathan H Jiang 2 ,<lb/> Yi-Hui Wang 3 , Jia-Yuh Yu 4 and Olga V Kalashnikova 2<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Research Center for Environmental Changes, Academia Sinica,</affiliation>
+	</byline>
+
+	<address>Taipei, Taiwan<lb/></address>
+
+	<byline>
+	<affiliation>2 Jet Propulsion Laboratory, California Institute of Technology</affiliation>,
+	</byline>
+
+	<address>Pasadena, CA, United States of America<lb/></address>
+
+	<byline>
+	<affiliation>3 California Polytechnic State University,</affiliation>
+	</byline>
+
+	<address>San Luis Obispo, United States of America<lb/></address>
+
+	<byline>
+	<affiliation>4 Department of Atmospheric Sciences, National Central University,</affiliation>
+	</byline>
+
+	<address>Taoyuan City, Taiwan<lb/></address>
+
+	5 Author to whom any correspondence should be addressed.<lb/> E-mail:
+
+	<email>yichunchen@gate.sinica.edu.tw<lb/></email>
+
+	Keywords:
+	<keyword>global climate modeling, aerosols, sea salt, falling ice radiative effects<lb/></keyword>
+
+
+	Supplementary material for this article is available online<lb/>
+
+	Abstract<lb/>
+	<div type="abstract">Sea salt aerosols (SSA), one of the most abundant aerosol species over the global oceans, play important<lb/> roles for Earth&apos;s climate. State-of-the-art SSA parameterizations in global climate models (GCMs) are<lb/> typically modeled using near-surface wind speed, sea surface temperature (SST), and precipitation.<lb/> However, these have non-trivial biases in CMIP3 and CMIP5 GCMs over the tropical Pacific Ocean that<lb/> can contribute to biases in the simulated SSA. This study investigates the impacts of falling ice radiative<lb/> effects on the biases of the aforementioned modeled parameters and the resulting modeled SSA biases. We<lb/> compare the CMIP5 modeled SSA against satellite observations from MISR and MODIS using a pair of<lb/> sensitivity experiments with falling ice radiative effects on and off in the CESM1-CAM5 model. The results<lb/> show that when falling ice radiative effects are not taken into account, models have weaker surface wind<lb/> speeds, warmer SSTs, excessive precipitation, and diluted sea surface salinity (SSS) over the Pacific trade-<lb/>wind regions, leading to underestimated SSA. In the tropical Pacific Ocean, the inclusion of falling ice<lb/> radiative effects leads to improvements in the modeled near-surface wind speeds, SSTs, and precipitation<lb/> through cloud-precipitation-radiation-circulation coupling, which results in more representative patterns<lb/> of SSA and reduces the SSA biases by ∼10% to 15% relative to the satellite observations. Models including<lb/> falling ice radiative effects in CMIP5 produce smaller biases in SSA than those without falling ice radiative<lb/> effects. We suggest that one of the causes of these biases is likely the failure to account for falling ice radiative<lb/> effects, and these biases in turn affect the direct and indirect effects of SSA in the GCMs.<lb/></div>
+
+	<note type="doctype">OPEN ACCESS</note>
+
+	<note type="submission">
+	RECEIVED<lb/>
+	11 August 2019
+
+	REVISED<lb/>
+	30 January 2020<lb/>
+
+	ACCEPTED FOR PUBLICATION<lb/>
+	11 February 2020
+	</note>
+
+	PUBLISHED<lb/>
+	<date>5 March 2020<lb/></date>
+
+	<note type="copyright">Original content from this<lb/> work may be used under<lb/> the terms of the Creative<lb/> Commons Attribution 4.0<lb/> licence.<lb/> Any further distribution of<lb/> this work must maintain<lb/> attribution to the<lb/> author(s) and the title of<lb/> the work, journal citation<lb/> and DOI.<lb/></note>
+
+	* <note type="availability">The data that support the findings of this study are available from<lb/> the corresponding author upon reasonable request.<lb/></note>
+
+	<note type="copyright">© 2020 The Author(s). Published by IOP Publishing Ltd</note>
+
+		</front>
+	</text>
+</tei>

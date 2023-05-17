@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.3390_data6080084"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+
+	<title level="j">data<lb/></title>
+
+	<note type="docType">Data Descriptor<lb/></note>
+
+	<docTitle>
+	<titlePart>The Automatic Detection of Dataset Names in Scientific Articles<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Jenny Heddes, Pim Meerdink, Miguel Pieters and Maarten Marx *<lb/></docAuthor>
+	</byline>
+
+	Citation:
+	<reference>Heddes, J.; Meerdink, P.;<lb/> Pieters, M.; Marx, M. The Automatic<lb/> Detection of Dataset Names<lb/> in Scientific Articles. Data 2021, 6, 84.<lb/> https://doi.org/10.3390/data6080084<lb/></reference>
+
+	Academic Editor:
+	<editor>Craig A. Knoblock<lb/></editor>
+
+	<note type="submission">Received: 16 June 2021<lb/> Accepted: 28 July 2021<lb/></note>
+
+	Published:
+	<date>4 August 2021<lb/></date>
+
+	Publisher&apos;s Note: MDPI stays neutral<lb/> with regard to jurisdictional claims in<lb/> published maps and institutional affil-<lb/>iations.<lb/>
+	
+	<note type="copyright">Copyright: © 2021 by the authors.<lb/> Licensee MDPI, Basel, Switzerland.<lb/> This article is an open access article<lb/> distributed under the terms and<lb/> conditions of the Creative Commons<lb/> Attribution (CC BY) license (https://<lb/> creativecommons.org/licenses/by/<lb/> 4.0/).<lb/></note>
+
+	<byline>
+	<affiliation>Informatics Institute, Faculty of Science, University of Amsterdam,</affiliation>
+	</byline>
+
+	<address>Science Park 908,<lb/> 1098 XH Amsterdam, The Netherlands;</address>
+
+	<email>jenny.heddes@student.uva.nl</email>
+
+	(J.H.);<lb/>
+	<email>pim.meerdink@student.uva.nl</email>
+
+	(P.M.);
+	<email>miguel.pieters@student.uva.nl</email>
+
+	(M.P.)<lb/> * Correspondence:
+	<email>maartenmarx@uva.nl<lb/></email>
+
+	Abstract:
+	<div type="abstract">We study the task of recognizing named datasets in scientific articles as a Named Entity<lb/> Recognition (NER) problem. Noticing that available annotated datasets were not adequate for our<lb/> goals, we annotated 6000 sentences extracted from four major AI conferences, with roughly half<lb/> of them containing one or more named datasets. A distinguishing feature of this set is the many<lb/> sentences using enumerations, conjunctions and ellipses, resulting in long BI+ tag sequences. On all<lb/> measures, the SciBERT NER tagger performed best and most robustly. Our baseline rule based tagger<lb/> performed remarkably well and better than several state-of-the-art methods. The gold standard<lb/> dataset, with links and offsets from each sentence to the (open access available) articles together with<lb/> the annotation guidelines and all code used in the experiments, is available on GitHub.<lb/></div>
+
+	Dataset:
+	<note type="availability">https://github.com/xjaeh/ner_dataset_recognition<lb/></note>
+
+	Dataset License:
+	<note type="copyright">This work is licensed under a Creative Commons Attribution 4.0 International<lb/> License CC BY 4.0.<lb/></note>
+
+	Keywords:
+	<keyword>dataset extraction; scientific information extraction; named entity recognition; BERT; SciBERT<lb/></keyword>
+
+	<reference>Data 2021, 6, 84. https://doi.org/10.3390/data6080084<lb/> https://www.mdpi.com/journal/data</reference>
+
+		</front>
+	</text>
+</tei>

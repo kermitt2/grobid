@@ -8,7 +8,6 @@ import java.util.List;
  * some properties in the document layout.
  */
 public class Block {
-    private int nbTokens = 0;
     private String text = null;
     private BoundingBox boundingBox = null;
     /*private double y = 0.0;
@@ -57,14 +56,6 @@ public class Block {
         type = t;
     }
 
-    public void setText(String t) {
-        //text = t;
-    }
-
-    public void setNbTokens(int t) {
-        nbTokens = t;
-    }
-
     public Type getType() {
         return type;
     }
@@ -87,7 +78,10 @@ public class Block {
     }
 
     public int getNbTokens() {
-        return nbTokens;
+        if (tokens == null)
+            return 0;
+        else
+            return tokens.size();
     }
 
     public void setFont(String f) {
@@ -187,7 +181,14 @@ public class Block {
     }
 
     public int getEndToken() {
-        return endToken;
+        if (endToken == -1) {
+            if (tokens == null || tokens.size() == 0) {
+                return getStartToken();
+            } else {
+                return getStartToken() + tokens.size();
+            }   
+        } else 
+            return endToken;
     }
 
     public void setStartToken(int start) {
@@ -215,7 +216,7 @@ public class Block {
     }
 
     public boolean isNull() {
-        if ( (nbTokens == 0) && (startToken == -1) && (endToken == -1) && (type == null) ) {
+        if ( (tokens == null) && (startToken == -1) && (endToken == -1) && (type == null) ) {
             return true;
         }
         else 
@@ -225,7 +226,6 @@ public class Block {
     @Override
     public String toString() {
         String res = "Block{" +
-                "nbTokens=" + nbTokens +
                 ", startToken=" + startToken +
                 ", endToken=" + endToken +
                 ", type=" + type;

@@ -13,36 +13,64 @@ The following TEI elements are used by the segmentation model:
 * `<body>` for the document body
 * `<listBibl>` for the bibliographical section
 * `<page>` to indicate page numbers
-* `<div type="annex">` for annexes
-* `<div type="acknowledgment">` for acknowledgments
 * `<div type="toc">` for table of content
+* `<div type="acknowledgment">` for acknowledgment annex
+* `<div type="availability">` for data and code availability statement annex (when not placed in the header)
+* `<div type="funding">` for funding information annex (when not placed in the header)
+* `<div type="annex">` for any other annexes
 
-It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so contained by the `<body>` element.
+It is necessary to identify these above substructures when interrupting the `<body>`. Figures and tables (including their potential titles, captions and notes) are considered part of the body, so they are contained by the `<body>` element.
 
 Note that the mark-up follows overall the [TEI](http://www.tei-c.org). 
 
-> Note: It is recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
+> Note: It is highly recommended to study the existing training documents for the segmentation model first to see some examples of how these elements should be used.
 
 ## Analysis
 
 The following sections provide detailed information and examples on how to handle certain typical cases.
 
-### Start of the document (front)
+### Start of the document (cover page and header)
 
-A cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and is entirely identified by the `<titlePage>` element. 
+#### Cover page
 
-The header section typically contains document's title, its author(s) with affiliations, an abstract and some keywords. All this material should be contained within the `<front>` element, as well as any footnotes that are referenced from within the header (such as author affiliations and addresses). Furthermore, the footer including the first page number should go in there.  In general, we expect as part of the header of the document to find all the bibliographical information for the article.  This should be followed in order to ensure homogeneity across the training data.
+An optional cover page - usually added by the publisher to summarize the bibligraphical and copyright information - might be present, and need to be entirely identified by the `<titlePage>` element. The cover page is considered as an addition to a standalone well-formed article. The content of a cover page is usually redundant with the bibliographical information found in the article header. A cover page correspond usually to the content of the first entire page. 
 
-There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents'. Note that for the segmentation model, there aren't any `<title>` or `<author>` elements as they are handled in the `header` model which is applied in cascaded in a next stage.
+#### Header (front)
 
-Any footnotes referenced from within the `<body>` should remain there.
+The header section typically contains bibliographical information, such as document's title, author(s) possibly with affiliations, abstract, keywords, container journal title, etc. The header usually covers everything until the start of the article body (e.g. until reaching the introduction of the article). While a cover page is optional, an article should normally always include a header, even limited to the title. 
 
-Lines like the following, appearing as a footnote on the first page of the document should be contained inside a `<front>` element:
+> Note that for the segmentation model, there aren't any `<title>` or `<author>` elements, because they are handled in the `header` model which is applied in cascaded at the next stage in the content identified by the segmentation model as "header".
+
+All this material should be contained within the `<front>` element. In addition, any footnotes that are referenced from within the header (for example when author affiliations and addresses are expressed in footnotes) should also be annotated under a `<front>` element. Furthermore, the footer including the first page number should go in the header, because it indicates the first page of the article, which is a useful and common bibliographical information.  
+
+In general, we expect as part of the header of the document to find all the bibliographical information of the document. This principle should be followed in every documents in order to ensure homogeneity of the "header" content across the training data.
+
+Lines like the following, indicating bibliographical metadata, appearing as a footnote on the first page of the document should be contained inside a `<front>` element:
 * Received: [date]
 * Revised: [date]
 * Accepted: [date]
 
-The following is an example of correcting an appearance of the article title on the front page:
+However, any footnotes referenced from within the `<body>` should remain outside the header element, even if they are on the first page or surrunded by `<front>` fragments.
+
+There should be as many `<front>` elements as necessary that contain all the contents identified as 'front contents' (bibliographical information), not necessarily limited to the first pages. The `<front>` can contain items that are not always at the beginning of the document, such as: 
+
+* Copyright information / Open Access licence and statement
+* Correspondence information 
+* Detailed affiliation and address information
+* Submission information, when was the document received, approved and published
+
+These item elements are relatively frequently at the very end of an article or just after the document body. However, for consistency, they should be annotated under `<front>` because they are bibliographical information covered by the header model. 
+
+The following information blocks sometimes appear inside the article header, so they should be annotated as `<front>`:  
+
+* Author contributions
+* Ethics and competing interests
+* Funding 
+* Data / code availability statement
+
+However, they rather appear as annexes, after the document body. In this case, they should be annotated as "annex", see next section, and not under `<front>`.
+
+It is possible that the position of a title in the text flow of a document can be different from the visual layout of the document. The following is an example of annotating the article title in such a case on the front page:
 
 ![title in front 0C4AA21E271A7FF288AE13895EAED540ED582A83](img/title-in-front.png)
 
@@ -50,7 +78,7 @@ which Grobid initially recognized as follows:
 
 ![xml of title in front](img/title-in-front-xml-wrong.png)
 
-The following, corrected bit of TEI XML shows the presence of a `front` element surrounding both the topic and the title:
+The following TEI XML annotation shows the presence of a `front` element surrounding both the topic and the title:
 
 ```xml
 virus. <lb/>But is the role of LGP2 in CD8 + T cell <lb/>survival and function cell
@@ -65,11 +93,24 @@ survival <lb/></front>
 
 > Note: In general, whether the `<lb/>` (line break) element is inside or outside the `<front>` or other elements is of no importance. However as indicated [here](General-principles/#correcting-pre-annotated-files), the <lb/> element should not be removed and should follow the stream of text. 
 
-The following screen shot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
+The following screenshot shows an example where an article starts mid-page, the end of the preceding one occupying the upper first third of the page. As this content does not belong to the article in question, don't add any elements and remove any `<front>` or `<body>` elements that could appear in the preceding article.
 
 ![article starting mid-page - 0C4013368F5546BB832B7A76F2A36EF9C4AAB6EF](img/preceding-article-on-first-page.png)
 
-### Following document pages (body)
+
+### Additional information (annex) 
+
+Additional and supporting information sections, which are located **after the body** of the article (typically after the conclusion), should be annotated under `<div type="annex">` or the following more specific annex types:
+
+* `<div type="acknowledgment">` for acknowledgment annex (including funding/grant acknowledgement when inside an acknowledgement section)
+* `<div type="availability">` for data and code availability statement annex 
+* `<div type="funding">` for funding information annex 
+
+> Note: Different section of annex type should be segmented in separated `<div type="annex">` to capture the start and end of the different section blocks. 
+
+Supplementary texts, supplementary figures and tables, and any similar appendix should be all encoded under `<div type="annex">`. 
+
+### Elements interrupting the document body
 
 Any information appearing in the page header needs to be surrounded by a `<note place="headnote">`.
 
@@ -95,11 +136,6 @@ Any notes to the left of the main body text are to be encoded as `<note>` if the
 
 ![example of different not types](img/different-note-examples.png)
 
-The following example shows a case where we have an acknowledgment (in the red frame) that gets encoded as a `<div type="acknowledgment">` whereas the title reference underneath (in the orange frame) is encoded using a `<front>` element.
-
-![acknowledgment and front](img/acknowledgment-placement.png)
-
-![acknowledgment and front](img/acknowledgment-placement-xml.png)
 
 ### Tables and Figures
 

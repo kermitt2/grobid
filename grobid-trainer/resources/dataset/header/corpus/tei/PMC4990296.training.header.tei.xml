@@ -86,9 +86,11 @@
 	Copyright:
 	<note type="copyright">© 2016 Salem et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which permits<lb/> unrestricted use, distribution, and reproduction in any<lb/> medium, provided the original author and source are<lb/> credited.<lb/></note>
 
-	Data Availability Statement: The information<lb/> underlying this study is available from the Symplur<lb/> Signals database, and can be accessed under www.<lb/> symplur.com/signals with a fee-based account<lb/> subscribed for the hashtag #KidneyStones. The time<lb/> period was set from 1st October 2014 to 1st October<lb/> 2015. We paid US$1,099 for a one month explorative<lb/> analysis.<lb/> 
+	Data Availability Statement: 
+    <note type="availability">The information<lb/> underlying this study is available from the Symplur<lb/> Signals database, and can be accessed under www.<lb/> symplur.com/signals with a fee-based account<lb/> subscribed for the hashtag #KidneyStones. The time<lb/> period was set from 1st October 2014 to 1st October<lb/> 2015. We paid US$1,099 for a one month explorative<lb/> analysis.<lb/></note>
 
-	<note type="funding">Funding: The authors have no support or funding to<lb/> report.</note>
+    Funding: 
+	<note type="funding">The authors have no support or funding to<lb/> report.</note>
 
 	<div type="abstract">Conclusion<lb/> The rapidly growing Twitter discussion on #KidneyStones engaged multiple stakeholders in<lb/> the healthcare sector on a global scale and reached both professionals and laypeople.<lb/> When used effectively and responsibly, the Twitter platform could improve prevention and<lb/> medical care of kidney stone patients.<lb/></div>
 

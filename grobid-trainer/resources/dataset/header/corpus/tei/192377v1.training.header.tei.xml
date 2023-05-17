@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="192377v1"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	(1) Overview<lb/> Title<lb/> 
+
+	<docTitle>
+	<titlePart>A random dot kinematogram for online visual psychophysics<lb/></titlePart>
+	</docTitle>
+
+	Paper Authors<lb/>
+	
+	<byline>
+	<docAuthor>1. Rajananda, Sivananda;<lb/> 2. Lau, Hakwan;<lb/> 3. Odegaard, Brian<lb/></docAuthor>
+	</byline>
+
+	Paper Author Roles and Affiliations<lb/> 1. Designed software; coded software; tested software; uploaded software to<lb/> GitHub &amp; CodePen; 
+	Affiliation: 
+	<byline>
+	<affiliation>University of California--Los Angeles<lb/></affiliation>
+	</byline>
+
+	2. Designed software<lb/> 
+	Affiliations:
+	<byline>
+	<affiliation>University of California--Los Angeles<lb/> Brain Research Institute (UCLA)<lb/> Hong Kong University<lb/></affiliation>
+	</byline>
+
+	3. Designed software; proofread code; tested software<lb/> 
+	Affiliations:
+	<byline>
+	<affiliation>University of California--Los Angeles</affiliation>
+	</byline>
+
+	Abstract<lb/>
+	<div type="abstract">Online experiments using visual stimuli have become increasingly common in recent<lb/> years, but many frequently-used stimuli in visual psychophysical experiments have<lb/> yet to be developed for web-based platforms. Here, we introduce the first open-<lb/>access random-dot kinematogram (RDK) for use in web browsers. This fully-<lb/>customizable RDK offers options to implement several different types of noise<lb/> (random position, random walk, random direction) and parameters to control aperture<lb/> shape, coherence level, the number of dots, and many other features. We include<lb/> links to commented JavaScript code for easy implementation in online experiments,<lb/> as well as an example of how this stimulus can be integrated as a plugin with an<lb/> online experimental library (jsPsych).</div>
+
+	Keywords<lb/>
+	<keyword>Random dot kinematogram, random dot motion, moving dot stimulus, online<lb/> experiments, visual psychophysics, visual stimuli, JavaScript, jsPsych</keyword>
+
+		</front>
+	</text>
+</tei>

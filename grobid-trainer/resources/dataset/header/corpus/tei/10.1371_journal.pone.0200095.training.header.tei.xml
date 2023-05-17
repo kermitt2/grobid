@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="10.1371_journal.pone.0200095"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="doctype">RESEARCH ARTICLE<lb/></note>
+
+	<docTitle>
+	<titlePart>Bacterial diversity of bat guano from<lb/> Cabalyorisa Cave, Mabini, Pangasinan,<lb/> Philippines: A first report on the metagenome<lb/> of Philippine bat guano<lb/></titlePart>
+	</docTitle>
+
+	<byline>
+	<docAuthor>Marian P. De Leon 1☯ *, Andrew D. Montecillo 2☯ , Dale S. Pinili 3☯ , Maria Auxilia T. Siringan 4 ‡ ,<lb/> Doo-Sang Park 5 ‡<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>1 Microbial Culture Collection, Museum of Natural History, University of the Philippines Los Baños,</affiliation>
+	</byline>
+
+	<address>College,<lb/>Laguna, Philippines,</address>
+
+	<byline>
+	<affiliation>2 Microbiology Division, Institute of Biological Sciences, College of Arts and Sciences,<lb/> University of the Philippines Los Baños,</affiliation>
+	</byline>
+
+	<address>College, Laguna, Philippines,</address>
+
+	<byline>
+	<affiliation>3 Plant Breeding, Genetics and<lb/> Biotechnology Division, International Rice Research Institute,</affiliation>
+	</byline>
+
+	<address>Los Baños, Laguna, Philippines,<lb/></address>
+
+	<byline>
+	<affiliation>4 Microbiological Research and Services Laboratory, Natural Sciences Research Institute, University of the<lb/> Philippines Diliman,</affiliation>
+	</byline>
+
+	<address>Quezon City, Philippines,</address>
+
+	<byline>
+	<affiliation>5 Korean Collection for Type Cultures, Biological Resource<lb/> Center, Korea Research Institute of Bioscience and Biotechnology,</affiliation>
+	</byline>
+
+	<address>Jeongeup, South Korea<lb/></address>
+
+	☯ These authors contributed equally to this work.<lb/> ‡ These authors also contributed equally to this work.<lb/> *
+	<email>mpdeleon1@up.edu.ph</email>
+
+	Abstract<lb/>
+	<div type="abstract">Bats are highly diverse and ecologically valuable mammals. They serve as host to bacteria,<lb/> viruses and fungi that are either beneficial or harmful to its colony as well as to other groups<lb/> of cave organisms. The bacterial diversity of two bat guano samples, C1 and C2, from<lb/> Cabalyorisa Cave, Mabini, Pangasinan, Philippines were investigated using 16S rRNA gene<lb/> amplicon sequencing. V3-V4 hypervariable regions were amplified and then sequenced<lb/> using Illumina MiSeq 250 PE system. Reads were processed using Mothur and QIIME pipe-<lb/>lines and assigned 12,345 OTUs for C1 and 5,408 OTUs for C2. The most dominant OTUs<lb/> in C1 belong to the Proteobacteria (61.7%), Actinobacteria (19.4%), Bacteroidetes (4.2%),<lb/> Firmicutes (2.7%), Chloroflexi (2.5%), candidate phylum TM7 (2.3%) and Planctomycetes<lb/> (1.9%) while Proteobacteria (61.7%) and Actinobacteria (34.9%) dominated C2. Large pro-<lb/>portion of sequence reads mainly associated with unclassified bacteria indicated possible<lb/> occurrence of novel bacteria in both samples. XRF spectrophotometric analyses of C1 and<lb/> C2 guano revealed significant differences in the composition of both major and trace ele-<lb/>ments. C1 guano recorded high levels of Si, Fe, Mg, Al, Mn, Ti and Cu while C2 samples<lb/> registered high concentrations of Ca, P, S, Zn and Cr. Community structure of the samples<lb/> were compared with other published community profiling studies from Finland (SRR868695),<lb/> Meghalaya, Northeast India (SRR1793374) and Maharashtra State, India (CGS). Core<lb/> microbiome among samples were determined for comparison. Variations were observed<lb/> among previously studied guano samples and the Cabalyorisa Cave samples were attributed<lb/> to either bat sources or age of the guano. This is the first study on bacterial diversity of guano<lb/> in the Philippines through high-throughput sequencing.<lb/></div>
+
+	<reference>PLOS ONE | https://doi.org/10.1371/journal.pone.0200095 July 19, 2018<lb/></reference>
+
+	<page>1 / 17<lb/></page>
+
+	a1111111111<lb/> a1111111111<lb/> a1111111111<lb/> a1111111111 a1111111111<lb/>
+
+	<note type="doctype">OPEN ACCESS<lb/></note>
+
+	Citation:
+	<reference>P. De Leon M, Montecillo AD, Pinili DS,<lb/> Siringan MAT, Park D-S (2018) Bacterial diversity<lb/> of bat guano from Cabalyorisa Cave, Mabini,<lb/> Pangasinan, Philippines: A first report on the<lb/> metagenome of Philippine bat guano. PLoS ONE<lb/> 13(7): e0200095.</reference>
+
+	<idno>https://doi.org/10.1371/journal.<lb/> pone.0200095<lb/></idno>
+
+	Editor:
+	<editor>Wanda Markotter,</editor>
+
+	<byline>
+	<affiliation>University of Pretoria,<lb/></affiliation>
+	</byline>
+
+	<address>SOUTH AFRICA<lb/></address>
+
+	<note type="submission">Received: January 4, 2018<lb/> Accepted: June 19, 2018<lb/></note>
+
+	Published:
+	<date>July 19, 2018<lb/></date>
+
+	Copyright:
+	<note type="copyright">© 2018 P. De Leon et al. This is an open<lb/> access article distributed under the terms of the<lb/> Creative Commons Attribution License, which<lb/> permits unrestricted use, distribution, and<lb/> reproduction in any medium, provided the original<lb/> author and source are credited.<lb/></note>
+
+	Data Availability Statement:
+	<note type="availability">Metagenome <lb/>sequence data of C1 and C2 guano are available at <lb/>NCBI accession no. SRP101645. <lb/></note>
+
+	Funding:
+	<note type="funding">The post-doctoral research fellowship<lb/> was funded by the Department of Agriculture-<lb/>Bureau of Agricultural Research (DA-BAR) and<lb/> University of the Philippines Diliman, Natural<lb/> Sciences Research Institute (UP NSRI) and the<lb/> Next Generation Sequencing by the project of Dr.<lb/> Doo-Sang Park through the National Research<lb/> Foundation of Korea (NRF-2016M3A9A5919255).<lb/></note>
+
+	Competing interests: The authors have declared<lb/> that no competing interests exist.
+		</front>
+	</text>
+</tei>

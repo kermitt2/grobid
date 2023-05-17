@@ -1,0 +1,19 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>1</label>. K. Boyle, AIP Conf. Proc. 842, 351-353 (2006), nucl-ex/0606008.<lb/> </bibl>
+        <bibl><label>2</label>. M. Hirai, S. Kumano, and N. Saito, Phys. Rev. D74, 014015 (2006), hep-ph/0603213.<lb/> </bibl>
+        <bibl><label>3</label>. M. Togawa, et al., RIKEN Accel. Prog. Rep. to be published 40 (2007).<lb/> </bibl>
+        <bibl><label>4</label>. K. Adcox, et al., Nucl. Instrum. Meth. A499, 469-479 (2003).<lb/> </bibl>
+        <bibl><label>5</label>. K. Okada, et al., RIKEN Accel. Prog. Rep. 36, 248 (2003).<lb/> </bibl>
+        <bibl><label>6</label>. S. S. Adler, et al., Phys. Rev. Lett. 93, 202002 (2004), hep-ex/0404027.<lb/> </bibl>
+        <bibl><label>7</label>. B. Jager, A. Schafer, M. Stratmann, and W. Vogelsang, Phys. Rev. D67, 054005 (2003),<lb/> hep-ph/0211007.</bibl>
+        </listBibl>
+    </text>
+</tei>
+
