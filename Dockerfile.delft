@@ -41,6 +41,7 @@ COPY grobid-trainer/ ./grobid-trainer/
 RUN rm -rf grobid-home/pdf2xml
 RUN rm -rf grobid-home/pdfalto/lin-32
 RUN rm -rf grobid-home/pdfalto/mac-64
+RUN rm -rf grobid-home/pdfalto/mac_arm-64
 RUN rm -rf grobid-home/pdfalto/win-*
 RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
