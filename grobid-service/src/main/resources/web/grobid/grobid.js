@@ -85,7 +85,7 @@ var grobid = (function($) {
             beforeSubmit: ShowRequest1,
             success: SubmitSuccesful,
             error: AjaxError1,
-            dataType: "text"
+            dataType: "xml"
         });
 
 		$('#submitRequest2').bind('click', submitQuery2);
@@ -304,9 +304,14 @@ var grobid = (function($) {
 	function SubmitSuccesful(responseText, statusText, xhr) {
 		//var selected = $('#selectedService option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
-		var testStr = vkbeautify.xml(responseText);
-        teiToDownload = responseText;
-		display += htmll(testStr);
+        var parsed = ""
+        if(responseText !== undefined) {
+            var toText = new XMLSerializer().serializeToString(responseText)
+            parsed = vkbeautify.xml(toText);
+            teiToDownload = toText;
+        }
+        
+		display += htmll(parsed);
 
 		display += "</pre>";
 		$('#requestResult').html(display);
