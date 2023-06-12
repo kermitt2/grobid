@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.google.common.collect.Multimap;
 import net.sf.saxon.trans.XPathException;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -418,39 +419,41 @@ public class CitationsVisualizer {
 
         jsonRef.writeArrayFieldStart("formulas");
         contexts = DataSetContextExtractor.getFormulaReferences(tei);
-        for (Equation formula : teiDoc.getEquations()) {
-            String teiId = formula.getTeiId();
-            totalFormulas++;
-            jsonRef.writeStartObject();
-            jsonRef.writeStringField("id", teiId);
-            
-            jsonRef.writeArrayFieldStart("pos");
-            if (formula.getCoordinates() != null) {
-                for (BoundingBox b : formula.getCoordinates()) {
-                    // reference string
-                    jsonRef.writeStartObject();
-                    b.writeJsonProps(jsonRef);
-                    jsonRef.writeEndObject();
-                }
-            }
-            jsonRef.writeEndArray(); // pos
-            jsonRef.writeEndObject(); // formula element
+        if (CollectionUtils.isNotEmpty(teiDoc.getEquations())) {
+            for (Equation formula : teiDoc.getEquations()) {
+                String teiId = formula.getTeiId();
+                totalFormulas++;
+                jsonRef.writeStartObject();
+                jsonRef.writeStringField("id", teiId);
 
-            // reference markers for this formula
-            for (DataSetContext c : contexts.get(teiId)) {
-                //System.out.println(c.getContext());
-                String mrect = c.getDocumentCoords();
-                if ((mrect != null) && (mrect.trim().length()>0)) {
-                    for (String coords : mrect.split(";")) {
-                        if ((coords == null) || (coords.length() == 0))
-                            continue;
-                        //annotatePage(document, coords, teiId.hashCode(), 1.0f);
-                        jsonMark.writeStartObject();
-                        jsonMark.writeStringField("id", teiId);
-                        BoundingBox b2 = BoundingBox.fromString(coords);
-                        b2.writeJsonProps(jsonMark);
-                        jsonMark.writeEndObject();
-                        totalMarkers1++;
+                jsonRef.writeArrayFieldStart("pos");
+                if (formula.getCoordinates() != null) {
+                    for (BoundingBox b : formula.getCoordinates()) {
+                        // reference string
+                        jsonRef.writeStartObject();
+                        b.writeJsonProps(jsonRef);
+                        jsonRef.writeEndObject();
+                    }
+                }
+                jsonRef.writeEndArray(); // pos
+                jsonRef.writeEndObject(); // formula element
+
+                // reference markers for this formula
+                for (DataSetContext c : contexts.get(teiId)) {
+                    //System.out.println(c.getContext());
+                    String mrect = c.getDocumentCoords();
+                    if ((mrect != null) && (mrect.trim().length() > 0)) {
+                        for (String coords : mrect.split(";")) {
+                            if ((coords == null) || (coords.length() == 0))
+                                continue;
+                            //annotatePage(document, coords, teiId.hashCode(), 1.0f);
+                            jsonMark.writeStartObject();
+                            jsonMark.writeStringField("id", teiId);
+                            BoundingBox b2 = BoundingBox.fromString(coords);
+                            b2.writeJsonProps(jsonMark);
+                            jsonMark.writeEndObject();
+                            totalMarkers1++;
+                        }
                     }
                 }
             }
