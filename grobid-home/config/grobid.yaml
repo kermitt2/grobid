@@ -255,17 +255,17 @@ server:
     registerDefaultExceptionMappers: false
 
 logging:
+  level: INFO
   loggers:
     org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
     org.glassfish.jersey.internal: "OFF"
   appenders:
     - type: console
-      level: INFO
       threshold: WARN
       timeZone: UTC
     - type: file
       currentLogFilename: logs/grobid-service.log
-      threshold: ALL
+      threshold: INFO
       archive: true
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
