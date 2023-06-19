@@ -14,7 +14,11 @@
 package org.grobid.service.tests;
 
 import com.google.inject.Guice;
-import io.dropwizard.testing.junit5.DropwizardAppExtension;
+import io.dropwizard.testing.junit.DropwizardAppRule;
+import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.*;
 import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
@@ -28,16 +32,10 @@ import org.grobid.service.main.GrobidServiceApplication;
 import org.grobid.service.module.GrobidServiceModuleTest;
 import org.grobid.service.util.BibTexMediaType;
 import org.junit.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.Entity;
-import jakarta.ws.rs.core.Form;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.MultivaluedHashMap;
-import jakarta.ws.rs.core.MultivaluedMap;
-import jakarta.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
@@ -50,6 +48,8 @@ import static org.junit.Assert.*;
  *
  * @author Florian Zipser
  */
+
+@ExtendWith(DropwizardExtensionsSupport.class)
 public class GrobidRestServiceTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(GrobidRestServiceTest.class);
 
@@ -62,8 +62,8 @@ public class GrobidRestServiceTest {
     }
 
     @ClassRule
-    public static DropwizardAppExtension<GrobidServiceConfiguration> APP =
-            new DropwizardAppExtension<>(GrobidServiceApplication.class, GrobidServiceModuleTest.TEST_CONFIG_FILE);
+    public static DropwizardAppRule<GrobidServiceConfiguration> APP =
+            new DropwizardAppRule<>(GrobidServiceApplication.class, GrobidServiceModuleTest.TEST_CONFIG_FILE);
 
 
     private String baseUrl() {

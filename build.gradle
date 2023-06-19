@@ -84,8 +84,10 @@ subprojects {
         // packaging local libs inside grobid-core.jar
         implementation fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
-        testImplementation "junit:junit:4.12"
-        testImplementation "org.easymock:easymock:3.4"
+        testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.3'
+        testImplementation(platform('org.junit:junit-bom:5.9.3'))
+        testImplementation('org.junit.jupiter:junit-jupiter')
+        testImplementation 'org.easymock:easymock:5.1.0'
         testImplementation "org.powermock:powermock-api-easymock:2.0.7"
         testImplementation "org.powermock:powermock-module-junit4:2.0.7"
         testImplementation "xmlunit:xmlunit:1.6"
@@ -147,6 +149,8 @@ subprojects {
 //    }
 
     test {
+        useJUnitPlatform()
+        
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
@@ -354,6 +358,7 @@ project(":grobid-service") {
         implementation 'io.dropwizard:dropwizard-core:4.0.0'
         implementation 'io.dropwizard:dropwizard-assets:4.0.0'
         implementation 'io.dropwizard:dropwizard-testing:4.0.0'
+        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.0'
         implementation 'io.dropwizard:dropwizard-forms:4.0.0'
         implementation 'io.dropwizard:dropwizard-client:4.0.0'
         implementation 'io.dropwizard:dropwizard-auth:4.0.0'
