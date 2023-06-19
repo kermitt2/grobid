@@ -17,6 +17,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.modules.GrobidServiceModule;
+import org.grobid.service.resources.HealthResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
@@ -56,6 +57,8 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
 
     @Override
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
+        environment.healthChecks().register("health-check", new HealthResource(configuration));
+        
         LOGGER.info("Service config={}", configuration);
         new DropwizardExports(environment.metrics()).register();
         ServletRegistration.Dynamic registration = environment.admin().addServlet("Prometheus", new MetricsServlet());

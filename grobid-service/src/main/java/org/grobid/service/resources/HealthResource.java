@@ -19,7 +19,8 @@ public class HealthResource extends HealthCheck {
     private GrobidServiceConfiguration configuration;
 
     @Inject
-    public HealthResource() {
+    public HealthResource(GrobidServiceConfiguration configuration) {
+        this.configuration = configuration;
     }
 
     @GET
