@@ -40,24 +40,24 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
         bind(WebApplicationExceptionMapper.class);
     }
 
-//    @Provides
-//    protected ObjectMapper getObjectMapper() {
-//        return getEnvironment().getObjectMapper();
-//    }
-//
-//    @Provides
-//    protected MetricRegistry provideMetricRegistry() {
-//        return getMetricRegistry();
-//    }
-//
-//    //for unit tests
-//    protected MetricRegistry getMetricRegistry() {
-//        return getEnvironment().metrics();
-//    }
-//
-//    @Provides
-//    Client provideClient() {
-//        return ClientBuilder.newClient();
-//    }
+    @Provides
+    protected ObjectMapper getObjectMapper() {
+        return environment().getObjectMapper();
+    }
+
+    @Provides
+    protected MetricRegistry provideMetricRegistry() {
+        return getMetricRegistry();
+    }
+
+    //for unit tests
+    protected MetricRegistry getMetricRegistry() {
+        return environment().metrics();
+    }
+
+    @Provides
+    Client provideClient() {
+        return ClientBuilder.newClient();
+    }
 
 }

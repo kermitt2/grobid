@@ -1,6 +1,7 @@
 package org.grobid.service.main;
 
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.google.inject.AbstractModule;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.core.Application;
