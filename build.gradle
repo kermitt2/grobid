@@ -53,8 +53,8 @@ subprojects {
         }
     }
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 1.11
+    targetCompatibility = 1.11
 
     repositories {
         mavenCentral()
@@ -359,7 +359,6 @@ project(":grobid-service") {
         implementation 'io.dropwizard:dropwizard-auth:4.0.0'
         implementation 'io.dropwizard.metrics:metrics-core:4.2.19'
         implementation 'io.dropwizard.metrics:metrics-servlets:4.2.19'
-        implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
         
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"
