@@ -14,8 +14,7 @@
 package org.grobid.service.tests;
 
 import com.google.inject.Guice;
-import com.squarespace.jersey2.guice.JerseyGuiceUtils;
-import io.dropwizard.testing.junit.DropwizardAppRule;
+import io.dropwizard.testing.junit5.DropwizardAppExtension;
 import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.glassfish.jersey.media.multipart.FormDataMultiPart;
@@ -32,13 +31,13 @@ import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.Form;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedHashMap;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.Form;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.MultivaluedHashMap;
+import jakarta.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
 
@@ -63,8 +62,8 @@ public class GrobidRestServiceTest {
     }
 
     @ClassRule
-    public static DropwizardAppRule<GrobidServiceConfiguration> APP =
-            new DropwizardAppRule<>(GrobidServiceApplication.class, GrobidServiceModuleTest.TEST_CONFIG_FILE);
+    public static DropwizardAppExtension<GrobidServiceConfiguration> APP =
+            new DropwizardAppExtension<>(GrobidServiceApplication.class, GrobidServiceModuleTest.TEST_CONFIG_FILE);
 
 
     private String baseUrl() {
@@ -73,7 +72,7 @@ public class GrobidRestServiceTest {
 
     @Before
     public void setUp() throws IOException {
-        JerseyGuiceUtils.reset();
+//        JerseyGuiceUtils.reset();
 
         GrobidServiceModuleTest testWorkerModule = new GrobidServiceModuleTest() {
             // redefine methods that are needed:

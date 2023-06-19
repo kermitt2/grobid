@@ -2,20 +2,19 @@ package org.grobid.service.module;
 
 import com.codahale.metrics.MetricRegistry;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.inject.Binder;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import io.dropwizard.configuration.ConfigurationFactory;
 import io.dropwizard.configuration.DefaultConfigurationFactoryFactory;
 import io.dropwizard.configuration.FileConfigurationSourceProvider;
+import io.dropwizard.core.setup.Environment;
 import io.dropwizard.jackson.Jackson;
-import io.dropwizard.setup.Environment;
+import jakarta.validation.Validation;
+import jakarta.validation.ValidatorFactory;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.modules.GrobidServiceModule;
 import org.hibernate.validator.HibernateValidator;
 
-import javax.validation.Validation;
-import javax.validation.ValidatorFactory;
 
 public class GrobidServiceModuleTest extends GrobidServiceModule {
 
@@ -26,15 +25,15 @@ public class GrobidServiceModuleTest extends GrobidServiceModule {
     }
 
     @Override
-    public void configure(Binder binder) {
-        super.configure(binder);
+    public void configure() {
+        super.configure();
     }
 
 
     @Provides
     @Singleton
     @Override
-    public GrobidServiceConfiguration getConfiguration() {
+    public GrobidServiceConfiguration configuration() {
         ObjectMapper objectMapper = Jackson.newObjectMapper();
 
         ValidatorFactory validatorFactory = Validation
@@ -58,9 +57,9 @@ public class GrobidServiceModuleTest extends GrobidServiceModule {
 
     @Override
     @Provides
-    protected Environment getEnvironment() {
+    protected Environment environment() {
         return new Environment("test-grobid-service-env", new ObjectMapper(), null, new MetricRegistry(),
-                this.getClass().getClassLoader());
+                this.getClass().getClassLoader(), null, configuration());
     }
 
 

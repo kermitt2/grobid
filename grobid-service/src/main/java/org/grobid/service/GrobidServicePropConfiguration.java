@@ -1,7 +1,7 @@
 package org.grobid.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.NotEmpty;
+import jakarta.validation.constraints.NotEmpty;
 
 public class GrobidServicePropConfiguration {
     @NotEmpty
