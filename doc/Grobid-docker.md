@@ -61,7 +61,11 @@ By default, this image runs Deep Learning models for:
 
 - bibliographical parsing (adding 2-4 points in term of F1-score for bibliographical reference parsing and 2-5 points in term of citation context identifications, as compared to CRF-only image)
 
-- affiliation-address parsing
+- affiliation-address parsing,
+
+- segmentation of the bibliographical reference section into individual references,
+
+- parsing of the header metadata.
 
 With a GPU (at least 4GB GPU memory required), the processing runtime is similar as with the CRF-only image with CPU only. 
 
