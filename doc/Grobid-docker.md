@@ -188,6 +188,20 @@ You should see something like:
 
 See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos` with command lines.
 
+### The TensorFlow library was compiled to use SSE4.1 instructions
+
+If after starting the container with **CPU** only (Intel or AMD), the container crashes with an exit code 134 and the message:
+
+```
+The TensorFlow library was compiled to use SSE4.1 instructions, but these aren't available on your machine.
+```
+
+It means that your CPU does not support the extra SSE4.1 instructions needed by TensorFlow. This case doesn't happen with GPU. 
+
+Since TensorFlow 1.6, the library is compiled to use this extra set instructions, because all modern CPU support them (all CPU after 2008) and it speeds up Deep Learning with CPU. However, when using a Virtual Machine, the default VM configuration of the CPU might not include to use these instructions. 
+
+To solve this problem, you need to update the configuration of the CPU in the VM to support SSE4.1, SSE4.3 and AVX extension instruction sets. 
+
 ## Building an image
 
 The following part is normally for development purposes. You can use the official stable docker images from the docker HUB as described above.
