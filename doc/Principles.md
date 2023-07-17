@@ -2,15 +2,15 @@
 
 GROBID is a machine learning library for extracting, parsing, and re-structuring raw documents, in particular PDF, into structured XML/TEI encoded documents and focusing on technical and scientific publications. The goal of GROBID is to facilitate text mining, information extraction, and semantic analysis of scientific publications by transforming them into machine-friendly, structured, and predictable representations. 
 
-In large scale scientific document ingestion tasks, the large majority of documents are only available in PDF (in particular decades of backfiles before the year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negotiations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale.
+In large scale scientific document ingestion tasks, the large majority of documents are only available in PDF (in particular decades of backfiles before the year 2000). Scholar articles are today more frequently available as XML as before, but often require particular agreements and long negotiations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale.
 
 ![Ingesting scientific documents with GROBID](img/ingestion.png)
 
 <p align = "center">
-<b>Fig. 1</b> - Ingesting scientific documents with GROBID
+<b>Fig. 1</b> - Ingesting scientific documents with GROBID, Pub2TEI and LaTeXML
 </p>
 
-To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
+To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML formats to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources without information loss, and support various applications (see __Fig. 1__). Similarly, LaTeX sources (typically all available arXiv sources) can be processed with our fork of [LaTeXML](https://github.com/kermitt2/LaTeXML) to produce a TEI representation compatible with GROBID and Pub2TEI output, without information loss from LaTeXML XML.
 
 The rest of this page gives an overview of the main GROBID design principles. Skip it if you are not interested in the technical details. Functionalities are described in the [User Manual](https://grobid.readthedocs.io/en/latest/). Recent benchmarking are available [here](https://grobid.readthedocs.io/en/latest/Benchmarking/).
 
