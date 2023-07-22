@@ -85,7 +85,7 @@ In practice, the size of GROBID training data is smaller than the ones of CERMIN
 
 As the training data is crafted for accuracy and coverage, training data is strongly biased by undersampling non-edge cases. Or to rephrase it maybe more clearly: the less "informative" training examples, which are the most common ones, are less represented in our training data. Because of this bias, our manually labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separated and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
 
-See the current evaluations with [PubMed Central holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-pmc/) (1,943 documents, 90,125 bibliographical references in 139,835 citation contexts) and [bioarXiv holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-biorxiv/) (2,000 documents, 98,753 bibliographical references in 142,796 citation contexts). 
+See the current evaluations with [PubMed Central holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-pmc/) (1,943 documents, 90,125 bibliographical references in 139,835 citation contexts), [bioarXiv holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-biorxiv/) (2,000 documents, 98,753 bibliographical references in 142,796 citation contexts), [eLife holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-elife/) (984 documents, 63,664 bibliographical references in 109,022 reference contexts) and [PLOS holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-plos/) (1,000 documents, 48,449 bibliographical references in 69,755 reference contexts). 
 
 Our evaluation approach, however, raises two main issues: 
 
@@ -105,7 +105,7 @@ However, these approaches are very promising. In GROBID, it is possible to run B
 
 We develop a tool to process the full scholar literature corpus (several ten million PDF documents), but also to allow interactive usage, e.g. processing the header of a PDF article in sub-second. It's why the default configuration of GROBID is still set to CRF to maintain the ability to process PDF quickly, with commodity hardware, with low memory usage to ensure good parallelization and scalability capacities.
 
-However, if the priority is accuracy, we also make possible custom settings to maximize the accuracy with deep learning models. Using some deep learning models will improve results by a few additional F1-score points (nothing extraordinary to be honest), but at the price of a slower runtime (2 to 5 times slower), the price of a GPU and more limited parallelization. 
+However, if the priority is accuracy, we also make possible custom settings to maximize the accuracy with deep learning models. Using some deep learning models will improve results by a few additional F1-score points (significant for bibliographical extraction and parsing for instance), but at the price of a possible slower runtime (but limited if a GPU is available), the price of a GPU and more limited parallelization. 
 
 ## References
 
