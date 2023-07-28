@@ -2,6 +2,7 @@ package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +12,25 @@ import java.util.List;
  */
 public class Funding {
     private Funder funder = null;
-    private String rawFunderString = null;
     
     // program or call
     private String programFullName = null;
+    private List<LayoutToken> programFullNameLayoutTokens = new ArrayList<>();
+
     private String programAbbreviatedName = null;
+    private List<LayoutToken> programAbbreviatedNameLayoutTokens = new ArrayList<>();
 
     private String grantNumber  = null;
-    private String rawGrantNumber  = null;
+    private List<LayoutToken> grantNumberLayoutTokens = new ArrayList<>();
 
-    private String project = null;
+    private String projectFullName = null;
+    private List<LayoutToken> projectFullNameLayoutTokens = new ArrayList<>();
+
+    private String projectAbbreviatedName = null;
+    private List<LayoutToken> projectAbbreviatedNameLayoutTokens = new ArrayList<>();
+
     private String url = null;
+    private List<LayoutToken> urlLayoutTokens = new ArrayList<>();
 
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
@@ -33,20 +42,20 @@ public class Funding {
         this.funder = funder;
     }
 
-    public String getRawFunderString() {
-        return this.rawFunderString;
-    }
-
-    public void setRawFunderString(String rawFunderString) {
-        this.rawFunderString = rawFunderString;
-    }
-
     public String getProgramFullName() {
         return this.programFullName;
     }
 
     public void setProgramFullName(String programFullName) {
         this.programFullName = programFullName;
+    }
+
+    public void appendProgramFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.programFullNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getProgramFullNameLayoutTokens() {
+        return this.programFullNameLayoutTokens;
     }
 
     public String getProgramAbbreviatedName() {
@@ -57,6 +66,14 @@ public class Funding {
         this.programAbbreviatedName = programAbbreviatedName;
     }
 
+    public void appendProgramAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.programAbbreviatedNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getProgramAbbreviatedNameLayoutTokens() {
+        return this.programAbbreviatedNameLayoutTokens;
+    }
+
     public String getGrantNumber() {
         return this.grantNumber;
     }
@@ -65,20 +82,48 @@ public class Funding {
         this.grantNumber = grantNumber;
     }
 
+    public void appendGrantNumberLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.grantNumberLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getGrantNumberLayoutTokens() {
+        return this.grantNumberLayoutTokens;
+    }
+
     public String getRawGrantNumber() {
-        return this.rawGrantNumber;
+        return LayoutTokensUtil.toText(this.grantNumberLayoutTokens);
     }
 
-    public void setRawGrantNumber(String rawGrantNumber) {
-        this.rawGrantNumber = rawGrantNumber;
+    public String projectFullName() {
+        return this.projectFullName;
     }
 
-    public String getProject() {
-        return this.project;
+    public void setProjectFullName(String project) {
+        this.projectFullName = projectFullName;
     }
 
-    public void setProject(String project) {
-        this.project = project;
+    public void appendProjectFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.projectFullNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getProjectFullNameLayoutTokens() {
+        return this.projectFullNameLayoutTokens;
+    }
+
+    public String projectAbbreviatedName() {
+        return this.projectAbbreviatedName;
+    }
+
+    public void setProjectAbbreviatedName(String project) {
+        this.projectAbbreviatedName = projectAbbreviatedName;
+    }
+
+    public void appendProjectAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.projectAbbreviatedNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getProjectAbbreviatedNameLayoutTokens() {
+        return this.projectAbbreviatedNameLayoutTokens;
     }
 
     public String getUrl() {
@@ -89,11 +134,36 @@ public class Funding {
         this.url = url;
     }
 
+    public void appendUrlLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.urlLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getUrlLayoutTokens() {
+        return this.urlLayoutTokens;
+    }
+
     public List<LayoutToken> getLayoutTokens() {
         return this.layoutTokens;
     }
 
     public void setLayoutTokens(List<LayoutToken> layoutTokens) {
         this.layoutTokens = layoutTokens;
+    }
+
+    public void addLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.layoutTokens.addAll(layoutTokens);
+    }
+
+    public boolean isValid() {
+        if (funder != null || 
+            grantNumber != null || 
+            projectFullName != null || 
+            projectAbbreviatedName != null || 
+            programFullName != null || 
+            programAbbreviatedName != null ||
+            url != null)
+            return true;
+        else
+            return false;
     }
 }

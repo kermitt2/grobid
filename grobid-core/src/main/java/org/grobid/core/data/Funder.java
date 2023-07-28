@@ -13,7 +13,10 @@ import java.util.List;
 
 public class Funder {
     private String fullName = null;
+    private List<LayoutToken> fullNameLayoutTokens = new ArrayList<>();
+
     private String abbreviatedName = null;
+    private List<LayoutToken> abbreviatedNameLayoutTokens = new ArrayList<>();
 
     private String doi = null;
 
@@ -39,12 +42,28 @@ public class Funder {
         this.fullName = fullName;
     }
 
+    public void appendFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.fullNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getFullNameLayoutTokens() {
+        return this.fullNameLayoutTokens;
+    }
+
     public String getAbbreviatedName() {
         return this.abbreviatedName;
     }
 
     public void setAbbreviatedName(String abbreviatedName) {
         this.abbreviatedName = abbreviatedName;
+    }
+
+    public void appendAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.abbreviatedNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getAbbreviatedNameLayoutTokens() {
+        return this.abbreviatedNameLayoutTokens;
     }
 
     public String getDoi() {
@@ -125,5 +144,9 @@ public class Funder {
 
     public void setLayoutTokens(List<LayoutToken> layoutTokens) {
         this.layoutTokens = layoutTokens;
+    }
+
+    public void addLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.layoutTokens.addAll(layoutTokens);
     }
 }
