@@ -112,6 +112,15 @@ public class TaggingLabels {
     public final static String PATENT_CITATION_PL_LABEL = "<refPatent>";
     public final static String PATENT_CITATION_NPL_LABEL = "<refNPL>";
 
+    public final static String FUNDER_FULL_NAME_LABEL = "<funderFull>";
+    public final static String FUNDER_ABBRV_NAME_LABEL = "<funderAbbrv>";
+    public final static String PROGRAM_FULL_NAME_LABEL = "<programFull>";
+    public final static String PROGRAM_ABBRV_NAME_LABEL = "<programAbbrv>";
+    public final static String GRANT_NUMBER_LABEL = "<grantNumber>";
+    public final static String GRANT_NAME_LABEL = "<grantName>";
+    public final static String PROJECT_FULL_NAME_LABEL = "<projectFull>";
+    public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
+    public final static String URL_LABEL = "<url>";
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -251,6 +260,17 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
     
+    public static final TaggingLabel FUNDING_FUNDER_FULL_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, FUNDER_FULL_NAME_LABEL);
+    public static final TaggingLabel FUNDING_FUNDER_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, FUNDER_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_FULL_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROGRAM_FULL_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROGRAM_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.FUNDING, GRANT_NUMBER_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, GRANT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_FULL_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROJECT_FULL_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROJECT_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING, URL_LABEL);
+    public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING, OTHER_LABEL);
+
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -383,6 +403,18 @@ public class TaggingLabels {
         register(MONOGRAPH_GLOSSARY);
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
+
+        // funding
+        register(FUNDING_FUNDER_FULL_NAME);
+        register(FUNDING_FUNDER_ABBRV_NAME);
+        register(FUNDING_PROGRAM_FULL_NAME);
+        register(FUNDING_PROGRAM_ABBRV_NAME);
+        register(FUNDING_GRANT_NUMBER);
+        register(FUNDING_GRANT_NAME);
+        register(FUNDING_PROJECT_FULL_NAME);
+        register(FUNDING_PROJECT_ABBRV_NAME);
+        register(FUNDING_URL);
+        register(FUNDING_OTHER);
     }
 
     protected TaggingLabels() {

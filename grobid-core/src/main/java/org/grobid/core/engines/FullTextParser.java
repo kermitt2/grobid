@@ -1943,7 +1943,7 @@ public class FullTextParser extends AbstractParser {
 
     /**
      * Create training data for the figures as identified by the full text model.
-     * Return the pair (TEI fragment, CRF raw data).
+     * Return the pair (TEI fragment, sequence labeling raw data).
      */
     protected Pair<String,String> processTrainingDataFigures(String rese,
     		List<LayoutToken> tokenizations, String id) {
@@ -1992,7 +1992,7 @@ public class FullTextParser extends AbstractParser {
                     openFigure = true;
                     tokenizationsFigure.addAll(tokenizationsBuffer);
     			}
-    			// we remove the label in the CRF row
+    			// we remove the label in the sequence labeling row
     			int ind = row.lastIndexOf("\t");
     			figureBlock.append(row, 0, ind).append("\n");
     		} else if (label.equals("I-<figure>") || openFigure) {
@@ -2121,7 +2121,7 @@ public class FullTextParser extends AbstractParser {
 
  	/**
      * Create training data for the table as identified by the full text model.
-     * Return the pair (TEI fragment, CRF raw data).
+     * Return the pair (TEI fragment, sequence labeling raw data).
      */
     protected Pair<String,String> processTrainingDataTables(String rese,
     	List<LayoutToken> tokenizations, String id) {
@@ -2170,7 +2170,7 @@ public class FullTextParser extends AbstractParser {
     			if (!openTable) {
     			    openTable = true;
     				tokenizationsTable.addAll(tokenizationsBuffer);    				    }
-    			// we remove the label in the CRF row
+    			// we remove the label in the sequence labeling row
     			int ind = row.lastIndexOf("\t");
     			tableBlock.append(row.substring(0, ind)).append("\n");
     		} else if (label.equals("I-<table>") || openTable) {

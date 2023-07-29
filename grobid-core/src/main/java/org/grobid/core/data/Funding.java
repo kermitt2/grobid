@@ -23,6 +23,9 @@ public class Funding {
     private String grantNumber  = null;
     private List<LayoutToken> grantNumberLayoutTokens = new ArrayList<>();
 
+    private String grantName = null;
+    private List<LayoutToken> grantNameLayoutTokens = new ArrayList<>();
+
     private String projectFullName = null;
     private List<LayoutToken> projectFullNameLayoutTokens = new ArrayList<>();
 
@@ -88,6 +91,22 @@ public class Funding {
 
     public List<LayoutToken> getGrantNumberLayoutTokens() {
         return this.grantNumberLayoutTokens;
+    }
+
+    public String getGrantName() {
+        return this.grantName;
+    }
+
+    public void setGrantName(String grantName) {
+        this.grantName = grantName;
+    }
+
+    public void appendGrantNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.grantNameLayoutTokens.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getGrantNameLayoutTokens() {
+        return this.grantNameLayoutTokens;
     }
 
     public String getRawGrantNumber() {
@@ -157,6 +176,7 @@ public class Funding {
     public boolean isValid() {
         if (funder != null || 
             grantNumber != null || 
+            grantName != null || 
             projectFullName != null || 
             projectAbbreviatedName != null || 
             programFullName != null || 

@@ -430,7 +430,7 @@ public class Segmentation extends AbstractParser {
                         }
                     }
 
-                    // we consider the first token of the line as usual lexical CRF token
+                    // we consider the first token of the line as usual lexical token
                     // and the second token of the line as feature
                     StringTokenizer st2 = new StringTokenizer(line, " \t\f\u00A0");
                     // alternatively, use a grobid analyser
