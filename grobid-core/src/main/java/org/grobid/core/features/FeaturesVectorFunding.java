@@ -97,8 +97,16 @@ public class FeaturesVectorFunding {
         StringBuilder stringBuilder = new StringBuilder();
         FeaturesVectorFunding features = null;
         boolean newline = true;
+
+        int currentFunderPositions = 0;
+        boolean isKnownFunderToken = false;
+        boolean skipTest;
+
         for (int n = 0; n < tokens.size(); n++) {
             boolean outputLineStatus = false;
+            isKnownFunderToken = false;
+            skipTest = false;
+
             LayoutToken token = tokens.get(n);
             String text = token.getText();
             String tag = null;
@@ -146,6 +154,29 @@ public class FeaturesVectorFunding {
 
             features = new FeaturesVectorFunding();
             features.string = text;
+
+            // check the position of matches for known funders
+            if ((funderPositions != null) && (funderPositions.size() > 0)) {
+                if (currentFunderPositions == funderPositions.size() - 1) {
+                    if (funderPositions.get(currentFunderPositions).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentFunderPositions; i < funderPositions.size(); i++) {
+                        if ((funderPositions.get(i).start <= n) &&
+                                (funderPositions.get(i).end >= n)) {
+                            isKnownFunderToken = true;
+                            currentFunderPositions = i;
+                            break;
+                        } else if (funderPositions.get(i).start > n) {
+                            isKnownFunderToken = false;
+                            currentFunderPositions = i;
+                            break;
+                        }
+                    }
+                }
+            }
 
             if (newline) {
                 features.lineStatus = "LINESTART";
@@ -251,6 +282,9 @@ public class FeaturesVectorFunding {
 
             if (features.punctType == null)
                 features.punctType = "NOPUNCT";
+
+            if (isKnownFunderToken)
+                features.knownFunder = true;
 
             if (tag != null)
                 features.label = tag;
