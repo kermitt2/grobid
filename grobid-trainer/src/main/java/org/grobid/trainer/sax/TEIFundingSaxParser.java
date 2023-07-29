@@ -91,7 +91,7 @@ public class TEIFundingSaxParser extends DefaultHandler {
         accumulator.setLength(0);
 
         if (qName.equals("fundingAgency")) {
-            currentTag = "<funderFull>";
+            currentTag = "<funderName>";
         } else if (qName.equals("grantNumber")) {
             currentTag = "<grantNumber>";
         } else if (qName.equals("grantName")) {

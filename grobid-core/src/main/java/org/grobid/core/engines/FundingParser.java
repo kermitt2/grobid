@@ -90,7 +90,7 @@ public class FundingParser extends AbstractParser {
 
             List<LayoutToken> tokens = cluster.concatTokens();
             String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
-            if (clusterLabel.equals(FUNDING_FUNDER_FULL_NAME)) {
+            if (clusterLabel.equals(FUNDING_FUNDER_NAME)) {
                 Funder localFunder = funding.getFunder();
                 if (localFunder == null) {
                     localFunder = new Funder();
