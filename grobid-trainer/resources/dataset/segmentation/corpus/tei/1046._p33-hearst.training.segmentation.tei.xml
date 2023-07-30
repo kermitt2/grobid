@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>TextTiling: Segmenting Text into <lb/>Multi-paragraph Subtopic Passages <lb/>Marti A. Hearst* <lb/>Xerox PARC <lb/>TextTiling is a technique for subdividing texts into multi-paragraph units that represent passages, <lb/>or subtopics. The discourse cues for identifying major subtopic shifts are patterns of lexical <lb/>co-occurrence and distribution. The algorithm is fully implemented and is shown to produce <lb/>segmentation that corresponds well to human judgments of the subtopic boundaries of 12 texts. <lb/>Multi-paragraph subtopic segmentation should be useful for many text analysis tasks, including <lb/>information retrieval and summarization. <lb/></front>

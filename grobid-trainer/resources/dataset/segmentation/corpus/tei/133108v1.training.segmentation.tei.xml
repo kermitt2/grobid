@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Gene annotation bias impedes biomedical research <lb/>Winston A. Haynes 1,2,3 , Aurelie Tomczak 1,2 , and Purvesh Khatri 1,2, * <lb/>1 Stanford Institute for Immunity, Transplantation, and Infection, <lb/>Stanford University, Stanford, California, USA <lb/>2 Stanford Center for Biomedical Informatics Research, Department of Medicine, <lb/>Stanford University, Stanford, California, USA <lb/>3 Biomedical Informatics Training Program, <lb/>Stanford University, Stanford, California, USA <lb/> * To whom correspondence should be addressed; E-mail: pkhatri@stanford.edu <lb/>1 Abstract <lb/>We found tremendous inequality across gene and protein annotation resources. We observe that <lb/>this bias leads biomedical researchers to focus on richly annotated genes instead of those with <lb/>the strongest molecular data. We advocate for researchers to reduce these biases by pursuing <lb/>data-driven hypotheses. <lb/></front>

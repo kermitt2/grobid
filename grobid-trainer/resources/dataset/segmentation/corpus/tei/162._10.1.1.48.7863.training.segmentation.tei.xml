@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Mathematical Programming in Machine Learning <lb/>O. L. Mangasarian y <lb/>Mathematical Programming Technical Report 95-06 <lb/>April 1995{Revised July 1995 <lb/>Abstract <lb/>We describe in this work a number of central problems of machine learning and <lb/>show how they can be modeled and solved as mathematical programs of various <lb/>complexity. <lb/></front>

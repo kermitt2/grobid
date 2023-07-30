@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>A SIMPLE DERIVATION OF BV BOUNDS FOR INHOMOGENEOUS <lb/>RELAXATION SYSTEMS * <lb/>BENO ÎT PERTHAME † , NICOLAS SEGUIN ‡ , AND MAGALI TOURNUS § <lb/>Abstract. We consider relaxation systems of transport equations with heterogeneous source <lb/>terms and with boundary conditions, which limits are scalar conservation laws. Classical bounds fail <lb/>in this context and in particular BV estimates. They are the most standard and simplest way to <lb/>prove compactness and convergence. <lb/>We provide a novel and simple method to obtain partial BV regularity and strong compactness <lb/>in this framework. The standard notion of entropy is not convenient either and we also indicate <lb/>another, but closely related, notion. We give two examples motivated by renal flows which consist <lb/>of 2 by 2 and 3 by 3 relaxation systems with 2-velocities but the method is more general. <lb/>Key words. Hyperbolic relaxation; spatial heterogeneity; entropy condition; boundary condi-<lb/>tions; strong compactness. <lb/>Subject classifications. 35L03, 35L60, 35B40, 35Q92 <lb/></front>

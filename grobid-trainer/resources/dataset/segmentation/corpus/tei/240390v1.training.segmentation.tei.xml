@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>December 27, 2017 <lb/>High-to low-level decoding does not generally <lb/>improve perceptual performance <lb/>Long Luu*, Cheng Qiu*, and Alan A. Stocker <lb/>University of Pennsylvania <lb/>*: joint first authors <lb/>Ding et al. (1) recently proposed that the brain automatically encodes high-level, <lb/>relative stimulus information (i.e. the ordinal relation between two lines), which it then <lb/>uses to constrain the decoding of low-level, absolute stimulus features (i.e. when <lb/>recalling the actual lines orientation). This is an interesting idea that is in line with the <lb/>self-consistent Bayesian observer model (2, 3) and may have important implications for <lb/>understanding how the brain processes sensory information. However, the notion <lb/>suggested in Ding et al. (1) that the brain uses this decoding strategy because it <lb/>improves perceptual performance is misleading. Here we clarify the decoding model <lb/>and compare its perceptual performance under various noise and signal conditions. <lb/></front>

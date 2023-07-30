@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>arXiv:0808.0453v1 [hep-ex] 4 Aug 2008 <lb/>Z 0 Boson Measurement with the ALICE Central Barrel <lb/>in pp collisions at 14 TeV <lb/>R. Bailhache 1 , A. Andronic 1 , and P.Braun-Munzinger 1,2 <lb/>for the ALICE Collaboration <lb/>1 Gesellschaft fuer Schwerionenforschung mbH, Darmstadt, Germany and <lb/>2 Technische Universitaet Darmstadt, Germany <lb/> The possibility to detect the Z 0 in the ALICE central barrel is studied via the electronic <lb/>decay channel Z 0 →e + e − . The signal and the background are simulated with the leading <lb/>order event generator PYTHIA 6. The total cross-sections are taken from NLO calculations. <lb/>Based on test beam data, the electron identification performance of the Transition Radia-<lb/>tion Detector is extrapolated to high momenta. The expected yields for minimum-bias pp <lb/>collisions at 14 TeV are presented. An isolation cut on the single electron, together with a <lb/>minimum transverse momentum cut, allows to obtain a clear signal. The expected back-<lb/>ground is of the order of 1 % with the main contribution coming from misidentified pions <lb/>from jets. <lb/></front>

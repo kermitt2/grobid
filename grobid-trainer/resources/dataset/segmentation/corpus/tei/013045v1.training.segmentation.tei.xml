@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>FORGE : A tool to discover cell specific enrichments of GWAS associated SNPs in <lb/>regulatory regions. <lb/>Ian Dunham, Eugene Kulesha, Valentina Iotchkova, Sandro Morganella and Ewan <lb/>Birney <lb/>European Molecular Biology Laboratory <lb/>European Bioinformatics Institute (EMBL-EBI) <lb/>Wellcome Trust Genome Campus <lb/>Hinxton <lb/>Cambridge CB10 1SD <lb/>United Kingdom <lb/></front>

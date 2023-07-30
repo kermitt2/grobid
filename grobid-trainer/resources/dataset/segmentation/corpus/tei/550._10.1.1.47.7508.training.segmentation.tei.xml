@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="-1"/>
+		<fileDesc xml:id="_-1"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> Submitted to the Future Generation Computer Systems special issue on Data Mining. <lb/> Using Neural Networks for Data Mining <lb/> Mark W. Craven <lb/>School of Computer Science <lb/>Carnegie Mellon University <lb/>Pittsburgh, PA 15213-3891 <lb/> mark.craven@cs.cmu.edu <lb/> Jude W. Shavlik <lb/>Computer Sciences Department <lb/>University of Wisconsin-Madison <lb/>Madison, WI 53706-1685 <lb/> shavlik@cs.wisc.edu <lb/> Abstract <lb/> Neural networks have been successfully applied in a wide range of supervised and unsuper-<lb/>vised learning applications. Neural-network methods are not commonly used for data-mining <lb/>tasks, however, because they often produce incomprehensible models and require long training <lb/>times. In this article, we describe neural-network learning algorithms that are able to produce <lb/>comprehensible models, and that do not require excessive training times. Speciically, we discuss <lb/>two classes of approaches for data mining with neural networks. The 񮽙rst type of approach, <lb/>often called rule extraction, involves extracting symbolic models from trained neural networks. <lb/>The second approach is to directly learn simple, easy-to-understand networks. We argue that, <lb/>given the current state of the art, neural-network methods deserve a place in the tool boxes of <lb/>data-mining specialists. <lb/> Keywords: machine learning, neural networks, rule extraction, comprehensible <lb/>models, decision trees, perceptrons <lb/></front> 

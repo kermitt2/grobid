@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>University of Maryland <lb/>College Park <lb/>Institute for Advanced Computer Studies <lb/>TR{95{93 <lb/>Department of Computer Science <lb/>TR{3535 <lb/>On the Perturbation of <lb/>LU and Cholesky Factors <lb/>G. W. Stewart y <lb/>October, 1995 <lb/>ABSTRACT <lb/>In a recent paper, Chang and Paige have shown that the usual per-<lb/>turbation bounds for Cholesky factors can systematically overestimate <lb/>the errors. In this note we sharpen their results and extend them to <lb/>the factors of the LU decomposition. The results are based on a new <lb/>formula for the rst order terms of the error in the factors. <lb/>This report is available by anonymous ftp from thales.cs.umd.edu in the directory <lb/>pub/reports. <lb/>y Department of Computer Science and Institute for Advanced Computer Studies, University <lb/>of Maryland, College Park, MD 20742. This work was supported in part by the National Science <lb/>Foundation under grant CCR 95503126. <lb/></titlePage>

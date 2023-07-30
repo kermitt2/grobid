@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_Mori_et_al_Bone"/>
+		<fileDesc xml:id="__Mori_et_al_Bone"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<page> 1 <lb/></page>

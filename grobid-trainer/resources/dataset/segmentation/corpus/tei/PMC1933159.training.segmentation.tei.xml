@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Nucleic Acids Research, 2007, Vol. 35, Web Server issue W325-W329 <lb/>doi:10.1093/nar/gkm303 <lb/>taveRNA: a web suite for RNA algorithms and <lb/>applications <lb/>Cagri Aksay 1 , Raheleh Salari 1 , Emre Karakoc 1 , Can Alkan 2 and S. Cenk Sahinalp 1, * <lb/>1 Lab for Computational Biology, SFU, Canada and 2 Department of Genome Sciences, University of Washington <lb/>Received January 31, 2007; Revised April 3, 2007; Accepted April 14, 2007 <lb/>ABSTRACT <lb/>We present taveRNA, a web server package that <lb/>hosts three RNA web services: alteRNA, inteRNA <lb/>and pRuNA. alteRNA is a new alternative for RNA <lb/>secondary structure prediction. It is based on <lb/>a dynamic programming solution that minimizes <lb/>the sum of energy density and free energy of an <lb/>RNA structure. inteRNA is the first RNA-RNA <lb/>interaction structure prediction web service. It also <lb/>employs a dynamic programming algorithm to <lb/>minimize the free energy of the resulting joint <lb/>structure of the two interacting RNAs. Lastly, <lb/>pRuNA is an efficient database pruning service; <lb/>which given a query RNA, eliminates a significant <lb/>portion of an ncRNA database and returns only <lb/>a few ncRNAs as potential regulators. taveRNA is <lb/>available at http://compbio.cs.sfu.ca/taverna. <lb/></front>

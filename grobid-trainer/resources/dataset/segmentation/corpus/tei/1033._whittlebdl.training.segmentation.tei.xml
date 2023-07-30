@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>hal-00126489, version 1 -25 Jan 2007 <lb/>Uniform limit theorems for the integrated periodogram of weakly <lb/>dependent time series and their applications to Whittle&apos;s estimate <lb/>Jean-Marc Bardet a * , Paul Doukhan ab , José Rafael León c † <lb/>a SAMOS-MATISSE-CES, Université Paris I, 90 rue de Tolbiac, 75013 Paris, FRANCE <lb/>bardet@univ-paris1.fr <lb/>b LS-CREST, Timbre J340, 3 avenue Pierre Larousse, 92240 Malakoff, FRANCE <lb/>doukhan@ensae.fr <lb/>c Universidad Central de Venezuela, Escuela de Matemática. <lb/>Ap. 47197 Los Chaguaramos, Caracas 1041-A VENEZUELA <lb/>jleon@euler.ciens.ucv.ve <lb/>Abstract <lb/>We prove uniform convergence results for the integrated periodogram of a weakly dependent time series, <lb/>namely a law of large numbers and a central limit theorem. These results are applied to Whittle&apos;s parametric <lb/>estimation. Under general weak-dependence assumptions we derive uniform limit theorems and asymptotic <lb/>normality of Whittle&apos;s estimate for a large class of models. For instance the causal θ-weak dependence <lb/>property allows a new and unified proof of those results for ARCH(∞) and bilinear processes. Non causal <lb/>η-weak dependence yields the same limit theorems for two-sided linear (with dependent inputs) or Volterra <lb/>processes. <lb/>Key words: Periodogram, Weak dependence, Whittle estimate. <lb/>AMS Subject Classification: 60F17, 60F25, 62M09, 62M10, 62M15. <lb/>Running title: Uniform limit theorems for the integrated periodogram and Whittle&apos;s estimate. <lb/></front>

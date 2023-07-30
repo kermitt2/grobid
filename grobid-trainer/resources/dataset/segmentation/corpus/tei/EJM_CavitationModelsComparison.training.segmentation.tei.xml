@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_EJM_CavitationModelsComparison"/>
+		<fileDesc xml:id="__EJM_CavitationModelsComparison"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> A comparative study of cavitation models in a Venturi <lb/>flow <lb/> Boris Charì ere  a  , Jean Decaix  b  , Eric Goncalv es  a, § <lb/> a <lb/> LEGI -University of Grenoble, 1025 rue de la Piscine, 38400 St Martin d&apos;Heres, France <lb/> b <lb/> University of Applied Sciences, Western Switzerland, CH-1950 Sion <lb/> Abstract <lb/> This paper presents a numerical study of an aperiodic cavitation pocket <lb/>developing in a Venturi flow. The mass transfer between phases is driven <lb/>by a void ratio transport equation model. A new free-parameter closure <lb/>relation is proposed and compared with other formulations. The re-entrant <lb/>jet development, void ratio profiles and pressure fluctuations are analyzed to <lb/>discern results accuracy. Comparisons with available experimental data are <lb/>done and good agreement is achieved. <lb/> Keywords: Cavitation, Mass transfer, Homogeneous model, RANS <lb/>simulation <lb/> Nomenclature <lb/> c <lb/> speed of sound <lb/> C  p  , C  v <lb/> thermal capacities <lb/> E <lb/> total energy <lb/> e <lb/> internal energy <lb/>  § <lb/> Corresponding author <lb/> Email address: eric.goncalves@legi.grenoble-inp.fr (Eric Goncalv es ) <lb/> Preprint submitted to Elsevier <lb/>January 8, 2014 <lb/></front>
