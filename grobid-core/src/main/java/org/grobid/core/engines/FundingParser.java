@@ -98,17 +98,71 @@ public class FundingParser extends AbstractParser {
                 }
 
                 if (StringUtils.isNotBlank(localFunder.getFullName())) {
-                    fundings.add(funding);
-                    // next funding object
-                    funding = new Funding();
-                    localFunder = new Funder();
-                    funding.setFunder(localFunder);
+                    if (funding.isValid()) {
+                        fundings.add(funding);
+                        // next funding object
+                        funding = new Funding();
+                        localFunder = new Funder();
+                        funding.setFunder(localFunder);
+                    }
                 }
 
                 localFunder.setFullName(clusterContent);
                 localFunder.appendFullNameLayoutTokens(tokens);
                 localFunder.addLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
+            } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
+                if (StringUtils.isNotBlank(funding.getGrantName())) {
+                    if (funding.isValid()) {
+                        fundings.add(funding);
+                        // next funding object
+                        funding = new Funding();
+                    }
+                }
+
+                funding.setGrantName(clusterContent);
+                funding.appendGrantNameLayoutTokens(tokens);
+                funding.addLayoutTokens(tokens);
+
+            } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
+                if (StringUtils.isNotBlank(funding.getGrantNumber())) {
+                    if (funding.isValid()) {
+                        fundings.add(funding);
+                        // next funding object
+                        funding = new Funding();
+                    }
+                }
+
+                funding.setGrantNumber(clusterContent);
+                funding.appendGrantNumberLayoutTokens(tokens);
+                funding.addLayoutTokens(tokens);
+
+            } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
+                if (StringUtils.isNotBlank(funding.getProgramFullName())) {
+                    if (funding.isValid()) {
+                        fundings.add(funding);
+                        // next funding object
+                        funding = new Funding();
+                    }
+                }
+
+                funding.setProgramFullName(clusterContent);
+                funding.appendProgramFullNameLayoutTokens(tokens);
+                funding.addLayoutTokens(tokens);
+
+            } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
+                if (StringUtils.isNotBlank(funding.getProjectFullName())) {
+                    if (funding.isValid()) {
+                        fundings.add(funding);
+                        // next funding object
+                        funding = new Funding();
+                    }
+                }
+
+                funding.setProjectFullName(clusterContent);
+                funding.appendProjectFullNameLayoutTokens(tokens);
+                funding.addLayoutTokens(tokens);
+
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }

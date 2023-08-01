@@ -109,11 +109,7 @@ public class Funding {
         return this.grantNameLayoutTokens;
     }
 
-    public String getRawGrantNumber() {
-        return LayoutTokensUtil.toText(this.grantNumberLayoutTokens);
-    }
-
-    public String projectFullName() {
+    public String getProjectFullName() {
         return this.projectFullName;
     }
 
