@@ -16,11 +16,11 @@ import java.util.List;
 import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
 /**
- * SAX parser for funding sequences encoded in the TEI format data.
+ * SAX parser for funding and acknowledgement sequences encoded in the TEI format data.
  *
  * @author Patrice Lopez
  */
-public class TEIFundingSaxParser extends DefaultHandler {
+public class TEIFundingAcknowledgementSaxParser extends DefaultHandler {
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
 
@@ -32,7 +32,7 @@ public class TEIFundingSaxParser extends DefaultHandler {
     private List<List<LayoutToken>> allTokens = null; // list of LayoutToken segmentation
     public int nbFundings = 0;
 
-    public TEIFundingSaxParser() {
+    public TEIFundingAcknowledgementSaxParser() {
         allTokens = new ArrayList<List<LayoutToken>>();
         allLabeled = new ArrayList<List<String>>();
     }
@@ -56,7 +56,7 @@ public class TEIFundingSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if (( (qName.equals("fundingAgency")) || (qName.equals("grantName")) || (qName.equals("grantNumber")) || (qName.equals("projectName")) || 
+        if (( (qName.equals("funder")) || (qName.equals("grantName")) || (qName.equals("grantNumber")) || (qName.equals("projectName")) || 
               (qName.equals("programName")) || (qName.equals("individual")) || (qName.equals("institution")) || (qName.equals("affiliation"))
             ) & (currentTag != null)) {
             String text = getText();
@@ -90,7 +90,7 @@ public class TEIFundingSaxParser extends DefaultHandler {
         }
         accumulator.setLength(0);
 
-        if (qName.equals("fundingAgency")) {
+        if (qName.equals("funder")) {
             currentTag = "<funderName>";
         } else if (qName.equals("grantNumber")) {
             currentTag = "<grantNumber>";
@@ -102,6 +102,12 @@ public class TEIFundingSaxParser extends DefaultHandler {
             currentTag = "<projectName>";
         } else if (qName.equals("url")) {
             currentTag = "<url>";
+        } else if (qName.equals("individual")) {
+            currentTag = "<person>";
+        } else if (qName.equals("institution")) {
+            currentTag = "<institution>";
+        } else if (qName.equals("affiliation")) {
+            currentTag = "<affiliation>";
         } else if (qName.equals("funding") || qName.equals("acknowledgment") ) {
             accumulator = new StringBuffer();
             labeled = new ArrayList<String>();

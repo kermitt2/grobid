@@ -182,4 +182,25 @@ public class Funding {
         else
             return false;
     }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        if (funder != null)
+            builder.append("funder: " + funder.toString() + "\n");
+        if (grantName != null)
+            builder.append("grant name: " + grantName.toString() + "\n");
+        if (grantNumber != null)
+            builder.append("grant number: " + grantNumber.toString() + "\n");
+        if (projectFullName != null)
+            builder.append("project name: " + projectFullName.toString() + "\n");
+        if (projectAbbreviatedName != null)
+            builder.append("project abbreviated name: " + projectAbbreviatedName.toString() + "\n");
+        if (programFullName != null)
+            builder.append("program name: " + programFullName.toString() + "\n");
+        if (programAbbreviatedName != null)
+            builder.append("program abbreviated name: " + programAbbreviatedName.toString() + "\n");
+        if (url != null)
+            builder.append("url: " + url.toString() + "\n");
+        return builder.toString();
+    }
 }

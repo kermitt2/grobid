@@ -121,6 +121,7 @@ public class TaggingLabels {
     public final static String PROJECT_NAME_LABEL = "<projectName>";
     public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
     public final static String URL_LABEL = "<url>";
+    public final static String PERSON_LABEL = "<person>";
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -260,16 +261,19 @@ public class TaggingLabels {
     public static final TaggingLabel MONOGRAPH_BACK = new TaggingLabelImpl(GrobidModels.MONOGRAPH, BACK_LABEL);
     public static final TaggingLabel MONOGRAPH_OTHER = new TaggingLabelImpl(GrobidModels.MONOGRAPH, OTHER_LABEL);
     
-    public static final TaggingLabel FUNDING_FUNDER_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, FUNDER_NAME_LABEL);
-    public static final TaggingLabel FUNDING_FUNDER_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, FUNDER_ABBRV_NAME_LABEL);
-    public static final TaggingLabel FUNDING_PROGRAM_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROGRAM_NAME_LABEL);
-    public static final TaggingLabel FUNDING_PROGRAM_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROGRAM_ABBRV_NAME_LABEL);
-    public static final TaggingLabel FUNDING_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.FUNDING, GRANT_NUMBER_LABEL);
-    public static final TaggingLabel FUNDING_GRANT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, GRANT_NAME_LABEL);
-    public static final TaggingLabel FUNDING_PROJECT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROJECT_NAME_LABEL);
-    public static final TaggingLabel FUNDING_PROJECT_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING, PROJECT_ABBRV_NAME_LABEL);
-    public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING, URL_LABEL);
-    public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING, OTHER_LABEL);
+    public static final TaggingLabel FUNDING_FUNDER_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_NAME_LABEL);
+    public static final TaggingLabel FUNDING_FUNDER_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NUMBER_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, URL_LABEL);
+    public static final TaggingLabel FUNDING_PERSON = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PERSON_LABEL);
+    public static final TaggingLabel FUNDING_INSTITUTION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INSTITUTION_LABEL);
+    public static final TaggingLabel FUNDING_AFFILIATION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, AFFILIATION_LABEL);
+    public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, OTHER_LABEL);
 
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
@@ -404,7 +408,7 @@ public class TaggingLabels {
         register(MONOGRAPH_BACK);
         register(MONOGRAPH_OTHER);
 
-        // funding
+        // funding-acknowledgement
         register(FUNDING_FUNDER_NAME);
         register(FUNDING_FUNDER_ABBRV_NAME);
         register(FUNDING_PROGRAM_NAME);
@@ -414,6 +418,9 @@ public class TaggingLabels {
         register(FUNDING_PROJECT_NAME);
         register(FUNDING_PROJECT_ABBRV_NAME);
         register(FUNDING_URL);
+        register(FUNDING_PERSON);
+        register(FUNDING_AFFILIATION);
+        register(FUNDING_INSTITUTION);
         register(FUNDING_OTHER);
     }
 

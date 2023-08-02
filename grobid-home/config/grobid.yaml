@@ -237,7 +237,7 @@ grobid:
         epsilon: 0.0001
         window: 20
 
-    - name: "funding"
+    - name: "funding-acknowledgement"
       engine: "wapiti"
       #engine: "delft"
       wapiti:

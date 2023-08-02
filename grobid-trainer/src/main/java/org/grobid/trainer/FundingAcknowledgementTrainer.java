@@ -4,9 +4,9 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorFunding;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.trainer.sax.TEIFundingSaxParser;
+import org.grobid.trainer.sax.TEIFundingAcknowledgementSaxParser;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.engines.FundingParser;
+import org.grobid.core.engines.FundingAcknowledgementParser;
 import org.grobid.core.features.FeaturesVectorFunding;
 
 import javax.xml.parsers.SAXParser;
@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class FundingTrainer extends AbstractTrainer {
+public class FundingAcknowledgementTrainer extends AbstractTrainer {
 
-    public FundingTrainer() {
-        super(GrobidModels.FUNDING);
+    public FundingAcknowledgementTrainer() {
+        super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
     /**
@@ -37,7 +37,7 @@ public class FundingTrainer extends AbstractTrainer {
     }
 
     /**
-     * Add the selected features to annotated funding statements
+     * Add the selected features to annotated funding statements and acknowledged entities
      *
      * @param corpusDir
      *            a path where corpus files are located
@@ -102,7 +102,7 @@ public class FundingTrainer extends AbstractTrainer {
                 String name = teifile.getName();
                 //System.out.println(name);
 
-                final TEIFundingSaxParser parser = new TEIFundingSaxParser();
+                final TEIFundingAcknowledgementSaxParser parser = new TEIFundingAcknowledgementSaxParser();
 
                 // get a new instance of parser
                 final SAXParser p = spf.newSAXParser();
@@ -157,7 +157,7 @@ public class FundingTrainer extends AbstractTrainer {
      */
     public static void main(String[] args) throws Exception {
         GrobidProperties.getInstance();
-        FundingTrainer trainer = new FundingTrainer();
+        FundingAcknowledgementTrainer trainer = new FundingAcknowledgementTrainer();
 
         AbstractTrainer.runTraining(trainer);
         System.out.println(AbstractTrainer.runEvaluation(trainer));

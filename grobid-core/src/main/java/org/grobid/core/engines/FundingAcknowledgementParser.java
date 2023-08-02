@@ -37,12 +37,12 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import static org.grobid.core.engines.label.TaggingLabels.*;
 
-public class FundingParser extends AbstractParser {
+public class FundingAcknowledgementParser extends AbstractParser {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FundingParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FundingAcknowledgementParser.class);
 
-    protected FundingParser() {
-        super(GrobidModels.FUNDING);
+    protected FundingAcknowledgementParser() {
+        super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
     /**
@@ -76,7 +76,7 @@ public class FundingParser extends AbstractParser {
         // first funding
         Funding funding = new Funding();
         
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING, result, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, result, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         TaggingLabel previousLabel = null;
 

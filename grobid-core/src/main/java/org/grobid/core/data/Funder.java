@@ -149,4 +149,13 @@ public class Funder {
     public void addLayoutTokens(List<LayoutToken> layoutTokens) {
         this.layoutTokens.addAll(layoutTokens);
     }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        if (fullName != null)
+            builder.append(fullName);
+        if (abbreviatedName != null)
+            builder.append(abbreviatedName);
+        return builder.toString();
+    }
 }

@@ -15,6 +15,8 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Figure;
 import org.grobid.core.data.Table;
 import org.grobid.core.data.Equation;
+import org.grobid.core.data.Funding;
+import org.grobid.core.data.Funder;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -1909,7 +1911,7 @@ public class FullTextParser extends AbstractParser {
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
-            Figure result = parsers.getFigureParser().processing(
+            Figure result = this.parsers.getFigureParser().processing(
                     tokenizationFigure,
                     cluster.getFeatureBlock()
             );
@@ -2470,6 +2472,42 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
 			tei.append("\t\t<back>\n");
 
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+
+                List<Funding> fundings = this.parsers.getFundingAcknowledgementParser().processing(headerFundingTokens);
+                for (Funding funding : fundings) {
+                    System.out.println(funding.toString());
+                }
+
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    tei.append(fundingStmt.toString());
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                resCitations,
+                config);
+            if (fundingStmt.length() > 0) {
+                tei.append(fundingStmt);
+            }
+
 			// acknowledgement is in the back
             StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
                 teiFormatter, resCitations, config);
@@ -2506,36 +2544,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 config);
             if (availabilityStmt.length() > 0) {
                 tei.append(availabilityStmt.toString());
-            }
-
-            // funding in header
-            StringBuilder fundingStmt = new StringBuilder();
-            if (StringUtils.isNotBlank(resHeader.getFunding())) {
-                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
-                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
-                if (headerFundingProcessed != null) {
-                    fundingStmt = teiFormatter.processTEIDivSection("funding",
-                        "\t\t\t",
-                        headerFundingProcessed.getLeft(),
-                        headerFundingProcessed.getRight(),
-                        resCitations,
-                        config);
-                }
-                if (fundingStmt.length() > 0) {
-                    tei.append(fundingStmt.toString());
-                }
-            }
-
-            // funding statements in non-header part
-            fundingStmt = getSectionAsTEI("funding",
-                "\t\t\t",
-                doc,
-                SegmentationLabels.FUNDING,
-                teiFormatter,
-                resCitations,
-                config);
-            if (fundingStmt.length() > 0) {
-                tei.append(fundingStmt);
             }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
