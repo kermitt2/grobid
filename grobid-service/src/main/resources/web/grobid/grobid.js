@@ -1543,7 +1543,16 @@ var grobid = (function($) {
 			createInputFile3(selected);
 			$('#consolidateBlock3').show();
 			setBaseUrl('citationPatentAnnotations');
-		}
+		} else if (selected == 'processFundingAcknowledgement') {
+            createInputTextArea('text');
+            $('#consolidateBlock1').hide();
+            $('#consolidateBlock2').hide();
+            $('#includeRawAffiliationsBlock').hide();
+            $('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').show();
+            $('#teiCoordinatesBlock').hide();
+            setBaseUrl('processFundingAcknowledgement');
+        }
 	}
 
 	function createInputFile(selected) {

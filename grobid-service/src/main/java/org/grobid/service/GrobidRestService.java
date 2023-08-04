@@ -45,7 +45,7 @@ public class GrobidRestService implements GrobidPaths {
     private static final String DATE = "date";
     private static final String AFFILIATIONS = "affiliations";
     public static final String CITATION = "citations";
-//    private static final String TEXT = "text";
+    private static final String TEXT = "text";
     private static final String SHA1 = "sha1";
     private static final String XML = "xml";
     public static final String INPUT = "input";
@@ -740,7 +740,7 @@ public class GrobidRestService implements GrobidPaths {
 
     @Path(PATH_REFERENCES_PDF_ANNOTATION)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response processPDFReferenceAnnotation(
         @FormDataParam(INPUT) InputStream inputStream,
@@ -757,7 +757,7 @@ public class GrobidRestService implements GrobidPaths {
     
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response annotatePDFPatentCitation(
         @FormDataParam(INPUT) InputStream inputStream,
@@ -780,12 +780,23 @@ public class GrobidRestService implements GrobidPaths {
         this.restProcessString = restProcessString;
     }
 
+    @Path(PATH_FUNDING_ACKNOWLEDGEMENT)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
+    @POST
+    public Response processFundingAcknowledgementPost(@FormParam(TEXT) String text,
+        @DefaultValue("0") @FormParam("generateIDs") String generateIDs,
+        @DefaultValue("0") @FormParam("segmentSentences") String segmentSentences) {
+        boolean generate = validateGenerateIdParam(generateIDs);
+        boolean segment = validateGenerateIdParam(segmentSentences);
+        return restProcessString.processFundingAcknowledgement(text, generate, segment);
+    }
 
     // API for training
 
     @Path(PATH_MODEL_TRAINING)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response trainModel(@FormParam("model") String model,
                                @DefaultValue("crf") @FormParam("architecture") String architecture,
@@ -799,7 +810,7 @@ public class GrobidRestService implements GrobidPaths {
 
     @Path(PATH_TRAINING_RESULT)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response resultTraining(@FormParam("token") String token) {
         return restProcessTraining.resultTraining(token);
