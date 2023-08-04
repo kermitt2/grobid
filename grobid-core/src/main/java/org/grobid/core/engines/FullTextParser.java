@@ -2477,10 +2477,10 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             if (StringUtils.isNotBlank(resHeader.getFunding())) {
                 List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
 
-                List<Funding> fundings = this.parsers.getFundingAcknowledgementParser().processing(headerFundingTokens);
+                /*List<Funding> fundings = this.parsers.getFundingAcknowledgementParser().processing(headerFundingTokens);
                 for (Funding funding : fundings) {
                     System.out.println(funding.toString());
-                }
+                }*/
 
                 Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
                 if (headerFundingProcessed != null) {

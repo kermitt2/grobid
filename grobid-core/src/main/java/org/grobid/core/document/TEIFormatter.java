@@ -1199,13 +1199,6 @@ public class TEIFormatter {
         String result = contentBuffer.toString();
         String[] resultAsArray = result.split("\n");
 
-        /*buffer2 = toTEITextPiece(buffer2, reseAcknowledgement, null, bds, false,
-                new LayoutTokenization(tokenizationsAcknowledgement), null, null, null,
-            null, null,  doc, config);
-        String acknowResult = buffer2.toString();
-        String[] acknowResultLines = acknowResult.split("\n");*/
-
-        boolean extraDiv = false;
         if (resultAsArray.length != 0) {
             for (int i = 0; i < resultAsArray.length; i++) {
                 if (resultAsArray[i].trim().length() == 0)

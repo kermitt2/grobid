@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.Triple;
 
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
@@ -8,6 +9,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.ChemicalEntity;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.Funding;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -1075,6 +1077,29 @@ public class Engine implements Closeable {
         }
 
         return accumulated.toString();
+    }
+
+    /**
+     * Process a text corresponding to a funding and/or acknowledgement section 
+     * and retun the extracted entities as JSON annotations
+     */
+    public String processFundingAcknowledgement(String text, GrobidAnalysisConfig config) throws Exception {
+        StringBuilder result = new StringBuilder();
+
+        try {
+            Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                parsers.getFundingAcknowledgementParser().processing(text, config);
+
+            if (localResult == null || localResult.getLeft() == null) 
+                result.append(text);
+            else
+                result.append(localResult.getLeft()); 
+
+        } catch (final Exception exp) {
+            throw new GrobidException("An exception occured while running Grobid funding-acknowledgement model.", exp);
+        }
+
+        return result.toString();
     }
 
     @Override

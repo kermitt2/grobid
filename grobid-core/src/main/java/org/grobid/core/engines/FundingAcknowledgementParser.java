@@ -4,8 +4,11 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.Funding;
 import org.grobid.core.data.Funder;
+import org.grobid.core.data.Person;
+import org.grobid.core.data.Affiliation;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
@@ -20,6 +23,8 @@ import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,10 +37,19 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
-import org.apache.commons.lang3.tuple.Pair;
+import nu.xom.Attribute;
+import nu.xom.Element;
+import nu.xom.Node;
+import nu.xom.Text;
 
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.Triple;
+
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.grobid.core.engines.label.TaggingLabels.*;
+import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
+import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
+import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 
 public class FundingAcknowledgementParser extends AbstractParser {
 
@@ -45,21 +59,15 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
-    /**
-     * The processing here is called from the header and/or full text parser in cascade
-     * when one of these higher-level model detect a "funding" section, or in case
-     * no funding section is found, when a acknolwedgements section is detected.
-     * 
-     * Independently from the place this parser is called, it process the input sequence 
-     * of layout tokens in a context free manner. 
-     */
-    public List<Funding> processing(List<LayoutToken> tokenizationFunding) {
+    private Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+        processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
         if (tokenizationFunding == null || tokenizationFunding.size() == 0)
             return null;
         String res;
         try {
             String featureVector = FeaturesVectorFunding.addFeatures(tokenizationFunding, null);
             res = label(featureVector);
+            System.out.println(res);
         } catch (Exception e) {
             throw new GrobidException("CRF labeling with table model fails.", e);
         }
@@ -70,15 +78,53 @@ public class FundingAcknowledgementParser extends AbstractParser {
         return getExtractionResult(tokenizationFunding, res);
     }
 
-    private List<Funding> getExtractionResult(List<LayoutToken> tokenizations, String result) {
+    /**
+     * For convenience, a processing method taking a raw string as input. 
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     **/
+    public Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
+                               GrobidAnalysisConfig config) {
+        text = UnicodeUtil.normaliseText(text);
+        List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        return processing(tokenizationFunding, config);
+    }
+
+    /**
+     * The processing here is called from the header and/or full text parser in cascade
+     * when one of these higher-level model detect a "funding" section, or in case
+     * no funding section is found, when a acknolwedgements section is detected.
+     * 
+     * Independently from the place this parser is called, it process the input sequence 
+     * of layout tokens in a context free manner. 
+     * 
+     * The expected input here is a paragraph.
+     * 
+     * Return an XML fragment with inline annotations of the input text, together with 
+     * extracted normalized entities. These entities are referenced by the inline 
+     * annotations with the usual @target attribute pointing to xml:id. 
+     */
+    private Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+            getExtractionResult(List<LayoutToken> tokenizations, String result) {
         List<Funding> fundings = new ArrayList<>();
-      
-        // first funding
+        List<Person> persons = new ArrayList<>();
+        List<Affiliation> affiliations = new ArrayList<>();
+        List<Affiliation> institutions = new ArrayList<>();
+
+        // current funding
         Funding funding = new Funding();
+
+        // current person
+        Person person = new Person();
         
+        // current organization
+        Affiliation affiliation = new Affiliation();
+        Affiliation institution = new Affiliation();
+
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, result, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         TaggingLabel previousLabel = null;
+
+        Element curParagraph = teiElement("p");
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
@@ -89,7 +135,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
             Engine.getCntManager().i(clusterLabel);
 
             List<LayoutToken> tokens = cluster.concatTokens();
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));            
+
             if (clusterLabel.equals(FUNDING_FUNDER_NAME)) {
                 Funder localFunder = funding.getFunder();
                 if (localFunder == null) {
@@ -111,6 +158,11 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 localFunder.appendFullNameLayoutTokens(tokens);
                 localFunder.addLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "funder"));
+                entity.appendChild(clusterContent);
+
             } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getGrantName())) {
                     if (funding.isValid()) {
@@ -123,6 +175,58 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.setGrantName(clusterContent);
                 funding.appendGrantNameLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "grantName"));
+                entity.appendChild(clusterContent);
+
+            } else if (clusterLabel.equals(FUNDING_PERSON)) {
+                if (StringUtils.isNotBlank(person.getRawName())) {
+                    if (person.isValid()) {
+                        persons.add(person);
+                        // next funding object
+                        person = new Person();
+                    }
+                }
+
+                person.setRawName(clusterContent);
+                person.appendLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "person"));
+                entity.appendChild(clusterContent);
+
+            } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
+                if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
+                    if (affiliation.notNull()) {
+                        affiliations.add(affiliation);
+                        // next funding object
+                        affiliation = new Affiliation();
+                    }
+                }
+
+                affiliation.setRawAffiliationString(clusterContent);
+                affiliation.appendLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "affiliation"));
+                entity.appendChild(clusterContent);
+
+            } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
+                if (StringUtils.isNotBlank(institution.getAffiliationString())) {
+                    if (institution.notNull()) {
+                        institutions.add(institution);
+                        // next funding object
+                        institution = new Affiliation();
+                    }
+                }
+
+                institution.setRawAffiliationString(clusterContent);
+                institution.appendLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "institution"));
+                entity.appendChild(clusterContent);
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 if (StringUtils.isNotBlank(funding.getGrantNumber())) {
@@ -137,6 +241,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.appendGrantNumberLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
 
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "grantNumber"));
+                entity.appendChild(clusterContent);
+
             } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProgramFullName())) {
                     if (funding.isValid()) {
@@ -149,6 +257,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.setProgramFullName(clusterContent);
                 funding.appendProgramFullNameLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "programName"));
+                entity.appendChild(clusterContent);
 
             } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProjectFullName())) {
@@ -163,6 +275,14 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.appendProjectFullNameLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
 
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "projectName"));
+                entity.appendChild(clusterContent);
+
+                curParagraph.appendChild(entity);
+
+            } else if (clusterLabel.equals(FUNDING_OTHER)) {
+                curParagraph.appendChild(textNode(clusterContent));
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
@@ -174,7 +294,12 @@ public class FundingAcknowledgementParser extends AbstractParser {
             previousLabel = clusterLabel;
         }     
 
-        return fundings;
+        if (institutions != null && institutions.size() > 0)
+            affiliations.addAll(institutions);
+
+        Triple<List<Funding>,List<Person>,List<Affiliation>> entities = Triple.of(fundings, persons, affiliations);
+
+        return Pair.of(curParagraph.toXML(), entities);
     }
 
     /**
