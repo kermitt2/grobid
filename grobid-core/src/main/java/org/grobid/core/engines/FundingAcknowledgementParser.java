@@ -67,7 +67,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         try {
             String featureVector = FeaturesVectorFunding.addFeatures(tokenizationFunding, null);
             res = label(featureVector);
-            System.out.println(res);
+            //System.out.println(res);
         } catch (Exception e) {
             throw new GrobidException("CRF labeling with table model fails.", e);
         }
@@ -125,17 +125,23 @@ public class FundingAcknowledgementParser extends AbstractParser {
         TaggingLabel previousLabel = null;
 
         Element curParagraph = teiElement("p");
+        int posTokenization = 0;
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
             }
 
+            boolean spaceBefore = false;
+            if (posTokenization > 0 && tokenizations.size()>=posTokenization && tokenizations.get(posTokenization-1).getText().equals(" ")) {
+                spaceBefore = true;
+            }
+
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
             List<LayoutToken> tokens = cluster.concatTokens();
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));            
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));   
 
             if (clusterLabel.equals(FUNDING_FUNDER_NAME)) {
                 Funder localFunder = funding.getFunder();
@@ -163,6 +169,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "funder"));
                 entity.appendChild(clusterContent);
 
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
+
             } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getGrantName())) {
                     if (funding.isValid()) {
@@ -180,6 +190,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "grantName"));
                 entity.appendChild(clusterContent);
 
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
+
             } else if (clusterLabel.equals(FUNDING_PERSON)) {
                 if (StringUtils.isNotBlank(person.getRawName())) {
                     if (person.isValid()) {
@@ -195,6 +209,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "person"));
                 entity.appendChild(clusterContent);
+
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
@@ -212,6 +230,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "affiliation"));
                 entity.appendChild(clusterContent);
 
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
+
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
                     if (institution.notNull()) {
@@ -227,6 +249,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "institution"));
                 entity.appendChild(clusterContent);
+
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 if (StringUtils.isNotBlank(funding.getGrantNumber())) {
@@ -245,6 +271,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "grantNumber"));
                 entity.appendChild(clusterContent);
 
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
+
             } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProgramFullName())) {
                     if (funding.isValid()) {
@@ -261,6 +291,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "programName"));
                 entity.appendChild(clusterContent);
+
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
+                curParagraph.appendChild(entity);
 
             } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProjectFullName())) {
@@ -279,20 +313,25 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "projectName"));
                 entity.appendChild(clusterContent);
 
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
                 curParagraph.appendChild(entity);
 
             } else if (clusterLabel.equals(FUNDING_OTHER)) {
+                if (spaceBefore)
+                    curParagraph.appendChild(new Text(" "));
                 curParagraph.appendChild(textNode(clusterContent));
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
-            // last funding
-            if (funding.isValid())
-                fundings.add(funding);
-
             previousLabel = clusterLabel;
+            posTokenization += tokens.size(); 
         }     
+
+        // last funding, person, institution/affiliation
+        if (funding.isValid())
+            fundings.add(funding);
 
         if (institutions != null && institutions.size() > 0)
             affiliations.addAll(institutions);
