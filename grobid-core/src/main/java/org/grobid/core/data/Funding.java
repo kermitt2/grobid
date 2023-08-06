@@ -203,4 +203,25 @@ public class Funding {
             builder.append("url: " + url.toString() + "\n");
         return builder.toString();
     }
+
+    public String toJson() {
+        StringBuilder json = new StringBuilder();
+        boolean start = false;
+        json.append("{\n");
+        if (funder != null) {
+            json.append(funder.toJson());
+            start = true;
+        }
+        if (grantNumber != null) {
+            if (start) 
+                json.append(",\n");
+            json.append("\"grantNumber\": \"");
+            json.append(grantNumber+ "\"");
+            start = true;
+        }
+        // to be completed...
+        
+        json.append("\n}");
+        return json.toString();
+    }
 }

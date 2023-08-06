@@ -158,4 +158,25 @@ public class Funder {
             builder.append(abbreviatedName);
         return builder.toString();
     }
+
+    public String toJson() {
+        StringBuilder json = new StringBuilder();
+        boolean start = false;
+        json.append("{\n");
+        if (fullName != null) {
+            json.append("\t\"fullName\": \"");
+            json.append(this.fullName + "\"");
+            start = true;
+        }
+        if (abbreviatedName != null) {
+            if (start) 
+                json.append(",\n");
+            json.append("\t\"abbreviatedName\": \"");
+            json.append(this.abbreviatedName + "\"");
+        }
+        // to be completed...
+
+        json.append("\n}");
+        return json.toString();
+    }
 }
