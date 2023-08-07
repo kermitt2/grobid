@@ -59,7 +59,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
-    private Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+    private Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>>
         processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
         if (tokenizationFunding == null || tokenizationFunding.size() == 0)
             return null;
@@ -82,7 +82,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * For convenience, a processing method taking a raw string as input. 
      * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
      **/
-    public Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
+    public Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
                                GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
         List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
@@ -103,7 +103,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * extracted normalized entities. These entities are referenced by the inline 
      * annotations with the usual @target attribute pointing to xml:id. 
      */
-    private Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+    private Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>>
             getExtractionResult(List<LayoutToken> tokenizations, String result) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
@@ -338,7 +338,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
         Triple<List<Funding>,List<Person>,List<Affiliation>> entities = Triple.of(fundings, persons, affiliations);
 
-        return Pair.of(curParagraph.toXML(), entities);
+        return Pair.of(curParagraph, entities);
     }
 
     /**

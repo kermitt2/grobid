@@ -3,6 +3,8 @@ package org.grobid.core.engines;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 
+import nu.xom.Element;
+
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
@@ -1087,13 +1089,13 @@ public class Engine implements Closeable {
         StringBuilder result = new StringBuilder();
 
         try {
-            Pair<String, Triple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+            Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
                 parsers.getFundingAcknowledgementParser().processing(text, config);
 
             if (localResult == null || localResult.getLeft() == null) 
                 result.append(text);
             else
-                result.append(localResult.getLeft()); 
+                result.append(localResult.getLeft().toXML()); 
 
         } catch (final Exception exp) {
             throw new GrobidException("An exception occured while running Grobid funding-acknowledgement model.", exp);

@@ -37,6 +37,9 @@ public class Funding {
 
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
+    private Date start = null;
+    private Date end = null;
+
     public Funder getFunder() {
         return this.funder;
     }
