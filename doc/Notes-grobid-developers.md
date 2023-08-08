@@ -9,11 +9,11 @@ The idea anyway is that people will use Grobid with the Docker image, the servic
 
 In order to make a new release:  
 
-+ tag the project branch to be releases, for instance a version `0.7.2`: 
++ tag the project branch to be releases, for instance a version `0.7.3`: 
 
 ```
-> git tag 0.7.2
-> git push origin 0.7.2
+> git tag 0.7.3
+> git push origin 0.7.3
 ```
 
 + create a github release: the easiest is to use the GitHub web interface
@@ -35,7 +35,7 @@ In order to make a new release:
 
 ```
 dependencies {
-    implementation 'org.grobid:grobid-core:0.7.2'
+    implementation 'org.grobid:grobid-core:0.7.3'
 }
 ```
 
@@ -55,7 +55,7 @@ for maven projects:
     <dependency>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-core</artifactId>
-        <version>0.7.2</version>
+        <version>0.7.3</version>
     </dependency>
 ```
 
