@@ -2506,6 +2506,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 config);
             if (fundingStmt.length() > 0) {
                 tei.append(fundingStmt);
+                
+                parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
             }
 
 			// acknowledgement is in the back

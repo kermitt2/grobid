@@ -39,11 +39,21 @@ import org.slf4j.LoggerFactory;
 
 import nu.xom.Attribute;
 import nu.xom.Element;
+import nu.xom.Elements;
 import nu.xom.Node;
+import nu.xom.Nodes;
 import nu.xom.Text;
+import nu.xom.Document;
+import nu.xom.ParsingException;
+import nu.xom.ValidityException;
+import nu.xom.Builder;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.lang3.tuple.Triple;
+import org.apache.commons.lang3.tuple.MutableTriple;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.grobid.core.engines.label.TaggingLabels.*;
@@ -59,7 +69,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
-    private Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
         processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
         if (tokenizationFunding == null || tokenizationFunding.size() == 0)
             return null;
@@ -82,12 +92,70 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * For convenience, a processing method taking a raw string as input. 
      * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
      **/
-    public Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
+    public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
                                GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
         List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
         return processing(tokenizationFunding, config);
     }
+
+    /**
+     * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p) 
+     * will be processed in this segment and paragraph element will be replaced with the processed content.
+     * Resulting entities are relative to the whole procssed XML segment.
+     * 
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     **/
+    public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processingXmlFragment(String tei,
+                               GrobidAnalysisConfig config) {
+        Builder parser = new Builder();
+        MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> globalResult = null;
+        try {
+            tei = tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+
+            //System.out.println(tei);
+            Document localDoc = parser.build(tei, null);
+
+            // get the paragraphs
+            Element root = localDoc.getRootElement();
+            Nodes paragraphs = root.query("//p");
+
+            for(Node paragraph : paragraphs) {
+                String paragraphText = paragraph.getValue();
+                List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(paragraphText);
+
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = processing(tokenizationFunding, config);
+                
+                // replace paragraph content
+                if (localResult.getLeft() != null && localResult.getLeft().getChildCount()>0) {
+                    ((Element) paragraph).removeChildren();
+                    for (int i = localResult.getLeft().getChildCount()-1; i >=0; i--) {
+                        Node localNode = localResult.getLeft().getChild(i);
+                        localNode.detach();
+                        ((Element) paragraph).insertChild(localNode, 0);
+                    }
+                }
+                // update extracted entities
+                if (globalResult == null) {
+                    globalResult = MutablePair.of(root, localResult.getRight());
+                } else {
+                    // concatenate members of the local results to the global ones
+
+                }
+            }
+
+            //System.out.println(globalResult.getLeft().toXML());
+        } catch(ValidityException exp) {
+            LOGGER.warn("Invalid TEI fragment from funding/acknowledgement section", exp);
+        } catch(ParsingException exp) {
+            LOGGER.warn("Parsing error of the TEI fragment from funding/acknowledgement section", exp);
+        } catch(IOException exp) {
+            LOGGER.warn("Input TEI fragment invalid from funding/acknowledgement section", exp);
+        } 
+        
+        return globalResult;
+    }
+
 
     /**
      * The processing here is called from the header and/or full text parser in cascade
@@ -103,7 +171,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * extracted normalized entities. These entities are referenced by the inline 
      * annotations with the usual @target attribute pointing to xml:id. 
      */
-    private Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>>
+    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
             getExtractionResult(List<LayoutToken> tokenizations, String result) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
@@ -125,6 +193,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         TaggingLabel previousLabel = null;
 
         Element curParagraph = teiElement("p");
+        List<Node> curParagraphNodes = new ArrayList<>();
         int posTokenization = 0;
 
         for (TaggingTokenCluster cluster : clusters) {
@@ -170,8 +239,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getGrantName())) {
@@ -191,8 +260,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_PERSON)) {
                 if (StringUtils.isNotBlank(person.getRawName())) {
@@ -211,8 +280,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
@@ -231,8 +300,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
@@ -251,8 +320,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 if (StringUtils.isNotBlank(funding.getGrantNumber())) {
@@ -272,8 +341,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProgramFullName())) {
@@ -293,8 +362,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProjectFullName())) {
@@ -314,20 +383,24 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(entity);
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_OTHER)) {
                 if (spaceBefore)
-                    curParagraph.appendChild(new Text(" "));
-                curParagraph.appendChild(textNode(clusterContent));
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(textNode(clusterContent));
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
             previousLabel = clusterLabel;
             posTokenization += tokens.size(); 
-        }     
+        }
+
+        for (Node n : curParagraphNodes) {
+            curParagraph.appendChild(n);
+        }
 
         // last funding, person, institution/affiliation
         if (funding.isValid())
@@ -336,9 +409,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
         if (institutions != null && institutions.size() > 0)
             affiliations.addAll(institutions);
 
-        Triple<List<Funding>,List<Person>,List<Affiliation>> entities = Triple.of(fundings, persons, affiliations);
+        MutableTriple<List<Funding>,List<Person>,List<Affiliation>> entities = MutableTriple.of(fundings, persons, affiliations);
 
-        return Pair.of(curParagraph, entities);
+        return MutablePair.of(curParagraph, entities);
     }
 
     /**

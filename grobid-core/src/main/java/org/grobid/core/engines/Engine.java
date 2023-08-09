@@ -1,7 +1,8 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.lang3.tuple.Triple;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
 
 import nu.xom.Element;
 
@@ -1089,7 +1090,7 @@ public class Engine implements Closeable {
         StringBuilder result = new StringBuilder();
 
         try {
-            Pair<Element, Triple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+            MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
                 parsers.getFundingAcknowledgementParser().processing(text, config);
 
             if (localResult == null || localResult.getLeft() == null) 
