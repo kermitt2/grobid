@@ -6,11 +6,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.Funder;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener;
 import org.grobid.core.utilities.crossref.WorkDeserializer;
+import org.grobid.core.utilities.crossref.FunderDeserializer;
 import org.grobid.core.utilities.glutton.GluttonClient;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Option;
@@ -33,6 +36,7 @@ public class Consolidation {
 
     private CrossrefClient client = null;
     private WorkDeserializer workDeserializer = null;
+    private FunderDeserializer funderDeserializer = null;
     private CntManager cntManager = null;
 
     public enum GrobidConsolidationService {
@@ -89,6 +93,7 @@ public class Consolidation {
         else
             client = CrossrefClient.getInstance();
         workDeserializer = new WorkDeserializer();
+        funderDeserializer = new FunderDeserializer();
     }
 
     public void setCntManager(CntManager cntManager) {
@@ -561,6 +566,48 @@ public class Consolidation {
         }
 
         return similarity;
+    }
+
+    public Funder consolidateFunder(Funder funder) {
+        final List<Funder> results = new ArrayList<>();
+
+        Map<String, String> arguments = new HashMap<String,String>();
+        arguments.put("query", funder.getFullName());
+        arguments.put("rows", "10"); // we just request the top-10 results, because there are a lot of noise
+        // and we need many candidates in the pairwise comparison step
+
+        long threadId = Thread.currentThread().getId();
+
+        try {
+            client.pushRequest("funders", arguments, funderDeserializer, threadId, new CrossrefRequestListener<Funder>(0) {
+                @Override
+                public void onSuccess(List<Funder> res) {
+                    if ((res != null) && (res.size() > 0) ) {
+                        // we need here to post-check the candidates in a pairwise comparison 
+                        // in order to avoid false positive
+                        for(Funder oneRes : res) {
+                            /* 
+                              Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
+                              consolidation service.  
+                            */
+                            results.add(oneRes);
+                        }
+                    }
+                }
+
+                @Override
+                public void onError(int status, String message, Exception exception) {
+                    LOGGER.info("Funder consolidation service returns error ("+status+") : "+message, exception);
+                }
+            });
+        } catch(Exception e) {
+            LOGGER.info("Funder consolidation error - ", e);
+        }
+        client.finish(threadId);
+        if (results.size() == 0)
+            return null;
+        else
+            return results.get(0);
     }
 
 }

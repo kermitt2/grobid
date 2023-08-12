@@ -181,7 +181,12 @@ public class TEIFormatter {
             }
 
             for (Map.Entry<Funder, List<Funding>> entry : fundingRelation.entrySet()) {
-                tei.append(entry.getKey().toTEI());
+
+                Funder consolidatedFunder = Consolidation.getInstance().consolidateFunder(entry.getKey());
+                if (consolidatedFunder != null)
+                    tei.append(consolidatedFunder.toTEI());
+                else
+                    tei.append(entry.getKey().toTEI());
             }
         }
 
