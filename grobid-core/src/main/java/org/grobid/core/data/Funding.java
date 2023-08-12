@@ -3,6 +3,7 @@ package org.grobid.core.data;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.KeyGen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,9 @@ import java.util.List;
  */
 public class Funding {
     private Funder funder = null;
+
+    // this is an identifier for identifying and referencing the funding inside the full document
+    private String identifier = null;
     
     // program or call
     private String programFullName = null;
@@ -226,5 +230,51 @@ public class Funding {
         
         json.append("\n}");
         return json.toString();
+    }
+
+    public String toTEI() {
+        StringBuilder tei = new StringBuilder();
+
+        String localType = "funding";
+        if (projectFullName != null || projectAbbreviatedName != null)
+            localType = "funded-project";
+
+        if (this.identifier == null) {
+            String localId = KeyGen.getKey().substring(0, 7);
+            this.identifier = "_" + localId;
+        }
+
+        tei.append("<org type=\""+localType+"\" xml:id=\""+this.identifier+"\">\n"); 
+        if (grantNumber != null) {
+            tei.append("\t<idno type=\"grant-number\">"+TextUtilities.HTMLEncode(grantNumber)+"</idno>\n");
+        }
+        if (programFullName != null) {
+            tei.append("\t<orgName type=\"program\" subtype=\"full\">"+TextUtilities.HTMLEncode(programFullName)+"</orgName>\n");
+        }
+        if (programAbbreviatedName != null) {
+            tei.append("\t<orgName type=\"program\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(programAbbreviatedName)+"</orgName>\n");
+        }
+        if (projectFullName != null) {
+            tei.append("\t<orgName type=\"project\" subtype=\"full\">"+TextUtilities.HTMLEncode(projectFullName)+"</orgName>\n");
+        }
+        if (projectAbbreviatedName != null) {
+            tei.append("\t<orgName type=\"project\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(projectAbbreviatedName)+"</orgName>\n");
+        }
+        if (url != null) {
+            tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(url)).append("\" />\n");
+        }
+        if (start != null) {
+            String dateString = start.toTEI();
+            dateString = dateString.replace("<date ", "<date type=\"start\" ");
+            tei.append(dateString);
+        }
+        if (end != null) {
+            String dateString = end.toTEI();
+            dateString = dateString.replace("<date ", "<date type=\"end\" ");
+            tei.append(dateString);
+        }
+        tei.append("</org>\n");
+
+        return tei.toString();
     }
 }

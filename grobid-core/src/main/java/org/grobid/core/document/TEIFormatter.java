@@ -14,8 +14,8 @@ import nu.xom.Node;
 import nu.xom.Text;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.*;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
@@ -99,8 +99,9 @@ public class TEIFormatter {
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
                                      List<MarkerType> markerTypes,
+                                     List<Funding> fundings,
                                      GrobidAnalysisConfig config) {
-        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, config);
+        return toTEIHeader(biblio, SchemaDeclaration.XSD, defaultPublicationStatement, bds, markerTypes, fundings, config);
     }
 
     public StringBuilder toTEIHeader(BiblioItem biblio,
@@ -108,6 +109,7 @@ public class TEIFormatter {
                                      String defaultPublicationStatement,
                                      List<BibDataSet> bds,
                                      List<MarkerType> markerTypes,
+                                     List<Funding> fundings,
                                      GrobidAnalysisConfig config) {
         StringBuilder tei = new StringBuilder();
         tei.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -157,7 +159,34 @@ public class TEIFormatter {
             tei.append(TextUtilities.HTMLEncode(biblio.getTitle()));
         }
 
-        tei.append("</title>\n\t\t\t</titleStmt>\n");
+        tei.append("</title>\n");
+
+        if (fundings != null && fundings.size()>0) {
+
+            Map<Funder,List<Funding>> fundingRelation = new HashMap<>();
+            for(Funding funding : fundings) {
+                if (funding.getFunder() == null) {
+                    List<Funding> localfundings = fundingRelation.get(Funder.EMPTY);
+                    if (localfundings == null) 
+                        localfundings = new ArrayList<>();
+                    localfundings.add(funding);
+                    fundingRelation.put(Funder.EMPTY, localfundings);
+                } else {
+                    List<Funding> localfundings = fundingRelation.get(funding.getFunder());
+                    if (localfundings == null) 
+                        localfundings = new ArrayList<>();
+                    localfundings.add(funding);
+                    fundingRelation.put(funding.getFunder(), localfundings);
+                }    
+            }
+
+            for (Map.Entry<Funder, List<Funding>> entry : fundingRelation.entrySet()) {
+                tei.append(entry.getKey().toTEI());
+            }
+        }
+
+        tei.append("\t\t\t</titleStmt>\n");
+
         if ((biblio.getPublisher() != null) ||
                 (biblio.getPublicationDate() != null) ||
                 (biblio.getNormalizedPublicationDate() != null)) {

@@ -140,7 +140,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     globalResult = MutablePair.of(root, localResult.getRight());
                 } else {
                     // concatenate members of the local results to the global ones
-
+                    
                 }
             }
 

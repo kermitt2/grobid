@@ -5,18 +5,14 @@ import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
-import org.grobid.core.data.Equation;
-import org.grobid.core.data.Funding;
-import org.grobid.core.data.Funder;
+import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -67,6 +63,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
+
+import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
@@ -2461,16 +2459,11 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         }
         List<BibDataSet> resCitations = doc.getBibDataSets();
         TEIFormatter teiFormatter = new TEIFormatter(doc, this);
-        StringBuilder tei;
+        StringBuilder tei = new StringBuilder();
         try {
-            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, config);
+            List<Funding> fundings = new ArrayList<>();
 
-			//System.out.println(rese);
-            //int mode = config.getFulltextProcessingMode();
-			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-					layoutTokenization, figures, tables, equations, markerTypes, doc, config);
-
-			tei.append("\t\t<back>\n");
+            List<String> annexStatements = new ArrayList<>();
 
             // funding in header
             StringBuilder fundingStmt = new StringBuilder();
@@ -2492,7 +2485,25 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         config);
                 }
                 if (fundingStmt.length() > 0) {
-                    tei.append(fundingStmt.toString());
+                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
+                    if (localResult != null && localResult.getLeft() != null) {
+                        String local_tei = localResult.getLeft().toXML();
+                        local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        //tei.append(local_tei);
+                        annexStatements.add(local_tei);
+                    } else {
+                        //tei.append(fundingStmt);
+                        annexStatements.add(fundingStmt.toString());
+                    }
+
+                    if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
                 }
             }
 
@@ -2505,10 +2516,25 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 resCitations,
                 config);
             if (fundingStmt.length() > 0) {
-                tei.append(fundingStmt);
-                
-                parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
+                if (localResult != null && localResult.getLeft() != null){
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    //tei.append(local_tei);
+                    annexStatements.add(local_tei);
+                } else {
+                    //tei.append(fundingStmt);
+                    annexStatements.add(fundingStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
             }
 
 			// acknowledgement is in the back
@@ -2516,7 +2542,37 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 teiFormatter, resCitations, config);
 
             if (acknowledgmentStmt.length() > 0) {
-                tei.append(acknowledgmentStmt);
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null) {
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    //tei.append(local_tei);
+                    annexStatements.add(local_tei);
+                }
+                else {
+                    //tei.append(acknowledgmentStmt);
+                    annexStatements.add(acknowledgmentStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
+            }
+
+            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+
+            tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
+                    layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+
+            tei.append("\t\t<back>\n");
+
+            for (String annexStatement : annexStatements) {
+                tei.append(annexStatement);
             }
 
             // availability statements in header

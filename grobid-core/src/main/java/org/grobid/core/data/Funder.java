@@ -33,7 +33,16 @@ public class Funder {
     private String url = null;
 
     private List<LayoutToken> layoutTokens = new ArrayList<>();
+
+    static public Funder EMPTY = new Funder("unknown");
     
+    public Funder() {
+    }
+
+    public Funder(String fullName) {
+        this.fullName = fullName;
+    }
+
     public String getFullName() {
         return this.fullName;
     }
@@ -178,5 +187,23 @@ public class Funder {
 
         json.append("\n}");
         return json.toString();
+    }
+
+    public String toTEI() {
+        StringBuilder tei = new StringBuilder();
+
+        tei.append("<funder>\n"); 
+        if (fullName != null) {
+            tei.append("\t<orgName type=\"full\">"+TextUtilities.HTMLEncode(fullName)+"</orgName>\n");
+        }
+        if (abbreviatedName != null) {
+            tei.append("\t<orgName type=\"abbreviated\">"+TextUtilities.HTMLEncode(abbreviatedName)+"</orgName>\n");
+        }
+        if (doi != null) {
+            tei.append("\t<idno type=\"DOI\" subtype=\"crossref\">"+TextUtilities.HTMLEncode(doi)+"</idno>\n");
+        }
+        tei.append("</funder>\n");
+
+        return tei.toString();
     }
 }
