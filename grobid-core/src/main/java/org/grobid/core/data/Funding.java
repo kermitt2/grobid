@@ -203,6 +203,19 @@ public class Funding {
             return false;
     }
 
+    public boolean isNonEmptyFunding() {
+        if (grantNumber != null || 
+            grantName != null || 
+            projectFullName != null || 
+            projectAbbreviatedName != null || 
+            programFullName != null || 
+            programAbbreviatedName != null ||
+            url != null)
+            return true;
+        else
+            return false;
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         if (funder != null)

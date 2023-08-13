@@ -588,9 +588,10 @@ public class Consolidation {
                         for(Funder oneRes : res) {
                             /* 
                               Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
-                              consolidation service.  
+                              consolidation service. However, with CrossRef, post-validation is mandatory to control false positives.  
                             */
-                            results.add(oneRes);
+                            if (oneRes.getFullName() != null && oneRes.getFullName().toLowerCase().equals(funder.getFullName().toLowerCase()))
+                                results.add(oneRes);
                         }
                     }
                 }

@@ -2465,6 +2465,33 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             List<String> annexStatements = new ArrayList<>();
 
+            // acknowledgement is in the back
+            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, resCitations, config);
+
+            if (acknowledgmentStmt.length() > 0) {
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null) {
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    //tei.append(local_tei);
+                    annexStatements.add(local_tei);
+                }
+                else {
+                    //tei.append(acknowledgmentStmt);
+                    annexStatements.add(acknowledgmentStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
+            }
+
             // funding in header
             StringBuilder fundingStmt = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getFunding())) {
@@ -2537,33 +2564,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 }
             }
 
-			// acknowledgement is in the back
-            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
-                teiFormatter, resCitations, config);
-
-            if (acknowledgmentStmt.length() > 0) {
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
-                    parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
-
-                if (localResult != null && localResult.getLeft() != null) {
-                    String local_tei = localResult.getLeft().toXML();
-                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                    //tei.append(local_tei);
-                    annexStatements.add(local_tei);
-                }
-                else {
-                    //tei.append(acknowledgmentStmt);
-                    annexStatements.add(acknowledgmentStmt.toString());
-                }
-
-                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                    List<Funding> localFundings = localResult.getRight().getLeft();
-                    if (localFundings.size()>0) {
-                        fundings.addAll(localFundings);
-                    }
-                }
-            }
-
             tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
 
             tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
@@ -2577,7 +2577,8 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             tei.append("\t\t\t<listOrg type=\"funding\">\n");
             for(Funding funding : fundings) {
-                tei.append(funding.toTEI(3));
+                if (funding.isNonEmptyFunding())
+                    tei.append(funding.toTEI(3));
             }
             tei.append("\t\t\t</listOrg>");
 

@@ -191,7 +191,8 @@ public class TEIFormatter {
                 // inject funding ref in the funder entries
                 String referenceString = "";
                 for(Funding funderFunding : entry.getValue()) {
-                    referenceString += " #" + funderFunding.getIdentifier();
+                    if (funderFunding.isNonEmptyFunding())
+                        referenceString += " #" + funderFunding.getIdentifier();
                 }
 
                 if (funderPiece != null) {
