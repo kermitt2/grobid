@@ -156,6 +156,19 @@ public class Funding {
         this.url = url;
     }
 
+    public String getIdentifier() {
+        if (this.identifier == null) {
+            String localId = KeyGen.getKey().substring(0, 7);
+            this.identifier = "_" + localId;
+        }
+
+        return this.identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
     public void appendUrlLayoutTokens(List<LayoutToken> layoutTokens) {
         this.urlLayoutTokens.addAll(layoutTokens);
     }
@@ -233,6 +246,10 @@ public class Funding {
     }
 
     public String toTEI() {
+        return toTEI(0);
+    }
+
+    public String toTEI(int nbIndent) {
         StringBuilder tei = new StringBuilder();
 
         String localType = "funding";
@@ -244,35 +261,57 @@ public class Funding {
             this.identifier = "_" + localId;
         }
 
+        for(int i=0; i<nbIndent; i++) 
+            tei.append("\t");
         tei.append("<org type=\""+localType+"\" xml:id=\""+this.identifier+"\">\n"); 
+
         if (grantNumber != null) {
-            tei.append("\t<idno type=\"grant-number\">"+TextUtilities.HTMLEncode(grantNumber)+"</idno>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<idno type=\"grant-number\">"+TextUtilities.HTMLEncode(grantNumber)+"</idno>\n");
         }
         if (programFullName != null) {
-            tei.append("\t<orgName type=\"program\" subtype=\"full\">"+TextUtilities.HTMLEncode(programFullName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"program\" subtype=\"full\">"+TextUtilities.HTMLEncode(programFullName)+"</orgName>\n");
         }
         if (programAbbreviatedName != null) {
-            tei.append("\t<orgName type=\"program\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(programAbbreviatedName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"program\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(programAbbreviatedName)+"</orgName>\n");
         }
         if (projectFullName != null) {
-            tei.append("\t<orgName type=\"project\" subtype=\"full\">"+TextUtilities.HTMLEncode(projectFullName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"project\" subtype=\"full\">"+TextUtilities.HTMLEncode(projectFullName)+"</orgName>\n");
         }
         if (projectAbbreviatedName != null) {
-            tei.append("\t<orgName type=\"project\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(projectAbbreviatedName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"project\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(projectAbbreviatedName)+"</orgName>\n");
         }
         if (url != null) {
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
             tei.append("<ptr target=\"").append(TextUtilities.HTMLEncode(url)).append("\" />\n");
         }
         if (start != null) {
             String dateString = start.toTEI();
             dateString = dateString.replace("<date ", "<date type=\"start\" ");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
             tei.append(dateString);
         }
         if (end != null) {
             String dateString = end.toTEI();
             dateString = dateString.replace("<date ", "<date type=\"end\" ");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
             tei.append(dateString);
         }
+
+        for(int i=0; i<nbIndent; i++) 
+            tei.append("\t");
         tei.append("</org>\n");
 
         return tei.toString();

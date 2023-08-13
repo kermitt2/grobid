@@ -2575,6 +2575,12 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
+            tei.append("\t\t\t<listOrg type=\"funding\">\n");
+            for(Funding funding : fundings) {
+                tei.append(funding.toTEI(3));
+            }
+            tei.append("\t\t\t</listOrg>");
+
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getAvailabilityStmt())) {

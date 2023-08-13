@@ -190,18 +190,34 @@ public class Funder {
     }
 
     public String toTEI() {
+        return toTEI(0);
+    }
+
+    public String toTEI(int nbIndent) {
         StringBuilder tei = new StringBuilder();
 
+        for(int i=0; i<nbIndent; i++) 
+            tei.append("\t");
         tei.append("<funder>\n"); 
+
         if (fullName != null) {
-            tei.append("\t<orgName type=\"full\">"+TextUtilities.HTMLEncode(fullName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"full\">"+TextUtilities.HTMLEncode(fullName)+"</orgName>\n");
         }
         if (abbreviatedName != null) {
-            tei.append("\t<orgName type=\"abbreviated\">"+TextUtilities.HTMLEncode(abbreviatedName)+"</orgName>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"abbreviated\">"+TextUtilities.HTMLEncode(abbreviatedName)+"</orgName>\n");
         }
         if (doi != null) {
-            tei.append("\t<idno type=\"DOI\" subtype=\"crossref\">"+TextUtilities.HTMLEncode(doi)+"</idno>\n");
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<idno type=\"DOI\" subtype=\"crossref\">"+TextUtilities.HTMLEncode(doi)+"</idno>\n");
         }
+
+        for(int i=0; i<nbIndent; i++) 
+            tei.append("\t");
         tei.append("</funder>\n");
 
         return tei.toString();
