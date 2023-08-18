@@ -180,9 +180,17 @@ public class TEIFormatter {
                 }    
             }
 
+            List<Funder> localFunders = new ArrayList<>();
             for (Map.Entry<Funder, List<Funding>> entry : fundingRelation.entrySet()) {
-                Funder consolidatedFunder = Consolidation.getInstance().consolidateFunder(entry.getKey());
+                localFunders.add(entry.getKey());
+            }
+
+            Map<Integer,Funder> consolidatedFunders = Consolidation.getInstance().consolidateFunders(localFunders);
+
+            int n =0;
+            for (Map.Entry<Funder, List<Funding>> entry : fundingRelation.entrySet()) {
                 String funderPiece = null;
+                Funder consolidatedFunder = consolidatedFunders.get(n);
                 if (consolidatedFunder != null) 
                     funderPiece = consolidatedFunder.toTEI(4);
                 else
@@ -200,6 +208,7 @@ public class TEIFormatter {
                         funderPiece = funderPiece.replace("<funder>", "<funder ref=\"" + referenceString.trim() + "\">");
                     tei.append(funderPiece);
                 }
+                n++;
             }
         }
 
