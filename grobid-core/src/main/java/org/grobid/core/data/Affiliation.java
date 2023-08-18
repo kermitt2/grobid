@@ -3,6 +3,7 @@ package org.grobid.core.data;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.OffsetPosition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,9 @@ public class Affiliation {
 
     // an identifier for the affiliation independent from the marker, present in the TEI result
     private String key = null;
+
+    // default indo-european delimiters, should be moved to language specific analysers
+    public static String delimiters = " \n\t" + TextUtilities.fullPunctuations + "。、，・";
 
     public Affiliation() {
     }
@@ -668,6 +672,5 @@ public class Affiliation {
                 ", failAffiliation=" + failAffiliation +
                 '}';
     }
-
     
 }

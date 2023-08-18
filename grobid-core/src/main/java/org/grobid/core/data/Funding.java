@@ -1,12 +1,16 @@
 package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.KeyGen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * Class for representing a funding/grant.
@@ -214,6 +218,68 @@ public class Funding {
             return true;
         else
             return false;
+    }
+
+
+    /**
+     * For the given funder instance, try to define the acronym, either as part of the current 
+     * full name, or as prefix in the grant number for some well-known funders. 
+     **/
+    public void inferAcronyms() {
+        if (this.funder == null || funder.getFullNameLayoutTokens() == null)
+            return;
+        //System.out.println(LayoutTokensUtil.toText(funder.getFullNameLayoutTokens()));
+
+        // check if full name contains acronym
+        Pair<OffsetPosition, OffsetPosition> acronymCandidate = TextUtilities.fieldAcronymCandidate(funder.getFullNameLayoutTokens()); 
+        if (acronymCandidate != null) {
+            OffsetPosition acronymPosition = acronymCandidate.getLeft();
+            OffsetPosition basePosition = acronymCandidate.getRight();
+
+            //System.out.println(LayoutTokensUtil.toText(funder.getFullNameLayoutTokens().subList(acronymPosition.start, acronymPosition.end)));
+            //System.out.println(LayoutTokensUtil.toText(funder.getFullNameLayoutTokens().subList(basePosition.start, basePosition.end)));
+
+            // post validate acronym candidate: we need matching with base component
+            // get first letter profile for the tokens
+            StringBuilder profileBase = new StringBuilder();
+            for(LayoutToken token : funder.getFullNameLayoutTokens()) {
+                if (token.getText() == null || token.getText().length() ==0)
+                    continue;
+                profileBase.append(token.getText().charAt(0));
+            }
+            String acronymString = LayoutTokensUtil.toText(funder.getFullNameLayoutTokens().subList(acronymPosition.start, acronymPosition.end));
+            String profileBaseString = profileBase.toString();
+            boolean validAcronym = true;
+            int profilePosIndex = 0;
+            for (int i=0; i<acronymString.length(); i++) {
+                char theChar = acronymString.charAt(i);
+                int posMatch = profileBaseString.indexOf(""+theChar, profilePosIndex);
+                if (posMatch == -1) {
+                    validAcronym = false;
+                    break;
+                } else {
+                    profilePosIndex = posMatch;
+                }
+            }
+
+            if (validAcronym) {
+                this.funder.setAbbreviatedName(acronymString); 
+                this.funder.setAbbreviatedNameLayoutTokens(funder.getFullNameLayoutTokens().subList(acronymPosition.start, acronymPosition.end));
+
+                this.funder.setFullName(LayoutTokensUtil.toText(funder.getFullNameLayoutTokens().subList(basePosition.start, basePosition.end))); 
+                this.funder.setFullNameLayoutTokens(funder.getFullNameLayoutTokens().subList(basePosition.start, basePosition.end));
+            }
+        }
+
+        // check the grant number prefix
+        if (funder.getAbbreviatedName() == null && grantNumber != null) {
+            for(String prefix : Funder.prefixes) {
+                if (grantNumber.startsWith(prefix)) {
+                    this.funder.setAbbreviatedName(prefix);
+                    break;
+                }
+            }
+        }
     }
 
     public String toString() {

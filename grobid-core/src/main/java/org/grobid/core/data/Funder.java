@@ -1,10 +1,14 @@
 package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class for representing a funding organization.
@@ -35,7 +39,9 @@ public class Funder {
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
     static public Funder EMPTY = new Funder("unknown");
-    
+
+    static public List<String> prefixes = Arrays.asList("ANR", "NSF", "NIH");
+
     public Funder() {
     }
 
@@ -49,6 +55,10 @@ public class Funder {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public void setFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.fullNameLayoutTokens = layoutTokens;
     }
 
     public void appendFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
@@ -65,6 +75,10 @@ public class Funder {
 
     public void setAbbreviatedName(String abbreviatedName) {
         this.abbreviatedName = abbreviatedName;
+    }
+
+    public void setAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {
+        this.abbreviatedNameLayoutTokens = layoutTokens;
     }
 
     public void appendAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {

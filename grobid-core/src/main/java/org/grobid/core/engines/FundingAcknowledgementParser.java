@@ -140,7 +140,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     globalResult = MutablePair.of(root, localResult.getRight());
                 } else {
                     // concatenate members of the local results to the global ones
-                    
+
                 }
             }
 
@@ -408,6 +408,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
         if (institutions != null && institutions.size() > 0)
             affiliations.addAll(institutions);
+
+        for(Funding localFunding : fundings) {
+            localFunding.inferAcronyms();
+        }
 
         MutableTriple<List<Funding>,List<Person>,List<Affiliation>> entities = MutableTriple.of(fundings, persons, affiliations);
 

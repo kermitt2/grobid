@@ -572,8 +572,17 @@ public class Consolidation {
         final List<Funder> results = new ArrayList<>();
 
         Map<String, String> arguments = new HashMap<String,String>();
-        arguments.put("query", funder.getFullName());
-        arguments.put("rows", "10"); // we just request the top-10 results, because there are a lot of noise
+
+        // CrossRef does not manage stopwords in funder search and has no usable term frequency, so we need
+        // to remove basic stopwords in the query to have something manageable from CrossRef
+        String funderNameString = funder.getFullName();
+        if (funderNameString == null || funderNameString.length() == 0)
+            return null;
+
+        funderNameString = TextUtilities.removeFieldStopwords(funderNameString);
+
+        arguments.put("query", funderNameString);
+        arguments.put("rows", "10"); // we request the top-10 results, because there are a lot of noise
         // and we need many candidates in the pairwise comparison step
 
         long threadId = Thread.currentThread().getId();
@@ -590,8 +599,14 @@ public class Consolidation {
                               Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
                               consolidation service. However, with CrossRef, post-validation is mandatory to control false positives.  
                             */
-                            if (oneRes.getFullName() != null && oneRes.getFullName().toLowerCase().equals(funder.getFullName().toLowerCase()))
-                                results.add(oneRes);
+                            if (oneRes.getFullName() != null) {
+                                String localFullName = oneRes.getFullName();
+                                localFullName = TextUtilities.removeFieldStopwords(localFullName);
+                                //if (localFullName.toLowerCase().equals(arguments.get("query").toLowerCase())) {
+                                if (ratcliffObershelpDistance(localFullName, arguments.get("query"), false)>0.9) {
+                                    results.add(oneRes);
+                                }
+                            }
                         }
                     }
                 }
