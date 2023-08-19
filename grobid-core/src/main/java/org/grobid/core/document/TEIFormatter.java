@@ -163,6 +163,17 @@ public class TEIFormatter {
 
         if (fundings != null && fundings.size()>0) {
 
+            Map<String,Funder> funderSignatures = new TreeMap<>();
+            for(Funding funding : fundings) {
+                if (funding.getFunder() != null && funding.getFunder().getFullName() != null) {
+                    if (funderSignatures.get(funding.getFunder().getFullName()) == null) {
+                        funderSignatures.put(funding.getFunder().getFullName(), funding.getFunder());
+                    } else {
+                        funding.setFunder(funderSignatures.get(funding.getFunder().getFullName()));
+                    }
+                }
+            }
+
             Map<Funder,List<Funding>> fundingRelation = new HashMap<>();
             for(Funding funding : fundings) {
                 if (funding.getFunder() == null) {

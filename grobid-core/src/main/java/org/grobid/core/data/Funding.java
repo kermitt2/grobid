@@ -125,7 +125,7 @@ public class Funding {
     }
 
     public void setProjectFullName(String project) {
-        this.projectFullName = projectFullName;
+        this.projectFullName = project;
     }
 
     public void appendProjectFullNameLayoutTokens(List<LayoutToken> layoutTokens) {
@@ -141,7 +141,7 @@ public class Funding {
     }
 
     public void setProjectAbbreviatedName(String project) {
-        this.projectAbbreviatedName = projectAbbreviatedName;
+        this.projectAbbreviatedName = project;
     }
 
     public void appendProjectAbbreviatedNameLayoutTokens(List<LayoutToken> layoutTokens) {
@@ -273,9 +273,12 @@ public class Funding {
 
         // check the grant number prefix
         if (funder.getAbbreviatedName() == null && grantNumber != null) {
-            for(String prefix : Funder.prefixes) {
-                if (grantNumber.startsWith(prefix)) {
-                    this.funder.setAbbreviatedName(prefix);
+            for (Map.Entry<String,String> entry : Funder.prefixFounders.entrySet()) {
+                if (grantNumber.startsWith(entry.getKey()+"-")) {
+                    this.funder.setAbbreviatedName(entry.getKey());
+                    this.funder.setAbbreviatedNameLayoutTokens(null);
+                    this.funder.setFullName(entry.getValue());
+                    this.funder.setFullNameLayoutTokens(null);
                     break;
                 }
             }
@@ -349,16 +352,6 @@ public class Funding {
                 tei.append("\t");
             tei.append("<idno type=\"grant-number\">"+TextUtilities.HTMLEncode(grantNumber)+"</idno>\n");
         }
-        if (programFullName != null) {
-            for(int i=0; i<nbIndent+1; i++) 
-                tei.append("\t");
-            tei.append("<orgName type=\"program\" subtype=\"full\">"+TextUtilities.HTMLEncode(programFullName)+"</orgName>\n");
-        }
-        if (programAbbreviatedName != null) {
-            for(int i=0; i<nbIndent+1; i++) 
-                tei.append("\t");
-            tei.append("<orgName type=\"program\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(programAbbreviatedName)+"</orgName>\n");
-        }
         if (projectFullName != null) {
             for(int i=0; i<nbIndent+1; i++) 
                 tei.append("\t");
@@ -368,6 +361,16 @@ public class Funding {
             for(int i=0; i<nbIndent+1; i++) 
                 tei.append("\t");
             tei.append("<orgName type=\"project\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(projectAbbreviatedName)+"</orgName>\n");
+        }
+        if (programFullName != null) {
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"program\" subtype=\"full\">"+TextUtilities.HTMLEncode(programFullName)+"</orgName>\n");
+        }
+        if (programAbbreviatedName != null) {
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"program\" subtype=\"abbreviated\">"+TextUtilities.HTMLEncode(programAbbreviatedName)+"</orgName>\n");
         }
         if (url != null) {
             for(int i=0; i<nbIndent+1; i++) 

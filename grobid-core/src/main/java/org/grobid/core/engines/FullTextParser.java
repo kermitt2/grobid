@@ -2561,15 +2561,16 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             tei.append("\t\t<back>\n");
 
             for (String annexStatement : annexStatements) {
+                tei.append("\n\t\t\t");
                 tei.append(annexStatement);
             }
 
-            tei.append("\t\t\t<listOrg type=\"funding\">\n");
+            tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
             for(Funding funding : fundings) {
                 if (funding.isNonEmptyFunding())
-                    tei.append(funding.toTEI(3));
+                    tei.append(funding.toTEI(4));
             }
-            tei.append("\t\t\t</listOrg>");
+            tei.append("\t\t\t</listOrg>\n");
 
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();

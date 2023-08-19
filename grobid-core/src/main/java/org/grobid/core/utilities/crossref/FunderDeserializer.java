@@ -64,7 +64,15 @@ public class FunderDeserializer extends CrossrefDeserializer<Funder> {
                 // here we just keep an acronym form - better names with lang info via the data API
                 for(int i=0; i <((ArrayNode)altNamesNode).size(); i++) {
                     String altName = ((ArrayNode)altNamesNode).get(i).asText();
-                    if (TextUtilities.isAllUpperCase(altName) && altName.length()<10) {
+                    if (altName.equals("INCa")) {
+                        funder.setAbbreviatedName("INCa");
+                        funder.setFullName("Institut National du Cancer");
+                        break;
+                    } else if (altName.equals("Anses")) {
+                        funder.setAbbreviatedName("Anses");
+                        funder.setFullName("Agence nationale de recherches sur le sida et les hépatites virales");
+                        break;
+                    } else if (TextUtilities.isAllUpperCase(altName) && altName.length()<10) {
                         funder.setAbbreviatedName(altName);
                         break;
                     }

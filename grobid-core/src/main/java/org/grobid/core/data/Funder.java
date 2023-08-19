@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Class for representing a funding organization.
@@ -41,6 +42,14 @@ public class Funder {
     static public Funder EMPTY = new Funder("unknown");
 
     static public List<String> prefixes = Arrays.asList("ANR", "NSF", "NIH");
+
+    public static Map<String, String> prefixFounders;
+    static {
+        prefixFounders = new TreeMap<>();
+        prefixFounders.put("ANR", "Agence Nationale de la Recherche");
+        prefixFounders.put("NSF", "National Science Foundation");
+        prefixFounders.put("NIH", "National Institutes of Health");
+    }
 
     public Funder() {
     }
