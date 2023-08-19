@@ -140,7 +140,25 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     globalResult = MutablePair.of(root, localResult.getRight());
                 } else {
                     // concatenate members of the local results to the global ones
+                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> localEntities = localResult.getRight();
+                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
 
+                    List<Funding> localFundings = localEntities.getLeft();
+                    List<Funding> globalFundings = globalEntities.getLeft();
+                    globalFundings.addAll(localFundings);
+                    globalEntities.setLeft(globalFundings);
+
+                    List<Person> localPersons = localEntities.getMiddle();
+                    List<Person> globalPersons = globalEntities.getMiddle();
+                    globalPersons.addAll(localPersons);
+                    globalEntities.setMiddle(globalPersons);
+
+                    List<Affiliation> localAffiliation = localEntities.getRight();
+                    List<Affiliation> globalAffiliations = globalEntities.getRight();
+                    globalAffiliations.addAll(localAffiliation);
+                    globalEntities.setRight(globalAffiliations);
+
+                    globalResult.setRight(globalEntities);
                 }
             }
 

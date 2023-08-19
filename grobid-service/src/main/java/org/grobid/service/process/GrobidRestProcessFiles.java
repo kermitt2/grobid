@@ -157,6 +157,7 @@ public class GrobidRestProcessFiles {
     public Response processFulltextDocument(final InputStream inputStream,
                                           final int consolidateHeader,
                                           final int consolidateCitations,
+                                          final int consolidateFunders,
                                           final boolean includeRawAffiliations,
                                           final boolean includeRawCitations,
                                           final int startPage,
@@ -196,6 +197,7 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
                     .startPage(startPage)
@@ -256,6 +258,7 @@ public class GrobidRestProcessFiles {
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
                                                           final int consolidateHeader,
                                                           final int consolidateCitations,
+                                                          final int consolidateFunders,
                                                           final boolean includeRawAffiliations,
                                                           final boolean includeRawCitations,
                                                           final int startPage,
@@ -298,6 +301,7 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
                     .startPage(startPage)

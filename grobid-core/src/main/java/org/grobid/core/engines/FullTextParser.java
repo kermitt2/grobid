@@ -2476,11 +2476,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (localResult != null && localResult.getLeft() != null) {
                     String local_tei = localResult.getLeft().toXML();
                     local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                    //tei.append(local_tei);
                     annexStatements.add(local_tei);
                 }
                 else {
-                    //tei.append(acknowledgmentStmt);
                     annexStatements.add(acknowledgmentStmt.toString());
                 }
 
@@ -2496,11 +2494,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             StringBuilder fundingStmt = new StringBuilder();
             if (StringUtils.isNotBlank(resHeader.getFunding())) {
                 List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
-
-                /*List<Funding> fundings = this.parsers.getFundingAcknowledgementParser().processing(headerFundingTokens);
-                for (Funding funding : fundings) {
-                    System.out.println(funding.toString());
-                }*/
 
                 Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
                 if (headerFundingProcessed != null) {
@@ -2518,10 +2511,8 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     if (localResult != null && localResult.getLeft() != null) {
                         String local_tei = localResult.getLeft().toXML();
                         local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                        //tei.append(local_tei);
                         annexStatements.add(local_tei);
                     } else {
-                        //tei.append(fundingStmt);
                         annexStatements.add(fundingStmt.toString());
                     }
 
@@ -2549,10 +2540,8 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (localResult != null && localResult.getLeft() != null){
                     String local_tei = localResult.getLeft().toXML();
                     local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                    //tei.append(local_tei);
                     annexStatements.add(local_tei);
                 } else {
-                    //tei.append(fundingStmt);
                     annexStatements.add(fundingStmt.toString());
                 }
 
