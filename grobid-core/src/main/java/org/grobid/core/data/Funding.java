@@ -283,6 +283,19 @@ public class Funding {
                 }
             }
         }
+
+        // check if full name is an acronym
+        if (funder.getAbbreviatedName() == null && funder.getFullName() != null) {
+            for (Map.Entry<String,String> entry : Funder.prefixFounders.entrySet()) {
+                if (funder.getFullName().equals(entry.getKey())) {
+                    this.funder.setAbbreviatedName(entry.getKey());
+                    this.funder.setAbbreviatedNameLayoutTokens(this.funder.getFullNameLayoutTokens());
+                    this.funder.setFullName(entry.getValue());
+                    this.funder.setFullNameLayoutTokens(null);
+                    break;
+                }
+            }
+        }
     }
 
     public String toString() {
@@ -352,6 +365,13 @@ public class Funding {
                 tei.append("\t");
             tei.append("<idno type=\"grant-number\">"+TextUtilities.HTMLEncode(grantNumber)+"</idno>\n");
         }
+
+        if (grantName != null) {
+            for(int i=0; i<nbIndent+1; i++) 
+                tei.append("\t");
+            tei.append("<orgName type=\"grant-name\">"+TextUtilities.HTMLEncode(grantName)+"</orgName>\n");
+        }
+
         if (projectFullName != null) {
             for(int i=0; i<nbIndent+1; i++) 
                 tei.append("\t");

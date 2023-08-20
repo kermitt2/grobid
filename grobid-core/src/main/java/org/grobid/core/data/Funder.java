@@ -2,14 +2,16 @@ package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lang.Language;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.HashMap;
 
 /**
  * Class for representing a funding organization.
@@ -17,11 +19,18 @@ import java.util.TreeMap;
  */
 
 public class Funder {
+    // prefered full name
     private String fullName = null;
     private List<LayoutToken> fullNameLayoutTokens = new ArrayList<>();
 
+    // full names by languages
+    private Map<Language, List<String>> fullNameByLanguage = new HashMap<>();
+
     private String abbreviatedName = null;
     private List<LayoutToken> abbreviatedNameLayoutTokens = new ArrayList<>();
+
+    // abbreviated names by languages
+    private Map<Language, List<String>> abbreviatedNameByLanguage = new HashMap<>();
 
     private String doi = null;
 
@@ -29,6 +38,7 @@ public class Funder {
     private String country = null;
     private String countryCode = null;
     private String address = null;
+    private String region = null;
 
     private Date startActiveDate = null;
     private Date endActiveDate = null;
@@ -36,6 +46,8 @@ public class Funder {
     private Funder followedBy = null;
 
     private String url = null;
+
+    private String crossrefFunderType = null;
 
     private List<LayoutToken> layoutTokens = new ArrayList<>();
 
