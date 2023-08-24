@@ -342,8 +342,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 curParagraphNodes.add(entity);
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
+                Funding previousFounding = null;
                 if (StringUtils.isNotBlank(funding.getGrantNumber())) {
                     if (funding.isValid()) {
+                        previousFounding = funding;
                         fundings.add(funding);
                         // next funding object
                         funding = new Funding();
@@ -353,6 +355,13 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.setGrantNumber(clusterContent);
                 funding.appendGrantNumberLayoutTokens(tokens);
                 funding.addLayoutTokens(tokens);
+
+                // possibly copy funder from previous funding object (case of "factorization" of grant numbers)
+                if (previousFounding != null && 
+                    previousFounding.getGrantNumber() != null && 
+                    clusterContent.length() == previousFounding.getGrantNumber().length()) {
+                    funding.setFunder(previousFounding.getFunder());
+                }
 
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "grantNumber"));
