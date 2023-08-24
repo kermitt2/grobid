@@ -90,7 +90,7 @@ public class EndToEndEvaluation {
                     GrobidAnalysisConfig.builder()
                             .consolidateHeader(1)
                             .consolidateCitations(0)
-                            .consolidateFunders(0)
+                            .consolidateFunders(1)
                             .withPreprocessImages(true)
                             .withSentenceSegmentation(false)
                             .build();
