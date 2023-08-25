@@ -6,8 +6,8 @@ timeout=20   # 20 seconds
 interval=1
 # Delay between posting the SIGTERM signal and destroying the process by SIGKILL.
 delay=0
-# Limit the memory usage by this bash script
-memory_limit=62880
+# Default limit for the memory usage by this bash script
+memory_limit=6242304
 
 command=${0:0:${#0}-7}
 args=("$@")
