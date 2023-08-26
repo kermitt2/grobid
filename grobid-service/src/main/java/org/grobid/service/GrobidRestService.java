@@ -51,7 +51,7 @@ public class GrobidRestService implements GrobidPaths {
     public static final String INPUT = "input";
     public static final String CONSOLIDATE_CITATIONS = "consolidateCitations";
     public static final String CONSOLIDATE_HEADER = "consolidateHeader";
-    public static final String CONSOLIDATE_FUNDERS = "consolidateFunder";
+    public static final String CONSOLIDATE_FUNDERS = "consolidateFunders";
     public static final String INCLUDE_RAW_AFFILIATIONS = "includeRawAffiliations";
     public static final String INCLUDE_RAW_CITATIONS = "includeRawCitations";
     public static final String INCLUDE_FIGURES_TABLES = "includeFiguresTables";
