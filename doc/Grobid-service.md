@@ -111,11 +111,11 @@ Still to demostrate [PDF.js] annotation possibilities, by default bibliographica
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
 
-The consolidation parameters (`consolidateHeader` and `consolidateCitations`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API. Each consolidation parameter is a string which can have three values:
+The consolidation parameters (`consolidateHeader`, `consolidateCitations`, `consolidateFunders`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc) or [biblio-glutton](https://github.com/kermitt2/biblio-glutton). The CrossRef and biblio-glutton look-up are realized based on the reliable subset of extracted metadata which are supported by these API. Each consolidation parameter is a string which can have three values:
 
 * `0`, means no consolidation at all is performed: all the metadata will come from the source PDF
-* `1`, means consolidation against CrossRef and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
-* `2`, means consolidation against CrossRef and, if matching, addition of the DOI only
+* `1`, means consolidation against CrossRef/biblio-glutton and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
+* `2`, means consolidation against CrossRef/biblio-glutton and, if matching, addition of the DOI only
 
 ### PDF to TEI conversion services
 
@@ -123,12 +123,12 @@ The consolidation parameters (`consolidateHeader` and `consolidateCitations`) in
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
-`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only).
+`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the header metadata and inject DOI only).
 
 |  method   |  request type         |  response type       |  parameters         |  requirement  |  description  |
 |---        |---                    |---                   |---                  |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
+|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 
 Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
@@ -166,6 +166,7 @@ Convert the complete input document into TEI XML format (header, body and biblio
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
 |           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted). |
 |           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidatFunders` | optional         | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only). |
 |           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
