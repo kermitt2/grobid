@@ -207,9 +207,14 @@ public class TEIFormatter {
                 Funder consolidatedFunder = null;
                 if (consolidatedFunders != null)
                     consolidatedFunder = consolidatedFunders.get(n);
-                if (consolidatedFunder != null) 
+
+                if (consolidatedFunder != null && config.getConsolidateFunders() == 1) {
                     funderPiece = consolidatedFunder.toTEI(4);
-                else
+                } else if (consolidatedFunder != null && config.getConsolidateFunders() == 2) {
+                    Funder localFunder = entry.getKey();
+                    localFunder.setDoi(consolidatedFunder.getDoi());
+                    funderPiece = localFunder.toTEI(4);
+                } else
                     funderPiece = entry.getKey().toTEI(4);
 
                 // inject funding ref in the funder entries
