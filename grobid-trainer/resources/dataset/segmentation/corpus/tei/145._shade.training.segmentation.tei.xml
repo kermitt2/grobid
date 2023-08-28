@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Shade: A Fast Instruction-Set Simulator <lb/>for Execution Profiling <lb/>Bob Cmelik <lb/>Sun Microsystems, Inc. <lb/>rfc@eng.sun.com <lb/>David Keppel <lb/>University of Washington <lb/>pardo@cs.washington.edu <lb/>Abstract <lb/>Tracing tools are used widely to help analyze, design, and tune <lb/>both hardware and software systems. This paper describes a tool <lb/>called Shade which combines efficient instruction-set simulation <lb/>with a flexible, extensible trace generation capability. Efficiency <lb/>is achieved by dynamically compiling and caching code to simu-<lb/>late and trace the application program. The user may control the <lb/>extent of tracing in a variety of ways; arbitrarily detailed applica-<lb/>tion state information may be collected during the simulation, but <lb/>tracing less translates directly into greater efficiency. Current <lb/>Shade implementations run on SPARC systems and simulate the <lb/>SPARC (Versions 8 and 9) and MIPS I instruction sets. This <lb/>paper describes the capabilities, design, implementation, and per-<lb/>formance of Shade, and discusses instruction set emulation in <lb/>general. <lb/></front>

@@ -8,6 +8,8 @@ Consolidation has two main interests:
 
 * The consolidation service matches the extracted bibliographical references with known publications, and complement the parsed bibliographical references with various metadata, in particular DOI, making possible the creation of a citation graph and to link the extracted references to external services. 
 
+The consolidation includes the CrossRef Funder Registry for enriching the extracted funder information. 
+
 GROBID supports two consolidation services:
 
 * [CrossRef REST API](https://github.com/CrossRef/rest-api-doc) (default)

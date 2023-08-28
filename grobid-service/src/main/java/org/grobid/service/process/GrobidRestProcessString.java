@@ -411,6 +411,56 @@ public class GrobidRestProcessString {
 		return response;
 	}
 
+	/**
+	 * Parse a text corresponding to an acknowledgement and or funding section and return the extracted 
+	 * entities: funding, person, organization, project name.
+	 * 
+	 * @param text
+	 *            string of the patent description text to be processed
+	 * 
+	 * @return a response object containing the JSON representation of
+	 *         the acknowledgement / funding section
+	 */
+	public Response processFundingAcknowledgement(String text, boolean generateIDs, boolean segmentSentences) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		Engine engine = null;
+		try {
+			engine = Engine.getEngine(true);
+					
+			text = text.replaceAll("\\t", " ");
+			// starts conversion process
+            GrobidAnalysisConfig config =
+                GrobidAnalysisConfig.builder()
+                    .generateTeiIds(generateIDs)
+                    .withSentenceSegmentation(segmentSentences)
+                    .build();
+
+			String result = engine.processFundingAcknowledgement(text, config);
+
+			if (result == null) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(result)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
 	public String methodLogIn() {
 		return ">> " + GrobidRestProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
 	}

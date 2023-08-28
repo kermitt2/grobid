@@ -5,16 +5,14 @@ import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
 import org.grobid.core.GrobidModels;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.Figure;
-import org.grobid.core.data.Table;
-import org.grobid.core.data.Equation;
+import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
@@ -65,6 +63,8 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
+
+import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
 
@@ -1909,7 +1909,7 @@ public class FullTextParser extends AbstractParser {
         for (TaggingTokenCluster cluster : Iterables.filter(clusteror.cluster(),
 				new TaggingTokenClusteror.LabelTypePredicate(TaggingLabels.FIGURE))) {
             List<LayoutToken> tokenizationFigure = cluster.concatTokens();
-            Figure result = parsers.getFigureParser().processing(
+            Figure result = this.parsers.getFigureParser().processing(
                     tokenizationFigure,
                     cluster.getFeatureBlock()
             );
@@ -1943,7 +1943,7 @@ public class FullTextParser extends AbstractParser {
 
     /**
      * Create training data for the figures as identified by the full text model.
-     * Return the pair (TEI fragment, CRF raw data).
+     * Return the pair (TEI fragment, sequence labeling raw data).
      */
     protected Pair<String,String> processTrainingDataFigures(String rese,
     		List<LayoutToken> tokenizations, String id) {
@@ -1992,7 +1992,7 @@ public class FullTextParser extends AbstractParser {
                     openFigure = true;
                     tokenizationsFigure.addAll(tokenizationsBuffer);
     			}
-    			// we remove the label in the CRF row
+    			// we remove the label in the sequence labeling row
     			int ind = row.lastIndexOf("\t");
     			figureBlock.append(row, 0, ind).append("\n");
     		} else if (label.equals("I-<figure>") || openFigure) {
@@ -2121,7 +2121,7 @@ public class FullTextParser extends AbstractParser {
 
  	/**
      * Create training data for the table as identified by the full text model.
-     * Return the pair (TEI fragment, CRF raw data).
+     * Return the pair (TEI fragment, sequence labeling raw data).
      */
     protected Pair<String,String> processTrainingDataTables(String rese,
     	List<LayoutToken> tokenizations, String id) {
@@ -2170,7 +2170,7 @@ public class FullTextParser extends AbstractParser {
     			if (!openTable) {
     			    openTable = true;
     				tokenizationsTable.addAll(tokenizationsBuffer);    				    }
-    			// we remove the label in the CRF row
+    			// we remove the label in the sequence labeling row
     			int ind = row.lastIndexOf("\t");
     			tableBlock.append(row.substring(0, ind)).append("\n");
     		} else if (label.equals("I-<table>") || openTable) {
@@ -2459,24 +2459,118 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         }
         List<BibDataSet> resCitations = doc.getBibDataSets();
         TEIFormatter teiFormatter = new TEIFormatter(doc, this);
-        StringBuilder tei;
+        StringBuilder tei = new StringBuilder();
         try {
-            tei = teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, config);
+            List<Funding> fundings = new ArrayList<>();
 
-			//System.out.println(rese);
-            //int mode = config.getFulltextProcessingMode();
-			tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-					layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+            List<String> annexStatements = new ArrayList<>();
 
-			tei.append("\t\t<back>\n");
-
-			// acknowledgement is in the back
+            // acknowledgement is in the back
             StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
                 teiFormatter, resCitations, config);
 
             if (acknowledgmentStmt.length() > 0) {
-                tei.append(acknowledgmentStmt);
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null) {
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(local_tei);
+                }
+                else {
+                    annexStatements.add(acknowledgmentStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
             }
+
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        resCitations,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
+                    if (localResult != null && localResult.getLeft() != null) {
+                        String local_tei = localResult.getLeft().toXML();
+                        local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        annexStatements.add(local_tei);
+                    } else {
+                        annexStatements.add(fundingStmt.toString());
+                    }
+
+                    if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                resCitations,
+                config);
+            if (fundingStmt.length() > 0) {
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null){
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(local_tei);
+                } else {
+                    annexStatements.add(fundingStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
+            }
+
+            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+
+            tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
+                    layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+
+            tei.append("\t\t<back>\n");
+
+            for (String annexStatement : annexStatements) {
+                tei.append("\n\t\t\t");
+                tei.append(annexStatement);
+            }
+
+            tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
+            for(Funding funding : fundings) {
+                if (funding.isNonEmptyFunding())
+                    tei.append(funding.toTEI(4));
+            }
+            tei.append("\t\t\t</listOrg>\n");
 
             // availability statements in header
             StringBuilder availabilityStmt = new StringBuilder();
@@ -2506,36 +2600,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 config);
             if (availabilityStmt.length() > 0) {
                 tei.append(availabilityStmt.toString());
-            }
-
-            // funding in header
-            StringBuilder fundingStmt = new StringBuilder();
-            if (StringUtils.isNotBlank(resHeader.getFunding())) {
-                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
-                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
-                if (headerFundingProcessed != null) {
-                    fundingStmt = teiFormatter.processTEIDivSection("funding",
-                        "\t\t\t",
-                        headerFundingProcessed.getLeft(),
-                        headerFundingProcessed.getRight(),
-                        resCitations,
-                        config);
-                }
-                if (fundingStmt.length() > 0) {
-                    tei.append(fundingStmt.toString());
-                }
-            }
-
-            // funding statements in non-header part
-            fundingStmt = getSectionAsTEI("funding",
-                "\t\t\t",
-                doc,
-                SegmentationLabels.FUNDING,
-                teiFormatter,
-                resCitations,
-                config);
-            if (fundingStmt.length() > 0) {
-                tei.append(fundingStmt);
             }
 
 			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,

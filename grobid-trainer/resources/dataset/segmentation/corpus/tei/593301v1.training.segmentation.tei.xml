@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Gweon et al. <lb/>1 <lb/>The impact of sequencing depth on the inferred taxonomic <lb/>composition and AMR gene content of metagenomic samples <lb/>H. Soon Gweon 1,2 , Liam P. Shaw 3 , Jeremy Swann 3 , Nicola De Maio 3 , Manal <lb/>AbuOun 4 , Alasdair T. M. Hubbard 3 , Mike J. Bowes 2 , Mark J. Bailey 2 , Tim E. A. <lb/>Peto 3,5 , Sarah J. Hoosdally 3 , A. Sarah Walker 3,5 , Robert P. Sebra 6 , Derrick W. <lb/>Crook 3,5 , Muna Anjum 4 , Daniel S. Read 2 , Nicole Stoesser 3 , on behalf of the <lb/>REHAB consortium. <lb/>1 Harborne Building, School of Biological Sciences, University of Reading, <lb/>RG6 6AS, UK <lb/>2 Centre for Ecology &amp; Hydrology, Wallingford, Oxfordshire, OX10 8BB, UK <lb/>3 Nuffield Department of Medicine, University of Oxford, Oxford, UK <lb/>4 Department of Bacteriology, Animal and Plant Health Agency, Addlestone, <lb/>Surrey, KT15 3NB, UK <lb/>5 NIHR Health Protection Research Unit (HPRU) in Healthcare-associated <lb/>Infections and Antimicrobial Resistance at University of Oxford in partnership <lb/>with Public Health England, Oxford, UK <lb/>6 Department of Genetics and Genomics, Icahn School of Medicine at Mt <lb/>Sinai, New York, NY, USA <lb/>Corresponding authors <lb/>H. Soon Gweon, h.s.gweon@reading.ac.uk <lb/>Nicole Stoesser, nicole.stoesser@ndm.ox.ac.uk <lb/></front>

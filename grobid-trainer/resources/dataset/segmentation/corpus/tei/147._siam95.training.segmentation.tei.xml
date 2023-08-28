@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>A Portable Parallel N-body Solver <lb/>3 <lb/>E Christopher Lewis y Calvin Lin y Lawrence Snyder y George Turkiyyah z <lb/>Abstract <lb/>We present parallel solutions for direct and fast n-body solvers written in the ZPL <lb/>language. We describe the direct solver, compare its performance against a sequential <lb/>C program, and show performance results for two very dierent parallel machines: the <lb/>KSR-2 and the Paragon. We also discuss the implementation of the fast solver in ZPL, <lb/>including factors pertinent to data movement. <lb/></front>

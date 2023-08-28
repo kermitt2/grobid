@@ -2,6 +2,8 @@ package org.grobid.core.data;
 
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.OffsetPosition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +35,13 @@ public class Affiliation {
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
+    private List<LayoutToken> layoutTokens = null;
+
     // an identifier for the affiliation independent from the marker, present in the TEI result
     private String key = null;
+
+    // default indo-european delimiters, should be moved to language specific analysers
+    public static String delimiters = " \n\t" + TextUtilities.fullPunctuations + "。、，・";
 
     public Affiliation() {
     }
@@ -56,6 +63,7 @@ public class Affiliation {
         addrLine = aff.getAddrLine();
         affiliationString = aff.getAffiliationString();
         rawAffiliationString = aff.getRawAffiliationString();
+        layoutTokens = aff.getLayoutTokens();
     }
 
     public String getAcronym() { 
@@ -298,6 +306,20 @@ public class Affiliation {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public List<LayoutToken> getLayoutTokens() {
+        return this.layoutTokens;
+    }
+
+    public void setLayoutTokens(List<LayoutToken> tokens) {
+        this.layoutTokens = tokens;
+    }
+
+    public void appendLayoutTokens(List<LayoutToken> tokens) {
+        if (this.layoutTokens == null)
+            layoutTokens = new ArrayList<>();
+        this.layoutTokens.addAll(tokens);
     }
 
     public void clean() {
@@ -650,6 +672,5 @@ public class Affiliation {
                 ", failAffiliation=" + failAffiliation +
                 '}';
     }
-
     
 }

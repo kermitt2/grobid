@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>fluff: exploratory analysis and visualization of <lb/>high-throughput sequencing data <lb/>Georgios Georgiou 1 and Simon J. van Heeringen 1,* <lb/>1 <lb/>Radboud University, Department of Molecular Developmental Biology, Faculty of Science, Radboud Institute for <lb/>Molecular Life Sciences, 6500HB Nijmegen, The Netherlands <lb/>*To whom correspondence should be addressed. <lb/>Abstract <lb/>Summary: Here we introduce fluff, a software package that allows for simple exploration, clustering and visualization of <lb/>highthroughput sequencing experiments. The package contains three commandline tools to generate publicationquality <lb/>figures in an uncomplicated manner using sensible defaults. Genomewide data can be aggregated, clustered and <lb/>visualized in a heatmap, according to different clustering methods. This includes a predefined setting to identify dynamic <lb/>clusters between different conditions or developmental stages. Alternatively, clustered data can be visualized in a <lb/>bandplot. Finally, fluff includes a tool to generate genomic profiles. As commandline tools, the fluff programs can easily <lb/>be integrated into standard analysis pipelines. The installation is straightforward and documentation is available at <lb/>http://fluff.readthedocs.org. <lb/>Availability: fluff is implemented in Python and runs on Linux. The source code is freely available for download at <lb/>https://github.com/simonvh/fluff. <lb/>Contact: s.vanheeringen@science.ru.nl <lb/></front>

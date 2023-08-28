@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="two_pages"/>
+		<fileDesc xml:id="_two_pages"/>
 	</teiHeader>
 	<text xml:lang="en">
 		<front>

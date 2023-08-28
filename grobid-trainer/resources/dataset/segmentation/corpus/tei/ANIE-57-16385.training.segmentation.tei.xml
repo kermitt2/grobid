@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>German Edition:D OI:10.1002/ange.201809108 <lb/>Polymers <lb/>International Edition:D OI:10.1002/anie.201809108 <lb/>Tracking Local Mechanical Impact in Heterogeneous Polymers with <lb/>Direct Optical Imaging <lb/>Georgy A. Filonenko,* Jody A. M. Lugger,Chong Liu, Ellen P. A. van Heeswijk, <lb/>Marco M. R. M. Hendrix, Manuela Weber,C hristian Müller,Emiel J. M. Hensen, <lb/>Rint P. Sijbesma, and Evgeny A. Pidko <lb/>Abstract: Structural heterogeneity defines the properties of <lb/>many functional polymers and it is often crucial for their <lb/>performance and ability to withstand mechanical impact. Such <lb/>heterogeneity,h owever,p oses at remendous challenge for <lb/>characterization of these materials and limits our ability to <lb/>design them rationally.H erein we present ap ractical method-<lb/>ology capable of resolving the complex mechanical behavior <lb/>and trackingm echanical impact in discrete phases of seg-<lb/>mented polyurethane-a typical example of as tructurally <lb/>complex polymer.U sing direct optical imaging of photo-<lb/>luminescence produced by as mall-molecule organometallic <lb/>mechano-responsive sensor we observe in real time how <lb/>polymer phases dissipate energy,r estructure,a nd breakdown <lb/>upon mechanical impact. Owing to its simplicity and robust-<lb/>ness,t his method has potential in describing the evolution of <lb/>complex soft-matter systems for whichglobal characterization <lb/>techniques fall short of providing molecular-level insight. <lb/></front>

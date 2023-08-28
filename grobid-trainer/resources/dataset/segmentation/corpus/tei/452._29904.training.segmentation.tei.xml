@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Cloud Classi cation Using Error-Correcting Output Codes <lb/>David W. Aha <lb/>Navy Center for Applied Research in Arti cial Intelligence <lb/>Naval Research Laboratory <lb/>Washington, DC 20375 <lb/>aha@aic.nrl.navy.mil <lb/>Richard L. Bankert <lb/>Marine Meteorology Division <lb/>Naval Research Laboratory <lb/>Monterey, CA 93943 <lb/>bankert@nrlmry.navy.mil <lb/>October 30, 1996 <lb/>Submission to AI Applications: Natural Resources, Agriculture, and Environmental Science. <lb/>Corresponding author: The rst author is the corresponding author for this submission. David&apos;s <lb/>phone number is (202) 767-9006 and FAX number is (202) 767-3172. <lb/>Suggested running head: \Cloud Classi cation Using Error-Correcting Output Codes&quot; <lb/>Available as NCARAI Technical Note AIC-96-024 <lb/></front>

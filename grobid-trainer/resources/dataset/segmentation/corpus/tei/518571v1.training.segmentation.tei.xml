@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>DRAFT 11 January 2019 <lb/>Discovering Data Access and Use <lb/>Requirements Using the Data Tags <lb/>Suite (DATS) Model 1 <lb/>George Alter, University of Michigan <lb/>Alejandra Gonzalez-Beltran, University of Oxford <lb/>Lucila Ohno-Machado, University of California at San Diego <lb/>Philippe Rocca-Serra, University of Oxford <lb/>Abstract: <lb/>This article presents elements in the Data Tags Suite (DATS) metadata schema describing data access, <lb/>data use conditions, and consent information. DATS is a product of the bioCADDIE Project, which <lb/>created a data discovery index for searching across all types of biomedical data. The &quot;access and use&quot; <lb/>metadata items in DATS are designed from the perspective of a researcher who wants to find and re-use <lb/>existing data. Data reuse is often controlled to protect the privacy of subjects and patients. We focus <lb/>on the impact of data protection procedures on data users. However, these procedures are part of a <lb/>larger environment around patient privacy protection, and this article puts DATS metadata into the <lb/>context of the administrative, legal, and technical systems used to protect confidential data. <lb/></front>
