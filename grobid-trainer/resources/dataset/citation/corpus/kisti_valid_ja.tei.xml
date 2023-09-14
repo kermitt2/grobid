@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_KPGOBR_2020_v23n4_13_016" lang="ja"><author>兼宗 進 , 筧 捷彦</author> (<date>2008</date>). <title level="a">情報専門学科カリキュラム標準 J07 :0. 編集にあたって</title>. <title level="j">情報処理</title>. <biblScope unit="volume">49</biblScope>(<biblScope type="issue">7</biblScope>), <biblScope unit="page">719-720</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_KPGOBR_2020_v23n4_13_024" lang="ja"><author>立田 ルミ</author> (<date>2016</date>). <title level="a">情報学分野の参照基準 : 情報処理学会 一般情報教育委員会調査を基に</title>. <title level="j">情報学研究</title>. <biblScope unit="volume">5</biblScope>, <biblScope unit="page">99-104</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_KPGOBR_2020_v23n4_13_013" lang="ja"><author>阿草 清滋 , 西 康晴 , 沢田 篤史 , 鷲崎 弘宜</author> (<date>2008</date>). <title level="a">情報専門学科カリキュラム標準 J07 :4. ソフトウェアエンジニアリング領域(J07-SE)</title>. <title level="j">情報処理</title>. <biblScope unit="volume">49</biblScope>(<biblScope type="issue">7</biblScope>), <biblScope unit="page">743-749</biblScope>.</bibl>
+<!---  author  title  journal  issue  missmatch -->
+<bibl xml:id="_HKBOB5_2020_v23n6_167_036" lang="ja"><author>葉山嘉一</author>. <date>1994</date>. <title level="a">都市綠地における鳥類の生態特性に關する硏究</title><title level="j">造園雜誌</title>. <biblScope unit="volume">57</biblScope>(<biblScope type="issue">5</biblScope>): <biblScope unit="page">229-234</biblScope>.</bibl>
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_470_016" lang="ja"><author>槻橋修</author>, '<title level="a">東日本大震災で被災した地域コミュニティの再生とまちづ&lt;り−復元模型を活用した気仙沼市でのワークショップを通して−</title>,' <title level="j">日本災害復興学会論文集</title>, No.<biblScope type="issue">2</biblScope>, pp.<biblScope unit="page">1-8</biblScope>, <date>2012(3)</date>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

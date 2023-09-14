@@ -82,7 +82,7 @@ Under the main project directory `grobid/`:
 **Train** (generate a new model):
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 0 <name of the model> -gH grobid-home
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 0 <name of the model> -gH grobid-home
 ```
 
 The training files considered are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus`
@@ -92,7 +92,7 @@ The training of the models can be controlled using different parameters. The `nb
 **Evaluate**:
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 1 <name of the model> -gH grobid-home
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 1 <name of the model> -gH grobid-home
 ```
 
 The considered evaluation files are located under `grobid/grobid-trainer/resources/dataset/*MODEL*/evaluation`
@@ -100,13 +100,13 @@ The considered evaluation files are located under `grobid/grobid-trainer/resourc
 **Automatically split data, train and evaluate**:
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 <name of the model> -gH grobid-home -s <segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 <name of the model> -gH grobid-home -s <segmentation ratio as a number between 0 and 1, e.g. 0.8 for 80%>
 ```
 
 For instance, training the date model with a ratio of 75% for training and 25% for evaluation:
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 date -gH grobid-home -s 0.75
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 2 date -gH grobid-home -s 0.75
 ```
 
 A ratio of 1.0 means that all the data available under `grobid/grobid-trainer/resources/dataset/*MODEL*/corpus/` will be used for training the model, and the evaluation will be empty. 
@@ -119,7 +119,7 @@ Incremental training will start from an existing already train model and apply a
 Launching an incremental training is similar as the previous commands, but adding the parameter `-i`. An existing model under `grobid/grobid-home/models/*MODEL*` must be available. For example:
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 0 <name of the model> -gH grobid-home -i
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 0 <name of the model> -gH grobid-home -i
 ```
 
 Note that a full training from scratch with all training data should normally provide better accuracy for a model than several iterative training with a partition of the training data. Using incremental training makes sense for exemple when the model has been trained with a lot of data during days/weeks, and an update is required, or for the development of training data when the update of a model must be quick to generate new trainng data. 
@@ -136,14 +136,14 @@ For performing a N fold evaluation:
 
 
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 <name of the model> -gH grobid-home -n FOLD-NUMBER
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 <name of the model> -gH grobid-home -n FOLD-NUMBER
 ```
 
 `FOLD_NUMBER` must be > 1. 
 
 For instance for a 10-fold evaluation of the date model:
 ```bash
-> java -Xmx1024m -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 date -gH grobid-home -n 10
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-trainer/build/libs/grobid-trainer-<current version>-onejar.jar 3 date -gH grobid-home -n 10
 ```
 
 

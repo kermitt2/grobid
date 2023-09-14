@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_ei2015_cotret"/>
+		<fileDesc xml:id="__ei2015_cotret"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>Embedded wavelet-based face recognition under variable <lb/> position <lb/> Pascal Cotret, Stéphane Chevobbe, Mehdi Darouich <lb/> To cite this version: <lb/> Pascal Cotret, Stéphane Chevobbe, Mehdi Darouich. Embedded wavelet-based face recogni-<lb/>tion under variable position. IS&amp;T/SPIE Electronic Imaging, Real-Time Image and Video <lb/>Processing 2015, Feb 2015, San Francisco, United States. &lt;hal-01109340&gt; <lb/> HAL Id: hal-01109340 <lb/>https://hal.archives-ouvertes.fr/hal-01109340 <lb/> Submitted on 26 Jan 2015 <lb/> HAL is a multi-disciplinary open access <lb/>archive for the deposit and dissemination of sci-<lb/>entific research documents, whether they are pub-<lb/>lished or not. The documents may come from <lb/>teaching and research institutions in France or <lb/>abroad, or from public or private research centers. <lb/>L&apos;archive ouverte pluridisciplinaire HAL, est <lb/>destinée au dépôt et a la diffusion de documents <lb/>scientifiques de niveau recherche, publiés ou non, <lb/>´ emanant des etablissements d&apos;enseignement et de <lb/>recherche français oú etrangers, des laboratoires <lb/>publics ou privés. <lb/></titlePage>

@@ -32,6 +32,8 @@ public class GrobidMainArgs {
 
 	private boolean segmentSentences = false;
 
+	private boolean addElementId = false;
+
 	/**
 	 * @return the path2grobidHome
 	 */
@@ -207,6 +209,21 @@ public class GrobidMainArgs {
 	 */
 	public final void setTeiCoordinates(final boolean pTeiCoordinates) {
 		teiCoordinates = pTeiCoordinates;
+	}
+
+	/**
+	 * @return true if output a subset of the xml:id attributes must be added automatically to the resulting TEI XML elements
+	 */
+	public final boolean getAddElementId() {
+		return addElementId;
+	}
+
+	/**
+	 * @param pAddElementId
+	 *            add xml:id attribute automatically on elements in the resulting TEI XML
+	 */
+	public final void setAddElementId(final boolean pAddElementId) {
+		addElementId = pAddElementId;
 	}
 
 	/**

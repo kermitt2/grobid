@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>Random Striping for <lb/>News on Demand Servers <lb/>Juan Alemany and Jayram S. Thathachar <lb/>Technical Report UW-CSE-97-02-02 <lb/>February, 1997 <lb/>Department of Computer Science and Engineering <lb/>University of Washington <lb/>Box 352350 <lb/>Seattle, WA 98195 <lb/></titlePage>

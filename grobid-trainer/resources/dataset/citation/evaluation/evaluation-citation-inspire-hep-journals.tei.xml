@@ -36,7 +36,7 @@
 			<!-- source: doi:10.1093/mnras/stx1767 -->
 			<bibl><author>Acciari V. A. et al.</author>, <date>2009</date>, <title level="j">Science</title>, <biblScope unit="volume">325</biblScope>, <biblScope unit="page">444</biblScope></bibl>
 			<bibl><author>Akiyama K. et al.</author>, <date>2015</date>, <title level="j">ApJ</title>, <biblScope unit="volume">807</biblScope>, <biblScope unit="page">150</biblScope></bibl>
-			<bibl><author>Appl S., Camenzind M</author>., <date>1993</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">274</biblScope>, <biblScope unit="page">699</biblScope></bibl>
+			<bibl><author>Appl S., Camenzind M.</author>, <date>1993</date>, <title level="j">A&amp;A</title>, <biblScope unit="volume">274</biblScope>, <biblScope unit="page">699</biblScope></bibl>
 			<bibl><author>Asada K., Nakamura M.</author>, <date>2012</date>, <title level="j">ApJ</title>, <biblScope unit="volume">745</biblScope>, <biblScope unit="page">L28</biblScope></bibl>
 			
 			<!-- source: https://doi.org/10.1103/PhysRevLett.119.080602 -->
@@ -146,7 +146,7 @@
 			<bibl><author>Bakalov, B., Kirillov, A.A.</author>: <title level="m">Lectures on tensor categories and modular functors</title>, vol. <biblScope unit="volume">21</biblScope>. <publisher>American MathematicalSociety</publisher> ,<pubPlace>Providence</pubPlace> ( <date>2001</date>)</bibl>
 			<bibl><author>Bais, F.A., Slingerland, J.K.</author>: <title level="a">Condensate induced transitions between topologically ordered phases</title>. <title level="j">Phys. Rev.B</title> <biblScope unit="volume">79</biblScope> ,<biblScope unit="page">045316</biblScope> ( <date>2009</date>).</bibl>
 			<bibl><author>Barkeshli, M., Qi, X.-L.</author>: <title level="a">Topological nematic states and non-abelian lattice dislocations</title>. <title level="j">Phys. Rev. X</title><biblScope unit="volume">2</biblScope> (<biblScope unit="issue">3</biblScope>),<biblScope unit="page">031013</biblScope> ( <date>2012</date>)</bibl>
-			<bibl><author>Barkeshli M., Bonderson P., Cheng M., Wang Z</author>.: <title level="m">Symmetry, defects, and gauging of topological phases</title> (<date>2014</date>).<note type="report">Arxiv preprint</note> <idno type="arxiv">arXiv :1410.4540</idno></bibl>
+			<bibl><author>Barkeshli M., Bonderson P., Cheng M., Wang Z.</author>: <title level="m">Symmetry, defects, and gauging of topological phases</title> (<date>2014</date>).<note type="report">Arxiv preprint</note> <idno type="arxiv">arXiv :1410.4540</idno></bibl>
 			
 			<!-- source: https://doi.org/10.1007/s10773-017-3454-z -->
 			<bibl><author>Elizalde, E., Odintsov, S.D., Romeo, A., Bytsenko, A.A., Zerbini, S.</author>: <title level="m">Zeta Regularization Techniques withApplications</title> .<publisher>World Scientific</publisher> ,<pubPlace>Singapore</pubPlace> ( <date>1994</date>)</bibl>

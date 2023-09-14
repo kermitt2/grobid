@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+		<listBibl>
+	<bibl>-, <author>R. Colacito, and T. J. Sargent</author>, &quot;<title level="a">Benefits of Monetary Policy Experimentation in the Days of Samuelson and Solow and Lucas</title>,&quot; <title level="j">Journal of Money Credit and Banking</title> <biblScope unit="volume">39</biblScope> (<date>2007</date>), <biblScope unit="page">67-99</biblScope>.</bibl>
+	<bibl>-, ??, <author>L. P. Hansen, and T. J. Sargent</author>, &quot;<title level="m">Robustness and U.S. Monetary Policy Exper imentation</title>,&quot; <publisher>Mimeo</publisher>, <pubPlace>New York University</pubPlace>, <date>2005</date>.</bibl>
+	<bibl>-, and-, &quot;<title level="a">Assessing Specification Errors in Stochastic Discount Factor Models</title>,&quot; <title level="j">Journal of Finance</title> <biblScope unit="volume">52</biblScope> (<date>1997</date>), <biblScope unit="page">557-90</biblScope>.</bibl>
+	<bibl>-, and-, &quot;<title level="a">Savage-Bayesian Models of Economics</title>,&quot; in <editor>A. Kirman and M. Salmon</editor>, eds., <title level="m">Learning and Rationality in Economics</title> (<pubPlace>Oxford</pubPlace>: <publisher>Basil-Blackwell</publisher>, <date>1995</date>), <biblScope unit="page">40-62</biblScope>.</bibl>
+	<bibl><author>Sargent, T. J.</author>, <title level="m">Bounded Rationality in Macroeconomics</title>, (<pubPlace>Oxford</pubPlace>: <publisher>Clarendon Press</publisher>, <date>1993</date>).</bibl> 
+	<bibl>-, <title level="s">The Conquest of American Inflation</title> (<pubPlace>Princeton</pubPlace>: <publisher>Princeton University Press</publisher>, <date>1999</date>). <editor>Weitzman, M.</editor>, &quot;<title level="m">Risk, Uncertainty, and Asset Pricing Puzzles</title>,&quot; <orgName>Mimeo, Harvard University</orgName>, <date>2005</date>.</bibl>
+	<bibl><author>Wieland, V.</author>, &quot;<title level="a">Monetary Policy, Parameter Uncertainty, and Optimal Learning</title>,&quot; <title level="j">Journal of Monetary Economics</title> <biblScope unit="volume">46</biblScope> (<date>2000a</date>), <biblScope unit="page">199-228</biblScope>.</bibl>
+	<bibl>-, &quot;<title level="a">Learning by Doing and the Value of Optimal Experimentation</title>,&quot; <title level="j">Journal of Eco nomic Dynamics and Control</title> <biblScope unit="volume">24</biblScope> (<date>2000b</date>), <biblScope unit="page">501-34</biblScope>.</bibl>
+		</listBibl>
+	</back>
+	</text>
+</TEI>

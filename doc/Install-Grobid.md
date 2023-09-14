@@ -2,21 +2,21 @@
 
 ## Getting GROBID
 
-GROBID requires a JVM installed on your machine, supported version is **JVM 8**. Most recent JVM version (up to JVM 11) will work correctly. CRF models will also work with JVM up to 14, but using the Deep Learning with JVM beyond 11 will lead to issues. 
+GROBID requires a JVM installed on your machine, we tested the tool successfully up version **JVM 17**. Other recent JVM versions should work correctly. 
 
 ### Latest stable release
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.7.2``` which can be downloaded as follow: 
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.7.3``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.7.2.zip
-> unzip 0.7.2.zip
+> wget https://github.com/kermitt2/grobid/archive/0.7.3.zip
+> unzip 0.7.3.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
 ### Current development version
 
-The current development version is ```0.7.3-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.8.0-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash

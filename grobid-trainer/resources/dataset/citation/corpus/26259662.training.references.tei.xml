@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Camargo, S. J., K. A. Emanuel, and A. H. Sobel</author>, <date>2007a</date>: <title level="a">Use of a genesis potential index to diagnose ENSO effects on tropical cyclone genesis</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">20</biblScope>, <biblScope unit="page">4819-4834</biblScope>.</bibl>
+	<bibl>--, <author>A. W. Robertson, S. J. Gaffney, P. Smyth, and M. Ghil</author>, <date>2007b</date>: <title level="a">Cluster analysis of typhoon tracks. Part I: General properties</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">20</biblScope>, <biblScope unit="page">3635-3653</biblScope>.</bibl>
+	<bibl>--, --, --, --, and --, <title level="a">2007c: Cluster analysis of ty-phoon tracks. Part II: Large-scale circulation and ENSO</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">20</biblScope>, <biblScope unit="page">3654-3676</biblScope>.</bibl>
+	<bibl>--, and <author>T. H. Jagger</author>, <date>2004</date>: <title level="a">A hierarchical Bayesian approach to seasonal hurricane modeling</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">17</biblScope>, <biblScope unit="page">2813-2827</biblScope>.</bibl>
+	<bibl>--, and --, <date>2006</date>: <title level="m">Prediction models for annual U.S. hurricane counts. J. Climate</title>, <biblScope unit="volume">19</biblScope>, <biblScope unit="page">2935-2952</biblScope>.</bibl>
+	<bibl>--, <author>K. B. Liu, and B. Kocher</author>, <date>2000</date>: <title level="a">Spatial variations in major U.S. hurricane activity: Statistics and a physical mechanism</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">13</biblScope>, <biblScope unit="page">2293-2305</biblScope>.</bibl> 
+	<bibl>--, <author>B. H. Bossak, and X.-F. Niu</author>, <date>2001</date>: <title level="a">Secular changes to the ENSO-U.S. hurricane relationship</title>. <title level="j">Geophys. Res. Lett.</title>, <biblScope unit="volume">28</biblScope>, <biblScope unit="page">4123-4126</biblScope>.</bibl>
+	<bibl><author>Emanuel, K.</author>, <date>2005</date>: <title level="a">Increasing destructiveness of tropical cyclones over the past 30 years</title>. <title level="j">Nature</title>, <biblScope unit="volume">436</biblScope>, <biblScope unit="page">686-688</biblScope>.</bibl>
+	<bibl>--, <date>2006</date>: <title level="a">Climate and tropical cyclone activity: A new model downscaling approach</title>. <title level="j">J. Climate</title>, <biblScope unit="volume">19</biblScope>, <biblScope unit="page">4797-4802</biblScope>.</bibl> 
+	<bibl>--, <date>2007</date>: <title level="m">Environmental factors affecting tropical cyclone power dissipation. J. Climate</title>, <biblScope unit="volume">20</biblScope>, <biblScope unit="page">5497-5509</biblScope>.</bibl>
+	<bibl>--, <author>S. Ravela, E. Vivant, and C. Risi</author>, <date>2006</date>: <title level="a">A statistical-deterministic approach to hurricane risk assessment</title>. <title level="j">Bull. Amer. Meteor. Soc.</title>, <biblScope unit="volume">87</biblScope>, <biblScope unit="page">299-314</biblScope>.</bibl>
+	<bibl>--, <author>C. W. Landsea, P. W. Mielke Jr., and K. J. Berry</author>, <date>1994</date>: <title level="a">Predicting Atlantic basin seasonal tropical cyclone activity by 1 June</title>. <title level="j">Wea. Forecasting</title>, <biblScope unit="volume">9</biblScope>, <biblScope unit="page">103-115</biblScope>.</bibl>
+	<bibl><author>Hallegatte, S.</author>, <date>2006</date>: <title level="a">A cost-benefit analysis of the flood protection system of New Orleans</title>. <title level="j">Regulatory Analysis</title> <biblScope unit="volume">06</biblScope>-<biblScope unit="issue">02</biblScope>, <orgName>AEI-Brookings Joint Center</orgName>, <biblScope unit="page">25</biblScope> pp.</bibl>
+	<bibl>--, <date>2007</date>: <title level="a">The use of synthetic hurricane tracks in risk analysis and climate change damage assessment</title>. <title level="j">J. Appl. Meteor. Cli-matol.</title>, <biblScope unit="volume">46</biblScope>, <biblScope unit="page">1956-1966</biblScope>.</bibl>
+	<bibl>--, --, and <author>X. Niu</author>, <date>2001</date>: <title level="a">A dynamic probability model of hurricane winds in coastal counties of the United States</title>. <title level="j">J. Appl. Meteor.</title>, <biblScope unit="volume">40</biblScope>, <biblScope unit="page">853-863</biblScope>.</bibl>
+	<bibl>--, --, and <author>M. A. Saunders</author>, <date>2008</date>: <title level="m">Forecasting U.S. hurricane losses</title>. <publisher>Climate Extremes and Society</publisher>, <publisher>Cambridge University Press</publisher>, <biblScope unit="page">189-208</biblScope>.</bibl>
+	<bibl>--, <date>2007</date>: <title level="a">Counting Atlantic tropical cyclones back to 1900</title>. <title level="m">Eos, Trans. Amer. Geophys. Union</title>, <biblScope unit="volume">88</biblScope>, <biblScope unit="page">197</biblScope>.</bibl> 
+	<bibl>--, <author>R. A. Pielke Jr., A. M. Mestas-Nun ˜ez, and J. A. Knaff</author>, <date>1999</date>: <title level="a">Atlantic basin hurricanes: Indices of climatic changes</title>. <title level="j">Cli-matic Change</title>, <biblScope unit="volume">42</biblScope>, <biblScope unit="page">89-129</biblScope>.</bibl>
+	<bibl>--, and <author>C. W. Landsea</author>, <date>1999</date>: <title level="a">La Nin ˜a, El Nin ˜o, and Atlantic hurricane damages in the United States</title>. <title level="j">Bull. Amer. Meteor. Soc.</title>, <biblScope unit="volume">80</biblScope>, <biblScope unit="page">2027-2033</biblScope>.</bibl>
+	<bibl>--, <author>J. Gratz, C. W. Landsea, D. Collins, M. A. Saunders, and R. Muslin</author>, <date>2008</date>: <title level="a">Normalized hurricane damage in the United States: 1900-2005</title>. <title level="j">Nat. Hazards Rev.</title>, <biblScope unit="volume">9</biblScope>, <biblScope unit="page">29-42</biblScope>.</bibl>
+	<bibl><orgName type="collaboration">R Development Core Team</orgName>, <date>2005</date>: <title level="a">R: A language and environ-ment for statistical computing</title>. <title level="m">R Foundation for Statistical Computing</title>, <pubPlace>Vienna, Austria</pubPlace>, <date>1578</date> pp. [Available online at <ptr type="web">http://cran.r-project.org/doc/manuals/refman.pdf</ptr>.]</bibl>
+	<bibl>--, <date>2003</date>: <title level="a">Statistics of extremes, with applications in environ-ment, insurance and finance</title>. <title level="m">Extreme Values in Finance, Telecommunications and the Environment</title>, <editor>B. Finkenstadt and H. Rootzen</editor>, Eds., <publisher>Chapman and Hall/CRC Press</publisher>, <biblScope unit="page">1-78</biblScope>.</bibl>
+	<bibl><author>Yee, T. W.</author>, cited <date>2006</date>: <title level="m">A user&apos;s guide to the VGAM package</title>. [Available online at <ptr type="web">http://www.stat.auckland.ac.nz/;yee/ VGAM</ptr>.]</bibl>
+	<bibl>--, and <author>N. D. Mitchell</author>, <date>1991</date>: <title level="a">Generalized additive models in plant ecology</title>. <title level="j">J. Veg. Sci.</title>, <biblScope unit="volume">2</biblScope>, <biblScope unit="page">587-602</biblScope>.</bibl>
+	<bibl>--, and <author>C. J. Wild</author>, <date>1996</date>: <title level="a">Vector generalized additive models</title>. <title level="j">J. Roy. Stat. Soc. Ser. B</title>, <biblScope unit="volume">58</biblScope>, <biblScope unit="page">481-493</biblScope>.</bibl>
+	<bibl>--, and <author>T. J. Hastie</author>, <date>2003</date>: <title level="a">Reduced-rank vector generalized lin-ear models</title>. <title level="j">Stat. Model.</title>, <biblScope unit="volume">3</biblScope>, <biblScope unit="page">15-41</biblScope>.</bibl>
+	<bibl>--, and <author>A. G. Stephenson</author>, <date>2007</date>: <title level="a">Vector generalized linear and additive extreme value models</title>. <title level="j">Extremes</title>, <biblScope unit="volume">10</biblScope>, <biblScope unit="page">1-19</biblScope>.</bibl>
+
+		</listBibl>
+	</back>
+	</text>
+</TEI>

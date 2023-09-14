@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  title  journal  issue  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n2_64_139" lang="zn"><author>王进玉, 王进聪</author>, <date>2002</date>, <title level="a">敦煌石窟铜绿颜料的应用与来源</title>, <title level="j">敦煌研究</title>, <biblScope unit="volume">74</biblScope>(<biblScope type="issue">4</biblScope>), pp.<biblScope unit="page">23-28</biblScope>.</bibl>
+<!---  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n3_91_008" lang="zn"><author>師哲, 馬曉峰</author>. <title level="a">辛開苦降法在 傷寒論 金匱要略 溫病學 中的運用</title>. <title level="j">天津中醫藥大學學報</title>. <date>2018</date>. <biblScope unit="volume">37</biblScope>(<biblScope type="issue">03</biblScope>).</bibl>
+<!---  journal  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n2_1_043" lang="zn"><author>张家年, 卓翔芝, 谢阳群, 李阳</author>, '<title level="a">创新情报科技 保障国家安全: IARPA的研究机制与启示</title>,' <title level="j">情摇杂志</title>, Vol.<biblScope unit="volume">35</biblScope>, No.<biblScope type="issue">1</biblScope>, pp.<biblScope unit="page">1-7</biblScope>, <date>2016</date>.</bibl>
+<!---  title  journal  issue  missmatch -->
+<bibl xml:id="_HJJJCF_2020_v25n2_23_024" lang="zn"><author>李元青, 孙红, 薛冬, 李占东, 许轶琛, 王薇, 李萍萍</author>. <title level="a">中药治疗化疗所致周围神经病变的效果</title>. <title level="j">中国康复理论与实践</title> <date>2017</date>;<biblScope unit="volume">23</biblScope>(<biblScope type="issue">11</biblScope>):<biblScope unit="page">1321-5</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n1_103_011" lang="zn"><author>王一童 外 5人</author>. <title level="a">桂芍楮實湯配伍原理及源流初探</title>. <title level="j">現代中醫藥</title>. <date>2019</date>. <biblScope unit="volume">39</biblScope>(<biblScope type="issue">4</biblScope>).</bibl>
+<!---  author  title  issue  missmatch -->
+<bibl xml:id="_TSGHB4_2020_v9n1_51_022" lang="zn"><author>张毅, 孙洪坤</author>, <title level="a">城市大气污染防治法律体系建设</title>, <title level="j">Journal of Guangdong Institute of Public Administration</title>, <date>Jun. 2014</date>. Vol.<biblScope unit="volume">26</biblScope>, No.<biblScope type="issue">3</biblScope> <biblScope unit="page">62-66</biblScope>.</bibl>
+<!---  author  title  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_513_005" lang="zn"><author>何梦莹</author>, <title level="a">互联网+, '时代下环保公益的传播策略分析-以蚂蚁森林为例</title>,' <title level="j">视听</title>, Vol.<biblScope unit="volume">4</biblScope>, p.<biblScope unit="page">204</biblScope>, <date>2018</date>.</bibl>
+<!---  title  journal  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_499_017" lang="zn"><author>徐望</author>, '<title level="a">城市区域书店的功能价值回归研究</title>,' <title level="j">出版科学</title>, Vol.<biblScope unit="volume">26</biblScope>, No.<biblScope type="issue">06</biblScope>, pp.<biblScope unit="page">80-84</biblScope>, <date>2018</date>.</bibl>
+<!---  volume  page  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_499_016" lang="zn"><author>李品庆, Li Pinqing</author>, '<title level="a">'第三空间'视角下高校图书馆的定位及其构建措施</title>,' <title level="j">新世纪图书馆</title>, 第<biblScope unit="volume">3</biblScope>期, <date>2015</date>.</bibl>
+<!---  title  journal  volume  page  missmatch -->
+<bibl xml:id="_KCOSB1_2020_v29n3_37_002" lang="zn"><author>歐素瑛</author>, <title level="a">近代臺灣工業敎育之濫觴: 以臺灣總督府工業講習所爲中心</title>, <title level="j">敎育資料與硏究</title> 第<biblScope unit="volume">104</biblScope>期, <date>2012</date>.</bibl>
+<!---  author  title  journal  issue  missmatch -->
+<bibl xml:id="_HNGHBF_2020_v41n4_624_042" lang="zn"><author>周兵, 周杰</author>. <title level="a">灼口汤治疗阴虚型灼口综合征观察</title>. <title level="j">临床口腔医学杂志</title><date>2012</date>;<biblScope unit="volume">28</biblScope>(<biblScope type="issue">4</biblScope>):<biblScope unit="page">217-8</biblScope>.</bibl>
+<!---  journal  volume  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n8_397_024" lang="zn"><author>方璐瑶</author>, '<title level="a">坚毅性与尽责性对大学生学业成绩的影响:刻意练习的中介作用--以浙江大学为例</title>,' <title level="j">高教论坛</title>, 第<biblScope unit="volume">5</biblScope>期, pp.<biblScope unit="page">103-109</biblScope>, <date>2019</date>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_HNGHBF_2020_v41n4_624_043" lang="zn"><author>郭宏奇</author>. <title level="a">中药辨证治疗灼口综合征临床观察</title>. <title level="j">疾病监测与控制杂志</title><date>2009</date>;<biblScope unit="volume">8</biblScope>:<biblScope unit="page">484-5</biblScope>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n6_293_016" lang="zn"><author>雷韵</author>, '<title level="a">中国, 越南与东盟十国少数民族的融合与发展' 国际研讨会综述[J]</title>. <title level="j">广西民族大学学报(哲学社会科学版)</title>, 제<biblScope unit="volume">33</biblScope>권, 제<biblScope type="issue">1</biblScope>호, pp.<biblScope unit="page">114-117</biblScope>, <date>2010</date>.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_HJOHBR_2020_v38n2_1_004" lang="zn"><author>王義文</author>(<date>1989</date>). <title level="a">乾隆与燕京八景(下)</title>. <title level="j">北京園林</title>. <biblScope unit="volume">2</biblScope>(-): <biblScope unit="page">35-37</biblScope>.</bibl>
+<!---  author  title  journal  page  date  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n1_135_013" lang="zn"><author>王小平</author>. <title level="a">'陰陽交'小議</title>. <title level="j">山東中醫學院學報</title>. <biblScope unit="volume">13</biblScope>(<biblScope type="issue">1</biblScope>). <date>1985</date>.</bibl>
+<!---  author  title  journal  issue  missmatch -->
+<bibl xml:id="_HNGHBF_2020_v41n5_838_003" lang="zn"><author>周兵, 周杰</author>. <title level="a">灼口湯治療陰虛型灼口綜合征觀察</title>. <title level="j">臨床口腔医學雜誌</title><date>2012</date>;<biblScope unit="volume">28</biblScope>(<biblScope type="issue">4</biblScope>):<biblScope unit="page">217-8</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n1_61_003" lang="zn"><author>靳士英</author>. <title level="a">五臟图考</title>. <title level="j">中华医史杂誌</title>. <date>1994</date>. <biblScope unit="volume">24</biblScope>(<biblScope type="issue">2</biblScope>).</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n2_507_018" lang="zn"><author>王秦</author>, '<title level="a">社交网络时代个人信息传播与'隐私悖论</title> [J],' <title level="j">中国报业</title>, Vol.<biblScope unit="volume">10</biblScope>, pp.<biblScope unit="page">70-71</biblScope>, <date>2014</date>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n2_507_010" lang="zn"><author>吴雅楠, 李娇</author>, '<title level="a">吉林省大学生社交媒体使用现状及影响因素探析--以微信为例</title> [J],' <title level="j">新闻研究导刊</title>, Vol.<biblScope unit="volume">19</biblScope>, pp.<biblScope unit="page">8-9</biblScope>, <date>2015</date>.</bibl>
+<!---  author  title  journal  volume  page  date  missmatch -->
+<bibl xml:id="_SOJHB6_2020_v5n1_157_006" lang="zn"><author>詹杭倫</author>, <title level="a">論朝鲜王朝學者金正喜的時學宗尙</title>, <title level="j">中山大學學報</title>, <date>2017</date>年第5期, 第<biblScope unit="volume">57</biblScope>卷.</bibl>
+<!---  author  title  journal  volume  issue  missmatch -->
+<bibl xml:id="_HJOHBR_2020_v38n2_1_003" lang="zn"><author>王義文</author>(<date>1989</date>). <title level="a">乾隆与燕京八景</title>. <title level="j">北京園林</title>. <biblScope unit="volume">1</biblScope>(-): <biblScope unit="page">29-31</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_TRMDBW_2021_v10_51_003" lang="zn"><author>朱妍</author>, <title level="a">传播学视角下网络直播的传播要素分析</title>Y <title level="j">新媒体研究</title> <biblScope unit="volume">第3期</biblScope>, <date>2017</date>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_TRMDBW_2020_v8_79_006" lang="zn"><author>王孟</author>, <title level="a">从 舞动奇迹 看电视舞蹈节目的本土化改造</title>, <title level="j">当代电视</title>, <date>2018</date>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_TRMDBW_2020_v8_79_007" lang="zn"><author>王俊翰</author>, <title level="a">接受美学视域下看 舞蹈风暴 的大众化呈现</title>, <title level="j">品位经典</title>, <date>2019</date>.</bibl>
+<!---  author  title  journal  volume  page  issue  missmatch -->
+<bibl xml:id="_HOOJBM_2020_v33n3_1_008" lang="zn"><author>李云海, 劉建忠, 張雪榮, 林連美</author>. <title level="a">五臟六腑與小便異常</title>. <title level="j">新中醫</title>. <date>2013</date>. <biblScope unit="volume">45</biblScope>(<biblScope type="issue">11</biblScope>).</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

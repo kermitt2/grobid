@@ -4,7 +4,7 @@
 
 Since GROBID version `0.5.4` (2018), it is possible to use in GROBID recent Deep Learning sequence labelling models trained with [DeLFT](https://github.com/kermitt2/delft). The available neural models include in particular BidLSTM-CRF with Glove embeddings, with additional feature channel (for layout features), with ELMo, and transformer-based fine-tuned architectures with or without CRF activation layer (e.g. SciBERT-CRF), which can be used as alternative to the default Wapiti CRF.
 
-These architectures have been tested on Linux 64bit and macOS.
+These architectures have been tested on Linux 64bit and macOS 64bit. The support to the macOS ARM is in progress.
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see [here](https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink). Additionally, it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
@@ -18,19 +18,21 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 ## Recommended Deep Learning models
 
-By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. 
+By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
-For current GROBID version 0.7.2, we recommend considering the usage of the following Deep Learning models: 
+For current GROBID version 0.7.3, we recommend considering the usage of the following Deep Learning models: 
 
-- `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF. With a GPU, there is normally no runtime impact by selecting this model. 
+- `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. SciBERT fine-tuned model performs currently at  lower accuracy. 
 
 - `affiliation-address` model: for parsing affiliation and address blocks, `BidLSTM_CRF_FEATURES` architecture provides better accuracy than CRF at the cost of a minor runtime impact. 
 
-- `reference-segmenter` model: this model segments a bibliographical reference section into individual references, `BidLSTM_CRF_FEATURES` architecture provides better accuracy than CRF (even on very very very long reference sections), but at the cost of a global runtime 2 to 3 times slower. 
+- `reference-segmenter` model: this model segments a bibliographical reference section into individual references, `BidLSTM_ChainCRF_FEATURES` architecture provides better accuracy than CRF (even on very very very long reference sections), but at the cost of a global runtime 2 to 3 times slower. 
+
+- `header` model: this model extracts the header metadata, the `BidLSTM_CRF_FEATURES` or `BidLSTM_ChainCRF_FEATURES` (a faster variant) provides sligthly better results than CRF, especially with less mainstream domains and publisher. With a GPU, there is normally almost no runtime impact by selecting this DL model. 
 
 Other Deep Learning models do not show better accuracy than old-school CRF according to our benchmarkings, so we do not recommend using them in general at this stage. However, some of them tend to be more portable and can be more reliable than CRF for document layouts and scientific domains far from what is available in the training data.
 
-Finally, the models `segmentation` (overall first-pass segmentation of a document in general zones) and `fulltext` (structuring the content body of a document) are currently only based on CRF, due to the long input sequences to be processed. 
+Finally, the model `fulltext` (structuring the content body of a document) is currently only based on CRF, due to the long input sequences to be processed. 
 
 ### Getting started with Deep Learning
 
@@ -44,7 +46,7 @@ However if you need a "local" library installation and build, prepare a lot of c
 
 <span>0.</span> Install GROBID as indicated [here](https://grobid.readthedocs.io/en/latest/Install-Grobid/).
 
-You __must__ use a Java version under or equals to Java 11. At the present time, JVM 1.12 to 1.17 will fail to load the native JEP library (due to additional security constraints).
+The following was tested with Java version up to 17.
 
 <span>1.</span> install [DeLFT](https://github.com/kermitt2/delft), see instructions [here](https://github.com/kermitt2/delft#install).
 DeLFT version `0.3.2` has been tested successfully with Python 3.7 and 3.8. For GPU support, CUDA >=11.2 must be installed. 
@@ -67,7 +69,7 @@ Indicate the path to the DeLFT install in the GROBID config file `grobid.yaml` (
     install: "../delft"
 ```
 
-Indicate the GROBID model that should use a Deep Learning implementation in the same config file, for instance if you wish to use a Deep Learning model for the citation model (it provides 1-2 additional points to the f-score for bibliographical reference recognition) use:
+Indicate the GROBID model that should use a Deep Learning implementation in the same config file, for instance if you wish to use a Deep Learning model for the citation model (it provides 2-3 additional points to the F1-score for bibliographical reference recognition) use:
 
 ```yaml
   models:

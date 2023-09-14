@@ -94,7 +94,11 @@ public class ReferenceSegmenterParser extends AbstractParser implements Referenc
 			if (GrobidProperties.getGrobidCRFEngine(GrobidModels.REFERENCE_SEGMENTER) == GrobidCRFEngine.DELFT) {
 				String[] featureVectorLines = featureVector.split("\n");
 
-//System.out.println("total input lines: " + featureVectorLines.length + " - " + tokenizationsReferences.size() + " tokens");
+/*for(LayoutToken token : tokenizationsReferences) {
+System.out.print(token.getText());
+}
+System.out.println("\n");
+System.out.println("total input lines: " + featureVectorLines.length + " - " + tokenizationsReferences.size() + " tokens");*/
 
 				int originalMaxSequence = 2000;
 				if (GrobidProperties.getInstance().getDelftRuntimeMaxSequenceLength(GrobidModels.REFERENCE_SEGMENTER.getModelName()) != -1) {
@@ -235,6 +239,7 @@ System.out.println(featureVectorPiece.size());
 		if (res == null) {
 			return null;
 		}
+        
         // if we extract for generating training data, we also give back the used features
         List<Triple<String, String, String>> labeled = GenericTaggerUtils.getTokensWithLabelsAndFeatures(res, training);
 
@@ -272,6 +277,8 @@ System.out.println(featureVectorPiece.size());
         Iterator<LabeledTokensContainer> iterator = synchronizer.iterator();
         while (iterator.hasNext()) {
             LabeledTokensContainer container = iterator.next();
+            if (container == null)
+                continue;
             String tok = container.getToken();
             String plainLabel = container.getPlainLabel();
             if ("<label>".equals(plainLabel)) {

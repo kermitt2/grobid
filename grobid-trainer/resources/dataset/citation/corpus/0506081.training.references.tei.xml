@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc xml:id="0"/>
+	</teiHeader>
+	<text>
+		<front/>
+		<body/>
+		<back>
+<listBibl>
+	<bibl><author>Akaike, H.</author> (<date>1974</date>). <title level="a">A new look at the statistical model identification</title>. <title level="j">IEEE Trans. Automatic Control</title> <biblScope unit="volume">19</biblScope> <biblScope unit="page">716-723</biblScope>. <idno>MR0423716</idno></bibl>
+	<bibl><author>Antoniadis, A. and Fan, J.</author> (<date>2001</date>). <title level="a">Regularization of wavelet approximations</title> (<note>with discussion</note>). <title level="j">J. Amer. Statist. Assoc.</title> <biblScope unit="volume">96</biblScope> <biblScope unit="page">939-967</biblScope>. <idno>MR1946364</idno></bibl>
+	<bibl><author>Baraud, Y.</author> (<date>2000</date>). <title level="a">Model selection for regression on a fixed design</title>. <title level="j">Probab. Theory Related Fields</title> <biblScope unit="volume">117</biblScope> <biblScope unit="page">467-493</biblScope>. <idno>MR1777129</idno></bibl>
+	<bibl><author>Barron, A. R., Birgé, L. and Massart, P.</author> (<date>1999</date>). <title level="a">Risk bounds for model selection via penalization</title>. <title level="j">Probab. Theory Related Fields</title> <biblScope unit="volume">113</biblScope> <biblScope unit="page">301-413</biblScope>. <idno>MR1679028</idno></bibl>
+	<bibl><author>Barron, A. R. and Cover, T. M.</author> (<date>1991</date>). <title level="a">Minimum complexity density estimation</title>. <title level="j">IEEE Trans. Inform. Theory</title> <biblScope unit="volume">37</biblScope> <biblScope unit="page">1034-1054</biblScope>. <idno>MR1111806</idno></bibl>
+	<bibl><author>Birgé, L. and Massart, P.</author> (<date>1997</date>). <title level="a">From model selection to adaptive estimation</title>. In <title level="m">Festschrift for Lucien Le Cam</title> (<editor>D. Pollard, E. Torgersen and G. L. Yang</editor>, eds.) <biblScope unit="page">55-87</biblScope>. <publisher>Springer</publisher>, <pubPlace>New York</pubPlace>. <idno>MR1462939</idno></bibl>
+	<bibl><author>Candès, E. J. and Romberg, J.</author> (<date>2005</date>). <title level="a">Practical signal recovery from random pro-jections</title>. In <title level="m">Computational Imaging III : Proc. SPIE International Symposium on Electronic Imaging</title> <biblScope unit="volume">1</biblScope> <biblScope unit="page">76-86</biblScope>. <pubPlace>San Jose, CA</pubPlace>.</bibl>
+	<bibl><author>Candès, E. J., Romberg, J. and Tao, T.</author> (<date>2006</date>). <title level="a">Stable signal recovery from in-complete and inaccurate measurements</title>. <title level="j">Comm. Pure Appl. Math.</title> <biblScope unit="volume">59</biblScope> <biblScope unit="page">1207-1223</biblScope>. <idno>MR2230846</idno></bibl>
+	<bibl><author>Donoho, D. L.</author> (<date>2006</date>). <title level="a">For most large underdetermined systems of linear equations the minimal ℓ1-norm solution is also the sparsest solution</title>. <title level="j">Comm. Pure Appl. Math.</title> <biblScope unit="volume">59</biblScope> <biblScope unit="page">797-829</biblScope>. <idno>MR2217606</idno></bibl>
+	<bibl><author>Haupt, J. and Nowak, R.</author> (<date>2006</date>). <title level="a">Signal reconstruction from noisy random projec-tions</title>. <title level="j">IEEE Trans. Inform. Theory</title> <biblScope unit="volume">52</biblScope> <biblScope unit="page">4036-4048</biblScope>. <idno>MR2298532</idno></bibl>
+	<bibl><author>Schwarz, G.</author> (<date>1978</date>). <title level="a">Estimating the dimension of a model</title>. <title level="j">Ann. Statist.</title> <biblScope unit="volume">6</biblScope> <biblScope unit="page">461-464</biblScope>. <idno>MR0468014</idno></bibl>
+		</listBibl>
+	</back>
+	</text>
+</TEI>

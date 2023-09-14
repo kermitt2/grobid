@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>A simple method for automated equilibration detection in molecular simulations <lb/>John D. Chodera , * <lb/>Computational Biology Program, Sloan Kettering Institute, <lb/>Memorial Sloan Kettering Cancer Center, New York, NY <lb/>(Dated: June , <lb/>) <lb/>Molecular simulations intended to compute equilibrium properties are o en initiated from configurations <lb/>that are highly atypical of equilibrium samples, a practice which can generate a distinct initial transient <lb/>in mechanical observables computed from the simulation trajectory. Traditional practice in simulation <lb/>data analysis recommends this initial portion be discarded to equilibration, but no simple, general, and <lb/>automated procedure for this process exists. Here, we suggest a conceptually simple automated procedure <lb/>that does not make strict assumptions about the distribution of the observable of interest, in which the <lb/>equilibration time is chosen to maximize the number of e ectively uncorrelated samples in the production <lb/>timespan used to compute equilibrium averages. We present a simple Python reference implementation of <lb/>this procedure, and demonstrate its utility on typical molecular simulation data. <lb/>Keywords: molecular dynamics (MD); Metropolis-Hastings; Monte Carlo (MC); Markov chain Monte Carlo <lb/>(MCMC); equilibration; burn-in; timeseries analysis; statistical ine iciency; integrated autocorrelation time <lb/></front>

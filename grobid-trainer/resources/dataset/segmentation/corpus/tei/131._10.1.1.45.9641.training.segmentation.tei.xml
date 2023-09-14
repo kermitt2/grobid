@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Strange Bedfellows: Issues in Object Naming Under Unix <lb/>Douglas B. Orr, Robert W. Mecklenburg and Ravindra Kuramkote <lb/>Department of Computer Science <lb/>University of Utah <lb/>Salt Lake City, UT 84112 USA <lb/>E-mail: dbo@cs.utah.edu, mecklen@cs.utah.edu, kuramkot@cs.utah.edu <lb/>Abstract <lb/>Naming plays a key role in the design of any sys-<lb/>tem that exports services or resources. Object systems <lb/>may export many di erent categories of names: in-<lb/>stances, components of records, types, etc. Operating <lb/>systems export the names of les, devices, and ser-<lb/>vices. Integrating an object base with existing oper-<lb/>ating system facilities can improve accessibility of the <lb/>object base resources. We consider the bene ts and <lb/>pitfalls of integrating an object base namespace with <lb/>the Unix namespace. 1 <lb/></front>

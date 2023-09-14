@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_RR-8661"/>
+		<fileDesc xml:id="__RR-8661"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>ISSN  0249-6399 <lb/> ISRN INRIA/RR--8661--FR+ENG <lb/> RESEARCH <lb/> REPORT <lb/>N° 8661 <lb/> January 2015 <lb/>Project-Teams Hipercom2 <lb/> Wave: a Distributed <lb/>Scheduling Algorithm for <lb/>Convergecast in <lb/>IEEE 802.15.4e Networks <lb/>(Extended Version) <lb/> Ridha Soua, Pascale Minet, Erwan Livolant <lb/></titlePage> 

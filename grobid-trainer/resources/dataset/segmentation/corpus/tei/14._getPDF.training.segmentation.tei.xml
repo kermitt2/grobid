@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>A Neural Network for Attentiond Spotlight <lb/>W e e Kheng Leowti and Risto Miikkulainent <lb/>tDept. of Computer Sciences, Univ. of Texas at Austin, <lb/>Aust,in, Texas 78712, USA, and <lb/>$Microelectronics and Computer Technology Corporation, <lb/>3500 W. Balcones Center Dr., Austin, Texas 78759, USA. <lb/>leow@cs.utexas.edu, risto@cs.utexas.edu <lb/>Abstract <lb/>According to space-based theory, visual attention is limited to a local region in space called the <lb/>attentional field. Visual information within the attentional field is enhanced for further processing <lb/>while information outside is suppressed. There is evidence that enhancement and suppression are <lb/>achieved with dynamic weighting of network activity. This paper discusses a neural network that <lb/>generates the appropriate weights, called the otfentional spotlight, given the size and the position of <lb/>the intended attentional field. The network has three layers. A hmtingfeedback network serves as the <lb/>output layer and performs a critical task whirh cannot be accomplished by feedforward networks. <lb/></front>

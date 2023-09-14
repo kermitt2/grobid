@@ -90,8 +90,9 @@ public class EndToEndEvaluation {
                     GrobidAnalysisConfig.builder()
                             .consolidateHeader(1)
                             .consolidateCitations(0)
+                            .consolidateFunders(0)
                             .withPreprocessImages(true)
-//                            .withSentenceSegmentation(true)
+                            .withSentenceSegmentation(false)
                             .build();
 				String tei = engine.fullTextToTEI(this.pdfFile, config);
 				// write the result in the same directory
@@ -115,7 +116,7 @@ public class EndToEndEvaluation {
             	}
         	}
 
-            return new Boolean(success);
+            return Boolean.valueOf(success);
         } 
     } 
 
@@ -382,6 +383,8 @@ public class EndToEndEvaluation {
         Stats levenshteinStats = new Stats();
         Stats ratcliffObershelpStats = new Stats();
 
+        Stats availabilityRatioStat = new Stats();
+
 		List<String> labels = null;
 		List<FieldSpecification> fields = null;
 		
@@ -399,7 +402,7 @@ public class EndToEndEvaluation {
 		int totalObservedCitations = 0;
 		int totalCorrectObservedCitations = 0;
 		int totalWrongObservedCitations = 0;
-		
+
 		if (sectionType == this.HEADER) {
 			fields = headerFields;
 			labels = headerLabels;
@@ -419,13 +422,19 @@ public class EndToEndEvaluation {
 		int match3 = 0;
 		int match4 = 0;
 
-        String profile = "JATS";
-        if (xmlInputPath.indexOf("PMC") != -1) {
+        if (xmlInputPath.toLowerCase().indexOf("pmc") != -1 || 
+        	xmlInputPath.toLowerCase().indexOf("plos") != -1  || 
+        	xmlInputPath.toLowerCase().indexOf("elife") != -1) {
             // for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
-            profile =  "PMC";
-
             removeFieldsFromEvaluation(Arrays.asList("doi", "pmid", "pmcid"), citationsFields, citationsLabels);
+        }
 
+        if (xmlInputPath.toLowerCase().indexOf("elife") != -1) {
+            // keywords are present in the eLife XML, but not in the PDF !
+            removeFieldsFromEvaluation(Arrays.asList("keywords"), headerFields, headerLabels);
+        }
+
+        if (xmlInputPath.toLowerCase().indexOf("pmc") != -1) {
             // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
             removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt"), fulltextFields, fulltextLabels);
         }
@@ -1183,10 +1192,10 @@ public class EndToEndEvaluation {
 										String localId = theIds[j];
 										localId = localId.replace("#", "");
 										if (refCalloutRefIds.get(localId) == null)
-											refCalloutRefIds.put(localId, new Integer(1));
+											refCalloutRefIds.put(localId,Integer.valueOf(1));
 										else {
 											int val = refCalloutRefIds.get(localId).intValue();
-											refCalloutRefIds.put(localId, new Integer(val+1));
+											refCalloutRefIds.put(localId, Integer.valueOf(val+1));
 										}
 										totalExpectedCitations++;
 									}
@@ -1202,10 +1211,10 @@ public class EndToEndEvaluation {
 								localId = localId.replace("#", "");
 								if ( (localId != null) && (localId.length()>0) ) {
 									if (grobidCalloutRefIds.get(localId) == null)
-										grobidCalloutRefIds.put(localId, new Integer(1));
+										grobidCalloutRefIds.put(localId, Integer.valueOf(1));
 									else {
 										int val = grobidCalloutRefIds.get(localId).intValue();
-										grobidCalloutRefIds.put(localId, new Integer(val+1));
+										grobidCalloutRefIds.put(localId, Integer.valueOf(val+1));
 									}
 									totalObservedCitations++;
 								}
@@ -1464,6 +1473,10 @@ System.out.println("grobid: " + grobidResult);*/
 						boolean allGoodSoft = true;
 						boolean allGoodLevenshtein = true;
 						boolean allGoodRatcliffObershelp = true;
+
+						boolean grobidAvailabilityStatement = false;
+						boolean goldAvailabilityStatement = false;
+
 						for(FieldSpecification field : fields) {
 							String fieldName = field.fieldName;
 						
@@ -1529,11 +1542,13 @@ System.out.println("grobid: " + grobidResult);*/
 	                                List<String> grobidResults2 = new ArrayList<>();
 	                                grobidResults2.add(grobidResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
 	                                grobidResults = grobidResults2;
+	                                grobidAvailabilityStatement = true;
 	                            }
 	                            if (CollectionUtils.isNotEmpty(goldResults)) {
 	                                List<String> goldResults2 = new ArrayList<>();
 	                                goldResults2.add(goldResults.stream().collect(Collectors.joining(" ")).replace("  ", " "));
 	                                goldResults = goldResults2;
+	                                goldAvailabilityStatement = true;
 	                            }
 	                        }
 
@@ -1692,7 +1707,21 @@ System.out.println("grobid: " + grobidResult);*/
 							}*/
 
 							p++;
-						}	
+						}
+
+						// document level ratio for availability statements
+						if (grobidAvailabilityStatement) 	
+							availabilityRatioStat.incrementObserved("availability_stmt");
+						
+						if (goldAvailabilityStatement) 	
+							availabilityRatioStat.incrementExpected("availability_stmt");
+
+						if (grobidAvailabilityStatement && !goldAvailabilityStatement) 
+							availabilityRatioStat.incrementFalsePositive("availability_stmt");
+						
+
+						if (!grobidAvailabilityStatement && goldAvailabilityStatement) 
+							availabilityRatioStat.incrementFalseNegative("availability_stmt");
 					} 
 				}
 				else if (runType == this.PDFX) {
@@ -1890,6 +1919,13 @@ System.out.println("grobid: " + grobidResult);*/
 			report.append(localReport.toString());
 			reportMD.append("```\n"+localReport.toString()+"```\n\n");
 		} 
+
+		if (sectionType == this.FULLTEXT) {
+			report.append("\n===== Document-level ratio results =====\n");
+			reportMD.append("\n**Document-level ratio results**\n");
+			report.append(EvaluationUtilities.computeMetrics(availabilityRatioStat));
+			reportMD.append(EvaluationUtilities.computeMetricsMD(availabilityRatioStat));
+		}
 
 		return report.toString();
 	}

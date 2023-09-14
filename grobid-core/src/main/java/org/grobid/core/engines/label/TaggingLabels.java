@@ -112,6 +112,16 @@ public class TaggingLabels {
     public final static String PATENT_CITATION_PL_LABEL = "<refPatent>";
     public final static String PATENT_CITATION_NPL_LABEL = "<refNPL>";
 
+    public final static String FUNDER_NAME_LABEL = "<funderName>";
+    public final static String FUNDER_ABBRV_NAME_LABEL = "<funderAbbrv>";
+    public final static String PROGRAM_NAME_LABEL = "<programName>";
+    public final static String PROGRAM_ABBRV_NAME_LABEL = "<programAbbrv>";
+    public final static String GRANT_NUMBER_LABEL = "<grantNumber>";
+    public final static String GRANT_NAME_LABEL = "<grantName>";
+    public final static String PROJECT_NAME_LABEL = "<projectName>";
+    public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
+    public final static String URL_LABEL = "<url>";
+    public final static String PERSON_LABEL = "<person>";
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -256,6 +266,20 @@ public class TaggingLabels {
     public static final TaggingLabel FIGURE_SEGMENTER_DOWN_FIGURE = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_DOWN, FIGURE_LABEL);
     public static final TaggingLabel FIGURE_SEGMENTER_DOWN_OTHER = new TaggingLabelImpl(GrobidModels.FIGURE_SEGMENTER_DOWN, OTHER_LABEL);
     
+    public static final TaggingLabel FUNDING_FUNDER_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_NAME_LABEL);
+    public static final TaggingLabel FUNDING_FUNDER_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, FUNDER_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROGRAM_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROGRAM_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NUMBER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NUMBER_LABEL);
+    public static final TaggingLabel FUNDING_GRANT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, GRANT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_NAME_LABEL);
+    public static final TaggingLabel FUNDING_PROJECT_ABBRV_NAME = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PROJECT_ABBRV_NAME_LABEL);
+    public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, URL_LABEL);
+    public static final TaggingLabel FUNDING_PERSON = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PERSON_LABEL);
+    public static final TaggingLabel FUNDING_INSTITUTION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INSTITUTION_LABEL);
+    public static final TaggingLabel FUNDING_AFFILIATION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, AFFILIATION_LABEL);
+    public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, OTHER_LABEL);
+
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -394,6 +418,21 @@ public class TaggingLabels {
         register(FIGURE_SEGMENTER_UP_OTHER);
         register(FIGURE_SEGMENTER_DOWN_FIGURE);
         register(FIGURE_SEGMENTER_DOWN_OTHER);
+
+        // funding-acknowledgement
+        register(FUNDING_FUNDER_NAME);
+        register(FUNDING_FUNDER_ABBRV_NAME);
+        register(FUNDING_PROGRAM_NAME);
+        register(FUNDING_PROGRAM_ABBRV_NAME);
+        register(FUNDING_GRANT_NUMBER);
+        register(FUNDING_GRANT_NAME);
+        register(FUNDING_PROJECT_NAME);
+        register(FUNDING_PROJECT_ABBRV_NAME);
+        register(FUNDING_URL);
+        register(FUNDING_PERSON);
+        register(FUNDING_AFFILIATION);
+        register(FUNDING_INSTITUTION);
+        register(FUNDING_OTHER);
     }
 
     protected TaggingLabels() {

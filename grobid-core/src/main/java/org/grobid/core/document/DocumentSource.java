@@ -146,6 +146,8 @@ public class DocumentSource {
             if (GrobidProperties.isContextExecutionServer()) {
                 cmd.add("--timeout");
                 cmd.add(String.valueOf(GrobidProperties.getPdfaltoTimeoutS()));
+                cmd.add("--ulimit");
+                cmd.add(String.valueOf(GrobidProperties.getPdfaltoMemoryLimitMb() * 1024));
                 tmpPathXML = processPdfaltoServerMode(pdfPath, tmpPathXML, cmd);
             } else {
                 if (!SystemUtils.IS_OS_WINDOWS && !SystemUtils.IS_OS_MAC) {

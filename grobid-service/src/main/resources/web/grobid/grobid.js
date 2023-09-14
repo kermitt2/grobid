@@ -13,7 +13,7 @@ var grobid = (function($) {
 
 	var block = 0;
 
-    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head'];
+    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note'];
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;
@@ -23,6 +23,10 @@ var grobid = (function($) {
         } 
         if (localBase.endsWith("#")) {
             localBase = localBase.substring(0,localBase.length-1);
+        } 
+        if (localBase.indexOf("?") != -1) {
+            // remove possible uri parameters
+            localBase = localBase.substring(0,localBase.indexOf("?"));
         } 
 		return localBase + "api/" + ext;
 	}
@@ -81,7 +85,7 @@ var grobid = (function($) {
             beforeSubmit: ShowRequest1,
             success: SubmitSuccesful,
             error: AjaxError1,
-            dataType: "text"
+            dataType: "xml"
         });
 
 		$('#submitRequest2').bind('click', submitQuery2);
@@ -300,9 +304,14 @@ var grobid = (function($) {
 	function SubmitSuccesful(responseText, statusText, xhr) {
 		//var selected = $('#selectedService option:selected').attr('value');
 		var display = "<pre class='prettyprint lang-xml' id='xmlCode'>";
-		var testStr = vkbeautify.xml(responseText);
-        teiToDownload = responseText;
-		display += htmll(testStr);
+        var parsed = ""
+        if(responseText !== undefined) {
+            var toText = new XMLSerializer().serializeToString(responseText)
+            parsed = vkbeautify.xml(toText);
+            teiToDownload = toText;
+        }
+        
+		display += htmll(parsed);
 
 		display += "</pre>";
 		$('#requestResult').html(display);
@@ -650,7 +659,7 @@ var grobid = (function($) {
 				var formData = new FormData();
 				formData.append('input', document.getElementById("input3").files[0]);
 				
-				if ($("#consolidate3").is(":checked"))	
+				if ($("#consolidate4").is(":checked"))	
 					formData.append('consolidateCitations', 1);
 				else
 					formData.append('consolidateCitations', 0);
@@ -661,7 +670,7 @@ var grobid = (function($) {
 				xhr.send(formData);
 			} else if ($('#textInputDiv3').is(":visible")) {
 				var params = 'input='+encodeURIComponent($("#textInputArea3").val());
-				if ($("#consolidate3").is(":checked"))	
+				if ($("#consolidate4").is(":checked"))	
 					params += '&consolidateCitations=1';
 				else 
 					params += '&consolidateCitations=0';
@@ -1422,6 +1431,7 @@ var grobid = (function($) {
 			createInputFile(selected);
 			$('#consolidateBlock1').show();
 			$('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').show();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1432,6 +1442,7 @@ var grobid = (function($) {
 			createInputFile(selected);
 			$('#consolidateBlock1').show();
 			$('#consolidateBlock2').show();
+            $('#consolidateBlock3').show();
 			$('#includeRawAffiliationsBlock').show();
 			$('#includeRawCitationsBlock').show();
             $('#segmentSentencesBlock').show();
@@ -1442,6 +1453,7 @@ var grobid = (function($) {
 			createInputTextArea('date');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1452,6 +1464,7 @@ var grobid = (function($) {
 			createInputTextArea('names');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1462,6 +1475,7 @@ var grobid = (function($) {
 			createInputTextArea('names');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1472,6 +1486,7 @@ var grobid = (function($) {
 			createInputFile(selected);
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').show();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').show();
             $('#segmentSentencesBlock').hide();
@@ -1482,6 +1497,7 @@ var grobid = (function($) {
 			createInputTextArea('affiliations');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1492,6 +1508,7 @@ var grobid = (function($) {
 			createInputTextArea('citations');
 			$('#consolidateBlock1').hide();
 			$('#consolidateBlock2').show();
+            $('#consolidateBlock3').hide();
 			$('#includeRawAffiliationsBlock').hide();
 			$('#includeRawCitationsBlock').hide();
             $('#segmentSentencesBlock').hide();
@@ -1500,22 +1517,22 @@ var grobid = (function($) {
 		}
 		/*else if (selected == 'processCitationPatentTEI') {
 			createInputFile3(selected);
-			$('#consolidateBlock3').show();
+			$('#consolidateBlock4').show();
 			setBaseUrl('processCitationPatentTEI');
 		}*/
 		else if (selected == 'processCitationPatentST36') {
 			createInputFile3(selected);
-			$('#consolidateBlock3').show();
+			$('#consolidateBlock4').show();
 			setBaseUrl('processCitationPatentST36');
 		}
 		else if (selected == 'processCitationPatentPDF') {
 			createInputFile3(selected);
-			$('#consolidateBlock3').show();
+			$('#consolidateBlock4').show();
 			setBaseUrl('processCitationPatentPDF');
 		}
 		else if (selected == 'processCitationPatentTXT') {
 			createInputTextArea3('input');
-			$('#consolidateBlock3').show();
+			$('#consolidateBlock4').show();
 			setBaseUrl('processCitationPatentTXT');
 		}
 		else if (selected == 'referenceAnnotations') {
@@ -1532,9 +1549,19 @@ var grobid = (function($) {
 		}
 		else if (selected == 'citationPatentAnnotations') {
 			createInputFile3(selected);
-			$('#consolidateBlock3').show();
+			$('#consolidateBlock4').show();
 			setBaseUrl('citationPatentAnnotations');
-		}
+		} else if (selected == 'processFundingAcknowledgement') {
+            createInputTextArea('text');
+            $('#consolidateBlock1').hide();
+            $('#consolidateBlock2').hide();
+            $('#consolidateBlock3').hide();
+            $('#includeRawAffiliationsBlock').hide();
+            $('#includeRawCitationsBlock').hide();
+            $('#segmentSentencesBlock').show();
+            $('#teiCoordinatesBlock').hide();
+            setBaseUrl('processFundingAcknowledgement');
+        }
 	}
 
 	function createInputFile(selected) {
@@ -1651,9 +1678,8 @@ var grobid = (function($) {
             a.click();
             return true;
         });
-
     }
-    })(jQuery);
+})(jQuery);
 
 
 function downloadVisibilty(){

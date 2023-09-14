@@ -15,13 +15,19 @@ pwd
 git clone --branch v4.0.2 https://github.com/ninia/jep
 cd jep
 git checkout v4.0.2
-echo "building jep library..."
+echo "Building jep library..."
 #sudo -E python3 setup.py build install
 python3 setup.py build install
-echo "build sucessful"
+# python3 setup.py build
+echo "Build successful"
 
-cp build/lib.linux-x86_64-*/jep/jep.*.so ../../lib/lin-64/jep/libjep.so
-echo "libjep.so installed successfully"
+if [ -n "$(ls -d build/lib.linux-x86_64-*/)" ]; then
+    cp build/lib.linux-x86_64-*/jep/jep.*.so ../../lib/lin-64/jep/libjep.so && echo "libjep.so installed successfully (Linux)"
+fi
+
+if [ -n "$(ls -d build/lib.macosx-*-x86_64-*/)" ]; then
+    cp build/lib.macosx-*-x86_64-*/jep/jep.*.so ../../lib/mac-64/libjep.dylib && echo "libjep.dylib installed successfully (macOS x86_64)"
+fi
 
 cd ..
 rm -rf jep

@@ -8,10 +8,12 @@ import org.grobid.core.analyzers.Analyzer;
 /**
  * A class representing the runtime configuration values needed in the analysis chain
  * TODO: clean up the docs
- * consolidateHeader    - the consolidation option allows GROBID to exploit Crossref
+ * consolidateHeader    - the consolidation option allows GROBID to exploit Crossref or biblio-glutton
  *                             web services for improving header information
- * consolidateCitations - the consolidation option allows GROBID to exploit Crossref
+ * consolidateCitations - the consolidation option allows GROBID to exploit Crossref or biblio-glutton
  *                             web services for improving citations information
+ * consolidateFunders - the consolidation option allows GROBID to exploit Crossref or biblio-glutton
+ *                             web services for improving funder information
  * includeRawCitations - the raw bibliographical string is added to parsed results
  * assetPath if not null, the PDF assets (embedded images) will be extracted and
  * saved under the indicated repository path
@@ -44,6 +46,9 @@ public class GrobidAnalysisConfig {
 
     // if consolidate header
     private int consolidateHeader = 0;
+
+    // if consolidate funders
+    private int consolidateFunders = 0;
 
     // if the raw affiliation string should be included in the parsed results
     private boolean includeRawAffiliations = false;
@@ -108,6 +113,11 @@ public class GrobidAnalysisConfig {
          */
         public GrobidAnalysisConfigBuilder consolidateCitations(int consolidate) {
             config.consolidateCitations = consolidate;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder consolidateFunders(int consolidate) {
+            config.consolidateFunders = consolidate;
             return this;
         }
 
@@ -214,6 +224,10 @@ public class GrobidAnalysisConfig {
 
     public int getConsolidateHeader() {
         return consolidateHeader;
+    }
+
+    public int getConsolidateFunders() {
+        return consolidateFunders;
     }
 
     public boolean getIncludeRawAffiliations() {

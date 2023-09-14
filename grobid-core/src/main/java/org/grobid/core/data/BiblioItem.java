@@ -19,6 +19,7 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.GrobidModels;
 
 import java.net.URLEncoder;
@@ -2392,11 +2393,11 @@ public class BiblioItem {
 				}
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
-                // in case the book is part of an indicated series
-                for (int i = 0; i < indent + 2; i++) {
-                    tei.append("\t");
-                }
                 if (!StringUtils.isEmpty(serieTitle)) {
+                    // in case the book is part of an indicated series
+                    for (int i = 0; i < indent + 2; i++) {
+                        tei.append("\t");
+                    }
                     tei.append("<title level=\"s\"");
                     if (generateIDs) {
                         String divID = KeyGen.getKey().substring(0,7);
@@ -2640,7 +2641,24 @@ public class BiblioItem {
                     tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
-                if (!StringUtils.isEmpty(editors)) {
+                if (fullEditors != null && fullEditors.size()>0) {
+                    for(Person editor : fullEditors) {
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<editor>\n");
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        String localString = editor.toTEI(false);
+                        localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        tei.append(localString).append("\n");
+                        for (int i = 0; i < indent + 2; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("</editor>\n");
+                    }
+                } else if (!StringUtils.isEmpty(editors)) {
                     //postProcessingEditors();
 
                     StringTokenizer st = new StringTokenizer(editors, ";");
@@ -2793,6 +2811,14 @@ public class BiblioItem {
                         }
                         tei.append("<publisher>" + TextUtilities.HTMLEncode(getPublisher()) + "</publisher>\n");
                     }
+
+                    if (location != null && location.length()>0) {
+                        for (int i = 0; i < indent + 3; i++) {
+                            tei.append("\t");
+                        }
+                        tei.append("<pubPlace>" + TextUtilities.HTMLEncode(location) + "</pubPlace>\n");
+                    }
+
                     for (int i = 0; i < indent + 2; i++) {
                         tei.append("\t");
                     }
@@ -3496,8 +3522,6 @@ public class BiblioItem {
             withCoordinates = config.getGenerateTeiCoordinates().contains("persName");
         }
 
-        // uncomment below when collaboration will be concretely added to headers
-        /*
         if ( (collaboration != null) && 
             ( (fullAuthors == null) || (fullAuthors.size() == 0) ) ) {
             // collaboration plays at the same time the role of author and affiliation
@@ -3509,14 +3533,13 @@ public class BiblioItem {
                 List<LayoutToken> collabTokens = labeledTokens.get("<collaboration>");
                 if (withCoordinates && (collabTokens != null) && (!collabTokens.isEmpty())) {                
                    tei.append(" coords=\"" + LayoutTokensUtil.getCoordsString(collabTokens) + "\"");
-               }
+                }
             }
             tei.append(">").append(TextUtilities.HTMLEncode(collaboration)).append("</orgName>").append("\n");
             TextUtilities.appendN(tei, '\t', nbTag);
             tei.append("</author>").append("\n");
             return tei.toString();
         }
-        */
 
         List<Person> auts = fullAuthors;
 
@@ -4221,7 +4244,7 @@ public class BiblioItem {
 				(ISSN == null) && (ISBN13 == null)  && (ISBN10 == null))
 			titleSet = false;
 		boolean authorSet = true;
-		if (fullAuthors == null) 
+		if (fullAuthors == null && collaboration == null) 
 			authorSet = false;
 		// normally properties authors and authorList are null in the current Grobid version
 		if (!titleSet && !authorSet && (url == null) && (doi == null))

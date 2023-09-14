@@ -8,7 +8,7 @@ plugins:
     - search
 theme:
     name: readthedocs
-pages:
+nav:
   - Home: 'index.md'
   - About:
     - 'Introduction': 'Introduction.md'
@@ -33,6 +33,8 @@ pages:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
     - 'bioRxiv': 'Benchmarking-biorxiv.md'
+    - 'PLOS': 'Benchmarking-plos.md'
+    - 'eLife': 'Benchmarking-elife.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'

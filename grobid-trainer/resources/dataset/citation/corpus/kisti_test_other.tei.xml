@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  missmatch -->
+<bibl xml:id="_SMBHBD_2021_v51n2_171_002"><author>Domke, W</author>. <date>1932</date>. <title level="a">Zur Kenntnis einiger Thymelaeaceen</title>. <title level="j">Notizblatt des Botanischen Gartens und Museums zu Berlin-Dahlem</title> <biblScope unit="volume">11</biblScope>: <biblScope unit="page">348-363</biblScope>. (<note>in German</note>).</bibl>
+<!---  journal  volume  page  issue  orgName  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_377_061"><author>Okamura, S</author>. <date>1916</date>. <title level="a">Contributions novae ad Floram Bryophyton Japonicam</title>. <title level="j">The Journal of the College of Science, Imperial University of Tokyo</title> <biblScope unit="volume">XXXVIII</biblScope>, Art. <biblScope unit="page">4</biblScope>.</bibl>
+<!---  author  title  date  missmatch -->
+<bibl xml:id="_JOSRB5_2020_v9n4_492_075"><author>Wulp, F.M., van der</author> <date>1880</date>. <title level="a">Eenige Diptera van Nederlandsch Indie</title>. <title level="j">Tijdschrift voor Entomologie</title> <biblScope unit="volume">23</biblScope>:<biblScope unit="page">155-194</biblScope>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

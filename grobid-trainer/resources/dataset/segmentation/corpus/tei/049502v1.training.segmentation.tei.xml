@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Noise Control In Gene Regulatory Networks <lb/>With Negative Feedback <lb/>Michael Hinczewski * , † and D. Thirumalai * , ‡ <lb/> †Department of Physics, Case Western Reserve University, OH 44106 <lb/> ‡Department of Chemistry, The University of Texas at Austin, TX 78712 <lb/>E-mail: mxh605@case.edu; dave.thirumalai@gmail.com <lb/> 1 <lb/> Abstract <lb/>Genes and proteins regulate cellular functions through complex circuits of biochem-<lb/>ical reactions. Fluctuations in the components of these regulatory networks result in <lb/>noise that invariably corrupts the signal, possibly compromising function. Here, we <lb/>create a practical formalism based on ideas introduced by Wiener and Kolmogorov <lb/>(WK) for filtering noise in engineered communications systems to quantitatively assess <lb/>the extent to which noise can be controlled in biological processes involving negative <lb/>feedback. Application of the theory, which reproduces the previously proven scaling of <lb/>the lower bound for noise suppression in terms of the number of signaling events, shows <lb/>that a tetracycline repressor-based negative-regulatory gene circuit behaves as a WK <lb/>filter. For the class of Hill-like nonlinear regulatory functions, this type of filter provides <lb/>the optimal reduction in noise. Our theoretical approach can be readily combined with <lb/>experimental measurements of response functions in a wide variety of genetic circuits, <lb/>to elucidate the general principles by which biological networks minimize noise. <lb/></front>

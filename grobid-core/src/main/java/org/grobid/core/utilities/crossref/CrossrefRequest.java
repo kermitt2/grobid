@@ -180,7 +180,11 @@ public class CrossrefRequest<T extends Object> extends Observable {
 					
 					if (entity != null) {
 						String body = EntityUtils.toString(entity);
-						message.results = deserializer.parse(body);
+						if (body != null && body.equals("Resource not found.")) {
+							// this used to be a json object too in the past I think
+							message.results = null;
+						} else 
+							message.results = deserializer.parse(body);
 					}
 					
 					notifyListeners(message);
@@ -193,7 +197,6 @@ public class CrossrefRequest<T extends Object> extends Observable {
             httpclient.execute(httpget, responseHandler);
             
 		} catch (Exception e) {
-			
 			CrossrefRequestListener.Response<T> message = new CrossrefRequestListener.Response<T>();
 			message.setException(e, this.toString());
 			notifyListeners(message);

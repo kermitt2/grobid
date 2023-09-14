@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Proceedings of the Workshop on BioNLP: Shared Task, pages 1-9, <lb/>Boulder, Colorado, June 2009. c 2009 Association for Computational Linguistics <lb/>Overview of BioNLP&apos;09 Shared Task on Event Extraction <lb/>Jin-Dong Kim * Tomoko Ohta * Sampo Pyysalo * Yoshinobu Kano * Jun&apos;ichi Tsujii * † ‡ <lb/> * Department of Computer Science, University of Tokyo, Tokyo, Japan <lb/> † School of Computer Science, University of Manchester, Manchester, UK <lb/> ‡ National Centre for Text Mining, University of Manchester, Manchester, UK <lb/>{jdkim,okap,smp,kano,tsujii}@is.s.u-tokyo.ac.jp <lb/>Abstract <lb/>The paper presents the design and implemen-<lb/>tation of the BioNLP&apos;09 Shared Task, and <lb/>reports the final results with analysis. The <lb/>shared task consists of three sub-tasks, each of <lb/>which addresses bio-molecular event extrac-<lb/>tion at a different level of specificity. The data <lb/>was developed based on the GENIA event cor-<lb/>pus. The shared task was run over 12 weeks, <lb/>drawing initial interest from 42 teams. Of <lb/>these teams, 24 submitted final results. The <lb/>evaluation results are encouraging, indicating <lb/>that state-of-the-art performance is approach-<lb/>ing a practically applicable level and revealing <lb/>some remaining challenges. <lb/></front>

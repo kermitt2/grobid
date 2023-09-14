@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="-1"/>
+		<fileDesc xml:id="_-1"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> ParsCit: An open-source CRF reference string parsing package <lb/> Isaac G. Councill  *  , C. Lee Giles  *  , Min-Yen Kan  † <lb/>  *  College of Information Sciences &amp; Technology <lb/>The Pennsylvania State University <lb/> {icouncil,giles}@ist.psu.edu <lb/>  †  Department of Computer Science <lb/>National University of Singapore <lb/>kanmy@comp.nus.edu.sg <lb/> Abstract <lb/> We describe ParsCit, a freely available, open-source implementation of a reference string parsing package. At the core of ParsCit is a <lb/>trained conditional random field (CRF) model used to label the token sequences in the reference string. A heuristic model wraps this <lb/>core with added functionality to identify reference strings from a plain text file, and to retrieve the citation contexts. The package comes <lb/>with utilities to run it as a web service or as a standalone utility. We compare ParsCit on three distinct reference string datasets and show <lb/>that it compares well with other previously published work. <lb/></front>

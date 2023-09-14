@@ -50,6 +50,9 @@ public enum GrobidModels implements GrobidModel {
     DATASEER("dataseer"),
     FIGURE_SEGMENTER_UP("figure-segmenter-up"),
     FIGURE_SEGMENTER_DOWN("figure-segmenter-down"),
+    //ACKNOWLEDGEMENT("acknowledgement"),
+    FUNDING_ACKNOWLEDGEMENT("funding-acknowledgement"),
+    INFRASTRUCTURE("infrastructure"),
     DUMMY("none");
 
     //I cannot declare it before
@@ -100,6 +103,11 @@ public enum GrobidModels implements GrobidModel {
     }
 
     public String getModelPath() {
+        if (modelPath == null) {
+            File path = GrobidProperties.getModelPath(this);
+            if (path != null)
+                modelPath = path.getAbsolutePath();
+        }
         return modelPath;
     }
 
