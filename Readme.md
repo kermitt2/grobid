@@ -17,7 +17,7 @@ Visit the [GROBID documentation](https://grobid.readthedocs.io) for more detaile
 
 GROBID (or Grobid, but not GroBid nor GroBiD) means **G**ene**R**ation **O**f **BI**bliographic **D**ata.
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as a side project since the beginning and is expected to continue as such.
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby, following a suggestion by Laurent Romary (Inria, France). In 2011, the tool has been made available in open source. Work on GROBID has been steady as a side project since the beginning and is expected to continue as such, facilitated in particular to the continuous support of Inria.
 
 The following functionalities are available:
 
