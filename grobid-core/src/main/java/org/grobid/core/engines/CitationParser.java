@@ -7,6 +7,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
+import org.grobid.core.data.Person;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.citations.LabeledReferenceResult;
@@ -40,12 +41,30 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CitationParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(CitationParser.class);
 
     public Lexicon lexicon = Lexicon.getInstance();
     private EngineParsers parsers;
+
+    // 3 em dash can be used to repeat authors (e.g. Chicago style) from the previous reference, sometimes
+    // just one author "slot" at the time (repeating commas), sometimes a list of authors in one go. For some 
+    // style versions, it is limited to single author references. 
+    // Observed practices also include usage of one single 3em dash or 3-times repeated 3em dash for one 
+    // author slot replacement (3-times repeated 3em dash is more common).
+    // Usage of 3em dash remains not very common.
+    // This all looks idiotic in digital age, but this is coming from the old printing industry. At least, 
+    // it is disappearing now in the latest style versions, like Chicago style. 
+    // In Grobid currently 3em dash (like all dash unicode family members) are normalized to a standard single 
+    // dash as family representative.
+    // This is usually impossible to manage with OCR-ized document, where 3em dash are missing and just limited
+    // to the page bitmap image. We can still expect to segment references correctly and with luck have
+    // the correct reference metadata via consolidation.
+    private static final Pattern THREE_EM_PATTERN_ALL = Pattern.compile("^((\\-\\s?\\-\\s?\\-\\s?)[,.]\\s?)+.*$");
+    private static final Pattern THREE_EM_PATTERN = Pattern.compile("(\\-\\s?\\-\\s?\\-\\s?[,.]\\s?)");
+    private static final Pattern THREE_EM_PATTERN_SHORT = Pattern.compile("(\\-\\s?[,.]\\s?)");
 
     public CitationParser(EngineParsers parsers, CntManager cntManager) {
         super(GrobidModels.CITATION, cntManager);
@@ -323,6 +342,7 @@ public class CitationParser extends AbstractParser {
             }
 
             List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
+            BiblioItem previousBib = null;
             if (bibList != null && bibList.size()>0) {
                 int i = 0;
                 for (LabeledReferenceResult ref : references) {
@@ -332,9 +352,34 @@ public class CitationParser extends AbstractParser {
 
                     //BiblioItem bib = processingString(ref.getReferenceText(), 0);
                     BiblioItem bib = bibList.get(i);
+                    String localRef = refTexts.get(i);
                     i++;
-                    if (bib == null) 
+                    if (bib == null) {
                         continue;
+                    }
+
+                    // check the case of 3em dash to "replace" previous author slot(s), this is relevant
+                    // to the Chicago reference style
+                    // 3em dash are normalized by normal dash
+                    if (localRef.startsWith("-") && i > 0 && previousBib != null) {
+                        // the above conditional is to limit the regex pattern application 
+                        Matcher matcher = THREE_EM_PATTERN.matcher(localRef);
+                        int authorRank = 0;
+                        while (matcher.find()) {
+                            // inject previous author
+                            List<Person> previousAuthors = previousBib.getFullAuthors();
+                            if (previousAuthors == null || previousAuthors.size() <= authorRank)
+                                continue;
+                            Person authorToInject = previousAuthors.get(authorRank);
+                            List<Person> currentAuthors = bib.getFullAuthors();
+                            if (currentAuthors == null) {
+                                currentAuthors = new ArrayList<Person>();
+                            }
+                            currentAuthors.add(authorRank, authorToInject);
+                            bib.setFullAuthors(currentAuthors);
+                            authorRank++;
+                        }
+                    }
 
                     // check if we have an interesting url annotation over this bib. ref.
                     List<LayoutToken> refTokens = ref.getTokens();
@@ -374,8 +419,8 @@ public class CitationParser extends AbstractParser {
                             localLabel = TextUtilities.removeLeadingAndTrailingChars(localLabel, "([{<,. \n", ")}]>,.: \n");
                         }
 
-                        String localRef = ref.getReferenceText();
-                        localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
+                        //localRef = ref.getReferenceText();
+                        //localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
 
                         bds.setRefSymbol(localLabel);
                         bds.setResBib(bib);
@@ -383,6 +428,8 @@ public class CitationParser extends AbstractParser {
                         bds.setRawBib(localRef);
                         bds.getResBib().setCoordinates(ref.getCoordinates());
                         results.add(bds);
+
+                        previousBib = bib;
                     }
                 }
             }
