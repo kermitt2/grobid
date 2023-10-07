@@ -56,6 +56,8 @@ public class BiblioItem {
      */
     private List<LayoutToken> authorsTokensWorkingCopy = new ArrayList<>();
     private List<LayoutToken> abstractTokensWorkingCopy = new ArrayList<>();
+    private List<LayoutToken> copyrightTokensWorkingCopy = new ArrayList<>();
+    private String labeledCopyright = null;
 
     @Override
     public String toString() {
@@ -4334,5 +4336,21 @@ public class BiblioItem {
 
     public void setAvailabilityStmt(String availabilityStmt) {
         this.availabilityStmt = availabilityStmt;
+    }
+
+    public void setLabeledCopyright(String labeledCopyright) {
+        this.labeledCopyright = labeledCopyright;
+    }
+    
+    public String getLabeledCopyright() {
+        return this.labeledCopyright;
+    }
+    
+    public void collectCopyrightTokens(List<LayoutToken> layoutTokens) {
+        this.copyrightTokensWorkingCopy.addAll(layoutTokens);
+    }
+
+    public List<LayoutToken> getCopyrightTokensWorkingCopy() {
+        return this.copyrightTokensWorkingCopy;
     }
 }

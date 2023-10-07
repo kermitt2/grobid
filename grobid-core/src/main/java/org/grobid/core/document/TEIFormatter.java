@@ -237,7 +237,8 @@ public class TEIFormatter {
 
         if ((biblio.getPublisher() != null) ||
                 (biblio.getPublicationDate() != null) ||
-                (biblio.getNormalizedPublicationDate() != null)) {
+                (biblio.getNormalizedPublicationDate() != null) || 
+                biblio.getCopyright() != null) {
             tei.append("\t\t\t<publicationStmt>\n");
             if (biblio.getPublisher() != null) {
                 // publisher and date under <publicationStmt> for better TEI conformance
@@ -249,7 +250,7 @@ public class TEIFormatter {
                 //if (biblio.getPublicationDate() != null)
                 tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
                 tei.append("\t\t\t\t</availability>\n");
-            } else {
+            } else if (biblio.getCopyright() == null) {
                 // a dummy publicationStmt is still necessary according to TEI
                 tei.append("\t\t\t\t<publisher/>\n");
                 if (defaultPublicationStatement == null) {
@@ -259,6 +260,41 @@ public class TEIFormatter {
                             TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
                 }
                 tei.append("\n");
+            }
+            boolean generateIDs = config.isGenerateTeiIds();
+            if (biblio.getCopyright() != null) {
+                String copyrightText = biblio.getCopyright();
+                
+                tei.append("\t\t\t\t<availability status=\"soon known\">");
+                if (StringUtils.isNotEmpty(biblio.getLabeledCopyright())) {
+                    StringBuilder buffer = new StringBuilder();
+                    try {
+                        buffer = toTEITextPiece(buffer,
+                            biblio.getLabeledCopyright(),
+                            biblio,
+                            bds,
+                            false,
+                            new LayoutTokenization(biblio.getLayoutTokens(TaggingLabels.HEADER_COPYRIGHT)),
+                            null,
+                            null,
+                            null,
+                            null,
+                            markerTypes,
+                            doc,
+                            config); // no figure, no table, no equation
+                    } catch(Exception e) {
+                        throw new GrobidException("An exception occurred while serializing TEI.", e);
+                    }
+                    tei.append(buffer.toString());
+                } else {
+                    tei.append("\t\t\t\t<p");
+                    if (generateIDs) {
+                        String divID = KeyGen.getKey().substring(0, 7);
+                        tei.append(" xml:id=\"_" + divID + "\"");
+                    }
+                    tei.append(">").append(TextUtilities.HTMLEncode(copyrightText)).append("</p>");
+                }
+                tei.append("\t\t\t\t</availability>\n");
             }
 
             if (biblio.getNormalizedPublicationDate() != null) {

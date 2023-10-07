@@ -933,10 +933,13 @@ public class HeaderParser extends AbstractParser {
                 } else
                     biblio.setFunding(clusterContent);
             } else if (clusterLabel.equals(TaggingLabels.HEADER_COPYRIGHT)) {
+                List<LayoutToken> tokens = cluster.concatTokens();
+                biblio.collectCopyrightTokens(tokens);
                 if (biblio.getCopyright() != null) {
                     biblio.setCopyright(biblio.getCopyright() + " " + clusterContent);
-                } else
+                } else {
                     biblio.setCopyright(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION)) {
                 // affiliation **makers** should be marked SINGLECHAR LINESTART
                 if (biblio.getAffiliation() != null) {

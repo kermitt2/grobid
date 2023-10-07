@@ -199,6 +199,21 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
+            // structure the copyright using the fulltext model
+            if (isNotBlank(resHeader.getCopyright())) {
+                List<LayoutToken> copyrightTokens = resHeader.getCopyrightTokensWorkingCopy();
+                if (CollectionUtils.isNotEmpty(copyrightTokens)) {
+                    Pair<String, List<LayoutToken>> copyrightProcessed = processShort(copyrightTokens, doc);
+                    if (copyrightProcessed != null) {
+                        // neutralize figure and table annotations (will be considered as paragraphs)
+                        String labeledCopyright = copyrightProcessed.getLeft();
+                        labeledCopyright = postProcessFullTextLabeledText(labeledCopyright);
+                        resHeader.setLabeledCopyright(labeledCopyright);
+                        resHeader.setLayoutTokensForLabel(copyrightProcessed.getRight(), TaggingLabels.HEADER_COPYRIGHT);
+                    }
+                }
+            }
+
             // citation processing
             // consolidation, if selected, is not done individually for each citation but 
             // in a second stage for all citations which is much faster
