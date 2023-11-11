@@ -1364,6 +1364,11 @@ public class TextUtilities {
                 break;
         }
 
+        if (start == end || end < start) {
+            // we return an empty list
+            return new ArrayList<LayoutToken>();
+        }
+
         return tokens.subList(start, end);
     }
 
