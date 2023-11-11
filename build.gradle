@@ -107,6 +107,8 @@ subprojects {
         implementation "com.fasterxml.jackson.core:jackson-databind:2.10.1"
         implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
         implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.1"
+
+        implementation "org.apache.logging.log4j:log4j-layout-template-json:2.21.1"
     }
 
     task sourceJar(type: Jar) {
@@ -267,6 +269,7 @@ project("grobid-core") {
 
 project("grobid-home") {
     task packageGrobidHome(type: Zip) {
+        zip64 true
         from('.') {
             include("config/*")
             include("language-detection/**")
@@ -335,8 +338,9 @@ project(":grobid-service") {
         all*.exclude group: 'log4j', module: "log4j"
     }
 
-    tasks.distZip.enabled = true
+    tasks.distZip.enabled = false
     tasks.distTar.enabled = false
+    tasks.distZip.zip64 = true
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
 
@@ -379,12 +383,15 @@ project(":grobid-service") {
     distributions {
         main {
             contents {
-                from(new File(rootProject.rootDir, "grobid-service/README.md")) {
-                    into "doc"
-                }
-                //from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
-                //    into "config"
+                //from(new File(rootProject.rootDir, "grobid-service/README.md")) {
+                //    into "doc"
                 //}
+                from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
+                    into "config"
+                }
+                from(new File(rootProject.rootDir, "grobid-service/build/scripts/*")) {
+                    into "bin"
+                }
             }
         }
     }

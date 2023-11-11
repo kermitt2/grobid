@@ -293,3 +293,11 @@ logging:
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
       timeZone: UTC
+#    - type: console
+#      name: ConsoleJSONAppender
+#      level: INFO
+#      threshold: WARN
+#      timeZone: UTC
+#      encoding: UTF-8
+#      layout: org.apache.log4j.PatternLayout
+#      layout.ConversionPattern: {"debug_level":"%p","debug_timestamp":"%d{ISO8601}","debug_thread":"%t","debug_file":"%F", "debug_line":"%L","debug_message":"%m"}%n
