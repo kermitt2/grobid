@@ -21,6 +21,8 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 
 import java.net.URLEncoder;
 import java.util.*;
@@ -2251,12 +2253,39 @@ public class BiblioItem {
                 tei.append("<title");
                 if ((bookTitle == null) && (journal == null) && (serieTitle == null)) {
                     tei.append(" level=\"m\" type=\"main\"");
-                } else
+                    if (config.isGenerateTeiCoordinates("title")) {
+                        // title for articles or chapters
+                        List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_BOOKTITLE);
+                        if (titleTokens == null || titleTokens.size()==0) {
+                            titleTokens = getLayoutTokens(TaggingLabels.CITATION_TITLE);
+                        }
+
+                        if (titleTokens != null && titleTokens.size()>0) {
+                            String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                            if (coords != null && coords.length()>0) {
+                                tei.append(" coord=\"" + coords + "\"");
+                            }
+                        } 
+                    }
+                } else {
                     tei.append(" level=\"a\" type=\"main\"");
+
+                    if (config.isGenerateTeiCoordinates("title")) {
+                        // title for articles or chapters
+                        List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_TITLE);
+                        if (titleTokens != null && titleTokens.size()>0) {
+                            String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                            if (coords != null && coords.length()>0) {
+                                tei.append(" coord=\"" + coords + "\"");
+                            }
+                        } 
+                    }
+                }
 				if (generateIDs) {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" xml:id=\"_" + divID + "\"");
 				}
+
                 // here check the language ?
                 if (StringUtils.isEmpty(english_title)) {
                     tei.append(">").append(TextUtilities.HTMLEncode(title)).append("</title>\n");
@@ -2292,6 +2321,7 @@ public class BiblioItem {
 							String divID = KeyGen.getKey().substring(0,7);
 							tei.append(" xml:id=\"_" + divID + "\"");
 						}
+
                         tei.append(" xml:lang=\"en\">")
 							.append(TextUtilities.HTMLEncode(english_title)).append("</title>\n");
                     }
@@ -2391,6 +2421,16 @@ public class BiblioItem {
 					String divID = KeyGen.getKey().substring(0,7);
 					tei.append(" xml:id=\"_" + divID + "\"");
 				}
+                if (config.isGenerateTeiCoordinates("title")) {
+                    List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_BOOKTITLE);
+                    if (titleTokens != null && titleTokens.size()>0) {
+                        String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                        if (coords != null && coords.length()>0) {
+                            tei.append(" coord=\"" + coords + "\"");
+                        }
+                    } 
+                }
+
 				tei.append(">" + TextUtilities.HTMLEncode(bookTitle) + "</title>\n");
 
                 if (!StringUtils.isEmpty(serieTitle)) {
@@ -2403,6 +2443,18 @@ public class BiblioItem {
                         String divID = KeyGen.getKey().substring(0,7);
                         tei.append(" xml:id=\"_" + divID + "\"");
                     }   
+
+                    if (config.isGenerateTeiCoordinates("title")) {
+                        // title for articles or chapters
+                        List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_SERIES);
+                        if (titleTokens != null && titleTokens.size()>0) {
+                            String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                            if (coords != null && coords.length()>0) {
+                                tei.append(" coord=\"" + coords + "\"");
+                            }
+                        } 
+                    }
+
                     tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
@@ -2623,6 +2675,18 @@ public class BiblioItem {
     					String divID = KeyGen.getKey().substring(0,7);
     					tei.append(" xml:id=\"_" + divID + "\"");
     				}	
+
+                    if (config.isGenerateTeiCoordinates("title")) {
+                        // title for articles or chapters
+                        List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_JOURNAL);
+                        if (titleTokens != null && titleTokens.size()>0) {
+                            String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                            if (coords != null && coords.length()>0) {
+                                tei.append(" coord=\"" + coords + "\"");
+                            }
+                        } 
+                    }
+
     				tei.append(">" + TextUtilities.HTMLEncode(journal) + "</title>\n");
 
                     if (!StringUtils.isEmpty(getJournalAbbrev())) {
@@ -2638,6 +2702,18 @@ public class BiblioItem {
                         String divID = KeyGen.getKey().substring(0,7);
                         tei.append(" xml:id=\"_" + divID + "\"");
                     }   
+
+                    if (config.isGenerateTeiCoordinates("title")) {
+                        // title for articles or chapters
+                        List<LayoutToken> titleTokens = getLayoutTokens(TaggingLabels.CITATION_SERIES);
+                        if (titleTokens != null && titleTokens.size()>0) {
+                            String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                            if (coords != null && coords.length()>0) {
+                                tei.append(" coord=\"" + coords + "\"");
+                            }
+                        } 
+                    }
+
                     tei.append(">" + TextUtilities.HTMLEncode(serieTitle) + "</title>\n");
                 }
 
@@ -4281,29 +4357,50 @@ public class BiblioItem {
         this.labeledTokens = labeledTokens;
     }
 
-    public List<LayoutToken> getLayoutTokens(TaggingLabel headerLabel) {
+    public List<LayoutToken> getLayoutTokens(TaggingLabel biblioLabel) {
         if (labeledTokens == null) {
             LOGGER.debug("labeledTokens is null");
             return null;
         }
-        if (headerLabel.getLabel() == null) {
-            LOGGER.debug("headerLabel.getLabel() is null");
+        if (biblioLabel.getLabel() == null) {
+            LOGGER.debug("biblioLabel.getLabel() is null");
             return null;
         }
-        return labeledTokens.get(headerLabel.getLabel());
+        return labeledTokens.get(biblioLabel.getLabel());
     }
 
-    public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel headerLabel) {
+    public void setLayoutTokensForLabel(List<LayoutToken> tokens, TaggingLabel biblioLabel) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
-        labeledTokens.put(headerLabel.getLabel(), tokens);
+        labeledTokens.put(biblioLabel.getLabel(), tokens);
     }
 
-    public void generalResultMapping(String labeledResult, List<LayoutToken> tokenizations) {
+    public void generalResultMappingHeader(String labeledResult, List<LayoutToken> tokenizations) {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.HEADER, labeledResult, tokenizations);
+        List<TaggingTokenCluster> clusters = clusteror.cluster();
+        for (TaggingTokenCluster cluster : clusters) {
+            if (cluster == null) {
+                continue;
+            }
+
+            TaggingLabel clusterLabel = cluster.getTaggingLabel();
+            List<LayoutToken> clusterTokens = cluster.concatTokens();
+            List<LayoutToken> theList = labeledTokens.get(clusterLabel.getLabel());
+
+            theList = theList == null ? new ArrayList<>() : theList;
+            theList.addAll(clusterTokens);
+            labeledTokens.put(clusterLabel.getLabel(), theList);
+        }
+    }
+
+    public void generalResultMappingReference(String labeledResult, List<LayoutToken> tokenizations) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<>();
+
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.CITATION, labeledResult, tokenizations);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {

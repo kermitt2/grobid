@@ -485,6 +485,7 @@ public class Consolidation {
                             for(BiblioItem oneRes : res) {
                                 if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
                                     postValidation(theBiblio, oneRes)) {
+                                    oneRes.setLabeledTokens(theBiblio.getLabeledTokens());
                                     results.put(Integer.valueOf(getRank()), oneRes);
                                     if (cntManager != null) {
                                         cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);

@@ -14,7 +14,7 @@ Since April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtai
 * ```head``` for section titles,
 * ```s``` for optional sentence structure (the GROBID fulltext service must be called with the `segmentSentences` parameter to provide the optional sentence-level elements),
 * ```note``` for foot note elements,
-* ```title``` for the title elements. 
+* ```title``` for the title elements (main article title and cited reference titles). 
 
 However, there is normally no particular limitation to the type of structures which can have their coordinates in the results, the implementation is on-going, see [issue #69](https://github.com/kermitt2/grobid/issues/69), and it is expected that more or less any structures could be associated with their coordinates in the orginal PDF. 
 

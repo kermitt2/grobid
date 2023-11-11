@@ -796,7 +796,7 @@ public class HeaderParser extends AbstractParser {
 
         List<TaggingTokenCluster> clusters = clusteror.cluster();
 
-        biblio.generalResultMapping(result, tokenizations);
+        biblio.generalResultMappingHeader(result, tokenizations);
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
