@@ -223,6 +223,7 @@ project("grobid-core") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+        exclude("logback.xml")
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
@@ -326,10 +327,6 @@ project(":grobid-service") {
 //                "${System.env.CONDA_PREFIX}/lib/python${pythonVersion}/site-packages/jep"
 //        }
         systemProperty "java.library.path", javaLibraryPath
-
-    }
-
-    configurations {
     }
 
     tasks.distZip.enabled = false
@@ -378,6 +375,8 @@ project(":grobid-service") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+
+        exclude("logback.xml")
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
@@ -434,6 +433,7 @@ project(":grobid-trainer") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+        exclude("logback.xml")
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
