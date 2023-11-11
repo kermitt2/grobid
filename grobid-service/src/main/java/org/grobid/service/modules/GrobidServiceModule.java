@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Binder;
 import com.google.inject.Provides;
 import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
+//import ru.vyarus.dropwizard.guice.module.support.DropwizardAwareModule;
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
@@ -21,7 +22,6 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
 public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConfiguration> {
-
 
     @Override
     public void configure(Binder binder) {
@@ -43,6 +43,7 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
 
     @Provides
     protected ObjectMapper getObjectMapper() {
+        //return environment().getObjectMapper();
         return getEnvironment().getObjectMapper();
     }
 
@@ -53,6 +54,7 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
 
     //for unit tests
     protected MetricRegistry getMetricRegistry() {
+        //return environment().metrics();
         return getEnvironment().metrics();
     }
 

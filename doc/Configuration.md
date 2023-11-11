@@ -114,11 +114,11 @@ When executing the service, models can be loaded in a lazy manner (if you plan t
 
 ```yml
   # for **service only**: how to load the models, 
-  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
-  #          the service at first call
-  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
-  #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
 ```
 
 Finally the following part specifies the port to be used by the GROBID web service:

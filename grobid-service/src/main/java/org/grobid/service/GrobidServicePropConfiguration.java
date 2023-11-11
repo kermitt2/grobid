@@ -1,8 +1,10 @@
 package org.grobid.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.NotEmpty;
 
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class GrobidServicePropConfiguration {
     @NotEmpty
     @JsonProperty

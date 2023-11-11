@@ -165,7 +165,7 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        System.out.println("Processing: " + currPdf.getPath());
+                        LOGGER.info("Processing: " + currPdf.getPath());
                         GrobidAnalysisConfig config = null;
                         // path for saving assets
                         if (saveAssets) {
@@ -570,7 +570,7 @@ public class ProcessEngine implements Closeable {
         for (final File currPDF : pdfDirectory.listFiles()) {
             try {
                 if (currPDF.getName().toLowerCase().endsWith(".pdf")) {
-                    System.out.println("Processing: " + currPDF.getName());
+                    LOGGER.info("Processing: " + currPDF.getName());
                     List<String> elementWithCoords = new ArrayList();
                     elementWithCoords.add("ref");
                     elementWithCoords.add("biblStruct");
