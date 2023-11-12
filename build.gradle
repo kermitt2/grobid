@@ -329,9 +329,9 @@ project(":grobid-service") {
         systemProperty "java.library.path", javaLibraryPath
     }
 
-    tasks.distZip.enabled = false
+    tasks.distZip.enabled = true
     tasks.distTar.enabled = false
-    tasks.distZip.zip64 = true
+    //tasks.distZip.zip64 = true
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
 
