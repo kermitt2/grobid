@@ -3449,14 +3449,21 @@ public class BiblioItem {
         } else if (hasMarker) {
             // we get the marker for each affiliation and try to find the related author in the
             // original author field
+            int indexAffiliation = 0;
             for (Affiliation aff : fullAffiliations) {
-                if (aff.getMarker() != null) {
+
+                // circuit breaker
+                if (indexAffiliation > 60)
+                    break;
+
+                if (aff.getMarker() != null && aff.getMarker().length()>0) {
                     String marker = aff.getMarker();
                     int from = 0;
                     int ind = 0;
                     ArrayList<Integer> winners = new ArrayList<Integer>();
                     while (ind != -1) {
                         ind = originalAuthors.indexOf(marker, from);
+
                         boolean bad = false;
                         if (ind != -1) {
                             // we check if we have a digit/letter (1) matching incorrectly
@@ -3556,12 +3563,17 @@ public class BiblioItem {
 
                             from = ind + 1;
                         }
-                        if (bad) {
+                        if ((ind != -1) && bad) {
                             from = ind + 1;
                             bad = false;
                         }
+
+                        // circuit breaker
+                        if (ind > originalAuthors.length() || ind > 1000)
+                            break;
                     }
                 }
+                indexAffiliation++;
             }
         } /*else if (nbAuthors == nbAffiliations) {
             // risky heuristics, we distribute in this case one affiliation per author

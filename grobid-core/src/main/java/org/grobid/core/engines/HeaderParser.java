@@ -138,7 +138,6 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setLanguage(lang);
                 }
 
-
                 if (resHeader.getAbstract() != null) {
                     resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
                     //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
@@ -201,7 +200,6 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
                 }
-
 
                 // remove invalid authors (no last name, noise, etc.)
                 resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
