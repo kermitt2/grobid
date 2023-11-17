@@ -28,6 +28,8 @@ Grobid uses different sequence labelling models depending on the labeling task t
 
 * table
 
+* funding-acknowledgement
+
 The models are located under `grobid/grobid-home/models`. Each of these models can be retrained using amended or additional training data. For production, a model is trained with all the available training data to maximize the performance. For development purposes, it is also possible to evaluate a model with part of the training data as frozen set (e.g. holdout set), automatic random split or apply 10-fold cross-evaluation. 
 
 ## Train and evaluate

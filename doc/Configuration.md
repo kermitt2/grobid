@@ -207,15 +207,23 @@ logging:
   level: INFO
   loggers:
     org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
+    org.glassfish.jersey.internal: "OFF"
+    com.squarespace.jersey2.guice.JerseyGuiceUtils: "OFF"
   appenders:
     - type: console
-      threshold: ALL
+      threshold: WARN
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json
     - type: file
       currentLogFilename: logs/grobid-service.log
-      threshold: ALL
+      threshold: INFO
       archive: true
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json
 ```
