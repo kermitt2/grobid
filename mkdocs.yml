@@ -8,7 +8,7 @@ plugins:
     - search
 theme:
     name: readthedocs
-pages:
+nav:
   - Home: 'index.md'
   - About:
     - 'Introduction': 'Introduction.md'

@@ -126,6 +126,11 @@ public interface GrobidPaths {
 	String PATH_CITATIONS_PATENT_PDF_ANNOTATION = "citationPatentAnnotations";
 
 	/**
+	 * path extension for the JSON annotation of the funding/acknowledgement section 
+	 **/
+	String PATH_FUNDING_ACKNOWLEDGEMENT = "processFundingAcknowledgement";
+
+	/**
 	 * path extension for processing sha1.
 	 */
 	String PATH_SHA1 = "sha1";

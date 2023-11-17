@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>arXiv:0807.1612v1 [hep-ex] 10 Jul 2008 <lb/>A precise new KLOE measurement of F π with ISR events and <lb/>determination of ππ contribution to a µ for [0.35, 0.95] GeV 2 <lb/>KLOE Collaboration * presented by Federico Nguyen a (e-mail address: nguyen@fis.uniroma3.it) <lb/>a Università degli Studi e Sezione INFN &quot;Roma TRE&quot;, Via della Vasca Navale 84, 00146 Roma, Italy <lb/>The KLOE experiment at the DAΦNE φ-factory has performed a new precise measurement of the pion form <lb/>factor using Initial State Radiation events, with photons emitted at small polar angle. Results based on an <lb/>integrated luminosity of 240 pb −1 and extraction of the ππ contribution to aµ in the mass range [0.35, 0.95] GeV 2 <lb/>are presented, the systematic uncertainty is reduced with respect to the published KLOE result. <lb/></front>

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>This is the accepted manuscript made available via CHORUS. The article has been <lb/>published as: <lb/>Observation of the Singly Cabibbo-Suppressed Decay <lb/>D^{+}→ωπ^{+} and Evidence for D^{0}→ωπ^{0} <lb/>M. Ablikim et al. (BESIII Collaboration) <lb/>Phys. Rev. Lett. 116, 082001 -Published 23 February 2016 <lb/>DOI: 10.1103/PhysRevLett.116.082001 <lb/></titlePage>

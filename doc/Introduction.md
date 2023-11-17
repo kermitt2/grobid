@@ -3,7 +3,6 @@
 ## Status
 
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![CircleCI](https://circleci.com/gh/kermitt2/grobid.svg?style=svg)](https://circleci.com/gh/kermitt2/grobid)
 [![Coverage Status](https://coveralls.io/repos/kermitt2/grobid/badge.svg)](https://coveralls.io/r/kermitt2/grobid)
 [![Documentation Status](https://readthedocs.org/projects/grobid/badge/?version=latest)](https://readthedocs.org/projects/grobid/?badge=latest)
 [![GitHub release](https://img.shields.io/github/release/kermitt2/grobid.svg)](https://github.com/kermitt2/grobid/releases/)
@@ -16,7 +15,7 @@
 
 GROBID (or Grobid, but not GroBid nor GroBiD) means GeneRation Of BIbliographic Data. 
 
-GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby. In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue as such. 
+GROBID is a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured XML/TEI encoded documents with a particular focus on technical and scientific publications. First developments started in 2008 as a hobby, following a suggestion by Laurent Romary (Inria). In 2011 the tool has been made available in open source. Work on GROBID has been steady as side project since the beginning and is expected to continue as such.
 
 The following functionalities are available:
 
@@ -36,7 +35,7 @@ In a complete PDF processing, GROBID manages 55 final labels used to build relat
 
 GROBID includes a comprehensive [web service API](https://grobid.readthedocs.io/en/latest/Grobid-service/), [Docker images](https://grobid.readthedocs.io/en/latest/Grobid-docker/), [batch processing](https://grobid.readthedocs.io/en/latest/Grobid-batch/), a JAVA API, a generic [training and evaluation framework](https://grobid.readthedocs.io/en/latest/Training-the-models-of-Grobid/) (precision, recall, etc., n-fold cross-evaluation), systematic [end-to-end benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/) on thousand documents and the semi-automatic generation of training data.
 
-GROBID can be considered as production ready. Deployments in production includes ResearchGate, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), Internet Archive, and many others. 
+GROBID can be considered as production ready. Deployments in production includes ResearchGate, Academia.edu, HAL Research Archive, the European Patent Office, INIST-CNRS, Mendeley, CERN (Invenio), Internet Archive, and many others.
 
 The key aspects of GROBID are the following ones:
 
@@ -61,14 +60,14 @@ GROBID should run properly "out of the box" on Linux (64 bits) and macOS (Intel 
 
 The main author is Patrice Lopez (patrice.lopez@science-miner.com). 
 
-Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano (NIMS).
+Core committers and maintenance: Patrice Lopez (science-miner) and Luca Foppiano (NIMS, Japan).
 
 Many thanks to:
 
+* Laurent Romary (Inria)
 * Vyacheslav Zholudev (Sumsub, formerly at ResearchGate)
 * Achraf Azhar (CCSD CNRS)
 * Daniel Ecer (eLife)
-* Laurent Romary (Inria)
 * Vitalii Bezsheiko (PKP)
 * Bryan Newbold (Internet Archive)
 * Christopher Boumenot (Microsoft) in particular for the (former) Windows support

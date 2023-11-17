@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Planning and Proof Planning <lb/>Erica Melis 1 and Alan Bundy 2 <lb/>Abstract. The paper adresses proof planning as a specific AI plan-<lb/>ning. It describes some peculiarities of proof planning and discusses <lb/>some possible cross-fertilization of planning and proof planning. <lb/></front>

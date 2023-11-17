@@ -96,63 +96,6 @@ public class DateParser extends AbstractParser {
             throw new GrobidException("An exception on " + this.getClass().getName() + " occured while running Grobid.", e);
         }
     }
-    
-    public List<Date> resultExtractionOld(String result) {
-        
-        List<Date> dates = null;
-        
-        StringTokenizer st2 = new StringTokenizer(result, "\n");
-        String lastTag = null;
-        org.grobid.core.data.Date date = new Date();
-        int lineCount = 0;
-        String currentMarker = null;
-        while (st2.hasMoreTokens()) {
-            String line = st2.nextToken();
-            if ((line.trim().length() == 0)) {
-                if (date.isNotNull()) {
-                    if (dates == null)
-                        dates = new ArrayList<>();
-                    Date normalizedDate = normalizeAndClean(date);
-                    dates.add(normalizedDate);
-                }
-                date = new Date();
-                continue;
-            }
-            StringTokenizer st3 = new StringTokenizer(line, "\t ");
-            int ll = st3.countTokens();
-            int i = 0;
-            String s1 = null;
-            String s2 = null;
-            while (st3.hasMoreTokens()) {
-                String s = st3.nextToken().trim();
-                if (i == 0) {
-                    s2 = s; // string
-                } else if (i == ll - 1) {
-                    s1 = s; // label
-                }
-                i++;
-            }
-
-            if ("<year>".equals(s1) || "I-<year>".equals(s1)) {
-                
-            } else if ("<month>".equals(s1) || "I-<month>".equals(s1)) {
-                
-            } else if ("<day>".equals(s1) || "I-<day>".equals(s1)) {
-                
-            }
-
-            lastTag = s1;
-            lineCount++;
-        }
-        if (date.isNotNull()) {
-            if (dates == null)
-                dates = new ArrayList<>();
-            Date normalizedDate = normalizeAndClean(date);
-            dates.add(normalizedDate);
-        }
-        
-        return dates; 
-    }
 
     public List<Date> resultExtraction(String result, List<LayoutToken> tokenizations) {
 

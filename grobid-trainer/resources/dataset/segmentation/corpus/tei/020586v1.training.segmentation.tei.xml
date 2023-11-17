@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Yildizoglu et al. <lb/>1 <lb/>Estimating information flow through a memory system: <lb/>the utility of meta-analytic methods for genetics <lb/>Tugce Yildizoglu 1, 2 , Jan-Marek Weislogel 1, 2 , Farhan Mohammad 1, 2 , Edwin S.-Y. Chan 3, 4 , Pryseley N. <lb/>Assam 3, 4 and Adam Claridge-Chang 1, 2, 5, * <lb/>1. Program in Neuroscience and Behavioral Disorders, Duke-NUS Graduate Medical School, Singapore <lb/>138673 <lb/>2. Institute for Molecular and Cell Biology, Singapore 138673 <lb/>3. Singapore Clinical Research Institute, Singapore 138669 <lb/>4. Centre for Quantitative Medicine, Duke-NUS Graduate Medical School, Singapore 169857 <lb/>5. Department of Physiology, National University of Singapore, Singapore 138673 <lb/>* Corresponding author. Program in Neuroscience and Behavioral Disorders, Duke-NUS Graduate Medical <lb/>School, 61 Biopolis Drive, Singapore 138673. claridge-chang.adam@duke-nus.edu.sg <lb/></front>

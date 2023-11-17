@@ -275,6 +275,8 @@ public class GrobidRestProcessTraining {
             trainer = new FigureTrainer();
         } else if (model.equals("table")) {
             trainer = new TableTrainer();
+        } else if (model.equals("funding-acknowledgement")) {
+            trainer = new FundingAcknowledgementTrainer();
         } else {
             throw new IllegalStateException("The model " + model + " is unknown.");
         }

@@ -138,7 +138,6 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setLanguage(lang);
                 }
 
-
                 if (resHeader.getAbstract() != null) {
                     resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
                     //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
@@ -201,7 +200,6 @@ public class HeaderParser extends AbstractParser {
                         }
                     }
                 }
-
 
                 // remove invalid authors (no last name, noise, etc.)
                 resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
@@ -312,7 +310,7 @@ public class HeaderParser extends AbstractParser {
                 // we don't need to serialize if we process the full text (it would be done 2 times)
                 if (serialize) {
                     TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, config);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, null, config);
                     tei.append("\t</text>\n");
                     tei.append("</TEI>\n");                
                     return tei.toString();
@@ -796,7 +794,7 @@ public class HeaderParser extends AbstractParser {
 
         List<TaggingTokenCluster> clusters = clusteror.cluster();
 
-        biblio.generalResultMapping(result, tokenizations);
+        biblio.generalResultMappingHeader(result, tokenizations);
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;

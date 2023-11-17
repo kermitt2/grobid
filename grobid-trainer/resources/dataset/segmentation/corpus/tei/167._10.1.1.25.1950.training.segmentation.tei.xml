@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>OPTIMAL PROCESSOR ASSIGNMENT FOR PARALLEL <lb/>DATABASE DESIGN <lb/>SHAHRAM GHANDEHARIZADEH y , ROBERT R. MEYER z , GARY L. SCHULTZ z AND <lb/>JONATHAN YACKEL z <lb/>Abstract. The computing time bene ts of parallelism in database systems (achieved by us-<lb/>ing multiple processors to execute a query) must be weighed against communication, startup, and <lb/>termination overhead costs that increase as a function of the number of processors used. We con-<lb/>sider problems of minimizing overhead subject to allocating data among the processors according <lb/>to speci ed loads. We present lower bounds for these combinatorial problems and demonstrate how <lb/>processors may be optimally assigned for some problem classes. <lb/></front>

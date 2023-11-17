@@ -1,8 +1,8 @@
 package org.grobid.service.main;
 
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.google.inject.AbstractModule;
+
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
@@ -47,6 +47,11 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
             .modules(getGuiceModules())
             .build();
         bootstrap.addBundle(guiceBundle);
+
+        /*bootstrap.addBundle(GuiceBundle.builder()
+                .enableAutoConfig(getClass().getPackage().getName())
+                .build());*/
+
         bootstrap.addBundle(new MultiPartBundle());
         bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
     }
@@ -58,7 +63,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
     @Override
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
         environment.healthChecks().register("health-check", new HealthResource(configuration));
-        
+
         LOGGER.info("Service config={}", configuration);
         new DropwizardExports(environment.metrics()).register();
         ServletRegistration.Dynamic registration = environment.admin().addServlet("Prometheus", new MetricsServlet());
@@ -97,13 +102,13 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 File confLocation = new File(p).getAbsoluteFile();
                 if (confLocation.exists()) {
                     foundConf = confLocation.getAbsolutePath();
-                    LOGGER.info("Found conf path: {}", foundConf);
+                    //LOGGER.info("Found conf path: {}", foundConf);
                     break;
                 }
             }
 
             if (foundConf != null) {
-                LOGGER.warn("Running with default arguments: \"server\" \"{}\"", foundConf);
+                //LOGGER.info("Running with default arguments: \"server\" \"{}\"", foundConf);
                 args = new String[]{"server", foundConf};
             } else {
                 throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "
@@ -111,7 +116,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
             }
         }
 
-        LOGGER.info("Configuration file: {}", new File(args[1]).getAbsolutePath());
+        //LOGGER.info("Configuration file: {}", new File(args[1]).getAbsolutePath());
         new GrobidServiceApplication().run(args);
     }
 }

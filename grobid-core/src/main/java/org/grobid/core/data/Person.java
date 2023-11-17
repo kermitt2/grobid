@@ -259,7 +259,7 @@ public class Person {
     /**
      * TEI serialization via xom. 
      */
-    public void addLayoutTokens(List<LayoutToken> theTokens) {
+    public void appendLayoutTokens(List<LayoutToken> theTokens) {
         if (layoutTokens == null) {
             layoutTokens = new ArrayList<LayoutToken>();
         }

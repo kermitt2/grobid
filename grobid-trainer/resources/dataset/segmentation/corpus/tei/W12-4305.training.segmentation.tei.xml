@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_W12-4305"/>
+		<fileDesc xml:id="__W12-4305"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics, pages 37–46, <lb/>Jeju, Republic of Korea, 12 July 2012. c <lb/> 2012 Association for Computational Linguistics <lb/> A Three-Way Perspective on Scientific Discourse Annotation for <lb/>Knowledge Extraction <lb/> Maria Liakata <lb/> Aberystwyth University, UK / <lb/>EMBL-EBI, UK <lb/> liakata@ebi.ac.uk <lb/> Paul Thompson <lb/> University of Manchester, UK <lb/> paul.thompson@manchester. <lb/>ac.uk <lb/> Anita de Waard <lb/> Elsevier Labs, USA / <lb/>UiL-OTS, Universiteit Utrecht, NL <lb/> a.dewaard@elsevier.com <lb/> Raheel Nawaz <lb/> University of Manchester, UK <lb/> raheel.nawaz@cs.man. <lb/>ac.uk <lb/> Henk Pander Maat <lb/> UiL-OTS, Universiteit Utrecht, NL <lb/> h.l.w.pandermaat@uu.nl <lb/> Sophia Ananiadou <lb/> University of Manchester, UK <lb/> sophia.ananiadou@manchester. <lb/>ac.uk <lb/> Abstract <lb/> This paper presents a three-way perspective on <lb/>the annotation of discourse in scientific <lb/>literature. We use three different schemes, each <lb/>of which focusses on different aspects of <lb/>discourse in scientific articles, to annotate a <lb/>corpus of three full-text papers, and compare <lb/>the results. One scheme seeks to identify the <lb/>core components of scientific investigations at <lb/>the sentence level, a second annotates meta-<lb/>knowledge pertaining to bio-events and a third <lb/>considers how epistemic knowledge is <lb/>conveyed at the clause level. We present our <lb/>analysis of the comparison, and a discussion of <lb/>the contributions of each scheme. <lb/></front>

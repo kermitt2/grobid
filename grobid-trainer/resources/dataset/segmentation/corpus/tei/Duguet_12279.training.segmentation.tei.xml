@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_Duguet_12279"/>
+		<fileDesc xml:id="__Duguet_12279"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> Toward a computational and experimental model of a poly-epoxy <lb/>surface <lb/> Thomas Duguet  *  , Camille Bessaguet, Maëlenn Aufray, Jérôme Esvan, Cédric Charvillat, <lb/>Constantin Vahlas, Corinne Lacaze-Dufaure <lb/> CIRIMAT, CNRS – Université de Toulouse, 4, allée Emile Monso, BP-44362, 31030 Toulouse Cedex 4, France <lb/>Keywords: <lb/> Epoxy <lb/>Amine <lb/>Surface science <lb/>AFM <lb/>XPS <lb/>DFT <lb/> a b s t r a c t <lb/> A model poly-epoxy surface formed by the reaction of DGEBA and EDA is studied by the combination <lb/>of experiments and DFT calculations. A special synthesis protocol is presented leading to the formation <lb/>of a surface that is smooth (S a &lt; 1 nm), chemically homogeneous, and that presents a low-defect density <lb/>(0.21 񮽙m  −2  ), as shown by AFM characterizations. Then, XPS is used for the determination of the elemental <lb/>and functional groups&apos; surface composition. DFT allows the identification and assignment of individual <lb/>bonds contributions to the experimental 1s core-level peaks. Overall, we demonstrate that such a model <lb/>sample is perfectly suitable for a use as a template for the study of poly-epoxy surface functionalization. <lb/> </front>

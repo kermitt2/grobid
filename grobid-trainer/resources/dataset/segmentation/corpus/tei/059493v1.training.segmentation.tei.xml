@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Fractured tonotopy of functional neural clusters in mouse auditory cortex <lb/>Isabel Delgado Ruz and Simon R. Schultz <lb/>Centre for Neurotechnology and Department of Bioengineering, <lb/>Imperial College London, South Kensington, London SW7 2AZ, UK <lb/>email: s.schultz@imperial.ac.uk <lb/>Abstract <lb/>The degree of order versus randomness in mammalian cortical circuits has been the subject of much discussion. Previous <lb/>reports showed that at a large scale there is smooth tonotopy in mouse auditory cortex, while at the single neuron level <lb/>the representation is the traditional &quot;salt and pepper&quot; configuration attributed to rodent cortex. Here we show that <lb/>at the micro columnar scale we find a large variety of response profiles, but neurons tend to share similar preference <lb/>in terms of frequency, bandwidth and latency. However, this smooth representation was fractured and large di↵erences <lb/>were possible between neighbouring neurons. Despite the tendency of most groups of neurons to operate redundantly, <lb/>high information gains were achieved between cells that had a high signal correlation. Connectivity between neurons <lb/>was highly non-random, in agreement with a previous in-vitro report from layer five. Our results suggest the existence of <lb/>functional clusters, connecting neighbouring mini-columns. This supports the idea of a &quot;salt and pepper&quot; configuration <lb/>at the level of functional clusters of neurons rather than single units <lb/>Keywords: Extracellular Recording, Multi-electrode, A1, tonotopy, mouse <lb/></front>
