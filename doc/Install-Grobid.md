@@ -1,8 +1,10 @@
-<h1>Install GROBID</h1>>
+<h1>Install a GROBID development environment</h1>>
 
-## Getting GROBID
+## Getting the GROBID project source
 
-GROBID requires a JVM installed on your machine, we tested the tool successfully up version **JVM 17**. Other recent JVM versions should work correctly. 
+For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work correctly. 
+
+Note: Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
 
 ### Latest stable release
 
@@ -29,7 +31,7 @@ Or download directly the zip file:
 > unzip master
 ```
 
-## Build GROBID
+## Build GROBID from the source
 
 **Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
 
@@ -59,9 +61,8 @@ systemProp.https.proxyUser=username
 systemProp.https.proxyPassword=password
 ```
 
-## Use GROBID
+## Use a built GROBID project
 
 From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). 
 You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
-
 

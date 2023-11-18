@@ -2,10 +2,13 @@ package org.grobid.service.modules;
 
 import com.codahale.metrics.MetricRegistry;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.inject.Binder;
+
+import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
-import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
-//import ru.vyarus.dropwizard.guice.module.support.DropwizardAwareModule;
+
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+
 import org.grobid.service.GrobidRestService;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.exceptions.mapper.GrobidExceptionMapper;
@@ -18,33 +21,31 @@ import org.grobid.service.process.GrobidRestProcessString;
 import org.grobid.service.process.GrobidRestProcessTraining;
 import org.grobid.service.resources.HealthResource;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
+import ru.vyarus.dropwizard.guice.module.support.DropwizardAwareModule;
 
 public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConfiguration> {
 
     @Override
-    public void configure(Binder binder) {
-        binder.bind(HealthResource.class);
+    public void configure() {
+        bind(HealthResource.class);
 
         //REST
-        binder.bind(GrobidRestService.class);
-        binder.bind(GrobidRestProcessFiles.class);
-        binder.bind(GrobidRestProcessGeneric.class);
-        binder.bind(GrobidRestProcessString.class);
-        binder.bind(GrobidRestProcessTraining.class);
+        bind(GrobidRestService.class);
+        bind(GrobidRestProcessFiles.class);
+        bind(GrobidRestProcessGeneric.class);
+        bind(GrobidRestProcessString.class);
+        bind(GrobidRestProcessTraining.class);
 
         //Exception Mappers
-        binder.bind(GrobidServiceExceptionMapper.class);
-        binder.bind(GrobidExceptionsTranslationUtility.class);
-        binder.bind(GrobidExceptionMapper.class);
-        binder.bind(WebApplicationExceptionMapper.class);
+        bind(GrobidServiceExceptionMapper.class);
+        bind(GrobidExceptionsTranslationUtility.class);
+        bind(GrobidExceptionMapper.class);
+        bind(WebApplicationExceptionMapper.class);
     }
 
     @Provides
     protected ObjectMapper getObjectMapper() {
-        //return environment().getObjectMapper();
-        return getEnvironment().getObjectMapper();
+        return environment().getObjectMapper();
     }
 
     @Provides
@@ -54,8 +55,7 @@ public class GrobidServiceModule extends DropwizardAwareModule<GrobidServiceConf
 
     //for unit tests
     protected MetricRegistry getMetricRegistry() {
-        //return environment().metrics();
-        return getEnvironment().metrics();
+        return environment().metrics();
     }
 
     @Provides
