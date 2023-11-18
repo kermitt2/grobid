@@ -3779,10 +3779,21 @@ public class BiblioItem {
         GrobidAnalysisConfig config,
         Lexicon lexicon
     ) {
+        boolean affiliationWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgnameWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("orgName"));
+
         TextUtilities.appendN(tei, '\t', nbTag);
         tei.append("<affiliation");
         if (aff.getKey() != null)
             tei.append(" key=\"").append(aff.getKey()).append("\"");
+        if (affiliationWithCoords) {
+            // we serialize the coordinates for the whole affiliation block
+            List<LayoutToken> affTokens = aff.getLayoutTokens();
+            String coords = LayoutTokensUtil.getCoordsString(affTokens);
+            if (coords != null && coords.length()>0) {
+                tei.append(" coord=\"" + coords + "\"");
+            }
+        }
         tei.append(">\n");
 
         if (

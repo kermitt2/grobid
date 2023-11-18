@@ -67,7 +67,9 @@ By default, this image runs Deep Learning models for:
 
 - segmentation of the bibliographical reference section into individual references,
 
-- parsing of the header metadata.
+- parsing of the header metadata,
+
+- parsing of funding and acknowledgement sections.
 
 With a GPU (at least 4GB GPU memory required), the processing runtime is similar as with the CRF-only image with CPU only. 
 

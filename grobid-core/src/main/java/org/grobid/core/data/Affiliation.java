@@ -4,9 +4,9 @@ import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.engines.label.TaggingLabel;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Class for representing and exchanging affiliation information.
@@ -36,6 +36,9 @@ public class Affiliation {
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
     private List<LayoutToken> layoutTokens = null;
+
+    // map of model labels to LayoutToken
+    private Map<String, List<LayoutToken>> labeledTokens;
 
     // an identifier for the affiliation independent from the marker, present in the TEI result
     private String key = null;
@@ -672,5 +675,13 @@ public class Affiliation {
                 ", failAffiliation=" + failAffiliation +
                 '}';
     }
-    
+
+    public void addLabeledResult(TaggingLabel label, List<LayoutToken> tokenizations) {
+        if (labeledTokens == null)
+            labeledTokens = new TreeMap<>();
+
+        List<LayoutToken> theTokenList = tokenizations == null ? new ArrayList<>() : tokenizations;
+        labeledTokens.put(label.getLabel(), theTokenList);
+    }
+
 }
