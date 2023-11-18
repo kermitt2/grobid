@@ -20,7 +20,7 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
-For current GROBID version 0.7.3, we recommend considering the usage of the following Deep Learning models: 
+For current GROBID version 0.8.0, we recommend considering the usage of the following Deep Learning models: 
 
 - `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. SciBERT fine-tuned model performs currently at  lower accuracy. 
 
@@ -29,6 +29,8 @@ For current GROBID version 0.7.3, we recommend considering the usage of the foll
 - `reference-segmenter` model: this model segments a bibliographical reference section into individual references, `BidLSTM_ChainCRF_FEATURES` architecture provides better accuracy than CRF (even on very very very long reference sections), but at the cost of a global runtime 2 to 3 times slower. 
 
 - `header` model: this model extracts the header metadata, the `BidLSTM_CRF_FEATURES` or `BidLSTM_ChainCRF_FEATURES` (a faster variant) provides sligthly better results than CRF, especially with less mainstream domains and publisher. With a GPU, there is normally almost no runtime impact by selecting this DL model. 
+
+- `funding-acknowledgement` model: this is a typical NER model that extracts funder names, funding information, acknowledged persons and organizations, etc. The `BidLSTM_CRF_FEATURES` provides more accurate results than CRF.
 
 Other Deep Learning models do not show better accuracy than old-school CRF according to our benchmarkings, so we do not recommend using them in general at this stage. However, some of them tend to be more portable and can be more reliable than CRF for document layouts and scientific domains far from what is available in the training data.
 
