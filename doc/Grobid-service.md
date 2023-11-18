@@ -4,8 +4,7 @@ The GROBID Web API provides a simple and efficient way to use the tool. A servic
 
 ## Start the server with Docker
 
-This is the recommended and standard way to run the Grobid web services. 
-
+This is the recommended and standard way to run the Grobid web services, see [here](Run-Grobid.md). 
 
 ## Start a development server with Gradle
 
@@ -57,6 +56,10 @@ In addition, [Prometheus](https://prometheus.io/) format export metrics are avai
 ## Configure the server
 
 If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
+
+See the [configuration page](Configuration.md) for details on how to set the different parameters of the `grobid.yaml` configuration file. Service and logging parameters are also set in this configuration file.
+
+If Docker is used, see [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
 
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
