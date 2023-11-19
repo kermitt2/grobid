@@ -165,6 +165,24 @@ public class GrobidRestService implements GrobidPaths {
         );
     }
 
+    @Path(PATH_HEADER_FUNDING)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processHeaderFundingDocumentReturnXml_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_FUNDERS) String consolidateFunders,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolFunders = validateConsolidationParam(consolidateFunders);
+        return restProcessFiles.processStatelessHeaderFundingDocument(
+            inputStream, consolHeader, consolFunders,
+            validateIncludeRawParam(includeRawAffiliations)
+        );
+    }
+
+
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
