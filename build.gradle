@@ -46,8 +46,8 @@ subprojects {
     publishing {
         publications {
             mavenJava(MavenPublication) {
-                //from components.java
-                artifact jar 
+                from components.java
+                //artifact jar 
             }
         }
         repositories {
