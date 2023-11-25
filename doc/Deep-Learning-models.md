@@ -8,7 +8,7 @@ These architectures have been tested on Linux 64bit and macOS 64bit. The support
 
 Integration is realized via Java Embedded Python [JEP](https://github.com/ninia/jep), which uses a JNI of CPython. This integration is two times faster than the Tensorflow Java API and significantly faster than RPC serving (see [here](https://www.slideshare.net/FlinkForward/flink-forward-berlin-2017-dongwon-kim-predictive-maintenance-with-apache-flink). Additionally, it does not require to modify DeLFT as it would be the case with Py4J gateway (socket-based).
 
-There are currently no neural model for the segmentation and the fulltext models, because the input sequences for these models are too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for these tasks or to use alternative DL architectures (with sliding window, etc.).
+There are currently no neural model for the fulltext models, because the input sequences for this model are too large for the current supported Deep Learning architectures. The problem would need to be formulated differently for this task or to use alternative DL architectures (with sliding window, etc.).
 
 Low-level models not using layout features (author name, dates, affiliations...) perform usually better than CRF and does not require a feature channel. When layout features are involved, neural models with an additional feature channel should be preferred (e.g. `BidLSTM_CRF_FEATURES` in DeLFT) to those without feature channel.
 
