@@ -141,7 +141,7 @@ public class Engine implements Closeable {
     }*/
 
     /**
-     * Apply a parsing model for a given single raw reference string based on CRF
+     * Apply a parsing model for a given single raw reference string 
      *
      * @param reference   the reference string to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -157,7 +157,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model for a set of raw reference text based on CRF
+     * Apply a parsing model for a set of raw reference text 
      *
      * @param references  the list of raw reference strings to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -230,7 +230,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model to the reference block of a PDF file based on CRF
+     * Apply a parsing model to the reference block of a PDF file 
      *
      * @param inputFile   the path of the PDF file to be processed
      * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
@@ -245,7 +245,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model to the reference block of a PDF file based on CRF
+     * Apply a parsing model to the reference block of a PDF file 
      *
      * @param inputFile   the path of the PDF file to be processed
      * @param md5Str      MD5 digest of the PDF file to be processed
@@ -335,7 +335,7 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * Apply a parsing model for the header of a PDF file, using
      * first three pages of the PDF
      *
      * @param inputFile   the path of the PDF file to be processed
@@ -362,7 +362,36 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * Apply a parsing model for the header of a PDF file combined with an extraction and parsing of 
+     * funding information (outside the header possibly)
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param result      bib result
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeaderFunding(
+        File inputFile,
+        int consolidateHeader,
+        int consolidateFunders,
+        boolean includeRawAffiliations
+    ) throws Exception {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(consolidateHeader)
+            .consolidateFunders(consolidateFunders)
+            .includeRawAffiliations(includeRawAffiliations)
+            .build();
+        return processHeaderFunding(inputFile, null, config);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file, using
      * first three pages of the PDF
      *
      * @param inputFile   the path of the PDF file to be processed
@@ -391,7 +420,38 @@ public class Engine implements Closeable {
     }
 
     /**
-     * Apply a parsing model for the header of a PDF file based on CRF, using
+     * Apply a parsing model for the header of a PDF file combined with an extraction and parsing of 
+     * funding information (outside the header possibly)
+     *
+     * @param inputFile   the path of the PDF file to be processed
+     * @param md5Str      MD5 digest of the processed file
+     * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
+     *                    metadata) or 2 (consolidate the citation and inject DOI only)
+     * @param result      bib result
+     * @return the TEI representation of the extracted bibliographical
+     *         information
+     */
+    public String processHeaderFunding(
+        File inputFile,
+        String md5Str,
+        int consolidateHeader,
+        int consolidateFunders,
+        boolean includeRawAffiliations
+    ) throws Exception {
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(consolidateHeader)
+            .consolidateFunders(consolidateFunders)
+            .includeRawAffiliations(includeRawAffiliations)
+            .build();
+        return processHeaderFunding(inputFile, md5Str, config);
+    }
+
+    /**
+     * Apply a parsing model for the header of a PDF file, using
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
@@ -411,6 +471,10 @@ public class Engine implements Closeable {
         return processHeader(inputFile, null, config, result);
     }
 
+    public String processHeaderFunding(File inputFile, GrobidAnalysisConfig config) throws Exception {
+        return processHeaderFunding(inputFile, null, config);
+    }
+
     public String processHeader(String inputFile, String md5Str, GrobidAnalysisConfig config, BiblioItem result) {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
@@ -423,12 +487,23 @@ public class Engine implements Closeable {
         return resultTEI.getLeft();
     }
 
+    public String processHeaderFunding(File inputFile, String md5Str, GrobidAnalysisConfig config) throws Exception {
+        FullTextParser fullTextParser = parsers.getFullTextParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextParser.processingHeaderFunding(inputFile, md5Str, config);
+        LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc.getTei();
+    }
+
     /**
      * Create training data for the monograph model based on the application of
      * the current monograph text model on a new PDF
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                     file to be corrected for gold-level training data)
      * @param id           : an optional ID to be used in the TEI file and the full text
@@ -443,7 +518,7 @@ public class Engine implements Closeable {
      * without tags. This can be used to start from scratch any new model. 
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                     file to be annotated for "from scratch" training data)
      * @param id           : an optional ID to be used in the TEI file and the full text
@@ -458,7 +533,7 @@ public class Engine implements Closeable {
      * the current full text model on a new PDF
      *
      * @param inputFile    : the path of the PDF file to be processed
-     * @param pathRaw      : the path where to put the CRF feature file
+     * @param pathRaw      : the path where to put the sequence labeling feature file
      * @param pathTEI      : the path where to put the annotated TEI representation (the
      *                       file to be corrected for gold-level training data)
      * @param id           : an optional ID to be used in the TEI file, -1 if not used
@@ -592,7 +667,7 @@ public class Engine implements Closeable {
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
      * @param resultPath    - the path to the directory where the results as XML files
-     *                        and CRF feature files shall be written.
+     *                        and the sequence labeling feature files shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                        identify the training case. This is optional: no identifier
      *                        will be included if ind = -1
@@ -643,7 +718,7 @@ public class Engine implements Closeable {
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
      * @param resultPath    - the path to the directory where the results as XML files
-     *                        and default CRF feature files shall be written.
+     *                        and default sequence labeling feature files shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                        identify the training case. This is optional: no identifier
      *                        will be included if ind = -1
