@@ -12,7 +12,8 @@
                         <orgName type="laboratory">H H Wills Physics Laboratory</orgName>, 
                         <orgName type="institution">University of Bristol</orgName>, 
                         <address>
-                           <settlement>Bristol</settlement>, <country>UK</country><lb/>
+                           <settlement>Bristol</settlement>, 
+                           <country>UK</country><lb/>
                         </address>
                      </affiliation>
                      

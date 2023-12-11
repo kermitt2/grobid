@@ -9,8 +9,9 @@
 					<analytic>
 						<author>
 							
-							<marker>a</marker> 
+							
 							<affiliation>
+								<marker>a</marker> 
 								<orgName type="department" key="dep1">Institute of High Energy Physics</orgName>
 								and
 								<orgName type="department" key="dep2">Theoretical Physics Center for Science Facilities</orgName>,<lb/>
@@ -22,8 +23,9 @@
 								</address>
 							</affiliation>
 						
-							<marker>b</marker> 
+							
 							<affiliation>
+								<marker>b</marker> 
 								<orgName type="department">Institute of Physics</orgName>,
 								<orgName type="institution">Academia Sinica</orgName>,
 								<address>
@@ -33,8 +35,9 @@
 								</address>
 							</affiliation>
 						
-							<marker>c</marker> 
+							
 							<affiliation>
+								<marker>c</marker> 
 								<orgName type="department">College of Information Science and Engineering</orgName>,
 								<orgName type="institution">Ocean University of China</orgName>,<lb/>
 								<address>
