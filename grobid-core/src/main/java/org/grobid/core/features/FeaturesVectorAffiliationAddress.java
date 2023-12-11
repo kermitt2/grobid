@@ -109,8 +109,6 @@ public class FeaturesVectorAffiliationAddress {
         else
             res.append(" 0\n");
 
-
-
         return res.toString();
     }
 

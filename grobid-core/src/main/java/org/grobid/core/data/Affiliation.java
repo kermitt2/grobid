@@ -285,7 +285,7 @@ public class Affiliation {
         }
     }
 
-    public boolean notNull() {
+    public boolean isNotNull() {
         return !((departments == null) &
                 (institutions == null) &
                 (laboratories == null) &
@@ -451,7 +451,7 @@ public class Affiliation {
     @Deprecated
     public String toTEI() {
         StringBuilder tei = new StringBuilder();
-        if (!notNull()) {
+        if (!isNotNull()) {
             return null;
         } else {
             tei.append("<affiliation");
@@ -680,8 +680,23 @@ public class Affiliation {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
-        List<LayoutToken> theTokenList = tokenizations == null ? new ArrayList<>() : tokenizations;
+        List<LayoutToken> theTokenList = null;
+        if (tokenizations == null)
+            theTokenList = new ArrayList<>();
+        else 
+            theTokenList = tokenizations;
+
+        List<LayoutToken> theExistingTokenList = labeledTokens.get(label.getLabel());
+        if (theExistingTokenList != null) {
+            theExistingTokenList.addAll(theTokenList);
+            theTokenList = theExistingTokenList;
+        }
+
         labeledTokens.put(label.getLabel(), theTokenList);
+    }
+
+    public List<LayoutToken> getLabeledResult(TaggingLabel label) {
+        return labeledTokens.get(label.getLabel());
     }
 
 }

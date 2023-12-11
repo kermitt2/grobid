@@ -303,7 +303,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
-                    if (affiliation.notNull()) {
+                    if (affiliation.isNotNull()) {
                         affiliations.add(affiliation);
                         // next funding object
                         affiliation = new Affiliation();
@@ -323,7 +323,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
-                    if (institution.notNull()) {
+                    if (institution.isNotNull()) {
                         institutions.add(institution);
                         // next funding object
                         institution = new Affiliation();
