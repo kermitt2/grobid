@@ -154,6 +154,7 @@ public class Affiliation {
     }
 
     public void setCountry(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         country = s;
     }
 
@@ -170,10 +171,12 @@ public class Affiliation {
     }
 
     public void setRegion(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         region = s;
     }
 
     public void setSettlement(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         settlement = s;
     }
 
@@ -219,6 +222,9 @@ public class Affiliation {
         laboratories.add(TextUtilities.cleanField(aff, true));
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -230,6 +236,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -241,6 +250,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -252,6 +264,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -263,6 +278,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -274,6 +292,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -286,17 +307,30 @@ public class Affiliation {
     }
 
     public boolean isNotNull() {
-        return !((departments == null) &
-                (institutions == null) &
-                (laboratories == null) &
-                (country == null) &
-                (postCode == null) &
-                (postBox == null) &
-                (region == null) &
-                (settlement == null) &
-                (addrLine == null) &
-                (affiliationString == null) &
+        return !((departments == null) &&
+                (institutions == null) &&
+                (laboratories == null) &&
+                (country == null) &&
+                (postCode == null) &&
+                (postBox == null) &&
+                (region == null) &&
+                (settlement == null) &&
+                (addrLine == null) &&
+                (affiliationString == null) &&
                 (addressString == null));
+    }
+
+    public boolean hasAddress() {
+        if (country != null || 
+            postCode != null ||
+            postBox != null ||
+            settlement != null ||
+            addrLine != null ||
+            region != null ||
+            addressString != null) {
+            return true;
+        } else 
+            return false;
     }
 
     public void setFailAffiliation(boolean b) {
@@ -448,7 +482,7 @@ public class Affiliation {
         return nbStruct;
     }
 
-    @Deprecated
+    /*@Deprecated
     public String toTEI() {
         StringBuilder tei = new StringBuilder();
         if (!isNotNull()) {
@@ -535,7 +569,7 @@ public class Affiliation {
         }
 
         return tei.toString();
-    }
+    }*/
 
     public static String toTEI(Affiliation aff, int nbTag) {
         StringBuffer tei = new StringBuffer();

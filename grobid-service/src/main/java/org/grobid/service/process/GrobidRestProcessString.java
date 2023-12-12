@@ -216,13 +216,19 @@ public class GrobidRestProcessString {
 			affiliation = affiliation.replaceAll("\\t", " ");
 			List<Affiliation> affiliationList = engine.processAffiliation(affiliation);
 
-			if (affiliationList != null) {				
-				for(Affiliation affi : affiliationList) {
-					if (retVal == null) {
-						retVal = "";
+			if (affiliationList != null) {
+				if (retVal == null) {
+					retVal = "";
+				}
+				if (affiliationList.size() == 1) {
+					retVal += Affiliation.toTEI(affiliationList.get(0),0);
+				} else {
+					retVal += "<xml>\n";
+					for(Affiliation affi : affiliationList) {
+						retVal += Affiliation.toTEI(affi,1);
 					}
-					retVal += affi.toTEI();
-				}	
+					retVal += "</xml>\n";
+				}
 			}
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
 				response = Response.status(Status.NO_CONTENT).build();

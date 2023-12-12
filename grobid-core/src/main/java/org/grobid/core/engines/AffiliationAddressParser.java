@@ -45,12 +45,15 @@ public class AffiliationAddressParser extends AbstractParser {
 
             List<String> affiliationBlocks = getAffiliationBlocks(tokenizations);
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<OffsetPosition>> countriesPositions = new ArrayList<List<OffsetPosition>>();
+            placesPositions.add(lexicon.tokenPositionsLocationNames(tokenizations));
+            countriesPositions.add(lexicon.tokenPositionsCountryNames(tokenizations));
             List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
             allTokens.add(tokenizations);
-            String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
+            String affiliationSequenceWithFeatures = 
+                FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions, countriesPositions);
 
-            String res = label(header);
+            String res = label(affiliationSequenceWithFeatures);
             //return resultBuilder(res, tokenizations, false); // don't use pre-labels
 
             results = resultExtractionLayoutTokens(res, tokenizations);
@@ -181,11 +184,13 @@ public class AffiliationAddressParser extends AbstractParser {
                              List<LayoutToken> tokenizations) {
         try {
             List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            placesPositions.add(lexicon.tokenPositionsCityNames(tokenizations));
+            List<List<OffsetPosition>> countriesPositions = new ArrayList<List<OffsetPosition>>();
+            placesPositions.add(lexicon.tokenPositionsLocationNames(tokenizations));
+            countriesPositions.add(lexicon.tokenPositionsCountryNames(tokenizations));
             List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
             allTokens.add(tokenizations);
             String affiliationSequenceWithFeatures =
-                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions);
+                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions, countriesPositions);
 
             if ((affiliationSequenceWithFeatures == null) || (affiliationSequenceWithFeatures.trim().length() == 0)) {
                 return null;
@@ -214,7 +219,7 @@ public class AffiliationAddressParser extends AbstractParser {
 
         Affiliation affiliation = new Affiliation();
 
-        //System.out.println(result);
+        System.out.println(result);
 
         TaggingLabel lastClusterLabel = null;
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.AFFILIATION_ADDRESS, result, tokenizations);
@@ -229,8 +234,8 @@ public class AffiliationAddressParser extends AbstractParser {
             TaggingLabel clusterLabel = cluster.getTaggingLabel();
             Engine.getCntManager().i(clusterLabel);
 
-            //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
-            String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            //String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
             //String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(cluster.concatTokens());
             //String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
 
@@ -247,53 +252,71 @@ public class AffiliationAddressParser extends AbstractParser {
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_MARKER, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_INSTITUTION)) {
                 if (affiliation.getInstitutions() != null && affiliation.getInstitutions().size()>0) {
-
+                    if (affiliation.hasAddress()) {
+                        // new affiliation
+                        if (affiliation.isNotNull()) {
+                            affiliations.add(affiliation);
+                        }
+                        affiliation = new Affiliation();
+                    } 
                 }
                 affiliation.addInstitution(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_INSTITUTION, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_DEPARTMENT)) {
                 if (affiliation.getDepartments() != null && affiliation.getDepartments().size()>0) {
-
+                    if (affiliation.hasAddress()) {
+                        // new affiliation
+                        if (affiliation.isNotNull()) {
+                            affiliations.add(affiliation);
+                        }
+                        affiliation = new Affiliation();
+                    } 
                 }
                 affiliation.addDepartment(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_DEPARTMENT, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_LABORATORY)) {
                 if (affiliation.getLaboratories() != null && affiliation.getLaboratories().size()>0) {
-
+                    if (affiliation.hasAddress()) {
+                        // new affiliation
+                        if (affiliation.isNotNull()) {
+                            affiliations.add(affiliation);
+                        }
+                        affiliation = new Affiliation();
+                    } 
                 }
                 affiliation.addLaboratory(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_LABORATORY, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_COUNTRY)) {
-                if (affiliation.getCountry() != null) {
-
-                }
-                affiliation.setCountry(clusterContent);
+                if (affiliation.getCountry() != null) 
+                    affiliation.setCountry(affiliation.getCountry() + " " + clusterContent);
+                else
+                    affiliation.setCountry(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_COUNTRY, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_POSTCODE)) {
-                if (affiliation.getPostCode() != null) {
-
-                }
-                affiliation.setPostCode(clusterContent);
+                if (affiliation.getPostCode() != null) 
+                    affiliation.setPostCode(affiliation.getPostCode() + " " + clusterContent);
+                else
+                    affiliation.setPostCode(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_POSTCODE, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_POSTBOX)) {
-                if (affiliation.getPostBox() != null) {
-
-                }
-                affiliation.setPostBox(clusterContent);
+                if (affiliation.getPostBox() != null) 
+                    affiliation.setPostBox(affiliation.getPostBox() + " " + clusterContent);
+                else
+                    affiliation.setPostBox(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_POSTBOX, tokens);
                 
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_REGION)) {
-                if (affiliation.getRegion() != null) {
-
-                }
-                affiliation.setRegion(clusterContent);
+                if (affiliation.getRegion() != null) 
+                    affiliation.setRegion(affiliation.getRegion() + " " + clusterContent);
+                else
+                    affiliation.setRegion(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_REGION, tokens);
 
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_SETTLEMENT)) {
-                if (affiliation.getSettlement() != null) {
-
-                }
-                affiliation.setSettlement(clusterContent);
+                if (affiliation.getSettlement() != null) 
+                    affiliation.setSettlement(affiliation.getSettlement() + " " + clusterContent);
+                else
+                    affiliation.setSettlement(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_SETTLEMENT, tokens);
                 
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_ADDRESSLINE)) {

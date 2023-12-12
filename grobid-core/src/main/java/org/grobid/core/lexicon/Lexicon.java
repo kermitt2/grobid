@@ -58,6 +58,7 @@ public class Lexicon {
     private FastMatcher cityPattern = null;
 	private FastMatcher organisationPattern = null;
 	private FastMatcher locationPattern = null;
+    private FastMatcher countryPattern = null;
 	
 	private FastMatcher orgFormPattern = null;
     private FastMatcher collaborationPattern = null;
@@ -186,6 +187,7 @@ public class Lexicon {
     	LOGGER.info("Initiating country codes");
         countryCodes = new HashMap<String, String>();
         countries = new HashSet<String>();
+        countryPattern = new FastMatcher();
         LOGGER.info("End of initialization of country codes");
     }
 
@@ -220,11 +222,27 @@ public class Lexicon {
                 throw new GrobidResourceException("Cannot close all streams.", e);
             }
         }
+
+        for (String country : countries) {
+            countryPattern.loadTerm(country, GrobidAnalyzer.getInstance(), false, false); // ignore delimiters, not case sensitive
+        }
     }
 
     public String getCountryCode(String country) {
         String code = (String) countryCodes.get(country.toLowerCase());
         return code;
+    }
+
+    public void initCountryPatterns() {
+        if (countries == null || countries.size() == 0) {
+            // it should never be the case
+            addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
+                "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+        }
+
+        for (String country : countries) {
+            countryPattern.loadTerm(country, GrobidAnalyzer.getInstance(), false, false); // ignore delimiters, not case sensitive
+        }
     }
 
     public final void addFirstNames(String path) {
@@ -724,6 +742,18 @@ public class Lexicon {
             initOrganisations();
         }
         List<OffsetPosition> results = organisationPattern.matchLayoutToken(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in country name gazetteer for a given list of LayoutToken objects
+     * with token positions
+     */
+    public List<OffsetPosition> tokenPositionsCountryNames(List<LayoutToken> s) {
+        if (countryPattern == null) {
+            initCountryPatterns();
+        }
+        List<OffsetPosition> results = countryPattern.matchLayoutToken(s);
         return results;
     }
 
