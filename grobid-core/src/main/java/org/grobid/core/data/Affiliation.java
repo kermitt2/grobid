@@ -5,6 +5,8 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.util.*;
 
@@ -355,7 +357,7 @@ public class Affiliation {
 
     public void appendLayoutTokens(List<LayoutToken> tokens) {
         if (this.layoutTokens == null)
-            layoutTokens = new ArrayList<>();
+            this.layoutTokens = new ArrayList<>();
         this.layoutTokens.addAll(tokens);
     }
 
@@ -572,11 +574,29 @@ public class Affiliation {
     }*/
 
     public static String toTEI(Affiliation aff, int nbTag) {
+        return toTEI(aff, nbTag, null);
+    }
+
+    public static String toTEI(Affiliation aff, int nbTag, GrobidAnalysisConfig config) {
         StringBuffer tei = new StringBuffer();
         TextUtilities.appendN(tei, '\t', nbTag + 1);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgNameCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("orgName"));
+
         tei.append("<affiliation");
         if (aff.getKey() != null)
             tei.append(" key=\"").append(aff.getKey()).append("\"");
+        if (withAffCoords) {
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
+            if (coords != null && coords.length()>0) {
+                tei.append(" coord=\"" + coords + "\"");
+            }
+        }
         tei.append(">\n");
 
         if (aff.getDepartments() != null) {

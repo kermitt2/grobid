@@ -295,7 +295,8 @@ public class TaggingLabels {
     public static final TaggingLabel AFFILIATION_REGION = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, REGION_LABEL);
     public static final TaggingLabel AFFILIATION_SETTLEMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, SETTLEMENT_LABEL);
     public static final TaggingLabel AFFILIATION_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, ADDRESSLINE_LABEL);
-
+    public static final TaggingLabel AFFILIATION_OTHER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, OTHER_LABEL);
+    
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -455,6 +456,7 @@ public class TaggingLabels {
         register(AFFILIATION_REGION);
         register(AFFILIATION_SETTLEMENT);
         register(AFFILIATION_ADDRESSLINE);
+        register(AFFILIATION_OTHER);
     }
 
     protected TaggingLabels() {

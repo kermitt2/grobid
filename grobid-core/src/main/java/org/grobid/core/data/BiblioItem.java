@@ -3779,8 +3779,12 @@ public class BiblioItem {
         GrobidAnalysisConfig config,
         Lexicon lexicon
     ) {
-        boolean affiliationWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("affiliation"));
-        boolean orgnameWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("orgName"));
+        boolean affiliationWithCoords = (config != null) && 
+                                        (config.getGenerateTeiCoordinates() != null) && 
+                                        (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgnameWithCoords = (config != null) && 
+                                    (config.getGenerateTeiCoordinates() != null) && 
+                                    (config.getGenerateTeiCoordinates().contains("orgName"));
 
         TextUtilities.appendN(tei, '\t', nbTag);
         tei.append("<affiliation");
@@ -3788,8 +3792,7 @@ public class BiblioItem {
             tei.append(" key=\"").append(aff.getKey()).append("\"");
         if (affiliationWithCoords) {
             // we serialize the coordinates for the whole affiliation block
-            List<LayoutToken> affTokens = aff.getLayoutTokens();
-            String coords = LayoutTokensUtil.getCoordsString(affTokens);
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
             if (coords != null && coords.length()>0) {
                 tei.append(" coord=\"" + coords + "\"");
             }
@@ -3824,8 +3827,8 @@ public class BiblioItem {
                 int q = 1;
                 for (String depa : aff.getDepartments()) {
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("<orgName type=\"department\" key=\"dep" + q + "\">" +
-                            TextUtilities.HTMLEncode(depa) + "</orgName>\n");
+                    tei.append("<orgName type=\"department\" key=\"dep" + q + "\"");
+                    tei.append(">" +TextUtilities.HTMLEncode(depa) + "</orgName>\n");
                     q++;
                 }
             }
