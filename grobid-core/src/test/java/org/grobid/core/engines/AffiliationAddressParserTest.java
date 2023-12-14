@@ -106,7 +106,7 @@ public class AffiliationAddressParserTest {
         LOGGER.debug("tokenizations: {}", tokenizations);
         List<String> affiliationBlocks = getAffiliationBlocksWithLineFeed(tokenizations);
         String header = FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(
-            affiliationBlocks, Arrays.asList(tokenizations), NO_PLACES_POSITIONS
+            affiliationBlocks, Arrays.asList(tokenizations), NO_PLACES_POSITIONS, NO_PLACES_POSITIONS
         );
         LOGGER.debug("header: {}", header);
         String labelResult = addLabelsToFeatures(header, labels);

@@ -51,6 +51,9 @@ public class BiblioItem {
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
 
+    // accumulation of the LayoutTokens for sequences of affiliation/address
+    private List<List<LayoutToken>> affiliationAddresslabeledTokens;
+
     /**
      * The following are internal working structures not meant to be used outside. 
      * For collecting layout tokens of the various bibliographical component, 
@@ -4419,6 +4422,13 @@ public class BiblioItem {
             theList = theList == null ? new ArrayList<>() : theList;
             theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
+
+            if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION) || clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
+                if (affiliationAddresslabeledTokens == null) 
+                    affiliationAddresslabeledTokens = new ArrayList<>();
+                if (!affiliationAddresslabeledTokens.contains(clusterTokens))
+                    affiliationAddresslabeledTokens.add(clusterTokens);
+            }
         }
     }
 
@@ -4457,5 +4467,9 @@ public class BiblioItem {
 
     public void setAvailabilityStmt(String availabilityStmt) {
         this.availabilityStmt = availabilityStmt;
+    }
+
+    public List<List<LayoutToken>> getAffiliationAddresslabeledTokens() {
+        return affiliationAddresslabeledTokens;
     }
 }

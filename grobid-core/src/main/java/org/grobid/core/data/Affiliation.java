@@ -192,6 +192,7 @@ public class Affiliation {
 
     public void setRawAffiliationString(String s) {
         rawAffiliationString = s;
+        rawAffiliationString = rawAffiliationString.replaceAll("( )+", " ");
     }
 
     public void setInstitutions(List<String> affs) {

@@ -1353,6 +1353,8 @@ public class FullTextParser extends AbstractParser {
                     writer.close();
 
                     String rese = parsers.getHeaderParser().label(header);
+                    BiblioItem resHeader = new BiblioItem();
+                    resHeader = parsers.getHeaderParser().resultExtraction(rese, headerTokenizations, resHeader);
 
                     // buffer for the header block
                     StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
@@ -1362,8 +1364,9 @@ public class FullTextParser extends AbstractParser {
                     }
 
                     // buffer for the affiliation+address block
+                    List<LayoutToken> tokenizationsAffiliation = resHeader.getLayoutTokens(TaggingLabels.HEADER_AFFILIATION);
                     StringBuilder bufferAffiliation =
-                            parsers.getAffiliationAddressParser().trainingExtraction(rese, headerTokenizations);
+                            parsers.getAffiliationAddressParser().trainingExtraction(tokenizationsAffiliation);
 
                     // buffer for the date block
                     StringBuilder bufferDate = null;
