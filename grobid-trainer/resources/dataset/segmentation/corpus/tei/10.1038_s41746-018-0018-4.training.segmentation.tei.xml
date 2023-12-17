@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>BRIEF COMMUNICATION <lb/>OPEN <lb/>Digital biomarkers of cognitive function <lb/>Paul Dagum 1 <lb/>To identify digital biomarkers associated with cognitive function, we analyzed human-computer interaction from 7 days of <lb/>smartphone use in 27 subjects (ages 18-34) who received a gold standard neuropsychological assessment. For several <lb/>neuropsychological constructs (working memory, memory, executive function, language, and intelligence), we found a family of <lb/>digital biomarkers that predicted test scores with high correlations (p &lt; 10 −4 ). These preliminary results suggest that passive <lb/>measures from smartphone use could be a continuous ecological surrogate for laboratory-based neuropsychological assessment. <lb/>npj Digital Medicine (2018) 1:10 ; doi:10.1038/s41746-018-0018-4 <lb/></front>

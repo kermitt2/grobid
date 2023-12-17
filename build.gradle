@@ -34,6 +34,8 @@ allprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
+        // note: the following is not working
+        options.compilerArgs << '-parameters'
     }
 }
 
@@ -44,8 +46,8 @@ subprojects {
     publishing {
         publications {
             mavenJava(MavenPublication) {
-                //from components.java
-                artifact jar 
+                from components.java
+                //artifact jar 
             }
         }
         repositories {
@@ -53,8 +55,8 @@ subprojects {
         }
     }
 
-    //sourceCompatibility = 1.8
-    //targetCompatibility = 1.8
+    sourceCompatibility = 1.11
+    targetCompatibility = 1.11
 
     repositories {
         mavenCentral()
@@ -64,11 +66,11 @@ subprojects {
         maven { url "https://jitpack.io" }
     }
 
-    /*configurations {
+    configurations {
         all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        //all*.exclude group: 'log4j', module: "log4j"
-//        implementation.setCanBeResolved(true)
-    }*/
+        all*.exclude group: 'log4j', module: "log4j"
+        implementation.setCanBeResolved(true)
+    }
 
     ext {
         // treating them separately, these jars will be flattened into grobid-core.jar on installing,
@@ -84,29 +86,31 @@ subprojects {
         // packaging local libs inside grobid-core.jar
         implementation fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
-        testImplementation "junit:junit:4.12"
-        testImplementation "org.easymock:easymock:3.4"
+        testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.3'
+        testImplementation(platform('org.junit:junit-bom:5.9.3'))
+        testImplementation('org.junit.jupiter:junit-jupiter')
+        testImplementation 'org.easymock:easymock:5.1.0'
         testImplementation "org.powermock:powermock-api-easymock:2.0.7"
         testImplementation "org.powermock:powermock-module-junit4:2.0.7"
         testImplementation "xmlunit:xmlunit:1.6"
         testImplementation "org.hamcrest:hamcrest-all:1.3"
 
         implementation "com.cybozu.labs:langdetect:1.1-20120112"
-        implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
+        implementation "com.rockymadden.stringmetric:stringmetric-core_2.11:0.27.4"
         implementation "commons-pool:commons-pool:1.6"
         implementation "commons-io:commons-io:2.5"
         implementation "org.apache.commons:commons-lang3:3.6"
         implementation "org.apache.commons:commons-collections4:4.1"
-        implementation 'org.apache.commons:commons-text:1.8'
+        implementation 'org.apache.commons:commons-text:1.11.0'
         implementation "commons-dbutils:commons-dbutils:1.7"
-        implementation "com.google.guava:guava:28.2-jre"
+        implementation "com.google.guava:guava:31.0.1-jre"
         implementation "org.apache.httpcomponents:httpclient:4.5.3"
         implementation "black.ninia:jep:4.0.2"
 
-        implementation "com.fasterxml.jackson.core:jackson-core:2.10.1"
-        implementation "com.fasterxml.jackson.core:jackson-databind:2.10.1"
-        implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.10.1"
-        implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.1"
+        implementation "com.fasterxml.jackson.core:jackson-core:2.14.3"
+        implementation "com.fasterxml.jackson.core:jackson-databind:2.14.3"
+        implementation "com.fasterxml.jackson.module:jackson-module-afterburner:2.14.3"
+        implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.3"
     }
 
     task sourceJar(type: Jar) {
@@ -147,6 +151,8 @@ subprojects {
 //    }
 
     test {
+        useJUnitPlatform()
+        
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
@@ -170,7 +176,7 @@ subprojects {
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
-            "--add-opens", "java.base/java.io=ALL-UNNAMED"
+            "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
     }
@@ -197,9 +203,8 @@ project("grobid-core") {
         }
 
         // Logs
-        api 'org.slf4j:slf4j-api:1.7.25'
-        //api 'org.slf4j:slf4j-log4j12:1.7.25'
-        runtimeOnly 'org.slf4j:slf4j-jdk14:1.7.25'
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        implementation 'ch.qos.logback:logback-classic:1.2.3'
 
         implementation "org.apache.pdfbox:pdfbox:2.0.18"
 
@@ -224,6 +229,7 @@ project("grobid-core") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+        exclude("logback.xml")
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
@@ -267,6 +273,7 @@ project("grobid-core") {
 
 project("grobid-home") {
     task packageGrobidHome(type: Zip) {
+        zip64 true
         from('.') {
             include("config/*")
             include("language-detection/**")
@@ -326,17 +333,11 @@ project(":grobid-service") {
 //                "${System.env.CONDA_PREFIX}/lib/python${pythonVersion}/site-packages/jep"
 //        }
         systemProperty "java.library.path", javaLibraryPath
-
-    }
-
-    configurations {
-        all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
-        all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        all*.exclude group: 'log4j', module: "log4j"
     }
 
     tasks.distZip.enabled = true
     tasks.distTar.enabled = false
+    //tasks.distZip.zip64 = true
     tasks.shadowDistZip.enabled = false
     tasks.shadowDistTar.enabled = false
 
@@ -346,19 +347,25 @@ project(":grobid-service") {
     dependencies {
         implementation project(':grobid-core') 
         implementation project(':grobid-trainer')
-        implementation "io.dropwizard:dropwizard-core:1.3.23"
-        implementation "io.dropwizard:dropwizard-assets:1.3.23"
-        implementation "com.hubspot.dropwizard:dropwizard-guicier:1.3.5.0"
-        implementation "io.dropwizard:dropwizard-testing:1.3.23"
-        implementation "io.dropwizard:dropwizard-forms:1.3.23"
-        implementation "io.dropwizard:dropwizard-client:1.3.23"
-        implementation "io.dropwizard:dropwizard-auth:1.3.23"
+
+        //Dropwizard
+        implementation 'ru.vyarus:dropwizard-guicey:7.0.0'
+
+        implementation 'io.dropwizard:dropwizard-bom:4.0.0'
+        implementation 'io.dropwizard:dropwizard-core:4.0.0'
+        implementation 'io.dropwizard:dropwizard-assets:4.0.0'
+        implementation 'io.dropwizard:dropwizard-testing:4.0.0'
+        implementation 'io.dropwizard.modules:dropwizard-testing-junit4:4.0.0'
+        implementation 'io.dropwizard:dropwizard-forms:4.0.0'
+        implementation 'io.dropwizard:dropwizard-client:4.0.0'
+        implementation 'io.dropwizard:dropwizard-auth:4.0.0'
+        implementation 'io.dropwizard.metrics:metrics-core:4.2.22'
+        implementation 'io.dropwizard.metrics:metrics-servlets:4.2.22'
+        
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"
-        implementation "io.prometheus:simpleclient_dropwizard:0.11.0"
-        implementation "io.prometheus:simpleclient_servlet:0.11.0"
-
-        testImplementation "io.dropwizard:dropwizard-testing:1.3.17"
+        implementation "io.prometheus:simpleclient_dropwizard:0.16.0"
+        implementation "io.prometheus:simpleclient_servlet:0.16.0"
     }
 
     shadowJar {
@@ -368,6 +375,8 @@ project(":grobid-service") {
         manifest {
             attributes 'Main-Class': 'org.grobid.core.main.batch.GrobidMain'
         }
+
+        exclude("logback.xml")
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
@@ -379,12 +388,15 @@ project(":grobid-service") {
     distributions {
         main {
             contents {
-                from(new File(rootProject.rootDir, "grobid-service/README.md")) {
-                    into "doc"
-                }
-                //from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
-                //    into "config"
+                //from(new File(rootProject.rootDir, "grobid-service/README.md")) {
+                //    into "doc"
                 //}
+                from(new File(rootProject.rootDir, "../grobid-home/config/grobid.yaml")) {
+                    into "config"
+                }
+                from(new File(rootProject.rootDir, "grobid-service/build/scripts/*")) {
+                    into "bin"
+                }
             }
         }
     }
@@ -406,15 +418,13 @@ project(":grobid-trainer") {
         implementation project(':grobid-core')
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.10:0.27.3"
         implementation "me.tongfei:progressbar:0.9.0"
-        //implementation 'org.slf4j:slf4j-log4j12:1.7.25'
-        implementation 'org.slf4j:slf4j-api:1.7.25'
-        //implementation 'org.slf4j:slf4j-jdk14:1.7.25'
+
+        // logs
+        implementation 'org.slf4j:slf4j-api:1.7.30'
+        implementation 'ch.qos.logback:logback-classic:1.2.3'
     }
 
     configurations {
-        //all*.exclude group: 'org.slf4j', module: "slf4j-jdk14"
-        //all*.exclude group: 'org.slf4j', module: "slf4j-log4j12"
-        //all*.exclude group: 'log4j', module: "log4j"
     }
 
     jar {
@@ -423,6 +433,7 @@ project(":grobid-trainer") {
                 it.isDirectory() ? [] : localLibs.contains(it.getName()) ? zipTree(it) : []
             }
         }
+        exclude("logback.xml")
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
@@ -433,6 +444,10 @@ project(":grobid-trainer") {
         zip64 true
         manifest {
             attributes 'Main-Class': 'org.grobid.trainer.TrainerRunner'
+        }
+
+        from('src/main/resources') {
+            include '*.xml'
         }
 
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
@@ -462,7 +477,8 @@ project(":grobid-trainer") {
         "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
         "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
         "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
-        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer"
+        "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
+        "train_funding_acknowledgement" : "org.grobid.trainer.FundingAcknowledgementTrainer"
     ]
 
     def libraries = ""
@@ -583,7 +599,6 @@ tasks.register("codeCoverageReport", JacocoReport) {
 /** COVERALLS **/
 coveralls {
     sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
-    jacocoReportPath = "build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
 }
 
 tasks.coveralls {

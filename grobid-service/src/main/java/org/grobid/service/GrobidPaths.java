@@ -31,6 +31,11 @@ public interface GrobidPaths {
 	String PATH_HEADER = "processHeaderDocument";
 
 	/**
+	 * path extension for processing document headers and funding information.
+	 */
+	String PATH_HEADER_FUNDING = "processHeaderFundingDocument";
+
+	/**
 	 * path extension for processing document headers HTML.
 	 */
 	String PATH_HEADER_HTML = "processHeaderDocumentHTML";
@@ -124,6 +129,11 @@ public interface GrobidPaths {
 	 * path extension for the JSON annotations of the citations in a patent PDF file.
 	 */
 	String PATH_CITATIONS_PATENT_PDF_ANNOTATION = "citationPatentAnnotations";
+
+	/**
+	 * path extension for the JSON annotation of the funding/acknowledgement section 
+	 **/
+	String PATH_FUNDING_ACKNOWLEDGEMENT = "processFundingAcknowledgement";
 
 	/**
 	 * path extension for processing sha1.

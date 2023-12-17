@@ -263,7 +263,6 @@ Evaluation on 2000 random PDF files out of 2000 PDF (ratio 1.0).
 |---               |---         |---        |---         |---      |
 | availability_stmt | 0 | 0 | 0 | 0 |
 | figure_title | 4.24 | 2.01 | 2.72 | 22978 |
-| funding_stmt | 0 | 0 | 0 | 0 |
 | reference_citation | 71.04 | 71.33 | 71.18 | 147470 |
 | reference_figure | 70.59 | 67.74 | 69.13 | 47984 |
 | reference_table | 48.12 | 83.06 | 60.94 | 5957 |
@@ -282,7 +281,6 @@ Evaluation on 2000 random PDF files out of 2000 PDF (ratio 1.0).
 |---               |---         |---        |---         |---      |
 | availability_stmt | 0 | 0 | 0 | 0 |
 | figure_title | 69.47 | 32.89 | 44.65 | 22978 |
-| funding_stmt | 0 | 0 | 0 | 0 |
 | reference_citation | 83.03 | 83.37 | 83.2 | 147470 |
 | reference_figure | 71.21 | 68.34 | 69.75 | 47984 |
 | reference_table | 48.57 | 83.83 | 61.51 | 5957 |

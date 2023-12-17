@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>1 <lb/>Scientific RepoRts | <lb/>(2019) 9:935 | https://doi.org/10.1038/s41598-018-37532-4 <lb/>www.nature.com/scientificreports <lb/> systematic characterization of <lb/>position one variants within the <lb/>lantibiotic nisin <lb/>Marcel Lagedroste, Jens Reiners, sander H. J. smits &amp; Lutz schmitt <lb/>Lantibiotics are a growing class of natural compounds, which possess antimicrobial activity against <lb/>a broad range of Gram-positive bacteria. their high potency against human pathogenic strains such <lb/>as MRsA and VRe makes them excellent candidates as substitutes for classic antibiotics in times of <lb/>increasing multidrug resistance of bacterial strains. New lantibiotics are detected in genomes and <lb/>can be heterologously expressed. the functionality of these novel lantibiotics requires a systematic <lb/>purification and characterization to benchmark them against for example the well-known lantibiotic <lb/>nisin. Here, we used a standardized workflow to characterize lantibiotics consisting of six individual <lb/>steps. the expression and secretion of the lantibiotic was performed employing the promiscuous nisin <lb/>modification machinery. We mutated the first amino acid of nisin into all proteinaceous amino acids <lb/>and compared their bactericidal potency against sensitive strains as well as strains expressing nisin <lb/>resistance proteins. Interestingly, we can highlight four distinct groups based on the residual activity of <lb/>nisin against sensitive as well as resistant L. lactis strains. <lb/></front>

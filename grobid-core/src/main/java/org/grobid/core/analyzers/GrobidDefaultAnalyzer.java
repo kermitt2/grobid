@@ -196,6 +196,14 @@ public class GrobidDefaultAnalyzer implements Analyzer {
                     LayoutToken layoutToken = new LayoutToken();
                     layoutToken.setText(subtokens[i]);
                     layoutToken.setOffset(offset);
+
+                    // coordinates - TODO: refine the width/X for the sub token
+                    layoutToken.setX(token.getX());
+                    layoutToken.setY(token.getY());
+                    layoutToken.setHeight(token.getHeight());
+                    layoutToken.setWidth(token.getWidth());
+                    layoutToken.setPage(token.getPage());
+
                     offset += subtokens[i].length();
                     result.add(layoutToken);
                 }

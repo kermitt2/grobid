@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.8.0] - 2023-11-19
+
+### Added
+
++ Extraction of funder and funding information with a specific new model, see https://github.com/kermitt2/grobid/pull/1046 for details
++ Optional consolidation of funder with CrossRef Funder Registry
++ Identification of acknowledged entities in the acknowledgement section
++ Optional coordinates in title elements
+
+### Changed
+
++ Dropwizard upgrade to 4.0
++ Minimum JDK/JVM requirement for building/running the project is now 1.11
++ Logging now with Logback, removal of Log4j2, optional logs in json format
++ General review of logs
++ Enable Github actions / Disable circleci
+
+### Fixed
+
++ Set dynamic memory limit in pdfalto_server #1038 
++ Logging in files when training models work now as expected
++ Various dependency upgrades
++ Fix #1051 with possible problematic PDF
++ Fix #1036 for pdfalto memory limit 
++ fix readthedocs build #1040 
++ fix for null equation #1030
++ Other minor fixes
+
 ## [0.7.3] – 2023-05-13
 
 ### Added

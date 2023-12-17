@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * SAX parser for author sequences encoded in the TEI format data.
- * Segmentation of tokens must be identical as the one from pdf2xml files to that
- * training and online input tokens are identical.
+ * SAX parser for date sequences encoded in the TEI format data.
  *
  * @author Patrice Lopez
  */
@@ -44,7 +42,7 @@ public class TEIDateSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if (( (qName.equals("year")) | (qName.equals("month")) | (qName.equals("day"))) & (currentTag != null)) {
+        if (( (qName.equals("year")) || (qName.equals("month")) || (qName.equals("day"))) & (currentTag != null)) {
             String text = getText();
             writeField(text);
         } 

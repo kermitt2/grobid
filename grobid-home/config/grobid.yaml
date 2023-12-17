@@ -66,7 +66,7 @@ grobid:
   delft:
     # DeLFT global parameters
     # delft installation path if Deep Learning architectures are used to implement one of the sequence labeling model, 
-    # embeddings are usually compiled as lmdb under delft/data (this paramter is ignored if only featured-engineered CRF are used)
+    # embeddings are usually compiled as lmdb under delft/data (this parameter is ignored if only featured-engineered CRF are used)
     install: "../delft"
     pythonVirtualEnv:
 
@@ -237,12 +237,35 @@ grobid:
         epsilon: 0.0001
         window: 20
 
+    - name: "funding-acknowledgement"
+      engine: "wapiti"
+      #engine: "delft"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.00001
+        window: 50
+        nbMaxIterations: 2000
+      delft:
+        # deep learning parameters
+        architecture: "BidLSTM_CRF_FEATURES"
+        #architecture: "BERT_CRF"
+        #transformer: "michiyasunaga/LinkBERT-base"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 800
+          batch_size: 20
+        training:
+          # parameters used for training
+          max_sequence_length: 500  
+          batch_size: 40
+
   # for **service only**: how to load the models, 
-  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
-  #          the service at first call
-  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
-  #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
 
 server:
     type: custom
@@ -253,20 +276,31 @@ server:
     - type: http
       port: 8071
     registerDefaultExceptionMappers: false
+    # change the following for having all http requests logged
+    requestLog:
+      appenders: []
 
+# these logging settings apply to the Grobid service usage mode
 logging:
+  level: INFO
   loggers:
     org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
     org.glassfish.jersey.internal: "OFF"
+    com.squarespace.jersey2.guice.JerseyGuiceUtils: "OFF"
   appenders:
     - type: console
-      level: INFO
       threshold: WARN
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json
     - type: file
       currentLogFilename: logs/grobid-service.log
-      threshold: ALL
+      threshold: INFO
       archive: true
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json

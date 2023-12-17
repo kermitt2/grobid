@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>t t pair production cross section measurement at the LHC <lb/>Tae Jeong Kim 1,a <lb/>Korea University, Seoul <lb/>Abstract. Measurement of tt pair production cross sections with an integrated luminosity of around 1 fb −1 at <lb/>√ <lb/>s = 7 TeV obtained with the ATLAS and CMS detectors are reported. The inclusive cross sections in dilepton <lb/>(ee, eµ, µµ and µτ), lepton+jets (e, µ) and all hadronic decay modes are measured. In addition to inclusive cross <lb/>section measurement, the study of jet multiplicity with additional jets are also presented, which is important to <lb/>constrain the initial state radiation. Measurement of the charge asymmetry at the LHC is also presented. All <lb/>measurements are compatible with Standard Model predictions. <lb/></front>

@@ -41,7 +41,7 @@ public class TableParser extends AbstractParser {
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            throw new GrobidException("CRF labeling with table model fails.", e);
+            throw new GrobidException("Sequence labeling with table model fails.", e);
         }
 
         if (res == null) {
@@ -131,7 +131,7 @@ public class TableParser extends AbstractParser {
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            LOGGER.error("CRF labeling in TableParser fails.", e);
+            LOGGER.error("Sequence labeling in TableParser fails.", e);
         }
         if (res == null) {
             return Pair.of(null, featureVector);

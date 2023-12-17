@@ -31,6 +31,7 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,6 +61,7 @@ public class Lexicon {
 	
 	private FastMatcher orgFormPattern = null;
     private FastMatcher collaborationPattern = null;
+    private FastMatcher funderPattern = null;
 
     private FastMatcher personTitlePattern = null;
 	private FastMatcher personSuffixPattern = null;
@@ -477,6 +479,18 @@ public class Lexicon {
         }
     }
 
+    public void initFunders() {
+        try {
+            funderPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"), 
+                    GrobidAnalyzer.getInstance(), true); 
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon matcher for funders.", e);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+        }
+    }
+
     /**
      * Look-up in first name gazetteer
      */
@@ -651,6 +665,17 @@ public class Lexicon {
             initCollaborations();
         }
         List<OffsetPosition> results = collaborationPattern.matchLayoutToken(s);
+        return results;
+    }
+
+    /**
+     * Case sensitive look-up in funder name gazetteer for a given list of LayoutToken objects
+     * with token positions
+     */
+    public List<OffsetPosition> tokenPositionsFunderNames(List<LayoutToken> s) {
+        if (funderPattern == null)
+            initFunders();
+        List<OffsetPosition> results = funderPattern.matchLayoutToken(s, true, true);
         return results;
     }
 

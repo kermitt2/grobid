@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>arXiv:0708.0921v2 [cond-mat.supr-con] 8 May 2008 <lb/>Evidence for gap anisotropy in CaC 6 from directional point-contact spectroscopy <lb/>R.S. Gonnelli, 1 D. Daghero, 1 D. Delaude, 1 M. Tortello, 1 G.A. Ummarino, <lb/>V.A. Stepanov, 2 J.S. Kim, 3 R.K. Kremer, 3 A. Sanna, 4 G. Profeta, 5 and S. Massidda <lb/>1 Dipartimento di Fisica and CNISM, Politecnico di Torino, 10129 Torino, Italy <lb/>2 P.N. Lebedev Physical Institute, Russian Academy of Sciences, 119991 Moscow, Russia <lb/>3 Max-Planck-Institut für Festkörperforschung, D-70569 Stuttgart, Germany <lb/>4 Institut für Theoretische Physik, Freie Universität Berlin, Arnimallee 14, D-14195 Berlin, Germany <lb/>5 CNISM -Dipartimento di Fisica, Università degli studi dell&apos;Aquila, Italy <lb/>6 SLACS-INFM/CNR and Dipartimento di Fisica, Università degli Studi di Cagliari, Italy <lb/>We present the first results of directional point-contact spectroscopy in high quality CaC6 samples <lb/>both along the ab plane and in the c-axis direction. The superconducting order parameter ∆(0), <lb/>obtained by fitting the Andreev-reflection (AR) conductance curves at temperatures down to 400 <lb/>mK with the single-band 3D Blonder-Tinkham-Klapwijk model, presents two different distributions <lb/>in the two directions of the main current injection, peaked at 1.35 and 1.71 meV, respectively. By <lb/>ab-initio calculations of the AR conductance spectra, we show that the experimental results are in <lb/>good agreement with the recent predictions of gap anisotropy in CaC6. <lb/>PACS numbers: 74.50.+r, 74.45.+c, 74.70.Ad <lb/></front>

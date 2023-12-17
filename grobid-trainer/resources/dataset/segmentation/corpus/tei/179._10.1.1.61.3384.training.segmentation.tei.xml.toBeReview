@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 		<front>The Semantics of the C Programming Language <lb/>Yuri Gurevich and James K. Huggins <lb/>EECS Department, University o f M i c higan, Ann Arbor, MI 48109-2122, USA <lb/>February 19, 1993 <lb/>This paper rst appeared in GH2], and incorporates the corrections indicated in GH3]. <lb/></front>

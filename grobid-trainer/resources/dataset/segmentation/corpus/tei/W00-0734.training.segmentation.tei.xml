@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_W00-0734"/>
+		<fileDesc xml:id="__W00-0734"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> In:  Proceedings of CoNLL-2000 and LLL-2000,  pages 154-156, Lisbon, Portugal, 2000. <lb/> Chunking with WPDV Models <lb/> Hans van Halteren <lb/>Dept. of Language and Speech, Univ. of Nijmegen <lb/>P.O. Box 9103, 6500 HD Nijmegen <lb/>The Netherlands <lb/> hvh@let, <lb/> kun. nl <lb/></front>

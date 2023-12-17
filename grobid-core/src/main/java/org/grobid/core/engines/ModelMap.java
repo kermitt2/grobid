@@ -30,7 +30,7 @@ public class ModelMap {
 	private static Map<String, Model> models = null;
 
 	/**
-	 * Return a CRFPP tagger created corresponding to the model given in argument.
+	 * Return a model tagger created corresponding to the model given in argument.
 	 * 
 	 * @param grobidModel
 	 *            the model to use for the creation of the tagger.
@@ -53,7 +53,7 @@ public class ModelMap {
 	}
 
 	/**
-	 * Loading of the CRFPP models.
+	 * Loading of the models.
 	 */
 	@Deprecated
 	public static synchronized void initModels() {

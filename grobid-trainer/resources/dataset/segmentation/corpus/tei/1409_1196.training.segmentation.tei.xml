@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>SLAC-PUB-16069 <lb/>Work supported in part by US Department of Energy under contract DE-AC02-76SF00515. <lb/>SLAC National Accelerator Laboratory, Stanford University, Stanford, California 94039, USA <lb/>High Energy Colliding Beams; What Is Their Future? 1 <lb/>Burton Richter <lb/>Stanford University and SLAC National Accelerator Laboratory <lb/>brichter@slac.stanford.edu <lb/>Abstract <lb/>The success of the first few years of LHC operations at CERN, and the expectation of <lb/>more to come as the LHC&apos;s performance improves, are already leading to discussions <lb/>of what should be next for both proton-proton and electron-positron colliders. In this <lb/>discussion I see too much theoretical desperation caused by the so far unsuccessful <lb/>hunt for what is beyond the Standard Model, and too little of the necessary interaction of <lb/>the accelerator, experimenter, and theory communities necessary for a scientific and <lb/>engineering success. Here, I give my impressions of the problem, its possible solution, <lb/>and what is needed to have both a scientifically productive and financially viable future. <lb/></front>

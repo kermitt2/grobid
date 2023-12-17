@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>Finite State Machines and Recurrent Neural Networks { <lb/>Automata and Dynamical Systems Approaches <lb/>Peter Ti no a;c , Bill G. Horne c , C. Lee Giles c;d , Pete C. Collingwood b <lb/>a Department of Computer Science and <lb/>Engineering <lb/>Slovak Technical University <lb/>Ilkovicova 3, 812 19 Bratislava, Slovakia <lb/>Email: tino@decef.elf.stuba.sk <lb/>b School of Computing &amp; Man. Sci. <lb/>She eld Hallam University <lb/>Hallam Business Park <lb/>100 Napier St., She eld, S11 8HD, UK <lb/>Email: p.c.collingwood@shu.ac.uk <lb/>c NEC Research Institute <lb/>4 Independence Way <lb/>Princeton, NJ 08540 <lb/>Email: <lb/>ftino,horne,gilesg@research.nj.nec.com <lb/>d Institute for Advanced Computer Studies <lb/>University of Maryland <lb/>College Park, MD 20742 <lb/>Technical Report <lb/>UMIACS-TR-95-1 and CS-TR-3396 <lb/>Institute for Advanced Computer Studies <lb/>University of Maryland <lb/>College Park, MD 20742 <lb/></titlePage>
