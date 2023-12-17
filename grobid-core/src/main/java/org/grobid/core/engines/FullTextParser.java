@@ -102,6 +102,14 @@ public class FullTextParser extends AbstractParser {
         return processing(documentSource, config);
     }
 
+    public Document processingHeaderFunding(File inputPdf,
+                               GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        return processingHeaderFunding(documentSource, config);
+    }
+
 	public Document processing(File inputPdf,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
@@ -111,6 +119,16 @@ public class FullTextParser extends AbstractParser {
         documentSource.setMD5(md5Str);
 		return processing(documentSource, config);
 	}
+
+    public Document processingHeaderFunding(File inputPdf,
+                               String md5Str,
+                               GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        documentSource.setMD5(md5Str);
+        return processingHeaderFunding(documentSource, config);
+    }
 
 	/**
      * Machine-learning recognition of the complete full text structures.
@@ -310,6 +328,78 @@ public class FullTextParser extends AbstractParser {
         } catch (GrobidException e) {
 			throw e;
 		} catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+    }
+
+
+    /**
+     * Machine-learning recognition of full text structures limted to header and funding information.
+     * This requires however to look at the complete document, but some parts will be skipped
+     *
+     * @param documentSource input
+     * @param config config
+     * @return the document object with built TEI
+     */
+    public Document processingHeaderFunding(DocumentSource documentSource,
+                               GrobidAnalysisConfig config) {
+        if (tmpPath == null) {
+            throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
+        }
+        if (!tmpPath.exists()) {
+            throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
+                    tmpPath.getAbsolutePath() + "' does not exists.");
+        }
+        try {
+            // general segmentation
+            Document doc = parsers.getSegmentationParser().processing(documentSource, config);
+            SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
+
+            // header processing
+            BiblioItem resHeader = new BiblioItem();
+            Pair<String, LayoutTokenization> featSeg = null;
+
+            // using the segmentation model to identify the header zones
+            parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
+
+            // structure the abstract using the fulltext model
+            if (isNotBlank(resHeader.getAbstract())) {
+                //List<LayoutToken> abstractTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_ABSTRACT);
+                List<LayoutToken> abstractTokens = resHeader.getAbstractTokensWorkingCopy();
+                if (CollectionUtils.isNotEmpty(abstractTokens)) {
+                    abstractTokens = BiblioItem.cleanAbstractLayoutTokens(abstractTokens);
+                    Pair<String, List<LayoutToken>> abstractProcessed = processShort(abstractTokens, doc);
+                    if (abstractProcessed != null) {
+                        // neutralize figure and table annotations (will be considered as paragraphs)
+                        String labeledAbstract = abstractProcessed.getLeft();
+                        labeledAbstract = postProcessFullTextLabeledText(labeledAbstract);
+                        resHeader.setLabeledAbstract(labeledAbstract);
+                        resHeader.setLayoutTokensForLabel(abstractProcessed.getRight(), TaggingLabels.HEADER_ABSTRACT);
+                    }
+                }
+            }
+
+            // possible annexes (view as a piece of full text similar to the body)
+            /*documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            String resultAnnex = null;
+            List<LayoutToken> tokenizationsBody2 = null;
+            if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
+                // if featSeg is null, it usually means that no body segment is found in the
+                // document segmentation
+                String bodytext = featSeg.getLeft();
+                tokenizationsBody2 = featSeg.getRight().getTokenization();
+                resultAnnex = label(bodytext);
+            }*/
+
+            // final combination
+            toTEIHeaderFunding(doc, // document
+                resHeader, // header
+                config);
+            return doc;
+        } catch (GrobidException e) {
+            throw e;
+        } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
     }
@@ -2663,6 +2753,137 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 //				)
 //		);
 	}
+
+    /**
+     * Create the TEI representation for a document based on the parsed header and funding only.
+     */
+    private void toTEIHeaderFunding(Document doc,
+                       BiblioItem resHeader,
+                       GrobidAnalysisConfig config) {
+        if (doc.getBlocks() == null) {
+            return;
+        }
+        TEIFormatter teiFormatter = new TEIFormatter(doc, this);
+        StringBuilder tei = new StringBuilder();
+        try {
+            List<Funding> fundings = new ArrayList<>();
+
+            List<String> annexStatements = new ArrayList<>();
+
+            // acknowledgement is in the back
+            StringBuilder acknowledgmentStmt = getSectionAsTEI("acknowledgement", "\t\t\t", doc, SegmentationLabels.ACKNOWLEDGEMENT,
+                teiFormatter, null, config);
+
+            if (acknowledgmentStmt.length() > 0) {
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null) {
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(local_tei);
+                }
+                else {
+                    annexStatements.add(acknowledgmentStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
+            }
+
+            // funding in header
+            StringBuilder fundingStmt = new StringBuilder();
+            if (StringUtils.isNotBlank(resHeader.getFunding())) {
+                List<LayoutToken> headerFundingTokens = resHeader.getLayoutTokens(TaggingLabels.HEADER_FUNDING);
+
+                Pair<String, List<LayoutToken>> headerFundingProcessed = processShort(headerFundingTokens, doc);
+                if (headerFundingProcessed != null) {
+                    fundingStmt = teiFormatter.processTEIDivSection("funding",
+                        "\t\t\t",
+                        headerFundingProcessed.getLeft(),
+                        headerFundingProcessed.getRight(),
+                        null,
+                        config);
+                }
+                if (fundingStmt.length() > 0) {
+                    MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
+                    if (localResult != null && localResult.getLeft() != null) {
+                        String local_tei = localResult.getLeft().toXML();
+                        local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        annexStatements.add(local_tei);
+                    } else {
+                        annexStatements.add(fundingStmt.toString());
+                    }
+
+                    if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
+                }
+            }
+
+            // funding statements in non-header part
+            fundingStmt = getSectionAsTEI("funding",
+                "\t\t\t",
+                doc,
+                SegmentationLabels.FUNDING,
+                teiFormatter,
+                null,
+                config);
+            if (fundingStmt.length() > 0) {
+                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = 
+                    parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
+
+                if (localResult != null && localResult.getLeft() != null){
+                    String local_tei = localResult.getLeft().toXML();
+                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(local_tei);
+                } else {
+                    annexStatements.add(fundingStmt.toString());
+                }
+
+                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
+                    List<Funding> localFundings = localResult.getRight().getLeft();
+                    if (localFundings.size()>0) {
+                        fundings.addAll(localFundings);
+                    }
+                }
+            }
+
+            tei.append(teiFormatter.toTEIHeader(resHeader, null, null, null, fundings, config));
+            tei.append("\t\t<back>");
+
+            for (String annexStatement : annexStatements) {
+                tei.append("\n\t\t\t");
+                tei.append(annexStatement);
+            }
+
+            if (fundings != null && fundings.size() >0) {
+                tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
+                for(Funding funding : fundings) {
+                    if (funding.isNonEmptyFunding())
+                        tei.append(funding.toTEI(4));
+                }
+                tei.append("\t\t\t</listOrg>\n");
+            }
+
+            tei.append("\t\t</back>\n");
+
+            tei.append("\t</text>\n");
+            tei.append("</TEI>\n");
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+        doc.setTei(tei.toString());
+    }
 
     private StringBuilder getSectionAsTEI(String xmlType,
                                           String indentation,

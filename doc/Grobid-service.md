@@ -2,7 +2,11 @@
 
 The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
-## Start the server with Gradle
+## Start the server with Docker
+
+This is the recommended and standard way to run the Grobid web services, see [here](Run-Grobid.md). 
+
+## Start a development server with Gradle
 
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
 
@@ -16,16 +20,16 @@ The following command will start the server on the default port __8070__:
 
 ## Install and run the service as standalone application
 
-You could also build and install the service as a standalone service (let's supposed the destination directory is grobid-installation) 
+From a development installation, you can also build and install the service as a standalone service - here let's supposed the destination directory is grobid-installation: 
 
 ```console
 ./gradlew clean assemble
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.3.zip
-mv grobid-service-0.7.3 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.3.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.0.zip
+mv grobid-service-0.8.0 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.0.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -53,20 +57,24 @@ In addition, [Prometheus](https://prometheus.io/) format export metrics are avai
 
 If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
+See the [configuration page](Configuration.md) for details on how to set the different parameters of the `grobid.yaml` configuration file. Service and logging parameters are also set in this configuration file.
+
+If Docker is used, see [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
+
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
 Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. 
 
-For preloading all the models, set the following config parameter to `true`:
+Preloading all the models at server start is the default setting, but you choose a lazy loading of the model:
 
 ```yaml
 grobid:
   # for **service only**: how to load the models, 
-  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
-  #          the service at first call
-  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
-  #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
 ```  
 
 ## CORS (Cross-Origin Resource Share)
@@ -89,13 +97,13 @@ We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI 
 * <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 * <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
+All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. The Python client is the more up-to-date and complete and can be adapted for your needs. 
 
 ## Use GROBID test console
 
-On your browser, the welcome page of the Service console is available at the URL <http://localhost:8070>.
+On your browser, the welcome page of the service console is available at the URL <http://localhost:8070>.
 
-On the console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
+On the service console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 

@@ -1,30 +1,30 @@
 package org.grobid.service.main;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.google.inject.AbstractModule;
 
-import com.google.common.collect.Lists;
-import com.google.inject.Module;
-import com.hubspot.dropwizard.guicier.GuiceBundle;
-import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
+import io.dropwizard.core.Application;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 import io.dropwizard.forms.MultiPartBundle;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+import io.dropwizard.metrics.servlets.MetricsServlet;
 import io.prometheus.client.dropwizard.DropwizardExports;
-import io.prometheus.client.exporter.MetricsServlet;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.FilterRegistration;
+import jakarta.servlet.ServletRegistration;
 import org.apache.commons.lang3.ArrayUtils;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import org.grobid.service.GrobidServiceConfiguration;
 import org.grobid.service.modules.GrobidServiceModule;
+import org.grobid.service.resources.HealthResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.vyarus.dropwizard.guice.GuiceBundle;
 
-import javax.servlet.DispatcherType;
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletRegistration;
 import java.io.File;
 import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.List;
 
 
 public final class GrobidServiceApplication extends Application<GrobidServiceConfiguration> {
@@ -43,20 +43,27 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
 
     @Override
     public void initialize(Bootstrap<GrobidServiceConfiguration> bootstrap) {
-        GuiceBundle<GrobidServiceConfiguration> guiceBundle = GuiceBundle.defaultBuilder(GrobidServiceConfiguration.class)
+        GuiceBundle guiceBundle = GuiceBundle.builder()
             .modules(getGuiceModules())
             .build();
         bootstrap.addBundle(guiceBundle);
+
+        /*bootstrap.addBundle(GuiceBundle.builder()
+                .enableAutoConfig(getClass().getPackage().getName())
+                .build());*/
+
         bootstrap.addBundle(new MultiPartBundle());
         bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
     }
 
-    private List<? extends Module> getGuiceModules() {
-        return Lists.newArrayList(new GrobidServiceModule());
+    private AbstractModule getGuiceModules() {
+        return new GrobidServiceModule();
     }
 
     @Override
     public void run(GrobidServiceConfiguration configuration, Environment environment) {
+        environment.healthChecks().register("health-check", new HealthResource(configuration));
+
         LOGGER.info("Service config={}", configuration);
         new DropwizardExports(environment.metrics()).register();
         ServletRegistration.Dynamic registration = environment.admin().addServlet("Prometheus", new MetricsServlet());
@@ -95,13 +102,13 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
                 File confLocation = new File(p).getAbsoluteFile();
                 if (confLocation.exists()) {
                     foundConf = confLocation.getAbsolutePath();
-                    LOGGER.info("Found conf path: {}", foundConf);
+                    //LOGGER.info("Found conf path: {}", foundConf);
                     break;
                 }
             }
 
             if (foundConf != null) {
-                LOGGER.warn("Running with default arguments: \"server\" \"{}\"", foundConf);
+                //LOGGER.info("Running with default arguments: \"server\" \"{}\"", foundConf);
                 args = new String[]{"server", foundConf};
             } else {
                 throw new RuntimeException("No explicit config provided and cannot find in one of the default locations: "
@@ -109,7 +116,7 @@ public final class GrobidServiceApplication extends Application<GrobidServiceCon
             }
         }
 
-        LOGGER.info("Configuration file: {}", new File(args[1]).getAbsolutePath());
+        //LOGGER.info("Configuration file: {}", new File(args[1]).getAbsolutePath());
         new GrobidServiceApplication().run(args);
     }
 }

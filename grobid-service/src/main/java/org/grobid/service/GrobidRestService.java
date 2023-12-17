@@ -22,8 +22,8 @@ import org.grobid.service.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.*;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.*;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -164,6 +164,24 @@ public class GrobidRestService implements GrobidPaths {
             ExpectedResponseType.XML
         );
     }
+
+    @Path(PATH_HEADER_FUNDING)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processHeaderFundingDocumentReturnXml_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_HEADER) String consolidateHeader,
+        @DefaultValue("0") @FormDataParam(CONSOLIDATE_FUNDERS) String consolidateFunders,
+        @DefaultValue("0") @FormDataParam(INCLUDE_RAW_AFFILIATIONS) String includeRawAffiliations) {
+        int consolHeader = validateConsolidationParam(consolidateHeader);
+        int consolFunders = validateConsolidationParam(consolidateFunders);
+        return restProcessFiles.processStatelessHeaderFundingDocument(
+            inputStream, consolHeader, consolFunders,
+            validateIncludeRawParam(includeRawAffiliations)
+        );
+    }
+
 
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)

@@ -308,10 +308,10 @@ public class CitationParser extends AbstractParser {
             cntManager.i(CitationParserCounters.SEGMENTED_REFERENCES, references.size());
         }
 
-        // consolidation: if selected, is not done individually for each citation but 
+        // consolidation: if selected, it is NOT done individually for each citation but 
         // in a second stage for all citations
         if (references != null) {
-            List<String> refTexts = new ArrayList<>();
+            /*List<String> refTexts = new ArrayList<>();
             for (LabeledReferenceResult ref : references) {
                 // paranoiac check
                 if (ref == null) 
@@ -321,8 +321,20 @@ public class CitationParser extends AbstractParser {
                 localRef = TextUtilities.removeLeadingAndTrailingChars(localRef, "[({.,])}: \n"," \n");
                 refTexts.add(localRef);
             }
+            List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);*/
 
-            List<BiblioItem> bibList = processingStringMultiple(refTexts, 0);
+            List<List<LayoutToken>> allRefBlocks = new ArrayList<>();
+            for (LabeledReferenceResult ref : references) {
+                // paranoiac check
+                if (ref == null) 
+                    continue;
+
+                List<LayoutToken> localTokens = ref.getTokens();
+                localTokens = TextUtilities.removeLeadingAndTrailingCharsLayoutTokens(localTokens, "[({.,])}: \n"," \n");
+                allRefBlocks.add(localTokens);
+            }
+            List<BiblioItem> bibList = processingLayoutTokenMultiple(allRefBlocks, 0);
+
             if (bibList != null && bibList.size()>0) {
                 int i = 0;
                 for (LabeledReferenceResult ref : references) {
@@ -470,6 +482,7 @@ public class CitationParser extends AbstractParser {
 
         TaggingLabel lastClusterLabel = null;
         TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.CITATION, result, tokenizations);
+        biblio.generalResultMappingReference(result, tokenizations);
 
         String tokenLabel = null;
         List<TaggingTokenCluster> clusters = clusteror.cluster();
@@ -574,7 +587,7 @@ public class CitationParser extends AbstractParser {
                 String clusterNonDehypenizedContent = LayoutTokensUtil.toText(cluster.concatTokens());
                 biblio.setWeb(clusterNonDehypenizedContent);
             }
-        }
+        }        
 
         return biblio;
     }

@@ -31,6 +31,11 @@ public interface GrobidPaths {
 	String PATH_HEADER = "processHeaderDocument";
 
 	/**
+	 * path extension for processing document headers and funding information.
+	 */
+	String PATH_HEADER_FUNDING = "processHeaderFundingDocument";
+
+	/**
 	 * path extension for processing document headers HTML.
 	 */
 	String PATH_HEADER_HTML = "processHeaderDocumentHTML";

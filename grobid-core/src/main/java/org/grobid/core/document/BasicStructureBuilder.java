@@ -175,7 +175,7 @@ public class BasicStructureBuilder {
 		            continue;
 		        }
 				String[] lines = localText.split("[\\n\\r]");
-				if ( (lines.length == 0) || (indexLine >= lines.length)) {
+				if ( (lines.length == 0) || (indexLine >= lines.length) || indexLine> 10000) {
 					blockIndex++;
 					indexLine = 0;
 					if (blockIndex < docBlocks.size()) {
@@ -192,8 +192,9 @@ public class BasicStructureBuilder {
 						continue;
 					}
 
-					if (currentLineStartPos > lastTokenInd)
-						continue;
+					if (currentLineStartPos > lastTokenInd) {
+                        break;
+                    }
 					
 					// adjust the start token position in documentTokens to this non trivial line
 					// first skip possible space characters and tabs at the beginning of the line
@@ -215,7 +216,7 @@ public class BasicStructureBuilder {
 								 }
 								 if ((currentLineStartPos != lastTokenInd) && 
 								 	labeledTokenPair.getLeft().startsWith(documentTokens.get(currentLineStartPos).getText())) {
-									 break;
+									break;
 								 }
 							 }
 							 currentLineStartPos++;
@@ -272,7 +273,7 @@ public class BasicStructureBuilder {
 			currentLineStartPos = currentLineEndPos+2; // one shift for the EOL, one for the next line
             p++;
         }
-		
+
 		if (blockIndex == docBlocks.size()) {
 			// the last labelled piece has still to be added
 			if ((!curPlainLabel.equals(lastPlainLabel)) && (lastPlainLabel != null)) {	

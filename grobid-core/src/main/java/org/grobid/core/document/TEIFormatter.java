@@ -148,6 +148,17 @@ public class TEIFormatter {
             String divID = KeyGen.getKey().substring(0, 7);
             tei.append(" xml:id=\"_" + divID + "\"");
         }
+
+        if (config.isGenerateTeiCoordinates("title")) {
+            List<LayoutToken> titleTokens = biblio.getLayoutTokens(TaggingLabels.HEADER_TITLE);
+            if (titleTokens != null && titleTokens.size()>0) {
+                String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                if (coords != null) {
+                    tei.append(" coord=\"" + coords + "\"");
+                }
+            }
+        }
+
         tei.append(">");
 
         if (biblio == null) {
@@ -376,6 +387,16 @@ public class TEIFormatter {
             if (config.isGenerateTeiIds()) {
                 String divID = KeyGen.getKey().substring(0, 7);
                 tei.append(" xml:id=\"_" + divID + "\"");
+            }
+
+            if (config.isGenerateTeiCoordinates("title")) {
+                List<LayoutToken> titleTokens = biblio.getLayoutTokens(TaggingLabels.HEADER_TITLE);
+                if (titleTokens != null && titleTokens.size()>0) {
+                    String coords = LayoutTokensUtil.getCoordsString(titleTokens);
+                    if (coords != null) {
+                        tei.append(" coord=\"" + coords + "\"");
+                    }
+                }
             }
 
             // here check the language ?
