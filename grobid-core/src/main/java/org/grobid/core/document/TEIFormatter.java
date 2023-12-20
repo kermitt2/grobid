@@ -154,7 +154,7 @@ public class TEIFormatter {
             if (titleTokens != null && titleTokens.size()>0) {
                 String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                 if (coords != null) {
-                    tei.append(" coord=\"" + coords + "\"");
+                    tei.append(" coords=\"" + coords + "\"");
                 }
             }
         }
@@ -394,7 +394,7 @@ public class TEIFormatter {
                 if (titleTokens != null && titleTokens.size()>0) {
                     String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                     if (coords != null) {
-                        tei.append(" coord=\"" + coords + "\"");
+                        tei.append(" coords=\"" + coords + "\"");
                     }
                 }
             }
