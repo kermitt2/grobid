@@ -13,7 +13,7 @@ var grobid = (function($) {
 
 	var block = 0;
 
-    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note'];
+    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note', 'affiliation'];
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;

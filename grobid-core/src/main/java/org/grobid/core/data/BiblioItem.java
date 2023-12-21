@@ -3797,7 +3797,7 @@ public class BiblioItem {
             // we serialize the coordinates for the whole affiliation block
             String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
             if (coords != null && coords.length()>0) {
-                tei.append(" coord=\"" + coords + "\"");
+                tei.append(" coords=\"" + coords + "\"");
             }
         }
         tei.append(">\n");

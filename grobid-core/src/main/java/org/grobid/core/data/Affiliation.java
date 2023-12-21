@@ -595,7 +595,7 @@ public class Affiliation {
         if (withAffCoords) {
             String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
             if (coords != null && coords.length()>0) {
-                tei.append(" coord=\"" + coords + "\"");
+                tei.append(" coords=\"" + coords + "\"");
             }
         }
         tei.append(">\n");
