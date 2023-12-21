@@ -2263,7 +2263,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2276,7 +2276,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2426,7 +2426,7 @@ public class BiblioItem {
                     if (titleTokens != null && titleTokens.size()>0) {
                         String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                         if (coords != null && coords.length()>0) {
-                            tei.append(" coord=\"" + coords + "\"");
+                            tei.append(" coords=\"" + coords + "\"");
                         }
                     } 
                 }
@@ -2450,7 +2450,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2682,7 +2682,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2709,7 +2709,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -3791,7 +3791,7 @@ public class BiblioItem {
             List<LayoutToken> affTokens = aff.getLayoutTokens();
             String coords = LayoutTokensUtil.getCoordsString(affTokens);
             if (coords != null && coords.length()>0) {
-                tei.append(" coord=\"" + coords + "\"");
+                tei.append(" coords=\"" + coords + "\"");
             }
         }
         tei.append(">\n");
