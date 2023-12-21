@@ -54,7 +54,6 @@ public class AffiliationAddressParser extends AbstractParser {
                 FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions, countriesPositions);
 
             String res = label(affiliationSequenceWithFeatures);
-            //return resultBuilder(res, tokenizations, false); // don't use pre-labels
 
             results = resultExtractionLayoutTokens(res, tokenizations);
         } catch (Exception e) {
@@ -117,7 +116,6 @@ public class AffiliationAddressParser extends AbstractParser {
 
             List<LayoutToken> tokenizationsAffiliation = new ArrayList<>();
             for (List<LayoutToken> tokenization : tokenizations) {
-//System.out.println(tokenization.toString());
                 tokenizationsAffiliation.addAll(tokenization);
             }
 
@@ -135,8 +133,6 @@ public class AffiliationAddressParser extends AbstractParser {
                 FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions, countriesPositions);
 
             String res = label(affiliationSequenceWithFeatures);
-            //return resultBuilder(res, tokenizations, false); // don't use pre-labels
-
             results = resultExtractionLayoutTokens(res, tokenizationsAffiliation);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -144,143 +140,6 @@ public class AffiliationAddressParser extends AbstractParser {
         return results;
     }
 
-    /**
-     * Post processing of extracted field affiliation and address.
-     * Here the input string to be processed comes from a previous parser: the segmentation
-     * can be kept and we filter in all tokens labelled <address> or <affiliation>.
-     * We also need to keep the original tokenization information to recreate the exact
-     * initial string.
-     */
-    /*public List<Affiliation> processReflow(String result, List<LayoutToken> tokenizations) {
-        if ((result == null) || (result.length() == 0)) {
-            return null;
-        }
-        List<String> affiliationFeatureLines = new ArrayList<String>();
-        List<LayoutToken> subTokenizations = new ArrayList<LayoutToken>();
-
-        filterAffiliationAddress(result, tokenizations, affiliationFeatureLines, subTokenizations);
-
-        System.out.println(affiliationFeatureLines.toString());
-        System.out.println(subTokenizations.toString());
-
-        return processingReflow(affiliationFeatureLines, subTokenizations);
-    }*/
-
-    /*private void filterAffiliationAddress(String result,
-                                          List<LayoutToken> tokenizations,
-                                          List<String> affiliationFeatureLines,
-                                          List<LayoutToken> subTokenizations) {
-        // result is the header feature matrix with labels
-        // tokenizations is the layout tokens of the full header
-        // affiliationFeatureLines is wehre to put the lines with header labels affiliation or address
-        // subTokenizations is where to put the layout tokens corresponding to what is labeled with header labels affiliation or address
-        StringTokenizer st = new StringTokenizer(result, "\n");
-        String lastLabel = null;
-        int p = 0; // index in the tokenizations list
-        List<LayoutToken> tokenizationsBuffer = null;
-        while (st.hasMoreTokens() && (p < tokenizations.size())) {
-            String line = st.nextToken();
-            if (line.trim().length() == 0) {
-                affiliationFeatureLines.add("\n");
-                lastLabel = null;
-            }
-            else {
-                String delimiter = "\t";
-                if (line.indexOf(delimiter) == -1)
-                    delimiter = " "; 
-                String[] s = line.split(delimiter);
-                String s0 = s[0].trim();
-                boolean isEndLine = false;
-                if (line.contains("LINEEND")) {
-                    isEndLine = true;
-                }
-
-                int p0 = p;
-                boolean strop = false;
-                tokenizationsBuffer = new ArrayList<LayoutToken>();
-                String tokOriginal = null;
-                while ((!strop) && (p < tokenizations.size())) {
-                    tokOriginal = tokenizations.get(p).getText().trim();
-                    tokenizationsBuffer.add(tokenizations.get(p));
-                    if (tokOriginal.equals(s0)) {
-                        strop = true;
-                    }
-                    p++;
-                }
-
-                if (p == tokenizations.size()) {
-                    // either we are at the end of the header, or we might have 
-                    // a problematic token in tokenization for some reasons
-                    if ((p - p0) > 2) {
-                        // we loose the synchronicity, so we reinit p for the next token
-                        p = p0;
-                        continue;
-                    }
-                } 
-
-                int ll = s.length;
-                String label = s[ll-1];
-                if ((label.indexOf("affiliation") == -1) && (label.indexOf("address") == -1)) {
-                    // not affiliation/address input
-                    if (lastLabel != null) {
-                        affiliationFeatureLines.add("\n");
-                    }
-                    lastLabel = null;
-                    continue;
-                }
-                
-                if ((tokOriginal != null) && ( ((label.indexOf("affiliation") != -1) || (label.indexOf("address") != -1)) )) {
-                    affiliationFeatureLines.add(tokOriginal + " " + label);
-                    // add the content of tokenizationsBuffer
-                    for(LayoutToken tokk : tokenizationsBuffer) {
-                        subTokenizations.add(tokk);
-                    }
-                    if (tokenizationsBuffer.size() > 0 && isEndLine) {
-                        affiliationFeatureLines.add("@newline");
-                    }
-                } 
-
-                if ((label.indexOf("affiliation") != -1) || (label.indexOf("address") != -1)) {
-                    lastLabel = label;
-                } else {
-                    lastLabel = null;
-                }
-            }
-        }
-
-//System.out.println(subTokenizations.toString());
-//System.out.println(affiliationBlocks.toString());
-    }*/
-
-    /*private List<Affiliation> processingReflow(List<String> affiliationFeatureLines, List<LayoutToken> tokenizations) {
-        String res = runReflow(affiliationFeatureLines, tokenizations);
-        //return resultBuilder(res, tokenizations, false); // normally use pre-label because it is a reflow
-        return resultExtractionLayoutTokens(res, tokenizations);
-    }*/
-
-    /*private String runReflow(List<String> affiliationFeatureLines,
-                             List<LayoutToken> tokenizations) {
-        try {
-            List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> countriesPositions = new ArrayList<List<OffsetPosition>>();
-            placesPositions.add(lexicon.tokenPositionsLocationNames(tokenizations));
-            countriesPositions.add(lexicon.tokenPositionsCountryNames(tokenizations));
-            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
-            allTokens.add(tokenizations);
-            String affiliationSequenceWithFeatures =
-                    FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationFeatureLines, allTokens, placesPositions, countriesPositions);
-
-            if ((affiliationSequenceWithFeatures == null) || (affiliationSequenceWithFeatures.trim().length() == 0)) {
-                return null;
-            }
-
-            //System.out.println(affiliationSequenceWithFeatures);
-
-            return label(affiliationSequenceWithFeatures);
-        } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid at the affiliation-address labeling task.", e);
-        }
-    }*/
 
     /**
      * Extract results from a labeled sequence.
@@ -368,9 +227,10 @@ public class AffiliationAddressParser extends AbstractParser {
                 affiliation.addLaboratory(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_LABORATORY, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_COUNTRY)) {
-                if (affiliation.getCountry() != null) 
-                    affiliation.setCountry(affiliation.getCountry() + " " + clusterContent);
-                else
+                if (affiliation.getCountry() != null) {
+                    if(!affiliation.getCountry().equals(clusterContent))
+                        affiliation.setCountry(affiliation.getCountry() + " " + clusterContent);
+                } else
                     affiliation.setCountry(clusterContent);
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_COUNTRY, tokens);
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_POSTCODE)) {
@@ -440,6 +300,7 @@ public class AffiliationAddressParser extends AbstractParser {
     /**
      * DEPRECATED
      **/
+    @Deprecated
     protected ArrayList<Affiliation> resultBuilder(String result,
                                                  List<LayoutToken> tokenizations,
                                                  boolean usePreLabel) {
@@ -1010,21 +871,7 @@ public class AffiliationAddressParser extends AbstractParser {
         }
 
         String resultAffiliation = label(affiliationSequenceWithFeatures);
-        //return resultBuilder(res, tokenizations, false); // don't use pre-labels
-
-        //results = resultExtractionLayoutTokens(res, tokenizations);
-
-
-
-
-        //List<String> affiliationBlocks = new ArrayList<String>();
-        //List<LayoutToken> tokenizationsAffiliation = new ArrayList<LayoutToken>();
-
-        //filterAffiliationAddress(result, tokenizations, affiliationBlocks, tokenizationsAffiliation);
-        //String resultAffiliation = runReflow(affiliationBlocks, tokenizationsAffiliation);
-
         StringBuilder bufferAffiliation = new StringBuilder();
-
         if (resultAffiliation == null) {
             return bufferAffiliation;
         }
