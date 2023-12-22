@@ -485,95 +485,6 @@ public class Affiliation {
         return nbStruct;
     }
 
-    /*@Deprecated
-    public String toTEI() {
-        StringBuilder tei = new StringBuilder();
-        if (!isNotNull()) {
-            return null;
-        } else {
-            tei.append("<affiliation");
-            if (key != null)
-                tei.append(" key=\"").append(key).append("\"");
-            tei.append(">");
-
-            if (departments != null) {
-                if (departments.size() == 1) {
-                    tei.append("<orgName type=\"department\">").append(TextUtilities.HTMLEncode(departments.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String depa : departments) {
-                        tei.append("<orgName type=\"department\" key=\"dep").append(q).append("\">").append(TextUtilities.HTMLEncode(depa)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (laboratories != null) {
-                if (laboratories.size() == 1) {
-                    tei.append("<orgName type=\"laboratory\">").append(TextUtilities.HTMLEncode(laboratories.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String labo : laboratories) {
-                        tei.append("<orgName type=\"laboratory\" key=\"lab").append(q).append("\">").append(TextUtilities.HTMLEncode(labo)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (institutions != null) {
-                if (institutions.size() == 1) {
-                    tei.append("<orgName type=\"institution\">").append(TextUtilities.HTMLEncode(institutions.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String inst : institutions) {
-                        tei.append("<orgName type=\"institution\" key=\"instit").append(q).append("\">").append(TextUtilities.HTMLEncode(inst)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if ((getAddressString() != null) |
-                    (getAddrLine() != null) |
-                    (getPostBox() != null) |
-                    (getPostCode() != null) |
-                    (getSettlement() != null) |
-                    (getRegion() != null) |
-                    (getCountry() != null)) {
-                tei.append("<address>");
-                if (getAddressString() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddressString())).append("</addrLine>");
-                }
-                if (getAddrLine() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddrLine())).append("</addrLine>");
-                }
-                if (getPostBox() != null) {
-                    tei.append("<postBox>").append(TextUtilities.HTMLEncode(getPostBox())).append("</postBox>");
-                }
-                if (getPostCode() != null) {
-                    tei.append("<postCode>").append(TextUtilities.HTMLEncode(getPostCode())).append("</postCode>");
-                }
-                if (getSettlement() != null) {
-                    tei.append("<settlement>").append(TextUtilities.HTMLEncode(getSettlement())).append("</settlement>");
-                }
-                if (getRegion() != null) {
-                    tei.append("<region>").append(TextUtilities.HTMLEncode(getRegion())).append("</region>");
-                }
-                if (getCountry() != null) {
-                    Lexicon lexicon = Lexicon.getInstance();
-                    String code = lexicon.getCountryCode(getCountry());
-                    tei.append("<country");
-                    if (code != null)
-                        tei.append(" key=\"").append(code).append("\"");
-                    tei.append(">").append(TextUtilities.HTMLEncode(getCountry())).append("</country>");
-                }
-                tei.append("</address>");
-            }
-            tei.append("</affiliation>");
-        }
-
-        return tei.toString();
-    }*/
-
     public static String toTEI(Affiliation aff, int nbTag) {
         return toTEI(aff, nbTag, null);
     }
@@ -648,21 +559,22 @@ public class Affiliation {
             }
         }
 
-        if ((aff.getAddressString() != null) ||
-                (aff.getAddrLine() != null) ||
-                (aff.getPostBox() != null) ||
-                (aff.getPostCode() != null) ||
-                (aff.getSettlement() != null) ||
-                (aff.getRegion() != null) ||
-                (aff.getCountry() != null)) {
+        if (
+                aff.getAddrLine() != null ||
+                aff.getPostBox() != null ||
+                aff.getPostCode() != null ||
+                aff.getSettlement() != null ||
+                aff.getRegion() != null ||
+                aff.getCountry() != null
+            ) {
             TextUtilities.appendN(tei, '\t', nbTag + 2);
             
             tei.append("<address>\n");
-            if (aff.getAddressString() != null) {
+            /*if (aff.getAddressString() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
                         "</addrLine>\n");
-            }
+            }*/
             if (aff.getAddrLine() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +

@@ -3869,21 +3869,22 @@ public class BiblioItem {
             }
         }
 
-        if ((aff.getAddressString() != null) ||
-                (aff.getAddrLine() != null) ||
-                (aff.getPostBox() != null) ||
-                (aff.getPostCode() != null) ||
-                (aff.getSettlement() != null) ||
-                (aff.getRegion() != null) ||
-                (aff.getCountry() != null)) {
+        if (
+                aff.getAddrLine() != null ||
+                aff.getPostBox() != null ||
+                aff.getPostCode() != null ||
+                aff.getSettlement() != null ||
+                aff.getRegion() != null ||
+                aff.getCountry() != null
+            ) {
             TextUtilities.appendN(tei, '\t', nbTag + 1);
             
             tei.append("<address>\n");
-            if (aff.getAddressString() != null) {
+            /*if (aff.getAddressString() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 2);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
                         "</addrLine>\n");
-            }
+            }*/
             if (aff.getAddrLine() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 2);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +

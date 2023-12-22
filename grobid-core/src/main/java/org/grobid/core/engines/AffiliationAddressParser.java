@@ -261,10 +261,10 @@ public class AffiliationAddressParser extends AbstractParser {
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_SETTLEMENT, tokens);
                 
             } else if (clusterLabel.equals(TaggingLabels.AFFILIATION_ADDRESSLINE)) {
-                if (affiliation.getAddressString() != null) {
-                    affiliation.setAddressString(affiliation.getAddressString() + " " + clusterContent);
+                if (affiliation.getAddrLine() != null) {
+                    affiliation.setAddrLine(affiliation.getAddrLine() + " " + clusterContent);
                 } else {
-                    affiliation.setAddressString(clusterContent);
+                    affiliation.setAddrLine(clusterContent);
                 }
                 affiliation.addLabeledResult(TaggingLabels.AFFILIATION_ADDRESSLINE, tokens);
             } 
