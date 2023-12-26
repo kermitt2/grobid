@@ -2377,7 +2377,9 @@ public class FullTextParser extends AbstractParser {
 			}
 
 			List<LayoutToken> tokenizationEquation = cluster.concatTokens();
-			String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+            //LF: I removed the normalisation to keep the content in sync with contentTokens.
+            //      The normalisation "StringUtils.normaliseSpaces()" is called anyway when building the XML
+			String clusterContent = LayoutTokensUtil.toText(cluster.concatTokens());
 
 			if (currentResult == null)
 				currentResult = new Equation();
@@ -2393,10 +2395,11 @@ public class FullTextParser extends AbstractParser {
 					currentResult = new Equation();
 				}
 	            currentResult.appendContent(clusterContent);
-            	currentResult.addLayoutTokens(cluster.concatTokens());
+            	currentResult.addLayoutTokens(tokenizationEquation);
+            	currentResult.addContentTokens(tokenizationEquation);
             } else if (clusterLabel.equals(TaggingLabels.EQUATION_LABEL)) {
                 currentResult.appendLabel(clusterContent);
-	            currentResult.addLayoutTokens(cluster.concatTokens());
+	            currentResult.addLayoutTokens(tokenizationEquation);
             }
 
 			lastLabel = clusterLabel;
