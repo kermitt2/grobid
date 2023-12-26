@@ -9,8 +9,9 @@
 					<analytic>
 						<author>
 
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="laboratory" key="lab1">Institut Pluridisciplinaire Hubert Curien<lb/></orgName>
 								<orgName type="laboratory" key="lab2">Département de Recherches Subatomiques</orgName>
 								<orgName type="laboratory" key="lab3" corresp="#lab1">UMR7178</orgName>,
@@ -27,8 +28,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="departement">Zakład Fizyki Matematycznej</orgName>,
 								<orgName type="institution">Uniwersytet Marii Curie-Skłodowskiej</orgName>,<lb/>
 								<address>
@@ -39,8 +41,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>3</marker> 
+							
 							<affiliation>
+								<marker>3</marker> 
 								<orgName type="departement">The Niewodniczański Institut of Nuclear Physics</orgName>,
 								<orgName type="institution">Polish Academy of Sciences</orgName>,
 								<address>
@@ -55,7 +58,7 @@
 								<orgName type="laboratory">and Grand Accélérateur National d'Ions Lourds</orgName>,
 								<address>
 									<addrLine>Bd Henri Becquerel<lb/></addrLine>
-									<addrLine>BP 55027</addrLine>
+									<postBox>BP 55027</postBox>
 									-
 									<postCode>14076</postCode>
 									<settlement>Caen Cedex 05</settlement>,

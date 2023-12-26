@@ -5,6 +5,8 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.utilities.LayoutTokensUtil;
 
 import java.util.*;
 
@@ -154,6 +156,7 @@ public class Affiliation {
     }
 
     public void setCountry(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         country = s;
     }
 
@@ -170,10 +173,12 @@ public class Affiliation {
     }
 
     public void setRegion(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         region = s;
     }
 
     public void setSettlement(String s) {
+        s = TextUtilities.removeLeadingAndTrailingChars(s, "[({.,])}: \n","[({.,])}: \n");
         settlement = s;
     }
 
@@ -187,6 +192,7 @@ public class Affiliation {
 
     public void setRawAffiliationString(String s) {
         rawAffiliationString = s;
+        rawAffiliationString = rawAffiliationString.replaceAll("( )+", " ");
     }
 
     public void setInstitutions(List<String> affs) {
@@ -219,6 +225,9 @@ public class Affiliation {
         laboratories.add(TextUtilities.cleanField(aff, true));
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -230,6 +239,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastInstitution(String theExtend) {
         if (institutions == null) {
             institutions = new ArrayList<String>();
@@ -241,6 +253,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -252,6 +267,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastDepartment(String theExtend) {
         if (departments == null) {
             departments = new ArrayList<String>();
@@ -263,6 +281,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendFirstLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -274,6 +295,9 @@ public class Affiliation {
         }
     }
 
+    /**
+     * DEPRECATED
+     **/
     public void extendLastLaboratory(String theExtend) {
         if (laboratories == null) {
             laboratories = new ArrayList<String>();
@@ -285,18 +309,31 @@ public class Affiliation {
         }
     }
 
-    public boolean notNull() {
-        return !((departments == null) &
-                (institutions == null) &
-                (laboratories == null) &
-                (country == null) &
-                (postCode == null) &
-                (postBox == null) &
-                (region == null) &
-                (settlement == null) &
-                (addrLine == null) &
-                (affiliationString == null) &
+    public boolean isNotNull() {
+        return !((departments == null) &&
+                (institutions == null) &&
+                (laboratories == null) &&
+                (country == null) &&
+                (postCode == null) &&
+                (postBox == null) &&
+                (region == null) &&
+                (settlement == null) &&
+                (addrLine == null) &&
+                (affiliationString == null) &&
                 (addressString == null));
+    }
+
+    public boolean hasAddress() {
+        if (country != null || 
+            postCode != null ||
+            postBox != null ||
+            settlement != null ||
+            addrLine != null ||
+            region != null ||
+            addressString != null) {
+            return true;
+        } else 
+            return false;
     }
 
     public void setFailAffiliation(boolean b) {
@@ -321,7 +358,7 @@ public class Affiliation {
 
     public void appendLayoutTokens(List<LayoutToken> tokens) {
         if (this.layoutTokens == null)
-            layoutTokens = new ArrayList<>();
+            this.layoutTokens = new ArrayList<>();
         this.layoutTokens.addAll(tokens);
     }
 
@@ -448,101 +485,30 @@ public class Affiliation {
         return nbStruct;
     }
 
-    @Deprecated
-    public String toTEI() {
-        StringBuilder tei = new StringBuilder();
-        if (!notNull()) {
-            return null;
-        } else {
-            tei.append("<affiliation");
-            if (key != null)
-                tei.append(" key=\"").append(key).append("\"");
-            tei.append(">");
-
-            if (departments != null) {
-                if (departments.size() == 1) {
-                    tei.append("<orgName type=\"department\">").append(TextUtilities.HTMLEncode(departments.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String depa : departments) {
-                        tei.append("<orgName type=\"department\" key=\"dep").append(q).append("\">").append(TextUtilities.HTMLEncode(depa)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (laboratories != null) {
-                if (laboratories.size() == 1) {
-                    tei.append("<orgName type=\"laboratory\">").append(TextUtilities.HTMLEncode(laboratories.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String labo : laboratories) {
-                        tei.append("<orgName type=\"laboratory\" key=\"lab").append(q).append("\">").append(TextUtilities.HTMLEncode(labo)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if (institutions != null) {
-                if (institutions.size() == 1) {
-                    tei.append("<orgName type=\"institution\">").append(TextUtilities.HTMLEncode(institutions.get(0))).append("</orgName>");
-                } else {
-                    int q = 1;
-                    for (String inst : institutions) {
-                        tei.append("<orgName type=\"institution\" key=\"instit").append(q).append("\">").append(TextUtilities.HTMLEncode(inst)).append("</orgName>");
-                        q++;
-                    }
-                }
-            }
-
-            if ((getAddressString() != null) |
-                    (getAddrLine() != null) |
-                    (getPostBox() != null) |
-                    (getPostCode() != null) |
-                    (getSettlement() != null) |
-                    (getRegion() != null) |
-                    (getCountry() != null)) {
-                tei.append("<address>");
-                if (getAddressString() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddressString())).append("</addrLine>");
-                }
-                if (getAddrLine() != null) {
-                    tei.append("<addrLine>").append(TextUtilities.HTMLEncode(getAddrLine())).append("</addrLine>");
-                }
-                if (getPostBox() != null) {
-                    tei.append("<postBox>").append(TextUtilities.HTMLEncode(getPostBox())).append("</postBox>");
-                }
-                if (getPostCode() != null) {
-                    tei.append("<postCode>").append(TextUtilities.HTMLEncode(getPostCode())).append("</postCode>");
-                }
-                if (getSettlement() != null) {
-                    tei.append("<settlement>").append(TextUtilities.HTMLEncode(getSettlement())).append("</settlement>");
-                }
-                if (getRegion() != null) {
-                    tei.append("<region>").append(TextUtilities.HTMLEncode(getRegion())).append("</region>");
-                }
-                if (getCountry() != null) {
-                    Lexicon lexicon = Lexicon.getInstance();
-                    String code = lexicon.getCountryCode(getCountry());
-                    tei.append("<country");
-                    if (code != null)
-                        tei.append(" key=\"").append(code).append("\"");
-                    tei.append(">").append(TextUtilities.HTMLEncode(getCountry())).append("</country>");
-                }
-                tei.append("</address>");
-            }
-            tei.append("</affiliation>");
-        }
-
-        return tei.toString();
+    public static String toTEI(Affiliation aff, int nbTag) {
+        return toTEI(aff, nbTag, null);
     }
 
-    public static String toTEI(Affiliation aff, int nbTag) {
+    public static String toTEI(Affiliation aff, int nbTag, GrobidAnalysisConfig config) {
         StringBuffer tei = new StringBuffer();
         TextUtilities.appendN(tei, '\t', nbTag + 1);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgNameCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("orgName"));
+
         tei.append("<affiliation");
         if (aff.getKey() != null)
             tei.append(" key=\"").append(aff.getKey()).append("\"");
+        if (withAffCoords) {
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
+            if (coords != null && coords.length()>0) {
+                tei.append(" coords=\"" + coords + "\"");
+            }
+        }
         tei.append(">\n");
 
         if (aff.getDepartments() != null) {
@@ -593,21 +559,22 @@ public class Affiliation {
             }
         }
 
-        if ((aff.getAddressString() != null) ||
-                (aff.getAddrLine() != null) ||
-                (aff.getPostBox() != null) ||
-                (aff.getPostCode() != null) ||
-                (aff.getSettlement() != null) ||
-                (aff.getRegion() != null) ||
-                (aff.getCountry() != null)) {
+        if (
+                aff.getAddrLine() != null ||
+                aff.getPostBox() != null ||
+                aff.getPostCode() != null ||
+                aff.getSettlement() != null ||
+                aff.getRegion() != null ||
+                aff.getCountry() != null
+            ) {
             TextUtilities.appendN(tei, '\t', nbTag + 2);
             
             tei.append("<address>\n");
-            if (aff.getAddressString() != null) {
+            /*if (aff.getAddressString() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
                         "</addrLine>\n");
-            }
+            }*/
             if (aff.getAddrLine() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
@@ -680,8 +647,23 @@ public class Affiliation {
         if (labeledTokens == null)
             labeledTokens = new TreeMap<>();
 
-        List<LayoutToken> theTokenList = tokenizations == null ? new ArrayList<>() : tokenizations;
+        List<LayoutToken> theTokenList = null;
+        if (tokenizations == null)
+            theTokenList = new ArrayList<>();
+        else 
+            theTokenList = tokenizations;
+
+        List<LayoutToken> theExistingTokenList = labeledTokens.get(label.getLabel());
+        if (theExistingTokenList != null) {
+            theExistingTokenList.addAll(theTokenList);
+            theTokenList = theExistingTokenList;
+        }
+
         labeledTokens.put(label.getLabel(), theTokenList);
+    }
+
+    public List<LayoutToken> getLabeledResult(TaggingLabel label) {
+        return labeledTokens.get(label.getLabel());
     }
 
 }

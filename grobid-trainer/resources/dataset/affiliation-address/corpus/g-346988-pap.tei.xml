@@ -10,8 +10,9 @@
 					<analytic>
 						<author>
 							
-						<marker>1</marker> 	
+						
 						<affiliation>
+							<marker>1</marker> 	
 							<orgName type="department">Physics Department</orgName>,
 							<orgName type="institution">Tsinghua University</orgName>,
 							<address>
@@ -21,8 +22,9 @@
 							</address>
 						</affiliation>	
 
-						<marker>2</marker> 
+						
 						<affiliation>
+							<marker>2</marker> 
 							<orgName type="department">Nuclear Science Division</orgName>,
 							<orgName type="institution">Lawrence Berkeley National Laboratory</orgName>,
 							<address>

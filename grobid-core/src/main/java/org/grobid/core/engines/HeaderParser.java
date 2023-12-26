@@ -204,8 +204,12 @@ public class HeaderParser extends AbstractParser {
                 // remove invalid authors (no last name, noise, etc.)
                 resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
 
+                //List<LayoutToken> tokenizationsAffiliation = resHeader.getLayoutTokens(TaggingLabels.HEADER_AFFILIATION);
+                List<List<LayoutToken>> tokenizationsAffiliation = resHeader.getAffiliationAddresslabeledTokens();
+                //resHeader.setFullAffiliations(
+                //        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                 resHeader.setFullAffiliations(
-                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                        parsers.getAffiliationAddressParser().processingLayoutTokens(tokenizationsAffiliation));
                 resHeader.attachEmails();
                 boolean attached = false;
                 if (fragmentedAuthors && !hasMarker) {

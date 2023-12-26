@@ -11,7 +11,10 @@
 							<orgName type="laboratory">Embedded Networks Laboratory</orgName>
 								<lb/>
 							<orgName type="department">Computer Science Dept</orgName>. 
-							<orgName type="institution">USC. Los Angeles</orgName>	
+							<orgName type="institution">USC</orgName>.
+							<address>
+								<settlement>Los Angeles</settlement>
+							</address>
 						</affiliation>
 
 						</author>

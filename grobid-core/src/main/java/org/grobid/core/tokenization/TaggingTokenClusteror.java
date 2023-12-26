@@ -71,6 +71,10 @@ public class TaggingTokenClusteror {
         TaggingTokenCluster curCluster = new TaggingTokenCluster(it.peek().getTaggingLabel());
         while (it.hasNext()) {
             LabeledTokensContainer cont = it.next();
+            if (cont == null) {
+                // this should not happen, but for the sake of paranoia, we skip
+                continue;
+            }
             if (begin || cont.isBeginning() || cont.getTaggingLabel() != curCluster.getTaggingLabel()) {
                 curCluster = new TaggingTokenCluster(cont.getTaggingLabel());
                 result.add(curCluster);

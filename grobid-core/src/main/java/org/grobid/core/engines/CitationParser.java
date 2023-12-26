@@ -470,10 +470,10 @@ public class CitationParser extends AbstractParser {
     /**
      * Extract results from a labeled sequence.
      *
-     * @param result            result
+     * @param result            labeled sequence
      * @param volumePostProcess whether post process volume
      * @param tokenizations     list of tokens
-     * @return bibilio item
+     * @return biblio item
      */
     public BiblioItem resultExtractionLayoutTokens(String result,
                                        boolean volumePostProcess,
