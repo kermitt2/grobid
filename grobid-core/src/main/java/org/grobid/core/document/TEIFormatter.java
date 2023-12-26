@@ -1576,7 +1576,9 @@ public class TEIFormatter {
 
                         if (config.isGenerateTeiCoordinates("ref") ) {
                             String coords =  LayoutTokensUtil.getCoordsString(calloutTokens);
-                            ref.addAttribute(new Attribute("coords", coords));
+                            if (coords != null) {
+                                ref.addAttribute(new Attribute("coords", coords));
+                            }
                         }
 
                         ref.appendChild(matching.getLeft());
