@@ -8,7 +8,11 @@
 						<author>
 
 						<affiliation>
-							<orgName type="institution">of Public Health<lb/> University of Sydney</orgName>
+
+							of 
+							<orgName type="department">Public Health</orgName> 
+							<lb/> 
+							<orgName type="institution">University of Sydney</orgName>
 						</affiliation>
 
 						</author>

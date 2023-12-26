@@ -11,19 +11,19 @@
 							<orgName type="department">Institut Eurecom</orgName>
 							<lb/>
 							<address>
-								<postCode>2229</postCode>,
-								<addrLine>route des C etes</addrLine> 
-							<lb/>
+								<addrLine>2229, route des C etes</addrLine> 
+								<lb/>
 								<postCode>06904</postCode>
 								<settlement>Sophia-Antipolis</settlement>,
 								<country>France</country>
 							</address>
+						</affiliation>
+						<affiliation>
 							<orgName type="department">Institut Eurecom</orgName>
 							<lb/>
 							<address>
-								<postCode>2229</postCode>,
-								<addrLine>route des C etes</addrLine>
-							<lb/>
+								<addrLine>2229, route des C etes</addrLine>
+								<lb/>
 								<postCode>06904</postCode>
 								<settlement>Sophia-Antipolis</settlement>,
 								<country>France</country>

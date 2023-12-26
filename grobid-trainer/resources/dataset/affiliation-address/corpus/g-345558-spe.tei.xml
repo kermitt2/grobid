@@ -9,8 +9,9 @@
 					<analytic>
 						<author>
 							
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="department">Institut für Kernphysik</orgName>,
 								<orgName type="institution">Darmstadt University of Technology</orgName>,
 								<address>
@@ -20,8 +21,9 @@
 								</address>
 							</affiliation>
 
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="department" key="dep1">UCT-CERN Research Centre</orgName>
 								and
 								<orgName type="department" key="dep2">Department of Physics</orgName>,
@@ -33,8 +35,9 @@
 								</address>
 							</affiliation>
 
-							<marker>3</marker> 
+							
 							<affiliation>
+								<marker>3</marker> 
 								<orgName type="department">Institute of Theoretical Physics</orgName>,
 								<orgName type="institution">University of Wrocław</orgName>,
 								<address>
@@ -44,8 +47,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>4</marker> 
+							
 							<affiliation>
+								<marker>4</marker> 
 								<orgName type="institution">GSI Hemholtzzentrum fur Schwerionenforschung</orgName>, 
 								<address>
 									<postCode>D-64291</postCode>
@@ -54,8 +58,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>5</marker> 
+							
 							<affiliation>
+								<marker>5</marker> 
 								<orgName type="department">Fakultät für Physik</orgName>, 
 								<orgName type="institution">Universität Bielefeld</orgName>, 
 								<address>
