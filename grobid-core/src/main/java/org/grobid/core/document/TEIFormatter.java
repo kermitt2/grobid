@@ -1202,7 +1202,12 @@ public class TEIFormatter {
                 String pID = KeyGen.getKey().substring(0, 7);
                 addXmlId(pNote, "_" + pID);
             }
-
+            
+            if (config.isGenerateTeiCoordinates("p")) {
+                String coords = LayoutTokensUtil.getCoordsString(note.getTokens());
+                desc.addAttribute(new Attribute("coords", coords));
+            }
+            
             // for labelling bibliographical references in notes 
             List<LayoutToken> noteTokens = note.getTokens();
 
@@ -1472,6 +1477,12 @@ public class TEIFormatter {
                             String divID = KeyGen.getKey().substring(0, 7);
                             addXmlId(curParagraph, "_" + divID);
                         }
+                        
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            curParagraph.addAttribute(new Attribute("coords", coords));
+                        }
+                        
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
                     }
@@ -1487,6 +1498,12 @@ public class TEIFormatter {
                             String divID = KeyGen.getKey().substring(0, 7);
                             addXmlId(curParagraph, "_" + divID);
                         }
+
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            curParagraph.addAttribute(new Attribute("coords", coords));
+                        }
+                        
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
                     }
@@ -1543,6 +1560,13 @@ public class TEIFormatter {
                         }
 
                         curParagraph.appendChild(clusterContentBefore);
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(before);
+                            if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                                curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                            }
+                        }
+                        
                         curParagraphTokens.addAll(before);
 
                         List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
@@ -1570,6 +1594,13 @@ public class TEIFormatter {
 
                     if (CollectionUtils.isNotEmpty(remaining) && remaining.get(0).getText().equals(" ")) {
                         curParagraph.appendChild(new Text(" "));
+                    }
+
+                    if (config.isGenerateTeiCoordinates("p")) {
+                        String coords = LayoutTokensUtil.getCoordsString(remaining);
+                        if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                            curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                        }
                     }
 
                     curParagraph.appendChild(remainingClusterContent);
