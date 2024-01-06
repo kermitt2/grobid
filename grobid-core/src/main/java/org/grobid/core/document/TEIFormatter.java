@@ -1460,7 +1460,7 @@ public class TEIFormatter {
                 int clusterPage = Iterables.getLast(clusterTokens).getPage();
 
                 List<Note> notesSamePage = null;
-                if (notes != null && notes.size() > 0) {
+                if (CollectionUtils.isNotEmpty(notes)) {
                     notesSamePage = notes.stream()
                                 .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
                                 .collect(Collectors.toList());
