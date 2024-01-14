@@ -1053,7 +1053,6 @@ public class TEIFormatter {
             }
 
             String footText = doc.getDocumentPieceText(docPiece);
-            footText = TextUtilities.dehyphenize(footText);
             footText = footText.replace("\n", " ");
             //footText = footText.replace("  ", " ").trim();
             if (footText.length() < 6)
@@ -1071,6 +1070,9 @@ public class TEIFormatter {
             if (localNotes != null)
                 notes.addAll(localNotes);
         }
+        
+        notes.stream()
+            .forEach(n -> n.setText(TextUtilities.dehyphenize(n.getText())));
 
         return notes;
     }
@@ -1089,7 +1091,7 @@ public class TEIFormatter {
             String groupStr = ma.group(1);
             footText = ma.group(2);
             try {
-                if (groupStr.indexOf(".") != -1)
+                if (groupStr.contains("."))
                     sugarText = ".";
                 String groupStrNormalized = groupStr.replace(".", "");
                 groupStrNormalized = groupStrNormalized.trim();
@@ -1109,11 +1111,12 @@ public class TEIFormatter {
                         } else
                             break;
 
-                        if (toConsume.length() == 0)
+                        if (StringUtils.isEmpty(toConsume))
                             break;
                     }
-                    if (start != 0)
+                    if (start != 0) {
                         noteTokens = noteTokens.subList(start, noteTokens.size());
+                    }
                 }
             } catch (NumberFormatException e) {
                 currentNumber = -1;
@@ -1130,38 +1133,38 @@ public class TEIFormatter {
 
         // add possible subsequent notes concatenated in the same note sequence (this is a common error,
         // which is addressed here by heuristics, it may not be necessary in the future with a better 
-        // segmentation model using more foot notes training data)
+        // segmentation model using more footnotes training data)
         if (currentNumber != -1) {
             String nextLabel = " " + (currentNumber+1);
-            // suger characters after note number must be consistent with the previous ones to avoid false match
+            // sugar characters after note number must be consistent with the previous ones to avoid false match
             if (sugarText != null)
                 nextLabel += sugarText;
 
-            int ind = footText.indexOf(nextLabel);
-            if (ind != -1) {
+            int nextFootnoteLabelIndex = footText.indexOf(nextLabel);
+            if (nextFootnoteLabelIndex != -1) {
                 // optionally we could restrict here to superscript numbers 
                 // review local note
-                localNote.setText(footText.substring(0, ind));
+                localNote.setText(footText.substring(0, nextFootnoteLabelIndex));
                 int pos = 0;
                 List<LayoutToken> previousNoteTokens = new ArrayList<>();
                 List<LayoutToken> nextNoteTokens = new ArrayList<>();
                 for(LayoutToken localToken : noteTokens) {
-                    if (localToken.getText() == null || localToken.getText().length() == 0)
+                    if (StringUtils.isEmpty(localToken.getText()))
                         continue;
                     pos += localToken.getText().length();
-                    if (pos <= ind+1) {
+                    if (pos <= nextFootnoteLabelIndex+1) {
                         previousNoteTokens.add(localToken);
                     } else {
                         nextNoteTokens.add(localToken);
                     }
                 }
                 localNote.setTokens(previousNoteTokens);
-                String nextFootText = footText.substring(ind+1, footText.length());
+                String nextFootText = footText.substring(nextFootnoteLabelIndex+1);
 
                 // process the concatenated note
-                if (nextNoteTokens.size() >0 && nextFootText.length()>0) {
+                if (CollectionUtils.isNotEmpty(nextNoteTokens) && StringUtils.isNotEmpty(nextFootText)) {
                     List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType, notes.size());
-                    if (nextNotes != null && nextNotes.size()>0)
+                    if (CollectionUtils.isNotEmpty(nextNotes))
                         notes.addAll(nextNotes);
                 }
             }
@@ -1460,7 +1463,7 @@ public class TEIFormatter {
                 int clusterPage = Iterables.getLast(clusterTokens).getPage();
 
                 List<Note> notesSamePage = null;
-                if (notes != null && notes.size() > 0) {
+                if (CollectionUtils.isNotEmpty(notes)) {
                     notesSamePage = notes.stream()
                                 .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
                                 .collect(Collectors.toList());

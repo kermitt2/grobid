@@ -30,3 +30,25 @@ jobs:
           format: jacoco
           file: build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml
           debug: true
+  
+  docker-build:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create more disk space
+        run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - uses: actions/checkout@v2
+      - name: Build and push
+        id: docker_build
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME_LFOPPIANO }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_LFOPPIANO }}
+          image: lfoppiano/grobid
+          registry: docker.io
+          pushImage: ${{ github.event_name != 'pull_request' }}
+          tags: latest-develop
+          dockerfile: Dockerfile.crf
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

@@ -1,5 +1,6 @@
 package org.grobid.core.data;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.Page;
 import org.grobid.core.utilities.*;
@@ -74,7 +75,11 @@ public class Note {
     }
 
     public int getPageNumber() {
-        return tokens.get(0).getPage();
+        if (CollectionUtils.isNotEmpty(tokens))
+            return tokens.get(0).getPage();
+        else {
+            return -1;
+        }
     }
 
     public String getText() {
