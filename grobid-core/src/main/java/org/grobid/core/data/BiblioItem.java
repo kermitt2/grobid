@@ -2463,6 +2463,10 @@ public class BiblioItem {
 
                 if (fullEditors != null && fullEditors.size()>0) {
                     for(Person editor : fullEditors) {
+                        String localString = editor.toTEI(false);
+                        if (localString == null || localString.length() == 0)
+                            continue;
+
                         for (int i = 0; i < indent + 2; i++) {
                             tei.append("\t");
                         }
@@ -2470,7 +2474,7 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        String localString = editor.toTEI(false);
+                        
                         localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
                         tei.append(localString).append("\n");
                         for (int i = 0; i < indent + 2; i++) {
