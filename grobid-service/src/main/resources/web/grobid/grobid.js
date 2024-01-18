@@ -13,7 +13,7 @@ var grobid = (function($) {
 
 	var block = 0;
 
-    var elementCoords = ['s', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note', 'title', 'affiliation'];
+    var elementCoords = ['p', 's', 'biblStruct', 'persName', 'figure', 'formula', 'head', 'note', 'title', 'affiliation'];
 
 	function defineBaseURL(ext) {
 		var baseUrl = null;
@@ -239,10 +239,15 @@ var grobid = (function($) {
 
 	function ShowRequest1(formData, jqForm, options) {
         var addCoordinates = false;
+        var segmentSentences = false;
         for(var formd in formData) {
             if (formData[formd].name == 'teiCoordinates') {
                 addCoordinates = true;
             }
+            if (formData[formd].name == 'segmentSentences') {
+                segmentSentences = true;
+            }
+            
         }
         if (addCoordinates) {
             for (var i in elementCoords) {
@@ -251,6 +256,15 @@ var grobid = (function($) {
                     "value": "ref",
                     "type": "checkbox",
                     "required": false
+                }
+                if (segmentSentences === false) {
+                    if (elementCoords[i] === "s") {
+                        continue;
+                    }
+                } else {
+                    if (elementCoords[i] === "p") {
+                        continue;
+                    }
                 }
                 additionalFormData["value"] = elementCoords[i]
                 formData.push(additionalFormData)
