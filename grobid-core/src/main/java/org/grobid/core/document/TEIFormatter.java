@@ -1488,6 +1488,13 @@ public class TEIFormatter {
                         
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
+                    } else {
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                                curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                            }
+                        }
                     }
                     curParagraph.appendChild(clusterContent);
                     curParagraphTokens.addAll(clusterTokens);
