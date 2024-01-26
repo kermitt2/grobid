@@ -74,6 +74,12 @@ RUN rm /etc/apt/sources.list.d/nvidia-ml.list
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
 RUN dpkg -i cuda-keyring_1.0-1_all.deb
 
+# Add Tini
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "-s", "--"]
+
 # install JRE, python and other dependencies
 RUN apt-get update && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
