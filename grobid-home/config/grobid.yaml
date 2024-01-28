@@ -261,22 +261,22 @@ grobid:
           batch_size: 40
 
     - name: "copyright"
-        # at this time, must always be DeLFT, not other implementation
-        engine: "delft"
-        delft:
-          # deep learning parameters
-          architecture: "gru"
-          #architecture: "bert"
-          #transformer: "allenai/scibert_scivocab_cased"
+      # at this time, must always be DeLFT, not other implementation
+      engine: "delft"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
 
     - name: "license"
-        # at this time, must always be DeLFT, not other implementation
-        engine: "delft"
-        delft:
-          # deep learning parameters
-          architecture: "gru"
-          #architecture: "bert"
-          #transformer: "allenai/scibert_scivocab_cased"
+      # at this time, must always be DeLFT, not other implementation
+      engine: "delft"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
 
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
