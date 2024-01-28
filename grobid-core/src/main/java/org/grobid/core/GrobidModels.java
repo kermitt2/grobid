@@ -51,7 +51,9 @@ public enum GrobidModels implements GrobidModel {
     //ACKNOWLEDGEMENT("acknowledgement"),
     FUNDING_ACKNOWLEDGEMENT("funding-acknowledgement"),
     INFRASTRUCTURE("infrastructure"),
-    DUMMY("none");
+    DUMMY("none"),
+    LICENSE("license"),
+    COPYRIGHT("copyright");
 
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
