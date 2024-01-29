@@ -56,12 +56,9 @@ public class LicenseClassifier {
     }
 
     private LicenseClassifier() {
-        //ModelParameters parameterCopyrightsOwner = GrobidProperties.getModel("copyrights-owner");
-        //ModelParameters parameterLicenses = GrobidProperties.getModel("licenses");
-
         //this.useBinary = configuration.getUseBinaryContextClassifiers();
-        if (this.useBinary == null)
-            this.useBinary = false;
+        //if (this.useBinary == null)
+        //    this.useBinary = false;
 
         this.classifierCopyrightsOwner = new DeLFTClassifierModel("copyright", GrobidProperties.getDelftArchitecture("copyright"));
         this.classifierLicense = new DeLFTClassifierModel("license", GrobidProperties.getDelftArchitecture("license"));
@@ -140,49 +137,7 @@ public class LicenseClassifier {
                         bestProb = scoreUndecided;
                     }
 
-                    /*JsonNode publisherNode = classificationsNodeCopyrights.findPath("publisher");
-                    JsonNode authorsNode = classificationsNodeCopyrights.findPath("authors");
-                    JsonNode undecideNode = classificationsNodeCopyrights.findPath("undecided");
-                    JsonNode textNode = classificationsNodeCopyrights.findPath("text");
-
-                    double scorePublisher = 0.0;
-                    if ((publisherNode != null) && (!publisherNode.isMissingNode())) {
-                        scorePublisher = publisherNode.doubleValue();
-                    }
-
-                    double scoreAuthors = 0.0;
-                    if ((authorsNode != null) && (!authorsNode.isMissingNode())) {
-                        scoreAuthors = authorsNode.doubleValue();
-                    }
-
-                    double scoreUndecided = 0.0;
-                    if ((undecideNode != null) && (!undecideNode.isMissingNode())) {
-                        scoreUndecided = undecideNode.doubleValue();
-                    }
-
-                    String textValue = null;
-                    if ((textNode != null) && (!textNode.isMissingNode())) {
-                        textValue = textNode.textValue();
-                    }
-
-                    CopyrightsOwner owner = null;
-                    double bestProb = 0.0;
-
-                    if (scorePublisher>0.5) {
-                        owner = CopyrightsOwner.PUBLISHER;
-                        bestProb = scorePublisher;
-                    }
-                    if (scoreAuthors > 0.5 && scoreAuthors >= scorePublisher) {
-                        owner = CopyrightsOwner.AUTHORS;
-                        bestProb = scoreAuthors;
-                    }
-
-                    if (scoreUndecided > bestProb) {
-                        owner = CopyrightsOwner.UNDECIDED;
-                        bestProb = scoreUndecided;
-                    }*/
-
-                    // ser best copyright owner with prob
+                    // set best copyright owner with prob
                     result.setCopyrightsOwner(owner);
                     result.setCopyrightsOwnerProb(bestProb);
 
