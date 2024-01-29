@@ -262,7 +262,6 @@ public class TEIFormatter {
                 // a dummy publicationStmt is still necessary according to TEI
                 tei.append("\t\t\t\t<publisher/>\n");
             }
-            
 
             // We introduce something more meaningful with TEI customization to encode copyrights information:
             // - @copyrightsOwner with value "publisher", "authors", "unknown"

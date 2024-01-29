@@ -262,9 +262,9 @@ grobid:
 
     - name: "copyright"
       # at this time, we only have a DeLFT implementation, 
-      # use crf if the deep learning library JNI is not available and model will then be ignored
-      engine: "delft"
-      #engine: "crf"
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+      #engine: "delft"
+      engine: "wapiti"
       delft:
         # deep learning parameters
         architecture: "gru"
@@ -273,9 +273,9 @@ grobid:
 
     - name: "license"
       # at this time, must always be DeLFT, not other implementation
-      # use crf if the deep learning library JNI is not available and model will then be ignored
-      engine: "delft"
-      #engine: "crf"
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+      #engine: "delft"
+      engine: "wapiti"
       delft:
         # deep learning parameters
         architecture: "gru"
