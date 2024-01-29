@@ -261,8 +261,10 @@ grobid:
           batch_size: 40
 
     - name: "copyright"
-      # at this time, must always be DeLFT, not other implementation
+      # at this time, we only have a DeLFT implementation, 
+      # use crf if the deep learning library JNI is not available and model will then be ignored
       engine: "delft"
+      #engine: "crf"
       delft:
         # deep learning parameters
         architecture: "gru"
@@ -271,7 +273,9 @@ grobid:
 
     - name: "license"
       # at this time, must always be DeLFT, not other implementation
+      # use crf if the deep learning library JNI is not available and model will then be ignored
       engine: "delft"
+      #engine: "crf"
       delft:
         # deep learning parameters
         architecture: "gru"

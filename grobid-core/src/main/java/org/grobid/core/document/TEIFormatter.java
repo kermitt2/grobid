@@ -14,6 +14,7 @@ import nu.xom.Node;
 import nu.xom.Text;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.CopyrightsLicense.License;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
@@ -250,23 +251,50 @@ public class TEIFormatter {
                 (biblio.getPublicationDate() != null) ||
                 (biblio.getNormalizedPublicationDate() != null)) {
             tei.append("\t\t\t<publicationStmt>\n");
+
+            CopyrightsLicense copyrightsLicense = biblio.getCopyrightsLicense();
+
             if (biblio.getPublisher() != null) {
                 // publisher and date under <publicationStmt> for better TEI conformance
                 tei.append("\t\t\t\t<publisher>" + TextUtilities.HTMLEncode(biblio.getPublisher()) +
                         "</publisher>\n");
-
-                tei.append("\t\t\t\t<availability status=\"unknown\">");
-                tei.append("<p>Copyright ");
-                //if (biblio.getPublicationDate() != null)
-                tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
-                tei.append("\t\t\t\t</availability>\n");
             } else {
                 // a dummy publicationStmt is still necessary according to TEI
                 tei.append("\t\t\t\t<publisher/>\n");
-                if (defaultPublicationStatement == null) {
-                    tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
+            }
+            
+
+            // We introduce something more meaningful with TEI customization to encode copyrights information:
+            // - @copyrightsOwner with value "publisher", "authors", "unknown"
+            // - license related to copyrights exception is encoded via <licence>  
+            // (note: I have no clue what can mean "free" as status for a document - there are always some sort of 
+            // restrictions like moral rights even for public domain documents)
+            if (copyrightsLicense != null) {
+                tei.append("\t\t\t\t<availability ");
+
+                if (copyrightsLicense.getCopyrightsOwner() != null) {
+                    tei.append("copyrightsOwner=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
+                }
+
+                if (copyrightsLicense.getLicense() != null && copyrightsLicense.getLicense() != License.UNDECIDED) {
+                    tei.append("status=\"restricted\">");
+                    tei.append("<licence>"+copyrightsLicense.getLicense().getName()+"</licence>");
                 } else {
-                    tei.append("\t\t\t\t<availability status=\"unknown\"><p>" +
+                    tei.append(" status=\"unknown\"><licence/>");
+                }
+
+                /*tei.append("<p>Copyright ");
+                //if (biblio.getPublicationDate() != null)
+                tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");*/
+
+                tei.append("\t\t\t\t</availability>\n");
+            } else {
+                tei.append("\t\t\t\t<availability ");
+                
+                if (defaultPublicationStatement == null) {
+                    tei.append(" status=\"unknown\"><licence/></availability>");
+                } else {
+                    tei.append(" status=\"unknown\"><p>" +
                             TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
                 }
                 tei.append("\n");

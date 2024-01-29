@@ -39,7 +39,7 @@ public class CopyrightsLicense {
         CCBYSA  ("CC-BY-SA"),
         CCBYNCSA  ("CC-BY-NC-SA"),
         CCBYND  ("CC-BY-ND"),
-        COPYRIGHTS_STRICT ("copyrights"),
+        COPYRIGHTS ("strict-copyrights"),
         OTHER   ("other"),
         UNDECIDED   ("undecided");
         

@@ -128,7 +128,7 @@ public class LicenseClassifier {
                     int rank = 0;
                     for (Double scoreField : scoreFields) {
                         if (scoreField>0.5 && scoreField >= bestProb) {
-                            owner = CopyrightsOwner.valueOf(owners.get(rank));
+                            owner = CopyrightsOwner.valueOf(owners.get(rank).toUpperCase());
                             bestProb = scoreField;
                         }
                         scoreUndecided = scoreField;
@@ -206,7 +206,9 @@ public class LicenseClassifier {
                     rank = 0;
                     for (Double scoreField : scoreFields) {
                         if (scoreField>0.5 && scoreField >= bestProb) {
-                            license = License.valueOf(licenses.get(rank));
+                            String valueLicense = licenses.get(rank);
+                            valueLicense = valueLicense.replace("-", "");
+                            license = License.valueOf(valueLicense.toUpperCase());
                             bestProb = scoreField;
                         }
                         scoreUndecided = scoreField;

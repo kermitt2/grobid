@@ -104,7 +104,7 @@ public abstract class AbstractTrainer implements Trainer {
         trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model, incremental);
         // if we are here, that means that training succeeded
         // rename model for CRF sequence labellers (not with DeLFT deep learning models)
-        if (GrobidProperties.getGrobidCRFEngine(this.model) != GrobidCRFEngine.DELFT)
+        if (GrobidProperties.getGrobidEngine(this.model) != GrobidCRFEngine.DELFT)
             renameModels(oldModelPath, tempModelPath);
     }
 
