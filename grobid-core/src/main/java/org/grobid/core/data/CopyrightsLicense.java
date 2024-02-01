@@ -39,7 +39,7 @@ public class CopyrightsLicense {
         CCBYSA  ("CC-BY-SA"),
         CCBYNCSA  ("CC-BY-NC-SA"),
         CCBYND  ("CC-BY-ND"),
-        COPYRIGHTS ("strict-copyrights"),
+        COPYRIGHT ("strict-copyrights"),
         OTHER   ("other"),
         UNDECIDED   ("undecided");
         
@@ -55,7 +55,7 @@ public class CopyrightsLicense {
     };
 
     public static List<String> licenses = 
-        Arrays.asList("CC-0", "CC-BY", "CC-BY-NC", "CC-BY-NC-ND", "CC-BY-SA", "CC-BY-NC-SA", "CC-BY-ND", "copyrights", "other", "undecided");
+        Arrays.asList("CC-0", "CC-BY", "CC-BY-NC", "CC-BY-NC-ND", "CC-BY-SA", "CC-BY-NC-SA", "CC-BY-ND", "copyright", "other", "undecided");
 
     private CopyrightsOwner copyrightsOwner;
     private double copyrightsOwnerProb;
