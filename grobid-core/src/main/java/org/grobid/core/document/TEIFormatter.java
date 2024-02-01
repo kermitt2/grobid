@@ -264,22 +264,32 @@ public class TEIFormatter {
             }
 
             // We introduce something more meaningful with TEI customization to encode copyrights information:
-            // - @copyrightsOwner with value "publisher", "authors", "unknown"
+            // - @resp with value "publisher", "authors", "unknown", we add a comment to clarify that @resp
+            //   should be interpreted as the copyrights owner
             // - license related to copyrights exception is encoded via <licence>  
             // (note: I have no clue what can mean "free" as status for a document - there are always some sort of 
             // restrictions like moral rights even for public domain documents)
             if (copyrightsLicense != null) {
                 tei.append("\t\t\t\t<availability ");
 
+                boolean addCopyrightsComment = false;
                 if (copyrightsLicense.getCopyrightsOwner() != null) {
-                    tei.append("copyrightsOwner=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
+                    tei.append("resp=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
+                    addCopyrightsComment = true;
                 }
 
                 if (copyrightsLicense.getLicense() != null && copyrightsLicense.getLicense() != License.UNDECIDED) {
-                    tei.append("status=\"restricted\">");
-                    tei.append("<licence>"+copyrightsLicense.getLicense().getName()+"</licence>");
+                    tei.append("status=\"restricted\">\n");
+                    if (addCopyrightsComment) {
+                        tei.append("\t\t\t\t\t<!-- the @rest attribute above gives the document copyrights owner (publisher, authors), if known -->\n");
+                    }
+                    tei.append("\t\t\t\t\t<licence>"+copyrightsLicense.getLicense().getName()+"</licence>\n");
                 } else {
-                    tei.append(" status=\"unknown\"><licence/>");
+                    tei.append(" status=\"unknown\">\n");
+                    if (addCopyrightsComment) {
+                        tei.append("\t\t\t\t\t<!-- the @rest attribute above gives the document copyrights owner (publisher, authors), if known -->\n");
+                    }
+                    tei.append("\t\t\t\t\t<licence/>\n");
                 }
 
                 /*tei.append("<p>Copyright ");
