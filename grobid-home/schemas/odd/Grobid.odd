@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
     <teiHeader>
         <fileDesc>
@@ -264,6 +264,27 @@
                         </attDef>
                     </attList>
                 </classSpec>
+                
+                <elementSpec ident="availability" mode="change">
+                    <attList>
+                        <attDef ident="copyrightOwner">
+                            <datatype>
+                                <dataRef name="string"/>
+                            </datatype>
+                            <valList type="closed">
+                                <valItem ident="publisher">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright is owned by the publisher.</desc>
+                                </valItem>
+                                <valItem ident="authors">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright is owned by the authors.</desc>
+                                </valItem>
+                                <valItem ident="unknown">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright owner is unknown or undetermined.</desc>
+                                </valItem>
+                            </valList>
+                        </attDef>
+                    </attList>
+                </elementSpec>
             </schemaSpec>
         </body>
     </text>
