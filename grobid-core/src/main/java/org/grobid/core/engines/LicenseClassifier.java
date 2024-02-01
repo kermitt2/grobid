@@ -1,26 +1,18 @@
 package org.grobid.core.engines;
 
 import java.util.*;
+
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.data.CopyrightsLicense.CopyrightsOwner;
 import org.grobid.core.data.CopyrightsLicense.License;
-import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.GrobidModels;
-import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.grobid.core.jni.DeLFTClassifierModel;
-import org.grobid.core.utilities.GrobidConfig.ModelParameters;
 
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.node.*;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.core.io.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +63,7 @@ public class LicenseClassifier {
     public CopyrightsLicense classify(String text) throws Exception {
         if (StringUtils.isEmpty(text))
             return null;
-        List<String> texts = new ArrayList<String>();
+        List<String> texts = new ArrayList<>();
         texts.add(text);
         return classify(texts).get(0);
     }
@@ -81,21 +73,25 @@ public class LicenseClassifier {
      * @return list of predicted labels/scores pairs for each text
      */
     public List<CopyrightsLicense> classify(List<String> texts) throws Exception {
-        if (texts == null || texts.size() == 0)
+        if (CollectionUtils.isEmpty(texts))
             return null;
 
         LOGGER.info("classify: " + texts.size());
 
-        String the_json_copyrights_owner = this.classifierCopyrightsOwner.classify(texts);
-        String the_json_licenses = this.classifierLicense.classify(texts);
+        String copyrightOwnerAsJson = this.classifierCopyrightsOwner.classify(texts);
+        String licencesAsJson = this.classifierLicense.classify(texts);
 
+        return extractResults(copyrightOwnerAsJson, licencesAsJson);
+    }
+
+    protected List<CopyrightsLicense> extractResults(String copyrightOwnerAsJson, String licencesAsJson) {
         List<CopyrightsLicense> results = new ArrayList<>();
 
         // set resulting context classes to entity mentions
         try {
             ObjectMapper mapper = new ObjectMapper();
-            JsonNode root_copyrights = mapper.readTree(the_json_copyrights_owner);
-            JsonNode root_licenses = mapper.readTree(the_json_licenses);
+            JsonNode root_copyrights = mapper.readTree(copyrightOwnerAsJson);
+            JsonNode root_licenses = mapper.readTree(licencesAsJson);
 
             int entityRank =0;
             JsonNode classificationsNodeCopyrights = root_copyrights.findPath("classifications");
