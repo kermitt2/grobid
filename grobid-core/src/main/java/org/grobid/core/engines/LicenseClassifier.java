@@ -84,7 +84,7 @@ public class LicenseClassifier {
         return extractResults(copyrightOwnerAsJson, licencesAsJson);
     }
 
-    protected List<CopyrightsLicense> extractResults(String copyrightOwnerAsJson, String licencesAsJson) {
+    protected static List<CopyrightsLicense> extractResults(String copyrightOwnerAsJson, String licencesAsJson) {
         List<CopyrightsLicense> results = new ArrayList<>();
 
         // set resulting context classes to entity mentions
