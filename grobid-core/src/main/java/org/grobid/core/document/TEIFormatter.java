@@ -249,7 +249,8 @@ public class TEIFormatter {
 
         if ((biblio.getPublisher() != null) ||
                 (biblio.getPublicationDate() != null) ||
-                (biblio.getNormalizedPublicationDate() != null)) {
+                (biblio.getNormalizedPublicationDate() != null) ||
+                biblio.getCopyrightsLicense() != null) {
             tei.append("\t\t\t<publicationStmt>\n");
 
             CopyrightsLicense copyrightsLicense = biblio.getCopyrightsLicense();
@@ -273,7 +274,7 @@ public class TEIFormatter {
                 tei.append("\t\t\t\t<availability ");
 
                 boolean addCopyrightsComment = false;
-                if (copyrightsLicense.getCopyrightsOwner() != null) {
+                if (copyrightsLicense.getCopyrightsOwner() != null && copyrightsLicense.getCopyrightsOwner() != License.UNDECIDED) {
                     tei.append("resp=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
                     addCopyrightsComment = true;
                 }
@@ -292,21 +293,31 @@ public class TEIFormatter {
                     tei.append("\t\t\t\t\t<licence/>\n");
                 }
 
-                /*tei.append("<p>Copyright ");
-                //if (biblio.getPublicationDate() != null)
-                tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");*/
+                if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
+                    tei.append("\t\t\t\t\t<p type=\"raw\">");
+                    tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
+                    tei.append("</note>\n");
+                }
 
                 tei.append("\t\t\t\t</availability>\n");
             } else {
                 tei.append("\t\t\t\t<availability ");
+
+                tei.append(" status=\"unknown\">\n");
+                tei.append("\t\t\t\t\t<licence/>\n");
                 
-                if (defaultPublicationStatement == null) {
-                    tei.append(" status=\"unknown\"><licence/></availability>");
-                } else {
-                    tei.append(" status=\"unknown\"><p>" +
-                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
+                if (defaultPublicationStatement != null) {
+                    tei.append("\t\t\t\t\t<p>" +
+                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p>\n");
                 }
-                tei.append("\n");
+
+                if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
+                    tei.append("\t\t\t\t\t<p type=\"raw\">");
+                    tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
+                    tei.append("</note>\n");
+                }
+
+                tei.append("\t\t\t\t</availability>\n");
             }
 
             if (biblio.getNormalizedPublicationDate() != null) {
