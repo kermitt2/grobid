@@ -154,7 +154,9 @@ public class ReferenceExtractor implements Closeable {
             }
 
             TextSaxParser sax = new TextSaxParser();
-            sax.setFilter("description");
+            sax.addFilter("description");
+            sax.addFilter("p");
+            sax.addFilter("heading");
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -460,7 +462,7 @@ public class ReferenceExtractor implements Closeable {
                 }
 
                 FeaturesVectorReference featureVector =
-                        FeaturesVectorReference.addFeaturesPatentReferences(tok,
+                        FeaturesVectorReference.addFeaturesPatentReferences(new LayoutToken(tok), null,
                                 tokenizations.size(),
                                 posit,
                                 isJournalToken,
@@ -971,7 +973,7 @@ public class ReferenceExtractor implements Closeable {
                 }
 
                 FeaturesVectorReference featureVector =
-                        FeaturesVectorReference.addFeaturesPatentReferences(tok,
+                        FeaturesVectorReference.addFeaturesPatentReferences(new LayoutToken(tok), null,
                                 tokenizations.size(),
                                 posit,
                                 isJournalToken,
@@ -1485,7 +1487,9 @@ public class ReferenceExtractor implements Closeable {
         try {
             // first pass: we get the text to be processed
             TextSaxParser sax = new TextSaxParser();
-            sax.setFilter("description");
+            sax.addFilter("description");
+            sax.addFilter("p");
+            sax.addFilter("heading");
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
