@@ -15,6 +15,7 @@ import nu.xom.Text;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.CopyrightsLicense.License;
+import org.grobid.core.data.CopyrightsLicense.CopyrightsOwner;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
@@ -274,7 +275,7 @@ public class TEIFormatter {
                 tei.append("\t\t\t\t<availability ");
 
                 boolean addCopyrightsComment = false;
-                if (copyrightsLicense.getCopyrightsOwner() != null && copyrightsLicense.getCopyrightsOwner() != License.UNDECIDED) {
+                if (copyrightsLicense.getCopyrightsOwner() != null && copyrightsLicense.getCopyrightsOwner() != CopyrightsOwner.UNDECIDED) {
                     tei.append("resp=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
                     addCopyrightsComment = true;
                 }
