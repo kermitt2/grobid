@@ -27,6 +27,7 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
@@ -53,6 +54,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.zip.GZIPInputStream;
 
@@ -308,6 +311,11 @@ public class ReferenceExtractor implements Closeable {
                                           boolean includeRawCitations,
                                           List<PatentItem> patents,
                                           List<BibDataSet> articles) {
+        List<List<LayoutToken>> allTokenizations = new ArrayList<>();
+        
+        // list of references by index of tokenized text segments
+        Map<Integer, List<PatentItem>> patentsBySegment = new HashMap<>();
+        Map<Integer, List<BibDataSet>> articlesBySegment = new HashMap<>();
         try {
             // if parameters are null, these lists will only be valid in the method
 			if (patents == null) {
@@ -336,10 +344,9 @@ public class ReferenceExtractor implements Closeable {
             }
             if (localText.length() == 0)
                 return null;
-            Language lang = languageUtilities.runLanguageId(localText.toString(), 500);            
-
+            Language lang = languageUtilities.runLanguageId(localText.toString(), 500);
             List<String> allPatentBlocks = new ArrayList<>();
-            List<List<LayoutToken>> allTokenizations = new ArrayList<>();
+            
             for (String text : texts) {
 
                 //text = TextUtilities.dehyphenize(text); // to be reviewed!
@@ -373,10 +380,7 @@ public class ReferenceExtractor implements Closeable {
                 int currentConferencePositions = 0;
                 int currentPublisherPositions = 0;
                 boolean skipTest = false;
-                //st = new StringTokenizer(text, " (["+ TextUtilities.punctuations, true);
-                //st = new StringTokenizer(text, delimiters, true);
                 int posit = 0;
-                //while (st.hasMoreTokens()) {
     			for(LayoutToken token : tokenizations)	{
                     String tok = token.getText();
                     isJournalToken = false;
@@ -384,7 +388,6 @@ public class ReferenceExtractor implements Closeable {
                     isConferenceToken = false;
                     isPublisherToken = false;
                     skipTest = false;
-                    //String tok = st.nextToken();
                     if ( (tok.trim().length() == 0) ||
     					 (tok.equals(" ")) ||
     				     (tok.equals("\t")) ||
@@ -511,19 +514,26 @@ public class ReferenceExtractor implements Closeable {
             String[] theSegmentedResults = theResults.split("\n\n");
 //System.out.println(allPatentBlocks.size() + " / " + theSegmentedResults.length);
 
+            List<String> allReferencesPatent = new ArrayList<>();
             List<String> allReferencesNPL = new ArrayList<>();
+            List<Integer> allOffsetsNPL = new ArrayList<>();
+            List<Double> allProbNPL = new ArrayList<>();
+            List<Integer> localIndexSegmentNPL = new ArrayList<>();
+
             //int offset = 0;
             for(int index=0; index<theSegmentedResults.length; index++) {
                 String theResult = theSegmentedResults[index];
                 StringTokenizer stt = new StringTokenizer(theResult, "\n");
                 List<LayoutToken> tokenizations = allTokenizations.get(index);
 
-                List<String> referencesPatent = new ArrayList<String>();
-                List<String> referencesNPL = new ArrayList<String>();
-                List<Integer> offsets_patent = new ArrayList<Integer>();
-                List<Integer> offsets_NPL = new ArrayList<Integer>();
-    			List<Double> probPatent = new ArrayList<Double>();
-    			List<Double> probNPL = new ArrayList<Double>();
+                List<String> referencesPatent = new ArrayList<>();
+                List<String> referencesNPL = new ArrayList<>();
+
+                List<Integer> offsetsPatent = new ArrayList<>();
+                List<Integer> offsetsNPL = new ArrayList<>();
+
+    			List<Double> probPatent = new ArrayList<>();
+    			List<Double> probNPL = new ArrayList<>();
 
                 boolean currentPatent = true; // type of current reference
                 String reference = null;
@@ -601,7 +611,7 @@ public class ReferenceExtractor implements Closeable {
                                 if (currentPatent) {
                                     if (label.equals("I-<refPatent>")) {
                                         referencesPatent.add(reference);
-                                        offsets_patent.add(currentOffset);
+                                        offsetsPatent.add(currentOffset);
 
     									probPatent.add(Double.valueOf(currentProb));
 
@@ -617,7 +627,7 @@ public class ReferenceExtractor implements Closeable {
                                     }
                                 } else {
                                     referencesNPL.add(reference);
-                                    offsets_NPL.add(currentOffset);
+                                    offsetsNPL.add(currentOffset);
     								probNPL.add(Double.valueOf(currentProb));
 
                                     currentPatent = true;
@@ -635,7 +645,7 @@ public class ReferenceExtractor implements Closeable {
                             } else {
                                 if (currentPatent) {
                                     referencesPatent.add(reference);
-                                    offsets_patent.add(currentOffset);
+                                    offsetsPatent.add(currentOffset);
     								probPatent.add(Double.valueOf(currentProb));
 
                                     currentPatent = false;
@@ -645,7 +655,7 @@ public class ReferenceExtractor implements Closeable {
                                 } else {
                                     if (label.equals("I-<refNPL>")) {
                                         referencesNPL.add(reference);
-                                        offsets_NPL.add(currentOffset);
+                                        offsetsNPL.add(currentOffset);
     									probNPL.add(Double.valueOf(currentProb));
 
                                         currentPatent = false;
@@ -664,11 +674,11 @@ public class ReferenceExtractor implements Closeable {
                             if (reference != null) {
                                 if (currentPatent) {
                                     referencesPatent.add(reference);
-                                    offsets_patent.add(currentOffset);
+                                    offsetsPatent.add(currentOffset);
     								probPatent.add(Double.valueOf(currentProb));
                                 } else {
                                     referencesNPL.add(reference);
-                                    offsets_NPL.add(currentOffset);
+                                    offsetsNPL.add(currentOffset);
     								probNPL.add(Double.valueOf(currentProb));
                                 }
                                 currentPatent = false;
@@ -685,12 +695,21 @@ public class ReferenceExtractor implements Closeable {
                 int j = 0;
                 for (String ref : referencesPatent) {
                     patentParser.setRawRefText(ref);
-                    patentParser.setRawRefTextOffset(offsets_patent.get(j).intValue());
+                    patentParser.setRawRefTextOffset(offsetsPatent.get(j).intValue());
                     List<PatentItem> patents0 = patentParser.processRawRefText();
                     for (PatentItem pat : patents0) {
                         pat.setContext(ref);
     					pat.setConf(probPatent.get(j).doubleValue());
                         patents.add(pat);
+                        //allIndexSegmentPatent.add(index);
+
+                        List<PatentItem> localList = patentsBySegment.get(index);
+                        if (localList == null) {
+                            localList = new ArrayList<>();
+                        }
+                        localList.add(pat);
+                        patentsBySegment.put(index, localList);
+
                         /*if (pat.getApplication()) {
                             if (pat.getProvisional()) {
                                 if (debug) {
@@ -735,12 +754,18 @@ public class ReferenceExtractor implements Closeable {
                     j++;
                 }
 
-                if (referencesNPL.size()>0)
+                if (referencesNPL.size()>0) {
                     allReferencesNPL.addAll(referencesNPL);
+                    allOffsetsNPL.addAll(offsetsNPL);
+                    allProbNPL.addAll(probNPL);
+                    for(String ref : referencesNPL) {
+                        localIndexSegmentNPL.add(index);
+                    }
+                }
             }
 
             // list for filtering duplicates, if we want to ignore the duplicate numbers
-            List<String> numberListe = new ArrayList<String>();
+            /*List<String> numberListe = new ArrayList<String>();
             if (filterDuplicate) {
                 // list for filtering duplicates, if we want to ignore the duplicate numbers
                 List<PatentItem> toRemove = new ArrayList<PatentItem>();
@@ -755,7 +780,7 @@ public class ReferenceExtractor implements Closeable {
                 for (PatentItem pat : toRemove) {
                     patents.remove(pat);
                 }
-            }
+            }*/
 
             if (articles != null && allReferencesNPL != null && allReferencesNPL.size()>0) {
                 int k = 0;
@@ -770,82 +795,75 @@ public class ReferenceExtractor implements Closeable {
                     result.setReference(ref);
                     bds.setResBib(result);
                     bds.setRawBib(ref);
-                    //bds.addOffset(offsets_NPL.get(k).intValue());
-                    //bds.setConfidence(probNPL.get(k).doubleValue());
+                    bds.addOffset(allOffsetsNPL.get(k).intValue());
+                    bds.setConfidence(allProbNPL.get(k).doubleValue());
                     articles.add(bds);
+                    //allIndexSegmentNPL.add(localIndexSegmentNPL.get(k));
+
+                    List<BibDataSet> localList = articlesBySegment.get(localIndexSegmentNPL.get(k));
+                    if (localList == null) {
+                        localList = new ArrayList<>();
+                    }
+                    localList.add(bds);
+                    articlesBySegment.put(localIndexSegmentNPL.get(k), localList);
+
+
                     k++;
                 }
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-        int nbs = 0;
-        if (patents != null) {
-            nbs = patents.size();
-        }
-        if (articles != null)
-            nbs += articles.size();
 
-		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+        StringBuilder resultTEI = new StringBuilder();
+		resultTEI.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 						   "<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
-						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
 
-        resultTEI += "<teiHeader/>\n";
-        resultTEI += "<text/>\n";
+        resultTEI.append("\t<teiHeader/>\n");
+        resultTEI.append("\t<text>\n");
 
-        /*for(String text : texts) {
-    		String divID = KeyGen.getKey().substring(0,7);		
-    		resultTEI += "<div id=\"_"+ divID +"\">\n";
-            text = text.replace("\n", " ").replace("\t", " ");  
-    		resultTEI += TextUtilities.HTMLEncode(text);
-    		resultTEI += "</div>\n";
-    		resultTEI += "<div type=\"references\">\n";
-    		if ( (patents != null) || (articles != null) ) {
-    			resultTEI += "<listBibl>\n";
-    		}
+        int index = 0; // index in tokenized text segment list
+        int positionInIndexPatent = 0;
+        int positionInIndexNPL = 0;
 
-    		if (patents != null) {
-    			for(PatentItem patentCitation : patents) {
-    				resultTEI += patentCitation.toTEI(true, divID) + "\n"; // with offsets
-    			}
-    		}
+        for(List<LayoutToken> tokens : allTokenizations) {
+            // do we have a reference in this text segment ? 
+            List<PatentItem> localPatentsBySegment = patentsBySegment.get(index);
+            List<BibDataSet> localArticlesBySegment = articlesBySegment.get(index);
 
-    		if (articles != null) {
-    			for(BibDataSet articleCitation : articles) {
-    				resultTEI += articleCitation.toTEI(includeRawCitations) + "\n";
-    			}
-    		}
-    		if ( (patents != null) || (articles != null) ) {
-    			resultTEI += "</listBibl>\n";
-    		}
-    		resultTEI += "</div>\n";
-        }
-		resultTEI += "</text>\n";*/
+            if ((localPatentsBySegment != null && localPatentsBySegment.size()>0) || 
+                (localArticlesBySegment != null && localArticlesBySegment.size()>0) ) {
+                // output text
+                String divID = KeyGen.getKey().substring(0,7);      
+                resultTEI.append("\t\t<div id=\"_"+ divID +"\">\n");
+                String text = LayoutTokensUtil.toText(tokens);
+                // not affecting offsets:
+                text = text.replace("\n", " ").replace("\t", " ");  
+                resultTEI.append(TextUtilities.HTMLEncode(text));
+                resultTEI.append("</div>\n");
 
-        resultTEI += "<div type=\"references\">\n";
-        if ( (patents != null) || (articles != null) ) {
-            resultTEI += "<listBibl>\n";
-        }
-
-        if (patents != null) {
-            for(PatentItem patentCitation : patents) {
-                resultTEI += patentCitation.toTEI(true, null) + "\n"; // with offsets
+                resultTEI.append("\t\t<div type=\"references\">\n");
+                if (localPatentsBySegment != null && localPatentsBySegment.size()>0) {
+                    for(PatentItem patentCitation : localPatentsBySegment) {
+                        resultTEI.append(patentCitation.toTEI(true, divID) + "\n"); // true here means with offsets
+                    }
+                }
+                if (localArticlesBySegment != null && localArticlesBySegment.size()>0) {
+                    for(BibDataSet articleCitation : localArticlesBySegment) {
+                        resultTEI.append(articleCitation.toTEI(includeRawCitations) + "\n");
+                    }
+                }
+                resultTEI.append("\t\t</div>\n");
             }
+
+            index++;
         }
 
-        if (articles != null) {
-            for(BibDataSet articleCitation : articles) {
-                resultTEI += articleCitation.toTEI(includeRawCitations) + "\n";
-            }
-        }
-        if ( (patents != null) || (articles != null) ) {
-            resultTEI += "</listBibl>\n";
-        }
-        resultTEI += "</div>\n";
+        resultTEI.append("\t</text>\n");
+		resultTEI.append("</TEI>");
 
-		resultTEI += "</TEI>";
-
-        return resultTEI;
+        return resultTEI.toString();
     }
 
     /**
