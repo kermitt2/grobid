@@ -588,7 +588,7 @@ public class GrobidProperties {
         return pathToPdfalto;
     }
 
-    private static String getGrobidCRFEngineName(final String modelName) {
+    public static String getGrobidCRFEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);

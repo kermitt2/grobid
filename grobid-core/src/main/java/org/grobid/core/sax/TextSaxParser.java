@@ -53,9 +53,10 @@ public class TextSaxParser extends DefaultHandler {
 
 	public String getText() {
 		String text = accumulator.toString().trim();
-		text = text.replace("\n", " ");
+		//text = text.replace("\n", " ");
 		text = text.replace("\t", " ");
-		text = text.replaceAll("\\p{Space}+", " ");
+		//text = text.replaceAll("\\p{Space}+", " ");
+		text = text.replaceAll("( )+", " ");
 		return text;
 	}
 

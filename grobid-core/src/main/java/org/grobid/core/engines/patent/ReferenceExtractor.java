@@ -31,6 +31,7 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.lang.Language;
+import org.grobid.core.sax.ST36SaxParser;
 import org.grobid.core.layout.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -319,6 +320,35 @@ public class ReferenceExtractor implements Closeable {
         // list of references by index of tokenized text segments
         Map<Integer, List<PatentItem>> patentsBySegment = new HashMap<>();
         Map<Integer, List<BibDataSet>> articlesBySegment = new HashMap<>();
+
+        // sub-segment texts if a DL model will be applied. Use the max sequence length for size limit
+        if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+            List<String> newTexts = new ArrayList<>();
+            int maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+            for(String text : texts) {
+                List<String> tokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(text);
+                if (tokenizations.size() > maxSequence) {
+//System.out.println(maxSequence + " vs " + tokenizations.size());
+                    String[] subtexts = text.split("\n\n");
+                    for(int i=0; i<subtexts.length; i++) {
+                        List<String> subtokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(subtexts[i]);
+                        if (subtokenizations.size() > maxSequence) {
+                            String[] subsubtexts = subtexts[i].split(".\n");
+                            for(int j=0; j<subsubtexts.length; j++) {
+                                List<String> subsubtokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(subsubtexts[j]);
+                                newTexts.add(subsubtexts[j]);
+                            }
+                        } else {
+                            newTexts.add(subtexts[i]);
+                        }
+                    }
+                } else {
+                    newTexts.add(text);
+                }
+            }
+            texts = newTexts;
+        }
+
         try {
             // if parameters are null, these lists will only be valid in the method
 			if (patents == null) {

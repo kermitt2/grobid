@@ -566,17 +566,17 @@ public class ST36SaxParser extends DefaultHandler {
         }
     }
 
-    public List<List<String>> segment(List<String> tokens, int maxSize) {
+    public static List<List<String>> segment(List<String> tokens, int maxSize) {
         List<List<String>> allTokenizations = new ArrayList<>();
         List<String> currentTokenization = new ArrayList<>();
 
         // segment based on double "\n\n" pattern
         int pos = 0;
         for(String token : tokens) {
-            if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
+            /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
                 pos++;
                 continue;
-            }
+            }*/
 
             if (!token.equals("\n")) {
                 currentTokenization.add(token);
@@ -612,10 +612,10 @@ public class ST36SaxParser extends DefaultHandler {
                 currentTokenization = new ArrayList<>();
                 pos = 0;
                 for(String token : tokenization) {
-                    if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
+                    /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
                         pos++;
                         continue;
-                    }
+                    }*/
 
                     if (!token.equals(".")) {
                         currentTokenization.add(token);
@@ -656,10 +656,10 @@ public class ST36SaxParser extends DefaultHandler {
                 currentTokenization = new ArrayList<>();
                 pos = 0;
                 for(String token : tokenization) {
-                    if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
+                    /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
                         pos++;
                         continue;
-                    }
+                    }*/
 
                     if (!token.equals(".")) {
                         currentTokenization.add(token);
@@ -689,6 +689,5 @@ public class ST36SaxParser extends DefaultHandler {
         }
 
         return allTokenizations3;
-
     }
 }
