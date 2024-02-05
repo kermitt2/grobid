@@ -112,30 +112,7 @@ public class PatentRefParser {
 		provisional_pattern = compilePattern("provisional");
 		utility_pattern = compilePattern("utility");
 
-        // these patterns are now expressed in external resource files under grobid-home/lexicon/patent/
-		/*EP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)EPO?)|(E\\.(\\s)?P)|((E|e)uropean)|(européen)|(europ)");
-        DE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DE)|(D\\.(\\s)?E)|((G|g)erman)|((D|d)eutsch)|(allemand)");
-        US_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)US)|(U\\.(\\s)?S)|((U|u)nited(\\s|-)*(S|s)tate)|(USA)");
-        FR_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FR)|(F\\.(\\s)?R)|((F|f)rench)|((F|f)rance)|(français)|(F|f)ranz");
-        UK_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)UK)|(U\\.(\\s)?K)|(GB)|(G\\.B)|((b|B)ritish)|((e|E)nglish)|((U|u)nited(\\s|-)*(K|k)ingdom)|((g|G)reat(\\s|-)(B|b)ritain)");
-        BE_pattern =
-                Pattern.compile("((\\s|,|\\.|^|\\-)BE)|(B\\.(\\s)?E)|((B|b)elgian)|((B|b)elge)|((B|b)elgique)|((B|b)elgium)|((B|b)elgisch)|((B|b)elgie)");
-        WO_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)W(O|0))|(W\\.(\\s)?O)|(PCT)|(WIPO)|((w|W)orld(\\s|-)(p|P)atent)");
-        JP_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)JP)|(J\\.(\\s)?P)|((J|j)apan)|((J|j)apon)|(Nippon)|(HEI)");
-        CA_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)CA)|(C\\.(\\s)?A)|((C|c)anadian)|((C|c)anada)|((c|C)anadien)|((K|k)anad)");
-        CH_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)CH)|(C\\.(\\s)?H)|((S|w)iss)|((S|s)wizerland)|((s|S)uisse)|((H|h)elveti)|((S|s)chweiz)");
-        AT_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)AT)|(A\\.(\\s)?T)|((A|a)ustria)|((A|a)utrich)|((Ö|ö)sterreich)");
-        AU_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)AU)|(A\\.(\\s)?U)|((A|a)ustralia)|((A|a)ustrali)");
-        KR_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)KR)|(K\\.(\\s)?R)|((K|k)orean)|((K|k)orea)|((C|c)orée)|((S|s)üdkorea)|Sud(\\.|-)?Korea");
-        RU_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)RU)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
-        FI_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)FI)|(R\\.(\\s)?U)|((R|r)ussia)|((R|r)usse)|((R|r)usse)|((R|r)ussisch)");
-        NL_pattern =
-                Pattern.compile("((\\s|,|\\.|^|\\-)NL)|(N\\.(\\s)?L)|((H|h)olland)|((N|n)etherland)|((P|p)ays(\\.|-)bas)|((D|d)utch)|((h|H)olländisch)");
-        SE_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)SE)|(S\\.(\\s)?E)|((S|s)weden)|((S|s)wedish)|((S|s)wedisch)|((S|s)u\\.de)|((S|s)u\\.dois)");
-        IT_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)IT)|(I\\.(\\s)?T)|((I|i)taly)|((I|i)tali(a|e)n)|((I|i)talie)");
-        ES_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)ES)|(E\\.(\\s)?S)|((S|s)panish)|((S|s)panie)|((E|e)spagnol)|((S|s)pain)");
-        DK_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DK)|(D\\.(\\s)?K)|((D|d)anish)|((D|d)anois)|((d|D)(a|ä)nemark)|(dänisch)");
-        DD_pattern = Pattern.compile("((\\s|,|\\.|^|\\-)DD)|(D\\.(\\s)?D)|(DDR)");*/
+        // note: multilingual lexical patterns are expressed in external resource files under grobid-home/lexicon/patent/
     }
 
 	private final void initLanguageResources() {
@@ -547,10 +524,10 @@ public class PatentRefParser {
                         }
 
                         // interpretation of prefix "serial code" is given here:
-                        // http://www.uspto.gov/patents/process/search/filingyr.jsp
+                        // https://www.uspto.gov/web/offices/ac/ido/oeip/taf/filingyr.htm
                         // we need to identify the year based on the serial number range
 
-                        // provisional starts with 60 or 61
+                        // provisional starts with 60 or 61 or 62 or 63 (time flies!)
                         if (number.startsWith("60") && (appli || number.startsWith("60/"))) {
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(true));
@@ -628,8 +605,7 @@ public class PatentRefParser {
 							else if (numb < 999999)
                                 year = "2014";
                             number = year + "0" + number;
-                        } 
-						else if (number.startsWith("62") && (appli || number.startsWith("62/"))) {  
+                        } else if (number.startsWith("62") && (appli || number.startsWith("62/"))) {  
 							// same as for 60 but the ranges are different
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(true));
@@ -650,8 +626,38 @@ public class PatentRefParser {
                                 year = "2014";
                             else if (numb < 387330)
                                 year = "2015";
-                            else 
+                            else if (numb < 498538)
                                 year = "2016";
+                            else if (numb < 708919)
+                                year = "2017";
+                            else if (numb < 917758)
+                                year = "2018";
+                            else if (numb < 974841)
+                                year = "2019";
+                            else if (numb < 999999)
+                                year = "2020";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("63") && (appli || number.startsWith("63/"))) {  
+                            // same as for 60 but the ranges are different
+                            applications.set(i, Boolean.valueOf(true));
+                            provisionals.set(i, Boolean.valueOf(true));
+                            originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
+                            String year = null;
+                            if (numb < 205597)
+                                year = "2020";
+                            else 
+                                year = "2021";
                             number = year + "0" + number;
                         } 
 						else if (number.startsWith("29") && (appli || number.startsWith("29/"))) {
@@ -720,12 +726,89 @@ public class PatentRefParser {
                                 year = "2014";
                             else if (numb < 505607)
                                 year = "2015";
-                            else
+                            else if (numb < 620459)
                                 year = "2016";
+                            else if (numb < 651149)
+                                year = "2017";
+                            else if (numb < 651684)
+                                year = "2018";
+                            else if (numb < 742106)
+                                year = "2019";
+                            else if (numb < 742402)
+                                year = "2020";
+                            else
+                                year = "2021";
                             number = year + "0" + number;
-                        } 
-						else if (number.startsWith("14") && (appli || number.startsWith("14/"))) {
-	                        // standard patent application, most recent serial code
+                        } else if (number.startsWith("17") && (appli || number.startsWith("17/"))) {
+                            // standard patent application, not yet in the table
+                            applications.set(i, Boolean.valueOf(true));
+                            provisionals.set(i, Boolean.valueOf(false));
+                            originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
+                            String year = "2021";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("16") && (appli || number.startsWith("16/"))) {
+                            // standard patent application, most recent serial code
+                            applications.set(i, Boolean.valueOf(true));
+                            provisionals.set(i, Boolean.valueOf(false));
+                            originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
+                            String year = null;
+                            if (numb < 350739 )
+                                year = "2018";
+                            else if (numb < 602938)
+                                year = "2019";
+                            else if (numb < 974313)
+                                year = "2020";                            
+                            else 
+                                year = "2021";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("15") && (appli || number.startsWith("15/"))) {
+                            // standard patent application
+                            applications.set(i, Boolean.valueOf(true));
+                            provisionals.set(i, Boolean.valueOf(false));
+                            originalNumber = number;
+                            number = number.substring(3, number.length());
+                            number = number.replaceAll("[\\.\\s/,]", "");
+                            // we check the range of the number for deciding about a year
+                            int numb = -1;
+                            try {
+                                numb = Integer.parseInt(number);
+                            } catch(NumberFormatException e) {
+                                LOGGER.warn("Cannot parse extracted patent number: " + number);
+                            }
+                            if (numb == -1)
+                                continue;
+                            String year = null;
+                            if (numb < 530347)
+                                year = "2016";
+                            else if (numb < 732787)
+                                year = "2017";                            
+                            else 
+                                year = "2018";
+                            number = year + "0" + number;
+                        } else if (number.startsWith("14") && (appli || number.startsWith("14/"))) {
+	                        // standard patent application
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(false));
 							originalNumber = number;
@@ -748,8 +831,7 @@ public class PatentRefParser {
                             else 
                                 year = "2016";
                             number = year + "0" + number;
-	                    }
-						else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
+	                    } else if (number.startsWith("13") && (appli || number.startsWith("13/"))) {
 	                        // standard patent application
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(false));
@@ -1108,6 +1190,7 @@ public class PatentRefParser {
                                 year = "1958";
                             else
                                 year = "1959";
+                            number = year + "0" + number;
                         } else if (number.startsWith("2/") || number.startsWith("02/")) {
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(false));
@@ -1153,7 +1236,7 @@ public class PatentRefParser {
                                 year = "1946";
                             else
                                 year = "1947";
-
+                            number = year + "0" + number;
                         } else if (number.startsWith("1/") || number.startsWith("01/")) {
                             applications.set(i, Boolean.valueOf(true));
                             provisionals.set(i, Boolean.valueOf(false));
@@ -1173,27 +1256,29 @@ public class PatentRefParser {
                             if (numb == -1)
                                 continue;
                             String year = null;
+                            // years 1915-1924 are redundant with 1925-1934 because apparently they forgot 
+                            // incrementing the prefix...
                             /*if (numb < 70000)
-                                        year = "1915";
-                                    else if (numb < 140000)
-                                        year = "1916";
-                                    else if (numb < 210000)
-                                        year = "1917";
-                                    else if (numb < 270000)
-                                        year = "1918";
-                                    else if (numb < 349000)
-                                        year = "1919";
-                                    else if (numb < 435000)
-                                        year = "1920";
-                                    else if (numb < 526000)
-                                        year = "1921";
-                                    else if (numb < 610000)
-                                        year = "1922";
-                                    else if (numb < 684000)
-                                        year = "1923";
-                                    else if (numb < )
-                                        year = "1924";
-                                    else */
+                                year = "1915";
+                            else if (numb < 140000)
+                                year = "1916";
+                            else if (numb < 210000)
+                                year = "1917";
+                            else if (numb < 270000)
+                                year = "1918";
+                            else if (numb < 349000)
+                                year = "1919";
+                            else if (numb < 435000)
+                                year = "1920";
+                            else if (numb < 526000)
+                                year = "1921";
+                            else if (numb < 610000)
+                                year = "1922";
+                            else if (numb < 684000)
+                                year = "1923";
+                            else if (numb < )
+                                year = "1924";
+                            else */
                             if (numb < 78000)
                                 year = "1925";
                             else if (numb < 158000)
@@ -1214,6 +1299,7 @@ public class PatentRefParser {
                                 year = "1933";
                             else
                                 year = "1934";
+                            number = year + "0" + number;
                         } else if (number.startsWith("RE")) {
                             // we have a reissued patent USRE with 5 digits number normally
                             reissueds.set(i, Boolean.valueOf(true));
