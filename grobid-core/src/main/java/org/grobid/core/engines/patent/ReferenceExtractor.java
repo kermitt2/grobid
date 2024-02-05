@@ -29,6 +29,7 @@ import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.slf4j.Logger;
@@ -239,7 +240,9 @@ public class ReferenceExtractor implements Closeable {
             }
             String description = doc.getAllBlocksClean(25, -1);
             if (description != null) {
-                result = extractAllReferencesString(description,
+                List<String> descriptions = new ArrayList<>();
+                descriptions.add(description);
+                result = extractAllReferencesString(descriptions,
                         filterDuplicate,
                         consolidate,
                         includeRawCitations,
@@ -294,7 +297,7 @@ public class ReferenceExtractor implements Closeable {
     /**
      * Extract all reference from a simple piece of text or a list of text segments, and return results in an XML document.
      */
-    public String extractAllReferencesString(String text,
+    /*public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
                                           int consolidate,
                                           boolean includeRawCitations,
@@ -303,7 +306,7 @@ public class ReferenceExtractor implements Closeable {
         List<String> texts = new ArrayList<>();
         texts.add(text);
         return extractAllReferencesString(texts, filterDuplicate, consolidate, includeRawCitations, patents, articles);
-    }
+    }*/
 
     public String extractAllReferencesString(List<String> texts,
                                           boolean filterDuplicate,
@@ -348,15 +351,21 @@ public class ReferenceExtractor implements Closeable {
             List<String> allPatentBlocks = new ArrayList<>();
             
             for (String text : texts) {
-
                 //text = TextUtilities.dehyphenize(text); // to be reviewed!
 
-                // tokenisation according to the language
-                List<LayoutToken> tokenizations = analyzer.tokenizeWithLayoutToken(text, lang);
+                // tokenisation according to the language (except for Korean, which will require retraining)
+                List<LayoutToken> tokenizations;
+                if (lang.getLang().equals(Language.KO)) {
+                    tokenizations = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+                } else {
+                    tokenizations = analyzer.tokenizeWithLayoutToken(text, lang);
+                    // to be sure to sub-tokenize based on standard punctuations:
+                    tokenizations = GrobidDefaultAnalyzer.getInstance().retokenizeFromLayoutToken(tokenizations);
+                }
+
                 if (tokenizations.size() == 0) {
                     continue;
                 }
-
                 allTokenizations.add(tokenizations);
 
                 StringBuilder patentBlocks = new StringBuilder();
@@ -394,6 +403,7 @@ public class ReferenceExtractor implements Closeable {
     					 (tok.equals("\n")) ||
     					 (tok.equals("\r"))
     					 ) {
+                        posit++;
                         continue;
                     }
 
@@ -512,7 +522,6 @@ public class ReferenceExtractor implements Closeable {
             String theResults = taggerAll.label(allPatentBlocks);
 //System.out.println(theResults);
             String[] theSegmentedResults = theResults.split("\n\n");
-//System.out.println(allPatentBlocks.size() + " / " + theSegmentedResults.length);
 
             List<String> allReferencesPatent = new ArrayList<>();
             List<String> allReferencesNPL = new ArrayList<>();
@@ -807,7 +816,6 @@ public class ReferenceExtractor implements Closeable {
                     localList.add(bds);
                     articlesBySegment.put(localIndexSegmentNPL.get(k), localList);
 
-
                     k++;
                 }
             }
@@ -836,7 +844,7 @@ public class ReferenceExtractor implements Closeable {
                 (localArticlesBySegment != null && localArticlesBySegment.size()>0) ) {
                 // output text
                 String divID = KeyGen.getKey().substring(0,7);      
-                resultTEI.append("\t\t<div id=\"_"+ divID +"\">\n");
+                resultTEI.append("\t\t<div id=\"_"+ divID +"\">");
                 String text = LayoutTokensUtil.toText(tokens);
                 // not affecting offsets:
                 text = text.replace("\n", " ").replace("\t", " ");  
@@ -959,6 +967,7 @@ public class ReferenceExtractor implements Closeable {
 					 (tok.equals("\n")) ||
 					 (tok.equals("\r"))
 					 ) {
+                    posit++;
                     continue;
                 }
 
