@@ -26,7 +26,6 @@ public class LicenseClassifier {
     private DeLFTClassifierModel classifierLicense = null;
 
     // binary classifiers to be added if used
-
     private Boolean useBinary = false; 
 
     private JsonParser parser;
@@ -35,7 +34,11 @@ public class LicenseClassifier {
 
     public static LicenseClassifier getInstance() {
         if (instance == null) {
-            getNewInstance();
+            synchronized (LicenseClassifier.class) {
+                if (instance == null) {
+                    getNewInstance();
+                }
+            }
         }
         return instance;
     }
@@ -48,10 +51,6 @@ public class LicenseClassifier {
     }
 
     private LicenseClassifier() {
-        //this.useBinary = configuration.getUseBinaryContextClassifiers();
-        //if (this.useBinary == null)
-        //    this.useBinary = false;
-
         this.classifierCopyrightsOwner = new DeLFTClassifierModel("copyright", GrobidProperties.getDelftArchitecture("copyright"));
         this.classifierLicense = new DeLFTClassifierModel("license", GrobidProperties.getDelftArchitecture("license"));
     }
