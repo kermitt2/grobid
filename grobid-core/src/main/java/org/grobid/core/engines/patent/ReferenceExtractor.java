@@ -874,14 +874,14 @@ public class ReferenceExtractor implements Closeable {
                 (localArticlesBySegment != null && localArticlesBySegment.size()>0) ) {
                 // output text
                 String divID = KeyGen.getKey().substring(0,7);      
-                resultTEI.append("\t\t<div id=\"_"+ divID +"\">");
+                resultTEI.append("\t\t<div>");
+                resultTEI.append("\t\t\t<p id=\"_"+ divID +"\">");
                 String text = LayoutTokensUtil.toText(tokens);
                 // not affecting offsets:
                 text = text.replace("\n", " ").replace("\t", " ");  
                 resultTEI.append(TextUtilities.HTMLEncode(text));
-                resultTEI.append("</div>\n");
-
-                resultTEI.append("\t\t<div type=\"references\">\n");
+                resultTEI.append("</p>\n");
+                resultTEI.append("\t\t\t<div type=\"references\">\n");
                 if (localPatentsBySegment != null && localPatentsBySegment.size()>0) {
                     for(PatentItem patentCitation : localPatentsBySegment) {
                         resultTEI.append(patentCitation.toTEI(true, divID) + "\n"); // true here means with offsets
@@ -892,6 +892,7 @@ public class ReferenceExtractor implements Closeable {
                         resultTEI.append(articleCitation.toTEI(includeRawCitations) + "\n");
                     }
                 }
+                resultTEI.append("\t\t\t</div>\n");
                 resultTEI.append("\t\t</div>\n");
             }
 
