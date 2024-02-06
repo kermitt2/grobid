@@ -182,7 +182,13 @@ public class PatentParserTrainer extends AbstractTrainer {
                         List<List<LayoutToken>> segmentedAccumulatedTokens = new ArrayList<>();
                         List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
 
-                        if (accumulatedTokens.size() > 1000) {                         
+                        int maxSequence = 1000;
+                        if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+                            List<String> newTexts = new ArrayList<>();
+                            maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+                        }
+
+                        if (accumulatedTokens.size() > maxSequence) {                         
                             // we have a problem of sequence length for Deep Learning algorithms
                             // we need to segment further. We ensure here that we don't segment 
                             // near or inside patent or NPL references 
@@ -190,8 +196,8 @@ public class PatentParserTrainer extends AbstractTrainer {
                             while(k<accumulatedTokens.size()) {
                                 int origin = k;
 
-                                if (k+1000 < accumulatedTokens.size()) {
-                                    k = k+1000;
+                                if (k+maxSequence < accumulatedTokens.size()) {
+                                    k = k+maxSequence;
                                     // adjust position to avoid reference label
                                     while (accumulatedLabels.get(k-1).endsWith("refNPL>") || accumulatedLabels.get(k-1).endsWith("refPatent>")) {
                                         k--;
@@ -355,7 +361,13 @@ public class PatentParserTrainer extends AbstractTrainer {
                                     List<List<LayoutToken>> segmentedAccumulatedTokens = new ArrayList<>();
                                     List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
 
-                                    if (accumulatedTokens.size() > 1000) {
+                                    int maxSequence = 1000;
+                                    if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+                                        List<String> newTexts = new ArrayList<>();
+                                        maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+                                    }
+
+                                    if (accumulatedTokens.size() > maxSequence) {
                                         // we have a problem of sequence length for Deep Learning algorithms
                                         // we need to segment further. We ensure here that we don't segment 
                                         // near or inside patent or NPL references 
@@ -363,8 +375,8 @@ public class PatentParserTrainer extends AbstractTrainer {
                                         while(k<accumulatedTokens.size()) {
                                             int origin = k;
 
-                                            if (k+1000 < accumulatedTokens.size()) {
-                                                k = k+1000;
+                                            if (k+maxSequence < accumulatedTokens.size()) {
+                                                k = k+maxSequence;
                                                 // adjust position to avoid reference label
                                                 while (accumulatedLabels.get(k-1).endsWith("refNPL>") || accumulatedLabels.get(k-1).endsWith("refPatent>")) {
                                                     k--;
