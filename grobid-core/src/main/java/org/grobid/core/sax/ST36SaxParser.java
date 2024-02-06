@@ -239,14 +239,8 @@ public class ST36SaxParser extends DefaultHandler {
 				LOGGER.debug("Tokenization for XML patent document has failed.");
 			}
 
-            // we might need to segment this chunk of text if it is too large
-            if (window != -1 && tokenization.size() >= 2*window) {
-                // segmentation needed
-                //allTokenizations.addAll(segment(tokenization, 2*window));
-                allTokenizations.add(segment(tokenization, 2*window).get(0));
-            } else {
-                allTokenizations.add(tokenization);
-            }
+            // we could introduce here some further sub-segmentation
+            allTokenizations.add(tokenization);
 
             for(List<String> tokenizations : allTokenizations) {
                 int i = 0;
@@ -402,15 +396,8 @@ public class ST36SaxParser extends DefaultHandler {
 
 							int nbTokens = tokenization.size();
 
-                            // we might need to segment this chunk of text if it is too large
-                            if (window != -1 && tokenization.size() >= window) {
-                                // segmentation needed
-                                //allTokenizations.addAll(segment(tokenization, window));
-                                List<List<String>> allLocalSegments = segment(tokenization, window);
-                                allTokenizations.add(allLocalSegments.get(allLocalSegments.size()-1));
-                            } else {
-                                allTokenizations.add(tokenization);
-                            }
+                            // we could introduce here some further sub-segmentation
+                            allTokenizations.add(tokenization);
 
                             //boolean newSegment = false; 
                             for(List<String> tokenizations : allTokenizations) {
@@ -476,16 +463,9 @@ public class ST36SaxParser extends DefaultHandler {
 							}
 							
 							int nbTokens = tokenization.size();
-                            
-                            // we might need to segment this chunk of text if it is too large
-                            if (window != -1 && tokenization.size() >= window) {
-                                // segmentation needed
-                                //allTokenizations.addAll(segment(tokenization, window));
-                                List<List<String>> allLocalSegments = segment(tokenization, window);
-                                allTokenizations.add(allLocalSegments.get(allLocalSegments.size()-1));
-                            } else {
-                                allTokenizations.add(tokenization);
-                            }
+
+                            // we could introduce here some further sub-segmentation
+                            allTokenizations.add(tokenization);
 
                             //boolean newSegment = false; 
                             for(List<String> tokenizations : allTokenizations) {
@@ -566,128 +546,4 @@ public class ST36SaxParser extends DefaultHandler {
         }
     }
 
-    public static List<List<String>> segment(List<String> tokens, int maxSize) {
-        List<List<String>> allTokenizations = new ArrayList<>();
-        List<String> currentTokenization = new ArrayList<>();
-
-        // segment based on double "\n\n" pattern
-        int pos = 0;
-        for(String token : tokens) {
-            /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
-                pos++;
-                continue;
-            }*/
-
-            if (!token.equals("\n")) {
-                currentTokenization.add(token);
-            } else {
-                // look ahead
-                int n = 1;
-                while(pos+n<tokens.size()) {
-                    if (tokens.get(pos+n).equals("\n")) {
-                        // double \n
-                        allTokenizations.add(currentTokenization);
-                        currentTokenization = new ArrayList<>();
-                        break;
-                    }
-                    if (tokens.get(pos+n).equals(" ") || tokens.get(pos+n).equals("\t")) {
-                        n++;
-                        continue;
-                    } else {
-                        currentTokenization.add(token);
-                        break;
-                    }
-                }
-            }
-            pos++;
-        }
-        if (currentTokenization.size()>0)
-            allTokenizations.add(currentTokenization);
-
-        // segment based on ".\n" pattern
-        List<List<String>> allTokenizations2 = new ArrayList<>();
-        for(List<String> tokenization : allTokenizations) {
-            if (tokenization.size() > maxSize) {
-                // second step segmentation
-                currentTokenization = new ArrayList<>();
-                pos = 0;
-                for(String token : tokenization) {
-                    /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
-                        pos++;
-                        continue;
-                    }*/
-
-                    if (!token.equals(".")) {
-                        currentTokenization.add(token);
-                    } else {
-                        // look ahead
-                        int n = 1;
-                        while(pos+n<tokenization.size()) {
-                            if (tokenization.get(pos+n).equals("\n")) {
-                                // expected \n
-                                allTokenizations2.add(currentTokenization);
-                                currentTokenization = new ArrayList<>();
-                                break;
-                            }
-                            if (tokenization.get(pos+n).equals(" ") || tokenization.get(pos+n).equals("\t")) {
-                                n++;
-                                continue;
-                            } else {
-                                currentTokenization.add(token);
-                                break;
-                            }
-                        }
-                    }
-                    pos++;
-                }
-                if (currentTokenization.size()>0) {
-                    allTokenizations2.add(currentTokenization);
-                }
-            } else {
-                allTokenizations2.add(tokenization);
-            }
-        }
-
-        // still need to segment? arbitrary around strong punctation
-        List<List<String>> allTokenizations3 = new ArrayList<>();
-        for(List<String> tokenization : allTokenizations2) {
-            if (tokenization.size() > maxSize) {
-                // third step segmentation
-                currentTokenization = new ArrayList<>();
-                pos = 0;
-                for(String token : tokenization) {
-                    /*if (currentTokenization.size() == 0 && (token.equals("\n") || token.equals(" ") || token.equals("\t"))) {
-                        pos++;
-                        continue;
-                    }*/
-
-                    if (!token.equals(".")) {
-                        currentTokenization.add(token);
-                    } else {
-                        // look ahead
-                        while(pos+1<tokenization.size()) {
-                            if (tokenization.get(pos+1).equals(" ")) {
-                                // expected space after strong punctuation
-                                allTokenizations3.add(currentTokenization);
-                                currentTokenization = new ArrayList<>();
-                                break;
-                            }
-                            currentTokenization.add(token);
-                            break;
-                        }
-                    }
-                    pos++;
-                }
-                if (currentTokenization.size()>0) {
-                    allTokenizations3.add(currentTokenization);
-                }
-                
-
-            } else {
-                allTokenizations3.add(tokenization);
-            }
-        }
-
-        return allTokenizations3;
-    }
 }
