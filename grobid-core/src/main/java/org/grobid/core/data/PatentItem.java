@@ -25,7 +25,7 @@ public class PatentItem implements Comparable<PatentItem> {
 	
     // scores
     private double conf = 1.0;
-    private String confidence = null;
+    //private String confidence = null;
 
     // position in document
     private int offset_begin = 0;
@@ -84,9 +84,9 @@ public class PatentItem implements Comparable<PatentItem> {
         return conf;
     }
 
-    public String getConfidence() {
+    /*public String getConfidence() {
         return confidence;
-    }
+    }*/
 
     public int getOffsetBegin() {
         return offset_begin;
@@ -240,7 +240,7 @@ public class PatentItem implements Comparable<PatentItem> {
 				+ ", kindCode=" + kindCode + ", application=" + application
 				+ ", provisional=" + provisional + ", reissued=" + reissued
 				+ ", plant=" + plant + ", design=" + design + ", conf=" + conf
-				+ ", confidence=" + confidence + ", offset_begin="
+				+ ", offset_begin="
 				+ offset_begin + ", offset_end=" + offset_end + ", offset_raw="
 				+ offset_raw + ", context=" + context + "]";
 	}

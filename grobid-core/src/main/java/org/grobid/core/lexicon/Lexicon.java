@@ -566,7 +566,7 @@ public class Lexicon {
             return "Italian";
         else if (code.equals("jp"))
             return "Japanese";
-        else if (code.equals("kr"))
+        else if (code.equals("kr") || code.equals("ko"))
             return "Korean";
         else if (code.equals("nl"))
             return "Deutch";
