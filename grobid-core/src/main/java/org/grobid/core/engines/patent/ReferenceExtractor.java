@@ -874,7 +874,7 @@ public class ReferenceExtractor implements Closeable {
                 (localArticlesBySegment != null && localArticlesBySegment.size()>0) ) {
                 // output text
                 String divID = KeyGen.getKey().substring(0,7);      
-                resultTEI.append("\t\t<div>");
+                resultTEI.append("\t\t<div>\n");
                 resultTEI.append("\t\t\t<p id=\"_"+ divID +"\">");
                 String text = LayoutTokensUtil.toText(tokens);
                 // not affecting offsets:
