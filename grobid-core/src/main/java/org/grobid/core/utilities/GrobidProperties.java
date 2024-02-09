@@ -588,6 +588,7 @@ public class GrobidProperties {
         return pathToPdfalto;
     }
 
+
     public static String getGrobidEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {

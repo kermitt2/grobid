@@ -232,10 +232,23 @@ grobid:
 
     - name: "patent-citation"
       engine: "wapiti"
+      #engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.0001
         window: 20
+      delft:
+        # deep learning parameters
+        architecture: "BidLSTM_CRF_FEATURES"
+        #architecture: "BERT_CRF"
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 800
+          batch_size: 20
+        training:
+          # parameters used for training
+          max_sequence_length: 1000
+          batch_size: 40
 
     - name: "funding-acknowledgement"
       engine: "wapiti"

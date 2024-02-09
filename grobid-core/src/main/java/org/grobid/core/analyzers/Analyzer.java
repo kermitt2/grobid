@@ -21,6 +21,8 @@ public interface Analyzer {
 
 	List<LayoutToken> tokenizeWithLayoutToken(String text);
 
+    List<LayoutToken> retokenizeFromLayoutToken(List<LayoutToken> tokens);
+
     List<String> retokenizeSubdigits(List<String> chunks);
 
     List<LayoutToken> retokenizeSubdigitsWithLayoutToken(List<String> chunks);

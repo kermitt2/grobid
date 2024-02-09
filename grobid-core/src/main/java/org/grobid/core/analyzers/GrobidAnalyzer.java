@@ -195,6 +195,10 @@ public class GrobidAnalyzer implements Analyzer {
 		return tokenizeWithLayoutToken(text, null);
 	}
 
+	public List<LayoutToken> retokenizeFromLayoutToken(List<LayoutToken> tokens) {
+		return GrobidDefaultAnalyzer.getInstance().retokenizeFromLayoutToken(tokens);
+	}
+
 	public List<LayoutToken> tokenizeWithLayoutToken(String text, Language lang) {
         text = UnicodeUtil.normaliseText(text);
         List<String> tokens = tokenize(text, lang);

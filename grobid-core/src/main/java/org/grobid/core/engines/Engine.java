@@ -882,7 +882,9 @@ public class Engine implements Closeable {
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
-        return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
+        List<String> texts = new ArrayList<>();
+        texts.add(text);
+        return parsers.getReferenceExtractor().extractAllReferencesString(texts, filterDuplicate,
 			consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 

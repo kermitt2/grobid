@@ -8,7 +8,9 @@ import java.util.*;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorReference;
-import org.grobid.core.sax.MarecSaxParser;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.sax.ST36SaxParser;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
@@ -20,7 +22,7 @@ public class PatentParserTrainer extends AbstractTrainer {
     // the training or the test data - the value is empirically set
     // this window is used to maintain a certain level of over-sampling of the patent and NPL references, and avoid
     // to have the citation annotation too diluted because they are very rare (less than 1 token per 1000)
-    private static final int trainWindow = 200;
+    private static final int trainWindow = -1;
 
     public PatentParserTrainer() {
         super(GrobidModels.PATENT_CITATION);
@@ -72,9 +74,12 @@ public class PatentParserTrainer extends AbstractTrainer {
         int nbNPLRef = 0;
         int nbPatentRef = 0;
         int maxRef = 0;
+
+        // search report counter (note: not used for the moment)
         int srCitations = 0;
         int previousSrCitations = 0;
         int withSR = 0;
+
         try {
             System.out.println("sourcePathLabel: " + corpusPath);
             if (trainingOutputPath != null)
@@ -119,11 +124,6 @@ public class PatentParserTrainer extends AbstractTrainer {
             spf.setFeature("http://xml.org/sax/features/namespaces", false);
             spf.setFeature("http://xml.org/sax/features/validation", false);
 
-            List<OffsetPosition> journalsPositions = null;
-            List<OffsetPosition> abbrevJournalsPositions = null;
-            List<OffsetPosition> conferencesPositions = null;
-            List<OffsetPosition> publishersPositions = null;
-
             int n = 0;
             nbFiles = refFiles.length;
             for (; n < refFiles.length; n++) {
@@ -131,11 +131,14 @@ public class PatentParserTrainer extends AbstractTrainer {
                 String name = xmlfile.getName();
                 System.out.println(name);
 
+                /*if (!name.startsWith("WO-2008070663-A2"))
+                    continue;*/
+
                 // Patent + NPL REF. textual data (the "all" model)
-                MarecSaxParser sax = new MarecSaxParser();
+                ST36SaxParser sax = new ST36SaxParser();
                 sax.patentReferences = true;
                 sax.nplReferences = true;
-                sax.setN(trainWindow);
+                sax.setWindow(trainWindow);
 
                 // get a new instance of parser
                 final SAXParser p = spf.newSAXParser();
@@ -152,15 +155,10 @@ public class PatentParserTrainer extends AbstractTrainer {
                         withSR++;
                     }
                 }
-                journalsPositions = sax.journalsPositions;
-                abbrevJournalsPositions = sax.abbrevJournalsPositions;
-                conferencesPositions = sax.conferencesPositions;
-                publishersPositions = sax.publishersPositions;
-                //totalLength += sax.totalLength;
 
                 Writer writer = null;
                 if ( (writer2 == null) && (writer3 != null) )
-                        writer = writer3;
+                    writer = writer3;
                 if ( (writer2 != null) && (writer3 == null) )
                     writer = writer2;
                 else {      
@@ -170,18 +168,80 @@ public class PatentParserTrainer extends AbstractTrainer {
                         writer = writer3;
                 }
 
-                if (sax.accumulatedText != null) {
-                    String text = sax.accumulatedText.toString();
-                    // add features for patent+NPL
-                    addFeatures(text,
-                            writer,
-                            journalsPositions,
-                            abbrevJournalsPositions,
-                            conferencesPositions,
-                            publishersPositions);
-                    writer.write("\n \n");
+                if (sax.allAccumulatedTokens != null && sax.allAccumulatedTokens.size()>0) {
+                    int rank = 0;
+                    for (List<LayoutToken> accumulatedTokens : sax.allAccumulatedTokens) {
+
+                        if (accumulatedTokens.size() == 0) {
+                            rank++;
+                            continue;
+                        }
+
+                        List<String> accumulatedLabels = sax.allAccumulatedLabels.get(rank);
+
+                        List<List<LayoutToken>> segmentedAccumulatedTokens = new ArrayList<>();
+                        List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
+
+                        int maxSequence = 1000;
+                        if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
+                            List<String> newTexts = new ArrayList<>();
+                            maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+                        }
+
+                        if (accumulatedTokens.size() > maxSequence) {                         
+                            // we have a problem of sequence length for Deep Learning algorithms
+                            // we need to segment further. We ensure here that we don't segment 
+                            // near or inside patent or NPL references 
+                            int k = 0; 
+                            while(k<accumulatedTokens.size()) {
+                                int origin = k;
+
+                                if (k+maxSequence < accumulatedTokens.size()) {
+                                    k = k+maxSequence;
+                                    // adjust position to avoid reference label
+                                    while (accumulatedLabels.get(k-1).endsWith("refNPL>") || accumulatedLabels.get(k-1).endsWith("refPatent>")) {
+                                        k--;
+                                        if (k == origin)
+                                            break;
+                                    }
+                                } else 
+                                    k = accumulatedTokens.size();
+
+                                if (k > origin) {                              
+                                    segmentedAccumulatedTokens.add(accumulatedTokens.subList(origin, k));
+                                    segmentedAccumulatedLabels.add(accumulatedLabels.subList(origin, k));
+                                } else 
+                                    break;
+                            }
+                        } else {
+                            segmentedAccumulatedTokens.add(accumulatedTokens);
+                            segmentedAccumulatedLabels.add(accumulatedLabels);
+                        }
+
+                        for(int i=0; i<segmentedAccumulatedTokens.size(); i++) {
+
+                            List<LayoutToken> theAccumulatedTokens = segmentedAccumulatedTokens.get(i);
+                            List<String> theAccumulatedLabels = segmentedAccumulatedLabels.get(i);
+
+                            List<OffsetPosition> journalsPositions = Lexicon.getInstance().tokenPositionsJournalNames(theAccumulatedTokens);
+                            List<OffsetPosition> abbrevJournalsPositions = Lexicon.getInstance().tokenPositionsAbbrevJournalNames(theAccumulatedTokens);
+                            List<OffsetPosition> conferencesPositions = Lexicon.getInstance().tokenPositionsConferenceNames(theAccumulatedTokens);
+                            List<OffsetPosition> publishersPositions = Lexicon.getInstance().tokenPositionsPublisherNames(theAccumulatedTokens);
+
+                            // add features for patent+NPL
+                            addFeatures(theAccumulatedTokens,
+                                    theAccumulatedLabels,
+                                    writer,
+                                    journalsPositions,
+                                    abbrevJournalsPositions,
+                                    conferencesPositions,
+                                    publishersPositions);
+                            writer.write("\n \n");
+                        }
+
+                        rank++;
+                    }
                 }
-                
             }
 
             if (writer2 != null) {
@@ -209,41 +269,6 @@ public class PatentParserTrainer extends AbstractTrainer {
     }
 
 
-/*    public void train() {
-        createTrainingData(GrobidProperties.getTempPath().getAbsolutePath());
-//        String path = new File(new File("resources/dataset/patent/crfpp-templates/").getAbsolutePath()).getAbsolutePath();
-
-        // train the resulting training files with features (based external command line, no JNI
-        // binding for the training functions of CRF++)
-        //File trainingDataPath1 = new File(GrobidProperties.getTempPath() + "/npl.train");
-        //File trainingDataPath2 = new File(GrobidProperties.getTempPath() + "/patent.train");
-        File trainingDataPath3 = new File(GrobidProperties.getTempPath() + "/all.train");
-
-        // File templatePath1 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.npl.references.template");
-        //File templatePath2 = new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.patent.references.template");
-        File templatePath3 =
-                new File(getFilePath2Resources(), "dataset/patent/crfpp-templates/text.references.template");
-
-        GenericTrainer trainer = TrainerFactory.getTrainer(model);
-        trainer.setEpsilon(GrobidProperties.getEpsilon(model));
-        trainer.setWindow(GrobidProperties.getWindow(model));
-        trainer.setNbMaxIterations(GrobidProperties.getNbMaxIterations(model));
-        //File modelPath1 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL).getAbsolutePath() + NEW_MODEL_EXT);
-        //File modelPath2 = new File(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT).getAbsolutePath() + NEW_MODEL_EXT);
-        File modelPath3 =
-                new File(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL).getAbsolutePath() + NEW_MODEL_EXT);
-
-        //trainer.train(templatePath1, trainingDataPath1, modelPath1, GrobidProperties.getNBThreads());
-        //trainer.train(templatePath2, trainingDataPath2, modelPath2, GrobidProperties.getNBThreads());
-        trainer.train(templatePath3, trainingDataPath3, modelPath3, GrobidProperties.getNBThreads(), model);
-
-        //renaming
-        //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_NPL), modelPath1);
-        //renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_PATENT), modelPath2);
-        renameModels(GrobidProperties.getModelPath(GrobidModels.PATENT_ALL), modelPath3);
-    }
-*/
-
     /**
      * Create the set of training and evaluation sets from the annotated examples with
      * extraction of citations in the patent description body.
@@ -257,24 +282,19 @@ public class PatentParserTrainer extends AbstractTrainer {
         int maxRef = 0;
         try {
             // we use a SAX parser on the patent XML files
-            MarecSaxParser sax = new MarecSaxParser();
+            ST36SaxParser sax = new ST36SaxParser();
             sax.patentReferences = true;
             sax.nplReferences = true;
             int srCitations = 0;
             int previousSrCitations = 0;
             int withSR = 0;
 
-            List<OffsetPosition> journalsPositions = null;
-            List<OffsetPosition> abbrevJournalsPositions = null;
-            List<OffsetPosition> conferencesPositions = null;
-            List<OffsetPosition> publishersPositions = null;
-
             if (type == 0) {
                 // training set
-                sax.setN(trainWindow);
+                sax.setWindow(trainWindow);
             } else {
                 // for the test set we enlarge the focus window to include all the document.
-                sax.setN(-1);
+                sax.setWindow(-1);
             }
 
             // get a factory
@@ -327,22 +347,79 @@ public class PatentParserTrainer extends AbstractTrainer {
                                     withSR++;
                                 }
                             }
-                            journalsPositions = sax.journalsPositions;
-                            abbrevJournalsPositions = sax.abbrevJournalsPositions;
-                            conferencesPositions = sax.conferencesPositions;
-                            publishersPositions = sax.publishersPositions;
-                            //totalLength += sax.totalLength;
 
-                            if (sax.accumulatedText != null) {
-                                String text = sax.accumulatedText.toString();
-                                // add features for patent+NPL
-                                addFeatures(text,
-                                        writer,
-                                        journalsPositions,
-                                        abbrevJournalsPositions,
-                                        conferencesPositions,
-                                        publishersPositions);
-                                writer.write("\n");
+                            if (sax.allAccumulatedTokens != null && sax.allAccumulatedTokens.size()>0) {
+                                int rank = 0;
+                                for (List<LayoutToken> accumulatedTokens : sax.allAccumulatedTokens) {
+                                    if (accumulatedTokens.size() == 0) {
+                                        rank++;
+                                        continue;
+                                    }
+
+                                    List<String> accumulatedLabels = sax.allAccumulatedLabels.get(rank);
+
+                                    List<List<LayoutToken>> segmentedAccumulatedTokens = new ArrayList<>();
+                                    List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
+
+                                    int maxSequence = 1000;
+                                    if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
+                                        List<String> newTexts = new ArrayList<>();
+                                        maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+                                    }
+
+                                    if (accumulatedTokens.size() > maxSequence) {
+                                        // we have a problem of sequence length for Deep Learning algorithms
+                                        // we need to segment further. We ensure here that we don't segment 
+                                        // near or inside patent or NPL references 
+                                        int k = 0; 
+                                        while(k<accumulatedTokens.size()) {
+                                            int origin = k;
+
+                                            if (k+maxSequence < accumulatedTokens.size()) {
+                                                k = k+maxSequence;
+                                                // adjust position to avoid reference label
+                                                while (accumulatedLabels.get(k-1).endsWith("refNPL>") || accumulatedLabels.get(k-1).endsWith("refPatent>")) {
+                                                    k--;
+                                                    if (k == origin)
+                                                        break;
+                                                }
+                                            } else 
+                                                k = accumulatedTokens.size();
+
+                                            if (k > origin) {
+                                                segmentedAccumulatedTokens.add(accumulatedTokens.subList(origin, k));
+                                                segmentedAccumulatedLabels.add(accumulatedLabels.subList(origin, k));
+                                            } else 
+                                                break;
+                                        }
+                                    } else {
+                                        segmentedAccumulatedTokens.add(accumulatedTokens);
+                                        segmentedAccumulatedLabels.add(accumulatedLabels);
+                                    }
+
+                                    for(int i=0; i<segmentedAccumulatedTokens.size(); i++) {
+
+                                        List<LayoutToken> theAccumulatedTokens = segmentedAccumulatedTokens.get(i);
+                                        List<String> theAccumulatedLabels = segmentedAccumulatedLabels.get(i);
+
+                                        List<OffsetPosition> journalsPositions = Lexicon.getInstance().tokenPositionsJournalNames(theAccumulatedTokens);
+                                        List<OffsetPosition> abbrevJournalsPositions = Lexicon.getInstance().tokenPositionsAbbrevJournalNames(theAccumulatedTokens);
+                                        List<OffsetPosition> conferencesPositions = Lexicon.getInstance().tokenPositionsConferenceNames(theAccumulatedTokens);
+                                        List<OffsetPosition> publishersPositions = Lexicon.getInstance().tokenPositionsPublisherNames(theAccumulatedTokens);
+
+                                        // add features for patent+NPL
+                                        addFeatures(theAccumulatedTokens,
+                                                theAccumulatedLabels,
+                                                writer,
+                                                journalsPositions,
+                                                abbrevJournalsPositions,
+                                                conferencesPositions,
+                                                publishersPositions);
+                                        writer.write("\n \n");
+                                    }
+
+                                    rank++;
+                                }
                             }
                         } catch (Exception e) {
                             throw new GrobidException("An exception occured while running Grobid.", e);
@@ -378,16 +455,14 @@ public class PatentParserTrainer extends AbstractTrainer {
         }
     }
 
-    public void addFeatures(String text,
+    public void addFeatures(List<LayoutToken> tokens,
+                            List<String> labels,
                             Writer writer,
                             List<OffsetPosition> journalPositions,
                             List<OffsetPosition> abbrevJournalPositions,
                             List<OffsetPosition> conferencePositions,
                             List<OffsetPosition> publisherPositions) {
         try {
-            String line;
-            StringTokenizer st = new StringTokenizer(text, "\n");
-            int totalLine = st.countTokens();
 
             int posit = 0;
             int currentJournalPositions = 0;
@@ -399,21 +474,22 @@ public class PatentParserTrainer extends AbstractTrainer {
             boolean isConferenceToken;
             boolean isPublisherToken;
             boolean skipTest;
-            while (st.hasMoreTokens()) {
+            int n = 0;
+            for(LayoutToken token : tokens) {
+                String label = labels.get(n);
+
                 isJournalToken = false;
                 isAbbrevJournalToken = false;
                 isConferenceToken = false;
                 isPublisherToken = false;
                 skipTest = false;
-                line = st.nextToken();
-                if (line.trim().length() == 0) {
-                    writer.write("\n");
-                    posit = 0;
-                    continue;
-                } else if (line.endsWith("\t<ignore>")) {
+
+                if (label.equals("<ignore>")) {
                     posit++;
+                    n++;
                     continue;
                 }
+
                 // check the position of matches for journals
                 if (journalPositions != null) {
                     if (currentJournalPositions == journalPositions.size() - 1) {
@@ -506,8 +582,8 @@ public class PatentParserTrainer extends AbstractTrainer {
                     }
                 }
                 FeaturesVectorReference featuresVector =
-                        FeaturesVectorReference.addFeaturesPatentReferences(line,
-                                totalLine,
+                        FeaturesVectorReference.addFeaturesPatentReferences(token, label, 
+                                tokens.size(),
                                 posit,
                                 isJournalToken,
                                 isAbbrevJournalToken,
@@ -518,6 +594,7 @@ public class PatentParserTrainer extends AbstractTrainer {
                 writer.write(featuresVector.printVector());
                 writer.flush();
                 posit++;
+                n++;
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
