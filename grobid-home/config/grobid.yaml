@@ -285,7 +285,7 @@ grobid:
         #transformer: "allenai/scibert_scivocab_cased"
 
     - name: "license"
-      # at this time, must always be DeLFT, not other implementation
+      # at this time, for being active, it must be DeLFT, no other implementation is available
       # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
       #engine: "delft"
       engine: "wapiti"
