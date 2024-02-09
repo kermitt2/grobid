@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2024-02-08T19:56:50Z. . 
+Schema generated from ODD source 2024-02-09T13:54:45Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -312,6 +312,19 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
             <data type="anyURI">
                <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.breaking.attributes">
+      <ref name="tei_att.breaking.attribute.break"/>
+   </define>
+   <define name="tei_att.breaking.attribute.break">
+      <optional>
+         <attribute name="break">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</a:documentation>
+            <data type="token">
+               <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
          </attribute>
       </optional>
@@ -1243,6 +1256,63 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          </attribute>
       </optional>
    </define>
+   <define name="tei_att.edition.attributes">
+      <ref name="tei_att.edition.attribute.ed"/>
+      <ref name="tei_att.edition.attribute.edRef"/>
+   </define>
+   <define name="tei_att.edition.attribute.ed">
+      <optional>
+         <attribute name="ed">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.edition.attribute.edRef">
+      <optional>
+         <attribute name="edRef">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.spanning.attributes">
+      <ref name="tei_att.spanning.attribute.spanTo"/>
+   </define>
+   <define name="tei_att.spanning.attribute.spanTo">
+      <optional>
+         <attribute name="spanTo">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the end of a span initiated by the element bearing this attribute.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            id="Grobid-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-8">
+      <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                context="tei:*[@spanTo]">
+            <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
+The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
+            </sch:assert>
+          </sch:rule>
+   </pattern>
    <define name="tei_att.timed.attributes">
       <ref name="tei_att.timed.attribute.start"/>
       <ref name="tei_att.timed.attribute.end"/>
@@ -1469,21 +1539,27 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.emphLike">
       <choice>
+         <ref name="tei_gloss"/>
          <ref name="tei_term"/>
          <ref name="tei_title"/>
       </choice>
    </define>
    <define name="tei_model.emphLike_alternation">
       <choice>
+         <ref name="tei_gloss"/>
          <ref name="tei_term"/>
          <ref name="tei_title"/>
       </choice>
    </define>
    <define name="tei_model.emphLike_sequence">
+      <ref name="tei_gloss"/>
       <ref name="tei_term"/>
       <ref name="tei_title"/>
    </define>
    <define name="tei_model.emphLike_sequenceOptional">
+      <optional>
+         <ref name="tei_gloss"/>
+      </optional>
       <optional>
          <ref name="tei_term"/>
       </optional>
@@ -1493,6 +1569,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.emphLike_sequenceOptionalRepeatable">
       <zeroOrMore>
+         <ref name="tei_gloss"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="tei_term"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -1500,6 +1579,9 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </zeroOrMore>
    </define>
    <define name="tei_model.emphLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="tei_gloss"/>
+      </oneOrMore>
       <oneOrMore>
          <ref name="tei_term"/>
       </oneOrMore>
@@ -1861,28 +1943,40 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.milestoneLike">
       <choice>
+         <ref name="tei_lb"/>
          <ref name="tei_anchor"/>
       </choice>
    </define>
    <define name="tei_model.milestoneLike_alternation">
       <choice>
+         <ref name="tei_lb"/>
          <ref name="tei_anchor"/>
       </choice>
    </define>
    <define name="tei_model.milestoneLike_sequence">
+      <ref name="tei_lb"/>
       <ref name="tei_anchor"/>
    </define>
    <define name="tei_model.milestoneLike_sequenceOptional">
+      <optional>
+         <ref name="tei_lb"/>
+      </optional>
       <optional>
          <ref name="tei_anchor"/>
       </optional>
    </define>
    <define name="tei_model.milestoneLike_sequenceOptionalRepeatable">
       <zeroOrMore>
+         <ref name="tei_lb"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="tei_anchor"/>
       </zeroOrMore>
    </define>
    <define name="tei_model.milestoneLike_sequenceRepeatable">
+      <oneOrMore>
+         <ref name="tei_lb"/>
+      </oneOrMore>
       <oneOrMore>
          <ref name="tei_anchor"/>
       </oneOrMore>
@@ -2176,35 +2270,35 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.pLike">
       <choice>
+         <ref name="tei_model.segLike"/>
          <ref name="tei_p"/>
          <ref name="tei_formula"/>
-         <ref name="tei_s"/>
          <ref name="tei_trash"/>
       </choice>
    </define>
    <define name="tei_model.pLike_alternation">
       <choice>
+         <ref name="tei_model.segLike_alternation"/>
          <ref name="tei_p"/>
          <ref name="tei_formula"/>
-         <ref name="tei_s"/>
          <ref name="tei_trash"/>
       </choice>
    </define>
    <define name="tei_model.pLike_sequence">
+      <ref name="tei_model.segLike_sequence"/>
       <ref name="tei_p"/>
       <ref name="tei_formula"/>
-      <ref name="tei_s"/>
       <ref name="tei_trash"/>
    </define>
    <define name="tei_model.pLike_sequenceOptional">
+      <optional>
+         <ref name="tei_model.segLike_sequenceOptional"/>
+      </optional>
       <optional>
          <ref name="tei_p"/>
       </optional>
       <optional>
          <ref name="tei_formula"/>
-      </optional>
-      <optional>
-         <ref name="tei_s"/>
       </optional>
       <optional>
          <ref name="tei_trash"/>
@@ -2212,13 +2306,13 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.pLike_sequenceOptionalRepeatable">
       <zeroOrMore>
+         <ref name="tei_model.segLike_sequenceOptionalRepeatable"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="tei_p"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="tei_formula"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="tei_s"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="tei_trash"/>
@@ -2226,13 +2320,13 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
    </define>
    <define name="tei_model.pLike_sequenceRepeatable">
       <oneOrMore>
+         <ref name="tei_model.segLike_sequenceRepeatable"/>
+      </oneOrMore>
+      <oneOrMore>
          <ref name="tei_p"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_formula"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_s"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_trash"/>
@@ -2440,22 +2534,32 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </choice>
    </define>
    <define name="tei_model.quoteLike">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_quote"/>
+      </choice>
    </define>
    <define name="tei_model.quoteLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="tei_quote"/>
+      </choice>
    </define>
    <define name="tei_model.quoteLike_sequence">
-      <empty/>
+      <ref name="tei_quote"/>
    </define>
    <define name="tei_model.quoteLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="tei_quote"/>
+      </optional>
    </define>
    <define name="tei_model.quoteLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="tei_quote"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.quoteLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="tei_quote"/>
+      </oneOrMore>
    </define>
    <define name="tei_model.attributable">
       <choice>
@@ -3014,7 +3118,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="Grobid-att.calendarSystem-calendar-calendar-constraint-rule-8">
+            id="Grobid-att.calendarSystem-calendar-calendar-constraint-rule-9">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns="http://www.tei-c.org/ns/1.0"
@@ -3067,12 +3171,22 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
          <empty/>
       </element>
    </define>
+   <define name="tei_quote">
+      <element name="quote">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</a:documentation>
+         <ref name="tei_macro.specialPara"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_desc">
       <element name="desc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a short description of the purpose, function, or use of its parent element, or when the parent is a documentation element, describes or defines the object being documented.  [22.4.1. Description of Components]</a:documentation>
          <ref name="tei_macro.limitedContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-desc-deprecationInfo-only-in-deprecated-constraint-rule-9">
+                  id="Grobid-desc-deprecationInfo-only-in-deprecated-constraint-rule-10">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3100,6 +3214,18 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
                </choice>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_gloss">
+      <element name="gloss">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(gloss) identifies a phrase or word used to provide a gloss or definition for some other word or phrase. [3.4.1. Terms and Glosses 22.4.1. Description of Components]</a:documentation>
+         <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.declaring.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.pointing.attributes"/>
+         <ref name="tei_att.cReferencing.attributes"/>
          <empty/>
       </element>
    </define>
@@ -3175,7 +3301,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
             </attribute>
          </optional> 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-rt-from-rt-from-constraint-assert-5">
+                  id="Grobid-rt-from-rt-from-constraint-assert-6">
             <rule context="tei:rt/@from">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -3193,7 +3319,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
             </attribute>
          </optional> 
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-rt-to-rt-to-constraint-assert-6">
+                  id="Grobid-rt-to-rt-to-constraint-assert-7">
             <rule context="tei:rt/@to">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns="http://www.tei-c.org/ns/1.0"
@@ -3243,7 +3369,7 @@ Suggested values include: 1] deprecationInfo (deprecation information)</a:docume
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-name-calendar-calendar-check-name-constraint-rule-10">
+                  id="Grobid-name-calendar-calendar-check-name-constraint-rule-11">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3463,7 +3589,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-list-gloss-list-must-have-labels-constraint-rule-11">
+                  id="Grobid-list-gloss-list-must-have-labels-constraint-rule-12">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3589,6 +3715,19 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <empty/>
       </element>
    </define>
+   <define name="tei_lb">
+      <element name="lb">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line beginning) marks the beginning of a new (typographic) line in some edition or version of a text. [3.11.3. Milestone
+Elements 7.2.5. Speech Contents]</a:documentation>
+         <empty/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.edition.attributes"/>
+         <ref name="tei_att.spanning.attributes"/>
+         <ref name="tei_att.breaking.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_analytic">
       <element name="analytic">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(analytic level) contains bibliographic elements describing an item (e.g. an article or poem) published within a monograph or journal and not as an independent publication. [3.12.2.1. Analytic, Monographic, and Series Levels]</a:documentation>
@@ -3671,7 +3810,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-author-calendar-calendar-check-author-constraint-rule-12">
+                  id="Grobid-author-calendar-calendar-check-author-constraint-rule-13">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3704,7 +3843,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-editor-calendar-calendar-check-editor-constraint-rule-13">
+                  id="Grobid-editor-calendar-calendar-check-editor-constraint-rule-14">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3747,7 +3886,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-title-calendar-calendar-check-title-constraint-rule-14">
+                  id="Grobid-title-calendar-calendar-check-title-constraint-rule-15">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3797,7 +3936,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-meeting-calendar-calendar-check-meeting-constraint-rule-15">
+                  id="Grobid-meeting-calendar-calendar-check-meeting-constraint-rule-16">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -4121,7 +4260,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-idno-calendar-calendar-check-idno-constraint-rule-16">
+                  id="Grobid-idno-calendar-calendar-check-idno-constraint-rule-17">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4213,7 +4352,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-licence-calendar-calendar-check-licence-constraint-rule-17">
+                  id="Grobid-licence-calendar-calendar-check-licence-constraint-rule-18">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4358,7 +4497,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             <text/>
          </attribute>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-citeStructure-match-citestructure-outer-match-constraint-rule-18">
+                  id="Grobid-citeStructure-match-citestructure-outer-match-constraint-rule-19">
             <rule xmlns:xi="http://www.w3.org/2001/XInclude"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
                   context="tei:citeStructure[not(parent::tei:citeStructure)]">
@@ -4366,7 +4505,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-citeStructure-match-citestructure-inner-match-constraint-rule-19">
+                  id="Grobid-citeStructure-match-citestructure-inner-match-constraint-rule-20">
             <rule xmlns:xi="http://www.w3.org/2001/XInclude"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
                   context="tei:citeStructure[parent::tei:citeStructure]">
@@ -4422,7 +4561,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-unitDecl-calendar-calendar-check-unitDecl-constraint-rule-20">
+                  id="Grobid-unitDecl-calendar-calendar-check-unitDecl-constraint-rule-21">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4470,7 +4609,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-unitDef-calendar-calendar-check-unitDef-constraint-rule-21">
+                  id="Grobid-unitDef-calendar-calendar-check-unitDef-constraint-rule-22">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4505,7 +4644,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-conversion-calendar-calendar-check-conversion-constraint-rule-22">
+                  id="Grobid-conversion-calendar-calendar-check-conversion-constraint-rule-23">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4558,7 +4697,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
             </choice>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-application-calendar-check-application-constraint-rule-23">
+                  id="Grobid-application-calendar-check-application-constraint-rule-24">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4585,7 +4724,7 @@ Sample values include: 1] book; 2] chapter; 3] entry; 4] poem; 5] letter; 6] lin
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-application-calendar-calendar-check-application-constraint-rule-24">
+                  id="Grobid-application-calendar-calendar-check-application-constraint-rule-25">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -4808,7 +4947,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-change-calendar-calendar-check-change-constraint-rule-25">
+                  id="Grobid-change-calendar-calendar-check-change-constraint-rule-26">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5561,7 +5700,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-orgName-calendar-calendar-check-orgName-constraint-rule-26">
+                  id="Grobid-orgName-calendar-calendar-check-orgName-constraint-rule-27">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5597,7 +5736,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-persName-calendar-calendar-check-persName-constraint-rule-27">
+                  id="Grobid-persName-calendar-calendar-check-persName-constraint-rule-28">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5682,7 +5821,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-country-calendar-calendar-check-country-constraint-rule-28">
+                  id="Grobid-country-calendar-calendar-check-country-constraint-rule-29">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5717,7 +5856,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-region-calendar-calendar-check-region-constraint-rule-29">
+                  id="Grobid-region-calendar-calendar-check-region-constraint-rule-30">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5752,7 +5891,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-settlement-calendar-calendar-check-settlement-constraint-rule-30">
+                  id="Grobid-settlement-calendar-calendar-check-settlement-constraint-rule-31">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5809,7 +5948,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-affiliation-calendar-calendar-check-affiliation-constraint-rule-31">
+                  id="Grobid-affiliation-calendar-calendar-check-affiliation-constraint-rule-32">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -5844,7 +5983,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-gender-calendar-calendar-check-gender-constraint-rule-32">
+                  id="Grobid-gender-calendar-calendar-check-gender-constraint-rule-33">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -6024,7 +6163,7 @@ Suggested values include: 1] conjecture (conjecture); 2] selfIdentification (sel
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-persPronouns-calendar-calendar-check-persPronouns-constraint-rule-33">
+                  id="Grobid-persPronouns-calendar-calendar-check-persPronouns-constraint-rule-34">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -6102,7 +6241,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-state-calendar-calendar-check-state-constraint-rule-34">
+                  id="Grobid-state-calendar-calendar-check-state-constraint-rule-35">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -6138,7 +6277,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             </attribute>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-objectName-calendar-calendar-check-objectName-constraint-rule-35">
+                  id="Grobid-objectName-calendar-calendar-check-objectName-constraint-rule-36">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"
@@ -6355,7 +6494,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link) defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. Links]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-link-linkTargets3-constraint-assert-33">
+                  id="Grobid-link-linkTargets3-constraint-assert-34">
             <rule context="tei:link">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6387,7 +6526,7 @@ Sample values include: 1] e (e); 2] he (he); 3] she (she); 4] they (they)</a:doc
             <ref name="tei_model.standOffPart"/>
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-standOff-nested_standOff_should_be_typed-constraint-assert-34">
+                  id="Grobid-standOff-nested_standOff_should_be_typed-constraint-assert-35">
             <rule context="tei:standOff">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -6854,7 +6993,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="Grobid-facsimile-no_facsimile_text_nodes-constraint-rule-36">
+                  id="Grobid-facsimile-no_facsimile_text_nodes-constraint-rule-37">
             <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns="http://www.tei-c.org/ns/1.0"

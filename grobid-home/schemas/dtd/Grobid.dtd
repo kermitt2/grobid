@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2024-02-08T19:57:10Z. .
+DTD generated from ODD source 2024-02-09T13:55:02Z. .
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/
 
@@ -297,6 +297,10 @@ scope %teidata.enumerated;  #IMPLIED'>
 hand %teidata.pointer;  #IMPLIED'>
 <!ENTITY % tei_att.written.attributes '
  %tei_att.written.attribute.hand;'> 
+<!ENTITY % tei_att.breaking.attribute.break '
+break %teidata.enumerated;  #IMPLIED'>
+<!ENTITY % tei_att.breaking.attributes '
+ %tei_att.breaking.attribute.break;'> 
 <!ENTITY % tei_att.cReferencing.attribute.cRef '
 cRef %teidata.text;  #IMPLIED'>
 <!ENTITY % tei_att.cReferencing.attributes '
@@ -493,6 +497,18 @@ function %teidata.enumerated;  #IMPLIED'>
 sortKey %teidata.word;  #IMPLIED'>
 <!ENTITY % tei_att.sortable.attributes '
  %tei_att.sortable.attribute.sortKey;'> 
+<!ENTITY % tei_att.edition.attribute.ed '
+ed CDATA  #IMPLIED'>
+
+<!ENTITY % tei_att.edition.attribute.edRef '
+edRef CDATA  #IMPLIED'>
+<!ENTITY % tei_att.edition.attributes '
+ %tei_att.edition.attribute.ed;
+ %tei_att.edition.attribute.edRef;'> 
+<!ENTITY % tei_att.spanning.attribute.spanTo '
+spanTo %teidata.pointer;  #IMPLIED'>
+<!ENTITY % tei_att.spanning.attributes '
+ %tei_att.spanning.attribute.spanTo;'> 
 <!ENTITY % tei_att.timed.attribute.start '
 start %teidata.pointer;  #IMPLIED'>
 
@@ -540,11 +556,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.hiLike_sequenceOptional "hi?"> 
 <!ENTITY % model.hiLike_sequenceOptionalRepeatable "hi*"> 
 <!ENTITY % model.hiLike_sequenceRepeatable "hi+"> 
-<!ENTITY % model.emphLike "term |title"> 
-<!ENTITY % model.emphLike_sequence "term, title"> 
-<!ENTITY % model.emphLike_sequenceOptional "term?, title?"> 
-<!ENTITY % model.emphLike_sequenceOptionalRepeatable "term*, title*"> 
-<!ENTITY % model.emphLike_sequenceRepeatable "term+, title+"> 
+<!ENTITY % model.emphLike "gloss |term |title"> 
+<!ENTITY % model.emphLike_sequence "gloss, term, title"> 
+<!ENTITY % model.emphLike_sequenceOptional "gloss?, term?, title?"> 
+<!ENTITY % model.emphLike_sequenceOptionalRepeatable "gloss*, term*, title*"> 
+<!ENTITY % model.emphLike_sequenceRepeatable "gloss+, term+, title+"> 
 <!ENTITY % model.highlighted "%model.hiLike; |%model.emphLike;"> 
 <!ENTITY % model.highlighted_sequence "%model.hiLike;, %model.emphLike;"> 
 <!ENTITY % model.highlighted_sequenceOptional "%model.hiLike;?, %model.emphLike;?"> 
@@ -610,11 +626,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.global.meta_sequenceOptional "link?"> 
 <!ENTITY % model.global.meta_sequenceOptionalRepeatable "link*"> 
 <!ENTITY % model.global.meta_sequenceRepeatable "link+"> 
-<!ENTITY % model.milestoneLike "anchor"> 
-<!ENTITY % model.milestoneLike_sequence "anchor"> 
-<!ENTITY % model.milestoneLike_sequenceOptional "anchor?"> 
-<!ENTITY % model.milestoneLike_sequenceOptionalRepeatable "anchor*"> 
-<!ENTITY % model.milestoneLike_sequenceRepeatable "anchor+"> 
+<!ENTITY % model.milestoneLike "lb |anchor"> 
+<!ENTITY % model.milestoneLike_sequence "lb, anchor"> 
+<!ENTITY % model.milestoneLike_sequenceOptional "lb?, anchor?"> 
+<!ENTITY % model.milestoneLike_sequenceOptionalRepeatable "lb*, anchor*"> 
+<!ENTITY % model.milestoneLike_sequenceRepeatable "lb+, anchor+"> 
 <!ENTITY % model.gLike ""> 
 <!ENTITY % model.gLike_sequence ""> 
 <!ENTITY % model.gLike_sequenceOptional ""> 
@@ -665,11 +681,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.lLike_sequenceOptional ""> 
 <!ENTITY % model.lLike_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.lLike_sequenceRepeatable ""> 
-<!ENTITY % model.pLike "p |formula |s |trash"> 
-<!ENTITY % model.pLike_sequence "p, formula, s, trash"> 
-<!ENTITY % model.pLike_sequenceOptional "p?, formula?, s?, trash?"> 
-<!ENTITY % model.pLike_sequenceOptionalRepeatable "p*, formula*, s*, trash*"> 
-<!ENTITY % model.pLike_sequenceRepeatable "p+, formula+, s+, trash+"> 
+<!ENTITY % model.pLike "%model.segLike; |p |formula |trash"> 
+<!ENTITY % model.pLike_sequence "%model.segLike;, p, formula, trash"> 
+<!ENTITY % model.pLike_sequenceOptional "%model.segLike;?, p?, formula?, trash?"> 
+<!ENTITY % model.pLike_sequenceOptionalRepeatable "%model.segLike;*, p*, formula*, trash*"> 
+<!ENTITY % model.pLike_sequenceRepeatable "%model.segLike;+, p+, formula+, trash+"> 
 <!ENTITY % model.stageLike ""> 
 <!ENTITY % model.stageLike_sequence ""> 
 <!ENTITY % model.stageLike_sequenceOptional ""> 
@@ -740,16 +756,16 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.descLike_sequenceOptional "desc?"> 
 <!ENTITY % model.descLike_sequenceOptionalRepeatable "desc*"> 
 <!ENTITY % model.descLike_sequenceRepeatable "desc+"> 
-<!ENTITY % model.quoteLike ""> 
-<!ENTITY % model.quoteLike_sequence ""> 
-<!ENTITY % model.quoteLike_sequenceOptional ""> 
-<!ENTITY % model.quoteLike_sequenceOptionalRepeatable ""> 
-<!ENTITY % model.quoteLike_sequenceRepeatable ""> 
-<!ENTITY % model.attributable ""> 
-<!ENTITY % model.attributable_sequence ""> 
-<!ENTITY % model.attributable_sequenceOptional ""> 
-<!ENTITY % model.attributable_sequenceOptionalRepeatable ""> 
-<!ENTITY % model.attributable_sequenceRepeatable ""> 
+<!ENTITY % model.quoteLike "quote"> 
+<!ENTITY % model.quoteLike_sequence "quote"> 
+<!ENTITY % model.quoteLike_sequenceOptional "quote?"> 
+<!ENTITY % model.quoteLike_sequenceOptionalRepeatable "quote*"> 
+<!ENTITY % model.quoteLike_sequenceRepeatable "quote+"> 
+<!ENTITY % model.attributable "%model.quoteLike;"> 
+<!ENTITY % model.attributable_sequence "%model.quoteLike;"> 
+<!ENTITY % model.attributable_sequenceOptional "%model.quoteLike;?"> 
+<!ENTITY % model.attributable_sequenceOptionalRepeatable "%model.quoteLike;*"> 
+<!ENTITY % model.attributable_sequenceRepeatable "%model.quoteLike;+"> 
 <!ENTITY % model.respLike "author |editor |meeting"> 
 <!ENTITY % model.respLike_sequence "author, editor, meeting"> 
 <!ENTITY % model.respLike_sequenceOptional "author?, editor?, meeting?"> 
@@ -830,11 +846,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.pPart.data_sequenceOptional "%model.dateLike;?, %model.measureLike;?, %model.addressLike;?, %model.nameLike;?"> 
 <!ENTITY % model.pPart.data_sequenceOptionalRepeatable "%model.dateLike;*, %model.measureLike;*, %model.addressLike;*, %model.nameLike;*"> 
 <!ENTITY % model.pPart.data_sequenceRepeatable "%model.dateLike;+, %model.measureLike;+, %model.addressLike;+, %model.nameLike;+"> 
-<!ENTITY % model.inter "%model.biblLike; |%model.labelLike; |%model.listLike;"> 
-<!ENTITY % model.inter_sequence "%model.biblLike;, %model.labelLike;, %model.listLike;"> 
-<!ENTITY % model.inter_sequenceOptional "%model.biblLike;?, %model.labelLike;?, %model.listLike;?"> 
-<!ENTITY % model.inter_sequenceOptionalRepeatable "%model.biblLike;*, %model.labelLike;*, %model.listLike;*"> 
-<!ENTITY % model.inter_sequenceRepeatable "%model.biblLike;+, %model.labelLike;+, %model.listLike;+"> 
+<!ENTITY % model.inter "%model.biblLike; |%model.labelLike; |%model.listLike; |%model.attributable;"> 
+<!ENTITY % model.inter_sequence "%model.biblLike;, %model.labelLike;, %model.listLike;, %model.attributable;"> 
+<!ENTITY % model.inter_sequenceOptional "%model.biblLike;?, %model.labelLike;?, %model.listLike;?, %model.attributable;?"> 
+<!ENTITY % model.inter_sequenceOptionalRepeatable "%model.biblLike;*, %model.labelLike;*, %model.listLike;*, %model.attributable;*"> 
+<!ENTITY % model.inter_sequenceRepeatable "%model.biblLike;+, %model.labelLike;+, %model.listLike;+, %model.attributable;+"> 
 <!ENTITY % model.common "%model.divPart; |%model.inter;"> 
 <!ENTITY % model.common_sequence "%model.divPart;, %model.inter;"> 
 <!ENTITY % model.common_sequenceOptional "%model.divPart;?, %model.inter;?"> 
@@ -1103,7 +1119,7 @@ ana CDATA  #IMPLIED'>
 
 <!ENTITY % macro.limitedContent '(#PCDATA|%model.limitedPhrase;|%model.inter;)*' >
 
-<!ENTITY % macro.phraseSeq '(#PCDATA|_DUMMY_model.gLike|_DUMMY_model.attributable|%model.phrase;|%model.global;)*' >
+<!ENTITY % macro.phraseSeq '(#PCDATA|_DUMMY_model.gLike|%model.attributable;|%model.phrase;|%model.global;)*' >
 
 <!ENTITY % macro.phraseSeq.limited '(#PCDATA|%model.limitedPhrase;|%model.global;)*' >
 
@@ -1498,6 +1514,15 @@ calendar CDATA  #IMPLIED >
  %tei_att.typed.attributes;
 calendar CDATA  #IMPLIED
 value CDATA  #IMPLIED >
+<!--doc:(gloss) identifies a phrase or word used to provide a gloss or definition for some other word or phrase. [3.4.1. Terms and Glosses 22.4.1. Description of Components] -->
+<!ELEMENT gloss %macro.phraseSeq;>
+<!ATTLIST gloss xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST gloss
+ %tei_att.global.attributes;
+ %tei_att.declaring.attributes;
+ %tei_att.typed.attributes;
+ %tei_att.pointing.attributes;
+ %tei_att.cReferencing.attributes; >
 <!--doc:(graphic) indicates the location of a graphic or illustration, either forming part of a text, or providing an image of it. [3.10. Graphics and Other Non-textual Components 11.1. Digital Facsimiles] -->
 <!ELEMENT graphic (%model.descLike;)*>
 <!ATTLIST graphic xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1556,6 +1581,16 @@ scheme %teidata.pointer;  #IMPLIED >
  %tei_att.typed.attributes;
  %tei_att.placement.attributes;
  %tei_att.written.attributes; >
+<!--doc:(line beginning) marks the beginning of a new (typographic) line in some edition or version of a text. [3.11.3. Milestone
+Elements 7.2.5. Speech Contents] -->
+<!ELEMENT lb  EMPTY>
+<!ATTLIST lb xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST lb
+ %tei_att.global.attributes;
+ %tei_att.typed.attributes;
+ %tei_att.edition.attributes;
+ %tei_att.spanning.attributes;
+ %tei_att.breaking.attributes; >
 <!--doc:contains information about a licence or other legal agreement applicable to the text. [2.2.4. Publication, Distribution, Licensing, etc.] -->
 <!ELEMENT licence %macro.specialPara;>
 <!ATTLIST licence xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1776,6 +1811,13 @@ age %teidata.enumerated;  #IMPLIED >
 <!ATTLIST publisher
  %tei_att.global.attributes;
  %tei_att.canonical.attributes; >
+<!--doc:(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts] -->
+<!ELEMENT quote %macro.specialPara;>
+<!ATTLIST quote xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST quote
+ %tei_att.global.attributes;
+ %tei_att.typed.attributes;
+ %tei_att.notated.attributes; >
 <!--doc:(ruby base) contains the base text annotated by a ruby gloss. [3.4.2. Ruby Annotations] -->
 <!ELEMENT rb %macro.phraseSeq;>
 <!ATTLIST rb xmlns CDATA "http://www.tei-c.org/ns/1.0">

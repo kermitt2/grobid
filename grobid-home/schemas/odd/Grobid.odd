@@ -15,7 +15,7 @@
             <sourceDesc>
                 <p>created on Sunday 05th October 2014 06:25:09 AM</p>
             </sourceDesc>
-        </fileDesc><encodingDesc><appInfo><application ident="RomaJS" version="1.0.0" when="2024-02-08T19:56:37.127Z"><desc>File edited with <ref target="https://github.com/TEIC/romajs">RomaJS</ref></desc></application></appInfo></encodingDesc>
+        </fileDesc><encodingDesc><appInfo><application ident="RomaJS" version="1.0.0" when="2024-02-09T13:54:32.617Z"><desc>File edited with <ref target="https://github.com/TEIC/romajs">RomaJS</ref></desc></application></appInfo></encodingDesc>
     </teiHeader>
     <text>
         <front>
@@ -27,7 +27,7 @@
             <schemaSpec ident="Grobid" docLang="en" prefix="tei_" xml:lang="en" targetLang="en">
                 <!--moduleRef
                     url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/-->
-                <moduleRef key="core" except="abbr add addName binaryObject cb choice cit citedRange corr del distinct divGen emph expan                     foreign gap gb gloss headItem headLabel index l lb lg measure measureGrp media mentioned milestone num orig pb q                     quote reg relatedItem resp respStmt rs said sic soCalled sp speaker stage teiCorpus textLang time unclear"/>
+                <moduleRef key="core" except="abbr add addName binaryObject cb choice cit citedRange corr del distinct divGen emph expan foreign gap gb headItem headLabel index l lg measure measureGrp media mentioned milestone num orig pb q reg relatedItem resp respStmt rs said sic soCalled sp speaker stage teiCorpus textLang time unclear"/>
                 <moduleRef key="tei" except=""/>
                 <moduleRef key="header" except="authority biblFull cRefPattern calendar calendarDesc catDesc catRef category classDecl correction creation distributor editorialDecl extent funder geoDecl handNote hyphenation interpretation langUsage language listChange listPrefixDef namespace normalization prefixDef principal projectDesc punctuation quotation refState refsDecl rendition samplingDecl scriptNote segmentation sponsor stdVals styleDefDecl tagUsage tagsDecl taxonomy typeNote"/>
                 <moduleRef key="textstructure" except="argument byline closer dateline div1 div2 div3 div4 div5 div6 div7                     docAuthor docDate docEdition docImprint docTitle epigraph floatingText group imprimatur opener postscript                     salute signed titlePage titlePart titlePart trailer"/>
@@ -245,30 +245,27 @@
                     </attList>
                 </classSpec>
                 
-                <elementSpec ident="availability" mode="change">
+                <!--elementSpec ident="availability" mode="change">
                     <attList>
-                        <attDef ident="resp" mode="change">
+                        <attDef ident="copyrightOwner">
                             <datatype>
                                 <dataRef name="string"/>
                             </datatype>
-                            <valList type="closed" mode="change">
-                                <valItem mode="add" ident="authors">
-                                    <desc versionDate="2024-02-08" xml:lang="en">Copyrights owner of the document are the authors</desc>
+                            <valList type="closed">
+                                <valItem ident="publisher">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright is owned by the publisher.</desc>
                                 </valItem>
-                                <valItem mode="add" ident="publisher">
-                                    <desc versionDate="2024-02-08" xml:lang="en">Copyrights owner of the document is the publisher</desc>
+                                <valItem ident="authors">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright is owned by the authors.</desc>
+                                </valItem>
+                                <valItem ident="unknown">
+                                    <desc versionDate="2024-02-01" xml:lang="en">The copyright owner is unknown or undetermined.</desc>
                                 </valItem>
                             </valList>
                         </attDef>
                     </attList>
-                </elementSpec>
-
-                <elementSpec ident="s" mode="change">
-                    <classes mode="change">
-                        <memberOf key="model.pLike"/>
-                    </classes>
-                </elementSpec>
-            </schemaSpec>
+                </elementSpec-->
+            <elementSpec ident="availability" mode="change"><attList><attDef ident="resp" mode="change"><datatype><dataRef name="string"/></datatype><valList type="closed" mode="change"><valItem mode="add" ident="authors"><desc versionDate="2024-02-08" xml:lang="en">Copyrights owner of the document are the authors</desc></valItem><valItem mode="add" ident="publisher"><desc versionDate="2024-02-08" xml:lang="en">Copyrights owner of the document is the publisher</desc></valItem></valList></attDef></attList></elementSpec><classSpec ident="model.segLike" type="model" mode="change"><classes mode="change"><memberOf key="model.pLike"/></classes></classSpec></schemaSpec>
         </body>
     </text>
 </TEI>

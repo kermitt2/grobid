@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2024-02-08T19:57:04Z. . 
+    Schema generated from ODD source 2024-02-09T13:54:56Z. . 
     TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
     TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
     
@@ -19,6 +19,7 @@
   </xs:complexType>
   <xs:complexType name="tei_macro.phraseSeq" mixed="true">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="tei:tei_model.attributable"/>
       <xs:group ref="tei:tei_model.phrase"/>
       <xs:group ref="tei:tei_model.global"/>
     </xs:choice>
@@ -350,6 +351,21 @@ Sample values include: 1] all; 2] most; 3] range</xs:documentation>
       <xs:simpleType>
         <xs:restriction base="xs:anyURI">
           <xs:pattern value="\S+"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.breaking.attributes">
+    <xs:attributeGroup ref="tei:tei_att.breaking.attribute.break"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.breaking.attribute.break">
+    <xs:attribute name="break">
+      <xs:annotation>
+        <xs:documentation>indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="[^\p{C}\p{Z}]+"/>
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -1577,6 +1593,67 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.edition.attributes">
+    <xs:attributeGroup ref="tei:tei_att.edition.attribute.ed"/>
+    <xs:attributeGroup ref="tei:tei_att.edition.attribute.edRef"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.edition.attribute.ed">
+    <xs:attribute name="ed">
+      <xs:annotation>
+        <xs:documentation>(edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:restriction base="xs:token">
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.edition.attribute.edRef">
+    <xs:attribute name="edRef">
+      <xs:annotation>
+        <xs:documentation>(edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:restriction base="xs:anyURI">
+                  <xs:pattern value="\S+"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:minLength value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.spanning.attributes">
+    <xs:attributeGroup ref="tei:tei_att.spanning.attribute.spanTo"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="tei_att.spanning.attribute.spanTo">
+    <xs:attribute name="spanTo">
+      <xs:annotation>
+        <xs:documentation>indicates the end of a span initiated by the element bearing this attribute.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:anyURI">
+          <xs:pattern value="\S+"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
   <xs:attributeGroup name="tei_att.timed.attributes">
     <xs:attributeGroup ref="tei:tei_att.timed.attribute.start"/>
     <xs:attributeGroup ref="tei:tei_att.timed.attribute.end"/>
@@ -1860,36 +1937,42 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
   </xs:group>
   <xs:group name="tei_model.emphLike">
     <xs:choice>
+      <xs:element ref="tei:gloss"/>
       <xs:element ref="tei:term"/>
       <xs:element ref="tei:title"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.emphLike_alternation">
     <xs:choice>
+      <xs:element ref="tei:gloss"/>
       <xs:element ref="tei:term"/>
       <xs:element ref="tei:title"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.emphLike_sequence">
     <xs:sequence>
+      <xs:element ref="tei:gloss"/>
       <xs:element ref="tei:term"/>
       <xs:element ref="tei:title"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.emphLike_sequenceOptional">
     <xs:sequence>
+      <xs:element minOccurs="0" ref="tei:gloss"/>
       <xs:element minOccurs="0" ref="tei:term"/>
       <xs:element minOccurs="0" ref="tei:title"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.emphLike_sequenceOptionalRepeatable">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:gloss"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:term"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:title"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.emphLike_sequenceRepeatable">
     <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tei:gloss"/>
       <xs:element maxOccurs="unbounded" ref="tei:term"/>
       <xs:element maxOccurs="unbounded" ref="tei:title"/>
     </xs:sequence>
@@ -2093,32 +2176,38 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.milestoneLike">
-    <xs:sequence>
+    <xs:choice>
+      <xs:element ref="tei:lb"/>
       <xs:element ref="tei:anchor"/>
-    </xs:sequence>
+    </xs:choice>
   </xs:group>
   <xs:group name="tei_model.milestoneLike_alternation">
-    <xs:sequence>
+    <xs:choice>
+      <xs:element ref="tei:lb"/>
       <xs:element ref="tei:anchor"/>
-    </xs:sequence>
+    </xs:choice>
   </xs:group>
   <xs:group name="tei_model.milestoneLike_sequence">
     <xs:sequence>
+      <xs:element ref="tei:lb"/>
       <xs:element ref="tei:anchor"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.milestoneLike_sequenceOptional">
     <xs:sequence>
+      <xs:element minOccurs="0" ref="tei:lb"/>
       <xs:element minOccurs="0" ref="tei:anchor"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.milestoneLike_sequenceOptionalRepeatable">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:lb"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:anchor"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.milestoneLike_sequenceRepeatable">
     <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tei:lb"/>
       <xs:element maxOccurs="unbounded" ref="tei:anchor"/>
     </xs:sequence>
   </xs:group>
@@ -2310,49 +2399,49 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
   </xs:group>
   <xs:group name="tei_model.pLike">
     <xs:choice>
+      <xs:group ref="tei:tei_model.segLike"/>
       <xs:element ref="tei:p"/>
       <xs:element ref="tei:formula"/>
-      <xs:element ref="tei:s"/>
       <xs:element ref="tei:trash"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.pLike_alternation">
     <xs:choice>
+      <xs:group ref="tei:tei_model.segLike_alternation"/>
       <xs:element ref="tei:p"/>
       <xs:element ref="tei:formula"/>
-      <xs:element ref="tei:s"/>
       <xs:element ref="tei:trash"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.pLike_sequence">
     <xs:sequence>
+      <xs:group ref="tei:tei_model.segLike_sequence"/>
       <xs:element ref="tei:p"/>
       <xs:element ref="tei:formula"/>
-      <xs:element ref="tei:s"/>
       <xs:element ref="tei:trash"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.pLike_sequenceOptional">
     <xs:sequence>
+      <xs:group minOccurs="0" ref="tei:tei_model.segLike_sequenceOptional"/>
       <xs:element minOccurs="0" ref="tei:p"/>
       <xs:element minOccurs="0" ref="tei:formula"/>
-      <xs:element minOccurs="0" ref="tei:s"/>
       <xs:element minOccurs="0" ref="tei:trash"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.pLike_sequenceOptionalRepeatable">
     <xs:sequence>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.segLike_sequenceOptionalRepeatable"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:p"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:formula"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:s"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:trash"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.pLike_sequenceRepeatable">
     <xs:sequence>
+      <xs:group maxOccurs="unbounded" ref="tei:tei_model.segLike_sequenceRepeatable"/>
       <xs:element maxOccurs="unbounded" ref="tei:p"/>
       <xs:element maxOccurs="unbounded" ref="tei:formula"/>
-      <xs:element maxOccurs="unbounded" ref="tei:s"/>
       <xs:element maxOccurs="unbounded" ref="tei:trash"/>
     </xs:sequence>
   </xs:group>
@@ -2515,6 +2604,66 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
   <xs:group name="tei_model.descLike">
     <xs:sequence>
       <xs:element ref="tei:desc"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike">
+    <xs:sequence>
+      <xs:element ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike_alternation">
+    <xs:sequence>
+      <xs:element ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike_sequence">
+    <xs:sequence>
+      <xs:element ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike_sequenceOptional">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike_sequenceOptionalRepeatable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.quoteLike_sequenceRepeatable">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tei:quote"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable">
+    <xs:sequence>
+      <xs:group ref="tei:tei_model.quoteLike"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable_alternation">
+    <xs:sequence>
+      <xs:group ref="tei:tei_model.quoteLike_alternation"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable_sequence">
+    <xs:sequence>
+      <xs:group ref="tei:tei_model.quoteLike_sequence"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable_sequenceOptional">
+    <xs:sequence>
+      <xs:group minOccurs="0" ref="tei:tei_model.quoteLike_sequenceOptional"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable_sequenceOptionalRepeatable">
+    <xs:sequence>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.quoteLike_sequenceOptionalRepeatable"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="tei_model.attributable_sequenceRepeatable">
+    <xs:sequence>
+      <xs:group maxOccurs="unbounded" ref="tei:tei_model.quoteLike_sequenceRepeatable"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="tei_model.respLike">
@@ -2728,6 +2877,7 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       <xs:group ref="tei:tei_model.biblLike"/>
       <xs:group ref="tei:tei_model.labelLike"/>
       <xs:group ref="tei:tei_model.listLike"/>
+      <xs:group ref="tei:tei_model.attributable"/>
     </xs:choice>
   </xs:group>
   <xs:group name="tei_model.common">
@@ -2969,6 +3119,20 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
+  <xs:element name="quote">
+    <xs:annotation>
+      <xs:documentation>(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tei:tei_macro.specialPara">
+          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.notated.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="desc">
     <xs:annotation>
       <xs:documentation>(description) contains a short description of the purpose, function, or use of its parent element, or when the parent is a documentation element, describes or defines the object being documented.  [22.4.1. Description of Components]</xs:documentation>
@@ -3003,6 +3167,22 @@ Suggested values include: 1] deprecationInfo (deprecation information)</xs:docum
               </xs:union>
             </xs:simpleType>
           </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gloss">
+    <xs:annotation>
+      <xs:documentation>(gloss) identifies a phrase or word used to provide a gloss or definition for some other word or phrase. [3.4.1. Terms and Glosses 22.4.1. Description of Components]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tei:tei_macro.phraseSeq">
+          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.pointing.attributes"/>
+          <xs:attributeGroup ref="tei:tei_att.cReferencing.attributes"/>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -3453,6 +3633,19 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
       <xs:attributeGroup ref="tei:tei_att.resourced.attributes"/>
       <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
       <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lb">
+    <xs:annotation>
+      <xs:documentation>(line beginning) marks the beginning of a new (typographic) line in some edition or version of a text. [3.11.3. Milestone
+Elements 7.2.5. Speech Contents]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.edition.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.spanning.attributes"/>
+      <xs:attributeGroup ref="tei:tei_att.breaking.attributes"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="analytic">

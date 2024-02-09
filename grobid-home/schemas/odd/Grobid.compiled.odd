@@ -15,7 +15,7 @@
             <sourceDesc>
                 <p>created on Sunday 05th October 2014 06:25:09 AM</p>
             </sourceDesc>
-        </fileDesc><encodingDesc><appInfo><application ident="RomaJS" version="1.0.0" when="2024-02-08T19:56:41.698Z"><desc>File edited with <ref target="https://github.com/TEIC/romajs">RomaJS</ref></desc></application></appInfo></encodingDesc>
+        </fileDesc><encodingDesc><appInfo><application ident="RomaJS" version="1.0.0" when="2024-02-09T13:54:36.948Z"><desc>File edited with <ref target="https://github.com/TEIC/romajs">RomaJS</ref></desc></application></appInfo></encodingDesc>
     </teiHeader>
     <text>
         <front>
@@ -531,6 +531,69 @@ The MS. was lost in transmission by mail from <del rend="overstrike"><gap reason
   </attList>
   <listRef>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STECAT">1.3.1. Attribute Classes</ref>
+  </listRef>
+</classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="atts" ident="att.breaking">
+  <desc versionDate="2021-08-22" xml:lang="en">provides attributes to indicate whether or not the element
+  concerned is considered to  mark the end of an orthographic token in the same way
+  as whitespace.</desc>
+  <desc xml:lang="fr" versionDate="2007-06-12">fournit un attribut pour indiquer si un élément est
+consideré ou pas comme marquant la fin d'un mot orthographique, comme
+le fait une espace.</desc>
+  <desc xml:lang="ja" versionDate="2018-12-31">当該要素が空白と同じ方法で正字トークンの終わりを示すとみなされるかどうかを示す属性を提供する。</desc>
+  <attList>
+    <attDef ident="break" usage="rec">
+      <desc versionDate="2011-01-30" xml:lang="en">indicates whether or not the  element
+	bearing this attribute should be considered to mark the end of
+	an orthographic token in the same way as whitespace.</desc>
+      <desc xml:lang="fr" versionDate="2007-06-12">indique si l'élément qui porte cet attribut
+      peut être considéré comme une espace blanc indiquant la fin d'un mot
+      orthographique.</desc>
+      <desc xml:lang="ja" versionDate="2018-12-31">この属性を持つ要素が空白と同じ方法で正字トークンの終わりを示すとみなされるべきかどうかを示す。</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <valList>
+        <valItem ident="yes">
+          <desc versionDate="2011-01-30" xml:lang="en">the element bearing this attribute is considered
+to mark the end of any adjacent orthographic token irrespective of the presence
+of any adjacent whitespace</desc>
+          <desc xml:lang="fr" versionDate="2007-06-12">l'élément qui porte cet attribut
+      peut être considéré comme  indiquant la fin d'un mot
+      orthographique</desc>
+          <desc xml:lang="ja" versionDate="2018-12-31">この属性を持つ要素は、隣接する任意の空白の存在に関係なく、隣接する正字法トークンの終わりをマークするとみなされる。</desc>
+        </valItem>
+        <valItem ident="no">
+          <desc versionDate="2011-01-30" xml:lang="en">the element bearing this attribute is considered
+not to mark the end of any adjacent orthographic token irrespective of the presence
+of any adjacent whitespace</desc>
+          <desc xml:lang="fr" versionDate="2007-06-12">l'élément qui porte cet attribut
+      ne peut être pas considéré comme  indiquant la fin d'un mot
+      orthographique</desc>
+          <desc xml:lang="ja" versionDate="2018-12-31">この属性を持つ要素は、隣接する空白の存在に関係なく、隣接する正字法トークンの終わりをマークしないとみなされる。</desc>
+        </valItem>
+        <valItem ident="maybe">
+          <desc versionDate="2013-07-31" xml:lang="en">the encoding does not take any position on this issue.</desc>
+          <desc xml:lang="fr" versionDate="2007-06-12">l'encodage ne prends aucune position sur la question.</desc>
+          <desc xml:lang="ja" versionDate="2018-12-31">当該符号化はこの問題に関していかなる立場もとらない。</desc>
+        </valItem>
+      </valList>
+      <exemplum xml:lang="en">
+        <p>In the following lines from the <title level="a">Dream of the Rood</title>, 
+      linebreaks occur in the middle of the words <mentioned>lāðost</mentioned> 
+      and <mentioned>reord-berendum</mentioned>.
+    </p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="ang">
+          <ab>
+      ...eƿesa tome iu icƿæs ȝeƿorden ƿita heardoſt . 
+      leodum la<lb break="no"/>  ðost ærþan ichim lifes 
+      ƿeȝ rihtne ȝerymde reord be<lb break="no"/>
+      rendum hƿæt me þaȝeƿeorðode ƿuldres ealdor ofer...
+    </ab>
+        </egXML>
+      </exemplum>
+    </attDef>
+  </attList>
+  <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS5">3.11.3. Milestone
+Elements</ref>
   </listRef>
 </classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="atts" ident="att.cReferencing">
   <desc versionDate="2021-08-22" xml:lang="en">provides attributes that may be used to supply a
@@ -3397,6 +3460,122 @@ subject, predicate etc. may be more appropriate. Such constraints will typically
   <listRef>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DIBO">9.1. Dictionary Body and Overall Structure</ref>
   </listRef>
+</classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="atts" ident="att.edition">
+  <desc versionDate="2013-01-11" xml:lang="en">provides attributes identifying the source edition from which
+  some encoded feature derives.</desc>
+  <desc versionDate="2009-05-28" xml:lang="fr">fournit des attributs identifiant l'édition source dont provient une quelconque caractéristique encodée.</desc>
+  <desc xml:lang="ja" versionDate="2019-05-20">符号化された属性が派生する元のソースのエディションを特定する属性を提供する。</desc>
+  <attList>
+    <attDef ident="ed" usage="opt">
+      <gloss versionDate="2013-01-11" xml:lang="en">edition</gloss>
+      <gloss versionDate="2009-05-28" xml:lang="fr">édition</gloss>
+      <gloss xml:lang="ja" versionDate="2019-05-20">版</gloss>
+      <desc versionDate="2013-11-22" xml:lang="en">supplies a sigil or other arbitrary identifier for the source edition in which
+      the associated feature (for example, a  page, column, or line
+      break) occurs at this point in the text.</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">fournit un identifiant arbitraire pour l'édition source dans laquelle la caractéristique associée 
+        (par exemple, une page, une colonne ou un saut de ligne) apparaît à ce point du texte.</desc>
+      <desc xml:lang="ja" versionDate="2019-05-20">関連する属性（ページ・段落・行の切れ目）がテキストのこの地点において発生するソースのエディションについての印やその他の任意の識別子を提供する。</desc>
+      <datatype maxOccurs="unbounded"><dataRef key="teidata.word"/></datatype>
+    </attDef>
+    <attDef ident="edRef" usage="opt">
+      <gloss versionDate="2013-01-11" xml:lang="en">edition reference</gloss>
+      <gloss xml:lang="ja" versionDate="2019-05-20">参照</gloss>
+      <desc versionDate="2013-01-11" xml:lang="en">provides a pointer to the source edition in which
+      the associated feature (for example, a  page, column, or line
+      break) occurs at this point in the text.</desc>
+      <desc xml:lang="ja" versionDate="2019-05-20">このポインタが示すのは、当該テキスト中に現れる（頁や段、行等の）関連する素性が生じる元の版である。</desc>
+      <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l>
+      <l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l>
+      <l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <listBibl>
+        <bibl xml:id="stapledon1937"><author>Olaf Stapledon</author>,
+	<title>Starmaker</title>, <publisher>Methuen</publisher>, <date>1937</date></bibl>
+        <bibl xml:id="stapledon1968"><author>Olaf Stapledon</author>,
+	<title>Starmaker</title>, <publisher>Dover</publisher>, <date>1968</date></bibl>
+      </listBibl>
+      <!-- ... -->
+      <p>Looking into the future aeons from the supreme moment of
+	  the cosmos, I saw the populations still with all their
+	  strength maintaining the<pb n="411" edRef="#stapledon1968"/>essentials of their ancient culture,
+	  still living their personal lives in zest and endless
+	  novelty of action, … I saw myself still
+	  preserving, though with increasing difficulty, my lucid
+	  con-<pb n="291" edRef="#stapledon1937"/>sciousness;</p>
+    </egXML>
+  </exemplum>
+</classSpec><classSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="atts" ident="att.spanning">
+  <desc versionDate="2006-01-05" xml:lang="en">provides attributes for elements which delimit a span of text by pointing mechanisms rather than by enclosing it.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">포함보다는 포인터 메카니즘을 통하여 구분된 텍스트 구간을 나타내는 요소의 속성을 제공한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供元素的屬性，這些元素使用參照機制來限定某一文字段，而非包含此文字段。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">テキスト幅の範囲を内容としてではなく参照機能を使って示す要素に付与さ
+  れる属性を示す。</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">fournit des attributs pour les éléments qui délimitent un passage de texte par des mécanismes de pointage plutôt qu'en entourant le passage.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">proporciona atributos para elementos que delimitan un fragmento de texto utilizando los señalizadores en lugar de cerrando el texto.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi agli elementi che delimitano una porzione di testo utilizzando dei puntatori invece di racchiudere il testo stesso</desc>
+  <attList>
+    <attDef ident="spanTo" usage="opt">
+      <desc versionDate="2005-10-10" xml:lang="en">indicates the end of a span initiated by the element
+        bearing this attribute.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">이 속성을 포함하는 요소에 의해 시작된 구간의 끝을 나타낸다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出文字段的結尾，該文字段以帶有此屬性的元素開頭。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該要素が示す範囲の終点を示す。</desc>
+      <desc versionDate="2009-05-28" xml:lang="fr">indique la fin d'un passage introduit par l'élément portant cet attribut.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica el final de un fragmento de texto iniciado con el elemento al cual es asignaado el atributo.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica la fine della porzione di testo che ha inizio con l'elemento a cui è assegnato l'attributo</desc>
+      <datatype><dataRef key="teidata.pointer"/></datatype>
+      <constraintSpec ident="spanTo-points-to-following" scheme="schematron">
+        <desc xml:lang="en" versionDate="2018-07-06">The @spanTo attribute must point to an element following the
+        current element</desc>
+        <constraint>
+          <sch:rule context="tei:*[@spanTo]">
+            <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
+The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
+            </sch:assert>
+          </sch:rule>
+        </constraint>
+      </constraintSpec>
+    </attDef>
+  </attList>
+  <remarks versionDate="2012-10-29" xml:lang="en">
+    <p>The span is defined as running in document order from the start
+    of the content of the pointing element  to the end of the
+    content of the element pointed to by the <att>spanTo</att> attribute (if
+    any). If no value is supplied for the attribute, the assumption is that the span is
+    coextensive with the pointing element. If no content is present,
+    the assumption is that the starting point of the span is
+    immediately following the element itself. </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p> Le passage est défini comme courant depuis le début du contenu de l'élément pointeur (s'il y en a un) jusqu'à la fin du contenu de l'élément
+      pointé par l'attribut <att>spanTo</att> (s'il y en a un), dans l'ordre du document. Si aucune valeur n'est fournie pour l'attribut, il est entendu
+      que le passage est de même étendue que l'élément pointeur.</p>
+  </remarks>
+  <remarks xml:lang="es" versionDate="2008-04-06">
+    <p>El span se define como ejecutándose en la orden del documento des del comienzo del contenido del elemento indicado (si lo hay) al extremo del contenido del elemento señalado por el atributo del spanTo (si lo hay).
+    Si no se suministra ningún valor para el atributo, la asunción es que el span es coextensivo con el elemento indicado.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p>
+    当該範囲は、当該文書中にある、(もしあれば)参照要素の内容の始点から、
+    (もしあれば)属性spanToで示された要素の内容の終点までになる。
+    当該属性に値がない場合、当該範囲は、当該参照要素と同じ範囲と想定す
+    る。
+    </p>
+  </remarks>
+  <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAD">11.3.1.4. Additions and Deletions</ref>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STECAT">1.3.1. Attribute Classes</ref>
+  </listRef>
 </classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" xml:id="TIMED" type="atts" ident="att.timed">
   <desc versionDate="2007-10-02" xml:lang="en">provides attributes common to those elements which
   have a duration in time, expressed either absolutely or by reference
@@ -3805,44 +3984,27 @@ or corporate bodies.</desc>
   <listRef>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONA">3.6. Names, Numbers, Dates, Abbreviations, and Addresses</ref>
   </listRef>
-</classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="model" ident="model.segLike">
-  <desc versionDate="2005-10-10" xml:lang="en">groups elements used for arbitrary segmentation.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">임의적 분할에 사용되는 요소를 모아 놓는다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集用於隨機分割的元素。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">任意の区分で使用される要素をまとめる。</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments utilisés pour une segmentation
-    arbitraire.</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">agrupa elementos usados por una segmentación arbitraria.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi utilizzati per una segmentazione
-    arbitraria</desc>
-  <classes>
-    <memberOf key="model.phrase"/>
-    
-  </classes>
-  <remarks versionDate="2005-10-10" xml:lang="en">
+</classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" rend="change" module="tei" type="model" ident="model.segLike"><desc versionDate="2005-10-10" xml:lang="en">groups elements used for arbitrary segmentation.</desc><desc versionDate="2007-12-20" xml:lang="ko">임의적 분할에 사용되는 요소를 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">匯集用於隨機分割的元素。</desc><desc versionDate="2008-04-05" xml:lang="ja">任意の区分で使用される要素をまとめる。</desc><desc versionDate="2007-06-12" xml:lang="fr">regroupe des éléments utilisés pour une segmentation
+    arbitraire.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa elementos usados por una segmentación arbitraria.</desc><desc versionDate="2007-01-21" xml:lang="it">raggruppa elementi utilizzati per una segmentazione
+    arbitraria</desc><classes><memberOf key="model.pLike"/><memberOf key="model.phrase"/></classes><remarks versionDate="2005-10-10" xml:lang="en">
     <p>The principles on which segmentation is carried out, and any special codes or attribute
       values used, should be defined explicitly in the <gi>segmentation</gi> element of the
         <gi>encodingDesc</gi> within the associated TEI header.</p>
-  </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  </remarks><remarks xml:lang="fr" versionDate="2007-06-12">
     <p>Les principes sur lesquels repose la segmentation, ainsi que tout code particulier ou valeur
       d'attribut utilisée, doivent être définis explicitement dans l'élément <gi>segmentation</gi> de
       l'élément <gi>encodingDesc</gi> situé dans l'En-tête TEI associé.</p>
-  </remarks>
-  <remarks xml:lang="es" versionDate="2008-04-06">
+  </remarks><remarks xml:lang="es" versionDate="2008-04-06">
     <p>Los principios en los cuales se realiza la segmentación, y cualesquiera sean los códigos o
       valores de atributo especiales usados, se deben definir explícitamente en el elemento
         <gi>segmentación</gi> del <gi>encodingDesc</gi> dentro del encabezado TEI asociado.</p>
-  </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
     <p> どの区分、どのコード、どの属性値を使うかを決める原則は、関連する TEIヘダー内の要素<gi>encodingDesc</gi>にある要素
       <gi>segmentation</gi>中で明示的に宣言されるべきである。 </p>
-  </remarks>
-  <listRef>
+  </remarks><listRef>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">16.3. Blocks, Segments, and Anchors</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">17.1. Linguistic Segment Categories</ref>
-  </listRef>
-</classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="model" ident="model.hiLike">
+  </listRef></classSpec><classSpec xmlns:xi="http://www.w3.org/2001/XInclude" module="tei" type="model" ident="model.hiLike">
   <desc versionDate="2007-10-06" xml:lang="en">groups phrase-level elements which are typographically distinct but to which no specific
     function can be attributed.</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">인쇄상 구분되나 특정 기능이 없는 구 층위 요소를 모아 놓는다.</desc>
@@ -6786,6 +6948,74 @@ one initial.</desc>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQHE">3.3.2.2. Emphatic Words and Phrases</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQH">3.3.2. Emphasis, Foreign Words, and Unusual Language</ref>
   </listRef>
+</elementSpec><elementSpec module="core" ident="quote">
+  <gloss versionDate="2005-01-14" xml:lang="en">quotation</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">인용</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">引文</gloss>
+  <gloss versionDate="2009-01-06" xml:lang="fr">citation</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">cita</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">citazione</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a phrase or passage attributed by the narrator or author to some agency external
+        to the text.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko"> 해설자 또는 저자에 의해, 텍스트의 외부 주체에 의해 생성된 것이라 밝혀진 구 또는 단락을
+        포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含敘述者或作者引用自文本以外來源的字 (句) 詞或段落。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">語り手や著者が、当該テキスト外にあるものに向けた、一節を示す。</desc>
+  <desc versionDate="2009-01-06" xml:lang="fr">contient une expression ou un passage que le
+        narrateur ou l'auteur attribue à une origine extérieure au texte.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene una frase o pasaje atribuido por el narrador o
+        autor a un agente externo al texto.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene una frase o un brano attribuito dall'autore o
+        dal narratore a soggetti esterni al testo</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.quoteLike"/>
+    <memberOf key="att.typed"/>
+    
+    <memberOf key="att.notated"/>
+  </classes>
+  <content>
+    <macroRef key="macro.specialPara"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#COHQQ-eg-29">Lexicography has shown little sign of being affected by the
+      work of followers of J.R. Firth, probably best summarized in his
+      slogan, <quote>You shall know a word by the company it
+      keeps</quote> 
+         <ref>(Firth, 1957)</ref>
+        </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Beck_Morin">C'est sûrement ça
+        qu'on appelle la glorieuse liberté des enfants de Dieu. <quote>Aime et fais tout ce que tu
+          voudras.</quote>Mais moi, ça me démolit. </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        孟懿子問孝。子曰：<quote>無違。</quote>
+        <ref>(論語：卷一：為政第二)</ref>
+      </egXML>
+  </exemplum>
+  <remarks versionDate="2005-01-14" xml:lang="en">
+    <p>If a bibliographic citation is supplied for the source of a quotation, the two may be
+            grouped using the <gi>cit</gi> element.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Si une référence bibliographique est donnée  comme source de la  citation, 
+           on  peut  les regrouper dans  l'élément <gi>cit</gi>.</p>
+  </remarks>
+  <remarks xml:lang="es" versionDate="2008-04-06">
+    <p>Si una citación bibliográfica es proporcionada como fuente de una cita, las dos se pueden
+            agrupar usando el elemento <gi>CIT</gi>
+        </p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 引用部分に書誌情報の引用がある場合、この2つの部分は、要素 <gi>cit</gi>でまとめられる。 </p>
+  </remarks>
+  <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQQ">3.3.3. Quotation</ref>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSGRP">4.3.1. Grouped Texts</ref>
+  </listRef>
 </elementSpec><elementSpec xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="core" ident="desc">
   <gloss versionDate="2005-01-14" xml:lang="en">description</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">기술</gloss>
@@ -6922,6 +7152,66 @@ one initial.</desc>
       Satz ausgedrückt wird, der mit einem Verb im Aktiv beginnt.</p>
   </remarks>
   <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. Description of Components</ref>
+  </listRef>
+</elementSpec><elementSpec module="core" ident="gloss">
+  <gloss xml:lang="en" versionDate="2009-01-06">gloss</gloss>
+  <gloss versionDate="2009-01-06" xml:lang="fr">glose</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">identifies a phrase or word used to provide a gloss or definition for some other word or
+    phrase.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">다른 단어나 구에 대한 해설 또는 정의를 제공할 때 사용되는 구나 단어를 표시한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">標明用來為另一個字詞下定義或提供註解的字詞。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">語句の説明や定義を示す。</desc>
+  <desc versionDate="2009-01-06" xml:lang="fr">identifie une expression ou un mot utilisé pour fournir
+    une glose ou une définition à quelque autre mot ou expression.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">identifica una locución o palabra usada para proporcionar
+    una glosa o definición sobre otra palabra o frase.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">identifica un sintagma o una parola che fornisce una
+    glossa o definizione per qualche altra parola o sintagma.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.emphLike"/>
+    <memberOf key="att.declaring"/>
+    
+    <memberOf key="att.typed"/>
+    <memberOf key="att.pointing"/>
+    <memberOf key="att.cReferencing"/>
+    
+  </classes>
+  <content>
+    <macroRef key="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#COHTG-eg-42">We may define <term xml:id="tdpv" rend="sc">discoursal point of view</term> as <gloss target="#tdpv">the relationship, expressed
+        through discourse structure, between the implied author or some other addresser, and the
+        fiction.</gloss>
+      </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Dubois_Dict_Ling"> Les<term>
+          embrayeurs</term> sont <gloss>une classe de mots dont le sens varie avec la situation; ces
+          mots, n'ayant pas de référence propre dans la langue, ne reçoivent un référent que
+          lorsqu'ils sont inclus dans un message.</gloss>
+      </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n4"> 我們可以定義 <term xml:id="zh-tw_tdpv" rend="sc">戀母情結</term> 為 <gloss target="#zh-tw_tdpv">佛洛伊德心理分析理論中的重要觀念，指三至六歲大的男孩在性慾上有一種戀母情結的階段，這情結更進一步發展成對父親的忌妒仇視，甚至亟欲除之而後快。</gloss>
+      </egXML>
+  </exemplum>
+  <remarks versionDate="2005-10-13" xml:lang="en">
+    <p>The <att>target</att> and <att>cRef</att> attributes are mutually exclusive.</p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p>Les attributs <att>target</att> et <att>cRef</att> sont exclusifs l'un de l'autre.</p>
+  </remarks>
+  <remarks xml:lang="es" versionDate="2008-04-06">
+    <p>Los atributos <att>blanco</att> y <att>cRef</att> son mutuamente exclusivos.</p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 属性<att>target</att>と<att>cRef</att>は、排他的に使用される。 </p>
+  </remarks>
+  <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHTG">3.4.1. Terms and Glosses</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDcrystalsCEdc">22.4.1. Description of Components</ref>
   </listRef>
 </elementSpec><elementSpec module="core" ident="term">
@@ -9542,6 +9832,143 @@ psychological significance.
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COGR">3.10. Graphics and Other Non-textual Components</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHFAX">11.1. Digital Facsimiles</ref>
     
+  </listRef>
+</elementSpec><elementSpec module="core" ident="lb">
+  <gloss versionDate="2017-06-14" xml:lang="en">line beginning</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">행 바꿈</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">分行</gloss>
+  <gloss versionDate="2022-05-12" xml:lang="fr">début de ligne</gloss>
+  <gloss versionDate="2022-05-12" xml:lang="es">inicio de línea</gloss>
+  <gloss versionDate="2022-08-17" xml:lang="it">inizio di riga</gloss>
+  <gloss versionDate="2017-06-25" xml:lang="de">Zeilenanfang</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">marks the beginning of a new (typographic) line in some edition or version of a text.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">텍스트의 편집 또는 버전에서 새로운 (인쇄상의) 행 시작을 표지한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">標記某版本文本裡 (在印刷上) 的新起行。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">ある版における新しい(印刷上の)行の始まりを示す。</desc>
+  <desc versionDate="2022-05-12" xml:lang="fr">marque le début d'une nouvelle ligne (typographique) dans
+    une édition ou dans une version d'un texte.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">marca el comienzo de una nueva línea (topográfica) en
+    alguna edición o versión del texto.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">segna l'inizio di una nuova riga (tipografica) in qualche
+    edizione o versione di un testo.</desc>
+  <desc versionDate="2017-06-25" xml:lang="de">markiert den Anfang einer neuen typographischen 
+    Zeile in einer bestimmten Auflage oder Version eines Textes.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.milestoneLike"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="att.edition"/>
+    <memberOf key="att.spanning"/>
+    <memberOf key="att.breaking"/>
+  </classes>
+  <content><empty/></content>
+  <exemplum xml:lang="en">
+    <p>This example shows typographical line breaks within metrical lines, where they occur at different
+      places in different editions:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l>
+      <l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l>
+      <l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr">
+    <p xml:lang="fr">Cet exemple montre les sauts de ligne dans des vers, qui apparaissent à différents endroits selon les éditions.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l>
+      <l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l>
+      <l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="de" versionDate="2017-06-25">
+    <p>Dieses Beispiel zeigt typografische Zeilenumbrüche innerhalb von Verszeilen, so wie sie an
+      verschiedenen Stellen in unterschiedlichen Ausgaben auftreten:</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l>
+      <l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l>
+      <l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <p>This example encodes typographical line breaks as a means of
+preserving the visual appearance of a title page. The <att>break</att>
+attribute is used to show that the line break does not (as elsewhere)
+mark the start of a new word.  </p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titlePart><lb/>With Additions, ne-<lb break="no"/>ver before Printed.</titlePart>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="fr">
+    <p xml:lang="fr">Cet exemple encode les sauts de ligne pour montre l'apparence visuelle d'une page titre. L'attribut <att>break</att> est utilisé pour montrer que le saut de ligne ne marque pas le début d'un nouveau mot.</p>
+    
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="fr">
+      <titlePart rend="italic"><lb/>L'auteur susdict supplie les Lecteurs
+<lb/>benevoles, soy reserver à rire au 
+soi-<lb break="no"/>xante &amp; dixhuytiesme livre.
+</titlePart>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="de" versionDate="2017-06-25">
+    <p>Dieses Beispiel kodiert typografische Zeilenumbrüche, um das visuelle Erscheinungsbild einer
+      Titelseite zu bewahren. Das <att>break</att>-Attribut zeigt an, dass der Zeilenumbruch nicht
+      (wie anderswo) den Anfang eines neuen Wortes markiert.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <titlePart><lb/>With Additions, ne-<lb break="no"/>ver before Printed.</titlePart>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2013-01-09" xml:lang="en">
+    <p>By convention, <gi>lb</gi> elements should appear at the point in the text where a new line
+      starts. The <att>n</att> attribute, if used, indicates the number or other value associated
+      with the text between this point and the next <gi>lb</gi> element, typically the sequence
+      number of the line within the page, or other appropriate unit. This element is intended to be
+      used for marking actual line breaks on a manuscript or printed page, at the point where they
+      occur; it should not be used to tag structural units such as lines of verse (for which the
+        <gi>l</gi> element is available) except in circumstances where structural units cannot
+      otherwise be marked. </p>
+    <p>The <att>type</att> attribute may be used to characterize the
+    line break in any respect. The more specialized attributes
+    <att>break</att>, <att>ed</att>, or <att>edRef</att> should be preferred when the
+    intent is to indicate whether or not the line
+    break is word-breaking, or to note the source from which it
+    derives.  </p>
+  </remarks>
+  <remarks xml:lang="fr" versionDate="2007-06-12">
+    <p> Par convention, l'élément <gi>lb</gi> apparaît à l’endroit du texte où commence une nouvelle
+      ligne. L'attribut <att>n</att>, s’il est utilisé, donne un nombre ou une autre valeur associée
+      au texte entre ce point et l’élément suivant <gi>lb</gi>, spécifiquement le numéro de la ligne
+      dans la page, ou une autre unité de mesure appropriée. Cet élément est prévu pour être employé
+      pour marquer un saut de ligne sur un manuscrit ou sur une page imprimée, à l’endroit où il se
+      survient; on n’utilisera pas de balisage structurel comme une succession de vers (pour lequel
+      l’élément <gi>l</gi> est disponible) sauf dans le cas où des blocs structurés ne peuvent pas
+      être marqués autrement. </p>
+    <p> L'attribut <att>type</att> sera employé pour caractériser toute espèce de caractéristiques
+      du saut de ligne, sauf la coupure des mots (indique par
+    l'attribut <att>break</att>) ou la source concernée. </p>
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
+    <p> 当該要素にあるグローバル属性<att>n</att>は、要素<gi>lb</gi>に続く 行と関連する数値を示す。符号化する人は、改行を示す当該数値が、ペー
+      ジ内にある物理的行数またはテキストの論理構造と関連するかについて、 明確で一貫した方針を採るべきである。 一般には、要素<gi>lb</gi>は、参照する行の開始地点にあるべきである。 </p>
+    <p> 要素<gi>lb</gi>は、散文中における印刷上の行を示すためのものである。 韻文中の行を示す要素<gi>l</gi>とは注意して使い分けるべきである。 </p>
+  </remarks>
+  <remarks versionDate="2016-11-29" xml:lang="de">
+    <p>Es ist Konvention, dass <gi>lb</gi>-Elemente an der Stelle im Text stehen sollen, 
+      an der eine neue Zeile beginnt. Das <att>n</att>-Attribut enhält gegebenenfalls 
+      die Nummer der Zeile oder einen ähnlichen Wert, der sich auf den Text bezieht, 
+      der bis zum nächsten <gi>lb</gi> folgt, typischerweise die Nummer einer Zeile 
+      auf einer Seite oder andere einschlägige Einheiten.</p> 
+    <p>Das Element dient dazu, typographische oder paläographische Phänomene an der 
+      Stelle zu beschreiben, an der sie auf dem Schriftträger sichtbar sind; 
+      es sollte nicht für Struktureinheiten wie z. B. Verszeilen in Lyrik verwendet 
+      werden (wofür das Element <gi>l</gi> zur Verfügung steht), außer wenn derartige 
+      Struktureinheiten anders nicht markiert werden können. </p>
+    <p>Das <att>type</att>-Attribut kann verwendet werden, den Zeilenwechsel näher 
+      zu beschreiben, wenn nicht die speziellen Attribute <att>break</att> 
+      (Worttrennung), <att>ed</att> oder <att>edRef</att> (Textzeuge, in dem der 
+      Zeilenwechsel vorkommt) verwendet werden können.</p>
+  </remarks>
+  <listRef>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS5">3.11.3. Milestone
+Elements</ref>
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
   </listRef>
 </elementSpec><elementSpec module="core" ident="analytic">
   <gloss versionDate="2005-01-14" xml:lang="en">analytic level</gloss>
@@ -19224,12 +19651,40 @@ contexts.</p>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AIATTS">17.2. Global Attributes for Simple Analyses</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AISP">17.3. Spans and Interpretations</ref>
   </listRef>
-</classSpec><elementSpec rend="change" module="analysis" ident="s"><gloss versionDate="2005-01-14" xml:lang="en">s-unit</gloss><gloss versionDate="2007-12-20" xml:lang="ko">s-단위</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">句子單元</gloss><gloss versionDate="2009-02-13" xml:lang="fr">phrase</gloss><gloss versionDate="2007-05-04" xml:lang="es">oración</gloss><gloss versionDate="2007-01-21" xml:lang="it">unità s</gloss><gloss versionDate="2017-06-19" xml:lang="de">Satzeinheit</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a sentence-like division of a text.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트의 문장에 해당하는 부분을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含文字中一個句子組成的區段。</desc><desc versionDate="2008-04-05" xml:lang="ja">文に相当するテキスト単位を示す。</desc><desc versionDate="2009-02-13" xml:lang="fr">contient une division textuelle de type phrase</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una oración del texto.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene la divisione del testo del tipo proposizione</desc><desc versionDate="2017-06-19" xml:lang="de">enthält einen satzähnlichen Textabschnitt.</desc><classes><memberOf key="model.pLike"/><memberOf key="att.global"/><memberOf key="model.segLike"/><memberOf key="att.segLike"/><memberOf key="att.typed"/><memberOf key="att.notated"/></classes><content><macroRef key="macro.phraseSeq"/></content><constraintSpec ident="noNestedS" scheme="schematron">
+</classSpec><elementSpec module="analysis" ident="s">
+  <gloss versionDate="2005-01-14" xml:lang="en">s-unit</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">s-단위</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">句子單元</gloss>
+  <gloss versionDate="2009-02-13" xml:lang="fr">phrase</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">oración</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">unità s</gloss>
+  <gloss versionDate="2017-06-19" xml:lang="de">Satzeinheit</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a sentence-like division of a text.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">텍스트의 문장에 해당하는 부분을 포함한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含文字中一個句子組成的區段。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">文に相当するテキスト単位を示す。</desc>
+  <desc versionDate="2009-02-13" xml:lang="fr">contient une division textuelle de type phrase</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene una oración del texto.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene la divisione del testo del tipo proposizione</desc>
+  <desc versionDate="2017-06-19" xml:lang="de">enthält einen satzähnlichen Textabschnitt.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="model.segLike"/>
+    <memberOf key="att.segLike"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="att.notated"/>
+  </classes>
+  <content>
+
+    <macroRef key="macro.phraseSeq"/> 
+  </content>
+  <constraintSpec ident="noNestedS" scheme="schematron">
     <constraint>
       <report xmlns="http://purl.oclc.org/dsdl/schematron" test="tei:s">You may not nest one s element within
       another: use seg instead</report>
     </constraint>
-  </constraintSpec><exemplum xml:lang="en">
+  </constraintSpec>
+  <exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <head>
         <s>A short affair</s>
@@ -19237,42 +19692,50 @@ contexts.</p>
       <s>When are you leaving?</s>
       <s>Tomorrow.</s>
     </egXML>
-  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <s><w>Quand</w><w>partez</w><w>-</w><w>vous</w><w> ?</w></s>
       <s><w>Demain</w><w>.</w></s>
     </egXML>
-  </exemplum><exemplum xml:lang="zh-TW">
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#biblzh-tw_n1">
       <s>士何事？”</s>
       <s>尚志。 </s>
     </egXML>
-  </exemplum><remarks versionDate="2008-10-25" xml:lang="en">
+  </exemplum>
+  <remarks versionDate="2008-10-25" xml:lang="en">
     <p>The <gi>s</gi> element may be used to mark orthographic sentences, or any other segmentation
       of a text, provided that the segmentation is end-to-end, complete, and non-nesting. For
       segmentation which is partial or recursive, the <gi>seg</gi> should be used instead. </p>
     <p>The <att>type</att> attribute may be used to indicate the type of segmentation intended,
       according to any convenient typology.</p>
-  </remarks><remarks versionDate="2009-02-13" xml:lang="fr">
+  </remarks>
+  <remarks versionDate="2009-02-13" xml:lang="fr">
     <p>L'élément <gi>s</gi> peut être utilisé pour marquer les phrases ou toute autre segmentation
       existant dans un texte, pourvu que cette segmentation soit présente du début à la fin du
       texte, complète et sans imbrication. Dans le cas d'une segmentation partielle ou récursive,
       l'élément <gi>seg</gi> doit remplacer l'élément <gi>s</gi>.</p>
     <p>L'attribut <att>type</att> peut être utilisé pour indiquer le type de segmentation prévue, selon une typologie appropriée.</p>
-  </remarks><remarks xml:lang="ja" versionDate="2008-04-05">
+  </remarks>
+  <remarks xml:lang="ja" versionDate="2008-04-05">
     <p rend="dataDesc"> テキストや句レベルの要素が混在する。また、当該要素自身も含むかもし れない。 </p>
     <p> 要素<gi>s</gi>が、ある単位の全体を完全に、入れ子なく示す場合には、 正書形の文や、他のテキスト部分を示すために使われるかもしれない。 </p>
-  </remarks><remarks versionDate="2017-06-19" xml:lang="de">
+  </remarks>
+  <remarks versionDate="2017-06-19" xml:lang="de">
     <p>Das <gi>s</gi>-Element wird verwendet um orthographische Sätze oder andere Textsegmente zu
       kodieren, vorausgesetzt das Segment ist lückenlos, vollständig und nicht verschachtelt. Für
       unvollständige oder rekursive Segmente soll stattdessen das <gi>seg</gi>-Element verwendet
       werden.</p>
     <p>Das <att>type</att>-Attribut wird verwendet, um den Segmenttyp entsprechend einer geeigneten
       Typologie anzugeben.</p>
-  </remarks><listRef>
+  </remarks>
+  <listRef>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">17.1. Linguistic Segment Categories</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSSASE">8.4.1. Segmentation</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="derived-module-Grobid" ident="trash" mode="add"><gloss>Trash</gloss><desc>contains noise information to be ignored, typically from vectoriel images</desc><classes>
+  </listRef>
+</elementSpec><elementSpec rend="add" module="derived-module-Grobid" ident="trash" mode="add"><gloss>Trash</gloss><desc>contains noise information to be ignored, typically from vectoriel images</desc><classes>
                         <memberOf key="model.pLike"/>
                         <memberOf key="att.editLike"/>
                         <memberOf key="att.datable"/>
