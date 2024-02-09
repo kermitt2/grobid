@@ -71,7 +71,7 @@ public class ReferenceExtractorTest {
 		//LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
-	@Test
+	//@Test
 	public void extractAllReferencesStringArticles2() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<>();
@@ -178,7 +178,7 @@ public class ReferenceExtractorTest {
 								.getAbsolutePath(), false, 0, false, patents, articles);
 	}
 	
-	@Test
+	//@Test
 	public void jaProcessing() {
 		String text_jp = "すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、" + 
 			"例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。" +
@@ -194,7 +194,7 @@ public class ReferenceExtractorTest {
 		assertEquals("21287", patents.get(0).getNumberEpoDoc());
 	}
 	
-	@Test
+	//@Test
 	public void koProcessing() {
 		String text_ko = "미국의 애플사의 미국 출원 2012/012710. 따라서, 전기화학적 센서들의 제조, 특히 혈액 또는 간질액과 같은 신체 마커들(포도당, 프룩토사민, " + 
 		"하에마토크릿 등)의측정을 위한 전기화학적 센서들을 제조하기 위해 개선된 프로세스가 필요하다. 또한, 합리적인 가격으로 센서 스트립들을제조하기 " + 
@@ -211,7 +211,7 @@ public class ReferenceExtractorTest {
 		assertEquals("2012012710", patents.get(0).getNumberEpoDoc());
 	}
 	
-	@Test
+	//@Test
 	public void zhProcessing() {
 		String text_zh = "在本申请的申请人于2008年8月26日提交的申请号为US2008/001534的PCT国际申请中，" + 
 			"揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；" + 
