@@ -59,16 +59,11 @@ public class ReferenceExtractorTest {
             "This patent, ref. US 7930197 says data mining of personal data is patented. " +
             "That article refers to Economic Development Quarterly November 2011 25:353-365, first" + 
 			" published on August 25, 2011.";
-		//GrobidTimer timer = new GrobidTimer(true);
 		List<String> toExtracts = new ArrayList<>();
 		toExtracts.add(toExtract);
 		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, articles);
-		//timer.stop("STOP");
-		//System.out.println(timer.getElapsedTimeFromStartFormated("STOP"));
-		//LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(2, patents.size());
 		assertEquals(1, articles.size());
-		//LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
 	//@Test
@@ -162,7 +157,6 @@ public class ReferenceExtractorTest {
 						new File(
 								"src/test/resources/patents/006271747.xml")
 								.getAbsolutePath(), false, 0, false, patents, articles);
-		//LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals("20050675311", patents.get(0).getNumberEpoDoc());
 		assertEquals("9202190", patents.get(1).getNumberEpoDoc());
 	}
@@ -183,7 +177,6 @@ public class ReferenceExtractorTest {
 		String text_jp = "すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、" + 
 			"例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。" +
 			"硬化は、熱により又はＵＶ照射により行われる。";
-		//System.out.println(text_jp);
 		List<String> toExtracts = new ArrayList<>();
 		toExtracts.add(text_jp);
 		ReferenceExtractor extractor = new ReferenceExtractor();
@@ -200,7 +193,6 @@ public class ReferenceExtractorTest {
 		"하에마토크릿 등)의측정을 위한 전기화학적 센서들을 제조하기 위해 개선된 프로세스가 필요하다. 또한, 합리적인 가격으로 센서 스트립들을제조하기 " + 
 		"위한 고속의 예측가능하고 재생가능한 방법에 대한 필요성이 있다. 또한, 각각의 완료된 스트립이 재생가능한 방법으로 체액의 분석 대상물들을 " + 
 		"신뢰성있고 예측가능하며 정밀하게 측정하는데 사용될 수 있는 매우 작은 특성들을 갖는센서 스트립들을 고속의 예측가능하고 반복가능한 방법으로 제조할 필요가 있다.";
-		//System.out.println(text_kr);
 		List<String> toExtracts = new ArrayList<>();
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<>();
@@ -217,7 +209,6 @@ public class ReferenceExtractorTest {
 			"揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；" + 
 			"围绕导光板的散热框，该散热框与导光板之间形成间隙而构成环形灯槽；以及嵌装于环形灯槽内的环形灯组件，" + 
 			"该环形灯组件由多个发光二极管(LED)贴片、电阻和线路板构成。该申请的全部内容，通过引用结合于此。";
-		//System.out.println(text_zh);
 		List<String> toExtracts = new ArrayList<>();
 		ReferenceExtractor extractor = new ReferenceExtractor();
 		List<PatentItem> patents = new ArrayList<>();
