@@ -322,7 +322,7 @@ public class ReferenceExtractor implements Closeable {
         Map<Integer, List<BibDataSet>> articlesBySegment = new HashMap<>();
 
         // sub-segment texts if a DL model will be applied. Use the max sequence length for size limit
-        if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+        if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
             List<String> newTexts = new ArrayList<>();
             int maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
             for(String text : texts) {

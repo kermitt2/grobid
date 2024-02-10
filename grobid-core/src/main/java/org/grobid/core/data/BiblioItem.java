@@ -6,6 +6,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
+import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
@@ -375,6 +376,9 @@ public class BiblioItem {
 
     // Availability statement
     private String availabilityStmt = null;
+
+    // Copyrights/license information object
+    CopyrightsLicense copyrightsLicense = null;
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -4476,5 +4480,13 @@ public class BiblioItem {
 
     public List<List<LayoutToken>> getAffiliationAddresslabeledTokens() {
         return affiliationAddresslabeledTokens;
+    }
+
+    public void setCopyrightsLicense(CopyrightsLicense copyrightsLicense) {
+        this.copyrightsLicense = copyrightsLicense;
+    }
+
+    public CopyrightsLicense getCopyrightsLicense() {
+        return this.copyrightsLicense;
     }
 }

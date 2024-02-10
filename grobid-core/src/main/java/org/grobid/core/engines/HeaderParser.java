@@ -8,6 +8,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
@@ -306,6 +307,15 @@ public class HeaderParser extends AbstractParser {
                         }
                     } else {
                         resHeader.setServerDate(toISOString(resHeader.getNormalizedServerDate()));
+                    }
+                }
+
+                // copyrights/license identification
+                if (resHeader.getCopyright() != null && resHeader.getCopyright().length()>0) {
+                    if (GrobidProperties.getGrobidEngineName("copyright").equals("delft")) {
+                        CopyrightsLicense copyrightsLicense = LicenseClassifier.getInstance().classify(resHeader.getCopyright());
+                        if (copyrightsLicense != null) 
+                            resHeader.setCopyrightsLicense(copyrightsLicense);
                     }
                 }
 

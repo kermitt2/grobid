@@ -183,7 +183,7 @@ public class PatentParserTrainer extends AbstractTrainer {
                         List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
 
                         int maxSequence = 1000;
-                        if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+                        if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
                             List<String> newTexts = new ArrayList<>();
                             maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
                         }
@@ -362,7 +362,7 @@ public class PatentParserTrainer extends AbstractTrainer {
                                     List<List<String>> segmentedAccumulatedLabels = new ArrayList<>();
 
                                     int maxSequence = 1000;
-                                    if (GrobidProperties.getGrobidCRFEngineName("patent-citation").equals("delft")) {
+                                    if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
                                         List<String> newTexts = new ArrayList<>();
                                         maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
                                     }

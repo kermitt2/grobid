@@ -1,0 +1,20 @@
+{
+    "model_name": "copyright_gru",
+    "architecture": "gru",
+    "embeddings_name": "glove-840B",
+    "char_embedding_size": 25,
+    "word_embedding_size": 300,
+    "dropout": 0.5,
+    "recurrent_dropout": 0.25,
+    "maxlen": 300,
+    "dense_size": 32,
+    "use_char_feature": false,
+    "list_classes": [
+        "publisher",
+        "authors",
+        "undecided"
+    ],
+    "fold_number": 1,
+    "batch_size": 256,
+    "transformer_name": null
+}

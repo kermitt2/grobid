@@ -273,6 +273,28 @@ grobid:
           max_sequence_length: 500  
           batch_size: 40
 
+    - name: "copyright"
+      # at this time, we only have a DeLFT implementation, 
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+      #engine: "delft"
+      engine: "wapiti"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
+
+    - name: "license"
+      # at this time, for being active, it must be DeLFT, no other implementation is available
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+      #engine: "delft"
+      engine: "wapiti"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
+
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
   #          significantly the service at first call

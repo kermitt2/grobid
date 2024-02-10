@@ -64,6 +64,7 @@ public class GrobidRestProcessFiles {
         final InputStream inputStream,
         final int consolidate,
         final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
         ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());
@@ -101,6 +102,7 @@ public class GrobidRestProcessFiles {
                 md5Str,
                 consolidate,
                 includeRawAffiliations,
+                includeRawCopyrights,
                 result
             );
 
@@ -150,7 +152,8 @@ public class GrobidRestProcessFiles {
         final InputStream inputStream,
         final int consolidateHeader,
         final int consolidateFunders,
-        final boolean includeRawAffiliations
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights
     ) {
         LOGGER.debug(methodLogIn());
         String retVal = null;
@@ -185,7 +188,8 @@ public class GrobidRestProcessFiles {
                 md5Str,
                 consolidateHeader,
                 consolidateFunders,
-                includeRawAffiliations
+                includeRawAffiliations,
+                includeRawCopyrights
             );
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -240,6 +244,7 @@ public class GrobidRestProcessFiles {
                                           final int consolidateFunders,
                                           final boolean includeRawAffiliations,
                                           final boolean includeRawCitations,
+                                          final boolean includeRawCopyrights,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
@@ -280,6 +285,7 @@ public class GrobidRestProcessFiles {
                     .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -341,6 +347,7 @@ public class GrobidRestProcessFiles {
                                                           final int consolidateFunders,
                                                           final boolean includeRawAffiliations,
                                                           final boolean includeRawCitations,
+                                                          final boolean includeRawCopyrights,
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs,
@@ -384,6 +391,7 @@ public class GrobidRestProcessFiles {
                     .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -498,7 +506,8 @@ public class GrobidRestProcessFiles {
             List<PatentItem> patents = new ArrayList<>();
             List<BibDataSet> articles = new ArrayList<>();
             retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                                                           articles, patents, consolidate, includeRawCitations);
+                                                           articles, patents, consolidate, 
+                                                           includeRawCitations);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();
