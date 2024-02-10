@@ -33,7 +33,7 @@ public class Affiliation {
 
     private String addressString = null; // unspecified address field
     private String affiliationString = null; // unspecified affiliation field
-    private String rawAffiliationString = null; // raw affiliation text (excluding marker)
+    private String rawAffiliationString = null; // raw affiliation+address text (excluding marker)
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
@@ -330,7 +330,8 @@ public class Affiliation {
                 (region == null) &&
                 (settlement == null) &&
                 (addrLine == null) &&
-                (affiliationString == null) &&
+                (affiliationString == null)  &&
+                (rawAffiliationString == null) &&
                 (addressString == null));
     }
 
@@ -338,7 +339,8 @@ public class Affiliation {
         return !((departments == null) &&
                 (institutions == null) &&
                 (laboratories == null) &&
-                (affiliationString == null));
+                (affiliationString == null) &&
+                (rawAffiliationString == null));
     }
 
     public boolean hasAddress() {

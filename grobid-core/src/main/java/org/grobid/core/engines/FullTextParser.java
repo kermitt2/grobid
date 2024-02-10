@@ -2705,8 +2705,13 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
             if (affiliations != null && affiliations.size() >0) {
                 tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
                 for(Affiliation affiliation : affiliations) {
-                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure())
-                        tei.append(Affiliation.toTEI(affiliation, 4, config));
+                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure()) {
+                        tei.append("\t\t\t\t<org type=\"infrastructure\">");
+                        tei.append("\t\t\t\t\t<orgName type=\"extracted\">");
+                        tei.append(TextUtilities.HTMLEncode(affiliation.getAffiliationString()));
+                        tei.append("</orgName>\n");
+                        tei.append("\t\t\t\t</org>\n");
+                    }
                 }
                 tei.append("\t\t\t</listOrg>\n");
             }
