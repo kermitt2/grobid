@@ -2561,6 +2561,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         StringBuilder tei = new StringBuilder();
         try {
             List<Funding> fundings = new ArrayList<>();
+            List<Affiliation> affiliations = new ArrayList<>();
 
             List<String> annexStatements = new ArrayList<>();
 
@@ -2581,11 +2582,21 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     annexStatements.add(acknowledgmentStmt.toString());
                 }
 
-                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                    List<Funding> localFundings = localResult.getRight().getLeft();
-                    if (localFundings.size()>0) {
-                        fundings.addAll(localFundings);
+                if (localResult != null && localResult.getRight() != null) {
+                    if (localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
                     }
+
+                    if (localResult.getRight().getRight() != null) {
+                        List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                        if (localAffiliations.size()>0) {
+                            affiliations.addAll(localAffiliations);
+                        }
+                    }
+
                 }
             }
 
@@ -2615,10 +2626,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         annexStatements.add(fundingStmt.toString());
                     }
 
-                    if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                        List<Funding> localFundings = localResult.getRight().getLeft();
-                        if (localFundings.size()>0) {
-                            fundings.addAll(localFundings);
+                    if (localResult != null && localResult.getRight() != null) {
+                        if (localResult.getRight().getLeft() != null) {
+                            List<Funding> localFundings = localResult.getRight().getLeft();
+                            if (localFundings.size()>0) {
+                                fundings.addAll(localFundings);
+                            }
+                        }
+
+                        if (localResult.getRight().getRight() != null) {
+                            List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                            if (localAffiliations.size()>0) {
+                                affiliations.addAll(localAffiliations);
+                            }
                         }
                     }
                 }
@@ -2644,10 +2664,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     annexStatements.add(fundingStmt.toString());
                 }
 
-                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                    List<Funding> localFundings = localResult.getRight().getLeft();
-                    if (localFundings.size()>0) {
-                        fundings.addAll(localFundings);
+                if (localResult != null && localResult.getRight() != null) {
+                    if (localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
+
+                    if (localResult.getRight().getRight() != null) {
+                        List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                        if (localAffiliations.size()>0) {
+                            affiliations.addAll(localAffiliations);
+                        }
                     }
                 }
             }
@@ -2669,6 +2698,15 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
                         tei.append(funding.toTEI(4));
+                }
+                tei.append("\t\t\t</listOrg>\n");
+            }
+
+            if (affiliations != null && affiliations.size() >0) {
+                tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
+                for(Affiliation affiliation : affiliations) {
+                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure())
+                        tei.append(Affiliation.toTEI(affiliation, 4, config));
                 }
                 tei.append("\t\t\t</listOrg>\n");
             }

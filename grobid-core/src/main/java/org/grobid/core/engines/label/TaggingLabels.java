@@ -122,6 +122,7 @@ public class TaggingLabels {
     public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
     public final static String URL_LABEL = "<url>";
     public final static String PERSON_LABEL = "<person>";
+    public final static String INFRASTRUCTURE_LABEL = "<infrastructure>";
 
     public final static String DEPARTMENT_LABEL = "<department>";
     public final static String LABORATORY_LABEL = "<laboratory>";
@@ -282,6 +283,7 @@ public class TaggingLabels {
     public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, URL_LABEL);
     public static final TaggingLabel FUNDING_PERSON = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PERSON_LABEL);
     public static final TaggingLabel FUNDING_INSTITUTION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INSTITUTION_LABEL);
+    public static final TaggingLabel FUNDING_INFRASTRUCTURE = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INFRASTRUCTURE_LABEL);
     public static final TaggingLabel FUNDING_AFFILIATION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, AFFILIATION_LABEL);
     public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, OTHER_LABEL);
 
@@ -444,6 +446,7 @@ public class TaggingLabels {
         register(FUNDING_AFFILIATION);
         register(FUNDING_INSTITUTION);
         register(FUNDING_OTHER);
+        register(FUNDING_INFRASTRUCTURE);
 
         // affiliation-address
         register(AFFILIATION_MARKER);

@@ -341,6 +341,28 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     curParagraphNodes.add(textNode(" "));
                 curParagraphNodes.add(entity);
 
+            } else if (clusterLabel.equals(FUNDING_INFRASTRUCTURE)) {
+                if (StringUtils.isNotBlank(institution.getAffiliationString())) {
+                    if (institution.isNotNull()) {
+                        institutions.add(institution);
+                        // next funding object
+                        institution = new Affiliation();
+                    }
+                }
+
+                institution.setRawAffiliationString(clusterContent);
+                institution.appendLayoutTokens(tokens);
+                institution.setInfrastructure(true);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "institution"));
+                entity.addAttribute(new Attribute("subtype", "infrastructure"));
+                entity.appendChild(clusterContent);
+
+                if (spaceBefore)
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
+
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 Funding previousFounding = null;
                 if (StringUtils.isNotBlank(funding.getGrantNumber())) {

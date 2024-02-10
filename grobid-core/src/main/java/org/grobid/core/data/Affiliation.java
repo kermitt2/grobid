@@ -37,6 +37,8 @@ public class Affiliation {
 
     private boolean failAffiliation = true; // tag for unresolved affiliation attachment
 
+    private boolean isInfrastructure = false; // if true, the affiliation is a research infrastructure
+
     private List<LayoutToken> layoutTokens = null;
 
     // map of model labels to LayoutToken
@@ -69,6 +71,7 @@ public class Affiliation {
         affiliationString = aff.getAffiliationString();
         rawAffiliationString = aff.getRawAffiliationString();
         layoutTokens = aff.getLayoutTokens();
+        isInfrastructure = aff.isInfrastructure();
     }
 
     public String getAcronym() { 
@@ -225,6 +228,14 @@ public class Affiliation {
         laboratories.add(TextUtilities.cleanField(aff, true));
     }
 
+    public boolean isInfrastructure() {
+        return this.isInfrastructure;
+    }
+
+    public void setInfrastructure(boolean boolValue) {
+        this.isInfrastructure = boolValue;
+    }
+
     /**
      * DEPRECATED
      **/
@@ -321,6 +332,13 @@ public class Affiliation {
                 (addrLine == null) &&
                 (affiliationString == null) &&
                 (addressString == null));
+    }
+
+    public boolean isNotEmptyAffiliation() {
+        return !((departments == null) &&
+                (institutions == null) &&
+                (laboratories == null) &&
+                (affiliationString == null));
     }
 
     public boolean hasAddress() {
@@ -639,7 +657,8 @@ public class Affiliation {
                 ", addressString='" + addressString + '\'' +
                 ", affiliationString='" + affiliationString + '\'' +
                 ", rawAffiliationString='" + rawAffiliationString + '\'' +
-                ", failAffiliation=" + failAffiliation +
+                ", failAffiliation=" + failAffiliation + '\'' +
+                ", isInfrastructure=" + isInfrastructure + 
                 '}';
     }
 
