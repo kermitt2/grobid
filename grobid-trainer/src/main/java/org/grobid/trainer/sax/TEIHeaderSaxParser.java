@@ -56,6 +56,8 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     }
 
     public String getPDFName() {
+        if (pdfName != null && pdfName.startsWith("_"))
+            return pdfName.substring(1);
         return pdfName;
     }
 
