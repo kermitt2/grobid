@@ -31,6 +31,8 @@ import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
+import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -2706,10 +2708,22 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
                 for(Affiliation affiliation : affiliations) {
                     if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure()) {
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                            Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
                         tei.append("\t\t\t\t<org type=\"infrastructure\">");
                         tei.append("\t\t\t\t\t<orgName type=\"extracted\">");
                         tei.append(TextUtilities.HTMLEncode(affiliation.getAffiliationString()));
                         tei.append("</orgName>\n");
+                        for(Lexicon.OrganizationRecord orgRecord : localOrganizationNamings) {
+                            if (isNotBlank(orgRecord.fullName)) {
+                                tei.append("\t\t\t\t\t<orgName type=\"full\"");
+                                if (isNotBlank(orgRecord.lang))
+                                    tei.append(" lang=\"" + orgRecord.lang + "\"");
+                                tei.append(">");
+                                tei.append(TextUtilities.HTMLEncode(orgRecord.fullName));
+                                tei.append("</orgName>\n");
+                            }
+                        }
                         tei.append("\t\t\t\t</org>\n");
                     }
                 }
