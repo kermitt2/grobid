@@ -93,6 +93,8 @@ public class Funding {
     }
 
     public void setGrantNumber(String grantNumber) {
+        if (grantNumber != null && grantNumber.startsWith("n˚"))
+            grantNumber = grantNumber.replace("n˚", "");
         this.grantNumber = grantNumber;
     }
 
