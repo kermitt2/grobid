@@ -57,8 +57,8 @@ public class TEIFundingAcknowledgementSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         if (( (qName.equals("funder")) || (qName.equals("grantName")) || (qName.equals("grantNumber")) || (qName.equals("projectName")) || 
-              (qName.equals("programName")) || (qName.equals("individual")) || (qName.equals("institution")) || (qName.equals("infrastructure")) 
-              || (qName.equals("affiliation"))) & (currentTag != null)) {
+              (qName.equals("programName")) || (qName.equals("individual")) || (qName.equals("institution")) || (qName.equals("affiliation"))) 
+            && (currentTag != null)) {
             String text = getText();
             writeField(text);
         } else if (qName.equals("funding") || qName.equals("acknowledgment") ) {
