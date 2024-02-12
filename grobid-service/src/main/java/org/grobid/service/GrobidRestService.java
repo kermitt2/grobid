@@ -128,28 +128,6 @@ public class GrobidRestService implements GrobidPaths {
         return restProcessGeneric.getDescription_html(uriInfo);
     }
 
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
-     */
-    /*@Path(PATH_ADMIN)
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    @Produces(MediaType.TEXT_HTML)
-    @POST
-    public Response getAdmin_htmlPost(@FormParam(SHA1) String sha1) {
-        return restProcessAdmin.getAdminParams(sha1);
-    }*/
-
-    /**
-     * @see org.grobid.service.process.GrobidRestProcessAdmin#getAdminParams(String)
-     */
-    /*@Path(PATH_ADMIN)
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_HTML)
-    @GET
-    public Response getAdmin_htmlGet(@QueryParam(SHA1) String sha1) {
-        return restProcessAdmin.getAdminParams(sha1);
-    }*/
-
     @Path(PATH_HEADER)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)

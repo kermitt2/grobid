@@ -2598,7 +2598,6 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                             affiliations.addAll(localAffiliations);
                         }
                     }
-
                 }
             }
 
@@ -2816,6 +2815,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         StringBuilder tei = new StringBuilder();
         try {
             List<Funding> fundings = new ArrayList<>();
+            List<Affiliation> affiliations = new ArrayList<>();
 
             List<String> annexStatements = new ArrayList<>();
 
@@ -2836,10 +2836,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     annexStatements.add(acknowledgmentStmt.toString());
                 }
 
-                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                    List<Funding> localFundings = localResult.getRight().getLeft();
-                    if (localFundings.size()>0) {
-                        fundings.addAll(localFundings);
+                if (localResult != null && localResult.getRight() != null) {
+                    if (localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
+
+                    if (localResult.getRight().getRight() != null) {
+                        List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                        if (localAffiliations.size()>0) {
+                            affiliations.addAll(localAffiliations);
+                        }
                     }
                 }
             }
@@ -2870,10 +2879,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         annexStatements.add(fundingStmt.toString());
                     }
 
-                    if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                        List<Funding> localFundings = localResult.getRight().getLeft();
-                        if (localFundings.size()>0) {
-                            fundings.addAll(localFundings);
+                    if (localResult != null && localResult.getRight() != null) {
+                        if (localResult.getRight().getLeft() != null) {
+                            List<Funding> localFundings = localResult.getRight().getLeft();
+                            if (localFundings.size()>0) {
+                                fundings.addAll(localFundings);
+                            }
+                        }
+
+                        if (localResult.getRight().getRight() != null) {
+                            List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                            if (localAffiliations.size()>0) {
+                                affiliations.addAll(localAffiliations);
+                            }
                         }
                     }
                 }
@@ -2899,10 +2917,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     annexStatements.add(fundingStmt.toString());
                 }
 
-                if (localResult != null && localResult.getRight() != null && localResult.getRight().getLeft() != null) {
-                    List<Funding> localFundings = localResult.getRight().getLeft();
-                    if (localFundings.size()>0) {
-                        fundings.addAll(localFundings);
+                if (localResult != null && localResult.getRight() != null) {
+                    if (localResult.getRight().getLeft() != null) {
+                        List<Funding> localFundings = localResult.getRight().getLeft();
+                        if (localFundings.size()>0) {
+                            fundings.addAll(localFundings);
+                        }
+                    }
+
+                    if (localResult.getRight().getRight() != null) {
+                        List<Affiliation> localAffiliations = localResult.getRight().getRight();
+                        if (localAffiliations.size()>0) {
+                            affiliations.addAll(localAffiliations);
+                        }
                     }
                 }
             }
@@ -2922,6 +2949,52 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         tei.append(funding.toTEI(4));
                 }
                 tei.append("\t\t\t</listOrg>\n");
+            }
+
+            if (affiliations != null && affiliations.size() >0) {
+                
+                // check if we have at least one acknowledged research infrastructure here
+                List<Affiliation> filteredInfrastructures = new ArrayList<>();
+                for(Affiliation affiliation : affiliations) {
+                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure()) 
+                        filteredInfrastructures.add(affiliation);
+                    else if (affiliation.isNotEmptyAffiliation()) {
+                        // check if this organization is a known infrastructure
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                            Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
+                        if (localOrganizationNamings != null && localOrganizationNamings.size()>0) {
+                            filteredInfrastructures.add(affiliation);
+                        }
+                    }
+                }
+
+                // serialize acknowledged research infrastructure, if any
+                if (filteredInfrastructures.size() > 0) {
+                    tei.append("\n\t\t\t<listOrg type=\"infrastructure\">\n");
+                    for(Affiliation affiliation : filteredInfrastructures) {
+                        List<Lexicon.OrganizationRecord> localOrganizationNamings = 
+                            Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
+                        tei.append("\t\t\t\t<org type=\"infrastructure\">");
+                        tei.append("\t\t\t\t\t<orgName type=\"extracted\">");
+                        tei.append(TextUtilities.HTMLEncode(affiliation.getAffiliationString()));
+                        tei.append("</orgName>\n");
+                        if (localOrganizationNamings != null && localOrganizationNamings.size()>0) {
+                            for(Lexicon.OrganizationRecord orgRecord : localOrganizationNamings) {
+                                if (isNotBlank(orgRecord.fullName)) {
+                                    tei.append("\t\t\t\t\t<orgName type=\"full\"");
+                                    if (isNotBlank(orgRecord.lang))
+                                        tei.append(" lang=\"" + orgRecord.lang + "\"");
+                                    tei.append(">");
+                                    tei.append(TextUtilities.HTMLEncode(orgRecord.fullName));
+                                    tei.append("</orgName>\n");
+                                }
+                            }
+                        }
+                        tei.append("\t\t\t\t</org>\n");
+                    }
+                    
+                    tei.append("\t\t\t</listOrg>\n");
+                }
             }
 
             tei.append("\t\t</back>\n");
