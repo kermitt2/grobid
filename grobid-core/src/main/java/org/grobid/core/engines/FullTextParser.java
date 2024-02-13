@@ -2708,9 +2708,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
                 for(Affiliation affiliation : affiliations) {
-                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure()) 
+                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure()) 
                         filteredInfrastructures.add(affiliation);
-                    else if (affiliation.isNotEmptyAffiliation()) {
+                    else if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0) {
                         // check if this organization is a known infrastructure
                         List<Lexicon.OrganizationRecord> localOrganizationNamings = 
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
@@ -2956,9 +2956,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
                 for(Affiliation affiliation : affiliations) {
-                    if (affiliation.isNotEmptyAffiliation() && affiliation.isInfrastructure()) 
+                    if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0 && affiliation.isInfrastructure()) 
                         filteredInfrastructures.add(affiliation);
-                    else if (affiliation.isNotEmptyAffiliation()) {
+                    else if (affiliation.getAffiliationString() != null && affiliation.getAffiliationString().length()>0) {
                         // check if this organization is a known infrastructure
                         List<Lexicon.OrganizationRecord> localOrganizationNamings = 
                             Lexicon.getInstance().getOrganizationNamingInfo(affiliation.getAffiliationString());
