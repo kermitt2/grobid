@@ -1370,11 +1370,14 @@ public class FullTextParser extends AbstractParser {
                     List<List<LayoutToken>> tokenizationsAffiliation = resHeader.getAffiliationAddresslabeledTokens();
                     //List<LayoutToken> tokenizationsAffiliation = resHeader.getLayoutTokens(TaggingLabels.HEADER_AFFILIATION);
                     List<LayoutToken> tokenizationAffiliation = new ArrayList<>();
-                    for (List<LayoutToken> tokenization : tokenizationsAffiliation) {
-                        tokenizationAffiliation.addAll(tokenization);
+                    StringBuilder bufferAffiliation = null;
+                    if (tokenizationsAffiliation != null && tokenizationsAffiliation.size()>0) {
+                        for (List<LayoutToken> tokenization : tokenizationsAffiliation) {
+                            tokenizationAffiliation.addAll(tokenization);
+                        }
+                        bufferAffiliation =
+                                parsers.getAffiliationAddressParser().trainingExtraction(tokenizationAffiliation);
                     }
-                    StringBuilder bufferAffiliation =
-                            parsers.getAffiliationAddressParser().trainingExtraction(tokenizationAffiliation);
 
                     // buffer for the date block
                     StringBuilder bufferDate = null;
