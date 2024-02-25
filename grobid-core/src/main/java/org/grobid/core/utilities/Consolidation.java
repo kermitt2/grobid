@@ -115,7 +115,7 @@ public class Consolidation {
 
     /**
      * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
-     * core metadata
+     * core metadata. In practice, this method is used for consolidating header metadata.  
      */
     public BiblioItem consolidate(BiblioItem bib, String rawCitation, int consolidateMode) throws Exception {
         final List<BiblioItem> results = new ArrayList<>();
@@ -125,6 +125,7 @@ public class Consolidation {
             theDOI = cleanDOI(theDOI);
         }
         final String doi = theDOI;
+        String halId = bib.getHalId();
         String aut = bib.getFirstAuthorSurname();
         String title = bib.getTitle();
         String journalTitle = bib.getJournal();
@@ -170,6 +171,13 @@ public class Consolidation {
                         arguments = new HashMap<String,String>();
                     arguments.put("query.bibliographic", rawCitation);
                 }
+            }
+            if (StringUtils.isNotBlank(halId)) {
+                // call based on the identified HAL ID
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF)
+                    arguments.put("halid", halId);
             }
             if (StringUtils.isNotBlank(aut)) {
                 // call based on partial metadata
@@ -309,7 +317,9 @@ public class Consolidation {
 
 
     /**
-     * Try tp consolidate a list of bibliographical objects in one operation with consolidation services
+     * Try tp consolidate a list of bibliographical objects in one operation with consolidation services.
+     * In practice this method is used for consolidating the metadata of all the extracted bibliographical 
+     * references. 
      */
     public Map<Integer,BiblioItem> consolidate(List<BibDataSet> biblios) {
         if (CollectionUtils.isEmpty(biblios))
@@ -333,6 +343,8 @@ public class Consolidation {
             if (StringUtils.isNotBlank(doi)) {
                 doi = BiblioItem.cleanDOI(doi);
             }
+            // first we get the exploitable metadata
+            String halId = theBiblio.getHalId();
             String aut = theBiblio.getFirstAuthorSurname();
             String title = theBiblio.getTitle();
             String journalTitle = theBiblio.getJournal();
@@ -380,6 +392,13 @@ public class Consolidation {
                 // call based on the identified DOI
                 arguments = new HashMap<String,String>();
                 arguments.put("doi", doi);
+            }
+            if (StringUtils.isNotBlank(halId)) {
+                // call based on the identified HAL ID
+                if (arguments == null)
+                    arguments = new HashMap<String,String>();
+                if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF)
+                    arguments.put("halid", halId);
             }
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string

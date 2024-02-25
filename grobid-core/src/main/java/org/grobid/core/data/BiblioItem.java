@@ -2119,9 +2119,6 @@ public class BiblioItem {
      * the corresponding field and reset the generic pubnum field.
      */
     public void checkIdentifier() {
-
-        System.out.println(pubnum);
-
         // DOI
         if (!StringUtils.isEmpty(pubnum) && StringUtils.isEmpty(doi)) {
             Matcher doiMatcher = TextUtilities.DOIPattern.matcher(pubnum);
