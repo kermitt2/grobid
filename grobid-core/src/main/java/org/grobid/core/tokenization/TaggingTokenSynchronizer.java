@@ -124,8 +124,10 @@ public class TaggingTokenSynchronizer implements Iterator<LabeledTokensContainer
         StringBuilder sb = new StringBuilder();
         for (int i = Math.max(0, tokensAndLabelsPtr - limit); i < Math.min(tokensAndLabelsPtr + limit, tokensAndLabels.size()); i++) {
             Triple<String, String, String> s = tokensAndLabels.get(i);
-            String str = i == tokensAndLabelsPtr ? "-->\t'" + s.getA() + "'" : "\t'" + s.getA() + "'";
-            sb.append(str).append("\n");
+            if (s != null) {
+                String str = i == tokensAndLabelsPtr ? "-->\t'" + s.getA() + "'" : "\t'" + s.getA() + "'";
+                sb.append(str).append("\n");
+            }
         }
 
         StringBuilder sb2 = new StringBuilder();

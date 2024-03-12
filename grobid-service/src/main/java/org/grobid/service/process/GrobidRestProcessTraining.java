@@ -14,13 +14,13 @@ import org.grobid.trainer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.StreamingOutput;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.StreamingOutput;
 
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -275,6 +275,8 @@ public class GrobidRestProcessTraining {
             trainer = new FigureTrainer();
         } else if (model.equals("table")) {
             trainer = new TableTrainer();
+        } else if (model.equals("funding-acknowledgement")) {
+            trainer = new FundingAcknowledgementTrainer();
         } else {
             throw new IllegalStateException("The model " + model + " is unknown.");
         }

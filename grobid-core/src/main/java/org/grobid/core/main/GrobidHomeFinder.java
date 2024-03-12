@@ -51,11 +51,7 @@ public class GrobidHomeFinder {
 
     public File findGrobidHomeOrFail() {
         File gh = getGrobidHomePathOrLoadFromClasspath();
-
-        LOGGER.info("***************************************************************");
         LOGGER.info("*** USING GROBID HOME: " + gh.getAbsolutePath());
-        LOGGER.info("***************************************************************");
-
         if (!gh.exists() || !gh.isDirectory()) {
             fail("Grobid home folder '" + gh.getAbsolutePath() + "' was detected for usage, but does not exist");
         }

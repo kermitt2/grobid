@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_MNRAS-2015-Richard-L16-20"/>
+		<fileDesc xml:id="__MNRAS-2015-Richard-L16-20"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<note place="headnote">MNRAS 446, L16–L20 (2015) <lb/>doi:10.1093/mnrasl/slu150 <lb/></note> 

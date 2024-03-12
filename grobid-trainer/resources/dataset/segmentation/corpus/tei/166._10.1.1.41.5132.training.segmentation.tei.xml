@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>PARALLEL CONSTRAINT DISTRIBUTION <lb/>M. C. FERRIS y AND O. L. MANGASARIAN y <lb/>Abstract. Constraints of a mathematical program are distributed among parallel processors to-<lb/>gether with an appropriately constructed augmented Lagrangian for each processor, which contains <lb/>Lagrangian information on the constraints handled by the other processors. Lagrange multiplier in-<lb/>formation is then exchanged between processors. Convergence is established under suitable conditions <lb/>for strongly convex quadratic programs and for general convex programs. <lb/>Key words. Parallel Optimization, Augmented Lagrangians, Quadratic Programs, Convex Pro-<lb/>grams <lb/></front>

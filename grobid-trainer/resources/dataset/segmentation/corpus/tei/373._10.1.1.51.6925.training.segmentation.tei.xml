@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Switching through Singularities <lb/>C. J. Tomlin and S. S. Sastry <lb/>Department of Electrical Engineering and Computer Sciences <lb/>University of California, Berkeley CA 94720 <lb/>fclairet, sastryg@eecs.berkeley.edu <lb/>Abstract <lb/>Asymptotic tracking is studied for systems in which the relative degree is not well de ned, <lb/>meaning that the control law derived from exact input-output linearization has singularities in <lb/>the state space. We propose a tracking control law which switches between approximate tracking <lb/>1] close to the singularities, and exact tracking away from the singularities, and we study the <lb/>applicability of this law based on the behavior of the system&apos;s zero dynamics at the switching <lb/>boundary. As in 1], the ball and beam example is used to motivate the study. <lb/>Keywords: Switching, nonlinear control, zero dynamics, exact and asymptotic tracking, <lb/>nonminimum phase. <lb/></front>

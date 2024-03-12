@@ -24,10 +24,10 @@ import org.grobid.service.util.GrobidRestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -64,6 +64,7 @@ public class GrobidRestProcessFiles {
         final InputStream inputStream,
         final int consolidate,
         final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights,
         ExpectedResponseType expectedResponseType
     ) {
         LOGGER.debug(methodLogIn());
@@ -101,6 +102,7 @@ public class GrobidRestProcessFiles {
                 md5Str,
                 consolidate,
                 includeRawAffiliations,
+                includeRawCopyrights,
                 result
             );
 
@@ -117,6 +119,88 @@ public class GrobidRestProcessFiles {
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
                     .build();
             }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception exp) {
+            LOGGER.error("An unexpected exception occurs. ", exp);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).entity(exp.getMessage()).build();
+        } finally {
+            if (originFile != null)
+                IOUtilities.removeTempFile(originFile);
+
+            if (engine != null) {
+                GrobidPoolingFactory.returnEngine(engine);
+            }
+        }
+
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
+    /**
+     * Uploads the origin document which shall be extracted into TEI and
+     * extracts only the header and funding information, this still requires a full read and segmentation of the document,
+     * but non-relevant parts are skipt.
+     *
+     * @param inputStream the data of origin document
+     * @param consolidateHeader consolidation parameter for the header extraction
+     * @param consolidateFunders consolidation parameter for the funder extraction
+     * @return a response object which contains a TEI representation of the header part
+     */
+    public Response processStatelessHeaderFundingDocument(
+        final InputStream inputStream,
+        final int consolidateHeader,
+        final int consolidateFunders,
+        final boolean includeRawAffiliations,
+        final boolean includeRawCopyrights
+    ) {
+        LOGGER.debug(methodLogIn());
+        String retVal = null;
+        Response response = null;
+        File originFile = null;
+        Engine engine = null;
+        try {
+            engine = Engine.getEngine(true);
+            // conservative check, if no engine is free in the pool a NoSuchElementException is normally thrown
+            if (engine == null) {
+                throw new GrobidServiceException(
+                    "No GROBID engine available", Status.SERVICE_UNAVAILABLE);
+            }
+
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            DigestInputStream dis = new DigestInputStream(inputStream, md); 
+
+            originFile = IOUtilities.writeInputFile(dis);
+            byte[] digest = md.digest();
+
+            if (originFile == null) {
+                LOGGER.error("The input file cannot be written.");
+                throw new GrobidServiceException(
+                    "The input file cannot be written. ", Status.INTERNAL_SERVER_ERROR);
+            } 
+
+            String md5Str = DatatypeConverter.printHexBinary(digest).toUpperCase();
+
+            // starts conversion process
+            retVal = engine.processHeaderFunding(
+                originFile,
+                md5Str,
+                consolidateHeader,
+                consolidateFunders,
+                includeRawAffiliations,
+                includeRawCopyrights
+            );
+
+            if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+                response = Response.status(Response.Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Response.Status.OK)
+                    .entity(retVal)
+                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                    .build();
+            }
+
         } catch (NoSuchElementException nseExp) {
             LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
             response = Response.status(Status.SERVICE_UNAVAILABLE).build();
@@ -157,8 +241,10 @@ public class GrobidRestProcessFiles {
     public Response processFulltextDocument(final InputStream inputStream,
                                           final int consolidateHeader,
                                           final int consolidateCitations,
+                                          final int consolidateFunders,
                                           final boolean includeRawAffiliations,
                                           final boolean includeRawCitations,
+                                          final boolean includeRawCopyrights,
                                           final int startPage,
                                           final int endPage,
                                           final boolean generateIDs,
@@ -196,8 +282,10 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -256,8 +344,10 @@ public class GrobidRestProcessFiles {
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
                                                           final int consolidateHeader,
                                                           final int consolidateCitations,
+                                                          final int consolidateFunders,
                                                           final boolean includeRawAffiliations,
                                                           final boolean includeRawCitations,
+                                                          final boolean includeRawCopyrights,
                                                           final int startPage,
                                                           final int endPage,
                                                           final boolean generateIDs,
@@ -298,8 +388,10 @@ public class GrobidRestProcessFiles {
                 GrobidAnalysisConfig.builder()
                     .consolidateHeader(consolidateHeader)
                     .consolidateCitations(consolidateCitations)
+                    .consolidateFunders(consolidateFunders)
                     .includeRawAffiliations(includeRawAffiliations)
                     .includeRawCitations(includeRawCitations)
+                    .includeRawCopyrights(includeRawCopyrights)
                     .startPage(startPage)
                     .endPage(endPage)
                     .generateTeiIds(generateIDs)
@@ -414,7 +506,8 @@ public class GrobidRestProcessFiles {
             List<PatentItem> patents = new ArrayList<>();
             List<BibDataSet> articles = new ArrayList<>();
             retVal = engine.processAllCitationsInPDFPatent(originFile.getAbsolutePath(),
-                                                           articles, patents, consolidate, includeRawCitations);
+                                                           articles, patents, consolidate, 
+                                                           includeRawCitations);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Status.NO_CONTENT).build();

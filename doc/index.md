@@ -13,11 +13,13 @@
 
 <h3>User manual</h3>
 
-* [Install GROBID](Install-Grobid.md)
-
-* [Use GROBID with containers (Docker)](Grobid-docker.md)
+* [Run GROBID](Run-Grobid.md)
 
 * [Use GROBID as a service](Grobid-service.md)
+
+* [Build a GROBID development environment](Install-Grobid.md)
+
+* [Manage GROBID with containers (Docker)](Grobid-docker.md)
 
 * [Use GROBID in batch mode](Grobid-batch.md)
 
@@ -42,8 +44,14 @@
 <h3>Benchmarking</h3>
 
 * [Description](Benchmarking.md)
+
 * [Evaluation PubMed Central](Benchmarking-pmc.md)
+
 * [Evaluation bioRxiv](Benchmarking-biorxiv.md)
+
+* [Evaluation PLOS](Benchmarking-plos.md)
+
+* [Evaluation eLife](Benchmarking-elife.md)
 
 <h3>Annotation guidelines</h3>
 
@@ -64,7 +72,9 @@
 <h3>Developer notes</h3>
 
 * [Notes for the Grobid Developers](Notes-grobid-developers.md)
+
 * [Using Deep Learning models instead of default CRF](Deep-Learning-models.md)
+
 * [Recompiling and integrating CRF libraries into GROBID](Recompiling-and-integrating-CRF-libraries.md)
 
 

@@ -4,6 +4,61 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.8.0] - 2023-11-19
+
+### Added
+
++ Extraction of funder and funding information with a specific new model, see https://github.com/kermitt2/grobid/pull/1046 for details
++ Optional consolidation of funder with CrossRef Funder Registry
++ Identification of acknowledged entities in the acknowledgement section
++ Optional coordinates in title elements
+
+### Changed
+
++ Dropwizard upgrade to 4.0
++ Minimum JDK/JVM requirement for building/running the project is now 1.11
++ Logging now with Logback, removal of Log4j2, optional logs in json format
++ General review of logs
++ Enable Github actions / Disable circleci
+
+### Fixed
+
++ Set dynamic memory limit in pdfalto_server #1038 
++ Logging in files when training models work now as expected
++ Various dependency upgrades
++ Fix #1051 with possible problematic PDF
++ Fix #1036 for pdfalto memory limit 
++ fix readthedocs build #1040 
++ fix for null equation #1030
++ Other minor fixes
+
+## [0.7.3] – 2023-05-13
+
+### Added
+
++ Support for JDK beyond 1.11, tested up to Java 17, thanks to removal of dynamic native library loading after the start of the JVM
++ Incremental training (all models and ML engines), add this option in training command line and training web service (#971)
++ Systematic benchmarking on two new sets: PLOS (1000 artilces) and eLife (984 articles)
++ All end-to-end evaluation datasets are now available from the same place: https://zenodo.org/record/7708580
++ Option to output coordinates in notes and figure/table captions
++ Support for Mac ARM architecture (#975)
++ Play With Docker documentation (#962)
+
+### Changed
+
++ Update to DeLFT version 0.3.3
++ Demo now hosted as HuggingFace space
++ Additional training data, in particular for citation, reference-segmenter, segmentation, header, etc. 
++ Update Deep Learning models (and some of the CRF)
++ The standard analyzer for sub-lexical tokenization is available in grobid-core, and used for the citation model (in particular for improving CJK references) (#990)
++ Update evaluations
+
+### Fixed
+
++ Correct wrong content type in doc for processCitation web service
++ Sentence segmentation applied to notes (#995)
++ Other minor fixes
+
 ## [0.7.2] – 2022-10-29
 
 ### Added

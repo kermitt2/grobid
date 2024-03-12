@@ -3,12 +3,12 @@ package org.grobid.service.resources;
 import com.codahale.metrics.health.HealthCheck;
 import org.grobid.service.GrobidServiceConfiguration;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.Response;
 
 @Path("health")
 @Singleton
@@ -19,7 +19,8 @@ public class HealthResource extends HealthCheck {
     private GrobidServiceConfiguration configuration;
 
     @Inject
-    public HealthResource() {
+    public HealthResource(GrobidServiceConfiguration configuration) {
+        this.configuration = configuration;
     }
 
     @GET

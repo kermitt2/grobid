@@ -6,8 +6,10 @@ timeout=20   # 20 seconds
 interval=1
 # Delay between posting the SIGTERM signal and destroying the process by SIGKILL.
 delay=0
-command=${0:0:${#0}-7}
+# Default limit for the memory usage by this bash script
+memory_limit=6242304
 
+command=${0:0:${#0}-7}
 args=("$@")
 pdfalto_params=()
 
@@ -17,11 +19,18 @@ for ((n=0; n<="$#";n++)); do
 	        timeout=${args[n+1]}
             ((n++))
             ;;
+         --ulimit) 
+          memory_limit=${args[n+1]}
+              ((n++))
+              ;;
          *)
             pdfalto_params+=" ${args[n]}"
             ;;
    esac
 done
+
+# Limit the memory usage by this bash script
+ulimit -Sv $memory_limit
 
 # kill -0 pid   Exit code indicates if a signal may be sent to $pid process.
 (

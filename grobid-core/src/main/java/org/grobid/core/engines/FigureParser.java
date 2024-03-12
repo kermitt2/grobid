@@ -40,7 +40,7 @@ class FigureParser extends AbstractParser {
 //System.out.println("---------------------res-----------------------");
 //System.out.println(res);
         } catch (Exception e) {
-            throw new GrobidException("CRF labeling with figure model fails.", e);
+            throw new GrobidException("Sequence labeling with figure model fails.", e);
         }
         if (res == null) {
             return null;
@@ -94,7 +94,7 @@ class FigureParser extends AbstractParser {
         try {
             res = label(featureVector);
         } catch (Exception e) {
-            LOGGER.error("CRF labeling in FigureParser fails.", e);
+            LOGGER.error("Sequence labeling in FigureParser fails.", e);
         }
         if (res == null) {
             return Pair.of(null, featureVector);

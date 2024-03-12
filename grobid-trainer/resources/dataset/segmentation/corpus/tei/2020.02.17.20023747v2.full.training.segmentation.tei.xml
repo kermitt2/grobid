@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>The reproductive number R 0 of COVID-19 based on <lb/>estimate of a statistical time delay dynamical system <lb/>Nian Shao * , Jin Cheng † , Wenbin Chen ‡ <lb/>Abstract. In this paper, we estimate the reproductive number R 0 of COVID-19 based on <lb/>Wallinga and Lipsitch framework [11] and a novel statistical time delay dynamic system. We use <lb/>the observed data reported in CCDC&apos;s paper to estimate distribution of the generation interval <lb/>of the infection and apply the simulation results from the time delay dynamic system as well as <lb/>released data from CCDC to fit the growth rate. The conclusion is: Based our Fudan-CCDC <lb/>model, the growth rate r of COVID-19 is almost in [0.30, 0.32] which is larger than the growth <lb/>rate 0.1 estimated by CCDC [9], and the reproductive number R 0 of COVID-19 is estimated by <lb/>3.25 ≤ R 0 ≤ 3.4 if we simply use R = 1 + r * T c with T c = 7.5, which is bigger than that of <lb/>SARS. Some evolutions and predictions are listed. <lb/>Key words. COVID-19; The reproductive number; Growth rate; Statistical time delay <lb/>dynamical system <lb/></front>

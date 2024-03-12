@@ -8,6 +8,8 @@ For an end-to-end evaluation, covering the whole extraction process from the par
 
 * against TEI documents produced by [Pub2TEI](https://github.com/kermitt2/Pub2TEI). Pub2TEI is a set of XSLT that permit to tranform various _native_ XML publishers (including Elsevier, Wiley, Springer, etc. XML formats) into a common TEI format. This TEI format can be used as groundtruth structure information for evaluating GROBID output, keeping in mind some limits described bellow. 
 
+For actual benchmarks, see the [Benchmarking page](Benchmarking.md). We describe below the datasets and how to run the benchmarks.  
+
 ## Datasets
 
 The corpus used for the end-to-end evaluation of Grobid are all available in a single place on Zenodo: https://zenodo.org/record/7708580. Some of these datasets have been further annotated to make the evaluation of certain sub-structures possible (in particular code and data availability sections & funding sections).
@@ -104,7 +106,7 @@ It is also possible to set a ratio of evaluation data to be used expressed as a 
 
 ## Evaluation results
 
-The evaluation provides precision, recall and f-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
+The evaluation provides precision, recall and F1-score for the different fields in the header and bibliographical references. In addition, the scores are also computed at *instance* level, which means at the level of a complete header or complete citation.
 
 An experimental evaluation for the structures of the full text body is also proposed. This is not reliable in the current state, because most of the annotations of the full texts in PudMed Central are not uniform. For instance, the numbering of the section header is sometime included in the section header annotation, sometime not. The PubMed Central annotations will need to be standardized as a pre-process for a meaningful evaluation, which is a task planned in the next releases. 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Comparison of Analytical Techniques for Thermal Stability Analysis of <lb/>β-Cyclodextrin for an Ebola Virus Infection Treatment <lb/>Mayte Murillo 2 and Robert A. Lodder 1,2 <lb/>1. Department of Pharmaceutical Sciences, University of Kentucky, Lexington, KY, USA Email: Lodder @ g.uky.edu <lb/>2. Department of Chemistry, University of Kentucky, Lexington, KY, USA <lb/>ABSTRACT: Each New Drug Application filed with the Food and Drug Administration (FDA) must include the analytical procedures to <lb/>ensure the identity, strength, quality, purity, and potency of a drug substance and drug product. The BSN389 drug product (being developed <lb/>to treat Ebola virus infections) includes beta cyclodextrin. Evidence must be provided that the analytical procedures used in testing BSN389 <lb/>meet proper standards of accuracy, sensitivity, specificity, and reproducibility and are suitable for their intended purpose. The Bootstrap Error-<lb/>adjusted Single-Sample Technique (BEST) software was used to compare the quantitative and qualitative power of IR and 1 H NMR to <lb/>differentiate new and partially decomposed samples of beta cyclodextrin, and the best assay will be incorporated into the thermal stability <lb/>protocol for BCD. <lb/></front>

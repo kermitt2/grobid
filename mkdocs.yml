@@ -8,7 +8,7 @@ plugins:
     - search
 theme:
     name: readthedocs
-pages:
+nav:
   - Home: 'index.md'
   - About:
     - 'Introduction': 'Introduction.md'
@@ -16,9 +16,10 @@ pages:
     - 'References': 'References.md'
     - 'Licence': 'License.md'
   - User manual:
-    - 'Install GROBID': 'Install-Grobid.md'
-    - 'GROBID with containers': 'Grobid-docker.md'
+    - 'Run GROBID': 'Run-Grobid.md'
     - 'GROBID service': 'Grobid-service.md'
+    - 'Build GROBID from source': 'Install-Grobid.md'
+    - 'GROBID with containers': 'Grobid-docker.md'
     - 'GROBID batch mode': 'Grobid-batch.md'
     - 'GROBID configuration': 'Configuration.md'
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
@@ -33,6 +34,8 @@ pages:
     - 'Description': 'Benchmarking.md'
     - 'PubMed Central': 'Benchmarking-pmc.md'
     - 'bioRxiv': 'Benchmarking-biorxiv.md'
+    - 'PLOS': 'Benchmarking-plos.md'
+    - 'eLife': 'Benchmarking-elife.md'
   - Annotation guidelines:
     - 'General principles': 'training/General-principles.md'
     - 'Segmentation model': 'training/segmentation.md'

@@ -38,7 +38,7 @@
 							<orgName type="laboratory">CNRS UMR6204, Biotechnology, Biocatalysis and Bioregulation</orgName>,
 							<address>
 								<addrLine>2 rue de la Houssinière</addrLine>,
-								<addrLine>BP 92208</addrLine>,
+								<postBox>BP 92208</postBox>,
 								<postCode>44322</postCode>
 								<settlement>Nantes</settlement>
 								<postCode>Cedex 3</postCode>,
@@ -52,7 +52,7 @@
 							<orgName type="department">Faculté des Sciences et des Techniques</orgName>,
 							<address>
 								<addrLine>2 rue de la Houssinière</addrLine>,
-								<addrLine>BP 92208</addrLine>,
+								<postBox>BP 92208</postBox>,
 								<postCode>44322</postCode>
 								<settlement>Nantes</settlement>
 								<postCode>Cedex 3</postCode>,

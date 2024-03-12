@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<titlePage>This is the accepted manuscript made available via CHORUS. The article has been <lb/>published as: <lb/>Studies of the decays D^{0}→K_{S}^{0}K^{-}π^{+} <lb/>and D^{0}→K_{S}^{0}K^{+}π^{-} <lb/>J. Insler et al. (CLEO Collaboration) <lb/>Phys. Rev. D 85, 092016 -Published 29 May 2012 <lb/>DOI: 10.1103/PhysRevD.85.092016 <lb/></titlePage>

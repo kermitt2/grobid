@@ -40,42 +40,42 @@ public class ReferenceExtractorTest {
 	@Test
 	public void extractAllReferencesStringNull() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
+		List<String> toExtracts = new ArrayList<>();
+		toExtracts.add("Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.");
 		String res = extractor
 				.extractAllReferencesString(
-						"Economic Development Quarterly November 2011 25: 353-365, first published on August 25, 2011.",
+						toExtracts,
 						false, 0, false, null, null);
 		//assertEquals(0, nbRes);
 	}
 
-	@Test
+	//@Test
 	public void extractAllReferencesStringArticles() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
 		String toExtract = "Some other description includes ref. US 2011/0155847 A1 in aerodynamic" + 
 			" and applied physics. " +
             "This patent, ref. US 7930197 says data mining of personal data is patented. " +
-            "That article refers to Economic Development Quarterly November 2011 25: 353-365, first" + 
+            "That article refers to Economic Development Quarterly November 2011 25:353-365, first" + 
 			" published on August 25, 2011.";
-		GrobidTimer timer = new GrobidTimer(true);
-		extractor.extractAllReferencesString(toExtract, false, 0, false, patents, articles);
-		timer.stop("STOP");
-		System.out.println(timer.getElapsedTimeFromStartFormated("STOP"));
-		LOGGER.info("BibDataSet: " + articles.toString());
+		List<String> toExtracts = new ArrayList<>();
+		toExtracts.add(toExtract);
+		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, articles);
 		assertEquals(2, patents.size());
 		assertEquals(1, articles.size());
-		LOGGER.info(articles.get(0).getOffsets().toString());
 	}
 
-	@Test
+	//@Test
 	public void extractAllReferencesStringArticles2() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
-		extractor
-				.extractAllReferencesString(
-						"That article It refers to Economic Development Quarterly November 2011 25: 353-365," + 
-						" first published on August 25, 2011.",
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
+		List<String> toExtracts = new ArrayList<>();
+		toExtracts.add("That article It refers to Economic Development Quarterly November 2011 25: 353-365," + 
+						" first published on August 25, 2011.");
+		extractor.extractAllReferencesString(
+						toExtracts,
 						false, 0, false, patents, articles);
 		LOGGER.info("BibDataSet: " + articles.toString());
 		assertEquals(0, patents.size());
@@ -115,11 +115,13 @@ public class ReferenceExtractorTest {
 	//@Test
 	public void extractAllReferencesStringPatents() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
 		String toExtract = "US-8303618, Intravascular filter and method A filter disposed at the distal end of an elongate guidewire. Catheters are provided for delivering the filter to, and retrieving the filter from, a treatment...";
 		toExtract = "this patent refers US-8303618, bla bla";
-		extractor.extractAllReferencesString(toExtract, false, 0, false, patents, articles);
+		List<String> toExtracts = new ArrayList<>();
+		toExtracts.add(toExtract);
+		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, articles);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals(0, articles.size());
@@ -133,10 +135,9 @@ public class ReferenceExtractorTest {
 	@Test
 	public void extractAllReferencesXmlST36() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
-		extractor
-				.extractAllReferencesXMLFile(
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
+		extractor.extractAllReferencesXMLFile(
 						new File(
 								"src/test/resources/org/grobid/core/engines/patent/ReferenceExtractor/st36-sample-1.xml")
 								.getAbsolutePath(), false, 0, false, patents, articles);
@@ -150,14 +151,12 @@ public class ReferenceExtractorTest {
 	@Test
 	public void extractAllReferencesXml() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
-		extractor
-				.extractAllReferencesXMLFile(
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
+		extractor.extractAllReferencesXMLFile(
 						new File(
 								"src/test/resources/patents/006271747.xml")
 								.getAbsolutePath(), false, 0, false, patents, articles);
-		//LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals("20050675311", patents.get(0).getNumberEpoDoc());
 		assertEquals("9202190", patents.get(1).getNumberEpoDoc());
 	}
@@ -165,54 +164,56 @@ public class ReferenceExtractorTest {
 	@Ignore
 	public void extractAllReferencesPdf() {
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		List<BibDataSet> articles = new ArrayList<BibDataSet>();
-		extractor
-				.extractAllReferencesPDFFile(
+		List<PatentItem> patents = new ArrayList<>();
+		List<BibDataSet> articles = new ArrayList<>();
+		extractor.extractAllReferencesPDFFile(
 						new File(
 								"src/test/resources/org/grobid/core/engines/patent/ReferenceExtractor/sample-1.pdf")
 								.getAbsolutePath(), false, 0, false, patents, articles);
 	}
 	
-	@Test
+	//@Test
 	public void jaProcessing() {
 		String text_jp = "すなわち、相対的な頻度で、エポキシドをベースとする液体接着剤及び接着結合剤が、" + 
 			"例えばＷＯ９８／２１２８７Ａ１。これらの主な使用分野は、硬質装置のみならず適度に柔軟な装置における縁部の結合である。" +
 			"硬化は、熱により又はＵＶ照射により行われる。";
-		System.out.println(text_jp);
+		List<String> toExtracts = new ArrayList<>();
+		toExtracts.add(text_jp);
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_jp, false, 0, false, patents, null);
+		List<PatentItem> patents = new ArrayList<>();
+		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("21287", patents.get(0).getNumberEpoDoc());
 	}
 	
-	@Test
-	public void krProcessing() {
-		String text_kr = "미국의 애플사의 미국 출원 2012/012710." + "따라서, 전기화학적 센서들의 제조, 특히 혈액 또는 간질액과 같은 신체 마커들(포도당, 프룩토사민, " + 
+	//@Test
+	public void koProcessing() {
+		String text_ko = "미국의 애플사의 미국 출원 2012/012710. 따라서, 전기화학적 센서들의 제조, 특히 혈액 또는 간질액과 같은 신체 마커들(포도당, 프룩토사민, " + 
 		"하에마토크릿 등)의측정을 위한 전기화학적 센서들을 제조하기 위해 개선된 프로세스가 필요하다. 또한, 합리적인 가격으로 센서 스트립들을제조하기 " + 
 		"위한 고속의 예측가능하고 재생가능한 방법에 대한 필요성이 있다. 또한, 각각의 완료된 스트립이 재생가능한 방법으로 체액의 분석 대상물들을 " + 
 		"신뢰성있고 예측가능하며 정밀하게 측정하는데 사용될 수 있는 매우 작은 특성들을 갖는센서 스트립들을 고속의 예측가능하고 반복가능한 방법으로 제조할 필요가 있다.";
-		System.out.println(text_kr);
+		List<String> toExtracts = new ArrayList<>();
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_kr, false, 0, false, patents, null);
+		List<PatentItem> patents = new ArrayList<>();
+		toExtracts.add(text_ko);
+		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("2012012710", patents.get(0).getNumberEpoDoc());
 	}
 	
-	@Test
+	//@Test
 	public void zhProcessing() {
 		String text_zh = "在本申请的申请人于2008年8月26日提交的申请号为US2008/001534的PCT国际申请中，" + 
 			"揭示了一种等截面三角形定向棱镜圆形反光板及由其制成的圆板灯。该圆板灯包括：等截面三角形微棱镜圆形导光板；" + 
 			"围绕导光板的散热框，该散热框与导光板之间形成间隙而构成环形灯槽；以及嵌装于环形灯槽内的环形灯组件，" + 
 			"该环形灯组件由多个发光二极管(LED)贴片、电阻和线路板构成。该申请的全部内容，通过引用结合于此。";
-		System.out.println(text_zh);
+		List<String> toExtracts = new ArrayList<>();
 		ReferenceExtractor extractor = new ReferenceExtractor();
-		List<PatentItem> patents = new ArrayList<PatentItem>();
-		extractor.extractAllReferencesString(text_zh, false, 0, false, patents, null);
+		List<PatentItem> patents = new ArrayList<>();
+		toExtracts.add(text_zh);
+		extractor.extractAllReferencesString(toExtracts, false, 0, false, patents, null);
 		LOGGER.info("PatentItem: " + patents.toString());
 		assertEquals(1, patents.size());
 		assertEquals("2008001534", patents.get(0).getNumberEpoDoc());

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_D08-1073"/>
+		<fileDesc xml:id="__D08-1073"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<note place="footnote"> Proceedings of the 2008 Conference on Empirical Methods in Natural Language Processing, pages 698–706, <lb/>Honolulu, October 2008. c <lb/> 2008 Association for Computational Linguistics <lb/></note>

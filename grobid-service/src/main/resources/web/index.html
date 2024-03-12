@@ -6,7 +6,7 @@
 		<link rel="icon" type="image/x-icon" href="resources/img/favicon.ico"/> 
 		<link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico"/>
 
-		<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script> 
+		<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script> 
         <script type="text/javascript" src="resources/js/jquery.form.js"></script>
         <script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>  
 
@@ -97,6 +97,7 @@
 				                    	<option value="processCitationNames">Process Citation Person Names</option>
 				                    	<option value="processAffiliations">Process Affiliations</option>
 				                    	<option value="processCitation">Process Citation</option>
+				                    	<option value="processFundingAcknowledgement">Process Funding/Acknowledgement</option>
 									</optgroup>	
 								</select>
 							</td>
@@ -115,21 +116,28 @@
 													</label>
 												</td>
 												<td>
-													<label class="checkbox" id="includeRawAffiliationsBlock" style="display: inherit;">	
-														<input type="checkbox" id="includeRawAffiliations" name="includeRawAffiliations" value="1">Include raw affiliations</input>
+													<label class="checkbox" id="consolidateBlock2" style="display: inherit;">	
+														<input type="checkbox" id="consolidateCitations" name="consolidateCitations" value="1">Consolidate citations&nbsp;&nbsp;</input>
+													</label>
+												</td>
+												<td>
+													<label class="checkbox" id="consolidateBlock3" style="display: inherit;">	
+														<input type="checkbox" id="consolidateFunders" name="consolidateFunders" value="1">Consolidate funders</input>
 													</label>
 												</td>
 											</tr>
 											<tr>
 												<td>
-													<label class="checkbox" id="consolidateBlock2" style="display: inherit;">	
-														<input type="checkbox" id="consolidateCitations" name="consolidateCitations" value="1">Consolidate citations</input>
+													<label class="checkbox" id="includeRawAffiliationsBlock" style="display: inherit;">	
+														<input type="checkbox" id="includeRawAffiliations" name="includeRawAffiliations" value="1">Include raw affiliations&nbsp;</input>
 													</label>
 												</td>
 												<td>
 													<label class="checkbox" id="includeRawCitationsBlock" style="display: inherit;">	
 														<input type="checkbox" id="includeRawCitations" name="includeRawCitations" value="1">Include raw citations</input>
 													</label>
+												</td>
+												<td>
 												</td>
 											</tr>
 											<tr>
@@ -142,6 +150,8 @@
 													<label class="checkbox" id="teiCoordinatesBlock" style="display: inherit;">	
 														<input type="checkbox" id="teiCoordinates" name="teiCoordinates" value="ref">Add coordinates</input>
 													</label>
+												</td>
+												<td>
 												</td>
 											</tr>
 										</table>
@@ -166,7 +176,7 @@
 										<table>
 											<tr>
 												<td>
-							<textarea id="textInputArea" class="span7" rows="5" id="input" name="input"></textarea>
+													<textarea id="textInputArea" class="span7" rows="5" id="input" name="input"></textarea>
 												</td>
 												<td><span style='padding-left:20px;'>&nbsp;</span></td>
 											</tr>
@@ -265,8 +275,8 @@
 							<td><span id="label">&nbsp;</span></td>
 							<td>
 								<div id="field3">
-									<label class="checkbox" id="consolidateBlock3">
-										<input type="checkbox" id="consolidate3" name="consolidateCitations" value="1">Consolidate</input>
+									<label class="checkbox" id="consolidateBlock4">
+										<input type="checkbox" id="consolidate4" name="consolidateCitations" value="1">Consolidate</input>
 									</label>
 									<div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv3">
 									  <div class="input-append">
@@ -288,7 +298,7 @@
 										<table>
 											<tr>
 												<td>
-							<textarea id="textInputArea3" class="span7" rows="5" name="input"></textarea>
+													<textarea id="textInputArea3" class="span7" rows="5" name="input"></textarea>
 												</td>
 												<td><span style='padding-left:20px;'>&nbsp;</span></td>
 											</tr>
@@ -326,7 +336,7 @@
 	    </div>  
 		
 		<footer>
-		  <p><span style="color:#848484;">&copy; Grobid contributors 2023 </span></p>
+		  <p><span style="color:#848484;">&copy; Grobid contributors 2024 </span></p>
 		  </footer>
 		</div>
 		

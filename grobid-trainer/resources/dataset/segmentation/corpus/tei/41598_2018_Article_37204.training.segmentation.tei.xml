@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>1 <lb/>SCientifiC REPORTS | <lb/>(2019) 9:803 | DOI:10.1038/s41598-018-37204-3 <lb/>www.nature.com/scientificreports <lb/> A cryogenic spin-torque memory <lb/>element with precessional <lb/>magnetization dynamics <lb/>G. E. Rowlands 1 , C. A. Ryan 1 , L. Ye 2 , L. Rehm 2 , D. Pinna 2 , A. D. Kent 2 &amp; T. A. Ohki 1 <lb/>We present a study of precessional magnetization switching in orthogonal spin-torque spin-valve <lb/>devices at low temperatures. The samples consist of a spin-polarizing layer that is magnetized out-<lb/>of-the film plane and an in-plane magnetized free and reference magnetic layer separated by non-<lb/>magnetic metallic layers. We find coherent oscillations in the switching probability, characterized by <lb/>high speed switching (~200 ps), error rates as low as 10 −5 and decoherence effects at longer timescales <lb/>(~1 ns). Our study, which is conducted over a wide range of parameter space (pulse amplitude and <lb/>duration) with deep statistics, demonstrates that the switching dynamics are likely dominated by the <lb/>action of the out-of-plane spin polarization, in contrast to in-plane spin-torque from the reference layer, <lb/>as has been the case in most previous studies. Our results demonstrate that precessional spin-torque <lb/>devices are well suited to a cryogenic environment, while at room temperature they have so far not <lb/>exhibited coherent or reliable switching. <lb/></front>

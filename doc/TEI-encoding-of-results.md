@@ -1,6 +1,5 @@
 <h1>TEI customisation</h1>
 
-
 ## Motivation
 
 Using tabular or POJO representations is adapted to bibliographical records, which are relatively flat and simple structure. However, the goal of Grobid is complete PDF document ingestion. In other terms, Grobid aims at extracting and restructuring the complete full text of a document. 

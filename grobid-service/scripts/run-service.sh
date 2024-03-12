@@ -9,4 +9,4 @@ config=$1
 
 echo "Starting grobid service with config $config"
 
-java -jar grobid-service-*-shaded.jar server $config || exit $?
+java -Djava.library.path=../grobid-home/lib/lin-64:../grobid-home/lib/lin-64/jep -jar build/libs/grobid-service-*-onejar.jar server $config || exit $?

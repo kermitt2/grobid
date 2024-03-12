@@ -23,4 +23,8 @@ The following reported end-to-end results are using BidLSTM_CRF_FEATURES for ref
 
 - end-to-end evaluation using the [biorxiv-10k-test-2000](Benchmarking-biorxiv.md)
 
-See [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc) for some additional evaluations with Deep-Learning architectures. 
+- end-to-end evaluation using the [PLOS dataset](Benchmarking-plos.md)
+
+- end-to-end evaluation using the [eLife dataset](Benchmarking-elife.md)
+
+See [here](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc) for some older and additional evaluations. 

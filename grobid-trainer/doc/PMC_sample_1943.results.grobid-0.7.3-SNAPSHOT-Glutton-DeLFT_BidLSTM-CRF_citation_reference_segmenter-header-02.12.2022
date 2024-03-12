@@ -2,17 +2,12 @@
 
 1943 PDF files processed in 1920.476 seconds, 0.988407617086979 seconds per PDF file
 
-
-
 Evaluation header 100% │█████████████│ 1943/1943 (0:00:55 / 0:00:00) 
-
 
 Evaluation citation 100% │███████████│ 1943/1943 (0:13:12 / 0:00:00) 
 
-
 Evaluation full text 100% │██████████│ 1943/1943 (0:00:26 / 0:00:00) 
 Evaluation metrics produced in 874.772 seconds
-> :grobid-trainer:jatsEval
 
 ======= Header metadata ======= 
 

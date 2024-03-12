@@ -59,7 +59,7 @@ For archeological purposes, the following first paper has been the main motivati
 
 ## Datasets
 
-For end-to-end evaluation, we are making available corpus of PDF/XML pairs at https://zenodo.org/record/7708580, including the original `PMC_sample_1943` dataset and a version of [bioRxiv 10k](https://zenodo.org/record/3873702) with additional annotations relevant for Grobid. 
+For end-to-end evaluation, we are making available corpus of PDF/XML pairs at [https://zenodo.org/record/7708580](https://zenodo.org/record/7708580), including the original `PMC_sample_1943` dataset, a updated version of [bioRxiv 10k](https://zenodo.org/record/3873702) with additional annotations relevant for Grobid, and two additional evaluation sets from PLOS (1000 articles) and eLife (984 articles), see [End-to-end evaluation](https://grobid.readthedocs.io/en/latest/End-to-end-evaluation/#datasets) for more details. 
 
 For layout/zoning identification:
 

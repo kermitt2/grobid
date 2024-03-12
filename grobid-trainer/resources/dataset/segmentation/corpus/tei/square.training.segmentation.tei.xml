@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_square"/>
+		<fileDesc xml:id="__square"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<note place="headnote">Ocean Dynamics manuscript No. <lb/> (will be inserted by the editor) <lb/></note> 

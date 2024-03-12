@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>NUCOME: A Comprehensive Database of Nucleosome <lb/>Organizations in Mammalian Genomes <lb/>Xiaolan Chen <lb/>1 , Hui Yang <lb/>1 <lb/>, Yong Zhang <lb/>1 <lb/>* <lb/>1 Translational Medical Center for Stem Cell Therapy &amp; Institute for Regenerative Medicine, <lb/>Shanghai East Hospital, School of Life Science and Technology, Shanghai Key Laboratory of <lb/>Signaling and Disease Research, Tongji University, Shanghai 200092, China <lb/> * To whom correspondence should be addressed. Tel.: 086-021-65981196; Fax: 086-021-65981041; <lb/>E-mail: yzhang@tongji.edu.cn. <lb/>ABSTRACT <lb/>Nucleosome organization is involved in many regulatory activities in various organisms. <lb/>However, studies integrating nucleosome organizations in mammalian genomes are very <lb/>limited mainly due to the lack of comprehensive data management. Here, we present <lb/>NUCOME, which is the first database to organize publicly available MNase-seq data resource <lb/>and manage unified processed datasets covering various cell types in human and mouse. The <lb/>NUCOME provides standard, qualified and informative nucleosome organization data at the <lb/>genome scale and at any genomic regions for users&apos; downstream analyses. NUCOME is freely <lb/>available at http://compbio.tongji.edu.cn/NUCOME/. <lb/>Keywords: Nucleosome, Database, Transcriptional regulation, MNase <lb/></front>

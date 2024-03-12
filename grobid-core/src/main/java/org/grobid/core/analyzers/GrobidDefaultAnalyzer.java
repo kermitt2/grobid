@@ -124,6 +124,44 @@ public class GrobidDefaultAnalyzer implements Analyzer {
     }
 
     /**
+     * To tokenize an existing list of tokens. Only useful if input tokens have
+     * been tokenized with a non-default Grobid tokenizer.  
+     * Note: the coordinates of the subtokens are not recomputed here (at least for 
+     * the moment). 
+     * <p>
+     * 1/74 -> "1", "/", "74"
+     *
+     */
+    public List<LayoutToken> retokenizeFromLayoutToken(List<LayoutToken> tokens) {
+        List<LayoutToken> result = new ArrayList<>();
+        for(LayoutToken token : tokens) {
+            if (token.getText() == null || token.getText().trim().length() == 0) {
+                result.add(token);
+            } else {
+                String tokenText = token.getText();
+                List<String> subtokens = tokenize(tokenText);
+                int offset = token.getOffset();
+                for (int i = 0; i < subtokens.size(); i++) {
+                    LayoutToken layoutToken = new LayoutToken();
+                    layoutToken.setText(subtokens.get(i));
+                    layoutToken.setOffset(offset);
+
+                    // coordinates - TODO: refine the width/X for the sub token
+                    layoutToken.setX(token.getX());
+                    layoutToken.setY(token.getY());
+                    layoutToken.setHeight(token.getHeight());
+                    layoutToken.setWidth(token.getWidth());
+                    layoutToken.setPage(token.getPage());
+
+                    offset += subtokens.get(i).length();
+                    result.add(layoutToken);
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
      * To tokenize mixture of alphabetical and numerical characters by separating 
      * separate alphabetical and numerical character subsequences. To be used
      * when relevant. 
@@ -196,6 +234,14 @@ public class GrobidDefaultAnalyzer implements Analyzer {
                     LayoutToken layoutToken = new LayoutToken();
                     layoutToken.setText(subtokens[i]);
                     layoutToken.setOffset(offset);
+
+                    // coordinates - TODO: refine the width/X for the sub token
+                    layoutToken.setX(token.getX());
+                    layoutToken.setY(token.getY());
+                    layoutToken.setHeight(token.getHeight());
+                    layoutToken.setWidth(token.getWidth());
+                    layoutToken.setPage(token.getPage());
+
                     offset += subtokens[i].length();
                     result.add(layoutToken);
                 }

@@ -26,21 +26,23 @@ The process for retrieving and running the image is as follow:
 Current latest version:
 
 ```bash
-> docker pull grobid/grobid:0.7.2
+> docker pull grobid/grobid:0.8.0
 ```
 
 - Run the container:
 
 ```bash
-> docker run --rm --gpus all -p 8070:8070 grobid/grobid:0.7.2
+> docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.0
 ```
 
-The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used.  
+The image will automatically uses the GPU and CUDA version available on your host machine, but only on Linux. GPU usage via a container on Windows and MacOS machine is currently not supported by Docker. If no GPU are available, CPU will be used. 
+
+Note that starting the container with option `--ulimit core=0` avoids having possible core dumped inside the container, which can happen overwise due to the crash of the PDF parsing C++ component. Starting the container with parameter `-it` allows to interact with the docker run process, which is of limited use here, except conveniently stopping the docker container with control-c.
 
 To specify to use only certain GPUs (see the [nvidia container toolkit user guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html#gpu-enumeration) for more details):
 
 ```bash
-> docker run --rm --gpus '"device=1,2"' -p 8070:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus '"device=1,2"' --init --ulimit core=0 -p 8070:8070 -p 8081:8071 grobid/grobid:${latest_grobid_version}
 ```
 
 You can run the image on CPU by omitting the `-gpus` parameters. 
@@ -48,7 +50,7 @@ You can run the image on CPU by omitting the `-gpus` parameters.
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
 
 ```bash
-> docker run -t --rm --gpus all -p 8080:8070 grobid/grobid:${latest_grobid_version}
+> docker run --rm --gpus all --init --ulimit core=0 -p 8080:8070 grobid/grobid:${latest_grobid_version}
 ```
 
 Access the service:
@@ -61,7 +63,13 @@ By default, this image runs Deep Learning models for:
 
 - bibliographical parsing (adding 2-4 points in term of F1-score for bibliographical reference parsing and 2-5 points in term of citation context identifications, as compared to CRF-only image)
 
-- affiliation-address parsing
+- affiliation-address parsing,
+
+- segmentation of the bibliographical reference section into individual references,
+
+- parsing of the header metadata,
+
+- parsing of funding and acknowledgement sections.
 
 With a GPU (at least 4GB GPU memory required), the processing runtime is similar as with the CRF-only image with CPU only. 
 
@@ -80,25 +88,25 @@ The process for retrieving and running the image is as follow:
 Latest version:
 
 ```bash
-> docker pull lfoppiano/grobid:0.7.2
+> docker pull lfoppiano/grobid:0.8.0
 ```
 
 - Run the container:
 
 ```bash
-> docker run -t --rm -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
+> docker run --rm --init --ulimit core=0 -p 8070:8070 lfoppiano/grobid:${latest_grobid_version}
 ```
 
 Latest version:
 
 ```bash
-> docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+> docker run --rm --init --ulimit core=0 -p 8070:8070 lfoppiano/grobid:0.8.0
 ```
 
 Note the default version is running on port `8070`, however it can be mapped on the more traditional port `8080` of your host with the following command:
 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 lfoppiano/grobid:${latest_grobid_version}
+> docker run --rm --init --ulimit core=0 -p 8080:8070 -p 8081:8071 lfoppiano/grobid:${latest_grobid_version}
 ```
 
 Access the service:
@@ -113,7 +121,7 @@ Grobid web services are then available as described in the [service documentatio
 The simplest way to pass a modified configuration to the docker image is to mount the yaml GROBID config file `grobid.yaml` when running the image. Modify the config file `grobid/grobid-home/config/grobid.yaml` according to your requirements on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.3-SNAPSHOT
+docker run --rm --gpus all --init --ulimit core=0 -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.8.0
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
@@ -184,6 +192,20 @@ You should see something like:
 
 See for instance [here](https://stackoverflow.com/a/36982696) for allocating to the Docker machine more than the default RAM on `macos` with command lines.
 
+### The TensorFlow library was compiled to use SSE4.1 instructions
+
+If after starting the container with **CPU** only (Intel or AMD), the container crashes with an exit code 134 and the message:
+
+```
+The TensorFlow library was compiled to use SSE4.1 instructions, but these aren't available on your machine.
+```
+
+It means that your CPU does not support the extra SSE4.1 instructions needed by TensorFlow. This case doesn't happen with GPU. 
+
+Since TensorFlow 1.6, the library is compiled to use this extra set instructions, because all modern CPU support them (all CPU after 2008) and it speeds up Deep Learning with CPU. However, when using a Virtual Machine, the default VM configuration of the CPU might not include to use these instructions. 
+
+To solve this problem, you need to update the configuration of the CPU in the VM to support SSE4.1, SSE4.3 and AVX extension instruction sets. 
+
 ## Building an image
 
 The following part is normally for development purposes. You can use the official stable docker images from the docker HUB as described above.
@@ -200,25 +222,25 @@ Without this requirement, the image might default to CPU, even if GPU are availa
 For being able to use both CRF and Deep Learningmodels, use the dockerfile `./Dockerfile.delft`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.delft .
+> docker build -t grobid/grobid:0.8.0 --build-arg GROBID_VERSION=0.8.0 --file Dockerfile.delft .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-docker build -t grobid/grobid:0.7.3-SNAPSHOT --build-arg GROBID_VERSION=0.7.3-SNAPSHOT --file Dockerfile.delft .
+docker build -t grobid/grobid:0.8.1-SNAPSHOT --build-arg GROBID_VERSION=0.8.1-SNAPSHOT --file Dockerfile.delft .
 ```
 
-In order to run the container of the newly created image, for example for the development version `0.7.3-SNAPSHOT`, using all GPU available:
+In order to run the container of the newly created image, for example for the development version `0.8.1-SNAPSHOT`, using all GPU available:
 
 ```bash
-> docker run --rm --gpus all -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.3-SNAPSHOT
+> docker run --rm --gpus all --init --ulimit core=0 -p 8080:8070 -p 8081:8071 grobid/grobid:0.8.1-SNAPSHOT
 ```
 
 In practice, you need to indicate which models should use a Deep Learning model implementation and which ones can remain with a faster CRF model implementation, which is done currently in the `grobid.yaml` file. Modify the config file `grobid/grobid-home/config/grobid.yaml` accordingly on the host machine and mount it when running the image as follow: 
 
 ```bash
-docker run --rm --gpus all -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro  grobid/grobid:0.7.3-SNAPSHOT
+docker run --rm --gpus all --init --ulimit core=0 -p 8080:8070 -p 8081:8071 -v /home/lopez/grobid/grobid-home/config/grobid.yaml:/opt/grobid/grobid-home/config/grobid.yaml:ro grobid/grobid:0.8.1-SNAPSHOT
 ```
 
 You need to use an absolute path to specify your modified `grobid.yaml` file.
@@ -240,19 +262,19 @@ The container name is given by the command:
 For building a CRF-only image, the dockerfile to be used is `./Dockerfile.crf`. The only important information then is the version which will be checked out from the tags.
 
 ```bash
-> docker build -t grobid/grobid:0.7.2 --build-arg GROBID_VERSION=0.7.2 --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.8.0 --build-arg GROBID_VERSION=0.8.0 --file Dockerfile.crf .
 ```
 
 Similarly, if you want to create a docker image from the current master, development version:
 
 ```bash
-> docker build -t grobid/grobid:0.7.3-SNAPSHOT --build-arg GROBID_VERSION=0.7.3-SNAPSHOT --file Dockerfile.crf .
+> docker build -t grobid/grobid:0.8.1-SNAPSHOT --build-arg GROBID_VERSION=0.8.1-SNAPSHOT --file Dockerfile.crf .
 ```
 
-In order to run the container of the newly created image, for example for version `0.7.2`:
+In order to run the container of the newly created image, for example for version `0.8.1`:
 
 ```bash
-> docker run -t --rm -p 8080:8070 -p 8081:8071 grobid/grobid:0.7.2
+> docker run --rm --init --ulimit core=0 -p 8080:8070 -p 8081:8071 grobid/grobid:0.8.1
 ```
 
 For testing or debugging purposes, you can connect to the container with a bash shell (logs are under `/opt/grobid/logs/`):
@@ -266,4 +288,3 @@ The container name is given by the command:
 ```bash
 > docker container ls
 ```
-

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>A Pattern Recognition Approach to Transistor Array Parameter Variance <lb/>Luciano da F. Costa, 1 Filipi N. Silva, 1 and Cesar H. Comin 1 <lb/>1 São Carlos Institute of Physics, University of São Paulo, São Carlos, SP, Brazil <lb/>The properties of bipolar junction transistors (BJTs) are known to vary in terms of their param-<lb/>eters. In this work, an experimental approach, including pattern recognition concepts and methods <lb/>such as principal component analysis (PCA) and linear discriminant analysis (LDA), was used to <lb/>experimentally investigate the variation among BJTs belonging to integrated circuits known as tran-<lb/>sistor arrays. It was shown that a good deal of the devices variance can be captured using only two <lb/>PCA axes. It was also verified that, though substantially small variation of parameters is observed <lb/>for BJT from the same array, larger variation arises between BJTs from distinct arrays, suggest-<lb/>ing the consideration of device characteristics in more critical analog designs. As a consequence <lb/>of its supervised nature, LDA was able to provide a substantial separation of the BJT into clus-<lb/>ters, corresponding to each transistor array. In addition, the LDA mapping into two dimensions <lb/>revealed a clear relationship between the considered measurements. Interestingly, a specific mapping <lb/>suggested by the PCA, involving the total harmonic distortion variation expressed in terms of the <lb/>average voltage gain, yielded an even better separation between the transistor array clusters. <lb/></front>
