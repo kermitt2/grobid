@@ -137,10 +137,10 @@ public class ProcessEngine implements Closeable {
         } else {
             List<String> elementCoordinates = null;
             if (pGbdArgs.getTeiCoordinates()) {
-                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula", "s");
+                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula", "s", "note", "title", "head", "affiliation", "p");
             }
             processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), 
-                elementCoordinates, pGbdArgs.getSegmentSentences());
+                elementCoordinates, pGbdArgs.getSegmentSentences(), pGbdArgs.getAddElementId());
             System.out.println(Engine.getCntManager());
         }
     }
@@ -157,14 +157,15 @@ public class ProcessEngine implements Closeable {
                                           String outputPath,
                                           boolean saveAssets,
                                           List<String> elementCoordinates,
-                                          boolean segmentSentences) {
+                                          boolean segmentSentences,
+                                          boolean addElementId) {
         if (files != null) {
             boolean recurse = pGbdArgs.isRecursive();
             String result;
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        System.out.println("Processing: " + currPdf.getPath());
+                        LOGGER.info("Processing: " + currPdf.getPath());
                         GrobidAnalysisConfig config = null;
                         // path for saving assets
                         if (saveAssets) {
@@ -174,11 +175,13 @@ public class ProcessEngine implements Closeable {
                                     .pdfAssetPath(new File(assetPath))
                                     .generateTeiCoordinates(elementCoordinates)
                                     .withSentenceSegmentation(segmentSentences)
+                                    .generateTeiIds(addElementId)
                                     .build();
                         } else
                             config = GrobidAnalysisConfig.builder()
                                     .generateTeiCoordinates(elementCoordinates)
                                     .withSentenceSegmentation(segmentSentences)
+                                    .generateTeiIds(addElementId)
                                     .build();
                         result = getEngine().fullTextToTEI(currPdf, config);
                         File outputPathFile = new File(outputPath);
@@ -199,7 +202,7 @@ public class ProcessEngine implements Closeable {
                         if (newFiles != null) {
                             String newLevel = currPdf.getName();
                             processFullTextDirectory(newFiles, pGbdArgs, outputPath +
-                                    File.separator + newLevel, saveAssets, elementCoordinates, segmentSentences);
+                                    File.separator + newLevel, saveAssets, elementCoordinates, segmentSentences, addElementId);
                         }
                     }
                 } catch (final Exception exp) {
@@ -223,7 +226,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for date. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
     }
 
     /**
@@ -239,8 +241,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for processAuthorHeader. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
-        LOGGER.info(result.get(0).toTEI(false));
-
     }
 
     /**
@@ -256,7 +256,6 @@ public class ProcessEngine implements Closeable {
             throw new GrobidResourceException("Cannot read the input data for authorsCitation. Check the documentation. ");
         }
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI(false));
-        LOGGER.info(result.get(0).toTEI(false));
     }
 
     /**
@@ -271,8 +270,7 @@ public class ProcessEngine implements Closeable {
         if (isEmpty(result)) {
             throw new GrobidResourceException("Cannot read the input data for affiliations. Check the documentation. ");
         }
-        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
-        LOGGER.info(result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", Affiliation.toTEI(result.get(0),0));
     }
 
     /**
@@ -285,7 +283,6 @@ public class ProcessEngine implements Closeable {
         inferOutputPath(pGbdArgs);
         final BiblioItem result = getEngine().processRawReference(pGbdArgs.getInput(), 0);
         IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.toTEI(-1));
-        LOGGER.info(result.toTEI(-1));
     }
 
     /**
@@ -417,6 +414,19 @@ public class ProcessEngine implements Closeable {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
         int result = getEngine().batchCreateTrainingPatentcitations(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
+        LOGGER.info(result + " files processed.");
+    }
+
+    /**
+     * Generate training data from raw reference strings.
+     *
+     * @param pGbdArgs The parameters.
+     * @throws Exception
+     */
+    public void createTrainingCitation(final GrobidMainArgs pGbdArgs) throws Exception {
+        inferPdfInputPath(pGbdArgs);
+        inferOutputPath(pGbdArgs);
+        int result = getEngine().batchCreateTrainingCitation(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output());
         LOGGER.info(result + " files processed.");
     }
 
@@ -560,7 +570,7 @@ public class ProcessEngine implements Closeable {
         for (final File currPDF : pdfDirectory.listFiles()) {
             try {
                 if (currPDF.getName().toLowerCase().endsWith(".pdf")) {
-                    System.out.println("Processing: " + currPDF.getName());
+                    LOGGER.info("Processing: " + currPDF.getName());
                     List<String> elementWithCoords = new ArrayList();
                     elementWithCoords.add("ref");
                     elementWithCoords.add("biblStruct");

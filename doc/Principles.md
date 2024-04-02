@@ -2,19 +2,19 @@
 
 GROBID is a machine learning library for extracting, parsing, and re-structuring raw documents, in particular PDF, into structured XML/TEI encoded documents and focusing on technical and scientific publications. The goal of GROBID is to facilitate text mining, information extraction, and semantic analysis of scientific publications by transforming them into machine-friendly, structured, and predictable representations. 
 
-In large scale scientific document ingestion tasks, the large majority of documents are only available in PDF (in particular decades of backfiles before the year 2000). Scholar articles are today more frequently available as XML, but often require particular agreements and long negotiations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale.
+In large scale scientific document ingestion tasks, the large majority of documents are only available in PDF (in particular decades of backfiles before the year 2000). Scholar articles are today more frequently available as XML as before, but often require particular agreements and long negotiations with publishers. PDF remains today the most important format usable under fair-use or under the recent copyrights exception for text mining in the EU. When publisher XML are available, they remain challenging to process because they are encoded in a variety of different native publisher XML formats, often incomplete and inconsistent from one to another, difficult to use at scale.
 
 ![Ingesting scientific documents with GROBID](img/ingestion.png)
 
 <p align = "center">
-<b>Fig. 1</b> - Ingesting scientific documents with GROBID
+<b>Fig. 1</b> - Ingesting scientific documents with GROBID, Pub2TEI and LaTeXML
 </p>
 
-To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML format to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources, and support various applications (see __Fig. 1__). 
+To process publisher XML, complementary to GROBID, we built [Pub2TEI](https://github.com/kermitt2/Pub2TEI), a collection of style sheets developed over 11 years able to transform a variety of publisher XML formats to the same TEI XML format as produced by GROBID. This common format, which supersedes a dozen of publisher formats and many of their flavors, can centralize further any processing across PDF and heterogeneous XML sources without information loss, and support various applications (see __Fig. 1__). Similarly, LaTeX sources (typically all available arXiv sources) can be processed with our fork of [LaTeXML](https://github.com/kermitt2/LaTeXML) to produce a TEI representation compatible with GROBID and Pub2TEI output, without information loss from LaTeXML XML.
 
 The rest of this page gives an overview of the main GROBID design principles. Skip it if you are not interested in the technical details. Functionalities are described in the [User Manual](https://grobid.readthedocs.io/en/latest/). Recent benchmarking are available [here](https://grobid.readthedocs.io/en/latest/Benchmarking/).
 
-##Document parsing as a cascade of sequence labeling models
+## Document parsing as a cascade of sequence labeling models
 
 GROBID uses a cascade of sequence labeling models to parse a document. This modular approach makes possible to adapt the training data, the features, the text representations, and the models to the different hierarchical structures of the document. Each individual model maintains a small amount of labels (which is easier to manage and train), but, in combination, the full cascade provides very detailed end-result structures. The final models produce 55 different "leaf" labels, while other document analysis layout systems support significantly less label categories (up to 22 for GROTOAP2 dataset and CERMINE, _Tkaczyk et al., 2014_, the highest to our knowledge after GROBID).
 
@@ -38,7 +38,7 @@ The structuring of the same entity type, however, can depend on the position of 
 
 Cascading models offers thus the flexibility to tune each model and associated simpler training data to the nature of the structure to be recognized. In addition, it maintains each model small, while producing in combination to very fine-grained final structures. Finally, although errors from a model can be propagated to another model, we train each model with a certain amount of realistic errors and noise as input (which is anyway more or less always happening with PDF), which makes possible to recover upstream model errors. 
 
-##Layout tokens, not text
+## Layout tokens, not text
 
 The different GROBID models do not work on text, but on **Layout Tokens** to exploit various visual/layout information available for every token. Layout information provide at the same time more criteria of decision for the recognition of structures and more robustness to layout variations. 
 
@@ -65,7 +65,7 @@ GROBID models maintain a synchronization between the labeling process and the la
 <b>Fig. 4</b> - Visualization of a cited equation in context
 </p>
 
-##Training data: _Qualität statt Quantität_
+## Training data: _Qualität statt Quantität_
 
 GROBID does not use a vast amount of training data derived from existing publisher XML documents, like CERMINE _(Tkaczyk et al., 2015)_ or ScienceParse 1 &amp; 2, but small, high quality sets of manually-labeled training data. The data to be labeled are directly generated from PDF (not from publisher XML) and continuously extended with error cases. Although we also experimented with the large-set approaches and auto-generated training data at scale, we still currently remain with the quality over quantity approach, the reasons being the following ones: 
 
@@ -81,31 +81,33 @@ GROBID does not use a vast amount of training data derived from existing publish
 
 In practice, the size of GROBID training data is smaller than the ones of CERMINE _(Tkaczyk et al., 2015)_ by a factor 30 to 100, and smaller than ScienceParse 2 by a factor 2500 to 10000. Still GROBID provides comparable or better accuracy scores. To help to ensure high-quality training data, we develop detailed [annotation guidelines](training/General-principles/) to remove as much as possible disagreements/inconsistencies regarding the annotation decision. The training data is reviewed regularly. We do not use double-blind annotation with reconciliation and do not compute Inter Annotator Agreement (as we should), because the average size of the annotation team is under 2 :)
 
-#### Evaluation
+## Evaluation
 
-As the training data is crafted for accuracy and coverage, it is strongly biased by undersampling non-edge cases. Our labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separate and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
+As the training data is crafted for accuracy and coverage, training data is strongly biased by undersampling non-edge cases. Or to rephrase it maybe more clearly: the less "informative" training examples, which are the most common ones, are less represented in our training data. Because of this bias, our manually labeled data cannot be used for evaluation. Evaluations of GROBID models are thus done with separated and stable holdout sets from publishers, which follow more realistic distributions of document variations. 
+
+See the current evaluations with [PubMed Central holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-pmc/) (1,943 documents, 90,125 bibliographical references in 139,835 citation contexts), [bioarXiv holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-biorxiv/) (2,000 documents, 98,753 bibliographical references in 142,796 citation contexts), [eLife holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-elife/) (984 documents, 63,664 bibliographical references in 109,022 reference contexts) and [PLOS holdout set](https://grobid.readthedocs.io/en/latest/Benchmarking-plos/) (1,000 documents, 48,449 bibliographical references in 69,755 reference contexts). 
 
 Our evaluation approach, however, raises two main issues: 
 
-- our publisher evaluation sets present currently the same lack of diversity drawback as discussed above with publisher XML-based training data, because the evaluation sets are all coming from life science or preprints. At least, as compared to most of the similar works, we do not train and evaluate at the same time with the same domains and sources of publications, because we maintain a strong diversity in the training data. 
+- our publisher evaluation sets present currently the same lack of diversity drawback as discussed above with publisher XML-based training data, because the evaluation sets are all coming from life science or preprints. However, as compared to most of the similar works, we do not train and evaluate at the same time with the same domains and sources of publications, because we maintain a strong diversity in the training data. 
 
-- although much better adapted to tackle the gap between the n-fold validation and real performance, the usage of stable holdout sets (usually favored by ML practitioners) can lead too lower reliability over time due to successive re-uses of the holdout data for guiding design improvements (as we validate addition of training data and features based on holdout set performance). 
+- although much better adapted to tackle the gap between the n-fold validation and real performance, the usage of stable holdout sets (usually favored by ML practitioners) can lead to lower reliability over time due to successive re-uses of the holdout data for guiding design improvements (as we validate addition of training data and features based on holdout set performance). 
 
 For addressing these two issues, we plan to regularly add new holdout sets from various sources over time, trying to exploit new XML publications available under appropriate license. 
 
-#### Transformer approaches incorporating layout information
+## Transformer approaches incorporating layout information
 
 For the moment, we are also not relying on transformer approaches incorporating layout information, like LayoutML _(Xu et al., 2020)_, LayoutLMv2 _(Xu et al., 2021)_, SelfDoc or VILA _(Shen et al., 2021)_, which require considerable GPU capacities, long inference runtime, and do not show at this time convincing accuracy scores as compared to the current GROBID cheap approach (reported accuracy at token level are often lower than GROBID accuracy at field level, while using less labels). 
 
 However, these approaches are very promising. In GROBID, it is possible to run BERT and SciBERT baseline fine-tuned models, ignoring available layout features. We think the system is thus more or less ready to experiment with fine-tuning such extended transformer models - or rather few-shot learning given the size of our annotated example set - when/if they can surpass some of the current models (and when we will have saved enough money to buy a V100 GPU). 
 
-##Balancing accuracy and scalability
+## Balancing accuracy and scalability
 
 We develop a tool to process the full scholar literature corpus (several ten million PDF documents), but also to allow interactive usage, e.g. processing the header of a PDF article in sub-second. It's why the default configuration of GROBID is still set to CRF to maintain the ability to process PDF quickly, with commodity hardware, with low memory usage to ensure good parallelization and scalability capacities.
 
-However, if the priority is accuracy, we also make possible custom settings to maximize the accuracy with deep learning models. Using some deep learning models will improve results by a few additional F1-score points (nothing extraordinary to be honest), but at the price of a slower runtime (2 to 5 times slower), the price of a GPU and more limited parallelization. 
+However, if the priority is accuracy, we also make possible custom settings to maximize the accuracy with deep learning models. Using some deep learning models will improve results by a few additional F1-score points (significant for bibliographical extraction and parsing for instance), but at the price of a possible slower runtime (but limited if a GPU is available), the price of a GPU and more limited parallelization. 
 
-##References
+## References
 
 _(Tkaczyk et al., 2014)_ Dominika  Tkaczyk,  Pawel  Szostek,  and  Lukasz  Bolikowski. 2014.  Grotoap2 - the methodology of creating a large ground truth dataset of scientific articles. D-Lib Magazine, 20(11/12)
 

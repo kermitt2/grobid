@@ -588,7 +588,8 @@ public class GrobidProperties {
         return pathToPdfalto;
     }
 
-    private static String getGrobidCRFEngineName(final String modelName) {
+
+    public static String getGrobidEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
             LOGGER.debug("No configuration parameter defined for model " + modelName);
@@ -597,16 +598,16 @@ public class GrobidProperties {
         return param.engine;
     }
 
-    public static GrobidCRFEngine getGrobidCRFEngine(final String modelName) {
-        String engineName = getGrobidCRFEngineName(modelName);
+    public static GrobidCRFEngine getGrobidEngine(final String modelName) {
+        String engineName = getGrobidEngineName(modelName);
         if (engineName == null)
             return null;
         else
             return GrobidCRFEngine.get(engineName);
     }
 
-    public static GrobidCRFEngine getGrobidCRFEngine(final GrobidModel model) {
-        return getGrobidCRFEngine(model.getModelName());
+    public static GrobidCRFEngine getGrobidEngine(final GrobidModel model) {
+        return getGrobidEngine(model.getModelName());
     }
 
     public static File getModelPath(final GrobidModel model) {
@@ -614,7 +615,7 @@ public class GrobidProperties {
             // model is not specified in the config, ignoring
             return null;
         }
-        String extension = getGrobidCRFEngine(model).getExt();
+        String extension = getGrobidEngine(model).getExt();
         return new File(getGrobidHome(), FOLDER_NAME_MODELS + File.separator
             + model.getFolderName() + File.separator
             + FILE_NAME_MODEL + "." + extension);
@@ -789,6 +790,20 @@ public class GrobidProperties {
             return null;
         }
         return param.delft.embeddings_name;
+    }
+
+    public static String getDelftTranformer(final String modelName) {
+        ModelParameters param = modelMap.get(modelName);
+        if (param == null) {
+            LOGGER.debug("No configuration parameter defined for model " + modelName);
+            return null;
+        }
+        DelftModelParameters delftParam = param.delft;
+        if (delftParam == null) {
+            LOGGER.debug("No configuration parameter defined for DeLFT engine for model " + modelName);
+            return null;
+        }
+        return param.delft.transformer;
     }
 
     /**

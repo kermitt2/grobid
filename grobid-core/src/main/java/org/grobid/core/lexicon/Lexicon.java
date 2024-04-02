@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.regex.*;
@@ -31,8 +32,11 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * Class for managing all the lexical resources.
@@ -43,6 +47,7 @@ public class Lexicon {
     // private static volatile Boolean instanceController = false;
     private static volatile Lexicon instance;
 
+    // gazetteers
     private Set<String> dictionary_en = null;
     private Set<String> dictionary_de = null;
     private Set<String> lastNames = null;
@@ -50,17 +55,22 @@ public class Lexicon {
     private Map<String, String> countryCodes = null;
     private Set<String> countries = null;
 
+    // retrieve basic naming information about a research infrastructure (key must be lower case!)
+    private Map<String, List<OrganizationRecord> > researchOrganizations = null;
+
+    // fast matchers for efficient and flexible pattern matching in layout token sequence or strings
     private FastMatcher abbrevJournalPattern = null;
     private FastMatcher conferencePattern = null;
     private FastMatcher publisherPattern = null;
     private FastMatcher journalPattern = null;
     private FastMatcher cityPattern = null;
 	private FastMatcher organisationPattern = null;
+    private FastMatcher researchInfrastructurePattern = null;
 	private FastMatcher locationPattern = null;
-	
+    private FastMatcher countryPattern = null;
 	private FastMatcher orgFormPattern = null;
     private FastMatcher collaborationPattern = null;
-
+    private FastMatcher funderPattern = null;
     private FastMatcher personTitlePattern = null;
 	private FastMatcher personSuffixPattern = null;
 
@@ -108,6 +118,21 @@ public class Lexicon {
         initCountryCodes();
         addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
             "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+    }
+
+    /**
+     * A basic class to hold dictionary/naming information about an organization for a given language
+     */
+    public class OrganizationRecord {
+        public String name;
+        public String fullName;
+        public String lang; // ISO 2-characters language code 
+
+        public OrganizationRecord(String name, String fullName, String lang) {
+            this.name = name;
+            this.fullName = fullName;
+            this.lang = lang;
+        }
     }
 
     private void initDictionary() {
@@ -184,6 +209,7 @@ public class Lexicon {
     	LOGGER.info("Initiating country codes");
         countryCodes = new HashMap<String, String>();
         countries = new HashSet<String>();
+        countryPattern = new FastMatcher();
         LOGGER.info("End of initialization of country codes");
     }
 
@@ -218,11 +244,27 @@ public class Lexicon {
                 throw new GrobidResourceException("Cannot close all streams.", e);
             }
         }
+
+        for (String country : countries) {
+            countryPattern.loadTerm(country, GrobidAnalyzer.getInstance(), false, false); // ignore delimiters, not case sensitive
+        }
     }
 
     public String getCountryCode(String country) {
         String code = (String) countryCodes.get(country.toLowerCase());
         return code;
+    }
+
+    public void initCountryPatterns() {
+        if (countries == null || countries.size() == 0) {
+            // it should never be the case
+            addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
+                "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+        }
+
+        for (String country : countries) {
+            countryPattern.loadTerm(country, GrobidAnalyzer.getInstance(), false, false); // ignore delimiters, not case sensitive
+        }
     }
 
     public final void addFirstNames(String path) {
@@ -477,6 +519,98 @@ public class Lexicon {
         }
     }
 
+    public void initFunders() {
+        try {
+            funderPattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"), 
+                    GrobidAnalyzer.getInstance(), true); 
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon matcher for funders.", e);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+        }
+    }
+
+    public void initResearchInfrastructures() {
+        try {
+            researchInfrastructurePattern = new FastMatcher(new
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures.txt"), 
+                    GrobidAnalyzer.getInstance(), true); 
+            // store some name mapping
+            researchOrganizations = new TreeMap<>();
+
+            File file = new File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures_map.txt");
+            if (!file.exists()) {
+                throw new GrobidResourceException("Cannot add research infrastructure names to dictionary, because file '" +
+                        file.getAbsolutePath() + "' does not exists.");
+            }
+            if (!file.canRead()) {
+                throw new GrobidResourceException("Cannot add research infrastructure to dictionary, because cannot read file '" +
+                        file.getAbsolutePath() + "'.");
+            }
+            InputStream ist = null;
+            BufferedReader dis = null;
+            try {
+                ist = new FileInputStream(file);
+                dis = new BufferedReader(new InputStreamReader(ist, "UTF8"));
+
+                String line;
+                while ((line = dis.readLine()) != null) {
+                    // read the line
+                    line = line.trim();
+                    if (line.length() == 0 || line.startsWith("#"))
+                        continue;
+                    String[] pieces = line.split(";", -1); // -1 for getting empty tokens too
+                    if (pieces.length == 3) {
+                        if (pieces[0].length() > 0) {
+                            
+                            if (pieces[1].length() > 0) {
+                                OrganizationRecord localInfra = new OrganizationRecord(pieces[0], pieces[1], "en");
+                                List<OrganizationRecord> localInfraList = researchOrganizations.get(pieces[0].toLowerCase());
+                                if (localInfraList == null) {
+                                    localInfraList = new ArrayList<>();
+                                }
+                                localInfraList.add(localInfra);
+                                researchOrganizations.put(pieces[0].toLowerCase(), localInfraList);
+                                researchOrganizations.put(pieces[1].toLowerCase(), localInfraList);
+                            }
+
+                            if (pieces[2].length() > 0) {
+                                OrganizationRecord localInfra = new OrganizationRecord(pieces[0], pieces[2], "fr");
+                                List<OrganizationRecord> localInfraList = researchOrganizations.get(pieces[0].toLowerCase());
+                                if (localInfraList == null) {
+                                    localInfraList = new ArrayList<>();
+                                }
+                                localInfraList.add(localInfra);
+                                researchOrganizations.put(pieces[0].toLowerCase(), localInfraList);
+                                researchOrganizations.put(pieces[2].toLowerCase(), localInfraList);
+                            }
+                        }
+                    } else {
+                        LOGGER.warn("research_infrastructures map file, invalid line format: " + line);
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                throw new GrobidException("An exception occured while running Grobid.", e);
+            } catch (IOException e) {
+                throw new GrobidException("An exception occured while running Grobid.", e);
+            } finally {
+                try {
+                    if (ist != null)
+                        ist.close();
+                    if (dis != null)
+                        dis.close();
+                } catch (Exception e) {
+                    throw new GrobidResourceException("Cannot close all streams.", e);
+                }
+            }
+        } catch (PatternSyntaxException e) {
+            throw new GrobidResourceException("Error when compiling lexicon matcher for research infrastructure.", e);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+        }    
+    }
+
     /**
      * Look-up in first name gazetteer
      */
@@ -505,9 +639,18 @@ public class Lexicon {
         return false;
     }
 
+    public List<OrganizationRecord> getOrganizationNamingInfo(String name) {
+        if (researchOrganizations == null)
+            return null;
+        return researchOrganizations.get(name.toLowerCase()); 
+    }
+
     /**
      * Map the language codes used by the language identifier component to the normal
      * language name.
+     *
+     * Note: due to an older bug, kr is currently map to Korean too - this should 
+     * disappear at some point in the future after retraining of models 
      *
      * @param code the language to be mapped
      */
@@ -534,7 +677,7 @@ public class Lexicon {
             return "Italian";
         else if (code.equals("jp"))
             return "Japanese";
-        else if (code.equals("kr"))
+        else if (code.equals("kr") || code.equals("ko"))
             return "Korean";
         else if (code.equals("nl"))
             return "Deutch";
@@ -655,6 +798,28 @@ public class Lexicon {
     }
 
     /**
+     * Case sensitive look-up in funder name gazetteer for a given list of LayoutToken objects
+     * with token positions
+     */
+    public List<OffsetPosition> tokenPositionsFunderNames(List<LayoutToken> s) {
+        if (funderPattern == null)
+            initFunders();
+        List<OffsetPosition> results = funderPattern.matchLayoutToken(s, true, true);
+        return results;
+    }
+
+    /**
+     * Case sensitive look-up in research infrastructure name gazetteer for a given list of LayoutToken objects
+     * with token positions
+     */
+    public List<OffsetPosition> tokenPositionsResearchInfrastructureNames(List<LayoutToken> s) {
+        if (researchInfrastructurePattern == null)
+            initResearchInfrastructures();
+        List<OffsetPosition> results = researchInfrastructurePattern.matchLayoutToken(s, true, true);
+        return results;
+    }
+
+    /**
      * Soft look-up in city name gazetteer for a given string with token positions
      */
     public List<OffsetPosition> tokenPositionsCityNames(String s) {
@@ -699,6 +864,18 @@ public class Lexicon {
             initOrganisations();
         }
         List<OffsetPosition> results = organisationPattern.matchLayoutToken(s);
+        return results;
+    }
+
+    /**
+     * Soft look-up in country name gazetteer for a given list of LayoutToken objects
+     * with token positions
+     */
+    public List<OffsetPosition> tokenPositionsCountryNames(List<LayoutToken> s) {
+        if (countryPattern == null) {
+            initCountryPatterns();
+        }
+        List<OffsetPosition> results = countryPattern.matchLayoutToken(s);
         return results;
     }
 

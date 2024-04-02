@@ -169,5 +169,15 @@ public class FastMatcherTest {
         assertThat(offsetPositions.get(1).end, is(6));
     }
 
+    @Test
+    public void testMatchList_funder_1Match() throws Exception {
+        target = new FastMatcher(this.getClass().getResourceAsStream("funders.txt"), GrobidAnalyzer.getInstance(), true);
 
+        final String input = "Thank you Deutsche Forschungsgemeinschaft for the money.";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        final List<OffsetPosition> offsetPositions = target.matchCharacterLayoutToken(tokenisedInput, true);
+        assertThat(offsetPositions, hasSize(1));
+        assertThat(offsetPositions.get(0).start, is(4));
+        assertThat(offsetPositions.get(0).end, is(6));
+    }
 }

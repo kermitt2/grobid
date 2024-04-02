@@ -97,7 +97,7 @@ public class GrobidPropertiesTest {
     @Test
     public void testShouldReturnModelPathWithExtension() {
         GrobidModels model = GrobidModels.DATE;
-        String extension = GrobidProperties.getGrobidCRFEngine(model).getExt();
+        String extension = GrobidProperties.getGrobidEngine(model).getExt();
         assertEquals(
             "model path for " + model.name(),
             new File(GrobidProperties.getGrobidHome(),

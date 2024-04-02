@@ -25,7 +25,7 @@ public class TaggerFactory {
     private TaggerFactory() {}
 
     public static synchronized GenericTagger getTagger(GrobidModel model) {
-        return getTagger(model, GrobidProperties.getGrobidCRFEngine(model), GrobidProperties.getDelftArchitecture(model));
+        return getTagger(model, GrobidProperties.getGrobidEngine(model), GrobidProperties.getDelftArchitecture(model));
     }
 
     public static synchronized GenericTagger getTagger(GrobidModel model, GrobidCRFEngine engine) {

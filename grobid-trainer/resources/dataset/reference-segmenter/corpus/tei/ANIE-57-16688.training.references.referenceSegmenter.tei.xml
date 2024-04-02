@@ -1,0 +1,78 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+        <bibl><label>[1] a)</label> M. Schneider,A.Belsom, J. Rappsilber, Trends Biochem. Sci.<lb/> 2018, 43,1 57 -169;</bibl>
+        <bibl><label>b )</label>A.N .C alabrese,S .E.R adford, Methods<lb/> 2018, 147,1 87 -205;</bibl>
+        <bibl><label>c )</label>J .G ubbens,E .R uijter,L .E.V .d eF ays,<lb/> J. M. A. Damen, B. de Kruijff,M .S lijper, D. T. S. Rijkers,<lb/> R. M. J. Liskamp,A .I.P .M.d eKroon, Chem. Biol. 2009, 16,<lb/> 3-14;</bibl>
+        <bibl><label>d )</label>O .P avlova, J. H. Peterson, R. Ieva, H. D. Bernstein,<lb/> Proc.Natl. Acad. Sci. USA 2013, 110,E938 -947;</bibl>
+        <bibl><label>e)</label>C.R.Braun,<lb/> J. Mintseris,E .G avathiotis, G. H. Bird, S. P. Gygi, L. D.<lb/> Walensky, Chem. Biol. 2010, 17,1 325 -1333;</bibl>
+        <bibl><label>f )</label>A.Sinz, Angew.<lb/> Chem. Int. Ed. 2018, 57,6 390 -6396; Angew.C hem. 2018, 130,<lb/> 6498 -6504.<lb/> </bibl>
+
+        <bibl><label>[2]</label> S¸.Yılmaz, G. A. Shiferaw,J .Rayo,A.Economou,L.Martens,E.<lb/> Va ndermarliere, Mass Spectrom. Rev. 2018, 37,7 38 -749.<lb/> </bibl>
+        
+        <bibl><label>[3] a)</label> C. Iacobucci, C. Piotrowski, A. Rehkamp,C .H.I hling,A .<lb/> Sinz, J. Am. Soc.Mass Spectrom. 2018, 29,0;</bibl>
+        <bibl><label>b)</label>M.Q.Müller,F .<lb/> Dreiocker, C. H. Ihling,M.Schäfer, A. Sinz, Anal. Chem. 2010,<lb/> 82,6958 -6968;</bibl>
+        <bibl><label>c)</label>Y .Y ang,H.Song,D .He, S. Zhang,S .Dai, X.<lb/> Xie,S .Lin, Z. Hao,H.Zheng,P .R.Chen, Nat. Protoc. 2017, 12,<lb/> 2147 -2168;</bibl>
+        <bibl><label>d)</label>C.Iacobucci, M. Gotze,C.Piotrowski, C. Arlt, A.<lb/> Rehkamp,C .I hling,C .H age,A .S inz, Anal. Chem. 2018, 90,<lb/> 2805 -2809.<lb/> </bibl>
+
+        <bibl><label>[4]</label> D. Tan, Q. Li, M. J. Zhang,C.Liu, C. Ma, P. Zhang,Y .H.Ding,<lb/> S. B. Fan, L. Tao, B. Yang,X .L i, S. Ma, J. Liu, B. Feng,X .L iu,<lb/> H. W. Wang,S .M.He, N. Gao,K.Y e, M. Q. Dong, X. Lei, eLife<lb/> 2016, 5,e12509.<lb/> </bibl>
+        
+        <bibl><label>[5] a)</label> L. Manzi, A. S. Barrow,D .S cott, R. Layfield, T. G. Wright,<lb/> J. E. Moses,N .J .O ldham, Nat. Commun. 2016, 7,1 3288;</bibl>
+        <bibl><label>b )</label>L.<lb/> Manzi, A. S. Barrow,J .T .S .H opper,R .K aminska, C. Klean-<lb/>thous,C.V .Robinson, J. E. Moses,N .J .Oldham, Angew.Chem.<lb/> Int. Ed. 2017, 56,14873 -14877; Angew.Chem. 2017, 129,15069 -<lb/>15073.<lb/> </bibl>
+        
+        <bibl><label>[6] a)</label> A. Politis,C .S chmidt, J. Proteomics 2018, 175,3 4-41;</bibl>
+        <bibl><label>b )</label>M.<lb/> Ferber,J .Kosinski, A. Ori, U. J. Rashid, M. Moreno-Morcillo,B .<lb/> Simon, G. Bouvier,P .R.B atista, C. W. Muller,M .B eck, M.<lb/> Nilges, Nat. Methods 2016, 13,5 15 -520.<lb/> </bibl>
+        
+        <bibl><label>[7] a)</label> S. Kalkhof,A.Sinz, Anal. Bioanal. Chem. 2008, 392,305 -312;<lb/> </bibl>
+        <bibl><label>b)</label> S. Mädler,C.Bich, D. Touboul, R. Zenobi, J. Mass Spectrom.<lb/> 2009, 44,6 94 -706.<lb/> </bibl>
+        
+        <bibl><label>[8] a)</label> R. Fritzsche,C.H.Ihling,M.Gotze,A.Sinz, Rapid Commun.<lb/> Mass Spectrom. 2012, 26,653 -658;</bibl>
+        <bibl><label>b)</label>R.M. Kaake,X.Wang,A.<lb/> Burke,C .Y u, W. Kandur,Y .Y ang,E .J .N ovtisky,T .S econd, J.<lb/> Duan, A. Kao,S.Guan, D. Vellucci, S. D. Rychnovsky,L.Huang,<lb/> Mol. Cell. Proteomics 2014, 13,3 533 -3543;</bibl>
+        <bibl><label>c )</label>A.L eitner,R .<lb/> Reischl, T. Walzthoeni, F. Herzog,S .B ohn, F. Forster,R .<lb/> Aebersold, Mol. Cell. Proteomics 2012, 11,M 111.014126;</bibl> 
+        <bibl><label>d)</label> X.<lb/> Tang,J .E.Bruce, Mol. Biosyst. 2010, 6,939 -947.<lb/> </bibl>
+        
+        <bibl><label>[9]</label> G. W. Preston, A. J. Wilson, Chem. Soc.R ev. 2013, 42,3 289 -<lb/>3301.<lb/> </bibl>
+        
+        <bibl><label>[10]</label> a) Y. Liu, Z. Ramey,F .T urecek, Chem. Eur.J .2018, 24,9 259 -<lb/>9263;</bibl>
+        <bibl><label>b )</label>J .L iang,L .Z hang,X .L.T an, Y. K. Qi, S. Feng,H .<lb/> Deng,Y .Y an, J. S. Zheng,L.Liu, C. L. Tian, Angew.Chem. Int.<lb/> Ed. 2017, 56,2 744 -2748; Angew.Chem. 2017, 129,2 788 -2792.<lb/> </bibl>
+        
+        <bibl><label>[11]</label> A. Admasu, A. D. Gudmundsdottir,M .S.P latz, D. S. Watt, S.<lb/> Kwiatkowski, P. J. Crocker, J. Chem. Soc.P erkin Trans.21998,<lb/> 1093 -1099.<lb/> </bibl>
+        
+        <bibl><label>[12] a)</label> T. Yang,Z .L iu, X. D. Li, Chem. Sci. 2015, 6,1 011 -1017;<lb/> </bibl>
+        <bibl><label>b)</label> M. Zhang,S .L in, X. Song,J .L iu, Y. Fu, X. Ge,X .F u, Z.<lb/> Chang,P .R.C hen, Nat. Chem. Biol. 2011, 7,6 71 -677;</bibl>
+        <bibl><label>c )</label>G .W .<lb/> Preston, S. E. Radford, A. E. Ashcroft, A. J. Wilson, ACSChem.<lb/> Biol. 2014, 9,7 61 -768.<lb/> </bibl>
+        
+        <bibl><label>[13]</label> E. Nakata, Y. Koshi, E. Koga, Y. Katayama, I. Hamachi, J. Am.<lb/> Chem. Soc. 2005, 127,1 3253 -13261.<lb/> </bibl>
+        
+        <bibl><label>[14]</label> R. Ahrends, J. Kosinski, D. Kirsch, L. Manelyte,L .G iron-<lb/>Monzon, L. Hummerich, O. Schulz, B. Spengler, P. Friedhoff,<lb/> Nucleic Acids Res. 2006, 34,3 169 -3180.<lb/> </bibl>
+        
+        <bibl><label>[15]</label> a) E. F. Lee,G .D ewson, M. Evangelista, A. Pettikiriarachchi,<lb/> G. J. Gold, H. R. Zhu, P. M. Colman,W .D .Fairlie, J. Biol. Chem.<lb/> 2014, 289,3 6001 -36017;</bibl>
+        <bibl><label>b )</label>J .A.M iles,D .J .Y eo,P .R owell, S.<lb/> Rodriguez-Marin, C. M. Pask, S. L. Warriner,T .A.E dwards,<lb/> A. J. Wilson, Chem. Sci. 2016, 7,3 694 -3702.<lb/> </bibl>
+        
+        <bibl><label>[16]</label> Q. Liu, T. Moldoveanu, T. Sprules,E .M atta-Camacho,N .<lb/> Mansur-Azzam, K. Gehring, J. Biol. Chem. 2010, 285,1 9615 -<lb/>19624.<lb/> </bibl>
+        
+        <bibl><label>[17]</label> J. Qu, C. Mayer, S. Behrens,O .Holst, J. H. Kleinschmidt, J. Mol.<lb/> Biol. 2007, 374,9 1-105.<lb/> </bibl>
+        
+        <bibl><label>[18]</label> B. M. Burmann, C. Wang,S .Hiller, Nat. Struct. Mol. Biol. 2013,<lb/> 20,1 265 -1272.<lb/> </bibl>
+        
+        <bibl><label>[19]</label> a) L. Dubinsky,B .P .Krom, M. M. Meijler, Bioorg.Med. Chem.<lb/> 2012, 20,554 -570;</bibl>
+        <bibl><label>b)</label>M.Suchanek, A. Radzikowska, C. Thiele,<lb/> Nat. Methods 2005, 2,261 -267.<lb/> </bibl>
+        
+        <bibl><label>[20]</label> J. Brunner, H. Senn, F. M. Richards, J. Biol. Chem. 1980, 255,<lb/> 3313 -3318.<lb/> </bibl>
+        <bibl><label>[21]</label> A. Liga, J. A. S. Morton, M. Kersaudy-Kerhoas, Microfluid.<lb/> Nanofluid. 2016, 20,164.<lb/> </bibl>
+        <bibl><label>[22]</label> G. Lessene,P .E.C zabotar,P .M.C olman, Nat. Rev.D rug<lb/> Discovery 2008, 7,9 89 -1000.<lb/> </bibl>
+        <bibl><label>[23]</label> J. M. Rogers,V .O leinikovas,S .L.S hammas,C .T .W ong,D .<lb/> De Sancho,C .M.B aker,J .C larke, Proc.N atl. Acad. Sci. USA<lb/> 2014, 111,15420 -15425.<lb/> </bibl>
+        <bibl><label>[24]</label> D. Balchin, M. Hayer-Hartl, F. U. Hartl, Science 2016, 353,<lb/> aac4354.<lb/> </bibl>
+        
+        <bibl><label>[25]</label> a) B. Schiffrin, D. J. Brockwell,S .E.R adford, BMC Biol. 2017,<lb/> 15,1 23;</bibl>
+        <bibl><label>b )</label>B .S chiffrin, A. N. Calabrese,P .W .A.D evine,S .A.<lb/> Harris,A .E.A shcroft, D. J. Brockwell,S .E.R adford, Nat.<lb/> Struct. Mol. Biol. 2016, 23,786 -793.<lb/> </bibl>
+        
+        <bibl><label>[26]</label> T. A. Walton, M. C. Sousa, Mol. Cell 2004, 15,367 -374.<lb/> </bibl>
+        <bibl><label>[27]</label> J. Guo,M.J .Gaffrey,D .Su, T. Liu, D. G. Camp II, R. D. Smith,<lb/> W. J. Qian, Nat. Protoc. 2014, 9,64-75.<lb/> </bibl>
+        </listBibl>
+    </text>
+</tei>
+

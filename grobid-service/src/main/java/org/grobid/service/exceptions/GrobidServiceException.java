@@ -1,7 +1,7 @@
 package org.grobid.service.exceptions;
 
 import org.grobid.core.exceptions.GrobidException;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 public class GrobidServiceException extends GrobidException {
 

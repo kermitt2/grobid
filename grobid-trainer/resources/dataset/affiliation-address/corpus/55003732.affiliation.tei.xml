@@ -40,7 +40,7 @@
 							<orgName type="laboratory">Laboratoire d&apos;Electrochimie et de Physico-chimie des Matériaux et des Interfaces</orgName>,
 							<orgName type="laboratory">UMR CNRS 5631-INPG-UJF</orgName>,
 							<address>
-								<addrLine>BP 75</addrLine>,
+								<postBox>BP 75</postBox>,
 								<postCode>38402</postCode>
 								<settlement>Saint<lb/> Martin d&apos;Hères cedex</settlement>,
 								<country>France</country>
@@ -67,7 +67,7 @@
 							<orgName type="laboratory">UMR CNRS 5209</orgName>,
 							<address>
 								<addrLine>9 Avenue Alain Savary</addrLine>,
-								<addrLine>BP 47870</addrLine>,
+								<postBox>BP 47870</postBox>,
 								<postCode>21078</postCode>
 								<settlement>Dijon cedex</settlement>,
 								<country>France</country>

@@ -1,0 +1,16 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl><label>1</label>. I. M. James, On sphere-bundles. I, Bull. Amer. Math. Soc. 75 (1969), 617-621. MR 39<lb/> #3517.<lb/> </bibl>
+        <bibl><label>2</label>. , On sphere-bundles. II, Bull. London Math. Soc. 1 (1969), 323-328. MR 44 #3339.<lb/> </bibl>
+        <bibl><label>3</label>. , Bundles with special structure. I, Ann. of Math. (2) 89 (1969), 359-390. MR 39<lb/> #4868.<lb/> </bibl>
+        <bibl><label>4</label>. R. E. Stong, Notes on cobordism theory, Princeton Univ. Press, Princeton, N. J.; Univ. Tokyo<lb/> Press, Tokyo, 1968. MR 40 #2108.<lb/></bibl>
+        </listBibl>
+    </text>
+</tei>
+

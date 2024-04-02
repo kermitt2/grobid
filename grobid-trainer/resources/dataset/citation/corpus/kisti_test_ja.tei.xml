@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader/>
+    <text>
+        <front/>
+        <body/>
+        <back>
+            <listBibl>
+
+<!---  journal  volume  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n1_470_010" lang="ja"><author>田中正人, 小川知弘</author>, '<title level="a">復興都市計画による市街地再編と居住実態の変容に関する研究-阪神.淡路大震災における神戸市長田区の事例</title>,' 日<title level="j">本災害復興学会論文集</title>, No.<biblScope unit="issue">2</biblScope>, pp.<biblScope unit="page">9-18</biblScope>, <date>2012(3)</date>.</bibl>
+<!---  title  journal  volume  page  issue  orgName  missmatch -->
+<bibl xml:id="_KHSBBC_2020_v35n3_151_023" lang="ja"><author>松掛 暢</author>, <title level="a">宇宙基本法と日本の宇宙開発利用</title> <title level="j">阪南論集: 社会科学編</title> <biblScope unit="volume">45</biblScope>巻 <biblScope unit="issue">1</biblScope>号 (<orgName>阪南大学学会</orgName>, <date>2009</date>).</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_HKBOB5_2020_v23n3_23_037" lang="ja"><author>半田眞理子</author><date>1989</date>. <title level="a">都の生態系の綠</title>, <title level="j">綠の讀本</title> <biblScope unit="volume">10</biblScope>: <biblScope unit="page">3-10</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_CCTHCV_2020_v20n2_1_044" lang="ja"><author>赤池 伸, 横尾 淑子</author>, '<title level="a">新たな予測活動の展開に向けて</title>,' <title level="j">STI Horizon</title>, Vol.<biblScope unit="volume">2</biblScope>, No.<biblScope unit="issue">3</biblScope>, pp.<biblScope unit="page">22-26</biblScope>, <date>2016</date>.</bibl>
+<!---  author  title  journal  volume  page  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_164_019" lang="ja"><author>岡村秀典</author>, <date>1984</date>, <title level="a">前漢鏡の編年と樣式</title>, <title level="j">史林</title> <biblScope unit="volume">67-5</biblScope>, <orgName>史學硏究會</orgName>.</bibl>
+<!---  title  journal  volume  page  publisher  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_164_020" lang="ja"><author>岡村秀典</author>, <date>1992</date>, <title level="a">福岡縣平原遺跡出土鏡の檢討</title>, <title level="j">季刊 考古學</title> <biblScope unit="volume">43</biblScope>, <publisher>雄山閣</publisher>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_164_022" lang="ja"><author>高倉洋章</author>, <date>1972</date>, <title level="a">弥生時代小形仿製鏡について</title>, <title level="j">考古學雜誌</title> <biblScope unit="volume">58</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_164_024" lang="ja"><author>田尻義了</author>, <date>2003</date>, <title level="a">弥生時代小形仿製鏡の製作地-初期小形仿製鏡の檢討</title>, <title level="j">靑丘學術論集</title> <biblScope unit="volume">22</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_164_025" lang="ja"><author>田尻義了</author>, <date>2004</date>, <title level="a">弥生時代小形仿製鏡の生産體制論</title>, <title level="j">日本考古學</title> <biblScope unit="volume">18</biblScope>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_4_023" lang="ja"><author>馬淵久夫.平尾良光</author>, <date>1987</date>, <title level="a">東アジア鉛鉱石の鉛同位体比</title>, <title level="j">考古学雑誌</title> <biblScope unit="volume">73</biblScope>(<biblScope unit="issue">2</biblScope>), pp.<biblScope unit="page">199-245</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_4_024" lang="ja"><author>定森秀夫</author>, <date>1981</date>, <title level="a">韓国慶尚南道昌寧地域土陶質土器の検討‐陶質土器に関する一私見‐</title>, <title level="j">吉代文化</title> <biblScope unit="volume">33</biblScope>.</bibl>
+<!---  title  journal  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_4_026" lang="ja"><author>小林行雄</author>, <date>1962</date>, <title level="a">鍍金技法の傳来, 古代の技術</title>, <title level="j">塙選書</title> <biblScope unit="volume">24</biblScope>, <orgName>塙書房</orgName>, pp.<biblScope unit="page">196-197</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_100_049" lang="ja"><author>村上恭通</author>, <date>1987</date>, <title level="a">東アジアの初期鐵器時代</title>, <title level="j">古代文化</title> <biblScope unit="volume">39-9</biblScope>, <orgName>古代學協會</orgName>.</bibl>
+<!---  title  journal  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2021_v54n1_238_044" lang="ja"><author>藤島亥治郎</author>, <date>1930</date>, <title level="a">朝鮮建築史論 其四</title>, <title level="j">建築雑誌</title> <biblScope unit="volume">44</biblScope>(<biblScope unit="issue">535</biblScope>), <orgName>日本建築学会</orgName>, pp.<biblScope unit="page">1373-1376</biblScope>.</bibl>
+<!---  author  journal  page  date  missmatch -->
+<bibl xml:id="_HGKRBZ_2021_n67_205_014" lang="ja"><author>가토 기요후미(加藤淸文)</author>. <date>2005a</date>. <title level="a">喪われた記録-戦時下の公文書廢棄</title>. <title level="j">国文学研究資料館紀要 ア-かイブズ研究編</title> <biblScope unit="volume">1</biblScope>, <biblScope unit="page">1-27</biblScope>.</bibl>
+<!---  author  title  orgName  missmatch -->
+<bibl xml:id="_GROSDC_2021_v3_54_011" lang="ja"><author>木村雄四郞</author>, <title level="a">石戶谷勉氏の逝去を悼む</title>, <title level="j">植物硏究雜誌</title>, vol,<biblScope unit="volume">33</biblScope>, no,<biblScope unit="issue">10</biblScope>(<orgName>植物硏究雜誌社</orgName>, <date>1958</date>).</bibl>
+<!---  author  title  orgName  missmatch -->
+<bibl xml:id="_GROSDC_2021_v3_54_017" lang="ja"><author>渡辺晴香 金善珉 丁宗鐵</author>, <title level="a">日韓生藥學交流史 : 杉原德行の業績と評価</title>, <title level="j">Journal of the Japan Society of Medical History</title> vol.<biblScope unit="volume">48</biblScope> no.<biblScope unit="issue">2</biblScope>(<orgName>日本医史學會</orgName>, <date>2002</date>).</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_DOTBB9_2021_v52n1_1_035" lang="ja"><author>長塚 隆</author> (<date>2020</date>). <title level="a">新型コロナウイルス感染症の拡大と図書館</title>. <title level="j">日本農学図書館協議会誌</title>, <biblScope unit="volume">199</biblScope>, <biblScope unit="page">8-14</biblScope>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_JBGRBQ_2021_v38n1_143_031" lang="ja"><author>中井えり子</author> (<date>2015</date>). <title level="a">大学図書館と特殊コレクション: 名古屋大学の西洋古典籍特殊コレクション</title>. <title level="j">カレントアウェアネス</title>, <biblScope unit="volume">323</biblScope>, <biblScope unit="page">8-10</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_GJMJBK_2020_v24n6_50_019" lang="ja"><author>浅本晋吾, 古田悠佳, 欒堯, &amp; 米田大樹</author>. (<date>2018</date>). <title level="a">撥水材を混入したセメント系材料の内部撥水性と材料特性の検討</title>. <title level="j">コンクリート工学論文集</title>, <biblScope unit="volume">29</biblScope>, <biblScope unit="page">11-19</biblScope>.</bibl>
+<!---  author  title  date  issue  missmatch -->
+<bibl xml:id="_CCTHCV_2021_v21n5_139_012" lang="ja"><author>塩 津 ゆりか, 原田禎夫, 伊多波 良 雄</author>, '<title level="a">市町村合併の実証分析</title>,' <title level="j">会計検査研究</title>, 第<biblScope unit="issue">20</biblScope>號, pp.<biblScope unit="page">65-86</biblScope>, <date>2001</date>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_JGHHBR_2021_v49n2_27_056" lang="ja"><author>菱拓雄</author>(<date>2006</date>) <title level="a">ヒノキからみた樹木細根系內の生活環における異質性と生態系機能</title>. <title level="j">根の硏究(Root Research)</title> <biblScope unit="volume">15</biblScope>(<biblScope unit="issue">1</biblScope>): <biblScope unit="page">5-10</biblScope>.</bibl>
+<!---  author  title  journal  page  issue  missmatch -->
+<bibl xml:id="_JGHHBR_2021_v49n2_27_057" lang="ja"><author>国土交通省</author>(<date>2008</date>) <title level="a">公共用綠化樹木の品質寸法規格基準(案) 第5次改訂</title>. <title level="j">国都緑環</title> 第<biblScope unit="issue">47</biblScope>号.</bibl>
+<!---  author  title  journal  volume  missmatch -->
+<bibl xml:id="_GCOSBX_2021_v44n2_113_004" lang="ja"><author>山岸 喬</author>. <date>2016</date>. <title level="a">生薬シリーズ 173 ソウジシ(蒼耳子)</title>. <title level="j">漢方研究</title>. <biblScope unit="volume">532</biblScope>(<biblScope unit="issue">4</biblScope>): <biblScope unit="page">131-132</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_HJHGC7_2021_v22n6_17_001" lang="ja"><author>北鄕繁 &amp; 鈴木輝之</author> (<date>1973</date>),<title level="a">鈴木輝之砂と粘土の混合土の土質工學的性 質に關する實驗的硏究</title>,<title level="j">北海道大學工學部硏究報告</title> Vol. <biblScope unit="volume">68</biblScope>,No. <biblScope unit="issue">2</biblScope>,pp. <biblScope unit="page">243~251</biblScope> (In Japanese).</bibl>
+<!---  author  title  journal  doi  missmatch -->
+<bibl xml:id="_NCJDBX_2020_v27n4_159_024" lang="ja"><author>島義史</author>. (<date>2009</date>). <title level="a">イチゴ作新規参入者の成長プロセス</title>. <title level="j">農業経営研究</title>, <biblScope unit="volume">47</biblScope>(<biblScope unit="issue">3</biblScope>), <biblScope unit="page">1-10</biblScope>. DOI:<idno type="DOI">10.11300/fmsj.47.3_1</idno>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_NCJDBX_2020_v27n4_159_025" lang="ja"><author>土田志郎</author>. (<date>1996</date>). <title level="a">第9章水田作経営の経営管理と意思決定, 水田作経営の発展と経営管理</title>. <title level="j">総合農業研究叢書</title>, <biblScope unit="volume">28</biblScope>, <biblScope unit="page">173-185</biblScope>.</bibl>
+<!---  author  journal  doi  missmatch -->
+<bibl xml:id="_BBROBV_2021_v32n2_101_018" lang="ja"><author>谷本達哉, 兼松芳之</author> (<date>2013</date>). <title level="a">レファレンス事例データベースの協同構築事業におけるデータ登録 の現状と問題点</title>. <title level="j">図書館情報メディア研究</title>, <biblScope unit="volume">11</biblScope>(<biblScope unit="issue">1</biblScope>), <biblScope unit="page">11-21</biblScope>. info:doi/<idno type="DOI">10.15068/00000270</idno>.</bibl>
+<!---  title  volume  page  issue  missmatch -->
+<bibl xml:id="_PSGOBG_2020_v1n1_29_010" lang="ja"><author>小井川広志</author>, <date>2008</date>, '<title level="a">グローバル.バリュー.チェーン(GVC)分析の展望:世界システム,アップグレード, ガバナンスの概念をめぐって</title>', <title level="j">経済学研究</title>, 第<biblScope unit="volume">58</biblScope>巻, 第<biblScope unit="issue">3</biblScope>号, <biblScope unit="page">99-114</biblScope>頁.</bibl>
+<!---  title  journal  volume  page  issue  publisher  missmatch -->
+<bibl xml:id="_KHSBBC_2020_v35n3_151_022" lang="ja"><author>行松泰弘</author>, <title level="a">人工衛星等の打上げ及び人工衛星の管理に関する法律(宇宙活動法)の概要について</title> <title level="j">ジュリスト</title> <biblScope unit="issue">1506</biblScope>号 (<publisher>有斐閣</publisher>, <date>2017</date>).</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n4_32_014" lang="ja"><author>氏家祐二</author>, <date>2002</date>, <title level="a">歴史と造船の地 : 長崎-三菱重工業(株) 長崎造船所-</title>, <title level="j">日本造船学会誌</title>, <biblScope unit="volume">869</biblScope>(-), p.<biblScope unit="page">638</biblScope>.</bibl>
+<!---  author  title  journal  volume  orgName  missmatch -->
+<bibl xml:id="_MHJOCX_2020_v53n3_80_038" lang="ja"><author>米田美代治</author>, <date>1940</date>, <title level="a">慶州望德寺の研究-伽藍計畫に就いて四天王寺及び藤原京薬師寺との関係-</title> <title level="j">朝鮮と建築</title><biblScope unit="volume">19</biblScope>(<biblScope unit="issue">4</biblScope>), <orgName>朝鮮建築会</orgName>, pp.<biblScope unit="page">31-42</biblScope>.</bibl>
+<!---  author  title  journal  volume  page  missmatch -->
+<bibl xml:id="_HGKRBZ_2020_n64_93_015" lang="ja"><author>네즈 요시카즈(根津良一)</author> <date>2019.2</date>. <title level="a">須坂市文書館の設置と一般利用開始に向けた取組</title>. <title level="j">アーカイブズ</title>, <biblScope unit="volume">71</biblScope>.</bibl>
+<!---  title  journal  missmatch -->
+<bibl xml:id="_GJJRBH_2020_v23n3_292_022" lang="ja"><author>萩原 雅也</author>, <date>2014</date>, '<title level="a">創造的活動のための人的資源と文化資源についての考察: 徳島県上勝町.神山町の事例から</title>,' <title level="j">大阪樟蔭女子大学研究紀要</title> <biblScope unit="volume">4</biblScope>, pp.<biblScope unit="page">111-122</biblScope>.</bibl>
+<!---  author  title  journal  missmatch -->
+<bibl xml:id="_DOTBB9_2020_v51n1_71_013" lang="ja"><author>宇治鄕毅</author>. <date>1985</date>. <title level="a">近代韓國公共圖書館史の硏究ー開花期から1920年代までー</title>. <title level="j">參考書誌硏究</title>, <biblScope unit="volume">30</biblScope>: <biblScope unit="page">1-22</biblScope>.</bibl>
+<!---  journal  missmatch -->
+<bibl xml:id="_NCJDBX_2020_v27n3_125_016" lang="ja"><author>村山祐司</author>. (<date>1982</date>). <title level="a">結節地域設定に關するNystuen-Daceyモデルの再檢討</title>. <title level="j">地理科學</title>, <biblScope unit="volume">37</biblScope>(<biblScope unit="issue">2</biblScope>), <biblScope unit="page">73-84</biblScope>.</bibl>
+<!---  author  journal  page  issue  missmatch -->
+<bibl xml:id="_KCOSB1_2020_v29n6_89_002" lang="ja"><author>오다쇼고(小田省吾)</author>, <title level="a">京城尊都の 由來こ 基の 城壁に就て</title>, <title level="j">朝鮮</title> 제<biblScope unit="issue">197</biblScope>호, <date>1931</date>.</bibl>
+
+            </listBibl>
+        </back>
+    </text>
+</TEI>

@@ -5,13 +5,14 @@ import fr.limsi.wapiti.Wapiti;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
 public class WapitiModel {
-    public static final Logger LOGGER = LoggerFactory.getLogger(WapitiModel.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(WapitiModel.class);
 
     private SWIGTYPE_p_mdl_t model;
     private File modelFile;
@@ -31,9 +32,9 @@ public class WapitiModel {
             return;
         }
         if (!modelFile.exists() || modelFile.isDirectory()) {
-            throw new GrobidException("Model file does not exists or a directory: " + modelFile.getAbsolutePath());
+            throw new GrobidException("Model file does not exists or is a directory: " + modelFile.getAbsolutePath());
         }
-        LOGGER.info("Loading model: " + modelFile + " (size: " + modelFile.length() + ")");
+        //LOGGER.info("Loading model: " + modelFile + " (size: " + modelFile.length() + ")");
         model = WapitiWrapper.getModel(modelFile);
     }
 

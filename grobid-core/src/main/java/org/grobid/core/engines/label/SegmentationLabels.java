@@ -14,6 +14,8 @@ public class SegmentationLabels extends TaggingLabels{
      * page number <page>,
      * annexes <annex>,
 	 * acknowledgement <acknowledgement>,
+	 * availability <availability>,
+	 * funding <funding>,
      * other <other>,
 	 * toc <toc> -> not yet used because not yet training data for this
      */
@@ -44,6 +46,9 @@ public class SegmentationLabels extends TaggingLabels{
     public static final TaggingLabel ANNEX = new TaggingLabelImpl(GrobidModels.SEGMENTATION, ANNEX_LABEL);
     public static final TaggingLabel REFERENCES = new TaggingLabelImpl(GrobidModels.SEGMENTATION, REFERENCES_LABEL);
     public static final TaggingLabel ACKNOWLEDGEMENT = new TaggingLabelImpl(GrobidModels.SEGMENTATION, ACKNOWLEDGEMENT_LABEL);
+
+    public static final TaggingLabel AVAILABILITY = new TaggingLabelImpl(GrobidModels.SEGMENTATION, AVAILABILITY_LABEL);
+    public static final TaggingLabel FUNDING = new TaggingLabelImpl(GrobidModels.SEGMENTATION, FUNDING_LABEL);
     public static final TaggingLabel TOC = new TaggingLabelImpl(GrobidModels.SEGMENTATION, TOC_LABEL);
 
     static {
@@ -57,6 +62,8 @@ public class SegmentationLabels extends TaggingLabels{
         register(ANNEX);
         register(REFERENCES);
         register(ACKNOWLEDGEMENT);
+        register(AVAILABILITY);
+        register(FUNDING);
         register(TOC);
     }
 

@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class TrainerRunner {
 
-    private static final List<String> models = Arrays.asList("affiliation", "chemical", "date", "citation", "ebook", "fulltext", "header", "name-citation", "name-header", "patent");
+    private static final List<String> models = Arrays.asList("affiliation", "chemical", "date", "citation", "ebook", "fulltext", "header", "name-citation", "name-header", "patent", "segmentation");
     private static final List<String> options = Arrays.asList("0 - train", "1 - evaluate", "2 - split, train and evaluate", "3 - n-fold evaluation");
 
     private enum RunType {
@@ -53,6 +53,7 @@ public class TrainerRunner {
         double split = 0.0;
         int numFolds = 0;
         String outputFilePath = null;
+        boolean incremental = false;
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-gH")) {
                 if (i + 1 == args.length) {
@@ -84,6 +85,9 @@ public class TrainerRunner {
                     throw new IllegalStateException("Missing output file. ");
                 }
                 outputFilePath = args[i + 1];
+
+            } else if (args[i].equals("-i")) {
+                incremental = true;
 
             }
         }
@@ -130,19 +134,21 @@ public class TrainerRunner {
             trainer = new FigureTrainer();
         } else if (model.equals("table")) {
             trainer = new TableTrainer();
+        } else if (model.equals("funding-acknowledgement")) {
+            trainer = new FundingAcknowledgementTrainer();
         } else {
             throw new IllegalStateException("The model " + model + " is unknown.");
         }
 
         switch (mode) {
             case TRAIN:
-                AbstractTrainer.runTraining(trainer);
+                AbstractTrainer.runTraining(trainer, incremental);
                 break;
             case EVAL:
                 System.out.println(AbstractTrainer.runEvaluation(trainer));
                 break;
             case SPLIT:
-                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split));
+                System.out.println(AbstractTrainer.runSplitTrainingEvaluation(trainer, split, incremental));
                 break;
             case EVAL_N_FOLD:
                 if(numFolds == 0) {
@@ -154,7 +160,7 @@ public class TrainerRunner {
                         System.err.println("Output file exists. ");
                     }
                 } else {
-                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds);
+                    String results = AbstractTrainer.runNFoldEvaluation(trainer, numFolds, incremental);
                     System.out.println(results);
                 }
                 break;

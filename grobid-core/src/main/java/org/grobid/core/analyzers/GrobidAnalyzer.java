@@ -33,10 +33,11 @@ public class GrobidAnalyzer implements Analyzer {
     public static GrobidAnalyzer getInstance() {
         if (instance == null) {
             //double check idiom
-            // synchronized (instanceController) {
-                if (instance == null)
+            synchronized (GrobidAnalyzer.class) {
+                if (instance == null) {
 					getNewInstance();
-            // }
+                }
+            }
         }
         return instance;
     }
@@ -53,6 +54,11 @@ public class GrobidAnalyzer implements Analyzer {
      * Hidden constructor
      */
     private GrobidAnalyzer() {
+    	try {
+		    krAnalyzer = ReTokenizerFactory.create("ko_g");
+	    } catch(Exception e) {
+			LOGGER.error("Invalid kr tokenizer", e);
+		}
 	}
 	
 	public String getName() {
@@ -72,6 +78,9 @@ public class GrobidAnalyzer implements Analyzer {
 			return result;
 		}
 		try {
+//if (lang != null)
+//System.out.println("---> tokenize: " + text + " // " + lang.getLang());
+
 			if ( (lang == null) || (lang.getLang() == null) ) {
 				// default Indo-European languages
 				result = GrobidDefaultAnalyzer.getInstance().tokenize(text);
@@ -90,8 +99,8 @@ public class GrobidAnalyzer implements Analyzer {
 			}
 			else if (lang.isKorean()) {
 				// Korean analyser
-				if (krAnalyzer == null)
-					krAnalyzer = ReTokenizerFactory.create("kr_g");
+				/*if (krAnalyzer == null)
+					krAnalyzer = ReTokenizerFactory.create("ko_g");*/
 				result = krAnalyzer.tokensAsList(text);
 			}
 			else if (lang.isArabic()) {
@@ -130,26 +139,55 @@ public class GrobidAnalyzer implements Analyzer {
 		if ( (textTokenized == null) || (textTokenized.size() == 0) ) {
 			return new ArrayList<String>();
 		}
-		if ( (lang == null) || (lang.getLang() == null) ) {
-			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
-		}
-		else if (lang.isJapaneses()) {
-			// Japanese analyser
-		}
-		else if (lang.isChinese()) {
-			// Chinese analyser
-		}
-		else if (lang.isKorean()) {
-			// Korean analyser
-		}
-		else if (lang.isArabic()) {
-			// Arabic analyser
-		}
-		else {
-			// default Indo-European languages
-			result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
-		}
+		try {
+			if ( (lang == null) || (lang.getLang() == null) ) {
+				// default Indo-European languages
+				result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
+			}
+			else if (lang.isJapaneses()) {
+				// Japanese analyser
+				if (jaAnalyzer == null)
+					jaAnalyzer = ReTokenizerFactory.create("ja_g");
+		        for (String chunk : textTokenized) {
+		        	List<String> localResult = jaAnalyzer.tokensAsList(chunk);
+		            result.addAll(localResult);
+		        }
+			}
+			else if (lang.isChinese()) {
+				// Chinese analyser
+				if (zhAnalyzer == null)
+					zhAnalyzer = ReTokenizerFactory.create("zh_g");
+				for (String chunk : textTokenized) {
+		        	List<String> localResult = zhAnalyzer.tokensAsList(chunk);
+		            result.addAll(localResult);
+		        }
+			}
+			else if (lang.isKorean()) {
+				// Korean analyser
+				/*if (krAnalyzer == null)
+					krAnalyzer = ReTokenizerFactory.create("ko_g");*/
+				for (String chunk : textTokenized) {
+		        	List<String> localResult = krAnalyzer.tokensAsList(chunk);
+		            result.addAll(localResult);
+		        }
+			}
+			else if (lang.isArabic()) {
+				// Arabic analyser
+				for(String token : textTokenized) {
+					StringBuilder newToken = new StringBuilder();
+					for(int i=0; i<token.length(); i++) {
+						newToken.append(ArabicChars.arabicCharacters(token.charAt(i)));
+					}
+					result.add(newToken.toString());
+				}
+			}
+			else {
+				// default Indo-European languages
+				result = GrobidDefaultAnalyzer.getInstance().retokenize(textTokenized);
+			}
+		} catch(Exception e) {
+			LOGGER.error("Invalid tokenizer", e);
+		}	
 		return result;
 	}
 
@@ -157,9 +195,25 @@ public class GrobidAnalyzer implements Analyzer {
 		return tokenizeWithLayoutToken(text, null);
 	}
 
+	public List<LayoutToken> retokenizeFromLayoutToken(List<LayoutToken> tokens) {
+		return GrobidDefaultAnalyzer.getInstance().retokenizeFromLayoutToken(tokens);
+	}
+
 	public List<LayoutToken> tokenizeWithLayoutToken(String text, Language lang) {
         text = UnicodeUtil.normaliseText(text);
         List<String> tokens = tokenize(text, lang);
         return LayoutTokensUtil.getLayoutTokensForTokenizedText(tokens);
+    }
+
+    public List<String> retokenizeSubdigits(List<String> chunks) {
+    	return GrobidDefaultAnalyzer.getInstance().retokenizeSubdigits(chunks);
+    }
+
+    public List<LayoutToken> retokenizeSubdigitsWithLayoutToken(List<String> chunks) {
+    	return GrobidDefaultAnalyzer.getInstance().retokenizeSubdigitsWithLayoutToken(chunks);
+    }
+
+    public List<LayoutToken> retokenizeSubdigitsFromLayoutToken(List<LayoutToken> tokens) {
+    	return GrobidDefaultAnalyzer.getInstance().retokenizeSubdigitsFromLayoutToken(tokens);
     }
 }

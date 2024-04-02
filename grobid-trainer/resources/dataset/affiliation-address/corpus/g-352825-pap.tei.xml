@@ -10,8 +10,9 @@
 					<analytic>
 						<author>
 							
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="institution">Joint Institute for Nuclear Research</orgName>,
 								<address>
 									<settlement>Dubna</settlement>,
@@ -20,8 +21,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="department">Nuclear Physics Institute</orgName>,
 								<orgName type="institution">Academy of Sciences of the Czech Republic</orgName>,<lb/>
 								<address>

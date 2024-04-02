@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_W04-3227"/>
+		<fileDesc xml:id="__W04-3227"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> Phrase Pair Rescoring with Term Weightings for <lb/>Statistical Machine Translation <lb/> Bing Zhao Stephan Vogel Alex Waibel <lb/> Carnegie Mellon University <lb/>5000 Forbes Avenue <lb/>Pittsburgh, PA, 15213, USA <lb/>{bzhao, vogel+, ahw}@cs.cmu.edu <lb/> Abstract <lb/> We propose to score phrase translation <lb/>pairs for statistical machine translation <lb/>using term weight based models. These <lb/>models employ tf.idf to encode the <lb/>weights of content and non-content words <lb/>in phrase translation pairs. The transla-<lb/>tion probability is then modeled by simi-<lb/>larity functions defined in a vector space. <lb/>Two similarity functions are compared. <lb/>Using these models in a statistical ma-<lb/>chine translation task shows significant <lb/>improvements. <lb/></front>

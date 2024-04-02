@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_0"/>
+		<fileDesc xml:id="__0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>Ultra light bosonic dark matter and CMB<lb/> Ivan Rodriguez Montoya * and Tonatiuh Matos Chassin *<lb/> Departamento de Física, Centro de Investigación y de Estudios Avanzados del IPN, A.P. 14-740, 07000 México D.F., México.<lb/> In this work we report the cosmological effects that a species of Ultra Light Bosonic Dark Matter imprints in<lb/> the Acoustic Peaks of the CMB, and some of its thermic features. We show that the effect of the Bose-Einstein<lb/> statistics is small albeit perceptible, and is equivalent to an increase of non-relativistic matter. It is also noted the<lb/> mass-to-temperature ratio necessary for being still a Dark Matter candidate. And it is needed a non-zero optical<lb/> depth of Reionization.<lb/></front>
@@ -122,9 +122,9 @@
 			
 			<div type="acknowledgement">Acknowledgements<lb/>
 
-			We would like to thank Luis Arturo Ureña López, Ab-<lb/>del Pérez Lorenzana, Omar Miranda Romagnoli, Ricardo<lb/> López Fernández and Roy Maartens for useful discussions.<lb/> This work was partially supported by CONACyT México,<lb/> under grants 49865-F, 216536/219673 and by grant number<lb/> I0101/131/07 C-234/07, Instituto Avanzado de Cosmologia<lb/> (IAC) collaboration.<lb/>
+                We would like to thank Luis Arturo Ureña López, Ab-<lb/>del Pérez Lorenzana, Omar Miranda Romagnoli, Ricardo<lb/> López Fernández and Roy Maartens for useful discussions.<lb/> This work was partially supported by CONACyT México,<lb/> under grants 49865-F, 216536/219673 and by grant number<lb/> I0101/131/07 C-234/07, Instituto Avanzado de Cosmologia<lb/> (IAC) collaboration.<lb/></div>
 
-			All the analysis was done using the public code CMBFAST<lb/> [19]. And all the calculated curves were compared to the ob-<lb/>serbations of the WMAP satellite on its last five years. Avail-<lb/>able at http://lambda.gsfc.nasa.gov/product/map/current.<lb/></div>
+			<div type="availability">All the analysis was done using the public code CMBFAST<lb/> [19]. And all the calculated curves were compared to the ob-<lb/>serbations of the WMAP satellite on its last five years. Avail-<lb/>able at http://lambda.gsfc.nasa.gov/product/map/current.<lb/></div>
 
 				
 			<listBibl>				

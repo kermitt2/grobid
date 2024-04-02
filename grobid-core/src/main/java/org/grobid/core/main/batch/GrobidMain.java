@@ -76,6 +76,7 @@ public class GrobidMain {
 		help.append("  -r:\n \trecursive directory processing, default processing is not recursive.\n");
 		help.append("  -ignoreAssets:\n \tdo not extract and save the PDF assets (bitmaps, vector graphics), by default the assets are extracted and saved.\n");
 		help.append("  -teiCoordinates:\n \toutput a subset of the identified structures with coordinates in the original PDF, by default no coordinates are present.\n");
+		help.append("  -addElementId:\n \tadd xml:id attribute automatically to the XML elements in the resulting TEI XML, by default no xml:id are added.\n");
 		help.append("  -segmentSentences:\n \tadd sentence segmentation level structures for paragraphs in the TEI XML result, by default no sentence segmentation is present.\n");
 		help.append("  -exe:\n \tgives the command to execute. The value should be one of these:\n");
 		help.append("\t" + availableCommands + "\n");
@@ -149,6 +150,10 @@ public class GrobidMain {
 				}
 				if (currArg.equals("-ignoreAssets")) {
 					gbdArgs.setSaveAssets(false);
+					continue;
+				}
+				if (currArg.equals("-addElementId")) {
+					gbdArgs.setAddElementId(true);
 					continue;
 				}
 				if (currArg.equals("-teiCoordinates")) {

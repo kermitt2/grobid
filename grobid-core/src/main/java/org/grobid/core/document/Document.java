@@ -282,7 +282,7 @@ public class Document implements Serializable {
 
         Page p = new Page(1);
         b.setPage(p);
-        b.setText(text);
+        //b.setText(text);
         pages = new ArrayList<>();
         pages.add(p);
         blocks.add(b);
@@ -369,14 +369,14 @@ public class Document implements Serializable {
 
         if (fileAnnot.exists()) {
             try {
-                // parsing of the annotation XML file (for annotations in the PDf)
+                // parsing of the annotation XML file (for annotations in the PDF)
                 in = new FileInputStream(fileAnnot);
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserAnnot);
             } catch (GrobidException e) {
                 throw e;
             } catch (Exception e) {
-                LOGGER.error("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
+                LOGGER.warn("Cannot parse file: " + fileAnnot, e, GrobidExceptionStatus.PARSING_ERROR);
             } finally {
                 IOUtils.closeQuietly(in);
             }
@@ -384,7 +384,7 @@ public class Document implements Serializable {
 
         if (fileOutline.exists()) {
             try {
-                // parsing of the outline XML file (for PDF bookmark)
+                // parsing of the outline XML file (for PDF bookmark) - not used currently so minor
                 in = new FileInputStream(fileOutline);
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserOutline);
@@ -392,14 +392,14 @@ public class Document implements Serializable {
             } catch (GrobidException e) {
                 throw e;
             } catch (Exception e) {
-                LOGGER.error("Cannot parse file: " + fileOutline, e, GrobidExceptionStatus.PARSING_ERROR);
+                LOGGER.warn("Cannot parse file: " + fileOutline, e, GrobidExceptionStatus.PARSING_ERROR);
             } finally {
                 IOUtils.closeQuietly(in);
             }
         }
         if (fileMetadata.exists()) {
             try {
-                // parsing of the outline XML file (for PDF bookmark)
+                // parsing of the metadata XML file (for PDF embedded metadata)
                 in = new FileInputStream(fileMetadata);
                 SAXParser p = spf.newSAXParser();
                 p.parse(in, parserMetadata);
@@ -407,7 +407,7 @@ public class Document implements Serializable {
             } catch (GrobidException e) {
                 throw e;
             } catch (Exception e) {
-                LOGGER.error("Cannot parse file: " + fileMetadata, e, GrobidExceptionStatus.PARSING_ERROR);
+                LOGGER.warn("Cannot parse file: " + fileMetadata, e, GrobidExceptionStatus.PARSING_ERROR);
             } finally {
                 IOUtils.closeQuietly(in);
             }
@@ -1127,7 +1127,7 @@ public class Document implements Serializable {
 
                         figures.add(f);
                         Engine.getCntManager().i("FigureCounters", "STANDALONE_FIGURES");
-                        LOGGER.info("Standalone figure on page: " + pageNum);
+                        LOGGER.debug("Standalone figure on page: " + pageNum);
 
                     }
                 }

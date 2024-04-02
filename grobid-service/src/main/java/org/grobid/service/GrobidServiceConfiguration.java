@@ -1,7 +1,7 @@
 package org.grobid.service;
 
 import com.google.inject.Singleton;
-import io.dropwizard.Configuration;
+import io.dropwizard.core.Configuration;
 
 @Singleton
 public class GrobidServiceConfiguration extends Configuration {

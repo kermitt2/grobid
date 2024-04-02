@@ -2,7 +2,11 @@
 
 The GROBID Web API provides a simple and efficient way to use the tool. A service console is available to test GROBID in a human friendly manner. For production and benchmarking, we strongly recommand to use this web service mode on a multi-core machine and to avoid running GROBID in the batch mode.  
 
-## Start the server with Gradle
+## Start the server with Docker
+
+This is the recommended and standard way to run the Grobid web services, see [here](Run-Grobid.md). 
+
+## Start a development server with Gradle
 
 Go under the `grobid/` main directory. Be sure that the GROBID project is built, see [Install GROBID](Install-Grobid.md).
 
@@ -12,20 +16,20 @@ The following command will start the server on the default port __8070__:
 ./gradlew run
 ```
 
-(the Gradle process will hang at 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
+(the Gradle process will hang at something like 88%, this is normal because the web service is ran sharing the same JVM as Gradle)
 
 ## Install and run the service as standalone application
 
-You could also build and install the service as a standalone service (let's supposed the destination directory is grobid-installation) 
+From a development installation, you can also build and install the service as a standalone service - here let's supposed the destination directory is grobid-installation: 
 
 ```console
 ./gradlew clean assemble
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.7.1.zip
-mv grobid-service-0.7.1 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.7.1.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.0.zip
+mv grobid-service-0.8.0 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.0.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -53,20 +57,24 @@ In addition, [Prometheus](https://prometheus.io/) format export metrics are avai
 
 If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for starting the server on a different port or if you need to change the absolute path to your `grobid-home` (e.g. when running on production). By default `grobid-home` is located under `grobid/grobid-home`. `grobid-home` contains all the models and static resources required to run GROBID.
 
+See the [configuration page](Configuration.md) for details on how to set the different parameters of the `grobid.yaml` configuration file. Service and logging parameters are also set in this configuration file.
+
+If Docker is used, see [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
+
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
 Loading all models at service startup will slow down the start of the server and will use more memories than the lazy mode in case only a few services will be used. 
 
-For preloading all the models, set the following config parameter to `true`:
+Preloading all the models at server start is the default setting, but you choose a lazy loading of the model:
 
 ```yaml
 grobid:
   # for **service only**: how to load the models, 
-  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
-  #          the service at first call
-  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
-  #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
 ```  
 
 ## CORS (Cross-Origin Resource Share)
@@ -89,13 +97,13 @@ We provide clients written in Python, Java, node.js using the GROBID PDF-to-TEI 
 * <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 * <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. 
+All these clients will take advantage of the multi-threading for scaling PDF batch processing. As a consequence, they will be much more efficient than the [batch command lines](Grobid-batch.md) (which use only one thread) and should be prefered. The Python client is the more up-to-date and complete and can be adapted for your needs. 
 
 ## Use GROBID test console
 
-On your browser, the welcome page of the Service console is available at the URL <http://localhost:8070>.
+On your browser, the welcome page of the service console is available at the URL <http://localhost:8070>.
 
-On the console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
+On the service console, the RESTful API can be tested under the `TEI` tab for service returning a TEI document, under the `PDF` tab for services returning annotations relative to PDF or an annotated PDF and under the `Patent` tab for patent-related services:
 
 ![Example of GROBID Service console usage](img/grobid-rest-example.png)
 
@@ -111,11 +119,11 @@ Still to demostrate [PDF.js] annotation possibilities, by default bibliographica
 
 We describe bellow the provided resources corresponding to the HTTP verbs, to use the grobid web services. All url described bellow are relative path, the root url is `http://<server instance name>/<root context>`
 
-The consolidation parameters (`consolidateHeader` and `consolidateCitations`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc). The CrossRef look-up is realized based on the reliable subset of extracted metadata which are supported by this API. Each consolidation parameter is a string which can have three values:
+The consolidation parameters (`consolidateHeader`, `consolidateCitations`, `consolidateFunders`) indicate if GROBID should try to complete the extracted metadata with an additional external call to [CrossRef API](https://github.com/CrossRef/rest-api-doc) or [biblio-glutton](https://github.com/kermitt2/biblio-glutton). The CrossRef and biblio-glutton look-up are realized based on the reliable subset of extracted metadata which are supported by these API. Each consolidation parameter is a string which can have three values:
 
 * `0`, means no consolidation at all is performed: all the metadata will come from the source PDF
-* `1`, means consolidation against CrossRef and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
-* `2`, means consolidation against CrossRef and, if matching, addition of the DOI only
+* `1`, means consolidation against CrossRef/biblio-glutton and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
+* `2`, means consolidation against CrossRef/biblio-glutton and, if matching, addition of the DOI only
 
 ### PDF to TEI conversion services
 
@@ -123,15 +131,16 @@ The consolidation parameters (`consolidateHeader` and `consolidateCitations`) in
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
-`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only).
+`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the header metadata and inject DOI only).
 
 |  method   |  request type         |  response type       |  parameters         |  requirement  |  description  |
 |---        |---                    |---                   |---                  |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+|           |                       |                      | `includeRawCopyrights` | optional | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).  |
 
-Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. Note: the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
 
 Response status codes:
 
@@ -148,7 +157,7 @@ A `503` error with the default parallel mode normally means that all the threads
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 
 ```console
-curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+curl -v -H "Accept: application/xml" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 If you want a simpler result in the BibTeX format:
@@ -164,10 +173,12 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |  method   |  request type         |  response type       |  parameters            |  requirement  |  description  |
 |---        |---                    |---                   |---                     |---            |---            |
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted). |
 |           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
+|           |                       |                      | `consolidatFunders` | optional         | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only). |
 |           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+|           |                       |                      | `includeRawCopyrights` | optional | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 |           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
 |           |                       |                      | `start`       | optional      | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)  |
@@ -210,6 +221,8 @@ Regarding the bibliographical references, it is possible to include the original
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
 ```
+
+Similar raw strings can be added in the result for affiliation and copyrights/license sections.
 
 Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
 
@@ -420,7 +433,7 @@ Parse a raw bibliographical reference (in isolation) and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
+| POST, PUT | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as raw string |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -491,7 +504,7 @@ Parse a lis of raw bibliographical reference strings and return the correspondin
 
 |  method   |  request type         |  response type    |  parameters            |  requirement  |  description  |
 |---        |---                    |---                |---                     |---            |---            |
-| POST      | `multipart/form-data` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
+| POST      | `application/x-www-form-urlencoded` | `application/xml` | `citations`            | required      | bibliographical reference to be parsed as a list of raw strings |
 |           |                       |                   | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
 |           |                       |                   | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default. do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 
@@ -751,6 +764,7 @@ Launch a training for a given model. The service return back a training token (a
 |           |                     |                      | type | optional | type of training, `full`, `holdout`, `split`, `nfold`, default is `split` |
 |           |                     |                      | ratio | optional | only considered for `split` training mode, give the ratio (number bewteen 0 and 1) of training and evaluation data when splitting the annotated data, default is `0.9` |
 |           |                     |                      | n | optional | only considered for `nfold` training mode, give the number of folds to be used, default is `10` |
+|           |                     |                      | `incremental` | optional | boolean indicating if the training should be incremental (`1`) starting from the existing model, or not (default, `0`) |
 
 The `type` of training indicates which training and evaluation mode should be used:
 - `full`: the whole available training data is used for training a model

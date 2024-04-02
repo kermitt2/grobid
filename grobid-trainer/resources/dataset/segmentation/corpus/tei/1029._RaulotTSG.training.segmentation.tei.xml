@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>LA PREMIÈRE VALEUR PROPRE D&apos;OPÉRATEURS DE DIRAC SUR <lb/>LES VARIÉTÉSÀ BORD ET QUELQUES APPLICATIONS <lb/>SIMON RAULOT <lb/>Résumé. Dans cet article, on s&apos;intéresseà l&apos;aspect conforme du spectre d&apos;opérateurs de <lb/>Dirac dans le cadre des variétésà bord. Dans un premier temps, onétudie la première va-<lb/>leur propre de l&apos;opérateur de Dirac sous la condition associéeà un opérateur de chiralité <lb/>conduisantà la définition d&apos;un nouvel invariant spinoriel conforme. Dans la dernière par-<lb/>tie, on s&apos;intéresseà l&apos;opérateur de Dirac du bord en reliant sa première valeur propreà des <lb/>invariants reflétant la géométrie extrinsèque du bord. Dans cette section, on s&apos;appuiera <lb/>en grande partie sur les travaux de Hijazi, Montiel et Zhang [HMZ01] et [HMZ02]. <lb/></front>

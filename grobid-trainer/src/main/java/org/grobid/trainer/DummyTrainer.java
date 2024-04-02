@@ -14,6 +14,11 @@ public class DummyTrainer implements GenericTrainer {
     }
 
     @Override
+    public void train(File template, File trainingData, File outputModel, int numThreads, GrobidModel model, boolean incremental) {
+
+    }
+
+    @Override
     public String getName() {
         return null;
     }

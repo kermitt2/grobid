@@ -1,0 +1,45 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>[1]</label><lb/> Segal BH. Aspergillosis[J]. N Engl J Med, 2009,360(18):1870-1884.<lb/> </bibl>
+        <bibl><label>[2]</label><lb/> Ben-Ami R, Lewis RE, Kontoyiannis DP. Enemy of the (immunosuppressed) state: an update on the pathogenesis<lb/> of Aspergillus fumigatus infection[J]. Br J Haematol, 2010,150(4):406-417.<lb/> </bibl>
+        <bibl><label>[3]</label><lb/> Balajee SA, Marr KA. Phenotypic and genotypic identification of human pathogenic aspergilli[J]. Future<lb/> Microbiol, 2006,1(4):435-445.<lb/> </bibl>
+        <bibl><label>[4]</label><lb/> Yorgancioğlu A, Türktaş H, Kalayci O, et al. The WHO global alliance against chronic respiratory diseases in<lb/> Turkey (GARD Turkey)[J]. Tuberk Toraks, 2009,57(4):439-452.<lb/> </bibl>
+        <bibl><label>[5]</label><lb/> Guinea J, Torres-Narbona M, Gijón P, et al. Pulmonary aspergillosis in patients with chronic obstructive<lb/> pulmonary disease: incidence, risk factors, and outcome[J]. Clinical Microbiology &amp; Infection,<lb/> 2010,16(7):870-877.<lb/> </bibl>
+        <bibl><label>[6]</label><lb/> Patterson TF, Thompson GR 3rd, Denning DW, et al. Executive Summary: Practice Guidelines for the Diagnosis<lb/> and Management of Aspergillosis: 2016 Update by the Infectious Diseases Society of America[J]. Clin Infect Dis,<lb/> 2016,63(4):433-442. DOI: 10.1093/cid/ciw444.<lb/> </bibl>
+        <bibl><label>[7]</label><lb/> Editorial Board of Chinese Journal of Internal Medicine. Diagnostic criteria and principles of treatment for<lb/> invasive pulmonary fungal infections (draft) [j]. Chinese Journal of Internal Medicine, 2006, 45(8): 697-700.<lb/> </bibl>
+        <bibl><label>[8]</label><lb/> Chinese Medical Association Respiratory Diseases Branch. Pulmonary Infectious Diseases Bronchoalveolar<lb/> lavage pathogen detection Chinese expert consensus (2017 edition) [j]. Chinese Journal of Tuberculosis and<lb/> Respiratory, 2017, 40 (8): 578.<lb/> </bibl>
+        <bibl><label>[9]</label><lb/> Meyer KC. Bronchoalveolar lavage as a diagnostic tool[J]. Semin Respir Crit Care Med, 2007,<lb/> </bibl>
+        <bibl><label>[10]</label> Segal BH, Walsh TJ. Current Approaches to Diagnosis and Treatment of Invasive Aspergillosis[J]. Am J Respir<lb/> Crit Care Med, 2006,173(7):707-717.<lb/> </bibl>
+        <bibl><label>[11]</label> Ader F, Nseir S, Guery B, et al. [Acute invasive pulmonary aspergillosis in chronic lung disease--a review][J].<lb/> Rev Mal Respir, 2006,23(3 Suppl):6S11.<lb/> </bibl>
+        <bibl><label>[12]</label> Bulpa P, Dive A. Diagnosis of invasive bronchial-pulmonary aspergillosis in patients with chronic obstructive<lb/> respiratory diseases[J]. Crit Care, 2011,15(2):420; author reply 420.<lb/> </bibl>
+        <bibl><label>[13]</label> Ullmann AJ, Aguado JM, Arikan-Akdagli S, et al. Diagnosis and management of Aspergillus diseases: executive<lb/> summary of the 2017 ESCMID-ECMM-ERS guideline[J]. Clin Microbiol Infect, 2018,24 Suppl 1:e1-1e38. DOI:<lb/> 10.1016/j.cmi.2018.01.002.<lb/> </bibl>
+        <bibl><label>[14]</label> Sulahian A, Boutboul F, Ribaud P, et al. Value of antigen detection using an enzyme immunoassay in the<lb/> diagnosis and prediction of invasive aspergillosis in two adult and pediatric hematology units during a 4-year<lb/> prospective study[J]. Cancer, 2001,91(2):311-318.<lb/> </bibl>
+        <bibl><label>[15]</label> Pfeiffer CD, Fine JP, Safdar N. Diagnosis of invasive aspergillosis using a galactomannan assay: a<lb/> meta-analysis[J]. Clin Infect Dis, 2007,42(10):1417-1427.<lb/> </bibl>
+        <bibl><label>[16]</label> Kaiser L, Huguenin T, Lew PD, et al. Invasive aspergillosis. Clinical features of 35 proven cases at a single<lb/> institution[J]. Medicine (Abingdon), 1998,77(3):188-194.<lb/> </bibl>
+        <bibl><label>[17]</label> Kahn FW, Jones JM, England DM. The role of bronchoalveolar lavage in the diagnosis of invasive pulmonary<lb/> aspergillosis[J]. Am J Clin Pathol, 1986,86(4):518-523.<lb/> </bibl>
+        <bibl><label>[18]</label> Meersseman W, Vandecasteele SJ, Wilmer A, et al. Invasive aspergillosis in critically ill patients without<lb/> malignancy[J]. American Journal of Respiratory &amp; Critical Care Medicine, 2004,170(6):621.<lb/> </bibl>
+        <bibl><label>[19]</label> Meersseman W, Lagrou K, Maertens J, et al. Galactomannan in bronchoalveolar lavage fluid: a tool for<lb/> diagnosing aspergillosis in intensive care unit patients[J]. Am J Respir Crit Care Med, 2008,177(1):27-34.<lb/> </bibl>
+        <bibl><label>[20]</label> Nguyen MH, Leather H, Clancy CJ, et al. Galactomannan Testing in Bronchoalveolar Lavage Fluid Facilitates the<lb/> Diagnosis of Invasive Pulmonary Aspergillosis in Patients with Hematologic Malignancies and Stem Cell<lb/> Transplant Recipients[J]. Biol Blood Marrow Transplant, 2011,17(7):1043-1050.<lb/> </bibl>
+        <bibl><label>[21]</label> Husain S, Paterson DL, Studer SM, et al. Aspergillus galactomannan antigen in the bronchoalveolar lavage fluid<lb/> for the diagnosis of invasive aspergillosis in lung transplant recipients[J]. Transplantation, 2007,83(10):1330.<lb/> </bibl>
+        <bibl><label>[22]</label> Clancy CJ, Jaber RA, Leather HL, et al. Bronchoalveolar Lavage Galactomannan in Diagnosis of Invasive<lb/> Pulmonary Aspergillosis among Solid-Organ Transplant Recipients[J]. J Clin Microbiol, 2007,45(6):1759.<lb/> </bibl>
+        <bibl><label>[23]</label> Ku NS, Han SH, Choi JY, et al. Diagnostic value of the serum galactomannan assay for invasive aspergillosis: it<lb/> is less useful in non-haematological patients[J]. Scand J Infect Dis, 2012,44(8):600-604.<lb/> </bibl>
+        <bibl><label>[24]</label> WANG Jun-ling, ZHOU Zheng, MA Yuan-hui, et al. Meta-analysis of the diagnostic value of galactomannan in<lb/> bronchoalveolar<lb/> lavage<lb/> fluid<lb/> for<lb/> invasive<lb/> pulmonary<lb/> aspergillosis<lb/> infection[J].Laboratory<lb/> Medicine,2014,29(12):1248-1253.<lb/> </bibl>
+        <bibl><label>[25]</label> Zhang XB, Chen GP, Lin QC, et al. Bronchoalveolar lavage fluid galactomannan detection for diagnosis of<lb/> invasive pulmonary aspergillosis in chronic obstructive pulmonary disease[J]. Med Mycol, 2013,51(7):688-695.<lb/> </bibl>
+        <bibl><label>[26]</label> Zeng Huiqing, Cai Xueying, Chen Bo, et al. Clinical features of chronic obstructive pulmonary disease with<lb/> invasive pulmonary aspergillosis [j]. Chinese Journal of Hospital Infection, 2011, 21(2): 258-260.<lb/> </bibl>
+        <bibl><label>[27]</label> Zou M, Tang L, Zhao S, et al. Systematic review and meta-analysis of detecting galactomannan in<lb/> bronchoalveolar lavage fluid for diagnosing invasive aspergillosis[J]. PLoS One, 2012,7(8):e43347. DOI:<lb/> 10.1371/journal.pone.0043347.<lb/> </bibl>
+        <bibl><label>[28]</label> Hsu LY, Ding Y, Phua J, et al. Galactomannan testing of bronchoalveolar lavage fluid is useful for diagnosis of<lb/> invasive pulmonary aspergillosis in hematology patients[J]. BMC Infect Dis, 2010,10:44. DOI:<lb/> 10.1186/1471-2334-10-44.<lb/> </bibl>
+        <bibl><label>[29]</label> Nguyen MH, Jaber R, Leather HL, et al. Use of bronchoalveolar lavage to detect galactomannan for diagnosis of<lb/> pulmonary aspergillosis among nonimmunocompromised hosts[J]. J Clin Microbiol, 2007,45(9):2787-2792. DOI:<lb/> 10.1128/JCM.00716-07.<lb/> </bibl>
+        <bibl><label>[30]</label> de Mol M, de Jongste JC, van Westreenen M, et al. Diagnosis of invasive pulmonary aspergillosis in children with<lb/> bronchoalveolar lavage galactomannan[J]. Pediatr Pulmonol, 2013,48(8):789-796. DOI: 10.1002/ppul.22670.<lb/> </bibl>
+        <bibl><label>[31]</label> Clancy CJ, Jaber RA, Leather HL, et al. Bronchoalveolar lavage galactomannan in diagnosis of invasive<lb/> pulmonary aspergillosis among solid-organ transplant recipients[J]. J Clin Microbiol, 2007,45(6):1759-1765. DOI:<lb/> 10.1128/JCM.00077-07.<lb/> </bibl>
+        <bibl><label>[32]</label> Ku NS, Han SH, Choi JY, et al. Diagnostic value of the serum galactomannan assay for invasive aspergillosis: it<lb/> is less useful in non-haematological patients[J]. Scand J Infect Dis, 2012,44(8):600-604. DOI:<lb/> 10.3109/00365548.2012.657672.<lb/> </bibl>
+        <bibl><label>[33]</label> Guinea J, Bouza E. Current challenges in the microbiological diagnosis of invasive aspergillosis[J].<lb/> Mycopathologia, 2014,178(5-6):403-416. DOI: 10.1007/s11046-014-9763-3.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

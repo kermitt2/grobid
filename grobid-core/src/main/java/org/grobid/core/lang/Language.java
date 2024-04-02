@@ -21,6 +21,7 @@ public final class Language {
     public static final String LN = "nl";
     public static final String PL = "pl";
     public static final String SV = "sv";
+    public static final String KO = "ko";
 
     private String lang;
     private double conf;
@@ -67,7 +68,7 @@ public final class Language {
     }
 
     public boolean isKorean() {
-        return "kr".equals(lang);
+        return "kr".equals(lang) || "ko".equals(lang);
     }
 
     public boolean isArabic() {

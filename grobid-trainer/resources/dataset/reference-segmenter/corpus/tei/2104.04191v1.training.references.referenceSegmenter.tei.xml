@@ -1,0 +1,35 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Andrei Barbu, David Mayo, Julian Alverio, William Luo, Christopher Wang, Dan Gutfreund, Josh<lb/> Tenenbaum, and Boris Katz. Objectnet: A large-scale bias-controlled dataset for pushing the<lb/> limits of object recognition models. In Advances in Neural Information Processing Systems,<lb/> 2019.<lb/> </bibl>
+        <bibl>Emily Denton, Ben Hutchinson, Margaret Mitchell, Timnit Gebru, and Andrew Zaldivar. Image<lb/> counterfactual sensitivity analysis for detecting unintended bias, 2020.<lb/> </bibl>
+        <bibl>Josip Djolonga, Jessica Yung, Michael Tschannen, Rob Romijnders, Lucas Beyer, Alexander<lb/> Kolesnikov, Joan Puigcerver, Matthias Minderer, Alexander D&apos;Amour, Dan Moldovan, Sylvain<lb/> Gelly, Neil Houlsby, Xiaohua Zhai, and Mario Lucic. On robustness and transferability of convo-<lb/>lutional neural networks. In Conference on Computer Vision and Pattern Recognition, 2021.<lb/> </bibl>
+        <bibl>Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas<lb/> Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszko-<lb/>reit, and Neil Houlsby. An image is worth 16x16 words: Transformers for image recognition at<lb/> scale. In International Conference on Learning Representations, 2021.<lb/> </bibl>
+        <bibl>Debidatta Dwibedi, Ishan Misra, and Martial Hebert. Cut, paste and learn: Surprisingly easy syn-<lb/>thesis for instance detection. In International Conference on Computer Vision, 2017.<lb/> </bibl>
+        <bibl>Logan Engstrom, Dimitris Tsipras, Ludwig Schmidt, and Aleksander Madry. A rotation and a<lb/> translation suffice: Fooling CNNs with simple transformations. arXiv: 1712.02779, 2017.<lb/> </bibl>
+        <bibl>Golnaz Ghiasi, Yin Cui, Aravind Srinivas, Rui Qian, Tsung-Yi Lin, Ekin D. Cubuk, Quoc V. Le, and<lb/> Barret Zoph. Simple copy-paste is a strong data augmentation method for instance segmentation,<lb/> 2020.<lb/> </bibl>
+        <bibl>Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recog-<lb/>nition. In Conference on Computer Vision and Pattern Recognition, 2016.<lb/> </bibl>
+        <bibl>Dan Hendrycks and Thomas G. Dietterich. Benchmarking neural network robustness to common<lb/> corruptions and surface variations. arXiv: 1807.01697, 2018.<lb/> </bibl>
+        <bibl>Dan Hendrycks, Steven Basart, Norman Mu, Saurav Kadavath, Frank Wang, Evan Dorundo, Rahul<lb/> Desai, Tyler Zhu, Samyak Parajuli, Mike Guo, Dawn Song, Jacob Steinhardt, and Justin Gilmer.<lb/> The many faces of robustness: A critical analysis of out-of-distribution generalization. arXiv:<lb/> 2006.16241, 2020.<lb/> </bibl>
+        <bibl>Sergey Ioffe and Christian Szegedy. Batch normalization: Accelerating deep network training by<lb/> reducing internal covariate shift. In International Conference on Machine Learning, 2015.<lb/> </bibl>
+        <bibl>Justin Johnson, Bharath Hariharan, Laurens van der Maaten, Li Fei-Fei, C. Lawrence Zitnick, and<lb/> Ross B. Girshick. CLEVR: A diagnostic dataset for compositional language and elementary<lb/> visual reasoning. In Conference on Computer Vision and Pattern Recognition, 2017.<lb/> </bibl>
+        <bibl>Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Joan Puigcerver, Jessica Yung, Sylvain Gelly,<lb/> and Neil Houlsby. Big transfer (BiT): General visual representation learning. European Confer-<lb/>ence on Computer Vision, 2020.<lb/> </bibl>
+        <bibl>Alina Kuznetsova, Hassan Rom, Neil Alldrin, Jasper Uijlings, Ivan Krasin, Jordi Pont-Tuset, Shahab<lb/> Kamali, Stefan Popov, Matteo Malloci, Alexander Kolesnikov, Tom Duerig, and Vittorio Ferrari.<lb/> The open images dataset v4: Unified image classification, object detection, and visual relationship<lb/> detection at scale. arXiv: 1811.00982, 2020.<lb/> </bibl>
+        <bibl>Yann LeCun, Fu Jie Huang, and Léon Bottou. Learning methods for generic object recognition<lb/> with invariance to pose and lighting. In Conference on Computer Vision and Pattern Recognition,<lb/> 2004.<lb/> </bibl>
+        <bibl>Loic Matthey, Irina Higgins, Demis Hassabis, and Alexander Lerchner. dsprites: Disentanglement<lb/> testing sprites dataset. https://github.com/deepmind/dsprites-dataset/, 2017.<lb/> </bibl>
+        <bibl>Alec Radford, Ilya Sutskever, Jong Wook Kim, Gretchen Krueger, and Sandhini Agarwal. Clip:<lb/> Connecting text and images, 2021.<lb/> </bibl>
+        <bibl>Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng<lb/> Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg, and Li Fei-Fei.<lb/> ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision<lb/> (IJCV), 115(3):211-252, 2015.<lb/> </bibl>
+        <bibl>Vaishaal Shankar, Achal Dave, Rebecca Roelofs, Deva Ramanan, Benjamin Recht, and Ludwig<lb/> Schmidt. A systematic framework for natural perturbations from videos. arXiv: 1906.02168,<lb/> 2019.<lb/> </bibl> 
+        <bibl>Rohan Taori, Achal Dave, Vaishaal Shankar, Nicholas Carlini, Benjamin Recht, and Ludwig<lb/> Schmidt. Measuring robustness to natural distribution shifts in image classification. Advances<lb/> in Neural Information Processing Systems, 2020.<lb/> </bibl>
+        <bibl>Antonio Torralba and Alexei A. Efros. Unbiased look at dataset bias. In Conference on Computer<lb/> Vision and Pattern Recognition, 2011.<lb/> </bibl>
+        <bibl>Yuxin Wu and Kaiming He. Group normalization. In European Conference on Computer Vision,<lb/> 2018.<lb/> </bibl>
+        <bibl>Nanxuan Zhao, Zhirong Wu, Rynson W. H. Lau, and Stephen Lin. Distilling localization for self-<lb/>supervised representation learning. arXiv: 2004.06638, 2020.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

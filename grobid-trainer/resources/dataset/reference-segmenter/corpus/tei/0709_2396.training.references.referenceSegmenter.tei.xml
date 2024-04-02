@@ -1,0 +1,38 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        References<lb/> 
+        <bibl><label>1</label>. B. Aubert et al., Phys. Rev. Lett. 97, 112002 (2006).<lb/> </bibl>
+        <bibl><label>2</label>. B. Aubert et al., Phys. Rev. D (R) 74, 111103(R) (2006).<lb/> </bibl>
+        <bibl><label>3</label>. F. Blanc for BABAR Collaboration, Morind QCD 2006.<lb/> </bibl>
+        <bibl><label>4</label>. M. Davier, S. Eidelman, A. Hoecker, Z. Zhang, Eur. Phys. Jour. C 31, 503<lb/> (2003).<lb/> </bibl>
+        <bibl><label>5</label>. B. Aubert et al., Nucl. Instrum. Methods, Sect. A 479, 1 (2002).<lb/> </bibl>
+        <bibl><label>6</label>. M. Davier, M. Peskin, and A. Snyder, hep-ph/0606155.<lb/> </bibl>
+        <bibl><label>7</label>. G. T. Bodwin et al., Phys. Rev. D 74, 074014 (2006).<lb/> </bibl>
+        <bibl><label>8</label>. K. Abe et al., Phys. Rev. Lett. 89, 142001 (2002); </bibl>
+        <bibl>B. Aubert et al., Phys. Rev.<lb/> D 72, 031101 (2005).<lb/> </bibl>
+        <bibl><label>9</label>. E. Braaten and J. Lee, Phys. Rev. D 67, 054007 (2003), [Erratum-ibid. D 72,<lb/> 099901 (2005)]; </bibl>
+        <bibl>K. Y. Liu, Z. G. He and K. T. Chao, Phys. Lett. B 557, 45<lb/> (2003).<lb/> </bibl>
+        <bibl><label>10</label>. A. E. Bondar and V. L. Chernyak, Phys. Lett. B 612, 215 (2005); </bibl>
+        <bibl>G. T. Bod-<lb/>win, D. Kang and J. Lee, hep-ph/0603185; Y. Zhang, Y. Gao, and K. T. Chao,<lb/> Phys. Rev. Lett. 96, 092001 (2006); </bibl>
+        <bibl>G. T. Bodwin, D. Kang, T. Kim, J. Lee,<lb/> and C. Yu, hep-ph/0611002.<lb/> </bibl>
+        <bibl><label>11</label>. G. S. Adams et al. (CLEO Collaboration), Phys. Rev. D 73, 012002 (2006).<lb/> </bibl>
+        <bibl><label>12</label>. J. M. Gerard and G. Lopez Castro, Phys. Lett. B 425, 365 (1998).<lb/> </bibl>
+        <bibl><label>13</label>. V. Chernyak, hep-ph/9906387.<lb/> </bibl>
+        <bibl><label>14</label>. V. L. Chernyak and A. R. Zhitnitsky, JETP Lett. 25, 510 (1977); [Pisma Zh.<lb/> Eksp. Teor. Fiz. 25, 544 (1977)]; </bibl>
+        <bibl>G. P. Lepage and S. J. Brodsky, Phys. Lett.<lb/> B 87, 359 (1979); </bibl>
+        <bibl>G. P. Lepage and S. J. Brodsky, Phys. Rev. D 22, 2157<lb/> (1980); </bibl>
+        <bibl>S. J. Brodsky and G. P. Lepage, Phys. Rev. D 24, 2848 (1981).<lb/> </bibl>
+        <bibl><label>15</label>. M. Gell-Mann, D. Sharp, and W. G. Wagner, Phys. Rev. Lett. 8, 261 (1962);<lb/> </bibl>
+        <bibl>P. Kroll, hep-ph/0112274.<lb/> </bibl>
+        <bibl><label>16</label>. M. Jacob, and G. C. Wick, Ann. Phys.. (N. Y.) 7, 404 (1959); </bibl>
+        <bibl>S. U. Chung,<lb/> Phys. Rev. D 57, 431 (1998).<lb/> </bibl>
+        <bibl><label>17</label>. M. Pivk and F. R. Le Diberder, Nucl. Instrum. Meth. A 555, 356 (2005).</bibl>
+        </listBibl>
+    </text>
+</tei>
+

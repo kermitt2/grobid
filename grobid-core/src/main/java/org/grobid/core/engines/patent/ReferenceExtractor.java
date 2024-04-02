@@ -27,8 +27,11 @@ import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.BoundingBoxCalculator;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.analyzers.GrobidDefaultAnalyzer;
 import org.grobid.core.lang.Language;
+import org.grobid.core.sax.ST36SaxParser;
 import org.grobid.core.layout.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,6 +56,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.zip.GZIPInputStream;
 
@@ -74,7 +79,7 @@ public class ReferenceExtractor implements Closeable {
     public Lexicon lexicon = Lexicon.getInstance();
     public String currentPatentNumber = null;
     public OPSService ops = null;
-    private String description = null;
+    private List<String> descriptionSegments = null;
 
     public ArrayList<org.grobid.core.data.BibDataSet> resBib = null; // identified current parsed
     // bibliographical items and related information
@@ -109,8 +114,8 @@ public class ReferenceExtractor implements Closeable {
                                        List<PatentItem> patents,
                                        List<BibDataSet> articles) {
         try {
-            if (description != null) {
-                return extractAllReferencesString(description,
+            if (descriptionSegments != null && descriptionSegments.size()>0) {
+                return extractAllReferencesString(descriptionSegments,
                         filterDuplicate,
                         consolidate,
                         includeRawCitations,
@@ -154,7 +159,10 @@ public class ReferenceExtractor implements Closeable {
             }
 
             TextSaxParser sax = new TextSaxParser();
-            sax.setFilter("description");
+            sax.addFilter("description");
+            sax.addFilter("p");
+            sax.addFilter("heading");
+            sax.addFilter("head");
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -186,13 +194,18 @@ public class ReferenceExtractor implements Closeable {
 
             reader.parse(input);
 
-            description = sax.getText();
+            List<String> descriptionSegments = sax.getTexts();
+
+/*for(String text : descriptionSegments){
+    System.out.println(text);
+}*/
+
             currentPatentNumber = sax.currentPatentNumber;
             consolidate = 0;
             filterDuplicate = true;
 
-            if (description != null) {
-                return extractAllReferencesString(description,
+            if (descriptionSegments != null && descriptionSegments.size()>0) {
+                return extractAllReferencesString(descriptionSegments,
                         filterDuplicate,
                         consolidate,
                         includeRawCitations,
@@ -226,9 +239,11 @@ public class ReferenceExtractor implements Closeable {
             if (doc.getBlocks() == null) {
                 return result;
             }
-            description = doc.getAllBlocksClean(25, -1);
+            String description = doc.getAllBlocksClean(25, -1);
             if (description != null) {
-                result = extractAllReferencesString(description,
+                List<String> descriptions = new ArrayList<>();
+                descriptions.add(description);
+                result = extractAllReferencesString(descriptions,
                         filterDuplicate,
                         consolidate,
                         includeRawCitations,
@@ -281,423 +296,515 @@ public class ReferenceExtractor implements Closeable {
     }
 
     /**
-     * Extract all reference from a simple piece of text and return results in an XML document.
+     * Extract all reference from a simple piece of text or a list of text segments, and return results in an XML document.
      */
-    public String extractAllReferencesString(String text,
+    /*public String extractAllReferencesString(String text,
                                           boolean filterDuplicate,
                                           int consolidate,
                                           boolean includeRawCitations,
                                           List<PatentItem> patents,
                                           List<BibDataSet> articles) {
+        List<String> texts = new ArrayList<>();
+        texts.add(text);
+        return extractAllReferencesString(texts, filterDuplicate, consolidate, includeRawCitations, patents, articles);
+    }*/
+
+    public String extractAllReferencesString(List<String> texts,
+                                          boolean filterDuplicate,
+                                          int consolidate,
+                                          boolean includeRawCitations,
+                                          List<PatentItem> patents,
+                                          List<BibDataSet> articles) {
+        List<List<LayoutToken>> allTokenizations = new ArrayList<>();
+        
+        // list of references by index of tokenized text segments
+        Map<Integer, List<PatentItem>> patentsBySegment = new HashMap<>();
+        Map<Integer, List<BibDataSet>> articlesBySegment = new HashMap<>();
+
+        // sub-segment texts if a DL model will be applied. Use the max sequence length for size limit
+        if (GrobidProperties.getGrobidEngineName("patent-citation").equals("delft")) {
+            List<String> newTexts = new ArrayList<>();
+            int maxSequence = GrobidProperties.getDelftTrainingMaxSequenceLength("patent-citation");
+            for(String text : texts) {
+                List<String> tokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(text);
+                if (tokenizations.size() > maxSequence) {
+//System.out.println(maxSequence + " vs " + tokenizations.size());
+                    String[] subtexts = text.split("\n\n");
+                    for(int i=0; i<subtexts.length; i++) {
+                        List<String> subtokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(subtexts[i]);
+                        if (subtokenizations.size() > maxSequence) {
+                            String[] subsubtexts = subtexts[i].split(".\n");
+                            for(int j=0; j<subsubtexts.length; j++) {
+                                List<String> subsubtokenizations = GrobidDefaultAnalyzer.getInstance().tokenize(subsubtexts[j]);
+                                newTexts.add(subsubtexts[j]);
+                            }
+                        } else {
+                            newTexts.add(subtexts[i]);
+                        }
+                    }
+                } else {
+                    newTexts.add(text);
+                }
+            }
+            texts = newTexts;
+        }
+
         try {
             // if parameters are null, these lists will only be valid in the method
 			if (patents == null) {
-				patents = new ArrayList<PatentItem>();
+				patents = new ArrayList<>();
 			}
 
 			if (articles == null) {
-				articles = new ArrayList<BibDataSet>();
+				articles = new ArrayList<>();
 			}
 
-			// parser for patent references
+			// parser for patent and non patent references
             if (patentParser == null) {
                 patentParser = new PatentRefParser();
             }
-            // parser for non patent references
 
-            // tokenisation for the parser (with punctuation as tokens)
-            ArrayList<String> patentBlocks = new ArrayList<String>();
+            // identify the language of the patent document, we use only the first 500 characters
+            // which is enough normally for a very safe language prediction
+            // the text here is the patent description, so normally strictly monolingual
 
-            //text = TextUtilities.dehyphenize(text); // to be reviewed!
-            text = text.replace("\n", " ").replace("\t", " ");
-            //text = text.replace("  ", " ");
-
-			// identify the language of the patent document, we use only the first 500 characters
-			// which is enough normally for a very safe language prediction
-			// the text here is the patent description, so strictly monolingual
-            Language lang = languageUtilities.runLanguageId(text, 500);
-			List<String> tokenizations = analyzer.tokenize(text, lang);
-            int offset = 0;
-			if (tokenizations.size() == 0) {
+            // create text buffer
+            StringBuilder localText = new StringBuilder();
+            for(String text : texts) {
+                localText.append(text);
+                if (localText.length()> 500) 
+                    break;
+            }
+            if (localText.length() == 0)
                 return null;
-            }
+            Language lang = languageUtilities.runLanguageId(localText.toString(), 500);
+            List<String> allPatentBlocks = new ArrayList<>();
+            
+            for (String text : texts) {
+                //text = TextUtilities.dehyphenize(text); // to be reviewed!
 
-            List<OffsetPosition> journalPositions = null;
-            List<OffsetPosition> abbrevJournalPositions = null;
-            List<OffsetPosition> conferencePositions = null;
-            List<OffsetPosition> publisherPositions = null;
+                // tokenisation according to the language (except for Korean, which will require retraining)
+                List<LayoutToken> tokenizations;
+                if (lang.getLang().equals(Language.KO)) {
+                    tokenizations = GrobidDefaultAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+                } else {
+                    tokenizations = analyzer.tokenizeWithLayoutToken(text, lang);
+                    // to be sure to sub-tokenize based on standard punctuations:
+                    tokenizations = GrobidDefaultAnalyzer.getInstance().retokenizeFromLayoutToken(tokenizations);
+                }
 
-            //if (articles != null)
-            {
-                journalPositions = lexicon.tokenPositionsJournalNames(text);
-                abbrevJournalPositions = lexicon.tokenPositionsAbbrevJournalNames(text);
-                conferencePositions = lexicon.tokenPositionsConferenceNames(text);
-                publisherPositions = lexicon.tokenPositionsPublisherNames(text);
-            }
-
-            boolean isJournalToken = false;
-            boolean isAbbrevJournalToken = false;
-            boolean isConferenceToken = false;
-            boolean isPublisherToken = false;
-            int currentJournalPositions = 0;
-            int currentAbbrevJournalPositions = 0;
-            int currentConferencePositions = 0;
-            int currentPublisherPositions = 0;
-            boolean skipTest = false;
-            //st = new StringTokenizer(text, " (["+ TextUtilities.punctuations, true);
-            //st = new StringTokenizer(text, delimiters, true);
-            int posit = 0;
-            //while (st.hasMoreTokens()) {
-			for(String tok : tokenizations)	{
-                isJournalToken = false;
-                isAbbrevJournalToken = false;
-                isConferenceToken = false;
-                isPublisherToken = false;
-                skipTest = false;
-                //String tok = st.nextToken();
-                if ( (tok.trim().length() == 0) ||
-					 (tok.equals(" ")) ||
-				     (tok.equals("\t")) ||
-					 (tok.equals("\n")) ||
-					 (tok.equals("\r"))
-					 ) {
+                if (tokenizations.size() == 0) {
                     continue;
                 }
+                allTokenizations.add(tokenizations);
 
-                // check the position of matches for journals
-                if (journalPositions != null) {
-                    if (currentJournalPositions == journalPositions.size() - 1) {
-                        if (journalPositions.get(currentJournalPositions).end < posit) {
-                            skipTest = true;
-                        }
+                StringBuilder patentBlocks = new StringBuilder();
+
+                List<OffsetPosition> journalPositions = null;
+                List<OffsetPosition> abbrevJournalPositions = null;
+                List<OffsetPosition> conferencePositions = null;
+                List<OffsetPosition> publisherPositions = null;
+
+                journalPositions = lexicon.tokenPositionsJournalNames(tokenizations);
+                abbrevJournalPositions = lexicon.tokenPositionsAbbrevJournalNames(tokenizations);
+                conferencePositions = lexicon.tokenPositionsConferenceNames(tokenizations);
+                publisherPositions = lexicon.tokenPositionsPublisherNames(tokenizations);
+
+                boolean isJournalToken = false;
+                boolean isAbbrevJournalToken = false;
+                boolean isConferenceToken = false;
+                boolean isPublisherToken = false;
+                int currentJournalPositions = 0;
+                int currentAbbrevJournalPositions = 0;
+                int currentConferencePositions = 0;
+                int currentPublisherPositions = 0;
+                boolean skipTest = false;
+                int posit = 0;
+    			for(LayoutToken token : tokenizations)	{
+                    String tok = token.getText();
+                    isJournalToken = false;
+                    isAbbrevJournalToken = false;
+                    isConferenceToken = false;
+                    isPublisherToken = false;
+                    skipTest = false;
+                    if ( (tok.trim().length() == 0) ||
+    					 (tok.equals(" ")) ||
+    				     (tok.equals("\t")) ||
+    					 (tok.equals("\n")) ||
+    					 (tok.equals("\r"))
+    					 ) {
+                        posit++;
+                        continue;
                     }
-                    if (!skipTest) {
-                        for (int i = currentJournalPositions; i < journalPositions.size(); i++) {
-                            if ((journalPositions.get(i).start <= posit) &&
-                                    (journalPositions.get(i).end >= posit)) {
-                                isJournalToken = true;
-                                currentJournalPositions = i;
-                                break;
-                            } else if (journalPositions.get(i).start > posit) {
-                                isJournalToken = false;
-                                currentJournalPositions = i;
-                                break;
+
+                    // check the position of matches for journals
+                    if (journalPositions != null) {
+                        if (currentJournalPositions == journalPositions.size() - 1) {
+                            if (journalPositions.get(currentJournalPositions).end < posit) {
+                                skipTest = true;
+                            }
+                        }
+                        if (!skipTest) {
+                            for (int i = currentJournalPositions; i < journalPositions.size(); i++) {
+                                if ((journalPositions.get(i).start <= posit) &&
+                                        (journalPositions.get(i).end >= posit)) {
+                                    isJournalToken = true;
+                                    currentJournalPositions = i;
+                                    break;
+                                } else if (journalPositions.get(i).start > posit) {
+                                    isJournalToken = false;
+                                    currentJournalPositions = i;
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-                // check the position of matches for abbreviated journals
-                skipTest = false;
-                if (abbrevJournalPositions != null) {
-                    if (currentAbbrevJournalPositions == abbrevJournalPositions.size() - 1) {
-                        if (abbrevJournalPositions.get(currentAbbrevJournalPositions).end < posit) {
-                            skipTest = true;
+                    // check the position of matches for abbreviated journals
+                    skipTest = false;
+                    if (abbrevJournalPositions != null) {
+                        if (currentAbbrevJournalPositions == abbrevJournalPositions.size() - 1) {
+                            if (abbrevJournalPositions.get(currentAbbrevJournalPositions).end < posit) {
+                                skipTest = true;
+                            }
                         }
-                    }
-                    if (!skipTest) {
-                        for (int i = currentAbbrevJournalPositions; i < abbrevJournalPositions.size(); i++) {
-                            if ((abbrevJournalPositions.get(i).start <= posit) &&
-                                    (abbrevJournalPositions.get(i).end >= posit)) {
-                                isAbbrevJournalToken = true;
-                                currentAbbrevJournalPositions = i;
-                                break;
-                            } else if (abbrevJournalPositions.get(i).start > posit) {
-                                isAbbrevJournalToken = false;
-                                currentAbbrevJournalPositions = i;
-                                break;
+                        if (!skipTest) {
+                            for (int i = currentAbbrevJournalPositions; i < abbrevJournalPositions.size(); i++) {
+                                if ((abbrevJournalPositions.get(i).start <= posit) &&
+                                        (abbrevJournalPositions.get(i).end >= posit)) {
+                                    isAbbrevJournalToken = true;
+                                    currentAbbrevJournalPositions = i;
+                                    break;
+                                } else if (abbrevJournalPositions.get(i).start > posit) {
+                                    isAbbrevJournalToken = false;
+                                    currentAbbrevJournalPositions = i;
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-                // check the position of matches for conference names
-                skipTest = false;
-                if (conferencePositions != null) {
-                    if (currentConferencePositions == conferencePositions.size() - 1) {
-                        if (conferencePositions.get(currentConferencePositions).end < posit) {
-                            skipTest = true;
+                    // check the position of matches for conference names
+                    skipTest = false;
+                    if (conferencePositions != null) {
+                        if (currentConferencePositions == conferencePositions.size() - 1) {
+                            if (conferencePositions.get(currentConferencePositions).end < posit) {
+                                skipTest = true;
+                            }
                         }
-                    }
-                    if (!skipTest) {
-                        for (int i = currentConferencePositions; i < conferencePositions.size(); i++) {
-                            if ((conferencePositions.get(i).start <= posit) &&
-                                    (conferencePositions.get(i).end >= posit)) {
-                                isConferenceToken = true;
-                                currentConferencePositions = i;
-                                break;
-                            } else if (conferencePositions.get(i).start > posit) {
-                                isConferenceToken = false;
-                                currentConferencePositions = i;
-                                break;
+                        if (!skipTest) {
+                            for (int i = currentConferencePositions; i < conferencePositions.size(); i++) {
+                                if ((conferencePositions.get(i).start <= posit) &&
+                                        (conferencePositions.get(i).end >= posit)) {
+                                    isConferenceToken = true;
+                                    currentConferencePositions = i;
+                                    break;
+                                } else if (conferencePositions.get(i).start > posit) {
+                                    isConferenceToken = false;
+                                    currentConferencePositions = i;
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-                // check the position of matches for publisher names
-                skipTest = false;
-                if (publisherPositions != null) {
-                    if (currentPublisherPositions == publisherPositions.size() - 1) {
-                        if (publisherPositions.get(currentPublisherPositions).end < posit) {
-                            skipTest = true;
+                    // check the position of matches for publisher names
+                    skipTest = false;
+                    if (publisherPositions != null) {
+                        if (currentPublisherPositions == publisherPositions.size() - 1) {
+                            if (publisherPositions.get(currentPublisherPositions).end < posit) {
+                                skipTest = true;
+                            }
                         }
-                    }
-                    if (!skipTest) {
-                        for (int i = currentPublisherPositions; i < publisherPositions.size(); i++) {
-                            if ((publisherPositions.get(i).start <= posit) &&
-                                    (publisherPositions.get(i).end >= posit)) {
-                                isPublisherToken = true;
-                                currentPublisherPositions = i;
-                                break;
-                            } else if (publisherPositions.get(i).start > posit) {
-                                isPublisherToken = false;
-                                currentPublisherPositions = i;
-                                break;
+                        if (!skipTest) {
+                            for (int i = currentPublisherPositions; i < publisherPositions.size(); i++) {
+                                if ((publisherPositions.get(i).start <= posit) &&
+                                        (publisherPositions.get(i).end >= posit)) {
+                                    isPublisherToken = true;
+                                    currentPublisherPositions = i;
+                                    break;
+                                } else if (publisherPositions.get(i).start > posit) {
+                                    isPublisherToken = false;
+                                    currentPublisherPositions = i;
+                                    break;
+                                }
                             }
                         }
                     }
+
+                    FeaturesVectorReference featureVector =
+                            FeaturesVectorReference.addFeaturesPatentReferences(new LayoutToken(tok), null,
+                                    tokenizations.size(),
+                                    posit,
+                                    isJournalToken,
+                                    isAbbrevJournalToken,
+                                    isConferenceToken,
+                                    isPublisherToken);
+                    patentBlocks.append(featureVector.printVector());
+                    patentBlocks.append("\n");
+                    posit++;
                 }
 
-                FeaturesVectorReference featureVector =
-                        FeaturesVectorReference.addFeaturesPatentReferences(tok,
-                                tokenizations.size(),
-                                posit,
-                                isJournalToken,
-                                isAbbrevJournalToken,
-                                isConferenceToken,
-                                isPublisherToken);
-                patentBlocks.add(featureVector.printVector());
-                posit++;
+                patentBlocks.append("\n\n");
+                allPatentBlocks.add(patentBlocks.toString());
             }
 
-            patentBlocks.add("\n");
+            String theResults = taggerAll.label(allPatentBlocks);
+//System.out.println(theResults);
+            String[] theSegmentedResults = theResults.split("\n\n");
 
-            String theResult = null;
-            theResult = taggerAll.label(patentBlocks);
-            //System.out.println(theResult);
+            List<String> allReferencesPatent = new ArrayList<>();
+            List<String> allReferencesNPL = new ArrayList<>();
+            List<Integer> allOffsetsNPL = new ArrayList<>();
+            List<Double> allProbNPL = new ArrayList<>();
+            List<Integer> localIndexSegmentNPL = new ArrayList<>();
 
-            StringTokenizer stt = new StringTokenizer(theResult, "\n");
+            //int offset = 0;
+            for(int index=0; index<theSegmentedResults.length; index++) {
+                String theResult = theSegmentedResults[index];
+                StringTokenizer stt = new StringTokenizer(theResult, "\n");
+                List<LayoutToken> tokenizations = allTokenizations.get(index);
 
-            List<String> referencesPatent = new ArrayList<String>();
-            List<String> referencesNPL = new ArrayList<String>();
-            List<Integer> offsets_patent = new ArrayList<Integer>();
-            List<Integer> offsets_NPL = new ArrayList<Integer>();
-			List<Double> probPatent = new ArrayList<Double>();
-			List<Double> probNPL = new ArrayList<Double>();
+                List<String> referencesPatent = new ArrayList<>();
+                List<String> referencesNPL = new ArrayList<>();
 
-            boolean currentPatent = true; // type of current reference
-            String reference = null;
-			double currentProb = 0.0;
-            offset = 0;
-            int currentOffset = 0;
-			int addedOffset = 0;
-            String label = null; // label
-            String actual = null; // token
-            int p = 0; // iterator for the tokenizations for restauring the original tokenization with
-            // respect to spaces
+                List<Integer> offsetsPatent = new ArrayList<>();
+                List<Integer> offsetsNPL = new ArrayList<>();
 
-            while (stt.hasMoreTokens()) {
-                String line = stt.nextToken();
-                if (line.trim().length() == 0) {
-                    continue;
-                }
+    			List<Double> probPatent = new ArrayList<>();
+    			List<Double> probNPL = new ArrayList<>();
 
-                StringTokenizer st2 = new StringTokenizer(line, "\t ");
-                boolean start = true;
-				String separator = "";
-                label = null;
-                actual = null;
-                while (st2.hasMoreTokens()) {
-                    if (start) {
-                        actual = st2.nextToken().trim();
-                        start = false;
+                boolean currentPatent = true; // type of current reference
+                String reference = null;
+    			double currentProb = 0.0;
+                int offset = 0;
+                int currentOffset = 0;
+    			int addedOffset = 0;
+                String label = null; // label
+                String actual = null; // token
+                int p = 0; // iterator for the tokenizations for restauring the original tokenization with
+                // respect to spaces
 
-                        boolean strop = false;
-                        while ((!strop) && (p < tokenizations.size())) {
-                            String tokOriginal = tokenizations.get(p);
-							addedOffset += tokOriginal.length();
-                            if (tokOriginal.equals(" ")) {
-								separator += tokOriginal;
-                            } else if (tokOriginal.equals(actual)) {
-                                strop = true;
-                            }
-                            p++;
-                        }
-                    } else {
-                        label = st2.nextToken().trim();
+                while (stt.hasMoreTokens()) {
+                    String line = stt.nextToken();
+                    if (line.trim().length() == 0) {
+                        continue;
                     }
-                }
 
-                if (label == null) {
-					offset += addedOffset;
-					addedOffset = 0;
-                    continue;
-                }
+                    StringTokenizer st2 = new StringTokenizer(line, "\t ");
+                    boolean start = true;
+    				String separator = "";
+                    label = null;
+                    actual = null;
+                    while (st2.hasMoreTokens()) {
+                        if (start) {
+                            actual = st2.nextToken().trim();
+                            start = false;
 
-				double prob = 0.0;
-				int segProb = label.lastIndexOf("/");
-				if (segProb != -1) {
-					String probString = label.substring(segProb+1, label.length());
-					//System.out.println("given prob: " + probString);
-					try {
-						prob = Double.parseDouble(probString);
-						//System.out.println("given prob: " + probString + ", parsed: " + prob);
-					}
-					catch(Exception e) {
-						LOGGER.debug(probString + " cannot be parsed.");
-					}
-					label = label.substring(0,segProb);
-				}
-
-                // TBD: use TaggingTokenClusteror and TaggingLabel as for the other parsers
-                if (actual != null) {
-                    if (label.endsWith("<refPatent>")) {
-                        if (reference == null) {
-                            reference = separator + actual;
-                            currentOffset = offset;
-                            currentPatent = true;
-							currentProb = prob;
+                            boolean strop = false;
+                            while ((!strop) && (p < tokenizations.size())) {
+                                String tokOriginal = tokenizations.get(p).getText();
+    							addedOffset += tokOriginal.length();
+                                if (tokOriginal.equals(" ")) {
+    								separator += tokOriginal;
+                                } else if (tokOriginal.equals(actual)) {
+                                    strop = true;
+                                }
+                                p++;
+                            }
                         } else {
-                            if (currentPatent) {
-                                if (label.equals("I-<refPatent>")) {
-                                    referencesPatent.add(reference);
-                                    offsets_patent.add(currentOffset);
+                            label = st2.nextToken().trim();
+                        }
+                    }
 
-									probPatent.add(new Double(currentProb));
+                    if (label == null) {
+    					offset += addedOffset;
+    					addedOffset = 0;
+                        continue;
+                    }
+
+    				double prob = 0.0;
+    				int segProb = label.lastIndexOf("/");
+    				if (segProb != -1) {
+    					String probString = label.substring(segProb+1, label.length());
+    					//System.out.println("given prob: " + probString);
+    					try {
+    						prob = Double.parseDouble(probString);
+    						//System.out.println("given prob: " + probString + ", parsed: " + prob);
+    					}
+    					catch(Exception e) {
+    						LOGGER.debug(probString + " cannot be parsed.");
+    					}
+    					label = label.substring(0,segProb);
+    				}
+
+                    // TBD: use TaggingTokenClusteror and TaggingLabel as for the other parsers
+                    if (actual != null) {
+                        if (label.endsWith("<refPatent>")) {
+                            if (reference == null) {
+                                reference = separator + actual;
+                                currentOffset = offset;
+                                currentPatent = true;
+    							currentProb = prob;
+                            } else {
+                                if (currentPatent) {
+                                    if (label.equals("I-<refPatent>")) {
+                                        referencesPatent.add(reference);
+                                        offsetsPatent.add(currentOffset);
+
+    									probPatent.add(Double.valueOf(currentProb));
+
+                                        currentPatent = true;
+    		                            reference = separator + actual;
+                                        currentOffset = offset;
+    									currentProb = prob;
+                                    } else {
+                                        reference += separator + actual;
+    									if (prob > currentProb) {
+    										currentProb = prob;
+    									}
+                                    }
+                                } else {
+                                    referencesNPL.add(reference);
+                                    offsetsNPL.add(currentOffset);
+    								probNPL.add(Double.valueOf(currentProb));
 
                                     currentPatent = true;
-		                            reference = separator + actual;
+    	                            reference = separator + actual;
                                     currentOffset = offset;
-									currentProb = prob;
-                                } else {
-                                    reference += separator + actual;
-									if (prob > currentProb) {
-										currentProb = prob;
-									}
+    								currentProb = prob;
                                 }
-                            } else {
-                                referencesNPL.add(reference);
-                                offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
-
-                                currentPatent = true;
-	                            reference = separator + actual;
-                                currentOffset = offset;
-								currentProb = prob;
                             }
-                        }
-                    } else if (label.endsWith("<refNPL>")) {
-                        if (reference == null) {
-                            reference = separator + actual;
-                            currentOffset = offset;
-                            currentPatent = false;
-							currentProb = prob;
-                        } else {
-                            if (currentPatent) {
-                                referencesPatent.add(reference);
-                                offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
-
-                                currentPatent = false;
-	                            reference = separator + actual;
+                        } else if (label.endsWith("<refNPL>")) {
+                            if (reference == null) {
+                                reference = separator + actual;
                                 currentOffset = offset;
-								currentProb = prob;
+                                currentPatent = false;
+    							currentProb = prob;
                             } else {
-                                if (label.equals("I-<refNPL>")) {
-                                    referencesNPL.add(reference);
-                                    offsets_NPL.add(currentOffset);
-									probNPL.add(new Double(currentProb));
+                                if (currentPatent) {
+                                    referencesPatent.add(reference);
+                                    offsetsPatent.add(currentOffset);
+    								probPatent.add(Double.valueOf(currentProb));
 
                                     currentPatent = false;
-		                            reference = separator + actual;
+    	                            reference = separator + actual;
                                     currentOffset = offset;
-									currentProb = prob;
+    								currentProb = prob;
                                 } else {
-                                    reference += separator + actual;
-									if (prob > currentProb) {
-										currentProb = prob;
-									}
+                                    if (label.equals("I-<refNPL>")) {
+                                        referencesNPL.add(reference);
+                                        offsetsNPL.add(currentOffset);
+    									probNPL.add(Double.valueOf(currentProb));
+
+                                        currentPatent = false;
+    		                            reference = separator + actual;
+                                        currentOffset = offset;
+    									currentProb = prob;
+                                    } else {
+                                        reference += separator + actual;
+    									if (prob > currentProb) {
+    										currentProb = prob;
+    									}
+                                    }
                                 }
                             }
-                        }
-                    } else if (label.equals("<other>")) {
-                        if (reference != null) {
-                            if (currentPatent) {
-                                referencesPatent.add(reference);
-                                offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
-                            } else {
-                                referencesNPL.add(reference);
-                                offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+                        } else if (label.equals("<other>")) {
+                            if (reference != null) {
+                                if (currentPatent) {
+                                    referencesPatent.add(reference);
+                                    offsetsPatent.add(currentOffset);
+    								probPatent.add(Double.valueOf(currentProb));
+                                } else {
+                                    referencesNPL.add(reference);
+                                    offsetsNPL.add(currentOffset);
+    								probNPL.add(Double.valueOf(currentProb));
+                                }
+                                currentPatent = false;
                             }
-                            currentPatent = false;
+                            reference = null;
+    						currentProb	= 0.0;
                         }
-                        reference = null;
-						currentProb	= 0.0;
                     }
+    				offset += addedOffset;
+    				addedOffset = 0;
                 }
-				offset += addedOffset;
-				addedOffset = 0;
-            }
 
-            // run reference patent parser in isolation, and produce some traces
-            int j = 0;
-            for (String ref : referencesPatent) {
-                patentParser.setRawRefText(ref);
-                patentParser.setRawRefTextOffset(offsets_patent.get(j).intValue());
-                List<PatentItem> patents0 = patentParser.processRawRefText();
-                for (PatentItem pat : patents0) {
-                    pat.setContext(ref);
-					pat.setConf(probPatent.get(j).doubleValue());
-                    patents.add(pat);
-                    /*if (pat.getApplication()) {
-                        if (pat.getProvisional()) {
-                            if (debug) {
-                                System.out.println(pat.getAuthority() + " " + pat.getNumber()
-                                        + " P application " + pat.getOffsetBegin()
-                                        + ":" + pat.getOffsetEnd() + "\n");
+                // run reference patent parser in isolation, and produce some traces
+                int j = 0;
+                for (String ref : referencesPatent) {
+                    patentParser.setRawRefText(ref);
+                    patentParser.setRawRefTextOffset(offsetsPatent.get(j).intValue());
+                    List<PatentItem> patents0 = patentParser.processRawRefText();
+                    for (PatentItem pat : patents0) {
+                        pat.setContext(ref);
+    					pat.setConf(probPatent.get(j).doubleValue());
+                        patents.add(pat);
+                        //allIndexSegmentPatent.add(index);
+
+                        List<PatentItem> localList = patentsBySegment.get(index);
+                        if (localList == null) {
+                            localList = new ArrayList<>();
+                        }
+                        localList.add(pat);
+                        patentsBySegment.put(index, localList);
+
+                        /*if (pat.getApplication()) {
+                            if (pat.getProvisional()) {
+                                if (debug) {
+                                    System.out.println(pat.getAuthority() + " " + pat.getNumber()
+                                            + " P application " + pat.getOffsetBegin()
+                                            + ":" + pat.getOffsetEnd() + "\n");
+                                }
+                            } else {
+                                if (debug) {
+                                    System.out.println(pat.getAuthority() + " " + pat.getNumber()
+                                            + " application " + pat.getOffsetBegin()
+                                            + ":" + pat.getOffsetEnd() + "\n");
+                                }
+                            }
+                        } else if (pat.getReissued()) {
+                            if (pat.getAuthority().equals("US")) {
+                                if (debug) {
+                                    System.out.println(pat.getAuthority() + "RE" + pat.getNumber() + " E "
+                                            + pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
+                                }
+                            }
+                        } else if (pat.getPlant()) {
+                            if (pat.getAuthority().equals("US")) {
+                                if (debug)
+                                    System.out.println(pat.getAuthority() + "PP" + pat.getNumber() + " " +
+                                            pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
                             }
                         } else {
                             if (debug) {
-                                System.out.println(pat.getAuthority() + " " + pat.getNumber()
-                                        + " application " + pat.getOffsetBegin()
-                                        + ":" + pat.getOffsetEnd() + "\n");
+                                if (pat.getKindCode() != null) {
+                                    System.out.println(pat.getAuthority() + " " + pat.getNumber() + " "
+                                            + pat.getKindCode() + " "
+                                            + pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
+                                } else {
+                                    System.out.println(pat.getAuthority() + " " + pat.getNumber() + " " +
+                                            pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
+                                }
+                                System.out.println(pat.getContext());
                             }
-                        }
-                    } else if (pat.getReissued()) {
-                        if (pat.getAuthority().equals("US")) {
-                            if (debug) {
-                                System.out.println(pat.getAuthority() + "RE" + pat.getNumber() + " E "
-                                        + pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
-                            }
-                        }
-                    } else if (pat.getPlant()) {
-                        if (pat.getAuthority().equals("US")) {
-                            if (debug)
-                                System.out.println(pat.getAuthority() + "PP" + pat.getNumber() + " " +
-                                        pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
-                        }
-                    } else {
-                        if (debug) {
-                            if (pat.getKindCode() != null) {
-                                System.out.println(pat.getAuthority() + " " + pat.getNumber() + " "
-                                        + pat.getKindCode() + " "
-                                        + pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
-                            } else {
-                                System.out.println(pat.getAuthority() + " " + pat.getNumber() + " " +
-                                        pat.getOffsetBegin() + ":" + pat.getOffsetEnd() + "\n");
-                            }
-                            System.out.println(pat.getContext());
-                        }
-                    }*/
+                        }*/
+                    }
+                    j++;
                 }
-                j++;
+
+                if (referencesNPL.size()>0) {
+                    allReferencesNPL.addAll(referencesNPL);
+                    allOffsetsNPL.addAll(offsetsNPL);
+                    allProbNPL.addAll(probNPL);
+                    for(String ref : referencesNPL) {
+                        localIndexSegmentNPL.add(index);
+                    }
+                }
             }
 
             // list for filtering duplicates, if we want to ignore the duplicate numbers
-            List<String> numberListe = new ArrayList<String>();
+            /*List<String> numberListe = new ArrayList<String>();
             if (filterDuplicate) {
                 // list for filtering duplicates, if we want to ignore the duplicate numbers
                 List<PatentItem> toRemove = new ArrayList<PatentItem>();
@@ -712,12 +819,12 @@ public class ReferenceExtractor implements Closeable {
                 for (PatentItem pat : toRemove) {
                     patents.remove(pat);
                 }
-            }
+            }*/
 
-            if (articles != null) {
+            if (articles != null && allReferencesNPL != null && allReferencesNPL.size()>0) {
                 int k = 0;
-                List<BiblioItem> bibResults = parsers.getCitationParser().processingStringMultiple(referencesNPL, consolidate);
-                for (String ref : referencesNPL) {
+                List<BiblioItem> bibResults = parsers.getCitationParser().processingStringMultiple(allReferencesNPL, consolidate);
+                for (String ref : allReferencesNPL) {
                     BiblioItem result = bibResults.get(k);
                     if (result == null) {
                         k++;
@@ -727,56 +834,75 @@ public class ReferenceExtractor implements Closeable {
                     result.setReference(ref);
                     bds.setResBib(result);
                     bds.setRawBib(ref);
-                    bds.addOffset(offsets_NPL.get(k).intValue());
-                    //bds.setConfidence(probNPL.get(k).doubleValue());
+                    bds.addOffset(allOffsetsNPL.get(k).intValue());
+                    bds.setConfidence(allProbNPL.get(k).doubleValue());
                     articles.add(bds);
+                    //allIndexSegmentNPL.add(localIndexSegmentNPL.get(k));
+
+                    List<BibDataSet> localList = articlesBySegment.get(localIndexSegmentNPL.get(k));
+                    if (localList == null) {
+                        localList = new ArrayList<>();
+                    }
+                    localList.add(bds);
+                    articlesBySegment.put(localIndexSegmentNPL.get(k), localList);
+
                     k++;
                 }
             }
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
-        int nbs = 0;
-        if (patents != null) {
-            nbs = patents.size();
-        }
-        if (articles != null)
-            nbs += articles.size();
 
-		String resultTEI = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+        StringBuilder resultTEI = new StringBuilder();
+		resultTEI.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
 						   "<TEI xml:space=\"preserve\" xmlns=\"http://www.tei-c.org/ns/1.0\" " +
-						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n";
+						   "xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n");
 
-		String divID = KeyGen.getKey().substring(0,7);
-		resultTEI += "<teiHeader />\n";
-		resultTEI += "<text>\n";
-		resultTEI += "<div id=\"_"+ divID +"\">\n";
-		resultTEI += TextUtilities.HTMLEncode(text);
-		resultTEI += "</div>\n";
-		resultTEI += "<div type=\"references\">\n";
-		if ( (patents != null) || (articles != null) ) {
-			resultTEI += "<listBibl>\n";
-		}
+        resultTEI.append("\t<teiHeader/>\n");
+        resultTEI.append("\t<text>\n");
 
-		if (patents != null) {
-			for(PatentItem patentCitation : patents) {
-				resultTEI += patentCitation.toTEI(true, divID) + "\n"; // with offsets
-			}
-		}
+        int index = 0; // index in tokenized text segment list
+        int positionInIndexPatent = 0;
+        int positionInIndexNPL = 0;
 
-		if (articles != null) {
-			for(BibDataSet articleCitation : articles) {
-				resultTEI += articleCitation.toTEI(includeRawCitations) + "\n";
-			}
-		}
-		if ( (patents != null) || (articles != null) ) {
-			resultTEI += "</listBibl>\n";
-		}
-		resultTEI += "</div>\n";
-		resultTEI += "</text>\n";
-		resultTEI += "</TEI>";
+        for(List<LayoutToken> tokens : allTokenizations) {
+            // do we have a reference in this text segment ? 
+            List<PatentItem> localPatentsBySegment = patentsBySegment.get(index);
+            List<BibDataSet> localArticlesBySegment = articlesBySegment.get(index);
 
-        return resultTEI;
+            if ((localPatentsBySegment != null && localPatentsBySegment.size()>0) || 
+                (localArticlesBySegment != null && localArticlesBySegment.size()>0) ) {
+                // output text
+                String divID = KeyGen.getKey().substring(0,7);      
+                resultTEI.append("\t\t<div>\n");
+                resultTEI.append("\t\t\t<p id=\"_"+ divID +"\">");
+                String text = LayoutTokensUtil.toText(tokens);
+                // not affecting offsets:
+                text = text.replace("\n", " ").replace("\t", " ");  
+                resultTEI.append(TextUtilities.HTMLEncode(text));
+                resultTEI.append("</p>\n");
+                resultTEI.append("\t\t\t<div type=\"references\">\n");
+                if (localPatentsBySegment != null && localPatentsBySegment.size()>0) {
+                    for(PatentItem patentCitation : localPatentsBySegment) {
+                        resultTEI.append(patentCitation.toTEI(true, divID) + "\n"); // true here means with offsets
+                    }
+                }
+                if (localArticlesBySegment != null && localArticlesBySegment.size()>0) {
+                    for(BibDataSet articleCitation : localArticlesBySegment) {
+                        resultTEI.append(articleCitation.toTEI(includeRawCitations) + "\n");
+                    }
+                }
+                resultTEI.append("\t\t\t</div>\n");
+                resultTEI.append("\t\t</div>\n");
+            }
+
+            index++;
+        }
+
+        resultTEI.append("\t</text>\n");
+		resultTEI.append("</TEI>");
+
+        return resultTEI.toString();
     }
 
     /**
@@ -872,6 +998,7 @@ public class ReferenceExtractor implements Closeable {
 					 (tok.equals("\n")) ||
 					 (tok.equals("\r"))
 					 ) {
+                    posit++;
                     continue;
                 }
 
@@ -971,7 +1098,7 @@ public class ReferenceExtractor implements Closeable {
                 }
 
                 FeaturesVectorReference featureVector =
-                        FeaturesVectorReference.addFeaturesPatentReferences(tok,
+                        FeaturesVectorReference.addFeaturesPatentReferences(new LayoutToken(tok), null,
                                 tokenizations.size(),
                                 posit,
                                 isJournalToken,
@@ -1078,7 +1205,7 @@ public class ReferenceExtractor implements Closeable {
                                     referencesPatent.add(reference);
                                     offsets_patent.add(currentOffset);
 
-									probPatent.add(new Double(currentProb));
+									probPatent.add(Double.valueOf(currentProb));
 
                                     currentPatent = true;
 		                            reference = separator + actual;
@@ -1093,7 +1220,7 @@ public class ReferenceExtractor implements Closeable {
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
 
                                 currentPatent = true;
 	                            reference = separator + actual;
@@ -1111,7 +1238,7 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
 
                                 currentPatent = false;
 	                            reference = separator + actual;
@@ -1121,7 +1248,7 @@ public class ReferenceExtractor implements Closeable {
                                 if (label.equals("I-<refNPL>")) {
                                     referencesNPL.add(reference);
                                     offsets_NPL.add(currentOffset);
-									probNPL.add(new Double(currentProb));
+									probNPL.add(Double.valueOf(currentProb));
 
                                     currentPatent = false;
 		                            reference = separator + actual;
@@ -1140,11 +1267,11 @@ public class ReferenceExtractor implements Closeable {
                             if (currentPatent) {
                                 referencesPatent.add(reference);
                                 offsets_patent.add(currentOffset);
-								probPatent.add(new Double(currentProb));
+								probPatent.add(Double.valueOf(currentProb));
                             } else {
                                 referencesNPL.add(reference);
                                 offsets_NPL.add(currentOffset);
-								probNPL.add(new Double(currentProb));
+								probNPL.add(Double.valueOf(currentProb));
                             }
                             currentPatent = false;
                         }
@@ -1485,7 +1612,10 @@ public class ReferenceExtractor implements Closeable {
         try {
             // first pass: we get the text to be processed
             TextSaxParser sax = new TextSaxParser();
-            sax.setFilter("description");
+            sax.addFilter("description");
+            sax.addFilter("p");
+            sax.addFilter("heading");
+            sax.addFilter("head");
             // get a factory
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setValidating(false);
@@ -1517,15 +1647,15 @@ public class ReferenceExtractor implements Closeable {
 
             reader.parse(input);
 
-            String description = sax.getText();
+            List<String> descriptionSegments = sax.getTexts();
             String currentPatentNumber = sax.currentPatentNumber;
 
             ArrayList<PatentItem> patents = new ArrayList<PatentItem>();
             ArrayList<BibDataSet> articles = new ArrayList<BibDataSet>();
 
             // we process the patent description
-            if (description != null) {
-                extractAllReferencesString(description, false, 0, false, patents, articles);
+            if (descriptionSegments != null && descriptionSegments.size() > 0) {
+                extractAllReferencesString(descriptionSegments, false, 0, false, patents, articles);
                 // second pass: we add annotations corresponding to identified citation chunks based on
                 // stored offsets
                 Writer writer = new OutputStreamWriter(
@@ -1620,14 +1750,16 @@ public class ReferenceExtractor implements Closeable {
         try {
             if (ops == null)
                 ops = new OPSService();
-            description = ops.descriptionRetrieval(number);
-
+            String description = ops.descriptionRetrieval(number);
             if (description == null)
                 return false;
             else if (description.length() < 600)
                 return false;
-            else
+            else {
+                descriptionSegments = new ArrayList<>();
+                descriptionSegments.add(description);
                 return true;
+            }
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }

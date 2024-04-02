@@ -51,11 +51,7 @@ public class GrobidHomeFinder {
 
     public File findGrobidHomeOrFail() {
         File gh = getGrobidHomePathOrLoadFromClasspath();
-
-        LOGGER.warn("***************************************************************");
-        LOGGER.warn("*** USING GROBID HOME: " + gh.getAbsolutePath());
-        LOGGER.warn("***************************************************************");
-
+        LOGGER.info("*** USING GROBID HOME: " + gh.getAbsolutePath());
         if (!gh.exists() || !gh.isDirectory()) {
             fail("Grobid home folder '" + gh.getAbsolutePath() + "' was detected for usage, but does not exist");
         }
@@ -72,7 +68,7 @@ public class GrobidHomeFinder {
         File grobidConfigFile;
         if (grobidConfig == null) {
             grobidConfigFile = new File(grobidHome, "config/grobid.yaml").getAbsoluteFile();
-            LOGGER.warn("Grobid config file location was not explicitly set via '" + PROP_GROBID_CONFIG + 
+            LOGGER.info("Grobid config file location was not explicitly set via '" + PROP_GROBID_CONFIG + 
                 "' system variable, defaulting to: " + grobidConfigFile);
         } else {
             grobidConfigFile = new File(grobidConfig).getAbsoluteFile();
@@ -112,7 +108,7 @@ public class GrobidHomeFinder {
                 return new File(grobidHomeProperty);
             }
         } else {
-            LOGGER.warn("No Grobid property was provided. Attempting to find Grobid home in the current directory...");
+            LOGGER.info("No Grobid property was provided. Attempting to find Grobid home in the current directory...");
             for (String possibleName : grobidHomePossibleLocations) {
                 File gh = new File(possibleName);
                 if (gh.exists()) {
@@ -120,7 +116,7 @@ public class GrobidHomeFinder {
                 }
             }
 
-            LOGGER.warn("Attempting to find and in the classpath...");
+            LOGGER.info("Attempting to find and in the classpath...");
 
             // TODO: inject a descriptive file into Grobid home
             URL url = GrobidHomeFinder.class.getResource("/grobid-home/lexicon/names/firstname.5k");

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="0"/>
+		<fileDesc xml:id="_0"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front>arXiv:cond-mat/9908383v1 [cond-mat.supr-con] 26 Aug 1999 <lb/>Universal relationship between the penetration depth and the <lb/>normal-state conductivity in YBaCuO. <lb/>A. Pimenov 1 , A. Loidl 1 , B. Schey 1 , B. Stritzker 1 , G. Jakob 2 , H. Adrian 2 , A. V. Pronin 3 , <lb/>and Yu. G. Goncharov <lb/>1 Institut für Physik, Universität Augsburg, 86135 Augsburg, Germany <lb/>Institut für Physik, Universität Mainz, 55099 Mainz, Germany <lb/>3 Institute of General Physics, Russian Acad. Sci., 117942 Moscow, Russia <lb/>Abstract <lb/>The absolute values of the conductivity in the normal state σ n and of <lb/>the low temperature penetration depths λ(0) were measured for a number <lb/>of different samples of the YBaCuO family. We found a striking correlation <lb/>between σ n and λ −2 regardless of doping, oxygen reduction or defects, thus <lb/>providing a simple method to predict the superconducting penetration depth <lb/>and to have an estimate of the sample quality by measuring the normal-state <lb/>conductivity. <lb/></front>

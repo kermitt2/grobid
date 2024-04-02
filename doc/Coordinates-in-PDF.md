@@ -12,7 +12,11 @@ Since April 2017, GROBID version 0.4.2 and higher, coordinate areas can be obtai
 * ```figure``` for figure AND table,
 * ```formula``` for mathematical equations,
 * ```head``` for section titles,
-* ```s``` for optional sentence structure (the GROBID fulltext service must be called with the `segmentSentences` parameter to provide the optional sentence-level elements). 
+* ```s``` for optional sentence structure (the GROBID fulltext service must be called with the `segmentSentences` parameter to provide the optional sentence-level elements),
+* ```p``` for paragraph structure,
+* ```note``` for foot note elements,
+* ```title``` for the title elements (main article title and cited reference titles),
+* ```affiliation``` for the affiliation and address part.
 
 However, there is normally no particular limitation to the type of structures which can have their coordinates in the results, the implementation is on-going, see [issue #69](https://github.com/kermitt2/grobid/issues/69), and it is expected that more or less any structures could be associated with their coordinates in the orginal PDF. 
 
@@ -38,14 +42,14 @@ Example with cURL:
 
 ### Batch processing
 
-We recommand to use the above service mode for best performance and range of options. 
+We recommend to use the above service mode for best performance and range of options. 
 
 Generating coordinates can also been obtained with the batch mode by adding the parameter ```-teiCoordinates``` with the command ```processFullText```.
 
 Example (under the project main directory `grobid/`): 
 
 ```bash
-> java -Xmx1024m -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
+> java -Xmx1024m -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-core/build/libs/grobid-core-0.5.0-onejar.jar -gH grobid-home -dIn /path/to/input/directory -dOut /path/to/output/directory -teiCoordinates -exe processFullText 
 ```
 
 See the [batch mode details](https://grobid.readthedocs.io/en/latest/Grobid-batch/#processfulltext). With the batch mode, it is currenlty not possible to cherry pick up certain elements, coordinates will appear for all. Again, we recommend to use the service for significantly better performances and more customization options. 
@@ -114,7 +118,7 @@ The GROBID console offers a reference implementation with PDF.js for dynamically
 
 ### Coordinates in TEI/XML results
 
-Coordinates for a given structure appear via an extra attribute ```@coord```. This is part of the [customization to the TEI](TEI-encoding-of-results.md) used by GROBID.
+Coordinates for a given structure appear via an extra attribute ```@coords```. This is part of the [customization to the TEI](TEI-encoding-of-results.md) used by GROBID.
 
 * the list of page size is encoded under the TEI element `<facsimile>`. The dimension of each page is given successively by the TEI attributes `@lrx` and `@lry` of the element `<surface>` to be conformant with the TEI (`@ulx` and `@uly` are used to set the orgine coordinates, which is always `(0,0)` for us).
 
@@ -157,4 +161,4 @@ Example 2:
 
 The above ```@coords``` XML attributes introduces 4 bounding boxes to define the area of the bibliographical reference (typically because the reference is on several line).
 
-As side note, in traditionnal TEI encoding an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 
+As side note, in traditional TEI encoding an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 

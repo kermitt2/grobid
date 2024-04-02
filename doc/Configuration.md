@@ -114,11 +114,11 @@ When executing the service, models can be loaded in a lazy manner (if you plan t
 
 ```yml
   # for **service only**: how to load the models, 
-  # false -> models are loaded when needed (default), avoiding putting in memory useless models but slow down significantly
-  #          the service at first call
-  # true -> all the models are loaded into memory at the server startup, slow the start of the services and models not
-  #         used will take some memory, but server is immediatly warm and ready
-  modelPreload: false
+  # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
+  #          significantly the service at first call
+  # true -> all the models are loaded into memory at the server startup (default), slow the start of the services 
+  #         and models not used will take some more memory (only in case of CRF), but server is immediatly warm and ready
+  modelPreload: true
 ```
 
 Finally the following part specifies the port to be used by the GROBID web service:
@@ -149,7 +149,7 @@ Under `wapiti`, we find the generic parameters of the Wapiti engine, currently o
 
 ### DeLFT global parameters
 
-Under `delft`, we find the generic parameters of the DeLFT engine. For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft). Use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
+Under `delft`, we find the generic parameters of the DeLFT engine. For using Deep Learning models, you will need an installation of the python library [DeLFT](https://github.com/kermitt2/delft) or to use the Docker image. For a local build, use the following parameters to indicate the location of this installation, and optionally the path to the virtual environment folder of this installation: 
 
 ```yml
   delft:
@@ -163,7 +163,7 @@ Under `delft`, we find the generic parameters of the DeLFT engine. For using Dee
 
 Each model has its own configuration indicating:
 
-- which "engine" to be used, with values `wapiti` for featured-based CRF or `delft` for Deep Learning models. 
+- which "engine" to be used, with values `wapiti` for feature-based CRF or `delft` for Deep Learning models. 
 
 - for Deep Learning models, which neural architecture to be used, with choices normally among `BidLSTM_CRF`, `BidLSTM_CRF_FEATURES`, `BERT`, `BERT-CRF`, `BERT_CRF_FEATURES`. The corresponding model/architecture combination need to be available under `grobid-home/models/`. If it is not the case, you will need to train the model with this particular architecture. 
 
@@ -207,15 +207,23 @@ logging:
   level: INFO
   loggers:
     org.apache.pdfbox.pdmodel.font.PDSimpleFont: "OFF"
+    org.glassfish.jersey.internal: "OFF"
+    com.squarespace.jersey2.guice.JerseyGuiceUtils: "OFF"
   appenders:
     - type: console
-      threshold: ALL
+      threshold: WARN
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json
     - type: file
       currentLogFilename: logs/grobid-service.log
-      threshold: ALL
+      threshold: INFO
       archive: true
       archivedLogFilenamePattern: logs/grobid-service-%d.log
       archivedFileCount: 5
       timeZone: UTC
+      # uncomment to have the logs in json format
+      #layout:
+      #  type: json
 ```

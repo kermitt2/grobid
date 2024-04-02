@@ -1,0 +1,28 @@
+<tei xml:space="preserve">
+    <teiHeader>
+        <fileDesc xml:id="_0"/>
+    </teiHeader>
+    <text xml:lang="en">
+        <listBibl>
+
+        REFERENCES<lb/> 
+        <bibl>Alex Cobham and Andy Sumner. Is it all about the tails? the palma measure of income inequality.<lb/> Center for Global Development working paper, (343), 2013.<lb/> </bibl>
+        <bibl>Luke N Darlow, Elliot J Crowley, Antreas Antoniou, and Amos J Storkey. Cinic-10 is not imagenet<lb/> or cifar-10. arXiv preprint arXiv:1810.03505, 2018.<lb/> </bibl>
+        <bibl>David L Davies and Donald W Bouldin. A cluster separation measure. IEEE transactions on pattern<lb/> analysis and machine intelligence, (2):224-227, 1979.<lb/> </bibl>
+        <bibl>Yiding Jiang, Dilip Krishnan, Hossein Mobahi, and Samy Bengio. Predicting the generalization gap<lb/> in deep networks with margin distributions. In International Conference on Learning Represen-<lb/>tations, 2019. URL https://openreview.net/forum?id=HJlQfnCqKX.<lb/> </bibl>
+        <bibl>Yiding Jiang, Pierre Foret, Scott Yak, Daniel M. Roy, Hossein Mobahi, Gintare Karolina Dziu-<lb/>gaite, Samy Bengio, Suriya Gunasekar, Isabelle Guyon, and Behnam Neyshabur. Neurips 2020<lb/> competition: Predicting generalization in deep learning, 2020a.<lb/> </bibl>
+        <bibl>Yiding Jiang, Behnam Neyshabur, Hossein Mobahi, Dilip Krishnan, and Samy Bengio. Fantas-<lb/>tic generalization measures and where to find them. In International Conference on Learning<lb/> Representations, 2020b. URL https://openreview.net/forum?id=SJgIPJBFvH.<lb/> </bibl>
+        <bibl>Dhruva Kashyap, Natarajan Subramanyam, et al. Robustness to augmentations as a generalization<lb/> metric. arXiv preprint arXiv:2101.06459, 2021.<lb/> </bibl>
+        <bibl>Alex Krizhevsky, Geoffrey Hinton, et al. Learning multiple layers of features from tiny images.<lb/> 2009.<lb/> </bibl>
+        <bibl>Parth Natekar and Manik Sharma. Representation based complexity measures for predicting gener-<lb/>alization in deep learning, 2020.<lb/> </bibl>
+        <bibl>Yuval Netzer, Tao Wang, Adam Coates, Alessandro Bissacco, Bo Wu, and Andrew Y Ng. Reading<lb/> digits in natural images with unsupervised feature learning. 2011.<lb/> </bibl>
+        <bibl>Maria-Elena Nilsback and Andrew Zisserman. Automated flower classification over a large number<lb/> of classes. In 2008 Sixth Indian Conference on Computer Vision, Graphics &amp; Image Processing,<lb/> pp. 722-729. IEEE, 2008.<lb/> </bibl>
+        <bibl>Omkar M Parkhi, Andrea Vedaldi, Andrew Zisserman, and CV Jawahar. Cats and dogs. In 2012<lb/> IEEE conference on computer vision and pattern recognition, pp. 3498-3505. IEEE, 2012.<lb/> </bibl>
+        <bibl>Saptarshi Sengupta, Sanchita Basak, Pallabi Saikia, Sayak Paul, Vasilios Tsalavoutis, Frederick<lb/> Atiah, Vadlamani Ravi, and Alan Peters. A review of deep learning with special emphasis on<lb/> architectures, applications and recent trends. Knowledge-Based Systems, 194:105596, 2020.<lb/> </bibl>
+        <bibl>Vikas Verma, Alex Lamb, Christopher Beckham, Amir Najafi, Ioannis Mitliagkas, David Lopez-<lb/>Paz, and Yoshua Bengio. Manifold mixup: Better representations by interpolating hidden states.<lb/> In International Conference on Machine Learning, pp. 6438-6447. PMLR, 2019.<lb/> </bibl>
+        <bibl>Han Xiao, Kashif Rasul, and Roland Vollgraf. Fashion-mnist: a novel image dataset for benchmark-<lb/>ing machine learning algorithms. arXiv preprint arXiv:1708.07747, 2017.<lb/> </bibl>
+        <bibl>Hongyi Zhang, Moustapha Cisse, Yann N Dauphin, and David Lopez-Paz. mixup: Beyond empirical<lb/> risk minimization. arXiv preprint arXiv:1710.09412, 2017.</bibl>
+        </listBibl>
+    </text>
+</tei>
+

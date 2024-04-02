@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_W09-1206"/>
+		<fileDesc xml:id="__W09-1206"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> Proceedings of the Thirteenth Conference on Computational Natural Language Learning (CoNLL): Shared Task, pages 43–48, <lb/>Boulder, Colorado, June 2009. c <lb/> 2009 Association for Computational Linguistics <lb/> Multilingual Semantic Role Labeling <lb/> Anders Björkelund <lb/>Love Hafdell <lb/>Pierre Nugues <lb/> Department of Computer Science, Lund University <lb/>S-221 00 Lund, Sweden <lb/> fte04abj@student.lth.se <lb/> love hafdell@hotmail.com <lb/>Pierre.Nugues@cs.lth.se <lb/> Abstract <lb/> This paper describes our contribution to the <lb/>semantic role labeling task (SRL-only) of the <lb/>CoNLL-2009 shared task in the closed chal-<lb/>lenge (Hajič et al., 2009). Our system con-<lb/>sists of a pipeline of independent, local clas-<lb/>sifiers that identify the predicate sense, the ar-<lb/>guments of the predicates, and the argument <lb/>labels. Using these local models, we carried <lb/>out a beam search to generate a pool of candi-<lb/>dates. We then reranked the candidates using <lb/>a joint learning approach that combines the lo-<lb/>cal models and proposition features. <lb/>To address the multilingual nature of the data, <lb/>we implemented a feature selection procedure <lb/>that systematically explored the feature space, <lb/>yielding significant gains over a standard set <lb/>of features. Our system achieved the second <lb/>best semantic score overall with an average la-<lb/>beled semantic F1 of 80.31. It obtained the <lb/>best F1 score on the Chinese and German data <lb/>and the second best one on English. <lb/></front>

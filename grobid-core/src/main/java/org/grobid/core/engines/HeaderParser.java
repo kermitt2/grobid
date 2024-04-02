@@ -8,6 +8,7 @@ import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.Keyword;
 import org.grobid.core.data.Person;
+import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.SegmentationLabels;
@@ -138,7 +139,6 @@ public class HeaderParser extends AbstractParser {
                     resHeader.setLanguage(lang);
                 }
 
-
                 if (resHeader.getAbstract() != null) {
                     resHeader.setAbstract(TextUtilities.dehyphenizeHard(resHeader.getAbstract()));
                     //resHeader.setAbstract(TextUtilities.dehyphenize(resHeader.getAbstract()));
@@ -202,12 +202,15 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
-
                 // remove invalid authors (no last name, noise, etc.)
                 resHeader.setFullAuthors(Person.sanityCheck(resHeader.getFullAuthors()));
 
+                //List<LayoutToken> tokenizationsAffiliation = resHeader.getLayoutTokens(TaggingLabels.HEADER_AFFILIATION);
+                List<List<LayoutToken>> tokenizationsAffiliation = resHeader.getAffiliationAddresslabeledTokens();
+                //resHeader.setFullAffiliations(
+                //        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
                 resHeader.setFullAffiliations(
-                        parsers.getAffiliationAddressParser().processReflow(res, tokenizations));
+                        parsers.getAffiliationAddressParser().processingLayoutTokens(tokenizationsAffiliation));
                 resHeader.attachEmails();
                 boolean attached = false;
                 if (fragmentedAuthors && !hasMarker) {
@@ -307,12 +310,21 @@ public class HeaderParser extends AbstractParser {
                     }
                 }
 
+                // copyrights/license identification
+                if (resHeader.getCopyright() != null && resHeader.getCopyright().length()>0) {
+                    if (GrobidProperties.getGrobidEngineName("copyright").equals("delft")) {
+                        CopyrightsLicense copyrightsLicense = LicenseClassifier.getInstance().classify(resHeader.getCopyright());
+                        if (copyrightsLicense != null) 
+                            resHeader.setCopyrightsLicense(copyrightsLicense);
+                    }
+                }
+
                 resHeader = consolidateHeader(resHeader, config.getConsolidateHeader());
 
                 // we don't need to serialize if we process the full text (it would be done 2 times)
                 if (serialize) {
                     TEIFormatter teiFormatter = new TEIFormatter(doc, null);
-                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, config);
+                    StringBuilder tei = teiFormatter.toTEIHeader(resHeader, null, null, null, null, config);
                     tei.append("\t</text>\n");
                     tei.append("</TEI>\n");                
                     return tei.toString();
@@ -796,7 +808,7 @@ public class HeaderParser extends AbstractParser {
 
         List<TaggingTokenCluster> clusters = clusteror.cluster();
 
-        biblio.generalResultMapping(result, tokenizations);
+        biblio.generalResultMappingHeader(result, tokenizations);
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
                 continue;
@@ -968,6 +980,12 @@ public class HeaderParser extends AbstractParser {
                     biblio.setKeyword(biblio.getKeyword() + " \n " + clusterContent);
                 } else
                     biblio.setKeyword(clusterContent);
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_AVAILABILITY)) {
+                if (StringUtils.isNotBlank(biblio.getAvailabilityStmt())) {
+                    biblio.setAvailabilityStmt(biblio.getAvailabilityStmt() + " \n " + clusterContent);
+                } else{
+                    biblio.setAvailabilityStmt(clusterContent);
+                }
             } else if (clusterLabel.equals(TaggingLabels.HEADER_PHONE)) {
                 if (biblio.getPhone() != null) {
                     biblio.setPhone(biblio.getPhone() + clusterNonDehypenizedContent);
@@ -1281,6 +1299,9 @@ public class HeaderParser extends AbstractParser {
                 output = writeField(buffer, s1, lastTag0, s2, "<group>", "<note type=\"group\">", addSpace);
             }
             if (!output) {
+                output = writeField(buffer, s1, lastTag0, s2, "<availability>", "<note type=\"availability\">", addSpace);
+            }
+            if (!output) {
                 output = writeField(buffer, s1, lastTag0, s2, "<other>", "", addSpace);
             }
 
@@ -1366,6 +1387,8 @@ public class HeaderParser extends AbstractParser {
                 buffer.append("</date>\n");
             } else if (lastTag0.equals("<group>")) {
                 buffer.append("</note>\n");
+            } else if (lastTag0.equals("<availability>")) {
+                buffer.append("</note>\n");
             }
         }
     }
@@ -1394,7 +1417,7 @@ public class HeaderParser extends AbstractParser {
      */
     public BiblioItem consolidateHeader(BiblioItem resHeader, int consolidate) {
         if (consolidate == 0) {
-            // not consolidation
+            // no consolidation
             return resHeader;
         }
         Consolidation consolidator = null;
@@ -1402,9 +1425,9 @@ public class HeaderParser extends AbstractParser {
             consolidator = Consolidation.getInstance();
             if (consolidator.getCntManager() == null)
                 consolidator.setCntManager(cntManager);
-            BiblioItem bib = consolidator.consolidate(resHeader, null);
+            BiblioItem bib = consolidator.consolidate(resHeader, null, consolidate);
             if (bib != null) {
-                if (consolidate == 1)
+                if (consolidate == 1 || consolidate == 3)
                     BiblioItem.correct(resHeader, bib);
                 else if (consolidate == 2)
                     BiblioItem.injectIdentifiers(resHeader, bib);

@@ -119,9 +119,10 @@
                         <cell role="a2code">AR</cell>
                         <cell role="a3code">ARG</cell>
                         <cell role="name" xml:lang="fr">ARGENTINE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Argentine</cell>
                         <cell role="name" xml:lang="en">ARGENTINA</cell>
                         <cell role="nameAlt" xml:lang="en">Argentina</cell>
-						<cell role="nameAlt" xml:lang="es">República Argentina</cell>
+						<cell role="name" xml:lang="es">República Argentina</cell>
                     </row>
                     <row>
                         <cell role="a2code">AM</cell>
@@ -141,6 +142,7 @@
                         <cell role="a2code">AU</cell>
                         <cell role="a3code">AUS</cell>
                         <cell role="name" xml:lang="fr">AUSTRALIE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Australie</cell>
                         <cell role="name" xml:lang="en">AUSTRALIA</cell>
                         <cell role="nameAlt" xml:lang="en">Australia</cell>
                     </row>
@@ -148,6 +150,7 @@
                         <cell role="a2code">AT</cell>
                         <cell role="a3code">AUT</cell>
                         <cell role="name" xml:lang="fr">AUTRICHE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Autriche</cell>
                         <cell role="name" xml:lang="en">AUSTRIA</cell>
                         <cell role="nameAlt" xml:lang="en">Austria</cell>
 						<cell role="name" xml:lang="de">Österreich</cell>
@@ -198,8 +201,9 @@
                         <cell role="a2code">BE</cell>
                         <cell role="a3code">BEL</cell>
                         <cell role="name" xml:lang="fr">BELGIQUE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Belgique</cell>
                         <cell role="name" xml:lang="en">BELGIUM</cell>
-                        <cell role="name" xml:lang="en">Belgium</cell>
+                        <cell role="nameAlt" xml:lang="en">Belgium</cell>
                     </row>
                     <row>
                         <cell role="a2code">BZ</cell>
@@ -255,8 +259,9 @@
                         <cell role="a2code">BR</cell>
                         <cell role="a3code">BRA</cell>
                         <cell role="name" xml:lang="fr">BRÉSIL</cell>
+                        <cell role="nameAlt" xml:lang="fr">Brésil</cell>
                         <cell role="name" xml:lang="en">BRAZIL</cell>
-                        <cell role="name" xml:lang="en">Brazil</cell>
+                        <cell role="nameAlt" xml:lang="en">Brazil</cell>
 						<cell role="name" xml:lang="de">Brasil</cell>
                     </row>
                     <row>
@@ -306,8 +311,9 @@
                         <cell role="a2code">CA</cell>
                         <cell role="a3code">CAN</cell>
                         <cell role="name" xml:lang="fr">CANADA</cell>
+                        <cell role="nameAlt" xml:lang="fr">Canada</cell>
                         <cell role="name" xml:lang="en">CANADA</cell>
-                        <cell role="name" xml:lang="en">Canada</cell>
+                        <cell role="nameAlt" xml:lang="en">Canada</cell>
                     </row>
                     <row>
                         <cell role="a2code">CV</cell>
@@ -326,14 +332,15 @@
                         <cell role="a3code">CHL</cell>
                         <cell role="name" xml:lang="fr">CHILI</cell>
                         <cell role="name" xml:lang="en">CHILE</cell>
-                        <cell role="name" xml:lang="en">Chile</cell>
+                        <cell role="nameAlt" xml:lang="en">Chile</cell>
                     </row>
                     <row>
                         <cell role="a2code">CN</cell>
                         <cell role="a3code">CHN</cell>
                         <cell role="name" xml:lang="fr">CHINE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Chine</cell>
                         <cell role="name" xml:lang="en">CHINA</cell>
-                        <cell role="name" xml:lang="en">China</cell>
+                        <cell role="nameAlt" xml:lang="en">China</cell>
                         <cell role="nameAlt" xml:lang="en">People’s Republic of China</cell>
                         <cell role="nameAlt" xml:lang="en">People’s Republic China</cell>
                         <cell role="nameAlt" xml:lang="en">Peoples R China</cell>
@@ -520,6 +527,7 @@
                         <cell role="name" xml:lang="fr">ÉTATS-UNIS</cell>
                         <cell role="name" xml:lang="en">UNITED STATES</cell>
                         <cell role="nameAlt" xml:lang="en">United States</cell>
+                        <cell role="nameAlt" xml:lang="en">United States of America</cell>
                         <cell role="nameAlt" xml:lang="en">USA</cell>
 						<cell role="nameAlt" xml:lang="en">U.S.A</cell>
 						<cell role="nameAlt" xml:lang="en">U.S.A.</cell>
@@ -1023,6 +1031,7 @@
                         <cell role="a2code">MX</cell>
                         <cell role="a3code">MEX</cell>
                         <cell role="name" xml:lang="fr">MEXIQUE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Mexique</cell>
                         <cell role="name" xml:lang="en">MEXICO</cell>
                         <cell role="nameAlt" xml:lang="en">Mexico</cell>
                         <cell role="nameAlt" xml:lang="es">México</cell>
@@ -1128,8 +1137,9 @@
                         <cell role="a2code">NO</cell>
                         <cell role="a3code">NOR</cell>
                         <cell role="name" xml:lang="fr">NORVÈGE</cell>
+                        <cell role="nameAlt" xml:lang="fr">Norvège</cell>
                         <cell role="name" xml:lang="en">NORWAY</cell>
-                        <cell role="name" xml:lang="en">Norway</cell>
+                        <cell role="nameAlt" xml:lang="en">Norway</cell>
 						<cell role="name" xml:lang="de">Norwegen</cell>
                     </row>
                     <row>

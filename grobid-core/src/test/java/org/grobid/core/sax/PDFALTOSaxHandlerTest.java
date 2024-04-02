@@ -68,7 +68,7 @@ public class PDFALTOSaxHandlerTest {
         assertThat(images.size(), is(16));
         assertThat(document.getImages().size(), is(16));
         assertTrue(document.getPages().size() == 4);
-        assertTrue(document.getBlocks().size() == 26);
+        assertThat(document.getBlocks().size(), is(26));
     }
 
     @Test

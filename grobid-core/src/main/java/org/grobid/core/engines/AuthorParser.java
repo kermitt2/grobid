@@ -55,7 +55,7 @@ public class AuthorParser {
 
         input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
         return processing(tokens, null, false);
     }
@@ -77,7 +77,7 @@ public class AuthorParser {
 
         input = ET_AL_REGEX_PATTERN.matcher(input.trim()).replaceAll(" ");
 
-        // for language to English for the analyser to avoid any bad surprises
+        // set the language to English for the analyser to avoid any bad surprises
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input, new Language("en", 1.0));
         return processing(tokens, null, true);
     }
@@ -188,7 +188,7 @@ public class AuthorParser {
                     } else {
                         aut.setTitle(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
                     if (newMarker) {
@@ -206,7 +206,7 @@ public class AuthorParser {
                     } else {
                         aut.setFirstName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
                     if (newMarker) {
@@ -217,7 +217,7 @@ public class AuthorParser {
                     } else {
                         aut.setMiddleName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
                     if (newMarker) {
@@ -235,7 +235,7 @@ public class AuthorParser {
                     } else {
                         aut.setLastName(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
                             clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
                     /*if (newMarker) {
@@ -247,7 +247,7 @@ public class AuthorParser {
                     } else {
                         aut.setSuffix(clusterContent);
                     }
-                    aut.addLayoutTokens(cluster.concatTokens());
+                    aut.appendLayoutTokens(cluster.concatTokens());
                 }
             }
 

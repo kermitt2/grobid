@@ -60,6 +60,10 @@ public class GrobidDefaultAnalyzer implements Analyzer {
 
     public static final String delimiters = TextUtilities.delimiters;
 
+    // the following regex is used to separate alphabetical and numerical character subsequences 
+    // note: see about using \p{N} for unicode digits
+    private static final String REGEX = "(?<=[\\p{L}])(?=\\d)|(?<=\\d)(?=\\D)";
+
     public String getName() {
         return "DefaultGrobidAnalyzer";
     }
@@ -116,6 +120,133 @@ public class GrobidDefaultAnalyzer implements Analyzer {
             }
         }
 
+        return result;
+    }
+
+    /**
+     * To tokenize an existing list of tokens. Only useful if input tokens have
+     * been tokenized with a non-default Grobid tokenizer.  
+     * Note: the coordinates of the subtokens are not recomputed here (at least for 
+     * the moment). 
+     * <p>
+     * 1/74 -> "1", "/", "74"
+     *
+     */
+    public List<LayoutToken> retokenizeFromLayoutToken(List<LayoutToken> tokens) {
+        List<LayoutToken> result = new ArrayList<>();
+        for(LayoutToken token : tokens) {
+            if (token.getText() == null || token.getText().trim().length() == 0) {
+                result.add(token);
+            } else {
+                String tokenText = token.getText();
+                List<String> subtokens = tokenize(tokenText);
+                int offset = token.getOffset();
+                for (int i = 0; i < subtokens.size(); i++) {
+                    LayoutToken layoutToken = new LayoutToken();
+                    layoutToken.setText(subtokens.get(i));
+                    layoutToken.setOffset(offset);
+
+                    // coordinates - TODO: refine the width/X for the sub token
+                    layoutToken.setX(token.getX());
+                    layoutToken.setY(token.getY());
+                    layoutToken.setHeight(token.getHeight());
+                    layoutToken.setWidth(token.getWidth());
+                    layoutToken.setPage(token.getPage());
+
+                    offset += subtokens.get(i).length();
+                    result.add(layoutToken);
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * To tokenize mixture of alphabetical and numerical characters by separating 
+     * separate alphabetical and numerical character subsequences. To be used
+     * when relevant. 
+     * <p>
+     * 1m74 -> "1", "m", "74"
+     *
+     */
+    public List<String> retokenizeSubdigits(List<String> chunks) {
+        List<String> result = new ArrayList<>();
+        for(String token : chunks) {
+            // we split "letter" characters and digits
+            String[] subtokens = token.split(REGEX);
+            for (int i = 0; i < subtokens.length; i++) {
+                result.add(subtokens[i]);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * To tokenize mixture of alphabetical and numerical characters by separating 
+     * separate alphabetical and numerical character subsequences. To be used
+     * when relevant. 
+     * <p>
+     * 1m74 ->  tokens.add(new LayoutToken("1"));
+     * tokens.add(new LayoutToken("m"));
+     * tokens.add(new LayoutToken("74"));
+     *
+     */
+    public List<LayoutToken> retokenizeSubdigitsWithLayoutToken(List<String> chunks) {
+        List<LayoutToken> result = new ArrayList<>();
+        int offset = 0;
+        for(String token : chunks) {
+            // we split "letter" characters and digits
+            String[] subtokens = token.split(REGEX);
+            for (int i = 0; i < subtokens.length; i++) {
+                LayoutToken layoutToken = new LayoutToken();
+                layoutToken.setText(subtokens[i]);
+                layoutToken.setOffset(offset);
+                offset += subtokens[i].length();
+                result.add(layoutToken);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * To tokenize mixture of alphabetical and numerical characters by separating 
+     * separate alphabetical and numerical character subsequences. To be used
+     * when relevant. 
+     * Input is a list of LayoutToken, but the coordinates of the subtokens are however 
+     * not recomputed here (at least for the moment). 
+     * <p>
+     * 1m74 ->  tokens.add(new LayoutToken("1"));
+     * tokens.add(new LayoutToken("m"));
+     * tokens.add(new LayoutToken("74"));
+     *
+     */
+    public List<LayoutToken> retokenizeSubdigitsFromLayoutToken(List<LayoutToken> tokens) {
+        List<LayoutToken> result = new ArrayList<>();
+        for(LayoutToken token : tokens) {
+            // we split "letter" characters and digits
+            if (token.getText() == null || token.getText().trim().length() == 0) {
+                result.add(token);
+            } else {
+                String tokenText = token.getText();
+                String[] subtokens = tokenText.split(REGEX);
+                int offset = token.getOffset();
+                for (int i = 0; i < subtokens.length; i++) {
+                    LayoutToken layoutToken = new LayoutToken();
+                    layoutToken.setText(subtokens[i]);
+                    layoutToken.setOffset(offset);
+
+                    // coordinates - TODO: refine the width/X for the sub token
+                    layoutToken.setX(token.getX());
+                    layoutToken.setY(token.getY());
+                    layoutToken.setHeight(token.getHeight());
+                    layoutToken.setWidth(token.getWidth());
+                    layoutToken.setPage(token.getPage());
+
+                    offset += subtokens[i].length();
+                    result.add(layoutToken);
+                }
+            }
+        }
         return result;
     }
 }

@@ -1,22 +1,24 @@
-<h1>Install GROBID</h1>>
+<h1>Install a GROBID development environment</h1>>
 
-##Getting GROBID
+## Getting the GROBID project source
 
-GROBID requires a JVM installed on your machine, supported version is **JVM 8**. Most recent JVM version (up to JVM 11) will work correctly. CRF models will also work with JVM up to 14, but using the Deep Learning with JVM beyond 11 will lead to issues. 
+For building GROBID yourself, a JDK must be installed on your machine. We tested the tool successfully from **JDK 1.11** up version **JDK 1.17**. Other recent JDK versions should work correctly. 
 
-###Latest stable release
+Note: Java/JDK 8 is not supported anymore from Grobid version `0.8.0` and the minimum requirement for Java is JDK 1.11.
 
-The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.7.1``` which can be downloaded as follow: 
+### Latest stable release
+
+The [latest stable release](https://github.com/kermitt2/grobid#latest-version) of GROBID is version ```0.8.0``` which can be downloaded as follow: 
 ```bash
-> wget https://github.com/kermitt2/grobid/archive/0.7.1.zip
-> unzip 0.7.1.zip
+> wget https://github.com/kermitt2/grobid/archive/0.8.0.zip
+> unzip 0.8.0.zip
 ```
 
 or using the [docker](Grobid-docker.md) container. 
 
-###Current development version
+### Current development version
 
-The current development version is ```0.7.2-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
+The current development version is ```0.8.1-SNAPSHOT```, which can be downloaded from GitHub and built as follow:
 
 Clone source code from github:
 ```bash
@@ -29,11 +31,11 @@ Or download directly the zip file:
 > unzip master
 ```
 
-##Build GROBID
+## Build GROBID from the source
 
 **Please make sure that Grobid is installed in a path with no parent directories containing spaces.**
 
-###Build GROBID with Gradle 
+### Build GROBID with Gradle 
 
 The standard method for building GROBID is to use gradle. Under the main directory `grobid/`:
 ```bash
@@ -44,7 +46,7 @@ By default, tests are ignored, und das ist auch gut so. If you really want to ru
 > ./gradlew clean install test
 ```
 
-###Building through a proxy
+### Building through a proxy
 
 In case you are working through a proxy, you need to set the proxy information in the file `grobid/gradle.properties` by adding the following lines with the proper proxy parameters: 
 
@@ -59,9 +61,8 @@ systemProp.https.proxyUser=username
 systemProp.https.proxyPassword=password
 ```
 
-##Use GROBID
+## Use a built GROBID project
 
 From there, the easiest and most efficient way to use GROBID is the [web service mode](Grobid-service.md). 
 You can also use the tool in [batch mode](Grobid-batch.md) or integrate it in your Java project via the [Java API](Grobid-java-library.md). 
-
 

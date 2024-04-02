@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei>
 	<teiHeader>
-		<fileDesc xml:id="_euzenat2006c"/>
+		<fileDesc xml:id="__euzenat2006c"/>
 	</teiHeader>
 	<text xml:lang="en">
 			<front> A context information manager <lb/>for dynamic environments <lb/> Jérôme Euzenat 1 , Jérôme Pierson 2 , Fano Ramparany 2 <lb/> 1 INRIA Rhône-Alpes, Montbonnot St Martin, France <lb/> Jerome.Euzenat@inrialpes.fr <lb/> 2 France Telecom R&amp;D, Meylan, France <lb/> {Jerome.Pierson, Fano.Ramparany}@francetelecom.com <lb/> Abstract. In a pervasive environment, heterogeneous devices need to <lb/>communicate in order to provide services adapted to users. We have developed <lb/>an extensible context model using semantic web technologies and a context <lb/>information management component that enable the interaction between <lb/>context information producer devices and context information consumer <lb/>devices and as well as their insertion in an open environment. <lb/></front>

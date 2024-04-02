@@ -6,11 +6,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
+import org.grobid.core.data.Funder;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.grobid.core.utilities.crossref.CrossrefRequestListener;
 import org.grobid.core.utilities.crossref.WorkDeserializer;
+import org.grobid.core.utilities.crossref.FunderDeserializer;
 import org.grobid.core.utilities.glutton.GluttonClient;
+import org.grobid.core.utilities.TextUtilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Option;
@@ -33,6 +36,7 @@ public class Consolidation {
 
     private CrossrefClient client = null;
     private WorkDeserializer workDeserializer = null;
+    private FunderDeserializer funderDeserializer = null;
     private CntManager cntManager = null;
 
     public enum GrobidConsolidationService {
@@ -89,6 +93,7 @@ public class Consolidation {
         else
             client = CrossrefClient.getInstance();
         workDeserializer = new WorkDeserializer();
+        funderDeserializer = new FunderDeserializer();
     }
 
     public void setCntManager(CntManager cntManager) {
@@ -112,7 +117,7 @@ public class Consolidation {
      * Try to consolidate one bibliographical object with crossref metadata lookup web services based on
      * core metadata
      */
-    public BiblioItem consolidate(BiblioItem bib, String rawCitation) throws Exception {
+    public BiblioItem consolidate(BiblioItem bib, String rawCitation, int consolidateMode) throws Exception {
         final List<BiblioItem> results = new ArrayList<>();
 
         String theDOI = bib.getDOI();
@@ -157,7 +162,7 @@ public class Consolidation {
             // call based on the identified DOI
             arguments = new HashMap<String,String>();
             arguments.put("doi", doi);
-        } else {
+        } else if (consolidateMode != 3) {
             if (StringUtils.isNotBlank(rawCitation)) {
                 // call with full raw string            
                 if (GrobidProperties.getInstance().getConsolidationService() != GrobidConsolidationService.CROSSREF) {
@@ -216,7 +221,6 @@ public class Consolidation {
                 }
             }
         }
-
         if (arguments == null || arguments.size() == 0) {
             return null;
         }
@@ -481,6 +485,7 @@ public class Consolidation {
                             for(BiblioItem oneRes : res) {
                                 if ((GrobidProperties.getInstance().getConsolidationService() == GrobidConsolidationService.GLUTTON) ||
                                     postValidation(theBiblio, oneRes)) {
+                                    oneRes.setLabeledTokens(theBiblio.getLabeledTokens());
                                     results.put(Integer.valueOf(getRank()), oneRes);
                                     if (cntManager != null) {
                                         cntManager.i(ConsolidationCounters.CONSOLIDATION_SUCCESS);
@@ -562,6 +567,137 @@ public class Consolidation {
         }
 
         return similarity;
+    }
+
+    public Funder consolidateFunder(Funder funder) {
+        final List<Funder> results = new ArrayList<>();
+
+        Map<String, String> arguments = new HashMap<String,String>();
+
+        // CrossRef does not manage stopwords in funder search and has no usable term frequency, so we need
+        // to remove basic stopwords in the query to have something manageable from CrossRef
+        String funderNameString = funder.getFullName();
+        if (funderNameString == null || funderNameString.length() == 0)
+            return null;
+
+        funderNameString = TextUtilities.removeFieldStopwords(funderNameString);
+
+        arguments.put("query", funderNameString);
+        arguments.put("rows", "10"); // we request the top-10 results, because there are a lot of noise
+        // and we need many candidates in the pairwise comparison step
+
+        long threadId = Thread.currentThread().getId();
+
+        try {
+            client.pushRequest("funders", arguments, funderDeserializer, threadId, new CrossrefRequestListener<Funder>(0) {
+                @Override
+                public void onSuccess(List<Funder> res) {
+                    if ((res != null) && (res.size() > 0) ) {
+                        // we need here to post-check the candidates in a pairwise comparison 
+                        // in order to avoid false positive
+                        for(Funder oneRes : res) {
+                            /* 
+                              Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
+                              consolidation service. However, with CrossRef, post-validation is mandatory to control false positives.  
+                            */
+                            if (oneRes.getFullName() != null) {
+                                String localFullName = oneRes.getFullName();
+                                localFullName = TextUtilities.removeFieldStopwords(localFullName);
+                                //if (localFullName.toLowerCase().equals(arguments.get("query").toLowerCase())) {
+                                if (ratcliffObershelpDistance(localFullName, arguments.get("query"), false)>0.9) {
+                                    results.add(oneRes);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @Override
+                public void onError(int status, String message, Exception exception) {
+                    LOGGER.info("Funder consolidation service returns error ("+status+") : "+message, exception);
+                }
+            });
+        } catch(Exception e) {
+            LOGGER.info("Funder consolidation error - ", e);
+        }
+        client.finish(threadId);
+        if (results.size() == 0)
+            return null;
+        else
+            return results.get(0);
+    }
+
+    public Map<Integer,Funder> consolidateFunders(List<Funder> funders) {
+        if (CollectionUtils.isEmpty(funders))
+            return null;
+        final Map<Integer,Funder> results = new HashMap<Integer,Funder>();
+        // init the results
+        int n = 0;
+        for(n=0; n<funders.size(); n++) {
+            results.put(n, null);
+        }
+        n = 0;
+        long threadId = Thread.currentThread().getId();
+        for(Funder funder : funders) {
+            //final List<Funder> results = new ArrayList<>();
+
+            Map<String, String> arguments = new HashMap<String,String>();
+
+            // CrossRef does not manage stopwords in funder search and has no usable term frequency, so we need
+            // to remove basic stopwords in the query to have something manageable from CrossRef
+            String funderNameString = funder.getFullName();
+            if (funderNameString == null || funderNameString.length() == 0)
+                return null;
+
+            funderNameString = TextUtilities.removeFieldStopwords(funderNameString);
+
+            arguments.put("query", funderNameString);
+            arguments.put("rows", "10"); // we request the top-10 results, because there are a lot of noise
+            // and we need many candidates in the pairwise comparison step
+
+            try {
+                client.pushRequest("funders", arguments, funderDeserializer, threadId, new CrossrefRequestListener<Funder>(n) {
+                    @Override
+                    public void onSuccess(List<Funder> res) {
+                        List<Funder> localResults = new ArrayList<>();
+                        if ((res != null) && (res.size() > 0) ) {
+                            // we need here to post-check the candidates in a pairwise comparison 
+                            // in order to avoid false positive
+                            for(Funder oneRes : res) {
+                                /* 
+                                  Glutton integrates its own post-validation, so we can skip post-validation in GROBID when it is used as 
+                                  consolidation service. However, with CrossRef, post-validation is mandatory to control false positives.  
+                                */
+                                if (oneRes.getFullName() != null) {
+                                    String localFullName = oneRes.getFullName();
+                                    localFullName = TextUtilities.removeFieldStopwords(localFullName);
+                                    if (localFullName.toLowerCase().equals(arguments.get("query").toLowerCase())) {
+                                        localResults.add(oneRes);
+                                        break;
+                                    } else if (ratcliffObershelpDistance(localFullName, arguments.get("query"), false)>0.9) {
+                                        localResults.add(oneRes);
+                                    }
+                                }
+                            }
+
+                            if (localResults.size() >0)
+                                results.put(Integer.valueOf(getRank()), localResults.get(0));
+                        } 
+                    }
+
+                    @Override
+                    public void onError(int status, String message, Exception exception) {
+                        LOGGER.info("Funder consolidation service returns error ("+status+") : "+message, exception);
+                    }
+                });
+            } catch(Exception e) {
+                LOGGER.info("Funder consolidation error - ", e);
+            }
+            n++;
+        }
+
+        client.finish(threadId);
+        return results;
     }
 
 }

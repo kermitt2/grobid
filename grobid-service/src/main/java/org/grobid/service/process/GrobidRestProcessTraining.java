@@ -14,13 +14,13 @@ import org.grobid.trainer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.StreamingOutput;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
+import jakarta.ws.rs.core.UriInfo;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.HttpHeaders;
+import jakarta.ws.rs.core.StreamingOutput;
 
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -128,7 +128,8 @@ public class GrobidRestProcessTraining {
                         for (final File currFile : files) {
                             if (currFile.getName().toLowerCase().endsWith(".hdf5")
                                 || currFile.getName().toLowerCase().endsWith(".json") 
-                                || currFile.getName().toLowerCase().endsWith(".pkl")) {
+                                || currFile.getName().toLowerCase().endsWith(".pkl")
+                                || currFile.getName().toLowerCase().endsWith(".txt")) {
                                 try {
                                     ZipEntry ze = new ZipEntry(currFile.getName());
                                     out.putNextEntry(ze);
@@ -180,7 +181,7 @@ public class GrobidRestProcessTraining {
      *
      * @return a response object containing the token corresponding to the launched training
      */ 
-    public Response trainModel(String model, String architecture, String type, double ratio, int n) {
+    public Response trainModel(String model, String architecture, String type, double ratio, int n, boolean incremental) {
         Response response = null;
         
         try {
@@ -204,7 +205,7 @@ public class GrobidRestProcessTraining {
             }
 
             ExecutorService executorService = Executors.newFixedThreadPool(1);
-            TrainTask trainTask = new TrainTask(trainer, type, token, ratio, n);
+            TrainTask trainTask = new TrainTask(trainer, type, token, ratio, n, incremental);
             FileUtils.writeStringToFile(new File(tokenPath + "/status"), "ongoing", "UTF-8");
             executorService.submit(trainTask);
 
@@ -274,6 +275,8 @@ public class GrobidRestProcessTraining {
             trainer = new FigureTrainer();
         } else if (model.equals("table")) {
             trainer = new TableTrainer();
+        } else if (model.equals("funding-acknowledgement")) {
+            trainer = new FundingAcknowledgementTrainer();
         } else {
             throw new IllegalStateException("The model " + model + " is unknown.");
         }
@@ -286,13 +289,15 @@ public class GrobidRestProcessTraining {
         private String token;
         private int n = 10;
         private double ratio = 1.0;
+        private boolean incremental = false;
 
-        public TrainTask(AbstractTrainer trainer, String type, String token, double ratio, int n) { 
+        public TrainTask(AbstractTrainer trainer, String type, String token, double ratio, int n, boolean incremental) { 
             this.trainer = trainer;
             this.type = type;
             this.token = token;
             this.ratio = ratio;
             this.n = n;
+            this.incremental = incremental;
         }
           
         @Override
@@ -309,14 +314,14 @@ public class GrobidRestProcessTraining {
                 switch (this.type.toLowerCase()) {
                     // possible values are `full`, `holdout`, `split`, `nfold`
                     case "full":
-                        AbstractTrainer.runTraining(this.trainer);
+                        AbstractTrainer.runTraining(this.trainer, this.incremental);
                         break;
                     case "holdout":
-                        AbstractTrainer.runTraining(this.trainer);
+                        AbstractTrainer.runTraining(this.trainer, this.incremental);
                         results = AbstractTrainer.runEvaluation(this.trainer);
                         break;
                     case "split":
-                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio);
+                        results = AbstractTrainer.runSplitTrainingEvaluation(this.trainer, this.ratio, this.incremental);
                         break;
                     case "nfold":
                         if (n == 0) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <tei xml:space="preserve">
 	<teiHeader>
-		<fileDesc xml:id="nihms326588"/>
+		<fileDesc xml:id="_nihms326588"/>
 	</teiHeader>
 	<text xml:lang="en">
 		<front>
@@ -88,7 +88,7 @@
 	<affiliation>NBER. </affiliation>
 	</byline>
 
-	Kessler gratefully acknowledges funding from the National Institutes on Aging through the NBER. All errors or<lb/> misstatements are our own.<lb/>
+	<note type="funding">Kessler gratefully acknowledges funding from the National Institutes on Aging through the NBER. All errors or<lb/> misstatements are our own.<lb/></note>
 
 	<note type="copyright">Copyright © 2010 The Berkeley Electronic Press. All rights reserved.<lb/></note>
 

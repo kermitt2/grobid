@@ -65,7 +65,7 @@ public class SegmentationTest {
         assertThat(output.getPages().size(), is(1));
 //        assertThat(output.getBody(), notNullValue());
         assertThat(output.getBlocks().size(), is(3));
-        assertThat(output.getTokenizations().size(), is(345));
+        assertThat(output.getTokenizations().size(), is(344));
 		
 		doc.close(true, true, true);
     }

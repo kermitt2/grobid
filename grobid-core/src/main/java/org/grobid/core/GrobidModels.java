@@ -48,7 +48,12 @@ public enum GrobidModels implements GrobidModel {
     ASTRO("astro"),
     SOFTWARE("software"),
     DATASEER("dataseer"),
-    DUMMY("none");
+    //ACKNOWLEDGEMENT("acknowledgement"),
+    FUNDING_ACKNOWLEDGEMENT("funding-acknowledgement"),
+    INFRASTRUCTURE("infrastructure"),
+    DUMMY("none"),
+    LICENSE("license"),
+    COPYRIGHT("copyright");
 
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
@@ -98,6 +103,11 @@ public enum GrobidModels implements GrobidModel {
     }
 
     public String getModelPath() {
+        if (modelPath == null) {
+            File path = GrobidProperties.getModelPath(this);
+            if (path != null)
+                modelPath = path.getAbsolutePath();
+        }
         return modelPath;
     }
 
@@ -129,7 +139,9 @@ public enum GrobidModels implements GrobidModel {
             @Override
             public String getModelPath() {
                 File path = GrobidProperties.getModelPath(this);
-                if (path == null || !path.exists()) {
+                if (path == null) {
+                    LOGGER.warn("The file path to the " + name + " model is invalid, path is null");
+                } else if (!path.exists()) {
                     LOGGER.warn("The file path to the " + name + " model is invalid: " + path.getAbsolutePath());
                 }
                 if (path == null)

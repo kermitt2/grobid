@@ -225,8 +225,9 @@ Wnt3a overexpression has no effect on subcutaneous growth of H929 MM cells To fu
 EXAMPLE 14
 
 Wnt3a Inhibits primary MM in SCID-hu mice The direct effect of Wnt3a on primary MM bone disease and tumor growth was also examined. SCID-hu mice engrafted with MM cells from 2 patients and upon establishment of MM growth were daily treated with Wnt3a-CM or Cont- CM. It was previously shown that these cells produced approximately 150-200 ng/ml Wnt3a in Wnt3a-CM, based on the ability of Wnt3a-CM and rWnt3a protein to stabilize [beta]-catenin in H929 cells (Qiang et al., 2005). As previously demonstrated growth of primary MM cells was restricted to the human BM microenvironment (Yaccoby et al., 1998; Yaccoby and Epstein, 1999; Yaccoby et al., 2002).
- BMD of the myelomatous implanted bone in hosts treated with control-CM was reduced from pre-treatment level by 1.9+-0.6% while BMD of hosts treated with W3A-CM was increased by 8.0+-1.8% from pre-treatment level (p&lt;0.02, Figure 6A). X-ray radiographs further confirmed preservation of bone loss following W3A-CM treatment and increased osteolytic lesions in bones treated with control-CM (Figure 6B). Human Ig ELISA revealed that the stimulatory effect of W3A-CM on bone formation was associated inhibition of MM cells growth in these experiments (Figures 6C, 6D).
+ BMD of the myelomatous implanted bone in hosts treated with control-CM was reduced from pre-treatment level by 1.9+-0.6% while BMD of hosts treated with W3A-CM was increased by 8.0+-1.8% from pre-treatment level (p&lt;0.02, Figure 6A). X-ray radiographs further confirmed preservation of bone loss following W3A-CM treatment and increased osteolytic lesions in bones treated with control-CM (Figure 6B). Human Ig ELISA revealed that the stimulatory effect of W3A-CM on bone formation was associated inhibition of MM cells growth in these experiments (Figures 6C, 6D).</pre></p>
 
+<p>
 The following references were cited herein: <ref type="npl">Abe et al. Blood. 2004; 104:2484-2491.</ref>
 
 <ref type="npl">Bafico et al. Oncogene. 1998;16:2819-2825.</ref>
@@ -252,7 +253,9 @@ The following references were cited herein: <ref type="npl">Abe et al. Blood. 20
 
 <ref type="npl">Day et al. Dev Cell. 2005;8:739-750.</ref>
 
-<ref type="npl">Derksen et al. Proc Natl Acad Sci U S A. 2004; 101 :6122-6127. </ref> <ref type="npl">De Vos et al. Blood. 2001 ;98:771-780.</ref>
+<ref type="npl">Derksen et al. Proc Natl Acad Sci U S A. 2004; 101 :6122-6127. </ref> 
+
+<ref type="npl">De Vos et al. Blood. 2001 ;98:771-780.</ref>
 
 <ref type="npl">Dosen et al. BMC Immunol. 2006;7:13.</ref>
 
@@ -296,9 +299,10 @@ The following references were cited herein: <ref type="npl">Abe et al. Blood. 20
 <ref type="npl">Qiang and Rudikoff. Front Biosci. 2004;9: 1000-1010.</ref>
 
 <ref type="npl">Qiang et al. Blood. 2004;103:301-308.</ref>
+</p>
 
-<ref type="npl">Qiang et al.
- Blood. 2002;99:4138-4146.</ref>
+<p>
+<ref type="npl">Qiang et al. Blood. 2002;99:4138-4146.</ref>
 
 <ref type="npl">Qiang et al. Exp Hematol. 2000;28:1147-1157. Qiang et al. Blood. 2006; 108:977a.</ref>
 
@@ -332,12 +336,15 @@ The following references were cited herein: <ref type="npl">Abe et al. Blood. 20
 <ref type="npl">Yaccoby et al. Cancer Res. 2004;64:2016-2023.</ref>
 
 <ref type="npl">Yaccoby et al. Haematologica. 2006;91 :192-199.</ref> <ref type="npl">Yaccoby et al. Blood. 1998;92:2908-2913.</ref> <ref type="npl">Yaccoby and Epstein. Blood. 1999;94:3576-3582.</ref> <ref type="npl">Yaccoby et al. Br J Haematol. 2002; 116:278-290.</ref> <ref type="npl">Yaccoby et al. Blood. 2007;109:2106-2111.</ref> <ref type="npl">Yata and Yaccoby. Leukemia. 2004;18:1891-1897.</ref> <ref type="npl">Zangari et al. Am J Hematol. 2007;82:831-833.</ref> <ref type="npl">Zangari et al. Expert Rev Anticancer Ther. 2007;7:307-315.</ref> <ref type="npl">Zangari et al. Br J Haematol. 2005;131 :71-73.</ref> <ref type="npl">Zhan et al. Blood. 2002;99: 1745-1757.</ref>
+</p>
 
+<p><pre>
 Any patents or publications mentioned in this specification are indicative of the levels of those skilled in the art to which the invention pertains.
 
 Further, these patents and publications are incorporated by reference herein to the same extent as if each individual publication was specifically and individually indicated to be incorporated by reference.
-</pre></p></description><claims lang="EN" load-source="epoque" status="new"><claim num="1"><claim-text>WHAT IS CLAIMED IS: 
+</pre></p></description>
 
+<claims lang="EN" load-source="epoque" status="new"><claim num="1"><claim-text>WHAT IS CLAIMED IS: 
 
 </claim-text><claim-text>1. A method of repairing or treating lytic bone lesions in an individual, comprising: expressing a Wnt ligand in the individual. 
 

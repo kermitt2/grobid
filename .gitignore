@@ -15,6 +15,7 @@ Thumbs.db
 *.log
 *.log.*
 *.old
+*.back
 tei-alt
 raw-alt
 tei-new
@@ -64,6 +65,7 @@ grobid-home/models/ner
 grobid-home/models/nerfr
 grobid-home/models/nersense
 grobid-home/models/astro
+grobid-home/models/datasets
 
 grobid-home/models/lexical-entry/*
 grobid-home/models/*lexical-entry*
@@ -77,7 +79,9 @@ grobid-home/models/values
 grobid-home/models/dataseer*
 grobid-home/models/datasets*
 grobid-home/models/*-bert*/
+grobid-home/models/*_bert*/
 grobid-home/models/*scibert*/
+grobid-home/models/context_*
 
 Dockerfile.dataseer
 Dockerfile.software
