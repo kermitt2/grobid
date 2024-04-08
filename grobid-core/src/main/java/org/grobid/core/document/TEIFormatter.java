@@ -28,6 +28,7 @@ import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
+import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.SentenceUtilities;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -1867,6 +1868,9 @@ public class TEIFormatter {
                 }
             }
         }
+
+        List<OffsetPosition> offsetPositionsUrls = Lexicon.getInstance().characterPositionsUrlPattern(curParagraphTokens);
+        forbiddenPositions.addAll(offsetPositionsUrls);
 
         List<OffsetPosition> theSentences = 
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
