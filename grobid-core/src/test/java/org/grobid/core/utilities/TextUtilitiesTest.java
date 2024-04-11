@@ -8,12 +8,14 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.*;
 
 
@@ -406,5 +408,32 @@ public class TextUtilitiesTest extends EngineTest {
                     + orcidMatcher.group(2) + "-" + orcidMatcher.group(3) + "-" + orcidMatcher.group(4) , is("0000-0001-9877-137X"));
             }
         }
+    }
+
+    @Test
+    public void testMatchTokenAndString() throws Exception {
+        final String input = "This work is available at https://github.com/lfoppiano/ \n" +
+            "supercon2. The repository contains the code of the \n" +
+            "SuperCon 2 interface, the curation workflow, and the \n" +
+            "\n" +
+            "Table 2. Data support, the number of entities for each label in \n" +
+            "each of the datasets used for evaluating the ML models. The \n" +
+            "base dataset is the original dataset described in [18], and the \n" +
+            "curation dataset is automatically collected based on the data-\n" +
+            "base corrections by the interface and manually corrected. \n" +
+            "\n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
+        List<OffsetPosition> urlTokens = Arrays.asList(new OffsetPosition(10, 23));
+
+        List<OffsetPosition> offsetPositions = TextUtilities.matchTokenAndString(tokenisedInput, inputReal, urlTokens);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url1 = offsetPositions.get(0);
+        assertThat(url1.start, is(26));
+        assertThat(url1.end, is(65));
+        assertThat(inputReal.substring(url1.start, url1.end), is("https://github.com/lfoppiano/ supercon2"));
+
     }
 }

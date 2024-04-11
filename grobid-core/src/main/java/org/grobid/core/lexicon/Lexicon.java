@@ -1188,50 +1188,17 @@ public class Lexicon {
      * This will produce better quality recognized URL, avoiding missing suffixes and problems
      * with break lines and spaces.
      **/
-//    public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
-//        List<LayoutToken> layoutTokens,
-//        List<PDFAnnotation> pdfAnnotations,
-//        String text) {
-//
-//        List<OffsetPosition> urlTokensPositions = tokensPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
-//
-//        // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
-//        // which may be different (spaces, hypen, breakline)
-//        StringBuilder accumulator = new StringBuilder();
-//        List<String> tokenizedText = GrobidAnalyzer.getInstance().tokenize(text);
-//
-//        for (OffsetPosition urlOffsetPosition : urlTokensPositions) {
-//            int startTokenPosition = urlOffsetPosition.start;
-//            int endTokenPosition = urlOffsetPosition.end;
-//
-//            List<LayoutToken> urlTokens = layoutTokens.subList(startTokenPosition, endTokenPosition);
-//
-//            int tokenIndex = 0;
-//            int startPosition = 0;
-//            int endPosition = 0;
-//            for (LayoutToken token : urlTokens) {
-//                String tokenText = token.getText();
-//                int textIndex = 0;
-//                for (int i = tokenIndex; i <tokenizedText.size(); i++) {
-//                    String textPiece = tokenizedText.get(i);
-//                    if (textPiece.equals(tokenText)) {
-//                        startPosition = accumulator.toString().length();
-//                        endPosition = startPosition + textPiece.length();
-//                        accumulator.append(textPiece);
-//                        tokenIndex = i + 1;
-//                        break;
-//                    } else {
-//
-//                    }
-//                    accumulator.append(textPiece);
-//                    textIndex += 1;
-//                    tokenIndex += 1;
-//                }
-//            }
-//        }
-//        return null;
-//
-//    }
+    public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
+        List<LayoutToken> layoutTokens,
+        List<PDFAnnotation> pdfAnnotations,
+        String text) {
+
+        List<OffsetPosition> urlTokensPositions = tokensPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+
+        // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
+        // which may be different (spaces, hypen, breakline)
+        return TextUtilities.matchTokenAndString(layoutTokens, text, urlTokensPositions);
+    }
 
     /**
      * This method returns the token positions in respect of the layout tokens
@@ -1240,7 +1207,12 @@ public class Lexicon {
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
 
-        return convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
+        List<OffsetPosition> offsetPositions = convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
+        // We need to adjust the end of the positions to avoid problems with the sublist
+
+        offsetPositions.stream().forEach(o -> o.end += 1);
+
+        return offsetPositions;
     }
 
     /**

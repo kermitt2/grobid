@@ -1556,4 +1556,47 @@ public class TextUtilities {
         else
             return null;
     }
+
+    public static List<OffsetPosition> matchTokenAndString(List<LayoutToken> layoutTokens, String text, List<OffsetPosition> urlPositions) {
+        List<OffsetPosition> newPositions = new ArrayList<>();
+        StringBuilder accumulator = new StringBuilder();
+        int pos = 0;
+
+        for (OffsetPosition urlPosition : urlPositions) {
+            List<LayoutToken> urlTokens = layoutTokens.subList(urlPosition.start, urlPosition.end);
+            boolean first = true;
+            for (int i = 0; i < urlTokens.size(); i++) {
+                LayoutToken token = urlTokens.get(i);
+                if (StringUtils.isEmpty(token.getText()))
+                    continue;
+                int newPos = text.indexOf(token.getText(), pos);
+                if (newPos != -1) {
+                    if (first) {
+                        pos = newPos;
+                        first = false;
+                    }
+                    accumulator.append(token);
+                } else {
+                    if (SentenceUtilities.toSkipToken(token.getText())) {
+                        continue;
+                    }
+                    if (StringUtils.isNotEmpty(accumulator)) {
+                        int start = text.indexOf(accumulator.toString(), pos);
+                        newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
+                        accumulator = new StringBuilder();
+                        pos = newPos;
+                        first = true;
+                        break;
+                    }
+                    pos = newPos;
+                }
+            }
+        }
+        if (StringUtils.isNotEmpty(accumulator)) {
+            int start = text.indexOf(accumulator.toString(), pos);
+            newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
+        }
+
+        return newPositions;
+    }
 }
