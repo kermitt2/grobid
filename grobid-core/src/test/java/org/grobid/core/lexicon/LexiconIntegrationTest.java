@@ -525,6 +525,46 @@ public class LexiconIntegrationTest {
     }
 
     @Test
+    public void testTokensPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectInterval2() throws Exception {
+        final String input = "This work is available at https://github.com/lfoppiano/ \n" +
+            "supercon2. The repository contains the code of the \n" +
+            "SuperCon 2 interface, the curation workflow, and the \n" +
+            "\n" +
+            "Table 2. Data support, the number of entities for each label in \n" +
+            "each of the datasets used for evaluating the ML models. The \n" +
+            "base dataset is the original dataset described in [18], and the \n" +
+            "curation dataset is automatically collected based on the data-\n" +
+            "base corrections by the interface and manually corrected. \n" +
+            "\n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL = tokenisedInput.get(19);
+        lastTokenOfTheURL.setPage(9);
+        lastTokenOfTheURL.setX(530.9363448275863);
+        lastTokenOfTheURL.setY(538.153);
+        lastTokenOfTheURL.setWidth(4.363655172413793);
+        lastTokenOfTheURL.setHeight(9.702);
+
+        //This is the actual text that is passed and is different from the layoutToken text.
+        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
+
+        PDFAnnotation annotation = new PDFAnnotation();
+        annotation.setPageNumber(9);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(9,408.76,537.11,126.54,10.49));
+        annotation.setBoundingBoxes(boundingBoxes);
+        annotation.setDestination("https://github.com/lfoppiano/supercon2");
+        annotation.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation);
+        List<OffsetPosition> offsetPositions = Lexicon.tokensPositionUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(LayoutTokensUtil.toText(tokenisedInput.subList(url.start, url.end)), is("https://github.com/lfoppiano/ \nsupercon2"));
+    }
+
+    @Test
     public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText() throws Exception {
         final String input = "This work is available at https://github.com/lfoppiano/ \n" +
             "supercon2. The repository contains the code of the \n" +
