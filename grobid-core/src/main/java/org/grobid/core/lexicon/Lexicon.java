@@ -20,7 +20,9 @@ import java.util.regex.*;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.exceptions.GrobidResourceException;
 import org.grobid.core.lang.Language;
@@ -36,7 +38,7 @@ import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.apache.commons.lang3.tuple.Pair;
+import static org.grobid.core.utilities.Utilities.convertStringOffsetToTokenOffset;
 
 /**
  * Class for managing all the lexical resources.
@@ -101,19 +103,19 @@ public class Lexicon {
         initDictionary();
         initNames();
 		// the loading of the journal and conference names is lazy
-        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator + 
+        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"wordforms"+File.separator+"english.wf", Language.EN);
-        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator + 
+        addDictionary(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"wordforms"+File.separator+"german.wf", Language.EN);
         addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"names"+File.separator+"names.family");
 		addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"names"+File.separator+"lastname.5k");
-        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"names"+File.separator+"names.female");
-        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"names"+File.separator+"names.male");
-		addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator + 
+		addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
 			"lexicon"+File.separator+"names"+File.separator+"firstname.5k");
         initCountryCodes();
         addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
@@ -465,33 +467,33 @@ public class Lexicon {
         try {
             organisationPattern = new FastMatcher(new
                     File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/WikiOrganizations.lst"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
 				"/lexicon/organisations/government.government_agency"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
 				"/lexicon/organisations/known_corporations.lst"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() + 
+			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
 				"/lexicon/organisations/venture_capital.venture_funded_company"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for organisations.", e);
         } catch (IOException e) {
-            throw new GrobidResourceException("Cannot add term to matcher, because the lexicon resource file " + 
+            throw new GrobidResourceException("Cannot add term to matcher, because the lexicon resource file " +
 				"does not exist or cannot be read.", e);
         } catch (Exception e) {
 			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
 		}
     }
-	
+
 	public void initOrgForms() {
         try {
 			orgFormPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/orgClosings.txt"));	
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/orgClosings.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for organisations.", e);
         } catch (Exception e) {
 			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
 		}
     }
-	
+
 	public void initLocations() {
         try {
             locationPattern = new FastMatcher(new
@@ -522,8 +524,8 @@ public class Lexicon {
     public void initFunders() {
         try {
             funderPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"), 
-                    GrobidAnalyzer.getInstance(), true); 
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"),
+                    GrobidAnalyzer.getInstance(), true);
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for funders.", e);
         } catch (Exception e) {
@@ -534,8 +536,8 @@ public class Lexicon {
     public void initResearchInfrastructures() {
         try {
             researchInfrastructurePattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures.txt"), 
-                    GrobidAnalyzer.getInstance(), true); 
+                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures.txt"),
+                    GrobidAnalyzer.getInstance(), true);
             // store some name mapping
             researchOrganizations = new TreeMap<>();
 
@@ -563,7 +565,7 @@ public class Lexicon {
                     String[] pieces = line.split(";", -1); // -1 for getting empty tokens too
                     if (pieces.length == 3) {
                         if (pieces[0].length() > 0) {
-                            
+
                             if (pieces[1].length() > 0) {
                                 OrganizationRecord localInfra = new OrganizationRecord(pieces[0], pieces[1], "en");
                                 List<OrganizationRecord> localInfraList = researchOrganizations.get(pieces[0].toLowerCase());
@@ -608,7 +610,7 @@ public class Lexicon {
             throw new GrobidResourceException("Error when compiling lexicon matcher for research infrastructure.", e);
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
-        }    
+        }
     }
 
     /**
@@ -642,15 +644,15 @@ public class Lexicon {
     public List<OrganizationRecord> getOrganizationNamingInfo(String name) {
         if (researchOrganizations == null)
             return null;
-        return researchOrganizations.get(name.toLowerCase()); 
+        return researchOrganizations.get(name.toLowerCase());
     }
 
     /**
      * Map the language codes used by the language identifier component to the normal
      * language name.
      *
-     * Note: due to an older bug, kr is currently map to Korean too - this should 
-     * disappear at some point in the future after retraining of models 
+     * Note: due to an older bug, kr is currently map to Korean too - this should
+     * disappear at some point in the future after retraining of models
      *
      * @param code the language to be mapped
      */
@@ -896,7 +898,7 @@ public class Lexicon {
 
     /**
      * Soft look-up in organisation names gazetteer for a tokenize sequence.
-     * It return a list of positions referring to the character positions within the input 
+     * It return a list of positions referring to the character positions within the input
      * sequence.
      *
      * @param s the input list of LayoutToken
@@ -987,7 +989,7 @@ public class Lexicon {
     }
 
     /**
-     * Soft look-up in location name gazetteer for a string, return a list of positions referring 
+     * Soft look-up in location name gazetteer for a string, return a list of positions referring
      * to the character positions within the string.
      *
      * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
@@ -1004,7 +1006,7 @@ public class Lexicon {
     }
 
     /**
-     * Soft look-up in location name gazetteer for a list of LayoutToken, return a list of 
+     * Soft look-up in location name gazetteer for a list of LayoutToken, return a list of
      * positions referring to the character positions in the input sequence.
      *
      * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
@@ -1092,7 +1094,7 @@ public class Lexicon {
     public List<OffsetPosition> tokenPositionsIdentifierPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
         String text = LayoutTokensUtil.toText(tokens);
-        
+
         // DOI positions
         result = tokenPositionsDOIPattern(tokens, text);
 
@@ -1115,10 +1117,10 @@ public class Lexicon {
     public List<OffsetPosition> tokenPositionsDOIPattern(List<LayoutToken> tokens, String text) {
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher doiMatcher = TextUtilities.DOIPattern.matcher(text);
-        while (doiMatcher.find()) {            
+        while (doiMatcher.find()) {
             textResult.add(new OffsetPosition(doiMatcher.start(), doiMatcher.end()));
         }
-        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+        return convertStringOffsetToTokenOffset(textResult, tokens);
     }
 
     /**
@@ -1128,11 +1130,11 @@ public class Lexicon {
     public List<OffsetPosition> tokenPositionsArXivPattern(List<LayoutToken> tokens, String text) {
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher arXivMatcher = TextUtilities.arXivPattern.matcher(text);
-        while (arXivMatcher.find()) {  
+        while (arXivMatcher.find()) {
             //System.out.println(arXivMatcher.start() + " / " + arXivMatcher.end() + " / " + text.substring(arXivMatcher.start(), arXivMatcher.end()));                 
             textResult.add(new OffsetPosition(arXivMatcher.start(), arXivMatcher.end()));
         }
-        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+        return convertStringOffsetToTokenOffset(textResult, tokens);
     }
 
 
@@ -1141,7 +1143,7 @@ public class Lexicon {
      */
     public List<OffsetPosition> tokenPositionsISSNPattern(List<LayoutToken> tokens) {
         List<OffsetPosition> result = new ArrayList<OffsetPosition>();
-        
+
         // TBD !
 
         return result;
@@ -1161,50 +1163,99 @@ public class Lexicon {
     /**
      * Identify in tokenized input the positions of an URL pattern with token positions
      */
-    public List<OffsetPosition> tokenPositionsUrlPattern(List<LayoutToken> tokens) {
-        //List<OffsetPosition> result = new ArrayList<OffsetPosition>();
-        String text = LayoutTokensUtil.toText(tokens);
-        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
-        Matcher urlMatcher = TextUtilities.urlPattern.matcher(text);
-        while (urlMatcher.find()) {  
-            //System.out.println(urlMatcher.start() + " / " + urlMatcher.end() + " / " + text.substring(urlMatcher.start(), urlMatcher.end()));                 
-            textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
-        }
-        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+    public static List<OffsetPosition> tokenPositionsUrlPattern(List<LayoutToken> tokens) {
+        List<OffsetPosition> textResult = characterPositionsUrlPattern(tokens);
+        return convertStringOffsetToTokenOffset(textResult, tokens);
     }
 
     /**
      * Identify in tokenized input the positions of an URL pattern with character positions
      */
-    public List<OffsetPosition> characterPositionsUrlPattern(List<LayoutToken> tokens) {
-        //List<OffsetPosition> result = new ArrayList<OffsetPosition>();
+    public static List<OffsetPosition> characterPositionsUrlPattern(List<LayoutToken> tokens) {
         String text = LayoutTokensUtil.toText(tokens);
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher urlMatcher = TextUtilities.urlPattern.matcher(text);
-        while (urlMatcher.find()) {  
+        while (urlMatcher.find()) {
             textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
         }
         return textResult;
     }
 
     /**
-     * Identify in tokenized input the positions of an URL pattern with character positions, 
+     * Identify in tokenized input the positions of a URL pattern with character positions,
      * and refine positions based on possible PDF URI annotations.
-     * 
+     *
      * This will produce better quality recognized URL, avoiding missing suffixes and problems
      * with break lines and spaces.
      **/
+//    public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
+//        List<LayoutToken> layoutTokens,
+//        List<PDFAnnotation> pdfAnnotations,
+//        String text) {
+//
+//        List<OffsetPosition> urlTokensPositions = tokensPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+//
+//        // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
+//        // which may be different (spaces, hypen, breakline)
+//        StringBuilder accumulator = new StringBuilder();
+//        List<String> tokenizedText = GrobidAnalyzer.getInstance().tokenize(text);
+//
+//        for (OffsetPosition urlOffsetPosition : urlTokensPositions) {
+//            int startTokenPosition = urlOffsetPosition.start;
+//            int endTokenPosition = urlOffsetPosition.end;
+//
+//            List<LayoutToken> urlTokens = layoutTokens.subList(startTokenPosition, endTokenPosition);
+//
+//            int tokenIndex = 0;
+//            int startPosition = 0;
+//            int endPosition = 0;
+//            for (LayoutToken token : urlTokens) {
+//                String tokenText = token.getText();
+//                int textIndex = 0;
+//                for (int i = tokenIndex; i <tokenizedText.size(); i++) {
+//                    String textPiece = tokenizedText.get(i);
+//                    if (textPiece.equals(tokenText)) {
+//                        startPosition = accumulator.toString().length();
+//                        endPosition = startPosition + textPiece.length();
+//                        accumulator.append(textPiece);
+//                        tokenIndex = i + 1;
+//                        break;
+//                    } else {
+//
+//                    }
+//                    accumulator.append(textPiece);
+//                    textIndex += 1;
+//                    tokenIndex += 1;
+//                }
+//            }
+//        }
+//        return null;
+//
+//    }
+
+    /**
+     * This method returns the token positions in respect of the layout tokens
+     */
+    public static List<OffsetPosition> tokensPositionUrlPatternWithPdfAnnotations(
+        List<LayoutToken> layoutTokens,
+        List<PDFAnnotation> pdfAnnotations) {
+
+        return convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
+    }
+
+    /**
+     * This method returns the character offsets in relation to the string obtained by the layout tokens.
+     * Notice the absence of the String text parameter.
+     */
     public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
-                                    List<LayoutToken> layoutTokens, 
-                                    List<PDFAnnotation> pdfAnnotations, 
-                                    String text) {
-        List<OffsetPosition> urlPositions = Lexicon.getInstance().characterPositionsUrlPattern(layoutTokens);
+                                    List<LayoutToken> layoutTokens,
+                                    List<PDFAnnotation> pdfAnnotations) {
+        List<OffsetPosition> urlPositions = Lexicon.characterPositionsUrlPattern(layoutTokens);
         List<OffsetPosition> resultPositions = new ArrayList<>();
 
         // do we need to extend the url position based on additional position of the corresponding 
         // PDF annotation?
         for(OffsetPosition urlPosition : urlPositions) {
-
             int startPos = urlPosition.start;
             int endPos = urlPosition.end;
 
@@ -1230,11 +1281,10 @@ public class Lexicon {
                 tokenIndex++;
             }
 
-            //String urlString = LayoutTokensUtil.toText(urlTokens);
-            String urlString = text.substring(startPos, endPos);
+            String urlString = LayoutTokensUtil.toText(urlTokens);
 
             PDFAnnotation targetAnnotation = null;
-            if (urlTokens.size()>0) {
+            if (CollectionUtils.isNotEmpty(urlTokens)) {
                 LayoutToken lastToken = urlTokens.get(urlTokens.size()-1);
                 if (pdfAnnotations != null) {
                     for (PDFAnnotation pdfAnnotation : pdfAnnotations) {
@@ -1253,7 +1303,7 @@ public class Lexicon {
                 String destination = targetAnnotation.getDestination();
 
                 int destinationPos = 0;
-                if (destination.indexOf(urlString) != -1) {
+                if (destination.contains(urlString)) {
                     destinationPos = destination.indexOf(urlString)+urlString.length();
                 }
 
@@ -1261,7 +1311,7 @@ public class Lexicon {
                     for(int j=endTokensIndex+1; j<layoutTokens.size(); j++) {
                         LayoutToken nextToken = layoutTokens.get(j);
 
-                        if ("\n".equals(nextToken.getText()) || 
+                        if ("\n".equals(nextToken.getText()) ||
                             " ".equals(nextToken.getText()) ||
                             nextToken.getText().length() == 0) {
                             endPos += nextToken.getText().length();
@@ -1274,15 +1324,16 @@ public class Lexicon {
                             endPos += nextToken.getText().length();
                             destinationPos = pos + nextToken.getText().length();
                             urlTokens.add(nextToken);
-                        } else 
+                        } else
                             break;
                     }
                 }
             }
 
             // finally avoid ending a URL by a dot, because it can harm the sentence segmentation
-            if (text.charAt(endPos-1) == '.') 
-                endPos = endPos-1;
+            if (StringUtils.substring(LayoutTokensUtil.toText(layoutTokens), startPos, endPos).endsWith(".")) {
+                endPos = endPos - 1;
+            }
 
             OffsetPosition position = new OffsetPosition();
             position.start = startPos;
@@ -1303,11 +1354,11 @@ public class Lexicon {
             return new ArrayList<OffsetPosition>();
         List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
         Matcher emailMatcher = TextUtilities.emailPattern.matcher(text);
-        while (emailMatcher.find()) {  
+        while (emailMatcher.find()) {
             //System.out.println(urlMatcher.start() + " / " + urlMatcher.end() + " / " + text.substring(urlMatcher.start(), urlMatcher.end()));                 
             textResult.add(new OffsetPosition(emailMatcher.start(), emailMatcher.end()));
         }
-        return Utilities.convertStringOffsetToTokenOffset(textResult, tokens);
+        return convertStringOffsetToTokenOffset(textResult, tokens);
     }
 
 }
