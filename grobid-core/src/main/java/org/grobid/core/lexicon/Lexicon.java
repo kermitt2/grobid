@@ -1193,7 +1193,7 @@ public class Lexicon {
         List<PDFAnnotation> pdfAnnotations,
         String text) {
 
-        List<OffsetPosition> urlTokensPositions = tokensPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+        List<OffsetPosition> urlTokensPositions = tokenPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
 
         // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
         // which may be different (spaces, hypen, breakline)
@@ -1203,7 +1203,7 @@ public class Lexicon {
     /**
      * This method returns the token positions in respect of the layout tokens
      */
-    public static List<OffsetPosition> tokensPositionUrlPatternWithPdfAnnotations(
+    public static List<OffsetPosition> tokenPositionUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
 

@@ -163,7 +163,7 @@ public class LexiconTest {
         annotation.setType(PDFAnnotation.Type.URI);
 
         List<PDFAnnotation> pdfAnnotations = List.of(annotation);
-        List<OffsetPosition> offsetPositions = Lexicon.tokensPositionUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+        List<OffsetPosition> offsetPositions = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
 
         assertThat(offsetPositions, hasSize(1));
         OffsetPosition url = offsetPositions.get(0);
