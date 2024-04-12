@@ -7,6 +7,7 @@ import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.PDFAnnotation;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,41 +18,44 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 
 public class LexiconTest {
-//    @Test
-//    public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval() throws Exception {
-//        final String input = "This work was distributed on http:// github.com/ myUsername/ MyProject";
-//        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
-//
-//        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
-//
-//        assertThat(offsetPositions, hasSize(1));
-//        OffsetPosition FirstURL = offsetPositions.get(0);
-//        assertThat(input.substring(FirstURL.start, FirstURL.end), is("http:// github.com/ myUsername/ MyProject"));
-//    }
-//
-//    @Test
-//    public void testCharacterPositionsUrlPattern_two_URL_shouldReturnCorrectInterval() throws Exception {
-//        final String input = "This work was distributed on http:// github.com/ myUsername/ MyProject. The data is available at https :// github.com/ superconductors/ hola.";
-//        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
-//
-//        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
-//
-//        assertThat(offsetPositions, hasSize(2));
-//        OffsetPosition url = offsetPositions.get(1);
-//        assertThat(input.substring(url.start, url.end), is("https :// github.com/ superconductors/ hola"));
-//    }
-//
-//    @Test
-//    public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval_2() throws Exception {
-//        final String input = "720 137409 The Government of Lao PDR 2005 Forestry Strategy to the year 2020 of the Lao PDR (available at: https://faolex.fao.org/ docs/pdf/lao144178.pdf)";
-//        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
-//
-//        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
-//
-//        assertThat(offsetPositions, hasSize(1));
-//        OffsetPosition url = offsetPositions.get(0);
-//        assertThat(input.substring(url.start, url.end), is("https://faolex.fao.org/ docs/pdf/lao144178.pdf"));
-//    }
+    @Test
+    public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval() throws Exception {
+        final String input = "This work was distributed on http:// github.com/myUsername/MyProject";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition FirstURL = offsetPositions.get(0);
+        assertThat(input.substring(FirstURL.start, FirstURL.end), is("http:// github.com/myUsername/MyProject"));
+    }
+
+    @Test
+    public void testTokenPositionsUrlPattern_URL_shouldReturnCorrectInterval() throws Exception {
+        final String input = "This work was distributed on http:// github.com/myUsername/MyProject";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.tokenPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition FirstURL = offsetPositions.get(0);
+        //Note: The intervals returned by the method Utilities.convertStringOffsetToTokenOffset
+        // consider the upper index to be included, while java consider the upper index to be excluded
+        assertThat(LayoutTokensUtil.toText(tokenisedInput.subList(FirstURL.start, FirstURL.end + 1)), is("http:// github.com/myUsername/MyProject"));
+    }
+
+    @Test
+    @Ignore("This test will fail, it can be used to test a real case when updating the regular exception")
+    public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval_2() throws Exception {
+        final String input = "720 137409 The Government of Lao PDR 2005 Forestry Strategy to the year 2020 of the Lao PDR (available at: https://faolex.fao.org/ docs/pdf/lao144178.pdf)";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(input.substring(url.start, url.end), is("https://faolex.fao.org/ docs/pdf/lao144178.pdf"));
+    }
 
     @Test
     public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectInterval() throws Exception {
@@ -111,9 +115,6 @@ public class LexiconTest {
         lastTokenOfTheURL.setWidth(4.363655172413793);
         lastTokenOfTheURL.setHeight(9.702);
 
-        //This is the actual text that is passed and is different from the layoutToken text.
-        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
-
         PDFAnnotation annotation = new PDFAnnotation();
         annotation.setPageNumber(9);
         List<BoundingBox> boundingBoxes = new ArrayList<>();
@@ -151,9 +152,6 @@ public class LexiconTest {
         lastTokenOfTheURL.setWidth(4.363655172413793);
         lastTokenOfTheURL.setHeight(9.702);
 
-        //This is the actual text that is passed and is different from the layoutToken text.
-        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
-
         PDFAnnotation annotation = new PDFAnnotation();
         annotation.setPageNumber(9);
         List<BoundingBox> boundingBoxes = new ArrayList<>();
@@ -190,7 +188,6 @@ public class LexiconTest {
         lastTokenOfTheURL.setY(538.153);
         lastTokenOfTheURL.setWidth(4.363655172413793);
         lastTokenOfTheURL.setHeight(9.702);
-
 
         PDFAnnotation annotation = new PDFAnnotation();
         annotation.setPageNumber(9);
