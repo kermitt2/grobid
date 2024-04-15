@@ -1,8 +1,8 @@
 package org.grobid.core.data;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.layout.Page;
 import org.grobid.core.utilities.*;
 
 import java.util.List;
@@ -127,10 +127,6 @@ public class Note {
     }
 
     public String getNoteTypeName() {
-        if (this.noteType == NoteType.FOOT) {
-            return "foot";
-        } else {
-            return "margin";
-        }
+        return StringUtils.lowerCase(noteType.name());
     }
 }
