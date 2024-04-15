@@ -1206,7 +1206,7 @@ public class TEIFormatter {
 
         // add possible subsequent notes concatenated in the same note sequence (this is a common error,
         // which is addressed here by heuristics, it may not be necessary in the future with a better
-        // segmentation model using more foot notes training data)
+        // segmentation model using more footnotes training data)
         if (currentNumber != -1) {
             String nextLabel = " " + (currentNumber+1);
             // sugar characters after note number must be consistent with the previous ones to avoid false match
