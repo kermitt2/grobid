@@ -5,7 +5,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 
 import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.StringUtils;
 
 import nu.xom.Attribute;
@@ -13,11 +12,12 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Text;
 
+import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.*;
 import org.grobid.core.data.CopyrightsLicense.License;
 import org.grobid.core.data.CopyrightsLicense.CopyrightsOwner;
 import org.grobid.core.data.Date;
-import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.FullTextParser;
@@ -29,10 +29,9 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.utilities.SentenceUtilities;
+import org.grobid.core.utilities.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
@@ -1513,29 +1512,67 @@ public class TEIFormatter {
                 int clusterPage = Iterables.getLast(clusterTokens).getPage();
 
                 List<Note> notesSamePage = null;
+                List<Triple<String,String, OffsetPosition>> matchedLabelPosition = new ArrayList<>();
+
+                // map the matched note labels to their corresponding note objects
+                Map<String, Note> labels2Notes = new TreeMap<>();
                 if (CollectionUtils.isNotEmpty(notes)) {
                     notesSamePage = notes.stream()
                                 .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
                                 .collect(Collectors.toList());
+
+                    // we need to cover several footnote callouts in the same paragraph segment
+
+                    // we also can't assume notes are sorted and will appear first in the text as the same order
+                    // they are defined in the note areas - this might not always be the case in
+                    // ill-formed documents
+
+                    // map a note label (string) to a valid matching position in the sequence of Layout Tokens
+                    // of the paragraph segment
+
+                    for (Note note : notesSamePage) {
+                        Optional<LayoutToken> matching = clusterTokens
+                            .stream()
+                            .filter(t -> t.getText().equals(note.getLabel()) && t.isSuperscript())
+                            .findFirst();
+
+                        if (matching.isPresent()) {
+                            int idx = clusterTokens.indexOf(matching.get());
+                            note.setIgnored(true);
+                            OffsetPosition matchingPosition = new OffsetPosition();
+                            matchingPosition.start = idx;
+                            matchingPosition.end = idx+1; // to be review, might be more than one layout token
+                            matchedLabelPosition.add(Triple.of(note.getLabel(), "note", matchingPosition));
+                            labels2Notes.put(note.getLabel(), note);
+                        }
+                    }
+
                 }
 
-                if (notesSamePage == null) {
+                //Identify URLs and attach reference in the text
+                List<OffsetPosition> offsetPositionsUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
+                offsetPositionsUrls.stream()
+                    .forEach(opu -> matchedLabelPosition.add(
+                        Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end+1)), "url", opu))
+                    );
+
+                if (CollectionUtils.isEmpty(matchedLabelPosition)){
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens);
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
                         if (curParagraph != null && config.isWithSentenceSegmentation()) {
-                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
+                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
                         }
                         curParagraph = teiElement("p");
                         if (config.isGenerateTeiIds()) {
                             String divID = KeyGen.getKey().substring(0, 7);
                             addXmlId(curParagraph, "_" + divID);
                         }
-                        
+
                         if (config.isGenerateTeiCoordinates("p")) {
                             String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
                             curParagraph.addAttribute(new Attribute("coords", coords));
                         }
-                        
+
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
                     } else {
@@ -1563,39 +1600,9 @@ public class TEIFormatter {
                             String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
                             curParagraph.addAttribute(new Attribute("coords", coords));
                         }
-                        
+
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
-                    }
-
-                    // we need to cover several footnote callouts in the same paragraph segment
-
-                    // we also can't assume notes are sorted and will appear first in the text as the same order 
-                    // they are defined in the note areas - this might not always be the case in 
-                    // ill-formed documents
-
-                    // map the matched note labels to their corresponding note objects
-                    Map<String, Note> labels2Notes = new TreeMap<>();
-
-                    // map a note label (string) to a valid matching position in the sequence of Layout Tokens
-                    // of the paragraph segment
-                    List<Pair<String,OffsetPosition>> matchedLabelPosition = new ArrayList<>();
-
-                    for (Note note : notesSamePage) {
-                        Optional<LayoutToken> matching = clusterTokens
-                            .stream()
-                            .filter(t -> t.getText().equals(note.getLabel()) && t.isSuperscript())
-                            .findFirst();
-
-                        if (matching.isPresent()) {
-                            int idx = clusterTokens.indexOf(matching.get());
-                            note.setIgnored(true);
-                            OffsetPosition matchingPosition = new OffsetPosition();
-                            matchingPosition.start = idx;
-                            matchingPosition.end = idx+1; // to be review, might be more than one layout token
-                            matchedLabelPosition.add(Pair.of(note.getLabel(), matchingPosition));
-                            labels2Notes.put(note.getLabel(), note);
-                        }
                     }
 
                     // sort the matches by position
@@ -1608,9 +1615,9 @@ public class TEIFormatter {
                     int pos = 0;
 
                     // build the paragraph segment, match by match
-                    for(Pair<String,OffsetPosition> matching : matchedLabelPosition) {
-                        Note note = labels2Notes.get(matching.getLeft());
-                        OffsetPosition matchingPosition = matching.getRight();
+                    for (Triple<String, String, OffsetPosition> referenceInformation : matchedLabelPosition) {
+                        String type = referenceInformation.getMiddle();
+                        OffsetPosition matchingPosition = referenceInformation.getRight();
 
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
                         String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
@@ -1626,26 +1633,26 @@ public class TEIFormatter {
                                 curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
                             }
                         }
-                        
+
                         curParagraphTokens.addAll(before);
 
-                        List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
 
-                        Element ref = teiElement("ref");
-                        ref.addAttribute(new Attribute("type", "foot"));
-
-                        if (config.isGenerateTeiCoordinates("ref") ) {
-                            String coords =  LayoutTokensUtil.getCoordsString(calloutTokens);
-                            if (coords != null) {
-                                ref.addAttribute(new Attribute("coords", coords));
-                            }
+                        Element ref = null;
+                        if (type.equals("note")) {
+                            List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
+                            Note note = labels2Notes.get(referenceInformation.getLeft());
+                            ref = generateNoteRef(calloutTokens, referenceInformation.getLeft(), note, config);
+                            pos = matchingPosition.end;
+                        } else if (type.equals("url")) {
+                            List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end + 1);
+                            String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end + 1));
+                            ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
+                            pos = matchingPosition.end + 1;
+                        } else {
+                            pos = matchingPosition.end;
                         }
 
-                        ref.appendChild(matching.getLeft());
-                        ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
                         curParagraph.appendChild(ref);
-
-                        pos = matchingPosition.end; 
                     }
 
                     // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
@@ -1722,18 +1729,8 @@ public class TEIFormatter {
                                         if (chunkRefString.trim().equals(note.getLabel())) {
                                             footNoteCallout = true;
                                             note.setIgnored(true);
-                                                   
-                                            Element ref = teiElement("ref");
-                                            ref.addAttribute(new Attribute("type", "foot"));
 
-                                            if (config.isGenerateTeiCoordinates("ref") ) {
-                                                String coords =  LayoutTokensUtil.getCoordsString(refTokens);
-                                                if (coords != null) {
-                                                    ref.addAttribute(new Attribute("coords", coords));
-                                                }
-                                            }
-                                            ref.appendChild(chunkRefString.trim());
-                                            ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
+                                            Element ref = generateNoteRef(refTokens, chunkRefString.trim(), note, config);
 
                                             parent.appendChild(ref);
 
@@ -1826,6 +1823,23 @@ public class TEIFormatter {
         }
 
         return buffer;
+    }
+
+    private static Element generateNoteRef(List<LayoutToken> noteTokens, String noteLabel,  Note note, GrobidAnalysisConfig config) {
+        Element ref = teiElement("ref");
+        //TODO: is this normal that it's "foot"?
+        ref.addAttribute(new Attribute("type", "foot"));
+
+        if (config.isGenerateTeiCoordinates("ref")) {
+            String coords = LayoutTokensUtil.getCoordsString(noteTokens);
+            if (coords != null) {
+                ref.addAttribute(new Attribute("coords", coords));
+            }
+        }
+
+        ref.appendChild(noteLabel);
+        ref.addAttribute(new Attribute("target", "#" + note.getIdentifier()));
+        return ref;
     }
 
     public static boolean isNewParagraph(TaggingLabel lastClusterLabel, Element curParagraph) {
@@ -2504,6 +2518,33 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
         if (spaceEnd)
             nodes.add(new Text(" "));
         return nodes;
+    }
+
+    public Element generateURLRef(String text,
+                                  List<LayoutToken> refTokens,
+                                  boolean generateCoordinates) {
+        if (StringUtils.isEmpty(text)) {
+            return null;
+        }
+
+        // For URLs, we remove spaces
+        String cleanText = StringUtils.trim(text.replace("\n", " ").replace(" ", ""));
+
+        String coords = null;
+        if (generateCoordinates && refTokens != null) {
+            coords = LayoutTokensUtil.getCoordsString(refTokens);
+        }
+
+        Element ref = teiElement("ref");
+        ref.addAttribute(new Attribute("type", "url"));
+
+        if (coords != null) {
+            ref.addAttribute(new Attribute("coords", coords));
+        }
+        ref.appendChild(text);
+        ref.addAttribute(new Attribute("target", cleanText));
+
+        return ref;
     }
 
     private String normalizeText(String localText) {
