@@ -1552,9 +1552,19 @@ public class TEIFormatter {
                 //Identify URLs and attach reference in the text
                 List<OffsetPosition> offsetPositionsUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
                 offsetPositionsUrls.stream()
-                    .forEach(opu -> matchedLabelPosition.add(
-                        Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end+1)), "url", opu))
+                    .forEach(opu -> {
+                        //We correct the latest token
+                        matchedLabelPosition.add(
+                            Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end)),
+                                "url",
+                                new OffsetPosition(opu.start, opu.end + 1)
+                            )
+                        );
+                    }
                     );
+
+                // We can add more elements to be extracted from the paragraphs, here. Each labelPosition it's a
+                // Triple with three main elements: the text of the item, the type, and the offsetPositions.
 
                 if (CollectionUtils.isEmpty(matchedLabelPosition)){
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens);
@@ -1638,20 +1648,16 @@ public class TEIFormatter {
 
 
                         Element ref = null;
+                        List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
                         if (type.equals("note")) {
-                            List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end);
                             Note note = labels2Notes.get(referenceInformation.getLeft());
                             ref = generateNoteRef(calloutTokens, referenceInformation.getLeft(), note, config);
-                            pos = matchingPosition.end;
                         } else if (type.equals("url")) {
-                            List<LayoutToken> calloutTokens = clusterTokens.subList(matchingPosition.start, matchingPosition.end + 1);
-                            String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end + 1));
+                            String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end));
                             ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
-                            pos = matchingPosition.end + 1;
-                        } else {
-                            pos = matchingPosition.end;
                         }
 
+                        pos = matchingPosition.end;
                         curParagraph.appendChild(ref);
                     }
 
