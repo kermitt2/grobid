@@ -207,4 +207,83 @@ public class LexiconTest {
         OffsetPosition url = offsetPositions.get(0);
         assertThat(inputReal.substring(url.start, url.end), is("https://github.com/lfoppiano/ supercon2"));
     }
+
+
+    @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText2() throws Exception {
+        final String input = "Opportunities (International Rice Research Institute) \n" +
+            "(available at: http://lad.nafri.org.la/fulltext/231-0.pdf) \n" +
+            "Salinas-Melgoza M A, Skutsch M, Lovett J C and Borrego A \n" +
+            "2017 Carbon emissions from dryland shifting cultivation: a \n" +
+            "case study of Mexican tropical dry forest Silva Fenn. \n" +
+            "51 1553 \n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL = tokenisedInput.get(37);
+        lastTokenOfTheURL.setPage(11);
+        lastTokenOfTheURL.setX(519.4089069767441);
+        lastTokenOfTheURL.setY(733.461);
+        lastTokenOfTheURL.setWidth(9.03006976744186);
+        lastTokenOfTheURL.setHeight(7.5199);
+
+        PDFAnnotation annotation = new PDFAnnotation();
+        annotation.setPageNumber(11);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(11, 402.018, 732.661, 126.47100000000006, 8.480000000000018));
+        annotation.setBoundingBoxes(boundingBoxes);
+        annotation.setDestination("http://lad.nafri.org.la/fulltext/231-0.pdf");
+        annotation.setType(PDFAnnotation.Type.URI);
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation);
+
+        //This is the actual text that is passed and is different from the layoutToken text.
+//        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(input.substring(url.start, url.end), is("http://lad.nafri.org.la/fulltext/231-0.pdf"));
+    }
+
+
+    @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText3() throws Exception {
+        final String input = "). The Laos official forest change \n" +
+            "maps (https://nfms.maf.gov.la/) are created from the \n" +
+            "land cover classification maps from the start year and \n" +
+            "end year for each period (see the periods in table ";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL = tokenisedInput.get(28);
+        lastTokenOfTheURL.setPage(9);
+        lastTokenOfTheURL.setX(461.1686153846154);
+        lastTokenOfTheURL.setY(653.148);
+        lastTokenOfTheURL.setWidth(3.9706923076923077);
+        lastTokenOfTheURL.setHeight(9.3999);
+
+        LayoutToken beforeLastTokenOfTheURL = tokenisedInput.get(27);
+        beforeLastTokenOfTheURL.setPage(9);
+        beforeLastTokenOfTheURL.setX(453.2272307692308);
+        beforeLastTokenOfTheURL.setY(653.148);
+        beforeLastTokenOfTheURL.setWidth(7.9413846153846155);
+        beforeLastTokenOfTheURL.setHeight(9.3999);
+
+        PDFAnnotation annotation = new PDFAnnotation();
+        annotation.setPageNumber(9);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(9, 369.582, 652.149, 95.82900000000001, 10.600000000000023));
+        annotation.setBoundingBoxes(boundingBoxes);
+        annotation.setDestination("https://nfms.maf.gov.la/");
+        annotation.setType(PDFAnnotation.Type.URI);
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation);
+
+        //This is the actual text that is passed and is different from the layoutToken text.
+//        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(input.substring(url.start, url.end), is("https://nfms.maf.gov.la/"));
+    }
 }
