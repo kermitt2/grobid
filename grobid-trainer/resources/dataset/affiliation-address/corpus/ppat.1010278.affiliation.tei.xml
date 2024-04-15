@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+    <teiHeader>
+        <fileDesc>
+            <sourceDesc>
+                <biblStruct>
+                    <analytic>
+                        <author>
+
+                        <affiliation>
+                            <marker>1</marker>
+                            <orgName type="department">Center for Malaria Therapeutics and Antimicrobial Resistance</orgName>,
+                            <orgName type="department">Division of Infectious Diseases</orgName>,
+                            <orgName type="department">Department<lb/> of Medicine</orgName>, 
+                            <orgName type="institution">Columbia University Irving Medical Center</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New York</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>2</marker>
+                            <orgName type="department">Department of Microbiology and Immunology</orgName>,
+                            <orgName type="institution">Columbia University Irving Medical Center</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New<lb/> York</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>3</marker>
+                            <orgName type="department">Department of Physiology and Cellular Biophysics</orgName>,
+                            <orgName type="institution">Columbia University<lb/> Irving Medical Center</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New<lb/> York</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+                        
+                        <affiliation>
+                            <marker>4</marker>
+                            <orgName type="institution">Schrödinger, Inc.</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New<lb/> York</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>5</marker>
+                            <orgName type="department">Department of Psychiatry</orgName>,
+                            <orgName type="institution">Columbia University Irving Medical Center</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New<lb/> York</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>6</marker>
+                            <orgName type="department">Department of Chemistry</orgName>,
+                            <orgName type="institution">Georgetown University</orgName>,
+                            <address>
+                                <settlement>Washington</settlement>,
+                                <region>DC</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>7</marker>
+                            <orgName type="department">Department of Biochemistry and Cellular and Molecular Biology</orgName>,
+                            <orgName type="institution">Georgetown University</orgName>,
+                            <address>
+                                <settlement>Washington</settlement>,
+                                <region>DC</region>,
+                                <country>United States of America</country>
+                                <lb/>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>8</marker>
+                            <orgName type="department">Division of Molecular Therapeutics</orgName>,
+                            <orgName type="institution">New York State Psychiatric Institute</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New York</region>,
+                                <country>United States of America</country>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>9</marker>
+                            <orgName type="department">Center for Molecular Recognition</orgName>,
+                            <orgName type="institution">Columbia University Irving Medical Center</orgName>,
+                            <address>
+                                <settlement>New York</settlement>,
+                                <region>New York</region>,
+                                <country>United States of America</country>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>10</marker>
+                            <orgName type="department">Vermont Complex Systems Center</orgName>,
+                            <orgName type="institution">University of Vermont</orgName>,
+                            <address>
+                                <settlement>Burlington</settlement>,
+                                <region>Vermont</region>,
+                                <country>United States of America</country>
+                            </address>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>11</marker>
+                            <orgName type="department">Department of Computer Science</orgName>,
+                            <orgName type="institution">University of Vermont</orgName>,
+                            <address>
+                                <settlement>Burlington</settlement>,
+                                <region>Vermont</region>,
+                                <country>United States of America</country>
+                            </address>
+                            <lb/>
+                        </affiliation>
+
+                        <affiliation>
+                            <marker>12</marker>
+                            <orgName type="department">Translational Global Infectious Diseases Research Center</orgName>,
+                            <orgName type="institution">University of Vermont</orgName>,
+                            <address>
+                                <settlement>Burlington</settlement>,
+                                <region>Vermont</region>,
+                                <lb/>
+                                <country>United States of America</country>
+                            </address>
+                        </affiliation>
+
+                        </author>
+                    </analytic>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+</tei>

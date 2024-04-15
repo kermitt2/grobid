@@ -77,7 +77,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         try {
             String featureVector = FeaturesVectorFunding.addFeatures(tokenizationFunding, null);
             res = label(featureVector);
-            //System.out.println(res);
+//System.out.println(res);
         } catch (Exception e) {
             throw new GrobidException("CRF labeling with table model fails.", e);
         }
@@ -303,7 +303,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
-                    if (affiliation.notNull()) {
+                    if (affiliation.isNotNull()) {
                         affiliations.add(affiliation);
                         // next funding object
                         affiliation = new Affiliation();
@@ -323,18 +323,39 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
-                    if (institution.notNull()) {
+                    //if (institution.isNotNull()) {
                         institutions.add(institution);
                         // next funding object
                         institution = new Affiliation();
-                    }
+                    //}
                 }
 
-                institution.setRawAffiliationString(clusterContent);
+                institution.setAffiliationString(clusterContent);
                 institution.appendLayoutTokens(tokens);
 
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "institution"));
+                entity.appendChild(clusterContent);
+
+                if (spaceBefore)
+                    curParagraphNodes.add(textNode(" "));
+                curParagraphNodes.add(entity);
+
+            } else if (clusterLabel.equals(FUNDING_INFRASTRUCTURE)) {
+                if (StringUtils.isNotBlank(institution.getAffiliationString())) {
+                    //if (institution.isNotNull()) {
+                        institutions.add(institution);
+                        // next funding object
+                        institution = new Affiliation();
+                    //}
+                }
+                institution.setAffiliationString(clusterContent);
+                institution.appendLayoutTokens(tokens);
+                institution.setInfrastructure(true);
+
+                Element entity = teiElement("rs");
+                entity.addAttribute(new Attribute("type", "institution"));
+                entity.addAttribute(new Attribute("subtype", "infrastructure"));
                 entity.appendChild(clusterContent);
 
                 if (spaceBefore)
@@ -432,6 +453,12 @@ public class FundingAcknowledgementParser extends AbstractParser {
         // last funding, person, institution/affiliation
         if (funding.isValid())
             fundings.add(funding);
+
+        if (institution.isNotNull()) 
+            institutions.add(institution);
+
+        if (affiliation.isNotNull()) 
+            affiliations.add(affiliation);
 
         if (institutions != null && institutions.size() > 0)
             affiliations.addAll(institutions);

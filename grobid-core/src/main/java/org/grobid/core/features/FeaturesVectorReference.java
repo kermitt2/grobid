@@ -1,6 +1,7 @@
 package org.grobid.core.features;
 
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.layout.LayoutToken;
 
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -166,7 +167,8 @@ public class FeaturesVectorReference {
     /**
      * Add the features for the patent reference extraction model.
      */
-    public static FeaturesVectorReference addFeaturesPatentReferences(String line,
+    public static FeaturesVectorReference addFeaturesPatentReferences(LayoutToken token,
+                                                                      String localLabel,
                                                                       int totalLength,
                                                                       int position,
                                                                       boolean isJournalToken,
@@ -176,12 +178,13 @@ public class FeaturesVectorReference {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         FeaturesVectorReference featuresVector = new FeaturesVectorReference();
-        StringTokenizer st = new StringTokenizer(line, "\t");
-        if (st.hasMoreTokens()) {
-            String word = st.nextToken();
-            String label = null;
-            if (st.hasMoreTokens())
-                label = st.nextToken();
+        //StringTokenizer st = new StringTokenizer(line, "\t");
+        //if (st.hasMoreTokens()) {
+
+            String word = token.getText();
+            String label = localLabel;
+            /*if (st.hasMoreTokens())
+                label = st.nextToken();*/
 
             featuresVector.string = word;
             featuresVector.label = label;
@@ -278,7 +281,7 @@ public class FeaturesVectorReference {
             if (isPublisherToken) {
                 featuresVector.isKnownPublisher = true;
             }
-        }
+        //}
 
         return featuresVector;
     }

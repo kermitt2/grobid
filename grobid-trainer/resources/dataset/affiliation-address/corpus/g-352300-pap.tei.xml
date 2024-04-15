@@ -8,10 +8,9 @@
 				<biblStruct>
 					<analytic>
 						<author>
-
 							
-							<marker>1</marker> 
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="department">Department of Physics</orgName>,
 								<orgName type="institution">Panjab University</orgName>,
 								<address>
@@ -21,9 +20,9 @@
 								<country key="IN">India</country>.<lb/>
 								</address>
 							</affiliation>
-						
-							<marker>2</marker>
+													
 							<affiliation>
+								<marker>2</marker>
 								<orgName type="laboratory" key="lab1">SUBATECH</orgName>,
 								<orgName type="laboratory" key="lab2" corresp="#lab1">Laboratoire de Physique Subatomique et des Technologies <lb/>Associées</orgName>,
 								<orgName type="institution" key="instit1">Université de Nantes</orgName>

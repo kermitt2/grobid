@@ -81,7 +81,7 @@ public class HeaderTrainer extends AbstractTrainer{
             // we process all tei files in the output directory
             File[] refFiles = pathh.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".tei") | name.endsWith(".tei.xml");
+                    return name.endsWith(".tei") || name.endsWith(".tei.xml");
                 }
             });
 
@@ -109,7 +109,7 @@ public class HeaderTrainer extends AbstractTrainer{
 
             for (File teifile : refFiles) {
                 String name = teifile.getName();
-                System.out.println(name);
+                //System.out.println(name);
 
                 TEIHeaderSaxParser parser2 = new TEIHeaderSaxParser();
                 parser2.setFileName(name);
@@ -130,20 +130,29 @@ public class HeaderTrainer extends AbstractTrainer{
                 File[] refFiles2 = refDir2.listFiles();
                 for (File aRefFiles2 : refFiles2) {
                     String localFileName = aRefFiles2.getName();
-                    if (localFileName.equals(parser2.getPDFName() + ".header") || 
-                        localFileName.equals(parser2.getPDFName() + ".training.header")) {
-                        headerFile = localFileName;
-                        break;
-                    }
-                    if ((localFileName.startsWith(parser2.getPDFName() + "._")) &&
-                            (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
-                        headerFile = localFileName;
-                        break;
+                    if (parser2.getPDFName() != null) {
+                        if (localFileName.equals(parser2.getPDFName() + ".header") || 
+                            localFileName.equals(parser2.getPDFName() + ".training.header")) {
+                            headerFile = localFileName;
+                            break;
+                        }
+                        if ((localFileName.startsWith(parser2.getPDFName() + "._")) &&
+                                (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
+                            headerFile = localFileName;
+                            break;
+                        }
+                    } 
+                    if (headerFile == null) {
+                        if (localFileName.equals(name.replace(".tei.xml", ""))) {                            
+                            headerFile = localFileName;
+                        }
                     }
                 }
 
-                if (headerFile == null)
+                if (headerFile == null) {
+                    System.out.println("raw header file not found for " + name);
                     continue;
+                }
 
                 String pathHeader = headerPath + File.separator + headerFile;
                 int p = 0;

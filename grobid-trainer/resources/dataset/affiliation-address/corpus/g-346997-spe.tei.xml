@@ -9,17 +9,19 @@
 					<analytic>
 						<author>
 							
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="institution">Laboratory for High Energy Physics</orgName>,
 								<address>
-								<settlement>Bern</settlement>,
-								<country key="CH">Switzerland</country>;<lb/>
+									<settlement>Bern</settlement>,
+									<country key="CH">Switzerland</country>;<lb/>
 								</address>
 							</affiliation>
 							
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="institution">BNL</orgName>,
 								<address>
 									<addrLine>Upton</addrLine>,
@@ -28,75 +30,83 @@
                                </address>
                             </affiliation>
 								
-                            <marker>3</marker> 
+                            
                             <affiliation>
+                            	<marker>3</marker> 
 								<orgName type="institution">Università di Cagliari</orgName>,
 								<address>
-								<country key="IT">Italy</country>;<lb/>
+									<country key="IT">Italy</country>;<lb/>
 								</address>
 							</affiliation>
 						
-							<marker>4</marker> 
+							
 							<affiliation>
+								<marker>4</marker> 
 								<orgName type="institution">INFN Cagliari</orgName>,
 								<address>
-								<country key="IT">Italy</country>;<lb/>
+									<country key="IT">Italy</country>;<lb/>
 								</address>
 							</affiliation>
                             
-							<marker>5</marker> 
+							
 							<affiliation>
-									<orgName type="institution">CERN</orgName>,
-									<address>
+								<marker>5</marker> 
+								<orgName type="institution">CERN</orgName>,
+								<address>
 									<settlement>Geneva</settlement>,
 									<country key="CH">Switzerland</country>;<lb/>
-									</address>
-							</affiliation>
-						
-							<marker>6</marker>
-							<affiliation>
-									<orgName type="institution" key="instit1">Université Blaise Pascal</orgName>
-									and
-									<orgName type="institution" key="instit2">CNRS-IN2P3</orgName>,
-									<address>
-									<settlement>Clermont-Ferrand</settlement>,
-									<country key="FR">France</country>;<lb/>
-									</address>
-							</affiliation>
-							
-							<marker>7</marker> 
-							<affiliation>
-									<orgName type="department">Physikalisches Institut</orgName>
-									der
-									<orgName type="institution">Universität Heidelberg</orgName>,
-									<address>
-									<country key="DE">Germany</country>;<lb/>
-									</address>
-							</affiliation>	
-
-							<marker>8</marker> 
-							<affiliation>
-								<orgName type="institution">Instituto Superior Técnico</orgName>,
-								<address>
-								<settlement>Lisbon</settlement>,
-								<country key="PT">Portugal</country>;<lb/>
 								</address>
 							</affiliation>
 						
-							<marker>9</marker> 
+							
 							<affiliation>
+								<marker>6</marker>
+								<orgName type="institution" key="instit1">Université Blaise Pascal</orgName>
+									and
+								<orgName type="institution" key="instit2">CNRS-IN2P3</orgName>,
+								<address>
+									<settlement>Clermont-Ferrand</settlement>,
+									<country key="FR">France</country>;<lb/>
+								</address>
+							</affiliation>
+							
+							
+							<affiliation>
+								<marker>7</marker> 
+								<orgName type="department">Physikalisches Institut</orgName>
+									der
+								<orgName type="institution">Universität Heidelberg</orgName>,
+								<address>
+									<country key="DE">Germany</country>;<lb/>
+								</address>
+							</affiliation>	
+
+							
+							<affiliation>
+								<marker>8</marker> 
+								<orgName type="institution">Instituto Superior Técnico</orgName>,
+								<address>
+									<settlement>Lisbon</settlement>,
+									<country key="PT">Portugal</country>;<lb/>
+								</address>
+							</affiliation>
+						
+							
+							<affiliation>
+								<marker>9</marker> 
 								<orgName type="laboratory">LLR</orgName>,
 								<orgName type="institution" key="instit3">Ecole Polytechnique</orgName>
 								and
 								<orgName type="institution" key="instit2">CNRS-IN2P3</orgName>,
 								<address>
-								<settlement>Palaiseau</settlement>,
-								<country key="FR">France</country>;<lb/>
+									<settlement>Palaiseau</settlement>,
+									<country key="FR">France</country>;<lb/>
 								</address>
 							</affiliation>
 						
-							<marker>10</marker> 
+							
 							<affiliation>
+								<marker>10</marker> 
 								<orgName type="institution">RIKEN</orgName>,
 								<address>
 									<settlement>Wako</settlement>,
@@ -105,36 +115,40 @@
 								</address>
 							</affiliation>
 					
-							<marker>11</marker> 
+							
 							<affiliation>
+								<marker>11</marker> 
 								<orgName type="institution">Università di Torino</orgName>,
 								<address>
-								<country key="IT">Italy</country>;<lb/>
+									<country key="IT">Italy</country>;<lb/>
 								</address>
 							</affiliation>
 							
-							<marker>12</marker> 
+							
 							<affiliation>
+								<marker>12</marker> 
 								<orgName type="institution">INFN Torino</orgName>,
 								<address>
-								<country key="IT">Italy</country>;<lb/>
+									<country key="IT">Italy</country>;<lb/>
 								</address>
 							</affiliation>
 					
-							<marker>13</marker> 
+							
 							<affiliation>
+								<marker>13</marker> 
 								<orgName type="laboratory">IPNL</orgName>,
 								<orgName type="institution">Université de Lyon</orgName>,
 								<orgName type="institution" key="instit4">Université Lyon 1</orgName>,
 								<orgName type="institution" key="instit2">CNRS/IN2P3</orgName>,
 								<address>
-								<settlement>Villeurbanne</settlement>,
-								<country key="FR">France</country>;<lb/>
+									<settlement>Villeurbanne</settlement>,
+									<country key="FR">France</country>;<lb/>
 								</address>
 							</affiliation>
 					
-							<marker>14</marker>
+							
 							<affiliation>
+								<marker>14</marker>
 								<orgName type="institution" key="instit5">YerPhI</orgName>,
 								<orgName type="institution" key="instit6" corresp="#instit5">Yerevan Physics Institute</orgName>,
 								<address>

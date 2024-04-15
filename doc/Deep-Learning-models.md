@@ -42,7 +42,7 @@ Using Deep Learning model in GROBID with a normal installation/build is not stra
 
 The most simple solution is to use the ["full" GROBID docker image](Grobid-docker.md), which allows to use Deep Learning models without further installation and which provides automatic GPU support. 
 
-However if you need a "local" library installation and build, prepare a lot of coffee, here are the step-by-step instructions to get a working local Deep Learning GROBID.
+However, if you need a "local" library installation and build, prepare a lot of coffee, here are the step-by-step instructions to get a working local Deep Learning GROBID.
 
 #### Classic python and Virtualenv
 
@@ -82,7 +82,7 @@ Indicate the GROBID model that should use a Deep Learning implementation in the 
 
 The default Deep Learning architecture is `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Glove embeddings). However for GROBID, an architecture also exploiting features (in particular layout features, which are not captured at all by the pretrained language models) gives usually better results and the prefered choise is `BidLSTM_CRF_FEATURES`. If you wish to use another architecture, you need to specify it in the same config file. 
 
-For instance to use a model integrating a fine-tuned transformer, you can select a `BERT_CRF` fine-tuned model (basically the transformer layers with CRF as final activation layer) and indicate in the field `transformer` the name of the transformer model in the [Hugging Face transformers Hub](https://huggingface.co/models) to be use to instanciate the transformer layer, typically [allenai/scibert_scivocab_cased](https://huggingface.co/allenai/scibert_scivocab_cased) for `SciBERT` in the case of scientific articles:
+For instance to use a model integrating a fine-tuned transformer, you can select a `BERT_CRF` fine-tuned model (basically the transformer layers with CRF as final activation layer) and indicate in the field `transformer` the name of the transformer model in the [Hugging Face transformers Hub](https://huggingface.co/models) to be used to instantiate the transformer layer, typically [allenai/scibert_scivocab_cased](https://huggingface.co/allenai/scibert_scivocab_cased) for `SciBERT` in the case of scientific articles:
 
 ```yaml
   models:
@@ -105,7 +105,7 @@ Normally by setting the Python environment path in the config file (e.g. `python
 
 <span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`). 
 
-We provide an installation script for Linux under `grobid-home/scripts`. This script should be launched from grobid root directory (`grobid/`), e.g.:
+We provide an installation script for Linux under `grobid-home/scripts`. This script should be launched from GROBID root directory (`grobid/`), e.g.:
 
 ```shell
 ./grobid-home/scripts/install_jep_lib.sh 

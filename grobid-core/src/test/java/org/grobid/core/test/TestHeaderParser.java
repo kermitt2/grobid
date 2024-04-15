@@ -7,6 +7,7 @@ import org.junit.AfterClass;
 import org.junit.Test;
 
 import java.io.File;
+import java.nio.file.FileSystems;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
@@ -46,21 +47,22 @@ public class TestHeaderParser extends EngineTest {
                 is("Answer Validation, Recognizing Textual Entailment, Information Synthesis"));
         assertNotNull(resHeader.getFullAuthors());
 
-        pdfPath = testPath + File.separator + "ZFN-A-054-0304-0272.pdf";
+        String absolutePath = FileSystems.getDefault().getPath(testPath).normalize().toAbsolutePath().toString();
+        pdfPath = absolutePath + File.separator + "ZFN-A-054-0304-0272.pdf";
         resHeader = new BiblioItem();
         tei = engine.processHeader(pdfPath, 0, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);
 
-        pdfPath = testPath + File.separator + "ZNC-1988-43c-0034.pdf";
+        pdfPath = absolutePath + File.separator + "ZNC-1988-43c-0034.pdf";
         resHeader = new BiblioItem();
         tei = engine.processHeader(pdfPath, 0, resHeader);
         //System.out.println(tei);
 
         //assertNotNull(resHeader);
 
-        pdfPath = testPath + File.separator + "ZNC-1988-43c-0065.pdf";
+        pdfPath = absolutePath + File.separator + "ZNC-1988-43c-0065.pdf";
         resHeader = new BiblioItem();
         tei = engine.processHeader(pdfPath, 0, resHeader);
 

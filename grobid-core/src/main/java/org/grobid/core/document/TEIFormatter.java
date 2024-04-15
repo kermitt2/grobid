@@ -12,6 +12,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.lang3.tuple.Triple;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.CopyrightsLicense.License;
+import org.grobid.core.data.CopyrightsLicense.CopyrightsOwner;
 import org.grobid.core.data.Date;
 import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
@@ -152,7 +154,7 @@ public class TEIFormatter {
             if (titleTokens != null && titleTokens.size()>0) {
                 String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                 if (coords != null) {
-                    tei.append(" coord=\"" + coords + "\"");
+                    tei.append(" coords=\"" + coords + "\"");
                 }
             }
         }
@@ -272,28 +274,75 @@ public class TEIFormatter {
 
         if ((biblio.getPublisher() != null) ||
                 (biblio.getPublicationDate() != null) ||
-                (biblio.getNormalizedPublicationDate() != null)) {
+                (biblio.getNormalizedPublicationDate() != null) ||
+                biblio.getCopyrightsLicense() != null) {
             tei.append("\t\t\t<publicationStmt>\n");
+
+            CopyrightsLicense copyrightsLicense = biblio.getCopyrightsLicense();
+
             if (biblio.getPublisher() != null) {
                 // publisher and date under <publicationStmt> for better TEI conformance
                 tei.append("\t\t\t\t<publisher>" + TextUtilities.HTMLEncode(biblio.getPublisher()) +
                         "</publisher>\n");
-
-                tei.append("\t\t\t\t<availability status=\"unknown\">");
-                tei.append("<p>Copyright ");
-                //if (biblio.getPublicationDate() != null)
-                tei.append(TextUtilities.HTMLEncode(biblio.getPublisher()) + "</p>\n");
-                tei.append("\t\t\t\t</availability>\n");
             } else {
                 // a dummy publicationStmt is still necessary according to TEI
                 tei.append("\t\t\t\t<publisher/>\n");
-                if (defaultPublicationStatement == null) {
-                    tei.append("\t\t\t\t<availability status=\"unknown\"><licence/></availability>");
-                } else {
-                    tei.append("\t\t\t\t<availability status=\"unknown\"><p>" +
-                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p></availability>");
+            }
+
+            // We introduce something more meaningful with TEI customization to encode copyrights information:
+            // - @resp with value "publisher", "authors", "unknown", we add a comment to clarify that @resp
+            //   should be interpreted as the copyrights owner
+            // - license related to copyrights exception is encoded via <licence>
+            // (note: I have no clue what can mean "free" as status for a document - there are always some sort of
+            // restrictions like moral rights even for public domain documents)
+            if (copyrightsLicense != null) {
+                tei.append("\t\t\t\t<availability ");
+
+                boolean addCopyrightsComment = false;
+                if (copyrightsLicense.getCopyrightsOwner() != null && copyrightsLicense.getCopyrightsOwner() != CopyrightsOwner.UNDECIDED) {
+                    tei.append("resp=\""+ copyrightsLicense.getCopyrightsOwner().getName() +"\" ");
+                    addCopyrightsComment = true;
                 }
-                tei.append("\n");
+
+                if (copyrightsLicense.getLicense() != null && copyrightsLicense.getLicense() != License.UNDECIDED) {
+                    tei.append("status=\"restricted\">\n");
+                    if (addCopyrightsComment) {
+                        tei.append("\t\t\t\t\t<!-- the @rest attribute above gives the document copyrights owner (publisher, authors), if known -->\n");
+                    }
+                    tei.append("\t\t\t\t\t<licence>"+copyrightsLicense.getLicense().getName()+"</licence>\n");
+                } else {
+                    tei.append(" status=\"unknown\">\n");
+                    if (addCopyrightsComment) {
+                        tei.append("\t\t\t\t\t<!-- the @rest attribute above gives the document copyrights owner (publisher, authors), if known -->\n");
+                    }
+                    tei.append("\t\t\t\t\t<licence/>\n");
+                }
+
+                if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
+                    tei.append("\t\t\t\t\t<p type=\"raw\">");
+                    tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
+                    tei.append("</note>\n");
+                }
+
+                tei.append("\t\t\t\t</availability>\n");
+            } else {
+                tei.append("\t\t\t\t<availability ");
+
+                tei.append(" status=\"unknown\">\n");
+                tei.append("\t\t\t\t\t<licence/>\n");
+
+                if (defaultPublicationStatement != null) {
+                    tei.append("\t\t\t\t\t<p>" +
+                            TextUtilities.HTMLEncode(defaultPublicationStatement) + "</p>\n");
+                }
+
+                if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
+                    tei.append("\t\t\t\t\t<p type=\"raw\">");
+                    tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
+                    tei.append("</note>\n");
+                }
+
+                tei.append("\t\t\t\t</availability>\n");
             }
 
             if (biblio.getNormalizedPublicationDate() != null) {
@@ -418,7 +467,7 @@ public class TEIFormatter {
                 if (titleTokens != null && titleTokens.size()>0) {
                     String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                     if (coords != null) {
-                        tei.append(" coord=\"" + coords + "\"");
+                        tei.append(" coords=\"" + coords + "\"");
                     }
                 }
             }
@@ -1077,7 +1126,6 @@ public class TEIFormatter {
             }
 
             String footText = doc.getDocumentPieceText(docPiece);
-            footText = TextUtilities.dehyphenize(footText);
             footText = footText.replace("\n", " ");
             //footText = footText.replace("  ", " ").trim();
             if (footText.length() < 6)
@@ -1096,6 +1144,9 @@ public class TEIFormatter {
                 notes.addAll(localNotes);
         }
 
+        notes.stream()
+            .forEach(n -> n.setText(TextUtilities.dehyphenize(n.getText())));
+
         return notes;
     }
 
@@ -1113,7 +1164,7 @@ public class TEIFormatter {
             String groupStr = ma.group(1);
             footText = ma.group(2);
             try {
-                if (groupStr.indexOf(".") != -1)
+                if (groupStr.contains("."))
                     sugarText = ".";
                 String groupStrNormalized = groupStr.replace(".", "");
                 groupStrNormalized = groupStrNormalized.trim();
@@ -1133,11 +1184,12 @@ public class TEIFormatter {
                         } else
                             break;
 
-                        if (toConsume.length() == 0)
+                        if (StringUtils.isEmpty(toConsume))
                             break;
                     }
-                    if (start != 0)
+                    if (start != 0) {
                         noteTokens = noteTokens.subList(start, noteTokens.size());
+                    }
                 }
             } catch (NumberFormatException e) {
                 currentNumber = -1;
@@ -1157,35 +1209,35 @@ public class TEIFormatter {
         // segmentation model using more foot notes training data)
         if (currentNumber != -1) {
             String nextLabel = " " + (currentNumber+1);
-            // suger characters after note number must be consistent with the previous ones to avoid false match
+            // sugar characters after note number must be consistent with the previous ones to avoid false match
             if (sugarText != null)
                 nextLabel += sugarText;
 
-            int ind = footText.indexOf(nextLabel);
-            if (ind != -1) {
+            int nextFootnoteLabelIndex = footText.indexOf(nextLabel);
+            if (nextFootnoteLabelIndex != -1) {
                 // optionally we could restrict here to superscript numbers
                 // review local note
-                localNote.setText(footText.substring(0, ind));
+                localNote.setText(footText.substring(0, nextFootnoteLabelIndex));
                 int pos = 0;
                 List<LayoutToken> previousNoteTokens = new ArrayList<>();
                 List<LayoutToken> nextNoteTokens = new ArrayList<>();
                 for(LayoutToken localToken : noteTokens) {
-                    if (localToken.getText() == null || localToken.getText().length() == 0)
+                    if (StringUtils.isEmpty(localToken.getText()))
                         continue;
                     pos += localToken.getText().length();
-                    if (pos <= ind+1) {
+                    if (pos <= nextFootnoteLabelIndex+1) {
                         previousNoteTokens.add(localToken);
                     } else {
                         nextNoteTokens.add(localToken);
                     }
                 }
                 localNote.setTokens(previousNoteTokens);
-                String nextFootText = footText.substring(ind+1, footText.length());
+                String nextFootText = footText.substring(nextFootnoteLabelIndex+1);
 
                 // process the concatenated note
-                if (nextNoteTokens.size() >0 && nextFootText.length()>0) {
+                if (CollectionUtils.isNotEmpty(nextNoteTokens) && StringUtils.isNotEmpty(nextFootText)) {
                     List<Note> nextNotes = makeNotes(nextNoteTokens, nextFootText, noteType, notes.size());
-                    if (nextNotes != null && nextNotes.size()>0)
+                    if (CollectionUtils.isNotEmpty(nextNotes))
                         notes.addAll(nextNotes);
                 }
             }
@@ -1225,6 +1277,11 @@ public class TEIFormatter {
             if (config.isGenerateTeiIds()) {
                 String pID = KeyGen.getKey().substring(0, 7);
                 addXmlId(pNote, "_" + pID);
+            }
+
+            if (config.isGenerateTeiCoordinates("p")) {
+                String coords = LayoutTokensUtil.getCoordsString(note.getTokens());
+                desc.addAttribute(new Attribute("coords", coords));
             }
 
             // for labelling bibliographical references in notes
@@ -1493,14 +1550,14 @@ public class TEIFormatter {
                 int clusterPage = Iterables.getLast(dehyphenized).getPage();
 
                 List<Note> notesSamePage = null;
-                if (notes != null && notes.size() > 0) {
+                if (CollectionUtils.isNotEmpty(notes)) {
                     notesSamePage = notes.stream()
                         .filter(f -> !f.isIgnored() && f.getPageNumber() == clusterPage)
                         .collect(Collectors.toList());
                 }
 
                 if (notesSamePage == null) {
-                    
+
                     String text = LayoutTokensUtil.toText(dehyphenized).replace("\n", " ");
 
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
@@ -1512,8 +1569,21 @@ public class TEIFormatter {
                             String divID = KeyGen.getKey().substring(0, 7);
                             addXmlId(curParagraph, "_" + divID);
                         }
+
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            curParagraph.addAttribute(new Attribute("coords", coords));
+                        }
+
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
+                    } else {
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                                curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                            }
+                        }
                     }
 
                     List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(dehyphenized);
@@ -1534,6 +1604,12 @@ public class TEIFormatter {
                             String divID = KeyGen.getKey().substring(0, 7);
                             addXmlId(curParagraph, "_" + divID);
                         }
+
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(clusterTokens);
+                            curParagraph.addAttribute(new Attribute("coords", coords));
+                        }
+
                         curDiv.appendChild(curParagraph);
                         curParagraphTokens = new ArrayList<>();
                     }
@@ -1589,6 +1665,15 @@ public class TEIFormatter {
                             curParagraph.appendChild(new Text(" "));
                         }
 
+                        curParagraph.appendChild(clusterContentBefore);
+                        if (config.isGenerateTeiCoordinates("p")) {
+                            String coords = LayoutTokensUtil.getCoordsString(before);
+                            if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                                curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                            }
+                        }
+
+                        curParagraphTokens.addAll(before);
                         List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(before);
 
                         if (CollectionUtils.isNotEmpty(stylesList)) {
@@ -1625,6 +1710,15 @@ public class TEIFormatter {
                         curParagraph.appendChild(new Text(" "));
                     }
 
+                    if (config.isGenerateTeiCoordinates("p")) {
+                        String coords = LayoutTokensUtil.getCoordsString(remaining);
+                        if (curParagraph.getAttribute("coords") != null && !curParagraph.getAttributeValue("coords").contains(coords)) {
+                            curParagraph.addAttribute(new Attribute("coords", curParagraph.getAttributeValue("coords") + ";" + coords));
+                        }
+                    }
+
+                    curParagraph.appendChild(remainingClusterContent);
+                    curParagraphTokens.addAll(remaining);
                     List<Triple<String, String, OffsetPosition>> stylesList = extractStylesList(remaining);
 
                     if (CollectionUtils.isNotEmpty(stylesList)) {

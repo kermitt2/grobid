@@ -219,7 +219,7 @@ Specific keyword scheme names like "PACS" or "Mathematics Subject Classification
 
 
 ```xml
-<keywords>Mathematics Subject Classification: 83C15, 81U15, 81V80, 17B80, 81R12<lb/></keywords> 
+<keyword>Mathematics Subject Classification: 83C15, 81U15, 81V80, 17B80, 81R12<lb/></keyword> 
            
 <keywords type="pacs">PACS numbers: 02.30.Ik, 03.65.Fd Fd<lb/></keywords>
 ```

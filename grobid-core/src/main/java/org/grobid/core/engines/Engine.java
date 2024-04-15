@@ -350,6 +350,7 @@ public class Engine implements Closeable {
         String inputFile,
         int consolidate,
         boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -357,6 +358,7 @@ public class Engine implements Closeable {
             .endPage(2)
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
             .build();
         return processHeader(inputFile, null, config, result);
     }
@@ -380,12 +382,14 @@ public class Engine implements Closeable {
         File inputFile,
         int consolidateHeader,
         int consolidateFunders,
-        boolean includeRawAffiliations
+        boolean includeRawAffiliations,
+        boolean includeRawCopyrights
     ) throws Exception {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateFunders(consolidateFunders)
             .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
             .build();
         return processHeaderFunding(inputFile, null, config);
     }
@@ -408,6 +412,7 @@ public class Engine implements Closeable {
         String md5Str,
         int consolidate,
         boolean includeRawAffiliations,
+        boolean includeRawCopyrights,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -415,6 +420,7 @@ public class Engine implements Closeable {
             .endPage(2)
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
             .build();
         return processHeader(inputFile, md5Str, config, result);
     }
@@ -440,12 +446,14 @@ public class Engine implements Closeable {
         String md5Str,
         int consolidateHeader,
         int consolidateFunders,
-        boolean includeRawAffiliations
+        boolean includeRawAffiliations,
+        boolean includeRawCopyrights
     ) throws Exception {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateFunders(consolidateFunders)
             .includeRawAffiliations(includeRawAffiliations)
+            .includeRawCopyrights(includeRawCopyrights)
             .build();
         return processHeaderFunding(inputFile, md5Str, config);
     }
@@ -874,7 +882,9 @@ public class Engine implements Closeable {
         }
         // we initialize the attribute individually for readability...
         boolean filterDuplicate = false;
-        return parsers.getReferenceExtractor().extractAllReferencesString(text, filterDuplicate,
+        List<String> texts = new ArrayList<>();
+        texts.add(text);
+        return parsers.getReferenceExtractor().extractAllReferencesString(texts, filterDuplicate,
 			consolidateCitations, includeRawCitations, patentResults, nplResults);
     }
 

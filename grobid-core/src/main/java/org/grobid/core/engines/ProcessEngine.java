@@ -137,7 +137,7 @@ public class ProcessEngine implements Closeable {
         } else {
             List<String> elementCoordinates = null;
             if (pGbdArgs.getTeiCoordinates()) {
-                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula", "s", "note");
+                elementCoordinates = Arrays.asList("figure", "persName", "ref", "biblStruct", "formula", "s", "note", "title", "head", "affiliation", "p");
             }
             processFullTextDirectory(files, pGbdArgs, pGbdArgs.getPath2Output(), pGbdArgs.getSaveAssets(), 
                 elementCoordinates, pGbdArgs.getSegmentSentences(), pGbdArgs.getAddElementId());
@@ -270,7 +270,7 @@ public class ProcessEngine implements Closeable {
         if (isEmpty(result)) {
             throw new GrobidResourceException("Cannot read the input data for affiliations. Check the documentation. ");
         }
-        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", result.get(0).toTEI());
+        IOUtilities.writeInFile(pGbdArgs.getPath2Output() + File.separator + "result", Affiliation.toTEI(result.get(0),0));
     }
 
     /**

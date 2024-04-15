@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+	<teiHeader>
+		<fileDesc>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+
+						<affiliation>
+							<marker>a</marker>
+							<orgName type="laboratory">Brain Connectivity and Behaviour Group</orgName>,
+							<orgName type="institution">Sorbonne Universities</orgName>,
+							<address>
+								<settlement>Paris</settlement>
+								<country>France</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>b</marker>
+							<orgName type="laboratory">Frontlab</orgName>,
+							<orgName type="institution">Institut du Cerveau et de la Moelle épinière (ICM)</orgName>,
+							<orgName type="institution">UPMC</orgName> 
+							<orgName type="laboratory">UMRS 1127</orgName>,
+							<orgName type="institution">Inserm</orgName> 
+							<orgName type="laboratory">U<lb/> 1127</orgName>,
+							<orgName type="institution">CNRS</orgName>
+							<orgName type="laboratory">UMR 7225</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>c</marker>
+							<orgName type="department">Centre de Neuroimagerie de Recherche CENIR</orgName>,
+							<orgName type="institution">Groupe Hospitalier Pitié-Salpêtrière</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+							<lb/>
+								<country>France</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>d</marker>
+							<orgName type="laboratory">Abnormal Movements and Basal Ganglia team</orgName>,
+							<orgName type="institution">Inserm</orgName>
+							<orgName type="laboratory">U 1127</orgName>,
+							<orgName type="institution">CNRS</orgName>
+							<orgName type="laboratory">UMR 7225</orgName>,
+							<lb/>
+							<orgName type="institution">Sorbonne Universities</orgName>,
+							<orgName type="institution">UPMC Univ Paris 06</orgName>,
+							<orgName type="institution">Institut du Cerveau et de la Moelle épinière, <lb/>ICM</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>e</marker>
+							<orgName type="institution">APHP</orgName>,
+							<orgName type="department">Urgences Cérébro-Vasculaires</orgName>,
+							<orgName type="institution">Groupe Hospitalier Pitié-Salpêtrière</orgName>,
+							<address>
+								<settlement>Paris</settlement>,
+								<country>France</country>.
+							<lb/>
+							</address>
+						</affiliation>
+						<affiliation>
+							<marker>f</marker>
+							<orgName type="department">Medicine and Rehabilitation Department</orgName>,
+							<orgName type="institution">Hôpitaux de Saint-Maurice</orgName>,
+							<address>
+								<settlement>Saint-Maurice</settlement>,
+								<lb/>
+								<country>France</country>.
+							</address>
+						</affiliation>
+
+						</author>
+					</analytic>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+</tei>

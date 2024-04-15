@@ -10,8 +10,9 @@
 						<affiliation>
 							<orgName type="department">Department of Computer Science</orgName>
 							<lb/>
-							<orgName type="institution">University of Victoria<lb/> Victoria</orgName>,
+							<orgName type="institution">University of Victoria</orgName><lb/> 
 							<address>
+								<settlement>Victoria</settlement>,
 								<region>B.C</region>.
 								<country>Canada</country>
 							</address>

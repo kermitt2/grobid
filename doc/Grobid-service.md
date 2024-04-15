@@ -138,8 +138,9 @@ Extract the header of the input PDF document, normalize it and convert it into a
 | POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
 |           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+|           |                       |                      | `includeRawCopyrights` | optional | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).  |
 
-Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. Note: the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
 
 Response status codes:
 
@@ -156,7 +157,7 @@ A `503` error with the default parallel mode normally means that all the threads
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 
 ```console
-curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+curl -v -H "Accept: application/xml" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 If you want a simpler result in the BibTeX format:
@@ -177,6 +178,7 @@ Convert the complete input document into TEI XML format (header, body and biblio
 |           |                       |                      | `consolidatFunders` | optional         | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only). |
 |           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
 |           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+|           |                       |                      | `includeRawCopyrights` | optional | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).  |
 |           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
 |           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
 |           |                       |                      | `start`       | optional      | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)  |
@@ -219,6 +221,8 @@ Regarding the bibliographical references, it is possible to include the original
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
 ```
+
+Similar raw strings can be added in the result for affiliation and copyrights/license sections.
 
 Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
 

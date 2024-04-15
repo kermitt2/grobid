@@ -1,0 +1,371 @@
+EBRAINS
+European Brain ReseArch INfrastructureS
+SLICES
+Scientific Large-scale Infrastructure for Computing/ Communication Experimental Studies
+SoBigData++
+European Integrated Infrastructure for Social Mining and Big Data Analytics
+IFMIF-DONES
+International Fusion Materials Irradiation Facility - DEMO Oriented NEutron Source
+MARINERG-i
+Marine Renewable Energy Research Infrastructure
+DANUBIUS-RI
+International Centre for Advanced Studies on River-Sea Systems
+DiSSCo
+Distributed System of Scientific Collections
+eLTER RI
+Integrated European Long-Term Ecosystem, critical zone and socio-ecological system Research Infrastructure
+EIRENE RI
+Research Infrastructure for EnvIRonmental Exposure assessmeNt in Europe
+EMPHASIS
+European Infrastructure for Multi-scale Plant Phenomics and Simulation
+EU-IBISBA
+European Industrial Biotechnology Innovation and Synthetic Biology Accelerator
+METROFOOD-RI
+Infrastructure for promoting Metrology in Food and Nutritiom
+European Solar Telescope
+Einstein Telescope
+EuPRAXIA
+European Plasma Research Accelerator with Excellence in Applications
+KM3NeT 2.0
+KM3 Neutrino Telescope 2.0
+E-RIHS
+European Research Infrastructure for Heritage Science
+EHRI
+European Holocaust Research Infrastructure
+GGP
+The Generations and Gender Programme
+GUIDE
+Growing Up in Digital Europe: EuroCohort
+OPERAS
+OPen scholarly communication in the European Research Area for Social Sciences and Humanities
+RESILIENCE
+REligious Studies Infrastructure: tooLs, Innovation, Experts, conNections and Centres in Europe
+PRACE
+Partnership for Advanced Computing in Europe
+ECCSEL
+European Carbon Dioxide Capture and Storage Laboratory Infrastructure
+EU-SOLARIS
+European Solar Research Infrastructure for Concentrated Solar Power
+JHR
+Jules Horowitz Reactor
+ACTRIS
+Aerosol, Clouds and Trace Gases Research Infrastructure
+EISCAT_3D
+Next generation European Incoherent Scatter radar system
+EMSO
+European Multidisciplinary Seafloor and water-column Observatory
+EPOS
+European Plate Observing System
+EURO-ARGO
+European contribution to the international Argo Programme
+IAGOS
+In-service Aircraft for a Global Observing System
+ICOS
+Integrated Carbon Observation System
+LifeWatch
+e-Infrastructure for Biodiversity and Ecosystem Research
+AnaEE
+Analysis and Experimentation on Ecosystems
+BBMRI
+Biobanking and BioMolecular Resources Research Infrastructure
+EATRIS
+European Advanced Translational Research Infrastructure in Medicine
+ECRIN
+European Clinical Research Infrastructure Network
+ELIXIR
+A distributed infrastructure for life-science data
+EMBRC
+European Marine Biological Resource Centre
+ERINHA
+European Research Infrastructure on Highly Pathogenic Agents
+EU-OPENSCREEN
+European Infrastructure of Open Screening Platforms for Chemical Biology
+Euro-BioImaging
+European Research Infrastructure for Imaging Technologies in Biological and Biomedical Sciences
+INFRAFRONTIER
+European Research Infrastructure for the generation, phenotyping, archiving and distribution of mouse disease models
+INSTRUCT
+Integrated Structural Biology Infrastructure
+MIRRI
+Microbial Resource Research Infrastructure
+CTA
+Cherenkov Telescope Array
+ELI
+Extreme Light Infrastructure
+ELT
+Extremely Large Telescope
+EMFL
+European Magnetic Field Laboratory
+ESRF EBS
+European Synchrotron Radiation Facility Extremely Brilliant Source
+European Spallation Source
+European XFEL
+European X-Ray Free-Electron Laser Facility
+FAIR
+Facility for Antiproton and Ion Research
+HL-LHC
+High-Luminosity Large Hadron Collider
+ILL
+Institut Max von Laue - Paul Langevin
+SKAO
+Square Kilometre Array Observatory
+SPIRAL2
+Système de Production d’Ions Radioactifs en Ligne de 2e génération
+CESSDA
+Consortium of European Social Science Data Archives
+CLARIN
+Common Language Resources and Technology Infrastructure
+DARIAH
+Digital Research Infrastructure for the Arts and Humanities
+ESS
+European Social Survey
+SHARE
+Survey of Health, Ageing and Retirement in Europe
+AGATA
+Advance GAmma Tracking Array
+AnaEE
+Analyse et Expérimentation sur les Ecosystèmes
+ANAEE-France ECOTRONS
+Analyses et Expérimentations sur les Écosystèmes - France ECOTRONS
+Celphedia
+Infrastructure Nationale pour la création, l’élevage, le phénotypage, la distribution et l’archivage d’organismes modèles
+CINES
+Centre informatique national de l'enseignement supérieur
+CLIMERI
+Infrastructure de recherche nationale de modélisation du système climatique de la Terre
+CollEx-Persée
+Collections d’excellence pour la Recherche - Persée
+CTA
+Cherenkov Telescope Array
+DUNE
+Deep Underground Neutrino Experiment at the Long-Baseline Neutrino Facility
+EGO-VIRGO
+Observatoire Européen Gravitationnel - VIRGO
+European Gravitational Observatory - VIRGO
+EMIR
+Fédération des Accélérateurs pour les Études des Matériaux sous Irradiation
+EMPHASIS
+European Infrastructure for multi-scale Plant Phenomics and Simulation for food security in a changing climate
+E-RIHS
+European Research Infrastructure for Heritage Science
+ESRF
+Source Européenne de Rayonnement Synchrotron
+European Synchrotron Radiation Facility
+FBI
+France-BioImaging
+F-CRIN
+Plateforme Nationale d’Infrastructures de recherche Clinique
+France Génomique
+Infrastructure nationale de génomique et bioinformatique associée
+HAL+
+Archive ouverte de prochaine génération
+HUMA-NUM
+La Très Grande Infrastructure de Recherche des Humanités Numériques
+IFB
+Institut Français de Bioinformatique
+INGESTEM
+Infrastructure nationale des cellules souches pluripotentes et ingénierie tissulaire
+Instrum-ESO
+Instrumentation pour les grands télescopes de l’ESO
+JUNO
+Jiangmen Underground Neutrino Observatory
+KM3NeT
+Kilometre Cube Neutrino Telescope
+LNCMI - EMFL
+Laboratoire National des Champs Magnétiques Intenses
+NeurATRIS
+Infrastructure de Recherche Translationnelle pour les Biothérapies en Neurosciences
+OpenEdition
+Communication scientifique ouverte en sciences humaines et sociales
+PNDB
+Pôle National de Données de Biodiversité
+RARe
+Ressources Agronomiques pour la Recherche
+Software Heritage
+TIMES
+Transfert et Interfaces : Mathématiques, Entreprises et Société
+CERN
+Organisation Européenne pour la Recherche Nucléaire
+European Organization for Nuclear Research
+CONSTANCES
+Cohorte des consultants des Centres d’examens de santé
+ECORD/IODP
+Programme international de forage profond en mer
+European Consortium for Ocean Drilling Research/International Ocean Discovery Program
+EMERG'IN
+Infrastructure Nationale de Recherche pour la lutte contre les maladies infectieuses animales émergentes ou zoonotiques par l’exploration in vivo
+EURO-ARGO
+Réseau in-situ global d’observation des océans
+European contribution to Argo program
+FAIR
+Facility for Antiproton and Ion Research
+FOF
+Flotte Océanographique Française
+FR-EXPOSOME
+France exposome
+GANIL-SPIRAL2
+Grand Accélérateur National d’Ions Lourds - Système de production d’Ions Radioactifs en Ligne de 2e génération
+HESS
+High Energy Stereoscopic System
+IAGOS
+Instruments de mesure embarqués sur avions pour l’observation globale
+In-service Aircraft for Global Observing System
+IN AIR
+Infrastructure Nationale des Aéronefs Instrumentés pour la Recherche
+LSST
+Legacy Survey of Space and Time
+MetaboHUB
+Infrastructure française distribuée pour la métabolomique et la fluxomique dédiée à l’innovation, à la formation et au transfert de technologie
+Métopes
+Méthodes et outils pour l’édition structurée
+NEUROSPIN
+Infrastructure de recherche sur le cerveau exploitant des grands instruments d’imagerie
+PAO
+Observatoire Pierre Auger
+Pierre Auger Observatory
+PGT
+Consortium Préindustriel des vecteurs de Thérapie Génique
+ROBOTEX 2.0
+L’infrastructure coordonnée des plateformes de Robotique en France
+LSM
+Laboratoire souterrain de Modane
+ACTRIS
+Aerosol, Cloud and Trace Gases Research Infrastructure
+Apollo
+Infrastructure de Recherche Apollon
+CC-IN2P3
+Centre de Calcul de l’IN2P3/CNRS
+CDS
+Centre de Données astronomiques de Strasbourg
+CFHT
+Canada-France-Hawaii Telescope
+ChemBioFrance
+Plateforme de découverte de molécules bioactives pour comprendre et soigner le vivant
+CONCORDIA
+Station de recherche antarctique franco-italienne
+DATA TERRA
+Pôles de données et services pour le système Terre
+ECELLFrance
+Plateforme nationale pour la médecine régénératrice basée sur les cellules souches mesenchymateuses adultes
+eLTER-France RZA
+Réseau des Zones Ateliers - Infrastructure des Socio-écosystèmes
+EMBRC
+Centre National de Ressources Biologiques Marines
+EMIR&A
+Fédération des accélérateurs pour l'IRradiation et l'Analyse des molécules et Matériaux
+ESS
+European Spallation Source
+E-XFEL
+European X-ray Free Electron Laser
+FR Solaris
+Infrastructure de Recherche française sur le solaire thermique concentré
+IBISBA
+Industrial Biotechnology Innovation and Synthetic Biology Acceleration
+IDMIT
+Infrastructure nationale pour la modélisation des maladies infectieuses humaines et les thérapies innovantes
+ILL
+Institut Max von Laue - Paul Langevin
+In-Sylva
+Infrastructure Nationale de recherche pour la gestion adaptative des forêts
+ISTEX
+Information scientifique et technique d'excellence
+Laboratoire P4 Jean Mérieux
+Infrastructure de recherche dédiée aux maladies hautement infectieuses - Laboratoire P4 Jean Mérieux Inserm
+METSA
+Microscopie Électronique en Transmission et Sonde Atomique
+LMJ-PETAL
+Laser Mégajoule - PETawatt Aquitaine Laser
+Phenome-Emphasis 
+Infrastructure Francaise de Phenomique Végétale
+PROGEDO
+PROduction et GEstion de Données
+REFIMEVE
+Réseau fibre métrologique à vocation européenne
+RéGEF
+Réseau Géochimique et Expérimental Français
+RENATER
+Groupement d’intérêt public pour le réseau national de communications électroniques pourla technologie, l’enseignement et la recherche
+Résif-Epos
+Réseau sismologique et géodésique français
+European Plate Observing System
+RMN-THC
+Résonance Magnétique Nucléaire à Très Hauts Champs
+SAFIRE
+Service des Avions Français Instrumentés pour la Recherche en Environnement
+SOLEIL
+Synchrotron SOLEIL
+WEST
+W(Tungsten) Environment for Steady-state Tokamaks
+ANAEE-France Natura
+Analyses et Expérimentations sur les Ecosystèmes - France Natura
+CAD
+Collecteur Analyseur de Données
+CALIS
+Infrastructure Nationale de Recherche Consommateur-ALIment-Santé
+CONTINUUM
+Continuité Collaborative du Numérique vers l'Humain
+ECCSEL
+Infrastructure de Recherche sur le Captage, Stockage et Valorisation du CO2 (CSCV) et  le Stockage Souterrain d'Energie
+EMSO
+European Multidisciplinary Seafloor and water column Observatory
+ESO/ALMA
+Atacama Large Millimeter/Submillimiter Array
+FLI
+France Life Imaging
+France Grilles
+FRISBI
+Infrastructure Française pour la Biologie Structurale Integrée
+ICOS-France
+Système Intégré d’Observation du Carbone
+Integrated Carbon Observation System
+ILICO
+Infrastructure de Recherche LIttorale et COtière
+Infranalytics
+Fédération nationale des équipements analytiques à très haut champ magnétique
+IRAM
+Institut de RadioAstronomie Millimétrique
+LOFAR
+International Low Frequency Radio Array Telescope
+PARADISE
+Plateforme pour les Activités de Recherche Appliquée et de Développement en Instrumentation au Sol et Embarquée
+ProFI
+Infrastructure Française de Protéomique
+RECOLNAT
+Réseau national des collections naturalistes
+RnMSH
+Réseau national des Maisons des Sciences de l’Homme
+SKAO
+SKA Observatory
+CEPMMT
+Centre Européen pour les Prévisions Météorologiques à Moyen Terme
+European Centre for Medium-Range Weather Forecasts
+EBRAINS-FR
+European Brain ReseArch INfrastructureS-France
+eLTER-France OZCAR
+Observatoires de la Zone Critique, Applications et Recherche
+EMBL
+Laboratoire Européen de Biologie Moléculaire
+European Molecular Biology Laboratory
+ESO
+Observatoire européen austral
+European Southern Observatory
+France Cohortes
+FT-ICR
+Réseau national de spectrométrie de masse FT-ICR à très haut champ
+GENCI
+Grand Équipement National de Calcul Intensif
+LHC
+Grand Collisionneur de Hadrons
+Large Hadron Collider
+LiPh@SAS
+Livestock Phenotyping for Sustainable Agricultural Systems
+Orphée/LLB
+ORPHEE/Laboratoire Léon Brillouin
+RENARD
+REseau NAtional de Rpe interDisciplinaire
+RENATECH+
+Réseau NAtional des grandes centrales de TECHnologies de nanofabrication
+SILECS
+Infrastructure for Large-Scale Experimental Computer Science
+THEOREM
+Réseau de Moyens d’Essais en Hydrodynamique pour les Énergies Marines Renouvelables
