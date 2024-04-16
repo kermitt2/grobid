@@ -1284,7 +1284,7 @@ public class Lexicon {
 
                     // If we cannot match, maybe the regex got some characters too much, e.g. dots, parenthesis,etc..
                     // so we try to check the tokens before the last only if the n-token is a single special characters
-                    // TODO: Stop after a few characters, instead of when reaching zero
+                    // TODO: Stop after a few characters, instead of when reaching zero?
                     if (targetAnnotation == null) {
                         String lastTokenText = lastToken.getText();
                         int index = urlTokens.size() - 1;
@@ -1309,7 +1309,7 @@ public class Lexicon {
 
                 int destinationPos = 0;
                 if (destination.contains(urlString)) {
-                    //In this case the Regex did not catch all the URL, so we need to extend it using the
+                    //In this case the regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString) + urlString.length();
                     if (endTokensIndex < layoutTokens.size() - 1) {
@@ -1351,9 +1351,10 @@ public class Lexicon {
                 } else if (urlString.replaceAll("\\s", "").equals(destination)) {
                     // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
                 } else if (urlString.contains(destination) || urlString.replaceAll("\\s", "").contains(destination)) {
-                    // In this case the regex has catches too much, usually this should be limited to a few characters
-                    // this is because the destination is slightly larger
-                    // need to find the token of the difference
+                    // In this case the regex has catches too much, usually this should be limited to a few characters,
+                    // but we cannot know it for sure. Here we first find the difference between the destination and the
+                    // urlString, and then we identify the tokens in which this "difference" is falling,
+                    // and we remove them from the urlTokens.
 
                     int startCharDifference = urlString.indexOf(destination) + destination.length();
                     String difference = urlString.substring(startCharDifference);
@@ -1364,7 +1365,7 @@ public class Lexicon {
                 } else {
                     // In this case the regex has catches too much, usually this should be limited to a few characters
                     // NOTE: Here it might not contain the URL string just because of space
-                    // TODO: stop after a few characters instead of reaching zero
+                    // TODO: stop after a few characters instead of reaching zero?
 
                     urlTokens = urlTokens.subList(0, correctedLastTokenIndex + 1);
                     endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();

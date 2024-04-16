@@ -1834,7 +1834,7 @@ public class TEIFormatter {
 
     private static Element generateNoteRef(List<LayoutToken> noteTokens, String noteLabel,  Note note, GrobidAnalysisConfig config) {
         Element ref = teiElement("ref");
-        //TODO: is this normal that it's "foot"?
+        //TODO: is this normal that it's hardcoded "foot"?
         ref.addAttribute(new Attribute("type", "foot"));
 
         if (config.isGenerateTeiCoordinates("ref")) {
@@ -1894,6 +1894,8 @@ public class TEIFormatter {
             }
         }
 
+        // We add URL that are identified using the PDF features for annotations, in this way we avoid mangling URLs
+        // in different sentences.
         List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations);
         forbiddenPositions.addAll(offsetPositionsUrls);
 
