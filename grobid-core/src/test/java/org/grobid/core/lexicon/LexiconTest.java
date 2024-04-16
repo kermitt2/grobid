@@ -235,9 +235,6 @@ public class LexiconTest {
         annotation.setType(PDFAnnotation.Type.URI);
         List<PDFAnnotation> pdfAnnotations = List.of(annotation);
 
-        //This is the actual text that is passed and is different from the layoutToken text.
-//        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
-
         List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
 
         assertThat(offsetPositions, hasSize(1));
@@ -276,9 +273,6 @@ public class LexiconTest {
         annotation.setDestination("https://nfms.maf.gov.la/");
         annotation.setType(PDFAnnotation.Type.URI);
         List<PDFAnnotation> pdfAnnotations = List.of(annotation);
-
-        //This is the actual text that is passed and is different from the layoutToken text.
-//        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
 
         List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
 
@@ -327,9 +321,6 @@ public class LexiconTest {
         annotation2.setType(PDFAnnotation.Type.URI);
         List<PDFAnnotation> pdfAnnotations = List.of(annotation1, annotation2);
 
-        //This is the actual text that is passed and is different from the layoutToken text.
-//        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
-
         List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
 
         assertThat(offsetPositions, hasSize(2));
@@ -337,6 +328,50 @@ public class LexiconTest {
         assertThat(input.substring(url0.start, url0.end), is("https://github.com/shijuanchen/shift_cult"));
         OffsetPosition url1 = offsetPositions.get(1);
         assertThat(input.substring(url1.start, url1.end), is("https://sites.google. \ncom/view/shijuanchen/research/shift_cult"));
+    }
+
+    @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText5() throws Exception {
+        final String input = ", accessible through the University of Hawaii Sea Level Center with station ID of UHSLC ID 57 \n" +
+            "(https://uhslc.soest.hawaii.edu/stations/?stn=057#levels). You can access a processed dataset of nearshore wave \n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(53);
+        lastTokenOfTheURL1.setPage(6);
+        lastTokenOfTheURL1.setX(334.9306551724138);
+        lastTokenOfTheURL1.setY(719.076);
+        lastTokenOfTheURL1.setWidth(21.514758620689655);
+        lastTokenOfTheURL1.setHeight(9.2001);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(54);
+        lastTokenOfTheURL2.setPage(6);
+        lastTokenOfTheURL2.setX(356.4454137931035);
+        lastTokenOfTheURL2.setY(719.076);
+        lastTokenOfTheURL2.setWidth(3.585793103448276);
+        lastTokenOfTheURL2.setHeight(9.2001);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(55);
+        lastTokenOfTheURL3.setPage(54);
+        lastTokenOfTheURL3.setX(360.0312068965518);
+        lastTokenOfTheURL3.setY(719.076);
+        lastTokenOfTheURL3.setWidth(3.585793103448276);
+        lastTokenOfTheURL3.setHeight(9.2001);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(6);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(6, 158.784, 716.0, 199.524, 12.275999999999954));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://uhslc.soest.hawaii.edu/stations/?stn=057#levels");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(input.substring(url0.start, url0.end), is("https://uhslc.soest.hawaii.edu/stations/?stn=057#levels"));
     }
 
 
