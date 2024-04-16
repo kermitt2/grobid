@@ -1218,6 +1218,32 @@ public class Lexicon {
         return offsetPositions;
     }
 
+    public static OffsetPosition getTokenPositions(int startPos, int endPos, List<LayoutToken> layoutTokens) {
+        // token sublist
+        int startTokenIndex = -1;
+        int endTokensIndex = -1;
+
+        List<LayoutToken> urlTokens = new ArrayList<>();
+        int tokenPos = 0;
+        int tokenIndex = 0;
+        for(LayoutToken localToken : layoutTokens) {
+            if (startPos <= tokenPos && (tokenPos+localToken.getText().length() <= endPos) ) {
+                urlTokens.add(localToken);
+                if (startTokenIndex == -1)
+                    startTokenIndex = tokenIndex;
+                if (tokenIndex > endTokensIndex)
+                    endTokensIndex = tokenIndex;
+            }
+            if (tokenPos > endPos) {
+                break;
+            }
+            tokenPos += localToken.getText().length();
+            tokenIndex++;
+        }
+
+        return new OffsetPosition(startTokenIndex, endTokensIndex);
+    }
+
     /**
      * This method returns the character offsets in relation to the string obtained by the layout tokens.
      * Notice the absence of the String text parameter.
@@ -1234,27 +1260,12 @@ public class Lexicon {
             int startPos = urlPosition.start;
             int endPos = urlPosition.end;
 
-            int startTokenIndex = -1;
-            int endTokensIndex = -1;
+            OffsetPosition tokenPositions = getTokenPositions(startPos, endPos, layoutTokens);
 
-            // token sublist - This could be replaced with a method call at some point
-            List<LayoutToken> urlTokens = new ArrayList<>();
-            int tokenPos = 0;
-            int tokenIndex = 0;
-            for(LayoutToken localToken : layoutTokens) {
-                if (startPos <= tokenPos && (tokenPos+localToken.getText().length() <= endPos) ) {
-                    urlTokens.add(localToken);
-                    if (startTokenIndex == -1)
-                        startTokenIndex = tokenIndex;
-                    if (tokenIndex > endTokensIndex)
-                        endTokensIndex = tokenIndex;
-                }
-                if (tokenPos > endPos) {
-                    break;
-                }
-                tokenPos += localToken.getText().length();
-                tokenIndex++;
-            }
+            int startTokenIndex = tokenPositions.start;
+            int endTokensIndex = tokenPositions.end;
+
+            List<LayoutToken> urlTokens = new ArrayList<>(layoutTokens.subList(startTokenIndex, endTokensIndex+1));
 
             String urlString = LayoutTokensUtil.toText(urlTokens);
 
@@ -1300,11 +1311,11 @@ public class Lexicon {
                 if (destination.contains(urlString)) {
                     //In this case the Regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
-                    destinationPos = destination.indexOf(urlString)+urlString.length();
-                    if (endTokensIndex < layoutTokens.size()-1) {
+                    destinationPos = destination.indexOf(urlString) + urlString.length();
+                    if (endTokensIndex < layoutTokens.size() - 1) {
                         int additionalSpaces = 0;
                         int additionalTokens = 0;
-                        for(int j=endTokensIndex+1; j<layoutTokens.size(); j++) {
+                        for (int j = endTokensIndex + 1; j < layoutTokens.size(); j++) {
                             LayoutToken nextToken = layoutTokens.get(j);
 
                             if ("\n".equals(nextToken.getText()) ||
@@ -1337,8 +1348,21 @@ public class Lexicon {
                             endPos -= additionalSpaces;
                         }
                     }
+                } else if (urlString.replaceAll("\\s", "").equals(destination)) {
+                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
+                } else if (urlString.contains(destination) || urlString.replaceAll("\\s", "").contains(destination)) {
+                    // In this case the regex has catches too much, usually this should be limited to a few characters
+                    // this is because the destination is slightly larger
+                    // need to find the token of the difference
+
+                    int startCharDifference = urlString.indexOf(destination) + destination.length();
+                    String difference = urlString.substring(startCharDifference);
+                    OffsetPosition newTokenPositions = getTokenPositions(startCharDifference, urlString.length(), urlTokens);
+
+                    urlTokens = urlTokens.subList(0, newTokenPositions.end);
+                    endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
                 } else {
-                    //In this case the regex has catches too much, usually this should be limited to a few characters
+                    // In this case the regex has catches too much, usually this should be limited to a few characters
                     // NOTE: Here it might not contain the URL string just because of space
                     // TODO: stop after a few characters instead of reaching zero
 
