@@ -1553,7 +1553,8 @@ public class TEIFormatter {
                 List<OffsetPosition> offsetPositionsUrls = Lexicon.tokenPositionUrlPatternWithPdfAnnotations(clusterTokens, doc.getPDFAnnotations());
                 offsetPositionsUrls.stream()
                     .forEach(opu -> {
-                        //We correct the latest token
+                            // We correct the latest token here, since later we will do a substring in the shared code,
+                            // and we cannot add a +1 there.
                         matchedLabelPosition.add(
                             Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end)),
                                 "url",

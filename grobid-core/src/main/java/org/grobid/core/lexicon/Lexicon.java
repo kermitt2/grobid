@@ -1263,10 +1263,9 @@ public class Lexicon {
             if (CollectionUtils.isNotEmpty(urlTokens)) {
                 LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
                 if (pdfAnnotations != null) {
-                    LayoutToken finalLastToken = lastToken;
                     targetAnnotation = pdfAnnotations.stream()
                         .filter(pdfAnnotation ->
-                            pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(finalLastToken))
+                            pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(lastToken))
                         .findFirst()
                         .orElse(null);
                     correctedLastTokenIndex = urlTokens.size() - 1;
@@ -1302,6 +1301,8 @@ public class Lexicon {
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString)+urlString.length();
                     if (endTokensIndex < layoutTokens.size()-1) {
+                        int additionalSpaces = 0;
+                        int additionalTokens = 0;
                         for(int j=endTokensIndex+1; j<layoutTokens.size(); j++) {
                             LayoutToken nextToken = layoutTokens.get(j);
 
@@ -1309,24 +1310,37 @@ public class Lexicon {
                                 " ".equals(nextToken.getText()) ||
                                 nextToken.getText().length() == 0) {
                                 endPos += nextToken.getText().length();
+                                additionalSpaces += nextToken.getText().length();
+                                additionalTokens += 1;
                                 urlTokens.add(nextToken);
                                 continue;
                             }
 
                             int pos = destination.indexOf(nextToken.getText(), destinationPos);
                             if (pos != -1) {
+                                if (additionalTokens > 0) {
+                                    additionalSpaces = 0;
+                                    additionalTokens = 0;
+                                }
                                 endPos += nextToken.getText().length();
                                 destinationPos = pos + nextToken.getText().length();
                                 urlTokens.add(nextToken);
-                            } else
+                            } else {
                                 break;
+                            }
+                        }
+
+                        // We don't match anything after but we added spaces, we should take them back
+                        if (additionalTokens > 0) {
+                            urlTokens = urlTokens.subList(0, urlTokens.size() - additionalTokens);
+                            endPos -= additionalSpaces;
                         }
                     }
                 } else {
                     //In this case the regex has catches too much, usually this should be limited to a few characters
-                    //TODO: stop after a few characters instead of reaching zero
-
                     // NOTE: Here it might not contain the URL string just because of space
+                    // TODO: stop after a few characters instead of reaching zero
+
                     urlTokens = urlTokens.subList(0, correctedLastTokenIndex +1);
                     endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
                 }
