@@ -124,7 +124,7 @@ public class PDFAnnotation {
 						break;
 					}
 					double areaToken = tokenBox.area();
-					// the bounding box of the insection 
+					// the bounding box of the intersection
 					BoundingBox intersectionBox = box.boundingBoxIntersection(tokenBox);
 					if (intersectionBox != null) {
 						double intersectionArea = intersectionBox.area();

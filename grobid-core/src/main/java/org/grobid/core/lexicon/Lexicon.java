@@ -1237,7 +1237,7 @@ public class Lexicon {
             int startTokenIndex = -1;
             int endTokensIndex = -1;
 
-            // token sublist 
+            // token sublist - This could be replaced with a method call at some point
             List<LayoutToken> urlTokens = new ArrayList<>();
             int tokenPos = 0;
             int tokenIndex = 0;
@@ -1258,6 +1258,7 @@ public class Lexicon {
 
             String urlString = LayoutTokensUtil.toText(urlTokens);
 
+            // This variable is used to adjust the last token index
             int correctedLastTokenIndex = 0;
             PDFAnnotation targetAnnotation = null;
             if (CollectionUtils.isNotEmpty(urlTokens)) {
@@ -1341,7 +1342,7 @@ public class Lexicon {
                     // NOTE: Here it might not contain the URL string just because of space
                     // TODO: stop after a few characters instead of reaching zero
 
-                    urlTokens = urlTokens.subList(0, correctedLastTokenIndex +1);
+                    urlTokens = urlTokens.subList(0, correctedLastTokenIndex + 1);
                     endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
                 }
             }
