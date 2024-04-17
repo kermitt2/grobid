@@ -1195,24 +1195,24 @@ public class Lexicon {
 
         List<OffsetPosition> urlTokensPositions = tokenPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
 
+        // We need to adjust the end of the positions to avoid problems with the sublist
+        // that is used the following method
+        urlTokensPositions.stream().forEach(o -> o.end += 1);
+
         // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
         // which may be different (spaces, hypen, breakline)
         return TextUtilities.matchTokenAndString(layoutTokens, text, urlTokensPositions);
     }
 
     /**
-     * This method returns the token positions in respect of the layout tokens
+     * This method returns the token positions in respect of the layout tokens,
+     * the output token offsets are (included, included)
      */
     public static List<OffsetPosition> tokenPositionUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
 
-        List<OffsetPosition> offsetPositions = convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
-        // We need to adjust the end of the positions to avoid problems with the sublist
-
-        offsetPositions.stream().forEach(o -> o.end += 1);
-
-        return offsetPositions;
+        return convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
     }
 
     /**
