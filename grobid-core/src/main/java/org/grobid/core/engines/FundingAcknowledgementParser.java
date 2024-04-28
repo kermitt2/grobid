@@ -69,6 +69,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
+    FundingAcknowledgementParser(GrobidModel model) {
+        super(model);
+    }
+
     private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
         processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
         if (tokenizationFunding == null || tokenizationFunding.size() == 0)
@@ -189,7 +193,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * extracted normalized entities. These entities are referenced by the inline 
      * annotations with the usual @target attribute pointing to xml:id. 
      */
-    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
+    protected MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
             getExtractionResult(List<LayoutToken> tokenizations, String result) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
@@ -451,8 +455,14 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
 
         // last funding, person, institution/affiliation
-        if (funding.isValid())
+        if (person.isValid()) {
+            persons.add(person);
+        }
+
+        if (funding.isValid()) {
             fundings.add(funding);
+        }
+
 
         if (institution.isNotNull()) 
             institutions.add(institution);
@@ -460,8 +470,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
         if (affiliation.isNotNull()) 
             affiliations.add(affiliation);
 
-        if (institutions != null && institutions.size() > 0)
+        if (CollectionUtils.isNotEmpty(institutions)) {
             affiliations.addAll(institutions);
+        }
 
         for(Funding localFunding : fundings) {
             localFunding.inferAcronyms();
