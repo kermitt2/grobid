@@ -21,10 +21,10 @@ class SentenceUtilitiesKTest {
         val tokens = arrayOf(" ", "\n", "\t")
 
         tokens.forEach { token ->
-            assertTrue(SentenceUtilities.toSkipToken(token))
+            assertTrue(SentenceUtilities.toSkipTokenNoHyphen(token))
         }
 
-        assertFalse { SentenceUtilities.toSkipToken("-") }
+        assertFalse { SentenceUtilities.toSkipTokenNoHyphen("-") }
 
     }
 
