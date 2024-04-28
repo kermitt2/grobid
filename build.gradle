@@ -23,7 +23,6 @@ repositories {
 }
 
 apply plugin: 'jacoco'
-apply plugin: 'org.jetbrains.kotlin.jvm'
 
 jacoco {
     toolVersion = '0.8.8'
@@ -34,6 +33,7 @@ allprojects {
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
     apply plugin: 'com.adarshr.test-logger'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
 
     group = "org.grobid"
 
