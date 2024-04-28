@@ -102,7 +102,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
     /**
      * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p) 
      * will be processed in this segment and paragraph element will be replaced with the processed content.
-     * Resulting entities are relative to the whole procssed XML segment.
+     * Resulting entities are relative to the whole processed XML segment.
      * 
      * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
      **/
