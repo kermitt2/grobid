@@ -165,7 +165,8 @@ public class LexiconTest {
 
         assertThat(offsetPositions, hasSize(1));
         OffsetPosition url = offsetPositions.get(0);
-        assertThat(LayoutTokensUtil.toText(tokenisedInput.subList(url.start, url.end)), is("https://github.com/lfoppiano/ \nsupercon2"));
+        // LF: we need a + 1 because the convention for the tokenPositionUrlPattern is inclusive, inclusive
+        assertThat(LayoutTokensUtil.toText(tokenisedInput.subList(url.start, url.end + 1)), is("https://github.com/lfoppiano/ \nsupercon2"));
     }
 
     @Test
