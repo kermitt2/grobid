@@ -2,6 +2,8 @@ package org.grobid.core.engines
 
 import org.grobid.core.GrobidModels
 import org.grobid.core.analyzers.GrobidAnalyzer
+import org.grobid.core.data.Funder
+import org.grobid.core.data.Funding
 import org.grobid.core.layout.LayoutToken
 import org.grobid.core.lexicon.Lexicon
 import org.grobid.core.utilities.GrobidConfig
@@ -30,7 +32,7 @@ class FundingAcknowledgementParserTest {
     @Test
     fun testGetExtractionResult() {
 
-        val input: String = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript.";
+        val input = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript.";
 
         val results: String = "Our\tour\tO\tOu\tOur\tOur\tr\tur\tOur\tOur\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
                 "warmest\twarmest\tw\twa\twar\twarm\tt\tst\test\tmest\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
@@ -108,6 +110,61 @@ class FundingAcknowledgementParserTest {
         assertThat(mutableTriple.middle.get(0).rawName, `is`("Patrice Lopez"))
         assertThat(mutableTriple.middle.get(1).rawName, `is`("Pedro Baptista de Castro"))
         assertThat(mutableTriple.middle.get(2).rawName, `is`("Erina Fujita"))
+        assertThat(mutableTriple.right, hasSize(0))
+    }
+
+    @Test
+    fun testGetExtractionResult2() {
+
+        val input = "This work was partly supported by MEXT Program: Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials) Grant Number [JPMXP1122715503].";
+
+        val results: String = "This\tthis\tT\tTh\tThi\tThis\ts\tis\this\tThis\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
+            "work\twork\tw\two\twor\twork\tk\trk\tork\twork\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "was\twas\tw\twa\twas\twas\ts\tas\twas\twas\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "partly\tpartly\tp\tpa\tpar\tpart\ty\tly\ttly\trtly\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "supported\tsupported\ts\tsu\tsup\tsupp\td\ted\tted\trted\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "by\tby\tb\tby\tby\tby\ty\tby\tby\tby\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "MEXT\tmext\tM\tME\tMEX\tMEXT\tT\tXT\tEXT\tMEXT\tLINEIN\tALLCAP\tNODIGIT\t0\t1\t0\tNOPUNCT\t0\tI-<funderName>\n" +
+            "Program\tprogram\tP\tPr\tPro\tProg\tm\tam\tram\tgram\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
+            ":\t:\t:\t:\t:\t:\t:\t:\t:\t:\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tPUNCT\t0\t<other>\n" +
+            "Data\tdata\tD\tDa\tDat\tData\ta\tta\tata\tData\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<programName>\n" +
+            "Creation\tcreation\tC\tCr\tCre\tCrea\tn\ton\tion\ttion\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Utilization\tutilization\tU\tUt\tUti\tUtil\tn\ton\tion\ttion\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tHYPHEN\t0\t<programName>\n" +
+            "Type\ttype\tT\tTy\tTyp\tType\te\tpe\type\tType\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Material\tmaterial\tM\tMa\tMat\tMate\tl\tal\tial\trial\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Research\tresearch\tR\tRe\tRes\tRese\th\tch\trch\tarch\tLINEIN\tINITCAP\tNODIGIT\t0\t1\t0\tNOPUNCT\t0\t<programName>\n" +
+            "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tLINEIN\tNOCAPS\tNODIGIT\t0\t1\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Development\tdevelopment\tD\tDe\tDev\tDeve\tt\tnt\tent\tment\tLINEIN\tINITCAP\tNODIGIT\t0\t1\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Project\tproject\tP\tPr\tPro\tProj\tt\tct\tect\tject\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tOPENBRACKET\t0\t<programName>\n" +
+            "Digital\tdigital\tD\tDi\tDig\tDigi\tl\tal\ttal\tital\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Transformation\ttransformation\tT\tTr\tTra\tTran\tn\ton\tion\ttion\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Initiative\tinitiative\tI\tIn\tIni\tInit\te\tve\tive\ttive\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Center\tcenter\tC\tCe\tCen\tCent\tr\ter\tter\tnter\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "for\tfor\tf\tfo\tfor\tfor\tr\tor\tfor\tfor\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Magnetic\tmagnetic\tM\tMa\tMag\tMagn\tc\tic\ttic\tetic\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            "Materials\tmaterials\tM\tMa\tMat\tMate\ts\tls\tals\tials\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<programName>\n" +
+            ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tENDBRACKET\t0\t<programName>\n" +
+            "Grant\tgrant\tG\tGr\tGra\tGran\tt\tnt\tant\trant\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
+            "Number\tnumber\tN\tNu\tNum\tNumb\tr\ter\tber\tmber\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
+            "[\t[\t[\t[\t[\t[\t[\t[\t[\t[\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tOPENBRACKET\t0\t<other>\n" +
+            "JPMXP1122715503\tjpmxp1122715503\tJ\tJP\tJPM\tJPMX\t3\t03\t503\t5503\tLINEIN\tALLCAP\tCONTAINSDIGITS\t0\t0\t0\tNOPUNCT\t0\tI-<grantNumber>\n" +
+            "]\t]\t]\t]\t]\t]\t]\t]\t]\t]\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tENDBRACKET\t0\tI-<other>\n" +
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>";
+
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        val (element, mutableTriple) = target.getExtractionResult(tokens, results)
+
+        assertThat(mutableTriple.left, hasSize(1))
+        val funding1: Funding = mutableTriple.left.get(0)
+        val funder1: Funder = funding1.funder
+//        assertThat(funder1.fullName, `is`("MEXT"))
+        assertThat(funding1.programFullName, `is`("Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials)"))
+        assertThat(funder1.fullName, `is`("Ministry of Education, Culture, Sports, Science and Technology"))
+        assertThat(mutableTriple.middle, hasSize(0))
         assertThat(mutableTriple.right, hasSize(0))
     }
 }
