@@ -436,4 +436,39 @@ public class TextUtilitiesTest extends EngineTest {
         assertThat(inputReal.substring(url1.start, url1.end), is("https://github.com/lfoppiano/ supercon2"));
 
     }
+
+
+    @Test
+    public void testMatchTokenAndString_twoElements() throws Exception {
+        final String input = "This work is available at https://github.com/lfoppiano/ \n" +
+            "supercon2. The repository contains the code of the \n" +
+            "SuperCon 2 interface, the curation workflow, and the \n" +
+            "\n" +
+            "Table 2. Data support, the number of entities for each label in \n" +
+            "each of the datasets used for evaluating the ML models. The \n" +
+            "base dataset is the original dataset described in [18], and the \n" +
+            "curation dataset is automatically collected based on the data-\n" +
+            "base corrections by the interface and manually corrected. \n" +
+            "\n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        final String inputReal = "This work is available at https://github.com/lfoppiano/ supercon2. The repository contains the code of the SuperCon 2 interface, the curation workflow, and the Table 2. Data support, the number of entities for each label in each of the datasets used for evaluating the ML models. The base dataset is the original dataset described in [18], and the curation dataset is automatically collected based on the database corrections by the interface and manually corrected. ";
+        List<OffsetPosition> urlTokens = Arrays.asList(new OffsetPosition(0, 3), new OffsetPosition(10, 23));
+
+        List<OffsetPosition> offsetPositions = TextUtilities.matchTokenAndString(tokenisedInput, inputReal, urlTokens);
+
+        assertThat(offsetPositions, hasSize(2));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(url0.start, is(0));
+        assertThat(url0.end, is(9));
+
+        assertThat(inputReal.substring(url0.start, url0.end), is("This work"));
+
+        OffsetPosition url1 = offsetPositions.get(1);
+        assertThat(url1.start, is(26));
+        assertThat(url1.end, is(65));
+
+        assertThat(inputReal.substring(url1.start, url1.end), is("https://github.com/lfoppiano/ supercon2"));
+
+    }
 }
