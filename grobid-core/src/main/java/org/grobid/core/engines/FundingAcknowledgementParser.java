@@ -1,65 +1,38 @@
 package org.grobid.core.engines;
 
+import com.google.common.collect.Iterables;
+import nu.xom.*;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.data.Funding;
-import org.grobid.core.data.Funder;
-import org.grobid.core.data.Person;
-import org.grobid.core.data.Affiliation;
+import org.grobid.core.data.*;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorFunding;
-import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.OffsetPosition;
+import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nu.xom.Attribute;
-import nu.xom.Element;
-import nu.xom.Elements;
-import nu.xom.Node;
-import nu.xom.Nodes;
-import nu.xom.Text;
-import nu.xom.Document;
-import nu.xom.ParsingException;
-import nu.xom.ValidityException;
-import nu.xom.Builder;
-
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.commons.lang3.tuple.MutablePair;
-import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.lang3.tuple.MutableTriple;
-
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
-import static org.grobid.core.engines.label.TaggingLabels.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
-import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+import static org.grobid.core.engines.label.TaggingLabels.*;
 
 public class FundingAcknowledgementParser extends AbstractParser {
 
@@ -73,15 +46,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(model);
     }
 
-    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
+    private MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse>
         processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
-        if (tokenizationFunding == null || tokenizationFunding.size() == 0)
+        if (CollectionUtils.isEmpty(tokenizationFunding)) {
             return null;
+        }
         String res;
         try {
             String featureVector = FeaturesVectorFunding.addFeatures(tokenizationFunding, null);
             res = label(featureVector);
-//System.out.println(res);
+
         } catch (Exception e) {
             throw new GrobidException("CRF labeling with table model fails.", e);
         }
@@ -93,14 +67,59 @@ public class FundingAcknowledgementParser extends AbstractParser {
     }
 
     /**
-     * For convenience, a processing method taking a raw string as input. 
-     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     * For convenience, a processing method taking a raw string as input.
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language.
+     *
+     * TODO: implement the sentence segmentation
      **/
     public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
-                               GrobidAnalysisConfig config) {
+                                                                                                   GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
         List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
-        return processing(tokenizationFunding, config);
+        MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> results = processing(tokenizationFunding, config);
+        MutableTriple<List<Funding>, List<Person>, List<Affiliation>> entities = MutableTriple.of(results.getRight().getFundings(), results.getRight().getPersons(), results.getRight().getAffiliations());
+        List<Pair<OffsetPosition, Element>> annotations = results.getLeft();
+
+        Element outputParagraph = injectedAnnotationsInNode(tokenizationFunding, annotations, teiElement("p"));
+
+        return MutablePair.of(outputParagraph, entities);
+    }
+
+    /**
+     * This method takes in input a tokenized text, a set of annotations and a root element and attach a list of nodes
+     * under the root where the text is combined with the annotations
+     */
+    protected static Element injectedAnnotationsInNode(List<LayoutToken> tokenizationFunding, List<Pair<OffsetPosition, Element>> annotations, Element rootElement) {
+
+        int pos = 0;
+        for(Pair<OffsetPosition, Element> annotation: annotations) {
+            OffsetPosition annotationPosition = annotation.getLeft();
+            Element annotationContentElement = annotation.getRight();
+
+            List<LayoutToken> before = tokenizationFunding.subList(pos, annotationPosition.start);
+            String clusterContentBefore = LayoutTokensUtil.toText(before);
+
+            if (CollectionUtils.isNotEmpty(before) && before.get(0).getText().equals(" ")) {
+                rootElement.appendChild(new Text(" "));
+            }
+
+            rootElement.appendChild(clusterContentBefore);
+
+            pos = annotationPosition.end;
+            rootElement.appendChild(annotationContentElement);
+        }
+
+        // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
+        List<LayoutToken> remaining = tokenizationFunding.subList(pos, tokenizationFunding.size());
+        String remainingClusterContent = LayoutTokensUtil.normalizeDehyphenizeText(remaining);
+
+        if (CollectionUtils.isNotEmpty(remaining) && remaining.get(0).getText().equals(" ")) {
+            rootElement.appendChild(new Text(" "));
+        }
+
+        rootElement.appendChild(remainingClusterContent);
+
+        return rootElement;
     }
 
     /**
@@ -121,49 +140,129 @@ public class FundingAcknowledgementParser extends AbstractParser {
             Document localDoc = parser.build(tei, null);
 
             // get the paragraphs
-            Element root = localDoc.getRootElement();
-            Nodes paragraphs = root.query("//p");
+            Element rootElementStatement = localDoc.getRootElement();
+            Nodes paragraphs = rootElementStatement.query("//p");
+
+            boolean sentenceSegmentation = config.isWithSentenceSegmentation();
 
             for(Node paragraph : paragraphs) {
                 String paragraphText = paragraph.getValue();
-                List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(paragraphText);
+                GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
+                List<LayoutToken> tokenizationFunding = analyzer.tokenizeWithLayoutToken(paragraphText);
 
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = processing(tokenizationFunding, config);
-                
-                // replace paragraph content
-                if (localResult.getLeft() != null && localResult.getLeft().getChildCount()>0) {
-                    ((Element) paragraph).removeChildren();
-                    for (int i = localResult.getLeft().getChildCount()-1; i >=0; i--) {
-                        Node localNode = localResult.getLeft().getChild(i);
-                        localNode.detach();
-                        ((Element) paragraph).insertChild(localNode, 0);
+                StringBuilder sb = new StringBuilder();
+
+                MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
+
+                List<Pair<OffsetPosition, Element>> annotations = localResult.left;
+                FundingAcknowledgmentParse localEntities = localResult.right;
+
+                if (CollectionUtils.isEmpty(annotations)) {
+                    continue;
+                }
+
+                List<OffsetPosition> list = annotations.stream().map(a -> a.getLeft()).toList();
+                List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, list);
+                List<Pair<OffsetPosition, Element>> annotationsWithPosRefToText = new ArrayList<>();
+                for (int i = 0; i < annotationsPositionText.size(); i++) {
+                    annotationsWithPosRefToText.add(Pair.of(annotationsPositionText.get(i), annotations.get(i).getRight()));
+                }
+
+                annotations = annotationsWithPosRefToText;
+
+                if (sentenceSegmentation) {
+//                    Pair<List<String>, List<OffsetPosition>> sentenceInformation = extractSentencesAndPositionsFromParagraphElement(rootElementStatement);
+//
+//                    List<String> sentencesList = sentenceInformation.getLeft();
+//                    List<OffsetPosition> offsetPositionList = sentenceInformation.getRight();
+//
+//                    List<List<LayoutToken>> sentenceLayoutTokens = sentencesList.stream()
+//                        .map(analyzer::tokenizeWithLayoutToken)
+//                        .toList();
+//
+//                    List<OffsetPosition> sentenceTokenPositions = new ArrayList<>();
+//                    int pos = 0;
+//                    for (List<LayoutToken> sentenceLayoutToken : sentenceLayoutTokens) {
+//                        offsetPositionList.add(new OffsetPosition(pos, pos + sentenceLayoutToken.size()));
+//                        pos += sentenceLayoutToken.size();
+//                    }
+                    int pos = 0;
+                    int sentenceStartOffset = 0;
+                    Nodes sentences = paragraph.query("//s");
+
+                    if(sentences.size() == 0) {
+                        // Overly careful - we should never end up here.
+                        LOGGER.warn("While the configuration claim that paragraphs must be segmented, we did not find any sentence. ");
+
+                        List<Node> nodes = getNodesAnnotationsInTextNode(paragraph, annotations);
+
+                        for (int i = 0; i < paragraph.getChildCount(); i++) {
+                            paragraph.getChild(i).detach();
+                        }
+                        for (Node node: nodes) {
+                            node.detach();
+                            ((Element) paragraph).appendChild(node);
+                        }
+                    }
+
+                    for (Node sentence : sentences) {
+                        String sentenceText = sentence.getValue();
+                        List<Node> newChildren = new ArrayList<>();
+                        for (int i = 0; i < sentence.getChildCount(); i++) {
+                            //Assumption here is that the structure is flat to maximum one level down
+                            Node currentNode = sentence.getChild(i);
+                            if (currentNode instanceof Text) {
+                                String text = currentNode.getValue();
+                                int finalPos = pos;
+                                List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
+                                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
+                                    .toList();
+
+                                if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
+                                    List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
+                                    newChildren.addAll(nodes);
+                                } else {
+                                    newChildren.add(currentNode);
+                                }
+                                pos += text.length();
+                            } else if (currentNode instanceof Element) {
+                                newChildren.add(currentNode);
+                                pos += currentNode.getValue().length();
+                            } /*else {
+                                System.out.println(currentNode);
+                            }*/
+                        }
+
+                        for (int i = 0; i < sentence.getChildCount(); i++) {
+                            sentence.getChild(i).detach();
+                        }
+                        for (Node node: newChildren) {
+                            node.detach();
+                            ((Element) sentence).appendChild(node);
+                        }
+
+                        sentenceStartOffset += sentenceText.length();
+                    }
+                } else {
+                    List<Node> nodes = getNodesAnnotationsInTextNode(paragraph, annotations);
+
+                    for (int i = 0; i < paragraph.getChildCount(); i++) {
+                        paragraph.getChild(i).detach();
+                    }
+                    for (Node node: nodes) {
+                        node.detach();
+                        ((Element) paragraph).appendChild(node);
                     }
                 }
+
                 // update extracted entities
                 if (globalResult == null) {
-                    globalResult = MutablePair.of(root, localResult.getRight());
+                    globalResult = MutablePair.of(rootElementStatement, MutableTriple.of(localEntities.getFundings(), localEntities.getPersons(), localEntities.getAffiliations()));
                 } else {
                     // concatenate members of the local results to the global ones
-                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> localEntities = localResult.getRight();
-                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
-
-                    List<Funding> localFundings = localEntities.getLeft();
-                    List<Funding> globalFundings = globalEntities.getLeft();
-                    globalFundings.addAll(localFundings);
-                    globalEntities.setLeft(globalFundings);
-
-                    List<Person> localPersons = localEntities.getMiddle();
-                    List<Person> globalPersons = globalEntities.getMiddle();
-                    globalPersons.addAll(localPersons);
-                    globalEntities.setMiddle(globalPersons);
-
-                    List<Affiliation> localAffiliation = localEntities.getRight();
-                    List<Affiliation> globalAffiliations = globalEntities.getRight();
-                    globalAffiliations.addAll(localAffiliation);
-                    globalEntities.setRight(globalAffiliations);
-
-                    globalResult.setRight(globalEntities);
+                    globalResult = aggregateResults(MutableTriple.of(localEntities.getFundings(), localEntities.getPersons(), localEntities.getAffiliations()), globalResult);
                 }
+
             }
 
             //System.out.println(globalResult.getLeft().toXML());
@@ -173,9 +272,93 @@ public class FundingAcknowledgementParser extends AbstractParser {
             LOGGER.warn("Parsing error of the TEI fragment from funding/acknowledgement section", exp);
         } catch(IOException exp) {
             LOGGER.warn("Input TEI fragment invalid from funding/acknowledgement section", exp);
-        } 
-        
+        }
+
         return globalResult;
+    }
+
+    /**
+     * This method return a list of nodes corresponding to the annotations as they are positioned in
+     * the text content of the target node. If the node is empty, should be used @see injectedAnnotationsInNode
+     * as this method will fail
+     */
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<Pair<OffsetPosition, Element>> annotations) {
+        return getNodesAnnotationsInTextNode(targetNode, annotations, 0);
+    }
+
+    /**
+     * The sentence offset allow to calculate the position relative to the sentence of annotations that
+     * have been calculated in relation with the paragraph.
+     */
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<Pair<OffsetPosition, Element>> annotations, int sentenceOffset) {
+        String text = targetNode.getValue();
+
+        List<Node> outputNodes = new ArrayList<>();
+
+        int pos = 0;
+        for (Pair<OffsetPosition, Element> annotation : annotations) {
+            OffsetPosition annotationPosition = annotation.getLeft();
+            Element annotationContentElement = annotation.getRight();
+
+            String before = text.substring(pos, annotationPosition.start - sentenceOffset);
+
+//            if (StringUtils.isNotEmpty(before) && before.startsWith(" ")) {
+//                outputNodes.add(new Text(" "));
+//            }
+
+            outputNodes.add(new Text(before));
+            pos = annotationPosition.end - sentenceOffset;
+            outputNodes.add(annotationContentElement);
+        }
+
+        String remaining = text.substring(pos);
+
+//        if (StringUtils.isNotEmpty(remaining) && remaining.startsWith(" ")) {
+//            outputNodes.add(new Text(" "));
+//        }
+
+        outputNodes.add(new Text(remaining));
+
+        return outputNodes;
+    }
+
+    private static @NotNull MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> aggregateResults(MutableTriple<List<Funding>, List<Person>, List<Affiliation>> localEntities, MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> globalResult) {
+        MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
+
+        List<Funding> localFundings = localEntities.getLeft();
+        List<Funding> globalFundings = globalEntities.getLeft();
+        globalFundings.addAll(localFundings);
+        globalEntities.setLeft(globalFundings);
+
+        List<Person> localPersons = localEntities.getMiddle();
+        List<Person> globalPersons = globalEntities.getMiddle();
+        globalPersons.addAll(localPersons);
+        globalEntities.setMiddle(globalPersons);
+
+        List<Affiliation> localAffiliation = localEntities.getRight();
+        List<Affiliation> globalAffiliations = globalEntities.getRight();
+        globalAffiliations.addAll(localAffiliation);
+        globalEntities.setRight(globalAffiliations);
+
+        globalResult.setRight(globalEntities);
+
+        return globalResult;
+    }
+
+    protected static Pair<List<String>, List<OffsetPosition>> extractSentencesAndPositionsFromParagraphElement(Element paragraphElement) {
+        int offset = 0;
+        List<OffsetPosition> sentenceOffsetPositions = new ArrayList<>();
+
+        Nodes sentences = paragraphElement.query("//s");
+        List<String> sentencesAsString = new ArrayList<>();
+        for (Node sentence : sentences) {
+            String sentenceText = sentence.getValue();
+            sentenceOffsetPositions.add(new OffsetPosition(offset, offset + sentenceText.length()));
+            sentencesAsString.add(sentence.getValue());
+            offset += sentence.getValue().length();
+        }
+
+        return Pair.of(sentencesAsString, sentenceOffsetPositions);
     }
 
 
@@ -188,35 +371,44 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * of layout tokens in a context free manner. 
      * 
      * The expected input here is a paragraph.
+     *
+     *     // This returns a Element of the annotation and the position where should be injected, relative to the paragraph.
+     *     // TODO: make new data objects for the annotations
      * 
      * Return an XML fragment with inline annotations of the input text, together with 
      * extracted normalized entities. These entities are referenced by the inline 
      * annotations with the usual @target attribute pointing to xml:id. 
      */
-    protected MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
-            getExtractionResult(List<LayoutToken> tokenizations, String result) {
+    protected MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> getExtractionResult(List<LayoutToken> tokensParagraph, String labellingResult) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
         List<Affiliation> affiliations = new ArrayList<>();
         List<Affiliation> institutions = new ArrayList<>();
+
+        FundingAcknowledgmentParse parsedStatement = new FundingAcknowledgmentParse();
+        parsedStatement.setFundings(fundings);
+        parsedStatement.setPersons(persons);
+        parsedStatement.setAffiliations(affiliations);
 
         // current funding
         Funding funding = new Funding();
 
         // current person
         Person person = new Person();
-        
+
         // current organization
         Affiliation affiliation = new Affiliation();
         Affiliation institution = new Affiliation();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, result, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, labellingResult, tokensParagraph);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         TaggingLabel previousLabel = null;
 
-        Element curParagraph = teiElement("p");
-        List<Node> curParagraphNodes = new ArrayList<>();
+        List<Element> elements = new ArrayList<>();
+        List<OffsetPosition> positions = new ArrayList<>();
+
         int posTokenization = 0;
+        int posCharacters = 0;
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
@@ -224,7 +416,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
             }
 
             boolean spaceBefore = false;
-            if (posTokenization > 0 && tokenizations.size()>=posTokenization && tokenizations.get(posTokenization-1).getText().equals(" ")) {
+            if (posTokenization > 0
+                && tokensParagraph.size()>=posTokenization
+                && tokensParagraph.get(posTokenization-1).getText().equals(" ")) {
                 spaceBefore = true;
             }
 
@@ -232,7 +426,24 @@ public class FundingAcknowledgementParser extends AbstractParser {
             Engine.getCntManager().i(clusterLabel);
 
             List<LayoutToken> tokens = cluster.concatTokens();
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));   
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
+
+            if (clusterLabel.equals(FUNDING_OTHER)) {
+                posTokenization += tokens.size();
+                posCharacters += clusterContent.length();
+                continue;
+            }
+
+            // We adjust the end position when the entity ends with a space
+            int endPosTokenization = posTokenization + tokens.size();
+            if (Iterables.getLast(tokens).getText().equals(" ")) {
+                endPosTokenization -= 1;
+            }
+
+            int endPosCharacters = posCharacters + clusterContent.length();
+            if (Iterables.getLast(tokens).getText().equals(" ")) {
+                endPosCharacters -= 1;
+            }
 
             if (clusterLabel.equals(FUNDING_FUNDER_NAME)) {
                 Funder localFunder = funding.getFunder();
@@ -259,11 +470,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "funder"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
-
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
             } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getGrantName())) {
                     if (funding.isValid()) {
@@ -280,10 +489,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "grantName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PERSON)) {
                 if (StringUtils.isNotBlank(person.getRawName())) {
@@ -300,10 +508,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "person"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
@@ -320,17 +527,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "affiliation"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
                     //if (institution.isNotNull()) {
-                        institutions.add(institution);
-                        // next funding object
-                        institution = new Affiliation();
+                    institutions.add(institution);
+                    // next funding object
+                    institution = new Affiliation();
                     //}
                 }
 
@@ -340,17 +546,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "institution"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_INFRASTRUCTURE)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
                     //if (institution.isNotNull()) {
-                        institutions.add(institution);
-                        // next funding object
-                        institution = new Affiliation();
+                    institutions.add(institution);
+                    // next funding object
+                    institution = new Affiliation();
                     //}
                 }
                 institution.setAffiliationString(clusterContent);
@@ -361,10 +566,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "institution"));
                 entity.addAttribute(new Attribute("subtype", "infrastructure"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 Funding previousFounding = null;
@@ -382,8 +586,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.addLayoutTokens(tokens);
 
                 // possibly copy funder from previous funding object (case of "factorization" of grant numbers)
-                if (previousFounding != null && 
-                    previousFounding.getGrantNumber() != null && 
+                if (previousFounding != null &&
+                    previousFounding.getGrantNumber() != null &&
                     clusterContent.length() == previousFounding.getGrantNumber().length()) {
                     funding.setFunder(previousFounding.getFunder());
                 }
@@ -391,10 +595,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "grantNumber"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProgramFullName())) {
@@ -412,10 +615,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "programName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProjectFullName())) {
@@ -433,25 +635,17 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "projectName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
-            } else if (clusterLabel.equals(FUNDING_OTHER)) {
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(textNode(clusterContent));
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
             previousLabel = clusterLabel;
-            posTokenization += tokens.size(); 
-        }
-
-        for (Node n : curParagraphNodes) {
-            curParagraph.appendChild(n);
+            posTokenization += tokens.size();
+            posCharacters += clusterContent.length();
         }
 
         // last funding, person, institution/affiliation
@@ -463,11 +657,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
             fundings.add(funding);
         }
 
-
-        if (institution.isNotNull()) 
+        if (institution.isNotNull())
             institutions.add(institution);
 
-        if (affiliation.isNotNull()) 
+        if (affiliation.isNotNull())
             affiliations.add(affiliation);
 
         if (CollectionUtils.isNotEmpty(institutions)) {
@@ -478,9 +671,13 @@ public class FundingAcknowledgementParser extends AbstractParser {
             localFunding.inferAcronyms();
         }
 
-        MutableTriple<List<Funding>,List<Person>,List<Affiliation>> entities = MutableTriple.of(fundings, persons, affiliations);
+        List<Pair<OffsetPosition, Element>> annotations = new ArrayList<>();
 
-        return MutablePair.of(curParagraph, entities);
+        for (int i = 0; i < elements.size(); i++) {
+            annotations.add(Pair.of(positions.get(i), elements.get(i)));
+        }
+
+        return MutablePair.of(annotations, parsedStatement);
     }
 
     /**
