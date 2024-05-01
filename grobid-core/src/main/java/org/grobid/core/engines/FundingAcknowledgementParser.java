@@ -150,8 +150,6 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
                 List<LayoutToken> tokenizationFunding = analyzer.tokenizeWithLayoutToken(paragraphText);
 
-                StringBuilder sb = new StringBuilder();
-
                 MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
 
                 List<Pair<OffsetPosition, Element>> annotations = localResult.left;
@@ -186,73 +184,17 @@ public class FundingAcknowledgementParser extends AbstractParser {
 //                        offsetPositionList.add(new OffsetPosition(pos, pos + sentenceLayoutToken.size()));
 //                        pos += sentenceLayoutToken.size();
 //                    }
-                    int pos = 0;
-                    int sentenceStartOffset = 0;
                     Nodes sentences = paragraph.query("//s");
 
                     if(sentences.size() == 0) {
                         // Overly careful - we should never end up here.
                         LOGGER.warn("While the configuration claim that paragraphs must be segmented, we did not find any sentence. ");
-
-                        List<Node> nodes = getNodesAnnotationsInTextNode(paragraph, annotations);
-
-                        for (int i = 0; i < paragraph.getChildCount(); i++) {
-                            paragraph.getChild(i).detach();
-                        }
-                        for (Node node: nodes) {
-                            node.detach();
-                            ((Element) paragraph).appendChild(node);
-                        }
+                        updateParagraphNodeWithAnnotations(paragraph, annotations);
                     }
 
-                    for (Node sentence : sentences) {
-                        String sentenceText = sentence.getValue();
-                        List<Node> newChildren = new ArrayList<>();
-                        for (int i = 0; i < sentence.getChildCount(); i++) {
-                            //Assumption here is that the structure is flat to maximum one level down
-                            Node currentNode = sentence.getChild(i);
-                            if (currentNode instanceof Text) {
-                                String text = currentNode.getValue();
-                                int finalPos = pos;
-                                List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
-                                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
-                                    .toList();
-
-                                if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
-                                    List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
-                                    newChildren.addAll(nodes);
-                                } else {
-                                    newChildren.add(currentNode);
-                                }
-                                pos += text.length();
-                            } else if (currentNode instanceof Element) {
-                                newChildren.add(currentNode);
-                                pos += currentNode.getValue().length();
-                            } /*else {
-                                System.out.println(currentNode);
-                            }*/
-                        }
-
-                        for (int i = 0; i < sentence.getChildCount(); i++) {
-                            sentence.getChild(i).detach();
-                        }
-                        for (Node node: newChildren) {
-                            node.detach();
-                            ((Element) sentence).appendChild(node);
-                        }
-
-                        sentenceStartOffset += sentenceText.length();
-                    }
+                    updateNodes(sentences, annotations);
                 } else {
-                    List<Node> nodes = getNodesAnnotationsInTextNode(paragraph, annotations);
-
-                    for (int i = 0; i < paragraph.getChildCount(); i++) {
-                        paragraph.getChild(i).detach();
-                    }
-                    for (Node node: nodes) {
-                        node.detach();
-                        ((Element) paragraph).appendChild(node);
-                    }
+                    updateParagraphNodeWithAnnotations(paragraph, annotations);
                 }
 
                 // update extracted entities
@@ -275,6 +217,84 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
 
         return globalResult;
+    }
+
+    private static void updateParagraphNodeWithAnnotations(Node paragraph, List<Pair<OffsetPosition, Element>> annotations) {
+        int pos = 0;
+        List<Node> newChildren = new ArrayList<>();
+        for (int i = 0; i < paragraph.getChildCount(); i++) {
+            //Assumption here is that the structure is flat to maximum one level down
+            Node currentNode = paragraph.getChild(i);
+            if (currentNode instanceof Text) {
+                String text = currentNode.getValue();
+                int finalPos = pos;
+                List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
+                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
+                    .toList();
+
+                if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
+                    List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
+                    newChildren.addAll(nodes);
+                } else {
+                    newChildren.add(currentNode);
+                }
+                pos += text.length();
+            } else if (currentNode instanceof Element) {
+                newChildren.add(currentNode);
+                pos += currentNode.getValue().length();
+            }
+        }
+
+        for (int i = 0; i < paragraph.getChildCount(); i++) {
+            paragraph.getChild(i).detach();
+        }
+        for (Node node: newChildren) {
+            node.detach();
+            ((Element) paragraph).appendChild(node);
+        }
+    }
+
+    private static void updateNodes(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
+        int pos = 0;
+        int sentenceStartOffset = 0;
+        for (Node sentence : sentences) {
+            String sentenceText = sentence.getValue();
+            List<Node> newChildren = new ArrayList<>();
+            for (int i = 0; i < sentence.getChildCount(); i++) {
+                //Assumption here is that the structure is flat to maximum one level down
+                Node currentNode = sentence.getChild(i);
+                if (currentNode instanceof Text) {
+                    String text = currentNode.getValue();
+                    int finalPos = pos;
+                    List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
+                        .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
+                        .toList();
+
+                    if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
+                        List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
+                        newChildren.addAll(nodes);
+                    } else {
+                        newChildren.add(currentNode);
+                    }
+                    pos += text.length();
+                } else if (currentNode instanceof Element) {
+                    newChildren.add(currentNode);
+                    pos += currentNode.getValue().length();
+                } /*else {
+                    System.out.println(currentNode);
+                }*/
+            }
+
+            for (int i = 0; i < sentence.getChildCount(); i++) {
+                sentence.getChild(i).detach();
+            }
+            for (Node node: newChildren) {
+                node.detach();
+                ((Element) sentence).appendChild(node);
+            }
+
+            sentenceStartOffset += sentenceText.length();
+        }
     }
 
     /**

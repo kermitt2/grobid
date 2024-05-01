@@ -48,7 +48,7 @@ class FundingAcknowledgementParserIntegrationTest {
             "(Grant Number: <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"grantNumber\">80NSSC18K0315</rs>), " +
             "the <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"funder\">NASA Carbon Monitoring System</rs> " +
             "(Grant Number: <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"grantNumber\">80NSSC20K0022</rs>), " +
-            "and</p></div>\n\t\t\t</div>"
+            "and </p></div>\n\t\t\t</div>"
 
         val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .withSentenceSegmentation(false)
@@ -74,7 +74,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
         // Current version output
         val output = "<div type=\"acknowledgement\">\n" +
-            "<div><head>Acknowledgements</head><p>Our warmest thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Patrice Lopez</rs>, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro Baptista de Castro</rs> for his support during this work. Special thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs> for useful tips on the manuscript.</p></div>\n" +
+            "<div><head>Acknowledgements</head><p>Our warmest thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Patrice Lopez</rs>, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro Baptista de Castro</rs> for his support during this work. Special thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs> for useful tips on the manuscript.</p></div>\n" +
             "\t\t\t</div>"
 
         val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -93,9 +93,9 @@ class FundingAcknowledgementParserIntegrationTest {
             "<div xmlns=\"http://www.tei-c.org/ns/1.0\"><head>Acknowledgements</head><p><s>Our warmest thanks to Patrice Lopez, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank Pedro Baptista de Castro for his support during this work.</s><s>Special thanks to Erina Fujita for useful tips on the manuscript.</s></p></div>\n" +
             "\t\t\t</div>\n\n"
 
-        val output = "\n\t\t\t<div type=\"acknowledgement\">\n" +
-            "<div><head>Acknowledgements</head><p><s>Our warmest thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Patrice Lopez</rs>, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro Baptista de Castro</rs> for his support during this work.</s><s>Special thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs> for useful tips on the manuscript.</p></div>\n" +
-            "\t\t\t</div>\n\n"
+        val output = "<div type=\"acknowledgement\">\n" +
+            "<div><head>Acknowledgements</head><p><s>Our warmest thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Patrice Lopez</rs>, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro Baptista de Castro</rs> for his support during this work.</s><s>Special thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs> for useful tips on the manuscript.</s></p></div>\n" +
+            "\t\t\t</div>"
 
         val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .withSentenceSegmentation(true)
