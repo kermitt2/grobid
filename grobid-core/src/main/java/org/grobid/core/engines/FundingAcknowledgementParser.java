@@ -11,6 +11,7 @@ import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
+import org.grobid.core.document.xml.XmlBuilderUtils;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
@@ -19,10 +20,8 @@ import org.grobid.core.features.FeaturesVectorFunding;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.utilities.*;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,9 +69,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * For convenience, a processing method taking a raw string as input.
      * Tokenization is done with the default Grobid analyzer triggered by the identified language.
      *
-     * TODO: implement the sentence segmentation
      **/
-    public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
+    public MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> processing(String text,
                                                                                                    GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
         List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
@@ -80,9 +78,42 @@ public class FundingAcknowledgementParser extends AbstractParser {
         MutableTriple<List<Funding>, List<Person>, List<Affiliation>> entities = MutableTriple.of(results.getRight().getFundings(), results.getRight().getPersons(), results.getRight().getAffiliations());
         List<Pair<OffsetPosition, Element>> annotations = results.getLeft();
 
-        Element outputParagraph = injectedAnnotationsInNode(tokenizationFunding, annotations, teiElement("p"));
+        Element outputParagraph = teiElement("p");
+        outputParagraph.appendChild(text);
 
-        return MutablePair.of(outputParagraph, entities);
+        if (config.isWithSentenceSegmentation()) {
+            List<OffsetPosition> theSentences =
+                SentenceUtilities.getInstance().runSentenceDetection(text);
+
+            // update the xml paragraph element
+            int pos = 0;
+            int posInSentence = 0;
+            for(int i=0; i<theSentences.size(); i++) {
+                pos = theSentences.get(i).start;
+                posInSentence = 0;
+                Element sentenceElement = teiElement("s");
+
+                if (pos+posInSentence <= theSentences.get(i).end) {
+                    String localTextChunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+                    localTextChunk = XmlBuilderUtils.stripNonValidXMLCharacters(localTextChunk);
+                    sentenceElement.appendChild(localTextChunk);
+                    outputParagraph.appendChild(sentenceElement);
+                }
+            }
+
+            for(int i=outputParagraph.getChildCount()-1; i>=0; i--) {
+                Node theNode = outputParagraph.getChild(i);
+                if (theNode instanceof Text) {
+                    outputParagraph.removeChild(theNode);
+                } else if (theNode instanceof Element) {
+                    if (!((Element) theNode).getLocalName().equals("s")) {
+                        outputParagraph.removeChild(theNode);
+                    }
+                }
+            }
+        }
+
+        return processingXmlFragment(outputParagraph.toXML(), config);
     }
 
     /**
