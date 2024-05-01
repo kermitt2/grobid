@@ -30,9 +30,9 @@ jobs:
         if: always()
         with:
           files: |
-            test-results/**/*.xml
-            test-results/**/*.trx
-            test-results/**/*.json
+            build/test-results/**/*.xml
+            build/test-results/**/*.trx
+            build/test-results/**/*.json
 
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2
