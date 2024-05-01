@@ -25,13 +25,11 @@ jobs:
       - name: Test with Gradle Jacoco and Coveralls
         run: ./gradlew test jacocoTestReport coveralls --no-daemon
 
-      - name: Test Results
-        uses: dorny/test-reporter@v1
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure() # always run even if the previous step fails
         with:
-          artifact: test-results
-          name: JUNIT Tests
-          path: '*.xml'
-          reporter: java-junit
+          report_paths: '**/build/test-results/test/TEST-*.xml'
 
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2
