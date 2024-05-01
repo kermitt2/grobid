@@ -25,14 +25,13 @@ jobs:
       - name: Test with Gradle Jacoco and Coveralls
         run: ./gradlew test jacocoTestReport coveralls --no-daemon
 
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+      - name: Test Results
+        uses: dorny/test-reporter@v1
         with:
-          files: |
-            build/test-results/**/*.xml
-            build/test-results/**/*.trx
-            build/test-results/**/*.json
+          artifact: test-results
+          name: JUNIT Tests
+          path: '*.xml'
+          reporter: java-junit
 
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2
