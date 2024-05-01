@@ -1,18 +1,10 @@
 package org.grobid.core.engines;
 
-import org.apache.commons.lang3.tuple.Pair;
+import nu.xom.Element;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.MutableTriple;
-
-import nu.xom.Element;
-
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;
-import org.grobid.core.data.ChemicalEntity;
-import org.grobid.core.data.PatentItem;
-import org.grobid.core.data.Person;
-import org.grobid.core.data.Funding;
+import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
@@ -24,14 +16,15 @@ import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.counters.CntManager;
 import org.grobid.core.utilities.counters.impl.CntManagerFactory;
-
 import org.grobid.core.utilities.crossref.CrossrefClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Class for managing the extraction of bibliographical information from PDF
@@ -1184,7 +1177,7 @@ public class Engine implements Closeable {
                 result.append(localResult.getLeft().toXML()); 
 
         } catch (final Exception exp) {
-            throw new GrobidException("An exception occured while running Grobid funding-acknowledgement model.", exp);
+            throw new GrobidException("An exception occurred while running Grobid funding-acknowledgement model.", exp);
         }
 
         return result.toString();
