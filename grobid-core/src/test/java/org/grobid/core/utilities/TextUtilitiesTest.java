@@ -471,4 +471,46 @@ public class TextUtilitiesTest extends EngineTest {
         assertThat(inputReal.substring(url1.start, url1.end), is("https://github.com/lfoppiano/ supercon2"));
 
     }
+
+    @Test
+    public void testMatchTokenAndString_twoElementsWithEqualValue() throws Exception {
+        final String input = "Christophe Castagne, Claudie Marec, Claudie Marec, Claudio Stalder,";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<OffsetPosition> urlTokens = Arrays.asList(
+            new OffsetPosition(0, 3),
+            new OffsetPosition(5, 8),
+            new OffsetPosition(10, 13),
+            new OffsetPosition(15, 18)
+        );
+        
+        List<OffsetPosition> offsetPositions = TextUtilities.matchTokenAndString(tokenisedInput, input, urlTokens);
+
+        assertThat(offsetPositions, hasSize(4));
+        
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(url0.start, is(0));
+        assertThat(url0.end, is(19));
+
+        assertThat(input.substring(url0.start, url0.end), is("Christophe Castagne"));
+
+        OffsetPosition url1 = offsetPositions.get(1);
+        assertThat(url1.start, is(21));
+        assertThat(url1.end, is(34));
+
+        assertThat(input.substring(url1.start, url1.end), is("Claudie Marec"));
+
+        OffsetPosition url2 = offsetPositions.get(2);
+        assertThat(url2.start, is(36));
+        assertThat(url2.end, is(49));
+
+        assertThat(input.substring(url2.start, url2.end), is("Claudie Marec"));
+
+        OffsetPosition url3 = offsetPositions.get(3);
+        assertThat(url3.start, is(51));
+        assertThat(url3.end, is(66));
+
+        assertThat(input.substring(url3.start, url3.end), is("Claudio Stalder"));
+
+    }
 }

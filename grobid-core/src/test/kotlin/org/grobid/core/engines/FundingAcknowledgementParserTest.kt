@@ -12,6 +12,7 @@ import org.grobid.core.utilities.GrobidConfig
 import org.grobid.core.utilities.GrobidProperties
 import org.grobid.core.utilities.LayoutTokensUtil
 import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.CoreMatchers.not
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.hasSize
 import org.junit.Before
@@ -374,4 +375,66 @@ class FundingAcknowledgementParserTest {
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition2.start, offsetPosition2.end)), `is`("JPMXP1122715503"))
         assertThat(element2.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"grantNumber\">JPMXP1122715503</rs>"))
     }
+
+    @Test
+    fun testGetExtractionResult_ErrorCase_ShouldReturnCorrectElementsAndPositions() {
+        val input = "Christophe Castagne, Claudie Marec, Claudie Marec, Claudio Stalder,";
+
+        val results: String = "Christophe\tchristophe\tC\tCh\tChr\tChri\te\the\tphe\tophe\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<person>\n" +
+            "Castagne\tcastagne\tC\tCa\tCas\tCast\te\tne\tgne\tagne\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tCOMMA\t0\tI-<other>\n" +
+            "Claudie\tclaudie\tC\tCl\tCla\tClau\te\tie\tdie\tudie\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<person>\n" +
+            "Marec\tmarec\tM\tMa\tMar\tMare\tc\tec\trec\tarec\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tCOMMA\t0\tI-<other>\n" +
+            "Claudie\tclaudie\tC\tCl\tCla\tClau\te\tie\tdie\tudie\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<person>\n" +
+            "Marec\tmarec\tM\tMa\tMar\tMare\tc\tec\trec\tarec\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tCOMMA\t0\tI-<other>\n" +
+            "Claudio\tclaudio\tC\tCl\tCla\tClau\to\tio\tdio\tudio\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<person>\n" +
+            "Stalder\tstalder\tS\tSt\tSta\tStal\tr\ter\tder\tlder\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tCOMMA\t0\tI-<other>\n"
+
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        val (spans, statement) = target.getExtractionResult(tokens, results)
+
+        assertThat(statement.fundings, hasSize(0))
+        assertThat(statement.persons, hasSize(4))
+        assertThat(statement.affiliations, hasSize(0))
+
+        assertThat(spans, hasSize(4))
+        val span0 = spans[0]
+        val offsetPosition0 = span0.left
+        val element0 = span0.right
+
+        assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition0.start, offsetPosition0.end)), `is`("Christophe Castagne"))
+        assertThat(element0.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Christophe Castagne</rs>"))
+
+        val span1 = spans[1]
+        val offsetPosition1 = span1.left
+        val element1 = span1.right
+
+        assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition1.start, offsetPosition1.end)), `is`("Claudie Marec"))
+        assertThat(element1.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudie Marec</rs>"))
+
+        val span2 = spans[2]
+        val offsetPosition2 = span2.left
+        val element2 = span2.right
+
+        assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition2.start, offsetPosition2.end)), `is`("Claudie Marec"))
+        assertThat(element2.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudie Marec</rs>"))
+
+        // The name is the same, but the offset should be different
+        assertThat(offsetPosition2.start, `is`(not(offsetPosition1.start)))
+        assertThat(offsetPosition2.end, `is`(not(offsetPosition1.end)))
+
+        val span3 = spans[3]
+        val offsetPosition3 = span3.left
+        val element3 = span3.right
+
+        assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition3.start, offsetPosition3.end)), `is`("Claudio Stalder"))
+        assertThat(element3.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudio Stalder</rs>"))
+    }
+
+
+
 }
