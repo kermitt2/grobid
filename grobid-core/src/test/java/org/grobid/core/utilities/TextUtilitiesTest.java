@@ -547,4 +547,27 @@ public class TextUtilitiesTest extends EngineTest {
         assertThat(input.substring(url8.start, url8.end), is("IGC"));
 
     }
+
+    @Test
+    public void testMatchTokenAndString_twoElementsWithEqualValue3() throws Exception {
+        final String input = "We thank Benoit Demars for providing reaeration data and comments that signficantly improved the manuscript.This study was supported a NERC Case studentship awarded to DP, GYD and SJ, an ERC starting grant awarded to GYD, and the University of Exeter.";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<OffsetPosition> annotationTokenPositions = Arrays.asList(
+            new OffsetPosition(4, 7),
+            new OffsetPosition(40, 41),
+            new OffsetPosition(62, 63),
+            new OffsetPosition(79, 84)
+        );
+
+        List<OffsetPosition> offsetPositions = TextUtilities.matchTokenAndString(tokenisedInput, input, annotationTokenPositions);
+
+        assertThat(offsetPositions, hasSize(4));
+
+        OffsetPosition url7 = offsetPositions.get(1);
+        assertThat(input.substring(url7.start, url7.end), is("NERC"));
+
+        OffsetPosition url8 = offsetPositions.get(2);
+        assertThat(input.substring(url8.start, url8.end), is("ERC"));
+    }
 }

@@ -1584,19 +1584,23 @@ public class TextUtilities {
                         continue;
                     }
                     if (StringUtils.isNotEmpty(accumulator)) {
+                        int accumulatorTextLength = accumulator.toString().length();
                         int start = text.indexOf(accumulator.toString(), pos);
-                        newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
-                        pos = textPositionOfToken;
+                        int end = start + accumulatorTextLength;
+                        newPositions.add(new OffsetPosition(start, end));
+                        pos = end;
                         break;
                     }
                     pos = textPositionOfToken;
                 }
             }
             if (StringUtils.isNotEmpty(accumulator)) {
+                int annotationTextLength = accumulator.toString().length();
                 int start = text.indexOf(accumulator.toString(), pos);
-                newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
+                int end = start + annotationTextLength;
+                newPositions.add(new OffsetPosition(start, end));
+                pos = end;
                 accumulator = new StringBuilder();
-                pos = textPositionOfToken + 1;
             }
 
         }
