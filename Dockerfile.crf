@@ -78,7 +78,7 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED"
+ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
 
