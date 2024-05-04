@@ -132,6 +132,32 @@ class FundingAcknowledgementParserIntegrationTest {
         assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
     }
 
+    @Test
+    fun testXmlFragmentProcessing_ErrorCase2_withSentenceSegmentation_shouldWork() {
+        val input ="""
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p><s>The authors would like to acknowledge Lucy Popplewell in the preparation of EMR notes for this study.</s></p></div>
+<div><head>The authors would like to acknowledge Keele University's Prognosis and Consultation Epidemiology</head><p><s>Research Group who have given us permission to utilise the morbidity definitions (©2014).</s><s>The copyright of the morbidity definitions/categorization lists (©2014) used in this publication is owned by Keele University, the development of which was supported by the Primary Care Research Consortium; For access/details relating to the morbidity definitions/categorisation lists (©2014) please go to www.keele.ac.uk/mrr.</s></p></div>
+			</div>
+
+"""
+
+        val output ="""
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p><s>The authors would like to acknowledge <rs xmlns="http://www.tei-c.org/ns/1.0" type="person">Lucy Popplewell</rs> in the preparation of EMR notes for this study.</s></p></div>
+<div><head>The authors would like to acknowledge Keele University's Prognosis and Consultation Epidemiology</head><p><s>Research Group who have given us permission to utilise the morbidity definitions (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>).</s><s>The copyright of the morbidity definitions/categorization lists (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>) used in this publication is owned by <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Keele University</rs>, the development of which was supported by the <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Primary Care Research Consortium</rs>; For access/details relating to the morbidity definitions/categorisation lists (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>) please go to www.keele.ac.uk/mrr.</s></p></div>
+			</div>
+
+"""
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
     companion object {
         @JvmStatic
         @BeforeClass

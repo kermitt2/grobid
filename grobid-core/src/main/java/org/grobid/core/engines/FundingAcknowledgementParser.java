@@ -215,7 +215,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
 //                        offsetPositionList.add(new OffsetPosition(pos, pos + sentenceLayoutToken.size()));
 //                        pos += sentenceLayoutToken.size();
 //                    }
-                    Nodes sentences = paragraph.query("//s");
+                    Nodes sentences = paragraph.query(".//s");
 
                     if(sentences.size() == 0) {
                         // Overly careful - we should never end up here.
@@ -223,7 +223,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                         updateParagraphNodeWithAnnotations(paragraph, annotations);
                     }
 
-                    updateNodes(sentences, annotations);
+                    updateSentencesNodes(sentences, annotations);
                 } else {
                     updateParagraphNodeWithAnnotations(paragraph, annotations);
                 }
@@ -285,7 +285,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
     }
 
-    private static void updateNodes(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
+    private static void updateSentencesNodes(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
         int pos = 0;
         int sentenceStartOffset = 0;
         for (Node sentence : sentences) {
