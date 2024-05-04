@@ -183,14 +183,13 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
                 MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
 
+                if (localResult == null || CollectionUtils.isEmpty(localResult.left)) {
+                    continue;
+                }
                 List<Pair<OffsetPosition, Element>> annotations = localResult.left;
                 FundingAcknowledgmentParse localEntities = localResult.right;
 
-                if (CollectionUtils.isEmpty(annotations)) {
-                    continue;
-                }
-
-                List<OffsetPosition> list = annotations.stream().map(a -> a.getLeft()).toList();
+                List<OffsetPosition> list = annotations.stream().map(Pair::getLeft).toList();
                 List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, list);
                 List<Pair<OffsetPosition, Element>> annotationsWithPosRefToText = new ArrayList<>();
                 for (int i = 0; i < annotationsPositionText.size(); i++) {
@@ -200,21 +199,6 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 annotations = annotationsWithPosRefToText;
 
                 if (sentenceSegmentation) {
-//                    Pair<List<String>, List<OffsetPosition>> sentenceInformation = extractSentencesAndPositionsFromParagraphElement(rootElementStatement);
-//
-//                    List<String> sentencesList = sentenceInformation.getLeft();
-//                    List<OffsetPosition> offsetPositionList = sentenceInformation.getRight();
-//
-//                    List<List<LayoutToken>> sentenceLayoutTokens = sentencesList.stream()
-//                        .map(analyzer::tokenizeWithLayoutToken)
-//                        .toList();
-//
-//                    List<OffsetPosition> sentenceTokenPositions = new ArrayList<>();
-//                    int pos = 0;
-//                    for (List<LayoutToken> sentenceLayoutToken : sentenceLayoutTokens) {
-//                        offsetPositionList.add(new OffsetPosition(pos, pos + sentenceLayoutToken.size()));
-//                        pos += sentenceLayoutToken.size();
-//                    }
                     Nodes sentences = paragraph.query(".//s");
 
                     if(sentences.size() == 0) {
@@ -223,7 +207,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                         updateParagraphNodeWithAnnotations(paragraph, annotations);
                     }
 
-                    updateSentencesNodes(sentences, annotations);
+                    updateSentencesNodesWithAnnotations(sentences, annotations);
                 } else {
                     updateParagraphNodeWithAnnotations(paragraph, annotations);
                 }
@@ -285,7 +269,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
     }
 
-    private static void updateSentencesNodes(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
+    private static void updateSentencesNodesWithAnnotations(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
         int pos = 0;
         int sentenceStartOffset = 0;
         for (Node sentence : sentences) {
