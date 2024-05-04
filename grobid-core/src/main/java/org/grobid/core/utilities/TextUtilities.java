@@ -1586,7 +1586,7 @@ public class TextUtilities {
                     if (StringUtils.isNotEmpty(accumulator)) {
                         int start = text.indexOf(accumulator.toString(), pos);
                         newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
-                        pos = textPositionOfToken;
+                        pos = textPositionOfToken + 1;
                         break;
                     }
                     pos = textPositionOfToken;
@@ -1596,7 +1596,7 @@ public class TextUtilities {
                 int start = text.indexOf(accumulator.toString(), pos);
                 newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
                 accumulator = new StringBuilder();
-                pos = textPositionOfToken;
+                pos = textPositionOfToken + 1;
             }
 
         }

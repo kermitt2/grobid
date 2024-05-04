@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.*;
@@ -511,6 +510,41 @@ public class TextUtilitiesTest extends EngineTest {
         assertThat(url3.end, is(66));
 
         assertThat(input.substring(url3.start, url3.end), is("Claudio Stalder"));
+
+    }
+
+    @Test
+    public void testMatchTokenAndString_twoElementsWithEqualValue2() throws Exception {
+        final String input = "We thank Felix Randow, Shigeki Higashiyama and Feng Zhang for plasmids.We thank Florian Steinberg for discussions and disclosure of unpublished results.We thank Matthew Freeman for helpful discussions.We express our deep gratitude to Moises Mallo for advice concerning CRISPR plus CRISPR reagents.We are grateful for the assistance of Ana Nóvoa and IGC's transgenics and mouse facilities.We thank IGC's cell sorting/flow cytometry, sequencing, and histopathology facilities.";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        List<OffsetPosition> annotationTokenPositions = Arrays.asList(
+            new OffsetPosition(4, 7),
+            new OffsetPosition(9, 12),
+            new OffsetPosition(15, 18),
+            new OffsetPosition(27, 30),
+            new OffsetPosition(49, 52),
+            new OffsetPosition(71, 74),
+            new OffsetPosition(103, 106),
+            new OffsetPosition(109, 110),
+            new OffsetPosition(125, 126)
+        );
+
+        List<OffsetPosition> offsetPositions = TextUtilities.matchTokenAndString(tokenisedInput, input, annotationTokenPositions);
+
+        assertThat(offsetPositions, hasSize(9));
+
+        OffsetPosition url7 = offsetPositions.get(7);
+        assertThat(url7.start, is(349));
+        assertThat(url7.end, is(352));
+
+        assertThat(input.substring(url7.start, url7.end), is("IGC"));
+
+        OffsetPosition url8 = offsetPositions.get(8);
+        assertThat(url8.start, is(397));
+        assertThat(url8.end, is(400));
+
+        assertThat(input.substring(url8.start, url8.end), is("IGC"));
 
     }
 }
