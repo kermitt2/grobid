@@ -182,6 +182,26 @@ class FundingAcknowledgementParserIntegrationTest {
         assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
     }
 
+    @Test
+    fun testXmlFragmentProcessing_mergingSentences_shouldMergeCorrectly() {
+        val input ="\n" +
+            "\t\t\t<div type=\"acknowledgement\">\n" +
+            "<div xmlns=\"http://www.tei-c.org/ns/1.0\"><head>Acknowledgements</head><p><s>Our warmest thanks to Patrice</s><s>Lopez, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank Pedro Baptista</s><s>de</s><s>Castro for his support during this work.</s><s>Special thanks to Erina Fujita for useful tips on the manuscript.</s></p></div>\n" +
+            "\t\t\t</div>\n\n"
+
+        val output = "<div type=\"acknowledgement\">\n" +
+            "<div><head>Acknowledgements</head><p><s>Our warmest thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">PatriceLopez</rs>, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro BaptistadeCastro</rs> for his support during this work.</s><s>Special thanks to <rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs> for useful tips on the manuscript.</s></p></div>\n" +
+            "\t\t\t</div>"
+
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
     companion object {
         @JvmStatic
         @BeforeClass

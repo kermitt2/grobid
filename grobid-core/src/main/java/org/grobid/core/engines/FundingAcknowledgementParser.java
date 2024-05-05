@@ -17,20 +17,26 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorFunding;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.*;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import static org.grobid.core.engines.label.TaggingLabels.*;
+import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
 
 public class FundingAcknowledgementParser extends AbstractParser {
 
@@ -153,11 +159,11 @@ public class FundingAcknowledgementParser extends AbstractParser {
     }
 
     /**
-     * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p) 
+     * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p)
      * will be processed in this segment and paragraph element will be replaced with the processed content.
      * Resulting entities are relative to the whole processed XML segment.
-     * 
-     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     *
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language.
      **/
     public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processingXmlFragment(String tei,
                                GrobidAnalysisConfig config) {
@@ -188,8 +194,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 List<Pair<OffsetPosition, Element>> annotations = localResult.left;
                 FundingAcknowledgmentParse localEntities = localResult.right;
 
-                List<OffsetPosition> list = annotations.stream().map(Pair::getLeft).toList();
-                List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, list);
+                List<OffsetPosition> annotationsPositionTokens = annotations.stream().map(Pair::getLeft).toList();
+                List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, annotationsPositionTokens);
                 List<Pair<OffsetPosition, Element>> annotationsWithPosRefToText = new ArrayList<>();
                 for (int i = 0; i < annotationsPositionText.size(); i++) {
                     annotationsWithPosRefToText.add(Pair.of(annotationsPositionText.get(i), annotations.get(i).getRight()));
@@ -205,7 +211,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                         LOGGER.warn("While the configuration claim that paragraphs must be segmented, we did not find any sentence. ");
                         updateParagraphNodeWithAnnotations(paragraph, annotations);
                     }
-
+                    mergeSentencesFallingOnAnnotations(sentences, annotations, config);
                     updateSentencesNodesWithAnnotations(sentences, annotations);
                 } else {
                     updateParagraphNodeWithAnnotations(paragraph, annotations);
@@ -231,6 +237,120 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
 
         return globalResult;
+    }
+
+    /**
+     * This method identify the sentences that should be merged because the annotations are falling on their boundaries.
+     * This is necessary when the annotations are extracted from the paragraphs they need to be applied to sentences
+     * calculated from the plain text.
+     * <b>This method modify the sentences in input</b>
+     */
+    private static Nodes mergeSentencesFallingOnAnnotations(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations, GrobidAnalysisConfig config) {
+        // We merge the sentences (including their coordinates) for which the annotations
+        // are falling in between two of them or they will be lost later.
+
+        List<OffsetPosition> sentencePositions = getOffsetPositionsFromNodes(sentences);
+
+        // We obtain the corrected coordinates that don't fall over the annotations
+        List<OffsetPosition> correctedOffsetPositions = SentenceUtilities.correctSentencePositions(sentencePositions, annotations
+            .stream()
+            .map(Pair::getLeft).toList());
+
+        List<Integer> toRemove = new ArrayList<>();
+        for (OffsetPosition correctedOffsetPosition : correctedOffsetPositions) {
+            List<OffsetPosition> originalSentences = sentencePositions.stream()
+                .filter(a -> a.start >= correctedOffsetPosition.start && a.end <= correctedOffsetPosition.end)
+                .toList();
+
+            // if for each "corrected sentences offset" there are more than one original sentence that
+            // falls into it, it means we need to merge
+            if (originalSentences.size() > 1) {
+                List<Integer> toMerge = originalSentences.stream()
+                    .map(sentencePositions::indexOf)
+                    .toList();
+
+                Element destination = (Element) sentences.get(toMerge.get(0));
+                boolean needToMergeCoordinates = config.isGenerateTeiCoordinates("s");
+                List<BoundingBox> boundingBoxes = new ArrayList<>();
+                Attribute destCoordinates = null;
+
+                if (needToMergeCoordinates) {
+                    destCoordinates = destination.getAttribute("coords");
+                    String coordinates = destCoordinates.getValue();
+                    boundingBoxes = Arrays.stream(coordinates.split(";"))
+                        .map(BoundingBox::fromString)
+                        .collect(Collectors.toList());
+                }
+
+                for (int i = 1; i < toMerge.size(); i++) {
+                    Integer sentenceToMergeIndex = toMerge.get(i);
+                    Node sentenceToMerge = sentences.get(sentenceToMergeIndex);
+
+                    // Merge coordinates
+                    if (needToMergeCoordinates) {
+                        Attribute coords = destination.getAttribute("coords");
+                        String coordinates = coords.getValue();
+                        boundingBoxes.addAll(Arrays.stream(coordinates.split(";"))
+                            .map(BoundingBox::fromString)
+                            .toList());
+
+                        List<BoundingBox> mergedBoundingBoxes = mergeBoxes(boundingBoxes);
+                        String coordsAsString = String.join(";", mergedBoundingBoxes.stream().map(BoundingBox::toString).toList());
+                        Attribute newCoords = new Attribute("coords", coordsAsString);
+                        destination.removeAttribute(coords);
+                        destination.addAttribute(newCoords);
+                    }
+
+                    // Merge content
+                    boolean first = true;
+                    Node previous = null;
+                    for (int c = 0; c < sentenceToMerge.getChildCount(); c++) {
+                        Node child = sentenceToMerge.getChild(c);
+
+                        if (first) {
+                            first = false;
+                            Node lastNodeDestination = destination.getChild(destination.getChildCount() - 1);
+                            previous = lastNodeDestination;
+//                                        if (lastNodeDestination instanceof Text) {
+//                                            ((Text) lastNodeDestination).setValue(((Text) lastNodeDestination).getValue() + " ");
+//                                            previous = lastNodeDestination;
+//                                        } else {
+//                                            Text newSpace = new Text(" ");
+//                                            destination.appendChild(newSpace);
+//                                            previous = newSpace;
+//                                        }
+                        }
+
+                        if (previous instanceof Text && child instanceof Text) {
+                            ((Text) previous).setValue(previous.getValue() + child.getValue());
+                        } else {
+                            ((Element) sentenceToMerge).replaceChild(child, new Text("placeholder"));
+                            child.detach();
+                            destination.appendChild(child);
+                            previous = child;
+                        }
+                    }
+                    sentenceToMerge.detach();
+                    toRemove.add(sentenceToMergeIndex);
+                }
+            }
+        }
+        toRemove.stream()
+            .sorted(Comparator.reverseOrder())
+            .forEach(sentences::remove);
+
+        return sentences;
+    }
+
+    private static @NotNull List<OffsetPosition> getOffsetPositionsFromNodes(Nodes sentences) {
+        List<OffsetPosition> sentencePositions = new ArrayList<>();
+        int start = 0;
+        for (Node sentence : sentences) {
+            int end = start + sentence.getValue().length();
+            sentencePositions.add(new OffsetPosition(start, end));
+            start = end;
+        }
+        return sentencePositions;
     }
 
     private static void updateParagraphNodeWithAnnotations(Node paragraph, List<Pair<OffsetPosition, Element>> annotations) {
@@ -400,18 +520,18 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * The processing here is called from the header and/or full text parser in cascade
      * when one of these higher-level model detect a "funding" section, or in case
      * no funding section is found, when a acknolwedgements section is detected.
-     * 
-     * Independently from the place this parser is called, it process the input sequence 
-     * of layout tokens in a context free manner. 
-     * 
+     *
+     * Independently from the place this parser is called, it process the input sequence
+     * of layout tokens in a context free manner.
+     *
      * The expected input here is a paragraph.
      *
      *     // This returns a Element of the annotation and the position where should be injected, relative to the paragraph.
      *     // TODO: make new data objects for the annotations
-     * 
-     * Return an XML fragment with inline annotations of the input text, together with 
-     * extracted normalized entities. These entities are referenced by the inline 
-     * annotations with the usual @target attribute pointing to xml:id. 
+     *
+     * Return an XML fragment with inline annotations of the input text, together with
+     * extracted normalized entities. These entities are referenced by the inline
+     * annotations with the usual @target attribute pointing to xml:id.
      */
     protected MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> getExtractionResult(List<LayoutToken> tokensParagraph, String labellingResult) {
         List<Funding> fundings = new ArrayList<>();
