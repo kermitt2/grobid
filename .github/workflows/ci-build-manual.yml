@@ -37,7 +37,7 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-develop
+          tags: latest-develop, latest-develop-crf
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
@@ -58,7 +58,7 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-develop
+          tags: latest-develop-full
           dockerfile: Dockerfile.delft
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
