@@ -22,7 +22,6 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.*;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -244,7 +243,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 String text = currentNode.getValue();
                 int finalPos = pos;
                 List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
-                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
+                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end <= finalPos + text.length())
                     .toList();
 
                 if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
@@ -282,7 +281,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     String text = currentNode.getValue();
                     int finalPos = pos;
                     List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
-                        .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end < finalPos + text.length())
+                        .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end <= finalPos + text.length())
                         .toList();
 
                     if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
@@ -357,7 +356,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         return outputNodes;
     }
 
-    private static @NotNull MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> aggregateResults(MutableTriple<List<Funding>, List<Person>, List<Affiliation>> localEntities, MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> globalResult) {
+    private static MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> aggregateResults(MutableTriple<List<Funding>, List<Person>, List<Affiliation>> localEntities, MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> globalResult) {
         MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
 
         List<Funding> localFundings = localEntities.getLeft();

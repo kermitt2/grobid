@@ -158,6 +158,30 @@ class FundingAcknowledgementParserIntegrationTest {
         assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
     }
 
+    @Test
+    fun testXmlFragmentProcessing_ErrorCase3_withSentenceSegmentation_shouldWork() {
+        val input ="""
+			<div type="funding">
+<div><head>Funding</head><p><s>This work was supported by European Molecular Biology Laboratory, the NSF award "BIGDATA: Mid-Scale: DA: ESCE: Collaborative Research: Scalable Statistical Computing for Emerging Omics Data Streams" and Genentech Inc.</s></p></div>
+			</div>
+
+"""
+
+        val output ="""
+			<div type="funding">
+<div><head>Funding</head><p><s>This work was supported by <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">European Molecular Biology Laboratory</rs>, the <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">NSF</rs> award "<rs xmlns="http://www.tei-c.org/ns/1.0" type="projectName">BIGDATA: Mid-Scale: DA: ESCE: Collaborative Research: Scalable Statistical Computing for Emerging Omics Data Streams</rs>" and <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Genentech Inc.</rs></s></p></div>
+			</div>
+
+"""
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
     companion object {
         @JvmStatic
         @BeforeClass
