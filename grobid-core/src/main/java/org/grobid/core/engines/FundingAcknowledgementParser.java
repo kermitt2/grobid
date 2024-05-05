@@ -278,8 +278,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     destCoordinates = destination.getAttribute("coords");
                     String coordinates = destCoordinates.getValue();
                     boundingBoxes = Arrays.stream(coordinates.split(";"))
+                        .filter(StringUtils::isNotBlank)
                         .map(BoundingBox::fromString)
                         .collect(Collectors.toList());
+                    destination.removeAttribute(destCoordinates);
                 }
 
                 for (int i = 1; i < toMerge.size(); i++) {
@@ -288,16 +290,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
 
                     // Merge coordinates
                     if (needToMergeCoordinates) {
-                        Attribute coords = destination.getAttribute("coords");
+                        Attribute coords = ((Element) sentenceToMerge).getAttribute("coords");
                         String coordinates = coords.getValue();
                         boundingBoxes.addAll(Arrays.stream(coordinates.split(";"))
+                            .filter(StringUtils::isNotBlank)
                             .map(BoundingBox::fromString)
                             .toList());
 
                         List<BoundingBox> mergedBoundingBoxes = mergeBoxes(boundingBoxes);
                         String coordsAsString = String.join(";", mergedBoundingBoxes.stream().map(BoundingBox::toString).toList());
                         Attribute newCoords = new Attribute("coords", coordsAsString);
-                        destination.removeAttribute(coords);
                         destination.addAttribute(newCoords);
                     }
 
