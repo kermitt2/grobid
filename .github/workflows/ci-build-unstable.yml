@@ -50,7 +50,7 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: ${{ github.event_name != 'pull_request' }}
-          tags: latest-develop, latest-develop-crf
+          tags: latest-develop, latest-crf
           dockerfile: Dockerfile.crf
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
