@@ -9,6 +9,7 @@ import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.AnnotatedXMLElement;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.*;
 import org.grobid.core.document.xml.XmlBuilderUtils;
@@ -23,15 +24,11 @@ import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.core.utilities.*;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
@@ -50,8 +47,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(model);
     }
 
-    private MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse>
-        processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
+    private MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
         if (CollectionUtils.isEmpty(tokenizationFunding)) {
             return null;
         }
@@ -78,10 +74,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
     public MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> processing(String text,
                                                                                                    GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
-        List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
-        MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> results = processing(tokenizationFunding, config);
-        MutableTriple<List<Funding>, List<Person>, List<Affiliation>> entities = MutableTriple.of(results.getRight().getFundings(), results.getRight().getPersons(), results.getRight().getAffiliations());
-        List<Pair<OffsetPosition, Element>> annotations = results.getLeft();
+//        List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+//        MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> results = processing(tokenizationFunding, config);
+//        MutableTriple<List<Funding>, List<Person>, List<Affiliation>> entities = MutableTriple.of(results.getRight().getFundings(), results.getRight().getPersons(), results.getRight().getAffiliations());
+//        List<AnnotatedXMLElement> annotations = results.getLeft();
 
         Element outputParagraph = teiElement("p");
         outputParagraph.appendChild(text);
@@ -186,19 +182,19 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
                 List<LayoutToken> tokenizationFunding = analyzer.tokenizeWithLayoutToken(paragraphText);
 
-                MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
+                MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
 
                 if (localResult == null || CollectionUtils.isEmpty(localResult.left)) {
                     continue;
                 }
-                List<Pair<OffsetPosition, Element>> annotations = localResult.left;
+                List<AnnotatedXMLElement> annotations = localResult.left;
                 FundingAcknowledgmentParse localEntities = localResult.right;
 
-                List<OffsetPosition> annotationsPositionTokens = annotations.stream().map(Pair::getLeft).toList();
+                List<OffsetPosition> annotationsPositionTokens = annotations.stream().map(AnnotatedXMLElement::getOffsetPosition).toList();
                 List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, annotationsPositionTokens);
-                List<Pair<OffsetPosition, Element>> annotationsWithPosRefToText = new ArrayList<>();
+                List<AnnotatedXMLElement> annotationsWithPosRefToText = new ArrayList<>();
                 for (int i = 0; i < annotationsPositionText.size(); i++) {
-                    annotationsWithPosRefToText.add(Pair.of(annotationsPositionText.get(i), annotations.get(i).getRight()));
+                    annotationsWithPosRefToText.add(new AnnotatedXMLElement(annotations.get(i).getAnnotationNode(), annotationsPositionText.get(i)));
                 }
 
                 annotations = annotationsWithPosRefToText;
@@ -245,7 +241,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * calculated from the plain text.
      * <b>This method modify the sentences in input</b>
      */
-    private static Nodes mergeSentencesFallingOnAnnotations(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations, GrobidAnalysisConfig config) {
+    private static Nodes mergeSentencesFallingOnAnnotations(Nodes sentences, List<AnnotatedXMLElement> annotations, GrobidAnalysisConfig config) {
         // We merge the sentences (including their coordinates) for which the annotations
         // are falling in between two of them or they will be lost later.
 
@@ -254,7 +250,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         // We obtain the corrected coordinates that don't fall over the annotations
         List<OffsetPosition> correctedOffsetPositions = SentenceUtilities.correctSentencePositions(sentencePositions, annotations
             .stream()
-            .map(Pair::getLeft).toList());
+            .map(AnnotatedXMLElement::getOffsetPosition).toList());
 
         List<Integer> toRemove = new ArrayList<>();
         for (OffsetPosition correctedOffsetPosition : correctedOffsetPositions) {
@@ -297,8 +293,15 @@ public class FundingAcknowledgementParser extends AbstractParser {
                             .map(BoundingBox::fromString)
                             .toList());
 
-                        List<BoundingBox> mergedBoundingBoxes = mergeBoxes(boundingBoxes);
-                        String coordsAsString = String.join(";", mergedBoundingBoxes.stream().map(BoundingBox::toString).toList());
+                        // Group by page, then merge
+                        List<BoundingBox> postMergeBoxes = new ArrayList<>();
+                        Map<Integer, List<BoundingBox>> boundingBoxesByPage = boundingBoxes.stream().collect(Collectors.groupingBy(BoundingBox::getPage));
+                        for(Map.Entry<Integer, List<BoundingBox>> boxesByPages : boundingBoxesByPage.entrySet()) {
+                            List<BoundingBox> mergedBoundingBoxes = mergeBoxes(boxesByPages.getValue());
+                            postMergeBoxes.addAll(mergedBoundingBoxes);
+                        }
+
+                        String coordsAsString = String.join(";", postMergeBoxes.stream().map(BoundingBox::toString).toList());
                         Attribute newCoords = new Attribute("coords", coordsAsString);
                         destination.addAttribute(newCoords);
                     }
@@ -344,7 +347,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         return sentences;
     }
 
-    private static @NotNull List<OffsetPosition> getOffsetPositionsFromNodes(Nodes sentences) {
+    private static List<OffsetPosition> getOffsetPositionsFromNodes(Nodes sentences) {
         List<OffsetPosition> sentencePositions = new ArrayList<>();
         int start = 0;
         for (Node sentence : sentences) {
@@ -355,7 +358,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         return sentencePositions;
     }
 
-    private static void updateParagraphNodeWithAnnotations(Node paragraph, List<Pair<OffsetPosition, Element>> annotations) {
+    private static void updateParagraphNodeWithAnnotations(Node paragraph, List<AnnotatedXMLElement> annotations) {
         int pos = 0;
         List<Node> newChildren = new ArrayList<>();
         for (int i = 0; i < paragraph.getChildCount(); i++) {
@@ -364,8 +367,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
             if (currentNode instanceof Text) {
                 String text = currentNode.getValue();
                 int finalPos = pos;
-                List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
-                    .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end <= finalPos + text.length())
+                List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
+                    .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
                     .toList();
 
                 if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
@@ -390,7 +393,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
         }
     }
 
-    private static void updateSentencesNodesWithAnnotations(Nodes sentences, List<Pair<OffsetPosition, Element>> annotations) {
+    private static void updateSentencesNodesWithAnnotations(Nodes sentences, List<AnnotatedXMLElement> annotations) {
         int pos = 0;
         int sentenceStartOffset = 0;
         for (Node sentence : sentences) {
@@ -402,8 +405,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 if (currentNode instanceof Text) {
                     String text = currentNode.getValue();
                     int finalPos = pos;
-                    List<Pair<OffsetPosition, Element>> annotationsInThisChunk = annotations.stream()
-                        .filter(a -> a.getLeft().start >= finalPos && a.getLeft().end <= finalPos + text.length())
+                    List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
+                        .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
                         .toList();
 
                     if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
@@ -438,7 +441,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * the text content of the target node. If the node is empty, should be used @see injectedAnnotationsInNode
      * as this method will fail
      */
-    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<Pair<OffsetPosition, Element>> annotations) {
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<AnnotatedXMLElement> annotations) {
         return getNodesAnnotationsInTextNode(targetNode, annotations, 0);
     }
 
@@ -446,15 +449,15 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * The sentence offset allow to calculate the position relative to the sentence of annotations that
      * have been calculated in relation with the paragraph.
      */
-    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<Pair<OffsetPosition, Element>> annotations, int sentenceOffset) {
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<AnnotatedXMLElement> annotations, int sentenceOffset) {
         String text = targetNode.getValue();
 
         List<Node> outputNodes = new ArrayList<>();
 
         int pos = 0;
-        for (Pair<OffsetPosition, Element> annotation : annotations) {
-            OffsetPosition annotationPosition = annotation.getLeft();
-            Element annotationContentElement = annotation.getRight();
+        for (AnnotatedXMLElement annotation : annotations) {
+            OffsetPosition annotationPosition = annotation.getOffsetPosition();
+            Element annotationContentElement = annotation.getAnnotationNode();
 
             String before = text.substring(pos, annotationPosition.start - sentenceOffset);
 
@@ -535,7 +538,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
      * extracted normalized entities. These entities are referenced by the inline
      * annotations with the usual @target attribute pointing to xml:id.
      */
-    protected MutablePair<List<Pair<OffsetPosition, Element>>, FundingAcknowledgmentParse> getExtractionResult(List<LayoutToken> tokensParagraph, String labellingResult) {
+    protected MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> getExtractionResult(List<LayoutToken> tokensParagraph, String labellingResult) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
         List<Affiliation> affiliations = new ArrayList<>();
@@ -827,10 +830,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
             localFunding.inferAcronyms();
         }
 
-        List<Pair<OffsetPosition, Element>> annotations = new ArrayList<>();
+        List<AnnotatedXMLElement> annotations = new ArrayList<>();
 
         for (int i = 0; i < elements.size(); i++) {
-            annotations.add(Pair.of(positions.get(i), elements.get(i)));
+            annotations.add(new AnnotatedXMLElement(elements.get(i), positions.get(i)));
         }
 
         return MutablePair.of(annotations, parsedStatement);

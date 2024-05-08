@@ -4,13 +4,13 @@ import org.grobid.core.engines.config.GrobidAnalysisConfig
 import org.grobid.core.factory.AbstractEngineFactory
 import org.grobid.core.utilities.GrobidConfig
 import org.grobid.core.utilities.GrobidProperties
-import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.hasSize
 import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
 import org.xmlunit.matchers.CompareMatcher
+import java.util.*
 
 class FundingAcknowledgementParserIntegrationTest {
 
@@ -63,7 +63,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing2_withoutSentenceSegmentation_shouldReturnSameXML() {
-        val input ="\n" +
+        val input = "\n" +
             "\t\t\t<div type=\"acknowledgement\">\n" +
             "<div xmlns=\"http://www.tei-c.org/ns/1.0\"><head>Acknowledgements</head><p>Our warmest thanks to Patrice Lopez, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript.</p></div>\n" +
             "\t\t\t</div>\n\n"
@@ -89,7 +89,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing2_withSentenceSegmentation_shouldWork() {
-        val input ="\n" +
+        val input = "\n" +
             "\t\t\t<div type=\"acknowledgement\">\n" +
             "<div xmlns=\"http://www.tei-c.org/ns/1.0\"><head>Acknowledgements</head><p><s>Our warmest thanks to Patrice Lopez, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank Pedro Baptista de Castro for his support during this work.</s><s>Special thanks to Erina Fujita for useful tips on the manuscript.</s></p></div>\n" +
             "\t\t\t</div>\n\n"
@@ -109,7 +109,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing_ErrorCase_withSentenceSegmentation_shouldWork() {
-        val input ="""
+        val input = """
 			<div type="funding">
 <div><p><s>Florentina Münzner, Lucy Schlicht, Adrian Tanara, Sany Tchanra and Marie-Jeanne Pesant for the manual curation of logsheets and archiving data at PANGAEA.</s><s>We also acknowledge the work of Andree Behnken who developed the dds-fdp web service.</s><s>All authors approved the final manuscript.</s><s>This article is contribution number 26 of the Tara Oceans Consortium.</s><s>The collection of Tara Oceans data was made possible by those who contributed to sampling and to logistics during the Tara Oceans Expedition: Alain Giese, Alan Deidun, Alban Lazar, Aldine Amiel, Ali Chase, Aline Tribollet, Ameer Abdullah, Amélie Betus, André Abreu, Andres Peyrot, Andrew Baker, Anna Deniaud, Anne Doye, Anne Ghuysen Watrin, Anne Royer, Anne Thompson, Annie McGrother, Antoine Sciandra, Antoine Triller, Aurélie Chambouvet, Baptiste Bernard, Baptiste Regnier, Beatriz Fernandez, Benedetto Barone, Bertrand Manzano, Bianca Silva, Brett Grant, Brigitte Sabard, Bruno Dunckel, Camille Clérissi, Catarina Marcolin, Cédric Guigand, Céline Bachelier, Céline Blanchard, Céline Dimier-Hugueney, Céline Rottier, Chris Bowler, Christian Rouvière, Christian Sardet, Christophe Boutte, Christophe Castagne, Claudie Marec, Claudie Marec, Claudio Stalder, Colomban De Vargas, Cornelia Maier, Cyril Tricot, Dana Sardet, Daniel Bayley, Daniel Cron, Daniele Iudicone, David Mountain, David Obura, David Sauveur, Defne Arslan, Denis Dausse, Denis de La Broise, Diana Ruiz Pino, Didier Zoccola, Édouard Leymarie, Éloïse Fontaine, Émilie Sauvage, Emilie Villar, Emmanuel Boss, Emmanuel G. Reynaud, Éric Béraud, Eric Karsenti, Eric Pelletier, Éric Roettinger, Erica Goetz, Fabien Perault, Fabiola Canard, Fabrice Not, Fabrizio D'Ortenzio, Fabrizio Limena, Floriane Desprez, Franck Prejger, François Aurat, François Noël, Franscisco Cornejo, Gabriel Gorsky, Gabriele Procaccini, Gabriella Gilkes, Gipsi Lima-Mendez, Grigor Obolensky, Guillaume Bracq, Guillem Salazar, Halldor Stefansson, Hélène Santener, Hervé Bourmaud, Hervé Le Goff, Hiroyuki Ogata, Hubert Gautier, Hugo Sarmento, Ian Probert, Isabel Ferrera, Isabelle Taupier-Letage, Jan Wengers, Jarred Swalwell, Javier del Campo, Jean-Baptiste Romagnan, Jean-Claude Gascard, Jean-Jacques Kerdraon, Jean-Louis Jamet, Jean-Michel Grisoni, Jennifer Gillette, Jérémie Capoulade, Jérôme Bastion, Jérôme Teigné, Joannie Ferland, Johan Decelle, Judith Prihoda, Julie Poulain, Julien Daniel, Julien Girardot, Juliette Chatelin, Lars Stemmann, Laurence Garczarek, Laurent Beguery, Lee Karp-Boss, Leila Tirichine, Linda Mollestan, Lionel Bigot, Loïc Vallette, Lucie Bittner, Lucie Subirana, Luis Gutiérrez, Lydiane Mattio, Magali Puiseux, Marc Domingos, Marc Picheral, Marc Wessner, Marcela Cornejo, Margaux Carmichael, Marion Lauters, Martin Hertau, Martina Sailerova, Mathilde Ménard, Matthieu Labaste, Matthieu Oriot, Matthieu Bretaud, Mattias Ormestad, Maya Dolan, Melissa Duhaime, Michael Pitiot, Mike Lunn, Mike Sieracki, Montse Coll, Myriam Thomas, Nadine Lebois, Nicole Poulton, Nigel Grimsley, Noan Le Bescot, Oleg Simakov, Olivier Broutin, Olivier Desprez, Olivier Jaillon, Olivier Marien, Olivier Poirot, Olivier Quesnel, Pamela Labbe-Ibanez, Pascal Hingamp, Pascal Morin, Pascale Joannot, Patrick Chang, Patrick Wincker, Paul Muir, Philippe Clais, Philippe Koubbi, Pierre Testor, Rachel Moreau, Raphaël Morard, Roland Heilig, Romain Troublé, Roxana Di Mauro, Roxanne Boonstra, Ruby Pillay, Sabrina Speich, Sacha Bollet, Samuel Audrain, Sandra Da Costa, Sarah Searson, Sasha Tozzi, Sébastien Colin, Sergey Pisarev, Shirley Falcone, Sibylle Le Barrois d'Orgeval, Silvia G. Acinas, Simon Morisset, Sophie Marinesque, Sophie Nicaud, Stefanie Kandels-Lewis, Stéphane Audic, Stephane Pesant, Stéphanie Reynaud, Thierry Mansir, Thomas Lefort, Uros Krzic, Valérian Morzadec, Vincent Hilaire, Vincent Le Pennec, Vincent Taillandier, Xavier Bailly, Xavier Bougeard, Xavier Durrieu de Madron, Yann Chavance, Yann Depays, Yohann Mucherie.</s></p></div>
 			</div>
@@ -134,7 +134,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing_ErrorCase2_withSentenceSegmentation_shouldWork() {
-        val input ="""
+        val input = """
 			<div type="acknowledgement">
 <div><head>Acknowledgements</head><p><s>The authors would like to acknowledge Lucy Popplewell in the preparation of EMR notes for this study.</s></p></div>
 <div><head>The authors would like to acknowledge Keele University's Prognosis and Consultation Epidemiology</head><p><s>Research Group who have given us permission to utilise the morbidity definitions (©2014).</s><s>The copyright of the morbidity definitions/categorization lists (©2014) used in this publication is owned by Keele University, the development of which was supported by the Primary Care Research Consortium; For access/details relating to the morbidity definitions/categorisation lists (©2014) please go to www.keele.ac.uk/mrr.</s></p></div>
@@ -142,7 +142,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
 """
 
-        val output ="""
+        val output = """
 			<div type="acknowledgement">
 <div><head>Acknowledgements</head><p><s>The authors would like to acknowledge <rs xmlns="http://www.tei-c.org/ns/1.0" type="person">Lucy Popplewell</rs> in the preparation of EMR notes for this study.</s></p></div>
 <div><head>The authors would like to acknowledge Keele University's Prognosis and Consultation Epidemiology</head><p><s>Research Group who have given us permission to utilise the morbidity definitions (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>).</s><s>The copyright of the morbidity definitions/categorization lists (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>) used in this publication is owned by <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Keele University</rs>, the development of which was supported by the <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Primary Care Research Consortium</rs>; For access/details relating to the morbidity definitions/categorisation lists (<rs xmlns="http://www.tei-c.org/ns/1.0" type="grantNumber">©2014</rs>) please go to www.keele.ac.uk/mrr.</s></p></div>
@@ -160,14 +160,14 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing_ErrorCase3_withSentenceSegmentation_shouldWork() {
-        val input ="""
+        val input = """
 			<div type="funding">
 <div><head>Funding</head><p><s>This work was supported by European Molecular Biology Laboratory, the NSF award "BIGDATA: Mid-Scale: DA: ESCE: Collaborative Research: Scalable Statistical Computing for Emerging Omics Data Streams" and Genentech Inc.</s></p></div>
 			</div>
 
 """
 
-        val output ="""
+        val output = """
 			<div type="funding">
 <div><head>Funding</head><p><s>This work was supported by <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">European Molecular Biology Laboratory</rs>, the <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">NSF</rs> award "<rs xmlns="http://www.tei-c.org/ns/1.0" type="projectName">BIGDATA: Mid-Scale: DA: ESCE: Collaborative Research: Scalable Statistical Computing for Emerging Omics Data Streams</rs>" and <rs xmlns="http://www.tei-c.org/ns/1.0" type="funder">Genentech Inc.</rs></s></p></div>
 			</div>
@@ -184,7 +184,7 @@ class FundingAcknowledgementParserIntegrationTest {
 
     @Test
     fun testXmlFragmentProcessing_mergingSentences_shouldMergeCorrectly() {
-        val input ="\n" +
+        val input = "\n" +
             "\t\t\t<div type=\"acknowledgement\">\n" +
             "<div xmlns=\"http://www.tei-c.org/ns/1.0\"><head>Acknowledgements</head><p><s>Our warmest thanks to Patrice</s><s>Lopez, the author of Grobid <ref type=\"bibr\" target=\"#b21\">[22]</ref>, DeLFT <ref type=\"bibr\" target=\"#b19\">[20]</ref>, and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions.</s><s>We thank Pedro Baptista</s><s>de</s><s>Castro for his support during this work.</s><s>Special thanks to Erina Fujita for useful tips on the manuscript.</s></p></div>\n" +
             "\t\t\t</div>\n\n"
@@ -195,6 +195,66 @@ class FundingAcknowledgementParserIntegrationTest {
 
         val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .withSentenceSegmentation(true)
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
+    @Test
+    fun testXmlFragmentProcessing_mergingSentencesAndCoordinatesInTheSamePage_shouldMergeCoordinates() {
+        val input = """<div type="acknowledgement">" +
+            "<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.53">This is sentence 1 in page 1 where we thanks Patrice</s><s coords="1,56.80,41.48,432.74,26.57">Lopez, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val output = """<div type="acknowledgement">" +
+            "<div><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.57">This is sentence 1 in page 1 where we thanks <rs xmlns="http://www.tei-c.org/ns/1.0" type="person">PatriceLopez</rs>, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .generateTeiCoordinates(listOf("s"))
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
+    @Test
+    fun testXmlFragmentProcessing_mergingSentencesAndCoordinatesInTheSamePage2_shouldMergeCoordinates() {
+        val input = """<div type="acknowledgement">" +
+            "<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.53">This is sentence 1 in page 1 where we thanks Patrice</s><s coords="1,86.80,141.48,532.74,26.57">Lopez, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val output = """<div type="acknowledgement">" +
+            "<div><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.53;1,86.80,141.48,532.74,26.57">This is sentence 1 in page 1 where we thanks <rs xmlns="http://www.tei-c.org/ns/1.0" type="person">PatriceLopez</rs>, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .generateTeiCoordinates(listOf("s"))
+            .build()
+
+        val (element, mutableTriple) = target.processingXmlFragment(input, config)
+
+        assertThat(element.toXML(), CompareMatcher.isIdenticalTo(output))
+    }
+
+    @Test
+    fun testXmlFragmentProcessing_mergingSentencesAndCoordinatesInDifferentPages_shouldNotMergeCoordinates() {
+        val input = """<div type="acknowledgement">" +
+            "<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.57">This is sentence 1 in page 1 where we thanks Patrice</s><s coords="2,56.80,41.48,432.74,26.57">Lopez, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val output = """<div type="acknowledgement">" +
+            "<div><head>Acknowledgements</head><p><s coords="1,56.80,41.48,432.74,26.57;2,56.80,41.48,432.74,26.57">This is sentence 1 in page 1 where we thanks <rs xmlns="http://www.tei-c.org/ns/1.0" type="person">PatriceLopez</rs>, who is also overlapping in sentence 2, page 2, with annotations <ref type="bibr" target="#b21">[22]</ref>, DeLFT <ref type="bibr" target="#b19">[20]</ref>, and more text.</s></p></div>\n" +
+            "</div>"""
+
+        val config = GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .withSentenceSegmentation(true)
+            .generateTeiCoordinates(listOf("s"))
             .build()
 
         val (element, mutableTriple) = target.processingXmlFragment(input, config)

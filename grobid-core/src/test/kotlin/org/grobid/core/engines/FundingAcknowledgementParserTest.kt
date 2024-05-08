@@ -34,7 +34,7 @@ class FundingAcknowledgementParserTest {
     @Test
     fun testGetExtractionResult() {
 
-        val input = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript.";
+        val input = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript."
 
         val results: String = "Our\tour\tO\tOu\tOur\tOur\tr\tur\tOur\tOur\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
                 "warmest\twarmest\tw\twa\twar\twarm\tt\tst\test\tmest\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
@@ -101,9 +101,9 @@ class FundingAcknowledgementParserTest {
                 "on\ton\to\ton\ton\ton\tn\ton\ton\ton\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
                 "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
                 "manuscript\tmanuscript\tm\tma\tman\tmanu\tt\tpt\tipt\tript\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
-                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>";
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>"
 
-        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input)
 
         val (element, fundingAcknowledgmentParse) = target.getExtractionResult(tokens, results)
 
@@ -118,7 +118,7 @@ class FundingAcknowledgementParserTest {
     @Test
     fun testGetExtractionResult2() {
 
-        val input = "This work was partly supported by MEXT Program: Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials) Grant Number [JPMXP1122715503].";
+        val input = "This work was partly supported by MEXT Program: Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials) Grant Number [JPMXP1122715503]."
 
         val results: String = "This\tthis\tT\tTh\tThi\tThis\ts\tis\this\tThis\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
             "work\twork\tw\two\twor\twork\tk\trk\tork\twork\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
@@ -154,9 +154,9 @@ class FundingAcknowledgementParserTest {
             "[\t[\t[\t[\t[\t[\t[\t[\t[\t[\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tOPENBRACKET\t0\t<other>\n" +
             "JPMXP1122715503\tjpmxp1122715503\tJ\tJP\tJPM\tJPMX\t3\t03\t503\t5503\tLINEIN\tALLCAP\tCONTAINSDIGITS\t0\t0\t0\tNOPUNCT\t0\tI-<grantNumber>\n" +
             "]\t]\t]\t]\t]\t]\t]\t]\t]\t]\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tENDBRACKET\t0\tI-<other>\n" +
-            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>";
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>"
 
-        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input)
 
         val (element, fundingAcknowledgmentParse) = target.getExtractionResult(tokens, results)
 
@@ -202,7 +202,7 @@ class FundingAcknowledgementParserTest {
     @Test
     fun testGetExtractionResultNew1_ShouldReturnCorrectElementsAndPositions() {
 
-        val input = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript.";
+        val input = "Our warmest thanks to Patrice Lopez, the author of Grobid [22], DeLFT [20], and other open-source projects for his continuous support and inspiration with ideas, suggestions, and fruitful discussions. We thank Pedro Baptista de Castro for his support during this work. Special thanks to Erina Fujita for useful tips on the manuscript."
 
         val results: String = "Our\tour\tO\tOu\tOur\tOur\tr\tur\tOur\tOur\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
             "warmest\twarmest\tw\twa\twar\twarm\tt\tst\test\tmest\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
@@ -269,9 +269,9 @@ class FundingAcknowledgementParserTest {
             "on\ton\to\ton\ton\ton\tn\ton\ton\ton\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
             "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
             "manuscript\tmanuscript\tm\tma\tman\tmanu\tt\tpt\tipt\tript\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
-            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>";
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>"
 
-        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input)
 
         val (spans, statement) = target.getExtractionResult(tokens, results)
 
@@ -284,22 +284,22 @@ class FundingAcknowledgementParserTest {
 
         assertThat(spans, hasSize(3))
         val span0 = spans[0]
-        val offsetPosition0 = span0.left
-        val element0 = span0.right
+        val offsetPosition0 = span0.offsetPosition
+        val element0 = span0.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition0.start, offsetPosition0.end)), `is`("Patrice Lopez"))
         assertThat(element0.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Patrice Lopez</rs>"))
 
         val span1 = spans[1]
-        val offsetPosition1 = span1.left
-        val element1 = span1.right
+        val offsetPosition1 = span1.offsetPosition
+        val element1 = span1.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition1.start, offsetPosition1.end)), `is`("Pedro Baptista de Castro"))
         assertThat(element1.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Pedro Baptista de Castro</rs>"))
 
         val span2 = spans[2]
-        val offsetPosition2 = span2.left
-        val element2 = span2.right
+        val offsetPosition2 = span2.offsetPosition
+        val element2 = span2.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition2.start, offsetPosition2.end)), `is`("Erina Fujita"))
         assertThat(element2.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Erina Fujita</rs>"))
@@ -307,7 +307,7 @@ class FundingAcknowledgementParserTest {
 
     @Test
     fun testGetExtractionResultNew2_ShouldReturnCorrectElementsAndPositions() {
-        val input = "This work was partly supported by MEXT Program: Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials) Grant Number [JPMXP1122715503].";
+        val input = "This work was partly supported by MEXT Program: Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials) Grant Number [JPMXP1122715503]."
 
         val results: String = "This\tthis\tT\tTh\tThi\tThis\ts\tis\this\tThis\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<other>\n" +
             "work\twork\tw\two\twor\twork\tk\trk\tork\twork\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<other>\n" +
@@ -343,9 +343,9 @@ class FundingAcknowledgementParserTest {
             "[\t[\t[\t[\t[\t[\t[\t[\t[\t[\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tOPENBRACKET\t0\t<other>\n" +
             "JPMXP1122715503\tjpmxp1122715503\tJ\tJP\tJPM\tJPMX\t3\t03\t503\t5503\tLINEIN\tALLCAP\tCONTAINSDIGITS\t0\t0\t0\tNOPUNCT\t0\tI-<grantNumber>\n" +
             "]\t]\t]\t]\t]\t]\t]\t]\t]\t]\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tENDBRACKET\t0\tI-<other>\n" +
-            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>";
+            ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tLINEEND\tALLCAP\tNODIGIT\t1\t0\t0\tDOT\t0\t<other>"
 
-        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input)
 
         val (spans, statement) = target.getExtractionResult(tokens, results)
 
@@ -355,22 +355,22 @@ class FundingAcknowledgementParserTest {
 
         assertThat(spans, hasSize(3))
         val span0 = spans[0]
-        val offsetPosition0 = span0.left
-        val element0 = span0.right
+        val offsetPosition0 = span0.offsetPosition
+        val element0 = span0.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition0.start, offsetPosition0.end)), `is`("MEXT"))
         assertThat(element0.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"funder\">MEXT</rs>"))
 
         val span1 = spans[1]
-        val offsetPosition1 = span1.left
-        val element1 = span1.right
+        val offsetPosition1 = span1.offsetPosition
+        val element1 = span1.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition1.start, offsetPosition1.end)), `is`("Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials)"))
         assertThat(element1.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"programName\">Data Creation and Utilization-Type Material Research and Development Project (Digital Transformation Initiative Center for Magnetic Materials)</rs>"))
 
         val span2 = spans[2]
-        val offsetPosition2 = span2.left
-        val element2 = span2.right
+        val offsetPosition2 = span2.offsetPosition
+        val element2 = span2.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition2.start, offsetPosition2.end)), `is`("JPMXP1122715503"))
         assertThat(element2.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"grantNumber\">JPMXP1122715503</rs>"))
@@ -378,7 +378,7 @@ class FundingAcknowledgementParserTest {
 
     @Test
     fun testGetExtractionResult_ErrorCase_ShouldReturnCorrectElementsAndPositions() {
-        val input = "Christophe Castagne, Claudie Marec, Claudie Marec, Claudio Stalder,";
+        val input = "Christophe Castagne, Claudie Marec, Claudie Marec, Claudio Stalder,"
 
         val results: String = "Christophe\tchristophe\tC\tCh\tChr\tChri\te\the\tphe\tophe\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\tI-<person>\n" +
             "Castagne\tcastagne\tC\tCa\tCas\tCast\te\tne\tgne\tagne\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
@@ -393,7 +393,7 @@ class FundingAcknowledgementParserTest {
             "Stalder\tstalder\tS\tSt\tSta\tStal\tr\ter\tder\tlder\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\tNOPUNCT\t0\t<person>\n" +
             ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAP\tNODIGIT\t1\t0\t0\tCOMMA\t0\tI-<other>\n"
 
-        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        val tokens: List<LayoutToken> = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input)
 
         val (spans, statement) = target.getExtractionResult(tokens, results)
 
@@ -403,22 +403,22 @@ class FundingAcknowledgementParserTest {
 
         assertThat(spans, hasSize(4))
         val span0 = spans[0]
-        val offsetPosition0 = span0.left
-        val element0 = span0.right
+        val offsetPosition0 = span0.offsetPosition
+        val element0 = span0.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition0.start, offsetPosition0.end)), `is`("Christophe Castagne"))
         assertThat(element0.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Christophe Castagne</rs>"))
 
         val span1 = spans[1]
-        val offsetPosition1 = span1.left
-        val element1 = span1.right
+        val offsetPosition1 = span1.offsetPosition
+        val element1 = span1.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition1.start, offsetPosition1.end)), `is`("Claudie Marec"))
         assertThat(element1.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudie Marec</rs>"))
 
         val span2 = spans[2]
-        val offsetPosition2 = span2.left
-        val element2 = span2.right
+        val offsetPosition2 = span2.offsetPosition
+        val element2 = span2.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition2.start, offsetPosition2.end)), `is`("Claudie Marec"))
         assertThat(element2.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudie Marec</rs>"))
@@ -428,8 +428,8 @@ class FundingAcknowledgementParserTest {
         assertThat(offsetPosition2.end, `is`(not(offsetPosition1.end)))
 
         val span3 = spans[3]
-        val offsetPosition3 = span3.left
-        val element3 = span3.right
+        val offsetPosition3 = span3.offsetPosition
+        val element3 = span3.annotationNode
 
         assertThat(LayoutTokensUtil.toText(tokens.subList(offsetPosition3.start, offsetPosition3.end)), `is`("Claudio Stalder"))
         assertThat(element3.toXML(), `is`("<rs xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"person\">Claudio Stalder</rs>"))
