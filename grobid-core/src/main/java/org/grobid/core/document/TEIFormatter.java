@@ -1658,6 +1658,11 @@ public class TEIFormatter {
                             ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
                         }
 
+                        //We might need to add a space if it's in the layout tokens
+                        if (CollectionUtils.isNotEmpty(before) && Iterables.getLast(before).getText().equals(" ")) {
+                            curParagraph.appendChild(new Text(" "));
+                        }
+
                         pos = matchingPosition.end;
                         curParagraph.appendChild(ref);
                     }
