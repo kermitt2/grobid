@@ -1873,7 +1873,7 @@ public class TEIFormatter {
             }
         }
 
-        List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations);
+        List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations, text);
         forbiddenPositions.addAll(offsetPositionsUrls);
 
         List<OffsetPosition> theSentences = 

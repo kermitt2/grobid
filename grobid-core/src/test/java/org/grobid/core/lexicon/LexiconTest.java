@@ -208,4 +208,40 @@ public class LexiconTest {
         OffsetPosition url = offsetPositions.get(0);
         assertThat(inputReal.substring(url.start, url.end), is("https://github.com/lfoppiano/ supercon2"));
     }
+
+    @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations2_URL_shouldReturnCorrectIntervalBasedOnText() throws Exception {
+        final String input = "Table S1: Gene annotations from which exon-exon junctions were extracted and unioned to obtain \n" +
+            "a list of annotated junctions. All tracks were taken from the UCSC Genome Browser [10] except for \n" +
+            "GENCODE [2], which was downloaded from the GENCODE website http://www.gencodegenes. \n" +
+            "org/releases/. Junction coordinates from hg38 annotations were lifted over to hg19 before the \n" +
+            "union was performed. Of all gene annotations listed here, the Swedish Bioinformatics Institute \n" +
+            "(SIB) genes has the most, with over 400,000 junctions for each of hg19 and hg38. \n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL = tokenisedInput.get(97);
+        lastTokenOfTheURL.setPage(19);
+        lastTokenOfTheURL.setX(465.54675000000003);
+        lastTokenOfTheURL.setY(404.908);
+        lastTokenOfTheURL.setWidth(68.727);
+        lastTokenOfTheURL.setHeight(9.0873);
+
+        PDFAnnotation annotation = new PDFAnnotation();
+        annotation.setPageNumber(19);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(19, 401.551, 402.396, 139.445, 12.901999999999987));
+        annotation.setBoundingBoxes(boundingBoxes);
+        annotation.setDestination("http://www.gencodegenes.org/releases/");
+        annotation.setType(PDFAnnotation.Type.URI);
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation);
+
+        //This is the actual text that is passed and is different from the layoutToken text.
+        final String inputReal = "Table S1: Gene annotations from which exon-exon junctions were extracted and unioned to obtain a list of annotated junctions. All tracks were taken from the UCSC Genome Browser [10] except for GENCODE [2], which was downloaded from the GENCODE website http://www.gencodegenes. org/releases/. Junction coordinates from hg38 annotations were lifted over to hg19 before the union was performed. Of all gene annotations listed here, the Swedish Bioinformatics Institute (SIB) genes has the most, with over 400,000 junctions for each of hg19 and hg38.  ";
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations, inputReal);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(inputReal.substring(url.start, url.end), is("http://www.gencodegenes. org/releases/"));
+    }
 }
