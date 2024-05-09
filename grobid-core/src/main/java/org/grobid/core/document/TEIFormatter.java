@@ -1612,6 +1612,9 @@ public class TEIFormatter {
                         Note note = labels2Notes.get(matching.getLeft());
                         OffsetPosition matchingPosition = matching.getRight();
 
+                        if (pos >= matchingPosition.start)
+                            break;
+
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
                         String clusterContentBefore = LayoutTokensUtil.normalizeDehyphenizeText(before);
 
