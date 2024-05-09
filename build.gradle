@@ -10,12 +10,16 @@ buildscript {
         classpath 'gradle.plugin.org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.12.0'
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
     }
 }
 
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url = uri("https://plugins.gradle.org/m2/")
+    }
 }
 
 apply plugin: 'jacoco'
@@ -29,6 +33,7 @@ allprojects {
     apply plugin: 'base'
     apply plugin: 'com.github.kt3k.coveralls'
     apply plugin: 'com.adarshr.test-logger'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
 
     group = "org.grobid"
 
@@ -55,8 +60,18 @@ subprojects {
         }
     }
 
-    sourceCompatibility = 1.11
-    targetCompatibility = 1.11
+//    sourceCompatibility = 1.11
+//    targetCompatibility = 1.11
+
+    kotlin {
+        jvmToolchain(17)
+    }
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(17))
+        }
+    }
 
     repositories {
         mavenCentral()
@@ -86,14 +101,20 @@ subprojects {
         // packaging local libs inside grobid-core.jar
         implementation fileTree(dir: new File(rootProject.rootDir, 'grobid-core/localLibs'), include: localLibs)
 
-        testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.3'
-        testImplementation(platform('org.junit:junit-bom:5.9.3'))
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+        testRuntimeOnly "org.junit.vintage:junit-vintage-engine"
+        testImplementation(platform('org.junit:junit-bom:5.10.2'))
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
+            because("Only needed to run tests in a version of IntelliJ IDEA that bundles older versions")
+        }
         testImplementation('org.junit.jupiter:junit-jupiter')
         testImplementation 'org.easymock:easymock:5.1.0'
         testImplementation "org.powermock:powermock-api-easymock:2.0.7"
         testImplementation "org.powermock:powermock-module-junit4:2.0.7"
         testImplementation "xmlunit:xmlunit:1.6"
         testImplementation "org.hamcrest:hamcrest-all:1.3"
+        testImplementation 'org.jetbrains.kotlin:kotlin-test'
+        testImplementation "io.mockk:mockk:1.13.9"
 
         implementation "com.cybozu.labs:langdetect:1.1-20120112"
         implementation "com.rockymadden.stringmetric:stringmetric-core_2.11:0.27.4"
@@ -361,6 +382,7 @@ project(":grobid-service") {
         implementation 'io.dropwizard:dropwizard-auth:4.0.0'
         implementation 'io.dropwizard.metrics:metrics-core:4.2.22'
         implementation 'io.dropwizard.metrics:metrics-servlets:4.2.22'
+        implementation 'io.dropwizard:dropwizard-json-logging:4.0.0'
         
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"

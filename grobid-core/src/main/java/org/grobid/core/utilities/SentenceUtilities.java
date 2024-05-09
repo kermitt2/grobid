@@ -297,7 +297,7 @@ public class SentenceUtilities {
             return false;
     }
 
-    private static boolean toSkipTokenNoHyphen(String tok) {
+    static boolean toSkipTokenNoHyphen(String tok) {
         if (tok.equals(" ") || tok.equals("\n") || tok.equals("\t"))
             return true;
         else
