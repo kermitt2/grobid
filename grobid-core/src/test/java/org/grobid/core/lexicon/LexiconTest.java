@@ -95,6 +95,30 @@ public class LexiconTest {
     }
 
     @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_NoPDFAnnotationAvailable_shouldReturnCorrectInterval() throws Exception {
+        final String input = "Data was analyzed using SPM8 software (http://www.fil.ion.ucl.ac.uk/spm). Images were \n" +
+            "\n" +
+            "spatially aligned to the first volume to correct for small movements; no run showed more than \n" +
+            "\n" +
+            "4mm displacement along the x, y or z dimension. Sinc interpolation minimized timing-errors \n" +
+            "\n" +
+            "between slices; functional images were coregistered to the anatomical image, normalized to the \n" +
+            "\n" +
+            "standard T1 Montreal Neurological Institute (MNI) template, and resliced at 4mm 3 resolution. \n" +
+            "\n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<PDFAnnotation> pdfAnnotations = new ArrayList<>();
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url = offsetPositions.get(0);
+        assertThat(StringUtils.substring(input, url.start, url.end), is("http://www.fil.ion.ucl.ac.uk/spm"));
+    }
+
+
+    @Test
     public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectInterval2() throws Exception {
         final String input = "This work is available at https://github.com/lfoppiano/ \n" +
             "supercon2. The repository contains the code of the \n" +

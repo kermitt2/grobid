@@ -1375,6 +1375,12 @@ public class Lexicon {
             // finally avoid ending a URL by a dot, because it can harm the sentence segmentation
             if (Iterables.getLast(urlTokens).getText().endsWith(".")) {
                 endPos = endPos - 1;
+            } else if (Iterables.getLast(urlTokens).getText().endsWith(")")) {
+                long openedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == '(').count();
+                long closedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == ')').count();
+                if (openedParenthesis < closedParenthesis) {
+                    endPos = endPos - 1;
+                }
             }
 
             OffsetPosition position = new OffsetPosition();
