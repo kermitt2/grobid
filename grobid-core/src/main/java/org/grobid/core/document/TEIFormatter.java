@@ -1662,7 +1662,7 @@ public class TEIFormatter {
                         }
 
                         //We might need to add a space if it's in the layout tokens
-                        if (CollectionUtils.isNotEmpty(before) && Iterables.getLast(before).getText().equals(" ")) {
+                        if (CollectionUtils.isNotEmpty(before) && StringUtils.equalsAnyIgnoreCase(Iterables.getLast(before).getText(), " ", "\n")) {
                             curParagraph.appendChild(new Text(" "));
                         }
 
