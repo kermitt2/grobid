@@ -1904,7 +1904,7 @@ public class TEIFormatter {
 
         // We add URL that are identified using the PDF features for annotations, in this way we avoid mangling URLs
         // in different sentences.
-        List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations);
+        List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations, text);
         forbiddenPositions.addAll(offsetPositionsUrls);
 
         List<OffsetPosition> theSentences = 
