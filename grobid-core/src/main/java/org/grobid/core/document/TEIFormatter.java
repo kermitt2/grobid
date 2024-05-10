@@ -1659,11 +1659,11 @@ public class TEIFormatter {
                         } else if (type.equals("url")) {
                             String normalizeDehyphenizeText = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(matchingPosition.start, matchingPosition.end));
                             ref = generateURLRef(normalizeDehyphenizeText, calloutTokens, config.isGenerateTeiCoordinates("ref"));
-                        }
 
-                        //We might need to add a space if it's in the layout tokens
-                        if (CollectionUtils.isNotEmpty(before) && StringUtils.equalsAnyIgnoreCase(Iterables.getLast(before).getText(), " ", "\n")) {
-                            curParagraph.appendChild(new Text(" "));
+                            //We might need to add a space if it's in the layout tokens
+                            if (CollectionUtils.isNotEmpty(before) && StringUtils.equalsAnyIgnoreCase(Iterables.getLast(before).getText(), " ", "\n")) {
+                                curParagraph.appendChild(new Text(" "));
+                            }
                         }
 
                         pos = matchingPosition.end;
