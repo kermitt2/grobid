@@ -140,17 +140,21 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |            |                       |                     | `includeRawAffiliations` | optional       | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                           |
 |            |                       |                     | `includeRawCopyrights`   | optional       | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
 
-Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. Note: the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. 
+However, please bear in mind the following information:
+ - the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
+ - always supply an `Accept` header or the response type may be inconsistent. There is no easy way to supply a default response type in the API. See discussion [#1093](https://github.com/kermitt2/grobid/issues/1093).
+
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         204          |     Process was completed, but no content could be extracted and structured |
-|         400          |     Wrong request, missing parameters, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
-|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 2 seconds for the `processHeaderDocument` service.
 
