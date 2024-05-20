@@ -141,9 +141,10 @@ Extract the header of the input PDF document, normalize it and convert it into a
 |            |                       |                     | `includeRawCopyrights`   | optional       | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
 
 Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. 
+
 However, please bear in mind the following information:
- - the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
- - always supply an `Accept` header or the response type may be inconsistent. There is no easy way to supply a default response type in the API. See discussion [#1093](https://github.com/kermitt2/grobid/issues/1093).
+* the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
+* always supply an `Accept` header or the response type may be inconsistent. There is no easy way to supply a default response type in the API. See discussion [#1093](https://github.com/kermitt2/grobid/issues/1093).
 
 
 Response status codes:
