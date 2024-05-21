@@ -25,11 +25,11 @@ grobid:
   consolidation:
     # define the bibliographical data consolidation service to be used, either "crossref" for CrossRef REST API or
     # "glutton" for https://github.com/kermitt2/biblio-glutton
-    service: "crossref"
-    #service: "glutton"
+    #service: "crossref"
+    service: "glutton"
     glutton:
-      url: "https://cloud.science-miner.com/glutton"
-      #url: "http://localhost:8080"
+      #url: "https://cloud.science-miner.com/glutton"
+      url: "http://localhost:8080"
     crossref:
       mailto:
       # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g.
@@ -82,7 +82,7 @@ grobid:
     # parameters then depends on this selected DL architecture
 
     - name: "segmentation"
-      # note: currently Wapiti CRF works better and faster than Deep Learning models
+      # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
       #engine: "delft"
       wapiti:
@@ -236,6 +236,18 @@ grobid:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.0001
         window: 20
+      delft:
+        # deep learning parameters
+        architecture: "BidLSTM_CRF_FEATURES"
+        #architecture: "BERT_CRF"
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 800
+          batch_size: 20
+        training:
+          # parameters used for training
+          max_sequence_length: 1000
+          batch_size: 40
 
     - name: "funding-acknowledgement"
       #engine: "wapiti"
@@ -259,6 +271,28 @@ grobid:
           # parameters used for training
           max_sequence_length: 500
           batch_size: 40
+
+    - name: "copyright"
+      # at this time, we only have a DeLFT implementation,
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+#      engine: "delft"
+      engine: "wapiti"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
+
+    - name: "license"
+      # at this time, for being active, it must be DeLFT, no other implementation is available
+      # use "wapiti" if the deep learning library JNI is not available and model will then be ignored
+#      engine: "delft"
+      engine: "wapiti"
+      delft:
+        # deep learning parameters
+        architecture: "gru"
+        #architecture: "bert"
+        #transformer: "allenai/scibert_scivocab_cased"
 
   # for **service only**: how to load the models,
   # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down
