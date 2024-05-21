@@ -48,7 +48,8 @@ RUN rm -rf grobid-home/lib/win-*
 RUN rm -rf grobid-home/lib/mac-64
 
 # Setting DL-powered configuration
-RUN mv /opt/grobid/grobid-home/config/grobid-full.yaml /opt/grobid/grobid-home/config/grobid.yaml
+RUN rm grobid-home/config/grobid.yaml \
+    mv grobid-home/config/grobid-full.yaml grobid-home/config/grobid.yaml
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
