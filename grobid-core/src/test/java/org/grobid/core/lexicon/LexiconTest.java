@@ -435,5 +435,22 @@ public class LexiconTest {
         assertThat(input.substring(url0.start, url0.end), is("https://uhslc.soest.hawaii.edu/stations/?stn=057#levels"));
     }
 
+    @Test
+    public void testGetTokenPosition() throws Exception {
+
+        //NOTE LF: The current behaviour will return -1 if the tokens are not matching with the positions
+        // of the characters
+        //Here the url is https://paperpile.com/c/QlNkzH/Hj7c+4D5e but because `Lameness` is attached the last token
+        // is `Hj7c+4D5eLameness` which will cause troubles.
+
+        String input = "https://paperpile.com/c/QlNkzH/Hj7c+4D5eLameness";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        OffsetPosition tokenPositions = Lexicon.getTokenPositions(40, 48, tokens);
+
+        assertThat(tokenPositions.start, is(-1));
+        assertThat(tokenPositions.end, is(-1));
+
+    }
 
 }

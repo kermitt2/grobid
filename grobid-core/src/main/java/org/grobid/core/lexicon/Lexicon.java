@@ -1265,6 +1265,13 @@ public class Lexicon {
             int startTokenIndex = tokenPositions.start;
             int endTokensIndex = tokenPositions.end;
 
+            // There are no token that matches the character offsets, this may happen rarely when
+            // the character offset falls in the middle of a token, this is likely due to a badly
+            // constructed PDF document
+            if (startTokenIndex < 0 || endTokensIndex < 0) {
+                continue;
+            }
+
             List<LayoutToken> urlTokens = new ArrayList<>(layoutTokens.subList(startTokenIndex, endTokensIndex+1));
 
             String urlString = LayoutTokensUtil.toText(urlTokens);
@@ -1359,6 +1366,14 @@ public class Lexicon {
                     int startCharDifference = urlString.indexOf(destination) + destination.length();
                     String difference = urlString.substring(startCharDifference);
                     OffsetPosition newTokenPositions = getTokenPositions(startCharDifference, urlString.length(), urlTokens);
+
+                    if (newTokenPositions.end < 0) {
+                        // The difference is within the last token, even if we split the layout tokens, here,
+                        // it won't solve the problem so we limit collateral damage.
+                        // At some point we could return the destination containing the clean URL to fill up the
+                        // "target" attribute in the TEI
+                        newTokenPositions.end = urlTokens.size() - 1;
+                    }
 
                     urlTokens = urlTokens.subList(0, newTokenPositions.end);
                     endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
