@@ -1,65 +1,39 @@
 package org.grobid.core.engines;
 
+import com.google.common.collect.Iterables;
+import nu.xom.*;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.MutableTriple;
+import org.apache.commons.lang3.tuple.Pair;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
+import org.grobid.core.data.AnnotatedXMLElement;
 import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.data.Funding;
-import org.grobid.core.data.Funder;
-import org.grobid.core.data.Person;
-import org.grobid.core.data.Affiliation;
+import org.grobid.core.data.*;
+import org.grobid.core.document.xml.XmlBuilderUtils;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.tagging.GenericTaggerUtils;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorFunding;
-import org.grobid.core.features.FeatureFactory;
-import org.grobid.core.lang.Language;
+import org.grobid.core.layout.BoundingBox;
 import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
+import org.grobid.core.utilities.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nu.xom.Attribute;
-import nu.xom.Element;
-import nu.xom.Elements;
-import nu.xom.Node;
-import nu.xom.Nodes;
-import nu.xom.Text;
-import nu.xom.Document;
-import nu.xom.ParsingException;
-import nu.xom.ValidityException;
-import nu.xom.Builder;
-
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.*;
+import java.util.stream.Collectors;
 
-import org.apache.commons.lang3.tuple.MutablePair;
-import org.apache.commons.lang3.tuple.Pair;
-import org.apache.commons.lang3.tuple.MutableTriple;
-
-import static org.apache.commons.lang3.StringUtils.isNotBlank;
-import static org.grobid.core.engines.label.TaggingLabels.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
-import static org.grobid.core.document.xml.XmlBuilderUtils.addXmlId;
-import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
+import static org.grobid.core.engines.label.TaggingLabels.*;
+import static org.grobid.core.layout.VectorGraphicBoxCalculator.mergeBoxes;
 
 public class FundingAcknowledgementParser extends AbstractParser {
 
@@ -69,15 +43,19 @@ public class FundingAcknowledgementParser extends AbstractParser {
         super(GrobidModels.FUNDING_ACKNOWLEDGEMENT);
     }
 
-    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
-        processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
-        if (tokenizationFunding == null || tokenizationFunding.size() == 0)
+    FundingAcknowledgementParser(GrobidModel model) {
+        super(model);
+    }
+
+    private MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> processing(List<LayoutToken> tokenizationFunding, GrobidAnalysisConfig config) {
+        if (CollectionUtils.isEmpty(tokenizationFunding)) {
             return null;
+        }
         String res;
         try {
             String featureVector = FeaturesVectorFunding.addFeatures(tokenizationFunding, null);
             res = label(featureVector);
-//System.out.println(res);
+
         } catch (Exception e) {
             throw new GrobidException("CRF labeling with table model fails.", e);
         }
@@ -89,22 +67,99 @@ public class FundingAcknowledgementParser extends AbstractParser {
     }
 
     /**
-     * For convenience, a processing method taking a raw string as input. 
-     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     * For convenience, a processing method taking a raw string as input.
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language.
+     *
      **/
-    public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processing(String text,
-                               GrobidAnalysisConfig config) {
+    public MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> processing(String text,
+                                                                                                   GrobidAnalysisConfig config) {
         text = UnicodeUtil.normaliseText(text);
-        List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
-        return processing(tokenizationFunding, config);
+//        List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+//        MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> results = processing(tokenizationFunding, config);
+//        MutableTriple<List<Funding>, List<Person>, List<Affiliation>> entities = MutableTriple.of(results.getRight().getFundings(), results.getRight().getPersons(), results.getRight().getAffiliations());
+//        List<AnnotatedXMLElement> annotations = results.getLeft();
+
+        Element outputParagraph = teiElement("p");
+        outputParagraph.appendChild(text);
+
+        if (config.isWithSentenceSegmentation()) {
+            List<OffsetPosition> theSentences =
+                SentenceUtilities.getInstance().runSentenceDetection(text);
+
+            // update the xml paragraph element
+            int pos = 0;
+            int posInSentence = 0;
+            for(int i=0; i<theSentences.size(); i++) {
+                pos = theSentences.get(i).start;
+                posInSentence = 0;
+                Element sentenceElement = teiElement("s");
+
+                if (pos+posInSentence <= theSentences.get(i).end) {
+                    String localTextChunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+                    localTextChunk = XmlBuilderUtils.stripNonValidXMLCharacters(localTextChunk);
+                    sentenceElement.appendChild(localTextChunk);
+                    outputParagraph.appendChild(sentenceElement);
+                }
+            }
+
+            for(int i=outputParagraph.getChildCount()-1; i>=0; i--) {
+                Node theNode = outputParagraph.getChild(i);
+                if (theNode instanceof Text) {
+                    outputParagraph.removeChild(theNode);
+                } else if (theNode instanceof Element) {
+                    if (!((Element) theNode).getLocalName().equals("s")) {
+                        outputParagraph.removeChild(theNode);
+                    }
+                }
+            }
+        }
+
+        return processingXmlFragment(outputParagraph.toXML(), config);
     }
 
     /**
-     * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p) 
+     * This method takes in input a tokenized text, a set of annotations and a root element and attach a list of nodes
+     * under the root where the text is combined with the annotations
+     */
+    protected static Element injectedAnnotationsInNode(List<LayoutToken> tokenizationFunding, List<Pair<OffsetPosition, Element>> annotations, Element rootElement) {
+
+        int pos = 0;
+        for(Pair<OffsetPosition, Element> annotation: annotations) {
+            OffsetPosition annotationPosition = annotation.getLeft();
+            Element annotationContentElement = annotation.getRight();
+
+            List<LayoutToken> before = tokenizationFunding.subList(pos, annotationPosition.start);
+            String clusterContentBefore = LayoutTokensUtil.toText(before);
+
+            if (CollectionUtils.isNotEmpty(before) && before.get(0).getText().equals(" ")) {
+                rootElement.appendChild(new Text(" "));
+            }
+
+            rootElement.appendChild(clusterContentBefore);
+
+            pos = annotationPosition.end;
+            rootElement.appendChild(annotationContentElement);
+        }
+
+        // add last chunk of paragraph stuff (or whole paragraph if no note callout matching)
+        List<LayoutToken> remaining = tokenizationFunding.subList(pos, tokenizationFunding.size());
+        String remainingClusterContent = LayoutTokensUtil.normalizeDehyphenizeText(remaining);
+
+        if (CollectionUtils.isNotEmpty(remaining) && remaining.get(0).getText().equals(" ")) {
+            rootElement.appendChild(new Text(" "));
+        }
+
+        rootElement.appendChild(remainingClusterContent);
+
+        return rootElement;
+    }
+
+    /**
+     * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p)
      * will be processed in this segment and paragraph element will be replaced with the processed content.
      * Resulting entities are relative to the whole processed XML segment.
-     * 
-     * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
+     *
+     * Tokenization is done with the default Grobid analyzer triggered by the identified language.
      **/
     public MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> processingXmlFragment(String tei,
                                GrobidAnalysisConfig config) {
@@ -117,49 +172,55 @@ public class FundingAcknowledgementParser extends AbstractParser {
             Document localDoc = parser.build(tei, null);
 
             // get the paragraphs
-            Element root = localDoc.getRootElement();
-            Nodes paragraphs = root.query("//p");
+            Element rootElementStatement = localDoc.getRootElement();
+            Nodes paragraphs = rootElementStatement.query("//p");
+
+            boolean sentenceSegmentation = config.isWithSentenceSegmentation();
 
             for(Node paragraph : paragraphs) {
                 String paragraphText = paragraph.getValue();
-                List<LayoutToken> tokenizationFunding = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(paragraphText);
+                GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance();
+                List<LayoutToken> tokenizationFunding = analyzer.tokenizeWithLayoutToken(paragraphText);
 
-                MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult = processing(tokenizationFunding, config);
-                
-                // replace paragraph content
-                if (localResult.getLeft() != null && localResult.getLeft().getChildCount()>0) {
-                    ((Element) paragraph).removeChildren();
-                    for (int i = localResult.getLeft().getChildCount()-1; i >=0; i--) {
-                        Node localNode = localResult.getLeft().getChild(i);
-                        localNode.detach();
-                        ((Element) paragraph).insertChild(localNode, 0);
-                    }
+                MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> localResult = processing(tokenizationFunding, config);
+
+                if (localResult == null || CollectionUtils.isEmpty(localResult.left)) {
+                    continue;
                 }
+                List<AnnotatedXMLElement> annotations = localResult.left;
+                FundingAcknowledgmentParse localEntities = localResult.right;
+
+                List<OffsetPosition> annotationsPositionTokens = annotations.stream().map(AnnotatedXMLElement::getOffsetPosition).toList();
+                List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, annotationsPositionTokens);
+                List<AnnotatedXMLElement> annotationsWithPosRefToText = new ArrayList<>();
+                for (int i = 0; i < annotationsPositionText.size(); i++) {
+                    annotationsWithPosRefToText.add(new AnnotatedXMLElement(annotations.get(i).getAnnotationNode(), annotationsPositionText.get(i)));
+                }
+
+                annotations = annotationsWithPosRefToText;
+
+                if (sentenceSegmentation) {
+                    Nodes sentences = paragraph.query(".//s");
+
+                    if(sentences.size() == 0) {
+                        // Overly careful - we should never end up here.
+                        LOGGER.warn("While the configuration claim that paragraphs must be segmented, we did not find any sentence. ");
+                        updateParagraphNodeWithAnnotations(paragraph, annotations);
+                    }
+                    mergeSentencesFallingOnAnnotations(sentences, annotations, config);
+                    updateSentencesNodesWithAnnotations(sentences, annotations);
+                } else {
+                    updateParagraphNodeWithAnnotations(paragraph, annotations);
+                }
+
                 // update extracted entities
                 if (globalResult == null) {
-                    globalResult = MutablePair.of(root, localResult.getRight());
+                    globalResult = MutablePair.of(rootElementStatement, MutableTriple.of(localEntities.getFundings(), localEntities.getPersons(), localEntities.getAffiliations()));
                 } else {
                     // concatenate members of the local results to the global ones
-                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> localEntities = localResult.getRight();
-                    MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
-
-                    List<Funding> localFundings = localEntities.getLeft();
-                    List<Funding> globalFundings = globalEntities.getLeft();
-                    globalFundings.addAll(localFundings);
-                    globalEntities.setLeft(globalFundings);
-
-                    List<Person> localPersons = localEntities.getMiddle();
-                    List<Person> globalPersons = globalEntities.getMiddle();
-                    globalPersons.addAll(localPersons);
-                    globalEntities.setMiddle(globalPersons);
-
-                    List<Affiliation> localAffiliation = localEntities.getRight();
-                    List<Affiliation> globalAffiliations = globalEntities.getRight();
-                    globalAffiliations.addAll(localAffiliation);
-                    globalEntities.setRight(globalAffiliations);
-
-                    globalResult.setRight(globalEntities);
+                    globalResult = aggregateResults(MutableTriple.of(localEntities.getFundings(), localEntities.getPersons(), localEntities.getAffiliations()), globalResult);
                 }
+
             }
 
             //System.out.println(globalResult.getLeft().toXML());
@@ -169,50 +230,344 @@ public class FundingAcknowledgementParser extends AbstractParser {
             LOGGER.warn("Parsing error of the TEI fragment from funding/acknowledgement section", exp);
         } catch(IOException exp) {
             LOGGER.warn("Input TEI fragment invalid from funding/acknowledgement section", exp);
-        } 
-        
+        }
+
         return globalResult;
+    }
+
+    /**
+     * This method identify the sentences that should be merged because the annotations are falling on their boundaries.
+     * This is necessary when the annotations are extracted from the paragraphs they need to be applied to sentences
+     * calculated from the plain text.
+     * <b>This method modify the sentences in input</b>
+     */
+    private static Nodes mergeSentencesFallingOnAnnotations(Nodes sentences, List<AnnotatedXMLElement> annotations, GrobidAnalysisConfig config) {
+        // We merge the sentences (including their coordinates) for which the annotations
+        // are falling in between two of them or they will be lost later.
+
+        List<OffsetPosition> sentencePositions = getOffsetPositionsFromNodes(sentences);
+
+        // We obtain the corrected coordinates that don't fall over the annotations
+        List<OffsetPosition> correctedOffsetPositions = SentenceUtilities.correctSentencePositions(sentencePositions, annotations
+            .stream()
+            .map(AnnotatedXMLElement::getOffsetPosition).toList());
+
+        List<Integer> toRemove = new ArrayList<>();
+        for (OffsetPosition correctedOffsetPosition : correctedOffsetPositions) {
+            List<OffsetPosition> originalSentences = sentencePositions.stream()
+                .filter(a -> a.start >= correctedOffsetPosition.start && a.end <= correctedOffsetPosition.end)
+                .toList();
+
+            // if for each "corrected sentences offset" there are more than one original sentence that
+            // falls into it, it means we need to merge
+            if (originalSentences.size() > 1) {
+                List<Integer> toMerge = originalSentences.stream()
+                    .map(sentencePositions::indexOf)
+                    .toList();
+
+                Element destination = (Element) sentences.get(toMerge.get(0));
+                boolean needToMergeCoordinates = config.isGenerateTeiCoordinates("s");
+                List<BoundingBox> boundingBoxes = new ArrayList<>();
+                Attribute destCoordinates = null;
+
+                if (needToMergeCoordinates) {
+                    destCoordinates = destination.getAttribute("coords");
+                    String coordinates = destCoordinates.getValue();
+                    boundingBoxes = Arrays.stream(coordinates.split(";"))
+                        .filter(StringUtils::isNotBlank)
+                        .map(BoundingBox::fromString)
+                        .collect(Collectors.toList());
+                    destination.removeAttribute(destCoordinates);
+                }
+
+                for (int i = 1; i < toMerge.size(); i++) {
+                    Integer sentenceToMergeIndex = toMerge.get(i);
+                    Node sentenceToMerge = sentences.get(sentenceToMergeIndex);
+
+                    // Merge coordinates
+                    if (needToMergeCoordinates) {
+                        Attribute coords = ((Element) sentenceToMerge).getAttribute("coords");
+                        String coordinates = coords.getValue();
+                        boundingBoxes.addAll(Arrays.stream(coordinates.split(";"))
+                            .filter(StringUtils::isNotBlank)
+                            .map(BoundingBox::fromString)
+                            .toList());
+
+                        // Group by page, then merge
+                        List<BoundingBox> postMergeBoxes = new ArrayList<>();
+                        Map<Integer, List<BoundingBox>> boundingBoxesByPage = boundingBoxes.stream().collect(Collectors.groupingBy(BoundingBox::getPage));
+                        for(Map.Entry<Integer, List<BoundingBox>> boxesByPages : boundingBoxesByPage.entrySet()) {
+                            List<BoundingBox> mergedBoundingBoxes = mergeBoxes(boxesByPages.getValue());
+                            postMergeBoxes.addAll(mergedBoundingBoxes);
+                        }
+
+                        String coordsAsString = String.join(";", postMergeBoxes.stream().map(BoundingBox::toString).toList());
+                        Attribute newCoords = new Attribute("coords", coordsAsString);
+                        destination.addAttribute(newCoords);
+                    }
+
+                    // Merge content
+                    boolean first = true;
+                    Node previous = null;
+                    for (int c = 0; c < sentenceToMerge.getChildCount(); c++) {
+                        Node child = sentenceToMerge.getChild(c);
+
+                        if (first) {
+                            first = false;
+                            Node lastNodeDestination = destination.getChild(destination.getChildCount() - 1);
+                            previous = lastNodeDestination;
+//                                        if (lastNodeDestination instanceof Text) {
+//                                            ((Text) lastNodeDestination).setValue(((Text) lastNodeDestination).getValue() + " ");
+//                                            previous = lastNodeDestination;
+//                                        } else {
+//                                            Text newSpace = new Text(" ");
+//                                            destination.appendChild(newSpace);
+//                                            previous = newSpace;
+//                                        }
+                        }
+
+                        if (previous instanceof Text && child instanceof Text) {
+                            ((Text) previous).setValue(previous.getValue() + child.getValue());
+                        } else {
+                            ((Element) sentenceToMerge).replaceChild(child, new Text("placeholder"));
+                            child.detach();
+                            destination.appendChild(child);
+                            previous = child;
+                        }
+                    }
+                    sentenceToMerge.detach();
+                    toRemove.add(sentenceToMergeIndex);
+                }
+            }
+        }
+        toRemove.stream()
+            .sorted(Comparator.reverseOrder())
+            .forEach(sentences::remove);
+
+        return sentences;
+    }
+
+    private static List<OffsetPosition> getOffsetPositionsFromNodes(Nodes sentences) {
+        List<OffsetPosition> sentencePositions = new ArrayList<>();
+        int start = 0;
+        for (Node sentence : sentences) {
+            int end = start + sentence.getValue().length();
+            sentencePositions.add(new OffsetPosition(start, end));
+            start = end;
+        }
+        return sentencePositions;
+    }
+
+    private static void updateParagraphNodeWithAnnotations(Node paragraph, List<AnnotatedXMLElement> annotations) {
+        int pos = 0;
+        List<Node> newChildren = new ArrayList<>();
+        for (int i = 0; i < paragraph.getChildCount(); i++) {
+            //Assumption here is that the structure is flat to maximum one level down
+            Node currentNode = paragraph.getChild(i);
+            if (currentNode instanceof Text) {
+                String text = currentNode.getValue();
+                int finalPos = pos;
+                List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
+                    .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
+                    .toList();
+
+                if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
+                    List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
+                    newChildren.addAll(nodes);
+                } else {
+                    newChildren.add(currentNode);
+                }
+                pos += text.length();
+            } else if (currentNode instanceof Element) {
+                newChildren.add(currentNode);
+                pos += currentNode.getValue().length();
+            }
+        }
+
+        for (int i = 0; i < paragraph.getChildCount(); i++) {
+            paragraph.getChild(i).detach();
+        }
+        for (Node node: newChildren) {
+            node.detach();
+            ((Element) paragraph).appendChild(node);
+        }
+    }
+
+    private static void updateSentencesNodesWithAnnotations(Nodes sentences, List<AnnotatedXMLElement> annotations) {
+        int pos = 0;
+        int sentenceStartOffset = 0;
+        for (Node sentence : sentences) {
+            String sentenceText = sentence.getValue();
+            List<Node> newChildren = new ArrayList<>();
+            for (int i = 0; i < sentence.getChildCount(); i++) {
+                //Assumption here is that the structure is flat to maximum one level down
+                Node currentNode = sentence.getChild(i);
+                if (currentNode instanceof Text) {
+                    String text = currentNode.getValue();
+                    int finalPos = pos;
+                    List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
+                        .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
+                        .toList();
+
+                    if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
+                        List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
+                        newChildren.addAll(nodes);
+                    } else {
+                        newChildren.add(currentNode);
+                    }
+                    pos += text.length();
+                } else if (currentNode instanceof Element) {
+                    newChildren.add(currentNode);
+                    pos += currentNode.getValue().length();
+                } /*else {
+                    System.out.println(currentNode);
+                }*/
+            }
+
+            for (int i = 0; i < sentence.getChildCount(); i++) {
+                sentence.getChild(i).detach();
+            }
+            for (Node node: newChildren) {
+                node.detach();
+                ((Element) sentence).appendChild(node);
+            }
+
+            sentenceStartOffset += sentenceText.length();
+        }
+    }
+
+    /**
+     * This method return a list of nodes corresponding to the annotations as they are positioned in
+     * the text content of the target node. If the node is empty, should be used @see injectedAnnotationsInNode
+     * as this method will fail
+     */
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<AnnotatedXMLElement> annotations) {
+        return getNodesAnnotationsInTextNode(targetNode, annotations, 0);
+    }
+
+    /**
+     * The sentence offset allow to calculate the position relative to the sentence of annotations that
+     * have been calculated in relation with the paragraph.
+     */
+    protected static List<Node> getNodesAnnotationsInTextNode(Node targetNode, List<AnnotatedXMLElement> annotations, int sentenceOffset) {
+        String text = targetNode.getValue();
+
+        List<Node> outputNodes = new ArrayList<>();
+
+        int pos = 0;
+        for (AnnotatedXMLElement annotation : annotations) {
+            OffsetPosition annotationPosition = annotation.getOffsetPosition();
+            Element annotationContentElement = annotation.getAnnotationNode();
+
+            String before = text.substring(pos, annotationPosition.start - sentenceOffset);
+
+//            if (StringUtils.isNotEmpty(before) && before.startsWith(" ")) {
+//                outputNodes.add(new Text(" "));
+//            }
+
+            outputNodes.add(new Text(before));
+            pos = annotationPosition.end - sentenceOffset;
+            outputNodes.add(annotationContentElement);
+        }
+
+        String remaining = text.substring(pos);
+
+//        if (StringUtils.isNotEmpty(remaining) && remaining.startsWith(" ")) {
+//            outputNodes.add(new Text(" "));
+//        }
+
+        outputNodes.add(new Text(remaining));
+
+        return outputNodes;
+    }
+
+    private static MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> aggregateResults(MutableTriple<List<Funding>, List<Person>, List<Affiliation>> localEntities, MutablePair<Element, MutableTriple<List<Funding>, List<Person>, List<Affiliation>>> globalResult) {
+        MutableTriple<List<Funding>,List<Person>,List<Affiliation>> globalEntities = globalResult.getRight();
+
+        List<Funding> localFundings = localEntities.getLeft();
+        List<Funding> globalFundings = globalEntities.getLeft();
+        globalFundings.addAll(localFundings);
+        globalEntities.setLeft(globalFundings);
+
+        List<Person> localPersons = localEntities.getMiddle();
+        List<Person> globalPersons = globalEntities.getMiddle();
+        globalPersons.addAll(localPersons);
+        globalEntities.setMiddle(globalPersons);
+
+        List<Affiliation> localAffiliation = localEntities.getRight();
+        List<Affiliation> globalAffiliations = globalEntities.getRight();
+        globalAffiliations.addAll(localAffiliation);
+        globalEntities.setRight(globalAffiliations);
+
+        globalResult.setRight(globalEntities);
+
+        return globalResult;
+    }
+
+    protected static Pair<List<String>, List<OffsetPosition>> extractSentencesAndPositionsFromParagraphElement(Element paragraphElement) {
+        int offset = 0;
+        List<OffsetPosition> sentenceOffsetPositions = new ArrayList<>();
+
+        Nodes sentences = paragraphElement.query("//s");
+        List<String> sentencesAsString = new ArrayList<>();
+        for (Node sentence : sentences) {
+            String sentenceText = sentence.getValue();
+            sentenceOffsetPositions.add(new OffsetPosition(offset, offset + sentenceText.length()));
+            sentencesAsString.add(sentence.getValue());
+            offset += sentence.getValue().length();
+        }
+
+        return Pair.of(sentencesAsString, sentenceOffsetPositions);
     }
 
 
     /**
      * The processing here is called from the header and/or full text parser in cascade
      * when one of these higher-level model detect a "funding" section, or in case
-     * no funding section is found, when an acknolwedgement section is detected.
-     * 
-     * Independently from the place this parser is called, it process the input sequence 
-     * of layout tokens in a context free manner. 
-     * 
+     * no funding section is found, when a acknolwedgements section is detected.
+     *
+     * Independently from the place this parser is called, it process the input sequence
+     * of layout tokens in a context free manner.
+     *
      * The expected input here is a paragraph.
-     * 
-     * Return an XML fragment with inline annotations of the input text, together with 
-     * extracted normalized entities. These entities are referenced by the inline 
-     * annotations with the usual @target attribute pointing to xml:id. 
+     *
+     *     // This returns a Element of the annotation and the position where should be injected, relative to the paragraph.
+     *     // TODO: make new data objects for the annotations
+     *
+     * Return an XML fragment with inline annotations of the input text, together with
+     * extracted normalized entities. These entities are referenced by the inline
+     * annotations with the usual @target attribute pointing to xml:id.
      */
-    private MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>>
-            getExtractionResult(List<LayoutToken> tokenizations, String result) {
+    protected MutablePair<List<AnnotatedXMLElement>, FundingAcknowledgmentParse> getExtractionResult(List<LayoutToken> tokensParagraph, String labellingResult) {
         List<Funding> fundings = new ArrayList<>();
         List<Person> persons = new ArrayList<>();
         List<Affiliation> affiliations = new ArrayList<>();
         List<Affiliation> institutions = new ArrayList<>();
+
+        FundingAcknowledgmentParse parsedStatement = new FundingAcknowledgmentParse();
+        parsedStatement.setFundings(fundings);
+        parsedStatement.setPersons(persons);
+        parsedStatement.setAffiliations(affiliations);
 
         // current funding
         Funding funding = new Funding();
 
         // current person
         Person person = new Person();
-        
+
         // current organization
         Affiliation affiliation = new Affiliation();
         Affiliation institution = new Affiliation();
 
-        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, result, tokenizations);
+        TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.FUNDING_ACKNOWLEDGEMENT, labellingResult, tokensParagraph);
         List<TaggingTokenCluster> clusters = clusteror.cluster();
         TaggingLabel previousLabel = null;
 
-        Element curParagraph = teiElement("p");
-        List<Node> curParagraphNodes = new ArrayList<>();
+        List<Element> elements = new ArrayList<>();
+        List<OffsetPosition> positions = new ArrayList<>();
+
         int posTokenization = 0;
+        int posCharacters = 0;
 
         for (TaggingTokenCluster cluster : clusters) {
             if (cluster == null) {
@@ -220,7 +575,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
             }
 
             boolean spaceBefore = false;
-            if (posTokenization > 0 && tokenizations.size()>=posTokenization && tokenizations.get(posTokenization-1).getText().equals(" ")) {
+            if (posTokenization > 0
+                && tokensParagraph.size()>=posTokenization
+                && tokensParagraph.get(posTokenization-1).getText().equals(" ")) {
                 spaceBefore = true;
             }
 
@@ -228,7 +585,24 @@ public class FundingAcknowledgementParser extends AbstractParser {
             Engine.getCntManager().i(clusterLabel);
 
             List<LayoutToken> tokens = cluster.concatTokens();
-            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));   
+            String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(tokens));
+
+            if (clusterLabel.equals(FUNDING_OTHER)) {
+                posTokenization += tokens.size();
+                posCharacters += clusterContent.length();
+                continue;
+            }
+
+            // We adjust the end position when the entity ends with a space
+            int endPosTokenization = posTokenization + tokens.size();
+            if (Iterables.getLast(tokens).getText().equals(" ")) {
+                endPosTokenization -= 1;
+            }
+
+            int endPosCharacters = posCharacters + clusterContent.length();
+            if (Iterables.getLast(tokens).getText().equals(" ")) {
+                endPosCharacters -= 1;
+            }
 
             if (clusterLabel.equals(FUNDING_FUNDER_NAME)) {
                 Funder localFunder = funding.getFunder();
@@ -255,11 +629,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "funder"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
-
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
             } else if (clusterLabel.equals(FUNDING_GRANT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getGrantName())) {
                     if (funding.isValid()) {
@@ -276,10 +648,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "grantName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PERSON)) {
                 if (StringUtils.isNotBlank(person.getRawName())) {
@@ -296,10 +667,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "person"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_AFFILIATION)) {
                 if (StringUtils.isNotBlank(affiliation.getAffiliationString())) {
@@ -316,17 +686,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "affiliation"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_INSTITUTION)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
                     //if (institution.isNotNull()) {
-                        institutions.add(institution);
-                        // next funding object
-                        institution = new Affiliation();
+                    institutions.add(institution);
+                    // next funding object
+                    institution = new Affiliation();
                     //}
                 }
 
@@ -336,17 +705,16 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "institution"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_INFRASTRUCTURE)) {
                 if (StringUtils.isNotBlank(institution.getAffiliationString())) {
                     //if (institution.isNotNull()) {
-                        institutions.add(institution);
-                        // next funding object
-                        institution = new Affiliation();
+                    institutions.add(institution);
+                    // next funding object
+                    institution = new Affiliation();
                     //}
                 }
                 institution.setAffiliationString(clusterContent);
@@ -357,10 +725,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 entity.addAttribute(new Attribute("type", "institution"));
                 entity.addAttribute(new Attribute("subtype", "infrastructure"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_GRANT_NUMBER)) {
                 Funding previousFounding = null;
@@ -378,8 +745,8 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 funding.addLayoutTokens(tokens);
 
                 // possibly copy funder from previous funding object (case of "factorization" of grant numbers)
-                if (previousFounding != null && 
-                    previousFounding.getGrantNumber() != null && 
+                if (previousFounding != null &&
+                    previousFounding.getGrantNumber() != null &&
                     clusterContent.length() == previousFounding.getGrantNumber().length()) {
                     funding.setFunder(previousFounding.getFunder());
                 }
@@ -387,10 +754,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "grantNumber"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PROGRAM_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProgramFullName())) {
@@ -408,10 +774,9 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "programName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
             } else if (clusterLabel.equals(FUNDING_PROJECT_NAME)) {
                 if (StringUtils.isNotBlank(funding.getProjectFullName())) {
@@ -429,47 +794,49 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 Element entity = teiElement("rs");
                 entity.addAttribute(new Attribute("type", "projectName"));
                 entity.appendChild(clusterContent);
+                elements.add(entity);
 
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(entity);
+                positions.add(new OffsetPosition(posTokenization, endPosTokenization));
 
-            } else if (clusterLabel.equals(FUNDING_OTHER)) {
-                if (spaceBefore)
-                    curParagraphNodes.add(textNode(" "));
-                curParagraphNodes.add(textNode(clusterContent));
             } else {
                 LOGGER.warn("Unexpected funding model label - " + clusterLabel.getLabel() + " for " + clusterContent);
             }
 
             previousLabel = clusterLabel;
-            posTokenization += tokens.size(); 
-        }
-
-        for (Node n : curParagraphNodes) {
-            curParagraph.appendChild(n);
+            posTokenization += tokens.size();
+            posCharacters += clusterContent.length();
         }
 
         // last funding, person, institution/affiliation
-        if (funding.isValid())
-            fundings.add(funding);
+        if (person.isValid()) {
+            persons.add(person);
+        }
 
-        if (institution.isNotNull()) 
+        if (funding.isValid()) {
+            fundings.add(funding);
+        }
+
+        if (institution.isNotNull())
             institutions.add(institution);
 
-        if (affiliation.isNotNull()) 
+        if (affiliation.isNotNull())
             affiliations.add(affiliation);
 
-        if (institutions != null && institutions.size() > 0)
+        if (CollectionUtils.isNotEmpty(institutions)) {
             affiliations.addAll(institutions);
+        }
 
         for(Funding localFunding : fundings) {
             localFunding.inferAcronyms();
         }
 
-        MutableTriple<List<Funding>,List<Person>,List<Affiliation>> entities = MutableTriple.of(fundings, persons, affiliations);
+        List<AnnotatedXMLElement> annotations = new ArrayList<>();
 
-        return MutablePair.of(curParagraph, entities);
+        for (int i = 0; i < elements.size(); i++) {
+            annotations.add(new AnnotatedXMLElement(elements.get(i), positions.get(i)));
+        }
+
+        return MutablePair.of(annotations, parsedStatement);
     }
 
     /**
