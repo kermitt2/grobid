@@ -18,7 +18,7 @@ In order to make a new release:
 
 + create a github release: the easiest is to use the GitHub web interface
 
-+ do something to publish the Java artefacts... currrently just uploading them on AWS S3 
++ do something to publish the Java artefacts... currently just uploading them on AWS S3 
 
 + you're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
 
