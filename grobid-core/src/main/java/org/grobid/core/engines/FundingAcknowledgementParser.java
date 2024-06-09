@@ -102,7 +102,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
     /**
      * For convenience, a processing method taking an TEI XML segment as input - only paragraphs (Element p) 
      * will be processed in this segment and paragraph element will be replaced with the processed content.
-     * Resulting entities are relative to the whole procssed XML segment.
+     * Resulting entities are relative to the whole processed XML segment.
      * 
      * Tokenization is done with the default Grobid analyzer triggered by the identified language. 
      **/
@@ -178,7 +178,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
     /**
      * The processing here is called from the header and/or full text parser in cascade
      * when one of these higher-level model detect a "funding" section, or in case
-     * no funding section is found, when a acknolwedgements section is detected.
+     * no funding section is found, when an acknolwedgement section is detected.
      * 
      * Independently from the place this parser is called, it process the input sequence 
      * of layout tokens in a context free manner. 

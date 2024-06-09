@@ -28,6 +28,7 @@ import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.lang.Language;
 import org.grobid.core.layout.*;
+import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.SentenceUtilities;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -1320,7 +1321,7 @@ public class TEIFormatter {
 
 
             if (config.isWithSentenceSegmentation()) {
-                segmentIntoSentences(pNote, noteTokens, config, doc.getLanguage());
+                segmentIntoSentences(pNote, noteTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
             }
 
             desc.appendChild(pNote);
@@ -1522,7 +1523,7 @@ public class TEIFormatter {
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens);
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
                         if (curParagraph != null && config.isWithSentenceSegmentation()) {
-                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
                         }
                         curParagraph = teiElement("p");
                         if (config.isGenerateTeiIds()) {
@@ -1550,7 +1551,7 @@ public class TEIFormatter {
                 } else {
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
                         if (curParagraph != null && config.isWithSentenceSegmentation()) {
-                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+                            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
                         }
                         curParagraph = teiElement("p");
                         if (config.isGenerateTeiIds()) {
@@ -1769,7 +1770,7 @@ public class TEIFormatter {
 
         // in case we segment paragraph into sentences, we still need to do it for the last paragraph 
         if (curParagraph != null && config.isWithSentenceSegmentation()) {
-            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage());
+            segmentIntoSentences(curParagraph, curParagraphTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
         }
 
         // remove possibly empty div in the div list
@@ -1836,6 +1837,10 @@ public class TEIFormatter {
     }
 
     public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config, String lang) {
+        segmentIntoSentences(curParagraph, curParagraphTokens, config, lang, new ArrayList<>());
+    }
+
+    public void segmentIntoSentences(Element curParagraph, List<LayoutToken> curParagraphTokens, GrobidAnalysisConfig config, String lang, List<PDFAnnotation> annotations) {
         // in order to avoid having a sentence boundary in the middle of a ref element 
         // (which is frequent given the abbreviation in the reference expression, e.g. Fig.)
         // we only consider for sentence segmentation texts under <p> and skip the text under <ref>.
@@ -1844,7 +1849,7 @@ public class TEIFormatter {
 
         // in xom, the following gives all the text under the element, for the whole subtree
         String text = curParagraph.getValue();
-        if (text == null || text.length() == 0)
+        if (StringUtils.isEmpty(text))
             return;
 
         // identify ref nodes, ref spans and ref positions
@@ -1861,8 +1866,8 @@ public class TEIFormatter {
                 // for readability in another conditional
                 if (((Element) theNode).getLocalName().equals("ref")) {
                     // map character offset of the node
-                    mapRefNodes.put(Integer.valueOf(pos), theNode);
-                    refPositions.add(Integer.valueOf(pos));
+                    mapRefNodes.put(pos, theNode);
+                    refPositions.add(pos);
 
                     String chunk = theNode.getValue();
                     forbiddenPositions.add(new OffsetPosition(pos, pos+chunk.length()));
@@ -1870,6 +1875,9 @@ public class TEIFormatter {
                 }
             }
         }
+
+        List<OffsetPosition> offsetPositionsUrls = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(curParagraphTokens, annotations, text);
+        forbiddenPositions.addAll(offsetPositionsUrls);
 
         List<OffsetPosition> theSentences = 
             SentenceUtilities.getInstance().runSentenceDetection(text, forbiddenPositions, curParagraphTokens, new Language(lang));
@@ -1893,7 +1901,7 @@ public class TEIFormatter {
 
             for(int i=0; i<curParagraphTokens.size(); i++) {
                 LayoutToken token = curParagraphTokens.get(i);
-                if (token.getText() == null || token.getText().length() == 0) 
+                if (StringUtils.isEmpty(token.getText()))
                     continue;
                 int newPos = sentenceChunk.indexOf(token.getText(), pos);
                 if ((newPos != -1) || SentenceUtilities.toSkipToken(token.getText())) {

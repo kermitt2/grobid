@@ -504,7 +504,7 @@ public class Utilities {
 	}
 
 	/**
-	 * This version uses actual LayoutToken offsets relative to the tokens present in argment only.
+	 * This version uses actual LayoutToken offsets relative to the tokens present in argument only.
 	 * It supposes that the stringPosition have been identified on the provided tokens only, and not 
 	 * restricted to the complete document.
 	 */

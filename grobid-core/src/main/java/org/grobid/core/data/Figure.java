@@ -432,7 +432,7 @@ public class Figure {
             }
 
             if (desc != null && config.isWithSentenceSegmentation()) {
-                formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage());
+                formatter.segmentIntoSentences(desc, this.captionLayoutTokens, config, doc.getLanguage(), doc.getPDFAnnotations());
 
                 // we need a sentence segmentation of the figure caption, for that we need to introduce 
                 // a <div>, then a <p>
