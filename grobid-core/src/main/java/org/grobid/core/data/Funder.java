@@ -60,6 +60,8 @@ public class Funder {
         prefixFounders.put("NSF", "National Science Foundation");
         prefixFounders.put("NIH", "National Institutes of Health");
         prefixFounders.put("ERC", "European Research Council");
+        //Japanese government
+        prefixFounders.put("MEXT", "Ministry of Education, Culture, Sports, Science and Technology");
     }
 
     public Funder() {

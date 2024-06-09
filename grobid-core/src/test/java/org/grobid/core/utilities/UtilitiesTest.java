@@ -3,10 +3,17 @@ package org.grobid.core.utilities;
 import java.io.File;
 import java.io.IOException;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.layout.LayoutToken;
 import org.junit.Test;
+
+import static org.grobid.core.utilities.Utilities.convertStringOffsetToTokenOffset;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class UtilitiesTest {
@@ -112,4 +119,16 @@ public class UtilitiesTest {
 		assertEquals(positions.get(1).start, 7);		
 		assertEquals(positions.get(1).end, 10);
 	}
+
+    @Test
+    public void testConvertStringOffsetToTokenOffset() throws Exception {
+        String input = "This is a token.";
+        List<LayoutToken> layoutTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        OffsetPosition stringPosition = new OffsetPosition(5, 9);
+        List<OffsetPosition> tokenOffsets = convertStringOffsetToTokenOffset(Arrays.asList(stringPosition), layoutTokens);
+
+        assertThat(tokenOffsets, hasSize(1));
+        OffsetPosition position = tokenOffsets.get(0);
+        assertThat(LayoutTokensUtil.toText(layoutTokens.subList(position.start, position.end + 1)), is("is a"));
+    }
 }
