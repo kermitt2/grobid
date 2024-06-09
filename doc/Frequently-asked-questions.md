@@ -87,9 +87,9 @@ release the aggregate under a license that prohibits users from exercising right
 each program's individual license would grant them.
 ```
 
-For convenience it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
+For convenience, it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
 
-Finally as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
+Finally, as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
 
 The only possible restriction would be:
 

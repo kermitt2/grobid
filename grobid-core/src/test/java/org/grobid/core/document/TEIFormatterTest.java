@@ -1,5 +1,6 @@
 package org.grobid.core.document;
 
+import nu.xom.Element;
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.Note;
 import org.grobid.core.layout.LayoutToken;
@@ -11,8 +12,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class TEIFormatterTest {
@@ -37,14 +37,14 @@ public class TEIFormatterTest {
         assertThat(LayoutTokensUtil.toText(footnote.getTokens()), is("This is a footnote"));
         assertThat(footnote.getLabel(), is("1"));
     }
-    
-    
+
+
     @Test
     public void testMakeNotes() throws Exception {
         String text = "198 U.S. Const. art. I,  § §9 & 10. \n199 To be sure, there are revisionist arguments that the Ex Post Facto clause itself extends to retroactive civil laws too. See Eastern Enterprises v. Apfel, 524 U.S. 498, 538-39 (1998) (Thomas, J., concurring). And as with bills of attainder, in the wake of the Civil War the Supreme Court held that Ironclad  Oath requirements were ex post facto laws as well. Cummings, 71 U.S. at 326-332; Garland, 71 U.S.  at 377-368. But as discussed in the text, even these principles do not ensnare Section Three going  forward, on a non-ex-post-facto basis \n200 3 U.S. at 378-80 (arguments of counsel). \n201 Id. \n202 Id. at 382. See Baude & Sachs, Eleventh Amendment, supra note 9, at 626-627.   Electronic copy available at: https://ssrn.com/abstract=4532751";
         List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
         text = text.replace("\n", " ");
-        tokens.stream().forEach(t-> t.setOffset(t.getOffset() + 403));
+        tokens.stream().forEach(t -> t.setOffset(t.getOffset() + 403));
         List<Note> footnotes = new TEIFormatter(null, null)
             .makeNotes(tokens, text, Note.NoteType.FOOT, 37);
 
@@ -62,6 +62,16 @@ public class TEIFormatterTest {
         assertThat(footnotes.get(4).getTokens(), hasSize(greaterThan(0)));
     }
 
+    @Test
+    public void testGenerateURLRef() throws Exception {
+        String input = "http:// github.com/ lfoppiano/ grobid-bla";
+        List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        Element node = new TEIFormatter(null, null)
+            .generateURLRef("http:// github.com/ lfoppiano/ grobid-bla", tokens, false);
+
+        assertThat(node.toXML(), is("<ref xmlns=\"http://www.tei-c.org/ns/1.0\" type=\"url\" target=\"http://github.com/lfoppiano/grobid-bla\">http:// github.com/ lfoppiano/ grobid-bla</ref>"));
+    }
 
 
 }

@@ -141,27 +141,7 @@ public class SentenceUtilities {
             Collections.sort(forbidden);
 
             // cancel sentence boundaries within the forbidden spans
-            List<OffsetPosition> finalSentencePositions = new ArrayList<>();
-            int forbiddenIndex = 0;
-            for(int j=0; j < sentencePositions.size(); j++) {
-                OffsetPosition position = sentencePositions.get(j);
-                for(int i=forbiddenIndex; i < forbidden.size(); i++) {
-                    OffsetPosition forbiddenPos = forbidden.get(i);
-                    if (forbiddenPos.end < position.end) 
-                        continue;
-                    if (forbiddenPos.start > position.end) 
-                        break;
-                    while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
-                        if (j+1 < sentencePositions.size()) {
-                            position.end = sentencePositions.get(j+1).end;
-                            j++;
-                            forbiddenIndex = i;
-                        } else
-                            break;
-                    }
-                }
-                finalSentencePositions.add(position);
-            }
+            List<OffsetPosition> finalSentencePositions = correctSentencePositions(sentencePositions, forbidden);
 
             // as a heuristics for all implementations, because they clearly all fail for this case, we 
             // attached to the right sentence the numerical bibliographical references markers expressed 
@@ -286,6 +266,31 @@ public class SentenceUtilities {
         }
     }
 
+    public static List<OffsetPosition> correctSentencePositions(List<OffsetPosition> sentencePositions, List<OffsetPosition> forbiddenPositions) {
+        List<OffsetPosition> finalSentencePositions = new ArrayList<>();
+        int forbiddenIndex = 0;
+        for(int j = 0; j < sentencePositions.size(); j++) {
+            OffsetPosition position = new OffsetPosition(sentencePositions.get(j).start, sentencePositions.get(j).end);
+            for(int i = forbiddenIndex; i < forbiddenPositions.size(); i++) {
+                OffsetPosition forbiddenPos = forbiddenPositions.get(i);
+                if (forbiddenPos.end < position.end)
+                    continue;
+                if (forbiddenPos.start > position.end)
+                    break;
+                while ( (forbiddenPos.start < position.end && position.end < forbiddenPos.end) ) {
+                    if (j+1 < sentencePositions.size()) {
+                        position.end = sentencePositions.get(j+1).end;
+                        j++;
+                        forbiddenIndex = i;
+                    } else
+                        break;
+                }
+            }
+            finalSentencePositions.add(position);
+        }
+        return finalSentencePositions;
+    }
+
     /**
      * Return true if the token should be skipped when considering sentence content. 
      */
@@ -297,7 +302,7 @@ public class SentenceUtilities {
             return false;
     }
 
-    private static boolean toSkipTokenNoHyphen(String tok) {
+    static boolean toSkipTokenNoHyphen(String tok) {
         if (tok.equals(" ") || tok.equals("\n") || tok.equals("\t"))
             return true;
         else

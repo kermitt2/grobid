@@ -42,7 +42,7 @@ Example with cURL:
 
 ### Batch processing
 
-We recommand to use the above service mode for best performance and range of options. 
+We recommend to use the above service mode for best performance and range of options. 
 
 Generating coordinates can also been obtained with the batch mode by adding the parameter ```-teiCoordinates``` with the command ```processFullText```.
 
@@ -161,4 +161,4 @@ Example 2:
 
 The above ```@coords``` XML attributes introduces 4 bounding boxes to define the area of the bibliographical reference (typically because the reference is on several line).
 
-As side note, in traditionnal TEI encoding an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 
+As side note, in traditional TEI encoding an area should be expressed using SVG. However it would have make the TEI document quickly unreadable and extremely heavy and we are using this more compact notation. 

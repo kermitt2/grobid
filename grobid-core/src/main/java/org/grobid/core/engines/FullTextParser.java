@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
+import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
@@ -478,7 +479,7 @@ public class FullTextParser extends AbstractParser {
         List<LayoutToken> currentChunk = new ArrayList<>();
         int currentPos = 0;
         for(LayoutToken token : tokens) {
-            if (currentChunk.size() != 0) {
+            if (CollectionUtils.isNotEmpty(currentChunk)) {
                 int tokenPos = token.getOffset();
                 if (currentPos != tokenPos) {
                     // new chunk
@@ -508,7 +509,7 @@ public class FullTextParser extends AbstractParser {
             LayoutTokenization layouts = featSeg.getRight();
             if (layouts != null)
                 layoutTokenization = layouts.getTokenization();
-            if ( (featuredText != null) && (featuredText.trim().length() > 0) ) {
+            if (StringUtils.isNotBlank(featuredText)) {
                 res = label(featuredText);
                 res = postProcessFullTextLabeledText(res);
             }
