@@ -20,6 +20,7 @@ import java.util.regex.*;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -1195,8 +1196,7 @@ public class Lexicon {
 
         List<OffsetPosition> urlTokensPositions = tokenPositionUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
 
-        // We need to adjust the end of the positions to avoid problems with the sublist
-        // that is used the following method
+        // We need to adjust the end of the positions to avoid problems with the sublist that is used in the following method
         urlTokensPositions.stream().forEach(o -> o.end += 1);
 
         // here we need to match the offsetPositions related to the text obtained by the layoutTokens, with the text
@@ -1205,14 +1205,43 @@ public class Lexicon {
     }
 
     /**
-     * This method returns the token positions in respect of the layout tokens,
-     * the output token offsets are (included, included)
+     * This method returns the token positions in respect of the layout tokens, result is inclusive, inclusive, so for
+     * calling this subList after this method, remember to add +1  to the end offset.
      */
     public static List<OffsetPosition> tokenPositionUrlPatternWithPdfAnnotations(
         List<LayoutToken> layoutTokens,
         List<PDFAnnotation> pdfAnnotations) {
 
-        return convertStringOffsetToTokenOffset(characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations), layoutTokens);
+        List<OffsetPosition> characterPositions = characterPositionsUrlPatternWithPdfAnnotations(layoutTokens, pdfAnnotations);
+        List<OffsetPosition> offsetPositions = convertStringOffsetToTokenOffset(characterPositions, layoutTokens);
+
+        return offsetPositions;
+    }
+
+    public static OffsetPosition getTokenPositions(int startPos, int endPos, List<LayoutToken> layoutTokens) {
+        // token sublist
+        int startTokenIndex = -1;
+        int endTokensIndex = -1;
+
+        List<LayoutToken> urlTokens = new ArrayList<>();
+        int tokenPos = 0;
+        int tokenIndex = 0;
+        for(LayoutToken localToken : layoutTokens) {
+            if (startPos <= tokenPos && (tokenPos+localToken.getText().length() <= endPos) ) {
+                urlTokens.add(localToken);
+                if (startTokenIndex == -1)
+                    startTokenIndex = tokenIndex;
+                if (tokenIndex > endTokensIndex)
+                    endTokensIndex = tokenIndex;
+            }
+            if (tokenPos > endPos) {
+                break;
+            }
+            tokenPos += localToken.getText().length();
+            tokenIndex++;
+        }
+
+        return new OffsetPosition(startTokenIndex, endTokensIndex);
     }
 
     /**
@@ -1225,47 +1254,58 @@ public class Lexicon {
         List<OffsetPosition> urlPositions = Lexicon.characterPositionsUrlPattern(layoutTokens);
         List<OffsetPosition> resultPositions = new ArrayList<>();
 
-        // do we need to extend the url position based on additional position of the corresponding 
+        // Do we need to extend the url position based on additional position of the corresponding
         // PDF annotation?
         for(OffsetPosition urlPosition : urlPositions) {
             int startPos = urlPosition.start;
             int endPos = urlPosition.end;
 
-            int startTokenIndex = -1;
-            int endTokensIndex = -1;
+            OffsetPosition tokenPositions = getTokenPositions(startPos, endPos, layoutTokens);
 
-            // token sublist 
-            List<LayoutToken> urlTokens = new ArrayList<>();
-            int tokenPos = 0;
-            int tokenIndex = 0;
-            for(LayoutToken localToken : layoutTokens) {
-                if (startPos <= tokenPos && (tokenPos+localToken.getText().length() <= endPos) ) {
-                    urlTokens.add(localToken);
-                    if (startTokenIndex == -1)
-                        startTokenIndex = tokenIndex;
-                    if (tokenIndex > endTokensIndex)
-                        endTokensIndex = tokenIndex;
-                }
-                if (tokenPos > endPos) {
-                    break;
-                }
-                tokenPos += localToken.getText().length();
-                tokenIndex++;
+            int startTokenIndex = tokenPositions.start;
+            int endTokensIndex = tokenPositions.end;
+
+            // There are no token that matches the character offsets, this may happen rarely when
+            // the character offset falls in the middle of a token, this is likely due to a badly
+            // constructed PDF document
+            if (startTokenIndex < 0 || endTokensIndex < 0) {
+                continue;
             }
+
+            List<LayoutToken> urlTokens = new ArrayList<>(layoutTokens.subList(startTokenIndex, endTokensIndex+1));
 
             String urlString = LayoutTokensUtil.toText(urlTokens);
 
+            // This variable is used to adjust the last token index
+            int correctedLastTokenIndex = 0;
             PDFAnnotation targetAnnotation = null;
             if (CollectionUtils.isNotEmpty(urlTokens)) {
-                LayoutToken lastToken = urlTokens.get(urlTokens.size()-1);
+                LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
                 if (pdfAnnotations != null) {
-                    for (PDFAnnotation pdfAnnotation : pdfAnnotations) {
-                        if (pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI) {
-                            if (pdfAnnotation.cover(lastToken)) {
-    //System.out.println("found overlapping PDF annotation for URL: " + pdfAnnotation.getDestination());
-                                targetAnnotation = pdfAnnotation;
-                                break;
-                            }
+                    targetAnnotation = pdfAnnotations.stream()
+                        .filter(pdfAnnotation ->
+                            pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(lastToken))
+                        .findFirst()
+                        .orElse(null);
+                    correctedLastTokenIndex = urlTokens.size() - 1;
+
+                    // If we cannot match, maybe the regex got some characters too much, e.g. dots, parenthesis,etc..
+                    // so we try to check the tokens before the last only if the n-token is a single special characters
+                    // TODO: Stop after a few characters, instead of when reaching zero?
+                    if (targetAnnotation == null) {
+                        String lastTokenText = lastToken.getText();
+                        int index = urlTokens.size() - 1;
+                        // The error should be within a few characters, so we stop if the token length is greater than 1
+                        while(index > 0 && lastTokenText.length() == 1 && !Character.isLetterOrDigit(lastTokenText.charAt(0)) && targetAnnotation==null) {
+                            index -= 1;
+                            LayoutToken finalLastToken1 = urlTokens.get(index);
+                            targetAnnotation = pdfAnnotations.stream()
+                                .filter(pdfAnnotation ->
+                                    pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(finalLastToken1))
+                                .findFirst()
+                                .orElse(null);
+
+                            correctedLastTokenIndex = index;
                         }
                     }
                 }
@@ -1276,35 +1316,86 @@ public class Lexicon {
 
                 int destinationPos = 0;
                 if (destination.contains(urlString)) {
-                    destinationPos = destination.indexOf(urlString)+urlString.length();
-                }
+                    //In this case the regex did not catch all the URL, so we need to extend it using the
+                    // destination URL from the annotation
+                    destinationPos = destination.indexOf(urlString) + urlString.length();
+                    if (endTokensIndex < layoutTokens.size() - 1) {
+                        int additionalSpaces = 0;
+                        int additionalTokens = 0;
+                        for (int j = endTokensIndex + 1; j < layoutTokens.size(); j++) {
+                            LayoutToken nextToken = layoutTokens.get(j);
 
-                if (endTokensIndex < layoutTokens.size()-1) {
-                    for(int j=endTokensIndex+1; j<layoutTokens.size(); j++) {
-                        LayoutToken nextToken = layoutTokens.get(j);
+                            if ("\n".equals(nextToken.getText()) ||
+                                " ".equals(nextToken.getText()) ||
+                                nextToken.getText().length() == 0) {
+                                endPos += nextToken.getText().length();
+                                additionalSpaces += nextToken.getText().length();
+                                additionalTokens += 1;
+                                urlTokens.add(nextToken);
+                                continue;
+                            }
 
-                        if ("\n".equals(nextToken.getText()) ||
-                            " ".equals(nextToken.getText()) ||
-                            nextToken.getText().length() == 0) {
-                            endPos += nextToken.getText().length();
-                            urlTokens.add(nextToken);
-                            continue;
+                            int pos = destination.indexOf(nextToken.getText(), destinationPos);
+                            if (pos != -1) {
+                                if (additionalTokens > 0) {
+                                    additionalSpaces = 0;
+                                    additionalTokens = 0;
+                                }
+                                endPos += nextToken.getText().length();
+                                destinationPos = pos + nextToken.getText().length();
+                                urlTokens.add(nextToken);
+                            } else {
+                                break;
+                            }
                         }
 
-                        int pos = destination.indexOf(nextToken.getText(), destinationPos);
-                        if (pos != -1) {
-                            endPos += nextToken.getText().length();
-                            destinationPos = pos + nextToken.getText().length();
-                            urlTokens.add(nextToken);
-                        } else
-                            break;
+                        // We don't match anything after but we added spaces, we should take them back
+                        if (additionalTokens > 0) {
+                            urlTokens = urlTokens.subList(0, urlTokens.size() - additionalTokens);
+                            endPos -= additionalSpaces;
+                        }
                     }
+                } else if (urlString.replaceAll("\\s", "").equals(destination)) {
+                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
+                } else if (urlString.contains(destination) || urlString.replaceAll("\\s", "").contains(destination)) {
+                    // In this case the regex has catches too much, usually this should be limited to a few characters,
+                    // but we cannot know it for sure. Here we first find the difference between the destination and the
+                    // urlString, and then we identify the tokens in which this "difference" is falling,
+                    // and we remove them from the urlTokens.
+
+                    int startCharDifference = urlString.indexOf(destination) + destination.length();
+                    String difference = urlString.substring(startCharDifference);
+                    OffsetPosition newTokenPositions = getTokenPositions(startCharDifference, urlString.length(), urlTokens);
+
+                    if (newTokenPositions.end < 0) {
+                        // The difference is within the last token, even if we split the layout tokens, here,
+                        // it won't solve the problem so we limit collateral damage.
+                        // At some point we could return the destination containing the clean URL to fill up the
+                        // "target" attribute in the TEI
+                        newTokenPositions.end = urlTokens.size() - 1;
+                    }
+
+                    urlTokens = urlTokens.subList(0, newTokenPositions.end);
+                    endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
+                } else {
+                    // In this case the regex has catches too much, usually this should be limited to a few characters
+                    // NOTE: Here it might not contain the URL string just because of space
+                    // TODO: stop after a few characters instead of reaching zero?
+
+                    urlTokens = urlTokens.subList(0, correctedLastTokenIndex + 1);
+                    endPos = startPos + LayoutTokensUtil.toText(urlTokens).length();
                 }
             }
 
             // finally avoid ending a URL by a dot, because it can harm the sentence segmentation
-            if (StringUtils.substring(LayoutTokensUtil.toText(layoutTokens), startPos, endPos).endsWith(".")) {
+            if (Iterables.getLast(urlTokens).getText().endsWith(".")) {
                 endPos = endPos - 1;
+            } else if (Iterables.getLast(urlTokens).getText().endsWith(")")) {
+                long openedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == '(').count();
+                long closedParenthesis = LayoutTokensUtil.toText(urlTokens).chars().filter(ch -> ch == ')').count();
+                if (openedParenthesis < closedParenthesis) {
+                    endPos = endPos - 1;
+                }
             }
 
             OffsetPosition position = new OffsetPosition();
