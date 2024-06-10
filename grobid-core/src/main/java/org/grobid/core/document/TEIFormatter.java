@@ -1630,7 +1630,7 @@ public class TEIFormatter {
                         String type = referenceInformation.getMiddle();
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
-                        if (pos >= matchingPosition.start)
+                        if (pos > matchingPosition.start)
                             break;
 
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
