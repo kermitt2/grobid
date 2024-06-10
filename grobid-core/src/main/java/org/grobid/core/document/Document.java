@@ -635,7 +635,7 @@ public class Document implements Serializable {
     }
 
     /*
-     * Try to match a DOI in the first page, independently from any preliminar
+     * Try to match a DOI in the first page, independently of any preliminary
      * segmentation. This can be useful for improving the chance to find a DOI
      * in headers or footnotes.
      */
