@@ -2025,12 +2025,13 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
 
-            if (pos+posInSentence <= theSentences.get(i).end) {
-                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+            int endPosition = Math.min(theSentences.get(i).end, text.length());
+            if (pos+posInSentence <= endPosition) {
+                String local_text_chunk = text.substring(pos+posInSentence, endPosition);
                 local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
                 sentenceElement.appendChild(local_text_chunk);
-                curParagraph.appendChild(sentenceElement);
             }
+            curParagraph.appendChild(sentenceElement);
         }
 
         for(int i=curParagraph.getChildCount()-1; i>=0; i--) {
