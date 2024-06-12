@@ -1274,6 +1274,11 @@ public class TEIFormatter {
 
             org.apache.commons.lang3.tuple.Pair<String, List<LayoutToken>> noteProcess = 
                 fullTextParser.processShort(noteTokens, doc);
+
+            if (noteProcess == null) {
+                continue;
+            }
+
             String labeledNote = noteProcess.getLeft();
             List<LayoutToken> noteLayoutTokens = noteProcess.getRight();
 
