@@ -57,7 +57,7 @@ DeLFT version `0.3.2` has been tested successfully with Python 3.7 and 3.8. For 
 
 ```shell
 cd deflt/
-python3 grobidTagger.py delft/applications/citation tag  --architecture BidLSTM_CRF
+python -m delft.applications.grobidTagger citation tag --architecture BidLSTM_CRF
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
@@ -98,7 +98,7 @@ If you are using a Python environment for the DeLFT installation, you can set th
 
 ```yaml
   delft:
-    python_virtualEnv: /where/my/damned/python/virtualenv/is/
+    python_virtualEnv: /where/my/damned/python/virtualenv/is/ 
 ```
 
 Normally by setting the Python environment path in the config file (e.g. `pythonVirtualEnv: "../delft/env"`), you will not need to launch GROBID in the same activated environment. 
