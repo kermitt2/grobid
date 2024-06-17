@@ -334,7 +334,7 @@ project(":grobid-service") {
             }
         } else if (Os.isFamily(Os.FAMILY_UNIX)) {
             libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
-                "${file("../grobid-home/lib/lin-64").absolutePath}:"
+                "${file("../grobid-home/lib/lin-64").absolutePath}"
         } else  {
             throw new RuntimeException("Unsupported platform!")
         }
@@ -344,16 +344,25 @@ project(":grobid-service") {
         }
         workingDir = rootProject.rootDir
         def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
-//        if (System.env.CONDA_PREFIX) {
-//            def condaEnv = "${System.env.CONDA_PREFIX}/lib"
-//            def pythonDirectory = file(condaEnv).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
-//            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
-//
-//            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
-//                libraries + ":" +
-//                "${System.env.CONDA_PREFIX}/lib:" +
-//                "${System.env.CONDA_PREFIX}/lib/python${pythonVersion}/site-packages/jep"
-//        }
+        def envPrefix = ""
+        if (System.env.CONDA_PREFIX) {
+            envPrefix = "${System.env.CONDA_PREFIX}"
+        } else if (System.env.VIRTUAL_ENV) {
+            envPrefix = "${System.env.VIRTUAL_ENV}"
+        }
+        
+        if (envPrefix) {
+            def envLibs = "${envPrefix}/lib"
+            def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
+            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
+            
+            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
+                libraries +
+                "${envLibs}:" +
+                "${envLibs}/python${pythonVersion}/site-packages/jep"
+        }
+        
+        println("Running with the java.library.path: ${javaLibraryPath}")
         systemProperty "java.library.path", javaLibraryPath
     }
 
