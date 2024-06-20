@@ -241,7 +241,6 @@ project("grobid-core") {
         implementation 'black.ninia:jep:4.0.2'
         implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
         implementation group: 'org.jruby', name: 'jruby-complete', version: '9.2.13.0'
-
         shadedLib "org.apache.lucene:lucene-analyzers-common:4.5.1"
     }
 
