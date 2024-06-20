@@ -2,6 +2,7 @@ package org.grobid.core;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.AbstractParser.Flavor;
 
 import java.io.File;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,6 +21,9 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
+    SEGMENTATION_LIGHT("segmentation/light"),
+    SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
+    SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
     DATE("date"),
@@ -33,6 +37,9 @@ public enum GrobidModels implements GrobidModel {
     FIGURE("figure"),
     TABLE("table"),
     HEADER("header"),
+    HEADER_LIGHT("header/light"),
+    HEADER_SDO_3GPP("header/sdo/3gpp"),
+    HEADER_SDO_IETF("header/sdo/ietf"),
     NAMES_CITATION("name/citation"),
     NAMES_HEADER("name/header"),
     PATENT_PATENT("patent/patent"),
@@ -62,12 +69,14 @@ public enum GrobidModels implements GrobidModel {
     // This is used in particular for scientific or technical documents like standards (SDO) 
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
-    public enum Collection {
+    public enum Flavor {
+        LIGHT("light"),
+        _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
         public final String label;
  
-        private Collection(String label) {
+        private Flavor(String label) {
             this.label = label;
         }
 
@@ -75,6 +84,7 @@ public enum GrobidModels implements GrobidModel {
             return label;
         }
     };
+
 
     /**
      * Absolute path to the model.
@@ -122,6 +132,13 @@ public enum GrobidModels implements GrobidModel {
     @Override
     public String toString() {
         return folderName;
+    }
+
+    public static GrobidModel getModelCollection(GrobidModel model, Collection collection) {
+        if (collection == null) {
+            return model;
+        } else 
+            return modelFor(model.toString() + "/" + collection.getLabel().toLowerCase());
     }
 
     public static GrobidModel modelFor(final String name) {
