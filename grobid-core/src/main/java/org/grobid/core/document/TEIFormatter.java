@@ -747,6 +747,10 @@ public class TEIFormatter {
             tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
         }
 
+        if (!StringUtils.isEmpty(biblio.getHalId())) {
+            tei.append("\t\t\t\t\t<idno type=\"halId\">" + TextUtilities.HTMLEncode(biblio.getHalId()) + "</idno>\n");
+        }
+
         if (!StringUtils.isEmpty(biblio.getArXivId())) {
             tei.append("\t\t\t\t\t<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(biblio.getArXivId()) + "</idno>\n");
         }
@@ -1639,6 +1643,9 @@ public class TEIFormatter {
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
                         if (pos > matchingPosition.start)
+                            break;
+
+                        if (pos >= matchingPosition.start) 
                             break;
 
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
