@@ -17,6 +17,7 @@ public class EngineParsers implements Closeable {
     private DateParser dateParser = null;
     private CitationParser citationParser = null;
     private FullTextParser fullTextParser = null;
+    private FullTextBlankParser fullTextBlankParser = null;
     private ReferenceExtractor referenceExtractor = null;
     private ChemicalParser chemicalParser = null;
     private Segmentation segmentationParser = null;
@@ -92,6 +93,18 @@ public class EngineParsers implements Closeable {
         }
 
         return fullTextParser;
+    }
+
+    public FullTextBlankParser getFullTextBlankParser() {
+        if (fullTextBlankParser == null) {
+            synchronized (this) {
+                if (fullTextBlankParser == null) {
+                    fullTextBlankParser = new FullTextBlankParser(this);
+                }
+            }
+        }
+
+        return fullTextBlankParser;
     }
 
     public Segmentation getSegmentationParser() {

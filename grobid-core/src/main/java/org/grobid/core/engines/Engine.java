@@ -364,10 +364,9 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -427,10 +426,9 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -561,7 +559,6 @@ public class Engine implements Closeable {
     }
 
     /**
-     *
      * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
      * Parse and convert the current article into TEI, this method performs the
      * whole parsing and conversion process. If onlyHeader is true, than only
@@ -1212,4 +1209,48 @@ public class Engine implements Closeable {
     public static Engine getEngine(boolean preload) {
         return GrobidPoolingFactory.getEngineFromPool(preload);
     }
+
+
+    public String fullTextToBlank(File inputFile,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config).getTei();
+    }
+
+
+    public String fullTextToBlank(File inputFile,
+                                String md5Str,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, md5Str, config).getTei();
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     String md5Str,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + inputFile);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(inputFile, md5Str, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config);
+    }
+
+    public Document fullTextToBlankDoc(DocumentSource documentSource,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + documentSource);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(documentSource, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + documentSource + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
 }

@@ -94,7 +94,7 @@ public class GrobidRestService implements GrobidPaths {
                 GrobidPoolingFactory.returnEngine(engine);
             }
         }
-        
+
         LOGGER.info("Initiating of Servlet GrobidRestService finished.");
     }
 
@@ -207,6 +207,38 @@ public class GrobidRestService implements GrobidPaths {
         return processHeaderDocumentReturnBibTeX_post(inputStream, consolidate, includeRawAffiliations, includeRawCopyrights);
     }
 
+    @Path(PATH_FULL_TEXT_BLANK)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processFulltextDocument_post(
+        @FormDataParam(INPUT) InputStream inputStream,
+        @DefaultValue("-1") @FormDataParam("start") int startPage,
+        @DefaultValue("-1") @FormDataParam("end") int endPage,
+        @FormDataParam("generateIDs") String generateIDs,
+        @FormDataParam("segmentSentences") String segmentSentences,
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        return processFulltextBlank(
+            inputStream, startPage, endPage, generateIDs, segmentSentences, coordinates
+        );
+    }
+
+    private Response processFulltextBlank(
+        InputStream inputStream,
+        int startPage,
+        int endPage,
+        String generateIDs,
+        String segmentSentences,
+        List<FormDataBodyPart> coordinates) throws Exception{
+
+        boolean generate = validateGenerateIdParam(generateIDs);
+        boolean segment = validateGenerateIdParam(segmentSentences);
+        List<String> teiCoordinates = collectCoordinates(coordinates);
+
+        return restProcessFiles.processFulltextDocumentBlank(inputStream, startPage, endPage, generate, segment, teiCoordinates);
+    }
+
+
     @Path(PATH_FULL_TEXT)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
@@ -274,7 +306,7 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
-        
+
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processFulltextDocument(
@@ -338,7 +370,7 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam("segmentSentences") String segmentSentences,
         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
-            inputStream, consolidateHeader, consolidateCitations, consolidateFunders, 
+            inputStream, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
             startPage, endPage, generateIDs, segmentSentences, coordinates
         );
@@ -362,7 +394,7 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam("segmentSentences") String segmentSentences,
         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
         return processStatelessFulltextAssetHelper(
-            inputStream, consolidateHeader, consolidateCitations, consolidateFunders, 
+            inputStream, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
             startPage, endPage, generateIDs, segmentSentences, coordinates
         );
@@ -390,7 +422,7 @@ public class GrobidRestService implements GrobidPaths {
         List<String> teiCoordinates = collectCoordinates(coordinates);
 
         return restProcessFiles.processStatelessFulltextAssetDocument(
-            inputStream, consolHeader, consolCitations, consolFunders, 
+            inputStream, consolHeader, consolCitations, consolFunders,
             validateIncludeRawParam(includeRawAffiliations),
             includeRaw, validateIncludeRawParam(includeRawCopyrights),
             startPage, endPage, generate, segment, teiCoordinates
@@ -576,7 +608,7 @@ public class GrobidRestService implements GrobidPaths {
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitation(citation, config, ExpectedResponseType.BIBTEX);
-    } 
+    }
 
     @Path(PATH_CITATION)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -617,7 +649,7 @@ public class GrobidRestService implements GrobidPaths {
             .includeRawCitations(validateIncludeRawParam(includeRawCitations))
             .build();
         return restProcessString.processCitationList(citations, config, ExpectedResponseType.BIBTEX);
-    } 
+    }
 
     /**
      * @see org.grobid.service.process.GrobidRestProcessAdmin#processSHA1(String)
@@ -773,7 +805,7 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeFig = validateIncludeRawParam(includeFiguresTables);
         return restProcessFiles.processPDFReferenceAnnotation(inputStream, consolHeader, consolCitations, includeRaw, includeFig);
     }
-    
+
     @Path(PATH_CITATIONS_PATENT_PDF_ANNOTATION)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
@@ -819,8 +851,8 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response trainModel(@FormParam("model") String model,
                                @DefaultValue("crf") @FormParam("architecture") String architecture,
-                               @DefaultValue("split") @FormParam("type") String type, 
-                               @DefaultValue("0.9") @FormParam("ratio") double ratio, 
+                               @DefaultValue("split") @FormParam("type") String type,
+                               @DefaultValue("0.9") @FormParam("ratio") double ratio,
                                @DefaultValue("10") @FormParam("n") int n,
                                @DefaultValue("0") @FormParam("incremental") String incremental) {
         boolean incrementalVal = validateIncludeRawParam(incremental);
