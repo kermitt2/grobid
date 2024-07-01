@@ -298,7 +298,21 @@ public class TaggingLabels {
     public static final TaggingLabel AFFILIATION_SETTLEMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, SETTLEMENT_LABEL);
     public static final TaggingLabel AFFILIATION_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, ADDRESSLINE_LABEL);
     public static final TaggingLabel AFFILIATION_OTHER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, OTHER_LABEL);
-    
+
+    public static final TaggingLabel NAMES_ADDRESS_TITLE = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, TITLE_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_FORENAME = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, FORENAME_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_MIDDLENAME = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, MIDDLENAME_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_SURNAME = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, SURNAME_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_SUFFIX = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, SUFFIX_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_INSTITUTION = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, INSTITUTION_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_DEPARTMENT = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, DEPARTMENT_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_COUNTRY = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, COUNTRY_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_POSTCODE = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, POSTCODE_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_POSTBOX = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, POSTBOX_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_REGION = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, REGION_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_SETTLEMENT = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, SETTLEMENT_LABEL);
+    public static final TaggingLabel NAMES_ADDRESS_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, ADDRESSLINE_LABEL);
+
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -460,6 +474,21 @@ public class TaggingLabels {
         register(AFFILIATION_SETTLEMENT);
         register(AFFILIATION_ADDRESSLINE);
         register(AFFILIATION_OTHER);
+
+        // name address
+        //register(NAMES_ADDRESS_TITLE);
+        register(NAMES_ADDRESS_FORENAME);
+        register(NAMES_ADDRESS_MIDDLENAME);
+        register(NAMES_ADDRESS_SURNAME);
+        //register(NAMES_ADDRESS_SUFFIX);
+        register(NAMES_ADDRESS_INSTITUTION);
+        register(NAMES_ADDRESS_DEPARTMENT);
+        register(NAMES_ADDRESS_COUNTRY);
+        register(NAMES_ADDRESS_POSTCODE);
+        register(NAMES_ADDRESS_POSTBOX);
+        register(NAMES_ADDRESS_REGION);
+        register(NAMES_ADDRESS_SETTLEMENT);
+        register(NAMES_ADDRESS_ADDRESSLINE);
     }
 
     protected TaggingLabels() {

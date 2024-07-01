@@ -114,8 +114,8 @@ public class TEIAuthorSaxParser extends DefaultHandler {
             currentTag = "<suffix>";
         } else if (qName.equals("author")) {
             accumulator = new StringBuffer();
-            labeled = new ArrayList<String>();
-            tokens = new ArrayList<LayoutToken>();
+            labeled = new ArrayList<>();
+            tokens = new ArrayList<>();
         } else if (!qName.equals("analytic") && !qName.equals("biblStruct") && 
             !qName.equals("sourceDesc") && !qName.equals("fileDesc") && 
             !qName.equals("teiHeader") && !qName.equals("TEI") && 

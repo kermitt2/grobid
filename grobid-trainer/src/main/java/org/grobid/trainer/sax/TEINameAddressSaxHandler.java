@@ -1,10 +1,12 @@
 package org.grobid.trainer.sax;
 
-import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.analyzers.*;
+import org.grobid.core.lang.Language;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -15,13 +17,11 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
- * SAX parser for affiliation+address sequences encoded in the TEI format data.
- * Segmentation of tokens must be identical as the one from pdf2xml files to that
- * training and online input tokens are identical.
+ * SAX parser handler for name/address sequences encoded in the TEI format data.
  *
  * @author Patrice Lopez
  */
-public class TEIAffiliationAddressSaxParser extends DefaultHandler {
+public class TEINameAddressSaxHandler extends DefaultHandler {
 
     private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
     private StringBuffer allContent = new StringBuffer();
@@ -29,26 +29,17 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     private String output = null;
     private String currentTag = null;
 
-    private List<String> labeled = null; // store line by line the labeled data
-    public List<List<OffsetPosition>> placesPositions = null; // list of offset positions of place names
-    public List<List<OffsetPosition>> countriesPositions = null; // list of offset positions of country names
-    public List<List<LayoutToken>> allTokens = null;
-
-    //private Writer writerAddress = null; // writer for the address model
-    private Writer writerCORA = null; // writer for conversion into TEI header model
+    private List<String> labeled = null; // store token by token the labels
+    private List<List<String>> allLabeled = null; // list of labels
+    private List<LayoutToken> tokens = null;
+    private List<List<LayoutToken>> allTokens = null; // list of LayoutToken segmentation
 
     public int n = 0;
     public Lexicon lexicon = Lexicon.getInstance();
 
-    public void setTEIHeaderOutput(Writer writ) {
-        writerCORA = writ;
-    }
-
-    public TEIAffiliationAddressSaxParser() {
-        labeled = new ArrayList<String>();
-        placesPositions = new ArrayList<List<OffsetPosition>>();
-        countriesPositions = new ArrayList<List<OffsetPosition>>();
+    public TEINameAddressSaxHandler() {
         allTokens = new ArrayList<List<LayoutToken>>();
+        allLabeled = new ArrayList<List<String>>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -64,16 +55,8 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
         return accumulator.toString().trim();
     }
 
-    public List<String> getLabeledResult() {
-        return labeled;
-    }
-
-    public List<List<OffsetPosition>> getPlacesPositions() {
-        return placesPositions;
-    }
-
-    public List<List<OffsetPosition>> getCountriesPositions() {
-        return countriesPositions;
+    public List<List<String>> getLabeledResult() {
+        return allLabeled;
     }
 
     public List<List<LayoutToken>> getAllTokens() {
@@ -83,65 +66,41 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((
-                (qName.equals("addrLine")) ||
-                        (qName.equals("settlement")) ||
-                        (qName.equals("region")) ||
-                        (qName.equals("postCode")) ||
-                        (qName.equals("postBox")) ||
-                        (qName.equals("marker")) ||
-                        (qName.equals("country") ||
-                                (qName.equals("orgName")))
-        )) {
+        if (
+                qName.equals("addrLine") ||
+                qName.equals("settlement") ||
+                qName.equals("region") ||
+                qName.equals("postCode") ||
+                qName.equals("postBox") ||
+                qName.equals("country") ||
+                qName.equals("surname") ||
+                qName.equals("firstname") || 
+                qName.equals("forename") || 
+                qName.equals("middlename") || 
+                qName.equals("title") ||
+                qName.equals("suffix") || 
+                qName.equals("surname") || 
+                qName.equals("lastname") ||        
+                qName.equals("orgName")
+        ) {
             String text = getText();
-            writeField(text);
-            if (allContent != null) {
-                if (allContent.length() != 0) {
-                    allContent.append(" ");
-                }
-                allContent.append(text);
+            if (text.length() > 0) {
+                writeField(text);
             }
             accumulator.setLength(0);
         } else if (qName.equals("lb") || qName.equals("pb")) {
             // we note a line break
             //accumulator.append(" @newline ");
             accumulator.append("\n");
-        } else if (qName.equals("affiliation")) {
-            String text = getText();
-            if (text.length() > 0) {
-                currentTag = "<other>";
-                writeField(text);
-                if (allContent != null) {
-                    if (allContent.length() != 0) {
-                        allContent.append(" ");
-                    }
-                    allContent.append(text);
-                }
-            }
-            accumulator.setLength(0);
         } else if (qName.equals("author")) {
             String text = getText();
             if (text.length() > 0) {
                 currentTag = "<other>";
                 writeField(text);
-                if (allContent != null) {
-                    if (allContent.length() != 0) {
-                        allContent.append(" ");
-                    }
-                    allContent.append(text);
-                }
             }
-            labeled.add("\n \n");
 
-            String allString = allContent.toString().trim();
-            allString = allString.replace("@newline", "\n");
-            //List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(allString);
-            List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(allString);
-            placesPositions.add(lexicon.tokenPositionsLocationNames(tokens));
-            countriesPositions.add(lexicon.tokenPositionsCountryNames(tokens));
+            allLabeled.add(labeled);
             allTokens.add(tokens);
-            allContent = null;
-            allString = null;
 
             accumulator.setLength(0);
         } else {
@@ -159,18 +118,9 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             if (text.length() > 0) {
                 currentTag = "<other>";
                 writeField(text);
-                if (allContent != null) {
-                    if (allContent.length() != 0) {
-                        allContent.append(" ");
-                    }
-                    allContent.append(text);
-                }
             }
             accumulator.setLength(0);
         }
-        //else {
-        //	writeField("+++");
-        //}
 
         if (qName.equals("orgName")) {
             int length = atts.getLength();
@@ -187,10 +137,6 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                         if (value.equals("department") || value.equals("departement")) {
                             currentTag = "<department>";
                         } else if (value.equals("institution") || value.equals("institute")) {
-                            currentTag = "<institution>";
-                        } else if (value.equals("laboratory")) {
-                            currentTag = "<laboratory>";
-                        } else if (value.equals("consortium")) {
                             currentTag = "<institution>";
                         } else {
                             currentTag = null;
@@ -214,17 +160,29 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             currentTag = "<postBox>";
         } else if (qName.equals("country")) {
             currentTag = "<country>";
-        } else if (qName.equals("marker")) {
-            currentTag = "<marker>";
+        } else if (qName.equals("title") | qName.equals("roleName")) {
+            currentTag = "<title>";
+        } else if (qName.equals("surname") || qName.equals("lastname")) {
+            currentTag = "<surname>";
+        } else if (qName.equals("middlename")) {
+            currentTag = "<middlename>";
+        } else if (qName.equals("forename") || qName.equals("firstname")) {
+            currentTag = "<forename>";
+        } else if (qName.equals("suffix")) {
+            currentTag = "<suffix>";
         } else if (qName.equals("author")) {
             accumulator = new StringBuffer();
-            allContent = new StringBuffer();
-        } else {
-            //currentTag = null;
+            labeled = new ArrayList<>();
+            tokens = new ArrayList<>();
+        } else if (!qName.equals("analytic") && !qName.equals("biblStruct") && 
+            !qName.equals("sourceDesc") && !qName.equals("fileDesc") && !qName.equals("address") && 
+            !qName.equals("teiHeader") && !qName.equals("TEI") && !qName.equals("teiCorpus") && 
+            !qName.equals("persName") && !qName.equals("tei") && !qName.equals("lb")) {
+            System.out.println("Warning, invalid tag: <" + qName + ">");
         }
     }
 
-    private void writeField(String text) {
+    /*private void writeField(String text) {
         // we segment the text
         StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
         boolean begin = true;
@@ -240,24 +198,63 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                 continue;
             }
 
-            /*if (tok.equals("@newline")) {
-                labeled.add("@newline");
-            } else if (tok.equals("+PAGE+")) {
-                // page break - no influence here
-                labeled.add("@newline");
-            } else*/ 
-            {
-                String content = tok;
-                int i = 0;
-                if (content.length() > 0) {
-                    if (begin) {
-                        labeled.add(content + " I-" + currentTag);
-                        begin = false;
-                    } else {
-                        labeled.add(content + " " + currentTag);
-                    }
+            String content = tok;
+            int i = 0;
+            if (content.length() > 0) {
+                if (begin) {
+                    labeled.add("I-" + currentTag);
+                    begin = false;
+                } else {
+                    labeled.add(currentTag);
                 }
             }
+            
+            begin = false;
+        }
+    }*/
+
+    private void writeField(String text) {
+        // we segment the text
+        List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+        if ( (localTokens == null) || (localTokens.size() == 0) )
+            localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text, new Language("en", 1.0));
+        if  ( (localTokens == null) || (localTokens.size() == 0) )
+            return;
+
+        boolean begin = true;
+        for (LayoutToken token : localTokens) {
+            if (tokens == null) {
+                // should not be the case, it can indicate a structure problem in the training XML file
+                tokens = new ArrayList<LayoutToken>();
+                System.out.println("Warning: list of LayoutToken not initialized properly, parsing continue... ");
+            }
+            if (labeled == null) {
+                // should not be the case, it can indicate a structure problem in the training XML file
+                labeled = new ArrayList<String>();
+                System.out.println("Warning: list of labels not initialized properly, parsing continue... ");
+            }
+            tokens.add(token);
+            String content = token.getText();
+            if (content.equals(" ") || content.equals("\n")) {
+                labeled.add(null);
+                continue;
+            }
+
+            content = UnicodeUtil.normaliseTextAndRemoveSpaces(content);
+            if (content.trim().length() == 0) { 
+                labeled.add(null);
+                continue;
+            }
+
+            if (content.length() > 0) {
+                if (begin) {
+                    labeled.add("I-" + currentTag);
+                    begin = false;
+                } else {
+                    labeled.add(currentTag);
+                }
+            }
+
             begin = false;
         }
     }

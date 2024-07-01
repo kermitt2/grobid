@@ -2,10 +2,10 @@ package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
-import org.grobid.core.features.FeaturesVectorName;
+import org.grobid.core.features.FeaturesVectorNameAddress;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.trainer.sax.TEIAuthorSaxParser;
+import org.grobid.trainer.sax.TEINameAddressSaxHandler;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
 
@@ -96,6 +96,8 @@ public class NameAddressTrainer extends AbstractTrainer {
 
 			List<OffsetPosition> titlePositions = null;
 			List<OffsetPosition> suffixPositions = null;
+			List<OffsetPosition> countryPositions = null;
+			List<OffsetPosition> placePositions = null;
 
 			int n = 0;
 			for (; n < refFiles.length; n++) {
@@ -103,15 +105,15 @@ public class NameAddressTrainer extends AbstractTrainer {
 				String name = teifile.getName();
 				System.out.println(name);
 
-				final TEINameAddressSaxParser parser2 = new TEINameAddressSaxParser();
+				final TEINameAddressSaxHandler parser = new TEINameAddressSaxHandler();
 
 				// get a new instance of parser
 				final SAXParser p = spf.newSAXParser();
-				p.parse(teifile, parser2);
+				p.parse(teifile, parser);
 
-				final List<List<String>> allLabeled = parser2.getLabeledResult();
-				final List<List<LayoutToken>> allTokens = parser2.getTokensResult();
-				totalExamples += parser2.n;
+				final List<List<String>> allLabeled = parser.getLabeledResult();
+				final List<List<LayoutToken>> allTokens = parser.getAllTokens();
+				totalExamples += parser.n;
 
 				// we can now add the features
 				for(int i=0; i<allTokens.size(); i++) {
@@ -127,7 +129,7 @@ public class NameAddressTrainer extends AbstractTrainer {
             		countryPositions = Lexicon.getInstance().tokenPositionsCountryNames(allTokens.get(i));
             		placePositions = Lexicon.getInstance().tokenPositionsLocationNames(allTokens.get(i));
 
-					final String names = FeaturesVectorNameAddress.addFeaturesName(allTokens.get(i), 
+					final String names = FeaturesVectorNameAddress.addFeaturesNameAddress(allTokens.get(i), 
 						allLabeled.get(i), countryPositions, placePositions, titlePositions, suffixPositions);
 
 					if ( (writer2 == null) && (writer3 != null) )
