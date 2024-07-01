@@ -34,6 +34,7 @@ grobid:
       mailto: 
       # to use crossref web API, you need normally to use it politely and to indicate an email address here, e.g. 
       #mailto: "toto@titi.tutu"
+      mailto: "patrice.lopez@science-miner.com"
       token:
       # to use Crossref metadata plus service (available by subscription)
       #token: "yourmysteriouscrossrefmetadataplusauthorizationtokentobeputhere"
@@ -58,7 +59,7 @@ grobid:
   # maximum concurrency allowed to GROBID server for processing parallel requests - change it according to your CPU/GPU capacities
   # for a production server running only GROBID, set the value slightly above the available number of threads of the server
   # to get best performance and security
-  concurrency: 10
+  concurrency: 24
   # when the pool is full, for queries waiting for the availability of a Grobid engine, this is the maximum time wait to try 
   # to get an engine (in seconds) - normally never change it
   poolMaxWait: 1
@@ -294,6 +295,30 @@ grobid:
         architecture: "gru"
         #architecture: "bert"
         #transformer: "allenai/scibert_scivocab_cased"
+
+    - name: "name-address"
+      engine: "wapiti"
+      #engine: "delft"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.00001
+        window: 50
+        nbMaxIterations: 2000
+      delft:
+        # deep learning parameters
+        architecture: "BidLSTM_CRF_FEATURES"
+        #architecture: "BERT_CRF"
+        #transformer: "michiyasunaga/LinkBERT-base"
+        useELMo: false
+        runtime:
+          # parameters used at runtime/prediction
+          max_sequence_length: 800
+          batch_size: 20
+        training:
+          # parameters used for training
+          max_sequence_length: 500  
+          batch_size: 40
+
 
   # for **service only**: how to load the models, 
   # false -> models are loaded when needed, avoiding putting in memory useless models (only in case of CRF) but slow down 
