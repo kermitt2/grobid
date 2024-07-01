@@ -87,6 +87,12 @@ public class JEPThreadPoolClassifier {
         // import packages
         jep.eval("import os");
         jep.eval("import json");
+        
+        // for using legacy Keras 2, and not Keras 3 installed by default by TensorFlow from version 2.16
+        jep.eval("os.environ[\"TF_USE_LEGACY_KERAS\"] = \"1\"");
+        jep.eval("os.environ[\"KERAS_BACKEND\"] = \"tensorflow\"");
+        jep.eval("import tf_keras as keras");
+
         jep.eval("os.chdir('" + delftPath.getAbsolutePath() + "')");
         jep.eval("from delft.utilities.Embeddings import Embeddings");
         //jep.eval("from delft.utilities.Utilities import split_data_and_labels");
