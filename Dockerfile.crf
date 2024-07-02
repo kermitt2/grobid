@@ -18,7 +18,6 @@ FROM openjdk:17-jdk-slim as builder
 USER root
 
 RUN apt-get update && \
-    apt-get -y upgrade && \
     apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
@@ -66,6 +65,7 @@ RUN rm -rf grobid-source
 FROM openjdk:17-slim
 
 RUN apt-get update && \
+    apt-get -y upgrade && \
     apt-get -y --no-install-recommends install libxml2 libfontconfig && \
     rm -rf /var/lib/apt/lists/*
 

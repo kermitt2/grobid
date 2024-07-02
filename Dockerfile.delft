@@ -20,6 +20,7 @@ FROM openjdk:17-jdk-slim as builder
 USER root
 
 RUN apt-get update && \
+    apt-get -y upgrade && \
     apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
@@ -71,7 +72,8 @@ FROM tensorflow/tensorflow:2.7.0-gpu
 ENV LANG C.UTF-8
 
 # update NVIDIA Cuda key (following a key rotation in April 2022)
-RUN apt-get install -y wget && \
+RUN apt-get -y upgrade && \
+    apt-get install -y wget && \
     apt-key del 7fa2af80 && \
     rm /etc/apt/sources.list.d/cuda.list && \
     rm /etc/apt/sources.list.d/nvidia-ml.list && \
