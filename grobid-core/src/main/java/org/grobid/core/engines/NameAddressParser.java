@@ -121,7 +121,7 @@ public class NameAddressParser extends AbstractParser {
         }
 
         List<List<Pair<Person,Affiliation>>> results = null;
-        List<Person> authors = null;
+        List<Person> fullAuthors = null;
         List<Affiliation> affiliations = null;
 
         if (allRes == null || allRes.length() == 0)

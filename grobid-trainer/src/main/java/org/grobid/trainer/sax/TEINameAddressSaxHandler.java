@@ -160,7 +160,7 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
             currentTag = "<postBox>";
         } else if (qName.equals("country")) {
             currentTag = "<country>";
-        } else if (qName.equals("title") | qName.equals("roleName")) {
+        } else if (qName.equals("title") || qName.equals("roleName") || qName.equals("rolename")) {
             currentTag = "<title>";
         } else if (qName.equals("surname") || qName.equals("lastname")) {
             currentTag = "<surname>";
@@ -177,7 +177,8 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
         } else if (!qName.equals("analytic") && !qName.equals("biblStruct") && 
             !qName.equals("sourceDesc") && !qName.equals("fileDesc") && !qName.equals("address") && 
             !qName.equals("teiHeader") && !qName.equals("TEI") && !qName.equals("teiCorpus") && 
-            !qName.equals("persName") && !qName.equals("tei") && !qName.equals("lb")) {
+            !qName.equals("persName") && !qName.equals("tei") && !qName.equals("lb") &&
+            !qName.equals("affilliation")) {
             System.out.println("Warning, invalid tag: <" + qName + ">");
         }
     }

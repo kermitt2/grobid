@@ -2311,7 +2311,7 @@
                         <author>
 							<marker>1</marker>
                        		<affiliation>
-								<institution>Saarland University</institution>
+								<orgName type="institution">Saarland University</orgName>
 								<address>
 									<postCode>66123</postCode>
 									<settlement>Saarbrücken</settlement>,
