@@ -72,7 +72,8 @@ FROM tensorflow/tensorflow:2.7.0-gpu
 ENV LANG C.UTF-8
 
 # update NVIDIA Cuda key (following a key rotation in April 2022)
-RUN apt-get -y upgrade && \
+RUN apt-get update && \
+    apt-get -y upgrade && \
     apt-get install -y wget && \
     apt-key del 7fa2af80 && \
     rm /etc/apt/sources.list.d/cuda.list && \
@@ -87,8 +88,7 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
 # install JRE, python and other dependencies
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
+RUN apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
     openjdk-17-jre-headless ca-certificates-java \
     musl gfortran \
     python3 python3-pip python3-setuptools python3-dev \
