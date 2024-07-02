@@ -58,6 +58,7 @@ public class NameAddressParser extends AbstractParser {
 
             // TBD: pass the language object to the tokenizer 
             List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+            
             results = processingLayoutTokens(tokens);
         } catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
@@ -71,11 +72,17 @@ public class NameAddressParser extends AbstractParser {
         }
         List<List<LayoutToken>> inputsTokens = new ArrayList<>();
         inputsTokens.add(tokens);
-        return processingBatch(inputsTokens);
+        List<List<Pair<Person,Affiliation>>> resultList = processingBatch(inputsTokens);
+
+        if (resultList == null || resultList.size() == 0) {
+            // return empty list
+            return new ArrayList<Pair<Person,Affiliation>>();
+        }
+        return resultList.get(0);
     }
 
-    public List<Pair<Person,Affiliation>> processingBatch(List<List<LayoutToken>> inputsTokens) throws Exception {
-        List<Pair<Person,Affiliation>> results = null;
+    public List<List<Pair<Person,Affiliation>>> processingBatch(List<List<LayoutToken>> inputsTokens) throws Exception {
+        List<List<Pair<Person,Affiliation>>> results = null;
         try {
             List<String> allSequencesWithFeatures = new ArrayList<>();
             for(List<LayoutToken> tokens : inputsTokens) {
@@ -107,11 +114,124 @@ public class NameAddressParser extends AbstractParser {
         return label.endsWith("<surname>") || label.endsWith("<forename>") || label.endsWith("<middlename>");
     }
 
-    private List<Pair<Person,Affiliation>> resultExtractionLayoutTokens(String allRes, 
+    private List<List<Pair<Person,Affiliation>>> resultExtractionLayoutTokens(String allRes, 
                                                         List<List<LayoutToken>> inputsTokens) {
-        List<Pair<Person,Affiliation>> results = null;
+        if (CollectionUtils.isEmpty(inputsTokens)) {
+            return null;
+        }
 
+        List<List<Pair<Person,Affiliation>>> results = null;
+        List<Person> authors = null;
+        List<Affiliation> affiliations = null;
 
+        if (allRes == null || allRes.length() == 0)
+            return null;
+        String[] resBlocks = allRes.split("\n\n");
+        int i = 0;
+        for (List<LayoutToken> tokens : inputsTokens) {
+            if (CollectionUtils.isEmpty(tokens)) {
+                results.add(null);
+                continue;
+            }
+            String res = resBlocks[i];
+            i++;
+            try {
+                TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
+                org.grobid.core.data.Person aut = new Person();
+                List<TaggingTokenCluster> clusters = clusteror.cluster();
+                for (TaggingTokenCluster cluster : clusters) {
+                    if (cluster == null) {
+                        continue;
+                    }
+
+                    TaggingLabel clusterLabel = cluster.getTaggingLabel();
+                    Engine.getCntManager().i(clusterLabel);
+                    //String clusterContent = LayoutTokensUtil.normalizeText(LayoutTokensUtil.toText(cluster.concatTokens()));
+                    String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
+                    if (clusterContent.trim().length() == 0)
+                        continue;
+                    if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_TITLE) || 
+                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_TITLE)) {
+                        if (aut.getTitle() != null) {
+                            if (aut.notNull()) {
+                                if (fullAuthors == null)
+                                    fullAuthors = new ArrayList<Person>();
+                                fullAuthors.add(aut);
+                            }
+                            aut = new Person();
+                            aut.setTitle(clusterContent);
+                        } else {
+                            aut.setTitle(clusterContent);
+                        }
+                        aut.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
+                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
+                        if (aut.getFirstName() != null) {
+                            // new author
+                            if (aut.notNull()) {
+                                if (fullAuthors == null)
+                                    fullAuthors = new ArrayList<Person>();
+                                fullAuthors.add(aut);
+                            }
+                            aut = new Person();
+                            aut.setFirstName(clusterContent);
+                        } else {
+                            aut.setFirstName(clusterContent);
+                        }
+                        aut.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
+                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
+                        if (aut.getMiddleName() != null) {
+                            aut.setMiddleName(aut.getMiddleName() + " " + clusterContent);
+                        } else {
+                            aut.setMiddleName(clusterContent);
+                        }
+                        aut.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
+                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
+                        if (aut.getLastName() != null) {
+                            // new author
+                            if (aut.notNull()) {
+                                if (fullAuthors == null)
+                                    fullAuthors = new ArrayList<Person>();
+                                fullAuthors.add(aut);
+                            }
+                            aut = new Person();
+                            aut.setLastName(clusterContent);
+                        } else {
+                            aut.setLastName(clusterContent);
+                        }
+                        aut.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
+                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
+                        if (aut.getSuffix() != null) {
+                            aut.setSuffix(aut.getSuffix() + " " + clusterContent);
+                        } else {
+                            aut.setSuffix(clusterContent);
+                        }
+                        aut.appendLayoutTokens(cluster.concatTokens());
+                    }
+                }
+
+                // add last built author
+                if (aut.notNull()) {
+                    if (fullAuthors == null) {
+                        fullAuthors = new ArrayList<Person>();
+                    }
+                    fullAuthors.add(aut);
+                }
+
+                // some more person name normalisation
+                if (fullAuthors != null) {
+                    for(Person author : fullAuthors) {
+                        author.normalizeName();
+                    }
+                } 
+            } catch (Exception e) {
+                throw new GrobidException("An exception occurred while running Grobid.", e);
+            }
+
+        }
 
         return results;
     }
