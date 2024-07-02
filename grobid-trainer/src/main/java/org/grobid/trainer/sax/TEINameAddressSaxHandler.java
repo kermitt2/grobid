@@ -182,37 +182,6 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
         }
     }
 
-    /*private void writeField(String text) {
-        // we segment the text
-        StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
-        boolean begin = true;
-        while (st.hasMoreTokens()) {
-            String tok = st.nextToken();
-            if (tok.equals("\n")) {
-                labeled.add("@newline");
-                continue;
-            }
-
-            tok = tok.trim();
-            if (tok.length() == 0) {
-                continue;
-            }
-
-            String content = tok;
-            int i = 0;
-            if (content.length() > 0) {
-                if (begin) {
-                    labeled.add("I-" + currentTag);
-                    begin = false;
-                } else {
-                    labeled.add(currentTag);
-                }
-            }
-            
-            begin = false;
-        }
-    }*/
-
     private void writeField(String text) {
         // we segment the text
         List<LayoutToken> localTokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(text);
