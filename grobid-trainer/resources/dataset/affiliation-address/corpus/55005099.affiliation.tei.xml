@@ -14,7 +14,8 @@
 								<addrLine>4-8 cours Michelet</addrLine> ,
 								<addrLine>La Défense 10</addrLine>,
 								<postCode>F-92091</postCode>
-								<settlement>Paris La Défense Cedex</settlement>
+								<settlement>Paris La Défense</settlement>
+								<postBox>Cedex</postBox>
 							<lb/>
 							</address>
 						</affiliation>
@@ -25,7 +26,8 @@
 								<addrLine>4-8 cours Michelet</addrLine> ,
 								<addrLine>La Défense 10</addrLine>,
 								<postCode>F-92091</postCode>
-								<settlement>Paris La Défense Cedex</settlement>
+								<settlement>Paris La Défense</settlement>
+								<postBox>Cedex</postBox>
 							</address>
 						</affiliation>
 

@@ -35,7 +35,8 @@
 							<address>
 								<addrLine>Traverse du Siphon</addrLine>,
 								<postCode>F-13376</postCode>
-								<settlement>Marseille Cedex 12</settlement>,
+								<settlement>Marseille</settlement>
+								<postBox>Cedex 12</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>

@@ -12,7 +12,8 @@
 							<orgName type="institution">INRA</orgName>,
 							<address>
 								<postCode>78026</postCode>
-								<settlement>Versailles Cedex</settlement>,
+								<settlement>Versailles</settlement>
+								<postBox>Cedex</postBox>,
 							</address>
 						</affiliation>
 

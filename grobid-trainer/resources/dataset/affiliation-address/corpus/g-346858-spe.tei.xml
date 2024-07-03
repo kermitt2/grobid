@@ -15,7 +15,8 @@
 								<orgName type="institution">CEA Saclay</orgName>,
 								<address>
 									<postCode>91191</postCode>
-									<settlement>Gif-sur-Yvette Cedex</settlement>,
+									<settlement>Gif-sur-Yvette</settlement>
+									<postBox>Cedex</postBox>,
 									<country key="FR">France<lb/></country>
 									</address>
 							</affiliation>

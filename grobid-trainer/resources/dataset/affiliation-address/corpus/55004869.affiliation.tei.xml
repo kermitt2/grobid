@@ -26,7 +26,8 @@
 							<address>
 								<addrLine>6 quai Watier</addrLine>,
 								<postCode>78401</postCode>
-								<settlement>Chatou Cedex</settlement>,
+								<settlement>Chatou</settlement> 
+								<postBox>Cedex</postBox>,
 								<country>France</country>,
 							<lb/>
 							</address>
@@ -50,7 +51,8 @@
 							<address>	
 								<addrLine>3 allée de la Seine</addrLine>,
 								<postCode>94854</postCode>
-								<settlement>Ivry-sur-Seine Cedex</settlement>,
+								<settlement>Ivry-sur-Seine</settlement> 
+								<postBox>Cedex</postBox>,
 								<country>France</country>
 							</address>
 						</affiliation>

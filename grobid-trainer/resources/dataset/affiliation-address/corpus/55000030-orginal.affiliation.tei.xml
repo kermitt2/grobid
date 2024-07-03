@@ -16,7 +16,7 @@
 								<addrLine>25 rue Docteur Roux</addrLine>,
 								<postCode>75724</postCode>
 								<settlement>Paris</settlement>
-								<postCode>Cedex 15</postCode>,
+								<postBox>>Cedex 15</postBox>>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -28,7 +28,7 @@
 								<addrLine>25 rue Docteur Roux</addrLine>,
 								<postCode>75724</postCode>
 								<settlement>Paris</settlement>
-								<postCode>Cedex 15</postCode>,
+								<postBox>Cedex 15</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -41,7 +41,7 @@
 								<postBox>BP 92208</postBox>,
 								<postCode>44322</postCode>
 								<settlement>Nantes</settlement>
-								<postCode>Cedex 3</postCode>,
+								<postBox>Cedex 3</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -55,7 +55,7 @@
 								<postBox>BP 92208</postBox>,
 								<postCode>44322</postCode>
 								<settlement>Nantes</settlement>
-								<postCode>Cedex 3</postCode>,
+								<postBox>Cedex 3</postBox>,
 								<country>France</country>
 							</address>
 						</affiliation>

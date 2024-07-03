@@ -14,7 +14,8 @@
 							<address>
 								<addrLine>40 Rue de Pelvoux</addrLine>,
 								<postCode>91020</postCode>
-								<settlement>Evry Cedex</settlement>,
+								<settlement>Evry</settlement>
+								<postBox>Cedex</postBox>,
 								<country>France</country>
 							</address>
 						</affiliation>

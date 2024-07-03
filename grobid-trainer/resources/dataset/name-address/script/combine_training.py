@@ -2,7 +2,6 @@ import argparse
 import ntpath
 import os
 import sys
-import yaml
 from pathlib import Path
 import random
 import re

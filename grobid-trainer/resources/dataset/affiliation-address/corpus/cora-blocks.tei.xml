@@ -624,7 +624,8 @@
                                 <address>
                                 	<postBox>BP 166</postBox>
                                 	<postCode>38042</postCode>
-                                	<settlement>Grenoble cedex 9</settlement>, 	                                	                                	
+                                	<settlement>Grenoble</settlement>
+                                	<postBox>cedex 9</postBox>,          	                                	
                                 	<country>France<lb/></country>
                                 </address> 
                             </affiliation>
@@ -1286,7 +1287,8 @@
 								<address>
 									<addrLine>118 route de Narbonne</addrLine>, 
 									<postCode>F-31062 </postCode>
-									<settlement>Toulouse Cedex 9</settlement>,
+									<settlement>Toulouse</settlement>
+									<postBox>Cedex 9</postBox>,
 									<country>France <lb/></country>
 								</address> 
                             </affiliation>
@@ -1445,7 +1447,8 @@
 								<address>
 									<postBox>BP75</postBox>, 
 									<postCode>38042</postCode>
-									<settlement>Saint Martin d'Hères Cedex</settlement>,
+									<settlement>Saint Martin d'Hères</settlement>
+									<postBox>Cedex</postBox>,
                                     <country>France</country>.<lb/>
 								</address> 
                             </affiliation>
@@ -2110,7 +2113,8 @@
                                 <orgName type="institution">UMR CNRS 6213</orgName>, 
                                 <address>
                                 	<postCode>25030</postCode>
-                                	<settlement>Besançon cedex</settlement>, 
+                                	<settlement>Besançon</settlement>
+                                	<postBox>cedex</postBox>, 
                                 	<country key="FR">France</country>. <lb/>
                                 </address>
                         	</affiliation>
@@ -2289,7 +2293,8 @@
                                   	<addrLine>Luminy</addrLine>
                                    	<postBox>Case 907<lb/></postBox> 
                                    	<postCode>13288</postCode>
-                                   	<settlement>Marseille - Cedex 9<lb/></settlement>
+                                   	<settlement>Marseille</settlement> - 
+                                   	<postBox>Cedex 9</postBox><lb/>
                                    	<country key="FR">France<lb/></country>
                               	</address>
                              </affiliation>

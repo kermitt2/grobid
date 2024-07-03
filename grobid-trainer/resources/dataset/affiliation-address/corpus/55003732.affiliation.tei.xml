@@ -15,7 +15,8 @@
 							<address>
 								<addrLine>Avenue Olivier Messiaen</addrLine>,
 								<postCode>72085</postCode>
-								<settlement>Le Mans cedex 9</settlement>,
+								<settlement>Le Mans</settlement>
+								<postBox>cedex 9</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -42,7 +43,8 @@
 							<address>
 								<postBox>BP 75</postBox>,
 								<postCode>38402</postCode>
-								<settlement>Saint<lb/> Martin d&apos;Hères cedex</settlement>,
+								<settlement>Saint<lb/> Martin d&apos;Hères</settlement> 
+								<postBox>cedex</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -69,7 +71,8 @@
 								<addrLine>9 Avenue Alain Savary</addrLine>,
 								<postBox>BP 47870</postBox>,
 								<postCode>21078</postCode>
-								<settlement>Dijon cedex</settlement>,
+								<settlement>Dijon</settlement>
+								<postBox>cedex</postBox>,
 								<country>France</country>
 							</address>
 						</affiliation>

@@ -80,7 +80,8 @@
 							<orgName type="institution">Hôpital Ambroise Paré</orgName>,
 							<orgName type="department">Service de Hepato-Gastroent. Concologie Digestive</orgName>,
 							<address>
-								<settlement>Boulogne Cedex</settlement>,
+								<settlement>Boulogne</settlement> 
+								<postBox>Cedex</postBox>,
 								<country>France</country>;
 							</address>
 						</affiliation>

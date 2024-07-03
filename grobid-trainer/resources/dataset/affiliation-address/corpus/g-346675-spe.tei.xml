@@ -82,7 +82,8 @@
 								<address>
 									<postBox>BP 55027</postBox>,
 									<postCode>F-14076</postCode>
-									<settlement>Caen Cedex</settlement>,
+									<settlement>Caen</settlement>
+									<postBox>Cedex</postBox>,
 									<country>France<lb/></country>
 								</address>					
 							</affiliation>

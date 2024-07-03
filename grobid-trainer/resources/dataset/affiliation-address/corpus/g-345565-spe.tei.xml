@@ -16,7 +16,8 @@
 								<address>
 									<addrLine>4, rue Alfred Kastler</addrLine>,
 									<postCode>44307</postCode>
-									<settlement>Nantes cedex 3</settlement>,
+									<settlement>Nantes</settlement>
+									<postBox>cedex 3</postBox>,
 									<country key="FR">France<lb/></country>
 								</address>
 							</affiliation>

@@ -17,7 +17,7 @@
 								<addrLine>Parc Valrose</addrLine>,
 								<postCode>06108</postCode>
 								<settlement>Nice</settlement>
-								<postCode>Cedex 2</postCode>,
+								<postBox>Cedex 2</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -30,7 +30,7 @@
 								<addrLine>place Eugène Bataillon</addrLine>,
 								<postCode>34095</postCode>
 								<settlement>Montpellier</settlement>
-								<postCode>cedex 5</postCode>,
+								<postBox>cedex 5</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -42,7 +42,7 @@
 								<addrLine>33 Avenue Valombrose</addrLine>,
 								<postCode>06189</postCode>
 								<settlement>Nice</settlement>
-								<postCode>cedex 2</postCode>,								
+								<postBox>cedex 2</postBox>,								
 								<country>France</country>
 							<lb/>
 							</address>
@@ -57,7 +57,7 @@
 								<postCode>BP166</postCode>,
 								<postCode>38042</postCode>
 								<settlement>Grenoble</settlement>
-								<postCode>Cedex 9</postCode>,
+								<postBox>Cedex 9</postBox>,
 								<country>France</country>
 							</address>
 						</affiliation>

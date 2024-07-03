@@ -23,7 +23,8 @@
 									<addrLine>23 rue du Loess</addrLine>
 									<addrLine>B.P. 28</addrLine>,
 									<postCode>F-67037</postCode>
-									<settlement>Strasbourg Cedex 2</settlement>,
+									<settlement>Strasbourg</settlement>
+									<postBox>Cedex 2</postBox>,
 									<country key="FR">France<lb/></country>
 								</address>
 							</affiliation>
@@ -61,7 +62,8 @@
 									<postBox>BP 55027</postBox>
 									-
 									<postCode>14076</postCode>
-									<settlement>Caen Cedex 05</settlement>,
+									<settlement>Caen</settlement>
+									<postBox>Cedex 05</postBox>,
 									<country key="FR">France<lb/></country>
 								</address>
 							</affiliation>

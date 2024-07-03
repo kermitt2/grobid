@@ -14,7 +14,8 @@
 							<address>
 								<addrLine>91, Bld de<lb/> I&apos;Hhpital</addrLine>,
 								<postCode>F-75634</postCode>
-								<settlement>PARIS CEDEX 13</settlement>,
+								<settlement>PARIS</settlement>
+								<postBox>CEDEX 13</postBox>,
 								<country>France</country>,
 							</address>
 						</affiliation>
@@ -25,7 +26,7 @@
 								<addrLine>47, Bld de I&apos;Hhpital</addrLine>,
 								<postCode>F-75013</postCode>
 								<settlement>PARIS</settlement>,
-								<settlement>Franck</settlement>
+								Franck
 							</address>
 						</affiliation>
 

@@ -356,7 +356,8 @@
 								<settlement>Observatoire de<lb/> Lyon</settlement>,
 								<addrLine>9 av Charles Andr Ì ˛<lb/> Ae</addrLine>,
 								<postCode>69561</postCode>
-								<settlement>Saint Genis Laval</settlement> Cedex,
+								<settlement>Saint Genis Laval</settlement> 
+								<postBox>Cedex</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>

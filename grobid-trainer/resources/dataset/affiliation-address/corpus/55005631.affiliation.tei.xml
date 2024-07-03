@@ -14,7 +14,8 @@
 							<address>
 								<addrLine>2 Avenue Pierre Marzin</addrLine>,
 								<postCode>22307</postCode>
-								<settlement>Lannion Cedex</settlement>,
+								<settlement>Lannion</settlement>
+								<postBox>Cedex</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
@@ -25,7 +26,8 @@
 							<address>
 								<postBox>B.P 53X</postBox>,
 								<postCode>38041</postCode>
-								<settlement>Grenoble cedex 9</settlement>,
+								<settlement>Grenoble</settlement>
+								<postBox>cedex 9</postBox>,
 								<country>France</country>
 							<lb/>
 							</address>
