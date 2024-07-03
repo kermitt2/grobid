@@ -137,7 +137,9 @@ public class NameAddressParser extends AbstractParser {
             i++;
             try {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
-                org.grobid.core.data.Person aut = new Person();
+                Person aut = new Person();
+                Affiliation aff = new Affiliation();
+
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
@@ -150,8 +152,7 @@ public class NameAddressParser extends AbstractParser {
                     String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
                     if (clusterContent.trim().length() == 0)
                         continue;
-                    if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_TITLE) || 
-                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_TITLE)) {
+                    if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_TITLE)) {
                         if (aut.getTitle() != null) {
                             if (aut.notNull()) {
                                 if (fullAuthors == null)
@@ -164,8 +165,7 @@ public class NameAddressParser extends AbstractParser {
                             aut.setTitle(clusterContent);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_FORENAME) || 
-                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_FORENAME)) {
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_FORENAME)) {
                         if (aut.getFirstName() != null) {
                             // new author
                             if (aut.notNull()) {
@@ -179,16 +179,14 @@ public class NameAddressParser extends AbstractParser {
                             aut.setFirstName(clusterContent);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_MIDDLENAME) || 
-                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_MIDDLENAME)) {
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_MIDDLENAME)) {
                         if (aut.getMiddleName() != null) {
                             aut.setMiddleName(aut.getMiddleName() + " " + clusterContent);
                         } else {
                             aut.setMiddleName(clusterContent);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SURNAME) || 
-                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_SURNAME)) {
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_SURNAME)) {
                         if (aut.getLastName() != null) {
                             // new author
                             if (aut.notNull()) {
@@ -202,15 +200,86 @@ public class NameAddressParser extends AbstractParser {
                             aut.setLastName(clusterContent);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_HEADER_SUFFIX) || 
-                                clusterLabel.equals(TaggingLabels.NAMES_CITATION_SUFFIX)) {
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_SUFFIX)) {
                         if (aut.getSuffix() != null) {
                             aut.setSuffix(aut.getSuffix() + " " + clusterContent);
                         } else {
                             aut.setSuffix(clusterContent);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
-                    }
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_INSTITUTION)) {
+                        if (aff.getInstitutions() != null && aff.getInstitutions().size()>0) {
+                            // new affiliation
+                            if (aff.isNotEmptyAffiliation()) {
+                                if (affiliations == null)
+                                    affiliations = new ArrayList<Affiliation>();
+                                affiliations.add(aff);
+                            } else if (aff.hasAddress()) {
+                                if (aut.notNull()) {
+                                    aut.addAffiliation(aff);
+                                }
+                            } else if (aff.hasAddress()) {
+                                if (affiliations == null)
+                                    affiliations = new ArrayList<Affiliation>();
+                                affiliations.add(aff);
+                            }
+
+                            aff = new Affiliation();
+                            aff.addInstitution(clusterContent);
+                        } else {
+                            aff.addInstitution(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_DEPARTMENT)) {
+                        if (aff.getDepartments() != null && aff.getDepartments().size()>0) {
+                            aff.addDepartment(clusterContent);
+                        } else {
+                            aff.addDepartment(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_COUNTRY)) {
+                        if (aff.getCountry() != null) {
+                            aff.setCountry(aff.getCountry() + " " + clusterContent);
+                        } else {
+                            aff.setCountry(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTCODE)) {
+                        if (aff.getPostCode() != null) {
+                            aff.setPostCode(aff.getPostCode() + " " + clusterContent);
+                        } else {
+                            aff.setPostCode(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTBOX)) {
+                        if (aff.getPostBox() != null) {
+                            aff.setPostBox(aff.getPostBox() + " " + clusterContent);
+                        } else {
+                            aff.setPostBox(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_REGION)) {
+                        if (aff.getRegion() != null) {
+                            aff.setRegion(aff.getRegion() + " " + clusterContent);
+                        } else {
+                            aff.setRegion(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_SETTLEMENT)) {
+                        if (aff.getSettlement() != null) {
+                            aff.setSettlement(aff.getSettlement() + " " + clusterContent);
+                        } else {
+                            aff.setSettlement(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_ADDRESSLINE)) {
+                        if (aff.getAddrLine() != null) {
+                            aff.setAddrLine(aff.getAddrLine() + " " + clusterContent);
+                        } else {
+                            aff.setAddrLine(clusterContent);
+                        }
+                        aff.appendLayoutTokens(cluster.concatTokens());
+                    } 
                 }
 
                 // add last built author
@@ -219,6 +288,23 @@ public class NameAddressParser extends AbstractParser {
                         fullAuthors = new ArrayList<Person>();
                     }
                     fullAuthors.add(aut);
+                }
+
+                // add last built affiliation
+                if (aff.isNotEmptyAffiliation()) {
+                    if (affiliations == null) {
+                        affiliations = new ArrayList<Affiliation>();
+                    }
+                    affiliations.add(aff);
+                } else if (aff.hasAddress()) {
+                    if (aut.notNull()) {
+                        aut.addAffiliation(aff);
+                    }
+                } else {
+                    if (affiliations == null) {
+                        affiliations = new ArrayList<Affiliation>();
+                    }
+                    affiliations.add(aff);
                 }
 
                 // some more person name normalisation

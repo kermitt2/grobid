@@ -516,6 +516,28 @@ public class GrobidRestService implements GrobidPaths {
     }
 
     /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddress(String)
+     */
+    @Path(PATH_NAME_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @GET
+    public Response processNameAddress(@QueryParam(TEXT) String text) {
+        return restProcessString.processNameAddress(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddress(String)
+     */
+    @Path(PATH_NAME_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processNameAddressPost(@FormParam(TEXT) String text) {
+        return restProcessString.processNameAddress(text);
+    }
+
+    /**
      * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
      */
     @Path(PATH_AFFILIATION)

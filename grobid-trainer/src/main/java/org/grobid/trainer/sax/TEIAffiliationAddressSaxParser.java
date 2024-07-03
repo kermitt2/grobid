@@ -84,14 +84,14 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         if ((
-                (qName.equals("addrLine")) ||
-                        (qName.equals("settlement")) ||
-                        (qName.equals("region")) ||
-                        (qName.equals("postCode")) ||
-                        (qName.equals("postBox")) ||
-                        (qName.equals("marker")) ||
-                        (qName.equals("country") ||
-                                (qName.equals("orgName")))
+                qName.equals("addrLine") ||
+                qName.equals("settlement") ||
+                qName.equals("region") ||
+                qName.equals("postCode") || qName.equals("postcode") ||
+                qName.equals("postBox") || qName.equals("postbox") ||
+                qName.equals("marker") ||
+                qName.equals("country") ||
+                qName.equals("orgName") || qName.equals("orgName"))
         )) {
             String text = getText();
             writeField(text);
@@ -172,7 +172,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
         //	writeField("+++");
         //}
 
-        if (qName.equals("orgName")) {
+        if (qName.equals("orgName") || qName.equals("orgname")) {
             int length = atts.getLength();
 
             // Process each attribute

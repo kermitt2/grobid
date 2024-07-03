@@ -70,18 +70,16 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
                 qName.equals("addrLine") ||
                 qName.equals("settlement") ||
                 qName.equals("region") ||
-                qName.equals("postCode") ||
-                qName.equals("postBox") ||
+                qName.equals("postCode") || qName.equals("postcode") ||
+                qName.equals("postBox") ||  qName.equals("postbox") ||
                 qName.equals("country") ||
-                qName.equals("surname") ||
-                qName.equals("firstname") || 
-                qName.equals("forename") || 
+                qName.equals("firstname") || qName.equals("forename") || 
                 qName.equals("middlename") || 
+                qName.equals("surname") || qName.equals("surename") || qName.equals("lastname") ||   
                 qName.equals("title") ||
                 qName.equals("suffix") || 
-                qName.equals("surname") || 
-                qName.equals("lastname") ||        
-                qName.equals("orgName")
+                qName.equals("roleName") || qName.equals("rolename") ||  
+                qName.equals("orgName") || qName.equals("orgname")
         ) {
             String text = getText();
             if (text.length() > 0) {
@@ -122,7 +120,7 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
             accumulator.setLength(0);
         }
 
-        if (qName.equals("orgName")) {
+        if (qName.equals("orgName") || qName.equals("orgname")) {
             int length = atts.getLength();
 
             // Process each attribute
@@ -162,7 +160,7 @@ public class TEINameAddressSaxHandler extends DefaultHandler {
             currentTag = "<country>";
         } else if (qName.equals("title") || qName.equals("roleName") || qName.equals("rolename")) {
             currentTag = "<title>";
-        } else if (qName.equals("surname") || qName.equals("lastname")) {
+        } else if (qName.equals("surname") || qName.equals("surename") || qName.equals("lastname")) {
             currentTag = "<surname>";
         } else if (qName.equals("middlename")) {
             currentTag = "<middlename>";
