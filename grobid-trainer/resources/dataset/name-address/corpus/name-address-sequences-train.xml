@@ -961,18 +961,307 @@
 			<affiliation>
 				<address>
 					<addrLine>Chemin Avijl 2</addrLine>,
-					<postCode>B-1180 </postCode>
+					<postCode>B-1180</postCode>
 					<settlement>Bruxelles</settlement>					
 				</address>
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Office Kirkpatrick Sprl</orgname>
+				<address>
+					<addrLine>32 avenue Wolfers</addrLine>
+					<postCode>B-1310</postCode>
+					<settlement>La Hulpe</settlement>			
+					<country>BE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Dr. Ing. h.c. F. Porsche Aktiengesellschaft</orgname>
+				<address>
+					<addrLine>Porscheplatz 1</addrLine>
+					<postCode>70435</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">UNIT4 IP Rechtsanwälte</orgname>
+				<address>
+					<addrLine>Jägerstr. 40</addrLine>
+					<postCode>70174</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">FIRST LINE TELEPHONE<lb/>DISCOUNT GMBH</orgname>
+				<address>
+					<addrLine>23, Muenchener Strasse</addrLine>,<lb/>
+					<postCode>60329</postCode>
+					<settlement>Frankfurt Am Main</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Grünecker, Kinkeldey,<lb/>Stockmair &amp; Schwanhäusser,<lb/>Anwaltssozietät</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Maximilianstraße 58</addrLine>,<lb/>
+					<postCode>80538</postCode>
+					<settlement>München</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>EMILE JULES MARIE</surname>
+				<forename>LOMBARD</forename>
+			</persName>
+			<affiliation>
+				<orgname type="institution"></orgname>
+				<address>
+					<addrLine>Les Restanques, chemin du Landon</addrLine>,
+					<postCode>F-13510</postCode>
+					<settlement>Eguilles</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">ARZUM ELEKTRIKLI EV ALETLERI SANAYI VE TICARET ANONIM ŞIRKETI</orgname>
+				<address>
+					<addrLine>Otakçilar Cad. No:78 Kat:1 B Blok No:B1b, Eyüp</addrLine>
+					<settlement>Istanbul</settlement>
+					<country>TR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Novartis AG</orgname>
+				<address>
+					<addrLine>Postfach</addrLine>
+					<postCode>4002</postCode>
+					<settlement>Basel</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">NOVARTIS AG</orgname>
+				<address>
+					Postfach,<lb/>
+					<postCode>CH-4002</postCode>
+					<settlement>Basel</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">TESCH AG</orgname>
+				<address>
+					<addrLine>4 Im Baumgarten</addrLine>
+					<postCode>CH-6373</postCode>
+					<settlement>Ennetbürgen</settlement>
+					<country>Suisse</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Vierkötter</surname>
+				<forename>Hans-Ulrich</forename>;
+			</persName>
+			<persName>
+				<surname>Vierkötter</surname>
+				<forename>Heinz-Ulrich</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Haus Dorp</addrLine>
+					<postCode>D-53797</postCode>
+					<settlement>Lohmar</settlement>
+					<country>Allemagne</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">LA TOURNEE DES GRANDS DUCS</orgname>
+				<address>
+					<addrLine>25 rue de Ponthieu</addrLine>
+					<postCode>F-75008</postCode>
+					<settlement>PARIS</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Cabinet GERMAIN &amp; MAUREAU</orgname>
+				<address>
+					<addrLine>31-33 rue de la Baume</addrLine>
+					<postCode>F-75008</postCode>
+					<settlement>PARIS</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">VICTORION</orgname>,
+				<address>
+					<addrLine>18 rue de Parmain</addrLine>,
+					<postCode>95430</postCode>
+					<settlement>BUTRY</settlement>,
+					<country>France</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Guangzhou Jetstile Intellectual Property Agency Firm</orgname>
+				<address>
+					<addrLine>4/F, 50-1 Building, 1850 Creative Park, No.200, Fangcun Avenue East, Liwan District</addrLine>
+					<settlement>Guangzhou</settlement>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">BEIJING XIAOMI MOBILE SOFTWARE CO., LTD.</orgname>
+				<address>
+					<addrLine>No. 018, Floor 8, Building 6, Yard 33, Middle Xierqi Road, Haidian District</addrLine>
+					<postCode>100085</postCode>
+					<settlement>Beijing</settlement>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">CHINA PAT INTELLECTUAL PROPERTY OFFICE</orgname>
+				<address>
+					<addrLine>2nd Floor, Zhongguancun Intellectual Property Building, Block B, No.21 Haidian South Road, Haidian District</addrLine>
+					<postCode>100080</postCode>
+					<settlement>Beijing</settlement>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>DUPRAZ</surname>
+				<forename>ANDRE</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Société des Produits Nestlé S.A.</orgname>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">Nestec S.A.</orgname>
+				<address>
+					<addrLine>Avenue Nestlé 55</addrLine>
+					<postCode>1800</postCode>
+					<settlement>Vevey</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgname type="institution">SOCIÉTÉ DES PRODUITS NESTLÉ S.A.</orgname>
+				<address>
+					<postCode>CH-1800</postCode>
+					<settlement>Vevey</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
 	
-
-
-
-
 
 
 
