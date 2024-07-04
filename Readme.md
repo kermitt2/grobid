@@ -105,11 +105,10 @@ Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Bench
 A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponry:
 
 - [software-mention](https://github.com/ourresearch/software-mentions): recognition of software mentions and associated attributes in scientific literature
-- [datastet](https://github.com/kermitt2/datastet): identification of named and implicit research datasets and associated attributes in scientific articles
+- [datastet](https://github.com/kermitt2/datastet): identification of sections and sentences introducing datasets in a scientific article, identification of dataset names and attributes (implict and named datasets) and classification of the type of datasets
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
 - [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interactive layout
-- [datastet](https://github.com/kermitt2/datastet): identification of sections and sentences introducing datasets in a scientific article, identification of dataset names (implict and named datasets) and classification of the type of these datasets
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 - [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a toy bio-entity tagger using BioNLP/NLPBA 2004 dataset

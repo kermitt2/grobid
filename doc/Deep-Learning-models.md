@@ -20,7 +20,7 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
-For current GROBID version 0.8.0, we recommend considering the usage of the following Deep Learning models: 
+For current GROBID version 0.8.1, we recommend considering the usage of the following Deep Learning models: 
 
 - `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. SciBERT fine-tuned model performs currently at  lower accuracy. 
 
@@ -57,7 +57,7 @@ DeLFT version `0.3.2` has been tested successfully with Python 3.7 and 3.8. For 
 
 ```shell
 cd deflt/
-python3 grobidTagger.py delft/applications/citation tag  --architecture BidLSTM_CRF
+python -m delft.applications.grobidTagger citation tag --architecture BidLSTM_CRF
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
@@ -98,7 +98,7 @@ If you are using a Python environment for the DeLFT installation, you can set th
 
 ```yaml
   delft:
-    python_virtualEnv: /where/my/damned/python/virtualenv/is/
+    python_virtualEnv: /where/my/damned/python/virtualenv/is/ 
 ```
 
 Normally by setting the Python environment path in the config file (e.g. `pythonVirtualEnv: "../delft/env"`), you will not need to launch GROBID in the same activated environment. 
