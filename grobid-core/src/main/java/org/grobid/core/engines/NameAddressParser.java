@@ -66,6 +66,31 @@ public class NameAddressParser extends AbstractParser {
         return results;
     }
 
+    public List<List<Pair<Person,Affiliation>>> processingTextBatch(List<String> inputs) throws Exception {
+        if ((inputs == null) || (inputs.size() == 0)) {
+            return null;
+        }
+        List<List<Pair<Person,Affiliation>>> results = null;
+        List<List<LayoutToken>> allTokens = new ArrayList<>();
+        try {
+            for (String input : inputs) {
+                input = UnicodeUtil.normaliseText(input);
+                input = input.trim();
+
+                //input = TextUtilities.dehyphenize(input);
+                // TBD: pass the language object to the tokenizer 
+
+                List<LayoutToken> tokens = analyzer.tokenizeWithLayoutToken(input);
+                allTokens.add(tokens);
+            }
+            
+            results = processingBatch(allTokens);
+        } catch (Exception e) {
+            throw new GrobidException("An exception occurred while running Grobid.", e);
+        }
+        return results;
+    }
+
     public List<Pair<Person,Affiliation>>  processingLayoutTokens(List<LayoutToken> tokens) throws Exception {
         if (CollectionUtils.isEmpty(tokens)) {
             return null;
@@ -102,6 +127,7 @@ public class NameAddressParser extends AbstractParser {
             }
             
             String allRes = label(allSequencesWithFeatures);
+System.out.println(allRes);
             results = resultExtractionLayoutTokens(allRes, inputsTokens);
 
         } catch (Exception e) {

@@ -1026,10 +1026,8 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<persName>
-				<surname>Grünecker, Kinkeldey,<lb/>Stockmair &amp; Schwanhäusser,<lb/>Anwaltssozietät</surname>
-			</persName>
 			<affiliation>
+				<orgName type="institution">Grünecker, Kinkeldey,<lb/>Stockmair &amp; Schwanhäusser,<lb/>Anwaltssozietät</orgName>
 				<address>
 					<addrLine>Maximilianstraße 58</addrLine>,<lb/>
 					<postCode>80538</postCode>
@@ -1043,8 +1041,8 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<persName>
-				<surname>EMILE JULES MARIE</surname>
-				<forename>LOMBARD</forename>
+				<forename>EMILE JULES MARIE</forename>
+				<surname>LOMBARD</surname>
 			</persName>
 			<affiliation>
 				<orgName type="institution"></orgName>

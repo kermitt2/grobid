@@ -48,7 +48,7 @@ public class Engine implements Closeable {
      * reference markers.
      *
      * @param authorSequence - the string corresponding to a raw sequence of names
-     * @return the list of structured author object
+     * @return the list of structured author objects
      */
     public List<Person> processAuthorsHeader(String authorSequence) throws Exception {
         List<Person> result = parsers.getAuthorParser().processingHeader(authorSequence);
@@ -60,10 +60,21 @@ public class Engine implements Closeable {
      * markers.
      *
      * @param authorSequence - the string corresponding to a raw sequence of names
-     * @return the list of structured author object
+     * @return the list of structured author objects
      */
     public List<Person> processAuthorsCitation(String authorSequence) throws Exception {
         List<Person> result = parsers.getAuthorParser().processingCitation(authorSequence);
+        return result;
+    }
+
+    /**
+     * Parse a sequence of person/organization names and address.
+     *
+     * @param sequence - the string corresponding to a raw string to parse
+     * @return the list of structured person and affiliation objects
+     */
+    public List<Pair<Person,Affiliation>> processNameAddress(String sequence) throws Exception {
+        List<Pair<Person,Affiliation>> result = parsers.getNameAddressParser().processingText(sequence);
         return result;
     }
 
@@ -77,6 +88,17 @@ public class Engine implements Closeable {
      */
     public List<List<Person>> processAuthorsCitationLists(List<String> authorSequences) throws Exception {
         return null;
+    }
+
+    /**
+     * Parse a list of sequences of person/organization names and address.
+     *
+     * @param sequences - the list of string corresponding to a raw string to parse
+     * @return the list of structured person and affiliation objects
+     */
+    public List<List<Pair<Person,Affiliation>>> processNameAddressList(List<String> sequences) throws Exception {
+        List<List<Pair<Person,Affiliation>>> result = parsers.getNameAddressParser().processingTextBatch(sequences);
+        return result;
     }
 
     /**
