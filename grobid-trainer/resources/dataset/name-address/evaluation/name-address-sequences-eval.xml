@@ -32,7 +32,6 @@
 					<postCode>B-1831</postCode>
 					<settlement>DIEGEM</settlement>
 					<country>BE</country>
-					<postCode>B-1831</postCode>
 				</address>
 			</affiliation>
 		</author>
@@ -174,7 +173,6 @@
 					<lb/>
 					<postCode>70567</postCode>
 					<settlement>Stuttgart</settlement>
-					<settlement>Stuttgart</settlement>
 					<country>DE</country>
 					<postCode>70567</postCode>
 				</address>
@@ -225,8 +223,6 @@
 					<lb/> 
 					<postCode>70546</postCode>
 					<settlement>Stuttgart</settlement>
-					<postCode>70546</postCode>
-					<settlement>Stuttgart</settlement>
 					<country>DE</country>
 				</address>
 			</affiliation>
@@ -241,7 +237,6 @@
 					<addrLine>Mercedesstrasse 137</addrLine>, 
 					<lb/>
 					<postCode>70327</postCode>
-					<settlement>Stuttgart</settlement>
 					<settlement>Stuttgart</settlement>
 					<country>DE</country>
 					<postCode>70567</postCode>
@@ -262,8 +257,6 @@
 				<address>
 					<addrLine>GR/VI - H512</addrLine>,
 					<lb/> 
-					<postCode>70546</postCode>
-					<settlement>Stuttgart</settlement>
 					<postCode>70546</postCode>
 					<settlement>Stuttgart</settlement>
 					<country>DE</country>
