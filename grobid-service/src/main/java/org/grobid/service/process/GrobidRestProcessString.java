@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+import org.apache.commons.lang3.tuple.Pair;
+
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.MediaType;
@@ -11,6 +13,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
 import com.google.inject.Singleton;
+
 import org.grobid.core.data.Affiliation;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
@@ -23,6 +26,7 @@ import org.grobid.core.factory.GrobidPoolingFactory;
 import org.grobid.service.util.BibTexMediaType;
 import org.grobid.service.util.ExpectedResponseType;
 import org.grobid.service.util.GrobidRestUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -217,18 +221,20 @@ public class GrobidRestProcessString {
 
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
-				retVal += "<xml>\n";
+				retVal = "<xml>\n";
 				for(Pair<Person,Affiliation> result : results) {
 					if (retVal == null) {
 						retVal = "";
 					}
-					if (result.getA() != null) {
-						person = result.getLeft();
-						retVal += person.toTEI(false);
+					if (result.getLeft() != null) {
+						Person person = result.getLeft();
+						if (person != null)	
+							retVal += person.toTEI(false);
 					}
-					if (result.getB() != null) {
-						affiliation = result.getRight();
-						retVal += affiliation.toTEI(false);
+					if (result.getRight() != null) {
+						Affiliation affiliation = result.getRight();
+						if (affiliation != null)
+							retVal += Affiliation.toTEI(affiliation, 2);
 					}
 				}
 				retVal += "</xml>\n";

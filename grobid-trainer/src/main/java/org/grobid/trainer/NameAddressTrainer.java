@@ -130,7 +130,7 @@ public class NameAddressTrainer extends AbstractTrainer {
             		placePositions = Lexicon.getInstance().tokenPositionsLocationNames(allTokens.get(i));
 
 					final String names = FeaturesVectorNameAddress.addFeaturesNameAddress(allTokens.get(i), 
-						allLabeled.get(i), countryPositions, placePositions, titlePositions, suffixPositions);
+						allLabeled.get(i), placePositions, countryPositions, titlePositions, suffixPositions);
 
 					if ( (writer2 == null) && (writer3 != null) )
 						writer3.write(names + "\n \n");

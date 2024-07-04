@@ -505,13 +505,13 @@ public class Affiliation {
         return nbStruct;
     }
 
-    public static String toTEI(Affiliation aff, int nbTag) {
-        return toTEI(aff, nbTag, null);
+    public static String toTEI(Affiliation aff, int nbTab) {
+        return toTEI(aff, nbTab, null);
     }
 
-    public static String toTEI(Affiliation aff, int nbTag, GrobidAnalysisConfig config) {
+    public static String toTEI(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
         StringBuffer tei = new StringBuffer();
-        TextUtilities.appendN(tei, '\t', nbTag + 1);
+        TextUtilities.appendN(tei, '\t', nbTab + 1);
 
         boolean withAffCoords = (config != null) && 
                                 (config.getGenerateTeiCoordinates() != null) && 
@@ -533,13 +533,13 @@ public class Affiliation {
 
         if (aff.getDepartments() != null) {
             if (aff.getDepartments().size() == 1) {
-                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                TextUtilities.appendN(tei, '\t', nbTab + 2);
                 tei.append("<orgName type=\"department\">" +
                         TextUtilities.HTMLEncode(aff.getDepartments().get(0)) + "</orgName>\n");
             } else {
                 int q = 1;
                 for (String depa : aff.getDepartments()) {
-                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    TextUtilities.appendN(tei, '\t', nbTab + 2);
                     tei.append("<orgName type=\"department\" key=\"dep" + q + "\">" +
                             TextUtilities.HTMLEncode(depa) + "</orgName>\n");
                     q++;
@@ -549,13 +549,13 @@ public class Affiliation {
 
         if (aff.getLaboratories() != null) {
             if (aff.getLaboratories().size() == 1) {
-                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                TextUtilities.appendN(tei, '\t', nbTab + 2);
                 tei.append("<orgName type=\"laboratory\">" +
                         TextUtilities.HTMLEncode(aff.getLaboratories().get(0)) + "</orgName>\n");
             } else {
                 int q = 1;
                 for (String labo : aff.getLaboratories()) {
-                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    TextUtilities.appendN(tei, '\t', nbTab + 2);
                     tei.append("<orgName type=\"laboratory\" key=\"lab" + q + "\">" +
                             TextUtilities.HTMLEncode(labo) + "</orgName>\n");
                     q++;
@@ -565,13 +565,13 @@ public class Affiliation {
 
         if (aff.getInstitutions() != null) {
             if (aff.getInstitutions().size() == 1) {
-                TextUtilities.appendN(tei, '\t', nbTag + 2);
+                TextUtilities.appendN(tei, '\t', nbTab + 2);
                 tei.append("<orgName type=\"institution\">" +
                         TextUtilities.HTMLEncode(aff.getInstitutions().get(0)) + "</orgName>\n");
             } else {
                 int q = 1;
                 for (String inst : aff.getInstitutions()) {
-                    TextUtilities.appendN(tei, '\t', nbTag + 2);
+                    TextUtilities.appendN(tei, '\t', nbTab + 2);
                     tei.append("<orgName type=\"institution\" key=\"instit" + q + "\">" +
                             TextUtilities.HTMLEncode(inst) + "</orgName>\n");
                     q++;
@@ -587,42 +587,42 @@ public class Affiliation {
                 aff.getRegion() != null ||
                 aff.getCountry() != null
             ) {
-            TextUtilities.appendN(tei, '\t', nbTag + 2);
+            TextUtilities.appendN(tei, '\t', nbTab + 2);
             
             tei.append("<address>\n");
             /*if (aff.getAddressString() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
                         "</addrLine>\n");
             }*/
             if (aff.getAddrLine() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
                         "</addrLine>\n");
             }
             if (aff.getPostBox() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<postBox>" + TextUtilities.HTMLEncode(aff.getPostBox()) +
                         "</postBox>\n");
             }
             if (aff.getPostCode() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<postCode>" + TextUtilities.HTMLEncode(aff.getPostCode()) +
                         "</postCode>\n");
             }
             if (aff.getSettlement() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<settlement>" + TextUtilities.HTMLEncode(aff.getSettlement()) +
                         "</settlement>\n");
             }
             if (aff.getRegion() != null) {
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<region>" + TextUtilities.HTMLEncode(aff.getRegion()) +
                         "</region>\n");
             }
             if (aff.getCountry() != null) {
                 String code = Lexicon.getInstance().getCountryCode(aff.getCountry());
-                TextUtilities.appendN(tei, '\t', nbTag + 3);
+                TextUtilities.appendN(tei, '\t', nbTab + 3);
                 tei.append("<country");
                 if (code != null)
                     tei.append(" key=\"" + code + "\"");
@@ -630,11 +630,11 @@ public class Affiliation {
                         "</country>\n");
             }
 
-            TextUtilities.appendN(tei, '\t', nbTag + 2);
+            TextUtilities.appendN(tei, '\t', nbTab + 2);
             tei.append("</address>\n");
         }
 
-        TextUtilities.appendN(tei, '\t', nbTag + 1);
+        TextUtilities.appendN(tei, '\t', nbTab + 1);
         tei.append("</affiliation>\n");
 
         return tei.toString();

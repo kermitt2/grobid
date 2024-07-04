@@ -79,7 +79,7 @@ public class FeaturesVectorNameAddress {
         else
             res.append(" 0");
 
-        // lexical information (5)
+        // lexical information (8)
         if (properName)
             res.append(" 1");
         else
