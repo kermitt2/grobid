@@ -83,7 +83,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
-        if ((
+        if (
                 qName.equals("addrLine") ||
                 qName.equals("settlement") ||
                 qName.equals("region") ||
@@ -91,8 +91,8 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
                 qName.equals("postBox") || qName.equals("postbox") ||
                 qName.equals("marker") ||
                 qName.equals("country") ||
-                qName.equals("orgName") || qName.equals("orgName"))
-        )) {
+                qName.equals("orgName") || qName.equals("orgName")
+        ) {
             String text = getText();
             writeField(text);
             if (allContent != null) {

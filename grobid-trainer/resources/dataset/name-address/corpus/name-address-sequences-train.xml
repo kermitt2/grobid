@@ -50,7 +50,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgName type="institution">LA MONTRE HERMES SA<lb/>(SOCIÉTÉ ANONYME)</orgname>
+				<orgName type="institution">LA MONTRE HERMES SA<lb/>(SOCIÉTÉ ANONYME)</orgName>
 				<address>
 					<addrLine>Erlenstrasse 31A</addrLine>,<lb/>
 					<postCode>CH-2555</postCode>
@@ -133,7 +133,7 @@
 				<surname>Ishizaki</surname>, c/o
 			</persName>
 			<affiliation>
-				<orgName type="institution">IHI CORPORATION</orgname>
+				<orgName type="institution">IHI CORPORATION</orgName>
 				<address>
 					<addrLine>1-1, Toyosu 3-chome, Koto-ku</addrLine> 
 					<postCode>135-8710</postCode>
@@ -148,7 +148,7 @@
 				<surname>Murakami</surname>, c/o 
 			</persName>
 			<affiliation>
-				<orgName type="institution">IHI CORPORATION</orgname>
+				<orgName type="institution">IHI CORPORATION</orgName>
 				<address>
 					<addrLine>1-1, Toyosu 3-chome, Koto-ku</addrLine> 
 					<postCode>135-8710</postCode>
@@ -160,10 +160,10 @@
 		<author>
 			<persName>
 				<forename>Akira</forename>
-				<surname>Kobiki<surname>, c/o 
+				<surname>Kobiki</surname>, c/o 
 			</persName>
 			<affiliation>
-				<orgName type="institution">IHI CORPORATION</orgname>
+				<orgName type="institution">IHI CORPORATION</orgName>
 				<address>
 					<addrLine>1-1, Toyosu 3-chome, Koto-ku</addrLine> 
 					<postCode>135-8710</postCode>
@@ -177,7 +177,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgName type="institution">IHI CORPORATION</orgname>
+				<orgName type="institution">IHI CORPORATION</orgName>
 				<address>
 					<addrLine>1-1, Toyosu 3-chome,<lb/>Koto-ku,<lb/>Tokyo 135-8710</addrLine>
 					<settlement>Tokyo 135-8710</settlement>
@@ -190,7 +190,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Toshiba Carrier Corporation</orgname>
+				<orgName type="institution">Toshiba Carrier Corporation</orgName>
 				<address>
 					<addrLine>72-34, Horikawa-cho, Saiwai-ku, Kawasaki-shi</addrLine>,
 					<postCode>212-8585</postCode>
@@ -205,7 +205,7 @@
 		<author>
 			<persName>
 				<forename>Nobuyoshi</forename>
-				<surname>SAKURAGI<surname>, C/O  
+				<surname>SAKURAGI</surname>, C/O  
 			</persName>
 			<affiliation>
 				<address>
@@ -221,7 +221,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Shenzhen Jier Technologies Co., Ltd.</orgname>
+				<orgName type="institution">Shenzhen Jier Technologies Co., Ltd.</orgName>
 				<address>
 					<addrLine>Room 201, Building A, No.1, Qianwan 1st Rd, Nanshan</addrLine>
 					<postCode>518000</postCode>
@@ -235,7 +235,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Shenzhen Talent Patent Service</orgname>
+				<orgName type="institution">Shenzhen Talent Patent Service</orgName>
 				<address>
 					<addrLine>A, 20/F, Building B, Lvjing Square (NEO),  6009 Shennan Middle Road, Futian District</addrLine>
 					<postCode>518000</postCode>
@@ -248,7 +248,7 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<orgname type="institution">SAVERGLASS</orgname>
+			<orgName type="institution">SAVERGLASS</orgName>
 			<affiliation>
 				<address>
 					<addrLine>3 rue de la Gare</addrLine>
@@ -263,7 +263,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NOVAPAT - Cabinet Chereau</orgname>
+				<orgName type="institution">NOVAPAT - Cabinet Chereau</orgName>
 				<address>
 					<addrLine>107, boulevard Péreire</addrLine>
 					<postCode>F-75017</postCode>
@@ -277,7 +277,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NOVAGRAAF FRANCE</orgname>
+				<orgName type="institution">NOVAGRAAF FRANCE</orgName>
 				<address>
 					<addrLine>122 rue Edouard Vaillant</addrLine>,<lb/>
 					<postCode>F-92593</postCode>
@@ -292,7 +292,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Alfred Kärcher GmbH &amp; Co.</orgname>
+				<orgName type="institution">Alfred Kärcher GmbH &amp; Co.</orgName>
 				<address>
 					<addrLine>28-40, Alfred-Kärcher-Strasse</addrLine>
 					<postCode>71364</postCode>
@@ -306,7 +306,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Hoeger, Stellrecht &amp; Partner,<lb/>Patentanwälte</orgname>
+				<orgName type="institution">Hoeger, Stellrecht &amp; Partner,<lb/>Patentanwälte</orgName>
 				<address>
 					<addrLine>Uhlandstrasse 14c</addrLine>
 					<postCode>70182</postCode>
@@ -320,7 +320,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">ALFRED KÄRCHER GMBH &amp; CO.</orgname>
+				<orgName type="institution">ALFRED KÄRCHER GMBH &amp; CO.</orgName>
 				<address>
 					<addrLine>28-40, Alfred-Kärcher-Strasse</addrLine>,<lb/>
 					<postCode>71364</postCode>
@@ -334,7 +334,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">ALFRED KÄRCHER GMBH &amp; CO. KG.</orgname>
+				<orgName type="institution">ALFRED KÄRCHER GMBH &amp; CO. KG.</orgName>
 				<address>
 					<addrLine>28-40, Alfred-Kärcher-Strasse</addrLine>,<lb/>
 					<postCode>71364</postCode>
@@ -348,7 +348,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Hoeger, Stellrecht &amp; Partner</orgname>
+				<orgName type="institution">Hoeger, Stellrecht &amp; Partner</orgName>
 				<address>
 					<addrLine>Uhlandstrasse 14c</addrLine>,<lb/>
 					<postCode>70182</postCode>
@@ -362,7 +362,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Alfred Kärcher GmbH &amp; Co. KG.</orgname>
+				<orgName type="institution">Alfred Kärcher GmbH &amp; Co. KG.</orgName>
 				<address>
 					<addrLine>28-40, Alfred-Kärcher-Strasse</addrLine>,<lb/>
 					<postCode>71364</postCode>
@@ -376,7 +376,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">ALFRED KÄRCHER SE &amp; CO. KG</orgname>
+				<orgName type="institution">ALFRED KÄRCHER SE &amp; CO. KG</orgName>
 				<address>
 					<addrLine>Alfred-Kärcher-Strasse 28-40</addrLine>,<lb/>
 					<postCode>71364</postCode>
@@ -390,7 +390,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">HOEGER, STELLRECHT &amp; PARTNER Patentanwälte</orgname>
+				<orgName type="institution">HOEGER, STELLRECHT &amp; PARTNER Patentanwälte</orgName>
 				<address>
 					<addrLine>Uhlandstr. 14c</addrLine>,<lb/>
 					<postCode>70182</postCode>
@@ -404,7 +404,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Alfred Kärcher SE &amp; Co. KG</orgname>
+				<orgName type="institution">Alfred Kärcher SE &amp; Co. KG</orgName>
 				<address>
 					<addrLine>Alfred-Kärcher-Strasse 28-40</addrLine>
 					<postCode>71364</postCode>
@@ -418,7 +418,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Hoeger, Stellrecht &amp; Partner Patentanwälte mbB</orgname>
+				<orgName type="institution">Hoeger, Stellrecht &amp; Partner Patentanwälte mbB</orgName>
 				<address>
 					<addrLine>Uhlandstrasse 14c Stuttgart</addrLine>
 					<postCode>70182</postCode>
@@ -432,9 +432,9 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Hamilton International AG</orgname><lb/>
-				(<orgname type="institution">Hamilton International SA</orgname>)<lb/>
-				(<orgname type="institution">Hamilton International Ltd</orgname>)
+				<orgName type="institution">Hamilton International AG</orgName><lb/>
+				(<orgName type="institution">Hamilton International SA</orgName>)<lb/>
+				(<orgName type="institution">Hamilton International Ltd</orgName>)
 				<address>
 					<addrLine>Mattenstrasse 149</addrLine>
 					<postCode>2503</postCode>
@@ -448,9 +448,9 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">The Swatch Group AG</orgname><lb/>
-				(<orgname type="institution">The Swatch Group SA</orgname>)<lb/>
-				(<orgname type="institution">The Swatch Group Ltd</orgname>.)
+				<orgName type="institution">The Swatch Group AG</orgName><lb/>
+				(<orgName type="institution">The Swatch Group SA</orgName>)<lb/>
+				(<orgName type="institution">The Swatch Group Ltd</orgName>.)
 				<address>
 					<addrLine>Faubourg du Lac 6</addrLine>
 					<postCode>2501</postCode>
@@ -479,9 +479,9 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">HAMILTON INTERNATIONAL AG</orgname><lb/>
-				(<orgname type="institution">HAMILTON INTERNATIONAL SA</orgname>)<lb/>
-				(<orgname type="institution">HAMILTON INTERNATIONAL LTD</orgname>)
+				<orgName type="institution">HAMILTON INTERNATIONAL AG</orgName><lb/>
+				(<orgName type="institution">HAMILTON INTERNATIONAL SA</orgName>)<lb/>
+				(<orgName type="institution">HAMILTON INTERNATIONAL LTD</orgName>)
 				<address>
 					<addrLine>Mattenstrasse 149</addrLine>,<lb/>
 					<postCode>CH-2503</postCode>
@@ -495,9 +495,9 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Hamilton International AG</orgname>
-				(<orgname type="institution">Hamilton International SA</orgname>)
-				(<orgname type="institution">Hamilton International Ltd</orgname>)
+				<orgName type="institution">Hamilton International AG</orgName>
+				(<orgName type="institution">Hamilton International SA</orgName>)
+				(<orgName type="institution">Hamilton International Ltd</orgName>)
 				<address>
 					<addrLine>Mattenstrasse 149</addrLine>
 					<postCode>2503</postCode>
@@ -511,9 +511,9 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">The Swatch Group AG</orgname>
-				(<orgname type="institution">The Swatch Group SA</orgname>)
-				(<orgname type="institution">The Swatch Group Ltd</orgname>.)
+				<orgName type="institution">The Swatch Group AG</orgName>
+				(<orgName type="institution">The Swatch Group SA</orgName>)
+				(<orgName type="institution">The Swatch Group Ltd</orgName>.)
 				<address>
 					<addrLine>Faubourg du Lac 6</addrLine>
 					<postCode>2501</postCode>
@@ -527,7 +527,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">BMP POLSTERMÖBEL GMBH</orgname>
+				<orgName type="institution">BMP POLSTERMÖBEL GMBH</orgName>
 				<address>
 					<addrLine>104 Haiterbacher Strasse</addrLine>
 					<postCode>D-72202</postCode>
@@ -541,7 +541,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Zeitler &amp; Dickel</orgname>
+				<orgName type="institution">Zeitler &amp; Dickel</orgName>
 				<address>
 					<addrLine>15 Herrnstrasse</addrLine>
 					<postCode>D-80539</postCode>
@@ -559,7 +559,7 @@
 				<surname>RESHEF</surname><lb/>
 			</persName>
 			<affiliation>
-				<orgname type="institution">T. SU R- PRODUCT DESIGN</orgname>
+				<orgName type="institution">T. SU R- PRODUCT DESIGN</orgName>
 				<address>
 					<addrLine>Potgieterstraat, 51</addrLine>,<lb/>
 					<postCode>NL-1053 XT</postCode>
@@ -573,7 +573,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Ooteman &amp; Partners<lb/>Juridisch Adviesbureau Intellectuele Eigendom</orgname>
+				<orgName type="institution">Ooteman &amp; Partners<lb/>Juridisch Adviesbureau Intellectuele Eigendom</orgName>
 				<address>
 					<addrLine>P.O. box 625</addrLine>,<lb/>
 					<postCode>NL-1250 AP</postCode>
@@ -587,7 +587,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">ALPHA SYSTEMES</orgname>
+				<orgName type="institution">ALPHA SYSTEMES</orgName>
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
@@ -595,7 +595,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">EFFEZETA S.R.L.</orgname>
+				<orgName type="institution">EFFEZETA S.R.L.</orgName>
 				<address>
 					<addrLine>70/1 via Manzano</addrLine>
 					<postCode>I-33040</postCode>
@@ -608,7 +608,7 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<orgname type="institution">GLP S.r.l.</orgname>
+			<orgName type="institution">GLP S.r.l.</orgName>
 			<affiliation>
 				<address>
 					<addrLine>6/2 piazzale Cavedalis</addrLine>
@@ -623,7 +623,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Businessyoga Bodensee GbR</orgname>
+				<orgName type="institution">Businessyoga Bodensee GbR</orgName>
 				<address>
 					<addrLine>Wattgraben 14</addrLine>
 					<postCode>88090</postCode>
@@ -637,7 +637,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Meissner Bolte Patentanwälte Rechtsanwälte Partnerschaft mbB</orgname>
+				<orgName type="institution">Meissner Bolte Patentanwälte Rechtsanwälte Partnerschaft mbB</orgName>
 				<address>
 					<addrLine>Widenmayerstr. 47</addrLine>
 					<postCode>80538</postCode>
@@ -651,7 +651,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">MATRA COMMUNICATION SA</orgname>
+				<orgName type="institution">MATRA COMMUNICATION SA</orgName>
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
@@ -659,7 +659,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">EAO AG</orgname>
+				<orgName type="institution">EAO AG</orgName>
 				<address>
 					<addrLine>Tannwaldstrasse 88</addrLine>
 					<postCode>4601</postCode>
@@ -673,7 +673,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Isler &amp; Pedrazzini AG</orgname>
+				<orgName type="institution">Isler &amp; Pedrazzini AG</orgName>
 				<address>
 					<addrLine>Gotthardstrasse 53</addrLine>,<lb/>
 					<postBox>Postfach 1772</postBox>
@@ -701,7 +701,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Autoflight (Kunshan) Co. Ltd</orgname>.
+				<orgName type="institution">Autoflight (Kunshan) Co. Ltd</orgName>.
 				<address>
 					<addrLine>No. 238, Beiyuan Road, Dianshanhu Township</addrLine>
 					<postCode>215345</postCode>
@@ -715,7 +715,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NICI AG</orgname>
+				<orgName type="institution">NICI AG</orgName>
 				<address>
 					<addrLine>Langheimer Straße 94</addrLine>,<lb/>
 					<postCode>96264</postCode>
@@ -729,7 +729,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Rechtsanwälte<lb/>Heinrich &amp; Partner</orgname>
+				<orgName type="institution">Rechtsanwälte<lb/>Heinrich &amp; Partner</orgName>
 				<address>
 					<addrLine>Solmsstraße 2-22</addrLine>,<lb/>
 					<postCode>60486</postCode>
@@ -743,7 +743,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Heinrich Erb Partner</orgname>
+				<orgName type="institution">Heinrich Erb Partner</orgName>
 				<address>
 					<addrLine>Hanauer Landstraße 126-128</addrLine>,<lb/>
 					<postCode>60314</postCode>
@@ -757,7 +757,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">CREATIV ENTWICKLUNGS GMBH</orgname>
+				<orgName type="institution">CREATIV ENTWICKLUNGS GMBH</orgName>
 				<address>
 					<addrLine>Kanalstr. 76</addrLine>,<lb/>
 					<postCode>36037</postCode>
@@ -771,7 +771,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">TIME AVENUE SA</orgname>
+				<orgName type="institution">TIME AVENUE SA</orgName>
 				<address>
 					<addrLine>Le Château</addrLine>,<lb/>
 					<postCode>CH-2028</postCode>
@@ -785,7 +785,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">INFOSUISSE<lb/>Information Horlogère et Industrielle</orgname>
+				<orgName type="institution">INFOSUISSE<lb/>Information Horlogère et Industrielle</orgName>
 				<address>
 					<addrLine>Rue du Grenier 18</addrLine>,<lb/>
 					<postCode>CH-2300</postCode>
@@ -799,7 +799,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NINA RICCI</orgname>
+				<orgName type="institution">NINA RICCI</orgName>
 				<address>
 					<addrLine>39, avenue Montaigne</addrLine>,<lb/>
 					<postCode>F-75008</postCode>
@@ -813,7 +813,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">SIGNATURE SA</orgname>
+				<orgName type="institution">SIGNATURE SA</orgName>
 				<address>
 					<addrLine>19 Avenue Jules Carteret</addrLine>, 
 					<postCode>F-69007</postCode>
@@ -827,7 +827,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Bureau D.A. Casalonga-Josse</orgname>
+				<orgName type="institution">Bureau D.A. Casalonga-Josse</orgName>
 				<address>
 					<addrLine>8 avenue Percier</addrLine>
 					<postCode>F-75008</postCode>
@@ -841,7 +841,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NONY &amp; ASSOCIES</orgname>
+				<orgName type="institution">NONY &amp; ASSOCIES</orgName>
 				<address>
 					<addrLine>3, Rue de Penthièvre</addrLine>,
 					<postCode>F-75008</postCode>
@@ -855,7 +855,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Cabinet LHERMET LA BIGNE &amp; REMY</orgname>
+				<orgName type="institution">Cabinet LHERMET LA BIGNE &amp; REMY</orgName>
 				<address>
 					<addrLine>11 boulevard de Sébastopol</addrLine>
 					<postCode>F-75001</postCode>
@@ -869,7 +869,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Unger Marketing International, LLC</orgname>
+				<orgName type="institution">Unger Marketing International, LLC</orgName>
 				<address>
 					<addrLine>425 Asylum Street</addrLine>
 					<settlement>Bridgeport</settlement>, 
@@ -884,7 +884,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Ohlandt, Greeley,<lb/>Ruggiero &amp; Perle, LLP</orgname>
+				<orgName type="institution">Ohlandt, Greeley,<lb/>Ruggiero &amp; Perle, LLP</orgName>
 				<address>
 					<addrLine>One Landmark Square, 10th Floor</addrLine>
 					<settlement>Stamford</settlement>,
@@ -940,7 +940,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">UNGER MARKETING INTERNATIONAL, LLC</orgname>
+				<orgName type="institution">UNGER MARKETING INTERNATIONAL, LLC</orgName>
 				<address>
 					<addrLine>425 Asylum Street</addrLine>,<lb/>
 					<settlement>Bridgeport</settlement>,
@@ -971,7 +971,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Office Kirkpatrick Sprl</orgname>
+				<orgName type="institution">Office Kirkpatrick Sprl</orgName>
 				<address>
 					<addrLine>32 avenue Wolfers</addrLine>
 					<postCode>B-1310</postCode>
@@ -985,7 +985,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Dr. Ing. h.c. F. Porsche Aktiengesellschaft</orgname>
+				<orgName type="institution">Dr. Ing. h.c. F. Porsche Aktiengesellschaft</orgName>
 				<address>
 					<addrLine>Porscheplatz 1</addrLine>
 					<postCode>70435</postCode>
@@ -999,7 +999,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">UNIT4 IP Rechtsanwälte</orgname>
+				<orgName type="institution">UNIT4 IP Rechtsanwälte</orgName>
 				<address>
 					<addrLine>Jägerstr. 40</addrLine>
 					<postCode>70174</postCode>
@@ -1013,7 +1013,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">FIRST LINE TELEPHONE<lb/>DISCOUNT GMBH</orgname>
+				<orgName type="institution">FIRST LINE TELEPHONE<lb/>DISCOUNT GMBH</orgName>
 				<address>
 					<addrLine>23, Muenchener Strasse</addrLine>,<lb/>
 					<postCode>60329</postCode>
@@ -1047,7 +1047,7 @@
 				<forename>LOMBARD</forename>
 			</persName>
 			<affiliation>
-				<orgname type="institution"></orgname>
+				<orgName type="institution"></orgName>
 				<address>
 					<addrLine>Les Restanques, chemin du Landon</addrLine>,
 					<postCode>F-13510</postCode>
@@ -1061,7 +1061,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">ARZUM ELEKTRIKLI EV ALETLERI SANAYI VE TICARET ANONIM ŞIRKETI</orgname>
+				<orgName type="institution">ARZUM ELEKTRIKLI EV ALETLERI SANAYI VE TICARET ANONIM ŞIRKETI</orgName>
 				<address>
 					<addrLine>Otakçilar Cad. No:78 Kat:1 B Blok No:B1b, Eyüp</addrLine>
 					<settlement>Istanbul</settlement>
@@ -1074,7 +1074,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Novartis AG</orgname>
+				<orgName type="institution">Novartis AG</orgName>
 				<address>
 					<addrLine>Postfach</addrLine>
 					<postCode>4002</postCode>
@@ -1088,7 +1088,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">NOVARTIS AG</orgname>
+				<orgName type="institution">NOVARTIS AG</orgName>
 				<address>
 					Postfach,<lb/>
 					<postCode>CH-4002</postCode>
@@ -1102,7 +1102,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">TESCH AG</orgname>
+				<orgName type="institution">TESCH AG</orgName>
 				<address>
 					<addrLine>4 Im Baumgarten</addrLine>
 					<postCode>CH-6373</postCode>
@@ -1137,7 +1137,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">LA TOURNEE DES GRANDS DUCS</orgname>
+				<orgName type="institution">LA TOURNEE DES GRANDS DUCS</orgName>
 				<address>
 					<addrLine>25 rue de Ponthieu</addrLine>
 					<postCode>F-75008</postCode>
@@ -1151,7 +1151,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Cabinet GERMAIN &amp; MAUREAU</orgname>
+				<orgName type="institution">Cabinet GERMAIN &amp; MAUREAU</orgName>
 				<address>
 					<addrLine>31-33 rue de la Baume</addrLine>
 					<postCode>F-75008</postCode>
@@ -1165,7 +1165,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">VICTORION</orgname>,
+				<orgName type="institution">VICTORION</orgName>,
 				<address>
 					<addrLine>18 rue de Parmain</addrLine>,
 					<postCode>95430</postCode>
@@ -1179,7 +1179,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Guangzhou Jetstile Intellectual Property Agency Firm</orgname>
+				<orgName type="institution">Guangzhou Jetstile Intellectual Property Agency Firm</orgName>
 				<address>
 					<addrLine>4/F, 50-1 Building, 1850 Creative Park, No.200, Fangcun Avenue East, Liwan District</addrLine>
 					<settlement>Guangzhou</settlement>
@@ -1192,7 +1192,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">BEIJING XIAOMI MOBILE SOFTWARE CO., LTD.</orgname>
+				<orgName type="institution">BEIJING XIAOMI MOBILE SOFTWARE CO., LTD.</orgName>
 				<address>
 					<addrLine>No. 018, Floor 8, Building 6, Yard 33, Middle Xierqi Road, Haidian District</addrLine>
 					<postCode>100085</postCode>
@@ -1206,7 +1206,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">CHINA PAT INTELLECTUAL PROPERTY OFFICE</orgname>
+				<orgName type="institution">CHINA PAT INTELLECTUAL PROPERTY OFFICE</orgName>
 				<address>
 					<addrLine>2nd Floor, Zhongguancun Intellectual Property Building, Block B, No.21 Haidian South Road, Haidian District</addrLine>
 					<postCode>100080</postCode>
@@ -1229,7 +1229,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Société des Produits Nestlé S.A.</orgname>
+				<orgName type="institution">Société des Produits Nestlé S.A.</orgName>
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
@@ -1237,7 +1237,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">Nestec S.A.</orgname>
+				<orgName type="institution">Nestec S.A.</orgName>
 				<address>
 					<addrLine>Avenue Nestlé 55</addrLine>
 					<postCode>1800</postCode>
@@ -1251,7 +1251,7 @@
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
 			<affiliation>
-				<orgname type="institution">SOCIÉTÉ DES PRODUITS NESTLÉ S.A.</orgname>
+				<orgName type="institution">SOCIÉTÉ DES PRODUITS NESTLÉ S.A.</orgName>
 				<address>
 					<postCode>CH-1800</postCode>
 					<settlement>Vevey</settlement>
