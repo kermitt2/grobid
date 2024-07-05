@@ -218,7 +218,6 @@ public class GrobidRestProcessString {
 			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
 
 			engine = Engine.getEngine(true);
-
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
 				retVal = "<xml>\n";

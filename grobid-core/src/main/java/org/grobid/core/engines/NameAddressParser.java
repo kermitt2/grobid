@@ -3,6 +3,7 @@ package org.grobid.core.engines;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.MutablePair;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Person;
@@ -140,7 +141,7 @@ System.out.println(allRes);
         return label.endsWith("<surname>") || label.endsWith("<forename>") || label.endsWith("<middlename>");
     }
 
-    private List<List<Pair<Person,Affiliation>>> resultExtractionLayoutTokens(String allRes, 
+    private List<Pair<List<Person>,List<Affiliation>>> resultExtractionLayoutTokens(String allRes, 
                                                         List<List<LayoutToken>> inputsTokens) {
         if (CollectionUtils.isEmpty(inputsTokens)) {
             return null;
@@ -160,6 +161,7 @@ System.out.println(allRes);
                 continue;
             }
             String res = resBlocks[i];
+System.out.println(res);            
             i++;
             try {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
@@ -192,6 +194,7 @@ System.out.println(allRes);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_FORENAME)) {
+System.out.println(clusterContent);
                         if (aut.getFirstName() != null) {
                             // new author
                             if (aut.notNull()) {
@@ -343,6 +346,7 @@ System.out.println(allRes);
                 throw new GrobidException("An exception occurred while running Grobid.", e);
             }
 
+            results.add(Pair.of(fullAuthors, affiliations));
         }
 
         return results;
