@@ -423,7 +423,6 @@
 					<addrLine>Uhlandstrasse 14c Stuttgart</addrLine>
 					<postCode>70182</postCode>
 					<settlement>Stuttgart</settlement>
-					<country>DE</country>
 				</address>
 			</affiliation>
 		</author>
@@ -614,7 +613,6 @@
 					<addrLine>6/2 piazzale Cavedalis</addrLine>
 					<postCode>I-33100</postCode>
 					<settlement>Udine</settlement>
-					<country>IT</country>
 				</address>
 			</affiliation>
 		</author>
@@ -748,7 +746,6 @@
 					<addrLine>Hanauer Landstraße 126-128</addrLine>,<lb/>
 					<postCode>60314</postCode>
 					<settlement>Frankfurt Am Main</settlement>
-					<country>DE</country>
 				</address>
 			</affiliation>
 		</author>
@@ -818,7 +815,6 @@
 					<addrLine>19 Avenue Jules Carteret</addrLine>, 
 					<postCode>F-69007</postCode>
 					<settlement>Lyon</settlement>
-					<country>FR</country>
 				</address>
 			</affiliation>
 		</author>
@@ -860,7 +856,6 @@
 					<addrLine>11 boulevard de Sébastopol</addrLine>
 					<postCode>F-75001</postCode>
 					<settlement>PARIS</settlement>
-					<country>FR</country>
 				</address>
 			</affiliation>
 		</author>
@@ -1209,7 +1204,6 @@
 					<addrLine>2nd Floor, Zhongguancun Intellectual Property Building, Block B, No.21 Haidian South Road, Haidian District</addrLine>
 					<postCode>100080</postCode>
 					<settlement>Beijing</settlement>
-					<country>CN</country>
 				</address>
 			</affiliation>
 		</author>
@@ -1259,8 +1253,620 @@
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Hansgrohe AG</orgName>
+				<address>
+					<addrLine>Auestrasse 5-9</addrLine>
+					<postCode>77761</postCode>
+					<settlement>Schiltach</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Patentanwälte<lb/>Ruff, Wilhelm, Beier,<lb/>Dauster &amp; Partner</orgName>
+				<address>
+					<addrLine>Postfach 10 40 36</addrLine>
+					<postCode>70035</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Antonio</forename>
+				<surname>Citterio</surname>,
+			</persName>
+		</author>
+		<affiliation>
+				<address>
+					<addrLine>Via Cerva, 4</addrLine>,
+					<postCode>I-20122</postCode>
+					<settlement>Milano</settlement>, 
+					<country>Italie</country>
+				</address>
+			</affiliation>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HANSGROHE AG</orgName>
+				<address>
+					<addrLine>Auestrasse 5-9</addrLine>,<lb/>
+					<postCode>77761</postCode>
+					<settlement>Schiltach</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Ruff, Wilhelm, Beier, Dauster<lb/>&amp; Partner</orgName>
+				<address>
+					<addrLine>Kronenstraße 30</addrLine>,<lb/>
+					<postCode>70174</postCode>
+					<settlement>Stuttgart</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Patentanwälte Ruff, Wilhelm,<lb/>Beier, Dauster &amp; Partner mbB</orgName>
+				<address>
+					<addrLine>Kronenstraße 30</addrLine>,<lb/>
+					<postCode>70174</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Patentanwälte Ruff, Wilhelm, Beier, Dauster &amp; Partner mbB</orgName>
+				<address>
+					<addrLine>Kronenstraße 30</addrLine>
+					<settlement>Stuttgart</settlement>
+					<postCode>70174</postCode>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ATELIERS 28 (société anonyme)</orgName>
+				<address>
+					<postCode>F-28170</postCode>
+					<settlement>Tremblay les Villages</settlement>
+					<country>France</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Office Blétry</orgName>
+				<address>
+					<addrLine>2 boulevard de Strasbourg</addrLine>
+					<postCode>F-75010</postCode>
+					<settlement>Paris</settlement>
+					<country>France</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">"CREDO" STAHLWARENFABRIK<lb/>GUSTAV KRACHT GMBH &amp; CO.KG</orgName>
+				<address>
+					<addrLine>Schlagbaumerstrasse 35</addrLine>,<lb/>
+					<postCode>42653</postCode>
+					<settlement>Solingen</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Stenger, Watzke &amp; Ring Patentanwälte</orgName>
+				<address>
+					<addrLine>Kaiser-Friedrich-Ring 70</addrLine>,<lb/>
+					<postCode>40547</postCode>
+					<settlement>Düsseldorf</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Stenger Watzke Ring -<lb/>intellectual property</orgName>
+				<address>
+					<addrLine>Am Seestern 8</addrLine>,<lb/>
+					<postCode>40547</postCode>
+					<settlement>Düsseldorf</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">SOMFY ACTIVITES SA</orgName>
+				<address>
+					<addrLine>50 AVENUE DU NOUVEAU MONDE</addrLine>
+					<postCode>74300</postCode>
+					<settlement>CLUSES</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CABINET LAVOIX</orgName>
+				<address>
+					<addrLine>62 rue de Bonnel</addrLine>
+					<postCode>69448</postCode>
+					<settlement>LYON</settlement>
+					<postBox>CEDEX 03</postBox>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LEGRAND FRANCE</orgName>
+				<address>
+					<addrLine>128 avenue du Maréchal de Lattre-de-Tassigny</addrLine>, 
+					<postCode>F-87045</postCode>
+					<settlement>LIMOGES</settlement>
+					<postBox>CEDEX</postBox>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LEGRAND (SOCIÉTÉ EN NOM COLLECTIF)</orgName>
+				<address>
+					<addrLine>128, avenue du Maréchal de Lattre-de-Tassigny</addrLine>,
+					<postCode>F-87000</postCode>
+					<settlement>LIMOGES</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Cabinet Bonnet-Thirion</orgName>
+				<address>
+					<addrLine>95 boulevard Beaumarchais</addrLine>
+					<postCode>F-75003</postCode>
+					<settlement>Paris</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Hermann</forename>
+				<surname>Thaler</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Wagenweg 3a</addrLine>
+					<postCode>A-6780</postCode>
+					<settlement>Schruns</settlement>
+					<country>AT</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Patentanwälte Torggler und Hofinger</orgName>
+				<address>
+					<addrLine>Wilhelm-Greil-Strasse 16</addrLine>
+					<postCode>A-6020</postCode>
+					<settlement>Innsbruck</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Hermann</forename>
+				<surname>THALER</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Wagenweg 3a</addrLine>, 
+					<postCode>6780</postCode>
+					<settlement>Schruns</settlement>, 
+					<country>Austria</country>
+				</address>
+
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>HERMANN</forename>
+				<surname>THALER</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Wagenweg 3a</addrLine>,<lb/>
+					<postCode>A-6780</postCode>
+					<settlement>Schruns</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Torggler &amp; Hofmann Patentanwälte GmbH &amp; Co KG</orgName>
+				<address>
+					<addrLine>Wilhelm-Greil-Straße 16</addrLine>
+					<postCode>6020</postCode>
+					<settlement>Innsbruck</settlement>
+					<country>AT</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">RONEO</orgName>
+				<address>
+					<addrLine>60, avenue Charles de Gaulle</addrLine>, 
+					<postCode>F-92200</postCode>
+					<settlement>Neuilly-sur-Seine</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">MICYS COMPANY S.P.A.</orgName>
+				<address>
+					<addrLine>25, Via Andrea Appiani</addrLine>,<lb/>
+					<postCode>I-20052</postCode>
+					<settlement>Monza</settlement>
+					(<region>Milano</region>)
+					<country>IT</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ING. A. GIAMBROCONO &amp; C. S.R.L.</orgName>
+				<address>
+					<addrLine>Via Rosolino Pilo, 19/b</addrLine>,<lb/>
+					<postCode>I-20129</postCode>
+					<settlement>MILANO</settlement>
+					(<region>MI</region>)
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AVALEX INVESTMENT LIMITED</orgName>
+				<address>
+					<addrLine>Agiou Pavlou, 15, Ledra House, Agios Andreas</addrLine>
+					<postCode>CY-1105</postCode>
+					<settlement>Nicosia</settlement>
+					<country>CY</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AVALEX PTE. LTD.</orgName>
+				<address>
+					<addrLine>Blk 167 JALAN BUKIT MERAH #05-12, CONNECTION ONE Tower 4</addrLine>
+					<postCode>150167</postCode>
+					<settlement>Singapore</settlement>
+					<country>SG</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ZTE CORPORATION</orgName>
+				<address>
+					<addrLine>A Building, ZTE Plaza,<lb/>No. 55 South Keji Road,<lb/>Nanshan District</addrLine>,<lb/>
+					<settlement>Shenzhen</settlement>
+					<postCode>518057</postCode>
+					<region>Guangdong</region>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CHINA PAT<lb/>INTELLECTUAL PROPERTY OFFICE</orgName>
+				<address>
+					<addrLine>2nd Floor,<lb/>Zhongguancun Intellectual Property Building,<lb/>Block B, No.21 Haidian South Road,<lb/>Haidian District</addrLine>
+					<postCode>100080</postCode>
+					<settlement>Beijing</settlement>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>XU</surname>,
+				<forename>Wen</forename>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>A Building, ZTE Plaza, No. 55 South Keji Road, Nanshan District</addrLine>,
+					<settlement>Shenzhen</settlement>,
+					<postCode>518057</postCode>
+					<region>Guangdong</region>,
+					<country>China</country>;
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<surname>SONG</surname>
+				<forename>Yuqi</forename>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>A Building, ZTE Plaza, No. 55 South Keji Road, Nanshan District</addrLine>,
+					<settlement>Shenzhen</settlement>,
+					<postCode>518057</postCode>
+					<region>Guangdong</region>,
+					<country>China</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ESCAPOD TRAILERS LLC</orgName>
+				<address>
+					<addrLine>627 S. Main St.</addrLine>
+					<postCode>84017</postCode>
+					<settlement>Coalville</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Kunzler Bean &amp; Adamson, PC</orgName>
+				<address>
+					<addrLine>50 West Broadway, <lb/>Suite 1000</addrLine>
+					<postCode>84101</postCode>
+					<settlement>Salt Lake City</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Volkswagen Aktiengesellschaft</orgName>
+				<address>
+					<addrLine>Berliner Ring 2</addrLine>
+					<postCode>38440</postCode>
+					<settlement>Wolfsburg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">VOLKSWAGEN AKTIENGESELLSCHAFT</orgName>
+				<address>
+					<addrLine>Berliner Ring 2</addrLine>,<lb/>
+					<postCode>38440</postCode>
+					<settlement>Wolfsburg</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">MICROSOFT MOBILE OY</orgName>
+				<address>
+					<addrLine>Keilalahdentie 2-4</addrLine>,<lb/>
+					<postCode>FI-02150</postCode>
+					<settlement>Espoo</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Banner &amp; Witcoff, LTD.</orgName>
+				<address>
+					<addrLine>1100 13th Street, N.W.</addrLine>,<lb/>
+					<settlement>Washington, DC</settlement>
+					<postCode>20005</postCode>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Microsoft Mobile OY</orgName>
+				<address>
+					<addrLine>Keilalahdentie 2-4</addrLine>
+					<settlement>Espoo</settlement>
+					<postCode>FI-02150</postCode>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				No. 1 
+				<forename>Simon</forename>
+				<surname>Bradford</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>17 York road</addrLine>,
+					<settlement>Teddington</settlement>,
+					<region>Middlesex</region>,
+					<postCode>TW11 8SL</postCode>,
+					<country>United Kingdom</country>;
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				No. 2 
+				<forename>Axel</forename>
+				<surname>Meyer</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Rannikkolaivurintie 23 C</addrLine>,
+					<postCode>00850</postCode>
+					<settlement>Helsinki</settlement>,
+					<country>Finland</country>;
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				No. 3 
+				<forename>Sami</forename>
+				<surname>Viitasaari</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Valtarintie 2 as, 1</addrLine>,
+					<postCode>91100</postCode>
+					<settlement>Ii</settlement>,
+					<country>Finland</country>
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<affiliation>
+				<address>
+					c/o 
+					<orgName type="institution">Microsoft Corporation</orgName>,
+					<addrLine>Building 8, One Microsoft way</addrLine>
+					<settlement>Redmond</settlement>,
+					<postCode>WA 98052</postCode>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DESCO VON SCHULTHESS AG</orgName>
+				<address>
+					<addrLine>Brandschenkestrasse 2</addrLine>,<lb/>
+					<postCode>CH-8039</postCode>
+					<settlement>Zürich</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
 	
-
-
+	
 
 </teiCorpus>
