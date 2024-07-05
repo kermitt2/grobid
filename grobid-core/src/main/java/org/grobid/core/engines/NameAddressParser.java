@@ -141,15 +141,15 @@ System.out.println(allRes);
         return label.endsWith("<surname>") || label.endsWith("<forename>") || label.endsWith("<middlename>");
     }
 
-    private List<Pair<List<Person>,List<Affiliation>>> resultExtractionLayoutTokens(String allRes, 
+    private List<List<Pair<Person,Affiliation>>> resultExtractionLayoutTokens(String allRes, 
                                                         List<List<LayoutToken>> inputsTokens) {
         if (CollectionUtils.isEmpty(inputsTokens)) {
             return null;
         }
 
-        List<List<Pair<Person,Affiliation>>> results = null;
-        List<Person> fullAuthors = null;
-        List<Affiliation> affiliations = null;
+        List<List<Pair<Person,Affiliation>>> results = new ArrayList<>();
+        //List<Person> fullAuthors = null;
+        //List<Affiliation> affiliations = null;
 
         if (allRes == null || allRes.length() == 0)
             return null;
@@ -160,14 +160,14 @@ System.out.println(allRes);
                 results.add(null);
                 continue;
             }
-            String res = resBlocks[i];
-System.out.println(res);            
+            String res = resBlocks[i];       
             i++;
+            List<Pair<Person,Affiliation>> localResults = new ArrayList<>();
             try {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
                 Person aut = new Person();
                 Affiliation aff = new Affiliation();
-
+                
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
                 for (TaggingTokenCluster cluster : clusters) {
                     if (cluster == null) {
@@ -183,9 +183,11 @@ System.out.println(res);
                     if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_TITLE)) {
                         if (aut.getTitle() != null) {
                             if (aut.notNull()) {
-                                if (fullAuthors == null)
-                                    fullAuthors = new ArrayList<Person>();
-                                fullAuthors.add(aut);
+                                //if (fullAuthors == null)
+                                //    fullAuthors = new ArrayList<Person>();
+                                //fullAuthors.add(aut);
+                                aut.normalizeName();
+                                localResults.add(Pair.of(aut, null));
                             }
                             aut = new Person();
                             aut.setTitle(clusterContent);
@@ -194,13 +196,14 @@ System.out.println(res);
                         }
                         aut.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_FORENAME)) {
-System.out.println(clusterContent);
                         if (aut.getFirstName() != null) {
                             // new author
                             if (aut.notNull()) {
-                                if (fullAuthors == null)
-                                    fullAuthors = new ArrayList<Person>();
-                                fullAuthors.add(aut);
+                                //if (fullAuthors == null)
+                                //    fullAuthors = new ArrayList<Person>();
+                                //fullAuthors.add(aut);
+                                aut.normalizeName();
+                                localResults.add(Pair.of(aut, null));
                             }
                             aut = new Person();
                             aut.setFirstName(clusterContent);
@@ -219,9 +222,11 @@ System.out.println(clusterContent);
                         if (aut.getLastName() != null) {
                             // new author
                             if (aut.notNull()) {
-                                if (fullAuthors == null)
-                                    fullAuthors = new ArrayList<Person>();
-                                fullAuthors.add(aut);
+                            //    if (fullAuthors == null)
+                            //        fullAuthors = new ArrayList<Person>();
+                                //fullAuthors.add(aut);
+                                aut.normalizeName();
+                                localResults.add(Pair.of(aut, null));
                             }
                             aut = new Person();
                             aut.setLastName(clusterContent);
@@ -239,20 +244,16 @@ System.out.println(clusterContent);
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_INSTITUTION)) {
                         if (aff.getInstitutions() != null && aff.getInstitutions().size()>0) {
                             // new affiliation
-                            if (aff.isNotEmptyAffiliation()) {
-                                if (affiliations == null)
-                                    affiliations = new ArrayList<Affiliation>();
-                                affiliations.add(aff);
-                            } else if (aff.hasAddress()) {
+                            if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                                //if (affiliations == null)
+                                //    affiliations = new ArrayList<Affiliation>();
+                                //affiliations.add(aff);
                                 if (aut.notNull()) {
                                     aut.addAffiliation(aff);
+                                } else {
+                                    localResults.add(Pair.of(null, aff));
                                 }
-                            } else if (aff.hasAddress()) {
-                                if (affiliations == null)
-                                    affiliations = new ArrayList<Affiliation>();
-                                affiliations.add(aff);
-                            }
-
+                            } 
                             aff = new Affiliation();
                             aff.addInstitution(clusterContent);
                         } else {
@@ -313,40 +314,30 @@ System.out.println(clusterContent);
 
                 // add last built author
                 if (aut.notNull()) {
-                    if (fullAuthors == null) {
-                        fullAuthors = new ArrayList<Person>();
-                    }
-                    fullAuthors.add(aut);
+                    //if (fullAuthors == null) {
+                    //    fullAuthors = new ArrayList<Person>();
+                    //}
+                    //fullAuthors.add(aut);
+                    aut.normalizeName();
+                    localResults.add(Pair.of(aut, null));
                 }
 
                 // add last built affiliation
-                if (aff.isNotEmptyAffiliation()) {
-                    if (affiliations == null) {
-                        affiliations = new ArrayList<Affiliation>();
-                    }
-                    affiliations.add(aff);
-                } else if (aff.hasAddress()) {
+                if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                    //if (affiliations == null)
+                    //    affiliations = new ArrayList<Affiliation>();
+                    //affiliations.add(aff);
                     if (aut.notNull()) {
                         aut.addAffiliation(aff);
-                    }
-                } else {
-                    if (affiliations == null) {
-                        affiliations = new ArrayList<Affiliation>();
-                    }
-                    affiliations.add(aff);
-                }
-
-                // some more person name normalisation
-                if (fullAuthors != null) {
-                    for(Person author : fullAuthors) {
-                        author.normalizeName();
+                    } else {
+                        localResults.add(Pair.of(null, aff));
                     }
                 } 
             } catch (Exception e) {
                 throw new GrobidException("An exception occurred while running Grobid.", e);
             }
 
-            results.add(Pair.of(fullAuthors, affiliations));
+            results.add(localResults);
         }
 
         return results;

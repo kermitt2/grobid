@@ -220,7 +220,7 @@ public class GrobidRestProcessString {
 			engine = Engine.getEngine(true);
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
-				retVal = "<xml>\n";
+				retVal = "";
 				for(Pair<Person,Affiliation> result : results) {
 					if (retVal == null) {
 						retVal = "";
@@ -236,7 +236,6 @@ public class GrobidRestProcessString {
 							retVal += Affiliation.toTEI(affiliation, 2);
 					}
 				}
-				retVal += "</xml>\n";
 			}
 
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
