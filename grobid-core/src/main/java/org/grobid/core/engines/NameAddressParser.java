@@ -148,9 +148,6 @@ System.out.println(allRes);
         }
 
         List<List<Pair<Person,Affiliation>>> results = new ArrayList<>();
-        //List<Person> fullAuthors = null;
-        //List<Affiliation> affiliations = null;
-
         if (allRes == null || allRes.length() == 0)
             return null;
         String[] resBlocks = allRes.split("\n\n");
@@ -166,6 +163,7 @@ System.out.println(allRes);
             try {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
                 Person aut = new Person();
+                Person lastAut = null;
                 Affiliation aff = new Affiliation();
                 
                 List<TaggingTokenCluster> clusters = clusteror.cluster();
@@ -183,11 +181,9 @@ System.out.println(allRes);
                     if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_TITLE)) {
                         if (aut.getTitle() != null) {
                             if (aut.notNull()) {
-                                //if (fullAuthors == null)
-                                //    fullAuthors = new ArrayList<Person>();
-                                //fullAuthors.add(aut);
                                 aut.normalizeName();
                                 localResults.add(Pair.of(aut, null));
+                                lastAut = aut;
                             }
                             aut = new Person();
                             aut.setTitle(clusterContent);
@@ -199,11 +195,9 @@ System.out.println(allRes);
                         if (aut.getFirstName() != null) {
                             // new author
                             if (aut.notNull()) {
-                                //if (fullAuthors == null)
-                                //    fullAuthors = new ArrayList<Person>();
-                                //fullAuthors.add(aut);
                                 aut.normalizeName();
                                 localResults.add(Pair.of(aut, null));
+                                lastAut = aut;
                             }
                             aut = new Person();
                             aut.setFirstName(clusterContent);
@@ -222,11 +216,9 @@ System.out.println(allRes);
                         if (aut.getLastName() != null) {
                             // new author
                             if (aut.notNull()) {
-                            //    if (fullAuthors == null)
-                            //        fullAuthors = new ArrayList<Person>();
-                                //fullAuthors.add(aut);
                                 aut.normalizeName();
                                 localResults.add(Pair.of(aut, null));
+                                lastAut = aut;
                             }
                             aut = new Person();
                             aut.setLastName(clusterContent);
@@ -245,11 +237,8 @@ System.out.println(allRes);
                         if (aff.getInstitutions() != null && aff.getInstitutions().size()>0) {
                             // new affiliation
                             if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
-                                //if (affiliations == null)
-                                //    affiliations = new ArrayList<Affiliation>();
-                                //affiliations.add(aff);
-                                if (aut.notNull()) {
-                                    aut.addAffiliation(aff);
+                                if (lastAut != null && lastAut.notNull()) {
+                                    lastAut.addAffiliation(aff);
                                 } else {
                                     localResults.add(Pair.of(null, aff));
                                 }
@@ -309,24 +298,17 @@ System.out.println(allRes);
                             aff.setAddrLine(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } 
+                    }
                 }
 
                 // add last built author
                 if (aut.notNull()) {
-                    //if (fullAuthors == null) {
-                    //    fullAuthors = new ArrayList<Person>();
-                    //}
-                    //fullAuthors.add(aut);
                     aut.normalizeName();
                     localResults.add(Pair.of(aut, null));
                 }
 
                 // add last built affiliation
                 if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
-                    //if (affiliations == null)
-                    //    affiliations = new ArrayList<Affiliation>();
-                    //affiliations.add(aff);
                     if (aut.notNull()) {
                         aut.addAffiliation(aff);
                     } else {

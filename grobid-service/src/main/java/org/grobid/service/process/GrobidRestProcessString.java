@@ -220,22 +220,31 @@ public class GrobidRestProcessString {
 			engine = Engine.getEngine(true);
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
-				retVal = "";
+				retVal = "<listPerson>\n";
 				for(Pair<Person,Affiliation> result : results) {
 					if (retVal == null) {
 						retVal = "";
 					}
 					if (result.getLeft() != null) {
 						Person person = result.getLeft();
-						if (person != null)	
-							retVal += person.toTEI(false);
+						if (person != null)	 {
+							retVal += "\t<person>\n";
+							retVal += person.toTEI(false, 2) + "\n";
+							List<Affiliation> localAffiliations = person.getAffiliations();
+							if (localAffiliations != null && localAffiliations.size()>0) {
+								for(Affiliation localAffiliation : localAffiliations)
+									retVal += Affiliation.toTEI(localAffiliation, 1);
+							}
+							retVal += "\t</person>\n";
+						}
 					}
 					if (result.getRight() != null) {
 						Affiliation affiliation = result.getRight();
 						if (affiliation != null)
-							retVal += Affiliation.toTEI(affiliation, 2);
+							retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t\t</person>\n";
 					}
 				}
+				retVal += "</listPerson>\n";
 			}
 
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
