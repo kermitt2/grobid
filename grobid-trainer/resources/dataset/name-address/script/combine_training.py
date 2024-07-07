@@ -15,6 +15,28 @@ To be executed locally:
 python3 combine_training.py --output-file ../corpus/combined-training.tei.xml
 """
 
+template_tei = '''<tei xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+        <teiHeader>
+            <fileDesc>
+                <sourceDesc>
+                    <biblStruct>
+                        <analytic>
+                            <author/>
+                        </analytic>
+                    </biblStruct>
+                </sourceDesc>
+            </fileDesc>
+        </teiHeader>
+    </tei>'''
+
+def _create_tei_envelop(piece):
+    template_xml = etree.fromstring(template_tei)
+    nodes = template_xml.findall('.//{http://www.tei-c.org/ns/1.0}author')
+    if nodes != None and len(nodes)>0:
+        nodes[0].append(piece)
+        return template_xml
+    return None
+
 def combine(output_path):
 
     root_combined = etree.Element("teiCorpus")
@@ -37,6 +59,7 @@ def combine(output_path):
                         parent = elem.getparent()
                         parent.remove(elem)
 
+                    # add name sequences in training
                     root_combined.append(root_name)
 
                     for elem in tree_name.findall('.//{http://www.tei-c.org/ns/1.0}author'):
@@ -54,6 +77,8 @@ def combine(output_path):
                 local_path = os.path.join(root, filename)
                 # for each affiliation address file, we inject one name taken from header author training data
                 try:
+                    orgnames = []
+
                     parser = etree.XMLParser(dtd_validation=False, no_network=True)
                     tree_aff = etree.parse(local_path)
                     root_aff = tree_aff.getroot()
@@ -73,21 +98,53 @@ def combine(output_path):
                         rand = random.uniform(0, 1)
                         if rand > 0.1:
                             parent.remove(elem)
+                    
+                    # add just one affiliation in training
+                    for elem in tree_aff.findall('.//{http://www.tei-c.org/ns/1.0}affiliation'):
+                        # this deep copy is an okay solution :)
+                        root_aff_copy = etree.fromstring(etree.tostring(root_aff)) 
+                        # remove all person name
+                        for elem2 in root_aff_copy.findall('.//{http://www.tei-c.org/ns/1.0}persName'):
+                            parent2 = elem2.getparent()
+                            parent2.remove(elem2)
+                        # add each distinct affiliation
+                        for elem2 in root_aff_copy.findall('.//{http://www.tei-c.org/ns/1.0}affiliation'):
+                            # we need at least one orgName
+                            elems3 = elem2.findall('.//{http://www.tei-c.org/ns/1.0}orgName')
+                            if elems3 != None and len(elems3)>0:
+                                orgname = elems3[0].text
+                                if orgname not in orgnames:
+                                    local_content = _create_tei_envelop(elem2)
+                                    root_combined.append(local_content)
+                                    orgnames.append(orgname)
 
-                    for elem in tree_aff.findall('.//{http://www.tei-c.org/ns/1.0}author'):
-                        new_name = name_sequence_pool[index_name]
-                        index_name += 1
-                        if index_name >= len(name_sequence_pool):
-                            index_name = 0
-                        new_name = etree.fromstring(new_name)
-                        pos = 0
-                        # preprend the person name(s)
-                        for child in new_name.getchildren():
-                            #elem.append(child)
-                            elem.insert(pos, child)
-                            pos += 1
+                    # keep one distinct affiliation
+                    for elem in tree_aff.findall('.//{http://www.tei-c.org/ns/1.0}affiliation'):
+                        # we need at least one orgName
+                        elems2 = elem.findall('.//{http://www.tei-c.org/ns/1.0}orgName')
+                        if elems2 != None and len(elems2)>0:
+                            local_content = _create_tei_envelop(elem)
+                            # inject a name
+                            new_name = name_sequence_pool[index_name]
+                            index_name += 1
+                            if index_name >= len(name_sequence_pool):
+                                index_name = 0
+                            new_name = etree.fromstring(new_name)
+                            pos = 0
+                            elems3 = local_content.findall('.//{http://www.tei-c.org/ns/1.0}author')
+                            if elems3 != None and len(elems3)>0:
+                                elem3 = elems3[0]
+                                # preprend the person name(s)
+                                for child in new_name.getchildren():
+                                    #elem.append(child)
+                                    elem3.insert(pos, child)
+                                    pos += 1
+                                    rand = random.uniform(0, 1)
+                                    if rand > 0.1:
+                                        break;
 
-                    root_combined.append(root_aff)
+                        root_combined.append(local_content)
+
                 except Exception as e:
                     print(e)
 

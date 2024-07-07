@@ -128,7 +128,7 @@ public class NameAddressParser extends AbstractParser {
             }
             
             String allRes = label(allSequencesWithFeatures);
-System.out.println(allRes);
+//System.out.println(allRes);
             results = resultExtractionLayoutTokens(allRes, inputsTokens);
 
         } catch (Exception e) {
