@@ -211,6 +211,7 @@ public class EngineParsers implements Closeable {
         tableParser = getTableParser();
         //MonographParser monographParser = getMonographParser();
         fundingAcknowledgementParser = getFundingAcknowledgementParser();
+        nameAddressParser = getNameAddressParser();
     }
 
     @Override
