@@ -314,7 +314,7 @@ grobid:
           batch_size: 20
         training:
           # parameters used for training
-          max_sequence_length: 500  
+          max_sequence_length: 800  
           batch_size: 40
 
   # for **service only**: how to load the models,
