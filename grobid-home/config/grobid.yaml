@@ -297,8 +297,8 @@ grobid:
         #transformer: "allenai/scibert_scivocab_cased"
 
     - name: "name-address"
-      engine: "wapiti"
-      #engine: "delft"
+      #engine: "wapiti"
+      engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
@@ -316,7 +316,7 @@ grobid:
           batch_size: 20
         training:
           # parameters used for training
-          max_sequence_length: 500  
+          max_sequence_length: 800  
           batch_size: 40
 
 
