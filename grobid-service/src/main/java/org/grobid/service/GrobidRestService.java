@@ -527,6 +527,17 @@ public class GrobidRestService implements GrobidPaths {
     }
 
     /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddressJson(String)
+     */
+    @Path(PATH_NAME_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @GET
+    public Response processNameAddressJson(@QueryParam(TEXT) String text) {
+        return restProcessString.processNameAddressJson(text);
+    }
+
+    /**
      * @see org.grobid.service.process.GrobidRestProcessString#processNameAddress(String)
      */
     @Path(PATH_NAME_ADDRESS)
@@ -535,6 +546,41 @@ public class GrobidRestService implements GrobidPaths {
     @POST
     public Response processNameAddressPost(@FormParam(TEXT) String text) {
         return restProcessString.processNameAddress(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddressJson(String)
+     */
+    @Path(PATH_NAME_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @POST
+    public Response processNameAddressPostJson(@FormParam(TEXT) String text) {
+        return restProcessString.processNameAddressJson(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddressList(String)
+     */
+    @Path(PATH_NAME_ADDRESS_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processNameAddressListPost(
+        @FormParam(TEXT) List<String> texts) {
+        return restProcessString.processNameAddressList(texts);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processNameAddressListJson(String)
+     */
+    @Path(PATH_NAME_ADDRESS_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @POST
+    public Response processNameAddressListPostJson(
+        @FormParam(TEXT) List<String> texts) {
+        return restProcessString.processNameAddressListJson(texts);
     }
 
     /**

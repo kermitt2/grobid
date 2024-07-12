@@ -8,6 +8,8 @@ import org.grobid.core.engines.label.TaggingLabel;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.utilities.LayoutTokensUtil;
 
+import com.fasterxml.jackson.core.io.JsonStringEncoder;
+
 import java.util.*;
 
 /**
@@ -580,12 +582,12 @@ public class Affiliation {
         }
 
         if (
-                aff.getAddrLine() != null ||
-                aff.getPostBox() != null ||
-                aff.getPostCode() != null ||
-                aff.getSettlement() != null ||
-                aff.getRegion() != null ||
-                aff.getCountry() != null
+            aff.getAddrLine() != null ||
+            aff.getPostBox() != null ||
+            aff.getPostCode() != null ||
+            aff.getSettlement() != null ||
+            aff.getRegion() != null ||
+            aff.getCountry() != null
             ) {
             TextUtilities.appendN(tei, '\t', nbTab + 2);
             
@@ -639,6 +641,263 @@ public class Affiliation {
 
         return tei.toString();
     }
+
+    public static String toJSON(Affiliation aff, int nbTab) {
+        return toJSON(aff, nbTab, null);
+    }
+
+    public static String toJSON(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
+        JsonStringEncoder encoder = JsonStringEncoder.getInstance();
+        byte[] encoded = null;
+        String output = null;
+        StringBuffer json = new StringBuffer();
+
+        TextUtilities.appendN(json, '\t', nbTab + 1);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgNameCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("orgName"));
+
+        json.append("\"affiliation\": {\n");
+        boolean hasContent = false;
+        if (aff.getKey() != null) {
+            encoded = encoder.quoteAsUTF8(aff.getKey());
+            output = new String(encoded);
+            json.append(" \"key\": \"").append(output).append("\"");
+            hasContent = true;
+        }
+        if (withAffCoords) {
+            String coords = LayoutTokensUtil.getCoordsJson(aff.getLayoutTokens());
+            if (coords != null && coords.length()>0) {
+                if (hasContent)
+                    json.append(",\n");
+                json.append(coords);
+                hasContent = true;
+            }
+        }
+
+        if (aff.getDepartments() != null) {
+            if (hasContent)
+                json.append(",\n");
+
+            if (aff.getDepartments().size() == 1) {
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                encoded = encoder.quoteAsUTF8(aff.getDepartments().get(0));
+                output = new String(encoded);
+                json.append("\"orgName\": {\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"type\": \"department\",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"value\": \"" + output + "\"\n");
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("}");
+            } else {
+                int q = 1;
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("[\n");
+                for (String depa : aff.getDepartments()) {
+                    if (q>1)
+                        json.append(",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    encoded = encoder.quoteAsUTF8(depa);
+                    output = new String(encoded);
+                    json.append("\"orgName\": {\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"type\": \"department\",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"key\": \"dep\""+q+",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"value\": \"" + output + "\"\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 2);
+                    json.append("}");
+                    q++;
+                }
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("]");
+            }
+            hasContent = true;
+        }
+
+        if (aff.getLaboratories() != null) {
+            if (hasContent)
+                json.append(",\n");
+
+            if (aff.getLaboratories().size() == 1) {
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                encoded = encoder.quoteAsUTF8(aff.getDepartments().get(0));
+                output = new String(encoded);
+                json.append("\"orgName\": {\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"type\": \"laboratory\",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"value\": \"" + output + "\"\n");
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("}");
+            } else {
+                int q = 1;
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("[\n");
+                for (String labo : aff.getLaboratories()) {
+                    if (q>1)
+                        json.append(",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    encoded = encoder.quoteAsUTF8(labo);
+                    output = new String(encoded);
+                    json.append("\"orgName\": {\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"type\": \"laboratory\",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"key\": \"lab\""+q+",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"value\": \"" + output + "\"\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 2);
+                    json.append("}");
+                    q++;
+                }
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("]");
+            }
+            hasContent = true;
+        }
+
+        if (aff.getInstitutions() != null) {
+            if (hasContent)
+                json.append(",\n");
+
+            if (aff.getInstitutions().size() == 1) {
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("\"orgName\": {\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"type\": \"institution\",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getInstitutions().get(0));
+                output = new String(encoded);
+                json.append("\"value\": \"" + output + "\"\n");
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("}");
+            } else {
+                int q = 1;
+                json.append("[\n");
+                for (String inst : aff.getInstitutions()) {
+                    if (q>1)
+                        json.append(",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    encoded = encoder.quoteAsUTF8(inst);
+                    output = new String(encoded);
+                    json.append("\"orgName\": {\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"type\": \"institution\",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"key\": \"instit\""+q+",\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 3);
+                    json.append("\"value\": \"" + output + "\"\n");
+                    TextUtilities.appendN(json, '\t', nbTab + 2);
+                    json.append("}");
+                    q++;
+                }
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("]");
+            }
+            hasContent = true;
+        }
+
+        if (
+            aff.getAddrLine() != null ||
+            aff.getPostBox() != null ||
+            aff.getPostCode() != null ||
+            aff.getSettlement() != null ||
+            aff.getRegion() != null ||
+            aff.getCountry() != null
+            ) {
+            if (hasContent)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 2);
+
+            json.append("\"address\": {\n");
+            /*if (aff.getAddressString() != null) {
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getAddressString());
+                output = new String(encoded);
+                json.append("\"addrLine\": \"" + output + "\"\n");
+            }*/
+            boolean hasContent2 = false;
+            if (aff.getAddrLine() != null) {
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getAddrLine());
+                output = new String(encoded);
+                json.append("\"addrLine\": " + output + "\"");
+                hasContent2 = true;
+            }
+            if (aff.getPostBox() != null) {
+                if (hasContent2)
+                    json.append(",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getPostBox());
+                output = new String(encoded);
+                json.append("\"postBox\": \"" + output + "\"");
+                hasContent2 = true;
+            }
+            if (aff.getPostCode() != null) {
+                if (hasContent2)
+                    json.append(",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getPostCode());
+                output = new String(encoded);
+                json.append("\"postCode\": \"" + output + "\"");
+                hasContent2 = true;
+            }
+            if (aff.getSettlement() != null) {
+                if (hasContent2)
+                    json.append(",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getSettlement());
+                output = new String(encoded);
+                json.append("\"settlement\": \"" + output + "\"");
+                hasContent2 = true;
+            }
+            if (aff.getRegion() != null) {
+                if (hasContent2)
+                    json.append(",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                encoded = encoder.quoteAsUTF8(aff.getRegion());
+                output = new String(encoded);
+                json.append("\"region\": \"" + output + "\"");
+                hasContent2 = true;
+            }
+            if (aff.getCountry() != null) {
+                if (hasContent2)
+                    json.append(",\n");
+                String code = Lexicon.getInstance().getCountryCode(aff.getCountry());
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"country\": {\n");
+                if (code != null) {
+                    TextUtilities.appendN(json, '\t', nbTab + 4);
+                    json.append("\"key\": \"" + code + "\",\n");
+                }
+                TextUtilities.appendN(json, '\t', nbTab + 4);
+                encoded = encoder.quoteAsUTF8(aff.getCountry());
+                output = new String(encoded);
+                json.append("\"value\": \"" + output +"\"\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3); 
+                json.append("}");
+                hasContent2 = true;
+            }
+            json.append("\n");
+            TextUtilities.appendN(json, '\t', nbTab + 2);
+            json.append("}");
+            hasContent = true;
+        }
+
+        json.append("\n");
+        TextUtilities.appendN(json, '\t', nbTab + 1);
+        json.append("}");
+
+        return json.toString();
+    }
+
 
     @Override
     public String toString() {

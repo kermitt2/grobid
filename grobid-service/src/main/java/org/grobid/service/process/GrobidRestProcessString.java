@@ -204,7 +204,7 @@ public class GrobidRestProcessString {
 	 * Parse a raw sequence of person/organization names and addresses and return the
 	 * corresponding normalized TEI XML representation.
 	 * 
-	 * @param names string of the raw sequence of person/organization names and addresses.
+	 * @param text string of the raw sequence of person/organization names and addresses.
 	 * @return a response object containing the structured xml representation of
 	 *         the sequence
 	 */
@@ -253,6 +253,239 @@ public class GrobidRestProcessString {
 				response = Response.status(Status.OK)
                             .entity(retVal)
                             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a raw sequence of person/organization names and addresses and return the
+	 * corresponding JSON representation.
+	 * 
+	 * @param text string of the raw sequence of person/organization names and addresses.
+	 * @return a response object containing the structured JSON representation of
+	 *         the sequence
+	 */
+	public Response processNameAddressJson(String text) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
+			if (results != null) {
+				if (retVal == null) {
+					retVal = "";
+				}
+				boolean hasContent = false;
+				retVal = "[\n";
+				for(Pair<Person,Affiliation> result : results) {		
+					if (result.getLeft() != null) {
+						Person person = result.getLeft();
+						if (person != null)	 {
+							if (hasContent)
+								retVal += ",\n";
+							retVal += "\t{\n";
+							retVal += person.toJSON(false, 2);
+							List<Affiliation> localAffiliations = person.getAffiliations();
+							if (localAffiliations != null && localAffiliations.size()>0) {
+								retVal += ",\n\t\t\"affiliations\": [\n";
+								boolean first = true;
+								for(Affiliation localAffiliation : localAffiliations) {
+									if (first)
+										first = false;
+									else
+										retVal += ",\n";
+									retVal += Affiliation.toJSON(localAffiliation, 2);
+								}
+								retVal += "\n\t\t]\n";
+							}
+							retVal += "\t}";
+							hasContent = true;
+						}
+					}
+					if (result.getRight() != null) {
+						Affiliation affiliation = result.getRight();
+						if (affiliation != null) {
+							if (hasContent)
+								retVal += ",\n";
+							retVal += "\t{\n"+Affiliation.toJSON(affiliation, 1)+"\n\t}";
+							hasContent = true;
+						}
+					}
+				}
+				retVal += "\n]";
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of person/organization names and addresses in batch processing, and return the
+	 * corresponding normalized TEI XML representation.
+	 * 
+	 * @param texts list of strings of the raw sequence of person/organization names and addresses.
+	 * @return a response object containing the structured xml representation of
+	 *         the sequences
+	 */
+	public Response processNameAddressList(List<String> texts) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
+			if (allResults != null) {
+				for(List<Pair<Person,Affiliation>> results : allResults) {
+					retVal = "<listPerson>\n";
+					for(Pair<Person,Affiliation> result : results) {
+						if (retVal == null) {
+							retVal = "";
+						}
+						if (result.getLeft() != null) {
+							Person person = result.getLeft();
+							if (person != null)	 {
+								retVal += "\t<person>\n";
+								retVal += person.toTEI(false, 2) + "\n";
+								List<Affiliation> localAffiliations = person.getAffiliations();
+								if (localAffiliations != null && localAffiliations.size()>0) {
+									for(Affiliation localAffiliation : localAffiliations)
+										retVal += Affiliation.toTEI(localAffiliation, 1);
+								}
+								retVal += "\t</person>\n";
+							}
+						}
+						if (result.getRight() != null) {
+							Affiliation affiliation = result.getRight();
+							if (affiliation != null)
+								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t\t</person>\n";
+						}
+					}
+					retVal += "</listPerson>\n";
+				}
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of person/organization names and addresses in batch processing, and return the
+	 * corresponding representation in JSON.
+	 * 
+	 * @param texts list of strings of the raw sequence of person/organization names and addresses.
+	 * @return a response object containing the structured json representation of
+	 *         the sequences
+	 */
+	public Response processNameAddressListJson(List<String> texts) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
+			if (allResults != null) {
+				for(List<Pair<Person,Affiliation>> results : allResults) {
+					retVal = "[\n";
+					for(Pair<Person,Affiliation> result : results) {
+						if (retVal == null) {
+							retVal = "";
+						}
+						if (result.getLeft() != null) {
+							Person person = result.getLeft();
+							if (person != null)	 {
+								retVal += "\t{ \"person\": { \n";
+								retVal += person.toTEI(false, 2) + "\n";
+								List<Affiliation> localAffiliations = person.getAffiliations();
+								if (localAffiliations != null && localAffiliations.size()>0) {
+									for(Affiliation localAffiliation : localAffiliations)
+										retVal += Affiliation.toJSON(localAffiliation, 1);
+								}
+								retVal += "\t}\n";
+							}
+						}
+						if (result.getRight() != null) {
+							Affiliation affiliation = result.getRight();
+							if (affiliation != null)
+								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t\t</person>\n";
+						}
+					}
+					retVal += "]\n";
+				}
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
                             .build();
 			}
 		} catch (NoSuchElementException nseExp) {

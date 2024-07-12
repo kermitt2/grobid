@@ -2,6 +2,8 @@ package org.grobid.core.data;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.fasterxml.jackson.core.io.JsonStringEncoder;
+
 import nu.xom.Attribute;
 import nu.xom.Element;
 
@@ -362,6 +364,96 @@ public class Person {
         tei.append("</persName>");
 
         return tei.toString();
+    }
+
+    /**
+     * JSON serialization based on string builder to better control the formatting.
+     */
+    public String toJSON(boolean withCoordinates, int indent) {
+        JsonStringEncoder encoder = JsonStringEncoder.getInstance();
+        byte[] encoded = null;
+        String output = null;
+        
+        if ( (firstName == null) && (middleName == null) && (lastName == null) ) {
+            return null;
+        }
+
+        StringBuilder json = new StringBuilder();
+        for (int i = 0; i < indent; i++) {
+            json.append("\t");
+        }
+        boolean hasContent = false;
+        json.append("\"person\": {\n");
+        if (withCoordinates && (getLayoutTokens() != null) && (!getLayoutTokens().isEmpty())) {
+            json.append(LayoutTokensUtil.getCoordsJson(getLayoutTokens()));
+            hasContent = true;
+        }
+        
+        if (!StringUtils.isEmpty(title)) {
+            if (hasContent)
+                json.append(",\n");
+            for (int i = 0; i < indent+1; i++) {
+                json.append("\t");
+            }
+            encoded = encoder.quoteAsUTF8(title);
+            output = new String(encoded);
+            json.append("\"roleName\":  \""+output+"\"");
+            hasContent = true;
+        }
+
+        if (!StringUtils.isEmpty(firstName)) {
+            if (hasContent)
+                json.append(",\n");
+            for (int i = 0; i < indent+1; i++) {
+                json.append("\t");
+            }
+            encoded = encoder.quoteAsUTF8(firstName);
+            output = new String(encoded);
+            json.append("\"firstName\": \""+output+"\"");
+            hasContent = true;
+        }
+
+        if (!StringUtils.isEmpty(middleName)) {
+            if (hasContent)
+                json.append(",\n");
+            for (int i = 0; i < indent+1; i++) {
+                json.append("\t");
+            }
+            encoded = encoder.quoteAsUTF8(middleName);
+            output = new String(encoded);
+            json.append("\"middleName\": \""+output+"\"");
+            hasContent = true;
+        }
+
+        if (!StringUtils.isEmpty(lastName)) {
+            if (hasContent)
+                json.append(",\n");
+            for (int i = 0; i < indent+1; i++) {
+                json.append("\t");
+            }
+            encoded = encoder.quoteAsUTF8(lastName);
+            output = new String(encoded);
+            json.append("\"lastName\": \""+output+"\"");
+            hasContent = true;
+        }
+
+        if (!StringUtils.isEmpty(suffix)) {
+            json.append(",\n");
+            for (int i = 0; i < indent+1; i++) {
+                json.append("\t");
+            }
+            encoded = encoder.quoteAsUTF8(suffix);
+            output = new String(encoded);
+            json.append("\"genName\": \""+output+"\"");
+        }
+        json.append("\n");
+
+        for (int i = 0; i < indent; i++) {
+            json.append("\t");
+        }
+        json.append("}");
+
+        return json.toString();
     }
 
     // list of character delimiters for capitalising names

@@ -128,7 +128,7 @@ public class NameAddressParser extends AbstractParser {
             }
             
             String allRes = label(allSequencesWithFeatures);
-//System.out.println(allRes);
+System.out.println(allRes);
             results = resultExtractionLayoutTokens(allRes, inputsTokens);
 
         } catch (Exception e) {
@@ -237,7 +237,9 @@ public class NameAddressParser extends AbstractParser {
                         if (aff.getInstitutions() != null && aff.getInstitutions().size()>0) {
                             // new affiliation
                             if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
-                                if (lastAut != null && lastAut.notNull()) {
+                                if (aut != null && aut.notNull()) {
+                                    aut.addAffiliation(aff);
+                                } else if (lastAut != null && lastAut.notNull()) {
                                     lastAut.addAffiliation(aff);
                                 } else {
                                     localResults.add(Pair.of(null, aff));

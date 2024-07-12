@@ -71,6 +71,11 @@ public interface GrobidPaths {
 	String PATH_NAME_ADDRESS = "processNameAddress";
 
 	/**
+	 * path extension for processing raw names-organization-address sequences.
+	 */
+	String PATH_NAME_ADDRESS_LIST = "processNameAddressList";
+
+	/**
 	 * path extension for processing citation in patent documents in TEI.
 	 */
 	//String PATH_CITATION_PATENT_TEI = "processCitationPatentTEI";

@@ -166,6 +166,22 @@ public class LayoutTokensUtil {
         return Joiner.on(";").join(res);
     }
 
+    public static String getCoordsJson(List<LayoutToken> toks) {
+        List<BoundingBox> res = BoundingBoxCalculator.calculate(toks);
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        boolean start = true;
+        for(BoundingBox box : res) {
+            if (start)
+                start = false;
+            else 
+                builder.append(",");
+            builder.append(box.toJson());
+        }
+        builder.append("]");
+        return builder.toString();
+    }
+
     public static String getCoordsStringForOneBox(List<LayoutToken> toks) {
         BoundingBox res = BoundingBoxCalculator.calculateOneBox(toks, true);
         if (res == null) {
