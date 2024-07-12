@@ -207,7 +207,7 @@ public class Affiliation {
     public void addInstitution(String aff) {
         if (institutions == null)
             institutions = new ArrayList<String>();
-        institutions.add(TextUtilities.cleanField(aff, true));
+        institutions.add(TextUtilities.cleanField(aff, true, false));
     }
 
     public void setDepartments(List<String> affs) {

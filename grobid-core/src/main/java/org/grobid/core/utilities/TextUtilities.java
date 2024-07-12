@@ -455,6 +455,15 @@ public class TextUtilities {
      * Still experimental ! Use with care !
      */
     public final static String cleanField(String input0, boolean applyStopwordsFilter) {
+        return cleanField(input0, applyStopwordsFilter, true);
+    }
+
+    /**
+     * Remove useless punctuation at the end and beginning of a metadata field.
+     * <p/>
+     * Still experimental ! Use with care !
+     */
+    public final static String cleanField(String input0, boolean applyStopwordsFilter, boolean cleanEndingDot) {
         if (input0 == null) {
             return null;
         }
@@ -470,7 +479,7 @@ public class TextUtilities {
             char c = input.charAt(i);
             if ((c == ',') ||
                 (c == ' ') ||
-                (c == '.') ||
+                (c == '.' && cleanEndingDot) ||
                 (c == '-') ||
                 (c == '_') ||
                 (c == '/') ||
