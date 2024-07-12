@@ -41,7 +41,6 @@
 					<addrLine>24, rue du Faubourg Saint-Honoré</addrLine>
 					<postCode>F-75008</postCode>
 					<settlement>PARIS</settlement>
-					<country>FR</country>
 				</address>
 			</affiliation>
 		</author>
@@ -773,7 +772,6 @@
 					<addrLine>Le Château</addrLine>,<lb/>
 					<postCode>CH-2028</postCode>
 					<settlement>Vaumarcus</settlement>
-					<country>CH</country>
 				</address>
 			</affiliation>
 		</author>
@@ -7728,6 +7726,898 @@
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Rentsch &amp; Partner</orgName>
+				<address>
+					<addrLine>Fraumünsterstrasse 9</addrLine>,<lb/>
+					<postCode>CH-8001</postCode>
+					<settlement>Zürich</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TEHALIT GMBH</orgName>
+				<address>
+					<postBox>Postfach 128</postBox>
+					c
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Möll</surname>
+				<forename>F</forename>.
+				<middlename>W</middlename>.;
+			</persName>
+			<persName>
+				<surname>Bitterich</surname> 
+				<forename>H</forename>. 
+				<forename>Ch</forename>.
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>17 Westring</addrLine>
+					<postBox>Postfach 2080</postBox>
+					<postCode>D-76810</postCode>
+					<settlement>Landau</settlement>
+					<region>Pfalz</region>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">MASTRAD S.A.</orgName>
+				<address>
+					<addrLine>12, rue du 4 Septembre</addrLine>,<lb/>
+					<postCode>F-75002</postCode>
+					<settlement>Paris</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">PORTER &amp; REEVES</orgName><lb/>
+			</affiliation>
+			<persName>
+				<title>Me</title>
+				<forename>Timothy</forename>
+				<surname>RAMIER</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>5 rue Cambon</addrLine>,<lb/>
+					<postCode>F-75001</postCode>
+					<settlement>PARIS</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				Nos 1 et 4: 
+				<forename>Walter</forename>
+				<surname>Garro</surname>, 
+			</persName>
+			<affiliation>
+				<orgName type="institution">SWATCHLAB</orgName>,
+				<address>
+					<addrLine>Via Archimede 8</addrLine>, 
+					<postCode>IT-20129</postCode> 
+					<settlement>MILANO</settlement>;
+				</address>
+			</affiliation> 
+		</author>
+		<author>
+			<persName>
+				No. 2:  
+				<forename>Arnaud</forename>
+				<surname>Blaszczyk</surname>, 
+			</persName>
+			<affiliation>
+				<orgName type="institution">DUPONT DESIGN SA</orgName>,
+				<address>
+					<addrLine>Route des Jeunes 33</addrLine>, 
+					<postCode>CH-1227</postCode> 
+					<settlement>CAROUGE</settlement>;
+				</address>
+			</affiliation> 
+		</author>
+		<author>
+			<persName>
+				No. 3:  
+				<forename>Rossana</forename>
+				<surname>Boffi</surname>, 
+			</persName>
+			<affiliation>
+				<orgName type="institution">SWATCHLAB</orgName>,
+				<address>
+					<addrLine>Via Archimede 6</addrLine>, 
+					<postCode>IT-20129</postCode> 
+					<settlement>MILANO</settlement>;
+				</address>
+			</affiliation> 
+		</author>
+		<author>
+			<persName>
+				No. 5:  
+				<forename>Marco</forename>
+				<surname>Dragotta</surname>, 
+			</persName>
+			<affiliation>
+				<orgName type="institution">SWATCHLAB</orgName>,
+				<address>
+					<addrLine>Via Archimede</addrLine>, 
+					<postCode>IT-20129</postCode> 
+					<settlement>MILANO</settlement>
+				</address>
+			</affiliation> 
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">THE SWATCH GROUP SA</orgName>
+				(<orgName type="institution">THE SWATCH GROUP AG</orgName>)
+				(<orgName type="institution">THE SWATCH GROUP LTD.</orgName>)
+				<address>
+					<addrLine>Faubourg du Lac 6</addrLine>
+					<postCode>2502</postCode>
+					<settlement>BIENNE</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CALOR SA</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Limited Liability Company "Arview"</orgName>
+				<address>
+					<addrLine>Territoriya Innovacionnogo Centra «Skolkovo», ul. Nobelya, d.  7, et 3 pom 69 rab 2</addrLine>
+					<postCode>121205</postCode>
+					<settlement>Moscow</settlement>
+					<country>RU</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">MATRA AG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">KONINKLIJKE PHILIPS<lb/>ELECTRONICS N.V.</orgName>
+				<address>
+					<addrLine>Groenewoudseweg 1</addrLine>
+					<postCode>NL-5621 BA</postCode>
+					<settlement>EINDHOVEN</settlement>
+					<country>NL</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">INTERNATIONAAL OCTROOIBUREAU B.V.</orgName>
+				<address>
+					<addrLine>Prof. Holstlaan 6</addrLine>
+					<postCode>NL-5656 AA</postCode>
+					<settlement>EINDHOVEN</settlement>
+					<country>NL</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Internationaal Octrooibureau B.V.</orgName>
+				<address>
+					<addrLine>Prof. Holstlaan 6</addrLine>,<lb/>
+					<postCode>NL-5656 AA</postCode>
+					<settlement>Eindhoven</settlement>
+					<country>NL</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Philips Intellectual</orgName><lb/>
+				<orgName type="department">Property &amp; Standards</orgName>
+				<address>
+					<addrLine>Prof. Holstlaan 6</addrLine>,<lb/>
+					<postCode>NL-5656 AA</postCode>
+					<settlement>Eindhoven</settlement>
+					<country>NL</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">PHILIPS INTELLECTUAL PROPERTY &amp; STANDARDS</orgName>
+				<address>
+					<addrLine>High Tech Campus 5</addrLine>,<lb/>
+					<postCode>NL-5656 AE</postCode>
+					<settlement>Eindhoven</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Brandstock Legal Rechtsanwaltsgesellschaft mbH</orgName>
+				<address>
+					<addrLine>Möhlstrasse 2</addrLine>
+					<postCode>81675</postCode>
+					<settlement>Munich</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Koninklijke Philips N.V.</orgName>
+				<address>
+					<addrLine>High Tech Campus 5</addrLine>
+					<postCode>NL-5656 AE</postCode>
+					<settlement>Eindhoven</settlement>
+					<country>NL</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FARO LTD.</orgName>
+				<address>
+					<addrLine>9 Loc. Socciglia</addrLine>
+					<postCode>I-55023</postCode>
+					<settlement>Borgo a Mozzano</settlement>
+					<country>Italy</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Palmen</surname>
+				<forename>Franz</forename>; 
+			</persName>
+			<persName>
+				<surname>Peltzner</surname>
+				<forename>Hans-H</forename>.
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>30-32 Kaiser Wilhelm Ring</addrLine>
+					<postCode>D-5000</postCode>
+					<settlement>Köln 1</settlement>
+					<country>Germany</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">SPIRELLA S.A.</orgName>
+				<address>
+					<addrLine>Tannenstraße 98</addrLine>,<lb/>
+					<postCode>CH-8424</postCode>
+					<settlement>Embrach-Zürich</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CERAMICA THUN KERAMIK SRL</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Privée AG Kabushiki Kaisha</orgName>
+				<address>
+					<addrLine>10-1, Roppongi 6-chome,<lb/>Minato-ku</addrLine>
+					<settlement>Tokyo</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Shuya</forename>
+				<surname>KOHHARA</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Acropolis 21 Bldg, 8th Floor,<lb/>4-10, Higashi<lb/>Nihonbashi 3-chome,<lb/>Chuo-Ku</addrLine>
+					<settlement>Tokyo</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Kenzo</forename>
+				<surname>MATSUMURA</surname>, 
+			</persName>
+			<affiliation>
+				c/o 
+				<address>
+					<addrLine>Privée AG Kabushiki Kaisha, 10-1, Roppongi 6-chome, Minato-ku</addrLine>, 
+					<settlement>Tokyo</settlement>, 
+					<country>Japan</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">PRIVÉE AG KABUSHIKI KAISHA</orgName>
+				<address>
+					<addrLine>10-1, Roppongi 6-chome,<lb/>Minato-ku</addrLine>,<lb/>
+					<settlement>Tokyo</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HAZUKI COMPANY KABUSHIKI KAISHA</orgName>
+				<address>
+					<addrLine>10-1, Roppongi 6-chome,<lb/>Minato-ku</addrLine>,<lb/>
+					<settlement>Tokyo</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Hazuki Company Kabushiki Kaisha</orgName>
+				<address>
+					<addrLine>10-1, Roppongi 6-chome,<lb/>Minato-ku</addrLine>
+					<settlement>Tokyo</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BROTHER INDUSTRIES, LTD.</orgName>
+				<address>
+					<addrLine>15-1 Naeshiro-cho, Mizuho-ku,Nagoya-shi</addrLine>
+					<settlement>Aichi-ken</settlement>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LOVEPOP, INC.</orgName>
+				<address>
+					<addrLine>68 Harrison Street, Suite 501</addrLine>
+					<postCode>02111</postCode>
+					<settlement>Boston</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">POLSINELLI PC</orgName>
+				<address>
+					<addrLine>1401 Lawrence Street, Suite 2300</addrLine>
+					<postCode>80202</postCode>
+					<settlement>Denver</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Patentanwälte Freischem</orgName>
+				<address>
+					<addrLine>Salierring 47-53</addrLine>,<lb/>
+					<postCode>50677</postCode>
+					<settlement>Köln</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Leonhard Kassel GmbH</orgName>
+				<address>
+					<addrLine>Riesestraße 9</addrLine>
+					<postCode>44287</postCode>
+					<settlement>Dortmund</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">PATENTANWÄLTE FREISCHEM</orgName>
+				<address>
+					<addrLine>Salierring 47 - 53</addrLine>
+					<postCode>50677</postCode>
+					<settlement>Köln</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Justin</forename> 
+				<middlename>Leonhard</middlename> 
+				<surname>Kassel</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Feuerdornweg 12</addrLine>,
+					<postCode>59425</postCode>
+					<settlement>Unna</settlement>,
+					<country>Germany</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LEONHARD KASSEL GMBH</orgName>
+				<address>
+					<addrLine>Riesestraße 9</addrLine>,<lb/>
+					<postCode>44287</postCode>
+					<settlement>Dortmund</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FREISCHEM &amp; Partner Patentanwälte mbB</orgName>
+				<address>
+					<addrLine>Salierring 47-53</addrLine>,<lb/>
+					<postCode>50677</postCode>
+					<settlement>Köln</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TECHN-O-TAPE B.V.</orgName>
+				<address>
+					<addrLine>4, Tolweg</addrLine>,
+					<postCode>NL-3741 LK</postCode>
+					<settlement>Baarn</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname></surname>
+			</persName>
+			<affiliation>
+				<orgName type="institution">Octrooibureau Zuid, Bureau voor Merken en Modellen B.V.</orgName>
+				<address>
+					<addrLine>35a Tramstraat</addrLine>
+					<postCode>NL-5611 CN</postCode>
+					<settlement>Eindhoven</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">APAL ET SUNSET S.A.</orgName>
+				<address>
+					<addrLine>25, rue de la Fontaine</addrLine>,<lb/>
+					<postCode>B-4670</postCode>
+					<settlement>Blégny</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Bureau Gevers s.a.</orgName>
+				<address>
+					<addrLine>Holidaystraat 5</addrLine>,<lb/>
+					<postCode>B-1831</postCode>
+					<settlement>Diegem</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LES DEVELOPPEMENTS HORLOGERS (LDH)</orgName>
+				<address>
+					<addrLine>14, Grand-Place</addrLine>
+					<postCode>1700</postCode>
+					<settlement>FRIBOURG</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>SAVOYE</surname>
+				<forename>Jean-Paul</forename><lb/>
+			</persName>
+			<affiliation>
+				<orgName type="institution">MOINAS &amp; SAVOYE S.A.</orgName>
+				<address>
+					<addrLine>42, rue Plantamour</addrLine>
+					<postCode>1201</postCode>
+					<settlement>GENEVE</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>DIAS</surname> 
+				<forename>Carlos</forename>, 
+			</persName>
+			<affiliation>
+				<orgName type="institution">MOINAS &amp; SAVOYE S.A.</orgName>
+				<address>
+					<addrLine>19, rue du Grand Bureau</addrLine>,
+					<postCode>CH-1227</postCode>
+					<settlement>CAROUGE</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">LES DÉVELOPPEMENTS HORLOGERS (LDH)</orgName>
+				<lb/>
+				C/O
+				<orgName type="institution">TVA CONSEILS STÉPHANE GMÜNDER</orgName>
+				<address>
+					<addrLine>Boulevard Pérolles, 8</addrLine>,<lb/>
+					<postCode>CH-1700</postCode>
+					<settlement>Fribourg</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>MOINAS</surname>
+				<forename>Michel</forename><lb/>
+			</persName>
+			<affiliation>
+				<orgName type="institution">MOINAS &amp; SAVOYE SA</orgName>
+				<address>
+					<addrLine>42 rue Plantamour</addrLine>,<lb/>
+					<postCode>CH-1201</postCode>
+					<settlement>GENEVE</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Les Développements Horlogers (LDH)</orgName>
+				<lb/>
+				c/o
+				<orgName type="institution">TVA Conseils Stéphane Gmünder</orgName>
+				<address>
+					<addrLine>Boulevard Pérolles, 8</addrLine>,<lb/>
+					<postCode>CH-1700</postCode>
+					<settlement>Fribourg</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">MANUFACTURE ROGER DUBUIS SA</orgName>
+				<address>
+					<addrLine>2, rue André de Garrini</addrLine>,<lb/>
+					<postCode>CH-1217</postCode>
+					<settlement>MEYRIN</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname></surname>
+			</persName>
+			<affiliation>
+				<orgName type="institution">Griffes Consulting SA</orgName>
+				<address>
+					<addrLine>Route de Florissant 81</addrLine>,<lb/>
+					<postCode>CH-1206</postCode>
+					<settlement>Genève</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Shenzhen HOYI International Intellectual Property Co., Ltd.</orgName>
+				<address>
+					<addrLine>Room 1308, 13th Floor, Block A, Weidonglong Business Building, Longhua District</addrLine>
+					<settlement>Shenzhen</settlement>
+					<country>CN</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">JOYO TECHNOLOGY PTE. LTD.</orgName>
+				<address>
+					<addrLine>1 RAFFLES PLACE #36-01, ONE RAFFLES PLACE</addrLine>
+					<postCode>048616</postCode>
+					<settlement>SINGAPORE</settlement>
+					<country>SG</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GROUPE BUROV LELEU</orgName>
+				<address>
+					<addrLine>ZI la Ramée</addrLine>
+					<postCode>F-49440</postCode>
+					<settlement>Candé</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Airwell Residential SAS</orgName>
+				<address>
+					<addrLine>3 Avenue du Centre,<lb/>Les Quadrants, Bâtiment A</addrLine>
+					<postCode>F-78280</postCode>
+					<settlement>Guyancourt, Paris</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ELZABURU, S.L.P.</orgName>
+				<address>
+					<addrLine>C/Miguel Ángel, 21</addrLine>
+					<postCode>E-28010</postCode>
+					<settlement>MADRID</settlement>
+					<country>ES</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AIRWELL RESIDENTIAL SAS</orgName>
+				<address>
+					<addrLine>3 Avenue du Centre,<lb/>Les Quadrants, Bâtiment A</addrLine>,<lb/>
+					<postCode>F-78280</postCode>
+					<settlement>Guyancourt, Paris</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ELZABURU S.L.P.</orgName>
+				<address>
+					<addrLine>Edificio Torre de Cristal - Paseo de la Castellana 259 C, planta 28</addrLine>
+					<postCode>28046</postCode>
+					<settlement>Madrid</settlement>
+					<country>ES</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Protoned B.V.</orgName>
+				<address>
+					<addrLine>73, Assumburg</addrLine>
+					<postCode>NL-1081 GB</postCode>
+					<settlement>Amsterdam</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">VITRA PATENTE AG</orgName>
+				<address>
+					<addrLine>Klünenfeldstrasse 22</addrLine>
+					<settlement>Muttenz</settlement>
+					<postCode>4132</postCode>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CANDELA VILÁGÍTÁSTECHIKAI ÉS ELECTRONIKAI KFT.</orgName>
+				<address>
+					<addrLine>4/b Csalma u.</addrLine>
+					<postCode>H-1031</postCode>
+					<settlement>Budapest</settlement>
+					<country>Hungary</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Várkonyi</surname> 
+				<forename>László</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>58/A Visegrádi u.</addrLine>
+					<postCode>H-1132</postCode>
+					<settlement>Budapest</settlement>
+					<country>Hungary</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
 
 </teiCorpus>
