@@ -182,6 +182,10 @@ System.out.println(allRes);
                         if (aut.getTitle() != null) {
                             if (aut.notNull()) {
                                 aut.normalizeName();
+                                if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                                    aut.addAffiliation(aff);
+                                    aff = new Affiliation();
+                                }
                                 localResults.add(Pair.of(aut, null));
                                 lastAut = aut;
                             }
@@ -196,6 +200,10 @@ System.out.println(allRes);
                             // new author
                             if (aut.notNull()) {
                                 aut.normalizeName();
+                                if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                                    aut.addAffiliation(aff);
+                                    aff = new Affiliation();
+                                }
                                 localResults.add(Pair.of(aut, null));
                                 lastAut = aut;
                             }
@@ -217,6 +225,10 @@ System.out.println(allRes);
                             // new author
                             if (aut.notNull()) {
                                 aut.normalizeName();
+                                if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                                    aut.addAffiliation(aff);
+                                    aff = new Affiliation();
+                                }
                                 localResults.add(Pair.of(aut, null));
                                 lastAut = aut;
                             }

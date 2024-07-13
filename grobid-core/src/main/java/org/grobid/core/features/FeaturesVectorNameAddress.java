@@ -184,7 +184,7 @@ public class FeaturesVectorNameAddress {
                 continue;
             }
 
-            newline = false;
+            //newline = false;
             if (text.equals("\n")) {
                 newline = true;
                 continue;
@@ -309,6 +309,7 @@ public class FeaturesVectorNameAddress {
             if (newline) {
                 features.lineStatus = "LINESTART";
                 outputLineStatus = true;
+                newline = false;
             }
 
             Matcher m0 = featureFactory.isPunct.matcher(text);
@@ -334,6 +335,7 @@ public class FeaturesVectorNameAddress {
                 if (!outputLineStatus) {
                     features.lineStatus = "LINESTART";
                     outputLineStatus = true;
+                    newline = false;
                 }
             } else if (tokens.size() == n + 1) {
                 if (!outputLineStatus) {
