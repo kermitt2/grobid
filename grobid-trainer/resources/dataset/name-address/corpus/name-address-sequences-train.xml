@@ -465,12 +465,14 @@
 				<forename>Fabrice</forename>
 				<surname>DUPORT</surname>, 
 			</persName>
-			<address>
-				<addrLine>4, avenue de la Gare</addrLine>, 
-				<postCode>2000</postCode>
-				<settlement>Neuchâtel</settlement>, 
-				<country>Suisse</country>
-			</address>
+			<affiliation>
+				<address>
+					<addrLine>4, avenue de la Gare</addrLine>, 
+					<postCode>2000</postCode>
+					<settlement>Neuchâtel</settlement>, 
+					<country>Suisse</country>
+				</address>
+			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
@@ -689,8 +691,10 @@
 				<surname>Kalfa</surname>, 
 			</persName>
 			<affiliation>
-				<postCode>CH-4600</postCode>
-				<settlement>Olten</settlement>
+				<address>
+					<postCode>CH-4600</postCode>
+					<settlement>Olten</settlement>
+				</address>
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
@@ -895,12 +899,14 @@
 				<forename>William</forename>
 				<surname>Harrington</surname>, 
 			</persName>
-			<address>
-				<addrLine>266 Ram Island Road</addrLine>,
-				<postCode>02813</postCode>,
-				<settlement>Charlestown</settlement>, 
-				<country>US</country>;
-			</address>
+			<affiliation>
+				<address>
+					<addrLine>266 Ram Island Road</addrLine>,
+					<postCode>02813</postCode>,
+					<settlement>Charlestown</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
 		</author>
 		<author>
 			<persName>
@@ -908,12 +914,14 @@
 				<middlename>F</middlename>.
 				<surname>Smith</surname>, 
 			</persName>
-			<address>
-				<addrLine>105 Split Rock Drive</addrLine>,
-				<postCode>06706</postCode>,
-				<settlement>Waterbury</settlement>, 
-				<country>US</country>;
-			</address>
+			<affiliation>
+				<address>
+					<addrLine>105 Split Rock Drive</addrLine>,
+					<postCode>06706</postCode>,
+					<settlement>Waterbury</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
 		</author>
 		<author>
 			<persName>
@@ -921,12 +929,104 @@
 				<middlename>H</middlename>.
 				<surname>Adams</surname>,
 			</persName>
-			<address>
-				<addrLine>21 Perry Drive</addrLine>,
-				<postCode>06468</postCode>,
-				<settlement>Monroe</settlement>, 
-				<country>US</country>;
-			</address>
+			<affiliation>
+				<address>
+					<addrLine>21 Perry Drive</addrLine>,
+					<postCode>06468</postCode>,
+					<settlement>Monroe</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>William</forename>
+				<surname>Harrington</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>266 Ram Island Road</addrLine>,
+					<postCode>02813</postCode>,
+					<settlement>Charlestown</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Robert</forename>
+				<middlename>F</middlename>.
+				<surname>Smith</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>105 Split Rock Drive</addrLine>,
+					<postCode>06706</postCode>,
+					<settlement>Waterbury</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Paul</forename>
+				<middlename>H</middlename>.
+				<surname>Adams</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>21 Perry Drive</addrLine>,
+					<postCode>06468</postCode>,
+					<settlement>Monroe</settlement>, 
+					<country>US</country>;
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>William</forename>
+				<surname>Harrington</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>266 Ram Island Road</addrLine>,
+					<postCode>02813</postCode>,
+					<settlement>Charlestown</settlement>, 
+					<country>US</country><lb/>
+				</address>
+			</affiliation>
+			<persName>
+				<forename>Robert</forename>
+				<middlename>F</middlename>.
+				<surname>Smith</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>105 Split Rock Drive</addrLine>,
+					<postCode>06706</postCode>,
+					<settlement>Waterbury</settlement>, 
+					<country>US</country><lb/>
+				</address>
+			</affiliation>
+			<persName>
+				<forename>Paul</forename>
+				<middlename>H</middlename>.
+				<surname>Adams</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>21 Perry Drive</addrLine>,
+					<postCode>06468</postCode>,
+					<settlement>Monroe</settlement>, 
+					<country>US</country>
+				</address>
+			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
@@ -1067,7 +1167,7 @@
 			<affiliation>
 				<orgName type="institution">Novartis AG</orgName>
 				<address>
-					Postfach
+					<postBox>Postfach</postBox>
 					<postCode>4002</postCode>
 					<settlement>Basel</settlement>
 					<country>CH</country>
@@ -1081,7 +1181,7 @@
 			<affiliation>
 				<orgName type="institution">NOVARTIS AG</orgName>
 				<address>
-					Postfach,<lb/>
+					<postBox>Postfach</postBox>,<lb/>
 					<postCode>CH-4002</postCode>
 					<settlement>Basel</settlement>
 					<country>CH</country>
@@ -2678,8 +2778,27 @@
 				<surname>Schönherr</surname>
 				<forename>Wolfgang</forename>;
 			</persName>
+			<persName>
+				<surname>Serwe</surname>
+				<forename>Karl-Heinz</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>28 Hawstrasse</addrLine>
+					<postCode>D-54290</postCode>
+					<settlement>Trier</settlement>
+					<country>Allemagne</country>
+				</address>
+			</affiliation>
 		</author>
-		<author>	
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Schönherr</surname>
+				<forename>Wolfgang</forename><lb/>
+			</persName>	
 			<persName>
 				<surname>Serwe</surname>
 				<forename>Karl-Heinz</forename>
@@ -3059,10 +3178,8 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<persName>
-				<surname>BOUJU DERAMBURE BUGNION</surname>,
-			</persName>
 			<affiliation>
+				<orgName type="institution">BOUJU DERAMBURE BUGNION</orgName>,
 				<address>
 					<addrLine>52, rue de Monceau</addrLine>,
 					<postCode>F-75008</postCode>
@@ -3094,17 +3211,16 @@
 		<author>
 			<persName>
 				<surname>KREBS</surname>,
-				<forename>Anais</forename>
+				<forename>Anais</forename><lb/>
 			</persName>
-		</author>
-		<author>
 			<persName>
 				<surname>OOSTLANDER</surname>,
 				<forename>MARINUS</forename>
 				<middlename>A</middlename>.
 			</persName>, <lb/>
 			<affiliation>
-				<orgName type="institution">C/O INTER DESIGN</orgName>
+				C/O 
+				<orgName type="institution">INTER DESIGN</orgName>
 				<address>
 					<postBox>PO BOX 217</postBox>,<lb/>
 					<postCode>NL-6800 AE</postCode>
@@ -3555,8 +3671,6 @@
 				<surname>Haggeney</surname>
 				<forename>Bodo</forename>; 
 			</persName>
-		</author>
-		<author>
 			<persName>
 				<surname>Schriefers</surname>
 				<forename>Marcus</forename>
@@ -3945,8 +4059,6 @@
 				<surname>LONG</surname>
 				<forename>Giorgio</forename>,
 			</persName>
-		</author>
-		<author>
 			<persName>
 				<surname>MAGGIONI</surname>
 				<forename>Claudio</forename><lb/>
@@ -3982,15 +4094,11 @@
 				<surname>Perani</surname>
 				<forename>Aurelio</forename>,
 			</persName>
-		</author>
-		<author>
 			<persName>
 				<surname>Mezzanotte</surname>
 				<forename>Carlo</forename>,
 				<lb/>
 			</persName>
-		</author>
-		<author>
 			<persName>
 				<surname>Simino</surname>
 				<forename>Massimo</forename><lb/>
@@ -4522,6 +4630,51 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
+			<persName>
+				<forename>Tobias</forename>
+				<surname>Königer</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Kehlerstrasse 23</addrLine>,
+					<postCode>6900</postCode>
+					<settlement>Bregenz</settlement>, 
+					<country>Austria</country><lb/>
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Ulrich</forename>
+				<surname>Rössler</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Hainbuchenweg 4</addrLine>,
+					<postCode>71549</postCode>
+					<settlement>Auenwald</settlement>, 
+					<country>Germany</country><lb/>
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Volker</forename>
+				<surname>Lindner</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Im Biegel 12</addrLine>,
+					<postCode>71522</postCode>
+					<settlement>Backnang</settlement>, 
+					<country>Germany</country><lb/>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
 			<affiliation>
 				<orgName type="institution">Nokia Corporation</orgName>
 				<address>
@@ -4607,8 +4760,6 @@
 					<country>USA</country>; 
 				</address>
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Jan</forename> 
 				<surname>Stillerman</surname>, 
@@ -4622,8 +4773,6 @@
 					<country>USA</country>;
 				</address> 
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Christine</forename> 
 				<surname>Oh</surname>,
@@ -4666,8 +4815,6 @@
 					<country>USA</country>;
 				</address> 
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Iain</forename> 
 				<surname>Pottie</surname>, 
@@ -4681,8 +4828,6 @@
 					<country>U.K.</country>;
 				</address>
 			</affiliation> 
-		</author>
-		<author>
 			<persName>
 				<forename>Jim</forename> 
 				<surname>Holtorf</surname>, 
@@ -4696,8 +4841,6 @@
 					<country>USA</country>;
 				</address>
 			</affiliation> 
-		</author> 
-		<author>
 			<persName>
 				<forename>James</forename>
 				<surname>Barber</surname>,
@@ -4978,10 +5121,10 @@
 				<address>
 					<addrLine>101-809, Hyundai Johap Apt., 202, Mokdongdong-ro, Yangcheon-gu</addrLine>, 
 					<settlement>Seoul</settlement>, 
-					<country>Republic of Korea</country>
+					<country>Republic of Korea</country>;
 				</address>
 			</affiliation>
-		</author>;
+		</author>
 		<author>
 			<persName>
 				<surname>KIM</surname>, 
@@ -5568,8 +5711,6 @@
 					<country>Republic of Korea</country>;
 				</address>
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<surname>KIM</surname>, 
 				<forename>Sung-No</forename>, 
@@ -6473,8 +6614,6 @@
 					<country>Germany</country>;
 				</address>
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Ulrich</forename> 
 				<surname>Schweig</surname>, 
@@ -6648,9 +6787,6 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<persName>
-				<surname></surname>
-			</persName>
 			<affiliation>
 				<orgName type="institution">Hoffmann, Eitle &amp; Partner</orgName>,
 				<address>
@@ -6679,7 +6815,7 @@
 			<persName>
 				<title>Ing</title>.
 				<forename>Stefano</forename>
-				<surname> Giacon</surname>
+				<surname>Giacon</surname>
 			</persName>
 			<affiliation>
 				<address>
@@ -6855,10 +6991,8 @@
 
 	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
 		<author>
-			<persName>
-				<surname>Interpat Law AG</surname>
-			</persName>
 			<affiliation>
+				<orgName type="institution">Interpat Law AG</orgName>
 				<address>
 					<addrLine>Zürcherstrasse 22</addrLine>,<lb/>
 					<postCode>CH-8853</postCode>
@@ -8912,8 +9046,6 @@
 					<country>Italie</country>;
 				</address>
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Carlo</forename>
 				<surname>GIORDANETTI</surname>,
@@ -9391,8 +9523,6 @@
 					<country>United States</country>;
 				</address>
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>James</forename> 
 				<middlename>M</middlename>. 
@@ -9408,8 +9538,6 @@
 					<country>United States</country>;
 				</address> 
 			</affiliation>
-		</author>
-		<author>
 			<persName>
 				<forename>Lenny</forename> 
 				<surname>DIAZ</surname>, 
@@ -9638,7 +9766,7 @@
 			<affiliation>
 				<orgName type="institution">Cohausz &amp; Florack,<lb/>Patent- und Rechtsanwälte</orgName>
 				<address>
-					<addrLine>Bleichstrasse 14,<lb/>40211 Düsseldorf</addrLine>
+					<addrLine>Bleichstrasse 14</addrLine>,<lb/>
 					<postCode>40211</postCode>
 					<settlement>Düsseldorf</settlement>
 					<country>DE</country>
@@ -9752,4 +9880,1013 @@
 			</affiliation>
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ROBERT KRUPS GMBH &amp; CO KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">EDUARD BAY GMBH &amp; CO KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Henkel AG &amp; Co. KGaA</orgName>
+				<address>
+					<addrLine>Henkelstraße 67</addrLine>
+					<postCode>40589</postCode>
+					<settlement>Düsseldorf</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Gerhard D. Wempe KG</orgName>
+				<address>
+					<addrLine>Steinstrasse 23</addrLine>
+					<postCode>20095</postCode>
+					<settlement>Hamburg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GERHARD D. WEMPE KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GERHARD D. WEMPE KG</orgName>
+				<address>
+					<addrLine>Steinstrasse 23,<lb/>20095 Hamburg</addrLine>
+					<postCode>20095</postCode>
+					<settlement>Hamburg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FESTO AG &amp; CO. KG</orgName>
+				<address>
+					<addrLine>Ruiter Straße 82</addrLine>,<lb/>
+					<postCode>73734</postCode>
+					<settlement>Esslingen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GEORG SCHLEGEL GMBH &amp; CO. KG</orgName>
+				<address>
+					<addrLine>Kapellenweg 4</addrLine>,<lb/>
+					<postCode>88525</postCode>
+					<settlement>Dürmentingen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HAUG BÜRSTEN KG</orgName>
+				<address>
+					<addrLine>6, Föllstrasse</addrLine>,<lb/>
+					<postCode>86343</postCode>
+					<settlement>Königsbrunn</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Haug Bürsten KG</orgName>
+				<address>
+					<addrLine>6, Föllstrasse Königsbrunn</addrLine>
+					<postCode>86343</postCode>
+					<settlement>Augsburg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">SMITHERS OASIS W GERMANY GMBH &amp; CO KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">THOMAS SABO GMBH &amp; CO.</orgName><lb/>
+				<orgName type="institution">SCHMUCKHANDEL KG</orgName>
+				<address>
+					<addrLine>Martin-Luther-Strasse 20</addrLine>,<lb/>
+					<postCode>91207</postCode>
+					<settlement>Lauf An Der Pegnitz</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">"FREY WILLE" GMBH &amp; CO KG</orgName>
+				<address>
+					<addrLine>Gumpendorferstrasse 81</addrLine>,<lb/>
+					<postCode>A-1060</postCode>
+					<settlement>Vienna</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HUGO BRENNENSTUHL GMBH &amp; CO. KG</orgName>
+				<address>
+					<addrLine>Seestraße 1-3</addrLine>,<lb/>
+					<postCode>72074</postCode>
+					<settlement>Tübingen</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BURG-WÄCHTER KG</orgName><lb/>
+			</affiliation>
+			<persName>
+				<forename>Alfred</forename>
+				<surname>Lüling</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Wormgermühle</addrLine>
+					<postCode>58540</postCode>
+					<settlement>Meinerzhagen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRIPA PAPIERFABRIK ALBERT FRIEDRICH KG</orgName>
+				<address>
+					<addrLine>Großheubacher Straße 4</addrLine>,<lb/>
+					<postCode>63897</postCode>
+					<settlement>Miltenberg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRIPA PAPIERFABRIK ALBERT FRIEDRICH KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ROMAN DIETSCHE GMBH &amp; CO. KG</orgName>
+				<address>
+					<addrLine>Talstrasse 13</addrLine>,<lb/>
+					<postCode>79674</postCode>
+					<settlement>Todtnau-Aftersteg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">THOMAS SABO GMBH &amp; CO. KG</orgName>
+				<address>
+					<addrLine>Silberstrasse 1</addrLine>,<lb/>
+					<postCode>91207</postCode>
+					<settlement>Lauf/pegnitz</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Friedrich Binder GmbH &amp; Co. KG</orgName>
+				<address>
+					<addrLine>Leonberger Straße 34</addrLine>
+					<postCode>71297</postCode>
+					<settlement>Mönsheim</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BURG-WÄCHTER KG</orgName>
+				<address>
+					<addrLine>Wormgermühle</addrLine>
+					<postCode>58540</postCode>
+					<settlement>Meinerzhagen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Rudolf Riester GmbH &amp; Co. KG</orgName>
+				<address>
+					<addrLine>31, Bruckstrasse</addrLine>
+					<postCode>72417</postCode>
+					<settlement>Jungingen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GEBRÜDER ENGLERT KG</orgName>
+				<address>
+					<addrLine>2, Gottlieb-Boegner-Strasse</addrLine>,<lb/>
+					<postCode>63849</postCode>
+					<settlement>Leidersbach</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GEBRÜDER ENGLERT KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HENKEL KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>DELBROUCK</surname>
+				<forename>FRANZ</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>FRANZA</surname>
+				<forename>ROBERTO</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRANZ DELBROUCK GMBH</orgName>
+				<address>
+					<addrLine>51-59, Bieberkamp</addrLine>,<lb/>
+					<postCode>58710</postCode>
+					<settlement>Menden</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRANZ SILL GMBH</orgName>
+				<address>
+					<addrLine>9-10, Ritterstrasse</addrLine>,
+					<postCode>10969</postCode>
+					<settlement>Berlin</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRANZ SCHEFFER OHG</orgName>
+				<address>
+					<addrLine>31-33 Vogelsang</addrLine> 
+					<postCode>D-58706</postCode>
+					<settlement>Menden</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>WEIBEL</surname>
+				<forename>FRANZ</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Marktbündtenstr. 8</addrLine>,<lb/>
+					<postCode>CH-7310</postCode>
+					<settlement>Bad Ragaz</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>FRANZ</forename>
+				<surname>BAUR</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Hochsträss 13</addrLine>,<lb/>
+					<postCode>87534</postCode>
+					<settlement>Oberstaufen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>FRANZ</forename>
+				<surname>HASER</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Buchenegg 5</addrLine>,<lb/>
+					<postCode>87534</postCode>
+					<settlement>Oberstaufen</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FRANZ KUHLMANN PRAZISIONSMECHANIK UND MASCHINENBAU GMBH &amp; CO KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>ANNA</forename>
+				<surname>LINDSTRÖM</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Langarum 12</addrLine>,<lb/>
+					<postCode>SE-560 25</postCode>
+					<settlement>Bottnaryd</settlement>
+					<country>SE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>	
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>DESTREE</surname>
+				<forename>PIERRE</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>CACHE</surname>
+				<forename>BERNARD</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>GRAF</surname>
+				<forename>FRANZ</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>PERUCCHI</surname>
+				<forename>MARTA</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">FIRMA FRANZ BREUNING</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>FRANZOSI</surname>
+				<forename>LUIGI</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>WIETH</surname>
+				<forename>FRANZ</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Lindberghstr. 8</addrLine>,<lb/>
+					<postCode>82178</postCode>
+					<settlement>Puchheim</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Hariolf</forename>
+				<surname>Briggl</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>An der Ziegelhütte 1</addrLine>,
+					<postCode>74523</postCode>
+					<settlement>Schwäbisch Hall</settlement>,
+					<country>Germany</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>MONACHON</surname> 
+				<forename>Jean-Claude</forename>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>La Biche</addrLine>,
+					<postCode>CH-2054</postCode>
+					<settlement>LES VIEUX PRES</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Oettinger Davidoff AG</orgName>
+				<address>
+					<addrLine>Hochbergerstrasse 15</addrLine>,
+					<postBox>Postfach Basel</postBox>
+					<postCode>4002</postCode>
+					<settlement>Basel</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Naim</forename>
+				<middlename>Eduardo</middlename>
+				<middlename>Gonçalves</middlename>
+				<surname>BARBOZA</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Rua Renê de Oliveira Barreto, 661 Jardim Boa Esperança</addrLine>, 
+					<postCode>CEP 13011.530</postCode>
+					<settlement>Campinas</settlement>- 
+					<region>São Paulo</region>, 
+					<country>Brazil</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>			
+			<affiliation>
+				<address>
+					<postBox>PO Box 137</postBox>
+					<settlement>Vlaardingen</settlement>
+					<postCode>NL-3130 AC</postCode>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Wahoo Fitness LLC</orgName>
+				<address>
+					<addrLine>90 West Wieuca Road, Unit 110</addrLine>
+					<postCode>30342</postCode>
+					<settlement>Atlanta</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">SOCIÉTÉ DE PROSPECTION ET D'INVENTIONS TECHNIQUES SPIT</orgName>,
+				<address>
+					<addrLine>Route de Lyon</addrLine>, 
+					<postCode>F-26501</postCode>
+					<settlement>Bourg-les-Valence</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Kitemill AS</orgName>
+				<address>
+					<addrLine>Miltzows gata 2</addrLine>
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>
+					<country>NO</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Christopher</forename>
+				<middlename>A</middlename>.
+				<surname>Forrette</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>,
+				<address>
+					<addrLine>Miltzows gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Jeff</forename>
+				<surname>Gibboney</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>,
+				<address>
+					<addrLine>Miltzows gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Jo</forename>
+				<surname>Grini</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>,
+				<address>
+					<addrLine>Miltzows gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Lode</forename>
+				<surname>Carnel</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>
+				<address>
+					<addrLine>Miltzows, gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Pranay</forename>
+				<surname>Sinha</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>
+				<address>
+					<addrLine>Miltzows, gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Sture</forename>
+				<surname>Smidt</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>
+				<address>
+					<addrLine>Miltzows, gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Thomas</forename>
+				<surname>Hårklau</surname>,
+			</persName>
+			<affiliation>
+				c/o 
+				<orgName type="institution">Kitemill AS</orgName>
+				<address>
+					<addrLine>Miltzows, gata 2</addrLine>, 
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>, 
+					<country>Norway</country>;
+				</address> 
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">KITEMILL AS</orgName>
+				<address>
+					<addrLine>Miltzows gata 2</addrLine>,<lb/>
+					<postCode>N-5700</postCode>
+					<settlement>Voss</settlement>
+					<country>NO</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>NAHUM SYLVAIN</surname>
+				<forename>Victor</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>28 avenue de Champel</addrLine>
+					<postCode>CH-1206</postCode> 
+					<settlement>Genève</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AUTOPHON TELECOM AG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GP GROUP S.R.L.</orgName>
+				<address>
+					<addrLine>A. Da Giussano 23 Street</addrLine>
+					<postCode>20145</postCode>
+					<settlement>MILAN</settlement>
+					<country>IT</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BRASSERIE D'ORVAL S.A.</orgName>
+				<address>
+					<postCode>B-6823</postCode>
+					<settlement>Villers-Devant Orval</settlement>
+					<country>BE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">COMME DES GARCONS S.A. (société anonyme)</orgName>
+				<address>
+					<addrLine>16 place Vendôme</addrLine> 
+					<postCode>F-75001</postCode> 
+					<settlement>Paris</settlement>
+					<country>France</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Joonggil</forename>
+				<surname>YOO</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>19, Yangjae-daero 11-gil, Seocho-gu</addrLine>, 
+					<postCode>06772</postCode> 
+					<settlement>Seoul</settlement>, 
+					<country>Republic of Korea</country>; 
+				</address>
+			</affiliation>
+		</author>
+		<author>
+			<persName>
+				<forename>Eugene</forename>
+				<surname>SUH</surname>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>19, Yangjae-daero 11-gil, Seocho-gu</addrLine>, 
+					<postCode>06772</postCode> 
+					<settlement>Seoul</settlement>, 
+					<country>Republic of Korea</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TGI Technology Pte Ltd</orgName>
+				<address>
+					<addrLine>140 Paya Lebar Road,<lb/>#06-25 AZ Building</addrLine>
+					<settlement>Singapore 409015</settlement>
+					<country>SG</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Liang</surname> 
+				<forename>Yanjie</forename>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Blk 271B Punggol Walk #10-519</addrLine>, 
+					<settlement>Singapore</settlement>, 
+					<postCode>822271</postCode>, 
+					<country>Singapore</country>; 
+				</address> 
+			</affiliation>
+			<persName>
+				<surname>Li</surname> 
+				<forename>Shihuang</forename>, 
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>62 Marine Parade Road #09-05 Cote D'Azur</addrLine>, 
+					<settlement>Singapore</settlement>, 
+					<postCode>449298</postCode>, 
+					<country>Singapore</country>; 
+				</address> 
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TGI TECHNOLOGY PTE LTD</orgName>
+				<address>
+					<addrLine>140 Paya Lebar Road,<lb/>#06-25 AZ Building</addrLine>,
+					<settlement>Singapore</settlement>
+					<postCode>409015</postCode>
+					<country>SG</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TECNART S.R.L.</orgName>
+				<address>
+					<addrLine>2 via Pindemonte</addrLine> 
+					<postCode>I-20121</postCode> 
+					<settlement>Milano</settlement> 
+					<country>Italy</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">CONRAC ELEKTRON GMBH</orgName>
+				<address>
+					<addrLine>18 Industriestrasse</addrLine>
+					<postCode>D-97990</postCode> 
+					<settlement>Weikersheim</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Sunrise Medical S.A.</orgName>
+				<address>
+					<addrLine>ZI La Planche</addrLine>
+					<postCode>F-37210</postCode>
+					<settlement>Rochecorbon</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Bovard Ltd.</orgName><lb/>
+				<orgName type="department">Patentanwälte VSP</orgName>
+				<address>
+					<addrLine>Optingenstrasse 16</addrLine>
+					<postCode>3000</postCode>
+					<settlement>Bern 25</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Schwabe</surname>
+				<forename>Hans</forename>
+				<middlename>Georg</middlename>;
+			</persName>
+			<persName>
+				<surname>Sandmair</surname>
+				<forename>Kurt</forename>;
+			</persName>
+			<persName>
+				<surname>Marx</surname>
+				<forename>Lothar</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>16 Stuntzstrasse</addrLine> 
+					<postCode>D-8000</postCode>
+					<settlement>München 80</settlement> 
+					<country>Germany</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+
+
+
 </teiCorpus>
