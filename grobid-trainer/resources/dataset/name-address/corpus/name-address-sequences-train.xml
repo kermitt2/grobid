@@ -10886,7 +10886,358 @@
 		</author>
 	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>SUNAMI</surname>
+				<forename>Takeo</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>8-21-8, Tamagawagakuen,<lb/>Machida-shi</addrLine>
+					<settlement>Tokyo</settlement>
+					<postCode>194-0041</postCode>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>AIDA</surname>
+				<forename>Takayuki</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>1089-10, Yamazaki-cho,<lb/>Machida-shi</addrLine>
+					<settlement>Tokyo</settlement>
+					<postCode>195-0074</postCode>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
 
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>SUNAMI</surname>
+				<forename>Takeo</forename>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>8-21-8, Tamagawagakuen, Machida-shi</addrLine>,
+					<postCode>194-0041</postCode>,
+					<settlement>Tokyo</settlement>,
+					<country>Japan</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>SUNAMI</surname>
+				<forename>Takeo</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>8-21-8, Tamagawagakuen,<lb/>Machida-shi</addrLine>,<lb/> 
+					<settlement>Tokyo</settlement>
+					<postCode>194-0041</postCode>
+					<country>JP</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>CARUSO</surname>
+				<forename>FRANCESCO</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Via Abruzzi, 69</addrLine>,<lb/>
+					<postCode>I-90144</postCode>
+					<settlement>PALERMO</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">The Procter &amp; Gamble Company</orgName>
+				<address>
+					<addrLine>One Procter &amp; Gamble Plaza</addrLine>
+					<postCode>45202</postCode>
+					<settlement>Cincinnati</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">E.&amp;J. Gallo Winery</orgName>
+				<address>
+					<addrLine>600 Yosemite Blvd.</addrLine>
+					<settlement>Modesto</settlement>,
+					<region>CA</region>
+					<postCode>95354</postCode>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">E.&amp;J. GALLO WINERY</orgName>
+				<address>
+					<addrLine>600 Yosemite Blvd.4</addrLine>,<lb/>
+					<settlement>Modesto</settlement>,
+					<region>CA</region>
+					<postCode>95354</postCode>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Andrus Intellectual Property Law, LLP</orgName>
+				<address>
+					<addrLine>790 North Water Street, Suite 2200</addrLine>
+					<postCode>53202</postCode>
+					<settlement>Milwaukee</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>LI</surname>
+				<forename>ZHANBO</forename>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>40 E. Winnie Way</addrLine>
+					<settlement>ARCADIA</settlement>
+ 					<region>CA</region> 
+ 					<postCode>91006-4670</postCode>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Towerstar Pets, LLC</orgName>
+				<address>
+					<addrLine>2350 Yellow Springs Road</addrLine>
+					<postCode>19355</postCode>
+					<settlement>Malvern</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Sand &amp; Sebolt</orgName>
+				<address>
+					<addrLine>4940 Munson Street, NW, Aegis Tower, Suite 1100</addrLine>
+					<postCode>44178</postCode>
+					<settlement>Canton</settlement>
+					<country>US</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Bruno</forename>
+				<surname>SACCO</surname>; 
+			</persName>
+			<persName>
+				<forename>Peter</forename>
+				<surname>PFEIFFER</surname>; 
+			</persName>
+			<persName>
+				<forename>Hans-Dieter</forename>
+				<surname>FUTSCHIK</surname>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DAIMLERCHRYSLER AG</orgName>
+				<address>
+					<addrLine>Epplestrasse 225</addrLine>,<lb/>
+					<postCode>70567</postCode>
+					<settlement>Stuttgart</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DaimlerChrysler AG</orgName>
+				<address>
+					<addrLine>Epplestrasse 225</addrLine>,<lb/>
+					<postCode>70567</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DINH VAN<lb/>(SOCIÉTÉ PAR ACTIONS SIMPLIFIÉE)</orgName>
+				<address>
+					<addrLine>15 rue de la Paix</addrLine>,<lb/>
+					<postCode>F-75002</postCode>
+					<settlement>PARIS</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname></surname>
+			</persName>
+			<affiliation>
+				<orgName type="institution">BUREAU CASALONGA &amp; JOSSE</orgName>
+				<address>
+					<addrLine>8 avenue Percier</addrLine>,<lb/>
+					<postCode>F-75008</postCode>
+					<settlement>PARIS</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">L'OREAL</orgName>
+				<address>
+					<addrLine>14 rue Royale</addrLine>
+					<postCode>75008</postCode>
+					<settlement>Paris</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">L'OREAL</orgName> - 
+				<orgName type="department">Direction Juridique PI</orgName>
+				<address>
+					<addrLine>41 rue Martre</addrLine>
+					<postCode>92110</postCode>
+					<settlement>Clichy</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Gijs</forename>
+				<surname>van Leeuwen</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Weegbree 2</addrLine>
+					<postCode>NL-2923 GM</postCode>
+					<settlement>Krimpen aan den IJssel</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Gijs</forename>
+				<surname>van Leeuwen</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Weegbree 2</addrLine>,
+					<postCode>2923GM</postCode>
+					<settlement>Krimpen aan den IJssel</settlement>,
+					<country>Netherlands</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>GIJS</forename>
+				<surname>VAN LEEUWEN</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Weegbree 2</addrLine>,<lb/>
+					<postCode>NL-2923 GM</postCode>
+					<settlement>Krimpen Aan Den Ijssel</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">GIROFLEX-ENTWICKLUNGS-AG</orgName>
+				<address>
+					<addrLine>45, Landstrasse</addrLine>,<lb/>
+					<postCode>CH-5322</postCode>
+					<settlement>Koblenz</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	
 
 </teiCorpus>
