@@ -2,7 +2,7 @@
     "model_name": "name-address-BidLSTM_CRF_FEATURES",
     "architecture": "BidLSTM_CRF_FEATURES",
     "embeddings_name": "glove-840B",
-    "char_vocab_size": 175,
+    "char_vocab_size": 177,
     "case_vocab_size": 8,
     "char_embedding_size": 25,
     "num_char_lstm_units": 25,
