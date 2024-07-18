@@ -65,6 +65,12 @@ public class HeaderParser extends AbstractParser {
         GrobidProperties.getInstance();
     }
 
+    public HeaderParser(EngineParsers parsers, GrobidModels.ModelFlavour modelFlavour) {
+        super(GrobidModels.getModelFlavour(GrobidModels.HEADER, modelFlavour));
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
+
     public HeaderParser(EngineParsers parsers) {
         super(GrobidModels.HEADER);
         this.parsers = parsers;
@@ -93,7 +99,12 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model 
      */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
+    public String processingHeaderSection(
+        GrobidAnalysisConfig config,
+        Document doc,
+        BiblioItem resHeader,
+        boolean serialize
+    ) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();

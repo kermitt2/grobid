@@ -4,6 +4,7 @@ import nu.xom.Element;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -555,7 +556,7 @@ public class Engine implements Closeable {
      */
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, null, config).getTei();
+        return fullTextToTEIDoc(inputFile, null, config, null).getTei();
     }
 
     /**
@@ -569,20 +570,33 @@ public class Engine implements Closeable {
      * @param config               - Grobid config
      * @return the resulting structured document as a TEI string.
      */
-    public String fullTextToTEI(File inputFile,
-                                String md5Str,
-                                GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, md5Str, config).getTei();
+    public String fullTextToTEI(
+        File inputFile,
+        String md5Str,
+        GrobidAnalysisConfig config,
+        GrobidModels.ModelFlavour flavour) throws Exception {
+        return fullTextToTEIDoc(inputFile, md5Str, config, flavour).getTei();
     }
 
-    public Document fullTextToTEIDoc(File inputFile,
-                                     String md5Str,
-                                     GrobidAnalysisConfig config) throws Exception {
+    public String fullTextToTEI(
+        File inputFile,
+        String md5Str,
+        GrobidAnalysisConfig config
+    ) throws Exception {
+        return fullTextToTEIDoc(inputFile, md5Str, config, null).getTei();
+    }
+
+    public Document fullTextToTEIDoc(
+        File inputFile,
+        String md5Str,
+        GrobidAnalysisConfig config,
+        GrobidModels.ModelFlavour flavour
+    ) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, md5Str, config);
+        resultDoc = fullTextParser.processing(inputFile, md5Str, config, flavour);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
 			+ (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
@@ -590,16 +604,25 @@ public class Engine implements Closeable {
 
     public Document fullTextToTEIDoc(File inputFile,
                                      GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, null, config);
+        return fullTextToTEIDoc(inputFile, null, config, null);
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
                                      GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(documentSource, config, null);
+    }
+
+
+    public Document fullTextToTEIDoc(
+        DocumentSource documentSource,
+        GrobidAnalysisConfig config,
+        GrobidModels.ModelFlavour flavour
+    ) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(documentSource, config);
+        resultDoc = fullTextParser.processing(documentSource, config, flavour);
         LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
                 + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
@@ -612,7 +635,7 @@ public class Engine implements Closeable {
      * traning data based on an existing model.
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
-     * @param resultPath    - the path to the directory where the results as XML files
+     * @param resultPath    - the path to the directory where the results as XML file
      *                      shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                      identify the training case. This is optional: no identifier

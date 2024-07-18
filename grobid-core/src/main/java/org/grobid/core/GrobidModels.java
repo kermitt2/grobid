@@ -11,7 +11,6 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
 
 /**
  * This enum class acts as a registry for all Grobid models.
- *
  */
 public enum GrobidModels implements GrobidModel {
 
@@ -20,7 +19,7 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
-    SEGMENTATION_LIGHT("segmentation/light"),
+    SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
     DATE("date"),
@@ -34,6 +33,7 @@ public enum GrobidModels implements GrobidModel {
     FIGURE("figure"),
     TABLE("table"),
     HEADER("header"),
+    HEADER_ARTICLE_LIGHT("header/article/light"),
     NAMES_CITATION("name/citation"),
     NAMES_HEADER("name/header"),
     PATENT_PATENT("patent/patent"),
@@ -59,23 +59,37 @@ public enum GrobidModels implements GrobidModel {
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
 
-    // Collections are dedicated models variant, but using the same base parser.
+    public static GrobidModel getModelFlavour(GrobidModels model, ModelFlavour modelFlavour) {
+        if (modelFlavour == null) {
+            return model;
+        } else
+            return modelFor(model.toString() + "/" + modelFlavour.getLabel().toLowerCase());
+    }
+
+    // ModelFlavours are dedicated models variant, but using the same base parser.
     // This is used in particular for scientific or technical documents like standards (SDO) 
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
-    public enum Collection {
+    public enum ModelFlavour {
+        ARTICLE_LIGHT("article/light"),
+        BLANK("blank"),
+        _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
         public final String label;
- 
-        private Collection(String label) {
+
+        private ModelFlavour(String label) {
             this.label = label;
         }
 
         public String getLabel() {
             return label;
         }
-    };
+
+        public String toString() {
+            return getLabel();
+        }
+    }
 
     /**
      * Absolute path to the model.

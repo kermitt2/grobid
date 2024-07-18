@@ -2,12 +2,15 @@ package org.grobid.service.process;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.BibDataSet;
 import org.grobid.core.data.BiblioItem;
 import org.grobid.core.data.PatentItem;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
+import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidPoolingFactory;
@@ -249,7 +252,8 @@ public class GrobidRestProcessFiles {
                                           final int endPage,
                                           final boolean generateIDs,
                                           final boolean segmentSentences,
-                                          final List<String> teiCoordinates) throws Exception {
+                                          final List<String> teiCoordinates,
+                                          final GrobidModels.ModelFlavour flavour) throws Exception {
         LOGGER.debug(methodLogIn());
 
         String retVal = null;
@@ -293,7 +297,7 @@ public class GrobidRestProcessFiles {
                     .withSentenceSegmentation(segmentSentences)
                     .build();
 
-            retVal = engine.fullTextToTEI(originFile, md5Str, config);
+            retVal = engine.fullTextToTEI(originFile, md5Str, config, flavour);
 
             if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();

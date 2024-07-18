@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
-import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
@@ -33,7 +32,6 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -101,7 +99,7 @@ public class FullTextParser extends AbstractParser {
         DocumentSource documentSource =
             DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
                 config.getPdfAssetPath() != null, true, false);
-        return processing(documentSource, config);
+        return processing(documentSource, config, null);
     }
 
     public Document processingHeaderFunding(File inputPdf,
@@ -114,12 +112,14 @@ public class FullTextParser extends AbstractParser {
 
 	public Document processing(File inputPdf,
                                String md5Str,
-							   GrobidAnalysisConfig config) throws Exception {
+							   GrobidAnalysisConfig config,
+                               GrobidModels.ModelFlavour flavour
+    ) throws Exception {
 		DocumentSource documentSource =
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
 				config.getPdfAssetPath() != null, true, false);
         documentSource.setMD5(md5Str);
-		return processing(documentSource, config);
+		return processing(documentSource, config, flavour);
 	}
 
     public Document processingHeaderFunding(File inputPdf,
@@ -132,6 +132,11 @@ public class FullTextParser extends AbstractParser {
         return processingHeaderFunding(documentSource, config);
     }
 
+    public Document processing(DocumentSource documentSource,
+                               GrobidAnalysisConfig config) {
+        return processing(documentSource, config, null);
+    }
+
 	/**
      * Machine-learning recognition of the complete full text structures.
      *
@@ -140,7 +145,9 @@ public class FullTextParser extends AbstractParser {
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
-                               GrobidAnalysisConfig config) {
+                               GrobidAnalysisConfig config,
+                               GrobidModels.ModelFlavour flavour
+    ) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         }
@@ -150,7 +157,7 @@ public class FullTextParser extends AbstractParser {
         }
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
+            Document doc = parsers.getSegmentationParser(flavour).processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -158,7 +165,7 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
+            parsers.getHeaderParser(flavour).processingHeaderSection(config, doc, resHeader, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 

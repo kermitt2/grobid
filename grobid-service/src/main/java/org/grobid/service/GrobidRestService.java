@@ -3,8 +3,11 @@ package org.grobid.service;
 import com.codahale.metrics.annotation.Timed;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.grobid.core.GrobidModels;
+import org.grobid.core.engines.AbstractParser;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.AbstractEngineFactory;
 import org.grobid.core.utilities.GrobidProperties;
@@ -29,6 +32,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import static org.grobid.core.GrobidModels.ModelFlavour.ARTICLE_LIGHT;
+import static org.grobid.core.GrobidModels.ModelFlavour.BLANK;
+
 
 /**
  * RESTful service for the GROBID system.
@@ -207,38 +214,6 @@ public class GrobidRestService implements GrobidPaths {
         return processHeaderDocumentReturnBibTeX_post(inputStream, consolidate, includeRawAffiliations, includeRawCopyrights);
     }
 
-    @Path(PATH_FULL_TEXT_BLANK)
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Produces(MediaType.APPLICATION_XML)
-    @POST
-    public Response processFulltextDocument_post(
-        @FormDataParam(INPUT) InputStream inputStream,
-        @DefaultValue("-1") @FormDataParam("start") int startPage,
-        @DefaultValue("-1") @FormDataParam("end") int endPage,
-        @FormDataParam("generateIDs") String generateIDs,
-        @FormDataParam("segmentSentences") String segmentSentences,
-        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
-        return processFulltextBlank(
-            inputStream, startPage, endPage, generateIDs, segmentSentences, coordinates
-        );
-    }
-
-    private Response processFulltextBlank(
-        InputStream inputStream,
-        int startPage,
-        int endPage,
-        String generateIDs,
-        String segmentSentences,
-        List<FormDataBodyPart> coordinates) throws Exception{
-
-        boolean generate = validateGenerateIdParam(generateIDs);
-        boolean segment = validateGenerateIdParam(segmentSentences);
-        List<String> teiCoordinates = collectCoordinates(coordinates);
-
-        return restProcessFiles.processFulltextDocumentBlank(inputStream, startPage, endPage, generate, segment, teiCoordinates);
-    }
-
-
     @Path(PATH_FULL_TEXT)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
@@ -255,11 +230,13 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
         @FormDataParam("segmentSentences") String segmentSentences,
-        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates,
+        @FormDataParam("flavour") String flavour) throws Exception {
         return processFulltext(
             inputStream, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
-            startPage, endPage, generateIDs, segmentSentences, coordinates
+            startPage, endPage, generateIDs, segmentSentences, coordinates,
+            flavour
         );
     }
 
@@ -279,11 +256,14 @@ public class GrobidRestService implements GrobidPaths {
         @DefaultValue("-1") @FormDataParam("end") int endPage,
         @FormDataParam("generateIDs") String generateIDs,
         @FormDataParam("segmentSentences") String segmentSentences,
-        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates) throws Exception {
+        @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates,
+        @FormDataParam("flavour") String flavour
+    ) throws Exception {
         return processFulltext(
             inputStream, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
-            startPage, endPage, generateIDs, segmentSentences, coordinates
+            startPage, endPage, generateIDs, segmentSentences, coordinates,
+            flavour
         );
     }
 
@@ -298,7 +278,8 @@ public class GrobidRestService implements GrobidPaths {
                                      int endPage,
                                      String generateIDs,
                                      String segmentSentences,
-                                     List<FormDataBodyPart> coordinates
+                                     List<FormDataBodyPart> coordinates,
+                                     String flavour
     ) throws Exception {
         int consolHeader = validateConsolidationParam(consolidateHeader);
         int consolCitations = validateConsolidationParam(consolidateCitations);
@@ -306,15 +287,40 @@ public class GrobidRestService implements GrobidPaths {
         boolean includeRaw = validateIncludeRawParam(includeRawCitations);
         boolean generate = validateGenerateIdParam(generateIDs);
         boolean segment = validateGenerateIdParam(segmentSentences);
+        GrobidModels.ModelFlavour flavourValidated = validateModelFlavour(flavour);
 
         List<String> teiCoordinates = collectCoordinates(coordinates);
+
+        if (flavourValidated == BLANK) {
+            return restProcessFiles.processFulltextDocumentBlank(
+                inputStream,
+                startPage,
+                endPage,
+                generate,
+                segment,
+                teiCoordinates
+            );
+        }
 
         return restProcessFiles.processFulltextDocument(
             inputStream, consolHeader, consolCitations, consolFunders,
             validateIncludeRawParam(includeRawAffiliations),
             includeRaw, validateIncludeRawParam(includeRawCopyrights),
-            startPage, endPage, generate, segment, teiCoordinates
+            startPage, endPage, generate, segment, teiCoordinates,
+            flavourValidated
         );
+    }
+
+    private GrobidModels.ModelFlavour validateModelFlavour(String flavour) {
+        GrobidModels.ModelFlavour modelFlavourValidated = null;
+
+        if (StringUtils.equalsIgnoreCase(flavour, "light")) {
+            modelFlavourValidated = ARTICLE_LIGHT;
+        } else if (StringUtils.equalsIgnoreCase(flavour, "blank")) {
+            modelFlavourValidated = BLANK;
+        }
+
+        return modelFlavourValidated;
     }
 
     private List<String> collectCoordinates(List<FormDataBodyPart> coordinates) {

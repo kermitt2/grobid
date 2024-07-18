@@ -45,11 +45,6 @@ public interface GrobidPaths {
 	 */
 	String PATH_FULL_TEXT = "processFulltextDocument";
 
-    /**
-     * path extension for processing full text of a document without any structure
-     */
-    String PATH_FULL_TEXT_BLANK = "processFulltextDocumentBlank";
-
 	/**
 	 * path extension for processing full text of documents together with image extraction.
 	 */

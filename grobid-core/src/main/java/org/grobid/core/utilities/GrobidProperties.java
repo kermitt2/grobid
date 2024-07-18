@@ -592,7 +592,7 @@ public class GrobidProperties {
     public static String getGrobidEngineName(final String modelName) {
         ModelParameters param = modelMap.get(modelName);
         if (param == null) {
-            LOGGER.debug("No configuration parameter defined for model " + modelName);
+            LOGGER.warn("No configuration parameter defined for model " + modelName);
             return null;
         }
         return param.engine;

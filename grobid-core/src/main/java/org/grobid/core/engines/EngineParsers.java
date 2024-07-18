@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.entities.ChemicalParser;
 import org.grobid.core.engines.patent.ReferenceExtractor;
 import org.slf4j.Logger;
@@ -7,6 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.util.EnumMap;
+import java.util.Map;
 
 public class EngineParsers implements Closeable {
     public static final Logger LOGGER = LoggerFactory.getLogger(EngineParsers.class);
@@ -14,13 +17,15 @@ public class EngineParsers implements Closeable {
     private AuthorParser authorParser = null;
     private AffiliationAddressParser affiliationAddressParser = null;
     private HeaderParser headerParser = null;
+    private Map<GrobidModels.ModelFlavour, HeaderParser> headerFlavouredParsers = null;
     private DateParser dateParser = null;
     private CitationParser citationParser = null;
     private FullTextParser fullTextParser = null;
     private FullTextBlankParser fullTextBlankParser = null;
     private ReferenceExtractor referenceExtractor = null;
     private ChemicalParser chemicalParser = null;
-    private Segmentation segmentationParser = null;
+    private volatile Segmentation segmentationParser = null;
+    private Map<GrobidModels.ModelFlavour, Segmentation> segmentationFlavouredParsers = null;
     private ReferenceSegmenterParser referenceSegmenterParser = null;
     private FigureParser figureParser = null;
     private TableParser tableParser = null;
@@ -50,14 +55,30 @@ public class EngineParsers implements Closeable {
     }
 
     public HeaderParser getHeaderParser() {
-        if (headerParser == null) {
-            synchronized (this) {
-                if (headerParser == null) {
-                    headerParser = new HeaderParser(this);
+        return getHeaderParser(null);
+    }
+
+    public HeaderParser getHeaderParser(GrobidModels.ModelFlavour modelFlavour) {
+        if (modelFlavour == null) {
+            if (headerParser == null) {
+                synchronized (this) {
+                    if (headerParser == null) {
+                        headerParser = new HeaderParser(this);
+                    }
                 }
             }
+            return headerParser;
+        } else {
+            synchronized (this) {
+                if (headerFlavouredParsers == null || headerFlavouredParsers.get(modelFlavour) == null) {
+                    HeaderParser localHeaderParser = new HeaderParser(this, modelFlavour);
+                    if (headerFlavouredParsers == null)
+                        headerFlavouredParsers = new EnumMap<>(GrobidModels.ModelFlavour.class);
+                    headerFlavouredParsers.put(modelFlavour, localHeaderParser);
+                }
+            }
+            return headerFlavouredParsers.get(modelFlavour);
         }
-        return headerParser;
     }
 
     public DateParser getDateParser() {
@@ -108,14 +129,31 @@ public class EngineParsers implements Closeable {
     }
 
     public Segmentation getSegmentationParser() {
-        if (segmentationParser == null) {
-            synchronized (this) {
-                if (segmentationParser == null) {
-                    segmentationParser = new Segmentation();
+        return getSegmentationParser(null);
+    }
+
+    public Segmentation getSegmentationParser(GrobidModels.ModelFlavour modelFlavour) {
+        if (modelFlavour == null) {
+            if (segmentationParser == null) {
+                synchronized (this) {
+                    if (segmentationParser == null) {
+                        segmentationParser = new Segmentation();
+                    }
                 }
             }
+            return segmentationParser;
+        } else {
+            synchronized (this) {
+                if (segmentationFlavouredParsers == null || segmentationFlavouredParsers.get(modelFlavour) == null) {
+                    Segmentation localSegmentationParser = new Segmentation(modelFlavour);
+                    if (segmentationFlavouredParsers == null) {
+                        segmentationFlavouredParsers = new EnumMap<>(GrobidModels.ModelFlavour.class);
+                        segmentationFlavouredParsers.put(modelFlavour, localSegmentationParser);
+                    }
+                }
+            }
+            return segmentationFlavouredParsers.get(modelFlavour);
         }
-        return segmentationParser;
     }
 
     public ReferenceExtractor getReferenceExtractor() {
