@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0">
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">HANS KLOBER KG</orgName>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ABB Technology AG</orgName>
+				<address>
+					<addrLine>Affolternstrasse 44</addrLine>
+					<postCode>8050</postCode>
+					<settlement>Zurich</settlement>
+					<country>CH</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<title>Dr</title>.
+				<forename>Andreas</forename>
+				<surname>Müller</surname>
+			</persName>
+			c/o 
+			<affiliation>
+				<orgName type="institution">ABB AG / Gf-IP</orgName><lb/>
+				<address>
+					<addrLine>Wallstadter Straße 59</addrLine>
+					<postCode>68526</postCode>
+					<settlement>Ladenburg</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Frank</forename>
+				<surname>Brenk</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Friedensstr. 10</addrLine>, 
+					<postCode>77756</postCode>
+					<settlement>Hausach</settlement>,
+					<country>Germany</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">ABB TECHNOLOGY AG</orgName>
+				<address>
+					<addrLine>Affolternstrasse 44</addrLine>,<lb/>
+					<postCode>CH-8050</postCode>
+					<settlement>Zurich</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">RENNEPONT PACEMETAL</orgName>
+				<address>
+					<addrLine>Rue de la Gare</addrLine>
+					<postCode>F-51230</postCode>
+					<settlement>Connantre</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Nony &amp; Associés</orgName>
+				<address>
+					<addrLine>29 rue Cambacérès</addrLine>
+					<postCode>F-75008</postCode>
+					<settlement>Paris</settlement>
+					<country>FR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">KONCAR-Institut za elektrotehniku d.d.</orgName>
+				<address>
+					<addrLine>Fallerovo setaliste 22</addrLine>
+					<postCode>HR-10000</postCode>
+					<settlement>Zagreb</settlement>
+					<country>HR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Vinko</forename>
+				<surname>Didak</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>B. Magovca 15</addrLine>
+					<postCode>HR-10010</postCode>
+					<settlement>Zagreb</settlement>
+					<country>HR</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Kristijan</forename>
+				<surname>Horvat</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Hrvatskog sokola 79</addrLine>,
+					<postCode>HR-10000</postCode>
+					<settlement>Zagreb</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">KONČAR-INSTITUT ZA ELEKTROTEHNIKU D.D.</orgName>
+				<address>
+					<addrLine>Fallerovo šetalište 22</addrLine>,<lb/>
+					<postCode>HR-10000</postCode>
+					<settlement>Zagreb</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">KONČAR-Institut za elektrotehniku d.d.</orgName>
+				<address>
+					<addrLine>Fallerovo šetalište 22</addrLine>
+					<postCode>HR-10000</postCode>
+					<settlement>Zagreb</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BIBLIOGRAPHISCHES INSTITUT &amp; F.A.<lb/>BROCKHAUS AG</orgName>
+				<address>
+					<addrLine>Dudenstrasse 6</addrLine>,<lb/>
+					<postCode>68167</postCode>
+					<settlement>Mannheim</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Rechtsanwälte Reble &amp; Klose</orgName>
+				<address>
+					<addrLine>Sophienstraße 17</addrLine>,<lb/>
+					<postCode>68165</postCode>
+					<settlement>Mannheim</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">F.A. Brockhaus GmbH</orgName>
+				<address>
+					<addrLine>Dudenstrasse 6</addrLine>,<lb/>
+					<postCode>68167</postCode>
+					<settlement>Mannheim</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">F.A. BROCKHAUS GMBH</orgName>
+				<address>
+					<addrLine>Avenwedder straße 5</addrLine>,<lb/>
+					<postCode>33335</postCode>
+					<settlement>Gütersloh</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Monika</forename>
+				<surname>Könnecke</surname><lb/>
+				c/o 
+			</persName>
+			<affiliation>
+				<orgName type="institution">Bertelsmann AG</orgName>
+				<address>
+					<addrLine>Carl-Bertelsmann-Str. 270</addrLine>,<lb/>
+					<postCode>33335</postCode>
+					<settlement>Gütersloh</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">inmediaONE] GmbH</orgName>
+				<address>
+					<addrLine>An der Autobahn</addrLine>,<lb/>
+					<postCode>33335</postCode>
+					<settlement>Gütersloh</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Monika</forename>
+				<surname>Könnecke</surname><lb/>
+				c/o 
+			</persName>
+			<affiliation>
+				<orgName type="institution">Bertelsmann AG</orgName>
+				<address>
+					<addrLine>Carl-Bertelsmann-Str. 270,<lb/>33335 Gütersloh</addrLine>
+					<postCode>33335</postCode>
+					<settlement>Gütersloh</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">INMEDIAONE] GMBH</orgName>
+				<address>
+					<addrLine>An der Autobahn</addrLine>,<lb/>
+					<postCode>33335</postCode>
+					<settlement>Gütersloh</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">SWATCH AG </orgName>
+				(<orgName type="institution">SWATCH SA</orgName>)<lb/>
+				(<orgName type="institution">SWATCH LTD.</orgName>)
+				<address>
+					<addrLine>94, Rue Jakob Stämpfli</addrLine>,<lb/>
+					<postCode>CH-2502</postCode>
+					<settlement>BIENNE</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Fehlbaum &amp; Co.</orgName>
+				<address>
+					<addrLine>Klünenfeldstrasse 20</addrLine>,
+					<postCode>4132</postCode>
+					<settlement>Muttenz</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">VISPLAY INTERNATIONAL AG</orgName>
+				<address>
+					<addrLine>Klünenfeldstr. 22</addrLine>,<lb/>
+					<postCode>CH-4132</postCode>
+					<settlement>Muttenz</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Visplay International AG</orgName>
+				<address>
+					<addrLine>Klünenfeldstr. 22</addrLine>,<lb/>
+					<postCode>CH-4132</postCode>
+					<settlement>Muttenz</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AXON Patent GmbH</orgName>
+				<address>
+					<addrLine>Austrasse 67</addrLine>,<lb/>
+					<postBox>P.O. Box 607</postBox>,<lb/>
+					<postCode>CH-4147</postCode>
+					<settlement>Aesch</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>LANG</surname>
+				<forename>ALINE</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">AMICI, S.A.</orgName>
+				<address>
+					<addrLine>180, rue des Aubépines</addrLine>,
+					<postCode>L-1145</postCode>
+					<settlement>LUXEMBOURG</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">BUREAU GEVERS S.A.</orgName>
+				<address>
+					<addrLine>5, Holidaystraat</addrLine>,
+					<postCode>B-1831</postCode>
+					<settlement>DIEGEM</settlement>
+					<country>BE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Bureau Vander Haeghen - K.O.B., S.A.</orgName>
+				<address>
+					<addrLine>Rue Colonel Bourg 108A</addrLine>
+					<postCode>B-1030</postCode>
+					<settlement>Bruxelles</settlement>
+					<country>BE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">TRUSSARDI PARFUMS S.P.A.</orgName>
+				<address>
+					<addrLine>3 via Mangili</addrLine>
+					<postCode>I-20121</postCode>
+					<settlement>Milano</settlement>
+					<country>Italy</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<title>Dr. Ing.</title>
+				<forename>A</forename>.
+				<surname>Racheli</surname>
+			</persName>
+			&amp;
+			<affiliation>
+				<orgName type="institution">C. S.r.l.</orgName>
+				<address>
+					<addrLine>4 viale San Michel del Carso</addrLine>
+					<postCode>I-20144</postCode>
+					<settlement>Milano</settlement>
+					<country>Italy</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>FRANZ</forename>
+				<surname>AUFHAUSER</surname>,
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>4, Im Schlangengarten</addrLine>
+					<postCode>D-76877</postCode>
+					<settlement>Offenbach</settlement>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">Schwabe, Sandmair, Marx</orgName>
+				<address>
+					<addrLine>16 Stuntzstrasse</addrLine>
+					<postCode>D-81677</postCode>
+					<settlement>Munchen</settlement>
+					(<country>Germany</country>)
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DaimlerChrysler AG</orgName>
+				<address>
+					<addrLine>Epplestrasse 255</addrLine>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+					<postCode>70567</postCode>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DaimlerChrysler AG</orgName><lb/>
+				<orgName type="department">Intellectual Property Management</orgName>
+				<lb/>
+			</affiliation>
+			<persName>
+				<forename>Sabine</forename>
+				<surname>Gluthe</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>Epplestrasse 255</addrLine>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+					<postCode>70567</postCode>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<surname>Pfeiffer</surname>
+				<forename>Peter</forename>
+			</persName>,
+			<persName>
+				<surname>Mattin</surname>
+				<forename>Stephen</forename>
+			</persName>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DAIMLERCHRYSLER AG</orgName>
+				<address>
+					<addrLine>Epplestrasse 255</addrLine>, 
+					<lb/>
+					<postCode>70567</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Sabine</forename>
+				<surname>Gluthe</surname>
+			</persName>
+			<affiliation>
+				c/o
+				<orgName type="institution">DaimlerChrysler AG</orgName>,
+				<lb/>
+				<orgName type="department">Intellectual Property and Technology Management</orgName>
+				<lb/>
+				<address>
+					<addrLine>GR/VI - C106</addrLine>,
+					<lb/> 
+					<postCode>70546</postCode>
+					<settlement>Stuttgart</settlement>
+					<postCode>70546</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DaimlerChrysler AG</orgName>,
+				<lb/>
+				<orgName type="department">Intellectual Property Management</orgName>,
+				<lb/>
+			</affiliation>
+			<persName>
+				<forename>Sabine</forename>
+				<surname>Gluthe</surname>
+			</persName>
+			<affiliation>
+				<address>
+					<addrLine>IPM/T, C106</addrLine>,
+					<lb/> 
+					<postCode>70546</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<affiliation>
+				<orgName type="institution">DAIMLER AG</orgName>
+				<address>
+					<addrLine>Mercedesstrasse 137</addrLine>, 
+					<lb/>
+					<postCode>70327</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	<TEI><teiHeader><fileDesc><sourceDesc><biblStruct><analytic>
+		<author>
+			<persName>
+				<forename>Sabine</forename>
+				<surname>Gluthe</surname>
+			</persName>
+			<affiliation>
+				<orgName type="institution">Daimler AG</orgName>,
+				<lb/>
+				<address>
+					<addrLine>GR/VI - H512</addrLine>,
+					<lb/> 
+					<postCode>70546</postCode>
+					<settlement>Stuttgart</settlement>
+					<country>DE</country>
+				</address>
+			</affiliation>
+		</author>
+	</analytic></biblStruct></sourceDesc></fileDesc></teiHeader></TEI>
+
+	
+
+</teiCorpus>

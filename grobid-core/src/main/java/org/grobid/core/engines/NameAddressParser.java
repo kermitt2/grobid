@@ -343,11 +343,9 @@ System.out.println(allRes);
      * Extract results from a list of name strings in the training format without any string modification.
 	 *
 	 * @param input - the sequence of author names to be processed as a string.
-	 * @param head - if true use the model for header's name, otherwise the model for names in citation
 	 * @return the pseudo-TEI training data
 	 */
-    public StringBuilder trainingExtraction(String input,
-                                            boolean head) {
+    public StringBuilder trainingExtraction(String input) {
         if (StringUtils.isEmpty(input))
             return null;
         // force analyser with English, to avoid bad surprise
@@ -385,12 +383,8 @@ System.out.println(allRes);
                 String line = st2.nextToken();
                 addSpace = false;
                 if ((line.trim().length() == 0)) {
-                    // new author
-					if (head)
-                    	buffer.append("/t<author>\n");
-					else {
-						//buffer.append("<author>");
-					}
+                    // new author	
+                	buffer.append("/t<author>\n");
                     continue;
                 } else {
                     String theTok = tokens.get(q).getText();
@@ -445,7 +439,7 @@ System.out.println(allRes);
                     }
                 }
 
-                tagClosed = lastTag0 != null && testClosingTag(buffer, currentTag0, lastTag0, head);
+                tagClosed = lastTag0 != null && testClosingTag(buffer, currentTag0, lastTag0);
 
                 if (newLine) {
                     if (tagClosed) {
@@ -456,31 +450,23 @@ System.out.println(allRes);
 
                 }
 
-                String output = writeField(s1, lastTag0, s2, "<marker>", "<marker>", addSpace, 8, head);
+                String output = writeField(s1, lastTag0, s2, "<marker>", "<marker>", addSpace, 8);
                 if (output != null) {
                     if (hasMarker) {
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t</persName>\n");
-                        } else {
-                            //buffer.append("</author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         hasForename = false;
                         hasSurname = false;
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t<persName>\n");
-                        } else {
-                            //buffer.append("<author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t<persName>\n");
                         hasMarker = true;
                     }
                     buffer.append(output);
                     lastTag = s1;
                     continue;
                 } else {
-                    output = writeField(s1, lastTag0, s2, "<other>", "<other>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<other>", "<other>", addSpace, 8);
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<forename>", "<forename>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<forename>", "<forename>", addSpace, 8);
                 } else {
                     if (buffer.length() > 0) {
                         if (buffer.charAt(buffer.length() - 1) == '\n') {
@@ -492,21 +478,13 @@ System.out.println(allRes);
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<middlename>", "<middlename>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<middlename>", "<middlename>", addSpace, 8);
                 } else {
                     if (hasForename && !currentTag0.equals(lastTag0)) {
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t</persName>\n");
-                        } else {
-                            //buffer.append("</author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         hasMarker = false;
                         hasSurname = false;
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t<persName>\n");
-                        } else {
-                            //buffer.append("<author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t<persName>\n");
                     }
                     hasForename = true;
                     buffer.append(output);
@@ -514,28 +492,20 @@ System.out.println(allRes);
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<surname>", "<surname>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<surname>", "<surname>", addSpace, 8);
                 } else {
                     buffer.append(output);
                     lastTag = s1;
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<title>", "<roleName>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<title>", "<roleName>", addSpace, 8);
                 } else {
                     if (hasSurname && !currentTag0.equals(lastTag0)) {
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t</persName>\n");
-                        } else {
-                            //buffer.append("</author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t</persName>\n");
                         hasMarker = false;
                         hasForename = false;
-                        if (head) {
-                            buffer.append("\t\t\t\t\t\t\t<persName>\n");
-                        } else {
-                            //buffer.append("<author>\n");
-                        }
+                        buffer.append("\t\t\t\t\t\t\t<persName>\n");
                     }
                     hasSurname = true;
                     buffer.append(output);
@@ -543,7 +513,7 @@ System.out.println(allRes);
                     continue;
                 }
                 if (output == null) {
-                    output = writeField(s1, lastTag0, s2, "<suffix>", "<suffix>", addSpace, 8, head);
+                    output = writeField(s1, lastTag0, s2, "<suffix>", "<suffix>", addSpace, 8);
                 } else {
                     buffer.append(output);
                     lastTag = s1;
@@ -565,7 +535,7 @@ System.out.println(allRes);
                     lastTag0 = lastTag;
                 }
                 currentTag0 = "";
-                testClosingTag(buffer, currentTag0, lastTag0, head);
+                testClosingTag(buffer, currentTag0, lastTag0);
             }
         } catch (Exception e) {
 //			e.printStackTrace();
@@ -580,8 +550,7 @@ System.out.println(allRes);
                               String field,
                               String outField,
                               boolean addSpace,
-                              int nbIndent, 
-							  boolean head) {
+                              int nbIndent) {
         String result = null;
         if ((s1.equals(field)) || (s1.equals("I-" + field))) {
             if ((s1.equals("<other>") || s1.equals("I-<other>"))) {
@@ -596,11 +565,10 @@ System.out.println(allRes);
                     result = s2;
             } else {
                 result = "";
-				if (head) {
-	                for (int i = 0; i < nbIndent; i++) {
-	                    result += "\t";
-	                }
-				}
+	            for (int i = 0; i < nbIndent; i++) {
+	               result += "\t";
+	            }
+				
 				if (addSpace)
 					result += " " + outField + s2;
 				else		
@@ -612,43 +580,34 @@ System.out.println(allRes);
 
     private boolean testClosingTag(StringBuilder buffer,
                                    String currentTag0,
-                                   String lastTag0,
-								   boolean head) {
+                                   String lastTag0) {
         boolean res = false;
         if (!currentTag0.equals(lastTag0)) {
             res = true;
             // we close the current tag
             if (lastTag0.equals("<other>")) {
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<forename>")) {
                 buffer.append("</forename>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<middlename>")) {
                 buffer.append("</middlename>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<surname>")) {
                 buffer.append("</surname>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<title>")) {
                 buffer.append("</roleName>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<suffix>")) {
                 buffer.append("</suffix>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else if (lastTag0.equals("<marker>")) {
                 buffer.append("</marker>");
-				if (head)
-					buffer.append("\n");
+				buffer.append("\n");
             } else {
                 res = false;
             }
-
         }
         return res;
     }

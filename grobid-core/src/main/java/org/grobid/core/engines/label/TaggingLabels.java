@@ -313,6 +313,14 @@ public class TaggingLabels {
     public static final TaggingLabel NAMES_ADDRESS_SETTLEMENT = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, SETTLEMENT_LABEL);
     public static final TaggingLabel NAMES_ADDRESS_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.NAMES_ADDRESS, ADDRESSLINE_LABEL);
 
+    public static final TaggingLabel ADDRESS_COUNTRY = new TaggingLabelImpl(GrobidModels.ADDRESS, COUNTRY_LABEL);
+    public static final TaggingLabel ADDRESS_POSTCODE = new TaggingLabelImpl(GrobidModels.ADDRESS, POSTCODE_LABEL);
+    public static final TaggingLabel ADDRESS_POSTBOX = new TaggingLabelImpl(GrobidModels.ADDRESS, POSTBOX_LABEL);
+    public static final TaggingLabel ADDRESS_REGION = new TaggingLabelImpl(GrobidModels.ADDRESS, REGION_LABEL);
+    public static final TaggingLabel ADDRESS_SETTLEMENT = new TaggingLabelImpl(GrobidModels.ADDRESS, SETTLEMENT_LABEL);
+    public static final TaggingLabel ADDRESS_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.ADDRESS, ADDRESSLINE_LABEL);
+
+
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -476,11 +484,11 @@ public class TaggingLabels {
         register(AFFILIATION_OTHER);
 
         // name address
-        //register(NAMES_ADDRESS_TITLE);
+        register(NAMES_ADDRESS_TITLE);
         register(NAMES_ADDRESS_FORENAME);
         register(NAMES_ADDRESS_MIDDLENAME);
         register(NAMES_ADDRESS_SURNAME);
-        //register(NAMES_ADDRESS_SUFFIX);
+        register(NAMES_ADDRESS_SUFFIX);
         register(NAMES_ADDRESS_INSTITUTION);
         register(NAMES_ADDRESS_DEPARTMENT);
         register(NAMES_ADDRESS_COUNTRY);
@@ -489,6 +497,14 @@ public class TaggingLabels {
         register(NAMES_ADDRESS_REGION);
         register(NAMES_ADDRESS_SETTLEMENT);
         register(NAMES_ADDRESS_ADDRESSLINE);
+
+        // address
+        register(ADDRESS_COUNTRY);
+        register(ADDRESS_POSTCODE);
+        register(ADDRESS_POSTBOX);
+        register(ADDRESS_REGION);
+        register(ADDRESS_SETTLEMENT);
+        register(ADDRESS_ADDRESSLINE);
     }
 
     protected TaggingLabels() {

@@ -502,7 +502,8 @@ project(":grobid-trainer") {
         "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
         "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
         "train_funding_acknowledgement" : "org.grobid.trainer.FundingAcknowledgementTrainer",
-        "train_name_address" : "org.grobid.trainer.NameAddressTrainer"
+        "train_name_address" : "org.grobid.trainer.NameAddressTrainer",
+        "train_address" : "org.grobid.trainer.AddressTrainer"
     ]
 
     def libraries = ""

@@ -36,6 +36,7 @@ public enum GrobidModels implements GrobidModel {
     NAMES_CITATION("name/citation"),
     NAMES_HEADER("name/header"),
     NAMES_ADDRESS("name-address"),
+    ADDRESS("address"),
     PATENT_PATENT("patent/patent"),
     PATENT_NPL("patent/npl"),
     PATENT_CITATION("patent/citation"),
