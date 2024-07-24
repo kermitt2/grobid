@@ -26,6 +26,7 @@ public class EngineParsers implements Closeable {
     private MonographParser monographParser = null;
     private FundingAcknowledgementParser fundingAcknowledgementParser = null;
     private NameAddressParser nameAddressParser = null;
+    private AddressParser addressParser = null;
 
     public AffiliationAddressParser getAffiliationAddressParser() {
         if (affiliationAddressParser == null) {
@@ -69,6 +70,17 @@ public class EngineParsers implements Closeable {
             }
         }
         return nameAddressParser;
+    }
+
+    public AddressParser getAddressParser() {
+        if (addressParser == null) {
+            synchronized (this) {
+                if (addressParser == null) {
+                    addressParser = new AddressParser();
+                }
+            }
+        }
+        return addressParser;
     }
 
     public DateParser getDateParser() {
@@ -212,6 +224,7 @@ public class EngineParsers implements Closeable {
         //MonographParser monographParser = getMonographParser();
         fundingAcknowledgementParser = getFundingAcknowledgementParser();
         nameAddressParser = getNameAddressParser();
+        addressParser = getAddressParser();
     }
 
     @Override
@@ -304,6 +317,12 @@ public class EngineParsers implements Closeable {
             nameAddressParser.close();
             nameAddressParser = null;
             LOGGER.debug("CLOSING nameAddressParser");
+        }
+
+        if (addressParser != null) {
+            addressParser.close();
+            addressParser = null;
+            LOGGER.debug("CLOSING addressParser");
         }
 
         LOGGER.debug("==> All resources closed");

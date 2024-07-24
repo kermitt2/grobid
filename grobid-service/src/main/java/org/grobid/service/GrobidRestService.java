@@ -584,6 +584,75 @@ public class GrobidRestService implements GrobidPaths {
     }
 
     /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddress(String)
+     */
+    @Path(PATH_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @GET
+    public Response processAddress(@QueryParam(TEXT) String text) {
+        return restProcessString.processAddress(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddressJson(String)
+     */
+    @Path(PATH_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @GET
+    public Response processAddressJson(@QueryParam(TEXT) String text) {
+        return restProcessString.processAddressJson(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddress(String)
+     */
+    @Path(PATH_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processAddressPost(@FormParam(TEXT) String text) {
+        return restProcessString.processAddress(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddressJson(String)
+     */
+    @Path(PATH_ADDRESS)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @POST
+    public Response processAddressPostJson(@FormParam(TEXT) String text) {
+        return restProcessString.processAddressJson(text);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddressList(String)
+     */
+    @Path(PATH_ADDRESS_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processAddressListPost(
+        @FormParam(TEXT) List<String> texts) {
+        return restProcessString.processAddressList(texts);
+    }
+
+    /**
+     * @see org.grobid.service.process.GrobidRestProcessString#processAddressListJson(String)
+     */
+    @Path(PATH_ADDRESS_LIST)
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    @POST
+    public Response processAddressListPostJson(
+        @FormParam(TEXT) List<String> texts) {
+        return restProcessString.processAddressListJson(texts);
+    }
+
+
+    /**
      * @see org.grobid.service.process.GrobidRestProcessString#processAffiliations(String)
      */
     @Path(PATH_AFFILIATION)

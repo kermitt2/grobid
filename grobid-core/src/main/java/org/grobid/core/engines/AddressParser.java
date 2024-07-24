@@ -213,7 +213,7 @@ System.out.println(allRes);
                 }
 
                 // add last built affiliation
-                if (aff.isNotEmptyAffiliation() || aff.hasAddress()) {
+                if (aff.hasAddress()) {
                     localResults.add(aff);
                 } 
             } catch (Exception e) {

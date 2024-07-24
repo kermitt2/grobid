@@ -79,6 +79,17 @@ public class Engine implements Closeable {
     }
 
     /**
+     * Parse a sequence of address.
+     *
+     * @param sequence - the string corresponding to a raw string to parse
+     * @return the list of structured affiliation objects with only address
+     */
+    public List<Affiliation> processAddress(String sequence) throws Exception {
+        List<Affiliation> result = parsers.getAddressParser().processingText(sequence);
+        return result;
+    }
+
+    /**
      * Parse a list of independent sequences of authors from citations.
      *
      * @param authorSequences - the list of strings corresponding each to a raw sequence of
@@ -98,6 +109,17 @@ public class Engine implements Closeable {
      */
     public List<List<Pair<Person,Affiliation>>> processNameAddressList(List<String> sequences) throws Exception {
         List<List<Pair<Person,Affiliation>>> result = parsers.getNameAddressParser().processingTextBatch(sequences);
+        return result;
+    }
+
+    /**
+     * Parse a list of sequences of address.
+     *
+     * @param sequences - the list of string corresponding to a raw string to parse
+     * @return the list of structured affiliation objects with only address
+     */
+    public List<List<Affiliation>> processAddressList(List<String> sequences) throws Exception {
+        List<List<Affiliation>> result = parsers.getAddressParser().processingTextBatch(sequences);
         return result;
     }
 

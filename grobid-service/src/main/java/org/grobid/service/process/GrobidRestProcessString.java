@@ -505,6 +505,241 @@ public class GrobidRestProcessString {
 	}
 
 	/**
+	 * Parse a raw sequence of addresses and return the corresponding normalized TEI XML 
+	 * representation.
+	 * 
+	 * @param text string of the raw sequence of addresses.
+	 * @return a response object containing the structured xml representation of
+	 *         the sequence
+	 */
+	public Response processAddress(String text) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<Affiliation> results = engine.processAddress(text);
+			if (results != null) {
+				retVal = "<affiliation>\n";
+				for(Affiliation affiliation : results) {
+					if (affiliation != null) {
+						if (retVal == null) {
+							retVal = "";
+						}
+						retVal += Affiliation.toTEI(affiliation, 1);
+					}
+				}
+				retVal += "</affiliation>\n";
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a raw sequence of addresses and return the corresponding JSON representation.
+	 * 
+	 * @param text string of the raw sequence of addresses.
+	 * @return a response object containing the structured JSON representation of
+	 *         the sequence
+	 */
+	public Response processAddressJson(String text) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<Affiliation> results = engine.processAddress(text);
+			if (results != null) {
+				if (retVal == null) {
+					retVal = "";
+				}
+				//boolean hasContent = false;
+				retVal = "[\n";
+				boolean first = true;
+				for(Affiliation affiliation : results) {		
+					//if (hasContent)
+					//	retVal += ",\n";
+					//retVal += "\t{\n";
+					if (affiliation != null) {
+						//retVal += ",\n\t\t\"addresses\": [\n";
+						//for(Affiliation localAffiliation : localAffiliations) {
+							if (first)
+								first = false;
+							else
+								retVal += ",\n";
+							retVal += Affiliation.toJSON(affiliation, 1);
+						//}
+						//retVal += "\n\t\t]\n";
+					}
+					//retVal += "\t}";
+					//hasContent = true;
+				}
+				retVal += "\n]";
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of addresses in batch processing, and return the
+	 * corresponding normalized TEI XML representation.
+	 * 
+	 * @param texts list of strings of the raw sequence of addresses.
+	 * @return a response object containing the structured xml representation of
+	 *         the sequences
+	 */
+	public Response processAddressList(List<String> texts) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<List<Affiliation>> allResults = engine.processAddressList(texts);
+			if (allResults != null) {
+				for(List<Affiliation> results : allResults) {	
+					if (results != null && results.size()>0) {
+						retVal = "<affiliation>\n";
+						for(Affiliation localAffiliation : results)
+							retVal += Affiliation.toTEI(localAffiliation, 1);
+						retVal += "</affiliation>\n";
+					}
+				}
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
+	 * Parse a list of raw sequence of addresses in batch processing, and return the
+	 * corresponding representation in JSON.
+	 * 
+	 * @param texts list of strings of the raw sequence of addresses.
+	 * @return a response object containing the structured json representation of
+	 *         the sequences
+	 */
+	public Response processAddressListJson(List<String> texts) {
+		LOGGER.debug(methodLogIn());
+		Response response = null;
+		String retVal = null;
+		Engine engine = null;
+
+		try {
+			LOGGER.debug(">> set raw address sequence for stateless service'...");
+
+			engine = Engine.getEngine(true);
+			List<List<Affiliation>> allResults = engine.processAddressList(texts);
+			if (allResults != null) {
+				for(List<Affiliation> results : allResults) {
+					if (results != null && results.size()>0) {
+						retVal = "[\n";
+						for(Affiliation localAffiliation : results)
+							retVal += Affiliation.toJSON(localAffiliation, 1);
+
+						retVal += "]\n";
+					}
+				}
+			}
+
+			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
+				response = Response.status(Status.NO_CONTENT).build();
+			} else {
+				response = Response.status(Status.OK)
+                            .entity(retVal)
+                            .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON + "; charset=UTF-8")
+                            .build();
+			}
+		} catch (NoSuchElementException nseExp) {
+			LOGGER.error("Could not get an engine from the pool within configured time. Sending service unavailable.");
+			response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+		} catch (Exception e) {
+			LOGGER.error("An unexpected exception occurs. ", e);
+			response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+		} finally {
+			if (engine != null) {
+				GrobidPoolingFactory.returnEngine(engine);
+			}
+		}
+
+		LOGGER.debug(methodLogOut());
+		return response;
+	}
+
+	/**
 	 * Parse a raw sequence of affiliations and return the corresponding
 	 * normalized affiliations with address.
 	 * 
