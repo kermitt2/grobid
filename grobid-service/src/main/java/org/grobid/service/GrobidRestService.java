@@ -231,7 +231,8 @@ public class GrobidRestService implements GrobidPaths {
         @FormDataParam("generateIDs") String generateIDs,
         @FormDataParam("segmentSentences") String segmentSentences,
         @FormDataParam("teiCoordinates") List<FormDataBodyPart> coordinates,
-        @FormDataParam("flavour") String flavour) throws Exception {
+        @FormDataParam("flavour") String flavour
+    ) throws Exception {
         return processFulltext(
             inputStream, consolidateHeader, consolidateCitations, consolidateFunders,
             includeRawAffiliations, includeRawCitations, includeRawCopyrights,
