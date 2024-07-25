@@ -530,7 +530,7 @@ public class GrobidRestProcessString {
 						if (retVal == null) {
 							retVal = "";
 						}
-						retVal += Affiliation.toTEI(affiliation, 1);
+						retVal += Affiliation.toTEIAddress(affiliation, 1);
 					}
 				}
 				retVal += "</affiliation>\n";
@@ -582,26 +582,16 @@ public class GrobidRestProcessString {
 				if (retVal == null) {
 					retVal = "";
 				}
-				//boolean hasContent = false;
 				retVal = "[\n";
 				boolean first = true;
 				for(Affiliation affiliation : results) {		
-					//if (hasContent)
-					//	retVal += ",\n";
-					//retVal += "\t{\n";
 					if (affiliation != null) {
-						//retVal += ",\n\t\t\"addresses\": [\n";
-						//for(Affiliation localAffiliation : localAffiliations) {
-							if (first)
-								first = false;
-							else
-								retVal += ",\n";
-							retVal += Affiliation.toJSON(affiliation, 1);
-						//}
-						//retVal += "\n\t\t]\n";
+						if (first)
+							first = false;
+						else
+							retVal += ",\n";
+						retVal += Affiliation.toJSONAddress(affiliation, 1);
 					}
-					//retVal += "\t}";
-					//hasContent = true;
 				}
 				retVal += "\n]";
 			}
@@ -654,7 +644,7 @@ public class GrobidRestProcessString {
 					if (results != null && results.size()>0) {
 						retVal = "<affiliation>\n";
 						for(Affiliation localAffiliation : results)
-							retVal += Affiliation.toTEI(localAffiliation, 1);
+							retVal += Affiliation.toTEIAddress(localAffiliation, 1);
 						retVal += "</affiliation>\n";
 					}
 				}
@@ -704,15 +694,28 @@ public class GrobidRestProcessString {
 			engine = Engine.getEngine(true);
 			List<List<Affiliation>> allResults = engine.processAddressList(texts);
 			if (allResults != null) {
+				retVal = "[\n";
+				boolean first1 = true;
 				for(List<Affiliation> results : allResults) {
 					if (results != null && results.size()>0) {
-						retVal = "[\n";
-						for(Affiliation localAffiliation : results)
-							retVal += Affiliation.toJSON(localAffiliation, 1);
+						if (first1)
+							first1 = false;
+						else
+							retVal = ",\n";
+						boolean first2 = true;
+						retVal = "\t[\n";
+						for(Affiliation localAffiliation : results) {
+							if (first2)
+								first2 = false;
+							else
+								retVal = ",\n";
+							retVal += Affiliation.toJSONAddress(localAffiliation, 2);
+						}
 
-						retVal += "]\n";
+						retVal += "\t]\n";
 					}
 				}
+				retVal = "[\n";
 			}
 
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {

@@ -511,6 +511,10 @@ public class Affiliation {
         return toTEI(aff, nbTab, null);
     }
 
+    public static String toTEIAddress(Affiliation aff, int nbTab) {
+        return toTEIAddress(aff, nbTab, null);
+    }
+
     public static String toTEI(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
         StringBuffer tei = new StringBuffer();
         TextUtilities.appendN(tei, '\t', nbTab + 1);
@@ -642,8 +646,75 @@ public class Affiliation {
         return tei.toString();
     }
 
+    /**
+     * Just export the address part of the Affiliation object into TEI
+     **/
+    public static String toTEIAddress(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
+        StringBuffer tei = new StringBuffer();
+        TextUtilities.appendN(tei, '\t', nbTab);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+
+        tei.append("<address");
+        if (aff.getKey() != null)
+            tei.append(" key=\"").append(aff.getKey()).append("\"");
+        if (withAffCoords) {
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
+            if (coords != null && coords.length()>0) {
+                tei.append(" coords=\"" + coords + "\"");
+            }
+        }
+        tei.append(">\n");
+        
+        if (aff.getAddrLine() != null) {
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
+                    "</addrLine>\n");
+        }
+        if (aff.getPostBox() != null) {
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<postBox>" + TextUtilities.HTMLEncode(aff.getPostBox()) +
+                    "</postBox>\n");
+        }
+        if (aff.getPostCode() != null) {
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<postCode>" + TextUtilities.HTMLEncode(aff.getPostCode()) +
+                    "</postCode>\n");
+        }
+        if (aff.getSettlement() != null) {
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<settlement>" + TextUtilities.HTMLEncode(aff.getSettlement()) +
+                    "</settlement>\n");
+        }
+        if (aff.getRegion() != null) {
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<region>" + TextUtilities.HTMLEncode(aff.getRegion()) +
+                    "</region>\n");
+        }
+        if (aff.getCountry() != null) {
+            String code = Lexicon.getInstance().getCountryCode(aff.getCountry());
+            TextUtilities.appendN(tei, '\t', nbTab + 1);
+            tei.append("<country");
+            if (code != null)
+                tei.append(" key=\"" + code + "\"");
+            tei.append(">" + TextUtilities.HTMLEncode(aff.getCountry()) +
+                    "</country>\n");
+        }
+
+        TextUtilities.appendN(tei, '\t', nbTab);
+        tei.append("</address>\n");
+
+        return tei.toString();
+    }
+
     public static String toJSON(Affiliation aff, int nbTab) {
         return toJSON(aff, nbTab, null);
+    }
+
+    public static String toJSONAddress(Affiliation aff, int nbTab) {
+        return toJSONAddress(aff, nbTab, null);
     }
 
     public static String toJSON(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
@@ -893,6 +964,88 @@ public class Affiliation {
 
         json.append("\n");
         TextUtilities.appendN(json, '\t', nbTab + 1);
+        json.append("}");
+
+        return json.toString();
+    }
+
+    public static String toJSONAddress(Affiliation aff, int nbTab, GrobidAnalysisConfig config) {
+        JsonStringEncoder encoder = JsonStringEncoder.getInstance();
+        byte[] encoded = null;
+        String output = null;
+        StringBuffer json = new StringBuffer();
+
+        TextUtilities.appendN(json, '\t', nbTab);
+
+        boolean withAffCoords = (config != null) && 
+                                (config.getGenerateTeiCoordinates() != null) && 
+                                (config.getGenerateTeiCoordinates().contains("affiliation"));
+
+        json.append("{\n");
+        boolean hasContent2 = false;
+        if (aff.getAddrLine() != null) {
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            encoded = encoder.quoteAsUTF8(aff.getAddrLine());
+            output = new String(encoded);
+            json.append("\"addrLine\": " + output + "\"");
+            hasContent2 = true;
+        }
+        if (aff.getPostBox() != null) {
+            if (hasContent2)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            encoded = encoder.quoteAsUTF8(aff.getPostBox());
+            output = new String(encoded);
+            json.append("\"postBox\": \"" + output + "\"");
+            hasContent2 = true;
+        }
+        if (aff.getPostCode() != null) {
+            if (hasContent2)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            encoded = encoder.quoteAsUTF8(aff.getPostCode());
+            output = new String(encoded);
+            json.append("\"postCode\": \"" + output + "\"");
+            hasContent2 = true;
+        }
+        if (aff.getSettlement() != null) {
+            if (hasContent2)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            encoded = encoder.quoteAsUTF8(aff.getSettlement());
+            output = new String(encoded);
+            json.append("\"settlement\": \"" + output + "\"");
+            hasContent2 = true;
+        }
+        if (aff.getRegion() != null) {
+            if (hasContent2)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            encoded = encoder.quoteAsUTF8(aff.getRegion());
+            output = new String(encoded);
+            json.append("\"region\": \"" + output + "\"");
+            hasContent2 = true;
+        }
+        if (aff.getCountry() != null) {
+            if (hasContent2)
+                json.append(",\n");
+            String code = Lexicon.getInstance().getCountryCode(aff.getCountry());
+            TextUtilities.appendN(json, '\t', nbTab + 1);
+            json.append("\"country\": {\n");
+            if (code != null) {
+                TextUtilities.appendN(json, '\t', nbTab + 2);
+                json.append("\"key\": \"" + code + "\",\n");
+            }
+            TextUtilities.appendN(json, '\t', nbTab + 2);
+            encoded = encoder.quoteAsUTF8(aff.getCountry());
+            output = new String(encoded);
+            json.append("\"value\": \"" + output +"\"\n");
+            TextUtilities.appendN(json, '\t', nbTab + 1); 
+            json.append("}");
+            hasContent2 = true;
+        }
+        json.append("\n");
+        TextUtilities.appendN(json, '\t', nbTab);
         json.append("}");
 
         return json.toString();

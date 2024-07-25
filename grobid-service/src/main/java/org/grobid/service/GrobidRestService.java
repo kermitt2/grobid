@@ -46,6 +46,7 @@ public class GrobidRestService implements GrobidPaths {
     private static final String AFFILIATIONS = "affiliations";
     public static final String CITATION = "citations";
     private static final String TEXT = "text";
+    private static final String TEXTS = "texts";
     private static final String SHA1 = "sha1";
     private static final String XML = "xml";
     public static final String INPUT = "input";
@@ -567,7 +568,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processNameAddressListPost(
-        @FormParam(TEXT) List<String> texts) {
+        @FormParam(TEXTS) List<String> texts) {
         return restProcessString.processNameAddressList(texts);
     }
 
@@ -579,7 +580,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response processNameAddressListPostJson(
-        @FormParam(TEXT) List<String> texts) {
+        @FormParam(TEXTS) List<String> texts) {
         return restProcessString.processNameAddressListJson(texts);
     }
 
@@ -635,7 +636,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_XML)
     @POST
     public Response processAddressListPost(
-        @FormParam(TEXT) List<String> texts) {
+        @FormParam(TEXTS) List<String> texts) {
         return restProcessString.processAddressList(texts);
     }
 
@@ -647,7 +648,7 @@ public class GrobidRestService implements GrobidPaths {
     @Produces(MediaType.APPLICATION_JSON)
     @POST
     public Response processAddressListPostJson(
-        @FormParam(TEXT) List<String> texts) {
+        @FormParam(TEXTS) List<String> texts) {
         return restProcessString.processAddressListJson(texts);
     }
 

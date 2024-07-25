@@ -297,8 +297,8 @@ grobid:
         #transformer: "allenai/scibert_scivocab_cased"
 
     - name: "name-address"
-      #engine: "wapiti"
-      engine: "delft"
+      engine: "wapiti"
+      #engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.00001
