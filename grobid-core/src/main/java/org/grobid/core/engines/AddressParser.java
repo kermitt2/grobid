@@ -167,43 +167,47 @@ System.out.println(allRes);
                     String clusterContent = StringUtils.normalizeSpace(LayoutTokensUtil.toText(cluster.concatTokens()));
                     if (clusterContent.trim().length() == 0)
                         continue;
-                    if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_COUNTRY)) {
+                    if (clusterLabel.equals(TaggingLabels.ADDRESS_COUNTRY)) {
                         if (aff.getCountry() != null) {
                             aff.setCountry(aff.getCountry() + " " + clusterContent);
                         } else {
                             aff.setCountry(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTCODE)) {
+                    } else if (clusterLabel.equals(TaggingLabels.ADDRESS_POSTCODE)) {
                         if (aff.getPostCode() != null) {
                             aff.setPostCode(aff.getPostCode() + " " + clusterContent);
                         } else {
                             aff.setPostCode(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTBOX)) {
+                    } else if (clusterLabel.equals(TaggingLabels.ADDRESS_POSTBOX)) {
                         if (aff.getPostBox() != null) {
                             aff.setPostBox(aff.getPostBox() + " " + clusterContent);
                         } else {
                             aff.setPostBox(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_REGION)) {
+                    } else if (clusterLabel.equals(TaggingLabels.ADDRESS_REGION)) {
                         if (aff.getRegion() != null) {
                             aff.setRegion(aff.getRegion() + " " + clusterContent);
                         } else {
                             aff.setRegion(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_SETTLEMENT)) {
+                    } else if (clusterLabel.equals(TaggingLabels.ADDRESS_SETTLEMENT)) {
                         if (aff.getSettlement() != null) {
                             aff.setSettlement(aff.getSettlement() + " " + clusterContent);
                         } else {
                             aff.setSettlement(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
-                    } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_ADDRESSLINE)) {
-                        if (aff.getAddrLine() != null) {
+                    } else if (clusterLabel.equals(TaggingLabels.ADDRESS_ADDRESSLINE)) {
+                        if (isAddressComplete(aff)) {
+                            localResults.add(aff);
+                            aff = new Affiliation();
+                            aff.setAddrLine(clusterContent);
+                        } else if (aff.getAddrLine() != null) {
                             aff.setAddrLine(aff.getAddrLine() + " " + clusterContent);
                         } else {
                             aff.setAddrLine(clusterContent);
@@ -224,6 +228,17 @@ System.out.println(allRes);
         }
 
         return results;
+    }
+
+    /**
+     * Check if the address if an affiliation is complete wrt addrLine, and settlement/country/postcode
+     */
+    private boolean isAddressComplete(Affiliation aff) {
+        if (aff.getAddrLine() != null && (aff.getSettlement() != null || aff.getPostCode() != null || 
+            aff.getCountry() != null))
+            return true;
+        else 
+            return false;
     }
 
 
