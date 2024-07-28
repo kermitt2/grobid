@@ -64,10 +64,12 @@ import java.util.SortedSet;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
+import java.util.stream.Collectors;
 
 import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
+import static org.grobid.core.engines.label.TaggingLabels.PARAGRAPH_LABEL;
 
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
@@ -252,13 +254,13 @@ public class FullTextParser extends AbstractParser {
                     }
                 } catch(Exception e) {
                     throw new GrobidException(
-                    "An exception occured while running consolidation on bibliographical references.", e);
+                    "An exception occurred while running consolidation on bibliographical references.", e);
                 }
             }
             doc.setBibDataSets(resCitations);
 
-			// full text processing
-			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            // full text processing
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultBody = null;
 			LayoutTokenization layoutTokenization = null;
 			List<Figure> figures = null;
@@ -272,10 +274,23 @@ public class FullTextParser extends AbstractParser {
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
-                resultBody = label(bodytext);
+                if (flavour != null) {
+                    // For the moment we put everything in a single paragraph
+                    resultBody = Arrays
+                        .stream(bodytext.split("\n"))
+                        .map(r -> r + "\t" + PARAGRAPH_LABEL)
+                        .collect(Collectors.joining("\n"));
 
-				// we apply now the figure and table models based on the fulltext labeled output
-				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
+                    // Add I- prefix on the first label
+                    String[] resultBodyAsArray = resultBody.split("\n");
+                    resultBodyAsArray[0] = resultBodyAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
+                    resultBody = String.join("\n", resultBodyAsArray);
+                } else {
+                    resultBody = label(bodytext);
+                }
+
+                // we apply now the figure and table models based on the fulltext labeled output
+                figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Figure figure : figures) {
                     if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
@@ -284,8 +299,8 @@ public class FullTextParser extends AbstractParser {
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
                 }
-                
-				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
+
+                tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Table table : tables) {
                     if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
@@ -300,7 +315,8 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
 
-				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+                equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
