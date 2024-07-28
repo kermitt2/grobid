@@ -114,9 +114,6 @@ public class SegmentationTrainer extends AbstractTrainer {
                 writer3 = new OutputStreamWriter(os3, StandardCharsets.UTF_8);
             }
 
-            // get a factory for SAX parser
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-
             for (File tf : refFiles) {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
@@ -127,6 +124,8 @@ public class SegmentationTrainer extends AbstractTrainer {
                 } else {
                     parser2 = new TEISegmentationSaxParser();
                 }
+                // get a factory for SAX parser
+                SAXParserFactory spf = SAXParserFactory.newInstance();
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();

@@ -4,22 +4,30 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.trainer.sax.TEIHeaderArticleLightSaxParser;
 import org.grobid.trainer.sax.TEIHeaderSaxParser;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class HeaderTrainer extends AbstractTrainer{
 
+    private final GrobidModels.ModelFlavour flavour;
+
     public HeaderTrainer() {
         super(GrobidModels.HEADER);
+        flavour = null;
     }
 
+    public HeaderTrainer(GrobidModels.ModelFlavour modelFlavour) {
+        super(GrobidModels.getModelFlavour(GrobidModels.HEADER, modelFlavour));
+        flavour = modelFlavour;
+    }
 
-	@Override
+    @Override
     public int createCRFPPData(File corpusPath, File trainingOutputPath) {
         return addFeaturesHeaders(corpusPath.getAbsolutePath() + "/tei", 
 						  		corpusPath.getAbsolutePath() + "/raw", 
@@ -111,8 +119,12 @@ public class HeaderTrainer extends AbstractTrainer{
                 String name = teifile.getName();
                 //System.out.println(name);
 
-                TEIHeaderSaxParser parser2 = new TEIHeaderSaxParser();
-                parser2.setFileName(name);
+                TEIHeaderSaxParser parser2;
+                if (flavour != null) {
+                    parser2 = new TEIHeaderArticleLightSaxParser();
+                } else {
+                    parser2 = new TEIHeaderSaxParser();
+                }
 
                 // get a factory
                 SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -120,7 +132,7 @@ public class HeaderTrainer extends AbstractTrainer{
                 SAXParser par = spf.newSAXParser();
                 par.parse(teifile, parser2);
 
-                ArrayList<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser2.getLabeledResult();
 
                 //System.out.println(labeled);
                 //System.out.println(parser2.getPDFName()+"._");
@@ -274,12 +286,16 @@ public class HeaderTrainer extends AbstractTrainer{
 
             if (writer2 != null) {
 				writer2.close();
-				os2.close();
+                if (os2 != null) {
+                    os2.close();
+                }
 			}
 			
 			if (writer3 != null) {
 				writer3.close();
-				os3.close();
+                if (os3 != null) {
+                    os3.close();
+                }
 			}
 			
         } catch (Exception e) {
@@ -296,8 +312,8 @@ public class HeaderTrainer extends AbstractTrainer{
      */
     public static void main(String[] args) throws Exception {
     	GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new HeaderTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer()));
+        AbstractTrainer.runTraining(new HeaderTrainer(GrobidModels.ModelFlavour.ARTICLE_LIGHT));
+        System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer(GrobidModels.ModelFlavour.ARTICLE_LIGHT)));
         System.exit(0);
     }
 }

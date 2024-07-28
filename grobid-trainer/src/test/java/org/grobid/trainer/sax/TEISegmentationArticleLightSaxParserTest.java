@@ -17,7 +17,6 @@ public class TEISegmentationArticleLightSaxParserTest {
     TEISegmentationArticleLightSaxParser target;
     SAXParserFactory spf;
 
-
     @Before
     public void setUp() throws Exception {
         spf = SAXParserFactory.newInstance();
@@ -32,11 +31,10 @@ public class TEISegmentationArticleLightSaxParserTest {
         p.parse(is, target);
 
         assertThat(target.getLabeledResult(), hasSize(greaterThan(0)));
-//        assertThat(target.getLabeledResult().get(0), hasSize(49));
-//        assertThat(target.getLabeledResult().get(0).get(0).toString(), is("I-<author>"));
-//        assertThat(target.getTokensResult().get(0).get(0).toString(), is("H"));
-//        assertThat(target.getLabeledResult().get(0).get(1).toString(), is("<author>"));
-//        assertThat(target.getTokensResult().get(0).get(1).toString(), is("."));
+        assertThat(target.getLabeledResult().get(0), is("RESEARCH I-<header>\n"));
+        assertThat(target.getLabeledResult().get(35), is("PLOS I-<header>\n"));
+        assertThat(target.getLabeledResult().get(65), is("PLOS I-<body>\n"));
+
 
     }
 
