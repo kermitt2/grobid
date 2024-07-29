@@ -55,16 +55,10 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import nu.xom.Element;
 
@@ -275,16 +269,45 @@ public class FullTextParser extends AbstractParser {
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
                 if (flavour != null) {
+                    // To avoid loosing potential data, we add in the body also the part of the header
+                    // that was discarded.
+
+                    String resultHeader = resHeader.getDiscardedPiecesTokens()
+                        .stream()
+                        .flatMap(ll -> ll.stream()
+                            .filter(l -> StringUtils.isNotBlank(l.getText()))
+                            .map(l -> l.getText() + "\t" + PARAGRAPH_LABEL)
+                        )
+                        .collect(Collectors.joining("\n"));
+
+                    List<LayoutToken> tokensHeader = resHeader.getDiscardedPiecesTokens()
+                        .stream()
+                        .flatMap(Collection::stream)
+                        .toList();
+
                     // For the moment we put everything in a single paragraph
                     resultBody = Arrays
                         .stream(bodytext.split("\n"))
                         .map(r -> r + "\t" + PARAGRAPH_LABEL)
                         .collect(Collectors.joining("\n"));
 
-                    // Add I- prefix on the first label
+                    // Add I- prefix on the first label of the discarded pieces from the header
+                    String[] resultHeaderAsArray = resultBody.split("\n");
+                    resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
+                    resultBody = String.join("\n", resultHeaderAsArray);
+
+                    // Add I- prefix on the first label of the body
                     String[] resultBodyAsArray = resultBody.split("\n");
                     resultBodyAsArray[0] = resultBodyAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
                     resultBody = String.join("\n", resultBodyAsArray);
+
+                    resultBody = resultHeader + "\n" + resultBody;
+                    List<LayoutToken> concatenatedTokenization = Stream
+                        .concat(tokensHeader.stream(), layoutTokenization.getTokenization().stream())
+                        .collect(Collectors.toList());
+                    layoutTokenization.setTokenization(concatenatedTokenization);
+
+
                 } else {
                     resultBody = label(bodytext);
                 }
@@ -325,12 +348,12 @@ public class FullTextParser extends AbstractParser {
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultAnnex = null;
-			List<LayoutToken> tokenizationsBody2 = null;
+			List<LayoutToken> tokensAnnex = null;
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
-				tokenizationsBody2 = featSeg.getRight().getTokenization();
+				tokensAnnex = featSeg.getRight().getTokenization();
 				resultAnnex = label(bodytext);
 				//System.out.println(rese);
 			}
@@ -345,7 +368,7 @@ public class FullTextParser extends AbstractParser {
             // final combination
             toTEI(doc, // document
 				resultBody, resultAnnex, // labeled data for body and annex
-				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
+				layoutTokenization, tokensAnnex, // tokenization for body and annex
 				resHeader, // header
 				figures, tables, equations, markerTypes,
 				config);

@@ -1058,7 +1058,10 @@ public class HeaderParser extends AbstractParser {
                 }*/
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
-            }   
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_OTHER)) {
+                biblio.addDiscardedPiece(clusterContent);
+                biblio.addDiscardedPieceTokens(cluster.concatTokens());
+            }
             /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }*/
