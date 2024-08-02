@@ -1128,6 +1128,14 @@ public class FullTextParser extends AbstractParser {
                                    String pathFullText,
                                    String pathTEI,
                                    int id) {
+        return createTraining(inputFile, pathFullText, pathTEI, id, null);
+    }
+
+    public Document createTraining(File inputFile,
+                                   String pathFullText,
+                                   String pathTEI,
+                                   int id,
+                                   GrobidModels.ModelFlavour flavour) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
@@ -1153,7 +1161,7 @@ public class FullTextParser extends AbstractParser {
             doc.produceStatistics();
 
             String fulltext = //getAllTextFeatured(doc, false);
-                    parsers.getSegmentationParser().getAllLinesFeatured(doc);
+                    parsers.getSegmentationParser(flavour).getAllLinesFeatured(doc);
             //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
@@ -1174,8 +1182,8 @@ public class FullTextParser extends AbstractParser {
             FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), StandardCharsets.UTF_8);
 
             if (isNotBlank(fulltext)) {
-                String rese = parsers.getSegmentationParser().label(fulltext);
-                StringBuffer bufferFulltext = parsers.getSegmentationParser().trainingExtraction(rese, tokenizations, doc);
+                String rese = parsers.getSegmentationParser(flavour).label(fulltext);
+                StringBuffer bufferFulltext = parsers.getSegmentationParser(flavour).trainingExtraction(rese, tokenizations, doc);
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
@@ -1189,7 +1197,7 @@ public class FullTextParser extends AbstractParser {
                 writer.close();
             }
 
-            doc = parsers.getSegmentationParser().processing(documentSource,
+            doc = parsers.getSegmentationParser(flavour).processing(documentSource,
                 GrobidAnalysisConfig.defaultInstance());
 
             // REFERENCE SEGMENTER MODEL
@@ -1391,7 +1399,7 @@ public class FullTextParser extends AbstractParser {
                         headerTokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts);
+                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser(flavour).getSectionHeaderFeatured(doc, documentHeaderParts);
                 String header = featuredHeader.getLeft();
 
                 if ((header != null) && (header.trim().length() > 0)) {
@@ -1401,12 +1409,12 @@ public class FullTextParser extends AbstractParser {
                     writer.write(header + "\n");
                     writer.close();
 
-                    String rese = parsers.getHeaderParser().label(header);
+                    String rese = parsers.getHeaderParser(flavour).label(header);
                     BiblioItem resHeader = new BiblioItem();
-                    resHeader = parsers.getHeaderParser().resultExtraction(rese, headerTokenizations, resHeader);
+                    resHeader = parsers.getHeaderParser(flavour).resultExtraction(rese, headerTokenizations, resHeader);
 
                     // buffer for the header block
-                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
+                    StringBuilder bufferHeader = parsers.getHeaderParser(flavour).trainingExtraction(rese, headerTokenizations);
                     Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
                     if (lang != null) {
                         doc.setLanguage(lang.getLang());
@@ -2734,8 +2742,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
 
-            tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-                    layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+            tei = teiFormatter.toTEIBody(
+                tei,
+                reseBody,
+                resHeader,
+                resCitations,
+                layoutTokenization,
+                figures,
+                tables,
+                equations,
+                markerTypes,
+                doc,
+                config
+            );
 
             tei.append("\t\t<back>\n");
 

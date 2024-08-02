@@ -152,6 +152,9 @@ grobid:
         epsilon: 0.000001
         window: 30
         nbMaxIterations: 1500
+      delft:
+        architecture: "BidLSTM_ChainCRF_FEATURES"
+        useELMo: false
 
     - name: "reference-segmenter"
       engine: "wapiti"

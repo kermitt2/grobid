@@ -540,7 +540,7 @@ public class Engine implements Closeable {
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
         System.out.println(inputFile.getPath());
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id);
+        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, GrobidModels.ModelFlavour.ARTICLE_LIGHT);
     }
 
     /**
