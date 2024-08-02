@@ -292,16 +292,16 @@ public class FullTextParser extends AbstractParser {
                         .collect(Collectors.joining("\n"));
 
                     // Add I- prefix on the first label of the discarded pieces from the header
-                    String[] resultHeaderAsArray = resultBody.split("\n");
+                    String[] resultHeaderAsArray = resultHeader.split("\n");
                     resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
-                    resultBody = String.join("\n", resultHeaderAsArray);
+                    resultHeader = String.join("\n", resultHeaderAsArray);
 
                     // Add I- prefix on the first label of the body
                     String[] resultBodyAsArray = resultBody.split("\n");
                     resultBodyAsArray[0] = resultBodyAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
                     resultBody = String.join("\n", resultBodyAsArray);
 
-                    resultBody = resultHeader + "\n" + resultBody;
+                    resultBody = StringUtils.strip(resultHeader + "\n" + resultBody);
                     List<LayoutToken> concatenatedTokenization = Stream
                         .concat(tokensHeader.stream(), layoutTokenization.getTokenization().stream())
                         .collect(Collectors.toList());
