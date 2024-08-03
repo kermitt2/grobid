@@ -5,6 +5,7 @@ import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
+import org.grobid.core.GrobidModels.Flavor;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -20,6 +21,11 @@ public class SegmentationTrainer extends AbstractTrainer {
     public SegmentationTrainer() {
         super(GrobidModels.SEGMENTATION);
     }
+
+    public SegmentationTrainer(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
+    }
+
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
@@ -338,9 +344,27 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
+        // if we have a parameter, it gives the flavor refinement to consider
+        Flavor theFlavor = null;
+        if (args.length > 0) {
+            String flavor = args[0];
+            if (flavor.toLowerCase().equals("light")) {
+                theFlavor = Flavor.LIGHT;
+            } else if (flavor.toLowerCase().equals("ietf")) {
+                theFlavor = Flavor.IETF;
+            } else {
+                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
+            }
+        }
+
         GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new SegmentationTrainer());
-        System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer()));
+        if (theFlavor == null) {
+            AbstractTrainer.runTraining(new SegmentationTrainer());
+            System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer()));
+        } else {
+            AbstractTrainer.runTraining(new SegmentationTrainer(theFlavor));
+            System.out.println(AbstractTrainer.runEvaluation(new SegmentationTrainer(theFlavor)));
+        }
         System.exit(0);
     }
 }
