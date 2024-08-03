@@ -111,6 +111,14 @@ grobid:
         window: 50
         nbMaxIterations: 2000
 
+    - name: "segmentation-article-light-ref"
+      engine: "wapiti"
+      wapiti:
+        # wapiti training parameters, they will be used at training time only
+        epsilon: 0.0000001
+        window: 50
+        nbMaxIterations: 2000
+
     - name: "fulltext"
       # at this time, must always be CRF wapiti, the input sequence size is too large for a Deep Learning implementation
       engine: "wapiti"
