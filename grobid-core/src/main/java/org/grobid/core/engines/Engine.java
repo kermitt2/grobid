@@ -557,7 +557,13 @@ public class Engine implements Closeable {
      */
     public String fullTextToTEI(File inputFile,
                                 GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, null, config).getTei();
+        return fullTextToTEIDoc(inputFile, null,null, config).getTei();
+    }
+
+    public String fullTextToTEI(File inputFile, 
+                                String flavor,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToTEIDoc(inputFile, flavor, null, config).getTei();
     }
 
     /**
@@ -573,19 +579,21 @@ public class Engine implements Closeable {
      * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,
+                                String flavor,
                                 String md5Str,
                                 GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, md5Str, config).getTei();
+        return fullTextToTEIDoc(inputFile, flavor, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
-                                     String md5Str,
-                                     GrobidAnalysisConfig config) throws Exception {
+                                    String flavor,
+                                    String md5Str,
+                                    GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(inputFile, md5Str, config);
+        resultDoc = fullTextParser.processing(inputFile, flavor, md5Str, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + inputFile + ". Time to process: "
 			+ (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
@@ -593,16 +601,17 @@ public class Engine implements Closeable {
 
     public Document fullTextToTEIDoc(File inputFile,
                                      GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(inputFile, null, config);
+        return fullTextToTEIDoc(inputFile, null, null, config);
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
-                                     GrobidAnalysisConfig config) throws Exception {
+                                    String flavor,
+                                    GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);
         long time = System.currentTimeMillis();
-        resultDoc = fullTextParser.processing(documentSource, config);
+        resultDoc = fullTextParser.processing(documentSource, flavor, config);
         LOGGER.debug("Ending processing fullTextToTEI on " + documentSource + ". Time to process: "
                 + (System.currentTimeMillis() - time) + "ms");
         return resultDoc;
