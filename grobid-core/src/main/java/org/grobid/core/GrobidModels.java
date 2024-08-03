@@ -72,6 +72,7 @@ public enum GrobidModels implements GrobidModel {
     // is similar to other general technical and scientific document
     public enum ModelFlavour {
         ARTICLE_LIGHT("article/light"),
+        ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
         BLANK("blank"),
         _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
