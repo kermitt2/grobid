@@ -2,7 +2,6 @@ package org.grobid.core;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.engines.AbstractParser.Flavor;
 
 import java.io.File;
 import java.util.concurrent.ConcurrentHashMap;
@@ -134,11 +133,11 @@ public enum GrobidModels implements GrobidModel {
         return folderName;
     }
 
-    public static GrobidModel getModelCollection(GrobidModel model, Collection collection) {
-        if (collection == null) {
+    public static GrobidModel getModelFlavor(GrobidModel model, Flavor flavor) {
+        if (flavor == null) {
             return model;
         } else 
-            return modelFor(model.toString() + "/" + collection.getLabel().toLowerCase());
+            return modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
     }
 
     public static GrobidModel modelFor(final String name) {

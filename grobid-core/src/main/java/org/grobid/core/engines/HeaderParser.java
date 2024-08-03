@@ -24,6 +24,7 @@ import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.tokenization.LabeledTokensContainer;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.counters.CntManager;
 import org.slf4j.Logger;
@@ -67,6 +68,18 @@ public class HeaderParser extends AbstractParser {
 
     public HeaderParser(EngineParsers parsers) {
         super(GrobidModels.HEADER);
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
+
+    public HeaderParser(EngineParsers parsers, CntManager cntManager, Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor), cntManager);
+        this.parsers = parsers;
+        GrobidProperties.getInstance();
+    }
+
+    public HeaderParser(EngineParsers parsers, Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor));
         this.parsers = parsers;
         GrobidProperties.getInstance();
     }

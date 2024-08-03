@@ -10,6 +10,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.EnumMap;
 
 public class EngineParsers implements Closeable {
     public static final Logger LOGGER = LoggerFactory.getLogger(EngineParsers.class);
