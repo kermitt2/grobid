@@ -951,7 +951,7 @@ public class GrobidRestProcessFiles {
         DocumentSource documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
 
-        Document teiDoc = engine.fullTextToTEIDoc(documentSource, config);
+        Document teiDoc = engine.fullTextToTEIDoc(documentSource, null, config);
 
         documentSource = 
             DocumentSource.fromPdf(originFile, config.getStartPage(), config.getEndPage(), true, true, false);
