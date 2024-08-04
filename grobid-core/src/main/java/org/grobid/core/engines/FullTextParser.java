@@ -179,7 +179,7 @@ public class FullTextParser extends AbstractParser {
 
         Flavor flavorObject = null;
         if (flavor != null && flavor.length()>0) 
-            flavorObject = Flavor.valueOf(flavor); 
+            flavorObject = Flavor.fromLabel(flavor); 
         try {
 			// general segmentation
 			Document doc = parsers.getSegmentationParser(flavorObject).processing(documentSource, config);

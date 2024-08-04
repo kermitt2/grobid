@@ -82,6 +82,15 @@ public enum GrobidModels implements GrobidModel {
         public String getLabel() {
             return label;
         }
+
+        public static Flavor fromLabel(String text) {
+            for (Flavor f : Flavor.values()) {
+                if (f.label.equalsIgnoreCase(text)) {
+                    return f;
+                }
+            }
+            return null;
+        }
     };
 
 
