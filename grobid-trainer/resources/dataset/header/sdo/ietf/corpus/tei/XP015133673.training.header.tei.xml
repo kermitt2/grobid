@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015133673"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note type="other">Internet Research Task Force (IRTF)<lb/></note>
+
+	M. Mosko<lb/> 
+
+	<note type="doctype">Request for Comments</note>: 
+
+	<idno>8569<lb/></idno> 
+
+	PARC, Inc.<lb/> Category: Experimental<lb/> I. Solis<lb/>
+
+	<idno type="ISSN">ISSN: 2070-1721<lb/></idno>
+
+	LinkedIn<lb/> C. Wood<lb/> University of California Irvine<lb/>
+	
+	<date type="publication">July 2019<lb/></date>
+
+	<docTitle>
+	<titlePart>Content-Centric Networking (CCNx) Semantics<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract<lb/> This document describes the core concepts of the Content-Centric<lb/> Networking (CCNx) architecture and presents a network protocol based<lb/> on two messages: Interests and Content Objects. It specifies the set<lb/> of mandatory and optional fields within those messages and describes<lb/> their behavior and interpretation. This architecture and protocol<lb/> specification is independent of a specific wire encoding.<lb/> The protocol also uses a control message called an Interest Return,<lb/> whereby one system can return an Interest message to the previous hop<lb/> due to an error condition. This indicates to the previous hop that<lb/> the current system will not respond to the Interest.<lb/></div>
+
+	<note type="other">This document is a product of the</note> <note type="group">Information-Centric Networking<lb/> Research Group (ICNRG)</note>. <note type="other">The document received wide review among<lb/> ICNRG participants. Two full implementations are in active use and<lb/> have informed the technical maturity of the protocol specification.<lb/></note>
+
+	Mosko, et al.<lb/> Experimental<lb/> [Page 1]<lb/> RFC 8569<lb/> CCNx Semantics<lb/> July 2019<lb/>
+
+	<note type="other">Status of This Memo<lb/> This document is not an Internet Standards Track specification; it is<lb/> published for examination, experimental implementation, and<lb/> evaluation.<lb/> This document defines an Experimental Protocol for the Internet<lb/> community. This document is a product of the Internet Research Task<lb/> Force (IRTF). The IRTF publishes the results of Internet-related<lb/> research and development activities. These results might not be<lb/> suitable for deployment. This RFC represents the consensus of the<lb/> Information-Centric Networking Research Group of the Internet<lb/> Research Task Force (IRTF). Documents approved for publication by<lb/> the IRSG are not candidates for any level of Internet Standard; see<lb/> Section 2 of RFC 7841.<lb/> Information about the current status of this document, any errata,<lb/> and how to provide feedback on it may be obtained at<lb/> https://www.rfc-editor.org/info/rfc8569.<lb/></note>
+
+	Copyright Notice<lb/>
+
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document.<lb/></note>
+
+	Mosko, et al.<lb/> Experimental<lb/> [Page 2]<lb/> RFC 8569<lb/> CCNx Semantics<lb/> July 2019<lb/> 
+
+	<byline>
+	<docAuthor>Marc Mosko<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>PARC, Inc.<lb/></affiliation> 
+	</byline>
+	
+	<address>Palo Alto, California 94304<lb/> United States of America<lb/></address> 
+
+	<phone>Phone: +01 650-812-4405<lb/></phone>
+
+	<email>Email: marc.mosko@parc.com<lb/></email>
+
+	<byline>
+	<docAuthor>Ignacio Solis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LinkedIn<lb/></affiliation>
+	</byline>
+
+	<address>Mountain View, California 94043<lb/> United States of America<lb/></address> 
+
+	<email>Email: nsolis@linkedin.com<lb/></email> 
+
+	<byline>
+	<docAuthor>Christopher A. Wood<lb/> </docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>University of California Irvine<lb/></affiliation>
+	</byline>
+	
+	<address>Irvine, California 92697<lb/> United States of America<lb/></address> 
+
+	<phone>Phone: +01 315-806-5939<lb/></phone>
+
+	<email>Email: woodc1@uci.edu</email>
+
+		</front>
+	</text>
+</tei>

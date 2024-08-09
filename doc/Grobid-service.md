@@ -27,9 +27,9 @@ From a development installation, you can also build and install the service as a
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.0.zip
-mv grobid-service-0.8.0 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.0.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.1.zip
+mv grobid-service-0.8.1 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.1.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -125,13 +125,15 @@ The consolidation parameters (`consolidateHeader`, `consolidateCitations`, `cons
 * `1`, means consolidation against CrossRef/biblio-glutton and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
 * `2`, means consolidation against CrossRef/biblio-glutton and, if matching, addition of the DOI only
 
+The consolidation for header can use a fourth value (`3`), restricting the consolidation to the usage of DOI only, if a DOI has been extracted in the header section. 
+
 ### PDF to TEI conversion services
 
 #### /api/processHeaderDocument
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
-`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the header metadata and inject DOI only).
+`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header metadata and inject DOI only) or `3` (consolidate using only extracted DOI, if extracted, and do not try to consolidate using any other metadata).
 
 | method     | request type          | response type       | parameters               | requirement    | description                                                                                                                                                                                                                                      |
 |------------|-----------------------|---------------------|--------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -64,12 +64,12 @@ subprojects {
 //    targetCompatibility = 1.11
 
     kotlin {
-        jvmToolchain(17)
+        jvmToolchain(11)
     }
 
     java {
         toolchain {
-            languageVersion.set(JavaLanguageVersion.of(17))
+            languageVersion.set(JavaLanguageVersion.of(11))
         }
     }
 
@@ -490,18 +490,27 @@ project(":grobid-trainer") {
         "train_name_header"           : "org.grobid.trainer.NameHeaderTrainer",
         "train_name_citation"         : "org.grobid.trainer.NameCitationTrainer",
         "train_affiliation_address"   : "org.grobid.trainer.AffiliationAddressTrainer",
-        "train_header"                : "org.grobid.trainer.HeaderTrainer",
+//        "train_header"                : "org.grobid.trainer.HeaderTrainer",
         "train_fulltext"              : "org.grobid.trainer.FulltextTrainer",
         "train_shorttext"             : "org.grobid.trainer.ShorttextTrainer",
         "train_figure"                : "org.grobid.trainer.FigureTrainer",
         "train_table"                 : "org.grobid.trainer.TableTrainer",
         "train_citation"              : "org.grobid.trainer.CitationTrainer",
         "train_date"                  : "org.grobid.trainer.DateTrainer",
-        "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
+//        "train_segmentation"          : "org.grobid.trainer.SegmentationTrainer",
         "train_reference_segmentation": "org.grobid.trainer.ReferenceSegmenterTrainer",
         "train_ebook_model"           : "org.grobid.trainer.EbookTrainer",
         "train_patent_citation"       : "org.grobid.trainer.PatentParserTrainer",
         "train_funding_acknowledgement" : "org.grobid.trainer.FundingAcknowledgementTrainer"
+    ]
+
+    def complexTrainerTasks = [
+        "train_header"                : ["org.grobid.trainer.HeaderTrainer", ""],
+        "train_header_light"           : ["org.grobid.trainer.HeaderTrainer", "light"],
+        "train_header_ietf"           : ["org.grobid.trainer.HeaderTrainer", "ietf"],
+        "train_segmentation"          : ["org.grobid.trainer.SegmentationTrainer", ""],
+        "train_segmentation_light"     : ["org.grobid.trainer.SegmentationTrainer", "light"],
+        "train_segmentation_ietf"     : ["org.grobid.trainer.SegmentationTrainer", "ietf"]
     ]
 
     def libraries = ""
@@ -525,6 +534,18 @@ project(":grobid-trainer") {
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
             systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        }
+    }
+
+    complexTrainerTasks.each { taskName, mainClassNameAndArgs ->
+        tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
+            main = mainClassNameAndArgs[0]
+            classpath = sourceSets.main.runtimeClasspath
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+            if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"    
+            args mainClassNameAndArgs[1]
         }
     }
 

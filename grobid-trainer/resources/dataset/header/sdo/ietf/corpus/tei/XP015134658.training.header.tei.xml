@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015134658"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	Network Work group<lb/> N. Nainar<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	C. Pignataro<lb/> Updates: 8287 (if approved)<lb/> Cisco Systems, Inc.<lb/> Intended status: Standards Track<lb/> F. Iqbal<lb/> Expires: February 9, 2020<lb/> Individual<lb/> A. Vainshtein<lb/> ECI Telecom<lb/>
+	<date>August 8, 2019<lb/></date>
+
+	<docTitle>
+	<titlePart>RFC8287 Sub-TLV Length Clarification<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-ietf-mpls-rfc8287-len-clarification-03<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> RFC8287 defines the extensions to MPLS LSP Ping and Traceroute for<lb/> Segment Routing IGP-Prefix and IGP-Adjacency Segment Identifier<lb/> (SIDs) with an MPLS data plane. RFC8287 proposes 3 Target FEC Stack<lb/> Sub-TLVs. While the standard defines the format and procedure to<lb/> handle those Sub-TLVs, it does not sufficiently clarify how the<lb/> length of the Segment ID Sub-TLVs should be computed to include in<lb/> the Length field of the Sub-TLVs which may result in interoperability<lb/> issues.<lb/> This document updates RFC8287 by clarifying the length of each<lb/> Segment ID Sub-TLVs defined in RFC8287.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months <lb/>and may be updated, replaced, or obsoleted by other documents at any <lb/>time. It is inappropriate to use Internet-Drafts as reference <lb/>material or to cite them other than as &quot;work in progress.&quot; <lb/>This Internet-Draft will expire on February 9, 2020. <lb/> </note>
+
+	Nainar, et al. <lb/>Expires February 9, 2020 <lb/> [Page 1] <lb/> 
+	<note type="doctype">Internet-Draft <lb/></note>
+
+	RFC8287 Sub-TLV Length Clarification <lb/>August 2019 <lb/> 
+
+	Copyright Notice <lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the <lb/>document authors. All rights reserved. <lb/>This document is subject to BCP 78 and the IETF Trust&apos;s Legal <lb/>Provisions Relating to IETF Documents <lb/>(https://trustee.ietf.org/license-info) in effect on the date of <lb/>publication of this document. Please review these documents <lb/>carefully, as they describe your rights and restrictions with respect <lb/>to this document. Code Components extracted from this document must <lb/>include Simplified BSD License text as described in Section 4.e of <lb/>the Trust Legal Provisions and are provided without warranty as <lb/>described in the Simplified BSD License. <lb/></note>
+
+	<byline>
+	<docAuthor>Nagendra Kumar Nainar<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cisco Systems, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>7200-12 Kit Creek Road<lb/> Research Triangle Park, NC 27709<lb/> US<lb/></address>
+
+	<email>Email: naikumar@cisco.com<lb/></email>
+
+	<byline>
+	<docAuthor>Carlos Pignataro<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Cisco Systems, Inc.<lb/></affiliation>
+	</byline>
+
+	<address>7200-11 Kit Creek Road<lb/> Research Triangle Park, NC 27709<lb/> US<lb/></address>
+
+	<email>Email: cpignata@cisco.com<lb/></email>
+
+	<byline>
+	<docAuthor>Faisal Iqbal<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Individual<lb/></affiliation>
+	</byline>
+
+	<address>Canada<lb/></address>
+
+	<email>Email: faisal.iqbal@msn.com<lb/></email>
+
+	<byline>
+	<docAuthor>Alexander Vainshtein<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>ECI Telecom<lb/></affiliation>
+	</byline>
+
+	<address>Israel<lb/></address>
+
+	<email>Email: vainshtein.alex@gmail.com</email>
+
+		</front>
+	</text>
+</tei>

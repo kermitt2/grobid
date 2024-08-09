@@ -19,6 +19,9 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
+    SEGMENTATION_LIGHT("segmentation/light"),
+    SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
+    SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
@@ -34,6 +37,9 @@ public enum GrobidModels implements GrobidModel {
     TABLE("table"),
     HEADER("header"),
     HEADER_ARTICLE_LIGHT("header/article/light"),
+    HEADER_LIGHT("header/light"),
+    HEADER_SDO_3GPP("header/sdo/3gpp"),
+    HEADER_SDO_IETF("header/sdo/ietf"),
     NAMES_CITATION("name/citation"),
     NAMES_HEADER("name/header"),
     PATENT_PATENT("patent/patent"),
@@ -66,25 +72,35 @@ public enum GrobidModels implements GrobidModel {
             return modelFor(model.toString() + "/" + modelFlavour.getLabel().toLowerCase());
     }
 
-    // ModelFlavours are dedicated models variant, but using the same base parser.
+    // Flavors are dedicated models variant, but using the same base parser.
     // This is used in particular for scientific or technical documents like standards (SDO) 
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
-    public enum ModelFlavour {
+    public enum Flavor {
+        LIGHT("light"),
+        _3GPP("sdo/3gpp"),
         ARTICLE_LIGHT("article/light"),
         ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
         BLANK("blank"),
-        _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
         public final String label;
 
-        private ModelFlavour(String label) {
+        private Flavor(String label) {
             this.label = label;
         }
 
         public String getLabel() {
             return label;
+        }
+
+        public static Flavor fromLabel(String text) {
+            for (Flavor f : Flavor.values()) {
+                if (f.label.equalsIgnoreCase(text)) {
+                    return f;
+                }
+            }
+            return null;
         }
 
         public String toString() {
@@ -138,6 +154,13 @@ public enum GrobidModels implements GrobidModel {
     @Override
     public String toString() {
         return folderName;
+    }
+
+    public static GrobidModel getModelFlavor(GrobidModel model, Flavor flavor) {
+        if (flavor == null) {
+            return model;
+        } else
+            return modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
     }
 
     public static GrobidModel modelFor(final String name) {

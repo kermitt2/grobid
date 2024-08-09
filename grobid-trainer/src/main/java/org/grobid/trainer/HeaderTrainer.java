@@ -6,6 +6,7 @@ import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEIHeaderArticleLightSaxParser;
 import org.grobid.trainer.sax.TEIHeaderSaxParser;
+import org.grobid.core.GrobidModels.Flavor;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -22,9 +23,8 @@ public class HeaderTrainer extends AbstractTrainer{
         flavour = null;
     }
 
-    public HeaderTrainer(GrobidModels.ModelFlavour modelFlavour) {
-        super(GrobidModels.getModelFlavour(GrobidModels.HEADER, modelFlavour));
-        flavour = modelFlavour;
+    public HeaderTrainer(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor));
     }
 
     @Override
@@ -290,14 +290,14 @@ public class HeaderTrainer extends AbstractTrainer{
                     os2.close();
                 }
 			}
-			
+
 			if (writer3 != null) {
 				writer3.close();
                 if (os3 != null) {
                     os3.close();
                 }
 			}
-			
+
         } catch (Exception e) {
             throw new GrobidException("An exception occured while running Grobid.", e);
         }
@@ -311,9 +311,28 @@ public class HeaderTrainer extends AbstractTrainer{
      * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
-    	GrobidProperties.getInstance();
-        AbstractTrainer.runTraining(new HeaderTrainer(GrobidModels.ModelFlavour.ARTICLE_LIGHT));
-        System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer(GrobidModels.ModelFlavour.ARTICLE_LIGHT)));
+        // if we have a parameter, it gives the flavor refinement to consider
+        Flavor theFlavor = null;
+        if (args.length > 0) {
+            String flavor = args[0];
+            if (flavor.toLowerCase().equals("light")) {
+                theFlavor = Flavor.LIGHT;
+            } else if (flavor.toLowerCase().equals("ietf")) {
+                theFlavor = Flavor.IETF;
+            } else {
+                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
+            }
+        }
+
+        GrobidProperties.getInstance();
+        if (theFlavor == null) {
+            AbstractTrainer.runTraining(new HeaderTrainer());
+            System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer()));
+        } else {
+            AbstractTrainer.runTraining(new HeaderTrainer(theFlavor));
+            System.out.println(AbstractTrainer.runEvaluation(new HeaderTrainer(theFlavor)));
+        }
+
         System.exit(0);
     }
 }
