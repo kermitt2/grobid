@@ -19,10 +19,9 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
-    SEGMENTATION_LIGHT("segmentation/light"),
+    SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
     SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
-    SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
     CITATION("citation"),
     REFERENCE_SEGMENTER("reference-segmenter"),
     DATE("date"),
@@ -37,7 +36,6 @@ public enum GrobidModels implements GrobidModel {
     TABLE("table"),
     HEADER("header"),
     HEADER_ARTICLE_LIGHT("header/article/light"),
-    HEADER_LIGHT("header/light"),
     HEADER_SDO_3GPP("header/sdo/3gpp"),
     HEADER_SDO_IETF("header/sdo/ietf"),
     NAMES_CITATION("name/citation"),
@@ -65,23 +63,15 @@ public enum GrobidModels implements GrobidModel {
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
 
-    public static GrobidModel getModelFlavour(GrobidModels model, ModelFlavour modelFlavour) {
-        if (modelFlavour == null) {
-            return model;
-        } else
-            return modelFor(model.toString() + "/" + modelFlavour.getLabel().toLowerCase());
-    }
-
     // Flavors are dedicated models variant, but using the same base parser.
     // This is used in particular for scientific or technical documents like standards (SDO) 
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
     public enum Flavor {
-        LIGHT("light"),
-        _3GPP("sdo/3gpp"),
+        BLANK("blank"),
         ARTICLE_LIGHT("article/light"),
         ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
-        BLANK("blank"),
+        _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
         public final String label;

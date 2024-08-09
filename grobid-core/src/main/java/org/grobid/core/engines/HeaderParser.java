@@ -66,12 +66,6 @@ public class HeaderParser extends AbstractParser {
         GrobidProperties.getInstance();
     }
 
-    public HeaderParser(EngineParsers parsers, GrobidModels.ModelFlavour modelFlavour) {
-        super(GrobidModels.getModelFlavour(GrobidModels.HEADER, modelFlavour));
-        this.parsers = parsers;
-        GrobidProperties.getInstance();
-    }
-
     public HeaderParser(EngineParsers parsers) {
         super(GrobidModels.HEADER);
         this.parsers = parsers;

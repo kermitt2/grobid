@@ -242,7 +242,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processFulltextDocument(final InputStream inputStream,
-                                        final String flavor,
+                                        final GrobidModels.Flavor flavor,
                                         final int consolidateHeader,
                                         final int consolidateCitations,
                                         final int consolidateFunders,
@@ -253,8 +253,7 @@ public class GrobidRestProcessFiles {
                                         final int endPage,
                                         final boolean generateIDs,
                                         final boolean segmentSentences,
-                                          final List<String> teiCoordinates,
-                                          final GrobidModels.ModelFlavour flavour) throws Exception {
+                                        final List<String> teiCoordinates) throws Exception {
         LOGGER.debug(methodLogIn());
 
         String retVal = null;
@@ -419,7 +418,7 @@ public class GrobidRestProcessFiles {
      * full text
      */
     public Response processStatelessFulltextAssetDocument(final InputStream inputStream,
-                                                        final String flavor,
+                                                        final GrobidModels.Flavor flavor,
                                                         final int consolidateHeader,
                                                         final int consolidateCitations,
                                                         final int consolidateFunders,

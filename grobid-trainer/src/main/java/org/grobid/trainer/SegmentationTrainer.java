@@ -1,43 +1,33 @@
 package org.grobid.trainer;
 
 import org.grobid.core.GrobidModels;
+import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
 import org.grobid.trainer.sax.TEISegmentationArticleLightSaxParser;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
-import org.grobid.core.GrobidModels.Flavor;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import org.apache.commons.io.FileUtils;
-
-import static org.grobid.core.GrobidModels.SEGMENTATION_ARTICLE_LIGHT;
 
 public class SegmentationTrainer extends AbstractTrainer {
 
-    private final GrobidModels.ModelFlavour flavour;
+    private final GrobidModels.Flavor flavor;
 
     public SegmentationTrainer() {
         super(GrobidModels.SEGMENTATION);
-        flavour = null;
+        flavor = null;
     }
 
-    public SegmentationTrainer(GrobidModels.ModelFlavour modelFlavour) {
-        super(GrobidModels.getModelFlavour(GrobidModels.SEGMENTATION, modelFlavour));
-        flavour = modelFlavour;
+    public SegmentationTrainer(GrobidModels.Flavor modelFlavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, modelFlavor));
+        flavor = modelFlavor;
     }
-
-    public SegmentationTrainer(Flavor flavor) {
-        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
-    }
-
 
     @Override
     public int createCRFPPData(File corpusPath, File outputFile) {
@@ -125,7 +115,7 @@ public class SegmentationTrainer extends AbstractTrainer {
                 LOGGER.info("Processing: " + name);
 
                 TEISegmentationSaxParser parser2;
-                if (flavour != null) {
+                if (flavor != null) {
                     parser2 = new TEISegmentationArticleLightSaxParser();
                 } else {
                     parser2 = new TEISegmentationSaxParser();
@@ -258,9 +248,9 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
         Flavor theFlavor = null;
         if (args.length > 0) {
             String flavor = args[0];
-            if (flavor.toLowerCase().equals("light")) {
-                theFlavor = Flavor.LIGHT;
-            } else if (flavor.toLowerCase().equals("ietf")) {
+            if (flavor.equalsIgnoreCase("light")) {
+                theFlavor = Flavor.ARTICLE_LIGHT;
+            } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;
             } else {
                 System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");

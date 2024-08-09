@@ -119,7 +119,7 @@ public class Engine implements Closeable {
      * @throws IOException
      */
     public List<org.grobid.core.data.Date> processDate(String dateBlock) throws IOException {
-        List<org.grobid.core.data.Date> result = parsers.getDateParser().processing(dateBlock);
+        List<org.grobid.core.data.Date> result = parsers.getDateParser().process(dateBlock);
         return result;
     }
 
@@ -540,7 +540,7 @@ public class Engine implements Closeable {
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
         System.out.println(inputFile.getPath());
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, GrobidModels.ModelFlavour.ARTICLE_LIGHT);
+        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, GrobidModels.Flavor.ARTICLE_LIGHT);
     }
 
     /**
@@ -560,7 +560,7 @@ public class Engine implements Closeable {
     }
 
     public String fullTextToTEI(File inputFile,
-                                String flavor,
+                                GrobidModels.Flavor flavor,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, null, config).getTei();
     }
@@ -577,14 +577,14 @@ public class Engine implements Closeable {
      * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,
-                                String flavor,
+                                GrobidModels.Flavor flavor,
                                 String md5Str,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     String md5Str,
                                      GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
@@ -603,17 +603,8 @@ public class Engine implements Closeable {
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     GrobidAnalysisConfig config) throws Exception {
-        return fullTextToTEIDoc(documentSource, config, null);
-    }
-
-
-    public Document fullTextToTEIDoc(
-        DocumentSource documentSource,
-        GrobidAnalysisConfig config,
-        GrobidModels.ModelFlavour flavour
-    ) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + documentSource);

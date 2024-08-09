@@ -16,15 +16,16 @@ import java.util.StringTokenizer;
 
 public class HeaderTrainer extends AbstractTrainer{
 
-    private final GrobidModels.ModelFlavour flavour;
+    private final GrobidModels.Flavor flavor;
 
     public HeaderTrainer() {
         super(GrobidModels.HEADER);
-        flavour = null;
+        this.flavor = null;
     }
 
     public HeaderTrainer(Flavor flavor) {
         super(GrobidModels.getModelFlavor(GrobidModels.HEADER, flavor));
+        this.flavor = flavor;
     }
 
     @Override
@@ -120,7 +121,7 @@ public class HeaderTrainer extends AbstractTrainer{
                 //System.out.println(name);
 
                 TEIHeaderSaxParser parser2;
-                if (flavour != null) {
+                if (this.flavor != null) {
                     parser2 = new TEIHeaderArticleLightSaxParser();
                 } else {
                     parser2 = new TEIHeaderSaxParser();
@@ -315,9 +316,9 @@ public class HeaderTrainer extends AbstractTrainer{
         Flavor theFlavor = null;
         if (args.length > 0) {
             String flavor = args[0];
-            if (flavor.toLowerCase().equals("light")) {
-                theFlavor = Flavor.LIGHT;
-            } else if (flavor.toLowerCase().equals("ietf")) {
+            if (flavor.equalsIgnoreCase("light")) {
+                theFlavor = Flavor.ARTICLE_LIGHT;
+            } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;
             } else {
                 System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
