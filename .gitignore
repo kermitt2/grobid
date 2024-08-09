@@ -86,3 +86,5 @@ grobid-home/models/context_*
 Dockerfile.dataseer
 Dockerfile.software
 Dockerfile.datastet
+
+.run
