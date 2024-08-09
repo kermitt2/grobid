@@ -7,7 +7,7 @@ import com.google.common.collect.Lists;
 import org.apache.lucene.analysis.standard.ClassicAnalyzer;
 import org.apache.lucene.util.Version;
 import org.grobid.core.data.BibDataSet;
-import org.grobid.core.data.BiblioItem;;
+import org.grobid.core.data.BiblioItem;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Pair;
