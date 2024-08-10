@@ -31,6 +31,7 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
 
     private List<String> labeled = null; // store line by line the labeled data
     public List<List<OffsetPosition>> placesPositions = null; // list of offset positions of place names
+    public List<List<OffsetPosition>> countriesPositions = null; // list of offset positions of country names
     public List<List<LayoutToken>> allTokens = null;
 
     //private Writer writerAddress = null; // writer for the address model
@@ -46,11 +47,18 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
     public TEIAffiliationAddressSaxParser() {
         labeled = new ArrayList<String>();
         placesPositions = new ArrayList<List<OffsetPosition>>();
+        countriesPositions = new ArrayList<List<OffsetPosition>>();
         allTokens = new ArrayList<List<LayoutToken>>();
     }
 
     public void characters(char[] buffer, int start, int length) {
-        accumulator.append(buffer, start, length);
+        StringBuffer localBuffer = new StringBuffer();
+        localBuffer.append(buffer, start, length);
+        String localText = localBuffer.toString();
+        localText = localText.replace("\n\t", " ");
+        localText = localText.replaceAll("( )+", " ");
+        accumulator.append(localText);
+        //accumulator.append(buffer, start, length);
         //if (allContent != null) {
         //	allContent.append(buffer, start, length);
         //}
@@ -66,6 +74,10 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
 
     public List<List<OffsetPosition>> getPlacesPositions() {
         return placesPositions;
+    }
+
+    public List<List<OffsetPosition>> getCountriesPositions() {
+        return countriesPositions;
     }
 
     public List<List<LayoutToken>> getAllTokens() {
@@ -96,7 +108,8 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         } else if (qName.equals("lb") || qName.equals("pb")) {
             // we note a line break
-            accumulator.append(" @newline ");
+            //accumulator.append(" @newline ");
+            accumulator.append("\n");
         } else if (qName.equals("affiliation")) {
             String text = getText();
             if (text.length() > 0) {
@@ -129,8 +142,8 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
             allString = allString.replace("@newline", "\n");
             //List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(allString);
             List<LayoutToken> tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(allString);
-            List<OffsetPosition> toto = lexicon.tokenPositionsCityNames(tokens);
-            placesPositions.add(toto);
+            placesPositions.add(lexicon.tokenPositionsLocationNames(tokens));
+            countriesPositions.add(lexicon.tokenPositionsCountryNames(tokens));
             allTokens.add(tokens);
             allContent = null;
             allString = null;
@@ -221,16 +234,24 @@ public class TEIAffiliationAddressSaxParser extends DefaultHandler {
         StringTokenizer st = new StringTokenizer(text, " \n\t" + TextUtilities.fullPunctuations, true);
         boolean begin = true;
         while (st.hasMoreTokens()) {
-            String tok = st.nextToken().trim();
+            String tok = st.nextToken();
+            if (tok.equals("\n")) {
+                labeled.add("@newline");
+                continue;
+            }
+
+            tok = tok.trim();
             if (tok.length() == 0) {
                 continue;
             }
-            if (tok.equals("@newline")) {
+
+            /*if (tok.equals("@newline")) {
                 labeled.add("@newline");
             } else if (tok.equals("+PAGE+")) {
                 // page break - no influence here
                 labeled.add("@newline");
-            } else {
+            } else*/ 
+            {
                 String content = tok;
                 int i = 0;
                 if (content.length() > 0) {

@@ -23,7 +23,7 @@
 							<marker>2</marker>
 							<orgName type="laboratory">Laboratory of Modeling and Computation</orgName>,
 							<address>
-								<addrLine>B.P 53X</addrLine>,
+								<postBox>B.P 53X</postBox>,
 								<postCode>38041</postCode>
 								<settlement>Grenoble cedex 9</settlement>,
 								<country>France</country>
@@ -35,7 +35,7 @@
 							<orgName type="laboratory">GIPSA-lab</orgName>,
 							<orgName type="department">Department of Images and Signals</orgName>,
 							<address>
-								<addrLine>BP 46</addrLine>,
+								<postBox>BP 46</postBox>,
 								<postCode>38402</postCode>
 								<settlement>St Martin d &apos;ereCedex</settlement>,
 								<country>France</country>

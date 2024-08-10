@@ -2,9 +2,9 @@ package org.grobid.core.sax;
 
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.lexicon.Lexicon;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.layout.LayoutToken;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
@@ -15,15 +15,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * SAX parser initially made for XML CLEF IP data (collection, training and topics).
- * But it works also fine for parsing ST.36 stuff as the formats are similar.
+ * SAX parser initially made for XML CLEF IP data (collection, training and topics),
+ * but it works also fine for parsing ST.36 flavors as the formats are similar.
  *
  */
-public class MarecSaxParser extends DefaultHandler {
-	public static final Logger LOGGER = LoggerFactory.getLogger(MarecSaxParser.class);
+public class ST36SaxParser extends DefaultHandler {
+	public static final Logger LOGGER = LoggerFactory.getLogger(ST36SaxParser.class);
 
-    private StringBuffer accumulator = new StringBuffer(); // Accumulate parsed text
-    private StringBuffer accumulatorRef = new StringBuffer(); // Accumulate parsed text
+    private StringBuilder accumulator = new StringBuilder(); // Accumulate parsed text
+    private StringBuilder accumulatorRef = new StringBuilder(); // Accumulate parsed text
 
     private String PatentNumber = null;
     private int PatentID = -1;
@@ -46,36 +46,40 @@ public class MarecSaxParser extends DefaultHandler {
     private boolean npl = false; // indicate if the current reference is to patent or to a npl
     private boolean ref = false; // are we reading a ref?
 
+    // if a reference has been found in the current considered text segment
     private boolean refFound = false;
+
+    // this boolean keeps track of possible content outside paragraph, that might require some 
+    // further segmentations 
+    private boolean outsideParagraph = true;
 
     private int nbNPLRef = 0;
     private int nbPatentRef = 0;
     public int nbAllRef = 0;
 
-    private int N = -1;  // window of text to be output around the reference strings
+    private int window = -1;  // window of text to be output around the reference strings
 	// value at -1 means no window considered - everything will be outputed
 	
     public boolean patentReferences = false;
     public boolean nplReferences = false;
 
     private String currentFileName = null;
-    public Lexicon lexicon = Lexicon.getInstance();
 
-    public List<OffsetPosition> journalsPositions = null;
-    public List<OffsetPosition> abbrevJournalsPositions = null;
-    public List<OffsetPosition> conferencesPositions = null;
-    public List<OffsetPosition> publishersPositions = null;
+    // this is the accumulated segments to be labeled or with labels for training
+    public List<List<LayoutToken>> allAccumulatedTokens = null;
+    public List<List<String>> allAccumulatedLabels = null;
 
-    public StringBuffer accumulatedText = null;
-    private StringBuffer allContent = null;
+    // the current segment to be labeled or with labels for training
+    public List<LayoutToken> accumulatedTokens = null;
+    public List<String> accumulatedLabels = null;
 	
 	private GrobidAnalyzer analyzer = GrobidAnalyzer.getInstance(); 
 
-    public MarecSaxParser() {
+    public ST36SaxParser() {
     }
 
-    public void setN(int n) {
-        N = n;
+    public void setWindow(int n) {
+        this.window = n;
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -151,8 +155,6 @@ public class MarecSaxParser extends DefaultHandler {
 
             if (refFound) {
                 // we tokenize the text
-                //ArrayList<String> tokens = TextUtilities.segment(refString, "[("+TextUtilities.punctuations);
-                //StringTokenizer st = new StringTokenizer(refString, delimiters, true);
 				List<String> tokenizations = new ArrayList<String>();
 				try {
 					// TBD: pass a language object to the tokenize method call 
@@ -163,9 +165,6 @@ public class MarecSaxParser extends DefaultHandler {
 				}
 				
                 int i = 0;
-                //String token = null;
-                //for(String token : tokens) {
-                //while (st.hasMoreTokens()) {
 				for(String token : tokenizations) {	
                     //token = st.nextToken().trim();
 	                if ( (token.trim().length() == 0) || 
@@ -177,34 +176,33 @@ public class MarecSaxParser extends DefaultHandler {
                         continue;
                     }
                     try {
-                        accumulatedText.append(token + "\t");
-                        allContent.append(token + " ");
+                        accumulatedTokens.add(new LayoutToken(token));
                         if (npl) {
                             if (nplReferences) {
                                 if (i == 0) {
-                                    //accumulatedText.append("refNPLBegin\n");
-                                    accumulatedText.append("I-<refNPL>\n");
+                                    accumulatedLabels.add("I-<refNPL>");
                                 } else if (token == null) {
-                                    //accumulatedText.append("refNPLEnd\n");
-                                    accumulatedText.append("E-<refNPL>\n");
+                                    accumulatedLabels.add("E-<refNPL>");
                                 } else {
-                                    accumulatedText.append("<refNPL>\n");
+                                    accumulatedLabels.add("<refNPL>");
                                 }
-                            } else
-                                accumulatedText.append("<other>\n");
+                            } else {
+                                accumulatedLabels.add("<other>");
+                            }
                         } else {
                             if (patentReferences) {
-                                if (i == 0)
-                                    accumulatedText.append("I-<refPatent>\n");
-                                else if (token == null)
-                                    accumulatedText.append("E-<refPatent>\n");
-                                else
-                                    accumulatedText.append("<refPatent>\n");
-                            } else
-                                accumulatedText.append("<other>\n");
+                                if (i == 0) {
+                                    accumulatedLabels.add("I-<refPatent>");
+                                } else if (token == null) {
+                                    accumulatedLabels.add("E-<refPatent>");
+                                } else {
+                                    accumulatedLabels.add("<refPatent>");
+                                }
+                            } else {
+                                accumulatedLabels.add("<other>");
+                            }
                         }
                     } catch (Exception e) {
-//						e.printStackTrace();
                         throw new GrobidException("An exception occured while running Grobid.", e);
                     }
                     i++;
@@ -217,52 +215,58 @@ public class MarecSaxParser extends DefaultHandler {
             accumulator.setLength(0);
         } else if (qName.equals("abstract")) {
             accumulator.setLength(0);
-        } else if (qName.equals("heading")) {
+        } /*else if (qName.equals("heading")) {
             accumulator.append(" ");
-        } else if (qName.equals("description")) {
-            if (refFound) {
-                String content = getText();
+        }*/ 
+        else if (qName.equals("description")) {
+            // In case we have no paragraph structures, we will get the whole description in a huge single text block
+            // this text needs to be segmented in to paragraph-like blocks to be used by Deep Learning approaches.
 
-                // we tokenize the text
-                //ArrayList<String> tokens = TextUtilities.segment(content, "[("+TextUtilities.punctuations);
-                //StringTokenizer st = new StringTokenizer(content, delimiters, true);
-				List<String> tokenizations = new ArrayList<String>();
-				try {
-					// TBD: pass a language object to the tokenize method call 
-					tokenizations = analyzer.tokenize(content);	
-				}
-				catch(Exception e) {
-					LOGGER.debug("Tokenization for XML patent document has failed.");
-				}
 
+        } else if (qName.equals("p") || qName.equals("heading")) {
+            accumulator.append("\n");
+            List<List<String>> allTokenizations = new ArrayList<>();
+
+            String content = getText();
+
+            // we tokenize the text
+			List<String> tokenization = new ArrayList<>();
+			try {
+				// TBD: pass a language object to the tokenize method call 
+				tokenization = analyzer.tokenize(content);	
+			}
+			catch(Exception e) {
+				LOGGER.debug("Tokenization for XML patent document has failed.");
+			}
+
+            // we could introduce here some further sub-segmentation
+            allTokenizations.add(tokenization);
+
+            for(List<String> tokenizations : allTokenizations) {
                 int i = 0;
-                //String token = null;
-                //for(String token : tokens) {
-                //while (st.hasMoreTokens()) {
-				for(String token : tokenizations) {	
+    			for(String token : tokenizations) {	
                     //token = st.nextToken().trim();
-	                if ( (token.trim().length() == 0) || 
-						 (token.equals(" ")) || 
-					     (token.equals("\t")) || 
-						 (token.equals("\n")) ||
-						 (token.equals("\r"))
-						 ) {
+                    if ( (token.trim().length() == 0) || 
+    					 (token.equals(" ")) || 
+    				     (token.equals("\t")) || 
+    					 (token.equals("\n")) ||
+    					 (token.equals("\r"))
+    					 ) {
                         continue;
                     }
                     // we print only a window of N words
-                    if ( (i > N) && (N != -1) ) {
-                        //break;
+                    if ( (i > window) && (window != -1) ) {
                         token = token.trim();
                         if (token.length() > 0) {
-                            accumulatedText.append(token + "\t" + "<ignore>\n");
-                            allContent.append(token + " ");
+                            accumulatedTokens.add(new LayoutToken(token));
+                            accumulatedLabels.add("<ignore>");
                         }
                     } else {
                         try {
                             token = token.trim();
                             if (token.length() > 0) {
-                                accumulatedText.append(token + "\t" + "<other>\n");
-                                allContent.append(token + " ");
+                                accumulatedTokens.add(new LayoutToken(token));
+                                accumulatedLabels.add("<other>");
                             }
                         } catch (Exception e) {
                             throw new GrobidException("An exception occured while running Grobid.", e);
@@ -271,9 +275,19 @@ public class MarecSaxParser extends DefaultHandler {
                     i++;
                 }
 
-                accumulator.setLength(0);
-                refFound = false;
+                allAccumulatedTokens.add(accumulatedTokens);
+                allAccumulatedLabels.add(accumulatedLabels);
+                accumulatedTokens = new ArrayList<>();
+                accumulatedLabels = new ArrayList<>();
             }
+
+            accumulator.setLength(0);
+            refFound = false;
+
+            allAccumulatedTokens.add(accumulatedTokens);
+            allAccumulatedLabels.add(accumulatedLabels);
+            outsideParagraph = true;
+
         } else if (qName.equals("patcit")) {
             // we register the citation, the citation context will be marked in a later stage
             if (citations == null)
@@ -303,18 +317,10 @@ public class MarecSaxParser extends DefaultHandler {
         } else if (qName.equals("classification-ecla")) {
             accumulator.setLength(0);
         } else if (qName.equals("patent-document") || qName.equals("fulltext-document")) {
-            String allString = allContent.toString();
-            journalsPositions = lexicon.tokenPositionsJournalNames(allString);
-            abbrevJournalsPositions = lexicon.tokenPositionsAbbrevJournalNames(allString);
-            conferencesPositions = lexicon.tokenPositionsConferenceNames(allString);
-            publishersPositions = lexicon.tokenPositionsPublisherNames(allString);
-            allContent = null;
-            allString = null;
+            
         } else if (qName.equals("row")) {
             accumulator.append(" ");
-        } else if (qName.equals("p")) {
-            accumulator.append("\n");
-        }
+        } 
     }
 
     public void startElement(String namespaceURI,
@@ -350,10 +356,16 @@ public class MarecSaxParser extends DefaultHandler {
             }
 
             CitedPatentNumber = new ArrayList<String>();
-            accumulatedText = new StringBuffer();
-            allContent = new StringBuffer();
             accumulator.setLength(0);
+            allAccumulatedTokens = new ArrayList<>();
+            allAccumulatedLabels = new ArrayList<>();
         } else if (qName.equals("description")) {
+            accumulator.setLength(0);
+        } else if (qName.equals("p")  || qName.equals("heading")) {
+            // possible text read outside <p> and <heading>?
+            outsideParagraph = false;
+            accumulatedTokens = new ArrayList<>();
+            accumulatedLabels = new ArrayList<>();
             accumulator.setLength(0);
         } else if (qName.equals("ref") || qName.equals("bibl")) {
             int length = atts.getLength();
@@ -368,55 +380,66 @@ public class MarecSaxParser extends DefaultHandler {
                     if (name.equals("type") || name.equals("typ")) {
                         if (value.equals("npl") || value.equals("book") || value.equals("journal")) {
                             String content = getText();
+                            List<List<String>> allTokenizations = new ArrayList<>();
 
                             // we output what has been read so far in the description
+
                             // we tokenize the text
-                            //ArrayList<String> tokens =
-                            //StringTokenizer st = new StringTokenizer(content, delimiters, true);
-							List<String> tokenizations = new ArrayList<String>();
+							List<String> tokenization = new ArrayList<String>();
 							try {
 								// TBD: pass a language object to the tokenize method call 
-								tokenizations = analyzer.tokenize(content);		
+								tokenization = analyzer.tokenize(content);		
 							}
 							catch(Exception e) {
 								LOGGER.debug("Tokenization for XML patent document has failed.");
 							}
 
-                            //int nbTokens = st.countTokens();
-							int nbTokens = tokenizations.size();
-                            int j = 0;
-                            //while (st.hasMoreTokens()) {
-							for(String token : tokenizations) {	
-                                //String token = st.nextToken().trim();
-				                if ( (token.trim().length() == 0) || 
-									 (token.equals(" ")) || 
-								     (token.equals("\t")) || 
-									 (token.equals("\n")) ||
-									 (token.equals("\r"))
-									 ) {
-                                    continue;
-                                }
+							int nbTokens = tokenization.size();
 
-                                if ((j > (nbTokens - N) && (N != -1)) || (refFound && (j < N) && (N != -1))) {
-                                    try {
-                                        accumulatedText.append(token + "\t" + "<other>\n");
-                                        allContent.append(token + " ");
-                                    } catch (Exception e) {
-//										e.printStackTrace();
-                                        throw new GrobidException(
-                                                "An exception occured while running Grobid.", e);
+                            // we could introduce here some further sub-segmentation
+                            allTokenizations.add(tokenization);
+
+                            //boolean newSegment = false; 
+                            for(List<String> tokenizations : allTokenizations) {
+
+                                /*if (newSegment) {
+                                    allAccumulatedTokens.add(accumulatedTokens);
+                                    allAccumulatedLabels.add(accumulatedLabels);
+                                    accumulatedTokens = new ArrayList<>();
+                                    accumulatedLabels = new ArrayList<>();
+                                    newSegment = false; 
+                                }*/
+
+                                int j = 0;
+    							for(String token : tokenizations) {	
+    				                if ( (token.trim().length() == 0) || 
+    									 (token.equals(" ")) || 
+    								     (token.equals("\t")) || 
+    									 (token.equals("\n")) || 
+    									 (token.equals("\r"))
+    									 ) {
+                                        continue;
                                     }
-                                } else {
-                                    try {
-                                        accumulatedText.append(token + "\t" + "<ignore>\n");
-                                        allContent.append(token + " ");
-                                    } catch (Exception e) {
-//										e.printStackTrace();
-                                        throw new GrobidException(
-                                                "An exception occured while running Grobid.", e);
+
+                                    if (window == -1 ||
+                                        ((j > (nbTokens - window) && (window != -1)) || (refFound && (j < window) && (window != -1)))) {
+                                        try {
+                                            accumulatedTokens.add(new LayoutToken(token));
+                                            accumulatedLabels.add("<other>");
+                                        } catch (Exception e) {
+                                            throw new GrobidException("An exception occured while running Grobid.", e);
+                                        }
+                                    } else {
+                                        try {
+                                            accumulatedTokens.add(new LayoutToken(token));
+                                            accumulatedLabels.add("<ignore>");
+                                        } catch (Exception e) {
+                                            throw new GrobidException("An exception occured while running Grobid.", e);
+                                        }
                                     }
+                                    j++;
                                 }
-                                j++;
+                                //newSegment = true;
                             }
 
                             accumulator.setLength(0);
@@ -425,56 +448,66 @@ public class MarecSaxParser extends DefaultHandler {
                             ref = true;
                         } else if (value.equals("patent") || value.equals("pl")) {
                             String content = getText();
+                            List<List<String>> allTokenizations = new ArrayList<>();
 
                             // we output what has been read so far in the description
+
                             // we tokenize the text
-                            //ArrayList<String> tokens =
-                            //	TextUtilities.segment(content,"[("+TextUtilities.punctuations);
-                            //StringTokenizer st = new StringTokenizer(content, delimiters, true);
-							List<String> tokenizations = new ArrayList<String>();
+							List<String> tokenization = new ArrayList<String>();
 							try {
 								// TBD: pass a language object to the tokenize method call 
-								tokenizations = analyzer.tokenize(content);		
+								tokenization = analyzer.tokenize(content);		
 							}
 							catch(Exception e) {
 								LOGGER.debug("Tokenization for XML patent document has failed.");
 							}
 							
-                            //int nbTokens = st.countTokens();
-							int nbTokens = tokenizations.size();
-                            int j = 0;
-							for(String token : tokenizations) {
-                            	//while (st.hasMoreTokens()) {
-                                //String token = st.nextToken().trim();
-				                if ( (token.trim().length() == 0) || 
-									 (token.equals(" ")) || 
-								     (token.equals("\t")) || 
-									 (token.equals("\n")) ||
-									 (token.equals("\r"))
-									 ) {
-                                    continue;
-                                }
+							int nbTokens = tokenization.size();
 
-                                if ((j > (nbTokens - N)) | (refFound & (j < N))) {
-                                    try {
-                                        accumulatedText.append(token + "\t" + "<other>\n");
-                                        allContent.append(token + " ");
-                                    } catch (Exception e) {
-//										e.printStackTrace();
-                                        throw new GrobidException(
-                                                "An exception occured while running Grobid.", e);
+                            // we could introduce here some further sub-segmentation
+                            allTokenizations.add(tokenization);
+
+                            //boolean newSegment = false; 
+                            for(List<String> tokenizations : allTokenizations) {
+
+                                /*if (newSegment) {
+                                    allAccumulatedTokens.add(accumulatedTokens);
+                                    allAccumulatedLabels.add(accumulatedLabels);
+                                    accumulatedTokens = new ArrayList<>();
+                                    accumulatedLabels = new ArrayList<>();
+                                    newSegment = false; 
+                                }*/
+
+                                int j = 0;
+    							for(String token : tokenizations) {
+    				                if ( (token.trim().length() == 0) || 
+    									 (token.equals(" ")) || 
+    								     (token.equals("\t")) || 
+    									 (token.equals("\n")) ||
+    									 (token.equals("\r"))
+    									 ) {
+                                        continue;
                                     }
-                                } else {
-                                    try {
-                                        accumulatedText.append(token + "\t" + "<ignore>\n");
-                                        allContent.append(token + " ");
-                                    } catch (Exception e) {
-//										e.printStackTrace();
-                                        throw new GrobidException(
-                                                "An exception occured while running Grobid.", e);
+
+                                    if (window == -1 ||
+                                        ((j > (nbTokens - window)) || (refFound && (j < window)))) {
+                                        try {
+                                            accumulatedTokens.add(new LayoutToken(token));
+                                            accumulatedLabels.add("<other>");
+                                        } catch (Exception e) {
+                                            throw new GrobidException("An exception occured while running Grobid.", e);
+                                        }
+                                    } else {
+                                        try {
+                                            accumulatedTokens.add(new LayoutToken(token));
+                                            accumulatedLabels.add("<ignore>");
+                                        } catch (Exception e) {
+                                            throw new GrobidException("An exception occured while running Grobid.", e);
+                                        }
                                     }
+                                    j++;
                                 }
-                                j++;
+                                //newSegment = true;
                             }
 
                             accumulator.setLength(0);
@@ -506,7 +539,7 @@ public class MarecSaxParser extends DefaultHandler {
                 if (name != null) {
                     if (name.equals("ucid")) {
                         cited_number = value;
-                        // we normally need to normalize a little bit this patent nummer
+                        // we might need to normalize a little bit this patent nummer
                     }
                 }
             }

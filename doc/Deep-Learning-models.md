@@ -20,7 +20,7 @@ Current neural models can be up to 50 times slower than CRF, depending on the ar
 
 By default, only CRF models are used by Grobid. You need to select the Deep Learning models you would like to use in the GROBID configuration yaml file (`grobid/grobid-home/config/grobid.yaml`). See [here](https://grobid.readthedocs.io/en/latest/Configuration/#configuring-the-models) for more details on how to select these models. The most convenient way to use the Deep Learning models is to use the full GROBID Docker image and pass a configuration file at launch of the container describing the selected models to be used instead of the default CRF ones. Note that the full GROBID Docker image is already configured to use Deep Learning models for bibliographical reference and affiliation-address parsing. 
 
-For current GROBID version 0.8.0, we recommend considering the usage of the following Deep Learning models: 
+For current GROBID version 0.8.1, we recommend considering the usage of the following Deep Learning models: 
 
 - `citation` model: for bibliographical parsing, the `BidLSTM_CRF_FEATURES` architecture provides currently the best accuracy, significantly better than CRF (+3 to +5 points in F1-Score). With a GPU, there is normally no runtime impact by selecting this model. SciBERT fine-tuned model performs currently at  lower accuracy. 
 
@@ -42,7 +42,7 @@ Using Deep Learning model in GROBID with a normal installation/build is not stra
 
 The most simple solution is to use the ["full" GROBID docker image](Grobid-docker.md), which allows to use Deep Learning models without further installation and which provides automatic GPU support. 
 
-However if you need a "local" library installation and build, prepare a lot of coffee, here are the step-by-step instructions to get a working local Deep Learning GROBID.
+However, if you need a "local" library installation and build, prepare a lot of coffee, here are the step-by-step instructions to get a working local Deep Learning GROBID.
 
 #### Classic python and Virtualenv
 
@@ -57,7 +57,7 @@ DeLFT version `0.3.2` has been tested successfully with Python 3.7 and 3.8. For 
 
 ```shell
 cd deflt/
-python3 grobidTagger.py delft/applications/citation tag  --architecture BidLSTM_CRF
+python -m delft.applications.grobidTagger citation tag --architecture BidLSTM_CRF
 ```
 
 If it works (you see some annotations in JSON format), you are sure to have a working DeLFT environment for **all** GROBID models. The next steps address the native bridge between DeLFT and the JVM running GROBID. 
@@ -82,7 +82,7 @@ Indicate the GROBID model that should use a Deep Learning implementation in the 
 
 The default Deep Learning architecture is `BidLSTM_CRF`, which is the best sequence labelling RNN architecture (basically a slightly revised version of [(Lample et al., 2016)](https://arxiv.org/abs/1603.01360) with Glove embeddings). However for GROBID, an architecture also exploiting features (in particular layout features, which are not captured at all by the pretrained language models) gives usually better results and the prefered choise is `BidLSTM_CRF_FEATURES`. If you wish to use another architecture, you need to specify it in the same config file. 
 
-For instance to use a model integrating a fine-tuned transformer, you can select a `BERT_CRF` fine-tuned model (basically the transformer layers with CRF as final activation layer) and indicate in the field `transformer` the name of the transformer model in the [Hugging Face transformers Hub](https://huggingface.co/models) to be use to instanciate the transformer layer, typically [allenai/scibert_scivocab_cased](https://huggingface.co/allenai/scibert_scivocab_cased) for `SciBERT` in the case of scientific articles:
+For instance to use a model integrating a fine-tuned transformer, you can select a `BERT_CRF` fine-tuned model (basically the transformer layers with CRF as final activation layer) and indicate in the field `transformer` the name of the transformer model in the [Hugging Face transformers Hub](https://huggingface.co/models) to be used to instantiate the transformer layer, typically [allenai/scibert_scivocab_cased](https://huggingface.co/allenai/scibert_scivocab_cased) for `SciBERT` in the case of scientific articles:
 
 ```yaml
   models:
@@ -98,14 +98,14 @@ If you are using a Python environment for the DeLFT installation, you can set th
 
 ```yaml
   delft:
-    python_virtualEnv: /where/my/damned/python/virtualenv/is/
+    python_virtualEnv: /where/my/damned/python/virtualenv/is/ 
 ```
 
 Normally by setting the Python environment path in the config file (e.g. `pythonVirtualEnv: "../delft/env"`), you will not need to launch GROBID in the same activated environment. 
 
 <span>4.</span> Install [JEP](https://github.com/ninia/jep) manually and preferably globally (outside a virtual env. and not under `~/.local/lib/python3.*/site-packages/`). 
 
-We provide an installation script for Linux under `grobid-home/scripts`. This script should be launched from grobid root directory (`grobid/`), e.g.:
+We provide an installation script for Linux under `grobid-home/scripts`. This script should be launched from GROBID root directory (`grobid/`), e.g.:
 
 ```shell
 ./grobid-home/scripts/install_jep_lib.sh 

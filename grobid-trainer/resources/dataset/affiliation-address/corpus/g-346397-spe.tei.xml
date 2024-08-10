@@ -9,8 +9,9 @@
 					<analytic>
 						<author>
 							
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="laboratory">Centre for Theoretical Physics and Astrophysics</orgName>,
 								<orgName type="department">Department of Physics</orgName>,<lb/>
 								<orgName type="institution">University of Cape Town</orgName>,	
@@ -23,8 +24,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="department">UCT-CERN Research Centre</orgName>,
 								<orgName type="department">Department of Physics</orgName>,
 								<orgName type="institution">University of Cape Town</orgName>,<lb/>

@@ -6,6 +6,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.grobid.core.data.util.AuthorEmailAssigner;
 import org.grobid.core.data.util.ClassicAuthorEmailAssigner;
 import org.grobid.core.data.util.EmailSanitizer;
+import org.grobid.core.data.CopyrightsLicense;
 import org.grobid.core.document.*;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.exceptions.GrobidException;
@@ -50,6 +51,9 @@ public class BiblioItem {
 
     // map of labels (e.g. <title> or <abstract>) to LayoutToken
     private Map<String, List<LayoutToken>> labeledTokens;
+
+    // accumulation of the LayoutTokens for sequences of affiliation/address
+    private List<List<LayoutToken>> affiliationAddresslabeledTokens;
 
     /**
      * The following are internal working structures not meant to be used outside. 
@@ -372,6 +376,9 @@ public class BiblioItem {
 
     // Availability statement
     private String availabilityStmt = null;
+
+    // Copyrights/license information object
+    CopyrightsLicense copyrightsLicense = null;
 
     public static final List<String> confPrefixes = Arrays.asList("Proceedings of", "proceedings of",
             "In Proceedings of the", "In: Proceeding of", "In Proceedings, ", "In Proceedings of",
@@ -2263,7 +2270,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2276,7 +2283,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2426,7 +2433,7 @@ public class BiblioItem {
                     if (titleTokens != null && titleTokens.size()>0) {
                         String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                         if (coords != null && coords.length()>0) {
-                            tei.append(" coord=\"" + coords + "\"");
+                            tei.append(" coords=\"" + coords + "\"");
                         }
                     } 
                 }
@@ -2450,7 +2457,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2460,6 +2467,10 @@ public class BiblioItem {
 
                 if (fullEditors != null && fullEditors.size()>0) {
                     for(Person editor : fullEditors) {
+                        String localString = editor.toTEI(false);
+                        if (localString == null || localString.length() == 0)
+                            continue;
+
                         for (int i = 0; i < indent + 2; i++) {
                             tei.append("\t");
                         }
@@ -2467,7 +2478,7 @@ public class BiblioItem {
                         for (int i = 0; i < indent + 3; i++) {
                             tei.append("\t");
                         }
-                        String localString = editor.toTEI(false);
+                        
                         localString = localString.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
                         tei.append(localString).append("\n");
                         for (int i = 0; i < indent + 2; i++) {
@@ -2682,7 +2693,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -2709,7 +2720,7 @@ public class BiblioItem {
                         if (titleTokens != null && titleTokens.size()>0) {
                             String coords = LayoutTokensUtil.getCoordsString(titleTokens);
                             if (coords != null && coords.length()>0) {
-                                tei.append(" coord=\"" + coords + "\"");
+                                tei.append(" coords=\"" + coords + "\"");
                             }
                         } 
                     }
@@ -3779,8 +3790,12 @@ public class BiblioItem {
         GrobidAnalysisConfig config,
         Lexicon lexicon
     ) {
-        boolean affiliationWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("affiliation"));
-        boolean orgnameWithCoords = (config.getGenerateTeiCoordinates() != null) && (config.getGenerateTeiCoordinates().contains("orgName"));
+        boolean affiliationWithCoords = (config != null) && 
+                                        (config.getGenerateTeiCoordinates() != null) && 
+                                        (config.getGenerateTeiCoordinates().contains("affiliation"));
+        boolean orgnameWithCoords = (config != null) && 
+                                    (config.getGenerateTeiCoordinates() != null) && 
+                                    (config.getGenerateTeiCoordinates().contains("orgName"));
 
         TextUtilities.appendN(tei, '\t', nbTag);
         tei.append("<affiliation");
@@ -3788,10 +3803,9 @@ public class BiblioItem {
             tei.append(" key=\"").append(aff.getKey()).append("\"");
         if (affiliationWithCoords) {
             // we serialize the coordinates for the whole affiliation block
-            List<LayoutToken> affTokens = aff.getLayoutTokens();
-            String coords = LayoutTokensUtil.getCoordsString(affTokens);
+            String coords = LayoutTokensUtil.getCoordsString(aff.getLayoutTokens());
             if (coords != null && coords.length()>0) {
-                tei.append(" coord=\"" + coords + "\"");
+                tei.append(" coords=\"" + coords + "\"");
             }
         }
         tei.append(">\n");
@@ -3824,8 +3838,8 @@ public class BiblioItem {
                 int q = 1;
                 for (String depa : aff.getDepartments()) {
                     TextUtilities.appendN(tei, '\t', nbTag + 1);
-                    tei.append("<orgName type=\"department\" key=\"dep" + q + "\">" +
-                            TextUtilities.HTMLEncode(depa) + "</orgName>\n");
+                    tei.append("<orgName type=\"department\" key=\"dep" + q + "\"");
+                    tei.append(">" +TextUtilities.HTMLEncode(depa) + "</orgName>\n");
                     q++;
                 }
             }
@@ -3863,21 +3877,22 @@ public class BiblioItem {
             }
         }
 
-        if ((aff.getAddressString() != null) ||
-                (aff.getAddrLine() != null) ||
-                (aff.getPostBox() != null) ||
-                (aff.getPostCode() != null) ||
-                (aff.getSettlement() != null) ||
-                (aff.getRegion() != null) ||
-                (aff.getCountry() != null)) {
+        if (
+                aff.getAddrLine() != null ||
+                aff.getPostBox() != null ||
+                aff.getPostCode() != null ||
+                aff.getSettlement() != null ||
+                aff.getRegion() != null ||
+                aff.getCountry() != null
+            ) {
             TextUtilities.appendN(tei, '\t', nbTag + 1);
             
             tei.append("<address>\n");
-            if (aff.getAddressString() != null) {
+            /*if (aff.getAddressString() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 2);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddressString()) +
                         "</addrLine>\n");
-            }
+            }*/
             if (aff.getAddrLine() != null) {
                 TextUtilities.appendN(tei, '\t', nbTag + 2);
                 tei.append("<addrLine>" + TextUtilities.HTMLEncode(aff.getAddrLine()) +
@@ -4416,6 +4431,13 @@ public class BiblioItem {
             theList = theList == null ? new ArrayList<>() : theList;
             theList.addAll(clusterTokens);
             labeledTokens.put(clusterLabel.getLabel(), theList);
+
+            if (clusterLabel.equals(TaggingLabels.HEADER_AFFILIATION) || clusterLabel.equals(TaggingLabels.HEADER_ADDRESS)) {
+                if (affiliationAddresslabeledTokens == null) 
+                    affiliationAddresslabeledTokens = new ArrayList<>();
+                if (!affiliationAddresslabeledTokens.contains(clusterTokens))
+                    affiliationAddresslabeledTokens.add(clusterTokens);
+            }
         }
     }
 
@@ -4454,5 +4476,17 @@ public class BiblioItem {
 
     public void setAvailabilityStmt(String availabilityStmt) {
         this.availabilityStmt = availabilityStmt;
+    }
+
+    public List<List<LayoutToken>> getAffiliationAddresslabeledTokens() {
+        return affiliationAddresslabeledTokens;
+    }
+
+    public void setCopyrightsLicense(CopyrightsLicense copyrightsLicense) {
+        this.copyrightsLicense = copyrightsLicense;
+    }
+
+    public CopyrightsLicense getCopyrightsLicense() {
+        return this.copyrightsLicense;
     }
 }

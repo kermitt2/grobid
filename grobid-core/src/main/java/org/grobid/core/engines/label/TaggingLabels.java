@@ -122,6 +122,17 @@ public class TaggingLabels {
     public final static String PROJECT_ABBRV_NAME_LABEL = "<projectAbbrv>";
     public final static String URL_LABEL = "<url>";
     public final static String PERSON_LABEL = "<person>";
+    public final static String INFRASTRUCTURE_LABEL = "<infrastructure>";
+
+    public final static String DEPARTMENT_LABEL = "<department>";
+    public final static String LABORATORY_LABEL = "<laboratory>";
+    public final static String COUNTRY_LABEL = "<country>";
+    public final static String POSTCODE_LABEL = "<postCode>";
+    public final static String POSTBOX_LABEL = "<postBox>";
+    public final static String REGION_LABEL = "<region>";
+    public final static String SETTLEMENT_LABEL = "<settlement>";
+    public final static String ADDRESSLINE_LABEL = "<addrLine>";
+    
 
     /* title page (secondary title page)
      *       publisher page (publication information, including usually the copyrights info) 
@@ -277,9 +288,22 @@ public class TaggingLabels {
     public static final TaggingLabel FUNDING_URL = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, URL_LABEL);
     public static final TaggingLabel FUNDING_PERSON = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, PERSON_LABEL);
     public static final TaggingLabel FUNDING_INSTITUTION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INSTITUTION_LABEL);
+    public static final TaggingLabel FUNDING_INFRASTRUCTURE = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, INFRASTRUCTURE_LABEL);
     public static final TaggingLabel FUNDING_AFFILIATION = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, AFFILIATION_LABEL);
     public static final TaggingLabel FUNDING_OTHER = new TaggingLabelImpl(GrobidModels.FUNDING_ACKNOWLEDGEMENT, OTHER_LABEL);
 
+    public static final TaggingLabel AFFILIATION_MARKER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, MARKER_LABEL);
+    public static final TaggingLabel AFFILIATION_INSTITUTION = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, INSTITUTION_LABEL);
+    public static final TaggingLabel AFFILIATION_DEPARTMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, DEPARTMENT_LABEL);
+    public static final TaggingLabel AFFILIATION_LABORATORY = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, LABORATORY_LABEL);
+    public static final TaggingLabel AFFILIATION_COUNTRY = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, COUNTRY_LABEL);
+    public static final TaggingLabel AFFILIATION_POSTCODE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, POSTCODE_LABEL);
+    public static final TaggingLabel AFFILIATION_POSTBOX = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, POSTBOX_LABEL);
+    public static final TaggingLabel AFFILIATION_REGION = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, REGION_LABEL);
+    public static final TaggingLabel AFFILIATION_SETTLEMENT = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, SETTLEMENT_LABEL);
+    public static final TaggingLabel AFFILIATION_ADDRESSLINE = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, ADDRESSLINE_LABEL);
+    public static final TaggingLabel AFFILIATION_OTHER = new TaggingLabelImpl(GrobidModels.AFFILIATION_ADDRESS, OTHER_LABEL);
+    
     protected static void register(TaggingLabel label) {
         cache.putIfAbsent(new Pair<>(label.getGrobidModel(), label.getLabel()), label);
     }
@@ -433,6 +457,20 @@ public class TaggingLabels {
         register(FUNDING_AFFILIATION);
         register(FUNDING_INSTITUTION);
         register(FUNDING_OTHER);
+        register(FUNDING_INFRASTRUCTURE);
+
+        // affiliation-address
+        register(AFFILIATION_MARKER);
+        register(AFFILIATION_INSTITUTION);
+        register(AFFILIATION_DEPARTMENT);
+        register(AFFILIATION_LABORATORY);
+        register(AFFILIATION_COUNTRY);
+        register(AFFILIATION_POSTCODE);
+        register(AFFILIATION_POSTBOX);
+        register(AFFILIATION_REGION);
+        register(AFFILIATION_SETTLEMENT);
+        register(AFFILIATION_ADDRESSLINE);
+        register(AFFILIATION_OTHER);
     }
 
     protected TaggingLabels() {

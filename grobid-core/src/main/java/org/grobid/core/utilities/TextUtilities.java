@@ -1556,4 +1556,59 @@ public class TextUtilities {
         else
             return null;
     }
+
+    public static List<OffsetPosition> matchTokenAndString(List<LayoutToken> layoutTokens, String text, List<OffsetPosition> positions) {
+        List<OffsetPosition> newPositions = new ArrayList<>();
+        StringBuilder accumulator = new StringBuilder();
+        int pos = 0;
+        int textPositionOfToken = 0;
+
+        for (OffsetPosition position : positions) {
+            List<LayoutToken> annotationTokens = layoutTokens.subList(position.start, position.end);
+            boolean first = true;
+            accumulator = new StringBuilder();
+            for (int i = 0; i < annotationTokens.size(); i++) {
+                LayoutToken token = annotationTokens.get(i);
+                if (StringUtils.isEmpty(token.getText()))
+                    continue;
+                textPositionOfToken = text.indexOf(token.getText(), pos);
+                if (textPositionOfToken != -1) {
+                    //We update pos only at the first token of the annotation positions
+                    if (first) {
+                        pos = textPositionOfToken;
+                        first = false;
+                    }
+                    accumulator.append(token);
+                } else {
+                    if (SentenceUtilities.toSkipToken(token.getText())) {
+                        continue;
+                    }
+                    if (StringUtils.isNotEmpty(accumulator)) {
+                        int accumulatorTextLength = accumulator.toString().length();
+                        int start = text.indexOf(accumulator.toString(), pos);
+                        int end = start + accumulatorTextLength;
+                        newPositions.add(new OffsetPosition(start, end));
+                        pos = end;
+                        break;
+                    }
+                    pos = textPositionOfToken;
+                }
+            }
+            if (StringUtils.isNotEmpty(accumulator)) {
+                int annotationTextLength = accumulator.toString().length();
+                int start = text.indexOf(accumulator.toString(), pos);
+                int end = start + annotationTextLength;
+                newPositions.add(new OffsetPosition(start, end));
+                pos = end;
+                accumulator = new StringBuilder();
+            }
+
+        }
+        if (StringUtils.isNotEmpty(accumulator)) {
+            int start = text.indexOf(accumulator.toString(), pos);
+            newPositions.add(new OffsetPosition(start, start + accumulator.toString().length()));
+        }
+
+        return newPositions;
+    }
 }

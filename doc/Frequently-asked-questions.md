@@ -56,7 +56,7 @@ In addition, consider more RAM memory when running Deep Learning model on CPU, e
 You will get the embedded images converted into `.png` by using the normal batch command. For instance:
 
 ```console
-java -Xmx4G -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-core/build/libs/grobid-core-0.8.0-onejar.jar -gH grobid-home -dIn ~/test/in/ -dOut ~/test/out -exe processFullText 
+java -Xmx4G -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep -jar grobid-core/build/libs/grobid-core-0.8.1-onejar.jar -gH grobid-home -dIn ~/test/in/ -dOut ~/test/out -exe processFullText 
 ```
 
 There is a web service doing the same, returning everything in a big zip file, `processFulltextAssetDocument`, still usable but deprecated.
@@ -87,9 +87,9 @@ release the aggregate under a license that prohibits users from exercising right
 each program's individual license would grant them.
 ```
 
-For convenience it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
+For convenience, it is no problem to ship the pdfalto executables with GROBID - same as a docker image which ships typically a mixture of GPL and Apache/MIT stuff calling each others like crazy and much more "deeply" than in our case.
 
-Finally as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
+Finally, as the two source codes are shipped in different repo with clear licensing information, exercising the rights that each program's individual license grants them is fully respected.
 
 The only possible restriction would be:
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<patent-document status="new" lang="EN" ucid="EP-1117214-B1" country="EP" doc-number="1117214" kind="B1" date="20051214"><bibliographic-data><publication-reference fvid="23197647" ucid="EP-1117214-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1117214</doc-number><kind>B1</kind><date>20051214</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01660004-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01660004</doc-number><kind>A</kind><date>20010112</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-483681" status="new"><document-id format="original" status="new"><country>US</country><doc-number>483681</doc-number><date>20000114</date></document-id></priority-claim><priority-claim ucid="US-48368100-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>48368100</doc-number><kind>A</kind><date>20000114</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050616</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G08B  13/194       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  13/196       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  15/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  15/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04B   7/185       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04B   7/185       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/64        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/64        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/66        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/66        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  29/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  29/06        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   7/173       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   7/173       20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">G08B13/196</classification-symbol><classification-symbol scheme="EC">H04B7/185S8</classification-symbol><classification-symbol scheme="EC">H04L12/28B</classification-symbol><classification-symbol scheme="EC">H04L12/64B</classification-symbol><classification-symbol scheme="EC">H04L12/66</classification-symbol><classification-symbol scheme="EC">H04L29/06</classification-symbol><classification-symbol scheme="EC">H04L29/06J</classification-symbol><classification-symbol scheme="EC">H04N7/173</classification-symbol><classification-symbol scheme="ICO">T04L12:64B2</classification-symbol><classification-symbol scheme="ICO">T04L29:06E</classification-symbol><classification-symbol scheme="ICO">T04L29:06J</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Hausnetzübergangseinrichtung</invention-title><invention-title lang="EN" status="new">Home network gateway</invention-title><invention-title lang="FR" status="new">Passerelle de Réseau domotique</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>TERAYON COMM SYSTEMS INC</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>TERAYON COMMUNICATION SYSTEMS, INC.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>RAKIB SELIM SHLOMO</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>FISH RONALD CRAIG</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>RAKIB, SELIM SHLOMO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>FISH, RONALD CRAIG</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>RAKIB, SELIM SHLOMO</last-name><address><street>10271 West Acres</street><city>Cupertino, California 95014</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>FISH, RONALD CRAIG</last-name><address><street>16590 Oak View Circle</street><city>Morgan Hill, California 95037</city><country>US</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Terayon Communication Systems, Inc.</last-name><address><street>2952 Bunker Hill Lane</street><city>Santa Clara, CA 95054</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Brax, Matti Juhani</last-name><address><street>Berggren Oy Ab, P.O. Box 16</street><city>00101 Helsinki</city><country>FI</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data><abstract lang="EN" source="EPO" status="new"><p>A gateway for coupling a local area network coupled to a plurality of peripheral devices at a customer premises to one or more external networks that deliver analog signals bearing analog video such as regularly scheduled CATV, terrestial or satellite C-band broadcasts, or modulated with digital video-on-demand data, or IP packets bearing IP telephony data or data from the internet. The preferred construction is modular so that single expansion modules to interface only to DSL lines or only to a satellite dish or only to HFC, or some combination thereof may be added as needed. The gateway may be a standalone circuit also with hardwired interfaces to one or more external network types. The incoming analog signals are either digitized, compressed and distributed on the local area network or the digital data thereon is recovered and packetized as an IP packet if not already so packetized and distributed via a router process to the device that requested the data via the local area network. &lt;IMAGE&gt;</p></abstract><abstract lang="EN" status="new"><p num="">A gateway for coupling a local area network coupled to a plurality of
+<patent-document status="new" lang="EN" ucid="EP-1117214-B1" country="EP" doc-number="1117214" kind="B1" date="20051214"><bibliographic-data><publication-reference fvid="23197647" ucid="EP-1117214-B1" status="new"><document-id status="new" format="original"><country>EP</country><doc-number>1117214</doc-number><kind>B1</kind><date>20051214</date><lang>EN</lang></document-id></publication-reference><application-reference ucid="EP-01660004-A" status="new" is-representative="NO"><document-id format="epo" status="new"><country>EP</country><doc-number>01660004</doc-number><kind>A</kind><date>20010112</date><lang>EN</lang></document-id></application-reference><priority-claims status="new"><priority-claim ucid="US-483681" status="new"><document-id format="original" status="new"><country>US</country><doc-number>483681</doc-number><date>20000114</date></document-id></priority-claim><priority-claim ucid="US-48368100-A" status="new"><document-id format="epo" status="new"><country>US</country><doc-number>48368100</doc-number><kind>A</kind><date>20000114</date></document-id></priority-claim></priority-claims><dates-of-public-availability status="new"><intention-to-grant-date><date>20050616</date></intention-to-grant-date></dates-of-public-availability><term-of-grant /><technical-data status="new"><classifications-ipcr><classification-ipcr status="new">G08B  13/194       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  13/196       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  15/00        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">G08B  15/00        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04B   7/185       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04B   7/185       20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/28        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/64        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/64        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/66        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  12/66        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  29/06        20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04L  29/06        20060101C I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   7/173       20060101A I20051008RMEP        </classification-ipcr><classification-ipcr status="new">H04N   7/173       20060101C I20051008RMEP        </classification-ipcr></classifications-ipcr><classification-ecla status="new"><classification-symbol scheme="EC">G08B13/196</classification-symbol><classification-symbol scheme="EC">H04B7/185S8</classification-symbol><classification-symbol scheme="EC">H04L12/28B</classification-symbol><classification-symbol scheme="EC">H04L12/64B</classification-symbol><classification-symbol scheme="EC">H04L12/66</classification-symbol><classification-symbol scheme="EC">H04L29/06</classification-symbol><classification-symbol scheme="EC">H04L29/06J</classification-symbol><classification-symbol scheme="EC">H04N7/173</classification-symbol><classification-symbol scheme="ICO">T04L12:64B2</classification-symbol><classification-symbol scheme="ICO">T04L29:06E</classification-symbol><classification-symbol scheme="ICO">T04L29:06J</classification-symbol></classification-ecla><invention-title lang="DE" status="new">Hausnetzübergangseinrichtung</invention-title><invention-title lang="EN" status="new">Home network gateway</invention-title><invention-title lang="FR" status="new">Passerelle de Réseau domotique</invention-title><citations /><figures /></technical-data><parties><applicants><applicant format="epo" status="new"><addressbook><name>TERAYON COMM SYSTEMS INC</name><address><country>US</country></address></addressbook></applicant><applicant format="intermediate" status="new"><addressbook><name>TERAYON COMMUNICATION SYSTEMS, INC.</name><address><country /></address></addressbook></applicant></applicants><inventors><inventor format="epo" status="new"><addressbook><name>RAKIB SELIM SHLOMO</name><address><country>US</country></address></addressbook></inventor><inventor format="epo" status="new"><addressbook><name>FISH RONALD CRAIG</name><address><country>US</country></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>RAKIB, SELIM SHLOMO</name><address><country /></address></addressbook></inventor><inventor format="intermediate" status="new"><addressbook><name>FISH, RONALD CRAIG</name><address><country /></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>RAKIB, SELIM SHLOMO</last-name><address><street>10271 West Acres</street><city>Cupertino, California 95014</city><country>US</country></address></addressbook></inventor><inventor format="original" status="new"><addressbook><last-name>FISH, RONALD CRAIG</last-name><address><street>16590 Oak View Circle</street><city>Morgan Hill, California 95037</city><country>US</country></address></addressbook></inventor></inventors><assignees><assignee format="original" status="new"><addressbook><last-name>Terayon Communication Systems, Inc.</last-name><address><street>2952 Bunker Hill Lane</street><city>Santa Clara, CA 95054</city><country>US</country></address></addressbook></assignee></assignees><agents><agent format="original" status="new"><addressbook><last-name>Brax, Matti Juhani</last-name><address><street>Berggren Oy Ab, P.O. Box 16</street><city>00101 Helsinki</city><country>FI</country></address></addressbook></agent></agents></parties><international-convention-data><designated-states><ep-contracting-states><country>AT</country><country>BE</country><country>CH</country><country>CY</country><country>DE</country><country>DK</country><country>ES</country><country>FI</country><country>FR</country><country>GB</country><country>GR</country><country>IE</country><country>IT</country><country>LI</country><country>LU</country><country>MC</country><country>NL</country><country>PT</country><country>SE</country><country>TR</country></ep-contracting-states></designated-states></international-convention-data></bibliographic-data>
+<abstract lang="EN" source="EPO" status="new"><p>A gateway for coupling a local area network coupled to a plurality of peripheral devices at a customer premises to one or more external networks that deliver analog signals bearing analog video such as regularly scheduled CATV, terrestial or satellite C-band broadcasts, or modulated with digital video-on-demand data, or IP packets bearing IP telephony data or data from the internet. The preferred construction is modular so that single expansion modules to interface only to DSL lines or only to a satellite dish or only to HFC, or some combination thereof may be added as needed. The gateway may be a standalone circuit also with hardwired interfaces to one or more external network types. The incoming analog signals are either digitized, compressed and distributed on the local area network or the digital data thereon is recovered and packetized as an IP packet if not already so packetized and distributed via a router process to the device that requested the data via the local area network. &lt;IMAGE&gt;</p></abstract>
+<abstract lang="EN" status="new"><p num="">A gateway for coupling a local area network coupled to a plurality of
 peripheral devices at a customer premises to one or more external networks that
 deliver analog signals bearing analog video such as regularly scheduled CATV,
 terrestial or satellite C-band broadcasts, or modulated with digital video-on-demand
@@ -12,35 +14,42 @@ signals are either digitized, compressed and distributed on the local area netwo
 the digital data thereon is recovered and packetized as an IP packet if not already
 so packetized and distributed via a router process to the device that requested the
 data via the local area network.
-<img file="00000001.tif" id="img-EP-1117873-A1-00000001" he="97" wi="143" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract><description lang="EN" status="new"><heading><b>Field of use</b></heading><p num="0001">The invention finds applicability in the distribution of digital video on demand
-services and other digital services throughout a consumer's location.</p><p num="0002">With the advent of cable modems, there is the ability to deliver digital data at
+<img file="00000001.tif" id="img-EP-1117873-A1-00000001" he="97" wi="143" img-format="tif" img-content="ad" orientation="unknown" inline="no" /></p></abstract>
+<description lang="EN" status="new">
+<heading><b>Field of use</b></heading>
+<p num="0001">The invention finds applicability in the distribution of digital video on demand
+services and other digital services throughout a consumer's location.</p>
+<p num="0002">With the advent of cable modems, there is the ability to deliver digital data at
 high rates from content providers and the internet over cable TV systems. Many
 different services will be delivered digitally, one of which is video on demand and
 high definition TV digital data. Another digital service which is useful at least for
 business establishments is video conferencing. Other digital services that will be
 becoming more and more useful in the future are high speed contact with the
 corporate LAN from home for telecommuters, high speed internet access, distance
-learning, multimedia presentations to remote and/or dispersed audiences, etc.</p><p num="0003">The development of cable modems has enabled the delivery of high speed
+learning, multimedia presentations to remote and/or dispersed audiences, etc.</p>
+<p num="0003">The development of cable modems has enabled the delivery of high speed
 data over 10 MB/sec channels to customer premises over hybrid fiber coaxial cable
 TV distribution networks. But once the digital data reaches a customer premises, it
 still must be distributed and converted to a proper format for use by the user on a
 TV, a telephone, a video phone, a computer, a network computer a FAX, a DVD
-recorder and other peripherals that will be developed in the future.</p><p num="0004">Concurrently, the telephone companies have developed digital subscriber line
+recorder and other peripherals that will be developed in the future.</p>
+<p num="0004">Concurrently, the telephone companies have developed digital subscriber line
 technologies such as Asymmetrical Digital Subscriber Line (ADSL), High Bit Rate
 Digital Subscriber Line technology, ISDN and ISDL, Rate Adaptive Digital
 Subscriber Line (RADSL), Symmetric Digital Subscriber Line (SDSL), Very High
-Speed DSL (VDSL). These different technologies are described in <ref typ="npl"> Muller, <i>Desktop
-Encyclopedia of Telecommunications,</i> p. 93-95 (McGraw Hill 1998) ISBN 0-07-044457-9, </ref>
-and <ref typ="npl">Clayton, <i>Illustrated Telecom Dictionary,</i> (McGraw Hill 1998) ISBN 0-07-012063-3,</ref>
-and <ref typ="npl">Horak, <i>Communications Systems and Networks, Voice, Data and
-Broadband Technologies,</i> (M&amp;T Books, Foster City, Ca. 1997) ISBN 1-55851-485-6,</ref>
+Speed DSL (VDSL). These different technologies are described in <ref typ="npl"> Muller, Desktop
+Encyclopedia of Telecommunications, p. 93-95 (McGraw Hill 1998) ISBN 0-07-044457-9, </ref>
+and <ref typ="npl">Clayton, Illustrated Telecom Dictionary, (McGraw Hill 1998) ISBN 0-07-012063-3,</ref>
+and <ref typ="npl">Horak, Communications Systems and Networks, Voice, Data and
+Broadband Technologies, (M&amp;T Books, Foster City, Ca. 1997) ISBN 1-55851-485-6,</ref>
 the entirety of all these publications being hereby incorporated by reference. These 
 digital subscriber line technologies will soon be capable of delivering digital voice,
 data and image information from various servers as well as via high speed internet
 access to the subscriber premises over standard telephone copper twisted pairs
 which are already in the ground and which everybody already has. Some of these
 technologies are fast enough to also deliver video on demand, which typically
-requires about 2 megabits/sec data rate.</p><p num="0005">The also were introduced in 1994, digital broadcast satellite services (DBS)
+requires about 2 megabits/sec data rate.</p>
+<p num="0005">The also were introduced in 1994, digital broadcast satellite services (DBS)
 such as DirecTV (offered by Hughes Electronics and Thomson Multimedia). DBS
 services already can or soon will provide video on demand, internet connectivity and
 multimedia applications all with the high picture quality that digital technology
@@ -54,7 +63,8 @@ PCs in the customer premises using the DBS dish and coaxial cable distribution
 network. An expansion card couples the PC's I/O bus to the coaxial cable
 distribution network of the DBS system. A modem is used by the PC to make a dial
 up connection to the internet service provider (ISP) which then sends internet data
-to the PC via an uplink to the satellite and then down to the user's dish.</p><p num="0006">One problem that consumers of digital data delivery services will soon face is
+to the PC via an uplink to the satellite and then down to the user's dish.</p>
+<p num="0006">One problem that consumers of digital data delivery services will soon face is
 as follows. There is great uncertainty as to which subscription data delivery services
 will provide the most reliable, best performing and least expensive version of each
 type service. Thus, there is a need for a way for a user to be able to couple to all the
@@ -65,7 +75,8 @@ necessary to have some sort of circuit that can interface with all the different
 subscription service digital data delivery networks and at least one local area 
 network running throughout the user's home and do any necessary protocol
 conversions and packet, cell or frame reassembly and encapsulation into packets of
-the type used on the LAN.</p><p num="0007">ADSL routers such as the Remote 810 ADSL Router manufactured by 3Com
+the type used on the LAN.</p>
+<p num="0007">ADSL routers such as the Remote 810 ADSL Router manufactured by 3Com
 currently exist. These routers can couple an Ethernet local area network to ADSL
 lines so that POTS voice conversations can occur simultaneously while searching
 the internet. The Remote 810 ADSL Router has an integrated 4-port 10Base-T hub
@@ -74,7 +85,8 @@ simultaneous concurrent connections to multiple destinations on the internet and
 can perform bridging functions. 3Com also manufactures SDSL routers like the
 OfficeConnect Remote 840 SDSL which can support applications that require high
 bandwidth in both directions such as video conferencing, remote training, Web
-hosting, e-commerce and other multimedia applications.</p><p num="0008">Other prior art, such as the 3Com PathBuilder S700 WAN switch, exists
+hosting, e-commerce and other multimedia applications.</p>
+<p num="0008">Other prior art, such as the 3Com PathBuilder S700 WAN switch, exists
 which concentrates, aggregates and switches traffic over wide area networks. The
 PathBuilder S700 WAN can converge voice, video and data applications -- including
 Frame Relay, ATM and SONET -- onto a common network. Up to 100 interfaces are
@@ -93,7 +105,8 @@ supports Inverse Multiplexing for ATM at speeds ranging from 1.5 Mbps to 16 Mbps
 An 18-slot chassis supports migration to T3/E3 or OC-3 services as bandwidth 
 requirements increase. Distributed processing implemented by placing a RISC
 processor on each application module to provide scaleable performance and wire
-speed communications.</p><p num="0009">However, the 3COM Pathbuilder S700 WAN Switch lacks the capability to
+speed communications.</p>
+<p num="0009">However, the 3COM Pathbuilder S700 WAN Switch lacks the capability to
 interface with ADSL lines, cable modems, satellite dishes, wireless local loops,
 terrestial microwave links or other subscription network services that may become
 available in the future such as digital data delivery over the power lines. The 3COM
@@ -103,14 +116,16 @@ routers currently exist which can couple a local area network such as an Etherne
 each of the public service telephone network, and which embody and combine the
 technology of ADSL modems, cable modems, and satellite DirectPC decoder boxes
 with IP video and IP telephony interfaces and switching, routing and protocol
-conversion capability.</p><p num="0010">In the current climate of deregulation, fierce competition for provision of
+conversion capability.</p
+><p num="0010">In the current climate of deregulation, fierce competition for provision of
 telecommunication services to customers has arisen. Many alternative distribution
 networks for digital data have either already been developed or under development.
 For example, in the near future, the digital data delivery services just described that
 are delivered by the PSTN and CATV HFC distribution facilities will also be
 competing with wireless local loop delivery networks provided by Personal
 Communication Service (PCS) companies and data delivery services under
-development by the electric power utilities.</p><p num="0011">The problem is that the consumer has no way to know which services will
+development by the electric power utilities.</p>
+<p num="0011">The problem is that the consumer has no way to know which services will
 provide the most reliable, highest quality and least expensive delivery mechanism
 for telephone and FAX service, e-mail, distance learning, video conferencing, high
 speed world wide web access, video on demand, remote LAN for telecommuters
@@ -126,7 +141,8 @@ The problem this raises for consumers is that they do not want to invest in
 technology for their home networks that only interfaces to ADSL or cable modems
 and then be faced with the prospect of an expensive replacement of their home
 network equipment in order to interface their LAN with a new subscription service
-digital data delivery network.</p><p num="0012">Another example involves supplying Plain Old Telephone Service (POTS) to
+digital data delivery network.</p>
+<p num="0012">Another example involves supplying Plain Old Telephone Service (POTS) to
 consumers via cable modem versus ADSL. Cutting of a CATV line in the street or
 losing an above ground cable during a windstorm will cut service to the entire
 neighborhood. That means that everybody in the neighborhood who obtains their
@@ -134,13 +150,16 @@ telephone service via cable modem, will be left without phone service until the 
 is repaired. In contrast, ADSL is a point-to-point technology which causes only one
 customer to lose phone service if her line is broken. A well maintained HFC CATV
 network may obviate some of these problems, but that is unclear because there has
-not been a great deal of field experience gained yet in POTS over HFC.</p><p num="0013">Thus, a consumer will not know whether to buy a gateway that can interface
+not been a great deal of field experience gained yet in POTS over HFC.</p>
+<p num="0013">Thus, a consumer will not know whether to buy a gateway that can interface
 to an ADSL modem or an HDSL modem or a cable modem until the bugs are
 worked out and competitive factors come into play and make it clear which delivery
-network provides the best, lowest cost service for this application.</p><p num="0014">However, one thing is clear: the above identified services will be in demand,
+network provides the best, lowest cost service for this application.</p>
+<p num="0014">However, one thing is clear: the above identified services will be in demand,
 and the consumer would like to be able to take advantage of the best delivery
 mechanism for each service and be able to switch easily between delivery services
-as competition forces adjustments in prices.</p><p num="0015">Since these services will arrive on many different media, possibly in many
+as competition forces adjustments in prices.</p>
+<p num="0015">Since these services will arrive on many different media, possibly in many
 different packet formats or using many different protocols, a problem is created for
 the user in deciding what type of home network data distribution system to buy and
 install. For example, there may be different packet and cell sizes and different 
@@ -151,7 +170,8 @@ VCRs, DVD recorders/players, TVs, FAX machines, computers, telephones etc. that
 need the data without having to have a different gateway and local area network for
 each type of data delivery service. Further, the user may want to use ADSL for
 some services and cable modem for other services and wireless local loops or
-satellite downlinks or some other data delivery network option for other services.</p><p num="0016">A related problem is in the area of videoconferencing. Currently, videophone
+satellite downlinks or some other data delivery network option for other services.</p>
+<p num="0016">A related problem is in the area of videoconferencing. Currently, videophone
 offered by AT&amp;T have been a commercial failure because of the low picture quality
 of 2 frames per second deliverable over standard twisted pairs. ISDN circuits can be
 used for videoconferencing and ISDN videophones are available, and their details
@@ -162,13 +182,16 @@ conferencing by bonding or grouping into multiple channels. Switched 384 Kbps
 connectivity can also be provided on the basis of fractional DS1 or through ISDN
 PRI channels in a channel group known as an HO. However, the cost and
 availability issues that are slowing ISDN teleconferencing also exist for switched
-56/64 and switched 384 Kbps services as well.</p><p num="0017">Likewise, DS-1 facilities support full-motion, high-quality videoconferencing
+56/64 and switched 384 Kbps services as well.</p>
+<p num="0017">Likewise, DS-1 facilities support full-motion, high-quality videoconferencing
 over dedicated networks at rates of up to 2.048 Mbps for E1 and 1.544 Mbps for T1.
 However, DS-1 facilities are costly and not widely deployed and, although they are
 affordable for large organizations with DS-1 backbones, they are out of reach for the
-home network consumer.</p><p num="0018">Broadband networks such as ADSL, B-ISDN, HFC and cable modems,
+home network consumer.</p>
+<p num="0018">Broadband networks such as ADSL, B-ISDN, HFC and cable modems,
 satellite etc. are likely to be much more convenient and affordable ways of delivering
-videoconferencing services via ATM operating at DS-1 or DS-3 or higher speeds.</p><p num="0019">Thus, a need has arisen for a system which interface to many different
+videoconferencing services via ATM operating at DS-1 or DS-3 or higher speeds.</p>
+<p num="0019">Thus, a need has arisen for a system which interface to many different
 subscription service data delivery networks and can distribute digital data throughout 
 a customer premises in an economical fashion to all the peripheral devices that
 need the data using a uniform protocol and addressing scheme. Preferably, the
@@ -178,7 +201,8 @@ service data delivery network media types and translate from whatever
 packet/cell/frame type and protocols are used by the data delivery network without
 substantial expense to reconfigure or buy new equipment or software each time a
 data delivery network option appears that is better, cheaper or more reliable than
-the consumer's current service provider.</p><p num="0020">A prior art document <ref typ="patent">WO 99/44363 A</ref> is known to disclose a method and an
+the consumer's current service provider.</p>
+<p num="0020">A prior art document <ref typ="patent">WO 99/44363 A</ref> is known to disclose a method and an
 apparatus for synchronizing sound and images in a real-time multimedia
 communication through a network gateway. Of an audio signal and a video signal at
 least the audio signal is supplied as an input to the gateway; optionally also the
@@ -188,10 +212,14 @@ audible and visible outputs from the audio device and the video device owing at
 least partly to the intrinsic gateway processing delay(s). A variable delay is adjusted
 in the gateway on a signal routed through the gateway until the audible and visible
 outputs from the separate devices are effectively synchronised. The variable delay
-is stored in the gateway for future use.</p><heading><b>Summary of the Invention</b></heading><p num="0021">According to a first aspect of the invention there is provided a gateway
+is stored in the gateway for future use.</p>
+<heading><b>Summary of the Invention</b></heading>
+<p num="0021">According to a first aspect of the invention there is provided a gateway
 apparatus the characteristic features of which are those recited in claim 1.</p><p num="0022">According to a second aspect of the invention there is provided a process
 carried out by a gateway, the characteristic features of which are those recited in
-claim 28. </p><heading><b>Brief Description of the Drawings</b></heading><p num="0023"><sl><li>Figure 1 is a diagram of a prior art connection between the internet and a
+claim 28. </p>
+<heading><b>Brief Description of the Drawings</b></heading>
+<p num="0023"><sl><li>Figure 1 is a diagram of a prior art connection between the internet and a
 home local area network through a cable modem and the HFC of a CATV system.</li><li>Figure 2 is a diagram of a prior art connection between the internet and a
 home local area network through an ADSL modem.</li><li>Figure 3 is a diagram of a home network having a gateway within the genus
 of the invention which couples any one of a number of different subscriber service
@@ -202,7 +230,9 @@ gateway does the necessary protocol conversions and translations between the
 protocols and packet formats of the local area network and the protocols and packet
 formats of the subscriber service data delivery external networks.</li><li>Figures 4A and 4B are a detailed diagram of a gateway having ADSL,
 satellite, cable and broadcast TV antenna interface circuitry.</li><li>Figure 5 is a block diagram of a video adapter for coupling a local area
-network to a television.</li><li>Figures 6A-6E are a flowchart of a pull technology video on demand process.</li><li>Figure 7 is a flowchart of a wideband internet access process.</li><li>Figure 8 is a block diagram of a modular construction for the gateway.</li></sl></p><heading><b>Detailed Description of the Preferred and Alternative Embodiments</b></heading><p num="0024">Figure 1 is a diagram of a prior art connection between the internet and a
+network to a television.</li><li>Figures 6A-6E are a flowchart of a pull technology video on demand process.</li><li>Figure 7 is a flowchart of a wideband internet access process.</li><li>Figure 8 is a block diagram of a modular construction for the gateway.</li></sl></p>
+<heading><b>Detailed Description of the Preferred and Alternative Embodiments</b></heading>
+<p num="0024">Figure 1 is a diagram of a prior art connection between the internet and a
 home local area network through a cable modem and the HFC of a CATV system.
 The internet is shown as cloud 11. An IP router 13 in the headend facility 15 of an
 internet service provider bidirectionally couples IP packets to the internet using the
@@ -224,7 +254,8 @@ to peripherals such as TV 39, telephone 37 and personal computer 35. A typical
 example of cable modem 31 is the U.S. Robotics Cable Modem CMX. This modem
 will work on any cable system that complies with the MCNS data-over-cable
 specification. This cable modem comes with an EtherLink network interface card
-and is compatible with the Windows and Macintosh operating systems.</p><p num="0025">Referring to Figure 2, there is shown a prior art connection between the
+and is compatible with the Windows and Macintosh operating systems.</p>
+<p num="0025">Referring to Figure 2, there is shown a prior art connection between the
 internet and a local area network in a home via the telephone system using ADSL
 modems. The internet 11 is coupled to IP router 13 via DS 1 (1.544 Mbps
 supporting 5 or more continuous users or up to 55 users with 10% usage), DS 3 (45
@@ -238,7 +269,8 @@ directly to the Ethernet port of a personal computer or to an Ethernet hub. The
 access switch 53 serves to concentrate access lines from the ADSL modems such
 as 43 into router ports of IP router 13. Access adapter 53 is likely to include ATM 
 switch fabric. The ADSL modem 41 can be the 3Com HomeConnect ADSL Modem
-Ethernet or any equivalent ADSL modem.</p><p num="0026">Referring to Figure 3, there is shown a diagram of a home network having a
+Ethernet or any equivalent ADSL modem.</p>
+<p num="0026">Referring to Figure 3, there is shown a diagram of a home network having a
 gateway within the genus of the invention which couples any one of a number of
 different subscriber service data delivery networks which are external to a customer
 premises to one or more local area networks that deliver digital data from said
@@ -255,7 +287,8 @@ service (subscriber service is used loosely to mean all signals whether analog o
 digital transmitted to the customer premises via an external network of any type
 including a TV antenna) is transmitted to the customer premises. Gateway 14
 converts the incoming signals to digital data in Ethernet packets and transmits it to
-the requesting device coupled to the local area network.</p><p num="0027">The gateway 14 functions to do all the physical layer interfacing and protocol
+the requesting device coupled to the local area network.</p>
+<p num="0027">The gateway 14 functions to do all the physical layer interfacing and protocol
 conversions necessary to couple one or more local area networks that run through
 the customer premises to digital data distribution services delivered via the Hybrid
 Fiber Coax (HFC) of a cable television system, or a digital satellite data distribution
@@ -268,7 +301,8 @@ digital data carried on its upstream and downstream carriers. Likewise, the sate
 dish 56 will deliver broadcast TV signals as well as digital data modulated on the
 downstream carrier. The Public Service Telephone Network (PSTN) telephone lines
 58 will also deliver analog telephone signals in addition to digital data modulated
-onto the upstream and downstream carriers of the ADSL service.</p><p num="0028">The gateway 14 is typically a Pentium or Celeron class personal computer
+onto the upstream and downstream carriers of the ADSL service.</p>
+<p num="0028">The gateway 14 is typically a Pentium or Celeron class personal computer
 host with protocol conversion and switching control programs that cooperate with the
 operating system to control the operations of various interface circuits and having
 one or more network interface circuits that drive the media of the local area
@@ -295,7 +329,8 @@ by all the subscription network interface cards in the gateway. The circuits and
 software that are specific to any particular subscription network such as MPEG
 compression or decompression, tuning, detection and demodulation, carrier and 
 clock recovery, video decoding, A/D or D/A conversions etc. are located on the
-expansion module interface card dedicated to that subscription network.</p><p num="0029">This preferred modular construction has two significant advantages. First, it
+expansion module interface card dedicated to that subscription network.</p>
+<p num="0029">This preferred modular construction has two significant advantages. First, it
 protects the subscriber's investment in the gateway by providing flexibility to couple
 the gateway to any subscriber network that turns out to be the most reliable, least
 expensive, most flexible or easiest to use or least aggravating subscriber network for
@@ -311,7 +346,8 @@ extends to the situation where the user later changes her mind and decides that
 high speed internet access is useful, but determines that satellite delivery by
 DirectPC™ is the best way of obtaining this service. In such a case, the user does
 not have to buy an entirely new gateway, but can simply buy an additional modular
-expansion card for interfacing to a satellite dish.</p><p num="0030">The second advantage of the modular construction of the gateway is the
+expansion card for interfacing to a satellite dish.</p>
+<p num="0030">The second advantage of the modular construction of the gateway is the
 property it has of protecting the subscriber's investment in the gateway by
 decoupling the physical structure and software of the shared components of the
 gateway from changes in the particular subscription networks. As these subscription
@@ -326,7 +362,8 @@ ADSL interface card and substitute a cable modem card to interface with the HFC
 network if a cable modem card is not already present. Likewise, if ADSL with
 Carrierless Amplitude/Phase modulation (CAP) give way to Discrete Multitone
 (DMT) modulation as the new standard, the user can simply swap out the CAP
-based ADSL expansion module for a DMT based module.</p><p num="0031">The structure of one embodiment of the gateway 14 will be discussed in more
+based ADSL expansion module for a DMT based module.</p>
+<p num="0031">The structure of one embodiment of the gateway 14 will be discussed in more
 detail later. However, the genus of gateways 14 which are within the teachings of
 the invention is defined by the following characteristics which all will share:
 <sl><li>a programmed host computer with an operating system, and one or
@@ -346,12 +383,14 @@ host microprocessor, hard disk, RAM, CD-ROM/DVD, power supply, network
 interface circuits for the LAN(s), display and keyboard, the operating system, any
 management sofware and any protocol conversion software layers that are common
 to all network interface circuits and a packet switching process and a crossbar
-switch or other switching circuitry.</li></sl></p><p num="0032">The gateway 14 will have a cable modem circuit either on a modular 
+switch or other switching circuitry.</li></sl></p>
+<p num="0032">The gateway 14 will have a cable modem circuit either on a modular 
 expansion card or as part of the subscription network interface circuits board. This
 cable modem circuitry can be any of the cable modems that are known in the prior
 art which are identified herein or any new cable modem design that surfaces after
 this application is filed since the details of the cable modem are not believed at the
-present time to be critical to the invention.</p><p num="0033">Likewise, the gateway 14 will have as part of its interface circuit board or as
+present time to be critical to the invention.</p>
+<p num="0033">Likewise, the gateway 14 will have as part of its interface circuit board or as
 an expansion card module, an ADSL modem (or SDSL or HDSL modem) to receive
 incoming digital data modulated onto a downstream carrier and output it as Ethernet
 packets on LAN(s) 18 and 20. In some alternative embodiments, LANs 18 and 20
@@ -361,7 +400,8 @@ gateway 14 to packetize the data properly and use appropriate circuitry and
 protocols at all levels from the physical layer, MAC and network or routing layers up
 to the application layer for the particular LANs in use. ATM LAN switches and
 routers are available in the prior art and the details of their construction are hereby
-incorporated by reference.</p><p num="0034">Likewise, the ADSL modem receives Ethernet packets with digital data
+incorporated by reference.</p>
+<p num="0034">Likewise, the ADSL modem receives Ethernet packets with digital data
 encoding voice, pictures, video etc. and modulates that data onto an upstream
 carrier. ADSL carves up the local loop bandwidth (the bandwidth of the twisted pair
 telephone line from the consumer premises to the Central Office) into several
@@ -381,7 +421,8 @@ interface circuitry or the ADSL expansion module as the details of the ADSL
 interface circuitry are not believed to be critical to the invention. The 3COM ADSL
 modem couples to a twisted pair carrying ADSL services and has an Ethernet
 10Base-T output for coupling to the LAN(s) 18 or 20 through the shared packet
-switching circuitry of the gateway.</p><p num="0035">The gateway 14 also includes as part of its subscription network interface
+switching circuitry of the gateway.</p>
+<p num="0035">The gateway 14 also includes as part of its subscription network interface
 circuit board or as part of its satellite network expansion module a decoder box. This
 satellite decoder box is of known design suitable to receive, demodulate,
 demultiplex, detect and decompress (if necessary) digital data transmitted on a
@@ -413,27 +454,31 @@ compression standards exist such as Px64, JPEG, MPEG 1 and 2 (MPEG 2 with
 transmission rates of 4 to 100 Mbps is already in use for digital video transmission
 via satellite services such as DirecTV) and MPEG 4 (a low bit rate standard
 intended for videophones and other small screen devices). The compression and
-decompression circuitry for all these standards is hereby incorporated by reference.</p><p num="0036">Further, the satellite interface circuitry or satellite expansion module should
+decompression circuitry for all these standards is hereby incorporated by reference.</p>
+<p num="0036">Further, the satellite interface circuitry or satellite expansion module should
 also include a convention telephone modem for making dial up access to the
 internet via the PSTN for upstream data transmissions through the server of the
 internet service provider. Downloads from the internet or a video server or some
 other digital service server are beamed up to the satellite and retransmitted on the
 downlink addressed to the specific user that requested the downlink. All other
 decoder boxes coupled to satellite dishes that received the same broadcast reject
-the packets so received as not addressed to them.</p><p num="0037">In the embodiment shown in Figure 3, a cable modem 12 is shown externally
+the packets so received as not addressed to them.</p>
+<p num="0037">In the embodiment shown in Figure 3, a cable modem 12 is shown externally
 to the gateway with the output IP or Ethernet packets encapsulating IP packets or
 ATM cells on bus 16 for coupling into the packet switching process inside the
 gateway. The preferred embodiment however is as shown in Figures 4A and 4B with
 the cable modem circuitry inside the gateway as shown at 70. The particular cable
 modem shown at 70 is labelled as DOCSIS 1.2 compatible, but it can be any known
-cable modem design as can the external cable modem.</p><p num="0038">Referring to Figures 4A and 4B, we turn now to more specific information
+cable modem design as can the external cable modem.</p>
+<p num="0038">Referring to Figures 4A and 4B, we turn now to more specific information
 about each of the possible subscription services digital data delivery networks and
 the interface circuitry in the gateway 14 needed to couple each said external
 network to the LAN at the customer site. The gateway 14 can be a standalone circuit
 with all the interface circuits needed to interface to one or more external networks 
 included as a permanent part thereof with no plug-in expansion capability as
 opposed to the preferred modular construction shown in Figure 8 where external
-network interface circuits may be added as needed.</p><p num="0039">First, digital data services may be delivered by a coaxial cable 10 which
+network interface circuits may be added as needed.</p>
+<p num="0039">First, digital data services may be delivered by a coaxial cable 10 which
 represents the drop line in a cable TV HFC network (not shown). The cable TV
 network has a head end modem (not shown) which couples the HFC cable CATV
 plant to wide area networks such as the internet as well as the public service
@@ -449,7 +494,8 @@ frequencies of the cable TV programming nor with upstream data which is
 modulated onto a different upstream carrier frequency. Data from different sources
 is multiplexed on both the downstream and upstream channels by any known
 means including time division multiplexing, code division multiplexing, synchronous
-code division multiplexing or frequency division multiplexing.</p><p num="0041">Digital data can be delivered over the HFC using Asynchronous Transfer
+code division multiplexing or frequency division multiplexing.</p>
+<p num="0041">Digital data can be delivered over the HFC using Asynchronous Transfer
 Mode (ATM) or ATM over B-ISDN type services adapted for HFC and the particular
 type of transmitters, modulation and multiplexing being used. ATM and B-ISDN
 (Broadband ISDN) are inexorably linked, and there are a plurality of standards set
@@ -461,7 +507,8 @@ Specification for PVCs; ATM Broadband Intercarrier Interface (B-UNI) Specificati
 and ATM Date Exchange Interface (DXI) Specification; Internet Engineering Task
 Force Requests for Comment (RFC) that are incorporated by reference are: RFC
 1483: Definition of Multiprotocol Encapsulation over AAL5; and RFC 1577: Definition
-of Internet IP over ATM.</p><p num="0042">ATM is the delivery mechanism of choice since its small 48-octet payload and
+of Internet IP over ATM.</p>
+<p num="0042">ATM is the delivery mechanism of choice since its small 48-octet payload and
 5-octet header in each cell lends itself well to video, image, facsimile, voice or data.
 Further, the fixed cell size gives routers and switches the advantage of predictability,
 as compared to a variable length frame. These two considerations yield decreased
@@ -471,7 +518,8 @@ and thereby causing delays for frames from other sources that need to use the
 same ports. ATM also has the advantage of being able to adjust the amount of
 bandwidth required to support a session during the session. However, ATM
 networks do not provide either error detection and correction or protocol
-conversions. Those functions are left up to the user.</p><p num="0043">Likewise, digital data may be delivered over HFC using Discrete Multi Tone
+conversions. Those functions are left up to the user.</p>
+<p num="0043">Likewise, digital data may be delivered over HFC using Discrete Multi Tone
 (DMT) technology typically used in ADSL but adapted to HFC and the particular type
 of transmitters, modulation, multiplexing being used. DMT is a new technology
 developed for ADSL delivered via twisted pairs that uses DSPs to pump more than 6
@@ -498,7 +546,8 @@ system maintenance, audits etc. All this is delivered without interrupting the P
 service if it is delivered over a copper pair. HFC could also potentially deliver POTS,
 but without a dedicated pair to each home, such service would be subject to
 congestion and loss of POTS to entire neighborhoods served by a single cable in
-case of a failure of the cable.</p><p num="0044">In the embodiment shown in Figure 3, digital data on the HFC drop line is
+case of a failure of the cable.</p>
+<p num="0044">In the embodiment shown in Figure 3, digital data on the HFC drop line is
 recovered by any known cable modem 12. One example of a suitable cable modem
 using SCDMA upstream multiplexing is given in PCT publication <ref typ="patent">WO 97/08861</ref>,
 published 6 March 1997, which is hereby incorporated by reference. One example
@@ -525,10 +574,12 @@ peripherals via a local area network. Specifically, <ref typ="patent">WO 97/3442
 <sl><li>receiving Internet Protocol packets directed to an entity having an IP
 address out on a LAN at a customer premises and looking up Ethernet source and
 destination addresses mapped to that IP address and generating an Ethernet
-header and appending it to the IP packet;</li><li>adding RFC 1483 bits and CRC bits and sufficient pad bits to make up
+header and appending it to the IP packet;</li>
+<li>adding RFC 1483 bits and CRC bits and sufficient pad bits to make up
 an integer number of ATM cell payload section of 48 bytes to result in an AAL5
 format packet;</li><li>parsing the resulting AAL5 packet into a plurality of ATM cell payload
-sections of 48 bytes each;</li><li>adding a standard 5 byte ATM cell header to each ATM cell;</li><li>encoding the PTI field of the ATM cell header with a bit which signals
+sections of 48 bytes each;</li><li>adding a standard 5 byte ATM cell header to each ATM cell;</li>
+<li>encoding the PTI field of the ATM cell header with a bit which signals
 which cell is the last cell in the packet;</li><li>outputting the ATM cells to a formatter circuit in the head end cable
 modem as an OC3 TDMA stream;</li><li>optimizing ATM cell headers to reduce the size of the headers down to
 two bytes comprising the 16 least significant bits of the VPI/VCI field and encoding
@@ -541,30 +592,37 @@ preferably is an SCDMA transmitter which divides each 9-bit byte into three trib
 and interleaves them into elements of an information vector that correspond to
 virtual channels assigned to the particular modem to which each 9-bit byte is
 directed, and spreading the spectrum of the information vector using one or more
-spreading codes assigned to the one or more assigned virtual channels);</li><li>headend cable modem transmitter encodes the 9-bit bytes and
+spreading codes assigned to the one or more assigned virtual channels);</li>
+<li>headend cable modem transmitter encodes the 9-bit bytes and
 modulates them onto a downstream carrier for transmission over virtual channels
-from a head end over HFC to a remote unit (RU) cable modem.</li></sl></p><p num="0045">The optimized system uses a two level addressing scheme and a mapping
+from a head end over HFC to a remote unit (RU) cable modem.</li></sl></p>
+<p num="0045">The optimized system uses a two level addressing scheme and a mapping
 between each logical channel and the assigned RU for that channel. The two byte
 header in the downstream optimized ATM cell identifies the single logical channel
 upon which the data is to be transmitted, and this single logical channel corresponds
 to a single one of the multiple RUs. The Ethernet address of the particular process
 or peripheral at the RU to which the payload data is to be directed once it arrives at
-the RU is included as several bytes in the payload data.</p><p num="0046">At the RU cable modem (12 in Figure 3 or 70 in Figure 4A), the 9-bit bytes
+the RU is included as several bytes in the payload data.</p>
+<p num="0046">At the RU cable modem (12 in Figure 3 or 70 in Figure 4A), the 9-bit bytes
 are recovered, reassembled into AAL5 packets and encapsulated into one or more
 Ethernet packets for transmission over the LAN. Specifically, the RU cable modem
 carries out the following processing:
 <sl><li>the incoming signals from the cable drop 10 are demodulated,
 demultiplexed and detected in accordance with whatever multiplexing and
 modulation schemes that were used by the headend downstream transmitter for the
-transmission on separate logical channels so as to recover the 9-bit bytes;</li><li>a formatter circuit finds the ATM cell boundaries by examining the 9th
-bits for the start code and reassembles the 50-byte optimized downstream ATM cell;</li><li>the formatter in each RU examines the 2-byte header in each ATM cell
+transmission on separate logical channels so as to recover the 9-bit bytes;</li>
+<li>a formatter circuit finds the ATM cell boundaries by examining the 9th
+bits for the start code and reassembles the 50-byte optimized downstream ATM cell;</li>
+<li>the formatter in each RU examines the 2-byte header in each ATM cell
 to determine if the ATM cell is directed to that RU and discards the cell if it is
 directed to another RU (RU and cable modem at the customer premises) are used
 interchangeably herein) and forwards it to a segmentation and reassembly circuit
-(SAR) as a Utopia data stream if the cell is directed to this RU; </li><li>the SAR recovers the AAL5 packet boundaries by finding the RFC
+(SAR) as a Utopia data stream if the cell is directed to this RU; </li>
+<li>the SAR recovers the AAL5 packet boundaries by finding the RFC
 1483 bits and the last cell code and reassembles the AAL5 packet and error checks
 it using CRC bits and stores the corrected AAL5 packet in memory for retrieval by
-an Ethernet controller and passes a pointer to the packet to the Ethernet controller;</li><li>the Ethernet controller retrieves the AAL5 packet pointed by each
+an Ethernet controller and passes a pointer to the packet to the Ethernet controller;</li>
+<li>the Ethernet controller retrieves the AAL5 packet pointed by each
 pointer and strips off the RFC 1483 bits and sends the remaining bits as an Ethernet
 packet (after stripping the RFC 1483 bits, the remainder is an Ethernet header
 followed by an IP header followed by a payload section).</li></sl>
@@ -579,9 +637,11 @@ indicating they are directed to processes coupled to the wide area networks to w
 cable modem 12 is coupled are routed through the gateway to the cable modem 12.
 There, they are transmitted on an upstream channel assigned to cable modem 12
 and recovered by the head end modem and coupled to the internet through a router
-at the head end.</p><p num="0047">Other examples of high speed cable modems which could be used for cable
-modem 12 are given in Azzam, <i>High Speed Cable Modems,</i> (McGraw Hill 1997),
-ISBN 0-07-006417-2, which is hereby incorporated by reference.</p><p num="0048">Typically, the local area networks 18 and 20 are 10Base-T phone lines or Cat
+at the head end.</p>
+<p num="0047">Other examples of high speed cable modems which could be used for cable
+modem 12 are given in <ref type="npl">Azzam, <i>High Speed Cable Modems,</i> (McGraw Hill 1997),
+ISBN 0-07-006417-2</ref>, which is hereby incorporated by reference.</p>
+<p num="0048">Typically, the local area networks 18 and 20 are 10Base-T phone lines or Cat
 3, 4 or 5 UTP (twisted pair) type LANs with any topology. These LANs are
 inexpensive and there many sources of inexpensive network adapters, hubs and
 peripherals. The physical media of the LAN(s) 18 and 20 can be provisioned as a
@@ -594,13 +654,15 @@ indirectly through the cable modem 12. However, it is also possible to maintain 
 connection of coaxial cable running throughout the premises to the HFC cable drop
 10 for delivery of FDMA analog CATV programming channels to various TVs and
 VCRs in the house and use the 10Base-T or wireless LAN for delivery of digital
-services to the various peripherals through network adapter circuits.</p><p num="0049">Figure 3 shows gateway 14 as coupled to two LANs 18 and 20 one of which
+services to the various peripherals through network adapter circuits.</p>
+<p num="0049">Figure 3 shows gateway 14 as coupled to two LANs 18 and 20 one of which
 is high speed and the other of which is low speed The high speed LAN may be
 100BaseT and is used to deliver high bandwidth consuming services such as video
 conferencing, video on demand, high speed internet access. There may be one or
 more LANs coupled to the gateway. If there is more than one LAN, the gateway 14
 also provides a routing function to get the Ethernet packets onto the appropriate
-LAN to which the peripheral having the IP address in the packet is coupled.</p><p num="0050">The local area networks 18 and 20 also serve the dual purpose of allowing
+LAN to which the peripheral having the IP address in the packet is coupled.</p>
+<p num="0050">The local area networks 18 and 20 also serve the dual purpose of allowing
 the computers on the network to communicate with each other and share resources
 such as shared hard disks, printers etc. For example, PC 22, which is typically a
 Windows based personal computer but which may also be a Macintosh or other
@@ -609,7 +671,8 @@ created on the hard disk of PC 22 to be accessed by the network computers or to
 have documents created on the network computers 24 and 26 stored on the hard
 disk of PC 22. Through the gateway 14 and an internal ADSL modem or the cable
 modem, the network computers can also access the internet and download web
-pages, send e-mail etc.</p><p num="0051">Television set 28 is coupled to the local area network 18 via a network
+pages, send e-mail etc.</p>
+<p num="0051">Television set 28 is coupled to the local area network 18 via a network
 adapter 30 which functions to convert the compressed digital data in received
 Ethernet packets to video signals on line 32. The TV may be used in interactive
 communications so upstream data can be sent through the use of an infrared or RF
@@ -627,7 +690,8 @@ packets by an infrared and/or RF receiver 82 in the network adapter 30 (see Figu
 containing the upstream VOD request data are addressed to the gateway 14. These
 packets are launched onto the LAN 20 by a network interface card 84 which does
 the media access control and physical layer protocols of whatever LAN is in use
-such as CSMA/CD in the case of Ethernet LANs.</p><p num="0052">The IP packet encapsulating each VOD request is addressed to the particular
+such as CSMA/CD in the case of Ethernet LANs.</p>
+<p num="0052">The IP packet encapsulating each VOD request is addressed to the particular
 video server which will supply the data. Standard mouse or touchpad type
 technology in the infrared keyboard and/or remote control 80 sends pointer
 information to receiver 82 so that the user can request menus from each video
@@ -641,7 +705,8 @@ selections is sent as downstream IP packets addressed to the video adapter havin
 the IP address that was the source address of the menu request packet. These IP
 packets reach the IP video circuit 242 where they are recognized and routed via bus
 87 to the 2/3D Graphics circuit 83 which converts the data into graphics data signals
-on line 85 which will be used to display the menus.</p><p num="0053">When the user points to a particular menu selection on a displayed menu,
+on line 85 which will be used to display the menus.</p>
+<p num="0053">When the user points to a particular menu selection on a displayed menu,
 this pointing information is transmitted to the receiver 82 and converted to graphics 
 commands which are transmitted via line 81 to optional 2/3D graphics circuit 83. The
 graphics circuit 83 creates graphics for overlay on the TV display, and the pointer
@@ -658,19 +723,22 @@ requested selection to create an IP packet bearing the VOD request. This packet 
 then encapsulated into an Ethernet packet addressed to gateway 14 and sent to the
 gateway via the NIC 84 and the LAN 20. The gateway strips off the Ethernet header
 and routes the IP packet to the appropriate video server via the appropriate
-upstream media for that video server.</p><p num="0054">In alternative embodiments, the user may simply type in the number of a
+upstream media for that video server.</p>
+<p num="0054">In alternative embodiments, the user may simply type in the number of a
 category of video from a displayed menu of available categories and the number of
 a video selection on the displayed menu. The menu number and program number
 are then converted into a VOD request IP packet by the receiver 82 and then
 encapsulated into an Ethernet packet addressed to the gateway 14. The gateway 14
-then processes the VOD request as described above.</p><p num="0055">When the upstream VOD request packet reaches the gateway 14, it is
+then processes the VOD request as described above.</p>
+<p num="0055">When the upstream VOD request packet reaches the gateway 14, it is
 processed by the Ethernet (or other LAN protocol) to IP protocol conversion and
 routing process (hereafter referred to as the routing circuit) carried out by the host
 computer circuitry and the software processes symbolized by block 86 in Figure 4A
 (Figures 4A-4B together are a block diagram of one embodiment of the gateway).
 The routing circuit 86 then routes the VOD request packet to the appropriate
 subscription service data delivery network for delivery to the process/target device
-named in the IP destination address. </p><p num="0056">The routing circuit 86 is shown as a separate logical block in Figure 4A from
+named in the IP destination address. </p>
+<p num="0056">The routing circuit 86 is shown as a separate logical block in Figure 4A from
 the host microprocessor 128 and its associated peripherals: random access memory
 129, nonvolatile memory 131 to store the bios, hard disk controller 133 and the hard
 disk 135 it controls, display adapter 137 and display 139, keyboard interface 141
@@ -680,10 +748,11 @@ the IP to Ethernet and vice versa protocol conversions, routing table constructi
 and packet routing functions along with any other functions necessary for a router
 including network interfaces and any other functions required of the routing process
 described in the flowcharts herein. Descriptions of gateways, routers, the Internet
-Protocol and IEEE 802.3 Ethernet local area networks are found in Tanenbaum,
-<i>Computer Networks, 2nd Ed.</i> (Prentice Hall 1989) ISBN 0-13-162959-X, and
-Stallings, <i>Data and Computer Communications, 4th Ed.,</i> (MacMillan Publishing
-1994) ISBN 0-02-415441-5, which are both hereby incorporated by reference.</p><p num="0057">The function of the gateway is to provide protocol conversion, packet format
+Protocol and IEEE 802.3 Ethernet local area networks are found in <ref type="npl">Tanenbaum,
+<i>Computer Networks, 2nd Ed.</i> (Prentice Hall 1989) ISBN 0-13-162959-X</ref>, and
+<ref type="npl">Stallings, <i>Data and Computer Communications, 4th Ed.,</i> (MacMillan Publishing
+1994) ISBN 0-02-415441-5</ref>, which are both hereby incorporated by reference.</p>
+<p num="0057">The function of the gateway is to provide protocol conversion, packet format
 conversion, video, voice and data demodulation, detection and demultiplexing
 services, conditional access control to prevent non subscribers from receiving
 services they have not subscribed to. The gateway 14 performs the functions of a
@@ -695,7 +764,8 @@ them to an input port of a routing process and receiving Ethernet upstream packe
 and converting them to IP packets and sending them upstream. The gateway also
 performs IP telephony services (similar to the IP video services except for telephony
 over the internet) as well as switching and routing services. More details about the
-structure and operation of the gateway will be included below.</p><p num="0058">It is up to the network interface cards of the peripherals to receive the
+structure and operation of the gateway will be included below.</p>
+<p num="0058">It is up to the network interface cards of the peripherals to receive the
 Ethernet packets from LAN 18, determine if they are directed to the Ethernet
 address of that peripheral, convert the payload data to a format useable by the 
 peripheral, and to transfer the data to the process having the IP address in the
@@ -751,14 +821,15 @@ downstream and upstream processes described above can be made, or the
 upstream and downstream processes used in those modems can be used for
 delivery of the same digital services they have used in the prior art to deliver. For
 example, any of the cable modem hardware and software structures known in the
-prior art which have been used in the actual field trials identified in Azzam, <i>High
-Speed Cable Modems,</i> Chapter 14, Section 14.2, pp. 512-518 (McGraw Hill 1997),
-ISBN 0-07-006417-2, may be used, and all of these modem designs are hereby
+prior art which have been used in the actual field trials identified in <ref type="npl">Azzam, High
+Speed Cable Modems, Chapter 14, Section 14.2, pp. 512-518 (McGraw Hill 1997),
+ISBN 0-07-006417-2</ref>, may be used, and all of these modem designs are hereby
 incorporated by reference. The cable modems whose circuitry and software is
 incorporated by reference herein include: the LANcity Personal; Hybrid Networks
 Cable Client Modem 211; Zenith HomeWorks Elite; Motorola CyberSurfr; General
 Instruments SURFboard SB1000; Hewlett-Packard QuickBurst; Com21 ComPort;
-Toshiba and any cable modem that conforms to the IEE 802.14 standard.</p><p num="0060">Typically, the IEEE 802.14 compliant cable modem genus will contain
+Toshiba and any cable modem that conforms to the IEE 802.14 standard.</p>
+<p num="0060">Typically, the IEEE 802.14 compliant cable modem genus will contain
 species which have the following characteristics:
 <sl><li>downstream data contained in one of the 6-MHz TV channels that
 occupy the spectra above 550 MHz;</li><li>upstream channel assigned band between 5 and 45 MHz;</li><li>64-QAM downstream modulation delivering over 30 Mbps data rate;</li><li>upstream channel using QPSK modulation or a combination TDMA
@@ -777,12 +848,15 @@ include time synchronization coupled with TDMA and CDMA to lower intersymbol
 inteference as well as power alignment and adaptive equalization to minimize other
 forms of interference. These better modems will also include encryption such as
 pseudorandom scrambling or DES encryption for privacy and a MAC layer protocol
-that insures fairness in upstream bandwidth access.</p><p num="0062">These cable modems have been used to deliver residential online
+that insures fairness in upstream bandwidth access.</p>
+<p num="0062">These cable modems have been used to deliver residential online
 subscription services that include Internet access, Email, world news, shoppping,
 local content covering city government, schools, libraries and other news of the
 community, multimedia services, campus networking, distance learning and
 telemedicine, internet access to schools, Prodigy, Jones Internet Channel and work
-at home programs.</p><heading><b>Details Of Gateway Interfaces To Downstream Cable, Satellite, And ADSL.</b></heading><p num="0063">Referring to Figure 4, there is shown a block diagram of one embodiment of
+at home programs.</p>
+<heading><b>Details Of Gateway Interfaces To Downstream Cable, Satellite, And ADSL.</b></heading>
+<p num="0063">Referring to Figure 4, there is shown a block diagram of one embodiment of
 gateway 14 configured as a standalone circuit where interfaces to the satellite, HFC
 and PSTN networks are all implemented on the circuit board. This circuitry may be
 an expansion card in a personal computer or it may be integrated into the
@@ -791,7 +865,8 @@ computer are not shown in Figure 4 for simplicity, but suffice it to say that th
 CPU of the PC is coupled to circuitry shown in Figure 4 by the address, data and
 control buses of the PC such that the circuits that need control inputs or data from
 the host CPU may receive it. The control and data inputs needed by each circuit will
-be described when that circuit is described. </p><p num="0064">The embodiment of the gateway 14 shown in Figure 4 includes the entire
+be described when that circuit is described. </p>
+<p num="0064">The embodiment of the gateway 14 shown in Figure 4 includes the entire
 circuitry of a DOCSIS1.2 cable modem 70 therein. Turning first to the interface
 circuitry to couple HFC to the LAN, HFC drop line 10 is coupled to an upstream and
 downstream combiner and isolation circuit 90. There, upstream modulated RF
@@ -802,7 +877,8 @@ prevent upstream RF signals from entering line 96 and may optionally include a
 termination for line 92 to prevent reflections. Isolation circuit 98, typically a buffer
 amplfier or capacitor or other circuitry such as a lighting arrester protects the internal
 circuitry of the gateway from any unwanted DC signals or lightning strikes on the
-HFC.</p><p num="0065">In the embodiment shown in Figure 4, three tuners 100, 102 and 104 are
+HFC.</p>
+<p num="0065">In the embodiment shown in Figure 4, three tuners 100, 102 and 104 are
 used. Tuner 100 is tuned to one of the conventional CATV analog video channels in
 NTSC, PAL or SECAM format. Typically, the total bandwidth of the HFC will be
 divided up into different frequency bands for CATV FDMA analog video channels,
@@ -822,7 +898,8 @@ about 6 MHz wide and containing a plurality of video, audio and associated data
 subchannels separated by TDMA. Downstream DOCSIS data such 
 as web pages which are downloaded during high speed internet access is typically
 modulated onto a carrier having a frequency somewhere above the video on
-demand carrier frequencies.</p><p num="0066">One of the functions of the gateway 14 is to deliver requested services to all
+demand carrier frequencies.</p>
+<p num="0066">One of the functions of the gateway 14 is to deliver requested services to all
 the peripherals in the customer premises seemlessly over a shared LAN thereby
 eliminating the need for separate coaxial cable wiring to deliver CATV analog
 signals, a digital network to deliver digital data, telephone wires to deliver
@@ -830,7 +907,9 @@ conventional telephone service. All these services are delivered via a single di
 data distribution system comprised of one or more LANs. To that end, even CATV
 signals that are analog when they arrive are digitized, compressed, turned into IP
 packets and then into Ethernet packets and transmitted to the various televisions via
-a LAN.</p><heading><b>Reception and Distribution of Analog CATV Signals</b></heading><p num="0067">Tuner 100 starts this process by receiving control data from microprocessor
+a LAN.</p>
+<heading><b>Reception and Distribution of Analog CATV Signals</b></heading>
+<p num="0067">Tuner 100 starts this process by receiving control data from microprocessor
 128 defining which CATV analog video channel which has been requested. Users
 request analog CATV broadcast channels via their IR keyboards 34 or remote
 controls 80 in Figure 3. These requests are encapsulated into management and
@@ -869,12 +948,14 @@ be understood as actually placing the data into a packet with a destination addr
 set to the destination circuit or process or seizing control of the host bus and writing
 the address of the destination circuit onto its control lines and placing the data to be
 transferred on the data lines and activating any necessary control signals to latch
-the address and strobe the data into a data register or other memory.</p><p num="0068">The RF output of tuner 100 on bus 134 is then digitized by an analog-to-digital
+the address and strobe the data into a data register or other memory.</p>
+<p num="0068">The RF output of tuner 100 on bus 134 is then digitized by an analog-to-digital
 converter in A/D matrix 130. The digital samples on line 136 are input to a
 video demodulator 138 which functions in the digital domain to demodulate the
 digitized analog video signal by removing the RF component. The video
 demodulator 138 outputs digital data on line 166 which represents a conventional
-baseband NTSC, PAL or SECAM format video signal. </p><p num="0069">The digital data on line 166 is at too high a bit rate to send over the LAN
+baseband NTSC, PAL or SECAM format video signal. </p>
+<p num="0069">The digital data on line 166 is at too high a bit rate to send over the LAN
 since uncompressed broadcast video is at 221 Mbps. Therefore, the video data
 must be compressed. MPEG II compression is preferred, but any known form of
 compression currently known or to be developed in the future will suffice since the
@@ -882,7 +963,8 @@ form of compression is not critical. MPEG II compression circuitry is well known
 is used for MPEG encoder 146. However, MPEG compression does not compress
 NTSC, PAL or SECAM format signals. They must first be converted to YUV format
 luminance and chrominance signals. This conversion is done in video decoder 142,
-which is a known type of circuit in any video system that uses MPEG II compression.</p><p num="0070">The compressed video data is encapsulated into PCI (or other type) bus
+which is a known type of circuit in any video system that uses MPEG II compression.</p>
+<p num="0070">The compressed video data is encapsulated into PCI (or other type) bus
 packets addressed to IP video circuit 158. There, the compressed video data is
 encapsulated into IP packets addressed to the network adapter of the TV where the
 CATV video channel is to be viewed. The IP video circuit 158 determines which IP
@@ -893,12 +975,14 @@ determines from the Ethernet packet source address which TV's network adapter
 requested the data. The IP address of this network adapter is encapsulated into a
 PCI bus packet and transmitted via host bus 156 to the IP video circuit. The IP
 packets encapsulating the digitized CATV channel are then transmitted via bus 160
-to the routing process 86.</p><p num="0071">The routing process 86 is a conventional IP to Ethernet routing process which
+to the routing process 86.</p>
+<p num="0071">The routing process 86 is a conventional IP to Ethernet routing process which
 examines the IP packet destination addresses and looks up the corresponding
 Ethernet addresses. The IP packets are then encapsulated into Ethernet packets
 and routed to the appropriate LAN network interface card for LAN 18 or 20
 depending upon the Ethernet destination address of each packet. The process
-works in reverse for incoming Ethernet packets from the LAN(s).</p><p num="0072">When the IP packets reach the network adapter of the TV that requested the
+works in reverse for incoming Ethernet packets from the LAN(s).</p>
+<p num="0072">When the IP packets reach the network adapter of the TV that requested the
 CATV channel, they are converted to a video signal that can be displayed by the TV
 by the circuitry described below in conjunction with the discussion of Figure 5. </p><heading><b>Video on Demand</b></heading><p num="0073">One disadvantage of watching CATV broadcast channels is that there is no
 facility to have VCR like controls such as pause, rewind, play, slow motion or stop
@@ -913,7 +997,8 @@ distributing digital VOD via satellite so there will be some seeming replication
 discussions that follow. First, a quick overview.</p><p num="0074">The VOD downstream frequency band has multiple video channels, each at a
 different carrier frequency. Each video channel carries multiple TDMA channels of
 MPEG II compressed video with its associated audio, and sometimes with one or
-more additional TDMA subchannels devoted to associated data.</p><p num="0075">The tuner 102 is commanded by the host microprocessor 128 to tune to a
+more additional TDMA subchannels devoted to associated data.</p>
+<p num="0075">The tuner 102 is commanded by the host microprocessor 128 to tune to a
 -particular VOD channel. The customer will order a particular VOD program using the
 IR keyboard 34 or remote control 80. The microprocessor 128 receives the order
 information via management and control Ethernet packets generated by the network
@@ -971,8 +1056,10 @@ examines the IP packet destination addresses and looks up the corresponding
 Ethernet addresses. The IP packets are then encapsulated into Ethernet packets
 and routed to the appropriate LAN network interface card for LAN 18 or 20
 depending upon the Ethernet destination address of each packet. The process
-works in reverse for incoming Ethernet packets from the LAN(s).</p><p num="0084">We now turn to a more detailed discussion of the process carried out by the
-system to receive VOD via either satellite, HFC or ADSL.</p><p num="0085">Figures 6A-6E together comprise a flowchart of the preferred embodiment of
+works in reverse for incoming Ethernet packets from the LAN(s).</p>
+<p num="0084">We now turn to a more detailed discussion of the process carried out by the
+system to receive VOD via either satellite, HFC or ADSL.</p>
+<p num="0085">Figures 6A-6E together comprise a flowchart of the preferred embodiment of
 the processing which occurs in the system to order a VOD selection via either HFC,
 satellite or ADSL modem. Referring jointly to Figures 4A and 4B, 5 and 6A-6E, a
 user orders a particular video program via the IR keyboard 34 or remote control 80 
@@ -987,7 +1074,8 @@ depending upon whether the VOD selection has been ordered via HFC, satellite or
 ADSL since each network probably has its own video server. The user typically
 picks the VOD selection from a menu displayed on her screen for each network, so
 by pointing to the desired selection on the menu of the ADSL network, for example,
-the IP address is set to the IP address of the video server for the ADSL network.</p><p num="0086">The network adapter encapsulates the IP packet requesting the video
+the IP address is set to the IP address of the video server for the ADSL network.</p>
+<p num="0086">The network adapter encapsulates the IP packet requesting the video
 selection in an Ethernet packet (step 108). The Ethernet packet destination address
 is the routing process 86 in the gateway. The IP packet payload message identifies
 the movie or other video program desired and, in some embodiments, identifies the
@@ -1099,7 +1187,8 @@ connection to the video server over the PSTN and send the IP VOD request packet
 over the dial up connection or may communicate with another CO where a video
 server is located by a T1 line or DS1 or other high speed telephone lines. The
 processing and circuitry for ADSL delivery of video demand taught in <ref typ="patent">U.S. patent
-5,247,347</ref> may be used, and that patent is hereby incorporated by reference.</p><p num="0097">Step 120 represents the optional step of authentication and/or conditional
+5,247,347</ref> may be used, and that patent is hereby incorporated by reference.</p>
+<p num="0097">Step 120 represents the optional step of authentication and/or conditional
 access gating carried out at the headend prior to routing the IP request packet to the
 video server. In some embodiments, the IP packet bearing the VOD request is
 routed to the video server only if the user making the request is authenticated and/or
@@ -1509,8 +1598,10 @@ stripped off and the TCP protocol makes sure all the packets have been received.
 The payload data is then sent to the application that requested it for display (step
 308). Processing by the PC or NC of the IP packet data and Ethernet packets is the
 same as in PCs on a LAN that share modems and dial up connections to the
-internet through ISPs, and that technology is incorporated by reference.</p><heading><b>Reception and Distribution of Analog Video Broadcasts Via Satellite Or
-Terrestial Antenna</b></heading><p num="0155">One of the advantages of the gateway 14 is that it may also be used to
+internet through ISPs, and that technology is incorporated by reference.</p>
+<heading><b>Reception and Distribution of Analog Video Broadcasts Via Satellite Or
+Terrestial Antenna</b></heading>
+<p num="0155">One of the advantages of the gateway 14 is that it may also be used to
 distribute analog TV broadcasts to TV's throughout the house using the LAN
 thereby eliminating the need for separate wiring.</p><p num="0156">Tuner 314 starts this process by receiving control data from microprocessor
 128 defining which C-band analog video channel has been requested by the user.

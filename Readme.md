@@ -33,8 +33,9 @@ The following functionalities are available:
 - __Consolidation/resolution of the extracted bibliographical references__ using the [biblio-glutton](https://github.com/kermitt2/biblio-glutton) service or the [CrossRef REST API](https://github.com/CrossRef/rest-api-doc). In both cases, DOI/PMID resolution performance is higher than 0.95 F1-score from PDF extraction.
 - __Extraction and parsing of patent and non-patent references in patent__ publications.
 - __Extraction of Funders and funding information__ with optional matching of extracted funders with the CrossRef Funder Registry.
+- __Identification of copyrights' owner and license associated to the document__, e.g. publisher or authors copyrights, CC-BY/CC-BY-NC/etc. license.
 
-In a complete PDF processing, GROBID manages 55 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middle names, affiliation types, detailed address, journal, volume, issue, pages, DOI, PMID, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure captions, etc.).
+In a complete PDF processing, GROBID manages 68 final labels used to build relatively fine-grained structures, from traditional publication metadata (title, author first/last/middle names, affiliation types, detailed address, journal, volume, issue, pages, DOI, PMID, etc.) to full text structures (section title, paragraph, reference markers, head/foot notes, figure captions, etc.).
 
 GROBID includes a comprehensive [web service API](https://grobid.readthedocs.io/en/latest/Grobid-service/), [Docker images](https://grobid.readthedocs.io/en/latest/Grobid-docker/), [batch processing](https://grobid.readthedocs.io/en/latest/Grobid-batch/), a JAVA API, a generic [training and evaluation framework](https://grobid.readthedocs.io/en/latest/Training-the-models-of-Grobid/) (precision, recall, etc., n-fold cross-evaluation), systematic [end-to-end benchmarking](https://grobid.readthedocs.io/en/latest/Benchmarking/) on thousand documents and the semi-automatic generation of training data.
 
@@ -104,11 +105,10 @@ Detailed end-to-end [benchmarking](https://grobid.readthedocs.io/en/latest/Bench
 A series of additional modules have been developed for performing __structure aware__ text mining directly on scholar PDF, reusing GROBID's PDF processing and sequence labelling weaponry:
 
 - [software-mention](https://github.com/ourresearch/software-mentions): recognition of software mentions and associated attributes in scientific literature
-- [datastet](https://github.com/kermitt2/datastet): identification of named and implicit research datasets and associated attributes in scientific articles
+- [datastet](https://github.com/kermitt2/datastet): identification of sections and sentences introducing datasets in a scientific article, identification of dataset names and attributes (implict and named datasets) and classification of the type of datasets
 - [grobid-quantities](https://github.com/kermitt2/grobid-quantities): recognition and normalization of physical quantities/measurements
 - [grobid-superconductors](https://github.com/lfoppiano/grobid-superconductors): recognition of superconductor material and properties in scientific literature
 - [entity-fishing](https://github.com/kermitt2/entity-fishing), a tool for extracting Wikidata entities from text and document, which can also use Grobid to pre-process scientific articles in PDF, leading to more precise and relevant entity extraction and the capacity to annotate the PDF with interactive layout
-- [dataseer-ml](https://github.com/dataseer/dataseer-ml): identification of sections and sentences introducing datasets in a scientific article, and classification of the type of these datasets
 - [grobid-ner](https://github.com/kermitt2/grobid-ner): named entity recognition
 - [grobid-astro](https://github.com/kermitt2/grobid-astro): recognition of astronomical entities in scientific papers
 - [grobid-bio](https://github.com/kermitt2/grobid-bio): a toy bio-entity tagger using BioNLP/NLPBA 2004 dataset
@@ -143,7 +143,7 @@ If you want to cite this work, please refer to the present GitHub project, toget
     title = {GROBID},
     howpublished = {\url{https://github.com/kermitt2/grobid}},
     publisher = {GitHub},
-    year = {2008--2023},
+    year = {2008--2024},
     archivePrefix = {swh},
     eprint = {1:dir:dab86b296e3c3216e2241968f0d63b68e8209d3c}
 }

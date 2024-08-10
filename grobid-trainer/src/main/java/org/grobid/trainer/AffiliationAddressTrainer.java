@@ -98,6 +98,7 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
 			// get a factory for SAX parser
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			List<List<OffsetPosition>> placesPositions = null;
+			List<List<OffsetPosition>> countriesPositions = null;
 			List<List<LayoutToken>> allTokens = null;
 
 			int n = 0;
@@ -115,11 +116,12 @@ public class AffiliationAddressTrainer extends AbstractTrainer {
 				final List<String> labeled = parser2.getLabeledResult();
 				allTokens = parser2.getAllTokens();
 				placesPositions = parser2.getPlacesPositions();
+				countriesPositions = parser2.getCountriesPositions();
 				totalExamples += parser2.n;
 
 				// we can now add the features
                 String affAdd = FeaturesVectorAffiliationAddress
-                					.addFeaturesAffiliationAddress(labeled, allTokens, placesPositions);
+                					.addFeaturesAffiliationAddress(labeled, allTokens, placesPositions, countriesPositions);
 
 				// format with features for sequence tagging...
 				// given the split ratio we write either in the training file or the evaluation file

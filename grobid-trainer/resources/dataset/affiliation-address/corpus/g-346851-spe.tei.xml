@@ -10,8 +10,9 @@
 					<analytic>
 						<author>
 
-							<marker>1</marker> 
+							
 							<affiliation>
+								<marker>1</marker> 
 								<orgName type="department">Institut für Theoretische Physik</orgName>,
 								<orgName type="institution">Goethe Universität Frankfurt<lb/></orgName>
 								<address>
@@ -22,8 +23,9 @@
 								</address>
 							</affiliation>
 						
-							<marker>2</marker> 
+							
 							<affiliation>
+								<marker>2</marker> 
 								<orgName type="department">Institut für Kernphysik</orgName>,
 								<orgName type="institution">Goethe Universität Frankfurt</orgName>,<lb/>
 								<address>
@@ -34,8 +36,9 @@
 								</address>
 							</affiliation>
 							
-							<marker>3</marker> 
+							
 							<affiliation>
+								<marker>3</marker> 
 								<orgName type="institution">GSI Helmholtzzentrum für Schwerionenforschung GmbH</orgName>,<lb/>
 								<address>
 									<addrLine>Planckstr. 1</addrLine>,
@@ -45,25 +48,27 @@
 								</address>			
 							</affiliation>	
 							
-							<marker>4</marker> 
+							
 							<affiliation>
+								<marker>4</marker> 
 								<orgName type="department">Center for Scientific Computing</orgName>,
 								<address>
-								<addrLine>Max-von-Laue-Str. 1</addrLine>,<lb/>
-								<postCode>D-60438</postCode>
-								<settlement>Frankfurt am Main</settlement>,
-								<country key="DE">Germany<lb/></country>
+									<addrLine>Max-von-Laue-Str. 1</addrLine>,<lb/>
+									<postCode>D-60438</postCode>
+									<settlement>Frankfurt am Main</settlement>,
+									<country key="DE">Germany<lb/></country>
 								</address>			
 							</affiliation>
 							
-							<marker>5</marker> 
+							
 							<affiliation>
+								<marker>5</marker> 
 								<orgName type="department">Frankfurt Institute for Advanced Studies</orgName>,
 								<address>
-								<addrLine>Ruth-Moufang-Str. 1</addrLine>,<lb/>
-								<postCode>D-60438</postCode>
-								<settlement>Frankfurt am Main</settlement>,
-								<country key="DE">Germany<lb/></country>
+									<addrLine>Ruth-Moufang-Str. 1</addrLine>,<lb/>
+									<postCode>D-60438</postCode>
+									<settlement>Frankfurt am Main</settlement>,
+									<country key="DE">Germany<lb/></country>
 								</address>			
 							</affiliation>
 						</author>

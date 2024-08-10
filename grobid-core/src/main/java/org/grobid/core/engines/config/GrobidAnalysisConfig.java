@@ -56,6 +56,9 @@ public class GrobidAnalysisConfig {
     // if the raw bibliographical string should be included in the parsed results
     private boolean includeRawCitations = false;
 
+    // if the raw copyrights/license string should be included in the parsed results
+    private boolean includeRawCopyrights = false;
+
     /// === TEI-specific settings ==
 
     // if true, generate random attribute id on the textual elements of
@@ -128,6 +131,11 @@ public class GrobidAnalysisConfig {
 
         public GrobidAnalysisConfigBuilder includeRawCitations(boolean rawCitations) {
             config.includeRawCitations = rawCitations;
+            return this;
+        }
+
+        public GrobidAnalysisConfigBuilder includeRawCopyrights(boolean rawCopyrights) {
+            config.includeRawCopyrights = rawCopyrights;
             return this;
         }
 
@@ -236,6 +244,10 @@ public class GrobidAnalysisConfig {
 
     public boolean getIncludeRawCitations() {
         return includeRawCitations;
+    }
+
+    public boolean getIncludeRawCopyrights() {
+        return includeRawCopyrights;
     }
 
     public boolean isGenerateTeiIds() {

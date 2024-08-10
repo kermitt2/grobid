@@ -1,0 +1,64 @@
+name,full name,type,project/landmark,thematic domain,legal status (y),roadmap entry (y),operation START (y) 
+EBRAINS,European Brain ReseArch INfrastructureS,distributed,project,"DATA, COMPUTING AND DIGITAL RESEARCH IFRASTRUCTURES","AISBL, 2019",2021,2026
+SLICES,Scientific Large-scale Infrastructure for Computing/ Communication Experimental Studies,distributed,project,"DATA, COMPUTING AND DIGITAL RESEARCH IFRASTRUCTURES",pending,2021,2024
+SoBigData++,European Integrated Infrastructure for Social Mining and Big Data Analytics,distributed,project,"DATA, COMPUTING AND DIGITAL RESEARCH IFRASTRUCTURES",pending,2021,2030
+IFMIF-DONES,International Fusion Materials Irradiation Facility - DEMO Oriented NEutron Source,single-sited,project,ENERGY,pending,2018,2033
+MARINERG-i,Marine Renewable Energy Research Infrastructure,distributed,project,ENERGY,pending,2021,2030
+DANUBIUS-RI,International Centre for Advanced Studies on River-Sea Systems,distributed,project,ENVIRONMENT,ERIC Step1,2016,2024
+DiSSCo,Distributed System of Scientific Collections,distributed,project,ENVIRONMENT,pending,2018,2025
+eLTER RI,"Integrated European Long-Term Ecosystem, critical zone and socio-ecological system Research Infrastructure",distributed,project,ENVIRONMENT,pending,2018,2026
+EIRENE RI,Research Infrastructure for EnvIRonmental Exposure assessmeNt in Europe,distributed,project,HEALTH & FOOD,pending,2021,2031
+EMPHASIS,European Infrastructure for Multi-scale Plant Phenomics and Simulation,distributed,project,HEALTH & FOOD,pending,2016,2021
+EU-IBISBA,European Industrial Biotechnology Innovation and Synthetic Biology Accelerator,distributed,project,HEALTH & FOOD,pending,2018,2025
+METROFOOD-RI,Infrastructure for promoting Metrology in Food and Nutrition,distributed,project,HEALTH & FOOD,pending,2018,2020
+EST,European Solar Telescope,single-sited,project,PHYSICAL SCIENCES & ENGINEERING,pending,2016,2029
+ET,Einstein Telescope,single-sited,project,PHYSICAL SCIENCES & ENGINEERING,pending,2021,2035
+EuPRAXIA,European Plasma Research Accelerator with Excellence in Applications,distributed,project,PHYSICAL SCIENCES & ENGINEERING,pending,2021,2028
+KM3NeT 2.0,KM3 Neutrino Telescope 2.0,distributed,project,PHYSICAL SCIENCES & ENGINEERING,pending,2016,2020
+E-RIHS,European Research Infrastructure for Heritage Science,distributed,project,SOCIAL & CULTURAL INNOVATION,pending,2016,2025
+EHRI,European Holocaust Research Infrastructure,distributed,project,SOCIAL & CULTURAL INNOVATION,pending,2018,2025
+GGP,The Generations and Gender Programme,distributed,project,SOCIAL & CULTURAL INNOVATION,pending,2021,2028
+GUIDE,Growing Up in Digital Europe: EuroCohort,distributed,project,SOCIAL & CULTURAL INNOVATION,pending,2021,2032
+OPERAS,OPen scholarly communication in the European Research Area for Social Sciences and Humanities,distributed,project,SOCIAL & CULTURAL INNOVATION,"AISBL, 2019",2021,2029
+RESILIENCE,"REligious Studies Infrastructure: tooLs, Innovation, Experts, conNections and Centres in Europe",distributed,project,SOCIAL & CULTURAL INNOVATION,pending,2021,2034
+PRACE,Partnership for Advanced Computing in Europe,distributed,landmark,"DATA, COMPUTING AND DIGITAL RESEARCH IFRASTRUCTURES","AISBL, 2010",2006,2010
+ECCSEL ERIC,European Carbon Dioxide Capture and Storage Laboratory Infrastructure,distributed,landmark,ENERGY,"ERIC, 2017",2008,2016
+EU-SOLARIS,European Solar Research Infrastructure for Concentrated Solar Power,distributed,landmark,ENERGY,ERIC Step2,2010,2022
+JHR,Jules Horowitz Reactor,single-sited,landmark,ENERGY,"JHR CA, 2007",2006,2030
+ACTRIS,"Aerosol, Clouds and Trace Gases Research Infrastructure",distributed,landmark,ENVIRONMENT,ERIC Step2,2016,2025
+EISCAT_3D,Next generation European Incoherent Scatter radar system,single-sited,landmark,ENVIRONMENT,"EISCAT SA, 1975",2008,2023
+EMSO ERIC,European Multidisciplinary Seafloor and water-column Observatory,distributed,landmark,ENVIRONMENT,"ERIC, 2016",2006,2016
+EPOS ERIC,European Plate Observing System,distributed,landmark,ENVIRONMENT,"ERIC, 2018",2008,2023
+EURO-ARGO ERIC,European contribution to the international Argo Programme,distributed,landmark,ENVIRONMENT,"ERIC, 2014",2006,2014
+IAGOS,In-service Aircraft for a Global Observing System,distributed,landmark,ENVIRONMENT,"AISBL, 2014",2006,2014
+ICOS ERIC,Integrated Carbon Observation System,distributed,landmark,ENVIRONMENT,"ERIC, 2015",2006,2016
+LifeWatch ERIC,e-Infrastructure for Biodiversity and Ecosystem Research,distributed,landmark,ENVIRONMENT,"ERIC, 2017",2006,2017
+AnaEE,Analysis and Experimentation on Ecosystems,distributed,landmark,HEALTH & FOOD,ERIC Step2,2010,2021
+BBMRI ERIC,Biobanking and BioMolecular Resources Research Infrastructure,distributed,landmark,HEALTH & FOOD,"ERIC, 2013",2006,2014
+EATRIS ERIC,European Advanced Translational Research Infrastructure in Medicine,distributed,landmark,HEALTH & FOOD,"ERIC, 2013",2006,2013
+ECRIN ERIC,European Clinical Research Infrastructure Network,distributed,landmark,HEALTH & FOOD,"ERIC, 2013",2006,2014
+ELIXIR,A distributed infrastructure for life-science data,distributed,landmark,HEALTH & FOOD,"ELIXIR CA, 2013",2006,2014
+EMBRC ERIC,European Marine Biological Resource Centre,distributed,landmark,HEALTH & FOOD,"ERIC, 2018",2008,2017
+ERINHA,European Research Infrastructure on Highly Pathogenic Agents,distributed,landmark,HEALTH & FOOD,"AISBL, 2017",2008,2018
+EU-OPENSCREEN ERIC,European Infrastructure of Open Screening Platforms for Chemical Biology,distributed,landmark,HEALTH & FOOD,"ERIC, 2018",2008,2021
+Euro-BioImaging ERIC,European Research Infrastructure for Imaging Technologies in Biological and Biomedical Sciences,distributed,landmark,HEALTH & FOOD,ERIC 2019,2008,2016
+INFRAFRONTIER,"European Research Infrastructure for the generation, phenotyping, archiving and distribution of mouse disease models",distributed,landmark,HEALTH & FOOD,"GmbH, 2013",2006,2013
+INSTRUCT ERIC,Integrated Structural Biology Infrastructure,distributed,landmark,HEALTH & FOOD,"ERIC, 2017",2006,2017
+MIRRI,Microbial Resource Research Infrastructure,distributed,landmark,HEALTH & FOOD,ERIC Step2,2010,2021
+CTA,Cherenkov Telescope Array,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,"gGmbH, 2014",2008,2024
+ELI ERIC,Extreme Light Infrastructure,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,"ERIC, 2021",2006,2018
+ELT,Extremely Large Telescope,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,ESO,2006,2027
+EMFL,European Magnetic Field Laboratory,distributed,landmark,PHYSICAL SCIENCES & ENGINEERING,"AISBL, 2015",2008,2014
+ESRF EBS,European Synchrotron Radiation Facility Extremely Brilliant Source,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,ESRF,2016,2020
+European Spallation Source ERIC,European Spallation Source,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,"ERIC, 2015",2006,2026
+European XFEL,European X-Ray Free-Electron Laser Facility,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,European XFEL,2006,2017
+FAIR,Facility for Antiproton and Ion Research,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,"GmbH, 2010",2006,2925
+HL-LHC,High-Luminosity Large Hadron Collider,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,CERN,2016,2027
+ILL,Institut Max von Laue - Paul Langevin,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,ILL,2006,2012
+SKAO,Square Kilometre Array Observatory,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,"SKAO, 2011",2006,2027
+SPIRAL2,Système de Production d’Ions Radioactifs en Ligne de 2e génération,single-sited,landmark,PHYSICAL SCIENCES & ENGINEERING,GANIL,2006,2019
+CESSDA ERIC,Consortium of European Social Science Data Archives,distributed,landmark,SOCIAL & CULTURAL INNOVATION,"ERIC, 2017",2006,2013
+CLARIN ERIC,Common Language Resources and Technology Infrastructure,distributed,landmark,SOCIAL & CULTURAL INNOVATION,"ERIC, 2012",2006,2012
+DARIAH ERIC,Digital Research Infrastructure for the Arts and Humanities,distributed,landmark,SOCIAL & CULTURAL INNOVATION,"ERIC, 2014",2006,2019
+ESS ERIC,European Social Survey,distributed,landmark,SOCIAL & CULTURAL INNOVATION,"ERIC, 2013",2006,2013
+SHARE ERIC,"Survey of Health, Ageing and Retirement in Europe",distributed,landmark,SOCIAL & CULTURAL INNOVATION,"ERIC, 2011",2006,2011

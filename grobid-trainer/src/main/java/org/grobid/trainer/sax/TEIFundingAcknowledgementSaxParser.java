@@ -57,8 +57,8 @@ public class TEIFundingAcknowledgementSaxParser extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         if (( (qName.equals("funder")) || (qName.equals("grantName")) || (qName.equals("grantNumber")) || (qName.equals("projectName")) || 
-              (qName.equals("programName")) || (qName.equals("individual")) || (qName.equals("institution")) || (qName.equals("affiliation"))
-            ) & (currentTag != null)) {
+              (qName.equals("programName")) || (qName.equals("individual")) || (qName.equals("institution")) || (qName.equals("affiliation"))) 
+            && (currentTag != null)) {
             String text = getText();
             writeField(text);
         } else if (qName.equals("funding") || qName.equals("acknowledgment") ) {
@@ -105,7 +105,24 @@ public class TEIFundingAcknowledgementSaxParser extends DefaultHandler {
         } else if (qName.equals("individual")) {
             currentTag = "<person>";
         } else if (qName.equals("institution")) {
+            // default
             currentTag = "<institution>";
+            // check the @type attribute for infrastructure
+            int length = atts.getLength();
+            for (int i = 0; i < length; i++) {
+                // Get names and values for each attribute
+                String name = atts.getQName(i);
+                String value = atts.getValue(i);
+
+                if ((name != null) && (value != null)) {
+                    if (name.equals("type")) {
+                        if (value.equals("infrastructure")) {
+                            currentTag = "<infrastructure>";
+                            break;
+                        } 
+                    }
+                }
+            }
         } else if (qName.equals("affiliation")) {
             currentTag = "<affiliation>";
         } else if (qName.equals("funding") || qName.equals("acknowledgment") ) {

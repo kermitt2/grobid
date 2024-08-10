@@ -9,9 +9,8 @@
                   <author>
                      <affiliation>
                         <marker>1</marker>
-                        <orgName type="laboratory">ARC Centre for Antimatter-Matter Studies
-                           (CAMS)</orgName>, <orgName type="institution">Research School of Physics
-                           and Engineering</orgName>,<lb/>
+                        <orgName type="laboratory">ARC Centre for Antimatter-Matter Studies (CAMS)</orgName>, 
+                        <orgName type="institution">Research School of Physics and Engineering</orgName>,<lb/>
                         <orgName type="institution">Australian National University</orgName>,
                         <address>
                            <settlement>Canberra</settlement> 
@@ -23,7 +22,7 @@
                      <affiliation>
                         <marker>2</marker>
                         <orgName type="department">Department of Physics and Astronomy</orgName>,
-                           <orgName type="institution">York University</orgName>,
+                        <orgName type="institution">York University</orgName>,
                         <address>
                            <settlement>Toronto</settlement> 
                            <region>ON</region> 
@@ -33,11 +32,11 @@
                      </affiliation>
                      <affiliation>
                         <marker>3</marker>
-                        <orgName type="laboratory">ARC Centre for Antimatter-Matter Studies
-                           (CAMS)</orgName>, <orgName type="laboratory">The Centre for Atomic,
-                           Molecular<lb/> and Surface Studies (CAMSP)</orgName>, <orgName
-                           type="department">School of Physics</orgName>, <orgName
-                           type="institution">The University of Western Australia,</orgName><lb/>
+                        <orgName type="laboratory">ARC Centre for Antimatter-Matter Studies (CAMS)</orgName>, 
+                        <orgName type="laboratory">The Centre for Atomic, Molecular<lb/> and Surface Studies (CAMSP)</orgName>, 
+                        <orgName type="department">School of Physics</orgName>, 
+                        <orgName type="institution">The University of Western Australia,</orgName>
+                        <lb/>
                         <address>
                            <addrLine>Crawley</addrLine>,<lb/>
                            <settlement>Perth</settlement>, 
@@ -47,8 +46,8 @@
                      </affiliation>
                      <affiliation>
                         <marker>4</marker>
-                        <orgName type="department">Institute of Physics</orgName>, <orgName
-                           type="institution">Nicolaus Copernicus University</orgName>,
+                        <orgName type="department">Institute of Physics</orgName>, 
+                        <orgName type="institution">Nicolaus Copernicus University</orgName>,
                         <address>
                            <addrLine>ul. Grudziadzka 5/7</addrLine>, 
                            <postCode>>87-100</postCode>

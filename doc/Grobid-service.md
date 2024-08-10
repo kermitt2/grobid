@@ -27,9 +27,9 @@ From a development installation, you can also build and install the service as a
 cd ..
 mkdir grobid-installation
 cd grobid-installation
-unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.0.zip
-mv grobid-service-0.8.0 grobid-service
-unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.0.zip
+unzip ../grobid/grobid-service/build/distributions/grobid-service-0.8.1.zip
+mv grobid-service-0.8.1 grobid-service
+unzip ../grobid/grobid-home/build/distributions/grobid-home-0.8.1.zip
 ./grobid-service/bin/grobid-service
 ```
 
@@ -125,38 +125,47 @@ The consolidation parameters (`consolidateHeader`, `consolidateCitations`, `cons
 * `1`, means consolidation against CrossRef/biblio-glutton and update of metadata: when we have a DOI match, the publisher metadata are combined with the metadata extracted from the PDF, possibly correcting them
 * `2`, means consolidation against CrossRef/biblio-glutton and, if matching, addition of the DOI only
 
+The consolidation for header can use a fourth value (`3`), restricting the consolidation to the usage of DOI only, if a DOI has been extracted in the header section. 
+
 ### PDF to TEI conversion services
 
 #### /api/processHeaderDocument
 
 Extract the header of the input PDF document, normalize it and convert it into a TEI XML or [BibTeX] format.
 
-`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), or `2` (consolidate the header metadata and inject DOI only).
+`consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header metadata and inject DOI only) or `3` (consolidate using only extracted DOI, if extracted, and do not try to consolidate using any other metadata).
 
-|  method   |  request type         |  response type       |  parameters         |  requirement  |  description  |
-|---        |---                    |---                   |---                  |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml`    | `input`             | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader` | optional      | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
-|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
+| method     | request type          | response type       | parameters               | requirement    | description                                                                                                                                                                                                                                      |
+|------------|-----------------------|---------------------|--------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST, PUT  | `multipart/form-data` | `application/xml`   | `input`                  | required       | PDF file to be processed                                                                                                                                                                                                                         |
+|            |                       |                     | `consolidateHeader`      | optional       | consolidateHeader is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the header and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted) . |
+|            |                       |                     | `includeRawAffiliations` | optional       | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                           |
+|            |                       |                     | `includeRawCopyrights`   | optional       | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                               |
 
-Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of TEI (note: the TEI XML format is much richer, it should be preferred if there is no particular reason to use BibTeX).
+Use `Accept: application/x-bibtex` to retrieve BibTeX format instead of XML TEI. 
+
+However, please bear in mind the following information:
+
+* the TEI XML format is much richer and structured, it should be preferred if there is no particular reason to use BibTeX, so we recommend to always use `Accept: application/xml`.
+* always supply an `Accept` header or the response type may be inconsistent. There is no easy way to supply a default response type in the API. See discussion [#1093](https://github.com/kermitt2/grobid/issues/1093).
+
 
 Response status codes:
 
-|     HTTP Status code |   reason                                               |
-|---                   |---                                                     |
-|         200          |     Successful operation.                              |
-|         204          |     Process was completed, but no content could be extracted and structured |
-|         400          |     Wrong request, missing parameters, missing header  |
-|         500          |     Indicate an internal service error, further described by a provided message           |
-|         503          |     The service is not available, which usually means that all the threads are currently used                       |
+| HTTP Status code  | reason                                                                                    |
+|-------------------|-------------------------------------------------------------------------------------------|
+| 200               | Successful operation.                                                                     |
+| 204               | Process was completed, but no content could be extracted and structured                   |
+| 400               | Wrong request, missing parameters, missing header                                         |
+| 500               | Indicate an internal service error, further described by a provided message               |
+| 503               | The service is not available, which usually means that all the threads are currently used |
 
 A `503` error with the default parallel mode normally means that all the threads available to GROBID are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. The wait time depends on the service and the capacities of the server, we suggest 2 seconds for the `processHeaderDocument` service.
 
 You can test this service with the **cURL** command lines, for instance header extraction from a PDF file in the current directory:
 
 ```console
-curl -v --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
+curl -v -H "Accept: application/xml" --form input=@./thefile.pdf localhost:8070/api/processHeaderDocument
 ```
 
 If you want a simpler result in the BibTeX format:
@@ -169,18 +178,20 @@ curl -v -H "Accept: application/x-bibtex" --form input=@./thefile.pdf localhost:
 
 Convert the complete input document into TEI XML format (header, body and bibliographical section).
 
-|  method   |  request type         |  response type       |  parameters            |  requirement  |  description  |
-|---        |---                    |---                   |---                     |---            |---            |
-| POST, PUT | `multipart/form-data` | `application/xml`    | `input`                | required      | PDF file to be processed |
-|           |                       |                      | `consolidateHeader`    | optional      | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted). |
-|           |                       |                      | `consolidateCitations` | optional      | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only). |
-|           |                       |                      | `consolidatFunders` | optional         | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only). |
-|           |                       |                      | `includeRawCitations`  | optional      | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result). |
-|           |                       |                      | `includeRawAffiliations` | optional | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).  |
-|           |                       |                      | `teiCoordinates`       | optional      | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details |
-|           |                       |                      | `segmentSentences`       | optional      | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s> |
-|           |                       |                      | `start`       | optional      | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)  |
-|           |                       |                      | `end`       | optional      | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `-1`, end with the last page of the PDF)  |
+|  method   |  request type         |  response type       | parameters               | requirement     | description                                                                                                                                                                                                                                         |
+|---        |---                    |---                   |--------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST, PUT | `multipart/form-data` | `application/xml`    | `input`                  | required        | PDF file to be processed                                                                                                                                                                                                                            |
+|           |                       |                      | `consolidateHeader`      | optional        | `consolidateHeader` is a string of value `0` (no consolidation), `1` (consolidate and inject all extra metadata, default value), `2` (consolidate the citation and inject DOI only), or `3` (consolidate  using only extracted DOI - if extracted). |
+|           |                       |                      | `consolidateCitations`   | optional        | `consolidateCitations` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the citation and inject DOI only).                                                        |
+|           |                       |                      | `consolidatFunders`      | optional        | `consolidateFunders` is a string of value `0` (no consolidation, default value) or `1` (consolidate and inject all extra metadata), or `2` (consolidate the funder and inject DOI only).                                                            |
+|           |                       |                      | `includeRawCitations`    | optional        | `includeRawCitations` is a boolean value, `0` (default, do not include raw reference string in the result) or `1` (include raw reference string in the result).                                                                                     |
+|           |                       |                      | `includeRawAffiliations` | optional        | `includeRawAffiliations` is a boolean value, `0` (default, do not include raw affiliation string in the result) or `1` (include raw affiliation string in the result).                                                                              |
+|           |                       |                      | `includeRawCopyrights`   | optional        | `includeRawCopyrights` is a boolean value, `0` (default, do not include raw copyrights/license string in the result) or `1` (include raw copyrights/license string in the result).                                                                  |
+|           |                       |                      | `teiCoordinates`         | optional        | list of element names for which coordinates in the PDF document have to be added, see [Coordinates of structures in the original PDF](Coordinates-in-PDF.md) for more details                                                                       |
+|           |                       |                      | `segmentSentences`       | optional        | Paragraphs structures in the resulting TEI will be further segmented into sentence elements <s>                                                                                                                                                     |
+|           |                       |                      | `generateIds`            | optional        | if supplied as a string equal to `1`, it generates uniqe identifiers for each text component                                                                                                                                                        |
+|           |                       |                      | `start`                  | optional        | Start page number of the PDF to be considered, previous pages will be skipped/ignored, integer with first page starting at `1`, (default `-1`, start from the first page of the PDF)                                                                |
+|           |                       |                      | `end`                    | optional        | End page number of the PDF to be considered, next pages will be skipped/ignored, integer with first page starting at `1` (default `-1`, end with the last page of the PDF)                                                                          |
 
 Response status codes:
 
@@ -219,6 +230,8 @@ Regarding the bibliographical references, it is possible to include the original
 ```console
 curl -v --form input=@./thefile.pdf --form includeRawCitations=1 localhost:8070/api/processFulltextDocument
 ```
+
+Similar raw strings can be added in the result for affiliation and copyrights/license sections.
 
 Example with requested additional sentence segmentation of the paragraph with bounding box coordinates of the sentence structures:
 

@@ -22,6 +22,7 @@ public class FeaturesVectorFunding {
     public boolean singleChar = false;
     public boolean containDash = false;
     public boolean knownFunder = false;
+    public boolean knownInfrastructure = false;
     public String punctType = null;
     // one of NOPUNCT, OPENBRACKET, ENDBRACKET, DOT, COMMA, HYPHEN, QUOTE, PUNCT (default)
     public boolean containPunct = false;
@@ -73,6 +74,12 @@ public class FeaturesVectorFunding {
         else
             res.append(" 0");
 
+        // lexical information (2)
+        if (knownInfrastructure)
+            res.append(" 1");
+        else
+            res.append(" 0");
+
         // punctuation information (2)
         res.append(" " + punctType); // in case the token is a punctuation (NO otherwise)
 
@@ -92,6 +99,7 @@ public class FeaturesVectorFunding {
         FeatureFactory featureFactory = FeatureFactory.getInstance();
 
         List<OffsetPosition> funderPositions = Lexicon.getInstance().tokenPositionsFunderNames(tokens);
+        List<OffsetPosition> infrastructurePositions = Lexicon.getInstance().tokenPositionsResearchInfrastructureNames(tokens);
 
         String line;
         StringBuilder stringBuilder = new StringBuilder();
@@ -100,6 +108,8 @@ public class FeaturesVectorFunding {
 
         int currentFunderPositions = 0;
         boolean isKnownFunderToken = false;
+        int currentInfrastructurePositions = 0;
+        boolean isKnownInfrastructureToken = false;
         boolean skipTest;
 
         for (int n = 0; n < tokens.size(); n++) {
@@ -172,6 +182,29 @@ public class FeaturesVectorFunding {
                         } else if (funderPositions.get(i).start > n) {
                             isKnownFunderToken = false;
                             currentFunderPositions = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // check the position of matches for known infrastructures
+            if ((infrastructurePositions != null) && (infrastructurePositions.size() > 0)) {
+                if (currentInfrastructurePositions == infrastructurePositions.size() - 1) {
+                    if (infrastructurePositions.get(currentInfrastructurePositions).end < n) {
+                        skipTest = true;
+                    }
+                }
+                if (!skipTest) {
+                    for (int i = currentInfrastructurePositions; i < infrastructurePositions.size(); i++) {
+                        if ((infrastructurePositions.get(i).start <= n) &&
+                                (infrastructurePositions.get(i).end >= n)) {
+                            isKnownInfrastructureToken = true;
+                            currentInfrastructurePositions = i;
+                            break;
+                        } else if (infrastructurePositions.get(i).start > n) {
+                            isKnownInfrastructureToken = false;
+                            currentInfrastructurePositions = i;
                             break;
                         }
                     }
@@ -285,6 +318,9 @@ public class FeaturesVectorFunding {
 
             if (isKnownFunderToken)
                 features.knownFunder = true;
+
+            if (isKnownInfrastructureToken)
+                features.knownInfrastructure = true;
 
             if (tag != null)
                 features.label = tag;

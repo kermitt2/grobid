@@ -16,7 +16,9 @@
 							und dem 
 							<orgName type="laboratory">Laboratorium für L bermikroskopie</orgName> der 
 							<orgName type="institution">Siemens &amp; Halske A.G.</orgName>,
-							<address><addrLine>Forschungsanstalt Insel Riems bei Greifswald</addrLine></address>
+							<address>
+								<addrLine>Forschungsanstalt Insel Riems bei Greifswald</addrLine>
+							</address>
 						</affiliation>
 
 						</author>

@@ -13,14 +13,16 @@
 								<country>Germany</country>
 							<lb/>
 							</address>
-							<orgName type="department">nd Street</orgName>,
+						</affiliation>
+						<affiliation>
 							<address>
+								<addrLine>nd Street</addrLine>
 								<settlement>New York</settlement>,
 								<region>New York</region>
-							<lb/>
+								<lb/>
 								<postCode>10165-2520</postCode>,
 								<country>USA</country>
-							<lb/>
+								<lb/>
 							</address>
 						</affiliation>
 						<affiliation>
