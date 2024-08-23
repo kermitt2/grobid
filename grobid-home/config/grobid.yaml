@@ -154,7 +154,8 @@ grobid:
           batch_size: 9
 
     - name: "header-article-light"
-      engine: "delft"
+      engine: "wapiti"
+#      engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.000001
@@ -165,7 +166,8 @@ grobid:
         useELMo: false
 
     - name: "header-article-light-ref"
-      engine: "delft"
+      engine: "wapiti"
+#      engine: "delft"
       wapiti:
         # wapiti training parameters, they will be used at training time only
         epsilon: 0.000001
