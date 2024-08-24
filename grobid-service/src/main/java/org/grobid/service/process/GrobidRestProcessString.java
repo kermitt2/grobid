@@ -400,7 +400,7 @@ public class GrobidRestProcessString {
 						if (result.getRight() != null) {
 							Affiliation affiliation = result.getRight();
 							if (affiliation != null)
-								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t\t</person>\n";
+								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t</person>\n";
 						}
 					}
 					retVal += "</listPerson>\n";
