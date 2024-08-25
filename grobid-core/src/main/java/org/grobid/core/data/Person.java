@@ -383,7 +383,7 @@ public class Person {
             json.append("\t");
         }
         boolean hasContent = false;
-        json.append("\"person\": {\n");
+        json.append("\"persName\": {\n");
         if (withCoordinates && (getLayoutTokens() != null) && (!getLayoutTokens().isEmpty())) {
             json.append(LayoutTokensUtil.getCoordsJson(getLayoutTokens()));
             hasContent = true;

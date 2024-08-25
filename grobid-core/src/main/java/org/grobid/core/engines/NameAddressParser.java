@@ -110,7 +110,7 @@ public class NameAddressParser extends AbstractParser {
     public List<List<Pair<Person,Affiliation>>> processingBatch(List<List<LayoutToken>> inputsTokens) throws Exception {
         List<List<Pair<Person,Affiliation>>> results = null;
         try {
-            List<String> allSequencesWithFeatures = new ArrayList<>();
+            StringBuilder allSequencesWithFeatures = new StringBuilder();
             for(List<LayoutToken> tokens : inputsTokens) {
                 List<OffsetPosition> placesPositions = lexicon.tokenPositionsLocationNames(tokens);
                 List<OffsetPosition> countriesPositions = lexicon.tokenPositionsCountryNames(tokens);
@@ -124,10 +124,11 @@ public class NameAddressParser extends AbstractParser {
                                                                     countriesPositions, 
                                                                     titlePositions, 
                                                                     suffixPositions);
-                allSequencesWithFeatures.add(sequenceWithFeatures);
+                allSequencesWithFeatures.append(sequenceWithFeatures);
+                allSequencesWithFeatures.append("\n\n");
             }
             
-            String allRes = label(allSequencesWithFeatures);
+            String allRes = label(allSequencesWithFeatures.toString());
 System.out.println(allRes);
             results = resultExtractionLayoutTokens(allRes, inputsTokens);
 
@@ -151,14 +152,14 @@ System.out.println(allRes);
         if (allRes == null || allRes.length() == 0)
             return null;
         String[] resBlocks = allRes.split("\n\n");
+
         int i = 0;
         for (List<LayoutToken> tokens : inputsTokens) {
             if (CollectionUtils.isEmpty(tokens)) {
                 results.add(null);
                 continue;
             }
-            String res = resBlocks[i];       
-            i++;
+            String res = resBlocks[i]; 
             List<Pair<Person,Affiliation>> localResults = new ArrayList<>();
             try {
                 TaggingTokenClusteror clusteror = new TaggingTokenClusteror(GrobidModels.NAMES_ADDRESS, res, tokens);
@@ -334,6 +335,7 @@ System.out.println(allRes);
             }
 
             results.add(localResults);
+            i++;
         }
 
         return results;

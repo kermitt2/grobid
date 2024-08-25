@@ -378,8 +378,9 @@ public class GrobidRestProcessString {
 			engine = Engine.getEngine(true);
 			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
 			if (allResults != null) {
+				retVal = "<listPerson>\n";
 				for(List<Pair<Person,Affiliation>> results : allResults) {
-					retVal = "<listPerson>\n";
+					retVal += "\t<listPerson>\n";
 					for(Pair<Person,Affiliation> result : results) {
 						if (retVal == null) {
 							retVal = "";
@@ -387,24 +388,25 @@ public class GrobidRestProcessString {
 						if (result.getLeft() != null) {
 							Person person = result.getLeft();
 							if (person != null)	 {
-								retVal += "\t<person>\n";
-								retVal += person.toTEI(false, 2) + "\n";
+								retVal += "\t\t<person>\n";
+								retVal += person.toTEI(false, 3) + "\n";
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
 									for(Affiliation localAffiliation : localAffiliations)
-										retVal += Affiliation.toTEI(localAffiliation, 1);
+										retVal += Affiliation.toTEI(localAffiliation, 2);
 								}
-								retVal += "\t</person>\n";
+								retVal += "\t\t</person>\n";
 							}
 						}
 						if (result.getRight() != null) {
 							Affiliation affiliation = result.getRight();
 							if (affiliation != null)
-								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t</person>\n";
+								retVal += "\t\t<person>\n"+Affiliation.toTEI(affiliation, 2)+"\t\t</person>\n";
 						}
 					}
-					retVal += "</listPerson>\n";
+					retVal += "\t</listPerson>\n";
 				}
+				retVal += "</listPerson>\n";
 			}
 
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
@@ -451,33 +453,47 @@ public class GrobidRestProcessString {
 			engine = Engine.getEngine(true);
 			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
 			if (allResults != null) {
+				boolean first = true;
+				retVal = "[\n";
 				for(List<Pair<Person,Affiliation>> results : allResults) {
-					retVal = "[\n";
+					if (!first)
+						retVal += ",\n";
+					else {
+						first = false;
+					}
+					retVal += "\t[\n";
+					boolean first2 = true;
 					for(Pair<Person,Affiliation> result : results) {
 						if (retVal == null) {
-							retVal = "";
+							retVal = " ";
+						}
+						if (!first2)
+							retVal += ",\n";
+						else {
+							first2 = false;
 						}
 						if (result.getLeft() != null) {
 							Person person = result.getLeft();
 							if (person != null)	 {
-								retVal += "\t{ \"person\": { \n";
-								retVal += person.toTEI(false, 2) + "\n";
+								retVal += "\t\t{\n\t\t\t\"person\": { \n";
+								retVal += person.toJSON(false, 3) + "\n";
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
 									for(Affiliation localAffiliation : localAffiliations)
-										retVal += Affiliation.toJSON(localAffiliation, 1);
+										retVal += Affiliation.toJSON(localAffiliation, 2);
 								}
-								retVal += "\t}\n";
+								retVal += "\n\t\t}\n";
 							}
 						}
 						if (result.getRight() != null) {
 							Affiliation affiliation = result.getRight();
 							if (affiliation != null)
-								retVal += "\t<person>\n"+Affiliation.toTEI(affiliation, 1)+"\t\t</person>\n";
+								retVal +="\t\t{\n\t\t\t\"person\": { \n"+Affiliation.toJSON(affiliation, 2)+"\n\t\t}\n";
 						}
 					}
-					retVal += "]\n";
+					retVal += "\t]";
 				}
+				retVal += "\n]\n";
 			}
 
 			if (GrobidRestUtils.isResultNullOrEmpty(retVal)) {
