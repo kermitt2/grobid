@@ -899,7 +899,7 @@ public class Affiliation {
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 encoded = encoder.quoteAsUTF8(aff.getAddrLine());
                 output = new String(encoded);
-                json.append("\"addrLine\": " + output + "\"");
+                json.append("\"addrLine\": \"" + output + "\"");
                 hasContent2 = true;
             }
             if (aff.getPostBox() != null) {
