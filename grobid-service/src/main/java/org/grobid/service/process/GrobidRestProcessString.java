@@ -476,9 +476,10 @@ public class GrobidRestProcessString {
 							Person person = result.getLeft();
 							if (person != null)	 {
 								retVal += "\t\t{\n\t\t\t\"person\": { \n";
-								retVal += person.toJSON(false, 4) + "\n";
+								retVal += person.toJSON(false, 4);
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
+									retVal += ",\n";
 									for(Affiliation localAffiliation : localAffiliations)
 										retVal += Affiliation.toJSON(localAffiliation, 3);
 								}
