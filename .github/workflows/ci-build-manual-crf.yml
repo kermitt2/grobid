@@ -1,8 +1,12 @@
 name: Build and push a CRF-only docker image
 
-on: 
-  workflow_dispatch: 
-    
+on:
+  workflow_dispatch:
+    inputs:
+      suffix:
+        type: string
+        description: Docker image suffix (e.g. develop, crf, full)
+        required: false
 
 jobs:
   build:
@@ -26,17 +30,19 @@ jobs:
     steps:
       - name: Create more disk space
         run: sudo rm -rf /usr/share/dotnet && sudo rm -rf /opt/ghc && sudo rm -rf "/usr/local/share/boost" && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Build and push
         id: docker_build
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          dockerfile: Dockerfile.crf
+          username: ${{ secrets.DOCKERHUB_USERNAME_LFOPPIANO }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_LFOPPIANO }}
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-develop, latest-crf
+          tags:  |
+            latest-develop${{ github.event.inputs.suffix && '-' + github.event.inputs.suffix || '' }}
+            latest-crf${{ github.event.inputs.suffix && '-' + github.event.inputs.suffix || '' }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
