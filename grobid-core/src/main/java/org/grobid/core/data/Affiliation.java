@@ -732,7 +732,8 @@ public class Affiliation {
                                 (config.getGenerateTeiCoordinates() != null) && 
                                 (config.getGenerateTeiCoordinates().contains("orgName"));
 
-        json.append("\"affiliation\": {\n");
+        //json.append("\"affiliation\": {\n");
+        json.append("{\n");
         boolean hasContent = false;
         if (aff.getKey() != null) {
             encoded = encoder.quoteAsUTF8(aff.getKey());

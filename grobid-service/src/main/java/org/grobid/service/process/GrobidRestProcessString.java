@@ -480,8 +480,16 @@ public class GrobidRestProcessString {
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
 									retVal += ",\n";
-									for(Affiliation localAffiliation : localAffiliations)
-										retVal += Affiliation.toJSON(localAffiliation, 3);
+									retVal += "\t\t\t\t\"affiliations\": [\n";
+									boolean first3 = true;
+									for(Affiliation localAffiliation : localAffiliations) {
+										if (!first3)
+											retVal += ",\n";
+										else
+											first3 = false;
+										retVal += Affiliation.toJSON(localAffiliation, 4);
+									}
+									retVal += "\n\t\t\t\t]";
 								}
 								retVal += "\n\t\t\t}\n\t\t}";
 							}
@@ -489,7 +497,11 @@ public class GrobidRestProcessString {
 						if (result.getRight() != null) {
 							Affiliation affiliation = result.getRight();
 							if (affiliation != null)
-								retVal +="\t\t{\n\t\t\t\"person\": { \n"+Affiliation.toJSON(affiliation, 3)+"\n\t\t\t}\n\t\t}";
+								retVal +="\t\t{\n\t\t\t\"person\": { \n"
+									+ "\t\t\t\t\"affiliations\": ["
+									+ Affiliation.toJSON(affiliation, 4)
+									+ "\n\t\t\t\t]"
+									+ "\n\t\t\t}\n\t\t}";
 						}
 					}
 					retVal += "\n\t]";
