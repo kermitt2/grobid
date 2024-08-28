@@ -483,7 +483,7 @@ public class GrobidRestProcessString {
 									for(Affiliation localAffiliation : localAffiliations)
 										retVal += Affiliation.toJSON(localAffiliation, 3);
 								}
-								retVal += "\n\t\t}";
+								retVal += "\n\t\t\t}\n\t\t}";
 							}
 						}
 						if (result.getRight() != null) {
