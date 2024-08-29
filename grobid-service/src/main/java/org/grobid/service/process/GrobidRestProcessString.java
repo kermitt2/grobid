@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.StringUtils;
 
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.inject.Inject;
@@ -229,7 +230,9 @@ public class GrobidRestProcessString {
 						Person person = result.getLeft();
 						if (person != null)	 {
 							retVal += "\t<person>\n";
-							retVal += person.toTEI(false, 2) + "\n";
+							String personSegment = person.toTEI(false, 2);
+							if (!StringUtils.isEmpty(personSegment)) 
+								retVal += personSegment + "\n";
 							List<Affiliation> localAffiliations = person.getAffiliations();
 							if (localAffiliations != null && localAffiliations.size()>0) {
 								for(Affiliation localAffiliation : localAffiliations)
@@ -303,7 +306,9 @@ public class GrobidRestProcessString {
 							if (hasContent)
 								retVal += ",\n";
 							retVal += "\t{\n";
-							retVal += person.toJSON(false, 2);
+							String personSegment = person.toJSON(false, 2);
+							if (!StringUtils.isEmpty(personSegment)) 
+								retVal += personSegment;
 							List<Affiliation> localAffiliations = person.getAffiliations();
 							if (localAffiliations != null && localAffiliations.size()>0) {
 								retVal += ",\n\t\t\"affiliations\": [\n";
@@ -389,7 +394,9 @@ public class GrobidRestProcessString {
 							Person person = result.getLeft();
 							if (person != null)	 {
 								retVal += "\t\t<person>\n";
-								retVal += person.toTEI(false, 3) + "\n";
+								String personSegment = person.toTEI(false, 3);
+								if (!StringUtils.isEmpty(personSegment))
+									retVal += personSegment + "\n";
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
 									for(Affiliation localAffiliation : localAffiliations)
@@ -476,13 +483,19 @@ public class GrobidRestProcessString {
 							Person person = result.getLeft();
 							if (person != null)	 {
 								retVal += "\t\t{\n\t\t\t\"person\": { \n";
-								retVal += person.toJSON(false, 4);
+								String personSegment = person.toJSON(false, 4);
+								if (!StringUtils.isEmpty(personSegment))
+									retVal += personSegment;
 								List<Affiliation> localAffiliations = person.getAffiliations();
 								if (localAffiliations != null && localAffiliations.size()>0) {
-									retVal += ",\n";
+									if (!StringUtils.isEmpty(personSegment))
+										retVal += ",\n";
 									retVal += "\t\t\t\t\"affiliations\": [\n";
 									boolean first3 = true;
 									for(Affiliation localAffiliation : localAffiliations) {
+										if (localAffiliation == null)
+											continue;
+
 										if (!first3)
 											retVal += ",\n";
 										else
@@ -496,12 +509,13 @@ public class GrobidRestProcessString {
 						}
 						if (result.getRight() != null) {
 							Affiliation affiliation = result.getRight();
-							if (affiliation != null)
+							if (affiliation != null) {
 								retVal +="\t\t{\n\t\t\t\"person\": { \n"
 									+ "\t\t\t\t\"affiliations\": ["
 									+ Affiliation.toJSON(affiliation, 4)
 									+ "\n\t\t\t\t]"
 									+ "\n\t\t\t}\n\t\t}";
+							}
 						}
 					}
 					retVal += "\n\t]";

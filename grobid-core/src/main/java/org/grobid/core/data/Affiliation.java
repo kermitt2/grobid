@@ -751,44 +751,35 @@ public class Affiliation {
             }
         }
 
+        if (aff.getDepartments() != null || aff.getLaboratories() != null || aff.getInstitutions() != null) {
+            if (hasContent)
+                json.append(",\n");
+            TextUtilities.appendN(json, '\t', nbTab + 2);
+            json.append("\"orgNames\": [\n");
+        } 
+
         if (aff.getDepartments() != null) {
             if (hasContent)
                 json.append(",\n");
 
-            if (aff.getDepartments().size() == 1) {
+            int q = 1;
+            for (String depa : aff.getDepartments()) {
+                if (q>1)
+                    json.append(",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
-                encoded = encoder.quoteAsUTF8(aff.getDepartments().get(0));
+                encoded = encoder.quoteAsUTF8(depa);
                 output = new String(encoded);
-                json.append("\"orgName\": {\n");
+                //json.append("\"orgName\": {\n");
+                json.append("{\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"type\": \"department\",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"key\": \"dep"+q+"\""+",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"value\": \"" + output + "\"\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
                 json.append("}");
-            } else {
-                int q = 1;
-                TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("[\n");
-                for (String depa : aff.getDepartments()) {
-                    if (q>1)
-                        json.append(",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    encoded = encoder.quoteAsUTF8(depa);
-                    output = new String(encoded);
-                    json.append("\"orgName\": {\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"type\": \"department\",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"key\": \"dep\""+q+",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"value\": \"" + output + "\"\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 2);
-                    json.append("}");
-                    q++;
-                }
-                TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("]");
+                q++;
             }
             hasContent = true;
         }
@@ -796,41 +787,25 @@ public class Affiliation {
         if (aff.getLaboratories() != null) {
             if (hasContent)
                 json.append(",\n");
-
-            if (aff.getLaboratories().size() == 1) {
+            
+            int q = 1;
+            for (String labo : aff.getLaboratories()) {
+                if (q>1)
+                    json.append(",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
-                encoded = encoder.quoteAsUTF8(aff.getDepartments().get(0));
+                encoded = encoder.quoteAsUTF8(labo);
                 output = new String(encoded);
-                json.append("\"orgName\": {\n");
+                //json.append("\"orgName\": {\n");
+                json.append("{\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"type\": \"laboratory\",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
+                json.append("\"key\": \"lab"+q+"\""+",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"value\": \"" + output + "\"\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
                 json.append("}");
-            } else {
-                int q = 1;
-                TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("[\n");
-                for (String labo : aff.getLaboratories()) {
-                    if (q>1)
-                        json.append(",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    encoded = encoder.quoteAsUTF8(labo);
-                    output = new String(encoded);
-                    json.append("\"orgName\": {\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"type\": \"laboratory\",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"key\": \"lab\""+q+",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"value\": \"" + output + "\"\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 2);
-                    json.append("}");
-                    q++;
-                }
-                TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("]");
+                q++;
             }
             hasContent = true;
         }
@@ -839,42 +814,34 @@ public class Affiliation {
             if (hasContent)
                 json.append(",\n");
 
-            if (aff.getInstitutions().size() == 1) {
+            int q = 1;
+            for (String inst : aff.getInstitutions()) {
+                if (q>1)
+                    json.append(",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("\"orgName\": {\n");
+                encoded = encoder.quoteAsUTF8(inst);
+                output = new String(encoded);
+                //json.append("\"orgName\": {\n");
+                json.append("{\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"type\": \"institution\",\n");
                 TextUtilities.appendN(json, '\t', nbTab + 3);
-                encoded = encoder.quoteAsUTF8(aff.getInstitutions().get(0));
-                output = new String(encoded);
+                json.append("\"key\": \"instit"+q+"\""+",\n");
+                TextUtilities.appendN(json, '\t', nbTab + 3);
                 json.append("\"value\": \"" + output + "\"\n");
                 TextUtilities.appendN(json, '\t', nbTab + 2);
                 json.append("}");
-            } else {
-                int q = 1;
-                json.append("[\n");
-                for (String inst : aff.getInstitutions()) {
-                    if (q>1)
-                        json.append(",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    encoded = encoder.quoteAsUTF8(inst);
-                    output = new String(encoded);
-                    json.append("\"orgName\": {\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"type\": \"institution\",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"key\": \"instit\""+q+",\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 3);
-                    json.append("\"value\": \"" + output + "\"\n");
-                    TextUtilities.appendN(json, '\t', nbTab + 2);
-                    json.append("}");
-                    q++;
-                }
-                TextUtilities.appendN(json, '\t', nbTab + 2);
-                json.append("]");
+                q++;
             }
             hasContent = true;
         }
+
+        if (aff.getDepartments() != null || aff.getLaboratories() != null || aff.getInstitutions() != null) {
+            json.append("\n");
+            TextUtilities.appendN(json, '\t', nbTab + 2);
+            json.append("]");
+            hasContent = true;
+        } 
 
         if (
             aff.getAddrLine() != null ||

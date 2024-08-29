@@ -272,42 +272,42 @@ System.out.println(allRes);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_COUNTRY)) {
-                        if (aff.getCountry() != null) {
+                        if (aff.getCountry() != null && isDifferentandNotIncludedContent(aff.getCountry(), clusterContent)) {
                             aff.setCountry(aff.getCountry() + " " + clusterContent);
                         } else {
                             aff.setCountry(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTCODE)) {
-                        if (aff.getPostCode() != null) {
+                        if (aff.getPostCode() != null && isDifferentContent(aff.getPostCode(), clusterContent)) {
                             aff.setPostCode(aff.getPostCode() + " " + clusterContent);
                         } else {
                             aff.setPostCode(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_POSTBOX)) {
-                        if (aff.getPostBox() != null) {
+                        if (aff.getPostBox() != null && isDifferentContent(aff.getPostBox(), clusterContent)) {
                             aff.setPostBox(aff.getPostBox() + " " + clusterContent);
                         } else {
                             aff.setPostBox(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_REGION)) {
-                        if (aff.getRegion() != null) {
+                        if (aff.getRegion() != null && isDifferentandNotIncludedContent(aff.getRegion(), clusterContent)) {
                             aff.setRegion(aff.getRegion() + " " + clusterContent);
                         } else {
                             aff.setRegion(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_SETTLEMENT)) {
-                        if (aff.getSettlement() != null) {
+                        if (aff.getSettlement() != null && isDifferentandNotIncludedContent(aff.getSettlement(), clusterContent)) {
                             aff.setSettlement(aff.getSettlement() + " " + clusterContent);
                         } else {
                             aff.setSettlement(clusterContent);
                         }
                         aff.appendLayoutTokens(cluster.concatTokens());
                     } else if (clusterLabel.equals(TaggingLabels.NAMES_ADDRESS_ADDRESSLINE)) {
-                        if (aff.getAddrLine() != null) {
+                        if (aff.getAddrLine() != null && isDifferentContent(aff.getAddrLine(), clusterContent)) {
                             aff.setAddrLine(aff.getAddrLine() + " " + clusterContent);
                         } else {
                             aff.setAddrLine(clusterContent);
@@ -339,6 +339,53 @@ System.out.println(allRes);
         }
 
         return results;
+    }
+
+    /**
+     * In the context of field extraction, check if a newly extracted content is not redundant 
+     * with the already extracted content
+     */
+    private boolean isDifferentContent(String existingContent, String newContent) {
+        if (existingContent == null) {
+            return true;
+        }
+        if (newContent == null) {
+            return false;
+        }
+        String newContentSimplified = newContent.toLowerCase();
+        newContentSimplified = newContentSimplified.replace(" ", "").trim();
+        String existinContentSimplified = existingContent.toLowerCase();
+        existinContentSimplified = existinContentSimplified.replace(" ", "").trim();
+        if (newContentSimplified.equals(existinContentSimplified))
+            return false;
+        else
+            return true;
+    }
+
+    /**
+     * In the context of field extraction, this variant of the previous method check if a newly 
+     * extracted content is not redundant globally and as any substring combination with the already 
+     * extracted content
+     */
+    private boolean isDifferentandNotIncludedContent(String existingContent, String newContent) {
+        if (existingContent == null) {
+            return true;
+        }
+        if (newContent == null) {
+            return false;
+        }
+        String newContentSimplified = newContent.toLowerCase();
+        newContentSimplified = newContentSimplified.replace(" ", "").trim();
+        newContentSimplified = newContentSimplified.replace("-", "").trim();
+        String existingContentSimplified = existingContent.toLowerCase();
+        existingContentSimplified = existingContentSimplified.replace(" ", "").trim();
+        existingContentSimplified = existingContentSimplified.replace("-", "").trim();
+        if (newContentSimplified.equals(existingContentSimplified) || 
+            existingContentSimplified.indexOf(newContentSimplified) != -1
+            )
+            return false;
+        else
+            return true;
     }
 
     /**
