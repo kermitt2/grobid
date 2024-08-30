@@ -1,8 +1,12 @@
 name: Build and push a CRF-only docker image
 
-on: 
-  workflow_dispatch: 
-    
+on:
+  workflow_dispatch:
+    inputs:
+      suffix:
+        type: string
+        description: Docker image suffix (e.g. develop, crf, full)
+        required: false
 
 jobs:
   build:
@@ -37,6 +41,8 @@ jobs:
           image: lfoppiano/grobid
           registry: docker.io
           pushImage: true
-          tags: latest-develop, latest-crf
+          tags:  |
+            latest-develop${{ github.event.inputs.suffix && '-' + github.event.inputs.suffix || '' }}
+            latest-crf${{ github.event.inputs.suffix && '-' + github.event.inputs.suffix || '' }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
