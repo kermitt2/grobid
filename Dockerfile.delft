@@ -20,6 +20,7 @@ FROM openjdk:17-jdk-slim as builder
 USER root
 
 RUN apt-get update && \
+    apt-get -y upgrade && \
     apt-get -y --no-install-recommends install unzip
 
 WORKDIR /opt/grobid-source
@@ -46,6 +47,10 @@ RUN rm -rf grobid-home/pdfalto/win-*
 RUN rm -rf grobid-home/lib/lin-32
 RUN rm -rf grobid-home/lib/win-*
 RUN rm -rf grobid-home/lib/mac-64
+
+# Setting DL-powered configuration
+RUN rm grobid-home/config/grobid.yaml && \
+    mv grobid-home/config/grobid-full.yaml grobid-home/config/grobid.yaml
 
 RUN ./gradlew clean assemble --no-daemon  --info --stacktrace
 
@@ -82,6 +87,7 @@ ENTRYPOINT ["/tini", "-s", "--"]
 
 # install JRE, python and other dependencies
 RUN apt-get update && \
+    apt-get -y upgrade && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
     openjdk-17-jre-headless ca-certificates-java \
     musl gfortran \

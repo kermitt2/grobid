@@ -747,6 +747,10 @@ public class TEIFormatter {
             tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
         }
 
+        if (!StringUtils.isEmpty(biblio.getHalId())) {
+            tei.append("\t\t\t\t\t<idno type=\"halId\">" + TextUtilities.HTMLEncode(biblio.getHalId()) + "</idno>\n");
+        }
+
         if (!StringUtils.isEmpty(biblio.getArXivId())) {
             tei.append("\t\t\t\t\t<idno type=\"arXiv\">" + TextUtilities.HTMLEncode(biblio.getArXivId()) + "</idno>\n");
         }
@@ -1274,6 +1278,11 @@ public class TEIFormatter {
 
             org.apache.commons.lang3.tuple.Pair<String, List<LayoutToken>> noteProcess = 
                 fullTextParser.processShort(noteTokens, doc);
+
+            if (noteProcess == null) {
+                continue;
+            }
+
             String labeledNote = noteProcess.getLeft();
             List<LayoutToken> noteLayoutTokens = noteProcess.getRight();
 
@@ -1512,7 +1521,7 @@ public class TEIFormatter {
                 int clusterPage = Iterables.getLast(clusterTokens).getPage();
 
                 List<Note> notesSamePage = null;
-                List<Triple<String,String, OffsetPosition>> matchedLabelPosition = new ArrayList<>();
+                List<Triple<String, String, OffsetPosition>> matchedLabelPositions = new ArrayList<>();
 
                 // map the matched note labels to their corresponding note objects
                 Map<String, Note> labels2Notes = new TreeMap<>();
@@ -1530,20 +1539,23 @@ public class TEIFormatter {
                     // map a note label (string) to a valid matching position in the sequence of Layout Tokens
                     // of the paragraph segment
 
+                    int start = 0;
                     for (Note note : notesSamePage) {
-                        Optional<LayoutToken> matching = clusterTokens
+                        List<LayoutToken> clusterReduced = clusterTokens.subList(start, clusterTokens.size());
+                        Optional<LayoutToken> matching = clusterReduced
                             .stream()
                             .filter(t -> t.getText().equals(note.getLabel()) && t.isSuperscript())
                             .findFirst();
 
                         if (matching.isPresent()) {
-                            int idx = clusterTokens.indexOf(matching.get());
+                            int idx = clusterReduced.indexOf(matching.get()) + start;
                             note.setIgnored(true);
                             OffsetPosition matchingPosition = new OffsetPosition();
                             matchingPosition.start = idx;
                             matchingPosition.end = idx+1; // to be review, might be more than one layout token
-                            matchedLabelPosition.add(Triple.of(note.getLabel(), "note", matchingPosition));
-                            labels2Notes.put(note.getLabel(), note);
+                            start = matchingPosition.end;
+                            matchedLabelPositions.add(Triple.of(note.getIdentifier(), "note", matchingPosition));
+                            labels2Notes.put(note.getIdentifier(), note);
                         }
                     }
 
@@ -1555,7 +1567,7 @@ public class TEIFormatter {
                     .forEach(opu -> {
                             // We correct the latest token here, since later we will do a substring in the shared code,
                             // and we cannot add a +1 there.
-                        matchedLabelPosition.add(
+                        matchedLabelPositions.add(
                             Triple.of(LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens.subList(opu.start, opu.end)),
                                 "url",
                                 new OffsetPosition(opu.start, opu.end + 1)
@@ -1567,7 +1579,7 @@ public class TEIFormatter {
                 // We can add more elements to be extracted from the paragraphs, here. Each labelPosition it's a
                 // Triple with three main elements: the text of the item, the type, and the offsetPositions.
 
-                if (CollectionUtils.isEmpty(matchedLabelPosition)){
+                if (CollectionUtils.isEmpty(matchedLabelPositions)){
                     String clusterContent = LayoutTokensUtil.normalizeDehyphenizeText(clusterTokens);
                     if (isNewParagraph(lastClusterLabel, curParagraph)) {
                         if (curParagraph != null && config.isWithSentenceSegmentation()) {
@@ -1617,7 +1629,7 @@ public class TEIFormatter {
                     }
 
                     // sort the matches by position
-                    Collections.sort(matchedLabelPosition, (m1, m2) -> {
+                    Collections.sort(matchedLabelPositions, (m1, m2) -> {
                             return m1.getRight().start - m2.getRight().start;
                         }
                     );
@@ -1626,11 +1638,11 @@ public class TEIFormatter {
                     int pos = 0;
 
                     // build the paragraph segment, match by match
-                    for (Triple<String, String, OffsetPosition> referenceInformation : matchedLabelPosition) {
+                    for (Triple<String, String, OffsetPosition> referenceInformation : matchedLabelPositions) {
                         String type = referenceInformation.getMiddle();
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
-                        if (pos >= matchingPosition.start)
+                        if (pos >  matchingPosition.start)
                             break;
 
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);
@@ -1945,7 +1957,8 @@ public class TEIFormatter {
                             currentSentenceTokens = new ArrayList<>();
                             break;
                         }
-                        sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, theSentences.get(currentSentenceIndex).end);
+                        int endPosition = Math.min(theSentences.get(currentSentenceIndex).end, text.length());
+                        sentenceChunk = text.substring(theSentences.get(currentSentenceIndex).start, endPosition);
                     }
                     currentSentenceTokens = new ArrayList<>();
                     currentSentenceTokens.add(token);
@@ -2025,12 +2038,13 @@ for (List<LayoutToken> segmentedParagraphToken : segmentedParagraphTokens) {
                 }
             }
 
-            if (pos+posInSentence <= theSentences.get(i).end) {
-                String local_text_chunk = text.substring(pos+posInSentence, theSentences.get(i).end);
+            int endPosition = Math.min(theSentences.get(i).end, text.length());
+            if (pos+posInSentence <= endPosition) {
+                String local_text_chunk = text.substring(pos+posInSentence, endPosition);
                 local_text_chunk = XmlBuilderUtils.stripNonValidXMLCharacters(local_text_chunk);
                 sentenceElement.appendChild(local_text_chunk);
-                curParagraph.appendChild(sentenceElement);
             }
+            curParagraph.appendChild(sentenceElement);
         }
 
         for(int i=curParagraph.getChildCount()-1; i>=0; i--) {

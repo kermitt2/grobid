@@ -190,7 +190,10 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 List<AnnotatedXMLElement> annotations = localResult.left;
                 FundingAcknowledgmentParse localEntities = localResult.right;
 
-                List<OffsetPosition> annotationsPositionTokens = annotations.stream().map(AnnotatedXMLElement::getOffsetPosition).toList();
+                List<OffsetPosition> annotationsPositionTokens = annotations.stream()
+                    .map(AnnotatedXMLElement::getOffsetPosition)
+                    .collect(Collectors.toList());
+
                 List<OffsetPosition> annotationsPositionText = TextUtilities.matchTokenAndString(tokenizationFunding, paragraphText, annotationsPositionTokens);
                 List<AnnotatedXMLElement> annotationsWithPosRefToText = new ArrayList<>();
                 for (int i = 0; i < annotationsPositionText.size(); i++) {
@@ -250,20 +253,21 @@ public class FundingAcknowledgementParser extends AbstractParser {
         // We obtain the corrected coordinates that don't fall over the annotations
         List<OffsetPosition> correctedOffsetPositions = SentenceUtilities.correctSentencePositions(sentencePositions, annotations
             .stream()
-            .map(AnnotatedXMLElement::getOffsetPosition).toList());
+            .map(AnnotatedXMLElement::getOffsetPosition)
+            .collect(Collectors.toList()));
 
         List<Integer> toRemove = new ArrayList<>();
         for (OffsetPosition correctedOffsetPosition : correctedOffsetPositions) {
             List<OffsetPosition> originalSentences = sentencePositions.stream()
                 .filter(a -> a.start >= correctedOffsetPosition.start && a.end <= correctedOffsetPosition.end)
-                .toList();
+                .collect(Collectors.toList());
 
             // if for each "corrected sentences offset" there are more than one original sentence that
             // falls into it, it means we need to merge
             if (originalSentences.size() > 1) {
                 List<Integer> toMerge = originalSentences.stream()
                     .map(sentencePositions::indexOf)
-                    .toList();
+                    .collect(Collectors.toList());
 
                 Element destination = (Element) sentences.get(toMerge.get(0));
                 boolean needToMergeCoordinates = config.isGenerateTeiCoordinates("s");
@@ -291,7 +295,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                         boundingBoxes.addAll(Arrays.stream(coordinates.split(";"))
                             .filter(StringUtils::isNotBlank)
                             .map(BoundingBox::fromString)
-                            .toList());
+                            .collect(Collectors.toList()));
 
                         // Group by page, then merge
                         List<BoundingBox> postMergeBoxes = new ArrayList<>();
@@ -301,7 +305,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                             postMergeBoxes.addAll(mergedBoundingBoxes);
                         }
 
-                        String coordsAsString = String.join(";", postMergeBoxes.stream().map(BoundingBox::toString).toList());
+                        String coordsAsString = String.join(";", postMergeBoxes.stream().map(BoundingBox::toString).collect(Collectors.toList()));
                         Attribute newCoords = new Attribute("coords", coordsAsString);
                         destination.addAttribute(newCoords);
                     }
@@ -369,7 +373,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                 int finalPos = pos;
                 List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
                     .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
-                    .toList();
+                    .collect(Collectors.toList());
 
                 if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
                     List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);
@@ -407,7 +411,7 @@ public class FundingAcknowledgementParser extends AbstractParser {
                     int finalPos = pos;
                     List<AnnotatedXMLElement> annotationsInThisChunk = annotations.stream()
                         .filter(a -> a.getOffsetPosition().start >= finalPos && a.getOffsetPosition().end <= finalPos + text.length())
-                        .toList();
+                        .collect(Collectors.toList());
 
                     if (CollectionUtils.isNotEmpty(annotationsInThisChunk)) {
                         List<Node> nodes = getNodesAnnotationsInTextNode(currentNode, annotationsInThisChunk, pos);

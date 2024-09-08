@@ -171,6 +171,10 @@ public abstract class AbstractTrainer implements Trainer {
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);
 
+        if (split == 1.0) {
+            return "Split ratio is 1.0, no evaluation performed.";
+        }
+
         return EvaluationUtilities.evaluateStandard(evalDataPath.getAbsolutePath(), getTagger()).toString();
     }
 
