@@ -22,6 +22,47 @@ repositories {
     }
 }
 
+def getJavaLibraryPath = {
+    def libraries = ""
+    if (Os.isFamily(Os.FAMILY_MAC)) {
+        if (Os.OS_ARCH.equals("aarch64")) {
+            libraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
+        } else {
+            libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
+        }
+    } else if (Os.isFamily(Os.FAMILY_UNIX)) {
+        def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
+        libraries = jepDir
+        jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
+        libraries += ":"+jepDir
+    } else {
+        throw new RuntimeException("Unsupported platform!")
+    }
+    def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
+
+    def envPrefix = ""
+    if (System.env.CONDA_PREFIX) {
+        envPrefix = "${System.env.CONDA_PREFIX}"
+    } else if (System.env.VIRTUAL_ENV) {
+        envPrefix = "${System.env.VIRTUAL_ENV}"
+    }
+
+    if (envPrefix) {
+        def envLibs = "${envPrefix}/lib"
+        def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
+        def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
+
+        javaLibraryPath = "${System.getProperty('java.library.path')}:" +
+            currentPath +
+            "${envLibs}:" +
+            "${envLibs}/python${pythonVersion}/site-packages/jep"
+    }
+
+    println("Running with the java.library.path: ${javaLibraryPath}")
+
+    return javaLibraryPath
+}
+
 apply plugin: 'jacoco'
 
 jacoco {
@@ -190,21 +231,7 @@ subprojects {
         forkEvery = 1
         maxHeapSize = "1024m"        
 
-        def libraries = ""
-        if (Os.isFamily(Os.FAMILY_MAC)) {
-            if (Os.OS_ARCH.equals("aarch64")) {
-                libraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
-            } else {
-                libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
-            }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {            
-            def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
-            libraries = jepDir
-            jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
-            libraries += ":"+jepDir
-        } else {
-            throw new RuntimeException("Unsupported platform!")
-        }
+        def libraries = getJavaLibraryPath()
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
@@ -336,45 +363,14 @@ project(":grobid-service") {
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
 
     tasks.run {
-        def libraries = ""
-        if (Os.isFamily(Os.FAMILY_MAC)) {
-            if (Os.OS_ARCH.equals("aarch64")) {
-                libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"
-            } else {
-                libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
-            }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-            libraries = "${file("../grobid-home/lib/lin-64/jep").absolutePath}:" +
-                "${file("../grobid-home/lib/lin-64").absolutePath}"
-        } else  {
-            throw new RuntimeException("Unsupported platform!")
-        }
+        def libraries = getJavaLibraryPath()
         
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         }
         workingDir = rootProject.rootDir
-        def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
-        def envPrefix = ""
-        if (System.env.CONDA_PREFIX) {
-            envPrefix = "${System.env.CONDA_PREFIX}"
-        } else if (System.env.VIRTUAL_ENV) {
-            envPrefix = "${System.env.VIRTUAL_ENV}"
-        }
-        
-        if (envPrefix) {
-            def envLibs = "${envPrefix}/lib"
-            def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
-            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
-            
-            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
-                libraries +
-                "${envLibs}:" +
-                "${envLibs}/python${pythonVersion}/site-packages/jep"
-        }
-        
-        println("Running with the java.library.path: ${javaLibraryPath}")
-        systemProperty "java.library.path", javaLibraryPath
+
+        systemProperty "java.library.path", libraries
     }
 
     tasks.distZip.enabled = true
