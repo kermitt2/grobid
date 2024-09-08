@@ -230,7 +230,6 @@ subprojects {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
             "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
-        print(javaLibraryPath)
         systemProperty "java.library.path", javaLibraryPath
     }
 }
@@ -532,9 +531,10 @@ project(":grobid-trainer") {
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
             main = mainClassName
             classpath = sourceSets.main.runtimeClasspath
+            def javaLibraryPath = getJavaLibraryPath()
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
-            systemProperty "java.library.path ${javaLibraryPath}"
+            systemProperty "java.library.path", javaLibraryPath
         }
     }
 
@@ -559,7 +559,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path ${javaLibraryPath}"
+        systemProperty "java.library.path", javaLibraryPath
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -572,7 +572,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path ${javaLibraryPath}"
+        systemProperty "java.library.path", javaLibraryPath
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -585,7 +585,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path ${javaLibraryPath}"
+        systemProperty "java.library.path", javaLibraryPath
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -598,7 +598,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path ${javaLibraryPath}"
+        systemProperty "java.library.path", javaLibraryPath
     }
 }
 
