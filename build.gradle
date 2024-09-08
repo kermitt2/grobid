@@ -56,9 +56,6 @@ def getJavaLibraryPath = {
             "${envLibs}:" +
             "${envLibs}/python${pythonVersion}/site-packages/jep"
     }
-
-    println("Running with the java.library.path: ${javaLibraryPath}")
-
     return javaLibraryPath
 }
 
