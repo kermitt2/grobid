@@ -23,22 +23,21 @@ repositories {
 }
 
 def getJavaLibraryPath = {
-    def libraries = ""
+    def jepLocalLibraries = ""
     if (Os.isFamily(Os.FAMILY_MAC)) {
         if (Os.OS_ARCH.equals("aarch64")) {
-            libraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
+            jepLocalLibraries = "${file("./grobid-home/lib/mac_arm-64").absolutePath}"
         } else {
-            libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
+            jepLocalLibraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
         }
     } else if (Os.isFamily(Os.FAMILY_UNIX)) {
-        def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
-        libraries = jepDir
-        jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
-        libraries += ":"+jepDir
+        jepLocalLibraries = "${rootProject.rootDir.getAbsolutePath()}/grobid-home/lib/lin-64/jep:" +
+            "${rootProject.rootDir.getAbsolutePath()}/grobid-home/lib/lin-64"
     } else {
         throw new RuntimeException("Unsupported platform!")
     }
-    def javaLibraryPath = "${System.getProperty('java.library.path')}:" + libraries
+
+    def javaLibraryPath = "${System.getProperty('java.library.path')}:${jepLocalLibraries}"
 
     def envPrefix = ""
     if (System.env.CONDA_PREFIX) {
@@ -52,9 +51,7 @@ def getJavaLibraryPath = {
         def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
         def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
 
-        javaLibraryPath = "${javaLibraryPath}:" +
-            "${envLibs}:" +
-            "${envLibs}/python${pythonVersion}/site-packages/jep"
+        javaLibraryPath += ":${envLibs}:${envLibs}/python${pythonVersion}/site-packages/jep"
     }
     return javaLibraryPath
 }
@@ -227,13 +224,14 @@ subprojects {
         forkEvery = 1
         maxHeapSize = "1024m"        
 
-        def libraries = getJavaLibraryPath()
+        def javaLibraryPath = getJavaLibraryPath()
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
             "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        print(javaLibraryPath)
+        systemProperty "java.library.path", javaLibraryPath
     }
 }
 
@@ -359,14 +357,14 @@ project(":grobid-service") {
     mainClassName = 'org.grobid.service.main.GrobidServiceApplication'
 
     tasks.run {
-        def libraries = getJavaLibraryPath()
+        def javaLibraryPath = getJavaLibraryPath()
         
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         }
         workingDir = rootProject.rootDir
 
-        systemProperty "java.library.path", libraries
+        systemProperty "java.library.path", javaLibraryPath
     }
 
     tasks.distZip.enabled = true
@@ -536,7 +534,7 @@ project(":grobid-trainer") {
             classpath = sourceSets.main.runtimeClasspath
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
-            systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+            systemProperty "java.library.path ${javaLibraryPath}"
         }
     }
 
@@ -555,48 +553,52 @@ project(":grobid-trainer") {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'nlm', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        def javaLibraryPath = getJavaLibraryPath()
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path ${javaLibraryPath}"
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EndToEndEvaluation'
         classpath = sourceSets.main.runtimeClasspath
         args 'tei', getArg('p2t', '.'), getArg('run', '0'), getArg('fileRatio', '1.0')
+        def javaLibraryPath = getJavaLibraryPath()
         if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path ${javaLibraryPath}"
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'data', getArg('p2t', '.')
+        def javaLibraryPath = getJavaLibraryPath()
         if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path ${javaLibraryPath}"
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
         main = 'org.grobid.trainer.evaluation.EvaluationDOIMatching'
         classpath = sourceSets.main.runtimeClasspath
         args 'eval', getArg('p2t', '.')
+        def javaLibraryPath = getJavaLibraryPath()
         if(JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
+        systemProperty "java.library.path ${javaLibraryPath}"
     }
 }
 
