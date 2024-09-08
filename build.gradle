@@ -52,8 +52,7 @@ def getJavaLibraryPath = {
         def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
         def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
 
-        javaLibraryPath = "${System.getProperty('java.library.path')}:" +
-            currentPath +
+        javaLibraryPath = "${javaLibraryPath}:" +
             "${envLibs}:" +
             "${envLibs}/python${pythonVersion}/site-packages/jep"
     }
