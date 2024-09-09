@@ -230,7 +230,7 @@ subprojects {
             jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
             "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }
 
@@ -363,7 +363,7 @@ project(":grobid-service") {
         }
         workingDir = rootProject.rootDir
 
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     tasks.distZip.enabled = true
@@ -560,7 +560,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(teiEval, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -573,7 +573,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(PrepareDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -586,7 +586,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 
     task(EvaluateDOIMatching, dependsOn: 'classes', type: JavaExec, group: 'modelevaluation') {
@@ -599,7 +599,7 @@ project(":grobid-trainer") {
         } else {
             jvmArgs '-Xmx3072m'
         }
-        systemProperty "java.library.path", javaLibraryPath
+        systemProperty "java.library.path", "${javaLibraryPath}"
     }
 }
 
