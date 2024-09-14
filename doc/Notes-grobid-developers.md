@@ -9,16 +9,16 @@ The idea anyway is that people will use Grobid with the Docker image, the servic
 
 In order to make a new release:  
 
-+ tag the project branch to be releases, for instance a version `0.8.0`: 
++ tag the project branch to be releases, for instance a version `0.8.1`: 
 
 ```
-> git tag 0.8.0
-> git push origin 0.8.0
+> git tag 0.8.1
+> git push origin 0.8.1
 ```
 
 + create a github release: the easiest is to use the GitHub web interface
 
-+ do something to publish the Java artefacts... currrently just uploading them on AWS S3 
++ do something to publish the Java artefacts... currently just uploading them on AWS S3 
 
 + you're not done, you need to update the documentation, `Readme.md`, `CHANGELOG.md` and end-to-end benchmarking (PMC and bioRxiv sets). 
 
@@ -35,7 +35,7 @@ In order to make a new release:
 
 ```
 dependencies {
-    implementation 'org.grobid:grobid-core:0.7.3'
+    implementation 'org.grobid:grobid-core:0.8.1'
 }
 ```
 
@@ -55,7 +55,7 @@ for maven projects:
     <dependency>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-core</artifactId>
-        <version>0.8.0</version>
+        <version>0.8.1</version>
     </dependency>
 ```
 
