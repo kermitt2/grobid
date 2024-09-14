@@ -44,7 +44,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          file: Dockerfile.crf
           platforms: linux/amd64,linux/arm/v7
           push: true
           tags: |
