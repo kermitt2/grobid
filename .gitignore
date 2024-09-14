@@ -57,9 +57,10 @@ grobid-keyterm
 dataseer-ml
 datastet
 grobid-test-ant
-grobid-home/models/quantities
+grobid-home/models/quantities*
 grobid-home/models/dictionaries-lexical-entries
-grobid-home/models/units
+grobid-home/models/units*
+grobid-home/models/values*
 grobid-home/models/bio
 grobid-home/models/ner
 grobid-home/models/nerfr
@@ -86,3 +87,4 @@ grobid-home/models/context_*
 Dockerfile.dataseer
 Dockerfile.software
 Dockerfile.datastet
+.run
