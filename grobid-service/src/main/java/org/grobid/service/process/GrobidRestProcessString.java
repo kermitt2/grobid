@@ -112,7 +112,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw header author sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			List<Person> authors = engine.processAuthorsHeader(names);
 			
@@ -165,7 +165,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw citation author sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			names = names.replaceAll("\\n", " ").replaceAll("\\t", " ");
 			List<Person> authors = engine.processAuthorsCitation(names);
 			
@@ -218,7 +218,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
 				retVal = "<listPerson>\n";
@@ -291,7 +291,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<Pair<Person,Affiliation>> results = engine.processNameAddress(text);
 			if (results != null) {
 				if (retVal == null) {
@@ -380,7 +380,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
 			if (allResults != null) {
 				retVal = "<listPerson>\n";
@@ -457,7 +457,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw person/organization names and address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<List<Pair<Person,Affiliation>>> allResults = engine.processNameAddressList(texts);
 			if (allResults != null) {
 				boolean first = true;
@@ -564,7 +564,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<Affiliation> results = engine.processAddress(text);
 			if (results != null) {
 				retVal = "<affiliation>\n";
@@ -619,7 +619,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<Affiliation> results = engine.processAddress(text);
 			if (results != null) {
 				if (retVal == null) {
@@ -680,7 +680,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<List<Affiliation>> allResults = engine.processAddressList(texts);
 			if (allResults != null) {
 				for(List<Affiliation> results : allResults) {	
@@ -734,7 +734,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw address sequence for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			List<List<Affiliation>> allResults = engine.processAddressList(texts);
 			if (allResults != null) {
 				retVal = "[\n";
@@ -801,7 +801,7 @@ public class GrobidRestProcessString {
 		try {
 			LOGGER.debug(">> set raw affiliation + address blocks for stateless service'...");
 
-			engine = Engine.getEngine(true);
+			engine = Engine.getEngine(false);
 			affiliation = affiliation.replaceAll("\\t", " ");
 			List<Affiliation> affiliationList = engine.processAffiliation(affiliation);
 
