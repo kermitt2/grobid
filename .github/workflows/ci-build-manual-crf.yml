@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: Dockerfile.crf
-          platforms: linux/amd64,linux/arm/v7
+          platforms: linux/amd64,linux/arm/v8
           push: true
           tags: |
             latest-develop, latest-crf${{ github.event.inputs.suffix != '' && '-' || '' }}${{ github.event.inputs.suffix }}

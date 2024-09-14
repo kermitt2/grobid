@@ -13,7 +13,7 @@
 # -------------------
 # build builder image
 # -------------------
-FROM eclipse-temurin:17.0.12_7-jdk-focal as builder
+FROM eclipse-temurin:17-jdk-focal as builder
 
 USER root
 
@@ -63,7 +63,7 @@ RUN rm -rf grobid-source
 # -------------------
 # build runtime image
 # -------------------
-FROM eclipse-temurin:17.0.12_7-jre-focal
+FROM eclipse-temurin:17-jre-focal
 
 RUN apt-get update && \
     apt-get -y upgrade && \
