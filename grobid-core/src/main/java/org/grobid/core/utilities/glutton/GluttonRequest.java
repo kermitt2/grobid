@@ -117,6 +117,12 @@ public class GluttonRequest<T extends Object> extends Observable {
                     doi = params.get("doi");
                 uriBuilder.setParameter("doi", doi);
             } 
+            if (params.get("HALID") != null || params.get("halId") != null) {
+                String doi = params.get("HALID");
+                if (doi == null)
+                    doi = params.get("halId");
+                uriBuilder.setParameter("halId", doi);
+            } 
             if (params.get("PMID") != null || params.get("pmid") != null) {
                 String pmid = params.get("PMID");
                 if (pmid == null)

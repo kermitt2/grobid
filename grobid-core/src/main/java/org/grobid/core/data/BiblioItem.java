@@ -105,6 +105,7 @@ public class BiblioItem {
                 ", PMID='" + PMID + '\'' +
                 ", PMCID='" + PMCID + '\'' +
                 ", PII='" + PII + '\'' +
+                ", HALId='" + halId + '\'' +
                 ", ark='" + ark + '\'' +
                 ", istexId='" + istexId + '\'' +
                 ", inDOI='" + inDOI + '\'' +
@@ -254,6 +255,7 @@ public class BiblioItem {
     private String PMID = null;
     private String PMCID = null;
     private String PII = null;
+    private String halId = null;
     private String ark = null;
     private String istexId = null;
     private String abstract_ = null;
@@ -526,6 +528,10 @@ public class BiblioItem {
 
     public String getDOI() {
         return doi;
+    }
+
+    public String getHalId() {
+        return halId;
     }
 
     public String getArk() {
@@ -1062,7 +1068,18 @@ public class BiblioItem {
         doi = doi.replaceAll("[\\p{M}]", "");
         doi = doi.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
 
+        // remove possible starting/trailing parenthesis
+        if (doi.startsWith("(") || doi.startsWith("[") || doi.startsWith("⟨"))
+            doi = doi.substring(1);
+
+        if (doi.endsWith(")") || doi.endsWith("]") || doi.endsWith("⟩"))
+            doi = doi.substring(0,doi.length()-1);
+
         return doi;
+    }
+
+    public void setHalId(String halId) {
+        this.halId = halId;
     }
 
     public void setArXivId(String id) {
@@ -1593,6 +1610,7 @@ public class BiblioItem {
         type = null;
         book_type = null;
         doi = null;
+        halId = null;
         istexId = null;
         ark = null;
         inDOI = null;
@@ -2171,7 +2189,7 @@ public class BiblioItem {
             }
         }
 
-        // TODO: PII
+        // TODO: PII and HALId
 
     }
 
@@ -2345,6 +2363,13 @@ public class BiblioItem {
                     tei.append("\t");
                 }
                 tei.append("<idno type=\"DOI\">" + TextUtilities.HTMLEncode(doi) + "</idno>\n");
+            }
+
+            if (!StringUtils.isEmpty(halId)) {
+                for (int i = 0; i < indent + 2; i++) {
+                    tei.append("\t");
+                }
+                tei.append("<idno type=\"HALid\">" + TextUtilities.HTMLEncode(halId) + "</idno>\n");
             }
 
             if (!StringUtils.isEmpty(arXivId)) {
@@ -2788,9 +2813,6 @@ public class BiblioItem {
                     }
                 }
 
-                /*for (int i = 0; i < indent + 2; i++) {
-                    tei.append("\t");
-                }*/
                 if ((volumeBlock != null) | (issue != null) || (pageRange != null) || (publication_date != null)
                         || (publisher != null)) {
                     for (int i = 0; i < indent + 2; i++) {
@@ -2949,7 +2971,12 @@ public class BiblioItem {
                 for (int i = 0; i < indent + 2; i++) {
                     tei.append("\t");
                 }
-                if ((publication_date != null) || (pageRange != null) || (location != null) || (publisher != null) || (volumeBlock != null)) {
+                if (normalized_publication_date != null ||
+                    publication_date != null || 
+                    pageRange != null || 
+                    location != null || 
+                    publisher != null || 
+                    volumeBlock != null) {
                     tei.append("<imprint>\n");
                 }
 				else {
@@ -3179,12 +3206,13 @@ public class BiblioItem {
             }
 
             if (uri != null) {
-                if (uri.startsWith("http://hal.")) {
+                /*if (uri.startsWith("http://hal.") || ) {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
                     tei.append("<idno type=\"HALid\">" + TextUtilities.HTMLEncode(uri) + "</idno>\n");
-                } else {
+                } else */
+                {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
@@ -3193,7 +3221,7 @@ public class BiblioItem {
             }
 
             if (url != null) {
-                if (url.startsWith("http://hal.")) {
+                if (url.startsWith("http://hal.") || url.startsWith("https://hal.")) {
                     for (int i = 0; i < indent + 1; i++) {
                         tei.append("\t");
                     }
@@ -4119,6 +4147,7 @@ public class BiblioItem {
         destination.setPII(source.getPII());
         destination.setIstexId(source.getIstexId());
         destination.setArk(source.getArk());
+        destination.setHalId(source.getHalId());
     }
 
     /**
@@ -4142,6 +4171,8 @@ public class BiblioItem {
             bib.setIstexId(bibo.getIstexId());
         if (bibo.getArk() != null)
             bib.setArk(bibo.getArk());
+        if (bibo.getHalId() != null)
+            bib.setHalId(bibo.getHalId());
 
         if (bibo.getOAURL() != null)
             bib.setOAURL(bibo.getOAURL());
@@ -4245,6 +4276,8 @@ public class BiblioItem {
             bib.setISBN10(bibo.getISBN10());
         if (bibo.getISBN13() != null)
             bib.setISBN13(bibo.getISBN13());
+        if (bibo.getHalId() != null)
+            bib.setHalId(bibo.getHalId());
 
         if (bibo.getItem() != -1) {
             bib.setItem(bibo.getItem());
@@ -4363,7 +4396,7 @@ public class BiblioItem {
 		if (fullAuthors == null && collaboration == null) 
 			authorSet = false;
 		// normally properties authors and authorList are null in the current Grobid version
-		if (!titleSet && !authorSet && (url == null) && (doi == null))
+		if (!titleSet && !authorSet && url == null && doi == null && halId ==null)
 			return true;
 		else
 			return false;
