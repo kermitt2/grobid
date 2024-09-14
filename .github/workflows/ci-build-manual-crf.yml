@@ -48,4 +48,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            latest-develop, latest-crf${{ github.event.inputs.suffix != '' && '-' || '' }}${{ github.event.inputs.suffix }}
+            lfoppiano/grobid:latest-develop, lfoppiano/grobid:latest-crf${{ github.event.inputs.suffix != '' && '-' || '' }}${{ github.event.inputs.suffix }}
