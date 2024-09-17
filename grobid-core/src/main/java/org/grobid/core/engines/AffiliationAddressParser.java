@@ -1,5 +1,7 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
@@ -81,11 +83,14 @@ public class AffiliationAddressParser extends AbstractParser {
         return affiliationBlocks;
     }
 
+    /**
+     * Separate affiliation blocks, when they appears to be in separate set of offsets.
+     */
     protected static List<String> getAffiliationBlocksFromSegments(List<List<LayoutToken>> tokenizations) {
-        ArrayList<String> affiliationBlocks = new ArrayList<String>();
+        ArrayList<String> affiliationBlocks = new ArrayList<>();
         int end = 0;
         for(List<LayoutToken> tokenizationSegment : tokenizations) {
-            if (tokenizationSegment == null || tokenizationSegment.size() == 0)
+            if (CollectionUtils.isEmpty(tokenizationSegment))
                 continue;
 
             // if we have an offset shit, we introduce a segmentation of the affiliation block
@@ -95,8 +100,9 @@ public class AffiliationAddressParser extends AbstractParser {
                 affiliationBlocks.add("\n");
 
             for(LayoutToken tok : tokenizationSegment) {
-                if (tok.getText().length() == 0) 
+                if (StringUtils.isEmpty(tok.getText())) {
                     continue;
+                }
 
                 if (!tok.getText().equals(" ")) {
                     if (tok.getText().equals("\n")) {
@@ -126,11 +132,11 @@ public class AffiliationAddressParser extends AbstractParser {
 
 //System.out.println(affiliationBlocks.toString());
 
-            List<List<OffsetPosition>> placesPositions = new ArrayList<List<OffsetPosition>>();
-            List<List<OffsetPosition>> countriesPositions = new ArrayList<List<OffsetPosition>>();
+            List<List<OffsetPosition>> placesPositions = new ArrayList<>();
+            List<List<OffsetPosition>> countriesPositions = new ArrayList<>();
             placesPositions.add(lexicon.tokenPositionsLocationNames(tokenizationsAffiliation));
             countriesPositions.add(lexicon.tokenPositionsCountryNames(tokenizationsAffiliation));
-            List<List<LayoutToken>> allTokens = new ArrayList<List<LayoutToken>>();
+            List<List<LayoutToken>> allTokens = new ArrayList<>();
             allTokens.add(tokenizationsAffiliation);
             String affiliationSequenceWithFeatures = 
                 FeaturesVectorAffiliationAddress.addFeaturesAffiliationAddress(affiliationBlocks, allTokens, placesPositions, countriesPositions);

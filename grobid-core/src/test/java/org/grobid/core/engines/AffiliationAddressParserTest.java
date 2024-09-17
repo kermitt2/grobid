@@ -1,16 +1,18 @@
 package org.grobid.core.engines;
 
+import com.google.common.base.Joiner;
 import org.grobid.core.GrobidModels;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.AfterClass;
-import org.junit.Test;
+import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.grobid.core.data.Affiliation;
+import org.grobid.core.factory.GrobidFactory;
+import org.grobid.core.features.FeaturesVectorAffiliationAddress;
+import org.grobid.core.layout.LayoutToken;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.OffsetPosition;
+import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.is;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,17 +20,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.google.common.base.Joiner;
-
-import org.grobid.core.analyzers.GrobidAnalyzer;
-import org.grobid.core.data.Affiliation;
-import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.features.FeaturesVectorAffiliationAddress;
-import org.grobid.core.layout.LayoutToken;
-import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.OffsetPosition;
-import org.grobid.core.utilities.LayoutTokensUtil;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
 
 public class AffiliationAddressParserTest {
 
@@ -260,6 +254,7 @@ public class AffiliationAddressParserTest {
     }
 
     @Test
+    @Ignore("This test is used to show the failing input data")
     public void testResultExtractionLayoutTokensFromDLOutput() throws Exception {
         String result = "\n" +
             "\n" +
@@ -326,5 +321,40 @@ public class AffiliationAddressParserTest {
             .collect(Collectors.toList());
 
         assertThat(target.resultExtractionLayoutTokens(result, tokenizations), hasSize(greaterThan(0)));
+    }
+
+    @Test
+    public void testGetAffiliationBlocksFromSegments_1() throws Exception {
+        String block1 = "Department of science, University of Science, University of Madness";
+        List<LayoutToken> tokBlock1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(block1);
+        tokBlock1.stream().forEach(t -> t.setOffset(t.getOffset() + 100));
+
+        String block2 = "Department of mental health, University of happyness, Italy";
+        List<LayoutToken> tokBlock2 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(block2);
+        tokBlock2.stream().forEach(t -> t.setOffset(t.getOffset() + 500));
+
+        List<String> affiliationBlocksFromSegments = AffiliationAddressParser.getAffiliationBlocksFromSegments(Arrays.asList(tokBlock1, tokBlock2));
+
+        assertThat(affiliationBlocksFromSegments, hasSize(22));
+        assertThat(affiliationBlocksFromSegments.get(0), is(not(startsWith("\n"))));
+        assertThat(affiliationBlocksFromSegments.get(11), is("\n"));
+    }
+
+    @Test
+    public void testGetAffiliationBlocksFromSegments_2() throws Exception {
+        String block1 = "Department of science, University of Science, University of Madness";
+        List<LayoutToken> tokBlock1 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(block1);
+        tokBlock1.stream().forEach(t -> t.setOffset(t.getOffset() + 100));
+
+        String block2 = "Department of mental health, University of happyness, Italy";
+        List<LayoutToken> tokBlock2 = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(block2);
+        tokBlock2.stream().forEach(t -> t.setOffset(t.getOffset() + 100 + tokBlock1.size()));
+
+        List<String> affiliationBlocksFromSegments = AffiliationAddressParser.getAffiliationBlocksFromSegments(Arrays.asList(tokBlock1, tokBlock2));
+
+        assertThat(affiliationBlocksFromSegments, hasSize(21));
+        assertThat(affiliationBlocksFromSegments.get(0), is(not(startsWith("\n"))));
+        assertThat(affiliationBlocksFromSegments.get(11), is(not("@newline")));
+
     }
 }
