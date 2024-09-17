@@ -1,21 +1,20 @@
 package org.grobid.core.engines;
 
-import org.chasen.crfpp.Tagger;
+import org.grobid.core.GrobidModel;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.Affiliation;
+import org.grobid.core.engines.label.TaggingLabel;
+import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.features.FeaturesVectorAffiliationAddress;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.lexicon.Lexicon;
+import org.grobid.core.tokenization.TaggingTokenCluster;
+import org.grobid.core.tokenization.TaggingTokenClusteror;
+import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.engines.tagging.GenericTaggerUtils;
-import org.grobid.core.tokenization.TaggingTokenCluster;
-import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.engines.label.TaggingLabel;
-import org.grobid.core.engines.label.TaggingLabels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +23,12 @@ import java.util.StringTokenizer;
 public class AffiliationAddressParser extends AbstractParser {
     public Lexicon lexicon = Lexicon.getInstance();
 
+    protected AffiliationAddressParser(GrobidModel model) {
+        super(model);
+    }
+
     public AffiliationAddressParser() {
-        super(GrobidModels.AFFILIATION_ADDRESS);
+        this(GrobidModels.AFFILIATION_ADDRESS);
     }
 
     public List<Affiliation> processing(String input) {

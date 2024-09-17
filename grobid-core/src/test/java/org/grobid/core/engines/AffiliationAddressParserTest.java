@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.grobid.core.GrobidModels;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
@@ -7,8 +8,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.google.common.base.Joiner;
 
@@ -43,13 +44,13 @@ public class AffiliationAddressParserTest {
 
     @Before
     public void setUp() throws Exception {
-        this.target = new AffiliationAddressParser();
+        this.target = new AffiliationAddressParser(GrobidModels.DUMMY);
         this.analyzer = GrobidAnalyzer.getInstance();
     }
 
     @BeforeClass
     public static void init() {
-        LibraryLoader.load();
+//        LibraryLoader.load();
         GrobidProperties.getInstance();
     }
 
