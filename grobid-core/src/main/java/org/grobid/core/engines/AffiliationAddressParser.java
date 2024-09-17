@@ -91,7 +91,7 @@ public class AffiliationAddressParser extends AbstractParser {
             // if we have an offset shit, we introduce a segmentation of the affiliation block
             LayoutToken startToken = tokenizationSegment.get(0);
             int start = startToken.getOffset();
-            if (start-end > 2)
+            if (start-end > 2 && end > 0)
                 affiliationBlocks.add("\n");
 
             for(LayoutToken tok : tokenizationSegment) {
