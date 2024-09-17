@@ -258,4 +258,73 @@ public class AffiliationAddressParserTest {
             is("University of Madness")
         );
     }
+
+    @Test
+    public void testResultExtractionLayoutTokensFromDLOutput() throws Exception {
+        String result = "\n" +
+            "\n" +
+            "Department\tdepartment\tD\tDe\tDep\tDepa\tt\tnt\tent\tment\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<department>\n" +
+            "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t1\t0\tNOPUNCT\txx\t<affiliation>\t<department>\n" +
+            "Radiation\tradiation\tR\tRa\tRad\tRadi\tn\ton\tion\ttion\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<department>\n" +
+            "Oncology\toncology\tO\tOn\tOnc\tOnco\ty\tgy\togy\tlogy\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<department>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\t<other>\n" +
+            "San\tsan\tS\tSa\tSan\tSan\tn\tan\tSan\tSan\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\t0\t1\t0\tNOPUNCT\tXxx\t<affiliation>\tI-<institution>\n" +
+            "Camillo\tcamillo\tC\tCa\tCam\tCami\to\tlo\tllo\tillo\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tHYPHEN\t-\t<affiliation>\t<institution>\n" +
+            "Forlanini\tforlanini\tF\tFo\tFor\tForl\ti\tni\tini\tnini\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            "Hospital\thospital\tH\tHo\tHos\tHosp\tl\tal\ttal\tital\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\t<other>\n" +
+            "Circonvallazione\tcirconvallazione\tC\tCi\tCir\tCirc\te\tne\tone\tione\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<addrLine>\n" +
+            "Gianicolense\tgianicolense\tG\tGi\tGia\tGian\te\tse\tnse\tense\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<addrLine>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\t<other>\n" +
+            "87\t87\t8\t87\t87\t87\t7\t87\t87\t87\tLINESTART\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tdd\t<affiliation>\tI-<addrLine>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tHYPHEN\t-\t<affiliation>\t<addrLine>\n" +
+            "00152\t00152\t0\t00\t001\t0015\t2\t52\t152\t0152\tLINEIN\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tdddd\t<affiliation>\t<addrLine>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\t<other>\n" +
+            "Rome\trome\tR\tRo\tRom\tRome\te\tme\tome\tRome\tLINEIN\tINITCAP\tNODIGIT\t0\t1\t0\t0\t1\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<settlement>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t1\t0\tCOMMA\t,\t<affiliation>\t<other>\n" +
+            "Italy\titaly\tI\tIt\tIta\tItal\ty\tly\taly\ttaly\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t1\t1\tNOPUNCT\tXxxx\t<affiliation>\tI-<country>\n" +
+            ";\t;\t;\t;\t;\t;\t;\t;\t;\t;\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tPUNCT\t;\t<affiliation>\t<country>\n";
+
+        List<LayoutToken> tokenizations  = Arrays.stream(result.split("\n"))
+            .map(row -> new LayoutToken(row.split("\t")[0]))
+            .collect(Collectors.toList());
+
+        assertThat(target.resultExtractionLayoutTokens(result, tokenizations), hasSize(greaterThan(0)));
+    }
+
+
+    @Test
+    public void testResultExtractionLayoutTokensFromCRFOutput() throws Exception {
+        String result = "MD\tmd\tM\tMD\tMD\tMD\tD\tMD\tMD\tMD\tLINESTART\tALLCAPS\tNODIGIT\t0\t0\t0\t0\t1\t0\tNOPUNCT\tXX\t<affiliation>\tI-<institution>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "Department\tdepartment\tD\tDe\tDep\tDepa\tt\tnt\tent\tment\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<department>\n" +
+            "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tLINEIN\tNOCAPS\tNODIGIT\t0\t0\t1\t0\t1\t0\tNOPUNCT\txx\t<affiliation>\t<department>\n" +
+            "Radiation\tradiation\tR\tRa\tRad\tRadi\tn\ton\tion\ttion\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<department>\n" +
+            "Oncology\toncology\tO\tOn\tOnc\tOnco\ty\tgy\togy\tlogy\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<department>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "San\tsan\tS\tSa\tSan\tSan\tn\tan\tSan\tSan\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\t0\t1\t0\tNOPUNCT\tXxx\t<affiliation>\tI-<institution>\n" +
+            "Camillo\tcamillo\tC\tCa\tCam\tCami\to\tlo\tllo\tillo\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tHYPHEN\t-\t<affiliation>\t<institution>\n" +
+            "Forlanini\tforlanini\tF\tFo\tFor\tForl\ti\tni\tini\tnini\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            "Hospital\thospital\tH\tHo\tHos\tHosp\tl\tal\ttal\tital\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t1\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<institution>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "Circonvallazione\tcirconvallazione\tC\tCi\tCir\tCirc\te\tne\tone\tione\tLINESTART\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<addrLine>\n" +
+            "Gianicolense\tgianicolense\tG\tGi\tGia\tGian\te\tse\tnse\tense\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tXxxx\t<affiliation>\t<addrLine>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "87\t87\t8\t87\t87\t87\t7\t87\t87\t87\tLINESTART\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tdd\t<affiliation>\tI-<postCode>\n" +
+            "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tHYPHEN\t-\t<affiliation>\t<postCode>\n" +
+            "00152\t00152\t0\t00\t001\t0015\t2\t52\t152\t0152\tLINEIN\tNOCAPS\tALLDIGIT\t0\t0\t0\t0\t0\t0\tNOPUNCT\tdddd\t<affiliation>\t<postCode>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "Rome\trome\tR\tRo\tRom\tRome\te\tme\tome\tRome\tLINEIN\tINITCAP\tNODIGIT\t0\t1\t0\t0\t1\t0\tNOPUNCT\tXxxx\t<affiliation>\tI-<settlement>\n" +
+            ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tLINEIN\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t1\t0\tCOMMA\t,\t<affiliation>\tI-<other>\n" +
+            "Italy\titaly\tI\tIt\tIta\tItal\ty\tly\taly\ttaly\tLINEIN\tINITCAP\tNODIGIT\t0\t0\t0\t0\t1\t1\tNOPUNCT\tXxxx\t<affiliation>\tI-<country>\n" +
+            ";\t;\t;\t;\t;\t;\t;\t;\t;\t;\tLINEEND\tALLCAPS\tNODIGIT\t1\t0\t0\t0\t0\t0\tPUNCT\t;\t<affiliation>\t<country>";
+
+        List<LayoutToken> tokenizations  = Arrays.stream(result.split("\n"))
+            .map(row -> new LayoutToken(row.split("\t")[0]))
+            .collect(Collectors.toList());
+
+        assertThat(target.resultExtractionLayoutTokens(result, tokenizations), hasSize(greaterThan(0)));
+    }
 }
