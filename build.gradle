@@ -11,6 +11,7 @@ buildscript {
         classpath "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
         classpath 'com.adarshr:gradle-test-logger-plugin:2.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
+        classpath group: 'net.researchgate', name: 'gradle-release', version: '3.0.2'
     }
 }
 
@@ -34,6 +35,7 @@ allprojects {
     apply plugin: 'com.github.kt3k.coveralls'
     apply plugin: 'com.adarshr.test-logger'
     apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'net.researchgate.release'
 
     group = "org.grobid"
 
@@ -60,18 +62,28 @@ subprojects {
         }
     }
 
-//    sourceCompatibility = 1.11
-//    targetCompatibility = 1.11
+    sourceCompatibility = 1.11
+    targetCompatibility = 1.11
 
-    kotlin {
-        jvmToolchain(11)
-    }
-
-    java {
-        toolchain {
-            languageVersion.set(JavaLanguageVersion.of(11))
+    tasks.withType(KotlinCompile).configureEach {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_11
         }
     }
+
+//    kotlin {
+//        jvmToolchain(11)
+//    }
+
+//    java {
+//        toolchain {
+//            languageVersion.set(JavaLanguageVersion.of(11))
+//            vendor.set(JvmVendorSpec.ADOPTIUM)
+//
+//        }
+//    }
 
     repositories {
         mavenCentral()
@@ -316,6 +328,7 @@ project("grobid-home") {
 }
 
 import org.apache.tools.ant.taskdefs.condition.Os
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 project(":grobid-service") {
     apply plugin: 'application'
@@ -635,3 +648,12 @@ wrapper {
 }
 
 build.dependsOn project.getSubprojects().collect({ it.getTasks().getByName("build") })
+
+release {
+    failOnUnversionedFiles = false
+    failOnCommitNeeded = false
+    tagTemplate = '${version}'
+    git {
+        requireBranch.set('master')
+    }
+}
