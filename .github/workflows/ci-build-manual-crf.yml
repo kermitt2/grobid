@@ -3,10 +3,11 @@ name: Build and push a CRF-only docker image
 on:
   workflow_dispatch:
     inputs:
-      suffix:
+      custom_tag:
         type: string
-        description: Docker image suffix (e.g. develop, crf, full)
-        required: false
+        description: Docker image tag
+        required: true
+        default: "latest-crf"
 
 jobs:
   build:
@@ -42,6 +43,6 @@ jobs:
           registry: docker.io
           pushImage: true
           tags:  |
-            latest-develop, latest-crf${{ github.event.inputs.suffix != '' && '-' || '' }}${{ github.event.inputs.suffix }}
+            latest-develop, ${{ github.event.inputs.custom_tag}}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
