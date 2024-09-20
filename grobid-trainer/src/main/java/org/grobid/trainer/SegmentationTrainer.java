@@ -253,7 +253,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;
             } else {
-                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
+                System.out.println("Warning, the flavor is not recognized, must one one of [light, ietf], defaulting training to no collection...");
             }
         }
 
