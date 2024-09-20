@@ -123,7 +123,7 @@ The `lfoppiano/grobid:{latest_grobid_version}` support both architectures by def
 To run it on arm64, use the following command:
 
 ```bash
-docker run --ulimit core=0 --platform linux/amd64 -p 8070:8070 --name grobid lfoppiano/grobid:{latest_grobid_version}
+docker run --ulimit core=0 --platform linux/amd64 --init -p 8070:8070 --name grobid lfoppiano/grobid:{latest_grobid_version}
 ```
 
 As discussed [here](https://github.com/kermitt2/grobid/issues/1119#issuecomment-2362204879), it is mandatory to provide the parameter `--platform linux/amd64` to force the usage of amd64 architecture and avoid the raising of the rosetta error: 
