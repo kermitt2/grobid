@@ -520,9 +520,11 @@ project(":grobid-trainer") {
     def complexTrainerTasks = [
         "train_header"                : ["org.grobid.trainer.HeaderTrainer", ""],
         "train_header_light"           : ["org.grobid.trainer.HeaderTrainer", "light"],
+        "train_header_light_ref"           : ["org.grobid.trainer.HeaderTrainer", "light-ref"],
         "train_header_ietf"           : ["org.grobid.trainer.HeaderTrainer", "ietf"],
         "train_segmentation"          : ["org.grobid.trainer.SegmentationTrainer", ""],
         "train_segmentation_light"     : ["org.grobid.trainer.SegmentationTrainer", "light"],
+        "train_segmentation_light_ref"     : ["org.grobid.trainer.SegmentationTrainer", "light-ref"],
         "train_segmentation_ietf"     : ["org.grobid.trainer.SegmentationTrainer", "ietf"]
     ]
 

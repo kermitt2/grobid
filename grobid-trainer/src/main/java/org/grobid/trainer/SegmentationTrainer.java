@@ -250,6 +250,8 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             String flavor = args[0];
             if (flavor.equalsIgnoreCase("light")) {
                 theFlavor = Flavor.ARTICLE_LIGHT;
+            } else if (flavor.equalsIgnoreCase("light-re")) {
+                theFlavor = Flavor.ARTICLE_LIGHT_WITH_REFERENCES;
             } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;
             } else {
