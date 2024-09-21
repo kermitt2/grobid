@@ -303,7 +303,7 @@ public class Document implements Serializable {
     */
     protected static void parseInputStream(InputStream in, SAXParser saxParser, DefaultHandler handler) 
         throws SAXException, IOException {
-        CharsetDecoder utf8Decoder = Charset.forName("UTF-8").newDecoder();
+        CharsetDecoder utf8Decoder = StandardCharsets.UTF_8.newDecoder();
         utf8Decoder.onMalformedInput(CodingErrorAction.IGNORE);
         utf8Decoder.onUnmappableCharacter(CodingErrorAction.IGNORE);
         saxParser.parse(new InputSource(new InputStreamReader(in, utf8Decoder)), handler);
