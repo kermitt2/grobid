@@ -5,6 +5,7 @@ import org.grobid.core.GrobidModels.Flavor;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
+import org.grobid.trainer.sax.TEISegmentationArticleLightRefSaxParser;
 import org.grobid.trainer.sax.TEISegmentationArticleLightSaxParser;
 import org.grobid.trainer.sax.TEISegmentationSaxParser;
 
@@ -114,20 +115,23 @@ public class SegmentationTrainer extends AbstractTrainer {
                 String name = tf.getName();
                 LOGGER.info("Processing: " + name);
 
-                TEISegmentationSaxParser parser2;
-                if (flavor != null) {
-                    parser2 = new TEISegmentationArticleLightSaxParser();
+                TEISegmentationSaxParser parser;
+                if (flavor == Flavor.ARTICLE_LIGHT) {
+                    parser = new TEISegmentationArticleLightSaxParser();
+                } else if (flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
+                    parser = new TEISegmentationArticleLightRefSaxParser();
                 } else {
-                    parser2 = new TEISegmentationSaxParser();
+                    parser = new TEISegmentationSaxParser();
                 }
+
                 // get a factory for SAX parser
                 SAXParserFactory spf = SAXParserFactory.newInstance();
 
                 //get a new instance of parser
                 SAXParser p = spf.newSAXParser();
-                p.parse(tf, parser2);
+                p.parse(tf, parser);
 
-                List<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser.getLabeledResult();
 
                 // we can now add the features
                 // we open the featured file
@@ -250,7 +254,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
             String flavor = args[0];
             if (flavor.equalsIgnoreCase("light")) {
                 theFlavor = Flavor.ARTICLE_LIGHT;
-            } else if (flavor.equalsIgnoreCase("light-re")) {
+            } else if (flavor.equalsIgnoreCase("light-ref")) {
                 theFlavor = Flavor.ARTICLE_LIGHT_WITH_REFERENCES;
             } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;

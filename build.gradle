@@ -186,11 +186,11 @@ subprojects {
 
     test {
         useJUnitPlatform()
-        
+
         testLogging.showStandardStreams = true
         // enable for having separate test executor for different tests
         forkEvery = 1
-        maxHeapSize = "1024m"        
+        maxHeapSize = "1024m"
 
         def libraries = ""
         if (Os.isFamily(Os.FAMILY_MAC)) {
@@ -199,7 +199,7 @@ subprojects {
             } else {
                 libraries = "${file("./grobid-home/lib/mac-64").absolutePath}"
             }
-        } else if (Os.isFamily(Os.FAMILY_UNIX)) {            
+        } else if (Os.isFamily(Os.FAMILY_UNIX)) {
             def jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64/jep"
             libraries = jepDir
             jepDir = rootProject.rootDir.getAbsolutePath() + "/grobid-home/lib/lin-64"
@@ -209,7 +209,7 @@ subprojects {
         }
 
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
-            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED", 
+            jvmArgs "--add-opens", "java.base/java.util.stream=ALL-UNNAMED",
             "--add-opens", "java.base/java.io=ALL-UNNAMED", "--add-opens", "java.xml/jdk.xml.internal=ALL-UNNAMED"
         }
         systemProperty "java.library.path","${System.getProperty('java.library.path')}:" + libraries
@@ -351,7 +351,7 @@ project(":grobid-service") {
         } else  {
             throw new RuntimeException("Unsupported platform!")
         }
-        
+
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         }
@@ -380,7 +380,7 @@ project(":grobid-service") {
     distTar { duplicatesStrategy = DuplicatesStrategy.EXCLUDE }
 
     dependencies {
-        implementation project(':grobid-core') 
+        implementation project(':grobid-core')
         implementation project(':grobid-trainer')
 
         //Dropwizard
@@ -397,7 +397,7 @@ project(":grobid-service") {
         implementation 'io.dropwizard.metrics:metrics-core:4.2.22'
         implementation 'io.dropwizard.metrics:metrics-servlets:4.2.22'
         implementation 'io.dropwizard:dropwizard-json-logging:4.0.0'
-        
+
         implementation "org.apache.pdfbox:pdfbox:2.0.3"
         implementation "javax.activation:activation:1.1.1"
         implementation "io.prometheus:simpleclient_dropwizard:0.16.0"
@@ -518,20 +518,20 @@ project(":grobid-trainer") {
     ]
 
     def complexTrainerTasks = [
-        "train_header"                : ["org.grobid.trainer.HeaderTrainer", ""],
-        "train_header_light"           : ["org.grobid.trainer.HeaderTrainer", "light"],
-        "train_header_light_ref"           : ["org.grobid.trainer.HeaderTrainer", "light-ref"],
-        "train_header_ietf"           : ["org.grobid.trainer.HeaderTrainer", "ietf"],
-        "train_segmentation"          : ["org.grobid.trainer.SegmentationTrainer", ""],
-        "train_segmentation_light"     : ["org.grobid.trainer.SegmentationTrainer", "light"],
-        "train_segmentation_light_ref"     : ["org.grobid.trainer.SegmentationTrainer", "light-ref"],
-        "train_segmentation_ietf"     : ["org.grobid.trainer.SegmentationTrainer", "ietf"]
+        "train_header"                  : ["org.grobid.trainer.HeaderTrainer", ""],
+        "train_header_light"            : ["org.grobid.trainer.HeaderTrainer", "light"],
+        "train_header_light_ref"        : ["org.grobid.trainer.HeaderTrainer", "light-ref"],
+        "train_header_ietf"             : ["org.grobid.trainer.HeaderTrainer", "ietf"],
+        "train_segmentation"            : ["org.grobid.trainer.SegmentationTrainer", ""],
+        "train_segmentation_light"      : ["org.grobid.trainer.SegmentationTrainer", "light"],
+        "train_segmentation_light_ref"  : ["org.grobid.trainer.SegmentationTrainer", "light-ref"],
+        "train_segmentation_ietf"       : ["org.grobid.trainer.SegmentationTrainer", "ietf"]
     ]
 
     def libraries = ""
     if (Os.isFamily(Os.FAMILY_MAC)) {
         if (Os.OS_ARCH.equals("aarch64")) {
-            libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"    
+            libraries = "${file("../grobid-home/lib/mac_arm-64").absolutePath}"
         } else {
             libraries = "${file("../grobid-home/lib/mac-64").absolutePath}"
         }
@@ -541,7 +541,7 @@ project(":grobid-trainer") {
     } else  {
         throw new RuntimeException("Unsupported platform!")
     }
-    
+
     trainerTasks.each { taskName, mainClassName ->
         tasks.create(name: taskName, type: JavaExec, group: 'modeltraining') {
             main = mainClassName
@@ -559,7 +559,7 @@ project(":grobid-trainer") {
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0)
-                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"    
+                jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
             args mainClassNameAndArgs[1]
         }
     }

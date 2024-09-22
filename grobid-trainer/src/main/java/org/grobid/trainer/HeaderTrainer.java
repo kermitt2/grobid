@@ -4,8 +4,7 @@ import org.grobid.core.GrobidModels;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.UnicodeUtil;
-import org.grobid.trainer.sax.TEIHeaderArticleLightSaxParser;
-import org.grobid.trainer.sax.TEIHeaderSaxParser;
+import org.grobid.trainer.sax.*;
 import org.grobid.core.GrobidModels.Flavor;
 
 import javax.xml.parsers.SAXParser;
@@ -30,9 +29,13 @@ public class HeaderTrainer extends AbstractTrainer{
 
     @Override
     public int createCRFPPData(File corpusPath, File trainingOutputPath) {
-        return addFeaturesHeaders(corpusPath.getAbsolutePath() + "/tei", 
-						  		corpusPath.getAbsolutePath() + "/raw", 
-								trainingOutputPath, null, 1.0);
+        return addFeaturesHeaders(
+            corpusPath.getAbsolutePath() + "/tei",
+            corpusPath.getAbsolutePath() + "/raw",
+            trainingOutputPath,
+            null,
+            1.0
+        );
     }
 
 	/**
@@ -120,20 +123,20 @@ public class HeaderTrainer extends AbstractTrainer{
                 String name = teifile.getName();
                 //System.out.println(name);
 
-                TEIHeaderSaxParser parser2;
-                if (this.flavor != null) {
-                    parser2 = new TEIHeaderArticleLightSaxParser();
+                TEIHeaderSaxParser parser;
+                if (flavor == Flavor.ARTICLE_LIGHT || flavor == Flavor.ARTICLE_LIGHT_WITH_REFERENCES) {
+                    parser = new TEIHeaderArticleLightSaxParser();
                 } else {
-                    parser2 = new TEIHeaderSaxParser();
+                    parser = new TEIHeaderSaxParser();
                 }
 
                 // get a factory
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 //get a new instance of parser
                 SAXParser par = spf.newSAXParser();
-                par.parse(teifile, parser2);
+                par.parse(teifile, parser);
 
-                List<String> labeled = parser2.getLabeledResult();
+                List<String> labeled = parser.getLabeledResult();
 
                 //System.out.println(labeled);
                 //System.out.println(parser2.getPDFName()+"._");
@@ -143,13 +146,13 @@ public class HeaderTrainer extends AbstractTrainer{
                 File[] refFiles2 = refDir2.listFiles();
                 for (File aRefFiles2 : refFiles2) {
                     String localFileName = aRefFiles2.getName();
-                    if (parser2.getPDFName() != null) {
-                        if (localFileName.equals(parser2.getPDFName() + ".header") || 
-                            localFileName.equals(parser2.getPDFName() + ".training.header")) {
+                    if (parser.getPDFName() != null) {
+                        if (localFileName.equals(parser.getPDFName() + ".header") ||
+                            localFileName.equals(parser.getPDFName() + ".training.header")) {
                             headerFile = localFileName;
                             break;
                         }
-                        if ((localFileName.startsWith(parser2.getPDFName() + "._")) &&
+                        if ((localFileName.startsWith(parser.getPDFName() + "._")) &&
                                 (localFileName.endsWith(".header") || localFileName.endsWith(".training.header") )) {
                             headerFile = localFileName;
                             break;
@@ -309,7 +312,6 @@ public class HeaderTrainer extends AbstractTrainer{
      * Command line execution.
      *
      * @param args Command line arguments.
-     * @throws Exception 
      */
     public static void main(String[] args) throws Exception {
         // if we have a parameter, it gives the flavor refinement to consider
@@ -318,10 +320,12 @@ public class HeaderTrainer extends AbstractTrainer{
             String flavor = args[0];
             if (flavor.equalsIgnoreCase("light")) {
                 theFlavor = Flavor.ARTICLE_LIGHT;
+            } else if (flavor.equalsIgnoreCase("light-ref")) {
+                theFlavor = Flavor.ARTICLE_LIGHT_WITH_REFERENCES;
             } else if (flavor.equalsIgnoreCase("ietf")) {
                 theFlavor = Flavor.IETF;
             } else {
-                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp,ietf], defaulting training to no collection...");
+                System.out.println("Warning, the flavor is not recognized, must one one of [3gpp, ietf, light, light-ref], defaulting training to no collection...");
             }
         }
 

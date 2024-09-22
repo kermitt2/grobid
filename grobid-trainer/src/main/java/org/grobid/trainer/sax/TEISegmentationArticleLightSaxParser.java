@@ -114,9 +114,9 @@ public class TEISegmentationArticleLightSaxParser extends TEISegmentationSaxPars
             } else if (qName.equals("page") || qName.equals("pages")) {
                 currentTag = "<body>";
             } else if (qName.equals("listBibl")) {
-                currentTag = "<references>";
+                currentTag = "<body>";
                 upperTag = currentTag;
-                upperQname = "listBibl";
+                upperQname = "body";
             } else if (qName.equals("text")) {
                 currentTag = "<body>";
                 upperTag = null;
