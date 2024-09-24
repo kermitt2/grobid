@@ -155,7 +155,12 @@ public class FullTextParser extends AbstractParser {
 
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser(flavor).processing(documentSource, config);
+            Document doc = parsers.getFigureSegmenterParser().extract(documentSource, config);
+			doc = parsers.getSegmentationParser().processing(doc, config);
+
+
+
+
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
