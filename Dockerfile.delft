@@ -72,12 +72,13 @@ FROM tensorflow/tensorflow:2.7.0-gpu
 ENV LANG C.UTF-8
 
 # update NVIDIA Cuda key (following a key rotation in April 2022)
-RUN apt-get install -y libcublas-12-0 && \
+RUN apt-get install -y wget && \
     apt-key del 7fa2af80 && \
     rm /etc/apt/sources.list.d/cuda.list && \
     rm /etc/apt/sources.list.d/nvidia-ml.list && \
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
-    dpkg -i cuda-keyring_1.0-1_all.deb
+    dpkg -i cuda-keyring_1.0-1_all.deb && \
+    apt-get install libcublas-12-0
 
 # Add Tini
 ENV TINI_VERSION v0.19.0
