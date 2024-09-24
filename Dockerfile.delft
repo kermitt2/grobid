@@ -77,8 +77,7 @@ RUN apt-get install -y wget && \
     rm /etc/apt/sources.list.d/cuda.list && \
     rm /etc/apt/sources.list.d/nvidia-ml.list && \
     wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
-    dpkg -i cuda-keyring_1.0-1_all.deb && \
-    apt-get install libcublas-12-0
+    dpkg -i cuda-keyring_1.0-1_all.deb
 
 # Add Tini
 ENV TINI_VERSION v0.19.0
@@ -90,7 +89,7 @@ ENTRYPOINT ["/tini", "-s", "--"]
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
-    openjdk-17-jre-headless ca-certificates-java \
+    openjdk-17-jre-headless ca-certificates-java libcublas-12-0 \
     musl gfortran \
     python3 python3-pip python3-setuptools python3-dev \
     && apt-get clean \
