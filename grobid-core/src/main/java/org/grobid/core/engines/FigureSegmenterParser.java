@@ -1,6 +1,8 @@
 package org.grobid.core.engines;
 
 import org.apache.commons.lang3.tuple.Pair;
+import eugfc.imageio.plugins.PNMRegistry;
+import org.apache.commons.io.FileUtils;
 
 import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.tagging.GenericTagger;
@@ -9,6 +11,7 @@ import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentPiece;
 import org.grobid.core.document.DocumentPointer;
 import org.grobid.core.document.BasicStructureBuilder;
+import org.grobid.core.document.DocumentSource;
 import org.grobid.core.engines.label.SegmentationLabels;
 import org.grobid.core.engines.label.TaggingLabels;
 import org.grobid.core.engines.label.TaggingLabel;
@@ -31,6 +34,9 @@ import org.grobid.core.utilities.BoundingBoxCalculator;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.utilities.Triple;
 import org.grobid.core.utilities.LayoutTokensUtil;
+import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.config.GrobidAnalysisConfig;
+import org.grobid.core.exceptions.*;
 
 import com.google.common.collect.Multimap;
 
@@ -38,6 +44,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.File;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,6 +57,9 @@ import java.util.regex.Matcher;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Comparator; 
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 
 /**
  * A model for segmenting the figure areas. The model is applied after the Segmentation model and
@@ -89,14 +99,27 @@ public class FigureSegmenterParser {
         figureSegmenterParserDown = null;//TaggerFactory.getTagger(GrobidModels.FIGURE_SEGMENTER_DOWN);
     }
 
-    public Document extract(Document doc) {
+    public Document extract(DocumentSource documentSource, GrobidAnalysisConfig config) {
+
+        Document doc = new Document(documentSource);
+        if (config.getAnalyzer() != null)
+            doc.setAnalyzer(config.getAnalyzer());
+        doc.addTokenizedDocument(config);
+        doc = prepareDocument(doc);
+
+        File assetFile = config.getPdfAssetPath();
+        if (assetFile != null) {
+            dealWithImages(documentSource, doc, assetFile, config);
+        }
 
         // figure anchors are based on VectorGraphicBoxCalculator, which aggregate bitmap and SVG elements
         List<GraphicObject> figureAnchors = this.initFigureAnchors(doc);
 
         // for each figure anchor, we generate sequence to be labeled with features
-        Pair<List<String>,List<LayoutTokenization>> featureObjectUp = this.getAreasFeatured(doc, figureAnchors, Direction.UP);
-        Pair<List<String>,List<LayoutTokenization>> featureObjectDown = this.getAreasFeatured(doc, figureAnchors, Direction.DOWN);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectUp = 
+            this.getAreasFeatured(doc, figureAnchors, Direction.UP);
+        Pair<List<String>,List<LayoutTokenization>> featureObjectDown = 
+            this.getAreasFeatured(doc, figureAnchors, Direction.DOWN);
         
         List<String> contentsUp = featureObjectUp.getLeft();
         List<String> contentsDown = featureObjectDown.getLeft();
@@ -130,6 +153,106 @@ public class FigureSegmenterParser {
                                                              labelledResultsDown, theTokenizationsDown);
         
         return doc;
+    }
+
+    public Document prepareDocument(Document doc) {
+
+        List<LayoutToken> tokenizations = doc.getTokenizations();
+        if (tokenizations.size() > GrobidProperties.getPdfTokensMax()) {
+            throw new GrobidException("The document has " + tokenizations.size() + " tokens, but the limit is " + GrobidProperties.getPdfTokensMax(),
+                    GrobidExceptionStatus.TOO_MANY_TOKENS);
+        }
+
+        doc.produceStatistics();
+        return doc;
+    }
+
+    private void dealWithImages(DocumentSource documentSource, Document doc, File assetFile, GrobidAnalysisConfig config) {
+        if (assetFile != null) {
+            // copy the files under the directory pathXML+"_data" (the asset files) into the path specified by assetPath
+
+            if (!assetFile.exists()) {
+                // we create it
+                if (assetFile.mkdir()) {
+                    LOGGER.debug("Directory created: " + assetFile.getPath());
+                } else {
+                    LOGGER.error("Failed to create directory: " + assetFile.getPath());
+                }
+            }
+            PNMRegistry.registerAllServicesProviders();
+
+            // filter all .jpg and .png files
+            File directoryPath = new File(documentSource.getXmlFile().getAbsolutePath() + "_data");
+            if (directoryPath.exists()) {
+                File[] files = directoryPath.listFiles();
+                if (files != null) {
+                    int nbFiles = 0;
+                    for (final File currFile : files) {
+                        if (nbFiles > DocumentSource.PDFALTO_FILES_AMOUNT_LIMIT)
+                            break;
+
+                        String toLowerCaseName = currFile.getName().toLowerCase();
+                        if (toLowerCaseName.endsWith(".png") || !config.isPreprocessImages()) {
+                            try {
+                                if (toLowerCaseName.endsWith(".svg")) {
+                                    continue;
+                                }
+                                FileUtils.copyFileToDirectory(currFile, assetFile);
+                                nbFiles++;
+                            } catch (IOException e) {
+                                LOGGER.error("Cannot copy file " + currFile.getAbsolutePath() + " to " + assetFile.getAbsolutePath(), e);
+                            }
+                        } else if (toLowerCaseName.endsWith(".jpg")
+                                || toLowerCaseName.endsWith(".ppm")
+                            //  || currFile.getName().toLowerCase().endsWith(".pbm")
+                                ) {
+
+                            String outputFilePath = "";
+                            try {
+                                final BufferedImage bi = ImageIO.read(currFile);
+
+                                if (toLowerCaseName.endsWith(".jpg")) {
+                                    outputFilePath = assetFile.getPath() + File.separator +
+                                            toLowerCaseName.replace(".jpg", ".png");
+                                }
+                                /*else if (currFile.getName().toLowerCase().endsWith(".pbm")) {
+                                    outputFilePath = assetFile.getPath() + File.separator +
+                                         currFile.getName().toLowerCase().replace(".pbm",".png");
+                                }*/
+                                else {
+                                    outputFilePath = assetFile.getPath() + File.separator +
+                                            toLowerCaseName.replace(".ppm", ".png");
+                                }
+                                ImageIO.write(bi, "png", new File(outputFilePath));
+                                nbFiles++;
+                            } catch (IOException e) {
+                                LOGGER.error("Cannot convert file " + currFile.getAbsolutePath() + " to " + outputFilePath, e);
+                            }
+                        }
+                    }
+                }
+            }
+            // update the path of the image description stored in Document
+            if (config.isPreprocessImages()) {
+                List<GraphicObject> images = doc.getImages();
+                if (images != null) {
+                    String subPath = assetFile.getPath();
+                    int ind = subPath.lastIndexOf("/");
+                    if (ind != -1)
+                        subPath = subPath.substring(ind + 1, subPath.length());
+                    for (GraphicObject image : images) {
+                        String fileImage = image.getFilePath();
+                        if (fileImage == null) {
+                            continue;
+                        }
+                        fileImage = fileImage.replace(".ppm", ".png")
+                                .replace(".jpg", ".png");
+                        ind = fileImage.indexOf("/");
+                        image.setFilePath(subPath + fileImage.substring(ind, fileImage.length()));
+                    }
+                }
+            }
+        }
     }
 
     private List<GraphicObject> initFigureAnchors(Document doc) {

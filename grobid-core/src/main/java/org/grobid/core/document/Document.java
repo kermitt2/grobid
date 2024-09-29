@@ -86,16 +86,16 @@ public class Document implements Serializable {
     public static final int MAX_FIG_BOX_DISTANCE = 70;
     protected transient final DocumentSource documentSource;
 
-    protected String pathXML = null; // XML representation of the current PDF file
+    protected String pathXML = null; // base ALTO XML representation of the current PDF file
 
     protected String lang = null;
 
     // layout structure of the document
     protected transient List<Page> pages = null;
-    protected transient List<Cluster> clusters = null;
+    //protected transient List<Cluster> clusters = null;
     protected transient List<Block> blocks = null;
 
-    protected List<Integer> blockDocumentHeaders = null;
+    //protected List<Integer> blockDocumentHeaders = null;
 
     protected transient FeatureFactory featureFactory = null;
 
@@ -118,10 +118,6 @@ public class Document implements Serializable {
 
     protected transient ReferenceMarkerMatcher referenceMarkerMatcher;
 
-    public void setImages(List<GraphicObject> images) {
-        this.images = images;
-    }
-
     // list of bitmaps and vector graphics of the document
     protected transient List<GraphicObject> images = null;
 
@@ -131,6 +127,7 @@ public class Document implements Serializable {
     // the document outline (or bookmark) embedded in the PDF, if present
     protected transient DocumentNode outlineRoot = null;
 
+    // the metadata embedded in the PDF, if present
     protected transient Metadata metadata = null;
 
     protected transient Multimap<Integer, GraphicObject> imagesPerPage = LinkedListMultimap.create();
@@ -144,13 +141,15 @@ public class Document implements Serializable {
     protected int documentLenghtChar = -1; // length here is expressed as number of characters
 
     // not used
-    protected int beginBody = -1;
-    protected int beginReferences = -1;
+    //protected int beginBody = -1;
+    //protected int beginReferences = -1;
 
     protected boolean titleMatchNum = false; // true if the section titles of the document are numbered
 
     protected transient List<Figure> figures;
     protected transient Predicate<GraphicObject> validGraphicObjectPredicate;
+    
+    // general parameter indicating bounding box margin when considering area
     protected int m;
 
     protected transient List<Table> tables;
@@ -186,6 +185,10 @@ public class Document implements Serializable {
             }
         }
         return doc;
+    }
+
+    public void setImages(List<GraphicObject> images) {
+        this.images = images;
     }
 
     public void setLanguage(String l) {
@@ -723,9 +726,9 @@ System.out.println(image.toString());
         this.tei = tei;
     }
 
-    public List<Integer> getBlockDocumentHeaders() {
+    /*public List<Integer> getBlockDocumentHeaders() {
         return blockDocumentHeaders;
-    }
+    }*/
 
     public DocumentNode getOutlineRoot() {
         return outlineRoot;
@@ -752,17 +755,17 @@ System.out.println(image.toString());
         return pages.get(num - 1);
     }
 
-    public List<Cluster> getClusters() {
+    /*public List<Cluster> getClusters() {
         return clusters;
-    }
+    }*/
 
-    public void setBlockDocumentHeaders(List<Integer> blockDocumentHeaders) {
+    /*public void setBlockDocumentHeaders(List<Integer> blockDocumentHeaders) {
         this.blockDocumentHeaders = blockDocumentHeaders;
-    }
+    }*/
 
-    public void setClusters(List<Cluster> clusters) {
+    /*public void setClusters(List<Cluster> clusters) {
         this.clusters = clusters;
-    }
+    }*/
 
     public void setPages(List<Page> pages) {
         this.pages = pages;
