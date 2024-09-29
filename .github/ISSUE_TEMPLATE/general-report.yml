@@ -19,7 +19,7 @@ body:
       description: "java --version"
     validations:
       required: false
-  - type: input
+  - type: textarea
     id: logs
     attributes:
       label: Log and information
