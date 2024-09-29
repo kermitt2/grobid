@@ -19,8 +19,8 @@ body:
       description: `java --version`
     validations:
       required: false
-  - type: logs
-    id: java
+  - type: input
+    id: logs
     attributes:
       label: Log and information
       description: In case of build or run errors, please submit the error while running gradlew with ``--stacktrace`` and ``--info`` for better log traces (e.g. `./gradlew run --stacktrace --info`) or attach the log file `logs/grobid-service.log` or the console log.
