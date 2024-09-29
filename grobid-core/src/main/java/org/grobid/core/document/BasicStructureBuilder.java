@@ -61,7 +61,7 @@ public class BasicStructureBuilder {
      * @param b   integer
      * @param doc a document
      */
-    private static void addBlockToCluster(Integer b, Document doc) {
+    /*private static void addBlockToCluster(Integer b, Document doc) {
         // get block features
         Block block = doc.getBlocks().get(b);
         String font = block.getFont();
@@ -101,8 +101,7 @@ public class BasicStructureBuilder {
             cluster.addBlock2(b);
             doc.getClusters().add(cluster);
         }
-
-    }
+    }*/
 
     static public Document generalResultSegmentation(Document doc, String labeledResult, List<LayoutToken> documentTokens) {
         List<Pair<String, String>> labeledTokens = GenericTaggerUtils.getTokensAndLabels(labeledResult);
