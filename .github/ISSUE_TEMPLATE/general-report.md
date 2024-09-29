@@ -3,9 +3,8 @@ about: Create a report to help us improve
 title: ''
 labels: ''
 assignees: ''
-assignees:
 - type: markdown
-  attributes:
+  attributes: 
   value: |
   Thanks for taking the time to fill out this bug report! Before creating a new issue, make sure you had a look at the [official documentation](https://grobid.readthedocs.com) or with the **experimental** [Mendable Q/A chat](https://www.mendable.ai/demo/723cfc12-fdd6-4631-9a9e-21b80241131b). **NOTE**: the suggested method of running grobid is through Docker (https://grobid.readthedocs.io/en/latest/Grobid-docker/).
 - type: input
