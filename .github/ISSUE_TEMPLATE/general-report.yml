@@ -16,7 +16,7 @@ body:
     id: java
     attributes:
       label: What is your Java version
-      description: `java --version`
+      description: "java --version"
     validations:
       required: false
   - type: input
