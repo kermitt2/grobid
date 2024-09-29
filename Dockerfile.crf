@@ -82,10 +82,14 @@ COPY --from=builder /opt/grobid .
 
 ENV GROBID_SERVICE_OPTS "-Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
-ARG TARGETARCH
 RUN if [ "$TARGETARCH" = "arm64" ]; then \
-        ENV PGROBID_SERVICE_OPTS = "-Djdk.lang.Process.launchMechanism=vfork ${PGROBID_SERVICE_OPTS}"; \
-    fi
+        export PROCESS_MECHANISM="-Djdk.lang.Process.launchMechanism=vfork"; \
+    else \
+        export PROCESS_MECHANISM=""; \
+    fi && \
+    echo "PROCESS_MECHANISM=$PROCESS_MECHANISM" >> /etc/environment
+
+ENV GROBID_SERVICE_OPTS "$PROCESS_MECHANISM -Djava.library.path=grobid-home/lib/lin-64:grobid-home/lib/lin-64/jep --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
 
