@@ -31,7 +31,7 @@ assignees: ''
 - type: textarea
   id: what-happened
   attributes:
-  label: 
+  label: Further information
   description: Please give us any information that could be of help 
   placeholder: Tell us what you see!
   value: ''
