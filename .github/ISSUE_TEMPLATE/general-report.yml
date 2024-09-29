@@ -31,7 +31,6 @@ body:
     attributes:
       label: Further information
       description: Please give us any information that could be of help
-      placeholder: Tell us what you see!
     validations:
       required: false
   
