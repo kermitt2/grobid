@@ -80,7 +80,7 @@ WORKDIR /opt/grobid
 
 COPY --from=builder /opt/grobid .
 
-RUN if [ "$TARGETARCH" = "arm64" ]; then \
+RUN if [ "$TARGETARCH" = "linux/arm64" ]; then \
         export PROCESS_MECHANISM="-Djdk.lang.Process.launchMechanism=vfork "; \
     else \
         export PROCESS_MECHANISM=""; \
