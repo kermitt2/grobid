@@ -78,7 +78,11 @@ For facilitating the usage GROBID service at scale, we provide clients written i
 - <a href="https://github.com/kermitt2/grobid-client-java" target="_blank">Java GROBID client</a>
 - <a href="https://github.com/kermitt2/grobid-client-node" target="_blank">Node.js GROBID client</a>
 
-All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be preferred. 
+A third party client for Go is available offering functionality similar to the Python client:
+
+- <a href="https://github.com/miku/grobidclient" target="_blank">Go GROBID client</a>
+
+All these clients will take advantage of the multi-threading for scaling large set of PDF processing. As a consequence, they will be much more efficient than the [batch command lines](https://grobid.readthedocs.io/en/latest/Grobid-batch/) (which use only one thread) and should be preferred.
 
 For example, we have been able to run the complete full-text processing at around 10.6 PDF per second (around 915,000 PDF per day, around 20M pages per day) with the node.js client listed above during one week on one 16 CPU machine (16 threads, 32GB RAM, no SDD, articles from mainstream publishers), see [here](https://github.com/kermitt2/grobid/issues/443#issuecomment-505208132) (11.3M PDF were processed in 6 days by 2 servers without interruption).
 
