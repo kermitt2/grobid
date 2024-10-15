@@ -8,7 +8,7 @@ Thumbs.db
 .settings
 .classpath
 .idea
-./vscode
+.vscode
 .gradle
 **/build
 */out/
