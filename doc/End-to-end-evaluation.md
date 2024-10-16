@@ -12,7 +12,7 @@ For actual benchmarks, see the [Benchmarking page](Benchmarking.md). We describe
 
 ## Datasets
 
-The corpus used for the end-to-end evaluation of Grobid are all available in a single place on Zenodo: https://zenodo.org/record/7708580. Some of these datasets have been further annotated to make the evaluation of certain sub-structures possible (in particular code and data availability sections & funding sections).
+The corpus used for the end-to-end evaluation of Grobid are all available in a single place on Zenodo: [https://zenodo.org/record/7708580](https://zenodo.org/record/7708580). Some of these datasets have been further annotated to make the evaluation of certain sub-structures possible (in particular code and data availability sections & funding sections).
 
 These resources are originally published under CC-BY license. Our additional annotations are similarly under CC-BY. We thank NIH, bioRxiv, PLOS and eLife for making these resources Open Access and reusable. 
 
