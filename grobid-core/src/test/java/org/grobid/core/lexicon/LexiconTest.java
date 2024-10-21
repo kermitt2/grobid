@@ -68,6 +68,23 @@ public class LexiconTest {
         assertThat(input.substring(FirstURL.start, FirstURL.end), is("https:// www.github.com/myUsername/MyProject"));
     }
 
+    /**
+     * This test is to confirm the limitation of this method using the regex, where we prefer failing on some cases
+     * rather than have a lot of false positive. This method will be anyway complemented with the annotated links in
+     * the PDF (if available).
+     */
+    @Test
+    public void testCharacterPositionsUrlPattern_URLTruncated_shouldReturnCorrectIntervalWithmissingPartOfURL() throws Exception {
+        final String input = "This work was distributed on https://www. github.com/myUsername/MyProject";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition FirstURL = offsetPositions.get(0);
+        assertThat(input.substring(FirstURL.start, FirstURL.end), is("https://www"));
+    }
+
     @Test
     @Ignore("This test will fail, it can be used to test a real case when updating the regular exception")
     public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval_2() throws Exception {
