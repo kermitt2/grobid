@@ -45,6 +45,30 @@ public class LexiconTest {
     }
 
     @Test
+    public void testCharacterPositionsUrlPattern_URLStartingWithWWW_shouldReturnCorrectInterval() throws Exception {
+        final String input = "This work was distributed on www. github.com/myUsername/MyProject";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition FirstURL = offsetPositions.get(0);
+        assertThat(input.substring(FirstURL.start, FirstURL.end), is("www. github.com/myUsername/MyProject"));
+    }
+
+    @Test
+    public void testCharacterPositionsUrlPattern_URLStartingWithHTTPS_shouldReturnCorrectInterval() throws Exception {
+        final String input = "This work was distributed on https:// www.github.com/myUsername/MyProject";
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPattern(tokenisedInput);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition FirstURL = offsetPositions.get(0);
+        assertThat(input.substring(FirstURL.start, FirstURL.end), is("https:// www.github.com/myUsername/MyProject"));
+    }
+
+    @Test
     @Ignore("This test will fail, it can be used to test a real case when updating the regular exception")
     public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval_2() throws Exception {
         final String input = "720 137409 The Government of Lao PDR 2005 Forestry Strategy to the year 2020 of the Lao PDR (available at: https://faolex.fao.org/ docs/pdf/lao144178.pdf)";
