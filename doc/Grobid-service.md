@@ -59,7 +59,7 @@ If required, modify the file under `grobid/grobid-home/config/grobid.yaml` for s
 
 See the [configuration page](Configuration.md) for details on how to set the different parameters of the `grobid.yaml` configuration file. Service and logging parameters are also set in this configuration file.
 
-If Docker is used, see [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
+If Docker is used, see [here](Grobid-docker.md#configure-using-the-yaml-config-file) on how to start a Grobid container with a modified configuration file. 
 
 ### Model loading strategy 
 You can choose to load all the models at the start of the service or lazily when a model is used the first time, the latter being the default. 
