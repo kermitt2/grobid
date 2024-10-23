@@ -22,6 +22,7 @@ nav:
     - 'GROBID with containers': 'Grobid-docker.md'
     - 'GROBID batch mode': 'Grobid-batch.md'
     - 'GROBID configuration': 'Configuration.md'
+    - 'GROBID specialized processes': 'Grobid-specialized-processes.md'
     - 'Troubleshooting and known issues': 'Troubleshooting.md'
     - 'Java library': 'Grobid-java-library.md'
     - 'TEI encoding of results': 'TEI-encoding-of-results.md'
