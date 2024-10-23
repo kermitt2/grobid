@@ -67,7 +67,7 @@ Paragraphs constitute the main bulk of most typical articles or publications and
 </p>
 ```
 
-> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles/#correcting-pre-annotated-files).
+> Note: The `<lb/>` (line break) elements are there because they have been recognized as such in the PDF in the text flow. However, the fact that they are located within or outside a tagged paragraph or section title has no impact. Just be sure NOT to modify the order of the text flow and `<lb/>` as mentionned [here](General-principles.md#correcting-pre-annotated-files).
 
 Following the TEI, formulas should be on the same hierarchical level as paragraphs, and not be contained inside paragraphs:
 
