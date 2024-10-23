@@ -116,8 +116,10 @@ import org.grobid.core.sax.TextSaxParser;
 			spf.setValidating(false);
 			spf.setFeature("http://xml.org/sax/features/namespaces", false);
 			spf.setFeature("http://xml.org/sax/features/validation", false);
+			spf.setFeature("http://xml.org/sax/features/external-general-entities", false);
+			spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
 			//get a new instance of parser
-			XMLReader reader = XMLReaderFactory.createXMLReader();
+			XMLReader reader = spf.newSAXParser().getXMLReader();
 			reader.setEntityResolver(new EntityResolver() {
 				public InputSource resolveEntity(String publicId, String systemId) {
 					return new InputSource(

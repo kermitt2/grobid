@@ -3108,7 +3108,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         StringBuilder output = new StringBuilder();
         SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
 
-        if (sectionPart != null && sectionPart.size() > 0) {
+        if (CollectionUtils.isNotEmpty(sectionPart)) {
             Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
             if (sectionTokenisation != null) {
                 // if featSeg is null, it usually means that no body segment is found in the

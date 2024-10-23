@@ -87,6 +87,7 @@ ENTRYPOINT ["/tini", "-s", "--"]
 
 # install JRE, python and other dependencies
 RUN apt-get update && \
+    apt-mark hold libcudnn8 && \
     apt-get -y upgrade && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 libfontconfig unzip curl \
     openjdk-17-jre-headless ca-certificates-java \
