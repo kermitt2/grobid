@@ -35,7 +35,7 @@ The exact list of generated files depends on the structures occurring in the art
 | `*.training.references.authors.tei.xml` | citation | for all the authors appearing in the bibliographical references of the article |
 
 
-These files must be reviewed and corrected manually before being added to the training data, taking into account that exploiting any additional training data requires GROBID to re-create its models - by [retraining](../Training-the-models-of-Grobid) them.
+These files must be reviewed and corrected manually before being added to the training data, taking into account that exploiting any additional training data requires GROBID to re-create its models - by [retraining](../Training-the-models-of-Grobid.md) them.
 
 ## Correcting pre-annotated files
 
