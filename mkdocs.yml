@@ -5,7 +5,7 @@ theme: readthedocs
 site_description: Documentation for GROBID
 docs_dir: doc
 extra_css:
-  - css/custom.css
+  - doc/css/custom.css
 plugins:
     - search
 nav:
