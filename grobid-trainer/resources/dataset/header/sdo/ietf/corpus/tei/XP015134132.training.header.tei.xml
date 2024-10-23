@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015134132"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	Network Working Group<lb/> I. Learmonth<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Tor Project<lb/> Intended status: Informational<lb/>
+	<date>July 8, 2019<lb/></date>
+
+	Expires: January 9, 2020<lb/>
+	<docTitle>
+	<titlePart>Guidelines for Performing Safe Measurement on the Internet<lb/></titlePart>
+	</docTitle>
+
+	<idno>draft-irtf-pearg-safe-internet-measurement-01<lb/></idno>
+
+	<div type="abstract">Abstract<lb/> Researchers from industry and academia often use Internet<lb/> measurements as part of their work. While these measurements can<lb/> give insight into the functioning and usage of the Internet, they can<lb/> come at the cost of user privacy. This document describes guidelines<lb/> for ensuring that such measurements can be carried out safely.<lb/></div> 
+
+	<note type="other">Note<lb/> Comments are solicited and should be addressed to the research<lb/> group&apos;s mailing list at pearg@irtf.org and/or the author(s).<lb/> The sources for this draft are at:<lb/> https://github.com/irl/draft-safe-internet-measurement<lb/> Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/> This Internet-Draft will expire on January 9, 2020.<lb/></note>
+
+	Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/></note>
+
+	Learmonth<lb/> Expires January 9, 2020<lb/> [Page 1]<lb/>
+	<note type="doctype">Internet-Draft<lb/></note>
+
+	Safe Internet Measurement<lb/> July 2019<lb/>
+	<note type="copyright">This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document.<lb/></note>
+
+	<byline>
+	<docAuthor>Iain R. Learmonth<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Tor Project<lb/></affiliation>
+	</byline>
+
+	<email>Email: irl@torproject.org</email>
+
+		</front>
+	</text>
+</tei>
