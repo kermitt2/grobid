@@ -43,6 +43,7 @@ import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.utilities.Triple;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
@@ -150,7 +151,9 @@ public class FullTextParser extends AbstractParser {
         }
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
+            Document doc = parsers.getFigureSegmenterParser().extract(documentSource, config);
+			doc = parsers.getSegmentationParser().processing(doc, config);
+
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -1145,6 +1148,42 @@ public class FullTextParser extends AbstractParser {
 
             doc = parsers.getSegmentationParser().processing(documentSource,
                 GrobidAnalysisConfig.defaultInstance());
+
+            // FIGURE SEGMENTER MODELS - returns Pair training file, feature files for model up and down
+            /*Pair<Pair<String,String>,Pair<String,String>> resultPair = parsers.getFigureSegmenterParser().createTraining(doc, ""+id);
+            if (resultPair != null) {
+                if (resultPair.getLeft() != null) {
+                    // training TEI file, segmenter direction ip
+                    Writer writerFigureSegmenter = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                            File.separator +
+                            pdfFileName.replace(".pdf", ".training.figureSegmenterUp.tei.xml")), false), StandardCharsets.UTF_8);
+                    writerFigureSegmenter.write(resultPair.getLeft().getLeft());
+                    writerFigureSegmenter.close();
+
+                    // raw vector file with the features, segmenter direction up
+                    String outPath = pathTEI + "/" + pdfFileName.replace(".pdf", ".training.figureSegmenterUp");
+                    writerFigureSegmenter = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
+                    writerFigureSegmenter.write(resultPair.getLeft().getRight());
+                    writerFigureSegmenter.write("\n");
+                    writerFigureSegmenter.close();
+                }
+
+                if (resultPair.getRight() != null) {
+                    // training TEI file, segmenter direction down
+                    Writer writerFigureSegmenter = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
+                            File.separator +
+                            pdfFileName.replace(".pdf", ".training.figureSegmenterDown.tei.xml")), false), StandardCharsets.UTF_8);
+                    writerFigureSegmenter.write(resultPair.getRight().getLeft());
+                    writerFigureSegmenter.close();
+
+                    // raw vector file with the features, segmenter direction down
+                    String outPath = pathTEI + "/" + pdfFileName.replace(".pdf", ".training.figureSegmenterDown");
+                    writerFigureSegmenter = new OutputStreamWriter(new FileOutputStream(new File(outPath), false), StandardCharsets.UTF_8);
+                    writerFigureSegmenter.write(resultPair.getRight().getRight());
+                    writerFigureSegmenter.write("\n");
+                    writerFigureSegmenter.close();
+                }
+            }*/
 
             // REFERENCE SEGMENTER MODEL
             String referencesStr = doc.getDocumentPartText(SegmentationLabels.REFERENCES);
