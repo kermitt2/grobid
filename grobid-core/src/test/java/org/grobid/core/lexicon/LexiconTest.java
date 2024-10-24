@@ -494,4 +494,104 @@ public class LexiconTest {
 
     }
 
+    @Test
+public void testCharacterPositionsUrlPattern_URL_shouldReturnCorrectInterval_3() throws Exception {
+final String input = "We appreciate assistance from The Research Support Center, Research Center for Human Disease Modeling, \n" +
+    "and Kyushu University Graduate School of Medical Sciences. We thank Dr. Mitsuru Watanabe and Ms. Eriko \n" +
+    "Matsuo from the Department of Neurology, Kyushu University, for the technical assistance in the flow cytometric \n" +
+    "analysis. We thank Ms. Sachiko Koyama and Hideko Noguchi from the Department of Neuropathology, Kyushu \n" +
+    "University, for excellent technical assistance in the histological analysis. We thank Mr. Tetsuo Kishi from the \n" +
+    "Department of Medicine, Kyushu University School of Medicine for the immunohistochemical analysis. We \n" +
+    "thank J. Ludovic Croxford, PhD, from Edanz (https:// jp. edanz. com/ ac) for editing a draft of this manuscript.";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        //These have to overlap with the regex output to make sure that the annotation is selected
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(219);
+        lastTokenOfTheURL1.setPage(15);
+        lastTokenOfTheURL1.setX(322.49060000000003);
+        lastTokenOfTheURL1.setY(454.586);
+        lastTokenOfTheURL1.setWidth(16.338);
+        lastTokenOfTheURL1.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(220);
+        lastTokenOfTheURL2.setPage(15);
+        lastTokenOfTheURL2.setX(338.8286);
+        lastTokenOfTheURL2.setY(454.586);
+        lastTokenOfTheURL2.setWidth(3.2676);
+        lastTokenOfTheURL2.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(221);
+        lastTokenOfTheURL3.setPage(15);
+        lastTokenOfTheURL3.setX(342.0962);
+        lastTokenOfTheURL3.setY(454.586);
+        lastTokenOfTheURL3.setWidth(3.2676);
+        lastTokenOfTheURL3.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL4 = tokenisedInput.get(222);
+        lastTokenOfTheURL4.setPage(15);
+        lastTokenOfTheURL4.setX(345.3638);
+        lastTokenOfTheURL4.setY(454.586);
+        lastTokenOfTheURL4.setWidth(3.2676);
+        lastTokenOfTheURL4.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL5 = tokenisedInput.get(224);
+        lastTokenOfTheURL5.setPage(15);
+        lastTokenOfTheURL5.setX(348.667);
+        lastTokenOfTheURL5.setY(454.586);
+        lastTokenOfTheURL5.setWidth(5.868599999999999);
+        lastTokenOfTheURL5.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL6 = tokenisedInput.get(225);
+        lastTokenOfTheURL6.setPage(15);
+        lastTokenOfTheURL6.setX(354.5356);
+        lastTokenOfTheURL6.setY(454.586);
+        lastTokenOfTheURL6.setWidth(2.9342999999999995);
+        lastTokenOfTheURL6.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL7 = tokenisedInput.get(227);
+        lastTokenOfTheURL7.setPage(15);
+        lastTokenOfTheURL7.setX(357.514);
+        lastTokenOfTheURL7.setY(454.586);
+        lastTokenOfTheURL7.setWidth(19.5645);
+        lastTokenOfTheURL7.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL10 = tokenisedInput.get(231);
+        lastTokenOfTheURL10.setPage(15);
+        lastTokenOfTheURL10.setX(395.106375);
+        lastTokenOfTheURL10.setY(454.586);
+        lastTokenOfTheURL10.setWidth(4.690125);
+        lastTokenOfTheURL10.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL11 = tokenisedInput.get(233);
+        lastTokenOfTheURL11.setPage(15);
+        lastTokenOfTheURL11.setX(399.842);
+        lastTokenOfTheURL11.setY(454.586);
+        lastTokenOfTheURL11.setWidth(7.295399999999999);
+        lastTokenOfTheURL11.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL12 = tokenisedInput.get(234);
+        lastTokenOfTheURL12.setPage(15);
+        lastTokenOfTheURL12.setX(407.13739999999996);
+        lastTokenOfTheURL12.setY(454.586);
+        lastTokenOfTheURL12.setWidth(3.6476999999999995);
+        lastTokenOfTheURL12.setHeight(9.099);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(15);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(15, 322.37, 451.55, 85.305, 12.140999999999963));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://jp.edanz.com/ac");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(input.substring(url0.start, url0.end), is("https:// jp. edanz. com/ ac"));
+    }
+
 }

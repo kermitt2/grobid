@@ -1315,7 +1315,7 @@ public class Lexicon {
                 String destination = targetAnnotation.getDestination();
 
                 int destinationPos = 0;
-                if (destination.contains(urlString)) {
+                if (destination.contains(urlString) || destination.contains(urlString.replaceAll("\\s", ""))) {
                     //In this case the regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString) + urlString.length();
