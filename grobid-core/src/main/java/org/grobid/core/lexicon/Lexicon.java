@@ -1315,7 +1315,9 @@ public class Lexicon {
                 String destination = targetAnnotation.getDestination();
 
                 int destinationPos = 0;
-                if (destination.contains(urlString) || destination.contains(urlString.replaceAll("\\s", ""))) {
+                if (urlString.replaceAll("\\s", "").equals(destination)) {
+                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
+                } else if (destination.contains(urlString) || destination.contains(urlString.replaceAll("\\s", ""))) {
                     //In this case the regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString) + urlString.length();
@@ -1327,7 +1329,7 @@ public class Lexicon {
 
                             if ("\n".equals(nextToken.getText()) ||
                                 " ".equals(nextToken.getText()) ||
-                                nextToken.getText().length() == 0) {
+                                nextToken.getText().isEmpty()) {
                                 endPos += nextToken.getText().length();
                                 additionalSpaces += nextToken.getText().length();
                                 additionalTokens += 1;
@@ -1355,8 +1357,6 @@ public class Lexicon {
                             endPos -= additionalSpaces;
                         }
                     }
-                } else if (urlString.replaceAll("\\s", "").equals(destination)) {
-                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
                 } else if (urlString.contains(destination) || urlString.replaceAll("\\s", "").contains(destination)) {
                     // In this case the regex has catches too much, usually this should be limited to a few characters,
                     // but we cannot know it for sure. Here we first find the difference between the destination and the
