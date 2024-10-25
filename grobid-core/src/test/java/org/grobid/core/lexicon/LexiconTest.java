@@ -433,6 +433,64 @@ public class LexiconTest {
     }
 
     @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_DuplicatedMatchingPDFAnnotations_shouldReturnCorrectIntervalBasedOnText4() throws Exception {
+        final String input = "Google Earth Engine applications to visualize the \n" +
+            "datasets: https://github.com/shijuanchen/shift_cult \n" +
+            "Map products visualization: https://sites.google. \n" +
+            "com/view/shijuanchen/research/shift_cult \n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(28);
+        lastTokenOfTheURL1.setPage(10);
+        lastTokenOfTheURL1.setX(504.75295121951217);
+        lastTokenOfTheURL1.setY(626.353);
+        lastTokenOfTheURL1.setWidth(40.858048780487806);
+        lastTokenOfTheURL1.setHeight(9.3999);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(44);
+        lastTokenOfTheURL2.setPage(10);
+        lastTokenOfTheURL2.setX(526.9964666666667);
+        lastTokenOfTheURL2.setY(638.853);
+        lastTokenOfTheURL2.setWidth(22.0712);
+        lastTokenOfTheURL2.setHeight(9.3999);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(10);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(10, 378.093, 625.354, 167.51799999999997, 10.599999999999909));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://github.com/shijuanchen/shift_cult");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        PDFAnnotation annotation2 = new PDFAnnotation();
+        annotation2.setPageNumber(10);
+        List<BoundingBox> boundingBoxes2 = new ArrayList<>();
+        boundingBoxes2.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854, 77.26, 10.60));
+        annotation2.setBoundingBoxes(boundingBoxes2);
+        annotation2.setDestination("https://www.google.com");
+        annotation2.setType(PDFAnnotation.Type.URI);
+
+        PDFAnnotation annotation3 = new PDFAnnotation();
+        annotation3.setPageNumber(10);
+        List<BoundingBox> boundingBoxes3 = new ArrayList<>();
+        boundingBoxes3.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854, 77.26, 10.60));
+        annotation3.setBoundingBoxes(boundingBoxes3);
+        annotation3.setDestination("https://sites.google.com/view/shijuanchen/research/shift_cult");
+        annotation3.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1, annotation2, annotation3);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(2));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(input.substring(url0.start, url0.end), is("https://github.com/shijuanchen/shift_cult"));
+        OffsetPosition url1 = offsetPositions.get(1);
+        assertThat(input.substring(url1.start, url1.end), is("https://sites.google. \ncom/view/shijuanchen/research/shift_cult"));
+    }
+
+
+    @Test
     public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText5() throws Exception {
         final String input = ", accessible through the University of Hawaii Sea Level Center with station ID of UHSLC ID 57 \n" +
             "(https://uhslc.soest.hawaii.edu/stations/?stn=057#levels). You can access a processed dataset of nearshore wave \n";

@@ -16,6 +16,7 @@ import java.util.TreeMap;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.regex.*;
+import java.util.stream.Collectors;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -36,6 +37,7 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1282,19 +1284,8 @@ public class Lexicon {
             if (CollectionUtils.isNotEmpty(urlTokens)) {
                 LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
                 if (pdfAnnotations != null) {
-                    targetAnnotation = pdfAnnotations.stream()
-                        .filter(pdfAnnotation ->
-                            pdfAnnotation.getType() != null
-                                && pdfAnnotation.getType() == PDFAnnotation.Type.URI
-                                && pdfAnnotation.cover(lastToken)
-                                && (
-                                    pdfAnnotation.getDestination().contains(urlString)
-                                        || pdfAnnotation.getDestination().contains(lastToken.getText()
-                                )
-                            )
-                        )
-                        .findFirst()
-                        .orElse(null);
+                    targetAnnotation = matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(pdfAnnotations, urlTokens);
+
                     correctedLastTokenIndex = urlTokens.size() - 1;
 
                     // If we cannot match, maybe the regex got some characters too much, e.g. dots, parenthesis,etc..
@@ -1307,20 +1298,7 @@ public class Lexicon {
                         while (index > 0 && lastTokenText.length() == 1 && !Character.isLetterOrDigit(lastTokenText.charAt(0)) && targetAnnotation == null) {
                             index -= 1;
                             LayoutToken finalLastToken1 = urlTokens.get(index);
-                            targetAnnotation = pdfAnnotations.stream()
-                                .filter(
-                                    pdfAnnotation ->
-                                        pdfAnnotation.getType() != null
-                                            && pdfAnnotation.getType() == PDFAnnotation.Type.URI
-                                            && pdfAnnotation.cover(finalLastToken1)
-                                            && (
-                                            pdfAnnotation.getDestination().contains(urlString)
-                                                || pdfAnnotation.getDestination().contains(lastToken.getText()
-                                            )
-                                        )
-                                )
-                                .findFirst()
-                                .orElse(null);
+                            targetAnnotation = matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(pdfAnnotations, urlTokens);
 
                             correctedLastTokenIndex = index;
                         }
@@ -1421,6 +1399,63 @@ public class Lexicon {
             resultPositions.add(position);
         }
         return resultPositions;
+    }
+
+    @Nullable
+    private static PDFAnnotation matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(List<PDFAnnotation> pdfAnnotations, List<LayoutToken> urlTokens) {
+        LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
+        String urlString = LayoutTokensUtil.toText(urlTokens);
+
+        List<PDFAnnotation> possibleTargetAnnotations = pdfAnnotations.stream()
+            .filter(pdfAnnotation ->
+                pdfAnnotation.getType() != null
+                    && pdfAnnotation.getType() == PDFAnnotation.Type.URI
+                    && pdfAnnotation.cover(lastToken)
+            ).collect(Collectors.toList());
+
+        PDFAnnotation targetAnnotation;
+        if (possibleTargetAnnotations.size() > 1) {
+            possibleTargetAnnotations = possibleTargetAnnotations.stream()
+                .filter(pdfAnnotation ->
+                    pdfAnnotation.getDestination().contains(urlString)
+                )
+                .collect(Collectors.toList());
+
+            if (possibleTargetAnnotations.size() > 1) {
+                // If the lastToken is any of ./:_ we should add the token before
+                int index = urlTokens.size() - 1;
+                if (urlTokens.size() > 1 && lastToken.getText().matches("[.:_\\-/]")) {
+                    index -= 1;
+                }
+
+                while (index > 0 && possibleTargetAnnotations.size() > 1) {
+                    final String lastTokenText2 = LayoutTokensUtil.toText(urlTokens.subList(index - 1, urlTokens.size()));
+
+                    possibleTargetAnnotations = possibleTargetAnnotations.stream()
+                        .filter(pdfAnnotation ->
+                            pdfAnnotation.getDestination().contains(lastTokenText2)
+                        )
+                        .collect(Collectors.toList());
+                    index--;
+                }
+
+                targetAnnotation = possibleTargetAnnotations.stream()
+                    .findFirst()
+                    .orElse(null);
+
+            } else {
+                targetAnnotation = possibleTargetAnnotations.stream()
+                    .findFirst()
+                    .orElse(null);
+            }
+
+        } else {
+            targetAnnotation = possibleTargetAnnotations.stream()
+                .findFirst()
+                .orElse(null);
+        }
+
+        return targetAnnotation;
     }
 
 
