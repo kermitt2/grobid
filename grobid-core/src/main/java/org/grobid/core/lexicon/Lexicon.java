@@ -1312,7 +1312,11 @@ public class Lexicon {
                 int destinationPos = 0;
                 if (urlString.replaceAll("\\s", "").equals(destination)) {
                     // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
-                } else if (destination.contains(urlString) || destination.contains(urlString.replaceAll("\\s", ""))) {
+                } else if (
+                    destination.contains(urlString)
+                        || destination.contains(urlString.replaceAll("\\s", ""))
+                        || destination.contains(StringUtils.stripEnd(urlString, "-"))
+                ) {
                     //In this case the regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString) + urlString.length();
