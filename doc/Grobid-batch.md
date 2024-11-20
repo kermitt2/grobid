@@ -1,6 +1,6 @@
 <h1>GROBID batch mode</h1>
 
-We do **not** recommend to use the batch mode. For the best performance, benchmarking and for exploiting multithreading, we recommend to use the service mode, see [Use GROBID as a service](Grobid-service.md), and not the batch mode. Clients for GROBID services are provided in [Python](https://github.com/kermitt2/grobid-client-python), [Java](https://github.com/kermitt2/grobid-client-java) and [node.js](https://github.com/kermitt2/grobid-client-node).
+We do **not** recommend to use the batch mode. For the best performance, benchmarking and for exploiting multithreading, we recommend to use the service mode, see [Use GROBID as a service](Grobid-service.md), and not the batch mode. Clients for GROBID services are provided in [Python](https://github.com/kermitt2/grobid-client-python), [Java](https://github.com/kermitt2/grobid-client-java), [node.js](https://github.com/kermitt2/grobid-client-node) and [Go](https://github.com/miku/grobidclient).
 
 Using the batch mode is only necessary to create pre-annotated training data. If you do not need good runtime and just need to casually process some inputs, the batch mode is available for convenience. 
 
