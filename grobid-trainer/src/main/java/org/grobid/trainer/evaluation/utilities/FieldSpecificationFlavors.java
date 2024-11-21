@@ -1,21 +1,11 @@
 package org.grobid.trainer.evaluation.utilities;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Specification of field XML paths in different result documents for evaluation.
  */
-public class FieldSpecification {
-
-    public String fieldName = null;
-
-    public List<String> nlmPath = new ArrayList<String>();
-    public List<String> grobidPath = new ArrayList<String>();
-    public List<String> pdfxPath = new ArrayList<String>();
-    public List<String> cerminePath = new ArrayList<String>();
-
-    public boolean isTextual = false;
-
+public class FieldSpecificationFlavors {
     /**
      * This static method instantiates the fields with the appropriate paths
      * in the different gold and extraction formats.
@@ -78,19 +68,6 @@ public class FieldSpecification {
         headerFields.add(firstAuthorField);
         headerLabels.add("first_author");
 
-        // affiliation
-        FieldSpecification affiliationField = new FieldSpecification();
-        affiliationField.fieldName = "affiliations";
-        affiliationField.isTextual = true;
-        //affiliationField.hasMultipleValue = true;
-        affiliationField.grobidPath.
-            add("//sourceDesc/biblStruct/analytic/author/affiliation/orgName/text()");
-        affiliationField.nlmPath.
-            add("/article/front/article-meta/contrib-group/aff/text()");
-        affiliationField.pdfxPath.add("/pdfx/article/front/contrib-group");
-        //headerFields.add(affiliationField);
-        //headerLabels.add("affiliations");
-
         // date
         FieldSpecification dateField = new FieldSpecification();
         dateField.fieldName = "date";
@@ -99,30 +76,8 @@ public class FieldSpecification {
         dateField.nlmPath.
             add("/article/front/article-meta/pub-date[@pub-type=\"pmc-release\"][1]//text()");
         //in bioRxiv: <pub-date pub-type="epub"><year>2014</year></pub-date>
-        //headerFields.add(dateField);
-        //headerLabels.add("date");
-
-        // abstract
-        FieldSpecification abstractField = new FieldSpecification();
-        abstractField.fieldName = "abstract";
-        abstractField.isTextual = true;
-        abstractField.grobidPath.
-            add("//profileDesc/abstract//text()");
-        abstractField.nlmPath.
-            add("/article/front/article-meta/abstract//text()");
-        headerFields.add(abstractField);
-        headerLabels.add("abstract");
-
-        // keywords
-        FieldSpecification keywordsField = new FieldSpecification();
-        keywordsField.fieldName = "keywords";
-        keywordsField.isTextual = true;
-        keywordsField.grobidPath.
-            add("//profileDesc/textClass/keywords//text()");
-        keywordsField.nlmPath.
-            add("/article/front/article-meta/kwd-group/kwd/text()");
-        headerFields.add(keywordsField);
-        headerLabels.add("keywords");
+//        headerFields.add(dateField);
+//        headerLabels.add("date");
 
         // DOI (header)
         FieldSpecification doiField = new FieldSpecification();
@@ -131,8 +86,8 @@ public class FieldSpecification {
             add("//sourceDesc/biblStruct/idno[@type=\"DOI\"]/text()");
         doiField.nlmPath.
             add("/article/front/article-meta/article-id[@pub-id-type=\"doi\"]/text()");
-        //headerFields.add(doiField);
-        //headerLabels.add("doi");
+//        headerFields.add(doiField);
+//        headerLabels.add("doi");
 
         // citations
 
@@ -286,168 +241,6 @@ public class FieldSpecification {
             add("*/pub-id[@pub-id-type=\"pmcid\"]/text()");
         citationsFields.add(citationPMCIDField);
         citationsLabels.add("pmcid");
-
-
-        // full text structures
-		/*FieldSpecification sectionReferenceField = new FieldSpecification();
-		sectionReferenceField.fieldName = "references";
-		sectionReferenceField.isTextual = true;
-		sectionReferenceField.grobidPath.
-			add("//back/div/listBibl/biblStruct//text()");
-		sectionReferenceField.nlmPath.
-			add("//ref-list/ref//text()");
-		fulltextFields.add(sectionReferenceField);
-		fulltextLabels.add("references");*/
-
-        FieldSpecification sectionTitleField = new FieldSpecification();
-        sectionTitleField.fieldName = "section_title";
-        sectionTitleField.isTextual = true;
-        sectionTitleField.grobidPath.
-            add("//text/body/div/head/text()");
-        sectionTitleField.nlmPath.
-            add("//body//sec/title/text()");
-        fulltextFields.add(sectionTitleField);
-        fulltextLabels.add("section_title");
-
-        FieldSpecification referenceMarkerField = new FieldSpecification();
-        referenceMarkerField.fieldName = "reference_citation";
-        referenceMarkerField.isTextual = true;
-        referenceMarkerField.grobidPath.
-            add("//ref[@type=\"bibr\"]/text()");
-        referenceMarkerField.nlmPath.
-            add("//xref[@ref-type=\"bibr\"]/text()");
-        fulltextFields.add(referenceMarkerField);
-        fulltextLabels.add("reference_citation");
-
-        FieldSpecification referenceFigureField = new FieldSpecification();
-        referenceFigureField.fieldName = "reference_figure";
-        referenceFigureField.isTextual = true;
-        referenceFigureField.grobidPath.
-            add("//ref[@type=\"figure\"]/text()");
-        referenceFigureField.nlmPath.
-            add("//xref[@ref-type=\"fig\"]/text()");
-        fulltextFields.add(referenceFigureField);
-        fulltextLabels.add("reference_figure");
-
-        FieldSpecification referenceTableField = new FieldSpecification();
-        referenceTableField.fieldName = "reference_table";
-        referenceTableField.isTextual = true;
-        referenceTableField.grobidPath.
-            add("//ref[@type=\"table\"]/text()");
-        referenceTableField.nlmPath.
-            add("//xref[@ref-type=\"table\"]/text()");
-        fulltextFields.add(referenceTableField);
-        fulltextLabels.add("reference_table");
-
-        FieldSpecification figureTitleField = new FieldSpecification();
-        figureTitleField.fieldName = "figure_title";
-        figureTitleField.isTextual = true;
-        figureTitleField.grobidPath.
-            add("//figure[not(@type)]/head/text()");
-        figureTitleField.nlmPath.
-            add("//fig/label/text()");
-        // eLife JATS support
-        figureTitleField.nlmPath.
-            add("//fig/caption/title/text()");
-        fulltextFields.add(figureTitleField);
-        fulltextLabels.add("figure_title");
-		
-		/*FieldSpecification figureCaptionField = new FieldSpecification();
-		figureCaptionField.fieldName = "figure_caption";
-		figureCaptionField.isTextual = true;
-		figureCaptionField.grobidPath.
-			add("//figure[not(@type)]/figDesc/text()");
-		figureCaptionField.nlmPath.
-			add("//fig/caption/p/text()");
-		fulltextFields.add(figureCaptionField);
-		fulltextLabels.add("figure_caption");*/
-		
-		/*FieldSpecification figureLabelField = new FieldSpecification();
-		figureLabelField.fieldName = "figure_label";
-		figureLabelField.isTextual = true;
-		figureLabelField.grobidPath.
-			add("//figure[not(@type)]/label/text()");
-		figureLabelField.nlmPath.
-			add("//fig/label/text()");
-		fulltextFields.add(figureLabelField);
-		fulltextLabels.add("figure_label");*/
-
-        FieldSpecification tableTitleField = new FieldSpecification();
-        tableTitleField.fieldName = "table_title";
-        tableTitleField.isTextual = true;
-        tableTitleField.grobidPath.
-            add("//figure[@type=\"table\"]/head/text()");
-        tableTitleField.nlmPath.
-            add("//table-wrap/label/text()");
-        // eLife JATS support
-        tableTitleField.nlmPath.
-            add("//table-wrap/caption/title/text()");
-        fulltextFields.add(tableTitleField);
-        fulltextLabels.add("table_title");
-	
-		/*FieldSpecification tableLabelField = new FieldSpecification();
-		tableLabelField.fieldName = "figure_label";
-		tableLabelField.isTextual = true;
-		tableLabelField.grobidPath.
-			add("//figure[@type=\"table\"]/label/text()");
-		tableLabelField.nlmPath.
-			add("//fig/label/text()");
-		fulltextFields.add(tableLabelField);
-		fulltextLabels.add("figure_label");*/
-
-		/*FieldSpecification tableCaptionField = new FieldSpecification();
-		tableCaptionField.fieldName = "table_caption";
-		tableCaptionField.isTextual = true;
-		tableCaptionField.grobidPath.
-			add("//figure[@type=\"table\"]/figDesc/text()");
-		tableCaptionField.nlmPath.
-			add("//table-wrap/caption/p/text()");
-		fulltextFields.add(tableCaptionField);
-		fulltextLabels.add("figure_caption");*/
-
-        //labels.add("section_title");
-        //labels.add("paragraph");
-        //labels.add("citation_marker");
-        //labels.add("figure_marker");
-        //labels.add("table_marker");
-
-        FieldSpecification dataAvailabilityFulltextField = new FieldSpecification();
-        dataAvailabilityFulltextField.fieldName = "availability_stmt";
-        dataAvailabilityFulltextField.isTextual = true;
-        dataAvailabilityFulltextField.grobidPath
-            .add("//div[@type=\"availability\"]//text()");
-        dataAvailabilityFulltextField.nlmPath
-            .add("//sec[@sec-type=\"availability\"]//text()");
-        dataAvailabilityFulltextField.nlmPath
-            .add("//p[@content-type=\"availability\"]//text()");
-        dataAvailabilityFulltextField.nlmPath
-            .add("//sec[@specific-use=\"availability\"]//text()");
-        // for eLife JATS support
-        dataAvailabilityFulltextField.nlmPath
-            .add("//sec[@sec-type=\"data-availability\"]//text()");
-        // the following for PLOS JATS support
-        dataAvailabilityFulltextField.nlmPath
-            .add("//custom-meta[@id=\"data-availability\"]/meta-value//text()");
-        fulltextFields.add(dataAvailabilityFulltextField);
-        fulltextLabels.add("availability_stmt");
-
-        FieldSpecification fundingFulltextField = new FieldSpecification();
-        fundingFulltextField.fieldName = "funding_stmt";
-        fundingFulltextField.isTextual = true;
-        fundingFulltextField.grobidPath
-            .add("//div[@type=\"funding\"]//text()");
-        fundingFulltextField.nlmPath
-            .add("//sec[@sec-type=\"funding\"]//text()");
-        fundingFulltextField.nlmPath
-            .add("//p[@content-type=\"funding\"]//text()");
-        fundingFulltextField.nlmPath
-            .add("//sec[@specific-use=\"funding\"]//text()");
-        // for eLife JATS support
-        // the following for PLOS support
-        fundingFulltextField.nlmPath
-            .add("//funding-statement//text()");
-        fulltextFields.add(fundingFulltextField);
-        fulltextLabels.add("funding_stmt");
     }
 
     public static String grobidCitationContextId = "//ref[@type=\"bibr\"]/@target";
