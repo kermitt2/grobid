@@ -24,7 +24,7 @@ Evaluation on 1000 PDF preprints out of 1000 (no failure).
 
 Runtime for processing 1000 PDF: **999** seconds, (0.99 seconds per PDF) on Ubuntu 22.04, 16 CPU (32 threads), 128GB RAM and with a GeForce GTX 1080 Ti GPU.
 
-Note: with CRF only models runtime is 304s (0.30 seconds per PDF) with 4GPU, 8 threads. 
+Note: with CRF only models runtime is 304s (0.30 seconds per PDF) with 4 CPU, 8 threads. 
 
 
 ## Header metadata 

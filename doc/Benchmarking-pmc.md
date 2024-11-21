@@ -24,7 +24,7 @@ Evaluation on 1943 random PDF PMC files out of 1943 PDF from 1943 different jour
 
 Runtime for processing 1943 PDF: **1467** seconds, (0.75s per PDF) on Ubuntu 22.04, 16 CPU (32 threads), 128GB RAM and with a GeForce GTX 1080 Ti GPU.
 
-Note: with CRF only models, runtime is 470s (0.24 seconds per PDF) with 4GPU, 8 threads.
+Note: with CRF only models, runtime is 470s (0.24 seconds per PDF) with 4 CPU, 8 threads.
 
 
 

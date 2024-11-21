@@ -24,7 +24,7 @@ Evaluation on 2000 PDF preprints out of 2000 (no failure).
 
 Runtime for processing 2000 PDF: **1713** seconds (0.85 seconds per PDF file) on Ubuntu 22.04, 16 CPU (32 threads), 128GB RAM and with a GeForce GTX 1080 Ti GPU.
 
-Note: with CRF only models runtime is 622s (0.31 second per PDF) with 4GPU, 8 threads. 
+Note: with CRF only models runtime is 622s (0.31 second per PDF) with 4 CPU, 8 threads. 
 
 
 ## Header metadata 
@@ -35,16 +35,16 @@ Evaluation on 2000 random PDF files out of 1998 PDF (ratio 1.0).
 
 **Field-level results**
 
-| label            |  precision |   recall  |     f1     | support |
-|---               |---         |---        |---         |---      |
-| abstract | 2.2 | 2.16 | 2.18 | 1990 |
-| authors | 83.2 | 82.49 | 82.84 | 1999 |
-| first_author | 97.02 | 96.29 | 96.66 | 1997 |
-| keywords | 58.71 | 59.83 | 59.27 | 839 |
-| title | 77.67 | 76.85 | 77.26 | 2000 |
-|                  |            |           |            |         |
-| **all fields (micro avg.)** | **64.62** | **64.07** | **64.35** | 8825 |
-| all fields (macro avg.) | 63.76 | 63.53 | 63.64 | 8825 |
+| label                       | precision | recall    | f1        | support |
+|-----------------------------|-----------|-----------|-----------|---------|
+| abstract                    | 2.2       | 2.16      | 2.18      | 1990    |
+| authors                     | 83.2      | 82.49     | 82.84     | 1999    |
+| first_author                | 97.02     | 96.29     | 96.66     | 1997    |
+| keywords                    | 58.71     | 59.83     | 59.27     | 839     |
+| title                       | 77.67     | 76.85     | 77.26     | 2000    |
+|                             |           |           |           |         |
+| **all fields (micro avg.)** | **64.62** | **64.07** | **64.35** | 8825    |
+| all fields (macro avg.)     | 63.76     | 63.53     | 63.64     | 8825    |
 
 
 
