@@ -297,7 +297,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
@@ -315,7 +315,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
