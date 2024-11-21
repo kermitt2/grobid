@@ -716,4 +716,71 @@ public class LexiconTest {
             "ics.github.io/CheckM/"));
     }
 
+    @Test
+    public void testCharacterPositionsUrlPattern_URLContainsSpuriosBreklineHypen_shouldReturnCorrectInterval() throws Exception {
+        /*
+         * This test only aims for the last link
+         */
+        final String input = "Details and code for using the IntOGen framework are available at \n" +
+            "https://intogen.readthedocs.io/en/latest/index.html. The specific \n" +
+            "code to perform this analysis is available in the Genomics England \n" +
+            "research environment (https://re-docs.genomicsengland.co.uk/ \n" +
+            "access/) under /re_gecip/shared_allGeCIPs/pancancer_drivers/code/. \n" +
+            "The link to becoming a member of the Genomics England research \n" +
+            "network and obtaining access can be found at https://www.genomic-\n" +
+            "sengland.co.uk/research/academic/join-gecip. The code to perform \n" +
+            "the canSAR chemogenomics analysis is available through Zenodo \n" +
+            "(https://doi.org/10.5281/zenodo.8329054) (ref. ";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        //These have to overlap with the regex output to make sure that the annotation is selected
+        LayoutToken lastTokenOfTheURL0 = tokenisedInput.get(153);
+        lastTokenOfTheURL0.setPage(11);
+        lastTokenOfTheURL0.setX(523.39535);
+        lastTokenOfTheURL0.setY(436.559);
+        lastTokenOfTheURL0.setWidth(4.205850000000001);
+        lastTokenOfTheURL0.setHeight(8.217);
+
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(154);
+        lastTokenOfTheURL1.setPage(11);
+        lastTokenOfTheURL1.setX(527.6012);
+        lastTokenOfTheURL1.setY(436.559);
+        lastTokenOfTheURL1.setWidth(29.44095);
+        lastTokenOfTheURL1.setHeight(8.217);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(155);
+        lastTokenOfTheURL2.setPage(11);
+        lastTokenOfTheURL2.setX(557.04215);
+        lastTokenOfTheURL2.setY(436.559);
+        lastTokenOfTheURL2.setWidth(8.217);
+        lastTokenOfTheURL2.setHeight(10.818);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(157);
+        lastTokenOfTheURL3.setPage(11);
+        lastTokenOfTheURL3.setX(306.141);
+        lastTokenOfTheURL3.setY(447.309);
+        lastTokenOfTheURL3.setWidth(31.902000000000005);
+        lastTokenOfTheURL3.setHeight(8.217);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(11);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(11,477.14,434.60,84.12,10.18));
+//        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 134.01, 454.50, 170.18, 24.00));
+//        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 123.68, 481.50, 0.00, 9.00));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://www.genomicsengland.co.uk/research/academic/join-gecip");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(4));
+        OffsetPosition url2 = offsetPositions.get(2);
+        assertThat(input.substring(url2.start, url2.end), is("https://www.genomic-\n" +
+            "sengland.co.uk/research/academic/join-gecip"));
+    }
+
 }
