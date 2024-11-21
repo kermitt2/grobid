@@ -220,7 +220,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                                 writer3.write(segmentation.toString() + "\n");
                         }
                     } else {
-                        LOGGER.warn(name + " / too many synchronization issues, file not used in training data and to be fixed!");
+                        LOGGER.warn("{} / too many synchronization issues, file not used in training data and to be fixed!", name);
                     }
                 } catch (Exception e) {
                    LOGGER.error("Fail to open or process raw file", e);
@@ -241,7 +241,7 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
                 }
             }
         } catch (Exception e) {
-            throw new GrobidException("An exception occured while running Grobid.", e);
+            throw new GrobidException("An exception occurred while running Grobid.", e);
         }
         return totalExamples;
     }
@@ -252,14 +252,11 @@ FileUtils.writeStringToFile(new File("/tmp/expected-"+name+".txt"), temp.toStrin
         Flavor theFlavor = null;
         if (args.length > 0) {
             String flavor = args[0];
-            if (flavor.equalsIgnoreCase("light")) {
-                theFlavor = Flavor.ARTICLE_LIGHT;
-            } else if (flavor.equalsIgnoreCase("light-ref")) {
-                theFlavor = Flavor.ARTICLE_LIGHT_WITH_REFERENCES;
-            } else if (flavor.equalsIgnoreCase("ietf")) {
-                theFlavor = Flavor.IETF;
-            } else {
-                System.out.println("Warning, the flavor is not recognized, must one one of [light, ietf], defaulting training to no collection...");
+            theFlavor = Flavor.fromLabel(flavor);
+            if (theFlavor == null) {
+                System.out.println("Warning, the flavor is not recognized, " +
+                    "must one one of [article/light, article/light-ref, sdo/ietf], " +
+                    "defaulting training with no flavor...");
             }
         }
 
