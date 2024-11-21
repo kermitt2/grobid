@@ -297,7 +297,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
@@ -315,7 +315,7 @@ public class TEIFormatter {
                 if (config.getIncludeRawCopyrights() && biblio.getCopyright() != null && biblio.getCopyright().length()>0) {
                     tei.append("\t\t\t\t\t<p type=\"raw\">");
                     tei.append(TextUtilities.HTMLEncode(biblio.getCopyright()));
-                    tei.append("</note>\n");
+                    tei.append("</p>\n");
                 }
 
                 tei.append("\t\t\t\t</availability>\n");
@@ -745,6 +745,10 @@ public class TEIFormatter {
                 theDOI = theDOI.replace(".xml", "");
             }
             tei.append("\t\t\t\t\t<idno type=\"DOI\">" + TextUtilities.HTMLEncode(theDOI) + "</idno>\n");
+        }
+
+        if (!StringUtils.isEmpty(biblio.getHalId())) {
+            tei.append("\t\t\t\t\t<idno type=\"halId\">" + TextUtilities.HTMLEncode(biblio.getHalId()) + "</idno>\n");
         }
 
         if (!StringUtils.isEmpty(biblio.getArXivId())) {
@@ -1638,7 +1642,7 @@ public class TEIFormatter {
                         String type = referenceInformation.getMiddle();
                         OffsetPosition matchingPosition = referenceInformation.getRight();
 
-                        if (pos > matchingPosition.start)
+                        if (pos >  matchingPosition.start)
                             break;
 
                         List<LayoutToken> before = clusterTokens.subList(pos, matchingPosition.start);

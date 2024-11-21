@@ -1174,8 +1174,8 @@ public class Lexicon {
      */
     public static List<OffsetPosition> characterPositionsUrlPattern(List<LayoutToken> tokens) {
         String text = LayoutTokensUtil.toText(tokens);
-        List<OffsetPosition> textResult = new ArrayList<OffsetPosition>();
-        Matcher urlMatcher = TextUtilities.urlPattern.matcher(text);
+        List<OffsetPosition> textResult = new ArrayList<>();
+        Matcher urlMatcher = TextUtilities.urlPattern1.matcher(text);
         while (urlMatcher.find()) {
             textResult.add(new OffsetPosition(urlMatcher.start(), urlMatcher.end()));
         }

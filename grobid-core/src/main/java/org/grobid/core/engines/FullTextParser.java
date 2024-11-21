@@ -1266,17 +1266,19 @@ public class FullTextParser extends AbstractParser {
                                      "\t\t\t\t<biblStruct>\n\t\t\t\t\t<analytic>\n\n");
 
                     for (LabeledReferenceResult ref : references) {
-                        if ( (ref.getReferenceText() != null) && (ref.getReferenceText().trim().length() > 0) ) {
+                        if ( StringUtils.isNotBlank(ref.getReferenceText()) ) {
                             BiblioItem bib = parsers.getCitationParser().processingString(ref.getReferenceText(), 0);
-                            String authorSequence = bib.getAuthors();
-                            if ((authorSequence != null) && (authorSequence.trim().length() > 0) ) {
-                                /*List<String> inputs = new ArrayList<String>();
-                                inputs.add(authorSequence);*/
-                                StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(authorSequence, false);
-                                if ( (bufferName != null) && (bufferName.length()>0) ) {
-                                    writerName.write("\n\t\t\t\t\t\t<author>");
-                                    writerName.write(bufferName.toString());
-                                    writerName.write("</author>\n");
+                            if (bib != null) {
+                                String authorSequence = bib.getAuthors();
+                                if (StringUtils.isNotBlank(authorSequence)) {
+                                    /*List<String> inputs = new ArrayList<String>();
+                                    inputs.add(authorSequence);*/
+                                    StringBuilder bufferName = parsers.getAuthorParser().trainingExtraction(authorSequence, false);
+                                    if ((bufferName != null) && (bufferName.length() > 0)) {
+                                        writerName.write("\n\t\t\t\t\t\t<author>");
+                                        writerName.write(bufferName.toString());
+                                        writerName.write("</author>\n");
+                                    }
                                 }
                             }
                         }
@@ -3053,7 +3055,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
         StringBuilder output = new StringBuilder();
         SortedSet<DocumentPiece> sectionPart = doc.getDocumentPart(taggingLabel);
 
-        if (sectionPart != null && sectionPart.size() > 0) {
+        if (CollectionUtils.isNotEmpty(sectionPart)) {
             Pair<String, LayoutTokenization> sectionTokenisation = getBodyTextFeatured(doc, sectionPart);
             if (sectionTokenisation != null) {
                 // if featSeg is null, it usually means that no body segment is found in the
