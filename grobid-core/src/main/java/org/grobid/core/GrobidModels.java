@@ -86,6 +86,10 @@ public enum GrobidModels implements GrobidModel {
             return label;
         }
 
+        public String getPlainLabel() {
+            return label.replace("/", "_");
+        }
+
         public static Flavor fromLabel(String text) {
             for (Flavor f : Flavor.values()) {
                 if (f.label.equalsIgnoreCase(text)) {

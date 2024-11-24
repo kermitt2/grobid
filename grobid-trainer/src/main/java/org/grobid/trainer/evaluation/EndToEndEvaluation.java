@@ -103,10 +103,15 @@ public class EndToEndEvaluation {
                         .build();
 
                 String tei = engine.fullTextToTEI(this.pdfFile, flavor, config);
+                String replacement = ".fulltext.tei.xml";
+                if (flavor != null) {
+                    replacement = ".fulltext." + flavor.getPlainLabel() + ".tei.xml";
+                }
+
                 // write the result in the same directory
                 File resultTEI = Paths.get(
                     pdfFile.getParent(),
-                    pdfFile.getName().replace(".pdf", ".fulltext.tei.xml")
+                    pdfFile.getName().replace(".pdf", replacement)
                 ).toFile();
                 FileUtils.writeStringToFile(resultTEI, tei, "UTF-8");
 
@@ -347,15 +352,15 @@ public class EndToEndEvaluation {
         // evaluation of the run
         report.append("\n======= Header metadata ======= \n");
         reportMD.append("\n## Header metadata \n\n");
-        report.append(evaluationRun(this.CERMINE, this.HEADER, reportMD));
+        report.append(evaluationRun(CERMINE, HEADER, reportMD));
 
         report.append("\n======= Citation metadata ======= \n");
         reportMD.append("\n## Citation metadata \n\n");
-        report.append(evaluationRun(this.CERMINE, this.CITATION, reportMD));
+        report.append(evaluationRun(CERMINE, CITATION, reportMD));
 
         report.append("\n======= Fulltext structures ======= \n");
         reportMD.append("\n## Fulltext structures \n\n");
-        report.append(evaluationRun(this.CERMINE, this.FULLTEXT, reportMD));
+        report.append(evaluationRun(CERMINE, FULLTEXT, reportMD));
 
         return report.toString();
     }
@@ -435,13 +440,13 @@ public class EndToEndEvaluation {
         int totalCorrectObservedCitations = 0;
         int totalWrongObservedCitations = 0;
 
-        if (sectionType == this.HEADER) {
+        if (sectionType == HEADER) {
             fields = headerFields;
             labels = headerLabels;
-        } else if (sectionType == this.CITATION) {
+        } else if (sectionType == CITATION) {
             fields = citationsFields;
             labels = citationsLabels;
-        } else if (sectionType == this.FULLTEXT) {
+        } else if (sectionType == FULLTEXT) {
             fields = fulltextFields;
             labels = fulltextLabels;
         }
@@ -452,33 +457,26 @@ public class EndToEndEvaluation {
         int match3 = 0;
         int match4 = 0;
 
-        if (xmlInputPath.toLowerCase().indexOf("pmc") != -1 ||
-            xmlInputPath.toLowerCase().indexOf("plos") != -1 ||
-            xmlInputPath.toLowerCase().indexOf("elife") != -1) {
+        if (StringUtils.containsAnyIgnoreCase(xmlInputPath, "pmc", "plos", "elife")) {
             // for PMC files, we further specify the NLM type: some fields might be encoded but not in the document (like PMID, DOI)
             removeFieldsFromEvaluation(Arrays.asList("doi", "pmid", "pmcid"), citationsFields, citationsLabels);
         }
 
-        if (xmlInputPath.toLowerCase().indexOf("elife") != -1) {
+        if (StringUtils.containsIgnoreCase(xmlInputPath, "elife")) {
             // keywords are present in the eLife XML, but not in the PDF !
             removeFieldsFromEvaluation(Arrays.asList("keywords"), headerFields, headerLabels);
         }
 
-        if (xmlInputPath.toLowerCase().indexOf("pmc") != -1) {
+        if (StringUtils.containsIgnoreCase(xmlInputPath, "pmc")) {
             // remove availability and funding statements from PMC (not covered, and it would make metrics not comparable over time)
             removeFieldsFromEvaluation(Arrays.asList("availability_stmt", "funding_stmt"), fulltextFields, fulltextLabels);
         }
 
         File input = new File(xmlInputPath);
         // we process all tei files in the output directory
-        File[] refFiles = input.listFiles(new FilenameFilter() {
-            public boolean accept(File dir, String name) {
-                File localDir = new File(dir.getAbsolutePath() + File.separator + name);
-                if (localDir.isDirectory()) {
-                    return true;
-                } else
-                    return false;
-            }
+        File[] refFiles = input.listFiles((dir, name) -> {
+            File localDir = new File(dir.getAbsolutePath() + File.separator + name);
+            return localDir.isDirectory();
         });
 
         if (refFiles == null) {
@@ -492,11 +490,11 @@ public class EndToEndEvaluation {
         int nbFile = 0;
 
         String typeEval = "";
-        if (sectionType == this.HEADER)
+        if (sectionType == HEADER)
             typeEval = "header";
-        if (sectionType == this.FULLTEXT)
+        if (sectionType == FULLTEXT)
             typeEval = "full text";
-        if (sectionType == this.CITATION)
+        if (sectionType == CITATION)
             typeEval = "citation";
 
         System.out.println("\n");
@@ -550,22 +548,21 @@ public class EndToEndEvaluation {
 
                 try {
                     DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-                    docBuilder.setEntityResolver(new EntityResolver() {
-                        public InputSource resolveEntity(String publicId, String systemId) {
-                            return new InputSource(
-                                new ByteArrayInputStream("<?xml version=\"1.0\" encoding=\"UTF-8\"?>".getBytes()));
-                        }
-                    }); // swap in a dummy resolver to neutralise the online DTD
+                    docBuilder.setEntityResolver((publicId, systemId) -> new InputSource(
+                        new ByteArrayInputStream("<?xml version=\"1.0\" encoding=\"UTF-8\"?>".getBytes()))); // swap in a dummy resolver to neutralise the online DTD
                     Document gold = docBuilder.parse(goldFile);
 
                     // get the results of the evaluated tool for this file
-                    if (runType == this.GROBID) {
+                    if (runType == GROBID) {
+                        final String fileSuffix;
+                        if (this.flavor != null) {
+                            fileSuffix = ".fulltext." + flavor.getPlainLabel() + ".tei.xml";
+                        } else {
+                             fileSuffix = ".fulltext.tei.xml";
+                        }
+
                         // results are produced in a TEI file
-                        File[] refFiles3 = dir.listFiles(new FilenameFilter() {
-                            public boolean accept(File dir, String name) {
-                                return name.endsWith(".fulltext.tei.xml");
-                            }
-                        });
+                        File[] refFiles3 = dir.listFiles((dir1, name) -> name.endsWith(fileSuffix));
 
                         if ((refFiles3 == null) || (refFiles3.length == 0)) {
                             System.out.println("warning: no Grobid TEI file found under " + dir.getPath());
@@ -590,7 +587,7 @@ public class EndToEndEvaluation {
                         mappings.put("tei", "http://www.tei-c.org/ns/1.0");
                         xp.setNamespaceContext(new NamespaceContextMap(mappings));
 
-                        if (sectionType == this.CITATION) {
+                        if (sectionType == CITATION) {
                             // we start by identifying each expected citation
                             // the first FieldSpecification object for the citation is the base path for
                             // each citation structure in the corresponding XML
