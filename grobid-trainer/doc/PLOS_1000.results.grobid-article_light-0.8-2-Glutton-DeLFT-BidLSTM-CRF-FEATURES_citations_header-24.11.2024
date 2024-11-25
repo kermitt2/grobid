@@ -1,0 +1,119 @@
+1000 PDF files processed in 580.923 seconds, 0.580923 seconds per PDF file
+
+
+
+Evaluation header 100% │█████████████│ 1000/1000 (0:00:09 / 0:00:00)
+Evaluation metrics produced in 9.938 seconds
+> :grobid-trainer:jatsEval
+======= Header metadata =======
+
+Evaluation on 1000 random PDF files out of 998 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              99.66        98.97        99.28        99.12        969
+first_author         99.76        99.28        99.59        99.43        969
+title                98.47        95.79        95.5         95.64        1000
+
+all (micro avg.)     99.3         97.99        98.09        98.04        2938
+all (macro avg.)     99.3         98.01        98.12        98.07        2938
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              99.66        98.97        99.28        99.12        969
+first_author         99.76        99.28        99.59        99.43        969
+title                99.66        99.3         99           99.15        1000
+
+all (micro avg.)     99.69        99.18        99.29        99.23        2938
+all (macro avg.)     99.69        99.18        99.29        99.24        2938
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              99.76        99.28        99.59        99.43        969
+first_author         99.8         99.38        99.69        99.54        969
+title                99.8         99.7         99.4         99.55        1000
+
+all (micro avg.)     99.78        99.46        99.56        99.51        2938
+all (macro avg.)     99.78        99.45        99.56        99.51        2938
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              99.73        99.18        99.48        99.33        969
+first_author         99.76        99.28        99.59        99.43        969
+title                99.73        99.5         99.2         99.35        1000
+
+all (micro avg.)     99.74        99.32        99.42        99.37        2938
+all (macro avg.)     99.74        99.32        99.42        99.37        2938
+
+===== Instance-level results =====
+
+Total expected instances:       1000
+Total correct instances:        950 (strict)
+Total correct instances:        985 (soft)
+Total correct instances:        989 (Levenshtein)
+Total correct instances:        988 (ObservedRatcliffObershelp)
+
+Instance-level recall:  95      (strict)
+Instance-level recall:  98.5    (soft)
+Instance-level recall:  98.9    (Levenshtein)
+Instance-level recall:  98.8    (RatcliffObershelp)
+
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  SKIPPED_BAD_STANDALONE_FIGURES:   1109
+  SKIPPED_SMALL_STANDALONE_FIGURES: 379
+  SKIPPED_BIG_STANDALONE_FIGURES:   730
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  HEADER_DATE:            1001
+  NAME-HEADER_MIDDLENAME: 1804
+  HEADER_OTHER:           22452
+  NAME-HEADER_FORENAME:   6792
+  DATE_YEAR:              995
+  HEADER_AUTHOR:          1032
+  NAME-HEADER_MARKER:     5674
+  DATE_OTHER:             994
+  NAME-HEADER_SURNAME:    6679
+  NAME-HEADER_OTHER:      7762
+  NAME-HEADER_SUFFIX:     8
+  HEADER_TITLE:           990
+  HEADER_PUBNUM:          1411
+  FULLTEXT_PARAGRAPH:     3916
+  NAME-HEADER_TITLE:      95
+  DATE_MONTH:             995
+  DATE_DAY:               994
+====================================================================================
+
+************************************************************************************
+COUNTER: FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  STANDALONE_FIGURES: 3040
+====================================================================================
+====================================================================================

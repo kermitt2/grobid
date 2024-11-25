@@ -1,0 +1,121 @@
+-------------> GROBID failed on 0 PDF
+
+1943 PDF files processed in 784.379 seconds, 0.40369480185280493 seconds per PDF file
+
+
+
+Evaluation header 100% │█████████████│ 1943/1943 (0:00:14 / 0:00:00) 
+Evaluation metrics produced in 14.386 seconds
+
+======= Header metadata ======= 
+
+Evaluation on 1943 random PDF files out of 1941 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              97.39        92.5         92.17        92.34        1941   
+first_author         98.64        96.28        95.93        96.1         1941   
+title                94.44        84.28        83.32        83.8         1943   
+
+all (micro avg.)     96.82        91.03        90.47        90.75        5825   
+all (macro avg.)     96.82        91.02        90.47        90.75        5825   
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.03        94.42        94.08        94.25        1941   
+first_author         98.76        96.64        96.29        96.46        1941   
+title                96.98        91.98        90.94        91.46        1943   
+
+all (micro avg.)     97.92        94.35        93.77        94.06        5825   
+all (macro avg.)     97.92        94.35        93.77        94.06        5825   
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.73        96.54        96.19        96.36        1941   
+first_author         98.87        96.95        96.6         96.77        1941   
+title                99           98.13        97.01        97.57        1943   
+
+all (micro avg.)     98.87        97.2         96.6         96.9         5825   
+all (macro avg.)     98.87        97.2         96.6         96.9         5825   
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.42        95.6         95.26        95.43        1941   
+first_author         98.64        96.28        95.93        96.1         1941   
+title                98.35        96.15        95.06        95.6         1943   
+
+all (micro avg.)     98.47        96.01        95.42        95.71        5825   
+all (macro avg.)     98.47        96.01        95.42        95.71        5825   
+
+===== Instance-level results =====
+
+Total expected instances:       1943
+Total correct instances:        1511 (strict) 
+Total correct instances:        1675 (soft) 
+Total correct instances:        1820 (Levenshtein) 
+Total correct instances:        1766 (ObservedRatcliffObershelp) 
+
+Instance-level recall:  77.77   (strict) 
+Instance-level recall:  86.21   (soft) 
+Instance-level recall:  93.67   (Levenshtein) 
+Instance-level recall:  90.89   (RatcliffObershelp) 
+
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.counters.FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  SKIPPED_BAD_STANDALONE_FIGURES:   3262
+  SKIPPED_SMALL_STANDALONE_FIGURES: 2854
+  SKIPPED_BIG_STANDALONE_FIGURES:   408
+====================================================================================
+
+************************************************************************************
+COUNTER: org.grobid.core.engines.label.TaggingLabelImpl
+************************************************************************************
+------------------------------------------------------------------------------------
+  HEADER_DATE:            1108
+  NAME-HEADER_MIDDLENAME: 5433
+  HEADER_OTHER:           24651
+  NAME-HEADER_FORENAME:   13172
+  DATE_YEAR:              1020
+  HEADER_AUTHOR:          3618
+  NAME-HEADER_MARKER:     8087
+  DATE_OTHER:             120
+  NAME-HEADER_SURNAME:    13064
+  NAME-HEADER_OTHER:      16201
+  NAME-HEADER_SUFFIX:     17
+  HEADER_PUBNUM:          1628
+  HEADER_TITLE:           2011
+  FULLTEXT_PARAGRAPH:     7766
+  NAME-HEADER_TITLE:      709
+  DATE_MONTH:             1012
+  DATE_DAY:               1017
+====================================================================================
+
+************************************************************************************
+COUNTER: FigureCounters
+************************************************************************************
+------------------------------------------------------------------------------------
+  STANDALONE_FIGURES: 2760
+====================================================================================
+====================================================================================
