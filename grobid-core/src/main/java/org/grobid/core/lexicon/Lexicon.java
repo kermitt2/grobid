@@ -16,6 +16,7 @@ import java.util.TreeMap;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.regex.*;
+import java.util.stream.Collectors;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -36,6 +37,7 @@ import org.grobid.core.utilities.LayoutTokensUtil;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.utilities.TextUtilities;
 import org.grobid.core.analyzers.GrobidAnalyzer;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,10 +45,9 @@ import static org.grobid.core.utilities.Utilities.convertStringOffsetToTokenOffs
 
 /**
  * Class for managing all the lexical resources.
- *
  */
 public class Lexicon {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Lexicon.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Lexicon.class);
     // private static volatile Boolean instanceController = false;
     private static volatile Lexicon instance;
 
@@ -59,7 +60,7 @@ public class Lexicon {
     private Set<String> countries = null;
 
     // retrieve basic naming information about a research infrastructure (key must be lower case!)
-    private Map<String, List<OrganizationRecord> > researchOrganizations = null;
+    private Map<String, List<OrganizationRecord>> researchOrganizations = null;
 
     // fast matchers for efficient and flexible pattern matching in layout token sequence or strings
     private FastMatcher abbrevJournalPattern = null;
@@ -67,21 +68,21 @@ public class Lexicon {
     private FastMatcher publisherPattern = null;
     private FastMatcher journalPattern = null;
     private FastMatcher cityPattern = null;
-	private FastMatcher organisationPattern = null;
+    private FastMatcher organisationPattern = null;
     private FastMatcher researchInfrastructurePattern = null;
-	private FastMatcher locationPattern = null;
+    private FastMatcher locationPattern = null;
     private FastMatcher countryPattern = null;
-	private FastMatcher orgFormPattern = null;
+    private FastMatcher orgFormPattern = null;
     private FastMatcher collaborationPattern = null;
     private FastMatcher funderPattern = null;
     private FastMatcher personTitlePattern = null;
-	private FastMatcher personSuffixPattern = null;
+    private FastMatcher personSuffixPattern = null;
 
     public static Lexicon getInstance() {
         if (instance == null) {
             synchronized (Lexicon.class) {
                 if (instance == null) {
-					getNewInstance();
+                    getNewInstance();
                 }
             }
         }
@@ -91,11 +92,11 @@ public class Lexicon {
     /**
      * Creates a new instance.
      */
-	private static synchronized void getNewInstance() {
-		LOGGER.debug("Get new instance of Lexicon");
-		GrobidProperties.getInstance();
-		instance = new Lexicon();
-	}
+    private static synchronized void getNewInstance() {
+        LOGGER.debug("Get new instance of Lexicon");
+        GrobidProperties.getInstance();
+        instance = new Lexicon();
+    }
 
     /**
      * Hidden constructor
@@ -103,24 +104,24 @@ public class Lexicon {
     private Lexicon() {
         initDictionary();
         initNames();
-		// the loading of the journal and conference names is lazy
+        // the loading of the journal and conference names is lazy
         addDictionary(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"wordforms"+File.separator+"english.wf", Language.EN);
+            "lexicon" + File.separator + "wordforms" + File.separator + "english.wf", Language.EN);
         addDictionary(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"wordforms"+File.separator+"german.wf", Language.EN);
+            "lexicon" + File.separator + "wordforms" + File.separator + "german.wf", Language.EN);
         addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"names"+File.separator+"names.family");
-		addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"names"+File.separator+"lastname.5k");
+            "lexicon" + File.separator + "names" + File.separator + "names.family");
+        addLastNames(GrobidProperties.getGrobidHomePath() + File.separator +
+            "lexicon" + File.separator + "names" + File.separator + "lastname.5k");
         addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"names"+File.separator+"names.female");
+            "lexicon" + File.separator + "names" + File.separator + "names.female");
         addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"names"+File.separator+"names.male");
-		addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
-			"lexicon"+File.separator+"names"+File.separator+"firstname.5k");
+            "lexicon" + File.separator + "names" + File.separator + "names.male");
+        addFirstNames(GrobidProperties.getGrobidHomePath() + File.separator +
+            "lexicon" + File.separator + "names" + File.separator + "firstname.5k");
         initCountryCodes();
         addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
-            "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+            "lexicon" + File.separator + "countries" + File.separator + "CountryCodes.xml");
     }
 
     /**
@@ -139,7 +140,7 @@ public class Lexicon {
     }
 
     private void initDictionary() {
-    	LOGGER.info("Initiating dictionary");
+        LOGGER.info("Initiating dictionary");
         dictionary_en = new HashSet<>();
         dictionary_de = new HashSet<>();
         LOGGER.info("End of Initialization of dictionary");
@@ -149,11 +150,11 @@ public class Lexicon {
         File file = new File(path);
         if (!file.exists()) {
             throw new GrobidResourceException("Cannot add entries to dictionary (language '" + lang +
-                    "'), because file '" + file.getAbsolutePath() + "' does not exists.");
+                "'), because file '" + file.getAbsolutePath() + "' does not exists.");
         }
         if (!file.canRead()) {
             throw new GrobidResourceException("Cannot add entries to dictionary (language '" + lang +
-                    "'), because cannot read file '" + file.getAbsolutePath() + "'.");
+                "'), because cannot read file '" + file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
         InputStreamReader isr = null;
@@ -202,14 +203,14 @@ public class Lexicon {
     }
 
     private void initNames() {
-    	LOGGER.info("Initiating names");
+        LOGGER.info("Initiating names");
         firstNames = new HashSet<String>();
         lastNames = new HashSet<String>();
         LOGGER.info("End of initialization of names");
     }
 
     private void initCountryCodes() {
-    	LOGGER.info("Initiating country codes");
+        LOGGER.info("Initiating country codes");
         countryCodes = new HashMap<String, String>();
         countries = new HashSet<String>();
         countryPattern = new FastMatcher();
@@ -220,11 +221,11 @@ public class Lexicon {
         File file = new File(path);
         if (!file.exists()) {
             throw new GrobidResourceException("Cannot add country codes to dictionary, because file '" +
-                    file.getAbsolutePath() + "' does not exists.");
+                file.getAbsolutePath() + "' does not exists.");
         }
         if (!file.canRead()) {
             throw new GrobidResourceException("Cannot add country codes to dictionary, because cannot read file '" +
-                    file.getAbsolutePath() + "'.");
+                file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
         //InputStreamReader isr = null;
@@ -262,7 +263,7 @@ public class Lexicon {
         if (countries == null || countries.size() == 0) {
             // it should never be the case
             addCountryCodes(GrobidProperties.getGrobidHomePath() + File.separator +
-                "lexicon"+File.separator+"countries"+File.separator+"CountryCodes.xml");
+                "lexicon" + File.separator + "countries" + File.separator + "CountryCodes.xml");
         }
 
         for (String country : countries) {
@@ -274,11 +275,11 @@ public class Lexicon {
         File file = new File(path);
         if (!file.exists()) {
             throw new GrobidResourceException("Cannot add first names to dictionary, because file '" +
-                    file.getAbsolutePath() + "' does not exists.");
+                file.getAbsolutePath() + "' does not exists.");
         }
         if (!file.canRead()) {
             throw new GrobidResourceException("Cannot add first names to dictionary, because cannot read file '" +
-                    file.getAbsolutePath() + "'.");
+                file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
         BufferedReader dis = null;
@@ -318,11 +319,11 @@ public class Lexicon {
         File file = new File(path);
         if (!file.exists()) {
             throw new GrobidResourceException("Cannot add last names to dictionary, because file '" +
-                    file.getAbsolutePath() + "' does not exists.");
+                file.getAbsolutePath() + "' does not exists.");
         }
         if (!file.canRead()) {
             throw new GrobidResourceException("Cannot add last names to dictionary, because cannot read file '" +
-                    file.getAbsolutePath() + "'.");
+                file.getAbsolutePath() + "'.");
         }
         InputStream ist = null;
         BufferedReader dis = null;
@@ -360,6 +361,7 @@ public class Lexicon {
 
     /**
      * Lexical look-up, default is English
+     *
      * @param s a string to test
      * @return true if in the dictionary
      */
@@ -415,13 +417,13 @@ public class Lexicon {
     public void initJournals() {
         try {
             abbrevJournalPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/abbrev_journals.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/abbrev_journals.txt"));
 
             journalPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/journals.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/journals.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException(
-                    "Error when compiling lexicon matcher for abbreviated journal names.", e);
+                "Error when compiling lexicon matcher for abbreviated journal names.", e);
         }
     }
 
@@ -429,7 +431,7 @@ public class Lexicon {
         // ArrayList<String> conferences = new ArrayList<String>();
         try {
             conferencePattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/proceedings.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/journals/proceedings.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for conference names.", e);
         }
@@ -438,7 +440,7 @@ public class Lexicon {
     public void initPublishers() {
         try {
             publisherPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/publishers/publishers.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/publishers/publishers.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for conference names.", e);
         }
@@ -447,7 +449,7 @@ public class Lexicon {
     public void initCities() {
         try {
             cityPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/cities15000.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/cities15000.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for cities.", e);
         }
@@ -458,56 +460,56 @@ public class Lexicon {
             //collaborationPattern = new FastMatcher(new
             //        File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/collaborations.txt"));
             collaborationPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/inspire_collaborations.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/inspire_collaborations.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for collaborations.", e);
         }
     }
 
-	public void initOrganisations() {
+    public void initOrganisations() {
         try {
             organisationPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/WikiOrganizations.lst"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
-				"/lexicon/organisations/government.government_agency"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
-				"/lexicon/organisations/known_corporations.lst"));
-			organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
-				"/lexicon/organisations/venture_capital.venture_funded_company"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/WikiOrganizations.lst"));
+            organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
+                "/lexicon/organisations/government.government_agency"));
+            organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
+                "/lexicon/organisations/known_corporations.lst"));
+            organisationPattern.loadTerms(new File(GrobidProperties.getGrobidHomePath() +
+                "/lexicon/organisations/venture_capital.venture_funded_company"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for organisations.", e);
         } catch (IOException e) {
             throw new GrobidResourceException("Cannot add term to matcher, because the lexicon resource file " +
-				"does not exist or cannot be read.", e);
+                "does not exist or cannot be read.", e);
         } catch (Exception e) {
-			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
-		}
+            throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+        }
     }
 
-	public void initOrgForms() {
+    public void initOrgForms() {
         try {
-			orgFormPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/orgClosings.txt"));
+            orgFormPattern = new FastMatcher(new
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/orgClosings.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for organisations.", e);
         } catch (Exception e) {
-			throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
-		}
+            throw new GrobidException("An exception occured while running Grobid Lexicon init.", e);
+        }
     }
 
-	public void initLocations() {
+    public void initLocations() {
         try {
             locationPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/location.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/places/location.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for locations.", e);
         }
     }
 
-	public void initPersonTitles() {
+    public void initPersonTitles() {
         try {
             personTitlePattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/VincentNgPeopleTitles.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/VincentNgPeopleTitles.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for person titles.", e);
         }
@@ -516,7 +518,7 @@ public class Lexicon {
     public void initPersonSuffix() {
         try {
             personSuffixPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/suffix.txt"));
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/names/suffix.txt"));
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for person name suffix.", e);
         }
@@ -525,8 +527,8 @@ public class Lexicon {
     public void initFunders() {
         try {
             funderPattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"),
-                    GrobidAnalyzer.getInstance(), true);
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/funders.txt"),
+                GrobidAnalyzer.getInstance(), true);
         } catch (PatternSyntaxException e) {
             throw new GrobidResourceException("Error when compiling lexicon matcher for funders.", e);
         } catch (Exception e) {
@@ -537,19 +539,19 @@ public class Lexicon {
     public void initResearchInfrastructures() {
         try {
             researchInfrastructurePattern = new FastMatcher(new
-                    File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures.txt"),
-                    GrobidAnalyzer.getInstance(), true);
+                File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures.txt"),
+                GrobidAnalyzer.getInstance(), true);
             // store some name mapping
             researchOrganizations = new TreeMap<>();
 
             File file = new File(GrobidProperties.getGrobidHomePath() + "/lexicon/organisations/research_infrastructures_map.txt");
             if (!file.exists()) {
                 throw new GrobidResourceException("Cannot add research infrastructure names to dictionary, because file '" +
-                        file.getAbsolutePath() + "' does not exists.");
+                    file.getAbsolutePath() + "' does not exists.");
             }
             if (!file.canRead()) {
                 throw new GrobidResourceException("Cannot add research infrastructure to dictionary, because cannot read file '" +
-                        file.getAbsolutePath() + "'.");
+                    file.getAbsolutePath() + "'.");
             }
             InputStream ist = null;
             BufferedReader dis = null;
@@ -651,7 +653,7 @@ public class Lexicon {
     /**
      * Map the language codes used by the language identifier component to the normal
      * language name.
-     *
+     * <p>
      * Note: due to an older bug, kr is currently map to Korean too - this should
      * disappear at some point in the future after retraining of models
      *
@@ -847,7 +849,7 @@ public class Lexicon {
 
     /** Organisation names **/
 
-	/**
+    /**
      * Soft look-up in organisation name gazetteer for a given string with token positions
      */
     public List<OffsetPosition> tokenPositionsOrganisationNames(String s) {
@@ -913,7 +915,7 @@ public class Lexicon {
         return results;
     }
 
-	/**
+    /**
      * Soft look-up in organisation form name gazetteer for a given string with token positions
      */
     public List<OffsetPosition> tokenPositionsOrgForm(String s) {
@@ -992,7 +994,7 @@ public class Lexicon {
     /**
      * Soft look-up in location name gazetteer for a string, return a list of positions referring
      * to the character positions within the string.
-     *
+     * <p>
      * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
      *
      * @param s the input string
@@ -1009,7 +1011,7 @@ public class Lexicon {
     /**
      * Soft look-up in location name gazetteer for a list of LayoutToken, return a list of
      * positions referring to the character positions in the input sequence.
-     *
+     * <p>
      * For example "The car is in Milan" as Milan is a location, would return OffsetPosition(14,19)
      *
      * @param s the input list of LayoutToken
@@ -1023,7 +1025,7 @@ public class Lexicon {
         return results;
     }
 
-	/**
+    /**
      * Soft look-up in person title gazetteer for a given string with token positions
      */
     public List<OffsetPosition> tokenPositionsPersonTitle(String s) {
@@ -1185,7 +1187,7 @@ public class Lexicon {
     /**
      * Identify in tokenized input the positions of a URL pattern with character positions,
      * and refine positions based on possible PDF URI annotations.
-     *
+     * <p>
      * This will produce better quality recognized URL, avoiding missing suffixes and problems
      * with break lines and spaces.
      **/
@@ -1226,8 +1228,8 @@ public class Lexicon {
         List<LayoutToken> urlTokens = new ArrayList<>();
         int tokenPos = 0;
         int tokenIndex = 0;
-        for(LayoutToken localToken : layoutTokens) {
-            if (startPos <= tokenPos && (tokenPos+localToken.getText().length() <= endPos) ) {
+        for (LayoutToken localToken : layoutTokens) {
+            if (startPos <= tokenPos && (tokenPos + localToken.getText().length() <= endPos)) {
                 urlTokens.add(localToken);
                 if (startTokenIndex == -1)
                     startTokenIndex = tokenIndex;
@@ -1249,14 +1251,14 @@ public class Lexicon {
      * Notice the absence of the String text parameter.
      */
     public static List<OffsetPosition> characterPositionsUrlPatternWithPdfAnnotations(
-                                    List<LayoutToken> layoutTokens,
-                                    List<PDFAnnotation> pdfAnnotations) {
+        List<LayoutToken> layoutTokens,
+        List<PDFAnnotation> pdfAnnotations) {
         List<OffsetPosition> urlPositions = Lexicon.characterPositionsUrlPattern(layoutTokens);
         List<OffsetPosition> resultPositions = new ArrayList<>();
 
         // Do we need to extend the url position based on additional position of the corresponding
         // PDF annotation?
-        for(OffsetPosition urlPosition : urlPositions) {
+        for (OffsetPosition urlPosition : urlPositions) {
             int startPos = urlPosition.start;
             int endPos = urlPosition.end;
 
@@ -1272,7 +1274,7 @@ public class Lexicon {
                 continue;
             }
 
-            List<LayoutToken> urlTokens = new ArrayList<>(layoutTokens.subList(startTokenIndex, endTokensIndex+1));
+            List<LayoutToken> urlTokens = new ArrayList<>(layoutTokens.subList(startTokenIndex, endTokensIndex + 1));
 
             String urlString = LayoutTokensUtil.toText(urlTokens);
 
@@ -1282,11 +1284,8 @@ public class Lexicon {
             if (CollectionUtils.isNotEmpty(urlTokens)) {
                 LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
                 if (pdfAnnotations != null) {
-                    targetAnnotation = pdfAnnotations.stream()
-                        .filter(pdfAnnotation ->
-                            pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(lastToken))
-                        .findFirst()
-                        .orElse(null);
+                    targetAnnotation = matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(pdfAnnotations, urlTokens);
+
                     correctedLastTokenIndex = urlTokens.size() - 1;
 
                     // If we cannot match, maybe the regex got some characters too much, e.g. dots, parenthesis,etc..
@@ -1296,14 +1295,10 @@ public class Lexicon {
                         String lastTokenText = lastToken.getText();
                         int index = urlTokens.size() - 1;
                         // The error should be within a few characters, so we stop if the token length is greater than 1
-                        while(index > 0 && lastTokenText.length() == 1 && !Character.isLetterOrDigit(lastTokenText.charAt(0)) && targetAnnotation==null) {
+                        while (index > 0 && lastTokenText.length() == 1 && !Character.isLetterOrDigit(lastTokenText.charAt(0)) && targetAnnotation == null) {
                             index -= 1;
                             LayoutToken finalLastToken1 = urlTokens.get(index);
-                            targetAnnotation = pdfAnnotations.stream()
-                                .filter(pdfAnnotation ->
-                                    pdfAnnotation.getType() != null && pdfAnnotation.getType() == PDFAnnotation.Type.URI && pdfAnnotation.cover(finalLastToken1))
-                                .findFirst()
-                                .orElse(null);
+                            targetAnnotation = matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(pdfAnnotations, urlTokens);
 
                             correctedLastTokenIndex = index;
                         }
@@ -1315,7 +1310,13 @@ public class Lexicon {
                 String destination = targetAnnotation.getDestination();
 
                 int destinationPos = 0;
-                if (destination.contains(urlString)) {
+                if (urlString.replaceAll("\\s", "").equals(destination)) {
+                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
+                } else if (
+                    destination.contains(urlString)
+                        || destination.contains(urlString.replaceAll("\\s", ""))
+                        || destination.contains(StringUtils.stripEnd(urlString, "-"))
+                ) {
                     //In this case the regex did not catch all the URL, so we need to extend it using the
                     // destination URL from the annotation
                     destinationPos = destination.indexOf(urlString) + urlString.length();
@@ -1327,7 +1328,7 @@ public class Lexicon {
 
                             if ("\n".equals(nextToken.getText()) ||
                                 " ".equals(nextToken.getText()) ||
-                                nextToken.getText().length() == 0) {
+                                nextToken.getText().isEmpty()) {
                                 endPos += nextToken.getText().length();
                                 additionalSpaces += nextToken.getText().length();
                                 additionalTokens += 1;
@@ -1355,8 +1356,6 @@ public class Lexicon {
                             endPos -= additionalSpaces;
                         }
                     }
-                } else if (urlString.replaceAll("\\s", "").equals(destination)) {
-                    // Nothing to do here, we ignore the correctedLastTokenIndex because the regex got everything we need
                 } else if (urlString.contains(destination) || urlString.replaceAll("\\s", "").contains(destination)) {
                     // In this case the regex has catches too much, usually this should be limited to a few characters,
                     // but we cannot know it for sure. Here we first find the difference between the destination and the
@@ -1404,6 +1403,63 @@ public class Lexicon {
             resultPositions.add(position);
         }
         return resultPositions;
+    }
+
+    @Nullable
+    private static PDFAnnotation matchPdfAnnotationsBasedOnCoordinatesDestinationOrLastTokens(List<PDFAnnotation> pdfAnnotations, List<LayoutToken> urlTokens) {
+        LayoutToken lastToken = urlTokens.get(urlTokens.size() - 1);
+        String urlString = LayoutTokensUtil.toText(urlTokens);
+
+        List<PDFAnnotation> possibleTargetAnnotations = pdfAnnotations.stream()
+            .filter(pdfAnnotation ->
+                pdfAnnotation.getType() != null
+                    && pdfAnnotation.getType() == PDFAnnotation.Type.URI
+                    && pdfAnnotation.cover(lastToken)
+            ).collect(Collectors.toList());
+
+        PDFAnnotation targetAnnotation;
+        if (possibleTargetAnnotations.size() > 1) {
+            possibleTargetAnnotations = possibleTargetAnnotations.stream()
+                .filter(pdfAnnotation ->
+                    pdfAnnotation.getDestination().contains(urlString)
+                )
+                .collect(Collectors.toList());
+
+            if (possibleTargetAnnotations.size() > 1) {
+                // If the lastToken is any of ./:_ we should add the token before
+                int index = urlTokens.size() - 1;
+                if (urlTokens.size() > 1 && lastToken.getText().matches("[.:_\\-/]")) {
+                    index -= 1;
+                }
+
+                while (index > 0 && possibleTargetAnnotations.size() > 1) {
+                    final String lastTokenText2 = LayoutTokensUtil.toText(urlTokens.subList(index - 1, urlTokens.size()));
+
+                    possibleTargetAnnotations = possibleTargetAnnotations.stream()
+                        .filter(pdfAnnotation ->
+                            pdfAnnotation.getDestination().contains(lastTokenText2)
+                        )
+                        .collect(Collectors.toList());
+                    index--;
+                }
+
+                targetAnnotation = possibleTargetAnnotations.stream()
+                    .findFirst()
+                    .orElse(null);
+
+            } else {
+                targetAnnotation = possibleTargetAnnotations.stream()
+                    .findFirst()
+                    .orElse(null);
+            }
+
+        } else {
+            targetAnnotation = possibleTargetAnnotations.stream()
+                .findFirst()
+                .orElse(null);
+        }
+
+        return targetAnnotation;
     }
 
 
