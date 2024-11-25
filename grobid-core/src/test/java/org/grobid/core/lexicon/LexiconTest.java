@@ -409,7 +409,7 @@ public class LexiconTest {
         PDFAnnotation annotation1 = new PDFAnnotation();
         annotation1.setPageNumber(10);
         List<BoundingBox> boundingBoxes = new ArrayList<>();
-        boundingBoxes.add(BoundingBox.fromPointAndDimensions(10, 378.093,  625.354,  167.51799999999997,  10.599999999999909));
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(10, 378.093, 625.354, 167.51799999999997, 10.599999999999909));
         annotation1.setBoundingBoxes(boundingBoxes);
         annotation1.setDestination("https://github.com/shijuanchen/shift_cult");
         annotation1.setType(PDFAnnotation.Type.URI);
@@ -417,7 +417,7 @@ public class LexiconTest {
         PDFAnnotation annotation2 = new PDFAnnotation();
         annotation2.setPageNumber(10);
         List<BoundingBox> boundingBoxes2 = new ArrayList<>();
-        boundingBoxes2.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854,  77.26,10.60));
+        boundingBoxes2.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854, 77.26, 10.60));
         annotation2.setBoundingBoxes(boundingBoxes2);
         annotation2.setDestination("https://sites.google.com/view/shijuanchen/research/shift_cult");
         annotation2.setType(PDFAnnotation.Type.URI);
@@ -431,6 +431,64 @@ public class LexiconTest {
         OffsetPosition url1 = offsetPositions.get(1);
         assertThat(input.substring(url1.start, url1.end), is("https://sites.google. \ncom/view/shijuanchen/research/shift_cult"));
     }
+
+    @Test
+    public void testCharacterPositionsUrlPatternWithPDFAnnotations_DuplicatedMatchingPDFAnnotations_shouldReturnCorrectIntervalBasedOnText4() throws Exception {
+        final String input = "Google Earth Engine applications to visualize the \n" +
+            "datasets: https://github.com/shijuanchen/shift_cult \n" +
+            "Map products visualization: https://sites.google. \n" +
+            "com/view/shijuanchen/research/shift_cult \n";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(28);
+        lastTokenOfTheURL1.setPage(10);
+        lastTokenOfTheURL1.setX(504.75295121951217);
+        lastTokenOfTheURL1.setY(626.353);
+        lastTokenOfTheURL1.setWidth(40.858048780487806);
+        lastTokenOfTheURL1.setHeight(9.3999);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(44);
+        lastTokenOfTheURL2.setPage(10);
+        lastTokenOfTheURL2.setX(526.9964666666667);
+        lastTokenOfTheURL2.setY(638.853);
+        lastTokenOfTheURL2.setWidth(22.0712);
+        lastTokenOfTheURL2.setHeight(9.3999);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(10);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(10, 378.093, 625.354, 167.51799999999997, 10.599999999999909));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://github.com/shijuanchen/shift_cult");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        PDFAnnotation annotation2 = new PDFAnnotation();
+        annotation2.setPageNumber(10);
+        List<BoundingBox> boundingBoxes2 = new ArrayList<>();
+        boundingBoxes2.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854, 77.26, 10.60));
+        annotation2.setBoundingBoxes(boundingBoxes2);
+        annotation2.setDestination("https://www.google.com");
+        annotation2.setType(PDFAnnotation.Type.URI);
+
+        PDFAnnotation annotation3 = new PDFAnnotation();
+        annotation3.setPageNumber(10);
+        List<BoundingBox> boundingBoxes3 = new ArrayList<>();
+        boundingBoxes3.add(BoundingBox.fromPointAndDimensions(10, 475.497, 637.854, 77.26, 10.60));
+        annotation3.setBoundingBoxes(boundingBoxes3);
+        annotation3.setDestination("https://sites.google.com/view/shijuanchen/research/shift_cult");
+        annotation3.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1, annotation2, annotation3);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(2));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(input.substring(url0.start, url0.end), is("https://github.com/shijuanchen/shift_cult"));
+        OffsetPosition url1 = offsetPositions.get(1);
+        assertThat(input.substring(url1.start, url1.end), is("https://sites.google. \ncom/view/shijuanchen/research/shift_cult"));
+    }
+
 
     @Test
     public void testCharacterPositionsUrlPatternWithPDFAnnotations_URL_shouldReturnCorrectIntervalBasedOnText5() throws Exception {
@@ -492,6 +550,237 @@ public class LexiconTest {
         assertThat(tokenPositions.start, is(-1));
         assertThat(tokenPositions.end, is(-1));
 
+    }
+
+    @Test
+    public void testCharacterPositionsUrlPattern_URLRegexMatchesTooLittle_shouldReturnCorrectInterval_1() throws Exception {
+        final String input = "We appreciate assistance from The Research Support Center, Research Center for Human Disease Modeling, \n" +
+            "and Kyushu University Graduate School of Medical Sciences. We thank Dr. Mitsuru Watanabe and Ms. Eriko \n" +
+            "Matsuo from the Department of Neurology, Kyushu University, for the technical assistance in the flow cytometric \n" +
+            "analysis. We thank Ms. Sachiko Koyama and Hideko Noguchi from the Department of Neuropathology, Kyushu \n" +
+            "University, for excellent technical assistance in the histological analysis. We thank Mr. Tetsuo Kishi from the \n" +
+            "Department of Medicine, Kyushu University School of Medicine for the immunohistochemical analysis. We \n" +
+            "thank J. Ludovic Croxford, PhD, from Edanz (https:// jp. edanz. com/ ac) for editing a draft of this manuscript.";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        //These have to overlap with the regex output to make sure that the annotation is selected
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(219);
+        lastTokenOfTheURL1.setPage(15);
+        lastTokenOfTheURL1.setX(322.49060000000003);
+        lastTokenOfTheURL1.setY(454.586);
+        lastTokenOfTheURL1.setWidth(16.338);
+        lastTokenOfTheURL1.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(220);
+        lastTokenOfTheURL2.setPage(15);
+        lastTokenOfTheURL2.setX(338.8286);
+        lastTokenOfTheURL2.setY(454.586);
+        lastTokenOfTheURL2.setWidth(3.2676);
+        lastTokenOfTheURL2.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(221);
+        lastTokenOfTheURL3.setPage(15);
+        lastTokenOfTheURL3.setX(342.0962);
+        lastTokenOfTheURL3.setY(454.586);
+        lastTokenOfTheURL3.setWidth(3.2676);
+        lastTokenOfTheURL3.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL4 = tokenisedInput.get(222);
+        lastTokenOfTheURL4.setPage(15);
+        lastTokenOfTheURL4.setX(345.3638);
+        lastTokenOfTheURL4.setY(454.586);
+        lastTokenOfTheURL4.setWidth(3.2676);
+        lastTokenOfTheURL4.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL5 = tokenisedInput.get(224);
+        lastTokenOfTheURL5.setPage(15);
+        lastTokenOfTheURL5.setX(348.667);
+        lastTokenOfTheURL5.setY(454.586);
+        lastTokenOfTheURL5.setWidth(5.868599999999999);
+        lastTokenOfTheURL5.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL6 = tokenisedInput.get(225);
+        lastTokenOfTheURL6.setPage(15);
+        lastTokenOfTheURL6.setX(354.5356);
+        lastTokenOfTheURL6.setY(454.586);
+        lastTokenOfTheURL6.setWidth(2.9342999999999995);
+        lastTokenOfTheURL6.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL7 = tokenisedInput.get(227);
+        lastTokenOfTheURL7.setPage(15);
+        lastTokenOfTheURL7.setX(357.514);
+        lastTokenOfTheURL7.setY(454.586);
+        lastTokenOfTheURL7.setWidth(19.5645);
+        lastTokenOfTheURL7.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL10 = tokenisedInput.get(231);
+        lastTokenOfTheURL10.setPage(15);
+        lastTokenOfTheURL10.setX(395.106375);
+        lastTokenOfTheURL10.setY(454.586);
+        lastTokenOfTheURL10.setWidth(4.690125);
+        lastTokenOfTheURL10.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL11 = tokenisedInput.get(233);
+        lastTokenOfTheURL11.setPage(15);
+        lastTokenOfTheURL11.setX(399.842);
+        lastTokenOfTheURL11.setY(454.586);
+        lastTokenOfTheURL11.setWidth(7.295399999999999);
+        lastTokenOfTheURL11.setHeight(9.099);
+
+        LayoutToken lastTokenOfTheURL12 = tokenisedInput.get(234);
+        lastTokenOfTheURL12.setPage(15);
+        lastTokenOfTheURL12.setX(407.13739999999996);
+        lastTokenOfTheURL12.setY(454.586);
+        lastTokenOfTheURL12.setWidth(3.6476999999999995);
+        lastTokenOfTheURL12.setHeight(9.099);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(15);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(15, 322.37, 451.55, 85.305, 12.140999999999963));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://jp.edanz.com/ac");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(1));
+        OffsetPosition url0 = offsetPositions.get(0);
+        assertThat(input.substring(url0.start, url0.end), is("https:// jp. edanz. com/ ac"));
+    }
+
+    @Test
+    public void testCharacterPositionsUrlPattern_URLRegexMatchesTooLittle_shouldReturnCorrectInterval_2() throws Exception {
+        /*
+         * This test only aims for the last link
+         */
+        final String input = ", \n" +
+            "based on the sorted BAM files generated by using BWA-MEM (v.0.7.17; http:// \n" +
+            "biobwa.sourceforge.net/) and SAMtools (v1.546; http://www.htslib.org/). MetaBAT2 \n" +
+            "was applied to bin the assemblies with contig depth results under the default \n" +
+            "parameters (minimum contig length ≥ 1500 bp). CheckM v.1.0.3 (https://ecogenom \n" +
+            "ics.github.io/CheckM/) with the lineage_wf workflow was used to estimate the complete \n" +
+            "ness and contamination of MAGs ";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        //These have to overlap with the regex output to make sure that the annotation is selected
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(132);
+        lastTokenOfTheURL1.setPage(5);
+        lastTokenOfTheURL1.setX(331.7820588235294);
+        lastTokenOfTheURL1.setY(467.682);
+        lastTokenOfTheURL1.setWidth(4.307294117647059);
+        lastTokenOfTheURL1.setHeight(10.818);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(133);
+        lastTokenOfTheURL2.setPage(5);
+        lastTokenOfTheURL2.setX(336.08935294117646);
+        lastTokenOfTheURL2.setY(467.682);
+        lastTokenOfTheURL2.setWidth(4.307294117647059);
+        lastTokenOfTheURL2.setHeight(10.818);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(134);
+        lastTokenOfTheURL3.setPage(5);
+        lastTokenOfTheURL3.setX(340.39664705882353);
+        lastTokenOfTheURL3.setY(467.682);
+        lastTokenOfTheURL3.setWidth(34.45835294117647);
+        lastTokenOfTheURL3.setHeight(10.818);
+
+        LayoutToken lastTokenOfTheURL5 = tokenisedInput.get(137);
+        lastTokenOfTheURL5.setPage(5);
+        lastTokenOfTheURL5.setX(41.9999);
+        lastTokenOfTheURL5.setY(479.682);
+        lastTokenOfTheURL5.setWidth(11.487272727272726);
+        lastTokenOfTheURL5.setHeight(10.818);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(5);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 41.00, 468.50, 335.00, 23.00));
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 134.01, 454.50, 170.18, 24.00));
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 123.68, 481.50, 0.00, 9.00));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://ecogenomics.github.io/CheckM/");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(3));
+        OffsetPosition url2 = offsetPositions.get(2);
+        assertThat(input.substring(url2.start, url2.end), is("https://ecogenom \n" +
+            "ics.github.io/CheckM/"));
+    }
+
+    @Test
+    public void testCharacterPositionsUrlPattern_URLContainsSpuriosBreklineHypen_shouldReturnCorrectInterval() throws Exception {
+        /*
+         * This test only aims for the last link
+         */
+        final String input = "Details and code for using the IntOGen framework are available at \n" +
+            "https://intogen.readthedocs.io/en/latest/index.html. The specific \n" +
+            "code to perform this analysis is available in the Genomics England \n" +
+            "research environment (https://re-docs.genomicsengland.co.uk/ \n" +
+            "access/) under /re_gecip/shared_allGeCIPs/pancancer_drivers/code/. \n" +
+            "The link to becoming a member of the Genomics England research \n" +
+            "network and obtaining access can be found at https://www.genomic-\n" +
+            "sengland.co.uk/research/academic/join-gecip. The code to perform \n" +
+            "the canSAR chemogenomics analysis is available through Zenodo \n" +
+            "(https://doi.org/10.5281/zenodo.8329054) (ref. ";
+
+        List<LayoutToken> tokenisedInput = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(input);
+
+        //These have to overlap with the regex output to make sure that the annotation is selected
+        LayoutToken lastTokenOfTheURL0 = tokenisedInput.get(153);
+        lastTokenOfTheURL0.setPage(11);
+        lastTokenOfTheURL0.setX(523.39535);
+        lastTokenOfTheURL0.setY(436.559);
+        lastTokenOfTheURL0.setWidth(4.205850000000001);
+        lastTokenOfTheURL0.setHeight(8.217);
+
+        LayoutToken lastTokenOfTheURL1 = tokenisedInput.get(154);
+        lastTokenOfTheURL1.setPage(11);
+        lastTokenOfTheURL1.setX(527.6012);
+        lastTokenOfTheURL1.setY(436.559);
+        lastTokenOfTheURL1.setWidth(29.44095);
+        lastTokenOfTheURL1.setHeight(8.217);
+
+        LayoutToken lastTokenOfTheURL2 = tokenisedInput.get(155);
+        lastTokenOfTheURL2.setPage(11);
+        lastTokenOfTheURL2.setX(557.04215);
+        lastTokenOfTheURL2.setY(436.559);
+        lastTokenOfTheURL2.setWidth(8.217);
+        lastTokenOfTheURL2.setHeight(10.818);
+
+        LayoutToken lastTokenOfTheURL3 = tokenisedInput.get(157);
+        lastTokenOfTheURL3.setPage(11);
+        lastTokenOfTheURL3.setX(306.141);
+        lastTokenOfTheURL3.setY(447.309);
+        lastTokenOfTheURL3.setWidth(31.902000000000005);
+        lastTokenOfTheURL3.setHeight(8.217);
+
+        PDFAnnotation annotation1 = new PDFAnnotation();
+        annotation1.setPageNumber(11);
+        List<BoundingBox> boundingBoxes = new ArrayList<>();
+        boundingBoxes.add(BoundingBox.fromPointAndDimensions(11,477.14,434.60,84.12,10.18));
+//        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 134.01, 454.50, 170.18, 24.00));
+//        boundingBoxes.add(BoundingBox.fromPointAndDimensions(5, 123.68, 481.50, 0.00, 9.00));
+        annotation1.setBoundingBoxes(boundingBoxes);
+        annotation1.setDestination("https://www.genomicsengland.co.uk/research/academic/join-gecip");
+        annotation1.setType(PDFAnnotation.Type.URI);
+
+        List<PDFAnnotation> pdfAnnotations = List.of(annotation1);
+
+        List<OffsetPosition> offsetPositions = Lexicon.characterPositionsUrlPatternWithPdfAnnotations(tokenisedInput, pdfAnnotations);
+
+        assertThat(offsetPositions, hasSize(4));
+        OffsetPosition url2 = offsetPositions.get(2);
+        assertThat(input.substring(url2.start, url2.end), is("https://www.genomic-\n" +
+            "sengland.co.uk/research/academic/join-gecip"));
     }
 
 }

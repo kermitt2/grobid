@@ -142,7 +142,7 @@ RUN python3 preload_embeddings.py --registry ./resources-registry.json &&  \
 RUN mkdir delft && \
     cp ./resources-registry.json delft/
 
-ENV GROBID_SERVICE_OPTS "--add-opens java.base/java.lang=ALL-UNNAMED"
+ENV GROBID_SERVICE_OPTS "--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED"
 
 CMD ["./grobid-service/bin/grobid-service"]
 
