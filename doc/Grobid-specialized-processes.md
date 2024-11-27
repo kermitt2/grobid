@@ -62,18 +62,22 @@ The benchmarks results are listed here with links to the full reports.
 
 ### Article lightweight structure  
 
-| Corpus          | Header (avg. micro F1 Ratcliff/Obershelp@0.95) | Full report                                                                      | 
-|-----------------|------------------------------------------------|----------------------------------------------------------------------------------|
-| Bioxiv          | 89.4                                           | [benchmaking-bioxiv.md](benchmarks/flavors/article_light/benchmaking-bioxiv.md)  |
-| PMC_sample_1943 | 95.71                                          | [benchmaking-pmc.md](benchmarks/flavors/article_light/benchmaking-pmc.md)        |
-| PLOS_1000       | 99.37                                          | [benchmaking-plos.md](benchmarks/flavors/article_light/benchmaking-plos.md)      |
-| eLife_984       | 88.73                                          | [benchmaking-elife.md](benchmarks/flavors/article_light/benchmaking-elife.md)    |
+| Corpus          | Header*   | Full report                                                                     | 
+|-----------------|-----------|---------------------------------------------------------------------------------|
+| Bioxiv          | 89.4      | [benchmaking-bioxiv.md](benchmarks/flavors/article_light/benchmaking-bioxiv.md) |
+| PMC_sample_1943 | 95.71     | [benchmaking-pmc.md](benchmarks/flavors/article_light/benchmaking-pmc.md)       |
+| PLOS_1000       | 99.37     | [benchmaking-plos.md](benchmarks/flavors/article_light/benchmaking-plos.md)     |
+| eLife_984       | 88.73     | [benchmaking-elife.md](benchmarks/flavors/article_light/benchmaking-elife.md)   |
 
 ### Article lightweight structure with references
 
-| Corpus          | Header (avg. micro F1 Ratcliff/Obershelp@0.95) | Citations (Instance-level f-score (RatcliffObershelp)) | Full report                                                                         | 
-|-----------------|------------------------------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------|
-| Bioxiv          | 89.79                                          | 56.31                                                  | [benchmaking-bioxiv.md](benchmarks/flavors/article_light_ref/benchmaking-bioxiv.md) |
-| PMC_sample_1943 | 95.74                                          | 58.78                                                  | [benchmaking-pmc.md](benchmarks/flavors/article_light_ref/benchmaking-pmc.md)       |
-| PLOS_1000       | 99.52                                          | 48.04                                                  | [benchmaking-plos.md](benchmarks/flavors/article_light_ref/benchmaking-plos.md)     |
-| eLife_984       | 91.35                                          | 76.14                                                  | [benchmaking-elife.md](benchmarks/flavors/article_light_ref/benchmaking-elife.md)   |
+| Corpus          | Header*  | Citations   | Full report                                                                         | 
+|-----------------|----------|-------------|-------------------------------------------------------------------------------------|
+| Bioxiv          | 89.79    | 56.31       | [benchmaking-bioxiv.md](benchmarks/flavors/article_light_ref/benchmaking-bioxiv.md) |
+| PMC_sample_1943 | 95.74    | 58.78       | [benchmaking-pmc.md](benchmarks/flavors/article_light_ref/benchmaking-pmc.md)       |
+| PLOS_1000       | 99.52    | 48.04       | [benchmaking-plos.md](benchmarks/flavors/article_light_ref/benchmaking-plos.md)     |
+| eLife_984       | 91.35    | 76.14       | [benchmaking-elife.md](benchmarks/flavors/article_light_ref/benchmaking-elife.md)   |
+
+
+(*) avg. micro F1 Ratcliff/Obershelp@0.95
+(+) Instance-level f-score (RatcliffObershelp)
