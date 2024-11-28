@@ -1,6 +1,7 @@
 package org.grobid.core.engines;
 
 import eugfc.imageio.plugins.PNMRegistry;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.document.BasicStructureBuilder;
@@ -230,7 +231,7 @@ public class Segmentation extends AbstractParser {
      * Addition of the features at line level for the complete document.
      * <p/>
      * This is an alternative to the token level, where the unit for labeling is the line - so allowing faster
-     * processing and involving less features.
+     * processing and involving fewer features.
      * Lexical features becomes line prefix and suffix, the feature text unit is the first 10 characters of the
      * line without space.
      * The dictionary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
@@ -319,8 +320,9 @@ public class Segmentation extends AbstractParser {
             mm = 0;
             //endPage = true;
             
-            if ((page.getBlocks() == null) || (page.getBlocks().size() == 0)) 
+            if (CollectionUtils.isEmpty(page.getBlocks())) {
                 continue;
+            }
 
             for(int blockIndex=0; blockIndex < page.getBlocks().size(); blockIndex++) {
                 Block block = page.getBlocks().get(blockIndex);
@@ -444,7 +446,7 @@ public class Segmentation extends AbstractParser {
                     if (text == null)
                         continue;
 
-                    // final sanitisation and filtering
+                    // final sanitization and filtering
                     text = text.replaceAll("[ \n\r]", "");
                     text = text.trim();
 
@@ -754,7 +756,7 @@ public class Segmentation extends AbstractParser {
 
             // we write the full text untagged (but featurized)
             String outPathFulltext = pathFullText + File.separator + 
-                PDFFileName.replace(".pdf", ".training.blank");
+                PDFFileName.replaceAll("(?i)\\.pdf$", ".training.blank");
             Writer writer = new OutputStreamWriter(new FileOutputStream(new File(outPathFulltext), false), "UTF-8");
             writer.write(fulltext + "\n");
             writer.close();
@@ -770,7 +772,7 @@ public class Segmentation extends AbstractParser {
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
                         File.separator + 
-                        PDFFileName.replace(".pdf", ".training.blank.tei.xml")), false), "UTF-8");
+                        PDFFileName.replaceAll("(?i)\\.pdf$", ".training.blank.tei.xml")), false), "UTF-8");
                 writer.write("<?xml version=\"1.0\" ?>\n<tei xml:space=\"preserve\">\n\t<teiHeader>\n\t\t<fileDesc xml:id=\"f" + id +
                         "\"/>\n\t</teiHeader>\n\t<text xml:lang=\"en\">\n");
 
