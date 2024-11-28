@@ -47,6 +47,7 @@ import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
+import org.grobid.core.GrobidModels.Flavor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -98,11 +99,17 @@ public class FullTextParser extends AbstractParser {
 
     public Document processing(File inputPdf,
                                GrobidAnalysisConfig config) throws Exception {
+        return processing(inputPdf, null, config);
+    }
+
+    /*public Document processing(File inputPdf,
+                               String flavor,
+                               GrobidAnalysisConfig config) throws Exception {
         DocumentSource documentSource =
             DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
                 config.getPdfAssetPath() != null, true, false);
-        return processing(documentSource, config);
-    }
+        return processing(documentSource, flavor, config);
+    }*/
 
     public Document processingHeaderFunding(File inputPdf,
                                GrobidAnalysisConfig config) throws Exception {
@@ -112,14 +119,21 @@ public class FullTextParser extends AbstractParser {
         return processingHeaderFunding(documentSource, config);
     }
 
+    public Document processing(File inputPdf,
+                               String md5Str,
+                               GrobidAnalysisConfig config) throws Exception {
+        return processing(inputPdf, null, md5Str, config);
+    }
+
 	public Document processing(File inputPdf,
+                               String flavor,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
 			DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
 				config.getPdfAssetPath() != null, true, false);
         documentSource.setMD5(md5Str);
-		return processing(documentSource, config);
+		return processing(documentSource, flavor, config);
 	}
 
     public Document processingHeaderFunding(File inputPdf,
@@ -141,6 +155,20 @@ public class FullTextParser extends AbstractParser {
      */
     public Document processing(DocumentSource documentSource,
                                GrobidAnalysisConfig config) {
+        return processing(documentSource, null, config);
+    }
+
+    /**
+     * Machine-learning recognition of the complete full text structures.
+     *
+     * @param documentSource input
+     * @param flavor optional model flavor
+     * @param config config
+     * @return the document object with built TEI
+     */
+    public Document processing(DocumentSource documentSource,
+                               String flavor,
+                               GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         }
@@ -148,9 +176,13 @@ public class FullTextParser extends AbstractParser {
             throw new GrobidResourceException("Cannot process pdf file, because temp path '" +
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
+
+        Flavor flavorObject = null;
+        if (flavor != null && flavor.length()>0) 
+            flavorObject = Flavor.fromLabel(flavor); 
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser().processing(documentSource, config);
+			Document doc = parsers.getSegmentationParser(flavorObject).processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -158,7 +190,7 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser().processingHeaderSection(config, doc, resHeader, false);
+            parsers.getHeaderParser(flavorObject).processingHeaderSection(config, doc, resHeader, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 

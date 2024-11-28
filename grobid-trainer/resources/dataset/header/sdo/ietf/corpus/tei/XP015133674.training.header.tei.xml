@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015133674"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+
+	<note type="other">Internet Engineering Task Force (IETF)<lb/></note>
+
+	J. Arkko<lb/>
+	<note type="doctype">Request for Comments</note>: 
+	<idno>8602<lb/></idno> 
+
+	Ericsson<lb/> Updates: 3219<lb/> T. Hardie<lb/> Category: Standards Track<lb/> 
+
+	<date type="publication">July 2019<lb/></date>
+
+	<idno>ISSN: 2070-1721<lb/></idno>
+
+	<docTitle>
+	<titlePart>Update to the Telephony Routing over IP (TRIP) IANA Registry Rules<lb/> regarding Postal Addresses<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract<lb/> This memo updates the IANA registry rules for the Telephony Routing<lb/> over IP (TRIP) protocol, by no longer requiring that postal addresses<lb/> be included in contact information.<lb/> This memo updates RFC 3219.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This is an Internet Standards Track document.<lb/> This document is a product of the Internet Engineering Task Force<lb/> (IETF). It represents the consensus of the IETF community. It has<lb/> received public review and has been approved for publication by the<lb/> Internet Engineering Steering Group (IESG). Further information on<lb/> Internet Standards is available in Section 2 of RFC 7841.<lb/> Information about the current status of this document, any errata,<lb/> and how to provide feedback on it may be obtained at<lb/> https://www.rfc-editor.org/info/rfc8602.<lb/></note>
+
+	Copyright Notice<lb/>
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/></note>
+
+	<byline>
+	<docAuthor>Jari Arkko<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>Ericsson<lb/></affiliation>
+	</byline>
+
+	<address>Kauniainen 02700<lb/> Finland<lb/></address>
+
+	<email>Email: jari.arkko@piuha.net<lb/></email>
+
+	<byline>
+	<docAuthor>Ted Hardie<lb/></docAuthor>
+	</byline>
+
+	<email>Email: ted.ietf@gmail.com</email>
+
+		</front>
+	</text>
+</tei>

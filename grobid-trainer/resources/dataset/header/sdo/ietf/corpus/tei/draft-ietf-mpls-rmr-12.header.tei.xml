@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="draft-ietf-mpls-rmr-12"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="group">
+		MPLS WG<lb/> 
+	</note>
+
+	K. Kompella<lb/>
+	
+<note type="doctype">Internet-Draft<lb/></note>
+
+	Juniper Networks, Inc.<lb/> Intended status: Standards Track<lb/> L. Contreras<lb/> Expires: April 25, 2020<lb/> Telefonica<lb/> 
+
+<date type="publication">
+	October 23, 2019<lb/> 
+</date>
+
+<docTitle>
+    <titlePart> 
+	Resilient MPLS Rings<lb/>
+    </titlePart>    
+</docTitle>	
+
+	<idno>draft-ietf-mpls-rmr-12<lb/></idno>
+
+<div type="abstract">
+	Abstract<lb/>
+	This document describes the use of the MPLS control and data planes<lb/> on ring topologies. It describes the special nature of rings, and<lb/> proceeds to show how MPLS can be effectively used in such topologies.<lb/> It describes how MPLS rings are configured, auto-discovered and<lb/> signaled, as well as how the data plane works. Companion documents<lb/> describe the details of discovery and signaling for specific<lb/> protocols.<lb/> 
+</div>
+
+<note type="other">
+	Requirements Language<lb/> The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,<lb/> &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this<lb/> document are to be interpreted as described in [RFC2119].<lb/>
+</note>
+
+<note type="other">
+	Status of This Memo<lb/> This Internet-Draft is submitted in full conformance with the<lb/> provisions of BCP 78 and BCP 79.<lb/> Internet-Drafts are working documents of the Internet Engineering<lb/> Task Force (IETF). Note that other groups may also distribute<lb/> working documents as Internet-Drafts. The list of current Internet-<lb/>Drafts is at https://datatracker.ietf.org/drafts/current/.<lb/> Internet-Drafts are draft documents valid for a maximum of six months<lb/> and may be updated, replaced, or obsoleted by other documents at any<lb/> time. It is inappropriate to use Internet-Drafts as reference<lb/> material or to cite them other than as &quot;work in progress.&quot;<lb/> This Internet-Draft will expire on April 25, 2020.<lb/>
+</note>
+
+	Copyright Notice<lb/>
+
+<note type="copyright">
+	Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/>
+</note>
+
+	Kompella &amp; Contreras<lb/> Expires April 25, 2020<lb/> [Page 1]<lb/>
+	
+<note type="doctype">Internet-Draft<lb/></note>
+
+	Resilient MPLS Rings<lb/> October 2019<lb/> 
+
+<note type="copyright">
+	This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/>
+</note>
+
+
+<byline>
+	<docAuthor>
+Kireeti Kompella<lb/>
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+Juniper Networks, Inc.<lb/>
+	</affiliation>
+</byline>
+<address>
+1133 Innovation Way<lb/> Sunnyvale, CA 94089<lb/> USA<lb/>
+</address>
+<email>
+Email: kireeti.kompella@gmail.com<lb/>
+</email>
+
+<byline>
+	<docAuthor>
+Luis M. Contreras<lb/> 
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+Telefonica<lb/> 
+	</affiliation>
+</byline>
+<address>
+Ronda de la Comunicacion<lb/> Sur-3 building, 3rd floor<lb/> Madrid 28050<lb/> Spain<lb/>
+</address>
+<email>
+Email: luismiguel.contrerasmurillo@telefonica.com<lb/> 
+</email>
+URI:<lb/> http://people.tid.es/LuisM.Contreras/<lb/> 
+
+		</front>
+	</text>
+</tei>

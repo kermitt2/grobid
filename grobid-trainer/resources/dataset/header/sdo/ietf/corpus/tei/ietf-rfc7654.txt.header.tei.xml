@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="ietf-rfc7654.txt"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<note type="other">Internet Engineering Task Force (IETF)<lb/></note>
+
+	S. Banks<lb/> 
+
+<note type="doctype">Request for Comments</note>: 
+
+<idno>7654<lb/></idno> 
+
+VSS Monitoring<lb/> Category: Informational<lb/> F. Calabria<lb/> 
+
+<idno type="ISSN">ISSN: 2070-1721<lb/></idno> 
+
+Cisco Systems<lb/> G. Czirjak<lb/> R. Machat<lb/> Juniper Networks<lb/> 
+
+<date type="publication">
+	October 2015<lb/>
+</date>	
+
+<docTitle>
+    <titlePart> 
+Benchmarking Methodology for In-Service Software Upgrade (ISSU)<lb/> 
+    </titlePart>    
+</docTitle>	
+
+<div type="abstract">
+	Abstract<lb/> Modern forwarding devices attempt to minimize any control-and data-<lb/>plane disruptions while performing planned software changes by<lb/> implementing a technique commonly known as In-Service Software<lb/> Upgrade (ISSU). This document specifies a set of common<lb/> methodologies and procedures designed to characterize the overall<lb/> behavior of a Device Under Test (DUT), subject to an ISSU event.<lb/> 
+</div>
+
+<note type="other">
+	Status of This Memo<lb/> This document is not an Internet Standards Track specification; it is<lb/> published for informational purposes.<lb/> This document is a product of the Internet Engineering Task Force<lb/> (IETF). It represents the consensus of the IETF community. It has<lb/> received public review and has been approved for publication by the<lb/> Internet Engineering Steering Group (IESG). Not all documents<lb/> approved by the IESG are a candidate for any level of Internet<lb/> Standard; see Section 2 of RFC 5741.<lb/> Information about the current status of this document, any errata,<lb/> and how to provide feedback on it may be obtained at<lb/> http://www.rfc-editor.org/info/rfc7654.<lb/>
+</note>
+
+	Banks, et al.<lb/> Informational<lb/> [Page 1]<lb/> RFC 7654<lb/> Benchmarking Software Upgrade<lb/> October 2015<lb/> 
+	Copyright Notice<lb/>
+	
+<note type="copyright">
+	Copyright (c) 2015 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (http://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document. Code Components extracted from this document must<lb/> include Simplified BSD License text as described in Section 4.e of<lb/> the Trust Legal Provisions and are provided without warranty as<lb/> described in the Simplified BSD License.<lb/>
+</note>
+
+<byline>
+	<docAuthor>
+Sarah Banks<lb/> 
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+VSS Monitoring<lb/> 
+	</affiliation>
+</byline>
+<email>
+Email: sbanks@encrypted.net<lb/>
+</email>
+
+<byline>
+	<docAuthor>
+Fernando Calabria<lb/> 
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+Cisco Systems<lb/> 
+	</affiliation>
+</byline>
+<email>
+Email: fcalabri@cisco.com<lb/> 
+</email>
+
+<byline>
+	<docAuthor>
+Gery Czirjak<lb/> 
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+Juniper Networks<lb/> 
+	</affiliation>
+</byline>
+<email>
+Email: gczirjak@juniper.net<lb/> 
+</email>
+
+<byline>
+	<docAuthor>
+Ramdas Machat<lb/> 
+	</docAuthor>
+</byline>
+<byline>
+	<affiliation>
+Juniper Networks<lb/> 
+	</affiliation>
+</byline>
+<email>
+Email: rmachat@juniper.net
+</email>
+
+		</front>
+	</text>
+</tei>
