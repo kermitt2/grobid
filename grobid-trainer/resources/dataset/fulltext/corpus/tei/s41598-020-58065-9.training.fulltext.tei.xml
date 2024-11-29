@@ -14,11 +14,11 @@
 
 			<p>The thermodynamic parameters of the LaH 10 superconductor were calculated by means of Eliashberg equations<lb/> on the imaginary axis <ref type="biblio">23</ref> :<lb/></p>
 
-				<formula>∑<lb/> π<lb/> μ<lb/> Δ<lb/> =<lb/> Ω − Ω −<lb/> Ω<lb/> Ω + Δ<lb/> Δ<lb/> =−<lb/> Z<lb/> k T<lb/> K<lb/> [ (<lb/> )<lb/> ( )]<lb/> ,<lb/> <label>(1)<lb/></label> n n<lb/> B<lb/> m<lb/> M<lb/> M<lb/> n<lb/> m<lb/> m<lb/> m<lb/> m<lb/> m<lb/> 2<lb/> 2<lb/> <lb/></formula>
+				<formula>∑<lb/> π<lb/> μ<lb/> Δ<lb/> =<lb/> Ω − Ω −<lb/> Ω<lb/> Ω + Δ<lb/> Δ<lb/> =−<lb/> Z<lb/> k T<lb/> K<lb/> [ (<lb/> )<lb/> ( )]<lb/> ,<lb/> (<label>1</label>)<lb/> n n<lb/> B<lb/> m<lb/> M<lb/> M<lb/> n<lb/> m<lb/> m<lb/> m<lb/> m<lb/> m<lb/> 2<lb/> 2<lb/> <lb/></formula>
 		
 			<p>and<lb/></p>
 
-				<formula>∑<lb/> π<lb/> = +<lb/> Ω − Ω<lb/> Ω + Δ<lb/> Ω<lb/> Ω<lb/> .<lb/> =−<lb/> Z<lb/> kT<lb/> K<lb/> Z<lb/> 1<lb/> (<lb/> )<lb/> <label>(2)<lb/></label> n<lb/> B<lb/> m<lb/> M<lb/> M<lb/> n<lb/> m<lb/> m<lb/> m<lb/> m<lb/> n<lb/> m<lb/> 2<lb/> 2<lb/></formula>
+				<formula>∑<lb/> π<lb/> = +<lb/> Ω − Ω<lb/> Ω + Δ<lb/> Ω<lb/> Ω<lb/> .<lb/> =−<lb/> Z<lb/> kT<lb/> K<lb/> Z<lb/> 1<lb/> (<lb/> )<lb/> (<label>2</label>)<lb/> n<lb/> B<lb/> m<lb/> M<lb/> M<lb/> n<lb/> m<lb/> m<lb/> m<lb/> m<lb/> n<lb/> m<lb/> 2<lb/> 2<lb/></formula>
 
 			<p>The symbols Δ = Δ Ω<lb/> i<lb/> ( )<lb/> n<lb/> n and =<lb/> Ω<lb/> Z<lb/> Z i<lb/> ( )<lb/> n<lb/> n denote the order parameter and the wave function renormalization<lb/> factor, respectively. The quantity Ω n represents the Matsubara frequency:<lb/> π<lb/> Ω =<lb/> −<lb/> k T n<lb/> ( 2<lb/> 1)<lb/> n<lb/> B<lb/> , where k B is the<lb/> Boltzmann constant. The pairing kernel is defined by:<lb/> λ<lb/> Ω − Ω =<lb/> Ω<lb/> Ω − Ω<lb/> +Ω<lb/> K(<lb/> )<lb/> n<lb/> m<lb/> (<lb/> )<lb/> C<lb/> n<lb/> m<lb/> C<lb/> 2<lb/> 2<lb/> 2 , where λ denotes the elec-<lb/>tron-phonon coupling constant. We determined the value of λ on the basis of experimental data <ref type="biblio">20,21</ref> and the<lb/> condition: Δ<lb/> =<lb/> = =<lb/> [<lb/> ]<lb/> 0<lb/> n<lb/> T T<lb/> 1<lb/> C<lb/> . The fitting between the theory and the experimental results is presented in Fig. <ref type="figure">1</ref>. We<lb/> obtained λ a = 2.187 for p a = 150 GPa and λ b = 2.818 for p b = 190 GPa. The symbol Ω C represents the character-<lb/>istic phonon frequency, its value being assumed as Ω C = 100 meV.<lb/></p>
 
@@ -32,19 +32,19 @@
 
 			<figure>Figure 1. The dependence of the maximum value of the order parameter on the electron-phonon coupling<lb/> constant. We consider two cases: =<lb/> T<lb/> 215<lb/> C<lb/> a<lb/> K (p a = 150 GPa) and =<lb/> T<lb/> 260<lb/> C<lb/> b<lb/> K (p b = 190 GPa).<lb/></figure>
 
-				<formula>∑<lb/> ρ<lb/> π<lb/> Δ = −<lb/> Ω + Δ − Ω<lb/> ×<lb/> <lb/> <lb/>     <lb/> −<lb/> Ω<lb/> Ω + Δ<lb/> <lb/> <lb/>      <lb/> =<lb/> F<lb/> k T<lb/> Z<lb/> Z<lb/> (0)<lb/> 2<lb/> (<lb/> )<lb/> ,<lb/> <label>(3)<lb/></label> B<lb/> n<lb/> M<lb/> n<lb/> n<lb/> n<lb/> n<lb/> S<lb/> n<lb/> N<lb/> n<lb/> n<lb/> n<lb/> 1<lb/> 2<lb/> 2<lb/> 2<lb/> 2<lb/></formula>
+				<formula>∑<lb/> ρ<lb/> π<lb/> Δ = −<lb/> Ω + Δ − Ω<lb/> ×<lb/> <lb/> <lb/>     <lb/> −<lb/> Ω<lb/> Ω + Δ<lb/> <lb/> <lb/>      <lb/> =<lb/> F<lb/> k T<lb/> Z<lb/> Z<lb/> (0)<lb/> 2<lb/> (<lb/> )<lb/> ,<lb/> (<label>3</label>)<lb/> B<lb/> n<lb/> M<lb/> n<lb/> n<lb/> n<lb/> n<lb/> S<lb/> n<lb/> N<lb/> n<lb/> n<lb/> n<lb/> 1<lb/> 2<lb/> 2<lb/> 2<lb/> 2<lb/></formula>
 
 			<p>where ρ(0) denotes the value of electronic density of states at Fermi surface; Z n<lb/> S and Z n<lb/> N are the wave function<lb/> normalization factors for the superconducting and the normal state, respectively. Note that ΔF is equal to zero<lb/> exactly for T = T C . This fact results from the overt dependence of free energy on solutions of Eliashberg equations<lb/> (Δ n and Z n ) that have been adjusted to the experimental value of critical temperature by appropriate selection of<lb/> electron-phonon coupling constant (see Fig. <ref type="figure">1</ref>). Thermodynamic critical field should be calculated from the<lb/> formula:<lb/></p>
 
-				<formula>ρ<lb/> π<lb/> ρ<lb/> = − Δ<lb/> .<lb/> H<lb/> F<lb/> (0)<lb/> 8 [ / (0)]<lb/> <label>(4)<lb/></label> C<lb/></formula>
+				<formula>ρ<lb/> π<lb/> ρ<lb/> = − Δ<lb/> .<lb/> H<lb/> F<lb/> (0)<lb/> 8 [ / (0)]<lb/> (<label>4</label>)<lb/> C<lb/></formula>
 
 			<p>The difference in the specific heat between the superconducting and the normal state (ΔC = C S − C N ) is given by:<lb/></p>
 
-				<formula>ρ<lb/> ρ<lb/> Δ<lb/> = −<lb/> Δ<lb/> .<lb/> C T<lb/> k<lb/> k T<lb/> d<lb/> F<lb/> d k T<lb/> ( )<lb/> (0)<lb/> [ / (0)]<lb/> (<lb/> )<lb/> <label>(5)<lb/></label> B<lb/> B<lb/> B<lb/> 2<lb/> 2<lb/></formula>
+				<formula>ρ<lb/> ρ<lb/> Δ<lb/> = −<lb/> Δ<lb/> .<lb/> C T<lb/> k<lb/> k T<lb/> d<lb/> F<lb/> d k T<lb/> ( )<lb/> (0)<lb/> [ / (0)]<lb/> (<lb/> )<lb/> (<label>5</label>)<lb/> B<lb/> B<lb/> B<lb/> 2<lb/> 2<lb/></formula>
 
 			<p>The most convenient way of estimation the specific heat for the normal state is using the expression:<lb/></p>
 
-				<formula>ρ<lb/> γ<lb/> =<lb/> .<lb/> C T<lb/> k<lb/> k T<lb/> ( )<lb/> (0)<lb/> <label>(6)<lb/></label> N<lb/> B<lb/> B<lb/></formula>
+				<formula>ρ<lb/> γ<lb/> =<lb/> .<lb/> C T<lb/> k<lb/> k T<lb/> ( )<lb/> (0)<lb/> (<label>6</label>)<lb/> N<lb/> B<lb/> B<lb/></formula>
 
 			<figure>Figure 2. The dependence of the order parameter on temperature. The insets present the influence of<lb/> temperature on the value of effective electron mass to the band electron mass ratio. Blue or red disks represent<lb/> numerical results. Black curves were obtained from the analytical formulae: Δ<lb/> = Δ<lb/> −<lb/> Γ<lb/> T<lb/> T<lb/> T T<lb/> ( )<lb/> ( ) 1 ( / )<lb/> C<lb/> 0<lb/> and<lb/> <lb/> =<lb/> −<lb/> +<lb/> Γ<lb/> m m<lb/> Z T<lb/> Z T T T<lb/> ZT<lb/> /<lb/> [ ( )<lb/> ( )]( / )<lb/> ( )<lb/> e<lb/> e<lb/> C<lb/> C<lb/> 0<lb/> 0 , where<lb/> λ<lb/> = +<lb/> Z T<lb/> ( ) 1<lb/> C<lb/> , Γ a = 3.5 and Γ b = 3.4. The predictions of<lb/> the BCS theory we marked with grey circles.<lb/></figure>
 
@@ -59,28 +59,28 @@
 			<p>Nevertheless, a sensible qualitative analysis can be made with respect to the influence of the atomic mass of the<lb/> X element on a value of the critical temperature (since the mass of the X element determines Ω max ). In this regard,<lb/> let us refer to the theoretical results obtained within the Eliashberg formalism for H 2 S and H 3 S superconduc-<lb/>tors <ref type="biblio">5,6</ref> . They prove that contributions to the Eliashberg function (α Ω<lb/> F( )<lb/> 2<lb/> ) coming from sulphur and from hydro-<lb/>gen are separated due to a huge difference between atomic masses of these two elements. To be precise, the<lb/> electron-phonon interaction derived from sulphur is crucial in the frequency range from 0 meV to Ω max<lb/> S<lb/> equal to<lb/> about 70 meV, while the contribution derived from hydrogen (Ω<lb/> = 220<lb/> max<lb/> H<lb/> meV) is significant above ~100 meV.<lb/> It is noteworthy that we come upon a similar situation in the case of the LaH 10 compound <ref type="biblio">30</ref> . Therefore the follow-<lb/>ing factorization of the Eliashberg function for the LaXH compound can be assumed:<lb/></p>
 
 				<formula>α<lb/> λ<lb/> θ<lb/> λ<lb/> θ<lb/> λ<lb/> θ<lb/> Ω =<lb/> <lb/> <lb/>    <lb/> Ω<lb/> Ω<lb/> <lb/> <lb/>    <lb/> Ω<lb/> − Ω +<lb/> <lb/> <lb/>    <lb/> Ω<lb/> Ω<lb/> <lb/> <lb/>     <lb/> Ω<lb/> − Ω<lb/> +<lb/> <lb/> <lb/>    <lb/> Ω<lb/> Ω<lb/> <lb/> <lb/>     <lb/> Ω<lb/> − Ω<lb/> F( )<lb/> (<lb/> )<lb/> (<lb/> )<lb/> (<lb/> ) ,<lb/>
-				<label>(7)<lb/></label> 2<lb/> L a<lb/> max<lb/> La 2<lb/> max<lb/> La<lb/> X<lb/> max<lb/> X<lb/> 2<lb/> max<lb/> X<lb/> H<lb/> max<lb/> H<lb/> 2<lb/> max<lb/> H<lb/></formula>
+				(<label>7</label>)<lb/> 2<lb/> L a<lb/> max<lb/> La 2<lb/> max<lb/> La<lb/> X<lb/> max<lb/> X<lb/> 2<lb/> max<lb/> X<lb/> H<lb/> max<lb/> H<lb/> 2<lb/> max<lb/> H<lb/></formula>
 
 			<p>where λ La , λ X , and λ H are the contributions to the electron-phonon coupling constant derived from both metals<lb/> (La, X) and hydrogen, respectively. Similarly, the symbols Ω max<lb/> La , Ω max<lb/> X , and Ω max<lb/> H represent the respective maxi-<lb/>mum phonon frequencies. The value of the critical temperature can be assessed from the generalised formula of<lb/> the BCS theory <ref type="biblio">7</ref> :<lb/></p>
 
-				<formula>λ<lb/> λ<lb/> λμ<lb/> =<lb/> Ω<lb/> .<lb/> <lb/> <lb/> <lb/> <lb/> − .<lb/> +<lb/> − + .<lb/> <lb/> <lb/> <lb/> <lb/> k T<lb/> f f<lb/> 1 27<lb/> exp<lb/> 1 14(1<lb/> )<lb/> (1 0 163 )<lb/> ,<lb/> <label>(8)<lb/></label> B C<lb/> 1 2<lb/> ln<lb/> <lb/></formula>
+				<formula>λ<lb/> λ<lb/> λμ<lb/> =<lb/> Ω<lb/> .<lb/> <lb/> <lb/> <lb/> <lb/> − .<lb/> +<lb/> − + .<lb/> <lb/> <lb/> <lb/> <lb/> k T<lb/> f f<lb/> 1 27<lb/> exp<lb/> 1 14(1<lb/> )<lb/> (1 0 163 )<lb/> ,<lb/> (<label>8</label>)<lb/> B C<lb/> 1 2<lb/> ln<lb/> <lb/></formula>
 
 			<p>while the symbols appearing in Eq. (<ref type="formula">8</ref>) are defined in Table <ref type="table">1</ref>.<lb/></p>
 
 			<p>Let us calculate explicitly the relevant quantities:<lb/></p>
 
-				<formula>λ λ<lb/> λ<lb/> λ<lb/> =<lb/> +<lb/> + ,<lb/> <label>(9)<lb/></label> </formula>
+				<formula>λ λ<lb/> λ<lb/> λ<lb/> =<lb/> +<lb/> + ,<lb/> (<label>9</label>)<lb/> </formula>
 
 			<figure type="table">La<lb/> X<lb/> H<lb/> Quantity<lb/> ∫<lb/> λ =<lb/> Ω<lb/> α<lb/> +∞<lb/> Ω Ω<lb/> Ω<lb/> d<lb/> 2<lb/> F<lb/> 0<lb/> 2 ( ) ( ) ,<lb/> ∫<lb/> Ω =<lb/> <lb/> <lb/> <lb/> <lb/> Ω<lb/> Ω<lb/> <lb/> <lb/> <lb/> <lb/> λ<lb/> α<lb/> +∞<lb/> Ω<lb/> Ω<lb/> d<lb/> exp<lb/> l n( )<lb/> F<lb/> ln<lb/> 2<lb/> 0<lb/> 2 ( )<lb/> ,<lb/> ∫<lb/> α<lb/> Ω =<lb/> Ω<lb/> Ω Ω<lb/> λ<lb/> +∞<lb/> d<lb/> F( )<lb/> 2<lb/> 2<lb/> 0<lb/> 2<lb/> ,<lb/> =<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> +<lb/> <lb/> <lb/> <lb/> <lb/> <lb/> λ<lb/> Λ<lb/> ( )<lb/> f<lb/> 1<lb/> 1<lb/> 1<lb/> 3<lb/> 2<lb/> 1<lb/> 3<lb/> , = +<lb/> λ<lb/> λ<lb/> <lb/> <lb/>     <lb/> Ω<lb/> Ω<lb/> −<lb/> <lb/> <lb/>     <lb/> + Λ<lb/> f<lb/> 1<lb/> 2<lb/> 2<lb/> ln<lb/> 1 2<lb/> 2<lb/> 2<lb/> 2 ,<lb/> Λ 1 = 2.4 − 0.14μ &apos; ,<lb/> μ<lb/> Λ = . +<lb/> Ω Ω<lb/> (0 1 9 )(<lb/> / )<lb/> 2<lb/> 2<lb/> ln<lb/> <lb/> .<lb/> Table 1. The quantities: λ (electron-phonon coupling constant), Ω ln (logarithmic phonon frequency), Ω 2<lb/> (second moment of the normalized weight function), f 1 (strong-coupling correction function), and f 2 (shape<lb/> correction function) μ.<lb/></figure>
 
 				<formula>λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> Ω =<lb/> <lb/> <lb/> <lb/> <lb/> +<lb/> +<lb/> <lb/> <lb/>   Ω<lb/> −<lb/> <lb/> <lb/>   <lb/> <lb/> <lb/> <lb/> <lb/> ×<lb/> <lb/> <lb/> <lb/> <lb/> +<lb/> +<lb/> <lb/> <lb/>   Ω<lb/> −<lb/> <lb/> <lb/>   <lb/> <lb/> <lb/> <lb/> <lb/> ×<lb/> <lb/> <lb/> <lb/> <lb/> +<lb/> +<lb/> <lb/> <lb/>   Ω<lb/> −<lb/> <lb/> <lb/>   <lb/> <lb/> <lb/> <lb/> <lb/> exp<lb/> l n(<lb/> )<lb/> 1<lb/> 2<lb/> exp<lb/> l n(<lb/> )<lb/> 1<lb/> 2<lb/> exp<lb/> l n(<lb/> )<lb/> 1<lb/> 2<lb/> ,<lb/>
-				<label>(10)<lb/></label>
+				(<label>10</label>)<lb/>
 				ln<lb/> La<lb/> La<lb/> X<lb/> H<lb/> max<lb/> La<lb/> X<lb/> La<lb/> X<lb/> H<lb/> max<lb/> X<lb/> H<lb/> La<lb/> X<lb/> H<lb/> max<lb/> H<lb/></formula>
 
 
 			<p>and<lb/></p>
 		
-				<formula>λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> Ω =<lb/> +<lb/> +<lb/> Ω<lb/> +<lb/> +<lb/> +<lb/> Ω<lb/> +<lb/> +<lb/> +<lb/> Ω<lb/> .<lb/> (<lb/> )<lb/> 2<lb/> (<lb/> )<lb/> 2<lb/> (<lb/> )<lb/> 2<lb/> <label>( 11)<lb/></label> 2<lb/> La<lb/> La<lb/> X<lb/> H<lb/> max<lb/> La 2<lb/> X<lb/> La<lb/> X<lb/> H<lb/> max<lb/> X<lb/> 2<lb/> H<lb/> La<lb/> X<lb/> H<lb/> max<lb/> H<lb/> 2<lb/></formula>
+				<formula>λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> λ<lb/> Ω =<lb/> +<lb/> +<lb/> Ω<lb/> +<lb/> +<lb/> +<lb/> Ω<lb/> +<lb/> +<lb/> +<lb/> Ω<lb/> .<lb/> (<lb/> )<lb/> 2<lb/> (<lb/> )<lb/> 2<lb/> (<lb/> )<lb/> 2<lb/> (<label>11</label>)<lb/> 2<lb/> La<lb/> La<lb/> X<lb/> H<lb/> max<lb/> La 2<lb/> X<lb/> La<lb/> X<lb/> H<lb/> max<lb/> X<lb/> 2<lb/> H<lb/> La<lb/> X<lb/> H<lb/> max<lb/> H<lb/> 2<lb/></formula>
 
 			<p>We are going to consider the case Ω<lb/> &lt; Ω<lb/> &lt;<lb/> ~40 meV<lb/> 100 meV<lb/> max<lb/> La<lb/> max<lb/> X<lb/> . It means that we are interested in<lb/> such an X element, the contribution of which to the Eliashberg function fills the gap between contributions com-<lb/>ing from lanthanum and hydrogen. It can be assumed that 0 &lt; λ X &lt; 1, while keeping in mind that λ La = 0.68 <ref type="biblio">31</ref> .<lb/> Additionally, the previous calculations discussed in the work allow to write that λ La + λ H is equal to λ a = 2.187<lb/> for p a = 150 GPa or to λ b = 2.818 for p b = 190 GPa. The quantity <lb/> μ occurring in the Eq. (<ref type="formula">8</ref>) serves now as the<lb/> fitting parameter. One should remember that the formula for the critical temperature given by the Eq. (<ref type="formula">8</ref>) was<lb/> derived with the use of significant simplifying assumptions (the value of the cut-off frequency is neglected, as well<lb/> as the retardation effects modeled by the Matsubara frequency). Therefore the value of the Coulomb pseudopo-<lb/>tential determined from the full Eliashberg equations usually differs from the value of <lb/> μ calculated analytically.<lb/> The experimental data for the LaH 10 superconductor can be reproduced using Eq. (<ref type="formula">8</ref>) and assuming that<lb/> <lb/> μ = .<lb/> 0 170<lb/> a<lb/> and μ = .<lb/> 0 276<lb/> b<lb/> <lb/> .<lb/></p>
 

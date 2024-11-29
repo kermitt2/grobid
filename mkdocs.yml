@@ -4,10 +4,10 @@ repo_name: GitHub
 theme: readthedocs
 site_description: Documentation for GROBID
 docs_dir: doc
+extra_css:
+  - css/custom.css
 plugins:
     - search
-theme:
-    name: readthedocs
 nav:
   - Home: 'index.md'
   - About:
