@@ -536,6 +536,8 @@ project(":grobid-trainer") {
             def javaLibraryPath = getJavaLibraryPath()
             if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
                 jvmArgs '-Xmx3072m', "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+            } else {
+                jvmArgs '-Xmx3072m'
             }
             systemProperty "java.library.path", "${javaLibraryPath}"
         }
