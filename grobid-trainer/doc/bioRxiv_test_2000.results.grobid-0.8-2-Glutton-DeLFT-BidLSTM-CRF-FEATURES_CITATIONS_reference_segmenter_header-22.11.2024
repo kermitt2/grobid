@@ -1,0 +1,269 @@
+======= Header metadata =======
+
+Evaluation on 2000 random PDF files out of 1998 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             78.04        2.36         2.31         2.34         1989
+authors              96.3         84.3         83.58        83.94        1998
+first_author         99.14        96.97        96.24        96.61        1996
+keywords             95.86        58.9         59.95        59.42        839
+title                94.81        77.77        76.99        77.38        1999
+
+all (micro avg.)     92.83        64.95        64.38        64.66        8821
+all (macro avg.)     92.83        64.06        63.82        63.94        8821
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             90.74        60.08        58.87        59.47        1989
+authors              96.4         84.76        84.03        84.39        1998
+first_author         99.19        97.17        96.44        96.81        1996
+keywords             96.35        64.05        65.2         64.62        839
+title                95.31        80.04        79.24        79.64        1999
+
+all (micro avg.)     95.6         78.98        78.29        78.63        8821
+all (macro avg.)     95.6         77.22        76.76        76.99        8821
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             95.26        80.61        78.98        79.79        1989
+authors              98.13        92.48        91.69        92.08        1998
+first_author         99.24        97.43        96.69        97.06        1996
+keywords             97.85        79.63        81.05        80.33        839
+title                97.99        92.02        91.1         91.55        1999
+
+all (micro avg.)     97.69        89.59        88.81        89.2         8821
+all (macro avg.)     97.69        88.43        87.9         88.16        8821
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+abstract             94.55        77.37        75.82        76.59        1989
+authors              97.27        88.64        87.89        88.26        1998
+first_author         99.14        96.97        96.24        96.61        1996
+keywords             97.06        71.43        72.71        72.06        839
+title                97.09        87.97        87.09        87.53        1999
+
+all (micro avg.)     97.02        86.18        85.43        85.81        8821
+all (macro avg.)     97.02        84.48        83.95        84.21        8821
+
+===== Instance-level results =====
+
+Total expected instances:       1999
+Total correct instances:        39 (strict)
+Total correct instances:        726 (soft)
+Total correct instances:        1236 (Levenshtein)
+Total correct instances:        1071 (ObservedRatcliffObershelp)
+
+Instance-level recall:  1.95    (strict)
+Instance-level recall:  36.32   (soft)
+Instance-level recall:  61.83   (Levenshtein)
+Instance-level recall:  53.58   (RatcliffObershelp)
+
+======= Citation metadata =======
+
+Evaluation on 2000 random PDF files out of 1998 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.4         88.21        83.17        85.61        97116
+date                 98.87        91.71        86.23        88.88        97563
+doi                  99.13        70.87        83.8         76.79        16894
+first_author         99.32        95.1         89.59        92.26        97116
+inTitle              97.71        82.96        79.41        81.15        96363
+issue                99.61        94.35        91.87        93.1         30255
+page                 97.52        95.02        78.29        85.85        88534
+pmcid                99.95        66.38        86.12        74.97        807
+pmid                 99.87        70.07        85           76.81        2093
+title                97.99        84.95        83.52        84.23        92402
+volume               99.47        96.28        95.16        95.72        87646
+
+all (micro avg.)     98.89        89.9         85.28        87.53        706789
+all (macro avg.)     98.89        85.08        85.65        85.03        706789
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.56        89.37        84.26        86.74        97116
+date                 98.87        91.71        86.23        88.88        97563
+doi                  99.26        75.36        89.1         81.65        16894
+first_author         99.37        95.53        89.99        92.68        97116
+inTitle              98.98        92.38        88.43        90.36        96363
+issue                99.61        94.35        91.87        93.1         30255
+page                 97.52        95.02        78.29        85.85        88534
+pmcid                99.96        75.64        98.14        85.44        807
+pmid                 99.89        74.48        90.35        81.65        2093
+title                99.09        93.29        91.72        92.5         92402
+volume               99.47        96.28        95.16        95.72        87646
+
+all (micro avg.)     99.14        92.7         87.94        90.26        706789
+all (macro avg.)     99.14        88.49        89.41        88.6         706789
+
+
+==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              99.26        94.63        89.23        91.85        97116
+date                 98.87        91.71        86.23        88.88        97563
+doi                  99.32        77.61        91.77        84.1         16894
+first_author         99.39        95.67        90.13        92.82        97116
+inTitle              99.11        93.37        89.38        91.33        96363
+issue                99.61        94.35        91.87        93.1         30255
+page                 97.52        95.02        78.29        85.85        88534
+pmcid                99.96        75.64        98.14        85.44        807
+pmid                 99.89        74.48        90.35        81.65        2093
+title                99.46        96.1         94.49        95.29        92402
+volume               99.47        96.28        95.16        95.72        87646
+
+all (micro avg.)     99.26        94.03        89.2         91.55        706789
+all (macro avg.)     99.26        89.53        90.46        89.64        706789
+
+
+= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+authors              98.85        91.58        86.35        88.89        97116
+date                 98.87        91.71        86.23        88.88        97563
+doi                  99.28        76.05        89.93        82.41        16894
+first_author         99.32        95.15        89.64        92.31        97116
+inTitle              98.81        91.15        87.26        89.16        96363
+issue                99.61        94.35        91.87        93.1         30255
+page                 97.52        95.02        78.29        85.85        88534
+pmcid                99.95        66.38        86.12        74.97        807
+pmid                 99.87        70.07        85           76.81        2093
+title                99.38        95.45        93.85        94.64        92402
+volume               99.47        96.28        95.16        95.72        87646
+
+all (micro avg.)     99.18        93.07        88.29        90.62        706789
+all (macro avg.)     99.18        87.56        88.15        87.52        706789
+
+===== Instance-level results =====
+Total expected instances:               98732
+Total extracted instances:              97847
+Total correct instances:                43742 (strict)
+Total correct instances:                54712 (soft)
+Total correct instances:                58893 (Levenshtein)
+Total correct instances:                55623 (RatcliffObershelp)
+
+Instance-level precision:       44.7 (strict)
+Instance-level precision:       55.92 (soft)
+Instance-level precision:       60.19 (Levenshtein)
+Instance-level precision:       56.85 (RatcliffObershelp)
+
+Instance-level recall:  44.3    (strict)
+Instance-level recall:  55.41   (soft)
+Instance-level recall:  59.65   (Levenshtein)
+Instance-level recall:  56.34   (RatcliffObershelp)
+
+Instance-level f-score: 44.5 (strict)
+Instance-level f-score: 55.66 (soft)
+Instance-level f-score: 59.92 (Levenshtein)
+Instance-level f-score: 56.59 (RatcliffObershelp)
+
+Matching 1 :    79185
+
+Matching 2 :    4427
+
+Matching 3 :    4363
+
+Matching 4 :    2074
+
+Total matches : 90049
+
+======= Citation context resolution =======
+
+Total expected references:       98730 - 49.37 references per article
+Total predicted references:      97847 - 48.92 references per article
+
+Total expected citation contexts:        142727 - 71.36 citation contexts per article
+Total predicted citation contexts:       135786 - 67.89 citation contexts per article
+
+Total correct predicted citation contexts:       116711 - 58.36 citation contexts per article
+Total wrong predicted citation contexts:         19075 (wrong callout matching, callout missing in NLM, or matching with a bib. ref. not aligned with a bib.ref. in NLM)
+
+Precision citation contexts:     85.95
+Recall citation contexts:        81.77
+fscore citation contexts:        83.81
+
+======= Fulltext structures =======
+
+Evaluation on 2000 random PDF files out of 1998 PDF (ratio 1.0).
+
+======= Strict Matching ======= (exact matches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+availability_stmt    99.83        29.85        26.23        27.92        446
+figure_title         90.6         4.28         2.02         2.75         22974
+funding_stmt         98.46        3.76         25.37        6.55         745
+reference_citation   75.69        71           71.4         71.2         147335
+reference_figure     91.7         70.53        67.77        69.12        47978
+reference_table      98.18        47.96        83.14        60.83        5955
+section_title        94.78        72.69        69.72        71.17        32390
+table_title          98.2         4.25         2.8          3.38         3923
+
+all (micro avg.)     93.43        65.27        63.47        64.35        261746
+all (macro avg.)     93.43        38.04        43.56        39.12        261746
+
+
+======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
+
+===== Field-level results =====
+
+label                accuracy     precision    recall       f1           support
+
+availability_stmt    99.86        49.74        43.72        46.54        446
+figure_title         94.29        69.67        32.97        44.76        22974
+funding_stmt         98.33        3.96         26.71        6.9          745
+reference_citation   84.64        83.03        83.5         83.26        147335
+reference_figure     91.16        71.15        68.37        69.73        47978
+reference_table      98.05        48.4         83.91        61.39        5955
+section_title        95.07        76.58        73.45        74.98        32390
+table_title          98.8         50.99        33.62        40.52        3923
+
+all (micro avg.)     95.03        76.18        74.08        75.11        261746
+all (macro avg.)     95.03        56.69        55.78        53.51        261746
+
+===== Document-level ratio results =====
+
+label                accuracy     precision    recall       f1           support
+
+availability_stmt    65.77        83.94        87.89        85.87        446
+
+all (micro avg.)     65.77        83.94        87.89        85.87        446
+all (macro avg.)     65.77        83.94        87.89        85.87        446
+
+====================================================================================
