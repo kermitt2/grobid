@@ -30,6 +30,25 @@ At the moment, the flavored processes are available as follows:
 | Article lightweight structure                 | `article/light`     | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, and put everything else in the body                 | Simple model that can work with any document and bring the advantage of pdfalto processing which solves many issue with text ordering and column recognition. Limitation are that all noise not being part of the article, such as references, page numbers, head notes, and footnotes are also included in the body. |
 | Article lightweight structure with references | `article/light-ref` | `segmentation`, `header` | Simple process that extracts only title, authors, publication date and doi from the header, the references, and put everything else in the body | Variation of the `article/light` that includes the recognition of references. More versatile than `article/light` in the realm of variation of scientific articles, such as corrections, erratums, letters which may contain references.                                                                              |
 
+
+## Training the specialised flavor models  
+
+The training data for the flavors modes `article/light` and `article/light-ref` are following the same structure as the standard models. In other words the annotated training data for, e.g., the lightweight segmentation model with references, for articles, are following the guidelines as the standard grobid segmentation model. 
+The Grobid parser select automatically the right subset of labels to include. 
+However, this can be implemented at discretion of the user, so for example a flavor `sdo/ietf` for parsing standards documents for IETF, can be following their specific guidelines.
+
+For training the specialised models the same procedure as for the standard models is used, but the flavor is indicated in the training command, e.g. to train the segmentation model for the flavor `article/light`: 
+
+```shell
+./gradlew train_segmentation_article_light
+```
+
+or the header model for the flavor `article/light-ref`: 
+
+```shell
+./gradlew train_header_article_light_ref
+```
+
 ## Benchmarking
 
 The evaluation of the flavors is performed in the same way as the standard processing for scientific articles:
