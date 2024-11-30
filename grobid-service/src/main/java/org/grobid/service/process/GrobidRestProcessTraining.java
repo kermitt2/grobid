@@ -359,6 +359,11 @@ public class GrobidRestProcessTraining {
     public Response resultTraining(String token) {
         Response response = null;
         try {
+            // Validate the token to prevent directory traversal
+            if (token.contains("..") || token.contains("/") || token.contains("\\")) {
+                throw new GrobidServiceException("Invalid token", Status.BAD_REQUEST);
+            }
+
             // access report file under token subdirectory
             File home = GrobidProperties.getInstance().getGrobidHomePath();
             String tokenPath = home.getAbsolutePath() + "/training-history/" + token;
