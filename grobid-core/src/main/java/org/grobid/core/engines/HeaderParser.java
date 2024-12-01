@@ -106,7 +106,12 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after application of the segmentation model 
      */
-    public String processingHeaderSection(GrobidAnalysisConfig config, Document doc, BiblioItem resHeader, boolean serialize) {
+    public String processingHeaderSection(
+        GrobidAnalysisConfig config,
+        Document doc,
+        BiblioItem resHeader,
+        boolean serialize
+    ) {
         try {
             SortedSet<DocumentPiece> documentHeaderParts = doc.getDocumentPart(SegmentationLabels.HEADER);
             List<LayoutToken> tokenizations = doc.getTokenizations();
@@ -1060,7 +1065,10 @@ public class HeaderParser extends AbstractParser {
                 }*/
                 if (biblio.getJournal() == null)
                     biblio.setJournal(clusterContent);
-            }   
+            } else if (clusterLabel.equals(TaggingLabels.HEADER_OTHER)) {
+                biblio.addDiscardedPiece(clusterContent);
+                biblio.addDiscardedPieceTokens(cluster.concatTokens());
+            }
             /*else if (clusterLabel.equals(TaggingLabels.HEADER_INTRO)) {
                 return biblio;
             }*/

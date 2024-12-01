@@ -34,6 +34,8 @@ public class GrobidMainArgs {
 
 	private boolean addElementId = false;
 
+    private String modelFlavor = null;
+
 	/**
 	 * @return the path2grobidHome
 	 */
@@ -241,4 +243,11 @@ public class GrobidMainArgs {
 		segmentSentences = pSegmentSentences;
 	}
 
+    public String getModelFlavor() {
+        return modelFlavor;
+    }
+
+    public void setModelFlavor(String modelFlavor) {
+        this.modelFlavor = modelFlavor;
+    }
 }

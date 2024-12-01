@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
-import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
@@ -33,7 +32,6 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -58,19 +56,15 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Matcher;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
+import static org.grobid.core.engines.label.TaggingLabels.PARAGRAPH_LABEL;
 
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
@@ -111,14 +105,6 @@ public class FullTextParser extends AbstractParser {
         return processing(documentSource, flavor, config);
     }*/
 
-    public Document processingHeaderFunding(File inputPdf,
-                               GrobidAnalysisConfig config) throws Exception {
-        DocumentSource documentSource =
-            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
-                config.getPdfAssetPath() != null, true, false);
-        return processingHeaderFunding(documentSource, config);
-    }
-
     public Document processing(File inputPdf,
                                String md5Str,
                                GrobidAnalysisConfig config) throws Exception {
@@ -126,7 +112,7 @@ public class FullTextParser extends AbstractParser {
     }
 
 	public Document processing(File inputPdf,
-                               String flavor,
+                               Flavor flavor,
                                String md5Str,
 							   GrobidAnalysisConfig config) throws Exception {
 		DocumentSource documentSource =
@@ -135,6 +121,14 @@ public class FullTextParser extends AbstractParser {
         documentSource.setMD5(md5Str);
 		return processing(documentSource, flavor, config);
 	}
+
+    public Document processingHeaderFunding(File inputPdf,
+                                            GrobidAnalysisConfig config) throws Exception {
+        DocumentSource documentSource =
+            DocumentSource.fromPdf(inputPdf, config.getStartPage(), config.getEndPage(),
+                config.getPdfAssetPath() != null, true, false);
+        return processingHeaderFunding(documentSource, config);
+    }
 
     public Document processingHeaderFunding(File inputPdf,
                                String md5Str,
@@ -167,7 +161,7 @@ public class FullTextParser extends AbstractParser {
      * @return the document object with built TEI
      */
     public Document processing(DocumentSource documentSource,
-                               String flavor,
+                               Flavor flavor,
                                GrobidAnalysisConfig config) {
         if (tmpPath == null) {
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
@@ -177,12 +171,9 @@ public class FullTextParser extends AbstractParser {
                     tmpPath.getAbsolutePath() + "' does not exists.");
         }
 
-        Flavor flavorObject = null;
-        if (flavor != null && flavor.length()>0) 
-            flavorObject = Flavor.fromLabel(flavor); 
         try {
 			// general segmentation
-			Document doc = parsers.getSegmentationParser(flavorObject).processing(documentSource, config);
+			Document doc = parsers.getSegmentationParser(flavor).processing(documentSource, config);
 			SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
@@ -190,7 +181,7 @@ public class FullTextParser extends AbstractParser {
             Pair<String, LayoutTokenization> featSeg = null;
 
             // using the segmentation model to identify the header zones
-            parsers.getHeaderParser(flavorObject).processingHeaderSection(config, doc, resHeader, false);
+            parsers.getHeaderParser(flavor).processingHeaderSection(config, doc, resHeader, false);
 
             // The commented part below makes use of the PDF embedded metadata (the so-called XMP) if available 
             // as fall back to set author and title if they have not been found. 
@@ -277,13 +268,13 @@ public class FullTextParser extends AbstractParser {
                     }
                 } catch(Exception e) {
                     throw new GrobidException(
-                    "An exception occured while running consolidation on bibliographical references.", e);
+                    "An exception occurred while running consolidation on bibliographical references.", e);
                 }
             }
             doc.setBibDataSets(resCitations);
 
-			// full text processing
-			featSeg = getBodyTextFeatured(doc, documentBodyParts);
+            // full text processing
+            featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultBody = null;
 			LayoutTokenization layoutTokenization = null;
 			List<Figure> figures = null;
@@ -297,10 +288,52 @@ public class FullTextParser extends AbstractParser {
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
-                resultBody = label(bodytext);
+                if (flavor != null) {
+                    // To avoid loosing potential data, we add in the body also the part of the header
+                    // that was discarded.
 
-				// we apply now the figure and table models based on the fulltext labeled output
-				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
+                    String resultHeader = resHeader.getDiscardedPiecesTokens()
+                        .stream()
+                        .flatMap(ll -> ll.stream()
+                            .filter(l -> StringUtils.isNotBlank(l.getText()))
+                            .map(l -> l.getText() + "\t" + PARAGRAPH_LABEL)
+                        )
+                        .collect(Collectors.joining("\n"));
+
+                    List<LayoutToken> tokensHeader = resHeader.getDiscardedPiecesTokens()
+                        .stream()
+                        .flatMap(Collection::stream)
+                        .collect(Collectors.toList());
+
+                    // For the moment we put everything in a single paragraph
+                    resultBody = Arrays
+                        .stream(bodytext.split("\n"))
+                        .map(r -> r + "\t" + PARAGRAPH_LABEL)
+                        .collect(Collectors.joining("\n"));
+
+                    // Add I- prefix on the first label of the discarded pieces from the header
+                    String[] resultHeaderAsArray = resultHeader.split("\n");
+                    resultHeaderAsArray[0] = resultHeaderAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
+                    resultHeader = String.join("\n", resultHeaderAsArray);
+
+                    // Add I- prefix on the first label of the body
+                    String[] resultBodyAsArray = resultBody.split("\n");
+                    resultBodyAsArray[0] = resultBodyAsArray[0].replace(PARAGRAPH_LABEL, "I-" + PARAGRAPH_LABEL);
+                    resultBody = String.join("\n", resultBodyAsArray);
+
+                    resultBody = StringUtils.strip(resultHeader + "\n" + resultBody);
+                    List<LayoutToken> concatenatedTokenization = Stream
+                        .concat(tokensHeader.stream(), layoutTokenization.getTokenization().stream())
+                        .collect(Collectors.toList());
+                    layoutTokenization.setTokenization(concatenatedTokenization);
+
+
+                } else {
+                    resultBody = label(bodytext);
+                }
+
+                // we apply now the figure and table models based on the fulltext labeled output
+                figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Figure figure : figures) {
                     if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
@@ -309,8 +342,8 @@ public class FullTextParser extends AbstractParser {
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
                 }
-                
-				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
+
+                tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
                 // further parse the caption
                 for(Table table : tables) {
                     if ( CollectionUtils.isNotEmpty(table.getCaptionLayoutTokens()) ) {
@@ -325,7 +358,8 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
 
-				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+                equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
@@ -334,12 +368,12 @@ public class FullTextParser extends AbstractParser {
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
 			String resultAnnex = null;
-			List<LayoutToken> tokenizationsBody2 = null;
+			List<LayoutToken> tokensAnnex = null;
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
 				// if featSeg is null, it usually means that no body segment is found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
-				tokenizationsBody2 = featSeg.getRight().getTokenization();
+				tokensAnnex = featSeg.getRight().getTokenization();
 				resultAnnex = label(bodytext);
 				//System.out.println(rese);
 			}
@@ -354,7 +388,7 @@ public class FullTextParser extends AbstractParser {
             // final combination
             toTEI(doc, // document
 				resultBody, resultAnnex, // labeled data for body and annex
-				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
+				layoutTokenization, tokensAnnex, // tokenization for body and annex
 				resHeader, // header
 				figures, tables, equations, markerTypes,
 				config);
@@ -1114,6 +1148,14 @@ public class FullTextParser extends AbstractParser {
                                    String pathFullText,
                                    String pathTEI,
                                    int id) {
+        return createTraining(inputFile, pathFullText, pathTEI, id, null);
+    }
+
+    public Document createTraining(File inputFile,
+                                   String pathFullText,
+                                   String pathTEI,
+                                   int id,
+                                   Flavor flavor) {
         if (tmpPath == null)
             throw new GrobidResourceException("Cannot process pdf file, because temp path is null.");
         if (!tmpPath.exists()) {
@@ -1139,7 +1181,7 @@ public class FullTextParser extends AbstractParser {
             doc.produceStatistics();
 
             String fulltext = //getAllTextFeatured(doc, false);
-                    parsers.getSegmentationParser().getAllLinesFeatured(doc);
+                    parsers.getSegmentationParser(flavor).getAllLinesFeatured(doc);
             //List<LayoutToken> tokenizations = doc.getTokenizationsFulltext();
             List<LayoutToken> tokenizations = doc.getTokenizations();
 
@@ -1160,8 +1202,8 @@ public class FullTextParser extends AbstractParser {
             FileUtils.writeStringToFile(new File(outPathRawtext), rawtxt.toString(), StandardCharsets.UTF_8);
 
             if (isNotBlank(fulltext)) {
-                String rese = parsers.getSegmentationParser().label(fulltext);
-                StringBuffer bufferFulltext = parsers.getSegmentationParser().trainingExtraction(rese, tokenizations, doc);
+                String rese = parsers.getSegmentationParser(flavor).label(fulltext);
+                StringBuffer bufferFulltext = parsers.getSegmentationParser(flavor).trainingExtraction(rese, tokenizations, doc);
 
                 // write the TEI file to reflect the extact layout of the text as extracted from the pdf
                 writer = new OutputStreamWriter(new FileOutputStream(new File(pathTEI +
@@ -1175,7 +1217,7 @@ public class FullTextParser extends AbstractParser {
                 writer.close();
             }
 
-            doc = parsers.getSegmentationParser().processing(documentSource,
+            doc = parsers.getSegmentationParser(flavor).processing(documentSource,
                 GrobidAnalysisConfig.defaultInstance());
 
             // REFERENCE SEGMENTER MODEL
@@ -1379,7 +1421,7 @@ public class FullTextParser extends AbstractParser {
                         headerTokenizations.add(tokenizationsFull.get(i));
                     }
                 }
-                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser().getSectionHeaderFeatured(doc, documentHeaderParts);
+                Pair<String, List<LayoutToken>> featuredHeader = parsers.getHeaderParser(flavor).getSectionHeaderFeatured(doc, documentHeaderParts);
                 String header = featuredHeader.getLeft();
 
                 if ((header != null) && (header.trim().length() > 0)) {
@@ -1389,12 +1431,12 @@ public class FullTextParser extends AbstractParser {
                     writer.write(header + "\n");
                     writer.close();
 
-                    String rese = parsers.getHeaderParser().label(header);
+                    String rese = parsers.getHeaderParser(flavor).label(header);
                     BiblioItem resHeader = new BiblioItem();
-                    resHeader = parsers.getHeaderParser().resultExtraction(rese, headerTokenizations, resHeader);
+                    resHeader = parsers.getHeaderParser(flavor).resultExtraction(rese, headerTokenizations, resHeader);
 
                     // buffer for the header block
-                    StringBuilder bufferHeader = parsers.getHeaderParser().trainingExtraction(rese, headerTokenizations);
+                    StringBuilder bufferHeader = parsers.getHeaderParser(flavor).trainingExtraction(rese, headerTokenizations);
                     Language lang = LanguageUtilities.getInstance().runLanguageId(bufferHeader.toString());
                     if (lang != null) {
                         doc.setLanguage(lang.getLang());
@@ -2722,8 +2764,19 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
 
-            tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
-                    layoutTokenization, figures, tables, equations, markerTypes, doc, config);
+            tei = teiFormatter.toTEIBody(
+                tei,
+                reseBody,
+                resHeader,
+                resCitations,
+                layoutTokenization,
+                figures,
+                tables,
+                equations,
+                markerTypes,
+                doc,
+                config
+            );
 
             tei.append("\t\t<back>\n");
 

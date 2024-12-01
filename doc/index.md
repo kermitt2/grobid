@@ -25,6 +25,8 @@
 
 * [GROBID configuration](Configuration.md)
 
+* [GROBID specialized processes](Grobid-specialized-processes.md)
+
 * [Troubleshooting and known issues](Troubleshooting.md)
 
 * [Use Grobid library in third party Java applications](Grobid-java-library.md)

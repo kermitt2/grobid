@@ -40,7 +40,7 @@ public class TEIHeaderSaxParser extends DefaultHandler {
     private List<String> ignoredTags = Arrays.asList("location", "version", "web", "degree", "page", "title", "phone", "publisher");  
 
     public TEIHeaderSaxParser() {
-        labeled = new ArrayList<String>();
+        labeled = new ArrayList<>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -65,9 +65,9 @@ public class TEIHeaderSaxParser extends DefaultHandler {
         return labeled;
     }
 
-    public void endElement(java.lang.String uri,
-                           java.lang.String localName,
-                           java.lang.String qName) throws SAXException {
+    public void endElement(String uri,
+                           String localName,
+                           String qName) throws SAXException {
         if (endTags.contains(qName)) {
             writeData();
             accumulator.setLength(0);

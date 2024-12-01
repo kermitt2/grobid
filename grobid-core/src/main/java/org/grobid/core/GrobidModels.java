@@ -11,7 +11,6 @@ import static org.grobid.core.engines.EngineParsers.LOGGER;
 
 /**
  * This enum class acts as a registry for all Grobid models.
- *
  */
 public enum GrobidModels implements GrobidModel {
 
@@ -20,7 +19,8 @@ public enum GrobidModels implements GrobidModel {
 
     AFFILIATION_ADDRESS("affiliation-address"),
     SEGMENTATION("segmentation"),
-    SEGMENTATION_LIGHT("segmentation/light"),
+    SEGMENTATION_ARTICLE_LIGHT("segmentation/article/light"),
+    SEGMENTATION_ARTICLE_LIGHT_REF("segmentation/article/light-ref"),
     SEGMENTATION_SDO_IETF("segmentation/sdo/ietf"),
     SEGMENTATION_SDO_3GPP("segmentation/sdo/3gpp"),
     CITATION("citation"),
@@ -36,7 +36,8 @@ public enum GrobidModels implements GrobidModel {
     FIGURE("figure"),
     TABLE("table"),
     HEADER("header"),
-    HEADER_LIGHT("header/light"),
+    HEADER_ARTICLE_LIGHT("header/article/light"),
+    HEADER_ARTICLE_LIGHT_REF("header/article/light-ref"),
     HEADER_SDO_3GPP("header/sdo/3gpp"),
     HEADER_SDO_IETF("header/sdo/ietf"),
     NAMES_CITATION("name/citation"),
@@ -64,23 +65,29 @@ public enum GrobidModels implements GrobidModel {
     //I cannot declare it before
     public static final String DUMMY_FOLDER_LABEL = "none";
 
-    // Collections are dedicated models variant, but using the same base parser.
+    // Flavors are dedicated models variant, but using the same base parser.
     // This is used in particular for scientific or technical documents like standards (SDO) 
     // which have a particular overall zoning and/or header, while the rest of the content 
     // is similar to other general technical and scientific document
     public enum Flavor {
-        LIGHT("light"),
+        BLANK("blank"),
+        ARTICLE_LIGHT("article/light"),
+        ARTICLE_LIGHT_WITH_REFERENCES("article/light-ref"),
         _3GPP("sdo/3gpp"),
         IETF("sdo/ietf");
 
         public final String label;
- 
+
         private Flavor(String label) {
             this.label = label;
         }
 
         public String getLabel() {
             return label;
+        }
+
+        public String getPlainLabel() {
+            return label.replace("/", "_");
         }
 
         public static Flavor fromLabel(String text) {
@@ -91,8 +98,11 @@ public enum GrobidModels implements GrobidModel {
             }
             return null;
         }
-    };
 
+        public String toString() {
+            return getLabel();
+        }
+    }
 
     /**
      * Absolute path to the model.
@@ -145,7 +155,7 @@ public enum GrobidModels implements GrobidModel {
     public static GrobidModel getModelFlavor(GrobidModel model, Flavor flavor) {
         if (flavor == null) {
             return model;
-        } else 
+        } else
             return modelFor(model.toString() + "/" + flavor.getLabel().toLowerCase());
     }
 

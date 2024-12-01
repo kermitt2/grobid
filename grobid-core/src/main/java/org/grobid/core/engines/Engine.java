@@ -4,6 +4,7 @@ import nu.xom.Element;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.MutableTriple;
 import org.apache.commons.lang3.tuple.Pair;
+import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
 import org.grobid.core.document.DocumentSource;
@@ -118,7 +119,7 @@ public class Engine implements Closeable {
      * @throws IOException
      */
     public List<org.grobid.core.data.Date> processDate(String dateBlock) throws IOException {
-        List<org.grobid.core.data.Date> result = parsers.getDateParser().processing(dateBlock);
+        List<org.grobid.core.data.Date> result = parsers.getDateParser().process(dateBlock);
         return result;
     }
 
@@ -364,10 +365,9 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -427,10 +427,9 @@ public class Engine implements Closeable {
      * @param consolidateHeader the consolidation option allows GROBID to exploit Crossref web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param consolidateFunder the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
+     * @param consolidateFunders the consolidation option allows GROBID to exploit Crossref Funder Registry web services for improving header
      *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
      *                    metadata) or 2 (consolidate the citation and inject DOI only)
-     * @param result      bib result
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
@@ -541,7 +540,7 @@ public class Engine implements Closeable {
      */
     public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
         System.out.println(inputFile.getPath());
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id);
+        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, GrobidModels.Flavor.ARTICLE_LIGHT);
     }
 
     /**
@@ -560,14 +559,13 @@ public class Engine implements Closeable {
         return fullTextToTEIDoc(inputFile, null,null, config).getTei();
     }
 
-    public String fullTextToTEI(File inputFile, 
-                                String flavor,
+    public String fullTextToTEI(File inputFile,
+                                GrobidModels.Flavor flavor,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, null, config).getTei();
     }
 
     /**
-     *
      * //TODO: remove invalid JavaDoc once refactoring is done and tested (left for easier reference)
      * Parse and convert the current article into TEI, this method performs the
      * whole parsing and conversion process. If onlyHeader is true, than only
@@ -579,16 +577,16 @@ public class Engine implements Closeable {
      * @return the resulting structured document as a TEI string.
      */
     public String fullTextToTEI(File inputFile,
-                                String flavor,
+                                GrobidModels.Flavor flavor,
                                 String md5Str,
                                 GrobidAnalysisConfig config) throws Exception {
         return fullTextToTEIDoc(inputFile, flavor, md5Str, config).getTei();
     }
 
     public Document fullTextToTEIDoc(File inputFile,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     String md5Str,
-                                    GrobidAnalysisConfig config) throws Exception {
+                                     GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
         LOGGER.debug("Starting processing fullTextToTEI on " + inputFile);
@@ -605,7 +603,7 @@ public class Engine implements Closeable {
     }
 
     public Document fullTextToTEIDoc(DocumentSource documentSource,
-                                    String flavor,
+                                    GrobidModels.Flavor flavor,
                                     GrobidAnalysisConfig config) throws Exception {
         FullTextParser fullTextParser = parsers.getFullTextParser();
         Document resultDoc;
@@ -624,7 +622,7 @@ public class Engine implements Closeable {
      * traning data based on an existing model.
      *
      * @param directoryPath - the path to the directory containing PDF to be processed.
-     * @param resultPath    - the path to the directory where the results as XML files
+     * @param resultPath    - the path to the directory where the results as XML file
      *                      shall be written.
      * @param ind           - identifier integer to be included in the resulting files to
      *                      identify the training case. This is optional: no identifier
@@ -1221,4 +1219,48 @@ public class Engine implements Closeable {
     public static Engine getEngine(boolean preload) {
         return GrobidPoolingFactory.getEngineFromPool(preload);
     }
+
+
+    public String fullTextToBlank(File inputFile,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config).getTei();
+    }
+
+
+    public String fullTextToBlank(File inputFile,
+                                String md5Str,
+                                GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, md5Str, config).getTei();
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     String md5Str,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + inputFile);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(inputFile, md5Str, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + inputFile + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
+    public Document fullTextToBlankDoc(File inputFile,
+                                     GrobidAnalysisConfig config) throws Exception {
+        return fullTextToBlankDoc(inputFile, null, config);
+    }
+
+    public Document fullTextToBlankDoc(DocumentSource documentSource,
+                                     GrobidAnalysisConfig config) throws Exception {
+        FullTextBlankParser fullTextBlankParser = parsers.getFullTextBlankParser();
+        Document resultDoc;
+        LOGGER.debug("Starting processing fullTextToBlank on " + documentSource);
+        long time = System.currentTimeMillis();
+        resultDoc = fullTextBlankParser.process(documentSource, config);
+        LOGGER.debug("Ending processing fullTextToBlank on " + documentSource + ". Time to process: "
+            + (System.currentTimeMillis() - time) + "ms");
+        return resultDoc;
+    }
+
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="_PMC2804221"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<docTitle>
+	<titlePart>Crystal Structure of Glucagon-like Peptide-1 in Complex<lb/> with the Extracellular Domain of the Glucagon-like<lb/> Peptide-1 Receptor * □ S<lb/></titlePart>
+	</docTitle>
+
+	<note type="submission">Received for publication, June 17, 2009, and in revised form, September 21, 2009</note>
+
+	Published, JBC Papers in Press, 
+	<date>October 27, 2009,</date>
+
+	<idno>DOI 10.1074/jbc.M109.033829<lb/></idno>
+
+	<byline>
+	<docAuthor>Christina Rye Underwood ‡ § , Patrick Garibay ¶ , Lotte Bjerre Knudsen ʈ , Sven Hastrup**, Gü nther H. Peters §1 ,<lb/> Rainer Rudolph ‡ ‡ , and Steffen Reedtz-Runge § §2<lb/></docAuthor>
+	</byline>
+
+	From the Departments of
+	<byline>
+	<affiliation>‡ GLP-1 and Obesity Biology, ¶ Protein and Peptide Chemistry, ʈ Diabetes Biology and Pharmacology,<lb/>**Protein Expression, and § § Structure and Biophysical Chemistry, Novo Nordisk, </affiliation>
+	</byline>
+
+	<address>2760 Måløv, Denmark,</address>
+
+	the
+	<byline>
+	<affiliation>§ Department of<lb/> Chemistry, MEMPHYS Center for Biomembrane Physics, Technical University of Denmark,</affiliation>
+	</byline>
+
+	<address>2800 Kgs. Lyngby, Denmark,</address>
+
+	and the<lb/>
+	<byline>
+	<affiliation>‡ ‡ Institute for Biochemistry and Biotechnology, Martin Luther University Halle,</affiliation>
+	</byline>
+
+	<address>Wittenberg, 06120 Halle, Germany<lb/></address>
+
+	<div type="abstract">GLP-1 (glucagon-like peptide-1) is an incretin released from<lb/> intestinal L-cells in response to food intake. Activation of the<lb/> GLP-1 receptor potentiates the synthesis and release of insulin<lb/> from pancreatic ␤-cells in a glucose-dependent manner. The<lb/> GLP-1 receptor belongs to class B of the G-protein-coupled recep-<lb/>tors, a subfamily characterized by a large N-terminal extracellular<lb/> ligand binding domain. Exendin-4 and GLP-1 are 50% identical,<lb/> and exendin-4 is a full agonist with similar affinity and potency for<lb/> the GLP-1 receptor. We recently solved the crystal structure of the<lb/> GLP-1 receptor extracellular domain in complex with the compet-<lb/>itive antagonist exendin-4(9 -39). Interestingly, the isolated extra-<lb/>cellular domain binds exendin-4 with much higher affinity than the<lb/> endogenous agonist GLP-1. Here, we have solved the crystal struc-<lb/>ture of the extracellular domain in complex with GLP-1 to 2.1 Å<lb/> resolution. The structure shows that important hydrophobic<lb/> ligand-receptor interactions are conserved in agonist-and antago-<lb/>nist-bound forms of the extracellular domain, but certain residues<lb/> in the ligand-binding site adopt a GLP-1-specific conformation.<lb/> GLP-1 is a kinked but continuous ␣-helix from Thr 13 to Val 33 when<lb/> bound to the extracellular domain. We supplemented the crystal<lb/> structure with site-directed mutagenesis to link the structural<lb/> information of the isolated extracellular domain with the bind-<lb/>ing properties of the full-length receptor. The data support the<lb/> existence of differences in the binding modes of GLP-1 and<lb/> exendin-4 on the full-length GLP-1 receptor.<lb/></div>
+
+	<note type="funding">* This work was supported in part by a scholarship from Novo Nordisk A/S (to<lb/> C. R. U.), European Membrane Protein Consortium, the Federal State of<lb/> Saxony-Anhalt Grant 3324 A/0021 L, and the Deutsche Forschungsge-<lb/>meinshaft Grant SFRB 610/TP A11.<lb/> Author&apos;s Choice-Final version full access.<lb/> □ S The on-line version of this article (available at http://www.jbc.org) contains<lb/> supplemental Fig. S1.<lb/> The atomic coordinates and structure factors (code 3IOL) have been deposited in<lb/> the Protein Data Bank, Research Collaboratory for Structural Bioinformatics,<lb/> Rutgers University, New Brunswick, NJ (http://www.rcsb.org/).<lb/> 1 Supported by the Danish National Research Foundation via a grant to the<lb/> MEMPHYS Center of Biomembrane Physics.<lb/> </note>
+
+	2 To whom correspondence should be addressed:
+	<byline>
+	<affiliation>Novo Nordisk Park,<lb/></affiliation>
+	</byline>
+
+	<address>G8.S.439, DK-2760 Måløv, Denmark.</address>
+
+	Tel.: <phone>45-44434431</phone>; E-mail:
+	<email>sffr@<lb/> novonordisk.com</email>
+
+	.<lb/> 3 The abbreviations used are:
+	GLP-1R, GLP-1 receptor; GPCR, G protein-cou-<lb/>pled receptor; GIP, glucose-dependent insulinotropic polypeptide; PACAP,<lb/> pituitary adenylyl cyclase-activating polypeptide; PTH, parathyroid hor-<lb/>mone; ECD, extracellular N-terminal domain; TM domain, extracellular<lb/> loops and transmembrane ␣-helices.<lb/>
+
+	<reference>THE JOURNAL OF BIOLOGICAL CHEMISTRY VOL. 285, NO. 1, pp. 723-730, January 1, 2010<lb/></reference>
+
+	Author&apos;s Choice<lb/>
+	<note type="copyright">© 2010 by The American Society for Biochemistry and Molecular Biology, Inc.</note>
+
+	Printed in the U.S.A.<lb/>
+	<reference>JANUARY 1, 2010 • VOLUME 285 • NUMBER 1<lb/> JOURNAL OF BIOLOGICAL CHEMISTRY</reference>
+
+	<page>723</page>
+		</front>
+	</text>
+</tei>
