@@ -43,6 +43,9 @@ import static org.grobid.core.document.xml.XmlBuilderUtils.textNode;
 public class Table extends Figure {
 	private List<LayoutToken> contentTokens = new ArrayList<>();
 	private List<LayoutToken> fullDescriptionTokens = new ArrayList<>();
+
+    // Contains the raw layoutTokens from the fulltext model
+    private List<LayoutToken> rawLayoutTokens = new ArrayList<>();
 	private boolean goodTable = true;
 
     private StringBuilder note = null;
@@ -422,5 +425,13 @@ public class Table extends Figure {
 
     public String getTeiId() {
         return "tab_" + this.id;
+    }
+
+    public List<LayoutToken> getRawLayoutTokens() {
+        return rawLayoutTokens;
+    }
+
+    public void setRawLayoutTokens(List<LayoutToken> rawLayoutTokens) {
+        this.rawLayoutTokens = rawLayoutTokens;
     }
 }
