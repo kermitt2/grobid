@@ -56,15 +56,11 @@ public class LabelUtils {
             String[] pieces = line.split("\t");
             String label = pieces[pieces.length-1];
             if (label.equals("I-"+TaggingLabels.FIGURE.getLabel())) {
-                if (previousLabel == null) {
-                    continue;
-                } else if (previousLabel.equals("I-"+TaggingLabels.FIGURE.getLabel())) {
+                if (StringUtils.equals(previousLabel, "I-"+TaggingLabels.FIGURE.getLabel())) {
                     pieces[pieces.length-1] = TaggingLabels.FIGURE.getLabel();
                 }
             } else if (label.equals("I-"+TaggingLabels.TABLE.getLabel())) {
-                if (previousLabel == null) {
-                    continue;
-                } else if (previousLabel.equals("I-"+TaggingLabels.TABLE.getLabel())) {
+                if (StringUtils.equals(previousLabel, "I-"+TaggingLabels.TABLE.getLabel())) {
                     pieces[pieces.length-1] = TaggingLabels.TABLE.getLabel();
                 }
             }
