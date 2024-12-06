@@ -88,9 +88,6 @@ public class Figure {
     private List<BoundingBox> textArea;
     private List<LayoutToken> layoutTokens;
 
-    // Contains the raw layoutTokens from the fulltext model
-    protected List<LayoutToken> rawLayoutTokens = new ArrayList<>();
-
     // coordinates
     private int page = -1;
     private double y = 0.0;
@@ -576,11 +573,4 @@ public class Figure {
         this.uri = uri;
     }
 
-    public List<LayoutToken> getRawLayoutTokens() {
-        return rawLayoutTokens;
-    }
-
-    public void setRawLayoutTokens(List<LayoutToken> rawLayoutTokens) {
-        this.rawLayoutTokens = rawLayoutTokens;
-    }
 }

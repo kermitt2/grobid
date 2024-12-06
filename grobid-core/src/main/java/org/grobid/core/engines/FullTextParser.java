@@ -369,10 +369,10 @@ public class FullTextParser extends AbstractParser {
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
-            for (Figure badTable : badItems) {
+            for (Figure badItem : badItems) {
                 // Find the index of the first layoutToken of the table in the tokenization
-                List<LayoutToken> rawLayoutTokenTable = badTable.getRawLayoutTokens();
-                LayoutToken firstLayoutTokenTable = rawLayoutTokenTable.get(0);
+                List<LayoutToken> rawLayoutTokenTable = badItem.getLayoutTokens();
+                LayoutToken firstLayoutTokenItem = rawLayoutTokenTable.get(0);
 
 //                        final List<LayoutToken>  documentTokenization = layoutTokenization.getTokenization();
 
@@ -387,14 +387,14 @@ public class FullTextParser extends AbstractParser {
 //                            .orElse(-1);
 
                 List<Integer> candidateIndexes = IntStream.range(0, splitResult.size())
-                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
+                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenItem.getText())
                         && Iterables.getLast(splitResult.get(i)).equals("I-"+itemLabel))
                     .boxed()
                     .collect(Collectors.toList());
 
                 if (candidateIndexes.isEmpty()) {
                     candidateIndexes = IntStream.range(0, splitResult.size())
-                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
+                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenItem.getText())
                         && Iterables.getLast(splitResult.get(i)).equals(itemLabel))
                     .boxed()
                     .collect(Collectors.toList());
@@ -2289,7 +2289,7 @@ public class FullTextParser extends AbstractParser {
 
             for (Table result : localResults) {
                 List<LayoutToken> localTokenizationTable = result.getLayoutTokens();
-                result.setRawLayoutTokens(tokenizationTable);
+//                result.setRawLayoutTokens(tokenizationTable);
 
                 // block setting: we restrict to the tokenization of this particular table
                 SortedSet<Integer> blockPtrs = new TreeSet<>();
