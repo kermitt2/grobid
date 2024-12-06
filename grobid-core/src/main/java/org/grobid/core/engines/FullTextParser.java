@@ -412,11 +412,13 @@ public class FullTextParser extends AbstractParser {
                     .collect(Collectors.toList());
 
                 int resultIndexCandidate = -1;
-                if (tokensNoSpace.size() == 1){
+                if (candidateIndexes.isEmpty()){
+                    LOGGER.warn("Cannot find the candidate index for fixing the tables.");
+                } else if (candidateIndexes.size() == 1){
                     resultIndexCandidate = candidateIndexes.get(0);
                 } else {
                     for (int candidateIndex: candidateIndexes) {
-                        List<String> candidateTable = splitResult.subList(candidateIndex, candidateIndex + tokensNoSpace.size())
+                        List<String> candidateTable = splitResult.subList(candidateIndex, Math.min(candidateIndex + tokensNoSpace.size(), splitResult.size()))
                             .stream()
                             .map(i -> i.get(0))
                             .collect(Collectors.toList());
