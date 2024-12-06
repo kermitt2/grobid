@@ -327,11 +327,11 @@ public class Figure {
     }
 
     public boolean isCompleteForTEI() {
-        return (StringUtils.isAllBlank(header) || StringUtils.isNotEmpty(caption) || CollectionUtils.isNotEmpty(graphicObjects));
+        return (StringUtils.isNotBlank(header) || StringUtils.isNotBlank(caption) || CollectionUtils.isNotEmpty(graphicObjects));
     }
 
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
-        if (isCompleteForTEI()) {
+        if (!isCompleteForTEI()) {
             return null;
         }
         Element figureElement = XmlBuilderUtils.teiElement("figure");
