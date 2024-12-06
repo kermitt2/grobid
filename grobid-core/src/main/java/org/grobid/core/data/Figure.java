@@ -88,6 +88,9 @@ public class Figure {
     private List<BoundingBox> textArea;
     private List<LayoutToken> layoutTokens;
 
+    // Contains the raw layoutTokens from the fulltext model
+    private List<LayoutToken> rawLayoutTokens = new ArrayList<>();
+
     // coordinates
     private int page = -1;
     private double y = 0.0;
@@ -323,8 +326,12 @@ public class Figure {
         return "fig_" + this.id;
     }
 
+    public boolean isCompleteForTEI() {
+        return (StringUtils.isAllBlank(header) || StringUtils.isNotEmpty(caption) || CollectionUtils.isNotEmpty(graphicObjects));
+    }
+
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
-        if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption) && CollectionUtils.isEmpty(graphicObjects)) {
+        if (isCompleteForTEI()) {
             return null;
         }
         Element figureElement = XmlBuilderUtils.teiElement("figure");
@@ -567,5 +574,13 @@ public class Figure {
 
     public void setUri(URI uri) {
         this.uri = uri;
+    }
+
+    public List<LayoutToken> getRawLayoutTokens() {
+        return rawLayoutTokens;
+    }
+
+    public void setRawLayoutTokens(List<LayoutToken> rawLayoutTokens) {
+        this.rawLayoutTokens = rawLayoutTokens;
     }
 }

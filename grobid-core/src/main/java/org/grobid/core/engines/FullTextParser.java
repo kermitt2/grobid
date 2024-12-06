@@ -37,12 +37,7 @@ import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
-import org.grobid.core.utilities.LanguageUtilities;
-import org.grobid.core.utilities.TextUtilities;
-import org.grobid.core.utilities.KeyGen;
-import org.grobid.core.utilities.LayoutTokensUtil;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.Consolidation;
+import org.grobid.core.utilities.*;
 import org.grobid.core.utilities.matching.ReferenceMarkerMatcher;
 import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
@@ -72,6 +67,7 @@ import java.util.stream.IntStream;
 import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
+import static org.grobid.core.utilities.LabelUtils.postProcessFullTextLabeledText;
 
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
@@ -260,7 +256,7 @@ public class FullTextParser extends AbstractParser {
 			List<Table> tables = null;
 			List<Equation> equations = null;
 			if (featSeg != null && isNotBlank(featSeg.getLeft())) {
-				// if featSeg is null, it usually means that no body segment is found in the
+				// if featSeg is null, it usually means that the fulltext body is not found in the
 				// document segmentation
 				String bodytext = featSeg.getLeft();
 				layoutTokenization = featSeg.getRight();
@@ -269,7 +265,7 @@ public class FullTextParser extends AbstractParser {
 
                 resultBody = label(bodytext);
                 //Correct subsequent I-<figure> or I-<table>
-                resultBody = adjustInvalidSequenceOfStartLabels(resultBody);
+                resultBody = LabelUtils.adjustInvalidSequenceOfStartLabels(resultBody);
 
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
@@ -282,6 +278,17 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
 
+                List<Figure> badFigures = figures.stream()
+                    .filter(f -> !f.isCompleteForTEI())
+                    .collect(Collectors.toList());
+
+                LOGGER.warn("Identified bad figures: " + badFigures.size());
+                resultBody = revertResultsForBadItems(badFigures, resultBody, TaggingLabels.FIGURE_LABEL);
+
+                figures = figures.stream()
+                    .filter(f -> !badFigures.contains(f))
+                    .collect(Collectors.toList());
+
 				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
 
                 //We deal with tables considered bad by reverting them as <paragraph>, to reduce the risk them to be
@@ -290,117 +297,14 @@ public class FullTextParser extends AbstractParser {
                 //TODO: double check the way the tables are validated
 
                 List<Table> badTables = tables.stream()
-                    .filter(t -> !t.isGoodTable())
+                    .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
-                if (CollectionUtils.isNotEmpty(badTables)) {
-                    List<List<String>> splitResult = Arrays.stream(resultBody.split("\n"))
-                        .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
-                        .collect(Collectors.toList());
-
-                    for (Table badTable : badTables) {
-                        // Find the index of the first layoutToken of the table in the tokenization
-                        List<LayoutToken> rawLayoutTokenTable = badTable.getRawLayoutTokens();
-                        LayoutToken firstLayoutTokenTable = rawLayoutTokenTable.get(0);
-
-                        final List<LayoutToken>  documentTokenization = layoutTokenization.getTokenization();
-
-                        int tokenIndex = IntStream.range(0, documentTokenization.size())
-                            .filter(i -> {
-                                LayoutToken l = documentTokenization.get(i);
-                                return l.getText().equals(firstLayoutTokenTable.getText())
-                                    && l.getPage() == firstLayoutTokenTable.getPage()
-                                    && l.getOffset() == firstLayoutTokenTable.getOffset();
-                            })
-                            .findFirst()
-                            .orElse(-1);
-
-                        System.out.println(tokenIndex);
-
-                        List<Integer> candidateIndexes = IntStream.range(0, splitResult.size())
-                            .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
-                                && Iterables.getLast(splitResult.get(i)).equals("I-<table>"))
-                            .boxed()
-                            .collect(Collectors.toList());
-
-                        if (candidateIndexes.isEmpty()) {
-                            candidateIndexes = IntStream.range(0, splitResult.size())
-                            .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
-                                && Iterables.getLast(splitResult.get(i)).equals("<table>"))
-                            .boxed()
-                            .collect(Collectors.toList());
-                            if (candidateIndexes.isEmpty()) {
-                                LOGGER.info("Cannot find the candidate index for fixing the tables.");
-                                continue;
-                            }
-                        }
-
-                        // Need to match with the rest
-                        List<String> tokensNoSpace = rawLayoutTokenTable.stream()
-                            .map(LayoutToken::getText)
-                            .map(StringUtils::strip)
-                            .filter(StringUtils::isNotBlank)
-                            .collect(Collectors.toList());
-
-                        int resultIndexCandidate = -1;
-                        if (tokensNoSpace.size() == 1){
-                            resultIndexCandidate = candidateIndexes.get(0);
-                        } else {
-                            for (int candidateIndex: candidateIndexes) {
-                                List<String> candidateTable = splitResult.subList(candidateIndex, candidateIndex + tokensNoSpace.size())
-                                    .stream()
-                                    .map(i -> i.get(0))
-                                    .collect(Collectors.toList());
-
-                                String candidateTableText = String.join("", candidateTable);
-                                String tokensText = String.join("", tokensNoSpace);
-
-                                if (candidateTableText.equals(tokensText)) {
-                                    resultIndexCandidate = candidateIndex;
-                                    break;
-                                }
-                            }
-                        }
-
-                        if (resultIndexCandidate > -1) {
-                            boolean first = true;
-                            for (int i = resultIndexCandidate;i < resultIndexCandidate + tokensNoSpace.size(); i++) {
-                                List<String> line = splitResult.get(i);
-                                String label = Iterables.getLast(line);
-                                if (first) {
-                                    first = false;
-                                } else {
-                                    if (label.startsWith("I-")) {
-                                        break;
-                                    }
-                                }
-                                line.set(line.size() - 1, label.replace("<table>", "<paragraph>"));
-                            }
-                        } else {
-                            System.out.println("Cannot find the result index candiate.");
-                        }
-
-
-//                         List<List<String>> badTableResult = Arrays.stream(badTable.getRawLayoutTokens().stream()
-//                            .map(LayoutToken::getText)
-//                            .toArray(String[]::new))
-//                            .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
-//                            .collect(Collectors.toList());
-//
-
-                    }
-
-                    String resultBody2 = splitResult.stream()
-                        .map(l -> String.join("\t", l))
-                        .collect(Collectors.joining("\n"));
-
-                    resultBody = resultBody2;
-
-                }
+                LOGGER.warn("Identified bad tables: " + badTables.size());
+                resultBody = revertResultsForBadItems(badTables, resultBody, TaggingLabels.TABLE_LABEL);
 
                 tables = tables.stream()
-                    .filter(Table::isGoodTable)
+                    .filter(t-> !badTables.contains(t))
                     .collect(Collectors.toList());
 
                 // further parse the caption
@@ -456,6 +360,109 @@ public class FullTextParser extends AbstractParser {
 		} catch (Exception e) {
             throw new GrobidException("An exception occurred while running Grobid.", e);
         }
+    }
+
+    private static String revertResultsForBadItems(List<? extends Figure> badItems, String resultBody, String itemLabel) {
+        //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
+        if (CollectionUtils.isNotEmpty(badItems)) {
+            List<List<String>> splitResult = Arrays.stream(resultBody.split("\n"))
+                .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
+                .collect(Collectors.toList());
+
+            for (Figure badTable : badItems) {
+                // Find the index of the first layoutToken of the table in the tokenization
+                List<LayoutToken> rawLayoutTokenTable = badTable.getRawLayoutTokens();
+                LayoutToken firstLayoutTokenTable = rawLayoutTokenTable.get(0);
+
+//                        final List<LayoutToken>  documentTokenization = layoutTokenization.getTokenization();
+
+//                        int tokenIndex = IntStream.range(0, documentTokenization.size())
+//                            .filter(i -> {
+//                                LayoutToken l = documentTokenization.get(i);
+//                                return l.getText().equals(firstLayoutTokenTable.getText())
+//                                    && l.getPage() == firstLayoutTokenTable.getPage()
+//                                    && l.getOffset() == firstLayoutTokenTable.getOffset();
+//                            })
+//                            .findFirst()
+//                            .orElse(-1);
+
+                List<Integer> candidateIndexes = IntStream.range(0, splitResult.size())
+                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
+                        && Iterables.getLast(splitResult.get(i)).equals("I-"+itemLabel))
+                    .boxed()
+                    .collect(Collectors.toList());
+
+                if (candidateIndexes.isEmpty()) {
+                    candidateIndexes = IntStream.range(0, splitResult.size())
+                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenTable.getText())
+                        && Iterables.getLast(splitResult.get(i)).equals(itemLabel))
+                    .boxed()
+                    .collect(Collectors.toList());
+                    if (candidateIndexes.isEmpty()) {
+                        LOGGER.info("Cannot find the candidate index for fixing the tables.");
+                        continue;
+                    }
+                }
+
+                // Need to match with the rest
+                List<String> tokensNoSpace = rawLayoutTokenTable.stream()
+                    .map(LayoutToken::getText)
+                    .map(StringUtils::strip)
+                    .filter(StringUtils::isNotBlank)
+                    .collect(Collectors.toList());
+
+                int resultIndexCandidate = -1;
+                if (tokensNoSpace.size() == 1){
+                    resultIndexCandidate = candidateIndexes.get(0);
+                } else {
+                    for (int candidateIndex: candidateIndexes) {
+                        List<String> candidateTable = splitResult.subList(candidateIndex, candidateIndex + tokensNoSpace.size())
+                            .stream()
+                            .map(i -> i.get(0))
+                            .collect(Collectors.toList());
+
+                        String candidateTableText = String.join("", candidateTable);
+                        String tokensText = String.join("", tokensNoSpace);
+
+                        if (candidateTableText.equals(tokensText)) {
+                            resultIndexCandidate = candidateIndex;
+                            break;
+                        }
+                    }
+                }
+
+                if (resultIndexCandidate > -1) {
+                    boolean first = true;
+                    for (int i = resultIndexCandidate;i < resultIndexCandidate + tokensNoSpace.size(); i++) {
+                        List<String> line = splitResult.get(i);
+                        String label = Iterables.getLast(line);
+                        if (first) {
+                            first = false;
+                        } else {
+                            if (label.startsWith("I-")) {
+                                break;
+                            }
+                        }
+                        line.set(line.size() - 1, label.replace(TaggingLabels.TABLE_LABEL, TaggingLabels.PARAGRAPH_LABEL));
+                    }
+                } else {
+                    LOGGER.warn("Cannot find the result index candidate.");
+                }
+//                         List<List<String>> badTableResult = Arrays.stream(badTable.getRawLayoutTokens().stream()
+//                            .map(LayoutToken::getText)
+//                            .toArray(String[]::new))
+//                            .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
+//                            .collect(Collectors.toList());
+//
+            }
+
+            String resultBody2 = splitResult.stream()
+                .map(l -> String.join("\t", l))
+                .collect(Collectors.joining("\n"));
+
+            resultBody = resultBody2;
+        }
+        return resultBody;
     }
 
 
@@ -640,84 +647,6 @@ public class FullTextParser extends AbstractParser {
         }
 
         return Pair.of(res, layoutTokenization);
-    }
-
-    /**
-     * Post-process text labeled by the fulltext model on chunks that are known to be text (no table, or figure)
-     * It converts table and figure labels to paragraph labels.
-     */
-    protected static String postProcessFullTextLabeledText(String fulltextLabeledText) {
-        if (fulltextLabeledText == null)
-            return null;
-        StringBuilder result = new StringBuilder();
-
-        String[] lines = fulltextLabeledText.split("\n");
-        String previousLabel = null;
-        for(int i=0; i<lines.length; i++) {
-            String line = lines[i];
-            if (line == null || line.trim().length() == 0)
-                continue;
-            String[] pieces = line.split("\t");
-            String label = pieces[pieces.length-1];
-            if (label.equals("I-"+TaggingLabels.FIGURE.getLabel()) || label.equals("I-"+TaggingLabels.TABLE.getLabel())) {
-                if (previousLabel == null || !previousLabel.endsWith(TaggingLabels.PARAGRAPH.getLabel())) {
-                    pieces[pieces.length-1] = "I-"+TaggingLabels.PARAGRAPH.getLabel();
-                } else {
-                    pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
-                }
-            } else if (label.equals(TaggingLabels.FIGURE.getLabel()) || label.equals(TaggingLabels.TABLE.getLabel())) {
-                pieces[pieces.length-1] = TaggingLabels.PARAGRAPH.getLabel();
-            }
-            for(int j=0; j<pieces.length; j++) {
-                if (j != 0)
-                    result.append("\t");
-                result.append(pieces[j]);
-            }
-            previousLabel = label;
-            result.append("\n");
-        }
-
-        return result.toString();
-    }
-
-    protected static String adjustInvalidSequenceOfStartLabels(String fulltextLabeledText) {
-        if (fulltextLabeledText == null)
-            return null;
-        StringBuilder result = new StringBuilder();
-
-        String[] lines = fulltextLabeledText.split("\n");
-        String previousLabel = null;
-        for(int i=0; i<lines.length; i++) {
-            String line = lines[i];
-            if (StringUtils.isBlank(line))
-                continue;
-            String[] pieces = line.split("\t");
-            String label = pieces[pieces.length-1];
-            if (label.equals("I-"+TaggingLabels.FIGURE.getLabel())) {
-                if (previousLabel == null) {
-                    continue;
-                } else if (previousLabel.equals("I-"+TaggingLabels.FIGURE.getLabel())) {
-                    pieces[pieces.length-1] = TaggingLabels.FIGURE.getLabel();
-                }
-            } else if (label.equals("I-"+TaggingLabels.TABLE.getLabel())) {
-                if (previousLabel == null) {
-                    continue;
-                } else if (previousLabel.equals("I-"+TaggingLabels.TABLE.getLabel())) {
-                    pieces[pieces.length-1] = TaggingLabels.TABLE.getLabel();
-                }
-            }
-
-            for(int j=0; j<pieces.length; j++) {
-                if (j != 0) {
-                    result.append("\t");
-                }
-                result.append(pieces[j]);
-            }
-            previousLabel = label;
-            result.append("\n");
-        }
-
-        return result.toString();
     }
 
 	static public Pair<String, LayoutTokenization> getBodyTextFeatured(Document doc,
