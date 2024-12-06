@@ -89,7 +89,7 @@ public class Figure {
     private List<LayoutToken> layoutTokens;
 
     // Contains the raw layoutTokens from the fulltext model
-    private List<LayoutToken> rawLayoutTokens = new ArrayList<>();
+    protected List<LayoutToken> rawLayoutTokens = new ArrayList<>();
 
     // coordinates
     private int page = -1;
