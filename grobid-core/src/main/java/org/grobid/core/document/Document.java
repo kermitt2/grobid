@@ -874,6 +874,7 @@ public class Document implements Serializable {
     public void postProcessTables() {
         for (Table table : tables) {
             if (!table.firstCheck()) {
+                table.setGoodTable(false);
                 continue;
             }
 
@@ -919,7 +920,7 @@ public class Document implements Serializable {
             table.getContentTokens().clear();
             table.getContentTokens().addAll(contentResult);
 
-            table.secondCheck();
+            table.setGoodTable(table.secondCheck());
         }
     }
 
