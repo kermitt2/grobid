@@ -374,18 +374,6 @@ public class FullTextParser extends AbstractParser {
                 List<LayoutToken> rawLayoutTokenTable = badItem.getLayoutTokens();
                 LayoutToken firstLayoutTokenItem = rawLayoutTokenTable.get(0);
 
-//                        final List<LayoutToken>  documentTokenization = layoutTokenization.getTokenization();
-
-//                        int tokenIndex = IntStream.range(0, documentTokenization.size())
-//                            .filter(i -> {
-//                                LayoutToken l = documentTokenization.get(i);
-//                                return l.getText().equals(firstLayoutTokenTable.getText())
-//                                    && l.getPage() == firstLayoutTokenTable.getPage()
-//                                    && l.getOffset() == firstLayoutTokenTable.getOffset();
-//                            })
-//                            .findFirst()
-//                            .orElse(-1);
-
                 List<Integer> candidateIndexes = IntStream.range(0, splitResult.size())
                     .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenItem.getText())
                         && Iterables.getLast(splitResult.get(i)).equals("I-"+itemLabel))
@@ -435,7 +423,7 @@ public class FullTextParser extends AbstractParser {
 
                 if (resultIndexCandidate > -1) {
                     boolean first = true;
-                    for (int i = resultIndexCandidate;i < resultIndexCandidate + tokensNoSpace.size(); i++) {
+                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + tokensNoSpace.size(), splitResult.size()); i++) {
                         List<String> line = splitResult.get(i);
                         String label = Iterables.getLast(line);
                         if (first) {
@@ -450,12 +438,6 @@ public class FullTextParser extends AbstractParser {
                 } else {
                     LOGGER.warn("Cannot find the result index candidate.");
                 }
-//                         List<List<String>> badTableResult = Arrays.stream(badTable.getRawLayoutTokens().stream()
-//                            .map(LayoutToken::getText)
-//                            .toArray(String[]::new))
-//                            .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
-//                            .collect(Collectors.toList());
-//
             }
 
             String resultBody2 = splitResult.stream()
