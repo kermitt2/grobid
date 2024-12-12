@@ -30,8 +30,8 @@ public class TEIFulltextSaxParser extends DefaultHandler {
     private Stack<String> currentTags = null;
 	private String currentTag = null;
 	
-    private boolean figureBlock = false;
-	private boolean tableBlock = false;
+    //private boolean figureBlock = false;
+	//private boolean tableBlock = false;
 
     private ArrayList<String> labeled = null; // store line by line the labeled data
 
@@ -68,10 +68,10 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 			}
         }
 
-        if (qName.equals("figure") || qName.equals("table")) {
+        /*if (qName.equals("figure") || qName.equals("table")) {
             figureBlock = false;
 			tableBlock = false;
-        }
+        }*/
     }
 
     public void startElement(String namespaceURI,
@@ -174,19 +174,19 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 					currentTag = "<section>";
                 }
             } 
-            else if (qName.equals("table")) {
+            /*else if (qName.equals("table")) {
                 currentTags.push("<table>");
 				currentTag = "<table>";
                 tableBlock = true;
                 figureBlock = false;
-            } 
+            }*/ 
 			else if (qName.equals("item")) {
                 currentTags.push("<paragraph>");
 				currentTag = "<paragraph>";
                 //currentTags.push("<item>");
                 //currentTag = "<item>";
             } 
-			else if (qName.equals("figure")) {
+			/*else if (qName.equals("figure")) {
 	            figureBlock = true;
                 tableBlock = false;
 	            int length = atts.getLength();
@@ -218,7 +218,7 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 	                currentTags.push("<figure>");
 					currentTag = "<figure>";
 				}
-	        } 
+	        }*/
 			else if (qName.equals("other")) {
                 currentTags.push("<other>");
 				currentTag = "<other>";
@@ -238,10 +238,11 @@ public class TEIFulltextSaxParser extends DefaultHandler {
 
     private void writeData(String qName, boolean pop) {
         if ( (qName.equals("other")) || (qName.equals("p")) || 
-                (qName.equals("ref")) || (qName.equals("head")) || (qName.equals("figure")) || 
+                (qName.equals("ref")) || (qName.equals("head")) || 
                 (qName.equals("paragraph")) ||
-                (qName.equals("div")) || //(qName.equals("figDesc")) ||
-                (qName.equals("table")) || //(qName.equals("trash")) ||
+                (qName.equals("div")) || 
+                //(qName.equals("figDesc")) ||
+                //(qName.equals("trash")) ||
                 (qName.equals("formula")) || (qName.equals("item")) || (qName.equals("label"))
                 ) {
 			if (currentTag == null) {
@@ -255,12 +256,12 @@ public class TEIFulltextSaxParser extends DefaultHandler {
             }
 
 			// adjust tag (conservative)
-			if (tableBlock) {
+			/*if (tableBlock) {
 				currentTag = "<table>";
 			}
 			else if (figureBlock) {
 				currentTag = "<figure>";
-			}
+			}*/
 
             String text = getText();
             // we segment the text
