@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<tei xml:space="preserve">
+	<teiHeader>
+		<fileDesc xml:id="XP015133675"/>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+<lb/>
+	<date type="publication">server date 20190710</date>; <date type="download">downloaded by EPO on 20190711<lb/></date> 
+
+	<note type="other">Internet Research Task Force (IRTF)<lb/></note>
+
+	M. Mosko<lb/> 
+
+	<note type="document_type">Request for Comments</note>: 
+
+	<idno>8609<lb/></idno> 
+
+	PARC, Inc.<lb/> Category: Experimental<lb/> I. Solis<lb/>
+	
+	<idno type="ISSN">ISSN: 2070-1721<lb/></idno>
+
+	LinkedIn<lb/> C. Wood<lb/> University of California Irvine<lb/>
+
+	<date type="publication">July 2019<lb/></date>
+
+	<docTitle>
+	<titlePart>Content-Centric Networking (CCNx) Messages in TLV Format<lb/></titlePart>
+	</docTitle>
+
+	<div type="abstract">Abstract<lb/> Content-Centric Networking (CCNx) is a network protocol that uses a<lb/> hierarchical name to forward requests and to match responses to<lb/> requests. This document specifies the encoding of CCNx messages in a<lb/> TLV packet format, including the TLV types used by each message<lb/> element and the encoding of each value. The semantics of CCNx<lb/> messages follow the encoding-independent CCNx Semantics<lb/> specification.<lb/> This document is a product of the Information Centric Networking<lb/> research group (ICNRG). The document received wide review among<lb/> ICNRG participants and has two full implementations currently in<lb/> active use, which have informed the technical maturity of the<lb/> protocol specification.<lb/></div>
+
+	<note type="other">Status of This Memo<lb/> This document is not an Internet Standards Track specification; it is<lb/> published for examination, experimental implementation, and<lb/> evaluation.<lb/> This document defines an Experimental Protocol for the Internet<lb/> community. This document is a product of the Internet Research Task<lb/> Force (IRTF). The IRTF publishes the results of Internet-related<lb/> research and development activities. These results might not be<lb/> suitable for deployment. This RFC represents the consensus of the<lb/> Information-Centric Networking Research Group of the Internet<lb/> Research Task Force (IRTF). Documents approved for publication by<lb/> the IRSG are not candidates for any level of Internet Standard; see<lb/> Section 2 of RFC 7841.<lb/> Information about the current status of this document, any errata,<lb/> and how to provide feedback on it may be obtained at<lb/> https://www.rfc-editor.org/info/rfc8609.<lb/></note>
+
+	Mosko, et al.<lb/> Experimental<lb/> [Page 1]<lb/> RFC 8609<lb/> CCNx TLV<lb/> July 2019<lb/> Copyright Notice<lb/>
+	
+	<note type="copyright">Copyright (c) 2019 IETF Trust and the persons identified as the<lb/> document authors. All rights reserved.<lb/> This document is subject to BCP 78 and the IETF Trust&apos;s Legal<lb/> Provisions Relating to IETF Documents<lb/> (https://trustee.ietf.org/license-info) in effect on the date of<lb/> publication of this document. Please review these documents<lb/> carefully, as they describe your rights and restrictions with respect<lb/> to this document.</note>
+
+	<byline>
+	<docAuthor>Marc Mosko<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>PARC, Inc.<lb/></affiliation>
+	</byline> 
+
+	<address>Palo Alto, California 94304<lb/> United States of America<lb/></address> 
+
+	<phone>Phone: +01 650-812-4405<lb/></phone>
+
+	<email>Email: mmosko@parc.com<lb/></email>
+
+	<byline>
+	<docAuthor>Ignacio Solis<lb/></docAuthor>
+	</byline>
+
+	<byline>
+	<affiliation>LinkedIn<lb/></affiliation>
+	</byline>
+
+	<address>Mountain View, California 94043<lb/> United States of America<lb/></address> 
+
+	<email>Email: nsolis@linkedin.com<lb/></email> 
+
+	<byline>
+	<docAuthor>Christopher A. Wood<lb/></docAuthor>
+	</byline> 
+
+	<byline>
+	<affiliation>University of California, Irvine<lb/></affiliation>
+	</byline> 
+
+	<address>Irvine, California 92697<lb/> United States of America<lb/></address> 
+
+	<phone>Phone: +01 315-806-5939<lb/></phone>
+
+	<email>Email: woodc1@uci.edu</email>
+
+		</front>
+	</text>
+</tei>

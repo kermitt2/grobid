@@ -16,6 +16,7 @@ import org.grobid.core.layout.*;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.LanguageUtilities;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.GrobidModels.Flavor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,6 +80,10 @@ public class Segmentation extends AbstractParser {
      */
     public Segmentation() {
         super(GrobidModels.SEGMENTATION);
+    }
+
+    public Segmentation(Flavor flavor) {
+        super(GrobidModels.getModelFlavor(GrobidModels.SEGMENTATION, flavor));
     }
     
     /**
