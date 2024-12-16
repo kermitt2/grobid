@@ -362,14 +362,14 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    private static String revertResultsForBadItems(List<? extends Figure> badItems, String resultBody, String itemLabel) {
+    private static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel) {
         //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
-        if (CollectionUtils.isNotEmpty(badItems)) {
+        if (CollectionUtils.isNotEmpty(badFiguresOrTables)) {
             List<List<String>> splitResult = Arrays.stream(resultBody.split("\n"))
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
-            for (Figure badItem : badItems) {
+            for (Figure badItem : badFiguresOrTables) {
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<LayoutToken> rawLayoutTokenTable = badItem.getLayoutTokens();
                 LayoutToken firstLayoutTokenItem = rawLayoutTokenTable.get(0);
