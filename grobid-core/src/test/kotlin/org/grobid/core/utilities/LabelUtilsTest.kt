@@ -3,9 +3,11 @@ package org.grobid.core.utilities
 import org.apache.commons.lang3.StringUtils
 import org.grobid.core.utilities.GrobidConfig.ModelParameters
 import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.CoreMatchers.not
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.BeforeAll
 import java.util.*
+import java.util.stream.Collectors
 import kotlin.test.Test
 
 
@@ -83,6 +85,204 @@ class LabelUtilsTest {
                     .count())
         )
     }
+
+//    fun testAdjustInvalidSequenceOfStartLabels() {
+//        val inputStream = javaClass.getResourceAsStream("bodyResults-sample.1.txt")
+//        val bodyResult = inputStream?.bufferedReader().use { it.readText() }
+//
+//        val postProcessed = LabelUtils.postProcessFullTextLabeledText(bodyResult)
+//    }
+
+    @Test
+    fun testAdjustInvalidSequenceOfStartLabels_noChangeNeeded_shouldReturnSameSequence() {
+        val bodyResult =
+            "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t11\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKEND\tLINEEND\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t11\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "014306\t014306\t0\t01\t014\t0143\t6\t06\t306\t4306\tBLOCKSTART\tLINESTART\tLINEINDENT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t8\t11\t0\tNUMBER\t0\t0\tI-<paragraph>\n" +
+                "-\t-\t-\t-\t-\t-\t-\t-\t-\t-\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tHYPHEN\t8\t11\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "4\t4\t4\t4\t4\t4\t4\t4\t4\t4\tBLOCKEND\tLINEEND\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t11\t0\tNUMBER\t1\t0\t<paragraph>\n" +
+                "FIG\tfig\tF\tFI\tFIG\tFIG\tG\tIG\tFIG\tFIG\tBLOCKSTART\tLINESTART\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t0\tI-<figure_marker>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t3\t0\tNUMBER\t0\t0\tI-<paragraph>\n" +
+                "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "average\taverage\ta\tav\tave\taver\te\tge\tage\trage\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "distances\tdistances\td\tdi\tdis\tdist\ts\tes\tces\tnces\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "between\tbetween\tb\tbe\tbet\tbetw\tn\ten\teen\tween\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "nucleons\tnucleons\tn\tnu\tnuc\tnucl\ts\tns\tons\teons\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "in\tin\ti\tin\tin\tin\tn\tin\tin\tin\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t1\t<paragraph>\n" +
+                "Be\tbe\tB\tBe\tBe\tBe\te\tBe\tBe\tBe\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEIN\tLINEINDENT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t1\t<paragraph>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINEIN\tLINEINDENT\tNEWFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t0\t<paragraph>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEEND\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tCOMMA\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t1\t<paragraph>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "3\t3\t3\t3\t3\t3\t3\t3\t3\t3\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t0\t<paragraph>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t1\t<paragraph>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tCOMMA\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t1\tI-<citation_marker>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\tI-<paragraph>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t0\t<paragraph>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t1\t<paragraph>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tCOMMA\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t1\t<paragraph>\n" +
+                "C\tc\tC\tC\tC\tC\tC\tC\tC\tC\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t1\t<paragraph>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t1\t0\t<paragraph>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "states\tstates\ts\tst\tsta\tstat\ts\tes\ttes\tates\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "solid\tsolid\ts\tso\tsol\tsoli\td\tid\tlid\tolid\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "lines\tlines\tl\tli\tlin\tline\ts\tes\tnes\tines\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "denote\tdenote\td\tde\tden\tdeno\te\tte\tote\tnote\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "average\taverage\ta\tav\tave\taver\te\tge\tage\trage\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "distances\tdistances\td\tdi\tdis\tdist\ts\tes\tces\tnces\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "r\tr\tr\tr\tr\tr\tr\tr\tr\tr\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tSAMEFONTSIZE\t0\t1\tNOCAPS\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "N\tn\tN\tN\tN\tN\tN\tN\tN\tN\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t1\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ",\t,\t,\t,\t,\t,\t,\t,\t,\t,\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t1\tALLCAP\tNODIGIT\t1\tCOMMA\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "N\tn\tN\tN\tN\tN\tN\tN\tN\tN\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t1\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "between\tbetween\tb\tbe\tbet\tbetw\tn\ten\teen\tween\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tNEWFONT\tHIGHERFONT\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "two\ttwo\tt\ttw\ttwo\ttwo\to\two\ttwo\ttwo\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "valence\tvalence\tv\tva\tval\tvale\te\tce\tnce\tence\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "nucleons\tnucleons\tn\tnu\tnuc\tnucl\ts\tns\tons\teons\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n"
+
+        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+
+        assertThat(postProcessed, `is`(bodyResult))
+    }
+
+    @Test
+    fun testAdjustInvalidSequenceOfStartLabels_singleChangeNeeded_shouldCorrectTheSequence() {
+        val bodyResult =
+            "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\tI-<citation_marker>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t0\t<figure>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t1\t<figure>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINESTART\tLINEINDENT\tNEWFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t0\t<figure>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "state\tstate\ts\tst\tsta\tstat\te\tte\tate\ttate\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\t<figure>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "panels\tpanels\tp\tpa\tpan\tpane\ts\tls\tels\tnels\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "a\ta\ta\ta\ta\ta\ta\ta\ta\ta\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "are\tare\ta\tar\tare\tare\te\tre\tare\tare\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n"
+
+
+        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+
+        assertThat(postProcessed, not(bodyResult))
+
+        val splitResult =
+            Arrays.stream(postProcessed.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+                .map<List<String>> { l: String ->
+                    Arrays.stream(
+                        l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    )
+                        .collect(Collectors.toList())
+                }
+                .collect(Collectors.toList())
+
+        val countStartingFigure = splitResult.stream()
+            .map { l: List<String> -> l.last() }
+            .filter { l: String -> l.equals("I-<figure>") }
+            .count()
+
+        assertThat(countStartingFigure, `is`(1))
+    }
+
+    @Test
+    fun testAdjustInvalidSequenceOfStartLabels_MultipleChangeNeeded_shouldCorrectTheSequence() {
+        val bodyResult =
+            "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<paragraph>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\tI-<citation_marker>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "and\tand\ta\tan\tand\tand\td\tnd\tand\tand\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "the\tthe\tt\tth\tthe\tthe\te\the\tthe\tthe\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINESTART\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t0\t<figure>\n" +
+                "+\t+\t+\t+\t+\t+\t+\t+\t+\t+\tBLOCKIN\tLINEEND\tALIGNEDLEFT\tNEWFONT\tLOWERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t1\t<figure>\n" +
+                "1\t1\t1\t1\t1\t1\t1\t1\t1\t1\tBLOCKIN\tLINESTART\tLINEINDENT\tNEWFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t0\t<figure>\n" +
+                "0\t0\t0\t0\t0\t0\t0\t0\t0\t0\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tNOCAPS\tALLDIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "state\tstate\ts\tst\tsta\tstat\te\tte\tate\ttate\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\t<figure>\n" +
+                "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "panels\tpanels\tp\tpa\tpan\tpane\ts\tls\tels\tnels\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "(\t(\t(\t(\t(\t(\t(\t(\t(\t(\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tOPENBRACKET\t9\t5\t0\tNUMBER\t0\t0\tI-<figure>\n" +
+                "a\ta\ta\ta\ta\ta\ta\ta\ta\ta\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t1\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                ")\t)\t)\t)\t)\t)\t)\t)\t)\t)\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tENDBRACKET\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "are\tare\ta\tar\tare\tare\te\tre\tare\tare\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\tI-<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n" +
+                "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n"
+
+
+        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+
+        assertThat(postProcessed, not(bodyResult))
+
+        val splitResult =
+            Arrays.stream<String>(postProcessed.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+                .map<List<String>> { l: String ->
+                    Arrays.stream<String>(
+                        l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    )
+                        .collect(Collectors.toList<String>())
+                }
+                .collect(Collectors.toList<List<String>>())
+
+        val countStartingFigure = splitResult.stream()
+            .map { l: List<String> -> l.last() }
+            .filter { l: String -> l.equals("I-<figure>") }
+            .count()
+
+        assertThat(countStartingFigure, `is`(2))
+
+        val countStartingTables = splitResult.stream()
+            .map { l: List<String> -> l.last() }
+            .filter { l: String -> l.equals("I-<table>") }
+            .count()
+
+        assertThat(countStartingTables, `is`(1))
+
+    }
+
 
     companion object {
         @JvmStatic
