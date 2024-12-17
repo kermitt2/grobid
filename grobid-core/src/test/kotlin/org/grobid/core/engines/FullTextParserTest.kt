@@ -1,10 +1,12 @@
 package org.grobid.core.engines
 
+import jnr.posix.BaseIovec.Layout
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.tuple.Triple
 import org.grobid.core.analyzers.GrobidAnalyzer
 import org.grobid.core.engines.label.TaggingLabels.TABLE_LABEL
 import org.grobid.core.factory.GrobidFactory
+import org.grobid.core.layout.LayoutToken
 import org.grobid.core.main.LibraryLoader
 import org.grobid.core.utilities.GrobidConfig
 import org.grobid.core.utilities.GrobidProperties
@@ -232,7 +234,7 @@ class FullTextParserTest {
 
     @Test
     fun testFindCandidates_shouldFindMultipleResults() {
-        // i need to prepare a sequence where there might be multiple matches,
+        // I need to prepare a sequence where there might be multiple matches,
         // and then verify that the sequence is correctly used for discrimination
         var sequence = "This article solves the problem where some of our interaction are fauly. " +
             "a 8 9 j 92j 3 3j 9 j 9j Table 1: The reconstruction of the national anthem " +
@@ -263,10 +265,10 @@ class FullTextParserTest {
         )
 
         val features = tokens.stream().map { it.text }.collect(Collectors.toList())
+        val wapitiResults = GrobidTestUtils.getWapitiResult(features, labels, "\t")
 
-        val wapitiResult = GrobidTestUtils.getWapitiResult(features, labels, "\t")
-        val labelledResultsAsList =
-            Arrays.stream(wapitiResult.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+        val wapitiResultsAsList =
+            Arrays.stream(wapitiResults.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
                 .map<List<String>> { l: String ->
                     Arrays.stream(
                         l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -275,10 +277,8 @@ class FullTextParserTest {
                 }
                 .collect(Collectors.toList())
 
-        println(wapitiResult)
-
         val table1Tokens = tokens.subList(25, 61)
-        val foundCandidateIndex = FullTextParser.findCandidateIndex(table1Tokens, labelledResultsAsList, TABLE_LABEL)
+        val foundCandidateIndex = FullTextParser.findCandidateIndex(table1Tokens, wapitiResultsAsList, TABLE_LABEL)
 
         assertThat(foundCandidateIndex, hasSize(3))
         assertThat(foundCandidateIndex.get(0), `is`(13))
@@ -286,4 +286,100 @@ class FullTextParserTest {
         assertThat(foundCandidateIndex.get(2), `is`(67))
     }
 
+    @Test
+    fun testConsolidateResultCandidateThroughSequence() {
+        //        var mockDocumentSource = createMock<DocumentSource>(DocumentSource::class.java)
+        //        var document = Document.createFromText("")
+        val sequence = "This article solves the problem where some of our interaction are fauly. " +
+            "a 8 9 j 92j 3 3j 9 j 9j Table 1: The reconstruction of the national anthem " +
+            "We are interested in the relation between certain information and " +
+            "a b b d 1 2 3 4 s 3 3 d9 Table 2: The relation between information and noise " +
+            "the related affectionality. " +
+            "a b b d 1 2 3 4 5 6 7 Table 3: The relation between homicides and donuts eating " +
+            "The relation between homicides and donuts eating is a very important one. "
+
+        val tokens = GrobidAnalyzer.getInstance().tokenizeWithLayoutToken(sequence)
+
+        // These triples made in following way: label, starting index (included), ending index (excluded)
+        val labels = listOf(
+            Triple.of("I-<paragraph>", 0, 1),
+            Triple.of("<paragraph>", 1, 24),
+            Triple.of("I-<table>", 25, 26),
+            Triple.of("<table>", 26, 61),
+            Triple.of("I-<paragraph>", 62, 63),
+            Triple.of("<paragraph>", 63, 81),
+            Triple.of("I-<table>", 82, 83),
+            Triple.of("<table>", 82, 118),
+            Triple.of("I-<paragraph>", 119, 120),
+            Triple.of("<paragraph>", 120, 129),
+            Triple.of("I-<table>", 130, 131),
+            Triple.of("<table>", 131, 171),
+            Triple.of("I-<paragraph>", 171, 172),
+            Triple.of("<paragraph>", 172, 195),
+        )
+
+        val features = tokens.stream().map { it.text }.collect(Collectors.toList())
+
+        val wapitiResults = GrobidTestUtils.getWapitiResult(features, labels, "\t")
+        val wapitiResultsAsList =
+            Arrays.stream(wapitiResults.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+                .map<List<String>> { l: String ->
+                    Arrays.stream(
+                        l.split("\t".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    )
+                        .collect(Collectors.toList())
+                }
+                .collect(Collectors.toList())
+
+        val table1Tokens = tokens.subList(25, 61)
+
+        val sequenceTokenWithoutSpacesTable1: List<String> = table1Tokens.stream()
+            .map { obj: LayoutToken -> obj.text }
+            .map { str: String? -> StringUtils.strip(str) }
+            .filter { cs: String? -> StringUtils.isNotBlank(cs) }
+            .collect(Collectors.toList())
+
+        val candidatesIndexes = Arrays.asList(
+            13, 42, 67
+        )
+        val consolidatedTable1ResultCandidateThroughSequence = FullTextParser.consolidateResultCandidateThroughSequence(
+            candidatesIndexes,
+            wapitiResultsAsList,
+            sequenceTokenWithoutSpacesTable1
+        )
+
+        assertThat(consolidatedTable1ResultCandidateThroughSequence, `is`(13))
+
+        val table2Tokens = tokens.subList(82, 118)
+
+        var sequenceTokenWithoutSpacesTable2: MutableList<String>? = table2Tokens.stream()
+            .map { obj: LayoutToken -> obj.text }
+            .map { str: String? -> StringUtils.strip(str) }
+            .filter { cs: String? -> StringUtils.isNotBlank(cs) }
+            .collect(Collectors.toList())
+
+        val consolidatedTable2ResultCandidateThroughSequence = FullTextParser.consolidateResultCandidateThroughSequence(
+            candidatesIndexes,
+            wapitiResultsAsList,
+            sequenceTokenWithoutSpacesTable2
+        )
+
+        assertThat(consolidatedTable2ResultCandidateThroughSequence, `is`(42))
+
+        val table3Tokens = tokens.subList(130, 171)
+
+        var sequenceTokenWithoutSpacesTable3: MutableList<String>? = table3Tokens.stream()
+            .map { obj: LayoutToken -> obj.text }
+            .map { str: String? -> StringUtils.strip(str) }
+            .filter { cs: String? -> StringUtils.isNotBlank(cs) }
+            .collect(Collectors.toList())
+
+        val consolidatedTable3ResultCandidateThroughSequence = FullTextParser.consolidateResultCandidateThroughSequence(
+            candidatesIndexes,
+            wapitiResultsAsList,
+            sequenceTokenWithoutSpacesTable3
+        )
+
+        assertThat(consolidatedTable3ResultCandidateThroughSequence, `is`(67))
+    }
 }

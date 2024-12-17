@@ -377,21 +377,22 @@ public class FullTextParser extends AbstractParser {
                     continue;
                 }
 
-                //A this point i have more than one candidate, which can be matched if the same first
+                // At this point i have more than one candidate, which can be matched if the same first
                 // token is repeated in the sequence. The next step is to find the matching figure/table
                 // using a large sequence 
 
-                List<String> sequenceTokenWithoutSpaces = layoutTokenItem.stream()
+                List<String> sequenceTokenItemWithoutSpaces = layoutTokenItem.stream()
                     .map(LayoutToken::getText)
                     .map(StringUtils::strip)
                     .filter(StringUtils::isNotBlank)
                     .collect(Collectors.toList());
 
-                int resultIndexCandidate = consolidateResultCandidateThroughSequence(candidateIndexes, labelledResultsAsList, sequenceTokenWithoutSpaces);
+                //TODO: reduce candidate indexes after matching one sequence
+                int resultIndexCandidate = consolidateResultCandidateThroughSequence(candidateIndexes, labelledResultsAsList, sequenceTokenItemWithoutSpaces);
 
                 if (resultIndexCandidate > -1) {
                     boolean first = true;
-                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + sequenceTokenWithoutSpaces.size(), labelledResultsAsList.size()); i++) {
+                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + sequenceTokenItemWithoutSpaces.size(), labelledResultsAsList.size()); i++) {
                         List<String> line = labelledResultsAsList.get(i);
                         String label = Iterables.getLast(line);
                         if (first) {
@@ -417,19 +418,19 @@ public class FullTextParser extends AbstractParser {
         return resultBody;
     }
 
-    static int consolidateResultCandidateThroughSequence(List<Integer> candidateIndexes, List<List<String>> splitResult, List<String> tokensNoSpace) {
+    static int consolidateResultCandidateThroughSequence(List<Integer> candidateIndexes, List<List<String>> splitResult, List<String> tokensNoSpaceItem) {
         int resultIndexCandidate = -1;
         if (candidateIndexes.size() == 1){
             resultIndexCandidate = candidateIndexes.get(0);
         } else {
             for (int candidateIndex: candidateIndexes) {
-                List<String> candidateTable = splitResult.subList(candidateIndex, Math.min(candidateIndex + tokensNoSpace.size(), splitResult.size()))
+                List<String> candidateTable = splitResult.subList(candidateIndex, Math.min(candidateIndex + tokensNoSpaceItem.size(), splitResult.size()))
                     .stream()
                     .map(i -> i.get(0))
                     .collect(Collectors.toList());
 
                 String candidateTableText = String.join("", candidateTable);
-                String tokensText = String.join("", tokensNoSpace);
+                String tokensText = String.join("", tokensNoSpaceItem);
 
                 if (candidateTableText.equals(tokensText)) {
                     resultIndexCandidate = candidateIndex;
