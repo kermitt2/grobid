@@ -371,7 +371,7 @@ public class FullTextParser extends AbstractParser {
             for (Figure badItem : badFiguresOrTables) {
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<LayoutToken> layoutTokenItem = badItem.getLayoutTokens();
-                List<Integer> candidateIndexes = findCandiateIndex(layoutTokenItem, labelledResultsAsList, itemLabel);
+                List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList, itemLabel);
                 if (candidateIndexes.isEmpty()) {
                     LOGGER.info("Cannot find the candidate index for fixing the tables.");
                     continue;
@@ -441,7 +441,7 @@ public class FullTextParser extends AbstractParser {
     }
 
     @NotNull
-    static List<Integer> findCandiateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel) {
+    static List<Integer> findCandidateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel) {
         LayoutToken firstLayoutTokenItem = layoutTokenItem.get(0);
 
         List<Integer> candidateIndexes = IntStream.range(0, labelledResultsAsList.size())

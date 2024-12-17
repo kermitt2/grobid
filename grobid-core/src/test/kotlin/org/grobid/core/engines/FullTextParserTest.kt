@@ -2,10 +2,7 @@ package org.grobid.core.engines
 
 import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang3.tuple.Triple
-import org.easymock.EasyMock.createMock
 import org.grobid.core.analyzers.GrobidAnalyzer
-import org.grobid.core.document.Document
-import org.grobid.core.document.DocumentSource
 import org.grobid.core.engines.label.TaggingLabels.TABLE_LABEL
 import org.grobid.core.factory.GrobidFactory
 import org.grobid.core.main.LibraryLoader
@@ -234,10 +231,7 @@ class FullTextParserTest {
     }
 
     @Test
-    fun testFindCandidates() {
-        var mockDocumentSource = createMock<DocumentSource>(DocumentSource::class.java)
-        var document = Document.createFromText("")
-
+    fun testFindCandidates_shouldFindMultipleResults() {
         // i need to prepare a sequence where there might be multiple matches,
         // and then verify that the sequence is correctly used for discrimination
         var sequence = "This article solves the problem where some of our interaction are fauly. " +
@@ -284,7 +278,7 @@ class FullTextParserTest {
         println(wapitiResult)
 
         val table1Tokens = tokens.subList(25, 61)
-        val foundCandidateIndex = FullTextParser.findCandiateIndex(table1Tokens, labelledResultsAsList, TABLE_LABEL)
+        val foundCandidateIndex = FullTextParser.findCandidateIndex(table1Tokens, labelledResultsAsList, TABLE_LABEL)
 
         assertThat(foundCandidateIndex, hasSize(3))
         assertThat(foundCandidateIndex.get(0), `is`(13))
