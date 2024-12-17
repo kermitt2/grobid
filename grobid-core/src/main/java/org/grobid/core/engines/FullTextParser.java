@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
 
-import org.apache.lucene.util.CollectionUtil;
 import org.grobid.core.GrobidModels;
 import org.grobid.core.data.*;
 import org.grobid.core.document.Document;
@@ -33,7 +32,6 @@ import org.grobid.core.features.FeatureFactory;
 import org.grobid.core.features.FeaturesVectorFulltext;
 import org.grobid.core.lang.Language;
 import org.grobid.core.lexicon.Lexicon;
-import org.grobid.core.lexicon.Lexicon.OrganizationRecord;
 import org.grobid.core.layout.*;
 import org.grobid.core.tokenization.TaggingTokenCluster;
 import org.grobid.core.tokenization.TaggingTokenClusteror;
@@ -43,6 +41,7 @@ import org.grobid.core.utilities.matching.EntityMatcherException;
 import org.grobid.core.engines.citations.CalloutAnalyzer;
 import org.grobid.core.engines.citations.CalloutAnalyzer.MarkerType;
 
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -362,69 +361,38 @@ public class FullTextParser extends AbstractParser {
         }
     }
 
-    private static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel) {
+    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel) {
         //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
         if (CollectionUtils.isNotEmpty(badFiguresOrTables)) {
-            List<List<String>> splitResult = Arrays.stream(resultBody.split("\n"))
+            List<List<String>> labelledResultsAsList = Arrays.stream(resultBody.split("\n"))
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
             for (Figure badItem : badFiguresOrTables) {
                 // Find the index of the first layoutToken of the table in the tokenization
-                List<LayoutToken> rawLayoutTokenTable = badItem.getLayoutTokens();
-                LayoutToken firstLayoutTokenItem = rawLayoutTokenTable.get(0);
-
-                List<Integer> candidateIndexes = IntStream.range(0, splitResult.size())
-                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                        && Iterables.getLast(splitResult.get(i)).equals("I-"+itemLabel))
-                    .boxed()
-                    .collect(Collectors.toList());
-
+                List<LayoutToken> layoutTokenItem = badItem.getLayoutTokens();
+                List<Integer> candidateIndexes = findCandiateIndex(layoutTokenItem, labelledResultsAsList, itemLabel);
                 if (candidateIndexes.isEmpty()) {
-                    candidateIndexes = IntStream.range(0, splitResult.size())
-                    .filter(i -> splitResult.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                        && Iterables.getLast(splitResult.get(i)).equals(itemLabel))
-                    .boxed()
-                    .collect(Collectors.toList());
-                    if (candidateIndexes.isEmpty()) {
-                        LOGGER.info("Cannot find the candidate index for fixing the tables.");
-                        continue;
-                    }
+                    LOGGER.info("Cannot find the candidate index for fixing the tables.");
+                    continue;
                 }
 
-                // Need to match with the rest
-                List<String> tokensNoSpace = rawLayoutTokenTable.stream()
+                //A this point i have more than one candidate, which can be matched if the same first
+                // token is repeated in the sequence. The next step is to find the matching figure/table
+                // using a large sequence 
+
+                List<String> sequenceTokenWithoutSpaces = layoutTokenItem.stream()
                     .map(LayoutToken::getText)
                     .map(StringUtils::strip)
                     .filter(StringUtils::isNotBlank)
                     .collect(Collectors.toList());
 
-                int resultIndexCandidate = -1;
-                if (candidateIndexes.isEmpty()){
-                    LOGGER.warn("Cannot find the candidate index for fixing the tables.");
-                } else if (candidateIndexes.size() == 1){
-                    resultIndexCandidate = candidateIndexes.get(0);
-                } else {
-                    for (int candidateIndex: candidateIndexes) {
-                        List<String> candidateTable = splitResult.subList(candidateIndex, Math.min(candidateIndex + tokensNoSpace.size(), splitResult.size()))
-                            .stream()
-                            .map(i -> i.get(0))
-                            .collect(Collectors.toList());
-
-                        String candidateTableText = String.join("", candidateTable);
-                        String tokensText = String.join("", tokensNoSpace);
-
-                        if (candidateTableText.equals(tokensText)) {
-                            resultIndexCandidate = candidateIndex;
-                            break;
-                        }
-                    }
-                }
+                int resultIndexCandidate = consolidateResultCandidateThroughSequence(candidateIndexes, labelledResultsAsList, sequenceTokenWithoutSpaces);
 
                 if (resultIndexCandidate > -1) {
                     boolean first = true;
-                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + tokensNoSpace.size(), splitResult.size()); i++) {
-                        List<String> line = splitResult.get(i);
+                    for (int i = resultIndexCandidate;i < Math.min(resultIndexCandidate + sequenceTokenWithoutSpaces.size(), labelledResultsAsList.size()); i++) {
+                        List<String> line = labelledResultsAsList.get(i);
                         String label = Iterables.getLast(line);
                         if (first) {
                             first = false;
@@ -440,13 +408,56 @@ public class FullTextParser extends AbstractParser {
                 }
             }
 
-            String resultBody2 = splitResult.stream()
+            String updatedResultBody = labelledResultsAsList.stream()
                 .map(l -> String.join("\t", l))
                 .collect(Collectors.joining("\n"));
 
-            resultBody = resultBody2;
+            resultBody = updatedResultBody;
         }
         return resultBody;
+    }
+
+    static int consolidateResultCandidateThroughSequence(List<Integer> candidateIndexes, List<List<String>> splitResult, List<String> tokensNoSpace) {
+        int resultIndexCandidate = -1;
+        if (candidateIndexes.size() == 1){
+            resultIndexCandidate = candidateIndexes.get(0);
+        } else {
+            for (int candidateIndex: candidateIndexes) {
+                List<String> candidateTable = splitResult.subList(candidateIndex, Math.min(candidateIndex + tokensNoSpace.size(), splitResult.size()))
+                    .stream()
+                    .map(i -> i.get(0))
+                    .collect(Collectors.toList());
+
+                String candidateTableText = String.join("", candidateTable);
+                String tokensText = String.join("", tokensNoSpace);
+
+                if (candidateTableText.equals(tokensText)) {
+                    resultIndexCandidate = candidateIndex;
+                    break;
+                }
+            }
+        }
+        return resultIndexCandidate;
+    }
+
+    @NotNull
+    static List<Integer> findCandiateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel) {
+        LayoutToken firstLayoutTokenItem = layoutTokenItem.get(0);
+
+        List<Integer> candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
+            .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
+                && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-"+ itemLabel))
+            .boxed()
+            .collect(Collectors.toList());
+
+        if (candidateIndexes.isEmpty()) {
+            candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
+            .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
+                && Iterables.getLast(labelledResultsAsList.get(i)).equals(itemLabel))
+            .boxed()
+            .collect(Collectors.toList());
+        }
+        return candidateIndexes;
     }
 
 
@@ -2062,10 +2073,10 @@ public class FullTextParser extends AbstractParser {
                 buffer.append("</ref>");
 
                 // Make sure that paragraph is closed when markers are at the end of it
-                if (!currentTag0.equals("<paragraph>") && 
-                    (!currentTag0.equals("<citation_marker>") || 
-                     !currentTag0.equals("<figure_marker>") || 
-                     !currentTag0.equals("<table_marker>") || 
+                if (!currentTag0.equals("<paragraph>") &&
+                    (!currentTag0.equals("<citation_marker>") ||
+                     !currentTag0.equals("<figure_marker>") ||
+                     !currentTag0.equals("<table_marker>") ||
                      !currentTag0.equals("<equation_marker>")
                      )
                     ) {
