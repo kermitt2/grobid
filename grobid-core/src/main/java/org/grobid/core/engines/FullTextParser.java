@@ -264,7 +264,7 @@ public class FullTextParser extends AbstractParser {
 
                 resultBody = label(bodytext);
                 //Correct subsequent I-<figure> or I-<table>
-                resultBody = LabelUtils.adjustInvalidSequenceOfStartLabels(resultBody);
+                resultBody = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(resultBody);
 
 				// we apply now the figure and table models based on the fulltext labeled output
 				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);

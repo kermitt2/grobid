@@ -94,7 +94,7 @@ class LabelUtilsTest {
 //    }
 
     @Test
-    fun testAdjustInvalidSequenceOfStartLabels_noChangeNeeded_shouldReturnSameSequence() {
+    fun testPostProcessFulltextFixInvalidTableOrFigure_noChangeNeeded_shouldReturnSameTableOrFigureSequence() {
         val bodyResult =
             "B\tb\tB\tB\tB\tB\tB\tB\tB\tB\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tHIGHERFONT\t0\t0\tALLCAP\tNODIGIT\t1\tNOPUNCT\t8\t11\t0\tNUMBER\t0\t0\t<paragraph>\n" +
                 ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKEND\tLINEEND\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t11\t0\tNUMBER\t0\t0\t<paragraph>\n" +
@@ -163,13 +163,13 @@ class LabelUtilsTest {
                 ".\t.\t.\t.\t.\t.\t.\t.\t.\t.\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tALLCAP\tNODIGIT\t1\tDOT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n" +
                 "The\tthe\tT\tTh\tThe\tThe\te\the\tThe\tThe\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tINITCAP\tNODIGIT\t0\tNOPUNCT\t8\t3\t0\tNUMBER\t0\t0\t<paragraph>\n"
 
-        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+        val postProcessed = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResult)
 
         assertThat(postProcessed, `is`(bodyResult))
     }
 
     @Test
-    fun testAdjustInvalidSequenceOfStartLabels_singleChangeNeeded_shouldCorrectTheSequence() {
+    fun testPostProcessFulltextFixInvalidTableOrFigure_singleChangeNeeded_shouldCorrectTheTableOrFigureSequence() {
         val bodyResult =
             "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<paragraph>\n" +
                 "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\tI-<citation_marker>\n" +
@@ -194,7 +194,7 @@ class LabelUtilsTest {
                 "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<figure>\n"
 
 
-        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+        val postProcessed = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResult)
 
         assertThat(postProcessed, not(bodyResult))
 
@@ -217,7 +217,7 @@ class LabelUtilsTest {
     }
 
     @Test
-    fun testAdjustInvalidSequenceOfStartLabels_MultipleChangeNeeded_shouldCorrectTheSequence() {
+    fun testPostProcessFulltextFixInvalidTableOrFigure_MultipleChangeNeeded_shouldCorrectTheTableOrFigureSequence() {
         val bodyResult =
             "of\tof\to\tof\tof\tof\tf\tof\tof\tof\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<paragraph>\n" +
                 "10\t10\t1\t10\t10\t10\t0\t10\t10\t10\tBLOCKIN\tLINEIN\tALIGNEDLEFT\tSAMEFONT\tLOWERFONT\t0\t0\tNOCAPS\tALLDIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t1\t1\tI-<citation_marker>\n" +
@@ -253,7 +253,7 @@ class LabelUtilsTest {
                 "calculated\tcalculated\tc\tca\tcal\tcalc\td\ted\tted\tated\tBLOCKIN\tLINEIN\tLINEINDENT\tSAMEFONT\tSAMEFONTSIZE\t0\t0\tNOCAPS\tNODIGIT\t0\tNOPUNCT\t9\t5\t0\tNUMBER\t0\t0\t<table>\n"
 
 
-        val postProcessed = LabelUtils.adjustInvalidSequenceOfStartLabels(bodyResult)
+        val postProcessed = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResult)
 
         assertThat(postProcessed, not(bodyResult))
 
