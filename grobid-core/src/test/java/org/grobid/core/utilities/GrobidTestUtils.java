@@ -10,6 +10,10 @@ import static org.junit.Assert.assertThat;
 
 public class GrobidTestUtils {
 
+    public static String getWapitiResult(List<String> features, List<Triple<String, Integer, Integer>> labels) {
+        return getWapitiResult(features, labels, " ");
+    }
+
     /**
      * Utility method to generate a hypotetical result from wapiti.
      * Useful for testing the extraction of the sequence labeling.
@@ -17,7 +21,7 @@ public class GrobidTestUtils {
      * @param labels label maps. A list of Triples, containing label (left), start_index (middle) and end_index exclusive (right)
      * @return a string containing the resulting features + labels returned by wapiti
      */
-    public static String getWapitiResult(List<String> features, List<Triple<String, Integer, Integer>> labels) {
+    public static String getWapitiResult(List<String> features, List<Triple<String, Integer, Integer>> labels, String separator) {
 
         List<String> labeled = new ArrayList<>();
         int idx = 0;
@@ -52,7 +56,7 @@ public class GrobidTestUtils {
             if (features.get(i) == null || features.get(i).startsWith(" ")) {
                 continue;
             }
-            sb.append(features.get(i)).append(" ").append(labeled.get(i)).append("\n");
+            sb.append(features.get(i)).append(separator).append(labeled.get(i)).append("\n");
         }
 
         return sb.toString();

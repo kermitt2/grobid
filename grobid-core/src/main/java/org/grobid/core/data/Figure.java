@@ -323,8 +323,12 @@ public class Figure {
         return "fig_" + this.id;
     }
 
+    public boolean isCompleteForTEI() {
+        return (StringUtils.isNotBlank(header) || StringUtils.isNotBlank(caption) || CollectionUtils.isNotEmpty(graphicObjects));
+    }
+
     public String toTEI(GrobidAnalysisConfig config, Document doc, TEIFormatter formatter, List<MarkerType> markerTypes) {
-        if (StringUtils.isEmpty(header) && StringUtils.isEmpty(caption) && CollectionUtils.isEmpty(graphicObjects)) {
+        if (!isCompleteForTEI()) {
             return null;
         }
         Element figureElement = XmlBuilderUtils.teiElement("figure");
@@ -568,4 +572,5 @@ public class Figure {
     public void setUri(URI uri) {
         this.uri = uri;
     }
+
 }
