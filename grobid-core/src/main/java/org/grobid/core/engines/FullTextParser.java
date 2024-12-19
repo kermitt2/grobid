@@ -337,7 +337,6 @@ public class FullTextParser extends AbstractParser {
 				annexTokens = featSeg.getRight().getTokenization();
 				annexResults = label(annexFeatures);
 //				System.out.println(annexResults);
-                System.out.println("bao");
 			}
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
@@ -374,10 +373,15 @@ public class FullTextParser extends AbstractParser {
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
+            long numberItems = labelledResultsAsList.stream()
+                .filter(r -> Iterables.getLast(r).startsWith("I-" + itemLabel))
+                .count();
+
             for (Figure badItem : badFiguresOrTables) {
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<LayoutToken> layoutTokenItem = badItem.getLayoutTokens();
-                List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList, itemLabel);
+                List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList,
+                    itemLabel, !(badFiguresOrTables.size() > numberItems));
                 if (candidateIndexes.isEmpty()) {
                     LOGGER.info("Cannot find the candidate index for fixing the tables.");
                     continue;
@@ -447,20 +451,37 @@ public class FullTextParser extends AbstractParser {
         return resultIndexCandidate;
     }
 
+    /**
+     * Find a set of candidates representing the indexes from the labelledResults which could correspond
+     * to the first token of the figure/table
+     *
+     * strict = True check the I-<table> or I-<figure> first and then the <table> or <figure> only if there are not candidates
+     * strict = False is usually necessary if there are more tables than I- token, this because a figure/table could be
+     * identified within the sequence initially provided by the fulltext model
+     *
+     */
     @NotNull
     static List<Integer> findCandidateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel) {
+        return findCandidateIndex(layoutTokenItem, labelledResultsAsList, itemLabel, true);
+    }
+
+    @NotNull
+    static List<Integer> findCandidateIndex(List<LayoutToken> layoutTokenItem, List<List<String>> labelledResultsAsList, String itemLabel, boolean strict) {
         LayoutToken firstLayoutTokenItem = layoutTokenItem.get(0);
 
         List<Integer> candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
             .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-"+ itemLabel))
+                && Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
             .boxed()
             .collect(Collectors.toList());
 
-        if (candidateIndexes.isEmpty()) {
+        if (candidateIndexes.isEmpty() || !strict) {
             candidateIndexes = IntStream.range(0, labelledResultsAsList.size())
             .filter(i -> labelledResultsAsList.get(i).get(0).equals(firstLayoutTokenItem.getText())
-                && Iterables.getLast(labelledResultsAsList.get(i)).equals(itemLabel))
+                && (
+                    Iterables.getLast(labelledResultsAsList.get(i)).equals(itemLabel)
+                    || Iterables.getLast(labelledResultsAsList.get(i)).equals("I-" + itemLabel))
+            )
             .boxed()
             .collect(Collectors.toList());
         }
@@ -2247,10 +2268,12 @@ public class FullTextParser extends AbstractParser {
 
     	// If there still an open figure
     	if (openFigure) {
-            while((tokenizationsFigure.size() > 0) &&
+            while(CollectionUtils.isNotEmpty(tokenizationsFigure) &&
                 (tokenizationsFigure.get(0).getText().equals("\n") ||
-                    tokenizationsFigure.get(0).getText().equals(" ")) )
+                    tokenizationsFigure.get(0).getText().equals(" "))
+            ) {
                 tokenizationsFigure.remove(0);
+            }
 
             // process the "accumulated" figure
             Pair<String,String> trainingData = parsers.getFigureParser()
