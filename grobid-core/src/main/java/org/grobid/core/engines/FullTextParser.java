@@ -277,18 +277,27 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
 
+                long numberFiguresFulltextModel = Arrays.stream(bodyResults.split("\n"))
+                    .filter(r -> r.endsWith("I-" + TaggingLabels.FIGURE_LABEL))
+                .count();
+
                 List<Figure> badFigures = figures.stream()
                     .filter(f -> !f.isCompleteForTEI())
                     .collect(Collectors.toList());
 
-                LOGGER.info("Identified bad figures: " + badFigures.size());
-                bodyResults = revertResultsForBadItems(badFigures, bodyResults, TaggingLabels.FIGURE_LABEL);
+                LOGGER.info("Number of figures badly formatted or incomplete we identified: " + badFigures.size());
+                bodyResults = revertResultsForBadItems(badFigures, bodyResults, TaggingLabels.FIGURE_LABEL,
+                     !(figures.size() > numberFiguresFulltextModel));
 
                 figures = figures.stream()
                     .filter(f -> !badFigures.contains(f))
                     .collect(Collectors.toList());
 
 				tables = processTables(bodyResults, bodyLayoutTokens.getTokenization(), doc);
+
+                long numberTablesFulltextModel = Arrays.stream(bodyResults.split("\n"))
+                    .filter(r -> r.endsWith("I-" + TaggingLabels.TABLE_LABEL))
+                .count();
 
                 //We deal with tables considered bad by reverting them as <paragraph>, to reduce the risk them to be
                 // dropped later on.
@@ -299,8 +308,9 @@ public class FullTextParser extends AbstractParser {
                     .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                LOGGER.info("Identified bad tables: " + badTables.size());
-                bodyResults = revertResultsForBadItems(badTables, bodyResults, TaggingLabels.TABLE_LABEL);
+                LOGGER.info("Number of tables badly formatted or incomplete we identified: " + badTables.size());
+                bodyResults = revertResultsForBadItems(badTables, bodyResults, TaggingLabels.TABLE_LABEL,
+                    !(tables.size() > numberTablesFulltextModel));
 
                 tables = tables.stream()
                     .filter(t-> !badTables.contains(t))
@@ -367,21 +377,21 @@ public class FullTextParser extends AbstractParser {
     }
 
     static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel) {
+        return revertResultsForBadItems(badFiguresOrTables, resultBody, itemLabel, true);
+    }
+
+    static String revertResultsForBadItems(List<? extends Figure> badFiguresOrTables, String resultBody, String itemLabel, boolean strict) {
         //LF: we update the resultBody sequence by reverting these tables as <paragraph> elements
         if (CollectionUtils.isNotEmpty(badFiguresOrTables)) {
             List<List<String>> labelledResultsAsList = Arrays.stream(resultBody.split("\n"))
                 .map(l -> Arrays.stream(l.split("\t")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
-            long numberItems = labelledResultsAsList.stream()
-                .filter(r -> Iterables.getLast(r).startsWith("I-" + itemLabel))
-                .count();
-
             for (Figure badItem : badFiguresOrTables) {
                 // Find the index of the first layoutToken of the table in the tokenization
                 List<LayoutToken> layoutTokenItem = badItem.getLayoutTokens();
                 List<Integer> candidateIndexes = findCandidateIndex(layoutTokenItem, labelledResultsAsList,
-                    itemLabel, !(badFiguresOrTables.size() > numberItems));
+                    itemLabel, strict);
                 if (candidateIndexes.isEmpty()) {
                     LOGGER.info("Cannot find the candidate index for fixing the tables.");
                     continue;
@@ -455,7 +465,8 @@ public class FullTextParser extends AbstractParser {
      * Find a set of candidates representing the indexes from the labelledResults which could correspond
      * to the first token of the figure/table
      *
-     * strict = True check the I-<table> or I-<figure> first and then the <table> or <figure> only if there are not candidates
+     * strict = True then it will check the items related to I-<table> or I-<figure> first
+     * and then the <table> or <figure> only if there are not candidates
      * strict = False is usually necessary if there are more tables than I- token, this because a figure/table could be
      * identified within the sequence initially provided by the fulltext model
      *
