@@ -249,25 +249,25 @@ public class FullTextParser extends AbstractParser {
 
 			// full text processing
 			featSeg = getBodyTextFeatured(doc, documentBodyParts);
-			String resultBody = null;
-			LayoutTokenization layoutTokenization = null;
+			String bodyResults = null;
+			LayoutTokenization bodyLayoutTokens = null;
 			List<Figure> figures = null;
 			List<Table> tables = null;
 			List<Equation> equations = null;
 			if (featSeg != null && isNotBlank(featSeg.getLeft())) {
 				// if featSeg is null, it usually means that the fulltext body is not found in the
 				// document segmentation
-				String bodytext = featSeg.getLeft();
-				layoutTokenization = featSeg.getRight();
+				String bodyText = featSeg.getLeft();
+				bodyLayoutTokens = featSeg.getRight();
 				//tokenizationsBody = featSeg.getB().getTokenization();
                 //layoutTokensBody = featSeg.getB().getLayoutTokens();
 
-                resultBody = label(bodytext);
+                bodyResults = label(bodyText);
                 //Correct subsequent I-<figure> or I-<table>
-                resultBody = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(resultBody);
+                bodyResults = LabelUtils.postProcessFulltextFixInvalidTableOrFigure(bodyResults);
 
 				// we apply now the figure and table models based on the fulltext labeled output
-				figures = processFigures(resultBody, layoutTokenization.getTokenization(), doc);
+				figures = processFigures(bodyResults, bodyLayoutTokens.getTokenization(), doc);
                 // further parse the caption
                 for(Figure figure : figures) {
                     if (CollectionUtils.isNotEmpty(figure.getCaptionLayoutTokens()) ) {
@@ -281,14 +281,14 @@ public class FullTextParser extends AbstractParser {
                     .filter(f -> !f.isCompleteForTEI())
                     .collect(Collectors.toList());
 
-                LOGGER.warn("Identified bad figures: " + badFigures.size());
-                resultBody = revertResultsForBadItems(badFigures, resultBody, TaggingLabels.FIGURE_LABEL);
+                LOGGER.info("Identified bad figures: " + badFigures.size());
+                bodyResults = revertResultsForBadItems(badFigures, bodyResults, TaggingLabels.FIGURE_LABEL);
 
                 figures = figures.stream()
                     .filter(f -> !badFigures.contains(f))
                     .collect(Collectors.toList());
 
-				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
+				tables = processTables(bodyResults, bodyLayoutTokens.getTokenization(), doc);
 
                 //We deal with tables considered bad by reverting them as <paragraph>, to reduce the risk them to be
                 // dropped later on.
@@ -299,8 +299,8 @@ public class FullTextParser extends AbstractParser {
                     .filter(t -> !(t.isCompleteForTEI() && t.validateTable()))
                     .collect(Collectors.toList());
 
-                LOGGER.warn("Identified bad tables: " + badTables.size());
-                resultBody = revertResultsForBadItems(badTables, resultBody, TaggingLabels.TABLE_LABEL);
+                LOGGER.info("Identified bad tables: " + badTables.size());
+                bodyResults = revertResultsForBadItems(badTables, bodyResults, TaggingLabels.TABLE_LABEL);
 
                 tables = tables.stream()
                     .filter(t-> !badTables.contains(t))
@@ -320,7 +320,7 @@ public class FullTextParser extends AbstractParser {
                     }
                 }
 
-				equations = processEquations(resultBody, layoutTokenization.getTokenization(), doc);
+				equations = processEquations(bodyResults, bodyLayoutTokens.getTokenization(), doc);
 			} else {
 				LOGGER.debug("Fulltext model: The featured body is empty");
 			}
@@ -328,30 +328,36 @@ public class FullTextParser extends AbstractParser {
 			// possible annexes (view as a piece of full text similar to the body)
 			documentBodyParts = doc.getDocumentPart(SegmentationLabels.ANNEX);
             featSeg = getBodyTextFeatured(doc, documentBodyParts);
-			String resultAnnex = null;
-			List<LayoutToken> tokenizationsBody2 = null;
+			String annexResults = null;
+			List<LayoutToken> annexTokens = null;
 			if (featSeg != null && isNotEmpty(trim(featSeg.getLeft()))) {
-				// if featSeg is null, it usually means that no body segment is found in the
+				// if featSeg is null, it usually means that no annex segment is found in the
 				// document segmentation
-				String bodytext = featSeg.getLeft();
-				tokenizationsBody2 = featSeg.getRight().getTokenization();
-				resultAnnex = label(bodytext);
-				//System.out.println(rese);
+				String annexFeatures = featSeg.getLeft();
+				annexTokens = featSeg.getRight().getTokenization();
+				annexResults = label(annexFeatures);
+//				System.out.println(annexResults);
+                System.out.println("bao");
 			}
 
             // post-process reference and footnote callout to keep them consistent (e.g. for example avoid that a footnote
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (resultBody != null)
-                markerTypes = postProcessCallout(resultBody, layoutTokenization);
+            if (bodyResults != null)
+                markerTypes = postProcessCallout(bodyResults, bodyLayoutTokens);
 
             // final combination
             toTEI(doc, // document
-				resultBody, resultAnnex, // labeled data for body and annex
-				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
+				bodyResults,
+                annexResults, // labeled data for body and annex
+                bodyLayoutTokens,
+                annexTokens, // tokenization for body and annex
 				resHeader, // header
-				figures, tables, equations, markerTypes,
+				figures,
+                tables,
+                equations,
+                markerTypes,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -2639,8 +2645,8 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
      * and body sections.
      */
     private void toTEI(Document doc,
-                       String reseBody,
-                       String reseAnnex,
+                       String bodyLabellingResult,
+                       String annexLabellingResult,
 					   LayoutTokenization layoutTokenization,
                        List<LayoutToken> tokenizationsAnnex,
                        BiblioItem resHeader,
@@ -2670,9 +2676,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(acknowledgmentStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null) {
-                    String local_tei = localResult.getLeft().toXML();
-                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                    annexStatements.add(local_tei);
+                    String localTei = localResult.getLeft().toXML();
+                    localTei = localTei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(localTei);
                 }
                 else {
                     annexStatements.add(acknowledgmentStmt.toString());
@@ -2681,14 +2687,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (localResult != null && localResult.getRight() != null) {
                     if (localResult.getRight().getLeft() != null) {
                         List<Funding> localFundings = localResult.getRight().getLeft();
-                        if (localFundings.size()>0) {
+                        if (CollectionUtils.isNotEmpty(localFundings)) {
                             fundings.addAll(localFundings);
                         }
                     }
 
                     if (localResult.getRight().getRight() != null) {
                         List<Affiliation> localAffiliations = localResult.getRight().getRight();
-                        if (localAffiliations.size()>0) {
+                        if (CollectionUtils.isNotEmpty(localAffiliations)) {
                             affiliations.addAll(localAffiliations);
                         }
                     }
@@ -2709,14 +2715,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                         resCitations,
                         config);
                 }
-                if (fundingStmt.length() > 0) {
+                if (StringUtils.isNotBlank(fundingStmt)) {
                     MutablePair<Element, MutableTriple<List<Funding>,List<Person>,List<Affiliation>>> localResult =
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                     if (localResult != null && localResult.getLeft() != null) {
-                        String local_tei = localResult.getLeft().toXML();
-                        local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                        annexStatements.add(local_tei);
+                        String localTEI = localResult.getLeft().toXML();
+                        localTEI = localTEI.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                        annexStatements.add(localTEI);
                     } else {
                         annexStatements.add(fundingStmt.toString());
                     }
@@ -2724,14 +2730,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     if (localResult != null && localResult.getRight() != null) {
                         if (localResult.getRight().getLeft() != null) {
                             List<Funding> localFundings = localResult.getRight().getLeft();
-                            if (localFundings.size()>0) {
+                            if (CollectionUtils.isNotEmpty(localFundings)) {
                                 fundings.addAll(localFundings);
                             }
                         }
 
                         if (localResult.getRight().getRight() != null) {
                             List<Affiliation> localAffiliations = localResult.getRight().getRight();
-                            if (localAffiliations.size()>0) {
+                            if (CollectionUtils.isNotEmpty(localAffiliations)) {
                                 affiliations.addAll(localAffiliations);
                             }
                         }
@@ -2752,9 +2758,9 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                     parsers.getFundingAcknowledgementParser().processingXmlFragment(fundingStmt.toString(), config);
 
                 if (localResult != null && localResult.getLeft() != null){
-                    String local_tei = localResult.getLeft().toXML();
-                    local_tei = local_tei.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
-                    annexStatements.add(local_tei);
+                    String localTEI = localResult.getLeft().toXML();
+                    localTEI = localTEI.replace(" xmlns=\"http://www.tei-c.org/ns/1.0\"", "");
+                    annexStatements.add(localTEI);
                 } else {
                     annexStatements.add(fundingStmt.toString());
                 }
@@ -2762,14 +2768,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 if (localResult != null && localResult.getRight() != null) {
                     if (localResult.getRight().getLeft() != null) {
                         List<Funding> localFundings = localResult.getRight().getLeft();
-                        if (localFundings.size()>0) {
+                        if (CollectionUtils.isNotEmpty(localFundings)) {
                             fundings.addAll(localFundings);
                         }
                     }
 
                     if (localResult.getRight().getRight() != null) {
                         List<Affiliation> localAffiliations = localResult.getRight().getRight();
-                        if (localAffiliations.size()>0) {
+                        if (CollectionUtils.isNotEmpty(localAffiliations)) {
                             affiliations.addAll(localAffiliations);
                         }
                     }
@@ -2778,7 +2784,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
 
             tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
 
-            tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
+            tei = teiFormatter.toTEIBody(tei, bodyLabellingResult, resHeader, resCitations,
                     layoutTokenization, figures, tables, equations, markerTypes, doc, config);
 
             tei.append("\t\t<back>\n");
@@ -2873,7 +2879,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(availabilityStmt.toString());
             }
 
-			tei = teiFormatter.toTEIAnnex(tei, reseAnnex, resHeader, resCitations,
+			tei = teiFormatter.toTEIAnnex(tei, annexLabellingResult, resHeader, resCitations,
 				tokenizationsAnnex, markerTypes, doc, config);
 
 			tei = teiFormatter.toTEIReferences(tei, resCitations, config);
