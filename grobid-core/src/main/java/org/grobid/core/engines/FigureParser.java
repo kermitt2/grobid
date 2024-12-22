@@ -74,7 +74,7 @@ class FigureParser extends AbstractParser {
                 //label should also go to head
                 figure.appendHeader(" " + clusterContent + " ");
             } else if (clusterLabel.equals(FIG_OTHER)) {
-
+                figure.addDiscardedPieceTokens(cluster.concatTokens());
             } else if (clusterLabel.equals(FIG_CONTENT)) {
                 figure.appendContent(clusterContent);
             } else {

@@ -344,6 +344,7 @@ public class Engine implements Closeable {
         int consolidate,
         boolean includeRawAffiliations,
         boolean includeRawCopyrights,
+        boolean includeDiscardedText,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -352,6 +353,7 @@ public class Engine implements Closeable {
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
             .includeRawCopyrights(includeRawCopyrights)
+            .includeRawCopyrights(includeDiscardedText)
             .build();
         return processHeader(inputFile, null, config, result);
     }
@@ -376,13 +378,15 @@ public class Engine implements Closeable {
         int consolidateHeader,
         int consolidateFunders,
         boolean includeRawAffiliations,
-        boolean includeRawCopyrights
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText
     ) throws Exception {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateFunders(consolidateFunders)
             .includeRawAffiliations(includeRawAffiliations)
             .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
             .build();
         return processHeaderFunding(inputFile, null, config);
     }
@@ -406,6 +410,7 @@ public class Engine implements Closeable {
         int consolidate,
         boolean includeRawAffiliations,
         boolean includeRawCopyrights,
+        boolean includeDiscardedText,
         BiblioItem result
     ) {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
@@ -414,6 +419,7 @@ public class Engine implements Closeable {
             .consolidateHeader(consolidate)
             .includeRawAffiliations(includeRawAffiliations)
             .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
             .build();
         return processHeader(inputFile, md5Str, config, result);
     }
@@ -440,13 +446,15 @@ public class Engine implements Closeable {
         int consolidateHeader,
         int consolidateFunders,
         boolean includeRawAffiliations,
-        boolean includeRawCopyrights
+        boolean includeRawCopyrights,
+        boolean includeDiscardedText
     ) throws Exception {
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(consolidateHeader)
             .consolidateFunders(consolidateFunders)
             .includeRawAffiliations(includeRawAffiliations)
             .includeRawCopyrights(includeRawCopyrights)
+            .includeDiscardedText(includeDiscardedText)
             .build();
         return processHeaderFunding(inputFile, md5Str, config);
     }
@@ -456,15 +464,12 @@ public class Engine implements Closeable {
      * dynamic range of pages as header
      *
      * @param inputFile   : the path of the PDF file to be processed
-     * @param consolidate the consolidation option allows GROBID to exploit Crossref web services for improving header
-     *                    information. 0 (no consolidation, default value), 1 (consolidate the citation and inject extra
-     *                    metadata) or 2 (consolidate the citation and inject DOI only)
      * @param result      bib result
      *
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, int consolidate, BiblioItem result) {
+    public String processHeader(String inputFile, BiblioItem result) {
         return processHeader(inputFile, null, GrobidAnalysisConfig.defaultInstance(), result);
     }
 

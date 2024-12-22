@@ -39,7 +39,7 @@ public class TestHeaderParser extends EngineTest {
         File pdfFile = new File(pdfPath);
         BiblioItem resHeader = new BiblioItem();
 
-        String tei = engine.processHeader(pdfFile.getAbsolutePath(), 0, resHeader);
+        String tei = engine.processHeader(pdfFile.getAbsolutePath(), resHeader);
 
         assertNotNull(resHeader);
         assertThat(resHeader.getTitle(), is("Information Synthesis for Answer Validation"));
@@ -50,21 +50,21 @@ public class TestHeaderParser extends EngineTest {
         String absolutePath = FileSystems.getDefault().getPath(testPath).normalize().toAbsolutePath().toString();
         pdfPath = absolutePath + File.separator + "ZFN-A-054-0304-0272.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, 0, resHeader);
+        tei = engine.processHeader(pdfPath, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);
 
         pdfPath = absolutePath + File.separator + "ZNC-1988-43c-0034.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, 0, resHeader);
+        tei = engine.processHeader(pdfPath, resHeader);
         //System.out.println(tei);
 
         //assertNotNull(resHeader);
 
         pdfPath = absolutePath + File.separator + "ZNC-1988-43c-0065.pdf";
         resHeader = new BiblioItem();
-        tei = engine.processHeader(pdfPath, 0, resHeader);
+        tei = engine.processHeader(pdfPath, resHeader);
 
         assertNotNull(resHeader);
         //System.out.println(tei);

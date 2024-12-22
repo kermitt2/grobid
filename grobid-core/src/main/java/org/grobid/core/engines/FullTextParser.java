@@ -57,19 +57,14 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.SortedSet;
-import java.util.StringTokenizer;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Matcher;
+import java.util.stream.Collectors;
 
 import nu.xom.Element;
 
 import static org.apache.commons.lang3.StringUtils.*;
+import static org.grobid.core.engines.label.TaggingLabels.PARAGRAPH_LABEL;
 
 public class FullTextParser extends AbstractParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(FullTextParser.class);
@@ -276,6 +271,9 @@ public class FullTextParser extends AbstractParser {
                         figure.setLabeledCaption(captionProcess.getLeft());
                         figure.setCaptionLayoutTokens(captionProcess.getRight());
                     }
+                    if (CollectionUtils.isNotEmpty(figure.getDiscardedPiecesTokens())) {
+                        resHeader.getDiscardedPiecesTokens().addAll(figure.getDiscardedPiecesTokens());
+                    }
                 }
                 
 				tables = processTables(resultBody, layoutTokenization.getTokenization(), doc);
@@ -290,6 +288,9 @@ public class FullTextParser extends AbstractParser {
                         Pair<String, List<LayoutToken>> noteProcess = processShort(table.getNoteLayoutTokens(), doc);
                         table.setLabeledNote(noteProcess.getLeft());
                         table.setNoteLayoutTokens(noteProcess.getRight());
+                    }
+                    if (CollectionUtils.isNotEmpty(table.getDiscardedPiecesTokens())) {
+                        resHeader.getDiscardedPiecesTokens().addAll(table.getDiscardedPiecesTokens());
                     }
                 }
 
@@ -316,15 +317,21 @@ public class FullTextParser extends AbstractParser {
             // callout in superscript is by error labeled as a numerical reference callout)
             List<MarkerType> markerTypes = null;
 
-            if (resultBody != null) 
+            if (resultBody != null) {
                 markerTypes = postProcessCallout(resultBody, layoutTokenization);
+            }
 
             // final combination
             toTEI(doc, // document
-				resultBody, resultAnnex, // labeled data for body and annex
-				layoutTokenization, tokenizationsBody2, // tokenization for body and annex
+				resultBody,
+                resultAnnex, // labeled data for body and annex
+				layoutTokenization,
+                tokenizationsBody2, // tokenization for body and annex
 				resHeader, // header
-				figures, tables, equations, markerTypes,
+				figures,
+                tables,
+                equations,
+                markerTypes,
 				config);
             return doc;
         } catch (GrobidException e) {
@@ -355,7 +362,6 @@ public class FullTextParser extends AbstractParser {
         try {
             // general segmentation
             Document doc = parsers.getSegmentationParser().processing(documentSource, config);
-            SortedSet<DocumentPiece> documentBodyParts = doc.getDocumentPart(SegmentationLabels.BODY);
 
             // header processing
             BiblioItem resHeader = new BiblioItem();
@@ -1571,9 +1577,6 @@ public class FullTextParser extends AbstractParser {
     /**
      * Extract results from a labelled full text in the training format without any string modification.
      *
-     * @param result reult
-     * @param tokenizations toks
-     * @return extraction
      */
     private StringBuilder trainingExtraction(String result,
                                             List<LayoutToken> tokenizations) {
@@ -2687,7 +2690,14 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 }
             }
 
-            tei.append(teiFormatter.toTEIHeader(resHeader, null, resCitations, markerTypes, fundings, config));
+            tei.append(teiFormatter.toTEIHeader(
+                resHeader,
+                null,
+                resCitations,
+                markerTypes,
+                fundings,
+                config)
+            );
 
             tei = teiFormatter.toTEIBody(tei, reseBody, resHeader, resCitations,
                     layoutTokenization, figures, tables, equations, markerTypes, doc, config);
@@ -2699,7 +2709,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append(annexStatement);
             }
 
-            if (fundings != null && fundings.size() >0) {
+            if (CollectionUtils.isNotEmpty(fundings)) {
                 tei.append("\n\t\t\t<listOrg type=\"funding\">\n");
                 for(Funding funding : fundings) {
                     if (funding.isNonEmptyFunding())
@@ -2708,7 +2718,7 @@ System.out.println("majorityEquationarkerType: " + majorityEquationarkerType);*/
                 tei.append("\t\t\t</listOrg>\n");
             }
 
-            if (affiliations != null && affiliations.size() >0) {
+            if (CollectionUtils.isNotEmpty(affiliations)) {
                 
                 // check if we have at least one acknowledged research infrastructure here
                 List<Affiliation> filteredInfrastructures = new ArrayList<>();
