@@ -1,5 +1,6 @@
 package org.grobid.core.engines;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
@@ -108,8 +109,14 @@ public class HeaderParser extends AbstractParser {
                 String res = null;
                 if (StringUtils.isNotBlank(header)) {
                     res = label(header);
+
+                    if (GrobidProperties.getGrobidEngineName("header").equals("delft")) {
+                        res = LabelUtils.postProcessFulltextCorrectSequencesWithoutInitialToken(res);
+                    }
                     resHeader = resultExtraction(res, headerTokenization, resHeader);
                 }
+
+
 
                 // language identification
                 StringBuilder contentSample = new StringBuilder();
@@ -261,7 +268,7 @@ public class HeaderParser extends AbstractParser {
                     //resHeader.setKeyword(keywords.replace("\n", " ").replace("  ", " "));
                     resHeader.setKeyword(keywords);
                     List<Keyword> keywordsSegmented = BiblioItem.segmentKeywords(keywords);
-                    if ((keywordsSegmented != null) && (keywordsSegmented.size() > 0))
+                    if (CollectionUtils.isNotEmpty(keywordsSegmented))
                         resHeader.setKeywords(keywordsSegmented);
                 }
 
@@ -311,7 +318,7 @@ public class HeaderParser extends AbstractParser {
                 }
 
                 // copyrights/license identification
-                if (resHeader.getCopyright() != null && resHeader.getCopyright().length()>0) {
+                if (StringUtils.isNotBlank(resHeader.getCopyright())) {
                     if (GrobidProperties.getGrobidEngineName("copyright").equals("delft")) {
                         CopyrightsLicense copyrightsLicense = LicenseClassifier.getInstance().classify(resHeader.getCopyright());
                         if (copyrightsLicense != null) 
@@ -928,6 +935,7 @@ public class HeaderParser extends AbstractParser {
                     // this will need to be reviewed with more training data, for the moment
                     // avoid concatenation for abstracts as it brings more noise than correct pieces
                     //biblio.setAbstract(biblio.getAbstract() + " " + clusterContent);
+                    //TODO: avoid dumping text on the floor
                 } else {
                     biblio.setAbstract(clusterContent);
                     List<LayoutToken> tokens = cluster.concatTokens();
