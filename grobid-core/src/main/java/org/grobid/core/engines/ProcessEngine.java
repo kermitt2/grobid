@@ -91,7 +91,7 @@ public class ProcessEngine implements Closeable {
             for (final File currPdf : files) {
                 try {
                     if (currPdf.getName().toLowerCase().endsWith(".pdf")) {
-                        result = getEngine().processHeader(currPdf.getAbsolutePath(), 0, null);
+                        result = getEngine().processHeader(currPdf.getAbsolutePath(), null);
                         File outputPathFile = new File(outputPath);
                         if (!outputPathFile.exists()) {
                             outputPathFile.mkdirs();

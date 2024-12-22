@@ -49,6 +49,8 @@ public class Table extends Figure {
     private List<LayoutToken> noteLayoutTokens = null;
     private String labeledNote = null;
 
+    private List<List<LayoutToken>> discardedPiecesTokens = new ArrayList<>();
+
 
 	public void setGoodTable(boolean goodTable) {
 		this.goodTable = goodTable;
@@ -422,5 +424,17 @@ public class Table extends Figure {
 
     public String getTeiId() {
         return "tab_" + this.id;
+    }
+
+    public List<List<LayoutToken>> getDiscardedPiecesTokens() {
+        return discardedPiecesTokens;
+    }
+
+    public void setDiscardedPiecesTokens(List<List<LayoutToken>> discardedPiecesTokens) {
+        this.discardedPiecesTokens = discardedPiecesTokens;
+    }
+
+    public void addDiscardedPieceTokens(List<LayoutToken> pieceToken) {
+        this.discardedPiecesTokens.add(pieceToken);
     }
 }
