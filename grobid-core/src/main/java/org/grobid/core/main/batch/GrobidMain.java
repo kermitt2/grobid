@@ -1,9 +1,11 @@
 package org.grobid.core.main.batch;
 
 import java.io.File;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 
+import org.grobid.core.GrobidModels;
 import org.grobid.core.engines.ProcessEngine;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.main.LibraryLoader;
@@ -167,6 +169,21 @@ public class GrobidMain {
 				if (currArg.equals("-r")) {
 					gbdArgs.setRecursive(true);
 					continue;
+				}
+
+                if (currArg.equals("-flavor")) {
+					final String command = pArgs[i + 1];
+
+                    GrobidModels.Flavor flavor = GrobidModels.Flavor.fromLabel(command);
+					if (flavor != null) {
+                        System.out.println("Setting model flavor to: " + flavor);
+						gbdArgs.setModelFlavor(flavor);
+						i++;
+						continue;
+					} else {
+                        System.out.println("No model flavor, using the default models");
+						break;
+					}
 				}
 			}
 		}

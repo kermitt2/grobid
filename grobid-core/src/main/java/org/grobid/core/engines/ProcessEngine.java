@@ -373,7 +373,7 @@ public class ProcessEngine implements Closeable {
     public void createTraining(final GrobidMainArgs pGbdArgs) {
         inferPdfInputPath(pGbdArgs);
         inferOutputPath(pGbdArgs);
-        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1);
+        int result = getEngine().batchCreateTraining(pGbdArgs.getPath2Input(), pGbdArgs.getPath2Output(), -1, pGbdArgs.getModelFlavor());
         LOGGER.info(result + " files processed.");
     }
 

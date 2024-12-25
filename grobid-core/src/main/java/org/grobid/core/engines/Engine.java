@@ -538,9 +538,9 @@ public class Engine implements Closeable {
      *                       file to be corrected for gold-level training data)
      * @param id           : an optional ID to be used in the TEI file, -1 if not used
      */
-    public void createTraining(File inputFile, String pathRaw, String pathTEI, int id) {
+    public void createTraining(File inputFile, String pathRaw, String pathTEI, int id, GrobidModels.Flavor flavor) {
         System.out.println(inputFile.getPath());
-        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, GrobidModels.Flavor.ARTICLE_LIGHT);
+        Document doc = parsers.getFullTextParser().createTraining(inputFile, pathRaw, pathTEI, id, flavor);
     }
 
     /**
@@ -629,7 +629,7 @@ public class Engine implements Closeable {
      *                      will be included if ind = -1
      * @return the number of processed files.
      */
-    public int batchCreateTraining(String directoryPath, String resultPath, int ind) {
+    public int batchCreateTraining(String directoryPath, String resultPath, int ind, GrobidModels.Flavor flavor) {
         try {
             File path = new File(directoryPath);
             // we process all pdf files in the directory
@@ -652,7 +652,7 @@ public class Engine implements Closeable {
 			}
             for (final File pdfFile : refFiles) {
                 try {
-                    createTraining(pdfFile, resultPath, resultPath, ind + n);
+                    createTraining(pdfFile, resultPath, resultPath, ind + n, flavor);
                 } catch (final Exception exp) {
                     LOGGER.error("An error occured while processing the following pdf: "
 						+ pdfFile.getPath(), exp);
